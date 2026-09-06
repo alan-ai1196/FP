@@ -1,0 +1,24 @@
+{
+  "version": "v159-behavioral-capacity-audit-r1",
+  "cases": [
+    {"n": 11, "eps": 0.05, "packing_gt_2eps": 6, "epsilon_cover": 6, "max_cover_error": 0.050000000000000044, "sandwich": true, "pass": true},
+    {"n": 11, "eps": 0.1, "packing_gt_2eps": 4, "epsilon_cover": 4, "max_cover_error": 0.10000000000000009, "sandwich": true, "pass": true},
+    {"n": 11, "eps": 0.2, "packing_gt_2eps": 3, "epsilon_cover": 3, "max_cover_error": 0.2, "sandwich": true, "pass": true},
+    {"n": 21, "eps": 0.05, "packing_gt_2eps": 7, "epsilon_cover": 7, "max_cover_error": 0.050000000000000044, "sandwich": true, "pass": true},
+    {"n": 21, "eps": 0.1, "packing_gt_2eps": 5, "epsilon_cover": 5, "max_cover_error": 0.10000000000000003, "sandwich": true, "pass": true},
+    {"n": 21, "eps": 0.2, "packing_gt_2eps": 3, "epsilon_cover": 3, "max_cover_error": 0.2, "sandwich": true, "pass": true},
+    {"n": 51, "eps": 0.05, "packing_gt_2eps": 9, "epsilon_cover": 9, "max_cover_error": 0.050000000000000044, "sandwich": true, "pass": true},
+    {"n": 51, "eps": 0.1, "packing_gt_2eps": 5, "epsilon_cover": 5, "max_cover_error": 0.10000000000000003, "sandwich": true, "pass": true},
+    {"n": 51, "eps": 0.2, "packing_gt_2eps": 3, "epsilon_cover": 3, "max_cover_error": 0.2, "sandwich": true, "pass": true},
+    {"n": 101, "eps": 0.05, "packing_gt_2eps": 10, "epsilon_cover": 10, "max_cover_error": 0.050000000000000044, "sandwich": true, "pass": true},
+    {"n": 101, "eps": 0.1, "packing_gt_2eps": 5, "epsilon_cover": 5, "max_cover_error": 0.10000000000000003, "sandwich": true, "pass": true},
+    {"n": 101, "eps": 0.2, "packing_gt_2eps": 3, "epsilon_cover": 3, "max_cover_error": 0.2, "sandwich": true, "pass": true}
+  ],
+  "smooth_patch_examples": [
+    {"r": 1, "eps": 0.05, "grid_per_axis": 10, "packing": 10, "bit_lower": 4},
+    {"r": 2, "eps": 0.05, "grid_per_axis": 10, "packing": 100, "bit_lower": 7},
+    {"r": 3, "eps": 0.05, "grid_per_axis": 10, "packing": 1000, "bit_lower": 10},
+    {"r": 4, "eps": 0.05, "grid_per_axis": 10, "packing": 10000, "bit_lower": 14}
+  ],
+  "all_pass": true
+}

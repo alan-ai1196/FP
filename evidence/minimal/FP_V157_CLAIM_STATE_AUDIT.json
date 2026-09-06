@@ -1,0 +1,40 @@
+{
+  "version": "v157-foundation-audit-r1",
+  "checks": {
+    "current_function_not_learner_congruence": {
+      "p_before_A": "1/2", "p_before_B": "1/2", "loss_gradient_A_at_zero": "-1", "projected_update_eta": "1/10", "a_after": "1/10", "p_after_A": "6/11", "p_after_B": "1/2", "pass": true
+    },
+    "one_step_not_causal_congruence": {
+      "h1_equal": true,
+      "h2_A": {"00": "3/8", "01": "1/8", "10": "3/8", "11": "1/8"},
+      "h2_B": {"00": "1/8", "01": "3/8", "10": "1/8", "11": "3/8"},
+      "h2_equal": false, "pass": true
+    },
+    "extensional_not_physical_congruence": {
+      "symbolic_identity_d4": true,
+      "resource_model": "one scalar SUM/PRODUCT instruction per binary primitive; no fusion/CSE beyond written DAG",
+      "cases": [
+        {"d": 1, "factored_ops": 1, "expanded_ops": 1, "ratio": 1.0},
+        {"d": 2, "factored_ops": 3, "expanded_ops": 7, "ratio": 2.3333333333333335},
+        {"d": 3, "factored_ops": 5, "expanded_ops": 23, "ratio": 4.6},
+        {"d": 4, "factored_ops": 7, "expanded_ops": 63, "ratio": 9.0},
+        {"d": 5, "factored_ops": 9, "expanded_ops": 159, "ratio": 17.666666666666668},
+        {"d": 6, "factored_ops": 11, "expanded_ops": 383, "ratio": 34.81818181818182},
+        {"d": 7, "factored_ops": 13, "expanded_ops": 895, "ratio": 68.84615384615384},
+        {"d": 8, "factored_ops": 15, "expanded_ops": 2047, "ratio": 136.46666666666667},
+        {"d": 9, "factored_ops": 17, "expanded_ops": 4607, "ratio": 271.0},
+        {"d": 10, "factored_ops": 19, "expanded_ops": 10239, "ratio": 538.8947368421053}
+      ],
+      "pass": true
+    },
+    "learner_not_selfcompiler_congruence": {
+      "current_prediction_equal": true, "ordinary_update_bisimilar": true, "remaining_structural_build_budget": 0, "A_activate_existing_slot_cost": 0, "B_birth_missing_slot_cost": 1, "A_future_action_feasible": true, "B_matching_future_action_feasible": false, "pass": true
+    },
+    "partition_refinement": {
+      "initial_current_observation_partition": [["q0","q1","q3"],["q2"]],
+      "stable_behavioral_partition": [["q0"],["q1","q3"],["q2"]],
+      "q0_q1_initially_merged": true, "q0_q1_finally_split": true, "pass": true
+    }
+  },
+  "all_pass": true
+}

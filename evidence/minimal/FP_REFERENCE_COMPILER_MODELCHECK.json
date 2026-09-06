@@ -1,0 +1,10 @@
+{
+  "audit": "Reference Compiler branch-certificate model check",
+  "instances": 4500,
+  "all_sound": true,
+  "resolved_count": 2402,
+  "unresolved_count": 2098,
+  "all_resolved_match_exhaustive": true,
+  "all_unresolved_keep_potentially_winning_live_region": true,
+  "pass": true
+}

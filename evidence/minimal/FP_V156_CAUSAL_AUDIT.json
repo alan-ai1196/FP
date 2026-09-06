@@ -1,0 +1,19 @@
+{
+  "horizon_rank_counterexample": {
+    "1": {"rank": 2, "target_rank": 2, "det": "1/12", "pass": true},
+    "2": {"rank": 3, "target_rank": 3, "det": "1/2304", "pass": true},
+    "3": {"rank": 4, "target_rank": 4, "det": "1/9216000", "pass": true},
+    "4": {"rank": 5, "target_rank": 5, "det": "1/955514880000", "pass": true},
+    "5": {"rank": 6, "target_rank": 6, "det": "1/3083393008926720000", "pass": true},
+    "6": {"rank": 7, "target_rank": 7, "det": "1/362115253665574567280640000", "pass": true},
+    "7": {"rank": 8, "target_rank": 8, "det": "1/1773553697494609431031516590243840000", "pass": true}
+  },
+  "predictive_jacobian": {
+    "1": {"state_dim": 1, "jacobian_rank_at_x1": 1, "pass": true},
+    "2": {"state_dim": 1, "jacobian_rank_at_x1": 1, "pass": true},
+    "3": {"state_dim": 1, "jacobian_rank_at_x1": 1, "pass": true},
+    "4": {"state_dim": 1, "jacobian_rank_at_x1": 1, "pass": true},
+    "5": {"state_dim": 1, "jacobian_rank_at_x1": 1, "pass": true}
+  },
+  "all_pass": true
+}

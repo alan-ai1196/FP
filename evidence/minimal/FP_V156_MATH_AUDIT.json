@@ -1,0 +1,51 @@
+{
+  "soft_compression": {
+    "M0": [["3/4", "0"], ["1/4", "0"]],
+    "M1": [["1/4", "0"], ["3/4", "0"]],
+    "combined_row_sums": ["1", "1"],
+    "C_coordinates": ["1/2", "1/2"],
+    "pass": true
+  },
+  "causal_cycle": {
+    "ranks_H1_H4": {"1": 2, "2": 3, "3": 3, "4": 3},
+    "nonzero_H2_minor": {"columns": [0,1,2], "det": "189/2500"},
+    "pass": true
+  },
+  "turning_point": {
+    "determinant": "3*delta/32",
+    "product_nonzero_singular_values_at_delta0": "3*sqrt(15)/32",
+    "asymptotic_sigma_min_coefficient": "sqrt(15)/15",
+    "float64_rows": [
+      {"delta": 0.1, "sigma_min": 0.02598010497618012, "sigma_min_over_delta": 0.2598010497618012, "condition_number": 36.08717208087577},
+      {"delta": 0.01, "sigma_min": 0.0025836984764999846, "sigma_min_over_delta": 0.25836984764999843, "condition_number": 365.1062206049338},
+      {"delta": 0.001, "sigma_min": 0.00025821609127433756, "sigma_min_over_delta": 0.25821609127433753, "condition_number": 3655.5571548647235},
+      {"delta": 0.0001, "sigma_min": 2.5820061095569708e-05, "sigma_min_over_delta": 0.2582006109556971, "condition_number": 36560.092800278355},
+      {"delta": 1e-06, "sigma_min": 2.5819890694654854e-07, "sigma_min_over_delta": 0.25819890694654857, "condition_number": 3656059.043220378},
+      {"delta": 1e-08, "sigma_min": 2.581988915205451e-09, "sigma_min_over_delta": 0.2581988915205451, "condition_number": 365605951.8009864},
+      {"delta": 1e-10, "sigma_min": 2.5819898907159582e-11, "sigma_min_over_delta": 0.25819898907159583, "condition_number": 36560581392.65001},
+      {"delta": 1e-12, "sigma_min": 2.5819916135386676e-13, "sigma_min_over_delta": 0.2581991613538668, "condition_number": 3656055699801.6943}
+    ],
+    "pass": true
+  },
+  "polynomial_capacity": {
+    "theorem_formula": "max_rank(k,b)=binom(k+2^b,2^b) for the declared degree/path-depth polynomial response class",
+    "exact_witness_cases": [
+      {"k": 1, "b": 0, "degree": 1, "formula_M": 2, "witness_rank": 2, "num_exponents": 2, "pass": true},
+      {"k": 1, "b": 2, "degree": 4, "formula_M": 5, "witness_rank": 5, "num_exponents": 5, "pass": true},
+      {"k": 2, "b": 1, "degree": 2, "formula_M": 6, "witness_rank": 6, "num_exponents": 6, "pass": true},
+      {"k": 2, "b": 2, "degree": 4, "formula_M": 15, "witness_rank": 15, "num_exponents": 15, "pass": true},
+      {"k": 3, "b": 1, "degree": 2, "formula_M": 10, "witness_rank": 10, "num_exponents": 10, "pass": true}
+    ],
+    "rank64_frontier": [
+      {"b": 0, "degree": 1, "k_min": 63, "capacity": 64},
+      {"b": 1, "degree": 2, "k_min": 10, "capacity": 66},
+      {"b": 2, "degree": 4, "k_min": 4, "capacity": 70},
+      {"b": 3, "degree": 8, "k_min": 3, "capacity": 165},
+      {"b": 4, "degree": 16, "k_min": 2, "capacity": 153},
+      {"b": 5, "degree": 32, "k_min": 2, "capacity": 561},
+      {"b": 6, "degree": 64, "k_min": 1, "capacity": 65}
+    ],
+    "pass": true
+  },
+  "all_pass": true
+}

@@ -1,0 +1,10 @@
+{
+  "audit": "finite deterministic claim-congruence model check",
+  "instances": 200,
+  "exact_recursive_trace_preservation_all": true,
+  "quotient_transition_well_defined_all": true,
+  "equivalent_pair_count": 4408,
+  "current_observation_pair_count": 17911,
+  "unsafe_current_observation_pair_count": 12405,
+  "pass": true
+}

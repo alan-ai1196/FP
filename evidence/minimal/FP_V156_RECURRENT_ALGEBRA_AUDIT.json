@@ -1,0 +1,18 @@
+{
+  "program": {"F0": "4*x + 4", "F1": "3*x + 1", "n0": "2*x + 3", "n1": "5*x + 1", "D": "7*x + 4"},
+  "horizons": {
+    "1": {"num_words": 2, "rank": 2, "common_denominator_degree": 1, "coarse_Delta_bound": 1, "max_cleared_degree": 1, "all_clear_exactly": true, "rank_bound": 2, "pass": true},
+    "2": {"num_words": 4, "rank": 4, "common_denominator_degree": 3, "coarse_Delta_bound": 3, "max_cleared_degree": 3, "all_clear_exactly": true, "rank_bound": 4, "pass": true},
+    "3": {"num_words": 8, "rank": 8, "common_denominator_degree": 7, "coarse_Delta_bound": 7, "max_cleared_degree": 7, "all_clear_exactly": true, "rank_bound": 8, "pass": true}
+  },
+  "temporal_veronese": {
+    "1": {"rank": 2, "det": "1/12", "pass": true},
+    "2": {"rank": 3, "det": "1/2304", "pass": true},
+    "3": {"rank": 4, "det": "1/9216000", "pass": true},
+    "4": {"rank": 5, "det": "1/955514880000", "pass": true},
+    "5": {"rank": 6, "det": "1/3083393008926720000", "pass": true},
+    "6": {"rank": 7, "det": "1/362115253665574567280640000", "pass": true},
+    "7": {"rank": 8, "det": "1/1773553697494609431031516590243840000", "pass": true}
+  },
+  "all_pass": true
+}

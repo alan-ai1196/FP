@@ -1,0 +1,30 @@
+{
+  "all_pass": true,
+  "permutation_information_accounting": [
+    {"n":8,"claim_hypotheses":"n!","information_lower_bits":15.299208018387278,"integer_label_bits_per_coordinate":3,"one_vector_payload_bits_upper":24,"payload_over_info":1.5687086528371743,"pass":true},
+    {"n":16,"claim_hypotheses":"n!","information_lower_bits":44.25014046988262,"integer_label_bits_per_coordinate":4,"one_vector_payload_bits_upper":64,"payload_over_info":1.4463230923201127,"pass":true},
+    {"n":64,"claim_hypotheses":"n!","information_lower_bits":295.9951439417241,"integer_label_bits_per_coordinate":6,"one_vector_payload_bits_upper":384,"payload_over_info":1.2973185805899654,"pass":true},
+    {"n":256,"claim_hypotheses":"n!","information_lower_bits":1683.9962872242147,"integer_label_bits_per_coordinate":8,"one_vector_payload_bits_upper":2048,"payload_over_info":1.2161547003026856,"pass":true},
+    {"n":1024,"claim_hypotheses":"n!","information_lower_bits":8769.006143601258,"integer_label_bits_per_coordinate":10,"one_vector_payload_bits_upper":10240,"payload_over_info":1.1677492103791176,"pass":true},
+    {"n":4096,"claim_hypotheses":"n!","information_lower_bits":43250.04688993525,"integer_label_bits_per_coordinate":12,"one_vector_payload_bits_upper":49152,"payload_over_info":1.136461195639494,"pass":true}
+  ],
+  "single_support_information_accounting": [
+    {"n":64,"d":4,"information_lower_bits":19.27725107072851,"binary_probe_simple_upper":29,"upper_over_info":1.5043638687693897,"pass":true},
+    {"n":256,"d":8,"information_lower_bits":48.54143337411903,"binary_probe_simple_upper":73,"upper_over_info":1.5038698885830926,"pass":true},
+    {"n":1024,"d":16,"information_lower_bits":115.57993416262909,"binary_probe_simple_upper":177,"upper_over_info":1.5314076901181528,"pass":true},
+    {"n":4096,"d":16,"information_lower_bits":147.70753965821086,"binary_probe_simple_upper":209,"upper_over_info":1.4149582376337548,"pass":true},
+    {"n":4096,"d":64,"information_lower_bits":471.2910814620728,"binary_probe_simple_upper":833,"upper_over_info":1.76748517586161,"pass":true}
+  ],
+  "strict_positive_observation_margins": [
+    {"d":8,"finite_amplitude_margin":0.9,"jet_q1":9.000000000000004e-08,"jet_q2":8.100000000000004e-07,"jet_q3":7.290000000000003e-06,"jet_q4":6.561000000000002e-05,"jet_q8":0.4304672100000001},
+    {"d":16,"finite_amplitude_margin":0.9,"jet_q1":9.000000000000008e-16,"jet_q2":8.100000000000006e-15,"jet_q3":7.290000000000006e-14,"jet_q4":6.561000000000004e-13,"jet_q8":4.304672100000003e-09,"jet_q16":0.18530201888518416},
+    {"d":32,"finite_amplitude_margin":0.9,"jet_q1":9.000000000000014e-32,"jet_q2":8.100000000000014e-31,"jet_q3":7.290000000000013e-30,"jet_q4":6.56100000000001e-29,"jet_q8":4.304672100000007e-25,"jet_q16":1.8530201888518432e-17},
+    {"d":64,"finite_amplitude_margin":0.9,"jet_q1":9.000000000000031e-64,"jet_q2":8.100000000000029e-63,"jet_q3":7.290000000000025e-62,"jet_q4":6.561000000000022e-61,"jet_q8":4.3046721000000143e-57,"jet_q16":1.8530201888518467e-49}
+  ],
+  "notes": [
+    "Exact identification among M pairwise claim-distinct finite hypotheses needs at least log2 M certified transcript bits.",
+    "A single n-vector permutation probe is not a one-bit query: with n distinguishable labels per coordinate it can carry up to n log2 n bits, matching log2(n!) to first order.",
+    "For a d-subset hidden PRODUCT support, binary finite-amplitude queries have the lower bound log2 C(n,d); the simple repeated binary-splitting algorithm is within an O(log n) factor and often much closer.",
+    "Stable acquisition additionally requires observation separation larger than numerical uncertainty; finite-amplitude strict-positive path probes retain margin 1-eta independent of depth, local jets do not."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "all_pass": true,
+  "single_hidden_product_group_testing": [
+    {"n":16,"d":1,"trials":30,"max_queries":6,"simple_bound":6,"info_lb_bits":4,"pass":true},
+    {"n":16,"d":2,"trials":30,"max_queries":11,"simple_bound":11,"info_lb_bits":7,"pass":true},
+    {"n":16,"d":4,"trials":30,"max_queries":21,"simple_bound":21,"info_lb_bits":11,"pass":true},
+    {"n":16,"d":8,"trials":30,"max_queries":40,"simple_bound":41,"info_lb_bits":14,"pass":true},
+    {"n":16,"d":8,"trials":30,"max_queries":41,"simple_bound":41,"info_lb_bits":14,"pass":true},
+    {"n":64,"d":1,"trials":30,"max_queries":8,"simple_bound":8,"info_lb_bits":6,"pass":true},
+    {"n":64,"d":2,"trials":30,"max_queries":15,"simple_bound":15,"info_lb_bits":11,"pass":true},
+    {"n":64,"d":4,"trials":30,"max_queries":29,"simple_bound":29,"info_lb_bits":20,"pass":true},
+    {"n":64,"d":8,"trials":30,"max_queries":57,"simple_bound":57,"info_lb_bits":33,"pass":true},
+    {"n":64,"d":16,"trials":30,"max_queries":113,"simple_bound":113,"info_lb_bits":49,"pass":true},
+    {"n":256,"d":1,"trials":30,"max_queries":10,"simple_bound":10,"info_lb_bits":8,"pass":true},
+    {"n":256,"d":2,"trials":30,"max_queries":19,"simple_bound":19,"info_lb_bits":15,"pass":true},
+    {"n":256,"d":4,"trials":30,"max_queries":37,"simple_bound":37,"info_lb_bits":28,"pass":true},
+    {"n":256,"d":8,"trials":30,"max_queries":73,"simple_bound":73,"info_lb_bits":49,"pass":true},
+    {"n":256,"d":16,"trials":30,"max_queries":145,"simple_bound":145,"info_lb_bits":84,"pass":true},
+    {"n":1024,"d":1,"trials":30,"max_queries":12,"simple_bound":12,"info_lb_bits":10,"pass":true},
+    {"n":1024,"d":2,"trials":30,"max_queries":23,"simple_bound":23,"info_lb_bits":19,"pass":true},
+    {"n":1024,"d":4,"trials":30,"max_queries":45,"simple_bound":45,"info_lb_bits":36,"pass":true},
+    {"n":1024,"d":8,"trials":30,"max_queries":89,"simple_bound":89,"info_lb_bits":65,"pass":true},
+    {"n":1024,"d":16,"trials":30,"max_queries":177,"simple_bound":177,"info_lb_bits":116,"pass":true},
+    {"n":4096,"d":1,"trials":10,"max_queries":14,"simple_bound":14,"info_lb_bits":12,"pass":true},
+    {"n":4096,"d":2,"trials":10,"max_queries":27,"simple_bound":27,"info_lb_bits":23,"pass":true},
+    {"n":4096,"d":4,"trials":10,"max_queries":53,"simple_bound":53,"info_lb_bits":44,"pass":true},
+    {"n":4096,"d":8,"trials":10,"max_queries":105,"simple_bound":105,"info_lb_bits":81,"pass":true},
+    {"n":4096,"d":16,"trials":10,"max_queries":209,"simple_bound":209,"info_lb_bits":148,"pass":true}
+  ],
+  "strict_positive_finite_amplitude": [
+    {"d":4,"no_intersection":1.0,"one_intersection":0.1,"all_intersection":0.00010000000000000002,"classification_gap_at_least":0.9,"pass":true},
+    {"d":8,"no_intersection":1.0,"one_intersection":0.1,"all_intersection":1.0000000000000005e-08,"classification_gap_at_least":0.9,"pass":true},
+    {"d":16,"no_intersection":1.0,"one_intersection":0.1,"all_intersection":1.0000000000000008e-16,"classification_gap_at_least":0.9,"pass":true},
+    {"d":32,"no_intersection":1.0,"one_intersection":0.1,"all_intersection":1.0000000000000018e-32,"classification_gap_at_least":0.9,"pass":true},
+    {"d":64,"no_intersection":1.0,"one_intersection":0.1,"all_intersection":1.0000000000000035e-64,"classification_gap_at_least":0.9,"pass":true}
+  ],
+  "local_jet_signals_eta_0p1": [
+    {"d":8,"q":1,"signal":9.000000000000004e-08},{"d":8,"q":2,"signal":8.100000000000004e-07},{"d":8,"q":3,"signal":7.290000000000003e-06},{"d":8,"q":4,"signal":6.561000000000002e-05},{"d":8,"q":8,"signal":0.4304672100000001},{"d":8,"q":8,"signal":0.4304672100000001},
+    {"d":16,"q":1,"signal":9.000000000000008e-16},{"d":16,"q":2,"signal":8.100000000000006e-15},{"d":16,"q":3,"signal":7.290000000000006e-14},{"d":16,"q":4,"signal":6.561000000000004e-13},{"d":16,"q":8,"signal":4.304672100000003e-09},{"d":16,"q":16,"signal":0.18530201888518416},
+    {"d":32,"q":1,"signal":9.000000000000014e-32},{"d":32,"q":2,"signal":8.100000000000014e-31},{"d":32,"q":3,"signal":7.290000000000013e-30},{"d":32,"q":4,"signal":6.56100000000001e-29},{"d":32,"q":8,"signal":4.304672100000007e-25},{"d":32,"q":16,"signal":1.8530201888518432e-17},
+    {"d":64,"q":1,"signal":9.000000000000031e-64},{"d":64,"q":2,"signal":8.100000000000029e-63},{"d":64,"q":3,"signal":7.290000000000025e-62},{"d":64,"q":4,"signal":6.561000000000022e-61},{"d":64,"q":8,"signal":4.3046721000000143e-57},{"d":64,"q":16,"signal":1.8530201888518467e-49}
+  ],
+  "positive_polynomial_support_shadow": [
+    {"n":5,"trial":0,"supports":4,"minimal_supports":2,"pass":true},{"n":5,"trial":1,"supports":3,"minimal_supports":3,"pass":true},{"n":5,"trial":2,"supports":2,"minimal_supports":1,"pass":true},{"n":5,"trial":3,"supports":4,"minimal_supports":2,"pass":true},{"n":5,"trial":4,"supports":1,"minimal_supports":1,"pass":true},{"n":5,"trial":5,"supports":4,"minimal_supports":1,"pass":true},{"n":5,"trial":6,"supports":4,"minimal_supports":2,"pass":true},{"n":5,"trial":7,"supports":6,"minimal_supports":2,"pass":true},{"n":5,"trial":8,"supports":6,"minimal_supports":3,"pass":true},{"n":5,"trial":9,"supports":4,"minimal_supports":4,"pass":true},{"n":5,"trial":10,"supports":3,"minimal_supports":2,"pass":true},{"n":5,"trial":11,"supports":1,"minimal_supports":1,"pass":true},{"n":5,"trial":12,"supports":1,"minimal_supports":1,"pass":true},{"n":5,"trial":13,"supports":3,"minimal_supports":3,"pass":true},{"n":5,"trial":14,"supports":7,"minimal_supports":4,"pass":true},{"n":5,"trial":15,"supports":4,"minimal_supports":3,"pass":true},{"n":5,"trial":16,"supports":8,"minimal_supports":4,"pass":true},{"n":5,"trial":17,"supports":6,"minimal_supports":2,"pass":true},{"n":5,"trial":18,"supports":6,"minimal_supports":4,"pass":true},{"n":5,"trial":19,"supports":3,"minimal_supports":2,"pass":true},
+    {"n":6,"trial":0,"supports":2,"minimal_supports":1,"pass":true},{"n":6,"trial":1,"supports":2,"minimal_supports":2,"pass":true},{"n":6,"trial":2,"supports":4,"minimal_supports":2,"pass":true},{"n":6,"trial":3,"supports":4,"minimal_supports":3,"pass":true},{"n":6,"trial":4,"supports":3,"minimal_supports":1,"pass":true},{"n":6,"trial":5,"supports":8,"minimal_supports":5,"pass":true},{"n":6,"trial":6,"supports":6,"minimal_supports":3,"pass":true},{"n":6,"trial":7,"supports":2,"minimal_supports":1,"pass":true},{"n":6,"trial":8,"supports":8,"minimal_supports":4,"pass":true},{"n":6,"trial":9,"supports":5,"minimal_supports":2,"pass":true},{"n":6,"trial":10,"supports":4,"minimal_supports":3,"pass":true},{"n":6,"trial":11,"supports":7,"minimal_supports":3,"pass":true},{"n":6,"trial":12,"supports":6,"minimal_supports":4,"pass":true},{"n":6,"trial":13,"supports":7,"minimal_supports":5,"pass":true},{"n":6,"trial":14,"supports":2,"minimal_supports":2,"pass":true},{"n":6,"trial":15,"supports":1,"minimal_supports":1,"pass":true},{"n":6,"trial":16,"supports":1,"minimal_supports":1,"pass":true},{"n":6,"trial":17,"supports":3,"minimal_supports":3,"pass":true},{"n":6,"trial":18,"supports":1,"minimal_supports":1,"pass":true},{"n":6,"trial":19,"supports":4,"minimal_supports":3,"pass":true},
+    {"n":7,"trial":0,"supports":5,"minimal_supports":2,"pass":true},{"n":7,"trial":1,"supports":8,"minimal_supports":3,"pass":true},{"n":7,"trial":2,"supports":1,"minimal_supports":1,"pass":true},{"n":7,"trial":3,"supports":6,"minimal_supports":4,"pass":true},{"n":7,"trial":4,"supports":7,"minimal_supports":3,"pass":true},{"n":7,"trial":5,"supports":4,"minimal_supports":3,"pass":true},{"n":7,"trial":6,"supports":1,"minimal_supports":1,"pass":true},{"n":7,"trial":7,"supports":5,"minimal_supports":2,"pass":true},{"n":7,"trial":8,"supports":3,"minimal_supports":2,"pass":true},{"n":7,"trial":9,"supports":4,"minimal_supports":4,"pass":true},{"n":7,"trial":10,"supports":3,"minimal_supports":3,"pass":true},{"n":7,"trial":11,"supports":7,"minimal_supports":3,"pass":true},{"n":7,"trial":12,"supports":7,"minimal_supports":4,"pass":true},{"n":7,"trial":13,"supports":6,"minimal_supports":3,"pass":true},{"n":7,"trial":14,"supports":4,"minimal_supports":3,"pass":true},{"n":7,"trial":15,"supports":2,"minimal_supports":2,"pass":true},{"n":7,"trial":16,"supports":4,"minimal_supports":3,"pass":true},{"n":7,"trial":17,"supports":7,"minimal_supports":3,"pass":true},{"n":7,"trial":18,"supports":3,"minimal_supports":3,"pass":true},{"n":7,"trial":19,"supports":3,"minimal_supports":3,"pass":true}
+  ],
+  "nonminimal_support_counterexample": {"P1":"z1","P2":"z1+z1*z2","same_boolean_positivity_oracle":true,"magnitude_differs":true},
+  "notes": [
+    "Single hidden PRODUCT support is recovered with complement group tests; query count <= d(ceil(log2 n)+1)+1.",
+    "Binary-oracle information lower bound is ceil(log2 C(n,d)).",
+    "For strict-positive eta gates, complement finite-amplitude probes have a depth-independent gap >=1-eta, while local q-jets attenuate as (1-eta)^q eta^(d-q).",
+    "For a positive polynomial, Boolean positivity queries identify exactly the upward closure generated by inclusion-minimal monomial supports.",
+    "Sign-only Boolean support queries cannot identify nonminimal monomials; richer magnitude/amplitude queries are required."
+  ]
+}

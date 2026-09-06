@@ -1,0 +1,38 @@
+{
+  "version": "v158-frontier-audit-r1",
+  "small_exact": [
+    {"w": 1, "L": 6, "seed": 0, "dp": -6, "brute": -6, "dp_transition_evals": 22, "brute_assignments": 64, "pass": true},
+    {"w": 1, "L": 6, "seed": 1, "dp": -11, "brute": -11, "dp_transition_evals": 22, "brute_assignments": 64, "pass": true},
+    {"w": 1, "L": 6, "seed": 2, "dp": -7, "brute": -7, "dp_transition_evals": 22, "brute_assignments": 64, "pass": true},
+    {"w": 1, "L": 6, "seed": 3, "dp": -8, "brute": -8, "dp_transition_evals": 22, "brute_assignments": 64, "pass": true},
+    {"w": 1, "L": 6, "seed": 4, "dp": -16, "brute": -16, "dp_transition_evals": 22, "brute_assignments": 64, "pass": true},
+    {"w": 2, "L": 5, "seed": 0, "dp": -11, "brute": -11, "dp_transition_evals": 68, "brute_assignments": 1024, "pass": true},
+    {"w": 2, "L": 5, "seed": 1, "dp": -16, "brute": -16, "dp_transition_evals": 68, "brute_assignments": 1024, "pass": true},
+    {"w": 2, "L": 5, "seed": 2, "dp": 3, "brute": 3, "dp_transition_evals": 68, "brute_assignments": 1024, "pass": true},
+    {"w": 2, "L": 5, "seed": 3, "dp": -1, "brute": -1, "dp_transition_evals": 68, "brute_assignments": 1024, "pass": true},
+    {"w": 2, "L": 5, "seed": 4, "dp": -16, "brute": -16, "dp_transition_evals": 68, "brute_assignments": 1024, "pass": true},
+    {"w": 3, "L": 4, "seed": 0, "dp": -11, "brute": -11, "dp_transition_evals": 200, "brute_assignments": 4096, "pass": true},
+    {"w": 3, "L": 4, "seed": 1, "dp": -27, "brute": -27, "dp_transition_evals": 200, "brute_assignments": 4096, "pass": true},
+    {"w": 3, "L": 4, "seed": 2, "dp": -11, "brute": -11, "dp_transition_evals": 200, "brute_assignments": 4096, "pass": true},
+    {"w": 3, "L": 4, "seed": 3, "dp": -12, "brute": -12, "dp_transition_evals": 200, "brute_assignments": 4096, "pass": true},
+    {"w": 3, "L": 4, "seed": 4, "dp": -24, "brute": -24, "dp_transition_evals": 200, "brute_assignments": 4096, "pass": true},
+    {"w": 4, "L": 3, "seed": 0, "dp": -6, "brute": -6, "dp_transition_evals": 528, "brute_assignments": 4096, "pass": true},
+    {"w": 4, "L": 3, "seed": 1, "dp": -25, "brute": -25, "dp_transition_evals": 528, "brute_assignments": 4096, "pass": true},
+    {"w": 4, "L": 3, "seed": 2, "dp": -12, "brute": -12, "dp_transition_evals": 528, "brute_assignments": 4096, "pass": true},
+    {"w": 4, "L": 3, "seed": 3, "dp": -6, "brute": -6, "dp_transition_evals": 528, "brute_assignments": 4096, "pass": true},
+    {"w": 4, "L": 3, "seed": 4, "dp": -18, "brute": -18, "dp_transition_evals": 528, "brute_assignments": 4096, "pass": true}
+  ],
+  "scaling": [
+    {"w": 1, "L": 32, "frontier_states": 2, "dp_transition_evals": 126, "full_assignments_log2": 32},
+    {"w": 2, "L": 32, "frontier_states": 4, "dp_transition_evals": 500, "full_assignments_log2": 64},
+    {"w": 3, "L": 32, "frontier_states": 8, "dp_transition_evals": 1992, "full_assignments_log2": 96},
+    {"w": 4, "L": 32, "frontier_states": 16, "dp_transition_evals": 7952, "full_assignments_log2": 128},
+    {"w": 5, "L": 32, "frontier_states": 32, "dp_transition_evals": 31776, "full_assignments_log2": 160},
+    {"w": 6, "L": 32, "frontier_states": 64, "dp_transition_evals": 127040, "full_assignments_log2": 192},
+    {"w": 7, "L": 32, "frontier_states": 128, "dp_transition_evals": 508032, "full_assignments_log2": 224},
+    {"w": 8, "L": 32, "frontier_states": 256, "dp_transition_evals": 2031872, "full_assignments_log2": 256},
+    {"w": 9, "L": 32, "frontier_states": 512, "dp_transition_evals": 8126976, "full_assignments_log2": 288},
+    {"w": 10, "L": 32, "frontier_states": 1024, "dp_transition_evals": 32506880, "full_assignments_log2": 320}
+  ],
+  "all_pass": true
+}
