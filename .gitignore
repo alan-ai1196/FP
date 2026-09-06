@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments / credentials
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Models / checkpoints / datasets
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.bin
+checkpoints/
+models/
+data/
+datasets/
+cache/
+.huggingface/
+
+# Generated experiment bulk
+runs/
+outputs/
+results/
+logs/
+*.log
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Native/build artifacts
+build/
+dist/
+*.egg-info/
+*.so
+*.dll
+*.dylib
+*.o
+*.obj
+*.exe
+*.pdb
+CMakeFiles/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
