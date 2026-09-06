@@ -114,6 +114,15 @@ passive tasks, finite dynamic range, and construction/acquisition of witnesses.
 The authority counterexamples are committed separately; full runtime closure
 and actual AMP gates remain open, with science HOLD.
 
+The subsequent `ONE_PRODUCT_CONDITIONAL_TABLE.md` result generalizes the witness
+to **every positive 2x2 conditional table, any finite output alphabet**. Exact
+minimum PRODUCT count is 0 or 1 according to vector-segment relative-interior
+intersection. Do not substitute scalar coordinatewise overlap for a shared
+vector witness. Exact need for PRODUCT can coexist with zero approximation
+gap; robust forcing requires the loss-separation theorem and physical/value
+reachability. This construction exploits native normalization and is not an
+external architecture menu.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

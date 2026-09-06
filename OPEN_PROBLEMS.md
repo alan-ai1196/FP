@@ -82,3 +82,10 @@ noise eta, unary indicator sources, arbitrary fixed nonnegative SUM coefficients
 base `(1,1)` and one final normalization, float64 searches for d=3--5 suggest
 `inf L=log2-2^(1-d)[log2-H(eta)]`. Only d=2 is proved. Audit details and the
 unrestricted-normalization baseline are in `theory/proofs/NORMALIZED_SUM_XOR.md`.
+
+**Additional solved expressivity boundary.** One shared PRODUCT realizes every
+positive 2x2 conditional table, including multiclass outputs; zero-PRODUCT exact
+realizability is a vector-segment intersection condition. The binary four-pool
+loss formula does not automatically extend to multiclass vector geometry.
+Physical coefficient range, acquisition, and reachable value remain substantive
+parts of the problem; exact PRODUCT count alone can have zero loss margin.

@@ -712,6 +712,31 @@ persistence are separate conditions; this theorem does not grant them.
 Full proofs, weighted formulas, nonattainment, and exact audits are in
 [`NORMALIZED_SUM_XOR.md`](theory/proofs/NORMALIZED_SUM_XOR.md).
 
+More generally, **one shared semantic PRODUCT suffices for every strictly
+positive 2x2 conditional table with any finite output alphabet** in this same
+static source/readout contract. Choose positive scaled target vectors
+`A=C_00 p_00>=1`, `B=C_01 p_01>=A`, `C=C_10 p_10>=A`, and
+`E=C_11 p_11-(B+C-A)>=0`. Then
+
+\[
+\boxed{M(x,z)=A+(C-A)x+(B-A)z+E xz}
+\]
+
+normalizes exactly to the four target distributions. Choosing each scale as
+the maximum necessary coordinate ratio makes every coefficient finite and
+nonnegative; at most `k-1` output heads need a nonzero PRODUCT edge.
+
+The zero-PRODUCT criterion is intersection of the relative interiors of the
+**vector** segments `conv{p_00,p_11}` and `conv{p_01,p_10}`. Thus the exact
+minimum semantic PRODUCT count is 0 when they intersect and 1 otherwise.
+Coordinatewise interval overlap is insufficient for multiple output labels.
+For binary touching intervals, exact realization may need 1 PRODUCT even
+though 0 PRODUCTs approximate arbitrarily well: exact count is not a robust
+epsilon-optimal forcing certificate. This does not minimize coefficient range,
+SUM structure, or any unspecified physical resource. See the constructive proof
+and exact counterexample in
+[`ONE_PRODUCT_CONDITIONAL_TABLE.md`](theory/proofs/ONE_PRODUCT_CONDITIONAL_TABLE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

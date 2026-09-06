@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact rational",
+  "scope": "strictly positive static 2x2 conditional table; fixed unary sources and base 1 per label",
+  "positive_binary_grid_tables": 256,
+  "binary_minimum_product_counts": {
+    "zero_products_exact": 124,
+    "one_product_exact_but_zero_in_closure": 80,
+    "one_product_with_disjoint_binary_intervals": 52
+  },
+  "random_positive_tables": 700,
+  "output_labels": "2 through 8",
+  "seed": 20260906,
+  "maximum_product_nodes_in_construction": 1,
+  "nonzero_product_head_edges_bound": "k-1",
+  "multiclass_coordinatewise_interval_shortcut_falsified": true,
+  "multiclass_separating_functional_projections": [
+    "0",
+    "1/2500",
+    "1/2500",
+    "0"
+  ],
+  "noisy_xor_integer_construction_recovered": true,
+  "not_claimed": [
+    "minimum physical resources",
+    "registered coefficient reachability",
+    "information acquisition",
+    "runtime closure",
+    "GPU/AMP science"
+  ]
+}

@@ -171,3 +171,23 @@ value and physical reachability. It adds no semantic action and grants no GPU
 science or runtime freeze. See `theory/proofs/NORMALIZED_SUM_XOR.md`; the audit
 uses 6,561 exact SUM assignments, 26,244 exact likelihood comparisons, rational
 table reconstruction, and separately labeled float64 searches.
+
+## 17. One-PRODUCT universality and the exact/approximate split (2026-09-06)
+
+The XOR construction generalized to every strictly positive 2x2 conditional
+table, with any finite output alphabet. Positive context-dependent mass scales
+allow a single shared corner PRODUCT plus unary SUM to realize the entire
+table. A max-ratio construction gives finite rational coefficients for rational
+targets and at most `k-1` nonzero PRODUCT-to-head edges. The exact minimum count
+is therefore 0 or 1, decided by intersection of the two vector-segment relative
+interiors. This is a semantic count theorem, not a free coefficient constructor
+or physical resource optimum.
+
+The boundary is scientifically important: 80 of the 256 audited binary rational
+tables need one PRODUCT for exact realization yet lie in the zero-PRODUCT
+closure. Exact expressivity alone cannot force structure with a positive loss
+margin. A separate exact four-label counterexample also kills the tempting
+coordinatewise interval shortcut: all scalar intervals overlap while a rational
+linear functional separates the actual vector segments. The audit checks all
+256 binary tables and 700 rational tables with 2--8 labels; see
+`theory/proofs/ONE_PRODUCT_CONDITIONAL_TABLE.md`.
