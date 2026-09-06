@@ -52,11 +52,18 @@ Recorded late-session approximate file sizes included:
 - `anti_unigram.py` 1,608 B
 - `__init__.py` 516 B
 
-The directly persisted late-WIP files currently restored here are:
+The directly preserved readable late-WIP source in this repository is:
 
-`runtime.py`, `proof.py`, `compiler.py`, `build.py`, `learner.py`, `bridge.py`, `info.py`, `persistence.py`.
+`bridge.py`, `info.py`, `learner.py`, `proof.py`.
 
-Important later-session design changes recorded in execution provenance, even where final bytes were not separately persisted:
+The following larger scratch modules were directly persisted in the session but were not a complete or frozen release and are **not** promoted into canonical source during migration:
+
+- `build.py` — SHA-256 `37097aecc90e24b97286b602879a84fcba41906b58e1db1179195979ae0c01f3`
+- `compiler.py` — SHA-256 `77933b57e052d022789fb558e531a289415528b8c8319c848fc9291190f695bc`
+- `persistence.py` — SHA-256 `4beee259a52be1d638728a0af74fb780f6b4da10ddf0cc8badc568619e602b4e`
+- `runtime.py` — SHA-256 `3a9b6836b1f1124690eaa79ab4016acd5afb01639f3c81ef78d04508a0b3de7c`
+
+Important later-session design changes recorded in execution provenance, even where final bytes were not separately promoted:
 
 - `ExplicitFiniteDecisionClass` scopes completeness;
 - `ProgramAuthority` verifies zero-valued native program skeletons;
