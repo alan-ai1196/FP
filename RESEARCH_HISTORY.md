@@ -137,3 +137,15 @@ Foundation R4 was frozen for Reference Compiler implementation on 2026-09-04. Th
 The first Reference Compiler implementation pass was intentionally adversarial. It found API-level ways a supposedly correct implementation could still fake the theorem object: caller-supplied uppers, safety/bridge/equivalence booleans, arbitrary candidate state/object lists, prediction-visible gradient accumulators, unregistered query payloads, ownership-free ledgers, hidden NaN tolerance, data reuse and incomplete Runtime snapshots.
 
 An intermediate strict module set passed 24/24 unit tests and 47/47 executable gates, then the complete Runtime was hardened further. The final endpoint integration was **not re-frozen** before migration. That exact implementation boundary is documented in `IMPLEMENTATION_STATUS.md` and is the next research task.
+
+## 15. Recovered authority counterexamples (2026-09-06)
+
+Executing the actual preserved proof/bridge source against reconstructed strict
+core value objects exposed four accepted invalid uses: upper-bound evidence
+signed as equivalence, skipped bridge events, unexecuted same-cursor endpoint
+replacement, and authorization from a dead bridge session. The missing historical
+runtime is not presumed runnable. These are helper implementation mismatches, not
+Foundation R4 counterexamples. The unifying obligation is a typed proposition
+about an owned, continuously executed complete-state prefix; a signed endpoint
+alone is insufficient. See `theory/proofs/EXECUTION_AUTHORITY_BOUNDARY.md` and
+`scripts/audit_recovered_authorities.py` for the exact reproduction and scope.

@@ -87,6 +87,15 @@ The repository therefore treats the current Reference Compiler source as a **rec
 
 ## 4. Required closure tests
 
+### Current recovery audit (2026-09-06)
+
+The reconstructed `core.py` restores strict claim/certificate data objects and
+typed complete-state identity. `scripts/audit_recovered_authorities.py` executes
+the actual recovered authority source and reproduces four false authorizations;
+see `theory/proofs/EXECUTION_AUTHORITY_BOUNDARY.md`. These helper imports and
+counterexamples do not restore the complete Runtime or validate the old gate
+counts. Implementation remains NOT FROZEN; science remains HOLD.
+
 Before an `implementation: freeze reference compiler` commit can be made, require at minimum:
 
 1. clean package import from a fresh clone;

@@ -1,0 +1,9 @@
+{
+  "source_commit": "39235ef8678cabc6fa675eb9e0568895d72d9b61",
+  "scope": "actual recovered proof/bridge code, reconstructed strict core data objects",
+  "upper_evidence_accepted_as_equivalence": true,
+  "skipped_event_accepted": true,
+  "same_cursor_unexecuted_state_replacement_accepted": true,
+  "dead_session_authorization_accepted": true,
+  "interpretation": "implementation mismatches, not Foundation R4 counterexamples"
+}
