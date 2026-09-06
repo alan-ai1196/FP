@@ -294,3 +294,21 @@ controller carries the interaction. Static all-class lower bounds therefore
 need selection before fresh context, or a separate valid conditional argument;
 they cannot be imported into causal LM by erasing the controller. The mean-null
 e-process itself remains valid. See `LOG_LOSS_PERSISTENCE_COST.md`.
+## 23. A full-degree obstruction and sharp sub-degree parity envelope (2026-09-06)
+
+Further multistart float64 attacks did not disprove the d-bit unary-SUM
+conjecture, but are not a proof. A different, larger class admitted an exact
+all-dimension solution. Every mass polynomial below degree d has zero top
+parity moment, forcing overlap of the positive-weighted prediction means on
+the two parity classes. The resulting sharp infimum is Bayes risk plus
+`2^(1-d)[log2-H(eta)]`.
+
+A native spanning-tree hierarchy of degree-(d-1) edge indicators matches all
+but two contexts in the limit, proving sharpness with explicit finite range
+and error bounds. Positive base prevents finite attainment. Exact noisy parity
+must retain full-degree mass information and needs at least `ceil(log2 d)`
+PRODUCT depth; sharing means degree is not bounded by node count plus one.
+The audit checks 501 proper-monomial moments, 1,153 small edge assignments and
+28 finite hierarchies with exact rational arithmetic. This larger class does
+not settle the unary-SUM conjecture, grant the hierarchy's value construction,
+or close the complete runtime. See `PARITY_DEGREE_ENVELOPE.md`.

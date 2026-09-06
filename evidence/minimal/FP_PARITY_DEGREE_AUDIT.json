@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact Fraction decisions; CE floats are displays only",
+  "scope": "all mass polynomials of multilinear degree < d; uniform noisy parity",
+  "proper_monomial_parity_moments_checked": 501,
+  "exhaustive_three_bit_edge_assignments_with_at_most_two_active_slots": 1153,
+  "positive_noise_hierarchies_checked": 28,
+  "noise_one_quarter_witnesses": [
+    {
+      "bits": 2,
+      "K": 256,
+      "maximum_prediction_error": "1/516",
+      "proved_prediction_error_upper": "3/256",
+      "ce_float64_display": 0.6282334665275121,
+      "infimum_float64_display": 0.6277411625893767
+    },
+    {
+      "bits": 3,
+      "K": 256,
+      "maximum_prediction_error": "257/131588",
+      "proved_prediction_error_upper": "1/64",
+      "ce_float64_display": 0.5955295595364172,
+      "infimum_float64_display": 0.5950381536040925
+    },
+    {
+      "bits": 4,
+      "K": 256,
+      "maximum_prediction_error": "131073/33816580",
+      "proved_prediction_error_upper": "5/256",
+      "ce_float64_display": 0.5790594645740482,
+      "infimum_float64_display": 0.5786866491114504
+    },
+    {
+      "bits": 5,
+      "K": 256,
+      "maximum_prediction_error": "50331649/8690597892",
+      "proved_prediction_error_upper": "3/128",
+      "ce_float64_display": 0.5707667864146044,
+      "infimum_float64_display": 0.5705108968651293
+    },
+    {
+      "bits": 6,
+      "K": 256,
+      "maximum_prediction_error": "17179869185/2233382993924",
+      "proved_prediction_error_upper": "7/256",
+      "ce_float64_display": 0.5665923256545141,
+      "infimum_float64_display": 0.5664230207419688
+    },
+    {
+      "bits": 7,
+      "K": 256,
+      "maximum_prediction_error": "5497558138881/573945069699076",
+      "proved_prediction_error_upper": "1/32",
+      "ce_float64_display": 0.5644913716961901,
+      "infimum_float64_display": 0.5643790826803886
+    },
+    {
+      "bits": 8,
+      "K": 256,
+      "maximum_prediction_error": "1688849860263937/147492887796383748",
+      "proved_prediction_error_upper": "9/256",
+      "ce_float64_display": 0.5634341969586665,
+      "infimum_float64_display": 0.5633571136495984
+    }
+  ],
+  "not_claimed": [
+    "unary-SUM conjecture for d>=3 proved",
+    "sharp semantic PRODUCT count or physical resource minimum",
+    "finite attainment of the infimum",
+    "registered value/build/install reachability",
+    "complete runtime, fresh persistence or AMP bridge"
+  ]
+}

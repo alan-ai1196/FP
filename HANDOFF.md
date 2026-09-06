@@ -176,6 +176,16 @@ why this cannot be silently assumed for general causal LM. Read
 `LOG_LOSS_PERSISTENCE_COST.md`; complete controller accounting, actual wealth
 arithmetic, physical installation, and the AMP bridge remain separate.
 
+Multi-input research now has an all-dimension exact envelope in XVII.7 for the
+**full mass-degree-below-d family** on noisy parity. Positive normalization
+retains a highest-order Fourier obstruction; a native edge-indicator hierarchy
+shows the loss lower bound is sharp but unattained. This also proves a PRODUCT
+depth lower bound, without conflating degree with node count under sharing.
+Read `PARITY_DEGREE_ENVELOPE.md`. This is a larger class than unary SUM for d>=3:
+its small excess over Bayes does not settle the still-open unary-SUM conjecture
+about a small improvement over unigram. Range, value construction and physical
+installation of the hierarchy are not granted by the extensional theorem.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

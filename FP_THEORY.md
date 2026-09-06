@@ -946,6 +946,38 @@ Omega; the iid-context power premise is not granted for general causal LM.
 Proof and exact audit:
 [`LOG_LOSS_PERSISTENCE_COST.md`](theory/proofs/LOG_LOSS_PERSISTENCE_COST.md).
 
+## XVII.7. The exact sub-parity-degree envelope in every dimension
+
+For uniform d-bit parity, d>=2, symmetric label noise `0<=eta<1/2`, unary
+indicator sources, base `(1,1)` and one final normalization, consider **all**
+native fixed-coefficient programs whose two mass polynomials have multilinear
+degree at most d-1. Their exact cross-entropy infimum is
+
+\[
+\boxed{L_{<d}^*=H(\eta)+2^{1-d}[\log2-H(\eta)].}
+\]
+
+The top parity moment of each mass vanishes, forcing the positive-normalizer-
+weighted probability means of the two parity classes to coincide. Some
+opposite-parity pair must therefore have reversed probability order, costing
+at least `2 log2`; all other contexts cost at least Bayes. Equality is impossible
+at finite positive mass. A native spanning-tree hierarchy of N-1 cube-edge
+indicators, each of degree d-1, approaches Bayes at all but two root contexts
+and attains the bound in the limit. At finite coefficient scale K, prediction
+error to that limit is at most `(d+1)/K`; its range and graph costs are explicit.
+
+Exact noisy parity requires nonzero full-degree mass information despite
+normalization. In this source contract it therefore needs PRODUCT depth at
+least `ceil(log2 d)`. Degree is not PRODUCT count: shared repeated squaring
+precludes assuming degree <= count+1. The depth bound is not asserted sharp.
+
+This full sub-degree family is **larger than unary SUM** for d>=3. Its small
+gap above Bayes is not the unary-SUM conjecture's small improvement over
+unigram; the latter remains open. Neither the unattained infimum nor the finite
+algebraic construction supplies registered value/install or AMP evidence.
+Proof and exact audit:
+[`PARITY_DEGREE_ENVELOPE.md`](theory/proofs/PARITY_DEGREE_ENVELOPE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

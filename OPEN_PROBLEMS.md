@@ -83,6 +83,15 @@ base `(1,1)` and one final normalization, float64 searches for d=3--5 suggest
 `inf L=log2-2^(1-d)[log2-H(eta)]`. Only d=2 is proved. Audit details and the
 unrestricted-normalization baseline are in `theory/proofs/NORMALIZED_SUM_XOR.md`.
 
+**All-dimension degree result, distinct from that conjecture.** XVII.7 proves
+that the larger family of native mass polynomials with multilinear degree <d
+has sharp infimum `H(eta)+2^(1-d)[log2-H(eta)]`. A Fourier moment gives the
+all-class lower bound; a finite edge-indicator hierarchy approaches it with
+explicit range/error costs. Exact noisy parity requires full degree and at
+least `ceil(log2 d)` PRODUCT depth. Sharp unary-SUM envelopes and intermediate
+degree/node/physical-budget phases remain open. Do not mistake this degree
+family's small Bayes excess for the unary-SUM conjecture's small unigram gain.
+
 **Additional solved expressivity boundary.** One shared PRODUCT realizes every
 positive 2x2 conditional table, including multiclass outputs; zero-PRODUCT exact
 realizability is a vector-segment intersection condition. The binary four-pool
