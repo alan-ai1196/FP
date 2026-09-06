@@ -1,0 +1,16 @@
+{
+  "release": "R4_2_V23",
+  "theory": "FP_THEORY_CANONICAL_2026-08-29_v23",
+  "compiler": "finite_first_order_atomic_positive_measure_batched_pricing_feasible_exact_or_unresolved",
+  "runtime": "online_first_evidence_fail_safe_positive_measure_continuation",
+  "physical_selection": "v23_absolute_deployed_value_structural_one_shadow_hard_wall_vram",
+  "target": "Windows_RTX3090_24GB_AMP",
+  "algorithm_reference_precision": "float64",
+  "status": "release",
+  "native_precision": "BF16_autocast_factor_eval_FP32_positive_accumulation",
+  "science_entry": "RUN_FP_NATIVE_PRIOR_R4_2.bat",
+  "smoke_protocol": false,
+  "pricing": "2_residual_adaptive_global_scans_x16_numerical_batch_exact_or_unresolved",
+  "numerical_failure": "feasible_witness_or_no_commit_unresolved_never_iteration_cap_crash",
+  "supersedes": "R4_1_V23"
+}
