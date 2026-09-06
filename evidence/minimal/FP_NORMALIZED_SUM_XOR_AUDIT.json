@@ -1,0 +1,185 @@
+{
+  "status": "PASS",
+  "scope": "static two-bit unary sources; arbitrary positive SUM DAG; base (1,1); one final normalization",
+  "proof": "theory/proofs/NORMALIZED_SUM_XOR.md",
+  "exact_sum_weight_assignments": 6561,
+  "exact_likelihood_checks": 26244,
+  "rational_table_grid": {
+    "total": 256,
+    "finite_representations_constructed": 124,
+    "closure_only": 80,
+    "separated": 52
+  },
+  "max_float64_probability_roundoff_on_integer_grid": 0.0,
+  "deterministic_xor": {
+    "unigram_ce": 0.6931471805599453,
+    "sum_ce_infimum": 0.34657359027997264,
+    "sum_likelihood_supremum": "1/4",
+    "finite_sum_beats_unigram_likelihood": "25/256",
+    "finite_sum_ce": 0.5815754049028403,
+    "sum_approach_ce_A_10_100_1000_K_A_squared": [
+      0.4142385674101914,
+      0.3539932605255903,
+      0.34732277871571815
+    ],
+    "one_product_integer_witness_likelihood": "81/256",
+    "one_product_ce": 0.28768207245178085,
+    "strict_forcing_gap_to_finite_witness": 0.0588915178281918
+  },
+  "one_product_rational_odds_checked": [
+    "1",
+    "3/2",
+    "2",
+    "3",
+    "9"
+  ],
+  "exact_weighted_envelopes": {
+    "deterministic_xor": {
+      "likelihood_supremum": "1/4",
+      "optimal_pool_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "infimum_ce_float64_display": 0.34657359027997264
+    },
+    "noise_one_quarter": {
+      "likelihood_supremum": "729/16777216",
+      "optimal_pool_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "infimum_ce_float64_display": 0.6277411625893768
+    },
+    "unequal_counts_and_noise": {
+      "likelihood_supremum": "494437544945586188422812/236021301115471892382287808502147",
+      "optimal_pool_pairs": [
+        [
+          3,
+          1
+        ]
+      ],
+      "infimum_ce_float64_display": 0.5551046403660754
+    },
+    "overlapping_target_intervals": {
+      "likelihood_supremum": "764411904/95367431640625",
+      "optimal_pool_pairs": [],
+      "infimum_ce_float64_display": 0.5867070452737222
+    }
+  },
+  "not_claimed": [
+    "finite attainment of every envelope",
+    "registered value reachability",
+    "resource/install feasibility",
+    "persistence",
+    "AMP bridge",
+    "Compiler freeze"
+  ],
+  "numerical_search": {
+    "arithmetic": "float64",
+    "algorithm": "bounded log-weight L-BFGS-B; fixed positive base retained",
+    "seed": 20260906,
+    "results": [
+      {
+        "bits": 2,
+        "noise": 0.0,
+        "restarts": 16,
+        "best_ce": 0.3465736080422879,
+        "successful_terminations": 16,
+        "comparison_value": 0.34657359027997264,
+        "comparison_status": "PROVED infimum"
+      },
+      {
+        "bits": 2,
+        "noise": 0.01,
+        "restarts": 16,
+        "best_ce": 0.37457435746001155,
+        "successful_terminations": 16,
+        "comparison_value": 0.3745743574573963,
+        "comparison_status": "PROVED infimum"
+      },
+      {
+        "bits": 2,
+        "noise": 0.1,
+        "restarts": 16,
+        "best_ce": 0.5091150769768341,
+        "successful_terminations": 16,
+        "comparison_value": 0.5091150769756967,
+        "comparison_status": "PROVED infimum"
+      },
+      {
+        "bits": 2,
+        "noise": 0.25,
+        "restarts": 16,
+        "best_ce": 0.6277411625913472,
+        "successful_terminations": 16,
+        "comparison_value": 0.6277411625893767,
+        "comparison_status": "PROVED infimum"
+      },
+      {
+        "bits": 2,
+        "noise": 0.4,
+        "restarts": 16,
+        "best_ce": 0.6830794237875872,
+        "successful_terminations": 16,
+        "comparison_value": 0.683079423784601,
+        "comparison_status": "PROVED infimum"
+      },
+      {
+        "bits": 3,
+        "noise": 0.1,
+        "restarts": 16,
+        "best_ce": 0.6011311287689219,
+        "successful_terminations": 16,
+        "comparison_value": 0.601131128767821,
+        "comparison_status": "CONJECTURE ONLY"
+      },
+      {
+        "bits": 4,
+        "noise": 0.1,
+        "restarts": 16,
+        "best_ce": 0.6471391546790105,
+        "successful_terminations": 16,
+        "comparison_value": 0.6471391546638832,
+        "comparison_status": "CONJECTURE ONLY"
+      },
+      {
+        "bits": 5,
+        "noise": 0.1,
+        "restarts": 16,
+        "best_ce": 0.6701431677402636,
+        "successful_terminations": 16,
+        "comparison_value": 0.6701431676119142,
+        "comparison_status": "CONJECTURE ONLY"
+      }
+    ],
+    "scope": "local numerical search, never a completeness or global-optimality certificate"
+  }
+}

@@ -102,7 +102,20 @@ A caller must not be able to submit a magically pre-trained state, arbitrary che
 
 ## 6. Immediate next work
 
-The highest-value next task is **implementation closure**, not new theory and not GPU science:
+**Research update (2026-09-06).** The user explicitly redirected work away from
+getting stuck in engineering and towards research. The new result in
+`FP_THEORY.md` XVII.1 solves the exact normalized-SUM loss envelope for weighted
+binary 2x2 tables and gives a one-PRODUCT XOR witness below the strongest SUM
+control. Read `theory/proofs/NORMALIZED_SUM_XOR.md` and its exact audit before
+using anti-unigram gates. Beating unigram alone does not force PRODUCT. The
+continuous SUM optimum can be unattained, so it is an optimistic envelope,
+not a reachable lower witness. The next research frontier includes multi-input
+passive tasks, finite dynamic range, and construction/acquisition of witnesses.
+The authority counterexamples are committed separately; full runtime closure
+and actual AMP gates remain open, with science HOLD.
+
+Implementation closure remains a prerequisite to model/GPU science. Its
+outstanding work is:
 
 1. finish/reconstruct the strict complete `ReferenceCompilerRuntime` from the preserved WIP, recovery notes and historical implementations;
 2. make one complete execution surface own all claim-relevant mutable state;

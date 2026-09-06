@@ -149,3 +149,25 @@ Foundation R4 counterexamples. The unifying obligation is a typed proposition
 about an owned, continuously executed complete-state prefix; a signed endpoint
 alone is insufficient. See `theory/proofs/EXECUTION_AUTHORITY_BOUNDARY.md` and
 `scripts/audit_recovered_authorities.py` for the exact reproduction and scope.
+
+## 16. Native normalization changes the structural baseline (2026-09-06)
+
+Research shifted from authority engineering to the mathematical condition for
+task-forced PRODUCT. An adversarial float64 search found that arbitrary positive
+SUM with native normalization improves on unigram even for balanced XOR. The
+exact solution is an interval-intersection characterization of binary 2x2
+conditional tables; the entire weighted SUM loss envelope reduces to four
+Bernoulli pooling costs. For balanced noisy XOR the sharp infimum is
+`[log 2+H(eta)]/2`, unattained at finite coefficients unless `eta=1/2`.
+
+The bound also controls arbitrary token-specific unary SUM models in the
+block-factorized hidden-group gate, so it does not manufacture a weak baseline
+by supplying or fixing a group representation. A single native PRODUCT with
+positive readout masses `3+48xz` and `1+8(x+z)` predicts deterministic XOR correctly
+with probability `3/4` at every context and strictly beats that full SUM envelope.
+Four categorical pair-cell PRODUCTs are not necessary. This yields a scoped
+all-optima PRODUCT-forcing certificate, conditional on the witness's registered
+value and physical reachability. It adds no semantic action and grants no GPU
+science or runtime freeze. See `theory/proofs/NORMALIZED_SUM_XOR.md`; the audit
+uses 6,561 exact SUM assignments, 26,244 exact likelihood comparisons, rational
+table reconstruction, and separately labeled float64 searches.

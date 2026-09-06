@@ -63,3 +63,22 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 **Known.** Low-rank two-sided operator access and low-overlap hidden-hypergraph interfaces have tractable subclasses; arbitrary point-query/frontier and general hidden hypergraph families have hard lower bounds.
 
 **Falsification target.** Exhibit a realistic required FP structure family whose passive legal transcript is non-identifying even with unlimited compute; that would prove the corresponding emergence claim needs a richer declared information contract, not a new architecture primitive.
+
+## 7. Extend the sharp normalized-SUM structural envelope
+
+**Solved base case.** `FP_THEORY.md` XVII.1 gives the complete static weighted
+2x2 loss envelope and a one-PRODUCT noisy-XOR witness. Normalization makes the
+SUM-only control strictly stronger than unigram. The result extends to arbitrary
+unary token coefficients under block-factorized hidden-group sampling.
+
+**Open statement.** Characterize the corresponding envelope for multi-input
+passive tasks, non-factorizing sampling, and finite physical coefficient/range
+constraints, then connect a strict separation to registered acquisition and
+constructive value/build/install paths. An unattained continuous infimum is a
+sound optimistic control, not an installable optimizer endpoint.
+
+**Concrete conjecture, not a pruning rule.** For uniform d-bit parity, symmetric
+noise eta, unary indicator sources, arbitrary fixed nonnegative SUM coefficients,
+base `(1,1)` and one final normalization, float64 searches for d=3--5 suggest
+`inf L=log2-2^(1-d)[log2-H(eta)]`. Only d=2 is proved. Audit details and the
+unrestricted-normalization baseline are in `theory/proofs/NORMALIZED_SUM_XOR.md`.

@@ -661,6 +661,57 @@ If the observed graph has \(c>1\) connected components, each component may be fl
 
 Once the partition is identified, each group source is a legal positive SUM of token one-hot atoms and pair cells are native PRODUCT. The Compiler must not be handed latent group IDs or the conditional relation table.
 
+## XVII.1. Sharp normalized-SUM control and a scoped PRODUCT-forcing certificate
+
+For a static two-binary-input task with only the four unary indicator sources,
+fixed base `(1,1)`, fixed finite coefficients, an acyclic SUM-only DAG of
+arbitrary width/sharing, and one final native normalization, every output mass
+is additive: `M_y(i,j)=1+u_{y,i}+v_{y,j}`. This is an extensional loss envelope,
+not a physical or complete-state quotient.
+
+A strictly positive binary conditional table `p_ij=P(Y=1|i,j)` is realizable
+iff the relative interiors of `conv{p_00,p_11}` and `conv{p_01,p_10}` intersect.
+Its prediction-family closure replaces relative interiors with closed intervals.
+For arbitrary positive cell weights, if the target intervals are disjoint, the
+exact log-loss infimum is obtained by pooling one diagonal/off-diagonal pair:
+choose the least weighted Bernoulli entropy increase among the four pairs and
+leave the other target probabilities unchanged. Integer-count likelihoods
+permit exact rational comparison. This solves a relaxed prediction envelope;
+it does not authorize unreachable coefficient states or Compiler completion.
+
+For balanced XOR with symmetric noise `0<=eta<=1/2`, this gives the sharp bound
+
+\[
+\boxed{\inf_{SUM}L=\tfrac12[\log2+H(\eta)].}
+\]
+
+For `eta<1/2` it is an unattained infimum over finite coefficients. In particular,
+SUM plus normalization can beat unigram: the deterministic-XOR infimum is
+`(log 2)/2`, not `log 2`. This same sharp control holds for arbitrary unary
+token-specific SUM coefficients in the hidden-group task under block-factorized
+within-group sampling; it does not assume the baseline knows the hidden groups.
+
+One semantic PRODUCT suffices for an exact noisy-XOR conditional. With the
+declared one-indicators `x,z` and `r>=1`, use
+
+\[
+M_0=r+2r(r^2-1)xz,\qquad M_1=1+(r^2-1)(x+z).
+\]
+
+The constant extra mass is a SUM of the declared partition atoms. Correct-label
+probability is `r/(r+1)` at all four cells. In particular `r=3` uses masses
+`3+48xz` and `1+8(x+z)` and obtains deterministic-XOR loss `log(4/3)<(log2)/2`.
+
+If a registered reachable target class has a nonempty optimal set and a feasible,
+constructively reachable witness strictly below the SUM envelope, every optimum
+contains semantic PRODUCT. For epsilon-optimal forcing require
+`L_witness+epsilon<inf_SUM L`. Source enrichment, internal normalization, adaptive
+recurrence, an input-dependent base, build/install reachability, and fresh
+persistence are separate conditions; this theorem does not grant them.
+
+Full proofs, weighted formulas, nonattainment, and exact audits are in
+[`NORMALIZED_SUM_XOR.md`](theory/proofs/NORMALIZED_SUM_XOR.md).
+
 ---
 
 # XVIII. Reference Compiler contract
