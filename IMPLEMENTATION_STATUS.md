@@ -8,9 +8,9 @@
 
 This distinction is important. A complete implementation existed for older theory versions; the stricter Foundation-R4 Reference Compiler rewrite was still under adversarial integration when persistence moved from chat/local scratch to GitHub.
 
-## 1. Recovered complete historical implementation
+## 1. Recovered historical implementation provenance
 
-`experiments/legacy_r4_2_v23/` is restored from the sealed historical package `FP_NATIVE_FROM_PRIOR_R4_2_V23_3090_ONECLICK_WINDOWS_MSVC.zip`.
+The sealed historical package `FP_NATIVE_FROM_PRIOR_R4_2_V23_3090_ONECLICK_WINDOWS_MSVC.zip` was recovered and audited during migration. The canonical repository keeps a curated readable subset under `experiments/legacy_r4_2_v23/` plus `SOURCE_MANIFEST.md`, which records the exact package identity and SHA-256 of every recovered source/text file. The old ZIP, embedded `.git`, caches, datasets, checkpoints and raw logs are intentionally not imported.
 
 Historical release metadata:
 
@@ -21,11 +21,11 @@ Historical release metadata:
 - fresh build-host gates: 25/25 PASS;
 - target CUDA gates were deferred in that package.
 
-It contains the complete `fpnp` package (`compiler_v23.py`, `async_compile.py`, `program.py`, `transaction.py`, `gpu_runtime.py`, `readout.py`, `selftest.py`, etc.) and its source/postmortem docs.
+The recovered package itself contained the complete `fpnp` implementation (`compiler_v23.py`, `async_compile.py`, `program.py`, `transaction.py`, `gpu_runtime.py`, `readout.py`, `selftest.py`, etc.). The canonical repository retains only the historical source needed to audit the implementation shape and R4.2 failure; omitted superseded files remain cryptographically identified by `SOURCE_MANIFEST.md` rather than duplicated as a second maintained implementation.
 
-**This code is intentionally classified as `SUPERSEDED`.** The real R4.2 trace became the v24 counterexample: it stayed near the unigram prior and materialized no PRODUCT nodes despite high evidence throughput. Preserve it for audit and code reuse, not as current Compiler semantics.
+**This historical implementation is intentionally classified as `SUPERSEDED`.** The real R4.2 trace became the v24 counterexample: it stayed near the unigram prior and materialized no PRODUCT nodes despite high evidence throughput. Preserve it for audit and code-reference purposes, not as current Compiler semantics.
 
-A still earlier R3 final package was also recovered during migration. It contained its own coherent embedded Git history with commits from imported baseline through theory-faithful telemetry. Its code is not duplicated here because R4.2 is the later complete historical implementation; its commit provenance is recorded in `docs/migration/ASSET_AUDIT_2026-09-06.md`.
+A still earlier R3 final package was also recovered during migration. It contained its own coherent embedded Git history with commits from imported baseline through theory-faithful telemetry. Its old `.git` is not imported; its provenance is recorded in `docs/migration/ASSET_AUDIT_2026-09-06.md`.
 
 ## 2. Foundation-R4 Reference Compiler rewrite
 
@@ -81,7 +81,7 @@ The **final endpoint integration after these changes had not been re-run through
 
 The migration preserves the directly persisted late-WIP modules that are small enough to remain useful as readable recovery source (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set, sizes, important later-session design changes, and known source hashes where available.
 
-Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the complete R4.2 implementation only as implementation references, then re-run all gates.
+Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the historical R4.2 implementation only as an implementation reference, then re-run all gates.
 
 The repository therefore treats the current Reference Compiler source as a **recovery/WIP branch point**, not a release. Do not report its package as complete until imports/tests are restored and the complete endpoint suite passes.
 
