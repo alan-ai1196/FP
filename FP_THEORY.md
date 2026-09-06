@@ -775,6 +775,51 @@ known-cone membership/closure** result, not general FP compilation or a
 Reference Compiler `CERTIFIED_COMPLETE` decision. Proof and exact certificates:
 [`NORMALIZED_POSITIVE_CONE_CLOSURE.md`](theory/proofs/NORMALIZED_POSITIVE_CONE_CLOSURE.md).
 
+## XVII.3. A range-constrained, positive-margin PRODUCT phase
+
+In the static binary unary-source class above, let the class-1 target table be
+`p=(1/2,1/2,3/4,1/4)` on uniform contexts, retain base `(1,1)`, and preregister
+the **readout-normalizer cap** `max_(i,j) T_ij<=R`. This is a numerical range
+constraint, not a claim about unspecified hardware resources or intermediate
+activation bounds.
+
+For SUM-only graphs, the minimum required peak normalizer at sup-norm error
+`0<delta<=1/8` is exactly
+
+\[
+\boxed{R^*_{SUM}(\delta)=\frac{1-4\delta}{\delta(1+4\delta)}.}
+\]
+
+For `1/8<=delta<=1/4` it is `4/(1+4delta)`, and for `delta>=1/4` it is 2.
+Exact SUM realization needs unbounded range. These are attained finite-error
+bounds; the closure theorem alone does not remove their cost. At `R=4`, the
+best SUM sup-norm error is the irrational number `(sqrt(2)-1)/4`.
+
+Every DAG with at most one semantic PRODUCT has output masses
+`M_y=1+u_y(i)+v_y(j)+c_y h_ij`, `c_y>=0`. Thus their mixed differences satisfy
+`Delta M_0 * Delta M_1>=0`, including arbitrary PRODUCTs of SUM parents. This
+proves that exact realization of the stated target with one PRODUCT needs
+`R>=16/3`. A native witness attains that bound:
+
+\[
+h=(x_0+z_1)(3x_1+\tfrac53z_0),\quad
+M_0=1+h,\quad M_1=1+\tfrac13x_1+\tfrac53z_0.
+\]
+
+Two PRODUCTs, `M_0=1+2x_1z_1` and `M_1=1+2x_1z_0`, attain Bayes risk already
+at `R=4`; no graph can do so below 4. Therefore the minimum PRODUCT count among
+Bayes-optimal realizations is 2 for `4<=R<16/3` and 1 for `R>=16/3`. Larger
+graphs remain tied: the latter regime does not force every optimum to have
+exactly one PRODUCT.
+
+This separation is robust. For `4<=R<16/3`, every at-most-one-PRODUCT model
+has sup-norm error at least `(16-3R)/(48+16R)` and excess CE at least half the
+square of that number. At `R=4`, the gap is at least `1/1568` nats. Subject to
+the two-PRODUCT witness's registered value/build/install reachability, every
+epsilon-optimal target with `epsilon<1/1568` must therefore have at least two
+PRODUCTs. Full proof, scope, and exact audit:
+[`RANGE_CONSTRAINED_PRODUCT_PHASE.md`](theory/proofs/RANGE_CONSTRAINED_PRODUCT_PHASE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

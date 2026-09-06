@@ -132,6 +132,16 @@ useful scoped solver result, not a full Compiler freeze or an oracle for an
 unknown conditional table. The 3x3 hidden-XOR counterexample and audit are in
 `NORMALIZED_POSITIVE_CONE_CLOSURE.md`.
 
+The finite-range gap is now explicit in `FP_THEORY.md` XVII.3: the boundary
+table `(1/2,1/2,3/4,1/4)` has a sharp SUM approximation/range tradeoff, and its
+Bayes-optimal minimum PRODUCT count falls from 2 to 1 when a preregistered
+readout-normalizer cap passes `16/3` (Bayes feasibility starts at 4). The
+at-most-one-PRODUCT exclusion at R=4 has a proved `1/1568` CE margin and covers
+PRODUCTs of arbitrary SUM parents, not a corner-interaction menu. This is still
+a static numerical-range result; do not label it a GPU/bytes/FLOPs phase or
+grant unconstructed coefficients. Remaining research should connect such
+certificates to finite passive information and registered value construction.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

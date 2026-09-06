@@ -97,3 +97,11 @@ approximation closure is decided by at most one residual LP per context
 settles membership, not minimum log loss over general multi-input/multiclass
 tables or acquisition/physical reachability. A first nonnegative cone solution
 alone is falsified as a closure certificate by the 3x3 hidden-XOR example.
+
+**Additional solved finite-range case.** `FP_THEORY.md` XVII.3 gives the sharp
+SUM range/error tradeoff for a boundary table and a positive-margin transition
+from two required PRODUCTs to one as a final-normalizer cap increases. The
+at-most-one-PRODUCT class is unrestricted within the stated native grammar.
+General multi-input/multiclass loss envelopes, actual hardware-resource phases,
+passive acquisition, and registered value reachability remain open. A cap on
+the readout normalizer is not automatically a cap on intermediate activations.

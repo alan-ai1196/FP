@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact rational",
+  "resource_scope": "final normalizer cap only, fixed base (1,1)",
+  "target_class_one_probability": [
+    "1/2",
+    "1/2",
+    "3/4",
+    "1/4"
+  ],
+  "sharp_sum_range_error_witnesses": [
+    {
+      "error_budget": "1/100",
+      "attained_peak_normalizer": "1200/13",
+      "actual_error": "1/100"
+    },
+    {
+      "error_budget": "1/32",
+      "attained_peak_normalizer": "224/9",
+      "actual_error": "1/32"
+    },
+    {
+      "error_budget": "1/16",
+      "attained_peak_normalizer": "48/5",
+      "actual_error": "1/16"
+    },
+    {
+      "error_budget": "1/8",
+      "attained_peak_normalizer": "8/3",
+      "actual_error": "1/8"
+    },
+    {
+      "error_budget": "3/16",
+      "attained_peak_normalizer": "16/7",
+      "actual_error": "3/16"
+    },
+    {
+      "error_budget": "1/4",
+      "attained_peak_normalizer": "2",
+      "actual_error": "1/4"
+    },
+    {
+      "error_budget": "1/3",
+      "attained_peak_normalizer": "2",
+      "actual_error": "1/4"
+    }
+  ],
+  "exhaustive_unary_sum_assignments": 6561,
+  "assignments_testing_nontrivial_range_bound": 280,
+  "exact_one_product_threshold": "16/3",
+  "exact_two_product_threshold": "4",
+  "one_product_witness_mass_pairs": [
+    [
+      "8/3",
+      "8/3"
+    ],
+    [
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "3"
+    ],
+    [
+      "4",
+      "4/3"
+    ]
+  ],
+  "two_product_witness_mass_pairs": [
+    [
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "1"
+    ],
+    [
+      "1",
+      "3"
+    ],
+    [
+      "3",
+      "1"
+    ]
+  ],
+  "generic_product_of_sums_random_controls": 2000,
+  "random_seed": 20260906,
+  "cap_four_sum_optimal_error": {
+    "algebraic": "(sqrt(2)-1)/4",
+    "certified_lower": "103553390593/1000000000000",
+    "certified_upper": "51776695297/500000000000"
+  },
+  "cap_four_at_most_one_product_supnorm_lower_bound": "1/28",
+  "cap_four_at_most_one_product_excess_ce_lower_bound": "1/1568",
+  "not_claimed": [
+    "sharp one-product approximation curve",
+    "one-product uniqueness at larger cap",
+    "intermediate-activation bound",
+    "hardware bytes/FLOPs optimum",
+    "registered optimizer reachability",
+    "Compiler/AMP closure"
+  ]
+}

@@ -211,3 +211,22 @@ exact realization, closure, acquisition, finite physical range, and reachable
 value. Float64 LP outputs are only proposals and every accepted primal/dual
 vector is checked against the original rational equations. See
 `theory/proofs/NORMALIZED_POSITIVE_CONE_CLOSURE.md`.
+
+## 19. From unattained closure to a finite-range structural phase (2026-09-06)
+
+The binary target `(1/2,1/2,3/4,1/4)` exposed the cost hidden in “arbitrarily
+approximable”: its sharp small-error SUM normalizer requirement grows as
+`(1-4delta)/(delta(1+4delta))`. At cap R=4 the optimal relaxed SUM error is
+`(sqrt(2)-1)/4`, so even rational inputs and a rational cap need not produce a
+rational optimum.
+
+The same task gives a complete native PRODUCT-count phase under the declared
+readout-normalizer cap. Two PRODUCTs attain Bayes risk at R=4. An arbitrary
+one-PRODUCT DAG obeys a same-sign mixed-difference invariant, proving that it
+needs R>=16/3; a PRODUCT of two cross-input SUMs attains that threshold. Thus
+relaxing the cap removes the requirement for at least two PRODUCTs. The result
+also has a positive loss margin: at R=4 every at-most-one-PRODUCT model loses
+at least 1/1568 nats to the two-PRODUCT Bayes witness. This avoids confusing an
+unattained exact distinction with robust structural forcing. It is a numerical
+range theorem, not a claim about unspecified memory/FLOPs or an executed learner.
+See `theory/proofs/RANGE_CONSTRAINED_PRODUCT_PHASE.md` and its exact audit.
