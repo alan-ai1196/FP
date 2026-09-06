@@ -1031,6 +1031,48 @@ registered value/build/install, persistence or AMP authorization.
 Proof and exact primal/dual audits:
 [`PARITY_PROVENANCE_RANGE.md`](theory/proofs/PARITY_PROVENANCE_RANGE.md).
 
+## XVII.9. Complete static loss brackets for a known positive mass cone
+
+For finitely many known rational nonnegative mass atoms, strictly positive
+rational base, independent nonnegative coefficients subject to a declared
+rational polyhedral domain, and integer observation counts c of total C>0,
+write `P(q)=product q_xy^c_xy` and `L=-log(P)/C`. The entire static coefficient
+class admits **finite arbitrary-accuracy global likelihood brackets**:
+for any rational gamma>1, an exact-LP algorithm returns an empty-class proof
+or a finite rational witness with
+
+\[
+\boxed{P_{low}\le\sup P\le P_{high}\le\gamma P_{low},\qquad
+L_{witness}-\inf L\le\log(\gamma)/C.}
+\]
+
+Bisect probability boxes while retaining the original fixed positive base.
+The inequalities `ell_xy T_x<=M_xy<=u_xy T_x` are rational linear constraints
+on the actual finite coefficients; no zero-total context is introduced.
+Independent bounded-simplex multinomial optima give exact rational likelihood
+uppers, with checked KKT conditions. Each feasible box supplies a finite
+coefficient witness; each infeasible box requires an exact Farkas alternative.
+
+On the probability cube, `|P(q)-P(q')|<=C ||q-q'||_infinity`. An initial finite
+witness has P_0>0, so every feasible box closes once its width is at most
+`(gamma-1)P_0/C`. Longest-coordinate bisection therefore terminates with an
+exact LP oracle even for unbounded coefficients and an unattained supremum.
+This proves finite computability, not a small or polynomial work bound.
+
+The executable solver returns `UNRESOLVED` on missing rational LP evidence or
+node-budget exhaustion. Its separate verifier reconstructs tree coverage,
+rechecks original constraints and uppers, and binds gamma to the caller's
+declared requirement. Generic numerical optimization proposes lower witnesses
+only; its search bounds never restrict the global class. Zero-count contexts
+retain any shared coefficient/resource constraints.
+
+This is a complete **static known-cone approximation decision class**, not
+`CERTIFIED_COMPLETE` for the Reference Compiler. It neither decides arbitrary
+exact-optimum equality nor grants unknown dictionary acquisition, optimizer
+reachability, physical construction, fresh persistence or AMP authorization.
+Proof, executable solver and adversarial tree audit:
+[`POSITIVE_CONE_LOSS_SOLVER.md`](theory/proofs/POSITIVE_CONE_LOSS_SOLVER.md).
+
 ---
 
 # XVIII. Reference Compiler contract

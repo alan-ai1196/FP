@@ -205,6 +205,16 @@ primal/dual checks verify the sharp static optima; registered value and physical
 installation remain separate. This is a research result about native semantics
 and resource feasibility, not another controller action or Compiler freeze.
 
+XVII.9 closes another scoped research gap: known-cone global loss optimization
+now has a finite arbitrary-accuracy algorithm, not only membership tests or
+local optimizer values. Probability-box feasibility keeps the positive base
+fixed; exact multinomial uppers, primal/dual checks and a separately verified
+covering tree certify a finite likelihood bracket. Termination with an exact LP
+oracle survives unattained optima and unbounded coefficients. The implementation
+still returns UNRESOLVED on work exhaustion or missing rational evidence. Read
+`POSITIVE_CONE_LOSS_SOLVER.md`; this solves a static relaxation and must not
+grant reachable value, full Compiler completion or installation authority.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

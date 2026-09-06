@@ -356,3 +356,31 @@ and a separate exact Farkas exclusion inside the error ball. This is a concrete
 reason not to quotient provenance by collected polynomial coefficients. It
 does not grant a value initializer, physical build/install or AMP bridge.
 See `PARITY_PROVENANCE_RANGE.md`.
+
+## 26. Global loss optimization without installing a closure endpoint (2026-09-06)
+
+Known-cone membership did not justify labeling a local CE optimizer globally
+complete. The missing step was closed for the explicit rational static class:
+probability-box feasibility is an LP with the original positive base fixed,
+and bounded-simplex multinomial likelihood optima are exact rational uppers.
+Finite integer-count likelihood is a continuous polynomial with an explicit
+Lipschitz bound. Thus bisection reaches any requested relative likelihood
+accuracy in finite work with an exact LP oracle, even when coefficients are
+unbounded and the supremum is unattained.
+
+The executable algorithm preserves an entire covering tree and a finite
+coefficient witness. A separate verifier rederives boxes, checks all original
+primal/dual equations and KKT uppers, and rejects missing branches or a forged
+accuracy requirement. Generic local optimization only improves checked lower
+witnesses; its proposal bounds do not shrink the global decision class.
+Early searches exhausted their node budgets honestly. Highest-upper search,
+range bounds derived from original constraints and stronger witness proposals
+closed the audited unbounded and cap-four XOR cases. No failure required a
+semantic change or an unearned completeness flag.
+
+The retained evidence includes global likelihood brackets, multiclass and zero-
+count cases, an empty-domain certificate, and adversarial proof-tree rejection.
+An unscored context still restricts a shared coefficient through its resource
+cap, so zero loss weight is not permission to erase it. This settles finite
+arbitrary-accuracy static optimization, not efficient general compilation,
+registered value/build/install paths or AMP. See `POSITIVE_CONE_LOSS_SOLVER.md`.

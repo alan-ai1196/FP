@@ -119,9 +119,13 @@ parts of the problem; exact PRODUCT count alone can have zero loss margin.
 positive mass cone, exact realization is a linear feasibility problem and
 approximation closure is decided by at most one residual LP per context
 (`FP_THEORY.md` XVII.2). Zero-normalizer cells must not be discarded. This
-settles membership, not minimum log loss over general multi-input/multiclass
-tables or acquisition/physical reachability. A first nonnegative cone solution
-alone is falsified as a closure certificate by the 3x3 hidden-XOR example.
+settles membership. XVII.9 now additionally gives arbitrary-accuracy global
+loss brackets for this known rational class, including polyhedral coefficient
+constraints, with a finite exact-LP termination proof and independently checked
+covering trees. This does not provide an efficient closed-form loss envelope,
+unknown atom acquisition, exact optimum attainment or physical reachability.
+A first nonnegative cone solution alone is still falsified as a closure
+certificate by the 3x3 hidden-XOR example.
 
 **Additional solved finite-range case.** `FP_THEORY.md` XVII.3 gives the sharp
 SUM range/error tradeoff for a boundary table and a positive-margin transition

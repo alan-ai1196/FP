@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scope": "explicit rational mass atoms/base/counts/polyhedral coefficient domain",
+  "exact_simplex_box_optimizer_grid_cases": 108,
+  "global_likelihood_brackets": [
+    {
+      "case": "xor_closure_unattained",
+      "status": "CERTIFIED_STATIC_LIKELIHOOD_BRACKET",
+      "verified_nodes": 5131,
+      "certification_lp_proposals": 3441,
+      "likelihood_lower_enclosure": "52321118691978251849/1208925819614629174706176",
+      "local_proposal_objective_evaluations": 1770,
+      "likelihood_upper_enclosure": "3426316276383/72057594037927936",
+      "verified_relative_factor": "11/10",
+      "exact_bayes_attainment": false,
+      "mean_ce_lower_float64_display": 0.6221084552044754,
+      "mean_ce_upper_float64_display": 0.6279901676409395,
+      "mean_ce_width_float64_display": 0.005881712436464093
+    },
+    {
+      "case": "xor_cap_four",
+      "status": "CERTIFIED_STATIC_LIKELIHOOD_BRACKET",
+      "verified_nodes": 43023,
+      "certification_lp_proposals": 32295,
+      "likelihood_lower_enclosure": "2633940092773693297/151115727451828646838272",
+      "local_proposal_objective_evaluations": 63,
+      "likelihood_upper_enclosure": "23178460441181577849/1208925819614629174706176",
+      "verified_relative_factor": "11/10",
+      "exact_bayes_attainment": false,
+      "mean_ce_lower_float64_display": 0.6788762095467091,
+      "mean_ce_upper_float64_display": 0.6848325231238876,
+      "mean_ce_width_float64_display": 0.005956313577178503
+    },
+    {
+      "case": "multiclass_bayes",
+      "status": "CERTIFIED_STATIC_LIKELIHOOD_BRACKET",
+      "verified_nodes": 1,
+      "certification_lp_proposals": 2,
+      "likelihood_lower_enclosure": "34710803407545/1208925819614629174706176",
+      "local_proposal_objective_evaluations": 0,
+      "likelihood_upper_enclosure": "17355401703773/604462909807314587353088",
+      "verified_relative_factor": "11/10",
+      "exact_bayes_attainment": true,
+      "mean_ce_lower_float64_display": 1.0114042647073518,
+      "mean_ce_upper_float64_display": 1.0114042647073518,
+      "mean_ce_width_float64_display": 0.0
+    },
+    {
+      "case": "zero_count_labels",
+      "status": "CERTIFIED_STATIC_LIKELIHOOD_BRACKET",
+      "verified_nodes": 819,
+      "certification_lp_proposals": 529,
+      "likelihood_lower_enclosure": "1664321945718944910451/604462909807314587353088",
+      "local_proposal_objective_evaluations": 1056,
+      "likelihood_upper_enclosure": "83521/16777216",
+      "verified_relative_factor": "2",
+      "exact_bayes_attainment": false,
+      "mean_ce_lower_float64_display": 0.33141743482586394,
+      "mean_ce_upper_float64_display": 0.3684326569175878,
+      "mean_ce_width_float64_display": 0.03701522209172386
+    }
+  ],
+  "forged_complete_tree_rejections": [
+    "missing_child",
+    "invalid_axis",
+    "false_upper",
+    "false_witness",
+    "false_dual",
+    "weaken_accuracy",
+    "float_witness"
+  ],
+  "node_budget_exhaustion_returns_unresolved": true,
+  "empty_coefficient_class_exact_dual_checked": true,
+  "zero_count_context_retains_shared_resource_constraint": true,
+  "negative_polyhedral_constraint_row_checked": true,
+  "suboptimal_box_optimizer_rejected_by_exact_kkt": true,
+  "not_claimed": [
+    "exact attainment of the unbounded SUM optimum",
+    "polynomial work bound",
+    "unary-SUM parity conjecture proved",
+    "unknown dictionary or table acquisition",
+    "optimizer-reachable coefficient optimum",
+    "complete Reference Compiler or AMP certificate"
+  ]
+}
