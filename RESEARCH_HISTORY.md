@@ -331,3 +331,28 @@ the distance. The uniform CE gap is at least 1/225. All six faces, three cuts,
 13 dual atom equalities and 4,096 small coefficient assignments are checked
 exactly. This kills a proposed certification shortcut, not the full residual-
 cone theorem or Foundation R4. See `LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md`.
+
+## 25. Polynomial cancellation did not remove positive provenance (2026-09-06)
+
+Attacking the finite-range cost of the new degree theorem uncovered a stronger
+distinction. Reduced output degree <d is larger than the class whose positive
+derivations actually omit some coordinate. Full-context indicator terms can
+lose their highest signed coefficient after algebraic expansion while their
+positive derivation support remains indispensable under the range constraint.
+
+For noisy parity with its preferred label reversed at one adjacent root pair,
+three sharp Bayes range thresholds were derived: unrestricted, reduced-degree
+and proper-support programs need 4, 12 and 20 respectively in the three-bit
+odds-three example. A full positive edge-cone reduction, justified static
+symmetry and a backward recurrence prove the proper-support optimum for every
+dimension. Finite positive constructions attain all three formulas; the ratio
+between reduced degree and proper support grows exponentially. Propagating
+prediction errors through the recurrence also gives a proper-support loss
+margin of 1/24336 at cap 12, where reduced-degree programs reach Bayes.
+
+The audit checks 24 exact construction cases through eight inputs, 12 independent
+LP optimality certificates against the original rational primal/dual equations,
+and a separate exact Farkas exclusion inside the error ball. This is a concrete
+reason not to quotient provenance by collected polynomial coefficients. It
+does not grant a value initializer, physical build/install or AMP bridge.
+See `PARITY_PROVENANCE_RANGE.md`.

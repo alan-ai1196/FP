@@ -16,6 +16,12 @@ reduction on the cube, have total degree at most d-1. It includes arbitrary
 positive sums of all cylinder indicators fixing at most d-1 coordinates. It
 does not restrict graph size or pretend that degree counts physical PRODUCTs.
 
+Reduced mass degree is also distinct from the support of positive derivations.
+Full-context indicator terms can cancel their highest signed coefficient after
+algebraic reduction while retaining full positive provenance. The strict range
+separation in `PARITY_PROVENANCE_RANGE.md` proves why these two classes cannot
+be identified. The present lower bound covers the larger reduced-degree class.
+
 The exact cross-entropy infimum of this family is
 
 \[

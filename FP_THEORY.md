@@ -989,6 +989,48 @@ algebraic construction supplies registered value/install or AMP evidence.
 Proof and exact audit:
 [`PARITY_DEGREE_ENVELOPE.md`](theory/proofs/PARITY_DEGREE_ENVELOPE.md).
 
+## XVII.8. Reduced output degree does not erase positive derivation support
+
+Change noisy d-bit parity only by reversing its preferred label at the adjacent
+vertices `00...0,10...0`. Let d>=3, m=d-1 and odds r>1. Under the same static
+unary-source, positive-base `(1,1)`, final-normalization contract, the minimum
+peak normalizer for Bayes prediction is exactly
+
+\[
+\boxed{
+R_{all}=r+1,\quad
+R_{degree}=(r+1)(2^m-1),\quad
+R_{support}=\frac{r+1}{r}[(r+1)^m-1].}
+\]
+
+These refer respectively to all native programs, all programs with reduced
+output mass degree <d, and all programs whose nonzero positive derivations
+fix <d distinct input coordinates. The last class is the complete positive
+cube-edge cone, not an architecture menu. All optima have finite native mass
+witnesses. A symmetry argument valid for this static linear feasibility
+problem gives a sharp recurrence lower bound for the whole edge cone.
+
+For d=3,r=3 the three ranges are **4,12,20**. At range 12 a degree-two output
+can require full three-input positive derivations: high-order coefficients
+cancel only after expanding complementary indicators. Every proper-support
+competitor at this cap has sup-norm error at least `1/78` and excess CE at
+least `1/24336`, while a reduced-degree native model reaches Bayes. In general,
+for `R<R_support`, the proper-support error is at least
+
+\[
+\frac{(r-1)(R_{support}-R)}{(r+1)R(R_{support}+2r)}.
+\]
+
+Thus collected polynomial degree cannot certify removal of positive provenance
+or preservation of its range/resource feasibility. The range ratio between
+these two restricted classes grows exponentially with d at fixed r>1.
+This strengthens the distinction used in XVII.7; its reduced-degree family
+was never a quotient of physical or learner state. Final normalizer range
+is still not a hardware budget, and these algebraic witnesses do not grant
+registered value/build/install, persistence or AMP authorization.
+Proof and exact primal/dual audits:
+[`PARITY_PROVENANCE_RANGE.md`](theory/proofs/PARITY_PROVENANCE_RANGE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

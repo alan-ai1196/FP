@@ -1,0 +1,140 @@
+{
+  "status": "PASS",
+  "scope": "static reversed-root noisy parity; final-normalizer cap",
+  "exact_three_class_construction_cases": 24,
+  "odds_three_thresholds": [
+    {
+      "bits": 3,
+      "all": "4",
+      "reduced_degree": "12",
+      "proper_positive_support": "20"
+    },
+    {
+      "bits": 4,
+      "all": "4",
+      "reduced_degree": "28",
+      "proper_positive_support": "84"
+    },
+    {
+      "bits": 5,
+      "all": "4",
+      "reduced_degree": "60",
+      "proper_positive_support": "340"
+    },
+    {
+      "bits": 6,
+      "all": "4",
+      "reduced_degree": "124",
+      "proper_positive_support": "1364"
+    },
+    {
+      "bits": 7,
+      "all": "4",
+      "reduced_degree": "252",
+      "proper_positive_support": "5460"
+    },
+    {
+      "bits": 8,
+      "all": "4",
+      "reduced_degree": "508",
+      "proper_positive_support": "21844"
+    }
+  ],
+  "independent_exact_primal_dual_lp_checks": [
+    {
+      "bits": 3,
+      "odds": "3",
+      "class": "all",
+      "exact_optimum": "4",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 3,
+      "odds": "3",
+      "class": "degree",
+      "exact_optimum": "12",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 3,
+      "odds": "3",
+      "class": "support",
+      "exact_optimum": "20",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 4,
+      "odds": "3",
+      "class": "all",
+      "exact_optimum": "4",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 4,
+      "odds": "3",
+      "class": "degree",
+      "exact_optimum": "28",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 4,
+      "odds": "3",
+      "class": "support",
+      "exact_optimum": "84",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 5,
+      "odds": "3",
+      "class": "all",
+      "exact_optimum": "4",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 5,
+      "odds": "3",
+      "class": "degree",
+      "exact_optimum": "60",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 5,
+      "odds": "3",
+      "class": "support",
+      "exact_optimum": "340",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 3,
+      "odds": "3/2",
+      "class": "all",
+      "exact_optimum": "5/2",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 3,
+      "odds": "3/2",
+      "class": "degree",
+      "exact_optimum": "15/2",
+      "original_rational_primal_and_dual_verified": true
+    },
+    {
+      "bits": 3,
+      "odds": "3/2",
+      "class": "support",
+      "exact_optimum": "35/4",
+      "original_rational_primal_and_dual_verified": true
+    }
+  ],
+  "three_bit_cap_12_proper_support_distance_lower": "1/78",
+  "three_bit_cap_12_proper_support_excess_ce_lower": "1/24336",
+  "independent_exact_farkas_exclusion_at_distance_1_over_79": true,
+  "finite_random_edge_models_within_cap_checked": 919,
+  "not_claimed": [
+    "reduced polynomial degree preserves positive derivation support",
+    "sharp approximation margin",
+    "minimal physical implementation costs",
+    "registered value/build/install reachability",
+    "complete runtime or AMP certification"
+  ]
+}

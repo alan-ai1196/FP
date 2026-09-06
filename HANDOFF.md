@@ -194,6 +194,17 @@ witness certify the distance. Read `LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md`.
 Local certificates need a compatible shared realization; their independent
 existence is insufficient. The complete residual-cone theorem remains valid.
 
+XVII.8 now separates reduced output degree from positive derivation support
+quantitatively. On one reversed-root noisy-parity task, minimum normalizer
+ranges for unrestricted / reduced-degree / proper-support programs are exactly
+4 / 12 / 20 in three dimensions, with a proved proper-support CE gap at cap
+12. The general formulas give an exponential range ratio. Read
+`PARITY_PROVENANCE_RANGE.md`: algebraic cancellation of a top coefficient does
+not authorize deleting its full-support positive provenance. Independent LP
+primal/dual checks verify the sharp static optima; registered value and physical
+installation remain separate. This is a research result about native semantics
+and resource feasibility, not another controller action or Compiler freeze.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

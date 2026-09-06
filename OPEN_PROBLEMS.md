@@ -99,6 +99,15 @@ distance 2/15, an exact dual and a matching finite SUM model. A proof must
 retain a common mass realization or another justified global invariant; local
 ordering or face relaxations cannot silently acquire completion authority.
 
+**Solved provenance/range separation.** XVII.8 gives exact all-dimension range
+thresholds on reversed-root noisy parity for unrestricted, reduced-output-degree
+and proper-positive-derivation-support programs. At d=3 and odds 3 the thresholds
+are 4/12/20, and the latter distinction has a proved loss margin at cap 12.
+Thus algebraically low-degree output does not prove low-support positive
+provenance is available at the same resource bound. General physical budgets,
+registered acquisition/value reachability and sharp node-count phases remain
+open; reduced polynomial degree must not be used as their substitute.
+
 **Additional solved expressivity boundary.** One shared PRODUCT realizes every
 positive 2x2 conditional table, including multiclass outputs; zero-PRODUCT exact
 realizability is a vector-segment intersection condition. The binary four-pool
