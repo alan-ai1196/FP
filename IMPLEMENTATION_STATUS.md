@@ -79,7 +79,9 @@ The **final endpoint integration after these changes had not been re-run through
 
 ## 3. What is preserved in `src/reference_compiler/`
 
-The migration preserves the directly persisted late-WIP modules and a recovery manifest rather than fabricating a passing state from memory. Some supporting modules existed in the session workspace but were not all retained as independent final attachments after the last Runtime rewrite. This is a persistence failure that the GitHub transition is designed to prevent.
+The migration preserves the directly persisted late-WIP modules that are small enough to remain useful as readable recovery source (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set, sizes, important later-session design changes, and known source hashes where available.
+
+Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the complete R4.2 implementation only as implementation references, then re-run all gates.
 
 The repository therefore treats the current Reference Compiler source as a **recovery/WIP branch point**, not a release. Do not report its package as complete until imports/tests are restored and the complete endpoint suite passes.
 
