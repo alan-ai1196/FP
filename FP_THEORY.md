@@ -820,6 +820,52 @@ epsilon-optimal target with `epsilon<1/1568` must therefore have at least two
 PRODUCTs. Full proof, scope, and exact audit:
 [`RANGE_CONSTRAINED_PRODUCT_PHASE.md`](theory/proofs/RANGE_CONSTRAINED_PRODUCT_PHASE.md).
 
+## XVII.4. Finite-information structural certificates
+
+An exact conditional table is not free information. In the binary 2x2 static
+class, suppose the legal revealed information is a closed probability box
+`H=product_i[ell_i,u_i]`. The entire box excludes the SUM prediction closure
+iff `max_D u_d<min_O ell_o` or the reversed strict ordering holds, where
+`D={00,11}` and `O={01,10}`. Otherwise a SUM-closure hypothesis remains possible
+and a positive-margin universal exclusion is unresolved.
+
+For known positive context weights and the first ordering, the exact worst-case
+SUM excess over Bayes risk is the least of four weighted Bernoulli pooling
+costs at the closest interval endpoints. A rational lower certificate is
+
+\[
+\boxed{\min_{d,o}\frac{2w_dw_o}{w_d+w_o}(\ell_o-u_d)^2.}
+\]
+
+A declared one-bit mean query can produce the same `1111` transcript for
+`(3/4,3/4,3/4,3/4)` and `(5/8,7/8,7/8,5/8)`, although only the first is
+SUM-realizable. Repetition and unlimited computation do not resolve this
+information class. Under passive full-support Bernoulli sampling, every finite
+transcript can likewise occur under both hypotheses: zero-error structural
+classification needs unresolved outcomes unless more information is available.
+
+Under an explicitly registered iid context/label law, a statistical alternative
+is valid. Preregister `alpha_(i,n)=alpha/[4 n(n+1)]`; simultaneous Bernoulli
+confidence intervals at every context count give coverage for all times at
+least `1-alpha`. Their radii and interval comparisons can be implemented with
+conservative exact dyadic arithmetic. Adaptive stopping then adds no unallocated
+error. This is discovery/structural evidence, not fresh candidate persistence,
+and the law does not transfer to an arbitrary deterministic corpus.
+
+The finite-range two-PRODUCT witness also has an information-robust comparison.
+At `R=4`, if the complete confidence box lies within radius `r<=1/28` of
+`p^0=(1/2,1/2,3/4,1/4)`, every at-most-one-PRODUCT model loses to the fixed
+two-PRODUCT witness by at least
+
+\[
+\boxed{G(r)=\tfrac12(1/28-r)^2-\tfrac{16}3r^2.}
+\]
+
+For `r=1/224`, this is `115/301056>0`. Witness reachability, actual physical
+feasibility, fresh persistence, and reference/AMP authorization remain separate.
+Proof, exact information counterexample, and passive algorithm audit:
+[`PASSIVE_INTERVAL_STRUCTURE.md`](theory/proofs/PASSIVE_INTERVAL_STRUCTURE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

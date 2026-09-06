@@ -142,6 +142,17 @@ a static numerical-range result; do not label it a GPU/bytes/FLOPs phase or
 grant unconstructed coefficients. Remaining research should connect such
 certificates to finite passive information and registered value construction.
 
+The finite-information step is now partly closed in XVII.4. Complete probability
+interval boxes, rather than point estimates, admit an exact robust SUM-exclusion
+criterion. A one-bit query collision proves a genuine unresolved information
+class; an explicitly iid passive stream admits simultaneous anytime confidence
+boxes using a single preregistered alpha budget. A range-four two-PRODUCT witness
+also retains its loss advantage over a whole radius-1/224 target ball. Read
+`PASSIVE_INTERVAL_STRUCTURE.md` for law/data-role boundaries: this does not
+grant conditional-table queries, validate a fixed corpus, or recycle discovery
+labels as fresh persistence. The remaining construction question is substantive:
+can registered value dynamics reach the useful witnesses within their resources?
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

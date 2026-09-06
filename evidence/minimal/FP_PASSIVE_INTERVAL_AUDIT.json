@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "scope": "binary 2x2 static source class, known interval information or declared iid passive law",
+  "arithmetic": "exact rational interval/likelihood/radius decisions",
+  "closed_interval_boxes_checked": 1296,
+  "boxes_with_uniform_positive_sum_exclusion": 34,
+  "boxes_admitting_sum_closure_hypothesis": 1262,
+  "one_bit_mean_transcript_collision": {
+    "transcript": "1111",
+    "sum_target": [
+      "3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "non_sum_target": [
+      "5/8",
+      "7/8",
+      "7/8",
+      "5/8"
+    ],
+    "non_sum_excess_ce_lower_bound": "1/64"
+  },
+  "common_support_length_eight_label_transcripts": 256,
+  "dyadic_anytime_radii_checked": 4099,
+  "preregistered_global_alpha": "1/20",
+  "error_allocation": "alpha/(4 n(n+1)) per context and sample count; never refunded",
+  "passive_noisy_xor_fixture": {
+    "status": "SUM_EXCLUDED_BY_CONFIDENCE_BOX",
+    "cursor": 833,
+    "counts_n_successes": [
+      [
+        219,
+        53
+      ],
+      [
+        209,
+        157
+      ],
+      [
+        210,
+        161
+      ],
+      [
+        195,
+        53
+      ]
+    ],
+    "intervals": [
+      [
+        "2807/224256",
+        "105737/224256"
+      ],
+      [
+        "110399/214016",
+        "211137/214016"
+      ],
+      [
+        "511/960",
+        "1"
+      ],
+      [
+        "5717/199680",
+        "102827/199680"
+      ]
+    ],
+    "rational_excess_over_bayes_lower_bound": "341547361/1741653304934400"
+  },
+  "passive_constant_control": {
+    "status": "UNRESOLVED",
+    "cursor": 12000,
+    "counts_n_successes": [
+      [
+        3019,
+        2272
+      ],
+      [
+        3072,
+        2318
+      ],
+      [
+        2958,
+        2213
+      ],
+      [
+        2951,
+        2207
+      ]
+    ]
+  },
+  "range_four_robust_two_product_comparison": {
+    "target_radius": "1/224",
+    "fixed_witness_gap": "115/301056"
+  },
+  "not_claimed": [
+    "probability coverage proved by simulation",
+    "validity on a deterministic fixed corpus",
+    "no-crossing as rejection",
+    "fresh candidate persistence",
+    "registered value/install reachability",
+    "Compiler/AMP closure"
+  ]
+}

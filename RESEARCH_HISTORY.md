@@ -230,3 +230,23 @@ at least 1/1568 nats to the two-PRODUCT Bayes witness. This avoids confusing an
 unattained exact distinction with robust structural forcing. It is a numerical
 range theorem, not a claim about unspecified memory/FLOPs or an executed learner.
 See `theory/proofs/RANGE_CONSTRAINED_PRODUCT_PHASE.md` and its exact audit.
+
+## 20. Structural acquisition without an exact conditional-table oracle (2026-09-06)
+
+The static certificates were extended to a complete interval information class.
+For binary 2x2 targets, strict diagonal/off-diagonal endpoint separation exactly
+decides whether every admissible target is outside the SUM closure, with an
+explicit rational worst-case risk gap. A one-bit transcript collision between
+a SUM table and a separated table proves why additional computation cannot
+replace missing query information. Full-support passive finite samples also
+cannot provide zero-error structural classification.
+
+Under a declared iid sampling law, a count-indexed simultaneous confidence box
+gives an honest statistical alternative. Its dyadic radii and shared anytime
+alpha allocation are checked exactly. In a seeded algorithm fixture, noisy XOR
+is certified from revealed counts at event 833; a constant control stays
+unresolved through 12,000 events. These fixtures are not evidence for the
+probability theorem itself. The range-constrained two-PRODUCT witness also
+retains a proved margin 115/301056 throughout a radius-1/224 target ball.
+Discovery information remains distinct from fresh lineage-specific persistence.
+See `theory/proofs/PASSIVE_INTERVAL_STRUCTURE.md`.

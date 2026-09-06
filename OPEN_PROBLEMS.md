@@ -105,3 +105,12 @@ at-most-one-PRODUCT class is unrestricted within the stated native grammar.
 General multi-input/multiclass loss envelopes, actual hardware-resource phases,
 passive acquisition, and registered value reachability remain open. A cap on
 the readout normalizer is not automatically a cap on intermediate activations.
+
+**Finite information, scoped progress.** XVII.4 supplies exact interval-box
+structural certificates, a non-identifying query counterexample, an anytime
+passive procedure under an explicit iid law, and robustness of the range-four
+two-PRODUCT comparison to a whole target-uncertainty ball. This does not solve
+nonstationary language-model acquisition, unknown latent partitions, or fresh
+candidate persistence. The next connection is registered value construction:
+an expressivity witness and a structural confidence certificate do not prove
+that the actual optimizer can reach and install the witness under its budget.
