@@ -866,6 +866,45 @@ feasibility, fresh persistence, and reference/AMP authorization remain separate.
 Proof, exact information counterexample, and passive algorithm audit:
 [`PASSIVE_INTERVAL_STRUCTURE.md`](theory/proofs/PASSIVE_INTERVAL_STRUCTURE.md).
 
+## XVII.5. A finite registered value path, and an initialization obstruction
+
+For the range-four target, take 16 retained profile labels, four per context,
+with class-1 counts `(2,2,3,1)`. Register zero initialization, full-batch mean-CE
+projected gradient descent with step 16, and two independent output SUM slots
+on direct source PRODUCTs:
+
+\[
+M_0=1+\theta_0x_1z_1,\qquad M_1=1+\theta_1x_1z_0.
+\]
+
+Symmetry preserves `theta_0=theta_1=theta` without tying the slots, and gives
+
+\[
+\boxed{\theta^{(t+1)}=\theta^{(t)}+
+\frac{2-\theta^{(t)}}{(\theta^{(t)}+1)(\theta^{(t)}+2)},\quad\theta^{(0)}=0.}
+\]
+
+The trajectory remains in `[0,2)` and obeys the readout cap. An analytic
+contraction bound proves that 21 steps beat the whole at-most-one-PRODUCT class;
+an exact outward-rounded trajectory certificate proves 13 steps suffice. A
+separately registered learner that rounds every commit down to `2^-32` also
+passes at step 13, using at most 33 bits per encoded coefficient. This counts
+208 profile-observation evaluations and 13 backward/update passes over 16
+unique labels, not total arithmetic/build work or fresh persistence evidence.
+
+Conversely the expressive parameterization
+`h=(a x_0+b z_1)(c x_1+d z_0)`, `M_0=1+e h`, `M_1=1+u x_1+v z_0`
+has the invariant zero face `a=b=c=d=e=0` under the same zero initializer and
+gradient update. Its static one-PRODUCT witness is unreachable by that value
+path, regardless of the number of updates. This does not exclude other graphs,
+nonzero initializers, or separately registered value constructors.
+
+The result closes a scoped constructive-value gap using ordinary task loss;
+it does not authorize an unregistered parameter kick or a complete physical
+install. Profile/population identification, full resource ownership, fresh
+persistence, and actual AMP execution remain separate. Proof and exact/float64
+audit: [`REGISTERED_VALUE_REACHABILITY.md`](theory/proofs/REGISTERED_VALUE_REACHABILITY.md).
+
 ---
 
 # XVIII. Reference Compiler contract

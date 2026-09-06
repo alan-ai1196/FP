@@ -114,3 +114,12 @@ nonstationary language-model acquisition, unknown latent partitions, or fresh
 candidate persistence. The next connection is registered value construction:
 an expressivity witness and a structural confidence certificate do not prove
 that the actual optimizer can reach and install the witness under its budget.
+
+**Registered value, scoped progress.** XVII.5 now gives a genuine finite-step
+zero-initialized CE path, including a separate finite-encoded coefficient
+implementation, to a strict two-PRODUCT winner at R=4. It also proves a
+zero-gradient invariant that prevents a different expressive factorization
+from ever activating under the same initializer. General registered value
+reachability, graph construction/build/install budgets, fresh persistence,
+and the actual AMP bridge remain open; no static coefficient vector may be
+substituted for their evidence.

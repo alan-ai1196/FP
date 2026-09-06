@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "registered zero-init projected full-batch CE gradient, step size 16; fixed 16-label profile",
+  "profile_class_one_counts": [
+    2,
+    2,
+    3,
+    1
+  ],
+  "labels_per_context": 4,
+  "independent_two_slot_gradient_identities_checked": 16,
+  "dormant_face_gradient_cases": 1875,
+  "first_eight_iterations_checked_with_unrounded_rationals": true,
+  "eighth_iterate_numerator_bits": 2918,
+  "outward_enclosure_bits": 64,
+  "separately_registered_dyadic_learner": {
+    "fraction_bits": 32,
+    "commit_rounding": "downwards",
+    "maximum_coefficient_integer_bits": 33,
+    "first_certificate": {
+      "step": 13,
+      "coefficient": "7636014419/4294967296",
+      "excess_ce_upper": "303321232152116643/526562842615143756242",
+      "strict_gap_to_entire_one_product_class": "25477575300312430009/412825268610272704893728"
+    }
+  },
+  "first_step_certified_by_this_KL_bound": {
+    "step": 13,
+    "theta_lower": "4099554026539237177/2305843009213693952",
+    "theta_upper": "2049777013269618589/1152921504606846976",
+    "excess_ce_upper": "87426392371774960680675542623542843/151771406242060256326436502350436513122",
+    "strict_gap_to_entire_one_product_class": "7343411501558558989568625758360667649/118988782493775240959926217842742226287648",
+    "excess_ce_upper_float64_display": 0.0005760399441271473
+  },
+  "profile_observation_evaluations_for_certificate": 208,
+  "unique_profile_labels": 16,
+  "backward_update_passes": 13,
+  "independent_analytic_21_step_excess_ce_upper": "452592555681759518058893560348969204658401/793676646703306683314687999708123010856648704",
+  "normalizer_cap_along_entire_exact_trajectory": 4,
+  "max_float64_difference_from_exact_trajectory_enclosure": 1.9418060909215384e-16,
+  "not_claimed": [
+    "13 is the minimal possible useful step count",
+    "all one-product graphs are unreachable",
+    "expressivity witness installed at initialization",
+    "profile labels are fresh persistence",
+    "unknown population identified by profile counts",
+    "complete Runtime or AMP bridge"
+  ]
+}

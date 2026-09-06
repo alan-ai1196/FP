@@ -250,3 +250,22 @@ probability theorem itself. The range-constrained two-PRODUCT witness also
 retains a proved margin 115/301056 throughout a radius-1/224 target ball.
 Discovery information remains distinct from fresh lineage-specific persistence.
 See `theory/proofs/PASSIVE_INTERVAL_STRUCTURE.md`.
+
+## 21. The structural winner became a finite value trajectory (2026-09-06)
+
+A registered 16-label profile and ordinary projected CE descent, initialized at
+zero with step 16, construct the two-PRODUCT range-four witness rather than
+assuming its coefficients. The two independent slots follow a scalar rational
+recurrence by symmetry. A simple contraction proof suffices after 21 updates;
+exact outward enclosures certify a strict win over the entire at-most-one-PRODUCT
+class after 13. A separate commit-quantized learner with 32 fractional bits
+also wins after 13 steps, so the result need not install an enormous exact
+rational iterate. The observation count is 208 evaluations of 16 retained
+profile labels, not 208 fresh observations or a bound on total arithmetic work.
+
+An opposing native example shows why the value condition cannot be dropped:
+zero initialization keeps an expressive PRODUCT-of-SUM parameterization in an
+invariant zero-gradient face forever. A static coefficient construction cannot
+authorize that initializer/optimizer trajectory. The cure must be a registered
+value path or an unresolved candidate, not an invented semantic action. See
+`theory/proofs/REGISTERED_VALUE_REACHABILITY.md` and its exact/float64 audit.

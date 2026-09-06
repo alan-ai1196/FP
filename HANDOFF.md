@@ -153,6 +153,16 @@ grant conditional-table queries, validate a fixed corpus, or recycle discovery
 labels as fresh persistence. The remaining construction question is substantive:
 can registered value dynamics reach the useful witnesses within their resources?
 
+There is now a scoped positive answer in XVII.5: an explicit zero-initialized
+ordinary CE profile reaches a two-PRODUCT state that beats the entire one-PRODUCT
+class at R=4. The exact proof gives 21 updates; a checked enclosure and a
+separately registered finite-encoded coefficient path each certify 13. An
+expressive one-PRODUCT factorization supplies the counterexample in the other
+direction: its dormant zero-gradient face is permanently stuck under that
+initializer. Read `REGISTERED_VALUE_REACHABILITY.md`. This closes one real value
+construction, not arbitrary-graph value reachability, complete build/install,
+fresh persistence, or the target AMP bridge.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 
