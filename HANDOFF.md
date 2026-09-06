@@ -123,6 +123,15 @@ gap; robust forcing requires the loss-separation theorem and physical/value
 reachability. This construction exploits native normalization and is not an
 external architecture menu.
 
+`FP_THEORY.md` XVII.2 now also supplies a complete static known-positive-cone
+membership/closure procedure. A single homogeneous cone solution is **not**
+enough when it sets some normalizers to zero: retain those contexts and solve
+the residual problem. At most one rational LP per context suffices, with exact
+primal/dual checks and constructive finite approximation bounds. This is a
+useful scoped solver result, not a full Compiler freeze or an oracle for an
+unknown conditional table. The 3x3 hidden-XOR counterexample and audit are in
+`NORMALIZED_POSITIVE_CONE_CLOSURE.md`.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

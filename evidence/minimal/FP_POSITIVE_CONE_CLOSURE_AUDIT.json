@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "decision_scope": "known finite rational nonnegative mass atoms with fixed positive base",
+  "solver_role": "float64 LP proposes; exact rational primal/dual checking authorizes only mathematical conclusions",
+  "binary_rational_tables": 256,
+  "additional_tables_including_probability_zero_and_one": 81,
+  "comparison_to_independent_interval_theorem": {
+    "exact": 124,
+    "closure_only": 80,
+    "outside": 52
+  },
+  "maximum_layers_on_binary_grid": 2,
+  "independently_generated_three_label_2x3_models": 40,
+  "three_by_three_false_single_pass_certificate": {
+    "initial_lp_feasible": true,
+    "actually_in_closure": false,
+    "covered_before_obstruction": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "unresolved_context_indices": [
+      4,
+      5,
+      7,
+      8
+    ],
+    "explicit_interior_dual": [
+      "4",
+      "-4",
+      "-4",
+      "4"
+    ],
+    "sharp_supnorm_distance": "1/4"
+  },
+  "three_by_three_closure_only_witness": {
+    "layers": 3,
+    "covered_by_layer": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3,
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8
+      ]
+    ],
+    "finite_realization": false,
+    "epsilon_values": [
+      "1/10",
+      "1/100",
+      "1/1000"
+    ],
+    "exact_supnorm_errors": [
+      "11/84",
+      "11/444",
+      "11/4044"
+    ],
+    "verified_error_constant": "11/4"
+  },
+  "contradictory_linear_equalities_certified_infeasible": true,
+  "not_claimed": [
+    "unknown table acquisition",
+    "bounded coefficient realizability",
+    "general FP polynomial-time compilation",
+    "Compiler freeze",
+    "AMP science"
+  ]
+}

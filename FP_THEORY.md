@@ -737,6 +737,44 @@ SUM structure, or any unspecified physical resource. See the constructive proof
 and exact counterexample in
 [`ONE_PRODUCT_CONDITIONAL_TABLE.md`](theory/proofs/ONE_PRODUCT_CONDITIONAL_TABLE.md).
 
+## XVII.2. Exact membership and closure for a known finite positive mass cone
+
+Fix a finite context/output table, known nonnegative rational mass atoms `a_j`,
+strictly positive causal base `b`, and independently variable nonnegative SUM
+coefficients. Write `M(v)=lambda b+sum_j w_j a_j`, `v=(lambda,w)>=0` and
+`T_x=sum_y M_xy`. The actual finite family has `lambda>0`, rescaled to the fixed
+base. For a known target table `p`, exact realization is a rational LP with
+`M_xy=p_xy T_x` and `lambda>=1`.
+
+Approximation closure requires more than a nonzero solution with `lambda=0`:
+cells with `T_x=0` are unresolved, not automatically matched. On the current
+residual set `R`, solve
+
+\[
+v\ge0,\quad M_{xy}(v)=p_{xy}T_x(v)\ (x\in R),\quad
+\sum_{x\in R}T_x(v)=1.
+\]
+
+Retain any feasible direction and remove only its positive-total contexts.
+Repeat on all remaining cells. This decides closure in at most `|X|` rational
+LPs for the explicitly known atom table. Any choice of feasible direction works.
+Infeasibility is witnessed by a linear alternative on the residual set; absent
+a checkable primal/dual certificate, the numerical implementation is unresolved.
+
+Successful directions `v_0,...,v_(L-1)` give the finite positive-base sequence
+`sum_l epsilon^l v_l+epsilon^L e_b`, with an explicit rational `O(epsilon)`
+prediction-error bound. They are proof layers for a limiting coefficient
+sequence, not new semantic model actions. Coefficient range, acquisition,
+registered value construction, and physical resources are still charged.
+
+A 3x3 unary-source table with uniform predictions on the outer row/column and
+noisy XOR in the interior falsifies the single-LP shortcut: its first cone
+direction exists, yet the unresolved interior has exact sup-norm distance
+`1/4` from every SUM-only predictor. The procedure is a complete **static
+known-cone membership/closure** result, not general FP compilation or a
+Reference Compiler `CERTIFIED_COMPLETE` decision. Proof and exact certificates:
+[`NORMALIZED_POSITIVE_CONE_CLOSURE.md`](theory/proofs/NORMALIZED_POSITIVE_CONE_CLOSURE.md).
+
 ---
 
 # XVIII. Reference Compiler contract

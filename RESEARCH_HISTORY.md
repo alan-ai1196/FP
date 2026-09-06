@@ -191,3 +191,23 @@ coordinatewise interval shortcut: all scalar intervals overlap while a rational
 linear functional separates the actual vector segments. The audit checks all
 256 binary tables and 700 rational tables with 2--8 labels; see
 `theory/proofs/ONE_PRODUCT_CONDITIONAL_TABLE.md`.
+
+## 18. Zero-normalizer erasure and a complete static closure solve (2026-09-06)
+
+Extending the normalized-SUM geometry exposed another premature quotient: a
+homogeneous nonnegative mass solution can give zero total to difficult contexts
+and thereby appear to match them. A 3x3 unary table with an outer uniform region
+and a noisy-XOR interior passes that single LP, while the interior has a sharp
+`1/4` sup-norm separation from every SUM predictor.
+
+The correction is a derived mathematical invariant rather than another model
+action. Retain all zero-total contexts as a residual known-table problem. Each
+feasible normalized mass direction covers at least one context; any feasible
+direction is safe. At most one rational LP per context decides membership in
+the entire normalized positive-cone closure. A successful sequence constructs
+finite positive-base approximants with an explicit rational error bound; an
+infeasible residual supplies a checked Farkas separation. The proof separates
+exact realization, closure, acquisition, finite physical range, and reachable
+value. Float64 LP outputs are only proposals and every accepted primal/dual
+vector is checked against the original rational equations. See
+`theory/proofs/NORMALIZED_POSITIVE_CONE_CLOSURE.md`.

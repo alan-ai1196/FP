@@ -89,3 +89,11 @@ realizability is a vector-segment intersection condition. The binary four-pool
 loss formula does not automatically extend to multiclass vector geometry.
 Physical coefficient range, acquisition, and reachable value remain substantive
 parts of the problem; exact PRODUCT count alone can have zero loss margin.
+
+**Additional solved decision problem.** For an explicitly known finite rational
+positive mass cone, exact realization is a linear feasibility problem and
+approximation closure is decided by at most one residual LP per context
+(`FP_THEORY.md` XVII.2). Zero-normalizer cells must not be discarded. This
+settles membership, not minimum log loss over general multi-input/multiclass
+tables or acquisition/physical reachability. A first nonnegative cone solution
+alone is falsified as a closure certificate by the 3x3 hidden-XOR example.
