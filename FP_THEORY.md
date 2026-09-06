@@ -905,6 +905,47 @@ install. Profile/population identification, full resource ownership, fresh
 persistence, and actual AMP execution remain separate. Proof and exact/float64
 audit: [`REGISTERED_VALUE_REACHABILITY.md`](theory/proofs/REGISTERED_VALUE_REACHABILITY.md).
 
+## XVII.6. Fresh log-loss persistence with a fast conditional power bound
+
+For binary true probabilities and candidate/comparator forecasts in `[1/4,3/4]`,
+the elementary inequality `E_p log^2(p_Y/q_Y)<=3 KL(p||q)` implies that fresh
+paired log-loss gain has second moment at most `6(D+epsilon)`, where D and
+epsilon are the comparator and candidate excess risks relative to Bayes.
+The existing preregistered linear e-process `E_n=product(1+Y_t/24)` is valid
+under its conditional mean-null, without any Bayes assumption. If, additionally,
+`D_t>=Delta>0` and `epsilon_t<=Delta/6` throughout the live identity, its first
+threshold-crossing time satisfies
+
+\[
+\boxed{P(\tau>n)\le\alpha^{-1}(1-\Delta/96)^n.}
+\]
+
+Thus this bounded log-loss alternative needs a sufficient fresh budget of order
+`Delta^-1 log[1/(alpha beta)]`, not the generic bounded-mean quadratic rate.
+The proof uses a killed reciprocal process and assumes nothing about an
+uncertified post-crossing continuation. Discovery/profile information supplies
+no factors; lineage, path and alpha ownership remain mandatory.
+
+For an independent iid uniform-context stream with the exact XVII.3 target,
+the XVII.5 finite-encoded learner after 32 profile steps and a preregistered
+frozen scoring phase satisfies the bias condition. Every cap-four at-most-one-
+PRODUCT comparator whose **entire forecast function is chosen before the
+fresh context** has `D>=1/1568`, even if that function adapts to earlier events.
+At `alpha=beta=1/20`, 1,354,752 events are a conservative theoretical sufficient
+budget. Sixteen-term rational log enclosures preserve validity and give a
+2,709,504-event sufficient bound for the mathematical lower-score process.
+These are not executed event counts, bounded-memory wealth implementations,
+complete installation or AMP certificates.
+
+The forecast-timing premise cannot be erased: after seeing the current context,
+a controller can select among three zero-PRODUCT constant predictors to match
+the target there. This falsifies transferring the static class gap through
+context-dependent model selection, not the mean-null e-process theorem. The
+controller and its information/computation must themselves belong to complete
+Omega; the iid-context power premise is not granted for general causal LM.
+Proof and exact audit:
+[`LOG_LOSS_PERSISTENCE_COST.md`](theory/proofs/LOG_LOSS_PERSISTENCE_COST.md).
+
 ---
 
 # XVIII. Reference Compiler contract

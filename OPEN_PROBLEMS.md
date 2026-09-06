@@ -123,3 +123,15 @@ from ever activating under the same initializer. General registered value
 reachability, graph construction/build/install budgets, fresh persistence,
 and the actual AMP bridge remain open; no static coefficient vector may be
 substituted for their evidence.
+
+**Fresh persistence, scoped progress.** XVII.6 derives an inverse-gap sufficient
+fresh-sample bound for the existing linear e-process under a bounded log-loss
+alternative and constructs a finite-encoded candidate satisfying its bias
+premise. Exact score enclosures retain validity. This is not a theorem of fast
+evidence under arbitrary teacher-forced contexts: the static class gap transfers
+only when the complete forecast function is fixed before the fresh context (or
+another valid conditional-law argument supplies the gap). A controller selecting
+among constant functions after seeing context defeats the naive inference.
+Characterizing structural forcing with the complete adaptive controller and
+legal causal information remains a research problem; accumulated-wealth
+arithmetic, complete resource/install accounting and AMP remain unclosed.

@@ -269,3 +269,28 @@ invariant zero-gradient face forever. A static coefficient construction cannot
 authorize that initializer/optimizer trajectory. The cure must be a registered
 value path or an unresolved candidate, not an invented semantic action. See
 `theory/proofs/REGISTERED_VALUE_REACHABILITY.md` and its exact/float64 audit.
+
+## 22. From a constructed value to fresh log-loss power (2026-09-06)
+
+The next gap was evidence cost: a generic bounded-gain tail bound would need an
+inverse-square advantage budget. For bounded binary log loss, a direct rational-
+constant proof bounds the log-ratio second moment by three times KL. Applied to
+candidate/comparator excess risks, this gives a reciprocal contraction for the
+existing linear e-process and an inverse-gap sufficient crossing budget when
+the candidate's Bayes excess risk is at most one-sixth the comparator gap.
+The theorem respects a single live identity and stops its argument at crossing.
+
+The registered finite-encoded candidate satisfies the premise after 32 profile
+steps. Under an explicit independent iid uniform-context target, conservative
+95% crossing budgets are 1,354,752 exact-score events or 2,709,504 events with
+rational lower log scores, at alpha 1/20. These are proved sufficient bounds;
+no such fresh-event experiment was executed. Exact checks cover the constants,
+log-series tails, value bias, and small-grid moment/reciprocal inequalities.
+
+An adversarial timing check exposed the limit of the structural inference:
+choosing among three constant predictors after observing the context can match
+the target with a zero-PRODUCT selected endpoint each time. The omitted
+controller carries the interaction. Static all-class lower bounds therefore
+need selection before fresh context, or a separate valid conditional argument;
+they cannot be imported into causal LM by erasing the controller. The mean-null
+e-process itself remains valid. See `LOG_LOSS_PERSISTENCE_COST.md`.

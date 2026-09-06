@@ -163,6 +163,19 @@ initializer. Read `REGISTERED_VALUE_REACHABILITY.md`. This closes one real value
 construction, not arbitrary-graph value reachability, complete build/install,
 fresh persistence, or the target AMP bridge.
 
+The fresh-evidence connection now has a scoped power theorem in XVII.6. Bounded
+binary log loss controls the gain's second moment by Bayes excess risks, so the
+existing linear e-process has a sufficient fresh budget proportional to inverse
+gap when the constructed candidate is sufficiently accurate. The 32-step finite-
+encoded witness satisfies this premise for the declared independent iid target
+law. The exact-log and certified-lower-score budgets are mathematical upper
+bounds, not executed million-event experiments. Crucially, the entire comparator
+function must be selected before the fresh context to import the static
+all-class gap. An exact context-aware constant-selection counterexample shows
+why this cannot be silently assumed for general causal LM. Read
+`LOG_LOSS_PERSISTENCE_COST.md`; complete controller accounting, actual wealth
+arithmetic, physical installation, and the AMP bridge remain separate.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 
