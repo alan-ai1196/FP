@@ -16,6 +16,8 @@ forbidden_dirs = {
     'checkpoints','models','datasets','cache'
 }
 for p in ROOT.rglob('*'):
+    if '.git' in p.relative_to(ROOT).parts:
+        continue
     if any(part in forbidden_dirs for part in p.parts):
         raise SystemExit(f'forbidden cache/artifact path: {p.relative_to(ROOT)}')
     if p.is_file() and p.suffix.lower() in {'.pt','.pth','.ckpt','.safetensors','.gguf','.zip','.7z'}:
@@ -31,17 +33,19 @@ patterns = {
     'private_key': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),
 }
 for p in ROOT.rglob('*'):
+    if '.git' in p.relative_to(ROOT).parts:
+        continue
     if not p.is_file():
         continue
     try:
-        text = p.read_text(errors='strict')
+        text = p.read_text(encoding='utf-8', errors='strict')
     except (UnicodeDecodeError, OSError):
         continue
     for name, pat in patterns.items():
         if pat.search(text):
             raise SystemExit(f'possible secret {name}: {p.relative_to(ROOT)}')
 
-text = (ROOT / 'FP_THEORY.md').read_text()
+text = (ROOT / 'FP_THEORY.md').read_text(encoding='utf-8')
 for needle in ['Canonical status','complete claim state','UNRESOLVED','Reference and AMP','Atomic self-Compiler boundary']:
     if needle not in text:
         raise SystemExit(f'FP_THEORY missing expected canonical content: {needle}')
