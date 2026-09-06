@@ -775,6 +775,17 @@ known-cone membership/closure** result, not general FP compilation or a
 Reference Compiler `CERTIFIED_COMPLETE` decision. Proof and exact certificates:
 [`NORMALIZED_POSITIVE_CONE_CLOSURE.md`](theory/proofs/NORMALIZED_POSITIVE_CONE_CLOSURE.md).
 
+The global problem cannot be replaced by local face certificates. On the
+three-bit cube the rational table
+`(1/10,11/30,19/30,11/30,19/30,11/30,19/30,9/10)` has every coordinate face in
+SUM closure and every probability superlevel set linearly separable, yet its
+distance to the whole unary-SUM family is **exactly 2/15**. A common affine
+numerator/denominator obeys coupled constraints absent from independent cuts.
+An explicit top-parity dual certifies the distance and a finite integer-mass
+SUM model attains it; uniform excess CE is at least `1/225`. This falsifies
+both shortcuts, not the full known-cone solver. Proof and exact audit:
+[`LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md`](theory/proofs/LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md).
+
 ## XVII.3. A range-constrained, positive-margin PRODUCT phase
 
 In the static binary unary-source class above, let the class-1 target table be

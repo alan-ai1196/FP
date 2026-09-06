@@ -186,6 +186,14 @@ its small excess over Bayes does not settle the still-open unary-SUM conjecture
 about a small improvement over unigram. Range, value construction and physical
 installation of the hierarchy are not granted by the extensional theorem.
 
+A new exact counterexample sharpens that frontier: all six coordinate faces
+of a three-bit table pass SUM-closure checks, and every probability threshold
+cut is linearly separable, while the global table is exactly 2/15 away from
+every SUM model. An explicit global cone dual and matching finite integer-mass
+witness certify the distance. Read `LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md`.
+Local certificates need a compatible shared realization; their independent
+existence is insufficient. The complete residual-cone theorem remains valid.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

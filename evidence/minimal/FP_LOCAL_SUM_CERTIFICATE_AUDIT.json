@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact Fraction",
+  "target_lexicographic": [
+    "1/10",
+    "11/30",
+    "19/30",
+    "11/30",
+    "19/30",
+    "11/30",
+    "19/30",
+    "9/10"
+  ],
+  "coordinate_faces_in_sum_closure": [
+    {
+      "fixed_axis": 0,
+      "fixed_bit": 0,
+      "intersection": [
+        "11/30",
+        "11/30"
+      ]
+    },
+    {
+      "fixed_axis": 0,
+      "fixed_bit": 1,
+      "intersection": [
+        "19/30",
+        "19/30"
+      ]
+    },
+    {
+      "fixed_axis": 1,
+      "fixed_bit": 0,
+      "intersection": [
+        "11/30",
+        "11/30"
+      ]
+    },
+    {
+      "fixed_axis": 1,
+      "fixed_bit": 1,
+      "intersection": [
+        "19/30",
+        "19/30"
+      ]
+    },
+    {
+      "fixed_axis": 2,
+      "fixed_bit": 0,
+      "intersection": [
+        "19/30",
+        "19/30"
+      ]
+    },
+    {
+      "fixed_axis": 2,
+      "fixed_bit": 1,
+      "intersection": [
+        "11/30",
+        "11/30"
+      ]
+    }
+  ],
+  "all_three_nontrivial_threshold_cuts_exactly_separated": true,
+  "sharp_global_sup_norm_distance": "2/15",
+  "matching_finite_sum_mass_total": 30,
+  "explicit_global_cone_dual": [
+    "15/2",
+    "-15/2",
+    "-15/2",
+    "15/2",
+    "-15/2",
+    "15/2",
+    "15/2",
+    "-15/2"
+  ],
+  "exact_dual_atom_equalities": 13,
+  "proved_uniform_excess_ce_lower_nats": "1/225",
+  "small_sum_coefficient_assignments_checked": 4096,
+  "unique_antipodal_extrema_monotonicity_cases": 1000,
+  "not_claimed": [
+    "each face is finitely exactly representable",
+    "finite weight enumeration proves the universal lemma",
+    "failure of the complete residual-cone solver or Foundation R4"
+  ]
+}

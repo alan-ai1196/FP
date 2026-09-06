@@ -294,6 +294,7 @@ controller carries the interaction. Static all-class lower bounds therefore
 need selection before fresh context, or a separate valid conditional argument;
 they cannot be imported into causal LM by erasing the controller. The mean-null
 e-process itself remains valid. See `LOG_LOSS_PERSISTENCE_COST.md`.
+
 ## 23. A full-degree obstruction and sharp sub-degree parity envelope (2026-09-06)
 
 Further multistart float64 attacks did not disprove the d-bit unary-SUM
@@ -312,3 +313,21 @@ The audit checks 501 proper-monomial moments, 1,153 small edge assignments and
 28 finite hierarchies with exact rational arithmetic. This larger class does
 not settle the unary-SUM conjecture, grant the hierarchy's value construction,
 or close the complete runtime. See `PARITY_DEGREE_ENVELOPE.md`.
+
+## 24. Local face and threshold certificates failed globally (2026-09-06)
+
+An attempted reduction of the three-input SUM problem to independent face
+constraints exposed a counterexample. Its six two-dimensional faces are each
+in SUM closure, and all of its probability superlevel sets have exact linear
+separators, but the full table stays exactly 2/15 away from the entire SUM
+family. The common numerator and denominator carry constraints that independent
+face witnesses or hyperplanes do not share.
+
+One proof uses a coupled extremum invariant: antipodal minimum and maximum of
+a linear-fractional cube prediction force coordinatewise monotonicity. The
+table violates it with a strict margin. A second proof supplies the exact
+global cone dual `(15/2)chi`; an integer-mass SUM model with total 30 attains
+the distance. The uniform CE gap is at least 1/225. All six faces, three cuts,
+13 dual atom equalities and 4,096 small coefficient assignments are checked
+exactly. This kills a proposed certification shortcut, not the full residual-
+cone theorem or Foundation R4. See `LOCAL_SUM_CERTIFICATE_COUNTEREXAMPLE.md`.

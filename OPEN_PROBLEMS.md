@@ -92,6 +92,13 @@ least `ceil(log2 d)` PRODUCT depth. Sharp unary-SUM envelopes and intermediate
 degree/node/physical-budget phases remain open. Do not mistake this degree
 family's small Bayes excess for the unary-SUM conjecture's small unigram gain.
 
+**Failed reduction.** Independent two-dimensional face closures do not decide
+multi-input SUM closure, even when every probability threshold cut is also
+linearly separable. The three-bit counterexample in XVII.2 has a sharp global
+distance 2/15, an exact dual and a matching finite SUM model. A proof must
+retain a common mass realization or another justified global invariant; local
+ordering or face relaxations cannot silently acquire completion authority.
+
 **Additional solved expressivity boundary.** One shared PRODUCT realizes every
 positive 2x2 conditional table, including multiclass outputs; zero-PRODUCT exact
 realizability is a vector-segment intersection condition. The binary four-pool
