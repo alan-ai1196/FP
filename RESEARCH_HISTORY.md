@@ -470,3 +470,31 @@ finite native witnesses through eight inputs. Canonical conjecture labels are
 updated to PROVED; dated exploratory evidence remains historical. General
 nonuniform tasks, sharp bounded optima, acquisition, registered value/install
 and AMP are not supplied by this theorem. See `UNARY_SUM_PARITY_ENVELOPE.md`.
+
+## 30. Range bounds become an exact interaction-capacity problem (2026-09-08)
+
+The new unbounded affine discrepancy theorem exposed a quantitative resource
+question: how much range is needed to approach its sharp constant one? Keeping
+the positive base in both heads gives an exact numerator optimizer at every
+fixed denominator. Its Laplace integrand proves that all slopes except the
+smallest may be equalized when maximizing this objective. The full arbitrary
+SUM-DAG class therefore reduces to a two-variable rational maximum, with a
+native witness for every point. This reduction is proved from positivity and
+resource constraints, not selected as an architecture menu.
+
+The formula yields `R(1-D)^2>=4(d-1)H_(d-1)D` and the matching fixed-dimension
+asymptotic constant. A rational three-scale coefficient sequence attains that
+leading law; no extra semantic action is introduced. Numerical searches helped
+locate finite cases but did not certify them. At d=3, R=4, clearing denominators
+and a two-square plus nonnegative-monomial certificate proves the exact value
+1/40. The symbolic identity and coefficient signs are checked exactly.
+
+At noise one-quarter, this discrepancy bound implies all-SUM CE>0.69004167.
+Four native scalar PRODUCTs, composed through complementary parity indicators,
+reach Bayes at the same final range and beat the entire SUM class by more than
+0.1277 nats. Four is not claimed minimal, and the discrepancy optimizer is not
+misidentified as a CE optimizer. The retained audit includes 960 arbitrary
+rational numerator/denominator reductions, 1,944 reduced-domain checks, the
+global finite certificate and rational asymptotic witnesses. Registered value,
+acquisition, physical build/install and AMP remain distinct. See
+`SUM_PARITY_RANGE_CAPACITY.md`.

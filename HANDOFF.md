@@ -248,6 +248,19 @@ not evidence that a local optimizer established global completeness. General
 nonuniform targets, sharp finite-range optima and reachable acquisition/value
 remain open.
 
+XVII.13 quantifies how final-normalizer range limits SUM's higher-order
+response. The full d-input class reduces exactly to a two-variable rational
+optimization after proving the optimal numerator and denominator smoothing.
+For `A=(d-1)H_(d-1)`, approaching maximal parity discrepancy within epsilon
+requires range at least `4A(1-epsilon)/epsilon^2`; the leading constant is
+attained asymptotically by finite native witnesses. A separate exact positive
+polynomial certificate proves D_3(4)=1/40. It implies CE>0.69004167 for all
+SUM models on noise-one-quarter three-bit parity, while four native PRODUCTs
+attain Bayes at the same cap, separated by more than 0.1277 nats. Read
+`SUM_PARITY_RANGE_CAPACITY.md`. The derived objective reduction does not
+preserve a particular learner or authorize a runtime rewrite. Sharp CE optima,
+general finite-cap discrepancy formulas and physical installation remain open.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

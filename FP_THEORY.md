@@ -1211,6 +1211,54 @@ envelopes remain separate. Proof and exact/outward-log audit:
 
 ---
 
+## XVII.13. Finite-range SUM interaction capacity and a sharp resource law
+
+Keep the complete static binary unary-SUM class and base `(1,1)`, with
+normalizer cap R>=2. Define `D_d(R)=max |sum_x chi(x)q_1(x)|`, d>=2. With
+`m=d-1` and `u=(R-c-t)/m`, its exact value is the two-variable maximum
+
+\[
+\boxed{D_d(R)=\max_{2\le c\le R,\;0\le t\le(R-c)/d}
+\left[\frac{c-1}{c}\prod_{j=1}^{m}\frac{ju}{c+ju}
+-\frac1{c+t}\prod_{j=1}^{m}\frac{ju}{c+t+ju}\right].}
+\]
+
+This reduction is proved over the entire mass class. At a fixed denominator,
+positive numerator offsets bound all negative slopes and give an attained
+linear optimum. A Laplace integral then proves that equalizing every slope
+except the smallest improves the objective. Every reduced point has a native
+SUM mass witness; this is not an assumed architectural symmetry or a
+complete-state congruence. Numerical maximization alone remains uncertified.
+
+Writing `A=(d-1)H_(d-1)` for the harmonic-number factor, every feasible
+nonnegative discrepancy obeys
+
+\[
+R(1-D)^2\ge4AD,\qquad
+\lim_{R\to\infty}\sqrt R[1-D_d(R)]=2\sqrt A.
+\]
+
+Thus response at least 1-epsilon needs range at least
+`4A(1-epsilon)/epsilon^2`, with a sharp leading constant at fixed dimension.
+The exact maximum amplitude of a k-coordinate Fourier coefficient in any
+larger cube is D_k(R)/2^k. Small amplitudes still contain information and are
+not permission to erase source provenance or future optionality.
+
+For three inputs at cap four, a rational polynomial positivity certificate
+proves **D_3(4)=1/40**. The witness is `M_1=1`,
+`M_0=1+(2/3)(x_1+x_2+x_3)`. At noise eta=1/4, convexity then gives the
+full-SUM CE lower bound
+`-(3/4)log(161/320)-(1/4)log(159/320)>0.69004167`.
+A native four-PRODUCT construction attains Bayes at the same cap, with a
+certified all-SUM comparison gap greater than 0.1277 nats. The discrepancy
+maximizer is not asserted CE-optimal, and four is an upper PRODUCT count,
+not a proved minimum. These are range-constrained static claims, separate
+from registered acquisition/value, physical cost, fresh evidence and AMP.
+Proof and exact audit:
+[`SUM_PARITY_RANGE_CAPACITY.md`](theory/proofs/SUM_PARITY_RANGE_CAPACITY.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

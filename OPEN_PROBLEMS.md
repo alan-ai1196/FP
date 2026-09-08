@@ -87,6 +87,15 @@ coefficient vector or a Runtime completion flag. See
 `theory/proofs/UNARY_SUM_PARITY_ENVELOPE.md`. Sharp finite-range versions and
 general nonuniform context/target envelopes remain open.
 
+**Finite-range interaction capacity: scoped closure.** XVII.13 exactly reduces
+the full unary-SUM parity discrepancy maximum D_d(R) to a two-variable rational
+optimization. It proves a sharp asymptotic range law and the exact finite value
+D_3(4)=1/40 through a global polynomial certificate. This gives a full-SUM
+three-bit CE lower bound and a same-cap PRODUCT comparison with margin >0.1277.
+General closed forms for finite D_d(R), sharp bounded CE optima and the actual
+acquisition/value/build cost remain open. Maximizing one Fourier coefficient
+is not the same optimization as minimizing total CE.
+
 **All-dimension degree result, distinct from the SUM envelope.** XVII.7 proves
 that the larger family of native mass polynomials with multilinear degree <d
 has sharp infimum `H(eta)+2^(1-d)[log2-H(eta)]`. A Fourier moment gives the

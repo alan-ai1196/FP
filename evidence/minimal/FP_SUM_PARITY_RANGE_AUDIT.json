@@ -1,0 +1,161 @@
+{
+  "status": "PASS",
+  "scope": "complete static binary unary-SUM class; base one; final-normalizer cap",
+  "random_exact_fixed_denominator_optimization_and_symmetrization_cases": 960,
+  "exact_reduced_domain_grid_cases": 1944,
+  "range_four_three_input_global_certificate": {
+    "rational_identity": "PASS",
+    "degree": 5,
+    "original_nonzero_monomials": 19,
+    "positive_square_multipliers": [
+      "608 b^2 g",
+      "(352/3) b g^2"
+    ],
+    "remaining_coefficients_nonnegative": true,
+    "remaining_nonzero_monomials": 17,
+    "global_maximum": "1/40",
+    "attained_c_t_u": [
+      "2",
+      "2/3",
+      "2/3"
+    ]
+  },
+  "universal_range_law": "R*(1-D)^2 >= 4*(d-1)*H_(d-1)*D",
+  "sharp_fixed_dimension_asymptotic": "sqrt(R)*(1-D_d(R)) -> 2*sqrt((d-1)*H_(d-1))",
+  "rational_asymptotic_witness_sequence": [
+    {
+      "bits": 2,
+      "n": 10,
+      "exact_A": "1",
+      "n_squared_times_deficit_display": 2.180909090909091,
+      "proved_limit": 2
+    },
+    {
+      "bits": 2,
+      "n": 100,
+      "exact_A": "1",
+      "n_squared_times_deficit_display": 2.01980099009901,
+      "proved_limit": 2
+    },
+    {
+      "bits": 2,
+      "n": 1000,
+      "exact_A": "1",
+      "n_squared_times_deficit_display": 2.001998000999001,
+      "proved_limit": 2
+    },
+    {
+      "bits": 2,
+      "n": 10000,
+      "exact_A": "1",
+      "n_squared_times_deficit_display": 2.0001999800009997,
+      "proved_limit": 2
+    },
+    {
+      "bits": 3,
+      "n": 10,
+      "exact_A": "3",
+      "n_squared_times_deficit_display": 2.1008261198312326,
+      "proved_limit": 2
+    },
+    {
+      "bits": 3,
+      "n": 100,
+      "exact_A": "3",
+      "n_squared_times_deficit_display": 2.0130008483804858,
+      "proved_limit": 2
+    },
+    {
+      "bits": 3,
+      "n": 1000,
+      "exact_A": "3",
+      "n_squared_times_deficit_display": 2.0013300008514947,
+      "proved_limit": 2
+    },
+    {
+      "bits": 3,
+      "n": 10000,
+      "exact_A": "3",
+      "n_squared_times_deficit_display": 2.0001333000008517,
+      "proved_limit": 2
+    },
+    {
+      "bits": 5,
+      "n": 10,
+      "exact_A": "25/3",
+      "n_squared_times_deficit_display": 2.078011384124477,
+      "proved_limit": 2
+    },
+    {
+      "bits": 5,
+      "n": 100,
+      "exact_A": "25/3",
+      "n_squared_times_deficit_display": 2.0108483357534497,
+      "proved_limit": 2
+    },
+    {
+      "bits": 5,
+      "n": 1000,
+      "exact_A": "25/3",
+      "n_squared_times_deficit_display": 2.001116471695219,
+      "proved_limit": 2
+    },
+    {
+      "bits": 5,
+      "n": 10000,
+      "exact_A": "25/3",
+      "n_squared_times_deficit_display": 2.000111964705295,
+      "proved_limit": 2
+    },
+    {
+      "bits": 8,
+      "n": 10,
+      "exact_A": "363/20",
+      "n_squared_times_deficit_display": 2.071424171869918,
+      "proved_limit": 2
+    },
+    {
+      "bits": 8,
+      "n": 100,
+      "exact_A": "363/20",
+      "n_squared_times_deficit_display": 2.0101969758982197,
+      "proved_limit": 2
+    },
+    {
+      "bits": 8,
+      "n": 1000,
+      "exact_A": "363/20",
+      "n_squared_times_deficit_display": 2.0010515435556284,
+      "proved_limit": 2
+    },
+    {
+      "bits": 8,
+      "n": 10000,
+      "exact_A": "363/20",
+      "n_squared_times_deficit_display": 2.0001054741002724,
+      "proved_limit": 2
+    }
+  ],
+  "range_four_noise_one_quarter_three_input_comparison": {
+    "all_SUM_CE_lower_display": [
+      0.6900416715003654,
+      0.690041671500369
+    ],
+    "four_PRODUCT_Bayes_CE_display": [
+      0.5623351446188067,
+      0.5623351446188103
+    ],
+    "certified_all_SUM_gap_display": [
+      0.12770652688155515,
+      0.12770652688156225
+    ],
+    "proved_gap_exceeds": "127/1000"
+  },
+  "not_claimed": [
+    "discrepancy maximizer minimizes CE",
+    "global certificate from numerical termination",
+    "sharp four-PRODUCT count",
+    "uniform joint dimension/range asymptotic",
+    "registered value/build/install or AMP evidence"
+  ]
+}
