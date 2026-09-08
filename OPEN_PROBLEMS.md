@@ -127,6 +127,14 @@ unknown atom acquisition, exact optimum attainment or physical reachability.
 A first nonnegative cone solution alone is still falsified as a closure
 certificate by the 3x3 hidden-XOR example.
 
+**Tighter finite-range solver.** XVII.10 supplies a quadratically tight
+normalizer-chord relaxation over the full mass cone, with exact log enclosures
+and explicitly corrected linear-dual residuals. It reduces the audited cap-four
+XOR proof from tens of thousands of nodes to hundreds at substantially higher
+accuracy. General search efficiency, useful bounds for unbounded normalizers,
+and actual registered-state/physical integration remain open. Neither a
+numerical convex optimizer nor an uncorrected dual is a completeness oracle.
+
 **Additional solved finite-range case.** `FP_THEORY.md` XVII.3 gives the sharp
 SUM range/error tradeoff for a boundary table and a positive-margin transition
 from two required PRODUCTs to one as a final-normalizer cap increases. The

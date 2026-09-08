@@ -215,6 +215,15 @@ still returns UNRESOLVED on work exhaustion or missing rational evidence. Read
 `POSITIVE_CONE_LOSS_SOLVER.md`; this solves a static relaxation and must not
 grant reachable value, full Compiler completion or installation authority.
 
+XVII.10 makes that static solver substantially tighter when finite normalizer
+bounds are declared. Chords relax only log normalizers, preserving shared mass
+coupling, and have quadratic error. Rational tangent/dual certificates charge
+every positive residual against a proved coefficient bound. On the same full
+cap-four XOR class, 87 nodes beat the earlier 43,023-node tolerance; 551 nodes
+give a global CE interval narrower than 7.52e-7 nats. Read
+`NORMALIZER_CHORD_CERTIFICATES.md`. The fast proposal path may still return
+UNRESOLVED, and this node reduction is not a physical budget/AMP result.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

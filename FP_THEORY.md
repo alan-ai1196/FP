@@ -1073,6 +1073,46 @@ reachability, physical construction, fresh persistence or AMP authorization.
 Proof, executable solver and adversarial tree audit:
 [`POSITIVE_CONE_LOSS_SOLVER.md`](theory/proofs/POSITIVE_CONE_LOSS_SOLVER.md).
 
+## XVII.10. Quadratically tight global bounds in normalizer space
+
+When finite normalizer caps follow from the original linear coefficient
+domain, retain the common mass variables and write
+`C L=sum_x n_x log T_x-sum_xy c_xy log M_xy`. In a normalizer interval [l,u],
+the affine chord of log T is a lower bound with error at most
+`(u-l)^2/(8l^2)`. Replacing only these concave terms leaves a convex relaxation
+over the full original mass cone. Rational lower endpoint logs and rational
+tangent lower planes for -log M yield a linear lower `k+g^T w`.
+
+For original/node constraints `Aw<=b`, a proposed rational y<=0 gives a sound
+mean-CE lower bound
+
+\[
+\boxed{[k+b^T y-\sum_j W_j\max((A^T y)_j-g_j,0)]/C,}
+\]
+
+where each W_j is a coefficient bound proved from positive atoms and the node's
+normalizer caps. An unbounded zero-mass column must have no positive residual;
+its original constraints cannot be deleted. Ignoring residuals is falsified
+by an explicit one-context example whose uncorrected "lower" exceeds an
+attainable Bayes loss. Exact log enclosures, correction terms and covering
+branches are reconstructed by the independent verifier.
+
+On uniform noisy XOR `p=(1/4,3/4,3/4,1/4)`, base `(1,1)`, all unary SUM models
+and cap T<=4, the verified tree shrinks from 43,023 probability-box nodes to
+87 normalizer-box nodes at a stricter CE tolerance. A 551-node run certifies
+`0.68483177<=inf L<=0.68483253`, with actual interval width below 7.52e-7 nats.
+These are scoped exact-certificate numerical bounds, not a closed-form optimum
+or an equal-factor claim about FLOPs, memory or wall time. A coupled three-label
+control and adversarial certificates are also checked.
+
+Convex inner problems admit arbitrarily accurate rational tangent-grid LP
+approximations when the grid and log precision are both refined. The fast
+numerical proposal path does not claim to implement that completeness oracle:
+missing caps/evidence, precision limits and work exhaustion remain UNRESOLVED.
+No model-class reduction, registered value path or Runtime/AMP authorization
+is inferred. Proof and reference certificate implementation:
+[`NORMALIZER_CHORD_CERTIFICATES.md`](theory/proofs/NORMALIZER_CHORD_CERTIFICATES.md).
+
 ---
 
 # XVIII. Reference Compiler contract

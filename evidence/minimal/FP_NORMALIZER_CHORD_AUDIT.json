@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "same full cap-four normalized unary-SUM XOR class as XVII.9",
+  "exact_log_enclosure_identity_cases": 7,
+  "independent_decimal_log_reference_digits": 80,
+  "rational_chord_curvature_cases": 20,
+  "verified_normalizer_tree_nodes": 87,
+  "declared_mean_ce_epsilon": "1/200",
+  "verified_mean_ce_lower_enclosure": "12550308861483099227/18446744073709551616",
+  "verified_mean_ce_upper": "3084211495951943/4503599627370496",
+  "mean_ce_lower_float64_display": 0.6803536066492027,
+  "mean_ce_upper_float64_display": 0.684832523123889,
+  "mean_ce_width_float64_display": 0.0044789164746862845,
+  "initial_local_objective_evaluations": 63,
+  "convex_proposal_objective_evaluations": 1155,
+  "previous_independently_verified_probability_tree_nodes": 43023,
+  "previous_mean_ce_width_upper": "0.006",
+  "high_accuracy_same_class": {
+    "declared_epsilon": "1/1000000",
+    "verified_nodes": 551,
+    "ce_lower_enclosure": "12632916421021606233/18446744073709551616",
+    "ce_upper": "3084211495951943/4503599627370496",
+    "conservative_decimal_interval": [
+      "0.68483177",
+      "0.68483253"
+    ],
+    "width_float64_display": 7.516989175372749e-07
+  },
+  "forged_certificate_rejections": [
+    "missing_child",
+    "invalid_axis",
+    "false_lower",
+    "positive_dual",
+    "weaken_accuracy",
+    "invalid_witness"
+  ],
+  "unbounded_null_atom_residual_rejected": true,
+  "uncorrected_dual_has_explicit_false_lower_counterexample": true,
+  "coupled_three_label_control": {
+    "verified_nodes": 3,
+    "lower_ce_enclosure": "310713304228109845/288230376151711744",
+    "upper_ce": "1218443846456153/1125899906842624",
+    "exact_optimum_likelihood_attained": "729/4194304"
+  },
+  "node_budget_and_missing_caps_return_unresolved": true,
+  "not_claimed": [
+    "numerical convex optimizer is a completeness oracle",
+    "polynomial work bound",
+    "arbitrary unbounded normalizers handled by this fast path",
+    "physical Compiler budget or complete runtime/AMP certification"
+  ]
+}

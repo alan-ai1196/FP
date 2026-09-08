@@ -384,3 +384,27 @@ An unscored context still restricts a shared coefficient through its resource
 cap, so zero loss weight is not permission to erase it. This settles finite
 arbitrary-accuracy static optimization, not efficient general compilation,
 registered value/build/install paths or AMP. See `POSITIVE_CONE_LOSS_SOLVER.md`.
+
+## 27. Shared normalizer geometry collapsed the proof search (2026-09-08)
+
+The first complete static loss solver was correct but used 43,023 probability
+boxes on cap-four noisy XOR. Its independent probability bounds discarded too
+much shared mass geometry. Replacing only the concave log-normalizer terms by
+their chords instead gives a convex relaxation on the original coefficient
+domain, with quadratic relative-width error. Rational tangent planes and
+linear-dual residual correction make this a checkable global lower certificate.
+
+The same full XOR class closes in 87 nodes at tighter accuracy. A 551-node
+run certifies `0.68483177<=inf L<=0.68483253`, with interval width below 7.52e-7
+nats; no local optimizer termination is used as global authority. A coupled
+three-label control also closes. Exact log enclosures are checked against an
+independent 80-digit reference, and forged branches, lower values, dual signs,
+accuracy requirements and witnesses are rejected.
+
+The residual term is indispensable: a one-context example makes the
+uncorrected scalar lower exceed an attainable Bayes loss. Unbounded null-atom
+columns likewise cannot be erased or assigned fictional finite caps. This
+is a solver improvement within unchanged FP semantics. Arbitrary inner precision
+has an effective tangent-grid LP construction, but the fast numerical proposal
+path still returns UNRESOLVED on missing evidence, precision or work. Physical
+Compiler closure and AMP remain separate. See `NORMALIZER_CHORD_CERTIFICATES.md`.
