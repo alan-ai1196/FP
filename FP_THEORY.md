@@ -983,8 +983,8 @@ least `ceil(log2 d)`. Degree is not PRODUCT count: shared repeated squaring
 precludes assuming degree <= count+1. The depth bound is not asserted sharp.
 
 This full sub-degree family is **larger than unary SUM** for d>=3. Its small
-gap above Bayes is not the unary-SUM conjecture's small improvement over
-unigram; the latter remains open. Neither the unattained infimum nor the finite
+gap above Bayes is not the unary-SUM family's small improvement over unigram,
+whose complementary exact envelope is now proved in XVII.12. Neither infimum nor the finite
 algebraic construction supplies registered value/install or AMP evidence.
 Proof and exact audit:
 [`PARITY_DEGREE_ENVELOPE.md`](theory/proofs/PARITY_DEGREE_ENVELOPE.md).
@@ -1156,6 +1156,58 @@ or a different vector-output primitive. Range caps, registered value,
 information acquisition, build/install and AMP remain distinct obligations.
 Proof and exact constructive audit:
 [`ONE_PRODUCT_SHARED_SLACK.md`](theory/proofs/ONE_PRODUCT_SHARED_SLACK.md).
+
+---
+
+## XVII.12. The exact unary-SUM parity envelope in every dimension
+
+The earlier multi-input conjecture is now **PROVED**. On uniform d-bit parity,
+d>=2, with symmetric noise eta, unary indicators, base `(1,1)`, arbitrary
+finite nonnegative SUM graphs and one final normalization,
+
+\[
+\boxed{\inf_{SUM}L=\log2-2^{1-d}[\log2-H(\eta)].}
+\]
+
+It is unattained finitely for eta<1/2; at eta=1/2 the base attains log2. The
+proof covers the full affine mass class, without a symmetry reduction or a
+restriction on sharing, depth or width. It starts from a stronger global
+invariant: if f is strictly positive affine and 0<=h<=f is affine on the cube,
+then `|sum_x chi(x) h(x)/f(x)|<1`. Orient f to have nonnegative slopes and use
+the Laplace integral for 1/f; nonnegative affine numerator coefficients and
+their necessary offset bound the alternating sum.
+
+Conditioning on other inputs gives the sharp bound `|E[chi_S q]|<=2^(-k)`
+for every k-coordinate Fourier coefficient. Normalization can create nonzero
+higher-order prediction information even in a SUM-only graph, but its maximum
+amplitude decays exponentially with interaction order. Linearly separable
+threshold cuts alone do not imply this bound.
+
+Integrating this discrepancy bound along an affine interpolation between two
+positive masses proves the log-ratio oscillation inequality
+
+\[
+\left|\sum_x\chi(x)\log(M_1(x)/M_0(x))\right|
+\le\max_x\log(M_1/M_0)-\min_x\log(M_1/M_0).
+\]
+
+The two extreme log odds alone then lower-bound the total log-cosh penalty.
+A scalar convex minimization gives the exact noisy-loss formula. A finite
+native SUM witness approaches Bayes on two adjacent contexts and uniform on
+all others: `M_y=1+K v_(x_1,y)+K^2 sum_(i>=2) x_i`, where v_0 and v_1 are
+the two noisy target vectors. Its excess above the infimum is at most 2/K and
+its peak normalizer is `2+K+2(d-1)K^2`.
+
+Thus unary SUM's best unigram gain decays exponentially with input dimension,
+while its gap to Bayes approaches `log2-H(eta)`. The larger degree-below-d
+class in XVII.7 has the complementary small gap above Bayes. A reachable
+Bayes-quality competitor would separate from the entire unary-SUM class by
+`(1-2^(1-d))[log2-H(eta)]`; static expressivity alone does not supply that
+competitor's acquisition, value, fresh persistence or physical installation.
+The arbitrary-token baseline extension still holds under block-factorized
+hidden-group sampling. Nonuniform context laws and sharp finite-range
+envelopes remain separate. Proof and exact/outward-log audit:
+[`UNARY_SUM_PARITY_ENVELOPE.md`](theory/proofs/UNARY_SUM_PARITY_ENVELOPE.md).
 
 ---
 

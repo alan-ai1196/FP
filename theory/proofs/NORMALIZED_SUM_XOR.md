@@ -273,8 +273,9 @@ candidates without float ordering. Optional float64 optimization is a search
 stress test, not the proof. Minimal evidence is recorded in
 `evidence/minimal/FP_NORMALIZED_SUM_XOR_AUDIT.json`.
 
-Exploratory float64 searches on 3--5 bit parity suggest a stronger dimension-
-dependent SUM envelope. This is **not proved here** and must not be used for
-pruning or structural forcing. The next issue is how the exact two-input
-projection extends to passive multi-input tasks and physically bounded dynamic
-range, while preserving the full strength of native normalization.
+The exploratory float64 searches on 3--5 bit parity originally suggested a
+stronger dimension-dependent SUM envelope. That conjecture is now proved in
+`UNARY_SUM_PARITY_ENVELOPE.md` (2026-09-08), using a global affine log-ratio
+oscillation bound, not numerical optimizer termination. The historical search
+evidence records its then-conjectural status. General passive multi-input
+targets, nonuniform sampling and sharp finite-range optima remain open.

@@ -77,20 +77,24 @@ constraints, then connect a strict separation to registered acquisition and
 constructive value/build/install paths. An unattained continuous infimum is a
 sound optimistic control, not an installable optimizer endpoint.
 
-**Concrete conjecture, not a pruning rule.** For uniform d-bit parity, symmetric
-noise eta, unary indicator sources, arbitrary fixed nonnegative SUM coefficients,
-base `(1,1)` and one final normalization, float64 searches for d=3--5 suggest
-`inf L=log2-2^(1-d)[log2-H(eta)]`. Only d=2 is proved. Audit details and the
-unrestricted-normalization baseline are in `theory/proofs/NORMALIZED_SUM_XOR.md`.
+**Former all-dimension conjecture: CLOSED.** XVII.12 proves
+`inf L=log2-2^(1-d)[log2-H(eta)]` for uniform d-bit parity, symmetric noise,
+the full unary-SUM family, base `(1,1)` and one final normalization. The proof
+uses normalized affine discrepancy and log-ratio oscillation, followed by a
+scalar convex loss bound. A native construction has excess <=2/K and range
+O(d K^2). This is an unattained infimum for d>=2 and eta<1/2, not a static
+coefficient vector or a Runtime completion flag. See
+`theory/proofs/UNARY_SUM_PARITY_ENVELOPE.md`. Sharp finite-range versions and
+general nonuniform context/target envelopes remain open.
 
-**All-dimension degree result, distinct from that conjecture.** XVII.7 proves
+**All-dimension degree result, distinct from the SUM envelope.** XVII.7 proves
 that the larger family of native mass polynomials with multilinear degree <d
 has sharp infimum `H(eta)+2^(1-d)[log2-H(eta)]`. A Fourier moment gives the
 all-class lower bound; a finite edge-indicator hierarchy approaches it with
 explicit range/error costs. Exact noisy parity requires full degree and at
-least `ceil(log2 d)` PRODUCT depth. Sharp unary-SUM envelopes and intermediate
-degree/node/physical-budget phases remain open. Do not mistake this degree
-family's small Bayes excess for the unary-SUM conjecture's small unigram gain.
+least `ceil(log2 d)` PRODUCT depth. Intermediate degree/node/physical-budget
+phases remain open. Do not mistake this degree family's small Bayes excess
+for the now-proved unary-SUM envelope's small unigram gain.
 
 **Failed reduction.** Independent two-dimensional face closures do not decide
 multi-input SUM closure, even when every probability threshold cut is also

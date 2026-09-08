@@ -182,8 +182,8 @@ retains a highest-order Fourier obstruction; a native edge-indicator hierarchy
 shows the loss lower bound is sharp but unattained. This also proves a PRODUCT
 depth lower bound, without conflating degree with node count under sharing.
 Read `PARITY_DEGREE_ENVELOPE.md`. This is a larger class than unary SUM for d>=3:
-its small excess over Bayes does not settle the still-open unary-SUM conjecture
-about a small improvement over unigram. Range, value construction and physical
+its small excess over Bayes differs from the unary-SUM envelope's small
+improvement over unigram, now separately proved in XVII.12. Range, value construction and physical
 installation of the hierarchy are not granted by the extensional theorem.
 
 A new exact counterexample sharpens that frontier: all six coordinate faces
@@ -235,6 +235,18 @@ N=2^d labels and forces at least N products at range N+1. Read
 `ONE_PRODUCT_SHARED_SLACK.md`. This is a static mass/resource theorem; neither
 the derived normal form nor batching authorizes changing complete-state
 provenance or scalar semantic node counts.
+
+XVII.12 closes the all-dimension unary-SUM parity conjecture:
+`inf L=log2-2^(1-d)[log2-H(eta)]`. The proof goes through a global normalized
+affine parity discrepancy bound, an integrated log-ratio oscillation bound,
+and the log-cosh loss identity. A finite SUM witness approaches the exact
+infimum with excess <=2/K and normalizer O(d K^2). Exact rational checks,
+an equivalent algebraic likelihood inequality and outward-log audits all
+pass. Read `UNARY_SUM_PARITY_ENVELOPE.md`. This establishes a strong all-SUM
+baseline in every dimension; the earlier conjecture labels are superseded,
+not evidence that a local optimizer established global completeness. General
+nonuniform targets, sharp finite-range optima and reachable acquisition/value
+remain open.
 
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:

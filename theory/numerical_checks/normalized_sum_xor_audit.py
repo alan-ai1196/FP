@@ -234,7 +234,7 @@ def float64_search():
         rows.append({'bits': d, 'noise': eta, 'restarts': 16,
                      'best_ce': float(best.fun), 'successful_terminations': sum(bool(r.success) for r in results),
                      'comparison_value': conjectured,
-                     'comparison_status': 'PROVED infimum' if d == 2 else 'CONJECTURE ONLY'})
+                     'comparison_status': 'PROVED infimum; multi-input proof in UNARY_SUM_PARITY_ENVELOPE.md'})
     return {'arithmetic': 'float64', 'algorithm': 'bounded log-weight L-BFGS-B; fixed positive base retained',
             'seed': 20260906, 'results': rows,
             'scope': 'local numerical search, never a completeness or global-optimality certificate'}

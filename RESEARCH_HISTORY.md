@@ -437,3 +437,36 @@ This separates unbounded conditional universality, fixed-mass sharing and
 resource-constrained structure. It does not identify scalar semantic products
 with hardware batches, nor turn an extensional normal form into a registered
 value or provenance-preserving rewrite. See `ONE_PRODUCT_SHARED_SLACK.md`.
+
+## 29. The multi-input SUM conjecture yields to a global oscillation bound (2026-09-08)
+
+After closing shared-PRODUCT capacity, research returned to the still-open
+unary-SUM noisy-parity envelope. A stronger 700-restart float64 attack across
+three through six inputs and several noise levels found no counterexample;
+that result was not treated as proof. The useful simplification was instead
+to ask whether the parity contrast of a log ratio of two affine masses can
+exceed the ratio's own oscillation.
+
+It cannot. First, a normalized nonnegative affine numerator has parity
+discrepancy strictly below one. Orienting the denominator's slopes and
+integrating its reciprocal yields positive alternating moments; numerator
+nonnegativity bounds the offsets needed for any negative slope. Integrating
+this lemma along an affine path between two positive masses proves the
+log-ratio oscillation bound. The two extreme log odds then control the total
+log-cosh penalty, and a one-dimensional convex minimization gives exactly
+`log2-2^(1-d)[log2-H(eta)]` for every d>=2 and 0<=eta<1/2.
+
+A simple native SUM witness leaves two adjacent contexts at Bayes in the
+limit and makes the other contexts uniform. Its finite excess is <=2/K with
+peak normalizer `2+K+2(d-1)K^2`; no exponential coefficient hierarchy is needed.
+The infimum is strictly unattained at finite coefficients. This establishes
+the strong all-SUM baseline, rather than assuming it equals unigram or
+conflating it with the larger degree-below-d family.
+
+The retained audit checks 2,178 exact denominator cases, 840 random rational
+mass pairs with exact discrepancy/interpolation and outward-log bounds, the
+equivalent all-noise polynomial inequality without floating ordering, and 84
+finite native witnesses through eight inputs. Canonical conjecture labels are
+updated to PROVED; dated exploratory evidence remains historical. General
+nonuniform tasks, sharp bounded optima, acquisition, registered value/install
+and AMP are not supplied by this theorem. See `UNARY_SUM_PARITY_ENVELOPE.md`.

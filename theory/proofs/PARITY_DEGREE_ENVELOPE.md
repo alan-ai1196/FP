@@ -1,7 +1,8 @@
 # The exact sub-parity-degree loss envelope
 
 Status: **PROVED**, 2026-09-06. This is a static expressivity/loss theorem for
-all dimensions, not a proof of the unary-SUM conjecture at d>=3.
+all dimensions. The distinct unary-SUM envelope was subsequently proved in
+`UNARY_SUM_PARITY_ENVELOPE.md` on 2026-09-08.
 
 ## 1. The declared family and result
 
@@ -34,8 +35,8 @@ At eta=1/2 the base attains log2 and the strict-unattainment statement does not
 apply. For d=1 the degree-zero family is constant and attains log2.
 
 For d=2 this recovers the sharp unary-SUM XOR envelope. For d>=3 it is a
-**stronger comparison class** than unary SUM: the latter's conjectured infimum
-is `log2-2^(1-d)[log2-H(eta)]`, which remains unproved. The two formulas agree
+**stronger comparison class** than unary SUM: the latter's now-proved infimum
+is `log2-2^(1-d)[log2-H(eta)]`. The two formulas agree
 only at d=2 (or no signal). Never exchange them in a certificate.
 
 ## 2. The all-class lower bound comes from a retained Fourier moment
@@ -131,8 +132,8 @@ wrong for a DAG. A graph may have many PRODUCTs yet remain below degree d.
 The proved sub-degree risk margin above Bayes is exponentially small,
 `2^(1-d)[log2-H(eta)]`. Thus exact interaction necessity alone does not imply
 a dimension-independent robust loss separation. Conversely this small margin
-cannot be used to dismiss unary SUM: that is a smaller family whose sharp
-multi-input envelope is still an open problem.
+cannot be used to dismiss unary SUM: that smaller family's complementary
+exact multi-input envelope is proved in `UNARY_SUM_PARITY_ENVELOPE.md`.
 
 Proof audit: `theory/numerical_checks/parity_degree_audit.py`. Numerical or
 finite enumeration checks audit the algebra; the universal lower bound and

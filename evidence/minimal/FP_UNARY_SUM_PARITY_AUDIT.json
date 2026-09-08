@@ -1,0 +1,107 @@
+{
+  "status": "PASS",
+  "scope": "static positive affine binary masses; uniform parity task; no internal normalization or recurrence",
+  "exact_denominator_grid_cases": 2178,
+  "rational_normalized_discrepancy_and_outward_log_oscillation_cases": 840,
+  "exact_algebraic_all_noise_inequality_cases": 840,
+  "exact_native_finite_witness_cases": 84,
+  "linearly_separable_threshold_counterexample_discrepancy": "3/2 > 1",
+  "fixed_base_discrepancy_sharpness_constructions": 21,
+  "sharp_envelope": "log(2)-2^(1-d)*(log(2)-H(eta))",
+  "finite_attainment_for_d_ge_2_and_eta_lt_half": false,
+  "finite_construction_excess_upper": "2/K",
+  "finite_construction_peak_normalizer": "2+K+2*(d-1)*K^2",
+  "selected_finite_witnesses": [
+    {
+      "bits": 2,
+      "noise": "0",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.3465735902799718,
+        0.3465735902799736
+      ],
+      "certified_finite_excess_display": [
+        0.0007491884357424539,
+        0.0007491884357477829
+      ],
+      "exact_peak_normalizer": 2001002
+    },
+    {
+      "bits": 2,
+      "noise": "1/4",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.6277411625893752,
+        0.6277411625893787
+      ],
+      "certified_finite_excess_display": [
+        6.281602380964202e-05,
+        6.281602381674745e-05
+      ],
+      "exact_peak_normalizer": 2001002
+    },
+    {
+      "bits": 3,
+      "noise": "0",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.5198603854199577,
+        0.5198603854199604
+      ],
+      "certified_finite_excess_display": [
+        0.00043708631296013323,
+        0.0004370863129663505
+      ],
+      "exact_peak_normalizer": 4001002
+    },
+    {
+      "bits": 3,
+      "noise": "1/4",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.6604441715746594,
+        0.660444171574663
+      ],
+      "certified_finite_excess_display": [
+        4.703103396908048e-05,
+        4.703103397618591e-05
+      ],
+      "exact_peak_normalizer": 4001002
+    },
+    {
+      "bits": 8,
+      "noise": "0",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.687731968211819,
+        0.6877319682118226
+      ],
+      "certified_finite_excess_display": [
+        1.794001232025e-05,
+        1.794001232732767e-05
+      ],
+      "exact_peak_normalizer": 14001002
+    },
+    {
+      "bits": 8,
+      "noise": "1/4",
+      "K": 1000,
+      "proved_infimum_display": [
+        0.6921252115291535,
+        0.6921252115291571
+      ],
+      "certified_finite_excess_display": [
+        2.5399858620059335e-06,
+        2.539985869111361e-06
+      ],
+      "exact_peak_normalizer": 14001002
+    }
+  ],
+  "proof_status": "analytic lemmas prove the all-dimension result; finite audits check algebra and witnesses",
+  "not_claimed": [
+    "nonuniform context envelope",
+    "sharp finite-range envelope",
+    "registered value/acquisition/build/install evidence",
+    "AMP or Compiler freeze"
+  ]
+}
