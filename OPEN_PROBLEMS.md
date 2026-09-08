@@ -143,6 +143,17 @@ General multi-input/multiclass loss envelopes, actual hardware-resource phases,
 passive acquisition, and registered value reachability remain open. A cap on
 the readout normalizer is not automatically a cap on intermediate activations.
 
+**Shared PRODUCT capacity, scoped closure.** XVII.11 supplies a complete
+fixed-mass one-PRODUCT criterion, including the common nonnegative slack that
+the necessary sign invariant missed. Its four-label identity-noise target
+has true one-PRODUCT minimum range 35/2 versus 15/2 for the sign relaxation;
+at range 5 four products are necessary, with a robust all-at-most-three loss
+gap. The all-dimension identity task forces at least 2^d scalar PRODUCT nodes
+at minimum range. Sharp intermediate two/three-PRODUCT range phases, sharp
+counts in higher dimensions, and efficient global loss optimization over the
+variable-parent one-PRODUCT class remain open. A fixed-mass normal form is not
+a learner/provenance equivalence and does not settle conditional scales.
+
 **Finite information, scoped progress.** XVII.4 supplies exact interval-box
 structural certificates, a non-identifying query counterexample, an anytime
 passive procedure under an explicit iid law, and robustness of the range-four

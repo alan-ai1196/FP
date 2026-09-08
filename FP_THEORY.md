@@ -1115,6 +1115,50 @@ is inferred. Proof and reference certificate implementation:
 
 ---
 
+## XVII.11. Exact shared-PRODUCT capacity and a multiclass range phase
+
+For a fixed four-context mass table `M_y>=1`, scalar unary indicators, positive
+SUM/PRODUCT and one final normalization, write `E_y=M_y-1` and
+`Delta_y=E_y(00)+E_y(11)-E_y(01)-E_y(10)`. Zero differences exactly characterize
+SUM-only realization. For one shared PRODUCT the nonzero differences must
+have a common sign sigma, but this necessary sign test is **not sufficient**.
+Let `(s_0,s_1)` be the two corners of that sign and define
+
+\[
+H_i=\min_{y:\Delta_y\ne0}\frac{E_y(s_i)}{|\Delta_y|}.
+\]
+
+The complete remaining criterion is `H_0+H_1>=1`. A positive PRODUCT of two
+unary SUMs realizes a table supported on these two corners with values a and
+1-a; subtracting its shared contribution leaves a nonnegative additive table
+in every head. This is an exact rational decision and construction for known
+**masses**, not a congruence of complete states or a conditional-table decision
+with undeclared normalizers. Among 6,561 small integer two-head tables, 356
+pass the sign condition but fail this shared-slack criterion.
+
+For four labels indexed by the contexts, target `p_y(x)=(1+1[x=y])/5` and
+base `(1,1,1,1)`, the exact Bayes normalizer cap is 5 without a PRODUCT limit.
+The sign relaxation alone has minimum cap 15/2, while the actual one-PRODUCT
+class has minimum cap **35/2**, attained by a finite rational native witness.
+At cap 5 the minimum is **four PRODUCT nodes**: positivity forces the excess
+mass matrix to be identity, while flattening SUM readout paths gives
+`E=A+HC` with unary-additive A and `rank(HC)<=number of PRODUCT nodes`.
+Unary support cannot contribute to a diagonal entry without leaking off the
+diagonal, so A must vanish. A robust version excludes every at-most-three-
+PRODUCT model by sup-norm distance at least 1/28 and uniform excess CE at
+least 1/1568, allowing arbitrary compound parents and sharing.
+
+For d binary inputs, N=2^d labels, target `(1+1[x=y])/(N+1)` and cap N+1,
+the same proof forces at least N PRODUCT nodes. Finite native constructions
+give explicit upper counts; sharp counts for d>2 remain open. These counts
+refer to scalar semantic arithmetic nodes, not batched physical instructions
+or a different vector-output primitive. Range caps, registered value,
+information acquisition, build/install and AMP remain distinct obligations.
+Proof and exact constructive audit:
+[`ONE_PRODUCT_SHARED_SLACK.md`](theory/proofs/ONE_PRODUCT_SHARED_SLACK.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

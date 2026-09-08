@@ -224,6 +224,18 @@ give a global CE interval narrower than 7.52e-7 nats. Read
 `NORMALIZER_CHORD_CERTIFICATES.md`. The fast proposal path may still return
 UNRESOLVED, and this node reduction is not a physical budget/AMP result.
 
+XVII.11 now completely characterizes fixed-mass one-PRODUCT sharing on two
+binary inputs. The mixed-difference sign invariant misses a common nonnegative
+slack condition; exact enumeration finds 356 false sign certificates among
+6,561 small tables. A four-label identity task separates the relaxed minimum
+range 15/2 from the actual one-PRODUCT threshold 35/2. At its unrestricted
+minimum range 5, four scalar PRODUCT nodes are necessary and sufficient, with
+a positive all-at-most-three-PRODUCT loss margin. The rank argument extends to
+N=2^d labels and forces at least N products at range N+1. Read
+`ONE_PRODUCT_SHARED_SLACK.md`. This is a static mass/resource theorem; neither
+the derived normal form nor batching authorizes changing complete-state
+provenance or scalar semantic node counts.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

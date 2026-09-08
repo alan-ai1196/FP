@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "scope": "fixed scalar unary-source mass tables; positive base and shared scalar PRODUCT nodes",
+  "complete_small_mass_grid": {
+    "tables": 6561,
+    "classification": {
+      "ZERO_PRODUCT": 361,
+      "ONE_PRODUCT": 3922,
+      "opposite_mixed_signs": 1922,
+      "insufficient_shared_slack": 356
+    }
+  },
+  "independently_generated_product_of_sum_models": 1200,
+  "generated_output_alphabet_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "minimal_disjoint_slack_counterexample_exact": true,
+  "four_label_task": {
+    "unrestricted_minimum_range": "5",
+    "sign_relaxation_minimum_range": "15/2",
+    "actual_one_product_minimum_range": "35/2",
+    "one_product_witness_normalizers": [
+      "5",
+      "15/2",
+      "15/2",
+      "35/2"
+    ],
+    "minimum_product_count_at_range_5": 4,
+    "all_at_most_three_product_ce_gap_lower_at_range_5": "1/1568"
+  },
+  "general_rank_obstruction_and_native_constructions": [
+    {
+      "bits": 2,
+      "contexts_and_labels": 4,
+      "proved_product_lower": 4,
+      "constructed_product_upper": 4,
+      "minimal_readout_range": 5,
+      "proved_supnorm_separation_for_fewer_products": "1/30",
+      "proved_uniform_ce_gap": "1/1800"
+    },
+    {
+      "bits": 3,
+      "contexts_and_labels": 8,
+      "proved_product_lower": 8,
+      "constructed_product_upper": 12,
+      "minimal_readout_range": 9,
+      "proved_supnorm_separation_for_fewer_products": "1/90",
+      "proved_uniform_ce_gap": "1/32400"
+    },
+    {
+      "bits": 4,
+      "contexts_and_labels": 16,
+      "proved_product_lower": 16,
+      "constructed_product_upper": 24,
+      "minimal_readout_range": 17,
+      "proved_supnorm_separation_for_fewer_products": "1/306",
+      "proved_uniform_ce_gap": "1/749088"
+    },
+    {
+      "bits": 5,
+      "contexts_and_labels": 32,
+      "proved_product_lower": 32,
+      "constructed_product_upper": 48,
+      "minimal_readout_range": 33,
+      "proved_supnorm_separation_for_fewer_products": "1/1122",
+      "proved_uniform_ce_gap": "1/20142144"
+    },
+    {
+      "bits": 6,
+      "contexts_and_labels": 64,
+      "proved_product_lower": 64,
+      "constructed_product_upper": 88,
+      "minimal_readout_range": 65,
+      "proved_supnorm_separation_for_fewer_products": "1/4290",
+      "proved_uniform_ce_gap": "1/588931200"
+    },
+    {
+      "bits": 7,
+      "contexts_and_labels": 128,
+      "proved_product_lower": 128,
+      "constructed_product_upper": 164,
+      "minimal_readout_range": 129,
+      "proved_supnorm_separation_for_fewer_products": "1/16770",
+      "proved_uniform_ce_gap": "1/17998905600"
+    },
+    {
+      "bits": 8,
+      "contexts_and_labels": 256,
+      "proved_product_lower": 256,
+      "constructed_product_upper": 304,
+      "minimal_readout_range": 257,
+      "proved_supnorm_separation_for_fewer_products": "1/66306",
+      "proved_uniform_ce_gap": "1/562750161408"
+    }
+  ],
+  "not_claimed": [
+    "mass normal form preserves learner/physical state",
+    "sign invariant suffices for one PRODUCT",
+    "sharp two/three-PRODUCT intermediate range thresholds",
+    "sharp general product count for more than two inputs",
+    "dimension-independent language-model margin",
+    "registered value/install or AMP certification"
+  ]
+}

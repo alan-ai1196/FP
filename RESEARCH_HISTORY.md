@@ -408,3 +408,32 @@ is a solver improvement within unchanged FP semantics. Arbitrary inner precision
 has an effective tangent-grid LP construction, but the fast numerical proposal
 path still returns UNRESOLVED on missing evidence, precision or work. Physical
 Compiler closure and AMP remain separate. See `NORMALIZER_CHORD_CERTIFICATES.md`.
+
+## 28. Shared positive slack turns a sign invariant into an exact theorem (2026-09-08)
+
+The existing one-PRODUCT mixed-difference sign obstruction was deliberately
+only necessary. Attacking its possible sufficiency exposed two output heads
+with disjoint nonlinear supports: each needs one PRODUCT individually, but
+their same-sign differences cannot share one. A complete criterion follows
+from the common nonnegative slack at the sign's two corners. Its converse
+constructs one PRODUCT of two unary SUMs and a positive additive remainder.
+An exhaustive rational grid has 356 such sign-only false certificates among
+6,561 two-head tables; 1,200 independently generated PRODUCT-of-SUM models
+with one through six heads also pass exact reconstruction.
+
+The stronger invariant solves a conditional resource problem as well. For the
+four-label identity-noise target `(1+1[x=y])/5`, sign feasibility begins at
+range 15/2 but a genuine shared PRODUCT requires exactly 35/2. A convex
+quadratic obstruction proves the lower threshold and a finite rational native
+construction attains it. At the unrestricted minimum range 5, positivity and
+the rank of the PRODUCT readout table force four nodes, with excess CE at least
+1/1568 for the entire at-most-three class. This remains valid with arbitrary
+compound parents and sharing. The same identity-matrix argument yields a
+2^d PRODUCT lower bound for 2^d labels at their minimum range; explicit native
+indicator DAGs are checked through eight bits, without claiming those larger
+upper counts are sharp.
+
+This separates unbounded conditional universality, fixed-mass sharing and
+resource-constrained structure. It does not identify scalar semantic products
+with hardware batches, nor turn an extensional normal form into a registered
+value or provenance-preserving rewrite. See `ONE_PRODUCT_SHARED_SLACK.md`.

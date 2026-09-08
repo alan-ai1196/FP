@@ -4,6 +4,10 @@ Status: **PROVED**, 2026-09-06. This is a numerical-range-constrained static
 native-program theorem, not a claim about unspecified bytes/FLOPs or a new
 GPU/model-science experiment. No regularizer or architecture action is added.
 
+The sign invariant used below is necessary only. The later
+`ONE_PRODUCT_SHARED_SLACK.md` gives its exact fixed-mass completion and a
+multiclass task where the sign relaxation strictly understates the range cost.
+
 ## 1. Fixed task and legal class
 
 Two binary score-time inputs have their four unary indicator sources. All

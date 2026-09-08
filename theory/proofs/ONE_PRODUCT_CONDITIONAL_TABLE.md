@@ -3,6 +3,10 @@
 Status: **PROVED**, 2026-09-06. This extends the static normalization result in
 `NORMALIZED_SUM_XOR.md`; `FP_THEORY.md` XVII.1 remains the normative summary.
 
+For exact fixed-mass sharing and sharp range obstructions, see the later
+`ONE_PRODUCT_SHARED_SLACK.md`. Unbounded conditional universality does not
+assert a one-PRODUCT realization at an arbitrary fixed normalization scale.
+
 ## Contract and statement
 
 Inputs are two binary variables with their declared unary partition indicators.
