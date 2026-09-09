@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "scope": "three binary unary sources, scalar SUM/PRODUCT, fixed base (1,1), final cap three",
+  "target_selector_table": [
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0
+  ],
+  "target_probabilities": [
+    "2/3",
+    "2/3",
+    "1/2",
+    "1/2",
+    "2/3",
+    "1/2",
+    "2/3",
+    "1/2"
+  ],
+  "unique_parent_zero_face_cover": [
+    [
+      0,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1
+    ]
+  ],
+  "positive_target_contexts_affinely_span": true,
+  "support_only_one_PRODUCT_witness_overcounts": true,
+  "proved_exact_conditional_PRODUCT_minimum": 2,
+  "one_PRODUCT_Bayes_loss_infimum_attained": false,
+  "full_SUM_supnorm_distance": "1/12",
+  "full_SUM_CE_gap_lower": "1/576",
+  "local_coefficient_alphabet": [
+    "1/2",
+    "1",
+    "2"
+  ],
+  "source_and_feature_activation_cap": 2,
+  "final_normalizer_cap": 3,
+  "native_DAG_cases_checked": 12,
+  "selected_finite_witnesses": [
+    {
+      "k": 1,
+      "SUM_nodes": 7,
+      "PRODUCT_nodes": 1,
+      "exact_probability_sup_error": "1/15",
+      "proved_CE_excess_upper": "1/64",
+      "strict_Bayes_likelihood_deficit_exact": true,
+      "float64_excess_table_appears_exact": false
+    },
+    {
+      "k": 3,
+      "SUM_nodes": 15,
+      "PRODUCT_nodes": 1,
+      "exact_probability_sup_error": "1/69",
+      "proved_CE_excess_upper": "1/1024",
+      "strict_Bayes_likelihood_deficit_exact": true,
+      "float64_excess_table_appears_exact": false
+    },
+    {
+      "k": 8,
+      "SUM_nodes": 35,
+      "PRODUCT_nodes": 1,
+      "exact_probability_sup_error": "1/2301",
+      "proved_CE_excess_upper": "1/1048576",
+      "strict_Bayes_likelihood_deficit_exact": true,
+      "float64_excess_table_appears_exact": false
+    },
+    {
+      "k": 54,
+      "SUM_nodes": 219,
+      "PRODUCT_nodes": 1,
+      "exact_probability_sup_error": "1/162129586585337853",
+      "proved_CE_excess_upper": "1/5192296858534827628530496329220096",
+      "strict_Bayes_likelihood_deficit_exact": true,
+      "float64_excess_table_appears_exact": true
+    },
+    {
+      "k": 100,
+      "SUM_nodes": 403,
+      "PRODUCT_nodes": 1,
+      "exact_probability_sup_error": "1/11408855402054064613470328848381",
+      "proved_CE_excess_upper": "1/25711008708143844408671393477458601640355247900524685364822016",
+      "strict_Bayes_likelihood_deficit_exact": true,
+      "float64_excess_table_appears_exact": true
+    }
+  ],
+  "float64_false_exact_mass_cases": [
+    54,
+    100
+  ],
+  "not_claimed": [
+    "positive loss gap between one and two PRODUCTs",
+    "bounded complete construction resources",
+    "rounded equality proves real-arithmetic exactness",
+    "fixed-atom cone closure counterexample",
+    "registered value/install or AMP certification"
+  ]
+}

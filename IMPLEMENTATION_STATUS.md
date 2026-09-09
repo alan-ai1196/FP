@@ -96,6 +96,15 @@ see `theory/proofs/EXECUTION_AUTHORITY_BOUNDARY.md`. These helper imports and
 counterexamples do not restore the complete Runtime or validate the old gate
 counts. Implementation remains NOT FROZEN; science remains HOLD.
 
+The 2026-09-09 selector counterexample adds a precise theorem-audit obligation
+(`theory/proofs/ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`). Exact exclusion at
+bounded PRODUCT count and final range does not establish a positive loss gap;
+complete SUM construction resources also matter. Its explicit CPU float64
+path rounds a one-PRODUCT table to an exact target that real arithmetic cannot
+realize with one PRODUCT. An implementation must keep numerical equality,
+exact algebraic class, approximation closure and complete-resource authority
+separate. The standalone audit does not exercise or close the missing Runtime.
+
 Before an `implementation: freeze reference compiler` commit can be made, require at minimum:
 
 1. clean package import from a fresh clone;

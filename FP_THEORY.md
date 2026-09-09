@@ -1305,6 +1305,53 @@ registered value, physical installation or AMP evidence. Proof and exact audit:
 
 ---
 
+## XVII.15. Exact PRODUCT exclusion does not imply a loss gap at bounded range
+
+There is a three-input counterexample even with a bounded final normalizer.
+On unary indicators let `f=x_0 z_0+x_1 w_0` and
+`p_1=(1+f)/(2+f)`, with base `(1,1)` and cap T<=3. Exact Bayes realization
+needs **two PRODUCTs**, yet the one-PRODUCT class has Bayes loss infimum.
+
+For the exact mass, every nonnegative additive remainder vanishes because
+each unary source meets a zero of f. The two PRODUCT parents' zero faces must
+be `x=0,z=1` and `x=1,w=1`. Their required positive coefficients overcount
+the overlap, so one PRODUCT cannot equal f. Allowing conditional scales does
+not evade the obstruction: cap three fixes masses `(1,2)` wherever f=1;
+the remaining one-PRODUCT cases either reduce to the impossible mass table
+or force total mass at least four on an f=0 context.
+
+Nevertheless, for epsilon>0, the native identity
+
+\[
+\epsilon^{-1}(x_0+\epsilon w_0)(x_1+\epsilon z_0)
+=f+\epsilon z_0w_0
+\]
+
+gives a one-PRODUCT excess `e=(1-epsilon)(f+epsilon z_0w_0)` with T<=3,
+probability error `epsilon/[3(3-epsilon)]`, and CE excess <=epsilon^2/16
+for epsilon<=1/2. The contradictory term x_0 x_1 vanishes by the declared
+partition source contract; the small positive tails remain essential.
+
+At epsilon=2^-k this can use only local coefficients `{1/2,1,2}`, all source
+and feature values <=2, and exactly **4k+3 SUMs plus one PRODUCT**. Halving
+chains create the tails, doubling recovers their contribution, and a finite
+geometric SUM keeps the final cap. Thus even these local bounds do not
+replace complete construction length, work, storage and precision resources.
+Bounding all graph nodes/slots and compact coefficient domains would restore
+compactness of the static prediction class; bounding PRODUCTs alone does not.
+
+The full zero-PRODUCT class is still separated: its exact sup-norm distance
+is 1/12 and its CE gap is at least 1/576. The k=3 one-PRODUCT witness beats
+every SUM model. No positive gap separates one PRODUCT from two.
+An explicitly ordered CPU float64 evaluation at k=54 rounds the excess to f
+exactly while exact fractions retain a nonzero error. Floating equality
+therefore cannot authorize a real-arithmetic exact structure certificate.
+This is not a counterexample to a registered numerical decision class or the
+fixed-known-atom cone closure theorem. Proof and exact/float64 audit:
+[`ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`](theory/proofs/ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

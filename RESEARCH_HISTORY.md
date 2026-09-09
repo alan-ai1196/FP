@@ -523,3 +523,32 @@ witnesses. Minimal evidence retains selected convergence values. The rate
 exponents are proved, while sharp CE constants and a uniform noise/range
 crossover remain open. Registered acquisition/value, physical installation
 and AMP are separate. See `SUM_PARITY_LOSS_RANGE_RATES.md`.
+
+## 32. A bounded-range one-PRODUCT class is not closed (2026-09-09)
+
+Research next attacked exact PRODUCT counts through positive support
+certificates. That exposed a more important distinction: correct Boolean
+support does not guarantee correct mass values, and exact mass exclusion need
+not give any loss margin. The three-input selector
+`f=x_0 z_0+x_1 w_0` has a one-PRODUCT support representation that necessarily
+overcounts overlaps. Zero-face geometry proves that its exact mass needs two
+PRODUCTs; a separate normalization argument proves the same exact minimum for
+the conditional target `(1+f)/(2+f)` at cap three.
+
+Yet `(x_0+epsilon w_0)(x_1+epsilon z_0)/epsilon` equals f plus a small positive
+overlap term. Rescaling positively preserves cap three and gives one-PRODUCT
+CE excess <=epsilon^2/16. Halving, doubling and geometric SUM chains realize
+the sequence with local coefficients only in `{1/2,1,2}` and feature values
+at most two. What grows is complete construction length and numerical state,
+not PRODUCT count. Therefore those partial resource bounds cannot justify
+compactness or a positive rejection gap.
+
+The full SUM class remains a strong control, with exact sup-norm distance
+1/12 and CE gap at least 1/576; already k=3 gives a one-PRODUCT winner. An
+explicitly ordered CPU float64 run at k=54 returns the exact selector mass,
+while rational arithmetic preserves its tiny nonzero error. This rejects
+rounded equality as authority for a different exact algebraic class, not
+registered floating execution itself. The minimal audit retains zero-face
+coverage, affine-scale exclusion, actual native DAG checks, exact likelihood
+deficits and the floating counterexample. No new semantic action is needed.
+See `ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`.

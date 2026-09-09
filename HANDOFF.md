@@ -272,6 +272,18 @@ labels do not. Read `SUM_PARITY_LOSS_RANGE_RATES.md`. Sharp leading CE constants
 the uniform noise/range crossover and actual reachable value remain open.
 This is not a claim that maximizing Fourier response solves the task loss.
 
+XVII.15 exposes a more basic certificate hazard. A three-input selector task
+at cap three needs two PRODUCTs for exact Bayes realization, but one PRODUCT
+approaches Bayes arbitrarily closely at the same cap. The family can even
+use a fixed coefficient alphabet and bounded feature values: its SUM chains
+and required exact numerical state keep growing. This is a concrete reason
+to charge complete construction resources and never turn exact exclusion
+into a positive loss margin without a closure argument. The full SUM class
+still has a proved positive gap. At k=54, CPU float64 rounds the one-PRODUCT
+excess table to the exact target even though rational evaluation differs.
+Read `ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`; do not confuse this with an
+exact finite-machine theorem or a counterexample to fixed-atom cone closure.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

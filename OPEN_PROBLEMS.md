@@ -24,6 +24,14 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 
 **Attack surface.** Random small-grammar exhaustive oracle comparison, repeated SUM/shared ancestors, compound PRODUCT descendants with useless parents, recurrent delayed state, tied value slots, direct-vs-factorized physical realizations.
 
+**New failed completeness shortcut.** XVII.15 proves that a bounded PRODUCT
+count and final range do not make the variable-parent native class closed,
+even with a finite local coefficient alphabet and bounded activations.
+Growing SUM chains approach a selector task whose exact PRODUCT minimum is
+larger. Closure and positive loss margins must therefore be established for
+the actual complete resource class. General variable-parent closure and
+explicit margins under finite construction budgets remain open.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.
@@ -31,6 +39,12 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 **Why it matters.** Float64 rescoring of an AMP-generated endpoint is not the theorem. The physical path itself must instantiate the reference state transition relation.
 
 **Known.** The theory and historical gates define the obligation. Historical R5/R4 physical kernels showed why a numerically uncertified optimization path cannot be counted as an available FP realization.
+
+**Exact-arithmetic scope counterexample.** The selector audit in XVII.15 has
+a CPU float64 path that appears exactly realizable with one PRODUCT, while
+the exact rational/native class requires two. Rounded equality can validate
+neither a different arithmetic class nor its structural completion claim.
+This is a theorem-audit counterexample, not an executed Runtime/AMP bridge test.
 
 **Blocked by.** Problem 1.
 
