@@ -552,3 +552,32 @@ registered floating execution itself. The minimal audit retains zero-face
 coverage, affine-scale exclusion, actual native DAG checks, exact likelihood
 deficits and the floating counterexample. No new semantic action is needed.
 See `ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`.
+
+## 33. Source annihilators admit a complete coefficient-closure criterion (2026-09-09)
+
+The selector counterexample was traced to missing edges in the product of two
+positive atom sums: an invisible contradictory term can carry a diverging
+coefficient while every visible mass stays bounded. Positive-edge factors
+are fixed up to one scale per connected component. Visible zero edges impose
+strict scale orderings between those components, so their directed graph is
+acyclic exactly when a limit factorization exists. A directed cycle gives a
+polynomial identity whose two sides would converge to zero and a positive
+value. Integer graph heights construct every allowed limit explicitly.
+
+This yields the closed-mask classification: every nontrivial component must
+be complete bipartite. The induced three-edge path is the general minimal
+obstruction behind the selector. Literature verification identifies this as
+a graph specialization of the exact-versus-limiting monomial factorization
+theorems of Geiger, Meek and Sturmfels, rather than a new general toric theorem.
+
+The mass-level result needs a second proof. Positivity bounds all visible
+coefficients along a convergent mass sequence after normalizing shared head
+weights. Taking a subsequence yields a coefficient-closure lift; a common
+excess contraction preserves the uniform finite cap in the converse. All
+alternative lifts and conditional normalizers remain existential variables.
+The audit checks 23,779 given coefficient tables against independent simple-
+cycle equations, all 512 three-by-three visibility masks, explicit rational
+limits and five rejected certificate forgeries. It also verifies that a bad
+coefficient representation can project to an exactly realizable unary mass.
+The full existential mass solver remains unimplemented, and Runtime/AMP
+authority remains separate. See `MASKED_PRODUCT_CLOSURE.md`.

@@ -1352,6 +1352,53 @@ fixed-known-atom cone closure theorem. Proof and exact/float64 audit:
 
 ---
 
+## XVII.16. Complete coefficient closure across source annihilators
+
+For one PRODUCT of positive sums of finite known atoms a_i,b_j on a declared
+finite context domain, let G contain exactly the nonzero products a_i b_j.
+Missing edges must be proved identically zero on that domain. A **given**
+visible coefficient table q_ij>=0 has finite factors q_ij=u_i v_j precisely
+when its positive edges admit consistent factors and every visible edge
+between active row/column vertices is positive.
+
+Closure has a different complete criterion. Contract the connected components
+of the positive edges, including isolated vertices, and orient every visible
+zero edge from its row component to its column component. Then
+
+\[
+\boxed{q\text{ is in factorization closure iff positive factors are
+consistent and this directed graph is acyclic}.}
+\]
+
+A cycle gives a multiplicative polynomial contradiction. For an acyclic graph,
+integer heights H provide explicit factors `u_i=alpha_i epsilon^H_i`,
+`v_j=beta_j epsilon^(-H_j)`: positive edges remain exact while zero edges
+vanish with positive powers. Invisible coefficients may diverge. The full
+visible factor image is closed **iff each nontrivial connected component of
+G is complete bipartite**. An induced three-edge path gives the minimal
+obstruction otherwise. The exact audit cross-checks 23,779 coefficient cases
+against independent cycle equations and all 512 three-by-three visibility masks.
+
+For full one-PRODUCT mass closure, a separate lift theorem retains additive
+coefficients, shared head weights and all alternative visible coefficient
+tables. Positivity bounds visible coefficients along convergent mass sequences;
+the head weights can be normalized before taking a subsequence. Thus the
+closure is exactly the original mass representation with q in the coefficient
+closure above. At finite uniform cap R>number of heads, a common contraction
+of excess masses returns approximants inside the cap. Conditional closure
+still requires existential normalizers and alternative lifts. A rejected
+coefficient table alone does not reject an observable mass table.
+
+The executable checker decides given rational coefficient tables only. The
+full mass/conditional theorem is a finite semialgebraic characterization,
+not an efficient implemented solver or Runtime completeness authority. The
+proof also locates this graph criterion within established monomial/toric
+factorization theory. No source acquisition, complete-state quotient or
+value/install/AMP permission is inferred. Proof and exact certificate audit:
+[`MASKED_PRODUCT_CLOSURE.md`](theory/proofs/MASKED_PRODUCT_CLOSURE.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

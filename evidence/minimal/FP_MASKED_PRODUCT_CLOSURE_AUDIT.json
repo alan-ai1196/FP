@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "given rational visible coefficient table of one PRODUCT of two positive SUMs",
+  "complete_2_by_3_weighted_grid_cases": 4096,
+  "complete_3_by_3_binary_support_grid_cases": 19683,
+  "classifications": {
+    "EXACT_FACTORIZATION": 11011,
+    "LIMIT_ONLY": 3246,
+    "OUTSIDE_CLOSURE": 9522
+  },
+  "independent_all_simple_cycle_checks": true,
+  "all_3_by_3_visibility_masks_checked": 512,
+  "closed_masks": 128,
+  "closed_iff_disjoint_bicliques_verified": true,
+  "induced_path_limit_row_exponents": [
+    0,
+    1
+  ],
+  "induced_path_limit_column_exponents": [
+    0,
+    -1
+  ],
+  "rational_epsilon_families_checked": 3,
+  "forged_certificates_rejected": 5,
+  "observable_projection_can_remove_coefficient_obstruction": true,
+  "not_claimed": [
+    "given-coefficient rejection rejects every mass lift",
+    "efficient complete implementation of the existential mass/probability solver",
+    "free zero-product knowledge from a sample",
+    "registered construction/install or AMP evidence"
+  ]
+}

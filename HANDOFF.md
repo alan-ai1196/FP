@@ -284,6 +284,18 @@ excess table to the exact target even though rational evaluation differs.
 Read `ONE_PRODUCT_BORDER_COUNTEREXAMPLE.md`; do not confuse this with an
 exact finite-machine theorem or a counterexample to fixed-atom cone closure.
 
+XVII.16 explains the border mechanism with a complete given-coefficient graph
+criterion. Positive visible PRODUCT edges must factor consistently; after
+contracting them, directed zero edges must form an acyclic graph for closure.
+Cycles provide polynomial contradictions and acyclic heights construct exact
+rational epsilon families. The coefficient image is closed iff its visibility
+graph is a disjoint union of complete bipartite components. Read
+`MASKED_PRODUCT_CLOSURE.md`, including its relation to existing toric
+factorization results. A separate lift theorem retains all alternative mass
+coefficients and finite conditional scales. That existential theorem is not
+an implemented full mass solver: only the given-coefficient checker is
+executable, with independent cycle and forged-certificate audits.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

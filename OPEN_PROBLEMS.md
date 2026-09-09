@@ -29,8 +29,12 @@ count and final range do not make the variable-parent native class closed,
 even with a finite local coefficient alphabet and bounded activations.
 Growing SUM chains approach a selector task whose exact PRODUCT minimum is
 larger. Closure and positive loss margins must therefore be established for
-the actual complete resource class. General variable-parent closure and
-explicit margins under finite construction budgets remain open.
+the actual complete resource class. XVII.16 now solves given one-PRODUCT
+coefficient closure through a directed graph criterion and gives a full
+mass/finite-cap conditional closure lift. Efficient existential search over
+alternative lifts, multi-PRODUCT closure and explicit margins under complete
+finite construction budgets remain open. Coefficient rejection cannot be
+substituted for rejection of every observable representation.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
