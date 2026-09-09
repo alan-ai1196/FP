@@ -96,6 +96,14 @@ General closed forms for finite D_d(R), sharp bounded CE optima and the actual
 acquisition/value/build cost remain open. Maximizing one Fourier coefficient
 is not the same optimization as minimizing total CE.
 
+**Finite-range CE exponents: CLOSED.** XVII.14 proves that excess above SUM's
+unbounded parity infimum is Theta(R^-1) at fixed positive noise, versus
+Theta(R^-1/2) at zero noise. Both include all-class lower bounds and finite
+native matching-rate constructions. Exact bounded CE optima, sharp leading
+constants, the uniform eta->0/R->infinity crossover and registered value
+reachability remain open. The discrepancy resource exponent cannot be
+substituted for the task-loss exponent.
+
 **All-dimension degree result, distinct from the SUM envelope.** XVII.7 proves
 that the larger family of native mass polynomials with multilinear degree <d
 has sharp infimum `H(eta)+2^(1-d)[log2-H(eta)]`. A Fourier moment gives the

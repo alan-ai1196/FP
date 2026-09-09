@@ -1259,6 +1259,52 @@ Proof and exact audit:
 
 ---
 
+## XVII.14. Noise changes the range exponent of the optimal SUM loss
+
+In the same uniform d-bit parity class, let L_R be the full unary-SUM minimum
+CE under cap R and let `Delta_R=L_R-L_infinity`, with L_infinity from XVII.12.
+For fixed d>=2, the resource-rate exponents are
+
+\[
+\boxed{\Delta_R=\Theta(R^{-1})\quad\text{for fixed }0<\eta<1/2,
+\qquad\Delta_R=\Theta(R^{-1/2})\quad\text{for }\eta=0.}
+\]
+
+A direct loss-discrepancy inequality supplies part of the proof. For
+`D=|sum chi q_1|`, the affine numerator lemma implies `D<=max q_1-min q_1`.
+The convex CE residual above its tangent at one-half is nonnegative; its
+values at the two extreme probabilities alone give
+
+\[
+L(q)\ge(1-2/N)\log2+\frac2N
+\operatorname{CE}(1-\eta,(1+D)/2),\quad N=2^d.
+\]
+
+This is also a simpler proof of the unbounded envelope. At zero noise,
+combining it with XVII.13 yields a lower excess of
+`(2/N)log(1+1/sqrt(1+R/C))`, where `C=(d-1)H_(d-1)`.
+A finite native witness balances root error and non-root normalization error,
+giving the matching square-root exponent. The lower and upper asymptotic
+constants are respectively `2sqrt(C)/N` and `4sqrt(C)/N`; their gap remains open.
+
+At positive noise, affine interpolation and the original log-ratio argument
+give the finite contraction
+`beta=prod_(j=1)^(d-1) j(R-2)/(d-1+j(R-2))` and the loss lower bound
+`log2-(2/N)[log2-H((1-(1-2eta)beta)/2)]`. It exceeds the unbounded envelope
+by Omega(1/R) at fixed eta>0. Conversely two root contexts can have exact
+Bayes masses at finite total `lambda=1/eta`; adding neutral unary mass at
+other contexts then achieves O(1/R) excess. At zero noise this finite root
+construction is impossible because the wrong-label base remains positive.
+
+Hence maximizing near-unit parity discrepancy and minimizing task CE have
+different range costs. At any fixed positive noise, the direct inequality
+even forces CE to diverge when D approaches one. The theorem does not interchange eta->0 with R->infinity,
+identify a discrepancy extremizer with a CE optimizer, or grant acquisition,
+registered value, physical installation or AMP evidence. Proof and exact audit:
+[`SUM_PARITY_LOSS_RANGE_RATES.md`](theory/proofs/SUM_PARITY_LOSS_RANGE_RATES.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

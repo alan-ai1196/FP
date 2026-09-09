@@ -168,6 +168,10 @@ at a=g=0 gives the displayed witness.
 
 ## 6. Consequence for a full-class CE comparison
 
+The later `SUM_PARITY_LOSS_RANGE_RATES.md` strengthens the connection through
+a direct loss-discrepancy inequality and proves distinct noisy/deterministic
+CE rate exponents. The elementary comparison below remains a valid bound.
+
 For noisy parity with correct-label probability p=1-eta>=1/2, let r_x be the
 model's correct-label probability. The discrepancy bound gives
 `mean r_x<=1/2+D_d(R)/2^d`. Convexity of Bernoulli CE therefore proves

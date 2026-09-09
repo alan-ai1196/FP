@@ -261,6 +261,17 @@ attain Bayes at the same cap, separated by more than 0.1277 nats. Read
 preserve a particular learner or authorize a runtime rewrite. Sharp CE optima,
 general finite-cap discrepancy formulas and physical installation remain open.
 
+XVII.14 now closes the finite-range **CE rate exponents**, distinct from the
+discrepancy capacity. At fixed dimension and fixed positive noise, the gap
+above SUM's sharp unbounded infimum is Theta(1/R); at zero noise it is
+Theta(1/sqrt(R)). A direct loss-discrepancy inequality supplies the deterministic
+lower bound, while a quantitative log-ratio contraction supplies the noisy
+lower bound. Finite native constructions match both exponents. Positive noise
+allows finite exact Bayes masses at the two root contexts; deterministic
+labels do not. Read `SUM_PARITY_LOSS_RANGE_RATES.md`. Sharp leading CE constants,
+the uniform noise/range crossover and actual reachable value remain open.
+This is not a claim that maximizing Fourier response solves the task loss.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

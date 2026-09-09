@@ -498,3 +498,28 @@ rational numerator/denominator reductions, 1,944 reduced-domain checks, the
 global finite certificate and rational asymptotic witnesses. Registered value,
 acquisition, physical build/install and AMP remain distinct. See
 `SUM_PARITY_RANGE_CAPACITY.md`.
+
+## 31. Task loss and maximal response have different range exponents (2026-09-09)
+
+The finite-range discrepancy theorem raised a tempting but wrong shortcut:
+infer the resource cost of near-optimal CE from the cost of near-maximal
+Fourier response. A direct bound instead relates the two objectives without
+identifying them. Normalized affine parity discrepancy is at most probability
+oscillation. Convex CE residuals at the two extreme probabilities then yield
+`L>=(1-2/N)log2+(2/N)CE(1-eta,(1+D)/2)`, also simplifying the original
+unbounded-envelope proof.
+
+At zero noise, the capacity law gives an Omega(R^-1/2) loss excess, and a
+finite SUM construction balances root base error against non-root dilution
+to attain the same exponent. At fixed positive noise, the roots can instead
+reach Bayes exactly at finite total mass 1/eta. Neutral unary contributions
+then produce O(R^-1) excess. A quantitative contraction of log-ratio oscillation
+supplies the matching Omega(R^-1) lower bound for the whole class. Thus noise
+changes the exponent; the proof does not silently exchange the two limits.
+
+The audit checks 1,200 rational likelihood inequalities, 900 exact interpolated
+contractions, outward-log bounds, 32 exact harmonic identities and 52 native
+witnesses. Minimal evidence retains selected convergence values. The rate
+exponents are proved, while sharp CE constants and a uniform noise/range
+crossover remain open. Registered acquisition/value, physical installation
+and AMP are separate. See `SUM_PARITY_LOSS_RANGE_RATES.md`.

@@ -113,6 +113,11 @@ log ratios are affine; the interpolated **masses** are affine.
 
 ## 4. Convert the contrast bound into the exact noisy-loss lower bound
 
+The later `SUM_PARITY_LOSS_RANGE_RATES.md` also gives a shorter direct proof
+through probability oscillation and convex CE residuals, with a stronger
+loss-discrepancy inequality. The log-ratio route below remains valid and is
+used there for finite-range contraction bounds.
+
 Take `z=log(M_1/M_0)`, `S=sum_x chi(x)z(x)` and
 `G=sum_x log cosh(z(x)/2)`. For a nonconstant z its maximum and minimum occur
 at distinct vertices. Nonnegativity of all other log-cosh terms and convexity

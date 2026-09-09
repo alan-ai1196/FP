@@ -1,0 +1,251 @@
+{
+  "status": "PASS",
+  "scope": "complete static unary-SUM class; uniform noisy parity; base one; final range cap",
+  "exact_loss_discrepancy_likelihood_checks": 1200,
+  "exact_interpolation_contraction_checks": 900,
+  "outward_log_contraction_mass_pairs": 300,
+  "exact_binomial_harmonic_identities": 32,
+  "selected_deterministic_witnesses": [
+    {
+      "bits": 2,
+      "n": 10,
+      "exact_cap": "112",
+      "n_times_witness_gap_display": [
+        0.9026871750022661,
+        0.9026871750022661
+      ],
+      "proved_witness_limit": "1",
+      "n_times_lower_bound_display": [
+        0.4495329736710609,
+        0.4495329736710609
+      ],
+      "proved_lower_limit": "1/2"
+    },
+    {
+      "bits": 2,
+      "n": 10000,
+      "exact_cap": "100010002",
+      "n_times_witness_gap_display": [
+        0.9999000033323338,
+        0.9999000033323338
+      ],
+      "proved_witness_limit": "1",
+      "n_times_lower_bound_display": [
+        0.49994999854276034,
+        0.49994999854276034
+      ],
+      "proved_lower_limit": "1/2"
+    },
+    {
+      "bits": 3,
+      "n": 10,
+      "exact_cap": "312",
+      "n_times_witness_gap_display": [
+        0.457236620067298,
+        0.457236620067298
+      ],
+      "proved_witness_limit": "1/2",
+      "n_times_lower_bound_display": [
+        0.23279218451763595,
+        0.23279218451763595
+      ],
+      "proved_lower_limit": "1/4"
+    },
+    {
+      "bits": 3,
+      "n": 10000,
+      "exact_cap": "300010002",
+      "n_times_witness_gap_display": [
+        0.49995555777706807,
+        0.49995555777706807
+      ],
+      "proved_witness_limit": "1/2",
+      "n_times_lower_bound_display": [
+        0.2499833326043582,
+        0.2499833326043582
+      ],
+      "proved_lower_limit": "1/4"
+    },
+    {
+      "bits": 5,
+      "n": 10,
+      "exact_cap": "2536/3",
+      "n_times_witness_gap_display": [
+        0.1162339211524005,
+        0.1162339211524005
+      ],
+      "proved_witness_limit": "1/8",
+      "n_times_lower_bound_display": [
+        0.058887742237490735,
+        0.058887742237490735
+      ],
+      "proved_lower_limit": "1/16"
+    },
+    {
+      "bits": 5,
+      "n": 10000,
+      "exact_cap": "2500030006/3",
+      "n_times_witness_gap_display": [
+        0.12499080060021929,
+        0.12499080060021929
+      ],
+      "proved_witness_limit": "1/8",
+      "n_times_lower_bound_display": [
+        0.0624964998617342,
+        0.0624964998617342
+      ],
+      "proved_lower_limit": "1/16"
+    },
+    {
+      "bits": 8,
+      "n": 10,
+      "exact_cap": "1827",
+      "n_times_witness_gap_display": [
+        0.015141934182380386,
+        0.015141934182380386
+      ],
+      "proved_witness_limit": "1/64",
+      "n_times_lower_bound_display": [
+        0.007387821017197812,
+        0.007387821017197812
+      ],
+      "proved_lower_limit": "1/128"
+    },
+    {
+      "bits": 8,
+      "n": 10000,
+      "exact_cap": "1815010002",
+      "n_times_witness_gap_display": [
+        0.015624475844318267,
+        0.015624475844318272
+      ],
+      "proved_witness_limit": "1/64",
+      "n_times_lower_bound_display": [
+        0.007812087837879844,
+        0.007812087837879844
+      ],
+      "proved_lower_limit": "1/128"
+    }
+  ],
+  "selected_positive_noise_witnesses": [
+    {
+      "bits": 2,
+      "noise": "1/4",
+      "exact_cap": "4000000",
+      "R_times_witness_gap_display": [
+        0.5000002500000409,
+        0.5000002500000426
+      ],
+      "proved_witness_limit": "1/2",
+      "R_times_lower_bound_display": [
+        0.137326549581813,
+        0.13732654958181473
+      ],
+      "proved_lower_limit_display": [
+        0.13732653608351372,
+        0.13732653608351372
+      ]
+    },
+    {
+      "bits": 3,
+      "noise": "1/10",
+      "exact_cap": "10000000",
+      "R_times_witness_gap_display": [
+        4.800000799998719,
+        4.800000799998722
+      ],
+      "proved_witness_limit": "24/5",
+      "R_times_lower_bound_display": [
+        0.6591671512286998,
+        0.6591671512287041
+      ],
+      "proved_lower_limit_display": [
+        0.6591673732008658,
+        0.6591673732008658
+      ]
+    },
+    {
+      "bits": 3,
+      "noise": "1/4",
+      "exact_cap": "4000000",
+      "R_times_witness_gap_display": [
+        0.7500001249993118,
+        0.7500001249993135
+      ],
+      "proved_witness_limit": "3/4",
+      "R_times_lower_bound_display": [
+        0.20598969320947963,
+        0.20598969320948132
+      ],
+      "proved_lower_limit_display": [
+        0.20598980412527057,
+        0.20598980412527057
+      ]
+    },
+    {
+      "bits": 3,
+      "noise": "2/5",
+      "exact_cap": "2500000",
+      "R_times_witness_gap_display": [
+        0.07500001249990462,
+        0.07500001249990568
+      ],
+      "proved_witness_limit": "3/40",
+      "R_times_lower_bound_display": [
+        0.03040986030346474,
+        0.030409860303465798
+      ],
+      "proved_lower_limit_display": [
+        0.03040988310811233,
+        0.03040988310811233
+      ]
+    },
+    {
+      "bits": 5,
+      "noise": "1/4",
+      "exact_cap": "4000000",
+      "R_times_witness_gap_display": [
+        0.5208339756902104,
+        0.5208339756902121
+      ],
+      "proved_witness_limit": "25/48",
+      "R_times_lower_bound_display": [
+        0.14304816788307223,
+        0.14304816788307392
+      ],
+      "proved_lower_limit_display": [
+        0.14304847508699345,
+        0.14304847508699345
+      ]
+    },
+    {
+      "bits": 8,
+      "noise": "1/4",
+      "exact_cap": "4000000",
+      "R_times_witness_gap_display": [
+        0.14179915030199566,
+        0.14179915030199736
+      ],
+      "proved_witness_limit": "363/2560",
+      "R_times_lower_bound_display": [
+        0.038944751356499614,
+        0.03894475135650131
+      ],
+      "proved_lower_limit_display": [
+        0.038944947342433964,
+        0.038944947342433964
+      ]
+    }
+  ],
+  "all_native_witnesses_checked": 52,
+  "proved_rate_exponents": {
+    "eta_zero": "Delta_R = Theta(R^-1/2)",
+    "fixed_eta_between_zero_and_half": "Delta_R = Theta(R^-1)"
+  },
+  "not_claimed": [
+    "sharp leading CE constants",
+    "uniform noise/range crossover",
+    "discrepancy optimizer minimizes CE",
+    "physical or registered value/install evidence"
+  ]
+}
