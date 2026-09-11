@@ -118,10 +118,22 @@ row scaling in a fixed monomial bank. For three-bit identity noise, four
 PRODUCTs attain exact prediction at cap 108 and at most three has a positive
 gap at every cap. The exact four-PRODUCT range threshold remains open:
 108 is optimal for the fixed xy,xz,yz,xyz bank only. Thresholds between the
-near-nine nine-PRODUCT phase and this four-PRODUCT phase, universality counts
-for fixed smaller label alphabets, and sharp total resource costs remain
+near-nine nine-PRODUCT phase and this four-PRODUCT phase, sharp universality
+counts for fixed smaller label alphabets, and sharp total resource costs remain
 open. Unbounded-range universality neither identifies unknown target values
 nor supplies a registered learning/physical/numerical path.
+
+XVII.26 resolves the alphabet-dependent asymptotic order: both exact and
+approximate universality cost Theta(min(2^d,sqrt(2^d*k))) PRODUCTs for k>=2.
+The complete-class parameter lower bound survives prediction limits and
+matches a positive block construction in order. A frozen numerical binary
+feature bank needs at least 2^(d-1)-d nodes, so the smaller universal budget
+forces target-dependent feature values, even though its skeleton can remain
+fixed. Sharp small-(d,k) counts remain open: binary three-bit universality
+currently needs a budget between two and three. Exact/approximation count
+differences for fixed alphabets, optimal range/SUM/bit costs and registered
+acquisition/value paths remain unresolved. The number of PRODUCTs alone
+does not price the retained full target coefficient table.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

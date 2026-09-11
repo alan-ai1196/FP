@@ -1847,6 +1847,64 @@ duals. This is known-value static expressivity, not acquisition or Runtime
 authority. Proof:
 [`TWO_PRODUCT_CONDITIONAL_PARITY.md`](theory/proofs/TWO_PRODUCT_CONDITIONAL_PARITY.md).
 
+## XVII.26. Fixed-label PRODUCT capacity and necessary feature adaptation
+
+Let U(d,k) and A(d,k) be the least PRODUCT budgets for exact and approximate
+universality over strictly positive N-by-k conditional tables, N=2^d,
+k>=2, with the full static unary-source grammar and unrestricted normalizer
+range. Their worst-case order is
+
+`A(d,k), U(d,k) = Theta(min(N,sqrt(N*k)))`.
+
+The constants can be uniform over k as d grows; for fixed k the order is
+Theta(2^(d/2)). For k>=N the exact and approximation counts both equal
+N-d-1. General small-(d,k) counts, including whether every positive binary
+three-bit table needs a budget of two or three, remain open.
+
+The complete-class lower bound is algebraic. Flatten all SUM paths into
+the d+1-dimensional affine source span and earlier PRODUCT features. P
+PRODUCTs and k readouts give a polynomial mass map with at most
+`m=P^2+(2d+k+1)*P+k*(d+1)` real parameters. Signed affine coordinates enlarge
+this lower-bound map while retaining every original positive graph.
+Predictions are rational functions of those parameters. If
+`m<N*(k-1)`, counting probability monomials after clearing the common
+denominator gives a nonzero polynomial that vanishes on the entire class
+and its prediction closure. Some positive rational target has a positive
+gap. This remains valid for diverging coefficients/normalizers and unlimited
+finite SUM work; sampled Jacobian rank is not the proof.
+
+For the upper bound, positively scale the known target as in XVII.24 and
+split coordinates into blocks a,d-a. Build all monomials within each block,
+then group the nonnegative excess coefficients by each first-block subset
+and label. Each group is one PRODUCT of a first-block monomial and a SUM
+of second-block monomials. The resulting count is
+
+`(k+1)*2^a+2^(d-a)-d-k-2`, for `1<=a<=d-1`.
+
+Minimizing this together with N-d-1 proves the upper order. Rational tables
+have finite integer-coefficient implementations with local SUM weights
+{1,2}. The construction retains the full N*k coefficient table and potentially
+large normalizers, SUM-edge work and encoding costs. It does not save the
+information needed to specify an arbitrary target table.
+
+A **frozen numerical feature bank** is more restrictive. If its source and
+PRODUCT span has dimension r, normalized k-head readouts have at most
+k*r-1 independent parameters after fixing one common scale. Universality
+requires `k*r-1>=N*(k-1)`. Thus its PRODUCT count is at least
+`ceil((N*(k-1)+1)/k)-d-1`, or N/2-d for binary labels. At d=8, the adaptive
+construction needs at most 44 PRODUCTs, while every frozen numerical bank
+needs at least 120; at d=20 the counts are 3560 versus at least 524268.
+Some intermediate feature values must depend on the target at these smaller
+budgets. The construction's graph skeleton may remain fixed, so this does
+not prove topology emergence or registered optimizer reachability.
+
+The audit checks 20 complete rational graphs through d=9, 5,912 probability
+entries, five integer-alphabet implementations, 100 original shared-DAG
+normal forms and 180 finite bound cases. An explicit frozen-bank determinant
+of 1/16 rejects a target that the full native two-PRODUCT class realizes at
+cap 44, guarding against false fixed-feature completeness. Proof:
+[`FIXED_LABEL_PRODUCT_CAPACITY.md`](theory/proofs/FIXED_LABEL_PRODUCT_CAPACITY.md).
+
 ---
 
 # XVIII. Reference Compiler contract

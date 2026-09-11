@@ -423,6 +423,21 @@ The range formula is sharp only for this fixed A,B bank; full variable-parent
 thresholds and intermediate three-PRODUCT phases are unresolved. At most
 one has a cap-independent positive CE gap by the full sub-degree theorem.
 
+XVII.26 resolves the fixed-alphabet asymptotic capacity question. With N=2^d
+and k>=2 labels, exact and approximate positive conditional universality
+both cost Theta(min(N,sqrt(N*k))) PRODUCTs at unrestricted normalizer range.
+Read `FIXED_LABEL_PRODUCT_CAPACITY.md`. A full-class rational parameter map
+and algebraic dependence exclude approximation below the parameter bound;
+positive block factorization supplies the matching order. Every frozen
+numerical binary feature bank instead needs at least N/2-d PRODUCTs. At
+d=8, target-dependent intermediate feature values permit 44 versus the
+universal frozen-bank lower bound 120. The graph skeleton can stay fixed:
+this forces feature-value adaptation, not topology change or optimizer
+reachability. The full N*k coefficient information and potentially large
+SUM/encoding/range costs remain explicit. Sharp small-(d,k) counts, especially
+two versus three for binary three-bit universality, and full resource/value
+paths remain open.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

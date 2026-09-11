@@ -899,3 +899,40 @@ identities and 21 invalid dual multipliers. Read
 `TWO_PRODUCT_CONDITIONAL_PARITY.md`. This is an expressivity result under
 explicit scales; target acquisition, registered value construction and the
 complete physical/numerical path remain separate.
+
+## 43. Fixed-label universality needs fewer PRODUCTs but adaptive feature values (2026-09-11)
+
+The N-label rank witness does not decide fixed binary-label capacity. A
+complete normal form gives a different lower bound: flatten SUM paths into
+the affine unary span and all earlier PRODUCTs. P PRODUCTs with k readouts
+give at most P^2+(2d+k+1)*P+k*(d+1) real parameters. Counting monomials after
+clearing the prediction denominators proves an algebraic identity whenever
+this is below N*(k-1), N=2^d. Its closed zero set cannot contain every
+positive target. This excludes approximation as well as exact universality,
+without assuming bounded coefficients or bounded SUM work.
+
+A positive block factorization matches the lower order. After the known
+target is positively scaled, build monomials separately on two coordinate
+blocks and group each head's excess coefficients into cross-block PRODUCTs.
+The count is (k+1)*2^a+2^(d-a)-d-k-2, or use the full N-d-1 bank when cheaper.
+Thus exact and approximation universality both have order
+Theta(min(N,sqrt(N*k))). Fixed labels cost Theta(2^(d/2)); k>=N retains the
+exact count N-d-1. The construction keeps the N*k coefficient information
+in its SUM weights, and range and encoding costs can still be large.
+
+Freezing the numerical feature table changes the result. A span of dimension
+r admits only k*r-1 normalized readout parameters, requiring
+k*r-1>=N*(k-1) for universality. Every frozen binary bank needs at least
+N/2-d PRODUCTs, while adaptive feature values admit the smaller construction.
+At d=8 the comparison is at most 44 versus at least 120, and at d=20 it is
+3560 versus at least 524268. This is a universal fixed-bank lower bound,
+not a weakened baseline. A fixed skeleton with target-dependent SUM parent
+weights attains the upper, so topology change is not proved necessary.
+
+The exact audit verifies 20 complete graphs through d=9, 5,912 probability
+entries, five integer-alphabet graphs, 100 arbitrary shared-DAG normal forms
+and 180 finite bound cases. A fixed three-PRODUCT bank has determinant
+obstruction 1/16 to a target realized by two legal variable-feature PRODUCTs
+at cap 44. Read `FIXED_LABEL_PRODUCT_CAPACITY.md`. Sharp small-class counts,
+including binary three-bit universality between two and three, and full
+range/information/value/physical costs remain open.
