@@ -428,15 +428,30 @@ and k>=2 labels, exact and approximate positive conditional universality
 both cost Theta(min(N,sqrt(N*k))) PRODUCTs at unrestricted normalizer range.
 Read `FIXED_LABEL_PRODUCT_CAPACITY.md`. A full-class rational parameter map
 and algebraic dependence exclude approximation below the parameter bound;
-positive block factorization supplies the matching order. Every frozen
-numerical binary feature bank instead needs at least N/2-d PRODUCTs. At
+positive block factorization supplies the matching order. XVII.27 sharpens
+the frozen numerical bank minimum to N-d-1, even for binary labels. At
 d=8, target-dependent intermediate feature values permit 44 versus the
-universal frozen-bank lower bound 120. The graph skeleton can stay fixed:
+exact frozen-bank minimum 247. The graph skeleton can stay fixed:
 this forces feature-value adaptation, not topology change or optimizer
 reachability. The full N*k coefficient information and potentially large
 SUM/encoding/range costs remain explicit. Sharp small-(d,k) counts, especially
 two versus three for binary three-bit universality, and full resource/value
 paths remain open.
+
+XVII.27 gives a complete support-only criterion for frozen-bank conditional
+universality: no partial coloring may make every touching feature span at
+least two colors. A coloring yields a strictly positive hard target and a
+cap-independent gap; absence yields exact feasibility by Farkas separation.
+Read `FROZEN_FEATURE_UNIVERSALITY.md`. Proper span has a simpler common-
+annihilator obstruction, closing the exact frozen universal PRODUCT count
+N-d-1 for every fixed k>=2. Full span itself is insufficient. The two-bit
+banks xy and (1+x)(1+y) have the same full span but different universality;
+the frozen XOR/XNOR bank is universal for two/three labels and fails for four.
+Any finite positive validation set can pass exactly in a shifted bank that
+is still nonuniversal. Both partial domains and exact zero supports matter.
+This closes a frozen readout decision class, not variable-parent target
+search, fixed-resource learning or Runtime authority. Binary three-bit
+variable-feature universality still lies between two and three PRODUCTs.
 
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:

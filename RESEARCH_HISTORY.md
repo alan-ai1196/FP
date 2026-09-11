@@ -936,3 +936,44 @@ obstruction 1/16 to a target realized by two legal variable-feature PRODUCTs
 at cap 44. Read `FIXED_LABEL_PRODUCT_CAPACITY.md`. Sharp small-class counts,
 including binary three-bit universality between two and three, and full
 range/information/value/physical costs remain open.
+
+## 44. Frozen conditional universality is decided by exact supports (2026-09-11)
+
+Attacking the remaining binary three-bit capacity question exposed a simpler
+obstruction to freezing features. A proper feature span has a nonzero common
+annihilator. Positivity of all normalizers forces equal prediction means on
+its two sign supports. A noisy Boolean target separating them has probability
+gap 1/4 and uniform CE gap at least 1/(4N). Frozen universality therefore
+requires the full N-dimensional span, improving the previous N/2-d binary
+PRODUCT bound to the exact minimum N-d-1. The known monomial bank attains
+it for every fixed number of labels. Adaptive three-bit binary universality
+still lies between two and three, while a frozen universal bank needs four.
+
+The argument extends to a complete criterion, including full-rank banks.
+Partially color contexts with k labels. If every feature touching this subset
+touches at least two colors, correct feature mass is bounded by a finite
+multiple of wrong-color mass. A highly confident but strictly positive target
+then has a cap-independent gap. Conversely, a Farkas infeasibility witness
+for any positive target selects negative entries row by row, producing just
+such a coloring. Thus absence of a partial coloring is equivalent to both
+exact and approximate all-target universality of the frozen readout class.
+This decision depends only on supports, not on the positive magnitudes.
+
+Neither full span nor full-domain-only color checks suffice. The two-bit
+features xy and (1+x)(1+y) span the same space with unary sources, but only
+the first bank is universal. The second has a noise-1/4 XOR gap of 7/36.
+The two frozen XOR/XNOR features together with unary sources give every pair
+indicator, making the bank universal for two and three labels but not four.
+A single different PRODUCT realizes a four-label target excluded from that
+entire two-PRODUCT bank at every range. An additional construction shows
+that every finite positive validation collection can pass exactly in some
+small positive-shift bank that remains globally nonuniversal.
+
+The audit independently checks 248 support models, 81 rational target Farkas
+duals, 66 exact LP primal reconstructions, 80 arbitrary-DAG annihilators and
+the scope counterexamples. A common shift 2^-19 fits 40 positive targets
+exactly while retaining its obstruction. Read `FROZEN_FEATURE_UNIVERSALITY.md`.
+The result replaces the weaker frozen-bank comparison with 44 versus 247
+at d=8 and 3560 versus 1048555 at d=20. It does not reverse the quantifiers
+into one bad target for every variable-parent program, nor price finite
+range, value acquisition, complete physical construction or numerical paths.

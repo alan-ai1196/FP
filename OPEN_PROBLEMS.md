@@ -126,14 +126,25 @@ nor supplies a registered learning/physical/numerical path.
 XVII.26 resolves the alphabet-dependent asymptotic order: both exact and
 approximate universality cost Theta(min(2^d,sqrt(2^d*k))) PRODUCTs for k>=2.
 The complete-class parameter lower bound survives prediction limits and
-matches a positive block construction in order. A frozen numerical binary
-feature bank needs at least 2^(d-1)-d nodes, so the smaller universal budget
+matches a positive block construction in order. XVII.27 sharpens the frozen
+bank universal minimum to 2^d-d-1 even for binary labels, so the smaller budget
 forces target-dependent feature values, even though its skeleton can remain
 fixed. Sharp small-(d,k) counts remain open: binary three-bit universality
 currently needs a budget between two and three. Exact/approximation count
 differences for fixed alphabets, optimal range/SUM/bit costs and registered
 acquisition/value paths remain unresolved. The number of PRODUCTs alone
 does not price the retained full target coefficient table.
+
+XVII.27 completely decides conditional universality of a known finite
+frozen positive feature bank at unrestricted range via partial colorings
+of its supports. Exact and approximation universality coincide for that
+decision, with explicit positive-margin counterexamples on rejection.
+Efficient searches for larger banks, single-target feasibility under finite
+range/SUM/bit budgets, variable-parent universality and registered feature
+acquisition remain open. Full numerical span, full-domain-only color checks
+and finite positive validation suites are all insufficient substitutes for
+the criterion. Numerical feature magnitudes cannot be discarded for range
+or target-specific claims merely because universality depends only on support.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

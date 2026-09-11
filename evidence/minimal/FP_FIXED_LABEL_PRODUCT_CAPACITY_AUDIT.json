@@ -2,7 +2,7 @@
   "status": "PASS",
   "scope": "full static fixed-label universality bounds; exact finite graphs; no Runtime or topology-emergence authority",
   "exact_and_approximation_worst_case_order": "Theta(min(2^d,sqrt(2^d*k))) for k>=2",
-  "fixed_binary_numerical_bank_lower": "2^(d-1)-d",
+  "frozen_numerical_bank_exact_minimum": "2^d-d-1 for every k>=2",
   "universal_graph_cases": 20,
   "integer_local_alphabet_cases": 5,
   "exact_probability_entries": 5912,
@@ -14,7 +14,7 @@
       "all_class_lower": 0,
       "constructive_upper": 0,
       "block_width": null,
-      "frozen_numerical_bank_lower": 0,
+      "frozen_numerical_bank_exact_minimum": 0,
       "actual_PRODUCTs": 0,
       "integer_local_alphabet": false,
       "maximum_normalizer": "4"
@@ -26,7 +26,7 @@
       "all_class_lower": 0,
       "constructive_upper": 0,
       "block_width": null,
-      "frozen_numerical_bank_lower": 0,
+      "frozen_numerical_bank_exact_minimum": 0,
       "actual_PRODUCTs": 0,
       "integer_local_alphabet": true,
       "maximum_normalizer": "4"
@@ -38,7 +38,7 @@
       "all_class_lower": 1,
       "constructive_upper": 1,
       "block_width": null,
-      "frozen_numerical_bank_lower": 0,
+      "frozen_numerical_bank_exact_minimum": 1,
       "actual_PRODUCTs": 1,
       "integer_local_alphabet": false,
       "maximum_normalizer": "11552/9"
@@ -50,7 +50,7 @@
       "all_class_lower": 1,
       "constructive_upper": 1,
       "block_width": null,
-      "frozen_numerical_bank_lower": 0,
+      "frozen_numerical_bank_exact_minimum": 1,
       "actual_PRODUCTs": 1,
       "integer_local_alphabet": true,
       "maximum_normalizer": "369096"
@@ -62,7 +62,7 @@
       "all_class_lower": 2,
       "constructive_upper": 3,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 1,
+      "frozen_numerical_bank_exact_minimum": 4,
       "actual_PRODUCTs": 3,
       "integer_local_alphabet": false,
       "maximum_normalizer": "64827/16"
@@ -74,7 +74,7 @@
       "all_class_lower": 2,
       "constructive_upper": 3,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 1,
+      "frozen_numerical_bank_exact_minimum": 4,
       "actual_PRODUCTs": 3,
       "integer_local_alphabet": true,
       "maximum_normalizer": "6335560"
@@ -86,7 +86,7 @@
       "all_class_lower": 2,
       "constructive_upper": 6,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 4,
+      "frozen_numerical_bank_exact_minimum": 11,
       "actual_PRODUCTs": 6,
       "integer_local_alphabet": false,
       "maximum_normalizer": "14178141184/2401"
@@ -98,7 +98,7 @@
       "all_class_lower": 2,
       "constructive_upper": 6,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 4,
+      "frozen_numerical_bank_exact_minimum": 11,
       "actual_PRODUCTs": 6,
       "integer_local_alphabet": true,
       "maximum_normalizer": "41597325000"
@@ -110,7 +110,7 @@
       "all_class_lower": 3,
       "constructive_upper": 11,
       "block_width": 2,
-      "frozen_numerical_bank_lower": 11,
+      "frozen_numerical_bank_exact_minimum": 26,
       "actual_PRODUCTs": 11,
       "integer_local_alphabet": false,
       "maximum_normalizer": "34900371556250/59049"
@@ -122,7 +122,7 @@
       "all_class_lower": 3,
       "constructive_upper": 18,
       "block_width": 2,
-      "frozen_numerical_bank_lower": 26,
+      "frozen_numerical_bank_exact_minimum": 57,
       "actual_PRODUCTs": 18,
       "integer_local_alphabet": false,
       "maximum_normalizer": "209952000000"
@@ -134,7 +134,7 @@
       "all_class_lower": 6,
       "constructive_upper": 29,
       "block_width": 3,
-      "frozen_numerical_bank_lower": 57,
+      "frozen_numerical_bank_exact_minimum": 120,
       "actual_PRODUCTs": 29,
       "integer_local_alphabet": false,
       "maximum_normalizer": "82354300000000"
@@ -146,7 +146,7 @@
       "all_class_lower": 9,
       "constructive_upper": 44,
       "block_width": 3,
-      "frozen_numerical_bank_lower": 120,
+      "frozen_numerical_bank_exact_minimum": 247,
       "actual_PRODUCTs": 44,
       "integer_local_alphabet": false,
       "maximum_normalizer": "18454937600000000/3"
@@ -158,7 +158,7 @@
       "all_class_lower": 15,
       "constructive_upper": 67,
       "block_width": 4,
-      "frozen_numerical_bank_lower": 247,
+      "frozen_numerical_bank_exact_minimum": 502,
       "actual_PRODUCTs": 67,
       "integer_local_alphabet": false,
       "maximum_normalizer": "1549681956000000000"
@@ -170,7 +170,7 @@
       "all_class_lower": 2,
       "constructive_upper": 7,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 6,
+      "frozen_numerical_bank_exact_minimum": 11,
       "actual_PRODUCTs": 7,
       "integer_local_alphabet": false,
       "maximum_normalizer": "3407872"
@@ -182,7 +182,7 @@
       "all_class_lower": 2,
       "constructive_upper": 7,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 6,
+      "frozen_numerical_bank_exact_minimum": 11,
       "actual_PRODUCTs": 7,
       "integer_local_alphabet": true,
       "maximum_normalizer": "34351349760"
@@ -194,7 +194,7 @@
       "all_class_lower": 6,
       "constructive_upper": 21,
       "block_width": 2,
-      "frozen_numerical_bank_lower": 36,
+      "frozen_numerical_bank_exact_minimum": 57,
       "actual_PRODUCTs": 21,
       "integer_local_alphabet": false,
       "maximum_normalizer": "116689854785188608/15625"
@@ -206,7 +206,7 @@
       "all_class_lower": 14,
       "constructive_upper": 42,
       "block_width": 2,
-      "frozen_numerical_bank_lower": 95,
+      "frozen_numerical_bank_exact_minimum": 120,
       "actual_PRODUCTs": 42,
       "integer_local_alphabet": false,
       "maximum_normalizer": "17488618316163445390625/4478976"
@@ -218,7 +218,7 @@
       "all_class_lower": 23,
       "constructive_upper": 65,
       "block_width": 3,
-      "frozen_numerical_bank_lower": 196,
+      "frozen_numerical_bank_exact_minimum": 247,
       "actual_PRODUCTs": 65,
       "integer_local_alphabet": false,
       "maximum_normalizer": "2950981876782849752809078784/815730721"
@@ -230,7 +230,7 @@
       "all_class_lower": 13,
       "constructive_upper": 35,
       "block_width": 1,
-      "frozen_numerical_bank_lower": 50,
+      "frozen_numerical_bank_exact_minimum": 57,
       "actual_PRODUCTs": 35,
       "integer_local_alphabet": false,
       "maximum_normalizer": "9462253270829148027/524288"
@@ -242,7 +242,7 @@
       "all_class_lower": 26,
       "constructive_upper": 26,
       "block_width": null,
-      "frozen_numerical_bank_lower": 26,
+      "frozen_numerical_bank_exact_minimum": 26,
       "actual_PRODUCTs": 26,
       "integer_local_alphabet": false,
       "maximum_normalizer": "3127979547743093834/9765625"

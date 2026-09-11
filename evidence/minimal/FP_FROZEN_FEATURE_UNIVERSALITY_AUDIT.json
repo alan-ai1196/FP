@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "scope": "known finite nonnegative frozen bank, constant available, positive k-label readouts, unrestricted finite SUM work and normalizer range",
+  "support_criterion": "no obstructing partial coloring iff exact and approximate universality",
+  "exact_frozen_bank_universal_PRODUCT_minimum": "2^d-d-1 for every fixed k>=2",
+  "independently_cross_checked_support_models": 248,
+  "models_with_checked_obstructions": 81,
+  "quantitative_mass_readout_checks": 81,
+  "exact_target_Farkas_duals": 81,
+  "checked_exact_LP_primals": 66,
+  "original_DAG_annihilator_checks": 80,
+  "annihilator_binary_probability_gap": "1/4",
+  "annihilator_uniform_CE_gap": "1/(4N)",
+  "full_span_shift_counterexample": {
+    "unshifted_PRODUCTs": 1,
+    "shifted_PRODUCTs": 1,
+    "both_ranks": 4,
+    "positive_shift": "1",
+    "shifted_K": "5/4",
+    "XOR_noise_one_quarter_probability_gap": "7/36",
+    "CE_gap": "49/2592"
+  },
+  "two_PRODUCT_pair_bank_status_by_labels": {
+    "2": "UNIVERSAL",
+    "3": "UNIVERSAL",
+    "4": "NOT_UNIVERSAL",
+    "5": "NOT_UNIVERSAL"
+  },
+  "four_label_pair_bank_probability_gap": "1/4",
+  "four_label_pair_bank_CE_gap": "1/32",
+  "one_PRODUCT_exact_four_label_counterpart_cap": "588",
+  "partial_domain_counterexample_checked": true,
+  "forged_colorings_rejected": 4,
+  "insufficient_budget_UNRESOLVED_checks": 2,
+  "native_universal_banks": [
+    {
+      "d": 1,
+      "labels": 2,
+      "PRODUCTs": 0,
+      "colorings_checked": 1
+    },
+    {
+      "d": 2,
+      "labels": 3,
+      "PRODUCTs": 1,
+      "colorings_checked": 35
+    },
+    {
+      "d": 3,
+      "labels": 2,
+      "PRODUCTs": 4,
+      "colorings_checked": 3025
+    },
+    {
+      "d": 3,
+      "labels": 3,
+      "PRODUCTs": 4,
+      "colorings_checked": 10795
+    }
+  ],
+  "invalid_or_nonfinite_coloring_budgets_rejected": 4,
+  "finite_validation_counterexample": {
+    "finite_target_graphs_realized_exactly": 40,
+    "shared_positive_shift": "1/524288",
+    "PRODUCTs": 1,
+    "still_not_binary_universal": true,
+    "new_adversarial_target_probability_gap": "524289/274880004100",
+    "coloring_ratio_K": "137439477761/524289"
+  },
+  "not_claimed": [
+    "a common hard binary target for all variable-feature graphs",
+    "full numerical span suffices for a particular positive bank",
+    "finite target testing is a universal certificate",
+    "target acquisition, registered value/install/persistence or AMP authority"
+  ]
+}

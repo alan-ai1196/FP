@@ -12,9 +12,10 @@ whereas k>=N has the exact count N-d-1. These are resource-scoped static
 expressivity results; normalizer range and finite SUM/encoding work are not
 bounded by the PRODUCT count.
 
-A frozen numerical feature bank has a different lower bound. For binary
-universality it needs at least N/2-d PRODUCT features, even with arbitrary
-readout training. The smaller universal construction must therefore adapt
+A frozen numerical feature bank has a different sharp bound. Its smallest
+universal budget is N-d-1 PRODUCTs for every fixed k>=2, even with arbitrary
+readout training, as proved in `FROZEN_FEATURE_UNIVERSALITY.md`. The smaller
+adaptive universal construction must therefore adapt
 some intermediate feature values to the target. Its graph skeleton can be
 fixed in advance; this is not a theorem forcing a changing topology.
 
@@ -175,31 +176,28 @@ PRODUCT count, not a sublinear information requirement or a total-cost win.
 
 ## 5. Frozen numerical features cannot achieve the same universal compression
 
-Now fix one numerical feature table before seeing p, including the original
-unary span and P PRODUCT features. Let its total linear span W have
-dimension r<=d+1+P. Enlarge the readouts to arbitrary signed vectors in W.
-Their k mass columns have at most k*r real coordinates.
+Fix one numerical feature table before seeing p, including the original
+unary span and P PRODUCT features. Let its span W have dimension at most
+d+1+P. If W is proper, choose a nonzero w orthogonal to it. Every output
+mass and total mass is annihilated by w. Since all total masses are
+positive, prediction means weighted by |w_x|*T_x coincide on the positive
+and negative supports of w. The target that assigns probability 3/4 on
+one side and 1/4 on the other therefore has sup error at least 1/4 for
+every readout, including all prediction limits.
 
-The common positive scaling of every mass does not change probabilities.
-For this lower-bound relaxation, set the total mass at one fixed context
-to one. This removes one parameter because the constant table is in W.
-All legal positive predictions are retained even though scaled masses may
-no longer satisfy the original base constraint. The rational parameter
-map thus has at most k*r-1 variables.
+Thus even binary universality requires dim(W)=N and P>=N-d-1. The monomial
+bank attains this count for all finite label alphabets. The exact frozen-bank
+universal minimum is N-d-1 for every fixed k>=2, as detailed in
+`FROZEN_FEATURE_UNIVERSALITY.md`. This replaces the earlier non-sharp
+parameter bound N/2-d for binary labels with a simpler positive-normalizer
+obstruction. Full span is necessary, but need not suffice for a particular
+positive bank; the complete criterion uses its support pattern.
 
-The same dependence argument requires
-
-`k*r-1 >= N*(k-1)`
-
-for exact or approximate universality. Consequently every frozen bank needs
-
-`P >= ceil((N*(k-1)+1)/k)-d-1`.
-
-For binary labels this is N/2-d. At d=8, the adaptive block construction
-uses at most 44 PRODUCTs for every positive binary table, whereas **every**
-fixed numerical bank needs at least 120. At d=20 these upper and lower
-counts are 3560 and 524268. These compare universal capabilities, not a
-deliberately weak handpicked baseline.
+At d=8 the adaptive block construction uses at most 44 PRODUCTs for every
+positive binary table, whereas every frozen universal bank needs at least
+247, and a fixed bank with 247 attains the task. At d=20 these counts are
+3560 and 1048555. At d=3 the adaptive upper three is already below the
+exact frozen minimum four. These are universal capability comparisons.
 
 Some intermediate feature values must therefore depend on the target at
 the smaller budget. A preregistered skeleton with trainable SUM weights

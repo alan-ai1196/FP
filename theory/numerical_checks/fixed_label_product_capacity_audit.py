@@ -33,11 +33,12 @@ def capacity_bounds(d, k):
             lower = middle+1
     dimension_lower = lower
     lower = max(dimension_lower, min(n, k)-d-1, (d-1).bit_length(), 0)
-    frozen = (n*(k-1)+k)//k-d-1
-    assert 0 <= lower <= upper and frozen <= n-d-1
+    # FROZEN_FEATURE_UNIVERSALITY.md strengthens the former parameter lower bound.
+    frozen = n-d-1
+    assert 0 <= lower <= upper <= frozen
     return {'d': d, 'labels': k, 'dimension_lower': dimension_lower,
             'all_class_lower': lower, 'constructive_upper': upper, 'block_width': split,
-            'frozen_numerical_bank_lower': max(0, frozen)}
+            'frozen_numerical_bank_exact_minimum': frozen}
 
 
 def block_features(nodes, d, coordinates, one):
@@ -247,16 +248,16 @@ def audit():
             result = capacity_bounds(d, k)
             if k >= 2**d:
                 assert result['all_class_lower'] == result['constructive_upper'] == 2**d-d-1
-            if k == 2:
-                assert result['frozen_numerical_bank_lower'] == max(0, 2**(d-1)-d)
+            assert result['frozen_numerical_bank_exact_minimum'] == 2**d-d-1
             if d >= 6 and k <= 2**d:
                 # An explicit conservative uniform lower/upper order check.
                 assert 64*result['all_class_lower']**2 >= 2**d*k
                 assert result['constructive_upper']**2 <= 16*2**d*k
             count_checks += 1
-    for d, adaptive, frozen in ((8, 44, 120), (20, 3560, 524268)):
+    for d, adaptive, frozen in ((3, 3, 4), (8, 44, 247), (20, 3560, 1048555)):
         result = capacity_bounds(d, 2)
-        assert result['constructive_upper'] == adaptive and result['frozen_numerical_bank_lower'] == frozen
+        assert result['constructive_upper'] == adaptive and result['frozen_numerical_bank_exact_minimum'] == frozen
+        assert result['all_class_lower'] <= adaptive < frozen
     invalid = 0
     for d, k in ((0, 2), (2, 1), (-1, 3)):
         try:
@@ -269,7 +270,7 @@ def audit():
     return {'status': 'PASS',
             'scope': 'full static fixed-label universality bounds; exact finite graphs; no Runtime or topology-emergence authority',
             'exact_and_approximation_worst_case_order': 'Theta(min(2^d,sqrt(2^d*k))) for k>=2',
-            'fixed_binary_numerical_bank_lower': '2^(d-1)-d',
+            'frozen_numerical_bank_exact_minimum': '2^d-d-1 for every k>=2',
             'universal_graph_cases': len(records), 'integer_local_alphabet_cases': integer_cases,
             'exact_probability_entries': entries, 'graph_records': records,
             'original_shared_DAG_normal_form_cases': normal_form_cases, 'signed_affine_charts_retained': signed_charts,

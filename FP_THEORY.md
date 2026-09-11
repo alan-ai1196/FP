@@ -1887,13 +1887,13 @@ have finite integer-coefficient implementations with local SUM weights
 large normalizers, SUM-edge work and encoding costs. It does not save the
 information needed to specify an arbitrary target table.
 
-A **frozen numerical feature bank** is more restrictive. If its source and
-PRODUCT span has dimension r, normalized k-head readouts have at most
-k*r-1 independent parameters after fixing one common scale. Universality
-requires `k*r-1>=N*(k-1)`. Thus its PRODUCT count is at least
-`ceil((N*(k-1)+1)/k)-d-1`, or N/2-d for binary labels. At d=8, the adaptive
-construction needs at most 44 PRODUCTs, while every frozen numerical bank
-needs at least 120; at d=20 the counts are 3560 versus at least 524268.
+A **frozen numerical feature bank** is more restrictive. XVII.27 proves
+its exact universal minimum is N-d-1 PRODUCTs even for binary labels,
+strengthening the earlier readout-parameter bound. A proper feature span
+has a common annihilator; positivity of the normalizers makes some noisy
+Boolean target impossible even in closure. At d=8, the adaptive construction
+needs at most 44 PRODUCTs, while the frozen minimum is 247; at d=20 the
+counts are 3560 versus 1048555. At d=3 it is at most three versus exactly four.
 Some intermediate feature values must depend on the target at these smaller
 budgets. The construction's graph skeleton may remain fixed, so this does
 not prove topology emergence or registered optimizer reachability.
@@ -1904,6 +1904,64 @@ normal forms and 180 finite bound cases. An explicit frozen-bank determinant
 of 1/16 rejects a target that the full native two-PRODUCT class realizes at
 cap 44, guarding against false fixed-feature completeness. Proof:
 [`FIXED_LABEL_PRODUCT_CAPACITY.md`](theory/proofs/FIXED_LABEL_PRODUCT_CAPACITY.md).
+
+## XVII.27. Complete support criterion for frozen-feature universality
+
+For a known finite nonnegative feature bank G with the constant one in its
+positive cone, fix k>=2 and the full readout class
+`M_j=1+G*a_j`, `a_j>=0`, `q_j=M_j/sum_l M_l`. Coefficients, finite SUM work
+and final normalizer range are unrestricted. The bank is exactly universal
+over strictly positive k-label tables iff it is approximately universal iff
+the following obstruction does not exist:
+
+**A partial coloring of the contexts with at most k colors, such that every
+feature touching colored contexts touches at least two colors.**
+
+For a checked coloring, let K be the largest ratio of a feature's total
+mass on one color to its total mass on the other colored contexts.
+All used denominators are positive. Summing the feature inequalities over
+readouts shows some correctly colored probability is <=K/(K+1). A strictly
+positive target with correct probability 1-epsilon, epsilon=1/[2(K+1)],
+has sup gap >=epsilon and uniform CE gap >=2*epsilon^2/N at any range.
+Conversely, infeasibility of the exact finite linear readout equations
+gives a Farkas dual. Choose one negative dual entry at every nonzero row;
+these choices would form precisely such a partial coloring. Its absence
+therefore proves finite exact realization of every positive target.
+
+The criterion depends only on exact zero supports. Numerical magnitudes
+still determine range, margins and construction cost. Exhaustive absence
+of a coloring is complete only for this declared frozen-bank universality
+class; work exhaustion returns UNRESOLVED. Uncolored contexts remain part
+of the model, and checking only full-domain colorings is insufficient.
+
+A nonzero common annihilator of a proper feature span gives an immediate
+binary obstruction. Positive normalizers make prediction means on its two
+sign supports coincide. A target with probabilities 1/4 and 3/4 on those
+supports has sup error >=1/4 and uniform CE gap >=1/(4N). Thus every frozen
+bank requires a full N-dimensional span for even binary universality.
+Together with the monomial construction, the exact and approximation
+frozen-bank minimum is **N-d-1 PRODUCTs for every fixed k>=2**.
+The hard target can depend on the bank; this is not a stronger common-target
+lower bound for variable-feature graphs.
+
+Full span is insufficient for a particular positive bank. The one-PRODUCT
+features xy and (1+x)(1+y), each with all unary readouts, have the same full
+span. The first bank is universal; the second has a binary XOR obstruction,
+with noise-1/4 probability gap 7/36 and CE gap 49/2592. Another exact example
+uses the two PRODUCTs XOR and XNOR on two bits: together with unary sources
+they give every pair indicator on four contexts. This bank is universal
+for two and three labels, but fails for four labels at every range.
+
+Any finite positive two-bit validation suite can also be realized exactly
+by some (t+x)(t+y) bank with t>0, while that bank remains nonuniversal.
+Small positive tails can preserve full rank and finite test success while
+destroying global universality. They cannot be silently rounded to zero.
+
+The audit cross-checks 248 support models, 81 exact target Farkas witnesses,
+66 rationally reconstructed LP primals, 80 arbitrary-DAG annihilators,
+partial-domain and full-span counterexamples, and a common shifted bank
+fitting 40 positive targets exactly. Proof:
+[`FROZEN_FEATURE_UNIVERSALITY.md`](theory/proofs/FROZEN_FEATURE_UNIVERSALITY.md).
 
 ---
 
