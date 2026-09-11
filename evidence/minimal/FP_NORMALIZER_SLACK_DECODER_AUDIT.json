@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "scope": "static exact identity-noise decoder above minimum cap; complete at-most-eight lower bound near cap nine",
+  "three_bit_scalar_one_PRODUCT_singleton_margin": "1/4; not claimed sharp for the one-PRODUCT class",
+  "scalar_source_pruning_and_neighbor_checks": 960,
+  "exact_dyadic_graph_cases": 9,
+  "individual_exact_excess_entries": 816,
+  "selected_exact_graphs": [
+    {
+      "d": 2,
+      "m": 1,
+      "k": 4,
+      "PRODUCTs": 4,
+      "weighted_SUMs": 152,
+      "exact_normalizer": "15/2",
+      "maximum_feature": "2",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 2,
+      "m": 3,
+      "k": 6,
+      "PRODUCTs": 4,
+      "weighted_SUMs": 271,
+      "exact_normalizer": "45/8",
+      "maximum_feature": "5/4",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 2,
+      "m": 8,
+      "k": 11,
+      "PRODUCTs": 4,
+      "weighted_SUMs": 556,
+      "exact_normalizer": "1285/256",
+      "maximum_feature": "129/128",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 3,
+      "m": 1,
+      "k": 5,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 1015,
+      "exact_normalizer": "27/2",
+      "maximum_feature": "2",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 3,
+      "m": 3,
+      "k": 7,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 1576,
+      "exact_normalizer": "81/8",
+      "maximum_feature": "5/4",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 3,
+      "m": 8,
+      "k": 12,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 2946,
+      "exact_normalizer": "2313/256",
+      "maximum_feature": "129/128",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 3,
+      "m": 40,
+      "k": 44,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 11714,
+      "exact_normalizer": "9895604649993/1099511627776",
+      "maximum_feature": "549755813889/549755813888",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 4,
+      "m": 1,
+      "k": 5,
+      "PRODUCTs": 18,
+      "weighted_SUMs": 5221,
+      "exact_normalizer": "51/2",
+      "maximum_feature": "2",
+      "all_predictions_exact": true
+    },
+    {
+      "d": 4,
+      "m": 3,
+      "k": 7,
+      "PRODUCTs": 18,
+      "weighted_SUMs": 7880,
+      "exact_normalizer": "153/8",
+      "maximum_feature": "5/4",
+      "all_predictions_exact": true
+    }
+  ],
+  "rational_cap_surplus_and_rescaling_checks": 1050,
+  "invalid_positive_or_dyadic_lifts_rejected": 4,
+  "near_cap_probability_margin_for_PRODUCTs_at_most_eight": "(9-26h)/(45*(9+h)), 0<=h<9/26",
+  "cap_nine_probability_margin": "1/45",
+  "cap_nine_CE_margin": "1/8100",
+  "exact_PRODUCT_minimum_on_open_cap_interval_9_to_243_over_26": 9,
+  "all_dimension_exact_upper_above_minimum_cap": "2^d+d-2 for d>=2",
+  "finite_alphabet_resource_checks": 4,
+  "joint_SUM_probability_accuracy_cost": "Theta(log(1/(h+delta))) for fixed PRODUCT budget 9, 10 or 11",
+  "joint_SUM_CE_accuracy_cost": "Theta(log(1/(h+sqrt(rho)))) for fixed PRODUCT budget 9, 10 or 11",
+  "not_claimed": [
+    "243/26 is the sharp eight-PRODUCT range threshold",
+    "the quarter scalar margin is sharp for one PRODUCT",
+    "exact scalar singleton mass with fewer PRODUCTs",
+    "fixed arithmetic or registered value/install/persistence/AMP authority"
+  ]
+}

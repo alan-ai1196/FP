@@ -94,6 +94,16 @@ accuracy cost is Theta(log(1/error)). Sharp constants, higher-dimensional
 exact minima and larger-cap phases remain open. Bounded intermediate maxima
 do not remove underflow or give a reference/AMP bridge.
 
+XVII.23 resolves the immediate cap-slack question: any positive slack above
+N+1 admits exact prediction with N+d-2 PRODUCTs. For d=3, exact minimum is
+nine on 9<R<243/26 and twelve at R=9. The at-most-eight probability lower
+bound on R=9+h is (9-26h)/(45*(9+h)); the endpoint is not claimed sharp.
+Joint SUM cost for fixed PRODUCT budgets nine through eleven is
+Theta(log(1/(h+delta))) as cap slack and probability tolerance jointly vanish.
+Transitions to eight or fewer PRODUCTs, sharp one-PRODUCT singleton distance
+and sharp SUM constants remain open; a small slack cannot be silently treated
+as the exact minimum-cap support contract.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.

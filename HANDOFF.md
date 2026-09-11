@@ -386,6 +386,20 @@ outputs at context 111. General higher-dimensional exact counts, sharp
 construction constants, larger-cap phases and the registered AMP/value path
 remain open. No support quotient or mass limit receives Runtime authority.
 
+XVII.23 proves the exact decoder count is discontinuous at the minimum cap:
+twelve PRODUCTs at R=9, nine throughout 9<R<243/26. Any positive cap slack
+allows nonnegative inverse readout weights over the shared subset basis,
+giving finite exact prediction with N+d-2 PRODUCTs in every dimension.
+Read `NORMALIZER_SLACK_DECODER.md`. The lower argument retains all normalizers
+and improves the three-bit scalar one-PRODUCT singleton gap to 1/4; at cap
+nine the at-most-eight probability/CE gaps improve to 1/45 and 1/8100.
+The endpoint 243/26 is only a proved exclusion boundary. Dyadic witnesses
+need O(log(1/h)) SUMs as slack h tends to zero. For PRODUCT budgets nine
+through eleven the full joint SUM law is Theta(log(1/(h+delta))) for
+probability tolerance, or Theta(log(1/(h+sqrt(rho)))) for CE tolerance.
+Higher cap transitions, sharp scalar/constructive constants and registered
+physical/value/AMP realizations remain open.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

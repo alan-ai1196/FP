@@ -804,3 +804,37 @@ The support cache is regenerated in seconds and not retained as an artifact.
 Read `DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`. Higher-dimensional exact
 counts, sharp finite-resource constants, larger caps and registered
 value/Runtime/AMP closure remain open.
+
+## 40. A positive amount of normalizer slack removes the exact-count barrier (2026-09-11)
+
+The twelve-versus-nine distinction at cap nine is not stable under positive
+cap slack. An uncontracted subset basis has a triangular binomial inverse.
+For a common exact scale s>1, its desired excess is (s-1)+s*I. The positive
+baseline (s-1) outweighs the inverse's negative terms when epsilon is small,
+giving an explicit all-nonnegative readout with the same N+d-2 PRODUCTs.
+Every cap above N+1 therefore admits a finite exact graph at this count.
+Dyadic scale and epsilon allow a complete {1/2,1,2} SUM implementation.
+
+A separate all-class lower argument improves the three-bit one-PRODUCT
+singleton mass gap from 1/37 to 1/4. Pruning source literals zero at the
+target point retains a positive quadratic whose neighbor sum dominates its
+target value. Combining this with the shared-output surplus and a balanced
+rescaling proves probability error at least (9-26h)/(45*(9+h)) for at-most-
+eight PRODUCTs at cap 9+h, h<9/26. Thus the exact minimum is nine on
+9<R<243/26, and twelve at R=9. The right endpoint is not claimed sharp.
+At minimum cap the probability and CE gaps improve to 1/45 and 1/8100.
+
+The positive-value floor also gives a joint resource inequality:
+h/9+(9+h)*delta >= 2^(-S*2^p) for p in {9,10,11} and sufficiently small
+probability error. The exact slack construction and the earlier zero-slack
+approximation family match the resulting SUM cost Theta(log(1/(h+delta))).
+For CE tolerance rho the corresponding law uses h+sqrt(rho). This treats
+accuracy and normalizer allowance together while keeping actual SUM work.
+
+The exact audit checks nine actual dyadic graphs, including a scale slack
+2^-40, 960 scalar source-pruning cases, 1,050 arbitrary-normalizer surplus
+and rescaling cases, and four invalid coefficient proposals. Negative
+inverse coefficients cause rejection of that proposal, not a semantic
+patch. Read `NORMALIZER_SLACK_DECODER.md`. Larger-cap transitions, sharp
+scalar and construction constants, and complete physical/value/AMP paths
+remain open.

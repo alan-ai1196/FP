@@ -236,3 +236,8 @@ cannot establish these full-domain support intersections. Recurrence,
 physical encoding/construction budgets, registered learning, installation,
 fresh persistence and AMP remain separate. Exact higher-dimensional shared
 counts and sharp approximation margins remain open.
+
+The later [`NORMALIZER_SLACK_DECODER.md`](NORMALIZER_SLACK_DECODER.md)
+improves the three-bit scalar one-PRODUCT singleton lower bound to 1/4 and
+the cap-nine at-most-eight probability/CE bounds to 1/45 and 1/8100. It
+also proves an exact nine-PRODUCT interval immediately above cap nine.

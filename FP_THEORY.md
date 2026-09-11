@@ -1715,6 +1715,58 @@ counts, sharp cost constants, larger-cap phases and complete Runtime/AMP
 integration remain open. Proof:
 [`DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`](theory/proofs/DECODER_EXACT_AND_LIMIT_COMPLEXITY.md).
 
+## XVII.23. Infinitesimal normalizer slack changes exact decoder complexity
+
+For the same N=2^d identity-noise task, **every cap R>N+1 admits a finite
+exact graph with N+d-2 PRODUCTs**. Choose 1<s<=R/(N+1) and use the
+uncontracted subset basis `B_S(T)=epsilon^(|T|-|S|)` for S contained in T.
+Its N+d-2-PRODUCT construction is the previous root/subset recursion.
+The readout weights
+
+`b_(S,j)=(s-1)*(1-epsilon)^|S| + s*1[j subset S]*(-epsilon)^|S without j|`
+
+are nonnegative whenever `(s-1)*(1-epsilon)^d>=s*epsilon`. Two finite
+binomial identities then give exactly
+`E_j(T)=(s-1)+s*1[j=T]`, with common normalizer (N+1)s. The small positive
+wrong-head masses are legal normalization slack. No negative FP edge is used.
+
+Dyadic s-1 and epsilon give an actual {1/2,1,2}-coefficient graph by positive
+binary SUM constructions. For fixed d, achieving exact prediction with
+cap slack h=R-(N+1) costs O(log(1/h)) SUMs. The basis stays <=1 and all
+intermediate excess features stay <=2s-1. This is a finite static value
+witness, not an initializer/profile or AMP certificate.
+
+For d=3 the exact minimum is **nine throughout 9<R<243/26**, versus twelve
+at R=9. The lower proof strengthens the scalar one-PRODUCT singleton margin
+to 1/4: prune literals zero at the target point, expand the remaining
+positive quadratic, and sum its three neighboring values. This bound is
+sharp for the larger positive quadratic cone, not claimed sharp for one
+PRODUCT. Combined with the shared-head surplus and an optimized positive
+output rescaling, every at-most-eight-PRODUCT predictor at R=9+h obeys
+
+`probability sup error >= (9-26h)/(45*(9+h))`, for `0<=h<9/26`.
+
+Its uniform CE excess is at least one quarter of that bound squared. At cap
+nine the improved bounds are 1/45 and 1/8100. Approximation minimum remains
+nine throughout this cap interval. The endpoint 243/26 is not claimed to
+be the sharp transition to eight PRODUCTs.
+
+For fixed PRODUCT budget p in {9,10,11}, local alphabet {1/2,1,2} and S
+weighted SUMs, the joint slack/error lower bound is
+
+`h/9+(9+h)*delta >= 2^(-S*2^p)` for delta<7/72.
+
+Exact support exclusion forces a positive wrong excess, and the complete
+positive-value floor bounds it from below. Matching constructions give
+SUM cost Theta(log(1/(h+delta))) as h,delta approach zero with positive sum;
+for CE tolerance rho the law is Theta(log(1/(h+sqrt(rho)))). Complete
+arithmetic and registered value/resource paths remain separate.
+
+The audit checks nine actual dyadic graphs, 960 scalar source-pruning cases,
+1,050 arbitrary-normalizer surplus/rescaling cases and rejected invalid
+coefficient proposals. Proof:
+[`NORMALIZER_SLACK_DECODER.md`](theory/proofs/NORMALIZER_SLACK_DECODER.md).
+
 ---
 
 # XVIII. Reference Compiler contract
