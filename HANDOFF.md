@@ -296,6 +296,20 @@ coefficients and finite conditional scales. That existential theorem is not
 an implemented full mass solver: only the given-coefficient checker is
 executable, with independent cycle and forged-certificate audits.
 
+XVII.17 resolves alternative observable lifts on a substantial zero-face
+subclass. For scalar masses zero at opposite cube vertices, all one-PRODUCT
+limits reduce to directed cuts even when approximants leak at those vertices.
+Singleton/complement observations fix row/column margins, whose unique toric
+closure member decides the full mass. Three inputs give a complete rational-
+table decision over real coefficients and closure of the whole positive cut
+cone. A rational example needs irrational exact factors. Four inputs already
+separate: the sum of two independent XORs has one-PRODUCT mass distance >=1/7;
+its conditional target at cap four has all-one-PRODUCT CE gap >=1/2000000,
+while two PRODUCTs reach Bayes. Read `ANTIPODAL_PRODUCT_MASS.md`. The entropy
+characterization is a proof of the unique margin lift, not a new training
+objective. General mass solvers, sharp constants and finite-encoding/value
+reachability remain open.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

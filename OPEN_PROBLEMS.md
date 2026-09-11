@@ -34,7 +34,18 @@ coefficient closure through a directed graph criterion and gives a full
 mass/finite-cap conditional closure lift. Efficient existential search over
 alternative lifts, multi-PRODUCT closure and explicit margins under complete
 finite construction budgets remain open. Coefficient rejection cannot be
-substituted for rejection of every observable representation.
+substituted for rejection of every observable representation. XVII.17 resolves
+that existential lift for scalar masses zero at antipodal cube vertices:
+observable margins select a unique coefficient-closure member. The three-input
+case has a complete rational-table decision over real coefficients; all its
+positive cut masses lie in one-PRODUCT closure. Arbitrary-dimensional exact
+algebraic search, other zero patterns, general conditional scales and multiple
+PRODUCTs remain open. The four-input two-XOR task now has an explicit robust
+one-versus-two PRODUCT gap at cap four, but its sharp loss/range frontier is
+unsolved: the proved CE lower bound is 1/2000000 while a checked one-PRODUCT
+upper witness has excess about 0.00889241. Rational target data can require
+irrational exact factors, so real
+expressivity and finite-encoding candidate completeness must stay distinct.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

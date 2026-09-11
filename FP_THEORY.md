@@ -1399,6 +1399,57 @@ value/install/AMP permission is inferred. Proof and exact certificate audit:
 
 ---
 
+## XVII.17. Observable PRODUCT closure, a dimension boundary and a robust task
+
+For a scalar excess mass f on the complete d-bit cube with f(0)=f(1)=0,
+the full unary-source at-most-one-PRODUCT class has the form A+UV. Its
+closure consists exactly of directed-cut masses
+`B(q)=sum_(i!=j) q_ij x_i(1-x_j)` with q in the off-diagonal visible rank-one
+closure. The proof allows approximants to leak at the zero contexts: positive
+same-polarity coefficients vanish in the limit, and a two-by-two product
+identity prevents both cross-polarity orientations from surviving.
+
+The observable singleton and complement values fix q's row and column margins.
+Every feasible margin polytope has exactly one coefficient-closure member q*.
+It is the entropy maximizer on that polytope, a specialization of the known
+toric moment-map theorem. Entropy characterizes a coordinate inverse here;
+it is not an additional FP loss or regularizer. Thus **full observable closure
+is equivalent to B(q*)=f**, and exactness additionally requires the finite-
+factor support condition. A checked q* with the wrong observable mass excludes
+all alternate lifts.
+
+With three inputs the margins specify every context. Therefore the entire
+positive directed-cut cone lies in one-PRODUCT closure. Rational tables admit
+a complete exact decision by a one-dimensional transport interval: an interior
+monotone cubic root gives finite real factors, while a singleton interval
+uses the graph support criterion. The audit has 348 examples where rejecting
+the original coefficient table would falsely reject an exactly realizable
+mass. Some rational masses require irrational coefficients for their exact
+one-PRODUCT representation; real existence is not finite-encoding reachability.
+
+Four inputs already differ. For the sum f of two independent pairwise XOR
+indicators, two native PRODUCTs realize f, but
+
+\[
+\inf_{A,U,V\ \mathrm{nonnegative\ unary}}\|A+UV-f\|_\infty\ge1/7.
+\]
+
+A positive expansion and cross-pair rank-one identity prove this uniform
+bound, with no exact-zero assumption on approximants. For uniform contexts,
+base (1,1), target `p_1=(1+f)/(2+f)` and final cap four, a separate argument
+retaining both heads and all normalizers proves probability error >1/500 and
+CE excess at least 1/2000000 for every at-most-one-PRODUCT model. Two PRODUCTs
+reach Bayes risk. These constants are conservative, not claimed sharp.
+
+The executable audit completely decides the stated rational three-input
+mass class over real coefficients and checks supplied rational margin lifts
+in any dimension. General arbitrary-dimensional algebraic search, arbitrary
+conditional classes, full resources and value/install/AMP reachability remain
+separate. Proof and exact audit:
+[`ANTIPODAL_PRODUCT_MASS.md`](theory/proofs/ANTIPODAL_PRODUCT_MASS.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

@@ -581,3 +581,40 @@ limits and five rejected certificate forgeries. It also verifies that a bad
 coefficient representation can project to an exactly realizable unary mass.
 The full existential mass solver remains unimplemented, and Runtime/AMP
 authority remains separate. See `MASKED_PRODUCT_CLOSURE.md`.
+
+## 34. Observable margins resolve alternative PRODUCT lifts (2026-09-11)
+
+Research next attacked the gap between a coefficient certificate and the
+observed mass decision. On the antipodal zero face of the binary cube,
+positive expansions and a two-by-two identity reduce even leaking one-PRODUCT
+sequences to directed-cut coefficients. The observable singleton/complement
+values fix their row/column margins. The known toric moment-map theorem then
+selects exactly one closure lift. A boundary-safe graph/entropy proof shows
+why this selection does not erase any possible observable representation;
+entropy is a mathematical coordinate inverse, not a new model objective.
+
+For three inputs those margins cover every nonzero context. The entire
+positive cut cone is consequently in one-PRODUCT closure. A transport
+interval and its monotone cubic completely decide rational masses over real
+coefficients, including limit-only boundary cases. The audit checks 729 mass
+tables against an independent Hall condition and 729 original coefficient
+tables. In 348 cases the original coefficients are outside factor closure
+while the mass has an exact alternative. One rational mass needs an
+irrational cubic root for its unique one-PRODUCT lift, exposing a second
+scope distinction between real and finite-rational exact expressivity.
+
+The analogous four-input universality is false. Two independent XOR masses
+have equal singleton/complement margins, but their unique closure lift gives
+the wrong values at other contexts. A separate positive-coefficient argument
+gives an explicit all-one-PRODUCT mass distance 1/7. For the conditional task
+(1+f)/(2+f) at cap four, balanced context subsets bound leakage through the
+other head and reduce arbitrary normalizers back to the mass obstruction.
+This yields probability separation 1/500 and CE gap 1/2000000, while two native
+PRODUCTs reach Bayes. Exact arithmetic checks the transfer constants, 1,000
+scalar/conditional expansions, 300 supplied lifts and seven certificate
+forgeries. A float64 proposal simplified to small rational coefficients gives
+a separately exact-checked one-PRODUCT upper witness with CE excess about
+0.00889241 and peak normalizer 799/200. It is not a global optimum certificate.
+Sharp constants and general algebraic search remain open; no
+Runtime freeze, new semantic action or GPU-science permission follows.
+See `ANTIPODAL_PRODUCT_MASS.md`.

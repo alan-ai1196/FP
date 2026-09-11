@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "scope": "static scalar mass on the full cube with both antipodal values zero; real nonnegative coefficients",
+  "three_input_mass_grid_cases": 729,
+  "three_input_decisions": {
+    "EXACT_REAL_FACTORIZATION": 60,
+    "OUTSIDE_CLOSURE": 618,
+    "LIMIT_ONLY": 51
+  },
+  "independent_transport_Hall_checks": 729,
+  "three_input_original_coefficient_grid_cases": 729,
+  "original_coefficient_decisions": {
+    "EXACT_FACTORIZATION": 213,
+    "LIMIT_ONLY": 168,
+    "OUTSIDE_CLOSURE": 348
+  },
+  "rejected_original_coefficients_with_exact_alternative_mass_lifts": 348,
+  "irrational_lift_polynomial_ascending": [
+    -12,
+    17,
+    -5,
+    2
+  ],
+  "irrational_root_exact_interval": [
+    "118905881746477/140737488355328",
+    "237811763492955/281474976710656"
+  ],
+  "rational_root_candidates_excluded": 16,
+  "four_input_target_mass": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    2,
+    2,
+    1,
+    1,
+    2,
+    2,
+    1,
+    0,
+    1,
+    1,
+    0
+  ],
+  "four_input_unique_margin_lift_off_diagonal": "1/3",
+  "visible_signal_other_literal_pairs": [
+    56,
+    8,
+    48
+  ],
+  "exact_scalar_mass_bound": "1/7",
+  "exact_probability_separation": "1/500",
+  "exact_conditional_to_mass_bound_at_threshold": "61373/468875",
+  "exact_CE_gap_lower_bound_nats": "1/2000000",
+  "rational_one_PRODUCT_control": {
+    "literal_order": "(1-x1),x1,(1-x2),x2,(1-x3),x3,(1-x4),x4",
+    "A0": [
+      "0",
+      "7/400",
+      "77/400",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "A1": [
+      "83/200",
+      "0",
+      "0",
+      "1/50",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "U": [
+      "0",
+      "1/15",
+      "1/15",
+      "0",
+      "0",
+      "13/30",
+      "0",
+      "13/30"
+    ],
+    "V": [
+      "0",
+      "3/8",
+      "3/8",
+      "0",
+      "12/5",
+      "0",
+      "12/5",
+      "0"
+    ],
+    "masses": "(1+A0,1+A1+UV)",
+    "exact_peak_normalizer": "799/200",
+    "outward_CE_excess_interval_nats": [
+      "0.00889241107354",
+      "0.00889241107355"
+    ],
+    "not_claimed_globally_optimal": true
+  },
+  "exact_scalar_expansion_cases": 400,
+  "exact_capped_conditional_cases": 600,
+  "checked_supplied_four_input_lifts": 300,
+  "forged_certificates_rejected": 7,
+  "not_claimed": [
+    "sharp separation constants",
+    "finite-rational exact realization of irrational lift",
+    "complete arbitrary-d algebraic margin solver",
+    "all unrestricted conditional tables",
+    "registered value construction, installation, fresh persistence or AMP evidence"
+  ]
+}
