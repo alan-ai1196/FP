@@ -5,6 +5,7 @@
   "scalar_parity_proof_unique_nodes": 1906,
   "scalar_two_PRODUCT_parity_margin": "1/18432",
   "random_shared_nested_DAG_comparisons": 360,
+  "pointwise_surplus_bound_checked_for_every_comparison": true,
   "random_cases_including_empty_target_supports": 176,
   "unbounded_hidden_feature_and_tiny_readout_cases": 4,
   "largest_hidden_feature": "2^8192",

@@ -723,3 +723,43 @@ normalizer/contribution cases. The theorem does not need bounded hidden
 features. It is a static function-class comparison, not a learner equivalence
 or Runtime erasure. Larger caps, higher-bit counts and sharp loss constants
 remain open. See `SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`.
+
+## 38. A native source witness survives coefficient limits (2026-09-11)
+
+The disjoint-output theorem made scalar all-dimension lower bounds more
+valuable. A direct positive-graph argument supplies one without polynomial
+expansion. At a positive context, flatten SUM paths and retain a largest
+original contribution in each PRODUCT parent and the readout. Shared
+PRODUCTs retain the same definition wherever reused. The resulting monomial
+is pointwise dominated by the original graph and uses at most P+1 distinct
+sources, by the binary graph's edge count. An explicit retained-value factor
+depends only on the active source count and P. Fixed positive source ratios
+then control the whole intersection of those sources' supports.
+
+There are finitely many source intersections, so the bound passes to arbitrary
+mass limits despite diverging hidden coefficients. On the full binary cube,
+each positive limit point lies in a contained face fixing at most P+1 bits.
+This proves exact and approximation minimum m-1 for every codimension-m
+face mass. A positive explicit margin follows when P<=m-2. The assertion
+that every expanded monomial is short is false: two repeated squares can
+contain a four-source monomial. A consistent retained witness is essential.
+Repeated-square singleton approximants also show why the positive margin
+cannot be uniform in dimension.
+
+Combining the singleton result with shared-output comparison improves the
+all-label identity lower bound from N to N+d-2, N=2^d, including closure.
+The comparison has a stronger pointwise surplus form: one prefix output
+lies between max(0,E_i-sum_(j!=i)E_j) and E_i. At the minimum conditional
+cap N+1 this gives a scalar error at most 2(N+1) times probability error,
+retaining every normalizer. For d=3, P<=8 has probability distance >=1/666
+and CE gap >=1/1774224. Nine is the new lower count; the exact construction
+uses twelve. Their equality is not claimed.
+
+Exact audits cover 440 actual DAGs with binary and general rational sources,
+3,487 full-domain retained monomials, 27 face constructions, seven square
+families, five identity decoders and 786 multiclass normalizers. The known
+two-PRODUCT border passes the necessary face condition. So does parity at
+P=2, while its complete exponent proof rejects closure: the local condition
+must not become a sufficient certificate. Read
+`SOURCE_INTERSECTION_PRODUCT_BOUND.md`. Full information, physical resources,
+registered learning, persistence and AMP remain separate obligations.

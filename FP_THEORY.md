@@ -1573,6 +1573,10 @@ delta_j, without recursive doubling. This static comparison allows arbitrary
 sharing, repeated squaring and unbounded hidden features. It is not a
 Runtime erasure, learner transport or resource equivalence.
 
+The underlying comparison also gives the pointwise bounds
+`max(0,E_i-sum_(j!=i) E_j)<=B_i<=E_i` for its surviving head i, without
+assuming disjoint targets. Disjointness is used for the target-error transfer.
+
 If every scalar target is separated by Delta_i>0 from all at-most-(r-1)
 PRODUCT graphs, r>=1, every joint graph with at most r+k-2 PRODUCTs has
 `max_i delta_i >= (min_i Delta_i)/k`. Thus the joint approximation minimum
@@ -1600,6 +1604,57 @@ witnesses and 13,608 conditional-scale/contribution comparisons. Larger caps,
 higher-bit PRODUCT counts, sharp loss optima and complete physical/value/AMP
 integration remain open. Proof:
 [`SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`](theory/proofs/SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md).
+
+## XVII.21. Native source intersections survive arbitrary mass limits
+
+On a fixed finite domain with known finite nonnegative scalar sources, every
+positive point of an at-most-P-PRODUCT mass limit lies in an intersection of
+at most P+1 positive source supports contained in the limit's positive support.
+This is a necessary condition, not a complete closure decision.
+
+A quantitative finite-graph statement proves it. At a context x with g(x)>0,
+let s(x) count positive sources and let mu_x be one or the smallest positive
+source ratio a_i(y)/a_i(x), whichever is smaller. Define
+
+`K(s,P)=(s+P)*product_(j=1,...,P) (s+j-1)^(2^(P-j+1))`.
+
+Flatten SUM paths and retain a largest original contribution at x in each
+PRODUCT parent and the readout. Keep the same retained definition of every
+shared PRODUCT. The result is a pointwise dominated monomial m, with at most
+P+1 distinct source leaves, at most 2^P source occurrences, and
+`m(x)>=g(x)/K(s(x),P)`. On its positive source intersection C,
+`g(y)>=mu_x^(2^P)*g(x)/K(s(x),P)`. A finite-intersection subsequence passes
+this bound to every mass limit. Hidden coefficients need not converge.
+
+For binary unary indicators, s=d and mu=1. C is a face fixing at most P+1
+bits. A target of mass gamma on a codimension-m face, m>=2, therefore has
+distance at least `gamma/[K(d,m-2)+1]` from every at-most-(m-2)-PRODUCT graph.
+Multiplying m literals gives an exact (m-1)-PRODUCT witness: **both exact and
+approximation minima are m-1**. This includes arbitrary-dimensional singleton
+masses. It does not bound the distinct sources of every expanded monomial;
+two repeated squares of a four-source SUM already falsify that extension.
+
+Combined with XVII.20, all N=2^d singleton outputs, d>=2, need at least
+**N+d-2 PRODUCTs even in closure**, strengthening the prior N-node rank
+bound. At base one, target `(1+1[x=i])/(N+1)` and minimum cap N+1, write
+`Delta_d=1/[K(d,d-2)+1]`. The pointwise surplus comparison retains all
+normalizers and gives, for every P<=N+d-3,
+
+`probability sup error >= Delta_d/[2(N+1)]`,
+`excess CE >= Delta_d^2/[2N(N+1)^2]` under uniform contexts.
+
+At d=3, every at-most-eight model has probability error >=1/666 and CE gap
+>=1/1774224; the shared count lies between nine and the exact construction's
+twelve. General sharp shared counts and sharp margins remain open. Repeated
+squaring approaches a singleton increasingly closely as dimension grows, so
+there is no dimension-independent margin at the excluded count.
+
+Exact audits cover 440 binary/general-source DAGs, 3,487 retained monomials,
+27 face constructions, seven full-cube square families, five decoder
+constructions and 786 multiclass normalizers. The source intersections use
+the complete declared domain, never sample-only zeros. Registered value,
+physical construction, recurrence, installation and AMP remain separate.
+Proof: [`SOURCE_INTERSECTION_PRODUCT_BOUND.md`](theory/proofs/SOURCE_INTERSECTION_PRODUCT_BOUND.md).
 
 ---
 

@@ -48,6 +48,14 @@ At a zero context the comparison output stays between zero and the original
 E_i. This proves the stated sum bound, rather than a recursively doubled
 error estimate. The remaining PRODUCT prefix is an actual static graph.
 
+The underlying argument is stronger and does not need disjoint targets:
+for some surviving head i the prefix satisfies, pointwise,
+`max(0,E_i-sum_(j!=i) E_j)<=B_i<=E_i`. Every removed contribution is at
+most the original discarded head at the same context. Disjointness is
+needed only for the stated target-error transfer. This surplus form is used
+for the multi-label consequence in
+[`SOURCE_INTERSECTION_PRODUCT_BOUND.md`](SOURCE_INTERSECTION_PRODUCT_BOUND.md).
+
 This is a comparison between functions in static expressivity classes. It
 does not authorize deleting Runtime state, reusing a certificate, discarding
 provenance, or transporting a learner. Its graph transformations need not

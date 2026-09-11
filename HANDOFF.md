@@ -351,6 +351,22 @@ unbounded features, invalid premise counterexamples and the four-PRODUCT
 witness. General higher-bit counts, larger-cap phases and sharp loss gaps
 remain open. This comparison supplies no state-erasure or install permission.
 
+XVII.21 derives a source-support invariant that survives arbitrary coefficient
+limits without expanding the full polynomial. At each positive context, a
+globally consistent largest-term choice retains a monomial using at most
+P+1 distinct sources. Its value is bounded below by an explicit factor of
+the original output, even with shared ancestors and unbounded coefficients.
+On the full binary cube this proves that a codimension-m face mass needs
+exactly m-1 PRODUCTs both exactly and in approximation. Read
+`SOURCE_INTERSECTION_PRODUCT_BOUND.md`. Combined with the shared-output
+comparison, N=2^d singleton heads need at least N+d-2 nodes, improving the
+earlier N bound. At d=3 and minimum conditional cap nine, all at-most-eight
+graphs have CE gap >=1/1774224; a twelve-PRODUCT exact construction remains
+the upper bound. The pointwise source-intersection rule is only necessary:
+three-bit parity passes it at P=2 while the complete exponent proof rejects
+closure. Sharp higher-dimensional counts, larger-cap phases and quantitative
+optima remain open; physical/value/AMP scope is unchanged.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

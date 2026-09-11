@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "scope": "full fixed-source static positive DAGs; scalar mass and minimum-cap identity conditionals",
+  "generic_rational_source_DAGs": 240,
+  "binary_unary_source_DAGs": 200,
+  "full_domain_retained_monomial_checks": 3487,
+  "checks_with_source_ratio_floor_below_one": 1378,
+  "zero_PRODUCT_exhaustive_support_counts": {
+    "2": 10,
+    "3": 28
+  },
+  "two_PRODUCT_support_border_passes_necessary_condition": true,
+  "two_PRODUCT_parity_passes_necessary_condition_but_exact_proof_rejects_closure": true,
+  "two_PRODUCT_four_source_monomial_counterexample_coefficient": 24,
+  "exact_face_constructions": 27,
+  "repeated_square_full_cube_cases": 7,
+  "selected_square_approximants": [
+    {
+      "d": 2,
+      "PRODUCTs": 0,
+      "degree": 1,
+      "exact_sup_error": "1/3"
+    },
+    {
+      "d": 3,
+      "PRODUCTs": 1,
+      "degree": 2,
+      "exact_sup_error": "4/13"
+    },
+    {
+      "d": 4,
+      "PRODUCTs": 2,
+      "degree": 4,
+      "exact_sup_error": "81/337"
+    },
+    {
+      "d": 6,
+      "PRODUCTs": 4,
+      "degree": 16,
+      "exact_sup_error": "152587890625/2973697798081"
+    },
+    {
+      "d": 8,
+      "PRODUCTs": 6,
+      "degree": 64,
+      "exact_sup_error": "1219760487635835700138573862562971820755615294131238401/6278321495874316599535927997070229387923111059758165751297"
+    }
+  ],
+  "identity_decoder_counts_and_margins": [
+    {
+      "d": 2,
+      "labels": 4,
+      "exact_and_approximation_PRODUCT_lower_bound": 4,
+      "exact_PRODUCT_upper_witness": 4,
+      "scalar_margin": "1/3",
+      "probability_margin_below_lower_count": "1/30",
+      "CE_margin_below_lower_count": "1/1800"
+    },
+    {
+      "d": 3,
+      "labels": 8,
+      "exact_and_approximation_PRODUCT_lower_bound": 9,
+      "exact_PRODUCT_upper_witness": 12,
+      "scalar_margin": "1/37",
+      "probability_margin_below_lower_count": "1/666",
+      "CE_margin_below_lower_count": "1/1774224"
+    },
+    {
+      "d": 4,
+      "labels": 16,
+      "exact_and_approximation_PRODUCT_lower_bound": 18,
+      "exact_PRODUCT_upper_witness": 24,
+      "scalar_margin": "1/38401",
+      "probability_margin_below_lower_count": "1/1305634",
+      "CE_margin_below_lower_count": "1/13637441135648"
+    },
+    {
+      "d": 5,
+      "labels": 32,
+      "exact_and_approximation_PRODUCT_lower_bound": 35,
+      "exact_PRODUCT_upper_witness": 48,
+      "scalar_margin": "1/198450000001",
+      "probability_margin_below_lower_count": "1/13097700000066",
+      "CE_margin_below_lower_count": "1/2744795924667662342400069696"
+    },
+    {
+      "d": 6,
+      "labels": 64,
+      "exact_and_approximation_PRODUCT_lower_bound": 68,
+      "exact_PRODUCT_upper_witness": 88,
+      "scalar_margin": "1/53957186128469719315906561",
+      "probability_margin_below_lower_count": "1/7014434196701063511067852930",
+      "CE_margin_below_lower_count": "1/1574473187195177412726266693873035971445743311363506716800"
+    }
+  ],
+  "arbitrary_multiclass_normalizer_and_surplus_checks": 786,
+  "not_claimed": [
+    "short source intersections suffice for mass closure",
+    "every expanded monomial has at most P+1 distinct sources",
+    "dimension-independent positive approximation margin",
+    "sharp shared decoder counts for d>2",
+    "registered value/install/persistence or reference-AMP authority"
+  ]
+}

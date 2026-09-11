@@ -72,6 +72,7 @@ def static_comparator(nodes, outputs, contexts, targets):
             coefficient = terms[i].pop(feature, F(0))
             removed = tuple(coefficient*v for v in feature_tables.get(feature, (F(0),)*len(contexts)))
             for x, target in enumerate(targets[i]):
+                assert 0 <= removed[x] <= current[chosen][x] <= tables[chosen][x]
                 if target > 0:
                     assert targets[chosen][x] == 0
                     assert 0 <= removed[x] <= current[chosen][x] <= tables[chosen][x] <= errors[chosen]
@@ -86,6 +87,8 @@ def static_comparator(nodes, outputs, contexts, targets):
     output = add_sum(prefix, sorted(terms[survivor].items()))
     actual = evaluate(prefix, output, contexts)[0]
     assert actual == current[survivor]
+    assert all(max(F(0), tables[survivor][x]-sum(tables[j][x] for j in range(count) if j != survivor))
+               <= actual[x] <= tables[survivor][x] for x in range(len(contexts)))
     assert sum(node[0] == 'product' for node in prefix) == len(products)-count+1
     error = distance(actual, targets[survivor])
     assert error <= sum(errors)
@@ -244,6 +247,7 @@ def audit():
             'scalar_parity_proof_unique_nodes': len(record['packed_proof']['nodes']),
             'scalar_two_PRODUCT_parity_margin': str(delta),
             'random_shared_nested_DAG_comparisons': random_cases,
+            'pointwise_surplus_bound_checked_for_every_comparison': True,
             'random_cases_including_empty_target_supports': empty_support_cases,
             'unbounded_hidden_feature_and_tiny_readout_cases': large_cases,
             'largest_hidden_feature': '2^8192',

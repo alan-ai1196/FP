@@ -181,6 +181,12 @@ construction of all context indicators uses `P(1)=0` and
 `P(d)=2^d+P(floor(d/2))+P(ceil(d/2))`; this is an upper bound, not a sharp count
 for d>2. At d=2 both bounds are four.
 
+The later [`SOURCE_INTERSECTION_PRODUCT_BOUND.md`](SOURCE_INTERSECTION_PRODUCT_BOUND.md)
+strengthens the lower bound to N+d-2, including approximation, by combining
+the scalar singleton count with a shared-output comparison. At d=3 it
+excludes P<=8 with a positive loss gap; the exact upper construction remains
+twelve. The stronger margins below still apply to their smaller P<N class.
+
 The general robust exclusion holds at
 `delta=1/[(N+1)(N+2)]`: writing t=(N+1)delta, the diagonal surplus is bounded
 below by `[1-(N+1)t-(N-1)t^2]/(1+t)>0`. Thus the excluded P<N class has CE
