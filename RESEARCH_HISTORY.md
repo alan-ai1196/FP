@@ -838,3 +838,39 @@ inverse coefficients cause rejection of that proposal, not a semantic
 patch. Read `NORMALIZER_SLACK_DECODER.md`. Larger-cap transitions, sharp
 scalar and construction constants, and complete physical/value/AMP paths
 remain open.
+
+## 41. Conditional universality has an exact PRODUCT count (2026-09-11)
+
+The decoder's larger-cap endpoint is controlled by a different invariant.
+Every static mass table lies in the span of the unary sources and its
+PRODUCT feature columns. Normalization preserves rank, including under
+prediction limits with diverging normalizers. The N-label identity-noise
+table on d bits has rank N=2^d, giving P>=N-d-1 and a cap-independent
+probability gap below this count. This is a static table argument, with no
+claim about recurrent state dimension.
+
+A matching positive construction realizes every strictly positive finite
+conditional table. Build all monomials of degree at least two once, then
+multiply target row T by C*L^|T|. Sufficiently large explicit C,L make every
+multilinear excess coefficient nonnegative. Rational tables allow integer
+scales and coefficients, implementable by finite {1,2} SUM chains. Thus
+the worst-case exact and approximation count is exactly 2^d-d-1. The result
+transfers cost to normalizer range and SUM/encoding work; it does not provide
+free acquired target information or a registered value path.
+
+For the three-bit identity task, a smaller exact construction in the same
+four-monomial bank uses normalizers 9,15,36,108 by Hamming weight. Four
+PRODUCTs are therefore optimal at every cap at least 108; at most three
+has probability error >=1/72 and CE gap >=1/20736 at every cap. Coordinate
+permutation averaging and a four-term nonnegative dual prove cap 108 is
+optimal for this bank with all complementary unary readouts retained. The
+bank-specific dual is explicitly not a full variable-parent range proof.
+
+The rational audit checks 21 positive-target graphs, nine integer-alphabet
+graphs, 980 exact mass entries, 60 original DAG and prediction ranks, 45
+exact null vectors, five sharp rank-relaxation examples and the cap-108/324
+graphs. Forged duals and invalid tables are rejected; fixed-bank rejection
+is paired with a legal twelve-PRODUCT full-class witness to attack false
+completeness. Read `CONDITIONAL_PRODUCT_UNIVERSALITY.md`. Intermediate cap
+thresholds, fixed smaller label alphabets and total physical/value costs
+remain open.

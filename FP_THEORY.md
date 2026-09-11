@@ -1767,6 +1767,56 @@ The audit checks nine actual dyadic graphs, 960 scalar source-pruning cases,
 coefficient proposals. Proof:
 [`NORMALIZER_SLACK_DECODER.md`](theory/proofs/NORMALIZER_SLACK_DECODER.md).
 
+## XVII.24. Exact PRODUCT cost of positive conditional universality
+
+On the full d-bit cube, d>=1, every strictly positive finite conditional
+table admits a static unary-source graph with **N-d-1 PRODUCTs**, N=2^d,
+when normalizer range is unrestricted. This is the exact worst-case count,
+also for approximation. Universality ranges over finite output alphabets;
+the lower witness uses N labels, so no sharp claim for a fixed smaller
+alphabet follows.
+
+The lower bound uses the complete class. Flattening final SUMs puts every
+mass column in the span of the d+1-dimensional unary source space and the
+P PRODUCT feature columns. Row normalization preserves rank, hence
+`rank(Q)<=d+1+P`. Vanishing minors retain the bound under arbitrary prediction
+limits, including diverging normalizers. The identity-noise table
+`Pi=(I+1*1^T)/(N+1)` has rank N. Below N-d-1 PRODUCTs, a normalized left-null
+vector gives probability error >=1/[N(N+1)] and uniform CE excess
+>=2/[N^3(N+1)^2]. These are static table bounds, not recurrent state bounds.
+
+For the upper bound, one PRODUCT per coordinate subset of size at least two
+builds the fixed monomial bank `phi_S=product_(i in S)x_(i,1)`. Given the
+complete positive target p, choose
+`Gamma=max_j max_T p_j(T)/min_T p_j(T)`, `L>=d*(1+Gamma)` and
+`C>=max_j 1/p_j(empty)`. The scaled masses `C*L^|T|*p_j(T)` have nonnegative
+multilinear excess coefficients: in every nonempty subset inversion the
+positive leading term dominates the sum of all proper-subset terms.
+Their maximum normalizer is C*L^d. Rational targets permit integer masses
+and coefficients, hence finite {1,2}-SUM construction at the same PRODUCT
+count. Normalizer, SUM, encoding and target-acquisition costs are retained.
+
+For the three-bit identity task, the four features xy,xz,yz,xyz attain exact
+prediction using scale by Hamming weight `(1,5/3,4,12)`, with normalizers
+`9,15,36,108`. Thus exact and approximation PRODUCT minima are **four for
+every R>=108**. At most three has probability gap >=1/72 and CE gap
+>=1/20736 at every cap. Multiplying all masses by three gives a finite
+{1,2}-coefficient four-PRODUCT witness at cap 324.
+
+Cap 108 is also optimal **within this fixed monomial bank**, retaining the
+full complementary unary readout cone. Coordinate-permutation averaging
+reduces the scales to u_0,...,u_3. Necessary inequalities
+`e0=u0-1>=0`, `ea=3u1-4u0-1>=0`, `e2=u2-3u1+u0>=0` and
+`e3=u3-4u2+3u1-u0>=0` give the exact dual identity
+`u3-12=e3+4e2+3ea+9e0`. This is not a complete range certificate for arbitrary
+four-PRODUCT parents. Their minimum range and intermediate decoder phases
+remain open.
+
+The rational audit verifies 21 positive-target graphs, nine integer-alphabet
+graphs, 60 original-DAG/prediction ranks, 45 exact null witnesses, the cap-108
+and cap-324 constructions, and the scoped fixed-bank certificate. Proof:
+[`CONDITIONAL_PRODUCT_UNIVERSALITY.md`](theory/proofs/CONDITIONAL_PRODUCT_UNIVERSALITY.md).
+
 ---
 
 # XVIII. Reference Compiler contract

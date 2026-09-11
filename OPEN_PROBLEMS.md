@@ -104,6 +104,18 @@ Transitions to eight or fewer PRODUCTs, sharp one-PRODUCT singleton distance
 and sharp SUM constants remain open; a small slack cannot be silently treated
 as the exact minimum-cap support contract.
 
+XVII.24 resolves the unrestricted-range universal PRODUCT count: 2^d-d-1
+for all strictly positive finite conditional tables, both exactly and in
+approximation. A static rank obstruction matches a constructive positive
+row scaling in a fixed monomial bank. For three-bit identity noise, four
+PRODUCTs attain exact prediction at cap 108 and at most three has a positive
+gap at every cap. The exact four-PRODUCT range threshold remains open:
+108 is optimal for the fixed xy,xz,yz,xyz bank only. Thresholds between the
+near-nine nine-PRODUCT phase and this four-PRODUCT phase, universality counts
+for fixed smaller label alphabets, and sharp total resource costs remain
+open. Unbounded-range universality neither identifies unknown target values
+nor supplies a registered learning/physical/numerical path.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.
@@ -257,9 +269,11 @@ has true one-PRODUCT minimum range 35/2 versus 15/2 for the sign relaxation;
 at range 5 four products are necessary, with a robust all-at-most-three loss
 gap. XVII.21 and XVII.22 give exact all-dimension identity approximation
 minimum 2^d+d-2 at minimum range. At d=3 the exact minimum is twelve and
-the approximation minimum nine, with an explicit all-at-most-eight CE gap
-1/1774224. Sharp intermediate two/three-PRODUCT range phases, exact counts
-in higher dimensions, and efficient global loss optimization over the
+the approximation minimum nine; XVII.23 improves the all-at-most-eight CE
+gap to 1/8100. XVII.24 supplies the other endpoint: exactly four PRODUCTs
+for the three-bit task at R>=108, and sharp worst-case conditional universality
+count 2^d-d-1 with unbounded range. Intermediate range phases, exact counts
+at minimum range in higher dimensions, and efficient global loss optimization over the
 variable-parent one-PRODUCT class remain open. A fixed-mass normal form is not
 a learner/provenance equivalence and does not settle conditional scales.
 

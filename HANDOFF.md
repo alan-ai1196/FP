@@ -400,6 +400,20 @@ probability tolerance, or Theta(log(1/(h+sqrt(rho)))) for CE tolerance.
 Higher cap transitions, sharp scalar/constructive constants and registered
 physical/value/AMP realizations remain open.
 
+XVII.24 closes the unrestricted-range endpoint: the exact worst-case PRODUCT
+count for arbitrary strictly positive finite conditionals on d binary inputs
+is 2^d-d-1, also in approximation. A complete-class static rank bound matches
+a fixed monomial-bank construction after explicit positive row scaling.
+Read `CONDITIONAL_PRODUCT_UNIVERSALITY.md`. Rational target tables permit
+finite integer-coefficient SUM graphs; their potentially large normalizers
+and encoding/construction costs remain resources. The three-bit identity
+task has exact/approximation minimum four for R>=108, while at most three
+has probability gap 1/72 and CE gap 1/20736 at every cap. Cap 108 is proved
+optimal only for the fixed xy,xz,yz,xyz bank with full unary readouts, not
+for the complete variable-parent four-PRODUCT class. The intermediate cap
+thresholds, fixed-small-alphabet universality counts and full value/resource
+path remain open. Static table rank must not become a recurrent state bound.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

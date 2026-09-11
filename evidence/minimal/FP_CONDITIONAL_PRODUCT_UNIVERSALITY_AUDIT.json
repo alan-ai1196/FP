@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "scope": "full static unary-source conditional rank lower bound; fixed-bank exact constructions; no Runtime authority",
+  "worst_case_exact_and_approximation_PRODUCT_count_unbounded_cap": "2^d-d-1 for d>=1; universality over finite output alphabets",
+  "positive_target_graph_cases": 21,
+  "integer_local_alphabet_cases": 9,
+  "individual_exact_mass_entries": 980,
+  "selected_universal_lifts": [
+    {
+      "d": 1,
+      "labels": 2,
+      "PRODUCTs": 0,
+      "integer_local_alphabet": false,
+      "maximum_normalizer": "15"
+    },
+    {
+      "d": 1,
+      "labels": 2,
+      "PRODUCTs": 0,
+      "integer_local_alphabet": true,
+      "maximum_normalizer": "30"
+    },
+    {
+      "d": 1,
+      "labels": 2,
+      "PRODUCTs": 0,
+      "integer_local_alphabet": false,
+      "maximum_normalizer": "152/3"
+    },
+    {
+      "d": 1,
+      "labels": 2,
+      "PRODUCTs": 0,
+      "integer_local_alphabet": true,
+      "maximum_normalizer": "168"
+    },
+    {
+      "d": 2,
+      "labels": 4,
+      "PRODUCTs": 1,
+      "integer_local_alphabet": false,
+      "maximum_normalizer": "1210"
+    },
+    {
+      "d": 2,
+      "labels": 4,
+      "PRODUCTs": 1,
+      "integer_local_alphabet": true,
+      "maximum_normalizer": "152460"
+    },
+    {
+      "d": 3,
+      "labels": 8,
+      "PRODUCTs": 4,
+      "integer_local_alphabet": false,
+      "maximum_normalizer": "783000"
+    },
+    {
+      "d": 3,
+      "labels": 8,
+      "PRODUCTs": 4,
+      "integer_local_alphabet": true,
+      "maximum_normalizer": "43713386640000"
+    },
+    {
+      "d": 4,
+      "labels": 16,
+      "PRODUCTs": 11,
+      "integer_local_alphabet": false,
+      "maximum_normalizer": "1123182718914048/923521"
+    }
+  ],
+  "original_DAG_and_prediction_rank_checks": 60,
+  "exact_left_null_witnesses": 45,
+  "rank_relaxation_equality_cases": 5,
+  "three_bit_probability_gap_for_PRODUCTs_at_most_three_at_any_cap": "1/72",
+  "three_bit_CE_gap_for_PRODUCTs_at_most_three_at_any_cap": "1/20736",
+  "exact_four_PRODUCT_identity_witnesses": [
+    {
+      "PRODUCTs": 4,
+      "maximum_normalizer": "108",
+      "integer_local_alphabet": false,
+      "normalizers_by_context": [
+        "9",
+        "15",
+        "15",
+        "36",
+        "15",
+        "36",
+        "36",
+        "108"
+      ],
+      "maximum_excess_feature": "23"
+    },
+    {
+      "PRODUCTs": 4,
+      "maximum_normalizer": "324",
+      "integer_local_alphabet": true,
+      "normalizers_by_context": [
+        "27",
+        "45",
+        "45",
+        "108",
+        "45",
+        "108",
+        "108",
+        "324"
+      ],
+      "maximum_excess_feature": "71"
+    }
+  ],
+  "fixed_four_monomial_bank_optimal_cap": "108",
+  "fixed_bank_dual_multipliers_e0_ea_e2_e3": [
+    9,
+    3,
+    4,
+    1
+  ],
+  "fixed_bank_feasible_scale_checks": 40,
+  "forged_duals_rejected": 3,
+  "invalid_probability_tables_rejected": 2,
+  "fixed_bank_rejection_with_full_FP_twelve_PRODUCT_witness": true,
+  "not_claimed": [
+    "108 is the minimum cap for the full variable-parent four-PRODUCT class",
+    "the rank relaxation witness is native PRODUCT optimal",
+    "universality at a fixed range or full physical budget",
+    "recurrent state dimension lower bounds",
+    "unknown target acquisition, registered value/install/persistence or AMP evidence"
+  ]
+}
