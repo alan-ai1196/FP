@@ -282,3 +282,9 @@ fresh persistence, installation and AMP remain separate obligations.
 
 Proof search:
 `theory/numerical_checks/product_support_closure_audit.py`.
+
+The follow-up `CONDITIONAL_COEFFICIENT_PATHS.md` extends the full-mass lift
+to conditional prediction limits, including unbounded normalizers. At a
+finite cap, an extra final positive readout contraction is sufficient and
+sometimes necessary. Its separate audit verifies rational multi-head paths;
+the support-only executable scope of the search above is unchanged.

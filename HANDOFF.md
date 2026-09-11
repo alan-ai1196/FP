@@ -453,6 +453,29 @@ This closes a frozen readout decision class, not variable-parent target
 search, fixed-resource learning or Runtime authority. Binary three-bit
 variable-feature universality still lies between two and three PRODUCTs.
 
+XVII.28 completes the coefficient-path characterization for conditional
+closure. Every unrestricted-range limit has a native monomial coefficient
+path; support comes from rowwise leading exponents, while exact probability
+values require all tied amplitudes. At finite cap R>k, a bounded mass-limit
+lift plus one final excess contraction
+`beta=(R-k)/(R-k+D*epsilon)` gives actual finite candidates at that same cap
+and PRODUCT count. Read `CONDITIONAL_COEFFICIENT_PATHS.md`. Pure monomial
+paths alone are incomplete under the cap: none with at most eleven
+PRODUCTs can approach the three-bit decoder at cap nine while remaining
+feasible, although nine PRODUCTs approach it after readout contraction.
+With unrestricted SUM scaling, any finite graph can also be rescaled to
+keep hidden values within a bound already met by its sources and final
+excesses. Downward dyadic rounding gives the same prediction closure with
+local coefficients {1/2,1,2}, retaining normalizer and common activation caps
+at the cost of growing SUM work. Those caps and the finite alphabet do not
+replace complete construction/numerical accounting. Generic phase/amplitude
+search remains unimplemented; the new audit independently verifies rational
+paths, cap corrections, hidden rescalings and actual finite-alphabet graphs.
+The union of shifted nonuniversal banks is also proved exactly universal
+over positive targets of every finite label count, despite its fixed support
+pattern. Full variable-parent counts and registered value/physical/AMP paths
+remain open.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

@@ -977,3 +977,55 @@ The result replaces the weaker frozen-bank comparison with 44 versus 247
 at d=8 and 3560 versus 1048555 at d=20. It does not reverse the quantifiers
 into one bad target for every variable-parent program, nor price finite
 range, value acquisition, complete physical construction or numerical paths.
+
+## 45. Complete conditional limits need cap-aware paths, not a new primitive (2026-09-12)
+
+The next attack separated variable-feature closure from frozen support
+decisions. Applying the positive-polynomial lift to the proof coordinates
+r_x*M_(x,j), with r_x=1/T_x along a convergent prediction sequence, shows
+that every unrestricted-range conditional limit has an original-coefficient
+path a*epsilon^w. Rowwise minimum exponents determine support, but all tied
+leading amplitudes determine the actual probabilities. This covers different
+diverging normalizer rates across contexts. The auxiliary reciprocal never
+enters the native model.
+
+A finite cap exposes a new completeness failure. Positive monomial mass
+paths approach their finite limits from above, so a saturated cap may reject
+every finite point. The three-bit decoder at cap nine makes this decisive:
+any feasible pure monomial path with at most eleven PRODUCTs would have no
+positive tails at all and thus be exact, contradicting its exact minimum
+twelve. Nine PRODUCTs nevertheless approach the target at that same cap.
+
+The missing step follows directly from the positive readout. If D bounds
+the positive mass-tail coefficient sum, append the common final excess
+weight beta=(R-k)/(R-k+D*epsilon). Every finite point now satisfies the
+original cap R and converges to the required masses, with no extra PRODUCT.
+The probability error is at most 2D*epsilon/k and uniform CE excess at most
+4R*D^2*epsilon^2/k. The decoder has D=7. Thus bounded mass lifts plus this
+ordinary final SUM operation characterize the complete finite-cap closure;
+restricting the coefficient path family would have made a false exclusion.
+
+Continuing the resource audit produced two general results. All hidden
+activations of any finite graph can be rescaled into a bound already met by
+its sources and final excesses, retaining PRODUCT count and exact outputs
+when SUM scaling is free. Independently, rounding every nonnegative
+coefficient down to dyadics and expanding those coefficients into local
+{1/2,1,2} SUM chains preserves normalizer and common activation upper caps
+and has the same prediction closure. Construction/encoding costs and small
+nonzero values remain; bounding only peaks and the local alphabet cannot
+repair the nonclosure. An explicit shared graph's hidden peak falls from
+1048576 to one without changing either output or its two PRODUCTs.
+
+The shifted-bank example also has a sharper quantifier consequence. Every
+fixed positive t in (t+x)(t+y) is nonuniversal, with the same support pattern,
+yet the union is exactly universal for every finite output alphabet. A
+single small t can fit any finite mixed-alphabet target collection. Frozen
+colorings therefore cannot exclude the complete variable-value family.
+
+The independent rational audit checks 625 small exponent configurations,
+64 shared/nested/squared DAG paths and their cap contractions, 38 exact
+activation rescalings, 144 dyadic graph expansions and 30 exact targets
+with 2/3/5 labels in one shifted bank. It rejects wrong leading values,
+wrong supports and false cap premises. Read `CONDITIONAL_COEFFICIENT_PATHS.md`.
+Generic phase/amplitude search, sharp full resource costs and registered
+value/physical/AMP paths remain open. Foundation semantics are unchanged.

@@ -1963,6 +1963,73 @@ partial-domain and full-span counterexamples, and a common shifted bank
 fitting 40 positive targets exactly. Proof:
 [`FROZEN_FEATURE_UNIVERSALITY.md`](theory/proofs/FROZEN_FEATURE_UNIVERSALITY.md).
 
+## XVII.28. Complete conditional coefficient paths and the costs hidden by free SUM work
+
+Fix finite complete nonnegative source tables, scalar positive SUM/binary
+PRODUCT DAGs, at most P PRODUCTs, base one per k labels and one final
+normalization. Finite SUM work and nonnegative real coefficients are free
+in this static class. Every unrestricted-range prediction limit Q has an
+original-coefficient path `z_i=a_i*epsilon^w_i`, a_i>0, integer w_i.
+Apply XVII.19's positive-polynomial mass lift to `r_x*M_(x,j)(z)`, with
+auxiliary proof coordinates r_x=1/T_x along the given sequence. Their
+limiting row totals are one, so normalizing and discarding r recovers Q
+using only the original graph. No internal reciprocal enters FP.
+
+Include each base term at exponent zero. At context x take the minimum
+exponent mu_x across all heads, and sum every tied term's amplitude into
+L_(x,j). Then `Q_(x,j)=L_(x,j)/sum_l L_(x,l)`. Normalizers may diverge at
+different rates in different contexts. The support conditions form finitely
+many rational linear branches; prescribed probabilities additionally require
+positive-amplitude polynomial equations. Correct exponents alone are not a
+value certificate. Generic complete phase/amplitude search is unimplemented.
+
+At a finite cap R>k, every prediction limit instead has a bounded full-mass
+lift M*, with total <=R. A pure monomial lift approaches M* from above:
+`M(epsilon)=M*+r(epsilon)`, r>=0. If D is the largest row sum of its
+positive-exponent coefficients, total tail is <=D*epsilon for epsilon<=1.
+Append final excess readouts with the ordinary SUM weight
+
+`beta(epsilon)=(R-k)/(R-k+D*epsilon)`.
+
+The new masses `1+beta*(M-1)` satisfy the **same cap R at every finite
+epsilon**, use the same PRODUCT count and converge to M*. Probability error
+is <=2D*epsilon/k; uniform excess CE is <=4R*D^2*epsilon^2/k. Shared
+intermediates are retained. R<k is empty; R=k permits only uniform prediction.
+
+This correction is sometimes necessary. For three-bit identity noise at
+cap nine, every limiting row saturates that cap. A pure monomial mass path
+has nonnegative tails, so staying at cap nine forces every tail to vanish
+identically. It would be exact, which needs twelve PRODUCTs. Nevertheless
+nine PRODUCTs approach the target at that cap. The raw subset basis has
+total excess `(1+epsilon)^|T|`; D=7 and beta=1/(1+7epsilon) make it feasible.
+Excluding all pure paths would therefore falsely exclude constrained closure.
+
+Two static resource statements sharpen this distinction. If the original
+sources and final excesses are at most A>0, all hidden nodes can be rescaled
+to at most A with no added PRODUCT, using arbitrary positive SUM weights.
+Also, downward dyadic rounding of every coefficient, expanded into actual
+SUMs with local alphabet {1/2,1,2}, preserves PRODUCT count, final normalizer
+caps and any common activation cap while converging to the original graph.
+Thus those real-coefficient and local-alphabet classes have equal prediction
+closures when finite SUM work is unrestricted. In particular, a normalizer
+cap R permits the additional activation cap
+`A>=max(maximum_source_value,R-k)>0` without changing that closure. SUM/bit
+cost, small nonzero values, value acquisition and numerical execution remain
+substantive; maximum activation and a finite alphabet do not close the class.
+
+Finally, the shifted banks `(t+x)(t+y)`, t>0, retain an identical support
+pattern and each fail frozen universality, yet their union is exactly
+universal for every finite label count. One small positive t can fit any
+finite collection of positive targets. Frozen support rejection therefore
+cannot be promoted to rejection of variable feature values.
+
+The exact audit compares independent leading-amplitude recursion, complete
+Laurent expansion and native rational execution over 625 small exponent
+configurations and 64 arbitrary shared paths; it also checks cap corrections,
+38 activation rescalings, 144 dyadic graph expansions and 30 mixed-alphabet
+targets. These are static theorem witnesses, not Runtime/AMP authority. Proof:
+[`CONDITIONAL_COEFFICIENT_PATHS.md`](theory/proofs/CONDITIONAL_COEFFICIENT_PATHS.md).
+
 ---
 
 # XVIII. Reference Compiler contract

@@ -115,6 +115,17 @@ head at context 111 becomes zero although the exact correct excess exceeds
 These are standalone CPU theorem audits; complete Runtime/AMP closure
 remains unverified.
 
+The 2026-09-12 conditional-path theorem adds a search-scope counterexample
+(`theory/proofs/CONDITIONAL_COEFFICIENT_PATHS.md`). Pure monomial coefficient
+paths are complete at unrestricted normalizer range, but requiring each
+such path to remain at a fixed cap misses valid conditional limits. A final
+positive excess contraction restores the same cap with no added PRODUCT.
+The standalone audit verifies supplied rational paths and resource-preserving
+graph constructions; generic phase/amplitude solving is not implemented.
+Its hidden-node rescaling and finite-alphabet closure results explicitly
+allow growing SUM/scaling work and do not authorize a registered Runtime
+state rewrite or a numerical bridge.
+
 Before an `implementation: freeze reference compiler` commit can be made, require at minimum:
 
 1. clean package import from a fresh clone;

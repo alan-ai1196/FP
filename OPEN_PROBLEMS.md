@@ -146,6 +146,28 @@ and finite positive validation suites are all insufficient substitutes for
 the criterion. Numerical feature magnitudes cannot be discarded for range
 or target-specific claims merely because universality depends only on support.
 
+XVII.28 now extends the full coefficient-path characterization to arbitrary
+finite-head conditional limits, including diverging normalizers. At a finite
+cap, a bounded monomial mass lift and one final positive excess contraction
+give complete closure without extra cap slack or PRODUCTs. Pure monomial
+paths required to remain within the cap are an incomplete search class:
+the cap-nine decoder rejects every such path with at most eleven PRODUCTs
+but has nine-PRODUCT constrained closure. The remaining generic solver
+problem is finite leading-pattern search together with positive-amplitude
+and normalizer feasibility, not the existence of a path characterization.
+The new exact audit verifies rational witnesses; it supplies neither a
+generic complete amplitude solver nor a complete rejection search.
+
+The same result proves two resource reductions when SUM work is free:
+hidden activations can be rescaled into any bound already met by sources
+and final excesses, and downward dyadic rounding preserves prediction
+closure, PRODUCT count, normalizer caps and common activation caps using
+local weights {1/2,1,2}. Sharp SUM/encoding/precision costs, lower bounds on
+nonzero numerical values, complete-resource closure and registered value
+paths remain open. A constant support pattern for variable feature values
+does not restore frozen-bank completeness: the positive shifted two-bit
+banks are jointly exactly universal although each fixed bank fails.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.

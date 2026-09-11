@@ -227,6 +227,11 @@ not a complete universality certificate. Exact zero-support information
 separates t=0 from every positive t. This is not a reason to erase a small
 positive tail or to treat a floating-point zero as an exact semantic zero.
 
+The follow-up `CONDITIONAL_COEFFICIENT_PATHS.md` extends this construction
+to any finite collection of positive targets with arbitrary finite label
+counts. In particular, the union over t>0 is exactly universal despite its
+unchanging feature-support pattern and the failure of every frozen bank.
+
 ## 8. Decision and audit scope
 
 For a declared finite bank and k, enumerate partial colorings with an

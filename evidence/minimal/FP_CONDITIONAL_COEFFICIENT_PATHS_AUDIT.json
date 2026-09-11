@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "scope": "finite known nonnegative sources, scalar positive SUM/binary PRODUCT DAGs, base one per label, one final normalization; rational path verification, not generic phase/amplitude search or Runtime authority",
+  "exhaustive_small_integer_exponent_box_cases": 625,
+  "random_shared_nested_squared_DAG_paths": 64,
+  "random_bounded_mass_cap_contractions": 64,
+  "diverging_normalizer_rows_checked": 260,
+  "zero_limiting_probabilities_checked": 609,
+  "independent_checks": [
+    "leading-order/amplitude DAG",
+    "complete Laurent expansion",
+    "actual rational native DAG"
+  ],
+  "tied_leading_context_orders": [
+    -2,
+    -1
+  ],
+  "zero_tail_and_uniform_cap_boundary_cases": 2,
+  "forged_support_or_value_claims_rejected": 3,
+  "invalid_or_false_cap_inputs_rejected": 11,
+  "decoder": {
+    "d": 3,
+    "labels": 8,
+    "PRODUCTs": 9,
+    "cap": 9,
+    "tail_constant_D": "7",
+    "pure_path_exceeds_cap_at_every_nonempty_context": true,
+    "same_cap_corrected_native_witnesses": [
+      {
+        "epsilon": "1",
+        "beta": "1/8",
+        "maximum_normalizer": "9",
+        "probability_error": "7/72",
+        "CE_upper_chi_square": "3235/46656"
+      },
+      {
+        "epsilon": "1/2",
+        "beta": "2/9",
+        "maximum_normalizer": "35/4",
+        "probability_error": "26/315",
+        "CE_upper_chi_square": "88913137/1803954240"
+      },
+      {
+        "epsilon": "1/8",
+        "beta": "8/15",
+        "maximum_normalizer": "2803/320",
+        "probability_error": "1190/25227",
+        "CE_upper_chi_square": "377179641259/26619679088640"
+      },
+      {
+        "epsilon": "1/256",
+        "beta": "256/263",
+        "maximum_normalizer": "154862337/17235968",
+        "probability_error": "1202006/464587011",
+        "CE_upper_chi_square": "803790462826581729155/21924758549576993791279104"
+      }
+    ],
+    "pure_monomial_path_impossibility_at_P_le_11_uses": "proved exact minimum 12 in DECODER_EXACT_AND_LIMIT_COMPLEXITY.md"
+  },
+  "local_alphabet_rounding": {
+    "rounded_and_expanded_graphs": 144,
+    "expanded_nodes_checked": 22423,
+    "graphs_with_actual_rounding_change": 144,
+    "same_PRODUCT_count_normalizer_cap_and_common_activation_cap": true,
+    "exact_hidden_activation_rescalings": 38,
+    "random_original_graphs_exceeding_the_new_cap": 14,
+    "explicit_hidden_peak_before": "1048576",
+    "explicit_hidden_peak_after": "1",
+    "shared_final_head_with_PRODUCT_descendant_preserved": true
+  },
+  "variable_support_invariant_bank": {
+    "finite_targets_realized_exactly": 30,
+    "label_counts": [
+      2,
+      3,
+      5
+    ],
+    "one_common_positive_shift": "1/262144",
+    "PRODUCTs": 1,
+    "every_frozen_bank_still_nonuniversal": true
+  },
+  "not_claimed": [
+    "complete generic phase or amplitude search",
+    "rational amplitudes for every real lift",
+    "fixed SUM/bit budget closure equality",
+    "activation bounds for the original unscaled execution",
+    "registered information/value/physical/persistence/AMP authority"
+  ]
+}
