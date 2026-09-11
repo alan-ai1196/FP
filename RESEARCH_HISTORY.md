@@ -753,7 +753,7 @@ lies between max(0,E_i-sum_(j!=i)E_j) and E_i. At the minimum conditional
 cap N+1 this gives a scalar error at most 2(N+1) times probability error,
 retaining every normalizer. For d=3, P<=8 has probability distance >=1/666
 and CE gap >=1/1774224. Nine is the new lower count; the exact construction
-uses twelve. Their equality is not claimed.
+uses twelve. Section 39 below resolves the distinct exact and approximation counts.
 
 Exact audits cover 440 actual DAGs with binary and general rational sources,
 3,487 full-domain retained monomials, 27 face constructions, seven square
@@ -763,3 +763,44 @@ P=2, while its complete exponent proof rejects closure: the local condition
 must not become a sufficient certificate. Read
 `SOURCE_INTERSECTION_PRODUCT_BOUND.md`. Full information, physical resources,
 registered learning, persistence and AMP remain separate obligations.
+
+## 39. Decoder approximation is cheaper than exact support (2026-09-11)
+
+The nine-to-twelve boundary splits into two sharp answers. For exact support,
+singleton PRODUCTs can be made terminal: a pure singleton feature cannot
+help any other context. A minimum graph thus has eight terminal nodes and
+some nontrivial auxiliaries. Complete integer enumeration of the possible
+union-closed support families, modulo the 48 cube automorphisms, finds that
+three auxiliaries can supply at most six singleton terminals. It checks
+10,835 state orbits at that depth, with raw ordered-sequence cross-checks
+of the first two levels. Four pair-indicator auxiliaries and eight final
+products attain the task, proving exact minimum twelve.
+
+The same terminalization fails for limits. Construct a common product of
+`x_0+epsilon*x_1` factors, scale it by `(1-epsilon)^d`, and recursively form
+every subset head by multiplying an earlier head by its next one-indicator
+and amplifying by epsilon^-1. A parent's vanishing tail becomes its
+descendant's leading mass. The result uses exactly N+d-2 PRODUCTs and
+approaches all N=2^d singleton outputs simultaneously. Total excess is
+`(1-epsilon)^d*(1+epsilon)^|T|<=1`, retaining the minimum conditional cap
+N+1. This matches the general lower bound: all-dimension approximation
+minimum is N+d-2, and in three dimensions it is nine versus twelve exactly.
+
+For epsilon=2^-k the actual graph has local alphabet {1/2,1,2}, feature cap
+one and 2d(k+1)+k(N-1) weighted SUMs. The conditional loss excess is at most
+2d^2*epsilon^2/(N+1). At d=3 the earlier positive-value floor combines with
+exact-support exclusion to prove Theta(log(1/error)) SUM cost for fixed
+PRODUCT budgets nine through eleven. At most eight has a persistent loss
+gap; twelve admits a finite exact graph. This gives a construction-resource
+phase directly from the native grammar.
+
+The audit evaluates 15 full finite graphs through d=6, checking 16,368
+excess entries, node counts, scales and rational chi-square bounds. Two
+binary64 paths attack the numerical interpretation: k=54 rounds all
+predictions to the target despite positive tails; k=400 underflows the
+common product and all excess heads at 111 vanish. The exact correct mass
+there still exceeds 0.999. Bounded maxima do not imply a numerical bridge.
+The support cache is regenerated in seconds and not retained as an artifact.
+Read `DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`. Higher-dimensional exact
+counts, sharp finite-resource constants, larger caps and registered
+value/Runtime/AMP closure remain open.

@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "scope": "complete static unary-source scalar DAGs; exact and approximation decision classes distinguished",
+  "three_bit_exact_support_enumeration": {
+    "decision_class": "three-bit complete exact singleton-support DAGs with free SUMs; terminalization theorem",
+    "cube_automorphisms_checked": 48,
+    "levels": [
+      {
+        "auxiliary_PRODUCTs": 0,
+        "state_orbits": 1,
+        "available_singleton_histogram": {
+          "0": 1
+        },
+        "maximum_available_singletons": 0,
+        "extensions_enumerated": 130
+      },
+      {
+        "auxiliary_PRODUCTs": 1,
+        "state_orbits": 8,
+        "available_singleton_histogram": {
+          "0": 4,
+          "1": 1,
+          "2": 3
+        },
+        "maximum_available_singletons": 2,
+        "extensions_enumerated": 1094
+      },
+      {
+        "auxiliary_PRODUCTs": 2,
+        "state_orbits": 266,
+        "available_singleton_histogram": {
+          "0": 43,
+          "1": 35,
+          "2": 100,
+          "3": 54,
+          "4": 34
+        },
+        "maximum_available_singletons": 4,
+        "extensions_enumerated": 38013
+      },
+      {
+        "auxiliary_PRODUCTs": 3,
+        "state_orbits": 10835,
+        "available_singleton_histogram": {
+          "0": 448,
+          "1": 815,
+          "2": 2556,
+          "3": 3158,
+          "4": 2768,
+          "5": 936,
+          "6": 154
+        },
+        "maximum_available_singletons": 6,
+        "extensions_enumerated": 0
+      }
+    ],
+    "raw_prefix_cross_checks": [
+      {
+        "auxiliary_PRODUCTs": 1,
+        "ordered_sequences": 130,
+        "states_without_symmetry": 130,
+        "matching_state_orbits": 8
+      },
+      {
+        "auxiliary_PRODUCTs": 2,
+        "ordered_sequences": 17718,
+        "states_without_symmetry": 9319,
+        "matching_state_orbits": 266
+      }
+    ],
+    "four_auxiliary_upper_supports": [
+      3,
+      12,
+      48,
+      192
+    ],
+    "exact_SUPPORT_and_mass_PRODUCT_minimum": 12,
+    "not_a_closure_certificate": true
+  },
+  "all_dimension_approximation_PRODUCT_minimum": "2^d+d-2 for d>=2",
+  "same_approximation_minimum_for_identity_conditionals_at_cap": "2^d+1",
+  "local_SUM_coefficient_alphabet": [
+    "1/2",
+    "1",
+    "2"
+  ],
+  "maximum_intermediate_feature": 1,
+  "weighted_SUM_count_formula": "2d(k+1)+k(2^d-1)",
+  "exact_finite_graph_grid_cases": 15,
+  "full_context_cases": 372,
+  "individual_excess_entries_checked": 16368,
+  "selected_graphs": [
+    {
+      "d": 2,
+      "k": 3,
+      "PRODUCTs": 4,
+      "weighted_SUMs": 25,
+      "exact_mass_sup_error": "15/64",
+      "exact_probability_sup_error": "4546/101765"
+    },
+    {
+      "d": 3,
+      "k": 3,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 45,
+      "exact_mass_sup_error": "169/512",
+      "exact_probability_sup_error": "754558/21124791"
+    },
+    {
+      "d": 4,
+      "k": 3,
+      "PRODUCTs": 18,
+      "weighted_SUMs": 77,
+      "exact_mass_sup_error": "1695/4096",
+      "exact_probability_sup_error": "115977730/4831203089"
+    },
+    {
+      "d": 5,
+      "k": 3,
+      "PRODUCTs": 35,
+      "weighted_SUMs": 133,
+      "exact_mass_sup_error": "15961/32768",
+      "exact_probability_sup_error": "17096721022/1166621772063"
+    },
+    {
+      "d": 6,
+      "k": 3,
+      "PRODUCTs": 68,
+      "weighted_SUMs": 237,
+      "exact_mass_sup_error": "144495/262144",
+      "exact_probability_sup_error": "2449710374146/289937050865345"
+    }
+  ],
+  "CE_excess_upper_bound": "2*d^2*2^(-2k)/(2^d+1)",
+  "binary64_counterexamples": [
+    {
+      "d": 3,
+      "k": 54,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 708,
+      "binary64_full_prediction_table_equals_target": true,
+      "exact_tail_at_111_is_positive": true,
+      "binary64_all_excess_heads_underflow_to_zero_at_111": false,
+      "exact_correct_excess_at_111_exceeds_999_over_1000": true
+    },
+    {
+      "d": 3,
+      "k": 400,
+      "PRODUCTs": 9,
+      "weighted_SUMs": 5206,
+      "binary64_full_prediction_table_equals_target": false,
+      "exact_tail_at_111_is_positive": true,
+      "binary64_all_excess_heads_underflow_to_zero_at_111": true,
+      "exact_correct_excess_at_111_exceeds_999_over_1000": true
+    }
+  ],
+  "three_bit_resource_law_constant_checks": 6,
+  "three_bit_SUM_accuracy_cost_at_PRODUCT_budgets_9_to_11": "Theta(log(1/delta)) for probability error; Theta(log(1/rho)) for excess CE; exact arithmetic",
+  "not_claimed": [
+    "exact minimum 2^d+d-2",
+    "higher-dimensional exact minima beyond d=3",
+    "arbitrary accuracy at fixed SUM or fixed arithmetic resources",
+    "safe removal of an asymptotically singleton parent",
+    "registered value/install/persistence or reference-AMP authority"
+  ]
+}

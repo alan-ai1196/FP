@@ -1644,8 +1644,9 @@ normalizers and gives, for every P<=N+d-3,
 `excess CE >= Delta_d^2/[2N(N+1)^2]` under uniform contexts.
 
 At d=3, every at-most-eight model has probability error >=1/666 and CE gap
->=1/1774224; the shared count lies between nine and the exact construction's
-twelve. General sharp shared counts and sharp margins remain open. Repeated
+>=1/1774224. XVII.22 below matches the nine-node approximation lower bound
+and proves the twelve-node exact minimum. Higher-dimensional exact counts
+and sharp margins remain open. Repeated
 squaring approaches a singleton increasingly closely as dimension grows, so
 there is no dimension-independent margin at the excluded count.
 
@@ -1655,6 +1656,64 @@ constructions and 786 multiclass normalizers. The source intersections use
 the complete declared domain, never sample-only zeros. Registered value,
 physical construction, recurrence, installation and AMP remain separate.
 Proof: [`SOURCE_INTERSECTION_PRODUCT_BOUND.md`](theory/proofs/SOURCE_INTERSECTION_PRODUCT_BOUND.md).
+
+## XVII.22. Shared decoder exactness, limits and SUM construction cost
+
+For d>=2, N=2^d binary contexts and N singleton excess outputs, the complete
+static unary-source class has **approximation PRODUCT minimum N+d-2**.
+The same minimum holds for the identity-noise conditional target
+`p_S(T)=(1+1[S=T])/(N+1)` at base one and minimum normalizer cap N+1.
+
+The lower bound is XVII.21. A matching common-graph construction uses
+`c=(1-epsilon)^d` and subsets of one-valued input coordinates:
+
+```
+G_empty = c*product_i (x_(i,0)+epsilon*x_(i,1))
+G_S = epsilon^(-1)*G_(S without i)*x_(i,1), for a fixed i in each nonempty S.
+```
+
+There are d-1 PRODUCTs for the common root and N-1 for the subset descendants.
+Exactly, `G_S(T)=c*epsilon^(|T|-|S|)` when S is contained in T, and zero
+otherwise. The joint excess total is `c*(1+epsilon)^|T|<=1`, mass error is
+`1-c<=d*epsilon`, probability error is <=d*epsilon/(N+1), and excess CE is
+<=2d^2*epsilon^2/(N+1). Every output scale and normalizer is retained.
+
+For epsilon=2^-k the actual graph needs only local coefficients {1/2,1,2},
+keeps every intermediate feature <=1, and uses
+`2d(k+1)+k(N-1)` weighted SUMs. Positive geometric SUMs supply c; each
+descendant first masks its parent's dominant point and then doubles its
+remaining tail k times. The growing SUM count is real construction work.
+
+At d=3, **exact support, mass and minimum-cap conditional minima are twelve**.
+In a minimum exact graph, the eight singleton PRODUCTs can be made terminal:
+their use elsewhere changes only their own already-covered context. The
+remaining auxiliary PRODUCTs add intersections to the union-closed family
+of source/auxiliary supports. Complete integer enumeration up to three
+auxiliaries has 1, 8, 266 and 10,835 state orbits, and can supply at most
+0, 2, 4 and 6 singleton terminals. Four auxiliaries and eight final products
+attain the exact task. The 48 cube symmetries preserve every legal support
+continuation; raw ordered-sequence checks independently match the first
+two levels. This exact-support proof cannot be transferred to limits:
+asymptotically singleton nodes still carry tails that descendants use.
+
+With local alphabet {1/2,1,2}, cap nine and S weighted SUMs, any P<=p<12
+predictor has probability error at least
+`min(7/72, 2^(-S*2^p)/9)`. Thus the minimum SUM cost for fixed
+p in {9,10,11} is Theta(log(1/delta)) for probability tolerance delta, and
+Theta(log(1/rho)) for CE excess rho. The matching family has S=13k+6 and
+CE excess <=2*2^(-2k). P<=8 retains a positive loss gap with unlimited SUMs;
+P>=12 has a finite exact witness. These are static construction-resource
+phases, not registered value or hardware-equivalence results.
+
+The exact audit checks the complete three-bit support search, 15 finite
+graphs through d=6 and 16,368 excess entries. A separate binary64 path at
+d=3,k=54 rounds all probabilities to the target despite positive exact
+tails; at k=400 the common product underflows and all excess heads at 111
+become zero, although the exact correct excess exceeds 0.999. Bounded maximum
+activation does not certify the numerical bridge. Higher-dimensional exact
+counts, sharp cost constants, larger-cap phases and complete Runtime/AMP
+integration remain open. Proof:
+[`DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`](theory/proofs/DECODER_EXACT_AND_LIMIT_COMPLEXITY.md).
 
 ---
 

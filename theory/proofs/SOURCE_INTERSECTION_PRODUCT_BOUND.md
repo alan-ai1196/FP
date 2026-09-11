@@ -174,6 +174,10 @@ still gives `U(1)=0`, `U(d)=2^d+U(floor(d/2))+U(ceil(d/2))`:
 | 5 | 35 | 48 |
 | 6 | 68 | 88 |
 
+The later [`DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`](DECODER_EXACT_AND_LIMIT_COMPLEXITY.md)
+attains every lower bound in approximation, including at the minimum
+conditional cap, and proves the exact three-bit minimum is twelve.
+
 The same exclusion has a conditional margin at the minimum cap. Take base
 one for every label, uniform contexts, target
 `p_i(x)=(1+1[x=i])/(N+1)` and cap T<=R=N+1. Exact target prediction forces
@@ -211,7 +215,8 @@ P<=N+d-3 satisfies
 The latter uses a context attaining the probability error, Bernoulli
 coarsening of that label, Pinsker, and uniform context averaging. At d=3,
 Delta_3=1/37: **all at-most-eight-PRODUCT models have probability error
->=1/666 and excess CE >=1/1774224**. The earlier stronger exclusion for the
+>=1/666 and excess CE >=1/1774224**. The matching nine-PRODUCT limiting construction is
+given in the later decoder theorem above. The earlier stronger exclusion for the
 smaller class P<N remains valid. At d=2 its earlier margin is also stronger.
 
 ## 6. What the audit establishes

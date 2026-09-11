@@ -105,6 +105,16 @@ realize with one PRODUCT. An implementation must keep numerical equality,
 exact algebraic class, approximation closure and complete-resource authority
 separate. The standalone audit does not exercise or close the missing Runtime.
 
+The 2026-09-11 shared-decoder audit strengthens this obligation
+(`theory/proofs/DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`). Its nine-PRODUCT
+family uses only {1/2,1,2} SUM coefficients and keeps all features <=1, yet
+binary64 can both round away genuine leakage (k=54) and underflow the shared
+root before later amplification (k=400). In the latter case every excess
+head at context 111 becomes zero although the exact correct excess exceeds
+0.999. Maximum-activation bounds alone therefore cannot authorize a bridge.
+These are standalone CPU theorem audits; complete Runtime/AMP closure
+remains unverified.
+
 Before an `implementation: freeze reference compiler` commit can be made, require at minimum:
 
 1. clean package import from a fresh clone;

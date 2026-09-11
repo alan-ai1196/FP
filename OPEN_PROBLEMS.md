@@ -83,6 +83,17 @@ It does not decide general support closure; the two-PRODUCT parity rejection
 already passes this local condition. Sharp scalar approximation margins and
 stronger invariants relating different positive points remain open.
 
+XVII.22 now closes the full shared singleton approximation count: N+d-2,
+N=2^d, both for excess masses and the identity-noise conditional task at
+minimum cap N+1. At d=3 exact support/mass/conditional minimum is twelve,
+whereas approximation minimum is nine. Exact singleton nodes may be made
+terminal for a complete finite support search; nearly singleton nodes cannot,
+because legal descendants can amplify their positive tails. With the finite
+local alphabet {1/2,1,2}, d=3 and PRODUCT budgets nine through eleven, SUM
+accuracy cost is Theta(log(1/error)). Sharp constants, higher-dimensional
+exact minima and larger-cap phases remain open. Bounded intermediate maxima
+do not remove underflow or give a reference/AMP bridge.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.
@@ -234,11 +245,11 @@ fixed-mass one-PRODUCT criterion, including the common nonnegative slack that
 the necessary sign invariant missed. Its four-label identity-noise target
 has true one-PRODUCT minimum range 35/2 versus 15/2 for the sign relaxation;
 at range 5 four products are necessary, with a robust all-at-most-three loss
-gap. XVII.21 strengthens the all-dimension identity lower bound to 2^d+d-2,
-including approximation at minimum range. For d=3 this gives nine versus
-the existing twelve-PRODUCT exact upper construction, with an explicit
-all-at-most-eight CE gap 1/1774224. Sharp intermediate two/three-PRODUCT
-range phases, sharp counts in higher dimensions, and efficient global loss optimization over the
+gap. XVII.21 and XVII.22 give exact all-dimension identity approximation
+minimum 2^d+d-2 at minimum range. At d=3 the exact minimum is twelve and
+the approximation minimum nine, with an explicit all-at-most-eight CE gap
+1/1774224. Sharp intermediate two/three-PRODUCT range phases, exact counts
+in higher dimensions, and efficient global loss optimization over the
 variable-parent one-PRODUCT class remain open. A fixed-mass normal form is not
 a learner/provenance equivalence and does not settle conditional scales.
 

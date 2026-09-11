@@ -184,8 +184,10 @@ for d>2. At d=2 both bounds are four.
 The later [`SOURCE_INTERSECTION_PRODUCT_BOUND.md`](SOURCE_INTERSECTION_PRODUCT_BOUND.md)
 strengthens the lower bound to N+d-2, including approximation, by combining
 the scalar singleton count with a shared-output comparison. At d=3 it
-excludes P<=8 with a positive loss gap; the exact upper construction remains
-twelve. The stronger margins below still apply to their smaller P<N class.
+excludes P<=8 with a positive loss gap. The subsequent
+[`DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`](DECODER_EXACT_AND_LIMIT_COMPLEXITY.md)
+attains N+d-2 in approximation for all d>=2 and proves the three-bit exact
+minimum twelve. The stronger margins below still apply to their smaller P<N class.
 
 The general robust exclusion holds at
 `delta=1/[(N+1)(N+2)]`: writing t=(N+1)delta, the diagonal surplus is bounded

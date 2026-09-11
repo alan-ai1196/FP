@@ -361,11 +361,30 @@ exactly m-1 PRODUCTs both exactly and in approximation. Read
 `SOURCE_INTERSECTION_PRODUCT_BOUND.md`. Combined with the shared-output
 comparison, N=2^d singleton heads need at least N+d-2 nodes, improving the
 earlier N bound. At d=3 and minimum conditional cap nine, all at-most-eight
-graphs have CE gap >=1/1774224; a twelve-PRODUCT exact construction remains
-the upper bound. The pointwise source-intersection rule is only necessary:
+graphs have CE gap >=1/1774224. XVII.22 below closes the remaining exact
+and approximation counts. The pointwise source-intersection rule is only necessary:
 three-bit parity passes it at P=2 while the complete exponent proof rejects
-closure. Sharp higher-dimensional counts, larger-cap phases and quantitative
+closure. Sharp higher-dimensional exact counts, larger-cap phases and quantitative
 optima remain open; physical/value/AMP scope is unchanged.
+
+XVII.22 settles the shared decoder boundary: the full all-dimension
+approximation minimum is N+d-2, N=2^d, while the three-bit exact minimum is
+twelve versus approximation minimum nine. Read
+`DECODER_EXACT_AND_LIMIT_COMPLEXITY.md`. Its common near-singleton root keeps
+epsilon-ordered tails; descendants use an ordinary source PRODUCT and SUM
+amplification to recover every other singleton. The actual finite-alphabet
+graph has feature cap one, minimum final cap N+1 and
+2d(k+1)+k(N-1) weighted SUMs for epsilon=2^-k. A separate exact-only
+terminalization theorem permits complete support enumeration: three auxiliary
+PRODUCTs can supply at most six of the eight terminal singleton outputs.
+This reduction is explicitly falsified for limits by the new construction.
+At d=3 and PRODUCT budgets nine through eleven, SUM cost for accuracy is
+Theta(log(1/error)); eight or fewer retain a loss gap, and twelve permit a
+finite exact graph. Exact arithmetic is essential: binary64 k=54 appears
+exact, while k=400 underflows before amplification and loses all excess
+outputs at context 111. General higher-dimensional exact counts, sharp
+construction constants, larger-cap phases and the registered AMP/value path
+remain open. No support quotient or mass limit receives Runtime authority.
 
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
