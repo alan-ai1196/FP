@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "static positive scalar DAGs, disjoint excess outputs; no Runtime completion authority",
+  "scalar_parity_proof_reverified_without_LP": true,
+  "scalar_parity_proof_unique_nodes": 1906,
+  "scalar_two_PRODUCT_parity_margin": "1/18432",
+  "random_shared_nested_DAG_comparisons": 360,
+  "random_cases_including_empty_target_supports": 176,
+  "unbounded_hidden_feature_and_tiny_readout_cases": 4,
+  "largest_hidden_feature": "2^8192",
+  "two_head_error_sum_bound_saturation": true,
+  "wrong_head_choice_counterexample": {
+    "original_total_error": "1/1024",
+    "wrong_comparison_error": 1
+  },
+  "overlapping_parity_heads_exact_PRODUCT_count": 3,
+  "overlapping_target_premise_rejected": true,
+  "zero_PRODUCT_disjoint_unary_witness_checked": true,
+  "exact_four_PRODUCT_parity_witnesses": 6,
+  "arbitrary_normalizer_and_shared_contribution_comparisons": 13608,
+  "parity_noise_one_quarter_cap_four": {
+    "exact_and_approximation_PRODUCT_minimum": 4,
+    "at_most_three_PRODUCT_probability_margin": "1/184320",
+    "at_most_three_PRODUCT_CE_gap_nats": "1/135895449600"
+  },
+  "not_claimed": [
+    "sharp loss constants",
+    "same lower bound at larger caps",
+    "recurrent physical PRODUCT counts",
+    "registered value/install/persistence or reference-AMP evidence"
+  ]
+}

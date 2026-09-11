@@ -681,8 +681,8 @@ coefficient values, yielding an explicit mass distance 1/18432. Three
 PRODUCTs attain the exact scalar parity mass, so both exact and approximation
 minima are three. At conditional noise 1/4 and cap four, a separate base/cap
 argument transfers the bound to probability distance 1/147456 and CE gap
-1/86973087744. The four-PRODUCT Bayes witness remains sufficient; the
-three-PRODUCT conditional boundary is not yet settled.
+1/86973087744. This stage left the three-PRODUCT conditional boundary open;
+section 37 below closes it using the scalar result.
 
 Audits cover 544 small support classes, 32 independent symbolic expansions,
 60 rational evaluations, 312 conditional-scale comparisons, seven forged
@@ -690,3 +690,36 @@ certificates, fake NaN/Inf success flags and honest budget exhaustion. The 117 K
 auditable evidence, not an optimizer trace. Neither arbitrary numerical mass
 fitting nor complete physical/value/AMP authority is claimed. See
 `PRODUCT_SUPPORT_CLOSURE.md`.
+
+## 37. Disjoint heads close the shared parity boundary (2026-09-11)
+
+The two-PRODUCT scalar rejection did not by itself exclude three PRODUCTs
+shared between opposite parity heads. A last-PRODUCT comparison resolves this
+without expanding the full multihead polynomial. Flatten only final SUM
+paths and discard the head with the largest coefficient on the last PRODUCT.
+At a remaining target's positive contexts, disjointness bounds that shared
+contribution by the discarded head's error. Repeating on the prefix removes
+k-1 PRODUCTs at error at most the sum of original head errors. A current
+readout only decreases, so the errors do not need recursive doubling.
+
+This gives a general approximation lower bound r+k-1 for k disjoint targets
+each separated from the at-most-(r-1) scalar class, r>=1. Overlapping copied
+heads and zero-PRODUCT unary targets demonstrate why those premises matter.
+Discarding the smaller-coefficient head is also explicitly falsified.
+
+Applied to the stored parity proof, both complementary masses need four
+PRODUCTs even in closure. Base one and the minimum normalizer cap 1/eta
+pin the exact Bayes excess supports; a quantitative argument keeps every
+approximate normalizer instead of assuming the pinned scale. At noise 1/4
+and cap four every at-most-three graph has probability error >=1/184320 and
+CE gap >=1/135895449600. Four PRODUCTs attain Bayes, closing the exact and
+approximation conditional count. The transfer holds for every fixed noise
+eta in (0,1/2) at its minimum cap, with explicit conservative constants.
+
+The exact audit re-verifies the stored scalar certificate without LP, checks
+360 actual shared/nested graphs, repeated-square features up to 2^8192 with
+compensating readouts, six exact parity constructions and 13,608 arbitrary
+normalizer/contribution cases. The theorem does not need bounded hidden
+features. It is a static function-class comparison, not a learner equivalence
+or Runtime erasure. Larger caps, higher-bit counts and sharp loss constants
+remain open. See `SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`.

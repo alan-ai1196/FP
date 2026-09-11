@@ -334,8 +334,22 @@ A general positive-polynomial lifting proof also shows that every finite
 mass limit has a path a*epsilon^w. Searching the positive leading constants
 for prescribed mass values is unimplemented; generic executable status is
 only about support. Search budgets or failed exact reconstruction return
-UNRESOLVED. Three versus four PRODUCTs for conditional parity closure at cap
-four remains a useful next boundary; full Runtime/AMP authority is separate.
+UNRESOLVED; full Runtime/AMP authority is separate.
+
+XVII.20 closes the three-versus-four conditional parity boundary through a
+general last-PRODUCT comparison. For k disjoint excess targets, discard the
+head with maximal coefficient of the last PRODUCT and compare the remaining
+prefix to the other targets. Repeating removes k-1 PRODUCTs at error at most
+the sum of the original head errors. Thus scalar approximation minimum r>=1
+forces joint minimum at least r+k-1. Three-bit complementary parity needs
+four PRODUCTs exactly and in closure. With noise eta in (0,1/2) and minimum
+cap 1/eta the same conditional minimum is four; at noise 1/4 and cap four,
+all at-most-three graphs have CE gap >=1/135895449600. Read
+`SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`. The proof retains arbitrary
+normalizers, and the exact audit includes shared/nested/squared graphs,
+unbounded features, invalid premise counterexamples and the four-PRODUCT
+witness. General higher-bit counts, larger-cap phases and sharp loss gaps
+remain open. This comparison supplies no state-erasure or install permission.
 
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:

@@ -65,10 +65,15 @@ Boolean supports remains falsified as a complete limit-support oracle.
 For three-bit odd parity, a stored independently checked rejection tree now
 proves mass distance >=1/18432 for every at-most-two-PRODUCT graph, and three
 PRODUCTs attain the exact scalar mass. At noise 1/4 and final cap four, the
-full at-most-two conditional class has CE gap >=1/86973087744. The existing
-four-PRODUCT Bayes witness remains sufficient. Whether three PRODUCTs reach
-conditional Bayes closure at that cap, and the sharp intervening loss/range
-phases, remain open; scalar output exactness does not settle shared heads.
+full at-most-two conditional class has CE gap >=1/86973087744. XVII.20 now
+closes the shared three-versus-four boundary: disjoint excess targets permit
+a last-PRODUCT comparison, transferring scalar approximation exclusions to
+joint graphs. Four are necessary even for conditional closure at minimum
+cap 1/eta for every noise eta in (0,1/2); at eta=1/4 all at-most-three graphs
+have CE gap >=1/135895449600. Sharp loss constants, higher-bit scalar/joint
+counts and larger-cap phases remain open. At larger caps the conditional
+excess supports need not be disjoint, so this argument cannot be reused
+without retaining the alternative normalizers.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

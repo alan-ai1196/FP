@@ -1547,14 +1547,59 @@ Three PRODUCTs attain the exact indicator, so its exact and approximation
 scalar minima are both three. At uniform noise 1/4, base (1,1), cap four,
 and arbitrary conditional scales, every at-most-two-PRODUCT predictor has
 probability error >=1/147456 and CE gap >=1/86973087744 nats. Four PRODUCTs
-attain conditional Bayes risk; whether three suffice in conditional closure
-is not proved here. These conservative constants are not claimed sharp.
+attain conditional Bayes risk; XVII.20 below closes the remaining
+three-PRODUCT conditional boundary. These constants are not claimed sharp.
 
 The generic solver decides only the declared unary scalar **support** class;
 unknown information, full resources, numerical mass fitting, registered
 value/install/persistence and AMP do not inherit its status. Proof and
 independently checkable evidence:
 [`PRODUCT_SUPPORT_CLOSURE.md`](theory/proofs/PRODUCT_SUPPORT_CLOSURE.md).
+
+## XVII.20. Disjoint shared outputs force additional PRODUCTs in closure
+
+For any finite positive scalar SUM/binary PRODUCT DAG on fixed nonnegative
+sources, let k excess targets f_i have pairwise disjoint positive supports,
+and let delta_i=||E_i-f_i||_infinity. If the graph has P>=k-1 PRODUCTs,
+a scalar graph with at most P-k+1 PRODUCTs approximates one of the targets
+with error at most sum_i delta_i.
+
+To prove this, write each output at the last PRODUCT H as `B_i+c_i H`.
+Discard a head j of maximal c_j and remove H from the remaining readouts.
+At a surviving head's positive target contexts, the removed contribution is
+at most E_j<=delta_j. Iterate on the PRODUCT prefix. Current readouts remain
+pointwise below their original values, so the errors add using the original
+delta_j, without recursive doubling. This static comparison allows arbitrary
+sharing, repeated squaring and unbounded hidden features. It is not a
+Runtime erasure, learner transport or resource equivalence.
+
+If every scalar target is separated by Delta_i>0 from all at-most-(r-1)
+PRODUCT graphs, r>=1, every joint graph with at most r+k-2 PRODUCTs has
+`max_i delta_i >= (min_i Delta_i)/k`. Thus the joint approximation minimum
+is at least r+k-1. Disjointness and r>=1 are essential; overlapping identical
+heads can share the entire scalar graph, and disjoint sources cost no PRODUCT.
+
+For three-bit parity, XVII.19 supplies the scalar two-PRODUCT distance
+Delta=1/18432 for either parity indicator. The disjoint pair therefore needs
+**four PRODUCTs even for arbitrary approximation**; four realize it exactly.
+For binary noise eta in (0,1/2), base (1,1), one final normalization and its
+minimum cap R=1/eta, every at-most-three conditional model has
+
+`probability sup error >= (R-2)*Delta/[R(R+1)]`.
+
+All normalizers T<=R are retained: wrong-head excess is <=R delta,
+correct-head excess lies in `[R-2-R^2 delta,R-2]`, and the last-PRODUCT
+comparison loses at most R delta more. At uniform three-bit noise 1/4 and
+cap four this proves probability error >=1/184320 and CE gap
+>=1/135895449600 nats. Four PRODUCTs attain Bayes risk, closing both exact
+and approximation conditional minima. The constants are conservative.
+
+The exact audit rechecks the stored scalar proof without LP, 360 actual
+shared/nested graphs, hidden features up to 2^8192, six exact four-PRODUCT
+witnesses and 13,608 conditional-scale/contribution comparisons. Larger caps,
+higher-bit PRODUCT counts, sharp loss optima and complete physical/value/AMP
+integration remain open. Proof:
+[`SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`](theory/proofs/SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md).
 
 ---
 

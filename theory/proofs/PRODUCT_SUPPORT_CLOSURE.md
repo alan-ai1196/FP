@@ -258,9 +258,11 @@ Scalar output scaling preserves PRODUCT count. The mass bound hence gives
 `L(q)-L_Bayes >= 1/86973087744` nats for every P<=2 model.
 
 The latter follows from uniform-context Bernoulli Pinsker. Four PRODUCTs
-give the established Bayes witness for both parity heads. Whether three
-PRODUCTs suffice for conditional Bayes closure at this cap is not settled
-here. The constants above are not claimed sharp.
+give the established Bayes witness for both parity heads. The later
+[`SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md`](SHARED_DISJOINT_PRODUCT_LOWER_BOUND.md)
+transfers this scalar result to shared heads and excludes three PRODUCTs
+even in conditional closure at this cap. The constants above concern P<=2
+and are not claimed sharp.
 
 ## 7. Executable scope and remaining work
 
