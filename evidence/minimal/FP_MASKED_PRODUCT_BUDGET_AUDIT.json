@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "scope": "fixed visible coefficient budget; guarded triangular parallel PRODUCT family",
+  "base_commit": "992d7a2328908879d2ed387940b90fee7b487e0a",
+  "source_sha256": "3def24257944149998ddec53fb8ff879a774f47855c1caad48098878d7dc6c6a",
+  "arithmetic": "Fraction; exact rational log enclosures; floats only for display",
+  "grid_inputs_including_tolerance_choices": 71337,
+  "grid_classifications": {
+    "optimal": 60201,
+    "infeasible": 9894,
+    "inconsistent_positive_inputs": 1242
+  },
+  "independent_simple_path_cycle_oracle": true,
+  "weighted_heterogeneous_tolerance_optimum": "1470",
+  "inactive_vertex_counterexample_optimum": "8",
+  "forged_certificates_rejected": 7,
+  "guarded_task_constructions": 176,
+  "inexact_positive_with_nonzero_sum_background_audits": 96,
+  "examples": [
+    {
+      "n": 8,
+      "products": 1,
+      "longest_group_path": 7,
+      "final_normalizer_cap": 3,
+      "amplification_budget": "268435456",
+      "mass_sup_error": "1/16",
+      "excess_ce_lower_float64_display": 6.205521559457448e-05,
+      "excess_ce_upper_float64_display": 6.205521559457448e-05,
+      "log_interval_width_less_than": "1e-40"
+    },
+    {
+      "n": 8,
+      "products": 2,
+      "longest_group_path": 3,
+      "final_normalizer_cap": 3,
+      "amplification_budget": "4096",
+      "mass_sup_error": "1/16",
+      "excess_ce_lower_float64_display": 5.314809889372973e-05,
+      "excess_ce_upper_float64_display": 5.314809889372973e-05,
+      "log_interval_width_less_than": "1e-40"
+    },
+    {
+      "n": 8,
+      "products": 4,
+      "longest_group_path": 1,
+      "final_normalizer_cap": 3,
+      "amplification_budget": "16",
+      "mass_sup_error": "1/16",
+      "excess_ce_lower_float64_display": 3.533444296432824e-05,
+      "excess_ce_upper_float64_display": 3.533444296432824e-05,
+      "log_interval_width_less_than": "1e-40"
+    },
+    {
+      "n": 8,
+      "products": 8,
+      "longest_group_path": 0,
+      "final_normalizer_cap": 3,
+      "amplification_budget": "1",
+      "mass_sup_error": "0",
+      "excess_ce_lower_float64_display": 0.0,
+      "excess_ce_upper_float64_display": 0.0,
+      "log_interval_width_less_than": "1e-40"
+    }
+  ],
+  "not_claimed": [
+    "general variable-parent nested PRODUCT grammar completeness",
+    "coefficient rejection excludes alternative observable lifts",
+    "AMP bridge, registered value/build/install, or GPU execution",
+    "amplification is an unspecified hardware resource"
+  ]
+}
