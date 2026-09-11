@@ -1496,6 +1496,68 @@ is inferred from this static result.
 
 ---
 
+## XVII.19. Complete support-limit certificates for a fixed PRODUCT grammar
+
+For the full static scalar unary-source class on the d-bit cube with at most
+P binary PRODUCTs, collapse SUM paths into two affine parents per PRODUCT
+and one affine readout. This finite normal form has `2d(2P+1)+P^2` nonnegative
+coefficient slots and covers arbitrary sharing, nesting and finite SUM depth.
+It is an extensional decision class, not a learner or physical quotient.
+
+At each context its output is a finite nonnegative polynomial in those
+coefficients. Let Gamma contain all coefficient monomials visible anywhere
+on the declared cube. A prescribed set S is the support of **some finite
+mass limit** iff rational, equivalently rescaled integer, exponents w satisfy
+
+`alpha.w>=0` for every visible monomial,
+`alpha.w>=1` for any monomial visible outside S,
+and at every context in S at least one visible monomial has `alpha.w=0`.
+
+Positivity bounds every visible monomial along a convergent output sequence.
+The logarithms of the nonvanishing monomials remain bounded; those of vanishing
+monomials diverge. Farkas' alternative then supplies the claimed exponent
+direction. Conversely the native coefficients epsilon^w give an explicit
+finite limit. Negative exponents retain the diverging scales needed by the
+border examples. Support acceptance does not match prescribed positive values.
+
+More strongly, every finite limit of a fixed finite nonnegative polynomial
+map on the full nonnegative parameter orthant has a coefficient path
+`a_i epsilon^w_i`, with a_i>0 and integer w,
+converging to the **same mass**. The positive limiting monomials' logarithms
+lie in the closed image of their exponent matrix, which supplies a. This
+characterizes full finite-P static mass closure; solving the positive leading
+constants for prescribed values remains a separate algebraic task.
+
+Support existence reduces to finitely many rational LPs selecting leading
+monomials. The executable search returns checked integer witnesses, complete
+Farkas rejection trees, or UNRESOLVED on work/reconstruction failure. Rejection
+verification regenerates the external grammar and checks every branch and
+sparse exponent identity. The stored three-input parity proof needs no LP or
+SMT solver to verify. Exhaustive small support and independent symbolic
+expansion audits cover both accepting and rejecting paths.
+
+The same Farkas identities give quantitative mass gaps. For three-bit odd
+parity, they prove
+
+\[
+\inf_{g:\,P\le2}\|g-1_{odd}\|_\infty\ge1/18432.
+\]
+
+Three PRODUCTs attain the exact indicator, so its exact and approximation
+scalar minima are both three. At uniform noise 1/4, base (1,1), cap four,
+and arbitrary conditional scales, every at-most-two-PRODUCT predictor has
+probability error >=1/147456 and CE gap >=1/86973087744 nats. Four PRODUCTs
+attain conditional Bayes risk; whether three suffice in conditional closure
+is not proved here. These conservative constants are not claimed sharp.
+
+The generic solver decides only the declared unary scalar **support** class;
+unknown information, full resources, numerical mass fitting, registered
+value/install/persistence and AMP do not inherit its status. Proof and
+independently checkable evidence:
+[`PRODUCT_SUPPORT_CLOSURE.md`](theory/proofs/PRODUCT_SUPPORT_CLOSURE.md).
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

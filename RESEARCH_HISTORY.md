@@ -652,3 +652,41 @@ float64 normalizes away positive leakage, while exact arithmetic retains it.
 Search traces are not retained as proof authority. General support closure
 and full physical/value reachability remain open. See
 `TWO_PRODUCT_SUPPORT_BORDER.md`.
+
+## 36. Complete exponent certificates replace finite-support enumeration (2026-09-11)
+
+The support-border counterexample made a limit-aware search necessary.
+Flattening only SUM paths gives a finite positive polynomial in the slots of
+the complete fixed-PRODUCT scalar grammar. Along any finite output limit,
+positivity bounds every visible monomial. The logarithms of positive limiting
+monomials stay bounded while those of the others diverge. Farkas' alternative
+then gives rational scaling exponents that preserve exactly the desired
+support. Integer powers of epsilon construct the converse. A second linear-
+image argument preserves the positive leading constants as well, proving
+that every full mass limit has an a*epsilon^w path; prescribed values still
+require solving for a.
+
+The executable search enumerates leading monomial choices and requests LP
+proposals. Acceptance is a separately checked integer exponent vector.
+Rejection is a complete branching tree whose leaves are sparse rational
+exponent identities with positive weight on monomials that must vanish.
+No floating optimizer or SMT rejection is trusted. Work and reconstruction
+failures return UNRESOLVED. The known two-PRODUCT border support is accepted
+in five search nodes, while the one-PRODUCT two-XOR support is rejected.
+
+For three-bit odd parity the search closes a full two-PRODUCT rejection in
+2,041 nodes. Its compact stored proof can be verified without LP or SMT.
+The same exponent identities are multiplicative identities in finite
+coefficient values, yielding an explicit mass distance 1/18432. Three
+PRODUCTs attain the exact scalar parity mass, so both exact and approximation
+minima are three. At conditional noise 1/4 and cap four, a separate base/cap
+argument transfers the bound to probability distance 1/147456 and CE gap
+1/86973087744. The four-PRODUCT Bayes witness remains sufficient; the
+three-PRODUCT conditional boundary is not yet settled.
+
+Audits cover 544 small support classes, 32 independent symbolic expansions,
+60 rational evaluations, 312 conditional-scale comparisons, seven forged
+certificates, fake NaN/Inf success flags and honest budget exhaustion. The 117 KB proof is substantive
+auditable evidence, not an optimizer trace. Neither arbitrary numerical mass
+fitting nor complete physical/value/AMP authority is claimed. See
+`PRODUCT_SUPPORT_CLOSURE.md`.

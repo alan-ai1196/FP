@@ -322,6 +322,21 @@ approximation and conditional normalizers cannot inherit their lower bounds
 without another argument. A conservative explicit margin is available when
 SUM count and a nonzero coefficient floor are additionally bounded.
 
+XVII.19 closes the finite-P static support-limit characterization and provides
+an exact certificate search. Visible monomial exponents obey a finite set of
+linear inequalities, with disjunctions selecting a leading monomial at each
+positive context. Accepted integer powers construct limits; fully covered
+Farkas trees reject every alternative. Three-bit odd-parity mass has a checked
+all-at-most-two-PRODUCT distance >=1/18432, while three PRODUCTs attain it.
+Read `PRODUCT_SUPPORT_CLOSURE.md`. The saved rejection can be verified without
+an LP/SMT solver via `product_support_closure_audit.py --verify-parity-proof`.
+A general positive-polynomial lifting proof also shows that every finite
+mass limit has a path a*epsilon^w. Searching the positive leading constants
+for prescribed mass values is unimplemented; generic executable status is
+only about support. Search budgets or failed exact reconstruction return
+UNRESOLVED. Three versus four PRODUCTs for conditional parity closure at cap
+four remains a useful next boundary; full Runtime/AMP authority is separate.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

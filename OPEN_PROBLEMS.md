@@ -53,10 +53,22 @@ but their general approximation minimum and the new counterexample's full
 conditional exact minimum remain open. With SUM count S and positive local
 coefficient floor mu, an explicit mass margin min(gamma,mu^(S 2^P)) is proved;
 removing those resource assumptions requires a separate closure argument.
-An exact exponent/linear-certificate solver for fixed-PRODUCT support limits
-is a concrete next attack: it must retain diverging coefficients and source
-annihilators. Enumeration of attainable finite Boolean supports is now
-falsified as a complete limit-support oracle.
+XVII.19 now supplies that exact exponent/linear characterization and a sound
+certificate search for fixed-PRODUCT support limits. Integer exponent vectors
+accept; complete Farkas trees reject; work or exact-reconstruction failures
+remain UNRESOLVED. It also characterizes full fixed-PRODUCT static mass limits
+by coefficient paths a*epsilon^w. Efficient exponent search, prescribed-value
+leading-coefficient solving, general typed/multiple-head implementations and
+complete-resource integration remain open. Enumeration of attainable finite
+Boolean supports remains falsified as a complete limit-support oracle.
+
+For three-bit odd parity, a stored independently checked rejection tree now
+proves mass distance >=1/18432 for every at-most-two-PRODUCT graph, and three
+PRODUCTs attain the exact scalar mass. At noise 1/4 and final cap four, the
+full at-most-two conditional class has CE gap >=1/86973087744. The existing
+four-PRODUCT Bayes witness remains sufficient. Whether three PRODUCTs reach
+conditional Bayes closure at that cap, and the sharp intervening loss/range
+phases, remain open; scalar output exactness does not settle shared heads.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
