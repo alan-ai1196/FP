@@ -20,6 +20,15 @@ FP studies whether a **typed causal positive program** built from a small native
 - **GPU/model science:** **HOLD**. No new RTX3090 science is authorized until the complete Reference Compiler runtime passes the required reference gates and the actual AMP path passes its bridge gates.
 - **Historical R4.2 implementation:** preserved under `experiments/legacy_r4_2_v23/` because its failure produced the v24 theoretical counterexample. It is not a current implementation.
 
+## Branch research supplement — 2026-09-12
+
+[`BRANCH_PROGRESS.md`](BRANCH_PROGRESS.md) records the continuation from main
+`388251d`: complete three-bit deterministic closure, finite-alphabet resource
+witnesses, and PRODUCT lower bounds for mixtures of finite SUM predictions.
+It includes the exact proof/audit/evidence entrypoints and the unresolved
+mixed-support and probability-amplitude boundary. These are reviewable branch
+results, not a replacement for the normative `FP_THEORY.md` or a Runtime freeze.
+
 ## Repository discipline
 
 GitHub is the source of truth. Chat memory and local workspaces are scratch context only. Any result with long-term research value must end in a coherent repository commit.

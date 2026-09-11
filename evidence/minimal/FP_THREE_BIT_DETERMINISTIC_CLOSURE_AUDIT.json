@@ -1,0 +1,233 @@
+{
+  "SUM_sup_error_lower_outside_lists": "1/5",
+  "arithmetic": "exact integer Laurent coefficients and fractions.Fraction; no solver in verifier",
+  "base_commit": "388251d8b05de10536bdf650e4c1a56a2bd46a4b",
+  "convex_mixture_counterexample": {
+    "SUM_closure_components": 5,
+    "exact_two_PRODUCT_witness_cap": "133/27",
+    "minimum_PRODUCTs": 2,
+    "one_PRODUCT_sup_error_lower": "1/14",
+    "target_even": "3/7",
+    "target_odd": "4/7"
+  },
+  "exact_one_PRODUCT_moment_cases": 240,
+  "expanded_finite_alphabet_graphs": 768,
+  "finite_SUM_mixture_theorem": {
+    "alternating_identity_dimensions": 12,
+    "complete_target_rows": 510,
+    "dimensions_checked": [
+      {
+        "component_normalizer_cap": 6,
+        "d": 1,
+        "finite_SUM_components": 2,
+        "necessary_PRODUCT_count": 0,
+        "parity_amplitude": "1/12"
+      },
+      {
+        "component_normalizer_cap": 9,
+        "d": 2,
+        "finite_SUM_components": 3,
+        "necessary_PRODUCT_count": 1,
+        "parity_amplitude": "1/36"
+      },
+      {
+        "component_normalizer_cap": 12,
+        "d": 3,
+        "finite_SUM_components": 5,
+        "necessary_PRODUCT_count": 2,
+        "parity_amplitude": "1/96"
+      },
+      {
+        "component_normalizer_cap": 15,
+        "d": 4,
+        "finite_SUM_components": 9,
+        "necessary_PRODUCT_count": 2,
+        "parity_amplitude": "1/240"
+      },
+      {
+        "component_normalizer_cap": 18,
+        "d": 5,
+        "finite_SUM_components": 17,
+        "necessary_PRODUCT_count": 3,
+        "parity_amplitude": "1/576"
+      },
+      {
+        "component_normalizer_cap": 21,
+        "d": 6,
+        "finite_SUM_components": 33,
+        "necessary_PRODUCT_count": 3,
+        "parity_amplitude": "1/1344"
+      },
+      {
+        "component_normalizer_cap": 24,
+        "d": 7,
+        "finite_SUM_components": 65,
+        "necessary_PRODUCT_count": 3,
+        "parity_amplitude": "1/3072"
+      },
+      {
+        "component_normalizer_cap": 27,
+        "d": 8,
+        "finite_SUM_components": 129,
+        "necessary_PRODUCT_count": 3,
+        "parity_amplitude": "1/6912"
+      }
+    ],
+    "native_component_context_checks": 43690,
+    "three_bit_exact_minimum_PRODUCTs": 2,
+    "three_bit_exact_two_PRODUCT_witness_cap": "239520/103823",
+    "three_bit_one_PRODUCT_sup_gap": "1/96",
+    "three_bit_target_even": "47/96",
+    "three_bit_target_odd": "49/96",
+    "uniform_in_dimension_margin_claimed": false
+  },
+  "finite_epsilon_values": [
+    "1/2",
+    "1/16",
+    "1/256"
+  ],
+  "forged_certificates_rejected": 31,
+  "independent_SUM_obstruction_cores": 160,
+  "independent_literal_list_functions": 96,
+  "minimum_PRODUCT_counts": {
+    "0": 96,
+    "1": 158,
+    "2": 2
+  },
+  "not_claimed": [
+    "two-PRODUCT universality for arbitrary strictly positive binary three-bit tables",
+    "fixed normalizer cap closure or exact deterministic probabilities with base one",
+    "unknown-target acquisition, optimizer reachability, Runtime freeze, persistence or AMP bridge"
+  ],
+  "one_PRODUCT_parity_sup_error_lower": "1/2",
+  "prototype_resource_bounds": {
+    "0": {
+      "PRODUCTs": 0,
+      "SUM_count_at_epsilon_2_to_minus_k": "2*k+3",
+      "maximum_mass_pole_order": 1,
+      "maximum_row_total_coefficient_sum": 3,
+      "orbit": 2,
+      "sup_error_over_epsilon_upper": "1"
+    },
+    "1": {
+      "PRODUCTs": 0,
+      "SUM_count_at_epsilon_2_to_minus_k": "7*k+5",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 16,
+      "sup_error_over_epsilon_upper": "2"
+    },
+    "105": {
+      "PRODUCTs": 2,
+      "SUM_count_at_epsilon_2_to_minus_k": "7*k+7",
+      "maximum_mass_pole_order": 3,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 2,
+      "sup_error_over_epsilon_upper": "3"
+    },
+    "15": {
+      "PRODUCTs": 0,
+      "SUM_count_at_epsilon_2_to_minus_k": "2*k+3",
+      "maximum_mass_pole_order": 1,
+      "maximum_row_total_coefficient_sum": 3,
+      "orbit": 6,
+      "sup_error_over_epsilon_upper": "1"
+    },
+    "22": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "12*k+8",
+      "maximum_mass_pole_order": 5,
+      "maximum_row_total_coefficient_sum": 9,
+      "orbit": 16,
+      "sup_error_over_epsilon_upper": "4"
+    },
+    "23": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "6*k+6",
+      "maximum_mass_pole_order": 3,
+      "maximum_row_total_coefficient_sum": 6,
+      "orbit": 8,
+      "sup_error_over_epsilon_upper": "2"
+    },
+    "24": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "6*k+8",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 6,
+      "orbit": 8,
+      "sup_error_over_epsilon_upper": "2"
+    },
+    "25": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "6*k+7",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 48,
+      "sup_error_over_epsilon_upper": "3"
+    },
+    "27": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "6*k+6",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 24,
+      "sup_error_over_epsilon_upper": "3"
+    },
+    "3": {
+      "PRODUCTs": 0,
+      "SUM_count_at_epsilon_2_to_minus_k": "5*k+4",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 4,
+      "orbit": 24,
+      "sup_error_over_epsilon_upper": "2"
+    },
+    "30": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "10*k+7",
+      "maximum_mass_pole_order": 3,
+      "maximum_row_total_coefficient_sum": 7,
+      "orbit": 24,
+      "sup_error_over_epsilon_upper": "3"
+    },
+    "6": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "6*k+6",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 4,
+      "orbit": 24,
+      "sup_error_over_epsilon_upper": "2"
+    },
+    "60": {
+      "PRODUCTs": 1,
+      "SUM_count_at_epsilon_2_to_minus_k": "5*k+6",
+      "maximum_mass_pole_order": 2,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 6,
+      "sup_error_over_epsilon_upper": "3"
+    },
+    "7": {
+      "PRODUCTs": 0,
+      "SUM_count_at_epsilon_2_to_minus_k": "8*k+5",
+      "maximum_mass_pole_order": 3,
+      "maximum_row_total_coefficient_sum": 5,
+      "orbit": 48,
+      "sup_error_over_epsilon_upper": "3"
+    }
+  },
+  "rational_native_context_checks": 6144,
+  "scope": "static three-bit deterministic prediction closure; unrestricted normalizers and finite SUM work",
+  "source_sha256": "a5362f33fe0531a70542cb3722fda60bab70f85fb18b2e08c8ba6df76c51719f",
+  "status": "PASS",
+  "symmetry_orbits": 14,
+  "truth_tables": 256,
+  "uniform_constructive_bounds": {
+    "SUM_nodes": "12*k+8",
+    "local_coefficient_alphabet": [
+      "1/2",
+      "1",
+      "2"
+    ],
+    "normalizer": "9*2^(5*k)",
+    "sup_error": "4*2^(-k)"
+  }
+}
