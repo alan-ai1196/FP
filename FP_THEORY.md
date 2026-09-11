@@ -1450,6 +1450,52 @@ separate. Proof and exact audit:
 
 ---
 
+## XVII.18. Exact support complexity can also increase in a PRODUCT limit
+
+For a scalar excess built from binary unary indicators by positive SUM and
+P binary PRODUCT nodes, its zero set is covered by at most 2^P coordinate
+faces. Choose one zero parent per PRODUCT globally; each choice leaves an
+intersection of source zero faces. Shared occurrences use the same choice.
+This gives the sharp exact minimum m for the sum of m independent pairwise
+XOR indicators, including arbitrary shared/nested DAGs.
+
+It does not make exact support exclusion a robust approximation certificate.
+On four inputs let `f=(1-x)yz+x(1-z)w`. Its positive support is two disjoint
+edges. Any two-PRODUCT graph with exactly that support would reduce to a
+product of three nonnegative unary sums: no unary or pairwise term fits inside
+the support, including the squared first-product term. Its zeros could then
+be covered by three coordinate faces, but four explicit zero witnesses need
+four different faces. Three PRODUCTs attain f via
+`a=(1-x)y`, `b=xw`, `f=(a+1-z)(b+z)`.
+
+Nevertheless two nested PRODUCTs give
+
+\[
+\frac{(x+\epsilon^3y)((1-x)+\epsilon^2(1-z))(z+\epsilon w)}{\epsilon^3}
+=f+\epsilon(1-x)yw+\epsilon^3y(1-z)w.
+\]
+
+Multiplying by 1-epsilon keeps the excess in [0,1] and gives exact sup error
+epsilon for 0<epsilon<=1/2. The limiting mass's **support itself** needs three
+PRODUCTs; the earlier selector's support did not. For epsilon=2^-k the actual
+graph uses two PRODUCTs, 10k+4 SUMs, local alphabet {1/2,1,2} and feature cap
+two. At base (1,1), the conditional target `(1+f)/(2+f)` has a two-PRODUCT
+Bayes infimum at cap three, with CE excess <=25 epsilon^2/512. Its unrestricted
+conditional *exact* minimum is not inferred from the scalar support proof.
+
+With at most S weighted SUM nodes and every nonzero local coefficient >=mu,
+0<mu<=1, every positive scalar evaluation is >=mu^(S 2^P). A support-excluded
+target with smallest positive mass gamma therefore has mass error at least
+min(gamma,mu^(S 2^P)). Repeated squaring explains the exponential sharing
+factor. Unlike a PRODUCT-only count, this bound prices SUM construction.
+
+Exact face/identity/DAG audits and a float64 readout-erasure example:
+[`TWO_PRODUCT_SUPPORT_BORDER.md`](theory/proofs/TWO_PRODUCT_SUPPORT_BORDER.md).
+No state quotient, finite-machine completeness or value/install/AMP permission
+is inferred from this static result.
+
+---
+
 # XVIII. Reference Compiler contract
 
 A complete Reference Compiler implementation must obey all of the following.

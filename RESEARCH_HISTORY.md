@@ -618,3 +618,37 @@ a separately exact-checked one-PRODUCT upper witness with CE excess about
 Sharp constants and general algebraic search remain open; no
 Runtime freeze, new semantic action or GPU-science permission follows.
 See `ANTIPODAL_PRODUCT_MASS.md`.
+
+## 35. Even exact support complexity fails to transfer through a limit (2026-09-11)
+
+The next attack asked whether sharing could compress m independent XOR
+interactions. A global zero-parent choice at each PRODUCT shows that P gates
+give at most 2^P zero faces, regardless of sharing or nesting. The 2^m
+isolated zeros of the m-XOR sum establish its exact minimum m. Attempting
+to transfer such exact support arguments to approximation exposed a more
+important failure.
+
+An exponent search found a two-PRODUCT limit with a support unavailable to
+every exact two-PRODUCT DAG. After deleting terms absent from all leading
+contributions, it became the short identity
+`(x+epsilon^3 y)((1-x)+epsilon^2(1-z))(z+epsilon w)/epsilon^3`
+`=(1-x)yz+x(1-z)w+epsilon(1-x)yw+epsilon^3 y(1-z)w`.
+The limit consists of two positive edges. A pure-support normal-form proof
+forces any supposed two-PRODUCT realization to a product of three unary
+sums; four checked zero witnesses rule that out. A three-PRODUCT graph
+attains the exact mass. This is stronger than the previous selector, whose
+support already had an exact one-PRODUCT representation.
+
+The scaled family has excess cap one, feature cap two and local coefficients
+only {1/2,1,2}; its SUM count grows as 10k+4. Its binary conditional Bayes
+infimum is attained in the limit at cap three with explicit O(epsilon^2) CE
+error, but the unrestricted conditional exact minimum is not inferred from
+the scalar proof. A separate parse argument gives an explicit conservative
+margin when SUM count and a positive local coefficient floor are bounded.
+Repeated squaring verifies why shared gates require the exponential parse
+factor. The audit retains face/identity checks, twelve actual finite-alphabet
+graphs, 300 shared graphs and four rejected certificate forgeries. At k=54
+float64 normalizes away positive leakage, while exact arithmetic retains it.
+Search traces are not retained as proof authority. General support closure
+and full physical/value reachability remain open. See
+`TWO_PRODUCT_SUPPORT_BORDER.md`.

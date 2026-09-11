@@ -46,6 +46,17 @@ unsolved: the proved CE lower bound is 1/2000000 while a checked one-PRODUCT
 upper witness has excess about 0.00889241. Rational target data can require
 irrational exact factors, so real
 expressivity and finite-encoding candidate completeness must stay distinct.
+XVII.18 further falsifies transfer of exact **support** complexity to mass
+limits: two nested PRODUCTs approach a pattern that needs three exactly.
+The zero-face argument gives exact minimum m for m independent XOR masses,
+but their general approximation minimum and the new counterexample's full
+conditional exact minimum remain open. With SUM count S and positive local
+coefficient floor mu, an explicit mass margin min(gamma,mu^(S 2^P)) is proved;
+removing those resource assumptions requires a separate closure argument.
+An exact exponent/linear-certificate solver for fixed-PRODUCT support limits
+is a concrete next attack: it must retain diverging coefficients and source
+annihilators. Enumeration of attainable finite Boolean supports is now
+falsified as a complete limit-support oracle.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

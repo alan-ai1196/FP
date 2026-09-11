@@ -310,6 +310,18 @@ characterization is a proof of the unique margin lift, not a new training
 objective. General mass solvers, sharp constants and finite-encoding/value
 reachability remain open.
 
+XVII.18 exposes a stronger border obstruction: a two-PRODUCT chain approaches
+`f=(1-x)yz+x(1-z)w`, whose positive/zero pattern itself requires three
+PRODUCTs. The proof covers all shared/nested two-PRODUCT DAGs and uses four
+zero-face witnesses; it no longer relies on a mass mismatch inside an already
+available support. The explicit family has local alphabet {1/2,1,2}, feature
+cap two and growing SUM length. Read `TWO_PRODUCT_SUPPORT_BORDER.md`.
+Its general zero-face theorem also proves that m independent XOR masses
+need exactly m PRODUCTs. Those are exact-support results; unrestricted
+approximation and conditional normalizers cannot inherit their lower bounds
+without another argument. A conservative explicit margin is available when
+SUM count and a nonzero coefficient floor are additionally bounded.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

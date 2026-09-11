@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "scope": "full scalar unary-source SUM/PRODUCT DAGs on the binary cube; exact real arithmetic",
+  "target_mass": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "exact_support_and_mass_PRODUCT_minimum": 3,
+  "limiting_family_PRODUCT_count": 2,
+  "zero_face_cover_minimum": 4,
+  "coordinate_faces_checked": 81,
+  "packing_witnesses": [
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "packing_pairs_checked": 6,
+  "sharp_disjoint_XOR_cases": 5,
+  "actual_finite_alphabet_graph_cases": 12,
+  "selected_families": [
+    {
+      "k": 1,
+      "SUM_nodes": 14,
+      "PRODUCT_nodes": 2,
+      "mass_sup_error": "2^-1",
+      "float64_normalized_table_equals_target": false,
+      "float64_excess_leakage_is_positive": true
+    },
+    {
+      "k": 3,
+      "SUM_nodes": 34,
+      "PRODUCT_nodes": 2,
+      "mass_sup_error": "2^-3",
+      "float64_normalized_table_equals_target": false,
+      "float64_excess_leakage_is_positive": true
+    },
+    {
+      "k": 8,
+      "SUM_nodes": 84,
+      "PRODUCT_nodes": 2,
+      "mass_sup_error": "2^-8",
+      "float64_normalized_table_equals_target": false,
+      "float64_excess_leakage_is_positive": true
+    },
+    {
+      "k": 54,
+      "SUM_nodes": 544,
+      "PRODUCT_nodes": 2,
+      "mass_sup_error": "2^-54",
+      "float64_normalized_table_equals_target": true,
+      "float64_excess_leakage_is_positive": true
+    },
+    {
+      "k": 100,
+      "SUM_nodes": 1004,
+      "PRODUCT_nodes": 2,
+      "mass_sup_error": "2^-100",
+      "float64_normalized_table_equals_target": true,
+      "float64_excess_leakage_is_positive": true
+    }
+  ],
+  "exact_leakage_at_0101_formula": "(1-2^-k)(2^-k+2^(-3k))",
+  "CE_excess_upper_bound_formula": "25*2^(-2k)/512",
+  "local_coefficient_alphabet": [
+    "1/2",
+    "1",
+    "2"
+  ],
+  "activation_cap": 2,
+  "binary_normalizer_cap": 3,
+  "random_shared_DAG_face_and_positive_value_checks": 300,
+  "repeated_squaring_bound_saturation_cases": 6,
+  "forged_support_certificates_rejected": 4,
+  "not_claimed": [
+    "mass limits preserve the attainable exact support patterns at fixed PRODUCT count",
+    "exact minimum three for the unrestricted conditional target",
+    "general m-XOR approximation lower bound without full resource assumptions",
+    "free erasure of positive leakage",
+    "registered value/install/persistence or AMP evidence"
+  ]
+}
