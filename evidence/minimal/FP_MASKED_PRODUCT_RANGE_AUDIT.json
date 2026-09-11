@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "base_commit": "992d7a2328908879d2ed387940b90fee7b487e0a",
+  "scope": "static known visible coefficients; guarded parallel PRODUCT classes, including arbitrary mixed SUM parents and fixed readout",
+  "arithmetic": "fractions.Fraction; rational outward log series; no floating optimizer",
+  "independent_original_vertex_floyd_cases": 9367,
+  "classifications": {
+    "OPTIMAL": 6894,
+    "INFEASIBLE_POSITIVE": 1005,
+    "INFEASIBLE_CYCLE": 1468
+  },
+  "exhaustive_2_by_2_cases": 768,
+  "exhaustive_2_by_3_cases": 8192,
+  "seeded_rational_3_by_3_cases": 400,
+  "seed": 20260911,
+  "inactive_vertices_do_not_raise_exponent": true,
+  "unit_gain_cycles_and_selfloops_checked": true,
+  "forged_or_replayed_certificates_rejected": 15,
+  "invalid_exact_inputs_rejected": 5,
+  "guarded_triangular_constructions": 216,
+  "rational_log_enclosures_checked": 1332,
+  "positive_edge_perturbation_checks": 14,
+  "mixed_parent_native_constructions": 123,
+  "mixed_parent_expansion_checks": 1792,
+  "mixed_parent_sharp_count_range_exponents": [
+    {
+      "n": 12,
+      "actual_mixed_PRODUCTs": 1,
+      "longest_group_path": 5,
+      "loss_power_of_K": "-2/5"
+    },
+    {
+      "n": 12,
+      "actual_mixed_PRODUCTs": 2,
+      "longest_group_path": 2,
+      "loss_power_of_K": "-1"
+    },
+    {
+      "n": 12,
+      "actual_mixed_PRODUCTs": 3,
+      "longest_group_path": 1,
+      "loss_power_of_K": "-2"
+    },
+    {
+      "n": 12,
+      "actual_mixed_PRODUCTs": 6,
+      "longest_group_path": 0,
+      "loss_power_of_K": "exact at K=1"
+    }
+  ],
+  "sharp_count_range_exponent_examples": [
+    {
+      "n": 8,
+      "products": 1,
+      "longest_group_path": 7,
+      "loss_power_of_K": "-2/7"
+    },
+    {
+      "n": 8,
+      "products": 2,
+      "longest_group_path": 3,
+      "loss_power_of_K": "-2/3"
+    },
+    {
+      "n": 8,
+      "products": 3,
+      "longest_group_path": 2,
+      "loss_power_of_K": "-1"
+    },
+    {
+      "n": 8,
+      "products": 4,
+      "longest_group_path": 1,
+      "loss_power_of_K": "-2"
+    },
+    {
+      "n": 8,
+      "products": 8,
+      "longest_group_path": 0,
+      "loss_power_of_K": "exact at K=1"
+    }
+  ],
+  "scope_counterexamples": [
+    "without guards a two-index target is SUM-only",
+    "the oriented n-PRODUCT bound fails with mixed parents; the proved mixed bound is ceil(n/2)"
+  ],
+  "not_claimed": [
+    "unrestricted or nested FP DAG PRODUCT-count lower bound",
+    "efficient search over all alternative mass or conditional lifts",
+    "complete hardware budget, reachable value, Runtime freeze, fresh persistence or AMP bridge"
+  ],
+  "source_sha256": "a28dc1df0f999ac65f9b46542f1d3df33cc559d5ba7b813d1a296176112cac70"
+}
