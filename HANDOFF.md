@@ -414,6 +414,15 @@ for the complete variable-parent four-PRODUCT class. The intermediate cap
 thresholds, fixed-small-alphabet universality counts and full value/resource
 path remain open. Static table rank must not become a recurrent state bound.
 
+XVII.25 closes the larger-range three-bit parity PRODUCT count: exactly two
+for R>=(r+1)*(r^2+r-1), r=(1-eta)/eta, versus four at minimum range r+1.
+Read `TWO_PRODUCT_CONDITIONAL_PARITY.md`. At noise 1/4, two native nodes
+A=XOR(x,y) and B=A*z_1, with explicit positive readouts, attain cap 44.
+XOR itself is an ordinary PRODUCT of unary SUMs, not an added source.
+The range formula is sharp only for this fixed A,B bank; full variable-parent
+thresholds and intermediate three-PRODUCT phases are unresolved. At most
+one has a cap-independent positive CE gap by the full sub-degree theorem.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

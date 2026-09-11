@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "static full-class at-most-one-PRODUCT lower; exact two-PRODUCT upper; fixed-bank range dual only",
+  "witnesses": [
+    {
+      "odds": "1025/1024",
+      "noise": "1024/2049",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "2154828801/1073741824"
+    },
+    {
+      "odds": "6/5",
+      "noise": "5/11",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "451/125"
+    },
+    {
+      "odds": "3/2",
+      "noise": "2/5",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "55/8"
+    },
+    {
+      "odds": "2",
+      "noise": "1/3",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "15"
+    },
+    {
+      "odds": "3",
+      "noise": "1/4",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "44"
+    },
+    {
+      "odds": "7",
+      "noise": "1/8",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "440"
+    },
+    {
+      "odds": "33",
+      "noise": "1/34",
+      "PRODUCTs": 2,
+      "maximum_normalizer": "38114"
+    }
+  ],
+  "exact_probability_entries": 112,
+  "noise_one_quarter_integer_alphabet": [
+    1,
+    2
+  ],
+  "integer_graph_PRODUCTs": 2,
+  "integer_graph_maximum_normalizer": "44",
+  "arbitrary_one_PRODUCT_order_cases": 160,
+  "one_PRODUCT_probability_gap": "1/2-eta",
+  "one_PRODUCT_CE_gap": "(log(2)-H(eta))/4",
+  "fixed_bank_optimal_cap": "(r+1)*(r^2+r-1)",
+  "exact_dual_scale_cases": 100,
+  "forged_duals_rejected": 21,
+  "invalid_odds_rejected": 3,
+  "not_claimed": [
+    "sharp range for arbitrary two-PRODUCT parents",
+    "three-PRODUCT intermediate phases",
+    "registered acquisition/value/install/persistence or AMP evidence"
+  ]
+}

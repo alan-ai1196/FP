@@ -1817,6 +1817,36 @@ graphs, 60 original-DAG/prediction ranks, 45 exact null witnesses, the cap-108
 and cap-324 constructions, and the scoped fixed-bank certificate. Proof:
 [`CONDITIONAL_PRODUCT_UNIVERSALITY.md`](theory/proofs/CONDITIONAL_PRODUCT_UNIVERSALITY.md).
 
+## XVII.25. Two PRODUCTs suffice for noisy parity at larger range
+
+For three-bit parity with noise eta in (0,1/2), put r=(1-eta)/eta. The two
+native PRODUCTs `A=(x_1+y_1)*(x_0+y_0)` and `B=A*z_1` admit positive readouts
+
+`E_0=(r-1)*z_0+(r-1)*(r+1)^2*B`,
+`E_1=(r-1)*z_1+(r^2-1)*A`.
+
+At effective contexts (A,z)=00,01,10,11, the final normalizers are
+`(r+1)*(1,1,r,r^2+r-1)` and the predictions are exactly the noisy parity
+target. Thus exact and approximation PRODUCT minima are **two whenever
+R>=(r+1)*(r^2+r-1)**. Every at-most-one graph has degree at most two; the
+top parity moment forces a reversed probability pair and gives the
+cap-independent gaps `1/2-eta` in probability and
+`[log(2)-H(eta)]/4` in uniform CE.
+
+At eta=1/4 the upper cap is 44, with `E_0=2*z_0+32*B` and
+`E_1=2*z_1+8*A`. Finite {1,2}-SUM chains implement this exact two-PRODUCT
+witness. The range formula is optimal for the fixed A,B feature bank with
+all original unary readouts: an exact nonnegative dual proves the bound.
+Its optimality over arbitrary two-PRODUCT parents remains open, as do
+possible intermediate three-PRODUCT phases. At minimum cap r+1 the earlier
+complete-class exact and approximation minimum remains four.
+
+The exact audit checks seven noise odds, the integer-alphabet witness,
+160 arbitrary one-PRODUCT graphs, 100 dual-scale identities and 21 forged
+duals. This is known-value static expressivity, not acquisition or Runtime
+authority. Proof:
+[`TWO_PRODUCT_CONDITIONAL_PARITY.md`](theory/proofs/TWO_PRODUCT_CONDITIONAL_PARITY.md).
+
 ---
 
 # XVIII. Reference Compiler contract

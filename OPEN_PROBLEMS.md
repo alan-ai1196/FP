@@ -75,6 +75,13 @@ counts and larger-cap phases remain open. At larger caps the conditional
 excess supports need not be disjoint, so this argument cannot be reused
 without retaining the alternative normalizers.
 
+XVII.25 now supplies the larger-range endpoint for three-bit parity: exact
+and approximation PRODUCT minimum two for R>=(r+1)*(r^2+r-1),
+r=(1-eta)/eta. At noise 1/4 this is cap 44. The range is proved optimal
+only for the explicit XOR/PRODUCT feature bank. The full two-PRODUCT
+threshold, possible intermediate three-PRODUCT phases and sharp losses
+remain open; the endpoint count is no longer unresolved.
+
 XVII.21 adds a general necessary condition for mass limits: every positive
 point has a positive source intersection using at most P+1 distinct sources.
 A quantitative retained-monomial proof closes exact and approximation counts

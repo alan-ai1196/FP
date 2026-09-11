@@ -874,3 +874,28 @@ is paired with a legal twelve-PRODUCT full-class witness to attack false
 completeness. Read `CONDITIONAL_PRODUCT_UNIVERSALITY.md`. Intermediate cap
 thresholds, fixed smaller label alphabets and total physical/value costs
 remain open.
+
+## 42. The larger-range parity endpoint needs only two PRODUCTs (2026-09-11)
+
+The fixed-cap four-PRODUCT parity theorem cannot be extended to all ranges.
+One PRODUCT of unary SUMs supplies A=XOR(x,y), and a second supplies A*z_1.
+With odds r>1, explicit positive readouts reproduce noisy three-bit parity
+at cap (r+1)*(r^2+r-1). At noise 1/4 this is 44, with integer coefficients
+2,8,32 that have finite {1,2}-SUM implementations. No complementary XOR
+source or extra semantic action is inserted.
+
+Every at-most-one-PRODUCT graph has sub-parity degree, so the existing
+full-class moment argument gives probability error at least 1/2-eta and
+uniform CE excess at least (log(2)-H(eta))/4 at every range. Two is therefore
+the exact and approximation minimum above the displayed cap, whereas four
+remain necessary at the minimum cap r+1. A symmetry reduction retaining
+all unary readouts and an exact dual prove the new range formula is optimal
+for the fixed A,A*z_1 bank. They do not decide the full variable-parent
+two-PRODUCT range threshold or an intermediate three-PRODUCT phase.
+
+The rational audit checks seven noise odds, the complete integer-alphabet
+graph, 160 arbitrary one-PRODUCT moment/order examples, 100 dual-scale
+identities and 21 invalid dual multipliers. Read
+`TWO_PRODUCT_CONDITIONAL_PARITY.md`. This is an expressivity result under
+explicit scales; target acquisition, registered value construction and the
+complete physical/numerical path remain separate.
