@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "torch": "2.12.0+cu132",
+  "CUDA_build": "13.2",
+  "actual_runtime_version": 13040,
+  "device": "NVIDIA GeForce RTX 3090",
+  "direct_CUDA_allocation_written_and_freed_bytes": 33554432,
+  "native_arena_snapshot_unchanged_even_while_foreign_allocation_live": true,
+  "native_allocation_counter": [
+    1,
+    16777216,
+    1
+  ],
+  "scope": "foreign-allocation counterexample to total-history inference; not a legal Runtime action or a whole-device residency peak"
+}

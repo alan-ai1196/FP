@@ -2371,3 +2371,43 @@ The full CUDA prefix and persistence regressions also pass.
 scoped theorem and executed evidence. Full device resource accounting and
 owned target policy/run/release integration remain the active frontier;
 model science remains HOLD. The unified resource law and ERC-1 stay frozen.
+
+## 75. Separate native allocation observations from complete device claims (2026-09-13)
+
+The next resource audit obtains an actual indistinguishability witness.
+Starting with the same 16 MiB native arena, direct CUDA Runtime calls allocate
+a disjoint 32 MiB buffer, write it, synchronize and free it. The entire arena
+snapshot is identical before, during and after, including the native lifetime
+counter `(1, 16777216, 1)`. Even observing while the foreign allocation is
+live cannot reveal it through that projection. This differs from a foreign
+PyTorch allocation, whose lifetime counter increases even after release.
+
+The direct calls intentionally lie outside the registered Runtime API. They
+do not falsify its scoped arena theorem or provide a new FP action. They
+falsify promoting native allocator observations into total CUDA allocation
+history. Any cap that distinguishes those histories requires an additional
+coverage premise or a sound conservative reservation; faster sampling of
+the same insufficient projection does not decide it. No exact whole-device
+physical-residency peak is inferred from the successful allocation and write.
+
+Trying to bind the test's actual runtime also corrected a metadata error.
+Torch is built for CUDA 13.2 and its shipped DLL describes version 13.2.75,
+but `cudaRuntimeGetVersion` returns 13040, or 13.4. Current NVIDIA documents
+explain Windows CUDA 13 dispatch to the display driver's packaged runtime.
+The repository's earlier CUDA_runtime fields stored `torch.version.cuda`;
+they identify the build tag. Their interpretation is corrected without
+rewriting immutable historical evidence. Actual per-phase/forecast numerical
+checks remain checks of the executed outputs, not unseen-kernel theorems.
+
+Read-only device inspection confirms RTX 3090, driver 616.92, WDDM and
+24,576 MiB total memory. Process-memory entries are unavailable under this
+model, as the NVML specification states. DXGI documentation offers current
+usage and a target budget/reservation hint, not an enforced lifetime peak
+cap. A DXGI execution audit has not been claimed.
+
+`CUDA_RESOURCE_OBSERVABILITY.md` records the observation argument, primary
+sources and exact remaining scope. The reproducer retains a small aggregate
+result and frees foreign storage before reporting. Target resource/run
+registration must distinguish actual runtime from build metadata and justify
+coverage/enforcement or a conservative reservation. This is progress on the
+active device frontier; Foundation, XVII.31 and ERC-1 remain frozen.

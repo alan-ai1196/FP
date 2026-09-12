@@ -15,11 +15,14 @@ Run `python -B scripts/audit_cuda_runtime.py --write`. Retain only the small
 
 The constructor accepts an immutable `CudaPrefixContract` through its `cuda`
 keyword. It binds the explicit numerical backend, expected actual Torch
-version/build, CUDA runtime, device name/SM, storage contract, tolerances,
+version/build, CUDA build tag, device name/SM, storage contract, tolerances,
 per-phase output allowance and evidence-frame capacity. The owned manifest
 includes this declaration before initial construction. The actual execution
 identity is checked before the backing tensor is allocated. Callers cannot
 provide a running device state, prediction, callback, relation or certificate.
+The build tag is `torch.version.cuda`; it does not query the Windows display
+driver's actual runtime. See [the observed distinction](CUDA_RESOURCE_OBSERVABILITY.md)
+before extending this registration to the complete target resource/run claim.
 
 The existing native initialization, profile, prediction, observation and
 commit paths all pass a common private numerical hook. The optional CPU

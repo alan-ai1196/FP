@@ -7,9 +7,12 @@ resource family and does not close an AMP Runtime gate.
 
 Run `python -B scripts/audit_cuda_primitives.py --write`. The small result is
 [`FP_CUDA_PRIMITIVE_AUDIT.json`](../../evidence/minimal/FP_CUDA_PRIMITIVE_AUDIT.json).
-The tested stack is PyTorch 2.12.0+cu132, CUDA runtime 13.2, driver 616.92,
+The tested stack is PyTorch 2.12.0+cu132, built for CUDA 13.2, driver 616.92,
 RTX 3090 / SM 8.6. Operator identity, operand residence, dtype and cast order
 are part of the physical path; an output dtype alone does not determine it.
+The original `CUDA_runtime` metadata was `torch.version.cuda`, a build tag.
+A subsequent [actual runtime query](CUDA_RESOURCE_OBSERVABILITY.md) returns
+13.4 on this Windows CUDA 13 stack; do not interpret the build tag as that query.
 
 ## Three executable distinctions
 

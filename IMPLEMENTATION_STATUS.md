@@ -100,6 +100,15 @@ Complete device resource accounting and owned target policy/run/release
 integration remain OPEN; model science remains HOLD. This is no new CPU
 freeze or all-kernel theorem, and it adds no semantic architecture action.
 
+The separate [resource observation audit](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
+now executes a direct CUDA 32 MiB allocation/write/free invisible to the
+complete native arena snapshot. It is a foreign-call counterexample to
+broader history inference, not a legal Runtime action. It also records
+actual Windows runtime 13.4 separately from Torch's CUDA build tag 13.2;
+the earlier `CUDA_runtime` fields encode the latter. This identifies the
+remaining registration/observation boundary without changing the scoped
+arena or exact numerical evidence.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  

@@ -57,6 +57,10 @@ with history and alpha preserved. Read
 [owned CUDA installation](../../theory/proofs/OWNED_CUDA_INSTALLATION.md) and
 run `scripts/audit_cuda_installation.py`. Complete device resources and owned
 target policy/run/release integration remain the frontier; science stays HOLD.
+Read [device-resource observation scope](../../theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
+before promoting native arena counters to a complete device claim. The
+actual foreign-allocation audit also distinguishes Torch's CUDA build tag
+from the Windows runtime version returned by the native API.
 
 ## Current executable recovery (2026-09-12)
 

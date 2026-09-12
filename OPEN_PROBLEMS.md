@@ -67,6 +67,16 @@ or installation components or add static cases as new prerequisites.
 `INSTALLED_CUDA` states that scoped transition; it is not model-science or
 complete device-resource authority.
 
+The [actual observation counterexample](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
+sharpens this remaining gap: a successful direct CUDA 32 MiB allocation,
+write and free leaves all native arena observations unchanged, even while
+live. Such foreign calls are outside the Runtime API, but native counters
+cannot be promoted to whole-device history. The existing `CUDA_runtime`
+metadata is the Torch build tag 13.2; an actual Windows runtime query gives
+13.4. Complete registration must distinguish those identities and justify
+device coverage/enforcement or a sound conservative reservation. Current
+memory samples and OS budget hints alone cannot establish a hard peak bound.
+
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 
 **Why it matters.** The frozen foundation is only useful scientifically if the actual Compiler optimizes the same object. Most historical FP failures came from a correct local theorem being embedded in a smaller/different executable system.

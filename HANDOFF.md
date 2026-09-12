@@ -154,6 +154,17 @@ not rebuild range/persistence/installation or resume static cases to defer
 the remaining target steps. The complete AMP release remains open; science
 remains HOLD.
 
+The [device-resource observation audit](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
+now has a concrete negative witness: native arena snapshots remain identical
+before/during/after a direct CUDA 32 MiB allocation, write and free. That is
+an explicit foreign call, not a legal Runtime action or a failure of the
+scoped arena theorem. Native lifetime counters cannot alone certify broader
+allocation history. Also distinguish the existing CUDA build tag 13.2 from
+the actual Windows runtime query 13040 (13.4). Complete resource/run work
+must bind that distinction and justify coverage or a conservative reservation;
+WDDM process-memory N/A and DXGI budget hints do not supply a hard peak cap.
+Run `scripts/audit_cuda_external_allocations.py` for the minimal witness.
+
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
 observe and commit. `OnlineContract.float64` fixes tolerances and the scalar

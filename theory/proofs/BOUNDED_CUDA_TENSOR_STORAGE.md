@@ -123,3 +123,9 @@ Separate [range/persistence](OWNED_CUDA_PERSISTENCE.md) and
 [resident installation](OWNED_CUDA_INSTALLATION.md) now execute their own
 owned obligations. Complete device resources and target run/release remain
 open. Model science remains HOLD.
+
+The subsequent [foreign CUDA allocation audit](CUDA_RESOURCE_OBSERVABILITY.md)
+allocates, writes and frees 32 MiB outside PyTorch while this entire native
+snapshot remains unchanged, even while that buffer is live. This confirms
+the stated observation boundary; it is not a legal Runtime action or a
+counterexample to the scoped arena invariant.
