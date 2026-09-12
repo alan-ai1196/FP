@@ -94,6 +94,35 @@ Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` wer
 
 The repository therefore treats the current Reference Compiler source as a **recovery/WIP branch point**, not a release. Do not report its package as complete until imports/tests are restored and the complete endpoint suite passes.
 
+### Executable construction recovery (2026-09-12)
+
+The reconstructed `program`, `semantics`, `resources`, `machine` and `runtime`
+modules now provide the actual `ReferenceCompilerRuntime` construction
+endpoint. It admits generic typed source/SUM/PRODUCT/delayed bodies, retains
+shared/unused parameter coordinates and repeated edges, executes a fixed
+registered initializer from zero slot state, and binds constructed states
+to actual owned packed buffers. Full finite source-domain checks or a
+conservative source/state box give positive/range evidence. A loose bound
+or exact integer-work limit produces UNRESOLVED, not a negative certificate.
+
+`scripts/audit_reference_construction.py` checks nine existing resource
+fixtures through that endpoint, 80 shared native graphs with 320 independent
+exact full-context comparisons, and 1,500 ownership/refcount/role/peak/work
+model-check steps. A build that fits alone but cannot coexist with its
+incumbent stays unresolved; partial backend failures release actual buffers
+without refunding work or peak. This is current executable evidence, unlike
+the historical 24/24 and 47/47 counts.
+
+**Scope limits remain material.** The `ConstructionContract` is only the
+enforced construction slice of ERC-1. The machine's packed-payload bytes and
+conservative reference operation charges do not close total host/device
+memory or bit-time accounting. Query/data-use, ordinary learner/profile
+continuation, complete grammar search, typed proof authority, fresh paired
+persistence, actual AMP and atomic install still need integration. The
+preserved helper authorities are not trusted by the current endpoint;
+installation remains UNRESOLVED. No full gate or implementation freeze is
+claimed by this audit.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

@@ -78,3 +78,15 @@ Important later-session design changes recorded in execution provenance, even wh
 - resource-only bypass uses finite-system exact bisimulation authority, not a bool.
 
 An intermediate state passed 24/24 unit tests and 47/47 gates. Later hardening invalidated the right to treat those numbers as a freeze certificate. Reconstruct and re-run from the complete endpoint before updating this status.
+
+## Reconstructed current code, 2026-09-12
+
+`program.py`, `semantics.py`, `resources.py`, `machine.py` and `runtime.py`
+are now new reconstructions against the canonical theory and ERC-1. They
+are not claimed to reproduce the missing historical bytes. The actual
+Runtime construction segment executes native typed programs with registered
+initial values, full delayed reset, exact range checks and owned packed
+reference buffers. The public install path remains UNRESOLVED because
+complete information/learning/search/persistence/AMP integration is absent.
+Read `src/reference_compiler/README.md` and the root implementation status
+for the exact current scope; the historical green gate counts remain stale.

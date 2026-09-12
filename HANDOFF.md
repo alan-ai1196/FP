@@ -17,6 +17,16 @@ when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
 
+Current executable progress: `src/reference_compiler/fp_reference/runtime.py`
+now runs the owned native construction segment through a public Runtime
+entrypoint. `program.py`, `semantics.py`, `resources.py` and `machine.py`
+are reconstructed and tested; do not rebuild them from scratch. Read the
+source README and `scripts/audit_reference_construction.py`. The next gap
+is registered information/data-use and learner/value continuation, followed
+by complete search/proof/persistence/AMP/install integration. The current
+packed-reference resource model and `ConstructionContract` are explicitly
+partial; no complete ERC-1 enforcement or 47-gate release is claimed.
+
 The central foundation principle is:
 
 > **Never erase or assume information before proving that every legal future continuation relevant to the claim cannot use it.**

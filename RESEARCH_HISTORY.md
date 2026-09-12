@@ -1174,3 +1174,34 @@ The remaining static special cases and sharp finite constants are parked.
 Implementation/experimental correctness may reopen Foundation when it finds
 a real semantic counterexample; search cost, uncertainty or insufficient
 resources do not justify extending semantics or continuing static casework.
+
+## 50. Restore the Runtime's owned native construction segment (2026-09-12)
+
+After the ERC-1 freeze, inspection confirmed that the repository still had
+no executable Runtime and retained only six recovery modules, including
+the already-audited unsafe helper authorities. Reconstruction now starts
+from the actual construction chain rather than reinstating certificate
+booleans or reviving the old R4.2 candidate menu.
+
+The new native program representation has typed source/SUM/PRODUCT/delayed
+bodies and parameter slot references; values cannot be smuggled into its
+skeleton. Runtime first allocates zero slot state and then executes its
+fixed registered initializer. Exact full-domain or conservative inductive
+source/state bounds retain all heads and normalizers. A work-limited exact
+calculation or loose bound stays UNRESOLVED. The actual packed reference
+buffers have immutable roles, owners and reference counts; coexistence
+peaks and cumulative work survive failure or explicit candidate retirement.
+
+The endpoint audit executes nine existing resource fixtures and 80 shared
+DAGs, independently checks 320 complete-context exact evaluations, and
+model-checks 1,500 ownership transitions. Injected backend failure cleans up
+the partial physical build without erasing spent costs. Helper booleans
+cannot authorize the unimplemented install path. Read
+`scripts/audit_reference_construction.py` and the source README.
+
+This is a coherent first Runtime segment, not completion of the objective.
+The complete manifest, information/data-use, ordinary learner/profile
+continuation, grammar search, typed proof authority, fresh persistence,
+full host/device accounting, AMP and atomic install remain to be connected.
+The packed reference payload/operation profile is explicitly narrower than
+actual host/GPU resources. Foundation and ERC-1 remain frozen; science HOLD.
