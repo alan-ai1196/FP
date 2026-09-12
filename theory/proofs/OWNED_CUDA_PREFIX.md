@@ -22,7 +22,11 @@ identity is checked before the backing tensor is allocated. Callers cannot
 provide a running device state, prediction, callback, relation or certificate.
 The build tag is `torch.version.cuda`; it does not query the Windows display
 driver's actual runtime. See [the observed distinction](CUDA_RESOURCE_OBSERVABILITY.md)
-before extending this registration to the complete target resource/run claim.
+and the subsequent [owned native binding](WHOLE_BOARD_CUDA_RESOURCES.md).
+`CudaPrefixContract.device` now additionally registers actual runtime/driver
+versions and whole-board VRAM caps. Its private binding maps the actual CUDA
+ordinal through PCI bus to physical UUID and capacity; it is carried through
+installation. The build tag keeps its original, distinct interpretation.
 
 The existing native initialization, profile, prediction, observation and
 commit paths all pass a common private numerical hook. The optional CPU

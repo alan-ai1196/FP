@@ -73,9 +73,20 @@ write and free leaves all native arena observations unchanged, even while
 live. Such foreign calls are outside the Runtime API, but native counters
 cannot be promoted to whole-device history. The existing `CUDA_runtime`
 metadata is the Torch build tag 13.2; an actual Windows runtime query gives
-13.4. Complete registration must distinguish those identities and justify
-device coverage/enforcement or a sound conservative reservation. Current
+13.4. Registration must distinguish those identities and justify device
+coverage/enforcement or a sound conservative upper. Current
 memory samples and OS budget hints alone cannot establish a hard peak bound.
+
+Actual runtime/driver binding and a conservative physical-framebuffer upper
+are now [implemented and audited](theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md).
+The identified physical board supplies a uniform 24 GiB residency envelope,
+charged to both roles; native tensor history and host private commitment stay
+separate. A 4 GiB Windows-job Runtime executes the 35-member CUDA install and
+continuation under that registration. The next work is owned target policy,
+finite run/report integration and release of the complete declared scope.
+Do not demand exact foreign-allocation history to prove this already justified
+residency upper, or promote it to exclusive availability, cumulative work or
+an undeclared all-system resource claim.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

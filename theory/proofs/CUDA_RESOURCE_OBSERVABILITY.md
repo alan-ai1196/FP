@@ -61,7 +61,8 @@ That field is a **build tag**, not an actual-runtime query. Existing immutable
 artifacts retain their recorded bytes; this note corrects their interpretation.
 The current `CudaPrefixContract.execution_identity` likewise binds the Torch
 build tag, device and capability, not the separately queried runtime/driver
-version. Target resource/run registration still needs that distinction.
+version. The subsequent [native device binding](WHOLE_BOARD_CUDA_RESOURCES.md)
+now registers and checks that distinct runtime/driver identity.
 The finite actual arithmetic replays and per-forecast exact conformance
 checks remain evidence for their executed outputs; this correction supplies
 no unobserved-kernel or new release authority.
@@ -87,3 +88,9 @@ resource claim needs an independently justified coverage/enforcement or
 conservative reservation argument, with actual runtime identity distinguished
 from build metadata. No amount of relabelling current samples, adding hashes
 or repeating static PRODUCT/SUM cases establishes that premise.
+
+The next [capacity result](WHOLE_BOARD_CUDA_RESOURCES.md) establishes a
+conservative whole-board physical-residency upper without recovering the
+omitted allocation history. It charges actual native capacity, not a sampled
+used-memory maximum or an OS reservation hint. The indistinguishability
+result above remains valid for total allocation history.

@@ -109,6 +109,22 @@ the earlier `CUDA_runtime` fields encode the latter. This identifies the
 remaining registration/observation boundary without changing the scoped
 arena or exact numerical evidence.
 
+The next [resource component](theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md)
+now binds actual runtime/API 13040 and display driver 616.92 independently
+of Torch's build tag. Every CUDA root owns the native ordinal-to-PCI-to-UUID
+binding and charges the board's 24 GiB physical framebuffer capacity to both
+roles, once globally. This is a uniform residency upper, not observed process
+usage, exclusive reservation or a cumulative-allocation bound. Caps smaller
+than the envelope are refused before native tensor allocation.
+
+The actual device audit covers the foreign 32 MiB witness, version/resource
+admission and terminal authority after failed native observations, including
+unexpected diagnostic/cleanup failure. One 4 GiB Windows job executes native
+selection, fresh evidence, installation and continuation on the same bound
+host/device, with 151 independent CUDA phase checks. The device binding is
+part of the installation frame. Owned target policy/run and complete target
+release are still open; no new CPU freeze or model-science claim is issued.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  

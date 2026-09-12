@@ -11,6 +11,7 @@ from .core import ContractError
 from .installation import CpuInstallReceipt, CpuInstallResult
 from .profile import ProfileUnresolved
 from . import cuda_learner as gpu
+from .cuda_device import DEVICE_FIELDS, _CudaDevice
 
 
 @dataclass(frozen=True)
@@ -79,7 +80,7 @@ class CudaInstallResult(CpuInstallResult):
     authority_scope: str = field(default='executed serialized reference/CUDA identity installation under the declared tensor and host-payload model; no current global optimum, total-device or complete release authority', init=False)
 
 
-PREFIX_FIELDS = frozenset(('contract', 'arena', 'current', 'staged', 'predicted', 'phases', '_values'))
+PREFIX_FIELDS = frozenset(('contract', 'arena', '_device', 'current', 'staged', 'predicted', 'phases', '_values'))
 ARENA_FIELDS = frozenset(('contract', 'device', '_failure', '_last_usage', '_stream', '_settings',
     '_reserved_cap', '_reserved_extent', '_storage', '_pointer', '_counter', '_cursor', '_active',
     '_regions', '_starts', '_phases'))
@@ -93,10 +94,11 @@ def _frame(prefix, candidates):
     if type(prefix) is not _CudaPrefix or type(prefix.arena) is not CudaArena:
         raise ContractError('registered private CUDA owner and arena required')
     arena = prefix.arena
-    if set(vars(prefix)) != PREFIX_FIELDS or set(vars(arena)) != ARENA_FIELDS:
+    if (set(vars(prefix)) != PREFIX_FIELDS or set(vars(arena)) != ARENA_FIELDS
+            or type(prefix._device) is not _CudaDevice or set(vars(prefix._device)) != DEVICE_FIELDS):
         raise ProfileUnresolved('CUDA install has no transition proof for an unregistered device state coordinate')
     try:
-        arena.check()
+        prefix.check()
         ready = torch.cuda.default_stream(arena.device).query()
     except MemoryError:
         raise
@@ -148,14 +150,16 @@ def prepare_transport(prefix, candidates):
     """Read actual complete device states; return a private reference witness."""
     frame, storage = _frame(prefix, candidates)
     maps = tuple((key, tuple(getattr(prefix, key).items())) for key in MAPPINGS)
-    return (prefix, prefix.contract, prefix.arena, prefix.arena._storage, maps, storage, frame)
+    return (prefix, prefix.contract, prefix.arena, prefix.arena._storage, maps, storage,
+            prefix._device, prefix._device.initial, frame)
 
 
 def verify_transport(witness, prefix, candidates):
     """Only identity transport is implemented; any observed corruption is terminal."""
-    previous, contract, arena, backing, maps, storage, frame = witness
+    previous, contract, arena, backing, maps, storage, device, device_identity, frame = witness
     if (prefix is not previous or prefix.contract is not contract or prefix.arena is not arena
-            or prefix.arena._storage is not backing):
+            or prefix.arena._storage is not backing or prefix._device is not device
+            or prefix._device.initial is not device_identity):
         arena._fail('CUDA installation substituted its registered prefix or backing arena')
     for key, values in maps:
         current = tuple(getattr(prefix, key).items())

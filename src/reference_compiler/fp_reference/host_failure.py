@@ -29,7 +29,7 @@ def _guard(method, *, diagnostic):
             raise ContractError('the registered Runtime strategy owns all Compiler control and authority ports')
         try:
             if self._cuda is not None and not diagnostic:
-                self._cuda.arena.check()
+                self._cuda.check()
             if self._host is not None:
                 # Entry check only. The registered job enforces allocations
                 # throughout the body; no allocating post-check is added after
@@ -59,6 +59,14 @@ def _guard(method, *, diagnostic):
             if self._halted is None:
                 self._halted = CUDA_RESOURCE_FAILURE
             self._event_phase = 'halted'
+            raise
+        except Exception:
+            # A failed native binding must retain the original unexpected
+            # exception while ending current authority on the device root.
+            if self._cuda is not None and self._cuda.arena._failure is not None:
+                if self._halted is None:
+                    self._halted = CUDA_RESOURCE_FAILURE
+                self._event_phase = 'halted'
             raise
     # Keep readable public names without publishing a __wrapped__ bypass.
     guarded.__name__, guarded.__qualname__, guarded.__doc__ = method.__name__, method.__qualname__, method.__doc__

@@ -62,6 +62,17 @@ before promoting native arena counters to a complete device claim. The
 actual foreign-allocation audit also distinguishes Torch's CUDA build tag
 from the Windows runtime version returned by the native API.
 
+`CudaPrefixContract.device` now requires an immutable `CudaDeviceContract`
+from `fp_reference.cuda_device`. Its default binds actual runtime/API 13040,
+display driver 616.92 and a 24 GiB physical framebuffer cap for each role
+and globally. Runtime reads the actual ordinal/PCI/UUID/capacity and refuses
+a mismatch before tensor allocation. `snapshot().cuda.device` reports the
+whole-board residency upper separately from native arena and host commitment.
+Read [the scoped resource proof](../../theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md)
+and run `scripts/audit_cuda_device.py`; the actual 4 GiB host-job audit also
+executes the CUDA install and continuation. This does not yet close owned
+target policy/run reporting or issue a complete target release.
+
 ## Current executable recovery (2026-09-12)
 
 `fp_reference.ReferenceCompilerRuntime` now owns native **construction and

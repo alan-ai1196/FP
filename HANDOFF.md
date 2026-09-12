@@ -160,10 +160,28 @@ before/during/after a direct CUDA 32 MiB allocation, write and free. That is
 an explicit foreign call, not a legal Runtime action or a failure of the
 scoped arena theorem. Native lifetime counters cannot alone certify broader
 allocation history. Also distinguish the existing CUDA build tag 13.2 from
-the actual Windows runtime query 13040 (13.4). Complete resource/run work
-must bind that distinction and justify coverage or a conservative reservation;
+the actual Windows runtime query 13040 (13.4). Resource/run work must bind
+that distinction and justify coverage or a conservative upper;
 WDDM process-memory N/A and DXGI budget hints do not supply a hard peak cap.
 Run `scripts/audit_cuda_external_allocations.py` for the minimal witness.
+
+The [whole-board resource binding](theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md)
+now supplies that upper for the physical framebuffer coordinate. Every CUDA
+root binds the actual runtime, driver API and display-driver version; CUDA
+ordinal/PCI bus/UUID identify the board whose native capacity is observed.
+It charges the entire 24 GiB to deployment and compiler, once globally,
+before allocating its tensor arena. This covers physical residency uniformly,
+including the invisible foreign allocation, without claiming measured usage,
+exclusive availability or cumulative allocation volume. Native tensor and
+host private-commit resources retain their separate measures.
+
+`scripts/audit_cuda_device.py` checks actual admission, unequal role budgets,
+restoration after native failures and the diagnostic failure boundary. A
+worker fenced before execution in a 4 GiB Windows job also completes the
+35-member selection, fresh crossings, CUDA install and later continuation;
+151 device phases have an independent exact rounded replay. Installation
+retains the original device binding. Continue owned target policy/run/report
+integration; do not rebuild these resource components or reopen static cases.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

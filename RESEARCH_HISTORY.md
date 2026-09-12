@@ -2411,3 +2411,51 @@ result and frees foreign storage before reporting. Target resource/run
 registration must distinguish actual runtime from build metadata and justify
 coverage/enforcement or a conservative reservation. This is progress on the
 active device frontier; Foundation, XVII.31 and ERC-1 remain frozen.
+
+## 76. Close a physical framebuffer upper and bind the actual device (2026-09-13)
+
+The allocation-observation obstruction does not prevent every resource
+decision. For a registered physical domain of capacity C, all resident byte
+locations belong to that domain, so C bounds residency uniformly over time
+and over histories compatible with an incomplete observation. Charging the
+whole domain to both roles, once globally, gives a conservative admissible
+realization when all three caps cover C. This does not recover allocation
+history, erase complete state or guarantee exclusive available capacity.
+
+`CudaDeviceContract` implements that rule for the board's physical framebuffer.
+The private owner maps the actual CUDA ordinal through native PCI bus to
+NVML UUID and capacity. It separately binds actual runtime/API 13040 and
+display driver 616.92, while Torch's CUDA build tag stays 13.2. The observed
+capacity is 25,769,803,776 bytes, charged to both roles. A wrong version or
+a cap one byte too small is refused before the first native tensor allocation.
+No caller-supplied observation or device handle can establish the premise.
+
+Native identity is checked on public authority/continuation entries, and
+the resident installation frame retains the exact binding and initial identity.
+Failure closes old crossings and install authority even after the observer
+is restored. The adversarial review reproduced a missing unexpected-error
+boundary through `snapshot()` in this new work; that path now also marks
+the root terminal. Original unexpected exceptions survive a simultaneous
+native-cleanup failure. These are injected executor faults, not spontaneous
+device failures or Foundation counterexamples.
+
+The actual 32 MiB foreign allocation remains invisible to native tensor
+observations while an ordinary Runtime event executes. Both histories fit
+the same proved 24 GiB framebuffer upper. It is not a measured peak or a
+cumulative allocation bound. A separate worker, fenced before execution in
+a 4 GiB Windows process/job, performs the 35-member native selection, obtains
+fresh reference/CUDA evidence, installs and continues the learner. Its 151
+device phases pass independent exact rounded replay. Actual host lifetime
+commitment is about 2.1 GiB, native tensor allocation 16 MiB, and the board
+charge 24 GiB; these typed coordinates are not added as disjoint bytes.
+
+`WHOLE_BOARD_CUDA_RESOURCES.md` states the capacity argument, platform API
+premises, complete failure/transport scope and minimal executed evidence.
+The next work is owned target policy, finite run/report integration and a
+complete scoped target release. Exact foreign allocation volume, arbitrary
+GPU instructions or all-system memory are not inferred from this upper.
+No static case expansion, ERC-1 change or model-science claim is introduced.
+Complete CUDA installation/prefix/persistence regressions pass, including the
+trained 774-member class, 64 short streams and all 32 null branches. Shared
+host-failure and CPU finite-run regressions pass; all 38 package files import
+without Torch. The frozen CPU release is not reissued by these targeted checks.

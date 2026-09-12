@@ -91,6 +91,11 @@ and residency are unchanged. The compact receipt binds current states and
 extents plus retained-history counts; full history stays in its existing
 owned records rather than being duplicated into the receipt.
 
+The subsequent [actual device binding](WHOLE_BOARD_CUDA_RESOURCES.md) extends
+this frame with its fixed private field schema and identical binding/initial
+identity objects. Actual runtime/driver/UUID/capacity checks accompany arena
+verification; the whole-board resource envelope stays shared by both roles.
+
 | Complete coordinate | Published effect |
 |---|---|
 | Exogenous cursor, contexts, targets and data-use history | Preserved; no event is consumed by installation |

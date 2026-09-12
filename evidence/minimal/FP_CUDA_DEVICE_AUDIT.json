@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "scope": "actual device binding and conservative whole-board VRAM envelope; process commitment separate; no exact total allocation history or complete target release",
+  "runtime": {
+    "rejected_before_first_native_tensor_allocation": true,
+    "case": "runtime"
+  },
+  "driver-api": {
+    "rejected_before_first_native_tensor_allocation": true,
+    "case": "driver-api"
+  },
+  "driver": {
+    "rejected_before_first_native_tensor_allocation": true,
+    "case": "driver"
+  },
+  "capacity": {
+    "rejected_before_first_native_tensor_allocation": true,
+    "case": "capacity"
+  },
+  "role": {
+    "rejected_before_first_native_tensor_allocation": true,
+    "case": "role"
+  },
+  "binding": {
+    "actual_identity": {
+      "runtime_version": 13040,
+      "driver_api_version": 13040,
+      "driver_version": "616.92",
+      "pci_bus_id": "0000:0B:00.0",
+      "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+      "physical_vram_bytes": 25769803776
+    },
+    "unequal_caps_keep_both_full_board_charges": true,
+    "independent_CUDA_phases": 6
+  },
+  "foreign": {
+    "foreign_CUDA_bytes": 33554432,
+    "native_observations_unchanged_while_live": true,
+    "whole_board_upper_covers_foreign_allocation_without_claiming_its_exact_residency": true
+  },
+  "query-failure": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": false,
+    "case": "query-failure"
+  },
+  "changed": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": false,
+    "case": "changed"
+  },
+  "unexpected": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": true,
+    "case": "unexpected"
+  },
+  "combined": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": true,
+    "case": "combined"
+  },
+  "snapshot-query-failure": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": false,
+    "case": "snapshot-query-failure"
+  },
+  "snapshot-unexpected": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": true,
+    "case": "snapshot-unexpected"
+  },
+  "snapshot-combined": {
+    "restored_native_API_cannot_revive_old_crossings_or_install": true,
+    "original_unexpected_exception_preserved": true,
+    "case": "snapshot-combined"
+  },
+  "hosted-install": {
+    "worker": {
+      "same_registered_host_process_and_device_after_install": true,
+      "host_process_id": 6020,
+      "host_creation_100ns": 134337259783459116,
+      "host_lifetime_commit_peak": 2236657664,
+      "board_VRAM_upper": 25769803776,
+      "native_arena_bytes": 16777216,
+      "independent_CUDA_phases": 151
+    },
+    "completed_job": {
+      "exit_code": 0,
+      "timed_out": false,
+      "commit_limit": 4294967296,
+      "peak_process_commit": 2236657664,
+      "peak_job_commit": 2237882368,
+      "user_100ns": 55937500,
+      "kernel_100ns": 10000000,
+      "total_processes": 2,
+      "limit_terminated_processes": 0,
+      "attached_before_resume": true,
+      "process_id": 6020,
+      "process_creation_100ns": 134337259783459116
+    }
+  }
+}

@@ -14,6 +14,7 @@ from .resources import ResourceExceeded
 from .semantics import ArithmeticUnresolved
 from .cuda_range import FORWARD_ID, check_forward, widen
 from .cuda_installation import CudaInstallContract
+from .cuda_device import CudaDeviceContract, CudaDeviceSnapshot, _CudaDevice
 from .float64_bridge import Float64Contract, check_state, check_prediction
 from .float64_learner import Float64LearnerState, Float64Evaluation
 from .cuda_storage import CudaArena, CudaStorageContract, CudaStorageUnresolved
@@ -30,6 +31,8 @@ class CudaPrefixContract:
     execution_identity: tuple = ('2.12.0+cu132', '7661cd9c6b841b62b7f411aa52ec51f05457263b',
                                  '13.2', 'NVIDIA GeForce RTX 3090', (8, 6))
     install: CudaInstallContract | None = None
+    device: CudaDeviceContract = field(default_factory=lambda: CudaDeviceContract(24 << 30,
+        {role: 24 << 30 for role in ('deployment', 'compiler')}))
     backend_id: str = field(default=gpu.BACKEND_ID, init=False)
     work_model: str = field(default='prepaid-output-cells-packed-evidence-and-exact-forward-v2', init=False)
     forward_id: str = field(default=FORWARD_ID, init=False)
@@ -41,6 +44,9 @@ class CudaPrefixContract:
         if type(self.storage) is not CudaStorageContract:
             raise ContractError('immutable physical CUDA storage contract required')
         self.storage.__post_init__()
+        if type(self.device) is not CudaDeviceContract:
+            raise ContractError('immutable actual CUDA device/resource binding required')
+        self.device.__post_init__()
         if self.install is not None:
             if type(self.install) is not CudaInstallContract:
                 raise ContractError('immutable registered CUDA installation required')
@@ -54,7 +60,7 @@ class CudaPrefixContract:
                 or type(self.execution_identity[4]) is not tuple
                 or len(self.execution_identity[4]) != 2
                 or any(type(v) is not int or v < 0 for v in self.execution_identity[4])):
-            raise ContractError('immutable actual Torch/build/runtime/device/SM identity required')
+            raise ContractError('immutable actual Torch/build/device/SM identity required')
 
 
 @dataclass(frozen=True)
@@ -95,6 +101,7 @@ class CudaPrefixSnapshot:
     predicted: tuple
     phases: tuple[CudaPhase, ...]
     storage: object
+    device: CudaDeviceSnapshot
     scope: str = field(default='owned executed CUDA prefix and exact forecasts; range/persistence authority belongs to Runtime identities; no installation or total-device authority', init=False)
 
 
@@ -157,13 +164,35 @@ class _CudaPrefix:
         if actual != contract.execution_identity:
             raise CudaStorageUnresolved('actual CUDA execution identity differs from registration')
         self.contract = contract
+        self._device = _CudaDevice(contract.device, device)
         self.arena = CudaArena(contract.storage)
         self.current, self.staged, self.predicted = {}, {}, {}
         self.phases, self._values = {}, {}
 
     def snapshot(self):
-        return CudaPrefixSnapshot(self.contract, tuple(self.current.items()), tuple(self.staged.items()),
-                                  tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot())
+        try:
+            return CudaPrefixSnapshot(self.contract, tuple(self.current.items()), tuple(self.staged.items()),
+                                      tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),
+                                      self._device.snapshot())
+        except MemoryError:
+            raise
+        except Exception:
+            # Diagnostics have no continuation authority, but observing a
+            # failed native premise must still close every live authority.
+            if self.arena._failure is None:
+                self.arena._failure = 'CUDA device/storage binding could not be established'
+            raise
+
+    def check(self):
+        try:
+            self._device.check()
+            self.arena.check()
+        except MemoryError:
+            raise
+        except Exception:
+            if self.arena._failure is None:
+                self.arena._failure = 'CUDA device/storage binding could not be established'
+            raise
 
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
