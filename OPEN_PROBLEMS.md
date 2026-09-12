@@ -83,6 +83,21 @@ obligations to current evidence. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
 The new endpoint pass is not a complete release certificate.
 
+**Concrete remaining physical obstruction.** Positive control admission in
+machine v2 removes the historical unbounded free-attempt sequence: an
+unfunded public Compiler request can no longer mint identities, revise a
+proof context or retain new failed history. Its exact request-count bound
+is not a complete memory bound. On the current raw source-box interface,
+`1/2^m` is stored in pending state before the 128-bit reference guard can
+refuse it; tested denominator lengths 257,1025,4097 bits remain in a halted
+prefix without a packed-payload/work increment. Read
+`theory/proofs/OWNED_CONTROL_ADMISSION.md` and its compact audit. The next
+resource closure must account for legally received input bits, partial
+ingress and terminal diagnostics before exposing complete-memory authority.
+Deleting the revealed input, casting it, or silently shrinking the source
+class would evade this obligation. Full host temporaries and ERC-1/gate
+registration remain open as well.
+
 **Sufficient falsification of the current foundation.** A minimal program that is legal under `FP_THEORY.md` but cannot be represented/considered by any implementation conforming to the Reference Compiler contract **unless a new semantic model primitive is added**. Slow search or `UNRESOLVED` does not falsify the foundation.
 
 ## 2. Prove/test implementation-level completeness of native candidate construction for each declared decision class

@@ -86,6 +86,26 @@ The same audit also executes two successive compilation/evidence/install
 cycles in one Runtime. New baselines and fresh identities work, old
 authority stays closed, and the global alpha cap still blocks later use.
 
+The current physical frontier is now sharper. At `8880371`, repeated unfunded
+construction requests could grow IDs/owners/failure history with unchanged
+work and packed payload. `packed-reference-payload-v2` now pays one fixed
+control admission unit before any public Compiler mutation. Unfunded
+requests leave owned state and current proof revisions unchanged; admitted
+failures keep their costs/history. Read
+[`OWNED_CONTROL_ADMISSION.md`](theory/proofs/OWNED_CONTROL_ADMISSION.md)
+and run `scripts/audit_control_admission.py` (11 endpoints and 96 finite
+command trees). Existing construction/event/profile/search/persistence/CPU
+installation audits have been rerun against this machine revision.
+
+Do not infer a full memory bound from that fix. A current source-box input
+`1/2^m` can be retained in halted pending state before the reference integer
+guard refuses it, without a payload debit. The same audit preserves this
+separate unclosed witness. Next attack paid, representation-aware input
+ingress and terminal diagnostics together with complete host accounting;
+adding manifest fields or a metadata multiplier does not solve it. No
+Foundation change, static case expansion, Runtime freeze or GPU science is
+authorized by this partial resource correction.
+
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic
 process law are explicit assumptions, never inferred from unread data.

@@ -350,6 +350,15 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
+The v2 machine first charges one fixed control admission unit for each
+public Compiler mutation, using the already immutable construction,
+information or install work role. If that debit cannot be paid, no owned
+attempt, revision, query, frontier, evidence or resource history changes.
+An already issued current reference proof remains current across such a
+refusal. Once admission succeeds, all actual following work and failed
+history remain spent. Ordinary target ingress stays prepaid by prediction;
+there is no new after-target gate that could unread its value.
+
 The bounded target slot and its write work are reserved before prediction
 returns. After `observe` accepts a valid target, its revealed record and
 paid slot retain it even if gradient computation, range checking, work or
@@ -378,6 +387,14 @@ scratch, ingress objects before successful allocation, total host heap,
 bit-time and CUDA memory/work are not covered by this partial model. A
 terminal failure may retain diagnostic state outside that payload measure.
 This is a material limitation preventing a complete physical-resource claim.
+[`OWNED_CONTROL_ADMISSION.md`](../theory/proofs/OWNED_CONTROL_ADMISSION.md)
+now supplies two exact resource obstructions. The historical unbounded
+sequence of free failed controls is corrected by paid admission. The current
+raw source-box input `1/2^m` still enters pending state before an undersized
+integer guard halts; arbitrarily large retained denominators are outside
+the payload debit. This keeps complete input/diagnostic accounting open even
+with a finite admitted-request count. A metadata multiplier or manifest-only
+change cannot establish the missing full-resource claim.
 
 ## Evidence and remaining boundary
 

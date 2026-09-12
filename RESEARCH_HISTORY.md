@@ -1627,3 +1627,51 @@ Concurrent/crash-safe publication, total host/device physical accounting,
 complete ERC-1/gate closure and actual target AMP are not inferred. The
 generic target installation port stays UNRESOLVED. Foundation/ERC-1 remain
 frozen; Runtime is NOT FROZEN and RTX 3090 science remains HOLD.
+
+## 59. Unfunded requests exposed unbounded Compiler history (2026-09-12)
+
+The physical audit found a failure before any model arithmetic mattered.
+At `8880371`, a construction request minted its candidate ID, owner and
+revision before attempting to pay inspection work. Once that work cap was
+exhausted, each new request still appended owner/resource/failure history,
+with unchanged live payload, peak and cumulative work. A legal zero-SUM
+program at cap 18 reproduces 64 additional IDs, owners and attempts plus
+192 resource events; the same sequence extends to arbitrary length.
+
+Because the public snapshot distinguishes those history states, no finite
+complete-state storage bound follows from the fixed old counters. This is
+not fixed by multiplying packed model bytes by a metadata overhead constant.
+UNRESOLVED was the correct task decision; complete physical accounting did
+not follow from it. The old source is replayed directly from Git for audit.
+
+The correction is one paid admission boundary for all public Compiler
+control operations. Machine `packed-reference-payload-v2` charges a positive
+reference work unit through the immutable operation role before any owned
+mutation. A refused request creates no new attempt or revision; an admitted
+failure retains all its subsequent history/work/peak. Retirement and
+cancellation also require admission. Ordinary target observation remains
+prepaid so a revealed outcome can never be refused retroactively.
+
+With remaining role work W_r and positive admission cost c=1, the number of
+admitted control requests satisfies K_r<=W_r. This rules out the historical
+free state-growth loop, without claiming a total heap or instruction bound.
+Current proof authority is preserved correctly too: 16 unfunded requests
+leave the same completed 35-program class proof current. The audit checks
+64 denials on each of 11 public paths and all 96 four-command construct/
+retire trees at six work caps (384 positions, 177 funded state changes).
+Construction/event/profile/search, reference/paired persistence, binary64
+and continuous two-install endpoint audits pass against the revised machine.
+
+Attacking the resulting resource claim found the next concrete obstruction.
+A source-box input `1/2^m` enters the pending record before the 128-bit
+reference guard refuses prediction. Denominators of 257,1025,4097 bits remain
+in halted state with unchanged packed payload/work. This is a separate
+current counterexample: bounding admitted calls still does not bound raw
+ingress and terminal diagnostic storage. The input has been received and
+cannot simply be erased, rounded or treated as unread to improve accounting.
+
+Read `theory/proofs/OWNED_CONTROL_ADMISSION.md` and
+`evidence/minimal/FP_CONTROL_ADMISSION_AUDIT.json`. The next physical work is
+paid representation-aware ingress/diagnostics and complete host accounting,
+with full ERC-1/gate registration still open. No Foundation action or static
+case expansion is introduced; Runtime is NOT FROZEN and science stays HOLD.

@@ -49,9 +49,12 @@ class PackedObject:
 
 
 class ReferenceMachineModel:
-    model_id = 'packed-reference-payload-v1'
+    model_id = 'packed-reference-payload-v2'
     initializer_id = 'registered-cyclic-rational-initializer-v1'
     residency_dimensions = frozenset(('reference_payload_bytes', 'physical_objects'))
+    # Every admitted Compiler control request pays this positive charge before
+    # it can mint identities, change revisions or retain failure history.
+    control_admission_work = 1
 
     @staticmethod
     def realize(object_id: str, kind: str, value, provenance: str) -> PackedObject:

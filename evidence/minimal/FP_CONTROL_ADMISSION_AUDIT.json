@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "scope": "paid Compiler control admission; no complete host/device memory claim",
+  "history": {
+    "source_commit": "8880371",
+    "fixed_compiler_work_cap": 18,
+    "extra_unfunded_requests": 64,
+    "work_current_and_peak_payload_unchanged": true,
+    "extra_candidate_ids": 64,
+    "extra_owners": 64,
+    "extra_resource_events": 192,
+    "extra_attempt_records": 64
+  },
+  "endpoints": [
+    {
+      "endpoint": "construct",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "retire",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "query",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "admit-reference",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "admit-float64",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "cancel-reference",
+      "role": "compiler",
+      "work_cap": 61698,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "cancel-float64",
+      "role": "compiler",
+      "work_cap": 86274,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "start-search",
+      "role": "compiler",
+      "work_cap": 60865,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "advance-search",
+      "role": "compiler",
+      "work_cap": 60884,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "cancel-search",
+      "role": "compiler",
+      "work_cap": 60884,
+      "unchanged_denials": 64
+    },
+    {
+      "endpoint": "install",
+      "role": "deployment",
+      "work_cap": 459129,
+      "unchanged_denials": 64
+    }
+  ],
+  "trees": {
+    "complete_four_command_trees": 96,
+    "endpoint_positions": 384,
+    "funded_state_changing_requests": 177,
+    "every_changed_prefix_starts_with_positive_paid_admission": true
+  },
+  "authority": {
+    "complete_program_class": 35,
+    "unadmitted_requests": 16,
+    "same_owned_current_proof_remains_valid_without_revision_change": true
+  },
+  "ingress": {
+    "status": "CURRENT_UNCLOSED_COUNTEREXAMPLE",
+    "reference_integer_limit": 128,
+    "retained_input_denominator_bits": [
+      257,
+      1025,
+      4097
+    ],
+    "halted_unresolved_without_payload_or_work_debit": true,
+    "implication": "finite admitted request count cannot bound full ingress/diagnostic storage"
+  }
+}

@@ -168,13 +168,20 @@ simulation of the whole old/new self-Compiler.
 
 ## 5. Failure is not restoration of the entire past
 
-A failure before publication cannot publish a half-installed learner or
+In machine `packed-reference-payload-v2`, installation first pays a control
+admission unit before minting any attempt or revision. An unfunded admission
+leaves the owned Runtime state unchanged. Unknown target/proof/evidence IDs
+cannot become stored attempt payload. See
+[`OWNED_CONTROL_ADMISSION.md`](OWNED_CONTROL_ADMISSION.md) for the uniform
+control protocol and its distinct scope from complete host accounting.
+
+An admitted failure before publication cannot publish a half-installed learner or
 partly transferred model lease map. It releases only the newly prepared
 objects and closes the new unused owners. Old learner, persistence and
 search records remain. Current paired evidence may still be used by a later
 paid attempt if those old trajectories remain continuous.
 
-The complete failed state is **not** the original Omega: attempted identities,
+The complete admitted-failure state is **not** the original Omega: attempted identities,
 Compiler revision, actual work, peak residency, retired physical IDs and
 failure diagnostics remain changed. Search proofs may therefore be stale
 even when numeric learners are unchanged. This is not a resource refund or

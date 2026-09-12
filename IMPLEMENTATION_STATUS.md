@@ -400,6 +400,40 @@ target `install` still returns UNRESOLVED. Complete ERC-1 registration and
 host/device accounting, full release-gate mapping and actual AMP remain
 open. Foundation/ERC-1 stay frozen; Runtime is NOT FROZEN and science HOLD.
 
+### Paid Compiler control admission (2026-09-12)
+
+The packed reference machine is now `packed-reference-payload-v2`. Each
+admitted public Compiler control operation pays one fixed work unit through
+its immutable role before changing revision, identity or retained history.
+This covers construction/retirement, queries, both persistence paths,
+search controls and CPU install. Insufficient admission returns UNRESOLVED
+without owned mutation (void controls raise `ResourceExceeded`). Ordinary
+target observation remains governed by its earlier prepaid ingress, so a
+revealed target cannot be refused retroactively. All already admitted
+failures retain work, peak, attempts and alpha as before.
+
+The motivating counterexample is executed from Git `8880371`: at work cap
+18, 64 unfunded legal construction requests add 64 candidate IDs, owners and
+attempts plus 192 resource events, with unchanged paid counters and payload.
+Thus the earlier caps imply no finite complete-state storage bound. The
+new positive debit proves a bound on admitted control requests, and no
+current proof revision changes merely because an unfunded request arrived.
+
+`scripts/audit_control_admission.py` checks 64 denials at each of 11 public
+paths, all 96 length-four binary construct/retire command trees under six
+work caps, and a 35-program current proof surviving 16 denials. Existing
+construction, ordinary/profile/search, reference/paired persistence,
+binary64 and two-cycle CPU install audits pass against v2. Cost assertions
+now include paid retirement and the install control admission unit.
+
+This does not close raw ingress or host storage. The audit separately keeps
+a CURRENT_UNCLOSED_COUNTEREXAMPLE: inputs `1/2^m` within a source box enter
+pending state before the 128-bit arithmetic guard halts; denominator lengths
+257,1025,4097 bits have no packed-payload/work debit. Paid representation-aware
+ingress and terminal diagnostics, complete host/device accounting, ERC-1
+registration, gate mapping and actual AMP remain open. See
+`theory/proofs/OWNED_CONTROL_ADMISSION.md`; no full release follows.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

@@ -308,8 +308,8 @@ def capacity_audit():
     assert after.resources['peak']['reference_payload_bytes'] <= byte_cap
     assert after.resources['spent']['deployment']['work'] > old.resources['spent']['deployment']['work']
     assert limited.paired_persistence_result(*ids).status == 'PAIRED_CPU_CROSSED'
-    # Reject before prepaid install work if its explicitly registered work
-    # role lacks capacity, even when all target buffers already exist.
+    # Control admission is paid, then reject before the much larger prepared
+    # install work when its registered role lacks capacity.
     charge = 4096+16*sum(len(buf) for _, buf in before.buffers)+1024*(
         len(before.resources['objects'])+len(before.candidates)+len(before.persistence_identities)+len(before.searches))
     work_cap = before.resources['spent']['deployment']['work']+charge-1
@@ -320,7 +320,9 @@ def capacity_audit():
     failure = install(limited, search, ids)
     after = ownership(limited)
     assert failure.status == 'UNRESOLVED' and 'cumulative work' in failure.reason
-    assert after.candidates == old.candidates and after.resources['spent'] == old.resources['spent']
+    assert after.candidates == old.candidates
+    assert after.resources['spent']['deployment']['work'] == old.resources['spent']['deployment']['work']+limited._machine.control_admission_work
+    assert after.resources['spent']['compiler'] == old.resources['spent']['compiler']
     assert not after.install_receipts and after.alpha_spent == old.alpha_spent
     return {'actual_prepublication_peak_limit_rejects_existing_feasible_target': True,
             'actual_install_work_role_limit_rejects_without_free_execution': True,

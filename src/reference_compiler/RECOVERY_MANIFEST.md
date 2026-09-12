@@ -131,5 +131,11 @@ old persistence loses authority, and failed attempts retain work/peak and
 unique physical identities. No supplied state or helper receipt is accepted.
 The generic target install path remains UNRESOLVED: full ERC-1 enforcement,
 host/device accounting, complete gate mapping and actual AMP are still open.
+The current machine revision is `packed-reference-payload-v2`, with paid
+Compiler control admission before any owned mutation. The previous free
+failure-history growth is reproduced directly from machine/Runtime source
+at `8880371`; no extra historical source tree is maintained. This correction
+does not cover the remaining oversized raw-input/terminal-diagnostic storage
+counterexample. Read `theory/proofs/OWNED_CONTROL_ADMISSION.md`.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.

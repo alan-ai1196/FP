@@ -156,7 +156,9 @@ def native_endpoint_audit():
         before = validate_residency(rt)
         rt.retire_candidate(result.candidate_id)
         after = validate_residency(rt)
-        assert after.resources['spent'] == before.resources['spent'] and after.resources['peak'] == before.resources['peak']
+        assert after.resources['spent']['compiler']['work'] == before.resources['spent']['compiler']['work']+rt._machine.control_admission_work
+        assert after.resources['spent']['deployment'] == before.resources['spent']['deployment']
+        assert after.resources['peak'] == before.resources['peak']
         assert len(after.candidates) == 1 and len(after.programs) == 1
     return fixture_count, point_checks
 

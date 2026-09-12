@@ -538,6 +538,10 @@ class ReferenceCompilerRuntime:
         self._require_idle()
         if self._online is not None and self._cursor % self._online.learner.update_unit:
             raise ContractError('new online lineages start at a registered update-unit boundary')
+        try:
+            self._admit_control('construct')
+        except ResourceExceeded as exc:
+            return ConstructionResult('UNRESOLVED', None, str(exc))
         self._revision += 1
         self._event_phase = 'constructing'
         try:
@@ -547,6 +551,10 @@ class ReferenceCompilerRuntime:
 
     def retire_candidate(self, candidate_id: str):
         self._require_idle()
+        name(candidate_id, 'owned candidate identity')
+        if candidate_id == self._deployed_id or candidate_id not in self._candidates:
+            raise ContractError('cannot retire the deployed or an unknown candidate')
+        self._admit_control('retire')
         self._revision += 1
         self._retire(candidate_id)
 
@@ -569,6 +577,25 @@ class ReferenceCompilerRuntime:
     def _require_online(self):
         if self._online is None:
             raise ContractError('this Runtime has no registered ordinary learner/data interface')
+
+    def _admit_control(self, operation: str):
+        """Pay before control mutation; denial leaves owned Runtime state intact.
+
+This is the fixed machine's admission boundary, not a resource refund or
+erasure of an executed attempt. Ordinary ingress has its separate finite
+stream/terminal-prefix protocol; target observation must remain prepaid.
+"""
+        if operation in ('construct', 'retire'):
+            role = self._contract.work_roles['construct']
+        elif operation == 'install':
+            role = self._online.cpu_install.work_role
+        elif operation in ('query', 'admit-persistence', 'cancel-persistence',
+                           'start-search', 'advance-search', 'cancel-search'):
+            role = self._event_router.snapshot()['information']
+        else:
+            raise ContractError('unregistered control admission operation')
+        self._ledger.charge_work(role, {'work': self._machine.control_admission_work},
+                                 note=f'control-admission:{operation}')
 
     def _halt(self, stage: str, error: Exception):
         self._halted = (stage, f'{type(error).__name__}: {error}')
@@ -878,6 +905,10 @@ class ReferenceCompilerRuntime:
         if not 0 < len(ids) <= spec.max_records or len(set(ids)) != len(ids) or any(value not in available for value in ids):
             raise ContractError('query skips the revealed legal data interface or duplicates observations')
         records = tuple(available[value] for value in ids)
+        try:
+            self._admit_control('query')
+        except ResourceExceeded as exc:
+            return QueryResult(query_id, 'UNRESOLVED', (), (), str(exc))
         self._revision += 1
         prefix = f'{self._runtime_id}:query:{len(self._query_records)}'
         result = QueryResult(query_id, 'UNRESOLVED', (), (), 'query did not finish')
@@ -1011,6 +1042,10 @@ class ReferenceCompilerRuntime:
         if rule.epoch_events*rule.max_epochs > len(self._online.data.active.observation_ids)-self._cursor:
             return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
                                               'registered future horizon does not fit the remaining observation schedule', score_path)
+        try:
+            self._admit_control('admit-persistence')
+        except ResourceExceeded as exc:
+            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
         self._revision += 1
         bit_limit = self._contract.reference_integer_bits
         try:
@@ -1217,6 +1252,7 @@ class ReferenceCompilerRuntime:
         identity = self._persistence_identities.get(identity_id)
         if identity is None or identity.rule.score_path != score_path:
             raise ContractError('unknown or wrong-path owned persistence identity')
+        self._admit_control('cancel-persistence')
         self._revision += 1
         self._stop_persistence(identity, 'cancelled; alpha, used observation identities and owned history are retained')
 
@@ -1283,6 +1319,10 @@ class ReferenceCompilerRuntime:
         spec = next((s for s in self._online.searches if s.search_name == search_name), None)
         if spec is None:
             raise ContractError('unregistered native reference decision class')
+        try:
+            self._admit_control('start-search')
+        except ResourceExceeded as exc:
+            return ReferenceSearchResult('UNRESOLVED', None, '', 0, 0, None, None, None, str(exc))
         self._revision += 1
         search_id = f'{self._runtime_id}:search:{self._next_search}'
         self._next_search += 1
@@ -1433,6 +1473,10 @@ class ReferenceCompilerRuntime:
                                reason='historical search result is stale for the complete Runtime context')
             return self._search_result(session)
         stale = session.expected_revision != self._revision
+        try:
+            self._admit_control('advance-search')
+        except ResourceExceeded as exc:
+            return replace(self._search_result(session), status='UNRESOLVED', proof_id=None, reason=str(exc))
         self._revision += 1
         if stale:
             session = self._search_failure(session, ProfileUnresolved('complete Runtime context changed outside this search prefix'), stale=True)
@@ -1476,6 +1520,7 @@ class ReferenceCompilerRuntime:
         session = self._searches[search_id]
         if session.status == 'CANCELLED':
             return
+        self._admit_control('cancel-search')
         self._revision += 1
         # Cancellation terminates continuation, not historical evidence use.
         # Snapshots still expose these records, so their actual packed payload
@@ -1547,6 +1592,16 @@ after all fallible construction, checks and physical preparation complete.
             return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'CPU install has no transition proof for an unregistered Runtime state coordinate')
         if self._cursor % self._online.learner.update_unit:
             return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
+        # Unknown strings cannot become arbitrarily large owned diagnostics.
+        # Historical/current authority checks still follow independently.
+        if candidate_id not in self._candidates or proposal_proof_id not in self._reference_proofs:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'no owned target or completed reference-class proposal')
+        if reference_identity not in self._persistence_identities or float64_identity not in self._persistence_identities:
+            raise ContractError('unknown owned persistence identity')
+        try:
+            self._admit_control('install')
+        except ResourceExceeded as exc:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, str(exc))
         attempt_id = f'{self._runtime_id}:install:{self._next_install}'
         self._next_install += 1
         revision_before = self._revision
