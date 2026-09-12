@@ -37,6 +37,14 @@ contraction, divisor-residence and readout differences; see
 [`ACTUAL_CUDA_PRECISION.md`](theory/proofs/ACTUAL_CUDA_PRECISION.md).
 This closes a finite diagnostic, not an owned AMP learner or target gate.
 
+The subsequent [`continuous CUDA learner`](theory/proofs/CONTINUOUS_CUDA_LEARNERS.md)
+now executes explicit half forward/storage and single accumulation/readout/
+backward/master updates. Its independent audit passes 1,306 phases, including
+profile and recurrent state, plus 1,340 exact grid checks. Actual intermediate
+overflow masked by finite projection is refused. `cuda_learner.py` is a
+mechanical component with private-ownership integration still open; the
+Reference Runtime and target `install` behavior are unchanged.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  

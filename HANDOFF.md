@@ -82,6 +82,19 @@ boundary cases and 11,040 finite arithmetic results. These diagnostics
 provide no Runtime authority; complete owned AMP learners and their
 same-path evidence/install chain remain the active implementation work.
 
+The actual continuous learner mechanics are now implemented in
+`cuda_learner.py`; read
+[`CONTINUOUS_CUDA_LEARNERS.md`](theory/proofs/CONTINUOUS_CUDA_LEARNERS.md).
+`scripts/audit_cuda_learner.py` checks 1,306 real device phases against an
+independent exact rounded interpreter, including ordinary four-path
+comparisons, recurrent profile replay and 24 further native DAGs. It detects
+an actual optimizer overflow even when projection hides it in a finite zero.
+The CUDA state keeps its own master parameters, half delayed queues and
+single gradient accumulator. This mechanical layer has no Runtime authority:
+the next work is owned device integration, per-event relations, fresh AMP
+evidence and actual installation. Do not rebuild the learner or reopen
+the static study to postpone those obligations.
+
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
 observe and commit. `OnlineContract.float64` fixes tolerances and the scalar

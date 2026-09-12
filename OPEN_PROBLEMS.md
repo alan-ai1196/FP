@@ -28,8 +28,11 @@ The first actual device audit now fixes concrete lowering hazards:
 [`ACTUAL_CUDA_PRECISION.md`](theory/proofs/ACTUAL_CUDA_PRECISION.md). Autocast
 does not lower the tested elementwise SUM/PRODUCT; half addcmul double
 rounding and host-scalar division have exact positive counterexamples.
-Continue into the continuous owned AMP learner implementation using explicit
-per-stage arithmetic. More isolated primitive cases are not a release goal.
+The [continuous CUDA learner mechanics](theory/proofs/CONTINUOUS_CUDA_LEARNERS.md)
+now pass 1,306 independent exact-rounded phase comparisons, including
+profiles and recurrence. Continue into complete Runtime ownership and
+per-event numerical relations, then target range, same-path persistence and
+installation. More isolated primitive cases are not a release goal.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

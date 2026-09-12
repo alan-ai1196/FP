@@ -18,6 +18,13 @@ Extend the implementation against `FP_THEORY.md`; do not weaken its contract
 or import superseded R4.2 semantics. The reference modules are restored and
 integrated; actual target execution needs its own complete endpoint evidence.
 
+`fp_reference.cuda_learner` now provides actual continuous mixed-precision
+learner mechanics with an independent exact rounded audit. It is not wired
+into Runtime authority or device resource ownership; the target install port
+remains unresolved. See
+[CUDA learner scope](../../theory/proofs/CONTINUOUS_CUDA_LEARNERS.md).
+Importing the component does not import Torch or initialize CUDA.
+
 ## Current executable recovery (2026-09-12)
 
 `fp_reference.ReferenceCompilerRuntime` now owns native **construction and

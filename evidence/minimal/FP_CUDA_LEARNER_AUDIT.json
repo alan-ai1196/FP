@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "actual continuous CUDA learner mechanics beside owned Reference Runtime events; no device authority",
+  "backend_id": "eager-cuda-half-forward-single-sum-readout-backward-master-v1",
+  "device": "NVIDIA GeForce RTX 3090",
+  "torch": "2.12.0+cu132",
+  "torch_CUDA_runtime": "13.2",
+  "exhaustive": {
+    "all_binary_context_target_three_event_streams": 64,
+    "ordinary_events": 192,
+    "reference_and_CUDA_baseline_candidate_paths": 4,
+    "all_parameters_accumulators_queues_and_clocks_compared": true,
+    "predecessor_device_tensors_unchanged": true,
+    "partial_final_units_preserved": true,
+    "actual_CUDA_phases": 1024,
+    "half_arithmetic_or_ingress_results": 3392,
+    "actual_half_multiply_results": 1152,
+    "single_arithmetic_or_ingress_results": 18880,
+    "reference_state_coordinates_compared": 1152,
+    "coordinates_differing_from_recast_exact_reference": 320,
+    "largest_observed_state_absolute_error_float64_summary": 0.00021627924165312497
+  },
+  "profile": {
+    "original_revealed_profile_records": 2,
+    "actual_profile_replayed_events": 6,
+    "ordinary_events": 6,
+    "candidate_final_optimizer_steps": 5,
+    "profile_attachment_preserves_all_device_buffers": true,
+    "both_delayed_queue_positions_compared_every_event": true,
+    "actual_CUDA_phases": 42,
+    "half_arithmetic_or_ingress_results": 130,
+    "actual_half_multiply_results": 40,
+    "single_arithmetic_or_ingress_results": 794,
+    "reference_state_coordinates_compared": 48,
+    "coordinates_differing_from_recast_exact_reference": 6,
+    "largest_observed_state_absolute_error_float64_summary": 8.747709532115362e-05
+  },
+  "topology": {
+    "seeded_native_graphs": 24,
+    "events_per_graph": 4,
+    "labels": 3,
+    "repeated_edges_heads_squares_and_unused_slots": true,
+    "host_single_then_device_half_source_rounding_checked": true,
+    "all_full_states_and_native_predictions_match_exact_rounded_model": true,
+    "actual_CUDA_phases": 240,
+    "half_arithmetic_or_ingress_results": 2500,
+    "actual_half_multiply_results": 1260,
+    "single_arithmetic_or_ingress_results": 12032,
+    "reference_state_coordinates_compared": 0,
+    "coordinates_differing_from_recast_exact_reference": 0,
+    "largest_observed_state_absolute_error_float64_summary": null
+  },
+  "failures": {
+    "incomplete_clock_source_and_scalar_divisor_rejected": true,
+    "actual_half_forward_overflow_retains_unchanged_predecessor": true,
+    "finite_projection_cannot_hide_actual_optimizer_intermediate_overflow": true,
+    "mutable_device_parameter_corruption_revalidated": true,
+    "independent_exact_dyadic_grid_coordinate_checks": 1340,
+    "projection_and_floor_canonicalize_negative_zero": true,
+    "host_RNE32_ingress_preserves_negative_underflow_zero": true
+  },
+  "not_closed": [
+    "registered Runtime AMP contract and per-event bridge authority",
+    "complete device/host workspace ownership and failure-atomic publication",
+    "same-path AMP persistence, build/copy/install and model-science release",
+    "all-input or future numerical error guarantees"
+  ]
+}

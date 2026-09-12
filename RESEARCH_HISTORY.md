@@ -2112,3 +2112,38 @@ implementation sources. `audit_cuda_primitives.py` regenerates all inputs
 and writes only minimal counts and witnesses. The complete owned AMP
 learner, device resources, four continuous paths, fresh evidence and
 installation remain open; this diagnostic issues no bridge authority.
+
+## 70. Execute continuous native mixed-precision learners (2026-09-13)
+
+The next component executes actual half storage/forward products, ordered
+single SUM/readout, single reverse operations and master SGD on RTX 3090.
+It retains complete device parameters, delayed queues and gradient
+accumulators from birth. Source/initializer encoding is explicitly host
+RNE32 followed by device transport/casts; no trained reference endpoint is
+recast into a supposed GPU successor. Previous device states stay unchanged.
+
+The independent exact rounded interpreter matches 1,306 actual phases:
+all 64 three-event context/target streams beside the Reference Runtime's
+baseline/candidate, a six-event recurrent profile followed by ordinary
+continuation, and 24 further three-label native DAGs. Repeated edges/heads,
+squares, unused slots, arbitrary positive sources, whole-unit profile
+attachment and partial final units are exercised. The phase tapes observe
+2,452 real half multiplications; 1,340 coordinate tests verify the exact
+binary32 dyadic floor. Of 1,200 state coordinates compared to actual exact
+Runtime learners, 326 differ from endpoint recasts. These measured errors
+do not supply a future bound or a chosen bridge tolerance.
+
+A finite-state counterexample exposes an additional numerical acceptance
+hazard: maximum finite single gradient times scale two becomes infinity,
+while projection of the negative resulting parameter returns finite zero.
+The executor retains and checks every intermediate before success, so it
+refuses that actual CUDA phase without changing its input state. Forward
+overflow and mutable nonfinite parameter corruption are refused too.
+
+The new module imports without importing Torch or creating a device context;
+the frozen Reference/CPU implementation and target install behavior are
+unchanged. `CONTINUOUS_CUDA_LEARNERS.md` states the exact physical schedule
+and finite coverage. The component has no signer, resource claim or Runtime
+AMP authority. Next is complete owned device integration and event relations,
+then target range/persistence/build/install. Foundation and ERC-1 stay frozen;
+model science stays HOLD. No new static special case is introduced.
