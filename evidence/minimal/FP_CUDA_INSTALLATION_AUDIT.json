@@ -1,0 +1,124 @@
+{
+  "status": "PASS",
+  "scope": "owned serialized same-device CUDA installation; tensor/packed-host model, not full device release",
+  "small": {
+    "phases": 151,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3306,
+    "maximum_output_cells": 20,
+    "native_class_size": 35,
+    "install_cursor": 22,
+    "trained_nonzero_state": false,
+    "recurrent": false,
+    "independent_CPU_phases": 151,
+    "one_complete_root_publication": true,
+    "identical_device_objects_and_extents": true,
+    "peak_before_install": 19089517,
+    "peak_during_install": 19151928,
+    "deployment_work_before": 36946063,
+    "deployment_work_after": 342905312
+  },
+  "learned": {
+    "phases": 870,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3948,
+    "maximum_output_cells": 25,
+    "native_class_size": 774,
+    "install_cursor": 18,
+    "trained_nonzero_state": true,
+    "recurrent": false,
+    "independent_CPU_phases": 870,
+    "one_complete_root_publication": true,
+    "identical_device_objects_and_extents": true,
+    "peak_before_install": 115642098,
+    "peak_during_install": 116572522,
+    "deployment_work_before": 30228597,
+    "deployment_work_after": 1883164630
+  },
+  "recurrent": {
+    "phases": 240,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3626,
+    "maximum_output_cells": 22,
+    "native_class_size": 124,
+    "install_cursor": 22,
+    "trained_nonzero_state": false,
+    "recurrent": true,
+    "independent_CPU_phases": 240,
+    "one_complete_root_publication": true,
+    "identical_device_objects_and_extents": true,
+    "peak_before_install": 31152536,
+    "peak_during_install": 31331559,
+    "deployment_work_before": 37177019,
+    "deployment_work_after": 536393052
+  },
+  "guards": {
+    "wrong_path_fake_proof_partial_unit_and_same_graph_newborn_refused": true,
+    "CPU_and_generic_tokens_cannot_install_the_CUDA_root": true
+  },
+  "late": {
+    "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+    "actual_work_peak_and_attempt_IDs_not_refunded": true,
+    "case": "late"
+  },
+  "unknown": {
+    "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+    "actual_work_peak_and_attempt_IDs_not_refunded": true,
+    "case": "unknown"
+  },
+  "pending": {
+    "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+    "actual_work_peak_and_attempt_IDs_not_refunded": true,
+    "case": "pending"
+  },
+  "corrupt": {
+    "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+    "out_of_extent_view_refused_before_numeric_read": false
+  },
+  "extent": {
+    "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+    "out_of_extent_view_refused_before_numeric_read": true
+  },
+  "continuation": {
+    "install_cursors": [
+      22,
+      38
+    ],
+    "native_classes": [
+      35,
+      35
+    ],
+    "second_comparison_uses_actual_new_base_and_fresh_alpha": true,
+    "no_alpha_refund_after_two_installs": true,
+    "independent_CUDA_phases": 306
+  },
+  "byte-cap": {
+    "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+    "actual_work_peak_and_attempt_IDs_not_refunded": true,
+    "case": "capacity",
+    "registered_cap": 19120722
+  },
+  "work-cap": {
+    "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+    "actual_work_peak_and_attempt_IDs_not_refunded": true,
+    "case": "capacity",
+    "registered_cap": 189925687
+  },
+  "no-cpu": {
+    "phases": 151,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3306,
+    "maximum_output_cells": 20,
+    "native_class_size": 35,
+    "install_cursor": 22,
+    "trained_nonzero_state": false,
+    "recurrent": false,
+    "independent_CPU_phases": 0,
+    "one_complete_root_publication": true,
+    "identical_device_objects_and_extents": true,
+    "peak_before_install": 18826145,
+    "peak_during_install": 18887202,
+    "deployment_work_before": 36487231,
+    "deployment_work_after": 338111728
+  }
+}

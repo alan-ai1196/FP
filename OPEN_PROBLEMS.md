@@ -53,11 +53,19 @@ trained/recurrent/range/nontransfer controls pass. Numerical closeness alone
 still cannot transfer reference wealth; a new half-range failure stops that
 identity even when the ordinary reference update remains legal.
 
-The active gaps are actual structural build/copy/install, complete device
-resources and the resulting target run/release integration. Do not reconstruct
-the now executed range or persistence components or add static cases as new
-prerequisites. `PAIRED_CUDA_CROSSED` supplies scoped evidence, not installation
-or model-science authority.
+The [registered resident CUDA installation](theory/proofs/OWNED_CUDA_INSTALLATION.md)
+now executes historical native selection, both fresh crossings and complete
+quiescent device-state checks before one root publication. The complete
+35-/774-/124-member audits, trained/recurrent states, successive installs,
+actual resource refusals and corruption controls pass. Existing CUDA objects
+and initialized extents remain unchanged; the entire arena already belongs
+to both roles. No general cross-device or numerical transport is inferred.
+
+The active gaps are complete device resources and owned target policy/run/
+release integration. Do not reconstruct the now executed range, persistence
+or installation components or add static cases as new prerequisites.
+`INSTALLED_CUDA` states that scoped transition; it is not model-science or
+complete device-resource authority.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

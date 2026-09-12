@@ -167,7 +167,8 @@ Injected failures are identified as injections, not naturally occurring OOMs.
 
 Current-domain target range and fresh same-path CUDA evidence now execute
 through the same Runtime; see [the scoped proof](OWNED_CUDA_PERSISTENCE.md).
-Actual build/copy/install relations and full device resource closure remain
-active work. This prefix implementation issues
+The [resident CUDA installation](OWNED_CUDA_INSTALLATION.md) now also executes
+from owned selection and both crossings. Full device resources and owned
+target policy/run/release remain active work. This prefix implementation issues
 neither `CERTIFIED_COMPLETE` nor a model-science release. Do not restart the
 static PRODUCT/SUM/range/precision study or reconstruct the existing learners.

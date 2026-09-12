@@ -1,6 +1,6 @@
-"""Owned construction, causal events, reference selection, evidence and CPU install.
+"""Owned construction, causal events, reference selection, evidence and installation.
 
-Actual AMP installation and release closure remain open.
+Registered CPU/CUDA installation executes; complete target release remains open.
 This endpoint never issues CERTIFIED_COMPLETE or accepts helper
 certificates as installation authority. Its packed-payload machine contract is
 not a measurement of total host/device memory or elapsed computation.
@@ -30,9 +30,10 @@ from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, CUDA
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
-from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix
+from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix, widened_state
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
+from .cuda_installation import CudaInstallAttempt, CudaInstallReceipt, CudaInstallResult, prepare_transport, verify_transport
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
@@ -289,7 +290,7 @@ class RuntimeSnapshot:
 @guard_host_allocations
 class ReferenceCompilerRuntime:
     recovery_phase = 'native-construction-causal-reference'
-    # Both complete CPU installation and terminal run closure use this fixed
+    # Complete CPU/CUDA installation and terminal run closure use this fixed
     # frame. Adding a scheduler/job/cache requires an explicit transition
     # argument; an unknown coordinate cannot inherit either authority.
     _root_fields = frozenset({
@@ -320,6 +321,10 @@ class ReferenceCompilerRuntime:
                 raise ContractError('the CPU install/run policy has no transition proof for a target CUDA root')
             if contract.reference_integer_bits < 1075:
                 raise ArithmeticUnresolved('registered CUDA relation decoding exceeds the reference integer budget')
+            if cuda.install is not None:
+                if (sys.implementation.name != 'cpython' or online.persistence is None or not online.searches
+                        or not {REFERENCE_PATH, CUDA_PATH}.issubset(r.score_path for r in online.persistence.rules)):
+                    raise ContractError('CUDA install requires serialized CPython, owned native selection and both fresh score paths')
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
@@ -941,7 +946,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         if operation in ('construct', 'retire'):
             role = self._contract.work_roles['construct']
         elif operation == 'install':
-            role = self._online.cpu_install.work_role
+            registration = self._cuda.contract.install if self._cuda is not None else self._online.cpu_install
+            role = registration.work_role
         elif operation in ('query', 'admit-persistence', 'cancel-persistence',
                            'start-search', 'advance-search', 'cancel-search'):
             role = self._event_router.snapshot()['information']
@@ -2351,34 +2357,54 @@ after all fallible construction, checks and physical preparation complete.
         if self._cuda is not None:
             return CpuInstallResult('UNRESOLVED', None, None, self._cursor,
                                     'CPU install cannot transfer or omit the registered actual CUDA prefix')
-        for value in (candidate_id, proposal_proof_id, reference_identity, float64_identity):
-            name(value, 'owned CPU installation identity')
-        registration = self._online.cpu_install
+        return self._install_owned(candidate_id, proposal_proof_id, reference_identity, float64_identity, FLOAT64_PATH)
+
+    def install_cuda(self, candidate_id: str, *, proposal_proof_id: str,
+                     reference_identity: str, cuda_identity: str) -> CudaInstallResult:
+        """Publish an owned complete CUDA learner by registered resident identity transport."""
+        return self._install_owned(candidate_id, proposal_proof_id, reference_identity, cuda_identity, CUDA_PATH)
+
+    def _install_owned(self, candidate_id, proposal_proof_id, reference_identity, physical_identity, path):
+        self._require_online()
+        self._require_idle()
+        if path not in (FLOAT64_PATH, CUDA_PATH):
+            raise ContractError('unregistered physical installation path')
+        cuda = path == CUDA_PATH
+        if not cuda and self._cuda is not None:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor,
+                                    'CPU install cannot transfer or omit the registered actual CUDA prefix')
+        result_type = CudaInstallResult if cuda else CpuInstallResult
+        attempt_type = CudaInstallAttempt if cuda else CpuInstallAttempt
+        receipt_type = CudaInstallReceipt if cuda else CpuInstallReceipt
+        installed = 'INSTALLED_CUDA' if cuda else 'INSTALLED_CPU'
+        for value in (candidate_id, proposal_proof_id, reference_identity, physical_identity):
+            name(value, 'owned installation identity')
+        registration = (None if self._cuda is None else self._cuda.contract.install) if cuda else self._online.cpu_install
         if registration is None:
-            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'no registered CPU install transition')
+            return result_type('UNRESOLVED', None, None, self._cursor, 'no registered CUDA install transition' if cuda else 'no registered CPU install transition')
         registration.__post_init__()
         # Fixed transition schema: a future scheduler/job/cache coordinate
         # cannot silently acquire this version's quiescence/frame proof.
         if set(self.__dict__) != self._root_fields:
-            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'CPU install has no transition proof for an unregistered Runtime state coordinate')
+            return result_type('UNRESOLVED', None, None, self._cursor, 'install has no transition proof for an unregistered Runtime state coordinate')
         if self._cursor % self._online.learner.update_unit:
-            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
+            return result_type('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
         # Unknown strings cannot become arbitrarily large owned diagnostics.
         # Historical/current authority checks still follow independently.
         if candidate_id not in self._candidates or proposal_proof_id not in self._reference_proofs:
-            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'no owned target or completed reference-class proposal')
-        if reference_identity not in self._persistence_identities or float64_identity not in self._persistence_identities:
+            return result_type('UNRESOLVED', None, None, self._cursor, 'no owned target or completed reference-class proposal')
+        if reference_identity not in self._persistence_identities or physical_identity not in self._persistence_identities:
             raise ContractError('unknown owned persistence identity')
         try:
             self._admit_control('install')
         except ResourceExceeded as exc:
-            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, str(exc))
+            return result_type('UNRESOLVED', None, None, self._cursor, str(exc))
         attempt_id = f'{self._runtime_id}:install:{self._next_install}'
         self._next_install += 1
         revision_before = self._revision
         self._revision += 1
-        attempt = CpuInstallAttempt(attempt_id, self._cursor, self._deployed_id, candidate_id,
-            proposal_proof_id, reference_identity, float64_identity, 'PREPARING')
+        attempt = attempt_type(attempt_id, self._cursor, self._deployed_id, candidate_id,
+            proposal_proof_id, reference_identity, physical_identity, 'PREPARING')
         self._install_attempts.append(attempt)
         stage_owner = f'{attempt_id}:workspace'
         target_owner, old_owner = f'{attempt_id}:deployment', f'{attempt_id}:old-shadow'
@@ -2399,9 +2425,10 @@ after all fallible construction, checks and physical preparation complete.
                     or proof.winner_lineage_id != candidate_id or candidate_id == self._deployed_id
                     or proof.base_lineage_id != self._deployed_id or search.best_candidate_id != candidate_id):
                 raise ProfileUnresolved('installation target is not the owned selected reference-class proposal')
-            paired = self.paired_persistence_result(reference_identity, float64_identity)
-            if paired.status != 'PAIRED_CPU_CROSSED':
-                raise ProfileUnresolved('both current same-path CPU persistence crossings are required')
+            paired = (self.paired_cuda_persistence_result(reference_identity, physical_identity) if cuda else
+                      self.paired_persistence_result(reference_identity, physical_identity))
+            if paired.status != ('PAIRED_CUDA_CROSSED' if cuda else 'PAIRED_CPU_CROSSED'):
+                raise ProfileUnresolved('both current same-path persistence crossings are required')
             persistence = self._persistence_identities[reference_identity]
             row = next((r for r in search.rows if r.candidate_id == candidate_id), None)
             if (persistence.candidate_lineage_id != candidate_id or row is None
@@ -2410,13 +2437,25 @@ after all fallible construction, checks and physical preparation complete.
                 raise ProfileUnresolved('fresh evidence did not start from the selected proposal and its comparator')
             before = tuple(self._candidates.values())
             target, base = self._candidates[candidate_id], self._candidates[self._deployed_id]
+            transport = prepare_transport(self._cuda, before) if cuda else None
             for state in (target, base):
-                if state.learner.unit_count or state.float64.unit_count:
+                if state.learner.unit_count or state.float64 is not None and state.float64.unit_count:
                     raise ProfileUnresolved('installation requires both actual optimizer accumulators to be at a full boundary')
                 self._ledger.charge_work(registration.work_role,
                     {'work': relation_work(self._programs[state.program_id], self._contract.semantics)},
                     note=f'{attempt_id}:current-complete-state-bridge')
-                check_state(state.learner, state.float64, self._online.float64, bit_limit=self._contract.reference_integer_bits)
+                if state.float64 is not None:
+                    check_state(state.learner, state.float64, self._online.float64, bit_limit=self._contract.reference_integer_bits)
+                if cuda:
+                    raw = self._cuda_learner_record(state).raw_state
+                    if raw[3]:
+                        raise ProfileUnresolved('CUDA installation cannot erase an actual partial gradient unit')
+                    self._ledger.charge_work(registration.work_role,
+                        {'work': relation_work(self._programs[state.program_id], self._contract.semantics)},
+                        note=f'{attempt_id}:current-CUDA-state-bridge')
+                    check_state(state.learner, widened_state(raw),
+                        Float64Contract(self._cuda.contract.state_atol, self._cuda.contract.probability_atol),
+                        bit_limit=self._contract.reference_integer_bits)
             self._event_phase = 'installing'
             for owner, role in ((stage_owner, registration.workspace_role), (target_owner, 'deployment'), (old_owner, 'compiler')):
                 self._ledger.register_owner(owner, role)
@@ -2434,7 +2473,7 @@ after all fallible construction, checks and physical preparation complete.
             searches = dict(self._searches)
             invalidated, stopped = [], []
             for key, identity in self._persistence_identities.items():
-                if identity.status not in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+                if identity.status not in LIVE_STATUSES:
                     continue
                 obj = f'{attempt_id}:{key}:state:{identity.generation+1}'
                 successor = replace(identity, status='UNRESOLVED', generation=identity.generation+1,
@@ -2460,16 +2499,18 @@ after all fallible construction, checks and physical preparation complete.
             receipt_id = f'{attempt_id}:receipt'
             moves.append((stage_owner, self._data_owner, receipt_id, 1))
             close = (target.physical_owner, base.physical_owner, stage_owner)
-            completed = replace(attempt, status='INSTALLED_CPU', reason='owned complete CPU root and buffer leases published at the same cursor')
-            receipt = CpuInstallReceipt(completed, revision_before, self._revision, before, tuple(candidates.values()),
-                tuple(moves), tuple(releases), close, tuple(invalidated), tuple(stopped), receipt_id)
+            completed = replace(attempt, status=installed, reason=('owned complete CPU/CUDA root and resident state published at the same cursor'
+                if cuda else 'owned complete CPU root and buffer leases published at the same cursor'))
+            receipt = receipt_type(completed, revision_before, self._revision, before, tuple(candidates.values()),
+                tuple(moves), tuple(releases), close, tuple(invalidated), tuple(stopped), receipt_id,
+                **({'cuda_transport': transport[-1]} if cuda else {}))
             policy_state = self._policy_state
             if self._policy_contract is not None:
                 index = next((i for i, stage in enumerate(policy_state.stages) if stage.status not in TERMINAL_STAGES), None)
                 stage = None if index is None else policy_state.stages[index]
                 if (not self._policy_running or stage is None or stage.status != 'INSTALLING'
                         or (stage.candidate_id, stage.proof_id, stage.reference_identity, stage.float64_identity)
-                        != (candidate_id, proposal_proof_id, reference_identity, float64_identity)):
+                        != (candidate_id, proposal_proof_id, reference_identity, physical_identity)):
                     raise ContractError('installation does not complete the owned current policy action')
                 stages = policy_state.stages
                 policy_state = self._next_policy_state(stages[:index]+(replace(stage, status='INSTALLED_CPU',
@@ -2478,7 +2519,8 @@ after all fallible construction, checks and physical preparation complete.
                 moves.append((stage_owner, self._data_owner, policy_state.object_id, 1))
                 releases.append((self._data_owner, self._policy_state.object_id, 1))
                 receipt = replace(receipt, ownership_moves=tuple(moves), releases=tuple(releases))
-            self._allocate(stage_owner, (self._machine.realize(receipt_id, 'prepared_cpu_install_receipt', receipt, self._chi),))
+            self._allocate(stage_owner, (self._machine.realize(receipt_id,
+                'prepared_cuda_install_receipt' if cuda else 'prepared_cpu_install_receipt', receipt, self._chi),))
             ledger = self._ledger.prepare_transfer(tuple(moves), tuple(releases), close)
             live = ledger.snapshot()['objects']
             buffers = {key: value for key, value in self._buffers.items() if key in live}
@@ -2492,8 +2534,11 @@ after all fallible construction, checks and physical preparation complete.
                     raise ContractError('installation changed a certified complete learner')
                 if any(buffers[obj] is not self._buffers[obj] for obj in prior.object_ids):
                     raise ContractError('installation substituted a learner buffer')
-            result = CpuInstallResult('INSTALLED_CPU', attempt_id, candidate_id, self._cursor,
-                'registered CPU transaction completed; past class selection and fresh two-path evidence remain distinct claims')
+            if cuda:
+                verify_transport(transport, self._cuda, before)
+            result = result_type(installed, attempt_id, candidate_id, self._cursor,
+                'registered CUDA identity transaction completed; no current class optimum or full device release'
+                if cuda else 'registered CPU transaction completed; past class selection and fresh two-path evidence remain distinct claims')
             next_root = dict(self.__dict__)
             next_root.update(_ledger=ledger, _router=CostRouter(ledger, self._contract.work_roles),
                 _event_router=CostRouter(ledger, self._event_router.snapshot()), _buffers=buffers,
@@ -2522,11 +2567,13 @@ after all fallible construction, checks and physical preparation complete.
                 reason=f'{type(exc).__name__}: {exc}'+(' ; cleanup: '+'; '.join(cleanup_errors) if cleanup_errors else ''))
             self._install_attempts[-1] = failed
             self._event_phase = 'idle'
-            if cleanup_errors:
+            if cuda and self._cuda.arena._failure is not None:
+                self._halt('CUDA-install-state', exc)
+            elif cleanup_errors:
                 self._halt('install-cleanup', RuntimeError(failed.reason))
             if not expected:
                 raise
-            return CpuInstallResult('UNRESOLVED', attempt_id, None, self._cursor, failed.reason)
+            return result_type('UNRESOLVED', attempt_id, None, self._cursor, failed.reason)
         # The only publication point. Everything fallible and the result
         # object have been prepared. The registered API has serialized calls;
         # crash recovery or concurrent external readers are not claimed.

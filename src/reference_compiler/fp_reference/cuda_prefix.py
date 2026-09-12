@@ -13,6 +13,7 @@ from .program import Product, Sum, rational
 from .resources import ResourceExceeded
 from .semantics import ArithmeticUnresolved
 from .cuda_range import FORWARD_ID, check_forward, widen
+from .cuda_installation import CudaInstallContract
 from .float64_bridge import Float64Contract, check_state, check_prediction
 from .float64_learner import Float64LearnerState, Float64Evaluation
 from .cuda_storage import CudaArena, CudaStorageContract, CudaStorageUnresolved
@@ -28,6 +29,7 @@ class CudaPrefixContract:
     phase_evidence_bytes: int = 131072
     execution_identity: tuple = ('2.12.0+cu132', '7661cd9c6b841b62b7f411aa52ec51f05457263b',
                                  '13.2', 'NVIDIA GeForce RTX 3090', (8, 6))
+    install: CudaInstallContract | None = None
     backend_id: str = field(default=gpu.BACKEND_ID, init=False)
     work_model: str = field(default='prepaid-output-cells-packed-evidence-and-exact-forward-v2', init=False)
     forward_id: str = field(default=FORWARD_ID, init=False)
@@ -39,6 +41,10 @@ class CudaPrefixContract:
         if type(self.storage) is not CudaStorageContract:
             raise ContractError('immutable physical CUDA storage contract required')
         self.storage.__post_init__()
+        if self.install is not None:
+            if type(self.install) is not CudaInstallContract:
+                raise ContractError('immutable registered CUDA installation required')
+            self.install.__post_init__()
         for key in ('state_atol', 'probability_atol'):
             object.__setattr__(self, key, rational(getattr(self, key), 'registered CUDA '+key))
         for key in ('phase_output_cells', 'phase_evidence_bytes'):
@@ -55,7 +61,7 @@ class CudaPrefixContract:
 class CudaRunManifest:
     reference: object
     cuda: CudaPrefixContract
-    target_amp: str = field(default='registered CUDA prefix/range/same-path evidence; complete bridge/install/release UNRESOLVED', init=False)
+    target_amp: str = field(default='registered CUDA prefix/range/evidence and optional resident installation; full device resource/run/release UNRESOLVED', init=False)
 
 
 @dataclass(frozen=True)

@@ -78,10 +78,27 @@ wealth inequalities, plus six range recomputations on a trained 12-event
 path beside CPU binary64. A reference-only crossing, future half range
 failure and injected one-ULP forecast mismatch remain explicit refusals.
 
-`PAIRED_CUDA_CROSSED` is a conditional same-path evidence result. Actual
-structural build/copy/install and complete device resources remain OPEN;
-target install and model science remain HOLD. This is no new CPU freeze or
-all-kernel theorem, and it introduces no new semantic architecture action.
+`PAIRED_CUDA_CROSSED` is a conditional same-path evidence result. The next
+[owned CUDA installation](theory/proofs/OWNED_CUDA_INSTALLATION.md) now checks
+historical native selection, both current crossings and the complete actual
+device state. Registered resident identity transport preserves all CUDA
+objects and extents; one serialized root publication changes deployment,
+transfers packed-buffer roles and ends old search/persistence authority.
+Whole-arena resource roles were shared from birth and remain unchanged.
+
+The actual endpoint audit installs complete 35-/774-/124-member classes,
+including nonzero learned parameters and two-position delayed queues. Its
+151/870/240 CUDA phases and optional CPU paths have independent replays.
+Two successive installs at cursors 22 and 38 retain fresh identities and
+spent alpha. Actual byte/work caps and pending work refuse preparation;
+state-shape corruption revokes old crossings, and a view beyond its owned
+extent is rejected before numeric access. The common CPU/CUDA transaction
+also passes the complete CPU install, owned-policy, host-failure and run
+regressions. Read `scripts/audit_cuda_installation.py` and its minimal evidence.
+
+Complete device resource accounting and owned target policy/run/release
+integration remain OPEN; model science remains HOLD. This is no new CPU
+freeze or all-kernel theorem, and it adds no semantic architecture action.
 
 ## Status at GitHub migration (2026-09-06)
 

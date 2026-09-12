@@ -45,8 +45,18 @@ also execute through this Runtime. Register a `PersistenceRule` with
 `paired_cuda_persistence_result`. The root owns full-domain bounds and
 checks actual forecasts against the exact mixed rounding schedule; no
 caller-supplied range or device state is accepted. Run
-`scripts/audit_cuda_persistence.py`. Actual device install and complete
-resource accounting remain the active frontier; science stays HOLD.
+`scripts/audit_cuda_persistence.py`.
+
+Register `CudaPrefixContract(install=CudaInstallContract(...))` from
+`fp_reference.cuda_installation` to enable `install_cuda(candidate_id,
+proposal_proof_id=..., reference_identity=..., cuda_identity=...)`. Runtime
+checks owned historical selection, both fresh crossings, actual initialized
+device extents and full states before one combined root/lease publication.
+The CUDA learner objects retain identity; old searches and evidence stop
+with history and alpha preserved. Read
+[owned CUDA installation](../../theory/proofs/OWNED_CUDA_INSTALLATION.md) and
+run `scripts/audit_cuda_installation.py`. Complete device resources and owned
+target policy/run/release integration remain the frontier; science stays HOLD.
 
 ## Current executable recovery (2026-09-12)
 

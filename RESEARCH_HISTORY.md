@@ -2298,3 +2298,76 @@ not reissue the frozen 21-script CPU release or grant a new target release.
 build/copy/install, full device resources and target run integration are
 next; `PAIRED_CUDA_CROSSED` is only conditional same-path evidence. No
 Foundation/ERC change or additional static architecture case is needed.
+
+## 74. Prove and execute resident CUDA installation (2026-09-13)
+
+Installation does not require a new semantic architecture action. In the
+current registered realization, candidate and incumbent already coexist in
+one actual arena; its entire allocation and allocator reservation belong
+to both roles from birth, once globally. Their complete CUDA learners can
+therefore retain object identity through a deployment change. This is a
+physical transition argument for that realization, not a general assertion
+that model installation has no copying or resource costs.
+
+`CudaInstallContract` now registers that transport in the immutable CUDA
+manifest. Runtime checks its historical native winner, independently current
+reference/CUDA crossings and matching complete starts. The proposal maximum
+belongs to its original constructor boundary; it is not asserted to remain
+a current optimum after fresh learning. Same-graph newborns cannot inherit
+the selected lineage, starts or wealth.
+
+The device frame checks the registered stream is quiescent, the arena has
+no active phase and its settings/allocation history remain valid. Every
+current candidate must retain its owned device phase and complete learner.
+Initialized extent ownership precedes numeric readback, then metadata and
+raw state are checked. All old/current/staged/forecast objects and the full
+arena history stay in the private frame. Target and old base also satisfy
+their current reference/CUDA relations at a complete optimizer boundary;
+optional CPU binary64 state is preserved and checked.
+
+One common private root transaction now implements CPU and CUDA installation.
+All fallible checks, readback, packed metadata allocations and lease
+preparation precede one complete root publication. CUDA objects and extents
+stay identical. The target becomes deployment, the incumbent a retained
+shadow, and all old live persistence and continuing searches close together.
+History and alpha remain; initialization-phase extent labels retain their
+provenance instead of becoming fictitious exclusive resource-role leases.
+
+Failure testing exposed why raw-value identity alone is inadequate. An
+injected gradient shape change preserves its bytes but invalidates complete
+learner state. Such observed corruption now halts the prefix and makes old
+crossings unusable, even though no new deployment was published. Another
+injected view crosses its initialized extent; ownership must reject it
+before numeric readback can inspect that unowned range. A pending external
+kernel prevents installation's quiescence premise. Benign late/unknown-frame
+failures preserve old learners/evidence/frontiers and permit a new paid
+attempt, retaining work, peaks and unrecycled physical IDs.
+
+The actual endpoint completely evaluates classes of 35, 774 and 124 native
+members. Their installed continuations have 151, 870 and 240 independently
+replayed CUDA phases alongside the same CPU binary64 counts. The larger
+case installs nonzero learned parameters at cursor 18; the recurrent class
+preserves both delayed positions. Observational tracing sees the old root
+and then one complete new root. All retained actual device objects, extents
+and lifetime allocation counters are identical across publication.
+Another 35-member run omits the optional CPU binary64 learners and still
+checks 151 CUDA phases through installation and later ordinary learning.
+
+A continued Runtime installs twice at 22 and 38 after two complete
+35-member selections. The second starts at 24 against the actual new
+baseline with fresh identities and wealth one. Both receipts remain; four
+alpha allocations consume 3/4 and a later admission is refused. An
+independent rounded replay checks all 306 CUDA phases. Real immutable byte
+and work caps refuse installation preparation even when existing model
+buffers fit. These tests retain only a compact aggregate evidence file.
+
+The complete CPU installation, owned Compiler policy, host-allocation and
+finite-run regressions pass with the shared transaction. This does not
+reissue the frozen CPU release. The last owned-policy bounded fault hook
+had to follow the transaction body from `install_cpu` to `_install_owned`;
+its intended nested host failure then passes in the unchanged 64 MiB job.
+The full CUDA prefix and persistence regressions also pass.
+`OWNED_CUDA_INSTALLATION.md` fixes the
+scoped theorem and executed evidence. Full device resource accounting and
+owned target policy/run/release integration remain the active frontier;
+model science remains HOLD. The unified resource law and ERC-1 stay frozen.

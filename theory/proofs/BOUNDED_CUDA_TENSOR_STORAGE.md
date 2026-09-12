@@ -118,6 +118,8 @@ artifact. The audit stores no weights, datasets or full tensor tapes.
 
 The subsequent [Runtime-owned AMP prefix](OWNED_CUDA_PREFIX.md) now executes
 immutable physical registration, prepaid evidence, continuous private device
-learners, per-event relations and joint reference/device publication. Target
-range, fresh same-path persistence, build/copy/install and total-device
-accounting still need their own closure. Model science remains HOLD.
+learners, per-event relations and joint reference/device publication.
+Separate [range/persistence](OWNED_CUDA_PERSISTENCE.md) and
+[resident installation](OWNED_CUDA_INSTALLATION.md) now execute their own
+owned obligations. Complete device resources and target run/release remain
+open. Model science remains HOLD.

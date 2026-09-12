@@ -13,8 +13,13 @@ also runs [current CUDA range and fresh same-path persistence](../theory/proofs/
 through `admit_cuda_persistence`, `cuda_persistence_result`,
 `cancel_cuda_persistence` and `paired_cuda_persistence_result`. This adds a
 separate score path and alpha allocation on the same owned fresh ingress;
-it does not transfer CPU evidence or authorize target installation. Actual
-build/copy/install and complete device resources remain the target frontier.
+it does not transfer CPU evidence. With a preregistered `CudaInstallContract`,
+`install_cuda` now separately checks historical proposal provenance, both
+current crossings, actual initialized device extents and complete states.
+Its [resident identity transport](../theory/proofs/OWNED_CUDA_INSTALLATION.md)
+publishes one complete root, preserves CUDA objects and invalidates old
+search/persistence authority without alpha refunds. Complete device resources
+and owned target policy/run/release integration remain the frontier.
 
 ## What the endpoint now executes
 

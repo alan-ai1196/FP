@@ -131,10 +131,28 @@ rounding; one ULP of forecast corruption passes the reference tolerance but
 fails exact conformance. `PAIRED_CUDA_CROSSED` is owned conditional evidence,
 not a complete bridge or install token. Run `scripts/audit_cuda_persistence.py`.
 
-Continue with actual build/copy/install and full device resource accounting.
-CPU installation and its owned run policy still refuse a CUDA root. Do not
-rebuild range/persistence or resume static cases to defer these target steps.
-The complete AMP release remains open; science remains HOLD.
+The [owned same-device installation](theory/proofs/OWNED_CUDA_INSTALLATION.md)
+now also executes. Register `CudaPrefixContract(install=CudaInstallContract(...))`
+and use `install_cuda` with owned proposal/reference/CUDA identities. The
+selected continuous learner keeps the original CUDA objects and extents;
+the full arena already belongs to both resource roles. Paid readback checks
+establish initialized ownership before numeric access, complete state and
+quiescence before one complete root publication. Old searches and persistence
+lose authority without losing history or refunding alpha.
+
+`scripts/audit_cuda_installation.py` passes complete classes of 35, 774 and
+124 members, with 151, 870 and 240 independent CUDA/CPU phase checks. The
+larger class installs nonzero trained state; the recurrent class keeps its
+full queues. Two further installations at 22 and 38 retain both generations
+and consume fresh alpha. Actual preparation caps, late failure/retry, pending
+work and state/extent corruption have negative controls.
+
+Continue with complete device resources and owned target policy/run/release
+integration. CPU installation and its owned run policy still refuse a CUDA
+root; the new registered device transition has its own precise scope. Do
+not rebuild range/persistence/installation or resume static cases to defer
+the remaining target steps. The complete AMP release remains open; science
+remains HOLD.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

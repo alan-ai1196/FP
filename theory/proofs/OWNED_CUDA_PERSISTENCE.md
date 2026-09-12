@@ -196,7 +196,9 @@ same-path statistics crossed. It is neither `CERTIFIED_COMPLETE` nor
 installation authority. Failed first-crossing retention, later learner
 failure, retirement and cancellation leave spent alpha and history, with
 no current claim or wealth recycling. CPU install continues to refuse a
-CUDA root; target build/copy/install and complete resource closure are next.
+CUDA root. The separate [resident installation](OWNED_CUDA_INSTALLATION.md)
+now executes its own full transition checks from these owned identities;
+complete device resource/run/release closure remains open.
 
 ## 5. Minimal executed evidence
 

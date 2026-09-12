@@ -277,7 +277,8 @@ def native_failure(host):
         caller = inspect.currentframe().f_back
         # Lose a real backend premise at the nested public relation read
         # inside install, after admission/work but before root publication.
-        if caller.f_code.co_name == 'guarded' and caller.f_back.f_code.co_name == 'install_cpu':
+        if (caller.f_code.co_name == 'guarded'
+                and caller.f_back.f_code is ReferenceCompilerRuntime._install_owned.__code__):
             hits.append(True)
             raise HostExecutionUnresolved('injected loss of nested native observation')
         return observe(self)
