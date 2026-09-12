@@ -1029,3 +1029,54 @@ with 2/3/5 labels in one shifted bank. It rejects wrong leading values,
 wrong supports and false cap premises. Read `CONDITIONAL_COEFFICIENT_PATHS.md`.
 Generic phase/amplitude search, sharp full resource costs and registered
 value/physical/AMP paths remain open. Foundation semantics are unchanged.
+
+## 46. SUM accuracy follows an arithmetic trichotomy (2026-09-12)
+
+The complete path theorem made it possible to ask for the cost of every
+fixed-PRODUCT approximation, rather than another special decoder. A fixed
+mass path, cap contraction and hidden rescaling have coefficient magnitudes
+bounded above and below by powers of epsilon. Relative downward rounding
+therefore needs O(log(1/delta)) coefficient bits. Positive halving/Horner
+graphs convert this into O(log(1/delta)) SUM nodes and edges while retaining
+the original normalizer and activation caps. The result is pointwise in
+the given target and path; it does not acquire either for free.
+
+The first matching lower used rational arithmetic. All local graph masses
+have denominator dividing L_s^(2^P)*2^(S*2^P), where L_s is the common
+source denominator. A rational target with denominator B is either exactly
+equal or separated by at least 1/(B*R*D), for that mass denominator D.
+Shared squaring attains the 2^P exponent and must be counted. Positivity
+also bounds the visible source-monomial coefficients, making the observed
+mass set finite at fixed P,S,R even with arbitrary finite SUM arity.
+
+The lower extends beyond rational tables. For fixed algebraic data, clear
+their fixed denominators in a prediction residual and take its field norm.
+It is a nonzero integer; the other embeddings are bounded using the positive
+coefficient bound in the actual real embedding. This gives error at least
+C_*2^(-e*S*2^P), e the fixed field degree. The resulting trichotomy is:
+positive closure gap, eventual minimum exact local SUM count, or
+Theta(log(1/delta)) for nonexact closure points. The same order holds for
+inverse CE tolerance. This proves an asymptotic classification, not an
+implemented classifier for arbitrary target tables.
+
+Several attacks clarify what the law actually says. Source one and target
+(5/8,3/8) at cap 8/3 force the nondyadic excess 2/3: real zero-PRODUCT
+exactness coexists with local-alphabet nonattainment at every finite PRODUCT
+count. Any positive cap slack restores exact local realization. Letting
+PRODUCT count grow also changes accuracy cost. A positive geometric-product
+construction has 2n-1 PRODUCTs, 2n+3 SUMs and error
+3*tau/(32-8*tau), tau=2^(-2^(n+1)), with the same cap and activations <=1.
+It uses O(log log(1/error)) graph nodes; its direct exact significand still
+has Theta(log(1/error)) bits. Factorially sparse dyadic series give separate
+transcendental-source/target counterexamples to a general-real logarithmic
+lower. Removing the cap with unpriced SUM arity also admits a constant-node
+limit on a strictly positive rational task.
+
+The audit verifies 120 rational shared graphs and relative perturbations,
+192 exact norm/gap identities on 32 Q(sqrt(2)) graphs, corrected decoder
+quantizations, six arithmetic-cap comparisons, eight geometric precision
+graphs and the hypothesis counterexamples. Its generic decoder quantizer
+does not replace the stronger specialized 13k+6 construction. Read
+`SUM_ACCURACY_COMPLEXITY.md`. Sharp joint node/precision costs, efficient
+generic phase/amplitude classification and the registered physical/value/
+AMP path remain open. The proof adds no FP semantic primitive.

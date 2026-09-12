@@ -2030,6 +2030,75 @@ configurations and 64 arbitrary shared paths; it also checks cap corrections,
 targets. These are static theorem witnesses, not Runtime/AMP authority. Proof:
 [`CONDITIONAL_COEFFICIENT_PATHS.md`](theory/proofs/CONDITIONAL_COEFFICIENT_PATHS.md).
 
+## XVII.29. SUM accuracy has a general arithmetic resource law
+
+Fix finite complete nonnegative sources, at most P binary PRODUCTs, base
+one in k>=2 labels and finite normalizer cap R>k. Count all weighted SUM
+nodes S, including final excess readouts, with local alphabet {1/2,1,2}.
+Every prediction closure point has a finite delta-accurate graph using
+**O(log(1/delta)) SUMs**, at the same cap and PRODUCT count. The upper also
+retains any activation cap A>=max(maximum_source_value,R-k)>0. Constants
+depend on the target's complete coefficient-path witness.
+
+XVII.28 gives a fixed-structure path with O(epsilon) error. Its positive
+weights, including cap correction and hidden rescaling, have two-sided
+power bounds in epsilon. Downward dyadic rounding with relative error eta
+changes normalized probabilities by at most 2L*eta, where L bounds the
+mass polynomial degree in local coefficient slots. Choosing epsilon and
+eta proportional to delta requires O(log(1/delta)) bits per coefficient;
+actual halving/Horner SUMs implement them with that order of work.
+
+The matching lower is an arithmetic statement. For rational source values
+with common denominator L_s and rational target Q with denominator B,
+every local graph has all masses in the lattice with denominator
+
+`D=L_s^(2^P)*2^(S*2^P)`.
+
+Since every conditional normalizer numerator is <=R*D, either q=Q exactly
+or `||q-Q||_max >= 1/(B*R*D)`. The 2^P multiplicity cannot be removed:
+one halving followed by P shared squares attains denominator 2^(2^P).
+
+The same logarithmic lower order holds for **fixed algebraic source and
+target values**. Positivity bounds every visible source-monomial coefficient
+by a constant independent of S. After clearing the fixed algebraic
+denominators, a nonzero prediction residual has a nonzero integer field
+norm. Bounding its other conjugates gives
+`||q-Q||_max >= C_* * 2^(-e*S*2^P)`, e the fixed number-field degree,
+C_*>0. No irrational source or target is rounded before this claim.
+
+Thus algebraic data have a complete asymptotic trichotomy as delta tends
+to zero: a positive closure gap; eventual equality to the minimum exact
+local-alphabet SUM count; or **Theta(log(1/delta))** when the target is in
+closure but has no finite exact local realization. Uniform-context CE has
+the analogous Theta(log(1/rho)) nonattainment law. Which branch contains a
+general target remains a separate, unimplemented classification problem.
+Fixed P,S,R admit only finitely many observed mass tables even for arbitrary
+fixed real sources, by the bounded visible-coefficient lattice argument.
+
+The exact coefficient class matters already with no PRODUCTs. Source one,
+Q=(5/8,3/8) and cap 8/3 force excess (2/3,0), exact over real coefficients
+but impossible in every finite dyadic graph. Local zero-PRODUCT graphs
+approach it at that cap; every positive cap slack allows finite exactness.
+Allowing P to grow changes the SUM law: a positive geometric-product
+construction has P=2n-1, S=2n+3 and error
+`3*tau/(32-8*tau)`, tau=2^(-2^(n+1)), at the same cap with activations <=1.
+Both node counts are O(log log(1/error)); its direct binary significand
+still has Theta(log(1/error)) bits. Sharp joint resource costs remain open.
+
+Algebraicity cannot simply be dropped: factorially sparse dyadic series
+give transcendental source or target examples with sublogarithmic accuracy
+subsequences, at cap three and P=0. Removing the cap while leaving SUM arity
+unpriced also permits a constant-node-count nonexact limit on a rational,
+strictly positive task. These examples retain their complete resource scope.
+
+The exact audit checks 120 rational shared graphs and coefficient perturbations,
+192 integer-norm/gap identities over 32 Q(sqrt(2)) graphs, finite corrected
+decoder quantizations, the arithmetic cap boundary, and the hypothesis
+counterexamples. The specialized decoder retains smaller constants in its
+SUM upper bound. Full value acquisition, physical construction and AMP are
+separate from these static bounds. Proof:
+[`SUM_ACCURACY_COMPLEXITY.md`](theory/proofs/SUM_ACCURACY_COMPLEXITY.md).
+
 ---
 
 # XVIII. Reference Compiler contract

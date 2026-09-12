@@ -286,3 +286,7 @@ paths remain open. All closure claims are for the declared static grammar.
 
 Audit: `theory/numerical_checks/conditional_coefficient_paths_audit.py`.
 Minimal evidence: `evidence/minimal/FP_CONDITIONAL_COEFFICIENT_PATHS_AUDIT.json`.
+
+`SUM_ACCURACY_COMPLEXITY.md` quantifies this density: fixed-P finite-cap
+closure points have O(log(1/error)) local SUM constructions, with a matching
+lower order for nonexact local realization on fixed algebraic data.

@@ -168,6 +168,26 @@ paths remain open. A constant support pattern for variable feature values
 does not restore frozen-bank completeness: the positive shifted two-bit
 banks are jointly exactly universal although each fixed bank fails.
 
+XVII.29 closes the general fixed-PRODUCT SUM accuracy **order** at finite
+normalizer cap. Every closure point admits O(log(1/delta)) local-{1/2,1,2}
+SUM construction. For fixed algebraic sources and targets, a nonexact local
+closure point necessarily costs Theta(log(1/delta)), also logarithmic in
+inverse CE tolerance. The full asymptotic alternatives are positive gap,
+eventually minimum exact SUM count, or this logarithmic growth. Generic
+classification into those alternatives, efficient amplitude/value acquisition
+and sharp target-dependent constants remain open. Exact realization over
+real coefficients is insufficient to decide the exact local-alphabet branch:
+Q=(5/8,3/8) at cap 8/3 already separates them with zero PRODUCTs.
+
+Sharp **joint** SUM/PRODUCT/precision costs remain unresolved. A positive
+geometric-product construction for that same task attains error exponential
+in -2^n with 2n-1 PRODUCTs and 2n+3 SUMs, retaining cap 8/3 and activation
+cap one. Its direct significand has order 2^n bits. The separate fixed-P
+rate therefore cannot be extrapolated while P grows. Arbitrary transcendental
+data can violate the logarithmic lower along accuracy subsequences, and
+unpriced arity plus unbounded range can hide all growth outside SUM node
+count. Complete physical/numerical/registered-value costs remain open.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.

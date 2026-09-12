@@ -476,6 +476,24 @@ over positive targets of every finite label count, despite its fixed support
 pattern. Full variable-parent counts and registered value/physical/AMP paths
 remain open.
 
+XVII.29 turns free-SUM closure into a general construction-cost law. At
+fixed PRODUCT budget and finite normalizer cap, every closure point has
+a same-cap local-{1/2,1,2} approximation with O(log(1/delta)) SUM nodes.
+For fixed algebraic source and target values, this is also a lower bound
+unless exact local realization is possible: the full trichotomy is a
+positive gap, an eventually constant minimum exact SUM count, or
+Theta(log(1/delta)). Read `SUM_ACCURACY_COMPLEXITY.md`. Rational data give
+an explicit denominator bound; a field-norm argument covers algebraic
+irrational data without rounding them away. A one-context target (5/8,3/8)
+at cap 8/3 already distinguishes real exactness from local-alphabet
+nonattainment. With growing PRODUCT count, a positive geometric construction
+achieves O(log log(1/error)) SUM/PRODUCT nodes at that same cap, while its
+direct numerical significand still grows logarithmically. Transcendental
+data and unbounded range with unpriced arity give explicit counterexamples
+to broader lower claims. Generic exact/closure branch classification,
+sharp constants and joint/full resource costs remain open; the new audit
+is exact rational/number-field graph verification, not Runtime authority.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

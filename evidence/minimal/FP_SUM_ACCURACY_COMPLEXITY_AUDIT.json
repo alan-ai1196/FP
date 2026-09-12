@@ -1,0 +1,370 @@
+{
+  "status": "PASS",
+  "scope": "fixed finite sources, scalar SUM/binary PRODUCT DAGs, base one per label, finite normalizer cap, local weights {1/2,1,2}; supplied-graph bounds and constructions, not generic exactness/closure classification",
+  "fixed_algebraic_data_SUM_trichotomy": [
+    "positive closure gap",
+    "eventually minimum exact SUM count",
+    "Theta(log(1/delta)) for nonexact closure points"
+  ],
+  "universal_pointwise_upper": "O(log(1/delta)), same finite cap and PRODUCT count",
+  "arithmetic_and_relative_rounding": {
+    "arbitrary_native_lattice_checks": 120,
+    "nonexact_rational_comparisons": 120,
+    "relative_coefficient_perturbation_checks": 120,
+    "exact_alternative_checked": true,
+    "shared_square_meshes": [
+      {
+        "PRODUCTs": 0,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 1
+      },
+      {
+        "PRODUCTs": 1,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 2
+      },
+      {
+        "PRODUCTs": 2,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 4
+      },
+      {
+        "PRODUCTs": 3,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 8
+      },
+      {
+        "PRODUCTs": 4,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 16
+      },
+      {
+        "PRODUCTs": 5,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 32
+      },
+      {
+        "PRODUCTs": 6,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 64
+      },
+      {
+        "PRODUCTs": 7,
+        "SUMs": 1,
+        "exact_denominator_power_of_two": 128
+      }
+    ],
+    "false_meshes_ignoring_reuse_rejected": 7
+  },
+  "algebraic_number_field_extension": {
+    "field": "Q(sqrt(2))",
+    "field_degree": 2,
+    "native_graphs": 32,
+    "exact_integer_norm_and_probability_gap_checks": 192,
+    "irrational_sources_and_targets_retained_exactly": true,
+    "negative_conjugates_retained": true,
+    "exact_algebraic_alternative_checked": true,
+    "general_nonzero_gap_form": "C_star*2^(-e*S*2^P)"
+  },
+  "general_quantization_of_decoder_path": {
+    "finite_native_graphs": [
+      {
+        "probability_tolerance": "2^(-1)",
+        "epsilon_power": 3,
+        "rounding_precision": 10,
+        "SUMs": 198,
+        "PRODUCTs": 9,
+        "actual_probability_error": "975058/20665521",
+        "normalizer_at_most_9": true,
+        "all_activations_at_most_1": true
+      },
+      {
+        "probability_tolerance": "2^(-4)",
+        "epsilon_power": 6,
+        "rounding_precision": 16,
+        "SUMs": 324,
+        "PRODUCTs": 9,
+        "actual_probability_error": "6666213442/691479678249",
+        "normalizer_at_most_9": true,
+        "all_activations_at_most_1": true
+      },
+      {
+        "probability_tolerance": "2^(-8)",
+        "epsilon_power": 10,
+        "rounding_precision": 24,
+        "SUMs": 492,
+        "PRODUCTs": 9,
+        "actual_probability_error": "480554193697546/729268857399429549",
+        "normalizer_at_most_9": true,
+        "all_activations_at_most_1": true
+      },
+      {
+        "probability_tolerance": "2^(-16)",
+        "epsilon_power": 18,
+        "rounding_precision": 40,
+        "SUMs": 844,
+        "PRODUCTs": 9,
+        "actual_probability_error": "218714389052230561321258/84440398469000742295000345917",
+        "normalizer_at_most_9": true,
+        "all_activations_at_most_1": true
+      },
+      {
+        "probability_tolerance": "2^(-32)",
+        "epsilon_power": 34,
+        "rounding_precision": 72,
+        "SUMs": 1516,
+        "PRODUCTs": 9,
+        "actual_probability_error": "76658811589236378307897199822061293919012382/1939564668858213909685678587870111438235505183504210823",
+        "normalizer_at_most_9": true,
+        "all_activations_at_most_1": true
+      }
+    ],
+    "original_SUMs": 32,
+    "coefficient_slots": 35,
+    "maximum_coefficient_degree": 14,
+    "proved_linear_SUM_upper_for_delta_2_to_minus_m": "175*m+662",
+    "earlier_exact_exclusion": "P<=11 at cap nine; DECODER_EXACT_AND_LIMIT_COMPLEXITY.md",
+    "generic_rational_probability_lower_if_not_exact": "1/(81*2^(S*2^P))",
+    "stronger_specialized_upper_baseline": "S=13*k+6, error<=2^(-k)/3; generic quantizer is not cost-optimized"
+  },
+  "real_exact_versus_local_nonattainment": {
+    "target": [
+      "5/8",
+      "3/8"
+    ],
+    "minimum_cap": "8/3",
+    "PRODUCTs": 0,
+    "real_coefficient_exact_excess": "2/3",
+    "any_finite_local_PRODUCT_budget_still_not_exact_at_minimum_cap": true,
+    "finite_native_records": [
+      {
+        "precision": 1,
+        "same_cap_approximate_SUMs": 2,
+        "same_cap_probability_error": "1/40",
+        "slack_exact_cap": "3",
+        "slack_exact_SUMs": 8
+      },
+      {
+        "precision": 2,
+        "same_cap_approximate_SUMs": 2,
+        "same_cap_probability_error": "1/40",
+        "slack_exact_cap": "11/4",
+        "slack_exact_SUMs": 14
+      },
+      {
+        "precision": 4,
+        "same_cap_approximate_SUMs": 6,
+        "same_cap_probability_error": "1/168",
+        "slack_exact_cap": "43/16",
+        "slack_exact_SUMs": 20
+      },
+      {
+        "precision": 8,
+        "same_cap_approximate_SUMs": 14,
+        "same_cap_probability_error": "1/2728",
+        "slack_exact_cap": "683/256",
+        "slack_exact_SUMs": 32
+      },
+      {
+        "precision": 16,
+        "same_cap_approximate_SUMs": 30,
+        "same_cap_probability_error": "1/699048",
+        "slack_exact_cap": "174763/65536",
+        "slack_exact_SUMs": 56
+      },
+      {
+        "precision": 32,
+        "same_cap_approximate_SUMs": 62,
+        "same_cap_probability_error": "1/45812984488",
+        "slack_exact_cap": "11453246123/4294967296",
+        "slack_exact_SUMs": 104
+      }
+    ]
+  },
+  "PRODUCT_precision_tradeoff": {
+    "target": [
+      "5/8",
+      "3/8"
+    ],
+    "cap": "8/3",
+    "activation_cap": 1,
+    "exact_error_formula": "3*tau/(32-8*tau), tau=2^(-2^(n+1))",
+    "SUMs": "2*n+3",
+    "PRODUCTs": "2*n-1",
+    "accuracy_cost_order": "O(log log(1/delta_n))",
+    "native_graphs": [
+      {
+        "steps": 1,
+        "SUMs": 5,
+        "PRODUCTs": 1,
+        "tail_exponent_in_base_two": 4,
+        "excess_denominator_power_of_two": 3,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 2,
+        "SUMs": 7,
+        "PRODUCTs": 3,
+        "tail_exponent_in_base_two": 8,
+        "excess_denominator_power_of_two": 7,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 3,
+        "SUMs": 9,
+        "PRODUCTs": 5,
+        "tail_exponent_in_base_two": 16,
+        "excess_denominator_power_of_two": 15,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 4,
+        "SUMs": 11,
+        "PRODUCTs": 7,
+        "tail_exponent_in_base_two": 32,
+        "excess_denominator_power_of_two": 31,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 5,
+        "SUMs": 13,
+        "PRODUCTs": 9,
+        "tail_exponent_in_base_two": 64,
+        "excess_denominator_power_of_two": 63,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 6,
+        "SUMs": 15,
+        "PRODUCTs": 11,
+        "tail_exponent_in_base_two": 128,
+        "excess_denominator_power_of_two": 127,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 7,
+        "SUMs": 17,
+        "PRODUCTs": 13,
+        "tail_exponent_in_base_two": 256,
+        "excess_denominator_power_of_two": 255,
+        "same_cap_and_activation_bound": true
+      },
+      {
+        "steps": 8,
+        "SUMs": 19,
+        "PRODUCTs": 15,
+        "tail_exponent_in_base_two": 512,
+        "excess_denominator_power_of_two": 511,
+        "same_cap_and_activation_bound": true
+      }
+    ],
+    "sharp_joint_cost_not_claimed": true
+  },
+  "transcendental_data_counterexamples": {
+    "records": [
+      {
+        "series_terms": 2,
+        "rational_source_irrational_target_SUMs": 4,
+        "irrational_source_rational_target_SUMs": 5,
+        "next_tail_exponent": 6,
+        "SUM_over_log_accuracy_upper_for_first_example": "4/7",
+        "SUM_over_log_accuracy_upper_for_second_example": "5/6",
+        "exact_rational_interval_and_native_endpoint_checks": true
+      },
+      {
+        "series_terms": 3,
+        "rational_source_irrational_target_SUMs": 12,
+        "irrational_source_rational_target_SUMs": 13,
+        "next_tail_exponent": 24,
+        "SUM_over_log_accuracy_upper_for_first_example": "12/25",
+        "SUM_over_log_accuracy_upper_for_second_example": "13/24",
+        "exact_rational_interval_and_native_endpoint_checks": true
+      },
+      {
+        "series_terms": 4,
+        "rational_source_irrational_target_SUMs": 48,
+        "irrational_source_rational_target_SUMs": 49,
+        "next_tail_exponent": 120,
+        "SUM_over_log_accuracy_upper_for_first_example": "48/121",
+        "SUM_over_log_accuracy_upper_for_second_example": "49/120",
+        "exact_rational_interval_and_native_endpoint_checks": true
+      },
+      {
+        "series_terms": 5,
+        "rational_source_irrational_target_SUMs": 240,
+        "irrational_source_rational_target_SUMs": 241,
+        "next_tail_exponent": 720,
+        "SUM_over_log_accuracy_upper_for_first_example": "240/721",
+        "SUM_over_log_accuracy_upper_for_second_example": "241/720",
+        "exact_rational_interval_and_native_endpoint_checks": true
+      },
+      {
+        "series_terms": 6,
+        "rational_source_irrational_target_SUMs": 1440,
+        "irrational_source_rational_target_SUMs": 1441,
+        "next_tail_exponent": 5040,
+        "SUM_over_log_accuracy_upper_for_first_example": "1440/5041",
+        "SUM_over_log_accuracy_upper_for_second_example": "1441/5040",
+        "exact_rational_interval_and_native_endpoint_checks": true
+      }
+    ],
+    "infinite_series_and_nonexactness": "proved; not inferred from finite endpoints",
+    "first_error_upper": "2^(-1-(n+1)!)",
+    "second_error_upper": "2^(1-(n+1)!)/6",
+    "common_PRODUCT_count": 0,
+    "normalizer_cap": 3,
+    "activation_cap": 1
+  },
+  "necessary_finite_cap_with_unpriced_arity": {
+    "strictly_positive_rational_target": "constant (2/3,1/3)",
+    "rational_source": [
+      1,
+      2
+    ],
+    "complete_SUM_exact_equations_inconsistent": true,
+    "uncapped_constant_node_count_witnesses": [
+      {
+        "n": 1,
+        "SUMs": 2,
+        "SUM_edges": 3,
+        "normalizer": 8,
+        "error": "1/15"
+      },
+      {
+        "n": 2,
+        "SUMs": 2,
+        "SUM_edges": 6,
+        "normalizer": 14,
+        "error": "1/24"
+      },
+      {
+        "n": 4,
+        "SUMs": 2,
+        "SUM_edges": 12,
+        "normalizer": 26,
+        "error": "1/42"
+      },
+      {
+        "n": 16,
+        "SUMs": 2,
+        "SUM_edges": 48,
+        "normalizer": 98,
+        "error": "1/150"
+      },
+      {
+        "n": 64,
+        "SUMs": 2,
+        "SUM_edges": 192,
+        "normalizer": 386,
+        "error": "1/582"
+      }
+    ]
+  },
+  "not_claimed": [
+    "a uniform bound over unknown targets or leading amplitudes",
+    "generic classification into the three asymptotic branches",
+    "rational and arbitrary-real exact classes coincide",
+    "sharp constants or complete SUM-edge/encoding/physical costs",
+    "registered acquisition, value, persistence, install or AMP authority"
+  ]
+}
