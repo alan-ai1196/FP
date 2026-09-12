@@ -1,12 +1,18 @@
 # Factor Programs (FP) — Canonical Theory
 
-**Canonical status (2026-09-06): THEORY FROZEN; IMPLEMENTATION NOT FROZEN; SCIENCE HOLD.**
+**Canonical status (2026-09-12): THEORY FROZEN; EXPERIMENT RESOURCE CONTRACT FROZEN; IMPLEMENTATION NOT FROZEN; SCIENCE HOLD.**
 
 This file is the **only normative theory source** for FP. Historical v1–v155 canonicals, v156–v164 attack drafts, R2/R3/R4 working files and experiment-era theory snapshots are provenance only. If an older statement conflicts with this file, this file wins.
 
 The theory is frozen in the following sense: do not add a new architecture-semantic mechanism merely to make search faster. If implementation exposes a mathematical counterexample to the declared object, reopen theory. If it exposes only hard search, weak information, expensive certificates, numerical ambiguity or insufficient fresh evidence, improve the solver or return `UNRESOLVED`.
 
 No new RTX3090/model-science run is authorized until the complete Reference Compiler runtime instantiates this contract in the float64/reference path and the actual target AMP path passes its event-level bridge gates.
+
+The joint resource study closes at XVII.31. Its experiment accounting and
+release criteria are frozen in [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md),
+ERC-1. Do not extend static special cases or chase their remaining constants
+before Runtime, AMP and target-device work. Reopen Foundation only for a
+correctness counterexample to the declared semantics.
 
 ---
 
@@ -2295,7 +2301,14 @@ FP does not claim:
 
 ## Current science frontier
 
-The immediate authorized work is **Reference Compiler implementation closure**. New model/GPU science remains HOLD. After the complete reference runtime passes all required gates and the target AMP bridge passes, the main science questions are whether task/resource optimization forces useful FP structure in real next-token modeling and whether a native FP block can scale competitively from scratch.
+The immediate authorized work is **Reference Compiler implementation closure**
+under the frozen ERC-1 resource specification. The scoped joint upper/lower
+law in XVII.31 is the stopping point for the static special-case program.
+Proceed through complete Runtime, actual AMP bridge, then RTX 3090
+experiments. New model/GPU science remains HOLD until the first two
+prerequisites pass. The science questions are whether task/resource
+optimization forces useful FP structure in real next-token modeling and
+whether a native FP block can scale competitively from scratch.
 
 ## Frozen research rule
 

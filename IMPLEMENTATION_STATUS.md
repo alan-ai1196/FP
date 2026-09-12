@@ -6,6 +6,15 @@
 **Historical implementations: recovered and auditable.**  
 **GPU/model science: HOLD.**
 
+**2026-09-12 update: Experiment Resource Contract ERC-1 is FROZEN as a
+specification; executable enforcement is OPEN.** The unified scoped
+PRODUCT/SUM/range/precision law is now XVII.31. Read
+[`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md).
+The next work is the complete Runtime, then the actual AMP bridge and RTX
+3090 experiments. Static special-case expansion is parked; the mathematical
+resource audit does not restore imports, close authority paths or certify
+any device execution.
+
 This distinction is important. A complete implementation existed for older theory versions; the stricter Foundation-R4 Reference Compiler rewrite was still under adversarial integration when persistence moved from chat/local scratch to GitHub.
 
 ## 1. Recovered historical implementation provenance
@@ -127,6 +136,12 @@ allow growing SUM/scaling work and do not authorize a registered Runtime
 state rewrite or a numerical bridge.
 
 Before an `implementation: freeze reference compiler` commit can be made, require at minimum:
+
+The complete endpoint must also enforce the frozen ERC-1 manifest and its
+separate P/S/edge/range/precision/ownership counters. A low-node high-arity
+witness and a high-precision reciprocal witness must pay their respective
+physical costs. This is part of the existing complete resource contract,
+not a replacement for any of the following gates.
 
 1. clean package import from a fresh clone;
 2. no hidden caller path to `CERTIFIED`, persistence authorization, resource-only bypass or install;

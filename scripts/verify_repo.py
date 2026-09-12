@@ -5,7 +5,8 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 required = [
     'README.md','FP_THEORY.md','HANDOFF.md','RESEARCH_HISTORY.md',
-    'CLAIMS_AND_STATUS.md','OPEN_PROBLEMS.md','IMPLEMENTATION_STATUS.md','.gitignore'
+    'CLAIMS_AND_STATUS.md','OPEN_PROBLEMS.md','IMPLEMENTATION_STATUS.md',
+    'EXPERIMENT_RESOURCE_CONTRACT.md','.gitignore'
 ]
 for p in required:
     if not (ROOT / p).is_file():

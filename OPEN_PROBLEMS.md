@@ -2,6 +2,14 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+**Current priority, 2026-09-12:** the scoped joint PRODUCT/SUM/range/precision
+law in XVII.31 closes the static resource study. ERC-1 is frozen in
+[`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
+the complete Runtime, actual AMP bridge and then RTX 3090 experiments.
+The remaining static special cases and sharp constants below are parked,
+not invitations to continue that program. Reopen Foundation only for an
+implementation/experiment correctness counterexample to its semantics.
+
 ## 1. Close the complete Reference Compiler runtime
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.

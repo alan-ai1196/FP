@@ -1157,3 +1157,20 @@ mass rows. The binary64 rounded-equality witness retains exact error
 1/48038396025285288 after mathematical normalization of its stored masses.
 Read `NODE_EDGE_PRECISION_ACCURACY.md`. The result is a complete scoped
 resource law, not a general language-model law or Runtime release.
+
+## 49. Freeze ERC-1 and return to the complete Runtime (2026-09-12)
+
+The research direction now explicitly uses the joint resource law as the
+theoretical stopping point. `EXPERIMENT_RESOURCE_CONTRACT.md` freezes ERC-1:
+its immutable run/claim fields, separate PRODUCT/SUM/edge/range/precision
+accounting, information/value/physical continuity, strong comparisons and
+the release order Runtime -> actual AMP bridge -> RTX 3090 experiments.
+The contract retains the exact decision scope of the new upper/lower law
+and the existing identity/parity/numerical counterexamples.
+
+This is a specification freeze, not a claim of executable closure. The
+ReferenceCompilerRuntime recovery boundary and science HOLD remain unchanged.
+The remaining static special cases and sharp finite constants are parked.
+Implementation/experimental correctness may reopen Foundation when it finds
+a real semantic counterexample; search cost, uncertainty or insufficient
+resources do not justify extending semantics or continuing static casework.

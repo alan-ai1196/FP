@@ -12,10 +12,12 @@ FP studies whether a **typed causal positive program** built from a small native
 4. [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) — exact Compiler/runtime state and known migration recovery boundary.
 5. [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) — why the theory changed from R5 to the current foundation.
 6. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — only currently unresolved research questions.
+7. [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md) — frozen ERC-1 resource accounting, scoped joint law and Runtime/AMP/RTX 3090 release order.
 
 ## Current status
 
 - **Theory:** Foundation R4 frozen and consolidated into `FP_THEORY.md`.
+- **Experiment resources:** ERC-1 specification frozen after the scoped joint PRODUCT/SUM/range/precision law. Static case expansion is parked; work proceeds to Runtime, AMP bridge, then RTX 3090 experiments.
 - **Reference Compiler:** WIP; **not frozen**. A strict complete-runtime rewrite was in progress when persistence moved to GitHub.
 - **GPU/model science:** **HOLD**. No new RTX3090 science is authorized until the complete Reference Compiler runtime passes the required reference gates and the actual AMP path passes its bridge gates.
 - **Historical R4.2 implementation:** preserved under `experiments/legacy_r4_2_v23/` because its failure produced the v24 theoretical counterexample. It is not a current implementation.

@@ -7,8 +7,15 @@ This file is written for a capable researcher/model that has **no access to prio
 The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
+- **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; do not extend static cases or chase their remaining constants before Runtime, AMP and device experiments.
 - **Reference Compiler implementation not frozen.** The last work was a strict rewrite toward one authority-owned complete `ReferenceCompilerRuntime`. The current persisted/recovered code must be audited before anyone claims implementation closure.
 - **Science HOLD.** Do not start new RTX3090/model-science runs yet.
+
+The current research direction is fixed: complete `ReferenceCompilerRuntime`,
+then the actual AMP bridge, then RTX 3090 experiments. Reopen Foundation only
+when implementation/experiment correctness exposes a semantic loophole.
+Slow search, loose bounds, scarce data, resources or uncertain arithmetic
+still call for solver work or UNRESOLVED, not another static theory program.
 
 The central foundation principle is:
 
@@ -527,7 +534,9 @@ the precision lower. The audit checks 90 budget-envelope graphs, 92 exact
 tail repairs, 100 small-edge approximants and 1,533 floating mass rows.
 This is a scoped law, not generic fixed-P completeness or an AMP bridge.
 
-Implementation closure remains a prerequisite to model/GPU science. Its
+ERC-1 freezes the experiment specification, not its executable enforcement.
+The remaining static sharp constants and small-P phases are parked. Proceed
+to implementation closure, which remains a prerequisite to model/GPU science. Its
 outstanding work is:
 
 1. finish/reconstruct the strict complete `ReferenceCompilerRuntime` from the preserved WIP, recovery notes and historical implementations;
