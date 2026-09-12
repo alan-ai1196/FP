@@ -1,6 +1,6 @@
 """Owned construction, causal events, reference selection, evidence and CPU install.
 
-Actual AMP persistence/installation and release closure remain open.
+Actual AMP installation and release closure remain open.
 This endpoint never issues CERTIFIED_COMPLETE or accepts helper
 certificates as installation authority. Its packed-payload machine contract is
 not a measurement of total host/device memory or elapsed computation.
@@ -26,11 +26,13 @@ from .run_state import ReferenceRunManifest, ReferenceRunClosure, ReferenceRunSn
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
-from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, next_wealth, threshold_crossed
+from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, CUDA_PATH, CROSSINGS, LIVE_STATUSES, next_wealth, threshold_crossed
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
 from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix
+from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
+from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
@@ -323,6 +325,9 @@ class ReferenceCompilerRuntime:
             if type(online) is not OnlineContract:
                 raise ContractError('registered online continuation required')
             online.validate(contract)
+            if (online.persistence is not None and cuda is None
+                    and any(r.score_path == CUDA_PATH for r in online.persistence.rules)):
+                raise ContractError('CUDA persistence requires its independently executed registered device prefix')
         self._online = online
         if policy is not None:
             if type(policy) is not CompilerPolicy:
@@ -635,6 +640,8 @@ class ReferenceCompilerRuntime:
         cfg = self._cuda.contract
         label = f'{candidate}:cuda:{origin}:{kind}:{len(self._cuda.phases)}'
         charge = 128*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        if kind == 'predict':
+            charge += forward_work(program, self._contract.semantics)
         if origin == 'construction':
             self._router.charge_work('construct', {'work': charge}, label)
         else:
@@ -948,7 +955,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         self._event_phase = 'halted'
         self._attempts.append((f'event:{self._cursor}', 'UNRESOLVED' if isinstance(error, (ArithmeticUnresolved, ResourceExceeded)) else 'EXECUTION_FAILED', self._halted[1]))
         for identity in tuple(self._persistence_identities.values()):
-            if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+            if identity.status in LIVE_STATUSES:
                 self._stop_persistence(identity, f'ordinary trajectory failed at {stage}: {error}')
 
     def _event_work(self, candidate: ConstructedState, work: int, stage: str):
@@ -1110,7 +1117,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             if any(self._candidates[key].learner.cursor != self._cursor for key in candidates):
                 raise ContractError('an active reference lineage lost the common exogenous cursor')
             admitted = tuple(key for key, state in self._persistence_identities.items()
-                             if state.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'))
+                             if state.status in LIVE_STATUSES)
             for key in admitted:
                 self._check_persistence_lineages(self._persistence_identities[key])
             identity = IngressIdentity(ingress_id, observation_id, self._cursor, spec.capacity,
@@ -1457,7 +1464,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         generation = 0 if previous is None else previous.generation+1
         object_id = f'{identity.identity_id}:state:{generation}'
         current = replace(identity, object_id=object_id, generation=generation)
-        kind = 'reference_persistence_state' if identity.rule.score_path == REFERENCE_PATH else 'binary64_persistence_state'
+        kind = {REFERENCE_PATH: 'reference_persistence_state', FLOAT64_PATH: 'binary64_persistence_state',
+                CUDA_PATH: 'cuda_persistence_state'}[identity.rule.score_path]
         packed = self._machine.realize(object_id, kind, current, self._chi)
         self._allocate(identity.owner, (packed,))
         if previous is not None and previous.object_id:
@@ -1500,6 +1508,44 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             for state, bounds in ((base, identity.base_float64_range), (candidate, identity.candidate_float64_range)):
                 if state.float64 is None or not bounds or any(b.theta != state.float64.theta for b in bounds):
                     raise ContractError('binary64 persistence lost its current whole-domain invariant')
+        if type(identity) is CudaPersistenceIdentity:
+            if self._cuda is None:
+                raise ContractError('CUDA persistence lost its owned device prefix')
+            for state, phase_id, bounds in (
+                    (base, identity.current_base_cuda, identity.base_cuda_range),
+                    (candidate, identity.current_candidate_cuda, identity.candidate_cuda_range)):
+                current = self._cuda_learner_record(state)
+                if current.object_id != phase_id:
+                    raise ContractError('persistence lost its continuous complete CUDA trajectory')
+                if identity.rule.score_path == CUDA_PATH and (not bounds or any(b.theta != current.raw_state[0] for b in bounds)):
+                    raise ContractError('CUDA persistence lost its current whole-domain invariant')
+        elif identity.rule.score_path == CUDA_PATH:
+            raise ContractError('CUDA score identity has no owned CUDA trajectory')
+
+    def _cuda_learner_record(self, state, *, staged=False):
+        if self._cuda is None:
+            raise ContractError('no registered owned CUDA learner')
+        phase_id = (self._cuda.staged if staged else self._cuda.current).get(state.candidate_id)
+        record = self._cuda.phases.get(phase_id)
+        if (record is None or record.status != 'CHECKED_CUDA_PREFIX_PHASE' or record.raw_state is None
+                or record.phase.endswith(':predict') or record.candidate_id != state.candidate_id
+                or record.program_id != state.program_id or record.raw_state[4] != state.learner.cursor):
+            raise ContractError('CUDA evidence lost its owned complete learner phase')
+        return record
+
+    def _persistence_cuda_range(self, state, *, staged=False):
+        """Paid whole-domain proof bound to this root's current device state."""
+        program, rules = self._programs[state.program_id], self._contract.semantics
+        record = self._cuda_learner_record(state, staged=staged)
+        rows = (None,) if self._contract.source_domain is None else self._contract.source_domain
+        bounds = []
+        for index, row in enumerate(rows):
+            work = forward_work(program, rules, enclosure=True)+relation_work(program, rules)
+            self._event_router.charge_work('information', {'work': work}, f'{state.candidate_id}:CUDA-domain:{index}')
+            bounds.append(enclose_cuda(program, rules, record.raw_state, source_point=row,
+                normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
+                bit_limit=self._contract.reference_integer_bits))
+        return tuple(bounds)
 
     def _persistence_float64_range(self, state):
         """Paid proof computation on the declared domain, never fresh data."""
@@ -1534,6 +1580,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         """Admit CPU stored-mass CE evidence with its own global alpha debit."""
         return self._admit_persistence(candidate_id, rule_id, FLOAT64_PATH)
 
+    def admit_cuda_persistence(self, candidate_id: str, rule_id: str) -> CudaPersistenceResult:
+        """Admit fresh actual stored-mass evidence with independent spent alpha."""
+        return self._admit_persistence(candidate_id, rule_id, CUDA_PATH)
+
     def _admit_persistence(self, candidate_id: str, rule_id: str, score_path: str) -> PersistenceResult:
         self._require_online()
         self._require_idle()
@@ -1554,16 +1604,17 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         if not candidate.range_safe or not base.range_safe:
             raise ContractError('persistence requires whole-domain range-safe reference trajectories')
         law = self._online.data.stream_law
+        result_type = CudaPersistenceResult if score_path == CUDA_PATH else PersistenceResult
         if type(law) is not StochasticStreamLaw:
-            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+            return result_type('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
                                               'deterministic unread observations do not supply a stochastic persistence law', score_path)
         if rule.epoch_events*rule.max_epochs > len(self._online.data.active.observation_ids)-self._cursor:
-            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+            return result_type('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
                                               'registered future horizon does not fit the remaining observation schedule', score_path)
         try:
             self._admit_control('admit-persistence')
         except ResourceExceeded as exc:
-            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
+            return result_type('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
         self._revision += 1
         bit_limit = self._contract.reference_integer_bits
         try:
@@ -1571,10 +1622,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             _guard(registration.alpha_total, bit_limit=bit_limit)
             total = _operation(self._alpha_spent, rule.alpha, multiply=False, bit_limit=bit_limit)
             if compare_exact(total, registration.alpha_total, bit_limit=bit_limit) > 0:
-                return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+                return result_type('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
                                                   'global alpha is spent; old identities cannot refund their allocation', score_path)
         except (ResourceExceeded, ArithmeticUnresolved) as exc:
-            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
+            return result_type('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
         identity_id = f'{self._runtime_id}:persistence:{self._next_persistence}'
         self._next_persistence += 1
         owner = f'{identity_id}:owner'
@@ -1584,13 +1635,19 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         # materialization. Failed admission retains this spent fact forever.
         self._alpha_spent = total
         self._alpha_allocations.append(allocation)
-        identity = PersistenceIdentity(identity_id, rule, allocation.allocation_id,
+        identity_type, cuda_coordinates = PersistenceIdentity, {}
+        if self._cuda is not None:
+            identity_type = CudaPersistenceIdentity
+            base_phase, candidate_phase = self._cuda.current[base.candidate_id], self._cuda.current[candidate_id]
+            cuda_coordinates = dict(initial_base_cuda=base_phase, initial_candidate_cuda=candidate_phase,
+                                    current_base_cuda=base_phase, current_candidate_cuda=candidate_phase)
+        identity = identity_type(identity_id, rule, allocation.allocation_id,
             base.candidate_id, candidate_id, base.program_id, candidate.program_id,
             base.learner, candidate.learner, base.learner, candidate.learner,
             self._cursor, self._cursor, 0, 0, F(0), F(0), F(1), None, None, None,
             'INITIALIZING', owner, '', 0,
             initial_base_float64=base.float64, initial_candidate_float64=candidate.float64,
-            current_base_float64=base.float64, current_candidate_float64=candidate.float64)
+            current_base_float64=base.float64, current_candidate_float64=candidate.float64, **cuda_coordinates)
         self._event_phase = 'admitting-persistence'
         try:
             debit = self._machine.realize(allocation.allocation_id, 'spent_persistence_alpha', allocation, self._chi)
@@ -1605,6 +1662,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 identity = self._save_persistence(replace(identity,
                     base_float64_range=base_bounds, candidate_float64_range=candidate_bounds))
                 native_base = tuple(v.exact for v in base_bounds[0].base_lower)
+            elif score_path == CUDA_PATH:
+                base_bounds = self._persistence_cuda_range(base)
+                candidate_bounds = self._persistence_cuda_range(candidate)
+                identity = self._save_persistence(replace(identity,
+                    base_cuda_range=base_bounds, candidate_cuda_range=candidate_bounds))
+                native_base = base_bounds[0].base_lower
             self._event_router.charge_work('information', {'work': log_enclosure_work(rule.log_terms)+(compare_exact_work()+16)*len(self._contract.semantics.base)+48},
                                           f'{identity_id}:whole-domain-gain-bound')
             add = lambda a, b: _operation(a, b, multiply=False, bit_limit=bit_limit)
@@ -1650,6 +1713,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     current_candidate=successors[identity.candidate_lineage_id].learner,
                     current_base_float64=successors[identity.base_lineage_id].float64,
                     current_candidate_float64=successors[identity.candidate_lineage_id].float64)
+                if type(identity) is CudaPersistenceIdentity:
+                    next_identity = replace(next_identity,
+                        current_base_cuda=self._cuda_learner_record(successors[identity.base_lineage_id], staged=True).object_id,
+                        current_candidate_cuda=self._cuda_learner_record(successors[identity.candidate_lineage_id], staged=True).object_id)
                 if identity.rule.score_path == FLOAT64_PATH:
                     for lineage_id, previous, field in (
                         (identity.base_lineage_id, identity.current_base_float64, 'base_float64_range'),
@@ -1657,7 +1724,20 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         successor = successors[lineage_id]
                         if successor.float64.theta != previous.theta:
                             next_identity = replace(next_identity, **{field: self._persistence_float64_range(successor)})
-                if identity.status in ('REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+                if identity.rule.score_path == CUDA_PATH:
+                    for lineage_id, previous_id, field in (
+                            (identity.base_lineage_id, identity.current_base_cuda, 'base_cuda_range'),
+                            (identity.candidate_lineage_id, identity.current_candidate_cuda, 'candidate_cuda_range')):
+                        successor = successors[lineage_id]
+                        following = self._cuda_learner_record(successor, staged=True)
+                        if following.raw_state[0] != self._cuda.phases[previous_id].raw_state[0]:
+                            next_identity = replace(next_identity, **{field: self._persistence_cuda_range(successor, staged=True)})
+                        else:
+                            self._event_router.charge_work('information',
+                                {'work': 128*(1+sum(s.delay for s in self._contract.semantics.states))},
+                                f'{identity_id}:CUDA-queue:{record.cursor}')
+                            check_queue(self._contract.semantics, following.raw_state[1], bit_limit=bit_limit)
+                if identity.status in CROSSINGS.values():
                     # Stop the statistic at first crossing, but keep tracking
                     # the same complete learner trajectories. No later reset
                     # or failed ordinary transition inherits a live crossing.
@@ -1674,9 +1754,19 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 if identity.rule.score_path == REFERENCE_PATH:
                     base = predictions[identity.base_lineage_id].probabilities[record.target]
                     candidate = predictions[identity.candidate_lineage_id].probabilities[record.target]
-                else:
+                elif identity.rule.score_path == FLOAT64_PATH:
                     base = stored_probability(finite_predictions[identity.base_lineage_id], record.target, bit_limit=bit_limit)
                     candidate = stored_probability(finite_predictions[identity.candidate_lineage_id], record.target, bit_limit=bit_limit)
+                else:
+                    probabilities = []
+                    for lineage_id, input_id in ((identity.base_lineage_id, identity.current_base_cuda),
+                                                  (identity.candidate_lineage_id, identity.current_candidate_cuda)):
+                        forecast = self._cuda.phases[self._cuda.predicted[lineage_id]]
+                        if (forecast.status != 'CHECKED_CUDA_PREFIX_PHASE' or forecast.forward_operations <= 0
+                                or forecast.observation_id != record.observation_id or forecast.input_phase != input_id):
+                            raise ContractError('CUDA evidence lost its pre-target exact-checked owned forecast')
+                        probabilities.append(cuda_stored_probability(forecast.raw_prediction, record.target, bit_limit=bit_limit))
+                    base, candidate = probabilities
                 ratio = _operation(candidate, F(base.denominator, base.numerator), multiply=True, bit_limit=bit_limit)
                 k = identity.ratio_bound
                 if (compare_exact(ratio, k, bit_limit=bit_limit) > 0
@@ -1704,16 +1794,19 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     identity.base_lineage_id, identity.candidate_lineage_id, base, candidate, gain,
                     finished, identity.wealth, wealth, identity.rule.score_path)
                 self._persistence_events.append(event)
-                kind = 'fresh_reference_persistence_event' if identity.rule.score_path == REFERENCE_PATH else 'fresh_binary64_persistence_event'
+                kind = {REFERENCE_PATH: 'fresh_reference_persistence_event', FLOAT64_PATH: 'fresh_binary64_persistence_event',
+                        CUDA_PATH: 'fresh_cuda_persistence_event'}[identity.rule.score_path]
                 packed = self._machine.realize(f'{identity_id}:event:{record.cursor}', kind, event, self._chi)
                 self._allocate(self._data_owner, (packed,))
                 next_identity = replace(next_identity, epoch_events=0 if finished else count,
                     epochs_completed=epochs, gain_lower_sum=F(0) if finished else lower,
                     gain_upper_sum=F(0) if finished else upper, wealth=wealth)
                 if finished and threshold_crossed(wealth, identity.rule.alpha, bit_limit=bit_limit):
-                    crossing = 'REFERENCE_CROSSED' if identity.rule.score_path == REFERENCE_PATH else 'FLOAT64_CROSSED'
+                    crossing = CROSSINGS[identity.rule.score_path]
                     next_identity = replace(next_identity, status=crossing, crossing_cursor=record.cursor+1,
-                        crossing_wealth=wealth, reason=f'conditional {identity.rule.score_path} mean-null crossed; actual AMP and installation remain unverified')
+                        crossing_wealth=wealth, reason=(f'conditional {identity.rule.score_path} mean-null crossed; actual AMP and installation remain unverified'
+                            if identity.rule.score_path != CUDA_PATH else
+                            'conditional CUDA stored-mass mean-null crossed; complete AMP bridge, installation and release remain unverified'))
                 elif finished and epochs == identity.rule.max_epochs:
                     next_identity = replace(next_identity, status='UNRESOLVED', reason='finite persistence horizon ended without crossing; no rejection')
                 self._save_persistence(next_identity)
@@ -1732,6 +1825,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
     def float64_persistence_result(self, identity_id: str) -> PersistenceResult:
         return self._persistence_result(identity_id, FLOAT64_PATH)
 
+    def cuda_persistence_result(self, identity_id: str) -> CudaPersistenceResult:
+        return self._persistence_result(identity_id, CUDA_PATH)
+
     def _persistence_result(self, identity_id: str, score_path: str) -> PersistenceResult:
         name(identity_id, 'owned persistence identity')
         identity = self._persistence_identities.get(identity_id)
@@ -1739,14 +1835,15 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             raise ContractError('unknown or wrong-path owned persistence identity')
         status = 'UNRESOLVED'
         reason = identity.reason
-        crossing = 'REFERENCE_CROSSED' if score_path == REFERENCE_PATH else 'FLOAT64_CROSSED'
+        crossing = CROSSINGS[score_path]
         if identity.status == crossing and self._event_phase == 'idle':
             try:
                 self._check_persistence_lineages(identity)
                 status = crossing
             except ContractError:
                 reason = 'historical crossing has no current matching complete trajectory'
-        return PersistenceResult(status, identity_id, self._alpha_spent, identity.epochs_completed,
+        result_type = CudaPersistenceResult if score_path == CUDA_PATH else PersistenceResult
+        return result_type(status, identity_id, self._alpha_spent, identity.epochs_completed,
                                           identity.wealth, identity.crossing_cursor, reason, score_path)
 
     def paired_persistence_result(self, reference_id: str, float64_id: str) -> PairedPersistenceResult:
@@ -1768,6 +1865,28 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
 
     def cancel_reference_persistence(self, identity_id: str):
         self._cancel_persistence(identity_id, REFERENCE_PATH)
+
+    def paired_cuda_persistence_result(self, reference_id: str, cuda_id: str) -> PairedCudaPersistenceResult:
+        """Read current independent owned crossings on the same four learners."""
+        ref = self._persistence_result(reference_id, REFERENCE_PATH)
+        physical = self._persistence_result(cuda_id, CUDA_PATH)
+        a, b = self._persistence_identities[reference_id], self._persistence_identities[cuda_id]
+        if type(a) is not CudaPersistenceIdentity or type(b) is not CudaPersistenceIdentity:
+            raise ContractError('paired CUDA persistence needs the same owned device root')
+        coordinates = ('base_lineage_id', 'candidate_lineage_id', 'base_program_id', 'candidate_program_id',
+                       'start_cursor', 'initial_base', 'initial_candidate', 'initial_base_float64', 'initial_candidate_float64',
+                       'initial_base_cuda', 'initial_candidate_cuda')
+        if any(getattr(a, key) != getattr(b, key) for key in coordinates):
+            raise ContractError('paired CUDA persistence identities do not start on the same complete trajectories')
+        if a.rule.epoch_events != b.rule.epoch_events or a.rule.max_epochs != b.rule.max_epochs:
+            raise ContractError('paired CUDA persistence identities have different registered event schedules')
+        crossed = ref.status == 'REFERENCE_CROSSED' and physical.status == 'CUDA_CROSSED'
+        return PairedCudaPersistenceResult('PAIRED_CUDA_CROSSED' if crossed else 'UNRESOLVED', reference_id, cuda_id,
+            self._cursor, self._alpha_spent, 'both independent same-path statistics crossed on continuous exact-checked CUDA forecasts'
+            if crossed else 'both owned current path crossings are required; no evidence is copied between paths')
+
+    def cancel_cuda_persistence(self, identity_id: str):
+        self._cancel_persistence(identity_id, CUDA_PATH)
 
     def cancel_float64_persistence(self, identity_id: str):
         self._cancel_persistence(identity_id, FLOAT64_PATH)
@@ -2216,7 +2335,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
     def install(self, candidate_id: str, *unused_authority, **unused_payload) -> ConstructionResult:
         # CPU transition receipts cannot substitute for the complete target
         # resource, numerical and same-path AMP installation obligations.
-        return ConstructionResult('UNRESOLVED', None, 'complete ERC-1 enforcement and actual AMP persistence/installation are not yet integrated')
+        return ConstructionResult('UNRESOLVED', None, 'complete ERC-1 enforcement, target AMP bridge and installation are not yet integrated')
 
     def install_cpu(self, candidate_id: str, *, proposal_proof_id: str,
                     reference_identity: str, float64_identity: str) -> CpuInstallResult:

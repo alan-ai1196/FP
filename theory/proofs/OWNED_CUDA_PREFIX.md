@@ -38,6 +38,10 @@ Each retained `CHECKED_CUDA_PREFIX_PHASE` asserts only the following:
 3. The observed exact/reference relation satisfies the manifest tolerances
    and the checked current-context caps. The record is physically retained
    in its already paid frame under the root's information owner.
+4. For prediction, every stored forecast coordinate also matches the exact
+   registered mixed rounding schedule, including zero signs and the entire
+   delayed successor. This v2 check supplies the conformance premise for
+   [current range and fresh CUDA evidence](OWNED_CUDA_PERSISTENCE.md).
 
 The state relation compares master parameters, every delayed queue entry,
 gradient accumulators and exact equality of unit/cursor/optimizer clocks.
@@ -83,6 +87,9 @@ successor without performing its registered operations is rejected.
 
 Runtime prepays the fixed conservative work debit
 `128 * output_allowance + 2 * relation_work + evidence_capacity` before a phase.
+The v2 work model additionally prepays `forward_work(program, rules)` for
+predictions; the exact check and its operation count are specified in
+[the range proof](OWNED_CUDA_PERSISTENCE.md).
 This is the existing machine's abstract work model, including the declared
 output/readback/relation/encoding work, not elapsed GPU time, total host heap
 or a physical FLOP lower certificate. Actual tensor storage is separately
@@ -158,8 +165,9 @@ malformed backend result whose raw extraction also fails remains an execution
 failure, not an admissibility rejection of already validated native input.
 Injected failures are identified as injections, not naturally occurring OOMs.
 
-The active remaining work is whole-domain target range for current CUDA
-states, separate fresh same-path AMP persistence, actual build/copy/install
-relations and full device resource closure. This prefix implementation issues
+Current-domain target range and fresh same-path CUDA evidence now execute
+through the same Runtime; see [the scoped proof](OWNED_CUDA_PERSISTENCE.md).
+Actual build/copy/install relations and full device resource closure remain
+active work. This prefix implementation issues
 neither `CERTIFIED_COMPLETE` nor a model-science release. Do not restart the
 static PRODUCT/SUM/range/precision study or reconstruct the existing learners.

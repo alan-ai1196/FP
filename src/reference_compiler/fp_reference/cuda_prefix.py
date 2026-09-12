@@ -12,7 +12,7 @@ from .core import ContractError, natural
 from .program import Product, Sum, rational
 from .resources import ResourceExceeded
 from .semantics import ArithmeticUnresolved
-from .binary_arithmetic import Float64Value
+from .cuda_range import FORWARD_ID, check_forward, widen
 from .float64_bridge import Float64Contract, check_state, check_prediction
 from .float64_learner import Float64LearnerState, Float64Evaluation
 from .cuda_storage import CudaArena, CudaStorageContract, CudaStorageUnresolved
@@ -29,11 +29,12 @@ class CudaPrefixContract:
     execution_identity: tuple = ('2.12.0+cu132', '7661cd9c6b841b62b7f411aa52ec51f05457263b',
                                  '13.2', 'NVIDIA GeForce RTX 3090', (8, 6))
     backend_id: str = field(default=gpu.BACKEND_ID, init=False)
-    work_model: str = field(default='prepaid-output-cells-and-packed-prefix-evidence-v1', init=False)
+    work_model: str = field(default='prepaid-output-cells-packed-evidence-and-exact-forward-v2', init=False)
+    forward_id: str = field(default=FORWARD_ID, init=False)
 
     def __post_init__(self):
-        if (self.backend_id != gpu.BACKEND_ID
-                or self.work_model != 'prepaid-output-cells-and-packed-prefix-evidence-v1'):
+        if (self.backend_id != gpu.BACKEND_ID or self.forward_id != FORWARD_ID
+                or self.work_model != 'prepaid-output-cells-packed-evidence-and-exact-forward-v2'):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')
         if type(self.storage) is not CudaStorageContract:
             raise ContractError('immutable physical CUDA storage contract required')
@@ -54,7 +55,7 @@ class CudaPrefixContract:
 class CudaRunManifest:
     reference: object
     cuda: CudaPrefixContract
-    target_amp: str = field(default='registered actual CUDA prefix; range/persistence/install/release UNRESOLVED', init=False)
+    target_amp: str = field(default='registered CUDA prefix/range/same-path evidence; complete bridge/install/release UNRESOLVED', init=False)
 
 
 @dataclass(frozen=True)
@@ -77,6 +78,7 @@ class CudaPhase:
     arena_phase: int | None
     status: str
     reason: str
+    forward_operations: int = 0
 
 
 @dataclass(frozen=True)
@@ -87,26 +89,7 @@ class CudaPrefixSnapshot:
     predicted: tuple
     phases: tuple[CudaPhase, ...]
     storage: object
-    scope: str = field(default='owned executed CUDA prefix; no future range, persistence, installation or total-device authority', init=False)
-
-
-def widen(word, width):
-    """Exact injective finite binary16/32 embedding, including signed zero."""
-    if width not in (16, 32) or type(word) is not int or not 0 <= word < 1 << width:
-        raise ContractError('raw half/single encoding required')
-    fraction_bits, exponent_bits, bias = (10, 5, 15) if width == 16 else (23, 8, 127)
-    exponent = (word >> fraction_bits) & ((1 << exponent_bits)-1)
-    if exponent == (1 << exponent_bits)-1:
-        raise ArithmeticUnresolved('nonfinite CUDA encoding cannot enter an exact prefix relation')
-    mantissa = word & ((1 << fraction_bits)-1)
-    shift = (exponent if exponent else 1)-bias-fraction_bits
-    if exponent:
-        mantissa += 1 << fraction_bits
-    sign = (word >> (width-1)) << 63
-    if not mantissa:
-        return Float64Value(sign)
-    high = mantissa.bit_length()-1
-    return Float64Value(sign | ((high+shift+1023) << 52) | ((mantissa << (52-high))-(1 << 52)))
+    scope: str = field(default='owned executed CUDA prefix and exact forecasts; range/persistence authority belongs to Runtime identities; no installation or total-device authority', init=False)
 
 
 def widened_state(raw):
@@ -188,6 +171,7 @@ class _CudaPrefix:
         state = None if input_id is None else self._values[input_id]
         prediction = None if prediction_id is None else self._values[prediction_id]
         result, actual_prediction, relation, error, arithmetic, workspace = state, None, None, None, None, None
+        forward_operations = 0
         try:
             if state is not None and gpu.raw_state(state) != self.phases[input_id].raw_state:
                 raise ContractError('private CUDA predecessor changed after its owned phase')
@@ -202,6 +186,8 @@ class _CudaPrefix:
                 elif kind == 'predict':
                     state_relation = check_state(reference, widened_state(gpu.raw_state(state)), tolerance, bit_limit=bit_limit)
                     actual_prediction = gpu.evaluate(program, rules, state, sources, arithmetic)
+                    forward_operations = check_forward(program, rules, gpu.raw_state(state), sources,
+                        raw_prediction(actual_prediction), bit_limit=bit_limit)
                     relation = check_prediction(reference_prediction, widened_prediction(raw_prediction(actual_prediction)),
                         tolerance, rules, normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)
                     relation = replace(relation, state_error=state_relation.state_error)
@@ -233,7 +219,7 @@ class _CudaPrefix:
             None if workspace is None else workspace.index,
             'CHECKED_CUDA_PREFIX_PHASE' if error is None else
                 'UNRESOLVED' if isinstance(error, (ResourceExceeded, ArithmeticUnresolved)) else 'EXECUTION_FAILED',
-            '' if error is None else f'{type(error).__name__}: {error}')
+            '' if error is None else f'{type(error).__name__}: {error}', forward_operations)
         # Even failed completed outputs retain their physical handle. Only
         # Runtime may retain/check this record and advance staged/current IDs.
         self._values[object_id] = actual_prediction if kind == 'predict' else result

@@ -17,10 +17,14 @@ from .semantics import _guard, _operation
 
 REFERENCE_PATH = 'exact-reference'
 FLOAT64_PATH = 'binary64-stored-mass'
+CUDA_PATH = 'cuda-half-single-stored-mass'
 NULLS = {
     REFERENCE_PATH: 'bounded-pre-context-stopped-reference-epoch-mean-v1',
     FLOAT64_PATH: 'bounded-pre-context-stopped-binary64-mass-epoch-mean-v1',
+    CUDA_PATH: 'bounded-pre-context-stopped-cuda-mass-epoch-mean-v1',
 }
+CROSSINGS = {REFERENCE_PATH: 'REFERENCE_CROSSED', FLOAT64_PATH: 'FLOAT64_CROSSED', CUDA_PATH: 'CUDA_CROSSED'}
+LIVE_STATUSES = ('ACTIVE', *CROSSINGS.values())
 
 
 @dataclass(frozen=True)

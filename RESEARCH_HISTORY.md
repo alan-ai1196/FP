@@ -2238,3 +2238,63 @@ or transfer a CUDA-bearing root. Current target whole-domain range, fresh
 same-path AMP persistence, build/copy/install and total-device resources
 remain open. `OWNED_CUDA_PREFIX.md` fixes this precise checked-prefix scope.
 Foundation R4, XVII.31 and ERC-1 stay frozen; model science stays HOLD.
+
+## 73. Prove current CUDA range and execute fresh same-path evidence (2026-09-13)
+
+The next AMP obstacle was a missing proof premise: observed closeness to
+reference and finite primitive audits do not establish a whole-domain
+physical arithmetic law. The implementation now proves range over a
+declared deterministic mixed rounded predictor and checks every actual
+forecast against that same predictor before accepting it. The exact check
+compares all stored native/weight/head/readout/queue coordinates, including
+zero signs. It never repairs a device output from reference. A one-ULP
+actual-tensor fault passes the old tolerance relation and fails this added
+conformance check before any target; the audit executes both comparisons.
+
+Positive SUM/PRODUCT and monotone rounding give one general current-domain
+bound for the registered schedule. It preserves source RNE32 then RNE16,
+all master casts including unused slots, half products, ordered single SUM
+accumulation, single base/readout and both normalizer representations.
+Complete queue invariants cover every tail entry. Reference work is paid
+before forecast/range checking, and immutable range records belong to the
+Runtime's own persistence identities. Changed actual master bits require
+renewed bounds; unchanged theta reuses only the bound, retaining distinct
+complete learners and checking the actual successor queues.
+
+The existing fresh-evidence machinery now has a separate CUDA stored-mass
+score path and null. Reference and CUDA independently spend global alpha,
+seal their own pre-target forecasts and update guarded lower wealth. Their
+identities bind initial/current owned device phases as well as the exact
+and optional CPU trajectories. Pairing reads those owned identities and
+requires matching starts and epoch schedules. No helper can submit a range,
+device endpoint or crossing. The new CUDA identity extension leaves the
+frozen non-CUDA identity encodings unchanged.
+
+Two real trajectory witnesses prevent evidence transfer. With a fixed
+coefficient 2^-25 and zero-rate SGD without a floor grid, reference crosses
+at event five while the half forward has exactly zero gain and wealth one.
+In another registered update, exact theta reaches 3/10 but its future half
+value is 1229/4096, above the delayed-body cap. The current zero queue and
+ordinary exact successor remain valid; the unproved future CUDA identity
+stops. A safe observed context cannot revive failed full-domain admission.
+
+Independent rounded evaluation checks 16 boxes/400 predictions and 125
+complete recurrent queues. All 32 five-label fair branches run on actual
+CUDA, contributing 832 independent phase checks and 62 conditional wealth
+inequalities; each path's fixture crossing probability is 1/32 under alpha
+1/3. A 12-event trained path checks 24 scores/logs/wealth steps, six range
+recomputations and 62 CUDA phases beside 62 CPU binary64 phases. Source
+33570817/67108864 has actual double-rounded half value 1/2 instead of direct
+half 1025/2048, in both owned range and executed forecast. Fault controls
+cover crossing-state retention, later CUDA commit failure and one-ULP
+conformance failure; cancellation/readmission/retirement keep spent alpha
+and forbid old-target or wealth reuse.
+
+The full 1,109-phase owned CUDA prefix audit now also checks exact forwards.
+The complete existing reference/CPU persistence, ordinary-event, binary64,
+installation, host-failure, ingress and finite-run audits pass. This does
+not reissue the frozen 21-script CPU release or grant a new target release.
+`OWNED_CUDA_PERSISTENCE.md` states the proof and remaining scope. Actual
+build/copy/install, full device resources and target run integration are
+next; `PAIRED_CUDA_CROSSED` is only conditional same-path evidence. No
+Foundation/ERC change or additional static architecture case is needed.

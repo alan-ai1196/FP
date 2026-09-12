@@ -115,10 +115,26 @@ Actual output/evidence caps, false endpoint execution and unexpected failures
 retain targets and old publication. A CUDA evidence budget failure cannot
 turn native search into a completed reference class proof.
 
-Continue with current-state whole-domain target range, fresh same-path AMP
-persistence, actual build/copy/install and full device resource accounting.
-CPU installation and its owned run policy explicitly refuse a CUDA root.
-This checked prefix is not the complete AMP release; science remains HOLD.
+The next component now also executes: read
+[`OWNED_CUDA_PERSISTENCE.md`](theory/proofs/OWNED_CUDA_PERSISTENCE.md).
+Current actual master bits and complete queues have owned whole-domain
+rounded range bounds. Every actual forecast is independently checked against
+the declared mixed arithmetic before acceptance; finite kernel audits are
+not promoted to all-input theorems. Reference and CUDA use separate fresh
+stored-mass statistics and nonrefundable alpha. All 32 five-label branches
+pass 832 independent device-phase checks and 62 conditional wealth tests;
+a trained path recomputes its range at six optimizer changes.
+
+Keep the negative witnesses: reference crosses at five while the half path
+has zero gain; an exact 3/10 update violates its delayed cap after half
+rounding; one ULP of forecast corruption passes the reference tolerance but
+fails exact conformance. `PAIRED_CUDA_CROSSED` is owned conditional evidence,
+not a complete bridge or install token. Run `scripts/audit_cuda_persistence.py`.
+
+Continue with actual build/copy/install and full device resource accounting.
+CPU installation and its owned run policy still refuse a CUDA root. Do not
+rebuild range/persistence or resume static cases to defer these target steps.
+The complete AMP release remains open; science remains HOLD.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

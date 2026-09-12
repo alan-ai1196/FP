@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "scope": "current CUDA whole-domain bounds, exact actual forecasts and owned fresh same-path evidence; no install/release",
+  "range": {
+    "independent_product_sum_boxes": 16,
+    "independent_context_checks": 400,
+    "complete_recurrent_queue_checks": 125,
+    "full_tail_unused_slot_source_rounding_product_overflow_and_both_normalizers_rejected": true,
+    "two_stage_source_witness": "33570817/67108864"
+  },
+  "null": {
+    "complete_fair_label_paths": 32,
+    "ordinary_events": 160,
+    "independent_owned_CUDA_phase_checks": 832,
+    "two_path_conditional_wealth_inequalities": 62,
+    "crossing_probabilities": [
+      "1/32",
+      "1/32"
+    ],
+    "each_path_alpha": "1/3",
+    "external_null": "fair independent labels; both fixed mass ratio products are 8/9 < 1"
+  },
+  "scores": {
+    "phases": 62,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 5871,
+    "maximum_output_cells": 47,
+    "independent_score_log_and_wealth_checks": 24,
+    "optimizer_range_recomputations": 6,
+    "reference_CUDA_score_differences": 12,
+    "proper_probability_differs_from_raw_division": 12,
+    "unchanged_theta_reuses_its_owned_range": true,
+    "CPU_binary64_phases": 62
+  },
+  "crossing": {
+    "crossing_cursor": 6,
+    "phases_before_failure": 36,
+    "both_published_paths_and_spent_alpha_preserved_after_injected_CUDA_commit_failure": true
+  },
+  "nontransfer": {
+    "delta": "1/33554432",
+    "reference_crossing_cursor": 5,
+    "CUDA_gain": "0",
+    "CUDA_wealth": "1",
+    "reference_evidence_transfer_rejected": true,
+    "phases": 42
+  },
+  "range-admission": {
+    "reference_safe_but_actual_half_range_unproved": true,
+    "failed_admission_alpha_retained": "1/4",
+    "harmless_context_does_not_reactivate_failed_identity": true
+  },
+  "range-refresh": {
+    "exact_new_theta": "3/10",
+    "future_half_theta": "1229/4096",
+    "ordinary_successor_published_but_unproved_future_CUDA_evidence_stopped": true
+  },
+  "double-round": {
+    "exact_source": "33570817/67108864",
+    "actual_R16_R32_source": "1/2",
+    "wrong_direct_R16_source": "1025/2048",
+    "owned_bound_and_actual_forecast_preserve_both_roundings": true
+  },
+  "mismatch": {
+    "one_ULP_forecast_error_within_reference_tolerance_rejected_before_target": true,
+    "actual_output_retained_without_repair_from_reference": true
+  },
+  "freshness": {
+    "cancel_readmit_retire_cannot_refund_or_inherit_alpha_wealth_or_old_targets": true,
+    "different_starting_device_trajectories_cannot_pair": true
+  },
+  "failed-crossing": {
+    "retained_threshold_score_does_not_replace_failed_owned_crossing_state": true,
+    "ordinary_continuation_does_not_resume_failed_identity": true
+  }
+}

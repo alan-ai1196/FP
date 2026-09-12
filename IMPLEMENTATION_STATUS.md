@@ -5,7 +5,7 @@
 **Scoped Reference/CPU implementation: FROZEN. Target AMP: OPEN. Model
 science: HOLD.** The entire 21-script integration battery passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
-3.12.9 on 64-bit Windows 11. All 30 current package modules import.
+3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.
 
 Read [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md)
 and [`FP_REFERENCE_RELEASE_AUDIT.json`](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
@@ -65,8 +65,23 @@ phases with optional CPU binary64, and 41 phases for a 35-member native class.
 Actual caps, unexecuted endpoints, malformed backend results, combined
 executor/evidence failure and normalization mismatch remain explicit failures.
 CPU install/run authority cannot omit a CUDA-bearing root. This is finite
-prefix closure, not whole-domain target range, AMP persistence/install or
-full device/science release.
+prefix closure; the next range/evidence component is implemented below.
+
+The [owned CUDA range and persistence](theory/proofs/OWNED_CUDA_PERSISTENCE.md)
+now bind current device masters, full queues and the complete declared
+domain to monotone rounded bounds. The v2 prefix also checks every actual
+forecast against an exact mixed-arithmetic model. Runtime admits independent
+fresh CUDA stored-mass evidence before context, pays its alpha and owns
+current lineage/range identities through learning. The audit passes all
+32 five-label null branches, 832 independent CUDA phases and 62 conditional
+wealth inequalities, plus six range recomputations on a trained 12-event
+path beside CPU binary64. A reference-only crossing, future half range
+failure and injected one-ULP forecast mismatch remain explicit refusals.
+
+`PAIRED_CUDA_CROSSED` is a conditional same-path evidence result. Actual
+structural build/copy/install and complete device resources remain OPEN;
+target install and model science remain HOLD. This is no new CPU freeze or
+all-kernel theorem, and it introduces no new semantic architecture action.
 
 ## Status at GitHub migration (2026-09-06)
 

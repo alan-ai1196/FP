@@ -38,8 +38,15 @@ continuous CUDA trajectories and the tensor arena. Read
 `scripts/audit_cuda_runtime.py`. The immutable manifest, prepaid raw phase
 frames, exact relations and joint reference/device publication have actual
 endpoint coverage. CPU install and its complete run policy refuse this target
-root. Current whole-domain target range, fresh AMP persistence, device install
-and total-device accounting remain the active frontier; science stays HOLD.
+root. [Current CUDA range and fresh persistence](../../theory/proofs/OWNED_CUDA_PERSISTENCE.md)
+also execute through this Runtime. Register a `PersistenceRule` with
+`score_path=CUDA_PATH` and use `admit_cuda_persistence`,
+`cuda_persistence_result`, `cancel_cuda_persistence` and
+`paired_cuda_persistence_result`. The root owns full-domain bounds and
+checks actual forecasts against the exact mixed rounding schedule; no
+caller-supplied range or device state is accepted. Run
+`scripts/audit_cuda_persistence.py`. Actual device install and complete
+resource accounting remain the active frontier; science stays HOLD.
 
 ## Current executable recovery (2026-09-12)
 

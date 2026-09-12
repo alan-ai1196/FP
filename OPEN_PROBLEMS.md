@@ -43,11 +43,21 @@ The [owned actual CUDA prefix](theory/proofs/OWNED_CUDA_PREFIX.md) now executes
 inside Runtime with registered identity, independent continuous state,
 prepaid raw evidence, exact per-phase relations and joint event publication.
 Its full short-stream/profile/native-search audit passes; CPU-only install
-and run authority explicitly cannot transfer the CUDA root. The active gaps
-are current-state whole-domain target range, separate fresh same-path AMP
-persistence, structural build/copy/install and complete device resources.
-These are the next implementation/research obligations, not another static
-PRODUCT/SUM/range/precision case.
+and run authority explicitly cannot transfer the CUDA root.
+
+Current-state whole-domain target range and fresh same-path CUDA persistence
+now have [owned endpoint implementations](theory/proofs/OWNED_CUDA_PERSISTENCE.md).
+An exact per-forecast check closes the gap between the mathematical rounded
+range law and actual device outputs. All 32 short null branches and the
+trained/recurrent/range/nontransfer controls pass. Numerical closeness alone
+still cannot transfer reference wealth; a new half-range failure stops that
+identity even when the ordinary reference update remains legal.
+
+The active gaps are actual structural build/copy/install, complete device
+resources and the resulting target run/release integration. Do not reconstruct
+the now executed range or persistence components or add static cases as new
+prerequisites. `PAIRED_CUDA_CROSSED` supplies scoped evidence, not installation
+or model-science authority.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

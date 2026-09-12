@@ -7,6 +7,15 @@ passed all 21 complete audits at source `ebe2c4c`; read
 [release evidence](../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
 This is not a new semantic contract or an actual target AMP release.
 
+The optional `cuda=CudaPrefixContract(...)` now owns continuous mixed-precision
+device learners, paid raw phase evidence and exact per-forecast checks. It
+also runs [current CUDA range and fresh same-path persistence](../theory/proofs/OWNED_CUDA_PERSISTENCE.md)
+through `admit_cuda_persistence`, `cuda_persistence_result`,
+`cancel_cuda_persistence` and `paired_cuda_persistence_result`. This adds a
+separate score path and alpha allocation on the same owned fresh ingress;
+it does not transfer CPU evidence or authorize target installation. Actual
+build/copy/install and complete device resources remain the target frontier.
+
 ## What the endpoint now executes
 
 `ReferenceCompilerRuntime(construction, initial_program, online=...)` binds

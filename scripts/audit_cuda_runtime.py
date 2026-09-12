@@ -21,6 +21,7 @@ sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts')]
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference import cuda_learner as gpu
 from fp_reference.cuda_prefix import CudaPrefixContract, CudaRunManifest, widen, output_cells
+from fp_reference.cuda_range import forward_operations
 from fp_reference.cuda_storage import CudaStorageContract, CudaStorageUnresolved
 from fp_reference.float64_bridge import Float64Contract
 from fp_reference.machine import pack
@@ -109,6 +110,7 @@ def audit_snapshot(runtime):
             result = model_commit(before, runtime.online_contract.learner)
         if kind != 'predict':
             assert record.raw_state == raw_model(result)
+        assert record.forward_operations == (forward_operations(graph, runtime.contract.semantics) if kind == 'predict' else 0)
         expected[record.object_id] = result
         frame = buffers[record.object_id]
         size = int.from_bytes(frame[:8], 'big')

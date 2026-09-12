@@ -5,7 +5,7 @@
   "ordinary_events": 192,
   "independently_replayed_stream_CUDA_phases": 1024,
   "actual_arena_bytes_per_registered_root": 16777216,
-  "largest_stream_phase_frame_used": 5726,
+  "largest_stream_phase_frame_used": 5770,
   "maximum_stream_output_cells": 47,
   "all_finite_half_exact_widenings_including_zero_sign": 63488,
   "signed_single_boundary_widenings": 12,
@@ -14,7 +14,7 @@
   "profile": {
     "phases": 44,
     "actual_arena_bytes": 16777216,
-    "largest_phase_frame_used": 6089,
+    "largest_phase_frame_used": 6133,
     "maximum_output_cells": 46,
     "CPU_binary64_phases": 44,
     "ordinary_events": 6,
@@ -23,7 +23,7 @@
   "search": {
     "phases": 41,
     "actual_arena_bytes": 16777216,
-    "largest_phase_frame_used": 3260,
+    "largest_phase_frame_used": 3304,
     "maximum_output_cells": 20,
     "independent_complete_native_members": 35,
     "decision_class": "fixed-state reference empirical CE over the registered initializer endpoints plus actual baseline"
