@@ -166,11 +166,21 @@ def chunking_audit():
 
 
 def admission_audit():
-    probe = fixture()
-    base_work = probe.snapshot().resources['spent']['compiler']['work']
-    prepaid = probe.online_contract.data.ingress.work(2)
-    cfg = replace(contract(source_domain=False), limits=limits(work_cap=base_work+prepaid-1))
-    denied = fixture(cfg=cfg)
+    # Budget encodings are part of the paid immutable manifest. Calibrate
+    # with newly registered roots until this very cap is one work unit short;
+    # measuring a different-budget root no longer locates the boundary.
+    work_cap = 10_000_000
+    for _ in range(16):
+        cfg = replace(contract(source_domain=False), limits=limits(work_cap=work_cap))
+        denied = fixture(cfg=cfg)
+        base_work = denied.snapshot().resources['spent']['compiler']['work']
+        prepaid = denied.online_contract.data.ingress.work(2)
+        boundary = base_work+prepaid-1
+        if work_cap == boundary:
+            break
+        work_cap = boundary
+    else:
+        raise AssertionError('immutable ingress work boundary did not stabilize')
     before = denied.snapshot()
     for _ in range(64):
         offer = denied.begin_context('observation-0')
@@ -207,6 +217,8 @@ def admission_audit():
     assert rt.begin_context('observation-0').status == 'RECEIVING'
     assert owned(rt).ingress[-1].identity.ingress_id != failed.attempts[-1][0]
     return {'unchanged_unfunded_denials': 64, 'unallocatable_registered_capacity_bytes': 10**12,
+            'actual_immutable_initial_work': base_work, 'prepaid_ingress_work': prepaid,
+            'calibrated_work_cap': work_cap,
             'residency_preflight_precedes_window_creation': True,
             'failed_empty_preparation_keeps_paid_work_peak_and_retired_ids': True,
             'retry_publishes_fresh_identity_without_dangling_old_window': True}

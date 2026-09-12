@@ -2022,3 +2022,16 @@ aggregate passes. It requires actual success exits and complete bounded
 reports and retains minimal coverage and OS job records. Read
 `theory/proofs/REFERENCE_RELEASE_SCOPE.md`. This preparation adds no Runtime
 authority and does not yet freeze Reference or release AMP/model science.
+
+The first fresh-clone integration at `7360eb0` exposed two old audit-boundary
+assumptions. Since budget values are now paid manifest coordinates, replacing
+the generous budget also changes initial work/payload. An intended ingress
+refusal had three work units to spare; a supposedly failed constructor
+evidence allocation actually succeeded with eight bytes to spare and failed
+at a later allocation. The retained CHECKED phase was correctly owned.
+
+The corrected tests calibrate new immutable diagnostic roots, never edit an
+executed root's budget, and assert the intended first finite-observe or
+constructor-evidence failure itself. They now pass at actual ingress work
+cap 5,310 and byte caps 32,114/11,177/9,785. This corrects audit coverage,
+not Runtime semantics. A fresh complete release run is still required.

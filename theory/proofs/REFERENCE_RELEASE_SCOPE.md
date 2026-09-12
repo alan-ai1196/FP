@@ -58,6 +58,23 @@ release audit, not this partial diagnostic.
 
 ## One source revision, all current obligations
 
+The first integrated run exposed two stale resource-boundary fixtures.
+Changing the budget changes the paid manifest that encodes it. Ingress
+initial work fell from 5,123 to 5,119 after replacing the generous cap;
+the intended 5,314-work refusal instead admitted a 5,311-work prefix. A
+constructor evidence allocation needed 11,178 bytes under the smaller
+registration, so the old 11,186-byte cap admitted that evidence and failed
+later. Its CHECKED phase was owned, not a false bridge certificate.
+
+The corrected audits create independent immutable registrations until the
+same declared cap misses the measured operation by one unit/byte. They
+verify the exact intended failure site and unchanged published states.
+Observed boundaries are ingress work 5,310, ordinary binary64 evidence
+32,114 bytes, constructor evidence 11,177 bytes and pre-evidence constructor
+residency 9,785 bytes. No executed root's budget is edited and no Runtime
+code or semantics changed. These are measured audit boundaries, not universal
+constants or free resource calibrations inside an FP experiment.
+
 `scripts/audit_reference_release.py --write` requires committed source and
 clones that actual Git revision without hardlinks. It imports all current
 package modules from the new checkout and runs 21 complete audit scripts in

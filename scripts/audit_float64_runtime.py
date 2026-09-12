@@ -359,26 +359,38 @@ def failure_audit():
     assert small.snapshot().halted and small.snapshot().candidates == before.candidates
     assert small.snapshot().observations[0].target == 0
 
-    # Measure coexistence immediately before the first finite observe tape,
-    # then repeat with a real immutable cap one byte below that allocation.
-    probe, _ = fixture()
-    deliver_context(probe, 'observation-0', domain(1)[0])
-    allocations = []
-    original_allocate = probe._allocate
-    def measure(owner, objects):
-        if any(value.spec.kind == 'executed_float64_phase' for value in objects):
-            allocations.append(probe.snapshot().resources['current']['reference_payload_bytes']+sum(value.spec.residency['reference_payload_bytes'] for value in objects))
-        return original_allocate(owner, objects)
-    with patch.object(probe, '_allocate', measure):
-        assert probe.observe(0).status == 'OBSERVED_REFERENCE'
-    cap = allocations[0]-1
-    constrained_cfg = replace(probe.contract, limits=limits(byte_cap=cap, work_cap=100_000_000))
-    constrained, _ = fixture(cfg=constrained_cfg)
-    before = constrained.snapshot()
-    assert deliver_context(constrained, 'observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
-    assert constrained.observe(0).status == 'UNRESOLVED'
+    # The cap changes the manifest's own size. Each calibration is a new
+    # immutable root; stop only when that same cap misses the actual first
+    # finite-observe evidence allocation by one byte.
+    cap = 80_000_000
+    for _ in range(16):
+        probe, _ = fixture()
+        constrained_cfg = replace(probe.contract, limits=limits(byte_cap=cap, work_cap=100_000_000))
+        constrained, _ = fixture(cfg=constrained_cfg)
+        before = constrained.snapshot()
+        assert deliver_context(constrained, 'observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
+        allocations = []
+        original_allocate = constrained._allocate
+        def measure(owner, objects):
+            if any(value.spec.kind == 'executed_float64_phase' for value in objects):
+                allocations.append(constrained.snapshot().resources['current']['reference_payload_bytes']+sum(value.spec.residency['reference_payload_bytes'] for value in objects))
+            return original_allocate(owner, objects)
+        with patch.object(constrained, '_allocate', measure):
+            result = constrained.observe(0)
+        assert allocations
+        boundary = allocations[0]-1
+        if cap == boundary:
+            break
+        cap = boundary
+    else:
+        raise AssertionError('immutable observe-evidence boundary did not stabilize')
+    assert result.status == 'UNRESOLVED'
     assert constrained.snapshot().halted and constrained.snapshot().candidates == before.candidates
     assert constrained.snapshot().observations[0].target == 0
+    assert constrained.snapshot().float64_traces[-1].status == 'UNRESOLVED'
+    assert constrained.snapshot().float64_traces[-1].phase == 'ordinary:observe'
+    assert constrained.snapshot().float64_traces[-1].candidate_id == before.deployed_id
+    assert 'phase evidence retention failed' in constrained.snapshot().float64_traces[-1].reason
     validate_residency(constrained)
 
     # An unexpected finite backend exception is retained, then propagated;
@@ -420,22 +432,26 @@ def failure_audit():
     generous = replace(contract(), reference_integer_bits=32768,
                        limits=limits(byte_cap=80_000_000, work_cap=100_000_000))
     run = replace(online(generous, 2, unit=2), float64=Float64Contract(F(1, 1 << 24), F(1, 1 << 24)))
-    calibration = ReferenceCompilerRuntime(generous, zero_program(2), online=run)
-    caps = []
-    pre_phase_caps = []
-    allocate = calibration._allocate
-    def measure_constructor(owner, objects):
-        if any(value.spec.kind == 'executed_float64_phase' for value in objects):
-            current_bytes = calibration.snapshot().resources['current']['reference_payload_bytes']
-            pre_phase_caps.append(current_bytes)
-            caps.append(current_bytes+sum(value.spec.residency['reference_payload_bytes'] for value in objects)-1)
-        return allocate(owner, objects)
-    with patch.object(calibration, '_allocate', measure_constructor):
-        assert calibration.construct_candidate(zero_program(2)).status == 'BUILT_REFERENCE'
-    tight_cfg = replace(generous, limits=limits(byte_cap=caps[0], work_cap=100_000_000))
-    tight_run = replace(run)
-    retained = ReferenceCompilerRuntime(tight_cfg, zero_program(2), online=tight_run)
-    failed = retained.construct_candidate(zero_program(2))
+    def constructor_boundary(*, before_phase=False):
+        byte_cap = 80_000_000
+        for _ in range(16):
+            cfg = replace(generous, limits=limits(byte_cap=byte_cap, work_cap=100_000_000))
+            runtime = ReferenceCompilerRuntime(cfg, zero_program(2), online=run)
+            boundaries = []
+            allocate = runtime._allocate
+            def measure_constructor(owner, objects):
+                if any(value.spec.kind == 'executed_float64_phase' for value in objects):
+                    current = runtime.snapshot().resources['current']['reference_payload_bytes']
+                    boundaries.append(current if before_phase else current+sum(value.spec.residency['reference_payload_bytes'] for value in objects)-1)
+                return allocate(owner, objects)
+            with patch.object(runtime, '_allocate', measure_constructor):
+                result = runtime.construct_candidate(zero_program(2))
+            assert boundaries
+            if byte_cap == boundaries[0]:
+                return cfg, runtime, result, byte_cap
+            byte_cap = boundaries[0]
+        raise AssertionError('immutable construction-evidence boundary did not stabilize')
+    tight_cfg, retained, failed, constructor_cap = constructor_boundary()
     assert failed.status == 'UNRESOLVED'
     snapshot = validate_residency(retained)
     assert snapshot.float64_traces[-1].status == 'UNRESOLVED'
@@ -446,7 +462,7 @@ def failure_audit():
 
     # A second, expected allocation failure cannot hide an earlier unexpected
     # backend failure or relabel that execution bug as mere budget exhaustion.
-    combined_cfg = replace(generous, limits=limits(byte_cap=pre_phase_caps[0], work_cap=100_000_000))
+    combined_cfg, _, _, pre_phase_cap = constructor_boundary(before_phase=True)
     combined = ReferenceCompilerRuntime(combined_cfg, zero_program(2), online=run)
     before = combined.snapshot()
     original_failure = 'injected finite initializer failure before evidence retention'
@@ -459,7 +475,7 @@ def failure_audit():
     assert original_failure in snapshot.float64_traces[-1].reason
     assert 'ResourceExceeded' in snapshot.float64_traces[-1].reason
     assert 'phase evidence retention failed' in snapshot.float64_traces[-1].reason
-    assert snapshot.resources['peak']['reference_payload_bytes'] <= pre_phase_caps[0]
+    assert snapshot.resources['peak']['reference_payload_bytes'] <= pre_phase_cap
     return {'actual_state_tolerance_failure_retains_revealed_target': True,
             'actual_binary64_integer_work_limit_stops_prediction': True,
             'real_work_and_coexistence_caps_halt_paired_prefix': True,
@@ -467,7 +483,10 @@ def failure_audit():
             'internal_backend_contract_failure_not_mislabeled_admissibility': True,
             'valid_looking_endpoint_without_registered_operations_rejected': True,
             'combined_backend_and_evidence_allocation_failure_preserves_both_causes': True,
-            'failed_evidence_allocation_cannot_leave_unowned_checked_phase': True}
+            'failed_evidence_allocation_cannot_leave_unowned_checked_phase': True,
+            'same_manifest_observe_evidence_cap': cap,
+            'same_manifest_constructor_evidence_cap': constructor_cap,
+            'same_manifest_before_constructor_evidence_cap': pre_phase_cap}
 
 
 def crossing_audit():
