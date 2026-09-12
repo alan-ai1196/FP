@@ -2459,3 +2459,68 @@ Complete CUDA installation/prefix/persistence regressions pass, including the
 trained 774-member class, 64 short streams and all 32 null branches. Shared
 host-failure and CPU finite-run regressions pass; all 38 package files import
 without Torch. The frozen CPU release is not reissued by these targeted checks.
+
+## 77. Compose the owned CUDA strategy and finite run boundary (2026-09-13)
+
+The existing Compiler strategy depends on owned search completion, fresh
+admission/crossing and reachable installation results. It therefore extends
+to the already registered CUDA path without another semantic architecture
+action. `CudaCompilerPolicy`/`CudaCompilationStep` explicitly name the CUDA
+rule; path-specific records keep the actual CUDA identity. The shared Runtime
+strategy still owns every Compiler control and accepts only ordinary event
+transport from its caller. The target policy requires the live host binding
+and actual device contract, plus resident transport when compilation is used.
+
+The completed CUDA policy stage now publishes inside the same root/lease
+transaction as its installed learner and receipt. Failure to retain that
+record cannot leave an installed model with an old retryable stage. Separate
+reference/CUDA evidence spends global alpha normally; a refused admission
+retains each path's concrete reason instead of losing it in a generic result.
+
+At the registered finite horizon, Runtime retains partial optimizer units
+and reports unfinished stages as unresolved. CUDA closure preparation checks
+all retained current learners and their complete state relations, initialized
+extents and the quiescent device frame. Diagnostics come from owned forecast
+words. Device binding, current transport, checked/nonchecked phase counts,
+historical reference decision classes and spent alpha accompany the complete
+snapshot. After paid report allocation, final identity verification precedes
+the single run-closure publication. A prepared buffer is not a sealed run.
+
+The actual two-stage path installs two 35-member selections at 22 and 38 and
+seals at 60, with 456 independently replayed CUDA and CPU phases. An initially
+attempted 40-event fixture correctly refused its second 30-epoch admission at
+24: only 16 future events remained. The successful fixture preregisters the
+full 60-event stream; the original refusal is retained as a control, with no
+new identity or alpha debit. No FP resource rule was relaxed to pass it.
+
+The full audit also exercises trained/recurrent installation, no optional
+CPU learner, short complete branches, partial units, unfinished stages and
+search allowance exhaustion. Report failures after installation retain the
+completed target and event without run completion. A same-value tensor shape
+mutation after report allocation prevents final verification; even its owned
+prepared report bytes cannot revive authority after the view is restored.
+Admission-policy retention and combined install-policy preparation failures
+have distinct terminal/no-install outcomes.
+
+One whole-run trace of the 774-member test exceeded the external audit
+watchdog. Restricting observational tracing to every expected installation
+boundary removes that overhead; receipt/cursor equality still checks every
+actual publication. The same full class and FP budgets then pass. A static
+method fault hook and valid-argument terminal probes were corrected in the
+audit, without changing Runtime behavior to accommodate them.
+
+The complete minimal audit passes in 32 pre-fenced Windows workers. The
+774-member trained run independently replays 970 CUDA and 970 CPU phases;
+the recurrent run replays 320 of each. All 16 four-event binary streams
+pass 776 CUDA phase checks, with eight baseline decisions and eight unresolved
+evidence outcomes. Maximum completed job commitment is 2,794,962,944 bytes
+under the 4 GiB cap. Full CPU owned-policy, finite-run and host-allocation
+failure regressions pass; the affected CPU policy-failure section was checked
+again after the final diagnostic change. All 39 package files import without
+Torch. These checks do not reissue the frozen CPU release.
+
+`OWNED_CUDA_POLICY_RUN.md` gives the scoped composition and publication
+argument. The next work is the existing hierarchical fixture on actual AMP
+and complete target release integration. Its strong SUM training tie and
+identifiability controls remain required. A sealed stream is neither current
+CUDA optimality, structural forcing nor model-science authority.

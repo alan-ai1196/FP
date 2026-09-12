@@ -21,7 +21,8 @@ from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .encoding import packed_size, write_packed, fragments
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
-from .policy import CompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot, CompilationState, TERMINAL_STAGES
+from .policy import (CompilerPolicy, CudaCompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot,
+                     CompilationState, CudaCompilationState, TERMINAL_STAGES)
 from .run_state import ReferenceRunManifest, ReferenceRunClosure, ReferenceRunSnapshot, RunDecision, prediction_diagnostics
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
@@ -34,6 +35,8 @@ from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
 from .cuda_installation import CudaInstallAttempt, CudaInstallReceipt, CudaInstallResult, prepare_transport, verify_transport
+from .cuda_storage import CudaStorageUnresolved
+from .cuda_run import CudaRunClosure, CudaRunSnapshot, cuda_diagnostics
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
@@ -307,7 +310,7 @@ class ReferenceCompilerRuntime:
     })
 
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
-                 host: HostResourceContract | None = None, policy: CompilerPolicy | None = None,
+                 host: HostResourceContract | None = None, policy: CompilerPolicy | CudaCompilerPolicy | None = None,
                  cuda: CudaPrefixContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
@@ -318,7 +321,10 @@ class ReferenceCompilerRuntime:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
             if policy is not None:
-                raise ContractError('the CPU install/run policy has no transition proof for a target CUDA root')
+                if type(policy) is not CudaCompilerPolicy:
+                    raise ContractError('the CPU install/run policy has no transition proof for a target CUDA root')
+                if host is None or policy.steps and cuda.install is None:
+                    raise ContractError('owned CUDA policy requires a bound host and registered transport for compilation')
             if contract.reference_integer_bits < 1075:
                 raise ArithmeticUnresolved('registered CUDA relation decoding exceeds the reference integer budget')
             if cuda.install is not None:
@@ -335,7 +341,7 @@ class ReferenceCompilerRuntime:
                 raise ContractError('CUDA persistence requires its independently executed registered device prefix')
         self._online = online
         if policy is not None:
-            if type(policy) is not CompilerPolicy:
+            if type(policy) is not (CompilerPolicy if cuda is None else CudaCompilerPolicy):
                 raise ContractError('registered strategy data required; no policy callback or supplied execution state')
             policy.validate(online)
         self._policy_contract = policy
@@ -408,7 +414,8 @@ class ReferenceCompilerRuntime:
             raise ContractError(f'initial registered reference realization failed: {initial.status}: {initial.reason}')
         self._deployed_id = initial.candidate_id
         if policy is not None:
-            self._save_policy(tuple(CompilationState() for _ in policy.steps))
+            state_type = CompilationState if cuda is None else CudaCompilationState
+            self._save_policy(tuple(state_type() for _ in policy.steps))
 
     @property
     def contract(self):
@@ -434,8 +441,6 @@ class ReferenceCompilerRuntime:
             return
         try:
             self._require_idle()
-            if self._cuda is not None:
-                raise ContractError('reference run closure cannot omit an actual target CUDA prefix')
             if set(self.__dict__) != self._root_fields:
                 raise ContractError('run closure has no frame proof for an unregistered Runtime coordinate')
             if self._pending is not None or self._active_ingress is not None or self._policy_running:
@@ -444,6 +449,8 @@ class ReferenceCompilerRuntime:
             # ledger includes this debit and the closure buffer itself.
             work = 4096+64*sum(len(value) for value in self._buffers.values())
             self._event_router.charge_work('information', {'work': work}, 'complete-reference-run-report')
+            before = tuple(self._candidates.values()) if self._cuda is not None else ()
+            transport = prepare_transport(self._cuda, before) if self._cuda is not None else None
             historical = {proof.search_id: proof for proof in self._reference_proofs.values()}
             decisions = tuple(RunDecision(s.search_id, s.decision_class_id, s.spec,
                 s.ordinary_cursor, s.base_lineage_id, s.status,
@@ -459,14 +466,32 @@ class ReferenceCompilerRuntime:
             if self._online.float64 is not None:
                 floating = (trace.float64_prediction for trace in self._float64_traces if trace.float64_prediction is not None)
                 diagnostics.append(prediction_diagnostics(floating, 'cpu-binary64', self._contract.reference_integer_bits))
-            closure = ReferenceRunClosure(f'{self._runtime_id}:run-closure', self._cursor, self._deployed_id,
+            target_fields = {}
+            if self._cuda is not None:
+                for state in before:
+                    # Includes every retained shadow at its own local clock;
+                    # partial optimizer units survive the horizon unchanged.
+                    raw = self._cuda_learner_record(state).raw_state
+                    check_state(state.learner, widened_state(raw),
+                        Float64Contract(self._cuda.contract.state_atol, self._cuda.contract.probability_atol),
+                        bit_limit=self._contract.reference_integer_bits)
+                diagnostics.append(cuda_diagnostics(self._cuda, self._contract.reference_integer_bits))
+                checked = sum(p.status == 'CHECKED_CUDA_PREFIX_PHASE' for p in self._cuda.phases.values())
+                target_fields = dict(cuda_device=self._cuda._device.snapshot(), cuda_transport=transport[-1],
+                    checked_cuda_phases=checked, unresolved_cuda_phases=len(self._cuda.phases)-checked)
+            closure_type = ReferenceRunClosure if self._cuda is None else CudaRunClosure
+            closure = closure_type(f'{self._runtime_id}:run-closure', self._cursor, self._deployed_id,
                 self._policy_state.generation, stages, decisions,
                 tuple((key, tuple(program.counts().items())) for key, program in self._programs.items()),
-                tuple(diagnostics), self._cursor % self._online.learner.update_unit, self._alpha_spent)
+                tuple(diagnostics), self._cursor % self._online.learner.update_unit, self._alpha_spent, **target_fields)
             packed = self._machine.realize(closure.object_id, 'owned_run_closure', closure, self._chi)
             self._event_router.charge_work('information', {'work': packed.spec.residency['reference_payload_bytes']+1},
                                           'retain-reference-run-report')
             self._allocate(self._data_owner, (packed,))
+            if self._cuda is not None:
+                verify_transport(transport, self._cuda, before)
+        except CudaStorageUnresolved:
+            raise
         except HostExecutionUnresolved:
             raise
         except MemoryError:
@@ -482,9 +507,10 @@ class ReferenceCompilerRuntime:
 
     def _run_snapshot(self):
         status = ('HALTED_UNRESOLVED' if self._halted is not None else
-                  'SEALED_REFERENCE_STREAM' if self._run_closure is not None else
+                  self._run_closure.execution if self._run_closure is not None else
                   'MANUAL_PARTIAL' if self._policy_contract is None else 'OPEN_OWNED_STREAM')
-        return ReferenceRunSnapshot(self._manifest, self._manifest_object_id, status, self._run_closure,
+        snapshot_type = ReferenceRunSnapshot if self._cuda is None else CudaRunSnapshot
+        return snapshot_type(self._manifest, self._manifest_object_id, status, self._run_closure,
             'process/job commitment and observed lifetime CPU; no time cap or GPU claim' if self._host is not None
             else 'UNRESOLVED: packed payload accounting only; no live host resource binding')
 
@@ -509,8 +535,9 @@ class ReferenceCompilerRuntime:
 
     def _end_policy_evidence(self, index, reason, *, install_attempt=None):
         stage = self._policy_state.stages[index]
-        for identity_id, path in ((stage.reference_identity, REFERENCE_PATH), (stage.float64_identity, FLOAT64_PATH)):
-            if identity_id is not None and self._persistence_identities[identity_id].status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+        physical_path = FLOAT64_PATH if self._cuda is None else CUDA_PATH
+        for identity_id, path in ((stage.reference_identity, REFERENCE_PATH), (stage.physical_identity, physical_path)):
+            if identity_id is not None and self._persistence_identities[identity_id].status in LIVE_STATUSES:
                 self._cancel_persistence(identity_id, path)
         self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor, reason=reason, install_attempt=install_attempt)
 
@@ -523,6 +550,9 @@ class ReferenceCompilerRuntime:
         """
         if self._cursor % self._online.learner.update_unit:
             return
+        cuda = self._cuda is not None
+        field = 'cuda_identity' if cuda else 'float64_identity'
+        path = CUDA_PATH if cuda else FLOAT64_PATH
         try:
             self._event_router.charge_work('information', {'work': len(self._policy_contract.steps)+1}, 'compiler-policy-boundary')
             index = next((i for i, stage in enumerate(self._policy_state.stages) if stage.status not in TERMINAL_STAGES), None)
@@ -554,28 +584,35 @@ class ReferenceCompilerRuntime:
                     return
                 self._update_policy(index, status='ADMITTING_REFERENCE', **values)
                 reference = self.admit_reference_persistence(selected.best_candidate_id, step.reference_rule)
-                self._update_policy(index, status='ADMITTING_FLOAT64', reference_identity=reference.identity_id)
-                floating = self.admit_float64_persistence(selected.best_candidate_id, step.float64_rule)
-                self._update_policy(index, status='EVIDENCE', float64_identity=floating.identity_id)
+                self._update_policy(index, status='ADMITTING_CUDA' if cuda else 'ADMITTING_FLOAT64', reference_identity=reference.identity_id)
+                admission = self.admit_cuda_persistence if cuda else self.admit_float64_persistence
+                floating = admission(selected.best_candidate_id, step.physical_rule)
+                self._update_policy(index, status='EVIDENCE', **{field: floating.identity_id})
                 ids = reference.identity_id, floating.identity_id
                 if any(key is None or self._persistence_identities[key].status != 'ACTIVE' for key in ids):
-                    self._end_policy_evidence(index, 'both fresh path admissions were not established; allocations stay spent')
+                    self._end_policy_evidence(index,
+                        f'reference admission {reference.status}: {reference.reason}; '
+                        f'{path} admission {floating.status}: {floating.reason}; allocations stay spent')
                 return
             if stage.status != 'EVIDENCE':
                 raise ContractError('incomplete strategy action cannot resume as a new attempt')
-            ids = stage.reference_identity, stage.float64_identity
-            if any(self._persistence_identities[key].status not in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED') for key in ids):
+            ids = stage.reference_identity, stage.physical_identity
+            if any(self._persistence_identities[key].status not in ('ACTIVE', CROSSINGS[REFERENCE_PATH], CROSSINGS[path]) for key in ids):
                 self._end_policy_evidence(index, 'paired evidence ended without both current crossings')
                 return
-            if self.paired_persistence_result(*ids).status != 'PAIRED_CPU_CROSSED':
+            paired = self.paired_cuda_persistence_result if cuda else self.paired_persistence_result
+            if paired(*ids).status != ('PAIRED_CUDA_CROSSED' if cuda else 'PAIRED_CPU_CROSSED'):
                 return
             self._update_policy(index, status='INSTALLING')
-            result = self.install_cpu(stage.candidate_id, proposal_proof_id=stage.proof_id,
-                                      reference_identity=ids[0], float64_identity=ids[1])
-            if result.status != 'INSTALLED_CPU':
+            install = self.install_cuda if cuda else self.install_cpu
+            result = install(stage.candidate_id, proposal_proof_id=stage.proof_id,
+                             reference_identity=ids[0], **{field: ids[1]})
+            if result.status != ('INSTALLED_CUDA' if cuda else 'INSTALLED_CPU'):
                 self._end_policy_evidence(index, result.reason, install_attempt=result.attempt_id)
-            # Success publishes the completed policy record inside the CPU
+            # Success publishes the completed policy record inside the owned
             # root/lease transaction. There is no allocating bookkeeping here.
+        except CudaStorageUnresolved:
+            raise
         except HostExecutionUnresolved:
             raise
         except MemoryError:
@@ -2509,11 +2546,11 @@ after all fallible construction, checks and physical preparation complete.
                 index = next((i for i, stage in enumerate(policy_state.stages) if stage.status not in TERMINAL_STAGES), None)
                 stage = None if index is None else policy_state.stages[index]
                 if (not self._policy_running or stage is None or stage.status != 'INSTALLING'
-                        or (stage.candidate_id, stage.proof_id, stage.reference_identity, stage.float64_identity)
+                        or (stage.candidate_id, stage.proof_id, stage.reference_identity, stage.physical_identity)
                         != (candidate_id, proposal_proof_id, reference_identity, physical_identity)):
                     raise ContractError('installation does not complete the owned current policy action')
                 stages = policy_state.stages
-                policy_state = self._next_policy_state(stages[:index]+(replace(stage, status='INSTALLED_CPU',
+                policy_state = self._next_policy_state(stages[:index]+(replace(stage, status=installed,
                     ended_cursor=self._cursor, install_attempt=attempt_id),)+stages[index+1:])
                 self._allocate(stage_owner, (self._machine.realize(policy_state.object_id, 'owned_compiler_policy', policy_state, self._chi),))
                 moves.append((stage_owner, self._data_owner, policy_state.object_id, 1))

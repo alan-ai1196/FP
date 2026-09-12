@@ -55,8 +55,8 @@ device extents and full states before one combined root/lease publication.
 The CUDA learner objects retain identity; old searches and evidence stop
 with history and alpha preserved. Read
 [owned CUDA installation](../../theory/proofs/OWNED_CUDA_INSTALLATION.md) and
-run `scripts/audit_cuda_installation.py`. Complete device resources and owned
-target policy/run/release integration remain the frontier; science stays HOLD.
+run `scripts/audit_cuda_installation.py`. Complete target release integration
+remains the frontier; science stays HOLD.
 Read [device-resource observation scope](../../theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
 before promoting native arena counters to a complete device claim. The
 actual foreign-allocation audit also distinguishes Torch's CUDA build tag
@@ -70,8 +70,27 @@ a mismatch before tensor allocation. `snapshot().cuda.device` reports the
 whole-board residency upper separately from native arena and host commitment.
 Read [the scoped resource proof](../../theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md)
 and run `scripts/audit_cuda_device.py`; the actual 4 GiB host-job audit also
-executes the CUDA install and continuation. This does not yet close owned
-target policy/run reporting or issue a complete target release.
+executes the CUDA install and continuation. This does not issue a complete target release.
+
+The [owned CUDA policy/run](../../theory/proofs/OWNED_CUDA_POLICY_RUN.md) now
+uses the same Runtime strategy with explicit target identities:
+
+```python
+from fp_reference import CudaCompilerPolicy, CudaCompilationStep
+policy = CudaCompilerPolicy((CudaCompilationStep(2, 'native', 10000, 'ref', 'cuda'),))
+runtime = ReferenceCompilerRuntime(contract, initial_program, online=online,
+    host=host, cuda=cuda, policy=policy)
+```
+
+The immutable `cuda` declaration must enable resident installation; `host`
+must bind a worker fenced before execution. The registered future comparison
+must fit the stream horizon. Empty target steps give the ordinary CUDA
+baseline. At the horizon Runtime verifies the full device frame and publishes
+`SEALED_CUDA_STREAM`, retaining partial units and unresolved stages. The
+report is `snapshot().run` together with the entire snapshot; it supplies no
+future authority or current CUDA-class optimum. Run
+`scripts/audit_cuda_policy_run.py`. The existing hierarchical AMP fixture
+and final target release integration remain before model science.
 
 ## Current executable recovery (2026-09-12)
 

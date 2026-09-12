@@ -184,7 +184,8 @@ section then passes in its actual 64 MiB job. No production resource limit
 or failure rule changed. CUDA prefix and persistence regressions also pass.
 This does not reissue the frozen CPU release.
 
-Complete device resources, owned target policy/run integration and the final
-target release remain open. `install_cuda` establishes the scoped transition
+The subsequent [device binding](WHOLE_BOARD_CUDA_RESOURCES.md) and
+[owned policy/run composition](OWNED_CUDA_POLICY_RUN.md) now execute on this
+transition. Final target release remains open. `install_cuda` establishes the scoped transition
 above; the generic full-release `install` remains unresolved. Continue that
 integration before model science, without extending static special cases.

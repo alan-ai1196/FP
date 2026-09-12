@@ -69,7 +69,7 @@ def prediction_diagnostics(predictions, path, bit_limit):
 
     for prediction in predictions:
         count += 1
-        decode = (lambda value: value.exact) if path == 'cpu-binary64' else (lambda value: value)
+        decode = (lambda value: value.exact) if path in ('cpu-binary64', 'cuda-half-single') else (lambda value: value)
         for label in ('values', 'masses', 'probabilities', 'normalizer'):
             values = (prediction.normalizer,) if label == 'normalizer' else getattr(prediction, label)
             for raw in values:

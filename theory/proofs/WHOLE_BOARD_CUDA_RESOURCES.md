@@ -3,8 +3,9 @@
 Status: **scoped resource proposition, owned native registration and actual
 RTX 3090 endpoint audit.** Foundation R4, XVII.31 and ERC-1 stay frozen.
 This closes an identified VRAM-residency coordinate, not a complete target
-release or model-science claim. The remaining work is owned target policy,
-finite run reporting and integration of the declared resource coordinates.
+release or model-science claim. The subsequent
+[owned target policy/run](OWNED_CUDA_POLICY_RUN.md) integrates these declared
+coordinates; complete target release remains open.
 
 ## 1. A uniform upper does not require an exact allocation history
 
@@ -150,6 +151,7 @@ device phases, recurrent/profile paths and all 32 fresh null branches with
 and reference-run regressions pass; all 38 package files import without Torch.
 This is targeted regression evidence, not a reissue of the frozen CPU release.
 
-Owned target policy, complete finite target run/report integration and target
-release remain open. This result supplies neither an all-kernel theorem nor
-new static theory prerequisites. Continue that integration before science.
+The subsequent [owned policy/run composition](OWNED_CUDA_POLICY_RUN.md)
+executes on this resource binding. Complete target release remains open.
+This result supplies neither an all-kernel theorem nor new static theory
+prerequisites. Continue target integration before science.

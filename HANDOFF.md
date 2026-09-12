@@ -147,8 +147,7 @@ full queues. Two further installations at 22 and 38 retain both generations
 and consume fresh alpha. Actual preparation caps, late failure/retry, pending
 work and state/extent corruption have negative controls.
 
-Continue with complete device resources and owned target policy/run/release
-integration. CPU installation and its owned run policy still refuse a CUDA
+Continue with target release integration. CPU installation and its owned run policy still refuse a CUDA
 root; the new registered device transition has its own precise scope. Do
 not rebuild range/persistence/installation or resume static cases to defer
 the remaining target steps. The complete AMP release remains open; science
@@ -180,8 +179,26 @@ restoration after native failures and the diagnostic failure boundary. A
 worker fenced before execution in a 4 GiB Windows job also completes the
 35-member selection, fresh crossings, CUDA install and later continuation;
 151 device phases have an independent exact rounded replay. Installation
-retains the original device binding. Continue owned target policy/run/report
-integration; do not rebuild these resource components or reopen static cases.
+retains the original device binding. Do not rebuild these resource components
+or reopen static cases.
+
+The [owned CUDA policy and finite run](theory/proofs/OWNED_CUDA_POLICY_RUN.md)
+now compose those components. `CudaCompilerPolicy` accepts only immutable
+native-search stages and reference/CUDA evidence rules; Runtime owns all
+Compiler controls. It requires the registered CUDA prefix and live host
+binding. Its same deterministic strategy publishes a completed policy stage
+inside the resident installation, then prepares and verifies the full CUDA
+frame before publishing `SEALED_CUDA_STREAM` at the registered horizon.
+Prepared report bytes alone cannot establish a completed run.
+
+The actual two-stage path installs at 22 and 38 and seals at 60, with 456
+independent CUDA and CPU phase checks. A 40-event schedule correctly refuses
+the second 30-epoch admission. Trained/recurrent/short-stream and failure
+controls are in `scripts/audit_cuda_policy_run.py`. Stream completion reports
+unfinished stages as unresolved and grants no future authority or current
+target optimum. Continue the existing hierarchical fixture on AMP and complete
+target release integration. Keep its strong SUM tie and identifiability
+controls; do not treat native training optimality as structural forcing.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

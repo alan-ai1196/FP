@@ -67,7 +67,7 @@ class CudaPrefixContract:
 class CudaRunManifest:
     reference: object
     cuda: CudaPrefixContract
-    target_amp: str = field(default='registered CUDA prefix/range/evidence and optional resident installation; full device resource/run/release UNRESOLVED', init=False)
+    target_amp: str = field(default='owned CUDA prefix/range/evidence, resident installation and finite policy/run; complete target release UNRESOLVED', init=False)
 
 
 @dataclass(frozen=True)

@@ -1,0 +1,328 @@
+{
+  "status": "PASS",
+  "scope": "owned finite CUDA policy/run under registered host, tensor and framebuffer resource coordinates; no model-science or complete release claim",
+  "success": {
+    "native_classes": [
+      35,
+      35
+    ],
+    "install_cursors": [
+      22,
+      38
+    ],
+    "policy_and_learner_publish_together": true,
+    "cursor": 60,
+    "sealed_control_denials": 49,
+    "alpha_spent": "3/4",
+    "independent_CUDA_phases": 456,
+    "independent_CPU_phases": 456,
+    "host": {
+      "process_id": 25984,
+      "creation_100ns": 134337295789498425,
+      "lifetime_process_commit_peak": 2237775872
+    },
+    "completed_job": {
+      "peak_process_commit": 2327396352,
+      "peak_job_commit": 2328621056,
+      "user_100ns": 174531250,
+      "kernel_100ns": 16562500
+    }
+  },
+  "learned": {
+    "native_classes": [
+      774
+    ],
+    "install_cursors": [
+      18
+    ],
+    "policy_and_learner_publish_together": true,
+    "cursor": 40,
+    "sealed_control_denials": 49,
+    "alpha_spent": "1/2",
+    "independent_CUDA_phases": 970,
+    "independent_CPU_phases": 970,
+    "host": {
+      "process_id": 28400,
+      "creation_100ns": 134337296008274485,
+      "lifetime_process_commit_peak": 2512080896
+    },
+    "completed_job": {
+      "peak_process_commit": 2793725952,
+      "peak_job_commit": 2794962944,
+      "user_100ns": 2611875000,
+      "kernel_100ns": 21562500
+    }
+  },
+  "recurrent": {
+    "native_classes": [
+      124
+    ],
+    "install_cursors": [
+      22
+    ],
+    "policy_and_learner_publish_together": true,
+    "cursor": 40,
+    "sealed_control_denials": 49,
+    "alpha_spent": "1/2",
+    "independent_CUDA_phases": 320,
+    "independent_CPU_phases": 320,
+    "host": {
+      "process_id": 7900,
+      "creation_100ns": 134337298659586649,
+      "lifetime_process_commit_peak": 2221072384
+    },
+    "completed_job": {
+      "peak_process_commit": 2250080256,
+      "peak_job_commit": 2251288576,
+      "user_100ns": 183437500,
+      "kernel_100ns": 11875000
+    }
+  },
+  "no-cpu": {
+    "native_classes": [
+      35
+    ],
+    "install_cursors": [
+      22
+    ],
+    "policy_and_learner_publish_together": true,
+    "cursor": 40,
+    "sealed_control_denials": 49,
+    "alpha_spent": "1/2",
+    "independent_CUDA_phases": 231,
+    "independent_CPU_phases": 0,
+    "host": {
+      "process_id": 13292,
+      "creation_100ns": 134337298874115007,
+      "lifetime_process_commit_peak": 2236596224
+    },
+    "completed_job": {
+      "peak_process_commit": 2236596224,
+      "peak_job_commit": 2237829120,
+      "user_100ns": 71718750,
+      "kernel_100ns": 11718750
+    }
+  },
+  "registration": {
+    "registration_rejections_before_native_tensor_allocation": 10,
+    "compiler_control_denials": 22,
+    "host": {
+      "process_id": 27872,
+      "creation_100ns": 134337298976114498,
+      "lifetime_process_commit_peak": 2101579776
+    },
+    "completed_job": {
+      "peak_process_commit": 2101579776,
+      "peak_job_commit": 2102820864,
+      "user_100ns": 14843750,
+      "kernel_100ns": 6406250
+    }
+  },
+  "partial": {
+    "case": "partial",
+    "cursor": 3,
+    "partial_optimizer_events": 1,
+    "stage_outcomes": [],
+    "terminal_denials": 27,
+    "independent_CUDA_phases": 8,
+    "host": {
+      "process_id": 19048,
+      "creation_100ns": 134337298997647994,
+      "lifetime_process_commit_peak": 2210734080
+    },
+    "completed_job": {
+      "peak_process_commit": 2212954112,
+      "peak_job_commit": 2214170624,
+      "user_100ns": 18437500,
+      "kernel_100ns": 8750000
+    }
+  },
+  "search-budget": {
+    "case": "search-budget",
+    "cursor": 4,
+    "partial_optimizer_events": 0,
+    "stage_outcomes": [
+      "UNRESOLVED"
+    ],
+    "terminal_denials": 27,
+    "independent_CUDA_phases": 11,
+    "host": {
+      "process_id": 7540,
+      "creation_100ns": 134337299026300385,
+      "lifetime_process_commit_peak": 2211704832
+    },
+    "completed_job": {
+      "peak_process_commit": 2214682624,
+      "peak_job_commit": 2215915520,
+      "user_100ns": 19218750,
+      "kernel_100ns": 9062500
+    }
+  },
+  "unfinished": {
+    "case": "unfinished",
+    "cursor": 3,
+    "partial_optimizer_events": 1,
+    "stage_outcomes": [
+      "UNRESOLVED",
+      "UNRESOLVED"
+    ],
+    "terminal_denials": 27,
+    "independent_CUDA_phases": 45,
+    "host": {
+      "process_id": 15780,
+      "creation_100ns": 134337299056915298,
+      "lifetime_process_commit_peak": 2219458560
+    },
+    "completed_job": {
+      "peak_process_commit": 2232348672,
+      "peak_job_commit": 2233561088,
+      "user_100ns": 28437500,
+      "kernel_100ns": 9062500
+    }
+  },
+  "horizon-budget": {
+    "30_epoch_second_admission_exceeds_remaining_16_events": true,
+    "no_unadmitted_identity_or_alpha_debit": true,
+    "first_install_and_second_selection_retained": true,
+    "terminal_denials": 27,
+    "host": {
+      "process_id": 17524,
+      "creation_100ns": 134337299096124394,
+      "lifetime_process_commit_peak": 2237726720
+    },
+    "completed_job": {
+      "peak_process_commit": 2237726720,
+      "peak_job_commit": 2238951424,
+      "user_100ns": 98906250,
+      "kernel_100ns": 12968750
+    }
+  },
+  "report-resource": {
+    "case": "report-resource",
+    "completed_target_install_and_alpha_survive_failed_report": true,
+    "original_unexpected_exception_preserved": false,
+    "host": {
+      "process_id": 29316,
+      "creation_100ns": 134337299226732270,
+      "lifetime_process_commit_peak": 2102427648
+    },
+    "completed_job": {
+      "peak_process_commit": 2102427648,
+      "peak_job_commit": 2103644160,
+      "user_100ns": 48125000,
+      "kernel_100ns": 10937500
+    }
+  },
+  "report-memory": {
+    "case": "report-memory",
+    "completed_target_install_and_alpha_survive_failed_report": true,
+    "original_unexpected_exception_preserved": false,
+    "host": {
+      "process_id": 28652,
+      "creation_100ns": 134337299296826288,
+      "lifetime_process_commit_peak": 2236362752
+    },
+    "completed_job": {
+      "peak_process_commit": 2236362752,
+      "peak_job_commit": 2237583360,
+      "user_100ns": 50312500,
+      "kernel_100ns": 9062500
+    }
+  },
+  "report-device": {
+    "case": "report-device",
+    "completed_target_install_and_alpha_survive_failed_report": true,
+    "original_unexpected_exception_preserved": false,
+    "host": {
+      "process_id": 18172,
+      "creation_100ns": 134337299366448632,
+      "lifetime_process_commit_peak": 2236567552
+    },
+    "completed_job": {
+      "peak_process_commit": 2236567552,
+      "peak_job_commit": 2237788160,
+      "user_100ns": 50312500,
+      "kernel_100ns": 8281250
+    }
+  },
+  "report-unexpected": {
+    "case": "report-unexpected",
+    "completed_target_install_and_alpha_survive_failed_report": true,
+    "original_unexpected_exception_preserved": true,
+    "host": {
+      "process_id": 27732,
+      "creation_100ns": 134337299435426844,
+      "lifetime_process_commit_peak": 2101952512
+    },
+    "completed_job": {
+      "peak_process_commit": 2101952512,
+      "peak_job_commit": 2103189504,
+      "user_100ns": 50781250,
+      "kernel_100ns": 7343750
+    }
+  },
+  "admit-policy-failure": {
+    "case": "admit-policy-failure",
+    "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+    "terminal_denials": 27,
+    "host": {
+      "process_id": 760,
+      "creation_100ns": 134337299504519607,
+      "lifetime_process_commit_peak": 2219126784
+    },
+    "completed_job": {
+      "peak_process_commit": 2231271424,
+      "peak_job_commit": 2232496128,
+      "user_100ns": 27656250,
+      "kernel_100ns": 7968750
+    }
+  },
+  "install-policy-failure": {
+    "case": "install-policy-failure",
+    "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+    "terminal_denials": 27,
+    "host": {
+      "process_id": 6048,
+      "creation_100ns": 134337299542030964,
+      "lifetime_process_commit_peak": 2103160832
+    },
+    "completed_job": {
+      "peak_process_commit": 2137358336,
+      "peak_job_commit": 2138566656,
+      "user_100ns": 51093750,
+      "kernel_100ns": 8906250
+    }
+  },
+  "late-frame": {
+    "prepared_owned_report_bytes_are_not_a_published_run": true,
+    "post-preparation_device_corruption_keeps_completed_event_but_revokes_authority": true,
+    "terminal_denials": 27,
+    "host": {
+      "process_id": 14868,
+      "creation_100ns": 134337299612338206,
+      "lifetime_process_commit_peak": 2210238464
+    },
+    "completed_job": {
+      "peak_process_commit": 2212270080,
+      "peak_job_commit": 2213490688,
+      "user_100ns": 18906250,
+      "kernel_100ns": 8125000
+    }
+  },
+  "host_enforcement": {
+    "workers": 32,
+    "commit_cap": 4294967296,
+    "all_successful_exits_and_PID_lifetime_matches": true,
+    "all_fenced_before_execution": true,
+    "maximum_process_commit": 2793725952,
+    "maximum_job_commit": 2794962944
+  },
+  "finite_branches": {
+    "complete_binary_four_event_streams": 16,
+    "native_members_per_run": 35,
+    "independent_CUDA_phases": 776,
+    "baseline_selected": 8,
+    "evidence_unresolved": 8,
+    "sealed_port_denials": 432
+  }
+}

@@ -96,8 +96,7 @@ extent is rejected before numeric access. The common CPU/CUDA transaction
 also passes the complete CPU install, owned-policy, host-failure and run
 regressions. Read `scripts/audit_cuda_installation.py` and its minimal evidence.
 
-Complete device resource accounting and owned target policy/run/release
-integration remain OPEN; model science remains HOLD. This is no new CPU
+Complete target release integration remains OPEN; model science remains HOLD. This is no new CPU
 freeze or all-kernel theorem, and it adds no semantic architecture action.
 
 The separate [resource observation audit](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
@@ -122,8 +121,27 @@ admission and terminal authority after failed native observations, including
 unexpected diagnostic/cleanup failure. One 4 GiB Windows job executes native
 selection, fresh evidence, installation and continuation on the same bound
 host/device, with 151 independent CUDA phase checks. The device binding is
-part of the installation frame. Owned target policy/run and complete target
-release are still open; no new CPU freeze or model-science claim is issued.
+part of the installation frame. Complete target release is still open;
+no new CPU freeze or model-science claim is issued.
+
+The [owned target policy/run composition](theory/proofs/OWNED_CUDA_POLICY_RUN.md)
+now executes through the same Runtime strategy as CPU, with explicitly typed
+CUDA rules and identities. Only exogenous event transport remains external;
+native selection, fresh admission and current paired crossings lead to the
+existing resident install. The completed policy record shares its single
+root publication. A mandatory host binding composes with the actual device,
+framebuffer and tensor resource declarations.
+
+At the finite horizon the full CUDA frame and current state relations are
+checked, target forecast diagnostics are computed from retained words, and
+the prepared report receives a final identity check before publication.
+`SEALED_CUDA_STREAM` closes all continuation ports; it can contain unresolved
+stages and never grants CERTIFIED_COMPLETE or a current target-class optimum.
+Actual two-stage execution installs at 22/38 and seals at 60 with 456 CUDA
+and CPU phase checks. Run `scripts/audit_cuda_policy_run.py` for trained,
+recurrent, finite-branch, resource-horizon and failed-publication controls.
+The remaining work is the existing hierarchical AMP fixture and complete
+target release integration before model science.
 
 ## Status at GitHub migration (2026-09-06)
 

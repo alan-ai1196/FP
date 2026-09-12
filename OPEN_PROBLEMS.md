@@ -61,8 +61,7 @@ actual resource refusals and corruption controls pass. Existing CUDA objects
 and initialized extents remain unchanged; the entire arena already belongs
 to both roles. No general cross-device or numerical transport is inferred.
 
-The active gaps are complete device resources and owned target policy/run/
-release integration. Do not reconstruct the now executed range, persistence
+The active gap is complete target release integration. Do not reconstruct the now executed range, persistence
 or installation components or add static cases as new prerequisites.
 `INSTALLED_CUDA` states that scoped transition; it is not model-science or
 complete device-resource authority.
@@ -82,11 +81,20 @@ are now [implemented and audited](theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md).
 The identified physical board supplies a uniform 24 GiB residency envelope,
 charged to both roles; native tensor history and host private commitment stay
 separate. A 4 GiB Windows-job Runtime executes the 35-member CUDA install and
-continuation under that registration. The next work is owned target policy,
-finite run/report integration and release of the complete declared scope.
+continuation under that registration. The next work is release of the complete declared scope.
 Do not demand exact foreign-allocation history to prove this already justified
 residency upper, or promote it to exclusive availability, cumulative work or
 an undeclared all-system resource claim.
+
+The [owned CUDA policy and finite run](theory/proofs/OWNED_CUDA_POLICY_RUN.md)
+are now implemented. The two-stage ordinary-input-only path installs at
+22/38 and seals at 60; resource-horizon, partial-unit and late report-failure
+controls retain their distinct outcomes. Prepared bytes cannot substitute
+for a published closure, and a sealed stream can contain unresolved stages.
+The active next step is the existing hierarchical fixture on actual AMP,
+then complete target release integration. Keep its strong zero-PRODUCT
+training tie and identifiability controls; these results do not reopen static
+theory or establish population/structural superiority.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 
