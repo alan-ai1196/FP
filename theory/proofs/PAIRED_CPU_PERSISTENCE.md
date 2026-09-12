@@ -241,4 +241,8 @@ packed-payload machine still omits complete host heap, interpreter temporaries,
 bit-time and target-device accounting; terminal diagnostics retain that
 explicit limitation. Numerical and statistical evidence cannot replace
 complete ERC-1 registration, an atomic self-Compiler transaction or actual
-target AMP execution. Those remain the route to RTX 3090 science.
+target AMP execution. The subsequent
+[`OWNED_CPU_INSTALLATION.md`](OWNED_CPU_INSTALLATION.md) separately proves
+and executes a scoped serialized CPU root/lease transaction using this
+evidence. Full accounting, release-gate mapping and actual target AMP remain
+the route to RTX 3090 science.

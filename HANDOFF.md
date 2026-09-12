@@ -34,8 +34,9 @@ Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](theory/proofs/ORDERED_NATIVE_REFERENC
 before interpreting that proof: it optimizes fixed-state empirical CE over
 the registered initializer/profile endpoints plus the actual deployed
 baseline, not all values or future continuations. The remaining gaps are
-complete ERC-1 registration, paired reference/AMP persistence, full physical/error state,
-reference/AMP and atomic install integration.
+complete ERC-1 registration/accounting, full Compiler/error authority, the
+explicit release-gate mapping and actual reference/AMP integration. The
+scoped CPU installation transaction is now executed as described below.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -58,7 +59,32 @@ result reads owned identities with matching starts and schedules. An exact
 reference crossing at event five while finite gain stays identically zero
 demonstrates why numerical closeness cannot transfer statistical evidence.
 Run `scripts/audit_paired_cpu_persistence.py`. `PAIRED_CPU_CROSSED` is scoped
-CPU evidence, with actual target AMP and atomic installation still open.
+CPU evidence; it supplies one premise for the separately executed CPU
+installation below, with actual target AMP still open.
+
+The endpoint now also executes `install_cpu` under immutable
+`OnlineContract.cpu_install=CpuInstallContract(...)`. Read
+[`OWNED_CPU_INSTALLATION.md`](theory/proofs/OWNED_CPU_INSTALLATION.md).
+It combines historical owned class selection with current dual persistence
+and state relations, then publishes one complete serialized CPython root
+and actual buffer-lease transfer. All learners retain their exact states
+and buffer identities at the same cursor. The old deployment becomes a
+shadow; paused searches close with frontier/history retained, and live
+persistence authority ends without wealth rebasing or alpha refunds.
+
+The historical proposal proof stays rejected as a current optimum token.
+Failed preparation preserves the old learners/evidence/frontier while
+retaining attempted IDs, actual work and peak history. An audit-discovered
+retry collision is fixed by attempt-specific physical metadata identities.
+`scripts/audit_cpu_installation.py` checks 2,016 lease cases and complete
+35-/774-member native-class chains through fresh learning, installation and
+ordinary continuation. The 774-member case installs actually trained nonzero
+parameters. This closes the declared serialized CPU transition, not full
+host/device accounting, concurrent/crash-safe publication, target AMP or
+`CERTIFIED_COMPLETE`. Runtime stays NOT FROZEN and science stays HOLD.
+The same audit also executes two successive compilation/evidence/install
+cycles in one Runtime. New baselines and fresh identities work, old
+authority stays closed, and the global alpha cap still blocks later use.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic

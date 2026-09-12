@@ -220,6 +220,80 @@ class ResourceLedger:
         self._closed_owners.add(owner)
         self._event('close_owner', owner)
 
+    def prepare_transfer(self, moves: tuple[tuple[str, str, str, int], ...],
+                         releases: tuple[tuple[str, str, int], ...] = (),
+                         close_owners: tuple[str, ...] = ()) -> ResourceLedger:
+        """Prepare one atomic lease transition without modifying this ledger.
+
+The registered CPU machine may change owners of existing buffers without
+copying them. This is not acquire-before-release: only the complete proposed
+lease map becomes observable at Runtime's root publication. All existing
+preparation allocations, work, peaks and history are retained in the copy.
+There is no resource or installation authority outside the owning Runtime.
+"""
+        fields = {'_limits', '_owners', '_closed_owners', '_objects', '_refs', '_retired',
+                  '_spent', '_peak', '_role_peak', '_events'}
+        if type(self) is not ResourceLedger or set(self.__dict__) != fields:
+            raise ContractError('atomic transfer needs the complete registered ledger state')
+        proposed = object.__new__(ResourceLedger)
+        proposed.__dict__ = dict(self.__dict__)
+        proposed._owners = dict(self._owners)
+        proposed._closed_owners = set(self._closed_owners)
+        proposed._objects = dict(self._objects)
+        proposed._refs = {key: dict(refs) for key, refs in self._refs.items()}
+        proposed._retired = set(self._retired)
+        proposed._spent = {key: dict(value) for key, value in self._spent.items()}
+        proposed._peak = dict(self._peak)
+        proposed._role_peak = {key: dict(value) for key, value in self._role_peak.items()}
+        proposed._events = list(self._events)
+        # Every source debit is checked against the original leases. A move
+        # cannot launder an acquired lease through another move in this batch.
+        debits = {}
+        for source, destination, object_id, count in moves:
+            self._owner(source)
+            self._owner(destination)
+            natural(count, 'transferred reference count', positive=True)
+            if source == destination or object_id not in self._refs:
+                raise ContractError('atomic transfer requires distinct live owners and an existing object')
+            key = (source, object_id)
+            debits[key] = debits.get(key, 0)+count
+        for source, object_id, count in releases:
+            self._owner(source)
+            natural(count, 'released reference count', positive=True)
+            key = (source, object_id)
+            debits[key] = debits.get(key, 0)+count
+        if any(self._refs.get(obj, {}).get(owner, 0) < count for (owner, obj), count in debits.items()):
+            raise ContractError('atomic transfer/release exceeds original owned references')
+        for (owner, obj), count in debits.items():
+            proposed._refs[obj][owner] -= count
+            if not proposed._refs[obj][owner]:
+                del proposed._refs[obj][owner]
+        for source, destination, obj, count in moves:
+            proposed._refs[obj][destination] = proposed._refs[obj].get(destination, 0)+count
+        for obj in tuple(proposed._refs):
+            if not proposed._refs[obj]:
+                del proposed._refs[obj]
+                del proposed._objects[obj]
+                proposed._retired.add(obj)
+        if len(set(close_owners)) != len(close_owners):
+            raise ContractError('duplicate owner closure in atomic transfer')
+        for owner in close_owners:
+            self._owner(owner)
+            if any(owner in refs for refs in proposed._refs.values()):
+                raise ContractError('atomic owner closure would discard a retained lease')
+            proposed._closed_owners.add(owner)
+        total, roles = proposed._check_residency(proposed._objects, proposed._refs)
+        proposed._record_peak(total, roles)
+        proposed._event('atomic_transfer_begin', 'machine')
+        for source, destination, obj, count in moves:
+            proposed._event('transfer', source, (obj,), (('references', count),), destination)
+        for owner, obj, count in releases:
+            proposed._event('release', owner, (obj,), (('references', count),))
+        for owner in close_owners:
+            proposed._event('close_owner', owner)
+        proposed._event('atomic_transfer_end', 'machine')
+        return proposed
+
     def charge_work(self, role: str, debit: Mapping[str, int], *, note=''):
         if role not in self._spent:
             raise ContractError('undeclared work-accounting role')

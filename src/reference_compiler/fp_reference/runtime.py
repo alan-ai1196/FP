@@ -1,7 +1,7 @@
-"""Owned construction, causal events, reference comparison and fresh evidence.
+"""Owned construction, causal events, reference selection, evidence and CPU install.
 
-Full Compiler decisions, paired AMP persistence and install integration
-remain open. This endpoint never issues CERTIFIED_COMPLETE or accepts helper
+Full Compiler decisions and actual AMP persistence/installation remain open.
+This endpoint never issues CERTIFIED_COMPLETE or accepts helper
 certificates as installation authority. Its packed-payload machine contract is
 not a measurement of total host/device memory or elapsed computation.
 """
@@ -10,6 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from fractions import Fraction as F
 import secrets
+import sys
 from typing import Mapping
 
 from .core import ContractError, freeze_data, natural, stable_hash
@@ -26,6 +27,7 @@ from .binary_arithmetic import Float64Arithmetic
 from . import float64_learner as finite
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
+from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
 from . import native_search as grammar
 from .proof import ReferenceClassProof, verify_maximum
 from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, compare_likelihoods, likelihood
@@ -88,6 +90,7 @@ class OnlineContract:
     searches: tuple[ReferenceSearchSpec, ...] = ()
     persistence: PersistenceContract | None = None
     float64: Float64Contract | None = None
+    cpu_install: CpuInstallContract | None = None
 
     def __post_init__(self):
         if type(self.data) is not DataContract or type(self.learner) is not LearnerSpec:
@@ -110,9 +113,19 @@ class OnlineContract:
             raise ContractError('registered persistence rules and global error budget required')
         if self.float64 is not None and type(self.float64) is not Float64Contract:
             raise ContractError('registered checked CPU binary64 execution required')
+        if self.cpu_install is not None and type(self.cpu_install) is not CpuInstallContract:
+            raise ContractError('registered serialized CPU install transition required')
 
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
+        if self.cpu_install is not None:
+            self.cpu_install.__post_init__()
+            if sys.implementation.name != 'cpython':
+                raise ContractError('the registered CPU root-publication machine requires CPython')
+            if self.float64 is None or self.persistence is None or not self.searches:
+                raise ContractError('CPU install requires owned reference search, two numerical paths and persistence')
+            if {r.score_path for r in self.persistence.rules} != {REFERENCE_PATH, FLOAT64_PATH}:
+                raise ContractError('CPU install requires both registered same-path evidence rules')
         if self.learner.commit_grid_bits is not None and self.learner.commit_grid_bits >= construction.reference_integer_bits:
             raise ContractError('registered commit grid exceeds reference integer work limit')
         for query in self.queries:
@@ -251,6 +264,9 @@ class RuntimeSnapshot:
     persistence_identities: tuple[PersistenceIdentity, ...]
     persistence_events: tuple[PersistenceEvent, ...]
     float64_traces: tuple[Float64Trace, ...]
+    next_install: int
+    install_attempts: tuple[CpuInstallAttempt, ...]
+    install_receipts: tuple[CpuInstallReceipt, ...]
 
 
 class ReferenceCompilerRuntime:
@@ -286,6 +302,9 @@ class ReferenceCompilerRuntime:
         self._persistence_identities: dict[str, PersistenceIdentity] = {}
         self._persistence_events: list[PersistenceEvent] = []
         self._float64_traces: list[Float64Trace] = []
+        self._next_install = 0
+        self._install_attempts: list[CpuInstallAttempt] = []
+        self._install_receipts: list[CpuInstallReceipt] = []
         self._next_candidate = 0
         self._programs: dict[str, Program] = {}
         self._retained_programs: dict[str, str] = {}
@@ -1492,9 +1511,178 @@ class ReferenceCompilerRuntime:
         return proof
 
     def install(self, candidate_id: str, *unused_authority, **unused_payload) -> ConstructionResult:
-        # This method accepts no helper token as a substitute for the still
-        # missing complete learning/persistence/AMP/atomic-install chain.
-        return ConstructionResult('UNRESOLVED', None, 'complete Runtime continuation, actual AMP, persistence and atomic install are not yet integrated')
+        # CPU transition receipts cannot substitute for the complete target
+        # resource, numerical and same-path AMP installation obligations.
+        return ConstructionResult('UNRESOLVED', None, 'complete ERC-1 enforcement and actual AMP persistence/installation are not yet integrated')
+
+    def install_cpu(self, candidate_id: str, *, proposal_proof_id: str,
+                    reference_identity: str, float64_identity: str) -> CpuInstallResult:
+        """Execute the registered CPU transaction from owned evidence IDs.
+
+The proposal proof is historical selection provenance, never a claim that
+its trained successor is still optimal. Target AMP installation is separate.
+The machine is serialized CPython: the complete next root is published once,
+after all fallible construction, checks and physical preparation complete.
+"""
+        self._require_online()
+        self._require_idle()
+        for value in (candidate_id, proposal_proof_id, reference_identity, float64_identity):
+            name(value, 'owned CPU installation identity')
+        registration = self._online.cpu_install
+        if registration is None:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'no registered CPU install transition')
+        registration.__post_init__()
+        # Fixed transition schema: a future scheduler/job/cache coordinate
+        # cannot silently acquire this version's quiescence/frame proof.
+        root_fields = {
+            '_contract', '_online', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
+            '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
+            '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
+            '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
+            '_programs', '_retained_programs', '_candidates', '_buffers', '_attempts', '_deployed_id',
+            '_event_phase', '_pending', '_observations', '_event_traces', '_profile_executions',
+            '_profile_events', '_query_records', '_data_usage', '_halted', '_data_owner',
+        }
+        if set(self.__dict__) != root_fields:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'CPU install has no transition proof for an unregistered Runtime state coordinate')
+        if self._cursor % self._online.learner.update_unit:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
+        attempt_id = f'{self._runtime_id}:install:{self._next_install}'
+        self._next_install += 1
+        revision_before = self._revision
+        self._revision += 1
+        attempt = CpuInstallAttempt(attempt_id, self._cursor, self._deployed_id, candidate_id,
+            proposal_proof_id, reference_identity, float64_identity, 'PREPARING')
+        self._install_attempts.append(attempt)
+        stage_owner = f'{attempt_id}:workspace'
+        target_owner, old_owner = f'{attempt_id}:deployment', f'{attempt_id}:old-shadow'
+        registered_owners = []
+        try:
+            # Fixed prepaid work charge in the packed-reference machine.
+            # This metric is not elapsed bit-time or complete host accounting.
+            objects = self._ledger.snapshot()['objects']
+            work = 4096+16*sum(len(buf) for buf in self._buffers.values())+1024*(
+                len(objects)+len(self._candidates)+len(self._persistence_identities)+len(self._searches))
+            self._ledger.charge_work(registration.work_role, {'work': work}, note=f'{attempt_id}:prepare-complete-root')
+            proof = self._reference_proofs.get(proposal_proof_id)
+            if proof is None:
+                raise ProfileUnresolved('no owned completed reference-class proposal')
+            proof.validate()
+            search = self._searches.get(proof.search_id)
+            if (search is None or search.status != 'REFERENCE_CLASS_EXHAUSTED' or search.proof_id != proof.proof_id
+                    or proof.winner_lineage_id != candidate_id or candidate_id == self._deployed_id
+                    or proof.base_lineage_id != self._deployed_id or search.best_candidate_id != candidate_id):
+                raise ProfileUnresolved('installation target is not the owned selected reference-class proposal')
+            paired = self.paired_persistence_result(reference_identity, float64_identity)
+            if paired.status != 'PAIRED_CPU_CROSSED':
+                raise ProfileUnresolved('both current same-path CPU persistence crossings are required')
+            persistence = self._persistence_identities[reference_identity]
+            row = next((r for r in search.rows if r.candidate_id == candidate_id), None)
+            if (persistence.candidate_lineage_id != candidate_id or row is None
+                    or proof.ordinary_cursor != persistence.start_cursor
+                    or row.learner != persistence.initial_candidate or search.base_state != persistence.initial_base):
+                raise ProfileUnresolved('fresh evidence did not start from the selected proposal and its comparator')
+            before = tuple(self._candidates.values())
+            target, base = self._candidates[candidate_id], self._candidates[self._deployed_id]
+            for state in (target, base):
+                if state.learner.unit_count or state.float64.unit_count:
+                    raise ProfileUnresolved('installation requires both actual optimizer accumulators to be at a full boundary')
+                self._ledger.charge_work(registration.work_role,
+                    {'work': relation_work(self._programs[state.program_id], self._contract.semantics)},
+                    note=f'{attempt_id}:current-complete-state-bridge')
+                check_state(state.learner, state.float64, self._online.float64, bit_limit=self._contract.reference_integer_bits)
+            self._event_phase = 'installing'
+            for owner, role in ((stage_owner, registration.workspace_role), (target_owner, 'deployment'), (old_owner, 'compiler')):
+                self._ledger.register_owner(owner, role)
+                registered_owners.append(owner)
+            candidates = dict(self._candidates)
+            candidates[candidate_id] = replace(target, physical_owner=target_owner)
+            candidates[base.candidate_id] = replace(base, physical_owner=old_owner)
+            moves, releases = [], []
+            for source, destination in ((target.physical_owner, target_owner), (base.physical_owner, old_owner)):
+                for obj, info in objects.items():
+                    count = info['references'].get(source, 0)
+                    if count:
+                        moves.append((source, destination, obj, count))
+            persistent = dict(self._persistence_identities)
+            searches = dict(self._searches)
+            invalidated, stopped = [], []
+            for key, identity in self._persistence_identities.items():
+                if identity.status not in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+                    continue
+                obj = f'{attempt_id}:{key}:state:{identity.generation+1}'
+                successor = replace(identity, status='UNRESOLVED', generation=identity.generation+1,
+                    object_id=obj, reason=f'deployed base changed by {attempt_id}; historical wealth and alpha cannot be rebased')
+                self._allocate(stage_owner, (self._machine.realize(obj, 'invalidated_persistence_state', successor, self._chi),))
+                persistent[key] = successor
+                invalidated.append(key)
+                moves.append((stage_owner, identity.owner, obj, 1))
+                releases.append((identity.owner, identity.object_id, 1))
+            for key, session in self._searches.items():
+                if session.status in ('CANCELLED', 'CLOSED_BY_INSTALL'):
+                    continue
+                obj = f'{attempt_id}:{key}:workspace:{session.generation+1}'
+                successor = replace(session, status='CLOSED_BY_INSTALL', expected_revision=self._revision,
+                    generation=session.generation+1, object_id=obj, proof_id=None,
+                    reason=f'closed by {attempt_id}; frontier, constructed witnesses and history retained without continuation')
+                self._allocate(stage_owner, (self._machine.realize(obj, 'closed_reference_search_state', successor, session.decision_class_id),))
+                searches[key] = successor
+                stopped.append(key)
+                moves.append((stage_owner, session.owner, obj, 1))
+                if session.object_id:
+                    releases.append((session.owner, session.object_id, 1))
+            receipt_id = f'{attempt_id}:receipt'
+            moves.append((stage_owner, self._data_owner, receipt_id, 1))
+            close = (target.physical_owner, base.physical_owner, stage_owner)
+            completed = replace(attempt, status='INSTALLED_CPU', reason='owned complete CPU root and buffer leases published at the same cursor')
+            receipt = CpuInstallReceipt(completed, revision_before, self._revision, before, tuple(candidates.values()),
+                tuple(moves), tuple(releases), close, tuple(invalidated), tuple(stopped), receipt_id)
+            self._allocate(stage_owner, (self._machine.realize(receipt_id, 'prepared_cpu_install_receipt', receipt, self._chi),))
+            ledger = self._ledger.prepare_transfer(tuple(moves), tuple(releases), close)
+            live = ledger.snapshot()['objects']
+            buffers = {key: value for key, value in self._buffers.items() if key in live}
+            if set(buffers) != set(live):
+                raise ContractError('prepared installation has ledger objects without actual retained buffers')
+            # Only role ownership changes. No learner numerical buffer is
+            # recast, copied, reset, freed, or replaced during installation.
+            for prior in before:
+                successor = candidates[prior.candidate_id]
+                if replace(successor, physical_owner=prior.physical_owner) != prior:
+                    raise ContractError('installation changed a certified complete learner')
+                if any(buffers[obj] is not self._buffers[obj] for obj in prior.object_ids):
+                    raise ContractError('installation substituted a learner buffer')
+            result = CpuInstallResult('INSTALLED_CPU', attempt_id, candidate_id, self._cursor,
+                'registered CPU transaction completed; past class selection and fresh two-path evidence remain distinct claims')
+            next_root = dict(self.__dict__)
+            next_root.update(_ledger=ledger, _router=CostRouter(ledger, self._contract.work_roles),
+                _event_router=CostRouter(ledger, self._event_router.snapshot()), _buffers=buffers,
+                _candidates=candidates, _deployed_id=candidate_id, _persistence_identities=persistent,
+                _searches=searches, _install_attempts=self._install_attempts[:-1]+[completed],
+                _install_receipts=self._install_receipts+[receipt], _event_phase='idle')
+        except Exception as exc:
+            # All allocations happened against the live old root. Abort frees
+            # only prepared objects; real work/peak/attempt history stay spent.
+            cleanup_errors = []
+            for owner in registered_owners:
+                try:
+                    self._release_owner(owner)
+                except Exception as cleanup:
+                    cleanup_errors.append(f'{type(cleanup).__name__}: {cleanup}')
+            expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved))
+            failed = replace(attempt, status='UNRESOLVED' if expected else 'EXECUTION_FAILED',
+                reason=f'{type(exc).__name__}: {exc}'+(' ; cleanup: '+'; '.join(cleanup_errors) if cleanup_errors else ''))
+            self._install_attempts[-1] = failed
+            self._event_phase = 'idle'
+            if cleanup_errors:
+                self._halt('install-cleanup', RuntimeError(failed.reason))
+            if not expected:
+                raise
+            return CpuInstallResult('UNRESOLVED', attempt_id, None, self._cursor, failed.reason)
+        # The only publication point. Everything fallible and the result
+        # object have been prepared. The registered API has serialized calls;
+        # crash recovery or concurrent external readers are not claimed.
+        self.__dict__ = next_root
+        return result
 
     def snapshot(self) -> RuntimeSnapshot:
         return RuntimeSnapshot(self._chi, self._runtime_id, self.recovery_phase, self._cursor,
@@ -1506,4 +1694,5 @@ class ReferenceCompilerRuntime:
                                tuple(self._retained_programs.items()), tuple(self._profile_executions.values()), tuple(self._profile_events),
                                self._revision, self._next_search, tuple(self._searches.values()), tuple(self._reference_proofs.values()),
                                self._next_persistence, self._alpha_spent, tuple(self._alpha_allocations),
-                               tuple(self._persistence_identities.values()), tuple(self._persistence_events), tuple(self._float64_traces))
+                               tuple(self._persistence_identities.values()), tuple(self._persistence_events), tuple(self._float64_traces),
+                               self._next_install, tuple(self._install_attempts), tuple(self._install_receipts))

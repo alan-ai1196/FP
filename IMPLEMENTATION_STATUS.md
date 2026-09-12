@@ -118,8 +118,8 @@ the enforced construction slice of ERC-1. Packed-payload bytes/reference
 operation charges do not close total host/device memory or bit-time.
 This audit alone does not establish query/data-use, learner/profile,
 grammar/proof, fresh persistence, AMP or installation closure. The sections
-below record subsequent executable integration. Installation remains
-UNRESOLVED; no full gate or implementation freeze follows from this audit.
+below record subsequent executable integration, including a scoped CPU
+installation. No full gate or implementation freeze follows from this audit.
 
 ### Executable causal continuation (2026-09-12)
 
@@ -345,9 +345,60 @@ and actual resource/identity/failure adversaries. A delta=2^-54 example
 crosses reference at event five while actual finite gain is exactly zero.
 Read `theory/proofs/PAIRED_CPU_PERSISTENCE.md` for the precise proposition.
 
-This advances CPU four-path/dual persistence protocol. It does not close
-complete ERC-1 enforcement, atomic installation, the historical gate mapping
-or target AMP. Runtime is NOT FROZEN and model science remains HOLD.
+This advances CPU four-path/dual persistence protocol. The separately
+executed CPU installation is recorded below; complete ERC-1 enforcement,
+the historical gate mapping and target AMP remain open. Runtime is NOT
+FROZEN and model science remains HOLD.
+
+### Owned installation at one complete CPU root (2026-09-12)
+
+`OnlineContract.cpu_install` now registers a fixed serialized CPython
+transition before execution. `install_cpu` accepts only owned historical
+proposal and two-path persistence IDs. The proposal proof establishes class
+selection at its original cursor; it remains stale as a current maximum
+after fresh learning. Installation separately checks the exact selected
+starting states, current continuous paired evidence, full optimizer boundary
+and current exact/binary64 relation. No current-optimum or complete Compiler
+certificate is inferred from their conjunction.
+
+The target and old deployed learner keep every numeric/discrete field and
+the identical underlying buffers. Paid preparation allocates metadata and
+receipt while both learners coexist. A detached complete lease map transfers
+their actual references to fresh deployment/compiler owners. One prepared
+root publication changes ownership and deployed ID together, closes paused
+searches while retaining frontier/history, and ends old persistence authority
+without rebasing wealth or refunding alpha. Unknown Runtime or ledger state
+coordinates cannot inherit this fixed transition proof.
+
+A prepublication failure retains the old learners, evidence and frontier,
+but changes the complete attempt/revision/resource history. Retired physical
+IDs cannot be recycled: a discovered retry collision was fixed by giving
+prepared metadata the unique attempt namespace. Cleanup failure halts the
+prefix. These claims concern the serialized registered machine; they are
+not concurrent caller or crash-recovery guarantees.
+
+`scripts/audit_cpu_installation.py` independently checks 2,016 lease cases
+(649 feasible atomic transfers) and executes complete native classes of 35
+and 774 programs through selection, fresh learning, dual evidence, install
+and later ordinary events. The larger class installs nonzero trained theta;
+independent binary64 replay checks 151 and 870 phases respectively. Actual
+immutable byte/work limits reject otherwise resident targets when install
+preparation cannot fit, without releasing the old learner or refunding work.
+Wrong lineage/path/proof, partial units, stale frontiers, unknown job state,
+late abort and legal paid retry are also exercised.
+
+A separate continued test compiles and installs twice in the same Runtime
+(cursors 22 and 38), with the second search using the actual new baseline.
+New evidence starts with unit wealth and new IDs. All four alpha allocations
+remain spent across both installs; a third admission is rejected at the
+global cap despite available fresh events. Binary64 replay checks another
+306 phases, including ordinary continuation after the second installation.
+
+Read `theory/proofs/OWNED_CPU_INSTALLATION.md` and its compact evidence.
+The operation returns `INSTALLED_CPU`, with explicit limited scope. Generic
+target `install` still returns UNRESOLVED. Complete ERC-1 registration and
+host/device accounting, full release-gate mapping and actual AMP remain
+open. Foundation/ERC-1 stay frozen; Runtime is NOT FROZEN and science HOLD.
 
 ## 4. Required closure tests
 

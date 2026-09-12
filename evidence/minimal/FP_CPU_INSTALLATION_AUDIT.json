@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "serialized CPU root/lease installation from owned exact proposal and two-path evidence",
+  "ledger": {
+    "independent_complete_lease_cases": 2016,
+    "feasible_atomic_transfers": 649,
+    "original_ledger_unchanged_on_every_prepare": true,
+    "acquire_first_false_rejection_and_atomic_role_exchange_checked": true,
+    "lease_laundering_overrelease_closed_owner_and_unknown_state_rejected": true
+  },
+  "success": {
+    "complete_native_class_programs": 35,
+    "install_cursor": 22,
+    "all_complete_learners_and_actual_buffer_objects_preserved": true,
+    "one_complete_root_publication": true,
+    "old_evidence_and_paused_frontier_closed_without_refund": true,
+    "post_install_events_roles_and_shadow_retirement_checked": true,
+    "independent_continuous_binary64_phase_checks": 151,
+    "nonzero_trained_target": false
+  },
+  "learned": {
+    "complete_native_class_programs": 774,
+    "install_cursor": 18,
+    "all_complete_learners_and_actual_buffer_objects_preserved": true,
+    "one_complete_root_publication": true,
+    "old_evidence_and_paused_frontier_closed_without_refund": true,
+    "post_install_events_roles_and_shadow_retirement_checked": true,
+    "independent_continuous_binary64_phase_checks": 870,
+    "nonzero_trained_target": true
+  },
+  "failures": {
+    "fake_proposal_wrong_path_and_partial_unit_rejected": true,
+    "unregistered_future_job_coordinate_cannot_inherit_atomic_frame_proof": true,
+    "equal_graph_newborn_cannot_inherit_selected_lineage_evidence": true,
+    "late_prepare_abort_preserves_old_learners_evidence_and_frontier": true,
+    "aborted_work_and_peak_retained_without_alpha_refund": true,
+    "paid_retry_preserves_old_trajectory_until_actual_commit": true
+  },
+  "capacity": {
+    "actual_prepublication_peak_limit_rejects_existing_feasible_target": true,
+    "actual_install_work_role_limit_rejects_without_free_execution": true,
+    "failed_preparation_keeps_learners_evidence_and_paid_peak_history": true,
+    "calibrated_peak_cap": 552003
+  },
+  "continuation": {
+    "consecutive_owned_installations": 2,
+    "complete_native_classes": [
+      35,
+      35
+    ],
+    "install_cursors": [
+      22,
+      38
+    ],
+    "second_proposal_uses_actual_new_base_and_fresh_identities": true,
+    "both_generations_keep_receipts_and_close_old_authority": true,
+    "global_alpha_remains_spent_across_both_installations": "3/4",
+    "third_admission_refused_without_refund": true,
+    "independent_continuous_binary64_phase_checks": 306
+  },
+  "not_closed": [
+    "concurrent/crash-safe publication",
+    "full host/device resource accounting",
+    "target AMP",
+    "complete ERC-1/Runtime freeze"
+  ]
+}

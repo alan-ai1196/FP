@@ -61,12 +61,25 @@ current-domain monotone rounded bounds, separate reference/stored-mass CE
 scores and alpha, matching starts and continuous full learners. The explicit
 counterexample with reference crossing and identically zero physical gain
 excludes copied wealth. See `theory/proofs/PAIRED_CPU_PERSISTENCE.md` and its
-endpoint audit. This supplies neither actual AMP nor an install transaction.
+endpoint audit. Its result is evidence for a CPU pair, not by itself an
+install transaction or actual AMP evidence.
+
+The serialized CPU installation now also executes through the same Runtime.
+It checks owned historical class selection separately from current paired
+evidence, preserves all actual learner buffers at one complete root/lease
+publication, closes searches with retained history, and invalidates old
+persistence without alpha refunds. Actual byte/work failures retain their
+paid preparation history and permit only a new paid attempt. Independent
+lease cases and full 35-/774-member native-class endpoint chains are in
+`theory/proofs/OWNED_CPU_INSTALLATION.md` and its audit. This is a fixed
+serialized CPython transition, with no current-optimum, crash/concurrency
+or full host/device accounting claim.
 
 The remaining work is complete ERC-1 registration, full Compiler decision
 authority beyond the scoped reference comparison, paired reference/AMP
 persistence and complete error state, actual host/device accounting, target
-AMP and atomic installation. Raw revealed train/online access is explicitly
+AMP and target installation, plus explicit mapping of the historical release
+obligations to current evidence. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
 The new endpoint pass is not a complete release certificate.
 

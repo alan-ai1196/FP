@@ -1555,3 +1555,75 @@ four-path/dual persistence protocol; complete immutable ERC-1 enforcement,
 physical accounting, atomic installation, explicit gate mapping and actual
 target AMP remain open. No Foundation action or static special case was
 added. Runtime is NOT FROZEN, and RTX 3090 science remains HOLD.
+
+## 58. Separate historical selection from current install authority (2026-09-12)
+
+The next obstruction was the time at which a proposition is true. A complete
+native search selects one actual initialized/profiled endpoint at cursor t0.
+Fresh evidence then advances its candidate and baseline learners. The
+original maximum proof is stale as a current optimum at t>t0, even though
+its historical selection statement remains true. Requiring unchanged
+constructor-endpoint optimality alongside nonempty fresh learning confuses
+these two roles and can prevent the intended composition.
+
+The new owned CPU installer uses the search proof only as historical
+provenance. It checks that both fresh evidence paths started at exactly the
+selected candidate/base states and original cursor. Current four-learner
+continuity, two same-path crossings, complete update boundary and numerical
+relation are separate obligations. No current global optimum is inferred;
+the stale reference proof stays rejected in its current-maximum API.
+
+`CpuInstallContract` registers a serialized CPython root/lease transition
+before execution. All learners retain complete numeric/discrete state and
+the same physical buffers at the same exogenous cursor. Metadata preparation
+coexists with the incumbent and target and pays declared work/peak costs.
+A detached lease map validates original owned debits, final role/global
+residency and closed owners. One complete root publication changes deployed
+lineage and actual ownership together, retains the old learner as a shadow,
+closes search continuations with frontier/history preserved, and ends old
+persistence authority without rebasing wealth or refunding alpha.
+
+The atomic lease primitive is a declared physical machine operation, not a
+resource-total certificate. An exact two-byte example shows why acquiring
+before releasing is a different machine: two one-byte role caps admit the
+simultaneous exchange but reject acquire-first. The Runtime publishes the
+prepared ledger only with its actual buffer map and complete state. Unknown
+Runtime/ledger coordinates cannot inherit this fixed schema/frame proof.
+No model-level semantic action or static architecture case was added.
+
+Failure does not restore the whole past. Old learners/evidence/frontier stay,
+but attempted identities, revision, paid work, peak and retired buffers
+remain part of the complete history. Adversarial retry exposed an actual
+implementation defect: abort retired a prepared object's ID while leaving
+the old logical generation intact, so the next attempt tried to recycle
+that physical identity. Prepared metadata now uses a unique attempt namespace.
+Late failure leaves the old continuous evidence usable only for a subsequent
+paid attempt; cleanup failure halts instead of hiding workspace.
+
+`scripts/audit_cpu_installation.py` checks 2,016 small lease-map cases, 649
+feasible transfers, and actual complete native constructor classes of 35 and
+774 programs. Both execute fresh dual persistence, install and later ordinary
+learning; the larger case installs nonzero trained parameters. Independent
+binary64 continuation replay checks 151 and 870 phases respectively. Exact
+learner/buffer identity, stale proof/frontier rejection, no alpha refund,
+wrong lineage/path, partial units, unknown job state, late failure and paid
+retry pass. Actual immutable byte/work caps reject a currently resident
+target whose installation preparation cannot fit.
+
+A further continuation test executes two complete 35-member searches and
+installations in one Runtime, at cursors 22 and 38. The second proposal uses
+the new actual deployment as baseline and starts fresh identity/wealth at
+cursor 24 under preregistered later rules. The four alpha allocations reach
+3/4 and remain spent across both installs; a third admission is refused even
+with enough unread horizon. Both receipts remain owned and another 306
+independent binary64 phase checks include ordinary events after the second
+install. Closing the first search therefore does not disable the declared
+future compilation interface or revive earlier evidence.
+
+Read `theory/proofs/OWNED_CPU_INSTALLATION.md` and the compact
+`evidence/minimal/FP_CPU_INSTALLATION_AUDIT.json`. This is executed CPU
+transition evidence, not a model-science advantage or complete release.
+Concurrent/crash-safe publication, total host/device physical accounting,
+complete ERC-1/gate closure and actual target AMP are not inferred. The
+generic target installation port stays UNRESOLVED. Foundation/ERC-1 remain
+frozen; Runtime is NOT FROZEN and RTX 3090 science remains HOLD.

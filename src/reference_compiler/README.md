@@ -52,6 +52,18 @@ copies reference wealth or uses rounded division output as a normalized
 probability. Read [`PAIRED_CPU_PERSISTENCE.md`](../../theory/proofs/PAIRED_CPU_PERSISTENCE.md)
 and run `scripts/audit_paired_cpu_persistence.py` for this CPU protocol scope.
 
+`OnlineContract.cpu_install=CpuInstallContract(...)` additionally registers
+the fixed CPU installation policy. `install_cpu` checks owned historical
+selection and current paired evidence separately, prepares actual metadata
+and leases, then publishes one complete serialized CPython root. All raw
+learner buffers retain identity; the old deployment becomes a shadow.
+Searches close with history retained and old persistence loses authority
+without alpha refunds. Failure keeps old learner/evidence records while
+retaining real attempt/work/peak history; retries use new physical IDs.
+Read [`OWNED_CPU_INSTALLATION.md`](../../theory/proofs/OWNED_CPU_INSTALLATION.md)
+and run `scripts/audit_cpu_installation.py`. This operation is distinct
+from a current class optimum, target AMP and concurrent/crash-safe install.
+
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
 bytes and conservative reference operation charges; it does not claim total
@@ -83,11 +95,13 @@ for the conditional null, native ratio bound, bounded lower wealth,
 nonrefundable alpha and explicit external stochastic-process assumption.
 The pure numerical/kernel audits do not own observation or lineage facts.
 
-Next integrate complete ERC-1 registration, paired AMP persistence/error state,
-full physical accounting and reference/AMP/atomic installation. The unsafe old learner
+Next integrate complete ERC-1 registration/accounting and the explicit
+release-gate mapping, then actual paired AMP execution and installation.
+The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current
 `proof.py` exposes only typed comparison data and fixed maximum checking,
 with issuance owned by Runtime. `bridge.py` remains reserved. Their
-importability is not a gate pass. The package issues no complete Compiler,
-persistence or install token.
+importability is not a gate pass. Current owned CPU persistence results and
+installation receipts have only their stated scope; the generic target
+install port stays UNRESOLVED and no CERTIFIED_COMPLETE is issued.

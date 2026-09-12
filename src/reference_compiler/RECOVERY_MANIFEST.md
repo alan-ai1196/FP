@@ -123,7 +123,13 @@ paid whole-domain finite bounds, separate actual stored-mass CE statistics
 and alpha, and matching four-learner CPU persistence results. A reference
 crossing is demonstrably insufficient for the finite path. This CPU protocol
 does not restore an AMP or installation signer.
-The public install path remains UNRESOLVED because complete manifest/
-paired persistence/error/physical accounting/AMP integration is absent.
+New passive `installation.py` records describe one registered CPU policy;
+the actual `Runtime.install_cpu` checks historical owned selection and
+current paired evidence, then prepares and publishes complete root/lease
+state. All learners retain raw buffer identity. Retained searches close,
+old persistence loses authority, and failed attempts retain work/peak and
+unique physical identities. No supplied state or helper receipt is accepted.
+The generic target install path remains UNRESOLVED: full ERC-1 enforcement,
+host/device accounting, complete gate mapping and actual AMP are still open.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.

@@ -304,6 +304,50 @@ zero forever under the declared fixture. This excludes statistical evidence
 transfer based on small numeric error. `PAIRED_CPU_CROSSED` is a CPU protocol
 result, not actual AMP, full resource closure or atomic install authority.
 
+## Serialized CPU installation from owned evidence
+
+`OnlineContract.cpu_install` fixes the CPU policy before execution.
+`install_cpu(candidate_id, proposal_proof_id=..., reference_identity=...,
+float64_identity=...)` retrieves only owned records. A reference search
+proves selection at the proposal cursor; fresh persistence starts from those
+exact candidate/base states and then advances them. The old proof remains
+rejected as a current maximum. Installation instead checks historical
+selection, current dual persistence, full unit boundaries and the current
+complete exact/binary64 relation as separate premises.
+
+All existing learner buffers stay physically identical. Paid preparation
+stages replacement metadata and a receipt against the live old ledger.
+`ResourceLedger.prepare_transfer` checks aggregate debits against original
+leases and constructs a detached final map. Runtime prepares the complete
+new root before one serialized CPython publication changes deployed ID,
+ownership, search status and persistence status together. The old deployed
+learner becomes a retained shadow. Other shadows and all history remain;
+paused searches close without losing their frontier, and persistence cannot
+rebase its wealth or refund alpha after the comparator changes.
+
+An unsuccessful preparation preserves old learners/evidence/frontier, but
+the attempt, revision, work, peak and retired IDs remain changed. Retrying
+uses unique attempt-specific physical metadata IDs. Actual resource failures
+return UNRESOLVED and cleanup failure halts. A prepared receipt is never
+published as installation authority after an abort. Unknown Runtime or
+ledger coordinates prevent reuse of this fixed frame proof.
+
+Read [`OWNED_CPU_INSTALLATION.md`](../theory/proofs/OWNED_CPU_INSTALLATION.md)
+and `scripts/audit_cpu_installation.py`. Independent checking covers 2,016
+small lease cases, including a simultaneous role exchange that cannot be
+implemented by acquire-first under the same role caps. Actual complete
+35-/774-program classes proceed through fresh continuous evidence,
+installation and later ordinary events; the larger case installs trained
+nonzero parameters. Real immutable byte/work caps, stale proof/frontier,
+same-graph newborn, partial unit, late abort and paid retry are exercised.
+A second complete search/evidence/install cycle uses the actually installed
+baseline. Both generations retain their receipts; four alpha allocations
+reach the global cap and refuse a third admission despite available fresh
+events. This continuation has 306 independent binary64 phase checks.
+`INSTALLED_CPU` describes this executed serialized transition only. It is
+not a current class optimum, target AMP, full ERC-1 physical enforcement,
+concurrent caller linearizability or crash recovery.
+
 ## Failure and physical history
 
 The bounded target slot and its write work are reserved before prediction
@@ -397,10 +441,10 @@ Git commit `39235ef` by `scripts/audit_recovered_authorities.py`. All four
 historical false authorizations remain reproducible. An empty bridge port
 does not count as a passed bridge gate.
 
-Next integrate the complete immutable ERC-1 manifest, paired reference/AMP
-persistence and complete physical/error state. The scoped executed CPU
-binary64 relation does not close actual AMP, atomic installation or the
-complete 47-gate mapping; these remain
-release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,
-target AMP persistence, bridge or installation authorization. RTX 3090 science remains
-HOLD; static theory expansion remains parked.
+Next integrate the complete immutable ERC-1 manifest and full physical/error
+state, with the explicit historical gate mapping. The scoped CPU relation,
+dual persistence and installation do not close actual AMP or total host/
+device accounting. The generic target install port stays UNRESOLVED; no
+CERTIFIED_COMPLETE or target AMP authorization is issued. Actual target
+correctness follows reference closure, then RTX 3090 model science, which
+remains HOLD. Static theory expansion stays parked.
