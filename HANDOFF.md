@@ -512,6 +512,21 @@ fixed-P classification or exact finite-size optimization. In particular,
 the identity task's 12-PRODUCT exact certificate is rejected for P=9.
 Sharp Pareto/physical/value/precision/AMP costs remain open.
 
+XVII.31 closes the joint asymptotic resource study for the rational binary
+nondyadic-cap class. Read `NODE_EDGE_PRECISION_ACCURACY.md`. For cap slack h
+and probability tolerance delta, write epsilon=h+delta. Every candidate
+needs S*2^P>=log2(1/epsilon)-O(1) and direct mass precision
+b>=log2(1/epsilon)-O(1). A native upper matches the separate budget envelope
+up to fixed target/domain overheads and precision constants, with actual
+repeated edges and exponent range retained. The node-only optimum is
+log2(log2(1/epsilon))+O(1). One binary-arity construction simultaneously
+attains optimal C/E order Theta(log log(1/epsilon)) and full direct numerical
+bit volume Theta(log(1/epsilon)). A retained positive reciprocal tail gives
+exact Q at positive h without subtraction; complete critical masses force
+the precision lower. The audit checks 90 budget-envelope graphs, 92 exact
+tail repairs, 100 small-edge approximants and 1,533 floating mass rows.
+This is a scoped law, not generic fixed-P completeness or an AMP bridge.
+
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:
 

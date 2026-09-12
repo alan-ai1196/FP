@@ -1120,3 +1120,40 @@ certificate is explicitly rejected for a P=9 claim. Read
 bank remain in construction cost. Sharp separate-budget Pareto constants,
 minimum exact graph sizes, other source/number classes and registered
 physical/value/numerical paths remain open.
+
+## 48. PRODUCT, SUM, range and precision meet in one resource envelope (2026-09-12)
+
+The total-node theorem was attacked through its unpriced arity and direct
+numerical representation. A single dyadic seed followed by squaring makes
+an extremely fine grid; explicitly repeating its scaled context indicators
+in final SUMs gives the sharp node leading term
+log2(log2(1/error))+O(1), but Theta(1/error) incoming edges along that family.
+This strengthens the node theorem while preventing it from masquerading as
+a physical-work theorem.
+
+One common rational denominator supplies a different, binary-arity native
+construction. Positive updates g'=g+g*t and t'=t*t cost one SUM and two
+PRODUCTs per doubling of tail precision. Its node/edge counts are
+Theta(log log(1/error)), and its fully materialized direct numerical bits
+sum to Theta(log(1/error)). The matching bit lower comes from a critical
+nondyadic forced mass, which remains separated from every b-bit dyadic mass
+by a constant times 2^(-b), irrespective of node or exponent budgets.
+
+Retaining the final tail square gives a useful exact invariant, D*g+tau=1.
+For ideal excess c=a/D, the entirely positive expression
+E=a*g+(D+a-1)*tau makes the full mass a common factor
+1+(D-1)*tau times its ideal. Thus every row predicts Q exactly at positive
+cap slack, with no internal subtraction. The mass lower and this repair
+unify range h and accuracy delta into h+delta. Necessary S*2^P and direct
+precision bounds are logarithmic in its inverse; a separate-budget grid
+upper matches up to fixed construction overheads and precision constants.
+The optimal joint node/edge order is double-logarithmic and direct numerical
+bit volume is logarithmic. Uniform-context CE uses h+sqrt(rho).
+
+The exact audit evaluates 90 separate-budget envelope graphs, 92 positive
+tail repairs, 100 binary-arity approximants and 30 expanded-edge graphs;
+it rejects 100 insufficient-slack executions and checks 1,533 small floating
+mass rows. The binary64 rounded-equality witness retains exact error
+1/48038396025285288 after mathematical normalization of its stored masses.
+Read `NODE_EDGE_PRECISION_ACCURACY.md`. The result is a complete scoped
+resource law, not a general language-model law or Runtime release.

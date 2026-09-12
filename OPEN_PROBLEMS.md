@@ -203,6 +203,17 @@ open. The scoped classifier allows arbitrary finite P,S and must not answer
 the earlier fixed-P decisions: cap-nine three-bit identity remains nonexact
 at P=9 even though its unrestricted exact branch has a 12-node witness.
 
+The joint static resource **orders** are no longer open in the rational
+binary nondyadic-cap class: XVII.31 gives necessary S*2^P and direct-precision
+b bounds logarithmic in 1/(h+delta), and a matching separate-budget native
+upper envelope up to fixed overheads/precision constants. It also gives
+node optimum log2(log2(1/(h+delta)))+O(1), and simultaneously optimal
+node/edge/direct-bit orders. Positive tail repair gives exact prediction at
+positive cap slack. The remaining exact small-P phases, bounded-arity leading
+constants and alternative encoding/bit-time questions do not block that
+scoped resource specification. Runtime accounting and the actual AMP bridge
+remain open; static exact arithmetic is not their certificate.
+
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 
 **Exact statement.** After reference implementation closure, demonstrate that the actual target mixed-precision learner/Compiler path satisfies the registered event-level relation for deployed and candidate trajectories, including structural boundary/install.

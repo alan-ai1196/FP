@@ -234,3 +234,9 @@ bundle is an alternative canonical state.
 
 Audit: `theory/numerical_checks/dyadic_cap_total_complexity_audit.py`.
 Minimal evidence: `evidence/minimal/FP_DYADIC_CAP_TOTAL_COMPLEXITY_AUDIT.json`.
+
+The follow-up `NODE_EDGE_PRECISION_ACCURACY.md` sharpens the total-node law
+to an additive constant, gives a separate P/S/range/precision budget
+envelope, and proves simultaneous node/edge/direct-bit orders. A positive
+tail repair supplies exact local prediction at positive cap slack. Its
+direct precision contract and actual edge costs remain explicit.

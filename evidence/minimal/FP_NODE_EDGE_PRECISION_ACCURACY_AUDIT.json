@@ -1,0 +1,230 @@
+{
+  "status": "PASS",
+  "scope": "complete binary unary sources; rational targets in LIMIT_ONLY at R0; cap R0+h; local weights {1/2,1,2}",
+  "full_domain_target_cases": 20,
+  "expanded_repeated_edge_graphs": 22,
+  "binary_arity_shared_reciprocal_graphs": 100,
+  "exact_shared_stage_checks": 380,
+  "exact_positive_tail_repair_graphs": 92,
+  "exact_expanded_grid_slack_graphs": 8,
+  "insufficient_slack_constructions_rejected": 100,
+  "joint_slack_mass_precision_inequalities": 101,
+  "joint_slack_excess_precision_inequalities": 77,
+  "separate_PRODUCT_SUM_range_precision_envelope_graphs": 90,
+  "envelope_exact_predictions": 54,
+  "insufficient_sufficient_envelope_requests_rejected": 90,
+  "graph_mass_precision_inequalities": 110,
+  "graph_excess_precision_inequalities": 110,
+  "small_floating_mass_rows": 1533,
+  "small_float_mass_precision_inequalities": 2716,
+  "small_float_excess_precision_inequalities": 95,
+  "node_only_optimum": "log2(log2(1/delta))+O_target(1)",
+  "expanded_parent_family_edge_cost": "Theta_target(1/actual_error)",
+  "joint_achievable_orders": {
+    "nodes": "Theta(log log(1/delta))",
+    "edges": "Theta(log log(1/delta))",
+    "full_direct_numerical_bit_volume": "Theta(log(1/delta))"
+  },
+  "one_shared_reciprocal_growing_counts": {
+    "SUMs": "n",
+    "PRODUCTs": "2*n-1",
+    "other_work": "fixed target-dependent overhead"
+  },
+  "expanded_edge_example": [
+    {
+      "SUMs": 4,
+      "PRODUCTs": 2,
+      "nodes": 6,
+      "edges": 9,
+      "maximum_significand_bits": 3,
+      "squares": 0,
+      "grid_denominator_bits": 2,
+      "error": "1/40"
+    },
+    {
+      "SUMs": 4,
+      "PRODUCTs": 3,
+      "nodes": 7,
+      "edges": 13,
+      "maximum_significand_bits": 3,
+      "squares": 1,
+      "grid_denominator_bits": 3,
+      "error": "1/40"
+    },
+    {
+      "SUMs": 4,
+      "PRODUCTs": 4,
+      "nodes": 8,
+      "edges": 31,
+      "maximum_significand_bits": 5,
+      "squares": 2,
+      "grid_denominator_bits": 5,
+      "error": "1/168"
+    },
+    {
+      "SUMs": 4,
+      "PRODUCTs": 5,
+      "nodes": 9,
+      "edges": 353,
+      "maximum_significand_bits": 9,
+      "squares": 3,
+      "grid_denominator_bits": 9,
+      "error": "1/2728"
+    },
+    {
+      "SUMs": 4,
+      "PRODUCTs": 6,
+      "nodes": 10,
+      "edges": 87395,
+      "maximum_significand_bits": 17,
+      "squares": 4,
+      "grid_denominator_bits": 17,
+      "error": "1/699048"
+    }
+  ],
+  "bounded_arity_example": [
+    {
+      "SUMs": 10,
+      "PRODUCTs": 3,
+      "nodes": 13,
+      "edges": 18,
+      "direct_bit_volume": 174,
+      "including_rational_predictions_bits": 218,
+      "maximum_significand_bits": 5,
+      "steps": 1,
+      "error_denominator_bits": 8
+    },
+    {
+      "SUMs": 11,
+      "PRODUCTs": 5,
+      "nodes": 16,
+      "edges": 24,
+      "direct_bit_volume": 280,
+      "including_rational_predictions_bits": 356,
+      "maximum_significand_bits": 9,
+      "steps": 2,
+      "error_denominator_bits": 12
+    },
+    {
+      "SUMs": 12,
+      "PRODUCTs": 7,
+      "nodes": 19,
+      "edges": 30,
+      "direct_bit_volume": 456,
+      "including_rational_predictions_bits": 596,
+      "maximum_significand_bits": 17,
+      "steps": 3,
+      "error_denominator_bits": 20
+    },
+    {
+      "SUMs": 14,
+      "PRODUCTs": 11,
+      "nodes": 25,
+      "edges": 42,
+      "direct_bit_volume": 1338,
+      "including_rational_predictions_bits": 1862,
+      "maximum_significand_bits": 65,
+      "steps": 5,
+      "error_denominator_bits": 68
+    },
+    {
+      "SUMs": 17,
+      "PRODUCTs": 17,
+      "nodes": 34,
+      "edges": 60,
+      "direct_bit_volume": 8722,
+      "including_rational_predictions_bits": 12830,
+      "maximum_significand_bits": 513,
+      "steps": 8,
+      "error_denominator_bits": 516
+    }
+  ],
+  "joint_slack_and_accuracy_law": {
+    "node_only_optimum": "log2(log2(1/(h+delta)))+O_target(1)",
+    "joint_node_edge_order": "Theta(log log(1/(h+delta)))",
+    "direct_numerical_bit_volume_order": "Theta(log(1/(h+delta)))"
+  },
+  "exact_positive_tail_repair_example": [
+    {
+      "SUMs": 18,
+      "PRODUCTs": 6,
+      "nodes": 24,
+      "edges": 36,
+      "direct_bit_volume": 272,
+      "maximum_significand_bits": 4,
+      "steps": 1,
+      "exact_prediction": true,
+      "slack": "1/3",
+      "slack_denominator_bits": 2
+    },
+    {
+      "SUMs": 19,
+      "PRODUCTs": 8,
+      "nodes": 27,
+      "edges": 42,
+      "direct_bit_volume": 422,
+      "maximum_significand_bits": 8,
+      "steps": 2,
+      "exact_prediction": true,
+      "slack": "1/48",
+      "slack_denominator_bits": 6
+    },
+    {
+      "SUMs": 20,
+      "PRODUCTs": 10,
+      "nodes": 30,
+      "edges": 48,
+      "direct_bit_volume": 664,
+      "maximum_significand_bits": 16,
+      "steps": 3,
+      "exact_prediction": true,
+      "slack": "1/12288",
+      "slack_denominator_bits": 14
+    },
+    {
+      "SUMs": 22,
+      "PRODUCTs": 14,
+      "nodes": 36,
+      "edges": 60,
+      "direct_bit_volume": 1870,
+      "maximum_significand_bits": 64,
+      "steps": 5,
+      "exact_prediction": true,
+      "slack": "rational; denominator bits recorded",
+      "slack_denominator_bits": 62
+    },
+    {
+      "SUMs": 25,
+      "PRODUCTs": 20,
+      "nodes": 45,
+      "edges": 78,
+      "direct_bit_volume": 11996,
+      "maximum_significand_bits": 512,
+      "steps": 8,
+      "exact_prediction": true,
+      "slack": "rational; denominator bits recorded",
+      "slack_denominator_bits": 510
+    }
+  ],
+  "binary64_displayed_equality_counterexample": {
+    "stored_mass_hex": [
+      "0x1.aaaaaaaaaaaaap+0",
+      "0x1.0000000000000p+0"
+    ],
+    "rounded_probabilities": [
+      "0.625",
+      "0.375"
+    ],
+    "exact_probability_error_from_stored_masses": "1/48038396025285288",
+    "exact_cap_respected": true,
+    "mass_significand_bits": 52
+  },
+  "invalid_or_different_branch_requests_rejected": 4,
+  "not_claimed": [
+    "optimal bounded-arity leading constant",
+    "exact low-P Pareto phases",
+    "liveness-optimal memory or optimal bit-time",
+    "arbitrary symbolic or multi-component number encoding",
+    "fixed-precision AMP bridge, registered value access or physical Runtime authority"
+  ]
+}

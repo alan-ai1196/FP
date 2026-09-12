@@ -2155,6 +2155,82 @@ optimization and full information/value/physical/AMP costs remain open.
 The full target encoding and exponential-in-d indicator bank are not free.
 Proof: [`DYADIC_CAP_AND_TOTAL_COMPLEXITY.md`](theory/proofs/DYADIC_CAP_AND_TOTAL_COMPLEXITY.md).
 
+## XVII.31. Unified PRODUCT/SUM/range/precision bounds and positive tail repair
+
+Fix the complete rational binary-source class of XVII.30, with a nondyadic
+critical forced mass at the minimum cap R_0. Permit cap R_0+h, 0<=h<=1,
+and probability error delta, and put epsilon=h+delta>0. All target/domain
+data are fixed and known; PRODUCT and SUM budgets may both vary.
+
+For every candidate with P PRODUCTs, S SUMs and direct head-mass significand
+width b, the complete necessary bounds are
+
+`S*2^P >= log2(1/epsilon)-O_Q(1)`,
+`b >= log2(1/epsilon)-O_Q(1)`.
+
+Choose a critical nondyadic r=R_0*Q_j=A/B_r. The base and complete
+normalizer imply `|M_j-r| <= K_r*(h+delta)`, K_r=R_0*(1+r)+1.
+Every mass is on the dyadic grid 2^(-S*2^P), giving the first inequality.
+Since M_j>=1, a b-bit dyadic mass has denominator <=2^(b-1), giving the
+second independently of P,S or exponent range. A directly represented
+critical excess satisfies the same precision order even without a separate
+materialized base-add result.
+
+The upper matches these budgets up to fixed construction overheads and
+precision constants. Write each row Q=a/A in primitive positive integers;
+let A_max be the largest A, N=2^d, S_0=k+1 and P_0=3N-4. Put
+`L=ceil(log2(2*max(1,A_max)/epsilon))`. If
+
+`S>=S_0+1`, `P>=P_0`, `(S-S_0)*2^(P-P_0)>=L`,
+`b>=2L+ceil(log2(R_0+1))+1`,
+
+a native repeated-edge grid construction meets range and error, provided
+its actual edges and adequate exponent range are available. Halving s times
+and squaring p times constructs 2^(-s*2^p). Native singleton PRODUCTs and
+actual repeated weight-one parent lists implement downward excess rounding
+when delta>=h, or upward row scales with exact Q when h>=delta. One can
+choose L<=s*2^p<=2L within the stated budgets. No multiplicity or generated
+constant becomes a free coefficient. Thus the node-only optimum is
+
+`C_Q(h,delta)=log2(log2(1/(h+delta)))+O_Q(1)`.
+
+This leading constant permits unpriced SUM arity: at h=0 its explicit
+grid family has E=Theta(1/error) incoming edges. A different construction
+simultaneously attains the optimal orders
+
+`C,E=Theta(log log(1/(h+delta)))`, `V=Theta(log(1/(h+delta)))`,
+
+with binary SUM arity. V is the full exact direct significand/exponent bit
+volume of native tables, masses and normalizers, not device liveness memory.
+Use one common denominator D_0 of all ideal excesses c, let
+t=1-D_0/H<1/2 with H the least power of two >=D_0, and construct
+g_0=1/H and t_0=t. The positive
+recurrence `g_(i+1)=g_i+g_i*t_i`, `t_(i+1)=t_i^2` yields
+`D_0*g_n+tau=1`, tau=t^(2^n). It costs n SUMs and 2n-1 PRODUCTs when
+the last square is omitted, plus fixed counted target construction. It
+scales every ideal excess by 1-tau and preserves cap R_0.
+
+For **exact** prediction with positive slack, retain that last square.
+With a=D_0*c construct `E=a*g_n+(D_0+a-1)*tau` using only nonnegative
+integer Horner weights and counted scalar-to-indicator PRODUCTs. Then
+`1+E=(1+(D_0-1)*tau)*(1+c)`: all conditional rows are exact and the maximum
+normalizer is R_0*(1+(D_0-1)*tau). Choosing its surplus <=h gives the joint
+upper without subtraction or a new semantic primitive. Direct bit lengths
+grow geometrically across stages, summing to Theta(log(1/(h+delta))).
+
+For uniform-context CE tolerance rho, replace h+delta by h+sqrt(rho).
+The audit checks 90 separate-budget envelope graphs, 92 exact tail repairs,
+100 binary-arity approximation graphs and 1,533 small floating mass rows.
+A binary64 example displays exactly (5/8,3/8) while exact normalization of
+its stored masses retains gap 1/48038396025285288. Neither displayed equality
+nor these static resource bounds certify an AMP bridge.
+
+This is a unified **scoped** upper/lower law. Exact low-P Pareto phases,
+bounded-arity leading constants, optimal bit-time/alternative encodings and
+Runtime enforcement remain unproved. No general LM scaling law or arbitrary
+source/value class is inferred. Proof:
+[`NODE_EDGE_PRECISION_ACCURACY.md`](theory/proofs/NODE_EDGE_PRECISION_ACCURACY.md).
+
 ---
 
 # XVIII. Reference Compiler contract
