@@ -329,3 +329,9 @@ search and registered information/value/physical/numerical paths remain open.
 
 Audit: `theory/numerical_checks/sum_accuracy_complexity_audit.py`.
 Minimal evidence: `evidence/minimal/FP_SUM_ACCURACY_COMPLEXITY_AUDIT.json`.
+
+The follow-up `DYADIC_CAP_AND_TOTAL_COMPLEXITY.md` classifies the unrestricted-
+finite-node exact/closure branches for rational targets on binary sources
+and proves their sharp total-node order Theta(log log(1/error)) in the
+nonattained case. Fixed-P classification and the separate-budget Pareto
+frontier are not settled by that different decision class.

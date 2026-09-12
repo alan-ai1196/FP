@@ -490,9 +490,27 @@ nonattainment. With growing PRODUCT count, a positive geometric construction
 achieves O(log log(1/error)) SUM/PRODUCT nodes at that same cap, while its
 direct numerical significand still grows logarithmically. Transcendental
 data and unbounded range with unpriced arity give explicit counterexamples
-to broader lower claims. Generic exact/closure branch classification,
+to broader lower claims. Generic fixed-P exact/closure branch classification,
 sharp constants and joint/full resource costs remain open; the new audit
 is exact rational/number-field graph verification, not Runtime authority.
+
+XVII.30 completely classifies exactness/closure for positive rational tables
+on the binary cube when both SUM and PRODUCT budgets are unrestricted but
+finite, with the local alphabet {1/2,1,2}. Read
+`DYADIC_CAP_AND_TOTAL_COMPLEXITY.md`. Let R_0 be the largest reciprocal row
+minimum. Below it there is a gap; above it exact local realization exists;
+at R_0 exactness holds iff every critical forced mass R_0*Q is dyadic.
+For the nonattained boundary, the sharp total-node order is
+Theta(log log(1/error)). Positive geometric reciprocals supply the upper;
+the full dyadic denominator bound supplies the lower. Actual constant-to-
+indicator PRODUCTs, target encoding and the native singleton bank are charged
+in the construction. A dyadic cap alone fails for multiclass targets, and
+noncritical normalizers must retain their own legal scales. The audit checks
+3,067 classifications, 1,995 exact graphs and 72 limit graphs. This settles
+the unrestricted-node branch decision and accuracy order; it does not solve
+fixed-P classification or exact finite-size optimization. In particular,
+the identity task's 12-PRODUCT exact certificate is rejected for P=9.
+Sharp Pareto/physical/value/precision/AMP costs remain open.
 
 Implementation closure remains a prerequisite to model/GPU science. Its
 outstanding work is:

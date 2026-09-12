@@ -174,7 +174,7 @@ SUM construction. For fixed algebraic sources and targets, a nonexact local
 closure point necessarily costs Theta(log(1/delta)), also logarithmic in
 inverse CE tolerance. The full asymptotic alternatives are positive gap,
 eventually minimum exact SUM count, or this logarithmic growth. Generic
-classification into those alternatives, efficient amplitude/value acquisition
+fixed-P classification into those alternatives, efficient amplitude/value acquisition
 and sharp target-dependent constants remain open. Exact realization over
 real coefficients is insufficient to decide the exact local-alphabet branch:
 Q=(5/8,3/8) at cap 8/3 already separates them with zero PRODUCTs.
@@ -187,6 +187,21 @@ rate therefore cannot be extrapolated while P grows. Arbitrary transcendental
 data can violate the logarithmic lower along accuracy subsequences, and
 unpriced arity plus unbounded range can hide all growth outside SUM node
 count. Complete physical/numerical/registered-value costs remain open.
+
+XVII.30 closes the rational binary-domain **unrestricted-node** branch
+classification and total accuracy order. With local {1/2,1,2} coefficients,
+R_0=max_x 1/min_j Q_(x,j) is the exact closure threshold. Above R_0 finite
+exactness is always possible; at R_0 it holds iff every critical forced mass
+R_0*Q_(x,j) is dyadic. Every nonattained boundary costs
+Theta(log log(1/error)) in total SUM-plus-PRODUCT nodes. Both bounds retain
+all normalizers and actual coefficient-application PRODUCTs.
+
+The sharp Pareto curve for separate S and P budgets, minimum finite exact
+graph size, constants/uniform dependence on the full target encoding, other
+source/number classes, and complete physical/numerical/value paths remain
+open. The scoped classifier allows arbitrary finite P,S and must not answer
+the earlier fixed-P decisions: cap-nine three-bit identity remains nonexact
+at P=9 even though its unrestricted exact branch has a 12-node witness.
 
 ## 3. End-to-end reference↔AMP self-Compiler bridge
 

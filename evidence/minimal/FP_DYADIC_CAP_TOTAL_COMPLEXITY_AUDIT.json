@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": {
+    "sources": "complete binary unary indicators",
+    "d": "any fixed d>=1",
+    "labels": "any fixed k>=2",
+    "base": 1,
+    "SUM_weights": [
+      "1/2",
+      "1",
+      "2"
+    ],
+    "PRODUCTs": "unrestricted finite",
+    "SUMs": "unrestricted finite",
+    "other_resource_or_Runtime_authority": false
+  },
+  "known_rational_table_cap_classifications": 3067,
+  "classified_status_counts": {
+    "EMPTY_CLASS": 2,
+    "OUTSIDE_CLOSURE": 1020,
+    "EXACT_LOCAL": 1995,
+    "LIMIT_ONLY": 50
+  },
+  "exact_full_native_graphs": 1995,
+  "geometric_limit_graphs": 72,
+  "computed_constant_value_checks": 88,
+  "exact_branch_condition": "R>=R0 and every critical forced mass R*Q is dyadic",
+  "total_accuracy_order_on_limit_only_branch": "Theta(log log(1/delta))",
+  "actual_total_node_growth_for_each_constructed_family": "C_n=C_1+4*m*(n-1), m distinct nondyadic constants",
+  "mixed_critical_row_counterexample": {
+    "cap": "4",
+    "forced_bad_mass_row": [
+      "1",
+      "4/3",
+      "5/3"
+    ],
+    "finite_graphs": [
+      {
+        "geometric_depth": 1,
+        "SUMs": 15,
+        "PRODUCTs": 4,
+        "total_nodes": 19,
+        "probability_error": "1/252",
+        "distinct_nondyadic_constants": 2
+      },
+      {
+        "geometric_depth": 2,
+        "SUMs": 19,
+        "PRODUCTs": 8,
+        "total_nodes": 27,
+        "probability_error": "1/4092",
+        "distinct_nondyadic_constants": 2
+      },
+      {
+        "geometric_depth": 3,
+        "SUMs": 23,
+        "PRODUCTs": 12,
+        "total_nodes": 35,
+        "probability_error": "1/1048572",
+        "distinct_nondyadic_constants": 2
+      },
+      {
+        "geometric_depth": 5,
+        "SUMs": 31,
+        "PRODUCTs": 20,
+        "total_nodes": 51,
+        "probability_error": "1/295147905179352825852",
+        "distinct_nondyadic_constants": 2
+      }
+    ]
+  },
+  "identity_scope_counterexample": {
+    "unrestricted_status": "EXACT_LOCAL",
+    "exact_PRODUCTs": 12,
+    "exact_SUMs": 0,
+    "P_9_scope_rejected": true
+  },
+  "retained_noncritical_normalizers": [
+    "4",
+    "5/2"
+  ],
+  "forged_or_narrowed_certificates_rejected": 6,
+  "invalid_claim_inputs_rejected": 6,
+  "negative_excess_or_nondyadic_exact_construction_rejected": 2,
+  "not_claimed": [
+    "fixed-PRODUCT classification",
+    "minimum finite exact graph size in general",
+    "sharp SUM/PRODUCT Pareto constants",
+    "uniform small dependence on target dimension or encoding",
+    "registered target acquisition, value, ownership/install, persistence or AMP authority"
+  ]
+}

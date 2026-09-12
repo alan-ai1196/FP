@@ -2070,8 +2070,8 @@ Thus algebraic data have a complete asymptotic trichotomy as delta tends
 to zero: a positive closure gap; eventual equality to the minimum exact
 local-alphabet SUM count; or **Theta(log(1/delta))** when the target is in
 closure but has no finite exact local realization. Uniform-context CE has
-the analogous Theta(log(1/rho)) nonattainment law. Which branch contains a
-general target remains a separate, unimplemented classification problem.
+the analogous Theta(log(1/rho)) nonattainment law. At a fixed PRODUCT budget,
+which branch contains a general target remains an unimplemented classification problem.
 Fixed P,S,R admit only finitely many observed mass tables even for arbitrary
 fixed real sources, by the bounded visible-coefficient lattice argument.
 
@@ -2098,6 +2098,62 @@ counterexamples. The specialized decoder retains smaller constants in its
 SUM upper bound. Full value acquisition, physical construction and AMP are
 separate from these static bounds. Proof:
 [`SUM_ACCURACY_COMPLEXITY.md`](theory/proofs/SUM_ACCURACY_COMPLEXITY.md).
+
+## XVII.30. Complete dyadic cap classification and sharp total-node accuracy order
+
+On the complete d-bit cube, d>=1, fix a positive rational k-label target Q,
+base one, one final normalization, local SUM weights {1/2,1,2} and finite
+rational cap R. Allow **arbitrary finite SUM and PRODUCT counts**. Put
+`r_x=1/min_j Q_(x,j)` and `R_0=max_x r_x`. This complete static class has
+the following exact/closure decision:
+
+- R<k gives an empty class. For k<=R<R_0, every candidate has probability
+  error at least `1/R-min_(x,j) Q_(x,j)>0`.
+- For R>=R_0, Q is always in closure. It is finitely exact iff every row
+  with r_x=R has all forced masses R*Q_(x,j) dyadic.
+- Thus every positive slack R>R_0 permits finite exactness. Nonattainment
+  occurs precisely at R=R_0 with a nondyadic critical mass.
+
+All native masses are dyadic on binary sources. A critical row forces
+T_x=R, proving necessity. For sufficiency write each row Q=a/A using
+primitive positive integers a, with m=min_j a_j. Choose a dyadic scale
+t in [1/m,R/A]; this interval has positive width off the critical rows,
+and its critical singleton is feasible iff m is a power of two. The
+resulting masses t*a are realized by native singleton indicators and actual
+halving/Horner SUMs. All normalizers and the full target table are retained.
+
+At minimum cap, binary-label exactness is equivalent to R_0 being dyadic.
+The cap alone fails for more labels: Q=(1/4,1/3,5/12) has integer cap four
+but forced masses (1,4/3,5/3). Nor may all normalizers be fixed to the cap:
+rows (3/4,1/4) and (3/5,2/5) are exactly realized at cap four with totals
+four and 5/2; requiring both totals to be four falsely rejects them.
+
+Let C=S+P count all weighted SUM and scalar PRODUCT nodes before the fixed
+base/normalization stage. For every nonattained target above,
+**C_Q(delta)=Theta(log log(1/delta))**. Rational excess c=a/b is approached
+from below by `c*(1-t^(2^n))`, t=1-b/H<1/2, H the least power of two >=b.
+Positive shared squaring and geometric products construct these constants
+in O(n) nodes; applying each computed constant to a context indicator is a
+further counted PRODUCT. The final masses stay below their feasible rational
+limits, keeping the same cap and activation bound max(1,R-k).
+
+The full-class lower uses XVII.29:
+`error>=1/(B*R*2^(S*2^P))`, B a target denominator. For S>=1,
+`S*2^P<=2^(C-1)`, giving
+`C>=1+log2(log2(1/(B*R*delta)))` at small error. Uniform-context CE has
+the same double-logarithmic order in inverse tolerance. In the exact branch,
+C_Q(delta) eventually equals the minimum finite exact count; below closure,
+a positive gap remains. The explicit criterion now decides these branches
+for unrestricted finite nodes, without solving fixed-PRODUCT subproblems.
+
+The audit checks 3,067 rational table/cap cases, 1,995 full native exact
+graphs, 72 geometric limit graphs, critical-row/normalizer counterexamples,
+and scope forgeries. The three-bit identity task at cap nine is exact with
+12 PRODUCTs and no SUMs; that classification is explicitly rejected as a
+certificate for P=9. Sharp SUM/PRODUCT Pareto constants, finite exact size
+optimization and full information/value/physical/AMP costs remain open.
+The full target encoding and exponential-in-d indicator bank are not free.
+Proof: [`DYADIC_CAP_AND_TOTAL_COMPLEXITY.md`](theory/proofs/DYADIC_CAP_AND_TOTAL_COMPLEXITY.md).
 
 ---
 

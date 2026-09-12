@@ -1080,3 +1080,43 @@ does not replace the stronger specialized 13k+6 construction. Read
 `SUM_ACCURACY_COMPLEXITY.md`. Sharp joint node/precision costs, efficient
 generic phase/amplitude classification and the registered physical/value/
 AMP path remain open. The proof adds no FP semantic primitive.
+
+## 47. The dyadic cap boundary decides total-node accuracy (2026-09-12)
+
+The fixed-P resource law left open whether the geometric PRODUCT example
+was exceptional. On the complete binary source domain, arbitrary finite
+PRODUCTs make all context singletons constructible. The remaining exact
+local-alphabet question becomes a precise mass-scale problem. A rational
+target requires R>=R_0=max_x 1/min_j Q_(x,j). At a critical row, T_x=R is
+forced and every mass R*Q_(x,j) must be dyadic. Off the critical rows, a
+positive interval of scales contains a legal dyadic scale. This completely
+decides the unrestricted finite-node class: a gap below R_0, exactness
+above it, and a critical-mass dyadic test at the minimum cap.
+
+The distinction has small counterexamples. Integer cap four still fails
+for the three-label row (1/4,1/3,5/12), whose forced masses are
+(1,4/3,5/3). Checking one good critical row cannot erase a second bad one.
+Conversely, forcing noncritical normalizers to the cap rejects a valid
+two-row model whose legal totals are four and 5/2. The complete criterion
+retains both every critical entry and every noncritical scale interval.
+
+Every rational excess coefficient a/b has a positive geometric approximation
+from below: choose dyadic seeds a/H and t=1-b/H<1/2, then shared squaring
+and products produce (a/b)*(1-t^(2^n)). Applying this computed constant to
+a context singleton costs another native PRODUCT. All finite masses remain
+below their feasible rational limits, so the original normalizer cap and
+activation bound max(1,R-k) are preserved. Total graph size is O(n) for a
+fixed table, giving O(log log(1/error)) accuracy cost. The rational lower
+bound from XVII.29 and S*2^P<=2^(S+P-1) give the matching total-node order
+for every nonattained target, including uniform-context CE tolerance.
+
+The exact audit compares 3,067 target/cap cases against direct forced-mass
+tests, evaluates 1,995 full exact native graphs and 72 geometric graphs,
+checks all generated scalar values and their actual PRODUCT applications,
+and rejects six false/scope-mismatched certificates. The three-bit identity
+target at cap nine has a 12-PRODUCT, zero-SUM exact witness; the same
+certificate is explicitly rejected for a P=9 claim. Read
+`DYADIC_CAP_AND_TOTAL_COMPLEXITY.md`. The full target encoding and singleton
+bank remain in construction cost. Sharp separate-budget Pareto constants,
+minimum exact graph sizes, other source/number classes and registered
+physical/value/numerical paths remain open.
