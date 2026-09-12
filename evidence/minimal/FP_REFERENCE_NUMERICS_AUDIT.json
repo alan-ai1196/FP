@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "scope": "guarded exact rational logarithm enclosure, signed ordering and monotone nonnegative dyadic floor",
+  "logarithm": {
+    "exact_formula_and_nested_tail_cases": 600,
+    "independent_decimal_diagnostics": 600,
+    "reciprocal_identity_cases": 200,
+    "exact_power_of_two_identity_cases": 7,
+    "log_product_interval_identity_cases": 25,
+    "extreme_argument_exponent": 1200,
+    "near_one_sub_binary64_displacements_retained": true
+  },
+  "floor": {
+    "exact_grid_and_monotonicity_cases": 1385,
+    "tiny_positive_value_may_conservatively_round_to_zero": true
+  },
+  "comparison": {
+    "exact_signed_order_cases": 12321,
+    "huge_denominator_cases": 25,
+    "input_and_raw_cross_product_exhaustion_unresolved": true,
+    "no_sign_or_equality_budget_bypass": true,
+    "primitive_charge_upper_checks": 5
+  },
+  "adversaries": {
+    "strict_fraction_signed_interval_and_registration_checks": true,
+    "input_series_scale_and_floor_integer_exhaustion_unresolved": true,
+    "primitive_charge_upper_checks": 15,
+    "no_unbounded_fallback_or_float_log": true
+  },
+  "not_closed": [
+    "statistical stream-law and fresh persistence authority",
+    "full physical/bit-time accounting",
+    "abstract-real float64 or actual AMP bridge",
+    "atomic installation"
+  ]
+}

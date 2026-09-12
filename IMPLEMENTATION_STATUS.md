@@ -231,6 +231,49 @@ ERC-1 registration, broader Compiler/persistence/error authority, total
 host/device accounting, actual AMP and atomic install remain open.
 Implementation is still NOT FROZEN; GPU/model science stays HOLD.
 
+### Owned fresh reference persistence (2026-09-12)
+
+The same Runtime now admits a registered reference candidate/base identity
+before its first context and owns its complete starting/current learners,
+future epoch schedule, rational gain bound, lower wealth, program leases,
+event records and global alpha allocation. `StochasticStreamLaw` records
+an explicit external process assumption; unread deterministic data still
+grant no probability guarantee. Epoch length and the optimizer clock are
+separate. Admission uses a shared update boundary; a reference crossing
+at a partial optimizer unit grants no install permission.
+
+Positive base and the normalizer cap give a full-class likelihood-ratio
+bound. Fixed-term rational logarithm enclosures and downward dyadic wealth
+updates preserve the conditional mean-null supermartingale inequality.
+First-crossing stopping keeps wealth below `2/alpha`; floor losses can
+destroy power. No floating logarithm, user-supplied gain, skipped failed
+factor, retrospective epoch or inherited newborn wealth is accepted.
+Several preadmitted identities may use one fresh event, each spending its
+own alpha. Retirement, cancellation and failed admission never refund it.
+
+`admit_reference_persistence` and `reference_persistence_result` report
+`REFERENCE_CROSSED` only for an owned currently continuous reference pair;
+finite noncrossing and numerical/resource uncertainty remain UNRESOLVED.
+Unexpected failure within an ordinary event halts its prefix. Historical crossing
+does not survive as live authority after a failed successor or retirement.
+The proof and exact scope are in
+`theory/proofs/OWNED_REFERENCE_PERSISTENCE.md`. The external probability law
+and conditional null are assumptions, not facts inferred from a finite run.
+
+`scripts/audit_reference_persistence.py` checks paired sealed scores across
+six changing optimizer commits, H=3 with update unit two, and an H=1 crossing
+at cursor three with a partial accumulator. It executes all 32 five-label
+fair-null paths (160 actual events), checks 31 conditional wealth inequalities,
+and exercises shared events, old profile/query IDs, nonrefundable alpha,
+real integer/work/memory caps and failures before/after crossing. The
+separate numerical and statistical kernel audits retain only their exact
+counts and minimal counterexamples under `evidence/minimal/`.
+
+This closes a reference evidence slice, not paired reference/AMP persistence.
+Complete ERC-1 registration, full physical accounting, certified float64,
+actual AMP event relations, atomic installation and full release gates
+remain open. No new Compiler CERTIFIED_COMPLETE or install token is issued.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

@@ -6,7 +6,7 @@ contract, not proof that an external producer sampled independent observations.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from fractions import Fraction as F
 
 from .core import ContractError, QueryError, natural
@@ -47,13 +47,30 @@ class SourceRead:
 
 
 @dataclass(frozen=True)
+class StochasticStreamLaw:
+    """Explicit external assumption, never inferred from finite observations.
+
+    The producer is a stochastic branch-invariant exogenous process relative
+    to the complete Runtime filtration before each incoming context. An
+    exposed deterministic future tape or seed is not fresh randomness under
+    this declaration. The conditional mean-null is defined by each admitted
+    comparison; this object neither asserts that null nor proves the producer.
+    """
+    assumption_id: str
+    family: str = field(default='branch-invariant-exogenous-stochastic-process-v1', init=False)
+
+    def __post_init__(self):
+        name(self.assumption_id, 'external stochastic-law assumption')
+
+
+@dataclass(frozen=True)
 class DataContract:
     streams: tuple[StreamSpec, ...]
     active_stream: str
     input_upper: tuple[F, ...]
     source_reads: tuple[SourceRead, ...]
     access_id: str = 'exact-revealed-train-online-v1'
-    stream_law: str = 'declared-exogenous-no-probability-guarantee'
+    stream_law: str | StochasticStreamLaw = 'declared-exogenous-no-probability-guarantee'
 
     def __post_init__(self):
         streams = tuple(self.streams)
@@ -71,8 +88,11 @@ class DataContract:
         reads = tuple(self.source_reads)
         if any(type(r) is not SourceRead for r in reads) or len({r.source_id for r in reads}) != len(reads):
             raise ContractError('distinct registered source evaluators required')
-        if self.access_id != 'exact-revealed-train-online-v1' or self.stream_law != 'declared-exogenous-no-probability-guarantee':
-            raise ContractError('query-only access and stochastic stream laws are not yet implemented')
+        if self.access_id != 'exact-revealed-train-online-v1':
+            raise ContractError('query-only access is not yet implemented')
+        if not (type(self.stream_law) is StochasticStreamLaw or
+                type(self.stream_law) is str and self.stream_law == 'declared-exogenous-no-probability-guarantee'):
+            raise ContractError('use the supported explicit stochastic assumption or the deterministic no-guarantee declaration')
         object.__setattr__(self, 'streams', streams)
         object.__setattr__(self, 'input_upper', tuple(rational(v, 'input range') for v in self.input_upper))
         object.__setattr__(self, 'source_reads', reads)
@@ -141,8 +161,8 @@ class DataUsageLedger:
         self._uses: list[DataUse] = []
 
     def record(self, records: tuple[ObservationRecord, ...], purpose: str, consumer: str, cursor: int):
-        if purpose not in ('ordinary', 'proposal', 'profile'):
-            raise QueryError('this ledger has no persistence authorization operation')
+        if purpose not in ('ordinary', 'proposal', 'profile', 'persistence'):
+            raise QueryError('unregistered observation use')
         name(consumer, 'data consumer')
         natural(cursor, 'data-use cursor')
         if not records or any(r.role not in ('train', 'online') or r.target is None for r in records):

@@ -1380,3 +1380,57 @@ numeric coercions and subclass comparison behavior are rejected. The
 scoped search regression and full finite search audit pass. This is a
 concrete implementation mismatch under the existing typed-state principle,
 not a reason to change Foundation or expand the static theorem catalog.
+
+## 55. Execute fresh reference evidence with bounded lower wealth (2026-09-12)
+
+The next implementation obstacle was continuous statistical evidence under
+finite numerical resources. Multiplying exact rational factors forever is
+unnecessary for the existing linear e-process: a downward dyadic update is
+pointwise below the exact nonnegative factor, so it preserves the declared
+conditional mean-null supermartingale inequality. Stopping at first crossing
+keeps retained wealth below `2/alpha`. This is a validity statement; rounding
+can lose all power and does not inherit XVII.6 sample constants.
+
+Positive base and a native normalizer cap supply the needed bound without
+an architecture menu: `K=max_y (R-sum(b)+b_y)/b_y` bounds every candidate/base
+probability ratio. Fixed-term rational atanh expansions enclose logarithms;
+signed comparisons, intermediate integers and downward floors are guarded.
+Exhaustion cannot invoke an unlimited exact or floating-point fallback.
+
+Runtime now owns the entire reference evidence identity: admission before
+context ingress, fixed future epoch schedule, both complete continuous
+learners, sealed pre-target scores, paid workspaces/events, lower wealth and
+global alpha. Every actual admission spends a new allocation before fallible
+materialization. Failed admission, finite noncrossing, retirement and
+cancellation never refund it. Multiple preadmitted identities may legally
+score the same fresh event with separate allocations; ordinary post-score
+learning is also legal. A later profile/rebuild cannot recycle past IDs or
+inherit wealth. Epoch boundaries and optimizer commits remain separate clocks.
+
+Failure handling required an explicit probabilistic boundary. A null
+conditioned on computation succeeding is insufficient: success can select
+contexts or targets. The proof states a bounded score on all branches of
+the pre-epoch law, and carefully distinguishes stopped continuations from
+uninterrupted-trajectory nulls. Failed evidence terminates its identity
+(mathematically killed to zero), retaining the old wealth only as history.
+An unexpected failure during ordinary execution halts that whole prefix;
+neither skipped losses nor a mismatched successor can inherit a live crossing.
+No external producer's stochastic law is inferred from a test tape.
+
+The kernel audit checks 1,586 exact floor/threshold cases, six conditional
+null trees and 256 shared-observation/global-alpha paths. It reproduces
+false guarantees from upward rounding, outcome-dependent bets, skipped
+losses and refunded allocations. Numerical evidence adds 600 exact log-tail
+checks with independent Decimal diagnostics, 12,321 signed-order cases and
+1,385 floor checks. The actual Runtime audit independently verifies sealed
+scores across six changing optimizer commits, actual crossing/noncrossing,
+32 complete fair-label paths with 31 exact conditional wealth inequalities,
+freshness, shared observations, alpha ownership and numeric/work/memory/
+backend failure boundaries. These are execution audits, not model science.
+
+Read `theory/proofs/OWNED_REFERENCE_PERSISTENCE.md` and the three new minimal
+numerics/kernel/Runtime evidence files. The result `REFERENCE_CROSSED` is
+conditional reference evidence only. Actual paired reference/AMP evidence,
+complete ERC-1 physical enforcement and atomic installation remain open;
+Runtime is NOT FROZEN and RTX 3090 science stays HOLD. Foundation and ERC-1
+remain frozen, and static special-case expansion remains parked.

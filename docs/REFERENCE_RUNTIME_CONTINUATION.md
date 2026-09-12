@@ -175,12 +175,66 @@ The dimension, range, precision, record cap and computation charge are
 fixed. Quantization uses exact nearest-level arithmetic with ties to even,
 including ranges smaller than binary64 can represent. There is no supplied
 `fn` or caller-computed answer. Failed computations retain their data-use
-facts and spent work. No method issues a freshness authorization.
+facts and spent work. A data-use record itself issues no freshness authority.
 
-The only currently accepted stream-law ID explicitly grants **no
-probability guarantee**. Reading a deterministic future sequence does not
-make it iid. Query-only hidden-information contracts, stochastic laws,
-predictable persistence admissions/bets and the error ledger remain open.
+The original stream-law ID explicitly grants **no probability guarantee**.
+`StochasticStreamLaw(assumption_id)` additionally records an external
+branch-invariant stochastic-process assumption relative to the complete
+Runtime filtration. It does not infer iid sampling from observed values or
+hide an exposed future tape/seed. Query-only hidden-information contracts
+remain open; the reference persistence endpoint below requires the typed
+stochastic assumption before any alpha allocation.
+
+## Fresh reference persistence
+
+`OnlineContract.persistence` preregisters the finite rules and total alpha.
+Each rule fixes the epoch length, horizon, alpha, bet, gain bound, logarithm
+terms and dyadic wealth precision. `admit_reference_persistence(candidate_id,
+rule_id)` takes no losses, observation IDs, supplied state or wealth. It
+requires two owned range-safe learners at a shared ordinary update boundary
+and admits only their subsequent contexts. The epoch clock need not match
+the optimizer clock. A context already accepted by `predict_next` blocks
+admission; a profile or proposal query on old IDs creates no future score.
+
+Each identity retains the candidate/base program IDs, complete initial and
+current learners, ordinary cursor, epoch accumulator, stopped wealth and
+physical evidence ownership. Runtime seals the active identity set with the
+event and derives gains from the same pre-target predictions used by the
+ordinary continuation. Both observe/commit successors must actually finish
+before evidence is published. A crossing during a partial optimizer unit
+remains a reference statistic; it is not an atomic install boundary.
+
+The positive base and native normalizer cap imply
+`K=max_y (R-sum(b)+b_y)/b_y`, hence `abs(log(p_C/p_D))<=log K`.
+Admission must prove the rule's rational bound covers this class. Each
+event uses guarded rational log enclosures and every fixed epoch applies
+a downward-rounded nonnegative factor. Exact cross-product comparisons
+also obey the integer-work cap. The statistic stops at first crossing,
+which bounds its wealth below `2/alpha`; future ordinary events must still
+preserve the same complete pair before a live result can be returned.
+
+The conditional null is a bounded next-epoch mean-gain statement relative
+to the complete pre-epoch filtration. It is not conditioned on successful
+computation. See [`OWNED_REFERENCE_PERSISTENCE.md`](../theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
+for the theorem, failure branches and external-law assumptions. The Runtime
+enforces the executed evidence path; it cannot empirically establish the
+producer's law or a conditional expectation from its finite transcript.
+
+Each actual admission spends alpha before fallible workspace creation.
+Several preadmitted identities may share a fresh observation, with separate
+allocations; statistical independence is unnecessary. No cancellation,
+retirement, failed build or exhausted horizon refunds alpha. Post-reveal
+evidence failure terminates the identity, and ordinary transition failure
+terminates every live comparison. Old wealth remains historical only;
+skipping the failed factor and resuming is forbidden. A rebuilt candidate
+requires a new identity and allocation even if its current prediction agrees.
+
+`reference_persistence_result` reports `REFERENCE_CROSSED` only while the
+actual current reference pair matches the retained continuous trajectory.
+There is no caller-submittable persistence certificate or helper signer.
+Finite noncrossing, range/numeric/resource uncertainty and lack of a
+stochastic assumption give UNRESOLVED. This supplies no pair-atomic AMP
+persistence, equivalence, complete Compiler or installation authority.
 
 ## Failure and physical history
 
@@ -255,6 +309,17 @@ the unrestricted SUM coefficient class. False prefix closure, substituted
 rows, wrong selection, an inflated winner score, stale/altered tokens and
 backend/range/information/numeric/work/coexistence failures are exercised.
 
+`scripts/audit_reference_persistence.py` traverses the actual admitted event
+path, including 12 independent pre-target score/log/wealth checks with six
+changing optimizer commits and H=3 distinct from update unit two. A separate
+H=1 crossing at cursor three retains its partial accumulator. All 32
+five-event fair-label paths execute 160 ordinary events and give 31 exact
+conditional lower-wealth inequalities. Actual integer/work/memory limits,
+shared fresh IDs, old profile/query data, new lineages, post-crossing commit
+failure and failure while materializing the first crossing are checked.
+Pure numerical and wealth kernels have separate exact audits; neither is
+substituted for these Runtime ownership/filtration/continuity checks.
+
 Current package modules import. The previously falsified helper signers
 are no longer callable. Current proof data and fixed maximum checking have
 only the Runtime-issued scope above; `bridge.py` remains reserved.
@@ -264,9 +329,9 @@ Git commit `39235ef` by `scripts/audit_recovered_authorities.py`. All four
 historical false authorizations remain reproducible. An empty bridge port
 does not count as a passed bridge gate.
 
-Next integrate the complete immutable ERC-1 manifest, stochastic fresh
+Next integrate the complete immutable ERC-1 manifest, paired reference/AMP
 persistence and complete physical/error state. Certified float64,
 actual AMP, atomic installation and the complete 47-gate mapping remain
 release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,
-persistence, bridge or installation authorization. RTX 3090 science remains
+paired persistence, bridge or installation authorization. RTX 3090 science remains
 HOLD; static theory expansion remains parked.

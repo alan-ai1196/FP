@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "scope": "exact lower-wealth kernel and finite declared null-law audits; no Runtime authority",
+  "invalid_registration_or_argument_cases": 52,
+  "pointwise_floor_bound_and_threshold_cases": 1586,
+  "exact_conditional_null_trees": [
+    {
+      "adaptive_past_only_bets": false,
+      "grid_bits": 0,
+      "conditional_null_checks": 255,
+      "terminal_nodes": 256,
+      "crossing_probability": "0",
+      "stopped_expectation": "1/1296"
+    },
+    {
+      "adaptive_past_only_bets": false,
+      "grid_bits": 4,
+      "conditional_null_checks": 232,
+      "terminal_nodes": 233,
+      "crossing_probability": "11/108",
+      "stopped_expectation": "629/864"
+    },
+    {
+      "adaptive_past_only_bets": false,
+      "grid_bits": 16,
+      "conditional_null_checks": 228,
+      "terminal_nodes": 229,
+      "crossing_probability": "5/36",
+      "stopped_expectation": "247345/262144"
+    },
+    {
+      "adaptive_past_only_bets": true,
+      "grid_bits": 0,
+      "conditional_null_checks": 255,
+      "terminal_nodes": 256,
+      "crossing_probability": "0",
+      "stopped_expectation": "31/1296"
+    },
+    {
+      "adaptive_past_only_bets": true,
+      "grid_bits": 4,
+      "conditional_null_checks": 251,
+      "terminal_nodes": 252,
+      "crossing_probability": "67/1296",
+      "stopped_expectation": "2747/3456"
+    },
+    {
+      "adaptive_past_only_bets": true,
+      "grid_bits": 16,
+      "conditional_null_checks": 249,
+      "terminal_nodes": 250,
+      "crossing_probability": "11/144",
+      "stopped_expectation": "41252849/42467328"
+    }
+  ],
+  "global_error_composition": {
+    "complete_shared_observation_paths": 256,
+    "global_alpha": "3/8",
+    "actual_spending_values": [
+      "1/4",
+      "3/8",
+      "5/16"
+    ],
+    "any_false_crossing_probability": "23/128"
+  },
+  "reproduced_unsound_shortcuts": {
+    "outcome_adaptive_bet_one_step_mean": "5/4",
+    "outcome_adaptive_bet_or_loss_skipping_crossing": "163/256",
+    "upward_integer_rounding_crossing": "219/256",
+    "wrong_alpha_for_previous_three": "1/4",
+    "refunded_alpha": "1/20",
+    "refund_restart_blocks": 16,
+    "refund_crossing_probability_lower": "20655787605859975846598972513555320831/340282366920938463463374607431768211456"
+  },
+  "not_claimed": [
+    "freshness or lineage enforced by this helper",
+    "external corpus obeys an audited probability law",
+    "positive power under wealth quantization",
+    "reference/AMP bridge or installation authorization"
+  ]
+}

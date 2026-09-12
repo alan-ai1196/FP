@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+  "null_id": "bounded-pre-context-stopped-reference-epoch-mean-v1",
+  "scores": {
+    "sealed_probability_and_Decimal_log_checks": 12,
+    "registered_epoch_events": 3,
+    "optimizer_update_unit": 2,
+    "completed_epochs": 4,
+    "optimizer_commits": 6,
+    "committed_successor_probabilities_differ_from_scored_predictions": 6,
+    "independent_exact_dyadic_wealth_checks": 12
+  },
+  "crossing": {
+    "positive_crossing_cursor": 6,
+    "positive_crossing_wealth_lower": "298761/65536",
+    "H1_epochs_are_distinct_from_optimizer_commits": true,
+    "crossing_at_cursor_3_with_optimizer_unit_count_1_is_legal": true,
+    "continued_lineages_track_after_statistic_stops": true,
+    "retirement_invalidates_current_crossing_without_refund": true,
+    "equal_forecasts_end_without_crossing_or_rejection": true,
+    "reference_crossing_cannot_authorize_install": true
+  },
+  "null": {
+    "complete_fair_label_paths": 32,
+    "actual_ordinary_events": 160,
+    "exact_conditional_lower_wealth_inequalities": 31,
+    "first_crossing_probability": "1/8",
+    "allocated_alpha": "1/2",
+    "null_justification": "fixed ratio product (4/3)*(2/3)=8/9<1 under fair independent labels"
+  },
+  "freshness": {
+    "shared_fresh_event_is_scored_for_every_preadmitted_identity": true,
+    "target_time_admission_cancellation_and_old_ID_backfill_rejected": true,
+    "cancel_retire_and_newborn_have_no_alpha_or_wealth_refund": true,
+    "global_allocated_alpha": "3/4",
+    "explicit_external_stochastic_assumption_required": true,
+    "profile_and_proposal_old_observations_are_not_fresh_persistence": true
+  },
+  "failures": {
+    "real_integer_cap_stops_identity_without_skipping_outcome": true,
+    "real_work_cap_stops_identity_while_ordinary_continuation_remains_legal": true,
+    "failed_numeric_and_physical_admission_keep_spent_alpha": true,
+    "unexpected_score_failure_keeps_target_and_halts_ordinary_prefix": true,
+    "ordinary_commit_failure_after_crossing_invalidates_current_evidence": true,
+    "first_crossing_workspace_failure_cannot_activate_or_resume_evidence": true,
+    "ordinary_publication_failure_revokes_all_staged_crossings": true,
+    "failed_identity_cannot_resume_or_inherit_prior_wealth": true
+  },
+  "not_closed": [
+    "external producer stochastic-law verification",
+    "paired reference and actual AMP persistence",
+    "full ERC-1 physical resources",
+    "atomic installation and complete Runtime release"
+  ]
+}

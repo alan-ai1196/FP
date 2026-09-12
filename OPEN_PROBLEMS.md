@@ -41,9 +41,17 @@ proof is scoped to fixed-state empirical CE on registered constructor
 endpoints **plus deployed baseline**, with current context and owned
 evidence. Read `theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md`.
 
+Owned reference persistence now runs on the same ordinary event path:
+pre-context admission, paired sealed predictions, continuous learner state,
+guarded lower logarithms/wealth and global nonrefundable alpha. It yields
+conditional reference evidence under an explicit external stochastic law;
+shared fresh observations need separate allocations, not independence.
+See `theory/proofs/OWNED_REFERENCE_PERSISTENCE.md` for the exact null and
+failure boundary. It grants no AMP or installation authority.
+
 The remaining work is complete ERC-1 registration, full Compiler decision
-authority beyond the scoped reference comparison, stochastic fresh
-persistence/error state, actual host/device accounting, certified reference/
+authority beyond the scoped reference comparison, paired reference/AMP
+persistence and complete error state, actual host/device accounting, certified reference/
 AMP and atomic installation. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
 The new endpoint pass is not a complete release certificate.

@@ -26,6 +26,11 @@ native syntax in five explicit finite caps. Every program runs that same
 registered constructor; a checked explicit cursor cannot skip a region.
 Runtime issues only a current typed maximum proof for fixed-state empirical
 CE over this constructor class plus the actual deployed baseline.
+`admit_reference_persistence` registers a future continuous candidate/base
+comparison before context ingress. Runtime scores sealed paired forecasts,
+owns guarded lower log/wealth arithmetic and spends global alpha once per
+identity. Its `REFERENCE_CROSSED` result is conditional reference evidence;
+failure, retirement and reconstruction cannot recycle its authority.
 
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
@@ -37,7 +42,8 @@ build failures release partial buffers without refunding spent work or peak.
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and
 `python -B scripts/audit_reference_profiles.py` and
-`python -B scripts/audit_reference_search.py` from repository root. They
+`python -B scripts/audit_reference_search.py` and
+`python -B scripts/audit_reference_persistence.py` from repository root. They
 exercise the actual Runtime and independent exact/ownership/clock oracles.
 The existing XVII.5 value recurrence now also runs through the endpoint.
 Read [`REFERENCE_RUNTIME_CONTINUATION.md`](../../docs/REFERENCE_RUNTIME_CONTINUATION.md)
@@ -50,7 +56,12 @@ likelihood ranking does not optimize every future trajectory or parameter
 value. Any unresolved member or final verification budget blocks its proof;
 external mutations invalidate earlier authority.
 
-Next integrate complete ERC-1 registration, fresh persistence/error state,
+Read [`OWNED_REFERENCE_PERSISTENCE.md`](../../theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
+for the conditional null, native ratio bound, bounded lower wealth,
+nonrefundable alpha and explicit external stochastic-process assumption.
+The pure numerical/kernel audits do not own observation or lineage facts.
+
+Next integrate complete ERC-1 registration, paired AMP persistence/error state,
 full physical accounting and reference/AMP/atomic installation. The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current

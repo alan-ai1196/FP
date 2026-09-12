@@ -22,16 +22,29 @@ now runs owned native construction, registered profile replay, exact ordinary
 learning, causal source reads and registered revealed-data queries through
 the same public endpoint. It also executes complete finite ordered native
 search and issues one tightly scoped reference comparison proof.
+It now also owns fresh **reference** persistence: admission before context,
+sealed paired scores, complete continuous learners, guarded lower wealth
+and global alpha that cannot be refunded or inherited after a rebuild.
 Do not reconstruct these modules again. Read the source README,
 [`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md),
 `scripts/audit_reference_construction.py`, `scripts/audit_reference_events.py`,
-`scripts/audit_reference_profiles.py` and `scripts/audit_reference_search.py`.
+`scripts/audit_reference_profiles.py`, `scripts/audit_reference_search.py`
+and `scripts/audit_reference_persistence.py`.
 Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md)
 before interpreting that proof: it optimizes fixed-state empirical CE over
 the registered initializer/profile endpoints plus the actual deployed
 baseline, not all values or future continuations. The remaining gaps are
-complete ERC-1 registration, fresh persistence, full physical/error state,
+complete ERC-1 registration, paired reference/AMP persistence, full physical/error state,
 reference/AMP and atomic install integration.
+
+Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
+before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic
+process law are explicit assumptions, never inferred from unread data.
+Downward rational bounds/floor wealth preserve conditional validity but
+can destroy power; failure terminates the identity instead of skipping a
+loss. A fresh observation can serve several preadmitted identities, each
+with its own alpha. Epoch and optimizer clocks remain distinct. This is
+reference evidence, not a paired AMP or installation certificate.
 
 The online interface explicitly permits exact revealed train/online access;
 its finite-precision query is not the only observable information channel.

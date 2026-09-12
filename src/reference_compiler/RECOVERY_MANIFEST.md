@@ -105,7 +105,13 @@ grammar enumeration with a checked owned cursor, actual constructor and
 exact fixed-state empirical CE comparison. New `proof.py` data and the
 Runtime's fixed verifier bind this class plus deployed baseline to a
 current executed context; no generic historical signer is restored.
+New `numerics.py`, `persistence.py` and `persistence_state.py` now support
+Runtime-owned fresh reference evidence: guarded rational log enclosures,
+bounded downward-rounded wealth, continuous paired learners and a global
+nonrefundable alpha ledger. No historical generic persistence signer is
+restored. The external stochastic-law assumption is explicit; helper
+arithmetic alone supplies neither freshness nor trajectory authority.
 The public install path remains UNRESOLVED because complete manifest/
-persistence/error/physical accounting/AMP integration is absent.
+paired persistence/error/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.
