@@ -194,6 +194,27 @@ class ResourceLedger:
         # a recycled identity with a different accounting role.
         self._event('release_owner_objects', owner)
 
+    def release_many(self, releases: tuple[tuple[str, str, int], ...]):
+        """Prevalidate all successor-publication releases before changing leases."""
+        objects = dict(self._objects)
+        refs = {key: dict(value) for key, value in self._refs.items()}
+        retired = set(self._retired)
+        for owner, object_id, count in releases:
+            self._owner(owner)
+            natural(count, 'object reference count', positive=True)
+            if object_id not in refs or refs[object_id].get(owner, 0) < count:
+                raise ContractError('release batch exceeds an actual owned reference')
+            refs[object_id][owner] -= count
+            if refs[object_id][owner] == 0:
+                del refs[object_id][owner]
+            if not refs[object_id]:
+                del refs[object_id]
+                del objects[object_id]
+                retired.add(object_id)
+        self._objects, self._refs, self._retired = objects, refs, retired
+        for owner, object_id, count in releases:
+            self._event('release', owner, (object_id,), (('references', count),))
+
     def close_owner(self, owner: str):
         self.release_owner(owner)
         self._closed_owners.add(owner)

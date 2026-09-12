@@ -3,6 +3,6 @@
 No package API currently authorizes installation or CERTIFIED_COMPLETE.
 """
 
-from .runtime import ConstructionContract, ReferenceCompilerRuntime
+from .runtime import ConstructionContract, OnlineContract, ReferenceCompilerRuntime
 
-__all__ = ['ConstructionContract', 'ReferenceCompilerRuntime']
+__all__ = ['ConstructionContract', 'OnlineContract', 'ReferenceCompilerRuntime']

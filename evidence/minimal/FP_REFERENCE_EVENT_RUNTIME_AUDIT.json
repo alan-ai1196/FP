@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+  "all_current_modules_import": true,
+  "unsafe_historical_signers_exposed_by_current_package": false,
+  "gradient_audit": {
+    "native_graphs": 80,
+    "independent_exact_gradient_vectors": 960,
+    "zero_shared_repeated_and_unused_coordinates": true
+  },
+  "exhaustive_endpoint": {
+    "complete_stream_class": "all 4^3 context/target sequences; one shared native graph, two continuous reference lineages",
+    "streams": 64,
+    "paired_events": 192,
+    "individual_optimizer_commits": 128
+  },
+  "clock_data_boundaries": {
+    "target_accumulator_invisible_until_full_unit": true,
+    "no_caller_commit_or_query_callback": true,
+    "immutable_roles_no_reused_or_future_ids": true,
+    "newborn_reset_at_common_boundary": true,
+    "retired_lineage_trace_and_query_use_retained": true,
+    "no_stochastic_or_install_authorization": true
+  },
+  "causality": {
+    "exact_causal_source_rows": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ]
+    ],
+    "positive_delayed_body_trace_checked": true,
+    "current_target_and_mismatched_source_delay_rejected": true
+  },
+  "query_precision": {
+    "exact_level_and_tie_cases": 246,
+    "sub_binary64_rational_range_preserved": true,
+    "failed_query_keeps_data_use_and_work": true
+  },
+  "failure_prefixes": {
+    "candidate_backend_failure_keeps_both_published_states": true,
+    "target_reveal_and_executed_costs_cannot_roll_back": true,
+    "infeasible_optimizer_successor_halts_unresolved": true,
+    "target_survives_post_reveal_work_exhaustion": true,
+    "ordinary_successor_coexistence_exhaustion_preserves_target_and_incumbent": true,
+    "atomic_multi_owner_release_checked": true
+  },
+  "existing_value_path": {
+    "existing_theorem_fixture": "XVII.5 direct PRODUCT, zero initializer, mean CE step 16, floor-to-2^-32 commits",
+    "deterministic_online_events": 512,
+    "reference_lineages": 2,
+    "registered_update_units": 32,
+    "independent_scalar_recurrence_matches_every_commit": true,
+    "existing_scoped_CE_bound_first_crossing_unit": 13,
+    "last_shared_parameter": "4213612403/2147483648",
+    "scope_limit": "not a stochastic persistence result, profile replay, unknown-population acquisition or AMP/install certificate"
+  },
+  "not_closed": [
+    "complete ERC-1 run manifest and full host/device physical accounting",
+    "query-only hidden-information contracts and registered profile replay",
+    "complete grammar search and typed proof authority",
+    "stochastic filtration, fresh paired persistence and error allocation",
+    "certified float64 and actual AMP event bridge",
+    "atomic install and complete 47-gate release"
+  ]
+}

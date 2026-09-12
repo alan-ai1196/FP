@@ -1,0 +1,156 @@
+"""Registered exogenous observation identities, causal reads and retained use.
+
+This recovery supports exact, revealed train/online data access. Future targets
+are supplied only after prediction. A finite identity schedule is a provenance
+contract, not proof that an external producer sampled independent observations.
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass
+from fractions import Fraction as F
+
+from .core import ContractError, QueryError, natural
+from .program import SemanticRules, name, rational
+
+
+@dataclass(frozen=True)
+class StreamSpec:
+    stream_id: str
+    role: str
+    observation_ids: tuple[str, ...]
+
+    def __post_init__(self):
+        name(self.stream_id, 'stream ID')
+        if self.role not in ('train', 'online', 'validation', 'test'):
+            raise ContractError('unregistered data role')
+        ids = tuple(name(value, 'observation ID') for value in self.observation_ids)
+        if not ids or len(set(ids)) != len(ids):
+            raise ContractError('nonempty distinct physical observation identities required')
+        object.__setattr__(self, 'observation_ids', ids)
+
+
+@dataclass(frozen=True)
+class SourceRead:
+    source_id: str
+    kind: str
+    index: int
+    lag: int
+
+    def __post_init__(self):
+        name(self.source_id, 'source evaluation ID')
+        if self.kind not in ('input', 'target_atom'):
+            raise ContractError('unimplemented causal source evaluation rule')
+        natural(self.index, 'input coordinate or target atom')
+        natural(self.lag, 'source lag')
+        if self.kind == 'target_atom' and self.lag == 0:
+            raise ContractError('the current target is not a primitive score-time source')
+
+
+@dataclass(frozen=True)
+class DataContract:
+    streams: tuple[StreamSpec, ...]
+    active_stream: str
+    input_upper: tuple[F, ...]
+    source_reads: tuple[SourceRead, ...]
+    access_id: str = 'exact-revealed-train-online-v1'
+    stream_law: str = 'declared-exogenous-no-probability-guarantee'
+
+    def __post_init__(self):
+        streams = tuple(self.streams)
+        if not streams or any(type(s) is not StreamSpec for s in streams):
+            raise ContractError('immutable stream declarations required')
+        if len({s.stream_id for s in streams}) != len(streams):
+            raise ContractError('duplicate stream ID')
+        all_ids = [value for stream in streams for value in stream.observation_ids]
+        if len(set(all_ids)) != len(all_ids):
+            raise ContractError('an observation cannot be relabelled across data splits')
+        name(self.active_stream, 'active stream ID')
+        active = next((s for s in streams if s.stream_id == self.active_stream), None)
+        if active is None or active.role not in ('train', 'online'):
+            raise ContractError('reporting labels cannot drive ordinary learning or discovery')
+        reads = tuple(self.source_reads)
+        if any(type(r) is not SourceRead for r in reads) or len({r.source_id for r in reads}) != len(reads):
+            raise ContractError('distinct registered source evaluators required')
+        if self.access_id != 'exact-revealed-train-online-v1' or self.stream_law != 'declared-exogenous-no-probability-guarantee':
+            raise ContractError('query-only access and stochastic stream laws are not yet implemented')
+        object.__setattr__(self, 'streams', streams)
+        object.__setattr__(self, 'input_upper', tuple(rational(v, 'input range') for v in self.input_upper))
+        object.__setattr__(self, 'source_reads', reads)
+
+    @property
+    def active(self):
+        return next(s for s in self.streams if s.stream_id == self.active_stream)
+
+    def validate(self, rules: SemanticRules):
+        if {r.source_id for r in self.source_reads} != {s.source_id for s in rules.sources}:
+            raise ContractError('every source needs its registered causal evaluation rule')
+        specs = {s.source_id: s for s in rules.sources}
+        for read in self.source_reads:
+            if read.kind == 'input':
+                if read.index >= len(self.input_upper):
+                    raise ContractError('source reads an undeclared input coordinate')
+                upper = self.input_upper[read.index]
+            else:
+                if read.index >= len(rules.base):
+                    raise ContractError('source reads an undeclared target atom')
+                upper = F(1)
+            if read.lag != specs[read.source_id].availability_delay or upper > specs[read.source_id].upper:
+                raise ContractError('source evaluator delay/range disagrees with native registration')
+
+
+@dataclass(frozen=True)
+class ObservationRecord:
+    observation_id: str
+    stream_id: str
+    role: str
+    cursor: int
+    inputs: tuple[F, ...]
+    sources: tuple[tuple[str, F], ...]
+    target: int | None
+
+
+def read_sources(contract: DataContract, cursor: int, inputs: tuple[F, ...],
+                 history: tuple[ObservationRecord, ...]) -> tuple[tuple[str, F], ...]:
+    if len(history) != cursor or any(record.cursor != i or record.target is None for i, record in enumerate(history)):
+        raise ContractError('causal source history is not a continuous revealed prefix')
+    values = []
+    for read in contract.source_reads:
+        origin = cursor-read.lag
+        if origin < 0:
+            value = F(0)  # registered empty-prefix initialization, not forgotten replay
+        elif read.kind == 'input':
+            value = inputs[read.index] if read.lag == 0 else history[origin].inputs[read.index]
+        else:
+            value = F(history[origin].target == read.index)
+        values.append((read.source_id, value))
+    return tuple(values)
+
+
+@dataclass(frozen=True)
+class DataUse:
+    observation_ids: tuple[str, ...]
+    purpose: str
+    consumer: str
+    cursor: int
+
+
+class DataUsageLedger:
+    """Retained use facts only; no public helper can authorize fresh evidence."""
+
+    def __init__(self):
+        self._uses: list[DataUse] = []
+
+    def record(self, records: tuple[ObservationRecord, ...], purpose: str, consumer: str, cursor: int):
+        if purpose not in ('ordinary', 'proposal', 'profile'):
+            raise QueryError('this ledger has no persistence authorization operation')
+        name(consumer, 'data consumer')
+        natural(cursor, 'data-use cursor')
+        if not records or any(r.role not in ('train', 'online') or r.target is None for r in records):
+            raise QueryError('only revealed training/online records can drive learning and discovery')
+        ids = tuple(r.observation_id for r in records)
+        if len(set(ids)) != len(ids):
+            raise QueryError('duplicate physical observation in one data use')
+        self._uses.append(DataUse(ids, purpose, consumer, cursor))
+
+    def snapshot(self) -> tuple[DataUse, ...]:
+        return tuple(self._uses)

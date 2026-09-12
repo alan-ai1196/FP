@@ -1,164 +1,116 @@
+"""Registered exact ordinary learning, without callbacks or caller-chosen clocks.
+
+The current optimizer is mean cross-entropy projected SGD. Delayed histories
+are stop-gradient inputs to each event; this is a declared learner coordinate,
+not a claim to implement backpropagation through arbitrary recurrent histories.
+The arithmetic helpers below have no Runtime, data or installation authority.
+"""
 from __future__ import annotations
 
-from dataclasses import dataclass, field, replace
-from typing import Any, Callable, Dict, Mapping, Sequence
-from types import MappingProxyType
-import copy
-import math
+from dataclasses import dataclass, replace
+from fractions import Fraction as F
 
-from .core import ContractError, require_finite, stable_hash
-
-
-@dataclass
-class CompleteLearnerState:
-    lineage_id: str
-    cursor: int
-    physical_lineage_id: str | None = None
-    theta: Dict[str,float]=field(default_factory=dict)
-    optimizer_state: Dict[str,float]=field(default_factory=dict)
-    accumulator_state: Dict[str,float]=field(default_factory=dict)
-    causal_state: Dict[str,float]=field(default_factory=dict)
-    rng_state: Any=None
-    semantic_graph_id: str=""
-    encoding_id: str="reference"
-    lowering_id: str="reference"
-    optimizer_impl_id: str="registered-optimizer"
-    causal_schema_id: str="registered-causal-schema"
-    initializer_id: str="registered-initializer"
-    profiler_id: str="registered-profile"
-
-    def __post_init__(self)->None:
-        if not self.lineage_id or self.cursor<0: raise ContractError("invalid learner lineage/cursor")
-        if self.physical_lineage_id is None: self.physical_lineage_id=self.lineage_id
-        if not self.physical_lineage_id: raise ContractError('physical_lineage_id required')
-        for group_name,group in (("theta",self.theta),("optimizer",self.optimizer_state),("accumulator",self.accumulator_state),("causal",self.causal_state)):
-            for k,v in group.items(): require_finite(v,f"{group_name}[{k}]")
-
-    def clone(self)->"CompleteLearnerState": return copy.deepcopy(self)
-
-    @property
-    def state_id(self)->str:
-        return stable_hash({"lineage":self.lineage_id,"physical_lineage":self.physical_lineage_id,"cursor":self.cursor,"theta":self.theta,"optimizer":self.optimizer_state,
-                            "accumulator":self.accumulator_state,"causal":self.causal_state,"rng":repr(self.rng_state),"graph":self.semantic_graph_id,
-                            "encoding":self.encoding_id,"lowering":self.lowering_id,"optimizer_impl":self.optimizer_impl_id,
-                            "causal_schema":self.causal_schema_id,"initializer":self.initializer_id,"profiler":self.profiler_id})
+from .core import ContractError, natural
+from .program import Product, Program, SemanticRules, Sum, rational
+from .semantics import Evaluation, _guard, _operation, parameters, reset_delayed
 
 
 @dataclass(frozen=True)
-class PredictionView:
-    lineage_id: str
-    physical_lineage_id: str
-    cursor: int
-    theta: Mapping[str,float]
-    optimizer_state: Mapping[str,float]
-    causal_state: Mapping[str,float]
-    rng_state: Any
-    semantic_graph_id: str
-    encoding_id: str
-    lowering_id: str
-    optimizer_impl_id: str
-    causal_schema_id: str
-
-    @classmethod
-    def from_state(cls,s:CompleteLearnerState)->"PredictionView":
-        # Deep copies + mapping proxies prevent the forward callback from mutating
-        # the live learner or observing target-derived accumulator state.
-        return cls(s.lineage_id,s.physical_lineage_id,s.cursor,
-                   MappingProxyType(copy.deepcopy(s.theta)),MappingProxyType(copy.deepcopy(s.optimizer_state)),MappingProxyType(copy.deepcopy(s.causal_state)),copy.deepcopy(s.rng_state),
-                   s.semantic_graph_id,s.encoding_id,s.lowering_id,s.optimizer_impl_id,s.causal_schema_id)
-
-@dataclass(frozen=True)
-class CandidateBuildRecord:
-    chi:str
-    base_lineage_id:str
-    birth_cursor:int
-    candidate_lineage_id:str
-    resource_owner_id:str
-    build_snapshot_id:str
-    transport_kind:str
-    initializer_id:str
-    profiler_id:str
-    proposal_observation_ids:tuple[str,...]
-    safety_certificate_id:str
-    semantic_graph_id:str
-    encoding_id:str
-    lowering_id:str
-    authority_id:str
-    signature:str
+class LearnerSpec:
+    update_unit: int
+    learning_rate: F
+    commit_grid_bits: int | None = None
+    optimizer_id: str = 'mean-ce-projected-sgd-v1'
+    gradient_id: str = 'event-local-stop-delayed-v1'
 
     def __post_init__(self):
-        if self.birth_cursor<0 or not all([self.chi,self.base_lineage_id,self.candidate_lineage_id,self.resource_owner_id,self.build_snapshot_id,self.transport_kind,self.initializer_id,self.profiler_id,self.safety_certificate_id,self.authority_id,self.signature]):
-            raise ContractError('incomplete candidate build record')
-        if len(set(self.proposal_observation_ids))!=len(self.proposal_observation_ids): raise ContractError('duplicate proposal observation IDs in build record')
+        natural(self.update_unit, 'registered update unit', positive=True)
+        object.__setattr__(self, 'learning_rate', rational(self.learning_rate, 'learning rate'))
+        if self.commit_grid_bits is not None:
+            natural(self.commit_grid_bits, 'registered commit grid bits')
+        if self.optimizer_id != 'mean-ce-projected-sgd-v1' or self.gradient_id != 'event-local-stop-delayed-v1':
+            raise ContractError('unimplemented registered learner coordinate')
 
 
 @dataclass(frozen=True)
-class EventResult:
-    prediction: Any
-    loss: float
-    cursor_before: int
-    cursor_after: int
+class ReferenceLearnerState:
+    theta: tuple[F, ...]
+    delayed: tuple[tuple[str, tuple[F, ...]], ...]
+    gradient_sum: tuple[F, ...]
+    unit_count: int
+    cursor: int
+    optimizer_steps: int
 
 
-class RegisteredLearner:
-    """Reference causal event-order executor.
+def initial_state(program: Program, rules: SemanticRules, theta, cursor: int) -> ReferenceLearnerState:
+    natural(cursor, 'birth cursor')
+    return ReferenceLearnerState(parameters(program, theta), reset_delayed(rules),
+                                 (F(0),)*program.slot_count, 0, cursor, 0)
 
-    Forward receives only PredictionView, which excludes the target-derived
-    accumulator. Callback side effects are checked so current-unit target
-    information cannot leak into prediction-visible state before commit.
+
+def ce_gradient(program: Program, theta: tuple[F, ...], prediction: Evaluation,
+                target: int, *, bit_limit: int) -> tuple[F, ...]:
+    """Exact reverse derivative of log(T)-log(M_target), retaining all edges.
+
+    Derivatives are signed optimizer values. Native activations and persistent
+    parameters remain nonnegative. Repeated parents/heads/slots accumulate;
+    unused slots stay explicit zeros. No numerical logarithm is needed here.
     """
-    def __init__(self, predict_fn:Callable[[PredictionView,Any],Any], score_fn:Callable[[Any,Any],float],
-                 causal_update_fn:Callable[[CompleteLearnerState,Any,Any],None],
-                 optimizer_accumulate_fn:Callable[[CompleteLearnerState,Any,Any,Any],None],
-                 optimizer_commit_fn:Callable[[CompleteLearnerState],None], update_unit:int=1):
-        if update_unit<=0: raise ContractError("update_unit must be positive")
-        self.predict_fn=predict_fn; self.score_fn=score_fn; self.causal_update_fn=causal_update_fn
-        self.optimizer_accumulate_fn=optimizer_accumulate_fn; self.optimizer_commit_fn=optimizer_commit_fn; self.update_unit=update_unit
+    natural(target, 'target label')
+    if target >= len(program.heads):
+        raise ContractError('target outside the registered readout')
+    if len(prediction.values) != len(program.nodes) or len(theta) != program.slot_count:
+        raise ContractError('gradient inputs do not match the complete program')
+    add = lambda a, b: _operation(a, b, multiply=False, bit_limit=bit_limit)
+    mul = lambda a, b: _operation(a, b, multiply=True, bit_limit=bit_limit)
+    inverse_t = F(1)/prediction.normalizer
+    inverse_y = F(1)/prediction.masses[target]
+    _guard(inverse_t, inverse_y, bit_limit=bit_limit)
+    adjoint = [F(0)]*len(program.nodes)
+    gradient = [F(0)]*program.slot_count
+    for label, head in enumerate(program.heads):
+        seed = add(inverse_t, -inverse_y) if label == target else inverse_t
+        adjoint[head] = add(adjoint[head], seed)
+    for index in range(len(program.nodes)-1, -1, -1):
+        node, seed = program.nodes[index], adjoint[index]
+        if type(node) is Sum:
+            for term in node.terms:
+                gradient[term.slot] = add(gradient[term.slot], mul(seed, prediction.values[term.parent]))
+                adjoint[term.parent] = add(adjoint[term.parent], mul(seed, theta[term.slot]))
+        elif type(node) is Product:
+            # Two separate incidences also when left == right (shared square).
+            adjoint[node.left] = add(adjoint[node.left], mul(seed, prediction.values[node.right]))
+            adjoint[node.right] = add(adjoint[node.right], mul(seed, prediction.values[node.left]))
+    return tuple(gradient)
 
-    @staticmethod
-    def _restore(dst:CompleteLearnerState,src:CompleteLearnerState)->None:
-        dst.__dict__.clear(); dst.__dict__.update(copy.deepcopy(src.__dict__))
 
-    def _event(self,state:CompleteLearnerState,x:Any,y:Any)->EventResult:
-        cb=state.cursor
-        pred=self.predict_fn(PredictionView.from_state(state),x)
-        loss=require_finite(self.score_fn(pred,y),"loss")
-        # Target-derived causal update may change only causal/RNG state.
-        before=state.clone()
-        try:
-            self.causal_update_fn(state,x,y)
-            if state.theta!=before.theta or state.optimizer_state!=before.optimizer_state or state.accumulator_state!=before.accumulator_state or state.cursor!=before.cursor:
-                raise ContractError('causal update mutated prediction/value/accumulator state outside registered causal fields')
-        except Exception:
-            self._restore(state,before); raise
-        # Accumulation may change only the non-prediction-visible accumulator.
-        before_acc=state.clone()
-        try:
-            self.optimizer_accumulate_fn(state,x,y,pred)
-            if state.theta!=before_acc.theta or state.optimizer_state!=before_acc.optimizer_state or state.causal_state!=before_acc.causal_state or state.rng_state!=before_acc.rng_state or state.cursor!=before_acc.cursor:
-                raise ContractError('optimizer accumulation leaked into prediction-visible state before commit')
-        except Exception:
-            self._restore(state,before_acc); raise
-        state.cursor+=1
-        return EventResult(pred,loss,cb,state.cursor)
+def observe_event(program: Program, state: ReferenceLearnerState, spec: LearnerSpec,
+                  prediction: Evaluation, target: int, *, bit_limit: int) -> ReferenceLearnerState:
+    if state.unit_count != state.cursor % spec.update_unit:
+        raise ContractError('learner accumulator differs from its registered absolute clock')
+    gradient = ce_gradient(program, state.theta, prediction, target, bit_limit=bit_limit)
+    accumulated = tuple(_operation(a, b, multiply=False, bit_limit=bit_limit)
+                        for a, b in zip(state.gradient_sum, gradient))
+    return replace(state, delayed=prediction.delayed, gradient_sum=accumulated,
+                   unit_count=state.unit_count+1, cursor=state.cursor+1)
 
-    def _commit(self,state:CompleteLearnerState)->None:
-        before=state.clone()
-        try:
-            self.optimizer_commit_fn(state)
-            if state.causal_state!=before.causal_state or state.cursor!=before.cursor:
-                raise ContractError('optimizer commit mutated causal state/cursor')
-        except Exception:
-            self._restore(state,before); raise
 
-    def run_unit(self,state:CompleteLearnerState, xs:Sequence[Any], ys:Sequence[Any])->list[EventResult]:
-        if len(xs)!=len(ys) or not xs or len(xs)>self.update_unit: raise ContractError("invalid update unit batch")
-        out=[self._event(state,x,y) for x,y in zip(xs,ys)]
-        self._commit(state)
-        return out
-
-    def run_event(self,state:CompleteLearnerState,x:Any,y:Any,*,commit:bool)->EventResult:
-        r=self._event(state,x,y)
-        if commit:self._commit(state)
-        return r
-
+def commit_event(state: ReferenceLearnerState, spec: LearnerSpec, *, bit_limit: int) -> ReferenceLearnerState:
+    if state.unit_count != spec.update_unit or state.cursor % spec.update_unit:
+        raise ContractError('optimizer commit outside its full registered update unit')
+    scale = _operation(spec.learning_rate, F(1, spec.update_unit), multiply=True, bit_limit=bit_limit)
+    theta = []
+    for value, gradient in zip(state.theta, state.gradient_sum):
+        step = _operation(scale, gradient, multiply=True, bit_limit=bit_limit)
+        value = max(F(0), _operation(value, -step, multiply=False, bit_limit=bit_limit))
+        if spec.commit_grid_bits is not None:
+            # Projection and floor are fixed value operations, never a hidden
+            # fit, adaptive precision choice or a structure-supplied constant.
+            if spec.commit_grid_bits >= bit_limit:
+                raise ContractError('commit grid exceeds the registered reference integer limit')
+            denominator = 1 << spec.commit_grid_bits
+            scaled = _operation(value, F(denominator), multiply=True, bit_limit=bit_limit)
+            value = F(scaled.numerator//scaled.denominator, denominator)
+        theta.append(value)
+    return replace(state, theta=tuple(theta), gradient_sum=(F(0),)*len(theta),
+                   unit_count=0, optimizer_steps=state.optimizer_steps+1)

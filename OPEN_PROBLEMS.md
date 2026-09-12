@@ -20,14 +20,22 @@ implementation/experiment correctness counterexample to its semantics.
 
 **Already-failed methods.** Bare certificate booleans, caller-supplied exact uppers, arbitrary query callbacks, caller-built candidate states/object lists, resource totals without ownership, e-wealth reuse across lineages, state/cursor mismatch, partial ref↔AMP bridging, and helper-level tests that do not traverse the complete Runtime.
 
-**Current implementation progress (2026-09-12).** The actual Runtime native
-construction segment now executes typed skeletons, fixed registered values,
-full-range reference checks and owned packed buffers. Its exact audit covers
-80 shared DAGs and 1,500 ownership-model transitions. The remaining work is
-to integrate this segment with the complete ERC-1 manifest, registered
-information/data-use and ordinary learner continuation, grammar search,
-typed proofs, persistence, actual host/device accounting, AMP and atomic
-installation. The construction-only pass is not a release certificate.
+**Current implementation progress (2026-09-12).** The actual Runtime now
+connects typed construction and owned buffers to registered exact ordinary
+learning, causal source reads and finite-alphabet revealed-data queries.
+Audits cover construction/ownership, 960 independent exact gradient vectors,
+all 64 short context/target streams with two reference lineages, and the
+existing XVII.5 recurrence on 512 deterministic online events. Failed target
+events cannot be retried as unread; past evidence retains actual program
+ownership after a branch retires. Read the source README and
+`docs/REFERENCE_RUNTIME_CONTINUATION.md` before extending this segment.
+
+The remaining work is complete ERC-1 registration, profile/value replay,
+grammar search with exact decision classes, typed proofs, stochastic fresh
+persistence/error state, actual host/device accounting, certified reference/
+AMP and atomic installation. Raw revealed train/online access is explicitly
+registered; query-only and reporting-only execution are not yet supported.
+The new endpoint pass is not a complete release certificate.
 
 **Sufficient falsification of the current foundation.** A minimal program that is legal under `FP_THEORY.md` but cannot be represented/considered by any implementation conforming to the Reference Compiler contract **unless a new semantic model primitive is added**. Slow search or `UNRESOLVED` does not falsify the foundation.
 

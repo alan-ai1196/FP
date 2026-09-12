@@ -12,23 +12,29 @@ import types
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src/reference_compiler'))
+from fp_reference import core
 from fp_reference.core import CertificateKind, CertificateProvenance, ClaimContract
-from fp_reference.learner import CompleteLearnerState
 
 RECOVERY = '39235ef8678cabc6fa675eb9e0568895d72d9b61'
+PACKAGE = 'fp_reference._historical_authority_audit'
+package = types.ModuleType(PACKAGE)
+package.__path__ = []
+sys.modules[PACKAGE] = package
+sys.modules[f'{PACKAGE}.core'] = core
 
 
 def historical(name):
     path = f'src/reference_compiler/fp_reference/{name}.py'
     source = subprocess.check_output(['git', 'show', f'{RECOVERY}:{path}'], cwd=ROOT, text=True)
-    module = types.ModuleType(f'fp_reference._recovered_{name}')
-    module.__package__ = 'fp_reference'
+    module = types.ModuleType(f'{PACKAGE}.{name}')
+    module.__package__ = PACKAGE
     sys.modules[module.__name__] = module
     exec(compile(source, f'{RECOVERY}:{path}', 'exec'), module.__dict__)
     return module
 
 
 def run():
+    CompleteLearnerState = historical('learner').CompleteLearnerState
     proof, bridge = historical('proof'), historical('bridge')
     contract = ClaimContract({'audit': 'recovered authority counterexamples'}, ('upper-only',), ('equal',))
     provenance = CertificateProvenance(contract.chi, 'deployed', 'snapshot', 'finite-class')

@@ -88,7 +88,7 @@ The **final endpoint integration after these changes had not been re-run through
 
 ## 3. What is preserved in `src/reference_compiler/`
 
-The migration preserves the directly persisted late-WIP modules that are small enough to remain useful as readable recovery source (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set, sizes, important later-session design changes, and known source hashes where available.
+The migration preserved directly persisted late-WIP modules (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set. Those original bytes remain in Git. Current learner/info implementations now replace the callbacks; current proof/bridge modules expose no authority pending integration. The historical false-authority audit still executes the original modules verbatim from their recovery commit.
 
 Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the historical R4.2 implementation only as an implementation reference, then re-run all gates.
 
@@ -122,6 +122,46 @@ persistence, actual AMP and atomic install still need integration. The
 preserved helper authorities are not trusted by the current endpoint;
 installation remains UNRESOLVED. No full gate or implementation freeze is
 claimed by this audit.
+
+### Executable causal continuation (2026-09-12)
+
+`OnlineContract`, `data_usage.py`, the new `learner.py`/`info.py` and the
+same Runtime now execute fixed causal source rules, exact mean-CE projected
+SGD and finite-alphabet revealed-data queries. Runtime seals each prediction
+before accepting its target, hides within-unit target accumulators from the
+forward evaluator, and commits only at a full registered clock boundary.
+No query callback, target-at-prediction argument, caller commit flag, supplied
+learner state or role reroute is accepted. Newborn local state is initialized
+at the common ordinary boundary; retained global source history is paid.
+
+The actual event path retains pre-target, post-observation and post-commit
+states. Target ingress is reserved before prediction returns. Subsequent
+backend, range, work or coexistence failure keeps the target revealed, all
+published input lineages, executed evidence, physical objects, work and
+peaks; the incomplete prefix halts. Retiring a lineage retains an owned
+shared code reference for its historical event evidence. Old unsafe
+proof/bridge signers are quarantined in Git; importable reserved modules
+are explicitly not implemented authorities.
+
+`scripts/audit_reference_events.py` checks 960 exact gradient vectors against
+an independent forward differential evaluator, all 64 three-event binary
+context/target streams with two reference lineages, causal delayed histories,
+246 query level/tie cases and public-endpoint failure/role/clock adversaries.
+The existing XVII.5 direct-PRODUCT value path executes 512 deterministic
+online events and matches its separate scalar recurrence at all 32 commits;
+the old scoped CE upper crosses its threshold at unit 13. This is current
+Runtime evidence, not an additional static theorem or stochastic experiment.
+
+**Remaining scope:** the registered interface currently exposes exact
+revealed train/online data, so query bits do not bound information in every
+public snapshot. Query-only access, report-only execution, profile replay,
+general recurrent backpropagation, complete grammar search, typed proof
+authority, stochastic filtration/fresh persistence/error allocation,
+complete host/device resource accounting, certified float64/actual AMP and
+atomic install remain open. The packed-payload model omits Python metadata,
+scratch and pre-allocation ingress; this prevents a full physical-resource
+claim. See [`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md).
+Foundation/ERC-1 stay frozen; Runtime is NOT FROZEN and science stays HOLD.
 
 ## 4. Required closure tests
 

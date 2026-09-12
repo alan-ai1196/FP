@@ -1205,3 +1205,60 @@ continuation, grammar search, typed proof authority, fresh persistence,
 full host/device accounting, AMP and atomic install remain to be connected.
 The packed reference payload/operation profile is explicitly narrower than
 actual host/GPU resources. Foundation and ERC-1 remain frozen; science HOLD.
+
+## 51. Execute ordinary learning through owned causal prefixes (2026-09-12)
+
+The recovered learner let callers choose commit timing and accepted mutable
+callbacks; the old information helper accepted an arbitrary answer callback.
+Those interfaces could not establish registered value reachability or causal
+data access merely by being placed behind a Runtime class. They are now
+replaced by a declared exact mean-CE projected-SGD learner, fixed update
+units, causal source reads and Runtime-owned registered moment queries.
+No new native semantic action or static special case was introduced.
+
+Runtime predicts on every active reference lineage before target reveal.
+It retains separate states after observation and after optimizer commit,
+including complete accumulators and positive delayed histories. All current
+successors are published together only after their physical coexistence
+and full-domain range checks pass. A candidate failure after deployment's
+successor has been computed leaves both published input states unchanged.
+The already revealed target, executed temporary states, buffers, work and
+peak remain; this recovery interface then halts rather than replaying an
+observation as unread. Range failure does not silently alter the optimizer.
+
+An additional erasure attack found that retaining an execution trace but
+freeing its sole program would leave evidence without the graph it described.
+Historical evidence now acquires an actual shared code lease and keeps its
+program registry entry after learner retirement. Query failures likewise
+retain proposal-use facts and spent work. These are implementation boundary
+repairs, not counterexamples to Foundation.
+
+The registered information interface is explicitly raw, exact revealed
+train/online access. Finite query precision is enforced per query without
+pretending that raw records and optimizer state carry no other information.
+Current-target source atoms, split relabelling, repeated stream identities,
+shortened newborn update units and caller-provided query/commit controls are
+rejected. No stochastic guarantee is inferred from the deterministic stream.
+
+The new endpoint audit verifies 960 exact gradient vectors against separate
+forward differentials on 80 native DAGs, all 64 short binary context/target
+streams with paired reference lineages, 246 quantization level/tie cases,
+causal history and injected post-target backend/work/memory failures. The
+existing XVII.5 direct-PRODUCT fixture now executes 512 deterministic online
+events through Runtime. All 32 committed values agree with its independent
+scalar recurrence; its existing scoped CE bound crosses at update unit 13.
+This verifies a registered value path rather than merely constructing its
+fitted endpoint. It grants no fresh persistence, unknown-population or AMP
+claim, and does not relabel 16 profile labels as 512 fresh observations.
+
+Historical unsafe proof/bridge signers are removed from the current callable
+surface. Their original modules, including the old learner dependency, still
+reproduce all four false authorizations when loaded from Git in an isolated
+audit namespace. Current reserved authority modules import but have no
+implementation; this does not close their gates.
+
+Read `docs/REFERENCE_RUNTIME_CONTINUATION.md` and
+`scripts/audit_reference_events.py`. Complete manifest/profile/grammar/proof,
+stochastic persistence/error state, full host/device accounting, certified
+float64/actual AMP and atomic installation remain open. Foundation/ERC-1 are
+still frozen; the next research remains Runtime -> AMP -> RTX 3090 science.

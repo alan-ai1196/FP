@@ -52,9 +52,15 @@ Recorded late-session approximate file sizes included:
 - `anti_unigram.py` 1,608 B
 - `__init__.py` 516 B
 
-The directly preserved readable late-WIP source in this repository is:
+The directly preserved readable late-WIP source at recovery commit `39235ef` is:
 
 `bridge.py`, `info.py`, `learner.py`, `proof.py`.
+
+These historical bytes remain in Git. Current `learner.py` and `info.py`
+are replacements; current proof/bridge modules expose no signer pending
+their complete authority integration. The historical audit loads the exact
+old learner/proof/bridge modules in an isolated namespace, without copying
+them into a second maintained implementation.
 
 The following larger scratch modules were directly persisted in the session but were not a complete or frozen release and are **not** promoted into canonical source during migration:
 
@@ -86,7 +92,11 @@ are now new reconstructions against the canonical theory and ERC-1. They
 are not claimed to reproduce the missing historical bytes. The actual
 Runtime construction segment executes native typed programs with registered
 initial values, full delayed reset, exact range checks and owned packed
-reference buffers. The public install path remains UNRESOLVED because
-complete information/learning/search/persistence/AMP integration is absent.
+reference buffers. The reconstructed `data_usage.py`, `learner.py` and
+`info.py` now connect registered exact ordinary continuation to that same
+Runtime. Public predictions precede target reveal; only full registered
+units commit; query answers are computed and quantized internally. The
+public install path remains UNRESOLVED because complete manifest/profile/
+search/proof/persistence/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.

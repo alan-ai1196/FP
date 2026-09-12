@@ -18,14 +18,30 @@ Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
 
 Current executable progress: `src/reference_compiler/fp_reference/runtime.py`
-now runs the owned native construction segment through a public Runtime
-entrypoint. `program.py`, `semantics.py`, `resources.py` and `machine.py`
-are reconstructed and tested; do not rebuild them from scratch. Read the
-source README and `scripts/audit_reference_construction.py`. The next gap
-is registered information/data-use and learner/value continuation, followed
-by complete search/proof/persistence/AMP/install integration. The current
-packed-reference resource model and `ConstructionContract` are explicitly
-partial; no complete ERC-1 enforcement or 47-gate release is claimed.
+now runs owned native construction, exact ordinary learning, causal source
+reads and registered revealed-data queries through the same public endpoint.
+Do not reconstruct these modules again. Read the source README,
+[`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md),
+`scripts/audit_reference_construction.py` and `scripts/audit_reference_events.py`.
+The next gap is registered profile/value replay, complete grammar search
+with exact decision classes and typed proof authority, then fresh persistence,
+full physical/error state, reference/AMP and atomic install integration.
+
+The online interface explicitly permits exact revealed train/online access;
+its finite-precision query is not the only observable information channel.
+The deterministic registered learner uses mean-CE projected SGD and stops
+gradient through delayed histories. Failed event prefixes retain revealed
+targets and spent work and cannot resume as unread. Retired lineages keep
+owned code references for their retained evidence. Historical unsafe signers
+are no longer callable in current `proof.py`/`bridge.py`; the exact old
+modules are still replayed from Git by the historical audit. Those empty
+authority boundaries are open gates, not passing implementations.
+
+Current exact evidence includes 960 independent gradient vectors, all 64
+three-event binary context/target streams with two reference lineages, and
+the existing XVII.5 value path executed for 512 deterministic online events.
+The packed-reference model, `ConstructionContract` and `OnlineContract`
+remain partial; no complete ERC-1 enforcement or 47-gate release is claimed.
 
 The central foundation principle is:
 

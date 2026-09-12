@@ -1,49 +1,121 @@
+"""Finite-alphabet registered moment queries over Runtime-owned legal records.
+
+No callback, caller-computed answer or caller-supplied data role is accepted.
+These are pure query computations, not certificates. The current Runtime also
+declares raw revealed train/online access; a query's bit count is not a bound on
+information in that full observation/learner interface.
+"""
 from __future__ import annotations
+
 from dataclasses import dataclass
-from typing import Callable, Sequence, Tuple
-from .core import ClaimContract, QueryError, require_finite, stable_hash
-from .resources import CostRouter
-from .data_usage import DataUsageLedger
+from fractions import Fraction as F
+
+from .core import ContractError, QueryError, natural
+from .data_usage import ObservationRecord
+from .program import SemanticRules, name, rational
+from .semantics import _guard, _operation
 
 
-def _quantize_registered(x:float, *, lo:float, hi:float, bits:int)->float:
-    """Map a legal scalar query result to at most 2**bits registered levels.
+@dataclass(frozen=True)
+class Moment:
+    sources: tuple[str, ...]
+    target_atom: int | None = None
 
-    This makes the declared information payload operational rather than metadata.
-    Endpoints are included.  For very large bits Python float has fewer distinct
-    representable points; that only *reduces* the information alphabet.
-    """
-    x=require_finite(x,'query result')
-    if x < lo or x > hi:
-        raise QueryError(f'query result {x} outside registered range [{lo},{hi}]')
-    levels=(1<<bits)-1
-    # Avoid constructing giant intermediate arrays. Python integers are exact.
-    t=(x-lo)/(hi-lo)
-    q=round(t*levels)
-    return require_finite(lo+(hi-lo)*(q/levels),'quantized query result')
+    def __post_init__(self):
+        object.__setattr__(self, 'sources', tuple(name(v, 'moment source') for v in self.sources))
+        if self.target_atom is not None:
+            natural(self.target_atom, 'moment target atom')
+
+
+@dataclass(frozen=True)
+class QuerySpec:
+    query_id: str
+    coordinates: tuple[Moment, ...]
+    lower: tuple[F, ...]
+    upper: tuple[F, ...]
+    bits: int
+    max_records: int
+
+    def __post_init__(self):
+        name(self.query_id, 'query ID')
+        coords = tuple(self.coordinates)
+        lo = tuple(rational(v, 'query lower bound') for v in self.lower)
+        hi = tuple(rational(v, 'query upper bound') for v in self.upper)
+        if not coords or any(type(c) is not Moment for c in coords) or len(coords) != len(lo) or len(lo) != len(hi):
+            raise ContractError('query coordinates and every output range must be fixed')
+        if any(a >= b for a, b in zip(lo, hi)):
+            raise ContractError('query ranges must have positive width')
+        natural(self.bits, 'query precision bits', positive=True)
+        natural(self.max_records, 'query record limit', positive=True)
+        object.__setattr__(self, 'coordinates', coords)
+        object.__setattr__(self, 'lower', lo)
+        object.__setattr__(self, 'upper', hi)
+
+    def validate(self, rules: SemanticRules, bit_limit: int):
+        names = {s.source_id for s in rules.sources}
+        if self.bits >= bit_limit:
+            raise ContractError('query levels exceed the registered integer work representation')
+        if any(set(c.sources)-names or (c.target_atom is not None and c.target_atom >= len(rules.base)) for c in self.coordinates):
+            raise ContractError('query uses an undeclared source or target atom')
+
+    def work(self, record_count: int) -> int:
+        return record_count*sum(len(c.sources)+2 for c in self.coordinates)+10*len(self.coordinates)+1
+
+
+@dataclass(frozen=True)
+class QueryResult:
+    query_id: str
+    status: str
+    indices: tuple[int, ...]
+    values: tuple[F, ...]
+    reason: str
+
 
 @dataclass(frozen=True)
 class QueryRecord:
-    query_name:str; data_id:str; observation_ids:Tuple[str,...]; input_snapshot_id:str; precision_bits:int; output_dim:int; work_cost:float; memory_cost:float; success:bool; result_hash:str|None; error:str|None=None
+    cursor: int
+    observation_ids: tuple[str, ...]
+    result: QueryResult
 
-class InformationInterface:
-    def __init__(self, contract:ClaimContract, cost_router:CostRouter, data_usage:DataUsageLedger):
-        self.contract=contract;self.cost_router=cost_router;self.ledger=cost_router.ledger_for('query');self.data_usage=data_usage;self.records=[]
-    def query(self,name:str,*,data_id:str,observation_ids:Sequence[str],snapshot_id:str,fn:Callable[[],Sequence[float]|float])->Tuple[float,...]:
-        if name not in self.contract.query_specs: raise QueryError(f'query {name!r} is not registered')
-        spec=self.contract.query_specs[name];role=self.contract.data_role(data_id)
-        if role not in spec.allowed_data_roles or not role.may_drive_compiler: raise QueryError(f'data role {role.value} cannot drive query {name}')
-        obs=tuple(observation_ids)
-        if spec.requires_observation_ids and not obs: raise QueryError('registered query requires explicit observation IDs')
-        if len(set(obs))!=len(obs) or any(not x for x in obs): raise QueryError('query observation IDs must be unique/nonempty')
-        # Seeing data makes it proposal/profile data even if the downstream query later fails.
-        for oid in obs:self.data_usage.mark_proposal(oid,f'query:{name}:{snapshot_id}')
-        self.cost_router.charge_work('query',{'work':spec.work_cost},f'query:{name}:{snapshot_id}')
-        if spec.memory_cost:self.cost_router.charge_work('query',{'memory_work':spec.memory_cost},f'query-memory:{name}:{snapshot_id}')
-        try:
-            raw=fn(); vals_raw=(require_finite(raw,'query result'),) if isinstance(raw,(int,float)) and not isinstance(raw,bool) else tuple(require_finite(x,'query result') for x in raw)
-            vals=tuple(_quantize_registered(x,lo=spec.output_lo,hi=spec.output_hi,bits=spec.precision_bits) for x in vals_raw)
-            if len(vals)==0 or len(vals)>spec.max_output_dim:raise QueryError(f'query output dim {len(vals)} exceeds registered bound {spec.max_output_dim}')
-            self.records.append(QueryRecord(name,data_id,obs,snapshot_id,spec.precision_bits,len(vals),spec.work_cost,spec.memory_cost,True,stable_hash(vals)));return vals
-        except Exception as exc:
-            self.records.append(QueryRecord(name,data_id,obs,snapshot_id,spec.precision_bits,0,spec.work_cost,spec.memory_cost,False,None,repr(exc)));raise
+
+def quantize(value: F, lo: F, hi: F, bits: int, *, bit_limit: int) -> tuple[int, F]:
+    """Exact nearest-level, ties-to-even quantization; at most 2**bits outputs."""
+    natural(bits, 'query precision', positive=True)
+    value, lo, hi = (rational(v, 'query arithmetic') for v in (value, lo, hi))
+    if not lo <= value <= hi or lo >= hi:
+        raise QueryError('computed query lies outside its registered range')
+    if bits >= bit_limit:
+        raise QueryError('query precision exceeds its registered integer representation')
+    add = lambda a, b: _operation(a, b, multiply=False, bit_limit=bit_limit)
+    mul = lambda a, b: _operation(a, b, multiply=True, bit_limit=bit_limit)
+    levels = (1 << bits)-1
+    width = add(hi, -lo)
+    inverse = F(1)/width
+    _guard(inverse, bit_limit=bit_limit)
+    scaled = mul(mul(add(value, -lo), inverse), F(levels))
+    index, remainder = divmod(scaled.numerator, scaled.denominator)
+    twice = remainder*2
+    if twice > scaled.denominator or (twice == scaled.denominator and index % 2):
+        index += 1
+    return index, add(lo, mul(width, F(index, levels)))
+
+
+def evaluate_query(spec: QuerySpec, records: tuple[ObservationRecord, ...], *, bit_limit: int) -> QueryResult:
+    if not 0 < len(records) <= spec.max_records or any(r.target is None or r.role not in ('train', 'online') for r in records):
+        raise QueryError('query needs a bounded nonempty set of revealed legal observations')
+    add = lambda a, b: _operation(a, b, multiply=False, bit_limit=bit_limit)
+    mul = lambda a, b: _operation(a, b, multiply=True, bit_limit=bit_limit)
+    indices, values = [], []
+    for coord, lo, hi in zip(spec.coordinates, spec.lower, spec.upper):
+        total = F(0)
+        for record in records:
+            product = F(1) if coord.target_atom is None else F(record.target == coord.target_atom)
+            sources = dict(record.sources)
+            for source in coord.sources:
+                product = mul(product, sources[source])
+            total = add(total, product)
+        mean = mul(total, F(1, len(records)))
+        index, value = quantize(mean, lo, hi, spec.bits, bit_limit=bit_limit)
+        indices.append(index)
+        values.append(value)
+    return QueryResult(spec.query_id, 'ANSWERED', tuple(indices), tuple(values), 'exact registered quantization')
