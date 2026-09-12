@@ -60,6 +60,7 @@
     "independent_endpoint_and_likelihood_checks": 110,
     "all_rows_and_explicit_cursor_have_owned_packed_residency": true,
     "winner_likelihood": "4/9",
+    "proof_field_types_and_identical_copies_checked_without_numeric_coercion": true,
     "typed_class_bound_proof_tamper_cross_runtime_staleness_and_install_checks": true
   },
   "compound": {

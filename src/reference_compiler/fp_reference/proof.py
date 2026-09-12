@@ -7,7 +7,8 @@ unsafe historical authority remains reproducible from Git via its audit.
 """
 from dataclasses import dataclass, field
 from fractions import Fraction as F
-from .core import ContractError
+from .core import ContractError, natural
+from .program import name
 from .semantics import _operation
 
 
@@ -26,6 +27,29 @@ class ReferenceClassProof:
     best_likelihood: F
     kind: str = field(default='ordered-native-reference-class-and-baseline-optimum-v1', init=False)
     authority_scope: str = field(default='reference empirical comparison only; no equivalence, persistence, AMP or installation authority', init=False)
+
+    def __post_init__(self):
+        self.validate()
+
+    def validate(self):
+        """Validate typed proposition data before any issuance comparison.
+
+        Python equality alone identifies ints, bools, floats and Fractions
+        with equal numerical values; subclasses can also overload equality.
+        Those are different encoded evidence types, not identical issuances.
+        This validation does not itself grant Runtime authority.
+        """
+        for key in ('proof_id', 'chi', 'runtime_id', 'search_id', 'decision_class_id',
+                    'base_lineage_id', 'winner_lineage_id'):
+            name(getattr(self, key), f'reference proof {key}')
+        for key in ('issued_revision', 'ordinary_cursor', 'program_count'):
+            natural(getattr(self, key), f'reference proof {key}')
+        if type(self.best_likelihood) is not F or not 0 < self.best_likelihood <= 1:
+            raise ContractError('reference proof likelihood must be an exact positive Fraction at most one')
+        if (type(self.kind) is not str or self.kind != 'ordered-native-reference-class-and-baseline-optimum-v1'
+                or type(self.authority_scope) is not str
+                or self.authority_scope != 'reference empirical comparison only; no equivalence, persistence, AMP or installation authority'):
+            raise ContractError('reference proof has a different proposition kind or authority scope')
 
 
 def verify_maximum(claimed: F, alternatives: tuple[F, ...], *, bit_limit: int):

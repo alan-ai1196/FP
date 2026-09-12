@@ -986,7 +986,10 @@ class ReferenceCompilerRuntime:
 
     def verify_reference_class_proof(self, proof: ReferenceClassProof, *, decision_class_id: str) -> ReferenceClassProof:
         name(decision_class_id, 'reference decision class ID')
-        if type(proof) is not ReferenceClassProof or self._reference_proofs.get(proof.proof_id) != proof:
+        if type(proof) is not ReferenceClassProof:
+            raise ContractError('a helper-created or altered object is not a Runtime-issued reference proof')
+        proof.validate()
+        if self._reference_proofs.get(proof.proof_id) != proof:
             raise ContractError('a helper-created or altered object is not a Runtime-issued reference proof')
         session = self._searches.get(proof.search_id)
         if (proof.chi != self._chi or proof.runtime_id != self._runtime_id or proof.issued_revision != self._revision

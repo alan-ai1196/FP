@@ -178,6 +178,14 @@ is rejected. Recreating identical already-issued data does not create a
 new authority. Python internals are trusted implementation, not a security
 boundary against code that can arbitrarily overwrite the process.
 
+The issuance comparison validates every field's **exact declared type**
+before ordinary dataclass equality. Python's `1 == 1.0 == True` is not
+typed evidence identity; a Fraction subclass can even override equality
+while representing a different number. The initial implementation accepted
+such a caller-created likelihood of one as equal to an issued quarter.
+Strict integer/Fraction/string validation at construction and admission
+closes that concrete public-interface mismatch without another hash.
+
 The result is called `REFERENCE_CLASS_EXHAUSTED`, **not** full Compiler
 `CERTIFIED_COMPLETE`. `install` still returns UNRESOLVED. The packed-buffer
 and declared operation model excludes total host heap, transient scratch,

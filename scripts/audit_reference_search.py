@@ -238,6 +238,28 @@ def runtime_audit():
     assert proof.program_count == len(expected) and proof.best_likelihood == result.best_likelihood
     assert proof.kind == 'ordered-native-reference-class-and-baseline-optimum-v1'
     assert rt.verify_reference_class_proof(proof, decision_class_id=result.decision_class_id) == proof
+    identical = replace(proof)
+    assert identical is not proof and rt.verify_reference_class_proof(identical, decision_class_id=result.decision_class_id) == proof
+    # Encoded proposition coordinates retain their declared types. Equality
+    # between Python numeric types cannot stand in for identical proof data.
+    for key in ('issued_revision', 'ordinary_cursor', 'program_count'):
+        for wrong in (True, float(getattr(proof, key)), F(getattr(proof, key))):
+            rejects(lambda key=key, wrong=wrong: replace(proof, **{key: wrong}))
+    for wrong in (True, 1, float(proof.best_likelihood)):
+        rejects(lambda wrong=wrong: replace(proof, best_likelihood=wrong))
+    for key in ('proof_id', 'chi', 'runtime_id', 'search_id', 'decision_class_id',
+                'base_lineage_id', 'winner_lineage_id'):
+        rejects(lambda key=key: replace(proof, **{key: 1}))
+
+    class EqualFraction(F):
+        def __eq__(self, other):
+            return True
+
+    # Previously this represented likelihood 1, yet the public verifier
+    # accepted it as equal to an issued 1/4 likelihood. No Runtime mutation or
+    # patched solver is needed to expose the missing type validation.
+    assert F(1, 4) == EqualFraction(1)
+    rejects(lambda: replace(proof, best_likelihood=EqualFraction(1)))
     rejects(lambda: rt.verify_reference_class_proof(replace(proof, best_likelihood=F(1)), decision_class_id=result.decision_class_id))
     rejects(lambda: rt.verify_reference_class_proof(replace(proof, issued_revision=proof.issued_revision+1), decision_class_id=result.decision_class_id))
     rejects(lambda: rt.verify_reference_class_proof(proof, decision_class_id='another-class'))
@@ -256,6 +278,7 @@ def runtime_audit():
             'independent_endpoint_and_likelihood_checks': len(expected),
             'all_rows_and_explicit_cursor_have_owned_packed_residency': True,
             'winner_likelihood': str(result.best_likelihood),
+            'proof_field_types_and_identical_copies_checked_without_numeric_coercion': True,
             'typed_class_bound_proof_tamper_cross_runtime_staleness_and_install_checks': True}
 
 

@@ -1362,3 +1362,21 @@ persistence/error state, host/device accounting, certified reference/AMP
 and atomic install remain the next integration frontier. No full Runtime
 freeze or RTX 3090 science authorization follows; static expansion remains
 parked and Foundation/ERC-1 stay frozen.
+
+## 54. Reject numeric coercion as proof identity (2026-09-12)
+
+Independent review found a public-interface counterexample to the new
+typed reference proof admission. Dataclass equality alone accepts equal
+Python floats, integers and Fractions despite their different encodings.
+More strongly, a caller-created Fraction subclass can represent likelihood
+one while overriding equality to match an issued likelihood of one quarter.
+The verifier then returned the supplied altered proof. This required no
+Runtime state mutation and no replacement of its solver.
+
+Reference proof construction and admission now require exact declared
+integer, Fraction and string field types and their value domains before
+comparing with retained issuance. Identical typed copies remain valid;
+numeric coercions and subclass comparison behavior are rejected. The
+scoped search regression and full finite search audit pass. This is a
+concrete implementation mismatch under the existing typed-state principle,
+not a reason to change Foundation or expand the static theorem catalog.
