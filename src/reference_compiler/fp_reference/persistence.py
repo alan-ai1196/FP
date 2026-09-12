@@ -15,6 +15,13 @@ from .numerics import floor_nonnegative_dyadic
 from .program import name, rational
 from .semantics import _guard, _operation
 
+REFERENCE_PATH = 'exact-reference'
+FLOAT64_PATH = 'binary64-stored-mass'
+NULLS = {
+    REFERENCE_PATH: 'bounded-pre-context-stopped-reference-epoch-mean-v1',
+    FLOAT64_PATH: 'bounded-pre-context-stopped-binary64-mass-epoch-mean-v1',
+}
+
 
 @dataclass(frozen=True)
 class PersistenceRule:
@@ -26,12 +33,16 @@ class PersistenceRule:
     bound: F
     log_terms: int
     wealth_grid_bits: int
+    score_path: str = REFERENCE_PATH
     # This fixed proposition includes the current mathematically defined
     # range-safe score on a failing attempt, then zeros after termination.
     # It cannot be replaced after seeing which computation succeeded.
     null_id: str = field(default='bounded-pre-context-stopped-reference-epoch-mean-v1', init=False)
 
     def __post_init__(self):
+        if type(self.score_path) is not str or self.score_path not in NULLS:
+            raise ContractError('unregistered persistence score path')
+        object.__setattr__(self, 'null_id', NULLS[self.score_path])
         name(self.rule_id, 'persistence rule ID')
         natural(self.epoch_events, 'registered events per persistence epoch', positive=True)
         natural(self.max_epochs, 'registered persistence horizon', positive=True)

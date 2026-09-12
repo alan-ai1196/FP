@@ -56,6 +56,13 @@ finite-prefix relation; no future/global floating bound is inferred. Read
 `theory/proofs/OWNED_FLOAT64_PREFIX.md` before using its evidence. Actual
 AMP execution and matched dual persistence remain different obligations.
 
+The CPU four-path persistence obligation now has a direct implementation:
+current-domain monotone rounded bounds, separate reference/stored-mass CE
+scores and alpha, matching starts and continuous full learners. The explicit
+counterexample with reference crossing and identically zero physical gain
+excludes copied wealth. See `theory/proofs/PAIRED_CPU_PERSISTENCE.md` and its
+endpoint audit. This supplies neither actual AMP nor an install transaction.
+
 The remaining work is complete ERC-1 registration, full Compiler decision
 authority beyond the scoped reference comparison, paired reference/AMP
 persistence and complete error state, actual host/device accounting, target

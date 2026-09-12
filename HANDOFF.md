@@ -48,6 +48,18 @@ This certifies numerical relations of executed finite CPU prefixes only.
 It does not authorize future error bounds, floating whole-domain feasibility,
 AMP persistence, installation or target-device execution.
 
+The next obligation now has its own executed CPU implementation:
+[`PAIRED_CPU_PERSISTENCE.md`](theory/proofs/PAIRED_CPU_PERSISTENCE.md).
+Positive rounded forward bounds establish the current binary64 whole-domain
+range/invariant before fresh evidence; optimizer changes require renewed
+bounds. Reference and binary64 stored-mass CE use separate same-path scores,
+wealth and nonrefundable alpha on four continuous learners. The paired
+result reads owned identities with matching starts and schedules. An exact
+reference crossing at event five while finite gain stays identically zero
+demonstrates why numerical closeness cannot transfer statistical evidence.
+Run `scripts/audit_paired_cpu_persistence.py`. `PAIRED_CPU_CROSSED` is scoped
+CPU evidence, with actual target AMP and atomic installation still open.
+
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic
 process law are explicit assumptions, never inferred from unread data.

@@ -273,6 +273,37 @@ The endpoint audit checks 1,024 phases over 64 complete short streams plus
 recasts. It also checks actual profile/recurrent paths and post-target
 failure through the public endpoint, using an independent float interpreter.
 
+## Two same-path CPU persistence statistics
+
+The current endpoint has one path-declared persistence engine. The original
+`exact-reference` rule and the new `binary64-stored-mass` rule each name a
+fixed stopped-epoch mean-null, their own gain bound and a separate allocation
+from the same global alpha budget. The finite path uses exact mathematical
+normalization of its actual stored masses. It cannot borrow reference
+scores or wealth, or substitute the rounded output for a probability vector.
+
+`admit_float64_persistence` proves current whole-domain binary64 range and
+delayed invariants with paid monotone rounded forward bounds. These bounds
+cover the registered source box or every declared finite source row. They
+are refreshed when optimizer theta changes. Failure ends that evidence
+identity before the next context; an observed safe point cannot substitute
+for the domain premise. All four raw/exact current learners stay owned.
+
+`paired_persistence_result(reference_id, float64_id)` reads two owned
+identities and checks their four complete initial states, lineage/program
+IDs, starts and epoch/horizon schedule. Both current same-path statistics
+must have crossed. Each stopped statistic continues to track the ongoing
+complete learner paths; numerical failure, retirement or failed current
+evidence allocation cannot leave a reusable crossing. Profiles retain
+original observation IDs and create no new persistence events.
+
+Read [`PAIRED_CPU_PERSISTENCE.md`](../theory/proofs/PAIRED_CPU_PERSISTENCE.md)
+and `scripts/audit_paired_cpu_persistence.py`. With delta=2^-54, the actual
+reference path crosses at event five while binary64 mass gain is exactly
+zero forever under the declared fixture. This excludes statistical evidence
+transfer based on small numeric error. `PAIRED_CPU_CROSSED` is a CPU protocol
+result, not actual AMP, full resource closure or atomic install authority.
+
 ## Failure and physical history
 
 The bounded target slot and its write work are reserved before prediction
@@ -371,5 +402,5 @@ persistence and complete physical/error state. The scoped executed CPU
 binary64 relation does not close actual AMP, atomic installation or the
 complete 47-gate mapping; these remain
 release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,
-paired persistence, bridge or installation authorization. RTX 3090 science remains
+target AMP persistence, bridge or installation authorization. RTX 3090 science remains
 HOLD; static theory expansion remains parked.

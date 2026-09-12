@@ -1,11 +1,13 @@
-"""Runtime-owned reference evidence records, not paired AMP/install tokens."""
+"""Runtime-owned same-path evidence records, not AMP/install tokens."""
 from dataclasses import dataclass, field
 from fractions import Fraction as F
 
 from .data_usage import StochasticStreamLaw
 from .learner import ReferenceLearnerState
+from .float64_learner import Float64LearnerState
+from .float64_range import Float64Range
 from .numerics import LogInterval
-from .persistence import PersistenceRule
+from .persistence import PersistenceRule, REFERENCE_PATH
 
 
 @dataclass(frozen=True)
@@ -15,11 +17,11 @@ class AlphaAllocation:
     alpha: F
     cursor: int
     law: StochasticStreamLaw
-    path: str = field(default='exact-reference', init=False)
+    path: str = REFERENCE_PATH
 
 
 @dataclass(frozen=True)
-class ReferencePersistenceIdentity:
+class PersistenceIdentity:
     identity_id: str
     rule: PersistenceRule
     allocation_id: str
@@ -46,10 +48,16 @@ class ReferencePersistenceIdentity:
     object_id: str
     generation: int
     reason: str = ''
+    initial_base_float64: Float64LearnerState | None = None
+    initial_candidate_float64: Float64LearnerState | None = None
+    current_base_float64: Float64LearnerState | None = None
+    current_candidate_float64: Float64LearnerState | None = None
+    base_float64_range: tuple[Float64Range, ...] = ()
+    candidate_float64_range: tuple[Float64Range, ...] = ()
 
 
 @dataclass(frozen=True)
-class ReferencePersistenceEvent:
+class PersistenceEvent:
     identity_id: str
     observation_id: str
     cursor: int
@@ -61,10 +69,11 @@ class ReferencePersistenceEvent:
     epoch_finished: bool
     wealth_before: F
     wealth_after: F
+    score_path: str = REFERENCE_PATH
 
 
 @dataclass(frozen=True)
-class ReferencePersistenceResult:
+class PersistenceResult:
     status: str
     identity_id: str | None
     alpha_spent: F
@@ -72,4 +81,16 @@ class ReferencePersistenceResult:
     wealth_lower: F
     crossing_cursor: int | None
     reason: str
-    authority_scope: str = field(default='conditional reference mean-null evidence only; no paired AMP or installation authority', init=False)
+    score_path: str = REFERENCE_PATH
+    authority_scope: str = field(default='conditional same-path mean-null evidence only; no actual AMP or installation authority', init=False)
+
+
+@dataclass(frozen=True)
+class PairedPersistenceResult:
+    status: str
+    reference_identity: str
+    float64_identity: str
+    cursor: int
+    alpha_spent: F
+    reason: str
+    authority_scope: str = field(default='two same-path CPU persistence crossings on four continuous learners; no target AMP or install authority', init=False)

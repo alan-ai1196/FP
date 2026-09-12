@@ -313,6 +313,42 @@ target-device correctness tests, followed by model science. The 47 historical
 labels in `docs/history/V155_GATE_CATALOG.md` are a catalog; the old executable
 registry was not preserved, so its green count cannot be reused.
 
+### Same-path CPU persistence on four continuous learners (2026-09-12)
+
+`PersistenceRule.score_path` fixes either exact-reference CE or mathematical
+normalization of actual binary64 stored masses. Both use the same owned
+event/identity engine and separate global alpha debits. Runtime now exposes
+`admit_float64_persistence`, `float64_persistence_result` and
+`paired_persistence_result`; none accepts an external score, endpoint or
+token. Reference record types have been generalized to `PersistenceIdentity`,
+`PersistenceEvent` and `PersistenceResult` with explicit path fields.
+
+The physical identity first proves its current whole-domain bounds by
+monotone ordered rounded native execution over the registered source domain
+and complete delayed invariant. Actual stored-mass sums and rounded
+normalizers are separate. Raw division positivity is checked too. Changed
+optimizer theta triggers a renewed bound before the identity can extend;
+an inconclusive bound terminates evidence without changing FP semantics.
+Both initial and current reference/binary64 states are bound to each identity.
+
+Each path uses its own bounded stopped-epoch mean-null under the complete
+filtration and explicit external law. Paired CPU evidence requires two
+current crossings on the same four starting learners and event schedule.
+Crossed statistics freeze while their ordinary learners continue; failed
+successors, retirement and missing state allocation remove live authority.
+Old profile observations, alpha and wealth are not transferred to newborns.
+
+`scripts/audit_paired_cpu_persistence.py` checks 400 direct-float contexts,
+125 delayed states, 24 separately scored learning events, six new optimizer
+range bounds, 62 exact conditional inequalities on 32 complete null paths,
+and actual resource/identity/failure adversaries. A delta=2^-54 example
+crosses reference at event five while actual finite gain is exactly zero.
+Read `theory/proofs/PAIRED_CPU_PERSISTENCE.md` for the precise proposition.
+
+This advances CPU four-path/dual persistence protocol. It does not close
+complete ERC-1 enforcement, atomic installation, the historical gate mapping
+or target AMP. Runtime is NOT FROZEN and model science remains HOLD.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

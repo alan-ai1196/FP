@@ -392,3 +392,9 @@ XVI still requires the complete atomic installation transaction. Numerical
 and stochastic bridge errors must be separately accounted for; a CPU
 endpoint match does not discharge them. ERC-1 remains the frozen specification
 and GPU/model science remains subject to its existing release gates.
+
+The subsequent [PAIRED_CPU_PERSISTENCE.md](PAIRED_CPU_PERSISTENCE.md) executes
+the four CPU paths with separate reference/stored-mass gains, current-domain
+finite bounds and independent alpha allocations. It reuses this stopped-null
+and lower-wealth argument without transferring reference evidence to finite
+arithmetic. Actual target AMP and atomic installation remain unclosed.

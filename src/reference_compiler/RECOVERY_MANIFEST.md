@@ -118,6 +118,11 @@ scalar schedule and all three normalization representations are retained
 and checked against registered tolerances. The evidence concerns executed
 finite prefixes only; no historical bridge signer or target AMP authority
 is restored.
+`float64_range.py` and the common path-declared persistence engine now add
+paid whole-domain finite bounds, separate actual stored-mass CE statistics
+and alpha, and matching four-learner CPU persistence results. A reference
+crossing is demonstrably insufficient for the finite path. This CPU protocol
+does not restore an AMP or installation signer.
 The public install path remains UNRESOLVED because complete manifest/
 paired persistence/error/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status

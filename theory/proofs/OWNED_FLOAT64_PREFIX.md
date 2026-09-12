@@ -245,6 +245,12 @@ statistic, current-domain proof or explicit failure/stopped convention.
 existing exact-reference distinction. Nothing here infers an external
 producer's law or extends that result to binary64/AMP.
 
+The separate subsequent result
+[PAIRED_CPU_PERSISTENCE.md](PAIRED_CPU_PERSISTENCE.md) supplies current-domain
+rounded bounds and an independently registered binary64 stored-mass null.
+That additional owned execution, not this prefix relation alone, establishes
+the scoped two-path CPU persistence result. It still supplies no actual AMP.
+
 Finally, Foundation XVI installation still requires the complete atomic
 transition, ownership/refcount transfer, learner transport, live shadow/job
 policy, error/persistence ledgers and post-install relation. A finite CPU

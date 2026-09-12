@@ -20,11 +20,12 @@ from .machine import PackedObject, ReferenceMachineModel
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
-from .persistence import PersistenceContract, next_wealth, threshold_crossed
-from .persistence_state import AlphaAllocation, ReferencePersistenceEvent, ReferencePersistenceIdentity, ReferencePersistenceResult
+from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, next_wealth, threshold_crossed
+from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
 from .binary_arithmetic import Float64Arithmetic
 from . import float64_learner as finite
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
+from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from . import native_search as grammar
 from .proof import ReferenceClassProof, verify_maximum
 from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, compare_likelihoods, likelihood
@@ -120,6 +121,8 @@ class OnlineContract:
             search.validate(self.data, self.profiles, construction.graph_limits)
         if self.persistence is not None:
             for rule in self.persistence.rules:
+                if rule.score_path == FLOAT64_PATH and self.float64 is None:
+                    raise ContractError('binary64 persistence requires its independently executed registered learner')
                 if rule.wealth_grid_bits >= construction.reference_integer_bits:
                     raise ContractError('persistence wealth grid exceeds reference integer work limit')
 
@@ -245,8 +248,8 @@ class RuntimeSnapshot:
     next_persistence: int
     alpha_spent: F
     alpha_allocations: tuple[AlphaAllocation, ...]
-    persistence_identities: tuple[ReferencePersistenceIdentity, ...]
-    persistence_events: tuple[ReferencePersistenceEvent, ...]
+    persistence_identities: tuple[PersistenceIdentity, ...]
+    persistence_events: tuple[PersistenceEvent, ...]
     float64_traces: tuple[Float64Trace, ...]
 
 
@@ -280,8 +283,8 @@ class ReferenceCompilerRuntime:
         self._next_persistence = 0
         self._alpha_spent = F(0)
         self._alpha_allocations: list[AlphaAllocation] = []
-        self._persistence_identities: dict[str, ReferencePersistenceIdentity] = {}
-        self._persistence_events: list[ReferencePersistenceEvent] = []
+        self._persistence_identities: dict[str, PersistenceIdentity] = {}
+        self._persistence_events: list[PersistenceEvent] = []
         self._float64_traces: list[Float64Trace] = []
         self._next_candidate = 0
         self._programs: dict[str, Program] = {}
@@ -532,7 +535,7 @@ class ReferenceCompilerRuntime:
         if candidate_id == self._deployed_id or candidate_id not in self._candidates:
             raise ContractError('cannot retire the deployed or an unknown candidate')
         for identity in tuple(self._persistence_identities.values()):
-            if identity.status in ('ACTIVE', 'REFERENCE_CROSSED') and candidate_id in (identity.base_lineage_id, identity.candidate_lineage_id):
+            if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED') and candidate_id in (identity.base_lineage_id, identity.candidate_lineage_id):
                 self._stop_persistence(identity, 'lineage retired; its alpha and historical evidence remain spent')
         state = self._candidates.pop(candidate_id)
         self._release_owner(state.physical_owner)
@@ -553,7 +556,7 @@ class ReferenceCompilerRuntime:
         self._event_phase = 'halted'
         self._attempts.append((f'event:{self._cursor}', 'UNRESOLVED' if isinstance(error, (ArithmeticUnresolved, ResourceExceeded)) else 'EXECUTION_FAILED', self._halted[1]))
         for identity in tuple(self._persistence_identities.values()):
-            if identity.status in ('ACTIVE', 'REFERENCE_CROSSED'):
+            if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
                 self._stop_persistence(identity, f'ordinary trajectory failed at {stage}: {error}')
 
     def _event_work(self, candidate: ConstructedState, work: int, stage: str):
@@ -716,7 +719,7 @@ class ReferenceCompilerRuntime:
         self._event_phase = 'predicting'
         try:
             admitted = tuple(identity.identity_id for identity in self._persistence_identities.values()
-                             if identity.status in ('ACTIVE', 'REFERENCE_CROSSED'))
+                             if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'))
             for identity_id in admitted:
                 self._check_persistence_lineages(self._persistence_identities[identity_id])
             self._pending = replace(self._pending, persistence_ids=admitted)
@@ -885,12 +888,13 @@ class ReferenceCompilerRuntime:
             raise error
         return result
 
-    def _save_persistence(self, identity: ReferencePersistenceIdentity):
+    def _save_persistence(self, identity: PersistenceIdentity):
         previous = self._persistence_identities.get(identity.identity_id)
         generation = 0 if previous is None else previous.generation+1
         object_id = f'{identity.identity_id}:state:{generation}'
         current = replace(identity, object_id=object_id, generation=generation)
-        packed = self._machine.realize(object_id, 'reference_persistence_state', current, self._chi)
+        kind = 'reference_persistence_state' if identity.rule.score_path == REFERENCE_PATH else 'binary64_persistence_state'
+        packed = self._machine.realize(object_id, kind, current, self._chi)
         self._allocate(identity.owner, (packed,))
         if previous is not None and previous.object_id:
             self._ledger.release(previous.owner, previous.object_id)
@@ -898,7 +902,7 @@ class ReferenceCompilerRuntime:
         self._persistence_identities[identity.identity_id] = current
         return current
 
-    def _stop_persistence(self, identity: ReferencePersistenceIdentity, reason: str):
+    def _stop_persistence(self, identity: PersistenceIdentity, reason: str):
         stopped = replace(identity, status='UNRESOLVED', reason=reason)
         try:
             return self._save_persistence(stopped)
@@ -914,18 +918,55 @@ class ReferenceCompilerRuntime:
                 raise
             return stopped
 
-    def _check_persistence_lineages(self, identity: ReferencePersistenceIdentity):
+    def _check_persistence_lineages(self, identity: PersistenceIdentity):
         base = self._candidates.get(identity.base_lineage_id)
         candidate = self._candidates.get(identity.candidate_lineage_id)
         if (self._deployed_id != identity.base_lineage_id or base is None or candidate is None
                 or not base.range_safe or not candidate.range_safe or identity.cursor != self._cursor
                 or base.program_id != identity.base_program_id or candidate.program_id != identity.candidate_program_id
                 or base.learner != identity.current_base or candidate.learner != identity.current_candidate
+                or base.float64 != identity.current_base_float64 or candidate.float64 != identity.current_candidate_float64
                 or base.learner.cursor != self._cursor or candidate.learner.cursor != self._cursor):
             raise ContractError('persistence lost its continuous registered candidate/base trajectory')
+        if identity.rule.score_path == FLOAT64_PATH:
+            for state, bounds in ((base, identity.base_float64_range), (candidate, identity.candidate_float64_range)):
+                if state.float64 is None or not bounds or any(b.theta != state.float64.theta for b in bounds):
+                    raise ContractError('binary64 persistence lost its current whole-domain invariant')
 
-    def admit_reference_persistence(self, candidate_id: str, rule_id: str) -> ReferencePersistenceResult:
+    def _persistence_float64_range(self, state):
+        """Paid proof computation on the declared domain, never fresh data."""
+        if state.float64 is None:
+            raise ContractError('binary64 persistence has no executed learner')
+        program, rules = self._programs[state.program_id], self._contract.semantics
+        if tuple((key, len(values)) for key, values in state.float64.delayed) != tuple((s.state_id, s.delay) for s in rules.states):
+            raise ContractError('binary64 persistence lost its complete delayed interface')
+        rows = (None,) if self._contract.source_domain is None else self._contract.source_domain
+        result = []
+        for index, row in enumerate(rows):
+            work = enclosure_operations(program, rules)*Float64Arithmetic.scalar_work+relation_work(program, rules)
+            self._event_router.charge_work('information', {'work': work}, f'{state.candidate_id}:binary64-domain:{index}')
+            arith = Float64Arithmetic(self._contract.reference_integer_bits)
+            bound = enclose_float64(program, rules, state.float64.theta, source_point=row,
+                normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap, arith=arith)
+            # A box invariant also needs its actual current complete queue.
+            for spec, (state_id, values) in zip(rules.states, state.float64.delayed):
+                if state_id != spec.state_id or len(values) != spec.delay:
+                    raise ContractError('binary64 persistence lost its complete delayed interface')
+                for value in values:
+                    if compare_exact(value.exact, spec.upper, bit_limit=arith.bit_limit) > 0:
+                        raise ArithmeticUnresolved('current binary64 queue violates its whole-domain invariant')
+            result.append(bound)
+        return tuple(result)
+
+    def admit_reference_persistence(self, candidate_id: str, rule_id: str) -> PersistenceResult:
         """Admit future reference evidence before context ingress; no AMP token."""
+        return self._admit_persistence(candidate_id, rule_id, REFERENCE_PATH)
+
+    def admit_float64_persistence(self, candidate_id: str, rule_id: str) -> PersistenceResult:
+        """Admit CPU stored-mass CE evidence with its own global alpha debit."""
+        return self._admit_persistence(candidate_id, rule_id, FLOAT64_PATH)
+
+    def _admit_persistence(self, candidate_id: str, rule_id: str, score_path: str) -> PersistenceResult:
         self._require_online()
         self._require_idle()
         name(candidate_id, 'persistence candidate lineage')
@@ -934,8 +975,8 @@ class ReferenceCompilerRuntime:
         if registration is None:
             raise ContractError('no registered persistence protocol')
         rule = next((r for r in registration.rules if r.rule_id == rule_id), None)
-        if rule is None:
-            raise ContractError('unregistered persistence rule')
+        if rule is None or rule.score_path != score_path:
+            raise ContractError('unregistered or wrong-path persistence rule')
         candidate = self._candidates.get(candidate_id)
         base = self._candidates[self._deployed_id]
         if candidate is None or candidate_id == self._deployed_id:
@@ -946,11 +987,11 @@ class ReferenceCompilerRuntime:
             raise ContractError('persistence requires whole-domain range-safe reference trajectories')
         law = self._online.data.stream_law
         if type(law) is not StochasticStreamLaw:
-            return ReferencePersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
-                                              'deterministic unread observations do not supply a stochastic persistence law')
+            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+                                              'deterministic unread observations do not supply a stochastic persistence law', score_path)
         if rule.epoch_events*rule.max_epochs > len(self._online.data.active.observation_ids)-self._cursor:
-            return ReferencePersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
-                                              'registered future horizon does not fit the remaining observation schedule')
+            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+                                              'registered future horizon does not fit the remaining observation schedule', score_path)
         self._revision += 1
         bit_limit = self._contract.reference_integer_bits
         try:
@@ -958,24 +999,26 @@ class ReferenceCompilerRuntime:
             _guard(registration.alpha_total, bit_limit=bit_limit)
             total = _operation(self._alpha_spent, rule.alpha, multiply=False, bit_limit=bit_limit)
             if compare_exact(total, registration.alpha_total, bit_limit=bit_limit) > 0:
-                return ReferencePersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
-                                                  'global alpha is spent; old identities cannot refund their allocation')
+                return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None,
+                                                  'global alpha is spent; old identities cannot refund their allocation', score_path)
         except (ResourceExceeded, ArithmeticUnresolved) as exc:
-            return ReferencePersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc))
+            return PersistenceResult('UNRESOLVED', None, self._alpha_spent, 0, F(1), None, str(exc), score_path)
         identity_id = f'{self._runtime_id}:persistence:{self._next_persistence}'
         self._next_persistence += 1
         owner = f'{identity_id}:owner'
         self._ledger.register_owner(owner, 'compiler')
-        allocation = AlphaAllocation(f'{identity_id}:alpha', identity_id, rule.alpha, self._cursor, law)
+        allocation = AlphaAllocation(f'{identity_id}:alpha', identity_id, rule.alpha, self._cursor, law, score_path)
         # Allocate the statistical risk before any outcome or fallible physical
         # materialization. Failed admission retains this spent fact forever.
         self._alpha_spent = total
         self._alpha_allocations.append(allocation)
-        identity = ReferencePersistenceIdentity(identity_id, rule, allocation.allocation_id,
+        identity = PersistenceIdentity(identity_id, rule, allocation.allocation_id,
             base.candidate_id, candidate_id, base.program_id, candidate.program_id,
             base.learner, candidate.learner, base.learner, candidate.learner,
             self._cursor, self._cursor, 0, 0, F(0), F(0), F(1), None, None, None,
-            'INITIALIZING', owner, '', 0)
+            'INITIALIZING', owner, '', 0,
+            initial_base_float64=base.float64, initial_candidate_float64=candidate.float64,
+            current_base_float64=base.float64, current_candidate_float64=candidate.float64)
         self._event_phase = 'admitting-persistence'
         try:
             debit = self._machine.realize(allocation.allocation_id, 'spent_persistence_alpha', allocation, self._chi)
@@ -983,17 +1026,24 @@ class ReferenceCompilerRuntime:
             identity = self._save_persistence(identity)
             self._retain_program(base)
             self._retain_program(candidate)
+            native_base = self._contract.semantics.base
+            if score_path == FLOAT64_PATH:
+                base_bounds = self._persistence_float64_range(base)
+                candidate_bounds = self._persistence_float64_range(candidate)
+                identity = self._save_persistence(replace(identity,
+                    base_float64_range=base_bounds, candidate_float64_range=candidate_bounds))
+                native_base = tuple(v.exact for v in base_bounds[0].base_lower)
             self._event_router.charge_work('information', {'work': log_enclosure_work(rule.log_terms)+(compare_exact_work()+16)*len(self._contract.semantics.base)+48},
                                           f'{identity_id}:whole-domain-gain-bound')
             add = lambda a, b: _operation(a, b, multiply=False, bit_limit=bit_limit)
             mul = lambda a, b: _operation(a, b, multiply=True, bit_limit=bit_limit)
             base_sum = F(0)
-            for value in self._contract.semantics.base:
+            for value in native_base:
                 base_sum = add(base_sum, value)
             slack = add(self._contract.normalizer_cap, -base_sum)
             if slack < 0:
                 raise ContractError('normalizer cap is below its positive base')
-            ratios = tuple(mul(add(slack, b), F(b.denominator, b.numerator)) for b in self._contract.semantics.base)
+            ratios = tuple(mul(add(slack, b), F(b.denominator, b.numerator)) for b in native_base)
             ratio_bound = ratios[0]
             for ratio in ratios[1:]:
                 if compare_exact(ratio, ratio_bound, bit_limit=bit_limit) > 0:
@@ -1002,17 +1052,18 @@ class ReferenceCompilerRuntime:
             if compare_exact(bound.upper, rule.bound, bit_limit=bit_limit) > 0:
                 raise ArithmeticUnresolved('registered gain bound is not proved over the full native range class')
             identity = self._save_persistence(replace(identity, ratio_bound=ratio_bound, status='ACTIVE',
-                reason='future reference epochs admitted under the retained external stochastic-law assumption'))
+                reason=f'future {score_path} epochs admitted under the retained external stochastic-law assumption'))
         except Exception as exc:
             self._stop_persistence(identity, f'admission failed: {type(exc).__name__}: {exc}')
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
                 raise
         finally:
             self._event_phase = 'idle'
-        return self.reference_persistence_result(identity_id)
+        return self._persistence_result(identity_id, score_path)
 
     def _observe_persistence(self, pending: PendingEvent, record: ObservationRecord, successors):
         predictions = dict(pending.predictions)
+        finite_predictions = dict(pending.float64_predictions)
         bit_limit = self._contract.reference_integer_bits
         for identity_id in pending.persistence_ids:
             identity = self._persistence_identities[identity_id]
@@ -1020,8 +1071,17 @@ class ReferenceCompilerRuntime:
                 self._check_persistence_lineages(identity)
                 next_identity = replace(identity, cursor=record.cursor+1,
                     current_base=successors[identity.base_lineage_id].learner,
-                    current_candidate=successors[identity.candidate_lineage_id].learner)
-                if identity.status == 'REFERENCE_CROSSED':
+                    current_candidate=successors[identity.candidate_lineage_id].learner,
+                    current_base_float64=successors[identity.base_lineage_id].float64,
+                    current_candidate_float64=successors[identity.candidate_lineage_id].float64)
+                if identity.rule.score_path == FLOAT64_PATH:
+                    for lineage_id, previous, field in (
+                        (identity.base_lineage_id, identity.current_base_float64, 'base_float64_range'),
+                        (identity.candidate_lineage_id, identity.current_candidate_float64, 'candidate_float64_range')):
+                        successor = successors[lineage_id]
+                        if successor.float64.theta != previous.theta:
+                            next_identity = replace(next_identity, **{field: self._persistence_float64_range(successor)})
+                if identity.status in ('REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
                     # Stop the statistic at first crossing, but keep tracking
                     # the same complete learner trajectories. No later reset
                     # or failed ordinary transition inherits a live crossing.
@@ -1032,11 +1092,15 @@ class ReferenceCompilerRuntime:
                 # Six guarded interval/ratio comparisons plus fixed rational
                 # accumulation, threshold and grid work. This is a primitive
                 # reference charge, not a total bit-time/host-heap bound.
-                self._event_router.charge_work('information', {'work': log_enclosure_work(identity.rule.log_terms)+6*compare_exact_work()+112},
+                self._event_router.charge_work('information', {'work': log_enclosure_work(identity.rule.log_terms)+6*compare_exact_work()+112+32*len(self._contract.semantics.base)},
                                               f'{identity_id}:score:{record.cursor}')
                 self._data_usage.record((record,), 'persistence', identity_id, record.cursor)
-                base = predictions[identity.base_lineage_id].probabilities[record.target]
-                candidate = predictions[identity.candidate_lineage_id].probabilities[record.target]
+                if identity.rule.score_path == REFERENCE_PATH:
+                    base = predictions[identity.base_lineage_id].probabilities[record.target]
+                    candidate = predictions[identity.candidate_lineage_id].probabilities[record.target]
+                else:
+                    base = stored_probability(finite_predictions[identity.base_lineage_id], record.target, bit_limit=bit_limit)
+                    candidate = stored_probability(finite_predictions[identity.candidate_lineage_id], record.target, bit_limit=bit_limit)
                 ratio = _operation(candidate, F(base.denominator, base.numerator), multiply=True, bit_limit=bit_limit)
                 k = identity.ratio_bound
                 if (compare_exact(ratio, k, bit_limit=bit_limit) > 0
@@ -1060,18 +1124,20 @@ class ReferenceCompilerRuntime:
                     mean = _operation(lower, F(1, count), multiply=True, bit_limit=bit_limit)
                     wealth = next_wealth(wealth, mean, identity.rule, bit_limit=bit_limit)
                     epochs += 1
-                event = ReferencePersistenceEvent(identity_id, record.observation_id, record.cursor,
+                event = PersistenceEvent(identity_id, record.observation_id, record.cursor,
                     identity.base_lineage_id, identity.candidate_lineage_id, base, candidate, gain,
-                    finished, identity.wealth, wealth)
+                    finished, identity.wealth, wealth, identity.rule.score_path)
                 self._persistence_events.append(event)
-                packed = self._machine.realize(f'{identity_id}:event:{record.cursor}', 'fresh_reference_persistence_event', event, self._chi)
+                kind = 'fresh_reference_persistence_event' if identity.rule.score_path == REFERENCE_PATH else 'fresh_binary64_persistence_event'
+                packed = self._machine.realize(f'{identity_id}:event:{record.cursor}', kind, event, self._chi)
                 self._allocate(self._data_owner, (packed,))
                 next_identity = replace(next_identity, epoch_events=0 if finished else count,
                     epochs_completed=epochs, gain_lower_sum=F(0) if finished else lower,
                     gain_upper_sum=F(0) if finished else upper, wealth=wealth)
                 if finished and threshold_crossed(wealth, identity.rule.alpha, bit_limit=bit_limit):
-                    next_identity = replace(next_identity, status='REFERENCE_CROSSED', crossing_cursor=record.cursor+1,
-                        crossing_wealth=wealth, reason='conditional reference mean-null crossed; actual AMP and installation remain unverified')
+                    crossing = 'REFERENCE_CROSSED' if identity.rule.score_path == REFERENCE_PATH else 'FLOAT64_CROSSED'
+                    next_identity = replace(next_identity, status=crossing, crossing_cursor=record.cursor+1,
+                        crossing_wealth=wealth, reason=f'conditional {identity.rule.score_path} mean-null crossed; actual AMP and installation remain unverified')
                 elif finished and epochs == identity.rule.max_epochs:
                     next_identity = replace(next_identity, status='UNRESOLVED', reason='finite persistence horizon ended without crossing; no rejection')
                 self._save_persistence(next_identity)
@@ -1080,28 +1146,58 @@ class ReferenceCompilerRuntime:
                 if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
                     raise
 
-    def reference_persistence_result(self, identity_id: str) -> ReferencePersistenceResult:
+    def reference_persistence_result(self, identity_id: str) -> PersistenceResult:
+        return self._persistence_result(identity_id, REFERENCE_PATH)
+
+    def float64_persistence_result(self, identity_id: str) -> PersistenceResult:
+        return self._persistence_result(identity_id, FLOAT64_PATH)
+
+    def _persistence_result(self, identity_id: str, score_path: str) -> PersistenceResult:
         name(identity_id, 'owned persistence identity')
         identity = self._persistence_identities.get(identity_id)
-        if identity is None:
-            raise ContractError('unknown owned persistence identity')
+        if identity is None or identity.rule.score_path != score_path:
+            raise ContractError('unknown or wrong-path owned persistence identity')
         status = 'UNRESOLVED'
         reason = identity.reason
-        if identity.status == 'REFERENCE_CROSSED' and self._event_phase == 'idle':
+        crossing = 'REFERENCE_CROSSED' if score_path == REFERENCE_PATH else 'FLOAT64_CROSSED'
+        if identity.status == crossing and self._event_phase == 'idle':
             try:
                 self._check_persistence_lineages(identity)
-                status = 'REFERENCE_CROSSED'
+                status = crossing
             except ContractError:
                 reason = 'historical crossing has no current matching complete trajectory'
-        return ReferencePersistenceResult(status, identity_id, self._alpha_spent, identity.epochs_completed,
-                                          identity.wealth, identity.crossing_cursor, reason)
+        return PersistenceResult(status, identity_id, self._alpha_spent, identity.epochs_completed,
+                                          identity.wealth, identity.crossing_cursor, reason, score_path)
+
+    def paired_persistence_result(self, reference_id: str, float64_id: str) -> PairedPersistenceResult:
+        """Read two owned same-path crossings; no supplied certificate/token."""
+        ref = self._persistence_result(reference_id, REFERENCE_PATH)
+        physical = self._persistence_result(float64_id, FLOAT64_PATH)
+        a, b = self._persistence_identities[reference_id], self._persistence_identities[float64_id]
+        coordinates = ('base_lineage_id', 'candidate_lineage_id', 'base_program_id', 'candidate_program_id',
+                       'start_cursor', 'initial_base', 'initial_candidate',
+                       'initial_base_float64', 'initial_candidate_float64')
+        if any(getattr(a, key) != getattr(b, key) for key in coordinates):
+            raise ContractError('paired persistence identities do not start on the same four trajectories')
+        if a.rule.epoch_events != b.rule.epoch_events or a.rule.max_epochs != b.rule.max_epochs:
+            raise ContractError('paired persistence identities have different registered event schedules')
+        crossed = ref.status == 'REFERENCE_CROSSED' and physical.status == 'FLOAT64_CROSSED'
+        return PairedPersistenceResult('PAIRED_CPU_CROSSED' if crossed else 'UNRESOLVED', reference_id, float64_id,
+            self._cursor, self._alpha_spent, 'both independent same-path statistics crossed on continuous checked CPU learners'
+            if crossed else 'both owned current path crossings are required; no evidence is copied between paths')
 
     def cancel_reference_persistence(self, identity_id: str):
+        self._cancel_persistence(identity_id, REFERENCE_PATH)
+
+    def cancel_float64_persistence(self, identity_id: str):
+        self._cancel_persistence(identity_id, FLOAT64_PATH)
+
+    def _cancel_persistence(self, identity_id: str, score_path: str):
         self._require_idle()
         name(identity_id, 'owned persistence identity')
         identity = self._persistence_identities.get(identity_id)
-        if identity is None:
-            raise ContractError('unknown owned persistence identity')
+        if identity is None or identity.rule.score_path != score_path:
+            raise ContractError('unknown or wrong-path owned persistence identity')
         self._revision += 1
         self._stop_persistence(identity, 'cancelled; alpha, used observation identities and owned history are retained')
 

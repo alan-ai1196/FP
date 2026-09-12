@@ -1498,3 +1498,60 @@ as a catalog, not the executable registry, so its historical pass count
 cannot be reused. Complete ERC-1 physical enforcement, four-path/dual
 persistence protocol, actual target AMP and atomic installation remain
 open. Runtime remains NOT FROZEN, science HOLD, and static expansion parked.
+
+## 57. Close the CPU same-path persistence gap with current-domain bounds (2026-09-12)
+
+The next obstacle was statistical, not an additional static model case.
+An observed-context numerical bridge cannot justify a pre-context null that
+quietly conditions away failed computations. The current finite predictor
+needs a whole-domain bounded definition even at a failing attempt.
+
+Positive SUM/PRODUCT and monotone nearest rounding supply that premise.
+The new `float64_range.py` executes the registered ordered forward on source
+upper endpoints or every declared finite source row and the complete delayed
+box. It independently bounds exact decoded mass sums and rounded normalizers,
+requires positive rounded bases/divisions, and checks the delayed invariant.
+Bounds are tied to current raw theta; optimizer changes cause a paid renewal
+before the persistence identity can extend. Inconclusive bounds yield
+UNRESOLVED. This is a generic Runtime proof computation under frozen semantics.
+
+The same persistence engine now executes both `exact-reference` and
+`binary64-stored-mass` CE. Both score only their own deployed/candidate pair
+from sealed predictions, use separate lower wealth and pay separate alpha
+from one global budget. They share fresh events without an independence
+assumption. A paired CPU result requires matching four-learner starts,
+lineage identities and schedules, two current crossings, and continuous
+post-crossing learners. Failure, retirement, profiles and rebuilding cannot
+copy wealth, backfill observations or refund alpha. No external-law proof
+is inferred from the executed tapes.
+
+A concrete new endpoint counterexample shows why this separation matters.
+With delta=2^-54 and cap 2+delta, reference masses (1+delta,1) strictly beat
+the incumbent (1,1). Binary64 rounds both candidate masses to one. Ordinary
+learning rate zero keeps the registered learners fixed while predictions,
+gradients and optimizer commits still execute. Reference crosses at event
+five with lower wealth 322095/65536, whereas physical gain is exactly zero
+and wealth stays one. The paired result correctly remains UNRESOLVED.
+
+The audit also catches a rounded optimizer reaching slightly above 1/10:
+reference remains exactly at cap 21/10, while the whole-domain finite mass
+sum exceeds it. A currently inactive source would hide that violation.
+The physical identity terminates before the next context. Separate exact
+score arithmetic exhaustion cannot borrow finite evidence, and a failed
+finite crossing-state allocation cannot leave a usable paired crossing.
+
+Independent checks cover 400 contexts from 16 box declarations and 125
+delayed states. Twelve learning events give 24 same-path score/wealth checks,
+six renewed optimizer range bounds and 62 bitwise learner phase checks.
+All 32 five-event fair-label paths execute 160 actual events and verify 62
+conditional wealth inequalities; each path crosses with probability 1/32
+under its separately allocated alpha 1/3. Four profile events from two old
+observations produce fresh identities starting only at the next unread ID.
+Actual work/byte limits, identity mismatch, and post-crossing failure pass.
+
+Read `theory/proofs/PAIRED_CPU_PERSISTENCE.md` and the minimal
+`evidence/minimal/FP_PAIRED_CPU_PERSISTENCE_AUDIT.json`. This advances the CPU
+four-path/dual persistence protocol; complete immutable ERC-1 enforcement,
+physical accounting, atomic installation, explicit gate mapping and actual
+target AMP remain open. No Foundation action or static special case was
+added. Runtime is NOT FROZEN, and RTX 3090 science remains HOLD.

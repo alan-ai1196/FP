@@ -42,6 +42,16 @@ residency. No current method accepts a caller's numeric endpoint or bridge
 token. Read [`OWNED_FLOAT64_PREFIX.md`](../../theory/proofs/OWNED_FLOAT64_PREFIX.md)
 for its finite executed-prefix scope and remaining full-domain/device limits.
 
+`float64_range.py` now supplies current whole-domain rounded forward and
+delayed-invariant bounds for CPU persistence. Declare a separate
+`PersistenceRule(..., score_path='binary64-stored-mass')`; Runtime admits it
+through `admit_float64_persistence` with a separate global alpha debit.
+`paired_persistence_result(reference_id, float64_id)` requires both owned
+current crossings on matching four-learner starts and schedules. It never
+copies reference wealth or uses rounded division output as a normalized
+probability. Read [`PAIRED_CPU_PERSISTENCE.md`](../../theory/proofs/PAIRED_CPU_PERSISTENCE.md)
+and run `scripts/audit_paired_cpu_persistence.py` for this CPU protocol scope.
+
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
 bytes and conservative reference operation charges; it does not claim total
