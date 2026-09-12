@@ -2082,3 +2082,33 @@ cross-root error families. Foundation R4 and ERC-1 are unchanged. Static
 cases remain parked. Actual AMP correctness and its complete ownership,
 four trajectories, fresh same-path evidence and installation are now the
 active frontier before RTX 3090 model science.
+
+## 69. Execute and distinguish actual CUDA arithmetic (2026-09-13)
+
+The first post-freeze device correctness audit runs on RTX 3090 / SM 8.6,
+PyTorch 2.12.0+cu132, CUDA runtime 13.2, driver 616.92. It checks all 63,488
+finite half encodings through real device transport and widening/narrowing,
+190,464 conversion boundary cases, and 11,040 finite half/single arithmetic
+results against exact Fraction/RNE models. Expected overflow and division
+by zero remain noncertifiable; no CPU fallback can pass the audit.
+
+The adversarial result matters more than the coverage count. Positive
+`a=1027/1024,b=3/2,c=2^-24` gives actual half addcmul `0x3e04`, while ideal
+one-round half FMA gives `0x3e05`: single-precision intermediate rounding
+returns the exact half midpoint before the storage tie is resolved.
+The random FMA samples missed this difference. The versioned PyTorch
+implementation corroborates single FMA followed by half storage.
+
+Separate half multiply/add also differs from addcmul on positive inputs;
+float32 `7/12` changes by one ULP when its device divisor becomes a Python
+scalar. Autocast leaves the tested elementwise native operations float32.
+Actual positive stored masses again distinguish a categorical distribution
+from rounded normalizer/division outputs. These observations require an
+explicit physical lowering and event relations, already required by ERC-1;
+they do not reopen Foundation or extend the frozen static resource study.
+
+`ACTUAL_CUDA_PRECISION.md` gives the small exact derivations and primary
+implementation sources. `audit_cuda_primitives.py` regenerates all inputs
+and writes only minimal counts and witnesses. The complete owned AMP
+learner, device resources, four continuous paths, fresh evidence and
+installation remain open; this diagnostic issues no bridge authority.

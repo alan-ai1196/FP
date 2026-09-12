@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "scope": "actual eager CUDA primitive encodings and lowering counterexamples; no Runtime authority",
+  "seed": 2026091369,
+  "executed_utc": "2026-09-12T18:16:50.464980+00:00",
+  "device": {
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "total_memory_bytes": 25769279488,
+    "driver_versions": [
+      "616.92"
+    ],
+    "torch": "2.12.0+cu132",
+    "torch_git_version": "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "torch_CUDA_runtime": "13.2",
+    "Python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]"
+  },
+  "encodings": {
+    "all_finite_half_raw_roundtrips": 63488,
+    "all_finite_half_to_single_to_half_roundtrips": 63488,
+    "signed_finite_half_midpoint_and_adjacent_single_casts": 190458,
+    "signed_half_overflow_boundary_casts": 6,
+    "actual_nonfinite_overflow_casts_not_certifiable": 4,
+    "zero_signs_checked": true
+  },
+  "arithmetic": {
+    "float16": {
+      "add": {
+        "exact_RNE_raw_comparisons": 1596,
+        "actual_overflows_unresolved": 4,
+        "zero_denominator_nonfinite_unresolved": 0
+      },
+      "mul": {
+        "exact_RNE_raw_comparisons": 1494,
+        "actual_overflows_unresolved": 106,
+        "zero_denominator_nonfinite_unresolved": 0
+      },
+      "div": {
+        "exact_RNE_raw_comparisons": 1428,
+        "actual_overflows_unresolved": 124,
+        "zero_denominator_nonfinite_unresolved": 48
+      },
+      "addcmul_value_1": {
+        "single_FMA_then_storage_RNE_raw_comparisons": 966,
+        "actual_overflows_unresolved": 66,
+        "differs_from_direct_half_FMA_in_sample": 0
+      }
+    },
+    "float32": {
+      "add": {
+        "exact_RNE_raw_comparisons": 1598,
+        "actual_overflows_unresolved": 2,
+        "zero_denominator_nonfinite_unresolved": 0
+      },
+      "mul": {
+        "exact_RNE_raw_comparisons": 1535,
+        "actual_overflows_unresolved": 65,
+        "zero_denominator_nonfinite_unresolved": 0
+      },
+      "div": {
+        "exact_RNE_raw_comparisons": 1433,
+        "actual_overflows_unresolved": 119,
+        "zero_denominator_nonfinite_unresolved": 48
+      },
+      "addcmul_value_1": {
+        "single_FMA_then_storage_RNE_raw_comparisons": 990,
+        "actual_overflows_unresolved": 42,
+        "differs_from_direct_half_FMA_in_sample": 0
+      }
+    }
+  },
+  "counterexamples": {
+    "positive_separate_half_multiply_add": {
+      "inputs": [
+        "1025/1024",
+        "1025/1024",
+        "1/2048"
+      ],
+      "separate_output_bits": "0x3c02",
+      "addcmul_output_bits": "0x3c03"
+    },
+    "positive_half_addcmul_double_rounding": {
+      "inputs": [
+        "1027/1024",
+        "3/2",
+        "1/16777216"
+      ],
+      "actual_bits": "0x3e04",
+      "ideal_single_round_half_FMA_bits": "0x3e05",
+      "actual_equals_single_FMA_then_half": true
+    },
+    "positive_division_operand_residence": {
+      "numerator": 7,
+      "denominator": 12,
+      "device_tensor_divisor_bits": "0x3f155555",
+      "CPU_scalar_divisor_bits": "0x3f155556",
+      "scalar_matches_rounded_reciprocal_then_multiply": true
+    },
+    "stored_mass_normalization": {
+      "masses": [
+        "1",
+        "1/16777216"
+      ],
+      "exact_stored_mass_total": "16777217/16777216",
+      "rounded_device_normalizer": "1",
+      "raw_division_outputs_sum_exactly": "16777217/16777216",
+      "stored_mass_distribution_differs_from_raw_division_outputs": true
+    }
+  },
+  "dispatch": {
+    "autocast_float32_input_observed_outputs": {
+      "elementwise_SUM": "torch.float32",
+      "elementwise_PRODUCT": "torch.float32",
+      "reduction_SUM": "torch.float32",
+      "matrix_multiply": "torch.float16"
+    },
+    "actual_explicit_half_arithmetic_executed_elsewhere_in_audit": true,
+    "tested_min_subnormal_operations": {
+      "float16": {
+        "min_subnormal_times_device_one_bits": 1,
+        "min_subnormal_plus_itself_bits": 2
+      },
+      "float32": {
+        "min_subnormal_times_device_one_bits": 1,
+        "min_subnormal_plus_itself_bits": 2
+      }
+    }
+  },
+  "not_closed": [
+    "untested kernels, tensor shapes, compiler fusion or parallel reduction orders",
+    "all-format/all-input arithmetic correctness",
+    "GPU input FTZ/DAZ or IEEE flags in general",
+    "complete continuous AMP learners, same-path persistence and Runtime install",
+    "ERC-1 physical device ownership or model-science release"
+  ]
+}

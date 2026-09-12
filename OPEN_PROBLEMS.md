@@ -24,6 +24,13 @@ installation. CPU equality or a reference crossing cannot discharge them.
 The supporting CPU results below retain their individual scopes; broader
 optional strategy/information classes do not reopen this reference release.
 
+The first actual device audit now fixes concrete lowering hazards:
+[`ACTUAL_CUDA_PRECISION.md`](theory/proofs/ACTUAL_CUDA_PRECISION.md). Autocast
+does not lower the tested elementwise SUM/PRODUCT; half addcmul double
+rounding and host-scalar division have exact positive counterexamples.
+Continue into the continuous owned AMP learner implementation using explicit
+per-stage arithmetic. More isolated primitive cases are not a release goal.
+
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 
 **Why it matters.** The frozen foundation is only useful scientifically if the actual Compiler optimizes the same object. Most historical FP failures came from a correct local theorem being embedded in a smaller/different executable system.

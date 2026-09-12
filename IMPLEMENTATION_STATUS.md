@@ -29,6 +29,14 @@ now the active frontier: actual AMP trajectories, resource ownership,
 same-path persistence and structural-boundary installation. Foundation R4
 and ERC-1 remain unchanged; static special cases stay parked.
 
+Actual CUDA correctness diagnostics now execute on RTX 3090. The
+[`primitive audit`](scripts/audit_cuda_primitives.py) checks all finite half
+encodings, every half conversion cell's single midpoint/neighbours and
+11,040 finite arithmetic results. It reproduces positive double-rounding,
+contraction, divisor-residence and readout differences; see
+[`ACTUAL_CUDA_PRECISION.md`](theory/proofs/ACTUAL_CUDA_PRECISION.md).
+This closes a finite diagnostic, not an owned AMP learner or target gate.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  

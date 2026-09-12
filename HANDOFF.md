@@ -71,6 +71,17 @@ strategy/value optimality, optional unimplemented interfaces, target AMP or
 cross-root error control. Do not add static cases or new reference release
 prerequisites merely to defer actual device work.
 
+Actual RTX 3090 primitive execution has now started. Read
+[`ACTUAL_CUDA_PRECISION.md`](theory/proofs/ACTUAL_CUDA_PRECISION.md) and run
+`scripts/audit_cuda_primitives.py`. Exact positive witnesses distinguish
+separate half operations, float32 FMA followed by half storage, and ideal
+one-round half FMA. A CPU-scalar divisor changes float32 division to a
+reciprocal/multiply path. Autocast alone leaves native elementwise operations
+float32. The audit checks all 63,488 finite half roundtrips, 190,464 cast
+boundary cases and 11,040 finite arithmetic results. These diagnostics
+provide no Runtime authority; complete owned AMP learners and their
+same-path evidence/install chain remain the active implementation work.
+
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
 observe and commit. `OnlineContract.float64` fixes tolerances and the scalar
