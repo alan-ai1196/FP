@@ -1933,3 +1933,65 @@ Attack that acquisition/construction problem, then final reference integration
 and actual target AMP before RTX 3090 science. Optional universal strategies,
 quotient implementations or restarted families do not become prerequisites
 to this single-root reference claim. Foundation/ERC-1 remain frozen.
+
+## 66. A saturated empirical upper unlocks the owned hierarchy gate (2026-09-13)
+
+The n=32 hierarchy cannot be recovered by interpreting a hand-written
+candidate as the whole native class. Literal complete construction also
+cannot fit its finite work declaration: the broad registered caps contain
+at least 2^6540 source-only program strings, as well as full pair lookup.
+The useful escape is a stronger comparison bound, not different semantics.
+
+For the existing frozen-endpoint objective, identical complete source rows
+have identical predictions. The saturated multinomial likelihood therefore
+bounds every categorical predictor, hence every native constructor endpoint.
+An actual owned feasible witness attaining it closes the whole class's
+empirical maximum. Machine v9 independently recomposes that upper from
+retained observations and rechecks the witness's class/frame, initializer
+or executed profile and actual current score. Its separate bounded proof
+does not assert that unvisited programs were constructed. Both proof types
+continue through the same fresh-evidence and CPU installation requirements.
+
+The registered empirical relation solver receives aligned observable token
+atoms, never hidden groups. Majority constraints propose group SUMs and
+pair PRODUCTs using existing initialized values. It retains all counts,
+components and arbitrary component-root flips. A missed upper remains
+UNRESOLVED; the preferred proposal shape never narrows the decision class.
+
+The larger execution exposed needless repeated encoding of unchanged exact
+range tables. Their premises are the fixed program/source-domain contract
+and theta, with all legal delayed values already enclosed. Keeping the same
+owned bound when theta agrees is sound while the actual delayed queues,
+gradients and optimizer counters change. Changed theta still recomputes and
+allocates before releasing the old bound. This is physical object retention,
+not whole-state equivalence. A recurrent case and post-allocation failure
+test check the distinction.
+
+An initial 310-event-update-unit diagnostic timed out after 30 minutes with
+no completed Runtime report. The passing result is a new immutable run with
+unit ten and the range-retention change, not a continuation or borrowed
+evidence from that failed root. These different registrations do not form
+a matched timing benchmark.
+
+The actual bounded n=32 run now receives 310 training labels, constructs a
+74-node graph with six SUMs/four PRODUCTs, checks all 1,024 token pairs,
+installs at cursor 330 and continues to the sealed cursor 622. Independent
+replay checks 1,963 binary64 phases. The 1 GiB job exits successfully with
+peak process commitment 333,139,968 bytes; peak owned reference payload is
+65,266,182 bytes. Exact audits additionally cover 18,225 rational comparisons,
+218 independently enumerated native programs, all 16 four-token assignments,
+real profile endpoints and eight injected authority/resource/numerical faults.
+
+The strongest lesson is a negative one alongside the successful construction.
+A five-node zero-PRODUCT program ties at the same train optimum. Two
+disconnected latent worlds have identical train records and different unseen
+relations. Even a connected but wrong empirical assignment attains the train
+upper; subsequent real protocol events can end without crossing or install.
+The existing sharp full-uniform SUM envelope remains the strong broader-task
+control, not a claim inferred from the training path. No new forcing,
+population-identification or deterministic-tape freshness theorem is asserted.
+
+Read `theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md` and the minimal
+`FP_REFERENCE_ACCELERATION_AUDIT.json`. Gate 17 now has current owned CPU
+evidence. Complete release-revision integration remains before actual AMP
+and RTX 3090 science. Foundation/ERC-1 stay frozen and static families parked.

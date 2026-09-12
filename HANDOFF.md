@@ -8,7 +8,7 @@ The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
 - **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; do not extend static cases or chase their remaining constants before Runtime, AMP and device experiments.
-- **Reference Compiler implementation not frozen.** The owned endpoint now reaches finite CPU run closure. The current 47-gate mapping identifies hierarchical anti-unigram discovery and final reference integration checks before target AMP.
+- **Reference Compiler implementation not frozen.** Owned 32-token hierarchical discovery now reaches fresh paired CPU evidence, installation and finite run closure. Final reference integration checks remain before target AMP.
 - **Science HOLD.** Do not start new RTX3090/model-science runs yet.
 
 The current research direction is fixed: complete `ReferenceCompilerRuntime`,
@@ -21,7 +21,7 @@ Current executable progress: `src/reference_compiler/fp_reference/runtime.py`
 now runs owned native construction, registered profile replay, exact ordinary
 learning, causal source reads and registered revealed-data queries through
 the same public endpoint. It also executes complete finite ordered native
-search and issues one tightly scoped reference comparison proof.
+search and issues explicitly scoped reference comparison proofs.
 It now also owns fresh **reference** persistence: admission before context,
 sealed paired scores, complete continuous learners, guarded lower wealth
 and global alpha that cannot be refunded or inherited after a rebuild.
@@ -35,9 +35,25 @@ before interpreting that proof: it optimizes fixed-state empirical CE over
 the registered initializer/profile endpoints plus the actual deployed
 baseline, not all values or future continuations. Read the current
 [47-gate mapping](docs/REFERENCE_RELEASE_GATE_MAP.md) before adding release
-requirements. The owned run registration and CPU terminal report now execute;
-hierarchical discovery without a latent-group oracle remains a specific
-reference obligation. Actual target AMP follows reference closure.
+requirements. The owned run registration and CPU terminal report execute.
+Machine v9 also closes the hierarchical gate through a paid empirical-upper
+solver; read [`SATURATED_REFERENCE_CLASS_BOUND.md`](theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md)
+and `scripts/audit_reference_acceleration.py`. From 310 ordinary labels,
+the n=32 Runtime proposes native group SUMs/pair PRODUCTs, checks 1,024
+contexts, installs at 330 and seals at 622 in an actual 1 GiB job. Its 1,963
+binary64 phases have an independent oracle. The entire grammar remains the
+decision class, with at least 2^6540 source-only strings; one evaluated
+witness attains the categorical empirical upper. `BoundedReferenceProof`
+never asserts that all those programs were constructed.
+
+Keep the negative controls: a cheaper zero-PRODUCT graph ties on the train
+path; disconnected components have unidentifiable relative flips; even
+connected empirical majorities can fit the wrong latent grouping. Train
+optimality is neither structural forcing nor fresh evidence. Unchanged
+exact theta now preserves its already owned whole-domain range object;
+changing theta recomputes/replaces it before release. All learner/optimizer
+and delayed-state histories remain distinct and retained. Final reference
+integration is next; actual target AMP follows reference closure.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -206,9 +222,9 @@ Read [`OWNED_REFERENCE_RUN.md`](theory/proofs/OWNED_REFERENCE_RUN.md) and run
 cursor 22, including in an actual 64 MiB process with checked final exit.
 
 The [47-gate crosswalk](docs/REFERENCE_RELEASE_GATE_MAP.md) is an evidence map,
-not 47 passing flags. Gate 17 still needs actual owned hierarchical discovery;
-the historical 32-token theorem audit and primitive scalar search do not
-jointly supply that execution. Gates 16/28–30 require actual target AMP after
+not 47 passing flags. Gate 17 now has the actual n=32 owned execution and
+negative controls described above; final reference integration remains.
+Gates 16/28–30 require actual target AMP after
 reference closure. Do not expand static cases or invent optional universal
 policy, quotient or cross-root protocols as prerequisites for this scope.
 

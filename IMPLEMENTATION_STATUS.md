@@ -596,7 +596,7 @@ program. The subsequent run/report and gate mapping are described below.
 
 ### Owned finite run and current release map (2026-09-12)
 
-Current machine `packed-reference-payload-v8` assembles and pays for one
+The run protocol introduced in machine v8 assembles and pays for one
 immutable aggregate reference manifest, including initial Program, semantic,
 data, value, resource, host, policy and explicit CPU arithmetic coordinates.
 Changing a budget can change its own paid encoding cost; the resource-boundary
@@ -624,13 +624,40 @@ with actual process identity and successful exit checked externally.
 [`REFERENCE_RELEASE_GATE_MAP.md`](docs/REFERENCE_RELEASE_GATE_MAP.md) now
 maps all 47 historical obligations to specific endpoint/scoped-theorem
 evidence or an explicit open/target requirement. It grants no aggregate pass.
-Gate 17 requires owned hierarchical anti-unigram discovery without a supplied
-latent partition. The current standalone identifiability result and scalar
-compound search do not close it. Final reference integration checks remain;
+The v9 integration below supplies owned hierarchical anti-unigram discovery
+without a supplied latent partition. Final reference integration checks remain;
 actual target gates 16/28–30 and the target part of atomicity follow reference
 closure. Manual control, absent host binding and unsupported information
 interfaces retain their explicit partial scope. Optional broader classes
 are not automatically new release prerequisites. Foundation/ERC-1 stay frozen.
+
+### Empirical-upper closure and owned hierarchy (2026-09-13)
+
+Machine v9 adds an independently verified saturated multinomial upper for
+the existing frozen-endpoint empirical objective. An actual feasible native
+initializer/profile witness attaining it proves a maximum over the full
+registered grammar plus baseline. `BoundedReferenceProof` and
+`REFERENCE_CLASS_BOUNDED` distinguish this fact from executed enumeration;
+no `CERTIFIED_COMPLETE` is added. The new mode reaches the same owned policy,
+separate fresh evidence, CPU install and terminal report paths.
+
+The n=32 endpoint receives only ordinary token bytes/labels, derives native
+group SUMs and PRODUCT cells, checks all 1,024 source contexts, installs at
+330 and seals at 622. Independent replay checks 1,963 binary64 phases and
+the real 1 GiB job exits successfully. Exact count-table, 218-program
+enumeration, all 16 four-token assignments, actual profile and forged-proof
+tests accompany it. Disconnected worlds, a five-node zero-PRODUCT train tie
+and consistent-but-false empirical relations bound the interpretation.
+
+This larger execution also required retaining the same actual range buffer
+when its immutable program/domain and exact theta agree. Changed theta
+still triggers full recomputation and paid replacement before old release;
+delays/gradients/optimizer histories are never quotiented. A recurrent case
+and post-allocation failure test exercise the ownership invariant. Read
+`theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md` and
+`evidence/minimal/FP_REFERENCE_ACCELERATION_AUDIT.json`. Gate 17 now has
+current reference evidence. Final release-revision integration remains;
+Foundation/ERC-1 are unchanged, Runtime NOT FROZEN and science HOLD.
 
 ## 4. Required closure tests
 

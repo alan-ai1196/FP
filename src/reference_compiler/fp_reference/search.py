@@ -15,6 +15,11 @@ from .learner import ReferenceLearnerState
 from .native_search import GrammarCursor, GrammarLimits
 from .program import Program, name
 from .semantics import _operation, evaluate
+from .empirical_bound import EmpiricalUpper
+from .relation_proposal import RelationSourceSpec, RelationProposal
+
+
+REFERENCE_SELECTION_COMPLETE = frozenset(('REFERENCE_CLASS_EXHAUSTED', 'REFERENCE_CLASS_BOUNDED'))
 
 
 @dataclass(frozen=True)
@@ -24,6 +29,7 @@ class ReferenceSearchSpec:
     observation_ids: tuple[str, ...]
     profile_id: str | None = None
     objective_id: str = 'fixed-state-empirical-ce-on-logged-contexts-v1'
+    relation_sources: RelationSourceSpec | None = None
 
     def __post_init__(self):
         name(self.search_name, 'reference search name')
@@ -37,6 +43,10 @@ class ReferenceSearchSpec:
             name(self.profile_id, 'reference value constructor profile')
         if self.objective_id != 'fixed-state-empirical-ce-on-logged-contexts-v1':
             raise ContractError('unimplemented reference objective')
+        if self.relation_sources is not None:
+            if type(self.relation_sources) is not RelationSourceSpec:
+                raise ContractError('relation acceleration requires immutable observable source alignment')
+            self.relation_sources.__post_init__()
 
     def validate(self, data: DataContract, profiles, construction_limits):
         if any(getattr(self.grammar, key) > construction_limits[key] for key in construction_limits):
@@ -46,6 +56,10 @@ class ReferenceSearchSpec:
             raise ContractError('reporting or undeclared labels cannot drive reference search')
         if self.profile_id is not None and self.profile_id not in {p.profile_id for p in profiles}:
             raise ContractError('search refers to an unregistered value constructor')
+        if self.relation_sources is not None:
+            declared = {read.source_id for read in data.source_reads}
+            if any(atom not in declared for pair in self.relation_sources.token_atoms for atom in pair):
+                raise ContractError('relation acceleration names an undeclared observable source')
 
 
 @dataclass(frozen=True)
@@ -81,6 +95,8 @@ class ReferenceSearchSession:
     generation: int
     proof_id: str | None = None
     reason: str = ''
+    empirical_upper: EmpiricalUpper | None = None
+    relation_proposal: RelationProposal | None = None
 
 
 @dataclass(frozen=True)

@@ -36,7 +36,7 @@ L(g) = product_i p_(g,V(g))(target_i | logged_sources_i),
 L(B) = product_i p_B(target_i | logged_sources_i).
 ```
 
-The sole issued proposition is that the retained live winner attains the
+The `ReferenceClassProof` proposition is that the retained live winner attains the
 maximum of `L` on **`{B} union {(g,V(g)): g in G}`**, and that every member's
 construction, whole-domain range check and objective computation completed
 in this execution under the supported reference limits. Including `B` is
@@ -56,6 +56,13 @@ It does not say that every historical candidate remains simultaneously
 resident. Nonwinners may retire after their comparison evidence and code
 receive actual retained ownership. It grants no behavioral equivalence,
 fresh persistence, AMP, physical installation or full ERC-1 authority.
+
+Machine v9 also implements a separate
+[`BoundedReferenceProof`](SATURATED_REFERENCE_CLASS_BOUND.md): an actually
+owned feasible witness attains a universal empirical upper over arbitrary
+categorical predictions. That proof can close the same optimization class
+without constructing every member. It never inherits this document's
+exhaustive-construction assertion or `program_count` interpretation.
 
 ## 2. Complete ordered grammar
 

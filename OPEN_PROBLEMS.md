@@ -77,8 +77,13 @@ or full host/device accounting claim.
 
 The subsequent paragraphs record the now implemented host, policy and run
 binding. The current [47-gate map](docs/REFERENCE_RELEASE_GATE_MAP.md) identifies
-hierarchical discovery without a latent-group oracle and final reference
-integration checks, followed by actual target AMP/installation. Raw revealed
+final reference integration checks, followed by actual target AMP/installation.
+Machine v9 now executes the hierarchical n=32 case from ordinary labels,
+with an independently verified empirical upper over the full native class,
+fresh paired CPU evidence, installation and run closure. Its train-tied
+SUM-only and false-identification controls prohibit a structural-forcing or
+population claim. Read `theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md`.
+Raw revealed
 train/online access is explicitly registered; query-only and reporting-only
 execution remain outside this supported class. No partial endpoint result is
 a complete release certificate.
@@ -136,10 +141,9 @@ and spent alpha remain retained. Report failure leaves an already completed
 event/install intact but cannot yield a completed run. Read
 `theory/proofs/OWNED_REFERENCE_RUN.md` and the explicit 47-gate crosswalk.
 
-The immediate reference research gap is gate 17: legally acquire the hidden
-partition from ordinary data and construct useful native hierarchy through
-the owned endpoint, with disconnected-data and strong-baseline controls.
-Then complete the release-revision integration checks. Actual AMP, device
+The immediate reference obligation is now release-revision integration.
+Gate 17 has actual owned n=32 execution, disconnected-data controls and a
+strong empirical upper without a supplied latent partition. Actual AMP, device
 resources and target installation follow reference closure. Claims of CPU
 time hard caps, shared-platform memory, alternative information interfaces,
 or families spanning new Runtime roots require their own support if invoked;

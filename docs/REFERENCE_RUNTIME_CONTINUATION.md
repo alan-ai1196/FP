@@ -154,12 +154,40 @@ still exposed by snapshots. Work and peaks are never refunded. A terminal
 diagnostic-retention failure is explicitly outside this partial payload
 model and cannot activate a proof.
 
-The success result is `REFERENCE_CLASS_EXHAUSTED`. `programs_compared`
+The exhaustive success result is `REFERENCE_CLASS_EXHAUSTED`. `programs_compared`
 counts successful exact comparisons; `unresolved_programs` counts visited
 members without one. Neither result nor proof authorizes arbitrary values,
 all legal future continuations, a population optimum, fresh persistence,
 equivalence, AMP or installation. No full Compiler `CERTIFIED_COMPLETE`
 is emitted.
+
+Machine v9 additionally supports `ReferenceSearchSpec.relation_sources`, an
+immutable alignment of observable token atoms for the empirical binary-relation
+proposal solver. The decision class is still the full native grammar. From
+owned complete source records Runtime computes and independently verifies
+the all-categorical empirical likelihood upper. If an actual initializer or
+profile endpoint attains it, `REFERENCE_CLASS_BOUNDED` issues a distinct
+`BoundedReferenceProof`. Its `evaluated_programs` counts only compared
+witnesses; no cursor exhaustion or complete construction is asserted.
+Baseline attainment can close this comparison with zero new candidates.
+
+The policy, CPU install and historical run report accept this exact comparison
+scope while keeping all fresh-evidence and actual-state requirements. A
+proposal that misses the upper leaves the unvisited grammar UNRESOLVED.
+The solver retains raw observations, complete counts, empirical constraints
+and every component's arbitrary root choice; it cannot identify unseen
+relations or population groups by certifying train likelihood. Read
+[`SATURATED_REFERENCE_CLASS_BOUND.md`](../theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md)
+and run `python -B scripts/audit_reference_acceleration.py` for the integrated
+bound, hierarchy and false-identification controls.
+
+The ordinary v9 transition also retains the existing exact range buffer
+when theta agrees with its prior state. Its other premises are immutable:
+Program, full source domain and declared delayed-state invariant. Actual
+delayed queues, gradients and optimizer state may change and remain fully
+retained. Changed theta forces full recomputation and a paid new buffer
+before superseded ownership is released. No whole-state equivalence or
+resource-history refund is inferred from this limited dependency check.
 
 ## Information is declared, including what is not hidden
 

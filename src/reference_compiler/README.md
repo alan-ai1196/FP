@@ -220,10 +220,21 @@ event/install or become a successful run. See
 [`OWNED_REFERENCE_RUN.md`](../../theory/proofs/OWNED_REFERENCE_RUN.md) and run
 `python -B scripts/audit_reference_run.py`.
 
+Machine v9 adds a checked all-categorical empirical upper and a native
+relation proposal from ordinary labels. An owned feasible endpoint attaining
+the upper closes the full grammar's empirical optimum through a distinct
+`BoundedReferenceProof`, without asserting executed enumeration. Same-theta
+ordinary successors retain their actual whole-domain range object; changed
+theta recomputes/replaces it, preserving all learner/history coordinates.
+The n=32 bounded CPU audit installs at 330 and seals at 622, with 1,963
+independent binary64 phase checks. Read
+[`SATURATED_REFERENCE_CLASS_BOUND.md`](../../theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md)
+and run `python -B scripts/audit_reference_acceleration.py`.
+
 The [47-gate mapping](../../docs/REFERENCE_RELEASE_GATE_MAP.md) distinguishes
 current reference evidence, scoped theorems, absent bypass authority and
-target AMP obligations. Owned hierarchical anti-unigram discovery (gate 17)
-and final reference integration checks remain before target AMP execution.
+target AMP obligations. Gate 17 now has current owned evidence; final
+reference integration checks remain before target AMP execution.
 The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current

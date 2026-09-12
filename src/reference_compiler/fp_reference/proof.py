@@ -63,3 +63,43 @@ def verify_maximum(claimed: F, alternatives: tuple[F, ...], *, bit_limit: int):
         right = _operation(F(value.numerator), F(claimed.denominator), multiply=True, bit_limit=bit_limit)
         if left < right:
             raise ContractError('the claimed reference winner is beaten by a retained alternative')
+
+
+@dataclass(frozen=True)
+class BoundedReferenceProof:
+    """A feasible owned witness attains a universal empirical objective upper.
+
+    Unlike ReferenceClassProof, this does NOT assert that every member was
+    constructed or that the syntactic cursor exhausted the native grammar.
+    The declared class remains complete; unvisited members are bounded by
+    the explicitly checked larger categorical prediction class.
+    """
+    proof_id: str
+    chi: str
+    runtime_id: str
+    issued_revision: int
+    search_id: str
+    decision_class_id: str
+    ordinary_cursor: int
+    base_lineage_id: str
+    winner_lineage_id: str
+    evaluated_programs: int
+    best_likelihood: F
+    kind: str = field(default='native-reference-class-and-baseline-saturated-upper-optimum-v1', init=False)
+    authority_scope: str = field(default='historical empirical optimum via universal source-context upper and owned feasible witness; not exhaustive construction, future optimality or installation authority', init=False)
+
+    def __post_init__(self):
+        self.validate()
+
+    def validate(self):
+        for key in ('proof_id', 'chi', 'runtime_id', 'search_id', 'decision_class_id',
+                    'base_lineage_id', 'winner_lineage_id'):
+            name(getattr(self, key), f'bounded reference proof {key}')
+        for key in ('issued_revision', 'ordinary_cursor', 'evaluated_programs'):
+            natural(getattr(self, key), f'bounded reference proof {key}')
+        if type(self.best_likelihood) is not F or not 0 < self.best_likelihood <= 1:
+            raise ContractError('bounded reference proof requires an exact positive likelihood at most one')
+        if (type(self.kind) is not str or self.kind != 'native-reference-class-and-baseline-saturated-upper-optimum-v1'
+                or type(self.authority_scope) is not str or self.authority_scope !=
+                'historical empirical optimum via universal source-context upper and owned feasible witness; not exhaustive construction, future optimality or installation authority'):
+            raise ContractError('bounded reference proof has a different proposition or authority scope')

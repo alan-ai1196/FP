@@ -35,8 +35,10 @@ from .float64_range import enclose_float64, enclosure_operations, stored_probabi
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
 from .ingress import IngressIdentity, IngressSnapshot, IngressResult, control_payload, read_control, decode_context
 from . import native_search as grammar
-from .proof import ReferenceClassProof, verify_maximum
-from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, compare_likelihoods, likelihood
+from .proof import ReferenceClassProof, BoundedReferenceProof, verify_maximum
+from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, REFERENCE_SELECTION_COMPLETE, compare_likelihoods, likelihood
+from .empirical_bound import empirical_upper, verify_empirical_upper
+from .relation_proposal import relation_proposal
 from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
 
@@ -263,7 +265,7 @@ class RuntimeSnapshot:
     revision: int
     next_search: int
     searches: tuple[ReferenceSearchSession, ...]
-    reference_proofs: tuple[ReferenceClassProof, ...]
+    reference_proofs: tuple[ReferenceClassProof | BoundedReferenceProof, ...]
     next_persistence: int
     alpha_spent: F
     alpha_allocations: tuple[AlphaAllocation, ...]
@@ -340,7 +342,7 @@ class ReferenceCompilerRuntime:
         self._revision = 0
         self._next_search = 0
         self._searches: dict[str, ReferenceSearchSession] = {}
-        self._reference_proofs: dict[str, ReferenceClassProof] = {}
+        self._reference_proofs: dict[str, ReferenceClassProof | BoundedReferenceProof] = {}
         self._next_persistence = 0
         self._alpha_spent = F(0)
         self._alpha_allocations: list[AlphaAllocation] = []
@@ -416,7 +418,8 @@ class ReferenceCompilerRuntime:
             historical = {proof.search_id: proof for proof in self._reference_proofs.values()}
             decisions = tuple(RunDecision(s.search_id, s.decision_class_id, s.spec,
                 s.ordinary_cursor, s.base_lineage_id, s.status,
-                'HISTORICAL_REFERENCE_CLASS_EXHAUSTED' if s.search_id in historical else 'UNRESOLVED',
+                ('HISTORICAL_REFERENCE_CLASS_BOUNDED' if type(historical.get(s.search_id)) is BoundedReferenceProof
+                 else 'HISTORICAL_REFERENCE_CLASS_EXHAUSTED') if s.search_id in historical else 'UNRESOLVED',
                 historical.get(s.search_id))
                 for s in self._searches.values())
             stages = tuple((i, stage.status if stage.status in TERMINAL_STAGES else 'UNRESOLVED',
@@ -508,7 +511,7 @@ class ReferenceCompilerRuntime:
                     self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor, reason=opened.reason)
                     return
                 selected = self.advance_reference_search(opened.search_id, transitions=step.search_transitions)
-                if selected.status != 'REFERENCE_CLASS_EXHAUSTED':
+                if selected.status not in REFERENCE_SELECTION_COMPLETE:
                     # An exhausted policy allowance is not grammar exhaustion.
                     # End the actual owned frontier; no hidden caller can resume it.
                     if self._searches[opened.search_id].status == 'RUNNING':
@@ -1236,15 +1239,28 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     self._event_traces[-1] = trace
                     trace_object = self._machine.realize(f'{prefix}:committed', 'after_optimizer_phase', trace, self._chi)
                     self._allocate(self._data_owner, (trace_object,))
-                    evidence = self._range(program, committed.theta, f'{candidate}:commit:{cursor+1}')
+                final_state = committed if committed is not None else observed
+                # Whole-domain bounds depend on this fixed Program/contract
+                # and theta, not the changing optimizer accumulator or actual
+                # delayed queue. They already quantify over every registered
+                # source point and the declared delayed invariant. Preserve
+                # the actual owned proof object when those dependencies agree.
+                self._event_work(state, program.slot_count+1, 'range-dependency-check')
+                unchanged_range = final_state.theta == state.learner.theta
+                if not unchanged_range:
+                    evidence = self._range(program, final_state.theta, f'{candidate}:commit:{cursor+1}')
                     if not self._safe(evidence):
                         raise ArithmeticUnresolved('registered optimizer successor lacks a sufficient full-domain range/invariant bound')
-                final_state = committed if committed is not None else observed
                 values = self._machine.realize(f'{prefix}:values', 'ordinary_reference_state', self._learner_payload(final_state, floating_successor), state.program_id)
-                checked = self._machine.realize(f'{prefix}:range', 'current_range_evidence', evidence, state.program_id)
-                self._allocate(state.physical_owner, (values, checked))
+                range_id = state.object_ids[2]
+                objects = (values,)
+                if not unchanged_range:
+                    checked = self._machine.realize(f'{prefix}:range', 'current_range_evidence', evidence, state.program_id)
+                    range_id = checked.spec.object_id
+                    objects += (checked,)
+                self._allocate(state.physical_owner, objects)
                 staged.append(replace(state, learner=final_state, float64=floating_successor, range_evidence=evidence,
-                                      object_ids=(state.object_ids[0], values.spec.object_id, checked.spec.object_id)))
+                                      object_ids=(state.object_ids[0], values.spec.object_id, range_id)))
             # Evidence uses the sealed pre-target probabilities, only after
             # every learner successor has completed its registered phases.
             # A numerical evidence failure ends that identity; it cannot skip
@@ -1253,7 +1269,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             # Publish every successor together only after every required phase
             # and coexistence check succeeded. Failed work/targets stay retained.
             releases = tuple((self._candidates[s.candidate_id].physical_owner, object_id, 1)
-                             for s in staged for object_id in self._candidates[s.candidate_id].object_ids[1:])
+                             for s in staged for object_id in self._candidates[s.candidate_id].object_ids[1:]
+                             if object_id not in s.object_ids)
             self._ledger.release_many(releases)
             live = self._ledger.snapshot()['objects']
             self._buffers = {key: value for key, value in self._buffers.items() if key in live}
@@ -1708,11 +1725,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
 
     @staticmethod
     def _search_result(session: ReferenceSearchSession) -> ReferenceSearchResult:
-        status = session.status if session.status == 'REFERENCE_CLASS_EXHAUSTED' else 'UNRESOLVED'
+        status = session.status if session.status in REFERENCE_SELECTION_COMPLETE else 'UNRESOLVED'
         compared = sum(row.status == 'COMPARED_REFERENCE' for row in session.rows)
         return ReferenceSearchResult(status, session.search_id, session.decision_class_id, compared,
                                      session.unresolved, session.best_candidate_id, session.best_likelihood,
-                                     session.proof_id if status == 'REFERENCE_CLASS_EXHAUSTED' else None,
+                                     session.proof_id if status in REFERENCE_SELECTION_COMPLETE else None,
                                      session.reason or 'a live native region remains; no global or installation authority')
 
     def start_reference_search(self, search_name: str) -> ReferenceSearchResult:
@@ -1872,6 +1889,112 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         self._reference_proofs[proof_id] = proof
         return session
 
+    def _advance_bounded_search(self, session: ReferenceSearchSession) -> ReferenceSearchResult:
+        """One paid data-derived proposal and an independent universal upper.
+
+        This solver never marks the unexecuted syntax cursor exhausted. Its
+        only completion route is a feasible actual endpoint attaining the
+        checked upper over a larger class of categorical predictions.
+        """
+        self._event_phase = 'searching'
+        try:
+            if session.cursor != grammar.GrammarCursor() or session.rows or session.empirical_upper is not None:
+                raise ContractError('bounded solver cannot resume an unrecorded partial action as fresh')
+            # Fixed conservative reference allowance for the bounded number
+            # of scans/counts/proposal/verification/packed-state copies in this
+            # phase. Constructor/profile work is charged separately below.
+            work = 4096+64*sum(len(value) for value in self._buffers.values())
+            self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
+            available = {record.observation_id: record for record in self._observations}
+            if any(key not in available for key in session.spec.observation_ids):
+                raise ProfileUnresolved('the bound requires all registered objective observations to be revealed')
+            records = tuple(available[key] for key in session.spec.observation_ids)
+            self._data_usage.record(records, 'proposal', f'{session.search_id}:empirical-upper', self._cursor)
+            upper = empirical_upper(records, self._contract.semantics, bit_limit=self._contract.reference_integer_bits)
+            session = replace(session, empirical_upper=upper)
+            session = self._save_search(session)
+            verify_empirical_upper(upper, records, self._contract.semantics, bit_limit=self._contract.reference_integer_bits)
+            if session.base_likelihood != upper.likelihood:
+                self._data_usage.record(records, 'proposal', f'{session.search_id}:relation-derivation', self._cursor)
+                proposal = relation_proposal(upper, self._contract.semantics, session.spec.grammar,
+                    self._contract.initializer_pattern, session.spec.relation_sources,
+                    bit_limit=self._contract.reference_integer_bits)
+                session = replace(session, relation_proposal=proposal)
+                session = self._save_search(session)
+                if proposal.program is not None:
+                    proposal.program.validate(self._contract.semantics)
+                    if not session.spec.grammar.admits(proposal.program):
+                        raise ContractError('proposal is outside the complete registered native class')
+                    updated, error = self._compare_native_program(session, proposal.program)
+                    fixed = replace(updated, rows=session.rows, best_candidate_id=session.best_candidate_id,
+                                    best_likelihood=session.best_likelihood, unresolved=session.unresolved)
+                    if (fixed != session or len(updated.rows) != len(session.rows)+1
+                            or updated.rows[:-1] != session.rows or updated.rows[-1].ordinal != session.cursor.emitted
+                            or updated.rows[-1].program != proposal.program):
+                        raise ContractError('bounded comparison changed its class/frame or substituted its executed proposal')
+                    session = updated
+                    session = self._save_search(session)
+                    if error is not None:
+                        raise error
+            if session.best_likelihood != upper.likelihood:
+                session = replace(session, status='UNRESOLVED', reason='native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved')
+                return self._search_result(self._save_search(session))
+
+            # Recheck the actual current witness and its constructor origin.
+            # The proposal's own status/group labels are not proof premises.
+            best = self._candidates.get(session.best_candidate_id)
+            base = self._candidates.get(session.base_lineage_id)
+            if (best is None or base is None or self._cursor != session.ordinary_cursor
+                    or self._deployed_id != session.base_lineage_id or base.learner != session.base_state
+                    or best.learner.cursor != self._cursor):
+                raise ContractError('bounded comparison changed its deployed or selected complete endpoint')
+            if best.candidate_id != base.candidate_id:
+                row = next((row for row in session.rows if row.candidate_id == best.candidate_id), None)
+                program = self._programs[best.program_id]
+                if (row is None or row.status != 'COMPARED_REFERENCE' or row.likelihood != session.best_likelihood
+                        or row.program_id != best.program_id or row.program != program or row.learner != best.learner
+                        or not session.spec.grammar.admits(program)):
+                    raise ContractError('bounded winner lacks its owned in-class construction row')
+                if session.spec.profile_id is None:
+                    expected = initial_state(program, self._contract.semantics,
+                        self._machine.initializer(program.slot_count, self._contract.initializer_pattern), self._cursor)
+                else:
+                    profile = self._profile_executions.get(best.candidate_id)
+                    if (profile is None or profile.status != 'PROFILED_REFERENCE'
+                            or profile.profile_id != session.spec.profile_id or profile.program_id != best.program_id
+                            or profile.candidate_id != best.candidate_id
+                            or profile.ordinary_cursor != self._cursor or profile.events_completed != profile.total_events):
+                        raise ContractError('bounded winner lacks its actual complete registered value profile')
+                    expected = profile.attached
+                if best.learner != expected:
+                    raise ContractError('bounded witness is outside its registered initializer/profile value path')
+            checked = self._score_reference(best, session.spec, f'{session.search_id}:verify-bounded-witness')
+            checked_base = self._score_reference(base, session.spec, f'{session.search_id}:verify-bounded-base')
+            verify_empirical_upper(upper, records, self._contract.semantics, bit_limit=self._contract.reference_integer_bits)
+            if checked != upper.likelihood or checked_base != session.base_likelihood:
+                raise ContractError('an independently checked endpoint does not attain the universal empirical upper')
+            proof_id = f'{session.search_id}:bounded-reference-proof'
+            proof = BoundedReferenceProof(proof_id, self._chi, self._runtime_id, self._revision, session.search_id,
+                session.decision_class_id, self._cursor, session.base_lineage_id, session.best_candidate_id,
+                len(session.rows), checked)
+            self._allocate(self._data_owner, (self._machine.realize(proof_id, 'bounded_reference_class_proof', proof, session.decision_class_id),))
+            session = replace(session, status='REFERENCE_CLASS_BOUNDED', proof_id=proof_id,
+                reason='owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed')
+            session = self._save_search(session)
+            self._reference_proofs[proof_id] = proof
+            return self._search_result(session)
+        except HostExecutionUnresolved:
+            raise
+        except MemoryError:
+            raise
+        except Exception as exc:
+            session = self._search_failure(session, exc)
+            if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved)):
+                raise
+            return self._search_result(session)
+        finally:
+            self._event_phase = 'idle'
+
     def advance_reference_search(self, search_id: str, *, transitions: int) -> ReferenceSearchResult:
         self._require_online()
         self._require_idle()
@@ -1894,6 +2017,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         if stale:
             session = self._search_failure(session, ProfileUnresolved('complete Runtime context changed outside this search prefix'), stale=True)
             return self._search_result(session)
+        if session.spec.relation_sources is not None:
+            # This registered solver has one bounded phase, admitted by any
+            # positive phase allowance. It is not one grammar emission or
+            # one free work unit: its scans/build/profile are paid below.
+            return self._advance_bounded_search(session)
         self._event_phase = 'searching'
         try:
             for _ in range(transitions):
@@ -1954,16 +2082,16 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
                 raise
 
-    def reference_class_proof(self, proof_id: str, *, decision_class_id: str) -> ReferenceClassProof:
+    def reference_class_proof(self, proof_id: str, *, decision_class_id: str) -> ReferenceClassProof | BoundedReferenceProof:
         name(proof_id, 'issued reference proof ID')
         proof = self._reference_proofs.get(proof_id)
         if proof is None:
             raise ContractError('no Runtime-issued reference proof with this identity')
         return self.verify_reference_class_proof(proof, decision_class_id=decision_class_id)
 
-    def verify_reference_class_proof(self, proof: ReferenceClassProof, *, decision_class_id: str) -> ReferenceClassProof:
+    def verify_reference_class_proof(self, proof: ReferenceClassProof | BoundedReferenceProof, *, decision_class_id: str) -> ReferenceClassProof | BoundedReferenceProof:
         name(decision_class_id, 'reference decision class ID')
-        if type(proof) is not ReferenceClassProof:
+        if type(proof) not in (ReferenceClassProof, BoundedReferenceProof):
             raise ContractError('a helper-created or altered object is not a Runtime-issued reference proof')
         proof.validate()
         if self._reference_proofs.get(proof.proof_id) != proof:
@@ -1971,7 +2099,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         session = self._searches.get(proof.search_id)
         if (proof.chi != self._chi or proof.runtime_id != self._runtime_id or proof.issued_revision != self._revision
                 or proof.decision_class_id != decision_class_id or session is None
-                or session.status != 'REFERENCE_CLASS_EXHAUSTED' or session.proof_id != proof.proof_id
+                or session.status != ('REFERENCE_CLASS_BOUNDED' if type(proof) is BoundedReferenceProof else 'REFERENCE_CLASS_EXHAUSTED')
+                or session.proof_id != proof.proof_id
                 or session.expected_revision != self._revision or self._event_phase != 'idle'):
             raise ContractError('reference proof has a different class, stale complete context or inactive issuance')
         return proof
@@ -2036,7 +2165,7 @@ after all fallible construction, checks and physical preparation complete.
                 raise ProfileUnresolved('no owned completed reference-class proposal')
             proof.validate()
             search = self._searches.get(proof.search_id)
-            if (search is None or search.status != 'REFERENCE_CLASS_EXHAUSTED' or search.proof_id != proof.proof_id
+            if (search is None or search.status not in REFERENCE_SELECTION_COMPLETE or search.proof_id != proof.proof_id
                     or proof.winner_lineage_id != candidate_id or candidate_id == self._deployed_id
                     or proof.base_lineage_id != self._deployed_id or search.best_candidate_id != candidate_id):
                 raise ProfileUnresolved('installation target is not the owned selected reference-class proposal')

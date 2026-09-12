@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "machine": "packed-reference-payload-v9",
+  "scope": "universal frozen-context empirical upper, owned native witness and bounded CPU hierarchy protocol",
+  "cases": {
+    "upper_audit": {
+      "two_context_count_tables": 225,
+      "exact_rational_prediction_comparisons": 18225,
+      "independent_proposition_and_numeric_type_refusals": 1575,
+      "erasing_source_distinction_can_make_false_upper_and_is_rejected": true
+    },
+    "baseline_exhaustive": {
+      "independently_enumerated_native_programs": 218,
+      "baseline_attains_upper_with_zero_new_candidates": true,
+      "syntax_not_claimed_exhausted": true
+    },
+    "connected_assignments": {
+      "all_four_token_hidden_assignments": 16,
+      "independent_complete_domain_predictions": 256,
+      "global_flip_invariance_including_empty_group": true
+    },
+    "profiles": {
+      "empirically_saturated": {
+        "profile_events": 30,
+        "independent_binary64_phase_checks": 130,
+        "search_status": "REFERENCE_CLASS_BOUNDED"
+      },
+      "biased": {
+        "profile_events": 30,
+        "independent_binary64_phase_checks": 130,
+        "search_status": "UNRESOLVED"
+      }
+    },
+    "identification_limits": {
+      "disconnected_indistinguishable_worlds_with_opposite_unseen_relation": 2,
+      "same_empirical_optimum_does_not_identify_relative_component_flip": true,
+      "cheaper_train_tied_zero_PRODUCT_actual_construction": {
+        "nodes": 5,
+        "sources": 3,
+        "state_reads": 0,
+        "SUMs": 2,
+        "PRODUCTs": 0,
+        "SUM_edges": 3,
+        "edges": 3,
+        "slots": 2,
+        "bindings": 0
+      },
+      "empirical_optimality_does_not_force_hierarchy": true,
+      "existing_full_uniform_task_Bayes_CE": 0.3250829733914482,
+      "existing_sharp_unrestricted_SUM_infimum_CE": 0.5091150769756967
+    },
+    "unresolved_cases": {
+      "unavailable_initializer_scale": {
+        "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+        "actually_compared": 0,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "insufficient_witness_grammar": {
+        "proposal_reason": "this native witness exceeds declared construction bounds; not an exclusion of the class",
+        "actually_compared": 0,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "no_finite_boundary_scale": {
+        "proposal_reason": "the empirical scale is a boundary limit, not a finite initialized value",
+        "actually_compared": 0,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "tied_relation": {
+        "proposal_reason": "an empirical relation is tied; no signed constraint is selected",
+        "actually_compared": 0,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "inconsistent_cycle": {
+        "proposal_reason": "the empirical majority constraints are inconsistent; other native programs remain unsearched",
+        "actually_compared": 0,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "heterogeneous_empirical_noise": {
+        "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+        "actually_compared": 1,
+        "search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved"
+      },
+      "full_range_persistence_bound_too_small": "historical empirical proof survives; alpha remains spent; no install",
+      "consistent_but_false_empirical_relations": "train upper attained; fresh evidence ends unresolved without crossing or installation"
+    },
+    "authority_adversaries": {
+      "changed_class_value_count_cross_root_and_stale_proofs_rejected": true,
+      "injected_failures": {
+        "raw_upper": "no false completion or install authority",
+        "wrong_witness": "no false completion or install authority",
+        "changed_class": "no false completion or install authority",
+        "retention": "no false completion or install authority",
+        "proof_publication": "no false completion or install authority",
+        "arithmetic": "no false completion or install authority",
+        "host": "no false completion or install authority",
+        "memory": "no false completion or install authority"
+      }
+    },
+    "range_residency": {
+      "same_theta_reuses_actual_range_buffer_without_new_lease": true,
+      "changed_theta_recomputes_and_replaces_before_old_release": true,
+      "changed_delayed_histories_under_same_whole_invariant": 3,
+      "failed_replacement_retains_old_root_and_new_paid_prefix": true
+    },
+    "bounded": {
+      "tokens": 32,
+      "ordinary_training_events": 310,
+      "optimizer_update_unit": 10,
+      "complete_domain_predictions_checked": 1024,
+      "native_graph": {
+        "nodes": 74,
+        "sources": 64,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 68,
+        "edges": 76,
+        "slots": 2,
+        "bindings": 0
+      },
+      "full_native_class_caps": {
+        "nodes": 1090,
+        "SUMs": 1030,
+        "PRODUCTs": 1028,
+        "edges": 4172,
+        "slots": 2
+      },
+      "source_only_class_cardinality_at_least_power_of_two": 6540,
+      "actually_evaluated_native_witnesses": 1,
+      "unexecuted_syntax_cursor_not_declared_exhausted": true,
+      "installed_at_cursor": 330,
+      "continued_after_install_and_sealed_at": 622,
+      "independent_binary64_phase_checks": 1963,
+      "peak_reference_payload_bytes": 65266182,
+      "not_claimed": "population identification, forced unique hierarchy, or actual target AMP",
+      "host": {
+        "process_id": 18456,
+        "creation_100ns": 134337041832929620,
+        "lifetime_process_commit_peak": 257863680,
+        "job_commit_peak": 259108864,
+        "process_user_100ns": 2483281250,
+        "process_kernel_100ns": 7031250
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 1073741824,
+        "peak_process_commit": 333139968,
+        "peak_job_commit": 334385152,
+        "user_100ns": 2506875000,
+        "kernel_100ns": 7343750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 18456,
+        "process_creation_100ns": 134337041832929620
+      }
+    }
+  },
+  "not_claimed": [
+    "all native members constructed",
+    "unique or resource-forced hierarchy",
+    "population identification from empirical majorities",
+    "deterministic tape proves stochastic freshness",
+    "complete Runtime release or actual target AMP"
+  ]
+}

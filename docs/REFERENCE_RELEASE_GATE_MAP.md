@@ -45,7 +45,7 @@ Modes below:
 | 14 | bounded evidence/error ledger | R | [Persistence][persistence], [paired CPU][paired], [policy][policy], [run][run]: bounded guarded lower wealth, separate same-path alpha, nonrefundable global ledger for one root. Stochastic producer/null assumptions are explicit, not inferred from tapes. |
 | 15 | self-compiler equivalence | X/S | FP_THEORY II/XVI; [authority counterexamples][authority], [control][control], [policy][policy]. No public resource-only bypass or complete-equivalence issuer exists. Current-output equality grants no rewrite/install authority. |
 | 16 | float64-AMP bridge/enclosures | T | [Binary arithmetic][arithmetic] and [float64][float64] establish actual scalar CPU prefix relations. Actual registered target storage/accumulation/casts/subnormal behavior and every target event relation are still required. |
-| 17 | anti-unigram hierarchical | O/S | FP_THEORY XVII proves connected-relation identifiability and disconnected ambiguity. [Historical Foundation audit][foundation] records the 32-token construction, but it is not the present owned Runtime discovering the partition. Current scalar compound discovery does not close this hierarchical gate. |
+| 17 | anti-unigram hierarchical | R/S | [Bounded native search][acceleration] executes n=32 from ordinary token contexts/labels, constructs group SUMs and pair PRODUCTs, checks all 1,024 contexts, installs at 330 and seals at 622 in a 1 GiB job. A distinct empirical-upper proof bounds the full native class without claiming enumeration. Disconnected worlds, a cheaper SUM-only train tie, false connected empirical relations and the existing sharp full-uniform SUM control prevent latent/population/forcing overclaims. |
 | 18 | claim scope/data role/stream law | R | [Events][events], [persistence][persistence], [run][run]: immutable data/learner/search/host/policy/baseline registration; revealed train/online ingress only. Query-only and reporting-only execution remain unsupported; no population claim without its external law. |
 | 19 | certificate provenance/honest unresolved | R | [Search][search], [control][control], [run][run]: exact typed owned proof, explicit decision class, stale/current distinction, work/coverage uncertainty and no target authority. No `CERTIFIED_COMPLETE` endpoint is implemented. |
 | 20 | complete self-compiler atomicity | R/T | [CPU install][install] and [policy][policy] include policy, live jobs/frontiers, ledgers and learners in the fixed root schema. [Run][run] separately seals the final stream; failed report retention cannot roll back a completed install. Target transition is held. |
@@ -78,15 +78,15 @@ Modes below:
 
 ## What this mapping changes
 
-The specific open reference discovery obligation is **17**. The older
-standalone identifiability experiment and the current primitive scalar
-compound search cannot be silently joined into an owned hierarchical
-discovery experiment. The next useful attack is to recover token grouping
-from legally revealed ordinary labels, construct native SUM/PRODUCT from
-that evidence with paid value reachability, and test disconnected-data
-ambiguity and strong same-scope alternatives. A complete search becoming
-too expensive is solver uncertainty, not permission to claim its chosen
-architecture is the complete native class.
+Gate **17** now has an actual owned reference execution, distinct from its
+older standalone audit. The registered relation algorithm proposes native
+syntax from legally revealed counts; an independently checked categorical
+upper closes the empirical objective over the full native class. It does
+not shrink that class to the proposal's architecture or assert that the
+unexecuted grammar was constructed. Nonattainment stays UNRESOLVED.
+See the [proof and exact scope](../theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md).
+The remaining reference release work is final integration at its release
+revision; this row is not an aggregate implementation freeze.
 
 The ordinary single-root run binding/report/terminal transition now exists.
 Manual mode, absent host binding, unavailable query-only/reporting interfaces,
@@ -122,6 +122,7 @@ family or architecture menu is added by this crosswalk.
 [persistence]: ../scripts/audit_reference_persistence.py
 [policy]: ../scripts/audit_owned_compiler_policy.py
 [run]: ../scripts/audit_reference_run.py
+[acceleration]: ../scripts/audit_reference_acceleration.py
 [authority]: ../theory/proofs/EXECUTION_AUTHORITY_BOUNDARY.md
 [foundation]: ../evidence/minimal/FP_FOUNDATION_R4_FREEZE_AUDIT.json
 [recurrent]: ../evidence/minimal/FP_V156_RECURRENT_ALGEBRA_AUDIT.json
