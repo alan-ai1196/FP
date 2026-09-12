@@ -71,6 +71,14 @@ class ReferenceMachineModel:
         return counts['sources']+counts['state_reads']+2*counts['SUM_edges']+counts['PRODUCTs']+3*len(rules.base)+sum(s.delay for s in rules.states)
 
     @staticmethod
+    def observation_work(program: Program) -> int:
+        return 5*program.counts()['edges']+3*len(program.heads)+3*program.slot_count+1
+
+    @staticmethod
+    def commit_work(program: Program) -> int:
+        return 6*program.slot_count+1
+
+    @staticmethod
     def initializer(slot_count: int, pattern: tuple[F, ...]) -> tuple[F, ...]:
         if not pattern:
             raise ContractError('registered initializer pattern cannot be empty')

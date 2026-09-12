@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "scope": "public Runtime newborn construction with preregistered paid profile replay",
+  "existing_value_path": {
+    "unique_profile_labels": 16,
+    "actual_profile_predictions_and_observations": 512,
+    "registered_profile_updates": 32,
+    "ordinary_cursor_before_and_after_profile": 16,
+    "every_commit_matches_existing_exact_recurrence": true,
+    "existing_CE_upper_first_crossing": 13,
+    "baseline": "empirical optimal unigram on balanced retained labels",
+    "fresh_persistence_observations_created_by_profile": 0,
+    "existing_dormant_face_preserved_for_512_profile_events": true,
+    "next_ordinary_event_continues_complete_profiled_state": true
+  },
+  "exhaustive_replay": {
+    "all_two_event_binary_context_target_streams": 16,
+    "independent_profile_prediction_and_gradient_checks": 64
+  },
+  "recurrent_attachment": {
+    "recurrent_profile_events": 8,
+    "logged_original_source_contexts_preserved": true,
+    "delayed_and_optimizer_state_survive_boundary_attachment": true
+  },
+  "adversaries": {
+    "invalid_roles_horizons_and_value_injection_rejected": true,
+    "failure_releases_newborn_objects_without_refunding_reads_or_work": true,
+    "failed_profile_code_and_actual_read_identities_retained": true,
+    "ordinary_continuation_and_profile_are_separate_clocks": true,
+    "profile_work_and_physical_coexistence_caps_enforced": true,
+    "unverified_profile_successor_is_unresolved": true
+  },
+  "not_closed": [
+    "complete grammar search and typed proof authority",
+    "complete ERC-1 manifest and total host/device resource accounting",
+    "fresh stochastic persistence and error ledger",
+    "certified float64 and actual AMP execution",
+    "atomic installation and full Runtime release"
+  ]
+}

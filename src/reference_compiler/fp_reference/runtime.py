@@ -18,6 +18,7 @@ from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, ReferenceMachineModel
 from .program import Program, SemanticRules, name, rational
+from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .resources import CostRouter, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, enclose, evaluate, reset_delayed
 
@@ -73,6 +74,7 @@ class OnlineContract:
     data: DataContract
     learner: LearnerSpec
     queries: tuple[QuerySpec, ...] = ()
+    profiles: tuple[ProfileSpec, ...] = ()
 
     def __post_init__(self):
         if type(self.data) is not DataContract or type(self.learner) is not LearnerSpec:
@@ -81,6 +83,12 @@ class OnlineContract:
         if any(type(q) is not QuerySpec for q in queries) or len({q.query_id for q in queries}) != len(queries):
             raise ContractError('distinct registered query implementations required')
         object.__setattr__(self, 'queries', queries)
+        profiles = tuple(self.profiles)
+        if any(type(p) is not ProfileSpec for p in profiles) or len({p.profile_id for p in profiles}) != len(profiles):
+            raise ContractError('distinct immutable profile declarations required')
+        for profile in profiles:
+            profile.validate(self.data, self.learner)
+        object.__setattr__(self, 'profiles', profiles)
 
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
@@ -102,6 +110,7 @@ class ConstructedState:
     object_ids: tuple[str, ...]
     initializer_id: str
     machine_id: str
+    profile_id: str | None = None
 
     @property
     def theta(self):
@@ -180,6 +189,8 @@ class RuntimeSnapshot:
     queries: tuple[QueryRecord, ...]
     halted: tuple[str, str] | None
     retained_programs: tuple[tuple[str, str], ...]
+    profiles: tuple[ProfileExecution, ...]
+    profile_events: tuple[ProfileEvent, ...]
 
 
 class ReferenceCompilerRuntime:
@@ -216,6 +227,8 @@ class ReferenceCompilerRuntime:
         self._pending: PendingEvent | None = None
         self._observations: list[ObservationRecord] = []
         self._event_traces: list[EventTrace] = []
+        self._profile_executions: dict[str, ProfileExecution] = {}
+        self._profile_events: list[ProfileEvent] = []
         self._query_records: list[QueryRecord] = []
         self._data_usage = DataUsageLedger()
         self._halted: tuple[str, str] | None = None
@@ -266,7 +279,7 @@ class ReferenceCompilerRuntime:
         return all(bound.sufficient(normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap)
                    for bound in evidence)
 
-    def _construct(self, program: Program, role: str) -> ConstructionResult:
+    def _construct(self, program: Program, role: str, profile_id: str | None = None) -> ConstructionResult:
         number = self._next_candidate
         self._next_candidate += 1
         candidate = f'{self._runtime_id}:candidate:{number}'
@@ -275,6 +288,14 @@ class ReferenceCompilerRuntime:
         try:
             # Request inspection is itself an executed, immutable-role debit.
             self._router.charge_work('construct', {'work': 1}, f'{candidate}:inspect')
+            profile = None
+            if profile_id is not None:
+                name(profile_id, 'requested profile ID')
+                if self._online is None or role != 'compiler':
+                    raise ContractError('profile belongs only to registered newborn candidate construction')
+                profile = next((p for p in self._online.profiles if p.profile_id == profile_id), None)
+                if profile is None:
+                    raise ContractError('unregistered profile implementation')
             if type(program) is not Program:
                 raise ContractError('candidate structure must use the native Program grammar')
             if len(program.nodes) > self._contract.graph_limits['nodes'] or program.slot_count > self._contract.graph_limits['slots']:
@@ -290,8 +311,8 @@ class ReferenceCompilerRuntime:
             code = self._machine.realize(f'{candidate}:code', 'native_program', program, program_id)
             initial = self._machine.realize(f'{candidate}:zero', 'zero_slot_state', (zero, delayed), program_id)
             self._allocate(owner, (code, initial))
-            # The only value path at this recovery stage is this immutable
-            # initializer. Callers cannot supply theta, state or physical costs.
+            # Numerical values begin at the immutable initializer. An optional
+            # registered profile is executed below, never supplied as theta.
             theta = self._machine.initializer(program.slot_count, self._contract.initializer_pattern)
             learner = initial_state(program, self._contract.semantics, theta, self._cursor)
             initialized = self._machine.realize(f'{candidate}:values', 'initialized_reference_state', learner, program_id)
@@ -306,13 +327,17 @@ class ReferenceCompilerRuntime:
             state = ConstructedState(candidate, owner, program_id, self._cursor, learner,
                                      tuple(evidence), safe, (code.spec.object_id, initialized.spec.object_id, checked.spec.object_id),
                                      self._machine.initializer_id, self._machine.model_id)
+            if profile is not None:
+                state = self._profile_newborn(program, state, profile)
+                safe = state.range_safe
             self._candidates[candidate] = state
             self._programs[program_id] = program
             status = 'BUILT_REFERENCE' if safe else 'UNRESOLVED_RANGE'
-            reason = 'native construction and fixed-value range bound checked' if safe else 'conservative full-domain range bound does not establish feasibility'
+            reason = ('native construction and registered profile endpoint checked' if profile is not None else
+                      'native construction and fixed-value range bound checked') if safe else 'conservative full-domain range bound does not establish feasibility'
             self._attempts.append((candidate, status, reason))
             return ConstructionResult(status, candidate, reason)
-        except (ResourceExceeded, ArithmeticUnresolved) as exc:
+        except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved) as exc:
             self._release_owner(owner)
             self._attempts.append((candidate, 'UNRESOLVED', str(exc)))
             return ConstructionResult('UNRESOLVED', None, str(exc))
@@ -328,11 +353,15 @@ class ReferenceCompilerRuntime:
             self._attempts.append((candidate, 'EXECUTION_FAILED', f'{type(exc).__name__}: {exc}'))
             raise
 
-    def construct_candidate(self, program: Program) -> ConstructionResult:
+    def construct_candidate(self, program: Program, *, profile_id: str | None = None) -> ConstructionResult:
         self._require_idle()
         if self._online is not None and self._cursor % self._online.learner.update_unit:
             raise ContractError('new online lineages start at a registered update-unit boundary')
-        return self._construct(program, 'compiler')
+        self._event_phase = 'constructing'
+        try:
+            return self._construct(program, 'compiler', profile_id)
+        finally:
+            self._event_phase = 'idle'
 
     def retire_candidate(self, candidate_id: str):
         self._require_idle()
@@ -364,10 +393,118 @@ class ReferenceCompilerRuntime:
     def _retain_program(self, state: ConstructedState):
         # Past execution evidence must retain the actual graph it describes,
         # even after its learner is retired. Sharing is an owned physical lease.
-        if state.program_id not in self._retained_programs:
-            self._event_router.charge_work('information', {'work': 1}, f'{state.candidate_id}:retain-code-for-evidence')
-            self._ledger.acquire(self._data_owner, state.object_ids[0])
-            self._retained_programs[state.program_id] = state.object_ids[0]
+        self._retain_code(self._programs[state.program_id], state.program_id, state.object_ids[0], state.candidate_id)
+
+    def _retain_code(self, program: Program, program_id: str, object_id: str, origin: str):
+        if program_id not in self._retained_programs:
+            self._event_router.charge_work('information', {'work': 1}, f'{origin}:retain-code-for-evidence')
+            self._ledger.acquire(self._data_owner, object_id)
+            self._retained_programs[program_id] = object_id
+            self._programs[program_id] = program
+
+    def _profile_newborn(self, program: Program, initial: ConstructedState, profile: ProfileSpec) -> ConstructedState:
+        """Private value constructor; cannot modify a published ordinary lineage."""
+        candidate, owner = initial.candidate_id, initial.physical_owner
+        spec, rules = self._online.learner, self._contract.semantics
+        record = ProfileExecution(candidate, profile.profile_id, initial.program_id, self._cursor,
+                                  profile.event_count, 0, 'admission', 'RUNNING', initial.learner, initial.learner)
+        self._profile_executions[candidate] = record
+        prefix = f'{candidate}:profile'
+
+        def update(**changes):
+            self._profile_executions[candidate] = replace(self._profile_executions[candidate], **changes)
+
+        def work(amount, stage):
+            self._event_router.charge_work('compiler_event', {'work': amount}, f'{prefix}:{stage}')
+
+        def retain(event, stage):
+            obj = self._machine.realize(f'{prefix}:{event.position}:{stage}', 'profile_event_phase', event, self._chi)
+            self._allocate(self._data_owner, (obj,))
+
+        try:
+            work(len(profile.observation_ids)+1, 'admit')
+            available = {r.observation_id: r for r in self._observations}
+            if any(obs not in available or available[obs].target is None for obs in profile.observation_ids):
+                raise ProfileUnresolved('registered profile data are not all revealed yet')
+            if not initial.range_safe:
+                raise ProfileUnresolved('profile initialization lacks a sufficient full-domain range/invariant bound')
+            if candidate in self._candidates or initial.birth_cursor != self._cursor or initial.learner.unit_count:
+                raise ContractError('profile cannot replace a published ordinary learner trajectory')
+            self._retain_code(program, initial.program_id, initial.object_ids[0], candidate)
+            # Local replay clock starts at zero. All numerical/causal fields
+            # are the registered newborn state, with no copied trained values.
+            local = replace(initial.learner, cursor=0)
+            work(program.slot_count+sum(s.delay for s in rules.states)+1, 'local-clock')
+            local_object = self._machine.realize(f'{prefix}:local-initial', 'profile_initial_state', local, initial.program_id)
+            self._allocate(owner, (local_object,))
+            self._ledger.release(owner, initial.object_ids[1])
+            del self._buffers[initial.object_ids[1]]
+            current_ids = (initial.object_ids[0], local_object.spec.object_id, initial.object_ids[2])
+            evidence = initial.range_evidence
+            update(stage='replay', local=local)
+            for position in range(profile.event_count):
+                observation = available[profile.observation_ids[position % len(profile.observation_ids)]]
+                work(1, f'{position}:read')
+                self._data_usage.record((observation,), 'profile', candidate, self._cursor)
+                update(stage='predict')
+                work(self._machine.evaluation_work(program, rules), f'{position}:predict')
+                prediction = evaluate(program, rules, local.theta, dict(observation.sources), local.delayed,
+                                      bit_limit=self._contract.reference_integer_bits)
+                if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in prediction.values):
+                    raise ContractError('profile execution contradicts a sufficient native range bound')
+                event = ProfileEvent(candidate, profile.profile_id, initial.program_id, self._cursor,
+                                     position, observation.observation_id, local, prediction)
+                self._profile_events.append(event)
+                retain(event, 'predicted')
+                update(stage='observe')
+                work(self._machine.observation_work(program), f'{position}:observe')
+                observed = observe_event(program, local, spec, prediction, observation.target,
+                                         bit_limit=self._contract.reference_integer_bits)
+                event = replace(event, after_observe=observed)
+                self._profile_events[-1] = event
+                update(local=observed)
+                retain(event, 'observed')
+                successor = observed
+                if (position+1) % spec.update_unit == 0:
+                    update(stage='commit')
+                    work(self._machine.commit_work(program), f'{position}:commit')
+                    successor = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
+                    event = replace(event, after_commit=successor)
+                    self._profile_events[-1] = event
+                    update(local=successor, stage='range')
+                    retain(event, 'committed')
+                    evidence = self._range(program, successor.theta, f'{prefix}:{position}')
+                    if not self._safe(evidence):
+                        raise ProfileUnresolved('profile optimizer successor lacks a sufficient full-domain range/invariant bound')
+                values = self._machine.realize(f'{prefix}:{position}:values', 'profile_current_state', successor, initial.program_id)
+                checked = self._machine.realize(f'{prefix}:{position}:range', 'profile_range_evidence', evidence, initial.program_id)
+                self._allocate(owner, (values, checked))
+                self._ledger.release_many(tuple((owner, object_id, 1) for object_id in current_ids[1:]))
+                for object_id in current_ids[1:]:
+                    del self._buffers[object_id]
+                current_ids = (current_ids[0], values.spec.object_id, checked.spec.object_id)
+                local = successor
+                update(events_completed=position+1, stage='replay', local=local)
+            update(stage='attach')
+            work(program.slot_count+sum(s.delay for s in rules.states)+1, 'attach-boundary')
+            attached = attach_boundary(local, self._cursor, spec)
+            attached_object = self._machine.realize(f'{prefix}:attached', 'profiled_newborn_state', attached, initial.program_id)
+            self._allocate(owner, (attached_object,))
+            # Retain the checked pair of local and ordinary clock coordinates.
+            completed = replace(self._profile_executions[candidate], attached=attached, stage='complete', status='PROFILED_REFERENCE')
+            completed_object = self._machine.realize(f'{prefix}:complete', 'profile_construction_record', completed, self._chi)
+            self._allocate(self._data_owner, (completed_object,))
+            self._ledger.release(owner, current_ids[1])
+            del self._buffers[current_ids[1]]
+            self._profile_executions[candidate] = completed
+            return replace(initial, learner=attached, range_evidence=evidence, range_safe=True,
+                           object_ids=(current_ids[0], attached_object.spec.object_id, current_ids[2]), profile_id=profile.profile_id)
+        except Exception as exc:
+            expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved))
+            update(status='UNRESOLVED' if expected else 'EXECUTION_FAILED', reason=f'{type(exc).__name__}: {exc}')
+            if isinstance(exc, ContractError) and not expected:
+                raise RuntimeError('registered profile execution violated its checked inputs') from exc
+            raise
 
     def _target_slot(self, target: int | None):
         width = max(1, ((len(self._contract.semantics.base)-1).bit_length()+3)//4)
@@ -460,8 +597,7 @@ class ReferenceCompilerRuntime:
             for candidate, prediction in pending.predictions:
                 state = self._candidates[candidate]
                 program = self._programs[state.program_id]
-                counts = program.counts()
-                self._event_work(state, 5*counts['edges']+3*len(program.heads)+3*program.slot_count+1, 'observe-and-accumulate')
+                self._event_work(state, self._machine.observation_work(program), 'observe-and-accumulate')
                 observed = observe_event(program, state.learner, spec, prediction, target,
                                          bit_limit=self._contract.reference_integer_bits)
                 trace = EventTrace(record.observation_id, candidate, state.program_id, state.learner, prediction, observed, None)
@@ -472,7 +608,7 @@ class ReferenceCompilerRuntime:
                 committed = None
                 evidence = state.range_evidence
                 if do_commit:
-                    self._event_work(state, 6*program.slot_count+1, 'optimizer-commit')
+                    self._event_work(state, self._machine.commit_work(program), 'optimizer-commit')
                     committed = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
                     trace = replace(trace, after_commit=committed)
                     self._event_traces[-1] = trace
@@ -559,4 +695,4 @@ class ReferenceCompilerRuntime:
                                tuple((key, bytes(value) if type(value) is bytearray else value) for key, value in self._buffers.items()), tuple(self._attempts),
                                self._online, self._event_phase, self._pending, tuple(self._observations),
                                tuple(self._event_traces), self._data_usage.snapshot(), tuple(self._query_records), self._halted,
-                               tuple(self._retained_programs.items()))
+                               tuple(self._retained_programs.items()), tuple(self._profile_executions.values()), tuple(self._profile_events))

@@ -21,16 +21,20 @@ implementation/experiment correctness counterexample to its semantics.
 **Already-failed methods.** Bare certificate booleans, caller-supplied exact uppers, arbitrary query callbacks, caller-built candidate states/object lists, resource totals without ownership, e-wealth reuse across lineages, state/cursor mismatch, partial ref↔AMP bridging, and helper-level tests that do not traverse the complete Runtime.
 
 **Current implementation progress (2026-09-12).** The actual Runtime now
-connects typed construction and owned buffers to registered exact ordinary
-learning, causal source reads and finite-alphabet revealed-data queries.
+connects typed construction and owned buffers to registered profile replay,
+exact ordinary learning, causal source reads and finite-alphabet revealed-data queries.
 Audits cover construction/ownership, 960 independent exact gradient vectors,
 all 64 short context/target streams with two reference lineages, and the
 existing XVII.5 recurrence on 512 deterministic online events. Failed target
 events cannot be retried as unread; past evidence retains actual program
 ownership after a branch retires. Read the source README and
 `docs/REFERENCE_RUNTIME_CONTINUATION.md` before extending this segment.
+The XVII.5 profile is now also executed from its original 16 retained labels:
+512 paid replay events preserve their IDs, reproduce all 32 updates and
+create no new exogenous/fresh events. Complete recurrent/optimizer state is
+retained at newborn attachment; failed profiles keep their paid prefix.
 
-The remaining work is complete ERC-1 registration, profile/value replay,
+The remaining work is complete ERC-1 registration,
 grammar search with exact decision classes, typed proofs, stochastic fresh
 persistence/error state, actual host/device accounting, certified reference/
 AMP and atomic installation. Raw revealed train/online access is explicitly

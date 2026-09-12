@@ -18,12 +18,14 @@ Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
 
 Current executable progress: `src/reference_compiler/fp_reference/runtime.py`
-now runs owned native construction, exact ordinary learning, causal source
-reads and registered revealed-data queries through the same public endpoint.
+now runs owned native construction, registered profile replay, exact ordinary
+learning, causal source reads and registered revealed-data queries through
+the same public endpoint.
 Do not reconstruct these modules again. Read the source README,
 [`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md),
-`scripts/audit_reference_construction.py` and `scripts/audit_reference_events.py`.
-The next gap is registered profile/value replay, complete grammar search
+`scripts/audit_reference_construction.py`, `scripts/audit_reference_events.py`
+and `scripts/audit_reference_profiles.py`.
+The next gap is complete grammar search
 with exact decision classes and typed proof authority, then fresh persistence,
 full physical/error state, reference/AMP and atomic install integration.
 
@@ -40,6 +42,11 @@ authority boundaries are open gates, not passing implementations.
 Current exact evidence includes 960 independent gradient vectors, all 64
 three-event binary context/target streams with two reference lineages, and
 the existing XVII.5 value path executed for 512 deterministic online events.
+That path now also executes 512 paid **profile** events from only 16 retained
+original labels, without advancing the ordinary cursor. The final learner
+preserves its optimizer count and delayed state at newborn attachment;
+profile creates no fresh observations. The old dormant factor face also
+survives the actual 32-step registered profile, as its theorem predicts.
 The packed-reference model, `ConstructionContract` and `OnlineContract`
 remain partial; no complete ERC-1 enforcement or 47-gate release is claimed.
 

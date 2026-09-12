@@ -113,15 +113,13 @@ incumbent stays unresolved; partial backend failures release actual buffers
 without refunding work or peak. This is current executable evidence, unlike
 the historical 24/24 and 47/47 counts.
 
-**Scope limits remain material.** The `ConstructionContract` is only the
-enforced construction slice of ERC-1. The machine's packed-payload bytes and
-conservative reference operation charges do not close total host/device
-memory or bit-time accounting. Query/data-use, ordinary learner/profile
-continuation, complete grammar search, typed proof authority, fresh paired
-persistence, actual AMP and atomic install still need integration. The
-preserved helper authorities are not trusted by the current endpoint;
-installation remains UNRESOLVED. No full gate or implementation freeze is
-claimed by this audit.
+**Scope of this construction audit.** The `ConstructionContract` is only
+the enforced construction slice of ERC-1. Packed-payload bytes/reference
+operation charges do not close total host/device memory or bit-time.
+This audit alone does not establish query/data-use, learner/profile,
+grammar/proof, fresh persistence, AMP or installation closure. The sections
+below record subsequent executable integration. Installation remains
+UNRESOLVED; no full gate or implementation freeze follows from this audit.
 
 ### Executable causal continuation (2026-09-12)
 
@@ -154,7 +152,7 @@ Runtime evidence, not an additional static theorem or stochastic experiment.
 
 **Remaining scope:** the registered interface currently exposes exact
 revealed train/online data, so query bits do not bound information in every
-public snapshot. Query-only access, report-only execution, profile replay,
+public snapshot. Query-only access, report-only execution,
 general recurrent backpropagation, complete grammar search, typed proof
 authority, stochastic filtration/fresh persistence/error allocation,
 complete host/device resource accounting, certified float64/actual AMP and
@@ -162,6 +160,32 @@ atomic install remain open. The packed-payload model omits Python metadata,
 scratch and pre-allocation ingress; this prevents a full physical-resource
 claim. See [`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md).
 Foundation/ERC-1 stay frozen; Runtime is NOT FROZEN and science stays HOLD.
+
+### Registered profile construction (2026-09-12)
+
+`ProfileSpec` and `construct_candidate(..., profile_id=...)` now execute
+paid finite replay inside the newborn value constructor. Original revealed
+observation IDs and logged causal source contexts are retained across
+passes; reporting labels and unavailable targets cannot be substituted.
+Replay uses the registered ordinary optimizer and local clock, preserves
+delayed state across passes, and attaches the complete endpoint to the
+current ordinary boundary. It cannot overwrite an already running lineage.
+All parameter values arise from the initializer and actual optimizer steps.
+
+`scripts/audit_reference_profiles.py` reproduces the existing XVII.5 path
+from 16 retained labels with 512 paid replay events, 32 exact dyadic commits
+and an unchanged ordinary cursor. The existing dormant-factor path keeps
+its five zero coordinates through another 512 replay events. Independent
+checks cover all 16 two-event binary context/target streams, reordered
+logged causal contexts, recurrent state attachment, data-role/horizon
+violations, work/coexistence exhaustion and backend failure after partial
+progress. Failed profiles release the newborn's objects while retaining
+paid reads, evidence and code ownership. No replayed label becomes fresh.
+
+This closes the scoped registered value-construction path, not a complete
+Compiler result. Grammar coverage, typed proof authority, stochastic fresh
+persistence/error state, full physical accounting, actual AMP and atomic
+installation remain open; implementation is still NOT FROZEN.
 
 ## 4. Required closure tests
 

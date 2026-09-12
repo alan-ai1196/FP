@@ -17,7 +17,10 @@ checking, actual packed reference buffers, owners/refcounts and immutable
 resource-role charges. Its snapshots retain current constructed states,
 program/buffer registries, resource history and failed attempts. An immutable
 `OnlineContract` adds causal source reads, exact projected mean-CE SGD,
-fixed update units, revealed-data roles/use and finite-alphabet queries.
+fixed update units, revealed-data roles/use, finite-alphabet queries and
+preregistered newborn profiles. `construct_candidate(..., profile_id=...)`
+executes paid replay of the retained original IDs and keeps complete value,
+optimizer and delayed state at its ordinary boundary attachment.
 
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
@@ -27,14 +30,15 @@ work limits and inconclusive range bounds produce UNRESOLVED. Intermediate
 build failures release partial buffers without refunding spent work or peak.
 
 Run `python -B scripts/audit_reference_construction.py` and
-`python -B scripts/audit_reference_events.py` from repository root. They
+`python -B scripts/audit_reference_events.py` and
+`python -B scripts/audit_reference_profiles.py` from repository root. They
 exercise the actual Runtime and independent exact/ownership/clock oracles.
 The existing XVII.5 value recurrence now also runs through the endpoint.
 Read [`REFERENCE_RUNTIME_CONTINUATION.md`](../../docs/REFERENCE_RUNTIME_CONTINUATION.md)
 for the supported deterministic raw-revealed-data interface, stop-gradient
 delayed learner, retained event phases, terminal failures and exact limits.
 
-Next integrate registered profile replay, complete grammar search and typed
+Next integrate complete grammar search and typed
 proofs, then persistence/bridge/atomic installation. The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current

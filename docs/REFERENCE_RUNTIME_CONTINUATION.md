@@ -18,11 +18,12 @@ supplied through these public continuation methods:
 | `predict_next(observation_id, inputs)` | Consumes the next registered pre-target context, seals the active lineage set, reads only available causal sources, and executes every active reference prediction |
 | `observe(target)` | Records the target once, accumulates exact CE derivatives, advances positive delayed bodies, and commits only at the full registered update-unit boundary |
 | `query(query_id, observation_ids)` | Selects already revealed legal records inside Runtime, charges the registered computation, retains proposal use, and returns the registered finite-alphabet moment answer |
-| `construct_candidate(program)` | Continues the existing owned initializer path; online newborns start with reset local state at a common update-unit boundary |
+| `construct_candidate(program, profile_id=...)` | Executes the initializer and optional preregistered paid replay before publishing the newborn at a common update-unit boundary |
 | `retire_candidate(candidate_id)` | Releases the learner's own objects while retaining owned program references needed by past execution evidence |
 
-An inconclusive construction is retained but is not a live ordinary
-trajectory. Active reference lineages execute the same exogenous events.
+An initializer with an inconclusive range bound may be retained as an
+unresolved construction; it is not a live ordinary trajectory. Active
+reference lineages execute the same exogenous events.
 Structural controls and queries cannot run between a prediction and its
 target, during an internal microphase, or after a halted prefix. The Runtime
 has no caller-selected early flush of a partial update unit.
@@ -35,12 +36,49 @@ gradients do not require an approximate logarithm. Shared/repeated edges,
 heads and tied parameter slots accumulate their actual derivatives; unused
 slots remain present. Persistent weights stay nonnegative. This learner
 treats delayed histories as stop-gradient event inputs. General recurrent
-backpropagation, other optimizers and profile replay are not implemented.
+backpropagation and other optimizers are not implemented.
 
 Each event retains the pre-target evaluation, state after observation and,
 when applicable, state after optimizer commit. These are the actual phases
 a later numerical bridge must cover. Computing and retaining them does not
 itself prove a bridge or a certified log-loss enclosure.
+
+## Registered profile is a value constructor
+
+`ProfileSpec` fixes an ordered set of original observation identities, a
+finite pass count and the implemented replay rule before labels arrive.
+Only declared train/online IDs are legal. The constructor waits with
+UNRESOLVED until all required records have actually been revealed; it
+cannot substitute an initializer-only or caller-fitted endpoint. The total
+number of replayed events must finish a full registered optimizer unit.
+The same ordinary optimizer and rounding rule are used during profile.
+
+Replay reads each record's **logged original score-time sources**, retaining
+its observation ID and causal origin even if records are visited in another
+order. It does not invent a new exogenous history by interpreting profile
+indices as original event cursors. Positive recurrent bodies operate on the
+newborn's actual local profile state and continue across passes. Every
+prediction, observation, commit and range check incurs its registered work;
+all retained buffers and old/new state coexistence are accounted for.
+
+Profile has a separate local execution clock. Its endpoint retains theta,
+gradient accumulator, delayed histories and optimizer step count; only the
+clock namespace is attached to the current ordinary boundary. Both the
+local and attached states are retained in the construction record. This is
+a preregistered newborn value constructor, not an equivalence assertion,
+an implicit recurrent reset, or replacement of a previously scored lineage.
+Public ordinary/structural controls cannot interleave with construction.
+The current reference endpoint assumes serialized host calls; this is not
+a claim of a concurrent scheduler implementation.
+
+Data-use records repeat the original IDs and mark every actual read as
+profile. A backend/resource/range failure closes and releases the incomplete
+newborn while retaining data use, charged work, executed profile evidence
+and its owned code. It cannot fall back to a free fitted state. Since profile
+reads old revealed targets, such failure need not halt the ordinary deployed
+trajectory; its changed Compiler resources remain part of future state.
+No new ordinary observation, fresh persistence event or statistical wealth
+is created by replay.
 
 ## Information is declared, including what is not hidden
 
@@ -129,6 +167,18 @@ declared stream positions with repeated values, not a claim of 16 unique
 profile labels becoming 512 fresh stochastic observations. No new static
 family, probability guarantee or population-identification claim is added.
 
+`scripts/audit_reference_profiles.py` now additionally executes the same
+value path from **16 retained labels**, with 512 charged profile events and
+32 commits while the ordinary cursor stays at 16. Each commit matches the
+existing scalar recurrence. The existing dormant-factor fixture retains its
+five zero coordinates for another 512 profile events. Sixteen exhaustive
+two-event input/target streams give 64 independent replay checks; recurrent
+source/state attachment, forbidden roles, unavailable data, interleaving,
+backend failure, cumulative work and coexistence caps are also audited.
+The uniform deployed predictor is the empirical optimal unigram on the
+balanced fixture. Neither this comparison nor the dormant parameterization
+is a global rejection of all one-PRODUCT programs.
+
 Current package modules import. The previously falsified helper signers
 are no longer callable: `proof.py` and `bridge.py` explicitly reserve the
 unimplemented authority boundaries. The exact historical code, including
@@ -137,8 +187,8 @@ Git commit `39235ef` by `scripts/audit_recovered_authorities.py`. All four
 historical false authorizations remain reproducible. Empty authority ports
 do not count as passed proof/bridge gates.
 
-Next integrate registered profile/value replay and grammar-complete search
-with explicit decision classes and typed proof authority, then stochastic
+Next integrate grammar-complete search with explicit decision classes and
+typed proof authority, then stochastic
 fresh persistence and complete physical/error state. Certified float64,
 actual AMP, atomic installation and the complete 47-gate mapping remain
 release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,

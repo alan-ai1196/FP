@@ -95,8 +95,11 @@ initial values, full delayed reset, exact range checks and owned packed
 reference buffers. The reconstructed `data_usage.py`, `learner.py` and
 `info.py` now connect registered exact ordinary continuation to that same
 Runtime. Public predictions precede target reveal; only full registered
-units commit; query answers are computed and quantized internally. The
-public install path remains UNRESOLVED because complete manifest/profile/
+units commit; query answers are computed and quantized internally. The new
+`profile.py` declares finite replay over original retained observation IDs;
+Runtime executes it inside newborn construction with separate local and
+ordinary clocks, complete state attachment and paid read/compute/residency.
+The public install path remains UNRESOLVED because complete manifest/
 search/proof/persistence/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.

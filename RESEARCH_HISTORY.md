@@ -1262,3 +1262,45 @@ Read `docs/REFERENCE_RUNTIME_CONTINUATION.md` and
 stochastic persistence/error state, full host/device accounting, certified
 float64/actual AMP and atomic installation remain open. Foundation/ERC-1 are
 still frozen; the next research remains Runtime -> AMP -> RTX 3090 science.
+
+## 52. Make profile a paid, auditable newborn value path (2026-09-12)
+
+The ordinary event endpoint left a distinction that matters to the original
+XVII.5 result: 512 deterministic online positions are not the same physical
+construction as 32 passes over 16 retained labels. The new preregistered
+`ProfileSpec` and Runtime constructor now execute the latter explicitly.
+The profile fixes original IDs/order/pass count, uses the existing ordinary
+optimizer, and charges every actual read, prediction, update and range check.
+It cannot be supplied as a fitted parameter dictionary or applied over an
+existing ordinary lineage.
+
+Replay retains each observation's original logged causal source context.
+Its local clock is distinct from the shared exogenous cursor. Positive
+recurrent buffers continue through the declared passes; complete parameters,
+accumulators, optimizer count and delayed state survive final attachment to
+the newborn ordinary boundary. This is an executed value constructor, not
+an equivalence assertion or a new architecture-semantic operation.
+
+The public endpoint reproduces all 32 dyadic commits of the existing
+direct-PRODUCT scalar recurrence using only 16 retained labels; the ordinary
+cursor stays at 16 and the old CE upper crosses at update 13. A second
+512-event profile preserves the existing dormant-factor face's five zero
+coordinates. It does not jump to an expressive encoded witness that its
+registered gradient path cannot reach. The deployed uniform predictor is
+the empirical optimal unigram on these balanced labels, not an intentionally
+weak baseline, and no global one-PRODUCT rejection is inferred.
+
+Sixteen exhaustive two-event binary input/target streams provide 64
+independent replay checks. Reordered causal records, recurrent state
+attachment, illegal split/horizon/parameter inputs, public-control
+interleaving, backend failure after partial execution, and actual work and
+coexistence caps are audited. Failed profiles close the newborn owner while
+retaining code for evidence, repeated original data-use IDs and spent work.
+They create neither exogenous events nor fresh persistence observations.
+
+Read `scripts/audit_reference_profiles.py` and
+`evidence/minimal/FP_REFERENCE_PROFILE_RUNTIME_AUDIT.json`. Next integrate
+complete native grammar search with explicit decision classes and typed
+proof authority. The full manifest, stochastic persistence/error state,
+host/device accounting, float64/AMP bridge and atomic installation remain
+open. Foundation/ERC-1 remain frozen and RTX 3090 science remains HOLD.
