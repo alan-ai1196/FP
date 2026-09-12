@@ -2,15 +2,27 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-**Current priority, 2026-09-12:** the scoped joint PRODUCT/SUM/range/precision
+**Current priority, 2026-09-13:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
-the complete Runtime, actual AMP bridge and then RTX 3090 experiments.
+the actual AMP bridge and then RTX 3090 experiments; the registered
+Reference/CPU release is now frozen after complete integration at `ebe2c4c`.
 The remaining static special cases and sharp constants below are parked,
 not invitations to continue that program. Reopen Foundation only for an
 implementation/experiment correctness counterexample to its semantics.
 
-## 1. Close the complete Reference Compiler runtime
+## 1. Close actual target AMP execution and installation
+
+The Reference/CPU prerequisite is closed for the scope in
+[`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
+21 complete scripts pass from one fresh clone, including 36 independent
+endpoint models, trained installation and the owned n=32 hierarchy. The
+remaining target obligations are actual mixed-precision construction,
+continuous full deployed/candidate trajectories, per-event relations,
+owned device resources, separate same-path fresh evidence and actual
+installation. CPU equality or a reference crossing cannot discharge them.
+The supporting CPU results below retain their individual scopes; broader
+optional strategy/information classes do not reopen this reference release.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 
@@ -77,7 +89,7 @@ or full host/device accounting claim.
 
 The subsequent paragraphs record the now implemented host, policy and run
 binding. The current [47-gate map](docs/REFERENCE_RELEASE_GATE_MAP.md) identifies
-final reference integration checks, followed by actual target AMP/installation.
+the completed reference integration and remaining actual target AMP/installation.
 Machine v9 now executes the hierarchical n=32 case from ordinary labels,
 with an independently verified empirical upper over the full native class,
 fresh paired CPU evidence, installation and run closure. Its train-tied
@@ -141,10 +153,10 @@ and spent alpha remain retained. Report failure leaves an already completed
 event/install intact but cannot yield a completed run. Read
 `theory/proofs/OWNED_REFERENCE_RUN.md` and the explicit 47-gate crosswalk.
 
-The immediate reference obligation is now release-revision integration.
-Gate 17 has actual owned n=32 execution, disconnected-data controls and a
-strong empirical upper without a supplied latent partition. Actual AMP, device
-resources and target installation follow reference closure. Claims of CPU
+Release-revision integration is complete at `ebe2c4c`. Gate 17 has actual
+owned n=32 execution, disconnected-data controls and a strong empirical upper
+without a supplied latent partition. Actual AMP, device resources and target
+installation are now the immediate obligations. Claims of CPU
 time hard caps, shared-platform memory, alternative information interfaces,
 or families spanning new Runtime roots require their own support if invoked;
 they are not implicit prerequisites to this single-root reference scope.

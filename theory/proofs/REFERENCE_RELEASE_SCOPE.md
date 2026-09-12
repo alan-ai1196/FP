@@ -1,7 +1,14 @@
 # Reference release: scope and independent integration evidence
 
-Status: **integration prepared; Reference implementation NOT FROZEN; target
-AMP and model science HOLD.** Foundation R4 and ERC-1 remain frozen.
+Status: **scoped Reference/CPU implementation FROZEN, 2026-09-13. Target
+AMP OPEN; model science HOLD.** Foundation R4 and ERC-1 remain frozen.
+
+Tested source: `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, machine
+`packed-reference-payload-v9`, CPython 3.12.9 on 64-bit Windows 11.
+All 21 complete audit scripts pass from a clean new clone; all 30 current
+package modules import. The declaration commits documentation/evidence only,
+with unchanged implementation and audit code. The authoritative integration
+record is [`FP_REFERENCE_RELEASE_AUDIT.json`](../../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
 
 The release claim is a concrete implementation of the registered ordered
 native constructor classes, complete exact and actual scalar CPU binary64
@@ -49,12 +56,15 @@ independently replays the recorded actual binary64 phases. If a commit
 leaves the declared range, the target remains revealed, every previously
 published learner remains intact and the root halts without a false closure.
 
-The four directed cases already reproduce 44 initializer-range failures,
+The four directed cases reproduce 44 initializer-range failures,
 two profile-range failures, three unresolved classes and three halted
 ordinary commits. One delayed-state case seals its stream with an unresolved
 class, demonstrating that execution completion and comparison completeness
-are different. Final aggregate coverage must come from the full committed
-release audit, not this partial diagnostic.
+are different. The full release run covers 36 Runtime registrations and
+34 distinct class shapes, 2,665 native members, 2,619 exact endpoint scores,
+33 completed class proofs, 361 ordinary successor checks and 23,274
+independently replayed binary64 phases. This finite numerical/model-check
+evidence is not a theorem over all possible registrations.
 
 ## One source revision, all current obligations
 
@@ -100,10 +110,10 @@ exit/identity/peak records. It does not retain datasets, weights or diagnostic
 logs, or derive process exit from a Runtime snapshot. Both checkout and
 source must stay clean and at the same revision throughout the audit.
 
-After successful integration, a declaration may freeze this scoped CPU
-release in a documentation/evidence commit without rerunning unchanged code
-to chase the declaration's own commit ID. The tested source revision must
-remain explicit, and a Git diff must verify that no implementation or audit
-code changed between that revision and the declaration. Any later target
+The successful integration freezes this scoped CPU release in a
+documentation/evidence commit without rerunning unchanged code to chase
+the declaration's own commit ID. The tested source revision remains
+explicit, and a Git diff checks that no implementation or audit code changed
+between that revision and the declaration. Any later target
 backend work needs its own actual device evidence; this release cannot be
 transported to AMP by recasting endpoints or inheriting CPU wealth.

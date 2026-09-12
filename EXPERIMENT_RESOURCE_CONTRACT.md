@@ -1,8 +1,9 @@
 # Experiment Resource Contract — ERC-1
 
-**Status: FROZEN SPECIFICATION, 2026-09-12.** Runtime enforcement and the
-target AMP bridge are **NOT VERIFIED**. GPU/model science remains HOLD
-until those existing prerequisites pass. `FP_THEORY.md` remains the only
+**Status: FROZEN SPECIFICATION, 2026-09-12.** The scoped Reference/CPU
+implementation passed release integration on 2026-09-13; the target AMP
+bridge is **NOT VERIFIED**. GPU/model science remains HOLD until the target
+prerequisite passes. `FP_THEORY.md` remains the only
 normative theory source; this file fixes its experiment resource accounting,
 claim scopes and release criteria.
 
@@ -145,12 +146,15 @@ and data; a deliberately weak or undertrained baseline is inadmissible.
 
 ## 5. Release order and minimal evidence
 
-**Next: ReferenceCompilerRuntime.** Restore the complete authority-owned
-endpoint against `FP_THEORY.md` XVIII, and execute all closure obligations
-in `IMPLEMENTATION_STATUS.md`, including an explicit mapping of the 47
-historical gates. ERC-1 is not an implementation freeze certificate.
+**ReferenceCompilerRuntime: scoped CPU prerequisite CLOSED.** Source
+`ebe2c4c` passed 21 complete audit scripts from a fresh clone, including
+the reference closure obligations and the 47-gate scope map. Read
+[`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
+its minimal release evidence. The frozen implementation concerns its declared
+native classes, complete CPU learners, owned strategy and serialized Windows
+resource/run protocol. ERC-1 itself supplies no implementation certificate.
 
-**Then: target AMP bridge.** Execute the actual registered mixed-precision
+**Next: target AMP bridge.** Execute the actual registered mixed-precision
 path, with continuous deployed/candidate reference/AMP trajectories and
 event-level enclosures, including structure construction and installation.
 Device correctness/bridge tests follow reference closure. They are not

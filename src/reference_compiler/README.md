@@ -1,12 +1,22 @@
-# Foundation-R4 Reference Compiler — recovery/WIP
+# Foundation-R4 Reference Compiler — scoped CPU release
 
-**Status: NOT FROZEN.**
+**Status: scoped Reference/CPU implementation FROZEN, 2026-09-13. Actual
+target AMP remains OPEN; model science HOLD.** Source `ebe2c4c` passes all
+21 complete audit scripts from a fresh clone, including 30 module imports,
+independent exact endpoint models, owned trained installation and the n=32
+hierarchy. See [release scope](../../theory/proofs/REFERENCE_RELEASE_SCOPE.md)
+and [minimal evidence](../../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
 
 The late 2026-09-05 research workspace contained a larger `fp_reference` package than the eight files that survived as direct final attachments. The missing scratch modules are not evidence that the implementation never existed: execution provenance records a 22-module package and an intermediate 24/24 unit + 47/47 gate pass before later complete-Runtime hardening.
 
-This directory contains the current reconstruction; Git retains the directly persisted late-WIP source. Current modules import, but complete Runtime/proof/bridge integration remains open. See root `IMPLEMENTATION_STATUS.md` and `RECOVERY_MANIFEST.md` before editing.
+This directory contains the current scoped Reference/CPU implementation;
+Git retains the directly persisted late-WIP source. Target AMP integration
+is now the active frontier. See root `IMPLEMENTATION_STATUS.md` for the
+current release and `RECOVERY_MANIFEST.md` for historical provenance.
 
-Do not “fix” imports by weakening the contract or copying old R4.2 semantics into the new Runtime. Recover/implement the missing modules against `FP_THEORY.md`, then run the complete endpoint gates.
+Extend the implementation against `FP_THEORY.md`; do not weaken its contract
+or import superseded R4.2 semantics. The reference modules are restored and
+integrated; actual target execution needs its own complete endpoint evidence.
 
 ## Current executable recovery (2026-09-12)
 
@@ -64,8 +74,9 @@ Read [`OWNED_CPU_INSTALLATION.md`](../../theory/proofs/OWNED_CPU_INSTALLATION.md
 and run `scripts/audit_cpu_installation.py`. This operation is distinct
 from a current class optimum, target AMP and concurrent/crash-safe install.
 
-This uses the explicit `ConstructionContract` slice, not the complete ERC-1
-run manifest. The registered machine counts retained packed reference payload
+The construction-only/manual interface remains an explicit partial mode;
+the owned online policy binds the aggregate reference manifest described
+below. The registered machine counts retained packed reference payload
 bytes and conservative reference operation charges; it does not claim total
 CPython heap, bit-time, GPU memory or CUDA work accounting. Numeric integer
 work limits and inconclusive range bounds produce UNRESOLVED. Intermediate
@@ -150,11 +161,12 @@ state. Omitting `host` is explicitly partial and changes chi.
 Read [`BOUND_HOST_RUNTIME.md`](../../theory/proofs/BOUND_HOST_RUNTIME.md)
 and run `scripts/audit_bound_host_runtime.py`. Its actual bounded CPU chain
 and late-fence counterexample establish the declared commitment scope.
-Complete ERC-1 run/policy/supervision/publication/error ownership, other
-resource limits, shared platform/device resources and target AMP remain open.
+The subsequent owned policy/run protocol below closes its declared CPU
+registration and publication scope. Shared platform/device resources,
+additional resource limits and actual target AMP are outside this host result.
 
-Current machine `packed-reference-payload-v7` additionally owns a registered
-Compiler strategy. For an online registration containing the named native
+Machine v7 introduced the owned registered Compiler strategy, retained in
+current v9. For an online registration containing the named native
 class and two CPU evidence rules:
 
 ```python
@@ -233,8 +245,8 @@ and run `python -B scripts/audit_reference_acceleration.py`.
 
 The [47-gate mapping](../../docs/REFERENCE_RELEASE_GATE_MAP.md) distinguishes
 current reference evidence, scoped theorems, absent bypass authority and
-target AMP obligations. Gate 17 now has current owned evidence; final
-reference integration checks remain before target AMP execution.
+target AMP obligations. Gate 17 has current owned evidence; the full
+reference integration passed at `ebe2c4c`. Actual target AMP is next.
 The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current

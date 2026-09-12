@@ -1,0 +1,1170 @@
+{
+  "status": "PASS",
+  "scope": "complete scoped Reference/CPU release integration; target AMP held",
+  "source_commit": "ebe2c4cf23f296fe517d4fe237cef45eaa98d309",
+  "started_utc": "2026-09-12T17:34:51.582564+00:00",
+  "finished_utc": "2026-09-12T17:56:29.568613+00:00",
+  "machine": "packed-reference-payload-v9",
+  "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "fresh_clone": {
+    "no_hardlinks": true,
+    "clean_before_and_after": true,
+    "imported_modules": [
+      "fp_reference.binary_arithmetic",
+      "fp_reference.bridge",
+      "fp_reference.core",
+      "fp_reference.data_usage",
+      "fp_reference.empirical_bound",
+      "fp_reference.encoding",
+      "fp_reference.float64_bridge",
+      "fp_reference.float64_learner",
+      "fp_reference.float64_range",
+      "fp_reference.host_failure",
+      "fp_reference.host_resources",
+      "fp_reference.info",
+      "fp_reference.ingress",
+      "fp_reference.installation",
+      "fp_reference.learner",
+      "fp_reference.machine",
+      "fp_reference.native_search",
+      "fp_reference.numerics",
+      "fp_reference.persistence",
+      "fp_reference.persistence_state",
+      "fp_reference.policy",
+      "fp_reference.profile",
+      "fp_reference.program",
+      "fp_reference.proof",
+      "fp_reference.relation_proposal",
+      "fp_reference.resources",
+      "fp_reference.run_state",
+      "fp_reference.runtime",
+      "fp_reference.search",
+      "fp_reference.semantics"
+    ]
+  },
+  "audit_count": 21,
+  "audits": {
+    "owned_compiler_policy": {
+      "status": "PASS",
+      "scope": "registered owned sequential native-class Compiler strategy on actual CPU Runtime",
+      "seconds": 1297.19,
+      "complete_sections": [
+        "registration",
+        "success",
+        "learned",
+        "exhaustive",
+        "failures",
+        "bounded"
+      ],
+      "evidence": {
+        "success.native_class_sizes": [
+          35,
+          35
+        ],
+        "success.installed_at_cursors": [
+          22,
+          38
+        ],
+        "learned.native_class_sizes": [
+          774
+        ],
+        "learned.installed_at_cursors": [
+          18
+        ],
+        "exhaustive": {
+          "all_six_label_streams": 64,
+          "outcomes": {
+            "BASELINE_SELECTED": 32,
+            "UNRESOLVED": 30,
+            "INSTALLED_CPU": 2
+          },
+          "independent_log_and_exact_wealth_checks": 256
+        }
+      },
+      "completed_jobs": {
+        "bounded.job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 34492416,
+          "peak_job_commit": 35721216,
+          "user_100ns": 180468750,
+          "kernel_100ns": 937500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 13264,
+          "process_creation_100ns": 134337093712118921
+        }
+      }
+    },
+    "cpu_installation": {
+      "status": "PASS",
+      "scope": "serialized CPU root/lease installation from owned exact proposal and two-path evidence",
+      "seconds": 301.8,
+      "complete_sections": [
+        "ledger",
+        "success",
+        "learned",
+        "failures",
+        "capacity",
+        "continuation"
+      ],
+      "evidence": {
+        "ledger.independent_complete_lease_cases": 2016,
+        "success.complete_native_class_programs": 35,
+        "learned.complete_native_class_programs": 774,
+        "learned.independent_continuous_binary64_phase_checks": 870,
+        "continuation.install_cursors": [
+          22,
+          38
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "reference_model_check": {
+      "status": "PASS",
+      "scope": "owned finite Runtime and independently exhaustive exact native/learner model",
+      "seconds": 877.5,
+      "complete_sections": [
+        "counts",
+        "seed",
+        "distinct_class_shapes",
+        "selected_cases"
+      ],
+      "evidence": {
+        "counts": {
+          "runs": 36,
+          "complete_native_members": 2665,
+          "exact_endpoint_scores": 2619,
+          "range_unresolved_members": 46,
+          "complete_class_proofs": 33,
+          "initial_range_unresolved_members": 44,
+          "profile_range_unresolved_members": 2,
+          "infeasible_class_results_unresolved": 3,
+          "ordinary_successor_checks": 361,
+          "halted_unsafe_ordinary_commits": 3,
+          "independent_binary64_phases": 23274
+        },
+        "distinct_class_shapes": 34,
+        "seed": 2026091367
+      },
+      "completed_jobs": {}
+    },
+    "reference_search": {
+      "status": "PASS",
+      "scope": "owned complete ordered native constructor class plus actual deployed baseline; fixed-state exact empirical CE",
+      "seconds": 149.08,
+      "complete_sections": [
+        "grammar",
+        "runtime",
+        "compound",
+        "recurrent",
+        "adversaries"
+      ],
+      "evidence": {
+        "grammar.independent_complete_classes": [
+          {
+            "class": "empty",
+            "programs": 0,
+            "transitions": 3
+          },
+          {
+            "class": "scalar-compounds",
+            "programs": 587,
+            "transitions": 736
+          },
+          {
+            "class": "shared-PRODUCT-descendants",
+            "programs": 12215,
+            "transitions": 13828
+          },
+          {
+            "class": "repeated-edges-and-slots",
+            "programs": 205,
+            "transitions": 324
+          },
+          {
+            "class": "multiple-SUMs",
+            "programs": 774,
+            "transitions": 982
+          },
+          {
+            "class": "typed-products",
+            "programs": 217,
+            "transitions": 390
+          },
+          {
+            "class": "binding-permutations",
+            "programs": 72,
+            "transitions": 98
+          },
+          {
+            "class": "delayed-bodies",
+            "programs": 778,
+            "transitions": 837
+          },
+          {
+            "class": "absent-body-type",
+            "programs": 12,
+            "transitions": 110
+          }
+        ],
+        "runtime.complete_profile_constructor_programs": 110,
+        "compound.complete_native_programs": 587,
+        "recurrent.complete_delayed_binding_programs": 10
+      },
+      "completed_jobs": {}
+    },
+    "reference_acceleration": {
+      "status": "PASS",
+      "scope": "universal frozen-context empirical upper, owned native witness and bounded CPU hierarchy protocol",
+      "seconds": 359.45,
+      "complete_sections": [
+        "cases.upper_audit",
+        "cases.baseline_exhaustive",
+        "cases.connected_assignments",
+        "cases.profiles",
+        "cases.identification_limits",
+        "cases.unresolved_cases",
+        "cases.authority_adversaries",
+        "cases.range_residency",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.upper_audit": {
+          "two_context_count_tables": 225,
+          "exact_rational_prediction_comparisons": 18225,
+          "independent_proposition_and_numeric_type_refusals": 1575,
+          "erasing_source_distinction_can_make_false_upper_and_is_rejected": true
+        },
+        "cases.baseline_exhaustive": {
+          "independently_enumerated_native_programs": 218,
+          "baseline_attains_upper_with_zero_new_candidates": true,
+          "syntax_not_claimed_exhausted": true
+        },
+        "cases.identification_limits": {
+          "disconnected_indistinguishable_worlds_with_opposite_unseen_relation": 2,
+          "same_empirical_optimum_does_not_identify_relative_component_flip": true,
+          "cheaper_train_tied_zero_PRODUCT_actual_construction": {
+            "nodes": 5,
+            "sources": 3,
+            "state_reads": 0,
+            "SUMs": 2,
+            "PRODUCTs": 0,
+            "SUM_edges": 3,
+            "edges": 3,
+            "slots": 2,
+            "bindings": 0
+          },
+          "empirical_optimality_does_not_force_hierarchy": true,
+          "existing_full_uniform_task_Bayes_CE": 0.3250829733914482,
+          "existing_sharp_unrestricted_SUM_infimum_CE": 0.5091150769756967
+        },
+        "cases.bounded": {
+          "tokens": 32,
+          "ordinary_training_events": 310,
+          "optimizer_update_unit": 10,
+          "complete_domain_predictions_checked": 1024,
+          "native_graph": {
+            "nodes": 74,
+            "sources": 64,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 68,
+            "edges": 76,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 1090,
+            "SUMs": 1030,
+            "PRODUCTs": 1028,
+            "edges": 4172,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 6540,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "installed_at_cursor": 330,
+          "continued_after_install_and_sealed_at": 622,
+          "independent_binary64_phase_checks": 1963,
+          "peak_reference_payload_bytes": 65266182,
+          "not_claimed": "population identification, forced unique hierarchy, or actual target AMP",
+          "host": {
+            "process_id": 17256,
+            "creation_100ns": 134337082660430964,
+            "lifetime_process_commit_peak": 258260992,
+            "job_commit_peak": 259592192,
+            "process_user_100ns": 3297031250,
+            "process_kernel_100ns": 11562500
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 1073741824,
+            "peak_process_commit": 333582336,
+            "peak_job_commit": 334913536,
+            "user_100ns": 3320468750,
+            "kernel_100ns": 11562500,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 17256,
+            "process_creation_100ns": 134337082660430964
+          }
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 1073741824,
+          "peak_process_commit": 333582336,
+          "peak_job_commit": 334913536,
+          "user_100ns": 3320468750,
+          "kernel_100ns": 11562500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 17256,
+          "process_creation_100ns": 134337082660430964
+        }
+      }
+    },
+    "reference_construction": {
+      "status": "PASS",
+      "scope": "actual ReferenceCompilerRuntime native construction/recovery endpoint; packed reference payload machine only",
+      "seconds": 11.83,
+      "complete_sections": [
+        "boundary_checks",
+        "ownership_model_check"
+      ],
+      "evidence": {
+        "existing_resource_fixture_graphs": 9,
+        "random_shared_native_graphs": 80,
+        "independent_exact_full_context_comparisons": 320,
+        "ownership_model_check.steps": 1500
+      },
+      "completed_jobs": {}
+    },
+    "reference_events": {
+      "status": "PASS",
+      "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+      "seconds": 59.76,
+      "complete_sections": [
+        "gradient_audit",
+        "exhaustive_endpoint",
+        "clock_data_boundaries",
+        "causality",
+        "query_precision",
+        "failure_prefixes",
+        "existing_value_path"
+      ],
+      "evidence": {
+        "gradient_audit.independent_exact_gradient_vectors": 960,
+        "exhaustive_endpoint.streams": 64,
+        "exhaustive_endpoint.individual_optimizer_commits": 128,
+        "causality.exact_causal_source_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "seconds": 14.36,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "evidence": {
+        "existing_value_path.actual_profile_predictions_and_observations": 512,
+        "exhaustive_replay": {
+          "all_two_event_binary_context_target_streams": 16,
+          "independent_profile_prediction_and_gradient_checks": 64
+        },
+        "recurrent_attachment.recurrent_profile_events": 8
+      },
+      "completed_jobs": {}
+    },
+    "reference_numerics": {
+      "status": "PASS",
+      "scope": "guarded exact rational logarithm enclosure, signed ordering and monotone nonnegative dyadic floor",
+      "seconds": 1.28,
+      "complete_sections": [
+        "logarithm",
+        "floor",
+        "comparison",
+        "adversaries"
+      ],
+      "evidence": {
+        "logarithm.exact_formula_and_nested_tail_cases": 600,
+        "floor.exact_grid_and_monotonicity_cases": 1385,
+        "comparison.exact_signed_order_cases": 12321
+      },
+      "completed_jobs": {}
+    },
+    "binary_arithmetic": {
+      "status": "PASS",
+      "scope": "exact registered scalar binary rounding and actual checked CPU binary64 operations",
+      "seconds": 1.72,
+      "complete_sections": [
+        "rounding",
+        "counterexamples",
+        "limits",
+        "actual",
+        "failures"
+      ],
+      "evidence": {
+        "rounding.signed_exact_nearest_point_comparisons": 10232,
+        "actual.successful_actual_scalar_comparisons": 513,
+        "actual.actual_overflow_cases_unresolved": 39
+      },
+      "completed_jobs": {}
+    },
+    "float64_runtime": {
+      "status": "PASS",
+      "scope": "owned actual CPU binary64 and exact reference learner prefixes; no target AMP authorization",
+      "seconds": 11.2,
+      "complete_sections": [
+        "exhaustive",
+        "profiles",
+        "normalization",
+        "failures",
+        "crossing"
+      ],
+      "evidence": {
+        "exhaustive.independent_bitwise_phase_checks": 1024,
+        "exhaustive.actual_finite_coordinates_differing_from_recast_exact_endpoints": 406,
+        "profiles.profile_and_initial_prefix_phase_checks": 30,
+        "profiles.recurrent_phase_checks": 22
+      },
+      "completed_jobs": {}
+    },
+    "persistence_kernel": {
+      "status": "PASS",
+      "scope": "exact lower-wealth kernel and finite declared null-law audits; no Runtime authority",
+      "seconds": 0.69,
+      "complete_sections": [
+        "invalid_registration_or_argument_cases",
+        "pointwise_floor_bound_and_threshold_cases",
+        "exact_conditional_null_trees",
+        "global_error_composition",
+        "reproduced_unsound_shortcuts"
+      ],
+      "evidence": {
+        "pointwise_floor_bound_and_threshold_cases": 1586,
+        "global_error_composition": {
+          "complete_shared_observation_paths": 256,
+          "global_alpha": "3/8",
+          "actual_spending_values": [
+            "1/4",
+            "3/8",
+            "5/16"
+          ],
+          "any_false_crossing_probability": "23/128"
+        }
+      },
+      "completed_jobs": {}
+    },
+    "reference_persistence": {
+      "status": "PASS",
+      "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+      "seconds": 3.34,
+      "complete_sections": [
+        "scores",
+        "crossing",
+        "null",
+        "freshness",
+        "failures"
+      ],
+      "evidence": {
+        "null.complete_fair_label_paths": 32,
+        "null.exact_conditional_lower_wealth_inequalities": 31,
+        "null.first_crossing_probability": "1/8",
+        "freshness.global_allocated_alpha": "3/4"
+      },
+      "completed_jobs": {}
+    },
+    "paired_cpu_persistence": {
+      "status": "PASS",
+      "scope": "owned exact-reference and actual CPU binary64 stored-mass persistence",
+      "seconds": 9.86,
+      "complete_sections": [
+        "range",
+        "scores",
+        "nontransfer",
+        "null",
+        "failures",
+        "freshness"
+      ],
+      "evidence": {
+        "range.independent_direct_float_context_checks": 400,
+        "scores.independent_four_trajectory_phase_checks": 62,
+        "nontransfer": {
+          "delta": "1/18014398509481984",
+          "normalizer_cap": "36028797018963969/18014398509481984",
+          "reference_crossing_cursor": 5,
+          "reference_wealth_lower": "322095/65536",
+          "finite_mass_gain": "0",
+          "finite_wealth": "1",
+          "reference_crossing_cannot_transfer_to_physical_path": true
+        },
+        "null.complete_fair_label_paths": 32
+      },
+      "completed_jobs": {}
+    },
+    "context_ingress": {
+      "status": "PASS",
+      "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+      "seconds": 4.09,
+      "complete_sections": [
+        "codec",
+        "chunking",
+        "admission",
+        "failures",
+        "filtration"
+      ],
+      "evidence": {
+        "chunking.all_legal_chunkings": 208,
+        "chunking.equal_prefix_complete_snapshot_checks": 1328,
+        "admission.unchanged_unfunded_denials": 64,
+        "filtration.locked_action_prefix_positions": 90
+      },
+      "completed_jobs": {}
+    },
+    "owned_encoding": {
+      "status": "PASS",
+      "scope": "owned native identity and admitted streaming payload materialization",
+      "seconds": 31.12,
+      "complete_sections": [
+        "identity",
+        "encoding",
+        "planned",
+        "workspace"
+      ],
+      "evidence": {
+        "identity.complete_unicode_native_class_programs": 35,
+        "encoding.independent_packed_tree_checks": 235,
+        "encoding.all_single_BMP_codepoints": 65536
+      },
+      "completed_jobs": {}
+    },
+    "control_admission": {
+      "status": "PASS",
+      "scope": "paid Compiler control admission; no complete host/device memory claim",
+      "seconds": 11.62,
+      "complete_sections": [
+        "history",
+        "endpoints",
+        "trees",
+        "authority",
+        "ingress"
+      ],
+      "evidence": {
+        "trees.complete_four_command_trees": 96,
+        "trees.endpoint_positions": 384,
+        "authority.complete_program_class": 35
+      },
+      "completed_jobs": {}
+    },
+    "host_allocation_failure": {
+      "status": "PASS",
+      "scope": "terminal public Runtime authority on host allocation exhaustion",
+      "seconds": 2.86,
+      "complete_sections": [
+        "history",
+        "ports",
+        "prefixes",
+        "os"
+      ],
+      "evidence": {
+        "ports.guarded_continuation_or_authority_ports": 22,
+        "ports.repeated_terminal_refusals": 352,
+        "ports.internal_allocation_failures_bypass_broad_handlers": 23
+      },
+      "completed_jobs": {
+        "os.windows_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 28504064,
+          "peak_job_commit": 29732864,
+          "user_100ns": 2968750,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 21260,
+          "process_creation_100ns": 134337085573781220
+        }
+      }
+    },
+    "bound_host_runtime": {
+      "status": "PASS",
+      "scope": "live Runtime host policy/process binding and declared commitment observations",
+      "seconds": 5.76,
+      "complete_sections": [
+        "cases.binding",
+        "cases.memory",
+        "cases.install",
+        "cases.late-fence",
+        "cases.failed-exit"
+      ],
+      "evidence": {
+        "cases.install.complete_native_class_programs": 35,
+        "cases.late-fence.low_current_memory_cannot_erase_prior_peak": true,
+        "cases.failed-exit.completed_looking_child_file_not_accepted_as_run_success": true
+      },
+      "completed_jobs": {
+        "cases.binding.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 29966336,
+          "peak_job_commit": 31203328,
+          "user_100ns": 2968750,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 24752,
+          "process_creation_100ns": 134337085581020510
+        },
+        "cases.memory.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 30429184,
+          "peak_job_commit": 31645696,
+          "user_100ns": 2500000,
+          "kernel_100ns": 937500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 11488,
+          "process_creation_100ns": 134337085584638476
+        },
+        "cases.install.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31047680,
+          "peak_job_commit": 32280576,
+          "user_100ns": 20312500,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 8332,
+          "process_creation_100ns": 134337085588431695
+        },
+        "cases.late-fence.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 134217728,
+          "peak_process_commit": 110821376,
+          "peak_job_commit": 112050176,
+          "user_100ns": 2031250,
+          "kernel_100ns": 1406250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 11544,
+          "process_creation_100ns": 134337085609734742
+        },
+        "cases.failed-exit.job": {
+          "exit_code": 17,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 30801920,
+          "peak_job_commit": 32010240,
+          "user_100ns": 20937500,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 14624,
+          "process_creation_100ns": 134337085613361419
+        }
+      }
+    },
+    "reference_run": {
+      "status": "PASS",
+      "scope": "owned single-root finite reference run, actual CPU protocol and terminal report",
+      "seconds": 12.83,
+      "complete_sections": [
+        "cases.registration",
+        "cases.finite_streams",
+        "cases.installed",
+        "cases.failures",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.finite_streams": {
+          "all_binary_streams_at_lengths_2_3_4": 28,
+          "terminal_port_denials_without_history_growth": 638,
+          "partial_optimizer_unit_retained_without_flush": true,
+          "end_of_stream_not_evidence_crossing_or_rejection": true,
+          "waiting_and_active_stages_report_unresolved_without_history_erasure": true
+        },
+        "cases.installed": {
+          "cursor": 22,
+          "native_class_size": 35,
+          "independent_binary64_phase_checks": 141,
+          "sealed_port_denials": 22,
+          "alpha_spent": "1/2",
+          "closure_included_in_actual_owned_payload_bytes": true
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31031296,
+          "peak_job_commit": 32264192,
+          "user_100ns": 19843750,
+          "kernel_100ns": 2343750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 28572,
+          "process_creation_100ns": 134337085740805984
+        }
+      }
+    },
+    "recovered_authorities": {
+      "status": "PASS",
+      "scope": "actual recovered proof/bridge code, reconstructed strict core data objects",
+      "seconds": 0.3,
+      "complete_sections": [
+        "source_commit",
+        "upper_evidence_accepted_as_equivalence",
+        "skipped_event_accepted",
+        "same_cursor_unexecuted_state_replacement_accepted",
+        "dead_session_authorization_accepted"
+      ],
+      "evidence": {
+        "source_commit": "39235ef8678cabc6fa675eb9e0568895d72d9b61",
+        "interpretation": "implementation mismatches, not Foundation R4 counterexamples"
+      },
+      "completed_jobs": {}
+    }
+  },
+  "historical_gate_map": {
+    "0": {
+      "mode": "R",
+      "audits": [
+        "context_ingress",
+        "owned_encoding",
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "1": {
+      "mode": "S/X",
+      "audits": [
+        "reference_events"
+      ]
+    },
+    "2": {
+      "mode": "R/S",
+      "audits": [
+        "reference_search"
+      ]
+    },
+    "3": {
+      "mode": "R/S",
+      "audits": [
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "4": {
+      "mode": "R/S",
+      "audits": [
+        "reference_events",
+        "reference_search"
+      ]
+    },
+    "5": {
+      "mode": "R",
+      "audits": [
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "6": {
+      "mode": "R/S",
+      "audits": [
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "7": {
+      "mode": "R/S",
+      "audits": [
+        "reference_events"
+      ]
+    },
+    "8": {
+      "mode": "R",
+      "audits": [
+        "reference_construction",
+        "reference_search"
+      ]
+    },
+    "9": {
+      "mode": "R",
+      "audits": [
+        "bound_host_runtime",
+        "control_admission",
+        "cpu_installation",
+        "host_allocation_failure",
+        "reference_construction"
+      ]
+    },
+    "10": {
+      "mode": "R",
+      "audits": [
+        "paired_cpu_persistence",
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "11": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "reference_profiles"
+      ]
+    },
+    "12": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "reference_events",
+        "reference_run"
+      ]
+    },
+    "13": {
+      "mode": "R/T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_events"
+      ]
+    },
+    "14": {
+      "mode": "R",
+      "audits": [
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "15": {
+      "mode": "X/S",
+      "audits": [
+        "control_admission",
+        "owned_compiler_policy"
+      ]
+    },
+    "16": {
+      "mode": "T",
+      "audits": [
+        "binary_arithmetic",
+        "float64_runtime"
+      ]
+    },
+    "17": {
+      "mode": "R/S",
+      "audits": [
+        "reference_acceleration"
+      ]
+    },
+    "18": {
+      "mode": "R",
+      "audits": [
+        "reference_events",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "19": {
+      "mode": "R",
+      "audits": [
+        "control_admission",
+        "reference_run",
+        "reference_search"
+      ]
+    },
+    "20": {
+      "mode": "R/T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy",
+        "reference_run"
+      ]
+    },
+    "21": {
+      "mode": "R",
+      "audits": [
+        "bound_host_runtime",
+        "cpu_installation",
+        "owned_encoding",
+        "reference_construction",
+        "reference_run"
+      ]
+    },
+    "22": {
+      "mode": "R",
+      "audits": [
+        "context_ingress",
+        "cpu_installation",
+        "reference_events",
+        "reference_run"
+      ]
+    },
+    "23": {
+      "mode": "R",
+      "audits": [
+        "cpu_installation",
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "24": {
+      "mode": "R/S",
+      "audits": [
+        "owned_compiler_policy",
+        "reference_persistence"
+      ]
+    },
+    "25": {
+      "mode": "R",
+      "audits": [
+        "reference_profiles",
+        "reference_run",
+        "reference_search"
+      ]
+    },
+    "26": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "owned_encoding",
+        "reference_run"
+      ]
+    },
+    "27": {
+      "mode": "S",
+      "audits": []
+    },
+    "28": {
+      "mode": "T",
+      "audits": [
+        "paired_cpu_persistence"
+      ]
+    },
+    "29": {
+      "mode": "T",
+      "audits": [
+        "float64_runtime",
+        "paired_cpu_persistence"
+      ]
+    },
+    "30": {
+      "mode": "T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy"
+      ]
+    },
+    "31": {
+      "mode": "S",
+      "audits": []
+    },
+    "32": {
+      "mode": "S",
+      "audits": []
+    },
+    "33": {
+      "mode": "S",
+      "audits": []
+    },
+    "34": {
+      "mode": "S/R",
+      "audits": [
+        "reference_profiles"
+      ]
+    },
+    "35": {
+      "mode": "S",
+      "audits": []
+    },
+    "36": {
+      "mode": "S",
+      "audits": []
+    },
+    "37": {
+      "mode": "S/R",
+      "audits": [
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "38": {
+      "mode": "R/S",
+      "audits": [
+        "bound_host_runtime",
+        "cpu_installation",
+        "reference_construction"
+      ]
+    },
+    "39": {
+      "mode": "S",
+      "audits": []
+    },
+    "40": {
+      "mode": "S",
+      "audits": []
+    },
+    "41": {
+      "mode": "S",
+      "audits": []
+    },
+    "42": {
+      "mode": "S",
+      "audits": []
+    },
+    "43": {
+      "mode": "S/R",
+      "audits": [
+        "reference_run"
+      ]
+    },
+    "44": {
+      "mode": "R",
+      "audits": [
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "45": {
+      "mode": "S",
+      "audits": []
+    },
+    "46": {
+      "mode": "S",
+      "audits": []
+    }
+  },
+  "closure_obligations": {
+    "1": "fresh_clone",
+    "2": [
+      "recovered_authorities",
+      "control_admission",
+      "owned_compiler_policy"
+    ],
+    "3": [
+      "reference_search",
+      "reference_acceleration",
+      "reference_run"
+    ],
+    "4": [
+      "reference_search",
+      "reference_model_check"
+    ],
+    "5": [
+      "reference_construction",
+      "cpu_installation",
+      "owned_encoding",
+      "host_allocation_failure",
+      "bound_host_runtime"
+    ],
+    "6": [
+      "reference_events",
+      "reference_profiles",
+      "reference_persistence"
+    ],
+    "7": [
+      "context_ingress",
+      "reference_persistence",
+      "owned_compiler_policy"
+    ],
+    "8": [
+      "float64_runtime",
+      "paired_cpu_persistence",
+      "cpu_installation"
+    ],
+    "9": [
+      "reference_search",
+      "reference_acceleration",
+      "control_admission",
+      "paired_cpu_persistence",
+      "cpu_installation"
+    ],
+    "10": [
+      "reference_numerics",
+      "binary_arithmetic",
+      "float64_runtime",
+      "reference_model_check"
+    ],
+    "11": [
+      "reference_events",
+      "reference_numerics",
+      "context_ingress"
+    ],
+    "12": [
+      "reference_acceleration"
+    ],
+    "13": "historical_gate_map",
+    "14": [
+      "reference_model_check"
+    ],
+    "15": "HOLD: actual AMP after this Reference closure"
+  },
+  "not_claimed": [
+    "every legal registration has been enumerated",
+    "CERTIFIED_COMPLETE or arbitrary strategy/parameter optimality",
+    "scoped static theorem rows are executable gate passes",
+    "actual target AMP, shared device resources or GPU science",
+    "cross-root statistical family authority"
+  ]
+}

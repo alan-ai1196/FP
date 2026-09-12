@@ -8,11 +8,11 @@ The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
 - **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; do not extend static cases or chase their remaining constants before Runtime, AMP and device experiments.
-- **Reference Compiler implementation not frozen.** Owned 32-token hierarchical discovery now reaches fresh paired CPU evidence, installation and finite run closure. Final reference integration checks remain before target AMP.
+- **Scoped Reference/CPU implementation frozen.** Source `ebe2c4c` passed all 21 complete release audits in a fresh clone. Native selection, full learners, owned CPU evidence/install/run closure and their declared resource protocol are integrated; actual target AMP remains open.
 - **Science HOLD.** Do not start new RTX3090/model-science runs yet.
 
-The current research direction is fixed: complete `ReferenceCompilerRuntime`,
-then the actual AMP bridge, then RTX 3090 experiments. Reopen Foundation only
+The current research direction is fixed: the actual AMP bridge, then RTX 3090
+experiments. The registered Reference/CPU prerequisite is closed. Reopen Foundation only
 when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
@@ -53,15 +53,23 @@ optimality is neither structural forcing nor fresh evidence. Unchanged
 exact theta now preserves its already owned whole-domain range object;
 changing theta recomputes/replaces it before release. All learner/optimizer
 and delayed-state histories remain distinct and retained. Final reference
-integration is next; actual target AMP follows reference closure.
+integration now passes; actual target AMP is next.
 
-Final integration is now executable: read
+Read the frozen release scope and evidence:
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
-run `scripts/audit_reference_release.py --write` from its committed source.
-It clones one immutable revision and runs the complete 21-script battery,
-including independent randomized exact/exhaustive endpoint models and
-deliberately infeasible initializer/profile/ordinary successors. A prepared
-driver or partial diagnostic is not a freeze; require its full passing result.
+[`FP_REFERENCE_RELEASE_AUDIT.json`](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
+`scripts/audit_reference_release.py --write` tested committed source `ebe2c4c`
+in a clean new clone: all 30 modules import and all 21 complete audit scripts
+pass. The independent endpoint model covers 36 runs, 2,665 native members,
+2,619 exact scores, 46 range-unresolved members, three halted ordinary
+commits and 23,274 independently replayed binary64 phases. Trained 774-member
+installation and the owned n=32 chain also pass at that revision.
+
+The freeze declaration changes documentation/evidence only; Runtime and audit
+code are identical to the tested revision. It does not claim universal
+strategy/value optimality, optional unimplemented interfaces, target AMP or
+cross-root error control. Do not add static cases or new reference release
+prerequisites merely to defer actual device work.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -106,7 +114,8 @@ retry collision is fixed by attempt-specific physical metadata identities.
 ordinary continuation. The 774-member case installs actually trained nonzero
 parameters. This closes the declared serialized CPU transition, not full
 host/device accounting, concurrent/crash-safe publication, target AMP or
-`CERTIFIED_COMPLETE`. Runtime stays NOT FROZEN and science stays HOLD.
+`CERTIFIED_COMPLETE`. The integrated Reference/CPU scope is frozen; science
+stays HOLD until actual target AMP passes.
 The same audit also executes two successive compilation/evidence/install
 cycles in one Runtime. New baselines and fresh identities work, old
 authority stays closed, and the global alpha cap still blocks later use.
@@ -231,9 +240,9 @@ cursor 22, including in an actual 64 MiB process with checked final exit.
 
 The [47-gate crosswalk](docs/REFERENCE_RELEASE_GATE_MAP.md) is an evidence map,
 not 47 passing flags. Gate 17 now has the actual n=32 owned execution and
-negative controls described above; final reference integration remains.
-Gates 16/28–30 require actual target AMP after
-reference closure. Do not expand static cases or invent optional universal
+negative controls described above; final reference integration now passes.
+Gates 16/28–30 and the target parts of 13/20 are the next actual AMP work.
+Do not expand static cases or invent optional universal
 policy, quotient or cross-root protocols as prerequisites for this scope.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)

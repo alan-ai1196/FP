@@ -1,6 +1,7 @@
 # Historical gates at the current Reference Runtime frontier
 
-Status: **47 obligations mapped; implementation NOT FROZEN; science HOLD.**
+Status: **47 obligations mapped; scoped Reference/CPU release FROZEN;
+target AMP OPEN; science HOLD.**
 This is an evidence crosswalk, not 47 passing test flags. The historical
 [catalog](history/V155_GATE_CATALOG.md) names the obligations; current
 [FP_THEORY.md](../FP_THEORY.md) supplies their scope. Old section numbers and
@@ -85,8 +86,10 @@ upper closes the empirical objective over the full native class. It does
 not shrink that class to the proposal's architecture or assert that the
 unexecuted grammar was constructed. Nonattainment stays UNRESOLVED.
 See the [proof and exact scope](../theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md).
-The remaining reference release work is final integration at its release
-revision; this row is not an aggregate implementation freeze.
+The complete reference integration now passes at source `ebe2c4c`; see
+the [release scope](../theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
+[actual fresh-clone evidence](../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
+This row alone is not the release evidence.
 
 The ordinary single-root run binding/report/terminal transition now exists.
 Manual mode, absent host binding, unavailable query-only/reporting interfaces,
@@ -96,12 +99,12 @@ Supporting all of those optional classes is not a prerequisite to a release
 of the explicitly registered reference class. A claim that needs one must
 first implement it, or report UNRESOLVED.
 
-Reference closure still requires a fresh-clone import and a final integration
-audit of the actual endpoint at the release revision, including exact versus
-exhaustive/randomized checks. Existing independent construction, grammar,
-event, lease and finite-policy checks supply their scoped evidence; their
-historical JSON files do not prove that every later edit passed. Gates
-16/28–30 and the target components of 13/20 are then executed on the actual
+Reference closure now includes fresh-clone imports and all 21 complete audit
+scripts at `ebe2c4c`, including exact/exhaustive models of 36 actual Runtime
+registrations. The corresponding release record identifies that source and
+the complete executed sections; earlier standalone JSON files are not used
+as substitutes for that integration. Gates 16/28–30 and the target components
+of 13/20 are next executed on the actual
 registered AMP backend, ahead of RTX 3090 model science. No static theorem
 family or architecture menu is added by this crosswalk.
 

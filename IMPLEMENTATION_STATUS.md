@@ -1,5 +1,34 @@
 # FP Implementation Status
 
+## Current release (2026-09-13)
+
+**Scoped Reference/CPU implementation: FROZEN. Target AMP: OPEN. Model
+science: HOLD.** The entire 21-script integration battery passed from a
+clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
+3.12.9 on 64-bit Windows 11. All 30 current package modules import.
+
+Read [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md)
+and [`FP_REFERENCE_RELEASE_AUDIT.json`](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
+The frozen scope is the registered native constructor decision classes plus
+actual baseline, complete exact/CPU binary64 learners, owned single-root
+strategy, resource/history/freshness enforcement and serialized CPU install
+and finite run protocol. The 47-obligation map preserves scoped theorem,
+absent-authority and held-target distinctions; it is not 47 execution passes.
+
+The new independent endpoint model covers 36 runs/2,665 native members,
+2,619 exact scores, 46 unresolved range members and three halted ordinary
+commits; 23,274 binary64 phases are independently replayed. The trained
+774-member install, 64 complete policy streams and actual n=32 hierarchical
+chain in a 1 GiB job pass in the same integration. Three old resource-boundary
+assertions required calibration against their own paid manifest; no Runtime
+implementation change was needed during this release integration.
+
+The declaration changes documentation/evidence only. The 14 reference
+closure obligations below are satisfied for this scope; obligation 15 is
+now the active frontier: actual AMP trajectories, resource ownership,
+same-path persistence and structural-boundary installation. Foundation R4
+and ERC-1 remain unchanged; static special cases stay parked.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  
@@ -92,7 +121,9 @@ The migration preserved directly persisted late-WIP modules (`bridge.py`, `info.
 
 Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the historical R4.2 implementation only as an implementation reference, then re-run all gates.
 
-The repository therefore treats the current Reference Compiler source as a **recovery/WIP branch point**, not a release. Do not report its package as complete until imports/tests are restored and the complete endpoint suite passes.
+At migration the repository therefore treated the Reference Compiler source
+as a **recovery/WIP branch point**. The scoped current release and its actual
+integration evidence are recorded at the top of this document.
 
 ### Executable construction recovery (2026-09-12)
 

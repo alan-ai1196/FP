@@ -2043,3 +2043,42 @@ exhaustion now share calibration at offsets minus one and zero; their actual
 caps are 5,310 and 5,311. The **entire** ingress and binary64 Runtime audit
 batteries then passed, including all later failure/filtration checks, and
 their small current evidence files were refreshed before another integration.
+
+## 68. Freeze the scoped Reference/CPU release (2026-09-13)
+
+The complete release battery now passes at source
+`ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, machine v9, CPython 3.12.9 on
+64-bit Windows 11. A real clone without hardlinks imported all 30 current
+modules and ran all 21 full audit scripts, then remained clean at the same
+source revision. This is the final integrated result, not a union of partial
+diagnostics or a reclassification of the two earlier failed release runs.
+
+The independent learner oracle checks 36 Runtime registrations/34 class
+shapes and every one of their 2,665 native members. It matches 2,619 exact
+endpoint scores and 33 class proofs, keeps 46 range failures unresolved,
+checks 361 ordinary successors and three halted commits, and independently
+replays 23,274 binary64 phases. The full suite also covers 2,016 lease cases,
+the trained 774-member install, two successive installs at 22/38, all 64
+short policy streams and all terminal/failure/authority counterexamples.
+
+The owned n=32 hierarchy again installs at 330 and seals at 622, checking
+all 1,024 source contexts and 1,963 binary64 phases. Its actual 1 GiB job
+exits successfully with process peak 333,582,336 bytes and reference payload
+peak 65,266,182 bytes. The declared complete native class still includes
+at least 2^6540 source-only strings; one attained universal empirical upper
+closes selection without asserting that all members were constructed.
+
+`FP_REFERENCE_RELEASE_AUDIT.json` records the source, complete executed
+sections, small coverage summaries and actual OS exit/identity/peak records.
+The 47-gate map preserves scoped-theorem, absent-authority and held-target
+rows. The freeze declaration changes documentation/evidence only; no
+implementation or audit code differs from the tested revision.
+
+This closes the registered Reference/CPU prerequisite, including its owned
+single-root strategy and serialized resource/install/run protocol. It does
+not close actual target AMP, universal strategy/value optimality, optional
+unsupported information interfaces, shared platform/device accounting or
+cross-root error families. Foundation R4 and ERC-1 are unchanged. Static
+cases remain parked. Actual AMP correctness and its complete ownership,
+four trajectories, fresh same-path evidence and installation are now the
+active frontier before RTX 3090 model science.

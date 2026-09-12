@@ -1,8 +1,11 @@
-# Owned reference continuation — implementation scope, 2026-09-12
+# Owned reference continuation — implementation scope, 2026-09-13
 
 `FP_THEORY.md` is normative. Foundation and ERC-1 remain frozen. This note
-describes the current executable Runtime segment; it is not a new semantic
-contract or a complete Reference Compiler/AMP release.
+describes the current executable Runtime. Its scoped Reference/CPU release
+passed all 21 complete audits at source `ebe2c4c`; read
+[the frozen scope](../theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
+[release evidence](../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
+This is not a new semantic contract or an actual target AMP release.
 
 ## What the endpoint now executes
 
@@ -627,11 +630,11 @@ halted, unresolved run. Read [the run proof](../theory/proofs/OWNED_REFERENCE_RU
 and execute `scripts/audit_reference_run.py` for the bounded CPU chain and
 terminal/failure adversaries.
 
-The [47-gate mapping](REFERENCE_RELEASE_GATE_MAP.md) identifies owned
-hierarchical anti-unigram discovery and final integration checks as current
-reference work. Optional broader control/information/family claims do not
+The [47-gate mapping](REFERENCE_RELEASE_GATE_MAP.md) records the completed
+owned hierarchy and reference integration, and the remaining target gates.
+Optional broader control/information/family claims do not
 silently enlarge that scope. The CPU relation and finite run do not close
 actual target AMP. The generic target install port stays UNRESOLVED; no
 CERTIFIED_COMPLETE or target AMP authorization is issued. Actual target
-correctness follows reference closure, then RTX 3090 model science, which
+correctness is now the next step after reference closure, then RTX 3090 model science, which
 remains HOLD. Static theory expansion stays parked.
