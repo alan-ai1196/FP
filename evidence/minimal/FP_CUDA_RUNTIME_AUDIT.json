@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "scope": "owned actual CUDA prefix and per-phase relations; no target persistence/install/release",
+  "complete_binary_three_event_streams": 64,
+  "ordinary_events": 192,
+  "independently_replayed_stream_CUDA_phases": 1024,
+  "actual_arena_bytes_per_registered_root": 16777216,
+  "largest_stream_phase_frame_used": 5726,
+  "maximum_stream_output_cells": 47,
+  "all_finite_half_exact_widenings_including_zero_sign": 63488,
+  "signed_single_boundary_widenings": 12,
+  "all_checked_phase_frames_match_owned_raw_records": true,
+  "public_snapshots_contain_no_device_handles": true,
+  "profile": {
+    "phases": 44,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 6089,
+    "maximum_output_cells": 46,
+    "CPU_binary64_phases": 44,
+    "ordinary_events": 6,
+    "replayed_events": 6
+  },
+  "search": {
+    "phases": 41,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3260,
+    "maximum_output_cells": 20,
+    "independent_complete_native_members": 35,
+    "decision_class": "fixed-state reference empirical CE over the registered initializer endpoints plus actual baseline"
+  },
+  "search-exhaustion": {
+    "actual_CUDA_evidence_budget_failure_leaves_native_search_unresolved": true,
+    "no_reference_class_proof_issued": true,
+    "global_packed_cap": 1000000
+  },
+  "output-cap": {
+    "all_published_reference_and_CUDA_states_unchanged": true,
+    "revealed_target_and_executed_prefix_retained": true,
+    "completed_CUDA_phases": 6,
+    "case": "output-cap"
+  },
+  "prepaid-frame": {
+    "all_published_reference_and_CUDA_states_unchanged": true,
+    "revealed_target_and_executed_prefix_retained": true,
+    "completed_CUDA_phases": 4,
+    "case": "prepaid-frame"
+  },
+  "frame-cap": {
+    "actual_evidence_frame_cap_cannot_leave_an_unowned_checked_phase": true,
+    "admitted_frame_and_actual_device_outputs_retained": true
+  },
+  "unexpected-backend": {
+    "all_published_reference_and_CUDA_states_unchanged": true,
+    "revealed_target_and_executed_prefix_retained": true,
+    "completed_CUDA_phases": 6,
+    "case": "unexpected-backend"
+  },
+  "combined-failure": {
+    "all_published_reference_and_CUDA_states_unchanged": true,
+    "revealed_target_and_executed_prefix_retained": true,
+    "completed_CUDA_phases": 6,
+    "case": "combined-failure"
+  },
+  "malformed-backend": {
+    "malformed_backend_and_failed_raw_capture_cannot_become_admissibility_rejection": true
+  },
+  "unexecuted-endpoint": {
+    "all_published_reference_and_CUDA_states_unchanged": true,
+    "revealed_target_and_executed_prefix_retained": true,
+    "completed_CUDA_phases": 5,
+    "case": "unexecuted-endpoint"
+  },
+  "allocation-escape": {
+    "entry_rejects_freed_foreign_allocation_without_advancing_ingress": true
+  },
+  "zero-tolerance": {
+    "inexact_newborn_refused_without_reference_endpoint_fallback": true,
+    "failed_device_state_retained_while_baseline_continues": true
+  },
+  "normalization": {
+    "actual_single_readout_refused_by_preregistered_zero_probability_tolerance": true,
+    "rounded_normalizer_raw": 1065353216,
+    "target_not_revealed": true
+  }
+}

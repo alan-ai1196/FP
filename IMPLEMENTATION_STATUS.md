@@ -42,8 +42,8 @@ now executes explicit half forward/storage and single accumulation/readout/
 backward/master updates. Its independent audit passes 1,306 phases, including
 profile and recurrent state, plus 1,340 exact grid checks. Actual intermediate
 overflow masked by finite projection is refused. `cuda_learner.py` is a
-mechanical component with private-ownership integration still open; the
-Reference Runtime and target `install` behavior are unchanged.
+mechanical component; its subsequent owned Runtime integration is described
+below. The target `install` port still returns UNRESOLVED.
 
 The [bounded CUDA tensor arena](theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md)
 now contains all 1,306 phases, including every tensor temporary: one 16 MiB
@@ -52,8 +52,21 @@ events. Admission pays actual segment size, explicitly binds a persistent
 allocator setting absent from an apparently default snapshot, and detects
 freed escaped allocations with lifetime counters. The audit also checks 216
 complete typed extent sequences. This is scoped tensor-storage closure;
-Runtime-owned AMP state/evidence, driver/context accounting, target range,
-persistence and installation remain open.
+driver/context accounting, target range, persistence and installation remain
+separate obligations.
+
+The [owned CUDA prefix](theory/proofs/OWNED_CUDA_PREFIX.md) is now integrated.
+Runtime registers actual execution identity and tolerances, prepays fixed
+phase evidence, retains private continuous device states and checks full
+exact/reference relations. Reference and CUDA successors publish together;
+partial execution cannot advance either published learner. The independent
+audit covers 1,024 phases across all 64 short streams, 44 recurrent/profile
+phases with optional CPU binary64, and 41 phases for a 35-member native class.
+Actual caps, unexecuted endpoints, malformed backend results, combined
+executor/evidence failure and normalization mismatch remain explicit failures.
+CPU install/run authority cannot omit a CUDA-bearing root. This is finite
+prefix closure, not whole-domain target range, AMP persistence/install or
+full device/science release.
 
 ## Status at GitHub migration (2026-09-06)
 

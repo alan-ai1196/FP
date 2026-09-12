@@ -90,10 +90,9 @@ independent exact rounded interpreter, including ordinary four-path
 comparisons, recurrent profile replay and 24 further native DAGs. It detects
 an actual optimizer overflow even when projection hides it in a finite zero.
 The CUDA state keeps its own master parameters, half delayed queues and
-single gradient accumulator. This mechanical layer has no Runtime authority:
-the next work is owned device integration, per-event relations, fresh AMP
-evidence and actual installation. Do not rebuild the learner or reopen
-the static study to postpone those obligations.
+single gradient accumulator. The mechanical helpers have no signer. Their
+subsequent Runtime integration is now executed below; do not rebuild the
+learner or reopen the static study to postpone the remaining target work.
 
 The actual tensor-storage component now executes all 1,306 phases in one
 16 MiB backing arena, with no additional native allocator allocations; read
@@ -102,8 +101,24 @@ The 304,064-byte used prefix is not the physical memory charge. Explicit
 allocator binding fixes a real hidden-setting counterexample: an apparently
 default snapshot can otherwise reserve 40 MiB for a 2 MiB request. Lifetime
 allocation counters catch freed escaped temporaries. This is not Runtime or
-total-device authority. Continue into the owned AMP prefix and joint event
-publication; do not add more isolated prerequisites to defer that integration.
+total-device authority by itself.
+
+The [owned CUDA prefix](theory/proofs/OWNED_CUDA_PREFIX.md) now runs through
+`ReferenceCompilerRuntime(..., cuda=CudaPrefixContract(...))`. The immutable
+manifest binds its actual build/device, tolerances, tensor arena, phase work
+and prepaid evidence capacity. All native/profile phases keep independent
+device state, check complete per-event relations and publish reference/device
+successors together. Public snapshots expose raw immutable records, no tensor
+handles. The audit independently replays 1,024 phases on all 64 short streams,
+44 recurrent/profile phases beside CPU binary64, and a 35-member native class.
+Actual output/evidence caps, false endpoint execution and unexpected failures
+retain targets and old publication. A CUDA evidence budget failure cannot
+turn native search into a completed reference class proof.
+
+Continue with current-state whole-domain target range, fresh same-path AMP
+persistence, actual build/copy/install and full device resource accounting.
+CPU installation and its owned run policy explicitly refuse a CUDA root.
+This checked prefix is not the complete AMP release; science remains HOLD.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -410,7 +425,10 @@ registered native program skeleton
 
 A caller must not be able to submit a magically pre-trained state, arbitrary cheap object list, arbitrary query callback, bare `upper_fn`, safety bool, bridge bool, or persistence bool and thereby obtain `CERTIFIED`/commit authority.
 
-## 6. Immediate next work
+## 6. Historical research progression (static study now parked)
+
+The dated sequence below explains the route to XVII.31. It is not an active
+TODO list. Section 1 gives the current CUDA-prefix result and target frontier.
 
 **Research update (2026-09-06).** The user explicitly redirected work away from
 getting stuck in engineering and towards research. The new result in

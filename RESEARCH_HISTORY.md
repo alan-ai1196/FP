@@ -2184,3 +2184,57 @@ authority. `BOUNDED_CUDA_TENSOR_STORAGE.md` records its proof premises and
 minimal evidence. The next work is the complete Runtime-owned AMP prefix,
 then target range, same-path fresh persistence and installation. Foundation,
 ERC-1 and the scoped Reference/CPU freeze are unchanged; science stays HOLD.
+
+## 72. Put actual CUDA prefixes inside the complete Runtime (2026-09-13)
+
+Actual device learners now execute through the existing Runtime's native and
+profile phase hook. The immutable run manifest registers the CUDA build,
+device, numerical schedule, tolerances, arena and phase budgets. The private
+owner retains actual master/gradient/queue tensors; passive snapshots expose
+their immutable raw records. No public method accepts a device endpoint or
+bridge token. All state and prediction comparisons use exact arithmetic,
+reusing the existing comparator through an injective half/single encoding
+widening. This does not create a CPU trajectory or transfer CPU evidence.
+
+Each GPU phase receives its fixed evidence frame before executing. The
+whole frame is paid, including unused padding; successful raw records are
+written into it. Every output/cast/copy/mask extent consumes a phase allowance.
+An exact count derived from the fixed lowering also checks completion. A
+numerically correct zero-slot baseline successor produced without device
+work would otherwise pass the value relation; the schedule check refuses
+that substituted endpoint. This is a physical implementation constraint,
+not an added semantic action or lower bound over other realizations.
+
+The ordinary event prepares all reference and CUDA successors before joint
+publication. A real 46-coordinate budget lets the baseline finish observe
+but stops the candidate; both published learners remain unchanged, while
+the revealed target, baseline's staged output and candidate's failed work
+remain. Actual evidence-frame exhaustion cannot leave an unowned CHECKED
+record. A prior unexpected executor error also remains primary when its
+oversized diagnostic fails retention. A malformed backend object exposed a
+second classification hazard: failure during raw extraction could escape
+as ContractError and resemble native inadmissibility. The admitted execution
+boundary now preserves it as EXECUTION_FAILED.
+
+The independent rounded interpreter replays 1,024 actual Runtime phases for
+all 64 three-event binary context/target streams, 44 recurrent/profile phases
+beside 44 CPU binary64 phases, and 41 phases for a complete 35-member native
+reference class. The profile retains both delayed positions, replays only
+the original two revealed records, and attaches full state before ordinary
+continuation. Every successful phase's actual paid bytes match its raw record.
+All 63,488 finite half encodings and twelve signed single boundaries verify
+the exact comparison injection, including zero signs.
+
+A one-million-byte packed cap allows the baseline prefix but prevents some
+CUDA constructor-evidence frames. The native search therefore remains
+UNRESOLVED without a class proof: exhausted physical construction cannot
+become member exclusion. Other actual controls reject an escaped freed
+allocation, an inexact zero-tolerance newborn and rounded readout error
+before target revelation. The existing full CPU event, binary64-prefix,
+installation, ingress, host-failure and finite-run audits also pass.
+
+CPU installation and its owned policy/run closure explicitly cannot omit
+or transfer a CUDA-bearing root. Current target whole-domain range, fresh
+same-path AMP persistence, build/copy/install and total-device resources
+remain open. `OWNED_CUDA_PREFIX.md` fixes this precise checked-prefix scope.
+Foundation R4, XVII.31 and ERC-1 stay frozen; model science stays HOLD.

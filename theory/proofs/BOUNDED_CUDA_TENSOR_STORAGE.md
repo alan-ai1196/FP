@@ -116,8 +116,8 @@ exact grid coordinates, masked overflow and a freed escaped allocation.
 The actual device/build identity is retained with the small count/witness
 artifact. The audit stores no weights, datasets or full tensor tapes.
 
-The next obligation is the Runtime-owned AMP prefix: immutable physical
-registration, paid host state/evidence, continuous private device learners,
-per-event numerical relations and joint reference/device publication. Target
+The subsequent [Runtime-owned AMP prefix](OWNED_CUDA_PREFIX.md) now executes
+immutable physical registration, prepaid evidence, continuous private device
+learners, per-event relations and joint reference/device publication. Target
 range, fresh same-path persistence, build/copy/install and total-device
 accounting still need their own closure. Model science remains HOLD.

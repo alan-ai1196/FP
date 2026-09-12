@@ -1,10 +1,10 @@
 """Actual continuous mixed-precision native learners; no Runtime authority.
 
-This mechanical executor is not yet wired into ReferenceCompilerRuntime.
+ReferenceCompilerRuntime now owns this executor through its private CUDA prefix.
 Torch is imported only on execution. It retains real CUDA tensors for the
 complete learner and computes no successor from a cast reference endpoint.
 Every arithmetic intermediate survives until the phase's finite check.
-Runtime must still own data, resources, phase evidence and installation.
+The helper itself has no data, resource, evidence or installation authority.
 
 Schedule v1: exact host RNE32 ingress; half source/coefficient/node/delay
 storage and forward products; ordered single SUM accumulation then half
@@ -125,7 +125,7 @@ class CudaArithmetic:
     """
     backend_id = BACKEND_ID
 
-    def __init__(self, bit_limit: int, device=0, *, workspace=None):
+    def __init__(self, bit_limit: int, device=0, *, workspace=None, output_cell_limit=None):
         natural(bit_limit, 'CUDA reference integer work limit', positive=True)
         natural(device, 'CUDA device ordinal')
         torch = _torch()
@@ -140,6 +140,10 @@ class CudaArithmetic:
                 raise ContractError('registered owned CUDA workspace required')
             workspace._open()
         self._workspace = workspace
+        if output_cell_limit is not None:
+            natural(output_cell_limit, 'prepaid CUDA output-cell allowance', positive=True)
+        self.output_cell_limit = output_cell_limit
+        self.output_cells = 0
 
     def _keep(self, operation, value):
         if self._workspace is not None:
@@ -160,6 +164,12 @@ class CudaArithmetic:
                 self._workspace.require_initialized(value)
 
     def _empty(self, shape, dtype, operation):
+        from math import prod
+        cells = max(1, prod(shape))
+        if self.output_cell_limit is not None and self.output_cells+cells > self.output_cell_limit:
+            from .resources import ResourceExceeded
+            raise ResourceExceeded('CUDA phase exhausted its prepaid output-cell allowance')
+        self.output_cells += cells
         if self._workspace is None:
             return _torch().empty(shape, dtype=dtype, device=self.device)
         return self._workspace.empty(tuple(shape), dtype, operation)
@@ -206,11 +216,11 @@ class CudaArithmetic:
             raise ContractError('CUDA ingress needs a complete exact rational tuple')
         # This is an explicitly registered host input encoding, not conversion
         # of a trained reference theta/gradient into a pretend device successor.
-        rounded = [round_binary(value, SINGLE, bit_limit=self.bit_limit) for value in values]
         torch = _torch()
+        result = self._empty((len(values),), torch.float32, 'host-RNE32-ingress')
+        rounded = [round_binary(value, SINGLE, bit_limit=self.bit_limit) for value in values]
         encoded = torch.tensor([-0.0 if value.negative_zero else float(value.value) for value in rounded],
                                dtype=torch.float32, device='cpu')
-        result = self._empty((len(rounded),), torch.float32, 'host-RNE32-ingress')
         result.copy_(encoded)
         return self._keep('host-RNE32-ingress', result)
 

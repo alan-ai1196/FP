@@ -19,9 +19,8 @@ or import superseded R4.2 semantics. The reference modules are restored and
 integrated; actual target execution needs its own complete endpoint evidence.
 
 `fp_reference.cuda_learner` now provides actual continuous mixed-precision
-learner mechanics with an independent exact rounded audit. It is not wired
-into Runtime authority or device resource ownership; the target install port
-remains unresolved. See
+learner mechanics with an independent exact rounded audit. The helpers have
+no signer; the target install port remains unresolved. See
 [CUDA learner scope](../../theory/proofs/CONTINUOUS_CUDA_LEARNERS.md).
 Importing the component does not import Torch or initialize CUDA.
 
@@ -31,7 +30,16 @@ without a further native allocator event; initialization/extent/history
 guards and explicit allocator configuration have adversarial coverage.
 See [storage scope](../../theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md).
 Host evidence, Runtime state and driver/context resources are not supplied
-by this component; the complete owned AMP prefix is the next integration.
+by this component alone.
+
+`ReferenceCompilerRuntime(..., cuda=CudaPrefixContract(...))` now owns those
+continuous CUDA trajectories and the tensor arena. Read
+[owned CUDA prefix](../../theory/proofs/OWNED_CUDA_PREFIX.md) and run
+`scripts/audit_cuda_runtime.py`. The immutable manifest, prepaid raw phase
+frames, exact relations and joint reference/device publication have actual
+endpoint coverage. CPU install and its complete run policy refuse this target
+root. Current whole-domain target range, fresh AMP persistence, device install
+and total-device accounting remain the active frontier; science stays HOLD.
 
 ## Current executable recovery (2026-09-12)
 

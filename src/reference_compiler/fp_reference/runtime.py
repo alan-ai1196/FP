@@ -18,7 +18,7 @@ from .data_usage import DataContract, DataUsageLedger, ObservationRecord, Stocha
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
-from .encoding import packed_size, write_packed
+from .encoding import packed_size, write_packed, fragments
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
 from .policy import CompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot, CompilationState, TERMINAL_STAGES
@@ -30,6 +30,7 @@ from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, next
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
+from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
@@ -280,6 +281,7 @@ class RuntimeSnapshot:
     host_resources: HostResourceObservation | None = None
     compiler_policy: CompilerPolicySnapshot | None = None
     run: ReferenceRunSnapshot | None = None
+    cuda: CudaPrefixSnapshot | None = None
 
 
 @guard_host_allocations
@@ -289,7 +291,7 @@ class ReferenceCompilerRuntime:
     # frame. Adding a scheduler/job/cache requires an explicit transition
     # argument; an unknown coordinate cannot inherit either authority.
     _root_fields = frozenset({
-        '_contract', '_online', '_host', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
+        '_contract', '_online', '_host', '_cuda', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
         '_policy_contract', '_policy_state', '_policy_running',
         '_manifest', '_manifest_object_id', '_run_closure',
         '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
@@ -302,10 +304,20 @@ class ReferenceCompilerRuntime:
     })
 
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
-                 host: HostResourceContract | None = None, policy: CompilerPolicy | None = None):
+                 host: HostResourceContract | None = None, policy: CompilerPolicy | None = None,
+                 cuda: CudaPrefixContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
         self._contract = contract
+        self._cuda = None
+        if cuda is not None:
+            if type(cuda) is not CudaPrefixContract or online is None:
+                raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
+            cuda.__post_init__()
+            if policy is not None:
+                raise ContractError('the CPU install/run policy has no transition proof for a target CUDA root')
+            if contract.reference_integer_bits < 1075:
+                raise ArithmeticUnresolved('registered CUDA relation decoding exceeds the reference integer budget')
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
@@ -327,6 +339,8 @@ class ReferenceCompilerRuntime:
              'binary64 storage/source-and-value-casts/PRODUCT/SUM/base/normalizer/division/gradient/optimizer',
              'ordered separate scalar operations, round-nearest-ties-even, gradual subnormals; no FMA or reassociation',
              'each actual primitive checked against exact rounding; nonfinite or mismatch is UNRESOLVED'))
+        if cuda is not None:
+            self._manifest = CudaRunManifest(self._manifest, cuda)
         self._chi = stable_hash(self._manifest)
         self._runtime_id = secrets.token_hex(12)
         self._manifest_object_id = f'{self._runtime_id}:manifest'
@@ -376,6 +390,9 @@ class ReferenceCompilerRuntime:
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
+        if cuda is not None:
+            self._event_router.charge_work('information', {'work': 4096}, 'bind-actual-CUDA-prefix-storage')
+            self._cuda = _CudaPrefix(cuda)
         initial = self._construct(initial_program, 'deployment')
         if initial.status != 'BUILT_REFERENCE':
             raise ContractError(f'initial registered reference realization failed: {initial.status}: {initial.reason}')
@@ -407,6 +424,8 @@ class ReferenceCompilerRuntime:
             return
         try:
             self._require_idle()
+            if self._cuda is not None:
+                raise ContractError('reference run closure cannot omit an actual target CUDA prefix')
             if set(self.__dict__) != self._root_fields:
                 raise ContractError('run closure has no frame proof for an unregistered Runtime coordinate')
             if self._pending is not None or self._active_ingress is not None or self._policy_running:
@@ -599,6 +618,85 @@ class ReferenceCompilerRuntime:
     def _float64_execute(self, kind, program, candidate, reference, floating=None, *,
                          origin='ordinary', observation_id=None, sources=None,
                          reference_prediction=None, floating_prediction=None, target=None):
+        # Every existing native phase passes this common private hook even
+        # when CPU binary64 is unregistered. CUDA keeps its own lineage state;
+        # neither the optional CPU result nor a trained reference endpoint is
+        # supplied as its next state.
+        result = self._float64_only_execute(kind, program, candidate, reference, floating,
+            origin=origin, observation_id=observation_id, sources=sources,
+            reference_prediction=reference_prediction, floating_prediction=floating_prediction, target=target)
+        if self._cuda is not None:
+            self._cuda_execute(kind, program, candidate, reference, origin=origin,
+                observation_id=observation_id, sources=sources, reference_prediction=reference_prediction, target=target)
+        return result
+
+    def _cuda_execute(self, kind, program, candidate, reference, *, origin, observation_id,
+                      sources, reference_prediction, target):
+        cfg = self._cuda.contract
+        label = f'{candidate}:cuda:{origin}:{kind}:{len(self._cuda.phases)}'
+        charge = 128*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        if origin == 'construction':
+            self._router.charge_work('construct', {'work': charge}, label)
+        else:
+            purpose = 'deployment_event' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler_event'
+            self._event_router.charge_work(purpose, {'work': charge}, label)
+        # A fixed retained frame is paid before any actual device phase. The
+        # first eight bytes contain the used encoded length; padding remains
+        # part of the physical charge, never an optimistic after-the-fact size.
+        extent = ObjectSpec(label, 'owned_cuda_phase_frame',
+            {'reference_payload_bytes': cfg.phase_evidence_bytes, 'physical_objects': 1}, self._chi)
+        self._ledger.allocate(self._data_owner, (extent,))
+        frame = bytearray(cfg.phase_evidence_bytes)
+        self._buffers[label] = frame
+
+        def write(value):
+            size = packed_size(value)
+            if size+8 > len(frame):
+                raise ResourceExceeded('actual CUDA phase evidence exceeds its prepaid frame')
+            offset = 8
+            for fragment in fragments(value, packed=True):
+                part = fragment.encode('utf-8', 'surrogatepass')
+                frame[offset:offset+len(part)] = part
+                offset += len(part)
+            frame[:8] = size.to_bytes(8, 'big')
+
+        write((label, 'ADMITTED_CUDA_PHASE'))
+        try:
+            record, error = self._cuda.execute(label, kind, program, candidate, reference,
+                rules=self._contract.semantics, spec=self._online.learner,
+                bit_limit=self._contract.reference_integer_bits, ordinary_cursor=self._cursor,
+                origin=origin, observation_id=observation_id, sources=sources,
+                reference_prediction=reference_prediction, target=target,
+                normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap)
+        except (ResourceExceeded, ArithmeticUnresolved):
+            raise
+        except ContractError as error:
+            # Malformed backend output can also fail raw-record extraction.
+            # Already admitted native input cannot become an admissibility
+            # rejection just because that internal diagnostic failed too.
+            raise RuntimeError('registered CUDA execution or raw capture violated its admitted inputs') from error
+        try:
+            write(record)
+        except MemoryError:
+            raise
+        except Exception as retain_error:
+            expected = (ArithmeticUnresolved, ResourceExceeded)
+            failure = error if error is not None and not isinstance(error, expected) else retain_error
+            self._cuda.phases[label] = replace(record,
+                status='UNRESOLVED' if isinstance(failure, expected) else 'EXECUTION_FAILED',
+                reason=record.reason+'; CUDA evidence retention failed: '+str(retain_error))
+            if isinstance(failure, ContractError) and not isinstance(failure, expected):
+                raise RuntimeError('registered CUDA execution violated its admitted inputs') from failure
+            raise failure
+        if error is not None:
+            if isinstance(error, ContractError) and not isinstance(error, (ArithmeticUnresolved, ResourceExceeded)):
+                raise RuntimeError('registered CUDA execution violated its admitted inputs') from error
+            raise error
+        self._cuda.accept(record)
+
+    def _float64_only_execute(self, kind, program, candidate, reference, floating=None, *,
+                         origin='ordinary', observation_id=None, sources=None,
+                         reference_prediction=None, floating_prediction=None, target=None):
         """Execute one registered phase; no supplied endpoint or public signer."""
         if self._online is None or self._online.float64 is None:
             return None
@@ -731,7 +829,7 @@ class ReferenceCompilerRuntime:
             # registered profile is executed below, never supplied as theta.
             theta = self._machine.initializer(program.slot_count, self._contract.initializer_pattern)
             learner = initial_state(program, self._contract.semantics, theta, self._cursor)
-            if self._online is not None and self._online.float64 is not None:
+            if self._cuda is not None or self._online is not None and self._online.float64 is not None:
                 self._retain_code(program, program_id, code.spec.object_id, candidate)
             floating = self._float64_execute('initialize', program, candidate, learner, origin='construction')
             initialized = self._machine.realize(f'{candidate}:values', 'initialized_reference_state', self._learner_payload(learner, floating), program_id)
@@ -753,9 +851,12 @@ class ReferenceCompilerRuntime:
             reason = ('native construction and registered profile endpoint checked' if profile is not None else
                       'native construction and fixed-value range bound checked') if safe else 'conservative full-domain range bound does not establish feasibility'
             result = ConstructionResult(status, candidate, reason)
+            cuda_current = None if self._cuda is None else {**self._cuda.current, candidate: self._cuda.staged[candidate]}
             self._candidates[candidate] = state
             self._programs[program_id] = program
             self._attempts.append((candidate, status, reason))
+            if self._cuda is not None:
+                self._cuda.current = cuda_current
             return result
         except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved, IdentityUnresolved) as exc:
             self._release_owner(owner)
@@ -808,6 +909,8 @@ class ReferenceCompilerRuntime:
             if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED') and candidate_id in (identity.base_lineage_id, identity.candidate_lineage_id):
                 self._stop_persistence(identity, 'lineage retired; its alpha and historical evidence remain spent')
         state = self._candidates.pop(candidate_id)
+        if self._cuda is not None:
+            self._cuda.current = {key: value for key, value in self._cuda.current.items() if key != candidate_id}
         self._release_owner(state.physical_owner)
         if state.program_id not in self._retained_programs and not any(other.program_id == state.program_id for other in self._candidates.values()):
             del self._programs[state.program_id]
@@ -1266,6 +1369,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             # A numerical evidence failure ends that identity; it cannot skip
             # this outcome and continue betting with its old wealth.
             self._observe_persistence(pending, record, {s.candidate_id: s for s in staged})
+            cuda_current = None if self._cuda is None else {
+                **self._cuda.current, **{s.candidate_id: self._cuda.staged[s.candidate_id] for s in staged}}
+            candidate_successors = {**self._candidates, **{s.candidate_id: s for s in staged}}
             # Publish every successor together only after every required phase
             # and coexistence check succeeded. Failed work/targets stay retained.
             releases = tuple((self._candidates[s.candidate_id].physical_owner, object_id, 1)
@@ -1274,7 +1380,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._ledger.release_many(releases)
             live = self._ledger.snapshot()['objects']
             self._buffers = {key: value for key, value in self._buffers.items() if key in live}
-            self._candidates = {**self._candidates, **{s.candidate_id: s for s in staged}}
+            self._candidates = candidate_successors
+            if self._cuda is not None:
+                self._cuda.current = cuda_current
             self._cursor = cursor+1
             self._pending = None
             self._event_phase = 'idle'
@@ -2121,6 +2229,9 @@ after all fallible construction, checks and physical preparation complete.
 """
         self._require_online()
         self._require_idle()
+        if self._cuda is not None:
+            return CpuInstallResult('UNRESOLVED', None, None, self._cursor,
+                                    'CPU install cannot transfer or omit the registered actual CUDA prefix')
         for value in (candidate_id, proposal_proof_id, reference_identity, float64_identity):
             name(value, 'owned CPU installation identity')
         registration = self._online.cpu_install
@@ -2319,4 +2430,5 @@ after all fallible construction, checks and physical preparation complete.
                                      for identity in self._ingress_identities.values()), self._active_ingress,
                                None if self._host is None else self._host.observe(),
                                None if self._policy_contract is None else CompilerPolicySnapshot(
-                                   self._policy_contract, self._policy_state, self._policy_running), self._run_snapshot())
+                                   self._policy_contract, self._policy_state, self._policy_running), self._run_snapshot(),
+                               None if self._cuda is None else self._cuda.snapshot())

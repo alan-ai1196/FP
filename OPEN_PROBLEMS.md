@@ -30,15 +30,24 @@ does not lower the tested elementwise SUM/PRODUCT; half addcmul double
 rounding and host-scalar division have exact positive counterexamples.
 The [continuous CUDA learner mechanics](theory/proofs/CONTINUOUS_CUDA_LEARNERS.md)
 now pass 1,306 independent exact-rounded phase comparisons, including
-profiles and recurrence. Continue into complete Runtime ownership and
-per-event numerical relations, then target range, same-path persistence and
-installation. More isolated primitive cases are not a release goal.
+profiles and recurrence. Its owned Runtime prefix is now implemented below.
+More isolated primitive cases are not a release goal.
 
 The [actual tensor arena](theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md) now
 holds every tensor in those 1,306 phases in one prepaid 16 MiB allocation.
 Its allocator admission and lifetime-history controls have actual negative
-witnesses. Use this existing component for the owned Runtime prefix; do not
-rebuild storage or promote its tensor-only bounds into total-device closure.
+witnesses. Do not rebuild storage or promote its tensor-only bounds into
+total-device closure.
+
+The [owned actual CUDA prefix](theory/proofs/OWNED_CUDA_PREFIX.md) now executes
+inside Runtime with registered identity, independent continuous state,
+prepaid raw evidence, exact per-phase relations and joint event publication.
+Its full short-stream/profile/native-search audit passes; CPU-only install
+and run authority explicitly cannot transfer the CUDA root. The active gaps
+are current-state whole-domain target range, separate fresh same-path AMP
+persistence, structural build/copy/install and complete device resources.
+These are the next implementation/research obligations, not another static
+PRODUCT/SUM/range/precision case.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

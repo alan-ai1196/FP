@@ -100,10 +100,11 @@ the directed witness did. Random agreement is particularly weak evidence
 for an unregistered lowering. A changed backend must rerun its actual
 arithmetic audit and still check the executed full learner relations.
 
-The next implementation must retain actual AMP parameters, delayed queues,
-gradient accumulators and clocks from birth through every profile and
-ordinary event; register each arithmetic/cast/reduction schedule; and own
-its device construction, transport and installation resources. Reference
-and AMP baselines/candidates need their own same-path fresh evidence.
+The subsequent [owned CUDA prefix](OWNED_CUDA_PREFIX.md) now retains actual
+AMP parameters, delayed queues, gradient accumulators and clocks from birth
+through profile and ordinary events, with registered operations, paid
+evidence and joint publication. Target range, complete device resources and
+installation remain open. Reference and AMP baselines/candidates still need
+their own same-path fresh evidence.
 These primitive outputs confer none of those authorities. The Reference/CPU
 freeze and ERC-1 specification stand; model science remains HOLD.

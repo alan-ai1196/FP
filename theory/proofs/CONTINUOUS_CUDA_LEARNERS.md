@@ -1,9 +1,10 @@
 # Continuous actual CUDA learner mechanics
 
 **Status, 2026-09-13:** implemented mechanical executor; finite independent
-exact-rounding and actual RTX 3090 audit. The Reference Runtime still has no
-AMP registration, owned device state or target install authority. Foundation
-and ERC-1 are unchanged; this is their physical implementation frontier.
+exact-rounding and actual RTX 3090 audit. Its subsequent
+[owned Runtime prefix](OWNED_CUDA_PREFIX.md) now registers device state and
+per-phase relations; target install remains unresolved. Foundation and ERC-1
+are unchanged; this is their physical implementation frontier.
 
 Source: [`cuda_learner.py`](../../src/reference_compiler/fp_reference/cuda_learner.py).
 Run `python -B scripts/audit_cuda_learner.py --write`; retain only
@@ -101,11 +102,11 @@ signer. The audit's raw readbacks and phase temporaries are diagnostic work,
 not paid Runtime evidence. Importing this module does not import Torch or
 initialize a GPU, so the frozen CPU execution surface is unchanged.
 
-The next integration must place device tensors, every workspace/copy and
-failure record under the complete Runtime resource owner; register this
-physical schedule and its numerical relation; publish reference/device
-successors together after target revelation; and establish target range,
-same-path fresh persistence and structural build/install/copy relations.
+The [owned Runtime integration](OWNED_CUDA_PREFIX.md) now registers this
+schedule, owns device tensors and raw phase evidence, checks exact numerical
+relations and publishes reference/device successors together. Current-state
+whole-domain target range, same-path fresh persistence and structural
+build/install/copy relations remain the next obligations.
 The existing target install port still returns UNRESOLVED. This component
 neither borrows CPU wealth nor closes an AMP release gate. Model science
 remains HOLD.

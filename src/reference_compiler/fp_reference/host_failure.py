@@ -9,15 +9,18 @@ from types import FunctionType
 from .core import ContractError
 from .host_resources import HostExecutionUnresolved
 from .policy import POLICY_EXTERNAL_PORTS
+from .cuda_storage import CudaStorageUnresolved
 
 
 HOST_ALLOCATION_FAILURE = ('host-memory', 'host allocation exhausted; retained prefix has no continuation authority')
 HOST_RESOURCE_FAILURE = ('host-resource', 'host resource premises failed; retained prefix has no continuation authority')
+CUDA_RESOURCE_FAILURE = ('cuda-resource', 'CUDA storage premises failed; retained prefix has no continuation authority')
 
 
 def _guard(method, *, diagnostic):
     def guarded(self, *args, **kwargs):
-        if (self._halted is HOST_ALLOCATION_FAILURE or self._halted is HOST_RESOURCE_FAILURE) and not diagnostic:
+        if (self._halted is HOST_ALLOCATION_FAILURE or self._halted is HOST_RESOURCE_FAILURE
+                or self._halted is CUDA_RESOURCE_FAILURE) and not diagnostic:
             raise ContractError('host execution failed; this Runtime is terminal')
         if self._run_closure is not None and not diagnostic:
             raise ContractError('the registered run is sealed; retained evidence has no continuation authority')
@@ -25,6 +28,8 @@ def _guard(method, *, diagnostic):
                 and method.__name__ not in POLICY_EXTERNAL_PORTS):
             raise ContractError('the registered Runtime strategy owns all Compiler control and authority ports')
         try:
+            if self._cuda is not None and not diagnostic:
+                self._cuda.arena.check()
             if self._host is not None:
                 # Entry check only. The registered job enforces allocations
                 # throughout the body; no allocating post-check is added after
@@ -48,6 +53,11 @@ def _guard(method, *, diagnostic):
             # A failed diagnostic cannot replace the first host halt cause.
             if self._halted is not HOST_ALLOCATION_FAILURE and self._halted is not HOST_RESOURCE_FAILURE:
                 self._halted = HOST_RESOURCE_FAILURE
+            self._event_phase = 'halted'
+            raise
+        except CudaStorageUnresolved:
+            if self._halted is None:
+                self._halted = CUDA_RESOURCE_FAILURE
             self._event_phase = 'halted'
             raise
     # Keep readable public names without publishing a __wrapped__ bypass.
