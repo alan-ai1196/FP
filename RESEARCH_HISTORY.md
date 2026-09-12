@@ -1995,3 +1995,30 @@ Read `theory/proofs/SATURATED_REFERENCE_CLASS_BOUND.md` and the minimal
 `FP_REFERENCE_ACCELERATION_AUDIT.json`. Gate 17 now has current owned CPU
 evidence. Complete release-revision integration remains before actual AMP
 and RTX 3090 science. Foundation/ERC-1 stay frozen and static families parked.
+
+## 67. Independent complete-learner model and release integration (2026-09-13)
+
+The remaining reference question is whether the assembled owned endpoint
+matches its exact decision classes at one source revision. A new oracle
+enumerates each sampled small native grammar independently, executes full
+rational learner/profile states by forward differentials, and compares all
+actual rows, the trained baseline and subsequent ordinary successors. Typed
+sources, compound nodes and recurrent queues remain part of the checked
+syntax/state; no current-function quotient is used.
+
+The preliminary 32-registration version passed 1,310 endpoint comparisons
+and 20,708 independent binary64 phases, but encountered no infeasible ranges.
+That omission motivated four active-constraint cases. Those separately pass
+with 44 initializer-range failures, two profile-range failures, three
+unresolved classes and three halted ordinary commits; a delayed-state case
+seals its stream while class coverage remains unresolved. The expanded
+full randomized battery is pending its committed integration run.
+
+`scripts/audit_reference_release.py` now prepares a real clean clone of one
+committed source revision, imports all package modules and runs all 21
+current complete reference audit scripts. It checks the 47-row obligation
+map without converting scoped theorem/absent-authority/held-target rows into
+aggregate passes. It requires actual success exits and complete bounded
+reports and retains minimal coverage and OS job records. Read
+`theory/proofs/REFERENCE_RELEASE_SCOPE.md`. This preparation adds no Runtime
+authority and does not yet freeze Reference or release AMP/model science.

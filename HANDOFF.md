@@ -55,6 +55,14 @@ changing theta recomputes/replaces it before release. All learner/optimizer
 and delayed-state histories remain distinct and retained. Final reference
 integration is next; actual target AMP follows reference closure.
 
+Final integration is now executable: read
+[`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
+run `scripts/audit_reference_release.py --write` from its committed source.
+It clones one immutable revision and runs the complete 21-script battery,
+including independent randomized exact/exhaustive endpoint models and
+deliberately infeasible initializer/profile/ordinary successors. A prepared
+driver or partial diagnostic is not a freeze; require its full passing result.
+
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
 observe and commit. `OnlineContract.float64` fixes tolerances and the scalar

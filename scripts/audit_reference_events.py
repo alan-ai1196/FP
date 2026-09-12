@@ -43,7 +43,7 @@ def online(cfg, count, *, unit=2, rate=F(1), grid=24, queries=()):
     return OnlineContract(data, LearnerSpec(unit, rate, grid), queries)
 
 
-def forward_oracle(graph, rules, theta, inputs, delayed=()):
+def forward_oracle(graph, rules, theta, inputs, delayed=(), *, return_values=False):
     """Independent forward-mode differentiation on every slot, including zero."""
     zero = (F(0),)*graph.slot_count
     value, deriv = [], []
@@ -72,7 +72,8 @@ def forward_oracle(graph, rules, theta, inputs, delayed=()):
     total_deriv = tuple(sum(deriv[h][slot] for h in graph.heads) for slot in range(graph.slot_count))
     gradients = tuple(tuple(total_deriv[slot]/total-deriv[head][slot]/masses[y]
                             for slot in range(graph.slot_count)) for y, head in enumerate(graph.heads))
-    return tuple(m/total for m in masses), gradients
+    result = tuple(m/total for m in masses), gradients
+    return result+(tuple(value),) if return_values else result
 
 
 def random_gradient_audit():
