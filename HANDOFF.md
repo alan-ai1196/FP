@@ -134,8 +134,20 @@ not a total-host cap. Read [`OWNED_ENCODING.md`](theory/proofs/OWNED_ENCODING.md
 and run `scripts/audit_owned_encoding.py`; it includes the historical actual
 Runtime witness, all BMP code points and independent typed-byte checks.
 
-These corrections close concrete identity/ingress/materialization mismatches,
-not complete host accounting.
+Machine v5 adds one terminal boundary for actual host allocation failure.
+The original `dfa1583` Runtime, under a result-allocation fault, freed a new
+candidate's learner buffers but still used that candidate in its next public
+prediction. All public continuation/proof/persistence/install ports now close
+on MemoryError; a precreated marker uses existing state slots, without
+allocating cleanup/history or refunding alpha/work. Read
+[`HOST_ALLOCATION_FAILURE.md`](theory/proofs/HOST_ALLOCATION_FAILURE.md).
+Its audit also executes an unmodified 128 MiB ingress-window request inside
+a real 64 MiB Windows job: actual allocation refusal halts before input,
+while paid work survives. This is job commitment accounting for the audit
+child, not total host memory or a production ERC-1 registration.
+
+These corrections close concrete identity/ingress/materialization/failure
+mismatches, not complete host accounting.
 The next physical obligation is explicit coverage of Python metadata,
 transient copies/arithmetic scratch and general diagnostics, together with
 complete ERC-1 registration and release-gate mapping. A manifest field or

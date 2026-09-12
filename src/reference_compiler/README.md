@@ -97,7 +97,7 @@ leave execution UNRESOLVED. Read
 and run `scripts/audit_context_ingress.py`. Complete host metadata, temporary
 copies/arithmetic scratch and general diagnostic accounting remain open.
 
-Current machine `packed-reference-payload-v4` additionally preserves every
+The encoding introduced in machine v4 additionally preserves every
 Python source-name code point in its typed UTF-8/surrogatepass encoding.
 The old ASCII-escaped JSON could give different legal source programs the
 same ID and let candidate construction change the deployed program without
@@ -114,6 +114,17 @@ Read [`OWNED_ENCODING.md`](../../theory/proofs/OWNED_ENCODING.md) and run
 `scripts/audit_owned_encoding.py` for the actual historical alias failure,
 code-point/size checks and old/new workspace measurements. They do not close
 full host allocation or authorize a complete Runtime release.
+
+Current machine `packed-reference-payload-v5` also closes every public
+continuation/authority port after host MemoryError. It uses a precreated
+marker in existing state slots, bypassing allocating cleanup/logging; spent
+work, alpha and the failed prefix remain. Snapshot reads are diagnostic and
+may themselves fail. This corrects an actual injected-fault execution in
+which old cleanup freed a candidate's learner buffers yet left it in the
+next prediction. Read [`HOST_ALLOCATION_FAILURE.md`](../../theory/proofs/HOST_ALLOCATION_FAILURE.md)
+and run `scripts/audit_host_allocation_failure.py`. Its real Windows job
+refusal test measures child commitment, not total host memory or complete
+ERC-1 registration. Ordinary checked payload/work refusal keeps its semantics.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and

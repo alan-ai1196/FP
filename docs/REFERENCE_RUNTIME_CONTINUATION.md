@@ -363,7 +363,7 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
-The control rule introduced in v2 and retained by v4 charges one fixed unit for each
+The control rule introduced in v2 and retained by v5 charges one fixed unit for each
 public Compiler mutation, using the already immutable construction,
 information or install work role. If that debit cannot be paid, no owned
 attempt, revision, query, frontier, evidence or resource history changes.
@@ -434,6 +434,23 @@ peak to roughly 0.134 MB before the same 8 KiB packed-cap refusal. This is a
 measured removal of encoding workspace growth, not total-heap enforcement.
 Mapping keys, scalar text, interpreter metadata and arithmetic scratch still
 require the complete physical contract before Runtime freeze or target AMP.
+
+## Host allocation exhaustion
+
+Machine v5 distinguishes an ordinary checked ledger refusal from a host
+MemoryError. Old `dfa1583` cleanup after a failed construction-result allocation
+freed the new learner buffers while the next public prediction still used
+its candidate. Current code prepares that result before publication and
+propagates MemoryError to one public terminal boundary. A precreated marker
+uses existing state slots; it allocates no cleanup/history, refunds no alpha
+or work and cannot be reset by a legal continuation. All proof, persistence
+and install ports also close. Snapshots are passive and may still fail.
+
+Read [`HOST_ALLOCATION_FAILURE.md`](../theory/proofs/HOST_ALLOCATION_FAILURE.md).
+The audit includes 22 ports and a real Windows job denying an unmodified
+128 MiB ingress-window allocation under a 64 MiB commitment cap. That OS
+measure is independent of packed bytes; production manifest/role accounting,
+process supervision and the rest of the physical machine remain open.
 
 ## Evidence and remaining boundary
 

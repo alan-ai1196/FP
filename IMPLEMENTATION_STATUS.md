@@ -507,6 +507,31 @@ interpreter/free-list state, general Runtime metadata and arithmetic scratch
 still need complete accounting. ERC-1/gate registration and actual AMP remain
 open; full Runtime freeze or GPU science does not follow from this result.
 
+### Terminal host-allocation failure (2026-09-12)
+
+Machine `packed-reference-payload-v5` retains the existing encoding/ingress
+and distinguishes checked ledger refusal from actual MemoryError. Under a
+fault at construction-result allocation, the original `dfa1583` cleanup
+freed a candidate's learner buffers while leaving the candidate callable in
+the next prediction. Current construction prepares its result earlier, and
+one public boundary closes continuation/authority after any escaped host
+allocation failure. Internal handlers propagate it without allocating
+cleanup or failure records; existing state slots receive a precreated marker.
+
+`scripts/audit_host_allocation_failure.py` covers 22 ports/352 repeated
+refusals, all 20 internal broad handlers, the four writer/eleven ledger-event
+sites on the audited construction path, ordinary-event and ledger failures,
+current-proof closure and failed installation with retained four learners,
+persistence, alpha and work. A real suspended-before-admission Windows child
+also refuses an unmodified 128 MiB ingress allocation under a 64 MiB job cap.
+This tests actual OS refusal, separately from injected precise failure sites.
+
+Read `theory/proofs/HOST_ALLOCATION_FAILURE.md`. The marker certifies no
+recovery or general snapshot availability; it prevents an uncertain prefix
+from continuing or authorizing decisions. Production host registration,
+complete resource-role/termination accounting and ERC-1 remain open. The
+job measurement is not a total-host/RSS bound or Runtime release certificate.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

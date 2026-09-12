@@ -101,6 +101,15 @@ the expanded encoding-tree peak before capacity refusal. The old 100,000-edge
 case traces about 62 MB despite an 8 KiB packed cap; the revised trace is
 about 0.134 MB. Read `theory/proofs/OWNED_ENCODING.md` for exact scopes.
 
+Machine v5 additionally closes public authority after MemoryError. An
+executed injected-fault witness at `dfa1583` had allowed next prediction from
+a candidate whose learner buffers were already freed. The current failure
+marker preserves the prefix without assuming cleanup allocation can succeed.
+An actual 64 MiB Windows job refuses the Runtime's registered 128 MiB ingress
+window before input, with paid work retained; see
+`theory/proofs/HOST_ALLOCATION_FAILURE.md`. The job mechanism is currently an
+audit boundary, not production manifest/role/whole-process authority.
+
 These corrections do not supply complete host accounting. Python metadata
 and diagnostic records, mapping-key/scalar encoding workspace, transient byte
 copies, detached ledger maps, gcd/rational scratch and allocator state still

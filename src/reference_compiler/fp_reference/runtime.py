@@ -19,6 +19,7 @@ from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .encoding import packed_size, write_packed
+from .host_failure import guard_host_allocations
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
@@ -273,6 +274,7 @@ class RuntimeSnapshot:
     active_ingress: str | None
 
 
+@guard_host_allocations
 class ReferenceCompilerRuntime:
     recovery_phase = 'native-construction-causal-reference'
 
@@ -438,6 +440,8 @@ class ReferenceCompilerRuntime:
                 relation = check_state(reference, result, self._online.float64, bit_limit=arith.bit_limit)
             if arith.operations != allowance:
                 raise ContractError('binary64 executor did not complete its registered scalar operation schedule')
+        except MemoryError:
+            raise
         except Exception as exc:
             error = exc
         trace = Float64Trace(candidate, program.program_id, f'{origin}:{kind}', self._cursor, observation_id,
@@ -448,6 +452,8 @@ class ReferenceCompilerRuntime:
         packed = self._machine.realize(label, 'executed_float64_phase', trace, self._chi)
         try:
             self._allocate(self._data_owner, (packed,))
+        except MemoryError:
+            raise
         except Exception as retain_error:
             # A successful numerical check is not owned retained evidence if
             # its allocation failed. Keep only a terminal diagnostic, with the
@@ -530,13 +536,14 @@ class ReferenceCompilerRuntime:
             if profile is not None:
                 state = self._profile_newborn(program, state, profile)
                 safe = state.range_safe
-            self._candidates[candidate] = state
-            self._programs[program_id] = program
             status = 'BUILT_REFERENCE' if safe else 'UNRESOLVED_RANGE'
             reason = ('native construction and registered profile endpoint checked' if profile is not None else
                       'native construction and fixed-value range bound checked') if safe else 'conservative full-domain range bound does not establish feasibility'
+            result = ConstructionResult(status, candidate, reason)
+            self._candidates[candidate] = state
+            self._programs[program_id] = program
             self._attempts.append((candidate, status, reason))
-            return ConstructionResult(status, candidate, reason)
+            return result
         except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved, IdentityUnresolved) as exc:
             self._release_owner(owner)
             self._attempts.append((candidate, 'UNRESOLVED', str(exc)))
@@ -545,6 +552,8 @@ class ReferenceCompilerRuntime:
             self._release_owner(owner)
             self._attempts.append((candidate, 'REJECTED_ADMISSIBILITY', str(exc)))
             return ConstructionResult('REJECTED_ADMISSIBILITY', None, str(exc))
+        except MemoryError:
+            raise
         except Exception as exc:
             # Programming/backend failures are visible failures, not a fake
             # mathematical rejection. Retire the partial physical build while
@@ -747,6 +756,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             return replace(initial, learner=attached, range_evidence=evidence, range_safe=True,
                            object_ids=(current_ids[0], attached_object.spec.object_id, current_ids[2]), profile_id=profile.profile_id,
                            float64=attached_float64)
+        except MemoryError:
+            raise
         except Exception as exc:
             expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved))
             update(status='UNRESOLVED' if expected else 'EXECUTION_FAILED', reason=f'{type(exc).__name__}: {exc}')
@@ -801,6 +812,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             next_root.update(_ingress_identities=identities, _active_ingress=ingress_id,
                              _event_phase='receiving-context')
             result = IngressResult('RECEIVING', ingress_id, observation_id, self._cursor, 0, spec.chunk_bytes)
+        except MemoryError:
+            raise
         except Exception as exc:
             # Only predetermined empty storage can be discarded here: no
             # receive operation has run. Preserve paid work/peak/retired IDs.
@@ -861,6 +874,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             if result.status == 'PREDICTED_REFERENCE':
                 self._active_ingress = None
             return result
+        except MemoryError:
+            raise
         except Exception as exc:
             status = 'UNRESOLVED' if isinstance(exc, (ArithmeticUnresolved, ResourceExceeded)) else (
                 'INVALID_INPUT' if isinstance(exc, ContractError) and self._event_phase != 'halted' else 'EXECUTION_FAILED')
@@ -939,6 +954,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._event_phase = 'awaiting-target'
             return PredictionResult('PREDICTED_REFERENCE', observation_id, self._cursor,
                                     tuple((candidate, pred.probabilities) for candidate, pred in predictions), 'all active reference predictions precede the target')
+        except MemoryError:
+            raise
         except Exception as exc:
             if self._pending is not None:
                 self._pending = replace(self._pending, predictions=tuple(predictions), float64_predictions=tuple(float64_predictions), object_ids=tuple(object_ids), stage='prediction-failed')
@@ -1026,6 +1043,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._event_phase = 'idle'
             return ObservationResult('OBSERVED_REFERENCE', record.observation_id, cursor, self._cursor,
                                      do_commit, 'continuous exact ordinary event; no paired AMP/install authority')
+        except MemoryError:
+            raise
         except Exception as exc:
             self._pending = replace(self._pending, stage='observation-failed')
             self._halt('observe', exc)
@@ -1061,6 +1080,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             result = evaluate_query(spec, records, bit_limit=self._contract.reference_integer_bits)
         except (ContractError, ResourceExceeded) as exc:
             result = replace(result, reason=str(exc))
+        except MemoryError:
+            raise
         except Exception as exc:
             error = exc
             result = replace(result, status='EXECUTION_FAILED', reason=f'{type(exc).__name__}: {exc}')
@@ -1069,6 +1090,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         try:
             retained = self._machine.realize(prefix, 'query_transcript', query_record, self._chi)
             self._allocate(self._data_owner, (retained,))
+        except MemoryError:
+            raise
         except Exception as exc:
             self._halt('retain-query', exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
@@ -1096,6 +1119,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         stopped = replace(identity, status='UNRESOLVED', reason=reason)
         try:
             return self._save_persistence(stopped)
+        except MemoryError:
+            raise
         except Exception as exc:
             # The spent allocation and terminal diagnostic cannot disappear
             # because residency ran out. This fallback has no authority and
@@ -1247,6 +1272,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 raise ArithmeticUnresolved('registered gain bound is not proved over the full native range class')
             identity = self._save_persistence(replace(identity, ratio_bound=ratio_bound, status='ACTIVE',
                 reason=f'future {score_path} epochs admitted under the retained external stochastic-law assumption'))
+        except MemoryError:
+            raise
         except Exception as exc:
             self._stop_persistence(identity, f'admission failed: {type(exc).__name__}: {exc}')
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
@@ -1335,6 +1362,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 elif finished and epochs == identity.rule.max_epochs:
                     next_identity = replace(next_identity, status='UNRESOLVED', reason='finite persistence horizon ended without crossing; no rejection')
                 self._save_persistence(next_identity)
+            except MemoryError:
+                raise
             except Exception as exc:
                 self._stop_persistence(identity, f'evidence prefix failed at {record.observation_id}: {type(exc).__name__}: {exc}')
                 if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
@@ -1430,6 +1459,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         stopped = replace(session, status=status, expected_revision=self._revision, reason=f'{type(error).__name__}: {error}')
         try:
             stopped = self._save_search(stopped)
+        except MemoryError:
+            raise
         except Exception as retain_error:
             # No successful proof can be activated on this terminal diagnostic
             # state. Python diagnostics are outside the partial payload model.
@@ -1486,6 +1517,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             baseline = self._score_reference(base, spec, f'{search_id}:baseline')
             session = self._save_search(replace(session, base_likelihood=baseline, best_likelihood=baseline))
             return self._search_result(session)
+        except MemoryError:
+            raise
         except Exception as exc:
             session = self._search_failure(session, exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved)):
@@ -1508,6 +1541,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 status = 'COMPARED_REFERENCE'
             except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved) as exc:
                 status, reason = 'UNRESOLVED', str(exc)
+            except MemoryError:
+                raise
             except Exception as exc:
                 status, reason, error = 'EXECUTION_FAILED', f'{type(exc).__name__}: {exc}', exc
         row = ComparisonRow(session.cursor.emitted, program, program.program_id if state is None else state.program_id, result.candidate_id,
@@ -1644,6 +1679,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     session = self._finish_reference_search(session)
                     break
             return self._search_result(session)
+        except MemoryError:
+            raise
         except Exception as exc:
             session = self._search_failure(session, exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved)):
@@ -1668,6 +1705,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         try:
             self._save_search(replace(session, status='CANCELLED', proof_id=None,
                                       reason='search closed; owned history, constructed winner and spent work retained'))
+        except MemoryError:
+            raise
         except Exception as exc:
             self._search_failure(session, exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
@@ -1855,6 +1894,8 @@ after all fallible construction, checks and physical preparation complete.
                 _candidates=candidates, _deployed_id=candidate_id, _persistence_identities=persistent,
                 _searches=searches, _install_attempts=self._install_attempts[:-1]+[completed],
                 _install_receipts=self._install_receipts+[receipt], _event_phase='idle')
+        except MemoryError:
+            raise
         except Exception as exc:
             # All allocations happened against the live old root. Abort frees
             # only prepared objects; real work/peak/attempt history stay spent.
@@ -1862,6 +1903,8 @@ after all fallible construction, checks and physical preparation complete.
             for owner in registered_owners:
                 try:
                     self._release_owner(owner)
+                except MemoryError:
+                    raise
                 except Exception as cleanup:
                     cleanup_errors.append(f'{type(cleanup).__name__}: {cleanup}')
             expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved))

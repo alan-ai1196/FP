@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "scope": "terminal public Runtime authority on host allocation exhaustion",
+  "history": {
+    "source_commit": "dfa1583",
+    "failure_site": "construction result allocation after publication",
+    "historical_candidate_lost_all_owned_learner_buffers": true,
+    "historical_next_public_prediction_used_that_candidate": true,
+    "current_prefix_retained_without_cleanup_or_continuation": true
+  },
+  "ports": {
+    "guarded_continuation_or_authority_ports": 22,
+    "repeated_terminal_refusals": 352,
+    "internal_allocation_failures_bypass_broad_handlers": 20,
+    "refusals_do_not_grow_or_rewrite_owned_state": true
+  },
+  "prefixes": {
+    "event_and_snapshot_result_failures": 4,
+    "paid_ledger_history_allocation_failure": true,
+    "historical_class_proof_retained_but_current_authority_closed": true,
+    "failed_cpu_install_retains_deployment_learners_persistence_alpha_and_work": true,
+    "construction_writer_and_ledger_event_sweep": {
+      "packed_writers": 4,
+      "ledger_events": 11,
+      "terminal_unfinished_reservation_cases": 4,
+      "terminal_unreleased_buffer_cases": 1
+    }
+  },
+  "os": {
+    "child": {
+      "status": "PASS",
+      "actual_exception": "MemoryError",
+      "requested_context_window": 134217728,
+      "packed_cap_permitted_window": true,
+      "terminal_before_first_input_byte": true,
+      "paid_work_after_failure": 536870993,
+      "packed_peak_after_failure": 1823
+    },
+    "windows_job": {
+      "exit_code": 0,
+      "timed_out": false,
+      "commit_limit": 67108864,
+      "peak_process_commit": 26710016,
+      "peak_job_commit": 27930624,
+      "user_100ns": 2343750,
+      "kernel_100ns": 781250,
+      "total_processes": 2,
+      "limit_terminated_processes": 0,
+      "attached_before_resume": true
+    },
+    "scope": "child job committed memory and measured CPU time; not total host memory, role attribution or full ERC-1 enforcement"
+  },
+  "not_closed": [
+    "full host resource enforcement/role accounting",
+    "complete ERC-1 and Runtime release",
+    "actual AMP and GPU science"
+  ]
+}

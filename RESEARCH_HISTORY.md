@@ -1776,3 +1776,37 @@ Full host metadata, scalar/key encoding workspace, arithmetic scratch and
 allocator state remain open, along with ERC-1/gate enforcement and target
 AMP. Foundation/ERC-1 remain frozen, static families are not expanded,
 and Runtime/science release is not inferred from these corrected prefixes.
+
+## 62. Host exhaustion cannot assume an allocating cleanup succeeds (2026-09-12)
+
+The next physical-budget investigation tested the failure protocol itself.
+At `dfa1583`, injecting MemoryError into construction-result allocation
+caused cleanup to close a candidate's owner and free every learner buffer,
+while its published candidate record survived. After an earlier event had
+retained the same program code, the next public prediction still evaluated
+that orphaned learner. A generic cleanup attempt was not a complete-state
+recovery proof.
+
+Machine v5 now propagates host allocation exhaustion past all internal broad
+handlers to one public boundary. It writes a precreated marker to existing
+state slots and closes continuation, proof, persistence and installation
+authority. It allocates no cleanup/history representation and refunds no
+alpha or work. Construction also prepares its result before publication.
+Snapshots remain passive diagnostics when they can be allocated and decoded;
+the terminal prefix is not certified to be resumable or generally recoverable.
+
+The endpoint audit covers all 22 authority/continuation ports, 352 repeated
+refusals, event and ledger failures, a previously issued class proof, and an
+actual CPU installation attempt with four learners and paired evidence. Its
+separate Windows experiment creates a suspended child, fixes and checks a
+64 MiB job commitment cap before resuming it, and executes an unmodified
+128 MiB Runtime ingress-window allocation. The kernel refuses it, MemoryError
+closes authority before any input, and paid work survives. This is actual
+allocation refusal, not an injected ResourceExceeded or a packed-byte estimate.
+
+Read `theory/proofs/HOST_ALLOCATION_FAILURE.md` and its minimal JSON evidence.
+The OS mechanism offers a central bound on its declared commitment measure,
+but remains an audit harness: production run registration, resource roles,
+supervision/publication after process termination, other host/device resources
+and full ERC-1 enforcement remain open. Foundation/ERC-1 stay frozen; no
+native architecture action, static family or science release is added.
