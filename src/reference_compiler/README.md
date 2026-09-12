@@ -32,6 +32,16 @@ owns guarded lower log/wealth arithmetic and spends global alpha once per
 identity. Its `REFERENCE_CROSSED` result is conditional reference evidence;
 failure, retirement and reconstruction cannot recycle its authority.
 
+An optional immutable `OnlineContract.float64=Float64Contract(...)` now
+executes a separate CPU binary64 learner from initialization through all
+profile/ordinary phases. `binary_arithmetic.py` checks actual scalar outputs
+against exact rounding; `float64_learner.py` fixes the ordered algorithm;
+`float64_bridge.py` checks the complete paired state and all three readout
+representations. Raw floating bits and phase evidence have actual packed
+residency. No current method accepts a caller's numeric endpoint or bridge
+token. Read [`OWNED_FLOAT64_PREFIX.md`](../../theory/proofs/OWNED_FLOAT64_PREFIX.md)
+for its finite executed-prefix scope and remaining full-domain/device limits.
+
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
 bytes and conservative reference operation charges; it does not claim total
@@ -45,6 +55,8 @@ Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_search.py` and
 `python -B scripts/audit_reference_persistence.py` from repository root. They
 exercise the actual Runtime and independent exact/ownership/clock oracles.
+The numerical route additionally uses `scripts/audit_binary_arithmetic.py`
+and `scripts/audit_float64_runtime.py`, with no GPU execution.
 The existing XVII.5 value recurrence now also runs through the endpoint.
 Read [`REFERENCE_RUNTIME_CONTINUATION.md`](../../docs/REFERENCE_RUNTIME_CONTINUATION.md)
 for the supported deterministic raw-revealed-data interface, stop-gradient

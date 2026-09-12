@@ -37,6 +37,17 @@ baseline, not all values or future continuations. The remaining gaps are
 complete ERC-1 registration, paired reference/AMP persistence, full physical/error state,
 reference/AMP and atomic install integration.
 
+The same endpoint now also executes a registered **CPU binary64** learner
+beside each exact learner, throughout initialization, profile, prediction,
+observe and commit. `OnlineContract.float64` fixes tolerances and the scalar
+backend. Raw encodings, full delayed queues and gradient accumulators remain
+owned state; no trained endpoint is replaced by a cast of the exact path.
+Read [`OWNED_FLOAT64_PREFIX.md`](theory/proofs/OWNED_FLOAT64_PREFIX.md),
+`scripts/audit_binary_arithmetic.py` and `scripts/audit_float64_runtime.py`.
+This certifies numerical relations of executed finite CPU prefixes only.
+It does not authorize future error bounds, floating whole-domain feasibility,
+AMP persistence, installation or target-device execution.
+
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic
 process law are explicit assumptions, never inferred from unread data.
@@ -55,7 +66,9 @@ owned code references for their retained evidence. Historical unsafe signers
 are no longer callable; the exact old modules are still replayed from Git
 by the historical audit. Current `proof.py` contains only typed data and
 the fixed reference-maximum checker; issuance belongs to Runtime.
-`bridge.py` remains an empty authority boundary, not a passing gate.
+`bridge.py` remains an empty reference/AMP authority boundary. The new
+`float64_bridge.py` performs passive numeric checks, with execution and
+retained phase evidence owned by Runtime; importability grants no token.
 
 Current exact evidence includes 960 independent gradient vectors, all 64
 three-event binary context/target streams with two reference lineages, and

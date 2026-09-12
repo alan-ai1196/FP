@@ -22,6 +22,9 @@ from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresol
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
 from .persistence import PersistenceContract, next_wealth, threshold_crossed
 from .persistence_state import AlphaAllocation, ReferencePersistenceEvent, ReferencePersistenceIdentity, ReferencePersistenceResult
+from .binary_arithmetic import Float64Arithmetic
+from . import float64_learner as finite
+from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from . import native_search as grammar
 from .proof import ReferenceClassProof, verify_maximum
 from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, compare_likelihoods, likelihood
@@ -83,6 +86,7 @@ class OnlineContract:
     profiles: tuple[ProfileSpec, ...] = ()
     searches: tuple[ReferenceSearchSpec, ...] = ()
     persistence: PersistenceContract | None = None
+    float64: Float64Contract | None = None
 
     def __post_init__(self):
         if type(self.data) is not DataContract or type(self.learner) is not LearnerSpec:
@@ -103,6 +107,8 @@ class OnlineContract:
         object.__setattr__(self, 'searches', searches)
         if self.persistence is not None and type(self.persistence) is not PersistenceContract:
             raise ContractError('registered persistence rules and global error budget required')
+        if self.float64 is not None and type(self.float64) is not Float64Contract:
+            raise ContractError('registered checked CPU binary64 execution required')
 
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
@@ -131,6 +137,7 @@ class ConstructedState:
     initializer_id: str
     machine_id: str
     profile_id: str | None = None
+    float64: finite.Float64LearnerState | None = None
 
     @property
     def theta(self):
@@ -156,6 +163,25 @@ class PendingEvent:
     object_ids: tuple[str, ...]
     stage: str
     persistence_ids: tuple[str, ...] = ()
+    float64_predictions: tuple[tuple[str, finite.Float64Evaluation], ...] = ()
+
+
+@dataclass(frozen=True)
+class Float64Trace:
+    candidate_id: str
+    program_id: str
+    phase: str
+    ordinary_cursor: int
+    observation_id: str | None
+    reference: ReferenceLearnerState
+    float64: finite.Float64LearnerState | None
+    reference_prediction: Evaluation | None
+    float64_prediction: finite.Float64Evaluation | None
+    relation: Float64Relation | None
+    scalar_operations: int
+    max_local_round_error: F
+    status: str = 'CHECKED_FLOAT64_PHASE'
+    reason: str = ''
 
 
 @dataclass(frozen=True)
@@ -221,6 +247,7 @@ class RuntimeSnapshot:
     alpha_allocations: tuple[AlphaAllocation, ...]
     persistence_identities: tuple[ReferencePersistenceIdentity, ...]
     persistence_events: tuple[ReferencePersistenceEvent, ...]
+    float64_traces: tuple[Float64Trace, ...]
 
 
 class ReferenceCompilerRuntime:
@@ -255,6 +282,7 @@ class ReferenceCompilerRuntime:
         self._alpha_allocations: list[AlphaAllocation] = []
         self._persistence_identities: dict[str, ReferencePersistenceIdentity] = {}
         self._persistence_events: list[ReferencePersistenceEvent] = []
+        self._float64_traces: list[Float64Trace] = []
         self._next_candidate = 0
         self._programs: dict[str, Program] = {}
         self._retained_programs: dict[str, str] = {}
@@ -318,6 +346,95 @@ class ReferenceCompilerRuntime:
         return all(bound.sufficient(normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap)
                    for bound in evidence)
 
+    def _float64_execute(self, kind, program, candidate, reference, floating=None, *,
+                         origin='ordinary', observation_id=None, sources=None,
+                         reference_prediction=None, floating_prediction=None, target=None):
+        """Execute one registered phase; no supplied endpoint or public signer."""
+        if self._online is None or self._online.float64 is None:
+            return None
+        rules, spec = self._contract.semantics, self._online.learner
+        if kind == 'initialize':
+            allowance = finite.initialize_operations(program, rules)
+        elif kind == 'predict':
+            allowance = finite.evaluate_operations(program, rules)
+        elif kind == 'observe':
+            allowance = finite.observe_operations(program)
+        elif kind == 'commit':
+            allowance = finite.commit_operations(floating, spec)
+        elif kind == 'attach':
+            allowance = 0
+        else:
+            raise ContractError('unregistered internal binary64 execution phase')
+        label = f'{candidate}:float64:{origin}:{kind}:{len(self._float64_traces)}'
+        # Fixed scalar implementation + fixed relation checks, all paid before
+        # execution. This retains the existing partial packed-reference model.
+        charge = allowance*Float64Arithmetic.scalar_work+2*relation_work(program, rules)+24*len(rules.sources)
+        if origin == 'construction':
+            self._router.charge_work('construct', {'work': charge}, label)
+        else:
+            role = 'deployment_event' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler_event'
+            self._event_router.charge_work(role, {'work': charge}, label)
+        arith = Float64Arithmetic(self._contract.reference_integer_bits)
+        result, relation, error = floating, None, None
+        actual_prediction = None
+        try:
+            if kind == 'initialize':
+                result = finite.initialize(program, rules, reference.theta, reference.cursor, arith)
+            elif kind == 'predict':
+                state_relation = check_state(reference, floating, self._online.float64, bit_limit=arith.bit_limit)
+                actual_prediction = finite.evaluate(program, rules, floating, sources, arith)
+                relation = check_prediction(reference_prediction, actual_prediction, self._online.float64, rules,
+                    normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
+                    bit_limit=arith.bit_limit)
+                relation = replace(relation, state_error=state_relation.state_error)
+            elif kind == 'observe':
+                result = finite.observe_event(program, floating, spec, floating_prediction, target, arith)
+            elif kind == 'commit':
+                result = finite.commit_event(floating, spec, arith)
+            else:
+                # Registered newborn profile clock attachment transports every
+                # numeric bit unchanged; it does not recast a trained endpoint.
+                result = replace(floating, cursor=reference.cursor)
+            if kind != 'predict':
+                relation = check_state(reference, result, self._online.float64, bit_limit=arith.bit_limit)
+            if arith.operations != allowance:
+                raise ContractError('binary64 executor did not complete its registered scalar operation schedule')
+        except Exception as exc:
+            error = exc
+        trace = Float64Trace(candidate, program.program_id, f'{origin}:{kind}', self._cursor, observation_id,
+            reference, result, reference_prediction, actual_prediction, relation,
+            arith.operations, arith.max_round_error,
+            'CHECKED_FLOAT64_PHASE' if error is None else ('UNRESOLVED' if isinstance(error, (ArithmeticUnresolved, ResourceExceeded)) else 'EXECUTION_FAILED'),
+            '' if error is None else f'{type(error).__name__}: {error}')
+        packed = self._machine.realize(label, 'executed_float64_phase', trace, self._chi)
+        try:
+            self._allocate(self._data_owner, (packed,))
+        except Exception as retain_error:
+            # A successful numerical check is not owned retained evidence if
+            # its allocation failed. Keep only a terminal diagnostic, with the
+            # same explicit out-of-payload limitation as other failed prefixes.
+            # A second resource failure must not downgrade or erase an already
+            # observed unexpected executor failure.
+            expected = (ArithmeticUnresolved, ResourceExceeded)
+            failure = error if error is not None and not isinstance(error, expected) else retain_error
+            self._float64_traces.append(replace(trace,
+                status='UNRESOLVED' if isinstance(failure, expected) else 'EXECUTION_FAILED',
+                reason=(trace.reason+'; ' if trace.reason else '')+
+                       f'phase evidence retention failed: {type(retain_error).__name__}: {retain_error}'))
+            if isinstance(failure, ContractError) and not isinstance(failure, expected):
+                raise RuntimeError('registered binary64 execution violated its admitted inputs') from failure
+            raise failure
+        self._float64_traces.append(trace)
+        if error is not None:
+            if isinstance(error, ContractError) and not isinstance(error, (ArithmeticUnresolved, ResourceExceeded)):
+                raise RuntimeError('registered binary64 execution violated its admitted inputs') from error
+            raise error
+        return actual_prediction if kind == 'predict' else result
+
+    @staticmethod
+    def _learner_payload(reference, floating):
+        return reference if floating is None else (reference, floating)
+
     def _construct(self, program: Program, role: str, profile_id: str | None = None) -> ConstructionResult:
         number = self._next_candidate
         self._next_candidate += 1
@@ -354,7 +471,10 @@ class ReferenceCompilerRuntime:
             # registered profile is executed below, never supplied as theta.
             theta = self._machine.initializer(program.slot_count, self._contract.initializer_pattern)
             learner = initial_state(program, self._contract.semantics, theta, self._cursor)
-            initialized = self._machine.realize(f'{candidate}:values', 'initialized_reference_state', learner, program_id)
+            if self._online is not None and self._online.float64 is not None:
+                self._retain_code(program, program_id, code.spec.object_id, candidate)
+            floating = self._float64_execute('initialize', program, candidate, learner, origin='construction')
+            initialized = self._machine.realize(f'{candidate}:values', 'initialized_reference_state', self._learner_payload(learner, floating), program_id)
             self._router.charge_work('construct', {'work': program.slot_count}, f'{candidate}:registered-initialize')
             self._allocate(owner, (initialized,))
             self._ledger.release(owner, initial.spec.object_id)
@@ -365,7 +485,7 @@ class ReferenceCompilerRuntime:
             safe = self._safe(evidence)
             state = ConstructedState(candidate, owner, program_id, self._cursor, learner,
                                      tuple(evidence), safe, (code.spec.object_id, initialized.spec.object_id, checked.spec.object_id),
-                                     self._machine.initializer_id, self._machine.model_id)
+                                     self._machine.initializer_id, self._machine.model_id, float64=floating)
             if profile is not None:
                 state = self._profile_newborn(program, state, profile)
                 safe = state.range_safe
@@ -484,8 +604,9 @@ class ReferenceCompilerRuntime:
             # Local replay clock starts at zero. All numerical/causal fields
             # are the registered newborn state, with no copied trained values.
             local = replace(initial.learner, cursor=0)
+            local_float64 = self._float64_execute('attach', program, candidate, local, initial.float64, origin='profile')
             work(program.slot_count+sum(s.delay for s in rules.states)+1, 'local-clock')
-            local_object = self._machine.realize(f'{prefix}:local-initial', 'profile_initial_state', local, initial.program_id)
+            local_object = self._machine.realize(f'{prefix}:local-initial', 'profile_initial_state', self._learner_payload(local, local_float64), initial.program_id)
             self._allocate(owner, (local_object,))
             self._ledger.release(owner, initial.object_ids[1])
             del self._buffers[initial.object_ids[1]]
@@ -502,6 +623,8 @@ class ReferenceCompilerRuntime:
                                       bit_limit=self._contract.reference_integer_bits)
                 if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in prediction.values):
                     raise ContractError('profile execution contradicts a sufficient native range bound')
+                float64_prediction = self._float64_execute('predict', program, candidate, local, local_float64,
+                    origin='profile', observation_id=observation.observation_id, sources=dict(observation.sources), reference_prediction=prediction)
                 event = ProfileEvent(candidate, profile.profile_id, initial.program_id, self._cursor,
                                      position, observation.observation_id, local, prediction)
                 self._profile_events.append(event)
@@ -510,6 +633,8 @@ class ReferenceCompilerRuntime:
                 work(self._machine.observation_work(program), f'{position}:observe')
                 observed = observe_event(program, local, spec, prediction, observation.target,
                                          bit_limit=self._contract.reference_integer_bits)
+                floating_successor = self._float64_execute('observe', program, candidate, observed, local_float64,
+                    origin='profile', observation_id=observation.observation_id, floating_prediction=float64_prediction, target=observation.target)
                 event = replace(event, after_observe=observed)
                 self._profile_events[-1] = event
                 update(local=observed)
@@ -519,6 +644,8 @@ class ReferenceCompilerRuntime:
                     update(stage='commit')
                     work(self._machine.commit_work(program), f'{position}:commit')
                     successor = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
+                    floating_successor = self._float64_execute('commit', program, candidate, successor, floating_successor,
+                        origin='profile', observation_id=observation.observation_id)
                     event = replace(event, after_commit=successor)
                     self._profile_events[-1] = event
                     update(local=successor, stage='range')
@@ -526,7 +653,7 @@ class ReferenceCompilerRuntime:
                     evidence = self._range(program, successor.theta, f'{prefix}:{position}')
                     if not self._safe(evidence):
                         raise ProfileUnresolved('profile optimizer successor lacks a sufficient full-domain range/invariant bound')
-                values = self._machine.realize(f'{prefix}:{position}:values', 'profile_current_state', successor, initial.program_id)
+                values = self._machine.realize(f'{prefix}:{position}:values', 'profile_current_state', self._learner_payload(successor, floating_successor), initial.program_id)
                 checked = self._machine.realize(f'{prefix}:{position}:range', 'profile_range_evidence', evidence, initial.program_id)
                 self._allocate(owner, (values, checked))
                 self._ledger.release_many(tuple((owner, object_id, 1) for object_id in current_ids[1:]))
@@ -534,11 +661,13 @@ class ReferenceCompilerRuntime:
                     del self._buffers[object_id]
                 current_ids = (current_ids[0], values.spec.object_id, checked.spec.object_id)
                 local = successor
+                local_float64 = floating_successor
                 update(events_completed=position+1, stage='replay', local=local)
             update(stage='attach')
             work(program.slot_count+sum(s.delay for s in rules.states)+1, 'attach-boundary')
             attached = attach_boundary(local, self._cursor, spec)
-            attached_object = self._machine.realize(f'{prefix}:attached', 'profiled_newborn_state', attached, initial.program_id)
+            attached_float64 = self._float64_execute('attach', program, candidate, attached, local_float64, origin='profile')
+            attached_object = self._machine.realize(f'{prefix}:attached', 'profiled_newborn_state', self._learner_payload(attached, attached_float64), initial.program_id)
             self._allocate(owner, (attached_object,))
             # Retain the checked pair of local and ordinary clock coordinates.
             completed = replace(self._profile_executions[candidate], attached=attached, stage='complete', status='PROFILED_REFERENCE')
@@ -548,7 +677,8 @@ class ReferenceCompilerRuntime:
             del self._buffers[current_ids[1]]
             self._profile_executions[candidate] = completed
             return replace(initial, learner=attached, range_evidence=evidence, range_safe=True,
-                           object_ids=(current_ids[0], attached_object.spec.object_id, current_ids[2]), profile_id=profile.profile_id)
+                           object_ids=(current_ids[0], attached_object.spec.object_id, current_ids[2]), profile_id=profile.profile_id,
+                           float64=attached_float64)
         except Exception as exc:
             expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved))
             update(status='UNRESOLVED' if expected else 'EXECUTION_FAILED', reason=f'{type(exc).__name__}: {exc}')
@@ -581,7 +711,7 @@ class ReferenceCompilerRuntime:
         record = ObservationRecord(observation_id, data.active.stream_id, data.active.role, self._cursor, inputs, sources, None)
         self._revision += 1
         prefix = f'{self._runtime_id}:event:{self._cursor}'
-        predictions, object_ids = [], []
+        predictions, float64_predictions, object_ids = [], [], []
         self._pending = PendingEvent(record, (), f'{prefix}:target', (), 'context-revealed')
         self._event_phase = 'predicting'
         try:
@@ -608,17 +738,21 @@ class ReferenceCompilerRuntime:
                                       bit_limit=self._contract.reference_integer_bits)
                 if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in prediction.values):
                     raise ContractError('a certified range enclosure disagrees with actual native execution')
+                floating_prediction = self._float64_execute('predict', program, state.candidate_id, state.learner, state.float64,
+                    observation_id=observation_id, sources=source_map, reference_prediction=prediction)
+                if floating_prediction is not None:
+                    float64_predictions.append((state.candidate_id, floating_prediction))
                 predictions.append((state.candidate_id, prediction))
                 tape = self._machine.realize(f'{prefix}:{state.candidate_id}:prediction', 'pre_target_prediction',
                                              (state.candidate_id, state.program_id, state.learner, prediction), self._chi)
                 self._allocate(self._data_owner, (tape,))
                 object_ids.append(tape.spec.object_id)
-            self._pending = replace(self._pending, predictions=tuple(predictions), object_ids=tuple(object_ids), stage='predicted')
+            self._pending = replace(self._pending, predictions=tuple(predictions), float64_predictions=tuple(float64_predictions), object_ids=tuple(object_ids), stage='predicted')
             self._event_phase = 'awaiting-target'
             return PredictionResult('PREDICTED_REFERENCE', observation_id, self._cursor,
                                     tuple((candidate, pred.probabilities) for candidate, pred in predictions), 'all active reference predictions precede the target')
         except Exception as exc:
-            self._pending = replace(self._pending, predictions=tuple(predictions), object_ids=tuple(object_ids), stage='prediction-failed')
+            self._pending = replace(self._pending, predictions=tuple(predictions), float64_predictions=tuple(float64_predictions), object_ids=tuple(object_ids), stage='prediction-failed')
             self._halt('predict', exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
                 raise
@@ -642,6 +776,7 @@ class ReferenceCompilerRuntime:
         spec, rules = self._online.learner, self._contract.semantics
         do_commit = (cursor+1) % spec.update_unit == 0
         staged = []
+        float64_predictions = dict(pending.float64_predictions)
         try:
             # An in-place write to the already paid, fixed-size owned slot.
             filled = self._machine.realize(pending.target_object_id, 'reserved_target', self._target_slot(target), self._chi)
@@ -657,6 +792,8 @@ class ReferenceCompilerRuntime:
                 self._event_work(state, self._machine.observation_work(program), 'observe-and-accumulate')
                 observed = observe_event(program, state.learner, spec, prediction, target,
                                          bit_limit=self._contract.reference_integer_bits)
+                floating_successor = self._float64_execute('observe', program, candidate, observed, state.float64,
+                    observation_id=record.observation_id, floating_prediction=float64_predictions.get(candidate), target=target)
                 trace = EventTrace(record.observation_id, candidate, state.program_id, state.learner, prediction, observed, None)
                 self._event_traces.append(trace)
                 prefix = f'{candidate}:event:{cursor}'
@@ -667,6 +804,8 @@ class ReferenceCompilerRuntime:
                 if do_commit:
                     self._event_work(state, self._machine.commit_work(program), 'optimizer-commit')
                     committed = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
+                    floating_successor = self._float64_execute('commit', program, candidate, committed, floating_successor,
+                        observation_id=record.observation_id)
                     trace = replace(trace, after_commit=committed)
                     self._event_traces[-1] = trace
                     trace_object = self._machine.realize(f'{prefix}:committed', 'after_optimizer_phase', trace, self._chi)
@@ -675,10 +814,10 @@ class ReferenceCompilerRuntime:
                     if not self._safe(evidence):
                         raise ArithmeticUnresolved('registered optimizer successor lacks a sufficient full-domain range/invariant bound')
                 final_state = committed if committed is not None else observed
-                values = self._machine.realize(f'{prefix}:values', 'ordinary_reference_state', final_state, state.program_id)
+                values = self._machine.realize(f'{prefix}:values', 'ordinary_reference_state', self._learner_payload(final_state, floating_successor), state.program_id)
                 checked = self._machine.realize(f'{prefix}:range', 'current_range_evidence', evidence, state.program_id)
                 self._allocate(state.physical_owner, (values, checked))
-                staged.append(replace(state, learner=final_state, range_evidence=evidence,
+                staged.append(replace(state, learner=final_state, float64=floating_successor, range_evidence=evidence,
                                       object_ids=(state.object_ids[0], values.spec.object_id, checked.spec.object_id)))
             # Evidence uses the sealed pre-target probabilities, only after
             # every learner successor has completed its registered phases.
@@ -1271,4 +1410,4 @@ class ReferenceCompilerRuntime:
                                tuple(self._retained_programs.items()), tuple(self._profile_executions.values()), tuple(self._profile_events),
                                self._revision, self._next_search, tuple(self._searches.values()), tuple(self._reference_proofs.values()),
                                self._next_persistence, self._alpha_spent, tuple(self._alpha_allocations),
-                               tuple(self._persistence_identities.values()), tuple(self._persistence_events))
+                               tuple(self._persistence_identities.values()), tuple(self._persistence_events), tuple(self._float64_traces))

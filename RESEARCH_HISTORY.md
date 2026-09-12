@@ -1434,3 +1434,67 @@ conditional reference evidence only. Actual paired reference/AMP evidence,
 complete ERC-1 physical enforcement and atomic installation remain open;
 Runtime is NOT FROZEN and RTX 3090 science stays HOLD. Foundation and ERC-1
 remain frozen, and static special-case expansion remains parked.
+
+## 56. Execute binary64 trajectories and certify their finite prefixes (2026-09-12)
+
+The numerical bridge need not begin with an error recurrence proved for
+every possible future. A more direct scoped result follows by induction:
+execute two registered continuous trajectories, check their complete state
+and score relation at every required microphase under fixed tolerances,
+and retain only the accepted finite prefix. Failure stops its extension;
+a later close endpoint cannot reconstruct a skipped or failed phase. This
+does not establish an unexecuted horizon or a whole-domain floating bound.
+
+The Runtime now implements that result for actual CPU binary64 beside the
+exact reference learner. Every initializer cast, ordered native operation,
+reverse-gradient incidence, accumulator update, optimizer step and optional
+grid projection is executed through a fixed scalar backend. A guarded exact
+binary nearest/ties-even oracle checks actual result bits. Both zero signs
+remain represented. The finite path runs its own profile from the original
+retained observations; it is never replaced by a cast of the fitted exact
+endpoint. Both paths' current buffers and all accepted numeric phases have
+real packed residency and prepaid reference work.
+
+The readout relation keeps three objects: exact mathematical normalization
+of decoded stored masses, the rounded normalizer and the actual final
+division output. Displayed equality cannot replace the first object. The
+existing precision fixture now reproduces this distinction through Runtime:
+raw output exactly equals the reference target while the proper stored-mass
+probability gap is `1/48038396025285288`. A zero probability tolerance rejects
+that forecast. Full delayed queues and partial gradients are similarly
+checked instead of comparing only current parameters or predictions.
+
+Adversarial integration exposed two classification/ownership defects.
+An internal numerical executor ContractError was initially caught as native
+admissibility rejection; it now records and propagates EXECUTION_FAILED.
+A phase was initially marked CHECKED before its packed evidence allocation;
+an actual tight byte cap left that successful-looking row unowned. A failed
+retention now leaves only an explicitly terminal diagnostic, never CHECKED
+evidence. A final combined-failure audit found that evidence exhaustion could
+also hide an earlier unexpected backend failure. The diagnostic now retains
+both causes and preserves EXECUTION_FAILED. Missing registered scalar
+operations also block a close endpoint.
+The binary decoder now checks its integer budget before constructing its
+largest raw rational denominator. These are implementation repairs under
+the existing frozen Foundation, not new architecture primitives.
+
+The primitive audit checks 10,232 small-format rational cases, 513 actual
+binary64 nearest-neighbor results and 594 grid floors. The Runtime audit
+executes 64 full three-event streams, 384 paired-lineage events and 128
+commits, with 1,024 bitwise checks against an independent direct-float
+interpreter. In 406 coordinates the executed finite value differs from a
+cast of the exact endpoint. Six profile events from two original labels
+give 20 further differences. Sixteen floor-grid streams add 192 phase
+checks. Numeric/work/memory/tolerance failure, signed zero, stale crossing,
+profile/recurrent state and fake endpoint regressions pass. Existing
+construction, ordinary-event, profile, search and persistence regressions
+also pass; no target GPU execution was performed.
+
+Read `theory/proofs/OWNED_FLOAT64_PREFIX.md`,
+`evidence/minimal/FP_BINARY_ARITHMETIC_AUDIT.json` and
+`evidence/minimal/FP_FLOAT64_RUNTIME_AUDIT.json`. CPU reference protocol
+closure precedes actual target AMP validation. The old 47 labels survive
+as a catalog, not the executable registry, so its historical pass count
+cannot be reused. Complete ERC-1 physical enforcement, four-path/dual
+persistence protocol, actual target AMP and atomic installation remain
+open. Runtime remains NOT FROZEN, science HOLD, and static expansion parked.

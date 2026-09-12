@@ -270,9 +270,48 @@ separate numerical and statistical kernel audits retain only their exact
 counts and minimal counterexamples under `evidence/minimal/`.
 
 This closes a reference evidence slice, not paired reference/AMP persistence.
-Complete ERC-1 registration, full physical accounting, certified float64,
+Complete ERC-1 registration, full physical accounting, complete numerical protocol,
 actual AMP event relations, atomic installation and full release gates
 remain open. No new Compiler CERTIFIED_COMPLETE or install token is issued.
+
+### Executed exact/reference-binary64 prefixes (2026-09-12)
+
+`OnlineContract.float64` now fixes a checked CPU binary64 backend and exact
+state/probability tolerances before execution. The same Runtime owns a
+separate finite learner for every constructed reference lineage. Each
+initializer, profile event, ordinary prediction, target-driven observation
+and optimizer commit executes its actual finite arithmetic. Every scalar
+output is checked against a guarded exact nearest/ties-even rounding oracle.
+SUM order, separate PRODUCT/addition, division order, projection and the
+optional explicit dyadic floor operation are fixed. This is no GPU emulator
+claim, and no exact trained endpoint is cast to manufacture a finite trace.
+
+Raw binary64 bits retain signed zero; the whole parameter, delayed queue,
+gradient accumulator and optimizer clock state is paid and checked at every
+required phase. Exact decoded stored-mass normalization, rounded normalizer
+and actual division output are checked separately. Current numerical equality
+is not treated as a state quotient. A fixed tolerance checks the current
+pair directly; approximate closeness is never composed as an equivalence.
+
+The argument is finite-prefix induction: successful initialization and each
+actually executed/checkable next phase establish the registered relation
+for that prefix. It makes no unexecuted future or all-context floating range
+claim. Refusing the next phase for numeric/tolerance/resource uncertainty
+leaves UNRESOLVED. Failed scalar schedules/internal invariants are execution
+failures, not native-graph admissibility rejections. A phase whose evidence
+allocation fails cannot remain marked as owned CHECKED evidence. Ordinary
+failure also invalidates current reference persistence crossings.
+An additional retention failure preserves an earlier unexpected executor
+failure and both causes; resource exhaustion cannot conceal that defect.
+
+Read `theory/proofs/OWNED_FLOAT64_PREFIX.md`. The primitive and complete
+endpoint audits are `scripts/audit_binary_arithmetic.py` and
+`scripts/audit_float64_runtime.py`. Their scopes do not close actual
+reference/AMP relation, same-path dual persistence, full host/device resource
+accounting or atomic installation. The reference protocol must close before
+target-device correctness tests, followed by model science. The 47 historical
+labels in `docs/history/V155_GATE_CATALOG.md` are a catalog; the old executable
+registry was not preserved, so its green count cannot be reused.
 
 ## 4. Required closure tests
 

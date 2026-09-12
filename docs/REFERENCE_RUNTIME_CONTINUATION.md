@@ -236,6 +236,43 @@ Finite noncrossing, range/numeric/resource uncertainty and lack of a
 stochastic assumption give UNRESOLVED. This supplies no pair-atomic AMP
 persistence, equivalence, complete Compiler or installation authority.
 
+## Checked CPU binary64 continuation
+
+`OnlineContract.float64` fixes the exact state/probability tolerances and
+one scalar backend before execution. Runtime constructs an independent
+finite learner beside each exact learner. Both begin at the registered
+initializer; profile replay and ordinary events advance each trajectory
+through its own arithmetic. Profile clock attachment preserves all raw
+finite values. No optimizer endpoint, gradient or recurrent queue is reset
+to a cast of its exact counterpart.
+
+The finite evaluator executes ordered separate multiply/add, rounded
+reciprocal derivatives, a fixed accumulation order and projected SGD. Its
+scalar CPU outputs must match a guarded exact rounding oracle. Signed zero
+bits survive alongside complete delayed queues and partial accumulators.
+The declared scalar schedule must finish before a phase can pass. Runtime
+checks full state before scoring and after observe/commit, and separately
+checks exact decoded mass normalization, the rounded normalizer and actual
+final division output. Displayed prediction equality cannot hide a stored
+mass error.
+
+Every successful phase has owned packed evidence in `snapshot.float64_traces`;
+current state buffers contain both learners. A failed evidence allocation
+leaves a terminal diagnostic with no CHECKED status, subject to the same
+partial physical-model limitation below. A backend invariant error is an
+execution failure, not rejection of an already admitted native graph.
+Ordinary numerical failure halts the shared prefix and removes any current
+reference persistence authority. Passive phase records cannot be submitted
+as installation or AMP tokens.
+
+This is an executed finite CPU prefix relation. No all-context floating
+range bound, unexecuted future guarantee or stochastic finite-path evidence
+is inferred. Read [`OWNED_FLOAT64_PREFIX.md`](../theory/proofs/OWNED_FLOAT64_PREFIX.md).
+The endpoint audit checks 1,024 phases over 64 complete short streams plus
+192 floor-grid phases, with 406 coordinates differing from exact-endpoint
+recasts. It also checks actual profile/recurrent paths and post-target
+failure through the public endpoint, using an independent float interpreter.
+
 ## Failure and physical history
 
 The bounded target slot and its write work are reserved before prediction
@@ -330,8 +367,9 @@ historical false authorizations remain reproducible. An empty bridge port
 does not count as a passed bridge gate.
 
 Next integrate the complete immutable ERC-1 manifest, paired reference/AMP
-persistence and complete physical/error state. Certified float64,
-actual AMP, atomic installation and the complete 47-gate mapping remain
+persistence and complete physical/error state. The scoped executed CPU
+binary64 relation does not close actual AMP, atomic installation or the
+complete 47-gate mapping; these remain
 release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,
 paired persistence, bridge or installation authorization. RTX 3090 science remains
 HOLD; static theory expansion remains parked.

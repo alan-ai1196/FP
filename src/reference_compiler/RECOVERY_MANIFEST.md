@@ -111,6 +111,13 @@ bounded downward-rounded wealth, continuous paired learners and a global
 nonrefundable alpha ledger. No historical generic persistence signer is
 restored. The external stochastic-law assumption is explicit; helper
 arithmetic alone supplies neither freshness nor trajectory authority.
+New `binary_arithmetic.py`, `float64_learner.py` and `float64_bridge.py`
+execute and check a separate CPU binary64 trajectory through the same
+constructor/profile/ordinary Runtime. Raw encodings, full learner state,
+scalar schedule and all three normalization representations are retained
+and checked against registered tolerances. The evidence concerns executed
+finite prefixes only; no historical bridge signer or target AMP authority
+is restored.
 The public install path remains UNRESOLVED because complete manifest/
 paired persistence/error/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status

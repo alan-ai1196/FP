@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "scope": "exact registered scalar binary rounding and actual checked CPU binary64 operations",
+  "rounding": {
+    "complete_small_format_declarations": 16,
+    "signed_exact_nearest_point_comparisons": 10232,
+    "adjacent_midpoints_and_neighborhoods_per_sign": 240,
+    "overflow_cases_checked": 5344,
+    "precision_one_common_grid_ties_checked": true,
+    "oracle_uses_enumerated_points_and_exact_distances": true
+  },
+  "counterexamples": {
+    "toy_p3_to_p2_double_rounding": {
+      "input": "21/16",
+      "direct": "3/2",
+      "via_p3": "1"
+    },
+    "actual_half_and_single_cast_double_rounding": [
+      {
+        "target_precision": 11,
+        "direct_result": "1025/1024",
+        "via_binary64_result": "1"
+      },
+      {
+        "target_precision": 24,
+        "direct_result": "8388609/8388608",
+        "via_binary64_result": "1"
+      }
+    ],
+    "FTZ_rounding_before_output_flush_and_input_policy_are_distinct": true,
+    "positive_fused_vs_separate_result": [
+      "7/4",
+      "3/2"
+    ],
+    "positive_single_round_vs_ordered_SUM_result": [
+      "5/4",
+      "1"
+    ],
+    "premature_binary64_underflow_of_exact_2_to_minus1200_reproduced": true
+  },
+  "limits": {
+    "signed_zero_and_underflow_checks": 28,
+    "normal_subnormal_boundary_carry_checked": true,
+    "exact_overflow_midpoint_and_neighbors_checked": true,
+    "overflow_and_zero_division_never_return_finite_saturation": true
+  },
+  "actual": {
+    "raw_finite_encoding_roundtrips": 136,
+    "successful_actual_scalar_comparisons": 513,
+    "independent_binary64_adjacent_distance_and_tie_checks": 513,
+    "actual_overflow_cases_unresolved": 39,
+    "exact_floor_grid_checks": 594,
+    "operation_counts_and_maximum_local_round_error_match_independent_accounting": true,
+    "positive_CPU_ordered_SUM_reassociation_changes_result": true
+  },
+  "failures": {
+    "malformed_formats_numeric_types_and_raw_encodings_rejected": true,
+    "input_and_shift_bit_exhaustion_unresolved_before_large_allocation": true,
+    "binary64_integer_budget_checked_before_raw_subnormal_decode": true,
+    "failed_scalar_attempts_keep_operation_counts": true,
+    "actual_value_and_negative_zero_backend_mismatches_detected": true,
+    "registered_reference_scalar_work": 256,
+    "work_scope": "registered fixed primitive charge, not elapsed bit-time or CPU heap accounting"
+  },
+  "not_closed": [
+    "IEEE exception flag semantics",
+    "input DAZ or GPU FTZ behavior",
+    "FMA or parallel reduction kernels",
+    "continuous whole-learner bridge",
+    "actual AMP and installation authority"
+  ]
+}

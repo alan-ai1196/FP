@@ -49,9 +49,16 @@ shared fresh observations need separate allocations, not independence.
 See `theory/proofs/OWNED_REFERENCE_PERSISTENCE.md` for the exact null and
 failure boundary. It grants no AMP or installation authority.
 
+Actual CPU binary64 continuation now runs beside the exact learner through
+constructor/profile and every ordinary microphase. Exact rounding checks,
+complete raw-bit state and stored-mass normalization establish a scoped
+finite-prefix relation; no future/global floating bound is inferred. Read
+`theory/proofs/OWNED_FLOAT64_PREFIX.md` before using its evidence. Actual
+AMP execution and matched dual persistence remain different obligations.
+
 The remaining work is complete ERC-1 registration, full Compiler decision
 authority beyond the scoped reference comparison, paired reference/AMP
-persistence and complete error state, actual host/device accounting, certified reference/
+persistence and complete error state, actual host/device accounting, target
 AMP and atomic installation. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
 The new endpoint pass is not a complete release certificate.

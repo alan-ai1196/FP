@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "scope": "owned actual CPU binary64 and exact reference learner prefixes; no target AMP authorization",
+  "exhaustive": {
+    "complete_three_event_context_target_streams": 64,
+    "paired_lineage_events": 384,
+    "optimizer_commits": 128,
+    "independent_bitwise_phase_checks": 1024,
+    "actual_finite_coordinates_differing_from_recast_exact_endpoints": 406,
+    "registered_floor_grid_two_event_streams": 16,
+    "registered_floor_grid_bitwise_phase_checks": 192
+  },
+  "profiles": {
+    "profile_replayed_events": 6,
+    "original_profile_observations": 2,
+    "ordinary_cursor_after_profile": 2,
+    "profile_and_initial_prefix_phase_checks": 30,
+    "profile_coordinates_not_equal_to_exact_endpoint_recasts": 20,
+    "recurrent_phase_checks": 22,
+    "full_accumulator_and_hidden_delayed_tail_checked": true,
+    "numeric_zero_relation_does_not_erase_raw_sign_bit": true
+  },
+  "normalization": {
+    "displayed_prediction_exactly_equals_reference": true,
+    "stored_mass_normalization_gap": "1/48038396025285288",
+    "zero_probability_tolerance_rejects_displayed_equality": true
+  },
+  "failures": {
+    "actual_state_tolerance_failure_retains_revealed_target": true,
+    "actual_binary64_integer_work_limit_stops_prediction": true,
+    "real_work_and_coexistence_caps_halt_paired_prefix": true,
+    "unexpected_finite_backend_failure_cannot_publish_exact_only_successor": true,
+    "internal_backend_contract_failure_not_mislabeled_admissibility": true,
+    "valid_looking_endpoint_without_registered_operations_rejected": true,
+    "combined_backend_and_evidence_allocation_failure_preserves_both_causes": true,
+    "failed_evidence_allocation_cannot_leave_unowned_checked_phase": true
+  },
+  "crossing": {
+    "finite_trajectory_failure_revokes_current_reference_crossing": true,
+    "historical_crossing_and_spent_alpha_retained": true,
+    "checked_cpu_prefix_has_no_AMP_or_install_authority": true
+  },
+  "not_closed": [
+    "target AMP or CUDA realization",
+    "paired reference/AMP persistence and atomic installation",
+    "full ERC-1 physical accounting and complete Runtime release"
+  ]
+}
