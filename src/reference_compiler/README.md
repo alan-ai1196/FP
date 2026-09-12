@@ -71,16 +71,31 @@ CPython heap, bit-time, GPU memory or CUDA work accounting. Numeric integer
 work limits and inconclusive range bounds produce UNRESOLVED. Intermediate
 build failures release partial buffers without refunding spent work or peak.
 
-Machine `packed-reference-payload-v2` additionally requires a positive
+The control rule introduced in machine v2 additionally requires a positive
 control admission debit before any public Compiler state change. An
 unfunded request cannot mint IDs or invalidate a current proof revision;
 an admitted failure still retains its full recorded costs/history. Read
 [`OWNED_CONTROL_ADMISSION.md`](../../theory/proofs/OWNED_CONTROL_ADMISSION.md)
-and run `scripts/audit_control_admission.py`. The same audit keeps a separate
-unclosed raw-ingress example: a large exact input can already be in halted
-pending state when the arithmetic guard refuses it. Admission bounds request
-counts, not full CPython memory. Complete ingress/diagnostic accounting is
-the next physical obligation.
+and run `scripts/audit_control_admission.py`. It also replays the historical
+raw-ingress failure from `5055f3e`.
+
+Current machine `packed-reference-payload-v3` requires bounded exact byte
+ingress. `DataContract.ingress=IngressContract(capacity=4096, chunk_bytes=64)`
+registers a window before execution. `begin_context(observation_id)` prepays
+work, body, fixed terminal status and identity, and seals learner/persistence
+IDs before offering bytes. Call `receive_context(ingress_id, offset, chunk)`
+with only the offered extent, then `finish_context(ingress_id)`. The latter
+guards integer lengths before materialization and executes ordinary prediction.
+`predict_next(observation_id, encoded)` accepts only one bounded byte chunk
+through the same protocol. `ingress.encode_context` is a producer utility;
+raw rational tuples are no longer an alternate Runtime input port.
+
+Failed prefixes retain their actual bytes and fixed status in paid storage.
+The grammar covers all nonnegative rationals; a window or integer limit can
+leave execution UNRESOLVED. Read
+[`OWNED_CONTEXT_INGRESS.md`](../../theory/proofs/OWNED_CONTEXT_INGRESS.md)
+and run `scripts/audit_context_ingress.py`. Complete host metadata, temporary
+copies/arithmetic scratch and general diagnostic accounting remain open.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and
@@ -92,7 +107,7 @@ The numerical route additionally uses `scripts/audit_binary_arithmetic.py`
 and `scripts/audit_float64_runtime.py`, with no GPU execution.
 The existing XVII.5 value recurrence now also runs through the endpoint.
 Read [`REFERENCE_RUNTIME_CONTINUATION.md`](../../docs/REFERENCE_RUNTIME_CONTINUATION.md)
-for the supported deterministic raw-revealed-data interface, stop-gradient
+for the supported exact revealed-data interface, stop-gradient
 delayed learner, retained event phases, terminal failures and exact limits.
 
 Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](../../theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md)

@@ -103,25 +103,25 @@ minting an unexecuted shadow. The audit completes a 35-program class and
 then makes 16 unfunded construction requests. The same owned current proof
 remains valid throughout; no proof token is rebuilt or widened.
 
-## 4. The remaining one-request ingress counterexample
+## 4. The historical one-request ingress counterexample
 
 Positive admission is necessary here, but it is not sufficient for a complete
-memory bound. The present raw revealed-input interface can receive an exact
+memory bound. The raw revealed-input interface at `5055f3e` could receive an exact
 rational before its reference arithmetic guard runs. On a source box [0,1],
 choose input `1/2^m` and reference integer work limit 128. `predict_next`
 first places the raw input in its pending record, then the guard returns
 UNRESOLVED and halts. For m=256,1024,4096, the halted state retains denominators
 of 257,1025,4097 bits without increasing its charged work or packed payload.
 
-These are range-legal inputs that the current arithmetic cannot process.
+These are range-legal inputs that the registered arithmetic cannot process.
 The code honestly halts and issues no successful prediction or certificate;
 it does not claim the oversized input was unread. However, their retained
 storage is outside the current payload measure. Even a single admitted
 ordinary event can therefore defeat a proposed total-memory bound based
-only on the present counters. This **current unclosed counterexample** is
-kept separately from the corrected historical control-loop failure.
+only on those counters. This separate counterexample is now replayed from
+the original machine, Runtime and data registration at Git `5055f3e`.
 
-The next physical implementation must account for input representation,
+The physical implementation must account for input representation,
 partial ingress and terminal diagnostics before claiming a complete cap.
 Merely moving a check after the object has been retained, deleting the
 revealed value, casting it to lower precision, or rejecting the whole legal
@@ -129,6 +129,13 @@ semantic source class is not a solution. The information/physical interface
 must establish which bits were legally received and where they remain owned,
 with UNRESOLVED when its actual acquisition budget is insufficient. General
 CPython metadata/temporaries and the full ERC-1 manifest remain obligations.
+
+The implemented v3 correction is
+[`OWNED_CONTEXT_INGRESS.md`](OWNED_CONTEXT_INGRESS.md). Mandatory prepaid
+byte windows and a fixed terminal status precede receipt; length guards
+precede numeric creation, and all received prefixes survive failure. The
+raw tuple port no longer exists. This closes the concrete witness within
+the packed machine while total host/diagnostic accounting remains open.
 
 ## 5. Executed evidence
 
@@ -144,8 +151,8 @@ Run `python -B scripts/audit_control_admission.py --write`.
   each preceded by positive paid admission. Retirement with no shadow is a
   declared no-request position in this audit driver.
 - A completed 35-program current proof survives 16 unadmitted requests.
-- Three oversized raw-input prefixes reproduce the distinct still-open
-  ingress/diagnostic storage problem under machine v2.
+- Three oversized raw-input prefixes reproduce the distinct historical
+  ingress/diagnostic storage problem from the original machine v2 source.
 
 The compact artifact is
 [`FP_CONTROL_ADMISSION_AUDIT.json`](../../evidence/minimal/FP_CONTROL_ADMISSION_AUDIT.json).

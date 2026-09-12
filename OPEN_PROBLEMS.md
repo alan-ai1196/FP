@@ -83,20 +83,23 @@ obligations to current evidence. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
 The new endpoint pass is not a complete release certificate.
 
-**Concrete remaining physical obstruction.** Positive control admission in
-machine v2 removes the historical unbounded free-attempt sequence: an
-unfunded public Compiler request can no longer mint identities, revise a
-proof context or retain new failed history. Its exact request-count bound
-is not a complete memory bound. On the current raw source-box interface,
-`1/2^m` is stored in pending state before the 128-bit reference guard can
-refuse it; tested denominator lengths 257,1025,4097 bits remain in a halted
-prefix without a packed-payload/work increment. Read
-`theory/proofs/OWNED_CONTROL_ADMISSION.md` and its compact audit. The next
-resource closure must account for legally received input bits, partial
-ingress and terminal diagnostics before exposing complete-memory authority.
-Deleting the revealed input, casting it, or silently shrinking the source
-class would evade this obligation. Full host temporaries and ERC-1/gate
-registration remain open as well.
+**Current physical boundary.** Machine v2 removed unfunded control history
+growth. Machine v3 now also closes the raw-input witness at `5055f3e`:
+mandatory paid byte windows replace naked rational receipt. Length guards
+precede integer creation, partial/failed frames retain every received byte
+and a fixed terminal status, and no post-context evidence admission is
+possible. All 208 chunkings of a small frame have identical recorded
+states at equal prefixes. Read `theory/proofs/OWNED_CONTEXT_INGRESS.md`;
+the old raw-value counterexample remains executable from Git.
+
+Neither correction supplies complete host accounting. Python metadata and
+diagnostic records, transient byte copies, detached ledger maps, gcd/rational
+scratch and allocator state still lie partly outside packed payload caps.
+The next resource closure must state and enforce their actual machine model,
+including temporary coexistence and failed prefixes, rather than promote
+the finite request/byte bounds into a full heap theorem. Complete ERC-1
+registration and gate mapping remain open. Static special cases stay parked;
+after reference closure the next target is actual AMP and then RTX 3090.
 
 **Sufficient falsification of the current foundation.** A minimal program that is legal under `FP_THEORY.md` but cannot be represented/considered by any implementation conforming to the Reference Compiler contract **unless a new semantic model primitive is added**. Slow search or `UNRESOLVED` does not falsify the foundation.
 

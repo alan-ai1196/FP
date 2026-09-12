@@ -15,61 +15,61 @@
     {
       "endpoint": "construct",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "retire",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "query",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "admit-reference",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "admit-float64",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "cancel-reference",
       "role": "compiler",
-      "work_cap": 61698,
+      "work_cap": 94594,
       "unchanged_denials": 64
     },
     {
       "endpoint": "cancel-float64",
       "role": "compiler",
-      "work_cap": 86274,
+      "work_cap": 119170,
       "unchanged_denials": 64
     },
     {
       "endpoint": "start-search",
       "role": "compiler",
-      "work_cap": 60865,
+      "work_cap": 93761,
       "unchanged_denials": 64
     },
     {
       "endpoint": "advance-search",
       "role": "compiler",
-      "work_cap": 60884,
+      "work_cap": 93780,
       "unchanged_denials": 64
     },
     {
       "endpoint": "cancel-search",
       "role": "compiler",
-      "work_cap": 60884,
+      "work_cap": 93780,
       "unchanged_denials": 64
     },
     {
@@ -91,7 +91,8 @@
     "same_owned_current_proof_remains_valid_without_revision_change": true
   },
   "ingress": {
-    "status": "CURRENT_UNCLOSED_COUNTEREXAMPLE",
+    "status": "HISTORICAL_COUNTEREXAMPLE",
+    "source_commit": "5055f3e",
     "reference_integer_limit": 128,
     "retained_input_denominator_bits": [
       257,
@@ -99,6 +100,7 @@
       4097
     ],
     "halted_unresolved_without_payload_or_work_debit": true,
-    "implication": "finite admitted request count cannot bound full ingress/diagnostic storage"
+    "implication": "finite admitted request count alone cannot bound raw ingress/diagnostic storage",
+    "current_correction": "mandatory paid bounded byte ingress; see audit_context_ingress.py; full host accounting still open"
   }
 }

@@ -402,7 +402,7 @@ open. Foundation/ERC-1 stay frozen; Runtime is NOT FROZEN and science HOLD.
 
 ### Paid Compiler control admission (2026-09-12)
 
-The packed reference machine is now `packed-reference-payload-v2`. Each
+Machine v2 introduced paid Compiler control admission, retained by v3. Each
 admitted public Compiler control operation pays one fixed work unit through
 its immutable role before changing revision, identity or retained history.
 This covers construction/retirement, queries, both persistence paths,
@@ -426,13 +426,50 @@ construction, ordinary/profile/search, reference/paired persistence,
 binary64 and two-cycle CPU install audits pass against v2. Cost assertions
 now include paid retirement and the install control admission unit.
 
-This does not close raw ingress or host storage. The audit separately keeps
-a CURRENT_UNCLOSED_COUNTEREXAMPLE: inputs `1/2^m` within a source box enter
-pending state before the 128-bit arithmetic guard halts; denominator lengths
-257,1025,4097 bits have no packed-payload/work debit. Paid representation-aware
-ingress and terminal diagnostics, complete host/device accounting, ERC-1
-registration, gate mapping and actual AMP remain open. See
-`theory/proofs/OWNED_CONTROL_ADMISSION.md`; no full release follows.
+The separate raw-input counterexample at `5055f3e` is replayed historically:
+inputs `1/2^m` entered pending state before the 128-bit guard, retaining
+257-/1025-/4097-bit denominators without a work/payload debit. The next
+implemented correction is described below. Paid control alone still does
+not imply complete host storage; see `theory/proofs/OWNED_CONTROL_ADMISSION.md`.
+
+### Mandatory paid exact byte ingress (2026-09-12)
+
+Machine `packed-reference-payload-v3` requires a registered exact wire
+interface. `DataContract.ingress` fixes byte capacity C and maximum chunk q;
+`begin_context` prepays work and allocates a C-byte window, a fixed received
+count/status slot and an owned identity before offering any bytes. A
+detached residency preflight precedes window creation. Failed empty
+preparation preserves costs/peak/retired IDs; only a fresh paid retry is legal.
+
+`receive_context` accepts exact bounded bytes at the offered next offset.
+It writes within already owned storage without per-chunk history growth.
+`finish_context` guards length and leading bits before integer creation,
+then uses the existing causal prediction/learning/persistence path. The
+one-chunk `predict_next` wrapper accepts encoded bytes, never raw rationals.
+The grammar represents every nonnegative rational vector; insufficient byte
+or integer capacity gives UNRESOLVED rather than a narrower semantic class.
+Received bytes survive malformed, incomplete and over-precision failures.
+Fixed terminal status remains writable at zero remaining ordinary work.
+
+The actual learner and persistence sets seal before the first byte. Partial
+context reception blocks structural/query/evidence changes and target reveal.
+All integration audit producers now use this mandatory public path, including
+registered profiles, exact/binary64 evidence and successive CPU installations.
+The complete CPU publication frame includes the new ingress coordinates.
+
+`scripts/audit_context_ingress.py` checks 3,072 exact integer/width cases,
+85 vectors, length/bit boundaries and all 208 chunkings of one nine-byte
+frame (1,328 equal-prefix snapshots). Work/residency denial, preparation
+failure/retry, retained numeric/invalid/partial prefixes and 90 forbidden
+mid-ingress actions are exercised. The old denominator witnesses now retain
+42/139/523 paid wire bytes without oversized pending state. Existing endpoint
+audits pass, including 2,016 lease cases and both CPU installation cycles.
+
+Read `theory/proofs/OWNED_CONTEXT_INGRESS.md`. Its invariant is scoped to
+serialized registered Runtime state and packed payloads. Total Python heap,
+transient copies, arithmetic scratch, general exception/metadata storage,
+complete ERC-1/gate enforcement and target AMP remain open. This is no
+concurrent/crash-safe transport, full physical or Runtime freeze claim.
 
 ## 4. Required closure tests
 

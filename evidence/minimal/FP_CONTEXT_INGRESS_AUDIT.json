@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+  "codec": {
+    "small_integer_pairs_and_widths": 3072,
+    "complete_small_vector_cases": 85,
+    "integer_width_and_varint_boundaries": 24,
+    "all_proper_frame_prefixes": 10,
+    "malformed_canonical_frames": 6,
+    "oversize_rejected_before_big_integer_materialization": true
+  },
+  "chunking": {
+    "frame_bytes": 9,
+    "maximum_chunk_bytes": 4,
+    "all_legal_chunkings": 208,
+    "equal_prefix_complete_snapshot_checks": 1328,
+    "prediction_and_observation_independent_of_fragmentation": true,
+    "no_owned_counter_or_ledger_event_per_chunk": true,
+    "one_chunk_convenience_has_identical_owned_execution": true
+  },
+  "admission": {
+    "unchanged_unfunded_denials": 64,
+    "unallocatable_registered_capacity_bytes": 1000000000000,
+    "residency_preflight_precedes_window_creation": true,
+    "failed_empty_preparation_keeps_paid_work_peak_and_retired_ids": true,
+    "retry_publishes_fresh_identity_without_dangling_old_window": true
+  },
+  "failures": {
+    "invalid_chunk_prefixes_rejected_without_mutation": 6,
+    "raw_value_bypass_rejected": true,
+    "terminal_bytes_and_status_survive_post_admission_work_exhaustion": true,
+    "numeric_guard_witnesses": [
+      {
+        "semantic_denominator_bits": 257,
+        "received_paid_bytes": 42,
+        "prepaid_window_bytes": 1024
+      },
+      {
+        "semantic_denominator_bits": 1025,
+        "received_paid_bytes": 139,
+        "prepaid_window_bytes": 1024
+      },
+      {
+        "semantic_denominator_bits": 4097,
+        "received_paid_bytes": 523,
+        "prepaid_window_bytes": 1024
+      }
+    ],
+    "capacity_prefix_bytes_retained_without_unread_suffix": 8,
+    "invalid_domain_or_frame_retains_terminal_prefix": true,
+    "internal_contract_failure_is_execution_failed_not_invalid_input": true,
+    "unexpected_prediction_cause_preserved_without_double_halt": true
+  },
+  "filtration": {
+    "locked_action_prefix_positions": 90,
+    "received_contexts": 4,
+    "preadmitted_reference_and_binary64_identities_survive_the_same_ingress": true,
+    "independent_bitwise_phase_checks": 22,
+    "actual_finite_coordinates_differing_from_recast_exact_endpoints": 13,
+    "rounded_normalization_differences": 0
+  },
+  "not_closed": [
+    "complete Python heap and arithmetic scratch accounting",
+    "complete ERC-1 enforcement and Runtime release",
+    "actual target AMP and RTX 3090 science"
+  ]
+}

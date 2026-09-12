@@ -88,7 +88,7 @@ authority stays closed, and the global alpha cap still blocks later use.
 
 The current physical frontier is now sharper. At `8880371`, repeated unfunded
 construction requests could grow IDs/owners/failure history with unchanged
-work and packed payload. `packed-reference-payload-v2` now pays one fixed
+work and packed payload. The control rule introduced in machine v2 pays one fixed
 control admission unit before any public Compiler mutation. Unfunded
 requests leave owned state and current proof revisions unchanged; admitted
 failures keep their costs/history. Read
@@ -97,14 +97,30 @@ and run `scripts/audit_control_admission.py` (11 endpoints and 96 finite
 command trees). Existing construction/event/profile/search/persistence/CPU
 installation audits have been rerun against this machine revision.
 
-Do not infer a full memory bound from that fix. A current source-box input
-`1/2^m` can be retained in halted pending state before the reference integer
-guard refuses it, without a payload debit. The same audit preserves this
-separate unclosed witness. Next attack paid, representation-aware input
-ingress and terminal diagnostics together with complete host accounting;
-adding manifest fields or a metadata multiplier does not solve it. No
-Foundation change, static case expansion, Runtime freeze or GPU science is
-authorized by this partial resource correction.
+The follow-up source-box witness at `5055f3e` is now historical: `1/2^m`
+could enter halted pending state before its integer guard with no payload
+debit. Machine v3 replaces raw value input with mandatory prepaid exact
+byte ingress. `DataContract.ingress` fixes a window and chunk size;
+`begin_context` reserves storage, fixed terminal status and work before
+the first byte, `receive_context` fills only the offered extent, and
+`finish_context` guards integer lengths before materialization. The
+one-chunk `predict_next` port accepts encoded bytes only. All received
+prefixes survive failure, while an unread producer suffix never enters
+Runtime. Learner and persistence IDs seal before receiving starts.
+
+Read [`OWNED_CONTEXT_INGRESS.md`](theory/proofs/OWNED_CONTEXT_INGRESS.md)
+and run `scripts/audit_context_ingress.py`. Its 208 exhaustive chunkings
+give identical recorded states at equal prefixes; the historical numeric
+witnesses now occupy paid windows and return UNRESOLVED without oversized
+pending rationals. Existing learning/profile/search, four-learner evidence
+and two-cycle CPU installation all use this same input path.
+
+This closes that concrete ingress mismatch, not complete host accounting.
+The next physical obligation is explicit coverage of Python metadata,
+transient copies/arithmetic scratch and general diagnostics, together with
+complete ERC-1 registration and release-gate mapping. A manifest field or
+constant overhead multiplier cannot establish those bounds. No Foundation
+change, static case expansion, Runtime freeze or GPU science follows.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic

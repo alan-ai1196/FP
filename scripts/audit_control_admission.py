@@ -36,22 +36,27 @@ CASES = ('construct', 'retire', 'query', 'admit-reference', 'admit-float64',
          'cancel-search', 'install')
 
 
-def historical_runtime():
+def historical_modules(commit, names):
     # Execute the original machine and Runtime source without keeping another
     # source tree. Dependencies unchanged by this correction remain shared.
-    names = ('fp_reference.machine', 'fp_reference.runtime')
     saved = {name: sys.modules[name] for name in names}
+    loaded = {}
     try:
         for name in names:
             path = f'src/reference_compiler/{name.replace(".", "/")}.py'
-            source = subprocess.check_output(['git', 'show', f'{HISTORICAL_COMMIT}:{path}'], cwd=ROOT, text=True, encoding='utf-8')
+            source = subprocess.check_output(['git', 'show', f'{commit}:{path}'], cwd=ROOT, text=True, encoding='utf-8')
             module = types.ModuleType(name)
             module.__package__ = 'fp_reference'
             sys.modules[name] = module
-            exec(compile(source, f'git:{HISTORICAL_COMMIT}:{path}', 'exec'), module.__dict__)
-        return module
+            exec(compile(source, f'git:{commit}:{path}', 'exec'), module.__dict__)
+            loaded[name] = module
+        return loaded
     finally:
         sys.modules.update(saved)
+
+
+def historical_runtime():
+    return historical_modules(HISTORICAL_COMMIT, ('fp_reference.machine', 'fp_reference.runtime'))['fp_reference.runtime']
 
 
 def history_witness():
@@ -197,14 +202,21 @@ def current_proof_after_denial():
             'same_owned_current_proof_remains_valid_without_revision_change': True}
 
 
-def remaining_ingress_witness():
-    # A separate CURRENT counterexample prevents upgrading paid control into
-    # a full memory claim. The context is range-legal but exceeds arithmetic
-    # precision; raw ingress is retained in the halted pending diagnostic.
+def historical_ingress_witness():
+    # Execute the real pre-wire Runtime, machine and data registration. Do not
+    # rebuild a second implementation of the failing assignment ordering.
+    commit = '5055f3e'
+    modules = historical_modules(commit, ('fp_reference.data_usage', 'fp_reference.machine', 'fp_reference.runtime'))
+    old, data = modules['fp_reference.runtime'], modules['fp_reference.data_usage']
     rows = []
     for exponent in (256, 1024, 4096):
-        cfg = replace(contract(source_domain=False), reference_integer_bits=128)
-        rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=online(cfg, 2, unit=2, grid=16))
+        current_cfg = replace(contract(source_domain=False), reference_integer_bits=128)
+        cfg = old.ConstructionContract(**{field.name: getattr(current_cfg, field.name) for field in fields(current_cfg)})
+        stream = data.StreamSpec('ordinary', 'online', ('observation-0', 'observation-1'))
+        reads = tuple(data.SourceRead(s.source_id, 'input', i, 0) for i, s in enumerate(cfg.semantics.sources))
+        registered = data.DataContract((stream,), 'ordinary', tuple(s.upper for s in cfg.semantics.sources), reads)
+        run = old.OnlineContract(registered, online(current_cfg, 2, unit=2, grid=16).learner)
+        rt = old.ReferenceCompilerRuntime(cfg, zero_program(2), online=run)
         before = rt.snapshot()
         result = rt.predict_next('observation-0', (F(1, 1 << exponent), F(0)))
         after = rt.snapshot()
@@ -213,9 +225,10 @@ def remaining_ingress_witness():
         assert after.resources['current'] == before.resources['current']
         assert after.resources['spent'] == before.resources['spent']
         rows.append(exponent+1)
-    return {'status': 'CURRENT_UNCLOSED_COUNTEREXAMPLE', 'reference_integer_limit': 128,
+    return {'status': 'HISTORICAL_COUNTEREXAMPLE', 'source_commit': commit, 'reference_integer_limit': 128,
             'retained_input_denominator_bits': rows, 'halted_unresolved_without_payload_or_work_debit': True,
-            'implication': 'finite admitted request count cannot bound full ingress/diagnostic storage'}
+            'implication': 'finite admitted request count alone cannot bound raw ingress/diagnostic storage',
+            'current_correction': 'mandatory paid bounded byte ingress; see audit_context_ingress.py; full host accounting still open'}
 
 
 def main():
@@ -224,7 +237,7 @@ def main():
     parser.add_argument('--section', choices=('history', 'endpoints', 'trees', 'authority', 'ingress'))
     args = parser.parse_args()
     sections = {'history': history_witness, 'endpoints': denied_endpoints, 'trees': bounded_control_trees,
-                'authority': current_proof_after_denial, 'ingress': remaining_ingress_witness}
+                'authority': current_proof_after_denial, 'ingress': historical_ingress_witness}
     if args.section:
         print(json.dumps(sections[args.section](), indent=2))
         return

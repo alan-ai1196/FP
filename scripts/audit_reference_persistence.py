@@ -17,9 +17,11 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'theory/numerical_checks')]
 
+from ingress_audit_support import deliver_context
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference.data_usage import StochasticStreamLaw
 from fp_reference.info import Moment, QuerySpec
+from fp_reference.ingress import IngressContract
 from fp_reference.machine import pack
 from fp_reference.persistence import PersistenceContract, PersistenceRule
 from fp_reference.profile import ProfileSpec
@@ -39,11 +41,13 @@ def rule(*, epoch=1, horizon=10, alpha=F(1, 4), bound=F(3, 4)):
 
 
 def fixture(*, cfg=None, count=24, registration=None, law=True, graph=SOURCE_PAIR,
-            profiles=(), queries=()):
+            profiles=(), queries=(), ingress=None):
     cfg = contract(cap=3, peak=1) if cfg is None else cfg
     registration = PersistenceContract(F(3, 4), (rule(),)) if registration is None else registration
     run = online(cfg, count, unit=2, rate=F(1, 4), grid=16, queries=queries)
     run = replace(run, profiles=profiles, persistence=registration)
+    if ingress is not None:
+        run = replace(run, data=replace(run.data, ingress=ingress))
     if law:
         run = replace(run, data=replace(run.data, stream_law=StochasticStreamLaw('audit external branch-invariant producer assumption')))
     rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=run)
@@ -65,7 +69,7 @@ def admit(rt, candidate):
 def event(rt, target, context=None):
     cursor = rt.snapshot().cursor
     context = domain(1)[0] if context is None else context
-    predicted = rt.predict_next(f'observation-{cursor}', context)
+    predicted = deliver_context(rt, f'observation-{cursor}', context)
     assert predicted.status == 'PREDICTED_REFERENCE', predicted
     observed = rt.observe(target)
     assert observed.status == 'OBSERVED_REFERENCE', observed
@@ -252,7 +256,7 @@ def freshness_and_alpha_audit():
     first, second = admit(rt, candidate), admit(rt, candidate)
     before = rt.snapshot()
     rejects(lambda: setattr(before.alpha_allocations[0], 'alpha', F(0)), FrozenInstanceError)
-    prediction = rt.predict_next('observation-0', domain(1)[0])
+    prediction = deliver_context(rt, 'observation-0', domain(1)[0])
     assert prediction.status == 'PREDICTED_REFERENCE'
     assert rt.snapshot().pending.persistence_ids == (first, second)
     rejects(lambda: rt.admit_reference_persistence(candidate, 'future'))
@@ -277,7 +281,7 @@ def freshness_and_alpha_audit():
     event(rt, 0)
     assert rt.snapshot().persistence_events[-1].identity_id == third
     assert not any(v.identity_id == third and v.cursor < 2 for v in rt.snapshot().persistence_events)
-    rejects(lambda: rt.predict_next('observation-0', domain(1)[0]))
+    rejects(lambda: deliver_context(rt, 'observation-0', domain(1)[0]))
     owned(rt)
 
     rt, candidate = fixture(law=False)
@@ -334,12 +338,16 @@ def failure_audit():
 
     # Calibrate only actual prior work, then use an immutable cap large enough
     # for ordinary successors but smaller than the next evidence computation.
-    rt, candidate = fixture()
+    # The registered binary source domain needs at most ten context bytes.
+    # A sixteen-byte window keeps the next paid ordinary event below this
+    # deliberately small evidence-failure budget; no data arrives for free.
+    window = IngressContract(16, 16)
+    rt, candidate = fixture(ingress=window)
     admit(rt, candidate)
-    rt.predict_next('observation-0', domain(1)[0])
+    deliver_context(rt, 'observation-0', domain(1)[0])
     work_cap = rt.snapshot().resources['spent']['compiler']['work']+200
     cfg = replace(contract(cap=3, peak=1), limits=limits(work_cap=work_cap))
-    limited, candidate = fixture(cfg=cfg)
+    limited, candidate = fixture(cfg=cfg, ingress=window)
     iid = admit(limited, candidate)
     event(limited, 0)
     failed = identity(limited, iid)
@@ -369,14 +377,14 @@ def failure_audit():
     iid = admit(rt, candidate)
     event(rt, 0)
     before = rt.snapshot()
-    rt.predict_next('observation-1', domain(1)[0])
+    deliver_context(rt, 'observation-1', domain(1)[0])
     with patch.object(execution, 'log_enclosure', side_effect=RuntimeError('injected evidence backend failure')):
         rejects(lambda: rt.observe(1), RuntimeError)
     snapshot = owned(rt)
     assert snapshot.halted and snapshot.observations[-1].target == 1
     assert snapshot.cursor == before.cursor and snapshot.candidates == before.candidates
     assert identity(rt, iid).status == 'UNRESOLVED' and rt.snapshot().alpha_spent == F(1, 4)
-    rejects(lambda: rt.predict_next('observation-1', domain(1)[0]))
+    rejects(lambda: deliver_context(rt, 'observation-1', domain(1)[0]))
     assert rt.reference_persistence_result(iid).status == 'UNRESOLVED'
 
     # A crossing before an optimizer boundary must not survive a later failed
@@ -388,7 +396,7 @@ def failure_audit():
         event(rt, 0)
     crossed = identity(rt, iid)
     assert rt.reference_persistence_result(iid).status == 'REFERENCE_CROSSED'
-    rt.predict_next('observation-3', domain(1)[0])
+    deliver_context(rt, 'observation-3', domain(1)[0])
     with patch.object(execution, 'commit_event', side_effect=RuntimeError('injected ordinary commit backend failure')):
         rejects(lambda: rt.observe(1), RuntimeError)
     snapshot = owned(rt)
@@ -432,7 +440,7 @@ def failure_audit():
     for _ in range(5):
         event(rt, 0)
     before = rt.snapshot()
-    rt.predict_next('observation-5', domain(1)[0])
+    deliver_context(rt, 'observation-5', domain(1)[0])
     with patch.object(rt._ledger, 'release_many', side_effect=RuntimeError('injected ordinary publication failure')):
         rejects(lambda: rt.observe(0), RuntimeError)
     snapshot = owned(rt)
@@ -441,7 +449,7 @@ def failure_audit():
     for iid in identities:
         assert identity(rt, iid).crossing_cursor == 6  # executed but never published successor
         assert rt.reference_persistence_result(iid).status == 'UNRESOLVED'
-    rejects(lambda: rt.predict_next('observation-5', domain(1)[0]))
+    rejects(lambda: deliver_context(rt, 'observation-5', domain(1)[0]))
     return {'real_integer_cap_stops_identity_without_skipping_outcome': True,
             'real_work_cap_stops_identity_while_ordinary_continuation_remains_legal': True,
             'failed_numeric_and_physical_admission_keep_spent_alpha': True,

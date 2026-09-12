@@ -231,21 +231,7 @@ lease map becomes observable at Runtime's root publication. All existing
 preparation allocations, work, peaks and history are retained in the copy.
 There is no resource or installation authority outside the owning Runtime.
 """
-        fields = {'_limits', '_owners', '_closed_owners', '_objects', '_refs', '_retired',
-                  '_spent', '_peak', '_role_peak', '_events'}
-        if type(self) is not ResourceLedger or set(self.__dict__) != fields:
-            raise ContractError('atomic transfer needs the complete registered ledger state')
-        proposed = object.__new__(ResourceLedger)
-        proposed.__dict__ = dict(self.__dict__)
-        proposed._owners = dict(self._owners)
-        proposed._closed_owners = set(self._closed_owners)
-        proposed._objects = dict(self._objects)
-        proposed._refs = {key: dict(refs) for key, refs in self._refs.items()}
-        proposed._retired = set(self._retired)
-        proposed._spent = {key: dict(value) for key, value in self._spent.items()}
-        proposed._peak = dict(self._peak)
-        proposed._role_peak = {key: dict(value) for key, value in self._role_peak.items()}
-        proposed._events = list(self._events)
+        proposed = self._detached()
         # Every source debit is checked against the original leases. A move
         # cannot launder an acquired lease through another move in this batch.
         debits = {}
@@ -292,6 +278,30 @@ There is no resource or installation authority outside the owning Runtime.
         for owner in close_owners:
             proposed._event('close_owner', owner)
         proposed._event('atomic_transfer_end', 'machine')
+        return proposed
+
+    def prepare_allocation(self, owner: str, objects: tuple[ObjectSpec, ...]) -> ResourceLedger:
+        """Validate a detached allocation before the actual ingress buffer exists."""
+        proposed = self._detached()
+        proposed.allocate(owner, objects)
+        return proposed
+
+    def _detached(self) -> ResourceLedger:
+        fields = {'_limits', '_owners', '_closed_owners', '_objects', '_refs', '_retired',
+                  '_spent', '_peak', '_role_peak', '_events'}
+        if type(self) is not ResourceLedger or set(self.__dict__) != fields:
+            raise ContractError('physical preparation needs the complete registered ledger state')
+        proposed = object.__new__(ResourceLedger)
+        proposed.__dict__ = dict(self.__dict__)
+        proposed._owners = dict(self._owners)
+        proposed._closed_owners = set(self._closed_owners)
+        proposed._objects = dict(self._objects)
+        proposed._refs = {key: dict(refs) for key, refs in self._refs.items()}
+        proposed._retired = set(self._retired)
+        proposed._spent = {key: dict(value) for key, value in self._spent.items()}
+        proposed._peak = dict(self._peak)
+        proposed._role_peak = {key: dict(value) for key, value in self._role_peak.items()}
+        proposed._events = list(self._events)
         return proposed
 
     def charge_work(self, role: str, debit: Mapping[str, int], *, note=''):

@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from fractions import Fraction as F
 
 from .core import ContractError, QueryError, natural
+from .ingress import IngressContract
 from .program import SemanticRules, name, rational
 
 
@@ -69,8 +70,9 @@ class DataContract:
     active_stream: str
     input_upper: tuple[F, ...]
     source_reads: tuple[SourceRead, ...]
-    access_id: str = 'exact-revealed-train-online-v1'
+    access_id: str = 'bounded-exact-revealed-train-online-v2'
     stream_law: str | StochasticStreamLaw = 'declared-exogenous-no-probability-guarantee'
+    ingress: IngressContract = field(default_factory=IngressContract)
 
     def __post_init__(self):
         streams = tuple(self.streams)
@@ -88,8 +90,8 @@ class DataContract:
         reads = tuple(self.source_reads)
         if any(type(r) is not SourceRead for r in reads) or len({r.source_id for r in reads}) != len(reads):
             raise ContractError('distinct registered source evaluators required')
-        if self.access_id != 'exact-revealed-train-online-v1':
-            raise ContractError('query-only access is not yet implemented')
+        if self.access_id != 'bounded-exact-revealed-train-online-v2' or type(self.ingress) is not IngressContract:
+            raise ContractError('registered bounded exact ingress is required; no raw-value or query-only bypass')
         if not (type(self.stream_law) is StochasticStreamLaw or
                 type(self.stream_law) is str and self.stream_law == 'declared-exogenous-no-probability-guarantee'):
             raise ContractError('use the supported explicit stochastic assumption or the deterministic no-guarantee declaration')

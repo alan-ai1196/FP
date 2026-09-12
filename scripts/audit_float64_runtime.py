@@ -18,6 +18,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts')]
 
+from ingress_audit_support import deliver_context
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference.binary_arithmetic import Float64Value
 from fp_reference.core import ContractError
@@ -163,7 +164,7 @@ def fixture(*, cfg=None, count=4, graph=None, state_atol=F(1, 1 << 24),
 def ingest(rt, sequence):
     for row, target in sequence:
         cursor = rt.snapshot().cursor
-        prediction = rt.predict_next(f'observation-{cursor}', row)
+        prediction = deliver_context(rt, f'observation-{cursor}', row)
         assert prediction.status == 'PREDICTED_REFERENCE', prediction
         observed = rt.observe(target)
         assert observed.status == 'OBSERVED_REFERENCE', observed
@@ -308,7 +309,7 @@ def normalization_audit():
     replay(rt)
     strict, candidate = fixture(cfg=cfg, graph=graph, count=2, probability_atol=F(0))
     before = strict.snapshot()
-    result = strict.predict_next('observation-0', domain(1)[0])
+    result = deliver_context(strict, 'observation-0', domain(1)[0])
     assert result.status == 'UNRESOLVED' and strict.snapshot().halted
     assert strict.snapshot().candidates == before.candidates and strict.snapshot().cursor == 0
     failed = strict.snapshot().float64_traces[-1]
@@ -327,12 +328,12 @@ def failure_audit():
                   limits=limits(byte_cap=80_000_000, work_cap=100_000_000), reference_integer_bits=32768)
     rt, _ = fixture(cfg=cfg, graph=graph, state_atol=F(0))
     before = rt.snapshot()
-    assert rt.predict_next('observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(rt, 'observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
     assert rt.observe(0).status == 'UNRESOLVED'
     assert rt.snapshot().halted and rt.snapshot().observations[0].target == 0
     assert rt.snapshot().candidates == before.candidates
     assert rt.snapshot().float64_traces[-1].phase == 'ordinary:observe'
-    rejects(lambda: rt.predict_next('observation-0', domain(1)[0]))
+    rejects(lambda: deliver_context(rt, 'observation-0', domain(1)[0]))
 
     # A genuine binary64 oracle integer cap is reached while casting an unused
     # declared source; the exact zero program itself predicts without it.
@@ -340,7 +341,7 @@ def failure_audit():
                        limits=limits(byte_cap=80_000_000, work_cap=100_000_000))
     run = replace(online(tiny_cfg, 2, unit=2), float64=Float64Contract(F(1, 1 << 24), F(1, 1 << 24)))
     tiny = ReferenceCompilerRuntime(tiny_cfg, zero_program(2), online=run)
-    result = tiny.predict_next('observation-0', (F(1, 1 << 600), F(0)))
+    result = deliver_context(tiny, 'observation-0', (F(1, 1 << 600), F(0)))
     assert result.status == 'UNRESOLVED' and tiny.snapshot().halted
     assert tiny.snapshot().float64_traces[-1].phase == 'ordinary:predict'
     assert 'integer' in tiny.snapshot().float64_traces[-1].reason
@@ -348,12 +349,12 @@ def failure_audit():
     # Calibrate the registered count, then actually exhaust it on the finite
     # candidate observation after both predictions have completed.
     probe, candidate = fixture()
-    probe.predict_next('observation-0', domain(1)[0])
+    deliver_context(probe, 'observation-0', domain(1)[0])
     work = probe.snapshot().resources['spent']['compiler']['work']+probe._machine.observation_work(shared_graph())+4
     small_cfg = replace(probe.contract, limits=limits(byte_cap=80_000_000, work_cap=work))
     small, _ = fixture(cfg=small_cfg)
     before = small.snapshot()
-    assert small.predict_next('observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(small, 'observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
     assert small.observe(0).status == 'UNRESOLVED'
     assert small.snapshot().halted and small.snapshot().candidates == before.candidates
     assert small.snapshot().observations[0].target == 0
@@ -361,7 +362,7 @@ def failure_audit():
     # Measure coexistence immediately before the first finite observe tape,
     # then repeat with a real immutable cap one byte below that allocation.
     probe, _ = fixture()
-    probe.predict_next('observation-0', domain(1)[0])
+    deliver_context(probe, 'observation-0', domain(1)[0])
     allocations = []
     original_allocate = probe._allocate
     def measure(owner, objects):
@@ -374,7 +375,7 @@ def failure_audit():
     constrained_cfg = replace(probe.contract, limits=limits(byte_cap=cap, work_cap=100_000_000))
     constrained, _ = fixture(cfg=constrained_cfg)
     before = constrained.snapshot()
-    assert constrained.predict_next('observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(constrained, 'observation-0', domain(1)[0]).status == 'PREDICTED_REFERENCE'
     assert constrained.observe(0).status == 'UNRESOLVED'
     assert constrained.snapshot().halted and constrained.snapshot().candidates == before.candidates
     assert constrained.snapshot().observations[0].target == 0
@@ -384,7 +385,7 @@ def failure_audit():
     # the exact successor is never published without its numerical peer.
     broken, _ = fixture()
     before = broken.snapshot()
-    broken.predict_next('observation-0', domain(1)[0])
+    deliver_context(broken, 'observation-0', domain(1)[0])
     with patch.object(finite, 'observe_event', side_effect=RuntimeError('injected finite backend failure')):
         rejects(lambda: broken.observe(0), RuntimeError)
     assert broken.snapshot().halted and broken.snapshot().candidates == before.candidates
@@ -404,7 +405,7 @@ def failure_audit():
     # Numerically acceptable endpoint data cannot stand in for the registered
     # operation schedule. Even the zero deployed learner must execute its phase.
     skipped, _ = fixture(state_atol=F(1), probability_atol=F(1))
-    skipped.predict_next('observation-0', domain(1)[0])
+    deliver_context(skipped, 'observation-0', domain(1)[0])
     def skip_observe(program, state, spec, prediction, target, arith):
         return replace(state, cursor=state.cursor+1, unit_count=state.unit_count+1,
                        delayed=prediction.delayed)
@@ -483,7 +484,7 @@ def crossing_audit():
     result = rt.reference_persistence_result(admitted.identity_id)
     assert result.status == 'REFERENCE_CROSSED'
     cursor = rt.snapshot().cursor
-    assert rt.predict_next(f'observation-{cursor}', domain(1)[0]).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(rt, f'observation-{cursor}', domain(1)[0]).status == 'PREDICTED_REFERENCE'
     with patch.object(finite, 'observe_event', side_effect=ArithmeticUnresolved('finite continuation loses its numerical relation')):
         assert rt.observe(0).status == 'UNRESOLVED'
     stopped = rt.reference_persistence_result(admitted.identity_id)

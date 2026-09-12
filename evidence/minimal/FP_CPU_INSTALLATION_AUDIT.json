@@ -40,7 +40,7 @@
     "actual_prepublication_peak_limit_rejects_existing_feasible_target": true,
     "actual_install_work_role_limit_rejects_without_free_execution": true,
     "failed_preparation_keeps_learners_evidence_and_paid_peak_history": true,
-    "calibrated_peak_cap": 552003
+    "calibrated_peak_cap": 656925
   },
   "continuation": {
     "consecutive_owned_installations": 2,

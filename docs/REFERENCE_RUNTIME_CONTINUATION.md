@@ -15,7 +15,10 @@ supplied through these public continuation methods:
 
 | Endpoint | Owned behavior |
 |---|---|
-| `predict_next(observation_id, inputs)` | Consumes the next registered pre-target context, seals the active lineage set, reads only available causal sources, and executes every active reference prediction |
+| `begin_context(observation_id)` | Prepays bounded raw-byte storage/work and fixed status before offering input; seals the active learner and persistence identities |
+| `receive_context(ingress_id, offset, chunk)` | Receives exactly the next offered bounded bytes into the paid window, without per-chunk records or counters |
+| `finish_context(ingress_id)` | Guards and decodes the owned exact frame, reads available causal sources, and executes every active prediction |
+| `predict_next(observation_id, encoded)` | One bounded byte chunk through the same begin/receive/finish path; raw rational values cannot bypass ingress |
 | `observe(target)` | Records the target once, accumulates exact CE derivatives, advances positive delayed bodies, and commits only at the full registered update-unit boundary |
 | `query(query_id, observation_ids)` | Selects already revealed legal records inside Runtime, charges the registered computation, retains proposal use, and returns the registered finite-alphabet moment answer |
 | `construct_candidate(program, profile_id=...)` | Executes the initializer and optional preregistered paid replay before publishing the newborn at a common update-unit boundary |
@@ -28,9 +31,19 @@ supplied through these public continuation methods:
 An initializer with an inconclusive range bound may be retained as an
 unresolved construction; it is not a live ordinary trajectory. Active
 reference lineages execute the same exogenous events.
-Structural controls and queries cannot run between a prediction and its
-target, during an internal microphase, or after a halted prefix. The Runtime
+Structural controls and queries cannot run during context reception,
+between a prediction and its target, during an internal microphase, or after a halted prefix. The Runtime
 has no caller-selected early flush of a partial update unit.
+
+`DataContract.ingress` preregisters a byte capacity and maximum chunk size.
+The canonical frame encodes exactly the declared rational input coordinates;
+its grammar represents every nonnegative rational vector. Byte/integer
+capacity failures return UNRESOLVED and keep all actually received bytes.
+Only offered chunks cross the Runtime boundary. Larger producer frames must
+use repeated receive calls; an unread suffix cannot be passed as hidden
+caller state. Wrong canonical encodings or source-domain violations halt
+with the received prefix retained. Read
+[`OWNED_CONTEXT_INGRESS.md`](../theory/proofs/OWNED_CONTEXT_INGRESS.md).
 
 The registered optimizer is mean-CE projected SGD in exact rational
 arithmetic, optionally followed by a fixed downward dyadic rounding at
@@ -193,7 +206,7 @@ terms and dyadic wealth precision. `admit_reference_persistence(candidate_id,
 rule_id)` takes no losses, observation IDs, supplied state or wealth. It
 requires two owned range-safe learners at a shared ordinary update boundary
 and admits only their subsequent contexts. The epoch clock need not match
-the optimizer clock. A context already accepted by `predict_next` blocks
+the optimizer clock. A context already admitted by `begin_context` blocks
 admission; a profile or proposal query on old IDs creates no future score.
 
 Each identity retains the candidate/base program IDs, complete initial and
@@ -350,7 +363,7 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
-The v2 machine first charges one fixed control admission unit for each
+The control rule introduced in v2 and retained by v3 charges one fixed unit for each
 public Compiler mutation, using the already immutable construction,
 information or install work role. If that debit cannot be paid, no owned
 attempt, revision, query, frontier, evidence or resource history changes.
@@ -382,19 +395,20 @@ record. This costs the registered Compiler residency. Historical records
 remain queryable, so they are not silently garbage-collected.
 
 The machine still counts only actual packed payload bytes/objects and its
-registered reference operation charges. CPython metadata and arithmetic
-scratch, ingress objects before successful allocation, total host heap,
-bit-time and CUDA memory/work are not covered by this partial model. A
-terminal failure may retain diagnostic state outside that payload measure.
-This is a material limitation preventing a complete physical-resource claim.
+registered reference operation charges. CPython metadata, arithmetic scratch,
+transient byte/ledger copies, total host heap, bit-time and CUDA resources
+are not fully covered. General exception/history objects can remain outside
+the packed measure. This limitation prevents a complete physical claim.
+
 [`OWNED_CONTROL_ADMISSION.md`](../theory/proofs/OWNED_CONTROL_ADMISSION.md)
-now supplies two exact resource obstructions. The historical unbounded
-sequence of free failed controls is corrected by paid admission. The current
-raw source-box input `1/2^m` still enters pending state before an undersized
-integer guard halts; arbitrarily large retained denominators are outside
-the payload debit. This keeps complete input/diagnostic accounting open even
-with a finite admitted-request count. A metadata multiplier or manifest-only
-change cannot establish the missing full-resource claim.
+preserves two historical obstructions. Paid admission corrected free control
+history growth. Mandatory v3 byte ingress now also corrects uncharged
+oversized rationals in pending state: the byte window and fixed terminal
+status exist before receipt, length guards precede numeric materialization,
+and incomplete or over-precision frames keep their exact paid prefixes.
+Equal byte prefixes have identical recorded states under all legal chunkings
+in the fixed serialized machine. Neither result measures every host object;
+a metadata multiplier or manifest-only change cannot establish that claim.
 
 ## Evidence and remaining boundary
 

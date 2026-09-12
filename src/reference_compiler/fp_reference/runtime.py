@@ -28,10 +28,11 @@ from . import float64_learner as finite
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
 from .installation import CpuInstallContract, CpuInstallAttempt, CpuInstallReceipt, CpuInstallResult
+from .ingress import IngressIdentity, IngressSnapshot, IngressResult, control_payload, read_control, decode_context
 from . import native_search as grammar
 from .proof import ReferenceClassProof, verify_maximum
 from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, compare_likelihoods, likelihood
-from .resources import CostRouter, ResourceExceeded, ResourceLedger, ResourceLimits
+from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
 
 
@@ -267,6 +268,8 @@ class RuntimeSnapshot:
     next_install: int
     install_attempts: tuple[CpuInstallAttempt, ...]
     install_receipts: tuple[CpuInstallReceipt, ...]
+    ingress: tuple[IngressSnapshot, ...]
+    active_ingress: str | None
 
 
 class ReferenceCompilerRuntime:
@@ -305,6 +308,8 @@ class ReferenceCompilerRuntime:
         self._next_install = 0
         self._install_attempts: list[CpuInstallAttempt] = []
         self._install_receipts: list[CpuInstallReceipt] = []
+        self._ingress_identities: dict[str, IngressIdentity] = {}
+        self._active_ingress: str | None = None
         self._next_candidate = 0
         self._programs: dict[str, Program] = {}
         self._retained_programs: dict[str, str] = {}
@@ -346,7 +351,7 @@ class ReferenceCompilerRuntime:
                 'reference_payload_bytes': len(obj.payload), 'physical_objects': 1} for obj in objects):
             raise ContractError('registered packed-object size disagrees with its actual payload')
         self._ledger.allocate(owner, tuple(obj.spec for obj in objects))
-        self._buffers.update((obj.spec.object_id, bytearray(obj.payload) if obj.spec.kind == 'reserved_target' else obj.payload)
+        self._buffers.update((obj.spec.object_id, bytearray(obj.payload) if obj.spec.kind in ('reserved_target', 'reserved_context', 'ingress_control') else obj.payload)
                              for obj in objects)
 
     def _release_owner(self, owner: str):
@@ -739,36 +744,155 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         width = max(1, ((len(self._contract.semantics.base)-1).bit_length()+3)//4)
         return f'{int(target is not None)}:{(0 if target is None else target):0{width}x}'
 
-    def predict_next(self, observation_id: str, inputs) -> PredictionResult:
-        """Accept the next registered context; the signature has no target."""
+    def begin_context(self, observation_id: str) -> IngressResult:
+        """Reserve byte storage, diagnostics and work before receiving context."""
         self._require_online()
         self._require_idle()
-        data, rules = self._online.data, self._contract.semantics
+        data = self._online.data
         name(observation_id, 'observation ID')
         if self._cursor >= len(data.active.observation_ids) or observation_id != data.active.observation_ids[self._cursor]:
             raise ContractError('ordinary observation skips/reuses its fixed stream identity or data role')
+        spec = data.ingress
+        try:
+            self._event_router.charge_work('information', {'work': spec.work(len(data.input_upper))}, 'prepay-context-window-copy-decode-and-diagnostics')
+        except ResourceExceeded as exc:
+            return IngressResult('UNRESOLVED', None, observation_id, self._cursor, 0, 0, str(exc))
+        self._revision += 1
+        ingress_id = f'{self._runtime_id}:ingress:{self._revision}'
+        allocated_ids = ()
+        try:
+            candidates = tuple(s.candidate_id for s in self._candidates.values() if s.range_safe)
+            if any(self._candidates[key].learner.cursor != self._cursor for key in candidates):
+                raise ContractError('an active reference lineage lost the common exogenous cursor')
+            admitted = tuple(key for key, state in self._persistence_identities.items()
+                             if state.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'))
+            for key in admitted:
+                self._check_persistence_lineages(self._persistence_identities[key])
+            identity = IngressIdentity(ingress_id, observation_id, self._cursor, spec.capacity,
+                f'{ingress_id}:bytes', f'{ingress_id}:control', f'{ingress_id}:identity', candidates, admitted)
+            metadata = self._machine.realize(identity.record_id, 'context_ingress_identity', identity, self._chi)
+            body = ObjectSpec(identity.body_id, 'reserved_context',
+                {'reference_payload_bytes': spec.capacity, 'physical_objects': 1}, self._chi)
+            control = ObjectSpec(identity.control_id, 'ingress_control',
+                {'reference_payload_bytes': spec.control_bytes, 'physical_objects': 1}, self._chi)
+            # The capacity check precedes creation of the potentially large
+            # zero window. No input byte has been offered or received yet.
+            self._ledger.prepare_allocation(self._data_owner, (body, control, metadata.spec))
+            allocated_ids = (body.object_id, control.object_id, metadata.spec.object_id)
+            self._allocate(self._data_owner, (PackedObject(body, bytes(spec.capacity)),
+                PackedObject(control, control_payload(0, 'RECEIVING', spec)), metadata))
+            identities = dict(self._ingress_identities)
+            identities[ingress_id] = identity
+            next_root = dict(self.__dict__)
+            next_root.update(_ingress_identities=identities, _active_ingress=ingress_id,
+                             _event_phase='receiving-context')
+            result = IngressResult('RECEIVING', ingress_id, observation_id, self._cursor, 0, spec.chunk_bytes)
+        except Exception as exc:
+            # Only predetermined empty storage can be discarded here: no
+            # receive operation has run. Preserve paid work/peak/retired IDs.
+            live = self._ledger.snapshot()['objects']
+            releases = tuple((self._data_owner, key, 1) for key in allocated_ids if key in live)
+            self._ledger.release_many(releases)
+            for _, key, _ in releases:
+                self._buffers.pop(key, None)
+            expected = isinstance(exc, (ResourceExceeded, ArithmeticUnresolved))
+            self._attempts.append((ingress_id, 'UNRESOLVED' if expected else 'EXECUTION_FAILED', str(exc)))
+            if not expected:
+                raise
+            return IngressResult('UNRESOLVED', None, observation_id, self._cursor, 0, 0, str(exc))
+        # Publish only after every fallible preparation and the return value
+        # exist. Failed empty-window preparation cannot publish a dangling ID.
+        self.__dict__ = next_root
+        return result
+
+    def _receiving(self, ingress_id: str):
+        name(ingress_id, 'owned ingress identity')
+        if self._event_phase != 'receiving-context' or self._active_ingress != ingress_id:
+            raise ContractError('context bytes require their current owned receiving window')
+        identity = self._ingress_identities[ingress_id]
+        received, status = read_control(self._buffers[identity.control_id], self._online.data.ingress)
+        if status != 'RECEIVING' or identity.cursor != self._cursor:
+            raise ContractError('context ingress is closed or has a different cursor')
+        return identity, received
+
+    def receive_context(self, ingress_id: str, offset: int, chunk: bytes) -> IngressResult:
+        """Receive exactly the offered bounded prefix; no hidden input suffix."""
+        identity, received = self._receiving(ingress_id)
+        spec = self._online.data.ingress
+        natural(offset, 'context byte offset')
+        if type(chunk) is not bytes or not 0 < len(chunk) <= min(spec.chunk_bytes, spec.capacity-received) or offset != received:
+            raise ContractError('context chunk violates its fixed byte type, offered window or next offset')
+        end = received+len(chunk)
+        header = control_payload(end, 'RECEIVING', spec)
+        result = IngressResult('RECEIVING', ingress_id, identity.observation_id, self._cursor,
+                               end, min(spec.chunk_bytes, spec.capacity-end))
+        # Both fixed-size writes were prepaid at admission. No record/counter
+        # depends on chunk segmentation. Serialized CPython calls are assumed;
+        # arbitrary asynchronous interruption/crash recovery is not claimed.
+        self._buffers[identity.body_id][received:end] = chunk
+        self._buffers[identity.control_id][:] = header
+        return result
+
+    def finish_context(self, ingress_id: str) -> PredictionResult:
+        """Decode owned bytes once, then execute the actual ordinary predictor."""
+        identity, received = self._receiving(ingress_id)
+        spec = self._online.data.ingress
+        try:
+            payload = bytes(self._buffers[identity.body_id][:received])
+            inputs = decode_context(payload, len(self._online.data.input_upper), self._contract.reference_integer_bits)
+            self._buffers[identity.control_id][:] = control_payload(received, 'DECODED', spec)
+            result = self._predict_received(identity, inputs)
+            status = 'PREDICTED' if result.status == 'PREDICTED_REFERENCE' else 'UNRESOLVED'
+            self._buffers[identity.control_id][:] = control_payload(received, status, spec)
+            if result.status == 'PREDICTED_REFERENCE':
+                self._active_ingress = None
+            return result
+        except Exception as exc:
+            status = 'UNRESOLVED' if isinstance(exc, (ArithmeticUnresolved, ResourceExceeded)) else (
+                'INVALID_INPUT' if isinstance(exc, ContractError) and self._event_phase != 'halted' else 'EXECUTION_FAILED')
+            self._buffers[identity.control_id][:] = control_payload(received, status, spec)
+            if self._event_phase != 'halted':
+                self._halt('context-ingress', exc)
+            if status != 'UNRESOLVED':
+                raise
+            return PredictionResult('UNRESOLVED', identity.observation_id, self._cursor, (), str(exc))
+
+    def predict_next(self, observation_id: str, encoded: bytes) -> PredictionResult:
+        """One-chunk convenience port; raw values never bypass paid ingress."""
+        self._require_online()
+        self._require_idle()
+        if type(encoded) is not bytes or len(encoded) > self._online.data.ingress.chunk_bytes:
+            raise ContractError('predict_next accepts one bounded encoded chunk; use begin/receive/finish for larger frames')
+        offer = self.begin_context(observation_id)
+        if offer.status == 'UNRESOLVED':
+            return PredictionResult('UNRESOLVED', observation_id, self._cursor, (), offer.reason)
+        if encoded:
+            self.receive_context(offer.ingress_id, 0, encoded)
+        return self.finish_context(offer.ingress_id)
+
+    def _predict_received(self, identity: IngressIdentity, inputs) -> PredictionResult:
+        data, rules = self._online.data, self._contract.semantics
+        observation_id = identity.observation_id
         inputs = tuple(rational(v, 'pre-target exogenous input') for v in inputs)
         if len(inputs) != len(data.input_upper) or any(v > cap for v, cap in zip(inputs, data.input_upper)):
             raise ContractError('input differs from its registered range/interface')
-        # Preconditions reject malformed input before beginning a legal event.
+        # Inputs have already arrived through the owned canonical wire. A
+        # failed domain/numeric check retains that prefix and halts ingress.
         sources = read_sources(data, self._cursor, inputs, tuple(self._observations))
         source_map = dict(sources)
         if self._contract.source_domain is not None and tuple(source_map[s.source_id] for s in rules.sources) not in self._contract.source_domain:
             raise ContractError('actual causal context is outside the complete registered source domain')
         if any(s.learner.cursor != self._cursor for s in self._candidates.values() if s.range_safe):
             raise ContractError('an active reference lineage lost the common exogenous cursor')
+        if tuple(s.candidate_id for s in self._candidates.values() if s.range_safe) != identity.candidate_ids:
+            raise ContractError('the active learner set changed during context ingress')
         record = ObservationRecord(observation_id, data.active.stream_id, data.active.role, self._cursor, inputs, sources, None)
-        self._revision += 1
         prefix = f'{self._runtime_id}:event:{self._cursor}'
         predictions, float64_predictions, object_ids = [], [], []
-        self._pending = PendingEvent(record, (), f'{prefix}:target', (), 'context-revealed')
         self._event_phase = 'predicting'
         try:
-            admitted = tuple(identity.identity_id for identity in self._persistence_identities.values()
-                             if identity.status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'))
-            for identity_id in admitted:
+            for identity_id in identity.persistence_ids:
                 self._check_persistence_lineages(self._persistence_identities[identity_id])
-            self._pending = replace(self._pending, persistence_ids=admitted)
             _guard(*inputs, bit_limit=self._contract.reference_integer_bits)
             # Reserve the bounded target slot and its write work before the
             # target arrives. A later backend/resource failure cannot unread it.
@@ -777,6 +901,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             target_slot = self._machine.realize(f'{prefix}:target', 'reserved_target', self._target_slot(None), self._chi)
             self._allocate(self._data_owner, (context, target_slot))
             object_ids.extend((context.spec.object_id, target_slot.spec.object_id))
+            self._pending = PendingEvent(record, (), f'{prefix}:target', tuple(object_ids), 'context-revealed', identity.persistence_ids)
             for state in self._candidates.values():
                 if not state.range_safe:
                     continue  # retained unresolved construction is not a live trajectory
@@ -801,7 +926,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             return PredictionResult('PREDICTED_REFERENCE', observation_id, self._cursor,
                                     tuple((candidate, pred.probabilities) for candidate, pred in predictions), 'all active reference predictions precede the target')
         except Exception as exc:
-            self._pending = replace(self._pending, predictions=tuple(predictions), float64_predictions=tuple(float64_predictions), object_ids=tuple(object_ids), stage='prediction-failed')
+            if self._pending is not None:
+                self._pending = replace(self._pending, predictions=tuple(predictions), float64_predictions=tuple(float64_predictions), object_ids=tuple(object_ids), stage='prediction-failed')
             self._halt('predict', exc)
             if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
                 raise
@@ -1584,6 +1710,7 @@ after all fallible construction, checks and physical preparation complete.
             '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
             '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
             '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
+            '_ingress_identities', '_active_ingress',
             '_programs', '_retained_programs', '_candidates', '_buffers', '_attempts', '_deployed_id',
             '_event_phase', '_pending', '_observations', '_event_traces', '_profile_executions',
             '_profile_events', '_query_records', '_data_usage', '_halted', '_data_owner',
@@ -1750,4 +1877,6 @@ after all fallible construction, checks and physical preparation complete.
                                self._revision, self._next_search, tuple(self._searches.values()), tuple(self._reference_proofs.values()),
                                self._next_persistence, self._alpha_spent, tuple(self._alpha_allocations),
                                tuple(self._persistence_identities.values()), tuple(self._persistence_events), tuple(self._float64_traces),
-                               self._next_install, tuple(self._install_attempts), tuple(self._install_receipts))
+                               self._next_install, tuple(self._install_attempts), tuple(self._install_receipts),
+                               tuple(IngressSnapshot(identity, *read_control(self._buffers[identity.control_id], self._online.data.ingress))
+                                     for identity in self._ingress_identities.values()), self._active_ingress)

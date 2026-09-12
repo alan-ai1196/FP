@@ -16,6 +16,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'theory/numerical_checks')]
 
+from ingress_audit_support import deliver_context
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference.core import ContractError
 from fp_reference.info import Moment, QuerySpec
@@ -460,7 +461,7 @@ def adversarial_audit():
         elif action == 'construct':
             rt.construct_candidate(zero_program(2))
         elif action == 'predict':
-            rt.predict_next('observation-2', domain(1)[0])
+            deliver_context(rt, 'observation-2', domain(1)[0])
             rejects(lambda: rt.advance_reference_search(result.search_id, transitions=1))
             rt.observe(0)
         else:

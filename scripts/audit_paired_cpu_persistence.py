@@ -15,6 +15,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts')]
 
+from ingress_audit_support import deliver_context
 from fp_reference.binary_arithmetic import Float64Arithmetic, Float64Value
 from fp_reference.float64_range import enclose_float64, enclosure_operations
 from fp_reference.persistence import PersistenceContract, PersistenceRule, REFERENCE_PATH, FLOAT64_PATH
@@ -121,7 +122,7 @@ def scored_trajectories_audit():
     previous_theta = identity(rt, fid).candidate_float64_range[0].theta
     for context, target in ((0, 0), (1, 1), (0, 1), (1, 0))*3:
         cursor = rt.snapshot().cursor
-        assert rt.predict_next(f'observation-{cursor}', domain(1)[context]).status == 'PREDICTED_REFERENCE'
+        assert deliver_context(rt, f'observation-{cursor}', domain(1)[context]).status == 'PREDICTED_REFERENCE'
         pending = rt.snapshot().pending
         exact = dict(pending.predictions)
         finite = dict(pending.float64_predictions)
@@ -227,7 +228,7 @@ def null_and_crossing_audit():
     event(rt, 1)
     assert rt.paired_persistence_result(*ids).status == 'PAIRED_CPU_CROSSED'
     assert tuple(identity(rt, iid).wealth for iid in ids) == history
-    rt.predict_next('observation-7', domain(1)[0])
+    deliver_context(rt, 'observation-7', domain(1)[0])
     with patch.object(execution.finite, 'commit_event', side_effect=RuntimeError('finite commit broke the continuous four-path prefix')):
         rejects(lambda: rt.observe(1), RuntimeError)
     assert rt.snapshot().halted and rt.snapshot().observations[-1].target == 1
@@ -369,7 +370,7 @@ def profile_freshness_audit():
     assert rt.paired_persistence_result(*old).status == 'UNRESOLVED'
     assert all(identity(rt, iid).status == 'ACTIVE' for iid in fresh)
     assert rt.snapshot().alpha_spent == F(1, 2)
-    rejects(lambda: rt.predict_next('observation-0', domain(1)[0]))
+    rejects(lambda: deliver_context(rt, 'observation-0', domain(1)[0]))
     owned(rt)
     return {'profile_events': 4, 'original_profile_observations': 2,
             'new_identity_start_cursor': 2, 'first_fresh_observation': 'observation-2',

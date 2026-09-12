@@ -12,6 +12,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'theory/numerical_checks')]
 
+from ingress_audit_support import deliver_context
 from fp_reference import OnlineContract, ReferenceCompilerRuntime
 from fp_reference.core import ContractError
 from fp_reference.data_usage import DataContract, SourceRead, StreamSpec
@@ -26,7 +27,7 @@ from value_reachability_audit import GAP, floor_dyadic, loss_upper, step
 
 def ingest(rt, stream):
     for cursor, (row, target) in enumerate(stream):
-        assert rt.predict_next(f'observation-{cursor}', row).status == 'PREDICTED_REFERENCE'
+        assert deliver_context(rt, f'observation-{cursor}', row).status == 'PREDICTED_REFERENCE'
         assert rt.observe(target).status == 'OBSERVED_REFERENCE'
 
 
@@ -94,7 +95,7 @@ def value_fixture():
     # Marginal target counts are exactly balanced: the unchanged uniform
     # deployed predictor is the empirical optimal unigram for this fixture.
     assert sum(y for _, y in stream) == len(stream)//2
-    future = rt.predict_next('observation-16', domain(2)[2])
+    future = deliver_context(rt, 'observation-16', domain(2)[2])
     assert dict(future.predictions)[candidate.candidate_id][1] > F(1, 2)
     assert rt.observe(1).status == 'OBSERVED_REFERENCE'
     assert rt.snapshot().cursor == 17
@@ -171,7 +172,7 @@ def recurrent_attachment():
     assert candidate.delayed == (('h', history),) == (('h', (F(0), F(1))),)
     assert after.profiles[-1].local.cursor == 8 and candidate.learner.cursor == after.cursor == 4
     assert candidate.learner.optimizer_steps == 4
-    forecast = rt.predict_next('observation-4', (1,))
+    forecast = deliver_context(rt, 'observation-4', (1,))
     assert forecast.status == 'PREDICTED_REFERENCE'
     pending = dict(rt.snapshot().pending.predictions)[candidate.candidate_id]
     assert pending.values[2] == history[0]
@@ -204,7 +205,7 @@ def invalid_and_failed_profiles():
     def fail_after_read(*args, **kwargs):
         calls.append(1)
         # Public events cannot interleave with a value-construction prefix.
-        rejects(lambda: rt.predict_next('observation-2', (1, 0)))
+        rejects(lambda: deliver_context(rt, 'observation-2', (1, 0)))
         rejects(lambda: rt.construct_candidate(graph))
         if len(calls) == 3:
             raise RuntimeError('injected profile backend failure')
@@ -226,7 +227,7 @@ def invalid_and_failed_profiles():
     # Since no new ordinary target was revealed by profile, failure need not
     # halt the deployed trajectory or manufacture a fresh-data retry.
     assert after.event_phase == 'idle'
-    assert rt.predict_next('observation-2', (1, 0)).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(rt, 'observation-2', (1, 0)).status == 'PREDICTED_REFERENCE'
     rt.observe(1)
 
     # A legal registered gradient path leaves the cap at its first commit.

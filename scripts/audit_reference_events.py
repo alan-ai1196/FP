@@ -19,6 +19,7 @@ import pkgutil
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'theory/numerical_checks')]
 
+from ingress_audit_support import deliver_context
 from fp_reference import OnlineContract, ReferenceCompilerRuntime
 from fp_reference.core import ContractError
 from fp_reference.data_usage import DataContract, SourceRead, StreamSpec
@@ -125,7 +126,7 @@ def exhaustive_endpoint_audit():
         for cursor, (context, target) in enumerate(sequence):
             row = domain(1)[context]
             inputs = dict(zip((s.source_id for s in cfg.semantics.sources), row))
-            forecast = rt.predict_next(f'observation-{cursor}', row)
+            forecast = deliver_context(rt, f'observation-{cursor}', row)
             assert forecast.status == 'PREDICTED_REFERENCE'
             for key, probabilities in forecast.predictions:
                 theta, accumulated, steps = expected[key]
@@ -160,15 +161,15 @@ def clock_and_data_audit():
     graph = Program((Source('x0_0'), Sum('mass', (Term(0, 0),)), Sum('mass', ())), 1, (1, 2))
     rt = ReferenceCompilerRuntime(cfg, graph, online=run)
     rejects(lambda: rt.observe(0))
-    rejects(lambda: rt.predict_next('test-label', (1, 0)))
-    rejects(lambda: rt.predict_next('observation-1', (1, 0)))
+    rejects(lambda: deliver_context(rt, 'test-label', (1, 0)))
+    rejects(lambda: deliver_context(rt, 'observation-1', (1, 0)))
     rejects(lambda: rt.query('target-mean', ('observation-0',)))
     rejects(lambda: rt.query('missing', ('observation-0',)))
     rejects(lambda: rt.query('target-mean', ('observation-0',), fn=lambda: (F(1),)), TypeError)
-    rejects(lambda: rt.predict_next('observation-0', (1, 0), target=0), TypeError)
-    p0 = rt.predict_next('observation-0', (1, 0))
+    rejects(lambda: rt.predict_next('observation-0', b'', target=0), TypeError)
+    p0 = deliver_context(rt, 'observation-0', (1, 0))
     before = rt.snapshot()
-    rejects(lambda: rt.predict_next('observation-0', (1, 0)))
+    rejects(lambda: deliver_context(rt, 'observation-0', (1, 0)))
     rejects(lambda: rt.construct_candidate(graph))
     rejects(lambda: rt.query('target-mean', ('observation-0',)))
     rejects(lambda: rt.observe(True))
@@ -178,7 +179,7 @@ def clock_and_data_audit():
     state = rt.snapshot().candidates[0].learner
     assert state.theta == (F(0),) and state.gradient_sum == (F(-1, 2),)
     rejects(lambda: rt.construct_candidate(graph))  # no shortened newborn unit
-    p1 = rt.predict_next('observation-1', (1, 0))
+    p1 = deliver_context(rt, 'observation-1', (1, 0))
     assert p1.predictions == p0.predictions  # target-derived accumulator is invisible
     assert rt.observe(0).committed
     assert rt.snapshot().candidates[0].theta == (F(1, 2),)
@@ -189,14 +190,14 @@ def clock_and_data_audit():
     assert rt.snapshot().data_uses[-1].purpose == 'proposal'
     rejects(lambda: rt.query('target-mean', ('test-label',)))
     rejects(lambda: rt.query('target-mean', ('observation-0', 'observation-0')))
-    rejects(lambda: rt.predict_next('observation-0', (1, 0)))
+    rejects(lambda: deliver_context(rt, 'observation-0', (1, 0)))
     new_graph = replace(graph, nodes=graph.nodes+(Sum('mass', ()),))
     new = rt.construct_candidate(new_graph)
     assert new.status == 'BUILT_REFERENCE'
     candidate = next(s for s in rt.snapshot().candidates if s.candidate_id == new.candidate_id)
     assert candidate.birth_cursor == candidate.learner.cursor == 2 and candidate.theta == (0,)
     assert candidate.learner.gradient_sum == (0,) and candidate.learner.optimizer_steps == 0
-    forecast = dict(rt.predict_next('observation-2', (1, 0)).predictions)
+    forecast = dict(deliver_context(rt, 'observation-2', (1, 0)).predictions)
     assert forecast[rt.snapshot().deployed_id] == (F(3, 5), F(2, 5))
     assert forecast[new.candidate_id] == (F(1, 2), F(1, 2))
     rt.observe(1)
@@ -237,7 +238,7 @@ def causal_history_audit():
     inputs = (1, 0, 1, 0, 0)
     rows = []
     for cursor in range(5):
-        assert rt.predict_next(f'causal-{cursor}', (inputs[cursor],)).status == 'PREDICTED_REFERENCE'
+        assert deliver_context(rt, f'causal-{cursor}', (inputs[cursor],)).status == 'PREDICTED_REFERENCE'
         pending = rt.snapshot().pending
         row = dict(pending.record.sources)
         assert row['past-input'] == (inputs[cursor-2] if cursor >= 2 else 0)
@@ -278,7 +279,7 @@ def query_precision_audit():
     cfg = contract(pattern=(F(0),))
     narrow = QuerySpec('narrow', (Moment((), 0),), (0,), (F(1, 4),), 3, 2)
     rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=online(cfg, 2, queries=(narrow,)))
-    rt.predict_next('observation-0', (1, 0))
+    deliver_context(rt, 'observation-0', (1, 0))
     rt.observe(0)
     before = rt.snapshot().resources['spent']['compiler']['work']
     result = rt.query('narrow', ('observation-0',))
@@ -300,7 +301,7 @@ def failure_audit():
     run = online(cfg, 4, unit=1)
     rt = ReferenceCompilerRuntime(cfg, graph, online=run)
     assert rt.construct_candidate(graph).status == 'BUILT_REFERENCE'
-    rt.predict_next('observation-0', (1, 0))
+    deliver_context(rt, 'observation-0', (1, 0))
     before = rt.snapshot()
     original, calls = execution.observe_event, []
 
@@ -322,7 +323,7 @@ def failure_audit():
     assert after.resources['spent']['compiler']['work'] > before.resources['spent']['compiler']['work']
     assert after.resources['peak']['reference_payload_bytes'] >= before.resources['peak']['reference_payload_bytes']
     rejects(lambda: rt.observe(1))
-    rejects(lambda: rt.predict_next('observation-1', (1, 0)))
+    rejects(lambda: deliver_context(rt, 'observation-1', (1, 0)))
     rejects(lambda: rt.construct_candidate(graph))
     rejects(lambda: rt.retire_candidate(after.candidates[1].candidate_id))
     assert rt.install(after.candidates[1].candidate_id, bridge=True).status == 'UNRESOLVED'
@@ -331,7 +332,7 @@ def failure_audit():
     # clipped to the range, rolled back and retried, or classified globally bad.
     tight = replace(cfg, normalizer_cap=F(2), activation_cap=F(1))
     ranged = ReferenceCompilerRuntime(tight, graph, online=run)
-    ranged.predict_next('observation-0', (1, 0))
+    deliver_context(ranged, 'observation-0', (1, 0))
     assert ranged.observe(0).status == 'UNRESOLVED'
     stopped = validate_residency(ranged)
     assert stopped.event_phase == 'halted' and stopped.pending.record.target == 0
@@ -341,13 +342,13 @@ def failure_audit():
     # The target ingress has already been allocated and paid. Exhausting work
     # immediately after reveal cannot make that target disappear from Omega.
     full = ReferenceCompilerRuntime(cfg, graph, online=run)
-    full.predict_next('observation-0', (1, 0))
+    deliver_context(full, 'observation-0', (1, 0))
     spent = full.snapshot().resources['spent']['deployment']['work']
     lcaps = dict(cfg.limits.role_cumulative)
     lcaps['deployment'] = {'work': spent}
     capped = replace(cfg, limits=replace(cfg.limits, role_cumulative=lcaps))
     exhausted = ReferenceCompilerRuntime(capped, graph, online=run)
-    assert exhausted.predict_next('observation-0', (1, 0)).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(exhausted, 'observation-0', (1, 0)).status == 'PREDICTED_REFERENCE'
     assert exhausted.observe(1).status == 'UNRESOLVED'
     assert exhausted.snapshot().pending.record.target == 1 and exhausted.snapshot().cursor == 0
     validate_residency(exhausted)
@@ -355,11 +356,11 @@ def failure_audit():
     # Real coexistence cap: construction and prediction fit, but the ordinary
     # successor cannot be built while the old state and event evidence remain.
     full = ReferenceCompilerRuntime(cfg, graph, online=run)
-    full.predict_next('observation-0', (1, 0))
+    deliver_context(full, 'observation-0', (1, 0))
     cap = full.snapshot().resources['peak']['reference_payload_bytes']
     constrained = replace(cfg, limits=limits(byte_cap=cap))
     memory = ReferenceCompilerRuntime(constrained, graph, online=run)
-    assert memory.predict_next('observation-0', (1, 0)).status == 'PREDICTED_REFERENCE'
+    assert deliver_context(memory, 'observation-0', (1, 0)).status == 'PREDICTED_REFERENCE'
     published = memory.snapshot().candidates
     assert memory.observe(0).status == 'UNRESOLVED'
     final = validate_residency(memory)
@@ -401,7 +402,7 @@ def existing_reachability_fixture():
     candidate = rt.construct_candidate(graph).candidate_id
     value, first = F(0), None
     for cursor, (row, target) in enumerate(stream):
-        assert rt.predict_next(f'observation-{cursor}', row).status == 'PREDICTED_REFERENCE'
+        assert deliver_context(rt, f'observation-{cursor}', row).status == 'PREDICTED_REFERENCE'
         result = rt.observe(target)
         assert result.status == 'OBSERVED_REFERENCE', result
         if result.committed:

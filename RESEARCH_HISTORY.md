@@ -1666,7 +1666,7 @@ Attacking the resulting resource claim found the next concrete obstruction.
 A source-box input `1/2^m` enters the pending record before the 128-bit
 reference guard refuses prediction. Denominators of 257,1025,4097 bits remain
 in halted state with unchanged packed payload/work. This is a separate
-current counterexample: bounding admitted calls still does not bound raw
+counterexample at that revision: bounding admitted calls still does not bound raw
 ingress and terminal diagnostic storage. The input has been received and
 cannot simply be erased, rounded or treated as unread to improve accounting.
 
@@ -1675,3 +1675,55 @@ Read `theory/proofs/OWNED_CONTROL_ADMISSION.md` and
 paid representation-aware ingress/diagnostics and complete host accounting,
 with full ERC-1/gate registration still open. No Foundation action or static
 case expansion is introduced; Runtime is NOT FROZEN and science stays HOLD.
+
+## 60. Exact input becomes an owned paid byte prefix (2026-09-12)
+
+The next protocol correction addresses the one-request counterexample from
+section 59. Moving the arithmetic guard alone would not specify which input
+bits had already arrived or where they survive failure. The Runtime now
+requires one preregistered exact byte interface, with a capacity and maximum
+chunk size, rather than accepting naked rational objects.
+
+Machine `packed-reference-payload-v3` prepays a receive window, a fixed
+received-count/status slot, identity and bounded reference ingress work
+before offering any bytes. Current learner and persistence IDs seal at that
+boundary. Each legal nonempty chunk writes only the next offered extent;
+the Runtime creates no chunk-count or chunk-history state. The canonical
+grammar represents every nonnegative rational vector. Insufficient byte or
+integer resources yield UNRESOLVED, without changing the semantic source
+class or inventing an architecture action.
+
+Length fields and leading bits are checked before creating numeric bodies.
+Malformed, truncated, too-wide or later failed predictions preserve their
+received bytes in the paid window and a fixed terminal status. No decoded
+rational enters retained pending state before its own allocation succeeds.
+A failed empty-window preparation preserves work, peak and retired IDs,
+and only a fresh paid retry can publish a receiving identity. Unexpected
+prediction failures keep their original halt cause.
+
+The old Runtime/machine/data source at `5055f3e` remains an executed
+counterexample. On the current path its 257-/1025-/4097-bit denominators
+remain as 42/139/523 paid wire bytes, with no oversized pending rational.
+The new audit checks 3,072 integer/width cases, 85 vectors, 24 boundaries,
+and all 208 chunkings of a nine-byte frame. All 1,328 equal-prefix snapshot
+checks agree, as do completed prediction and observation states. Real work
+and residency refusal, preparation failure/retry, partial capacity and 90
+forbidden mid-ingress actions are tested. A four-event four-learner path
+also passes 22 independent binary64 phase checks.
+
+All current integration producers now enter through the mandatory byte
+protocol. Ordinary/profile/search, reference/paired evidence and the
+35-/774-member selection/install chains pass, including the two-install
+continuation and 2,016 lease cases. The small work-exhaustion persistence
+fixture preregisters a sufficient 16-byte window for its fixed binary
+domain, preserving paid ordinary continuation after evidence becomes
+unresolved; it does not bypass the new ingress debit.
+
+Read `theory/proofs/OWNED_CONTEXT_INGRESS.md` and
+`evidence/minimal/FP_CONTEXT_INGRESS_AUDIT.json`. The scoped invariant covers
+recorded serialized Runtime state and packed payload. Full Python metadata,
+transient copies/arithmetic scratch, general diagnostics, ERC-1 enforcement
+and release-gate mapping remain the physical frontier. The fixed status slot
+is paid; this does not imply every exception object is paid. Foundation and
+ERC-1 stay frozen, static cases stay parked, Runtime stays NOT FROZEN, and
+actual AMP correctness precedes RTX 3090 science.
