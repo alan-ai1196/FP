@@ -119,10 +119,22 @@ with a new Runtime or nested job. An actual late-fence counterexample and
 35-program search/persistence/install under 64 MiB are in
 `theory/proofs/BOUND_HOST_RUNTIME.md`.
 
-The remaining resource closure is complete ERC-1 run/policy registration,
-production supervision/publication and error ownership across terminated
-runs, external/shared platform and device resources, other resource limits,
-and release-gate mapping. A sampled host observation is not full physical
+Machine v7 now owns a registered sequential Compiler strategy. Only ordinary
+context/target input drives its native search, paired CPU evidence and
+installation; external control/authority methods are closed in that mode.
+Its complete policy state is paid and exposed by snapshots, and its completed
+install action publishes in the same root/lease transaction as the learner.
+Two 35-program cycles, the trained 774-program case, exhaustive short streams
+and the actual 64 MiB host path are audited in
+`theory/proofs/OWNED_COMPILER_POLICY.md`. This is one registered strategy,
+with no claim of universal policy optimality.
+
+The remaining resource closure is complete ERC-1 run/report registration,
+production supervision/publication, external/shared platform and device
+resources, other resource limits, and release-gate mapping. A claim spanning
+multiple actual Runtime roots additionally needs its family error/resource
+accounting; single-root alpha cannot be advertised as that larger bound.
+A sampled host observation is not full physical
 state or run authority, and the unbound reference mode proves no host cap.
 Static special cases stay parked; after reference closure the next target
 is actual AMP and then RTX 3090.

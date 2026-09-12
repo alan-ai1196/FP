@@ -28,6 +28,10 @@ supplied through these public continuation methods:
 | `reference_class_proof` / `verify_reference_class_proof` | Retrieves or verifies only a current Runtime-issued token for the specified exact reference class |
 | `cancel_reference_search(search_id)` | Terminates that search and its authority while retaining its queryable owned history and live constructed winner |
 
+These manual control methods also implement the owned strategy below.
+With `policy=CompilerPolicy(...)`, only event transport and passive snapshots
+remain callable externally; Runtime invokes all Compiler decisions itself.
+
 An initializer with an inconclusive range bound may be retained as an
 unresolved construction; it is not a live ordinary trajectory. Active
 reference lineages execute the same exogenous events.
@@ -363,7 +367,7 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
-The control rule introduced in v2 and retained by v6 charges one fixed unit for each
+The control rule introduced in v2 and retained by v7 charges one fixed unit for each
 public Compiler mutation, using the already immutable construction,
 information or install work role. If that debit cannot be paid, no owned
 attempt, revision, query, frontier, evidence or resource history changes.
@@ -483,10 +487,43 @@ continuation execute inside one 64 MiB process. A completed-looking child
 file followed by unsuccessful exit is rejected by the audit parent.
 
 The scoped binding assumes the trusted launcher preserves its job policy.
-Complete ERC-1 run/policy registration, production supervision/publication
-and error ownership across terminated runs, other resource limits and
+Complete ERC-1 run/report registration, production supervision/publication,
+family accounting for claims spanning multiple roots, other resource limits and
 shared platform/device costs remain open. A supervisor cannot perform FP
 policy work or retain its state outside the measured execution for free.
+
+## Owned native-class strategy
+
+Machine v7 registers `CompilerPolicy` in the actual Runtime constructor.
+Each stage names a complete registered native class, an earliest complete
+ordinary boundary, a fixed enumeration-step allowance and the two matched
+persistence rules. It supplies no architecture or fitted state. Empty stages
+give the closed ordinary baseline; `policy=None` is explicitly manual.
+
+After each successful optimizer unit, the strategy visits the first unfinished
+stage. It searches, keeps an incumbent selection or admits two fresh paths,
+then follows their ordinary continuous evidence until a common-boundary
+installation or an unresolved outcome. A step allowance never certifies
+grammar exhaustion. The registered external interface permits only context/
+target transport and snapshots; the 17 other current control/authority ports
+reject, and newly added methods default to denied in this mode.
+
+All policy status, cursors and owned search/candidate/proof/evidence/install
+IDs belong to Omega and paid packed storage. Retention failure after an action
+halts with its actual targets and costs retained; no retry can manufacture
+fresh alpha. The completed policy record participates in the same installation
+root/lease publication as the actual learner. There is no allocating success
+bookkeeping afterward. Native premise loss now propagates through nested
+public calls and broad handlers without allocating cleanup.
+
+The ordinary `ObservationResult` describes the already completed event. The
+separate owned policy/halt coordinates describe any subsequent Compiler
+failure; observing a target is not a successful-run publication certificate.
+Read [`OWNED_COMPILER_POLICY.md`](../theory/proofs/OWNED_COMPILER_POLICY.md)
+and run `scripts/audit_owned_compiler_policy.py` for the two-install and trained
+native-class chains, exact short-stream oracle, failed-prefix tests and real
+64 MiB process. Its error bound is per actual Runtime root. A comparison
+family spanning restarted roots needs a larger declared allocation protocol.
 
 ## Evidence and remaining boundary
 

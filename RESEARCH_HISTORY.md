@@ -1848,3 +1848,44 @@ ownership after termination, shared platform/device resources or gate mapping.
 Unbound reference execution stays explicit; no manifest field or sampled
 counter grants missing authority. Foundation/ERC-1 stay frozen, static cases
 stay parked, and target AMP correctness remains ahead of RTX 3090 science.
+
+## 64. The search/evidence/install driver becomes owned state (2026-09-12)
+
+The live host binding made the remaining owner question concrete. Previous
+audits controlled when search ran, which returned winner entered persistence
+and when installation was attempted. Those endpoint proofs did not make the
+external driver's changing state part of the actual self-Compiler's Omega.
+Rather than add a general restart mechanism, the next implementation puts
+the declared strategy into the existing Runtime root.
+
+Machine v7 accepts immutable `CompilerPolicy` stages over registered complete
+native classes, with fixed earliest boundaries, search allowances and paired
+rule names. Ordinary context/target input now drives the whole strategy.
+All other external control/authority methods close in that mode. Strategy
+state, IDs, progress buffers and work are owned, and failed action prefixes
+cannot be retried as fresh. The strategy adds no semantic graph operation
+and receives no supplied architecture, fitted value or winner.
+
+Installation required a real frame extension: its successful policy action
+must publish with the complete learner and physical leases. The new policy
+buffer is prepared under workspace ownership and participates in that same
+single root transaction. A refusal there preserves the old deployment.
+Native resource-premise loss also propagates through nested public calls
+and their broad exception handlers without allocating cleanup. Its exception
+type is distinct from argument/graph rejection; an injected construction
+failure verifies that lost host premises cannot become graph inadmissibility.
+
+The actual strategy executes two 35-program cycles with installations at
+cursors 22/38 and alpha 3/4, plus the trained 774-program case. Exhausting all
+64 six-label streams gives 32 incumbent selections, 30 unresolved stages and
+two installs, matching an independent prediction/wealth oracle. Separate
+tests attack partial alpha admission, search allowance and policy-storage
+failure. The two-install path runs in a real 64 MiB Windows job. Read
+`theory/proofs/OWNED_COMPILER_POLICY.md` and its minimal audit evidence.
+
+One root's alpha ledger is global across its stages and installations. A
+family spanning new Runtime roots needs its own total allocation; the audit's
+separate diagnostic roots do not supply that broader error guarantee. More
+hand-written strategies are not the next research frontier. Complete ERC-1
+run/report registration and historical release-gate mapping remain, followed
+by actual target AMP and RTX 3090 science. Foundation/ERC-1 stay frozen.

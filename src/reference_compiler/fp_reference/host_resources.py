@@ -13,7 +13,7 @@ from typing import Mapping
 from .core import ContractError, freeze_data, natural
 
 
-class HostExecutionUnresolved(ContractError):
+class HostExecutionUnresolved(RuntimeError):
     """The actual host no longer establishes its registered resource premises."""
 
 

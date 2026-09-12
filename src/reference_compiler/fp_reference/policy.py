@@ -1,0 +1,100 @@
+"""A registered Compiler strategy over complete native classes, never graphs.
+
+These immutable declarations and passive records carry no authority. Runtime
+owns the strategy's execution, search/evidence handles and publication state.
+"""
+from dataclasses import dataclass, field
+
+from .core import ContractError, natural
+from .persistence import REFERENCE_PATH, FLOAT64_PATH
+from .program import name
+
+
+@dataclass(frozen=True)
+class CompilationStep:
+    after_cursor: int
+    search_name: str
+    search_transitions: int
+    reference_rule: str
+    float64_rule: str
+
+    def __post_init__(self):
+        natural(self.after_cursor, 'earliest ordinary compilation boundary', positive=True)
+        natural(self.search_transitions, 'fixed native search step budget', positive=True)
+        for key in ('search_name', 'reference_rule', 'float64_rule'):
+            name(getattr(self, key), key)
+
+
+@dataclass(frozen=True)
+class CompilerPolicy:
+    steps: tuple[CompilationStep, ...]
+    driver: str = field(default='sequential-native-search-paired-cpu-install-v1', init=False)
+
+    def __post_init__(self):
+        steps = tuple(self.steps)
+        if any(type(step) is not CompilationStep for step in steps):
+            raise ContractError('immutable native compilation stages are required')
+        if any(a.after_cursor > b.after_cursor for a, b in zip(steps, steps[1:])):
+            raise ContractError('registered compilation boundaries must be ordered')
+        if self.driver != 'sequential-native-search-paired-cpu-install-v1':
+            raise ContractError('unimplemented Compiler strategy')
+        object.__setattr__(self, 'steps', steps)
+
+    def validate(self, online):
+        self.__post_init__()
+        if online is None:
+            raise ContractError('the strategy requires registered ordinary event execution')
+        if not self.steps:
+            return  # The closed ordinary baseline has no compilation actions.
+        if online.cpu_install is None:
+            raise ContractError('the registered strategy requires the complete CPU search/evidence/install path')
+        searches = {s.search_name for s in online.searches}
+        rules = {r.rule_id: r for r in online.persistence.rules}
+        for step in self.steps:
+            if (step.after_cursor % online.learner.update_unit
+                    or step.after_cursor > len(online.data.active.observation_ids)):
+                raise ContractError('compilation must start at a possible complete optimizer boundary')
+            if step.search_name not in searches:
+                raise ContractError('strategy selects an unregistered native decision class')
+            a, b = rules.get(step.reference_rule), rules.get(step.float64_rule)
+            if (a is None or b is None or a.score_path != REFERENCE_PATH or b.score_path != FLOAT64_PATH
+                    or (a.epoch_events, a.max_epochs) != (b.epoch_events, b.max_epochs)):
+                raise ContractError('strategy requires a registered pair of same-schedule path-specific rules')
+
+
+TERMINAL_STAGES = frozenset(('INSTALLED_CPU', 'BASELINE_SELECTED', 'UNRESOLVED'))
+
+
+@dataclass(frozen=True)
+class CompilationState:
+    status: str = 'WAITING'
+    started_cursor: int | None = None
+    ended_cursor: int | None = None
+    search_id: str | None = None
+    candidate_id: str | None = None
+    proof_id: str | None = None
+    reference_identity: str | None = None
+    float64_identity: str | None = None
+    install_attempt: str | None = None
+    reason: str = ''
+
+
+@dataclass(frozen=True)
+class CompilerPolicyState:
+    stages: tuple[CompilationState, ...]
+    generation: int
+    object_id: str
+
+
+@dataclass(frozen=True)
+class CompilerPolicySnapshot:
+    registration: CompilerPolicy
+    state: CompilerPolicyState
+    executing: bool
+
+
+# The owned strategy accepts only exogenous event transport and passive
+# snapshots from its caller. All future authority/control methods default
+# to denied as well; no caller can supply a search winner or fresh rule choice.
+POLICY_EXTERNAL_PORTS = frozenset(('begin_context', 'receive_context', 'finish_context',
+                                  'predict_next', 'observe', 'snapshot'))

@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "scope": "registered owned sequential native-class Compiler strategy on actual CPU Runtime",
+  "registration": {
+    "invalid_boundary_class_rule_budget_and_supplied_execution_rejected": 12,
+    "manual_control_mode_explicitly_has_different_claim_identity": true,
+    "empty_strategy_is_a_closed_ordinary_baseline": true
+  },
+  "success": {
+    "native_class_sizes": [
+      35,
+      35
+    ],
+    "installed_at_cursors": [
+      22,
+      38
+    ],
+    "policy_and_learner_publish_in_same_root": true,
+    "external_control_ports_denied": 68,
+    "only_context_and_target_input_drives_compilation": true,
+    "global_alpha_spent": "3/4",
+    "independent_binary64_phase_checks": 306,
+    "continued_after_install": true,
+    "nonzero_trained_install": false
+  },
+  "learned": {
+    "native_class_sizes": [
+      774
+    ],
+    "installed_at_cursors": [
+      18
+    ],
+    "policy_and_learner_publish_in_same_root": true,
+    "external_control_ports_denied": 34,
+    "only_context_and_target_input_drives_compilation": true,
+    "global_alpha_spent": "1/2",
+    "independent_binary64_phase_checks": 870,
+    "continued_after_install": true,
+    "nonzero_trained_install": true
+  },
+  "exhaustive": {
+    "all_six_label_streams": 64,
+    "outcomes": {
+      "BASELINE_SELECTED": 32,
+      "UNRESOLVED": 30,
+      "INSTALLED_CPU": 2
+    },
+    "independent_log_and_exact_wealth_checks": 256
+  },
+  "failures": {
+    "native_premise_loss_cannot_be_misclassified_as_graph_inadmissibility": true,
+    "failed_ordinary_commit_retains_target_without_advancing_policy": true,
+    "search_allowance_exhaustion_not_completeness": true,
+    "two_policy_stages_cannot_reuse_one_alpha_allocation": true,
+    "failed_policy_retention_keeps_observation_and_spent_alpha_without_retry": true,
+    "policy_buffer_failure_aborts_complete_install_before_publication": true
+  },
+  "bounded": {
+    "worker": {
+      "success": {
+        "native_class_sizes": [
+          35,
+          35
+        ],
+        "installed_at_cursors": [
+          22,
+          38
+        ],
+        "policy_and_learner_publish_in_same_root": true,
+        "external_control_ports_denied": 68,
+        "only_context_and_target_input_drives_compilation": true,
+        "global_alpha_spent": "3/4",
+        "independent_binary64_phase_checks": 306,
+        "continued_after_install": true,
+        "nonzero_trained_install": false,
+        "host": {
+          "process_id": 25732,
+          "creation_100ns": 134336965171420139,
+          "lifetime_process_commit_peak": 34656256,
+          "job_commit_peak": 35885056,
+          "process_user_100ns": 167500000,
+          "process_kernel_100ns": 781250
+        }
+      },
+      "native_failure": {
+        "nested_native_premise_loss_preserves_terminal_marker_without_allocating_cleanup": true,
+        "last_ordinary_event_retained": 22,
+        "alpha_spent": "1/2"
+      }
+    },
+    "job": {
+      "exit_code": 0,
+      "timed_out": false,
+      "commit_limit": 67108864,
+      "peak_process_commit": 34656256,
+      "peak_job_commit": 35885056,
+      "user_100ns": 184687500,
+      "kernel_100ns": 781250,
+      "total_processes": 2,
+      "limit_terminated_processes": 0,
+      "attached_before_resume": true,
+      "process_id": 25732,
+      "process_creation_100ns": 134336965171420139
+    }
+  },
+  "not_closed": [
+    "arbitrary adaptive policy/value classes or target AMP",
+    "complete ERC-1 run/publication and release-gate mapping",
+    "multi-run error-family authority"
+  ]
+}

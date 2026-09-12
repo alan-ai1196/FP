@@ -533,7 +533,7 @@ register the production Runtime; v6 supplies the scoped binding below.
 
 ### Live process resource history (2026-09-12)
 
-Current machine `packed-reference-payload-v6` accepts `HostResourceContract`
+The host binding introduced in machine v6 accepts `HostResourceContract`
 and owns a live binding to the executing 64-bit Windows CPython process.
 The fixed process arena is shared by deployment/compiler, charged in full
 to each and once globally. Its native process/job commitment cap is the
@@ -561,6 +561,39 @@ This closes the declared private-commitment dimension in the Runtime, not
 complete ERC-1 run/policy/supervision/publication/error ownership, CPU-time
 hard caps, shared platform/device resources, target AMP or release-gate
 mapping. Foundation/ERC-1 remain frozen; Runtime is NOT FROZEN and science HOLD.
+
+### Owned Compiler strategy (2026-09-12)
+
+Current machine `packed-reference-payload-v7` accepts immutable
+`CompilerPolicy` data and owns its execution state. At registered post-commit
+boundaries it runs complete native-class search, separately admits the two
+fresh CPU paths, and attempts the existing checked installation. An incumbent
+winner keeps deployment; exhausted search allowance or evidence ends that
+stage UNRESOLVED. No supplied graph, fitted values or running policy state
+can enter through the strategy declaration.
+
+External policy-mode ports are limited to context/target transport and passive
+snapshots; all 17 other current control/authority methods reject. The strategy
+calls the same owned implementations internally. Packed policy state and
+its work are paid; a retention failure halts without retrying an action whose
+cost or alpha has already been spent. Installation prepares the completed
+policy buffer and publishes it with the learner in the same root/lease
+transaction. Native resource-premise loss now propagates through all internal
+broad handlers, including nested public calls, without allocating cleanup.
+It is an execution error distinct from `ContractError`, so a checked graph/
+argument handler cannot turn missing host premises into graph inadmissibility.
+
+`scripts/audit_owned_compiler_policy.py` exercises the two 35-program cycles,
+the trained 774-program class, 64 exhaustive label streams with independent
+log/wealth checks, actual refusal paths, and the two-install chain inside a
+64 MiB Windows job. Read `theory/proofs/OWNED_COMPILER_POLICY.md` for the
+state/filtration argument and exact scope. Global alpha is per actual Runtime
+root; separate diagnostic roots are not a shared family error budget.
+
+This closes ownership of the registered sequential strategy. Complete ERC-1
+run/report registration and the explicit historical release-gate mapping
+remain before reference freeze and actual AMP. Arbitrary alternative
+strategies are outside this claim, not a new static research program.
 
 ## 4. Required closure tests
 

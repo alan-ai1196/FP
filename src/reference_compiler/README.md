@@ -126,7 +126,7 @@ and run `scripts/audit_host_allocation_failure.py`. Its real Windows job
 refusal test measures child commitment, not total host memory or complete
 ERC-1 registration. Ordinary checked payload/work refusal keeps its semantics.
 
-Current machine `packed-reference-payload-v6` accepts an optional immutable
+The host binding introduced in machine v6 accepts an optional immutable
 host policy in the actual Runtime constructor, for example:
 
 ```python
@@ -152,6 +152,38 @@ and run `scripts/audit_bound_host_runtime.py`. Its actual bounded CPU chain
 and late-fence counterexample establish the declared commitment scope.
 Complete ERC-1 run/policy/supervision/publication/error ownership, other
 resource limits, shared platform/device resources and target AMP remain open.
+
+Current machine `packed-reference-payload-v7` additionally owns a registered
+Compiler strategy. For an online registration containing the named native
+class and two CPU evidence rules:
+
+```python
+from fp_reference import CompilationStep, CompilerPolicy
+
+policy = CompilerPolicy((CompilationStep(
+    after_cursor=2, search_name='native', search_transitions=10000,
+    reference_rule='ref', float64_rule='finite',
+),))
+runtime = ReferenceCompilerRuntime(
+    contract, initial_program, online=online, host=host, policy=policy,
+)
+```
+
+Only context/target transport and passive snapshots remain external ports
+in this mode. The Runtime's post-commit strategy runs the full registered
+native class, admits separate fresh evidence, and attempts CPU installation
+at the common optimizer boundary. The completed policy record and learner
+publish together. `snapshot().compiler_policy` exposes the owned progress;
+ordinary observation success is separate from the Compiler's result/halt
+state. Search or evidence uncertainty stays UNRESOLVED without alpha refunds.
+`CompilerPolicy(())` is the closed ordinary baseline. Omitting `policy`
+retains the explicitly manual reference mode, with a different chi.
+
+Read [`OWNED_COMPILER_POLICY.md`](../../theory/proofs/OWNED_COMPILER_POLICY.md)
+and run `scripts/audit_owned_compiler_policy.py`. Two successive native-class
+installs and all short-stream outcomes traverse the actual endpoint, including
+the registered host path. No arbitrary adaptive-strategy optimum, multi-root
+family error bound, target AMP or full Runtime release is inferred.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and

@@ -165,13 +165,33 @@ search, four-path persistence, CPU install and continuation inside one
 failure cannot rewrite its first host halt cause. A worker that writes a
 completed-looking result and then exits unsuccessfully is not accepted.
 
-The next obligations are complete ERC-1 run/policy registration, production
-supervision/publication and error ownership across terminated runs, other
-resource coordinates and explicit release-gate mapping. Process commitment
+The next obligations are complete ERC-1 run registration, production
+supervision/publication, other resource coordinates and explicit release-gate
+mapping. A claim spanning multiple Runtime roots additionally needs its
+family error/resource accounting. Process commitment
 is not total-machine/RSS/shared-platform/device accounting; CPU observations
 are not a CPU-time hard cap. External supervision cannot own FP policy for
 free. No Foundation change, static expansion or Runtime freeze follows;
 actual AMP correctness still precedes RTX 3090 science.
+
+Machine v7 now also owns an executable Compiler strategy. Under
+`policy=CompilerPolicy(...)`, external calls supply only context/target
+events and read passive snapshots. Runtime itself drives registered full
+native-class searches, separate reference/binary64 evidence admissions and
+installation at complete optimizer boundaries. Policy position, owned IDs,
+failed prefixes and packed buffers are part of Omega; all 17 other current
+public control/authority methods are closed to the caller. The completed
+policy record and learner publish in the same CPU root/lease transaction.
+
+Read [`OWNED_COMPILER_POLICY.md`](theory/proofs/OWNED_COMPILER_POLICY.md) and
+run `scripts/audit_owned_compiler_policy.py`. It executes two successive
+35-program searches/installs at cursors 22/38, the trained 774-program case,
+and all 64 six-label streams (32 baseline selections, 30 unresolved, two
+installs). The two-install path also runs inside a 64 MiB process. Partial
+admission, policy-storage failure and nested native-premise loss retain their
+actual targets, work and alpha. The strategy is fixed and scoped; adding a
+menu of more strategies is not the next prerequisite. Integrate the complete
+run/report contract and map the historical release obligations next.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic

@@ -35,7 +35,7 @@ class PlannedObject:
 
 
 class ReferenceMachineModel:
-    model_id = 'packed-reference-payload-v6'
+    model_id = 'packed-reference-payload-v7'
     initializer_id = 'registered-cyclic-rational-initializer-v1'
     residency_dimensions = frozenset(('reference_payload_bytes', 'physical_objects'))
     # Every admitted Compiler control request pays this positive charge before

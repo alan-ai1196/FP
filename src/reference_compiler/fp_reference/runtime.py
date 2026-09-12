@@ -20,7 +20,8 @@ from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_s
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .encoding import packed_size, write_packed
 from .host_failure import guard_host_allocations
-from .host_resources import HostResourceContract, HostResourceObservation, _WindowsProcessHost
+from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
+from .policy import CompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot, CompilationState, TERMINAL_STAGES
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
@@ -274,6 +275,7 @@ class RuntimeSnapshot:
     ingress: tuple[IngressSnapshot, ...]
     active_ingress: str | None
     host_resources: HostResourceObservation | None = None
+    compiler_policy: CompilerPolicySnapshot | None = None
 
 
 @guard_host_allocations
@@ -281,7 +283,7 @@ class ReferenceCompilerRuntime:
     recovery_phase = 'native-construction-causal-reference'
 
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
-                 host: HostResourceContract | None = None):
+                 host: HostResourceContract | None = None, policy: CompilerPolicy | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
         self._contract = contract
@@ -291,8 +293,15 @@ class ReferenceCompilerRuntime:
                 raise ContractError('registered online continuation required')
             online.validate(contract)
         self._online = online
+        if policy is not None:
+            if type(policy) is not CompilerPolicy:
+                raise ContractError('registered strategy data required; no policy callback or supplied execution state')
+            policy.validate(online)
+        self._policy_contract = policy
+        self._policy_state = None
+        self._policy_running = False
         self._chi = stable_hash(('ERC-1 construction recovery', self.recovery_phase,
-                                 ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id, contract, online, host))
+                                 ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id, contract, online, host, policy))
         self._runtime_id = secrets.token_hex(12)
         self._ledger = ResourceLedger(contract.limits)
         self._router = CostRouter(self._ledger, contract.work_roles)
@@ -340,6 +349,8 @@ class ReferenceCompilerRuntime:
         if initial.status != 'BUILT_REFERENCE':
             raise ContractError(f'initial registered reference realization failed: {initial.status}: {initial.reason}')
         self._deployed_id = initial.candidate_id
+        if policy is not None:
+            self._save_policy(tuple(CompilationState() for _ in policy.steps))
 
     @property
     def contract(self):
@@ -352,6 +363,105 @@ class ReferenceCompilerRuntime:
     @property
     def online_contract(self):
         return self._online
+
+    def _next_policy_state(self, stages):
+        generation = 0 if self._policy_state is None else self._policy_state.generation+1
+        return CompilerPolicyState(stages, generation, f'{self._runtime_id}:policy:{generation}')
+
+    def _save_policy(self, stages):
+        current = self._next_policy_state(stages)
+        packed = self._machine.realize(current.object_id, 'owned_compiler_policy', current, self._chi)
+        self._event_router.charge_work('information', {'work': packed.spec.residency['reference_payload_bytes']+1},
+                                      'retain-owned-compiler-policy')
+        self._allocate(self._data_owner, (packed,))
+        if self._policy_state is not None:
+            self._ledger.release(self._data_owner, self._policy_state.object_id)
+            del self._buffers[self._policy_state.object_id]
+        self._policy_state = current
+
+    def _update_policy(self, index, **values):
+        stages = self._policy_state.stages
+        self._save_policy(stages[:index]+(replace(stages[index], **values),)+stages[index+1:])
+
+    def _end_policy_evidence(self, index, reason, *, install_attempt=None):
+        stage = self._policy_state.stages[index]
+        for identity_id, path in ((stage.reference_identity, REFERENCE_PATH), (stage.float64_identity, FLOAT64_PATH)):
+            if identity_id is not None and self._persistence_identities[identity_id].status in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED'):
+                self._cancel_persistence(identity_id, path)
+        self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor, reason=reason, install_attempt=install_attempt)
+
+    def _advance_policy(self):
+        """One deterministic strategy stage at an owned post-commit boundary.
+
+        This executes no user callback and sees no future context/target.
+        Existing search/admission/install methods retain all their checks.
+        A failed policy-state write halts; its preceding action is never retried.
+        """
+        if self._cursor % self._online.learner.update_unit:
+            return
+        try:
+            self._event_router.charge_work('information', {'work': len(self._policy_contract.steps)+1}, 'compiler-policy-boundary')
+            index = next((i for i, stage in enumerate(self._policy_state.stages) if stage.status not in TERMINAL_STAGES), None)
+            if index is None:
+                return
+            step, stage = self._policy_contract.steps[index], self._policy_state.stages[index]
+            if self._cursor < step.after_cursor:
+                return
+            self._policy_running = True
+            if stage.status == 'WAITING':
+                self._update_policy(index, status='STARTING', started_cursor=self._cursor)
+                opened = self.start_reference_search(step.search_name)
+                self._update_policy(index, status='SEARCHING', search_id=opened.search_id)
+                if opened.search_id is None or self._searches[opened.search_id].status != 'RUNNING':
+                    self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor, reason=opened.reason)
+                    return
+                selected = self.advance_reference_search(opened.search_id, transitions=step.search_transitions)
+                if selected.status != 'REFERENCE_CLASS_EXHAUSTED':
+                    # An exhausted policy allowance is not grammar exhaustion.
+                    # End the actual owned frontier; no hidden caller can resume it.
+                    if self._searches[opened.search_id].status == 'RUNNING':
+                        self.cancel_reference_search(opened.search_id)
+                    self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor,
+                                        candidate_id=selected.best_candidate_id, reason='native selection remains unresolved within the registered search allowance')
+                    return
+                values = dict(candidate_id=selected.best_candidate_id, proof_id=selected.proof_id)
+                if selected.best_candidate_id == self._deployed_id:
+                    self._update_policy(index, status='BASELINE_SELECTED', ended_cursor=self._cursor, **values)
+                    return
+                self._update_policy(index, status='ADMITTING_REFERENCE', **values)
+                reference = self.admit_reference_persistence(selected.best_candidate_id, step.reference_rule)
+                self._update_policy(index, status='ADMITTING_FLOAT64', reference_identity=reference.identity_id)
+                floating = self.admit_float64_persistence(selected.best_candidate_id, step.float64_rule)
+                self._update_policy(index, status='EVIDENCE', float64_identity=floating.identity_id)
+                ids = reference.identity_id, floating.identity_id
+                if any(key is None or self._persistence_identities[key].status != 'ACTIVE' for key in ids):
+                    self._end_policy_evidence(index, 'both fresh path admissions were not established; allocations stay spent')
+                return
+            if stage.status != 'EVIDENCE':
+                raise ContractError('incomplete strategy action cannot resume as a new attempt')
+            ids = stage.reference_identity, stage.float64_identity
+            if any(self._persistence_identities[key].status not in ('ACTIVE', 'REFERENCE_CROSSED', 'FLOAT64_CROSSED') for key in ids):
+                self._end_policy_evidence(index, 'paired evidence ended without both current crossings')
+                return
+            if self.paired_persistence_result(*ids).status != 'PAIRED_CPU_CROSSED':
+                return
+            self._update_policy(index, status='INSTALLING')
+            result = self.install_cpu(stage.candidate_id, proposal_proof_id=stage.proof_id,
+                                      reference_identity=ids[0], float64_identity=ids[1])
+            if result.status != 'INSTALLED_CPU':
+                self._end_policy_evidence(index, result.reason, install_attempt=result.attempt_id)
+            # Success publishes the completed policy record inside the CPU
+            # root/lease transaction. There is no allocating bookkeeping here.
+        except HostExecutionUnresolved:
+            raise
+        except MemoryError:
+            raise
+        except Exception as exc:
+            self._halt('compiler-policy', exc)
+            if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved)):
+                raise
+        finally:
+            self._policy_running = False
 
     def _allocate(self, owner: str, objects: tuple[PackedObject | PlannedObject, ...]):
         for obj in objects:
@@ -444,6 +554,8 @@ class ReferenceCompilerRuntime:
                 relation = check_state(reference, result, self._online.float64, bit_limit=arith.bit_limit)
             if arith.operations != allowance:
                 raise ContractError('binary64 executor did not complete its registered scalar operation schedule')
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -456,6 +568,8 @@ class ReferenceCompilerRuntime:
         packed = self._machine.realize(label, 'executed_float64_phase', trace, self._chi)
         try:
             self._allocate(self._data_owner, (packed,))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as retain_error:
@@ -556,6 +670,8 @@ class ReferenceCompilerRuntime:
             self._release_owner(owner)
             self._attempts.append((candidate, 'REJECTED_ADMISSIBILITY', str(exc)))
             return ConstructionResult('REJECTED_ADMISSIBILITY', None, str(exc))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -760,6 +876,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             return replace(initial, learner=attached, range_evidence=evidence, range_safe=True,
                            object_ids=(current_ids[0], attached_object.spec.object_id, current_ids[2]), profile_id=profile.profile_id,
                            float64=attached_float64)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -816,6 +934,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             next_root.update(_ingress_identities=identities, _active_ingress=ingress_id,
                              _event_phase='receiving-context')
             result = IngressResult('RECEIVING', ingress_id, observation_id, self._cursor, 0, spec.chunk_bytes)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -878,6 +998,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             if result.status == 'PREDICTED_REFERENCE':
                 self._active_ingress = None
             return result
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -958,6 +1080,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._event_phase = 'awaiting-target'
             return PredictionResult('PREDICTED_REFERENCE', observation_id, self._cursor,
                                     tuple((candidate, pred.probabilities) for candidate, pred in predictions), 'all active reference predictions precede the target')
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1047,6 +1171,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._event_phase = 'idle'
             return ObservationResult('OBSERVED_REFERENCE', record.observation_id, cursor, self._cursor,
                                      do_commit, 'continuous exact ordinary event; no paired AMP/install authority')
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1084,6 +1210,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             result = evaluate_query(spec, records, bit_limit=self._contract.reference_integer_bits)
         except (ContractError, ResourceExceeded) as exc:
             result = replace(result, reason=str(exc))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1094,6 +1222,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         try:
             retained = self._machine.realize(prefix, 'query_transcript', query_record, self._chi)
             self._allocate(self._data_owner, (retained,))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1123,6 +1253,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         stopped = replace(identity, status='UNRESOLVED', reason=reason)
         try:
             return self._save_persistence(stopped)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1276,6 +1408,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 raise ArithmeticUnresolved('registered gain bound is not proved over the full native range class')
             identity = self._save_persistence(replace(identity, ratio_bound=ratio_bound, status='ACTIVE',
                 reason=f'future {score_path} epochs admitted under the retained external stochastic-law assumption'))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1366,6 +1500,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 elif finished and epochs == identity.rule.max_epochs:
                     next_identity = replace(next_identity, status='UNRESOLVED', reason='finite persistence horizon ended without crossing; no rejection')
                 self._save_persistence(next_identity)
+            except HostExecutionUnresolved:
+                raise
             except MemoryError:
                 raise
             except Exception as exc:
@@ -1463,6 +1599,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         stopped = replace(session, status=status, expected_revision=self._revision, reason=f'{type(error).__name__}: {error}')
         try:
             stopped = self._save_search(stopped)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as retain_error:
@@ -1521,6 +1659,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             baseline = self._score_reference(base, spec, f'{search_id}:baseline')
             session = self._save_search(replace(session, base_likelihood=baseline, best_likelihood=baseline))
             return self._search_result(session)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1545,6 +1685,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 status = 'COMPARED_REFERENCE'
             except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved) as exc:
                 status, reason = 'UNRESOLVED', str(exc)
+            except HostExecutionUnresolved:
+                raise
             except MemoryError:
                 raise
             except Exception as exc:
@@ -1683,6 +1825,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     session = self._finish_reference_search(session)
                     break
             return self._search_result(session)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1709,6 +1853,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         try:
             self._save_search(replace(session, status='CANCELLED', proof_id=None,
                                       reason='search closed; owned history, constructed winner and spent work retained'))
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1764,6 +1910,7 @@ after all fallible construction, checks and physical preparation complete.
         # cannot silently acquire this version's quiescence/frame proof.
         root_fields = {
             '_contract', '_online', '_host', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
+            '_policy_contract', '_policy_state', '_policy_running',
             '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
             '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
             '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
@@ -1876,6 +2023,21 @@ after all fallible construction, checks and physical preparation complete.
             completed = replace(attempt, status='INSTALLED_CPU', reason='owned complete CPU root and buffer leases published at the same cursor')
             receipt = CpuInstallReceipt(completed, revision_before, self._revision, before, tuple(candidates.values()),
                 tuple(moves), tuple(releases), close, tuple(invalidated), tuple(stopped), receipt_id)
+            policy_state = self._policy_state
+            if self._policy_contract is not None:
+                index = next((i for i, stage in enumerate(policy_state.stages) if stage.status not in TERMINAL_STAGES), None)
+                stage = None if index is None else policy_state.stages[index]
+                if (not self._policy_running or stage is None or stage.status != 'INSTALLING'
+                        or (stage.candidate_id, stage.proof_id, stage.reference_identity, stage.float64_identity)
+                        != (candidate_id, proposal_proof_id, reference_identity, float64_identity)):
+                    raise ContractError('installation does not complete the owned current policy action')
+                stages = policy_state.stages
+                policy_state = self._next_policy_state(stages[:index]+(replace(stage, status='INSTALLED_CPU',
+                    ended_cursor=self._cursor, install_attempt=attempt_id),)+stages[index+1:])
+                self._allocate(stage_owner, (self._machine.realize(policy_state.object_id, 'owned_compiler_policy', policy_state, self._chi),))
+                moves.append((stage_owner, self._data_owner, policy_state.object_id, 1))
+                releases.append((self._data_owner, self._policy_state.object_id, 1))
+                receipt = replace(receipt, ownership_moves=tuple(moves), releases=tuple(releases))
             self._allocate(stage_owner, (self._machine.realize(receipt_id, 'prepared_cpu_install_receipt', receipt, self._chi),))
             ledger = self._ledger.prepare_transfer(tuple(moves), tuple(releases), close)
             live = ledger.snapshot()['objects']
@@ -1897,7 +2059,9 @@ after all fallible construction, checks and physical preparation complete.
                 _event_router=CostRouter(ledger, self._event_router.snapshot()), _buffers=buffers,
                 _candidates=candidates, _deployed_id=candidate_id, _persistence_identities=persistent,
                 _searches=searches, _install_attempts=self._install_attempts[:-1]+[completed],
-                _install_receipts=self._install_receipts+[receipt], _event_phase='idle')
+                _install_receipts=self._install_receipts+[receipt], _event_phase='idle', _policy_state=policy_state)
+        except HostExecutionUnresolved:
+            raise
         except MemoryError:
             raise
         except Exception as exc:
@@ -1907,6 +2071,8 @@ after all fallible construction, checks and physical preparation complete.
             for owner in registered_owners:
                 try:
                     self._release_owner(owner)
+                except HostExecutionUnresolved:
+                    raise
                 except MemoryError:
                     raise
                 except Exception as cleanup:
@@ -1941,4 +2107,6 @@ after all fallible construction, checks and physical preparation complete.
                                self._next_install, tuple(self._install_attempts), tuple(self._install_receipts),
                                tuple(IngressSnapshot(identity, *read_control(self._buffers[identity.control_id], self._online.data.ingress))
                                      for identity in self._ingress_identities.values()), self._active_ingress,
-                               None if self._host is None else self._host.observe())
+                               None if self._host is None else self._host.observe(),
+                               None if self._policy_contract is None else CompilerPolicySnapshot(
+                                   self._policy_contract, self._policy_state, self._policy_running))
