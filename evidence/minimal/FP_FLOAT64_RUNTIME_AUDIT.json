@@ -33,7 +33,10 @@
     "internal_backend_contract_failure_not_mislabeled_admissibility": true,
     "valid_looking_endpoint_without_registered_operations_rejected": true,
     "combined_backend_and_evidence_allocation_failure_preserves_both_causes": true,
-    "failed_evidence_allocation_cannot_leave_unowned_checked_phase": true
+    "failed_evidence_allocation_cannot_leave_unowned_checked_phase": true,
+    "same_manifest_observe_evidence_cap": 32114,
+    "same_manifest_constructor_evidence_cap": 11177,
+    "same_manifest_before_constructor_evidence_cap": 9785
   },
   "crossing": {
     "finite_trajectory_failure_revokes_current_reference_crossing": true,

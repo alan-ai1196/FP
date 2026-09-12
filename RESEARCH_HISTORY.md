@@ -2035,3 +2035,11 @@ executed root's budget, and assert the intended first finite-observe or
 constructor-evidence failure itself. They now pass at actual ingress work
 cap 5,310 and byte caps 32,114/11,177/9,785. This corrects audit coverage,
 not Runtime semantics. A fresh complete release run is still required.
+
+The next complete run reached a further ingress assertion using the same
+obsolete cross-budget initial-work assumption, this time for exhaustion
+immediately after admitted bytes. Admission refusal and post-admission
+exhaustion now share calibration at offsets minus one and zero; their actual
+caps are 5,310 and 5,311. The **entire** ingress and binary64 Runtime audit
+batteries then passed, including all later failure/filtration checks, and
+their small current evidence files were refreshed before another integration.

@@ -74,6 +74,8 @@ Observed boundaries are ingress work 5,310, ordinary binary64 evidence
 residency 9,785 bytes. No executed root's budget is edited and no Runtime
 code or semantics changed. These are measured audit boundaries, not universal
 constants or free resource calibrations inside an FP experiment.
+The same correction covers exact work exhaustion after admitted ingress,
+at cap 5,311; the full ingress and binary64 batteries pass independently.
 
 `scripts/audit_reference_release.py --write` requires committed source and
 clones that actual Git revision without hardlinks. It imports all current

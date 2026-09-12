@@ -165,9 +165,9 @@ def chunking_audit():
             'one_chunk_convenience_has_identical_owned_execution': True}
 
 
-def admission_audit():
+def ingress_work_boundary(offset):
     # Budget encodings are part of the paid immutable manifest. Calibrate
-    # with newly registered roots until this very cap is one work unit short;
+    # with newly registered roots until this cap has the requested offset;
     # measuring a different-budget root no longer locates the boundary.
     work_cap = 10_000_000
     for _ in range(16):
@@ -175,12 +175,16 @@ def admission_audit():
         denied = fixture(cfg=cfg)
         base_work = denied.snapshot().resources['spent']['compiler']['work']
         prepaid = denied.online_contract.data.ingress.work(2)
-        boundary = base_work+prepaid-1
+        boundary = base_work+prepaid+offset
         if work_cap == boundary:
-            break
+            return denied, base_work, prepaid, work_cap
         work_cap = boundary
     else:
         raise AssertionError('immutable ingress work boundary did not stabilize')
+
+
+def admission_audit():
+    denied, base_work, prepaid, work_cap = ingress_work_boundary(-1)
     before = denied.snapshot()
     for _ in range(64):
         offer = denied.begin_context('observation-0')
@@ -248,15 +252,11 @@ def failure_audit():
     assert owned(rt) == failed
     # Even when no ordinary prediction work remains after admission, the
     # terminal header and all received bytes already have physical storage.
-    probe = fixture()
-    base_work = probe.snapshot().resources['spent']['compiler']['work']
-    prepaid = probe.online_contract.data.ingress.work(2)
-    cfg = replace(contract(source_domain=False), limits=limits(work_cap=base_work+prepaid))
-    exhausted = fixture(cfg=cfg)
+    exhausted, base_work, prepaid, work_cap = ingress_work_boundary(0)
     assert deliver_context(exhausted, 'observation-0', (0, 0)).status == 'UNRESOLVED'
     after = owned(exhausted)
     assert after.pending is None and after.ingress[-1].status == 'UNRESOLVED'
-    assert after.resources['spent']['compiler']['work'] == base_work+prepaid
+    assert after.resources['spent']['compiler']['work'] == base_work+prepaid == work_cap
     assert dict(after.buffers)[after.ingress[-1].identity.body_id][:9] == encode_context((0, 0))
     rows = []
     for exponent in (256, 1024, 4096):
@@ -299,6 +299,7 @@ def failure_audit():
         assert after.ingress[-1].status == 'EXECUTION_FAILED'
     return {'invalid_chunk_prefixes_rejected_without_mutation': len(bad), 'raw_value_bypass_rejected': True,
             'terminal_bytes_and_status_survive_post_admission_work_exhaustion': True,
+            'actual_post_admission_exhausted_work_cap': work_cap,
             'numeric_guard_witnesses': rows, 'capacity_prefix_bytes_retained_without_unread_suffix': 8,
             'invalid_domain_or_frame_retains_terminal_prefix': True,
             'internal_contract_failure_is_execution_failed_not_invalid_input': True,

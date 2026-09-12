@@ -21,6 +21,9 @@
   "admission": {
     "unchanged_unfunded_denials": 64,
     "unallocatable_registered_capacity_bytes": 1000000000000,
+    "actual_immutable_initial_work": 5119,
+    "prepaid_ingress_work": 192,
+    "calibrated_work_cap": 5310,
     "residency_preflight_precedes_window_creation": true,
     "failed_empty_preparation_keeps_paid_work_peak_and_retired_ids": true,
     "retry_publishes_fresh_identity_without_dangling_old_window": true
@@ -29,6 +32,7 @@
     "invalid_chunk_prefixes_rejected_without_mutation": 6,
     "raw_value_bypass_rejected": true,
     "terminal_bytes_and_status_survive_post_admission_work_exhaustion": true,
+    "actual_post_admission_exhausted_work_cap": 5311,
     "numeric_guard_witnesses": [
       {
         "semantic_denominator_bits": 257,
