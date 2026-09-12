@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "scope": "owned native identity and admitted streaming payload materialization",
+  "identity": {
+    "source_commit": "532d713",
+    "different_source_codepoint_lengths": [
+      1,
+      2
+    ],
+    "historical_different_programs_had_identical_ids_and_packed_bytes": true,
+    "historical_deployed_probability_after_candidate_construction": "1/2",
+    "required_and_current_deployed_probability": "2/3",
+    "current_candidate_probability": "1/2",
+    "forced_address_collision_is_unresolved_without_overwriting_owned_code": true,
+    "complete_unicode_native_class_programs": 35,
+    "complete_class_best_likelihood": "4/9",
+    "forced_collision_unresolved_class_members": 34,
+    "address_collision_blocks_complete_class_authority": true
+  },
+  "encoding": {
+    "independent_packed_tree_checks": 235,
+    "independent_identity_checks": 240,
+    "unchanged_ASCII_identity_cases": 233,
+    "all_single_BMP_codepoints": 65536,
+    "surrogate_pair_vs_astral_boundary_classes": 3072,
+    "typed_numeric_signed_zero_and_chunk_boundaries_preserved": true
+  },
+  "planned": {
+    "plans_have_no_buffer_or_lease_authority": true,
+    "false_extent_rejected_before_mutation": true,
+    "actual_capacity_refusal_precedes_output_materialization": true,
+    "admitted_partial_encoding_failure_keeps_cost_and_peak_without_publishing_candidate": true
+  },
+  "workspace": {
+    "source_commit": "532d713",
+    "fixed_declared_edge_cap": 100000,
+    "historical": [
+      {
+        "edges": 1000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 130707,
+        "new_traced_peak": 750098,
+        "paid_construction_work": 1008
+      },
+      {
+        "edges": 10000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 130803,
+        "new_traced_peak": 6498562,
+        "paid_construction_work": 10008
+      },
+      {
+        "edges": 100000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 130779,
+        "new_traced_peak": 61958317,
+        "paid_construction_work": 100008
+      }
+    ],
+    "current": [
+      {
+        "edges": 1000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 126827,
+        "new_traced_peak": 134444,
+        "paid_construction_work": 1008
+      },
+      {
+        "edges": 10000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 126827,
+        "new_traced_peak": 134444,
+        "paid_construction_work": 10008
+      },
+      {
+        "edges": 100000,
+        "registered_payload_cap": 8192,
+        "recorded_packed_peak": 1823,
+        "new_traced_current": 126827,
+        "new_traced_peak": 134444,
+        "paid_construction_work": 100008
+      }
+    ],
+    "scope": "traced newly allocated Python blocks; excludes preexisting producer/import/bootstrap objects, untraced allocations and tracing metadata; not total host memory",
+    "measurement_reference": "https://docs.python.org/3.12/library/tracemalloc.html#tracemalloc.get_traced_memory"
+  },
+  "not_closed": [
+    "all host metadata/arithmetic/allocator workspace",
+    "complete ERC-1 and Runtime release",
+    "actual target AMP and GPU science"
+  ]
+}

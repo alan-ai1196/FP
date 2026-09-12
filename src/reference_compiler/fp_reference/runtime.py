@@ -13,11 +13,12 @@ import secrets
 import sys
 from typing import Mapping
 
-from .core import ContractError, freeze_data, natural, stable_hash
+from .core import ContractError, IdentityUnresolved, freeze_data, natural, stable_hash
 from .data_usage import DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
-from .machine import PackedObject, ReferenceMachineModel
+from .machine import PackedObject, PlannedObject, ReferenceMachineModel
+from .encoding import packed_size, write_packed
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
@@ -346,13 +347,24 @@ class ReferenceCompilerRuntime:
     def online_contract(self):
         return self._online
 
-    def _allocate(self, owner: str, objects: tuple[PackedObject, ...]):
-        if any(type(obj) is not PackedObject or type(obj.payload) is not bytes or obj.spec.residency != {
-                'reference_payload_bytes': len(obj.payload), 'physical_objects': 1} for obj in objects):
-            raise ContractError('registered packed-object size disagrees with its actual payload')
+    def _allocate(self, owner: str, objects: tuple[PackedObject | PlannedObject, ...]):
+        for obj in objects:
+            if type(obj) is PlannedObject:
+                size = packed_size(obj.value)
+            elif type(obj) is PackedObject and type(obj.payload) is bytes:
+                size = len(obj.payload)
+            else:
+                raise ContractError('registered materialization plan or raw reserved payload required')
+            if obj.spec.residency != {'reference_payload_bytes': size, 'physical_objects': 1}:
+                raise ContractError('registered packed-object size disagrees with its actual payload')
         self._ledger.allocate(owner, tuple(obj.spec for obj in objects))
-        self._buffers.update((obj.spec.object_id, bytearray(obj.payload) if obj.spec.kind in ('reserved_target', 'reserved_context', 'ingress_control') else obj.payload)
-                             for obj in objects)
+        for obj in objects:
+            if type(obj) is PlannedObject:
+                output = bytearray(obj.spec.residency['reference_payload_bytes'])
+                self._buffers[obj.spec.object_id] = output
+                write_packed(obj.value, output)
+            else:
+                self._buffers[obj.spec.object_id] = bytearray(obj.payload)
 
     def _release_owner(self, owner: str):
         self._ledger.close_owner(owner)
@@ -489,6 +501,8 @@ class ReferenceCompilerRuntime:
             if any(counts[key] > cap for key, cap in self._contract.graph_limits.items()):
                 raise ContractError('candidate exceeds a registered P/S/edge/slot budget')
             program_id = program.program_id
+            if program_id in self._programs and self._programs[program_id] != program:
+                raise IdentityUnresolved('content address collision cannot identify distinct native programs')
             delayed = reset_delayed(self._contract.semantics)
             zero = (F(0),)*program.slot_count
             code = self._machine.realize(f'{candidate}:code', 'native_program', program, program_id)
@@ -523,7 +537,7 @@ class ReferenceCompilerRuntime:
                       'native construction and fixed-value range bound checked') if safe else 'conservative full-domain range bound does not establish feasibility'
             self._attempts.append((candidate, status, reason))
             return ConstructionResult(status, candidate, reason)
-        except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved) as exc:
+        except (ResourceExceeded, ArithmeticUnresolved, ProfileUnresolved, IdentityUnresolved) as exc:
             self._release_owner(owner)
             self._attempts.append((candidate, 'UNRESOLVED', str(exc)))
             return ConstructionResult('UNRESOLVED', None, str(exc))
@@ -955,12 +969,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         try:
             # An in-place write to the already paid, fixed-size owned slot.
             filled = self._machine.realize(pending.target_object_id, 'reserved_target', self._target_slot(target), self._chi)
-            if len(filled.payload) != len(self._buffers[pending.target_object_id]):
+            if filled.spec.residency['reference_payload_bytes'] != len(self._buffers[pending.target_object_id]):
                 raise ContractError('target ingress changed its reserved physical extent')
             slot = self._buffers[pending.target_object_id]
             if type(slot) is not bytearray:
                 raise ContractError('target ingress lacks its owned mutable reserved buffer')
-            slot[:] = filled.payload
+            write_packed(filled.value, slot)
             for candidate, prediction in pending.predictions:
                 state = self._candidates[candidate]
                 program = self._programs[state.program_id]

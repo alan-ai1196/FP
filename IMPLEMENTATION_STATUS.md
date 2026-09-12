@@ -471,6 +471,42 @@ transient copies, arithmetic scratch, general exception/metadata storage,
 complete ERC-1/gate enforcement and target AMP remain open. This is no
 concurrent/crash-safe transport, full physical or Runtime freeze claim.
 
+### Injective source identity and planned encoding (2026-09-12)
+
+The v3 typed JSON encoder was not injective on supported Python strings:
+one astral character and two explicit surrogate code units collapsed before
+SHA-256. Both were legal, distinct causal source names. The original public
+Runtime at `532d713` constructs a second program that silently replaces the
+deployed program's registry entry; its next probability becomes 1/2 instead
+of 2/3, with no installation or learner step. This is an exact implementation
+counterexample, not a Foundation R4 failure or cryptographic hash attack.
+
+Current machine `packed-reference-payload-v4` preserves code points with
+streaming typed UTF-8/surrogatepass bytes. ASCII encodings stay compatible;
+non-ASCII artifact IDs change. Reusing an owned program address additionally
+requires complete validated Program equality. A forced collision gives
+UNRESOLVED and cannot overwrite code or masquerade as inadmissibility.
+
+All packed payload requests now prepare exact extents without a duplicate
+tagged object tree. `PlannedObject` has a value and size, no buffer or lease;
+only Runtime's checked allocation batch permits actual in-place writing.
+The target slot remains prepaid. All buffers are private bytearrays and
+public snapshots remain byte copies; CPU install retains the same objects.
+
+`scripts/audit_owned_encoding.py` executes the old/new causal-name witness,
+235 packed-tree and 240 identity comparisons, all 65,536 BMP code points,
+3,072 surrogate/astral boundary classes and the paid allocation failure path.
+Under a fixed 8 KiB payload cap and 100,000-edge grammar, old newly traced
+Python allocation peaks grow to roughly 62 MB before denial; the revised
+three edge-count cases stay around 0.134 MB. The packed peak stays 1,823 bytes.
+Traced allocations are a diagnostic, not total heap, a portable constant,
+or evidence that the 8 KiB cap covers the physical host.
+
+Read `theory/proofs/OWNED_ENCODING.md`. Mapping-key sorting, scalar text,
+interpreter/free-list state, general Runtime metadata and arithmetic scratch
+still need complete accounting. ERC-1/gate registration and actual AMP remain
+open; full Runtime freeze or GPU science does not follow from this result.
+
 ## 4. Required closure tests
 
 ### Current recovery audit (2026-09-06)

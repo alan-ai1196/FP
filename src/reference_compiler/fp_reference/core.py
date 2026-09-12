@@ -6,11 +6,10 @@ are trusted code, not a sandbox; their IDs name fixed, deterministic semantics.
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass, fields, is_dataclass
+from dataclasses import dataclass
 from enum import Enum
 from fractions import Fraction
 import hashlib
-import json
 import math
 from types import MappingProxyType
 from typing import Any
@@ -25,6 +24,11 @@ class BridgeError(ContractError):
 
 
 class QueryError(ContractError):
+    pass
+
+
+class IdentityUnresolved(ContractError):
+    """A physical content address cannot distinguish required native code."""
     pass
 
 
@@ -46,38 +50,12 @@ def natural(value: Any, name: str, *, positive: bool = False) -> int:
     return value
 
 
-def _canonical(value: Any) -> Any:
-    """Injective typed encoding on the supported *data* domain, before hashing.
-
-    No repr(), object addresses, custom serialization hooks, NaN, or infinity.
-    Float and integer coordinates are distinct physical representations.
-    """
-    if isinstance(value, Enum):
-        return ['enum', type(value).__module__, type(value).__qualname__, _canonical(value.value)]
-    if value is None or type(value) in (bool, str, int):
-        return [type(value).__name__, value]
-    if type(value) is float:
-        require_finite(value, 'state coordinate')
-        return ['float', value.hex()]
-    if type(value) is Fraction:
-        return ['rational', value.numerator, value.denominator]
-    if type(value) is bytes:
-        return ['bytes', value.hex()]
-    if type(value) in (tuple, list):
-        return [type(value).__name__, [_canonical(x) for x in value]]
-    if isinstance(value, Mapping):
-        pairs = [(_canonical(k), _canonical(v)) for k, v in value.items()]
-        pairs.sort(key=lambda p: json.dumps(p[0], ensure_ascii=True))
-        return ['mapping', pairs]
-    if is_dataclass(value) and not isinstance(value, type):
-        return ['dataclass', type(value).__module__, type(value).__qualname__,
-                [(f.name, _canonical(getattr(value, f.name))) for f in fields(value)]]
-    raise ContractError(f'unsupported complete-state coordinate type: {type(value).__name__}')
-
-
 def stable_hash(value: Any) -> str:
-    encoded = json.dumps(_canonical(value), ensure_ascii=True, separators=(',', ':'))
-    return hashlib.sha256(encoded.encode('ascii')).hexdigest()
+    from .encoding import fragments
+    digest = hashlib.sha256()
+    for fragment in fragments(value):
+        digest.update(fragment.encode('utf-8', 'surrogatepass'))
+    return digest.hexdigest()
 
 
 def freeze_data(value: Any) -> Any:
@@ -87,7 +65,8 @@ def freeze_data(value: Any) -> Any:
     if type(value) in (list, tuple):
         return tuple(freeze_data(x) for x in value)
     if value is None or type(value) in (bool, str, int, float, Fraction, bytes):
-        _canonical(value)
+        if type(value) is float:
+            require_finite(value, 'state coordinate')
         return value
     if isinstance(value, Enum):
         return value

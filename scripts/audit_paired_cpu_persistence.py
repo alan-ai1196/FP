@@ -265,7 +265,7 @@ def failures_audit():
     allocate = rt._allocate
     failed_writes = []
     def fail_crossing(owner, objects):
-        if any(obj.spec.kind == 'binary64_persistence_state' and b'FLOAT64_CROSSED' in obj.payload for obj in objects):
+        if any(obj.spec.kind == 'binary64_persistence_state' and obj.value.status == 'FLOAT64_CROSSED' for obj in objects):
             failed_writes.append(owner)
             raise ResourceExceeded('injected finite crossing state allocation failure')
         return allocate(owner, objects)

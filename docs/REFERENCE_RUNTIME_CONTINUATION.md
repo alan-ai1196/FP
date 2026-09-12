@@ -363,7 +363,7 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
-The control rule introduced in v2 and retained by v3 charges one fixed unit for each
+The control rule introduced in v2 and retained by v4 charges one fixed unit for each
 public Compiler mutation, using the already immutable construction,
 information or install work role. If that debit cannot be paid, no owned
 attempt, revision, query, frontier, evidence or resource history changes.
@@ -409,6 +409,31 @@ and incomplete or over-precision frames keep their exact paid prefixes.
 Equal byte prefixes have identical recorded states under all legal chunkings
 in the fixed serialized machine. Neither result measures every host object;
 a metadata multiplier or manifest-only change cannot establish that claim.
+
+## Source identity and admitted encoding
+
+The pre-v4 JSON encoding conflated an astral source-name character with two
+explicit surrogate code units. Both were distinct legal Python source names.
+The original Runtime at `532d713` consequently let candidate construction
+overwrite the deployed program registry entry, changing its next probability
+from required 2/3 to 1/2 without installation. The current typed stream uses
+UTF-8/surrogatepass and preserves the exact code points. Reusing an owned
+address also requires complete validated Program equality, with UNRESOLVED
+on a collision. This does not identify programs merely by current forecasts.
+
+The same encoding now has an exact size pass. `realize` returns a passive
+value/extent plan; only the owning Runtime's allocation check precedes actual
+in-place output writing. Identity hashing does not build a second tagged
+Python tree. The reserved target slot is written through the same encoder.
+ASCII artifacts retain their bytes, while non-ASCII encodings intentionally
+change. Stored buffers are private bytearrays and snapshots return byte copies.
+
+Read [`OWNED_ENCODING.md`](../theory/proofs/OWNED_ENCODING.md). The old/new
+100,000-edge construction audit reduces a roughly 62 MB newly traced Python
+peak to roughly 0.134 MB before the same 8 KiB packed-cap refusal. This is a
+measured removal of encoding workspace growth, not total-heap enforcement.
+Mapping keys, scalar text, interpreter metadata and arithmetic scratch still
+require the complete physical contract before Runtime freeze or target AMP.
 
 ## Evidence and remaining boundary
 

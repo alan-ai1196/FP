@@ -92,9 +92,19 @@ possible. All 208 chunkings of a small frame have identical recorded
 states at equal prefixes. Read `theory/proofs/OWNED_CONTEXT_INGRESS.md`;
 the old raw-value counterexample remains executable from Git.
 
-Neither correction supplies complete host accounting. Python metadata and
-diagnostic records, transient byte copies, detached ledger maps, gcd/rational
-scratch and allocator state still lie partly outside packed payload caps.
+The follow-up encoding audit also corrected a real identity failure: old
+JSON conflated a legal astral source name with explicit surrogate code units,
+allowing candidate construction to change the deployed program without
+installation. Machine v4 preserves these code points and requires full code
+equality before address reuse. Its size plans and streaming writer also remove
+the expanded encoding-tree peak before capacity refusal. The old 100,000-edge
+case traces about 62 MB despite an 8 KiB packed cap; the revised trace is
+about 0.134 MB. Read `theory/proofs/OWNED_ENCODING.md` for exact scopes.
+
+These corrections do not supply complete host accounting. Python metadata
+and diagnostic records, mapping-key/scalar encoding workspace, transient byte
+copies, detached ledger maps, gcd/rational scratch and allocator state still
+lie partly outside packed payload caps.
 The next resource closure must state and enforce their actual machine model,
 including temporary coexistence and failed prefixes, rather than promote
 the finite request/byte bounds into a full heap theorem. Complete ERC-1

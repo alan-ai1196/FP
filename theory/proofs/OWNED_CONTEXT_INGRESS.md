@@ -6,6 +6,11 @@ actual AMP and RTX 3090 science remain HOLD. This closes the raw rational
 retention counterexample at `5055f3e` within the declared packed machine.
 It does not establish a total CPython heap or physical execution bound.
 
+The protocol introduced in machine v3 continues in v4. Its identity/payload
+encoding and allocation preparation now use the correction in
+[`OWNED_ENCODING.md`](OWNED_ENCODING.md); the receive-prefix invariants and
+exact rational wire grammar below are unchanged.
+
 The obligations come from [FP_THEORY.md II, XII, XVIII](../../FP_THEORY.md)
 and the existing [ERC-1 information/resource contract](../../EXPERIMENT_RESOURCE_CONTRACT.md).
 The correction changes the implemented information transport and its cost,

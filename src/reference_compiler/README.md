@@ -79,7 +79,7 @@ an admitted failure still retains its full recorded costs/history. Read
 and run `scripts/audit_control_admission.py`. It also replays the historical
 raw-ingress failure from `5055f3e`.
 
-Current machine `packed-reference-payload-v3` requires bounded exact byte
+The ingress rule introduced in machine v3 requires bounded exact byte
 ingress. `DataContract.ingress=IngressContract(capacity=4096, chunk_bytes=64)`
 registers a window before execution. `begin_context(observation_id)` prepays
 work, body, fixed terminal status and identity, and seals learner/persistence
@@ -96,6 +96,24 @@ leave execution UNRESOLVED. Read
 [`OWNED_CONTEXT_INGRESS.md`](../../theory/proofs/OWNED_CONTEXT_INGRESS.md)
 and run `scripts/audit_context_ingress.py`. Complete host metadata, temporary
 copies/arithmetic scratch and general diagnostic accounting remain open.
+
+Current machine `packed-reference-payload-v4` additionally preserves every
+Python source-name code point in its typed UTF-8/surrogatepass encoding.
+The old ASCII-escaped JSON could give different legal source programs the
+same ID and let candidate construction change the deployed program without
+installation. An owned address now also requires complete Program equality;
+collisions return UNRESOLVED before code can be replaced.
+
+`machine.realize` now creates a `PlannedObject` with exact extent and value,
+not a buffer or lease. Runtime checks the complete allocation batch before
+writing directly to the owned buffer. Identity hashes stream the same typed
+coordinates without a duplicate tagged tree. ASCII bytes stay compatible;
+non-ASCII encodings change. All buffers are private bytearrays, with public
+snapshot byte copies and the same object-preserving CPU install contract.
+Read [`OWNED_ENCODING.md`](../../theory/proofs/OWNED_ENCODING.md) and run
+`scripts/audit_owned_encoding.py` for the actual historical alias failure,
+code-point/size checks and old/new workspace measurements. They do not close
+full host allocation or authorize a complete Runtime release.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and

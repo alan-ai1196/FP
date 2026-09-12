@@ -6,40 +6,19 @@ target-device machine/AMP integration remains a separate release obligation.
 Work debits are conservative reference operation charges, not measured CPU or
 GPU time and not lower certificates on physical cost. Exhausting those charges
 is therefore UNRESOLVED for any broader physical-resource claim.
+
+realize() prepares an exact typed UTF-8/surrogatepass extent and value. Only
+Runtime admits its lease and materializes the buffer; a plan is not residency.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass, fields, is_dataclass
+from dataclasses import dataclass
 from fractions import Fraction as F
-import json
-from typing import Mapping
 
 from .core import ContractError
 from .program import Program, SemanticRules, rational
 from .resources import ObjectSpec
-
-
-def _data(value):
-    if type(value) is F:
-        return ['rational_hex', format(value.numerator, 'x'), format(value.denominator, 'x')]
-    if type(value) is int:
-        return ['integer_hex', format(value, 'x')]
-    if value is None or type(value) in (str, bool):
-        return [type(value).__name__, value]
-    if type(value) in (tuple, list):
-        return [type(value).__name__, [_data(x) for x in value]]
-    if isinstance(value, Mapping):
-        pairs = [[_data(k), _data(v)] for k, v in value.items()]
-        pairs.sort(key=lambda pair: json.dumps(pair[0], ensure_ascii=True, separators=(',', ':')))
-        return ['mapping', pairs]
-    if is_dataclass(value) and not isinstance(value, type):
-        return ['dataclass', type(value).__module__, type(value).__qualname__,
-                [[field.name, _data(getattr(value, field.name))] for field in fields(value)]]
-    raise ContractError('unsupported packed reference payload')
-
-
-def pack(value) -> bytes:
-    return json.dumps(_data(value), ensure_ascii=True, separators=(',', ':')).encode('ascii')
+from .encoding import pack, packed_size
 
 
 @dataclass(frozen=True)
@@ -48,8 +27,15 @@ class PackedObject:
     payload: bytes
 
 
+@dataclass(frozen=True)
+class PlannedObject:
+    """A typed extent/value plan, not a created buffer or a paid lease."""
+    spec: ObjectSpec
+    value: object
+
+
 class ReferenceMachineModel:
-    model_id = 'packed-reference-payload-v3'
+    model_id = 'packed-reference-payload-v4'
     initializer_id = 'registered-cyclic-rational-initializer-v1'
     residency_dimensions = frozenset(('reference_payload_bytes', 'physical_objects'))
     # Every admitted Compiler control request pays this positive charge before
@@ -57,9 +43,9 @@ class ReferenceMachineModel:
     control_admission_work = 1
 
     @staticmethod
-    def realize(object_id: str, kind: str, value, provenance: str) -> PackedObject:
-        payload = pack(value)
-        return PackedObject(ObjectSpec(object_id, kind, {'reference_payload_bytes': len(payload), 'physical_objects': 1}, provenance), payload)
+    def realize(object_id: str, kind: str, value, provenance: str) -> PlannedObject:
+        return PlannedObject(ObjectSpec(object_id, kind,
+            {'reference_payload_bytes': packed_size(value), 'physical_objects': 1}, provenance), value)
 
     @staticmethod
     def construction_work(program: Program, rules: SemanticRules) -> int:

@@ -115,7 +115,27 @@ witnesses now occupy paid windows and return UNRESOLVED without oversized
 pending rationals. Existing learning/profile/search, four-learner evidence
 and two-cycle CPU installation all use this same input path.
 
-This closes that concrete ingress mismatch, not complete host accounting.
+The latest encoding audit then found a correctness failure beyond costs.
+At `532d713`, distinct legal source names (one astral character versus two
+explicit surrogate code units) had identical JSON/hash encodings. Building
+a candidate could overwrite the deployed program registry entry and change
+its next probability from 2/3 to 1/2 without installation. Machine v4 now
+uses streaming UTF-8/surrogatepass encoding and checks complete Program
+equality before reusing an owned address. A collision returns UNRESOLVED.
+The source class is preserved; no Foundation primitive is changed.
+
+The same encoder now computes exact extents before output materialization.
+`realize` returns a passive plan; Runtime admits its complete allocation
+batch before writing to paid buffers. Identity hashing no longer expands
+a duplicate tagged tree. A fixed 8 KiB payload-cap audit saw roughly 62 MB
+of newly traced old Python allocations before refusal at 100,000 repeated
+edges; the revised trace is roughly 0.134 MB. This is a workspace diagnosis,
+not a total-host cap. Read [`OWNED_ENCODING.md`](theory/proofs/OWNED_ENCODING.md)
+and run `scripts/audit_owned_encoding.py`; it includes the historical actual
+Runtime witness, all BMP code points and independent typed-byte checks.
+
+These corrections close concrete identity/ingress/materialization mismatches,
+not complete host accounting.
 The next physical obligation is explicit coverage of Python metadata,
 transient copies/arithmetic scratch and general diagnostics, together with
 complete ERC-1 registration and release-gate mapping. A manifest field or

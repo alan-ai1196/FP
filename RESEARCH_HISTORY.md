@@ -1727,3 +1727,52 @@ and release-gate mapping remain the physical frontier. The fixed status slot
 is paid; this does not imply every exception object is paid. Foundation and
 ERC-1 stay frozen, static cases stay parked, Runtime stays NOT FROZEN, and
 actual AMP correctness precedes RTX 3090 science.
+
+## 61. Encoding workspace exposed a deployed-program identity failure (2026-09-12)
+
+The next resource audit attacked what happens before a buffer's ledger debit.
+At `532d713`, identity hashing and packed realization expanded complete
+duplicate trees of tagged Python lists. Under one fixed 8 KiB payload cap,
+100,000-edge grammar and zero initializer, a legal repeated-edge SUM request
+could create about 62 MB of newly traced Python allocations before returning
+UNRESOLVED. The recorded packed peak stayed 1,823 bytes. This made the missing
+temporary-workspace obligation concrete; final buffer accounting did not
+establish a complete host cap.
+
+While replacing the encoder, its purported typed injectivity failed too.
+The legal Python names `"\U0001f600"` and `"\ud83d\ude00"` denote different
+causal sources, but ASCII-escaped JSON gave them identical bytes before
+hashing. The actual old Runtime could construct a candidate on the second
+source and overwrite the deployed program's registry entry. Its next
+probability became 1/2 instead of the required 2/3, with no installation.
+This was an execution/identity mismatch, not a cryptographic attack or a
+Foundation counterexample: faithful encoding requires no new native action.
+
+Machine v4 now emits typed UTF-8/surrogatepass bytes that preserve all code
+points. ASCII encodings remain compatible; non-ASCII artifact IDs change.
+An existing program address also requires full validated code equality.
+Even an injected constant address can only make construction UNRESOLVED;
+it cannot replace owned code or declare the otherwise legal graph impossible.
+
+The resource correction is centralized. Exact extent calculation creates
+neither escaped scalar text nor a duplicate tagged tree. `realize` returns
+only a value/size plan. Runtime validates and admits the complete allocation
+batch before creating an output buffer and streaming into it without resize.
+Hashing streams as well. Privately owned bytearrays preserve the prior CPU
+install object's identity, and the already reserved target slot stays prepaid.
+The matched traced peak is about 0.134 MB over 1,000--100,000 repeated edges;
+it still exceeds the packed cap and is not a full physical-memory certificate.
+
+`scripts/audit_owned_encoding.py` retains the historical actual Runtime
+witness, corrected forecasts, forced-address failure and allocation denial/
+partial-write checks. It compares 235 packed trees and 240 identities,
+all 65,536 BMP code points and 3,072 surrogate/astral boundary classes,
+including ASCII preservation and exact extents. The mathematical argument,
+measurement exclusions and next physical boundary are recorded in
+`theory/proofs/OWNED_ENCODING.md`, with concise evidence in
+`evidence/minimal/FP_OWNED_ENCODING_AUDIT.json`.
+
+Full host metadata, scalar/key encoding workspace, arithmetic scratch and
+allocator state remain open, along with ERC-1/gate enforcement and target
+AMP. Foundation/ERC-1 remain frozen, static families are not expanded,
+and Runtime/science release is not inferred from these corrected prefixes.

@@ -290,7 +290,7 @@ def capacity_audit():
     allocate = ReferenceCompilerRuntime._allocate
     def measure(runtime, owner, objects):
         if runtime is rt and any(obj.spec.kind == 'prepared_cpu_install_receipt' for obj in objects):
-            observed_sizes.append(rt._ledger.snapshot()['current']['reference_payload_bytes']+sum(len(obj.payload) for obj in objects))
+            observed_sizes.append(rt._ledger.snapshot()['current']['reference_payload_bytes']+sum(obj.spec.residency['reference_payload_bytes'] for obj in objects))
         return allocate(runtime, owner, objects)
     with patch.object(ReferenceCompilerRuntime, '_allocate', measure):
         assert install(rt, search, ids).status == 'INSTALLED_CPU'

@@ -416,7 +416,7 @@ def failure_audit():
     injections = []
 
     def crossing_workspace_failure(owner, objects):
-        if any(obj.spec.kind == 'reference_persistence_state' and b'REFERENCE_CROSSED' in obj.payload for obj in objects):
+        if any(obj.spec.kind == 'reference_persistence_state' and obj.value.status == 'REFERENCE_CROSSED' for obj in objects):
             injections.append(owner)
             raise ResourceExceeded('injected first-crossing workspace allocation failure')
         return allocate(owner, objects)
