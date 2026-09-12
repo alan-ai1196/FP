@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "scope": "owned single-root finite reference run, actual CPU protocol and terminal report",
+  "cases": {
+    "registration": {
+      "registered_coordinate_variants_have_distinct_identity": 8,
+      "initial_baseline_and_fixed_numerical_policy_in_owned_manifest": true,
+      "caller_manifest_and_run_record_not_authority_inputs": true
+    },
+    "finite_streams": {
+      "all_binary_streams_at_lengths_2_3_4": 28,
+      "terminal_port_denials_without_history_growth": 638,
+      "partial_optimizer_unit_retained_without_flush": true,
+      "end_of_stream_not_evidence_crossing_or_rejection": true,
+      "waiting_and_active_stages_report_unresolved_without_history_erasure": true
+    },
+    "installed": {
+      "cursor": 22,
+      "native_class_size": 35,
+      "independent_binary64_phase_checks": 141,
+      "sealed_port_denials": 22,
+      "alpha_spent": "1/2",
+      "closure_included_in_actual_owned_payload_bytes": true
+    },
+    "failures": {
+      "ResourceExceeded": {
+        "already_published_install_event_and_alpha_survive_failed_run_closure": true,
+        "event_success_cannot_authorize_complete_run_success": true
+      },
+      "MemoryError": {
+        "already_published_install_event_and_alpha_survive_failed_run_closure": true,
+        "event_success_cannot_authorize_complete_run_success": true
+      },
+      "ArithmeticUnresolved": {
+        "completed_target_prefix_not_rolled_back_or_sealed": true
+      },
+      "HostExecutionUnresolved": {
+        "completed_target_prefix_not_rolled_back_or_sealed": true
+      },
+      "unknown_frame": {
+        "unregistered_future_job_cannot_inherit_run_completion": true
+      }
+    },
+    "bounded": {
+      "cursor": 22,
+      "native_class_size": 35,
+      "independent_binary64_phase_checks": 141,
+      "sealed_port_denials": 22,
+      "alpha_spent": "1/2",
+      "closure_included_in_actual_owned_payload_bytes": true,
+      "host": {
+        "process_id": 452,
+        "creation_100ns": 134336990933211379,
+        "lifetime_process_commit_peak": 31526912,
+        "job_commit_peak": 32763904,
+        "process_user_100ns": 20156250,
+        "process_kernel_100ns": 1093750
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 67108864,
+        "peak_process_commit": 31526912,
+        "peak_job_commit": 32763904,
+        "user_100ns": 20468750,
+        "kernel_100ns": 1093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 452,
+        "process_creation_100ns": 134336990933211379
+      }
+    }
+  },
+  "not_claimed": [
+    "CERTIFIED_COMPLETE or universal Compiler optimality",
+    "target AMP or full Runtime release",
+    "cross-root family error control",
+    "host process exit from a Runtime snapshot alone"
+  ]
+}

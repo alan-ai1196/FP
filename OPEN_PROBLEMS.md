@@ -75,13 +75,13 @@ lease cases and full 35-/774-member native-class endpoint chains are in
 serialized CPython transition, with no current-optimum, crash/concurrency
 or full host/device accounting claim.
 
-The remaining work is complete ERC-1 registration, full Compiler decision
-authority beyond the scoped reference comparison, paired reference/AMP
-persistence and complete error state, actual host/device accounting, target
-AMP and target installation, plus explicit mapping of the historical release
-obligations to current evidence. Raw revealed train/online access is explicitly
-registered; query-only and reporting-only execution are not yet supported.
-The new endpoint pass is not a complete release certificate.
+The subsequent paragraphs record the now implemented host, policy and run
+binding. The current [47-gate map](docs/REFERENCE_RELEASE_GATE_MAP.md) identifies
+hierarchical discovery without a latent-group oracle and final reference
+integration checks, followed by actual target AMP/installation. Raw revealed
+train/online access is explicitly registered; query-only and reporting-only
+execution remain outside this supported class. No partial endpoint result is
+a complete release certificate.
 
 **Current physical boundary.** Machine v2 removed unfunded control history
 growth. Machine v3 now also closes the raw-input witness at `5055f3e`:
@@ -129,15 +129,23 @@ and the actual 64 MiB host path are audited in
 `theory/proofs/OWNED_COMPILER_POLICY.md`. This is one registered strategy,
 with no claim of universal policy optimality.
 
-The remaining resource closure is complete ERC-1 run/report registration,
-production supervision/publication, external/shared platform and device
-resources, other resource limits, and release-gate mapping. A claim spanning
-multiple actual Runtime roots additionally needs its family error/resource
-accounting; single-root alpha cannot be advertised as that larger bound.
-A sampled host observation is not full physical
-state or run authority, and the unbound reference mode proves no host cap.
-Static special cases stay parked; after reference closure the next target
-is actual AMP and then RTX 3090.
+Machine v8 now owns aggregate reference run registration and paid terminal
+reporting. At the preregistered stream end all continuation authority closes,
+while historical class proofs, unfinished stages, partial optimizer state
+and spent alpha remain retained. Report failure leaves an already completed
+event/install intact but cannot yield a completed run. Read
+`theory/proofs/OWNED_REFERENCE_RUN.md` and the explicit 47-gate crosswalk.
+
+The immediate reference research gap is gate 17: legally acquire the hidden
+partition from ordinary data and construct useful native hierarchy through
+the owned endpoint, with disconnected-data and strong-baseline controls.
+Then complete the release-revision integration checks. Actual AMP, device
+resources and target installation follow reference closure. Claims of CPU
+time hard caps, shared-platform memory, alternative information interfaces,
+or families spanning new Runtime roots require their own support if invoked;
+they are not implicit prerequisites to this single-root reference scope.
+A sampled host observation alone proves neither complete physical state nor
+process exit. Static special cases remain parked.
 
 **Sufficient falsification of the current foundation.** A minimal program that is legal under `FP_THEORY.md` but cannot be represented/considered by any implementation conforming to the Reference Compiler contract **unless a new semantic model primitive is added**. Slow search or `UNRESOLVED` does not falsify the foundation.
 

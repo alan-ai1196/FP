@@ -1,6 +1,6 @@
 """Owned construction, causal events, reference selection, evidence and CPU install.
 
-Full Compiler decisions and actual AMP persistence/installation remain open.
+Actual AMP persistence/installation and release closure remain open.
 This endpoint never issues CERTIFIED_COMPLETE or accepts helper
 certificates as installation authority. Its packed-payload machine contract is
 not a measurement of total host/device memory or elapsed computation.
@@ -22,12 +22,13 @@ from .encoding import packed_size, write_packed
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
 from .policy import CompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot, CompilationState, TERMINAL_STAGES
+from .run_state import ReferenceRunManifest, ReferenceRunClosure, ReferenceRunSnapshot, RunDecision, prediction_diagnostics
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
 from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, next_wealth, threshold_crossed
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
-from .binary_arithmetic import Float64Arithmetic
+from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
 from .float64_bridge import Float64Contract, Float64Relation, check_state, check_prediction, relation_work
 from .float64_range import enclose_float64, enclosure_operations, stored_probability
@@ -276,11 +277,27 @@ class RuntimeSnapshot:
     active_ingress: str | None
     host_resources: HostResourceObservation | None = None
     compiler_policy: CompilerPolicySnapshot | None = None
+    run: ReferenceRunSnapshot | None = None
 
 
 @guard_host_allocations
 class ReferenceCompilerRuntime:
     recovery_phase = 'native-construction-causal-reference'
+    # Both complete CPU installation and terminal run closure use this fixed
+    # frame. Adding a scheduler/job/cache requires an explicit transition
+    # argument; an unknown coordinate cannot inherit either authority.
+    _root_fields = frozenset({
+        '_contract', '_online', '_host', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
+        '_policy_contract', '_policy_state', '_policy_running',
+        '_manifest', '_manifest_object_id', '_run_closure',
+        '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
+        '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
+        '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
+        '_ingress_identities', '_active_ingress',
+        '_programs', '_retained_programs', '_candidates', '_buffers', '_attempts', '_deployed_id',
+        '_event_phase', '_pending', '_observations', '_event_traces', '_profile_executions',
+        '_profile_events', '_query_records', '_data_usage', '_halted', '_data_owner',
+    })
 
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
                  host: HostResourceContract | None = None, policy: CompilerPolicy | None = None):
@@ -300,9 +317,18 @@ class ReferenceCompilerRuntime:
         self._policy_contract = policy
         self._policy_state = None
         self._policy_running = False
-        self._chi = stable_hash(('ERC-1 construction recovery', self.recovery_phase,
-                                 ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id, contract, online, host, policy))
+        self._manifest = ReferenceRunManifest(contract, initial_program, online, host, policy,
+            ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id,
+            (sys.implementation.name, tuple(sys.version_info)),
+            None if online is None or online.float64 is None else
+            (Float64Arithmetic.backend_id, BINARY64,
+             'binary64 storage/source-and-value-casts/PRODUCT/SUM/base/normalizer/division/gradient/optimizer',
+             'ordered separate scalar operations, round-nearest-ties-even, gradual subnormals; no FMA or reassociation',
+             'each actual primitive checked against exact rounding; nonfinite or mismatch is UNRESOLVED'))
+        self._chi = stable_hash(self._manifest)
         self._runtime_id = secrets.token_hex(12)
+        self._manifest_object_id = f'{self._runtime_id}:manifest'
+        self._run_closure = None
         self._ledger = ResourceLedger(contract.limits)
         self._router = CostRouter(self._ledger, contract.work_roles)
         # Event, retained evidence and query roles are fixed by this machine
@@ -343,8 +369,11 @@ class ReferenceCompilerRuntime:
         self._data_usage = DataUsageLedger()
         self._halted: tuple[str, str] | None = None
         self._data_owner = f'{self._runtime_id}:retained-information'
-        if online is not None:
-            self._ledger.register_owner(self._data_owner, 'compiler')
+        self._ledger.register_owner(self._data_owner, 'compiler')
+        registered = self._machine.realize(self._manifest_object_id, 'immutable_run_manifest', self._manifest, self._chi)
+        self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
+                                      'retain-immutable-run-manifest')
+        self._allocate(self._data_owner, (registered,))
         initial = self._construct(initial_program, 'deployment')
         if initial.status != 'BUILT_REFERENCE':
             raise ContractError(f'initial registered reference realization failed: {initial.status}: {initial.reason}')
@@ -363,6 +392,69 @@ class ReferenceCompilerRuntime:
     @property
     def online_contract(self):
         return self._online
+
+    def _seal_run(self):
+        """Close the registered ordinary horizon after the owned control phase.
+
+        This is a separate transition from a successful event or installation.
+        On failure those completed prefixes survive; no run closure is issued.
+        Manual endpoint mode has no owned complete strategy to close here.
+        """
+        if (self._policy_contract is None or self._halted is not None
+                or self._cursor != len(self._online.data.active.observation_ids)):
+            return
+        try:
+            self._require_idle()
+            if set(self.__dict__) != self._root_fields:
+                raise ContractError('run closure has no frame proof for an unregistered Runtime coordinate')
+            if self._pending is not None or self._active_ingress is not None or self._policy_running:
+                raise ContractError('a pending Runtime phase cannot become a completed run')
+            # Reporting is real work and storage. The complete snapshot's
+            # ledger includes this debit and the closure buffer itself.
+            work = 4096+64*sum(len(value) for value in self._buffers.values())
+            self._event_router.charge_work('information', {'work': work}, 'complete-reference-run-report')
+            historical = {proof.search_id: proof for proof in self._reference_proofs.values()}
+            decisions = tuple(RunDecision(s.search_id, s.decision_class_id, s.spec,
+                s.ordinary_cursor, s.base_lineage_id, s.status,
+                'HISTORICAL_REFERENCE_CLASS_EXHAUSTED' if s.search_id in historical else 'UNRESOLVED',
+                historical.get(s.search_id))
+                for s in self._searches.values())
+            stages = tuple((i, stage.status if stage.status in TERMINAL_STAGES else 'UNRESOLVED',
+                            stage.reason if stage.status in TERMINAL_STAGES else 'registered stream ended before this policy stage concluded')
+                           for i, stage in enumerate(self._policy_state.stages))
+            reference = (trace.prediction for traces in (self._event_traces, self._profile_events) for trace in traces)
+            diagnostics = [prediction_diagnostics(reference, 'exact-reference', self._contract.reference_integer_bits)]
+            if self._online.float64 is not None:
+                floating = (trace.float64_prediction for trace in self._float64_traces if trace.float64_prediction is not None)
+                diagnostics.append(prediction_diagnostics(floating, 'cpu-binary64', self._contract.reference_integer_bits))
+            closure = ReferenceRunClosure(f'{self._runtime_id}:run-closure', self._cursor, self._deployed_id,
+                self._policy_state.generation, stages, decisions,
+                tuple((key, tuple(program.counts().items())) for key, program in self._programs.items()),
+                tuple(diagnostics), self._cursor % self._online.learner.update_unit, self._alpha_spent)
+            packed = self._machine.realize(closure.object_id, 'owned_run_closure', closure, self._chi)
+            self._event_router.charge_work('information', {'work': packed.spec.residency['reference_payload_bytes']+1},
+                                          'retain-reference-run-report')
+            self._allocate(self._data_owner, (packed,))
+        except HostExecutionUnresolved:
+            raise
+        except MemoryError:
+            raise
+        except Exception as exc:
+            self._halt('run-closure', exc)
+            if not isinstance(exc, (ResourceExceeded, ArithmeticUnresolved)):
+                raise
+            return
+        # Last, nonallocating publication. No history/lease/alpha is erased.
+        # The common public boundary now denies every continuation port.
+        self._run_closure = closure
+
+    def _run_snapshot(self):
+        status = ('HALTED_UNRESOLVED' if self._halted is not None else
+                  'SEALED_REFERENCE_STREAM' if self._run_closure is not None else
+                  'MANUAL_PARTIAL' if self._policy_contract is None else 'OPEN_OWNED_STREAM')
+        return ReferenceRunSnapshot(self._manifest, self._manifest_object_id, status, self._run_closure,
+            'process/job commitment and observed lifetime CPU; no time cap or GPU claim' if self._host is not None
+            else 'UNRESOLVED: packed payload accounting only; no live host resource binding')
 
     def _next_policy_state(self, stages):
         generation = 0 if self._policy_state is None else self._policy_state.generation+1
@@ -1908,18 +2000,7 @@ after all fallible construction, checks and physical preparation complete.
         registration.__post_init__()
         # Fixed transition schema: a future scheduler/job/cache coordinate
         # cannot silently acquire this version's quiescence/frame proof.
-        root_fields = {
-            '_contract', '_online', '_host', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
-            '_policy_contract', '_policy_state', '_policy_running',
-            '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
-            '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
-            '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
-            '_ingress_identities', '_active_ingress',
-            '_programs', '_retained_programs', '_candidates', '_buffers', '_attempts', '_deployed_id',
-            '_event_phase', '_pending', '_observations', '_event_traces', '_profile_executions',
-            '_profile_events', '_query_records', '_data_usage', '_halted', '_data_owner',
-        }
-        if set(self.__dict__) != root_fields:
+        if set(self.__dict__) != self._root_fields:
             return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'CPU install has no transition proof for an unregistered Runtime state coordinate')
         if self._cursor % self._online.learner.update_unit:
             return CpuInstallResult('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
@@ -2109,4 +2190,4 @@ after all fallible construction, checks and physical preparation complete.
                                      for identity in self._ingress_identities.values()), self._active_ingress,
                                None if self._host is None else self._host.observe(),
                                None if self._policy_contract is None else CompilerPolicySnapshot(
-                                   self._policy_contract, self._policy_state, self._policy_running))
+                                   self._policy_contract, self._policy_state, self._policy_running), self._run_snapshot())

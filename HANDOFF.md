@@ -8,7 +8,7 @@ The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
 - **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; do not extend static cases or chase their remaining constants before Runtime, AMP and device experiments.
-- **Reference Compiler implementation not frozen.** The last work was a strict rewrite toward one authority-owned complete `ReferenceCompilerRuntime`. The current persisted/recovered code must be audited before anyone claims implementation closure.
+- **Reference Compiler implementation not frozen.** The owned endpoint now reaches finite CPU run closure. The current 47-gate mapping identifies hierarchical anti-unigram discovery and final reference integration checks before target AMP.
 - **Science HOLD.** Do not start new RTX3090/model-science runs yet.
 
 The current research direction is fixed: complete `ReferenceCompilerRuntime`,
@@ -33,10 +33,11 @@ and `scripts/audit_reference_persistence.py`.
 Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md)
 before interpreting that proof: it optimizes fixed-state empirical CE over
 the registered initializer/profile endpoints plus the actual deployed
-baseline, not all values or future continuations. The remaining gaps are
-complete ERC-1 registration/accounting, full Compiler/error authority, the
-explicit release-gate mapping and actual reference/AMP integration. The
-scoped CPU installation transaction is now executed as described below.
+baseline, not all values or future continuations. Read the current
+[47-gate mapping](docs/REFERENCE_RELEASE_GATE_MAP.md) before adding release
+requirements. The owned run registration and CPU terminal report now execute;
+hierarchical discovery without a latent-group oracle remains a specific
+reference obligation. Actual target AMP follows reference closure.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -190,8 +191,26 @@ and all 64 six-label streams (32 baseline selections, 30 unresolved, two
 installs). The two-install path also runs inside a 64 MiB process. Partial
 admission, policy-storage failure and nested native-premise loss retain their
 actual targets, work and alpha. The strategy is fixed and scoped; adding a
-menu of more strategies is not the next prerequisite. Integrate the complete
-run/report contract and map the historical release obligations next.
+menu of more strategies is not the next prerequisite.
+
+Machine v8 now owns the aggregate ERC-1 reference manifest, including the
+initial baseline, exact CPU arithmetic declaration and their paid bytes/work.
+At the registered ordinary stream's end it records a terminal conclusion and
+closes all continuation ports. `snapshot().run` distinguishes complete finite
+execution, historical class proofs, unresolved policy stages and failed run
+closure. A completed event or installation alone cannot imply run success;
+report retention can still fail while those completed prefixes remain owned.
+Partial optimizer units and spent alpha are never flushed or refunded.
+Read [`OWNED_REFERENCE_RUN.md`](theory/proofs/OWNED_REFERENCE_RUN.md) and run
+`scripts/audit_reference_run.py`. The complete 35-program CPU path seals at
+cursor 22, including in an actual 64 MiB process with checked final exit.
+
+The [47-gate crosswalk](docs/REFERENCE_RELEASE_GATE_MAP.md) is an evidence map,
+not 47 passing flags. Gate 17 still needs actual owned hierarchical discovery;
+the historical 32-token theorem audit and primitive scalar search do not
+jointly supply that execution. Gates 16/28–30 require actual target AMP after
+reference closure. Do not expand static cases or invent optional universal
+policy, quotient or cross-root protocols as prerequisites for this scope.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic

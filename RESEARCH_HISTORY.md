@@ -1889,3 +1889,47 @@ separate diagnostic roots do not supply that broader error guarantee. More
 hand-written strategies are not the next research frontier. Complete ERC-1
 run/report registration and historical release-gate mapping remain, followed
 by actual target AMP and RTX 3090 science. Foundation/ERC-1 stay frozen.
+
+## 65. The finite run owns its conclusion and the release map becomes explicit (2026-09-12)
+
+The v7 owned strategy separates ordinary event publication from later control
+failure. Consequently `OBSERVED_REFERENCE` is not a whole-run success flag.
+The next step makes the actual run's immutable registration and terminal
+conclusion owned state rather than relying on an external summary of events.
+
+Machine v8 assembles and pays for one reference manifest containing the
+initial Program, construction/data/value/search/persistence/CPU/host/policy
+contracts and fixed numerical machine. Budget encodings themselves cost
+space/work; old exact-boundary audit fixtures now calibrate actual immutable
+roots instead of assuming their declarations are free.
+
+After the last registered ordinary event and eligible policy phase, Runtime
+prepares a paid conclusion and publishes a final closure pointer. Every
+non-diagnostic port then denies without growing recorded history. A partial
+optimizer unit is preserved without a new commit. Unfinished stages report
+UNRESOLVED; historical finite-class proofs remain attached to their exact
+classes even after installation has revoked the current search authority.
+The complete snapshot keeps normalizers, raw numerical paths, owned resources,
+filtration and alpha alongside finite prediction diagnostics.
+
+Injected report-retention failures after the cursor-22 installation demonstrate
+why event, install and run completion must be distinct. The first two remain
+completed facts, with actual deployed learner/receipt/target/alpha retained;
+no run closure is issued. The endpoint audit also covers all 28 binary tapes
+of lengths 2/3/4, 638 terminal refusals, native/arithmetic failures and a full
+35-program CPU chain in a 64 MiB job. It independently replays 141 binary64
+phases and checks the actual process identity and final exit. The existing
+64-stream native policy oracle, host/failure, control, CPU capacity, ordinary
+event and search adversaries remain passing at this change.
+
+The new `docs/REFERENCE_RELEASE_GATE_MAP.md` assigns all 47 historical
+obligations to concrete reference/CPU evidence, retained scoped theorems,
+absent bypass authority, open reference discovery or held target AMP. It
+does not turn a mapping count into a release certificate. The specific
+remaining reference discovery gap is the hierarchical anti-unigram gate:
+the old 32-token identifiability audit and current scalar compound search
+cannot be spliced into an owned Runtime execution that did not happen.
+Attack that acquisition/construction problem, then final reference integration
+and actual target AMP before RTX 3090 science. Optional universal strategies,
+quotient implementations or restarted families do not become prerequisites
+to this single-root reference claim. Foundation/ERC-1 remain frozen.

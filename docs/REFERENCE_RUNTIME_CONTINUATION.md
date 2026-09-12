@@ -587,10 +587,23 @@ Git commit `39235ef` by `scripts/audit_recovered_authorities.py`. All four
 historical false authorizations remain reproducible. An empty bridge port
 does not count as a passed bridge gate.
 
-Next integrate the complete immutable ERC-1 manifest and full physical/error
-state, with the explicit historical gate mapping. The scoped CPU relation,
-dual persistence and installation do not close actual AMP or total host/
-device accounting. The generic target install port stays UNRESOLVED; no
+Machine v8 adds the actual aggregate immutable reference manifest and finite
+run closure. `snapshot().run` binds the original Program, all constituent
+contracts, fixed arithmetic and paid manifest bytes. At the registered
+ordinary horizon the owned strategy finishes its eligible phase and Runtime
+prepares a paid closure before sealing all non-diagnostic public ports.
+Historical class completion, unfinished policy stages and execution status
+are separate report coordinates. Partial final optimizer state stays intact.
+Closure failure retains any already published event/install but reports a
+halted, unresolved run. Read [the run proof](../theory/proofs/OWNED_REFERENCE_RUN.md)
+and execute `scripts/audit_reference_run.py` for the bounded CPU chain and
+terminal/failure adversaries.
+
+The [47-gate mapping](REFERENCE_RELEASE_GATE_MAP.md) identifies owned
+hierarchical anti-unigram discovery and final integration checks as current
+reference work. Optional broader control/information/family claims do not
+silently enlarge that scope. The CPU relation and finite run do not close
+actual target AMP. The generic target install port stays UNRESOLVED; no
 CERTIFIED_COMPLETE or target AMP authorization is issued. Actual target
 correctness follows reference closure, then RTX 3090 model science, which
 remains HOLD. Static theory expansion stays parked.

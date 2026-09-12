@@ -19,6 +19,8 @@ def _guard(method, *, diagnostic):
     def guarded(self, *args, **kwargs):
         if (self._halted is HOST_ALLOCATION_FAILURE or self._halted is HOST_RESOURCE_FAILURE) and not diagnostic:
             raise ContractError('host execution failed; this Runtime is terminal')
+        if self._run_closure is not None and not diagnostic:
+            raise ContractError('the registered run is sealed; retained evidence has no continuation authority')
         if (self._policy_contract is not None and not self._policy_running
                 and method.__name__ not in POLICY_EXTERNAL_PORTS):
             raise ContractError('the registered Runtime strategy owns all Compiler control and authority ports')
@@ -33,6 +35,7 @@ def _guard(method, *, diagnostic):
                 # A separate owned post-commit phase, outside observe's failed
                 # target handler. No policy transition is an exogenous event.
                 self._advance_policy()
+                self._seal_run()
             return result
         except MemoryError:
             # Existing keys and precreated immutable values only. In particular,

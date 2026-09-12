@@ -294,17 +294,28 @@ def capacity_audit():
     observed_sizes = []
     allocate = ReferenceCompilerRuntime._allocate
     def measure(runtime, owner, objects):
-        if runtime is rt and any(obj.spec.kind == 'prepared_cpu_install_receipt' for obj in objects):
-            observed_sizes.append(rt._ledger.snapshot()['current']['reference_payload_bytes']+sum(obj.spec.residency['reference_payload_bytes'] for obj in objects))
+        if any(obj.spec.kind == 'prepared_cpu_install_receipt' for obj in objects):
+            observed_sizes.append(runtime._ledger.snapshot()['current']['reference_payload_bytes']+sum(obj.spec.residency['reference_payload_bytes'] for obj in objects))
         return allocate(runtime, owner, objects)
     with patch.object(ReferenceCompilerRuntime, '_allocate', measure):
         assert install(rt, search, ids).status == 'INSTALLED_CPU'
     assert len(observed_sizes) == 1 and observed_sizes[0] > before.resources['peak']['reference_payload_bytes']
     byte_cap = observed_sizes[0]-1
-    cfg = replace(config(cap=4, peak=1), limits=limits(byte_cap, 100_000_000))
-    limited, search, ids = fixture(cfg=cfg)
-    old = ownership(limited)
-    failure = install(limited, search, ids)
+    # Changing the budget also changes its owned manifest encoding. Calibrate
+    # against the actual new root, including that declaration's bytes/work.
+    for _ in range(8):
+        cfg = replace(config(cap=4, peak=1), limits=limits(byte_cap, 100_000_000))
+        limited, search, ids = fixture(cfg=cfg)
+        old = ownership(limited)
+        observed_sizes.clear()
+        with patch.object(ReferenceCompilerRuntime, '_allocate', measure):
+            failure = install(limited, search, ids)
+        assert len(observed_sizes) == 1
+        if observed_sizes[0] == byte_cap+1:
+            break
+        byte_cap = observed_sizes[0]-1
+    else:
+        raise AssertionError('physical budget encoding did not stabilize')
     after = ownership(limited)
     assert failure.status == 'UNRESOLVED' and 'coexistence' in failure.reason
     assert after.deployed_id == old.deployed_id and after.candidates == old.candidates
@@ -319,9 +330,18 @@ def capacity_audit():
         len(before.resources['objects'])+len(before.candidates)+len(before.persistence_identities)+len(before.searches))
     work_cap = before.resources['spent']['deployment']['work']+charge-1
     cfg = config(cap=4, peak=1)
-    cfg = replace(cfg, limits=replace(cfg.limits, role_cumulative={'deployment': {'work': work_cap}, 'compiler': {'work': 100_000_000}}))
-    limited, search, ids = fixture(cfg=cfg)
-    old = ownership(limited)
+    for _ in range(8):
+        cfg = replace(cfg, limits=replace(cfg.limits, role_cumulative={'deployment': {'work': work_cap}, 'compiler': {'work': 100_000_000}}))
+        limited, search, ids = fixture(cfg=cfg)
+        old = ownership(limited)
+        actual_charge = 4096+16*sum(len(buf) for _, buf in old.buffers)+1024*(
+            len(old.resources['objects'])+len(old.candidates)+len(old.persistence_identities)+len(old.searches))
+        needed = old.resources['spent']['deployment']['work']+actual_charge-1
+        if work_cap == needed:
+            break
+        work_cap = needed
+    else:
+        raise AssertionError('work budget encoding did not stabilize')
     failure = install(limited, search, ids)
     after = ownership(limited)
     assert failure.status == 'UNRESOLVED' and 'cumulative work' in failure.reason

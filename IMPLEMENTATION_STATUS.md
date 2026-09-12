@@ -564,7 +564,7 @@ mapping. Foundation/ERC-1 remain frozen; Runtime is NOT FROZEN and science HOLD.
 
 ### Owned Compiler strategy (2026-09-12)
 
-Current machine `packed-reference-payload-v7` accepts immutable
+Machine `packed-reference-payload-v7` introduced immutable
 `CompilerPolicy` data and owns its execution state. At registered post-commit
 boundaries it runs complete native-class search, separately admits the two
 fresh CPU paths, and attempts the existing checked installation. An incumbent
@@ -590,10 +590,47 @@ log/wealth checks, actual refusal paths, and the two-install chain inside a
 state/filtration argument and exact scope. Global alpha is per actual Runtime
 root; separate diagnostic roots are not a shared family error budget.
 
-This closes ownership of the registered sequential strategy. Complete ERC-1
-run/report registration and the explicit historical release-gate mapping
-remain before reference freeze and actual AMP. Arbitrary alternative
-strategies are outside this claim, not a new static research program.
+This closes ownership of the registered sequential strategy. Arbitrary
+alternative strategies are outside this claim, not a new static research
+program. The subsequent run/report and gate mapping are described below.
+
+### Owned finite run and current release map (2026-09-12)
+
+Current machine `packed-reference-payload-v8` assembles and pays for one
+immutable aggregate reference manifest, including initial Program, semantic,
+data, value, resource, host, policy and explicit CPU arithmetic coordinates.
+Changing a budget can change its own paid encoding cost; the resource-boundary
+audit fixtures now calibrate real immutable roots accordingly.
+
+After the final registered ordinary event and its owned policy phase,
+Runtime prepares a paid closure and then publishes its terminal pointer.
+All 22 non-diagnostic ports close. `RuntimeSnapshot.run` reports execution
+status, historical class/proof scope, unresolved stages, graph counts and
+retained prediction precision/range diagnostics, alongside the existing full
+snapshot's learners, resources and evidence. An unresolved stage does not
+make stream completion a structural rejection. Report failure does not undo
+an already committed event or installed learner; it leaves the run halted
+without a closure. No CERTIFIED_COMPLETE or target AMP authority is added.
+
+Read `theory/proofs/OWNED_REFERENCE_RUN.md` and
+`evidence/minimal/FP_REFERENCE_RUN_AUDIT.json`. The new endpoint audit covers
+28 exhaustive binary streams, 638 unchanged terminal refusals, unfinished
+stages/partial optimizer units, four failure classes, an unknown-job frame
+adversary and a full 35-program
+search/paired-evidence/install/closure at cursor 22. Its 141 binary64 phases
+are independently replayed; the same path runs inside a real 64 MiB job
+with actual process identity and successful exit checked externally.
+
+[`REFERENCE_RELEASE_GATE_MAP.md`](docs/REFERENCE_RELEASE_GATE_MAP.md) now
+maps all 47 historical obligations to specific endpoint/scoped-theorem
+evidence or an explicit open/target requirement. It grants no aggregate pass.
+Gate 17 requires owned hierarchical anti-unigram discovery without a supplied
+latent partition. The current standalone identifiability result and scalar
+compound search do not close it. Final reference integration checks remain;
+actual target gates 16/28–30 and the target part of atomicity follow reference
+closure. Manual control, absent host binding and unsupported information
+interfaces retain their explicit partial scope. Optional broader classes
+are not automatically new release prerequisites. Foundation/ERC-1 stay frozen.
 
 ## 4. Required closure tests
 

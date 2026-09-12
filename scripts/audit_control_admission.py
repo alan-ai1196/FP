@@ -120,17 +120,28 @@ def setup(case, cfg):
     return rt, actions[case]
 
 
+def exhausted_prefix(cfg, prepare, role='compiler'):
+    # The immutable budget declaration is itself paid payload. Find the
+    # actual fixed point using new preregistered diagnostic roots; never edit
+    # a running Runtime's limits or assume changing a cap has zero cost.
+    for _ in range(8):
+        rt, result = prepare(cfg)
+        spent = rt.snapshot().resources['spent'][role]['work']
+        if spent == cfg.limits.role_cumulative[role]['work']:
+            return cfg, rt, result
+        budgets = {key: dict(value) for key, value in cfg.limits.role_cumulative.items()}
+        budgets[role]['work'] = spent
+        cfg = replace(cfg, limits=replace(cfg.limits, role_cumulative=budgets))
+    raise AssertionError('diagnostic budget encoding did not stabilize')
+
+
 def denied_endpoints():
     rows = []
     for case in CASES:
         cfg = config(cap=4, peak=1)
-        probe, _ = setup(case, cfg)
         role = 'deployment' if case == 'install' else 'compiler'
-        cap = probe.snapshot().resources['spent'][role]['work']
-        budgets = {key: dict(values) for key, values in cfg.limits.role_cumulative.items()}
-        budgets[role]['work'] = cap
-        bounded = replace(cfg, limits=replace(cfg.limits, role_cumulative=budgets))
-        rt, action = setup(case, bounded)
+        bounded, rt, action = exhausted_prefix(cfg, lambda config: setup(case, config), role)
+        cap = bounded.limits.role_cumulative[role]['work']
         before = rt.snapshot()
         assert before.resources['spent'][role]['work'] == cap
         for _ in range(64):
@@ -145,11 +156,12 @@ def denied_endpoints():
 
 
 def bounded_control_trees():
-    base_cfg = contract()
-    bootstrap = ReferenceCompilerRuntime(base_cfg, zero_program(2)).snapshot().resources['spent']['compiler']['work']
+    base_cfg, _, _ = exhausted_prefix(contract(), lambda cfg: (ReferenceCompilerRuntime(cfg, zero_program(2)), None))
+    bootstrap = base_cfg.limits.role_cumulative['compiler']['work']
     cases = calls = admitted = 0
     for extra in range(0, 41, 8):
-        cfg = replace(base_cfg, limits=limits(work_cap=bootstrap+extra))
+        cfg = replace(base_cfg, limits=replace(base_cfg.limits, role_cumulative={
+            'compiler': {'work': bootstrap+extra}, 'deployment': {'work': 10_000_000}}))
         for commands in product(('construct', 'retire'), repeat=4):
             rt = ReferenceCompilerRuntime(cfg, zero_program(2))
             for command in commands:
@@ -186,12 +198,7 @@ def current_proof_after_denial():
         result = rt.advance_reference_search(result.search_id, transitions=1000)
         assert result.status == 'REFERENCE_CLASS_EXHAUSTED'
         return rt, result
-    cfg = contract(cap=4, peak=1)
-    probe, _ = completed(cfg)
-    cap = probe.snapshot().resources['spent']['compiler']['work']
-    cfg = replace(cfg, limits=replace(cfg.limits, role_cumulative={
-        'compiler': {'work': cap}, 'deployment': {'work': 10_000_000}}))
-    rt, result = completed(cfg)
+    _, rt, result = exhausted_prefix(contract(cap=4, peak=1), completed)
     proof = rt.reference_class_proof(result.proof_id, decision_class_id=result.decision_class_id)
     before = rt.snapshot()
     for _ in range(16):

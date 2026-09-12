@@ -209,8 +209,21 @@ for the conditional null, native ratio bound, bounded lower wealth,
 nonrefundable alpha and explicit external stochastic-process assumption.
 The pure numerical/kernel audits do not own observation or lineage facts.
 
-Next integrate complete ERC-1 registration/accounting and the explicit
-release-gate mapping, then actual paired AMP execution and installation.
+Machine v8 now owns an aggregate reference run manifest and terminal report.
+The actual initial Program and all fixed contracts/arithmetic are bound and
+stored with paid bytes/work. At the registered ordinary horizon, Runtime
+seals its continuation ports and reports historical decision classes,
+unresolved stages and finite-prefix range/precision diagnostics. The complete
+report is `snapshot().run` together with the existing full snapshot, including
+resource and host records. A report failure cannot undo an already published
+event/install or become a successful run. See
+[`OWNED_REFERENCE_RUN.md`](../../theory/proofs/OWNED_REFERENCE_RUN.md) and run
+`python -B scripts/audit_reference_run.py`.
+
+The [47-gate mapping](../../docs/REFERENCE_RELEASE_GATE_MAP.md) distinguishes
+current reference evidence, scoped theorems, absent bypass authority and
+target AMP obligations. Owned hierarchical anti-unigram discovery (gate 17)
+and final reference integration checks remain before target AMP execution.
 The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current
