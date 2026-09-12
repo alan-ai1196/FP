@@ -21,6 +21,11 @@ fixed update units, revealed-data roles/use, finite-alphabet queries and
 preregistered newborn profiles. `construct_candidate(..., profile_id=...)`
 executes paid replay of the retained original IDs and keeps complete value,
 optimizer and delayed state at its ordinary boundary attachment.
+`start_reference_search`/`advance_reference_search` enumerate all ordered
+native syntax in five explicit finite caps. Every program runs that same
+registered constructor; a checked explicit cursor cannot skip a region.
+Runtime issues only a current typed maximum proof for fixed-state empirical
+CE over this constructor class plus the actual deployed baseline.
 
 This uses the explicit `ConstructionContract` slice, not the complete ERC-1
 run manifest. The registered machine counts retained packed reference payload
@@ -31,16 +36,25 @@ build failures release partial buffers without refunding spent work or peak.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and
-`python -B scripts/audit_reference_profiles.py` from repository root. They
+`python -B scripts/audit_reference_profiles.py` and
+`python -B scripts/audit_reference_search.py` from repository root. They
 exercise the actual Runtime and independent exact/ownership/clock oracles.
 The existing XVII.5 value recurrence now also runs through the endpoint.
 Read [`REFERENCE_RUNTIME_CONTINUATION.md`](../../docs/REFERENCE_RUNTIME_CONTINUATION.md)
 for the supported deterministic raw-revealed-data interface, stop-gradient
 delayed learner, retained event phases, terminal failures and exact limits.
 
-Next integrate complete grammar search and typed
-proofs, then persistence/bridge/atomic installation. The unsafe old learner
+Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](../../theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md)
+for the finite grammar proof and exact decision scope. Fixed-state exact
+likelihood ranking does not optimize every future trajectory or parameter
+value. Any unresolved member or final verification budget blocks its proof;
+external mutations invalidate earlier authority.
+
+Next integrate complete ERC-1 registration, fresh persistence/error state,
+full physical accounting and reference/AMP/atomic installation. The unsafe old learner
 and query callbacks have been replaced. Historical proof/bridge signers are
 quarantined in Git and replayed by `audit_recovered_authorities.py`; current
-`proof.py`/`bridge.py` expose no authority. Their importability is not a gate
-pass. The package issues no complete Compiler, persistence or install token.
+`proof.py` exposes only typed comparison data and fixed maximum checking,
+with issuance owned by Runtime. `bridge.py` remains reserved. Their
+importability is not a gate pass. The package issues no complete Compiler,
+persistence or install token.

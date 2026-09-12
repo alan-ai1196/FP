@@ -147,7 +147,8 @@ class Program:
     def program_id(self) -> str:
         return stable_hash(self)
 
-    def validate(self, rules: SemanticRules) -> tuple[str, ...]:
+    def node_types(self, rules: SemanticRules) -> tuple[str, ...]:
+        """Validate an ordered native prefix, independently of its final roots."""
         if type(rules) is not SemanticRules:
             raise ContractError('registered semantic rules required')
         source_types = {s.source_id: s.type_id for s in rules.sources}
@@ -189,6 +190,18 @@ class Program:
                     raise ContractError('PRODUCT lacks a registered typed composition rule')
                 result = node.type_id
             types.append(result)
+        return tuple(types)
+
+    def validate(self, rules: SemanticRules) -> tuple[str, ...]:
+        types = self.node_types(rules)
+        state_types = {s.state_id: s.type_id for s in rules.states}
+
+        def parent(index, stop):
+            natural(index, 'native root index')
+            if index >= stop:
+                raise ContractError('native root is outside the completed graph')
+            return types[index]
+
         if len(self.heads) != len(rules.base):
             raise ContractError('readout head count differs from its positive base')
         for head in self.heads:

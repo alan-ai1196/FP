@@ -88,7 +88,7 @@ The **final endpoint integration after these changes had not been re-run through
 
 ## 3. What is preserved in `src/reference_compiler/`
 
-The migration preserved directly persisted late-WIP modules (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set. Those original bytes remain in Git. Current learner/info implementations now replace the callbacks; current proof/bridge modules expose no authority pending integration. The historical false-authority audit still executes the original modules verbatim from their recovery commit.
+The migration preserved directly persisted late-WIP modules (`bridge.py`, `info.py`, `learner.py`, `proof.py`) plus a recovery manifest describing the larger scratch module set. Those original bytes remain in Git. Current learner/info implementations replace the callbacks; current proof data describe only the scoped Runtime-issued reference comparison below. The bridge remains reserved. The historical false-authority audit still executes the original modules verbatim from their recovery commit.
 
 Large late-WIP `build.py`, `compiler.py`, `persistence.py`, and `runtime.py` were intentionally **not** committed as ad-hoc encoded fragments: they were not an import-complete or frozen release, and preserving a fragment encoding would make a transport workaround part of the canonical project design. Their SHA-256 values remain recorded for provenance in the recovery/migration notes. Reconstruct the complete package against `FP_THEORY.md`, using the preserved modules and the historical R4.2 implementation only as an implementation reference, then re-run all gates.
 
@@ -138,8 +138,8 @@ backend, range, work or coexistence failure keeps the target revealed, all
 published input lineages, executed evidence, physical objects, work and
 peaks; the incomplete prefix halts. Retiring a lineage retains an owned
 shared code reference for its historical event evidence. Old unsafe
-proof/bridge signers are quarantined in Git; importable reserved modules
-are explicitly not implemented authorities.
+proof/bridge signers are quarantined in Git. Subsequent scoped proof
+integration is recorded below; bridge importability grants no authority.
 
 `scripts/audit_reference_events.py` checks 960 exact gradient vectors against
 an independent forward differential evaluator, all 64 three-event binary
@@ -153,8 +153,8 @@ Runtime evidence, not an additional static theorem or stochastic experiment.
 **Remaining scope:** the registered interface currently exposes exact
 revealed train/online data, so query bits do not bound information in every
 public snapshot. Query-only access, report-only execution,
-general recurrent backpropagation, complete grammar search, typed proof
-authority, stochastic filtration/fresh persistence/error allocation,
+general recurrent backpropagation, full Compiler decision authority,
+stochastic filtration/fresh persistence/error allocation,
 complete host/device resource accounting, certified float64/actual AMP and
 atomic install remain open. The packed-payload model omits Python metadata,
 scratch and pre-allocation ingress; this prevents a full physical-resource
@@ -183,9 +183,53 @@ progress. Failed profiles release the newborn's objects while retaining
 paid reads, evidence and code ownership. No replayed label becomes fresh.
 
 This closes the scoped registered value-construction path, not a complete
-Compiler result. Grammar coverage, typed proof authority, stochastic fresh
-persistence/error state, full physical accounting, actual AMP and atomic
-installation remain open; implementation is still NOT FROZEN.
+Compiler result. The following section records finite grammar/proof
+integration; stochastic fresh persistence/error state, full physical
+accounting, actual AMP and atomic installation remain open.
+
+### Finite native reference comparison (2026-09-12)
+
+The Runtime now owns `start_reference_search`/`advance_reference_search`
+for immutable `ReferenceSearchSpec` classes. `native_search.py` enumerates
+all ordered typed programs under separate node/SUM/PRODUCT/edge/slot caps,
+including repeated edges, shared descendants, unused slots, readout roots
+and every delayed binding order. A checked explicit cursor prevents skipped
+ordinals or premature prefix closure; no score/gradient/support quotient
+removes a descendant. Its full cursor/row history has packed Compiler
+residency, including old/new workspace coexistence and cancelled history.
+
+Every graph executes its registered initializer and one optional fixed
+profile. The objective uses a fixed set of revealed original train/online
+contexts with the same frozen endpoint state. Exact likelihood products
+order equal-sized empirical CE sums without floating logarithms. All
+endpoints and scores are rechecked, and a separate maximum checker binds
+the claimed score to the actual live winning program and learner. Any
+unresolved row or final verification budget blocks proof issuance.
+
+`ReferenceClassProof` has one fixed kind and is accepted only through a
+matching current Runtime issuance and exact class. Its decision class is
+the **registered constructor endpoints plus actual deployed baseline**;
+the latter can lie outside the grammar. The public result is
+`REFERENCE_CLASS_EXHAUSTED`, not complete Compiler `CERTIFIED_COMPLETE`.
+No caller-supplied frontier, bound, endpoint, verifier or signed boolean is
+accepted. External mutations invalidate active searches and old proofs.
+
+`scripts/audit_reference_search.py` independently checks 14,860 program/class
+cases in nine grammars, plus 3,120 saturated count calculations. It executes
+110 profile candidates (440 actual replay events, eight changed endpoints)
+and ten recurrent/binding candidates. A complete 587-program XOR grammar
+finds likelihood 1/12 after every shorter prefix and the whole same-class
+P=0 portion stay at 1/16, also the empirical optimal unigram. This is a
+bounded implementation audit, not an unrestricted-coefficient exclusion.
+Adversaries cover false closure, substituted rows, wrong selection, inflated
+scores, backend failure, class/revision tampering and actual numeric/work/
+coexistence exhaustion, including failed verification after all rows finish.
+
+Read `theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md` and its minimal audit
+JSON. This closes the stated finite endpoint comparison only. Complete
+ERC-1 registration, broader Compiler/persistence/error authority, total
+host/device accounting, actual AMP and atomic install remain open.
+Implementation is still NOT FROZEN; GPU/model science stays HOLD.
 
 ## 4. Required closure tests
 

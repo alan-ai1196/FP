@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "scope": "owned complete ordered native constructor class plus actual deployed baseline; fixed-state exact empirical CE",
+  "grammar": {
+    "independent_complete_classes": [
+      {
+        "class": "empty",
+        "programs": 0,
+        "transitions": 3
+      },
+      {
+        "class": "scalar-compounds",
+        "programs": 587,
+        "transitions": 736
+      },
+      {
+        "class": "shared-PRODUCT-descendants",
+        "programs": 12215,
+        "transitions": 13828
+      },
+      {
+        "class": "repeated-edges-and-slots",
+        "programs": 205,
+        "transitions": 324
+      },
+      {
+        "class": "multiple-SUMs",
+        "programs": 774,
+        "transitions": 982
+      },
+      {
+        "class": "typed-products",
+        "programs": 217,
+        "transitions": 390
+      },
+      {
+        "class": "binding-permutations",
+        "programs": 72,
+        "transitions": 98
+      },
+      {
+        "class": "delayed-bodies",
+        "programs": 778,
+        "transitions": 837
+      },
+      {
+        "class": "absent-body-type",
+        "programs": 12,
+        "transitions": 110
+      }
+    ],
+    "saturated_arithmetic_checks": 3120,
+    "early_close_skip_repeat_wrong_slots_and_wrong_children_rejected": true,
+    "no_function_gradient_support_or_binding_order_quotient": true
+  },
+  "runtime": {
+    "complete_profile_constructor_programs": 110,
+    "actual_profile_events": 440,
+    "constructor_endpoints_changed_by_profile": 8,
+    "independent_endpoint_and_likelihood_checks": 110,
+    "all_rows_and_explicit_cursor_have_owned_packed_residency": true,
+    "winner_likelihood": "4/9",
+    "typed_class_bound_proof_tamper_cross_runtime_staleness_and_install_checks": true
+  },
+  "compound": {
+    "declared_bounds": {
+      "nodes": 3,
+      "SUMs": 1,
+      "PRODUCTs": 1,
+      "edges": 2,
+      "slots": 0
+    },
+    "complete_native_programs": 587,
+    "full_same_class_P0_and_all_shorter_prefix_likelihood": "1/16",
+    "empirical_optimal_unigram_likelihood": "1/16",
+    "constructed_compound_likelihood": "1/12",
+    "best_complete_class_likelihood": "1/12",
+    "nonimproving_prefixes_were_not_pruned": true,
+    "scope": "four logged XOR contexts; all ordered native syntax in these explicit bounds; fixed initializer; no unrestricted-value exclusion"
+  },
+  "recurrent": {
+    "complete_delayed_binding_programs": 10,
+    "independent_replayed_buffers_and_frozen_state_objective_checks": 10
+  },
+  "adversaries": {
+    "fake_prefix_closure_substituted_row_wrong_selector_and_unbound_winner_score_rejected": true,
+    "backend_failure_preserves_visited_ordinal_reads_work_and_owned_evidence": true,
+    "range_information_numeric_work_and_coexistence_failures_unresolved": true,
+    "all_compared_rows_still_need_final_proof_verification_budget": true,
+    "sub_binary64_likelihood_difference_retained": true,
+    "external_mutations_invalidate_active_and_historical_authority": true,
+    "cancelled_history_remains_physically_owned": true,
+    "empty_class_and_trained_deployed_winner_outside_grammar_have_explicit_scope": true
+  },
+  "not_closed": [
+    "all future continuations or arbitrary parameter values",
+    "population and fresh stochastic persistence claims",
+    "full ERC-1 host/device resources and information interfaces",
+    "actual AMP bridge, atomic installation and complete Runtime release"
+  ]
+}

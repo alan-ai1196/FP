@@ -1304,3 +1304,61 @@ complete native grammar search with explicit decision classes and typed
 proof authority. The full manifest, stochastic persistence/error state,
 host/device accounting, float64/AMP bridge and atomic installation remain
 open. Foundation/ERC-1 remain frozen and RTX 3090 science remains HOLD.
+
+## 53. Close an executed native reference decision class (2026-09-12)
+
+Native construction and paid profiles are now connected to a complete
+finite ordered syntax search through the same Runtime. The grammar has
+separate node/SUM/PRODUCT/edge/slot caps and retains repeated sources,
+edges, heads, tied/unused slots, shared PRODUCT descendants, typed delayed
+bodies and every binding order. A coverage proof derives its exhaustive
+children and roots directly from Program validation. An explicit checked
+cursor owns visited ordinals; the solver cannot declare a missing region
+closed or substitute an unrelated comparison row. No score/gradient/support
+quotient suppresses an unhelpful prefix's descendants.
+
+The exact decision is deliberately explicit: fixed-state empirical CE on
+registered initializer/profile endpoints at one ordinary boundary **plus
+the actual deployed baseline**. Every member is actually constructed and
+compared using its logged original objective contexts. Exact positive
+likelihood products order the common CE objective without a floating log.
+This is neither arbitrary-value optimization nor a population or future
+trajectory theorem. The fixed class specification and current Runtime
+context jointly identify the comparison.
+
+Two proof weaknesses were attacked during implementation. Trusting the
+solver's best flag would admit a wrong selector. Checking only that a
+claimed score dominates all alternatives would admit an inflated score
+unbound to any live state. Issuance now rebinds and rescores every retained
+endpoint, independently verifies the maximum, and requires the winning
+score to equal that of its actual owned program and complete learner.
+The type has one fixed proposition; altered, cross-Runtime, wrong-class or
+stale tokens are rejected. A full syntax traversal with one unresolved
+row, or without enough work for final verification, remains UNRESOLVED.
+
+The cursor/row history has real packed Compiler residency. Old and new
+workspaces coexist before replacement; nonwinners retain owned code for
+their evidence. Cancellation was kept from freeing history still exposed
+by snapshots. Partial backend failures retain paid reads, executed evidence
+and spent work while closing speculative learner ownership. These are
+repairs to execution/proof boundaries, not Foundation counterexamples.
+
+An independent Cartesian-product oracle checks nine complete grammars,
+14,860 program/class cases and 3,120 saturated count calculations. Actual
+Runtime search executes all 110 members of a registered-profile class,
+440 replay events (eight endpoints change), and ten recurrent/binding
+programs, with independent exact endpoint/likelihood checks. A separate
+587-program XOR audit finds a PRODUCT descendant with likelihood 1/12
+while all shorter prefixes and the complete same-class P=0 portion stay
+at 1/16, also the empirical optimal unigram. Its explicit zero-slot scope
+is not an unrestricted SUM exclusion or a neural model-science comparison.
+
+Read `theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md`,
+`scripts/audit_reference_search.py` and
+`evidence/minimal/FP_REFERENCE_SEARCH_AUDIT.json`. The successful result is
+`REFERENCE_CLASS_EXHAUSTED`; it cannot authorize equivalence, persistence,
+AMP or installation. Complete ERC-1 registration, stochastic fresh
+persistence/error state, host/device accounting, certified reference/AMP
+and atomic install remain the next integration frontier. No full Runtime
+freeze or RTX 3090 science authorization follows; static expansion remains
+parked and Foundation/ERC-1 stay frozen.

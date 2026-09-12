@@ -20,6 +20,10 @@ supplied through these public continuation methods:
 | `query(query_id, observation_ids)` | Selects already revealed legal records inside Runtime, charges the registered computation, retains proposal use, and returns the registered finite-alphabet moment answer |
 | `construct_candidate(program, profile_id=...)` | Executes the initializer and optional preregistered paid replay before publishing the newborn at a common update-unit boundary |
 | `retire_candidate(candidate_id)` | Releases the learner's own objects while retaining owned program references needed by past execution evidence |
+| `start_reference_search(search_name)` | Fixes the current baseline and opens one preregistered finite constructor class on its revealed objective records |
+| `advance_reference_search(search_id, transitions=...)` | Advances the owned checked native cursor, actually constructs/compares emitted programs, and verifies the closed reference class |
+| `reference_class_proof` / `verify_reference_class_proof` | Retrieves or verifies only a current Runtime-issued token for the specified exact reference class |
+| `cancel_reference_search(search_id)` | Terminates that search and its authority while retaining its queryable owned history and live constructed winner |
 
 An initializer with an inconclusive range bound may be retained as an
 unresolved construction; it is not a live ordinary trajectory. Active
@@ -79,6 +83,66 @@ reads old revealed targets, such failure need not halt the ordinary deployed
 trajectory; its changed Compiler resources remain part of future state.
 No new ordinary observation, fresh persistence event or statistical wealth
 is created by replay.
+
+## A complete finite reference class, with a limited proposition
+
+`ReferenceSearchSpec` fixes separate node/SUM/PRODUCT/edge/slot caps, a fixed
+nonempty set of original train/online objective IDs, and either the
+initializer alone or one registered profile. Search starts at a full
+ordinary boundary after its required labels are available. The finite
+semantic source/type/delay rules come from the enclosing contract.
+
+The complete ordered grammar includes repeated sources/edges/heads, shared
+and square PRODUCT descendants, all legal ordered SUM edge strings,
+unused slots, delayed bodies and every binding order. A poor program is
+still a potentially useful prefix; no value, gradient or support test
+prunes its descendants. `native_search.py` separates ordinal planning from
+checked ranking/closure. The Runtime owns the complete explicit cursor,
+so there is no caller-supplied generator, candidate menu or upper bound.
+Read the coverage proof in
+[`ORDERED_NATIVE_REFERENCE_CLASS.md`](../theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md).
+
+Every emitted graph uses actual owned construction/profile execution.
+Its objective evaluates each logged source context with the same frozen
+endpoint learner state, including delayed buffers. Multiplying its exact
+positive target probabilities ranks equal-sized empirical CE sums without
+floating log error. These objective evaluations create no new ordinary
+event and grant no population or future-continuation claim. Each read is
+charged and retains the original IDs as proposal data. Range uncertainty,
+missing observations, uncompleted value construction or arithmetic/resource
+failure stays unresolved; even completed syntax cannot then issue a proof.
+
+The proposition compares **all registered constructor endpoints plus the
+actual deployed baseline**. A baseline outside the grammar may win. Before
+issuance, every retained endpoint is rebound to its initializer/profile,
+rescored, and checked against an independent maximum verifier. The claimed
+score must equal that of the actual live winning program and complete
+learner state. Final verification has its own paid work and residency; a
+search that finishes all rows can still be UNRESOLVED at this step.
+
+`ReferenceClassProof` has one fixed proposition kind. It is accepted only
+when it exactly matches a retained issuance for this Runtime, claim, class,
+search, lineage/cursor and current context revision. The class ID names the
+registered class specification; the issuance's executed Runtime context
+binds its actual records, baseline and constructor endpoints. A constructed
+or altered helper object cannot grant authority. Any relevant external
+mutation makes an active prefix or old proof stale. Chunked internal search
+preserves its own checked cursor; snapshots carry no resume/write authority.
+
+The entire cursor and comparison history reside in actual packed Compiler
+workspace, replaced by allocation before release. Retiring nonwinners
+retains owned code needed by their rows/profile evidence. Cancellation
+retains the queryable packed history; it does not silently free payload
+still exposed by snapshots. Work and peaks are never refunded. A terminal
+diagnostic-retention failure is explicitly outside this partial payload
+model and cannot activate a proof.
+
+The success result is `REFERENCE_CLASS_EXHAUSTED`. `programs_compared`
+counts successful exact comparisons; `unresolved_programs` counts visited
+members without one. Neither result nor proof authorizes arbitrary values,
+all legal future continuations, a population optimum, fresh persistence,
+equivalence, AMP or installation. No full Compiler `CERTIFIED_COMPLETE`
+is emitted.
 
 ## Information is declared, including what is not hidden
 
@@ -179,17 +243,29 @@ The uniform deployed predictor is the empirical optimal unigram on the
 balanced fixture. Neither this comparison nor the dormant parameterization
 is a global rejection of all one-PRODUCT programs.
 
+The search audit independently covers nine full grammars (14,860 program/
+class cases), 3,120 saturated count calculations, 110 actual profile
+candidates with 440 replay events, and ten recurrent/binding programs.
+Eight profile endpoints actually change their initialized values. All 587
+members of a small XOR grammar are compared: a PRODUCT descendant reaches
+likelihood 1/12 while every shorter prefix and the complete same-class P=0
+portion stay at 1/16, also the empirical optimal unigram. This is an exact
+bounded Runtime audit; its explicit zero-slot class is not substituted for
+the unrestricted SUM coefficient class. False prefix closure, substituted
+rows, wrong selection, an inflated winner score, stale/altered tokens and
+backend/range/information/numeric/work/coexistence failures are exercised.
+
 Current package modules import. The previously falsified helper signers
-are no longer callable: `proof.py` and `bridge.py` explicitly reserve the
-unimplemented authority boundaries. The exact historical code, including
+are no longer callable. Current proof data and fixed maximum checking have
+only the Runtime-issued scope above; `bridge.py` remains reserved.
+The exact historical code, including
 its old learner dependency, is loaded in an isolated module namespace from
 Git commit `39235ef` by `scripts/audit_recovered_authorities.py`. All four
-historical false authorizations remain reproducible. Empty authority ports
-do not count as passed proof/bridge gates.
+historical false authorizations remain reproducible. An empty bridge port
+does not count as a passed bridge gate.
 
-Next integrate grammar-complete search with explicit decision classes and
-typed proof authority, then stochastic
-fresh persistence and complete physical/error state. Certified float64,
+Next integrate the complete immutable ERC-1 manifest, stochastic fresh
+persistence and complete physical/error state. Certified float64,
 actual AMP, atomic installation and the complete 47-gate mapping remain
 release obligations. The Runtime currently grants no CERTIFIED_COMPLETE,
 persistence, bridge or installation authorization. RTX 3090 science remains

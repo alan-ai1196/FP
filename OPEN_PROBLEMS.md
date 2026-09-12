@@ -33,9 +33,16 @@ The XVII.5 profile is now also executed from its original 16 retained labels:
 512 paid replay events preserve their IDs, reproduce all 32 updates and
 create no new exogenous/fresh events. Complete recurrent/optimizer state is
 retained at newborn attachment; failed profiles keep their paid prefix.
+Complete finite ordered grammar search now runs through the same endpoint.
+Independent enumeration checks nine grammars (14,860 program/class cases);
+actual searches cover registered profiles, delayed bindings and a compound
+PRODUCT discovery whose shorter prefixes have no gain. The Runtime-issued
+proof is scoped to fixed-state empirical CE on registered constructor
+endpoints **plus deployed baseline**, with current context and owned
+evidence. Read `theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md`.
 
-The remaining work is complete ERC-1 registration,
-grammar search with exact decision classes, typed proofs, stochastic fresh
+The remaining work is complete ERC-1 registration, full Compiler decision
+authority beyond the scoped reference comparison, stochastic fresh
 persistence/error state, actual host/device accounting, certified reference/
 AMP and atomic installation. Raw revealed train/online access is explicitly
 registered; query-only and reporting-only execution are not yet supported.
@@ -50,6 +57,17 @@ The new endpoint pass is not a complete release certificate.
 **Why it matters.** R4.2 was formally sophisticated but economically searched only a tiny atomic family. The same mistake must not recur behind a new API.
 
 **Known.** The theory supplies grammar-recursive construction and honest branch-and-bound semantics. General unrestricted compact search may be exponential/hard.
+
+**Closed finite implementation slice.** The checked ordered DFS covers all
+programs under the five explicitly declared native caps and fixed finite
+semantic rules. It retains all slots/edges/roots/binding orders and never
+rejects descendants from a poor parent score. Every emitted program runs
+the registered initializer/profile; the endpoint is rescored before the
+one fixed empirical-maximum proof. This is proved at the implementation
+level and checked against an independent exhaustive oracle. A failed
+range/value/comparison remains unresolved. More efficient solving may be
+needed, but do not expand static special cases to obscure an unfinished
+complete Runtime or extrapolate this fixed constructor to every value path.
 
 **Attack surface.** Random small-grammar exhaustive oracle comparison, repeated SUM/shared ancestors, compound PRODUCT descendants with useless parents, recurrent delayed state, tied value slots, direct-vs-factorized physical realizations.
 

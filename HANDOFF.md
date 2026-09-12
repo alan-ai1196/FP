@@ -20,14 +20,18 @@ still call for solver work or UNRESOLVED, not another static theory program.
 Current executable progress: `src/reference_compiler/fp_reference/runtime.py`
 now runs owned native construction, registered profile replay, exact ordinary
 learning, causal source reads and registered revealed-data queries through
-the same public endpoint.
+the same public endpoint. It also executes complete finite ordered native
+search and issues one tightly scoped reference comparison proof.
 Do not reconstruct these modules again. Read the source README,
 [`REFERENCE_RUNTIME_CONTINUATION.md`](docs/REFERENCE_RUNTIME_CONTINUATION.md),
-`scripts/audit_reference_construction.py`, `scripts/audit_reference_events.py`
-and `scripts/audit_reference_profiles.py`.
-The next gap is complete grammar search
-with exact decision classes and typed proof authority, then fresh persistence,
-full physical/error state, reference/AMP and atomic install integration.
+`scripts/audit_reference_construction.py`, `scripts/audit_reference_events.py`,
+`scripts/audit_reference_profiles.py` and `scripts/audit_reference_search.py`.
+Read [`ORDERED_NATIVE_REFERENCE_CLASS.md`](theory/proofs/ORDERED_NATIVE_REFERENCE_CLASS.md)
+before interpreting that proof: it optimizes fixed-state empirical CE over
+the registered initializer/profile endpoints plus the actual deployed
+baseline, not all values or future continuations. The remaining gaps are
+complete ERC-1 registration, fresh persistence, full physical/error state,
+reference/AMP and atomic install integration.
 
 The online interface explicitly permits exact revealed train/online access;
 its finite-precision query is not the only observable information channel.
@@ -35,9 +39,10 @@ The deterministic registered learner uses mean-CE projected SGD and stops
 gradient through delayed histories. Failed event prefixes retain revealed
 targets and spent work and cannot resume as unread. Retired lineages keep
 owned code references for their retained evidence. Historical unsafe signers
-are no longer callable in current `proof.py`/`bridge.py`; the exact old
-modules are still replayed from Git by the historical audit. Those empty
-authority boundaries are open gates, not passing implementations.
+are no longer callable; the exact old modules are still replayed from Git
+by the historical audit. Current `proof.py` contains only typed data and
+the fixed reference-maximum checker; issuance belongs to Runtime.
+`bridge.py` remains an empty authority boundary, not a passing gate.
 
 Current exact evidence includes 960 independent gradient vectors, all 64
 three-event binary context/target streams with two reference lineages, and
@@ -47,6 +52,14 @@ original labels, without advancing the ordinary cursor. The final learner
 preserves its optimizer count and delayed state at newborn attachment;
 profile creates no fresh observations. The old dormant factor face also
 survives the actual 32-step registered profile, as its theorem predicts.
+Independent complete enumeration now checks 14,860 program/class cases in
+nine small grammars. Runtime compares 110 profiled programs (440 actual
+replay events), ten recurrent/binding programs and all 587 members of a
+small XOR grammar. The latter discovers a PRODUCT descendant after all
+shorter prefixes fail to improve. No fitted value, gradient/support quotient
+or heuristic prefix rejection supplies the winner. Typed proofs reject
+wrong classes, stale state, bad selection, inflated scores and skipped
+regions; any unresolved member or verification budget blocks issuance.
 The packed-reference model, `ConstructionContract` and `OnlineContract`
 remain partial; no complete ERC-1 enforcement or 47-gate release is claimed.
 

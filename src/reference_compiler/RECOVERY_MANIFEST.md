@@ -57,8 +57,9 @@ The directly preserved readable late-WIP source at recovery commit `39235ef` is:
 `bridge.py`, `info.py`, `learner.py`, `proof.py`.
 
 These historical bytes remain in Git. Current `learner.py` and `info.py`
-are replacements; current proof/bridge modules expose no signer pending
-their complete authority integration. The historical audit loads the exact
+are replacements; current proof data describe only the finite reference
+comparison issued by Runtime, and bridge remains reserved. No generic
+helper signer is exposed. The historical audit loads the exact
 old learner/proof/bridge modules in an isolated namespace, without copying
 them into a second maintained implementation.
 
@@ -99,7 +100,12 @@ units commit; query answers are computed and quantized internally. The new
 `profile.py` declares finite replay over original retained observation IDs;
 Runtime executes it inside newborn construction with separate local and
 ordinary clocks, complete state attachment and paid read/compute/residency.
+The reconstructed `native_search.py`/`search.py` add complete finite ordered
+grammar enumeration with a checked owned cursor, actual constructor and
+exact fixed-state empirical CE comparison. New `proof.py` data and the
+Runtime's fixed verifier bind this class plus deployed baseline to a
+current executed context; no generic historical signer is restored.
 The public install path remains UNRESOLVED because complete manifest/
-search/proof/persistence/physical accounting/AMP integration is absent.
+persistence/error/physical accounting/AMP integration is absent.
 Read `src/reference_compiler/README.md` and the root implementation status
 for the exact current scope; the historical green gate counts remain stale.
