@@ -481,7 +481,7 @@ deployed program's registry entry; its next probability becomes 1/2 instead
 of 2/3, with no installation or learner step. This is an exact implementation
 counterexample, not a Foundation R4 failure or cryptographic hash attack.
 
-Current machine `packed-reference-payload-v4` preserves code points with
+The encoding introduced in machine v4 preserves code points with
 streaming typed UTF-8/surrogatepass bytes. ASCII encodings stay compatible;
 non-ASCII artifact IDs change. Reusing an owned program address additionally
 requires complete validated Program equality. A forced collision gives
@@ -528,9 +528,39 @@ This tests actual OS refusal, separately from injected precise failure sites.
 
 Read `theory/proofs/HOST_ALLOCATION_FAILURE.md`. The marker certifies no
 recovery or general snapshot availability; it prevents an uncertain prefix
-from continuing or authorizing decisions. Production host registration,
-complete resource-role/termination accounting and ERC-1 remain open. The
-job measurement is not a total-host/RSS bound or Runtime release certificate.
+from continuing or authorizing decisions. That audit job alone does not
+register the production Runtime; v6 supplies the scoped binding below.
+
+### Live process resource history (2026-09-12)
+
+Current machine `packed-reference-payload-v6` accepts `HostResourceContract`
+and owns a live binding to the executing 64-bit Windows CPython process.
+The fixed process arena is shared by deployment/compiler, charged in full
+to each and once globally. Its native process/job commitment cap is the
+minimum of the three declared caps. This centrally covers private Python
+metadata, copies, diagnostics and arithmetic workspace rather than guessing
+per-record overhead. Caller handles, counters or callbacks cannot supply
+the binding. The host policy is part of chi and survives CPU root publication.
+
+Public entries check the live immutable fence and whole-process lifetime
+peak/CPU history. Unestablished resource premises terminate authority with
+no cleanup allocation or refunds; subsequent diagnostic failures preserve
+the first host marker. No fallible post-check is added after installation.
+Host observations are sampled kernel-state projections, not complete-state
+equivalence certificates. The optional unbound reference mode is explicit.
+
+`scripts/audit_bound_host_runtime.py` executes five jobs, including the
+35-program search/four-learner persistence/CPU install under 64 MiB, actual
+128 MiB ingress refusal, stale/fake observation rejection, and unsuccessful
+exit after writing a completed-looking result. A real 80 MiB transient
+allocation followed by a new stricter nested job demonstrates that new-job
+peaks erase earlier process history; the lifetime check rejects that case.
+Read `theory/proofs/BOUND_HOST_RUNTIME.md` and its minimal JSON evidence.
+
+This closes the declared private-commitment dimension in the Runtime, not
+complete ERC-1 run/policy/supervision/publication/error ownership, CPU-time
+hard caps, shared platform/device resources, target AMP or release-gate
+mapping. Foundation/ERC-1 remain frozen; Runtime is NOT FROZEN and science HOLD.
 
 ## 4. Required closure tests
 

@@ -94,8 +94,8 @@ Failed prefixes retain their actual bytes and fixed status in paid storage.
 The grammar covers all nonnegative rationals; a window or integer limit can
 leave execution UNRESOLVED. Read
 [`OWNED_CONTEXT_INGRESS.md`](../../theory/proofs/OWNED_CONTEXT_INGRESS.md)
-and run `scripts/audit_context_ingress.py`. Complete host metadata, temporary
-copies/arithmetic scratch and general diagnostic accounting remain open.
+and run `scripts/audit_context_ingress.py`. Packed ingress alone does not
+cover host metadata or temporary workspace; v6 adds the host binding below.
 
 The encoding introduced in machine v4 additionally preserves every
 Python source-name code point in its typed UTF-8/surrogatepass encoding.
@@ -115,7 +115,7 @@ Read [`OWNED_ENCODING.md`](../../theory/proofs/OWNED_ENCODING.md) and run
 code-point/size checks and old/new workspace measurements. They do not close
 full host allocation or authorize a complete Runtime release.
 
-Current machine `packed-reference-payload-v5` also closes every public
+The failure rule introduced in machine v5 also closes every public
 continuation/authority port after host MemoryError. It uses a precreated
 marker in existing state slots, bypassing allocating cleanup/logging; spent
 work, alpha and the failed prefix remain. Snapshot reads are diagnostic and
@@ -125,6 +125,33 @@ next prediction. Read [`HOST_ALLOCATION_FAILURE.md`](../../theory/proofs/HOST_AL
 and run `scripts/audit_host_allocation_failure.py`. Its real Windows job
 refusal test measures child commitment, not total host memory or complete
 ERC-1 registration. Ordinary checked payload/work refusal keeps its semantics.
+
+Current machine `packed-reference-payload-v6` accepts an optional immutable
+host policy in the actual Runtime constructor, for example:
+
+```python
+from fp_reference import HostResourceContract, ReferenceCompilerRuntime
+
+host = HostResourceContract(128 << 20, {
+    'deployment': 96 << 20, 'compiler': 64 << 20,
+})
+runtime = ReferenceCompilerRuntime(contract, initial_program, online=online, host=host)
+```
+
+This requires the executing 64-bit Windows CPython process to be in the
+matching fixed 64 MiB job before execution. Runtime creates its own native
+binding; supplied samples/handles cannot do so. Both roles share and pay the
+whole private process arena, once globally. Whole-process peak/CPU history
+survives late registration, failure and CPU installation. Native premise
+failure closes authority; diagnostics cannot rewrite its first host marker.
+`snapshot().host_resources` observes live counters, not complete physical
+state. Omitting `host` is explicitly partial and changes chi.
+
+Read [`BOUND_HOST_RUNTIME.md`](../../theory/proofs/BOUND_HOST_RUNTIME.md)
+and run `scripts/audit_bound_host_runtime.py`. Its actual bounded CPU chain
+and late-fence counterexample establish the declared commitment scope.
+Complete ERC-1 run/policy/supervision/publication/error ownership, other
+resource limits, shared platform/device resources and target AMP remain open.
 
 Run `python -B scripts/audit_reference_construction.py` and
 `python -B scripts/audit_reference_events.py` and

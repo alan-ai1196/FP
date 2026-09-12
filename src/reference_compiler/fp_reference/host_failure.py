@@ -1,4 +1,4 @@
-"""One terminal boundary for exhausted allocations in the serialized Runtime.
+"""One terminal boundary for host failures in the serialized Runtime.
 
 This is a failure protocol, not a memory meter, allocator or feasibility proof.
 The marker is prepared with the trusted code; marking the existing state slots
@@ -7,21 +7,35 @@ does not build a diagnostic, copy the root, clean up or refund resources.
 from types import FunctionType
 
 from .core import ContractError
+from .host_resources import HostExecutionUnresolved
 
 
 HOST_ALLOCATION_FAILURE = ('host-memory', 'host allocation exhausted; retained prefix has no continuation authority')
+HOST_RESOURCE_FAILURE = ('host-resource', 'host resource premises failed; retained prefix has no continuation authority')
 
 
 def _guard(method, *, diagnostic):
     def guarded(self, *args, **kwargs):
-        if self._halted is HOST_ALLOCATION_FAILURE and not diagnostic:
-            raise ContractError('host allocation exhausted; this Runtime is terminal')
+        if (self._halted is HOST_ALLOCATION_FAILURE or self._halted is HOST_RESOURCE_FAILURE) and not diagnostic:
+            raise ContractError('host execution failed; this Runtime is terminal')
         try:
+            if self._host is not None:
+                # Entry check only. The registered job enforces allocations
+                # throughout the body; no allocating post-check is added after
+                # the CPU transaction's sole publication point.
+                self._host.observe()
             return method(self, *args, **kwargs)
         except MemoryError:
             # Existing keys and precreated immutable values only. In particular,
             # no exception formatting, attempted cleanup or new failure record.
-            self._halted = HOST_ALLOCATION_FAILURE
+            if self._halted is not HOST_ALLOCATION_FAILURE and self._halted is not HOST_RESOURCE_FAILURE:
+                self._halted = HOST_ALLOCATION_FAILURE
+            self._event_phase = 'halted'
+            raise
+        except HostExecutionUnresolved:
+            # A failed diagnostic cannot replace the first host halt cause.
+            if self._halted is not HOST_ALLOCATION_FAILURE and self._halted is not HOST_RESOURCE_FAILURE:
+                self._halted = HOST_RESOURCE_FAILURE
             self._event_phase = 'halted'
             raise
     # Keep readable public names without publishing a __wrapped__ bypass.
@@ -35,6 +49,7 @@ def guard_host_allocations(runtime):
     Constructor failure cannot return a Runtime. Immutable contract/identity
     properties carry no continuation authority. Private methods are not ports.
     Internal broad exception handlers must let MemoryError escape untouched.
+    A registered host also has its live resource premises checked on entry.
     """
     for name, method in tuple(vars(runtime).items()):
         if not name.startswith('_') and type(method) is FunctionType:

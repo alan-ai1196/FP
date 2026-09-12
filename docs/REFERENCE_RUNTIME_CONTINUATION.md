@@ -363,7 +363,7 @@ concurrent caller linearizability or crash recovery.
 
 ## Failure and physical history
 
-The control rule introduced in v2 and retained by v5 charges one fixed unit for each
+The control rule introduced in v2 and retained by v6 charges one fixed unit for each
 public Compiler mutation, using the already immutable construction,
 information or install work role. If that debit cannot be paid, no owned
 attempt, revision, query, frontier, evidence or resource history changes.
@@ -394,11 +394,11 @@ retiring the learner does not discard the sole graph behind an evidence
 record. This costs the registered Compiler residency. Historical records
 remain queryable, so they are not silently garbage-collected.
 
-The machine still counts only actual packed payload bytes/objects and its
-registered reference operation charges. CPython metadata, arithmetic scratch,
-transient byte/ledger copies, total host heap, bit-time and CUDA resources
-are not fully covered. General exception/history objects can remain outside
-the packed measure. This limitation prevents a complete physical claim.
+The packed ledger counts actual payload bytes/objects and registered reference
+operation charges. CPython metadata, scratch, transient byte/ledger copies
+and general exception/history objects remain partly outside that measure.
+The optional v6 live host binding below covers the process-private commitment
+dimension. Neither measure alone closes the complete physical contract.
 
 [`OWNED_CONTROL_ADMISSION.md`](../theory/proofs/OWNED_CONTROL_ADMISSION.md)
 preserves two historical obstructions. Paid admission corrected free control
@@ -432,8 +432,8 @@ Read [`OWNED_ENCODING.md`](../theory/proofs/OWNED_ENCODING.md). The old/new
 100,000-edge construction audit reduces a roughly 62 MB newly traced Python
 peak to roughly 0.134 MB before the same 8 KiB packed-cap refusal. This is a
 measured removal of encoding workspace growth, not total-heap enforcement.
-Mapping keys, scalar text, interpreter metadata and arithmetic scratch still
-require the complete physical contract before Runtime freeze or target AMP.
+The v6 host binding supplies a declared commitment fence for the remaining
+private workspace. The complete physical contract still precedes Runtime freeze.
 
 ## Host allocation exhaustion
 
@@ -449,8 +449,44 @@ and install ports also close. Snapshots are passive and may still fail.
 Read [`HOST_ALLOCATION_FAILURE.md`](../theory/proofs/HOST_ALLOCATION_FAILURE.md).
 The audit includes 22 ports and a real Windows job denying an unmodified
 128 MiB ingress-window allocation under a 64 MiB commitment cap. That OS
-measure is independent of packed bytes; production manifest/role accounting,
-process supervision and the rest of the physical machine remain open.
+measure is independent of packed bytes; the next section binds it to Runtime.
+
+## Live host resource history
+
+Machine v6 additionally accepts `HostResourceContract` at Runtime creation.
+The fixed whole-process private-commitment arena is shared by deployment and
+compiler: each pays its full measure, once globally. Thus the Windows
+process/job cap is `min(global, deployment, compiler caps)`. Runtime owns the
+native queries of its current process and immediate job, with no caller PID,
+handle, counter or callback port. The immutable policy contributes to chi;
+`host=None` has no populated host observation and proves no host cap.
+
+Public calls check the actual native limits and process-lifetime peak. The
+kernel enforces commitment throughout the body, including metadata and
+temporary workspace; installation adds no fallible post-publication check.
+The complete CPU root retains the binding. Process CPU history is observed,
+not rebased or hard-capped. Host snapshots are sampled kernel observations,
+not full physical state or a future-equivalence test; repeated counters can
+change without a learner transition. Job aggregates remain separate from
+process-lifetime history.
+
+An unestablished host premise gives `HostExecutionUnresolved` and closes
+continuation/authority through a precreated marker. The first host marker
+survives subsequent diagnostic failures of either host-failure type. This
+does not assert successful recovery or general snapshot availability.
+
+Read [`BOUND_HOST_RUNTIME.md`](../theory/proofs/BOUND_HOST_RUNTIME.md) and run
+`scripts/audit_bound_host_runtime.py`. The real late-fence witness shows why
+current memory/new-job peaks cannot establish the whole process history.
+The actual 35-program search, four-learner persistence, CPU installation and
+continuation execute inside one 64 MiB process. A completed-looking child
+file followed by unsuccessful exit is rejected by the audit parent.
+
+The scoped binding assumes the trusted launcher preserves its job policy.
+Complete ERC-1 run/policy registration, production supervision/publication
+and error ownership across terminated runs, other resource limits and
+shared platform/device costs remain open. A supervisor cannot perform FP
+policy work or retain its state outside the measured execution for free.
 
 ## Evidence and remaining boundary
 

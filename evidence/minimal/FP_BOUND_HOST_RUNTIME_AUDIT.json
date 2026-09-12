@@ -1,0 +1,182 @@
+{
+  "status": "PASS",
+  "scope": "live Runtime host policy/process binding and declared commitment observations",
+  "cases": {
+    "binding": {
+      "before": {
+        "process_id": 2848,
+        "creation_100ns": 134336931007170207,
+        "process_commit": 24604672,
+        "lifetime_process_commit_peak": 27664384,
+        "job_commit_peak": 28897280,
+        "process_user_100ns": 1718750,
+        "process_kernel_100ns": 1093750,
+        "job_user_100ns": 1718750,
+        "job_kernel_100ns": 1093750,
+        "total_job_processes": 2
+      },
+      "after": {
+        "process_id": 2848,
+        "creation_100ns": 134336931007170207,
+        "process_commit": 24604672,
+        "lifetime_process_commit_peak": 27664384,
+        "job_commit_peak": 28897280,
+        "process_user_100ns": 1875000,
+        "process_kernel_100ns": 1093750,
+        "job_user_100ns": 1875000,
+        "job_kernel_100ns": 1093750,
+        "total_job_processes": 2
+      },
+      "mismatched_actual_caps_rejected": true,
+      "supplied_flags_maps_and_counter_records_rejected": 4,
+      "host_registration_bound_into_claim_identity": true,
+      "failed_diagnostic_preserves_original_resource_halt": true,
+      "native_observation_failure_closes_authority_before_control_debit": true,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 67108864,
+        "peak_process_commit": 27664384,
+        "peak_job_commit": 28897280,
+        "user_100ns": 1875000,
+        "kernel_100ns": 1093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2848,
+        "process_creation_100ns": 134336931007170207
+      }
+    },
+    "memory": {
+      "before": {
+        "process_id": 2744,
+        "creation_100ns": 134336931010358718,
+        "process_commit": 24219648,
+        "lifetime_process_commit_peak": 27680768,
+        "job_commit_peak": 28913664,
+        "process_user_100ns": 2656250,
+        "process_kernel_100ns": 156250,
+        "job_user_100ns": 2812500,
+        "job_kernel_100ns": 156250,
+        "total_job_processes": 2
+      },
+      "after": {
+        "process_id": 2744,
+        "creation_100ns": 134336931010358718,
+        "process_commit": 24219648,
+        "lifetime_process_commit_peak": 27680768,
+        "job_commit_peak": 28913664,
+        "process_user_100ns": 2656250,
+        "process_kernel_100ns": 156250,
+        "job_user_100ns": 2812500,
+        "job_kernel_100ns": 156250,
+        "total_job_processes": 2
+      },
+      "registered_window_refused_by_actual_host": true,
+      "failed_diagnostic_preserves_original_allocation_halt": true,
+      "reference_work_retained": 536870993,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 67108864,
+        "peak_process_commit": 27680768,
+        "peak_job_commit": 28913664,
+        "user_100ns": 2968750,
+        "kernel_100ns": 156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2744,
+        "process_creation_100ns": 134336931010358718
+      }
+    },
+    "install": {
+      "before": {
+        "process_id": 2060,
+        "creation_100ns": 134336931013606601,
+        "process_commit": 27156480,
+        "lifetime_process_commit_peak": 27295744,
+        "job_commit_peak": 28540928,
+        "process_user_100ns": 18437500,
+        "process_kernel_100ns": 468750,
+        "job_user_100ns": 18437500,
+        "job_kernel_100ns": 468750,
+        "total_job_processes": 2
+      },
+      "after": {
+        "process_id": 2060,
+        "creation_100ns": 134336931013606601,
+        "process_commit": 30375936,
+        "lifetime_process_commit_peak": 30375936,
+        "job_commit_peak": 31621120,
+        "process_user_100ns": 19687500,
+        "process_kernel_100ns": 468750,
+        "job_user_100ns": 19687500,
+        "job_kernel_100ns": 468750,
+        "total_job_processes": 2
+      },
+      "complete_native_class_programs": 35,
+      "four_path_persistence_and_cpu_install_executed_in_same_bound_process": true,
+      "ordinary_continuation_after_install": true,
+      "alpha_spent": "1/2",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 67108864,
+        "peak_process_commit": 30412800,
+        "peak_job_commit": 31657984,
+        "user_100ns": 19843750,
+        "kernel_100ns": 468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2060,
+        "process_creation_100ns": 134336931013606601
+      }
+    },
+    "late-fence": {
+      "current_process_commit": 24354816,
+      "lifetime_process_commit_peak": 108453888,
+      "new_job_process_peak": 24354816,
+      "new_job_peak": 24354816,
+      "late_fence_cap": 67108864,
+      "low_current_memory_cannot_erase_prior_peak": true,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 134217728,
+        "peak_process_commit": 108453888,
+        "peak_job_commit": 109686784,
+        "user_100ns": 2812500,
+        "kernel_100ns": 312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26124,
+        "process_creation_100ns": 134336931034222709
+      }
+    },
+    "failed-exit": {
+      "completed_looking_child_file_not_accepted_as_run_success": true,
+      "job": {
+        "exit_code": 17,
+        "timed_out": false,
+        "commit_limit": 67108864,
+        "peak_process_commit": 30781440,
+        "peak_job_commit": 31993856,
+        "user_100ns": 20156250,
+        "kernel_100ns": 312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 6888,
+        "process_creation_100ns": 134336931037467167
+      }
+    }
+  },
+  "not_closed": [
+    "complete ERC-1 manifest and run-level publication/error ownership",
+    "total-machine/shared-platform/device resources",
+    "target AMP and Runtime freeze"
+  ]
+}

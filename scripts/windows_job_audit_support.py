@@ -12,25 +12,8 @@ from pathlib import Path
 import subprocess
 import sys
 
-
-class BasicLimit(C.Structure):
-    _fields_ = [('process_time', C.c_int64), ('job_time', C.c_int64), ('flags', W.DWORD),
-                ('min_ws', C.c_size_t), ('max_ws', C.c_size_t), ('processes', W.DWORD),
-                ('affinity', C.c_size_t), ('priority', W.DWORD), ('scheduling', W.DWORD)]
-
-
-class IoCounters(C.Structure):
-    _fields_ = [(name, C.c_uint64) for name in ('read_ops', 'write_ops', 'other_ops', 'read_bytes', 'write_bytes', 'other_bytes')]
-
-
-class ExtendedLimit(C.Structure):
-    _fields_ = [('basic', BasicLimit), ('io', IoCounters), ('process_memory', C.c_size_t),
-                ('job_memory', C.c_size_t), ('peak_process', C.c_size_t), ('peak_job', C.c_size_t)]
-
-
-class Accounting(C.Structure):
-    _fields_ = [(name, C.c_int64) for name in ('user_time', 'kernel_time', 'period_user_time', 'period_kernel_time')]+[
-        (name, W.DWORD) for name in ('page_faults', 'total_processes', 'active_processes', 'terminated_processes')]
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'src/reference_compiler'))
+from fp_reference.host_resources import Accounting, ExtendedLimit
 
 
 class Startup(C.Structure):
@@ -56,6 +39,8 @@ class JobRun:
     total_processes: int
     limit_terminated_processes: int
     attached_before_resume: bool
+    process_id: int
+    process_creation_100ns: int
 
 
 def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
@@ -80,6 +65,7 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
     exit_code = bind('GetExitCodeProcess', W.BOOL, [W.HANDLE, C.POINTER(W.DWORD)])
     terminate = bind('TerminateProcess', W.BOOL, [W.HANDLE, W.UINT])
     close = bind('CloseHandle', W.BOOL, [W.HANDLE])
+    times = bind('GetProcessTimes', W.BOOL, [W.HANDLE]+[C.POINTER(W.FILETIME)]*4)
     def checked(ok):
         if not ok:
             raise C.WinError(C.get_last_error())
@@ -102,6 +88,8 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
         attached = W.BOOL()
         checked(is_in(process.process, job, C.byref(attached)))
         checked(attached.value)
+        created, exited, kernel_time, user_time = (W.FILETIME() for _ in range(4))
+        checked(times(process.process, C.byref(created), C.byref(exited), C.byref(kernel_time), C.byref(user_time)))
         initial = ExtendedLimit()
         checked(query(job, 9, C.byref(initial), C.sizeof(initial), None))
         if (initial.process_memory != commit_limit or initial.job_memory != commit_limit
@@ -127,7 +115,8 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
             raise RuntimeError('job memory limits changed during execution')
         return JobRun(code.value, timed_out, commit_limit, final.peak_process, final.peak_job,
                       accounting.user_time, accounting.kernel_time, accounting.total_processes,
-                      accounting.terminated_processes, True)
+                      accounting.terminated_processes, True, process.pid,
+                      created.dwLowDateTime+(created.dwHighDateTime << 32))
     finally:
         # A failed setup never leaves a suspended child behind. Every handle
         # belongs to this audit launch, never to the user/Codex host process.

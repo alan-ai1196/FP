@@ -146,13 +146,32 @@ a real 64 MiB Windows job: actual allocation refusal halts before input,
 while paid work survives. This is job commitment accounting for the audit
 child, not total host memory or a production ERC-1 registration.
 
-These corrections close concrete identity/ingress/materialization/failure
-mismatches, not complete host accounting.
-The next physical obligation is explicit coverage of Python metadata,
-transient copies/arithmetic scratch and general diagnostics, together with
-complete ERC-1 registration and release-gate mapping. A manifest field or
-constant overhead multiplier cannot establish those bounds. No Foundation
-change, static case expansion, Runtime freeze or GPU science follows.
+Machine v6 now binds an immutable `HostResourceContract` to the actual
+executing Runtime process. Deployment and compiler share its whole private
+commitment arena: both roles pay the full measure, once globally, with a
+kernel fence at `min(global, deployment, compiler caps)`. Runtime queries its
+own live Windows job/process; supplied counter records cannot bind it.
+This covers Python metadata, temporary copies and arithmetic scratch within
+that declared private-commitment scope. Whole-process lifetime peak and CPU
+history are never rebased at Runtime creation. `host=None` remains explicitly
+partial, with a different chi and no host observation/claim.
+
+Read [`BOUND_HOST_RUNTIME.md`](theory/proofs/BOUND_HOST_RUNTIME.md) and run
+`scripts/audit_bound_host_runtime.py`. An actual late-fence witness retains
+about 103 MiB lifetime commitment while a new 64 MiB job reports only about
+23 MiB; the Runtime rejects it. The same audit completes the 35-program
+search, four-path persistence, CPU install and continuation inside one
+64 MiB process. Resource-read failure closes authority; later diagnostic
+failure cannot rewrite its first host halt cause. A worker that writes a
+completed-looking result and then exits unsuccessfully is not accepted.
+
+The next obligations are complete ERC-1 run/policy registration, production
+supervision/publication and error ownership across terminated runs, other
+resource coordinates and explicit release-gate mapping. Process commitment
+is not total-machine/RSS/shared-platform/device accounting; CPU observations
+are not a CPU-time hard cap. External supervision cannot own FP policy for
+free. No Foundation change, static expansion or Runtime freeze follows;
+actual AMP correctness still precedes RTX 3090 science.
 
 Read [`OWNED_REFERENCE_PERSISTENCE.md`](theory/proofs/OWNED_REFERENCE_PERSISTENCE.md)
 before interpreting `REFERENCE_CROSSED`. Its mean-null and stochastic

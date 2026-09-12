@@ -1810,3 +1810,41 @@ but remains an audit harness: production run registration, resource roles,
 supervision/publication after process termination, other host/device resources
 and full ERC-1 enforcement remain open. Foundation/ERC-1 stay frozen; no
 native architecture action, static family or science release is added.
+
+## 63. Resource boundaries cannot reset the execution history (2026-09-12)
+
+The v5 OS refusal audit supplied a concrete commitment mechanism, but the
+Runtime itself had no live binding to that mechanism. Machine v6 now owns
+one. `HostResourceContract` fixes a whole-process private-commitment arena
+shared by deployment and compiler, charged in full to both and once globally.
+The kernel cap is the minimum of their three declared caps. Native Runtime
+queries establish its actual process/job association and resource history;
+supplied counter data cannot replace them. This puts private Python metadata,
+transient copies, diagnostics and arithmetic scratch under the same resource
+measure instead of introducing object-category multipliers.
+
+An adversarial real-process experiment exposed why a live job alone is still
+insufficient. Under a 128 MiB outer cap, allocate and free a real 80 MiB
+buffer, then attach a new 64 MiB inner job to the same process. Its current
+commitment and new job peaks are about 23 MiB while the process-lifetime
+peak remains about 103 MiB. A current/new-job-only check would erase the
+earlier violation. Runtime now checks whole-lifetime process peak and keeps
+process CPU history as well; job aggregates remain separate observations.
+These observations are not complete physical-state equivalence classes.
+
+The actual Runtime also executes the existing 35-program search, four-path
+reference/binary64 persistence, CPU installation and ordinary continuation
+inside a 64 MiB process. Its host binding survives the single root publication.
+Native premise failure closes authority without allocating cleanup, and
+later diagnostic failures preserve the first host halt marker. Actual host
+ingress refusal retains spent work. A worker that completes the install,
+writes a result and exits 17 is not accepted as a successful run. Parent
+measurements come from the actual launched process/job handles.
+
+Read `theory/proofs/BOUND_HOST_RUNTIME.md` and the five-case endpoint audit.
+This implements the declared private-commitment dimension, not complete
+ERC-1 run/policy registration, production supervision/publication and error
+ownership after termination, shared platform/device resources or gate mapping.
+Unbound reference execution stays explicit; no manifest field or sampled
+counter grants missing authority. Foundation/ERC-1 stay frozen, static cases
+stay parked, and target AMP correctness remains ahead of RTX 3090 science.

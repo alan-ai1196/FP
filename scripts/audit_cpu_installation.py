@@ -31,7 +31,7 @@ from audit_float64_runtime import replay
 SMALL = GrammarLimits(2, 1, 0, 0, 0)
 
 
-def fixture(*, cfg=None, install=None, bounds=SMALL, count=40, discovery=True, continued=False):
+def fixture(*, cfg=None, install=None, bounds=SMALL, count=40, discovery=True, continued=False, host=None):
     cfg = config(cap=4, peak=1) if cfg is None else cfg
     run = replace(online(cfg, count, unit=2, rate=F(1, 8), grid=16),
         float64=Float64Contract(F(1, 1 << 24), F(1, 1 << 24)),
@@ -46,7 +46,7 @@ def fixture(*, cfg=None, install=None, bounds=SMALL, count=40, discovery=True, c
             ReferenceSearchSpec('next', bounds, ('observation-22', 'observation-23')),),
             persistence=replace(run.persistence, rules=run.persistence.rules+tuple(
                 replace(rule, rule_id=rule.rule_id+'-next', alpha=F(1, 8)) for rule in run.persistence.rules)))
-    rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=run)
+    rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=run, host=host)
     if not discovery:
         return rt
     event(rt, 0)

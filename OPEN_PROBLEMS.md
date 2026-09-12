@@ -107,18 +107,25 @@ a candidate whose learner buffers were already freed. The current failure
 marker preserves the prefix without assuming cleanup allocation can succeed.
 An actual 64 MiB Windows job refuses the Runtime's registered 128 MiB ingress
 window before input, with paid work retained; see
-`theory/proofs/HOST_ALLOCATION_FAILURE.md`. The job mechanism is currently an
-audit boundary, not production manifest/role/whole-process authority.
+`theory/proofs/HOST_ALLOCATION_FAILURE.md`.
 
-These corrections do not supply complete host accounting. Python metadata
-and diagnostic records, mapping-key/scalar encoding workspace, transient byte
-copies, detached ledger maps, gcd/rational scratch and allocator state still
-lie partly outside packed payload caps.
-The next resource closure must state and enforce their actual machine model,
-including temporary coexistence and failed prefixes, rather than promote
-the finite request/byte bounds into a full heap theorem. Complete ERC-1
-registration and gate mapping remain open. Static special cases stay parked;
-after reference closure the next target is actual AMP and then RTX 3090.
+Machine v6 additionally binds the actual Runtime process to registered
+private-commitment limits. Its complete process arena is shared by both
+roles, with the minimum global/role cap enforced by the kernel. This covers
+Python metadata, copies, diagnostics, rational scratch and allocator arenas
+in that declared measure; complete-state ownership still comes from the
+Runtime/packed ledger. Process-lifetime peak and CPU history cannot be reset
+with a new Runtime or nested job. An actual late-fence counterexample and
+35-program search/persistence/install under 64 MiB are in
+`theory/proofs/BOUND_HOST_RUNTIME.md`.
+
+The remaining resource closure is complete ERC-1 run/policy registration,
+production supervision/publication and error ownership across terminated
+runs, external/shared platform and device resources, other resource limits,
+and release-gate mapping. A sampled host observation is not full physical
+state or run authority, and the unbound reference mode proves no host cap.
+Static special cases stay parked; after reference closure the next target
+is actual AMP and then RTX 3090.
 
 **Sufficient falsification of the current foundation.** A minimal program that is legal under `FP_THEORY.md` but cannot be represented/considered by any implementation conforming to the Reference Compiler contract **unless a new semantic model primitive is added**. Slow search or `UNRESOLVED` does not falsify the foundation.
 

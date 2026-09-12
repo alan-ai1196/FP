@@ -20,6 +20,7 @@ from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_s
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .encoding import packed_size, write_packed
 from .host_failure import guard_host_allocations
+from .host_resources import HostResourceContract, HostResourceObservation, _WindowsProcessHost
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
@@ -272,23 +273,26 @@ class RuntimeSnapshot:
     install_receipts: tuple[CpuInstallReceipt, ...]
     ingress: tuple[IngressSnapshot, ...]
     active_ingress: str | None
+    host_resources: HostResourceObservation | None = None
 
 
 @guard_host_allocations
 class ReferenceCompilerRuntime:
     recovery_phase = 'native-construction-causal-reference'
 
-    def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None):
+    def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
+                 host: HostResourceContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
         self._contract = contract
+        self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
                 raise ContractError('registered online continuation required')
             online.validate(contract)
         self._online = online
         self._chi = stable_hash(('ERC-1 construction recovery', self.recovery_phase,
-                                 ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id, contract, online))
+                                 ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id, contract, online, host))
         self._runtime_id = secrets.token_hex(12)
         self._ledger = ResourceLedger(contract.limits)
         self._router = CostRouter(self._ledger, contract.work_roles)
@@ -1759,7 +1763,7 @@ after all fallible construction, checks and physical preparation complete.
         # Fixed transition schema: a future scheduler/job/cache coordinate
         # cannot silently acquire this version's quiescence/frame proof.
         root_fields = {
-            '_contract', '_online', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
+            '_contract', '_online', '_host', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
             '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
             '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
             '_float64_traces', '_next_install', '_install_attempts', '_install_receipts', '_next_candidate',
@@ -1936,4 +1940,5 @@ after all fallible construction, checks and physical preparation complete.
                                tuple(self._persistence_identities.values()), tuple(self._persistence_events), tuple(self._float64_traces),
                                self._next_install, tuple(self._install_attempts), tuple(self._install_receipts),
                                tuple(IngressSnapshot(identity, *read_control(self._buffers[identity.control_id], self._online.data.ingress))
-                                     for identity in self._ingress_identities.values()), self._active_ingress)
+                                     for identity in self._ingress_identities.values()), self._active_ingress,
+                               None if self._host is None else self._host.observe())
