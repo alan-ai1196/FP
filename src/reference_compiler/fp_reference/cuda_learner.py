@@ -39,12 +39,16 @@ def _torch():
 def _tensor(value, dtype, *, dimension=None, nonnegative=False):
     torch = _torch()
     if (type(value) is not torch.Tensor or not value.is_cuda
-            or value.dtype != getattr(torch, dtype) or value.requires_grad
+            or value.dtype != getattr(torch, dtype) or value.requires_grad or not value.is_contiguous()
             or dimension is not None and value.ndim != dimension):
         raise ContractError('registered CUDA tensor, dtype, shape and manual-gradient path required')
-    if not bool(torch.isfinite(value).all().item()):
+    width = 16 if value.dtype == torch.float16 else 32
+    exponent = 0x7c00 if width == 16 else 0x7f800000
+    sign = 1 << (width-1)
+    words = raw_tensor(value)
+    if any(word & exponent == exponent for word in words):
         raise ArithmeticUnresolved('nonfinite actual CUDA learner or prediction')
-    if nonnegative and bool((value < 0).any().item()):
+    if nonnegative and any(word & sign and word & (sign-1) for word in words):
         raise ContractError('negative native CUDA state')
 
 
@@ -108,7 +112,7 @@ class CudaEvaluation:
         _histories(self.delayed)
         if self.excesses.shape != self.masses.shape or self.masses.shape != self.probabilities.shape:
             raise ContractError('CUDA readout shapes differ')
-        if not bool((self.masses > 0).all().item()) or not bool((self.normalizer > 0).item()):
+        if any(word & 0x7fffffff == 0 for word in raw_tensor(self.masses)+raw_tensor(self.normalizer)):
             raise ArithmeticUnresolved('actual CUDA readout lost a positive base or normalizer')
 
 
@@ -121,7 +125,7 @@ class CudaArithmetic:
     """
     backend_id = BACKEND_ID
 
-    def __init__(self, bit_limit: int, device=0):
+    def __init__(self, bit_limit: int, device=0, *, workspace=None):
         natural(bit_limit, 'CUDA reference integer work limit', positive=True)
         natural(device, 'CUDA device ordinal')
         torch = _torch()
@@ -130,8 +134,16 @@ class CudaArithmetic:
         self.bit_limit = bit_limit
         self.device = torch.device('cuda', device)
         self._records = []
+        if workspace is not None:
+            from .cuda_storage import CudaWorkspace
+            if type(workspace) is not CudaWorkspace or workspace.arena.device != self.device:
+                raise ContractError('registered owned CUDA workspace required')
+            workspace._open()
+        self._workspace = workspace
 
     def _keep(self, operation, value):
+        if self._workspace is not None:
+            self._workspace.written(value)
         self._operands(value)
         self._records.append((operation, value))
         return value
@@ -139,9 +151,55 @@ class CudaArithmetic:
     def _operands(self, *values):
         torch = _torch()
         if (any(type(value) is not torch.Tensor or value.device != self.device
-                or value.dtype not in (torch.float16, torch.float32) or value.requires_grad for value in values)
+                or value.dtype not in (torch.float16, torch.float32) or value.requires_grad
+                or not value.is_contiguous() for value in values)
                 or len({value.dtype for value in values}) != 1):
             raise ContractError('CUDA phase needs resident matching-dtype tensors without automatic gradients')
+        if self._workspace is not None:
+            for value in values:
+                self._workspace.require_initialized(value)
+
+    def _empty(self, shape, dtype, operation):
+        if self._workspace is None:
+            return _torch().empty(shape, dtype=dtype, device=self.device)
+        return self._workspace.empty(tuple(shape), dtype, operation)
+
+    def _written(self, value):
+        if self._workspace is not None:
+            self._workspace.written(value)
+        return value
+
+    def repeat(self, value, count):
+        self._operands(value)
+        if value.numel() != 1:
+            raise ContractError('registered CUDA repetition needs one scalar')
+        result = self._empty((count,), value.dtype, 'repeat-copy')
+        result.copy_(value)
+        return self._written(result)
+
+    def stack(self, values):
+        if not values:
+            raise ContractError('CUDA scalar stack cannot be empty')
+        for value in values:
+            self._operands(value)
+            if value.ndim != 0 or value.dtype != values[0].dtype:
+                raise ContractError('registered CUDA stack needs matching scalar views')
+        result = self._empty((len(values),), values[0].dtype, 'stack-copy')
+        for index, value in enumerate(values):
+            result[index].copy_(value)
+        return self._written(result)
+
+    def concatenate(self, values):
+        for value in values:
+            self._operands(value)
+            if value.ndim != 1 or value.dtype != values[0].dtype:
+                raise ContractError('registered CUDA concatenation needs matching vectors')
+        result = self._empty((sum(value.numel() for value in values),), values[0].dtype, 'queue-copy')
+        position = 0
+        for value in values:
+            result[position:position+value.numel()].copy_(value)
+            position += value.numel()
+        return self._written(result)
 
     def ingress(self, values):
         if type(values) is not tuple or any(type(value) is not F for value in values):
@@ -150,9 +208,11 @@ class CudaArithmetic:
         # of a trained reference theta/gradient into a pretend device successor.
         rounded = [round_binary(value, SINGLE, bit_limit=self.bit_limit) for value in values]
         torch = _torch()
-        return self._keep('host-RNE32-ingress', torch.tensor(
-            [-0.0 if value.negative_zero else float(value.value) for value in rounded],
-            dtype=torch.float32, device=self.device))
+        encoded = torch.tensor([-0.0 if value.negative_zero else float(value.value) for value in rounded],
+                               dtype=torch.float32, device='cpu')
+        result = self._empty((len(rounded),), torch.float32, 'host-RNE32-ingress')
+        result.copy_(encoded)
+        return self._keep('host-RNE32-ingress', result)
 
     def constant(self, value):
         return self.ingress((value,))[0]
@@ -161,32 +221,53 @@ class CudaArithmetic:
         self._operands(value)
         if dtype not in ('float16', 'float32'):
             raise ContractError('unregistered CUDA cast')
-        return self._keep('cast-'+dtype, value.to(getattr(_torch(), dtype)))
+        result = self._empty(tuple(value.shape), getattr(_torch(), dtype), 'cast-'+dtype)
+        result.copy_(value)
+        return self._keep('cast-'+dtype, result)
 
     def add(self, left, right):
         self._operands(left, right)
-        return self._keep('add', left+right)
+        torch = _torch()
+        result = self._empty(tuple(torch.broadcast_shapes(left.shape, right.shape)), left.dtype, 'add')
+        torch.add(left, right, out=result)
+        return self._keep('add', result)
 
     def mul(self, left, right):
         self._operands(left, right)
-        return self._keep('mul', left*right)
+        torch = _torch()
+        result = self._empty(tuple(torch.broadcast_shapes(left.shape, right.shape)), left.dtype, 'mul')
+        torch.mul(left, right, out=result)
+        return self._keep('mul', result)
 
     def div(self, left, right):
         # Both operands stay tensors on the registered device. A Python/CPU
         # scalar divisor would select a different PyTorch numerical operation.
         self._operands(left, right)
-        return self._keep('div', left/right)
+        torch = _torch()
+        result = self._empty(tuple(torch.broadcast_shapes(left.shape, right.shape)), left.dtype, 'div')
+        torch.div(left, right, out=result)
+        return self._keep('div', result)
 
     def neg(self, value):
         self._operands(value)
-        return self._keep('neg', -value)
+        result = self._empty(tuple(value.shape), value.dtype, 'neg')
+        _torch().neg(value, out=result)
+        return self._keep('neg', result)
 
     def positive_part(self, value):
         self._operands(value)
         torch = _torch()
-        zero = torch.zeros_like(value)
+        shape = tuple(value.shape)
+        zero = self._empty(shape, value.dtype, 'projection-zero')
+        zero.zero_()
+        self._written(zero)
+        mask = self._empty(shape, torch.bool, 'projection-mask')
+        torch.gt(value, zero, out=mask)
+        self._written(mask)
+        result = self._empty(shape, value.dtype, 'positive-part')
         # Explicitly canonicalize either zero sign, as the exact projection.
-        return self._keep('positive-part', torch.where(value > zero, value, zero))
+        torch.where(mask, value, zero, out=result)
+        return self._keep('positive-part', result)
 
     def floor_grid(self, value, bits):
         self._operands(value)
@@ -198,22 +279,42 @@ class CudaArithmetic:
         # No large floating scale or reciprocal is materialized. The input is
         # nonnegative single precision after projection. Nonfinite earlier
         # results still remain on the tape and cannot be masked by this step.
-        word = value.view(torch.int32) & 0x7fffffff
-        exponent = (word >> 23) & 255
-        shift = torch.where(exponent != 0, exponent-150, torch.full_like(exponent, -149))
+        shape = tuple(value.shape)
+        integer = lambda label: self._empty(shape, torch.int32, 'grid-'+label)
+        word, exponent, shift, drop = (integer(label) for label in ('word', 'exponent', 'shift', 'drop'))
+        torch.bitwise_and(value.view(torch.int32), 0x7fffffff, out=word)
+        torch.bitwise_right_shift(word, 23, out=exponent)
+        torch.bitwise_and(exponent, 255, out=exponent)
+        mask = self._empty(shape, torch.bool, 'grid-mask')
+        torch.ne(exponent, 0, out=mask)
+        torch.sub(exponent, 150, out=shift)
+        constant = integer('constant')
+        constant.fill_(-149)
+        torch.where(mask, shift, constant, out=shift)
         # Every finite single value already lies on the 2^-149 grid; this
         # exact reduction also avoids converting an enormous legal grid index
         # to an overflowing device integer scalar.
-        drop = (-min(bits, 149)-shift).clamp(min=0, max=24)
-        kept = torch.where(drop >= 24, torch.zeros_like(word), word & (-1 << drop))
-        return self._keep('floor-grid', kept.view(torch.float32))
+        torch.neg(shift, out=drop)
+        torch.sub(drop, min(bits, 149), out=drop)
+        torch.clamp(drop, min=0, max=24, out=drop)
+        constant.fill_(-1)
+        torch.bitwise_left_shift(constant, drop, out=constant)
+        torch.bitwise_and(word, constant, out=word)
+        torch.ge(drop, 24, out=mask)
+        constant.zero_()
+        result = self._empty(shape, torch.float32, 'floor-grid')
+        torch.where(mask, constant, word, out=result.view(torch.int32))
+        for temporary in (word, exponent, shift, drop, mask, constant):
+            self._written(temporary)
+        return self._keep('floor-grid', result)
 
     def check(self):
-        torch = _torch()
-        if self._records:
-            values = torch.cat([value.reshape(-1).to(torch.float32) for _, value in self._records])
-            if not bool(torch.isfinite(values).all().item()):
+        for _, value in self._records:
+            mask = 0x7c00 if value.dtype == _torch().float16 else 0x7f800000
+            if any(word & mask == mask for word in raw_tensor(value)):
                 raise ArithmeticUnresolved('nonfinite actual CUDA phase intermediate retained')
+        if self._workspace is not None:
+            self._workspace.arena.check()
 
     def raw_trace(self):
         """Raw results including a failed phase's infinities/NaNs, no authority."""
@@ -238,9 +339,11 @@ def _state(program, rules, state, arith):
     _arithmetic(arith)
     if type(state) is not CudaLearnerState or state.theta.numel() != program.slot_count:
         raise ContractError('complete CUDA learner does not match its program')
-    state.__post_init__()  # Detect a caller's mutable-tensor corruption too.
     if state.theta.device != arith.device:
         raise ContractError('CUDA learner and arithmetic devices differ')
+    for value in (state.theta, state.gradient_sum, *(values for _, values in state.delayed)):
+        arith._operands(value)
+    state.__post_init__()  # Ownership precedes reading any numeric payload.
     if tuple((key, value.numel()) for key, value in state.delayed) != tuple((s.state_id, s.delay) for s in rules.states):
         raise ContractError('CUDA delayed histories differ from the registered interface')
 
@@ -257,9 +360,10 @@ def initialize(program: Program, rules: SemanticRules, theta: tuple[F, ...],
     values = arith.ingress(theta)
     zero = arith.constant(F(0))
     half_zero = arith.cast(zero, 'float16')
-    delayed = tuple((s.state_id, half_zero.repeat(s.delay)) for s in rules.states)
+    delayed = tuple((s.state_id, arith.repeat(half_zero, s.delay)) for s in rules.states)
+    gradient = arith.repeat(zero, program.slot_count)
     arith.check()
-    return CudaLearnerState(values, delayed, zero.repeat(program.slot_count), 0, cursor, 0)
+    return CudaLearnerState(values, delayed, gradient, 0, cursor, 0)
 
 
 def evaluate(program: Program, rules: SemanticRules, state: CudaLearnerState,
@@ -290,16 +394,15 @@ def evaluate(program: Program, rules: SemanticRules, state: CudaLearnerState,
                 accumulator = arith.add(accumulator, arith.cast(weighted, 'float32'))
             value = arith.cast(accumulator, 'float16')
         values.append(value)
-    torch = _torch()
-    values = torch.stack(values)
-    excesses = torch.stack([values[h] for h in program.heads])
+    values = arith.stack(values)
+    excesses = arith.stack([values[h] for h in program.heads])
     masses = arith.add(arith.ingress(rules.base), arith.cast(excesses, 'float32'))
     normalizer = zero
     for mass in masses:
         normalizer = arith.add(normalizer, mass)
     probabilities = arith.div(masses, normalizer)
     bodies = {binding.state_id: values[binding.body] for binding in program.bindings}
-    delayed = tuple((s.state_id, torch.cat((histories[s.state_id][1:], bodies[s.state_id].reshape(1)))) for s in rules.states)
+    delayed = tuple((s.state_id, arith.concatenate((histories[s.state_id][1:], bodies[s.state_id].reshape(1)))) for s in rules.states)
     arith.check()
     return CudaEvaluation(values, theta_half, excesses, masses, normalizer, probabilities, delayed)
 
@@ -315,6 +418,9 @@ def observe_event(program: Program, rules: SemanticRules, state: CudaLearnerStat
         raise ContractError('CUDA target is outside the registered readout')
     if type(prediction) is not CudaEvaluation:
         raise ContractError('complete actual CUDA prediction required')
+    for value in (prediction.values, prediction.theta_half, prediction.excesses, prediction.masses,
+                  prediction.normalizer, prediction.probabilities, *(values for _, values in prediction.delayed)):
+        arith._operands(value)
     prediction.__post_init__()
     if (prediction.values.numel() != len(program.nodes) or prediction.theta_half.numel() != program.slot_count
             or prediction.masses.numel() != len(program.heads)
@@ -342,7 +448,7 @@ def observe_event(program: Program, rules: SemanticRules, state: CudaLearnerStat
         elif type(node) is Product:
             adjoint[node.left] = arith.add(adjoint[node.left], arith.mul(seed, forward[node.right]))
             adjoint[node.right] = arith.add(adjoint[node.right], arith.mul(seed, forward[node.left]))
-    current = _torch().stack(gradient) if gradient else zero.repeat(0)
+    current = arith.stack(gradient) if gradient else arith.repeat(zero, 0)
     accumulated = arith.add(state.gradient_sum, current)
     arith.check()
     return replace(state, delayed=prediction.delayed, gradient_sum=accumulated,
@@ -354,6 +460,8 @@ def commit_event(state: CudaLearnerState, spec: LearnerSpec,
     _arithmetic(arith)
     if type(state) is not CudaLearnerState or type(spec) is not LearnerSpec:
         raise ContractError('complete CUDA learner and registered optimizer required')
+    for value in (state.theta, state.gradient_sum, *(values for _, values in state.delayed)):
+        arith._operands(value)
     state.__post_init__()
     if state.theta.device != arith.device or state.unit_count != spec.update_unit or state.cursor % spec.update_unit:
         raise ContractError('CUDA commit is outside a full registered update unit or device')
@@ -363,8 +471,9 @@ def commit_event(state: CudaLearnerState, spec: LearnerSpec,
     if spec.commit_grid_bits is not None:
         updated = arith.floor_grid(updated, spec.commit_grid_bits)
     zero = arith.constant(F(0))
+    gradient = arith.repeat(zero, state.theta.numel())
     arith.check()  # Check even an overflow later hidden by projection to zero.
-    return replace(state, theta=updated, gradient_sum=zero.repeat(state.theta.numel()),
+    return replace(state, theta=updated, gradient_sum=gradient,
                    unit_count=0, optimizer_steps=state.optimizer_steps+1)
 
 

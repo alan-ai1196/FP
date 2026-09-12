@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "scope": "actual bounded CUDA tensor arena and complete learner mechanics; no Runtime or total-device authority",
+  "registration": {
+    "malformed_caps_rejected": true,
+    "shared_arena_role_refusal_precedes_device_allocation": true,
+    "insufficient_real_allocator_segment_cap_refused_before_allocation": true,
+    "allocation_counter_after_all_registration_refusals": 0
+  },
+  "actual_initial_reservation_classes": {
+    "small": {
+      "request_bytes": 512,
+      "pre_admitted_segment_bytes": 2097152,
+      "actual_allocator_reserved_bytes": 2097152,
+      "explicit_allocator_configuration": "large_segment_size_mb:20",
+      "native_counter": [
+        1,
+        512,
+        1
+      ]
+    },
+    "medium": {
+      "request_bytes": 2097152,
+      "pre_admitted_segment_bytes": 20971520,
+      "actual_allocator_reserved_bytes": 20971520,
+      "explicit_allocator_configuration": "large_segment_size_mb:20",
+      "native_counter": [
+        1,
+        2097152,
+        1
+      ]
+    },
+    "large": {
+      "request_bytes": 10485760,
+      "pre_admitted_segment_bytes": 10485760,
+      "actual_allocator_reserved_bytes": 10485760,
+      "explicit_allocator_configuration": "large_segment_size_mb:20",
+      "native_counter": [
+        1,
+        10485760,
+        1
+      ]
+    },
+    "hidden-setting-witness": {
+      "same_reported_settings_as_initial_default": true,
+      "before_allocation_counter": 0,
+      "request_bytes": 2097152,
+      "actual_allocator_reserved_bytes": 41943040
+    },
+    "hidden-setting-binding": {
+      "request_bytes": 2097152,
+      "pre_admitted_segment_bytes": 20971520,
+      "actual_allocator_reserved_bytes": 20971520,
+      "explicit_allocator_configuration": "large_segment_size_mb:20",
+      "native_counter": [
+        1,
+        2097152,
+        1
+      ]
+    }
+  },
+  "exhaustive_learners": {
+    "all_binary_context_target_three_event_streams": 64,
+    "ordinary_events": 192,
+    "reference_and_CUDA_baseline_candidate_paths": 4,
+    "all_parameters_accumulators_queues_and_clocks_compared": true,
+    "predecessor_device_tensors_unchanged": true,
+    "partial_final_units_preserved": true,
+    "actual_CUDA_phases": 1024,
+    "half_arithmetic_or_ingress_results": 3392,
+    "actual_half_multiply_results": 1152,
+    "single_arithmetic_or_ingress_results": 18880,
+    "reference_state_coordinates_compared": 1152,
+    "coordinates_differing_from_recast_exact_reference": 320,
+    "largest_observed_state_absolute_error_float64_summary": 0.00021627924165312497
+  },
+  "recurrent_profile": {
+    "original_revealed_profile_records": 2,
+    "actual_profile_replayed_events": 6,
+    "ordinary_events": 6,
+    "candidate_final_optimizer_steps": 5,
+    "profile_attachment_preserves_all_device_buffers": true,
+    "both_delayed_queue_positions_compared_every_event": true,
+    "actual_CUDA_phases": 42,
+    "half_arithmetic_or_ingress_results": 130,
+    "actual_half_multiply_results": 40,
+    "single_arithmetic_or_ingress_results": 794,
+    "reference_state_coordinates_compared": 48,
+    "coordinates_differing_from_recast_exact_reference": 6,
+    "largest_observed_state_absolute_error_float64_summary": 8.747709532115362e-05
+  },
+  "varied_native_graphs": {
+    "seeded_native_graphs": 24,
+    "events_per_graph": 4,
+    "labels": 3,
+    "repeated_edges_heads_squares_and_unused_slots": true,
+    "host_single_then_device_half_source_rounding_checked": true,
+    "all_full_states_and_native_predictions_match_exact_rounded_model": true,
+    "actual_CUDA_phases": 240,
+    "half_arithmetic_or_ingress_results": 2500,
+    "actual_half_multiply_results": 1260,
+    "single_arithmetic_or_ingress_results": 12032,
+    "reference_state_coordinates_compared": 0,
+    "coordinates_differing_from_recast_exact_reference": 0,
+    "largest_observed_state_absolute_error_float64_summary": null
+  },
+  "learner_storage": {
+    "allocation_id": "single-cuda-tensor-arena-ordered-out-v1",
+    "device_name": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "torch": "2.12.0+cu132",
+    "torch_git_version": "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "CUDA_runtime": "13.2",
+    "actual_tensor_arena_bytes": 16777216,
+    "actual_allocator_reserved_bytes": 16777216,
+    "lifetime_tensor_peak_bytes": 16777216,
+    "lifetime_allocator_reserved_peak_bytes": 16777216,
+    "native_allocation_counter_at_binding": [
+      1,
+      16777216,
+      1
+    ],
+    "native_allocation_counter_current": [
+      1,
+      16777216,
+      1
+    ],
+    "consumed_arena_extent": 304064,
+    "actual_initialized_view_extents": 32996
+  },
+  "extents": {
+    "complete_typed_allocation_request_sequences": 216,
+    "actual_extent_requests": 648,
+    "real_offsets_and_storage_identity_match_independent_model": true,
+    "uninitialized_cross_extent_reinterpreted_and_lazy_negative_reads_rejected": true,
+    "old_or_already_initialized_extent_cannot_be_redeclared_written": true,
+    "failed_large_extent_does_not_allocate_or_advance_cursor": true,
+    "whole_actual_backing_arena_charged_to_each_role_once_globally": true
+  },
+  "grid_and_failure": {
+    "exact_grid_coordinates_inside_owned_arena": 1340,
+    "complete_predecessor_preserved_after_actual_masked_overflow": true,
+    "failed_phase_extents_and_infinite_intermediate_retained": true
+  },
+  "escaped_allocation": {
+    "freed_foreign_tensor_restores_current_bytes_but_does_not_erase_allocation_history": true,
+    "native_counter_before": [
+      1,
+      16777216,
+      1
+    ],
+    "native_counter_after_freed_foreign_allocation": [
+      2,
+      16777728,
+      2
+    ],
+    "actual_current_bytes_after_foreign_tensor_free": 16777216,
+    "original_unexpected_failure_not_downgraded_by_storage_refusal": true,
+    "actual_completed_write_retained_with_failed_phase": true,
+    "storage_failure_is_terminal_without_counter_reset_or_identity_reuse": true
+  },
+  "not_closed": [
+    "Runtime device registration, paid host evidence and joint event publication",
+    "driver/context/non-PyTorch allocations or total-device accounting",
+    "target range, same-path AMP persistence, build/copy/install and science release",
+    "liveness-optimal storage or a GPU performance claim"
+  ]
+}

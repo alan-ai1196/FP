@@ -34,6 +34,12 @@ profiles and recurrence. Continue into complete Runtime ownership and
 per-event numerical relations, then target range, same-path persistence and
 installation. More isolated primitive cases are not a release goal.
 
+The [actual tensor arena](theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md) now
+holds every tensor in those 1,306 phases in one prepaid 16 MiB allocation.
+Its allocator admission and lifetime-history controls have actual negative
+witnesses. Use this existing component for the owned Runtime prefix; do not
+rebuild storage or promote its tensor-only bounds into total-device closure.
+
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 
 **Why it matters.** The frozen foundation is only useful scientifically if the actual Compiler optimizes the same object. Most historical FP failures came from a correct local theorem being embedded in a smaller/different executable system.

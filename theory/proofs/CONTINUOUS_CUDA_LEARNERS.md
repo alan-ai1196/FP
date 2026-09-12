@@ -87,6 +87,14 @@ parameter handles are also refused. No CPU fallback replaces device work.
 
 ## Remaining authority boundary
 
+The same mechanics now also execute inside one prepaid tensor arena through
+explicit output views; see
+[`BOUNDED_CUDA_TENSOR_STORAGE.md`](BOUNDED_CUDA_TENSOR_STORAGE.md).
+All 1,306 learner phases use a single 16 MiB device allocation without a
+further native allocator allocation. This closes that tensor-storage
+component only; host evidence, Runtime ownership and total-device resources
+remain separate obligations. The arithmetic schedule above is unchanged.
+
 GPU tensors are mutable physical handles; the mechanical dataclasses confer
 no value equality, provenance or certificate. These helpers expose no
 signer. The audit's raw readbacks and phase temporaries are diagnostic work,

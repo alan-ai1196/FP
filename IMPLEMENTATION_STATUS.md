@@ -45,6 +45,16 @@ overflow masked by finite projection is refused. `cuda_learner.py` is a
 mechanical component with private-ownership integration still open; the
 Reference Runtime and target `install` behavior are unchanged.
 
+The [bounded CUDA tensor arena](theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md)
+now contains all 1,306 phases, including every tensor temporary: one 16 MiB
+allocation/reservation, 32,996 initialized extents and no further allocator
+events. Admission pays actual segment size, explicitly binds a persistent
+allocator setting absent from an apparently default snapshot, and detects
+freed escaped allocations with lifetime counters. The audit also checks 216
+complete typed extent sequences. This is scoped tensor-storage closure;
+Runtime-owned AMP state/evidence, driver/context accounting, target range,
+persistence and installation remain open.
+
 ## Status at GitHub migration (2026-09-06)
 
 **Reference Compiler: WIP — NOT FROZEN.**  

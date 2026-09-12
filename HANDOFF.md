@@ -95,6 +95,16 @@ the next work is owned device integration, per-event relations, fresh AMP
 evidence and actual installation. Do not rebuild the learner or reopen
 the static study to postpone those obligations.
 
+The actual tensor-storage component now executes all 1,306 phases in one
+16 MiB backing arena, with no additional native allocator allocations; read
+[`BOUNDED_CUDA_TENSOR_STORAGE.md`](theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md).
+The 304,064-byte used prefix is not the physical memory charge. Explicit
+allocator binding fixes a real hidden-setting counterexample: an apparently
+default snapshot can otherwise reserve 40 MiB for a 2 MiB request. Lifetime
+allocation counters catch freed escaped temporaries. This is not Runtime or
+total-device authority. Continue into the owned AMP prefix and joint event
+publication; do not add more isolated prerequisites to defer that integration.
+
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
 observe and commit. `OnlineContract.float64` fixes tolerances and the scalar

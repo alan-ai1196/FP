@@ -6,6 +6,7 @@ compares them to the Runtime's own exact trajectories. It does not install
 GPU state, borrow reference wealth or claim complete device ownership.
 """
 from dataclasses import dataclass, replace
+from contextlib import nullcontext
 from fractions import Fraction as F
 from itertools import product
 from pathlib import Path
@@ -140,7 +141,8 @@ def same_prediction(actual, expected):
 
 
 class Audit:
-    def __init__(self):
+    def __init__(self, arena=None):
+        self.arena = arena
         self.phases = 0
         self.half_results = 0
         self.half_multiply_results = 0
@@ -150,9 +152,10 @@ class Audit:
         self.maximum_state_error = F(0)
 
     def execute(self, function, *args):
-        arithmetic = gpu.CudaArithmetic(32768)
-        value = function(*args, arithmetic)
-        trace = arithmetic.raw_trace()
+        with (nullcontext(None) if self.arena is None else self.arena.phase('learner-audit:'+function.__name__)) as workspace:
+            arithmetic = gpu.CudaArithmetic(32768, workspace=workspace)
+            value = function(*args, arithmetic)
+            trace = arithmetic.raw_trace()
         self.phases += 1
         self.half_results += sum(len(words) for _, width, words in trace if width == 16)
         self.half_multiply_results += sum(len(words) for op, width, words in trace if width == 16 and op == 'mul')
@@ -181,8 +184,8 @@ class Audit:
                     float(self.maximum_state_error) if self.reference_coordinates else None)}
 
 
-def exhaustive_audit():
-    audit, events = Audit(), 0
+def exhaustive_audit(*, arena=None):
+    audit, events = Audit(arena), 0
     cfg = replace(contract(pattern=(F(1, 3), F(1, 4), F(0))), reference_integer_bits=32768,
                   limits=limits(byte_cap=80_000_000, work_cap=100_000_000))
     rules, graph = cfg.semantics, shared_graph()
@@ -234,8 +237,8 @@ def exhaustive_audit():
             **audit.result()}
 
 
-def profile_recurrence_audit():
-    audit = Audit()
+def profile_recurrence_audit(*, arena=None):
+    audit = Audit(arena)
     profile = ProfileSpec('old-data', ('observation-0', 'observation-1'), 3)
     cfg = replace(contract(pattern=(F(1, 8), F(1, 3), F(1, 4))), reference_integer_bits=32768,
                   limits=limits(byte_cap=80_000_000, work_cap=100_000_000))
@@ -328,9 +331,9 @@ def profile_recurrence_audit():
             'both_delayed_queue_positions_compared_every_event': True, **audit.result()}
 
 
-def topology_audit():
+def topology_audit(*, arena=None):
     """Different native graphs, three labels, arbitrary legal source values."""
-    rng, audit = random.Random(2026091371), Audit()
+    rng, audit = random.Random(2026091371), Audit(arena)
     cfg = contract(k=3, pattern=(F(1, 8), F(1, 3), F(1, 4), F(0)))
     spec = LearnerSpec(3, F(1, 16))
     # One value lies just above a half midpoint, but RNE32 ingress first

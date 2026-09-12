@@ -25,6 +25,14 @@ remains unresolved. See
 [CUDA learner scope](../../theory/proofs/CONTINUOUS_CUDA_LEARNERS.md).
 Importing the component does not import Torch or initialize CUDA.
 
+`fp_reference.cuda_storage` now supplies a prepaid typed tensor arena for
+those same learners. Its actual 16 MiB allocation executes all 1,306 phases
+without a further native allocator event; initialization/extent/history
+guards and explicit allocator configuration have adversarial coverage.
+See [storage scope](../../theory/proofs/BOUNDED_CUDA_TENSOR_STORAGE.md).
+Host evidence, Runtime state and driver/context resources are not supplied
+by this component; the complete owned AMP prefix is the next integration.
+
 ## Current executable recovery (2026-09-12)
 
 `fp_reference.ReferenceCompilerRuntime` now owns native **construction and

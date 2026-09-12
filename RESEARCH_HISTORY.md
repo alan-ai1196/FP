@@ -2147,3 +2147,40 @@ and finite coverage. The component has no signer, resource claim or Runtime
 AMP authority. Next is complete owned device integration and event relations,
 then target range/persistence/build/install. Foundation and ERC-1 stay frozen;
 model science stays HOLD. No new static special case is introduced.
+
+## 71. Bind complete CUDA learner tensors to a prepaid arena (2026-09-13)
+
+The continuous mixed-precision learner now uses explicit output/copy views
+for every tensor, including casts, queues, masks and integer grid work.
+All 1,306 phases execute in one actual 16 MiB backing tensor. Native tensor
+and reservation peaks stay at 16 MiB; no further allocator event occurs.
+The 32,996 initialized extents consume a 304,064-byte prefix, while the full
+arena and reservation remain charged to each role, once globally. Append-only
+phase/extents retain failed work and avoid an unproved erasure/reuse step.
+
+Two accounting assumptions failed under actual execution. First, a 2 MiB
+tensor request needs a default 20 MiB segment, so checking reservation only
+after allocation can overspend an admitted budget. Worse, setting large
+segments to 40 MiB and then passing an empty allocator configuration restores
+the entire reported default settings dictionary while leaving the hidden
+segment size at 40 MiB. A fresh 2 MiB request then really reserves 40 MiB.
+The corrected path binds the segment size explicitly, admits its versioned
+allocation extent before the first tensor and verifies the actual result.
+The counterexample and correction both execute in independent fresh processes.
+
+Second, allocating and freeing an external single returns current tensor
+bytes to the same 16 MiB. Lifetime native allocation counters retain the
+extra 512-byte allocation and segment, so they refuse the escaped work.
+That failure is terminal without clearing state or resetting counters. If an
+unexpected executor error already occurred, a simultaneous closure refusal
+cannot downgrade it into expected budget uncertainty. Actual prior writes
+and the failed phase remain available for diagnosis.
+
+The independent extent model checks 216 complete three-request sequences;
+typed bounds, initialization, stale writes, 1,340 exact grid coordinates and
+masked optimizer overflow also pass. This is a bounded tensor-storage
+implementation, not host/driver/context/total-device accounting or Runtime
+authority. `BOUNDED_CUDA_TENSOR_STORAGE.md` records its proof premises and
+minimal evidence. The next work is the complete Runtime-owned AMP prefix,
+then target range, same-path fresh persistence and installation. Foundation,
+ERC-1 and the scoped Reference/CPU freeze are unchanged; science stays HOLD.
