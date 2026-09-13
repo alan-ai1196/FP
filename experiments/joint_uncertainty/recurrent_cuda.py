@@ -15,7 +15,6 @@ import traceback
 
 import recurrent_control as control
 from fp_reference import ReferenceCompilerRuntime,CudaCompilerPolicy
-from fp_reference.cuda_installation import CudaInstallContract
 from fp_reference.cuda_prefix import output_cells
 from fp_reference.host_resources import HostResourceContract
 from audit_cuda_runtime import cuda_contract,audit_snapshot,HALF,SINGLE
@@ -26,9 +25,11 @@ from windows_job_audit_support import run_in_job
 
 ROOT=control.ROOT
 OUTPUT=ROOT/'evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_AUDIT.json'
+FAILURE=ROOT/'evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_REGISTRATION_FAILURE.json'
 HOST_CAP=4<<30
 TIMEOUT=120000
-DEPENDENCIES=control.DEPENDENCIES+('experiments/joint_uncertainty/recurrent_cuda.py',)
+DEPENDENCIES=control.DEPENDENCIES+('experiments/joint_uncertainty/recurrent_cuda.py',
+    'evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_REGISTRATION_FAILURE.json')
 QUERIES=(((0,1),(1,2),(0,2),(0,1)),((0,1),(0,1),(1,2),(0,2)),
          ((0,0),(0,1),(1,1),(0,1)))
 CASES=tuple((3,tuple((i,j,y) for (i,j),y in zip(queries,labels)))
@@ -37,7 +38,9 @@ CASES=tuple((3,tuple((i,j,y) for (i,j),y in zip(queries,labels)))
 
 
 def device_contract():
-    return cuda_contract(install=CudaInstallContract())
+    # An empty policy performs no installation and therefore registers no
+    # transport contract or unused fresh-evidence paths.
+    return cuda_contract()
 
 
 def preflight():
@@ -150,6 +153,11 @@ def run(write,resume):
         report={'status':'PARTIAL_EXECUTION','registration_source':source,'registration':registration,
             'scope':'initial known-prior native finite-window model; actual owned AMP and binary64; no construction/install/class optimum or timing comparison',
             'device':None,'workers':[]}
+        failure=json.loads(FAILURE.read_text(encoding='utf-8'))
+        assert failure['status']=='COMPLETE_REGISTRATION_FAILURES' and len(failure['workers'])==49
+        report['prior_registration_failure']={'journal':FAILURE.relative_to(ROOT).as_posix(),
+            'registration_source':failure['registration_source'],'completed_failed_jobs':49,
+            'correction':'remove unused install registration from the empty policy; all model/data/resource parameters retained'}
     def publish():
         if write:
             temporary=OUTPUT.with_suffix('.tmp')

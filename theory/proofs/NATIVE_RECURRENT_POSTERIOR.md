@@ -209,6 +209,17 @@ changing its execution source or budgets. Both keep their actual resource
 observations. No comparative timing or GPU exclusivity claim is made.
 The matrix is registration only until its source-bound workers complete.
 
+The first source `e92762c` unnecessarily attached CudaInstallContract to
+the empty policy. Runtime correctly rejected it because no native search
+or fresh reference/CUDA evidence paths were registered. All49 jobs ended
+at that constructor check, before Runtime host/CUDA initialization or any
+forecast. The [failure journal](../../evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_REGISTRATION_FAILURE.json)
+retains every completed job and their common traceback once. The corrected
+control registers no installation contract for its already empty policy;
+Runtime explicitly permits this case. The same49 model/data cases and all
+resource/tolerance values are retained. No actual failure is relabelled a
+successful stream and no Runtime or Foundation rule changes.
+
 ## 6. What this resolves and what it leaves open
 
 The earlier finite-update calibration failure belongs to v5's parameter

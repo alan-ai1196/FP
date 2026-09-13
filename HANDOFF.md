@@ -251,6 +251,10 @@ Process-local allocator history and the shared-board capacity envelope
 permit these short controls beside RN-5; no exclusive GPU or timing claim
 is involved. Retain every outcome and audit each complete phase before
 promoting this registration to target evidence.
+Initial source `e92762c` incorrectly attached an unused install contract;
+all49 jobs were rejected before CUDA allocation and are retained in the
+separate registration-failure journal. The corrected empty policy registers
+no install contract and keeps the same49 cases and all budgets/tolerances.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

@@ -3474,3 +3474,16 @@ replay and same-cut full-assignment posterior forecasts will determine the
 outcomes. The source-bound journal must retain every failure/refusal; no
 target success, compiler construction, installation or class optimum is
 claimed by this registration.
+
+### 97.1 Retain the unnecessary-install registration failures
+
+Source `e92762c` supplied CudaInstallContract to an empty policy without
+search or fresh evidence paths. Runtime's constructor correctly rejected
+all49 jobs before its own host/CUDA initialization, with no forecasts.
+Each completed outer job exits1 without timeout; the largest job commitment
+is30,007,296 bytes. All job identities/counters and the identical traceback
+are retained, with the common trace stored once. The correction removes
+only the unused install declaration, which the existing constructor permits
+for an empty policy. It retains all49 cases, graph/learner/data parameters,
+resource budgets and numerical tolerances. No actual model/CUDA result was
+seen before this correction, and no Runtime or Foundation rule changes.

@@ -218,6 +218,10 @@ The same model's actual AMP matrix is now registered in
 `experiments/joint_uncertainty/recurrent_cuda.py`:49 fresh4GiB jobs,16MiB
 arena,32MiB allocator cap and1/100 tolerances. Metadata needs at most941 of
 the fixed4096 output cells. This registration alone supplies no target pass.
+The initial49 jobs at `e92762c` all reject an unnecessary install contract
+before GPU allocation. Their complete jobs/common traceback are retained
+separately; correction removes only that unused registration from the empty
+policy and changes no Runtime rule, case, resource or numerical parameter.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
