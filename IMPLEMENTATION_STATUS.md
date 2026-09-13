@@ -2,8 +2,8 @@
 
 ## Current release (2026-09-13)
 
-**Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 extension:
-separately audited. Registered experiments: UNHELD within their tested scopes.** Source
+**Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 and component
+v3 extensions: separately audited. Registered experiments: UNHELD within their tested scopes.** Source
 `5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 CPU and
 10 CUDA audits of that release from one fresh clone; all 38 submodules import
 without Torch. Read [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and
@@ -49,7 +49,7 @@ historical bounds. There are 17,064 independently replayed CUDA/binary64
 phases each, 1,280 newly executed posterior forecasts, 96 independently
 recomputed new scores and twenty prospective decision replays. The known
 proposal/installation failure is closed in this scope; the disconnected
-uncertainty counterexample remains a model-science problem.
+uncertainty counterexample motivated the separately measured v3 change below.
 
 The [component symmetry v3 proposal](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
 now constructs only within-component products and leaves unseen relative
@@ -59,8 +59,14 @@ native decision class, guarded reachable scale selection and v2 owned paths.
 grammar refusal, actual installation and two distinct learner continuations.
 Source-bound CPU/CUDA reports at `ad2c350` each pass six workers and 1,127
 binary64 phases; CUDA adds 1,127 target phases. The n=32 regression passes.
-The eighteen-worker RN-3 runner is now registered; model execution remains
-pending. This is not another complete baseline release declaration.
+[RN-3](experiments/component_uncertainty/RESULTS.md) now completes at `a351da9`:
+eighteen workers, ten sealed FP runs, nine installs and eight unresolved IID
+classes. There are7,688 independently replayed CUDA/binary64 phases each,
+1,280 new baseline GPU forecasts,72 new score checks and ten decision replays.
+Frozen uncertainty improves while known-world deployed mean worsens. The
+fixed component graph has zero cross-component derivatives for every weight;
+future adaptive learning is a model/construction question. This is not
+another complete baseline release declaration.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

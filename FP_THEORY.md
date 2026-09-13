@@ -46,11 +46,13 @@ disconnected uncertainty counterexample remains. This measured solver/strategy
 result does not alter Foundation, ERC-1 or the theory below.
 
 The [component symmetry proposal](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
-now gives a native initialized one-hot endpoint that averages unresolved
-relative component flips. It does not equate complete learners or general
-soft-input predictions. Its scoped endpoint audits and the preregistered
-[RN-3 experiment](experiments/component_uncertainty/PROTOCOL.md) are separate
-from the frozen baseline; no RN-3 model result is yet asserted.
+and completed [RN-3 experiment](experiments/component_uncertainty/RESULTS.md)
+now close the known initialized one-hot uncertainty failure. Its fixed-cut
+risk improves while adaptive deployed risk can worsen. The component graph
+has zero cross-component evidence and parameter derivatives for all legal
+weights; using later retained labels remains an adaptive model/construction
+problem. These scoped proofs and CPU/CUDA/model audits do not equate complete
+learners or general soft-input predictions, and leave the theory below intact.
 
 ---
 

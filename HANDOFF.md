@@ -65,28 +65,36 @@ AMP posterior controls remain near the noise floor. New n=16 seeds4/6 wait
 30 fresh observations; the other IID cases wait20. This is a fixed sample,
 not a population success-rate or Bayes-dominance theorem.
 
-The active scientific problem is now uncertainty about unobserved relations
-within native reachable value paths. The v2 disconnected pair still
-has candidate CE 0.325/1.603 versus posterior 0.593 in both worlds; B does
-not install. Equal-cutoff frozen-model risk and adaptive deployed risk must
-remain separate. Derive useful native proposals without injecting posterior
-coefficients or new architecture actions, and retain strong controls. The
-scoped RN-1 proposal/installation obstruction is closed; do not rerun these
-completed experiments or expand static cases to postpone this model problem.
-Preserve every original RN-1 and RN-2 worker at its actual source.
+The [component symmetry v3 proposal](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
+now realizes an average over unresolved relative flips on initialized one-hot
+queries, using existing native unit/scale slots and component-local products.
+Tied counts remain retained. Soft-input and complete-learner counterexamples
+prevent promotion to a general quotient. CPU/CUDA matrices at `ad2c350`
+each pass six workers and1,127 binary64 phases, with1,127 CUDA phases;
+the n=32 reference regression also passes. These are separate extension
+checks, not a new full baseline release.
 
-The next registered solver is [component symmetry v3](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md).
-Its component-local positive products implement the average over unresolved
-relative flips on initialized one-hot queries, using only the existing unit
-and scale slots. Tied constraints retain their observations while leaving
-relative parity open. A soft-input counterexample and an actual nonzero-rate
-learner continuation prevent promotion to a general input/state quotient.
-The source-bound CPU/CUDA audit records at `ad2c350` each pass six workers
-and 1,127 binary64 phases; CUDA adds 1,127 independently checked target phases.
-Run `scripts/audit_component_symmetry.py`. The n=32 regression also passes. [RN-3](experiments/component_uncertainty/PROTOCOL.md)
-fixes eighteen new workers, with retained old diagnostic controls. Target
-model execution is pending; frozen risk and adaptive deployment may order
-these models differently. Finish this study rather than expanding static cases.
+[RN-3 is complete](experiments/component_uncertainty/RESULTS.md) at `a351da9`:
+eighteen new workers, ten sealed FP streams, nine installs,7,688 independently
+checked CUDA/binary64 phases each,72 new score checks and ten fresh-decision
+replays. All eight new IID classes remain unresolved. In the known worlds,
+v3 frozen CE is0.592766 in both, matching the strong retained posterior;
+the equal-world improvement over v2 is0.371510. Yet deployed mean worsens
+from0.563488 to0.626226. One n8,c4 case installs too late to improve any
+remaining forecast; the other seals without installation. Retain all outcomes
+and old RN-1/RN-2 controls at their original sources; do not rerun them.
+
+The current obstacle is learning from later labels while preserving current
+uncertainty. A cross label with zero current gain changes the next exact
+conditional prediction from1/2 to41/50 or9/50. Runtime retains that information.
+But the emitted graph has identically zero cross-component evidence and
+parameter derivatives for every legal weight. Raising learning rate alone
+cannot repair its support. Derive an owned reachable learner or construction
+strategy that can use the retained labels, with strong adaptive controls at
+matched information cuts. The same-cut frozen uncertainty question is closed
+in this scope; finite within-component posterior uncertainty and useful
+adaptive learning remain open. Do not add free fitted coefficients, semantic
+architecture actions, or more static precision/resource cases.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

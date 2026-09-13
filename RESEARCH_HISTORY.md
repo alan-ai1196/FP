@@ -2934,3 +2934,54 @@ new labels, and recomputes 64 RN-1 scores, 96 RN-2 scores and twenty old
 prospective decisions. The two historical journals stay byte-content equal
 to their original commits. A preflight reader correction accounts for the
 older RN-1 successful-job schema; it caused no target model execution.
+
+## 87. Native fixed-cut uncertainty succeeds; adaptive learning remains a distinct obstacle (2026-09-13)
+
+RN-3 executes its entire fixed matrix at
+`a351da95dafab6d06fb609c044f5fb0efbc09e74`: ten FP and eight strong AMP
+posterior workers, with no execution failure or parameter change. All ten
+FP streams seal, nine install, and all eight new IID classes stay unresolved.
+The two known diagnostics retain their actual categorical upper. Their old
+v2 FP and posterior controls remain at `5bcbb49`/`5b050c7`, referenced through
+the original journals at `2f24d18`/`4d04595`. No unchanged model is rerun.
+
+The known equal-world frozen CE falls from 0.964276 to 0.592766, matching
+the strong posterior in both worlds; the improvement is (8/11)log(5/3).
+Yet their deployed mean worsens from 0.563488 to 0.626226. The old hard guess
+plus fresh selection deploys only in A, using later labels; both v3 worlds
+install at 80. This outcome was explicitly allowed in the protocol. A
+fixed-cut improvement supplies no adaptive-deployment dominance theorem.
+
+All eight new samples have correct strict majorities and scale8. Mean unseen
+candidate/posterior/deployed CE is 0.592766/0.592766/0.663869 for n8,c2;
+0.547310/0.547310/0.601999 for n16,c2; uniform 0.693147 for n8,c4;
+and 0.652251/0.652256/0.669291 for n16,c4. Finite within-component posterior
+uncertainty remains; these realized samples do not prove Bayes dominance.
+
+Fresh waiting ranges from 20 to 160 events among installations. Independent
+exact dyadic-wealth replay, with log intervals checked in 100-digit Decimal,
+reproduces all ten decisions. n8,c4,seed10 installs after 60 fresh events,
+leaving four cross-component queries and no improved deployed forecast.
+Seed11 never crosses (maximum wealth 232785/65536 < 4) and seals without
+installation. These finite outcomes are retained, not converted to a
+statistical rejection or omitted to improve the installation count.
+
+The result points to a deeper learning obstruction. Exact enumeration of
+the four assignments left by known training shows that fresh event2's
+cross label changes the next cross prediction at event4 to 41/50 or 9/50,
+despite zero gain for the current uniform prediction. Runtime retains this
+information. However, every component-local product has a zero factor on
+cross-component one-hot queries. The fixed graph's evidence and current
+parameter derivatives are identically zero for all legal weights. Raising
+the learning rate alone cannot repair that support. This is a proof about
+one native graph, not a Foundation failure or full-class impossibility.
+The next target is reachable uncertainty that can use later retained data,
+with owned learner/construction paths and strong adaptive controls.
+
+All 7,688 CUDA and 7,688 binary64 model phases are independently replayed;
+the new posterior workers check 1,280 GPU forecasts. Post-analysis verifies
+72 new scores and ten fresh decisions. Peaks are 196,491,241 packed bytes,
+1,242,336 consumed native bytes and 3,000,500,224 completed-job bytes under
+the unchanged limits. The 83 KB journal and 28 KB SVG preserve no datasets,
+weights or bulk histories. Read `experiments/component_uncertainty/RESULTS.md`.
+Foundation R4, XVII.31, ERC-1 and the original baseline release remain frozen.

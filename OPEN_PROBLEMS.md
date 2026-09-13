@@ -8,12 +8,13 @@ law in XVII.31 closes the static resource study. ERC-1 is frozen in
 registered RTX 3090 resource and model experiments. The Reference/CPU
 prerequisite froze at `ebe2c4c`; the CPU/AMP baseline froze at `5e55eb4`
 after all 31 full audits passed from one fresh clone. The prospective v2
-extension has separate endpoint and RN-2 model evidence.
+extension has separate endpoint and RN-2 model evidence; component v3 now
+has its own endpoint and RN-3 model evidence.
 The remaining static special cases and sharp constants below are parked,
 not invitations to continue that program. Reopen Foundation only for an
 implementation/experiment correctness counterexample to its semantics.
 
-## 1. Use uncertainty about unobserved relations in native models
+## 1. Learn from later labels while preserving current uncertainty
 
 The first [known-table resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 is complete: 54 registered configurations, 44 sealed and ten unresolved.
@@ -42,29 +43,33 @@ AMP posterior controls remain near the noise floor. This is a fixed small
 sample, not a population guarantee; no model worker should be rerun merely
 to refresh its source identity.
 
-The remaining question is how native reachable value paths can represent
-and use uncertainty about unobserved relations. RN-1/RN-2's disconnected
-control retains equal optimal training scores but frozen-candidate CE
-0.325 versus 1.603; the posterior scores 0.593 in both worlds. The equal-world
-candidate excess is `(8/11)log(5/3)`. A harder empirical optimization gate
-cannot solve this information problem. Neither can assigning an exact
-posterior coefficient through an undeclared FP value constructor.
-
-Derive useful proposals from the typed sources, positive SUM/PRODUCT and
-retained observations under the existing resource/construction obligations.
 The [v3 component construction](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
-now supplies one such endpoint: it averages unresolved component flips on
-one-hot queries without posterior coefficients. The remaining immediate
-question is its measured model and fresh-deployment behavior, not whether
-that initialized endpoint exists. Its exact/state counterexamples prohibit
-a general input or complete-learner equivalence claim. Its scoped CPU/CUDA matrices now pass at `ad2c350`; execute the fixed [RN-3 matrix](experiments/component_uncertainty/PROTOCOL.md).
-Finite IID uncertainty within a component is still unresolved by this hard
-within-component construction; do not infer full posterior equivalence.
-Preserve comparisons at equal information cuts. A frozen uncertain model
-and a deployed strategy that acquires later labels can have different risk
-orderings; fresh tests do not identify all unseen relations. Keep the strong
-posterior and finite no-install outcomes. Static resource special cases and
-half-specific constants remain parked.
+and [completed RN-3 experiment](experiments/component_uncertainty/RESULTS.md)
+close the known fixed-cut uncertainty failure. Eighteen workers execute;
+ten FP streams seal, nine install and all eight new IID classes remain
+unresolved. The known-world frozen average improves0.371510 to0.592766,
+matching the retained posterior. Its adaptive deployed mean instead worsens
+from0.563488 to0.626226. Model quality and adaptive deployment must retain
+their actual information cuts; installation count alone is not model value.
+
+The open problem is **native uncertainty that can learn from later data**.
+A fresh cross-component label has zero current gain but changes the next
+conditional prediction to41/50 or9/50. The current graph has identically
+zero evidence heads and current-label derivatives on cross-component
+one-hot queries, for every legal weight. More ordinary gradient steps or
+a different learning rate cannot change its missing support. This is a
+proof about one emitted graph; complete Runtime keeps the observations
+and the full constructor class remains available.
+
+Derive a useful reachable learner or owned construction strategy that uses
+this retained information, without a free posterior value path. Preserve
+complete learners, paid construction, lineage, range/AMP checks and fresh
+evidence. Use a strong adaptive control with the same revealed information.
+Finite IID uncertainty within a component is also not represented by v3's
+hard signs. Do not extend initialized prediction identities to arbitrary
+soft contexts or full-state equivalence. The sparse n8,c4 finite no-install
+and too-late-install outcomes stay in the evidence. Static resource special
+cases and half-specific constants remain parked.
 
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):

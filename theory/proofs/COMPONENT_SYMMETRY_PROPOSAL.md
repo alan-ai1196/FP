@@ -9,7 +9,7 @@ registered proposal solver, not Foundation R4, XVII.31 or ERC-1.
 ## 1. Average predictions over unresolved relative flips
 
 Let the untied empirical parity constraints be consistent, with components
-`C_1,...,C_c` and one representative bit assignment `h`. A tied observation
+`C_1,...,C_c` and one representative bit assignment `h`. A tied empirical edge
 imposes no preferred parity. For `g in {0,1}^c`, flip every bit in component
 `C_k` by `g_k`. These transformations preserve every untied constraint; a
 global flip is redundant for pair predictions. Observations, counts and the
@@ -141,3 +141,57 @@ connected graph. This does not relabel the frozen 31-script baseline release.
 The [RN-3 protocol](../../experiments/component_uncertainty/PROTOCOL.md)
 fixes eighteen new model workers before inspecting its new seeds. Endpoint
 correctness supplies no unexecuted model score or deployment claim.
+
+## 6. Zero current gain does not remove future information
+
+In the conditioned two-component diagnostic, training determines within-
+component parities but leaves the relative flip `Z` fair. Adjust each cross
+query for its known within-component parity. A fresh label is then
+`Y = Z xor noise`, with independent flip probability1/10. The component
+candidate and its uniform comparator both predict1/2 on that query, so its
+relative log gain is exactly zero. Its dyadic wealth is unchanged.
+
+Nevertheless `P(Z=Y | Y)=9/10`. For the next cross query, accounting for
+its within-component parity, the predictive probability agreeing with the
+first label is `(9/10)^2+(1/10)^2 = 41/50`, with complement9/50. Earlier
+within-component labels do not resolve or change this relative flip.
+The exact enumeration in RN-3's analyzer checks all four assignments left
+by the known training data; it uses the first cross label and never the
+second target to form that prediction.
+
+This is an exact conditional information calculation, not an executed
+adaptive posterior or a constructed FP endpoint with those coefficients.
+It rules out discarding a revealed label merely because the current
+comparison assigns zero gain. Runtime retains it; the current zero-rate,
+one-compilation policy does not yet exploit its new cross-component
+information. A useful next model must use later revealed data through owned
+reachable paths, with its own current state, resources and fresh evidence.
+No whole-learner quotient, free posterior value or new Foundation action
+follows from this calculation.
+
+There is a stronger obstruction than RN-3's zero learning rate. Fix the
+emitted static graph and a one-hot pair in different original components.
+For every component-local PRODUCT, at least one group SUM has only zero
+source inputs. That SUM is identically zero for every parameter value;
+therefore every evidence head is the zero polynomial on this query. The
+readout remains `(1/2,1/2)` and each current-label parameter derivative is
+zero for **all** legal parameter values, not just the initializer.
+
+Thus changing learning rate alone cannot make this fixed graph learn cross-
+component relations. An optimizer can still move parameters using retained
+earlier gradients, but the cross-component prediction remains uniform.
+This proof is about the emitted graph's support, not a numerical failure,
+an information-impossibility claim or an exclusion of the full native class.
+Future native construction can change that support. Alternatively, a
+different initially uniform graph can have nonzero parameter derivatives,
+as the scale0 continuation in section4 already demonstrates. Whether a
+useful such learner is reachable under a declared constructor/value/resource
+contract is a model-science question, not permission to insert its values.
+
+RN-3 now executes all eighteen registered workers at `a351da9`, with ten
+sealed streams and nine installations. The known fixed-cut equality with
+the strong posterior holds on actual AMP; equal-world deployed risk instead
+worsens. Read the [complete results](../../experiments/component_uncertainty/RESULTS.md)
+and preserve this information-cut distinction when attacking the learning
+obstruction above. There are7,688 model CUDA/binary64 phases each, separate
+from the source-bound endpoint matrices in section5.
