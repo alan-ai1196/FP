@@ -2617,3 +2617,19 @@ fixed-P dyadic/Horner, shared-reciprocal and exact-singleton controls.
 This is an experiment choice, not an added release gate or permission to
 expand the parked static program. Reopen Foundation only for an experimental
 correctness counterexample to its declared semantics.
+
+## 80. Register the first post-release RTX 3090 resource experiment (2026-09-13)
+
+`experiments/erc1_rtx3090/README.md` preregisters 54 configurations on the
+two existing rational LIMIT_ONLY tables. It compares fixed-P dyadic/Horner,
+a fractional-Horner control, shared reciprocal, and exact singleton versus
+positive tail repair at matched slack. Equal coefficients are grouped and
+exact singleton row scales use the smallest feasible denominator. No target
+result is used to choose these constructors, depths, caps or tolerances.
+
+The exact preflight checks all 54 complete context tables, forward loss
+differentials and 257 fractional-Horner coefficients without importing
+Torch. The mixed table's ideal excess denominator is six, not three;
+registration uses its own correct positive-tail slack and stays at h<=1.
+The largest graph has 314 nodes. No Foundation, ERC-1 or frozen Runtime
+code changes. Target execution and scientific interpretation are next.

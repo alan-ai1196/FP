@@ -16,6 +16,10 @@ experiments. The Reference/CPU and actual AMP prerequisites are closed.
 First pressure-test the existing known-table resource constructions against
 strong fixed-P dyadic/Horner and shared-reciprocal/exact-singleton baselines;
 this is an experiment, not another release gate or static special-case program.
+The first [registered protocol](experiments/erc1_rtx3090/README.md) fixes
+54 known-table resource/precision configurations, including fractional
+Horner controls. Its exact constructor preflight passes; target results
+are not yet claimed. Execute `resource_frontier.py --write` next.
 Reopen Foundation only
 when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
