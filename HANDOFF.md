@@ -22,20 +22,33 @@ Small-slack reference-exact constructions can be physically worse than
 cheaper approximants. These are finite measured Programs, not a complete
 hardware optimum or a Foundation counterexample.
 
-Next: registered model science using structure inferred from ordinary data,
-legally unseen contexts, competitive baselines and the existing hierarchy
-identification controls. Do not rerun the completed resource experiment,
-rebuild the frozen Runtime or expand static/half-specific constructors to
-postpone that work. The Reference/CPU and actual AMP prerequisites remain closed.
-The active [RN-1 protocol](experiments/relation_noise/PROTOCOL.md) compares
-conditioned 9:1 training with IID noise and a strong exact/AMP forest
-posterior baseline. Its [gate lemma](experiments/relation_noise/GATE_ELIGIBILITY.md)
-and 121 count-pattern/40 posterior checks pass before GPU execution.
-The current upper gate has IID arithmetic eligibility about 6.65e-7 at
-n=16, despite correct strict-majority recovery probability above 0.975.
-Execute the registered model experiment; target outcomes are not yet claimed.
-Reopen Foundation only
-when implementation/experiment correctness exposes a semantic loophole.
+The first ordinary-data model experiment [RN-1 is also complete](experiments/relation_noise/RESULTS.md):
+36 workers, 18 sealed FP streams, 12,564 independently replayed CUDA and
+binary64 phases each, and a strong separately executed AMP posterior.
+All eight conditioned connected cases install and match the noise floor
+on unseen relations. All eight IID cases construct no candidate, despite
+correct observed edge majorities and posterior CE near the noise floor.
+The current proposer rejects fitted scales absent from its initializer;
+exact post-analysis shows its already available scale8 beats scale1 and
+uniform on every IID training sample. No unbuilt candidate gains a score.
+The [gate lemma](experiments/relation_noise/GATE_ELIGIBILITY.md) exposes a
+second bottleneck: current categorical-upper eligibility is about 6.65e-7
+at n=16, despite correct strict-majority recovery probability above 0.975.
+Two indistinguishable disconnected training worlds produce candidate CE
+0.325 versus 1.603; the uncertainty-preserving posterior scores 0.593 in both.
+
+The active research question is now whether useful registered native
+proposals can enter owned fresh comparison/installation while full-class
+optimality remains honestly unresolved. Foundation's fresh e-process does
+not require a historical training maximum; the current installation strategy
+adds that prerequisite. Removing it needs a scoped state/authority argument
+and actual endpoint evidence, not a new architecture action or fake class
+completion. Improve proposal choice within existing reachable values.
+Do not rerun completed experiments, rebuild the frozen core or expand
+static/half-specific constructors to postpone this model-science obstacle.
+The Reference/CPU and actual AMP prerequisites remain closed for their
+tested scope; an expanded strategy cannot borrow unexecuted release authority.
+Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
 

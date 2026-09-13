@@ -19,6 +19,17 @@ phase-evidence exhaustion required an experiment reporter correction,
 not a Runtime change. Range/precision failures retain their own paths and
 no closure. Next work is model science, not more implementation release gates.
 
+The first [ordinary-data model experiment RN-1](experiments/relation_noise/RESULTS.md)
+also completes: 36 workers, 18 sealed FP streams, ten bounded historical
+selections and nine installations, with 12,564 independently checked CUDA
+and binary64 phases each. Eight conditioned connected cases work; all eight
+IID cases stop before candidate construction because the empirical fitted
+scale is absent from the registered initializer. Strong exact/AMP posterior
+controls show the observed relations remain learnable. This is a scoped
+solver/strategy limitation, not a runtime correctness or Foundation failure.
+Separate full-class completeness from prospective candidate evidence before
+extending that strategy; preserve all existing state/resource/bridge obligations.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

@@ -2724,3 +2724,50 @@ hidden-assignment enumeration in 40 small forest cases. Conditioned and IID
 training laws require different posteriors; the control respects that
 difference. Protocol, algorithms and the scoped eligibility lemma live in
 `experiments/relation_noise/`. Target/model outcomes remain to be executed.
+
+## 83. Execute RN-1 and expose the ordinary-data proposal/selection bottleneck (2026-09-13)
+
+All 36 preregistered workers complete at `5b050c7`, without changing code,
+parameters, caps or reporting during execution. Every FP ordinary stream
+seals; ten searches attain a checked categorical upper and nine candidates
+actually install. Independent audits cover 12,564 CUDA phases, 12,564
+binary64 phases and 2,688 separately executed AMP posterior forecasts.
+Post-analysis recomputes 64 score records with exact Brier/probability
+checks; the compact 125,451-byte journal and standalone SVG retain the result.
+Frozen Foundation/ERC-1/Runtime and the original protocol remain unchanged.
+
+The eight conditioned connected cases construct the native S6/P4 hierarchy,
+install twenty observations after training and predict unseen relations at
+the noise floor, CE 0.325082973. The strong same-cutoff posterior ties them.
+Deployed-stream CE is larger while persistence awaits installation, and is
+reported separately from the frozen candidate comparison.
+
+All eight IID cases stop before candidate construction: the empirical
+readout scale does not occur in the initializer (1,8). No alpha is spent,
+no class proof is issued and deployed CE stays log2. This is not a lack of
+relation information: every observed strict edge majority is correct, and
+the actual AMP posterior scores 0.325082982--0.325212273 on unseen relations.
+Post hoc integer likelihood comparisons show the already reachable scale8
+beats scale1 and uniform on every sample. This is a diagnosis, not an
+unexecuted candidate granted construction/forecast/installation authority.
+The separately proved exponential categorical-upper gate remains even if
+proposal value choice is improved.
+
+The two disconnected cases retain identical training/candidates and
+opposite cross-component truths. Frozen-candidate CE is 0.325082973 in
+world A and 1.603468182 in B, while the posterior's 1/2 cross-component
+forecast scores 0.592766033 in both. Mean candidate excess is
+(8/11)log(5/3). A installs at 80; B has no install receipt and retains an
+unfinished evidence stage when its finite stream seals. No population
+identification or finite no-crossing rejection claim is made.
+
+Read `experiments/relation_noise/RESULTS.md`. The research obstacle is the
+current solver/strategy, not a need for more static cases or a Foundation
+semantic mechanism. Existing installation requires a historical training
+maximum, whereas the foundational fresh-evidence theorem requires a
+predictable owned candidate with continuous bounded same-path gains.
+Investigate separating honest unresolved class optimization from a
+prospective candidate decision, preserving all value, ownership, lineage,
+resource, bridge and atomic transport obligations. An expanded strategy
+needs its own endpoint evidence; the old release remains frozen at its
+tested scope and cannot certify an unexecuted extension.

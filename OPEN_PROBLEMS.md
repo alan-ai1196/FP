@@ -12,17 +12,35 @@ The remaining static special cases and sharp constants below are parked,
 not invitations to continue that program. Reopen Foundation only for an
 implementation/experiment correctness counterexample to its semantics.
 
-## 1. Execute registered RTX 3090 resource and model experiments
+## 1. Make ordinary-data proposals useful while preserving honest proof scopes
 
 The first [known-table resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 is complete: 54 registered configurations, 44 sealed and ten unresolved.
 Its measured precision plateau and constructor-dependent range failures
-leave the frozen laws/Runtime intact. The next open scientific question is
-whether structure inferred from ordinary data improves performance on
-legally unseen contexts under matched resources and competitive baselines.
-Preserve the existing hierarchy's train-tie, disconnected-world and
-misleading-majority controls. More static cases or half-specific optimal
-constants are not prerequisites for that experiment.
+leave the frozen laws/Runtime intact. The first ordinary-data model
+experiment [RN-1](experiments/relation_noise/RESULTS.md) is also complete.
+Eight conditioned connected cases install and generalize; all eight IID
+cases construct no candidate while a strong AMP posterior predicts near
+the noise floor. The current proposer demands a fitted scale that exactly
+occurs in the initializer. Its categorical-upper/installation gate then
+demands a historical training maximum. Neither failure is information
+scarcity in these samples.
+
+Can a useful native proposal, chosen among already reachable values, enter
+owned fresh comparison and installation without claiming that unresolved
+parts of its full constructor class are dominated? Foundation's bounded
+fresh e-process does not require past empirical optimality. Determine the
+minimal owned provenance and current-state premises needed to remove that
+extra implementation requirement, retaining construction, information,
+resource, lineage, reference/AMP and atomic transport obligations. Prove and
+execute the resulting strategy; do not narrow the class to the chosen graph
+or turn an unresolved search into a completeness flag.
+
+Preserve RN-1's same-cutoff posterior comparison and its disconnected-world
+control: equal optimal training scores hide frozen-candidate CE 0.325 versus
+1.603. Merely tightening an empirical bound is not a solution to unseen
+relation identification. More static cases or half-specific optimal
+constants are not prerequisites for this model-science work.
 
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):

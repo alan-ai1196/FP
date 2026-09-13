@@ -1,0 +1,5814 @@
+{
+ "experiment": "RN-1",
+ "status": "COMPLETE_EXECUTION",
+ "registration_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3",
+ "exact_audit": {
+  "enumerated_posterior_cases": 40,
+  "two_edge_count_patterns": 121,
+  "eligible_patterns": 5,
+  "p9": "193710249/500000000",
+  "p5": "3720087/2500000000",
+  "IID_arithmetic_gate_eligibility": {
+   "8": {
+    "exact": "199893298593952295950927883355320711580672806871170810127700227/152587890625000000000000000000000000000000000000000000000000000000",
+    "binary64": 0.0013100207216653259
+   },
+   "16": {
+    "exact": "154802890061086789187171593480528642939493022004706107872556432366951887274897858745983070630864503655161896159121999378043053232461467/232830643653869628906250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "binary64": 6.648733501386512e-07
+   },
+   "32": {
+    "exact": "92841195431229725654572965264778535993923371383034698653549646168949280187960804005583134776423513472631168319457546325012966256380259012282029149112731405279100697573908896823738301786078357810284571620625407800289209974062187749572220002610449990973708572365456527729000326347/542101086242752217003726400434970855712890625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "binary64": 1.7126177716171471e-13
+   }
+  },
+  "IID_all_strict_majorities_correct": {
+   "8": 0.9886114189184413,
+   "16": 0.9757546273992005,
+   "32": 0.9505404737453539
+  },
+  "disconnected_training_equality_and_opposite_cross_relations": true
+ },
+ "workers": [
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "conditioned",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4302441754395902,
+    "expected_Brier_exact": "19/70",
+    "mean_true_probability_gap": "4/35",
+    "latent_relation_error_with_half_ties": "1/7",
+    "raw_division_expected_CE_binary64": 0.43024419140512066
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11575,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58286278,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 16732,
+    "creation_100ns": 134337441117493463,
+    "lifetime_process_commit_peak": 2364317696
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2434187264,
+    "peak_job_commit": 2435407872,
+    "user_100ns": 224218750,
+    "kernel_100ns": 17343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 16732,
+    "process_creation_100ns": 134337441117493463
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "conditioned",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 14916,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168598528,
+    "peak_job_commit": 2169815040,
+    "user_100ns": 15468750,
+    "kernel_100ns": 6875000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14916,
+    "process_creation_100ns": 134337441405073193
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "conditioned",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.44777104244761384,
+    "expected_Brier_exact": "43/150",
+    "mean_true_probability_gap": "2/15",
+    "latent_relation_error_with_half_ties": "1/6",
+    "raw_division_expected_CE_binary64": 0.4477710573487754
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11563,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58279614,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 7436,
+    "creation_100ns": 134337441428261766,
+    "lifetime_process_commit_peak": 2367979520
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2437922816,
+    "peak_job_commit": 2439151616,
+    "user_100ns": 222500000,
+    "kernel_100ns": 19531250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 7436,
+    "process_creation_100ns": 134337441428261766
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "conditioned",
+    1
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 29368,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169188352,
+    "peak_job_commit": 2170417152,
+    "user_100ns": 14375000,
+    "kernel_100ns": 8750000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29368,
+    "process_creation_100ns": 134337441718815053
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "conditioned",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4302441754395902,
+    "expected_Brier_exact": "19/70",
+    "mean_true_probability_gap": "4/35",
+    "latent_relation_error_with_half_ties": "1/7",
+    "raw_division_expected_CE_binary64": 0.43024419140512055
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11541,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58286252,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 14344,
+    "creation_100ns": 134337441742141077,
+    "lifetime_process_commit_peak": 2364727296
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2434195456,
+    "peak_job_commit": 2435428352,
+    "user_100ns": 222031250,
+    "kernel_100ns": 19062500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14344,
+    "process_creation_100ns": 134337441742141077
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "conditioned",
+    2
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 3856,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2167726080,
+    "peak_job_commit": 2168963072,
+    "user_100ns": 15312500,
+    "kernel_100ns": 7187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3856,
+    "process_creation_100ns": 134337442028726523
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "conditioned",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4214807419355783,
+    "expected_Brier_exact": "277/1050",
+    "mean_true_probability_gap": "11/105",
+    "latent_relation_error_with_half_ties": "11/84",
+    "raw_division_expected_CE_binary64": 0.42148075843329313
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11561,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58279488,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 28516,
+    "creation_100ns": 134337442052059713,
+    "lifetime_process_commit_peak": 2364502016
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2434859008,
+    "peak_job_commit": 2436100096,
+    "user_100ns": 221718750,
+    "kernel_100ns": 17500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28516,
+    "process_creation_100ns": 134337442052059713
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "conditioned",
+    3
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 28532,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168553472,
+    "peak_job_commit": 2169782272,
+    "user_100ns": 15000000,
+    "kernel_100ns": 7656250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28532,
+    "process_creation_100ns": 134337442339650595
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     8,
+     2
+    ],
+    [
+     5,
+     6,
+     2,
+     8
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "independent_CUDA": {
+    "phases": 282,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3878,
+    "maximum_output_cells": 48
+   },
+   "independent_binary64_phases": 282,
+   "resources": {
+    "peak_packed_bytes": 38769982,
+    "consumed_native_arena_extent": 41680
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 29524,
+    "creation_100ns": 134337442362419465,
+    "lifetime_process_commit_peak": 2220802048
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2220802048,
+    "peak_job_commit": 2222022656,
+    "user_100ns": 105156250,
+    "kernel_100ns": 13125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29524,
+    "process_creation_100ns": 134337442362419465
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     8,
+     2
+    ],
+    [
+     5,
+     6,
+     2,
+     8
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829734829769,
+    "expected_Brier_exact": "47980659759794333803821665410923460217226702119696147336372999515552726732113/266559220838949229677221486588355238263140849895883550880512891278924065651362",
+    "mean_true_probability_gap": "6715217314173516951798825477540882/1825374005645655448990684411423695660205",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829833840426,
+    "expected_Brier_exact": "829796885604731283855683849324572625104876249112091160708600403627519696236937902367336502769157319153487902392003416903830245126199204885473960928239/4609982605649487125970410124941837110776720321470415110944130079266498778725013986744276759150561670887102669340787532118304286432762855797780119885075",
+    "mean_true_probability_gap": "63054047767286820998367441242013001634541531818675857309122905043442693/1487545512148033009037737289817898023090840611011981592220825264670121634594",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829833829846
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 130,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 29548,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168229888,
+    "peak_job_commit": 2169450496,
+    "user_100ns": 15312500,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29548,
+    "process_creation_100ns": 134337442530353246
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     3,
+     7
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     2,
+     8
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "independent_CUDA": {
+    "phases": 282,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3878,
+    "maximum_output_cells": 48
+   },
+   "independent_binary64_phases": 282,
+   "resources": {
+    "peak_packed_bytes": 38769952,
+    "consumed_native_arena_extent": 41680
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 12732,
+    "creation_100ns": 134337442553673922,
+    "lifetime_process_commit_peak": 2220105728
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2220105728,
+    "peak_job_commit": 2221342720,
+    "user_100ns": 105781250,
+    "kernel_100ns": 14375000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 12732,
+    "process_creation_100ns": 134337442553673922
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    1
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     3,
+     7
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     2,
+     8
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830180141788,
+    "expected_Brier_exact": "1046500915477222806555772861194491660477301809356782669591616852902296852498090647842826356195303/5813893455629191872124424900073257279118224913892695145483567602902245969378937018703470470057934",
+    "mean_true_probability_gap": "1487503827657602113318254854124614757443736174/22554726275606944035846402611546667787360565924435",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830437601981,
+    "expected_Brier_exact": "8845506973793060401751180114327676459246394214335049868427872960668335310875751870224562118647269/49141698487997532249153742510463598787501832154332414204774720488144636760555047256475156324008025",
+    "mean_true_probability_gap": "1380065248540179657055670600548998481682079353/14020228027817169885640234580895704895759977341110",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508304837170054
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 143,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 2760,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2166902784,
+    "peak_job_commit": 2168119296,
+    "user_100ns": 14531250,
+    "kernel_100ns": 8125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2760,
+    "process_creation_100ns": 134337442721011152
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     0,
+     10
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "independent_CUDA": {
+    "phases": 282,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3878,
+    "maximum_output_cells": 48
+   },
+   "independent_binary64_phases": 282,
+   "resources": {
+    "peak_packed_bytes": 38769974,
+    "consumed_native_arena_extent": 41680
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 25440,
+    "creation_100ns": 134337442744019033,
+    "lifetime_process_commit_peak": 2219384832
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2219384832,
+    "peak_job_commit": 2220617728,
+    "user_100ns": 111250000,
+    "kernel_100ns": 11406250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25440,
+    "process_creation_100ns": 134337442744019033
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    2
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     0,
+     10
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829733914567,
+    "expected_Brier_exact": "3258756072210184319062516237932050532960367377038213326097732567399109936456117249344322725131853856189053545925655/18104200401167383910595374884373768022845077567479429985383598687123485145952871922629946395141342177885435792652334",
+    "mean_true_probability_gap": "1320638839314347231236635613484292597707901065550174/39800974047152992913611744296403215251514097315560076147435",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.32508298188564444,
+    "expected_Brier_exact": "2835658597068945148509074574865346319096693952164826776779830381/15753658604913904999573736487868973958824361814533184520425686225",
+    "mean_true_probability_gap": "3272254898017732222152781973/83675719576400430391254335186310",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508294214918815
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 175,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 3872,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2032320512,
+    "peak_job_commit": 2033537024,
+    "user_100ns": 15156250,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3872,
+    "process_creation_100ns": 134337442912292885
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     8,
+     2
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "independent_CUDA": {
+    "phases": 282,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3878,
+    "maximum_output_cells": 48
+   },
+   "independent_binary64_phases": 282,
+   "resources": {
+    "peak_packed_bytes": 38769922,
+    "consumed_native_arena_extent": 41680
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 7712,
+    "creation_100ns": 134337442935693930,
+    "lifetime_process_commit_peak": 2219134976
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2219134976,
+    "peak_job_commit": 2220347392,
+    "user_100ns": 108750000,
+    "kernel_100ns": 11875000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 7712,
+    "process_creation_100ns": 134337442935693930
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    3
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     8,
+     2
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829734004491,
+    "expected_Brier_exact": "140279265540237214253945730947226439961471857387502391730205724490594810030458347371338087407552055737393265509808936690807/779329252987288355589731135567699726827705970177414398580923682735900101849589050291269476143809617039844962503622165211374",
+    "mean_true_probability_gap": "40137106960981275939985630113259383996510273792970309842/37304951150409559169525305037545648725681112388553745287614605",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829822997257,
+    "expected_Brier_exact": "1151124599933221516177/6395136552329322841245",
+    "mean_true_probability_gap": "14321023/357634913070",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508298336384633
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 204,
+   "maximum_AMP_mass_probability_error": "348676393/8922681284718",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 2128,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168053760,
+    "peak_job_commit": 2169286656,
+    "user_100ns": 15468750,
+    "kernel_100ns": 7031250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2128,
+    "process_creation_100ns": 134337443099899808
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "conditioned",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.34962058720268047,
+    "expected_Brier_exact": "151/750",
+    "mean_true_probability_gap": "2/75",
+    "latent_relation_error_with_half_ties": "1/30",
+    "raw_division_expected_CE_binary64": 0.34962060806430634
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17365,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198010984,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 2808,
+    "creation_100ns": 134337443123103548,
+    "lifetime_process_commit_peak": 2746314752
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2987089920,
+    "peak_job_commit": 2988298240,
+    "user_100ns": 1284375000,
+    "kernel_100ns": 45468750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2808,
+    "process_creation_100ns": 134337443123103548
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "conditioned",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 16652,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168893440,
+    "peak_job_commit": 2170122240,
+    "user_100ns": 15468750,
+    "kernel_100ns": 8125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 16652,
+    "process_creation_100ns": 134337444630204519
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "conditioned",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     9,
+     1
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35137327390348266,
+    "expected_Brier_exact": "71/350",
+    "mean_true_probability_gap": "1/35",
+    "latent_relation_error_with_half_ties": "1/28",
+    "raw_division_expected_CE_binary64": 0.3513732946586717
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17342,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198011109,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 2476,
+    "creation_100ns": 134337444654685158,
+    "lifetime_process_commit_peak": 2748030976
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2987880448,
+    "peak_job_commit": 2989109248,
+    "user_100ns": 1282656250,
+    "kernel_100ns": 49843750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2476,
+    "process_creation_100ns": 134337444654685158
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "conditioned",
+    1
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     9,
+     1
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 2496,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168623104,
+    "peak_job_commit": 2169851904,
+    "user_100ns": 16406250,
+    "kernel_100ns": 7500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2496,
+    "process_creation_100ns": 134337446158947161
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "conditioned",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35838402070669223,
+    "expected_Brier_exact": "1097/5250",
+    "mean_true_probability_gap": "19/525",
+    "latent_relation_error_with_half_ties": "19/420",
+    "raw_division_expected_CE_binary64": 0.3583840410361337
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17354,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198010963,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 28160,
+    "creation_100ns": 134337446183152554,
+    "lifetime_process_commit_peak": 2747334656
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2988204032,
+    "peak_job_commit": 2989453312,
+    "user_100ns": 1268125000,
+    "kernel_100ns": 46093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28160,
+    "process_creation_100ns": 134337446183152554
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "conditioned",
+    2
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     1,
+     9
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 27792,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169368576,
+    "peak_job_commit": 2170589184,
+    "user_100ns": 15937500,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 27792,
+    "process_creation_100ns": 134337447680312671
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "conditioned",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ],
+    [
+     7,
+     8,
+     1,
+     9
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35137327390348266,
+    "expected_Brier_exact": "71/350",
+    "mean_true_probability_gap": "1/35",
+    "latent_relation_error_with_half_ties": "1/28",
+    "raw_division_expected_CE_binary64": 0.3513732946586717
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17356,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198026591,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 24720,
+    "creation_100ns": 134337447704604739,
+    "lifetime_process_commit_peak": 2747801600
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2988679168,
+    "peak_job_commit": 2989924352,
+    "user_100ns": 1281875000,
+    "kernel_100ns": 45000000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24720,
+    "process_creation_100ns": 134337447704604739
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "conditioned",
+    3
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ],
+    [
+     7,
+     8,
+     1,
+     9
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 2100,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2170015744,
+    "peak_job_commit": 2171240448,
+    "user_100ns": 16875000,
+    "kernel_100ns": 7187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2100,
+    "process_creation_100ns": 134337449210945785
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     7,
+     3
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     3,
+     7
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.6931471805599465,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599465
+   },
+   "independent_CUDA": {
+    "phases": 853,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 4523,
+    "maximum_output_cells": 80
+   },
+   "independent_binary64_phases": 853,
+   "resources": {
+    "peak_packed_bytes": 117913644,
+    "consumed_native_arena_extent": 165272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 29220,
+    "creation_100ns": 134337449235431895,
+    "lifetime_process_commit_peak": 2367451136
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2499104768,
+    "peak_job_commit": 2500337664,
+    "user_100ns": 513437500,
+    "kernel_100ns": 22187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29220,
+    "process_creation_100ns": 134337449235431895
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     7,
+     3
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     3,
+     7
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250830957375074,
+    "expected_Brier_exact": "8436744882968061245639605104062806609127622903807128732326014599631183557911259120360456369721760167925188898270926061457275463099283676927154103219203431043177497028242662745640634451094623/46870793422940627776130010254007044799284647476517709814626119272754056457906976799512288526298251169594619160706672447697066084075670001902522675792214308274405215785519421287448415705610430",
+    "mean_true_probability_gap": "514216729147200569830650666765238637808237367499405236193931469056014567416234323981997952602/4150303191687407396961815101154831572228548173439017919903168221054332083900424521389585053534305",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32508312925377414,
+    "expected_Brier_exact": "67927265161562994278060675115394334313548032990267103592577019566393366769863025616320869758917874363727184500833401793817245791413641368559389554389150254906295481083642510030266747/377373577560000255765809520523365652864766834796202217958881638020580687654882154497804246225299947306557125662221364401512263594247846705561376257325597591076594980259571369203943375",
+    "mean_true_probability_gap": "22655060773584600697447001791044900065792332660041650411853432800761274330315454244401859/150473966697233097650309086597599523752876575847284909322304573719900884163922694780317993950",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250831188935963
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 293,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 9256,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2170089472,
+    "peak_job_commit": 2171322368,
+    "user_100ns": 16093750,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9256,
+    "process_creation_100ns": 134337449948354683
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ],
+    [
+     7,
+     8,
+     7,
+     3
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     0,
+     10
+    ],
+    [
+     14,
+     15,
+     9,
+     1
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.6931471805599465,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599465
+   },
+   "independent_CUDA": {
+    "phases": 853,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 4523,
+    "maximum_output_cells": 80
+   },
+   "independent_binary64_phases": 853,
+   "resources": {
+    "peak_packed_bytes": 117913642,
+    "consumed_native_arena_extent": 165272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 8028,
+    "creation_100ns": 134337449972900168,
+    "lifetime_process_commit_peak": 2368499712
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2499891200,
+    "peak_job_commit": 2501099520,
+    "user_100ns": 507968750,
+    "kernel_100ns": 27656250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 8028,
+    "process_creation_100ns": 134337449972900168
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    1
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ],
+    [
+     7,
+     8,
+     7,
+     3
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     0,
+     10
+    ],
+    [
+     14,
+     15,
+     9,
+     1
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32508302435201186,
+    "expected_Brier_exact": "1177691433234811867651207324409633910886495773426433612902334246215053938859559774387376957633505464574165569154919381172887700793810874717950505481560173670188147592306675280001477491201805699661030126057171735673/6542729517306792819487493542306797388734065400396450602683507023657363530308763622236244345578535802949699073722007820335254615074216856910915511124217515194747220869001888055892928891608536616772252306557201389810",
+    "mean_true_probability_gap": "43643410170276845243820028244650682815080981052050458506842641757289225150039799947583579284731494339642/586083014306511550707681898672019021412824788031925139313148504471008114763435314458312952593675281996071505",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32508305218945543,
+    "expected_Brier_exact": "5770811372762537420990604221165983887021052490623759967186350534047369228042110787152306447783655905185965867669729205208201539196295806661660981567137889306028731802573739061422384855371/32060058125122408443481355231076597788037957398489071347555057997389542650774001796386668814126683659998698651683855334329254837470671330589255278082815103318227581225639452088037448584375",
+    "mean_true_probability_gap": "4652630931450511291189522024253197465357482180133106103072483720189396367352840593348215359/43858904312663175633055261902096712140721966878364418901496973590197150527832341117448630782250",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508303700424224
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 330,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 25568,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168328192,
+    "peak_job_commit": 2169536512,
+    "user_100ns": 16875000,
+    "kernel_100ns": 7187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25568,
+    "process_creation_100ns": 134337450691946230
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     10,
+     0
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.6931471805599465,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599465
+   },
+   "independent_CUDA": {
+    "phases": 853,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 4523,
+    "maximum_output_cells": 80
+   },
+   "independent_binary64_phases": 853,
+   "resources": {
+    "peak_packed_bytes": 117913613,
+    "consumed_native_arena_extent": 165272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 25468,
+    "creation_100ns": 134337450716110187,
+    "lifetime_process_commit_peak": 2366963712
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2497892352,
+    "peak_job_commit": 2499121152,
+    "user_100ns": 512500000,
+    "kernel_100ns": 22343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25468,
+    "process_creation_100ns": 134337450716110187
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    2
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     10,
+     0
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733953009,
+    "expected_Brier_exact": "1232947683367659995174331594129797348369706670751597745283275269181122010448570180915838357978602672534707879190143128922691395413896185866531129948825867859605426573648251161631132889806215313866306881906017134147078229750668996610373/6849709351989774414411353624171811521740995753490251600415639416087573523668667826681822239705387013351776332411621036840499972107775967941543883090154767826752830161495707929849156430522613882727274609812644617819528559014692444906122",
+    "mean_true_probability_gap": "2678365888125072710570081664984766977497819746686306848700369306042958956395463569625517124583669654321694299926/6057629200315635748101965834470636497563204996423198851832290134266635661102965502980447627138008529381529453182813815",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32508298204828634,
+    "expected_Brier_exact": "4278288043003359155964413137529246292670181312988309925982121333152705172594828309693301769401156675691838265030741611926705137845899692560947138405919694908053819429111737151514888297371/23768266493961848078077338543656296167851033695557930506957357688131638074486607944223802867512722952349557491625448155469554247012666707093980755948423945768422795794356973407663304990375",
+    "mean_true_probability_gap": "59627272823271410697970258255074123661968752936110539843376099878246221252870125625493671/1510547444941845385231194290945325532962817735078190293568413467577642812431737135716933089226",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829613995628
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 378,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 26364,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169569280,
+    "peak_job_commit": 2170802176,
+    "user_100ns": 15156250,
+    "kernel_100ns": 8906250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26364,
+    "process_creation_100ns": 134337451431321394
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     7,
+     3
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ],
+    [
+     7,
+     8,
+     0,
+     10
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     8,
+     2
+    ],
+    [
+     12,
+     13,
+     8,
+     2
+    ],
+    [
+     13,
+     14,
+     4,
+     6
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "UNRESOLVED",
+   "proposal_reason": "the empirical construction needs values absent from the registered initializer",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": null,
+   "actually_compared": 0,
+   "reference_proofs": 0,
+   "final_policy_stage": "UNRESOLVED",
+   "install_cursor": null,
+   "alpha_spent": "0",
+   "frozen_candidate_unseen": null,
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.6931471805599465,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599465
+   },
+   "independent_CUDA": {
+    "phases": 853,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 4523,
+    "maximum_output_cells": 80
+   },
+   "independent_binary64_phases": 853,
+   "resources": {
+    "peak_packed_bytes": 117913641,
+    "consumed_native_arena_extent": 165272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 2764,
+    "creation_100ns": 134337451455697717,
+    "lifetime_process_commit_peak": 2367111168
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2498871296,
+    "peak_job_commit": 2500104192,
+    "user_100ns": 512343750,
+    "kernel_100ns": 22656250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2764,
+    "process_creation_100ns": 134337451455697717
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    3
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     7,
+     3
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ],
+    [
+     7,
+     8,
+     0,
+     10
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     8,
+     2
+    ],
+    [
+     12,
+     13,
+     8,
+     2
+    ],
+    [
+     13,
+     14,
+     4,
+     6
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3252122049699464,
+    "expected_Brier_exact": "1017914814103869986578821688518654413738327807834347640876426599967164774609643835038074634138980280166850024737156424732222099181044665833721796199737697023370072422789699442366689867661977/5653537756536449725168675325810948683246645632705866029376674701581846663904919891154847030332076380252985679587318789083485297685076489763319785199304325327456463236059132015771649517897010",
+    "mean_true_probability_gap": "1384973369376434968059276635838015638882861263998785938039459876015359103755900853679967886682/544803388589097902438447313719437090191976225286535420545062492004962508279086583458963601950305",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32521227252050866,
+    "expected_Brier_exact": "28767572962176381261218838786958421652146188235144666602736163408774773551863676414855963779693954643716709435377358711089004392255419735209891338576941248674742973971212272242425587674069595814563362644480214443182300346035224319030976911338982371778147114225350203915218463931756723263120595381/159776175904889542811968540336663274861158751534046324806030937841688266144944988319909147592838774263151197717803922513132864502221239817170292115686778330349054559529074368049293575806322015397996330570240433098862581168180524560684668489954022010034711749099817175757280994158504057217033473625",
+    "mean_true_probability_gap": "665472881368181772237760642472100755875080841918086537383778276423306369114262328582142187180193805576639100861337077770409272235729357597065048287/259048246240065497149506551802243889914256775777481504672785904104997066664944318938868998282334708692163716934750400794761510022399654002785180766850",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3252122547658629
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 291,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 10700,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169593856,
+    "peak_job_commit": 2170814464,
+    "user_100ns": 16875000,
+    "kernel_100ns": 7343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 10700,
+    "process_creation_100ns": 134337452167095707
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-a",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 60,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 80,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "deployed_stream_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.4338292164185042,
+    "expected_Brier_exact": "151/550",
+    "mean_true_probability_gap": "13/110",
+    "latent_relation_error_with_half_ties": "13/88",
+    "raw_division_expected_CE_binary64": 0.4338292321663228
+   },
+   "independent_CUDA": {
+    "phases": 396,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11574,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 396,
+   "resources": {
+    "peak_packed_bytes": 55404908,
+    "consumed_native_arena_extent": 152160
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 29392,
+    "creation_100ns": 134337452191264139,
+    "lifetime_process_commit_peak": 2356482048
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2422796288,
+    "peak_job_commit": 2424004608,
+    "user_100ns": 211718750,
+    "kernel_100ns": 18906250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29392,
+    "process_creation_100ns": 134337452191264139
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "disconnected-a",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.5927660331503548,
+    "expected_Brier_exact": "227/550",
+    "mean_true_probability_gap": "16/55",
+    "latent_relation_error_with_half_ties": "4/11"
+   },
+   "AMP_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.5927660331503548,
+    "expected_Brier_exact": "227/550",
+    "mean_true_probability_gap": "16/55",
+    "latent_relation_error_with_half_ties": "4/11",
+    "raw_division_expected_CE_binary64": 0.5927660392462846
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 6596,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2166915072,
+    "peak_job_commit": 2168147968,
+    "user_100ns": 15312500,
+    "kernel_100ns": 7500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6596,
+    "process_creation_100ns": 134337452466836280
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-b",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 60,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_policy_stage": "EVIDENCE",
+   "install_cursor": null,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 1.6034681820234307,
+    "expected_Brier_exact": "611/550",
+    "mean_true_probability_gap": "32/55",
+    "latent_relation_error_with_half_ties": "8/11",
+    "raw_division_expected_CE_binary64": 1.6034681802924877
+   },
+   "deployed_stream_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "independent_CUDA": {
+    "phases": 396,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11582,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 396,
+   "resources": {
+    "peak_packed_bytes": 55091076,
+    "consumed_native_arena_extent": 152160
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 14168,
+    "creation_100ns": 134337452490103921,
+    "lifetime_process_commit_peak": 2358525952
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2422697984,
+    "peak_job_commit": 2423910400,
+    "user_100ns": 245000000,
+    "kernel_100ns": 16718750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14168,
+    "process_creation_100ns": 134337452490103921
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "disconnected-b",
+    0
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.5927660331503548,
+    "expected_Brier_exact": "227/550",
+    "mean_true_probability_gap": "16/55",
+    "latent_relation_error_with_half_ties": "4/11"
+   },
+   "AMP_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.5927660331503548,
+    "expected_Brier_exact": "227/550",
+    "mean_true_probability_gap": "16/55",
+    "latent_relation_error_with_half_ties": "4/11",
+    "raw_division_expected_CE_binary64": 0.5927660392462846
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 4,
+   "maximum_AMP_mass_probability_error": "0",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 2756,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169499648,
+    "peak_job_commit": 2170716160,
+    "user_100ns": 15156250,
+    "kernel_100ns": 7187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2756,
+    "process_creation_100ns": 134337452795735789
+   },
+   "execution_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3"
+  }
+ ]
+}

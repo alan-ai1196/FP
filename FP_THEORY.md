@@ -27,7 +27,11 @@ correctness counterexample to the declared semantics.
 The first [registered RTX 3090 resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 has completed 54 configurations, including strong SUM/Horner controls.
 Its actual precision plateau and honest range/evidence failures do not
-change the theory below. Continue with registered model science.
+change the theory below. The first [ordinary-data model experiment RN-1](experiments/relation_noise/RESULTS.md)
+also completes: conditioned proportions succeed, whereas the current solver
+constructs no candidate on eight IID samples with informative labels.
+This exposes a proposal/selection limitation, not a Foundation loophole;
+continue model science with honest, separate completeness and fresh-evidence claims.
 
 ---
 
