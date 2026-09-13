@@ -44,7 +44,8 @@ def context(n, i, j):
     return tuple(F(k == i) for k in range(n))+tuple(F(k == j) for k in range(n))
 
 
-def fixture(n=4, *, groups=None, edges=None, automatic=True, host=None, bound=F(3), transform=None):
+def fixture_parameters(n=4, *, groups=None, edges=None, bound=F(3)):
+    """The same declared task and streams, before any Runtime is constructed."""
     if groups is None:
         groups = [i % 2 for i in range(n)]
         random.Random(2026091266+n).shuffle(groups)  # external synthetic task parameter; never passed to Runtime
@@ -70,16 +71,21 @@ def fixture(n=4, *, groups=None, edges=None, automatic=True, host=None, bound=F(
     run = replace(run, data=replace(run.data, stream_law=StochasticStreamLaw('external branch-invariant relation fixture assumption; deterministic audit tape alone proves no probability law')),
         float64=Float64Contract(F(1, 1 << 24), F(1, 1 << 24)), persistence=registration(bound=bound, horizon=training_count),
         cpu_install=CpuInstallContract(), searches=(spec,))
-    if transform is not None:
-        cfg, run = transform(cfg, run)
-    policy = CompilerPolicy((CompilationStep(training_count, 'native', 1, 'ref', 'finite'),)) if automatic else None
-    rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=run, host=host, policy=policy)
     # Subsequent pairs include previously unobserved diagonal/cross-token
     # contexts. Only context bytes and ordinary labels reach the Runtime.
     fresh = tuple((context(n, (block//n) % n, block % n),
                    (groups[(block//n) % n] ^ groups[block % n]) ^ int(repetition == 9))
                   for block in range(len(edges)) for repetition in range(10))
-    return rt, groups, training, fresh+training[:2]
+    return cfg, run, groups, training, fresh+training[:2]
+
+
+def fixture(n=4, *, groups=None, edges=None, automatic=True, host=None, bound=F(3), transform=None):
+    cfg, run, groups, training, fresh = fixture_parameters(n, groups=groups, edges=edges, bound=bound)
+    if transform is not None:
+        cfg, run = transform(cfg, run)
+    policy = CompilerPolicy((CompilationStep(len(training), 'native', 1, 'ref', 'finite'),)) if automatic else None
+    rt = ReferenceCompilerRuntime(cfg, zero_program(2), online=run, host=host, policy=policy)
+    return rt, groups, training, fresh
 
 
 def ingest(rt, tape, *, start=0):

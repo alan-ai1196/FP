@@ -89,8 +89,15 @@ baseline. At the horizon Runtime verifies the full device frame and publishes
 `SEALED_CUDA_STREAM`, retaining partial units and unresolved stages. The
 report is `snapshot().run` together with the entire snapshot; it supplies no
 future authority or current CUDA-class optimum. Run
-`scripts/audit_cuda_policy_run.py`. The existing hierarchical AMP fixture
-and final target release integration remain before model science.
+`scripts/audit_cuda_policy_run.py`.
+
+The [existing hierarchical fixture](../../theory/proofs/OWNED_CUDA_HIERARCHY.md)
+now executes under this target policy: n=32 installs at 330 and seals at 622,
+with 1,963 independently replayed CUDA and binary64 phases. Its actual
+SUM-only training tie and disconnected/misleading-relation controls pass;
+neither empirical optimality nor fresh installation identifies an unseen
+table or forces the selected structure. Run `scripts/audit_cuda_hierarchy.py`.
+Final target release integration remains before model science.
 
 ## Current executable recovery (2026-09-12)
 

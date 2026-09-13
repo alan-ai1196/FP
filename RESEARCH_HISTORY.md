@@ -2524,3 +2524,48 @@ argument. The next work is the existing hierarchical fixture on actual AMP
 and complete target release integration. Its strong SUM training tie and
 identifiability controls remain required. A sealed stream is neither current
 CUDA optimality, structural forcing nor model-science authority.
+
+## 78. Execute the existing hierarchy and its limits on owned AMP (2026-09-13)
+
+The same pure token-task registration now feeds either the Reference/CPU
+or CUDA audit before Runtime construction. No discarded helper Runtime,
+hidden partition or supplied learned state enters the target path. The
+native grammar, empirical-upper solver, `(1,8)` initializer, zero learning
+rate and complete ordinary tape retain their previous scope. The selected
+endpoint's indicators/products are binary, its masses are exactly one and
+nine, and only its final binary32 division rounds the forward distribution.
+`OWNED_CUDA_HIERARCHY.md` explains this instance and the comparison boundary.
+
+At n=32, the actual owned strategy attains the historical reference upper
+with one 74-node witness in a class containing at least 2^6540 source-only
+strings. It obtains independent fresh CUDA evidence, installs at 330 and
+continues to 622 without flushing its last two partial-unit events. All
+1,963 CUDA and 1,963 CPU binary64 phases pass independent exact rounded
+replay. The full 1,024-context reference conditional is also checked; that
+count does not describe additional unexecuted device observations.
+
+Actual negative controls remain decisive. A smaller five-node SUM-only
+learner reaches the same exact train upper and matches the hierarchy's raw
+forecast words on all 30 repeated training observations. Two disconnected
+worlds produce identical observed data, proposals, graphs and training
+objectives. Both target learners install at 40 and seal at 42, despite the
+opposite unseen relation (0,2). Fresh comparison with an incumbent cannot
+recover information absent from that stream. A misleading but connected
+training path attains its upper and then finishes fresh evidence unresolved
+without installation. None of these finite tapes establishes a stochastic
+producer law, population identification or necessary PRODUCT structure.
+
+All five actual workers pass 2,701 CUDA and 2,701 binary64 phase checks.
+The n=32 peak packed payload is 313,552,643 bytes, consumed native arena
+extent 1,944,952 bytes inside its preallocated 16 MiB, and completed job peak
+3,905,241,088 bytes inside the original 4 GiB cap. Whole-board 24 GiB VRAM
+remains a separate uniform upper. No resource cap or Runtime semantics was
+changed to pass this experiment. The report drops identical graph/data/device
+fields only after direct equality checks; per-worker outcomes and native job
+records remain. That report-only reduction uses the complete executed result
+without rerunning unchanged numerical work. CPU n=4 bounded hierarchy,
+identification and all unresolved-case regressions pass after fixture extraction.
+
+The next work is complete target release integration and then registered
+RTX 3090 model science with competitive baselines. Foundation/ERC-1 remain
+frozen and no additional static resource cases are prerequisites.

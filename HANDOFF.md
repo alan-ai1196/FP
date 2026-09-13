@@ -196,9 +196,20 @@ independent CUDA and CPU phase checks. A 40-event schedule correctly refuses
 the second 30-epoch admission. Trained/recurrent/short-stream and failure
 controls are in `scripts/audit_cuda_policy_run.py`. Stream completion reports
 unfinished stages as unresolved and grants no future authority or current
-target optimum. Continue the existing hierarchical fixture on AMP and complete
-target release integration. Keep its strong SUM tie and identifiability
-controls; do not treat native training optimality as structural forcing.
+target optimum.
+
+The [existing hierarchy now also executes on actual AMP](theory/proofs/OWNED_CUDA_HIERARCHY.md).
+At n=32 it installs at 330, seals at 622 and passes 1,963 independent CUDA
+and binary64 phases. It retains the same 74-node native witness, broad class
+and historical empirical-upper scope. Peak packed payload is 313,552,643
+bytes; the completed job peaks at 3,905,241,088 bytes under its 4 GiB cap.
+The actual smaller SUM-only learner preserves its training prediction-word
+tie. Both disconnected worlds install despite opposite unseen relations;
+misleading connected majorities end unresolved without install. All five
+target cases pass. The active next step is complete target release
+integration, followed by registered RTX 3090 model science with strong
+baselines. Do not treat native training optimality or fresh installation
+as structural forcing or complete population identification.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

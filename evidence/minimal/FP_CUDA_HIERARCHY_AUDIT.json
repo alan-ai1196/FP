@@ -1,0 +1,373 @@
+{
+  "status": "PASS",
+  "scope": "existing hierarchical fixture and negative controls on actual owned AMP",
+  "cases": {
+    "hierarchy": {
+      "tokens": 32,
+      "ordinary_training_events": 310,
+      "optimizer_update_unit": 10,
+      "complete_domain_reference_predictions_checked": 1024,
+      "native_graph": {
+        "nodes": 74,
+        "sources": 64,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 68,
+        "edges": 76,
+        "slots": 2,
+        "bindings": 0
+      },
+      "full_native_class_caps": {
+        "nodes": 1090,
+        "SUMs": 1030,
+        "PRODUCTs": 1028,
+        "edges": 4172,
+        "slots": 2
+      },
+      "source_only_class_cardinality_at_least_power_of_two": 6540,
+      "actually_evaluated_native_witnesses": 1,
+      "unexecuted_syntax_cursor_not_declared_exhausted": true,
+      "install_cursors": [
+        330
+      ],
+      "sealed_at": 622,
+      "partial_optimizer_events": 2,
+      "stage_status": "INSTALLED_CUDA",
+      "alpha_spent": "1/2",
+      "sealed_port_denials": 27,
+      "independent_CUDA": {
+        "phases": 1963,
+        "actual_arena_bytes": 16777216,
+        "largest_phase_frame_used": 28865,
+        "maximum_output_cells": 431
+      },
+      "independent_binary64_phases": 1963,
+      "resources": {
+        "peak_reference_payload_bytes": 313552643,
+        "consumed_native_arena_extent": 1944952,
+        "native_allocator_reserved_bytes": 16777216
+      },
+      "host": {
+        "process_id": 11652,
+        "creation_100ns": 134337307492967311,
+        "lifetime_process_commit_peak": 3149033472
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 3903913984,
+        "peak_job_commit": 3905241088,
+        "user_100ns": 3316875000,
+        "kernel_100ns": 82656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11652,
+        "process_creation_100ns": 134337307492967311
+      }
+    },
+    "wrong-majority": {
+      "tokens": 4,
+      "ordinary_training_events": 30,
+      "optimizer_update_unit": 10,
+      "complete_domain_reference_predictions_checked": 16,
+      "native_graph": {
+        "nodes": 18,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 12,
+        "edges": 20,
+        "slots": 2,
+        "bindings": 0
+      },
+      "full_native_class_caps": {
+        "nodes": 26,
+        "SUMs": 22,
+        "PRODUCTs": 20,
+        "edges": 84,
+        "slots": 2
+      },
+      "source_only_class_cardinality_at_least_power_of_two": 78,
+      "actually_evaluated_native_witnesses": 1,
+      "unexecuted_syntax_cursor_not_declared_exhausted": true,
+      "install_cursors": [],
+      "sealed_at": 62,
+      "partial_optimizer_events": 2,
+      "stage_status": "UNRESOLVED",
+      "alpha_spent": "1/2",
+      "sealed_port_denials": 27,
+      "independent_CUDA": {
+        "phases": 199,
+        "actual_arena_bytes": 16777216,
+        "largest_phase_frame_used": 8673,
+        "maximum_output_cells": 96
+      },
+      "independent_binary64_phases": 199,
+      "resources": {
+        "peak_reference_payload_bytes": 27386001,
+        "consumed_native_arena_extent": 55736,
+        "native_allocator_reserved_bytes": 16777216
+      },
+      "host": {
+        "process_id": 8048,
+        "creation_100ns": 134337311296346168,
+        "lifetime_process_commit_peak": 2280353792
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2339819520,
+        "peak_job_commit": 2341044224,
+        "user_100ns": 88750000,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8048,
+        "process_creation_100ns": 134337311296346168
+      }
+    },
+    "disconnected-a": {
+      "tokens": 4,
+      "ordinary_training_events": 20,
+      "optimizer_update_unit": 10,
+      "complete_domain_reference_predictions_checked": 16,
+      "native_graph": {
+        "nodes": 18,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 12,
+        "edges": 20,
+        "slots": 2,
+        "bindings": 0
+      },
+      "full_native_class_caps": {
+        "nodes": 26,
+        "SUMs": 22,
+        "PRODUCTs": 20,
+        "edges": 84,
+        "slots": 2
+      },
+      "source_only_class_cardinality_at_least_power_of_two": 78,
+      "actually_evaluated_native_witnesses": 1,
+      "unexecuted_syntax_cursor_not_declared_exhausted": true,
+      "install_cursors": [
+        40
+      ],
+      "sealed_at": 42,
+      "partial_optimizer_events": 2,
+      "stage_status": "INSTALLED_CUDA",
+      "alpha_spent": "1/2",
+      "sealed_port_denials": 27,
+      "external_unseen_relation_0_2": 0,
+      "independent_CUDA": {
+        "phases": 136,
+        "actual_arena_bytes": 16777216,
+        "largest_phase_frame_used": 8671,
+        "maximum_output_cells": 96
+      },
+      "independent_binary64_phases": 136,
+      "resources": {
+        "peak_reference_payload_bytes": 18867266,
+        "consumed_native_arena_extent": 38160,
+        "native_allocator_reserved_bytes": 16777216
+      },
+      "host": {
+        "process_id": 29528,
+        "creation_100ns": 134337311430919182,
+        "lifetime_process_commit_peak": 2256322560
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2296500224,
+        "peak_job_commit": 2297741312,
+        "user_100ns": 63593750,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29528,
+        "process_creation_100ns": 134337311430919182
+      }
+    },
+    "disconnected-b": {
+      "tokens": 4,
+      "ordinary_training_events": 20,
+      "optimizer_update_unit": 10,
+      "complete_domain_reference_predictions_checked": 16,
+      "native_graph": {
+        "nodes": 18,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 12,
+        "edges": 20,
+        "slots": 2,
+        "bindings": 0
+      },
+      "full_native_class_caps": {
+        "nodes": 26,
+        "SUMs": 22,
+        "PRODUCTs": 20,
+        "edges": 84,
+        "slots": 2
+      },
+      "source_only_class_cardinality_at_least_power_of_two": 78,
+      "actually_evaluated_native_witnesses": 1,
+      "unexecuted_syntax_cursor_not_declared_exhausted": true,
+      "install_cursors": [
+        40
+      ],
+      "sealed_at": 42,
+      "partial_optimizer_events": 2,
+      "stage_status": "INSTALLED_CUDA",
+      "alpha_spent": "1/2",
+      "sealed_port_denials": 27,
+      "external_unseen_relation_0_2": 1,
+      "independent_CUDA": {
+        "phases": 136,
+        "actual_arena_bytes": 16777216,
+        "largest_phase_frame_used": 8671,
+        "maximum_output_cells": 96
+      },
+      "independent_binary64_phases": 136,
+      "resources": {
+        "peak_reference_payload_bytes": 18867266,
+        "consumed_native_arena_extent": 38160,
+        "native_allocator_reserved_bytes": 16777216
+      },
+      "host": {
+        "process_id": 3380,
+        "creation_100ns": 134337311531299340,
+        "lifetime_process_commit_peak": 2257149952
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2297364480,
+        "peak_job_commit": 2298597376,
+        "user_100ns": 66093750,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3380,
+        "process_creation_100ns": 134337311531299340
+      }
+    },
+    "sum-tie": {
+      "actual_AMP_train_context_probability_equalities": 30,
+      "exact_reference_train_likelihood_tied": true,
+      "hierarchy": {
+        "nodes": 18,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 4,
+        "SUM_edges": 12,
+        "edges": 20,
+        "slots": 2,
+        "bindings": 0
+      },
+      "SUM_only": {
+        "nodes": 5,
+        "sources": 3,
+        "state_reads": 0,
+        "SUMs": 2,
+        "PRODUCTs": 0,
+        "SUM_edges": 3,
+        "edges": 3,
+        "slots": 2,
+        "bindings": 0
+      },
+      "scope": "smaller training-optimal control, not a strong population SUM comparator or an owned policy run",
+      "independent_CUDA": {
+        "phases": 267,
+        "actual_arena_bytes": 16777216,
+        "largest_phase_frame_used": 8671,
+        "maximum_output_cells": 96
+      },
+      "independent_binary64_phases": 267,
+      "resources": {
+        "peak_reference_payload_bytes": 36491012,
+        "consumed_native_arena_extent": 70568,
+        "native_allocator_reserved_bytes": 16777216
+      },
+      "host": {
+        "process_id": 25496,
+        "creation_100ns": 134337311631756648,
+        "lifetime_process_commit_peak": 2298363904
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2341892096,
+        "peak_job_commit": 2343108608,
+        "user_100ns": 92031250,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25496,
+        "process_creation_100ns": 134337311631756648
+      }
+    }
+  },
+  "not_claimed": [
+    "population identification",
+    "resource-forced unique hierarchy",
+    "a deterministic tape proves stochastic freshness",
+    "target release or model-science authority"
+  ],
+  "disconnected_witness": {
+    "identical_observable_data_proposal_graph_and_train_objective": true,
+    "shared_assignment": [
+      0,
+      1,
+      0,
+      1
+    ],
+    "components": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "opposite_external_unseen_relations": [
+      0,
+      1
+    ]
+  },
+  "common_actual_device": {
+    "identity": {
+      "runtime_version": 13040,
+      "driver_api_version": 13040,
+      "driver_version": "616.92",
+      "pci_bus_id": "0000:0B:00.0",
+      "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+      "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "role_physical_vram_upper": {
+      "deployment": 25769803776,
+      "compiler": 25769803776
+    },
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+  }
+}

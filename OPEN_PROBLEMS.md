@@ -91,10 +91,14 @@ are now implemented. The two-stage ordinary-input-only path installs at
 22/38 and seals at 60; resource-horizon, partial-unit and late report-failure
 controls retain their distinct outcomes. Prepared bytes cannot substitute
 for a published closure, and a sealed stream can contain unresolved stages.
-The active next step is the existing hierarchical fixture on actual AMP,
-then complete target release integration. Keep its strong zero-PRODUCT
-training tie and identifiability controls; these results do not reopen static
-theory or establish population/structural superiority.
+The [existing hierarchical fixture now passes on actual AMP](theory/proofs/OWNED_CUDA_HIERARCHY.md):
+n=32 installs at 330 and seals at 622 with 1,963 independent CUDA phase
+checks. The strong zero-PRODUCT training tie and both identifiability controls
+also execute. In particular, disconnected indistinguishable worlds can both
+install while their unseen relations differ. The active next step is complete
+target release integration, then registered model science with competitive
+baselines. These results do not reopen static theory or establish population
+or structural superiority.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.
 

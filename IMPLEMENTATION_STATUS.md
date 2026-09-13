@@ -140,8 +140,15 @@ stages and never grants CERTIFIED_COMPLETE or a current target-class optimum.
 Actual two-stage execution installs at 22/38 and seals at 60 with 456 CUDA
 and CPU phase checks. Run `scripts/audit_cuda_policy_run.py` for trained,
 recurrent, finite-branch, resource-horizon and failed-publication controls.
-The remaining work is the existing hierarchical AMP fixture and complete
-target release integration before model science.
+The [existing hierarchical AMP fixture](theory/proofs/OWNED_CUDA_HIERARCHY.md)
+also passes: n=32, installation at 330, closure at 622, 1,963 CUDA and 1,963
+binary64 phases checked independently. Its 74-node witness and empirical
+upper cover the same broad reference constructor class. The smaller SUM
+training tie remains bitwise equal on actual forecasts; disconnected worlds
+both install with opposite unseen relations, while misleading connected
+relations finish unresolved. All five actual target workers pass under their
+original 4 GiB host caps. Complete target release integration remains before
+model science; no Foundation/ERC-1 change or new static case is involved.
 
 ## Status at GitHub migration (2026-09-06)
 

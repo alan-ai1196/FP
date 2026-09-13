@@ -149,6 +149,8 @@ exhaustiveness over arbitrary target programs or streams.
 
 Run `python -B scripts/audit_cuda_policy_run.py --write` for the minimal
 [`FP_CUDA_POLICY_RUN_AUDIT.json`](../../evidence/minimal/FP_CUDA_POLICY_RUN_AUDIT.json).
-This is target correctness/resource evidence. Complete target release
-integration and the existing hierarchical target fixture precede model
-science; no additional static resource families are prerequisites.
+This is target correctness/resource evidence. The
+[existing hierarchical target fixture](OWNED_CUDA_HIERARCHY.md) now also
+passes, including its training tie and identifiability controls. Complete
+target release integration precedes model science; no additional static
+resource families are prerequisites.

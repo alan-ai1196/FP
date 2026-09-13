@@ -262,7 +262,9 @@ checked by the parent.
 
 The deterministic audit tape exercises a protocol conditional on the
 explicit stochastic producer assumption. It does not itself prove that
-assumption or an empirical population error rate. The actual target AMP
-storage/operation/cast path and its matching evidence are still unexecuted.
+assumption or an empirical population error rate. The
+[subsequent owned CUDA audit](OWNED_CUDA_HIERARCHY.md) now executes the same
+n=32 fixture and negative controls on its actual storage/operation/cast path,
+with independent target evidence and resident installation.
 Read the minimal audit record for executed counts and measurements; this
 proof is not an aggregate Runtime release certificate.

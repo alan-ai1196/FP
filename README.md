@@ -19,7 +19,7 @@ FP studies whether a **typed causal positive program** built from a small native
 - **Theory:** Foundation R4 frozen and consolidated into `FP_THEORY.md`.
 - **Experiment resources:** ERC-1 specification frozen after the scoped joint PRODUCT/SUM/range/precision law. Static case expansion is parked; actual AMP correctness is next, followed by RTX 3090 experiments.
 - **Reference Compiler:** **scoped Reference/CPU release frozen** at tested source `ebe2c4c`; 21 complete fresh-clone audits pass. See [release scope](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and [minimal evidence](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
-- **Actual AMP:** owned CUDA trajectories, fresh evidence, resident installation, device resources and [finite policy/run composition](theory/proofs/OWNED_CUDA_POLICY_RUN.md) execute. The existing hierarchical target fixture and complete target release integration remain.
+- **Actual AMP:** owned CUDA trajectories, fresh evidence, resident installation, device resources and finite policy/run composition execute. The [n=32 hierarchy and its negative controls](theory/proofs/OWNED_CUDA_HIERARCHY.md) now pass; complete target release integration remains.
 - **GPU/model science:** **HOLD**. No new RTX3090 science is authorized until the complete Reference Compiler runtime passes the required reference gates and the actual AMP path passes its bridge gates.
 - **Historical R4.2 implementation:** preserved under `experiments/legacy_r4_2_v23/` because its failure produced the v24 theoretical counterexample. It is not a current implementation.
 
