@@ -1,0 +1,18 @@
+{
+ "experiment": "RN-5",
+ "status": "INTERRUPTED_UNREPORTED_ATTEMPT",
+ "observed_utc": "2026-09-13 23:06:55 UTC",
+ "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+ "completed_journal_prefix": 23,
+ "completed_prefix_statuses": {"EXECUTED": 18, "FAILED": 5},
+ "next_registered_task": {"ordinal": 24, "kind": "FP", "case": [16, "iid-c4", 18], "rate": "4"},
+ "observed_state": {
+  "running_python_processes": 0,
+  "remaining_attempt_directory": "fp-joint-model-yr9c08y5",
+  "attempt_directory_files": [],
+  "source_dependency_guard": "PASS"
+ },
+ "cause": "UNKNOWN; no completed worker report or completed job counters survived",
+ "scope": "Interruption record only: no score, timeout, memory-failure, completion, install or resource-bound certificate is inferred.",
+ "continuation": "Resume the existing 23-row journal at task 24 with the unchanged registered source, resources and timeout; retain this interrupted attempt separately."
+}

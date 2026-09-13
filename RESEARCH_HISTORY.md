@@ -3835,3 +3835,15 @@ class, initialized trajectory, AMP bridge or fresh install is relabeled.
 Foundation VII already declares U as a lineage coordinate. The result calls
 for an owned scoped learner extension and matched model evidence, without
 adding an architecture-semantic action or altering live RN-5 execution.
+
+## 109. Preserve an interrupted RN-5 attempt before resuming the matrix
+
+At2026-09-13 23:06:55 UTC the previously active main parent and worker are
+absent. The journal retains23 completed attempts and the next attempt's
+directory is empty. No completed job counters or worker report survived;
+the interruption's cause is unknown. A separate minimal interruption record
+preserves that fact without converting it into a timeout, memory failure,
+model result or resource certificate. Main source38b27b3 and its execution
+dependencies pass the existing guard. The registered resume path continues
+at task24, n16/c4 seed18 rate4, at23:08:27 UTC with unchanged resources and
+timeout. No completed task is repeated and no earlier outcome is removed.

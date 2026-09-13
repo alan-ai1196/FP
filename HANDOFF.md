@@ -203,6 +203,15 @@ newest prefix; the research branch currently retains twenty-three attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 
+At2026-09-13 23:06:55 UTC, no Python worker/parent remains and the rate4
+attempt directory is empty; the journal still has23 completed attempts.
+The separate [interruption record](evidence/minimal/FP_JOINT_UNCERTAINTY_INTERRUPTION.json)
+retains this unreported attempt without inventing a cause, score or completed
+job counters. After the source guard passed, the existing `--write --resume`
+driver resumed task24 at23:08:27 UTC with the same source and limits.
+The new parent/worker PIDs are11020/15576. Recheck actual processes and the
+main journal before any continuation; these PIDs are an observation, not a lease.
+
 Post-RN-5 source extensions are committed on `research/joint-learner-geometry`
 in a linked worktree of this same canonical Git repository. Run their new
 source-dependent audits from that checkout while main remains bound to the
