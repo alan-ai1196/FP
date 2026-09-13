@@ -260,6 +260,16 @@ This closes the finite model's owned AMP question. Next derive a useful
 native proposal from ordinary observations with explicit grammar, initializer,
 profile and fresh-evidence scope. Its known-prior initial graph is not yet
 discovered structure or an affordable long-history posterior.
+Read the [selection-objective proof](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
+before treating recurrent training fit as generative evidence. Actual H2
+endpoints give73/100 retrospective likelihood versus41/100 causal likelihood
+on two repeated labels. With common Gamma=(1,0,2,8), three noise models have
+identical1/4 causal evidence on two forest edges but endpoint scores1/4,
+5/16 and41/100. A one-observation forest cannot identify their noise rates;
+a later cycle has different predictions. Exact checks cover892 forest and32
+triangle likelihoods; four functional CPU streams add28 binary64 phases.
+The existing empirical class objective stays unchanged and remains distinct
+from causal guidance for a proposer and actual fresh evidence.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

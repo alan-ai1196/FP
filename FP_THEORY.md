@@ -90,6 +90,11 @@ the known prior, finite window and literal range costs. Two source-bound CPU
 jobs and49 actual RTX3090 jobs check these initial native models, including
 637 independent CUDA/binary64 phases per path. They supply no discovery,
 installation or class-optimality authority and change no definition below.
+The [recurrent selection audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
+also separates the implemented frozen-endpoint empirical objective from
+causal sequence evidence. A one-observation forest carries no information
+about a common noise rate despite different retrospective endpoint fits.
+Its later cycle can use that unresolved distinction; no score is relabelled.
 
 ---
 

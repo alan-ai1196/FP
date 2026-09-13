@@ -3518,3 +3518,36 @@ AMP realization, but supplies no discovery, installation, class-optimality,
 long-history affordability or new full implementation-release result.
 The next model question is an owned native proposal guided by ordinary
 observations and actual initializer/profile/fresh-evidence resources.
+
+## 98. A recurrent endpoint fit is not causal evidence or noise identification
+
+The existing search objective explicitly evaluates every historical record
+against one frozen complete learner state; it does not advance delayed
+values. A native H2 repeated-pair control gives causal likelihood41/100
+but frozen-endpoint likelihood73/100 after two labels0. This is not an
+online information leak: the empirical score is evaluated after both labels
+were revealed, for its declared class. Relabelling it Bayesian or fresh
+evidence would be the false claim.
+
+Three native forest controls now share Gamma=(1,0,2,8) and retain all four
+coordinates, differing only in SUM-edge choices of an available noise slot.
+On two forest edges they all have causal likelihood1/4; endpoint scores
+are1/4,5/16,41/100 for noise1/2,1/4,1/10. In general one observation per
+forest edge has uniform label likelihood2^(-m) under every common noise
+rate: fair latent edge parities are independent and XOR noise preserves
+uniformity. Thus that data cut cannot identify noise, regardless of solver
+resources or empirical endpoint fit. A later closing query can still use
+the distinction, forecasting189/250 versus9/16 after the same two zeros.
+
+For a triangle, label likelihood is[1+product(signs)*(1-2*epsilon)^3]/8,
+which depends on the noise. This is a distributional identifiability
+observation, not exact recovery from one cycle. Repeated-edge RN-5 training
+does not satisfy the forest theorem's one-observation premise.
+
+The exact audit checks47 small forests,892 signed-forest/noise likelihoods
+and32 triangle likelihoods. Four actual functional CPU streams seal with28
+independent binary64 phases and retained observations. Their physical host
+scope is explicitly unresolved; no class, fresh, installation or new GPU
+claim is supplied. The current objective and Foundation remain unchanged.
+A future proposer must separate its causal guidance, the declared empirical
+decision class and actual fresh continuation evidence.

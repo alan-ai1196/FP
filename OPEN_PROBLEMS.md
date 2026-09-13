@@ -144,6 +144,14 @@ scope and actual fresh evidence rather than treating this initial model as
 already learned or installed.
 Do not turn this known-prior initial model into a learned-construction result
 or expand another static resource family; RN-5 continues unchanged.
+The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
+now rules out treating that initial model's retrospective training fit as
+causal evidence or learned noise. On a one-observation forest, all common
+noise rates give exactly the same data law, while legal native endpoint
+fits can differ. A later cycle uses the distinction. Preserve the actual
+frozen-state search objective and its class scope; any causal proposal
+guidance needs its own legal acquisition and arithmetic, and no amount of
+solver work identifies noise from this uninformative cut alone.
 
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
