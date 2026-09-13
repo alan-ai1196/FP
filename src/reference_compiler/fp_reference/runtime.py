@@ -46,6 +46,7 @@ from .proof import ReferenceClassProof, BoundedReferenceProof, verify_maximum
 from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession, ReferenceSearchSpec, REFERENCE_SELECTION_COMPLETE, compare_likelihoods, likelihood
 from .empirical_bound import empirical_upper, verify_empirical_upper
 from .relation_proposal import relation_proposal
+from .causal_relation_proposal import SOLVER as CAUSAL_RELATION_SOLVER, causal_relation_proposal, proposal_work_bound
 from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
 
@@ -2190,6 +2191,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 # coefficient, before expanding its orientation family.
                 prefix_slots = min(len(self._contract.initializer_pattern), session.spec.grammar.slots)
                 work += 64*len(session.spec.relation_sources.token_atoms)**2*(1+prefix_slots)
+            if session.spec.relation_sources.solver == CAUSAL_RELATION_SOLVER:
+                work += proposal_work_bound(len(session.spec.relation_sources.token_atoms),
+                    len(self._contract.semantics.sources), len(self._contract.semantics.states),
+                    len(self._contract.source_domain or ()), session.spec.grammar,
+                    len(self._contract.initializer_pattern), len(session.spec.observation_ids), self._cursor)
             self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
             available = {record.observation_id: record for record in self._observations}
             if any(key not in available for key in session.spec.observation_ids):
@@ -2202,9 +2208,23 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             verify_empirical_upper(upper, records, self._contract.semantics, bit_limit=self._contract.reference_integer_bits)
             if session.base_likelihood != upper.likelihood:
                 self._data_usage.record(records, 'proposal', f'{session.search_id}:relation-derivation', self._cursor)
-                proposal = relation_proposal(upper, self._contract.semantics, session.spec.grammar,
-                    self._contract.initializer_pattern, session.spec.relation_sources,
-                    bit_limit=self._contract.reference_integer_bits)
+                if session.spec.relation_sources.solver == CAUSAL_RELATION_SOLVER:
+                    profile = next((p for p in self._online.profiles if p.profile_id == session.spec.profile_id), None)
+                    range_cap = self._contract.activation_cap
+                    if compare_exact(self._contract.normalizer_cap, range_cap,
+                                     bit_limit=self._contract.reference_integer_bits) < 0:
+                        range_cap = self._contract.normalizer_cap
+                    proposal = causal_relation_proposal(upper, self._contract.semantics, session.spec.grammar,
+                        self._contract.initializer_pattern, session.spec.relation_sources,
+                        data=self._online.data, learner=self._online.learner,
+                        source_domain=self._contract.source_domain,
+                        range_cap=range_cap,
+                        profile=profile, ordinary_cursor=self._cursor,
+                        bit_limit=self._contract.reference_integer_bits)
+                else:
+                    proposal = relation_proposal(upper, self._contract.semantics, session.spec.grammar,
+                        self._contract.initializer_pattern, session.spec.relation_sources,
+                        bit_limit=self._contract.reference_integer_bits)
                 session = replace(session, relation_proposal=proposal)
                 session = self._save_search(session)
                 if proposal.program is not None:

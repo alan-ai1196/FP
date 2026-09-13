@@ -139,12 +139,17 @@ binary64 phases and fixed512MiB caps. Actual AMP execution also completes at
 `75de898`:49 sealed jobs,637 independent CUDA/binary64 phases per path and196
 exact stored-mass window-posterior forecasts, with the raw division errors
 reported separately. Affordable longer histories and discovery of useful
-native state remain separate obligations. Derive an owned native proposal
-from ordinary observations, retaining its full grammar/initializer/profile
-scope and actual fresh evidence rather than treating this initial model as
-already learned or installed.
-Do not turn this known-prior initial model into a learned-construction result
-or expand another static resource family; RN-5 continues unchanged.
+native state remain separate obligations. The [owned causal proposer](theory/proofs/CAUSAL_RELATION_PROPOSAL.md)
+now closes the functional construction/install path: ordinary data guides
+an initialized-noise native emission, causal profile replay creates its state,
+and fresh evidence installs it while its full empirical class remains
+unresolved. Its CPU/RTX3090 source-bound four-job matrix is registered and
+pending. Complete that physical check, then attack useful uncertainty-preserving
+adaptation at matched information/resource cuts. The origin-tail criterion
+and exact replay counterexamples prevent treating any replay as an implicit
+reset. Noise identification, whole-history affordability and a full class
+optimum remain separate; no further static resource family is requested.
+RN-5 continues unchanged.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

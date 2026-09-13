@@ -236,6 +236,28 @@ audits verify892 forest and32 triangle noise likelihoods. It identifies an
 interpretation boundary of the declared objective, not a Runtime defect or
 new physical/target release.
 
+The [v6 causal proposal](theory/proofs/CAUSAL_RELATION_PROPOSAL.md) is now
+integrated into paid owned search. It selects among actual initializer
+noise slots, emits existing delayed positive syntax at base1, and uses the
+ordinary constructor/profile/comparison path. A single causal-origin tail
+criterion handles suffixes, mixed prefixes and multiple passes; it preserves
+all profile clocks and data. Exact checks cover1,552 guidance scores and
+2,016 native forecasts; unpaid calls and forged helper certificates cannot
+create authority. Functional CPU execution installs at cursor39 and seals
+with268 independently replayed phases, while the historical class remains
+UNRESOLVED. Four fresh CPU/full, CPU/twice, CUDA/full and CUDA/twice jobs
+are registered in `scripts/audit_causal_relation.py`; their results remain
+pending. This is not a new full implementation release. These source edits
+stay on the canonical research branch while main RN-5 workers are active.
+
+The new base-one graph has a measured interpreter precision distinction:
+91 profile/ordinary rounded forecasts keep masters and delays exact but
+have native/normalizer error up to3 and probability error77/3362410. All171
+rounded source/queue boxes fit cap29160 (maximum29158). Its pending GPU
+registration fixes native/state tolerance8 and probability1/10000 before
+execution; the old base-K exact-mass claim is not borrowed.
+
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

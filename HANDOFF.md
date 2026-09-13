@@ -257,10 +257,17 @@ Initial source `e92762c` incorrectly attached an unused install contract;
 all49 jobs were rejected before CUDA allocation and are retained in the
 separate registration-failure journal. The corrected empty policy registers
 no install contract and keeps the same49 cases and all budgets/tolerances.
-This closes the finite model's owned AMP question. Next derive a useful
-native proposal from ordinary observations with explicit grammar, initializer,
-profile and fresh-evidence scope. Its known-prior initial graph is not yet
-discovered structure or an affordable long-history posterior.
+This closes the initial finite model's owned AMP question. The new
+[causal proposal](theory/proofs/CAUSAL_RELATION_PROPOSAL.md) now derives a
+native base-one window model from ordinary observations and actual initializer
+slots. Runtime constructs it through its registered profile, compares its
+full endpoint and installs only through actual fresh paired evidence. One
+functional CPU stream seals with268 binary64 phases and installs at cursor39;
+it leaves the full historical class unresolved. Its construction/installation
+CPU/RTX3090 jobs are registered but pending. Finish those four source-bound
+jobs next; then study useful adaptation under matched information and
+resources. Do not equate this finite known-prior proposal heuristic with
+identified noise or affordable whole-history inference.
 Read the [selection-objective proof](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 before treating recurrent training fit as generative evidence. Actual H2
 endpoints give73/100 retrospective likelihood versus41/100 causal likelihood

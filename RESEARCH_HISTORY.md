@@ -3584,3 +3584,47 @@ four FAILED, nine sealed FP streams, eight installs,52 dynamic score checks,
 nine fresh decisions,5,034 CUDA/binary64 phases each and640 new posterior
 GPU forecasts. This commit retains that checked journal prefix. The main
 matrix continues at source38b27b3 with its original resources and parameters.
+
+## 101. Native posterior proposals use actual initialization and causal replay
+
+The v6 solver now proposes a finite-window posterior through the ordinary
+owned native search path. Exact static-latent marginal guidance selects among
+actual initializer noise values, retaining ties and all observations; the
+existing frozen-endpoint objective and independent categorical upper retain
+their own roles. The graph keeps base(1,1) by constructing K-1 from repeated
+unit incidences. No posterior vector, fitted coefficient, reset callback,
+new state interface or semantic architecture action enters Runtime.
+
+The central new replay result is an origin-tail sufficiency theorem. Each
+stored stage multiplies factors from actual profile source origins; only
+matching their bounded tail to the ordinary history justifies a warm-state
+posterior. It covers valid mixed prefixes and multiple passes without a
+menu of replay modes. Reversed replay gives73/82 rather than37/42 in one
+four-label example. Replaying two labels twice lets an old factor reach H4
+and gives3281/3650 rather than73/82; H3 remains valid. There is no implicit
+reset between passes. Declared state bounds, instead of smaller observed
+values, also constrain every next body; zero learning rate still executes
+commit-grid rounding of used coefficients.
+
+Exact enumeration checks1,552 noise-guidance scores,96 uninformative ties
+and2,016 native forecasts over224 profile plans. Eleven scoped interface,
+resource/arithmetic and coefficient controls pass. Two actual owned search
+adversaries prove that unpaid proposal work never runs and forged complete/
+scale/likelihood metadata cannot supply a value or class certificate. The
+previous eight empirical-upper authority adversaries also pass unchanged.
+A functional44-event CPU stream constructs/profiles at3, installs from
+actual paired fresh evidence at39, retains all labels and seals with268
+independent binary64 phases, including changed/contradictory post-install
+queries. Its historical class remains unresolved. Four fresh CPU/RTX3090
+jobs, using full and twice profiles with distinct actual optimizer clocks,
+are registered in the same audit before execution. Their physical evidence
+is pending and cannot be borrowed from the older initially supplied model.
+Foundation, ERC-1 and the frozen release stay unchanged; main RN-5 keeps
+its source while these changes are committed on the canonical research branch.
+
+The new base-one graph has a measured interpreter precision distinction:
+91 profile/ordinary rounded forecasts keep masters and delays exact but
+have native/normalizer error up to3 and probability error77/3362410. All171
+rounded source/queue boxes fit cap29160 (maximum29158). Its pending GPU
+registration fixes native/state tolerance8 and probability1/10000 before
+execution; the old base-K exact-mass claim is not borrowed.

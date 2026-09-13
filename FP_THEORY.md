@@ -95,6 +95,13 @@ also separates the implemented frozen-endpoint empirical objective from
 causal sequence evidence. A one-observation forest carries no information
 about a common noise rate despite different retrospective endpoint fits.
 Its later cycle can use that unresolved distinction; no score is relabelled.
+A [causal proposal construction](theory/proofs/CAUSAL_RELATION_PROPOSAL.md)
+now realizes that separation through owned initialization, actual profile
+replay and prospective installation. A causal-origin tail theorem supplies
+valid warm states without resetting replay history; base-one positive syntax
+uses actual initializer slots. Exact checks and functional CPU installation
+retain the unresolved historical class. The source-bound CPU/CUDA extension
+is registered and pending; it alters no frozen definition below.
 
 ---
 
