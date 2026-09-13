@@ -210,6 +210,11 @@ target cases pass. The active next step is complete target release
 integration, followed by registered RTX 3090 model science with strong
 baselines. Do not treat native training optimality or fresh installation
 as structural forcing or complete population identification.
+The prepared complete integration command is
+`python -B scripts/audit_cuda_release.py --write`; it requires committed
+source and runs all 21 CPU plus 10 CUDA batteries from a fresh clone.
+Read [its scope](theory/proofs/CUDA_RELEASE_SCOPE.md) before declaring the
+target freeze; individual component PASS records do not replace this run.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,

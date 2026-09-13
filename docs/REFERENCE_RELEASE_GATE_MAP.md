@@ -108,6 +108,20 @@ of 13/20 are next executed on the actual
 registered AMP backend, ahead of RTX 3090 model science. No static theorem
 family or architecture menu is added by this crosswalk.
 
+## Target integration of these existing obligations
+
+The actual target components now have individual executed evidence for
+owned trajectories, numerical bounds/fresh persistence, resident installation,
+device resources, owned policy/run and the n=32 hierarchy. The Reference
+rows above retain their original CPU prerequisite scope; their T markers
+are mapped to those target executables by
+[`audit_cuda_release.py`](../scripts/audit_cuda_release.py). That driver runs
+all 21 current CPU and 10 complete CUDA batteries from one committed fresh
+clone, including the independent resource and identifiability controls.
+The [target release scope](../theory/proofs/CUDA_RELEASE_SCOPE.md) distinguishes
+its six target components from the retained scoped static premises. Complete
+target integration must pass before its release declaration or model science.
+
 [construction]: ../scripts/audit_reference_construction.py
 [events]: ../scripts/audit_reference_events.py
 [ingress]: ../scripts/audit_context_ingress.py
