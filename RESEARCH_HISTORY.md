@@ -3104,3 +3104,45 @@ The model frontier now combines relation-moment propagation with owned
 feasible execution. The preceding curvature control is a scoped mathematical
 lead, not a free constructor or a model improvement theorem. Foundation R4,
 XVII.31, ERC-1 and the original complete correctness baseline stay frozen.
+
+## 91. Remove the shared output gate through a native polynomial constructor (2026-09-13)
+
+The joint v5 constructor implements each orientation's `a+a^2` evidence by
+putting its linear terms directly in the final head and attaching their
+weighted inner SUM with the same slot. No output gate or extra self-PRODUCT
+is needed. This works on soft sources too; the old square-of-feature graph
+only had the corresponding one-hot identity. Removing k from an existing
+learner would be invalid: after two matching labels the old/new predictions
+are605786986482207/777750761524495 and17712419905/22813333329. They must keep
+separate complete learners and fresh evidence.
+
+The available unit-slot count bounds the relative-orientation family before
+expansion. Feasibility precedes scale likelihood selection; connected cases
+need no cross family. Runtime prepays64*n^2*(1+U) from the grammar-limited
+prefix length U before inspecting its values; actual constructor charges
+remain separate. No unsearched program is excluded and no new semantic
+architecture action is introduced.
+
+Exact audits pass320 models,7,320 initial predictions,25,752 gradient
+coordinates,946 zero-coordinate recovery directions,726 scale/slot cases
+and729 soft polynomial checks. The existing v4 exact suite remains valid.
+Functional CPU and RTX3090 transitive endpoints check542 binary64 phases
+each and542 actual CUDA phases, with fresh installation. CPU zero recovery
+and tight-range refusal controls pass.
+
+The initial CUDA native/state1/100 budget refuses a later prediction at
+cursor57, after a prior valid installation. An independent rounded graph
+replayer checks all256 phases including the completely retained failed
+prediction, its exact error and non-acceptance. It does not borrow an old
+crossing to authorize continued prediction. Positive CUDA fixtures instead
+separately declare native/state1/16 and retain probability1/100; the old
+budget's refusal stays a distinct control. The binary64 auditor reads the
+owned pending record for a refused prediction; its full original regression
+passes. No Runtime acceptance or publication rule changes.
+
+The normalizer18, four-component initialization also fails after its first
+nonzero update; larger-range functional fixtures are declared separately.
+Source-bound complete matrices follow the committed implementation. This
+is a constructor/learner advance, not a new model-quality result, static
+resource law or full correctness release. Read
+`theory/proofs/JOINT_POLYNOMIAL_PROPOSAL.md`.

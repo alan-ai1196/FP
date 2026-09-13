@@ -130,6 +130,25 @@ polynomial control is not yet an owned resource-admitted model. Continue
 joint-relation model research with a feasible declared execution envelope;
 do not rerun these outcomes or add static resource cases.
 
+The [joint polynomial v5 proposal](theory/proofs/JOINT_POLYNOMIAL_PROPOSAL.md)
+now emits relative-orientation evidence `a+a^2` through shared slots on
+serial native SUM paths. It removes the separate output gate and unnecessary
+self-PRODUCTs from the control, while preserving direct zero recovery and
+transitive learning. This constructs a new complete learner; it cannot
+inherit the older control's state or evidence. Available initializer slots,
+literal graph costs and prepaid work still govern the full native search.
+
+Exact checks cover320 models,7,320 predictions,25,752 gradient coordinates,
+946 zero recoveries,726 count/slot cases and729 soft-input polynomial values.
+Functional CPU and CUDA transitive runs each check542 binary64 phases; the
+latter also checks542 actual CUDA phases and installs. The old native1/100
+precision budget fails later at cursor57, after an earlier installation;
+all256 executed phases, including the rejected prediction, are independently
+checked. Positive CUDA fixtures separately declare native/state1/16 and
+probability1/100. The tight-range refusal and actual zero recovery remain
+controls. Complete source-bound matrices are pending; no RN-5 model result
+or new complete baseline release is implied.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

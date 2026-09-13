@@ -96,6 +96,17 @@ owned feasible constructor or a model result. The open target is useful
 joint-relation learning with complete resource/lineage/freshness obligations,
 not an architecture menu or another static resource special case.
 
+The [v5 constructor](theory/proofs/JOINT_POLYNOMIAL_PROPOSAL.md) now gives the
+mixed polynomial a direct native realization without a shared output gate.
+Its functional complete CPU/CUDA trajectories propagate a two-label relation
+and install; a separate old-tolerance CUDA run honestly halts after an earlier
+installation. The failed phase is completely retained and independently
+replayed. Finish the source-bound endpoint matrices, then preregister a
+strong adaptive comparison with an execution envelope that accounts for
+orientation-family costs. V5 still fixes empirical within-component signs;
+finite IID uncertainty there remains an explicit model limitation. No old
+model or refused run should be rerun simply with larger budgets.
+
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent

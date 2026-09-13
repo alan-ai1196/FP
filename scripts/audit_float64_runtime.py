@@ -186,6 +186,14 @@ def replay(rt):
     snapshot = owned(rt)
     programs = dict(snapshot.programs)
     observations = {value.observation_id: value for value in snapshot.observations}
+    if snapshot.pending is not None and snapshot.pending.record is not None:
+        # A refused prediction can retain executed CPU phases before the
+        # owned pre-target record joins the revealed observation sequence.
+        record = snapshot.pending.record
+        if record.observation_id in observations:
+            assert observations[record.observation_id] == record
+        else:
+            observations[record.observation_id] = record
     states, predictions, ordinary_starts = {}, {}, {}
     compared = recast_differences = profile_recast_differences = 0
     for trace in snapshot.float64_traces:

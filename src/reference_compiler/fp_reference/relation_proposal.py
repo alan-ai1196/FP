@@ -29,8 +29,10 @@ class RelationSourceSpec:
         flat = tuple(name(atom, 'observable token source') for pair in atoms for atom in pair)
         if len(set(flat)) != len(flat):
             raise ContractError('distinct token atoms at both observable positions are required')
+        name(self.solver, 'registered empirical relation solver')
         if self.solver not in ('empirical-binary-relation-component-symmetry-v3',
-                               'empirical-binary-relation-balanced-readout-v4'):
+                               'empirical-binary-relation-balanced-readout-v4',
+                               'empirical-binary-relation-joint-polynomial-v5'):
             raise ContractError('unregistered empirical relation solver')
         object.__setattr__(self, 'token_atoms', atoms)
 
@@ -127,6 +129,18 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
         eligible = tuple(value for value in available if unit_count-int(value == 1) >= needed_units)
         if not eligible:
             return result(reason='independent balanced coefficients are absent from the available initializer prefix')
+    if registration.solver == 'empirical-binary-relation-joint-polynomial-v5':
+        # A concrete mixture over relative orientations, not a quotient of
+        # complete learners. Refuse before materializing an unaffordable
+        # exponential family. One connected component needs no cross model.
+        c = len(components)
+        unit_count = sum(value == 1 for value in available)
+        if c > 1 and c-1 >= unit_count.bit_length():
+            return result(reason='joint orientation coefficients exceed the available initializer prefix')
+        worlds = 0 if c == 1 else 1 << (c-1)
+        eligible = tuple(value for value in available if unit_count-int(value == 1) >= worlds)
+        if not eligible:
+            return result(reason='joint orientation coefficients and a separate initialized scale are unavailable')
     best = None
     for value in eligible:
         numerator = _operation(value, F(1), multiply=False, bit_limit=bit_limit)
@@ -141,6 +155,49 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
         if best is None or compare_exact(score, best, bit_limit=bit_limit) > 0:
             scale, best = value, score
     scale_slot = pattern.index(scale)
+    if registration.solver == 'empirical-binary-relation-joint-polynomial-v5':
+        n = len(atoms)
+        units = [i for i, value in enumerate(available) if value == 1 and i != scale_slot][:worlds]
+        slots = max([scale_slot]+units)+1
+        within = sum(len(vertices)**2 for vertices in components)
+        cross = n*n-within
+        # Every world has at least one nonempty parity head. This is only a
+        # necessary cost of this witness, never an exclusion of the class.
+        minimum = {'nodes': 2*n+n*n+worlds+2, 'SUMs': worlds+2,
+                   'PRODUCTs': n*n, 'edges': 2*n*n+2*worlds*cross+worlds+within, 'slots': slots}
+        if any(value > getattr(grammar, key) for key, value in minimum.items()):
+            return result(reason='the joint polynomial witness exceeds declared construction bounds; other native programs remain unsearched')
+        nodes = [Source(pair[position]) for position in (0, 1) for pair in atoms]
+        nodes.extend(Product(dtype, i, n+j) for i in range(n) for j in range(n))
+        heads = [[], []]
+        for i in range(n):
+            for j in range(n):
+                if component_of[i] == component_of[j]:
+                    heads[assignment[i] ^ assignment[j]].append(Term(2*n+i*n+j, scale_slot))
+        for world, slot in enumerate(units):
+            flips = (0,)+tuple((world >> (c-1-k)) & 1 for k in range(1, c))
+            orientation = tuple(assignment[i] ^ flips[component_of[i]] for i in range(n))
+            rows = [[], []]
+            for i in range(n):
+                for j in range(n):
+                    if component_of[i] != component_of[j]:
+                        rows[orientation[i] ^ orientation[j]].append(Term(2*n+i*n+j, slot))
+            for label, row in enumerate(rows):
+                if not row:
+                    continue  # Identically zero, including every parameter derivative.
+                heads[label].extend(row)  # Direct amplitude: a_h * G_hy.
+                inner = len(nodes)
+                nodes.append(Sum(dtype, tuple(row)))
+                heads[label].append(Term(inner, slot))  # Shared slot: a_h^2 * G_hy.
+        head_ids = []
+        for row in heads:
+            head_ids.append(len(nodes))
+            nodes.append(Sum(dtype, tuple(row)))
+        program = Program(tuple(nodes), slots, tuple(head_ids))
+        program.validate(rules)
+        if not grammar.admits(program):
+            return result(reason='nonempty joint parity heads exceed declared bounds; not an exclusion of the full class')
+        return result(program, 'native joint orientation weights a+a^2 retain transitive gradients and a direct recovery path without a shared output gate')
     if registration.solver == 'empirical-binary-relation-balanced-readout-v4':
         # A separately registered search algorithm over the same native
         # grammar. Its balanced readout coefficients retain parameter

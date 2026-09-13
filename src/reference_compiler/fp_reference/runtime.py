@@ -2185,6 +2185,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 # This registered proposal emits all token-pair products,
                 # even when the observed/context buffers are only linear.
                 work += 64*len(session.spec.relation_sources.token_atoms)**2
+            if session.spec.relation_sources.solver == 'empirical-binary-relation-joint-polynomial-v5':
+                # The proposer admits at most one world per available unit
+                # coefficient, before expanding its orientation family.
+                prefix_slots = min(len(self._contract.initializer_pattern), session.spec.grammar.slots)
+                work += 64*len(session.spec.relation_sources.token_atoms)**2*(1+prefix_slots)
             self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
             available = {record.observation_id: record for record in self._observations}
             if any(key not in available for key in session.spec.observation_ids):
