@@ -273,6 +273,15 @@ execution. Actual target maxima confirm native/normalizer error3, state
 error130103/209715200 and raw probability error315089/13757317120. The old
 base-K exact-mass claim is not borrowed.
 
+The [positive constraint contraction](theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md)
+is a new initially registered native model, with no Runtime/proposer changes.
+Its companion full-world model has identical expanded lag sources, base,
+initializer, learner and complete categorical domain. Exact signed-rank and
+native forecast audits pass, including whole-learner and soft-input boundaries.
+`experiments/joint_uncertainty/constraint_cuda.py` preregisters two matched n2,H3
+owned target controls, including adaptation, eviction and a mass-rounding witness.
+Execution is pending; no class, persistence or install authority is claimed.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

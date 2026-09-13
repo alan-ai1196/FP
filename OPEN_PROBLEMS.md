@@ -153,6 +153,16 @@ and exact replay counterexamples prevent treating any replay as an implicit
 reset. Noise identification, whole-history affordability and a full class
 optimum remain separate; no further static resource family is requested.
 RN-5 continues unchanged.
+
+The [positive constraint contraction](theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md)
+removes latent-world multiplicity from the initialized mass range and provides
+a fixed-H polynomial graph in token count using only Gamma1/8. This is an
+explicit native representation, not a whole-learner quotient. Its Bell-number
+window cost and the full expanded causal domain remain large: n8,H3 already
+has135,274,560 source rows. A matched two-job owned n2,H3 CUDA control is pending.
+Determine its complete charged execution cost before proposing it as useful
+adaptation. Do not shrink the domain to observed contexts or borrow v6's
+source/state/installation authority to hide that cost.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

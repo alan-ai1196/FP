@@ -3689,3 +3689,29 @@ or completed n16/stress result. The live main source remains38b27b3; its
 n16/c4 worker continues while source extensions reside in the same Git
 repository's research worktree. No partially scored plot or imputed failed
 tail is published.
+
+## 105. Contract positive constraints before enumerating latent worlds
+
+The fair latent-prior average of a product of labelled XOR indicators is
+zero for an inconsistent system and2^-r otherwise. Expanding positive noisy
+likelihood factors therefore gives a native window posterior with integer
+coefficients8^k/2^r at the actual Gamma1/8. Endpoint-equality partitions and
+lagged target atoms realize every term using only SUM/PRODUCT. The base-one
+mass range is10*9^H independently of token count, and fixed-H graph size is
+polynomial in n. This specializes the classical positive subset expansion;
+it is not a new Foundation semantic mechanism or a sharp circuit lower law.
+
+Exact audits verify18,540 signed systems,5,944 native forecasts and58 formal/
+rounded-interpreter controls each. At H<=3, the emitted native values and
+masses are half-exact on the categorical domain. A same-interface base-one
+enumerator instead rounds13122 to13121 in the diagonal witness. Different
+parameter gradients and a soft-history counterexample explicitly block any
+complete-learner or arbitrary-source equivalence claim.
+
+The graph/source cost is substantial: n2,H3 uses1771 nodes versus102, and
+both programs require the same2340-row full categorical source domain.
+The graph window dependence involves Bell numbers; n8,H3's source domain
+already has135,274,560 rows. Two owned n2,H3 CUDA controls are registered
+with identical16GiB jobs,2GiB packed caps,16/32MiB target storage and complete
+2MiB phase evidence. Their actual result is pending; no zero-cost inference,
+model-quality improvement, discovery, fresh install or class closure is claimed.

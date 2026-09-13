@@ -295,6 +295,19 @@ triangle likelihoods; four functional CPU streams add28 binary64 phases.
 The existing empirical class objective stays unchanged and remains distinct
 from causal guidance for a proposer and actual fresh evidence.
 
+The next [native model representation](theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md)
+contracts positive signed constraints rather than storing one weight per latent
+world. At Gamma1/8, integer coefficients realize prior-averaged base-one masses
+with range10*9^H; H<=3 native forward values are half-exact on the categorical
+domain. Exact checks cover18,540 rank instances and5,944 forecasts, with explicit
+gradient/soft-input counterexamples to broader equivalence. It is expensive:
+n2,H3 uses1771 nodes versus102 for the full-world baseline, and both share all
+2340 causal source-domain rows. Run `constraint_contraction.py --algebra` and
+`--boundaries` under `experiments/joint_uncertainty`. The source-bound two-job
+`constraint_cuda.py` comparison is registered but pending. Preserve its identical
+resource/interface grants and all failed outcomes. This is an initial-model
+control, not v7, a learned prior/noise result or an installation certificate.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

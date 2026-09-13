@@ -14,6 +14,7 @@ Status vocabulary:
 
 | Claim | Status | Dependencies / scope | Proof or evidence |
 |---|---|---|---|
+| A finite known-noise latent-relation posterior admits positive signed-constraint contraction with base1, Gamma1/8, range10*9^H and fixed-H graph size polynomial in n. | **PROVED, SCOPED; EXACT AUDIT** | Complete categorical lag1..H interface;18,540 signed-rank cases,5,944 native forecasts; H<=3 half-exact forward values; graph/domain costs retained; no general optimality, learner quotient or proposer; owned target comparison pending | `theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md`; `experiments/joint_uncertainty/constraint_contraction.py` |
 | Native semantic grammar needs only typed causal nonnegative sources, positive SUM/PRODUCT, positive readout, and legal delayed positive recurrence. | **PROVED / CANONICAL DEFINITION** | Declared source/type/causality contract | `FP_THEORY.md` I |
 | R5 SUM responsibility `bar u = rho bar y` preserves positive persistent semantics while allowing signed backward task credit. | **PROVED** | Positive SUM/LSE coordinate | `FP_THEORY.md` I; `RESEARCH_HISTORY.md` |
 | Exact deterministic claim-preserving compression is governed by claim-relative behavioral congruence; safe quotient maps factor observables/resources/actions/transitions. | **PROVED** | Deterministic exact contract | `FP_THEORY.md` II |

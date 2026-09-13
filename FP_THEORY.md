@@ -105,6 +105,15 @@ retain the unresolved historical class. Four source-bound CPU/CUDA jobs at
 and288 fresh score/wealth checks. Actual native quantization errors are
 retained; this extension alters no frozen definition below.
 
+The [positive constraint contraction](theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md)
+now realizes the same known finite-window posterior by integrating labelled
+XOR constraints before native evaluation. Its initialized base-one mass range
+is independent of latent-world count, and its fixed-window graph is polynomial
+in token count. Categorical source-domain and graph costs remain explicit;
+different gradients and a soft-input counterexample forbid learner transport.
+Exact audits pass; the matched owned CUDA comparison is registered and pending.
+This is model representation research, not another static ERC law or proposer.
+
 ---
 
 ## 0. Research object and root principle
