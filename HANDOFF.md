@@ -229,6 +229,19 @@ still permit different next predictions. Exact checks cover 1,932 forest
 states and 1,024 general factor updates. These are model-level diagnostics,
 not RN-5 target scores, new resource cases or changes to the live experiment.
 
+The [native recurrent posterior control](theory/proofs/NATIVE_RECURRENT_POSTERIOR.md)
+now realizes a finite-window Bayes update through the existing positive
+delayed bodies and causal target atoms, with Gamma=(1,8) and learning rate0.
+A staged excess representation has a valid finite invariant and preserves
+the correct noisy readout on diagonals. Exact checks cover3,487 full-prefix,
+264 suffix and969 intermediate forecasts. Actual owned CPU execution seals
+four ordinary events with13 independent binary64 phases;192 rounded
+interpreter forecasts also pass. This is an initially registered model with
+known prior/noise, not discovered structure or a CUDA result. Its literal
+range grows with the declared window; Runtime still retains all history.
+The source-bound launcher fixes two512MiB jobs before their execution; use
+completed evidence before claiming the physical host scope.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

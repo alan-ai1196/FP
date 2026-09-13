@@ -125,6 +125,17 @@ It supplies no changed learner, normalization action or rounded-path theorem. V5
 finite IID uncertainty there remains an explicit model limitation. No old
 model or refused run should be rerun simply with larger budgets.
 
+The [native recurrent posterior witness](theory/proofs/NATIVE_RECURRENT_POSTERIOR.md)
+closes a narrower semantic question: positive delayed bodies with fixed
+Gamma=(1,8), rate0 and ordinary lagged labels can implement the full posterior
+inside a declared finite window. Exact, owned CPU functional and rounded
+interpreter checks pass, including a counterexample to a whole-history
+claim after window eviction. The complete Runtime retains those older
+observations. Source-bound CPU and actual AMP evidence, affordable longer
+histories and discovery of useful native state remain separate obligations.
+Do not turn this known-prior initial model into a learned-construction result
+or expand another static resource family; RN-5 continues unchanged.
+
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent

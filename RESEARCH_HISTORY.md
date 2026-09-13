@@ -3378,3 +3378,41 @@ hypothesis. The projection, calibration, dilution and hidden-moment evidence
 uses synthetic data only, no Torch and no Runtime/certificate authority.
 The target matrix, implementation dependencies, resource budgets and all
 previous successes/failures remain unchanged.
+
+## 95. Native delayed values realize a finite-window Bayesian control
+
+The v5 calibration obstruction motivates a direct test of FP's existing
+recurrent semantics. Under a known fair latent-bit prior and noise1/10,
+relative-world weights are9^matches. Their excess u=w-1 evolves as
+u'=u+8*I_match*(1+u), which is entirely positive. Ordinary lag1 input/target
+atoms supply the match indicator. Gamma=(1,8) and rate0 are already legal;
+the native delayed values carry adaptation while the existing complete
+learner, gradients, clocks and observation retention continue unchanged.
+
+A single growing self-loop cannot justify a finite invariant box. Instead
+H-1 delayed stages per world store suffixes of lengths1,...,H-1; bodyH is
+the current readout. Stagej has the actual invariant upper9^j-1. The result
+is exact for all retained-window observations, and for the entire prefix
+when its length is at mostH. Base(K,K) plus shared excess and eightfold
+matching weights produces the correct noisy posterior even on diagonals;
+no normalized feedback, internal division or fitted parameter is supplied.
+Literal range10*K*9^H and the known prior remain declared costs/assumptions.
+
+The exact control checks3,487 full-prefix and264 suffix endpoint forecasts,
+plus969 intermediate predictions, against enumeration of all2^n latent
+assignments. An actual owned n3,H3 CPU stream seals four ordinary events
+with13 independent binary64 phases. Its forecasts are1/2,1/2,189/250,77/122
+for label0. The graph has123 nodes,two slots and eight delayed coordinates;
+all four observations remain in Runtime. A192-forecast independent rounded
+interpreter keeps native masses and delayed states exact, with maximum
+gradient error193741/255852544000 and raw division error1/41943040.
+
+This is an initially registered known-prior finite-window model, not
+discovered structure, a compiler class proof, an installation or a CUDA
+experiment. The functional CPU command explicitly has unresolved physical
+host scope. The committed launcher preregisters two fresh512MiB jobs with
+120-second timeouts, one for full-window calibration and one for observable
+window eviction. The latter must forecast1/2 after labels0,0,1 at H2, where
+the whole-history posterior is41/50. Actual completed jobs, rather than the
+registration itself, must establish that physical scope. This control uses
+no new Foundation action and changes no live RN-5 execution dependency.

@@ -201,6 +201,17 @@ still permit different next predictions. Exact checks cover 1,932 forest
 states and 1,024 general factor updates. These are model-level diagnostics,
 not RN-5 target scores, new resource cases or changes to the live experiment.
 
+The [native recurrent posterior control](theory/proofs/NATIVE_RECURRENT_POSTERIOR.md)
+uses the current Runtime unchanged: positive lagged transition bodies,
+ordinary target atoms, two initialized coefficients and rate0. Its n3,H3
+initial graph has123 nodes and eight delayed coordinates. Four owned events
+seal with13 independent binary64 phases;3,487 full-prefix,264 suffix and969
+intermediate exact forecasts plus192 rounded interpreter predictions pass.
+The unbound functional CPU command explicitly leaves host scope unresolved.
+A preregistered two-job512MiB launcher checks whole-process execution next.
+This supplies no proposer, class proof, install, actual CUDA or new baseline
+release claim; known prior/noise and finite-window range remain explicit.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.
