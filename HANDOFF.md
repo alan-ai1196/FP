@@ -181,6 +181,44 @@ runner links all three earlier attempts and keeps every model/data/resource
 parameter fixed when executing the same 31-worker matrix. Results remain
 pending; this repairs evidence checking, not a model or budget outcome.
 
+RN-5 is now running from execution source `38b27b3`, retaining protocol origin
+`e3df252` and the separate auditor-failure journal. The first ten completed
+workers contain eight sealed FP runs (seven installations), 4,528 CUDA and
+4,528 binary64 phase checks, and two new posterior workers with 128 actual
+forecasts. Independent post-analysis verifies 40 descriptive scores and eight
+fresh decisions for that prefix. The n16/c4 and selected-stress outcomes are
+not yet complete. Read the live journal for the current prefix; do not impute
+scores or change registered resources while it is running. The runner binds
+HEAD and its execution dependencies until all workers are terminal.
+The eleventh attempt, n16/c2/seed16/rate1, now has a completed failed job:
+`MemoryError` while the final CUDA auditor builds an arena snapshot at the
+16GiB host envelope. It retains no scored or fully audited trajectory. The
+unchanged matrix continues; do not convert this failure into a runtime seal
+or enlarge that attempt's budget.
+
+The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
+a model-level explanation, without changing Foundation or the experiment.
+An exact mass-drift identity covers all orientation counts. For K8, projected
+unrounded SGD strictly increases the cross scale for every positive rate;
+other family sizes have decreasing examples. Equal one-hot forecasts under
+rescaling still give different next SGD predictions. Synthetic audits verify
+1,008 identities, 8,352 gradient coordinates and 384 projection controls.
+Grid16/AMP monotonicity is not inferred. The independent analysis records
+rounded-scale observations separately from the theorem. Research commits are
+being retained on `research/joint-learner-geometry` in the same repository;
+integrate them into main only after all bound workers are terminal. The live
+main worktree keeps the matching research files and the evolving journal.
+The same proof now characterizes the cross-query real-parameter mixture
+relaxation and excludes suboptimal first-order stationary points there.
+Another 336 exact direction checks and a pure-square zero-gradient
+counterexample support the argument. This does not relax the actual
+Gamma/profile/grid/resource decision class or establish SGD convergence.
+An explicit residual-sign mixture now attains every blockwise optimum in the
+fixed-state uniform-risk bound. Exact checks cover 1,550 mixtures and 16,600
+ordered cross blocks. The selected diagnostic's relaxed optimum is therefore
+the stated entropy expression, approximately 0.5069369136. It is neither a
+legal-state certificate nor a bound on the stream of changing forecasts.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

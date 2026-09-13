@@ -106,7 +106,17 @@ and eight CUDA workers, with 2,496 and 2,752 corresponding binary64 phases
 and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertainty/PROTOCOL.md) is now
 preregistered with its larger joint-family execution envelope. Execute the
 31 workers, independently reconstruct forecasts and fresh decisions, and
-compare with the strong adaptive posterior without filling failed tails. V5 still fixes empirical within-component signs;
+compare with the strong adaptive posterior without filling failed tails. Execution is active at
+`38b27b3`. The independent analysis already verifies the completed first-ten
+prefix. Attempt eleven records an n16 final-auditor snapshot `MemoryError`
+at its declared host envelope, with no scored or fully audited trajectory.
+Remaining outcomes come only from the unchanged live matrix. The
+[scale-dynamics result](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) explains
+why current prediction equivalence cannot remove an optimizer state variable.
+It also closes the fixed-sign population-risk gap in the real-parameter
+relaxation: one residual-sign mixture jointly attains every blockwise optimum.
+Finite-rate learning and reachable numerical states remain separate questions.
+It supplies no changed learner, normalization action or rounded-path theorem. V5 still fixes empirical within-component signs;
 finite IID uncertainty there remains an explicit model limitation. No old
 model or refused run should be rerun simply with larger budgets.
 

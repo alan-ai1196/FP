@@ -3210,3 +3210,120 @@ amendment preserves the original protocol source, links the failure journal,
 and changes no model/data/rate/resource/evidence parameter. The same 31-worker
 matrix will execute with this corrected evidence check. No new IID labels
 were inspected when making the correction.
+
+## 93. Optimizer scale is retained continuation information
+
+During the unchanged RN-5 execution, the native joint polynomial gives a
+closed unrounded mass-drift identity. In proof coordinates u=(a+1/2)^2,
+d=1-K/8, target/opposite masses M,N and T=M+N, define
+A=d*(1/M-2/T) and B=(M-d)*(1/T-1/M)^2+(N-d)/T^2. Then the unprojected step has
+T'-T=-4*eta*A+4*eta^2*B. For K8 the first-order term cancels and nonnegative
+projection gives strict mass growth for every positive rate. Under eta<=T/2
+it grows by at least 4*eta^2*N/(T*M); larger rates project all opposite
+amplitudes to zero and still increase mass. A fixed finite mass cap cannot
+contain an infinite unrounded cross-query continuation. No such monotonicity
+or stopping-time claim transfers to grid16 or actual AMP.
+
+The general scale-invariant norm-growth mechanism is known (Arora, Li and
+Lyu, arXiv:1812.03981, Lemma 2.4); the proof explicitly cites it. The native
+shifted polynomial, base cancellation, projection conditions and resource
+interpretation are derived here. Two initially uniform K8 learners related
+by shifted-amplitude scaling give different next predictions, 25/41 versus
+1369/2594, under rate 1. The latter equals the first learner's rate-1/4 value.
+Thus a current value symmetry is not a complete-learner quotient.
+
+The independent full-graph synthetic audit checks 1,008 exact mass identities,
+8,352 gradient coordinates, 288 moderate-rate and 96 large-rate projected K8
+controls. Legal decreasing examples at K2/K4/K16 prevent a false extension;
+K16 also audits the negative algebraic offset. The post-analysis separately
+records descriptive grid16 scale changes and actual AMP forward normalizers.
+No new architecture, normalizer feedback action, rate or target resource
+parameter is introduced.
+
+### 93.1 First completed RN-5 prefix, not the full experiment
+
+Execution source `38b27b3` retains protocol origin `e3df252` and all three
+earlier failed/interrupted attempts separately. Its first ten completed
+workers contain eight sealed FP trajectories and two adaptive posterior
+workers. Seven FP trajectories install. The independent analysis verifies
+40 scores and eight fresh decisions, with 4,528 CUDA and 4,528 binary64
+phases and 128 new posterior GPU forecasts. Known A/B have identical
+candidate unseen CE 0.4120225463 (rate1) and 0.4684497346 (rate4), against
+0.3705313268 for the reused adaptive posterior. Deployed scores are
+0.5768125301 and 0.6107217723 with the registered bound-6 evidence wait.
+The two new n8,c2 seeds average candidate unseen CE 0.3901146875 and
+0.4436024324 versus posterior 0.3384927860. All remaining n16/c4 and selected
+stress results are pending; none are reconstructed or imputed in this entry.
+The full experiment, later failure statuses and final claims must follow the
+completed source-bound journal, not this early prefix.
+
+### 93.2 Continuous-mixture stationarity is not a reachable-state certificate
+
+The same v5 graph admits a useful real-parameter relaxation. With
+v_H=a_H+a_H^2+2/K and pi_H=v_H/sum(v), each one-hot cross prediction is a
+linear mixture of relative-orientation parities. Any strictly positive pi
+has a real nonnegative amplitude preimage, without asserting that its square
+roots are rational, in Gamma or reachable by a profile. Cross-query CE is
+convex in pi. The positive prediction-preserving direction
+r_H=v_H/(1+2*a_H) has zero inner product with the native amplitude gradient.
+At a nonnegative first-order stationary point every coordinate gradient must
+therefore be zero, including zero amplitudes; convexity makes its relaxed
+prediction globally optimal. This concerns one fixed full-batch CE objective,
+not convergence of the actual finite-grid single-label learner.
+
+The audit adds 336 exact radial-direction checks. A pure-square native graph
+at zero amplitudes has zero gradients and uniform prediction, although
+(2/3,1/3) strictly improves its 9:1 loss. Hence the linear term removes a
+first-order boundary trap in this relaxation; it does not license erasing
+scale or inferring an owned compiler optimum. Linear weights also share the
+stationarity property; curvature's earlier role is the interior transitive
+response. No model, resource, evidence or execution-source parameter changes.
+
+### 93.3 A matching upper construction closes the fixed-sign risk bound
+
+The former blockwise population-risk lower bound is now an exact minimum in
+the same fixed-graph real relaxation, including a free nonnegative internal
+scale. Let rho_C=(a_C-b_C)/|C|. Mixing independent component signs of means
+rho_C with weight 1-2*epsilon and independent uniform signs with weight
+2*epsilon gives pair moments (1-2*epsilon)*rho_C*rho_D. Its strictly positive
+relative-orientation distribution attains all cross-block optima together.
+At total mass 1/epsilon every excess w=pi/epsilon-2/K is nonnegative, with
+real amplitude (sqrt(1+4*w)-1)/2. The internal optimum is also attained at
+t=(2*q_in-1)/(1-q_in). Thus the former lower expression has a matching upper
+construction; arbitrary block targets would not have this joint consistency.
+
+The selected diagnostic has t=3, two orientation masses 17/40 and six 1/40,
+or two excesses 4 and six zero at total mass 10. Its fixed-state relaxed
+minimum is approximately 0.5069369136. The exact synthetic audit covers
+1,550 residual-count/noise configurations, 11,100 orientation probabilities,
+16,600 ordered block optima and 3,100 likelihood comparisons. A three-bit
+triangle counterexample prevents treating arbitrary block optima as feasible.
+The proof may use actual hidden signs to characterize a family minimum;
+the experiment never receives them. Its quadratic-root amplitude values are
+not legal-state certificates, and its fixed-state optimum is not a lower
+bound on a changing prequential stream. RN-5 remains unchanged and running.
+
+### 93.4 Retain the first n16 snapshot memory failure
+
+The eleventh corrected-source attempt, n16/c2/seed16/rate1, exits with a
+MemoryError in the final CUDA auditor's runtime/arena snapshot. Its completed
+job records a 17,179,869,184-byte limit, process peak 17,179,660,288 and job
+peak 17,180,917,760, exit code 1 and no timeout. The failure remains FAILED;
+no successful host-bound, sealed model, score, install or complete phase
+audit is inferred from it. The next registered rate starts under the same
+protocol. This host/evidence failure does not refute Foundation or justify
+changing the ongoing matrix's model, resource or acceptance parameters.
+
+Independent post-analysis of the first eleven attempts retains ten EXECUTED
+workers and one MemoryError, still 40 checked scores, eight fresh decisions,
+4,528 phases per reference/CUDA path and 128 new posterior GPU forecasts.
+The analyzer now reports failed workers and their retained reasons separately
+from Runtime HALTED_UNRESOLVED outcomes. No failed tail is reconstructed.
+
+The theory and checked eleven-attempt experiment prefix are retained as separate
+commits on `research/joint-learner-geometry`, a linked worktree of this same
+canonical repository. The running main worktree stays at source `38b27b3`
+until every bound worker is terminal; only then integrate the research branch
+and the final journal. This preserves ongoing execution identity while
+recording auditable results in Git. The branch's partial journal is explicitly
+an eleven-attempt snapshot, not a complete experiment.
