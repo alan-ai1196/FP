@@ -181,20 +181,20 @@ runner links all three earlier attempts and keeps every model/data/resource
 parameter fixed when executing the same 31-worker matrix. Results remain
 pending; this repairs evidence checking, not a model or budget outcome.
 
-RN-5 is now running from execution source `38b27b3`, retaining protocol origin
-`e3df252` and the separate auditor-failure journal. The first ten completed
-workers contain eight sealed FP runs (seven installations), 4,528 CUDA and
-4,528 binary64 phase checks, and two new posterior workers with 128 actual
-forecasts. Independent post-analysis verifies 40 descriptive scores and eight
-fresh decisions for that prefix. The n16/c4 and selected-stress outcomes are
-not yet complete. Read the live journal for the current prefix; do not impute
-scores or change registered resources while it is running. The runner binds
-HEAD and its execution dependencies until all workers are terminal.
-The eleventh attempt, n16/c2/seed16/rate1, now has a completed failed job:
-`MemoryError` while the final CUDA auditor builds an arena snapshot at the
-16GiB host envelope. It retains no scored or fully audited trajectory. The
-unchanged matrix continues; do not convert this failure into a runtime seal
-or enlarge that attempt's budget.
+RN-5 is running from execution source `38b27b3`, retaining protocol origin
+`e3df252` and the separate auditor-failure journal. The independently checked
+thirteen-attempt prefix contains eleven EXECUTED workers and two FAILED jobs.
+Eight FP streams seal, seven install, and4,528 CUDA/binary64 phases per path
+are independently checked. Three new posterior workers supply384 actual GPU
+forecasts; post-analysis verifies44 descriptive scores and eight fresh
+FP decisions. The first n16/c2/seed16 posterior has unseen CE0.3269395303.
+Both corresponding FP rates fail in the final CUDA auditor's arena snapshot
+with MemoryError under the fixed16GiB host envelope. They retain no FP model
+score, install, seal or complete trajectory-audit claim. Other n16/c4 and
+selected-stress outcomes remain pending. Read the live main journal for the
+newest prefix; the research branch currently retains thirteen attempts.
+The unchanged matrix continues. Do not impute scores, enlarge failed budgets
+or change main HEAD/execution dependencies until all bound workers are terminal.
 
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.

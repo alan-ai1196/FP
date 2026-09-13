@@ -3430,3 +3430,25 @@ observations remain owned. The compact journal retains both completed job
 identities and Runtime observations, without phase dumps or saved weights.
 Actual CUDA, learned prior/structure, construction, installation and class
 completeness remain outside this CPU model-control result.
+
+## 96. RN-5 retains the second n16 failure and a valid n16 posterior
+
+The unchanged corrected-source matrix now has thirteen completed attempts:
+eleven EXECUTED and two FAILED. Attempt12, n16/c2/seed16/rate4, follows the
+rate1 outcome with a MemoryError in the final CUDA auditor's Runtime/arena
+snapshot. Its job exits1 without timeout at the unchanged17,179,869,184-byte
+cap; the process peak is17,179,660,288 and job peak17,180,921,856. No successful
+host-bound run, FP score, install, seal or complete phase-audit count is
+inferred from this failed job. The following posterior worker executes256
+forecasts with job peak2,311,000,064 bytes, unseen CE0.3269395302762026 and
+full-domain CE0.3266204354893652. This is one registered sample, not an imputed
+FP result or a population/model-dominance theorem.
+
+Independent post-analysis verifies44 descriptive scores, eight fresh
+decisions,4,528 CUDA/binary64 phases per path in eight sealed FP streams,
+and384 new posterior GPU forecasts. Seven FP streams install. Both failed
+workers remain separate from Runtime HALTED_UNRESOLVED outcomes. The same
+canonical research branch now retains this exact thirteen-attempt partial
+journal; the running main worktree remains at38b27b3 with its evolving
+journal and the unchanged rest of the31-worker matrix. No partial plot,
+failed tail or complete-experiment claim is introduced.
