@@ -67,8 +67,11 @@ no missing model score and imply no new complete baseline release.
 
 The [joint polynomial constructor](theory/proofs/JOINT_POLYNOMIAL_PROPOSAL.md)
 now realizes the learning direction with existing shared SUM slots and a
-direct recovery path. Its scoped functional CPU/CUDA evidence, including
+direct recovery path. Its scoped source-bound CPU/CUDA evidence, including
 retained numerical/range refusals, changes no Foundation definition below.
+The [empirical sign obstruction](theory/proofs/EMPIRICAL_SIGN_OBSTRUCTION.md)
+bounds that emitted family while leaving retained data and future native
+constructions available. RN-5 tests the scoped limitation under the frozen contract.
 
 ---
 

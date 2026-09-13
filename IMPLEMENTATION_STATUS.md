@@ -125,6 +125,24 @@ cursor 51; the old precision control refuses at 57. Compact journals retain
 all endpoint statuses and measured maxima. No RN-5 model result or new
 complete baseline release is implied.
 
+[RN-5](experiments/joint_uncertainty/PROTOCOL.md) now preregisters 31 new
+workers: 22 v5 FP learners at rates 1 and 4, plus nine adaptive posteriors.
+The two known diagnostics reuse RN-4's existing posterior and v4 controls;
+eight new IID cases use n8/n16, c2 seeds 16/17 and c4 seeds 18/19. A separately
+selected wrong-majority tape tests the
+[empirical sign obstruction](theory/proofs/EMPIRICAL_SIGN_OBSTRUCTION.md).
+Its fixed-state lower bound is distinct from the weaker bound valid across
+changing learner states. This is a limitation of one emitted graph, not a
+Foundation counterexample or exclusion of future legal constructions.
+
+Before target execution, 1,224 independent scalar/full-graph trajectory
+checks pass across reference, binary64 and rounded AMP, together with 64
+fixed-state sign controls. Metadata-only preflight reads no new IID labels
+and bounds the registered graph output cells. The protocol declares the
+larger graph, per-phase evidence, range and numerical instance budgets,
+including a bound-6 fresh evidence rule; all failed outcomes must be retained.
+Target-model scores remain pending. Do not rerun RN-4's failures.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

@@ -103,8 +103,10 @@ and install; a separate old-tolerance CUDA run honestly halts after an earlier
 installation. The failed phase is completely retained and independently
 replayed. The source-bound matrices at `9f9fa0b` are now complete: seven CPU
 and eight CUDA workers, with 2,496 and 2,752 corresponding binary64 phases
-and all 2,752 CUDA phases checked. Preregister the strong adaptive comparison
-with an execution envelope that accounts for orientation-family costs. V5 still fixes empirical within-component signs;
+and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertainty/PROTOCOL.md) is now
+preregistered with its larger joint-family execution envelope. Execute the
+31 workers, independently reconstruct forecasts and fresh decisions, and
+compare with the strong adaptive posterior without filling failed tails. V5 still fixes empirical within-component signs;
 finite IID uncertainty there remains an explicit model limitation. No old
 model or refused run should be rerun simply with larger budgets.
 

@@ -3161,3 +3161,35 @@ its installation at 51, then rejects prediction 57 with native error
 the pending target remains unrevealed. Peak completed-job commit is
 52,744,192 CPU / 2,491,232,256 CUDA bytes. The two journals retain 33,515 bytes
 in total. No new model or full-release claim follows from these endpoints.
+
+## 92. Joint model registration and the empirical sign obstruction
+
+The v5 shared-SUM learner resolves the earlier missing native realization,
+including a direct zero recovery direction. It still imposes empirical
+internal signs. A wrong internal sign has true-parity probability at most
+1/2 under every nonnegative parameter state. The new scoped proof derives
+both a fixed-state uniform-domain risk lower bound and a weaker bound valid
+for the evolving one-pass stream. For the selected n8 four-component wrong
+majority tape these are approximately 0.5069369136 and 0.3365849799 at noise
+1/10. The first cannot be compared as a lower bound to prequential scores
+from different states. This restricts the emitted family, not Foundation
+R4, retained observations or future native constructions.
+
+RN-5 preregisters 31 workers before reading new IID seed labels: two FP
+rates (1 and 4) on two known diagnostics, eight n8/n16 IID cases with c2
+seeds 16/17 and c4 seeds 18/19, and one separately selected wrong-majority
+stress tape. Nine new adaptive posterior workers accompany the new tapes;
+the known adaptive posterior and v4 controls remain RN-4's original records.
+The new protocol declares broader graph caps, normalizer/activation 256,
+CUDA native tolerance 1/2 versus probability 1/100, 2MiB per-phase frames,
+65536 output cells, 256MiB arena, 8GiB packed / 16GiB host caps, work 10^15
+per role and a two-hour worker timeout. Bound-6 persistence changes the gain
+multiplier to 1/8. These are registered new-run ERC-1 parameters, not a rerun
+or correction of old model failures. The fully adaptive posterior keeps all
+latent assignments and every subsequent label.
+
+The pre-target independent trajectory oracle checks 1,224 exact/binary64/
+rounded-AMP graph forecast and successor combinations plus 64 fixed-state
+sign controls. The metadata-only preflight checks 31 tasks, posterior
+algebra and cell envelopes without inspecting any new target tape. No RN-5
+model score or completed worker is claimed at this registration point.
