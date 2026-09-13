@@ -371,9 +371,12 @@ All ambient gradients remain retained, fixed slots remain explicit, and
 negative updates are refused. Larger update units give a mean of individual
 posterior steps at frozen weights, not sequential Bayesian conditioning.
 The exact audit checks603 commits and a20-member class that retains15
-initializer failures as unresolved. Development CPU/CUDA streams construct,
-profile and independently cross fresh evidence before actual installation;
-the new eight-job source-bound matrix is registered and still pending.
+initializer failures as unresolved. The [eight-job source-bound matrix](evidence/minimal/FP_SIMPLEX_LEARNER_AUDIT.json)
+at b34bf7b is complete: all eight jobs execute and seal, with1,208 binary64
+phases,604 CUDA phases,200 posterior forecasts and160 fresh-score checks.
+All four profiled CPU/CUDA streams install at cursor22 while their historical
+classes remain unresolved. Largest packed/job peaks are77,265,284 and
+2,417,373,184 bytes within the fixed caps.
 Run its source-dependent audits from the research worktree. This is a
 different lineage and a known-model control; matched model usefulness and
 long-history AMP reliability remain research questions.

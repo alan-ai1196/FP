@@ -325,10 +325,12 @@ Gamma, learner and profile, followed by the existing comparison/fresh/install
 policy. Exact audits check603 commits,12 registration refusals,10 proposer
 refusals and two20-member exhaustive classes. The new U retains15 unsupported
 initializers as unresolved; no class proof or new CERTIFIED_COMPLETE class
-is introduced. Small development CPU/CUDA streams pass their independent
-replays and install; the eight-job committed-source matrix is registered
-and pending. This extends the learner implementation, not the frozen baseline
-release or RN-5's distinct SGD class.
+is introduced. The [eight-job committed-source matrix](evidence/minimal/FP_SIMPLEX_LEARNER_AUDIT.json)
+at b34bf7b now passes: eight sealed streams, four installs at22,1,208 binary64
+phases,604 CUDA phases,200 posterior forecasts and160 fresh-score checks.
+All four searched classes remain unresolved. Largest packed/job peaks are
+77,265,284/2,417,373,184 bytes within the unchanged bounds. This extends the
+learner implementation, not the frozen baseline release or RN-5's SGD class.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

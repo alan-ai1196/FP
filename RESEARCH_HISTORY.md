@@ -3876,3 +3876,27 @@ matched model comparison or a replacement for registered job evidence.
 The eight-job CPU/CUDA matrix fixes source dependencies, resource limits,
 tolerances and minimal reporting before its first committed-source execution.
 Foundation, ERC-1 and the still-running RN-5 SGD matrix remain unchanged.
+
+## 111. The registered simplex learner reaches actual CPU and AMP installation
+
+All eight jobs registered at b34bf7b execute and seal under their fixed host,
+packed, arena, arithmetic and timeout contracts. Independent audits check
+1,208 binary64 phases,604 CUDA phases and200 whole-history posterior forecasts.
+Four profiled streams independently verify160 fresh score/wealth events and
+install at cursor22. One-/two-pass profiles retain their actual multiplicity.
+All four historical native search classes remain unresolved; installation
+uses fresh evidence rather than a fabricated class optimum.
+
+The largest packed peak is77,265,284 bytes and the largest completed job
+commitment is2,417,373,184 bytes. Maximum CUDA state error is422861/188743680,
+native error3/640, normalizer error1/256 and mass-normalized probability error
+249137/1677721600, within the original1/100 and1/1000 tolerances. These are
+small known-model implementation audits. They do not establish model-quality
+dominance or arbitrary-horizon reliability, and do not relabel RN-5's U.
+
+The next adversarial pressure test is already concrete in independent
+rounded arithmetic:50 agreeing relation labels followed by50 contrary labels
+lose a binary32 posterior weight at event48. The first declared bridge
+tolerance violation is predicted at the context after97 observed events,
+with native error4/365 and probability error2/1825. A source-bound owned
+execution is required before calling this an observed device/Runtime result.

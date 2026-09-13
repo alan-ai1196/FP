@@ -2445,6 +2445,9 @@ invalid initializer blocks remain unresolved constructor outcomes. This
 extension does not change the frozen Foundation, native architecture actions,
 RN-5's SGD decision class or the old release scope; matched model usefulness
 and long-history AMP behavior require their own evidence.
+The scoped eight-job audit at b34bf7b executes all declared CPU/CUDA roots,
+including four fresh installations, with1,208 independently replayed binary64
+phases and604 CUDA phases. Its historical searched classes stay unresolved.
 
 ## Frozen research rule
 

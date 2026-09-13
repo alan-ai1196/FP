@@ -197,8 +197,9 @@ normalizer condition and the distinction between categorical and output Fisher
 metrics are explicit. The [owned Runtime extension](theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md)
 now implements the normalized rule, complete slot/gradient/clock state and
 reference/AMP paths. Its exact audit retains missing-block programs in the
-full unresolved decision class. Small owned install runs pass; the registered
-eight-job source-bound matrix is pending. The research questions are useful
+full unresolved decision class. The registered eight-job source-bound matrix
+passes at b34bf7b, including four actual installs with unresolved historical
+classes and independent CPU/CUDA replays. The research questions are useful
 matched-information/resource comparisons and long-history finite precision,
 not whether a helper can supply posterior values. Larger update units give
 an average of single-event posterior steps, not joint conditioning. Changing

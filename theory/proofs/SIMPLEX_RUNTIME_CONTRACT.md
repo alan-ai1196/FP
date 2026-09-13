@@ -155,7 +155,15 @@ This matrix cannot support a model-superiority or population-risk claim.
 The parent binds the committed execution dependencies before and after each
 job, including the final independent replay. Failed outcomes stay in the
 minimal journal; caps and tolerances are not expanded after seeing outcomes.
-The journal alone will record the matrix outcome after source registration.
+The [completed journal](../../evidence/minimal/FP_SIMPLEX_LEARNER_AUDIT.json)
+binds execution source b34bf7b: all eight jobs execute and seal, with four
+installations at22 and four unresolved historical search classes. Audits
+independently replay1,208 binary64 phases,604 CUDA phases,200 posterior
+forecasts and160 fresh-score/wealth events. Maximum packed state is77,265,284
+bytes and completed job commitment2,417,373,184 bytes. Maximum CUDA
+state/native/normalizer errors are422861/188743680,3/640,1/256; the maximum
+mass-normalized probability error is249137/1677721600. All stay within the
+original caps and tolerances. No failure or resource enlargement is hidden.
 The registered matrix does not freeze arbitrary-program, long-history or
 large-n AMP accuracy. A useful resource-matched model comparison remains a
 separate experiment, and RN-5 continues at its original source and limits.
