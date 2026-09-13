@@ -1,0 +1,298 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration_source": "716d27989e35754fc5e5328c95bb1ba72be2f414",
+  "registration": {
+    "cases": [
+      "centered"
+    ],
+    "tape": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "n": 2,
+    "window": 3,
+    "source_domain_rows": 2340,
+    "sources": 22,
+    "native_delayed_states": 0,
+    "initializer": [
+      "1",
+      "8"
+    ],
+    "base": [
+      "1",
+      "1"
+    ],
+    "learning_rate": "0",
+    "update_unit": 1,
+    "grid": null,
+    "host_cap": 17179869184,
+    "timeout_ms": 900000,
+    "packed_cap": 2147483648,
+    "work_per_role": 1000000000000,
+    "activation_and_normalizer_cap": "14580",
+    "arena_bytes": 16777216,
+    "allocator_reserved_cap": 33554432,
+    "phase_output_cells": 16384,
+    "phase_evidence_bytes": 2097152,
+    "state_native_normalizer_tolerance": "2",
+    "probability_tolerance": "1/10000",
+    "bounds": [
+      {
+        "kind": "centered",
+        "graph": {
+          "nodes": 102,
+          "sources": 22,
+          "state_reads": 0,
+          "SUMs": 30,
+          "PRODUCTs": 50,
+          "SUM_edges": 74,
+          "edges": 174,
+          "slots": 2,
+          "bindings": 0
+        },
+        "output_cells": {
+          "initialize": 6,
+          "predict": 463,
+          "observe": 612,
+          "commit": 18
+        },
+        "rounded_interpreter_maximum_mass_error": "0",
+        "rounded_interpreter_maximum_probability_error": "1/41943040"
+      }
+    ],
+    "scope": "initial registered finite model; no proposal, fresh installation or class certificate"
+  },
+  "prior_comparison": {
+    "journal": "evidence/minimal/FP_CONSTRAINT_CONTRACTION_CUDA_AUDIT.json",
+    "source": "65c6472d42649a0a6ac78fa418737e1819ac1458",
+    "attempts_retained_without_rerun": 2
+  },
+  "workers": [
+    {
+      "case_index": 0,
+      "kind": "centered",
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 2552315904,
+        "peak_job_commit": 2553532416,
+        "user_100ns": 413437500,
+        "kernel_100ns": 14531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26756,
+        "process_creation_100ns": 134337884250742316
+      },
+      "execution_source": "716d27989e35754fc5e5328c95bb1ba72be2f414",
+      "result": {
+        "kind": "centered",
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "forecasts": [
+          {
+            "reference_p0": "9/10",
+            "reference_masses": [
+              "9",
+              "1"
+            ],
+            "actual_masses": [
+              "9",
+              "1"
+            ]
+          },
+          {
+            "reference_p0": "9/10",
+            "reference_masses": [
+              "81",
+              "9"
+            ],
+            "actual_masses": [
+              "81",
+              "9"
+            ]
+          },
+          {
+            "reference_p0": "9/10",
+            "reference_masses": [
+              "729",
+              "81"
+            ],
+            "actual_masses": [
+              "729",
+              "81"
+            ]
+          },
+          {
+            "reference_p0": "9/10",
+            "reference_masses": [
+              "6561",
+              "729"
+            ],
+            "actual_masses": [
+              "6561",
+              "729"
+            ]
+          },
+          {
+            "reference_p0": "1/2",
+            "reference_masses": [
+              "3645",
+              "3645"
+            ],
+            "actual_masses": [
+              "3645",
+              "3645"
+            ]
+          },
+          {
+            "reference_p0": "41/50",
+            "reference_masses": [
+              "3321",
+              "729"
+            ],
+            "actual_masses": [
+              "3321",
+              "729"
+            ]
+          },
+          {
+            "reference_p0": "73/82",
+            "reference_masses": [
+              "3285",
+              "405"
+            ],
+            "actual_masses": [
+              "3285",
+              "405"
+            ]
+          },
+          {
+            "reference_p0": "41/50",
+            "reference_masses": [
+              "369",
+              "81"
+            ],
+            "actual_masses": [
+              "369",
+              "81"
+            ]
+          },
+          {
+            "reference_p0": "9/50",
+            "reference_masses": [
+              "81",
+              "369"
+            ],
+            "actual_masses": [
+              "81",
+              "369"
+            ]
+          }
+        ],
+        "retained_observations": 9,
+        "CUDA_audit": {
+          "phases": 28,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 47225,
+          "maximum_output_cells": 612
+        },
+        "independent_binary64_phases": 28,
+        "CUDA_relation_maxima": {
+          "state_error": "6383/13589544960",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "203/151996487423754240",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 90865346,
+        "consumed_arena_extent": 66712,
+        "host": {
+          "process_id": 26756,
+          "creation_100ns": 134337884250742316,
+          "lifetime_process_commit_peak": 2551721984,
+          "job_commit_peak": 2552938496,
+          "process_user_100ns": 390937500,
+          "process_kernel_100ns": 13437500,
+          "job_user_100ns": 390937500,
+          "job_kernel_100ns": 13437500
+        },
+        "device": {
+          "identity": {
+            "runtime_version": 13040,
+            "driver_api_version": 13040,
+            "driver_version": "616.92",
+            "pci_bus_id": "0000:0B:00.0",
+            "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+            "physical_vram_bytes": 25769803776
+          },
+          "execution_identity": [
+            "2.12.0+cu132",
+            "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+            "13.2",
+            "NVIDIA GeForce RTX 3090",
+            [
+              8,
+              6
+            ]
+          ],
+          "physical_vram_upper": 25769803776,
+          "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+        },
+        "class_or_install_certificate": false
+      }
+    }
+  ]
+}

@@ -3738,3 +3738,17 @@ the uncentered graph. Both stay inside unchanged caps without timeout.
 Complete phase frames reach792,426 versus46,688 bytes. The strong centered
 control is registered as one further job with the identical tape/resources;
 the earlier two source-bound outcomes remain immutable and are not repeated.
+
+The stronger centered job also completes, at716d279: all nine events seal,
+with28 independently replayed CUDA/binary64 phases each and zero native/
+normalizer errors. Its packed peak90,865,346, completed job peak2,553,532,416,
+native extent66,712, maximum frame47,225 and output cells612 fit the same
+registration. Raw probability/division error is1/41943040; gradient/state
+error6383/13589544960 remains nonzero and independently checked. Post-analysis
+recomputes27 retained forecasts across all three models and verifies source,
+process, registration and resource/error claims; total independently audited
+phases are84 CUDA and84 binary64. Thus small-n centered enumeration realizes
+the precision benefit at much lower packed cost than partition contraction.
+The general fixed-H existence theorem remains, but it supplies no large-n
+or long-history affordability result. This initial-model comparison is closed;
+none of its three jobs should be repeated or promoted to a class/install claim.

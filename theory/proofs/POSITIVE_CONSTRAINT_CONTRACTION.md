@@ -1,7 +1,7 @@
 # Positive constraint contraction of a native window posterior
 
-Status: **scoped model/representation theorem, exact numerical audit and two
-completed owned RTX3090 controls**. The stronger centered control is pending. This is
+Status: **scoped model/representation theorem, exact numerical audit and three
+completed owned RTX3090 controls, including the stronger centered model**. This is
 neither a new Foundation/ERC theorem nor an implemented Compiler proposer.
 The question is how to realize useful uncertainty without enumerating all
 latent worlds or importing their numerical posterior state.
@@ -301,4 +301,30 @@ The two completed jobs from section6 retain their original registration.
 job with the same tape, full source domain, caps, tolerances and independent
 audits. It checks equality of every registration field except the model/counts,
 links the completed two-job journal, and does not repeat either earlier job.
-Actual centered execution remains pending.
+The new job completes at `716d27989e35754fc5e5328c95bb1ba72be2f414`, seals
+all nine observations and independently checks28 CUDA plus28 binary64 phases.
+Its [compact journal](../../evidence/minimal/FP_CENTERED_CONTRACTION_CUDA_AUDIT.json)
+links both original jobs without repeating them. Actual native and normalizer
+errors are zero; raw probability and division errors are1/41943040. Gradient/
+state error is6383/13589544960. Packed peak is90,865,346 bytes, completed host
+job peak2,553,532,416, native extent66,712, maximum complete phase frame47,225
+and maximum output cells612. No timeout, class certificate or installation
+is introduced. The same resource grants include the whole16MiB arena even
+when fewer bytes are consumed within it.
+
+The matched conclusion is now physical as well as algebraic: centered
+enumeration keeps the contracted model's exact masses with102 instead of1771
+nodes and about91MB instead of571MB of charged packed payload. The original
+enumerator has almost the same small graph/payload but retains its observed
+mass/normalizer errors. The general partition contraction still supplies a
+fixed-H polynomial-in-n existence bound; it is not a small-n resource winner,
+a minimum circuit theorem, or affordable full-history inference.
+
+`python -B experiments/joint_uncertainty/analyze_contraction.py` independently
+checks all27 retained forecasts using a fresh four-world scalar sum, verifies
+source dependencies and matched registrations, binds completed process IDs,
+checks resource caps, and recomputes stored-mass/raw-division error maxima.
+It totals84 independently audited CUDA and84 binary64 phases across the three
+sealed jobs. It executes no new GPU workload and cannot reconstruct omitted
+raw hardware phases from the compact record. The per-phase audit authority
+remains the executed auditors at each recorded source.

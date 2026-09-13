@@ -166,10 +166,15 @@ adaptation. Do not shrink the domain to observed contexts or borrow v6's
 source/state/installation authority to hide that cost.
 The stronger centered full-world control v=(w-1)/K already matches the
 contracted masses with102 nodes at n2,H3. Its integral8/K construction works
-for K<=8; exact/rounded audits pass but owned execution is pending. Thus
+for K<=8; exact/rounded audits and its owned target execution pass at716d279. Thus
 partition contraction has no established small-n advantage. Any useful large-n
 application must beat that stronger baseline where applicable and retain its
 actual domain/whole-runtime cost.
+This initial comparison is closed: three sealed jobs,84 independently audited
+CUDA/binary64 phases each and27 retained forecast checks; centered packed
+peak90,865,346 versus contracted570,850,422 bytes with the same exact masses.
+Longer-history, larger-n useful adaptation remains separate from this result;
+do not extend the static precision controls or repeat the completed jobs.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

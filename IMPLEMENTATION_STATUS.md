@@ -286,9 +286,13 @@ phases, native errors0/1 and normalizer errors0/2. Packed payload peaks are
 persistence or install authority is claimed.
 The stronger centered enumerator now passes a separate exact audit: at n2,H3
 it uses102 nodes/174 edges and gives the same averaged, half-exact masses as
-the1771-node contraction. Its owned target check remains pending. Existing
-registered jobs keep their original code and outcomes; no resource comparison
-may omit this newly derived control.
+the1771-node contraction. Its target job seals at716d279 under the unchanged
+registration:28 independently replayed CUDA/binary64 phases each, zero native/
+normalizer error,90,865,346 packed bytes and2,553,532,416 peak host-job bytes.
+It retains the first two outcomes at65c6472; no job is repeated. Independent
+compact post-analysis checks27 forecasts across all three paths, totalling84
+CUDA and84 binary64 audited phases. This closes this initial-model comparison
+only; no resource comparison may omit the stronger centered control.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

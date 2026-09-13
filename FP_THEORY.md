@@ -117,6 +117,9 @@ This is model representation research, not another static ERC law or proposer.
 For small n, a stronger centered-world positive recurrence realizes the same
 averaged masses with much less graph structure. Its exact audit prevents
 promoting the general contraction identity to an implementation advantage.
+The matched centered RTX3090 job also seals at716d279: all three paths total
+84 independently checked CUDA/binary64 phases each, with zero native mass error
+and about91MB packed peak for centering versus571MB for partition contraction.
 
 ---
 

@@ -316,7 +316,16 @@ with only102 nodes/174 edges at n2. `centered_contraction.py --algebra` passes
 2,965 exact forecasts and53 formal/rounded checks each. The generic contraction
 is therefore not the useful small-n winner. Retain the original two completed
 jobs. `centered_cuda.py` registers one new matched job for this stronger control,
-linking those outcomes without rerunning them. Its target evidence is pending.
+linking those outcomes without rerunning them. It now completes at716d279:
+28 independent CUDA/binary64 phases each, zero native/normalizer error and
+90,865,346 packed bytes. Its completed job peak is2,553,532,416 bytes within
+the same16GiB cap. All three paths total84 CUDA/binary64 phases each;
+`analyze_contraction.py` checks their27 retained forecasts, source dependencies,
+matched registrations and resource/error maxima without launching another job.
+Prefer the centered graph in this n2,H3 scope. The general contraction remains
+a representation bound with large window/domain costs, not an affordable
+large-n model result. All three new jobs and both drivers are terminal; main RN-5 remains
+bound to its own source until all its workers finish.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
