@@ -75,12 +75,16 @@ The [v4 balanced-readout construction](theory/proofs/BALANCED_UNCERTAINTY_LEARNE
 now resolves the scoped existence/first-update question using available
 independent coefficients and ordinary SGD. It also executes owned CPU/CUDA
 construction, learning and installation, with honest resource refusals.
-The immediate open question is useful adaptive model behavior against the
-exact adaptive posterior, including rate and range pressure. Source-bound
-CPU/CUDA matrices pass at `803cdc2`; execute and analyze the preregistered
-[RN-4 matrix](experiments/adaptive_uncertainty/PROTOCOL.md).
-Do not infer global posterior consistency or good deployed risk from a
-nonzero gradient alone.
+Source-bound CPU/CUDA matrices pass at `803cdc2`. The completed
+[RN-4 matrix](experiments/adaptive_uncertainty/RESULTS.md) at `cffbadc` now
+measures useful n8 adaptation, but a persistent gap to the strong adaptive
+posterior. All twelve n8 streams seal/install; all eight n16 streams halt
+at the first new prediction because actual CUDA phase evidence exceeds the
+fixed frame. Thirty workers, both rates and every failure remain retained;
+no n16 FP score or complete failed-prefix oracle claim is imputed. The
+immediate target is useful joint-relation learning in an owned construction
+with a feasible declared envelope. Do not infer global posterior consistency
+or good deployed risk from a nonzero gradient alone.
 
 The [transitive-learning control](theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md)
 now separates local updates, representability and propagation. Pair-local

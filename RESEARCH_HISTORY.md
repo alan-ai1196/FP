@@ -3063,3 +3063,44 @@ A separate scalar reduction checks936 forecast/successor comparisons in
 all three arithmetic paths, supporting independent dynamic RN-4 analysis.
 No target case or registered resource is changed. Read
 `theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md`.
+
+## 90. RN-4 learns native uncertainty and retains the dense-execution boundary (2026-09-13)
+
+All thirty registered workers execute from `cffbadc`, with unchanged rates,
+resources and source. Twelve n8 FP streams seal and install; all eight n16
+FP streams halt at their first new prediction when actual CUDA phase
+evidence exceeds the prepaid131,072-byte frame. Ten exact/AMP adaptive
+posterior workers complete, consuming each new label only after forecasting.
+No attempted outcome is excluded or rerun; unexecuted FP tails have no score.
+
+In each known world, candidate CE is0.526949 at rate1/8 and0.440025 at rate4,
+with deployed CE0.555822/0.495313. The new adaptive posterior scores0.370531.
+The retained v3 controls score0.592766 frozen and0.626226 deployed at their
+original execution sources. This comparison changes learning, constructor,
+cadence and range together, not one isolated causal mechanism.
+
+New n8 two-/four-component candidate means at rate4 are0.401997/0.488960,
+versus strong adaptive posterior0.334035/0.350041; deployed means are
+0.467520/0.569416. At rate1/8 the corresponding candidate means are
+0.501828/0.659139 and deployed0.542259/0.674638. N16 posterior means are
+0.330741/0.334428; its FP scores stay absent. All strict training majorities
+are correct in these samples and all searches construct scale8. Sixteen
+IID training classes stay unresolved; only four conditioned diagnostics
+attain historical fixed-state empirical categorical bounds. The eight
+halted streams never gain a final closure.
+
+Independent post-analysis checks88 new dynamic scores and twelve reference/
+AMP fresh decisions. The sealed runs replay6,552 actual CUDA and6,552
+binary64 phases; the separate adaptive controls check1,408 GPU forecasts.
+Failed-prefix complete oracle counts are not claimed. Maximum job, packed
+FP and native extents are2,572,197,888 /81,202,893 /720,560 bytes. Checked
+CUDA state/probability errors peak at0.000747681/0.000119088; native and
+normalizer errors peak at0.00390625, below the declared tolerances. The
+149,430-byte journal, standalone SVG and fixed48-bit Brier enclosures keep
+no datasets, weights or bulk histories. Read
+`experiments/adaptive_uncertainty/RESULTS.md`.
+
+The model frontier now combines relation-moment propagation with owned
+feasible execution. The preceding curvature control is a scoped mathematical
+lead, not a free constructor or a model improvement theorem. Foundation R4,
+XVII.31, ERC-1 and the original complete correctness baseline stay frozen.

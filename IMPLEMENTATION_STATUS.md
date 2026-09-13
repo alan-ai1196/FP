@@ -81,9 +81,26 @@ quadratic work and the old tight range retain honest refusals. The complete
 `803cdc2` each pass six workers and1,960 binary64 phases; the target matrix
 also checks1,960 actual CUDA phases. Default v3 and the frozen baseline keep
 their scopes.
-[RN-4](experiments/adaptive_uncertainty/PROTOCOL.md) preregisters thirty
-workers, two learning rates and a strong adaptive posterior. Model execution
-is pending; learnability alone is not a model-quality result.
+[RN-4 is complete](experiments/adaptive_uncertainty/RESULTS.md) at `cffbadc`:
+thirty workers, twelve sealed/installed n8 FP streams, eight n16 FP streams
+unresolved at their first new prediction, and ten adaptive posterior workers.
+The eight failures exceed the fixed131,072-byte CUDA phase evidence frame;
+no configuration is raised or tail imputed. Independent analysis checks88
+dynamic scores, twelve fresh decisions,6,552 CUDA/binary64 phases per path
+in sealed runs, and1,408 posterior GPU forecasts. Failed prefixes carry no
+complete independent phase-count claim. All sixteen IID training searches
+stay unresolved; only four conditioned searches retain historical bounds.
+
+New n8 two-/four-component candidate CE at rate4 is0.401997/0.488960,
+versus adaptive posterior0.334035/0.350041; deployed CE is0.467520/0.569416.
+Both registered rates and all failures stay in the evidence. The
+[transitive-learning proof](theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md)
+shows why nonzero local gradients and linear joint representability can
+still miss relations implied by two labels. Native curvature generates that
+moment; pure squares have an absorbing-zero counterexample. The mixed
+polynomial control is not yet an owned resource-admitted model. Continue
+joint-relation model research with a feasible declared execution envelope;
+do not rerun these outcomes or add static resource cases.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

@@ -135,5 +135,9 @@ are inspected. The exact adaptive posterior is checked against48 independent
 full-joint conditional forecasts, including cycles and initially excluded
 assignments under the conditioned law. Its Brier summaries enclose exact
 per-query losses on a fixed48-bit grid rather than retaining a growing global
-common denominator. These checks validate an experimental comparison; target
-model execution and adaptive quality still require their own outcomes.
+common denominator. The [completed RN-4 outcomes](../../experiments/adaptive_uncertainty/RESULTS.md)
+now bind source `cffbadc`: twelve n8 streams seal/install, eight n16 attempts
+halt on the fixed phase evidence frame, and ten adaptive posterior workers
+complete. The remaining model gap and the separate
+[transitive-learning control](TRANSITIVE_UNCERTAINTY_LEARNING.md) prevent
+promotion of first-step learnability to reliable joint-relation learning.

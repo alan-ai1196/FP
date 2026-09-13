@@ -57,8 +57,13 @@ learners or general soft-input predictions, and leave the theory below intact.
 A [balanced positive-readout construction](theory/proofs/BALANCED_UNCERTAINTY_LEARNERS.md)
 now preserves initial uncertainty while admitting ordinary label-sensitive
 updates. Its extra independent slots and quadratic work are declared and
-paid. Scoped CPU/CUDA checks and RN-4 registration do not alter the frozen
-semantics below or establish an adaptive model-quality result.
+paid. The completed [RN-4 experiment](experiments/adaptive_uncertainty/RESULTS.md)
+measures useful n8 adaptation and a remaining adaptive-posterior gap; its
+eight n16 FP attempts retain unresolved phase-frame failures. A separate
+[model/learner proof](theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md) derives
+transitive relation learning from native curvature and retains its zero
+boundary limitation. These scopes alter no frozen semantics below, supply
+no missing model score and imply no new complete baseline release.
 
 ---
 
