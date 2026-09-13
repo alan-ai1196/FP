@@ -86,8 +86,9 @@ A [native delayed posterior control](theory/proofs/NATIVE_RECURRENT_POSTERIOR.md
 now realizes exact finite-window Bayesian adaptation with positive SUM/PRODUCT,
 fixed initialized coefficients and ordinary lagged targets. It separates v5's
 finite-update obstruction from native semantic expressivity, while retaining
-the known prior, finite window and literal range costs. Functional CPU and
-rounded-interpreter checks do not supply construction, install or target authority.
+the known prior, finite window and literal range costs. Two source-bound CPU
+jobs and rounded-interpreter checks do not supply construction, install or
+actual CUDA authority.
 
 ---
 

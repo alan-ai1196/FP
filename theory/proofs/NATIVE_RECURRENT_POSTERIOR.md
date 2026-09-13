@@ -1,12 +1,12 @@
 # A finite-window posterior is a native delayed positive program
 
 Status: **scoped exact construction theorem, small exhaustive native checks,
-owned CPU functional execution and an independent rounded interpreter**.
+source-bound owned CPU execution and an independent rounded interpreter**.
 This supplies a control for the [v5 calibration obstruction](JOINT_FACTOR_DYNAMICS.md),
 using the existing typed sources, positive SUM/PRODUCT, delayed transition
 bodies and final normalization. No Foundation definition or ERC-1 condition
-changes. Actual CUDA execution and a completed source-bound host job are
-not claimed by the initial functional evidence below.
+changes. Two completed CPU jobs bind source `a487718`; actual CUDA execution
+remains outside this evidence.
 
 ## 1. The task and the information cut
 
@@ -164,6 +164,20 @@ peak counters. The full-window case also runs the exact and rounded checks.
 The second case has H2 and the repeated labels0,0,1: its next forecast is1/2,
 whereas the whole-prefix posterior is41/50. Both retain the full history.
 Only an actual completed journal can upgrade this registration to evidence.
+
+The [completed CPU journal](../../evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CPU_AUDIT.json)
+now binds `a4877187f37926757344d1a90582b80ea25d622f`. Both jobs exit0 without
+timeout, and both owned streams seal with13 independently replayed binary64
+phases each. Their process peaks are43,565,056 and41,295,872 bytes; completed
+job peaks are44,797,952 and42,512,384, all below536,870,912. The job fence is
+attached before the first worker instruction; Runtime's observed process
+identity and peaks agree with the parent's completed-job observations. The
+parent launcher itself is outside that measured child scope. Full exact and
+rounded checks execute in the first bound job, and the second retains the
+window/full-history distinction with every original observation still owned.
+The registered native host scope is commitment and observed lifetime CPU;
+the external audit launcher additionally enforces its fixed120-second
+timeout. Neither scope supplies a GPU or total-machine resource claim.
 
 ## 6. What this resolves and what it leaves open
 

@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "registration_source": "a4877187f37926757344d1a90582b80ea25d622f",
+  "scope": "native finite-window posterior control; owned CPU stream and complete fresh host jobs",
+  "host_cap": 536870912,
+  "worker_timeout_ms": 120000,
+  "workers": [
+    {
+      "case": "full",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 43565056,
+        "peak_job_commit": 44797952,
+        "user_100ns": 209843750,
+        "kernel_100ns": 1406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10496,
+        "process_creation_100ns": 134337761622689546
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "runtime": {
+          "status": "SEALED_REFERENCE_STREAM",
+          "window": 3,
+          "native_graph": {
+            "nodes": 123,
+            "sources": 14,
+            "state_reads": 8,
+            "SUMs": 46,
+            "PRODUCTs": 55,
+            "SUM_edges": 146,
+            "edges": 256,
+            "slots": 2,
+            "bindings": 8
+          },
+          "delayed_coordinates": 8,
+          "retained_observations": 4,
+          "independent_binary64_phases": 13,
+          "native_forecasts": [
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "189/250",
+              "61/250"
+            ],
+            [
+              "77/122",
+              "45/122"
+            ]
+          ],
+          "full_history_claim_after_window": false,
+          "host_scope": "process/job commitment and observed lifetime CPU; no time cap or GPU claim",
+          "host": {
+            "process_id": 10496,
+            "creation_100ns": 134337761622689546,
+            "lifetime_process_commit_peak": 43565056,
+            "job_commit_peak": 44797952,
+            "process_user_100ns": 25000000,
+            "process_kernel_100ns": 1250000,
+            "job_user_100ns": 25000000,
+            "job_kernel_100ns": 1406250
+          },
+          "class_or_install_certificate": false
+        },
+        "algebra": {
+          "exact_native_full_prefix_posterior_forecasts": 3487,
+          "exact_native_truncated_window_forecasts": 264,
+          "intermediate_forecasts": 969,
+          "scope": "finite declared windows, including eviction; no external target tape or GPU execution"
+        },
+        "rounded": {
+          "rounded_interpreter_forecasts": 192,
+          "native_masses_and_delayed_states_exact": true,
+          "maximum_gradient_error": "193741/255852544000",
+          "maximum_raw_division_error": "1/41943040",
+          "actual_CUDA_execution": false
+        }
+      }
+    },
+    {
+      "case": "suffix",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 41295872,
+        "peak_job_commit": 42512384,
+        "user_100ns": 24062500,
+        "kernel_100ns": 1250000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4164,
+        "process_creation_100ns": 134337761834504721
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "runtime": {
+          "status": "SEALED_REFERENCE_STREAM",
+          "window": 2,
+          "native_graph": {
+            "nodes": 107,
+            "sources": 14,
+            "state_reads": 4,
+            "SUMs": 38,
+            "PRODUCTs": 51,
+            "SUM_edges": 130,
+            "edges": 232,
+            "slots": 2,
+            "bindings": 4
+          },
+          "delayed_coordinates": 4,
+          "retained_observations": 4,
+          "independent_binary64_phases": 13,
+          "native_forecasts": [
+            [
+              "1/2",
+              "1/2"
+            ],
+            [
+              "41/50",
+              "9/50"
+            ],
+            [
+              "73/82",
+              "9/82"
+            ],
+            [
+              "1/2",
+              "1/2"
+            ]
+          ],
+          "full_history_claim_after_window": false,
+          "host_scope": "process/job commitment and observed lifetime CPU; no time cap or GPU claim",
+          "host": {
+            "process_id": 4164,
+            "creation_100ns": 134337761834504721,
+            "lifetime_process_commit_peak": 41295872,
+            "job_commit_peak": 42512384,
+            "process_user_100ns": 23906250,
+            "process_kernel_100ns": 1250000,
+            "job_user_100ns": 23906250,
+            "job_kernel_100ns": 1250000
+          },
+          "class_or_install_certificate": false
+        }
+      }
+    }
+  ],
+  "not_claimed": [
+    "actual CUDA execution",
+    "learned prior or noise",
+    "compiler construction or installation",
+    "class completeness",
+    "whole-history inference beyond the window",
+    "affordable long-horizon inference"
+  ]
+}

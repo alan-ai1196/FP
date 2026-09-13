@@ -131,7 +131,8 @@ Gamma=(1,8), rate0 and ordinary lagged labels can implement the full posterior
 inside a declared finite window. Exact, owned CPU functional and rounded
 interpreter checks pass, including a counterexample to a whole-history
 claim after window eviction. The complete Runtime retains those older
-observations. Source-bound CPU and actual AMP evidence, affordable longer
+observations. Two source-bound CPU jobs now complete at `a487718`, with26
+binary64 phases and fixed512MiB caps. Actual AMP execution, affordable longer
 histories and discovery of useful native state remain separate obligations.
 Do not turn this known-prior initial model into a learned-construction result
 or expand another static resource family; RN-5 continues unchanged.

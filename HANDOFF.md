@@ -239,8 +239,11 @@ four ordinary events with13 independent binary64 phases;192 rounded
 interpreter forecasts also pass. This is an initially registered model with
 known prior/noise, not discovered structure or a CUDA result. Its literal
 range grows with the declared window; Runtime still retains all history.
-The source-bound launcher fixes two512MiB jobs before their execution; use
-completed evidence before claiming the physical host scope.
+The [source-bound CPU evidence](evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CPU_AUDIT.json)
+at `a487718` now completes both fixed512MiB jobs:26 binary64 phases total,
+maximum completed job commitment44,797,952 bytes, no timeout. Both ordinary
+streams seal; the H2 control explicitly differs from the full-history
+posterior after eviction. Actual owned AMP remains unexecuted for this model.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

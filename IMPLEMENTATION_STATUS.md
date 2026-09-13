@@ -208,7 +208,10 @@ initial graph has123 nodes and eight delayed coordinates. Four owned events
 seal with13 independent binary64 phases;3,487 full-prefix,264 suffix and969
 intermediate exact forecasts plus192 rounded interpreter predictions pass.
 The unbound functional CPU command explicitly leaves host scope unresolved.
-A preregistered two-job512MiB launcher checks whole-process execution next.
+Separate [source-bound CPU execution](evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CPU_AUDIT.json)
+at `a487718` completes both preregistered512MiB jobs and26 binary64 phases,
+with maximum completed job commitment44,797,952 bytes and no timeout. Both
+full-window and suffix controls seal with original observations retained.
 This supplies no proposer, class proof, install, actual CUDA or new baseline
 release claim; known prior/noise and finite-window range remain explicit.
 

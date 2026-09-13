@@ -3416,3 +3416,17 @@ window eviction. The latter must forecast1/2 after labels0,0,1 at H2, where
 the whole-history posterior is41/50. Actual completed jobs, rather than the
 registration itself, must establish that physical scope. This control uses
 no new Foundation action and changes no live RN-5 execution dependency.
+
+### 95.1 The registered CPU jobs complete with the same semantic boundary
+
+Source `a4877187f37926757344d1a90582b80ea25d622f` now has two completed
+fresh512MiB jobs:both exit0 without timeout and seal their owned ordinary
+streams, with13 independent binary64 phases each. The complete job peaks
+are44,797,952 and42,512,384 bytes; process peaks are43,565,056 and41,295,872.
+The full-window worker also repeats the exact and rounded-interpreter checks
+inside its source-bound job. The H2 worker forecasts1/2 after labels0,0,1,
+while the retained complete history's posterior is41/50. All four original
+observations remain owned. The compact journal retains both completed job
+identities and Runtime observations, without phase dumps or saved weights.
+Actual CUDA, learned prior/structure, construction, installation and class
+completeness remain outside this CPU model-control result.
