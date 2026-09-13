@@ -1,6 +1,6 @@
 # Component symmetry as a native relation proposal
 
-Status: **scoped proof and exact model check; source-bound endpoint records pending**.
+Status: **scoped proof; exact model checks and actual CPU/CUDA endpoint audits**.
 This addresses the model uncertainty measured in
 [RN-1](../../experiments/relation_noise/RESULTS.md) and
 [RN-2](../../experiments/prospective_relation/RESULTS.md). It changes a
@@ -130,8 +130,14 @@ Opposite directed rows remain distinct in the independent empirical upper.
 
 The CPU/CUDA matrix has six cases: disconnected installation, a balanced
 bridge, an unresolved-class scale1 installation, literal-witness grammar
-refusal, and the two complete learner continuations above. Its committed
-source and compact execution records will be recorded after the full matrix.
+refusal, and the two complete learner continuations above. Both full matrices pass at `ad2c350`: six workers and 1,127 binary64
+phases each; the CUDA matrix also independently checks 1,127 actual phases.
+Completed-job peaks are 39,161,856 CPU and 2,364,469,248 CUDA bytes. The
+compact [CPU](../../evidence/minimal/FP_COMPONENT_SYMMETRY_CPU_AUDIT.json)
+and [CUDA](../../evidence/minimal/FP_COMPONENT_SYMMETRY_CUDA_AUDIT.json)
+records retain each original job and device. The n=32 reference regression
+also passes, including 1,963 binary64 phases and the unchanged 74-node
+connected graph. This does not relabel the frozen 31-script baseline release.
 The [RN-3 protocol](../../experiments/component_uncertainty/PROTOCOL.md)
 fixes eighteen new model workers before inspecting its new seeds. Endpoint
 correctness supplies no unexecuted model score or deployment claim.

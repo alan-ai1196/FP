@@ -57,8 +57,7 @@ now supplies one such endpoint: it averages unresolved component flips on
 one-hot queries without posterior coefficients. The remaining immediate
 question is its measured model and fresh-deployment behavior, not whether
 that initialized endpoint exists. Its exact/state counterexamples prohibit
-a general input or complete-learner equivalence claim. Complete the scoped
-CPU/CUDA records and the fixed [RN-3 matrix](experiments/component_uncertainty/PROTOCOL.md).
+a general input or complete-learner equivalence claim. Its scoped CPU/CUDA matrices now pass at `ad2c350`; execute the fixed [RN-3 matrix](experiments/component_uncertainty/PROTOCOL.md).
 Finite IID uncertainty within a component is still unresolved by this hard
 within-component construction; do not infer full posterior equivalence.
 Preserve comparisons at equal information cuts. A frozen uncertain model

@@ -81,8 +81,9 @@ relative flips on initialized one-hot queries, using only the existing unit
 and scale slots. Tied constraints retain their observations while leaving
 relative parity open. A soft-input counterexample and an actual nonzero-rate
 learner continuation prevent promotion to a general input/state quotient.
-Run `scripts/audit_component_symmetry.py`; source-bound CPU/CUDA audit
-records are pending. [RN-3](experiments/component_uncertainty/PROTOCOL.md)
+The source-bound CPU/CUDA audit records at `ad2c350` each pass six workers
+and 1,127 binary64 phases; CUDA adds 1,127 independently checked target phases.
+Run `scripts/audit_component_symmetry.py`. The n=32 regression also passes. [RN-3](experiments/component_uncertainty/PROTOCOL.md)
 fixes eighteen new workers, with retained old diagnostic controls. Target
 model execution is pending; frozen risk and adaptive deployment may order
 these models differently. Finish this study rather than expanding static cases.

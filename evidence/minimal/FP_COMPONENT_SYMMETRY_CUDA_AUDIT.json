@@ -1,0 +1,487 @@
+{
+ "source_revision": "ad2c350bd0b944c5b0fdcf235229a77a7cb43f43",
+ "exact": {
+  "orbit": {
+   "partitions": 74,
+   "relative_assignments": 320,
+   "exact_orbit_average_and_reversed_presentation_predictions": 7320,
+   "exact_labelwise_Brier_inequalities": 14640,
+   "connected_graphs_identical_to_v2": 30,
+   "legacy_source": "2f24d18"
+  },
+  "scale": {
+   "count_initializer_slot_cases": 605,
+   "finite_integer_refusal": true,
+   "within_component_balanced_chord_changes_selected_scale": true,
+   "absent_unit_and_inconsistent_cycle_refused": true
+  },
+  "scope": {
+   "soft_input_component_prediction": [
+    "5/6",
+    "1/6"
+   ],
+   "soft_input_true_orbit_average": [
+    "7/10",
+    "3/10"
+   ],
+   "directed_information_is_retained_in_the_full_upper": true
+  }
+ },
+ "workers": [
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 2,
+    "bindings": 0
+   },
+   "class_status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+   "install_cursors": [
+    50
+   ],
+   "alpha_spent": "1/2",
+   "path": "cuda",
+   "case": "disconnected",
+   "binary64_phases": 312,
+   "CUDA": {
+    "phases": 312,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11358,
+    "maximum_output_cells": 136
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 2060,
+    "creation_100ns": 134337565514726884,
+    "lifetime_process_commit_peak": 2317152256
+   },
+   "peak_packed_bytes": 43050320,
+   "process_id": 2060,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2317152256,
+    "peak_job_commit": 2318364672,
+    "user_100ns": 159062500,
+    "kernel_100ns": 13750000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2060,
+    "process_creation_100ns": 134337565514726884
+   }
+  },
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 2,
+    "bindings": 0
+   },
+   "class_status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+   "install_cursors": [
+    60
+   ],
+   "alpha_spent": "1/2",
+   "path": "cuda",
+   "case": "tied",
+   "binary64_phases": 333,
+   "CUDA": {
+    "phases": 333,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11358,
+    "maximum_output_cells": 136
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 12748,
+    "creation_100ns": 134337565717472295,
+    "lifetime_process_commit_peak": 2328043520
+   },
+   "peak_packed_bytes": 45924884,
+   "process_id": 12748,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2328043520,
+    "peak_job_commit": 2329260032,
+    "user_100ns": 165000000,
+    "kernel_100ns": 15468750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 12748,
+    "process_creation_100ns": 134337565717472295
+   }
+  },
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "1",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 1,
+    "bindings": 0
+   },
+   "class_status": "UNRESOLVED",
+   "install_cursors": [
+    60
+   ],
+   "alpha_spent": "1/2",
+   "path": "cuda",
+   "case": "scale1",
+   "binary64_phases": 312,
+   "CUDA": {
+    "phases": 312,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11214,
+    "maximum_output_cells": 133
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 28884,
+    "creation_100ns": 134337565932170307,
+    "lifetime_process_commit_peak": 2318938112
+   },
+   "peak_packed_bytes": 43025654,
+   "process_id": 28884,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2318938112,
+    "peak_job_commit": 2320158720,
+    "user_100ns": 157343750,
+    "kernel_100ns": 17343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28884,
+    "process_creation_100ns": 134337565932170307
+   }
+  },
+  {
+   "outcome": "uncompressed witness exceeds the unchanged native grammar; no proposal, alpha or false class exclusion",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": null,
+   "class_status": "UNRESOLVED",
+   "install_cursors": [],
+   "alpha_spent": "0",
+   "path": "cuda",
+   "case": "grammar",
+   "binary64_phases": 156,
+   "CUDA": {
+    "phases": 156,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3556,
+    "maximum_output_cells": 32
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 28048,
+    "creation_100ns": 134337566139597632,
+    "lifetime_process_commit_peak": 2103304192
+   },
+   "peak_packed_bytes": 21378556,
+   "process_id": 28048,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2103304192,
+    "peak_job_commit": 2104524800,
+    "user_100ns": 57812500,
+    "kernel_100ns": 11875000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28048,
+    "process_creation_100ns": 134337566139597632
+   }
+  },
+  {
+   "outcome": "equal initialized predictions diverge after a legal observed update",
+   "initial_prediction": [
+    "1/2",
+    "1/2"
+   ],
+   "after_one_update": [
+    "17/33",
+    "16/33"
+   ],
+   "theta_after_one_update": [
+    "1/16",
+    "1"
+   ],
+   "path": "cuda",
+   "case": "zero-future",
+   "binary64_phases": 7,
+   "CUDA": {
+    "phases": 7,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 9940,
+    "maximum_output_cells": 116
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 15672,
+    "creation_100ns": 134337566237127927,
+    "lifetime_process_commit_peak": 2363252736
+   },
+   "peak_packed_bytes": 1006913,
+   "process_id": 15672,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2363252736,
+    "peak_job_commit": 2364469248,
+    "user_100ns": 22812500,
+    "kernel_100ns": 9062500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 15672,
+    "process_creation_100ns": 134337566237127927
+   }
+  },
+  {
+   "outcome": "the zero-slot comparator remains uniform under the same legal continuation",
+   "initial_prediction": [
+    "1/2",
+    "1/2"
+   ],
+   "after_one_update": [
+    "1/2",
+    "1/2"
+   ],
+   "theta_after_one_update": [],
+   "path": "cuda",
+   "case": "uniform-future",
+   "binary64_phases": 7,
+   "CUDA": {
+    "phases": 7,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 3394,
+    "maximum_output_cells": 24
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "host": {
+    "process_id": 5560,
+    "creation_100ns": 134337566269669402,
+    "lifetime_process_commit_peak": 2210226176
+   },
+   "peak_packed_bytes": 967263,
+   "process_id": 5560,
+   "device": {
+    "identity": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "execution_identity": [
+    "2.12.0+cu132",
+    "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+    "13.2",
+    "NVIDIA GeForce RTX 3090",
+    [
+     8,
+     6
+    ]
+   ],
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2210226176,
+    "peak_job_commit": 2211446784,
+    "user_100ns": 20000000,
+    "kernel_100ns": 9531250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 5560,
+    "process_creation_100ns": 134337566269669402
+   }
+  }
+ ]
+}

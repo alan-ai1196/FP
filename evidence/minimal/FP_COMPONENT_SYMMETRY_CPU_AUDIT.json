@@ -1,0 +1,337 @@
+{
+ "source_revision": "ad2c350bd0b944c5b0fdcf235229a77a7cb43f43",
+ "exact": {
+  "orbit": {
+   "partitions": 74,
+   "relative_assignments": 320,
+   "exact_orbit_average_and_reversed_presentation_predictions": 7320,
+   "exact_labelwise_Brier_inequalities": 14640,
+   "connected_graphs_identical_to_v2": 30,
+   "legacy_source": "2f24d18"
+  },
+  "scale": {
+   "count_initializer_slot_cases": 605,
+   "finite_integer_refusal": true,
+   "within_component_balanced_chord_changes_selected_scale": true,
+   "absent_unit_and_inconsistent_cycle_refused": true
+  },
+  "scope": {
+   "soft_input_component_prediction": [
+    "5/6",
+    "1/6"
+   ],
+   "soft_input_true_orbit_average": [
+    "7/10",
+    "3/10"
+   ],
+   "directed_information_is_retained_in_the_full_upper": true
+  }
+ },
+ "workers": [
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 2,
+    "bindings": 0
+   },
+   "class_status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+   "install_cursors": [
+    50
+   ],
+   "alpha_spent": "1/2",
+   "path": "cpu",
+   "case": "disconnected",
+   "binary64_phases": 312,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 11228,
+    "creation_100ns": 134337565513931438,
+    "lifetime_process_commit_peak": 37126144
+   },
+   "peak_packed_bytes": 2198916,
+   "process_id": 11228,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 37126144,
+    "peak_job_commit": 38363136,
+    "user_100ns": 57031250,
+    "kernel_100ns": 1406250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 11228,
+    "process_creation_100ns": 134337565513931438
+   }
+  },
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 2,
+    "bindings": 0
+   },
+   "class_status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+   "install_cursors": [
+    60
+   ],
+   "alpha_spent": "1/2",
+   "path": "cpu",
+   "case": "tied",
+   "binary64_phases": 333,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 26784,
+    "creation_100ns": 134337565572233744,
+    "lifetime_process_commit_peak": 37933056
+   },
+   "peak_packed_bytes": 2320963,
+   "process_id": 26784,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 37933056,
+    "peak_job_commit": 39161856,
+    "user_100ns": 59687500,
+    "kernel_100ns": 1718750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26784,
+    "process_creation_100ns": 134337565572233744
+   }
+  },
+  {
+   "outcome": "component candidate installs after its own continuous paired evidence; original class scope retained",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "scale": "1",
+   "native_graph": {
+    "nodes": 26,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 8,
+    "SUM_edges": 16,
+    "edges": 32,
+    "slots": 1,
+    "bindings": 0
+   },
+   "class_status": "UNRESOLVED",
+   "install_cursors": [
+    60
+   ],
+   "alpha_spent": "1/2",
+   "path": "cpu",
+   "case": "scale1",
+   "binary64_phases": 312,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 14036,
+    "creation_100ns": 134337565633924609,
+    "lifetime_process_commit_peak": 36753408
+   },
+   "peak_packed_bytes": 2172914,
+   "process_id": 14036,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 36753408,
+    "peak_job_commit": 37982208,
+    "user_100ns": 61250000,
+    "kernel_100ns": 1093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14036,
+    "process_creation_100ns": 134337565633924609
+   }
+  },
+  {
+   "outcome": "uncompressed witness exceeds the unchanged native grammar; no proposal, alpha or false class exclusion",
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2
+    ],
+    [
+     3
+    ]
+   ],
+   "scale": "8",
+   "native_graph": null,
+   "class_status": "UNRESOLVED",
+   "install_cursors": [],
+   "alpha_spent": "0",
+   "path": "cpu",
+   "case": "grammar",
+   "binary64_phases": 156,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 28796,
+    "creation_100ns": 134337565696547308,
+    "lifetime_process_commit_peak": 32563200
+   },
+   "peak_packed_bytes": 926244,
+   "process_id": 28796,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 32563200,
+    "peak_job_commit": 33787904,
+    "user_100ns": 16406250,
+    "kernel_100ns": 781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28796,
+    "process_creation_100ns": 134337565696547308
+   }
+  },
+  {
+   "outcome": "equal initialized predictions diverge after a legal observed update",
+   "initial_prediction": [
+    "1/2",
+    "1/2"
+   ],
+   "after_one_update": [
+    "17/33",
+    "16/33"
+   ],
+   "theta_after_one_update": [
+    "1/16",
+    "1"
+   ],
+   "path": "cpu",
+   "case": "zero-future",
+   "binary64_phases": 7,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 6248,
+    "creation_100ns": 134337565713811686,
+    "lifetime_process_commit_peak": 28950528
+   },
+   "peak_packed_bytes": 87515,
+   "process_id": 6248,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 28950528,
+    "peak_job_commit": 30162944,
+    "user_100ns": 4375000,
+    "kernel_100ns": 781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6248,
+    "process_creation_100ns": 134337565713811686
+   }
+  },
+  {
+   "outcome": "the zero-slot comparator remains uniform under the same legal continuation",
+   "initial_prediction": [
+    "1/2",
+    "1/2"
+   ],
+   "after_one_update": [
+    "1/2",
+    "1/2"
+   ],
+   "theta_after_one_update": [],
+   "path": "cpu",
+   "case": "uniform-future",
+   "binary64_phases": 7,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "host": {
+    "process_id": 9200,
+    "creation_100ns": 134337565719066753,
+    "lifetime_process_commit_peak": 28798976
+   },
+   "peak_packed_bytes": 44707,
+   "process_id": 9200,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 28798976,
+    "peak_job_commit": 30015488,
+    "user_100ns": 3906250,
+    "kernel_100ns": 781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9200,
+    "process_creation_100ns": 134337565719066753
+   }
+  }
+ ]
+}

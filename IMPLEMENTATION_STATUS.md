@@ -57,8 +57,10 @@ flips uniform at the initialized one-hot endpoint. It preserves the complete
 native decision class, guarded reachable scale selection and v2 owned paths.
 `scripts/audit_component_symmetry.py` covers exact averaging, tied data,
 grammar refusal, actual installation and two distinct learner continuations.
-Source-bound CPU/CUDA reports and the eighteen-worker RN-3 execution are
-pending; this is not another complete baseline release declaration.
+Source-bound CPU/CUDA reports at `ad2c350` each pass six workers and 1,127
+binary64 phases; CUDA adds 1,127 target phases. The n=32 regression passes.
+The eighteen-worker RN-3 runner is now registered; model execution remains
+pending. This is not another complete baseline release declaration.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

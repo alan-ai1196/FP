@@ -2919,3 +2919,18 @@ The scoped CPU/CUDA matrix will retain source-bound records; RN-3 registers
 eighteen new workers before its new seed/support cases are inspected.
 The model study must distinguish equal-cutoff frozen risk from adaptive
 deployed risk. Its target outcomes are still pending.
+
+Both source-bound v3 matrices now pass at `ad2c350`: six CPU and six actual
+RTX 3090 workers, each with 1,127 binary64 phases; CUDA independently checks
+1,127 target phases. Completed-job peaks are 39,161,856 and 2,364,469,248
+bytes. The n=32 reference regression also passes with its unchanged 74-node
+witness, installation330, seal622 and 1,963 binary64 phases. No old release
+or RN-1/RN-2 model worker is relabelled or rerun to refresh its source.
+
+RN-3's `run_study.py` now registers the eighteen fixed workers and preserves
+separate frozen/deployed outcomes, class scopes, actual phase audits, source
+and completed-job records. Its preflight checks all registrations without
+new labels, and recomputes 64 RN-1 scores, 96 RN-2 scores and twenty old
+prospective decisions. The two historical journals stay byte-content equal
+to their original commits. A preflight reader correction accounts for the
+older RN-1 successful-job schema; it caused no target model execution.
