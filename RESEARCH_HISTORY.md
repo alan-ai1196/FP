@@ -3034,3 +3034,32 @@ RN-4 now has its executable thirty-worker registration and an exact adaptive
 posterior checked against48 independently recomputed full-joint forecasts,
 including cycles. Fixed48-bit Brier enclosures prevent large denominator
 artifacts. New target seed labels remain uninspected at this registration.
+
+## 89. Native curvature propagates relation moments, with a zero-boundary counterexample (2026-09-13)
+
+Two noisy path labels between three independent component orientations
+change the next endpoint prediction to189/250. V4's independent readouts
+stay1/2 on the untouched pair. A full linear assignment mixture can also
+stay1/2: with additive SGD and inactive projection, its weights remain in
+the span of individually queried parity characters. Representing a value
+therefore does not imply learning the corresponding correlation.
+
+For four relative assignments with positive polynomial weights phi(a),
+base1, a shared output unit and uniform initial amplitudes, exact local
+analysis gives matching endpoint probability
+`1/2 + eta^2*phi'(a)^2*phi''(a)/(2*(1+2*phi(a))^3) + O(eta^3)`.
+The common output coefficient has zero derivative at the two neutral
+forecast cuts; it is not secretly frozen. An existing self-PRODUCT gives a
+nonzero path signal. Pure squares also have absorbing zero coordinates:
+rate4 eliminates two amplitudes and the opposite next label cannot revive
+them. A native linear-plus-quadratic polynomial revives both in that control
+while retaining curvature. Neither fact proves a globally reliable learner.
+
+Explicit native graphs, independent forward derivatives, binary64 and
+rounded AMP interpreters check64 label/rate/graph/grid combinations plus
+two projection controls. The n3 mixture witnesses exceed the corresponding
+RN-4 node cap; no Runtime construction or extra CUDA execution is claimed.
+A separate scalar reduction checks936 forecast/successor comparisons in
+all three arithmetic paths, supporting independent dynamic RN-4 analysis.
+No target case or registered resource is changed. Read
+`theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md`.

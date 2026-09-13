@@ -82,6 +82,16 @@ CPU/CUDA matrices pass at `803cdc2`; execute and analyze the preregistered
 Do not infer global posterior consistency or good deployed risk from a
 nonzero gradient alone.
 
+The [transitive-learning control](theory/proofs/TRANSITIVE_UNCERTAINTY_LEARNING.md)
+now separates local updates, representability and propagation. Pair-local
+readouts and a linear assignment mixture can both miss the path relation
+created by two labels. Native positive curvature creates its moment, but a
+pure square can absorb zero amplitudes. The linear-plus-quadratic control
+retains a recovery derivative and a propagation direction; it is not an
+owned feasible constructor or a model result. The open target is useful
+joint-relation learning with complete resource/lineage/freshness obligations,
+not an architecture menu or another static resource special case.
+
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent
