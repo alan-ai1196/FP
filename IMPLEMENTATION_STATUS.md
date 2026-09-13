@@ -191,6 +191,16 @@ ordered cross blocks. The selected diagnostic's relaxed optimum is therefore
 the stated entropy expression, approximately 0.5069369136. It is neither a
 legal-state certificate nor a bound on the stream of changing forecasts.
 
+The [factor-dynamics law](theory/proofs/JOINT_FACTOR_DYNAMICS.md) now identifies
+the unrounded update as a pairwise factor, including cycles/repeated edges.
+Its forest specialization quantifies dilution by unrelated components and
+proves that two unprojected steps cannot calibrate all three noise-1/10
+posterior pair forecasts merely by choosing different rates. Projection can
+create a four-component interaction, and equal current forecasts plus scale
+still permit different next predictions. Exact checks cover 1,932 forest
+states and 1,024 general factor updates. These are model-level diagnostics,
+not RN-5 target scores, new resource cases or changes to the live experiment.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

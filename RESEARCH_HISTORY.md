@@ -3327,3 +3327,54 @@ until every bound worker is terminal; only then integrate the research branch
 and the final journal. This preserves ongoing execution identity while
 recording auditable results in Git. The branch's partial journal is explicitly
 an eleven-attempt snapshot, not a complete experiment.
+
+## 94. Exact factor dynamics isolates a finite-update obstruction
+
+While the unchanged RN-5 worker matrix continues, v5's shifted amplitudes
+give a general exact update: b'=b*(A+B*sigma*chi_e), where lambda=eta/T,
+A=1-2*lambda+lambda/Q and B=lambda/Q. Q is the actual target probability
+before the update. Until projection, squared amplitudes therefore retain
+positive pairwise factors on observed edges, even through cycles/repetitions.
+The mass recurrence is S'=(A^2+B^2)*S+2*A*B*T*(2*Q-1), with T=S+2-K/4.
+This is a value/dynamics identity, not free factor-state compression or an
+efficient cyclic partition-function algorithm.
+
+On ordered forest observations, every new edge forecast is neutral. The
+update factors reduce to 1+2*lambda*sigma*chi_e; S multiplies by 1+4*lambda^2.
+Cross contrasts are S/T times the product of rho_e=4*lambda/(1+4*lambda^2)
+along the path. The standard Ising tree-correlation property is attributed
+to Anandkumar, Tan and Willsky, Fact2/equations42-43; the native optimizer
+factors and literal-base correction are derived here. Extra unrelated
+components dilute the same two-label rate1 response from 0.564898 at c3 to
+0.523806 at c4 and 0.507248 at c5; the ideal noisy-query posterior stays0.756.
+For a fixed finite path and sufficient graph/initializer resources, the
+unit-initialized advantage scales as (9/16)*(2*eta/K)^d. This is not a new
+static resource lower law or an extrapolation of RN-5's fixed Gamma budget.
+
+The two-step effect cannot be repaired just by rate selection inside the
+unprojected regime. Its three signed pair contrasts obey z=x*y/(S/T), with
+S/T>=9/10 for c>=3. The correct noise-1/10 posterior would require S/T=4/5.
+Arbitrary real amplitude values can represent those forecasts, but no such
+two-rate trajectory does so without projection. This separates finite-update
+calibration from the earlier incorrect-internal-sign restriction; these
+singleton controls have no wrong internal signs.
+
+The rate4 three-edge K8 path also supplies a genuine boundary: its third
+step clips and violates a four-spin product identity required by every
+zero-field pairwise log density. No new architecture action created that
+interaction. More generally, two free rational amplitude states can agree
+on all current pair forecasts and total scale20 while retaining opposite
+four-spin moments. The same subsequent exact unrounded label gives next
+forecasts113/202 and89/202. These are not claimed RN-5 reachable endpoints;
+they prevent treating current pair forecasts plus scale as a complete
+learner summary.
+
+The exact audit covers 1,932 signed/ordered forest prefix states, 15,668
+amplitude coordinates,11,624 native forecasts,1,924 gradient successors and
+11,624 independent full-assignment posterior forecasts. Another1,024 general
+factor updates cover10,240 coordinates and448 nonneutral cycle/repeated-edge
+steps. Unequal-rate controls retain88 unprojected cases and20 outside that
+hypothesis. The projection, calibration, dilution and hidden-moment evidence
+uses synthetic data only, no Torch and no Runtime/certificate authority.
+The target matrix, implementation dependencies, resource budgets and all
+previous successes/failures remain unchanged.

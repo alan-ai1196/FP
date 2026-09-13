@@ -116,6 +116,11 @@ why current prediction equivalence cannot remove an optimizer state variable.
 It also closes the fixed-sign population-risk gap in the real-parameter
 relaxation: one residual-sign mixture jointly attains every blockwise optimum.
 Finite-rate learning and reachable numerical states remain separate questions.
+The [exact factor law](theory/proofs/JOINT_FACTOR_DYNAMICS.md) now separates
+those issues further: even unequal rates cannot jointly calibrate the three
+noisy pair forecasts in the unprojected two-edge regime. Projection and
+arbitrary later histories require their actual complete states; current pair
+forecasts and scale alone omit usable higher moments.
 It supplies no changed learner, normalization action or rounded-path theorem. V5 still fixes empirical within-component signs;
 finite IID uncertainty there remains an explicit model limitation. No old
 model or refused run should be rerun simply with larger budgets.

@@ -108,6 +108,12 @@ equivalence proof. Nothing here changes the optimizer or supplies a new
 semantic action. The ongoing experiment keeps both registered rates,
 execution budgets and strong adaptive posterior unchanged.
 
+Retaining this common scale is still insufficient for a current-prediction
+summary to determine the next learner. The later
+[factor-dynamics counterexample](JOINT_FACTOR_DYNAMICS.md) holds all one-hot
+pair forecasts and the scale fixed, while a fourth-order moment changes the
+next forecast. It gives the full unrounded update factor behind this effect.
+
 ## 4. Continuous mixture relaxation and first-order stationary points
 
 This section deliberately relaxes initializer/profile reachability, the

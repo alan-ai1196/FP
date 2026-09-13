@@ -77,6 +77,10 @@ likewise retains a prediction-invariant coordinate when future SGD can use it.
 Its real-parameter relaxation has an exact fixed-sign risk optimum, distinct
 from reachable reference states and changing forecasts. None of these scoped
 model results changes semantics or target-run parameters.
+The [joint factor dynamics](theory/proofs/JOINT_FACTOR_DYNAMICS.md) now gives
+the unrounded update law, a scoped two-step calibration obstruction and an
+equal-scale/equal-prediction counterexample. Higher moments can influence the
+next update; current forecast equality remains weaker than learner equivalence.
 
 ---
 
