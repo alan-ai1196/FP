@@ -308,6 +308,18 @@ collision and unknown-noise counterexample prevent broader erasure claims.
 This module has no Runtime/proposer authority, Torch import, native model or
 AMP evidence. All existing state, source, history and install rules remain.
 
+`experiments/joint_uncertainty/simplex_gradient.py` now audits a proposed
+different learner rule through actual native evaluation and CE gradients.
+The [affine simplex law](theory/proofs/SIMPLEX_GRADIENT_POSTERIOR.md) gives exact
+whole-history Bayesian weights at a unit step when the complete expert
+normalizers agree. Checks cover961 histories/5,955 forecasts,1,051 native
+gradient successors,9,183 affine steps and378 refinement cases. Native masses
+stay bounded by9 and the normalizer by10 in the explicit relation graphs;
+exponential parameter count and growing exact precision remain. Current
+`LearnerSpec` rejects the proposed optimizer ID. No Runtime path, constructor,
+source contract, class certificate, persistence or AMP evidence is changed;
+an extension would require a new U/initializer and complete owned audits.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

@@ -189,6 +189,15 @@ an explicit expected-risk/failure criterion. Current rounded confidence cannot
 justify forgetting under the proved all-future criterion. Unknown noise and
 the complete SGD/Compiler state require additional information; no existing
 history, interface or provenance requirement is removed.
+The [simplex gradient law](theory/proofs/SIMPLEX_GRADIENT_POSTERIOR.md) closes a
+further arithmetic question: an actual native CE-gradient step can reproduce
+the full posterior while keeping masses bounded, using a different declared
+learner geometry and uniform weight initializer. The required affine/equal
+normalizer condition and the distinction between categorical and output Fisher
+metrics are explicit. The rule is derived and exactly audited; it is currently
+unsupported by Runtime. Its owned reference/AMP learner implementation and
+usefulness at matched information/resource cuts are open. Changing U creates
+a new lineage and cannot inherit the old profile, persistence or class proof.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

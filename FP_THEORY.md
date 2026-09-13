@@ -2428,6 +2428,17 @@ law, not a native circuit, inference-work, AMP or complete-Compiler quotient.
 Finite expected-risk approximation remains open. Foundation and ERC-1 are
 unchanged; no semantic architecture action is introduced.
 
+The [simplex gradient law](theory/proofs/SIMPLEX_GRADIENT_POSTERIOR.md)
+then derives a different learner U for positive affine readouts with equal
+expert normalizers. A unit multiplicative tangent step of the actual native
+CE gradient is exactly the Bayesian update. Splitting identical fixed experts
+commutes with this rule; within the stated separable diagonal gradient class,
+that requirement forces the weight-proportional preconditioner. Its native
+known-noise model retains whole-history predictions with normalizer10, but
+needs a new declared initializer/U and growing exact parameter precision.
+The current Runtime rejects this unimplemented U. This is a scoped learner
+derivation and exact audit, not a graph-only result, AMP release or transport.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.

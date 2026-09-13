@@ -3801,3 +3801,37 @@ FAILED, with unchanged12 sealed FP streams,9 installs,72 descriptive score
 checks,12 fresh decisions,6,552 CUDA/binary64 phases each and768 posterior
 GPU forecasts. The source-bound parent proceeds to rate4. The failed case
 is not restarted, its cap is not increased, and no failed tail is imputed.
+
+## 108. Native simplex gradients recover a full posterior at a unit step
+
+The count-state result motivates attacking the learner transition instead
+of enlarging recurrent windows. For positive masses affine in a simplex
+weight block, equal expert normalizers give a precise identity: the unit
+multiplicative tangent step of the actual native CE gradient is Bayesian
+updating. Its mean-gradient subtraction retains the native normalizer
+derivative. No clipping or fitted posterior coefficient is inserted.
+
+The rule also commutes with splitting a fixed expert into identical copies.
+Within separable diagonal tangent-gradient rules, that consistency forces
+f(a+b)=f(a)+f(b), and positivity forces f(w)=c*w. Euclidean tangent descent
+fails the same test without reaching a projection boundary: aggregated
+weights3/5 and19/30 result from two representations of the same prior.
+This is a restricted model-level derivation, not a universal FP metric axiom
+or a complete-Compiler equivalence. The classical replicator/Bayes connection
+is cited; the native affine gradient and its boundaries are proved directly.
+
+The explicit known-noise graph uses14/25/42 nodes at n2/3/4. Its parameter
+state carries the whole posterior; every native activation stays at most8
+and the normalizer is10 at every exact history. Native-gradient audits check
+961 histories,5,955 forecasts,1,051 successors including80 agreement/reversal
+events,9,183 affine updates and378 refinement cases. Unequal expert normalizers
+give an exact negative unit-step weight, and a four-spin state direction shows
+that the categorical geometry cannot be borrowed from current pair forecasts.
+
+This changes the learner U and actual uniform1/K initializer. World count
+remains exponential and exact parameter precision can grow with history.
+Current Runtime correctly rejects the new optimizer ID; no existing model
+class, initialized trajectory, AMP bridge or fresh install is relabeled.
+Foundation VII already declares U as a lineage coordinate. The result calls
+for an owned scoped learner extension and matched model evidence, without
+adding an architecture-semantic action or altering live RN-5 execution.

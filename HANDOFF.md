@@ -345,6 +345,21 @@ or Runtime deletion permission. Next attack affordable inference and reachable
 adaptation, or a stated expected-risk approximation; increasing window size
 and keeping only rounded confidence do not settle this question.
 
+The [simplex gradient derivation](theory/proofs/SIMPLEX_GRADIENT_POSTERIOR.md)
+now provides a concrete learner candidate: on a positive affine block with
+equal expert normalizers, the unit update w_j*(1-g_j+SUM_i w_i*g_i) from the
+actual native CE gradient is exactly Bayesian. It commutes with splitting
+identical fixed experts; that property forces its preconditioner within the
+stated diagonal class. The known-noise relation graph has14/25/42 nodes at
+n2/3/4 and whole-history normalizer10, with no lag-domain growth. Exact
+audits check5,955 native forecasts,9,183 affine steps and378 refinement cases,
+plus an80-event agreement/reversal trace. Read the unequal-normalizer negative
+update and the distinction from the current-output Fisher metric before
+generalizing it. This changes U and the actual uniform1/K initialization;
+the current Runtime correctly rejects it. The next implementation question
+is an owned, explicitly scoped learner extension with full state and AMP
+relations, not an unregistered helper or reuse of old lineage evidence.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
