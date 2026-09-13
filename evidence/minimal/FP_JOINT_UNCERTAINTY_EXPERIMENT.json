@@ -2436,6 +2436,33 @@
     "process_creation_100ns": 134337747346715450
    },
    "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+  },
+  {
+   "worker_status": "FAILED",
+   "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 373, in main\n    result = fp_worker(case, args.rate) if args.worker == 'FP' else baseline_worker(case)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 152, in fp_worker\n    cuda = rn1.audit_snapshot(rt) if phase_checked else None\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_cuda_runtime.py\", line 84, in audit_snapshot\n    snapshot = validate_residency(runtime)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_reference_construction.py\", line 79, in validate_residency\n    snapshot = runtime.snapshot()\n               ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 38, in guarded\n    result = method(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 2662, in snapshot\n    None if self._cuda is None else self._cuda.snapshot())\n                                    ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_prefix.py\", line 175, in snapshot\n    tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),\n                                                                ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in snapshot\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in <genexpr>\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nMemoryError\n",
+   "process_id": 19896,
+   "kind": "FP",
+   "case": [
+    16,
+    "iid-c2",
+    17
+   ],
+   "rate": "1",
+   "completed_job": {
+    "exit_code": 1,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 17179684864,
+    "peak_job_commit": 17180917760,
+    "user_100ns": 29250468750,
+    "kernel_100ns": 417031250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 19896,
+    "process_creation_100ns": 134337747440481369
+   },
+   "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
   }
  ]
 }

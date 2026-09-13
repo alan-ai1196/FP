@@ -107,9 +107,9 @@ and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertain
 preregistered with its larger joint-family execution envelope. Execute the
 31 workers, independently reconstruct forecasts and fresh decisions, and
 compare with the strong adaptive posterior without filling failed tails. Execution is active at
-`38b27b3`. Independent analysis now verifies thirteen completed attempts:
-eleven EXECUTED and two FAILED. Both n16/c2/seed16 FP rates record final-auditor
-snapshot MemoryErrors at the declared host envelope, with no scored or fully
+`38b27b3`. Independent analysis now verifies fourteen completed attempts:
+eleven EXECUTED and three FAILED. Both n16/c2/seed16 FP rates and seed17/rate1
+record final-auditor snapshot MemoryErrors at the declared host envelope, with no scored or fully
 audited FP trajectory. The new n16 posterior executes; the total prefix has44
 checked descriptive scores, eight fresh decisions and384 posterior GPU forecasts.
 Remaining outcomes come only from the unchanged live matrix. The

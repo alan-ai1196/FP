@@ -3551,3 +3551,18 @@ scope is explicitly unresolved; no class, fresh, installation or new GPU
 claim is supplied. The current objective and Foundation remain unchanged.
 A future proposer must separate its causal guidance, the declared empirical
 decision class and actual fresh continuation evidence.
+
+## 99. RN-5's fourteenth attempt retains the third n16 snapshot failure
+
+The unchanged n16/c2/seed17/rate1 worker also exits with MemoryError in
+the final auditor's Runtime/arena snapshot. Its completed job records
+process peak17,179,684,864 and job peak17,180,917,760 bytes under the declared
+17,179,869,184-byte cap, exit1 and no timeout. It receives no successful
+host-bound, model-score, install, seal or full trajectory-audit claim.
+Independent analysis of the fourteen-attempt prefix verifies eleven
+EXECUTED and three FAILED jobs, with the same44 descriptive score checks,
+eight fresh decisions,4,528 CUDA/binary64 phases per path and384 posterior
+GPU forecasts. The research branch retains this exact partial journal;
+the running main journal continues with seed17/rate4 at the original source
+and resources. The separate short recurrent-model controls change no RN-5
+budget, data, source or acceptance rule, and add no comparative timing claim.

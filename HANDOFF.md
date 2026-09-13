@@ -183,16 +183,16 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-thirteen-attempt prefix contains eleven EXECUTED workers and two FAILED jobs.
+fourteen-attempt prefix contains eleven EXECUTED workers and three FAILED jobs.
 Eight FP streams seal, seven install, and4,528 CUDA/binary64 phases per path
 are independently checked. Three new posterior workers supply384 actual GPU
 forecasts; post-analysis verifies44 descriptive scores and eight fresh
 FP decisions. The first n16/c2/seed16 posterior has unseen CE0.3269395303.
-Both corresponding FP rates fail in the final CUDA auditor's arena snapshot
-with MemoryError under the fixed16GiB host envelope. They retain no FP model
+Both corresponding FP rates and n16/c2/seed17/rate1 fail in the final CUDA
+auditor's arena snapshot with MemoryError under the fixed16GiB host envelope. They retain no FP model
 score, install, seal or complete trajectory-audit claim. Other n16/c4 and
 selected-stress outcomes remain pending. Read the live main journal for the
-newest prefix; the research branch currently retains thirteen attempts.
+newest prefix; the research branch currently retains fourteen attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 
