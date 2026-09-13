@@ -134,8 +134,14 @@ inside a declared finite window. Exact, owned CPU functional and rounded
 interpreter checks pass, including a counterexample to a whole-history
 claim after window eviction. The complete Runtime retains those older
 observations. Two source-bound CPU jobs now complete at `a487718`, with26
-binary64 phases and fixed512MiB caps. Actual AMP execution, affordable longer
-histories and discovery of useful native state remain separate obligations.
+binary64 phases and fixed512MiB caps. Actual AMP execution also completes at
+`75de898`:49 sealed jobs,637 independent CUDA/binary64 phases per path and196
+exact stored-mass window-posterior forecasts, with the raw division errors
+reported separately. Affordable longer histories and discovery of useful
+native state remain separate obligations. Derive an owned native proposal
+from ordinary observations, retaining its full grammar/initializer/profile
+scope and actual fresh evidence rather than treating this initial model as
+already learned or installed.
 Do not turn this known-prior initial model into a learned-construction result
 or expand another static resource family; RN-5 continues unchanged.
 

@@ -212,16 +212,21 @@ Separate [source-bound CPU execution](evidence/minimal/FP_NATIVE_RECURRENT_POSTE
 at `a487718` completes both preregistered512MiB jobs and26 binary64 phases,
 with maximum completed job commitment44,797,952 bytes and no timeout. Both
 full-window and suffix controls seal with original observations retained.
-This supplies no proposer, class proof, install, actual CUDA or new baseline
+Those CPU checks supply no proposer, class proof, install or new baseline
 release claim; known prior/noise and finite-window range remain explicit.
-The same model's actual AMP matrix is now registered in
-`experiments/joint_uncertainty/recurrent_cuda.py`:49 fresh4GiB jobs,16MiB
-arena,32MiB allocator cap and1/100 tolerances. Metadata needs at most941 of
-the fixed4096 output cells. This registration alone supplies no target pass.
+The same model's [actual AMP matrix](evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_AUDIT.json)
+now completes at `75de898`:49 sealed fresh4GiB jobs,637 independently replayed
+CUDA/binary64 phases per path and196 exact normalized stored-mass forecasts.
+The fixed16MiB arena,32MiB allocator cap,131072-byte phase frames,4096 cells
+and1/100 tolerances are retained. Maximum completed job commitment is
+2,303,946,752 bytes; maximum frame use74,490 and output cells941. Native and
+normalizer errors are zero; raw division error is at most1/41943040.
 The initial49 jobs at `e92762c` all reject an unnecessary install contract
 before GPU allocation. Their complete jobs/common traceback are retained
 separately; correction removes only that unused registration from the empty
 policy and changes no Runtime rule, case, resource or numerical parameter.
+This is scoped model execution evidence, with no construction, installation,
+class optimum or complete implementation-release claim.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

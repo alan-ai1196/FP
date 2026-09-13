@@ -1,0 +1,3338 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration_source": "75de8987fc28af6edd29bcfe3930d75c299145d7",
+  "registration": {
+    "workers": 49,
+    "ordinary_events_per_worker": 4,
+    "host_cap": 4294967296,
+    "timeout_ms": 120000,
+    "packed_cap": 268435456,
+    "work_per_role": 10000000000,
+    "arena_bytes": 16777216,
+    "allocator_reserved_cap": 33554432,
+    "phase_output_cells": 4096,
+    "phase_evidence_bytes": 131072,
+    "state_native_normalizer_tolerance": "1/100",
+    "probability_tolerance": "1/100",
+    "board_vram_upper": 25769803776,
+    "execution_identity": [
+      "2.12.0+cu132",
+      "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+      "13.2",
+      "NVIDIA GeForce RTX 3090",
+      [
+        8,
+        6
+      ]
+    ],
+    "bounds": [
+      {
+        "window": 2,
+        "normalizer_and_activation_cap": "3240",
+        "graph": {
+          "nodes": 107,
+          "sources": 14,
+          "state_reads": 4,
+          "SUMs": 38,
+          "PRODUCTs": 51,
+          "SUM_edges": 130,
+          "edges": 232,
+          "slots": 2,
+          "bindings": 4
+        },
+        "output_cells": {
+          "initialize": 10,
+          "predict": 633,
+          "observe": 845,
+          "commit": 18
+        }
+      },
+      {
+        "window": 3,
+        "normalizer_and_activation_cap": "29160",
+        "graph": {
+          "nodes": 123,
+          "sources": 14,
+          "state_reads": 8,
+          "SUMs": 46,
+          "PRODUCTs": 55,
+          "SUM_edges": 146,
+          "edges": 256,
+          "slots": 2,
+          "bindings": 8
+        },
+        "output_cells": {
+          "initialize": 14,
+          "predict": 713,
+          "observe": 941,
+          "commit": 18
+        }
+      }
+    ]
+  },
+  "scope": "initial known-prior native finite-window model; actual owned AMP and binary64; no construction/install/class optimum or timing comparison",
+  "device": {
+    "identity": {
+      "runtime_version": 13040,
+      "driver_api_version": 13040,
+      "driver_version": "616.92",
+      "pci_bus_id": "0000:0B:00.0",
+      "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+      "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+      "2.12.0+cu132",
+      "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+      "13.2",
+      "NVIDIA GeForce RTX 3090",
+      [
+        8,
+        6
+      ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+  },
+  "workers": [
+    {
+      "case_index": 0,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299666432,
+        "peak_job_commit": 2300907520,
+        "user_100ns": 66406250,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7496,
+        "process_creation_100ns": 134337770726874633
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "37/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74338,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "38189/132120576000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "444529/839831258512050094080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726945,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7496,
+          "creation_100ns": 134337770726874633,
+          "lifetime_process_commit_peak": 2299666432,
+          "job_commit_peak": 2300907520,
+          "process_user_100ns": 62500000,
+          "process_kernel_100ns": 8281250,
+          "job_user_100ns": 62500000,
+          "job_kernel_100ns": 8281250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 1,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2165522432,
+        "peak_job_commit": 2166755328,
+        "user_100ns": 63906250,
+        "kernel_100ns": 11093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2604,
+        "process_creation_100ns": 134337770804994454
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "37/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74338,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "2579/6606028800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "263069/567453553048682496000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726936,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 2604,
+          "creation_100ns": 134337770804994454,
+          "lifetime_process_commit_peak": 2165522432,
+          "job_commit_peak": 2166755328,
+          "process_user_100ns": 59531250,
+          "process_kernel_100ns": 10937500,
+          "job_user_100ns": 59531250,
+          "job_kernel_100ns": 10937500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 2,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300915712,
+        "peak_job_commit": 2302136320,
+        "user_100ns": 65781250,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9896,
+        "process_creation_100ns": 134337770883266058
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "77/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74297,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "193741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "28229/68679894317400064000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726897,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 9896,
+          "creation_100ns": 134337770883266058,
+          "lifetime_process_commit_peak": 2300915712,
+          "job_commit_peak": 2302136320,
+          "process_user_100ns": 61406250,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 61406250,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 3,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301280256,
+        "peak_job_commit": 2302513152,
+        "user_100ns": 66250000,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7668,
+        "process_creation_100ns": 134337770961891100
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "77/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74281,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "193741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "28229/68679894317400064000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726905,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7668,
+          "creation_100ns": 134337770961891100,
+          "lifetime_process_commit_peak": 2301280256,
+          "job_commit_peak": 2302513152,
+          "process_user_100ns": 62187500,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 62187500,
+          "job_kernel_100ns": 9843750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 4,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2298413056,
+        "peak_job_commit": 2299629568,
+        "user_100ns": 66406250,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25144,
+        "process_creation_100ns": 134337771041290435
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "77/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74372,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "132741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "33583/137359788634800128000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726899,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 25144,
+          "creation_100ns": 134337771041290435,
+          "lifetime_process_commit_peak": 2298413056,
+          "job_commit_peak": 2299629568,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 62031250,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 5,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301034496,
+        "peak_job_commit": 2302259200,
+        "user_100ns": 66093750,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26208,
+        "process_creation_100ns": 134337771120071827
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "77/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74372,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "132741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "33583/137359788634800128000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726906,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 26208,
+          "creation_100ns": 134337771120071827,
+          "lifetime_process_commit_peak": 2301034496,
+          "job_commit_peak": 2302259200,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 8906250,
+          "job_user_100ns": 61875000,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 6,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299707392,
+        "peak_job_commit": 2300944384,
+        "user_100ns": 65156250,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2320,
+        "process_creation_100ns": 134337771198777433
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "37/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74189,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "38189/132120576000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "57023/104978907314006261760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726940,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 2320,
+          "creation_100ns": 134337771198777433,
+          "lifetime_process_commit_peak": 2299707392,
+          "job_commit_peak": 2300944384,
+          "process_user_100ns": 60781250,
+          "process_kernel_100ns": 10000000,
+          "job_user_100ns": 60937500,
+          "job_kernel_100ns": 10000000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 7,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300743680,
+        "peak_job_commit": 2301960192,
+        "user_100ns": 64375000,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24692,
+        "process_creation_100ns": 134337771277133148
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "37/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74225,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "38189/132120576000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "7867/14186338826217062400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726932,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 24692,
+          "creation_100ns": 134337771277133148,
+          "lifetime_process_commit_peak": 2300743680,
+          "job_commit_peak": 2301960192,
+          "process_user_100ns": 59843750,
+          "process_kernel_100ns": 11093750,
+          "job_user_100ns": 59843750,
+          "job_kernel_100ns": 11093750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 8,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300526592,
+        "peak_job_commit": 2301759488,
+        "user_100ns": 66718750,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3584,
+        "process_creation_100ns": 134337771355856203
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "45/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74435,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "147991/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "5151/17169973579350016000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726905,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 3584,
+          "creation_100ns": 134337771355856203,
+          "lifetime_process_commit_peak": 2300526592,
+          "job_commit_peak": 2301759488,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 9531250,
+          "job_user_100ns": 62031250,
+          "job_kernel_100ns": 9531250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 9,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299478016,
+        "peak_job_commit": 2300715008,
+        "user_100ns": 66093750,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12744,
+        "process_creation_100ns": 134337771435639416
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "45/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74435,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "147991/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "258403/846136297990368788480",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726898,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 12744,
+          "creation_100ns": 134337771435639416,
+          "lifetime_process_commit_peak": 2299478016,
+          "job_commit_peak": 2300715008,
+          "process_user_100ns": 61718750,
+          "process_kernel_100ns": 10000000,
+          "job_user_100ns": 61718750,
+          "job_kernel_100ns": 10000000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 10,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299723776,
+        "peak_job_commit": 2300952576,
+        "user_100ns": 65781250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 20440,
+        "process_creation_100ns": 134337771514794402
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "5/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74321,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "53939/132120576000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "11017/14186338826217062400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726933,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 20440,
+          "creation_100ns": 134337771514794402,
+          "lifetime_process_commit_peak": 2299723776,
+          "job_commit_peak": 2300952576,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 8906250,
+          "job_user_100ns": 61875000,
+          "job_kernel_100ns": 8906250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 11,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2165780480,
+        "peak_job_commit": 2167009280,
+        "user_100ns": 65781250,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10492,
+        "process_creation_100ns": 134337771593404920
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "61/250",
+          "5/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74184,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "53939/132120576000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "41743/70931694131085312000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726942,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 10492,
+          "creation_100ns": 134337771593404920,
+          "lifetime_process_commit_peak": 2165780480,
+          "job_commit_peak": 2167009280,
+          "process_user_100ns": 61718750,
+          "process_kernel_100ns": 8437500,
+          "job_user_100ns": 61718750,
+          "job_kernel_100ns": 8437500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 12,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301382656,
+        "peak_job_commit": 2302619648,
+        "user_100ns": 67656250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11336,
+        "process_creation_100ns": 134337771671792986
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "5/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74377,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "84253/264241152000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "11017/14186338826217062400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726934,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 11336,
+          "creation_100ns": 134337771671792986,
+          "lifetime_process_commit_peak": 2301382656,
+          "job_commit_peak": 2302619648,
+          "process_user_100ns": 63281250,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 63281250,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 13,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301833216,
+        "peak_job_commit": 2303049728,
+        "user_100ns": 65781250,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25524,
+        "process_creation_100ns": 134337771751857619
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "5/42"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/44040192",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74241,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "84253/264241152000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/44040192",
+          "division_error": "1/44040192"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "57023/104978907314006261760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/47287796087390208",
+          "division_error": "1/47287796087390208"
+        },
+        "packed_peak": 4726942,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 25524,
+          "creation_100ns": 134337771751857619,
+          "lifetime_process_commit_peak": 2301833216,
+          "job_commit_peak": 2303049728,
+          "process_user_100ns": 61562500,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 61562500,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 14,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301915136,
+        "peak_job_commit": 2303135744,
+        "user_100ns": 66406250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12828,
+        "process_creation_100ns": 134337771830422122
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "45/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74274,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "193741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "64083/137359788634800128000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726906,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 12828,
+          "creation_100ns": 134337771830422122,
+          "lifetime_process_commit_peak": 2301915136,
+          "job_commit_peak": 2303135744,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 61875000,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 15,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300129280,
+        "peak_job_commit": 2301341696,
+        "user_100ns": 65156250,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14868,
+        "process_creation_100ns": 134337771908879329
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "1/2",
+          "189/250",
+          "45/122"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "23/1023410176",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74274,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "193741/255852544000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "23/1023410176",
+          "division_error": "23/1023410176"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "64083/137359788634800128000",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "19/549439154539200512",
+          "division_error": "19/549439154539200512"
+        },
+        "packed_peak": 4726897,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 14868,
+          "creation_100ns": 134337771908879329,
+          "lifetime_process_commit_peak": 2300129280,
+          "job_commit_peak": 2301341696,
+          "process_user_100ns": 61406250,
+          "process_kernel_100ns": 9843750,
+          "job_user_100ns": 61406250,
+          "job_kernel_100ns": 9843750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 16,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2298892288,
+        "peak_job_commit": 2300121088,
+        "user_100ns": 68593750,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17224,
+        "process_creation_100ns": 134337771987558665
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "333/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74342,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/33554432",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "895349/4099176380832625459200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726896,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 17224,
+          "creation_100ns": 134337771987558665,
+          "lifetime_process_commit_peak": 2298892288,
+          "job_commit_peak": 2300121088,
+          "process_user_100ns": 64375000,
+          "process_kernel_100ns": 7500000,
+          "job_user_100ns": 64531250,
+          "job_kernel_100ns": 7500000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 17,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299805696,
+        "peak_job_commit": 2301009920,
+        "user_100ns": 67812500,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27884,
+        "process_creation_100ns": 134337772067261187
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "333/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74285,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "104943/662070886400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "39659/355446600590216396800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726891,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 27884,
+          "creation_100ns": 134337772067261187,
+          "lifetime_process_commit_peak": 2299805696,
+          "job_commit_peak": 2301009920,
+          "process_user_100ns": 63437500,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 63750000,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 18,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299801600,
+        "peak_job_commit": 2301026304,
+        "user_100ns": 68125000,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26568,
+        "process_creation_100ns": 134337772147778237
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "77/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74377,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "130961/1324141772800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "14823/44430825073777049600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726890,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 26568,
+          "creation_100ns": 134337772147778237,
+          "lifetime_process_commit_peak": 2299801600,
+          "job_commit_peak": 2301026304,
+          "process_user_100ns": 63593750,
+          "process_kernel_100ns": 10156250,
+          "job_user_100ns": 63593750,
+          "job_kernel_100ns": 10156250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 19,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300272640,
+        "peak_job_commit": 2301505536,
+        "user_100ns": 65625000,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27620,
+        "process_creation_100ns": 134337772228901466
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "77/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74148,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/33554432",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "252281/1024794095208156364800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726896,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 27620,
+          "creation_100ns": 134337772228901466,
+          "lifetime_process_commit_peak": 2300272640,
+          "job_commit_peak": 2301505536,
+          "process_user_100ns": 61562500,
+          "process_kernel_100ns": 9218750,
+          "job_user_100ns": 61562500,
+          "job_kernel_100ns": 9218750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 20,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300715008,
+        "peak_job_commit": 2301952000,
+        "user_100ns": 66718750,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24268,
+        "process_creation_100ns": 134337772308268191
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74175,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "31/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "53/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726830,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 24268,
+          "creation_100ns": 134337772308268191,
+          "lifetime_process_commit_peak": 2300715008,
+          "job_commit_peak": 2301952000,
+          "process_user_100ns": 62812500,
+          "process_kernel_100ns": 9218750,
+          "job_user_100ns": 62812500,
+          "job_kernel_100ns": 9218750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 21,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2298961920,
+        "peak_job_commit": 2300182528,
+        "user_100ns": 65781250,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28340,
+        "process_creation_100ns": 134337772387521425
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74175,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "31/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "53/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726830,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 28340,
+          "creation_100ns": 134337772387521425,
+          "lifetime_process_commit_peak": 2298961920,
+          "job_commit_peak": 2300182528,
+          "process_user_100ns": 61562500,
+          "process_kernel_100ns": 10000000,
+          "job_user_100ns": 61562500,
+          "job_kernel_100ns": 10156250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 22,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300678144,
+        "peak_job_commit": 2301898752,
+        "user_100ns": 63593750,
+        "kernel_100ns": 11562500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27676,
+        "process_creation_100ns": 134337772466397085
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74175,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "31/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "53/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726833,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 27676,
+          "creation_100ns": 134337772466397085,
+          "lifetime_process_commit_peak": 2300678144,
+          "job_commit_peak": 2301898752,
+          "process_user_100ns": 59531250,
+          "process_kernel_100ns": 11250000,
+          "job_user_100ns": 59531250,
+          "job_kernel_100ns": 11250000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 23,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2302722048,
+        "peak_job_commit": 2303946752,
+        "user_100ns": 66562500,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 20028,
+        "process_creation_100ns": 134337772545233775
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74175,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "31/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "53/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726833,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 20028,
+          "creation_100ns": 134337772545233775,
+          "lifetime_process_commit_peak": 2302722048,
+          "job_commit_peak": 2303946752,
+          "process_user_100ns": 62187500,
+          "process_kernel_100ns": 8906250,
+          "job_user_100ns": 62187500,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 24,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299551744,
+        "peak_job_commit": 2300772352,
+        "user_100ns": 65625000,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7124,
+        "process_creation_100ns": 134337772624356234
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74259,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "81/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/9007199254740992",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726829,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7124,
+          "creation_100ns": 134337772624356234,
+          "lifetime_process_commit_peak": 2299551744,
+          "job_commit_peak": 2300772352,
+          "process_user_100ns": 61250000,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 61250000,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 25,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299944960,
+        "peak_job_commit": 2301173760,
+        "user_100ns": 67656250,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17600,
+        "process_creation_100ns": 134337772703359157
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74259,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "81/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/9007199254740992",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726829,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 17600,
+          "creation_100ns": 134337772703359157,
+          "lifetime_process_commit_peak": 2299944960,
+          "job_commit_peak": 2301173760,
+          "process_user_100ns": 63750000,
+          "process_kernel_100ns": 7812500,
+          "job_user_100ns": 63750000,
+          "job_kernel_100ns": 7968750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 26,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300403712,
+        "peak_job_commit": 2301632512,
+        "user_100ns": 66718750,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 460,
+        "process_creation_100ns": 134337772782478044
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74259,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "81/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/18014398509481984",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726832,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 460,
+          "creation_100ns": 134337772782478044,
+          "lifetime_process_commit_peak": 2300403712,
+          "job_commit_peak": 2301632512,
+          "process_user_100ns": 62656250,
+          "process_kernel_100ns": 9375000,
+          "job_user_100ns": 62656250,
+          "job_kernel_100ns": 9375000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 27,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299191296,
+        "peak_job_commit": 2300420096,
+        "user_100ns": 66093750,
+        "kernel_100ns": 11875000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7692,
+        "process_creation_100ns": 134337772861438646
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74259,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "81/209715200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/18014398509481984",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726832,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7692,
+          "creation_100ns": 134337772861438646,
+          "lifetime_process_commit_peak": 2299191296,
+          "job_commit_peak": 2300420096,
+          "process_user_100ns": 61875000,
+          "process_kernel_100ns": 11562500,
+          "job_user_100ns": 61875000,
+          "job_kernel_100ns": 11718750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 28,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300772352,
+        "peak_job_commit": 2302013440,
+        "user_100ns": 66562500,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 428,
+        "process_creation_100ns": 134337772940789907
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "77/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74440,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "130961/1324141772800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "14823/44430825073777049600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726886,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 428,
+          "creation_100ns": 134337772940789907,
+          "lifetime_process_commit_peak": 2300772352,
+          "job_commit_peak": 2302013440,
+          "process_user_100ns": 62500000,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 62500000,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 29,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299297792,
+        "peak_job_commit": 2300522496,
+        "user_100ns": 65468750,
+        "kernel_100ns": 10468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3728,
+        "process_creation_100ns": 134337773020283047
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "77/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74190,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "438199/3817655500800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "618337/2049588190416312729600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726891,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 3728,
+          "creation_100ns": 134337773020283047,
+          "lifetime_process_commit_peak": 2299297792,
+          "job_commit_peak": 2300522496,
+          "process_user_100ns": 61250000,
+          "process_kernel_100ns": 10156250,
+          "job_user_100ns": 61250000,
+          "job_kernel_100ns": 10156250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 30,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300514304,
+        "peak_job_commit": 2301739008,
+        "user_100ns": 68593750,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2184,
+        "process_creation_100ns": 134337773099161264
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "333/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74246,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "438199/3817655500800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "9/36063981391052800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726891,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 2184,
+          "creation_100ns": 134337773099161264,
+          "lifetime_process_commit_peak": 2300514304,
+          "job_commit_peak": 2301739008,
+          "process_user_100ns": 64531250,
+          "process_kernel_100ns": 7343750,
+          "job_user_100ns": 64531250,
+          "job_kernel_100ns": 7343750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 31,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2165268480,
+        "peak_job_commit": 2166505472,
+        "user_100ns": 65625000,
+        "kernel_100ns": 11250000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17404,
+        "process_creation_100ns": 134337773178137662
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "9/50",
+          "1/2",
+          "333/410"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "3/419430400",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74278,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "104943/662070886400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "3/419430400",
+          "division_error": "3/419430400"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "9/36063981391052800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "51/923237923610951680",
+          "division_error": "51/923237923610951680"
+        },
+        "packed_peak": 4726887,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 17404,
+          "creation_100ns": 134337773178137662,
+          "lifetime_process_commit_peak": 2165268480,
+          "job_commit_peak": 2166505472,
+          "process_user_100ns": 61250000,
+          "process_kernel_100ns": 10937500,
+          "job_user_100ns": 61250000,
+          "job_kernel_100ns": 10937500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 32,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2166665216,
+        "peak_job_commit": 2167885824,
+        "user_100ns": 65468750,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7456,
+        "process_creation_100ns": 134337773257425833
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74490,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "841157/5571713433600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727981,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7456,
+          "creation_100ns": 134337773257425833,
+          "lifetime_process_commit_peak": 2166665216,
+          "job_commit_peak": 2167885824,
+          "process_user_100ns": 61250000,
+          "process_kernel_100ns": 9531250,
+          "job_user_100ns": 61406250,
+          "job_kernel_100ns": 9531250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 33,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300805120,
+        "peak_job_commit": 2302033920,
+        "user_100ns": 67656250,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27420,
+        "process_creation_100ns": 134337773335199870
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74490,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "109741/611529523200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727973,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 27420,
+          "creation_100ns": 134337773335199870,
+          "lifetime_process_commit_peak": 2300805120,
+          "job_commit_peak": 2302033920,
+          "process_user_100ns": 63437500,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 63593750,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 34,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300395520,
+        "peak_job_commit": 2301616128,
+        "user_100ns": 66250000,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28104,
+        "process_creation_100ns": 134337773415406042
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 73745,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "11/78643200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727132,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 28104,
+          "creation_100ns": 134337773415406042,
+          "lifetime_process_commit_peak": 2300395520,
+          "job_commit_peak": 2301616128,
+          "process_user_100ns": 62500000,
+          "process_kernel_100ns": 9531250,
+          "job_user_100ns": 62500000,
+          "job_kernel_100ns": 9531250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 35,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299731968,
+        "peak_job_commit": 2300956672,
+        "user_100ns": 65000000,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16220,
+        "process_creation_100ns": 134337773494735592
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 73658,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "1679/11324620800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727128,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 16220,
+          "creation_100ns": 134337773494735592,
+          "lifetime_process_commit_peak": 2299731968,
+          "job_commit_peak": 2300956672,
+          "process_user_100ns": 60937500,
+          "process_kernel_100ns": 9843750,
+          "job_user_100ns": 61093750,
+          "job_kernel_100ns": 9843750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 36,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300235776,
+        "peak_job_commit": 2301472768,
+        "user_100ns": 66875000,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 18180,
+        "process_creation_100ns": 134337773574168755
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74434,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "109741/611529523200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727974,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 18180,
+          "creation_100ns": 134337773574168755,
+          "lifetime_process_commit_peak": 2300235776,
+          "job_commit_peak": 2301472768,
+          "process_user_100ns": 62656250,
+          "process_kernel_100ns": 8906250,
+          "job_user_100ns": 62656250,
+          "job_kernel_100ns": 8906250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 37,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299899904,
+        "peak_job_commit": 2301132800,
+        "user_100ns": 67500000,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9248,
+        "process_creation_100ns": 134337773653290269
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74434,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "509057/5571713433600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727982,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 9248,
+          "creation_100ns": 134337773653290269,
+          "lifetime_process_commit_peak": 2299899904,
+          "job_commit_peak": 2301132800,
+          "process_user_100ns": 63437500,
+          "process_kernel_100ns": 8906250,
+          "job_user_100ns": 63437500,
+          "job_kernel_100ns": 8906250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 38,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300530688,
+        "peak_job_commit": 2301775872,
+        "user_100ns": 65625000,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15120,
+        "process_creation_100ns": 134337773733412848
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 73784,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "1679/11324620800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727130,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 15120,
+          "creation_100ns": 134337773733412848,
+          "lifetime_process_commit_peak": 2300530688,
+          "job_commit_peak": 2301775872,
+          "process_user_100ns": 61562500,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 61562500,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 39,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301120512,
+        "peak_job_commit": 2302353408,
+        "user_100ns": 67187500,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28864,
+        "process_creation_100ns": 134337773811900464
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 73619,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "11/78643200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "19/50665495807918080",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4727137,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 28864,
+          "creation_100ns": 134337773811900464,
+          "lifetime_process_commit_peak": 2301120512,
+          "job_commit_peak": 2302353408,
+          "process_user_100ns": 63593750,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 63593750,
+          "job_kernel_100ns": 9218750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 40,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299785216,
+        "peak_job_commit": 2301014016,
+        "user_100ns": 66875000,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24420,
+        "process_creation_100ns": 134337773890964400
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74382,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/5629499534213120",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726518,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 24420,
+          "creation_100ns": 134337773890964400,
+          "lifetime_process_commit_peak": 2299785216,
+          "job_commit_peak": 2301014016,
+          "process_user_100ns": 62812500,
+          "process_kernel_100ns": 8125000,
+          "job_user_100ns": 62812500,
+          "job_kernel_100ns": 8281250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 41,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299359232,
+        "peak_job_commit": 2300600320,
+        "user_100ns": 65937500,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26912,
+        "process_creation_100ns": 134337773969554738
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74382,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/5629499534213120",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726507,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 26912,
+          "creation_100ns": 134337773969554738,
+          "lifetime_process_commit_peak": 2299359232,
+          "job_commit_peak": 2300600320,
+          "process_user_100ns": 61718750,
+          "process_kernel_100ns": 9375000,
+          "job_user_100ns": 61718750,
+          "job_kernel_100ns": 9531250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 42,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299330560,
+        "peak_job_commit": 2300567552,
+        "user_100ns": 67968750,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5280,
+        "process_creation_100ns": 134337774048905932
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74369,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "47/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4725675,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 5280,
+          "creation_100ns": 134337774048905932,
+          "lifetime_process_commit_peak": 2299330560,
+          "job_commit_peak": 2300567552,
+          "process_user_100ns": 63593750,
+          "process_kernel_100ns": 9062500,
+          "job_user_100ns": 63593750,
+          "job_kernel_100ns": 9062500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 43,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301153280,
+        "peak_job_commit": 2302382080,
+        "user_100ns": 65000000,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7740,
+        "process_creation_100ns": 134337774128458209
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "41/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74369,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "47/112589990684262400",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4725664,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 7740,
+          "creation_100ns": 134337774128458209,
+          "lifetime_process_commit_peak": 2301153280,
+          "job_commit_peak": 2302382080,
+          "process_user_100ns": 60781250,
+          "process_kernel_100ns": 10000000,
+          "job_user_100ns": 60781250,
+          "job_kernel_100ns": 10000000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 44,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300481536,
+        "peak_job_commit": 2301714432,
+        "user_100ns": 65000000,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28920,
+        "process_creation_100ns": 134337774206589992
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74326,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "13723/36479156981701017600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726509,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 28920,
+          "creation_100ns": 134337774206589992,
+          "lifetime_process_commit_peak": 2300481536,
+          "job_commit_peak": 2301714432,
+          "process_user_100ns": 60625000,
+          "process_kernel_100ns": 10625000,
+          "job_user_100ns": 60625000,
+          "job_kernel_100ns": 10625000
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 45,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2299449344,
+        "peak_job_commit": 2300674048,
+        "user_100ns": 66562500,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 6044,
+        "process_creation_100ns": 134337774284860679
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74326,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "1/5629499534213120",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4726519,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 6044,
+          "creation_100ns": 134337774284860679,
+          "lifetime_process_commit_peak": 2299449344,
+          "job_commit_peak": 2300674048,
+          "process_user_100ns": 62031250,
+          "process_kernel_100ns": 9531250,
+          "job_user_100ns": 62031250,
+          "job_kernel_100ns": 9531250
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 46,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2301014016,
+        "peak_job_commit": 2302234624,
+        "user_100ns": 64687500,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24720,
+        "process_creation_100ns": 134337774364250739
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74327,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "649/1887436800",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "337/1013309916158361600",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4725662,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 24720,
+          "creation_100ns": 134337774364250739,
+          "lifetime_process_commit_peak": 2301014016,
+          "job_commit_peak": 2302234624,
+          "process_user_100ns": 60468750,
+          "process_kernel_100ns": 10156250,
+          "job_user_100ns": 60781250,
+          "job_kernel_100ns": 10312500
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 47,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300506112,
+        "peak_job_commit": 2301739008,
+        "user_100ns": 66250000,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25644,
+        "process_creation_100ns": 134337774443008782
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 3,
+        "reference_and_actual_mass_forecasts_p0": [
+          "9/10",
+          "1/2",
+          "9/10",
+          "9/50"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "1/41943040",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 74327,
+          "maximum_output_cells": 941
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "3/10485760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "1/41943040",
+          "division_error": "1/41943040"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "11/56294995342131200",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4725668,
+        "consumed_arena_extent": 47752,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 25644,
+          "creation_100ns": 134337774443008782,
+          "lifetime_process_commit_peak": 2300506112,
+          "job_commit_peak": 2301739008,
+          "process_user_100ns": 62187500,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 62187500,
+          "job_kernel_100ns": 9843750
+        }
+      },
+      "device_matches_common_identity": true
+    },
+    {
+      "case_index": 48,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2230951936,
+        "peak_job_commit": 2232164352,
+        "user_100ns": 59218750,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29304,
+        "process_creation_100ns": 134337774522572622
+      },
+      "worker_status": "EXECUTED",
+      "result": {
+        "run_status": "SEALED_CUDA_STREAM",
+        "halted": null,
+        "window": 2,
+        "reference_and_actual_mass_forecasts_p0": [
+          "1/2",
+          "41/50",
+          "73/82",
+          "1/2"
+        ],
+        "retained_observations": 4,
+        "maximum_raw_division_error": "5/343932928",
+        "CUDA_audit": {
+          "phases": 13,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 66876,
+          "maximum_output_cells": 845
+        },
+        "independent_binary64_phases": 13,
+        "CUDA_relation_maxima": {
+          "state_error": "2089/15476981760",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "5/343932928",
+          "division_error": "5/343932928"
+        },
+        "binary64_relation_maxima": {
+          "state_error": "14311/16618282624997130240",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "11/225179981368524800",
+          "division_error": "11/225179981368524800"
+        },
+        "packed_peak": 4342163,
+        "consumed_arena_extent": 42728,
+        "class_or_install_certificate": false,
+        "host": {
+          "process_id": 29304,
+          "creation_100ns": 134337774522572622,
+          "lifetime_process_commit_peak": 2230951936,
+          "job_commit_peak": 2232164352,
+          "process_user_100ns": 55625000,
+          "process_kernel_100ns": 9687500,
+          "job_user_100ns": 55781250,
+          "job_kernel_100ns": 9687500
+        }
+      },
+      "device_matches_common_identity": true
+    }
+  ],
+  "prior_registration_failure": {
+    "journal": "evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_REGISTRATION_FAILURE.json",
+    "registration_source": "e92762cdd302b2567bf565954d50f92ff8c4584a",
+    "completed_failed_jobs": 49,
+    "correction": "remove unused install registration from the empty policy; all model/data/resource parameters retained"
+  }
+}

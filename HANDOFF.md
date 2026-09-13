@@ -243,18 +243,23 @@ The [source-bound CPU evidence](evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_C
 at `a487718` now completes both fixed512MiB jobs:26 binary64 phases total,
 maximum completed job commitment44,797,952 bytes, no timeout. Both ordinary
 streams seal; the H2 control explicitly differs from the full-history
-posterior after eviction. Actual owned AMP remains unexecuted for this model.
-The committed `recurrent_cuda.py` now registers49 actual AMP jobs:the48
-existing four-label interpreter streams plus that suffix control. Each gets
-a fresh4GiB host job,16/32MiB arena/reservation and unchanged1/100 tolerances.
+posterior after eviction.
+The [actual AMP journal](evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_AUDIT.json)
+at `75de898` now completes49 jobs:the48 four-label interpreter streams plus
+that suffix control. All seal under their fixed4GiB host,16/32MiB arena/
+reservation and1/100 tolerances, with637 independent CUDA/binary64 phases
+per path and196 exact stored-mass posterior forecasts. Maximum job
+commitment is2,303,946,752 bytes; raw division error is at most1/41943040.
 Process-local allocator history and the shared-board capacity envelope
-permit these short controls beside RN-5; no exclusive GPU or timing claim
-is involved. Retain every outcome and audit each complete phase before
-promoting this registration to target evidence.
+permit these short controls beside RN-5, with no exclusive GPU or timing claim.
 Initial source `e92762c` incorrectly attached an unused install contract;
 all49 jobs were rejected before CUDA allocation and are retained in the
 separate registration-failure journal. The corrected empty policy registers
 no install contract and keeps the same49 cases and all budgets/tolerances.
+This closes the finite model's owned AMP question. Next derive a useful
+native proposal from ordinary observations with explicit grammar, initializer,
+profile and fresh-evidence scope. Its known-prior initial graph is not yet
+discovered structure or an affordable long-history posterior.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

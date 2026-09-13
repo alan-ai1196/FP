@@ -1,12 +1,13 @@
 # A finite-window posterior is a native delayed positive program
 
 Status: **scoped exact construction theorem, small exhaustive native checks,
-source-bound owned CPU execution and an independent rounded interpreter**.
+source-bound owned CPU/RTX 3090 execution and an independent rounded interpreter**.
 This supplies a control for the [v5 calibration obstruction](JOINT_FACTOR_DYNAMICS.md),
 using the existing typed sources, positive SUM/PRODUCT, delayed transition
 bodies and final normalization. No Foundation definition or ERC-1 condition
-changes. Two completed CPU jobs bind source `a487718`; actual CUDA execution
-remains outside this evidence.
+changes. Two completed CPU jobs bind source `a487718`;49 completed actual
+CUDA jobs bind `75de898`. This remains a known-prior finite-window control,
+with no compiler discovery, installation or class-optimality claim.
 
 ## 1. The task and the information cut
 
@@ -220,6 +221,41 @@ Runtime explicitly permits this case. The same49 model/data cases and all
 resource/tolerance values are retained. No actual failure is relabelled a
 successful stream and no Runtime or Foundation rule changes.
 
+### Actual AMP result
+
+The [completed target journal](../../evidence/minimal/FP_NATIVE_RECURRENT_POSTERIOR_CUDA_AUDIT.json)
+now binds `75de8987fc28af6edd29bcfe3930d75c299145d7`. All49 corrected-source
+jobs exit0 without timeout and seal their owned streams. Every one of the
+637 actual CUDA phases matches the independent rounded interpreter;637
+binary64 phases also pass independent replay. All196 normalized stored-mass
+forecasts equal the declared-window exact posterior. In particular, the
+H2 eviction control still outputs1/2 while full history would give41/50.
+No observations are removed from Runtime. This does not assert that a
+single-precision division word equals its generally non-dyadic probability.
+
+Across these streams, maximum CUDA native and normalizer errors are zero;
+state error is193741/255852544000 and raw division/probability error is
+1/41943040. The binary64 maxima are14311/16618282624997130240 for state and
+51/923237923610951680 for probability/division, with zero native and
+normalizer error. Gradient state is checked even though the registered
+learning rate is zero. There is no skipped learner or supplied state update.
+
+The largest completed process commitment is2,302,722,048 bytes and job
+commitment2,303,946,752, below the fixed4GiB. Maximum packed residency is
+4,727,982 bytes; the consumed native arena extent is47,752 inside the fixed
+16MiB backing allocation. The largest phase frame uses74,490 of131,072
+prepaid bytes, and at most941 output cells are checked. These are measured
+values of the registered implementation, not optimal resource laws. All
+jobs bind the same RTX3090 UUID, SM8.6, Torch2.12.0+cu132 and native CUDA/
+driver identity recorded in the journal. The whole-board upper remains a
+separate24GiB coordinate, with no exclusive availability or timing claim.
+
+The earlier49 constructor failures remain in their separate source-bound
+journal and are linked from this result. The successful matrix changes
+no model, case, resource or tolerance after that registration correction.
+These target controls extend model evidence; they do not constitute a rerun
+of the frozen31-script implementation release.
+
 ## 6. What this resolves and what it leaves open
 
 The earlier finite-update calibration failure belongs to v5's parameter
@@ -232,6 +268,9 @@ to a continuation equivalence or a compiler certificate.
 The model is registered initially, with known prior/noise and a finite window.
 This proves neither that the existing proposer discovers it nor that it is
 cheaper than a strong posterior baseline, useful over long histories, or
-installable from current evidence. Actual owned AMP execution remains the
-next numerical question. RN-5's matrix, data, model, source and budgets stay
+installable from current evidence. Owned CPU/AMP realization is now checked
+for the stated cases. The next model/construction question is how ordinary
+observations can guide a resource-admitted native proposal that uses delayed
+state, with its actual initializer/profile/fresh-evidence obligations.
+RN-5's matrix, data, model, source and budgets stay
 unchanged; its failures remain failures. Foundation R4 and ERC-1 stay frozen.

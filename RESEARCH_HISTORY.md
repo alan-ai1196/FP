@@ -3487,3 +3487,34 @@ only the unused install declaration, which the existing constructor permits
 for an empty policy. It retains all49 cases, graph/learner/data parameters,
 resource budgets and numerical tolerances. No actual model/CUDA result was
 seen before this correction, and no Runtime or Foundation rule changes.
+
+### 97.2 All49 actual AMP controls complete at the declared resources
+
+Corrected source `75de8987fc28af6edd29bcfe3930d75c299145d7` completes all49
+jobs without timeout. Every owned stream seals;637 actual CUDA phases match
+the independent rounded interpreter, and637 binary64 phases pass independent
+replay. All196 normalized stored-mass forecasts equal the stated-window
+posterior, including the H2 eviction control's1/2 instead of full history's
+41/50. The complete Runtime retains all observations. The native graph's
+gradient/optimizer machinery remains checked at rate0; adaptation proceeds
+through its ordinary positive delayed values.
+
+CUDA native and normalizer errors are zero. Maximum state error is
+193741/255852544000 and probability/raw division error1/41943040; binary64
+maxima are14311/16618282624997130240 for state and51/923237923610951680 for
+probability/division. Maximum completed process/job commitments are
+2,302,722,048/2,303,946,752 bytes below4GiB. Maximum packed residency is
+4,727,982 bytes, consumed arena extent47,752 and phase-frame use74,490;
+at most941 of the fixed4096 output cells are needed. Each job binds the same
+RTX3090/native runtime identity, with the separate whole-board capacity
+coordinate and no exclusive-device or comparative-timing claim.
+
+The earlier49 constructor rejections retain their own completed jobs and
+common traceback. No case, budget or numerical tolerance changes after
+the unused-install registration correction. The compact target journal
+retains outcomes and independent phase/forecast checks without weights or
+bulk phase histories. This closes the native finite-window control's CPU/
+AMP realization, but supplies no discovery, installation, class-optimality,
+long-history affordability or new full implementation-release result.
+The next model question is an owned native proposal guided by ordinary
+observations and actual initializer/profile/fresh-evidence resources.
