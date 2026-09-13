@@ -16,6 +16,7 @@ from dataclasses import dataclass
 from fractions import Fraction as F
 
 from .core import ContractError
+from .learner import SIMPLEX_GRADIENT
 from .program import Program, SemanticRules, rational
 from .resources import ObjectSpec
 from .encoding import pack, packed_size
@@ -64,7 +65,9 @@ class ReferenceMachineModel:
         return 5*program.counts()['edges']+3*len(program.heads)+3*program.slot_count+1
 
     @staticmethod
-    def commit_work(program: Program) -> int:
+    def commit_work(program: Program, spec=None) -> int:
+        if spec is not None and spec.optimizer_id == SIMPLEX_GRADIENT:
+            return 12*len(spec.simplex_slots)+2*program.slot_count+8
         return 6*program.slot_count+1
 
     @staticmethod

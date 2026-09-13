@@ -21,7 +21,7 @@ from typing import Mapping
 
 from .binary_arithmetic import BinaryFormat, round_binary
 from .core import ContractError, natural
-from .learner import LearnerSpec
+from .learner import SIMPLEX_GRADIENT, LearnerSpec
 from .numerics import compare_exact
 from .program import Product, Program, SemanticRules, Source, State, Sum, name
 from .semantics import ArithmeticUnresolved
@@ -476,6 +476,44 @@ def commit_event(state: CudaLearnerState, spec: LearnerSpec,
     if state.theta.device != arith.device or state.unit_count != spec.update_unit or state.cursor % spec.update_unit:
         raise ContractError('CUDA commit is outside a full registered update unit or device')
     scale = arith.div(arith.constant(spec.learning_rate), arith.constant(F(spec.update_unit)))
+    if spec.optimizer_id == SIMPLEX_GRADIENT:
+        if spec.simplex_slots[-1] >= state.theta.numel():
+            raise ContractError('CUDA learner lacks its registered simplex block')
+        weights = arith.stack(tuple(state.theta[slot] for slot in spec.simplex_slots))
+        gradients = arith.stack(tuple(state.gradient_sum[slot] for slot in spec.simplex_slots))
+        zero, one = arith.constant(F(0)), arith.constant(F(1))
+        def ordered_sum(values):
+            result = zero
+            for index in range(values.numel()):
+                result = arith.add(result, values[index])
+            return result
+        def positive_total(value):
+            arith.check()
+            word = raw_tensor(value)[0]
+            if word & 0x80000000 or not word & 0x7fffffff:
+                raise ArithmeticUnresolved('CUDA simplex has no positive normalizer')
+        total = ordered_sum(weights)
+        weighted = ordered_sum(arith.mul(weights, gradients))
+        positive_total(total)
+        mean = arith.div(weighted, total)
+        direction = arith.add(gradients, arith.neg(mean))
+        factor = arith.add(one, arith.neg(arith.mul(scale, direction)))
+        values = arith.mul(weights, factor)
+        arith.check()
+        if any(word & 0x80000000 and word & 0x7fffffff for word in raw_tensor(values)):
+            raise ArithmeticUnresolved('CUDA simplex gradient leaves its nonnegative domain')
+        normalizer = ordered_sum(values)
+        positive_total(normalizer)
+        # Negativity/nonfinite checks precede this representation-only zero
+        # canonicalization, so it cannot conceal an invalid update.
+        normalized = arith.positive_part(arith.div(values, normalizer))
+        selected = dict(zip(spec.simplex_slots, range(len(spec.simplex_slots))))
+        theta = arith.stack(tuple(normalized[selected[slot]] if slot in selected else state.theta[slot]
+                                  for slot in range(state.theta.numel())))
+        gradient = arith.repeat(zero, state.theta.numel())
+        arith.check()
+        return replace(state, theta=theta, gradient_sum=gradient,
+                       unit_count=0, optimizer_steps=state.optimizer_steps+1)
     step = arith.mul(scale, state.gradient_sum)
     updated = arith.positive_part(arith.add(state.theta, arith.neg(step)))
     if spec.commit_grid_bits is not None:

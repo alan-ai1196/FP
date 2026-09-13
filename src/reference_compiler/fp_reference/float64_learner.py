@@ -14,7 +14,7 @@ from typing import Mapping
 
 from .binary_arithmetic import Float64Arithmetic, Float64Value
 from .core import ContractError, natural
-from .learner import LearnerSpec
+from .learner import SIMPLEX_GRADIENT, LearnerSpec
 from .numerics import compare_exact
 from .program import Product, Program, SemanticRules, Source, State, Sum, Term, name
 
@@ -141,6 +141,8 @@ def commit_operations(state: Float64LearnerState, spec: LearnerSpec) -> int:
     """Scale casts/division, separate step/neg/add/projection and optional floor."""
     if type(state) is not Float64LearnerState or type(spec) is not LearnerSpec:
         raise ContractError('registered binary64 learner and optimizer required')
+    if spec.optimizer_id == SIMPLEX_GRADIENT:
+        return 7+11*len(spec.simplex_slots)
     return 4+len(state.theta)*(4+int(spec.commit_grid_bits is not None))
 
 
@@ -255,6 +257,37 @@ def commit_event(state: Float64LearnerState, spec: LearnerSpec,
     if state.unit_count != spec.update_unit or state.cursor % spec.update_unit:
         raise ContractError('binary64 optimizer commit is outside a full registered update unit')
     scale = arith.div(arith.cast(spec.learning_rate), arith.cast(F(spec.update_unit)))
+    if spec.optimizer_id == SIMPLEX_GRADIENT:
+        from .semantics import ArithmeticUnresolved
+        if spec.simplex_slots[-1] >= len(state.theta):
+            raise ContractError('binary64 learner lacks its registered simplex block')
+        zero, one = arith.cast(F(0)), arith.cast(F(1))
+        total = weighted = zero
+        for slot in spec.simplex_slots:
+            total = arith.add(total, state.theta[slot])
+            weighted = arith.add(weighted, arith.mul(state.theta[slot], state.gradient_sum[slot]))
+        if total.exact <= 0:
+            raise ArithmeticUnresolved('binary64 simplex has no positive parameter total')
+        mean = arith.div(weighted, total)
+        negative_mean = arith.neg(mean)
+        theta = list(state.theta)
+        normalizer = zero
+        for slot in spec.simplex_slots:
+            direction = arith.add(state.gradient_sum[slot], negative_mean)
+            factor = arith.add(one, arith.neg(arith.mul(scale, direction)))
+            updated = arith.mul(state.theta[slot], factor)
+            if updated.exact < 0:
+                raise ArithmeticUnresolved('binary64 simplex gradient leaves its nonnegative domain')
+            theta[slot] = updated
+            normalizer = arith.add(normalizer, updated)
+        if normalizer.exact <= 0:
+            raise ArithmeticUnresolved('binary64 simplex successor has no positive normalizer')
+        for slot in spec.simplex_slots:
+            # Negative successors were already refused. Canonicalize either
+            # zero sign after division, without clipping a negative update.
+            theta[slot] = arith.positive_part(arith.div(theta[slot], normalizer))
+        return replace(state, theta=tuple(theta), gradient_sum=(zero,)*len(theta),
+                       unit_count=0, optimizer_steps=state.optimizer_steps+1)
     theta = []
     for value, gradient in zip(state.theta, state.gradient_sum):
         step = arith.mul(scale, gradient)

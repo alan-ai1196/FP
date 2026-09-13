@@ -2436,8 +2436,15 @@ commutes with this rule; within the stated separable diagonal gradient class,
 that requirement forces the weight-proportional preconditioner. Its native
 known-noise model retains whole-history predictions with normalizer10, but
 needs a new declared initializer/U and growing exact parameter precision.
-The current Runtime rejects this unimplemented U. This is a scoped learner
-derivation and exact audit, not a graph-only result, AMP release or transport.
+The [scoped Runtime contract](theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md) now
+registers this distinct U with explicit normalization on both numerical
+paths, full state, a paid native proposer and the existing fresh-install
+policy. With a larger update unit its affine law is a mean of individual
+posterior steps at frozen weights, not a sequential posterior. Missing or
+invalid initializer blocks remain unresolved constructor outcomes. This
+extension does not change the frozen Foundation, native architecture actions,
+RN-5's SGD decision class or the old release scope; matched model usefulness
+and long-history AMP behavior require their own evidence.
 
 ## Frozen research rule
 

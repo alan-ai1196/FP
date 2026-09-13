@@ -107,6 +107,22 @@ def model_observe(graph, state, prediction, target):
 def model_commit(state, spec):
     assert state.unit == spec.update_unit and state.cursor % spec.update_unit == 0
     scale = q(q(spec.learning_rate)/q(F(spec.update_unit)))
+    if spec.optimizer_id == 'mean-ce-normalized-simplex-gradient-v1':
+        total = moment = F(0)
+        for index in spec.simplex_slots:
+            total = q(total+state.theta[index])
+            moment = q(moment+q(state.theta[index]*state.gradient[index]))
+        mean = q(moment/total)
+        theta = list(state.theta)
+        normalization = F(0)
+        for index in spec.simplex_slots:
+            multiplier = q(F(1)-q(scale*q(state.gradient[index]-mean)))
+            theta[index] = q(state.theta[index]*multiplier)
+            assert theta[index] >= 0
+            normalization = q(normalization+theta[index])
+        for index in spec.simplex_slots:
+            theta[index] = max(F(0),q(theta[index]/normalization))
+        return replace(state, theta=tuple(theta), gradient=(F(0),)*len(theta), unit=0, steps=state.steps+1)
     theta = []
     for value, gradient in zip(state.theta, state.gradient):
         updated = max(F(0), q(value-q(scale*gradient)))
@@ -450,9 +466,41 @@ def failure_and_grid_audit():
             'host_RNE32_ingress_preserves_negative_underflow_zero': True}
 
 
+def simplex_boundary_audit():
+    from fp_reference.learner import SIMPLEX_GRADIENT
+    from fp_reference.cuda_prefix import output_cells
+    cases = (((F(0),F(1)),(F(10),F(0)),(0,1)),
+             ((F(1,3),)*3,(F(1),F(2),F(3)),(0,1,2)),
+             ((F(2),F(1,4),F(3),F(3,4)),(F(7),F(-1),F(-2),F(1)),(1,3)))
+    checked = 0
+    for theta,gradient,slots in cases:
+        arith = gpu.CudaArithmetic(32768)
+        actual = gpu.CudaLearnerState(arith.ingress(theta),(),arith.ingress(gradient),1,1,0)
+        expected = ModelState(tuple(map(q,theta)),(),tuple(map(q,gradient)),1,1,0)
+        spec = LearnerSpec(1,F(1,4),optimizer_id=SIMPLEX_GRADIENT,simplex_slots=slots)
+        arith = gpu.CudaArithmetic(32768)
+        before = arith.output_cells
+        result = gpu.commit_event(actual,spec,arith)
+        same_state(result,model_commit(expected,spec))
+        graph = Program((Sum('mass',()),),len(theta),(0,0))
+        assert arith.output_cells-before==output_cells('commit',graph,contract().semantics,spec)
+        if not theta[slots[0]]:
+            assert gpu.raw_tensor(result.theta)[slots[0]]==0
+        checked += 1
+    # A nonzero negative successor is refused before zero canonicalization.
+    arith = gpu.CudaArithmetic(32768)
+    state = gpu.CudaLearnerState(arith.ingress((F(9,10),F(1,10))),(),
+        arith.ingress((F(0),F(5))),1,1,0)
+    spec = LearnerSpec(1,F(1),optimizer_id=SIMPLEX_GRADIENT,simplex_slots=(0,1))
+    arith = gpu.CudaArithmetic(32768)
+    rejects(lambda:gpu.commit_event(state,spec,arith),ArithmeticUnresolved)
+    return {'rounded_complete_successors':checked,'prepaid_output_extents_match':True,
+            'zero_times_negative_factor_canonicalized_after_validation':True,'negative_nonzero_update_refused':True}
+
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--section', choices=('all', 'exhaustive', 'profile', 'topology', 'failures'), default='all')
+    parser.add_argument('--section', choices=('all', 'exhaustive', 'profile', 'topology', 'failures', 'simplex'), default='all')
     parser.add_argument('--write', action='store_true')
     args = parser.parse_args()
     if args.write and args.section != 'all':
@@ -462,7 +510,7 @@ def main():
               'backend_id': gpu.BACKEND_ID, 'device': torch.cuda.get_device_name(0),
               'torch': torch.__version__, 'torch_CUDA_runtime': torch.version.cuda}
     for name, audit in (('exhaustive', exhaustive_audit), ('profile', profile_recurrence_audit),
-                        ('topology', topology_audit), ('failures', failure_and_grid_audit)):
+                        ('topology', topology_audit), ('failures', failure_and_grid_audit), ('simplex', simplex_boundary_audit)):
         if args.section in ('all', name):
             result[name] = audit()
             print(name+' PASS', flush=True)

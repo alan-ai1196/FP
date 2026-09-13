@@ -3847,3 +3847,32 @@ model result or resource certificate. Main source38b27b3 and its execution
 dependencies pass the existing guard. The registered resume path continues
 at task24, n16/c4 seed18 rate4, at23:08:27 UTC with unchanged resources and
 timeout. No completed task is repeated and no earlier outcome is removed.
+
+## 110. Register the simplex learner as an owned transition, not supplied weights
+
+The affine theorem now has an explicit Runtime U:
+`mean-ce-normalized-simplex-gradient-v1`. It binds a simplex slot block,
+fixed other parameters, the actual initializer and full event/update clocks.
+Every ambient native gradient remains accumulated, including the nonzero
+fixed-feature derivative. Both numerical paths perform an explicit final
+normalizing division; it is algebraically the identity on the exact simplex.
+Negative updates are refused before numerical zero canonicalization.
+
+The extension exposes a useful distinction: for update unit U>1, the affine
+transition averages single-observation posteriors at the frozen starting
+weights. Two identical labels give weights9/10,1/10 in one two-event unit,
+versus81/82,1/82 in two sequential units. The new exact contract audit checks
+603 commits, noncontiguous blocks, zero weights,12 registration refusals and
+10 complete-context proposer refusals. The full20-program tiny search keeps
+15 missing-block constructor failures and remains unresolved; the distinct
+SGD class compares all20. No syntax is silently removed to manufacture a proof.
+
+The v7 emitter constructs literal native syntax for the declared fair-prior,
+known-noise affine model. Runtime owns its Gamma, actual profile, frozen-state
+comparison and fresh paired starts. Small development CPU and RTX3090 streams
+install at cursor22, including the actual two-pass profile, and independently
+replay complete state and forecasts. These are implementation checks, not a
+matched model comparison or a replacement for registered job evidence.
+The eight-job CPU/CUDA matrix fixes source dependencies, resource limits,
+tolerances and minimal reporting before its first committed-source execution.
+Foundation, ERC-1 and the still-running RN-5 SGD matrix remain unchanged.

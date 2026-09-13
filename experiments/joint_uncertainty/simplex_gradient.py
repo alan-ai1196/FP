@@ -1,4 +1,4 @@
-"""Exact native-gradient study of a different, unregistered learner rule.
+"""Exact native-gradient study of the distinct simplex learner rule.
 
 The categorical simplex metric and uniform initializer are explicit model
 choices. This is not the Runtime's projected SGD, a proposer, or an AMP audit.
@@ -70,7 +70,7 @@ def native_history_state(n, history):
     i, j, y = history[-1]
     prediction = native_prediction(n, weights, (i, j))
     gradient = ce_gradient(graph, (F(1),)+weights, prediction, y, bit_limit=32768)
-    # Unit feature slot stays fixed by the proposed learner specification.
+    # Unit feature slot stays fixed by the distinct learner specification.
     result = simplex_step(weights, gradient[1:])
     assert sum(result) == 1 and min(result) > 0
     return result
@@ -255,7 +255,7 @@ def boundaries():
             'same_pair_forecasts_next_label_successors': list(map(str, successors)),
             'one_record_replayed_once_or_twice': list(map(str, replay_predictions)),
             'fixed_unit_has_nonzero_native_gradient': str(unit_gradient),
-            'current_Runtime_refuses_unregistered_optimizer': refused,
+            'unknown_optimizer_id_refused': refused,
             'scope': 'different declared learner/initializer; no Foundation or graph-only emergence claim'}
 
 

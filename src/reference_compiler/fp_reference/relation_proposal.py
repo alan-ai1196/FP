@@ -33,7 +33,8 @@ class RelationSourceSpec:
         if self.solver not in ('empirical-binary-relation-component-symmetry-v3',
                                'empirical-binary-relation-balanced-readout-v4',
                                'empirical-binary-relation-joint-polynomial-v5',
-                               'causal-binary-relation-window-posterior-v6'):
+                               'causal-binary-relation-window-posterior-v6',
+                               'native-binary-relation-simplex-posterior-v7'):
             raise ContractError('unregistered empirical relation solver')
         object.__setattr__(self, 'token_atoms', atoms)
 
@@ -62,7 +63,7 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
             tuple((i, j, counts[0], counts[1]) for (i, j), counts in sorted(edges.items())),
             tuple(components), tuple(assignment), scale, program, reason)
 
-    if registration.solver == 'causal-binary-relation-window-posterior-v6':
+    if registration.solver in ('causal-binary-relation-window-posterior-v6', 'native-binary-relation-simplex-posterior-v7'):
         return result(reason='the causal proposer requires the complete registered data, learner, domain and profile context')
     if len(rules.base) != 2 or rules.base != (F(1), F(1)) or rules.states:
         return result(reason='this proposal solver uses the registered static binary base-one interface')

@@ -16,7 +16,7 @@ from typing import Mapping
 from .core import ContractError, IdentityUnresolved, freeze_data, natural, stable_hash
 from .data_usage import DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
-from .learner import LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
+from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .encoding import packed_size, write_packed, fragments
 from .host_failure import guard_host_allocations
@@ -47,6 +47,8 @@ from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession
 from .empirical_bound import empirical_upper, verify_empirical_upper
 from .relation_proposal import relation_proposal
 from .causal_relation_proposal import SOLVER as CAUSAL_RELATION_SOLVER, causal_relation_proposal, proposal_work_bound
+from .simplex_relation_proposal import (SOLVER as SIMPLEX_RELATION_SOLVER,
+    simplex_relation_proposal, proposal_work_bound as simplex_proposal_work_bound)
 from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
 
@@ -884,7 +886,11 @@ class ReferenceCompilerRuntime:
             # Numerical values begin at the immutable initializer. An optional
             # registered profile is executed below, never supplied as theta.
             theta = self._machine.initializer(program.slot_count, self._contract.initializer_pattern)
-            learner = initial_state(program, self._contract.semantics, theta, self._cursor)
+            spec = None if self._online is None else self._online.learner
+            if spec is not None and spec.optimizer_id == SIMPLEX_GRADIENT:
+                self._router.charge_work('construct', {'work': len(spec.simplex_slots)+1}, f'{candidate}:simplex-initializer-validation')
+            learner = initial_state(program, self._contract.semantics, theta, self._cursor,
+                                    spec=spec, bit_limit=self._contract.reference_integer_bits)
             if self._cuda is not None or self._online is not None and self._online.float64 is not None:
                 self._retain_code(program, program_id, code.spec.object_id, candidate)
             floating = self._float64_execute('initialize', program, candidate, learner, origin='construction')
@@ -1094,7 +1100,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 successor = observed
                 if (position+1) % spec.update_unit == 0:
                     update(stage='commit')
-                    work(self._machine.commit_work(program), f'{position}:commit')
+                    work(self._machine.commit_work(program, spec), f'{position}:commit')
                     successor = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
                     floating_successor = self._float64_execute('commit', program, candidate, successor, floating_successor,
                         origin='profile', observation_id=observation.observation_id)
@@ -1391,7 +1397,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 committed = None
                 evidence = state.range_evidence
                 if do_commit:
-                    self._event_work(state, self._machine.commit_work(program), 'optimizer-commit')
+                    self._event_work(state, self._machine.commit_work(program, spec), 'optimizer-commit')
                     committed = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
                     floating_successor = self._float64_execute('commit', program, candidate, committed, floating_successor,
                         observation_id=record.observation_id)
@@ -2125,8 +2131,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 raise ContractError('reference proof contains a missing, reordered or out-of-class endpoint')
             row.program.validate(self._contract.semantics)
             if session.spec.profile_id is None:
+                self._event_router.charge_work('information',
+                    {'work': row.program.slot_count+len(self._online.learner.simplex_slots)+1},
+                    f'{session.search_id}:verify-initializer:{ordinal}')
                 expected = initial_state(row.program, self._contract.semantics,
-                                         self._machine.initializer(row.program.slot_count, self._contract.initializer_pattern), self._cursor)
+                    self._machine.initializer(row.program.slot_count, self._contract.initializer_pattern), self._cursor,
+                    spec=self._online.learner, bit_limit=self._contract.reference_integer_bits)
             else:
                 profile_record = self._profile_executions.get(row.candidate_id)
                 if (profile_record is None or profile_record.status != 'PROFILED_REFERENCE'
@@ -2196,6 +2206,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     len(self._contract.semantics.sources), len(self._contract.semantics.states),
                     len(self._contract.source_domain or ()), session.spec.grammar,
                     len(self._contract.initializer_pattern), len(session.spec.observation_ids), self._cursor)
+            if session.spec.relation_sources.solver == SIMPLEX_RELATION_SOLVER:
+                work += simplex_proposal_work_bound(len(session.spec.relation_sources.token_atoms),
+                    len(self._contract.source_domain or ()), session.spec.grammar)
             self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
             available = {record.observation_id: record for record in self._observations}
             if any(key not in available for key in session.spec.observation_ids):
@@ -2220,6 +2233,13 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         source_domain=self._contract.source_domain,
                         range_cap=range_cap,
                         profile=profile, ordinary_cursor=self._cursor,
+                        bit_limit=self._contract.reference_integer_bits)
+                elif session.spec.relation_sources.solver == SIMPLEX_RELATION_SOLVER:
+                    profile = next((p for p in self._online.profiles if p.profile_id == session.spec.profile_id), None)
+                    proposal = simplex_relation_proposal(upper, self._contract.semantics, session.spec.grammar,
+                        self._contract.initializer_pattern, session.spec.relation_sources,
+                        data=self._online.data, learner=self._online.learner,
+                        source_domain=self._contract.source_domain, profile=profile,
                         bit_limit=self._contract.reference_integer_bits)
                 else:
                     proposal = relation_proposal(upper, self._contract.semantics, session.spec.grammar,
@@ -2262,8 +2282,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         or not session.spec.grammar.admits(program)):
                     raise ContractError('bounded winner lacks its owned in-class construction row')
                 if session.spec.profile_id is None:
+                    self._event_router.charge_work('information',
+                        {'work': program.slot_count+len(self._online.learner.simplex_slots)+1},
+                        f'{session.search_id}:verify-bounded-initializer')
                     expected = initial_state(program, self._contract.semantics,
-                        self._machine.initializer(program.slot_count, self._contract.initializer_pattern), self._cursor)
+                        self._machine.initializer(program.slot_count, self._contract.initializer_pattern), self._cursor,
+                        spec=self._online.learner, bit_limit=self._contract.reference_integer_bits)
                 else:
                     profile = self._profile_executions.get(best.candidate_id)
                     if (profile is None or profile.status != 'PROFILED_REFERENCE'

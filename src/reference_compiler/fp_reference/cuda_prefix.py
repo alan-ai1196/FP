@@ -139,6 +139,9 @@ def output_cells(kind, program, rules, spec):
     if kind == 'attach':
         return 0
     if kind == 'commit':
+        from .learner import SIMPLEX_GRADIENT
+        if spec.optimizer_id == SIMPLEX_GRADIENT:
+            return 7+15*len(spec.simplex_slots)+2*slots
         return 4+(14 if spec.commit_grid_bits is not None else 7)*slots
     sums = tuple(node for node in program.nodes if type(node) is Sum)
     edges = sum(len(node.terms) for node in sums)

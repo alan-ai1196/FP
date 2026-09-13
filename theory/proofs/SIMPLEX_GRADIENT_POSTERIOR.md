@@ -183,8 +183,10 @@ weights(9/10,1/10) and target0, the actual native gradient gives
 `w'=(27/20,-7/20)`.
 
 There is no generic license to install this rule on every positive Program.
-Changing the step, clipping or renormalizing defines another transition law;
-it cannot inherit this theorem's unit-step Bayesian interpretation.
+Changing the step or clipping the negative coordinate defines another
+transition law; it cannot inherit this theorem's unit-step Bayesian
+interpretation. Division by the proved exact unit total is an identity,
+not a repair for this negative-successor counterexample.
 
 **Which Fisher metric.** The categorical weight metric is not generally the
 Fisher metric of the currently observable native pair predictions. For n4,
@@ -203,11 +205,12 @@ history; the [minimality theorem](WHOLE_HISTORY_PREDICTIVE_STATE.md#3-minimality
 keeps its own family scope. The metric choice is an explicit learner
 coordinate, not an inference from today's output Fisher matrix.
 
-**Runtime and lineage.** Current `LearnerSpec` implements only registered
-mean-CE projected SGD and rejects the proposed optimizer ID. The exact audit
-verifies that refusal. An actual extension must register and own this U,
-the selected simplex block, fixed coordinates, initializer, update clock,
-reference arithmetic, rounded execution and every event-level bridge. A
+**Runtime and lineage.** The subsequent [scoped Runtime extension](SIMPLEX_RUNTIME_CONTRACT.md)
+registers `mean-ce-normalized-simplex-gradient-v1`, including an explicit
+normalizing division on both exact and rounded paths. It is the identity on
+the exact simplex. The extension owns the selected block, fixed coordinates,
+initializer, update clock and full reference/physical transitions; the exact
+theorem audit still checks that an unknown optimizer ID is refused. A
 different U creates a different lineage; old profiles, class proofs, fresh
 persistence and installation evidence cannot be inherited. Foundation VII
 already treats U as a learner coordinate; no new architecture action is
@@ -230,8 +233,9 @@ reverse-mode gradients check:
   direction and its two different future predictions;
 - repeated-profile multiplicity and the nonzero gradient of the fixed feature
   coordinate;
-- explicit rejection by the current Runtime learner registration.
+- explicit rejection of an unknown optimizer ID by learner registration.
 
 The script imports no Torch and launches no Runtime, target worker or new
-experiment. It proves and audits a proposed learner arithmetic law. Owned
-implementation and useful resource-matched model results remain open.
+experiment. It proves and audits the learner arithmetic law. The separately
+registered Runtime audits have their own scope; useful resource-matched
+model results and long-history AMP guarantees do not follow from this proof.

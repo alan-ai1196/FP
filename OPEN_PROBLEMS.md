@@ -194,10 +194,16 @@ further arithmetic question: an actual native CE-gradient step can reproduce
 the full posterior while keeping masses bounded, using a different declared
 learner geometry and uniform weight initializer. The required affine/equal
 normalizer condition and the distinction between categorical and output Fisher
-metrics are explicit. The rule is derived and exactly audited; it is currently
-unsupported by Runtime. Its owned reference/AMP learner implementation and
-usefulness at matched information/resource cuts are open. Changing U creates
-a new lineage and cannot inherit the old profile, persistence or class proof.
+metrics are explicit. The [owned Runtime extension](theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md)
+now implements the normalized rule, complete slot/gradient/clock state and
+reference/AMP paths. Its exact audit retains missing-block programs in the
+full unresolved decision class. Small owned install runs pass; the registered
+eight-job source-bound matrix is pending. The research questions are useful
+matched-information/resource comparisons and long-history finite precision,
+not whether a helper can supply posterior values. Larger update units give
+an average of single-event posterior steps, not joint conditioning. Changing
+U creates a new lineage and cannot inherit an old profile, persistence or
+class proof.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

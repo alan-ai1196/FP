@@ -113,6 +113,25 @@ def cpu_observe(graph, state, prediction, target):
 def cpu_commit(state, spec):
     assert state.unit == spec.update_unit and state.cursor % spec.update_unit == 0
     scale = float(spec.learning_rate)/float(spec.update_unit)
+    if spec.optimizer_id == 'mean-ce-normalized-simplex-gradient-v1':
+        total = moment = 0.0
+        for index in spec.simplex_slots:
+            total = total+state.theta[index]
+            product = state.theta[index]*state.gradient[index]
+            moment = moment+product
+        mean = moment/total
+        values = list(state.theta)
+        normalization = 0.0
+        for index in spec.simplex_slots:
+            centered = state.gradient[index]-mean
+            delta = scale*centered
+            multiplier = 1.0-delta
+            values[index] = state.theta[index]*multiplier
+            assert values[index] >= 0.0
+            normalization = normalization+values[index]
+        for index in spec.simplex_slots:
+            values[index] = max(0.0,values[index]/normalization)
+        return replace(state, theta=tuple(values), gradient=(0.0,)*len(values), unit=0, steps=state.steps+1)
     values = []
     for value, gradient in zip(state.theta, state.gradient):
         delta = scale*gradient

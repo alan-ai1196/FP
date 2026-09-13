@@ -315,10 +315,20 @@ whole-history Bayesian weights at a unit step when the complete expert
 normalizers agree. Checks cover961 histories/5,955 forecasts,1,051 native
 gradient successors,9,183 affine steps and378 refinement cases. Native masses
 stay bounded by9 and the normalizer by10 in the explicit relation graphs;
-exponential parameter count and growing exact precision remain. Current
-`LearnerSpec` rejects the proposed optimizer ID. No Runtime path, constructor,
-source contract, class certificate, persistence or AMP evidence is changed;
-an extension would require a new U/initializer and complete owned audits.
+exponential parameter count and growing exact precision remain.
+The [scoped implementation contract](theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md)
+now registers `mean-ce-normalized-simplex-gradient-v1` on an explicit slot
+block. Reference, binary64 and CUDA commits normalize explicitly and refuse
+negative successors; all fixed-slot gradients and full clocks remain owned.
+The v7 proposer emits only native syntax from the actual complete interface,
+Gamma, learner and profile, followed by the existing comparison/fresh/install
+policy. Exact audits check603 commits,12 registration refusals,10 proposer
+refusals and two20-member exhaustive classes. The new U retains15 unsupported
+initializers as unresolved; no class proof or new CERTIFIED_COMPLETE class
+is introduced. Small development CPU/CUDA streams pass their independent
+replays and install; the eight-job committed-source matrix is registered
+and pending. This extends the learner implementation, not the frozen baseline
+release or RN-5's distinct SGD class.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

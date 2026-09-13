@@ -364,10 +364,19 @@ n2/3/4 and whole-history normalizer10, with no lag-domain growth. Exact
 audits check5,955 native forecasts,9,183 affine steps and378 refinement cases,
 plus an80-event agreement/reversal trace. Read the unequal-normalizer negative
 update and the distinction from the current-output Fisher metric before
-generalizing it. This changes U and the actual uniform1/K initialization;
-the current Runtime correctly rejects it. The next implementation question
-is an owned, explicitly scoped learner extension with full state and AMP
-relations, not an unregistered helper or reuse of old lineage evidence.
+generalizing it. This changes U and the actual uniform1/K initialization.
+The [scoped Runtime extension](theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md) now
+registers the normalized simplex update and an owned v7 native constructor.
+All ambient gradients remain retained, fixed slots remain explicit, and
+negative updates are refused. Larger update units give a mean of individual
+posterior steps at frozen weights, not sequential Bayesian conditioning.
+The exact audit checks603 commits and a20-member class that retains15
+initializer failures as unresolved. Development CPU/CUDA streams construct,
+profile and independently cross fresh evidence before actual installation;
+the new eight-job source-bound matrix is registered and still pending.
+Run its source-dependent audits from the research worktree. This is a
+different lineage and a known-model control; matched model usefulness and
+long-history AMP reliability remain research questions.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
