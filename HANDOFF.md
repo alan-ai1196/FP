@@ -96,6 +96,19 @@ in this scope; finite within-component posterior uncertainty and useful
 adaptive learning remain open. Do not add free fitted coefficients, semantic
 architecture actions, or more static precision/resource cases.
 
+The [balanced v4 readout](theory/proofs/BALANCED_UNCERTAINTY_LEARNERS.md)
+now supplies a reachable learning direction: equal positive evidence with
+separate initialized coefficients preserves uniform cross predictions and
+responds to the next label. Exact checks cover 7,320 initial predictions,
+7,072 label-sensitive first updates and 484 coupled scale/slot cases.
+Functional CPU/CUDA runs learn either orientation, install continuously
+updated learners and preserve unresolved training classes. Missing slots,
+quadratic work and the old tight range retain honest refusals. Source-bound
+matrices are pending; default v3 and the frozen baseline keep their scopes.
+[RN-4](experiments/adaptive_uncertainty/PROTOCOL.md) preregisters thirty
+workers, two learning rates and a strong adaptive posterior. Model execution
+is pending; learnability alone is not a model-quality result.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

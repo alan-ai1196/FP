@@ -2985,3 +2985,42 @@ the new posterior workers check 1,280 GPU forecasts. Post-analysis verifies
 the unchanged limits. The 83 KB journal and 28 KB SVG preserve no datasets,
 weights or bulk histories. Read `experiments/component_uncertainty/RESULTS.md`.
 Foundation R4, XVII.31, ERC-1 and the original baseline release remain frozen.
+
+## 88. Balanced positive evidence keeps an ordinary learning direction (2026-09-13)
+
+The v4 registered proposer derives the same empirical components, then
+emits parameter-free token-pair products with tied within-component scales
+and separate balanced unit coefficients for each component pair. Its initial
+one-hot predictions equal v3, but its current-label derivatives do not.
+At unit1/rate1/8, one cross label changes coefficients from (1,1) to
+(33/32,31/32), giving65/128 on a corresponding next query; the opposite
+label reverses the movement. This needs existing independent initializer
+slots, not a posterior coefficient or new semantic action. Default v3 stays
+registered separately; the full native grammar is not replaced by a menu.
+
+The exact audit checks320 models,7,320 initial predictions,7,072 gradient
+and one-step directions and484 count/slot cases. It catches a coupling
+between scale choice and coefficient availability: reserving scale1 can
+leave too few units even when scale8 is feasible. Feasibility now precedes
+exact likelihood comparison. Runtime prepays64*n^2 additional proposal work
+before dense emission; actual construction/storage retains its own charges.
+
+CPU and CUDA functional cases learn both orientations and install current
+nonzero-rate learners, including an unresolved full training class. Distinct
+slot shortage and injected work shortage grant no false proposal or alpha.
+The old normalizer10/scale8 boundary rejects a correct nonzero-rate update;
+separately registered activation16/normalizer18 admits the positive tests.
+This is an ERC-1 instance choice, not a semantics change or retuned model.
+
+The tight-cap control exposes an old audit assumption: computed successors
+are not necessarily published successors. Runtime correctly retains failed
+phases and the old atomic root. The binary64 auditor now replays both and
+checks the published root against the failed event's owned pre-target cut;
+a fake promotion of unsafe staged values is rejected. Both target paths and
+the full original binary64 audit pass. No Runtime publication rule changed.
+Source-bound complete matrices follow the committed implementation.
+
+RN-4 preregisters thirty workers: two known worlds and eight uninspected new
+IID cases, with native rates1/8 and4 plus a strong exact/AMP adaptive posterior
+per case. Fixed range/resource refusals and all model failures will remain.
+No new model result is implied by the endpoint checks or registration.

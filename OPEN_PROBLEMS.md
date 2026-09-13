@@ -71,6 +71,16 @@ soft contexts or full-state equivalence. The sparse n8,c4 finite no-install
 and too-late-install outcomes stay in the evidence. Static resource special
 cases and half-specific constants remain parked.
 
+The [v4 balanced-readout construction](theory/proofs/BALANCED_UNCERTAINTY_LEARNERS.md)
+now resolves the scoped existence/first-update question using available
+independent coefficients and ordinary SGD. It also executes owned CPU/CUDA
+construction, learning and installation, with honest resource refusals.
+The immediate open question is useful adaptive model behavior against the
+exact adaptive posterior, including rate and range pressure. Complete its
+source-bound audits and the preregistered [RN-4 matrix](experiments/adaptive_uncertainty/PROTOCOL.md).
+Do not infer global posterior consistency or good deployed risk from a
+nonzero gradient alone.
+
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent

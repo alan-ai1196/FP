@@ -68,6 +68,19 @@ fixed component graph has zero cross-component derivatives for every weight;
 future adaptive learning is a model/construction question. This is not
 another complete baseline release declaration.
 
+The [balanced v4 readout](theory/proofs/BALANCED_UNCERTAINTY_LEARNERS.md)
+now supplies a reachable learning direction: equal positive evidence with
+separate initialized coefficients preserves uniform cross predictions and
+responds to the next label. Exact checks cover 7,320 initial predictions,
+7,072 label-sensitive first updates and 484 coupled scale/slot cases.
+Functional CPU/CUDA runs learn either orientation, install continuously
+updated learners and preserve unresolved training classes. Missing slots,
+quadratic work and the old tight range retain honest refusals. Source-bound
+matrices are pending; default v3 and the frozen baseline keep their scopes.
+[RN-4](experiments/adaptive_uncertainty/PROTOCOL.md) preregisters thirty
+workers, two learning rates and a strong adaptive posterior. Model execution
+is pending; learnability alone is not a model-quality result.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

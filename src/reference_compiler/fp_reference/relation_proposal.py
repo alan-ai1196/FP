@@ -20,7 +20,7 @@ from .semantics import _guard, _operation
 @dataclass(frozen=True)
 class RelationSourceSpec:
     token_atoms: tuple[tuple[str, str], ...]
-    solver: str = field(default='empirical-binary-relation-component-symmetry-v3', init=False)
+    solver: str = 'empirical-binary-relation-component-symmetry-v3'
 
     def __post_init__(self):
         atoms = tuple(tuple(pair) for pair in self.token_atoms)
@@ -29,7 +29,8 @@ class RelationSourceSpec:
         flat = tuple(name(atom, 'observable token source') for pair in atoms for atom in pair)
         if len(set(flat)) != len(flat):
             raise ContractError('distinct token atoms at both observable positions are required')
-        if self.solver != 'empirical-binary-relation-component-symmetry-v3':
+        if self.solver not in ('empirical-binary-relation-component-symmetry-v3',
+                               'empirical-binary-relation-balanced-readout-v4'):
             raise ContractError('unregistered empirical relation solver')
         object.__setattr__(self, 'token_atoms', atoms)
 
@@ -115,10 +116,19 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
     # empirical fit needs to exist, be finite, or equal an initializer value.
     # Counts/proposal remain retained heuristic provenance, not class authority.
     available = pattern[:grammar.slots]
-    if F(1) not in available:
+    if not available:
+        return result(reason='no initialized readout value is available in this slot budget')
+    if registration.solver == 'empirical-binary-relation-component-symmetry-v3' and F(1) not in available:
         return result(reason='the native grouping requires an available initialized unit slot')
+    eligible = available
+    if registration.solver == 'empirical-binary-relation-balanced-readout-v4':
+        needed_units = len(components)*(len(components)-1)
+        unit_count = sum(value == 1 for value in available)
+        eligible = tuple(value for value in available if unit_count-int(value == 1) >= needed_units)
+        if not eligible:
+            return result(reason='independent balanced coefficients are absent from the available initializer prefix')
     best = None
-    for value in available:
+    for value in eligible:
         numerator = _operation(value, F(1), multiply=False, bit_limit=bit_limit)
         denominator = _operation(value, F(2), multiply=False, bit_limit=bit_limit)
         inverse = F(denominator.denominator, denominator.numerator)
@@ -130,7 +140,50 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
                 score = _operation(score, factor, multiply=True, bit_limit=bit_limit)
         if best is None or compare_exact(score, best, bit_limit=bit_limit) > 0:
             scale, best = value, score
-    unit_slot, scale_slot = pattern.index(F(1)), pattern.index(scale)
+    scale_slot = pattern.index(scale)
+    if registration.solver == 'empirical-binary-relation-balanced-readout-v4':
+        # A separately registered search algorithm over the same native
+        # grammar. Its balanced readout coefficients retain parameter
+        # directions on queries where v3 has structurally zero evidence.
+        n, c = len(atoms), len(components)
+        units = [i for i, value in enumerate(available) if value == 1 and i != scale_slot]
+        required = c*(c-1)
+        if len(units) < required:
+            return result(reason='independent balanced coefficients are absent from the available initializer prefix')
+        pair_slots, at = {}, 0
+        for left in range(c):
+            for right in range(left+1, c):
+                pair_slots[left, right] = tuple(units[at:at+2])
+                at += 2
+        slots = max([scale_slot]+units[:required])+1
+        within = sum(len(vertices)**2 for vertices in components)
+        needed = {'nodes': 2*n+n*n+2, 'SUMs': 2, 'PRODUCTs': n*n,
+                  'edges': 4*n*n-within, 'slots': slots}
+        if any(value > getattr(grammar, key) for key, value in needed.items()):
+            return result(reason='the balanced native witness exceeds declared construction bounds; not an exclusion of the class')
+        nodes = [Source(pair[position]) for position in (0, 1) for pair in atoms]
+        terms = [[], []]
+        for i in range(n):
+            for j in range(n):
+                feature = len(nodes)
+                nodes.append(Product(dtype, i, n+j))
+                parity = assignment[i] ^ assignment[j]
+                if component_of[i] == component_of[j]:
+                    terms[parity].append(Term(feature, scale_slot))
+                else:
+                    pair = tuple(sorted((component_of[i], component_of[j])))
+                    for label in (0, 1):
+                        terms[label].append(Term(feature, pair_slots[pair][label ^ parity]))
+        heads = []
+        for row in terms:
+            heads.append(len(nodes))
+            nodes.append(Sum(dtype, tuple(row)))
+        program = Program(tuple(nodes), slots, tuple(heads))
+        program.validate(rules)
+        if not grammar.admits(program):
+            raise ContractError('balanced relation syntax differs from its prepaid grammar extent')
+        return result(program, 'native balanced readouts preserve initialized uncertainty and distinct learnable component-pair coefficients')
+    unit_slot = pattern.index(F(1))
     slots = max(unit_slot, scale_slot)+1
     n, c = len(atoms), len(components)
     if any(needed > getattr(grammar, key) for key, needed in {

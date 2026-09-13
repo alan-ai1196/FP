@@ -54,6 +54,12 @@ weights; using later retained labels remains an adaptive model/construction
 problem. These scoped proofs and CPU/CUDA/model audits do not equate complete
 learners or general soft-input predictions, and leave the theory below intact.
 
+A [balanced positive-readout construction](theory/proofs/BALANCED_UNCERTAINTY_LEARNERS.md)
+now preserves initial uncertainty while admitting ordinary label-sensitive
+updates. Its extra independent slots and quadratic work are declared and
+paid. Scoped CPU/CUDA checks and RN-4 registration do not alter the frozen
+semantics below or establish an adaptive model-quality result.
+
 ---
 
 ## 0. Research object and root principle

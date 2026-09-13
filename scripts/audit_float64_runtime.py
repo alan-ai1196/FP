@@ -186,7 +186,7 @@ def replay(rt):
     snapshot = owned(rt)
     programs = dict(snapshot.programs)
     observations = {value.observation_id: value for value in snapshot.observations}
-    states, predictions = {}, {}
+    states, predictions, ordinary_starts = {}, {}, {}
     compared = recast_differences = profile_recast_differences = 0
     for trace in snapshot.float64_traces:
         assert trace.status == 'CHECKED_FLOAT64_PHASE' and trace.relation is not None
@@ -202,6 +202,8 @@ def replay(rt):
             prediction = cpu_predict(graph, rt.contract.semantics, states[key], dict(record.sources))
             predictions[key] = prediction
             same_prediction(trace.float64_prediction, prediction)
+            if origin == 'ordinary':
+                ordinary_starts[key, trace.observation_id] = (states[key], trace.reference)
         elif phase == 'observe':
             states[key] = cpu_observe(graph, states[key], predictions[key], observations[trace.observation_id].target)
         elif phase == 'commit':
@@ -216,8 +218,21 @@ def replay(rt):
                 profile_recast_differences += different
         assert trace.max_local_round_error >= 0
         compared += 1
-    for candidate in snapshot.candidates:
-        same_state(candidate.float64, states[candidate.candidate_id])
+    unpublished = (snapshot.halted is not None and snapshot.halted[0] == 'observe'
+                   and snapshot.pending is not None and snapshot.pending.stage == 'observation-failed')
+    if unpublished:
+        # Every executed successor above is still replayed. A failed joint
+        # observation publishes none of them: the complete root retains the
+        # exact pre-target learners as well as the paid unpublished phases.
+        record = snapshot.pending.record
+        assert record.cursor == snapshot.cursor and observations[record.observation_id] == record
+        for candidate in snapshot.candidates:
+            expected, reference = ordinary_starts[candidate.candidate_id, record.observation_id]
+            assert candidate.learner == reference
+            same_state(candidate.float64, expected)
+    else:
+        for candidate in snapshot.candidates:
+            same_state(candidate.float64, states[candidate.candidate_id])
     return compared, recast_differences, profile_recast_differences
 
 
