@@ -3857,6 +3857,33 @@
     "process_creation_100ns": 134337826963882555
    },
    "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+  },
+  {
+   "worker_status": "FAILED",
+   "reason": "missing or invalid bounded worker report",
+   "report_tail": "",
+   "kind": "FP",
+   "case": [
+    16,
+    "iid-c4",
+    18
+   ],
+   "rate": "1",
+   "completed_job": {
+    "exit_code": 1223,
+    "timed_out": true,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 8912105472,
+    "peak_job_commit": 8913358848,
+    "user_100ns": 70547968750,
+    "kernel_100ns": 1211093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29172,
+    "process_creation_100ns": 134337826988341883
+   },
+   "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
   }
  ]
 }

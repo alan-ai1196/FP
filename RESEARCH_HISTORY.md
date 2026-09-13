@@ -3785,3 +3785,19 @@ or install certificate. Affordable reachable whole-history adaptation, or an
 explicit expected-risk approximation, remains the next model research question.
 Foundation and ERC-1 stay frozen. The stale end-of-theory science HOLD sentence
 is aligned with the already completed release and the file's existing status.
+
+## 107. RN-5 retains its first n16/c4 execution timeout
+
+The twenty-third worker, n16/c4 seed18 FP rate1 at source38b27b3, reaches
+its registered two-hour limit. The bounded-job record has exit1223 and
+timed_out=true, with peak process commitment8,912,105,472 and peak job
+commitment8,913,358,848 bytes under the unchanged16GiB cap. There is no
+valid worker report and no model score, installation, seal or complete
+phase-audit claim. This execution timeout is distinct from the four retained
+n16/c2 final-auditor MemoryErrors.
+
+Independent post-analysis verifies the23-attempt journal:18 EXECUTED and5
+FAILED, with unchanged12 sealed FP streams,9 installs,72 descriptive score
+checks,12 fresh decisions,6,552 CUDA/binary64 phases each and768 posterior
+GPU forecasts. The source-bound parent proceeds to rate4. The failed case
+is not restarted, its cap is not increased, and no failed tail is imputed.
