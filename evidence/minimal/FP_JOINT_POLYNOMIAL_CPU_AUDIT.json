@@ -1,0 +1,452 @@
+{
+ "source_revision": "9f9fa0b791fa68555f97fd8ed8a62d47ef350f4e",
+ "exact": {
+  "models": 320,
+  "initialized_predictions": 7320,
+  "independent_gradient_coordinates": 25752,
+  "zero_coordinate_recoveries_on_matching_one_hot_labels": 946,
+  "count_slot_cases": 726,
+  "soft_polynomial_value_checks": 729,
+  "no_constant_output_gate": true,
+  "old_and_new_learner_next_predictions": [
+   "605786986482207/777750761524495",
+   "17712419905/22813333329"
+  ]
+ },
+ "workers": [
+  {
+   "case": "transitive",
+   "path": "cpu",
+   "first_three_predictions": [
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "25981558417/45993308790",
+     "20011750373/45993308790"
+    ]
+   ],
+   "recovered_parameters": [],
+   "native_graph": {
+    "nodes": 57,
+    "sources": 12,
+    "state_reads": 0,
+    "SUMs": 9,
+    "PRODUCTs": 36,
+    "SUM_edges": 211,
+    "edges": 283,
+    "slots": 5,
+    "bindings": 0
+   },
+   "class_status": "REFERENCE_CLASS_BOUNDED",
+   "reference_proofs": 1,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    51
+   ],
+   "halted": null,
+   "binary64_phases": 542,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "3481542145260404967363/43850470597031660153763398318993440768",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "324235/5999704430782229512192",
+    "division_error": "324235/5999704430782229512192"
+   },
+   "host": {
+    "process_id": 12904,
+    "creation_100ns": 134337656617176657,
+    "lifetime_process_commit_peak": 51527680
+   },
+   "peak_packed_bytes": 5230491,
+   "process_id": 12904,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 51527680,
+    "peak_job_commit": 52744192,
+    "user_100ns": 599375000,
+    "kernel_100ns": 5000000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 12904,
+    "process_creation_100ns": 134337656617176657
+   }
+  },
+  {
+   "case": "opposite",
+   "path": "cpu",
+   "first_three_predictions": [
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "20011750373/45993308790",
+     "25981558417/45993308790"
+    ]
+   ],
+   "recovered_parameters": [],
+   "native_graph": {
+    "nodes": 57,
+    "sources": 12,
+    "state_reads": 0,
+    "SUMs": 9,
+    "PRODUCTs": 36,
+    "SUM_edges": 211,
+    "edges": 283,
+    "slots": 5,
+    "bindings": 0
+   },
+   "class_status": "REFERENCE_CLASS_BOUNDED",
+   "reference_proofs": 1,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    51
+   ],
+   "halted": null,
+   "binary64_phases": 542,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "3481542145260404967363/43850470597031660153763398318993440768",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "324235/5999704430782229512192",
+    "division_error": "324235/5999704430782229512192"
+   },
+   "host": {
+    "process_id": 26776,
+    "creation_100ns": 134337657223106280,
+    "lifetime_process_commit_peak": 51396608
+   },
+   "peak_packed_bytes": 5230428,
+   "process_id": 26776,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 51396608,
+    "peak_job_commit": 52613120,
+    "user_100ns": 587500000,
+    "kernel_100ns": 2343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26776,
+    "process_creation_100ns": 134337657223106280
+   }
+  },
+  {
+   "case": "incomplete",
+   "path": "cpu",
+   "first_three_predictions": [
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "25981558417/45993308790",
+     "20011750373/45993308790"
+    ]
+   ],
+   "recovered_parameters": [],
+   "native_graph": {
+    "nodes": 57,
+    "sources": 12,
+    "state_reads": 0,
+    "SUMs": 9,
+    "PRODUCTs": 36,
+    "SUM_edges": 211,
+    "edges": 283,
+    "slots": 5,
+    "bindings": 0
+   },
+   "class_status": "UNRESOLVED",
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    51
+   ],
+   "halted": null,
+   "binary64_phases": 542,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "3481542145260404967363/43850470597031660153763398318993440768",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "324235/5999704430782229512192",
+    "division_error": "324235/5999704430782229512192"
+   },
+   "host": {
+    "process_id": 25748,
+    "creation_100ns": 134337657814050871,
+    "lifetime_process_commit_peak": 51388416
+   },
+   "peak_packed_bytes": 5229319,
+   "process_id": 25748,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 51388416,
+    "peak_job_commit": 52604928,
+    "user_100ns": 598281250,
+    "kernel_100ns": 2500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25748,
+    "process_creation_100ns": 134337657814050871
+   }
+  },
+  {
+   "case": "recover",
+   "path": "cpu",
+   "first_three_predictions": [
+    [
+     "1/2",
+     "1/2"
+    ],
+    [
+     "32383982633/34531466281",
+     "2147483648/34531466281"
+    ],
+    [
+     "1/2",
+     "1/2"
+    ]
+   ],
+   "recovered_parameters": [
+    "245841/65536",
+    "245841/65536"
+   ],
+   "native_graph": {
+    "nodes": 24,
+    "sources": 6,
+    "state_reads": 0,
+    "SUMs": 9,
+    "PRODUCTs": 9,
+    "SUM_edges": 58,
+    "edges": 76,
+    "slots": 5,
+    "bindings": 0
+   },
+   "class_status": "REFERENCE_CLASS_BOUNDED",
+   "reference_proofs": 1,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "halted": null,
+   "binary64_phases": 110,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "6946774217/155515898675668447318245376",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "6946774217/155515898675668447318245376",
+    "division_error": "6946774217/155515898675668447318245376"
+   },
+   "host": {
+    "process_id": 29164,
+    "creation_100ns": 134337658417031624,
+    "lifetime_process_commit_peak": 32632832
+   },
+   "peak_packed_bytes": 790082,
+   "process_id": 29164,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 32632832,
+    "peak_job_commit": 33865728,
+    "user_100ns": 17656250,
+    "kernel_100ns": 937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29164,
+    "process_creation_100ns": 134337658417031624
+   }
+  },
+  {
+   "case": "slots",
+   "path": "cpu",
+   "first_three_predictions": [],
+   "recovered_parameters": [],
+   "native_graph": null,
+   "class_status": "UNRESOLVED",
+   "reference_proofs": 0,
+   "alpha_spent": "0",
+   "install_cursors": [],
+   "halted": null,
+   "binary64_phases": 316,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "0",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "0",
+    "division_error": "0"
+   },
+   "host": {
+    "process_id": 25360,
+    "creation_100ns": 134337658435685368,
+    "lifetime_process_commit_peak": 35454976
+   },
+   "peak_packed_bytes": 1629602,
+   "process_id": 25360,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 35454976,
+    "peak_job_commit": 36683776,
+    "user_100ns": 32031250,
+    "kernel_100ns": 937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25360,
+    "process_creation_100ns": 134337658435685368
+   }
+  },
+  {
+   "case": "work",
+   "path": "cpu",
+   "first_three_predictions": [],
+   "recovered_parameters": [],
+   "native_graph": null,
+   "class_status": "UNRESOLVED",
+   "reference_proofs": 0,
+   "alpha_spent": "0",
+   "install_cursors": [],
+   "halted": null,
+   "binary64_phases": 316,
+   "CUDA": null,
+   "run_status": "SEALED_REFERENCE_STREAM",
+   "float64_relation_maxima": {
+    "state_error": "0",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "0",
+    "division_error": "0"
+   },
+   "host": {
+    "process_id": 8148,
+    "creation_100ns": 134337658468876925,
+    "lifetime_process_commit_peak": 36179968
+   },
+   "peak_packed_bytes": 1625090,
+   "process_id": 8148,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 36179968,
+    "peak_job_commit": 37412864,
+    "user_100ns": 32500000,
+    "kernel_100ns": 781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 8148,
+    "process_creation_100ns": 134337658468876925
+   }
+  },
+  {
+   "case": "tight",
+   "path": "cpu",
+   "first_three_predictions": [
+    [
+     "1/2",
+     "1/2"
+    ]
+   ],
+   "recovered_parameters": [],
+   "native_graph": {
+    "nodes": 41,
+    "sources": 8,
+    "state_reads": 0,
+    "SUMs": 17,
+    "PRODUCTs": 16,
+    "SUM_edges": 211,
+    "edges": 243,
+    "slots": 9,
+    "bindings": 0
+   },
+   "class_status": "REFERENCE_CLASS_BOUNDED",
+   "reference_proofs": 1,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "halted": [
+    "observe",
+    "ArithmeticUnresolved: registered optimizer successor lacks a sufficient full-domain range/invariant bound"
+   ],
+   "binary64_phases": 128,
+   "CUDA": null,
+   "run_status": "HALTED_UNRESOLVED",
+   "float64_relation_maxima": {
+    "state_error": "1/108086391056891904",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "0",
+    "division_error": "0"
+   },
+   "host": {
+    "process_id": 14388,
+    "creation_100ns": 134337658502306876,
+    "lifetime_process_commit_peak": 32890880
+   },
+   "peak_packed_bytes": 1113547,
+   "process_id": 14388,
+   "device": null,
+   "execution_identity": null,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 32890880,
+    "peak_job_commit": 34119680,
+    "user_100ns": 22968750,
+    "kernel_100ns": 937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14388,
+    "process_creation_100ns": 134337658502306876
+   }
+  }
+ ]
+}

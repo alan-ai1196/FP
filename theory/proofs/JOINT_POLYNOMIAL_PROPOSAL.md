@@ -1,7 +1,7 @@
 # Native joint polynomial proposals without a shared output gate
 
-Status: **scoped construction proof, exact audit and functional CPU/CUDA
-endpoints; complete source-bound matrices pending**. This is a separately
+Status: **scoped construction proof, exact audit and complete source-bound
+CPU/CUDA endpoint matrices**. This is a separately
 registered solver over the existing native grammar, initializer/profile
 paths and complete Runtime. Foundation R4 and ERC-1 do not change. RN-4's
 committed outcomes and resource settings are not rerun or relabelled.
@@ -176,10 +176,28 @@ recovery directions,726 coupled count/slot cases and729 soft-input polynomial
 values. A counterexample distinguishes the old and new complete learners.
 The existing v4 exact audit continues to pass.
 
-The functional CPU and actual RTX3090 transitive endpoints each check542
-binary64 phases; the target endpoint checks542 CUDA phases and performs
-fresh installation. The CPU rate4 recovery and normalizer18 refusal controls
-also pass. The complete source-bound matrices follow the committed solver:
-transitive/opposite/incomplete-class installation, reachable zero recovery,
-slot/work refusal, tight-range refusal and the extra CUDA precision refusal.
-They do not replace the frozen31-script baseline or imply an RN-5 model result.
+The complete matrices bind implementation source
+`9f9fa0b791fa68555f97fd8ed8a62d47ef350f4e`:
+
+* [CPU journal](../../evidence/minimal/FP_JOINT_POLYNOMIAL_CPU_AUDIT.json):
+  seven fresh workers, 2,496 independently replayed binary64 phases.
+* [CUDA journal](../../evidence/minimal/FP_JOINT_POLYNOMIAL_CUDA_AUDIT.json):
+  eight fresh workers, 2,752 actual CUDA and 2,752 corresponding binary64
+  phases independently checked, including the completed rejected prediction.
+
+Transitive, opposite and incomplete-class cases install at cursor 51 on
+both paths. Recovery revives both zero amplitudes. Slot/work refusals seal
+without a proposal or alpha spending; the tight range halts its staged
+update. The extra precision control installs at 51 and halts prediction at
+57. Its native error is 43217193/4294967296 > 1/100, while its normalized
+probability error is 1429926113775/31074450924605654 < 1/100. No prefix accepts
+that failed phase, and its target remains unrevealed.
+
+Maximum completed-job commit is 52,744,192 CPU bytes and 2,491,232,256 CUDA
+bytes. CUDA uses at most 1,068 output cells and 88,448 frame bytes. Among
+accepted CUDA relations, maxima are state 39/65536, native 1100079/67108864,
+normalizer 17652575/1073741824 and probability
+13761550896281/101281854230888448. These are measured errors, separate from
+registered tolerances. The compact journals are 11,315 and 22,200 bytes.
+These controls do not replace the frozen 31-script baseline or imply an
+RN-5 model result.

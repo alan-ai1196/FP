@@ -101,9 +101,10 @@ mixed polynomial a direct native realization without a shared output gate.
 Its functional complete CPU/CUDA trajectories propagate a two-label relation
 and install; a separate old-tolerance CUDA run honestly halts after an earlier
 installation. The failed phase is completely retained and independently
-replayed. Finish the source-bound endpoint matrices, then preregister a
-strong adaptive comparison with an execution envelope that accounts for
-orientation-family costs. V5 still fixes empirical within-component signs;
+replayed. The source-bound matrices at `9f9fa0b` are now complete: seven CPU
+and eight CUDA workers, with 2,496 and 2,752 corresponding binary64 phases
+and all 2,752 CUDA phases checked. Preregister the strong adaptive comparison
+with an execution envelope that accounts for orientation-family costs. V5 still fixes empirical within-component signs;
 finite IID uncertainty there remains an explicit model limitation. No old
 model or refused run should be rerun simply with larger budgets.
 

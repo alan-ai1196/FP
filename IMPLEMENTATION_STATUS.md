@@ -118,8 +118,12 @@ precision budget fails later at cursor57, after an earlier installation;
 all256 executed phases, including the rejected prediction, are independently
 checked. Positive CUDA fixtures separately declare native/state1/16 and
 probability1/100. The tight-range refusal and actual zero recovery remain
-controls. Complete source-bound matrices are pending; no RN-5 model result
-or new complete baseline release is implied.
+controls. The completed source-bound matrices at `9f9fa0b` now cover seven
+CPU workers / 2,496 binary64 phases and eight CUDA workers / 2,752 CUDA plus
+2,752 binary64 phases. Positive and incomplete-class installations occur at
+cursor 51; the old precision control refuses at 57. Compact journals retain
+all endpoint statuses and measured maxima. No RN-5 model result or new
+complete baseline release is implied.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

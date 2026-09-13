@@ -3146,3 +3146,18 @@ Source-bound complete matrices follow the committed implementation. This
 is a constructor/learner advance, not a new model-quality result, static
 resource law or full correctness release. Read
 `theory/proofs/JOINT_POLYNOMIAL_PROPOSAL.md`.
+
+### 91.1 Complete owned endpoint matrices
+
+Implementation `9f9fa0b` now has seven CPU and eight CUDA fresh-job controls.
+The CPU journal checks 2,496 binary64 phases; CUDA checks 2,752 actual phases
+and 2,752 corresponding binary64 phases. Transitive, opposite and unresolved
+historical-class proposals install at cursor 51. Both zero weights recover.
+Slot/work refusal preserves no proposal or alpha spend; tight range stops
+publication of its staged update. The stricter native 1/100 control retains
+its installation at 51, then rejects prediction 57 with native error
+43217193/4294967296 and probability error
+1429926113775/31074450924605654. Its completed words are independently replayed;
+the pending target remains unrevealed. Peak completed-job commit is
+52,744,192 CPU / 2,491,232,256 CUDA bytes. The two journals retain 33,515 bytes
+in total. No new model or full-release claim follows from these endpoints.
