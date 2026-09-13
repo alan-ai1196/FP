@@ -27,6 +27,13 @@ legally unseen contexts, competitive baselines and the existing hierarchy
 identification controls. Do not rerun the completed resource experiment,
 rebuild the frozen Runtime or expand static/half-specific constructors to
 postpone that work. The Reference/CPU and actual AMP prerequisites remain closed.
+The active [RN-1 protocol](experiments/relation_noise/PROTOCOL.md) compares
+conditioned 9:1 training with IID noise and a strong exact/AMP forest
+posterior baseline. Its [gate lemma](experiments/relation_noise/GATE_ELIGIBILITY.md)
+and 121 count-pattern/40 posterior checks pass before GPU execution.
+The current upper gate has IID arithmetic eligibility about 6.65e-7 at
+n=16, despite correct strict-majority recovery probability above 0.975.
+Execute the registered model experiment; target outcomes are not yet claimed.
 Reopen Foundation only
 when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

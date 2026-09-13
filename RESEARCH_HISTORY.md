@@ -2697,3 +2697,30 @@ Foundation/ERC-1 and the scoped Runtime remain frozen. The next research
 direction is model science with structure inferred from ordinary data,
 legally unseen contexts, competitive baselines and the existing hierarchy
 identification controls. More static or half-specific cases are parked.
+
+## 82. Separate ordinary-data inference from the current empirical-upper gate (2026-09-13)
+
+RN-1 preregisters 18 relation-inference cases: n=8,16 and four seeds under
+conditioned one-flip-per-edge versus IID 1/10 noise, plus the existing
+disconnected-world control at n=8. Each FP run uses the frozen complete
+Runtime; an independent exact forest posterior and actual AMP table
+predictor supply a strong baseline from the same revealed training data.
+Frozen candidate quality on unseen relations is separated from search
+completion and subsequent deployed policy behavior. No latent bits or
+posterior forecasts enter Runtime, and no new semantic action is introduced.
+
+Before target execution, exact analysis exposes a substantive selection
+bottleneck. With ten labels per edge, the current uniform baseline/proposal
+can attain the categorical empirical upper only if every split is 5:5
+(baseline) or every split is 9:1 (candidate). Under IID noise its arithmetic
+eligibility is p9^(n-1)+p5^(n-1): about 6.65e-7 for n=16 and 1.71e-13 for
+n=32. Yet all strict empirical edge majorities recover the full relation
+with probabilities about 0.976 and 0.951. This is a solver/objective gate,
+not absence of information, native expressibility or a Foundation loophole.
+
+All 121 two-edge count patterns are checked against actual native proposal
+scores; exactly five are eligible. The posterior control agrees with full
+hidden-assignment enumeration in 40 small forest cases. Conditioned and IID
+training laws require different posteriors; the control respects that
+difference. Protocol, algorithms and the scoped eligibility lemma live in
+`experiments/relation_noise/`. Target/model outcomes remain to be executed.
