@@ -1,7 +1,9 @@
 # Reference release: scope and independent integration evidence
 
 Status: **scoped Reference/CPU implementation FROZEN, 2026-09-13. Target
-AMP OPEN; model science HOLD.** Foundation R4 and ERC-1 remain frozen.
+AMP was held at this CPU prerequisite.** The subsequent
+[scoped target release](CUDA_RELEASE_SCOPE.md) passes at `5e55eb4` and
+unholds registered experiments. Foundation R4 and ERC-1 remain frozen.
 
 Tested source: `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, machine
 `packed-reference-payload-v9`, CPython 3.12.9 on 64-bit Windows 11.

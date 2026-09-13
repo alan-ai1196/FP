@@ -5,22 +5,24 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 **Current priority, 2026-09-13:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
-the actual AMP bridge and then RTX 3090 experiments; the registered
-Reference/CPU release is now frozen after complete integration at `ebe2c4c`.
+registered RTX 3090 resource and model experiments. The Reference/CPU
+prerequisite froze at `ebe2c4c`; the complete current CPU/AMP integration
+now freezes at `5e55eb4` after all 31 full audits pass from one fresh clone.
 The remaining static special cases and sharp constants below are parked,
 not invitations to continue that program. Reopen Foundation only for an
 implementation/experiment correctness counterexample to its semantics.
 
-## 1. Close actual target AMP execution and installation
+## 1. Execute registered RTX 3090 resource and model experiments
 
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent
 endpoint models, trained installation and the owned n=32 hierarchy. The
-remaining target obligations are actual mixed-precision construction,
+subsequent target obligations are actual mixed-precision construction,
 continuous full deployed/candidate trajectories, per-event relations,
 owned device resources, separate same-path fresh evidence and actual
-installation. CPU equality or a reference crossing cannot discharge them.
+installation. These now pass their own [complete target release](theory/proofs/CUDA_RELEASE_SCOPE.md)
+at `5e55eb4`; CPU equality or a reference crossing alone cannot discharge them.
 The supporting CPU results below retain their individual scopes; broader
 optional strategy/information classes do not reopen this reference release.
 
@@ -61,8 +63,9 @@ actual resource refusals and corruption controls pass. Existing CUDA objects
 and initialized extents remain unchanged; the entire arena already belongs
 to both roles. No general cross-device or numerical transport is inferred.
 
-The active gap is complete target release integration. Do not reconstruct the now executed range, persistence
-or installation components or add static cases as new prerequisites.
+The target implementation prerequisite is closed for its registered scope.
+Do not reconstruct the now executed range, persistence or installation
+components or add static cases as new prerequisites.
 `INSTALLED_CUDA` states that scoped transition; it is not model-science or
 complete device-resource authority.
 
@@ -81,7 +84,7 @@ are now [implemented and audited](theory/proofs/WHOLE_BOARD_CUDA_RESOURCES.md).
 The identified physical board supplies a uniform 24 GiB residency envelope,
 charged to both roles; native tensor history and host private commitment stay
 separate. A 4 GiB Windows-job Runtime executes the 35-member CUDA install and
-continuation under that registration. The next work is release of the complete declared scope.
+continuation under that registration. These components are integrated in the frozen target scope.
 Do not demand exact foreign-allocation history to prove this already justified
 residency upper, or promote it to exclusive availability, cumulative work or
 an undeclared all-system resource claim.
@@ -95,9 +98,11 @@ The [existing hierarchical fixture now passes on actual AMP](theory/proofs/OWNED
 n=32 installs at 330 and seals at 622 with 1,963 independent CUDA phase
 checks. The strong zero-PRODUCT training tie and both identifiability controls
 also execute. In particular, disconnected indistinguishable worlds can both
-install while their unseen relations differ. The active next step is complete
-target release integration, then registered model science with competitive
-baselines. These results do not reopen static theory or establish population
+install while their unseen relations differ. The active next step is
+registered device experiments with competitive baselines. First measure
+the existing known-table resource constructions against strong fixed-P
+dyadic/Horner and shared-reciprocal/exact-singleton controls; this is not a
+new release prerequisite. These results do not reopen static theory or establish population
 or structural superiority.
 
 **Exact statement.** Implement one complete execution surface that instantiates `FP_THEORY.md` without allowing a caller to bypass claim state, information, value reachability, physical ownership/resources, numerical enclosures, persistence or bridge provenance.

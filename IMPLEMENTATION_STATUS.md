@@ -2,8 +2,17 @@
 
 ## Current release (2026-09-13)
 
-**Scoped Reference/CPU implementation: FROZEN. Target AMP: OPEN. Model
-science: HOLD.** The entire 21-script integration battery passed from a
+**Scoped Reference/CPU and RTX 3090 AMP implementation: FROZEN. Registered
+experiments: UNHELD within the tested scope.** Source
+`5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 current CPU and
+10 complete CUDA audits from one fresh clone; all 38 submodules import
+without Torch. Read [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and
+[integrated evidence](evidence/minimal/FP_CUDA_RELEASE_AUDIT.json). This
+includes actual device/resource binding, continuous trajectories, separate
+fresh evidence, resident installation, owned policy/run and n=32 target
+execution. It is not a model-quality or structural-forcing result.
+
+The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.
 
@@ -23,11 +32,12 @@ chain in a 1 GiB job pass in the same integration. Three old resource-boundary
 assertions required calibration against their own paid manifest; no Runtime
 implementation change was needed during this release integration.
 
-The declaration changes documentation/evidence only. The 14 reference
-closure obligations below are satisfied for this scope; obligation 15 is
-now the active frontier: actual AMP trajectories, resource ownership,
-same-path persistence and structural-boundary installation. Foundation R4
-and ERC-1 remain unchanged; static special cases stay parked.
+The target declaration changes documentation/evidence only. All 15 closure
+obligations below are satisfied for this registered scope, including actual
+AMP trajectories, resource ownership, same-path persistence and structural
+installation. Foundation R4 and ERC-1 remain unchanged; static special cases
+stay parked. The following component notes retain their individual scopes
+and integration history, not additional release prerequisites.
 
 Actual CUDA correctness diagnostics now execute on RTX 3090. The
 [`primitive audit`](scripts/audit_cuda_primitives.py) checks all finite half
@@ -96,8 +106,8 @@ extent is rejected before numeric access. The common CPU/CUDA transaction
 also passes the complete CPU install, owned-policy, host-failure and run
 regressions. Read `scripts/audit_cuda_installation.py` and its minimal evidence.
 
-Complete target release integration remains OPEN; model science remains HOLD. This is no new CPU
-freeze or all-kernel theorem, and it adds no semantic architecture action.
+This component is included in the complete target integration above. It
+is not an all-kernel theorem and adds no semantic architecture action.
 
 The separate [resource observation audit](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
 now executes a direct CUDA 32 MiB allocation/write/free invisible to the
@@ -121,8 +131,9 @@ admission and terminal authority after failed native observations, including
 unexpected diagnostic/cleanup failure. One 4 GiB Windows job executes native
 selection, fresh evidence, installation and continuation on the same bound
 host/device, with 151 independent CUDA phase checks. The device binding is
-part of the installation frame. Complete target release is still open;
-no new CPU freeze or model-science claim is issued.
+part of the installation frame. The complete target release combines this
+resource component with the execution chain; neither supplies model-quality
+or performance claims.
 
 The [owned target policy/run composition](theory/proofs/OWNED_CUDA_POLICY_RUN.md)
 now executes through the same Runtime strategy as CPU, with explicitly typed
@@ -147,8 +158,8 @@ upper cover the same broad reference constructor class. The smaller SUM
 training tie remains bitwise equal on actual forecasts; disconnected worlds
 both install with opposite unseen relations, while misleading connected
 relations finish unresolved. All five actual target workers pass under their
-original 4 GiB host caps. Complete target release integration remains before
-model science; no Foundation/ERC-1 change or new static case is involved.
+original 4 GiB host caps. Complete target release integration now passes as
+recorded above; no Foundation/ERC-1 change or new static case is involved.
 
 ## Status at GitHub migration (2026-09-06)
 

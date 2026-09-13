@@ -7,12 +7,16 @@ This file is written for a capable researcher/model that has **no access to prio
 The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
-- **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; do not extend static cases or chase their remaining constants before Runtime, AMP and device experiments.
-- **Scoped Reference/CPU implementation frozen.** Source `ebe2c4c` passed all 21 complete release audits in a fresh clone. Native selection, full learners, owned CPU evidence/install/run closure and their declared resource protocol are integrated; actual target AMP remains open.
-- **Science HOLD.** Do not start new RTX3090/model-science runs yet.
+- **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; static cases and their remaining constants stay parked while registered device experiments proceed.
+- **Scoped Reference/CPU and RTX 3090 AMP implementation frozen.** The CPU prerequisite passed at `ebe2c4c`. The complete target integration at `5e55eb4` passed all 21 current CPU and 10 CUDA audit scripts in one fresh clone; read [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
+- **Registered experiments UNHELD.** Proceed within the tested target scope and frozen ERC-1; do not interpret the correctness release as a model-quality or structural-forcing result.
 
-The current research direction is fixed: the actual AMP bridge, then RTX 3090
-experiments. The registered Reference/CPU prerequisite is closed. Reopen Foundation only
+The current research direction is registered RTX 3090 resource and model
+experiments. The Reference/CPU and actual AMP prerequisites are closed.
+First pressure-test the existing known-table resource constructions against
+strong fixed-P dyadic/Horner and shared-reciprocal/exact-singleton baselines;
+this is an experiment, not another release gate or static special-case program.
+Reopen Foundation only
 when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.
@@ -53,7 +57,7 @@ optimality is neither structural forcing nor fresh evidence. Unchanged
 exact theta now preserves its already owned whole-domain range object;
 changing theta recomputes/replaces it before release. All learner/optimizer
 and delayed-state histories remain distinct and retained. Final reference
-integration now passes; actual target AMP is next.
+and actual target integration now pass; registered device experiments are next.
 
 Read the frozen release scope and evidence:
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
@@ -79,8 +83,8 @@ one-round half FMA. A CPU-scalar divisor changes float32 division to a
 reciprocal/multiply path. Autocast alone leaves native elementwise operations
 float32. The audit checks all 63,488 finite half roundtrips, 190,464 cast
 boundary cases and 11,040 finite arithmetic results. These diagnostics
-provide no Runtime authority; complete owned AMP learners and their
-same-path evidence/install chain remain the active implementation work.
+provide no Runtime authority. Complete owned AMP learners and their
+same-path evidence/install chain are integrated in the target release.
 
 The actual continuous learner mechanics are now implemented in
 `cuda_learner.py`; read
@@ -92,7 +96,7 @@ an actual optimizer overflow even when projection hides it in a finite zero.
 The CUDA state keeps its own master parameters, half delayed queues and
 single gradient accumulator. The mechanical helpers have no signer. Their
 subsequent Runtime integration is now executed below; do not rebuild the
-learner or reopen the static study to postpone the remaining target work.
+learner or reopen the static study to postpone registered experiments.
 
 The actual tensor-storage component now executes all 1,306 phases in one
 16 MiB backing arena, with no additional native allocator allocations; read
@@ -147,11 +151,10 @@ full queues. Two further installations at 22 and 38 retain both generations
 and consume fresh alpha. Actual preparation caps, late failure/retry, pending
 work and state/extent corruption have negative controls.
 
-Continue with target release integration. CPU installation and its owned run policy still refuse a CUDA
-root; the new registered device transition has its own precise scope. Do
-not rebuild range/persistence/installation or resume static cases to defer
-the remaining target steps. The complete AMP release remains open; science
-remains HOLD.
+CPU installation and its owned run policy still refuse a CUDA root; the
+registered device transition has its own precise scope. Do not rebuild
+range/persistence/installation or resume static cases to defer experiments.
+The complete scoped AMP release now passes as recorded above.
 
 The [device-resource observation audit](theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
 now has a concrete negative witness: native arena snapshots remain identical
@@ -206,15 +209,18 @@ bytes; the completed job peaks at 3,905,241,088 bytes under its 4 GiB cap.
 The actual smaller SUM-only learner preserves its training prediction-word
 tie. Both disconnected worlds install despite opposite unseen relations;
 misleading connected majorities end unresolved without install. All five
-target cases pass. The active next step is complete target release
-integration, followed by registered RTX 3090 model science with strong
+target cases pass. The complete integration also passes; proceed with
+registered RTX 3090 resource and model experiments with strong
 baselines. Do not treat native training optimality or fresh installation
 as structural forcing or complete population identification.
-The prepared complete integration command is
-`python -B scripts/audit_cuda_release.py --write`; it requires committed
-source and runs all 21 CPU plus 10 CUDA batteries from a fresh clone.
-Read [its scope](theory/proofs/CUDA_RELEASE_SCOPE.md) before declaring the
-target freeze; individual component PASS records do not replace this run.
+The complete integration command
+`python -B scripts/audit_cuda_release.py --write` passed at `5e55eb4`: all
+21 CPU plus 10 CUDA batteries from a fresh clone, 38 imported submodules,
+and the same actual device identity throughout the target checks. The
+[integrated result](evidence/minimal/FP_CUDA_RELEASE_AUDIT.json) now closes
+the [scoped target release](theory/proofs/CUDA_RELEASE_SCOPE.md). Its n=32
+job peak is 3,905,482,752 bytes under 4 GiB. Preserve the tested source ID;
+this declaration changes only documentation/evidence, not implementation.
 
 The same endpoint now also executes a registered **CPU binary64** learner
 beside each exact learner, throughout initialization, profile, prediction,
@@ -259,8 +265,8 @@ retry collision is fixed by attempt-specific physical metadata identities.
 ordinary continuation. The 774-member case installs actually trained nonzero
 parameters. This closes the declared serialized CPU transition, not full
 host/device accounting, concurrent/crash-safe publication, target AMP or
-`CERTIFIED_COMPLETE`. The integrated Reference/CPU scope is frozen; science
-stays HOLD until actual target AMP passes.
+`CERTIFIED_COMPLETE`. Both the integrated Reference/CPU prerequisite and
+the subsequent registered target AMP release are now frozen.
 The same audit also executes two successive compilation/evidence/install
 cycles in one Runtime. New baselines and fresh identities work, old
 authority stays closed, and the global alpha cap still blocks later use.
@@ -386,7 +392,8 @@ cursor 22, including in an actual 64 MiB process with checked final exit.
 The [47-gate crosswalk](docs/REFERENCE_RELEASE_GATE_MAP.md) is an evidence map,
 not 47 passing flags. Gate 17 now has the actual n=32 owned execution and
 negative controls described above; final reference integration now passes.
-Gates 16/28–30 and the target parts of 13/20 are the next actual AMP work.
+Gates 16/28–30 and the target parts of 13/20 now have complete actual AMP
+integration at `5e55eb4`.
 Do not expand static cases or invent optional universal
 policy, quotient or cross-root protocols as prerequisites for this scope.
 

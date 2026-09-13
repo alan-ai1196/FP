@@ -138,5 +138,7 @@ The fixed 16 MiB native tensor arena, actual whole-board 24 GiB framebuffer
 upper, host commitment and owned packed payload remain separate typed
 coordinates. No measured FP VRAM peak, all-instruction count or GPU-speed
 claim is inferred from the board envelope or the reference work ledger.
-The protocol is correctness/resource evidence; complete target release
-integration remains a separate obligation before model science.
+The protocol is correctness/resource evidence. Its subsequent
+[complete target release integration](CUDA_RELEASE_SCOPE.md) passes at
+`5e55eb4`; the hierarchy alone does not supply that release or a model-quality
+conclusion.

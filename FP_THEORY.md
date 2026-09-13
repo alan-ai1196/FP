@@ -1,24 +1,27 @@
 # Factor Programs (FP) — Canonical Theory
 
-**Canonical status (2026-09-13): THEORY FROZEN; EXPERIMENT RESOURCE CONTRACT FROZEN; SCOPED REFERENCE/CPU IMPLEMENTATION FROZEN; TARGET AMP OPEN; SCIENCE HOLD.**
+**Canonical status (2026-09-13): THEORY FROZEN; EXPERIMENT RESOURCE CONTRACT FROZEN; SCOPED REFERENCE/CPU AND RTX 3090 AMP IMPLEMENTATION FROZEN; REGISTERED EXPERIMENTS UNHELD.**
 
 This file is the **only normative theory source** for FP. Historical v1–v155 canonicals, v156–v164 attack drafts, R2/R3/R4 working files and experiment-era theory snapshots are provenance only. If an older statement conflicts with this file, this file wins.
 
 The theory is frozen in the following sense: do not add a new architecture-semantic mechanism merely to make search faster. If implementation exposes a mathematical counterexample to the declared object, reopen theory. If it exposes only hard search, weak information, expensive certificates, numerical ambiguity or insufficient fresh evidence, improve the solver or return `UNRESOLVED`.
 
-No new RTX3090/model-science run is authorized until the complete Reference Compiler runtime instantiates this contract in the float64/reference path and the actual target AMP path passes its event-level bridge gates.
+The scoped Reference Compiler runtime and actual target AMP path have passed their complete integration and event-level bridge gates. Registered RTX 3090 experiments may now proceed within that tested scope; execution outside it requires the corresponding evidence, not a borrowed release claim.
 
 The registered Reference/CPU implementation passed its complete integration
 at source `ebe2c4c`: 21 full audit scripts, fresh-clone imports, exact endpoint
 model checks and the scoped 47-obligation map. Its precise frozen boundary is
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md).
-This closes the reference prerequisite; actual target AMP correctness is next.
+The target integration at `5e55eb4` subsequently passed all 21 current CPU
+and 10 complete CUDA audit scripts from one fresh clone. Its numerical,
+resource, persistence, installation and finite-run boundary is fixed in
+[`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
 The Foundation definitions and theorems below are unchanged by this release.
 
 The joint resource study closes at XVII.31. Its experiment accounting and
 release criteria are frozen in [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md),
-ERC-1. Do not extend static special cases or chase their remaining constants
-before Runtime, AMP and target-device work. Reopen Foundation only for a
+ERC-1. Static special cases and their remaining constants stay parked;
+continue with registered device experiments. Reopen Foundation only for a
 correctness counterexample to the declared semantics.
 
 ---

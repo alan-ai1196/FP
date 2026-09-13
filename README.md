@@ -17,10 +17,10 @@ FP studies whether a **typed causal positive program** built from a small native
 ## Current status
 
 - **Theory:** Foundation R4 frozen and consolidated into `FP_THEORY.md`.
-- **Experiment resources:** ERC-1 specification frozen after the scoped joint PRODUCT/SUM/range/precision law. Static case expansion is parked; actual AMP correctness is next, followed by RTX 3090 experiments.
+- **Experiment resources:** ERC-1 specification frozen after the scoped joint PRODUCT/SUM/range/precision law. Static case expansion remains parked; registered RTX 3090 experiments are next.
 - **Reference Compiler:** **scoped Reference/CPU release frozen** at tested source `ebe2c4c`; 21 complete fresh-clone audits pass. See [release scope](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and [minimal evidence](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
-- **Actual AMP:** owned CUDA trajectories, fresh evidence, resident installation, device resources and finite policy/run composition execute. The [n=32 hierarchy and its negative controls](theory/proofs/OWNED_CUDA_HIERARCHY.md) now pass; complete target release integration remains.
-- **GPU/model science:** **HOLD**. No new RTX3090 science is authorized until the complete Reference Compiler runtime passes the required reference gates and the actual AMP path passes its bridge gates.
+- **Actual AMP:** **scoped target release frozen** at `5e55eb4`; all 21 current CPU and 10 CUDA audits pass from one fresh clone. See [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and [integrated evidence](evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
+- **GPU/model science:** **registered experiments unheld** within the tested scope. Correctness, fresh installation and the n=32 hierarchy do not themselves establish population identification, necessary structure or a model-quality advantage.
 - **Historical R4.2 implementation:** preserved under `experiments/legacy_r4_2_v23/` because its failure produced the v24 theoretical counterexample. It is not a current implementation.
 
 ## Repository discipline

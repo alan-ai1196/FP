@@ -186,6 +186,7 @@ This does not reissue the frozen CPU release.
 
 The subsequent [device binding](WHOLE_BOARD_CUDA_RESOURCES.md) and
 [owned policy/run composition](OWNED_CUDA_POLICY_RUN.md) now execute on this
-transition. Final target release remains open. `install_cuda` establishes the scoped transition
-above; the generic full-release `install` remains unresolved. Continue that
-integration before model science, without extending static special cases.
+transition. The subsequent [complete scoped target release](CUDA_RELEASE_SCOPE.md)
+passes at `5e55eb4`. `install_cuda` establishes the transition above; the
+generic `install` port remains unresolved. Registered experiments can now
+proceed through the supported path, without extending static special cases.

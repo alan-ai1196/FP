@@ -1,9 +1,9 @@
 # Experiment Resource Contract — ERC-1
 
 **Status: FROZEN SPECIFICATION, 2026-09-12.** The scoped Reference/CPU
-implementation passed release integration on 2026-09-13; the target AMP
-bridge is **NOT VERIFIED**. GPU/model science remains HOLD until the target
-prerequisite passes. `FP_THEORY.md` remains the only
+implementation and the registered RTX 3090 AMP path passed complete release
+integration on 2026-09-13. Registered experiments are **UNHELD** within
+[`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md). `FP_THEORY.md` remains the only
 normative theory source; this file fixes its experiment resource accounting,
 claim scopes and release criteria.
 
@@ -154,13 +154,16 @@ its minimal release evidence. The frozen implementation concerns its declared
 native classes, complete CPU learners, owned strategy and serialized Windows
 resource/run protocol. ERC-1 itself supplies no implementation certificate.
 
-**Next: target AMP bridge.** Execute the actual registered mixed-precision
-path, with continuous deployed/candidate reference/AMP trajectories and
-event-level enclosures, including structure construction and installation.
-Device correctness/bridge tests follow reference closure. They are not
-model-science wins and cannot be replaced by CPU endpoint agreement.
+**Target AMP prerequisite CLOSED for its registered scope.** Source
+`5e55eb4` passed all 21 current CPU and 10 complete CUDA audit scripts from
+one fresh clone. Continuous deployed/candidate reference/AMP trajectories,
+event-level checks, resources, independent persistence, construction,
+installation and finite run publication execute on the actual RTX 3090.
+Read [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md) and its
+minimal integration evidence. These correctness results are not model-science
+wins and cannot be replaced by CPU endpoint agreement.
 
-**Then: RTX 3090 experiments.** With the Runtime and actual target bridge
+**Now: RTX 3090 experiments.** With the Runtime and actual target bridge
 gates passed, execute the registered structural and model-science experiments
 on the available target device. Hardware inspection and preparation are
 read-only work that can occur earlier. Continue to return UNRESOLVED where

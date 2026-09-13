@@ -1,7 +1,7 @@
 # Historical gates at the current Reference Runtime frontier
 
-Status: **47 obligations mapped; scoped Reference/CPU release FROZEN;
-target AMP OPEN; science HOLD.**
+Status: **47 obligations mapped; scoped Reference/CPU and RTX 3090 AMP
+release FROZEN; registered experiments UNHELD within the tested scope.**
 This is an evidence crosswalk, not 47 passing test flags. The historical
 [catalog](history/V155_GATE_CATALOG.md) names the obligations; current
 [FP_THEORY.md](../FP_THEORY.md) supplies their scope. Old section numbers and
@@ -24,8 +24,9 @@ Modes below:
 - **X**: the relevant erasure/bypass authority is absent and denied; no
   equivalence certificate or implementation of arbitrary quotients is claimed.
 - **O**: an open reference experiment/implementation obligation.
-- **T**: target AMP evidence must follow reference closure. CPU evidence is
-  the prerequisite listed here, never a substitute for the target path.
+- **T**: the historical target component, now executed by the target
+  integration below. CPU evidence in this prerequisite table never
+  substitutes for the actual target path.
 
 | ID | Historical obligation | Mode | Current evidence and exact boundary |
 |---:|---|---|---|
@@ -42,14 +43,14 @@ Modes below:
 | 10 | whole reachable positivity/range/context | R | [Construction][construction], [events][events], [paired CPU][paired]: exact finite domain or conservative full box/invariant enclosure at construction/commit/admission. Inconclusive bounds remain UNRESOLVED; observed maxima never replace full-domain bounds. |
 | 11 | birth-state | R | [Profiles][profiles], [float64][float64]: initializer, complete local replay, boundary attachment, delayed histories and optimizer accumulators are constructed and retained. No supplied newborn values. |
 | 12 | causal microbatch/logical clock | R | [Events][events], [float64][float64], [run][run]: prediction before target, accumulation before registered commit, causal state continuation, preserved partial final unit without a synthetic flush. |
-| 13 | structural epoch/continuous shadow/noninterference/atomic context | R/T | [Events][events], [paired CPU][paired], [CPU install][install], [policy][policy] exercise continuous CPU branches and one root publication at the same cursor. Target mixed precision remains gates 16/28–30. |
+| 13 | structural epoch/continuous shadow/noninterference/atomic context | R/T | [Events][events], [paired CPU][paired], [CPU install][install], [policy][policy] exercise continuous CPU branches and one root publication at the same cursor. The target component is covered by the integrated release below. |
 | 14 | bounded evidence/error ledger | R | [Persistence][persistence], [paired CPU][paired], [policy][policy], [run][run]: bounded guarded lower wealth, separate same-path alpha, nonrefundable global ledger for one root. Stochastic producer/null assumptions are explicit, not inferred from tapes. |
 | 15 | self-compiler equivalence | X/S | FP_THEORY II/XVI; [authority counterexamples][authority], [control][control], [policy][policy]. No public resource-only bypass or complete-equivalence issuer exists. Current-output equality grants no rewrite/install authority. |
-| 16 | float64-AMP bridge/enclosures | T | [Binary arithmetic][arithmetic] and [float64][float64] establish actual scalar CPU prefix relations. Actual registered target storage/accumulation/casts/subnormal behavior and every target event relation are still required. |
+| 16 | float64-AMP bridge/enclosures | T | [Binary arithmetic][arithmetic] and [float64][float64] establish actual scalar CPU prefix relations. Their target counterparts execute in the integrated release below; CPU evidence alone is insufficient. |
 | 17 | anti-unigram hierarchical | R/S | [Bounded native search][acceleration] executes n=32 from ordinary token contexts/labels, constructs group SUMs and pair PRODUCTs, checks all 1,024 contexts, installs at 330 and seals at 622 in a 1 GiB job. A distinct empirical-upper proof bounds the full native class without claiming enumeration. Disconnected worlds, a cheaper SUM-only train tie, false connected empirical relations and the existing sharp full-uniform SUM control prevent latent/population/forcing overclaims. |
 | 18 | claim scope/data role/stream law | R | [Events][events], [persistence][persistence], [run][run]: immutable data/learner/search/host/policy/baseline registration; revealed train/online ingress only. Query-only and reporting-only execution remain unsupported; no population claim without its external law. |
 | 19 | certificate provenance/honest unresolved | R | [Search][search], [control][control], [run][run]: exact typed owned proof, explicit decision class, stale/current distinction, work/coverage uncertainty and no target authority. No `CERTIFIED_COMPLETE` endpoint is implemented. |
-| 20 | complete self-compiler atomicity | R/T | [CPU install][install] and [policy][policy] include policy, live jobs/frontiers, ledgers and learners in the fixed root schema. [Run][run] separately seals the final stream; failed report retention cannot roll back a completed install. Target transition is held. |
+| 20 | complete self-compiler atomicity | R/T | [CPU install][install] and [policy][policy] include policy, live jobs/frontiers, ledgers and learners in the fixed root schema. [Run][run] separately seals the final stream; failed report retention cannot roll back a completed install. The target transition executes in the integrated release below. |
 | 21 | resource ledger provenance | R | [Construction][construction], [CPU install][install], [encoding][encoding], [host][host], [run][run]: actual buffers/leases, detached transfer checks, source encoding, process lifetime and paid manifest/report. No caller object list or role routing. |
 | 22 | stream cursor/state atomicity | R | [Events][events], [ingress][ingress], [CPU install][install], [run][run]: failed targets remain revealed, complete ordinary successors publish together, structural work does not create events; sealed streams deny every continuation port. |
 | 23 | constructive reachability/profile | R | [Profiles][profiles], [search][search], [CPU install][install]: registered constructor endpoints and actual build-before-free installation. A fitted endpoint or static exact witness is insufficient. |
@@ -57,9 +58,9 @@ Modes below:
 | 25 | initializer/profile attribution | R | [Profiles][profiles], [search][search], [run][run]: fixed initializer/profile/optimizer/transport and actual initial baseline are in chi; all replay retains its original observation identities and work. |
 | 26 | encoding/lowering attribution | R | [Encoding][encoding], [float64][float64], [run][run]: exact typed encodings, distinct source strings, explicit machine/arithmetic identity and paid storage. No inference from CPU multiply instructions to semantic PRODUCT count. |
 | 27 | positive dense-attention limit | S | FP_THEORY VI.12: convergence across declared finite positive-feature contracts with nonnegative/simplex values. No infinite/signed leaf family or universal hardware lower bound inside one Runtime. |
-| 28 | path-matched dual persistence | T | [Paired CPU][paired] executes separate reference and stored-binary64-mass gains; its reference-crossing/zero-physical-gain counterexample rejects borrowed wealth. Actual candidate/base AMP gains and alpha allocations remain required. |
+| 28 | path-matched dual persistence | T | [Paired CPU][paired] executes separate reference and stored-binary64-mass gains; its reference-crossing/zero-physical-gain counterexample rejects borrowed wealth. Actual candidate/base AMP gains and alpha allocations execute in the target integration below. |
 | 29 | dual-branch bridge | T | [Float64][float64], [paired CPU][paired]: both actual CPU learner paths have event relations. One-branch agreement or final rescore cannot authorize four target trajectories. |
-| 30 | structural-boundary bridge | T | [CPU install][install], [policy][policy] preserve checked CPU states/buffers/lineages through construction and atomic installation. Actual target initialization/build/install/copy relation is unimplemented. |
+| 30 | structural-boundary bridge | T | [CPU install][install], [policy][policy] preserve checked CPU states/buffers/lineages through construction and atomic installation. The owned target initialization/build/resident-install relation executes in the integration below. |
 | 31 | predictive-mixture/general-FP scope | S | FP_THEORY IV.10/V; [recurrent algebra record][recurrent]: one recurrent positive coordinate can have large/full horizon response span. Fixed-generator positive-mixture rank is not a general FP state lower bound. |
 | 32 | predictive-dimension/resource scope | S | FP_THEORY IV–VII; [causal record][causal]: response-span/generator counts do not equal physical state bits, nodes, work or memory without a declared interface and realization. |
 | 33 | predictive-dimension turning point | S | FP_THEORY V; [v156 exact/numerical record][math]: invariant-cone generator count may jump under process perturbation in that restricted class. No general Runtime structural phase follows. |
@@ -104,13 +105,13 @@ scripts at `ebe2c4c`, including exact/exhaustive models of 36 actual Runtime
 registrations. The corresponding release record identifies that source and
 the complete executed sections; earlier standalone JSON files are not used
 as substitutes for that integration. Gates 16/28–30 and the target components
-of 13/20 are next executed on the actual
-registered AMP backend, ahead of RTX 3090 model science. No static theorem
+of 13/20 execute on the actual registered AMP backend in the subsequent
+target integration below, closing that correctness prerequisite. No static theorem
 family or architecture menu is added by this crosswalk.
 
-## Target integration of these existing obligations
+## Executed target integration of these existing obligations
 
-The actual target components now have individual executed evidence for
+The actual target components have both individual and integrated evidence for
 owned trajectories, numerical bounds/fresh persistence, resident installation,
 device resources, owned policy/run and the n=32 hierarchy. The Reference
 rows above retain their original CPU prerequisite scope; their T markers
@@ -118,9 +119,12 @@ are mapped to those target executables by
 [`audit_cuda_release.py`](../scripts/audit_cuda_release.py). That driver runs
 all 21 current CPU and 10 complete CUDA batteries from one committed fresh
 clone, including the independent resource and identifiability controls.
+All 31 audits pass at `5e55eb4`, with 38 submodule imports and clean source
+before/after execution. Read the [integrated record](../evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
 The [target release scope](../theory/proofs/CUDA_RELEASE_SCOPE.md) distinguishes
-its six target components from the retained scoped static premises. Complete
-target integration must pass before its release declaration or model science.
+its six target components from the retained scoped static premises. The
+target correctness prerequisite is now closed and registered experiments
+may proceed within that scope.
 
 [construction]: ../scripts/audit_reference_construction.py
 [events]: ../scripts/audit_reference_events.py

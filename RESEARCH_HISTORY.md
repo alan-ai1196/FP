@@ -2569,3 +2569,51 @@ identification and all unresolved-case regressions pass after fixture extraction
 The next work is complete target release integration and then registered
 RTX 3090 model science with competitive baselines. Foundation/ERC-1 remain
 frozen and no additional static resource cases are prerequisites.
+
+## 79. Freeze the integrated scoped Reference/CPU and target AMP Runtime (2026-09-13)
+
+Source `5e55eb4f359016d18d68239938bdfb15893238eb` passes the complete target
+integration: all 21 current CPU and 10 complete CUDA audit scripts execute
+from one clean clone without hardlinks. All 38 package submodules import
+without Torch. The CPU suites can overlap; actual CUDA suites execute
+serially. The driver checks complete report sections, concrete class/branch
+coverage, process exits, owned host/device identities and source cleanliness.
+Earlier component PASS files are not used as execution substitutes.
+
+The integration runs from 01:37:52 to 02:07:33 UTC on 2026-09-13 under
+CPython 3.12.9 and 64-bit Windows 11. No implementation, audit or budget
+change was needed during this run. It preserves all 47 Reference obligation
+scopes and executes the target components 13/16/20/28/29/30, plus shared
+physical resources and the existing hierarchy/identifiability controls.
+The static theorem rows remain premises rather than invented GPU test flags.
+
+Actual RTX 3090 binding again distinguishes Torch build CUDA 13.2 from
+native runtime/API 13040, with driver 616.92, PCI 0000:0B:00.0 and the
+original board UUID. The whole-board 24 GiB residency upper, native arena,
+host commitment and packed resource histories retain their separate types.
+No exact FP VRAM peak, exclusive allocation or GPU instruction/time cap is
+inferred from them.
+
+The target policy/run's 32 independently fenced workers all pass. Its
+trained 774-member and recurrent 124-member classes, 16 complete finite
+branches and report/installation failure controls are included. The n=32
+target again installs at 330 and seals at 622 with 1,963 independently
+checked CUDA and binary64 phases. Its completed job peak is 3,905,482,752
+bytes under 4 GiB, including independent final replay. The smaller SUM
+training tie and both identifiability controls remain active negative
+results, not swept into a model-quality claim.
+
+`CUDA_RELEASE_SCOPE.md` fixes the exact boundary and
+`FP_CUDA_RELEASE_AUDIT.json` retains the 90,000-byte integrated evidence.
+The declaration is documentation/evidence only, with no change to tested
+implementation or audit code. The earlier CPU release at `ebe2c4c` keeps its
+own identity; the declaration does not recursively test itself to chase a
+new commit ID. Foundation definitions and ERC-1 resource laws are unchanged.
+
+Registered RTX 3090 experiments are now unheld within the tested scope.
+The next work is measured resource/model behavior with competitive baselines,
+starting from the existing known-table constructions and their strong
+fixed-P dyadic/Horner, shared-reciprocal and exact-singleton controls.
+This is an experiment choice, not an added release gate or permission to
+expand the parked static program. Reopen Foundation only for an experimental
+correctness counterexample to its declared semantics.

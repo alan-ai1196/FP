@@ -1,22 +1,24 @@
-# Foundation-R4 Reference Compiler — scoped CPU release
+# Foundation-R4 Reference Compiler — scoped CPU and RTX 3090 AMP release
 
-**Status: scoped Reference/CPU implementation FROZEN, 2026-09-13. Actual
-target AMP remains OPEN; model science HOLD.** Source `ebe2c4c` passes all
-21 complete audit scripts from a fresh clone, including 30 module imports,
-independent exact endpoint models, owned trained installation and the n=32
-hierarchy. See [release scope](../../theory/proofs/REFERENCE_RELEASE_SCOPE.md)
-and [minimal evidence](../../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
+**Status: scoped Reference/CPU and RTX 3090 AMP implementation FROZEN,
+2026-09-13. Registered experiments are UNHELD within this scope.** Source
+`5e55eb4` passes all 21 current CPU and 10 complete CUDA audits from one
+fresh clone, including 38 submodule imports, independent endpoint models,
+trained/recurrent installation, device resources and the n=32 hierarchy.
+See [target scope](../../theory/proofs/CUDA_RELEASE_SCOPE.md) and
+[integrated evidence](../../evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
+The separate earlier CPU prerequisite remains recorded at `ebe2c4c`.
 
 The late 2026-09-05 research workspace contained a larger `fp_reference` package than the eight files that survived as direct final attachments. The missing scratch modules are not evidence that the implementation never existed: execution provenance records a 22-module package and an intermediate 24/24 unit + 47/47 gate pass before later complete-Runtime hardening.
 
-This directory contains the current scoped Reference/CPU implementation;
-Git retains the directly persisted late-WIP source. Target AMP integration
-is now the active frontier. See root `IMPLEMENTATION_STATUS.md` for the
+This directory contains the current scoped Reference/CPU and target AMP
+implementation; Git retains the directly persisted late-WIP source.
+Registered RTX 3090 experiments are next. See root `IMPLEMENTATION_STATUS.md` for the
 current release and `RECOVERY_MANIFEST.md` for historical provenance.
 
 Extend the implementation against `FP_THEORY.md`; do not weaken its contract
 or import superseded R4.2 semantics. The reference modules are restored and
-integrated; actual target execution needs its own complete endpoint evidence.
+integrated; actual target execution retains its own complete endpoint evidence.
 
 `fp_reference.cuda_learner` now provides actual continuous mixed-precision
 learner mechanics with an independent exact rounded audit. The helpers have
@@ -55,8 +57,8 @@ device extents and full states before one combined root/lease publication.
 The CUDA learner objects retain identity; old searches and evidence stop
 with history and alpha preserved. Read
 [owned CUDA installation](../../theory/proofs/OWNED_CUDA_INSTALLATION.md) and
-run `scripts/audit_cuda_installation.py`. Complete target release integration
-remains the frontier; science stays HOLD.
+run `scripts/audit_cuda_installation.py`. The complete target release above
+combines this component with its owned policy/run and resource bindings.
 Read [device-resource observation scope](../../theory/proofs/CUDA_RESOURCE_OBSERVABILITY.md)
 before promoting native arena counters to a complete device claim. The
 actual foreign-allocation audit also distinguishes Torch's CUDA build tag
@@ -97,7 +99,8 @@ with 1,963 independently replayed CUDA and binary64 phases. Its actual
 SUM-only training tie and disconnected/misleading-relation controls pass;
 neither empirical optimality nor fresh installation identifies an unseen
 table or forces the selected structure. Run `scripts/audit_cuda_hierarchy.py`.
-Final target release integration remains before model science.
+The full fresh-clone integration passes at `5e55eb4`; run
+`scripts/audit_cuda_release.py --write` to reproduce it on committed source.
 
 ## Current executable recovery (2026-09-12)
 

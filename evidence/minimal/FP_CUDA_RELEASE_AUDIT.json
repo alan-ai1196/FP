@@ -1,0 +1,2705 @@
+{
+  "status": "PASS",
+  "scope": "complete integration of the registered Reference/CPU and actual half/single CUDA Runtime paths",
+  "source_commit": "5e55eb4f359016d18d68239938bdfb15893238eb",
+  "reference_prerequisite_source": "ebe2c4cf23f296fe517d4fe237cef45eaa98d309",
+  "started_utc": "2026-09-13T01:37:52.051229+00:00",
+  "finished_utc": "2026-09-13T02:07:33.086617+00:00",
+  "machine": "packed-reference-payload-v9",
+  "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "fresh_clone": {
+    "no_hardlinks": true,
+    "clean_before_and_after": true,
+    "all_package_modules_import_without_torch": true,
+    "imported_modules": [
+      "fp_reference.binary_arithmetic",
+      "fp_reference.bridge",
+      "fp_reference.core",
+      "fp_reference.cuda_device",
+      "fp_reference.cuda_installation",
+      "fp_reference.cuda_learner",
+      "fp_reference.cuda_persistence",
+      "fp_reference.cuda_prefix",
+      "fp_reference.cuda_range",
+      "fp_reference.cuda_run",
+      "fp_reference.cuda_storage",
+      "fp_reference.data_usage",
+      "fp_reference.empirical_bound",
+      "fp_reference.encoding",
+      "fp_reference.float64_bridge",
+      "fp_reference.float64_learner",
+      "fp_reference.float64_range",
+      "fp_reference.host_failure",
+      "fp_reference.host_resources",
+      "fp_reference.info",
+      "fp_reference.ingress",
+      "fp_reference.installation",
+      "fp_reference.learner",
+      "fp_reference.machine",
+      "fp_reference.native_search",
+      "fp_reference.numerics",
+      "fp_reference.persistence",
+      "fp_reference.persistence_state",
+      "fp_reference.policy",
+      "fp_reference.profile",
+      "fp_reference.program",
+      "fp_reference.proof",
+      "fp_reference.relation_proposal",
+      "fp_reference.resources",
+      "fp_reference.run_state",
+      "fp_reference.runtime",
+      "fp_reference.search",
+      "fp_reference.semantics"
+    ]
+  },
+  "audit_count": 31,
+  "CPU_audits": {
+    "owned_compiler_policy": {
+      "status": "PASS",
+      "scope": "registered owned sequential native-class Compiler strategy on actual CPU Runtime",
+      "seconds": 1211.7,
+      "complete_sections": [
+        "registration",
+        "success",
+        "learned",
+        "exhaustive",
+        "failures",
+        "bounded"
+      ],
+      "evidence": {
+        "success.native_class_sizes": [
+          35,
+          35
+        ],
+        "success.installed_at_cursors": [
+          22,
+          38
+        ],
+        "learned.native_class_sizes": [
+          774
+        ],
+        "learned.installed_at_cursors": [
+          18
+        ],
+        "exhaustive": {
+          "all_six_label_streams": 64,
+          "outcomes": {
+            "BASELINE_SELECTED": 32,
+            "UNRESOLVED": 30,
+            "INSTALLED_CPU": 2
+          },
+          "independent_log_and_exact_wealth_checks": 256
+        }
+      },
+      "completed_jobs": {
+        "bounded.job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 36491264,
+          "peak_job_commit": 37711872,
+          "user_100ns": 186093750,
+          "kernel_100ns": 1406250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 4516,
+          "process_creation_100ns": 134337382655978800
+        }
+      }
+    },
+    "cpu_installation": {
+      "status": "PASS",
+      "scope": "serialized CPU root/lease installation from owned exact proposal and two-path evidence",
+      "seconds": 276.19,
+      "complete_sections": [
+        "ledger",
+        "success",
+        "learned",
+        "failures",
+        "capacity",
+        "continuation"
+      ],
+      "evidence": {
+        "ledger.independent_complete_lease_cases": 2016,
+        "success.complete_native_class_programs": 35,
+        "learned.complete_native_class_programs": 774,
+        "learned.independent_continuous_binary64_phase_checks": 870,
+        "continuation.install_cursors": [
+          22,
+          38
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "reference_model_check": {
+      "status": "PASS",
+      "scope": "owned finite Runtime and independently exhaustive exact native/learner model",
+      "seconds": 800.51,
+      "complete_sections": [
+        "counts",
+        "seed",
+        "distinct_class_shapes",
+        "selected_cases"
+      ],
+      "evidence": {
+        "counts": {
+          "runs": 36,
+          "complete_native_members": 2665,
+          "exact_endpoint_scores": 2619,
+          "range_unresolved_members": 46,
+          "complete_class_proofs": 33,
+          "initial_range_unresolved_members": 44,
+          "profile_range_unresolved_members": 2,
+          "infeasible_class_results_unresolved": 3,
+          "ordinary_successor_checks": 361,
+          "halted_unsafe_ordinary_commits": 3,
+          "independent_binary64_phases": 23274
+        },
+        "distinct_class_shapes": 34,
+        "seed": 2026091367
+      },
+      "completed_jobs": {}
+    },
+    "reference_search": {
+      "status": "PASS",
+      "scope": "owned complete ordered native constructor class plus actual deployed baseline; fixed-state exact empirical CE",
+      "seconds": 143.5,
+      "complete_sections": [
+        "grammar",
+        "runtime",
+        "compound",
+        "recurrent",
+        "adversaries"
+      ],
+      "evidence": {
+        "grammar.independent_complete_classes": [
+          {
+            "class": "empty",
+            "programs": 0,
+            "transitions": 3
+          },
+          {
+            "class": "scalar-compounds",
+            "programs": 587,
+            "transitions": 736
+          },
+          {
+            "class": "shared-PRODUCT-descendants",
+            "programs": 12215,
+            "transitions": 13828
+          },
+          {
+            "class": "repeated-edges-and-slots",
+            "programs": 205,
+            "transitions": 324
+          },
+          {
+            "class": "multiple-SUMs",
+            "programs": 774,
+            "transitions": 982
+          },
+          {
+            "class": "typed-products",
+            "programs": 217,
+            "transitions": 390
+          },
+          {
+            "class": "binding-permutations",
+            "programs": 72,
+            "transitions": 98
+          },
+          {
+            "class": "delayed-bodies",
+            "programs": 778,
+            "transitions": 837
+          },
+          {
+            "class": "absent-body-type",
+            "programs": 12,
+            "transitions": 110
+          }
+        ],
+        "runtime.complete_profile_constructor_programs": 110,
+        "compound.complete_native_programs": 587,
+        "recurrent.complete_delayed_binding_programs": 10
+      },
+      "completed_jobs": {}
+    },
+    "reference_acceleration": {
+      "status": "PASS",
+      "scope": "universal frozen-context empirical upper, owned native witness and bounded CPU hierarchy protocol",
+      "seconds": 289.97,
+      "complete_sections": [
+        "cases.upper_audit",
+        "cases.baseline_exhaustive",
+        "cases.connected_assignments",
+        "cases.profiles",
+        "cases.identification_limits",
+        "cases.unresolved_cases",
+        "cases.authority_adversaries",
+        "cases.range_residency",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.upper_audit": {
+          "two_context_count_tables": 225,
+          "exact_rational_prediction_comparisons": 18225,
+          "independent_proposition_and_numeric_type_refusals": 1575,
+          "erasing_source_distinction_can_make_false_upper_and_is_rejected": true
+        },
+        "cases.baseline_exhaustive": {
+          "independently_enumerated_native_programs": 218,
+          "baseline_attains_upper_with_zero_new_candidates": true,
+          "syntax_not_claimed_exhausted": true
+        },
+        "cases.identification_limits": {
+          "disconnected_indistinguishable_worlds_with_opposite_unseen_relation": 2,
+          "same_empirical_optimum_does_not_identify_relative_component_flip": true,
+          "cheaper_train_tied_zero_PRODUCT_actual_construction": {
+            "nodes": 5,
+            "sources": 3,
+            "state_reads": 0,
+            "SUMs": 2,
+            "PRODUCTs": 0,
+            "SUM_edges": 3,
+            "edges": 3,
+            "slots": 2,
+            "bindings": 0
+          },
+          "empirical_optimality_does_not_force_hierarchy": true,
+          "existing_full_uniform_task_Bayes_CE": 0.3250829733914482,
+          "existing_sharp_unrestricted_SUM_infimum_CE": 0.5091150769756967
+        },
+        "cases.bounded": {
+          "tokens": 32,
+          "ordinary_training_events": 310,
+          "optimizer_update_unit": 10,
+          "complete_domain_predictions_checked": 1024,
+          "native_graph": {
+            "nodes": 74,
+            "sources": 64,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 68,
+            "edges": 76,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 1090,
+            "SUMs": 1030,
+            "PRODUCTs": 1028,
+            "edges": 4172,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 6540,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "installed_at_cursor": 330,
+          "continued_after_install_and_sealed_at": 622,
+          "independent_binary64_phase_checks": 1963,
+          "peak_reference_payload_bytes": 65266182,
+          "not_claimed": "population identification, forced unique hierarchy, or actual target AMP",
+          "host": {
+            "process_id": 1808,
+            "creation_100ns": 134337372404928567,
+            "lifetime_process_commit_peak": 258465792,
+            "job_commit_peak": 259682304,
+            "process_user_100ns": 2602187500,
+            "process_kernel_100ns": 13593750
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 1073741824,
+            "peak_process_commit": 334192640,
+            "peak_job_commit": 335409152,
+            "user_100ns": 2626875000,
+            "kernel_100ns": 13750000,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 1808,
+            "process_creation_100ns": 134337372404928567
+          }
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 1073741824,
+          "peak_process_commit": 334192640,
+          "peak_job_commit": 335409152,
+          "user_100ns": 2626875000,
+          "kernel_100ns": 13750000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 1808,
+          "process_creation_100ns": 134337372404928567
+        }
+      }
+    },
+    "reference_construction": {
+      "status": "PASS",
+      "scope": "actual ReferenceCompilerRuntime native construction/recovery endpoint; packed reference payload machine only",
+      "seconds": 8.91,
+      "complete_sections": [
+        "boundary_checks",
+        "ownership_model_check"
+      ],
+      "evidence": {
+        "existing_resource_fixture_graphs": 9,
+        "random_shared_native_graphs": 80,
+        "independent_exact_full_context_comparisons": 320,
+        "ownership_model_check.steps": 1500
+      },
+      "completed_jobs": {}
+    },
+    "reference_events": {
+      "status": "PASS",
+      "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+      "seconds": 44.49,
+      "complete_sections": [
+        "gradient_audit",
+        "exhaustive_endpoint",
+        "clock_data_boundaries",
+        "causality",
+        "query_precision",
+        "failure_prefixes",
+        "existing_value_path"
+      ],
+      "evidence": {
+        "gradient_audit.independent_exact_gradient_vectors": 960,
+        "exhaustive_endpoint.streams": 64,
+        "exhaustive_endpoint.individual_optimizer_commits": 128,
+        "causality.exact_causal_source_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "seconds": 11.34,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "evidence": {
+        "existing_value_path.actual_profile_predictions_and_observations": 512,
+        "exhaustive_replay": {
+          "all_two_event_binary_context_target_streams": 16,
+          "independent_profile_prediction_and_gradient_checks": 64
+        },
+        "recurrent_attachment.recurrent_profile_events": 8
+      },
+      "completed_jobs": {}
+    },
+    "reference_numerics": {
+      "status": "PASS",
+      "scope": "guarded exact rational logarithm enclosure, signed ordering and monotone nonnegative dyadic floor",
+      "seconds": 1.34,
+      "complete_sections": [
+        "logarithm",
+        "floor",
+        "comparison",
+        "adversaries"
+      ],
+      "evidence": {
+        "logarithm.exact_formula_and_nested_tail_cases": 600,
+        "floor.exact_grid_and_monotonicity_cases": 1385,
+        "comparison.exact_signed_order_cases": 12321
+      },
+      "completed_jobs": {}
+    },
+    "binary_arithmetic": {
+      "status": "PASS",
+      "scope": "exact registered scalar binary rounding and actual checked CPU binary64 operations",
+      "seconds": 1.78,
+      "complete_sections": [
+        "rounding",
+        "counterexamples",
+        "limits",
+        "actual",
+        "failures"
+      ],
+      "evidence": {
+        "rounding.signed_exact_nearest_point_comparisons": 10232,
+        "actual.successful_actual_scalar_comparisons": 513,
+        "actual.actual_overflow_cases_unresolved": 39
+      },
+      "completed_jobs": {}
+    },
+    "float64_runtime": {
+      "status": "PASS",
+      "scope": "owned actual CPU binary64 and exact reference learner prefixes; no target AMP authorization",
+      "seconds": 8.52,
+      "complete_sections": [
+        "exhaustive",
+        "profiles",
+        "normalization",
+        "failures",
+        "crossing"
+      ],
+      "evidence": {
+        "exhaustive.independent_bitwise_phase_checks": 1024,
+        "exhaustive.actual_finite_coordinates_differing_from_recast_exact_endpoints": 406,
+        "profiles.profile_and_initial_prefix_phase_checks": 30,
+        "profiles.recurrent_phase_checks": 22
+      },
+      "completed_jobs": {}
+    },
+    "persistence_kernel": {
+      "status": "PASS",
+      "scope": "exact lower-wealth kernel and finite declared null-law audits; no Runtime authority",
+      "seconds": 0.72,
+      "complete_sections": [
+        "invalid_registration_or_argument_cases",
+        "pointwise_floor_bound_and_threshold_cases",
+        "exact_conditional_null_trees",
+        "global_error_composition",
+        "reproduced_unsound_shortcuts"
+      ],
+      "evidence": {
+        "pointwise_floor_bound_and_threshold_cases": 1586,
+        "global_error_composition": {
+          "complete_shared_observation_paths": 256,
+          "global_alpha": "3/8",
+          "actual_spending_values": [
+            "1/4",
+            "3/8",
+            "5/16"
+          ],
+          "any_false_crossing_probability": "23/128"
+        }
+      },
+      "completed_jobs": {}
+    },
+    "reference_persistence": {
+      "status": "PASS",
+      "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+      "seconds": 3.23,
+      "complete_sections": [
+        "scores",
+        "crossing",
+        "null",
+        "freshness",
+        "failures"
+      ],
+      "evidence": {
+        "null.complete_fair_label_paths": 32,
+        "null.exact_conditional_lower_wealth_inequalities": 31,
+        "null.first_crossing_probability": "1/8",
+        "freshness.global_allocated_alpha": "3/4"
+      },
+      "completed_jobs": {}
+    },
+    "paired_cpu_persistence": {
+      "status": "PASS",
+      "scope": "owned exact-reference and actual CPU binary64 stored-mass persistence",
+      "seconds": 8.77,
+      "complete_sections": [
+        "range",
+        "scores",
+        "nontransfer",
+        "null",
+        "failures",
+        "freshness"
+      ],
+      "evidence": {
+        "range.independent_direct_float_context_checks": 400,
+        "scores.independent_four_trajectory_phase_checks": 62,
+        "nontransfer": {
+          "delta": "1/18014398509481984",
+          "normalizer_cap": "36028797018963969/18014398509481984",
+          "reference_crossing_cursor": 5,
+          "reference_wealth_lower": "322095/65536",
+          "finite_mass_gain": "0",
+          "finite_wealth": "1",
+          "reference_crossing_cannot_transfer_to_physical_path": true
+        },
+        "null.complete_fair_label_paths": 32
+      },
+      "completed_jobs": {}
+    },
+    "context_ingress": {
+      "status": "PASS",
+      "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+      "seconds": 3.64,
+      "complete_sections": [
+        "codec",
+        "chunking",
+        "admission",
+        "failures",
+        "filtration"
+      ],
+      "evidence": {
+        "chunking.all_legal_chunkings": 208,
+        "chunking.equal_prefix_complete_snapshot_checks": 1328,
+        "admission.unchanged_unfunded_denials": 64,
+        "filtration.locked_action_prefix_positions": 90
+      },
+      "completed_jobs": {}
+    },
+    "owned_encoding": {
+      "status": "PASS",
+      "scope": "owned native identity and admitted streaming payload materialization",
+      "seconds": 25.27,
+      "complete_sections": [
+        "identity",
+        "encoding",
+        "planned",
+        "workspace"
+      ],
+      "evidence": {
+        "identity.complete_unicode_native_class_programs": 35,
+        "encoding.independent_packed_tree_checks": 235,
+        "encoding.all_single_BMP_codepoints": 65536
+      },
+      "completed_jobs": {}
+    },
+    "control_admission": {
+      "status": "PASS",
+      "scope": "paid Compiler control admission; no complete host/device memory claim",
+      "seconds": 9.36,
+      "complete_sections": [
+        "history",
+        "endpoints",
+        "trees",
+        "authority",
+        "ingress"
+      ],
+      "evidence": {
+        "trees.complete_four_command_trees": 96,
+        "trees.endpoint_positions": 384,
+        "authority.complete_program_class": 35
+      },
+      "completed_jobs": {}
+    },
+    "host_allocation_failure": {
+      "status": "PASS",
+      "scope": "terminal public Runtime authority on host allocation exhaustion",
+      "seconds": 3.06,
+      "complete_sections": [
+        "history",
+        "ports",
+        "prefixes",
+        "os"
+      ],
+      "evidence": {
+        "ports.guarded_continuation_or_authority_ports": 27,
+        "ports.repeated_terminal_refusals": 432,
+        "ports.internal_allocation_failures_bypass_broad_handlers": 24
+      },
+      "completed_jobs": {
+        "os.windows_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31137792,
+          "peak_job_commit": 32370688,
+          "user_100ns": 2656250,
+          "kernel_100ns": 1562500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 10676,
+          "process_creation_100ns": 134337374788516010
+        }
+      }
+    },
+    "bound_host_runtime": {
+      "status": "PASS",
+      "scope": "live Runtime host policy/process binding and declared commitment observations",
+      "seconds": 6.19,
+      "complete_sections": [
+        "cases.binding",
+        "cases.memory",
+        "cases.install",
+        "cases.late-fence",
+        "cases.failed-exit"
+      ],
+      "evidence": {
+        "cases.install.complete_native_class_programs": 35,
+        "cases.late-fence.low_current_memory_cannot_erase_prior_peak": true,
+        "cases.failed-exit.completed_looking_child_file_not_accepted_as_run_success": true
+      },
+      "completed_jobs": {
+        "cases.binding.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31223808,
+          "peak_job_commit": 32436224,
+          "user_100ns": 3281250,
+          "kernel_100ns": 781250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 26200,
+          "process_creation_100ns": 134337374797104651
+        },
+        "cases.memory.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 30380032,
+          "peak_job_commit": 31592448,
+          "user_100ns": 3281250,
+          "kernel_100ns": 468750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 15460,
+          "process_creation_100ns": 134337374801387881
+        },
+        "cases.install.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31035392,
+          "peak_job_commit": 32251904,
+          "user_100ns": 21562500,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 19964,
+          "process_creation_100ns": 134337374805444393
+        },
+        "cases.late-fence.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 134217728,
+          "peak_process_commit": 110514176,
+          "peak_job_commit": 111738880,
+          "user_100ns": 3125000,
+          "kernel_100ns": 1093750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 25304,
+          "process_creation_100ns": 134337374827923762
+        },
+        "cases.failed-exit.job": {
+          "exit_code": 17,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 31182848,
+          "peak_job_commit": 32411648,
+          "user_100ns": 21250000,
+          "kernel_100ns": 781250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 24356,
+          "process_creation_100ns": 134337374832136663
+        }
+      }
+    },
+    "reference_run": {
+      "status": "PASS",
+      "scope": "owned single-root finite reference run, actual CPU protocol and terminal report",
+      "seconds": 11.67,
+      "complete_sections": [
+        "cases.registration",
+        "cases.finite_streams",
+        "cases.installed",
+        "cases.failures",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.finite_streams": {
+          "all_binary_streams_at_lengths_2_3_4": 28,
+          "terminal_port_denials_without_history_growth": 783,
+          "partial_optimizer_unit_retained_without_flush": true,
+          "end_of_stream_not_evidence_crossing_or_rejection": true,
+          "waiting_and_active_stages_report_unresolved_without_history_erasure": true
+        },
+        "cases.installed": {
+          "cursor": 22,
+          "native_class_size": 35,
+          "independent_binary64_phase_checks": 141,
+          "sealed_port_denials": 27,
+          "alpha_spent": "1/2",
+          "closure_included_in_actual_owned_payload_bytes": true
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 32763904,
+          "peak_job_commit": 33980416,
+          "user_100ns": 23437500,
+          "kernel_100ns": 1093750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 26704,
+          "process_creation_100ns": 134337374946810225
+        }
+      }
+    },
+    "recovered_authorities": {
+      "status": "PASS",
+      "scope": "actual recovered proof/bridge code, reconstructed strict core data objects",
+      "seconds": 0.39,
+      "complete_sections": [
+        "source_commit",
+        "upper_evidence_accepted_as_equivalence",
+        "skipped_event_accepted",
+        "same_cursor_unexecuted_state_replacement_accepted",
+        "dead_session_authorization_accepted"
+      ],
+      "evidence": {
+        "source_commit": "39235ef8678cabc6fa675eb9e0568895d72d9b61",
+        "interpretation": "implementation mismatches, not Foundation R4 counterexamples"
+      },
+      "completed_jobs": {}
+    }
+  },
+  "CUDA_audits": {
+    "cuda_primitives": {
+      "status": "PASS",
+      "scope": "actual eager CUDA primitive encodings and lowering counterexamples; no Runtime authority",
+      "seconds": 3.8,
+      "complete_sections": [
+        "encodings",
+        "arithmetic",
+        "counterexamples",
+        "dispatch"
+      ],
+      "evidence": {
+        "device": {
+          "name": "NVIDIA GeForce RTX 3090",
+          "capability": [
+            8,
+            6
+          ],
+          "total_memory_bytes": 25769279488,
+          "driver_versions": [
+            "616.92"
+          ],
+          "torch": "2.12.0+cu132",
+          "torch_git_version": "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "torch_CUDA_runtime": "13.2",
+          "Python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]"
+        },
+        "encodings": {
+          "all_finite_half_raw_roundtrips": 63488,
+          "all_finite_half_to_single_to_half_roundtrips": 63488,
+          "signed_finite_half_midpoint_and_adjacent_single_casts": 190458,
+          "signed_half_overflow_boundary_casts": 6,
+          "actual_nonfinite_overflow_casts_not_certifiable": 4,
+          "zero_signs_checked": true
+        },
+        "arithmetic": {
+          "float16": {
+            "add": {
+              "exact_RNE_raw_comparisons": 1596,
+              "actual_overflows_unresolved": 4,
+              "zero_denominator_nonfinite_unresolved": 0
+            },
+            "mul": {
+              "exact_RNE_raw_comparisons": 1494,
+              "actual_overflows_unresolved": 106,
+              "zero_denominator_nonfinite_unresolved": 0
+            },
+            "div": {
+              "exact_RNE_raw_comparisons": 1428,
+              "actual_overflows_unresolved": 124,
+              "zero_denominator_nonfinite_unresolved": 48
+            },
+            "addcmul_value_1": {
+              "single_FMA_then_storage_RNE_raw_comparisons": 966,
+              "actual_overflows_unresolved": 66,
+              "differs_from_direct_half_FMA_in_sample": 0
+            }
+          },
+          "float32": {
+            "add": {
+              "exact_RNE_raw_comparisons": 1598,
+              "actual_overflows_unresolved": 2,
+              "zero_denominator_nonfinite_unresolved": 0
+            },
+            "mul": {
+              "exact_RNE_raw_comparisons": 1535,
+              "actual_overflows_unresolved": 65,
+              "zero_denominator_nonfinite_unresolved": 0
+            },
+            "div": {
+              "exact_RNE_raw_comparisons": 1433,
+              "actual_overflows_unresolved": 119,
+              "zero_denominator_nonfinite_unresolved": 48
+            },
+            "addcmul_value_1": {
+              "single_FMA_then_storage_RNE_raw_comparisons": 990,
+              "actual_overflows_unresolved": 42,
+              "differs_from_direct_half_FMA_in_sample": 0
+            }
+          }
+        },
+        "counterexamples": {
+          "positive_separate_half_multiply_add": {
+            "inputs": [
+              "1025/1024",
+              "1025/1024",
+              "1/2048"
+            ],
+            "separate_output_bits": "0x3c02",
+            "addcmul_output_bits": "0x3c03"
+          },
+          "positive_half_addcmul_double_rounding": {
+            "inputs": [
+              "1027/1024",
+              "3/2",
+              "1/16777216"
+            ],
+            "actual_bits": "0x3e04",
+            "ideal_single_round_half_FMA_bits": "0x3e05",
+            "actual_equals_single_FMA_then_half": true
+          },
+          "positive_division_operand_residence": {
+            "numerator": 7,
+            "denominator": 12,
+            "device_tensor_divisor_bits": "0x3f155555",
+            "CPU_scalar_divisor_bits": "0x3f155556",
+            "scalar_matches_rounded_reciprocal_then_multiply": true
+          },
+          "stored_mass_normalization": {
+            "masses": [
+              "1",
+              "1/16777216"
+            ],
+            "exact_stored_mass_total": "16777217/16777216",
+            "rounded_device_normalizer": "1",
+            "raw_division_outputs_sum_exactly": "16777217/16777216",
+            "stored_mass_distribution_differs_from_raw_division_outputs": true
+          }
+        },
+        "dispatch": {
+          "autocast_float32_input_observed_outputs": {
+            "elementwise_SUM": "torch.float32",
+            "elementwise_PRODUCT": "torch.float32",
+            "reduction_SUM": "torch.float32",
+            "matrix_multiply": "torch.float16"
+          },
+          "actual_explicit_half_arithmetic_executed_elsewhere_in_audit": true,
+          "tested_min_subnormal_operations": {
+            "float16": {
+              "min_subnormal_times_device_one_bits": 1,
+              "min_subnormal_plus_itself_bits": 2
+            },
+            "float32": {
+              "min_subnormal_times_device_one_bits": 1,
+              "min_subnormal_plus_itself_bits": 2
+            }
+          }
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_learner": {
+      "status": "PASS",
+      "scope": "actual continuous CUDA learner mechanics beside owned Reference Runtime events; no device authority",
+      "seconds": 11.58,
+      "complete_sections": [
+        "exhaustive",
+        "profile",
+        "topology",
+        "failures"
+      ],
+      "evidence": {
+        "backend_id": "eager-cuda-half-forward-single-sum-readout-backward-master-v1",
+        "exhaustive": {
+          "all_binary_context_target_three_event_streams": 64,
+          "ordinary_events": 192,
+          "reference_and_CUDA_baseline_candidate_paths": 4,
+          "all_parameters_accumulators_queues_and_clocks_compared": true,
+          "predecessor_device_tensors_unchanged": true,
+          "partial_final_units_preserved": true,
+          "actual_CUDA_phases": 1024,
+          "half_arithmetic_or_ingress_results": 3392,
+          "actual_half_multiply_results": 1152,
+          "single_arithmetic_or_ingress_results": 18880,
+          "reference_state_coordinates_compared": 1152,
+          "coordinates_differing_from_recast_exact_reference": 320,
+          "largest_observed_state_absolute_error_float64_summary": 0.00021627924165312497
+        },
+        "profile": {
+          "original_revealed_profile_records": 2,
+          "actual_profile_replayed_events": 6,
+          "ordinary_events": 6,
+          "candidate_final_optimizer_steps": 5,
+          "profile_attachment_preserves_all_device_buffers": true,
+          "both_delayed_queue_positions_compared_every_event": true,
+          "actual_CUDA_phases": 42,
+          "half_arithmetic_or_ingress_results": 130,
+          "actual_half_multiply_results": 40,
+          "single_arithmetic_or_ingress_results": 794,
+          "reference_state_coordinates_compared": 48,
+          "coordinates_differing_from_recast_exact_reference": 6,
+          "largest_observed_state_absolute_error_float64_summary": 8.747709532115362e-05
+        },
+        "topology": {
+          "seeded_native_graphs": 24,
+          "events_per_graph": 4,
+          "labels": 3,
+          "repeated_edges_heads_squares_and_unused_slots": true,
+          "host_single_then_device_half_source_rounding_checked": true,
+          "all_full_states_and_native_predictions_match_exact_rounded_model": true,
+          "actual_CUDA_phases": 240,
+          "half_arithmetic_or_ingress_results": 2500,
+          "actual_half_multiply_results": 1260,
+          "single_arithmetic_or_ingress_results": 12032,
+          "reference_state_coordinates_compared": 0,
+          "coordinates_differing_from_recast_exact_reference": 0,
+          "largest_observed_state_absolute_error_float64_summary": null
+        },
+        "failures": {
+          "incomplete_clock_source_and_scalar_divisor_rejected": true,
+          "actual_half_forward_overflow_retains_unchanged_predecessor": true,
+          "finite_projection_cannot_hide_actual_optimizer_intermediate_overflow": true,
+          "mutable_device_parameter_corruption_revalidated": true,
+          "independent_exact_dyadic_grid_coordinate_checks": 1340,
+          "projection_and_floor_canonicalize_negative_zero": true,
+          "host_RNE32_ingress_preserves_negative_underflow_zero": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_storage": {
+      "status": "PASS",
+      "scope": "actual bounded CUDA tensor arena and complete learner mechanics; no Runtime or total-device authority",
+      "seconds": 28.61,
+      "complete_sections": [
+        "registration",
+        "actual_initial_reservation_classes",
+        "exhaustive_learners",
+        "recurrent_profile",
+        "varied_native_graphs",
+        "learner_storage",
+        "extents",
+        "grid_and_failure",
+        "escaped_allocation"
+      ],
+      "evidence": {
+        "registration": {
+          "malformed_caps_rejected": true,
+          "shared_arena_role_refusal_precedes_device_allocation": true,
+          "insufficient_real_allocator_segment_cap_refused_before_allocation": true,
+          "allocation_counter_after_all_registration_refusals": 0
+        },
+        "actual_initial_reservation_classes": {
+          "small": {
+            "request_bytes": 512,
+            "pre_admitted_segment_bytes": 2097152,
+            "actual_allocator_reserved_bytes": 2097152,
+            "explicit_allocator_configuration": "large_segment_size_mb:20",
+            "native_counter": [
+              1,
+              512,
+              1
+            ]
+          },
+          "medium": {
+            "request_bytes": 2097152,
+            "pre_admitted_segment_bytes": 20971520,
+            "actual_allocator_reserved_bytes": 20971520,
+            "explicit_allocator_configuration": "large_segment_size_mb:20",
+            "native_counter": [
+              1,
+              2097152,
+              1
+            ]
+          },
+          "large": {
+            "request_bytes": 10485760,
+            "pre_admitted_segment_bytes": 10485760,
+            "actual_allocator_reserved_bytes": 10485760,
+            "explicit_allocator_configuration": "large_segment_size_mb:20",
+            "native_counter": [
+              1,
+              10485760,
+              1
+            ]
+          },
+          "hidden-setting-witness": {
+            "same_reported_settings_as_initial_default": true,
+            "before_allocation_counter": 0,
+            "request_bytes": 2097152,
+            "actual_allocator_reserved_bytes": 41943040
+          },
+          "hidden-setting-binding": {
+            "request_bytes": 2097152,
+            "pre_admitted_segment_bytes": 20971520,
+            "actual_allocator_reserved_bytes": 20971520,
+            "explicit_allocator_configuration": "large_segment_size_mb:20",
+            "native_counter": [
+              1,
+              2097152,
+              1
+            ]
+          }
+        },
+        "learner_storage": {
+          "allocation_id": "single-cuda-tensor-arena-ordered-out-v1",
+          "device_name": "NVIDIA GeForce RTX 3090",
+          "capability": [
+            8,
+            6
+          ],
+          "torch": "2.12.0+cu132",
+          "torch_git_version": "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "CUDA_runtime": "13.2",
+          "actual_tensor_arena_bytes": 16777216,
+          "actual_allocator_reserved_bytes": 16777216,
+          "lifetime_tensor_peak_bytes": 16777216,
+          "lifetime_allocator_reserved_peak_bytes": 16777216,
+          "native_allocation_counter_at_binding": [
+            1,
+            16777216,
+            1
+          ],
+          "native_allocation_counter_current": [
+            1,
+            16777216,
+            1
+          ],
+          "consumed_arena_extent": 304064,
+          "actual_initialized_view_extents": 32996
+        },
+        "extents": {
+          "complete_typed_allocation_request_sequences": 216,
+          "actual_extent_requests": 648,
+          "real_offsets_and_storage_identity_match_independent_model": true,
+          "uninitialized_cross_extent_reinterpreted_and_lazy_negative_reads_rejected": true,
+          "old_or_already_initialized_extent_cannot_be_redeclared_written": true,
+          "failed_large_extent_does_not_allocate_or_advance_cursor": true,
+          "whole_actual_backing_arena_charged_to_each_role_once_globally": true
+        },
+        "grid_and_failure": {
+          "exact_grid_coordinates_inside_owned_arena": 1340,
+          "complete_predecessor_preserved_after_actual_masked_overflow": true,
+          "failed_phase_extents_and_infinite_intermediate_retained": true
+        },
+        "escaped_allocation": {
+          "freed_foreign_tensor_restores_current_bytes_but_does_not_erase_allocation_history": true,
+          "native_counter_before": [
+            1,
+            16777216,
+            1
+          ],
+          "native_counter_after_freed_foreign_allocation": [
+            2,
+            16777728,
+            2
+          ],
+          "actual_current_bytes_after_foreign_tensor_free": 16777216,
+          "original_unexpected_failure_not_downgraded_by_storage_refusal": true,
+          "actual_completed_write_retained_with_failed_phase": true,
+          "storage_failure_is_terminal_without_counter_reset_or_identity_reuse": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_runtime": {
+      "status": "PASS",
+      "scope": "owned actual CUDA prefix and per-phase relations; no target persistence/install/release",
+      "seconds": 249.64,
+      "complete_sections": [
+        "complete_binary_three_event_streams",
+        "profile",
+        "search",
+        "search-exhaustion",
+        "output-cap",
+        "prepaid-frame",
+        "frame-cap",
+        "unexpected-backend",
+        "combined-failure",
+        "malformed-backend",
+        "unexecuted-endpoint",
+        "allocation-escape",
+        "zero-tolerance",
+        "normalization"
+      ],
+      "evidence": {
+        "complete_binary_three_event_streams": 64,
+        "independently_replayed_stream_CUDA_phases": 1024,
+        "all_finite_half_exact_widenings_including_zero_sign": 63488,
+        "profile": {
+          "phases": 44,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 6133,
+          "maximum_output_cells": 46,
+          "CPU_binary64_phases": 44,
+          "ordinary_events": 6,
+          "replayed_events": 6
+        },
+        "search": {
+          "phases": 41,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3304,
+          "maximum_output_cells": 20,
+          "independent_complete_native_members": 35,
+          "decision_class": "fixed-state reference empirical CE over the registered initializer endpoints plus actual baseline"
+        },
+        "search-exhaustion": {
+          "actual_CUDA_evidence_budget_failure_leaves_native_search_unresolved": true,
+          "no_reference_class_proof_issued": true,
+          "global_packed_cap": 1000000
+        },
+        "malformed-backend": {
+          "malformed_backend_and_failed_raw_capture_cannot_become_admissibility_rejection": true
+        },
+        "unexecuted-endpoint": {
+          "all_published_reference_and_CUDA_states_unchanged": true,
+          "revealed_target_and_executed_prefix_retained": true,
+          "completed_CUDA_phases": 5,
+          "case": "unexecuted-endpoint"
+        },
+        "normalization": {
+          "actual_single_readout_refused_by_preregistered_zero_probability_tolerance": true,
+          "rounded_normalizer_raw": 1065353216,
+          "target_not_revealed": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_persistence": {
+      "status": "PASS",
+      "scope": "current CUDA whole-domain bounds, exact actual forecasts and owned fresh same-path evidence; no install/release",
+      "seconds": 151.25,
+      "complete_sections": [
+        "range",
+        "null",
+        "scores",
+        "crossing",
+        "nontransfer",
+        "range-admission",
+        "range-refresh",
+        "double-round",
+        "mismatch",
+        "freshness",
+        "failed-crossing"
+      ],
+      "evidence": {
+        "range": {
+          "independent_product_sum_boxes": 16,
+          "independent_context_checks": 400,
+          "complete_recurrent_queue_checks": 125,
+          "full_tail_unused_slot_source_rounding_product_overflow_and_both_normalizers_rejected": true,
+          "two_stage_source_witness": "33570817/67108864"
+        },
+        "null": {
+          "complete_fair_label_paths": 32,
+          "ordinary_events": 160,
+          "independent_owned_CUDA_phase_checks": 832,
+          "two_path_conditional_wealth_inequalities": 62,
+          "crossing_probabilities": [
+            "1/32",
+            "1/32"
+          ],
+          "each_path_alpha": "1/3",
+          "external_null": "fair independent labels; both fixed mass ratio products are 8/9 < 1"
+        },
+        "scores": {
+          "phases": 62,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 5871,
+          "maximum_output_cells": 47,
+          "independent_score_log_and_wealth_checks": 24,
+          "optimizer_range_recomputations": 6,
+          "reference_CUDA_score_differences": 12,
+          "proper_probability_differs_from_raw_division": 12,
+          "unchanged_theta_reuses_its_owned_range": true,
+          "CPU_binary64_phases": 62
+        },
+        "nontransfer": {
+          "delta": "1/33554432",
+          "reference_crossing_cursor": 5,
+          "CUDA_gain": "0",
+          "CUDA_wealth": "1",
+          "reference_evidence_transfer_rejected": true,
+          "phases": 42
+        },
+        "range-admission": {
+          "reference_safe_but_actual_half_range_unproved": true,
+          "failed_admission_alpha_retained": "1/4",
+          "harmless_context_does_not_reactivate_failed_identity": true
+        },
+        "range-refresh": {
+          "exact_new_theta": "3/10",
+          "future_half_theta": "1229/4096",
+          "ordinary_successor_published_but_unproved_future_CUDA_evidence_stopped": true
+        },
+        "double-round": {
+          "exact_source": "33570817/67108864",
+          "actual_R16_R32_source": "1/2",
+          "wrong_direct_R16_source": "1025/2048",
+          "owned_bound_and_actual_forecast_preserve_both_roundings": true
+        },
+        "mismatch": {
+          "one_ULP_forecast_error_within_reference_tolerance_rejected_before_target": true,
+          "actual_output_retained_without_repair_from_reference": true
+        },
+        "failed-crossing": {
+          "retained_threshold_score_does_not_replace_failed_owned_crossing_state": true,
+          "ordinary_continuation_does_not_resume_failed_identity": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_installation": {
+      "status": "PASS",
+      "scope": "owned serialized same-device CUDA installation; tensor/packed-host model, not full device release",
+      "seconds": 376.48,
+      "complete_sections": [
+        "small",
+        "learned",
+        "recurrent",
+        "guards",
+        "late",
+        "unknown",
+        "pending",
+        "corrupt",
+        "extent",
+        "continuation",
+        "byte-cap",
+        "work-cap",
+        "no-cpu"
+      ],
+      "evidence": {
+        "small": {
+          "phases": 151,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3306,
+          "maximum_output_cells": 20,
+          "native_class_size": 35,
+          "install_cursor": 22,
+          "trained_nonzero_state": false,
+          "recurrent": false,
+          "independent_CPU_phases": 151,
+          "one_complete_root_publication": true,
+          "identical_device_objects_and_extents": true,
+          "peak_before_install": 19090032,
+          "peak_during_install": 19152443,
+          "deployment_work_before": 36946063,
+          "deployment_work_after": 342913552
+        },
+        "learned": {
+          "phases": 870,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3948,
+          "maximum_output_cells": 25,
+          "native_class_size": 774,
+          "install_cursor": 18,
+          "trained_nonzero_state": true,
+          "recurrent": false,
+          "independent_CPU_phases": 870,
+          "one_complete_root_publication": true,
+          "identical_device_objects_and_extents": true,
+          "peak_before_install": 115642613,
+          "peak_during_install": 116573037,
+          "deployment_work_before": 30228597,
+          "deployment_work_after": 1883172870
+        },
+        "recurrent": {
+          "phases": 240,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3626,
+          "maximum_output_cells": 22,
+          "native_class_size": 124,
+          "install_cursor": 22,
+          "trained_nonzero_state": false,
+          "recurrent": true,
+          "independent_CPU_phases": 240,
+          "one_complete_root_publication": true,
+          "identical_device_objects_and_extents": true,
+          "peak_before_install": 31153051,
+          "peak_during_install": 31332074,
+          "deployment_work_before": 37177019,
+          "deployment_work_after": 536401292
+        },
+        "guards": {
+          "wrong_path_fake_proof_partial_unit_and_same_graph_newborn_refused": true,
+          "CPU_and_generic_tokens_cannot_install_the_CUDA_root": true
+        },
+        "corrupt": {
+          "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+          "out_of_extent_view_refused_before_numeric_read": false
+        },
+        "extent": {
+          "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+          "out_of_extent_view_refused_before_numeric_read": true
+        },
+        "continuation": {
+          "install_cursors": [
+            22,
+            38
+          ],
+          "native_classes": [
+            35,
+            35
+          ],
+          "second_comparison_uses_actual_new_base_and_fresh_alpha": true,
+          "no_alpha_refund_after_two_installs": true,
+          "independent_CUDA_phases": 306
+        },
+        "byte-cap": {
+          "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+          "actual_work_peak_and_attempt_IDs_not_refunded": true,
+          "case": "capacity",
+          "registered_cap": 19121237
+        },
+        "work-cap": {
+          "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+          "actual_work_peak_and_attempt_IDs_not_refunded": true,
+          "case": "capacity",
+          "registered_cap": 189929807
+        },
+        "no-cpu": {
+          "phases": 151,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3306,
+          "maximum_output_cells": 20,
+          "native_class_size": 35,
+          "install_cursor": 22,
+          "trained_nonzero_state": false,
+          "recurrent": false,
+          "independent_CPU_phases": 0,
+          "one_complete_root_publication": true,
+          "identical_device_objects_and_extents": true,
+          "peak_before_install": 18826660,
+          "peak_during_install": 18887717,
+          "deployment_work_before": 36487231,
+          "deployment_work_after": 338119968
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_external_allocations": {
+      "status": "PASS",
+      "scope": "foreign-allocation counterexample to total-history inference; not a legal Runtime action or a whole-device residency peak",
+      "seconds": 1.98,
+      "complete_sections": [
+        "direct_CUDA_allocation_written_and_freed_bytes",
+        "native_arena_snapshot_unchanged_even_while_foreign_allocation_live"
+      ],
+      "evidence": {
+        "CUDA_build": "13.2",
+        "actual_runtime_version": 13040,
+        "direct_CUDA_allocation_written_and_freed_bytes": 33554432,
+        "native_arena_snapshot_unchanged_even_while_foreign_allocation_live": true
+      },
+      "completed_jobs": {}
+    },
+    "cuda_device": {
+      "status": "PASS",
+      "scope": "actual device binding and conservative whole-board VRAM envelope; process commitment separate; no exact total allocation history or complete target release",
+      "seconds": 73.47,
+      "complete_sections": [
+        "runtime",
+        "driver-api",
+        "driver",
+        "capacity",
+        "role",
+        "binding",
+        "foreign",
+        "query-failure",
+        "changed",
+        "unexpected",
+        "combined",
+        "snapshot-query-failure",
+        "snapshot-unexpected",
+        "snapshot-combined",
+        "hosted-install"
+      ],
+      "evidence": {
+        "binding": {
+          "actual_identity": {
+            "runtime_version": 13040,
+            "driver_api_version": 13040,
+            "driver_version": "616.92",
+            "pci_bus_id": "0000:0B:00.0",
+            "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+            "physical_vram_bytes": 25769803776
+          },
+          "unequal_caps_keep_both_full_board_charges": true,
+          "independent_CUDA_phases": 6
+        },
+        "foreign": {
+          "foreign_CUDA_bytes": 33554432,
+          "native_observations_unchanged_while_live": true,
+          "whole_board_upper_covers_foreign_allocation_without_claiming_its_exact_residency": true
+        },
+        "query-failure": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": false,
+          "case": "query-failure"
+        },
+        "unexpected": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": true,
+          "case": "unexpected"
+        },
+        "combined": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": true,
+          "case": "combined"
+        },
+        "snapshot-query-failure": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": false,
+          "case": "snapshot-query-failure"
+        },
+        "snapshot-unexpected": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": true,
+          "case": "snapshot-unexpected"
+        },
+        "snapshot-combined": {
+          "restored_native_API_cannot_revive_old_crossings_or_install": true,
+          "original_unexpected_exception_preserved": true,
+          "case": "snapshot-combined"
+        },
+        "hosted-install.worker": {
+          "same_registered_host_process_and_device_after_install": true,
+          "host_process_id": 29328,
+          "host_creation_100ns": 134337379615758405,
+          "host_lifetime_commit_peak": 2236522496,
+          "board_VRAM_upper": 25769803776,
+          "native_arena_bytes": 16777216,
+          "independent_CUDA_phases": 151
+        }
+      },
+      "completed_jobs": {
+        "hosted-install.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 2236522496,
+          "peak_job_commit": 2237743104,
+          "user_100ns": 54687500,
+          "kernel_100ns": 11562500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 29328,
+          "process_creation_100ns": 134337379615758405
+        }
+      }
+    },
+    "cuda_policy_run": {
+      "status": "PASS",
+      "scope": "owned finite CUDA policy/run under registered host, tensor and framebuffer resource coordinates; no model-science or complete release claim",
+      "seconds": 460.5,
+      "complete_sections": [
+        "success",
+        "learned",
+        "recurrent",
+        "no-cpu",
+        "registration",
+        "partial",
+        "search-budget",
+        "unfinished",
+        "horizon-budget",
+        "report-resource",
+        "report-memory",
+        "report-device",
+        "report-unexpected",
+        "admit-policy-failure",
+        "install-policy-failure",
+        "late-frame",
+        "host_enforcement",
+        "finite_branches"
+      ],
+      "evidence": {
+        "success": {
+          "native_classes": [
+            35,
+            35
+          ],
+          "install_cursors": [
+            22,
+            38
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 60,
+          "sealed_control_denials": 49,
+          "alpha_spent": "3/4",
+          "independent_CUDA_phases": 456,
+          "independent_CPU_phases": 456,
+          "host": {
+            "process_id": 27796,
+            "creation_100ns": 134337379698953655,
+            "lifetime_process_commit_peak": 2238738432
+          },
+          "completed_job": {
+            "peak_process_commit": 2328555520,
+            "peak_job_commit": 2329772032,
+            "user_100ns": 177968750,
+            "kernel_100ns": 15937500
+          }
+        },
+        "learned": {
+          "native_classes": [
+            774
+          ],
+          "install_cursors": [
+            18
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 970,
+          "independent_CPU_phases": 970,
+          "host": {
+            "process_id": 2060,
+            "creation_100ns": 134337379923569126,
+            "lifetime_process_commit_peak": 2511024128
+          },
+          "completed_job": {
+            "peak_process_commit": 2793349120,
+            "peak_job_commit": 2794565632,
+            "user_100ns": 2689062500,
+            "kernel_100ns": 24218750
+          }
+        },
+        "recurrent": {
+          "native_classes": [
+            124
+          ],
+          "install_cursors": [
+            22
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 320,
+          "independent_CPU_phases": 320,
+          "host": {
+            "process_id": 2820,
+            "creation_100ns": 134337382659670441,
+            "lifetime_process_commit_peak": 2220216320
+          },
+          "completed_job": {
+            "peak_process_commit": 2248658944,
+            "peak_job_commit": 2249891840,
+            "user_100ns": 184218750,
+            "kernel_100ns": 14062500
+          }
+        },
+        "no-cpu": {
+          "native_classes": [
+            35
+          ],
+          "install_cursors": [
+            22
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 231,
+          "independent_CPU_phases": 0,
+          "host": {
+            "process_id": 16716,
+            "creation_100ns": 134337382877314433,
+            "lifetime_process_commit_peak": 2238590976
+          },
+          "completed_job": {
+            "peak_process_commit": 2238590976,
+            "peak_job_commit": 2239815680,
+            "user_100ns": 72968750,
+            "kernel_100ns": 10937500
+          }
+        },
+        "registration": {
+          "registration_rejections_before_native_tensor_allocation": 10,
+          "compiler_control_denials": 22,
+          "host": {
+            "process_id": 8024,
+            "creation_100ns": 134337382980116730,
+            "lifetime_process_commit_peak": 2101161984
+          },
+          "completed_job": {
+            "peak_process_commit": 2101161984,
+            "peak_job_commit": 2102374400,
+            "user_100ns": 15000000,
+            "kernel_100ns": 6718750
+          }
+        },
+        "partial": {
+          "case": "partial",
+          "cursor": 3,
+          "partial_optimizer_events": 1,
+          "stage_outcomes": [],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 8,
+          "host": {
+            "process_id": 26620,
+            "creation_100ns": 134337383002323374,
+            "lifetime_process_commit_peak": 2211078144
+          },
+          "completed_job": {
+            "peak_process_commit": 2213244928,
+            "peak_job_commit": 2214465536,
+            "user_100ns": 19531250,
+            "kernel_100ns": 7968750
+          }
+        },
+        "search-budget": {
+          "case": "search-budget",
+          "cursor": 4,
+          "partial_optimizer_events": 0,
+          "stage_outcomes": [
+            "UNRESOLVED"
+          ],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 11,
+          "host": {
+            "process_id": 15588,
+            "creation_100ns": 134337383031008936,
+            "lifetime_process_commit_peak": 2210721792
+          },
+          "completed_job": {
+            "peak_process_commit": 2213752832,
+            "peak_job_commit": 2214973440,
+            "user_100ns": 19843750,
+            "kernel_100ns": 7656250
+          }
+        },
+        "unfinished": {
+          "case": "unfinished",
+          "cursor": 3,
+          "partial_optimizer_events": 1,
+          "stage_outcomes": [
+            "UNRESOLVED",
+            "UNRESOLVED"
+          ],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 45,
+          "host": {
+            "process_id": 6476,
+            "creation_100ns": 134337383061174932,
+            "lifetime_process_commit_peak": 2221260800
+          },
+          "completed_job": {
+            "peak_process_commit": 2234228736,
+            "peak_job_commit": 2235457536,
+            "user_100ns": 28906250,
+            "kernel_100ns": 9062500
+          }
+        },
+        "horizon-budget": {
+          "30_epoch_second_admission_exceeds_remaining_16_events": true,
+          "no_unadmitted_identity_or_alpha_debit": true,
+          "first_install_and_second_selection_retained": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 16672,
+            "creation_100ns": 134337383101054028,
+            "lifetime_process_commit_peak": 2237775872
+          },
+          "completed_job": {
+            "peak_process_commit": 2237775872,
+            "peak_job_commit": 2238988288,
+            "user_100ns": 96562500,
+            "kernel_100ns": 13437500
+          }
+        },
+        "report-resource": {
+          "case": "report-resource",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 22396,
+            "creation_100ns": 134337383229361388,
+            "lifetime_process_commit_peak": 2236313600
+          },
+          "completed_job": {
+            "peak_process_commit": 2236313600,
+            "peak_job_commit": 2237542400,
+            "user_100ns": 47500000,
+            "kernel_100ns": 9531250
+          }
+        },
+        "report-memory": {
+          "case": "report-memory",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 4984,
+            "creation_100ns": 134337383298310691,
+            "lifetime_process_commit_peak": 2238578688
+          },
+          "completed_job": {
+            "peak_process_commit": 2238578688,
+            "peak_job_commit": 2239807488,
+            "user_100ns": 48593750,
+            "kernel_100ns": 8906250
+          }
+        },
+        "report-device": {
+          "case": "report-device",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 29380,
+            "creation_100ns": 134337383368000578,
+            "lifetime_process_commit_peak": 2236424192
+          },
+          "completed_job": {
+            "peak_process_commit": 2236424192,
+            "peak_job_commit": 2237657088,
+            "user_100ns": 47187500,
+            "kernel_100ns": 11093750
+          }
+        },
+        "report-unexpected": {
+          "case": "report-unexpected",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": true,
+          "host": {
+            "process_id": 29240,
+            "creation_100ns": 134337383437644326,
+            "lifetime_process_commit_peak": 2236145664
+          },
+          "completed_job": {
+            "peak_process_commit": 2236145664,
+            "peak_job_commit": 2237362176,
+            "user_100ns": 48906250,
+            "kernel_100ns": 8750000
+          }
+        },
+        "admit-policy-failure": {
+          "case": "admit-policy-failure",
+          "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 28632,
+            "creation_100ns": 134337383506719432,
+            "lifetime_process_commit_peak": 2218868736
+          },
+          "completed_job": {
+            "peak_process_commit": 2230943744,
+            "peak_job_commit": 2232160256,
+            "user_100ns": 29062500,
+            "kernel_100ns": 6875000
+          }
+        },
+        "install-policy-failure": {
+          "case": "install-policy-failure",
+          "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 26548,
+            "creation_100ns": 134337383544654605,
+            "lifetime_process_commit_peak": 2239111168
+          },
+          "completed_job": {
+            "peak_process_commit": 2239111168,
+            "peak_job_commit": 2240323584,
+            "user_100ns": 49062500,
+            "kernel_100ns": 9375000
+          }
+        },
+        "late-frame": {
+          "prepared_owned_report_bytes_are_not_a_published_run": true,
+          "post-preparation_device_corruption_keeps_completed_event_but_revokes_authority": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 16748,
+            "creation_100ns": 134337383614838261,
+            "lifetime_process_commit_peak": 2210045952
+          },
+          "completed_job": {
+            "peak_process_commit": 2212401152,
+            "peak_job_commit": 2213617664,
+            "user_100ns": 18437500,
+            "kernel_100ns": 8125000
+          }
+        },
+        "host_enforcement": {
+          "workers": 32,
+          "commit_cap": 4294967296,
+          "all_successful_exits_and_PID_lifetime_matches": true,
+          "all_fenced_before_execution": true,
+          "maximum_process_commit": 2793349120,
+          "maximum_job_commit": 2794565632
+        },
+        "finite_branches": {
+          "complete_binary_four_event_streams": 16,
+          "native_members_per_run": 35,
+          "independent_CUDA_phases": 776,
+          "baseline_selected": 8,
+          "evidence_unresolved": 8,
+          "sealed_port_denials": 432
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_hierarchy": {
+      "status": "PASS",
+      "scope": "existing hierarchical fixture and negative controls on actual owned AMP",
+      "seconds": 422.89,
+      "complete_sections": [
+        "cases.hierarchy",
+        "cases.wrong-majority",
+        "cases.disconnected-a",
+        "cases.disconnected-b",
+        "cases.sum-tie",
+        "disconnected_witness",
+        "common_actual_device"
+      ],
+      "evidence": {
+        "cases.hierarchy": {
+          "tokens": 32,
+          "ordinary_training_events": 310,
+          "optimizer_update_unit": 10,
+          "complete_domain_reference_predictions_checked": 1024,
+          "native_graph": {
+            "nodes": 74,
+            "sources": 64,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 68,
+            "edges": 76,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 1090,
+            "SUMs": 1030,
+            "PRODUCTs": 1028,
+            "edges": 4172,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 6540,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "install_cursors": [
+            330
+          ],
+          "sealed_at": 622,
+          "partial_optimizer_events": 2,
+          "stage_status": "INSTALLED_CUDA",
+          "alpha_spent": "1/2",
+          "sealed_port_denials": 27,
+          "independent_CUDA": {
+            "phases": 1963,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 28865,
+            "maximum_output_cells": 431
+          },
+          "independent_binary64_phases": 1963,
+          "resources": {
+            "peak_reference_payload_bytes": 313552643,
+            "consumed_native_arena_extent": 1944952,
+            "native_allocator_reserved_bytes": 16777216
+          },
+          "host": {
+            "process_id": 22000,
+            "creation_100ns": 134337384303903453,
+            "lifetime_process_commit_peak": 3148619776
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 4294967296,
+            "peak_process_commit": 3904167936,
+            "peak_job_commit": 3905482752,
+            "user_100ns": 3318125000,
+            "kernel_100ns": 86406250,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 22000,
+            "process_creation_100ns": 134337384303903453
+          }
+        },
+        "cases.wrong-majority": {
+          "tokens": 4,
+          "ordinary_training_events": 30,
+          "optimizer_update_unit": 10,
+          "complete_domain_reference_predictions_checked": 16,
+          "native_graph": {
+            "nodes": 18,
+            "sources": 8,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 12,
+            "edges": 20,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 26,
+            "SUMs": 22,
+            "PRODUCTs": 20,
+            "edges": 84,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 78,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "install_cursors": [],
+          "sealed_at": 62,
+          "partial_optimizer_events": 2,
+          "stage_status": "UNRESOLVED",
+          "alpha_spent": "1/2",
+          "sealed_port_denials": 27,
+          "independent_CUDA": {
+            "phases": 199,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 8673,
+            "maximum_output_cells": 96
+          },
+          "independent_binary64_phases": 199,
+          "resources": {
+            "peak_reference_payload_bytes": 27386001,
+            "consumed_native_arena_extent": 55736,
+            "native_allocator_reserved_bytes": 16777216
+          },
+          "host": {
+            "process_id": 13420,
+            "creation_100ns": 134337388089414919,
+            "lifetime_process_commit_peak": 2280873984
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 4294967296,
+            "peak_process_commit": 2340462592,
+            "peak_job_commit": 2341691392,
+            "user_100ns": 90156250,
+            "kernel_100ns": 12812500,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 13420,
+            "process_creation_100ns": 134337388089414919
+          }
+        },
+        "cases.disconnected-a": {
+          "tokens": 4,
+          "ordinary_training_events": 20,
+          "optimizer_update_unit": 10,
+          "complete_domain_reference_predictions_checked": 16,
+          "native_graph": {
+            "nodes": 18,
+            "sources": 8,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 12,
+            "edges": 20,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 26,
+            "SUMs": 22,
+            "PRODUCTs": 20,
+            "edges": 84,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 78,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "install_cursors": [
+            40
+          ],
+          "sealed_at": 42,
+          "partial_optimizer_events": 2,
+          "stage_status": "INSTALLED_CUDA",
+          "alpha_spent": "1/2",
+          "sealed_port_denials": 27,
+          "external_unseen_relation_0_2": 0,
+          "independent_CUDA": {
+            "phases": 136,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 8671,
+            "maximum_output_cells": 96
+          },
+          "independent_binary64_phases": 136,
+          "resources": {
+            "peak_reference_payload_bytes": 18867266,
+            "consumed_native_arena_extent": 38160,
+            "native_allocator_reserved_bytes": 16777216
+          },
+          "host": {
+            "process_id": 26496,
+            "creation_100ns": 134337388213363546,
+            "lifetime_process_commit_peak": 2257846272
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 4294967296,
+            "peak_process_commit": 2298327040,
+            "peak_job_commit": 2299559936,
+            "user_100ns": 65468750,
+            "kernel_100ns": 11093750,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 26496,
+            "process_creation_100ns": 134337388213363546
+          }
+        },
+        "cases.disconnected-b": {
+          "tokens": 4,
+          "ordinary_training_events": 20,
+          "optimizer_update_unit": 10,
+          "complete_domain_reference_predictions_checked": 16,
+          "native_graph": {
+            "nodes": 18,
+            "sources": 8,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 12,
+            "edges": 20,
+            "slots": 2,
+            "bindings": 0
+          },
+          "full_native_class_caps": {
+            "nodes": 26,
+            "SUMs": 22,
+            "PRODUCTs": 20,
+            "edges": 84,
+            "slots": 2
+          },
+          "source_only_class_cardinality_at_least_power_of_two": 78,
+          "actually_evaluated_native_witnesses": 1,
+          "unexecuted_syntax_cursor_not_declared_exhausted": true,
+          "install_cursors": [
+            40
+          ],
+          "sealed_at": 42,
+          "partial_optimizer_events": 2,
+          "stage_status": "INSTALLED_CUDA",
+          "alpha_spent": "1/2",
+          "sealed_port_denials": 27,
+          "external_unseen_relation_0_2": 1,
+          "independent_CUDA": {
+            "phases": 136,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 8671,
+            "maximum_output_cells": 96
+          },
+          "independent_binary64_phases": 136,
+          "resources": {
+            "peak_reference_payload_bytes": 18867266,
+            "consumed_native_arena_extent": 38160,
+            "native_allocator_reserved_bytes": 16777216
+          },
+          "host": {
+            "process_id": 28448,
+            "creation_100ns": 134337388306761376,
+            "lifetime_process_commit_peak": 2259357696
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 4294967296,
+            "peak_process_commit": 2300039168,
+            "peak_job_commit": 2301251584,
+            "user_100ns": 66406250,
+            "kernel_100ns": 10625000,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 28448,
+            "process_creation_100ns": 134337388306761376
+          }
+        },
+        "cases.sum-tie": {
+          "actual_AMP_train_context_probability_equalities": 30,
+          "exact_reference_train_likelihood_tied": true,
+          "hierarchy": {
+            "nodes": 18,
+            "sources": 8,
+            "state_reads": 0,
+            "SUMs": 6,
+            "PRODUCTs": 4,
+            "SUM_edges": 12,
+            "edges": 20,
+            "slots": 2,
+            "bindings": 0
+          },
+          "SUM_only": {
+            "nodes": 5,
+            "sources": 3,
+            "state_reads": 0,
+            "SUMs": 2,
+            "PRODUCTs": 0,
+            "SUM_edges": 3,
+            "edges": 3,
+            "slots": 2,
+            "bindings": 0
+          },
+          "scope": "smaller training-optimal control, not a strong population SUM comparator or an owned policy run",
+          "independent_CUDA": {
+            "phases": 267,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 8671,
+            "maximum_output_cells": 96
+          },
+          "independent_binary64_phases": 267,
+          "resources": {
+            "peak_reference_payload_bytes": 36491012,
+            "consumed_native_arena_extent": 70568,
+            "native_allocator_reserved_bytes": 16777216
+          },
+          "host": {
+            "process_id": 25360,
+            "creation_100ns": 134337388400114797,
+            "lifetime_process_commit_peak": 2298363904
+          },
+          "completed_job": {
+            "exit_code": 0,
+            "timed_out": false,
+            "commit_limit": 4294967296,
+            "peak_process_commit": 2341552128,
+            "peak_job_commit": 2342805504,
+            "user_100ns": 94218750,
+            "kernel_100ns": 12968750,
+            "total_processes": 2,
+            "limit_terminated_processes": 0,
+            "attached_before_resume": true,
+            "process_id": 25360,
+            "process_creation_100ns": 134337388400114797
+          }
+        },
+        "disconnected_witness": {
+          "identical_observable_data_proposal_graph_and_train_objective": true,
+          "shared_assignment": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "components": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "opposite_external_unseen_relations": [
+            0,
+            1
+          ]
+        },
+        "common_actual_device": {
+          "identity": {
+            "runtime_version": 13040,
+            "driver_api_version": 13040,
+            "driver_version": "616.92",
+            "pci_bus_id": "0000:0B:00.0",
+            "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+            "physical_vram_bytes": 25769803776
+          },
+          "physical_vram_upper": 25769803776,
+          "role_physical_vram_upper": {
+            "deployment": 25769803776,
+            "compiler": 25769803776
+          },
+          "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+        }
+      },
+      "completed_jobs": {
+        "cases.hierarchy.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 3904167936,
+          "peak_job_commit": 3905482752,
+          "user_100ns": 3318125000,
+          "kernel_100ns": 86406250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 22000,
+          "process_creation_100ns": 134337384303903453
+        },
+        "cases.wrong-majority.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 2340462592,
+          "peak_job_commit": 2341691392,
+          "user_100ns": 90156250,
+          "kernel_100ns": 12812500,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 13420,
+          "process_creation_100ns": 134337388089414919
+        },
+        "cases.disconnected-a.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 2298327040,
+          "peak_job_commit": 2299559936,
+          "user_100ns": 65468750,
+          "kernel_100ns": 11093750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 26496,
+          "process_creation_100ns": 134337388213363546
+        },
+        "cases.disconnected-b.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 2300039168,
+          "peak_job_commit": 2301251584,
+          "user_100ns": 66406250,
+          "kernel_100ns": 10625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 28448,
+          "process_creation_100ns": 134337388306761376
+        },
+        "cases.sum-tie.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 4294967296,
+          "peak_process_commit": 2341552128,
+          "peak_job_commit": 2342805504,
+          "user_100ns": 94218750,
+          "kernel_100ns": 12968750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 25360,
+          "process_creation_100ns": 134337388400114797
+        }
+      }
+    }
+  },
+  "reference_gate_map": {
+    "0": {
+      "mode": "R",
+      "audits": [
+        "context_ingress",
+        "owned_encoding",
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "1": {
+      "mode": "S/X",
+      "audits": [
+        "reference_events"
+      ]
+    },
+    "2": {
+      "mode": "R/S",
+      "audits": [
+        "reference_search"
+      ]
+    },
+    "3": {
+      "mode": "R/S",
+      "audits": [
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "4": {
+      "mode": "R/S",
+      "audits": [
+        "reference_events",
+        "reference_search"
+      ]
+    },
+    "5": {
+      "mode": "R",
+      "audits": [
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "6": {
+      "mode": "R/S",
+      "audits": [
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "7": {
+      "mode": "R/S",
+      "audits": [
+        "reference_events"
+      ]
+    },
+    "8": {
+      "mode": "R",
+      "audits": [
+        "reference_construction",
+        "reference_search"
+      ]
+    },
+    "9": {
+      "mode": "R",
+      "audits": [
+        "bound_host_runtime",
+        "control_admission",
+        "cpu_installation",
+        "host_allocation_failure",
+        "reference_construction"
+      ]
+    },
+    "10": {
+      "mode": "R",
+      "audits": [
+        "paired_cpu_persistence",
+        "reference_construction",
+        "reference_events"
+      ]
+    },
+    "11": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "reference_profiles"
+      ]
+    },
+    "12": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "reference_events",
+        "reference_run"
+      ]
+    },
+    "13": {
+      "mode": "R/T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_events"
+      ]
+    },
+    "14": {
+      "mode": "R",
+      "audits": [
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "15": {
+      "mode": "X/S",
+      "audits": [
+        "control_admission",
+        "owned_compiler_policy"
+      ]
+    },
+    "16": {
+      "mode": "T",
+      "audits": [
+        "binary_arithmetic",
+        "float64_runtime"
+      ]
+    },
+    "17": {
+      "mode": "R/S",
+      "audits": [
+        "reference_acceleration"
+      ]
+    },
+    "18": {
+      "mode": "R",
+      "audits": [
+        "reference_events",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "19": {
+      "mode": "R",
+      "audits": [
+        "control_admission",
+        "reference_run",
+        "reference_search"
+      ]
+    },
+    "20": {
+      "mode": "R/T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy",
+        "reference_run"
+      ]
+    },
+    "21": {
+      "mode": "R",
+      "audits": [
+        "bound_host_runtime",
+        "cpu_installation",
+        "owned_encoding",
+        "reference_construction",
+        "reference_run"
+      ]
+    },
+    "22": {
+      "mode": "R",
+      "audits": [
+        "context_ingress",
+        "cpu_installation",
+        "reference_events",
+        "reference_run"
+      ]
+    },
+    "23": {
+      "mode": "R",
+      "audits": [
+        "cpu_installation",
+        "reference_profiles",
+        "reference_search"
+      ]
+    },
+    "24": {
+      "mode": "R/S",
+      "audits": [
+        "owned_compiler_policy",
+        "reference_persistence"
+      ]
+    },
+    "25": {
+      "mode": "R",
+      "audits": [
+        "reference_profiles",
+        "reference_run",
+        "reference_search"
+      ]
+    },
+    "26": {
+      "mode": "R",
+      "audits": [
+        "float64_runtime",
+        "owned_encoding",
+        "reference_run"
+      ]
+    },
+    "27": {
+      "mode": "S",
+      "audits": []
+    },
+    "28": {
+      "mode": "T",
+      "audits": [
+        "paired_cpu_persistence"
+      ]
+    },
+    "29": {
+      "mode": "T",
+      "audits": [
+        "float64_runtime",
+        "paired_cpu_persistence"
+      ]
+    },
+    "30": {
+      "mode": "T",
+      "audits": [
+        "cpu_installation",
+        "owned_compiler_policy"
+      ]
+    },
+    "31": {
+      "mode": "S",
+      "audits": []
+    },
+    "32": {
+      "mode": "S",
+      "audits": []
+    },
+    "33": {
+      "mode": "S",
+      "audits": []
+    },
+    "34": {
+      "mode": "S/R",
+      "audits": [
+        "reference_profiles"
+      ]
+    },
+    "35": {
+      "mode": "S",
+      "audits": []
+    },
+    "36": {
+      "mode": "S",
+      "audits": []
+    },
+    "37": {
+      "mode": "S/R",
+      "audits": [
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "38": {
+      "mode": "R/S",
+      "audits": [
+        "bound_host_runtime",
+        "cpu_installation",
+        "reference_construction"
+      ]
+    },
+    "39": {
+      "mode": "S",
+      "audits": []
+    },
+    "40": {
+      "mode": "S",
+      "audits": []
+    },
+    "41": {
+      "mode": "S",
+      "audits": []
+    },
+    "42": {
+      "mode": "S",
+      "audits": []
+    },
+    "43": {
+      "mode": "S/R",
+      "audits": [
+        "reference_run"
+      ]
+    },
+    "44": {
+      "mode": "R",
+      "audits": [
+        "owned_compiler_policy",
+        "paired_cpu_persistence",
+        "reference_persistence",
+        "reference_run"
+      ]
+    },
+    "45": {
+      "mode": "S",
+      "audits": []
+    },
+    "46": {
+      "mode": "S",
+      "audits": []
+    }
+  },
+  "executed_target_components": {
+    "13": [
+      "cuda_runtime",
+      "cuda_persistence",
+      "cuda_installation",
+      "cuda_policy_run"
+    ],
+    "16": [
+      "cuda_primitives",
+      "cuda_learner",
+      "cuda_runtime",
+      "cuda_persistence"
+    ],
+    "20": [
+      "cuda_installation",
+      "cuda_policy_run"
+    ],
+    "28": [
+      "cuda_persistence",
+      "cuda_policy_run"
+    ],
+    "29": [
+      "cuda_learner",
+      "cuda_runtime",
+      "cuda_persistence"
+    ],
+    "30": [
+      "cuda_runtime",
+      "cuda_installation",
+      "cuda_policy_run"
+    ]
+  },
+  "shared_target_resource_evidence": [
+    "cuda_storage",
+    "cuda_external_allocations",
+    "cuda_device",
+    "cuda_policy_run"
+  ],
+  "hierarchy_and_identification_controls": "cuda_hierarchy",
+  "actual_device": {
+    "identity": {
+      "runtime_version": 13040,
+      "driver_api_version": 13040,
+      "driver_version": "616.92",
+      "pci_bus_id": "0000:0B:00.0",
+      "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+      "physical_vram_bytes": 25769803776
+    },
+    "physical_vram_upper": 25769803776,
+    "role_physical_vram_upper": {
+      "deployment": 25769803776,
+      "compiler": 25769803776
+    },
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+  },
+  "not_claimed": [
+    "every legal registration or future stream has been tested",
+    "CERTIFIED_COMPLETE or arbitrary target strategy/parameter optimality",
+    "static theorem rows are newly executed target tests",
+    "unregistered fusion, reduction orders or other devices",
+    "tight FP VRAM peak, GPU instruction/time cap, all-system memory or cross-root statistical family authority",
+    "population identification, necessary hierarchy, model quality or performance superiority"
+  ]
+}

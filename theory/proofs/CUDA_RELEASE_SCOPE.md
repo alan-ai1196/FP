@@ -1,10 +1,18 @@
 # Target release: exact scope and integration requirement
 
-Status: **integration driver prepared; complete target release not yet
-verified. Model science remains HOLD pending the actual integrated run.**
+Status: **scoped Reference/CPU and RTX 3090 AMP implementation FROZEN,
+2026-09-13. Registered experiments may proceed within this tested scope.**
 Foundation R4, XVII.31 and ERC-1 remain frozen. The independent Reference/CPU
 prerequisite remains the release at `ebe2c4c`; its evidence is not relabelled
 as target execution.
+
+Tested source: `5e55eb4f359016d18d68239938bdfb15893238eb`, CPython 3.12.9,
+64-bit Windows 11, machine `packed-reference-payload-v9`. All **31 complete
+audits** pass from the same fresh clone, including all 38 package submodules
+importing without Torch. The authoritative integrated record is
+[`FP_CUDA_RELEASE_AUDIT.json`](../../evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
+The freeze declaration changes only documentation and this evidence; it
+does not change the tested implementation or audits.
 
 ## 1. The implementation being tested
 
@@ -95,6 +103,23 @@ audit changes. That declaration need not recursively retest its own commit
 identity. Any later executor change needs appropriate renewed evidence.
 
 ## 4. What passing permits next
+
+The integrated run completed from 01:37:52 to 02:07:33 UTC on 2026-09-13.
+Every complete CPU and CUDA battery passed; no implementation, audit or
+budget correction was needed during this integration. The actual board
+binding is RTX 3090, PCI `0000:0B:00.0`, UUID
+`GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c`, runtime/API 13040, driver 616.92.
+Torch's separate build identity remains 2.12.0+cu132 / CUDA 13.2.
+
+The target run repeats the trained 774-member and recurrent 124-member
+paths, independent whole-domain/null controls and two-install policy stream.
+Its 32 policy workers all respect the 4 GiB host contract. The n=32 hierarchy
+again installs at 330 and seals at 622 with 1,963 independent CUDA and
+binary64 phase checks. Its completed job peak is 3,905,482,752 bytes,
+including the independent final audit, below 4 GiB. The smaller SUM training
+tie, disconnected installed worlds and misleading-majority control all pass.
+These are the newly executed integrated results, distinct from earlier
+component measurements.
 
 A successful scoped target release closes the correctness prerequisite for
 registered RTX 3090 experiments. It is not itself a model-quality result.

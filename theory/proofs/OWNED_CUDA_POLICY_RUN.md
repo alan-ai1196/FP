@@ -151,6 +151,7 @@ Run `python -B scripts/audit_cuda_policy_run.py --write` for the minimal
 [`FP_CUDA_POLICY_RUN_AUDIT.json`](../../evidence/minimal/FP_CUDA_POLICY_RUN_AUDIT.json).
 This is target correctness/resource evidence. The
 [existing hierarchical target fixture](OWNED_CUDA_HIERARCHY.md) now also
-passes, including its training tie and identifiability controls. Complete
-target release integration precedes model science; no additional static
-resource families are prerequisites.
+passes, including its training tie and identifiability controls. The
+[complete target release integration](CUDA_RELEASE_SCOPE.md) subsequently
+passes at `5e55eb4`; no additional static resource families are prerequisites
+to registered experiments.

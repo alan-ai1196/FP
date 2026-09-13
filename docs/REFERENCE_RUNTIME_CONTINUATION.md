@@ -5,7 +5,10 @@ describes the current executable Runtime. Its scoped Reference/CPU release
 passed all 21 complete audits at source `ebe2c4c`; read
 [the frozen scope](../theory/proofs/REFERENCE_RELEASE_SCOPE.md) and
 [release evidence](../evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
-This is not a new semantic contract or an actual target AMP release.
+The subsequent [target integration](../theory/proofs/CUDA_RELEASE_SCOPE.md)
+passes at `5e55eb4`: all 21 current CPU and 10 complete CUDA audits from
+one fresh clone. The target implementation is now frozen for that scope;
+registered experiments are unheld. This note adds no semantic contract.
 
 The optional `cuda=CudaPrefixContract(...)` now owns continuous mixed-precision
 device learners, paid raw phase evidence and exact per-forecast checks. It
@@ -18,8 +21,8 @@ it does not transfer CPU evidence. With a preregistered `CudaInstallContract`,
 current crossings, actual initialized device extents and complete states.
 Its [resident identity transport](../theory/proofs/OWNED_CUDA_INSTALLATION.md)
 publishes one complete root, preserves CUDA objects and invalidates old
-search/persistence authority without alpha refunds. Complete device resources
-and owned target policy/run/release integration remain the frontier.
+search/persistence authority without alpha refunds. Actual device resources,
+owned target policy/run and the complete release are integrated as above.
 
 ## What the endpoint now executes
 
@@ -645,10 +648,12 @@ and execute `scripts/audit_reference_run.py` for the bounded CPU chain and
 terminal/failure adversaries.
 
 The [47-gate mapping](REFERENCE_RELEASE_GATE_MAP.md) records the completed
-owned hierarchy and reference integration, and the remaining target gates.
+owned hierarchy, reference prerequisite and subsequent target integration.
 Optional broader control/information/family claims do not
 silently enlarge that scope. The CPU relation and finite run do not close
-actual target AMP. The generic target install port stays UNRESOLVED; no
-CERTIFIED_COMPLETE or target AMP authorization is issued. Actual target
-correctness is now the next step after reference closure, then RTX 3090 model science, which
-remains HOLD. Static theory expansion stays parked.
+actual target AMP by themselves. The generic target install port stays
+UNRESOLVED and no CERTIFIED_COMPLETE token is issued. The registered
+`install_cuda` path has its own complete state/evidence/resource transition;
+all 31 current CPU/CUDA audits pass in the [target release](../theory/proofs/CUDA_RELEASE_SCOPE.md)
+at `5e55eb4`. Registered RTX 3090 experiments are now unheld within that
+scope. Static theory expansion stays parked.

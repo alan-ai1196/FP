@@ -5,7 +5,8 @@ RTX 3090 endpoint audit.** Foundation R4, XVII.31 and ERC-1 stay frozen.
 This closes an identified VRAM-residency coordinate, not a complete target
 release or model-science claim. The subsequent
 [owned target policy/run](OWNED_CUDA_POLICY_RUN.md) integrates these declared
-coordinates; complete target release remains open.
+coordinates; the subsequent [complete scoped target release](CUDA_RELEASE_SCOPE.md)
+passes at `5e55eb4`.
 
 ## 1. A uniform upper does not require an exact allocation history
 
@@ -152,6 +153,6 @@ and reference-run regressions pass; all 38 package files import without Torch.
 This is targeted regression evidence, not a reissue of the frozen CPU release.
 
 The subsequent [owned policy/run composition](OWNED_CUDA_POLICY_RUN.md)
-executes on this resource binding. Complete target release remains open.
+executes on this resource binding and is included in that target release.
 This result supplies neither an all-kernel theorem nor new static theory
-prerequisites. Continue target integration before science.
+prerequisites. Registered experiments can now use the tested composition.
