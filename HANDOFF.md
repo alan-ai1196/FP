@@ -183,19 +183,28 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-seventeen-attempt prefix contains thirteen EXECUTED workers and four FAILED jobs.
-Nine FP streams seal, eight install, and5,034 CUDA/binary64 phases per path
-are independently checked. Four new posterior workers supply640 actual GPU
-forecasts; post-analysis verifies52 descriptive scores and nine fresh
+twenty-two-attempt prefix contains eighteen EXECUTED workers and four FAILED jobs.
+Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
+are independently checked. Six new posterior workers supply768 actual GPU
+forecasts; post-analysis verifies72 descriptive scores and twelve fresh
 FP decisions. The two n16/c2 posterior workers have mean unseen CE0.3269395091.
 All four n16/c2 FP workers fail in the final CUDA auditor's arena snapshot
 with MemoryError under the fixed16GiB host envelope. They retain no FP model
-score, install, seal or complete trajectory-audit claim. The first n8/c4
-worker seals and installs; its candidate unseen CE is0.4217356003. Other
-c4 and selected-stress outcomes remain pending. Read the live main journal
-for the newest prefix; the research branch currently retains seventeen attempts.
+score, install, seal or complete trajectory-audit claim. All four n8/c4 FP
+streams seal; two install. Their two-seed candidate unseen CE means are
+0.4168832454 at rate1 and0.4333859733 at rate4, versus the strong posterior's
+0.3654471094. Deployed means are0.6113593240 and0.6210014211. These are finite
+registered-sample observations. The n16/c4 and selected-stress outcomes remain
+pending. Read the live main journal for its newest prefix; the research
+branch currently retains twenty-two attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
+
+Post-RN-5 source extensions are committed on `research/joint-learner-geometry`
+in a linked worktree of this same canonical Git repository. Run their new
+source-dependent audits from that checkout while main remains bound to the
+live matrix; integrate the branch after all main workers are terminal.
+The mirrored theory/status files do not authorize changing main's live code.
 
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.

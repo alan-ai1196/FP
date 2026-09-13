@@ -3673,3 +3673,19 @@ such a cell. This is a loose-bound route limitation, not an impossibility
 of optimizing the actual finite native class by a different solver. Useful
 future adaptation and its information/resource costs remain the research
 frontier after this construction/installation control closes.
+
+## 104. RN-5's n8/c4 prefix retains an adaptive-posterior gap
+
+The twenty-two-attempt prefix independently verifies eighteen EXECUTED and
+four FAILED jobs, twelve sealed FP streams, nine installs,72 dynamic score
+checks, twelve fresh decisions,6,552 CUDA/binary64 phases each and768 new
+posterior GPU forecasts. All four n16/c2 FP snapshot failures keep their
+original outcomes and caps. The four n8/c4 streams seal, with two installs;
+the two posterior controls also complete. Their two-seed candidate unseen
+CE means are0.4168832454 at rate1 and0.4333859733 at rate4, versus the strong
+posterior's0.3654471094. Deployed means are0.6113593240 and0.6210014211.
+These are registered finite-sample observations, not a population comparison
+or completed n16/stress result. The live main source remains38b27b3; its
+n16/c4 worker continues while source extensions reside in the same Git
+repository's research worktree. No partially scored plot or imputed failed
+tail is published.
