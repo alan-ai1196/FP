@@ -264,6 +264,15 @@ after the common scale is retained. There is no Runtime quotient, evidence
 transfer or new initializer authorization here. The actual complete Runtime
 retains the amplitude state instead of replacing it by current pair forecasts.
 
+The family restriction matters: the fixed-known-noise full posterior is a
+minimal pairwise Ising exponential family, in which the complete exact pair
+moment vector does determine its signed edge counts. The two free states
+above have a nonzero four-spin log interaction and lie outside that family;
+the projected SGD example can also leave it. See the
+[whole-history predictive-state proof](WHOLE_HISTORY_PREDICTIVE_STATE.md).
+Its exact mean-map uniqueness gives neither a stable finite-precision inverse
+nor a quotient for this complete learner.
+
 ## 6. Minimal evidence
 
 `experiments/joint_uncertainty/factor_dynamics.py` exhausts every ordered,

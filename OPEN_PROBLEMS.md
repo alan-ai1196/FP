@@ -175,6 +175,17 @@ CUDA/binary64 phases each and27 retained forecast checks; centered packed
 peak90,865,346 versus contracted570,850,422 bytes with the same exact masses.
 Longer-history, larger-n useful adaptation remains separate from this result;
 do not extend the static precision controls or repeat the completed jobs.
+The [whole-history predictive-state law](theory/proofs/WHOLE_HISTORY_PREDICTIVE_STATE.md)
+closes its information subproblem for fixed known noise: signed edge counts
+are sufficient and minimal. Their exact class count also lower-bounds memory
+at fixed uniform future error below4/25 for noise1/10; a finite common suffix
+can expose every pair of unequal count states. This is not an exponential
+latent-weight storage requirement. Affordable native inference and reachable
+updates from that information remain open, as does useful approximation under
+an explicit expected-risk/failure criterion. Current rounded confidence cannot
+justify forgetting under the proved all-future criterion. Unknown noise and
+the complete SGD/Compiler state require additional information; no existing
+history, interface or provenance requirement is removed.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

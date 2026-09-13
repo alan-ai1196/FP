@@ -3752,3 +3752,36 @@ the precision benefit at much lower packed cost than partition contraction.
 The general fixed-H existence theorem remains, but it supplies no large-n
 or long-history affordability result. This initial-model comparison is closed;
 none of its three jobs should be repeated or promoted to a class/install claim.
+
+## 106. Whole-history predictive information survives fixed future error
+
+The known-noise relation posterior has a smaller exact history description
+than its latent-world mass table: signed nonloop edge counts. Opposite edge
+labels and diagonal labels contribute only a common fixed-noise likelihood
+factor. The count update preserves every legal future posterior forecast.
+The exact full pair moment map is injective within this minimal pairwise
+Ising family; this does not rescue arbitrary projected-learner moment states.
+
+At cut T with all ordered pairs legal, reachable counts are the integer
+L1 ball, with N_m(T)=SUM_j 2^j binom(m,j) binom(T,j) classes. A stronger
+continuation argument shows the same information lower bound survives any
+uniform future probability error below4/25 at noise1/10. For any unequal
+counts, a common finite suffix nearly fixes the other bits' relative parities
+and cancels one state's remaining field, exposing a forecast gap approaching
+8/25. These suffixes are legal positive-probability observations, possibly
+very rare; the proof gives no expected-risk impossibility or label oracle.
+
+Exact checks cover6,175 ordered histories,12,350 likelihood identities,
+846 distinct forecast tables,2,016 tree-state pairs and4,216 pairs of full
+count classes. Every checked full-class suffix meets gap38/125; the actual
+minimum is about0.3199967886. Counts8/9 already share a binary32 forecast,
+yet eight common contrary labels give1/2 and41/50. With unknown noise,
+even equal d and clock can diverge: diagonal likelihood factors affect the
+next posterior. The proof and small reproducible audit retain these boundaries.
+
+The result separates information from physical inference. It authorizes no
+signed native source, counter initializer, raw-history deletion, state transport
+or install certificate. Affordable reachable whole-history adaptation, or an
+explicit expected-risk approximation, remains the next model research question.
+Foundation and ERC-1 stay frozen. The stale end-of-theory science HOLD sentence
+is aligned with the already completed release and the file's existing status.

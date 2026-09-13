@@ -294,6 +294,17 @@ compact post-analysis checks27 forecasts across all three paths, totalling84
 CUDA and84 binary64 audited phases. This closes this initial-model comparison
 only; no resource comparison may omit the stronger centered control.
 
+The new exact-only `experiments/joint_uncertainty/predictive_counts.py` checks
+the [whole-history model predictive quotient](theory/proofs/WHOLE_HISTORY_PREDICTIVE_STATE.md).
+Known-noise signed edge counts are sufficient and minimal; the full exact
+count-class information lower bound also holds for fixed uniform future error
+below4/25 at noise1/10. Audits cover6,175 histories,846 exact forecast tables,
+2,016 tree state pairs and4,216 pairs from complete count balls. Every checked
+full-class suffix has future forecast gap at least38/125. A binary32 confidence
+collision and unknown-noise counterexample prevent broader erasure claims.
+This module has no Runtime/proposer authority, Torch import, native model or
+AMP evidence. All existing state, source, history and install rules remain.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

@@ -327,6 +327,21 @@ a representation bound with large window/domain costs, not an affordable
 large-n model result. All three new jobs and both drivers are terminal; main RN-5 remains
 bound to its own source until all its workers finish.
 
+The [whole-history predictive-state proof](theory/proofs/WHOLE_HISTORY_PREDICTIVE_STATE.md)
+now identifies what the known-noise posterior must remember: signed nonloop
+edge counts are sufficient and minimal. Complete exact pair forecasts encode
+these counts within the pairwise Ising family, but their rounded values can
+erase a later useful distinction. At cut T, all N_m(T) integer count classes
+remain distinguishable even with uniform future probability error below4/25
+at noise1/10. The proof gives a finite common suffix exposing any two classes;
+4,216 exhaustive state-pair checks include cyclic and frustrated histories.
+Another6,175 ordered histories,846 exact forecast tables and the unknown-noise
+counterexample pass. Run `experiments/joint_uncertainty/predictive_counts.py`.
+This is an information law, not a native counter model, cheap inference result
+or Runtime deletion permission. Next attack affordable inference and reachable
+adaptation, or a stated expected-risk approximation; increasing window size
+and keeping only rounded confidence do not settle this question.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

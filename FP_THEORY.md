@@ -2408,14 +2408,25 @@ FP does not claim:
 
 ## Current science frontier
 
-The immediate authorized work is **Reference Compiler implementation closure**
-under the frozen ERC-1 resource specification. The scoped joint upper/lower
-law in XVII.31 is the stopping point for the static special-case program.
-Proceed through complete Runtime, actual AMP bridge, then RTX 3090
-experiments. New model/GPU science remains HOLD until the first two
-prerequisites pass. The science questions are whether task/resource
-optimization forces useful FP structure in real next-token modeling and
-whether a native FP block can scale competitively from scratch.
+The scoped Reference/CPU and RTX 3090 AMP prerequisites have passed, as
+recorded at the start of this file. Registered model experiments proceed
+under frozen ERC-1; XVII.31 remains the stopping point for static special
+cases. Current work is useful uncertainty-preserving adaptation with actual
+information, reachable learners and owned execution costs. Completed finite
+controls do not freeze every new constructor or establish model quality.
+
+The [whole-history predictive-state proof](theory/proofs/WHOLE_HISTORY_PREDICTIVE_STATE.md)
+applies the existing claim-relative quotient and packing principles to the
+known-noise latent-relation model. Signed nonloop edge counts preserve all
+its future posterior forecasts. At cut T with all ordered pairs legal, the
+exact number of predictive classes is
+`N_m(T)=SUM_j 2^j binom(m,j) binom(T,j)`, m=n(n-1)/2. Every pair of classes
+also has a finite common future with forecast separation at least
+(1-2*epsilon)^2/2 minus any prescribed positive slack. Thus uniform future error below
+(1-2*epsilon)^2/4 still requires N_m(T) states. This is a model-information
+law, not a native circuit, inference-work, AMP or complete-Compiler quotient.
+Finite expected-risk approximation remains open. Foundation and ERC-1 are
+unchanged; no semantic architecture action is introduced.
 
 ## Frozen research rule
 
