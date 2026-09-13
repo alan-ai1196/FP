@@ -107,12 +107,14 @@ and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertain
 preregistered with its larger joint-family execution envelope. Execute the
 31 workers, independently reconstruct forecasts and fresh decisions, and
 compare with the strong adaptive posterior without filling failed tails. Execution is active at
-`38b27b3`. Independent analysis now verifies seventeen completed attempts:
-thirteen EXECUTED and four FAILED. All four n16/c2 FP workers record final-auditor
+`38b27b3`. Independent analysis now verifies twenty-two completed attempts:
+eighteen EXECUTED and four FAILED. All four n16/c2 FP workers record final-auditor
 snapshot MemoryErrors at the declared host envelope, with no scored or fully
-audited FP trajectory. Both n16/c2 posterior workers execute. The first n8/c4
-worker seals and installs; the total prefix has52 checked descriptive scores,
-nine fresh decisions and640 posterior GPU forecasts.
+audited FP trajectory. All n8/c4 streams now seal, two install; candidate
+unseen CE means0.4168832454/0.4333859733 still exceed the strong posterior's
+0.3654471094 on these two seeds. The prefix has72 checked descriptive scores,
+twelve fresh decisions and768 posterior GPU forecasts. n16/c4 and selected
+stress still require their unchanged registered executions.
 Remaining outcomes come only from the unchanged live matrix. The
 [scale-dynamics result](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) explains
 why current prediction equivalence cannot remove an optimizer state variable.
