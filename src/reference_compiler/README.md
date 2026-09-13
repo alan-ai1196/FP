@@ -3,7 +3,7 @@
 **Status: Reference/CPU and RTX 3090 AMP baseline FROZEN, 2026-09-13;
 prospective v2 strategy separately audited. Experiments are UNHELD within
 their tested scopes.** Source
-`5e55eb4` passes all 21 current CPU and 10 complete CUDA audits from one
+`5e55eb4` passes all 21 CPU and 10 CUDA audits of that release from one
 fresh clone, including 38 submodule imports, independent endpoint models,
 trained/recurrent installation, device resources and the n=32 hierarchy.
 See [target scope](../../theory/proofs/CUDA_RELEASE_SCOPE.md) and
@@ -20,11 +20,18 @@ exact unrestricted fitted coefficient. Run `scripts/audit_prospective_selection.
 from the repository root. This is a scoped extension, not a replacement
 claim that the whole historical release was rerun.
 
+[RN-2](../../experiments/prospective_relation/RESULTS.md) executes this strategy
+in twenty sealed FP streams and eight new AMP posterior workers. All sixteen
+IID cases install while the full training classes remain unresolved; the
+disconnected uncertainty control remains. Its 17,064 CUDA/binary64 phase
+replays and model scores belong to source `5bcbb49`.
+
 The late 2026-09-05 research workspace contained a larger `fp_reference` package than the eight files that survived as direct final attachments. The missing scratch modules are not evidence that the implementation never existed: execution provenance records a 22-module package and an intermediate 24/24 unit + 47/47 gate pass before later complete-Runtime hardening.
 
 This directory contains the current scoped Reference/CPU and target AMP
 implementation; Git retains the directly persisted late-WIP source.
-Registered RTX 3090 experiments are next. See root `IMPLEMENTATION_STATUS.md` for the
+Registered RTX 3090 resource and model experiments are running within this scope.
+See root `IMPLEMENTATION_STATUS.md` for the
 current release and `RECOVERY_MANIFEST.md` for historical provenance.
 
 Extend the implementation against `FP_THEORY.md`; do not weaken its contract
@@ -33,7 +40,7 @@ integrated; actual target execution retains its own complete endpoint evidence.
 
 `fp_reference.cuda_learner` now provides actual continuous mixed-precision
 learner mechanics with an independent exact rounded audit. The helpers have
-no signer; the target install port remains unresolved. See
+no signer; the owned Runtime installation below supplies the separate transition. See
 [CUDA learner scope](../../theory/proofs/CONTINUOUS_CUDA_LEARNERS.md).
 Importing the component does not import Torch or initialize CUDA.
 

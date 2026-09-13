@@ -1,0 +1,5756 @@
+{
+ "experiment": "RN-2",
+ "status": "COMPLETE_EXECUTION",
+ "registration_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d",
+ "protocol_commit": "9ec4c33352a7940b1f1c3985e70047e0bdbdc87f",
+ "historical_control": {
+  "journal": "evidence/minimal/FP_RELATION_NOISE_EXPERIMENT.json",
+  "journal_commit": "4d045952983f23701156da4449ea9a20c7300590",
+  "worker_source": "5b050c70cea7b51de70eea1ddf6be761fc4afbc3",
+  "reused_cases": [
+   [
+    8,
+    "iid",
+    0
+   ],
+   [
+    8,
+    "iid",
+    1
+   ],
+   [
+    8,
+    "iid",
+    2
+   ],
+   [
+    8,
+    "iid",
+    3
+   ],
+   [
+    16,
+    "iid",
+    0
+   ],
+   [
+    16,
+    "iid",
+    1
+   ],
+   [
+    16,
+    "iid",
+    2
+   ],
+   [
+    16,
+    "iid",
+    3
+   ],
+   [
+    8,
+    "conditioned",
+    0
+   ],
+   [
+    16,
+    "conditioned",
+    0
+   ],
+   [
+    8,
+    "disconnected-a",
+    0
+   ],
+   [
+    8,
+    "disconnected-b",
+    0
+   ]
+  ],
+  "independently_recomputed_RN1_scores": 64
+ },
+ "workers": [
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     8,
+     2
+    ],
+    [
+     5,
+     6,
+     2,
+     8
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4302441754395902,
+    "expected_Brier_exact": "19/70",
+    "mean_true_probability_gap": "4/35",
+    "latent_relation_error_with_half_ties": "1/7",
+    "raw_division_expected_CE_binary64": 0.43024419140512066
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160356,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984264
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11575,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58283927,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 5240,
+    "creation_100ns": 134337499722471401,
+    "lifetime_process_commit_peak": 2366521344
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2437263360,
+    "peak_job_commit": 2438483968,
+    "user_100ns": 225312500,
+    "kernel_100ns": 16093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 5240,
+    "process_creation_100ns": 134337499722471401
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     3,
+     7
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     2,
+     8
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.44777104244761384,
+    "expected_Brier_exact": "43/150",
+    "mean_true_probability_gap": "2/15",
+    "latent_relation_error_with_half_ties": "1/6",
+    "raw_division_expected_CE_binary64": 0.4477710573487754
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160334,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.44010305349842627
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11563,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58277241,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 17944,
+    "creation_100ns": 134337500010231253,
+    "lifetime_process_commit_peak": 2367447040
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2437222400,
+    "peak_job_commit": 2438443008,
+    "user_100ns": 219687500,
+    "kernel_100ns": 17812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 17944,
+    "process_creation_100ns": 134337500010231253
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     0,
+     10
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4302441754395902,
+    "expected_Brier_exact": "19/70",
+    "mean_true_probability_gap": "4/35",
+    "latent_relation_error_with_half_ties": "1/7",
+    "raw_division_expected_CE_binary64": 0.43024419140512055
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.4401030381316036,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.44010305349842643
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11541,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58283907,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 29496,
+    "creation_100ns": 134337500298613452,
+    "lifetime_process_commit_peak": 2367004672
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2437312512,
+    "peak_job_commit": 2438541312,
+    "user_100ns": 224843750,
+    "kernel_100ns": 16250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29496,
+    "process_creation_100ns": 134337500298613452
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     0,
+     10
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     8,
+     2
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4214807419355783,
+    "expected_Brier_exact": "277/1050",
+    "mean_true_probability_gap": "11/105",
+    "latent_relation_error_with_half_ties": "11/84",
+    "raw_division_expected_CE_binary64": 0.42148075843329313
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.4401030381316035,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984264
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11561,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58277091,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 4724,
+    "creation_100ns": 134337500589726635,
+    "lifetime_process_commit_peak": 2366386176
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2436296704,
+    "peak_job_commit": 2437513216,
+    "user_100ns": 225312500,
+    "kernel_100ns": 16093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 4724,
+    "process_creation_100ns": 134337500589726635
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     7,
+     3
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     3,
+     7
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.34962058720268047,
+    "expected_Brier_exact": "151/750",
+    "mean_true_probability_gap": "2/75",
+    "latent_relation_error_with_half_ties": "1/30",
+    "raw_division_expected_CE_binary64": 0.34962060806430634
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3538379895764858,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.35383801018199795
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17365,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198008309,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 26304,
+    "creation_100ns": 134337500878566820,
+    "lifetime_process_commit_peak": 2745520128
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2987819008,
+    "peak_job_commit": 2989047808,
+    "user_100ns": 1280156250,
+    "kernel_100ns": 47812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26304,
+    "process_creation_100ns": 134337500878566820
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    1
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     2,
+     8
+    ],
+    [
+     7,
+     8,
+     7,
+     3
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     9,
+     1
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     0,
+     10
+    ],
+    [
+     14,
+     15,
+     9,
+     1
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35137327390348266,
+    "expected_Brier_exact": "71/350",
+    "mean_true_probability_gap": "1/35",
+    "latent_relation_error_with_half_ties": "1/28",
+    "raw_division_expected_CE_binary64": 0.3513732946586717
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3538379895764857,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.3538380101819978
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17342,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198008439,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 20020,
+    "creation_100ns": 134337502385519587,
+    "lifetime_process_commit_peak": 2745356288
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2987388928,
+    "peak_job_commit": 2988625920,
+    "user_100ns": 1272187500,
+    "kernel_100ns": 46718750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 20020,
+    "process_creation_100ns": 134337502385519587
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    2
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     8,
+     2
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     10,
+     0
+    ],
+    [
+     11,
+     12,
+     10,
+     0
+    ],
+    [
+     12,
+     13,
+     10,
+     0
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35838402070669223,
+    "expected_Brier_exact": "1097/5250",
+    "mean_true_probability_gap": "19/525",
+    "latent_relation_error_with_half_ties": "19/420",
+    "raw_division_expected_CE_binary64": 0.3583840410361337
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3538379895764858,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.35383801018199795
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17354,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198008270,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 28524,
+    "creation_100ns": 134337503881870635,
+    "lifetime_process_commit_peak": 2746916864
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2989363200,
+    "peak_job_commit": 2990587904,
+    "user_100ns": 1269687500,
+    "kernel_100ns": 45625000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28524,
+    "process_creation_100ns": 134337503881870635
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    3
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     7,
+     3
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     0,
+     10
+    ],
+    [
+     7,
+     8,
+     0,
+     10
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     8,
+     2
+    ],
+    [
+     12,
+     13,
+     8,
+     2
+    ],
+    [
+     13,
+     14,
+     4,
+     6
+    ],
+    [
+     14,
+     15,
+     2,
+     8
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35137327390348266,
+    "expected_Brier_exact": "71/350",
+    "mean_true_probability_gap": "1/35",
+    "latent_relation_error_with_half_ties": "1/28",
+    "raw_division_expected_CE_binary64": 0.3513732946586717
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.35383798957648577,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.3538380101819979
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17356,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198023909,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 16268,
+    "creation_100ns": 134337505371659280,
+    "lifetime_process_commit_peak": 2747482112
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2990194688,
+    "peak_job_commit": 2991427584,
+    "user_100ns": 1284062500,
+    "kernel_100ns": 47812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 16268,
+    "process_creation_100ns": 134337505371659280
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "conditioned",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_class_decisions": [
+    {
+     "status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": true,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4302441754395902,
+    "expected_Brier_exact": "19/70",
+    "mean_true_probability_gap": "4/35",
+    "latent_relation_error_with_half_ties": "1/7",
+    "raw_division_expected_CE_binary64": 0.43024419140512066
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160356,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984264
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11575,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58286318,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 6020,
+    "creation_100ns": 134337506884333949,
+    "lifetime_process_commit_peak": 2365718528
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2434707456,
+    "peak_job_commit": 2435919872,
+    "user_100ns": 229531250,
+    "kernel_100ns": 15312500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6020,
+    "process_creation_100ns": 134337506884333949
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "conditioned",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     1,
+     9
+    ],
+    [
+     11,
+     12,
+     9,
+     1
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     9,
+     1
+    ],
+    [
+     14,
+     15,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_class_decisions": [
+    {
+     "status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": true,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.34962058720268047,
+    "expected_Brier_exact": "151/750",
+    "mean_true_probability_gap": "2/75",
+    "latent_relation_error_with_half_ties": "1/30",
+    "raw_division_expected_CE_binary64": 0.34962060806430634
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3538379895764858,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.35383801018199795
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17365,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198011024,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 25984,
+    "creation_100ns": 134337507177575869,
+    "lifetime_process_commit_peak": 2746064896
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2986786816,
+    "peak_job_commit": 2988019712,
+    "user_100ns": 1300312500,
+    "kernel_100ns": 50625000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25984,
+    "process_creation_100ns": 134337507177575869
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-a",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 60,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_class_decisions": [
+    {
+     "status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": true,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 60
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 80,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.4338292164185042,
+    "expected_Brier_exact": "151/550",
+    "mean_true_probability_gap": "13/110",
+    "latent_relation_error_with_half_ties": "13/88",
+    "raw_division_expected_CE_binary64": 0.4338292321663228
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160356,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984264
+   },
+   "independent_CUDA": {
+    "phases": 396,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11574,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 396,
+   "resources": {
+    "peak_packed_bytes": 55404948,
+    "consumed_native_arena_extent": 152160
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 7628,
+    "creation_100ns": 134337508699605044,
+    "lifetime_process_commit_peak": 2359390208
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2424426496,
+    "peak_job_commit": 2425643008,
+    "user_100ns": 215156250,
+    "kernel_100ns": 17343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 7628,
+    "process_creation_100ns": 134337508699605044
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-b",
+    0
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 60,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     1,
+     9
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "REFERENCE_CLASS_BOUNDED",
+   "cutoff_search_reason": "owned feasible witness attains the checked all-categorical empirical upper; unvisited native syntax was not declared constructed",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3
+    ],
+    [
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 1,
+   "final_class_decisions": [
+    {
+     "status": "HISTORICAL_REFERENCE_CLASS_BOUNDED",
+     "search_status": "REFERENCE_CLASS_BOUNDED",
+     "has_proof": true,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 60
+    }
+   ],
+   "final_policy_stage": "EVIDENCE",
+   "install_cursor": null,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 1.6034681820234307,
+    "expected_Brier_exact": "611/550",
+    "mean_true_probability_gap": "32/55",
+    "latent_relation_error_with_half_ties": "8/11",
+    "raw_division_expected_CE_binary64": 1.6034681802924877
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 1.203972804325936,
+    "expected_Brier_exact": "41/50",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 1.2039728101208318
+   },
+   "deployed_stream_unseen": {
+    "contexts": 44,
+    "expected_CE_binary64": 0.6931471805599445,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599445
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.6931471805599452,
+    "expected_Brier_exact": "1/2",
+    "mean_true_probability_gap": "2/5",
+    "latent_relation_error_with_half_ties": "1/2",
+    "raw_division_expected_CE_binary64": 0.6931471805599452
+   },
+   "independent_CUDA": {
+    "phases": 396,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11582,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 396,
+   "resources": {
+    "peak_packed_bytes": 55091110,
+    "consumed_native_arena_extent": 152160
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 10492,
+    "creation_100ns": 134337508976536416,
+    "lifetime_process_commit_peak": 2357760000
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2422628352,
+    "peak_job_commit": 2423865344,
+    "user_100ns": 244218750,
+    "kernel_100ns": 15937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 10492,
+    "process_creation_100ns": 134337508976536416
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    4
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     8
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.43900760894360197,
+    "expected_Brier_exact": "293/1050",
+    "mean_true_probability_gap": "13/105",
+    "latent_relation_error_with_half_ties": "13/84",
+    "raw_division_expected_CE_binary64": 0.43900762437694807
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.4401030381316034,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984264
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11562,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58283848,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 1448,
+    "creation_100ns": 134337509283019371,
+    "lifetime_process_commit_peak": 2366029824
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2436288512,
+    "peak_job_commit": 2437521408,
+    "user_100ns": 221250000,
+    "kernel_100ns": 18125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 1448,
+    "process_creation_100ns": 134337509283019371
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    4
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     2,
+     8
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829733984419,
+    "expected_Brier_exact": "45034536637432217814848308505958065556295195646389092460725952748974470313137434512161988552786786602183/250191870204457190046834776953693935461532798568160079564194891577249283417010808985934888107317583128974",
+    "mean_true_probability_gap": "123110537556675331223581372467026798717129942094/147958739663765736366924194348274039368071524774559235",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250829822022622,
+    "expected_Brier_exact": "5961011963456398166966101464362253807726002202671317621716618546354767599871419993253331127440661812100887297474192940746223/33116732546604807021380695612510841929903622058261907015212489569857458312465157945065747740917674710795703314569743506790675",
+    "mean_true_probability_gap": "25104256112969203894542931909419774697983012640158294299623/630397327531817574611748325738227317863671579433941067518413910",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829449490316
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 162,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 28768,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169921536,
+    "peak_job_commit": 2171133952,
+    "user_100ns": 15312500,
+    "kernel_100ns": 7187500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28768,
+    "process_creation_100ns": 134337509570761293
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    5
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4127173084315665,
+    "expected_Brier_exact": "269/1050",
+    "mean_true_probability_gap": "2/21",
+    "latent_relation_error_with_half_ties": "5/42",
+    "raw_division_expected_CE_binary64": 0.41271732546146545
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.4401030381316034,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984263
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11555,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58277246,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 29532,
+    "creation_100ns": 134337509594202423,
+    "lifetime_process_commit_peak": 2368397312
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2438541312,
+    "peak_job_commit": 2439770112,
+    "user_100ns": 219843750,
+    "kernel_100ns": 17500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29532,
+    "process_creation_100ns": 134337509594202423
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    5
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.32508297339517317,
+    "expected_Brier_exact": "295471581317793376710021014003459164633158723129458449568416903664293088227600019571994499009177853373344951/1641508785086623289091705542553051832766160610218360765075749591654834919338036180342634847331451553812912494",
+    "mean_true_probability_gap": "5530488644537504515583159300326220062270836966654/11984657637791725329195459518845092922293263803090272635",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.32508298205590397,
+    "expected_Brier_exact": "1819117439390495669603788414080775360809478544838708496747976557561404368293639310718137684662626496399/10106207821443286799866232219955520138617398896437576549902173268238232474240482589520310276158920749675",
+    "mean_true_probability_gap": "434901537632936320939608176588210425514827101029/11012469925376388586289515713323376973826325022592190",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829430290334
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 169,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 25444,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169069568,
+    "peak_job_commit": 2170298368,
+    "user_100ns": 15781250,
+    "kernel_100ns": 7343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25444,
+    "process_creation_100ns": 134337509881292709
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    6
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     3,
+     7
+    ],
+    [
+     6,
+     7,
+     8,
+     2
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.46529790945563765,
+    "expected_Brier_exact": "317/1050",
+    "mean_true_probability_gap": "16/105",
+    "latent_relation_error_with_half_ties": "4/21",
+    "raw_division_expected_CE_binary64": 0.4652979232924306
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160356,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984263
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11556,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58277205,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 26756,
+    "creation_100ns": 134337509905299093,
+    "lifetime_process_commit_peak": 2365935616
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2435366912,
+    "peak_job_commit": 2436587520,
+    "user_100ns": 223125000,
+    "kernel_100ns": 16875000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26756,
+    "process_creation_100ns": 134337509905299093
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    6
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     1,
+     9
+    ],
+    [
+     3,
+     4,
+     1,
+     9
+    ],
+    [
+     4,
+     5,
+     2,
+     8
+    ],
+    [
+     5,
+     6,
+     3,
+     7
+    ],
+    [
+     6,
+     7,
+     8,
+     2
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830182064045,
+    "expected_Brier_exact": "3705352750931287577412843325571468879744492737988006149938484306295117637834437174295/20585291214314513868270311989796837465503457827481688607326469596012978973368559126574",
+    "mean_true_probability_gap": "2772810000752581178188080285980412569694/42440699584862169935159344074941092878016235",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830436573861,
+    "expected_Brier_exact": "651913950190368866386025532013964227498937246212491350529936138587480795546892710938811155488820826006908635331260945157384920899183/3621743658318994248397306196501146205799155017524955771293264384186213790714156135323684011881357439100733569713405155917578147229075",
+    "mean_true_probability_gap": "129038190624820135038213588712284389018262565245933965749658053/1318497992411485334693398150299500904875420073381985328359681001634",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250830266272987
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 124,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 6880,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169200640,
+    "peak_job_commit": 2170425344,
+    "user_100ns": 14375000,
+    "kernel_100ns": 8281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6880,
+    "process_creation_100ns": 134337510189811970
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid",
+    7
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 70,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     2,
+     8
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     8,
+     2
+    ],
+    [
+     5,
+     6,
+     3,
+     7
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 26,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 20,
+    "edges": 28,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 82,
+      "SUMs": 70,
+      "PRODUCTs": 68,
+      "edges": 284,
+      "slots": 2
+     },
+     "ordinary_cursor": 70
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 90,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.325082973391448,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574319066
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.32508297339144826,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431908
+   },
+   "deployed_stream_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.4565344759516255,
+    "expected_Brier_exact": "103/350",
+    "mean_true_probability_gap": "1/7",
+    "latent_relation_error_with_half_ties": "5/28",
+    "raw_division_expected_CE_binary64": 0.45653449032060295
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.44010303813160356,
+    "expected_Brier_exact": "7/25",
+    "mean_true_probability_gap": "1/8",
+    "latent_relation_error_with_half_ties": "5/32",
+    "raw_division_expected_CE_binary64": 0.4401030534984265
+   },
+   "independent_CUDA": {
+    "phases": 417,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 11556,
+    "maximum_output_cells": 143
+   },
+   "independent_binary64_phases": 417,
+   "resources": {
+    "peak_packed_bytes": 58284043,
+    "consumed_native_arena_extent": 155272
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 27620,
+    "creation_100ns": 134337510213279850,
+    "lifetime_process_commit_peak": 2366509056
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2437160960,
+    "peak_job_commit": 2438393856,
+    "user_100ns": 223125000,
+    "kernel_100ns": 16406250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 27620,
+    "process_creation_100ns": 134337510213279850
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    8,
+    "iid",
+    7
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     1,
+     9
+    ],
+    [
+     1,
+     2,
+     2,
+     8
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     8,
+     2
+    ],
+    [
+     5,
+     6,
+     3,
+     7
+    ],
+    [
+     6,
+     7,
+     1,
+     9
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830180119107,
+    "expected_Brier_exact": "24310818273828894114811517570749363291317548439960363172987945464527183346810783537996039/135060089459540597867119997788315138186695276511888148766065909775017211962245880210158094",
+    "mean_true_probability_gap": "225772598703844049083683133192421435808654/3437696587500095581024426257243367374544809635",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 42,
+    "expected_CE_binary64": 0.3250830436435742,
+    "expected_Brier_exact": "449202515517371043632558970738750936986256161019819998300654932857071248335509522437655604474720942347153957461626787/2495569179715401739439591559776117961702033791821409084682755158706208396545393901202190508494703573427516959198781815",
+    "mean_true_probability_gap": "37992373029293347403047123160036928624516741499341892217/386954972552264928723255870309458371418680521762520168980330",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508303690183843
+   },
+   "complete_domain_raw_predictions_checked": 64,
+   "maximum_exact_integer_bits": 125,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 256,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 14840,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169585664,
+    "peak_job_commit": 2170826752,
+    "user_100ns": 16406250,
+    "kernel_100ns": 6250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14840,
+    "process_creation_100ns": 134337510500464163
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    4
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     7,
+     3
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     3,
+     7
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     7,
+     3
+    ],
+    [
+     14,
+     15,
+     8,
+     2
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 180,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3653947675099017,
+    "expected_Brier_exact": "1129/5250",
+    "mean_true_probability_gap": "23/525",
+    "latent_relation_error_with_half_ties": "23/420",
+    "raw_division_expected_CE_binary64": 0.3653947874135957
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3682154976690053,
+    "expected_Brier_exact": "87/400",
+    "mean_true_probability_gap": "3/64",
+    "latent_relation_error_with_half_ties": "15/256",
+    "raw_division_expected_CE_binary64": 0.36821551740140246
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17360,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198042162,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 9060,
+    "creation_100ns": 134337510524279045,
+    "lifetime_process_commit_peak": 2746376192
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2988683264,
+    "peak_job_commit": 2989903872,
+    "user_100ns": 1387656250,
+    "kernel_100ns": 55312500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9060,
+    "process_creation_100ns": 134337510524279045
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    4
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     7,
+     3
+    ],
+    [
+     1,
+     2,
+     1,
+     9
+    ],
+    [
+     2,
+     3,
+     9,
+     1
+    ],
+    [
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     1,
+     9
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     9,
+     1
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     9,
+     1
+    ],
+    [
+     11,
+     12,
+     3,
+     7
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     7,
+     3
+    ],
+    [
+     14,
+     15,
+     8,
+     2
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250830902113237,
+    "expected_Brier_exact": "28134722366964239149063411754536366135460325241991333435236199835131756235624624404588439079583930551784621765017367429869829845489375375430140744807025753560155042360959743320809/156303976580946699118458189877264544213716791797774064042606939362458281373478177818338493581785832278034329340006505706537790535217104434849504856857846252176392570736033184134610",
+    "mean_true_probability_gap": "1361346243954674309392024807720348105613617015399062235574154668401160043250164368778572362/13289838711157529701130601142490588633742465737714365289491750427448673509587726692221639306105",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250831163879014,
+    "expected_Brier_exact": "557679574829301615868683534246616689289075311006734903349541460643996549708353016300271952279303780659683113469925593198874723822021239474508681663319071984194572033813751790919209881127/3098218972866956889533381545095493476118643964087599405872241031009165597360670789756201075925276883750360121611431244933560197522957826574838654032201722776026202495571929982079670639875",
+    "mean_true_probability_gap": "45161944915818346464262529948011504334169719760370082965285898286434314712196286391064357407/344113250461203676558890149365234267512259629198078172918762244828646622846713886125380328479850",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508309786659434
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 285,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 3728,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2034470912,
+    "peak_job_commit": 2035695616,
+    "user_100ns": 17031250,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3728,
+    "process_creation_100ns": 134337512150119657
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    5
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     10,
+     0
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     10,
+     0
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     2,
+     8
+    ],
+    [
+     11,
+     12,
+     2,
+     8
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     6,
+     4
+    ],
+    [
+     14,
+     15,
+     10,
+     0
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.35487864730508745,
+    "expected_Brier_exact": "1081/5250",
+    "mean_true_probability_gap": "17/525",
+    "latent_relation_error_with_half_ties": "17/420",
+    "raw_division_expected_CE_binary64": 0.35487866784740274
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3538379895764859,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.353838010181998
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17361,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198023768,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 28492,
+    "creation_100ns": 134337512175830337,
+    "lifetime_process_commit_peak": 2745815040
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2988019712,
+    "peak_job_commit": 2989252608,
+    "user_100ns": 1298125000,
+    "kernel_100ns": 42031250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28492,
+    "process_creation_100ns": 134337512175830337
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    5
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     8,
+     2
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     10,
+     0
+    ],
+    [
+     5,
+     6,
+     9,
+     1
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     9,
+     1
+    ],
+    [
+     8,
+     9,
+     10,
+     0
+    ],
+    [
+     9,
+     10,
+     1,
+     9
+    ],
+    [
+     10,
+     11,
+     2,
+     8
+    ],
+    [
+     11,
+     12,
+     2,
+     8
+    ],
+    [
+     12,
+     13,
+     9,
+     1
+    ],
+    [
+     13,
+     14,
+     6,
+     4
+    ],
+    [
+     14,
+     15,
+     10,
+     0
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.325211698023378,
+    "expected_Brier_exact": "309224708015072565047565673431087548879516229286550082421124463936401804097511294435890572129954963027181206001158339826558784576835573716140044494208461871299118088701094684529718526616910631690771331244123962489/1717447724505023635397388003432367361100598211525042084229632881521957378487109528368395847101384524093719933446332020348201094187579966857631273489629720773612705305355354156881699968514430487009732265376273389810",
+    "mean_true_probability_gap": "107694933403445301162924940924756122183771648927780911321676550861559632757542074403733873722927236659446/42896649775590496349053951638406296704138701506438070839143195669999920658391451050446092392511424532010215",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.325211619910607,
+    "expected_Brier_exact": "1216363283393858373783673936095372180350287695322483614772023305692560423916397122103092064678390334413288686633523392366187410781847481586588085891364825577210634856956067345996184513735503447756092240941263927273787308014059149/6755736704472739192656904024388261213619235694216268374121433268682657125277135680692881496027810441182257185494453309524455536780237000113576806603841337200451215000985776724265875473848212497009050410417327059077429569155612625",
+    "mean_true_probability_gap": "27045231899348858413466573260650451946401536588778564851252639221130902572179231161359424893501537979001841027087/10653467822035321585666246169439493634486415438999275390825231361939351651301345447069784015275507664427249301736610",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3252115937269807
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 352,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 29520,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2169298944,
+    "peak_job_commit": 2170531840,
+    "user_100ns": 17500000,
+    "kernel_100ns": 7343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29520,
+    "process_creation_100ns": 134337513712710830
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    6
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     2,
+     8
+    ],
+    [
+     8,
+     9,
+     6,
+     4
+    ],
+    [
+     9,
+     10,
+     2,
+     8
+    ],
+    [
+     10,
+     11,
+     0,
+     10
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     8,
+     2
+    ],
+    [
+     14,
+     15,
+     0,
+     10
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 180,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.36364208080909916,
+    "expected_Brier_exact": "1121/5250",
+    "mean_true_probability_gap": "22/525",
+    "latent_relation_error_with_half_ties": "11/210",
+    "raw_division_expected_CE_binary64": 0.36364210081923004
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3682154976690053,
+    "expected_Brier_exact": "87/400",
+    "mean_true_probability_gap": "3/64",
+    "latent_relation_error_with_half_ties": "15/256",
+    "raw_division_expected_CE_binary64": 0.36821551740140246
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17337,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198033739,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 27736,
+    "creation_100ns": 134337513737651714,
+    "lifetime_process_commit_peak": 2745335808
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2986962944,
+    "peak_job_commit": 2988179456,
+    "user_100ns": 1342968750,
+    "kernel_100ns": 40312500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 27736,
+    "process_creation_100ns": 134337513737651714
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    6
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     9,
+     1
+    ],
+    [
+     7,
+     8,
+     2,
+     8
+    ],
+    [
+     8,
+     9,
+     6,
+     4
+    ],
+    [
+     9,
+     10,
+     2,
+     8
+    ],
+    [
+     10,
+     11,
+     0,
+     10
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     0,
+     10
+    ],
+    [
+     13,
+     14,
+     8,
+     2
+    ],
+    [
+     14,
+     15,
+     0,
+     10
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3253786198115461,
+    "expected_Brier_exact": "368229181900271841316067847689107943053288187552265609145097595033999503140090660060787524558865669592323820117037487185461336163450075791363859640571783327293083712340601749107248564066442954194862381381/2044440007909091249983122561993600275568287708770928209205578404053341807930846316932850149507857846312448704622918326943318741241404566422600352460165008500238538208608309613833534245812224700405129532042",
+    "mean_true_probability_gap": "19074250689492826620063019287403576315780768487357802028375814257915636869443191043056577114111834006/3309434571830552832191223840017239690307196075430412045244156118405455963092989496222549591561091345015",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32537847452270463,
+    "expected_Brier_exact": "13176566821086172002057754733075564890246693480256005195235374992421415502699728362096513789568621101834906037768190994077290567666561871787006223/73157452506001328482004290215159477003143412863621584941963860657426869287008626827575976392529346334492030261191542435327816039949814705449180875",
+    "mean_true_probability_gap": "194918430082090497586779519443508487828871254511305481228266874679171551/33734326979502950582880951759138306975483043524856912777313064279205785450",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3253784560503334
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 338,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 8476,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2168553472,
+    "peak_job_commit": 2169765888,
+    "user_100ns": 16562500,
+    "kernel_100ns": 7500000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 8476,
+    "process_creation_100ns": 134337515410094544
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    16,
+    "iid",
+    7
+   ],
+   "run_status": "SEALED_CUDA_STREAM",
+   "training_events": 150,
+   "evaluation_events": 256,
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     2,
+     8
+    ],
+    [
+     8,
+     9,
+     10,
+     0
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     7,
+     3
+    ],
+    [
+     11,
+     12,
+     6,
+     4
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     10,
+     0
+    ]
+   ],
+   "cutoff_search_status": "UNRESOLVED",
+   "cutoff_search_reason": "native proposal did not attain the universal empirical upper; the unsearched grammar remains unresolved",
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native witness from empirical constraints; each disconnected component chose its own arbitrary root flip",
+   "proposal_assignment": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1
+   ],
+   "proposal_scale": "8",
+   "components": [
+    [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   ],
+   "native_candidate": {
+    "nodes": 42,
+    "sources": 32,
+    "state_reads": 0,
+    "SUMs": 6,
+    "PRODUCTs": 4,
+    "SUM_edges": 36,
+    "edges": 44,
+    "slots": 2,
+    "bindings": 0
+   },
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "search_status": "CLOSED_BY_INSTALL",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "grammar": {
+      "nodes": 290,
+      "SUMs": 262,
+      "PRODUCTs": 260,
+      "edges": 1068,
+      "slots": 2
+     },
+     "ordinary_cursor": 150
+    }
+   ],
+   "final_policy_stage": "INSTALLED_CUDA",
+   "install_cursor": 170,
+   "alpha_spent": "1/2",
+   "frozen_candidate_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3250829733914471,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.3250829957431891
+   },
+   "frozen_candidate_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32508297339144687,
+    "expected_Brier_exact": "9/50",
+    "mean_true_probability_gap": "0",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32508299574318883
+   },
+   "deployed_stream_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3496205872026803,
+    "expected_Brier_exact": "151/750",
+    "mean_true_probability_gap": "2/75",
+    "latent_relation_error_with_half_ties": "1/30",
+    "raw_division_expected_CE_binary64": 0.34962060806430617
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.35383798957648577,
+    "expected_Brier_exact": "41/200",
+    "mean_true_probability_gap": "1/32",
+    "latent_relation_error_with_half_ties": "5/128",
+    "raw_division_expected_CE_binary64": 0.35383801018199784
+   },
+   "independent_CUDA": {
+    "phases": 1391,
+    "actual_arena_bytes": 16777216,
+    "largest_phase_frame_used": 17318,
+    "maximum_output_cells": 239
+   },
+   "independent_binary64_phases": 1391,
+   "resources": {
+    "peak_packed_bytes": 198008701,
+    "consumed_native_arena_extent": 898200
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 5256,
+    "creation_100ns": 134337515435368730,
+    "lifetime_process_commit_peak": 2748661760
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2991562752,
+    "peak_job_commit": 2992779264,
+    "user_100ns": 1310781250,
+    "kernel_100ns": 46250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 5256,
+    "process_creation_100ns": 134337515435368730
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid",
+    7
+   ],
+   "counts": [
+    [
+     0,
+     1,
+     10,
+     0
+    ],
+    [
+     1,
+     2,
+     0,
+     10
+    ],
+    [
+     2,
+     3,
+     0,
+     10
+    ],
+    [
+     3,
+     4,
+     9,
+     1
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     10,
+     0
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     7,
+     8,
+     2,
+     8
+    ],
+    [
+     8,
+     9,
+     10,
+     0
+    ],
+    [
+     9,
+     10,
+     10,
+     0
+    ],
+    [
+     10,
+     11,
+     7,
+     3
+    ],
+    [
+     11,
+     12,
+     6,
+     4
+    ],
+    [
+     12,
+     13,
+     1,
+     9
+    ],
+    [
+     13,
+     14,
+     1,
+     9
+    ],
+    [
+     14,
+     15,
+     10,
+     0
+    ]
+   ],
+   "prior": "independent fair token bits; registered conditioned or IID edge law",
+   "exact_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.3253119852044416,
+    "expected_Brier_exact": "2029857216142431953714896014671221072356039028458114362964245062566199434479949382188326303614407130314595582357837102173036344745236191000722869526029984716607417406495124877810392815272797635990367324870353478250761/11271524846468272634812584893440008656577499512227235240029009108943795821538664423445781079442388183867679778990083316267628608986470864075831342542250349699760228062084123210283006204523429769169823424916069056430610",
+    "mean_true_probability_gap": "107749393430811938012531176242493316242132930604533504962068320763760066532102593015501333901755663374809162/24326016000150627076123727337627724805412591153642040479150608118335181561054714069700522124875768341078171705",
+    "latent_relation_error_with_half_ties": "0"
+   },
+   "AMP_unseen": {
+    "contexts": 210,
+    "expected_CE_binary64": 0.32531320607874564,
+    "expected_Brier_exact": "15101530806760965633477813978181824963431686467847390211546947197863336374592165496201780903243494493295138487680240345126797431944784010758959/83856552612089698233683757182778994900332468319201560974165367655295019461183678753198989997018528477208667197171422197123132151071027652572875",
+    "mean_true_probability_gap": "45862767860270840349649297057649310895343553164257603902669808487839441/10279068843588558229831048776272879951017986441373997608638977372371201350",
+    "latent_relation_error_with_half_ties": "0",
+    "raw_division_expected_CE_binary64": 0.32531319900044275
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_integer_bits": 341,
+   "maximum_AMP_mass_probability_error": "70532950049/1804805148268354",
+   "resources": {
+    "materialized_half_table_bytes": 1024,
+    "native_tensor_peak_bytes": 11264,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 28288,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2170900480,
+    "peak_job_commit": 2172129280,
+    "user_100ns": 16718750,
+    "kernel_100ns": 7343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28288,
+    "process_creation_100ns": 134337516975673652
+   },
+   "execution_source": "5bcbb49665f5c1222127c50a5d399628377c0a3d"
+  }
+ ]
+}

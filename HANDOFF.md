@@ -52,13 +52,28 @@ Their compact [CPU](evidence/minimal/FP_PROSPECTIVE_SELECTION_CPU_AUDIT.json)
 and [CUDA](evidence/minimal/FP_PROSPECTIVE_SELECTION_CUDA_AUDIT.json) records
 bind `9ec4c33`: 8/9 workers, 1,120/1,323 binary64 phases and 1,323 CUDA phases.
 
-The active scientific question is whether this fixes model behavior beyond
-the known tapes. [RN-2](experiments/prospective_relation/PROTOCOL.md) fixes
-twelve known-tape diagnostics and eight previously unexecuted IID seeds,
-with strong retained or newly executed AMP posterior controls. Its model
-outcomes remain unclaimed until actual execution. Do not restart static
-cases or rebuild the complete runtime to postpone this experiment. Preserve
-all original RN-1 outcomes at their original source; they are not v2 results.
+[RN-2 is now complete](experiments/prospective_relation/RESULTS.md) at
+`5bcbb49`: 28 new workers, twenty sealed FP streams, nineteen installations,
+17,064 independently replayed CUDA/binary64 phases each, 96 independently
+recomputed new score records and twenty prospective decision replays. All
+eight known IID failures and all eight preregistered new IID samples now
+construct and install native models, while their full training classes stay
+`UNRESOLVED`. The four conditioned/disconnected diagnostics retain actual
+historical bounds. Frozen connected candidate CE reaches 0.325083; new-seed
+deployed means are 0.443389 at n=8 and 0.358384 at n=16. Strong retained/new
+AMP posterior controls remain near the noise floor. New n=16 seeds4/6 wait
+30 fresh observations; the other IID cases wait20. This is a fixed sample,
+not a population success-rate or Bayes-dominance theorem.
+
+The active scientific problem is now uncertainty about unobserved relations
+within native reachable value paths. The unchanged disconnected pair still
+has candidate CE 0.325/1.603 versus posterior 0.593 in both worlds; B does
+not install. Equal-cutoff frozen-model risk and adaptive deployed risk must
+remain separate. Derive useful native proposals without injecting posterior
+coefficients or new architecture actions, and retain strong controls. The
+scoped RN-1 proposal/installation obstruction is closed; do not rerun these
+completed experiments or expand static cases to postpone this model problem.
+Preserve every original RN-1 and RN-2 worker at its actual source.
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

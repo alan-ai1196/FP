@@ -4,8 +4,8 @@
 
 **Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 extension:
 separately audited. Registered experiments: UNHELD within their tested scopes.** Source
-`5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 current CPU and
-10 complete CUDA audits from one fresh clone; all 38 submodules import
+`5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 CPU and
+10 CUDA audits of that release from one fresh clone; all 38 submodules import
 without Torch. Read [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and
 [integrated evidence](evidence/minimal/FP_CUDA_RELEASE_AUDIT.json). This
 includes actual device/resource binding, continuous trajectories, separate
@@ -21,7 +21,7 @@ relation proposer now compares only available initialized values, with
 prepaid guarded exact work. CPU and actual CUDA extension matrices and the
 relevant original installation/policy/reference-acceleration regressions pass.
 This does not claim that the entire old 31-script release was rerun at a new
-source, or that RN-2's model outcomes have already been measured.
+source. Its model behavior is now measured separately in RN-2 below.
 
 The first post-release [resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 now completes all 54 registered configurations: 44 sealed, ten unresolved;
@@ -39,7 +39,17 @@ scale is absent from the registered initializer. Strong exact/AMP posterior
 controls show the observed relations remain learnable. This is a scoped
 solver/strategy limitation, not a runtime correctness or Foundation failure.
 The extension above separates full-class completeness from prospective
-candidate evidence; its model-quality consequence remains to be measured.
+candidate evidence.
+
+[RN-2](experiments/prospective_relation/RESULTS.md) completes at `5bcbb49`:
+28 new workers, twenty sealed FP streams, nineteen actual installs and one
+finite no-install outcome. All sixteen IID cases (eight known, eight new)
+install with their full classes still unresolved. Four diagnostics retain
+historical bounds. There are 17,064 independently replayed CUDA/binary64
+phases each, 1,280 newly executed posterior forecasts, 96 independently
+recomputed new scores and twenty prospective decision replays. The known
+proposal/installation failure is closed in this scope; the disconnected
+uncertainty counterexample remains a model-science problem.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

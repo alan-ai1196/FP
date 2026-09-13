@@ -39,6 +39,12 @@ constructs no candidate on eight IID samples with informative labels.
 This exposes a proposal/selection limitation, not a Foundation loophole;
 continue model science with honest, separate completeness and fresh-evidence claims.
 
+[RN-2](experiments/prospective_relation/RESULTS.md) now recovers those eight
+IID failures and installs useful models on eight preregistered new IID
+samples, with all sixteen full training classes still unresolved. The
+disconnected uncertainty counterexample remains. This measured solver/strategy
+result does not alter Foundation, ERC-1 or the theory below.
+
 ---
 
 ## 0. Research object and root principle

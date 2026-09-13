@@ -2835,3 +2835,61 @@ Its preflight verifies the 28 fixed tasks and independently rechecks all
 source-bound failures, full-domain and unseen FP scores, and the original
 optimization decision even after installation. Actual RN-2 execution follows
 this registration; no model outcome is implied by the preflight.
+
+## 85. Prospective IID models succeed while full training classes remain unresolved (2026-09-13)
+
+RN-2 completes all 28 new workers at registered source
+`5bcbb49665f5c1222127c50a5d399628377c0a3d`: twenty FP runs and eight separately
+executed AMP posterior controls. Twelve known diagnostics reuse the original
+RN-1 control journal at `4d04595` with original worker source `5b050c7`;
+their case/count/device identity and all 64 RN-1 scores are independently
+verified. No worker is rerun after changing a parameter or source.
+
+All twenty FP streams seal. The eight formerly failing IID samples and all
+eight preregistered new IID samples now construct initialized scale8 native
+models and install them through actual paired evidence. Every one of those
+sixteen full training classes remains unresolved, with no class-maximum
+proof. Four conditioned/disconnected diagnostics retain their actually
+attained historical categorical upper. Nineteen cases install; disconnected
+world B retains its finite EVIDENCE outcome without installation. A sealed
+end supplies no future continuation authority.
+
+All observed IID edge majorities are correct. Each connected frozen candidate
+has unseen CE H(1/10), exact expected Brier9/50 and zero latent-relation error.
+Known/new n=8 mean deployed CE is 0.432435/0.443389; known/new n=16 is
+0.352688/0.358384, compared with uniform0.693147 for RN-1's failed IID cases.
+The strong AMP posterior remains near the noise floor; its new n=16 mean
+is 0.325247. Known-tape diagnostics and previously unexecuted seeds remain
+separate, and eight new samples imply no population success rate.
+
+New n=16 seeds4/6 install thirty fresh events after training; the other IID
+cases install after twenty. Independent analysis reconstructs the exact
+dyadic wealth, checks log intervals against 100-digit Decimal, stops at
+first crossing and advances to a complete optimizer boundary. It reproduces
+all twenty prospective decisions without calling Runtime or rerunning a
+model. Candidate loss is never substituted for actual deployed loss.
+
+The unchanged disconnected worlds retain frozen-candidate CE0.325/1.603
+and posterior0.593 in both. Their equal-world candidate excess remains
+`(8/11)log(5/3)`. More generally, subtracting the posterior's conditional
+expected CE from any fixed predictor's gives Bernoulli KL; success in a
+realized world cannot establish Bayes dominance. Removing the training
+maximum prerequisite does not identify unobserved relations.
+
+Every executed FP path is independently replayed: 17,064 CUDA and 17,064
+binary64 phases. The new posterior workers check 1,280 actual forecasts.
+Post-analysis recomputes 96 new score records and all twenty prospective
+decisions. Peaks are 198,042,162 packed bytes, 898,200 bytes of consumed
+native extent and 2,992,779,264 completed-job bytes, within the unchanged
+caps. The actual RTX 3090/device/build identity matches the retained controls.
+The approximately131 KB journal and86 KB SVG retain no weights, dataset or
+bulk phase histories. Read `experiments/prospective_relation/RESULTS.md` and
+`evidence/minimal/FP_PROSPECTIVE_RELATION_EXPERIMENT.json`.
+
+This closes the scoped RN-1 proposal/installation obstruction. The remaining
+model-science question is representing and using uncertainty through native
+reachable value paths, while keeping frozen-model and adaptive deployed
+comparisons at their proper information cuts. Foundation R4, XVII.31 and
+ERC-1 remain frozen; no static resource case or semantic architecture action
+was added. The baseline release and each experiment retain their original
+sources and scopes.

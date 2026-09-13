@@ -6,13 +6,14 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
 registered RTX 3090 resource and model experiments. The Reference/CPU
-prerequisite froze at `ebe2c4c`; the complete current CPU/AMP integration
-now freezes at `5e55eb4` after all 31 full audits pass from one fresh clone.
+prerequisite froze at `ebe2c4c`; the CPU/AMP baseline froze at `5e55eb4`
+after all 31 full audits passed from one fresh clone. The prospective v2
+extension has separate endpoint and RN-2 model evidence.
 The remaining static special cases and sharp constants below are parked,
 not invitations to continue that program. Reopen Foundation only for an
 implementation/experiment correctness counterexample to its semantics.
 
-## 1. Make ordinary-data proposals useful while preserving honest proof scopes
+## 1. Use uncertainty about unobserved relations in native models
 
 The first [known-table resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 is complete: 54 registered configurations, 44 sealed and ten unresolved.
@@ -33,18 +34,29 @@ without a historical class maximum, while the full constructor class stays
 unresolved. All state/resource/lineage/bridge/transport premises remain.
 This implementation question is no longer open in that scope.
 
-The open scientific question is now [RN-2](experiments/prospective_relation/PROTOCOL.md):
-does the strategy fix the known IID failures and retain useful performance
-on eight previously unexecuted seeds? Preserve the strong AMP posterior,
-all absent candidates, finite evidence failures and actual run outcomes.
-Do not substitute known-tape diagnostics for the new-seed comparison or
-infer a population success rate from this small sample.
+[RN-2](experiments/prospective_relation/RESULTS.md) now closes the corresponding
+scoped model obstruction. Twenty FP streams seal in 28 new workers; the
+eight known IID failures and eight preregistered new IID samples all construct
+and install native candidates with unresolved full training classes. Strong
+AMP posterior controls remain near the noise floor. This is a fixed small
+sample, not a population guarantee; no model worker should be rerun merely
+to refresh its source identity.
 
-Preserve RN-1's same-cutoff posterior comparison and its disconnected-world
-control: equal optimal training scores hide frozen-candidate CE 0.325 versus
-1.603. Merely tightening an empirical bound is not a solution to unseen
-relation identification. More static cases or half-specific optimal
-constants are not prerequisites for this model-science work.
+The remaining question is how native reachable value paths can represent
+and use uncertainty about unobserved relations. RN-1/RN-2's disconnected
+control retains equal optimal training scores but frozen-candidate CE
+0.325 versus 1.603; the posterior scores 0.593 in both worlds. The equal-world
+candidate excess is `(8/11)log(5/3)`. A harder empirical optimization gate
+cannot solve this information problem. Neither can assigning an exact
+posterior coefficient through an undeclared FP value constructor.
+
+Derive useful proposals from the typed sources, positive SUM/PRODUCT and
+retained observations under the existing resource/construction obligations.
+Preserve comparisons at equal information cuts. A frozen uncertain model
+and a deployed strategy that acquires later labels can have different risk
+orderings; fresh tests do not identify all unseen relations. Keep the strong
+posterior and finite no-install outcomes. Static resource special cases and
+half-specific constants remain parked.
 
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):

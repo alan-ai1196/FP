@@ -161,7 +161,10 @@ Maximum completed job commitments were respectively 35,483,648 and
 actual RTX 3090, runtime/API 13.4 and driver 616.92; its 24 GiB physical-board
 upper is not a measured process allocation or exclusive availability.
 
-Model quality on RN-1's failures and previously unexecuted seeds remains
-an experimental question. The new strategy cannot borrow old worker outcomes
-as evidence of its own performance; the original complete release and RN-1
-remain historical results at their original sources.
+[RN-2](../../experiments/prospective_relation/RESULTS.md) subsequently measures
+the strategy at `5bcbb49`: all eight known IID failures and eight registered
+new IID samples construct and install candidates, with their full classes
+still unresolved. Its disconnected uncertainty control remains. These are
+new executed model outcomes, not borrowed old worker authority or a general
+model-quality theorem. The original complete release and RN-1 remain
+historical results at their original sources.
