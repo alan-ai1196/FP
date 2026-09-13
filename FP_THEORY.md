@@ -24,6 +24,11 @@ ERC-1. Static special cases and their remaining constants stay parked;
 continue with registered device experiments. Reopen Foundation only for a
 correctness counterexample to the declared semantics.
 
+The first [registered RTX 3090 resource experiment](experiments/erc1_rtx3090/RESULTS.md)
+has completed 54 configurations, including strong SUM/Horner controls.
+Its actual precision plateau and honest range/evidence failures do not
+change the theory below. Continue with registered model science.
+
 ---
 
 ## 0. Research object and root principle

@@ -13,6 +13,7 @@ FP studies whether a **typed causal positive program** built from a small native
 5. [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) — why the theory changed from R5 to the current foundation.
 6. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — only currently unresolved research questions.
 7. [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md) — frozen ERC-1 resource accounting, scoped joint law and Runtime/AMP/RTX 3090 release order.
+8. [First registered RTX 3090 resource experiment](experiments/erc1_rtx3090/RESULTS.md) — 54 configurations, strong SUM controls, actual precision plateau and measured resource tradeoffs.
 
 ## Current status
 

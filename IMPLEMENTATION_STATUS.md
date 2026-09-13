@@ -12,6 +12,13 @@ includes actual device/resource binding, continuous trajectories, separate
 fresh evidence, resident installation, owned policy/run and n=32 target
 execution. It is not a model-quality or structural-forcing result.
 
+The first post-release [resource experiment](experiments/erc1_rtx3090/RESULTS.md)
+now completes all 54 registered configurations: 44 sealed, ten unresolved;
+2,133 CUDA and 2,134 binary64 outputs independently replayed. Its natural
+phase-evidence exhaustion required an experiment reporter correction,
+not a Runtime change. Range/precision failures retain their own paths and
+no closure. Next work is model science, not more implementation release gates.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

@@ -14,6 +14,16 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Execute registered RTX 3090 resource and model experiments
 
+The first [known-table resource experiment](experiments/erc1_rtx3090/RESULTS.md)
+is complete: 54 registered configurations, 44 sealed and ten unresolved.
+Its measured precision plateau and constructor-dependent range failures
+leave the frozen laws/Runtime intact. The next open scientific question is
+whether structure inferred from ordinary data improves performance on
+legally unseen contexts under matched resources and competitive baselines.
+Preserve the existing hierarchy's train-tie, disconnected-world and
+misleading-majority controls. More static cases or half-specific optimal
+constants are not prerequisites for that experiment.
+
 The Reference/CPU prerequisite is closed for the scope in
 [`REFERENCE_RELEASE_SCOPE.md`](theory/proofs/REFERENCE_RELEASE_SCOPE.md):
 21 complete scripts pass from one fresh clone, including 36 independent

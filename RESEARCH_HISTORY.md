@@ -2644,3 +2644,56 @@ records. Raw diagnostic outputs can still be independently replayed; they
 gain no packed-evidence or closure authority. The failed reporting worker
 is rerun; the 45 completed measurements are retained without repetition.
 No constructor, depth, tolerance, cap, protocol or Runtime change is made.
+
+## 81. Measure the resource law against strong SUM baselines on RTX 3090 (2026-09-13)
+
+All 54 preregistered configurations now complete execution: 44 owned streams
+seal and ten halt unresolved. Forty-five worker results retain source
+`ef2357f`; the final nine retain `c95ef5b`, whose changes only adapt the
+reporter to exhausted evidence and preserve partial results. The prior
+measurements are not rerun or relabelled. No frozen implementation, scientific
+parameter, tolerance, resource cap or protocol changes.
+
+At the critical cap, scalar's strong fractional-Horner control reaches
+actual retained-mass error 1/43688 with S/P/E=17/0/24. The reciprocal
+reaches the same error with 12/7/30: it does not dominate node and edge
+counts. For mixed Q, reciprocal 17/7/38 improves over fractional Horner
+36/0/51 at the same error 1/65532, with consumed native extents 46,216
+versus 75,336 bytes. These are finite measured Programs, not a complete
+class Pareto certificate or physical VRAM savings.
+
+In both tables n=3 to n=5 improves exact reciprocal error by more than
+10^14 without improving actual AMP mass or rounded-output error. Ordinary
+Horner at L=32 underflows and fails, whereas fractional Horner survives;
+omitting the stronger comparator would overstate the PRODUCT advantage.
+
+At small positive slack, exact-reference graphs diverge physically.
+For scalar n=3 the fractional-Horner total exceeds cap by 9/32768;
+ordinary Horner and positive tail repair remain below by 7/32768. All
+three are exactly Q in reference arithmetic. Critical-cap approximants
+also satisfy these looser ranges and have smaller actual errors, so
+reference exactness is not itself the physical objective. At larger slack,
+mixed Q can have exact normalized retained masses while its raw single
+division still errs by 1/100663296.
+
+The ten unresolved runs comprise four CUDA native prediction failures,
+four CUDA rounded-total violations, one 138,136-byte phase that cannot
+fit 131,072 prepaid bytes, and one actual binary64 stored-mass-sum
+violation before the second context's CUDA execution. Raw diagnostic
+outputs are independently replayed without granting failed packed evidence
+or a complete stream. Totals: 2,133 CUDA outputs (2,124 checked plus nine
+failed), 2,134 binary64 outputs (2,133 checked plus one failed), 828 exact
+reference events and a separate 270-vector forward/reverse gradient audit.
+
+The maximum measured packed peak is 7,485,943 bytes, consumed native extent
+168,296 bytes, and completed Windows job commitment 2,381,942,784 bytes.
+The physical 16 MiB arena and whole-board 24 GiB envelope do not shrink.
+No timing or model-quality gain is inferred. The 148,377-byte result and
+standalone SVG are reproducible through `analyze_frontier.py`; no weights,
+dataset, full operation log or expanded graph is retained.
+
+`experiments/erc1_rtx3090/RESULTS.md` records the scientific interpretation.
+Foundation/ERC-1 and the scoped Runtime remain frozen. The next research
+direction is model science with structure inferred from ordinary data,
+legally unseen contexts, competitive baselines and the existing hierarchy
+identification controls. More static or half-specific cases are parked.

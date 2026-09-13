@@ -11,15 +11,22 @@ The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 - **Scoped Reference/CPU and RTX 3090 AMP implementation frozen.** The CPU prerequisite passed at `ebe2c4c`. The complete target integration at `5e55eb4` passed all 21 current CPU and 10 CUDA audit scripts in one fresh clone; read [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
 - **Registered experiments UNHELD.** Proceed within the tested target scope and frozen ERC-1; do not interpret the correctness release as a model-quality or structural-forcing result.
 
-The current research direction is registered RTX 3090 resource and model
-experiments. The Reference/CPU and actual AMP prerequisites are closed.
-First pressure-test the existing known-table resource constructions against
-strong fixed-P dyadic/Horner and shared-reciprocal/exact-singleton baselines;
-this is an experiment, not another release gate or static special-case program.
-The first [registered protocol](experiments/erc1_rtx3090/README.md) fixes
-54 known-table resource/precision configurations, including fractional
-Horner controls. Its exact constructor preflight passes; target results
-are not yet claimed. Execute `resource_frontier.py --write` next.
+The first post-release RTX 3090 resource experiment is complete. Read
+its [results and curves](experiments/erc1_rtx3090/RESULTS.md): all 54
+preregistered known-table configurations ran, 44 sealed and 10 remained
+honestly unresolved. A strong fractional-Horner control survives the
+ordinary Horner underflow. Reciprocal recurrence improves exact accuracy
+by more than 10^14 after n=3 with no further AMP accuracy gain. It saves
+nodes/edges against the strong SUM control on mixed Q, but not scalar Q.
+Small-slack reference-exact constructions can be physically worse than
+cheaper approximants. These are finite measured Programs, not a complete
+hardware optimum or a Foundation counterexample.
+
+Next: registered model science using structure inferred from ordinary data,
+legally unseen contexts, competitive baselines and the existing hierarchy
+identification controls. Do not rerun the completed resource experiment,
+rebuild the frozen Runtime or expand static/half-specific constructors to
+postpone that work. The Reference/CPU and actual AMP prerequisites remain closed.
 Reopen Foundation only
 when implementation/experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
