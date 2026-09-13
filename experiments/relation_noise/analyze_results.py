@@ -70,12 +70,14 @@ def verify():
     # Historical workers stay bound to SOURCE; no current Runtime is executed
     # here. Guard the retained experiment and actual metric/rounding dependencies,
     # rather than preventing future solver work or relabelling old outcomes.
+    # This rescore calls neither fixture_parameters() nor the acceleration
+    # audit's tests; those tests can follow a later registered proposer.
     changed = subprocess.check_output(['git', 'diff', SOURCE, '--',
         'src/reference_compiler/fp_reference/core.py',
         'src/reference_compiler/fp_reference/semantics.py',
         'src/reference_compiler/fp_reference/numerics.py',
         'src/reference_compiler/fp_reference/binary_arithmetic.py',
-        'scripts/audit_reference_acceleration.py', 'scripts/audit_cuda_learner.py',
+        'scripts/audit_cuda_learner.py',
         'scripts/audit_cuda_primitives.py', 'experiments/relation_noise/PROTOCOL.md',
         'experiments/relation_noise/model.py', 'experiments/relation_noise/run_experiment.py'],
         cwd=ROOT, text=True, encoding='utf-8')

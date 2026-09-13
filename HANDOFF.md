@@ -66,7 +66,7 @@ AMP posterior controls remain near the noise floor. New n=16 seeds4/6 wait
 not a population success-rate or Bayes-dominance theorem.
 
 The active scientific problem is now uncertainty about unobserved relations
-within native reachable value paths. The unchanged disconnected pair still
+within native reachable value paths. The v2 disconnected pair still
 has candidate CE 0.325/1.603 versus posterior 0.593 in both worlds; B does
 not install. Equal-cutoff frozen-model risk and adaptive deployed risk must
 remain separate. Derive useful native proposals without injecting posterior
@@ -74,6 +74,19 @@ coefficients or new architecture actions, and retain strong controls. The
 scoped RN-1 proposal/installation obstruction is closed; do not rerun these
 completed experiments or expand static cases to postpone this model problem.
 Preserve every original RN-1 and RN-2 worker at its actual source.
+
+The next registered solver is [component symmetry v3](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md).
+Its component-local positive products implement the average over unresolved
+relative flips on initialized one-hot queries, using only the existing unit
+and scale slots. Tied constraints retain their observations while leaving
+relative parity open. A soft-input counterexample and an actual nonzero-rate
+learner continuation prevent promotion to a general input/state quotient.
+Run `scripts/audit_component_symmetry.py`; source-bound CPU/CUDA audit
+records are pending. [RN-3](experiments/component_uncertainty/PROTOCOL.md)
+fixes eighteen new workers, with retained old diagnostic controls. Target
+model execution is pending; frozen risk and adaptive deployment may order
+these models differently. Finish this study rather than expanding static cases.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

@@ -52,6 +52,15 @@ posterior coefficient through an undeclared FP value constructor.
 
 Derive useful proposals from the typed sources, positive SUM/PRODUCT and
 retained observations under the existing resource/construction obligations.
+The [v3 component construction](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
+now supplies one such endpoint: it averages unresolved component flips on
+one-hot queries without posterior coefficients. The remaining immediate
+question is its measured model and fresh-deployment behavior, not whether
+that initialized endpoint exists. Its exact/state counterexamples prohibit
+a general input or complete-learner equivalence claim. Complete the scoped
+CPU/CUDA records and the fixed [RN-3 matrix](experiments/component_uncertainty/PROTOCOL.md).
+Finite IID uncertainty within a component is still unresolved by this hard
+within-component construction; do not infer full posterior equivalence.
 Preserve comparisons at equal information cuts. A frozen uncertain model
 and a deployed strategy that acquires later labels can have different risk
 orderings; fresh tests do not identify all unseen relations. Keep the strong

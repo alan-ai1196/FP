@@ -18,9 +18,9 @@ ANALYSIS_DEPENDENCIES = (
     'src/reference_compiler/fp_reference/semantics.py',
     'src/reference_compiler/fp_reference/numerics.py',
     'src/reference_compiler/fp_reference/binary_arithmetic.py',
-    'scripts/audit_reference_acceleration.py', 'scripts/audit_cuda_learner.py',
+    'scripts/audit_cuda_learner.py',
     'scripts/audit_cuda_primitives.py', 'experiments/relation_noise/model.py',
-    'experiments/relation_noise/run_experiment.py', 'experiments/relation_noise/analyze_results.py',
+    'experiments/relation_noise/run_experiment.py',
     'experiments/prospective_relation/run.py', 'experiments/prospective_relation/PROTOCOL.md')
 check_score = experiment.rn1_analysis.check_score
 encode_posterior = experiment.rn1_analysis.encode_posterior
@@ -179,6 +179,8 @@ def verify(*, partial=False):
     # Historical workers retain their execution source. Guard this rescore's
     # actual arithmetic/data dependencies; it executes no current Runtime
     # and must not forbid later solver research or documentation updates.
+    # The rescore does not execute the acceleration fixture or its tests.
+    # Audit logic may improve; recorded workers and model/data code stay fixed.
     assert not experiment.git('diff', source, '--', *ANALYSIS_DEPENDENCIES)
     old, reference = experiment.historical()
     assert report['historical_control'] == json.loads(json.dumps(reference))

@@ -51,6 +51,15 @@ recomputed new scores and twenty prospective decision replays. The known
 proposal/installation failure is closed in this scope; the disconnected
 uncertainty counterexample remains a model-science problem.
 
+The [component symmetry v3 proposal](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
+now constructs only within-component products and leaves unseen relative
+flips uniform at the initialized one-hot endpoint. It preserves the complete
+native decision class, guarded reachable scale selection and v2 owned paths.
+`scripts/audit_component_symmetry.py` covers exact averaging, tied data,
+grammar refusal, actual installation and two distinct learner continuations.
+Source-bound CPU/CUDA reports and the eighteen-worker RN-3 execution are
+pending; this is not another complete baseline release declaration.
+
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython
 3.12.9 on 64-bit Windows 11. All 30 package modules at that revision import.

@@ -1,4 +1,9 @@
-# The current empirical-upper gate under IID relation noise
+# The RN-1/RN-2 empirical-upper gate under IID relation noise
+
+Historical scope: this lemma concerns the v1/v2 global hard relation
+proposal. The later component-symmetry v3 solver can retain partial tied
+constraints, so the eligibility iff below must not be applied to v3.
+The original experiments and their source-bound evidence are unchanged.
 
 Status: **scoped algorithm/data-law lemma, exact small-model audit**.
 This concerns the existing frozen proposal/upper algorithm, not a new

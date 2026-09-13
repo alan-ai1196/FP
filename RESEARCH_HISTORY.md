@@ -2893,3 +2893,29 @@ comparisons at their proper information cuts. Foundation R4, XVII.31 and
 ERC-1 remain frozen; no static resource case or semantic architecture action
 was added. The baseline release and each experiment retain their original
 sources and scopes.
+
+## 86. Preserve unresolved component flips with existing native products (2026-09-13)
+
+The v3 relation proposal constructs four group SUMs and four pair PRODUCTs
+per consistent untied empirical component, with two shared readout heads.
+At unit1 and an available scale, this equals the average of the old hard
+normalized predictions over all relative component flips on one-hot queries.
+Across components all evidence products vanish; the unchanged positive
+base supplies uniform uncertainty. No posterior coefficient, semantic action,
+new complete-state coordinate or inherited evidence is introduced.
+
+The exact audit checks 7,320 prediction equalities, reversed presentation,
+14,640 Brier inequalities, 30 unchanged connected graphs and 605 reachable
+scale cases. Tied constraints retain their counts; a balanced chord inside
+one component still affects scale likelihood. Directed observations remain
+separate in the all-categorical upper. A larger literal witness can exceed
+the original grammar and must leave search unresolved.
+
+Two explicit limits prevent a premature quotient. On a legal soft mixture,
+the component endpoint predicts5/6 while the true hard-prediction average
+is7/10. At initialized scale0, uniform predictions conceal a nonzero scale
+gradient: one legal update yields17/33 while a zero-slot learner stays1/2.
+The scoped CPU/CUDA matrix will retain source-bound records; RN-3 registers
+eighteen new workers before its new seed/support cases are inspected.
+The model study must distinguish equal-cutoff frozen risk from adaptive
+deployed risk. Its target outcomes are still pending.

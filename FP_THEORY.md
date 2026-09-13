@@ -45,6 +45,13 @@ samples, with all sixteen full training classes still unresolved. The
 disconnected uncertainty counterexample remains. This measured solver/strategy
 result does not alter Foundation, ERC-1 or the theory below.
 
+The [component symmetry proposal](theory/proofs/COMPONENT_SYMMETRY_PROPOSAL.md)
+now gives a native initialized one-hot endpoint that averages unresolved
+relative component flips. It does not equate complete learners or general
+soft-input predictions. Its scoped endpoint audits and the preregistered
+[RN-3 experiment](experiments/component_uncertainty/PROTOCOL.md) are separate
+from the frozen baseline; no RN-3 model result is yet asserted.
+
 ---
 
 ## 0. Research object and root principle

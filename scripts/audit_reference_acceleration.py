@@ -277,7 +277,6 @@ def unresolved_cases():
         'unavailable_initializer_scale': {'transform': lambda cfg, run: (replace(cfg, initializer_pattern=(F(1), F(7))), run)},
         'insufficient_witness_grammar': {'transform': lambda cfg, run: (cfg, replace(run, searches=(replace(run.searches[0], grammar=GrammarLimits(3, 1, 0, 2, 2)),)))},
         'no_finite_boundary_scale': {'tape_transform': lambda tape: ((values, tape[10*(i//10)][1]) for i, (values, _) in enumerate(tape))},
-        'tied_relation': {'tape_transform': lambda tape: ((values, i % 2 if i < 10 else target) for i, (values, target) in enumerate(tape))},
         'inconsistent_cycle': {'edges': ((0, 1), (1, 2), (2, 0)),
             'tape_transform': lambda tape: ((values, target ^ int(i >= 20)) for i, (values, target) in enumerate(tape))},
         'heterogeneous_empirical_noise': {'tape_transform': lambda tape: ((values, target ^ int(i in (8, 19))) for i, (values, target) in enumerate(tape))},
@@ -291,6 +290,19 @@ def unresolved_cases():
             assert result.programs_compared == 1 and final.searches[0].relation_proposal.program is not None
         cases[name] = {'proposal_reason': final.searches[0].relation_proposal.reason,
                        'actually_compared': result.programs_compared, 'search_reason': result.reason}
+    # v3 keeps the informative components when one edge is balanced. The
+    # original v1/v2 refusal remains historical evidence at its old source.
+    rt, _, _, _, result = selected(tape_transform=lambda tape:
+        ((values, i % 2 if i < 10 else target) for i, (values, target) in enumerate(tape)))
+    final = validate_residency(rt)
+    proposal = final.searches[0].relation_proposal
+    assert result.status == 'REFERENCE_CLASS_BOUNDED' and len(proposal.components) == 2
+    assert len(final.reference_proofs) == result.programs_compared == 1 and final.alpha_spent == 0
+    probabilities, _ = forward_oracle(proposal.program, rt.contract.semantics, (F(1), F(8)),
+        dict(zip((s.source_id for s in rt.contract.semantics.sources), context(4, 0, 1))))
+    assert probabilities == (F(1, 2), F(1, 2)) and len(final.observations) == 30
+    cases['balanced_edge_keeps_partial_information'] = {'search_status': result.status,
+        'cross_component_prediction': list(map(str, probabilities)), 'all_observations_retained': 30}
     rt, _, train, fresh = fixture(bound=F(2))
     ingest(rt, train+fresh)
     final = validate_residency(rt)

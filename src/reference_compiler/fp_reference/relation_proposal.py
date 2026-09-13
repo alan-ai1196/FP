@@ -20,7 +20,7 @@ from .semantics import _guard, _operation
 @dataclass(frozen=True)
 class RelationSourceSpec:
     token_atoms: tuple[tuple[str, str], ...]
-    solver: str = field(default='empirical-binary-relation-initializer-selection-v2', init=False)
+    solver: str = field(default='empirical-binary-relation-component-symmetry-v3', init=False)
 
     def __post_init__(self):
         atoms = tuple(tuple(pair) for pair in self.token_atoms)
@@ -29,7 +29,7 @@ class RelationSourceSpec:
         flat = tuple(name(atom, 'observable token source') for pair in atoms for atom in pair)
         if len(set(flat)) != len(flat):
             raise ContractError('distinct token atoms at both observable positions are required')
-        if self.solver != 'empirical-binary-relation-initializer-selection-v2':
+        if self.solver != 'empirical-binary-relation-component-symmetry-v3':
             raise ContractError('unregistered empirical relation solver')
         object.__setattr__(self, 'token_atoms', atoms)
 
@@ -79,15 +79,12 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
         for label in (0, 1):
             counts[label] += cell.counts[label]
     adjacency = [[] for _ in atoms]
-    majority = minority = 0
     for (i, j), counts in sorted(edges.items()):
         if counts[0] == counts[1]:
-            return result(reason='an empirical relation is tied; no signed constraint is selected')
+            continue  # Keep the counts; they impose no preferred parity.
         relation = int(counts[1] > counts[0])
         adjacency[i].append((j, relation))
         adjacency[j].append((i, relation))
-        majority += max(counts)
-        minority += min(counts)
     assignment = [-1]*len(atoms)
     for root in range(len(atoms)):
         if assignment[root] != -1:
@@ -102,6 +99,18 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
                 elif assignment[j] != expected:
                     return result(reason='the empirical majority constraints are inconsistent; other native programs remain unsearched')
         components.append(tuple(queue))
+    component_of = [0]*len(atoms)
+    for component, vertices in enumerate(components):
+        for i in vertices:
+            component_of[i] = component
+    majority = minority = 0
+    for (i, j), counts in edges.items():
+        if component_of[i] == component_of[j]:
+            preferred = assignment[i] ^ assignment[j]
+            majority += counts[preferred]
+            minority += counts[1-preferred]
+        # Across components the emitted endpoint is uniform for every scale.
+        # Its constant likelihood factor need not enter the scale argmax.
     # Optimize only values this constructor can actually initialize. No free
     # empirical fit needs to exist, be finite, or equal an initializer value.
     # Counts/proposal remain retained heuristic provenance, not class authority.
@@ -123,27 +132,30 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
             scale, best = value, score
     unit_slot, scale_slot = pattern.index(F(1)), pattern.index(scale)
     slots = max(unit_slot, scale_slot)+1
-    n = len(atoms)
+    n, c = len(atoms), len(components)
     if any(needed > getattr(grammar, key) for key, needed in {
-            'nodes': 2*n+10, 'SUMs': 6, 'PRODUCTs': 4, 'edges': 2*n+12, 'slots': slots}.items()):
+            'nodes': 2*n+8*c+2, 'SUMs': 4*c+2, 'PRODUCTs': 4*c,
+            'edges': 2*n+12*c, 'slots': slots}.items()):
         return result(reason='this native witness exceeds declared construction bounds; not an exclusion of the class')
     nodes = [Source(pair[position]) for position in (0, 1) for pair in atoms]
-    groups = []
-    for position in (0, 1):
-        for group in (0, 1):
-            groups.append(len(nodes))
-            nodes.append(Sum(dtype, tuple(Term(position*n+i, unit_slot) for i, value in enumerate(assignment) if value == group)))
-    cells = []
-    for left in (0, 1):
-        for right in (0, 1):
-            cells.append(len(nodes))
-            nodes.append(Product(dtype, groups[left], groups[2+right]))
+    cells = [[], []]
+    for component in components:
+        vertices, groups = sorted(component), []
+        for position in (0, 1):
+            for group in (0, 1):
+                groups.append(len(nodes))
+                nodes.append(Sum(dtype, tuple(Term(position*n+i, unit_slot)
+                    for i in vertices if assignment[i] == group)))
+        for left in (0, 1):
+            for right in (0, 1):
+                cells[left ^ right].append(len(nodes))
+                nodes.append(Product(dtype, groups[left], groups[2+right]))
     heads = []
     for label in (0, 1):
         heads.append(len(nodes))
-        nodes.append(Sum(dtype, tuple(Term(cells[2*a+b], scale_slot) for a in (0, 1) for b in (0, 1) if a ^ b == label)))
+        nodes.append(Sum(dtype, tuple(Term(cell, scale_slot) for cell in cells[label])))
     program = Program(tuple(nodes), slots, tuple(heads))
     program.validate(rules)
     if not grammar.admits(program):
         raise ContractError('constructed relation syntax differs from its prepaid grammar extent')
-    return result(program, 'native witness from empirical constraints; each disconnected component chose its own arbitrary root flip')
+    return result(program, 'native component-invariant endpoint; unobserved relative flips remain uniform on the one-hot domain')
