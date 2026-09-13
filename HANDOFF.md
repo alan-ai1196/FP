@@ -48,6 +48,9 @@ cases install on CPU and RTX 3090 while their final class decisions remain
 refusals pass. Run `scripts/audit_prospective_selection.py`; original CPU/CUDA
 installation and policy/run regressions plus the n=32 reference audit pass.
 These extension checks do not relabel the old 31-script baseline release.
+Their compact [CPU](evidence/minimal/FP_PROSPECTIVE_SELECTION_CPU_AUDIT.json)
+and [CUDA](evidence/minimal/FP_PROSPECTIVE_SELECTION_CUDA_AUDIT.json) records
+bind `9ec4c33`: 8/9 workers, 1,120/1,323 binary64 phases and 1,323 CUDA phases.
 
 The active scientific question is whether this fixes model behavior beyond
 the known tapes. [RN-2](experiments/prospective_relation/PROTOCOL.md) fixes

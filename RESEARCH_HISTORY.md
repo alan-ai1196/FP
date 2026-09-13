@@ -2823,3 +2823,15 @@ protocol is in `experiments/prospective_relation/PROTOCOL.md`; model outcomes
 are still to be executed. Foundation/ERC-1 and the old release retain their
 original scopes. This result removes a solver/authority bottleneck; it does
 not establish population identification or a superior model.
+
+The committed extension source `9ec4c33` now has retained independent audit
+records: eight CPU workers / 1,120 binary64 phases and nine RTX 3090 workers /
+1,323 CUDA plus 1,323 binary64 phases. Their actual completed-job peaks are
+35,483,648 and 2,297,847,808 bytes. The compact records are
+`evidence/minimal/FP_PROSPECTIVE_SELECTION_{CPU,CUDA}_AUDIT.json`.
+The RN-2 runner is registered in `experiments/prospective_relation/run.py`.
+Its preflight verifies the 28 fixed tasks and independently rechecks all
+64 RN-1 score records without inspecting new-seed labels. It retains
+source-bound failures, full-domain and unseen FP scores, and the original
+optimization decision even after installation. Actual RN-2 execution follows
+this registration; no model outcome is implied by the preflight.

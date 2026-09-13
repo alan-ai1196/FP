@@ -1,0 +1,288 @@
+{
+ "source_revision": "9ec4c33352a7940b1f1c3985e70047e0bdbdc87f",
+ "scale_audit": {
+  "count_pattern_and_initializer_cases": 605,
+  "native_likelihood_checks": 500,
+  "integer_cap_failure_refuses_a_proposal": true
+ },
+ "workers": [
+  {
+   "path": "cpu",
+   "case": "bounded",
+   "outcome": "installed continuous candidate; original full class remains unresolved",
+   "cursor": 42,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    40
+   ],
+   "binary64_phases": 136,
+   "CUDA": null,
+   "peak_packed_bytes": 956874,
+   "host": {
+    "process_id": 11368,
+    "creation_100ns": 134337496863569628,
+    "lifetime_process_commit_peak": 32055296
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 11368,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 32055296,
+    "peak_job_commit": 33271808,
+    "user_100ns": 21562500,
+    "kernel_100ns": 625000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 11368,
+    "process_creation_100ns": 134337496863569628
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "scale1",
+   "outcome": "actual one-slot initialized scale1; finite evidence ends without installation or class completion",
+   "cursor": 42,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "binary64_phases": 136,
+   "CUDA": null,
+   "peak_packed_bytes": 866017,
+   "host": {
+    "process_id": 28608,
+    "creation_100ns": 134337496885841665,
+    "lifetime_process_commit_peak": 32129024
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 28608,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 32129024,
+    "peak_job_commit": 33345536,
+    "user_100ns": 21250000,
+    "kernel_100ns": 468750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28608,
+    "process_creation_100ns": 134337496885841665
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "enumerated",
+   "outcome": "installed continuous candidate; original full class remains unresolved",
+   "cursor": 40,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    22
+   ],
+   "binary64_phases": 203,
+   "CUDA": null,
+   "peak_packed_bytes": 916846,
+   "host": {
+    "process_id": 9192,
+    "creation_100ns": 134337496907793330,
+    "lifetime_process_commit_peak": 33337344
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 9192,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 33337344,
+    "peak_job_commit": 34553856,
+    "user_100ns": 17968750,
+    "kernel_100ns": 1406250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9192,
+    "process_creation_100ns": 134337496907793330
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "authority",
+   "outcome": "unknown assertion, boolean, wrong path and same-graph newborn refused; actual pair installs",
+   "cursor": 40,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [
+    40
+   ],
+   "binary64_phases": 129,
+   "CUDA": null,
+   "peak_packed_bytes": 1030665,
+   "host": {
+    "process_id": 21260,
+    "creation_100ns": 134337496927356787,
+    "lifetime_process_commit_peak": 34258944
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 21260,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 34258944,
+    "peak_job_commit": 35483648,
+    "user_100ns": 20937500,
+    "kernel_100ns": 1093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 21260,
+    "process_creation_100ns": 134337496927356787
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "partial",
+   "outcome": "partial optimizer unit retained; installation refused",
+   "cursor": 41,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "binary64_phases": 132,
+   "CUDA": null,
+   "peak_packed_bytes": 895323,
+   "host": {
+    "process_id": 26060,
+    "creation_100ns": 134337496949412732,
+    "lifetime_process_commit_peak": 34000896
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 26060,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 34000896,
+    "peak_job_commit": 35217408,
+    "user_100ns": 19843750,
+    "kernel_100ns": 1250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26060,
+    "process_creation_100ns": 134337496949412732
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "stale",
+   "outcome": "cancelled same-path evidence cannot authorize installation or refund alpha",
+   "cursor": 40,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "binary64_phases": 128,
+   "CUDA": null,
+   "peak_packed_bytes": 873379,
+   "host": {
+    "process_id": 26912,
+    "creation_100ns": 134337496970589189,
+    "lifetime_process_commit_peak": 33525760
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 26912,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 33525760,
+    "peak_job_commit": 34766848,
+    "user_100ns": 19843750,
+    "kernel_100ns": 937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26912,
+    "process_creation_100ns": 134337496970589189
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "resource",
+   "outcome": "prospective authority cannot bypass paid installation preparation",
+   "cursor": 40,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "binary64_phases": 128,
+   "CUDA": null,
+   "peak_packed_bytes": 873379,
+   "host": {
+    "process_id": 15540,
+    "creation_100ns": 134337496991429896,
+    "lifetime_process_commit_peak": 33587200
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 15540,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 33849344,
+    "peak_job_commit": 35074048,
+    "user_100ns": 19375000,
+    "kernel_100ns": 937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 15540,
+    "process_creation_100ns": 134337496991429896
+   }
+  },
+  {
+   "path": "cpu",
+   "case": "transport",
+   "outcome": "unproved complete-state/device transport refused",
+   "cursor": 40,
+   "reference_proofs": 0,
+   "alpha_spent": "1/2",
+   "install_cursors": [],
+   "binary64_phases": 128,
+   "CUDA": null,
+   "peak_packed_bytes": 873379,
+   "host": {
+    "process_id": 29160,
+    "creation_100ns": 134337497012026056,
+    "lifetime_process_commit_peak": 34050048
+   },
+   "device": null,
+   "execution_identity": null,
+   "process_id": 29160,
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 34050048,
+    "peak_job_commit": 35287040,
+    "user_100ns": 19843750,
+    "kernel_100ns": 781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29160,
+    "process_creation_100ns": 134337497012026056
+   }
+  }
+ ]
+}

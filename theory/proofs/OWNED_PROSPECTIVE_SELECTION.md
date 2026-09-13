@@ -151,6 +151,16 @@ CUDA installation and owned CUDA policy/run audits also pass. These are
 relevant regressions of the changed strategy and transition; they are not
 a rerun of the entire old 31-script release or a universal strategy theorem.
 
+The compact extension records bind source `9ec4c33`: the
+[CPU audit](../../evidence/minimal/FP_PROSPECTIVE_SELECTION_CPU_AUDIT.json)
+contains eight fresh workers and 1,120 binary64 phases; the
+[CUDA audit](../../evidence/minimal/FP_PROSPECTIVE_SELECTION_CUDA_AUDIT.json)
+contains nine fresh workers and 1,323 CUDA plus 1,323 binary64 phases.
+Maximum completed job commitments were respectively 35,483,648 and
+2,297,847,808 bytes, below their 4 GiB caps. The CUDA record identifies the
+actual RTX 3090, runtime/API 13.4 and driver 616.92; its 24 GiB physical-board
+upper is not a measured process allocation or exclusive availability.
+
 Model quality on RN-1's failures and previously unexecuted seeds remains
 an experimental question. The new strategy cannot borrow old worker outcomes
 as evidence of its own performance; the original complete release and RN-1
