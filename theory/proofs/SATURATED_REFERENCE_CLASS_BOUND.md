@@ -1,5 +1,10 @@
 # A universal empirical upper can close a native search without enumerating it
 
+The upper proposition remains applicable. The implementation narrative
+below records the v1 proposal/policy; the
+[v2 prospective extension](OWNED_PROSPECTIVE_SELECTION.md) changes proposal
+value choice and prospective admission without changing this upper theorem.
+
 Status: **proved fixed-objective bound and conditional Runtime composition;
 implemented exact/CPU audit.** Foundation R4 and ERC-1 remain frozen. This is
 a solver for an existing reference objective, not another static resource

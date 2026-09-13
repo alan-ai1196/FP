@@ -8,7 +8,7 @@ The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:
 
 - **Foundation theory frozen.** The state/equivalence/acquisition/construction/physical-realization foundation survived the latest adversarial pass.
 - **Experiment Resource Contract ERC-1 frozen.** Read [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). XVII.31 closes the scoped PRODUCT/SUM/range/precision study; static cases and their remaining constants stay parked while registered device experiments proceed.
-- **Scoped Reference/CPU and RTX 3090 AMP implementation frozen.** The CPU prerequisite passed at `ebe2c4c`. The complete target integration at `5e55eb4` passed all 21 current CPU and 10 CUDA audit scripts in one fresh clone; read [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
+- **Reference/CPU and RTX 3090 AMP baseline frozen.** The CPU prerequisite passed at `ebe2c4c`; the complete target integration at `5e55eb4` passed all 21 CPU and 10 CUDA scripts in one fresh clone. Read [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md). The current prospective strategy is a separately audited extension, not a rerun of that entire release.
 - **Registered experiments UNHELD.** Proceed within the tested target scope and frozen ERC-1; do not interpret the correctness release as a model-quality or structural-forcing result.
 
 The first post-release RTX 3090 resource experiment is complete. Read
@@ -28,26 +28,34 @@ binary64 phases each, and a strong separately executed AMP posterior.
 All eight conditioned connected cases install and match the noise floor
 on unseen relations. All eight IID cases construct no candidate, despite
 correct observed edge majorities and posterior CE near the noise floor.
-The current proposer rejects fitted scales absent from its initializer;
+The RN-1 proposer rejects fitted scales absent from its initializer;
 exact post-analysis shows its already available scale8 beats scale1 and
 uniform on every IID training sample. No unbuilt candidate gains a score.
 The [gate lemma](experiments/relation_noise/GATE_ELIGIBILITY.md) exposes a
-second bottleneck: current categorical-upper eligibility is about 6.65e-7
+second bottleneck: categorical-upper eligibility is about 6.65e-7
 at n=16, despite correct strict-majority recovery probability above 0.975.
 Two indistinguishable disconnected training worlds produce candidate CE
 0.325 versus 1.603; the uncertainty-preserving posterior scores 0.593 in both.
 
-The active research question is now whether useful registered native
-proposals can enter owned fresh comparison/installation while full-class
-optimality remains honestly unresolved. Foundation's fresh e-process does
-not require a historical training maximum; the current installation strategy
-adds that prerequisite. Removing it needs a scoped state/authority argument
-and actual endpoint evidence, not a new architecture action or fake class
-completion. Improve proposal choice within existing reachable values.
-Do not rerun completed experiments, rebuild the frozen core or expand
-static/half-specific constructors to postpone this model-science obstacle.
-The Reference/CPU and actual AMP prerequisites remain closed for their
-tested scope; an expanded strategy cannot borrow unexecuted release authority.
+That implementation obstacle now has a [scoped prospective solution](theory/proofs/OWNED_PROSPECTIVE_SELECTION.md).
+The v2 proposer selects by exact likelihood among actual initializer values.
+The owned policy can admit a compared improving candidate from an unresolved
+class, and installation binds its actual paired starts/current trajectories.
+A historical training maximum is optional additional checked provenance.
+No class proof is invented: both incomplete bounded and partial-enumeration
+cases install on CPU and RTX 3090 while their final class decisions remain
+`UNRESOLVED`. An actual one-slot scale1 case and the work/state/evidence
+refusals pass. Run `scripts/audit_prospective_selection.py`; original CPU/CUDA
+installation and policy/run regressions plus the n=32 reference audit pass.
+These extension checks do not relabel the old 31-script baseline release.
+
+The active scientific question is whether this fixes model behavior beyond
+the known tapes. [RN-2](experiments/prospective_relation/PROTOCOL.md) fixes
+twelve known-tape diagnostics and eight previously unexecuted IID seeds,
+with strong retained or newly executed AMP posterior controls. Its model
+outcomes remain unclaimed until actual execution. Do not restart static
+cases or rebuild the complete runtime to postpone this experiment. Preserve
+all original RN-1 outcomes at their original source; they are not v2 results.
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

@@ -12,6 +12,7 @@ from fractions import Fraction as F
 from .core import ContractError
 from .empirical_bound import EmpiricalUpper
 from .native_search import GrammarLimits
+from .numerics import compare_exact
 from .program import Program, Source, Sum, Product, Term, name
 from .semantics import _guard, _operation
 
@@ -19,7 +20,7 @@ from .semantics import _guard, _operation
 @dataclass(frozen=True)
 class RelationSourceSpec:
     token_atoms: tuple[tuple[str, str], ...]
-    solver: str = field(default='empirical-binary-relation-synchronization-v1', init=False)
+    solver: str = field(default='empirical-binary-relation-initializer-selection-v2', init=False)
 
     def __post_init__(self):
         atoms = tuple(tuple(pair) for pair in self.token_atoms)
@@ -28,7 +29,7 @@ class RelationSourceSpec:
         flat = tuple(name(atom, 'observable token source') for pair in atoms for atom in pair)
         if len(set(flat)) != len(flat):
             raise ContractError('distinct token atoms at both observable positions are required')
-        if self.solver != 'empirical-binary-relation-synchronization-v1':
+        if self.solver != 'empirical-binary-relation-initializer-selection-v2':
             raise ContractError('unregistered empirical relation solver')
         object.__setattr__(self, 'token_atoms', atoms)
 
@@ -101,15 +102,25 @@ def relation_proposal(upper, rules, grammar, pattern, registration, *, bit_limit
                 elif assignment[j] != expected:
                     return result(reason='the empirical majority constraints are inconsistent; other native programs remain unsearched')
         components.append(tuple(queue))
-    if not minority:
-        return result(reason='the empirical scale is a boundary limit, not a finite initialized value')
-    numerator = _operation(F(majority), -F(minority), multiply=False, bit_limit=bit_limit)
-    _guard(F(1, minority), bit_limit=bit_limit)
-    scale = _operation(numerator, F(1, minority), multiply=True, bit_limit=bit_limit)
-    # Numerical values still have to come from the declared initializer. The
-    # empirical scale cannot become a trained constant hidden inside syntax.
-    if F(1) not in pattern or scale not in pattern:
-        return result(reason='the empirical construction needs values absent from the registered initializer')
+    # Optimize only values this constructor can actually initialize. No free
+    # empirical fit needs to exist, be finite, or equal an initializer value.
+    # Counts/proposal remain retained heuristic provenance, not class authority.
+    available = pattern[:grammar.slots]
+    if F(1) not in available:
+        return result(reason='the native grouping requires an available initialized unit slot')
+    best = None
+    for value in available:
+        numerator = _operation(value, F(1), multiply=False, bit_limit=bit_limit)
+        denominator = _operation(value, F(2), multiply=False, bit_limit=bit_limit)
+        inverse = F(denominator.denominator, denominator.numerator)
+        _guard(inverse, bit_limit=bit_limit)
+        probability = _operation(numerator, inverse, multiply=True, bit_limit=bit_limit)
+        score = F(1)
+        for count, factor in ((majority, probability), (minority, inverse)):
+            for _ in range(count):
+                score = _operation(score, factor, multiply=True, bit_limit=bit_limit)
+        if best is None or compare_exact(score, best, bit_limit=bit_limit) > 0:
+            scale, best = value, score
     unit_slot, scale_slot = pattern.index(F(1)), pattern.index(scale)
     slots = max(unit_slot, scale_slot)+1
     n = len(atoms)

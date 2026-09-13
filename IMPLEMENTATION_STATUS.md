@@ -2,8 +2,8 @@
 
 ## Current release (2026-09-13)
 
-**Scoped Reference/CPU and RTX 3090 AMP implementation: FROZEN. Registered
-experiments: UNHELD within the tested scope.** Source
+**Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 extension:
+separately audited. Registered experiments: UNHELD within their tested scopes.** Source
 `5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 current CPU and
 10 complete CUDA audits from one fresh clone; all 38 submodules import
 without Torch. Read [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and
@@ -11,6 +11,17 @@ without Torch. Read [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and
 includes actual device/resource binding, continuous trajectories, separate
 fresh evidence, resident installation, owned policy/run and n=32 target
 execution. It is not a model-quality or structural-forcing result.
+
+The current [v2 prospective extension](theory/proofs/OWNED_PROSPECTIVE_SELECTION.md)
+removes historical training optimality as a required premise of fresh
+installation. It retains paired owned start/current trajectories, all
+resource/range/bridge checks and the same atomic physical transition.
+Full-class search stays unresolved when its upper is unattained. The
+relation proposer now compares only available initialized values, with
+prepaid guarded exact work. CPU and actual CUDA extension matrices and the
+relevant original installation/policy/reference-acceleration regressions pass.
+This does not claim that the entire old 31-script release was rerun at a new
+source, or that RN-2's model outcomes have already been measured.
 
 The first post-release [resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 now completes all 54 registered configurations: 44 sealed, ten unresolved;
@@ -27,8 +38,8 @@ IID cases stop before candidate construction because the empirical fitted
 scale is absent from the registered initializer. Strong exact/AMP posterior
 controls show the observed relations remain learnable. This is a scoped
 solver/strategy limitation, not a runtime correctness or Foundation failure.
-Separate full-class completeness from prospective candidate evidence before
-extending that strategy; preserve all existing state/resource/bridge obligations.
+The extension above separates full-class completeness from prospective
+candidate evidence; its model-quality consequence remains to be measured.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

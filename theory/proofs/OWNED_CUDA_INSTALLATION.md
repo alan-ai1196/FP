@@ -1,5 +1,9 @@
 # Owned CUDA installation by resident identity transport
 
+Historical v1 scope: this argument includes a training-maximum premise.
+The [v2 prospective extension](OWNED_PROSPECTIVE_SELECTION.md) separately
+removes that premise while retaining the complete physical transition.
+
 Status: **scoped transition proof and actual RTX 3090 endpoint audit.**
 The registered machine is serialized CPython, the private default-stream
 CUDA prefix and its prepaid tensor arena, with the existing packed host

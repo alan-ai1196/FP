@@ -1,13 +1,24 @@
 # Foundation-R4 Reference Compiler — scoped CPU and RTX 3090 AMP release
 
-**Status: scoped Reference/CPU and RTX 3090 AMP implementation FROZEN,
-2026-09-13. Registered experiments are UNHELD within this scope.** Source
+**Status: Reference/CPU and RTX 3090 AMP baseline FROZEN, 2026-09-13;
+prospective v2 strategy separately audited. Experiments are UNHELD within
+their tested scopes.** Source
 `5e55eb4` passes all 21 current CPU and 10 complete CUDA audits from one
 fresh clone, including 38 submodule imports, independent endpoint models,
 trained/recurrent installation, device resources and the n=32 hierarchy.
 See [target scope](../../theory/proofs/CUDA_RELEASE_SCOPE.md) and
 [integrated evidence](../../evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
 The separate earlier CPU prerequisite remains recorded at `ebe2c4c`.
+
+The current [prospective extension](../../theory/proofs/OWNED_PROSPECTIVE_SELECTION.md)
+can install a freshly tested native candidate without claiming that its
+unresolved full constructor class is optimized. Historical selection IDs
+are optional additional checked assertions; actual paired start/current
+trajectories and the complete physical transition remain mandatory. The
+proposer compares registered initialized values rather than requiring an
+exact unrestricted fitted coefficient. Run `scripts/audit_prospective_selection.py`
+from the repository root. This is a scoped extension, not a replacement
+claim that the whole historical release was rerun.
 
 The late 2026-09-05 research workspace contained a larger `fp_reference` package than the eight files that survived as direct final attachments. The missing scratch modules are not evidence that the implementation never existed: execution provenance records a 22-module package and an intermediate 24/24 unit + 47/47 gate pass before later complete-Runtime hardening.
 

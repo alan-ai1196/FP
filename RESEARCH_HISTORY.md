@@ -2771,3 +2771,55 @@ prospective candidate decision, preserving all value, ownership, lineage,
 resource, bridge and atomic transport obligations. An expanded strategy
 needs its own endpoint evidence; the old release remains frozen at its
 tested scope and cannot certify an unexecuted extension.
+
+## 84. Remove training optimality from prospective installation authority (2026-09-13)
+
+Foundation's fresh bounded-gain argument conditions on the complete admission
+filtration; it needs a predictable, continuously identified candidate, not
+a past empirical maximum. Existing paired admissions already own the exact
+reference/physical starting states, cursor, program/lineage IDs, comparator
+and spent alpha. Their current crossings validate the continued learners.
+This supplies the provenance needed by the same atomic physical transition.
+
+The v2 installation port therefore makes historical class selection an
+optional additional checked assertion. It still rejects unowned/false IDs,
+wrong pairs and same-graph newborns, and retains all current state, numerical,
+resource and transport checks. The owned v2 policy can advance an actually
+compared improving candidate through fresh evidence while keeping the full
+constructor class unresolved. Final run decisions and receipts distinguish
+these claims; no new proposal signer, architecture action or class proof is
+introduced.
+
+The relation proposer now selects its readout value by guarded exact
+likelihood comparison over the available initializer prefix. It does not
+calculate a free fitted coefficient and demand an exact match. Counts and
+the selected initialized value remain owned, and additional work is prepaid.
+Independent checks cover 605 count/initializer/slot-cap combinations and 500
+actual native forward likelihoods, including duplicated values, both one-
+and two-slot paths and arithmetic exhaustion.
+
+CPU and actual RTX 3090 audits exercise incomplete bounded search and a
+stopped enumeration after seven of 35 native members. Both install without
+historical class proofs, and their sealed reports still say `UNRESOLVED`
+for the original class. An actual scale1 candidate instead exhausts its
+finite evidence without installation. Wrong authority, partial optimizer
+units, stale evidence, unavailable preparation work and unsupported complete
+state/device transport are refused. A real negative control retains the CPU
+fixture's work allowance on CUDA: installation and terminal reporting remain
+unresolved. The positive enumerated case uses the already registered CUDA
+policy allowance; no semantics or numerical tolerance changes.
+
+The original full CPU installation, owned CPU policy, reference acceleration
+(including n=32), CUDA installation and CUDA policy/run scripts pass. These
+regressions and the new matrices establish the stated extension scope, not
+a rerun of all 31 baseline release scripts. Read
+`theory/proofs/OWNED_PROSPECTIVE_SELECTION.md`. The original RN-1 evidence is
+unchanged; its analyzer now guards the unchanged metric/rounding dependencies
+without forbidding later Runtime strategy research or relabelling old runs.
+
+RN-2 fixes twelve known-tape diagnostics and eight previously unexecuted IID
+seeds, with the same strong retained/new AMP posterior comparison. The
+protocol is in `experiments/prospective_relation/PROTOCOL.md`; model outcomes
+are still to be executed. Foundation/ERC-1 and the old release retain their
+original scopes. This result removes a solver/authority bottleneck; it does
+not establish population identification or a superior model.

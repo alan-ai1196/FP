@@ -68,7 +68,7 @@ def _validate_schedule(steps, online, path):
 @dataclass(frozen=True)
 class CompilerPolicy:
     steps: tuple[CompilationStep, ...]
-    driver: str = field(default='sequential-native-search-paired-cpu-install-v1', init=False)
+    driver: str = field(default='sequential-native-search-proposal-paired-cpu-install-v2', init=False)
 
     def __post_init__(self):
         steps = tuple(self.steps)
@@ -76,7 +76,7 @@ class CompilerPolicy:
             raise ContractError('immutable native compilation stages are required')
         if any(a.after_cursor > b.after_cursor for a, b in zip(steps, steps[1:])):
             raise ContractError('registered compilation boundaries must be ordered')
-        if self.driver != 'sequential-native-search-paired-cpu-install-v1':
+        if self.driver != 'sequential-native-search-proposal-paired-cpu-install-v2':
             raise ContractError('unimplemented Compiler strategy')
         object.__setattr__(self, 'steps', steps)
 
@@ -94,7 +94,7 @@ class CompilerPolicy:
 @dataclass(frozen=True)
 class CudaCompilerPolicy:
     steps: tuple[CudaCompilationStep, ...]
-    driver: str = field(default='sequential-native-search-paired-cuda-install-v1', init=False)
+    driver: str = field(default='sequential-native-search-proposal-paired-cuda-install-v2', init=False)
 
     def __post_init__(self):
         steps = tuple(self.steps)
@@ -102,7 +102,7 @@ class CudaCompilerPolicy:
             raise ContractError('immutable CUDA compilation stages are required')
         if any(a.after_cursor > b.after_cursor for a, b in zip(steps, steps[1:])):
             raise ContractError('registered compilation boundaries must be ordered')
-        if self.driver != 'sequential-native-search-paired-cuda-install-v1':
+        if self.driver != 'sequential-native-search-proposal-paired-cuda-install-v2':
             raise ContractError('unimplemented Compiler strategy')
         object.__setattr__(self, 'steps', steps)
 

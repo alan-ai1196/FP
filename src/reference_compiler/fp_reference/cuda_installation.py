@@ -19,7 +19,7 @@ class CudaInstallContract:
     work_role: str = 'deployment'
     workspace_role: str = 'deployment'
     machine_transition: str = field(default='serialized-cpython-root-and-quiescent-CUDA-arena-v1', init=False)
-    proposal: str = field(default='owned-constructor-class-winner-before-fresh-evidence-v1', init=False)
+    proposal: str = field(default='owned-paired-persistence-start-with-optional-historical-selection-v2', init=False)
     transport: str = field(default='preserve-complete-learners-and-resident-CUDA-views-v1', init=False)
     shadow_policy: str = field(default='retain-all-demote-old-base-v1', init=False)
     search_policy: str = field(default='stop-all-retain-frontier-and-evidence-v1', init=False)
@@ -32,7 +32,7 @@ class CudaInstallContract:
             raise ContractError('CUDA installation requires registered physical/work roles')
         policies = {
             'machine_transition': 'serialized-cpython-root-and-quiescent-CUDA-arena-v1',
-            'proposal': 'owned-constructor-class-winner-before-fresh-evidence-v1',
+            'proposal': 'owned-paired-persistence-start-with-optional-historical-selection-v2',
             'transport': 'preserve-complete-learners-and-resident-CUDA-views-v1',
             'shadow_policy': 'retain-all-demote-old-base-v1',
             'search_policy': 'stop-all-retain-frontier-and-evidence-v1',
@@ -48,7 +48,7 @@ class CudaInstallAttempt:
     cursor: int
     old_deployed_id: str
     target_id: str
-    proposal_proof_id: str
+    proposal_proof_id: str | None
     reference_identity: str
     cuda_identity: str
     status: str

@@ -1,5 +1,9 @@
 # Owned CPU installation at one complete root boundary
 
+Historical v1 scope: this argument includes a training-maximum premise.
+The [v2 prospective extension](OWNED_PROSPECTIVE_SELECTION.md) separately
+removes that premise while retaining the complete physical transition.
+
 Status: **scoped transition proof and executed CPU endpoint audit.** The
 machine is serialized CPython with the registered packed-reference resource
 model and checked binary64 learner. This is not concurrent/crash-safe

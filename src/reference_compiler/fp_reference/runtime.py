@@ -570,14 +570,20 @@ class ReferenceCompilerRuntime:
                     self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor, reason=opened.reason)
                     return
                 selected = self.advance_reference_search(opened.search_id, transitions=step.search_transitions)
-                if selected.status not in REFERENCE_SELECTION_COMPLETE:
+                complete = selected.status in REFERENCE_SELECTION_COMPLETE
+                if not complete:
                     # An exhausted policy allowance is not grammar exhaustion.
                     # End the actual owned frontier; no hidden caller can resume it.
                     if self._searches[opened.search_id].status == 'RUNNING':
                         self.cancel_reference_search(opened.search_id)
-                    self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor,
-                                        candidate_id=selected.best_candidate_id, reason='native selection remains unresolved within the registered search allowance')
-                    return
+                    # A paid actually compared candidate may enter a new fresh
+                    # decision while the full class remains unresolved. This
+                    # grants no maximum, pruning or inherited evidence claim.
+                    if selected.best_candidate_id in (None, self._deployed_id):
+                        self._update_policy(index, status='UNRESOLVED', ended_cursor=self._cursor,
+                            candidate_id=selected.best_candidate_id,
+                            reason='native class unresolved and no compared proposal improves the observed baseline')
+                        return
                 values = dict(candidate_id=selected.best_candidate_id, proof_id=selected.proof_id)
                 if selected.best_candidate_id == self._deployed_id:
                     self._update_policy(index, status='BASELINE_SELECTED', ended_cursor=self._cursor, **values)
@@ -2173,7 +2179,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             # Fixed conservative reference allowance for the bounded number
             # of scans/counts/proposal/verification/packed-state copies in this
             # phase. Constructor/profile work is charged separately below.
-            work = 4096+64*sum(len(value) for value in self._buffers.values())
+            work = (4096+64*sum(len(value) for value in self._buffers.values())
+                    +64*len(self._contract.initializer_pattern)*(len(session.spec.observation_ids)+1))
             self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
             available = {record.observation_id: record for record in self._observations}
             if any(key not in available for key in session.spec.observation_ids):
@@ -2380,7 +2387,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         # resource, numerical and same-path AMP installation obligations.
         return ConstructionResult('UNRESOLVED', None, 'complete ERC-1 enforcement, target AMP bridge and installation are not yet integrated')
 
-    def install_cpu(self, candidate_id: str, *, proposal_proof_id: str,
+    def install_cpu(self, candidate_id: str, *, proposal_proof_id: str | None = None,
                     reference_identity: str, float64_identity: str) -> CpuInstallResult:
         """Execute the registered CPU transaction from owned evidence IDs.
 
@@ -2396,7 +2403,7 @@ after all fallible construction, checks and physical preparation complete.
                                     'CPU install cannot transfer or omit the registered actual CUDA prefix')
         return self._install_owned(candidate_id, proposal_proof_id, reference_identity, float64_identity, FLOAT64_PATH)
 
-    def install_cuda(self, candidate_id: str, *, proposal_proof_id: str,
+    def install_cuda(self, candidate_id: str, *, proposal_proof_id: str | None = None,
                      reference_identity: str, cuda_identity: str) -> CudaInstallResult:
         """Publish an owned complete CUDA learner by registered resident identity transport."""
         return self._install_owned(candidate_id, proposal_proof_id, reference_identity, cuda_identity, CUDA_PATH)
@@ -2414,8 +2421,10 @@ after all fallible construction, checks and physical preparation complete.
         attempt_type = CudaInstallAttempt if cuda else CpuInstallAttempt
         receipt_type = CudaInstallReceipt if cuda else CpuInstallReceipt
         installed = 'INSTALLED_CUDA' if cuda else 'INSTALLED_CPU'
-        for value in (candidate_id, proposal_proof_id, reference_identity, physical_identity):
+        for value in (candidate_id, reference_identity, physical_identity):
             name(value, 'owned installation identity')
+        if proposal_proof_id is not None:
+            name(proposal_proof_id, 'optional historical selection assertion')
         registration = (None if self._cuda is None else self._cuda.contract.install) if cuda else self._online.cpu_install
         if registration is None:
             return result_type('UNRESOLVED', None, None, self._cursor, 'no registered CUDA install transition' if cuda else 'no registered CPU install transition')
@@ -2428,8 +2437,9 @@ after all fallible construction, checks and physical preparation complete.
             return result_type('UNRESOLVED', None, None, self._cursor, 'installation cannot discard a partial optimizer unit')
         # Unknown strings cannot become arbitrarily large owned diagnostics.
         # Historical/current authority checks still follow independently.
-        if candidate_id not in self._candidates or proposal_proof_id not in self._reference_proofs:
-            return result_type('UNRESOLVED', None, None, self._cursor, 'no owned target or completed reference-class proposal')
+        if (candidate_id not in self._candidates or candidate_id == self._deployed_id
+                or proposal_proof_id is not None and proposal_proof_id not in self._reference_proofs):
+            return result_type('UNRESOLVED', None, None, self._cursor, 'no distinct owned target or invalid optional historical selection')
         if reference_identity not in self._persistence_identities or physical_identity not in self._persistence_identities:
             raise ContractError('unknown owned persistence identity')
         try:
@@ -2453,25 +2463,31 @@ after all fallible construction, checks and physical preparation complete.
             work = 4096+16*sum(len(buf) for buf in self._buffers.values())+1024*(
                 len(objects)+len(self._candidates)+len(self._persistence_identities)+len(self._searches))
             self._ledger.charge_work(registration.work_role, {'work': work}, note=f'{attempt_id}:prepare-complete-root')
-            proof = self._reference_proofs.get(proposal_proof_id)
-            if proof is None:
-                raise ProfileUnresolved('no owned completed reference-class proposal')
-            proof.validate()
-            search = self._searches.get(proof.search_id)
-            if (search is None or search.status not in REFERENCE_SELECTION_COMPLETE or search.proof_id != proof.proof_id
-                    or proof.winner_lineage_id != candidate_id or candidate_id == self._deployed_id
-                    or proof.base_lineage_id != self._deployed_id or search.best_candidate_id != candidate_id):
-                raise ProfileUnresolved('installation target is not the owned selected reference-class proposal')
             paired = (self.paired_cuda_persistence_result(reference_identity, physical_identity) if cuda else
                       self.paired_persistence_result(reference_identity, physical_identity))
             if paired.status != ('PAIRED_CUDA_CROSSED' if cuda else 'PAIRED_CPU_CROSSED'):
                 raise ProfileUnresolved('both current same-path persistence crossings are required')
             persistence = self._persistence_identities[reference_identity]
-            row = next((r for r in search.rows if r.candidate_id == candidate_id), None)
-            if (persistence.candidate_lineage_id != candidate_id or row is None
-                    or proof.ordinary_cursor != persistence.start_cursor
-                    or row.learner != persistence.initial_candidate or search.base_state != persistence.initial_base):
-                raise ProfileUnresolved('fresh evidence did not start from the selected proposal and its comparator')
+            if (persistence.candidate_lineage_id != candidate_id
+                    or persistence.base_lineage_id != self._deployed_id):
+                raise ProfileUnresolved('fresh evidence belongs to a different target or deployed comparator')
+            # Admission already owns the complete initialized/profiled starts;
+            # paired_* verifies both paths share those same starts, and each
+            # current crossing checks its continuous complete learners. A past
+            # empirical maximum is an optional extra assertion, never a token
+            # that substitutes for the current evidence or physical transition.
+            if proposal_proof_id is not None:
+                proof = self._reference_proofs[proposal_proof_id]
+                proof.validate()
+                search = self._searches.get(proof.search_id)
+                if (search is None or search.status not in REFERENCE_SELECTION_COMPLETE or search.proof_id != proof.proof_id
+                        or proof.winner_lineage_id != candidate_id or proof.base_lineage_id != self._deployed_id
+                        or search.best_candidate_id != candidate_id):
+                    raise ProfileUnresolved('installation target is not the asserted historical reference-class selection')
+                row = next((r for r in search.rows if r.candidate_id == candidate_id), None)
+                if (row is None or proof.ordinary_cursor != persistence.start_cursor
+                        or row.learner != persistence.initial_candidate or search.base_state != persistence.initial_base):
+                    raise ProfileUnresolved('fresh evidence did not start from the asserted historical selection and comparator')
             before = tuple(self._candidates.values())
             target, base = self._candidates[candidate_id], self._candidates[self._deployed_id]
             transport = prepare_transport(self._cuda, before) if cuda else None
@@ -2575,7 +2591,7 @@ after all fallible construction, checks and physical preparation complete.
                 verify_transport(transport, self._cuda, before)
             result = result_type(installed, attempt_id, candidate_id, self._cursor,
                 'registered CUDA identity transaction completed; no current class optimum or full device release'
-                if cuda else 'registered CPU transaction completed; past class selection and fresh two-path evidence remain distinct claims')
+                if cuda else 'registered CPU transaction completed; fresh two-path evidence grants no class-optimality claim')
             next_root = dict(self.__dict__)
             next_root.update(_ledger=ledger, _router=CostRouter(ledger, self._contract.work_roles),
                 _event_router=CostRouter(ledger, self._event_router.snapshot()), _buffers=buffers,

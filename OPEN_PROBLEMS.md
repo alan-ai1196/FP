@@ -21,20 +21,24 @@ leave the frozen laws/Runtime intact. The first ordinary-data model
 experiment [RN-1](experiments/relation_noise/RESULTS.md) is also complete.
 Eight conditioned connected cases install and generalize; all eight IID
 cases construct no candidate while a strong AMP posterior predicts near
-the noise floor. The current proposer demands a fitted scale that exactly
+the noise floor. The proposer tested in RN-1 demands a fitted scale that exactly
 occurs in the initializer. Its categorical-upper/installation gate then
 demands a historical training maximum. Neither failure is information
 scarcity in these samples.
 
-Can a useful native proposal, chosen among already reachable values, enter
-owned fresh comparison and installation without claiming that unresolved
-parts of its full constructor class are dominated? Foundation's bounded
-fresh e-process does not require past empirical optimality. Determine the
-minimal owned provenance and current-state premises needed to remove that
-extra implementation requirement, retaining construction, information,
-resource, lineage, reference/AMP and atomic transport obligations. Prove and
-execute the resulting strategy; do not narrow the class to the chosen graph
-or turn an unresolved search into a completeness flag.
+The [prospective extension](theory/proofs/OWNED_PROSPECTIVE_SELECTION.md)
+now proves and executes the missing scoped transition on CPU and actual
+CUDA. It compares already initialized values and permits fresh installation
+without a historical class maximum, while the full constructor class stays
+unresolved. All state/resource/lineage/bridge/transport premises remain.
+This implementation question is no longer open in that scope.
+
+The open scientific question is now [RN-2](experiments/prospective_relation/PROTOCOL.md):
+does the strategy fix the known IID failures and retain useful performance
+on eight previously unexecuted seeds? Preserve the strong AMP posterior,
+all absent candidates, finite evidence failures and actual run outcomes.
+Do not substitute known-tape diagnostics for the new-seed comparison or
+infer a population success rate from this small sample.
 
 Preserve RN-1's same-cutoff posterior comparison and its disconnected-world
 control: equal optimal training scores hide frozen-candidate CE 0.325 versus

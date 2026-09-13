@@ -1,5 +1,9 @@
 # One owned Compiler policy through a finite CUDA run
 
+This is the v1 policy requiring historical class selection. The
+[v2 prospective extension](OWNED_PROSPECTIVE_SELECTION.md) adds a separately
+audited path that keeps incomplete classes unresolved after installation.
+
 Status: **implemented scoped policy/run composition.** This extends the
 registered CPU strategy to its already implemented CUDA physical path.
 Foundation R4, XVII.31 and ERC-1 remain frozen. A sealed finite stream is

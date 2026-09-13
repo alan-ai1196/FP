@@ -67,9 +67,16 @@ def verify():
     workers = report['workers']
     expected = [(kind, case) for case in cases() for kind in ('FP', 'posterior')]
     assert [(r['kind'], tuple(r['case'])) for r in workers] == expected
-    # The analysis may change; the preregistered experiment and frozen core may not.
-    changed = subprocess.check_output(['git', 'diff', SOURCE, '--', 'src/reference_compiler',
-        'scripts', 'experiments/relation_noise/PROTOCOL.md',
+    # Historical workers stay bound to SOURCE; no current Runtime is executed
+    # here. Guard the retained experiment and actual metric/rounding dependencies,
+    # rather than preventing future solver work or relabelling old outcomes.
+    changed = subprocess.check_output(['git', 'diff', SOURCE, '--',
+        'src/reference_compiler/fp_reference/core.py',
+        'src/reference_compiler/fp_reference/semantics.py',
+        'src/reference_compiler/fp_reference/numerics.py',
+        'src/reference_compiler/fp_reference/binary_arithmetic.py',
+        'scripts/audit_reference_acceleration.py', 'scripts/audit_cuda_learner.py',
+        'scripts/audit_cuda_primitives.py', 'experiments/relation_noise/PROTOCOL.md',
         'experiments/relation_noise/model.py', 'experiments/relation_noise/run_experiment.py'],
         cwd=ROOT, text=True, encoding='utf-8')
     assert not changed

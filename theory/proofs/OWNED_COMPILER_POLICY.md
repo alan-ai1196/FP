@@ -1,5 +1,9 @@
 # The Compiler strategy belongs in complete Runtime state
 
+This document records the original v1 strategy and its historical release
+status. The complete baseline later passed; the current
+[v2 prospective extension](OWNED_PROSPECTIVE_SELECTION.md) has a separate scope.
+
 Status: **implemented registered strategy; scoped state/filtration argument;
 exact finite endpoint audit and actual CPU execution.** Foundation/ERC-1 stay
 frozen. Runtime is NOT FROZEN; actual target AMP and model science remain HOLD.

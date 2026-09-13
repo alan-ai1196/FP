@@ -1,6 +1,6 @@
 # Factor Programs (FP) — Canonical Theory
 
-**Canonical status (2026-09-13): THEORY FROZEN; EXPERIMENT RESOURCE CONTRACT FROZEN; SCOPED REFERENCE/CPU AND RTX 3090 AMP IMPLEMENTATION FROZEN; REGISTERED EXPERIMENTS UNHELD.**
+**Canonical status (2026-09-13): THEORY AND EXPERIMENT RESOURCE CONTRACT FROZEN; REFERENCE/CPU AND RTX 3090 AMP BASELINE FROZEN; PROSPECTIVE STRATEGY EXTENSION AUDITED; REGISTERED EXPERIMENTS UNHELD WITHIN THEIR SCOPES.**
 
 This file is the **only normative theory source** for FP. Historical v1–v155 canonicals, v156–v164 attack drafts, R2/R3/R4 working files and experiment-era theory snapshots are provenance only. If an older statement conflicts with this file, this file wins.
 
@@ -18,6 +18,12 @@ resource, persistence, installation and finite-run boundary is fixed in
 [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
 The Foundation definitions and theorems below are unchanged by this release.
 
+The current [prospective strategy extension](theory/proofs/OWNED_PROSPECTIVE_SELECTION.md)
+chooses among actual initialized values and can install a continuously tested
+candidate while its full training-optimization class remains unresolved.
+Its CPU/actual CUDA audits are separate from the old complete release; no
+new semantic architecture action or class-completeness claim is introduced.
+
 The joint resource study closes at XVII.31. Its experiment accounting and
 release criteria are frozen in [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md),
 ERC-1. Static special cases and their remaining constants stay parked;
@@ -28,7 +34,7 @@ The first [registered RTX 3090 resource experiment](experiments/erc1_rtx3090/RES
 has completed 54 configurations, including strong SUM/Horner controls.
 Its actual precision plateau and honest range/evidence failures do not
 change the theory below. The first [ordinary-data model experiment RN-1](experiments/relation_noise/RESULTS.md)
-also completes: conditioned proportions succeed, whereas the current solver
+also completes: conditioned proportions succeed, whereas the solver tested there
 constructs no candidate on eight IID samples with informative labels.
 This exposes a proposal/selection limitation, not a Foundation loophole;
 continue model science with honest, separate completeness and fresh-evidence claims.
