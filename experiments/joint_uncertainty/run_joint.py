@@ -25,6 +25,8 @@ from fp_reference.float64_bridge import Float64Contract
 from audit_reference_construction import validate_residency, limits
 
 OUTPUT = ROOT/'evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json'
+PROTOCOL_ORIGIN='e3df252'
+FAILED_OUTPUT=ROOT/'evidence/minimal/FP_JOINT_UNCERTAINTY_AUDITOR_FAILURE.json'
 HOST_CAP=16 << 30
 PACKED_CAP=8 << 30
 ARENA=256 << 20
@@ -39,7 +41,8 @@ DEPENDENCIES = previous.DEPENDENCIES + (
     'experiments/adaptive_uncertainty/run_adaptive.py',
     'experiments/joint_uncertainty/PROTOCOL.md',
     'experiments/joint_uncertainty/joint_model.py',
-    'experiments/joint_uncertainty/run_joint.py')
+    'experiments/joint_uncertainty/run_joint.py',
+    'evidence/minimal/FP_JOINT_UNCERTAINTY_AUDITOR_FAILURE.json')
 
 
 def git(*args):
@@ -65,6 +68,18 @@ def historical():
     return rows,[{'journal':path,'journal_commit':git('rev-parse','3b2473a'),
         'worker_source':report['registration_source'],'reused_cases':diagnostic_cases(),
         'scope':'v4 rates1/8,4 and adaptive posterior; original outcomes and budgets'}]
+
+
+def prior_failure():
+    report=json.loads(FAILED_OUTPUT.read_text(encoding='utf-8'))
+    assert report['status']=='STOPPED_AUDITOR_MISMATCH' and len(report['workers'])==2
+    assert report['registration_source']==git('rev-parse',PROTOCOL_ORIGIN)
+    assert all(r['worker_status']=='FAILED' and '16 << 20' in r['traceback'] for r in report['workers'])
+    assert report['interruption']['no_completed_job_or_score_claim']
+    return {'journal':FAILED_OUTPUT.relative_to(ROOT).as_posix(),
+        'execution_source':report['registration_source'],'completed_failed_workers':2,
+        'interrupted_worker_without_completed_job':1,
+        'amendment':'auditor binds the declared arena size; all model/data/resource parameters retained'}
 
 
 def device_contract():
@@ -334,7 +349,7 @@ def preflight():
         'graph_metadata_output_envelopes':envelope,
         'FP_contract':{'host':HOST_CAP,'packed':PACKED_CAP,'arena':ARENA,'phase_frame':FRAME,'phase_cells':CELLS,
             'work_per_role':WORK,'job_timeout_ms':TIMEOUT,'normalizer':256,'native_tolerance':'1/2','probability_tolerance':'1/100'},
-        'historical_controls': old}
+        'historical_controls': old,'prior_auditor_failures':prior_failure()}
 
 
 def main():
@@ -372,10 +387,12 @@ def main():
         report = json.loads(OUTPUT.read_text(encoding='utf-8'))
         assert report['status'] == 'PARTIAL_EXECUTION' and report['registration_source'] == revision
         assert report['historical_control'] == json.loads(json.dumps(reference))
+        assert report['prior_auditor_failures']==prior_failure()
     else:
         assert not OUTPUT.exists()
         report = {'experiment': 'RN-5', 'status': 'PARTIAL_EXECUTION', 'registration_source': revision,
-            'protocol_origin': revision, 'final_protocol_source': revision, 'historical_control': reference, 'workers': []}
+            'protocol_origin': git('rev-parse',PROTOCOL_ORIGIN), 'final_protocol_source': revision,
+            'prior_auditor_failures':prior_failure(),'historical_control': reference, 'workers': []}
     assert [(r['kind'], tuple(r['case']), r['rate']) for r in report['workers']] == list(tasks()[:len(report['workers'])])
     for kind, case, rate in tasks()[len(report['workers']):]:
         result = bounded(kind, case, rate)

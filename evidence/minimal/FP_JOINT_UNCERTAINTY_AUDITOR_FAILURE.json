@@ -1,0 +1,104 @@
+{
+ "experiment": "RN-5",
+ "status": "STOPPED_AUDITOR_MISMATCH",
+ "registration_source": "e3df252275d785f9c26694daa03db674ea2b5161",
+ "protocol_origin": "e3df252275d785f9c26694daa03db674ea2b5161",
+ "final_protocol_source": "e3df252275d785f9c26694daa03db674ea2b5161",
+ "historical_control": [
+  {
+   "journal": "evidence/minimal/FP_ADAPTIVE_UNCERTAINTY_EXPERIMENT.json",
+   "journal_commit": "3b2473aff688b1d3c3f7fcb63d5493e94623282a",
+   "worker_source": "cffbadcd5396ef18eb7a7bad094b0bcf8307a9e5",
+   "reused_cases": [
+    [
+     8,
+     "disconnected-a",
+     0
+    ],
+    [
+     8,
+     "disconnected-b",
+     0
+    ]
+   ],
+   "scope": "v4 rates1/8,4 and adaptive posterior; original outcomes and budgets"
+  }
+ ],
+ "workers": [
+  {
+   "worker_status": "FAILED",
+   "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 358, in main\n    result = fp_worker(case, args.rate) if args.worker == 'FP' else baseline_worker(case)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 137, in fp_worker\n    cuda = rn1.audit_snapshot(rt) if phase_checked else None\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_cuda_runtime.py\", line 131, in audit_snapshot\n    assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, 16 << 20, 1)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+   "process_id": 10772,
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-a",
+    0
+   ],
+   "rate": "1",
+   "completed_job": {
+    "exit_code": 1,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 6559215616,
+    "peak_job_commit": 6560452608,
+    "user_100ns": 1317812500,
+    "kernel_100ns": 46250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 10772,
+    "process_creation_100ns": 134337664962114018
+   },
+   "execution_source": "e3df252275d785f9c26694daa03db674ea2b5161"
+  },
+  {
+   "worker_status": "FAILED",
+   "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 358, in main\n    result = fp_worker(case, args.rate) if args.worker == 'FP' else baseline_worker(case)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 137, in fp_worker\n    cuda = rn1.audit_snapshot(rt) if phase_checked else None\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_cuda_runtime.py\", line 131, in audit_snapshot\n    assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, 16 << 20, 1)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+   "process_id": 3860,
+   "kind": "FP",
+   "case": [
+    8,
+    "disconnected-a",
+    0
+   ],
+   "rate": "4",
+   "completed_job": {
+    "exit_code": 1,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 6562312192,
+    "peak_job_commit": 6563545088,
+    "user_100ns": 1355156250,
+    "kernel_100ns": 38593750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3860,
+    "process_creation_100ns": 134337666375762837
+   },
+   "execution_source": "e3df252275d785f9c26694daa03db674ea2b5161"
+  }
+ ],
+ "interruption": {
+  "reason": "Stopped after the first worker exposed the fixed 16MiB auditor assertion; no model or resource change",
+  "parent_id": 3896,
+  "parent_creation": "2026-09-13T17:48:15.63954+08:00",
+  "active_workers": [
+   {
+    "ProcessId": 29260,
+    "CreationDate": "2026-09-13T17:53:01.7484+08:00",
+    "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP\\experiments\\joint_uncertainty\\run_joint.py --worker FP --case 8 disconnected-b 0 --rate 1 --worker-output F:\\FP\\fp-joint-model-n3p4p78p\\result.json"
+   }
+  ],
+  "completed_job_for_interrupted_worker": false,
+  "active_worker_stopped": true,
+  "case": [
+   8,
+   "disconnected-b",
+   0
+  ],
+  "rate": "1",
+  "no_completed_job_or_score_claim": true
+ }
+}

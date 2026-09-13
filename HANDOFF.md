@@ -171,6 +171,16 @@ larger graph, per-phase evidence, range and numerical instance budgets,
 including a bound-6 fresh evidence rule; all failed outcomes must be retained.
 Target-model scores remain pending. Do not rerun RN-4's failures.
 
+The initial RN-5 source `e3df252` hit an inherited auditor constant requiring
+16MiB instead of its declared 256MiB arena. Both known-A rates have preserved
+failed-job records; a known-B/rate1 process was interrupted without a complete
+job or score claim. No new IID or stress worker had started. The corrected
+auditor compares allocation counters with the actual immutable arena contract;
+16MiB and 256MiB functional CUDA controls each replay 16 phases. The amended
+runner links all three earlier attempts and keeps every model/data/resource
+parameter fixed when executing the same 31-worker matrix. Results remain
+pending; this repairs evidence checking, not a model or budget outcome.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

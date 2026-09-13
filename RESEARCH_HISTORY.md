@@ -3193,3 +3193,20 @@ rounded-AMP graph forecast and successor combinations plus 64 fixed-state
 sign controls. The metadata-only preflight checks 31 tasks, posterior
 algebra and cell envelopes without inspecting any new target tape. No RN-5
 model score or completed worker is claimed at this registration point.
+
+### 92.1 Preserve the inherited arena-auditor failure
+
+Before any new IID or stress execution, source `e3df252`'s two known-A workers
+failed the end auditor's literal `(1, 16MiB, 1)` allocation assertion. This
+protocol had actually registered 256MiB. The 4,491-byte failure journal keeps
+both completed jobs and traces, plus the explicitly interrupted known-B/rate1
+process without a completed-job or score claim. Nothing from these attempts
+is relabelled as a successful model result.
+
+The auditor now checks the native allocation count and byte extent against
+the immutable arena contract, also checking the actual tensor size. One old
+16MiB and one 256MiB functional CUDA stream each replay 16 phases. The runner
+amendment preserves the original protocol source, links the failure journal,
+and changes no model/data/rate/resource/evidence parameter. The same 31-worker
+matrix will execute with this corrected evidence check. No new IID labels
+were inspected when making the correction.

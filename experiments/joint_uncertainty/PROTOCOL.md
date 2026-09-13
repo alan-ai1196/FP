@@ -124,3 +124,25 @@ dominance or restarted-family guarantee. Retain compact source-bound outcomes,
 completed jobs and independent checks; omit weights, datasets and bulk phase
 histories. Do not retune a failed case, add a winning rate, enlarge its budget
 or reopen static resource theory in response to its score.
+
+## Auditor correction before new IID execution
+
+The initial execution source `e3df252` exposed an inherited post-execution
+auditor assertion that required a 16MiB arena literal. It rejected the two
+known-A workers after native phase replay because this protocol declared
+256MiB. Their exception reports and completed jobs are preserved in
+[the failure journal](../../evidence/minimal/FP_JOINT_UNCERTAINTY_AUDITOR_FAILURE.json).
+While stopping further repetitions, the known-B/rate1 worker was interrupted;
+its process identity and interruption are retained, with no completed-job,
+model score or complete phase claim. No new IID or stress worker had started.
+
+The correction checks one allocation of the **declared arena size** against
+both the immutable manifest and actual allocation counters. Functional real
+CUDA controls at 16MiB and 256MiB each replay 16 phases successfully. Neither
+Runtime semantics nor any model, data, initialization, rate, range, tolerance,
+evidence rule or resource parameter changes. The original failed records are
+not converted to successful runs. Execute the same 31-case worker matrix
+under the corrected audit source, preserving the original protocol origin
+and linking these three earlier attempts. Report final results separately
+from the two completed audit failures and one interrupted attempt. This is
+an audit correction, not resource tuning in response to a model score.

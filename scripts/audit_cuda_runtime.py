@@ -128,16 +128,20 @@ def audit_snapshot(runtime):
         actual = expected[current[state.candidate_id]]
         assert (actual.unit, actual.cursor, actual.steps) == (state.learner.unit_count, state.learner.cursor, state.learner.optimizer_steps)
     storage = snapshot.cuda.storage
-    assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, 16 << 20, 1)
+    arena_bytes = snapshot.cuda.contract.storage.arena_bytes
+    assert storage['actual_tensor_arena_bytes'] == arena_bytes
+    assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, arena_bytes, 1)
     return {'phases': count, 'actual_arena_bytes': storage['actual_tensor_arena_bytes'],
             'largest_phase_frame_used': max(int.from_bytes(buffers[r.object_id][:8], 'big')+8 for r in snapshot.cuda.phases),
             'maximum_output_cells': max(r.output_cells for r in snapshot.cuda.phases)}
 
 
-def stream_case(index):
+def stream_case(index, *, arena_bytes=16 << 20):
     sequence = tuple(product(tuple(product((0, 1), repeat=2)), repeat=3))[index]
     cfg = configuration()
-    runtime = ReferenceCompilerRuntime(cfg, zero_program(2), online=online(cfg, 3, unit=2, rate=F(1, 8), grid=16), cuda=cuda_contract())
+    storage = CudaStorageContract(arena_bytes, 2*arena_bytes,
+        {role: (arena_bytes, 2*arena_bytes) for role in ('deployment', 'compiler')})
+    runtime = ReferenceCompilerRuntime(cfg, zero_program(2), online=online(cfg, 3, unit=2, rate=F(1, 8), grid=16), cuda=cuda_contract(storage=storage))
     candidate = runtime.construct_candidate(shared_graph())
     assert candidate.status == 'BUILT_REFERENCE'
     previous = runtime.snapshot()
@@ -352,11 +356,11 @@ def failure_case(case):
             'completed_CUDA_phases': len(snapshot.cuda.phases), 'case': case}
 
 
-def execute_case(case):
+def execute_case(case, *, arena_bytes=16 << 20):
     if case.startswith('stream-'):
         index = int(case[7:])
         assert 0 <= index < 64
-        return stream_case(index)
+        return stream_case(index, arena_bytes=arena_bytes)
     if case == 'profile':
         return profile_case()
     if case in ('search', 'search-exhaustion'):
@@ -368,12 +372,17 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--case')
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--arena-mib', type=int)
     args = parser.parse_args()
     if args.case:
         if args.write:
             parser.error('a subcase cannot replace canonical evidence')
-        print(json.dumps(execute_case(args.case)))
+        if args.arena_mib is not None and (not args.case.startswith('stream-') or args.arena_mib <= 0):
+            parser.error('an alternate arena belongs to one positive-size stream control')
+        print(json.dumps(execute_case(args.case, arena_bytes=(16 if args.arena_mib is None else args.arena_mib) << 20)))
         return
+    if args.arena_mib is not None:
+        parser.error('an alternate arena requires an explicit stream subcase')
     widened = 0
     for word in range(65536):
         if word & 0x7c00 != 0x7c00:
