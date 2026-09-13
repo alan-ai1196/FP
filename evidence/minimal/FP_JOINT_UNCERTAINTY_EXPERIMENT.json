@@ -2463,6 +2463,454 @@
     "process_creation_100ns": 134337747440481369
    },
    "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+  },
+  {
+   "worker_status": "FAILED",
+   "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 373, in main\n    result = fp_worker(case, args.rate) if args.worker == 'FP' else baseline_worker(case)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 152, in fp_worker\n    cuda = rn1.audit_snapshot(rt) if phase_checked else None\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_cuda_runtime.py\", line 84, in audit_snapshot\n    snapshot = validate_residency(runtime)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_reference_construction.py\", line 79, in validate_residency\n    snapshot = runtime.snapshot()\n               ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 38, in guarded\n    result = method(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 2662, in snapshot\n    None if self._cuda is None else self._cuda.snapshot())\n                                    ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_prefix.py\", line 175, in snapshot\n    tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),\n                                                                ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in snapshot\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in <genexpr>\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nMemoryError\n",
+   "process_id": 13292,
+   "kind": "FP",
+   "case": [
+    16,
+    "iid-c2",
+    17
+   ],
+   "rate": "4",
+   "completed_job": {
+    "exit_code": 1,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 17179664384,
+    "peak_job_commit": 17180917760,
+    "user_100ns": 32236562500,
+    "kernel_100ns": 408125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 13292,
+    "process_creation_100ns": 134337777318985387
+   },
+   "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+  },
+  {
+   "kind": "posterior",
+   "case": [
+    16,
+    "iid-c2",
+    17
+   ],
+   "rate": "none",
+   "counts": [
+    [
+     0,
+     1,
+     2,
+     8
+    ],
+    [
+     1,
+     2,
+     10,
+     0
+    ],
+    [
+     2,
+     3,
+     8,
+     2
+    ],
+    [
+     3,
+     4,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     9,
+     1
+    ],
+    [
+     5,
+     6,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     10,
+     0
+    ],
+    [
+     8,
+     9,
+     0,
+     10
+    ],
+    [
+     9,
+     10,
+     3,
+     7
+    ],
+    [
+     10,
+     11,
+     7,
+     3
+    ],
+    [
+     11,
+     12,
+     1,
+     9
+    ],
+    [
+     12,
+     13,
+     10,
+     0
+    ],
+    [
+     13,
+     14,
+     2,
+     8
+    ],
+    [
+     14,
+     15,
+     10,
+     0
+    ]
+   ],
+   "prior": "independent fair bits; initial conditioned/IID law and all subsequent noisy labels",
+   "adaptive_exact_unseen": {
+    "contexts": 212,
+    "expected_CE_binary64": 0.3269394918145259,
+    "raw_division_expected_CE_binary64": null,
+    "expected_Brier_exact_enclosure": [
+     "2708703862987985/14918173765664768",
+     "10834815451952151/59672695062659072"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 1280,
+    "mean_true_probability_gap_binary64": 0.0023179747319310743,
+    "latent_relation_error_with_half_ties": "1/424"
+   },
+   "adaptive_AMP_unseen": {
+    "contexts": 212,
+    "expected_CE_binary64": 0.32693948802372763,
+    "raw_division_expected_CE_binary64": 0.3269394729981575,
+    "expected_Brier_exact_enclosure": [
+     "10834814956883795/59672695062659072",
+     "5417407478442003/29836347531329536"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 55,
+    "mean_true_probability_gap_binary64": 0.002356234653333378,
+    "latent_relation_error_with_half_ties": "1/424"
+   },
+   "adaptive_exact_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.3266204027105595,
+    "raw_division_expected_CE_binary64": null,
+    "expected_Brier_exact_enclosure": [
+     "3266024316875083/18014398509481984",
+     "13064097267500587/72057594037927936"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 1280,
+    "mean_true_probability_gap_binary64": 0.0019195728251017172,
+    "latent_relation_error_with_half_ties": "1/512"
+   },
+   "adaptive_AMP_full_domain": {
+    "contexts": 256,
+    "expected_CE_binary64": 0.32662040049899793,
+    "raw_division_expected_CE_binary64": 0.32662038782314223,
+    "expected_Brier_exact_enclosure": [
+     "13064096796502807/72057594037927936",
+     "6532048398251531/36028797018963968"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 55,
+    "mean_true_probability_gap_binary64": 0.001955530952811438,
+    "latent_relation_error_with_half_ties": "1/512"
+   },
+   "complete_domain_raw_predictions_checked": 256,
+   "maximum_exact_weight_bits": 1116,
+   "maximum_exact_probability_bits": 641,
+   "maximum_AMP_mass_probability_error": "155886473730844450733401500384917338895519484933699086719/3738481217348217103749446498651311661162466912239058625686782",
+   "resources": {
+    "maximum_integer_weight_payload_bytes": 5331630,
+    "counted_assignment_visits": 51249152,
+    "native_tensor_peak_bytes": 4096,
+    "native_allocator_peak_reserved_bytes": 2097152
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "process_id": 14920,
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 2310569984,
+    "peak_job_commit": 2311802880,
+    "user_100ns": 85781250,
+    "kernel_100ns": 6562500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14920,
+    "process_creation_100ns": 134337810170901812
+   },
+   "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+  },
+  {
+   "kind": "FP",
+   "case": [
+    8,
+    "iid-c4",
+    18
+   ],
+   "rate": "1",
+   "run_status": "SEALED_CUDA_STREAM",
+   "halted": null,
+   "cursor": 104,
+   "training_events": 40,
+   "evaluation_events": 64,
+   "counts": [
+    [
+     0,
+     1,
+     9,
+     1
+    ],
+    [
+     2,
+     3,
+     10,
+     0
+    ],
+    [
+     4,
+     5,
+     0,
+     10
+    ],
+    [
+     6,
+     7,
+     7,
+     3
+    ]
+   ],
+   "proposal_status": "PROPOSED_NATIVE",
+   "proposal_reason": "native joint orientation weights a+a^2 retain transitive gradients and a direct recovery path without a shared output gate",
+   "proposal_assignment": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+   ],
+   "components": [
+    [
+     0,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     6,
+     7
+    ]
+   ],
+   "proposal_scale": "8",
+   "native_candidate": {
+    "nodes": 98,
+    "sources": 16,
+    "state_reads": 0,
+    "SUMs": 18,
+    "PRODUCTs": 64,
+    "SUM_edges": 800,
+    "edges": 928,
+    "slots": 9,
+    "bindings": 0
+   },
+   "cutoff_search_status": "UNRESOLVED",
+   "actually_compared": 1,
+   "reference_proofs": 0,
+   "final_class_decisions": [
+    {
+     "status": "UNRESOLVED",
+     "has_proof": false,
+     "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+     "ordinary_cursor": 40,
+     "grammar": {
+      "nodes": 98,
+      "SUMs": 82,
+      "PRODUCTs": 68,
+      "edges": 1168,
+      "slots": 58
+     }
+    }
+   ],
+   "install_cursor": 75,
+   "alpha_spent": "1/2",
+   "final_policy_stage": "INSTALLED_CUDA",
+   "independent_CUDA": {
+    "phases": 506,
+    "actual_arena_bytes": 268435456,
+    "largest_phase_frame_used": 298890,
+    "maximum_output_cells": 3589
+   },
+   "independent_binary64_phases": 506,
+   "phase_audit_status": "ALL_EXECUTED_PHASES_CHECKED",
+   "float64_relation_maxima": {
+    "state_error": "32254453291725570127/362083071609120609598689129372057600",
+    "native_error": "0",
+    "normalizer_error": "0",
+    "probability_error": "45104006027/822864284929098183065206784",
+    "division_error": "45104006027/822864284929098183065206784"
+   },
+   "CUDA_relation_maxima": {
+    "state_error": "17/65536",
+    "native_error": "71330129/4294967296",
+    "normalizer_error": "71628543/4294967296",
+    "probability_error": "53199333186223/278920189553147904",
+    "division_error": "1197/40852520960"
+   },
+   "resources": {
+    "peak_packed_bytes": 1069393213,
+    "consumed_native_arena_extent": 3184784
+   },
+   "device": {
+    "native": {
+     "runtime_version": 13040,
+     "driver_api_version": 13040,
+     "driver_version": "616.92",
+     "pci_bus_id": "0000:0B:00.0",
+     "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+     "physical_vram_bytes": 25769803776
+    },
+    "execution_identity": [
+     "2.12.0+cu132",
+     "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+     "13.2",
+     "NVIDIA GeForce RTX 3090",
+     [
+      8,
+      6
+     ]
+    ],
+    "physical_vram_upper": 25769803776,
+    "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+   },
+   "host": {
+    "process_id": 24852,
+    "creation_100ns": 134337810264133384,
+    "lifetime_process_commit_peak": 5072756736
+   },
+   "candidate_stream_unseen": {
+    "contexts": 48,
+    "expected_CE_binary64": 0.42173560029321067,
+    "raw_division_expected_CE_binary64": 0.42173560112933783,
+    "expected_Brier_exact_enclosure": [
+     "1151638944720589/4503599627370496",
+     "287909736180151/1125899906842624"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 38,
+    "mean_true_probability_gap_binary64": 0.14071914163814828,
+    "latent_relation_error_with_half_ties": "5/96"
+   },
+   "candidate_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.39757281815724455,
+    "raw_division_expected_CE_binary64": 0.39757282053076465,
+    "expected_Brier_exact_enclosure": [
+     "4265567188883965/18014398509481984",
+     "2132783594442013/9007199254740992"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 38,
+    "mean_true_probability_gap_binary64": 0.10564450405107678,
+    "latent_relation_error_with_half_ties": "5/128"
+   },
+   "deployed_stream_unseen": {
+    "contexts": 48,
+    "expected_CE_binary64": 0.5295714675306159,
+    "raw_division_expected_CE_binary64": 0.5295714678040574,
+    "expected_Brier_exact_enclosure": [
+     "4806518725837723/13510798882111488",
+     "4806518725837745/13510798882111488"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 38,
+    "mean_true_probability_gap_binary64": 0.23412717820633688,
+    "latent_relation_error_with_half_ties": "13/48"
+   },
+   "deployed_stream_full_domain": {
+    "contexts": 64,
+    "expected_CE_binary64": 0.5302085399278912,
+    "raw_division_expected_CE_binary64": 0.5302085410647768,
+    "expected_Brier_exact_enclosure": [
+     "3213907835697567/9007199254740992",
+     "6427815671395163/18014398509481984"
+    ],
+    "Brier_grid_bits": 48,
+    "maximum_per_query_Brier_integer_bits": 38,
+    "mean_true_probability_gap_binary64": 0.23188987139169626,
+    "latent_relation_error_with_half_ties": "35/128"
+   },
+   "worker_status": "EXECUTED",
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 6308614144,
+    "peak_job_commit": 6309916672,
+    "user_100ns": 3598437500,
+    "kernel_100ns": 112343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24852,
+    "process_creation_100ns": 134337810264133384
+   },
+   "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
   }
  ]
 }

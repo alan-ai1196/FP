@@ -3566,3 +3566,21 @@ GPU forecasts. The research branch retains this exact partial journal;
 the running main journal continues with seed17/rate4 at the original source
 and resources. The separate short recurrent-model controls change no RN-5
 budget, data, source or acceptance rule, and add no comparative timing claim.
+
+## 100. RN-5 retains all four n16/c2 failures and the first c4 completion
+
+The seed17/rate4 worker also fails at the final auditor arena snapshot,
+with process peak17,179,664,384 and job peak17,180,917,760 bytes, exit1 and
+no timeout under the unchanged16GiB registration. All four n16/c2 FP jobs
+therefore remain failed, without invented scores, installation or trajectory
+closure. Both corresponding posterior jobs execute; their mean unseen
+AMP CE is0.3269395091. This asymmetry is part of the experiment's outcome.
+
+The first n8/c4/seed18/rate1 stream seals and installs. Its candidate unseen
+CE is0.4217356003 and deployed unseen CE0.5295714675. These are descriptive
+values from one registered case, not a c4 mean or population result. Exact
+post-analysis now verifies the seventeen-attempt prefix: thirteen EXECUTED,
+four FAILED, nine sealed FP streams, eight installs,52 dynamic score checks,
+nine fresh decisions,5,034 CUDA/binary64 phases each and640 new posterior
+GPU forecasts. This commit retains that checked journal prefix. The main
+matrix continues at source38b27b3 with its original resources and parameters.
