@@ -1,7 +1,7 @@
 # Positive constraint contraction of a native window posterior
 
-Status: **scoped model/representation theorem and exact numerical audit**.
-Two owned RTX3090 controls are registered, with execution pending. This is
+Status: **scoped model/representation theorem, exact numerical audit and two
+completed owned RTX3090 controls**. The stronger centered control is pending. This is
 neither a new Foundation/ERC theorem nor an implemented Compiler proposer.
 The question is how to realize useful uncertainty without enumerating all
 latent worlds or importing their numerical posterior state.
@@ -99,6 +99,9 @@ is at most `9^H-1`, and a final excess at most `9^(H+1)-1`.
 The coefficient comparison holds for all H>=0 because
 `8^(H+1)/(10*9^H)=(4/5)(8/9)^H <= 1`.
 The full-world graph's natural normalizer bound instead has an extra K.
+Section7 gives a stronger centered full-world graph that removes this factor
+when K<=8. It prevents interpreting contraction's range saving against the
+first literal enumeration as an inherent advantage over full-world models.
 
 For each fixed H the contracted graph has size polynomial in n, rather
 than requiring K latent representatives. More explicitly, let B_m be the
@@ -188,7 +191,7 @@ values are exact half values; maximum node6560 and normalizer7290 are attained.
 `--boundaries` checks the two counterexamples; `--counts` reports literal costs.
 These audits do not load Torch and confer no Runtime authority.
 
-## 6. Registered owned comparison, pending execution
+## 6. Completed owned comparison, with its actual costs
 
 `experiments/joint_uncertainty/constraint_cuda.py` registers both n2,H3
 models as separate initial owned CUDA runs, with independent binary64 replay.
@@ -214,3 +217,88 @@ and actual mixed-precision trajectory. Any failure remains in its original
 fixed-budget job. No discovery, class certificate, fresh evidence or install
 is requested by this initially registered control. Do not borrow v6's separate
 construction/installation authority or declare this a complete compiler path.
+
+Both source-bound jobs complete at `65c6472d42649a0a6ac78fa418737e1819ac1458`,
+seal all nine observations, and each independently replay28 CUDA and28
+binary64 phases. The [compact journal](../../evidence/minimal/FP_CONSTRAINT_CONTRACTION_CUDA_AUDIT.json)
+retains both completed jobs and device/build identities, without whole-phase
+or dataset dumps. Neither job times out or acquires a class/install certificate.
+
+| Measured coordinate | contracted | uncentered enumeration |
+|---|---:|---:|
+| completed job commitment peak (bytes) | 5319102464 | 2554642432 |
+| packed payload peak (bytes) | 570850422 | 90834766 |
+| used native arena extent (bytes) | 1003144 | 65704 |
+| maximum complete phase frame (bytes) | 792426 | 46688 |
+| maximum output cells | 10785 | 604 |
+| maximum CUDA native error | 0 | 1 |
+| maximum CUDA normalizer error | 0 | 2 |
+| maximum CUDA raw probability error | 1/41943040 | 583/26214400 |
+| maximum CUDA division error | 1/41943040 | 1/41943040 |
+
+CUDA gradient/state errors are39917/69646417920 and117225893/92861890560;
+zero native error never meant an exact backward trajectory. Binary64 native
+and normalizer errors are zero for both. The retained reference p0 sequence
+is `(.9,.9,.9,.9,.5,41/50,73/82,41/50,9/50)`: causal labels change subsequent
+predictions and eviction is actually executed. The declared common16MiB arena,
+32MiB allocator and whole-board capacity are charged even where used extent
+is smaller. These are correctness/resource observations from separate jobs,
+not throughput or population performance claims.
+
+## 7. Attack the comparator: centered integer excesses
+
+The literal uncentered enumerator is not the strongest available small-n
+baseline. For K=2^(n-1)<=8, put `v_z=(w_z-1)/K`, starting from zero. Since
+`w_z>=1`, this analytical change of coordinates has a positive update:
+
+`v_z' = v_z + I_z*(8 v_z + 8/K)`.
+
+Now `Z=1+SUM_z v_z` and
+
+`M_y = 1+SUM_z v_z + SUM_z G_(z,y)*(8 v_z+8/K)`.
+
+Here c=8/K is an integer (4,2 or1), formed from paid unit incidences; the
+coefficient8 of v uses actual slot1. No runtime subtraction or division is
+performed. This produces the same averaged masses as the partition expansion,
+using the original number of world chains. In fact the affine forward identity
+still holds for soft previous indicators, provided the current unit source
+sums to one. It does not grant complete learner or evidence transport.
+
+For H<=3, all v values are integers at most364; scaled terms are
+`(8/K)*9^j`, at most2916 for K2 and at most1458 for K>=4, hence half-exact.
+The common excess is an integer at most728. Query and final excess SUM
+results are multiples of four by the signed-rank identity above, at most6560;
+their partial accumulation is single. Thus the centered graph also has
+half-exact native forward values and averaged masses on the categorical
+domain. Final division and all gradients retain their own numerical obligations.
+
+Literal n2,H3 counts are102 nodes/174 edges, compared with102/172 uncentered
+and1771/3899 contracted. n3/H3 has192/435 and n4/H3 has334/1043. For the
+actual n2 registered scope, centering therefore supplies the same exact
+forward arithmetic at far smaller graph cost than partition contraction.
+This is a strict correction to any inference that the latter is the useful
+small-n implementation; its general fixed-H n-dependence remains a separate
+representation theorem.
+
+For K>8, the same individual v coordinate cannot be implemented by a zero-rate
+native program with integer Gamma1/8, Boolean sources and zero-initialized
+native delays: induction gives integer node/delay values, but its first
+matched observation requires v=8/K, a noninteger. This only rules out that
+particular scalar coordinate realization under that initializer. It does not
+rule out the contracted integer masses, another code, a different registered
+initializer, or a more effective positive program.
+
+`python -B experiments/joint_uncertainty/centered_contraction.py --algebra`
+checks2,965 exact native forecasts: the entire n2,H3 domain and225/400 n3/n4
+diagnostic forecasts. It also checks53 formal and53 exact rounded forecasts;
+all56 encountered integer values are half-exact. An informative witness avoids
+relying on a cancelable diagonal likelihood factor: three `(0,1,0)` labels,
+then query `(0,1)`, give both centered and contracted masses `(3281,369)`
+exactly. The uncentered graph has `(6562,738)` but stores `(6561,738)`.
+These are interpreter results, not an actual target claim for centering.
+The two completed jobs from section6 retain their original registration.
+`experiments/joint_uncertainty/centered_cuda.py` registers one new centered
+job with the same tape, full source domain, caps, tolerances and independent
+audits. It checks equality of every registration field except the model/counts,
+links the completed two-job journal, and does not repeat either earlier job.
+Actual centered execution remains pending.

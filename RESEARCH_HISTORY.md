@@ -3715,3 +3715,26 @@ already has135,274,560 rows. Two owned n2,H3 CUDA controls are registered
 with identical16GiB jobs,2GiB packed caps,16/32MiB target storage and complete
 2MiB phase evidence. Their actual result is pending; no zero-cost inference,
 model-quality improvement, discovery, fresh install or class closure is claimed.
+
+Attacking the uncentered comparator immediately reveals a cheaper positive
+coordinate: v=(w-1)/K updates as v+I*(8v+8/K). For K<=8, all coefficients are
+integers made with the same actual initializer. At n2,H3 this graph has102
+nodes/174 edges and achieves the same averaged masses and half-exact forward
+values as the1771-node contraction. Another2,965 exact forecasts and53
+formal/rounded checks each pass. A repeated informative cross edge gives
+exact masses3281/369 for both new representations, versus the uncentered
+6562/738 with its first mass rounded to6561. The contraction remains a
+general fixed-H polynomial-in-n representation theorem, but is not the
+small-n implementation winner. Existing source-bound jobs keep their original
+registration and must be retained; the stronger control's owned execution
+is a separate pending obligation, not grounds to repeat those jobs.
+
+The first pair now completes at65c6472: both seal all nine events, with28
+independent CUDA/binary64 phases per job,56 per path total. Contracted native/
+normalizer error is zero; the uncentered errors are1/2. Raw probability errors
+are1/41943040 and583/26214400. The contracted graph pays570,850,422 packed
+bytes and5,319,102,464 peak job bytes, versus90,834,766 and2,554,642,432 for
+the uncentered graph. Both stay inside unchanged caps without timeout.
+Complete phase frames reach792,426 versus46,688 bytes. The strong centered
+control is registered as one further job with the identical tape/resources;
+the earlier two source-bound outcomes remain immutable and are not repeated.

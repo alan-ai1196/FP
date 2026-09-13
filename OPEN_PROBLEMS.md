@@ -159,10 +159,17 @@ removes latent-world multiplicity from the initialized mass range and provides
 a fixed-H polynomial graph in token count using only Gamma1/8. This is an
 explicit native representation, not a whole-learner quotient. Its Bell-number
 window cost and the full expanded causal domain remain large: n8,H3 already
-has135,274,560 source rows. A matched two-job owned n2,H3 CUDA control is pending.
-Determine its complete charged execution cost before proposing it as useful
+has135,274,560 source rows. Both matched n2,H3 CUDA jobs complete at65c6472,
+with56 independent CUDA/binary64 phases each; their packed peaks are
+570,850,422/90,834,766 bytes. Account for that cost before proposing useful
 adaptation. Do not shrink the domain to observed contexts or borrow v6's
 source/state/installation authority to hide that cost.
+The stronger centered full-world control v=(w-1)/K already matches the
+contracted masses with102 nodes at n2,H3. Its integral8/K construction works
+for K<=8; exact/rounded audits pass but owned execution is pending. Thus
+partition contraction has no established small-n advantage. Any useful large-n
+application must beat that stronger baseline where applicable and retain its
+actual domain/whole-runtime cost.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

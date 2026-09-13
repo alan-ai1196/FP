@@ -280,7 +280,15 @@ initializer, learner and complete categorical domain. Exact signed-rank and
 native forecast audits pass, including whole-learner and soft-input boundaries.
 `experiments/joint_uncertainty/constraint_cuda.py` preregisters two matched n2,H3
 owned target controls, including adaptation, eviction and a mass-rounding witness.
-Execution is pending; no class, persistence or install authority is claimed.
+Both jobs complete and seal at65c6472, with56 independent CUDA and56 binary64
+phases, native errors0/1 and normalizer errors0/2. Packed payload peaks are
+570,850,422/90,834,766 bytes; original jobs fit their fixed caps. No class,
+persistence or install authority is claimed.
+The stronger centered enumerator now passes a separate exact audit: at n2,H3
+it uses102 nodes/174 edges and gives the same averaged, half-exact masses as
+the1771-node contraction. Its owned target check remains pending. Existing
+registered jobs keep their original code and outcomes; no resource comparison
+may omit this newly derived control.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

@@ -304,9 +304,19 @@ gradient/soft-input counterexamples to broader equivalence. It is expensive:
 n2,H3 uses1771 nodes versus102 for the full-world baseline, and both share all
 2340 causal source-domain rows. Run `constraint_contraction.py --algebra` and
 `--boundaries` under `experiments/joint_uncertainty`. The source-bound two-job
-`constraint_cuda.py` comparison is registered but pending. Preserve its identical
-resource/interface grants and all failed outcomes. This is an initial-model
+`constraint_cuda.py` comparison completes at65c6472: both seal, with56 independent
+CUDA/binary64 phases each. Native errors are0/1 and normalizer errors0/2;
+packed peaks are570,850,422/90,834,766 bytes. Preserve its identical
+resource/interface grants and original outcomes. This is an initial-model
 control, not v7, a learned prior/noise result or an installation certificate.
+An adversarial comparator improvement is now essential: the centered variable
+v=(w-1)/K has positive update v+I*(8v+8/K). For K<=8 its integer coefficients
+use the same Gamma, giving identical averaged masses and half-exact H3 values
+with only102 nodes/174 edges at n2. `centered_contraction.py --algebra` passes
+2,965 exact forecasts and53 formal/rounded checks each. The generic contraction
+is therefore not the useful small-n winner. Retain the original two completed
+jobs. `centered_cuda.py` registers one new matched job for this stronger control,
+linking those outcomes without rerunning them. Its target evidence is pending.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

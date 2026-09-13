@@ -111,8 +111,12 @@ XOR constraints before native evaluation. Its initialized base-one mass range
 is independent of latent-world count, and its fixed-window graph is polynomial
 in token count. Categorical source-domain and graph costs remain explicit;
 different gradients and a soft-input counterexample forbid learner transport.
-Exact audits pass; the matched owned CUDA comparison is registered and pending.
+Exact audits and two source-bound owned CUDA controls pass at65c6472, with
+56 independent CUDA/binary64 phases each; actual graph/evidence costs remain.
 This is model representation research, not another static ERC law or proposer.
+For small n, a stronger centered-world positive recurrence realizes the same
+averaged masses with much less graph structure. Its exact audit prevents
+promoting the general contraction identity to an implementation advantage.
 
 ---
 
