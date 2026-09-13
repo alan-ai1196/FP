@@ -100,8 +100,10 @@ now realizes that separation through owned initialization, actual profile
 replay and prospective installation. A causal-origin tail theorem supplies
 valid warm states without resetting replay history; base-one positive syntax
 uses actual initializer slots. Exact checks and functional CPU installation
-retain the unresolved historical class. The source-bound CPU/CUDA extension
-is registered and pending; it alters no frozen definition below.
+retain the unresolved historical class. Four source-bound CPU/CUDA jobs at
+6acbd85 now seal and install, with1,090 binary64 phases,545 actual CUDA phases
+and288 fresh score/wealth checks. Actual native quantization errors are
+retained; this extension alters no frozen definition below.
 
 ---
 

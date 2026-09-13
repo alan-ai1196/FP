@@ -3643,3 +3643,33 @@ output to the parent's existing before/after source checks and completed
 process identity. It changes no model, case, data, resource, tolerance,
 Runtime semantic path or acceptance condition. The corrected four-job
 registration explicitly links the earlier four failures before execution.
+
+## 103. The causal proposal reaches owned CPU and RTX3090 installation
+
+The corrected four-job matrix at6acbd85 completes with all four EXECUTED,
+sealed and installed at cursor39. Full/twice profiles execute3/6 events and
+retain distinct complete optimizer clocks and provenance. Every historical
+class remains unresolved; CLOSED_BY_INSTALL is terminal bookkeeping, not
+a global-maximum certificate. CPU jobs check268/277 binary64 phases; GPU
+jobs independently check268/277 CUDA and binary64 phases. Totals are1,090
+binary64 phases,545 actual CUDA phases and288 fresh score/log/wealth checks,
+including both paths' first crossings and the spent global alpha1/2.
+
+Actual CUDA masters/delays stay exact. Native/normalizer error3 agrees with
+the independent rounded preflight; state error is130103/209715200, raw
+probability error315089/13757317120 and division error3497/126852530176.
+Binary64 native/normalizer errors are zero. CPU maximum job commitment is
+106,569,728 bytes and CUDA2,423,279,616, within the unchanged512MiB/4GiB caps.
+Maximum packed payload49,239,902, native arena extent590,704, frame75,759
+and output cells958 fit the registration. The original four report failures
+remain failed and linked. No whole-release, population/noise-learning or
+whole-history claim is added; RN-5 continues at its original main source.
+
+The accompanying proof also identifies why this categorical-upper route
+cannot close the tested historical classes: positive base and finite R
+make a pure source cell's categorical factor1 unattainable. The first lagged
+target context is uniquely empty, so objectives containing record0 include
+such a cell. This is a loose-bound route limitation, not an impossibility
+of optimizing the actual finite native class by a different solver. Useful
+future adaptation and its information/resource costs remain the research
+frontier after this construction/installation control closes.

@@ -143,8 +143,9 @@ native state remain separate obligations. The [owned causal proposer](theory/pro
 now closes the functional construction/install path: ordinary data guides
 an initialized-noise native emission, causal profile replay creates its state,
 and fresh evidence installs it while its full empirical class remains
-unresolved. Its CPU/RTX3090 source-bound four-job matrix is registered and
-pending. Complete that physical check, then attack useful uncertainty-preserving
+unresolved. Its CPU/RTX3090 source-bound four-job matrix now completes
+at6acbd85, with four sealed/installing streams,1,090 binary64 phases,545 CUDA
+phases and288 fresh score/wealth checks. Attack useful uncertainty-preserving
 adaptation at matched information/resource cuts. The origin-tail criterion
 and exact replay counterexamples prevent treating any replay as an implicit
 reset. Noise identification, whole-history affordability and a full class

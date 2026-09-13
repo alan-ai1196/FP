@@ -1,8 +1,8 @@
 # An owned native posterior proposal, with causal profile provenance
 
 Status: **scoped construction and replay theorems, exact adversarial checks,
-and functional owned CPU construction/installation**. Four fresh CPU/RTX3090
-jobs are registered below and remain pending at this source. This extends
+and source-bound owned CPU/RTX3090 construction/installation**. Four fresh
+jobs complete at `6acbd85`, retaining four earlier reporting failures. This extends
 a solver, not Foundation, ERC-1, the native grammar, learner or search objective.
 
 The [initial recurrent control](NATIVE_RECURRENT_POSTERIOR.md) established
@@ -53,6 +53,16 @@ scores that resulting frozen learner on the logged contexts. Only an owned
 witness attaining the independently verified categorical upper can close
 this bounded search. One proposed graph does not advance an enumeration
 cursor, declare other graphs infeasible, or exhaust that class.
+
+In fact this particular categorical-upper route cannot close an objective
+containing a pure source cell when the positive base and finite normalizer
+cap are enforced. For that cell, `p_y<=1-SUM_(j!=y) base_j/R<1`, whereas
+its categorical optimum factor is1; no other cell can exceed its own
+categorical maximum to compensate. With both lag1 target atoms, ordinary
+record0 has a unique empty-previous-target context, so an objective including
+it contains such a pure cell. This explains the four controls' unresolved
+categorical bound. It is a limitation of this bound/solver route, not an
+impossibility of proving the actual finite class optimum by another method.
 
 ## 2. Base-one positive realization
 
@@ -274,5 +284,34 @@ complete target-phase claim is reconstructed from those failed outputs.
 The correction removes that unnecessary child process. The parent already
 checks the committed source and clean dependencies before/after each job,
 and binds the completed process identity. All four cases, models, budgets,
-precision tolerances and acceptance rules remain fixed; corrected jobs are
-pending at this source.
+precision tolerances and acceptance rules remain fixed.
+
+## 7. Completed physical evidence
+
+The [corrected journal](../../evidence/minimal/FP_CAUSAL_RELATION_PROPOSAL_AUDIT.json)
+binds `6acbd85`: all four jobs execute successfully, seal and install at
+cursor39. Full/twice profiles retain3/6 actual optimizer steps at birth.
+Their complete reference classes stay UNRESOLVED; terminal search status
+CLOSED_BY_INSTALL supplies no global-maximum proof. Each stream retains44
+observations and independently checks72 actual fresh score/log/wealth
+records and both first crossings. No alpha is inherited or refunded.
+
+CPU full/twice runs check268/277 binary64 phases. CUDA full/twice runs
+check268/277 actual CUDA phases and the same independent binary64 phases:
+1,090 binary64 and545 CUDA phases overall, plus288 fresh checks. On the
+registered CUDA trajectories, actual masters and delayed coordinates remain
+exact. Maximum state error is130103/209715200, native and normalizer errors3,
+raw probability versus reference error315089/13757317120, and final division
+error3497/126852530176. The exact raw-word interpreter audit explains the
+distinct normalized stored-mass probability error77/3362410 reported above.
+Binary64 has zero native/normalizer error and maximum state error
+103/225179981368524800; probability/division error is51/923237923610951680.
+
+Largest completed CPU job commitment is106,569,728 bytes within512MiB;
+largest CUDA job commitment2,423,279,616 within4GiB. Maximum packed payload
+is49,239,902 bytes; native arena extent590,704 bytes, phase frame75,759 bytes
+and output cells958. These fit their unchanged registration. The original
+four reporting failures keep their failed statuses and complete job records.
+This closes this construction/installation control, not the full frozen
+release again, noise identification, model quality or affordable long-history
+inference. The unchanged RN-5 matrix continues independently.

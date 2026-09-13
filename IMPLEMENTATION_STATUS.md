@@ -246,23 +246,29 @@ all profile clocks and data. Exact checks cover1,552 guidance scores and
 create authority. Functional CPU execution installs at cursor39 and seals
 with268 independently replayed phases, while the historical class remains
 UNRESOLVED. Four fresh CPU/full, CPU/twice, CUDA/full and CUDA/twice jobs
-are registered in `scripts/audit_causal_relation.py`; their results remain
-pending. This is not a new full implementation release. These source edits
+complete at6acbd85 in `scripts/audit_causal_relation.py`: all seal/install,
+checking1,090 binary64 phases,545 CUDA phases and288 actual fresh-score/
+wealth updates. Maximum job commitment is106,569,728 bytes for CPU and
+2,423,279,616 for CUDA; maximum packed payload49,239,902, native extent590,704,
+frame75,759 and output cells958. This is not a new full implementation release. These source edits
 stay on the canonical research branch while main RN-5 workers are active.
 
 The first four jobs at35ba35b failed during final report generation: the
 wrapper spawned Git inside a one-active-process job and received WinError1816.
 All four original jobs/traces are retained in the separate report-failure
 journal. The correction uses the parent's existing source checks and removes
-only that forbidden child query. The same four corrected jobs are pending;
-no successful per-job model summary is reconstructed from the failed outputs.
+only that forbidden child query. The same four corrected jobs complete at
+6acbd85; no successful per-job model summary is reconstructed from the
+failed outputs.
 
 The new base-one graph has a measured interpreter precision distinction:
 91 profile/ordinary rounded forecasts keep masters and delays exact but
 have native/normalizer error up to3 and probability error77/3362410. All171
-rounded source/queue boxes fit cap29160 (maximum29158). Its pending GPU
-registration fixes native/state tolerance8 and probability1/10000 before
-execution; the old base-K exact-mass claim is not borrowed.
+rounded source/queue boxes fit cap29160 (maximum29158). Its GPU
+registration fixed native/state tolerance8 and probability1/10000 before
+execution. Actual target maxima confirm native/normalizer error3, state
+error130103/209715200 and raw probability error315089/13757317120. The old
+base-K exact-mass claim is not borrowed.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

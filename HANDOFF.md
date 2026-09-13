@@ -263,15 +263,18 @@ native base-one window model from ordinary observations and actual initializer
 slots. Runtime constructs it through its registered profile, compares its
 full endpoint and installs only through actual fresh paired evidence. One
 functional CPU stream seals with268 binary64 phases and installs at cursor39;
-it leaves the full historical class unresolved. Its construction/installation
-CPU/RTX3090 jobs are registered but pending. Finish those four source-bound
-jobs next; then study useful adaptation under matched information and
-resources. Do not equate this finite known-prior proposal heuristic with
+it leaves the full historical class unresolved. Four source-bound
+CPU/RTX3090 jobs now complete at6acbd85: all seal and install, with1,090
+binary64 phases,545 actual CUDA phases and288 independently checked fresh
+scores/wealth steps. Native/normalizer error3 is retained separately from
+probability error; actual masters and delays remain exact. Next study useful
+adaptation under matched information and resources. Do not equate this finite known-prior proposal heuristic with
 identified noise or affordable whole-history inference.
 The first four jobs at35ba35b failed in report generation because a Git
 subprocess violated their one-active-process fence. Their original failure
 journal is retained; the wrapper now relies on the parent's source checks.
-The corrected four-job matrix keeps every case, resource and tolerance.
+The corrected four-job matrix keeps every case, resource and tolerance,
+and its complete evidence links those four failures.
 Read the [selection-objective proof](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 before treating recurrent training fit as generative evidence. Actual H2
 endpoints give73/100 retrospective likelihood versus41/100 causal likelihood
