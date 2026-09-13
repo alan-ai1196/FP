@@ -264,3 +264,15 @@ Commit this registration before `--bounded --write`; retain every completed
 job, failed or successful, under its source. Pending GPU results cannot be
 borrowed from the earlier initially supplied native model. The existing
 RN-5 matrix keeps its main source, data, budgets and acceptance rules.
+
+The first four jobs at `35ba35b` all failed in result reporting after the
+owned audit returned. The wrapper tried to spawn Git to query HEAD, violating
+the unchanged one-active-process job fence (WinError1816). Their original
+[complete failure journal](../../evidence/minimal/FP_CAUSAL_RELATION_PROPOSAL_REPORT_FAILURE.json)
+retains every job and traceback. No per-job successful model summary or
+complete target-phase claim is reconstructed from those failed outputs.
+The correction removes that unnecessary child process. The parent already
+checks the committed source and clean dependencies before/after each job,
+and binds the completed process identity. All four cases, models, budgets,
+precision tolerances and acceptance rules remain fixed; corrected jobs are
+pending at this source.

@@ -43,7 +43,9 @@ CASES=(('cpu','full'),('cpu','twice'),('cuda','full'),('cuda','twice'))
 HOST_CAPS={'cpu':512<<20,'cuda':4<<30}
 TIMEOUT=300000
 OUTPUT=ROOT/'evidence/minimal/FP_CAUSAL_RELATION_PROPOSAL_AUDIT.json'
-DEPENDENCIES=('src/reference_compiler','scripts','experiments/joint_uncertainty/recurrent_control.py')
+FAILURE=ROOT/'evidence/minimal/FP_CAUSAL_RELATION_PROPOSAL_REPORT_FAILURE.json'
+DEPENDENCIES=('src/reference_compiler','scripts','experiments/joint_uncertainty/recurrent_control.py',
+    'evidence/minimal/FP_CAUSAL_RELATION_PROPOSAL_REPORT_FAILURE.json')
 TAPE=((0,1,0),)*40+((1,2,0),(0,2,0),(0,1,1),(0,2,1))
 AMP_NATIVE_ATOL=F(8)
 AMP_PROBABILITY_ATOL=F(1,10000)
@@ -449,6 +451,12 @@ def bounded(write,resume):
     else:
         assert not write or not OUTPUT.exists(),'retain previous evidence; do not silently repeat registered jobs'
         report={'status':'PARTIAL_EXECUTION','registration_source':source,'registration':registration,'workers':[]}
+        failure=json.loads(FAILURE.read_text(encoding='utf-8'))
+        assert len(failure['workers'])==4 and all(r['worker_status']=='FAILED' for r in failure['workers'])
+        assert failure['registration']==registration
+        report['prior_report_failure']={'journal':FAILURE.relative_to(ROOT).as_posix(),
+            'source':failure['registration_source'],'completed_failed_jobs':4,
+            'correction':'parent binds unchanged source before/after every job; remove forbidden child Git query after owned audit; all cases/resources/tolerances unchanged'}
     def publish():
         if write:
             temp=OUTPUT.with_suffix('.tmp')
@@ -471,7 +479,7 @@ def bounded(write,resume):
                     row['result']=json.loads(payload)
                 if job.exit_code==0 and not job.timed_out:
                     result=row['result'];observed=result['host']
-                    assert result['process_id']==job.process_id and result['execution_source']==source
+                    assert result['process_id']==job.process_id
                     assert (observed['process_id'],observed['creation_100ns'])==(job.process_id,job.process_creation_100ns)
                     assert observed['lifetime_process_commit_peak']<=job.peak_process_commit<=HOST_CAPS[path]
                     assert observed['job_commit_peak']<=job.peak_job_commit<=HOST_CAPS[path]
@@ -507,7 +515,10 @@ if __name__=='__main__':
         try:
             path,case=CASES[args.worker]
             result=owned(path,case,True)
-            result.update(process_id=os.getpid(),execution_source=control.git('rev-parse','HEAD'))
+            # The job admits one active process. Source identity is bound by
+            # the parent's checks around this complete job, never by spawning
+            # Git from the measured worker after its owned execution.
+            result.update(process_id=os.getpid())
         except Exception:
             Path(args.output).write_text(json.dumps({'traceback':traceback.format_exc(),'process_id':os.getpid()}),encoding='utf-8')
             raise

@@ -250,6 +250,13 @@ are registered in `scripts/audit_causal_relation.py`; their results remain
 pending. This is not a new full implementation release. These source edits
 stay on the canonical research branch while main RN-5 workers are active.
 
+The first four jobs at35ba35b failed during final report generation: the
+wrapper spawned Git inside a one-active-process job and received WinError1816.
+All four original jobs/traces are retained in the separate report-failure
+journal. The correction uses the parent's existing source checks and removes
+only that forbidden child query. The same four corrected jobs are pending;
+no successful per-job model summary is reconstructed from the failed outputs.
+
 The new base-one graph has a measured interpreter precision distinction:
 91 profile/ordinary rounded forecasts keep masters and delays exact but
 have native/normalizer error up to3 and probability error77/3362410. All171

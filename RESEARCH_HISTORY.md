@@ -3628,3 +3628,18 @@ have native/normalizer error up to3 and probability error77/3362410. All171
 rounded source/queue boxes fit cap29160 (maximum29158). Its pending GPU
 registration fixes native/state tolerance8 and probability1/10000 before
 execution; the old base-K exact-mass claim is not borrowed.
+
+## 102. Keep the causal-proposer report failures inside their original scope
+
+All four source35ba35b jobs returned from the owned audit but failed while
+the result wrapper attempted to spawn Git inside the one-active-process
+job fence. Each exits1 without timeout, with WinError1816. Their original
+complete journal is retained separately; no successful model output or
+full target-phase count is recreated from an absent summary. CPU job peaks
+are104,632,320 and106,717,184 bytes, CUDA peaks2,412,572,672 and2,423,009,280;
+the physical job accounting survives independently of the failed report.
+The fix removes this unnecessary source-query child process and binds the
+output to the parent's existing before/after source checks and completed
+process identity. It changes no model, case, data, resource, tolerance,
+Runtime semantic path or acceptance condition. The corrected four-job
+registration explicitly links the earlier four failures before execution.

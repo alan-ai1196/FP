@@ -1,0 +1,167 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration_source": "35ba35b075c62796f28c60dda0f508fb07aa3eb7",
+  "registration": {
+    "cases": [
+      [
+        "cpu",
+        "full"
+      ],
+      [
+        "cpu",
+        "twice"
+      ],
+      [
+        "cuda",
+        "full"
+      ],
+      [
+        "cuda",
+        "twice"
+      ]
+    ],
+    "host_caps": {
+      "cpu": 536870912,
+      "cuda": 4294967296
+    },
+    "timeout_ms": 300000,
+    "source_domain_rows": 171,
+    "grammar": {
+      "nodes": 256,
+      "SUMs": 102,
+      "PRODUCTs": 118,
+      "edges": 528,
+      "slots": 12
+    },
+    "initializer": [
+      "1",
+      "8"
+    ],
+    "learner": {
+      "rate": "0",
+      "unit": 1,
+      "grid": null
+    },
+    "range_cap": "29160",
+    "packed_cap": 268435456,
+    "work_per_role": 10000000000,
+    "native_arena_bytes": 16777216,
+    "native_allocator_bytes": 33554432,
+    "output_cells": 4096,
+    "phase_evidence_bytes": 131072,
+    "state_native_normalizer_tolerance": "8",
+    "probability_tolerance": "1/10000",
+    "fresh": {
+      "cut": 3,
+      "epochs": 40,
+      "gain_bound": "11",
+      "bet": "3/4",
+      "alpha_per_path": "1/4",
+      "alpha_total": "3/4"
+    },
+    "ordinary_events": 44,
+    "scope": "owned native construction, actual profiles and paired installation; deterministic correctness tapes, no population/noise-identification or full-class optimum"
+  },
+  "workers": [
+    {
+      "case_index": 0,
+      "path": "cpu",
+      "case": "full",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 103415808,
+        "peak_job_commit": 104632320,
+        "user_100ns": 615625000,
+        "kernel_100ns": 2187500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29248,
+        "process_creation_100ns": 134337834561476121
+      },
+      "execution_source": "35ba35b075c62796f28c60dda0f508fb07aa3eb7",
+      "result": {
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP-research-joint-geometry\\scripts\\audit_causal_relation.py\", line 510, in <module>\n    result.update(process_id=os.getpid(),execution_source=control.git('rev-parse','HEAD'))\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP-research-joint-geometry\\experiments\\joint_uncertainty\\recurrent_control.py\", line 230, in git\n    return subprocess.check_output(['git',*args],cwd=ROOT).decode().rstrip('\\r\\n')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 468, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1028, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1540, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002\n",
+        "process_id": 29248
+      }
+    },
+    {
+      "case_index": 1,
+      "path": "cpu",
+      "case": "twice",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 105480192,
+        "peak_job_commit": 106717184,
+        "user_100ns": 671093750,
+        "kernel_100ns": 1406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 13048,
+        "process_creation_100ns": 134337835180531091
+      },
+      "execution_source": "35ba35b075c62796f28c60dda0f508fb07aa3eb7",
+      "result": {
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP-research-joint-geometry\\scripts\\audit_causal_relation.py\", line 510, in <module>\n    result.update(process_id=os.getpid(),execution_source=control.git('rev-parse','HEAD'))\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP-research-joint-geometry\\experiments\\joint_uncertainty\\recurrent_control.py\", line 230, in git\n    return subprocess.check_output(['git',*args],cwd=ROOT).decode().rstrip('\\r\\n')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 468, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1028, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1540, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002\n",
+        "process_id": 13048
+      }
+    },
+    {
+      "case_index": 2,
+      "path": "cuda",
+      "case": "full",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2411327488,
+        "peak_job_commit": 2412572672,
+        "user_100ns": 752656250,
+        "kernel_100ns": 30312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3720,
+        "process_creation_100ns": 134337835854712792
+      },
+      "execution_source": "35ba35b075c62796f28c60dda0f508fb07aa3eb7",
+      "result": {
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP-research-joint-geometry\\scripts\\audit_causal_relation.py\", line 510, in <module>\n    result.update(process_id=os.getpid(),execution_source=control.git('rev-parse','HEAD'))\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP-research-joint-geometry\\experiments\\joint_uncertainty\\recurrent_control.py\", line 230, in git\n    return subprocess.check_output(['git',*args],cwd=ROOT).decode().rstrip('\\r\\n')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 468, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1028, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1540, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002\n",
+        "process_id": 3720
+      }
+    },
+    {
+      "case_index": 3,
+      "path": "cuda",
+      "case": "twice",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2421776384,
+        "peak_job_commit": 2423009280,
+        "user_100ns": 834062500,
+        "kernel_100ns": 29843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28756,
+        "process_creation_100ns": 134337836659717037
+      },
+      "execution_source": "35ba35b075c62796f28c60dda0f508fb07aa3eb7",
+      "result": {
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP-research-joint-geometry\\scripts\\audit_causal_relation.py\", line 510, in <module>\n    result.update(process_id=os.getpid(),execution_source=control.git('rev-parse','HEAD'))\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP-research-joint-geometry\\experiments\\joint_uncertainty\\recurrent_control.py\", line 230, in git\n    return subprocess.check_output(['git',*args],cwd=ROOT).decode().rstrip('\\r\\n')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 468, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1028, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1540, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002\n",
+        "process_id": 28756
+      }
+    }
+  ]
+}
