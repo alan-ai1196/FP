@@ -72,6 +72,11 @@ retained numerical/range refusals, changes no Foundation definition below.
 The [empirical sign obstruction](theory/proofs/EMPIRICAL_SIGN_OBSTRUCTION.md)
 bounds that emitted family while leaving retained data and future native
 constructions available. RN-5 tests the scoped limitation under the frozen contract.
+The [joint learner geometry](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md)
+likewise retains a prediction-invariant coordinate when future SGD can use it.
+Its real-parameter relaxation has an exact fixed-sign risk optimum, distinct
+from reachable reference states and changing forecasts. None of these scoped
+model results changes semantics or target-run parameters.
 
 ---
 
