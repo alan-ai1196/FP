@@ -179,6 +179,36 @@ The registered native host scope is commitment and observed lifetime CPU;
 the external audit launcher additionally enforces its fixed120-second
 timeout. Neither scope supplies a GPU or total-machine resource claim.
 
+### Actual AMP registration
+
+`recurrent_cuda.py --write` registers the same48 H3 four-label interpreter
+streams and the H2 eviction control as49 fresh target jobs. Each uses the
+same initial native graph, Gamma, learner and data interface as the CPU
+control, now inside CudaCompilerPolicy(()) and the actual owned AMP bridge.
+Host process/job commitment is4GiB, timeout120seconds, native arena16MiB,
+allocator reservation32MiB, packed cap256MiB, work10^10 per role,4096 output
+cells and131072 retained bytes per phase. Reference and CUDA state/native/
+normalizer and probability tolerances are1/100. The exact source metadata
+needs at most941 output cells; this does not guarantee completion or bound
+unexecuted numeric errors. Every failed job or Runtime refusal remains in
+the journal, with no complete trajectory claim for an unaudited failure.
+
+All13 initialize/predict/observe/commit phases of a sealed four-event run
+must match the independent rounded interpreter and independent binary64
+replay. Each actual mass forecast is compared with enumeration of all2^n
+latent assignments at the same information cut. Native masses and delayed
+values are also compared with reference, while raw single-division error
+is retained separately. No learner state or posterior vector is supplied
+to Runtime, and no class proof or installation is claimed by the control.
+
+The [frozen device scope](CUDA_RELEASE_SCOPE.md#2-physical-resources-and-supported-boundaries)
+uses process-local native allocation counters and a uniform physical-board
+residency upper; it does not promise exclusive board availability. These
+short jobs may therefore run in separate processes beside RN-5 without
+changing its execution source or budgets. Both keep their actual resource
+observations. No comparative timing or GPU exclusivity claim is made.
+The matrix is registration only until its source-bound workers complete.
+
 ## 6. What this resolves and what it leaves open
 
 The earlier finite-update calibration failure belongs to v5's parameter

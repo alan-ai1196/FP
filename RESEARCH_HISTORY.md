@@ -3452,3 +3452,25 @@ canonical research branch now retains this exact thirteen-attempt partial
 journal; the running main worktree remains at38b27b3 with its evolving
 journal and the unchanged rest of the31-worker matrix. No partial plot,
 failed tail or complete-experiment claim is introduced.
+
+## 97. Register the native recurrent model on the actual AMP path
+
+The frozen CUDA scope does not require exclusive board availability. Its
+native allocator history is process-local and its distinct physical VRAM
+coordinate charges the identified board's full capacity. Therefore an
+independent short target control can proceed while the unchanged RN-5
+worker continues; neither experiment gains a timing or exclusivity claim.
+
+`recurrent_cuda.py` preregisters the48 existing H3 rounded-interpreter
+four-label streams plus the H2 eviction control as49 fresh Windows jobs.
+All use the same initial native graph/learner/lagged sources, with ordinary
+context and target input only. Each gets4GiB host commitment,120seconds,
+16MiB native arena,32MiB allocator reservation,256MiB packed payload,10^10
+work per role,4096 output cells and131072 prepaid bytes per phase. State,
+native, normalizer and probability tolerances remain1/100. Metadata-only
+preflight finds at most941 output cells, without importing Torch or running
+the target. Completed jobs, all native phases, independent rounded/binary64
+replay and same-cut full-assignment posterior forecasts will determine the
+outcomes. The source-bound journal must retain every failure/refusal; no
+target success, compiler construction, installation or class optimum is
+claimed by this registration.

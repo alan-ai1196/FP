@@ -214,6 +214,10 @@ with maximum completed job commitment44,797,952 bytes and no timeout. Both
 full-window and suffix controls seal with original observations retained.
 This supplies no proposer, class proof, install, actual CUDA or new baseline
 release claim; known prior/noise and finite-window range remain explicit.
+The same model's actual AMP matrix is now registered in
+`experiments/joint_uncertainty/recurrent_cuda.py`:49 fresh4GiB jobs,16MiB
+arena,32MiB allocator cap and1/100 tolerances. Metadata needs at most941 of
+the fixed4096 output cells. This registration alone supplies no target pass.
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

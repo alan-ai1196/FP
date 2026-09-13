@@ -244,6 +244,13 @@ at `a487718` now completes both fixed512MiB jobs:26 binary64 phases total,
 maximum completed job commitment44,797,952 bytes, no timeout. Both ordinary
 streams seal; the H2 control explicitly differs from the full-history
 posterior after eviction. Actual owned AMP remains unexecuted for this model.
+The committed `recurrent_cuda.py` now registers49 actual AMP jobs:the48
+existing four-label interpreter streams plus that suffix control. Each gets
+a fresh4GiB host job,16/32MiB arena/reservation and unchanged1/100 tolerances.
+Process-local allocator history and the shared-board capacity envelope
+permit these short controls beside RN-5; no exclusive GPU or timing claim
+is involved. Retain every outcome and audit each complete phase before
+promoting this registration to target evidence.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
