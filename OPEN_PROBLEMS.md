@@ -76,8 +76,9 @@ now resolves the scoped existence/first-update question using available
 independent coefficients and ordinary SGD. It also executes owned CPU/CUDA
 construction, learning and installation, with honest resource refusals.
 The immediate open question is useful adaptive model behavior against the
-exact adaptive posterior, including rate and range pressure. Complete its
-source-bound audits and the preregistered [RN-4 matrix](experiments/adaptive_uncertainty/PROTOCOL.md).
+exact adaptive posterior, including rate and range pressure. Source-bound
+CPU/CUDA matrices pass at `803cdc2`; execute and analyze the preregistered
+[RN-4 matrix](experiments/adaptive_uncertainty/PROTOCOL.md).
 Do not infer global posterior consistency or good deployed risk from a
 nonzero gradient alone.
 

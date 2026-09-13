@@ -3024,3 +3024,13 @@ RN-4 preregisters thirty workers: two known worlds and eight uninspected new
 IID cases, with native rates1/8 and4 plus a strong exact/AMP adaptive posterior
 per case. Fixed range/resource refusals and all model failures will remain.
 No new model result is implied by the endpoint checks or registration.
+
+The complete matrices subsequently execute from `803cdc2`: six workers and
+1,960 binary64 phases per path, plus1,960 actual CUDA phases. Maximum CUDA
+state/probability errors are5.31e-5/5.54e-5; native/normalizer error is0.003769,
+all below the separately declared1/100 tolerances. Maximum jobs are41,385,984
+CPU and2,393,673,728 CUDA bytes. The two minimal journals total25,883 bytes.
+RN-4 now has its executable thirty-worker registration and an exact adaptive
+posterior checked against48 independently recomputed full-joint forecasts,
+including cycles. Fixed48-bit Brier enclosures prevent large denominator
+artifacts. New target seed labels remain uninspected at this registration.

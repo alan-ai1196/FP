@@ -1,6 +1,6 @@
 # Balanced positive evidence retains learnable uncertainty
 
-Status: **scoped proof; exact and functional CPU/CUDA audits; source-bound records pending**.
+Status: **scoped proof; exact and source-bound CPU/CUDA audits at `803cdc2`**.
 This attacks RN-3's fixed-graph learning obstruction without changing
 Foundation R4 or ERC-1. It proposes another registered search algorithm over
 the existing native syntax, initializer/profile endpoints and full class.
@@ -118,3 +118,22 @@ all phases and checks the failed observation's published state against its
 owned pre-target prediction cut. A forged promotion of staged successors is
 rejected. Both CPU/CUDA tight-cap checks and the original full binary64 audit
 pass; no unsafe successor is installed or discarded from the retained prefix.
+
+The complete source-bound matrices at `803cdc2` pass six workers per path:
+[CPU record](../../evidence/minimal/FP_BALANCED_UNCERTAINTY_CPU_AUDIT.json) and
+[CUDA record](../../evidence/minimal/FP_BALANCED_UNCERTAINTY_CUDA_AUDIT.json).
+Each replays1,960 binary64 phases, and the target matrix also replays1,960
+actual CUDA phases. Observed binary64 state/probability maxima are about
+4.58e-17/5.51e-17. CUDA maxima are5.31e-5 in state,0.003769 in native masses
+and normalizers,5.54e-5 in normalized probabilities, and2.98e-8 in division.
+These are measured errors, separately below the declared1/100 tolerance.
+Maximum completed-job commits are41,385,984 CPU and2,393,673,728 CUDA bytes.
+The two journals total25,883 bytes and retain no bulk phase history.
+
+RN-4's committed runner registers all thirty attempts before new seed labels
+are inspected. The exact adaptive posterior is checked against48 independent
+full-joint conditional forecasts, including cycles and initially excluded
+assignments under the conditioned law. Its Brier summaries enclose exact
+per-query losses on a fixed48-bit grid rather than retaining a growing global
+common denominator. These checks validate an experimental comparison; target
+model execution and adaptive quality still require their own outcomes.

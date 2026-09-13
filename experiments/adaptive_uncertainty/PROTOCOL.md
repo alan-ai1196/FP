@@ -124,6 +124,15 @@ both orientations of initial training edges, even after those later labels
 have been revealed. It is a fixed evaluation subset, not a claim that each
 of its later relation implications remains unlearned.
 
+CE and probability-gap summaries use binary64. Compute each expected Brier
+loss exactly, enclose it on a fixed 48-bit dyadic grid, and average those
+bounds; the final interval has width at most2^-48. This avoids retaining a
+huge common denominator across changing posterior predictions. Keep the
+per-query integer limit and report the actual maximum. No dataset-dependent
+metric precision is selected. Historical v3 comparisons concern the combined
+constructor/learning/update-cadence/resource change; they do not isolate the
+causal effect of a single change.
+
 Retain failed attempts and honest resource, numerical or evidence exhaustion;
 never impute an absent candidate or unexecuted tail. Keep only compact
 outcomes, source-bound jobs, independent checks and references to old
