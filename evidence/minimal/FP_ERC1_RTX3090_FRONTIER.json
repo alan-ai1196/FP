@@ -1,0 +1,4741 @@
+{
+ "experiment": "ERC1-RTX3090-1",
+ "registration_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5",
+ "execution_status": "PARTIAL_EXECUTION",
+ "scope": "registered known-table fixed-initializer Programs; no class-optimality or population claim",
+ "executed_configurations": 45,
+ "common_actual_device": {
+  "identity": {
+   "runtime_version": 13040,
+   "driver_api_version": 13040,
+   "driver_version": "616.92",
+   "pci_bus_id": "0000:0B:00.0",
+   "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+   "physical_vram_bytes": 25769803776
+  },
+  "physical_vram_upper": 25769803776,
+  "role_physical_vram_upper": {
+   "deployment": 25769803776,
+   "compiler": 25769803776
+  },
+  "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+ },
+ "results": [
+  {
+   "case": [
+    "scalar",
+    "horner",
+    4
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 9,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 7,
+    "PRODUCTs": 0,
+    "SUM_edges": 8,
+    "edges": 8,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/168",
+    "minimum_positive_activation": "1/8",
+    "maximum_significand_bits": 5,
+    "direct_materialization_bits": 114,
+    "probabilities_included_bits": 158
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "51/381681664"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/168",
+    "rounded_prediction_error": "199729/33554432",
+    "minimum_positive_activation": "1/8",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5669913,
+    "consumed_native_arena_extent": 14584,
+    "largest_phase_frame_used": 6807,
+    "maximum_output_cells": 60
+   },
+   "host": {
+    "process_id": 19356,
+    "creation_100ns": 134337406034803171,
+    "lifetime_process_commit_peak": 2374356992
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2374541312,
+    "peak_job_commit": 2375778304,
+    "user_100ns": 30468750,
+    "kernel_100ns": 9687500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 19356,
+    "process_creation_100ns": 134337406034803171
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "horner",
+    8
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 17,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 15,
+    "PRODUCTs": 0,
+    "SUM_edges": 18,
+    "edges": 18,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/2728",
+    "minimum_positive_activation": "1/128",
+    "maximum_significand_bits": 9,
+    "direct_materialization_bits": 266,
+    "probabilities_included_bits": 342
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "111/715128832"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/2728",
+    "rounded_prediction_error": "3075/8388608",
+    "minimum_positive_activation": "1/128",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5702981,
+    "consumed_native_arena_extent": 25336,
+    "largest_phase_frame_used": 10592,
+    "maximum_output_cells": 106
+   },
+   "host": {
+    "process_id": 19188,
+    "creation_100ns": 134337406082047372,
+    "lifetime_process_commit_peak": 2376589312
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2376802304,
+    "peak_job_commit": 2378018816,
+    "user_100ns": 36562500,
+    "kernel_100ns": 9375000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 19188,
+    "process_creation_100ns": 134337406082047372
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "horner",
+    16
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 33,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 31,
+    "PRODUCTs": 0,
+    "SUM_edges": 38,
+    "edges": 38,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/699048",
+    "minimum_positive_activation": "1/32768",
+    "maximum_significand_bits": 17,
+    "direct_materialization_bits": 698,
+    "probabilities_included_bits": 838
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "2235588985489/1667983318450176"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "1/32768",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5771306,
+    "consumed_native_arena_extent": 46840,
+    "largest_phase_frame_used": 18184,
+    "maximum_output_cells": 202
+   },
+   "host": {
+    "process_id": 9464,
+    "creation_100ns": 134337406135171398,
+    "lifetime_process_commit_peak": 2369875968
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2369875968,
+    "peak_job_commit": 2371108864,
+    "user_100ns": 48593750,
+    "kernel_100ns": 10937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9464,
+    "process_creation_100ns": 134337406135171398
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "horner",
+    24
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 49,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 47,
+    "PRODUCTs": 0,
+    "SUM_edges": 58,
+    "edges": 58,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/178956968",
+    "minimum_positive_activation": "1/8388608",
+    "maximum_significand_bits": 25,
+    "direct_materialization_bits": 1306,
+    "probabilities_included_bits": 1510
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "359897311984210685/163971052080240001024"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "1/8388608",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5844371,
+    "consumed_native_arena_extent": 68344,
+    "largest_phase_frame_used": 25748,
+    "maximum_output_cells": 298
+   },
+   "host": {
+    "process_id": 4628,
+    "creation_100ns": 134337406200670730,
+    "lifetime_process_commit_peak": 2367459328
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367459328,
+    "peak_job_commit": 2368684032,
+    "user_100ns": 60937500,
+    "kernel_100ns": 11250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 4628,
+    "process_creation_100ns": 134337406200670730
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "horner",
+    32
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 65,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 63,
+    "PRODUCTs": 0,
+    "SUM_edges": 78,
+    "edges": 78,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/45812984488",
+    "minimum_positive_activation": "1/2147483648",
+    "maximum_significand_bits": 33,
+    "direct_materialization_bits": 2010,
+    "probabilities_included_bits": 2278
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 0,
+   "endpoint_failure": [
+    "predict",
+    0,
+    "native prediction error exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 1,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "0"
+   },
+   "binary64": {
+    "checked": 2,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 0,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 37,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1065353216,
+       1065353216
+      ],
+      "normalizer_word": 1073741824,
+      "prediction_words": [
+       1056964608,
+       1056964608
+      ],
+      "mathematical_mass_error": "1/8",
+      "rounded_prediction_error": "1/8"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 339838,
+    "consumed_native_arena_extent": 2664,
+    "largest_phase_frame_used": 32056,
+    "maximum_output_cells": 382
+   },
+   "host": {
+    "process_id": 26336,
+    "creation_100ns": 134337406279434546,
+    "lifetime_process_commit_peak": 2063507456
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2064744448,
+    "peak_job_commit": 2065977344,
+    "user_100ns": 20312500,
+    "kernel_100ns": 8125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26336,
+    "process_creation_100ns": 134337406279434546
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "fractional-horner",
+    4
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 7,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 5,
+    "PRODUCTs": 0,
+    "SUM_edges": 6,
+    "edges": 6,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/168",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 5,
+    "direct_materialization_bits": 94,
+    "probabilities_included_bits": 138
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "1/25165824"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/168",
+    "rounded_prediction_error": "199729/33554432",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5661847,
+    "consumed_native_arena_extent": 12280,
+    "largest_phase_frame_used": 5994,
+    "maximum_output_cells": 50
+   },
+   "host": {
+    "process_id": 14832,
+    "creation_100ns": 134337406308354315,
+    "lifetime_process_commit_peak": 2373263360
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2373447680,
+    "peak_job_commit": 2374672384,
+    "user_100ns": 29062500,
+    "kernel_100ns": 9218750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14832,
+    "process_creation_100ns": 134337406308354315
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "fractional-horner",
+    8
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 11,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 9,
+    "PRODUCTs": 0,
+    "SUM_edges": 12,
+    "edges": 12,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/2728",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 9,
+    "direct_materialization_bits": 194,
+    "probabilities_included_bits": 270
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "89/715128832"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/2728",
+    "rounded_prediction_error": "3075/8388608",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5679175,
+    "consumed_native_arena_extent": 18552,
+    "largest_phase_frame_used": 8160,
+    "maximum_output_cells": 76
+   },
+   "host": {
+    "process_id": 26776,
+    "creation_100ns": 134337406353032556,
+    "lifetime_process_commit_peak": 2375270400
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2375454720,
+    "peak_job_commit": 2376675328,
+    "user_100ns": 32343750,
+    "kernel_100ns": 10625000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 26776,
+    "process_creation_100ns": 134337406353032556
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "fractional-horner",
+    16
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 19,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 17,
+    "PRODUCTs": 0,
+    "SUM_edges": 24,
+    "edges": 24,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/699048",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 17,
+    "direct_materialization_bits": 502,
+    "probabilities_included_bits": 642
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "1879298768869/20015799821402112"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5714813,
+    "consumed_native_arena_extent": 31096,
+    "largest_phase_frame_used": 12521,
+    "maximum_output_cells": 132
+   },
+   "host": {
+    "process_id": 11156,
+    "creation_100ns": 134337406402232262,
+    "lifetime_process_commit_peak": 2375733248
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2375917568,
+    "peak_job_commit": 2377142272,
+    "user_100ns": 41406250,
+    "kernel_100ns": 10312500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 11156,
+    "process_creation_100ns": 134337406402232262
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "fractional-horner",
+    24
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 27,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 25,
+    "PRODUCTs": 0,
+    "SUM_edges": 36,
+    "edges": 36,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/178956968",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 25,
+    "direct_materialization_bits": 954,
+    "probabilities_included_bits": 1158
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "162121761645192135/2623536833283840016384"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5752857,
+    "consumed_native_arena_extent": 43640,
+    "largest_phase_frame_used": 16916,
+    "maximum_output_cells": 188
+   },
+   "host": {
+    "process_id": 5724,
+    "creation_100ns": 134337406459243468,
+    "lifetime_process_commit_peak": 2368905216
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368905216,
+    "peak_job_commit": 2370142208,
+    "user_100ns": 49843750,
+    "kernel_100ns": 8281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 5724,
+    "process_creation_100ns": 134337406459243468
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "fractional-horner",
+    32
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 35,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 33,
+    "PRODUCTs": 0,
+    "SUM_edges": 48,
+    "edges": 48,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/45812984488",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 33,
+    "direct_materialization_bits": 1530,
+    "probabilities_included_bits": 1798
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "734823652423/12009599005622272"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5792147,
+    "consumed_native_arena_extent": 56184,
+    "largest_phase_frame_used": 21337,
+    "maximum_output_cells": 244
+   },
+   "host": {
+    "process_id": 11772,
+    "creation_100ns": 134337406524134649,
+    "lifetime_process_commit_peak": 2369376256
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2369376256,
+    "peak_job_commit": 2370609152,
+    "user_100ns": 54687500,
+    "kernel_100ns": 10937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 11772,
+    "process_creation_100ns": 134337406524134649
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "reciprocal",
+    1
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 15,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 3,
+    "SUM_edges": 12,
+    "edges": 18,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/168",
+    "minimum_positive_activation": "1/16",
+    "maximum_significand_bits": 5,
+    "direct_materialization_bits": 174,
+    "probabilities_included_bits": 218
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "59/381681664"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/168",
+    "rounded_prediction_error": "199729/33554432",
+    "minimum_positive_activation": "1/16",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070596096,
+       1065353216
+      ],
+      "normalizer_word": 1076363264,
+      "prediction_words": [
+       1058961896,
+       1052970033
+      ],
+      "mathematical_mass_error": "1/168",
+      "rounded_prediction_error": "199729/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5692175,
+    "consumed_native_arena_extent": 20984,
+    "largest_phase_frame_used": 8631,
+    "maximum_output_cells": 92
+   },
+   "host": {
+    "process_id": 28580,
+    "creation_100ns": 134337406595718715,
+    "lifetime_process_commit_peak": 2375725056
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2375856128,
+    "peak_job_commit": 2377097216,
+    "user_100ns": 33906250,
+    "kernel_100ns": 10468750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28580,
+    "process_creation_100ns": 134337406595718715
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "reciprocal",
+    2
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 18,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 11,
+    "PRODUCTs": 5,
+    "SUM_edges": 14,
+    "edges": 24,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/2728",
+    "minimum_positive_activation": "5/256",
+    "maximum_significand_bits": 9,
+    "direct_materialization_bits": 280,
+    "probabilities_included_bits": 356
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "13/89391104"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/2728",
+    "rounded_prediction_error": "3075/8388608",
+    "minimum_positive_activation": "5/256",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070923776,
+       1065353216
+      ],
+      "normalizer_word": 1076527104,
+      "prediction_words": [
+       1059055610,
+       1052782604
+      ],
+      "mathematical_mass_error": "1/2728",
+      "rounded_prediction_error": "3075/8388608"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5705797,
+    "consumed_native_arena_extent": 24440,
+    "largest_phase_frame_used": 9986,
+    "maximum_output_cells": 111
+   },
+   "host": {
+    "process_id": 24720,
+    "creation_100ns": 134337406646632537,
+    "lifetime_process_commit_peak": 2374475776
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2374795264,
+    "peak_job_commit": 2376024064,
+    "user_100ns": 37812500,
+    "kernel_100ns": 9375000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24720,
+    "process_creation_100ns": 134337406646632537
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "reciprocal",
+    3
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 21,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 12,
+    "PRODUCTs": 7,
+    "SUM_edges": 16,
+    "edges": 30,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/699048",
+    "minimum_positive_activation": "85/65536",
+    "maximum_significand_bits": 17,
+    "direct_materialization_bits": 456,
+    "probabilities_included_bits": 596
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "529626043859/2223977757933568"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "85/65536",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5721305,
+    "consumed_native_arena_extent": 28024,
+    "largest_phase_frame_used": 11474,
+    "maximum_output_cells": 130
+   },
+   "host": {
+    "process_id": 13880,
+    "creation_100ns": 134337406699683295,
+    "lifetime_process_commit_peak": 2376237056
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2376544256,
+    "peak_job_commit": 2377764864,
+    "user_100ns": 39531250,
+    "kernel_100ns": 8437500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 13880,
+    "process_creation_100ns": 134337406699683295
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "reciprocal",
+    4
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 24,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 13,
+    "PRODUCTs": 9,
+    "SUM_edges": 18,
+    "edges": 36,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/45812984488",
+    "minimum_positive_activation": "21845/4294967296",
+    "maximum_significand_bits": 33,
+    "direct_materialization_bits": 766,
+    "probabilities_included_bits": 1034
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "1365083781005873617313/5373003641918535288225792"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "85/16777216",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5741731,
+    "consumed_native_arena_extent": 31352,
+    "largest_phase_frame_used": 12995,
+    "maximum_output_cells": 149
+   },
+   "host": {
+    "process_id": 9460,
+    "creation_100ns": 134337406753951465,
+    "lifetime_process_commit_peak": 2375589888
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2375774208,
+    "peak_job_commit": 2377003008,
+    "user_100ns": 41406250,
+    "kernel_100ns": 10156250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9460,
+    "process_creation_100ns": 134337406753951465
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "reciprocal",
+    5
+   ],
+   "cap": "8/3",
+   "native": {
+    "nodes": 27,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 14,
+    "PRODUCTs": 11,
+    "SUM_edges": 20,
+    "edges": 42,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/196765270119568550568",
+    "minimum_positive_activation": "1431655765/18446744073709551616",
+    "maximum_significand_bits": 65,
+    "direct_materialization_bits": 1338,
+    "probabilities_included_bits": 1862
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "8393631717383218542541451128820541720715/33038141034860182430740617022072374136930304"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "85/16777216",
+    "positive_reference_to_zero_occurrences": 32,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5771524,
+    "consumed_native_arena_extent": 34936,
+    "largest_phase_frame_used": 14563,
+    "maximum_output_cells": 168
+   },
+   "host": {
+    "process_id": 9904,
+    "creation_100ns": 134337406810782407,
+    "lifetime_process_commit_peak": 2369413120
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2369413120,
+    "peak_job_commit": 2370629632,
+    "user_100ns": 43593750,
+    "kernel_100ns": 8750000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9904,
+    "process_creation_100ns": 134337406810782407
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-horner",
+    1
+   ],
+   "cap": "3",
+   "native": {
+    "nodes": 12,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 10,
+    "PRODUCTs": 0,
+    "SUM_edges": 14,
+    "edges": 14,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/8",
+    "maximum_significand_bits": 4,
+    "direct_materialization_bits": 150,
+    "probabilities_included_bits": 184
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "1/3145728"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/8",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5681196,
+    "consumed_native_arena_extent": 20472,
+    "largest_phase_frame_used": 8785,
+    "maximum_output_cells": 85
+   },
+   "host": {
+    "process_id": 4344,
+    "creation_100ns": 134337406870052745,
+    "lifetime_process_commit_peak": 2374430720
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2374676480,
+    "peak_job_commit": 2375897088,
+    "user_100ns": 35000000,
+    "kernel_100ns": 8750000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 4344,
+    "process_creation_100ns": 134337406870052745
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-horner",
+    2
+   ],
+   "cap": "43/16",
+   "native": {
+    "nodes": 24,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 22,
+    "PRODUCTs": 0,
+    "SUM_edges": 28,
+    "edges": 28,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/128",
+    "maximum_significand_bits": 8,
+    "direct_materialization_bits": 362,
+    "probabilities_included_bits": 396
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "61/135266304"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/128",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5729102,
+    "consumed_native_arena_extent": 35704,
+    "largest_phase_frame_used": 14172,
+    "maximum_output_cells": 153
+   },
+   "host": {
+    "process_id": 17044,
+    "creation_100ns": 134337406920556423,
+    "lifetime_process_commit_peak": 2303664128
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2303664128,
+    "peak_job_commit": 2304884736,
+    "user_100ns": 43593750,
+    "kernel_100ns": 9687500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 17044,
+    "process_creation_100ns": 134337406920556423
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-horner",
+    3
+   ],
+   "cap": "10923/4096",
+   "native": {
+    "nodes": 48,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 46,
+    "PRODUCTs": 0,
+    "SUM_edges": 56,
+    "edges": 56,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/32768",
+    "maximum_significand_bits": 16,
+    "direct_materialization_bits": 924,
+    "probabilities_included_bits": 958
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "3579087/1908932608"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "21/699016",
+    "rounded_prediction_error": "63/2097152",
+    "minimum_positive_activation": "1/32768",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353472
+      ],
+      "normalizer_word": 1076537472,
+      "prediction_words": [
+       1059061256,
+       1052771312
+      ],
+      "mathematical_mass_error": "21/699016",
+      "rounded_prediction_error": "63/2097152"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353472
+      ],
+      "normalizer_word": 1076537472,
+      "prediction_words": [
+       1059061256,
+       1052771312
+      ],
+      "mathematical_mass_error": "21/699016",
+      "rounded_prediction_error": "63/2097152"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5828133,
+    "consumed_native_arena_extent": 66168,
+    "largest_phase_frame_used": 24982,
+    "maximum_output_cells": 289
+   },
+   "host": {
+    "process_id": 29588,
+    "creation_100ns": 134337406979342864,
+    "lifetime_process_commit_peak": 2366308352
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2366308352,
+    "peak_job_commit": 2367524864,
+    "user_100ns": 60468750,
+    "kernel_100ns": 11093750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 29588,
+    "process_creation_100ns": 134337406979342864
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-horner",
+    4
+   ],
+   "cap": "715827883/268435456",
+   "native": {
+    "nodes": 96,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 94,
+    "PRODUCTs": 0,
+    "SUM_edges": 112,
+    "edges": 112,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/2147483648",
+    "maximum_significand_bits": 32,
+    "direct_materialization_bits": 2526,
+    "probabilities_included_bits": 2560
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 0,
+   "endpoint_failure": [
+    "predict",
+    0,
+    "native prediction error exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 1,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "0"
+   },
+   "binary64": {
+    "checked": 2,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 0,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 44,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1065353216,
+       1065353216
+      ],
+      "normalizer_word": 1073741824,
+      "prediction_words": [
+       1056964608,
+       1056964608
+      ],
+      "mathematical_mass_error": "1/8",
+      "rounded_prediction_error": "1/8"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 365218,
+    "consumed_native_arena_extent": 3784,
+    "largest_phase_frame_used": 45152,
+    "maximum_output_cells": 546
+   },
+   "host": {
+    "process_id": 13408,
+    "creation_100ns": 134337407057195487,
+    "lifetime_process_commit_peak": 2198323200
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2198544384,
+    "peak_job_commit": 2199764992,
+    "user_100ns": 21562500,
+    "kernel_100ns": 7343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 13408,
+    "process_creation_100ns": 134337407057195487
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-fractional-horner",
+    1
+   ],
+   "cap": "3",
+   "native": {
+    "nodes": 10,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 8,
+    "PRODUCTs": 0,
+    "SUM_edges": 12,
+    "edges": 12,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/8",
+    "maximum_significand_bits": 4,
+    "direct_materialization_bits": 130,
+    "probabilities_included_bits": 164
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "3/20971520"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/8",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5673177,
+    "consumed_native_arena_extent": 18296,
+    "largest_phase_frame_used": 7972,
+    "maximum_output_cells": 75
+   },
+   "host": {
+    "process_id": 764,
+    "creation_100ns": 134337407087283154,
+    "lifetime_process_commit_peak": 2376101888
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2376286208,
+    "peak_job_commit": 2377515008,
+    "user_100ns": 30156250,
+    "kernel_100ns": 10312500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 764,
+    "process_creation_100ns": 134337407087283154
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-fractional-horner",
+    2
+   ],
+   "cap": "43/16",
+   "native": {
+    "nodes": 18,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 16,
+    "PRODUCTs": 0,
+    "SUM_edges": 22,
+    "edges": 22,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/128",
+    "maximum_significand_bits": 8,
+    "direct_materialization_bits": 290,
+    "probabilities_included_bits": 324
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "191/1082130432"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/128",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5705387,
+    "consumed_native_arena_extent": 29048,
+    "largest_phase_frame_used": 11743,
+    "maximum_output_cells": 123
+   },
+   "host": {
+    "process_id": 25596,
+    "creation_100ns": 134337407135285230,
+    "lifetime_process_commit_peak": 2375720960
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2376007680,
+    "peak_job_commit": 2377232384,
+    "user_100ns": 40156250,
+    "kernel_100ns": 8281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 25596,
+    "process_creation_100ns": 134337407135285230
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-fractional-horner",
+    3
+   ],
+   "cap": "10923/4096",
+   "native": {
+    "nodes": 34,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 32,
+    "PRODUCTs": 0,
+    "SUM_edges": 42,
+    "edges": 42,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/32768",
+    "maximum_significand_bits": 16,
+    "direct_materialization_bits": 728,
+    "probabilities_included_bits": 762
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 0,
+   "endpoint_failure": [
+    "predict",
+    0,
+    "binary64 rounded normalizer exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 1,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "0"
+   },
+   "binary64": {
+    "checked": 2,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 0,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/32768",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1070948352,
+       1065353472
+      ],
+      "normalizer_word": 1076539520,
+      "prediction_words": [
+       1059062408,
+       1052769008
+      ],
+      "mathematical_mass_error": "9/233048",
+      "rounded_prediction_error": "81/2097152"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 312702,
+    "consumed_native_arena_extent": 1488,
+    "largest_phase_frame_used": 19061,
+    "maximum_output_cells": 212
+   },
+   "host": {
+    "process_id": 8140,
+    "creation_100ns": 134337407190331537,
+    "lifetime_process_commit_peak": 2199109632
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2199298048,
+    "peak_job_commit": 2200522752,
+    "user_100ns": 19218750,
+    "kernel_100ns": 8281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 8140,
+    "process_creation_100ns": 134337407190331537
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "exact-fractional-horner",
+    4
+   ],
+   "cap": "715827883/268435456",
+   "native": {
+    "nodes": 66,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 64,
+    "PRODUCTs": 0,
+    "SUM_edges": 82,
+    "edges": 82,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/2147483648",
+    "maximum_significand_bits": 32,
+    "direct_materialization_bits": 2046,
+    "probabilities_included_bits": 2080
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 0,
+   "endpoint_failure": [
+    "predict",
+    0,
+    "binary64 rounded normalizer exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 1,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "0"
+   },
+   "binary64": {
+    "checked": 2,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 0,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 7,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1070948352,
+       1065353216
+      ],
+      "normalizer_word": 1076539392,
+      "prediction_words": [
+       1059062528,
+       1052768768
+      ],
+      "mathematical_mass_error": "1/21848",
+      "rounded_prediction_error": "3/65536"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 340766,
+    "consumed_native_arena_extent": 2768,
+    "largest_phase_frame_used": 34094,
+    "maximum_output_cells": 396
+   },
+   "host": {
+    "process_id": 3540,
+    "creation_100ns": 134337407218615588,
+    "lifetime_process_commit_peak": 2197671936
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2198904832,
+    "peak_job_commit": 2200125440,
+    "user_100ns": 20156250,
+    "kernel_100ns": 7656250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3540,
+    "process_creation_100ns": 134337407218615588
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "repaired-reciprocal",
+    1
+   ],
+   "cap": "3",
+   "native": {
+    "nodes": 26,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 18,
+    "PRODUCTs": 6,
+    "SUM_edges": 24,
+    "edges": 36,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/16",
+    "maximum_significand_bits": 4,
+    "direct_materialization_bits": 272,
+    "probabilities_included_bits": 306
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "1/4194304"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/16",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1072693248,
+       1066401792
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5732641,
+    "consumed_native_arena_extent": 35704,
+    "largest_phase_frame_used": 13924,
+    "maximum_output_cells": 163
+   },
+   "host": {
+    "process_id": 17356,
+    "creation_100ns": 134337407247088960,
+    "lifetime_process_commit_peak": 2370113536
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2370113536,
+    "peak_job_commit": 2371346432,
+    "user_100ns": 44375000,
+    "kernel_100ns": 7812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 17356,
+    "process_creation_100ns": 134337407247088960
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "repaired-reciprocal",
+    2
+   ],
+   "cap": "43/16",
+   "native": {
+    "nodes": 29,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 19,
+    "PRODUCTs": 8,
+    "SUM_edges": 26,
+    "edges": 42,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/256",
+    "maximum_significand_bits": 8,
+    "direct_materialization_bits": 422,
+    "probabilities_included_bits": 456
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "123/901775360"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "0",
+    "minimum_positive_activation": "1/256",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1071054848,
+       1065418752
+      ],
+      "normalizer_word": 1076625408,
+      "prediction_words": [
+       1059061760,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5746219,
+    "consumed_native_arena_extent": 39288,
+    "largest_phase_frame_used": 15387,
+    "maximum_output_cells": 182
+   },
+   "host": {
+    "process_id": 16996,
+    "creation_100ns": 134337407305702466,
+    "lifetime_process_commit_peak": 2368040960
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368040960,
+    "peak_job_commit": 2369277952,
+    "user_100ns": 45625000,
+    "kernel_100ns": 8906250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 16996,
+    "process_creation_100ns": 134337407305702466
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "repaired-reciprocal",
+    3
+   ],
+   "cap": "10923/4096",
+   "native": {
+    "nodes": 32,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 20,
+    "PRODUCTs": 10,
+    "SUM_edges": 28,
+    "edges": 48,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/65536",
+    "maximum_significand_bits": 16,
+    "direct_materialization_bits": 664,
+    "probabilities_included_bits": 698
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "30547057/91628765184"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "21/699016",
+    "rounded_prediction_error": "63/2097152",
+    "minimum_positive_activation": "1/65536",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353472
+      ],
+      "normalizer_word": 1076537472,
+      "prediction_words": [
+       1059061256,
+       1052771312
+      ],
+      "mathematical_mass_error": "21/699016",
+      "rounded_prediction_error": "63/2097152"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353472
+      ],
+      "normalizer_word": 1076537472,
+      "prediction_words": [
+       1059061256,
+       1052771312
+      ],
+      "mathematical_mass_error": "21/699016",
+      "rounded_prediction_error": "63/2097152"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5762351,
+    "consumed_native_arena_extent": 42616,
+    "largest_phase_frame_used": 16866,
+    "maximum_output_cells": 201
+   },
+   "host": {
+    "process_id": 12740,
+    "creation_100ns": 134337407367123261,
+    "lifetime_process_commit_peak": 2368278528
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368278528,
+    "peak_job_commit": 2369490944,
+    "user_100ns": 49218750,
+    "kernel_100ns": 8281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 12740,
+    "process_creation_100ns": 134337407367123261
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "scalar",
+    "repaired-reciprocal",
+    4
+   ],
+   "cap": "715827883/268435456",
+   "native": {
+    "nodes": 35,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 21,
+    "PRODUCTs": 12,
+    "SUM_edges": 30,
+    "edges": 54,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/4294967296",
+    "maximum_significand_bits": 32,
+    "direct_materialization_bits": 1088,
+    "probabilities_included_bits": 1122
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 16,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "47674346723/187649984561152"
+   },
+   "binary64": {
+    "checked": 41,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 16,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/43688",
+    "rounded_prediction_error": "3/131072",
+    "minimum_positive_activation": "85/16777216",
+    "positive_reference_to_zero_occurrences": 96,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1070944256,
+       1065353216
+      ],
+      "normalizer_word": 1076537344,
+      "prediction_words": [
+       1059061376,
+       1052771072
+      ],
+      "mathematical_mass_error": "1/43688",
+      "rounded_prediction_error": "3/131072"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 5783371,
+    "consumed_native_arena_extent": 46200,
+    "largest_phase_frame_used": 18232,
+    "maximum_output_cells": 220
+   },
+   "host": {
+    "process_id": 3748,
+    "creation_100ns": 134337407431159757,
+    "lifetime_process_commit_peak": 2368851968
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368851968,
+    "peak_job_commit": 2370068480,
+    "user_100ns": 47656250,
+    "kernel_100ns": 10625000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 3748,
+    "process_creation_100ns": 134337407431159757
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "horner",
+    4
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 18,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 16,
+    "PRODUCTs": 0,
+    "SUM_edges": 19,
+    "edges": 19,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/252",
+    "minimum_positive_activation": "1/16",
+    "maximum_significand_bits": 6,
+    "direct_materialization_bits": 167,
+    "probabilities_included_bits": 220
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "73/264241152"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/252",
+    "rounded_prediction_error": "133153/33554432",
+    "minimum_positive_activation": "1/16",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1067974656,
+       1070596096
+      ],
+      "normalizer_word": 1081868288,
+      "prediction_words": [
+       1048709153,
+       1051372203,
+       1054035253
+      ],
+      "mathematical_mass_error": "1/252",
+      "rounded_prediction_error": "133153/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7099721,
+    "consumed_native_arena_extent": 33896,
+    "largest_phase_frame_used": 11254,
+    "maximum_output_cells": 117
+   },
+   "host": {
+    "process_id": 28948,
+    "creation_100ns": 134337407495667942,
+    "lifetime_process_commit_peak": 2370486272
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2370486272,
+    "peak_job_commit": 2371710976,
+    "user_100ns": 42031250,
+    "kernel_100ns": 10156250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28948,
+    "process_creation_100ns": 134337407495667942
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "horner",
+    8
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 34,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 32,
+    "PRODUCTs": 0,
+    "SUM_edges": 39,
+    "edges": 39,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/4092",
+    "minimum_positive_activation": "1/256",
+    "maximum_significand_bits": 10,
+    "direct_materialization_bits": 343,
+    "probabilities_included_bits": 410
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "12703/9231663104"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/4092",
+    "rounded_prediction_error": "24601/100663296",
+    "minimum_positive_activation": "1/256",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068138496,
+       1070923776
+      ],
+      "normalizer_word": 1082114048,
+      "prediction_words": [
+       1048584200,
+       1051372203,
+       1054160205
+      ],
+      "mathematical_mass_error": "1/4092",
+      "rounded_prediction_error": "24601/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7174141,
+    "consumed_native_arena_extent": 60776,
+    "largest_phase_frame_used": 18792,
+    "maximum_output_cells": 209
+   },
+   "host": {
+    "process_id": 2244,
+    "creation_100ns": 134337407555340942,
+    "lifetime_process_commit_peak": 2235494400
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2235494400,
+    "peak_job_commit": 2236710912,
+    "user_100ns": 56406250,
+    "kernel_100ns": 10000000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2244,
+    "process_creation_100ns": 134337407555340942
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "horner",
+    16
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 66,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 64,
+    "PRODUCTs": 0,
+    "SUM_edges": 79,
+    "edges": 79,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/1048572",
+    "minimum_positive_activation": "1/65536",
+    "maximum_significand_bits": 18,
+    "direct_materialization_bits": 821,
+    "probabilities_included_bits": 922
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "2483422163455/1876481233256448"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "1/65536",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7327170,
+    "consumed_native_arena_extent": 114536,
+    "largest_phase_frame_used": 33946,
+    "maximum_output_cells": 400
+   },
+   "host": {
+    "process_id": 6140,
+    "creation_100ns": 134337407630044354,
+    "lifetime_process_commit_peak": 2367270912
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367270912,
+    "peak_job_commit": 2368487424,
+    "user_100ns": 84062500,
+    "kernel_100ns": 12812500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6140,
+    "process_creation_100ns": 134337407630044354
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "horner",
+    24
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 98,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 96,
+    "PRODUCTs": 0,
+    "SUM_edges": 119,
+    "edges": 119,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/268435452",
+    "minimum_positive_activation": "1/16777216",
+    "maximum_significand_bits": 26,
+    "direct_materialization_bits": 1460,
+    "probabilities_included_bits": 1593
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "356975868979706089/163971052080240001024"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7485943,
+    "consumed_native_arena_extent": 168296,
+    "largest_phase_frame_used": 49011,
+    "maximum_output_cells": 592
+   },
+   "host": {
+    "process_id": 24540,
+    "creation_100ns": 134337407735163631,
+    "lifetime_process_commit_peak": 2366816256
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2366816256,
+    "peak_job_commit": 2368040960,
+    "user_100ns": 112343750,
+    "kernel_100ns": 12343750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24540,
+    "process_creation_100ns": 134337407735163631
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "horner",
+    32
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 130,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 128,
+    "PRODUCTs": 0,
+    "SUM_edges": 159,
+    "edges": 159,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/68719476732",
+    "minimum_positive_activation": "1/4294967296",
+    "maximum_significand_bits": 34,
+    "direct_materialization_bits": 2223,
+    "probabilities_included_bits": 2386
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 8,
+   "endpoint_failure": [
+    "predict",
+    8,
+    "native prediction error exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 21,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "1/25165824"
+   },
+   "binary64": {
+    "checked": 22,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 8,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 77,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1065353216,
+       1065353216,
+       1065353216
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1051372203,
+       1051372203,
+       1051372203
+      ],
+      "mathematical_mass_error": "1/12",
+      "rounded_prediction_error": "2796203/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 3330554,
+    "consumed_native_arena_extent": 94096,
+    "largest_phase_frame_used": 61917,
+    "maximum_output_cells": 784
+   },
+   "host": {
+    "process_id": 24232,
+    "creation_100ns": 134337407867593468,
+    "lifetime_process_commit_peak": 2368372736
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368372736,
+    "peak_job_commit": 2369622016,
+    "user_100ns": 61562500,
+    "kernel_100ns": 12031250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24232,
+    "process_creation_100ns": 134337407867593468
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "fractional-horner",
+    4
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 14,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 12,
+    "PRODUCTs": 0,
+    "SUM_edges": 15,
+    "edges": 15,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/252",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 6,
+    "direct_materialization_bits": 144,
+    "probabilities_included_bits": 197
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "103/1056964608"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/252",
+    "rounded_prediction_error": "133153/33554432",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1067974656,
+       1070596096
+      ],
+      "normalizer_word": 1081868288,
+      "prediction_words": [
+       1048709153,
+       1051372203,
+       1054035253
+      ],
+      "mathematical_mass_error": "1/252",
+      "rounded_prediction_error": "133153/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7081663,
+    "consumed_native_arena_extent": 28296,
+    "largest_phase_frame_used": 9636,
+    "maximum_output_cells": 97
+   },
+   "host": {
+    "process_id": 28772,
+    "creation_100ns": 134337407945487456,
+    "lifetime_process_commit_peak": 2380611584
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2380697600,
+    "peak_job_commit": 2381942784,
+    "user_100ns": 38593750,
+    "kernel_100ns": 10156250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28772,
+    "process_creation_100ns": 134337407945487456
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "fractional-horner",
+    8
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 22,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 20,
+    "PRODUCTs": 0,
+    "SUM_edges": 27,
+    "edges": 27,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/4092",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 10,
+    "direct_materialization_bits": 262,
+    "probabilities_included_bits": 329
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "24171/101548294144"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/4092",
+    "rounded_prediction_error": "24601/100663296",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068138496,
+       1070923776
+      ],
+      "normalizer_word": 1082114048,
+      "prediction_words": [
+       1048584200,
+       1051372203,
+       1054160205
+      ],
+      "mathematical_mass_error": "1/4092",
+      "rounded_prediction_error": "24601/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7119816,
+    "consumed_native_arena_extent": 43976,
+    "largest_phase_frame_used": 13942,
+    "maximum_output_cells": 149
+   },
+   "host": {
+    "process_id": 1508,
+    "creation_100ns": 134337408002243645,
+    "lifetime_process_commit_peak": 2235138048
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2235138048,
+    "peak_job_commit": 2236375040,
+    "user_100ns": 47187500,
+    "kernel_100ns": 10937500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 1508,
+    "process_creation_100ns": 134337408002243645
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "fractional-horner",
+    16
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 38,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 36,
+    "PRODUCTs": 0,
+    "SUM_edges": 51,
+    "edges": 51,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/1048572",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 18,
+    "direct_materialization_bits": 604,
+    "probabilities_included_bits": 705
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "2595933010669/17156399846916096"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7198349,
+    "consumed_native_arena_extent": 75336,
+    "largest_phase_frame_used": 22640,
+    "maximum_output_cells": 260
+   },
+   "host": {
+    "process_id": 27740,
+    "creation_100ns": 134337408067944061,
+    "lifetime_process_commit_peak": 2370019328
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2370019328,
+    "peak_job_commit": 2371239936,
+    "user_100ns": 64218750,
+    "kernel_100ns": 9218750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 27740,
+    "process_creation_100ns": 134337408067944061
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "fractional-horner",
+    24
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 54,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 52,
+    "PRODUCTs": 0,
+    "SUM_edges": 75,
+    "edges": 75,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/268435452",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 26,
+    "direct_materialization_bits": 1086,
+    "probabilities_included_bits": 1219
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "642023547184223193/5247073666567680032768"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7279847,
+    "consumed_native_arena_extent": 106696,
+    "largest_phase_frame_used": 31395,
+    "maximum_output_cells": 372
+   },
+   "host": {
+    "process_id": 2180,
+    "creation_100ns": 134337408150493595,
+    "lifetime_process_commit_peak": 2367016960
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367016960,
+    "peak_job_commit": 2368241664,
+    "user_100ns": 78281250,
+    "kernel_100ns": 13281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2180,
+    "process_creation_100ns": 134337408150493595
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "fractional-horner",
+    32
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 70,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 68,
+    "PRODUCTs": 0,
+    "SUM_edges": 99,
+    "edges": 99,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/68719476732",
+    "minimum_positive_activation": "1/4",
+    "maximum_significand_bits": 34,
+    "direct_materialization_bits": 1698,
+    "probabilities_included_bits": 1861
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "42025961079596420218501/343872233082786258446450688"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "1/4",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7363882,
+    "consumed_native_arena_extent": 138056,
+    "largest_phase_frame_used": 40210,
+    "maximum_output_cells": 484
+   },
+   "host": {
+    "process_id": 8904,
+    "creation_100ns": 134337408250622558,
+    "lifetime_process_commit_peak": 2367705088
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367705088,
+    "peak_job_commit": 2368933888,
+    "user_100ns": 95312500,
+    "kernel_100ns": 14062500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 8904,
+    "process_creation_100ns": 134337408250622558
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "reciprocal",
+    1
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 20,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 15,
+    "PRODUCTs": 3,
+    "SUM_edges": 20,
+    "edges": 26,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/252",
+    "minimum_positive_activation": "1/32",
+    "maximum_significand_bits": 6,
+    "direct_materialization_bits": 261,
+    "probabilities_included_bits": 335
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "23/44040192"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/252",
+    "rounded_prediction_error": "133153/33554432",
+    "minimum_positive_activation": "1/32",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069285376,
+       1069285376
+      ],
+      "normalizer_word": 1081868288,
+      "prediction_words": [
+       1048709153,
+       1052703728,
+       1052703728
+      ],
+      "mathematical_mass_error": "1/252",
+      "rounded_prediction_error": "133153/33554432"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1067974656,
+       1070596096
+      ],
+      "normalizer_word": 1081868288,
+      "prediction_words": [
+       1048709153,
+       1051372203,
+       1054035253
+      ],
+      "mathematical_mass_error": "1/252",
+      "rounded_prediction_error": "133153/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7111306,
+    "consumed_native_arena_extent": 37416,
+    "largest_phase_frame_used": 11745,
+    "maximum_output_cells": 130
+   },
+   "host": {
+    "process_id": 6932,
+    "creation_100ns": 134337408367715244,
+    "lifetime_process_commit_peak": 2370985984
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2370985984,
+    "peak_job_commit": 2372218880,
+    "user_100ns": 46250000,
+    "kernel_100ns": 8750000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6932,
+    "process_creation_100ns": 134337408367715244
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "reciprocal",
+    2
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 23,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 16,
+    "PRODUCTs": 5,
+    "SUM_edges": 22,
+    "edges": 32,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/4092",
+    "minimum_positive_activation": "5/512",
+    "maximum_significand_bits": 10,
+    "direct_materialization_bits": 402,
+    "probabilities_included_bits": 514
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "324547/2194015256576"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/4092",
+    "rounded_prediction_error": "24601/100663296",
+    "minimum_positive_activation": "5/512",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069531136,
+       1069531136
+      ],
+      "normalizer_word": 1082114048,
+      "prediction_words": [
+       1048584200,
+       1052766204,
+       1052766204
+      ],
+      "mathematical_mass_error": "1/4092",
+      "rounded_prediction_error": "1025/4194304"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068138496,
+       1070923776
+      ],
+      "normalizer_word": 1082114048,
+      "prediction_words": [
+       1048584200,
+       1051372203,
+       1054160205
+      ],
+      "mathematical_mass_error": "1/4092",
+      "rounded_prediction_error": "24601/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7128136,
+    "consumed_native_arena_extent": 41896,
+    "largest_phase_frame_used": 12929,
+    "maximum_output_cells": 149
+   },
+   "host": {
+    "process_id": 872,
+    "creation_100ns": 134337408429561839,
+    "lifetime_process_commit_peak": 2368471040
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368471040,
+    "peak_job_commit": 2369703936,
+    "user_100ns": 44843750,
+    "kernel_100ns": 11250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 872,
+    "process_creation_100ns": 134337408429561839
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "reciprocal",
+    3
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 26,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 17,
+    "PRODUCTs": 7,
+    "SUM_edges": 24,
+    "edges": 38,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/1048572",
+    "minimum_positive_activation": "85/131072",
+    "maximum_significand_bits": 18,
+    "direct_materialization_bits": 641,
+    "probabilities_included_bits": 835
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "251984846725/769838454669312"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "85/131072",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7148412,
+    "consumed_native_arena_extent": 46216,
+    "largest_phase_frame_used": 14423,
+    "maximum_output_cells": 168
+   },
+   "host": {
+    "process_id": 28332,
+    "creation_100ns": 134337408494092751,
+    "lifetime_process_commit_peak": 2369048576
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2369048576,
+    "peak_job_commit": 2370281472,
+    "user_100ns": 49218750,
+    "kernel_100ns": 11406250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28332,
+    "process_creation_100ns": 134337408494092751
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "reciprocal",
+    4
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 29,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 18,
+    "PRODUCTs": 9,
+    "SUM_edges": 26,
+    "edges": 44,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/68719476732",
+    "minimum_positive_activation": "21845/8589934592",
+    "maximum_significand_bits": 34,
+    "direct_materialization_bits": 1070,
+    "probabilities_included_bits": 1422
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "5005283177823523954169/14328009711782760768602112"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "43/16777216",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7175663,
+    "consumed_native_arena_extent": 50696,
+    "largest_phase_frame_used": 15942,
+    "maximum_output_cells": 187
+   },
+   "host": {
+    "process_id": 9440,
+    "creation_100ns": 134337408561723477,
+    "lifetime_process_commit_peak": 2368737280
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2368737280,
+    "peak_job_commit": 2369974272,
+    "user_100ns": 53281250,
+    "kernel_100ns": 10000000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 9440,
+    "process_creation_100ns": 134337408561723477
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "reciprocal",
+    5
+   ],
+   "cap": "4",
+   "native": {
+    "nodes": 32,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 19,
+    "PRODUCTs": 11,
+    "SUM_edges": 28,
+    "edges": 50,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "1/295147905179352825852",
+    "minimum_positive_activation": "1431655765/36893488147419103232",
+    "maximum_significand_bits": 66,
+    "direct_materialization_bits": 1873,
+    "probabilities_included_bits": 2547
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "3112245468243208909369081399561128395747/8909161627378026722896346163255471677374464"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "1/65532",
+    "rounded_prediction_error": "1537/100663296",
+    "minimum_positive_activation": "43/16777216",
+    "positive_reference_to_zero_occurrences": 40,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1068148736,
+       1070944256
+      ],
+      "normalizer_word": 1082129408,
+      "prediction_words": [
+       1048576512,
+       1051372203,
+       1054167893
+      ],
+      "mathematical_mass_error": "1/65532",
+      "rounded_prediction_error": "1537/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7216300,
+    "consumed_native_arena_extent": 54856,
+    "largest_phase_frame_used": 17508,
+    "maximum_output_cells": 206
+   },
+   "host": {
+    "process_id": 18828,
+    "creation_100ns": 134337408631536957,
+    "lifetime_process_commit_peak": 2234847232
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2234847232,
+    "peak_job_commit": 2236080128,
+    "user_100ns": 53593750,
+    "kernel_100ns": 11718750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 18828,
+    "process_creation_100ns": 134337408631536957
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "exact-horner",
+    2
+   ],
+   "cap": "261/64",
+   "native": {
+    "nodes": 34,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 32,
+    "PRODUCTs": 0,
+    "SUM_edges": 40,
+    "edges": 40,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/128",
+    "maximum_significand_bits": 8,
+    "direct_materialization_bits": 326,
+    "probabilities_included_bits": 368
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "871/1352663040"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "0",
+    "rounded_prediction_error": "1/100663296",
+    "minimum_positive_activation": "1/128",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065418752,
+       1068236800,
+       1071054848
+      ],
+      "normalizer_word": 1082195968,
+      "prediction_words": [
+       1048576000,
+       1051372203,
+       1054168405
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "1/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7173560,
+    "consumed_native_arena_extent": 61896,
+    "largest_phase_frame_used": 19041,
+    "maximum_output_cells": 212
+   },
+   "host": {
+    "process_id": 5088,
+    "creation_100ns": 134337408703894141,
+    "lifetime_process_commit_peak": 2369056768
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2369056768,
+    "peak_job_commit": 2370285568,
+    "user_100ns": 56250000,
+    "kernel_100ns": 10781250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 5088,
+    "process_creation_100ns": 134337408703894141
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "exact-horner",
+    3
+   ],
+   "cap": "65541/16384",
+   "native": {
+    "nodes": 74,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 72,
+    "PRODUCTs": 0,
+    "SUM_edges": 88,
+    "edges": 88,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/32768",
+    "maximum_significand_bits": 16,
+    "direct_materialization_bits": 843,
+    "probabilities_included_bits": 885
+   },
+   "run_status": "SEALED_CUDA_STREAM",
+   "cursor": 20,
+   "endpoint_failure": null,
+   "cuda": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0,
+    "max_complete_state_error_including_failure": "94647571/34360786944"
+   },
+   "binary64": {
+    "checked": 51,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 20,
+   "predictions": {
+    "complete_checked_context_domain": true,
+    "mathematical_mass_error": "23/524292",
+    "rounded_prediction_error": "4417/100663296",
+    "minimum_positive_activation": "1/32768",
+    "positive_reference_to_zero_occurrences": 0,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353472,
+       1068150784,
+       1070944256
+      ],
+      "normalizer_word": 1082130496,
+      "prediction_words": [
+       1048576192,
+       1051373483,
+       1054166933
+      ],
+      "mathematical_mass_error": "23/524292",
+      "rounded_prediction_error": "4417/100663296"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 7361564,
+    "consumed_native_arena_extent": 126856,
+    "largest_phase_frame_used": 37389,
+    "maximum_output_cells": 444
+   },
+   "host": {
+    "process_id": 14232,
+    "creation_100ns": 134337408778589291,
+    "lifetime_process_commit_peak": 2367651840
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367651840,
+    "peak_job_commit": 2368880640,
+    "user_100ns": 90468750,
+    "kernel_100ns": 13125000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 14232,
+    "process_creation_100ns": 134337408778589291
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  },
+  {
+   "case": [
+    "mixed",
+    "exact-horner",
+    4
+   ],
+   "cap": "4294967301/1073741824",
+   "native": {
+    "nodes": 154,
+    "sources": 2,
+    "state_reads": 0,
+    "SUMs": 152,
+    "PRODUCTs": 0,
+    "SUM_edges": 184,
+    "edges": 184,
+    "slots": 3,
+    "bindings": 0
+   },
+   "reference": {
+    "error": "0",
+    "minimum_positive_activation": "1/2147483648",
+    "maximum_significand_bits": 32,
+    "direct_materialization_bits": 2344,
+    "probabilities_included_bits": 2386
+   },
+   "run_status": "HALTED_UNRESOLVED",
+   "cursor": 8,
+   "endpoint_failure": [
+    "predict",
+    8,
+    "native prediction error exceeds its registered bound"
+   ],
+   "cuda": {
+    "checked": 21,
+    "failed_complete_outputs_replayed": 1,
+    "max_complete_state_error_including_failure": "1/25165824"
+   },
+   "binary64": {
+    "checked": 22,
+    "failed_complete_outputs_replayed": 0
+   },
+   "independent_reference_events": 8,
+   "predictions": {
+    "complete_checked_context_domain": false,
+    "mathematical_mass_error": null,
+    "rounded_prediction_error": null,
+    "minimum_positive_activation": "1/16777216",
+    "positive_reference_to_zero_occurrences": 78,
+    "retained_contexts": [
+     {
+      "context": 0,
+      "status": "CHECKED_CUDA_PREFIX_PHASE",
+      "mass_words": [
+       1065353216,
+       1069547520,
+       1069547520
+      ],
+      "normalizer_word": 1082130432,
+      "prediction_words": [
+       1048576000,
+       1052770304,
+       1052770304
+      ],
+      "mathematical_mass_error": "0",
+      "rounded_prediction_error": "0"
+     },
+     {
+      "context": 1,
+      "status": "UNRESOLVED",
+      "mass_words": [
+       1065353216,
+       1065353216,
+       1065353216
+      ],
+      "normalizer_word": 1077936128,
+      "prediction_words": [
+       1051372203,
+       1051372203,
+       1051372203
+      ],
+      "mathematical_mass_error": "1/12",
+      "rounded_prediction_error": "2796203/33554432"
+     }
+    ]
+   },
+   "resources": {
+    "peak_packed_bytes": 3384230,
+    "consumed_native_arena_extent": 108824,
+    "largest_phase_frame_used": 71751,
+    "maximum_output_cells": 908
+   },
+   "host": {
+    "process_id": 2168,
+    "creation_100ns": 134337408890080441,
+    "lifetime_process_commit_peak": 2367758336
+   },
+   "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2367758336,
+    "peak_job_commit": 2368987136,
+    "user_100ns": 69062500,
+    "kernel_100ns": 11718750,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 2168,
+    "process_creation_100ns": 134337408890080441
+   },
+   "execution_source": "ef2357f05d9b87d1087c8fa2ff0ff601f9f8a4e5"
+  }
+ ]
+}

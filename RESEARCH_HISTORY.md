@@ -2633,3 +2633,14 @@ Torch. The mixed table's ideal excess denominator is six, not three;
 registration uses its own correct positive-tail slack and stays at h<=1.
 The largest graph has 314 nodes. No Foundation, ERC-1 or frozen Runtime
 code changes. Target execution and scientific interpretation are next.
+
+The first target execution retains 45 completed worker results at `ef2357f`.
+The next worker (mixed exact Horner, n=5) exposes an experiment replay
+assumption: a failed evidence write leaves the paid admission marker,
+not a complete packed phase. This is the frozen Runtime's already audited
+failure behavior. The report adapter now checks that marker and proves the
+attempted phase exceeds 131,072 bytes, separately counting unretained full
+records. Raw diagnostic outputs can still be independently replayed; they
+gain no packed-evidence or closure authority. The failed reporting worker
+is rerun; the 45 completed measurements are retained without repetition.
+No constructor, depth, tolerance, cap, protocol or Runtime change is made.

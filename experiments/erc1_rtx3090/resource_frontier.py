@@ -162,6 +162,7 @@ def replay_cuda(rt, state):
     """Check raw complete outputs even at a failed bridge, without promoting it."""
     graphs, rows, buffers = dict(state.programs), observations(state), dict(state.buffers)
     expected, checked, failed = {}, 0, 0
+    admission_only, largest_attempted_frame = 0, 0
     state_error = F(0)
     for record in state.cuda.phases:
         assert record.status in ('CHECKED_CUDA_PREFIX_PHASE', 'UNRESOLVED'), record
@@ -184,7 +185,20 @@ def replay_cuda(rt, state):
         expected[record.object_id] = result
         frame = buffers[record.object_id]
         size = int.from_bytes(frame[:8], 'big')
-        assert frame[8:8+size] == pack(record) and not any(frame[8+size:])
+        if frame[8:8+size] != pack(record):
+            assert record.status == 'UNRESOLVED' and 'CUDA evidence retention failed: ' in record.reason
+            assert frame[8:8+size] == pack((record.object_id, 'ADMITTED_CUDA_PHASE'))
+            prior = record.reason.split('; CUDA evidence retention failed: ')[0]
+            assert not prior or prior.startswith('ArithmeticUnresolved:')
+            attempted = replace(record, reason=prior,
+                status='UNRESOLVED' if prior else 'CHECKED_CUDA_PREFIX_PHASE')
+            attempted_size = len(pack(attempted))+8
+            assert attempted_size > len(frame)
+            admission_only += 1
+        else:
+            attempted_size = size+8
+        largest_attempted_frame = max(largest_attempted_frame, attempted_size)
+        assert not any(frame[8+size:])
         assert len(frame) == state.cuda.contract.phase_evidence_bytes
         raw = record.raw_state
         assert raw is not None
@@ -205,6 +219,8 @@ def replay_cuda(rt, state):
     storage = state.cuda.storage
     assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, 16 << 20, 1)
     return {'checked': checked, 'failed_complete_outputs_replayed': failed,
+            'admission_only_frames': admission_only,
+            'largest_attempted_phase_frame_bytes': largest_attempted_frame,
             'max_complete_state_error_including_failure': str(state_error)}
 
 
@@ -355,7 +371,7 @@ def bounded(case):
 
 
 def git(*args):
-    return subprocess.check_output(['git', *args], cwd=ROOT, text=True).strip()
+    return subprocess.check_output(['git', *args], cwd=ROOT, text=True).rstrip('\r\n')
 
 
 def unchanged_registration(revision):
