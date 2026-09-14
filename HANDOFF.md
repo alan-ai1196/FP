@@ -505,9 +505,21 @@ analysis checkout `F:\FP-likelihood-model-audit`; imported execution
 dependencies must match86083a0. Read the live journal with `--partial` and
 omit that option once terminal. Development checks reject twelve forged
 word/readout/freshness/job/class cases and recheck sixteen retained control
-scores. There are still zero completed model rows, so the successful result
-branch awaits real worker evidence. Do not rerun any baseline. A one-identity
+scores. The first completed model now passes the successful result branch
+with actual worker evidence. Do not rerun any baseline. A one-identity
 summary without its path label receives unresolved fresh reconstruction.
+
+[The first corrected n8 case is complete](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md).
+At86083a0, c2/seed16 seals at124 and installs at114; all64 reference forecasts
+equal the adaptive posterior. The worker independently checks748 CUDA and748
+binary64 phases,248 commit tapes and108 fresh scores. The b85b39d reader
+reconstructs six scores and the paired decision. Actual candidate/deployed
+unseen CE is0.342961/0.659687: ten remaining forecasts leave a0.316726 waiting
+penalty, inside the prior conditional envelope. Full class remains UNRESOLVED.
+Peak job bytes15,478,538,240 fit16GiB and the unchanged two-hour watchdog.
+Parent23668 continues; worker10820 starts c2/seed17 at09:02:48 UTC on
+2026-09-14. The canonical journal is a verified one-row prefix; the other
+three outcomes remain pending. Keep execution/analysis sources fixed.
 
 Main now uses [slotted complete arena-region records](theory/proofs/ARENA_REGION_STORAGE.md).
 All ten fields and complete snapshots remain. Four512MiB host jobs check

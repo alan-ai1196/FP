@@ -53,8 +53,19 @@ now reconstructs proper-mass versus raw-division scores and paired fresh
 crossings from minimal records, with a source guard against86083a0. It keeps
 failed/unresolved streams unscored and rejects complete-class or early-install
 claims. Twelve adversarial development checks and sixteen retained control
-score checks pass; validation on a completed corrected model worker remains
-pending. The analysis checkout stays separate from advancing Runtime code.
+score checks pass. The first completed corrected model now also passes its
+successful-result branch. The analysis checkout stays separate from advancing Runtime code.
+
+[The first n8 likelihood outcome](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md)
+seals c2/seed16 at124 and installs at114, at the unchanged86083a0 source.
+Its64 exact reference forecasts equal the retained adaptive posterior;
+748 CUDA/binary64 phases per path,248 commit tapes and108 fresh scores pass
+the worker replay. The b85b39d reader rechecks six scores and the paired
+decision. Actual candidate/deployed unseen CE is0.342961/0.659687, matching
+the previously proved delay envelope. Peak job commitment15,478,538,240 bytes
+fits16GiB; full class remains UNRESOLVED. The verified canonical prefix has
+one outcome. Worker10820 starts the second case at09:02:48 UTC on2026-09-14;
+parent23668 and the same four-case registration continue.
 
 The [arena-region storage change](theory/proofs/ARENA_REGION_STORAGE.md) uses
 frozen slots for the same ten metadata fields. It preserves complete

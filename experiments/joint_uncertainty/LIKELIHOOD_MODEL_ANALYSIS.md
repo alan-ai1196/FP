@@ -69,6 +69,9 @@ worker's own checks or supply a new completeness claim.
 checks twelve adversarial word/readout/freshness/job/class cases, accepts
 paired crossing without installation, and refuses promotion of the retained
 failed job. Its initial run independently checks sixteen retained control
-scores and reports zero completed model rows. The successful model-result
-branch still requires a real completed corrected worker; no synthetic model
-worker is published as validation evidence.
+scores and reports zero completed model rows. The
+[first completed corrected worker](LIKELIHOOD_MODEL_RESULTS.md) now also passes
+the successful-model branch: six reconstructed scores, one paired decision
+and748 worker-verified phases per path. Its reader runs from unchanged
+b85b39d against the live86083a0 journal. No synthetic model worker is
+published as validation evidence.

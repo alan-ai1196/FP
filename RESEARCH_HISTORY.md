@@ -4634,3 +4634,39 @@ realizes these premise-qualified predictions. Missing admission, resource
 failure, numerical refusal or failed installation retains its own outcome.
 It acquires no hypothetical score from this analysis. The matrix at86083a0
 and its b85b39d result reader stay fixed while main records this research.
+
+## 133. Complete the first owned posterior learner at the retained n8 model scale
+
+The corrected86083a0 c2/seed16 worker16644 completes under its original16GiB
+and two-hour limits. It seals at124, constructs/selects one native v7 member,
+profiles all60 training events and matches the independent exact adaptive
+posterior on every one of64 pre-target reference forecasts. Its full
+constructor class remains UNRESOLVED. No other candidate family is excluded.
+
+The worker independently replays748 CUDA and748 binary64 phases,248 actual
+commit tapes and108 fresh scores. Both reference and actual CUDA stored-mass
+paths cross at114 after54 fresh labels; the ordinary policy installs then,
+with full owned state/lease transport. Candidate unseen CE is0.342961291
+against the retained exact posterior's0.342961337. Actual deployed unseen CE
+is0.659686798, leaving a0.316725507 waiting penalty and only ten deployed
+candidate forecasts. The near-neutral relation-error metric changes1/88 to
+1/44 under rounding; tiny CE differences are not treated as dominance.
+
+The separate b85b39d reader passes its first successful real model result,
+reconstructing six scores and the paired decision from retained word records.
+It also rechecks sixteen strong-control scores without new baseline workers.
+The previously committed crossing/risk envelopes contain the actual install
+and both unseen/full-domain candidate, deployed and waiting-cost values.
+This establishes a real owned posterior implementation in one registered
+case and confirms the remaining deployment delay predicted by theory.
+
+Peak job commitment is15,478,538,240 bytes, packed peak3,206,983,117 bytes,
+maximum output cells41,949 and largest evidence frame3,544,209 bytes. All
+original caps remain. The journal is copied only after verifying prefix and
+registration equality; the original90f3883 failed attempt remains retained.
+The one-row independent analysis and concise results page are now canonical.
+
+Parent23668 continues at the same source. Worker10820 starts c2/seed17 at
+09:02:48 UTC on2026-09-14; the two c4 cases follow. No aggregate conclusion
+is drawn from the remaining uncompleted cases. Main's subsequent readback
+optimization does not change this execution or receive credit for its result.

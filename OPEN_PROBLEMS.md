@@ -21,8 +21,13 @@ stops after its first90f3883 job fails in the100-digit Decimal gain auditor.
 No model result is established. The [exact checker](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
 fixes both a correct-interval rejection and an incorrect-interval acceptance,
 with explicit unresolved budgets. The corrected four cases now execute at
-immutable86083a0 in `F:\FP-likelihood-model-v2-run`, with no completed outcome
-yet. The failed attempt and all original model/resource settings remain;
+immutable86083a0 in `F:\FP-likelihood-model-v2-run`. Its
+[first c2/seed16 case now seals and installs](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md):
+all64 reference forecasts match the posterior,748 CUDA/binary64 phases per
+path pass, and the independent reader checks six scores plus paired crossing.
+Candidate unseen CE is0.342961 but deployment remains0.659687 after waiting
+54 fresh events, confirming the conditional delay prediction. The other three
+outcomes remain pending. The failed attempt and all original settings remain;
 the runner verifies exact registration-dictionary equality. Keep
 candidate/deployed results separate and do not rerun the
 retained strong controls. Reused tapes remain retrospective evidence.

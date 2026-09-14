@@ -2588,6 +2588,15 @@ candidate. These are conditional predictions using retained evaluation
 labels, not observed model results, new power claims or installation authority.
 Even posterior-exact learning does not eliminate that registered delay.
 
+The [first completed n8 likelihood model](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md)
+now realizes this distinction at86083a0. Its64 reference forecasts equal the
+adaptive posterior, and748 independently replayed CUDA/binary64 phases per
+path complete within the original envelope. Actual paired crossing/install
+at114 leaves ten forecasts; candidate/deployed unseen CE is0.342961/0.659687.
+The earlier conditional crossing/risk envelopes pass. This is one completed
+case with an UNRESOLVED constructor class, not a four-case conclusion or a
+new complete Runtime release. Three registered outcomes remain pending.
+
 The [arena-region representation proof](theory/proofs/ARENA_REGION_STORAGE.md)
 preserves every metadata field and legal extent/lease check while reducing
 measured host overhead with frozen slotted records. Complete snapshots and
