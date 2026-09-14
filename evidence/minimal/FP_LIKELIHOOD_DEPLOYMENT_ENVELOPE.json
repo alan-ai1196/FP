@@ -1,0 +1,315 @@
+{
+  "status": "PASSIVE_CONDITIONAL_ENVELOPE_AUDIT_PASS",
+  "registration_source": "86083a0406292660115224f8e507626de4b442c5",
+  "baseline_reference": {
+    "journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+    "journal_commit": "6c202ea0caba09da252cc431ba19f6b8a9f430e3",
+    "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+    "cases": [
+      [
+        8,
+        "iid-c2",
+        16
+      ],
+      [
+        8,
+        "iid-c2",
+        17
+      ],
+      [
+        8,
+        "iid-c4",
+        18
+      ],
+      [
+        8,
+        "iid-c4",
+        19
+      ]
+    ],
+    "scope": "completed retained exact/AMP adaptive posterior; no new baseline execution"
+  },
+  "evaluation_tapes_used": true,
+  "new_model_or_baseline_workers": 0,
+  "scope": "retrospective conditional scalar envelopes, not observed FP scores, model completion, prospective power or installation authority",
+  "premises": "actual reference posterior; admitted paired identities at cutoff; original bound6/bet3/4/alpha1/4/grid16; proper-mass error<=0.001; successful required computations; remaining ordinary install gates for conditional deployed scores",
+  "probability_tolerance": "1/1000",
+  "uniform_production_log_width_upper": "1/2353579470675",
+  "no_install_uniform_expected_CE": [
+    "762123384785/1099511627776",
+    "381061692393/549755813888"
+  ],
+  "unsupported_reference_probability_rejections": 4,
+  "exhaustive_tube_audit": {
+    "native_prediction_prefixes": 63,
+    "native_unit_branches": 126,
+    "complete_label_and_proper_forecast_paths": 46656,
+    "actual_floor_enclosure_checks": 55986,
+    "scope": "three rational proper-forecast perturbations per pre-target cut; no GPU execution"
+  },
+  "cases": [
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "fresh": {
+        "reference_cursor": 114,
+        "AMP_earliest_cursor": 114,
+        "AMP_latest_cursor": 115,
+        "paired_cursor_interval": [
+          114,
+          115
+        ],
+        "reference_wealth_at_crossing": "265241/65536",
+        "lower_tube_wealth_at_crossing": "279607/65536",
+        "upper_tube_wealth_at_crossing": "270029/65536"
+      },
+      "remaining_forecasts_if_installed": [
+        9,
+        10
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 44,
+          "reference_candidate_expected_CE": [
+            "188544989203/549755813888",
+            "377089978407/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "376980415927/1099511627776",
+            "94301516663/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "362666652595/549755813888",
+            "367265622029/549755813888"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "348127797163/1099511627776",
+            "178775204581/549755813888"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "185473509645/549755813888",
+            "370947019291/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "185435847543/549755813888",
+            "92757187557/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "698890435481/1099511627776",
+            "352607297267/549755813888"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "327862645389/1099511627776",
+            "334342035325/1099511627776"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "fresh": {
+        "reference_cursor": 90,
+        "AMP_earliest_cursor": 89,
+        "AMP_latest_cursor": 90,
+        "paired_cursor_interval": [
+          90,
+          90
+        ],
+        "reference_wealth_at_crossing": "280121/65536",
+        "lower_tube_wealth_at_crossing": "139095/32768",
+        "upper_tube_wealth_at_crossing": "262707/65536"
+      },
+      "remaining_forecasts_if_installed": [
+        34,
+        34
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 44,
+          "reference_candidate_expected_CE": [
+            "183633754467/549755813888",
+            "367267508935/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "183605771279/549755813888",
+            "367329845145/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "550580427111/1099511627776",
+            "550583639205/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "45813448515/274877906944",
+            "91684442277/549755813888"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "45524258941/137438953472",
+            "364194071529/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "91038898661/274877906944",
+            "364238847939/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "547131357149/1099511627776",
+            "273567310807/549755813888"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "182895773675/1099511627776",
+            "182975762505/1099511627776"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "fresh": {
+        "reference_cursor": 72,
+        "AMP_earliest_cursor": 71,
+        "AMP_latest_cursor": 72,
+        "paired_cursor_interval": [
+          72,
+          72
+        ],
+        "reference_wealth_at_crossing": "280083/65536",
+        "lower_tube_wealth_at_crossing": "278245/65536",
+        "upper_tube_wealth_at_crossing": "65645/16384"
+      },
+      "remaining_forecasts_if_installed": [
+        32,
+        32
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 48,
+          "reference_candidate_expected_CE": [
+            "418552612167/1099511627776",
+            "52319076521/137438953472"
+          ],
+          "AMP_candidate_expected_CE": [
+            "209126849277/549755813888",
+            "209429153401/549755813888"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "551346887103/1099511627776",
+            "4307422559/8589934592"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "66245890375/549755813888",
+            "133093188549/1099511627776"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "100818146963/274877906944",
+            "403272587853/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "50381050153/137438953472",
+            "201751708477/549755813888"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "279888973505/549755813888",
+            "559781019443/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "156277602489/1099511627776",
+            "78364772893/549755813888"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "fresh": {
+        "reference_cursor": 72,
+        "AMP_earliest_cursor": 72,
+        "AMP_latest_cursor": 72,
+        "paired_cursor_interval": [
+          72,
+          72
+        ],
+        "reference_wealth_at_crossing": "273277/65536",
+        "lower_tube_wealth_at_crossing": "67811/16384",
+        "upper_tube_wealth_at_crossing": "68825/16384"
+      },
+      "remaining_forecasts_if_installed": [
+        32,
+        32
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 48,
+          "reference_candidate_expected_CE": [
+            "24067290525/68719476736",
+            "385076648401/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "192464661065/549755813888",
+            "385230686173/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "284104503459/549755813888",
+            "568211951337/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "45745316291/274877906944",
+            "183279684789/1099511627776"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "378165613609/1099511627776",
+            "189082806805/549755813888"
+          ],
+          "AMP_candidate_expected_CE": [
+            "189027559453/549755813888",
+            "94570669539/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "279888973505/549755813888",
+            "69972627431/137438953472"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "181498341291/1099511627776",
+            "181722828105/1099511627776"
+          ]
+        }
+      }
+    }
+  ],
+  "independent_exact_log_enclosures": 1975,
+  "maximum_independent_log_terms": 32,
+  "maximum_independent_log_operand_bits": 16061
+}

@@ -63,6 +63,15 @@ Fixed-grid almost-sure power is false. This scoped statistical composition
 is settled; do not turn it into another constants or bet-menu study. The
 remaining question is actual complete execution and useful deployed behavior.
 
+The [retained-tape delay envelope](theory/proofs/LIKELIHOOD_DEPLOYMENT_ENVELOPE.md)
+shows that candidate accuracy alone cannot resolve the latter: the first
+posterior-exact case must wait54-55 of64 fresh events under its current
+successful AMP/evidence premises. Its waiting cost is at least0.316620 unseen
+CE over the same candidate. This uses the retained evaluation tape and grants
+no failed worker a score. Check the original matrix against these conditional
+predictions before considering a separately declared change to evidence
+efficiency; keep the active model, rule and resource registration fixed.
+
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 settles the distribution-wide condition for this exact one-event U. It does
 not classify every fixed-Gamma reachable encoding: the informative invariant

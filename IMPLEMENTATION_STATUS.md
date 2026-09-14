@@ -74,6 +74,15 @@ remaining separate. Exact audit checks384 native units/floor compositions,
 counterexample prevents an almost-sure power claim. This passive theorem
 adds no Runtime action, installed outcome or new model evidence.
 
+The [conditional deployment envelope](theory/proofs/LIKELIHOOD_DEPLOYMENT_ENVELOPE.md)
+uses the retained evaluation tapes to predict paired cursors114-115/90/72/72
+under the original successful fresh/AMP premises. An exact native/floor audit
+checks46,656 perturbation/label paths and55,986 wealth updates; the256 n8
+reference forecasts agree with the retained controls. The first case's
+waiting penalty is at least0.316620 unseen CE over the same AMP candidate.
+These are passive implications for the running procedure, not executed
+model scores, installation authority or changes to its registered rule.
+
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.
 Under its RNE32 schedule, error is at most(K-1)u/72+gamma_(K-1)+u+2^-150,

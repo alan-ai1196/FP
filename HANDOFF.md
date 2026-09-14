@@ -534,6 +534,17 @@ the reciprocal claim under a fixed hidden world. Preserve those scope limits.
 The statistical composition is closed for this model; use actual execution
 to study the remaining resource and deployment outcomes.
 
+The [retained-tape deployment envelope](theory/proofs/LIKELIHOOD_DEPLOYMENT_ENVELOPE.md)
+now isolates the delay expected even from posterior-exact learning. Under
+successful original fresh/AMP premises the paired crossing cursors are
+114-115/90/72/72. The first case leaves9-10 forecasts and incurs at least
+0.316620 extra unseen CE over the same candidate solely through waiting.
+All46,656 six-event label/perturbation paths and55,986 actual wealth floors
+pass the exact tube audit. This analysis explicitly uses retained evaluation
+labels; it is neither prospective power nor a completed model result. Compare
+completed workers with the scalar envelopes, preserve failed outcomes, and
+keep the registered rule unchanged while the matrix runs.
+
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.
 Under its RNE32 schedule, error is at most(K-1)u/72+gamma_(K-1)+u+2^-150,

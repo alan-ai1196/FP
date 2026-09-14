@@ -2578,6 +2578,16 @@ completion premise the result bounds crossing or operational failure. A native
 power to the finite grid. The original mean-null, semantics, evidence actions
 and running model registration remain unchanged.
 
+The [retained-tape deployment envelope](theory/proofs/LIKELIHOOD_DEPLOYMENT_ENVELOPE.md)
+isolates a different, retrospective consequence of the same rule. Monotone
+floor recurrences enclose first crossings for every successful probability
+tube realization; exact risk cancellation isolates the cost of waiting.
+The first n8 case permits paired crossing only at114-115, leaving9-10
+forecasts, and waiting adds at least0.316620 unseen CE over the same AMP
+candidate. These are conditional predictions using retained evaluation
+labels, not observed model results, new power claims or installation authority.
+Even posterior-exact learning does not eliminate that registered delay.
+
 The [arena-region representation proof](theory/proofs/ARENA_REGION_STORAGE.md)
 preserves every metadata field and legal extent/lease check while reducing
 measured host overhead with frozen slotted records. Complete snapshots and

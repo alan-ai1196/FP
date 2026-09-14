@@ -4593,3 +4593,44 @@ No n16 model job has been recovered by this evidence. Original failures and
 the current n8 matrix remain unchanged. The latter executes at86083a0 while
 its independent reader is pinned at b85b39d in the separate analysis checkout.
 Main can advance without silently changing either source or their outcomes.
+
+## 132. Isolate deployment delay even for posterior-exact learning
+
+The finite fresh-power theorem survives the failure/filtration recheck: its
+bound concerns crossing or operational failure without conditioning on which
+workers pass. A separate passive analysis now reads the retained evaluation
+tapes to isolate the registered rule's actual delay even when learning is
+posterior-exact. This is explicitly retrospective, not another profile-only
+power result or an imputed outcome of the running matrix.
+
+For every proper AMP forecast in the original0.001 probability tube, a uniform
+production-log width bounds its actual lower score from both sides. Monotone
+grid16 wealth recurrences then enclose first crossing, with the exact reference
+crossing retained separately. Pairing gives ordinary cursors114-115,90,72,72
+for the four n8 cases. No alternative bet, source law, numerical tolerance,
+resource limit or semantic action is introduced.
+
+Conditional on the original installation gates and subsequent predictions
+succeeding, the first case therefore leaves only9-10 of64 forecasts for the
+candidate. Exact convex CE intervals give deployed unseen CE in
+[0.659686,0.668053], versus reference candidate CE about0.342961. Cancelling
+the shared post-install trajectory proves at least0.316620 extra unseen CE
+from waiting over the same AMP candidate. The other three conditional waiting
+penalty lower bounds are0.166668,0.120500,0.166420. Earlier installation is
+not presumed to improve every query's true risk; possible cursors are
+enumerated and every risk interval is rounded outward.
+
+The exact audit checks63 native prediction prefixes,126 native complete
+units, all46,656 six-event label/proper-forecast paths and55,986 applications
+of the actual wealth helper. Four unsupported reference probabilities are
+refused. The256 retained n8 reference forecasts give eight CE comparisons
+with the original strong controls. All1,975 log enclosures are independently
+verified, needing at most32 terms and16,061-bit operands. No Torch import,
+model/GPU worker or baseline rerun occurs. The compact record retains only
+scalar envelopes and counts, without world weights or event tapes.
+
+Actual source-bound completion remains the test of whether the owned procedure
+realizes these premise-qualified predictions. Missing admission, resource
+failure, numerical refusal or failed installation retains its own outcome.
+It acquires no hypothetical score from this analysis. The matrix at86083a0
+and its b85b39d result reader stay fixed while main records this research.
