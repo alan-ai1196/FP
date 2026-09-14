@@ -16,6 +16,15 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Learn from later labels while preserving current uncertainty
 
+The [compact forecast decoder](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
+now has a scoped computational boundary: unless P=NP, it cannot uniformly
+resolve all legal relation histories at any constant error below2/5 in time
+polynomial in n+T. Polynomial sufficient memory and polynomial-space exact
+enumeration do not supply that time guarantee. The remaining research question
+is useful performance on declared data laws, exploitable posterior structure,
+and paid approximation/uncertainty bounds. No IID lower bound, tight exponential
+time law or necessity of a specific finite worker failure has been proved.
+
 The affine preparation bottleneck is partly reduced by the [sparse exact
 analyzer and independent degree verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md).
 The same complete descriptor costs304,892 counted operations at n6 rather

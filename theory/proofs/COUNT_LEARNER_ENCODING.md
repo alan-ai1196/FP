@@ -5,7 +5,7 @@ Status: **PROVED, SCOPED; EXACT COMPLETE-STATE AUDIT**. The earlier
 fields of the reference learner and its native forward cache for the fixed
 fair-prior, noise1/10 relation graph under the [registered simplex U](SIMPLEX_RUNTIME_CONTRACT.md)
 with rate1 and one-event units. This is a mathematical representation result,
-not a Runtime integration, free resource quotient, new architecture action,
+not by itself a Runtime integration, free resource quotient, new architecture action,
 parameter-injection API or replacement for the failed AMP execution.
 
 ## 1. Fixed program, actual initialization and clocks
@@ -101,6 +101,13 @@ is at most Cmax, a simple abstract encoding uses at most
 with m=n(n-1)/2 and the model/layout fixed. This concerns C alone. It does
 not remove stored data, graph code, physical evidence or decoder workspace.
 
+The subsequent [forecast decoding complexity theorem](FORECAST_DECODING_COMPLEXITY.md)
+now isolates a worst-case computational obstacle even for one scalar forecast:
+a uniformly resolving polynomial-time decoder in n+H with error below2/5
+would imply P=NP. Exact streaming enumeration has exponential time and
+polynomial workspace. This is a compact-family bound, not a lower bound
+polynomial in the already exponential literal graph size or on an RN-5 job.
+
 Exact materialization can still be large. Subtract min_z a_z from every
 exponent. The span is at most||d||_1, so positive integer weights lie between
 1 and9^H and their sum is at most K*9^H. Exact decoded theta and gradients
@@ -114,9 +121,12 @@ A future physical lowering may retain counts and materialize rounded values
 only when needed, so a temporary zero need not destroy persistent evidence.
 It must bind counts to the actual Gamma, program, source events, clocks and
 profile, pay for reconstruction and storage, guard count/arithmetic overflow,
-and prove its own reference/AMP relation. The existing Runtime has no such
-count representation or authority. The [observed reversal failure](SIMPLEX_REVERSAL.md)
-at619e3cf remains a valid outcome of its existing persistent FP32 weights.
+and prove its own reference/AMP relation. At the initial927fb65 audit,
+Runtime had no such representation or authority. The subsequent
+[owned likelihood lowering](LIKELIHOOD_RUNTIME_CONTRACT.md) implements the
+commensurate affine subclass with paid derivation and full phase evidence.
+The [observed reversal failure](SIMPLEX_REVERSAL.md) at619e3cf remains a valid
+outcome of its original persistent FP32 weights.
 
 ## 5. Boundaries and exact audits
 

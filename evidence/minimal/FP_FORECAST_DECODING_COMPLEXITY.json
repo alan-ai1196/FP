@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and Fraction; native guards 32768 bits",
+  "exhaustive": [
+    {
+      "forecast_error": "0",
+      "all_graphs_n2_through_n5": 1098,
+      "all_permitted_adaptive_states": 5404,
+      "permitted_decisions": 4306,
+      "terminal_optimal_cuts": 1098,
+      "max_actual_history_length": 28,
+      "max_absolute_signed_count": 4,
+      "max_integer_weight_bits": 64,
+      "maximum_bad_posterior_mass": "1/10"
+    },
+    {
+      "forecast_error": "1/1000",
+      "all_graphs_n2_through_n5": 1098,
+      "all_permitted_adaptive_states": 7055,
+      "permitted_decisions": 5957,
+      "terminal_optimal_cuts": 1809,
+      "max_actual_history_length": 28,
+      "max_absolute_signed_count": 4,
+      "max_integer_weight_bits": 64,
+      "maximum_bad_posterior_mass": "1/10"
+    },
+    {
+      "forecast_error": "39/100",
+      "all_graphs_n2_through_n5": 1098,
+      "all_permitted_adaptive_states": 9815,
+      "permitted_decisions": 8717,
+      "terminal_optimal_cuts": 2855,
+      "max_actual_history_length": 56,
+      "max_absolute_signed_count": 8,
+      "max_integer_weight_bits": 127,
+      "maximum_bad_posterior_mass": "1459/532900"
+    },
+    {
+      "forecast_error": "399/1000",
+      "all_graphs_n2_through_n5": 1098,
+      "all_permitted_adaptive_states": 9815,
+      "permitted_decisions": 8717,
+      "terminal_optimal_cuts": 2855,
+      "max_actual_history_length": 70,
+      "max_absolute_signed_count": 10,
+      "max_integer_weight_bits": 159,
+      "maximum_bad_posterior_mass": "13123/43059844"
+    }
+  ],
+  "native": {
+    "graphs_and_error_settings": 20,
+    "complete_native_units": 183,
+    "native_decision_queries": 36,
+    "whole_state_weight_and_clock_checks": 183
+  },
+  "threshold_counterexample": {
+    "n": 3,
+    "edges": [
+      [
+        1,
+        2
+      ]
+    ],
+    "uniform_forecast": "1/2",
+    "uniform_error_bound": "2/5",
+    "returned_cut": 0,
+    "optimum": 1
+  },
+  "scope": "worst-case uniform compact-model decoding; no Runtime, IID hardness, timing or fixed-job lower bound"
+}

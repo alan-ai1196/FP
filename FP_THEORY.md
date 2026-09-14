@@ -2503,6 +2503,17 @@ bank. Agreement of all simplex-vertex forecasts alone is insufficient to
 certify affinity or the actual unit U. Native nodes and fixed-slot derivatives
 remain intact; the conservative resource envelope and decision class persist.
 
+The [forecast decoding complexity theorem](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
+separates sufficient information from computation for the same known-noise
+relation learner. Its O(n^2 log(T+1))-bit counts support an exact exponential-
+time, polynomial-space scalar forecast decoder. A uniformly resolving decoder
+polynomial in n+T with additive noisy-forecast error e<2/5 would imply P=NP,
+by an unweighted MAX CUT reduction using only polynomially many legal labels.
+At e=2/5 the constant forecast1/2 suffices. This is a conditional worst-case
+bound for the compact family, not an exponential lower bound, an IID risk
+claim, a bound in explicit native graph size, or an explanation of a fixed
+job's failure. It creates no new semantic action or class certificate.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.

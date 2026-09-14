@@ -462,6 +462,18 @@ pass587 CUDA/binary64 phases each, with profile install22 and reversal
 recovery53. Conservative budgets and the nine old source-bound jobs retain
 their original scope. This code also stays on the research branch.
 
+The [forecast decoding theorem](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
+now proves that compact sufficient counts do not imply cheap readout. A
+decoder that resolves every legal history with noisy-forecast error below
+2/5 in polynomial time in n+T would solve unweighted MAX CUT in polynomial
+time. At2/5, constant1/2 is valid; exact streaming enumeration uses exponential
+time and polynomial workspace. The reduction uses the same native unit U,
+fair prior and positive noise1/10 likelihoods. Exact checks cover all1,098
+graphs at n2..5,32,089 permitted adaptive states and183 native units. This
+does not establish IID hardness or explain RN-5 timeouts. Continue useful
+model-scale tests and structured solver work with honest unresolved budgets;
+the theory supplies no free forecast or new target/fresh-evidence authority.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

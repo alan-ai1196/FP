@@ -4176,3 +4176,37 @@ recovery53/uniform100 persist. These are functional checks, not a replacement
 for the nine source-bound jobs or a useful-scale model comparison. Proof and
 minimal exact evidence are in SPARSE_LIKELIHOOD_ANALYSIS.md and its linked
 report. Main execution remains fixed at38b27b3 while RN-5 task27 runs.
+
+## 120. Compact likelihood information can still require hard forecast computation
+
+The known-noise relation learner now has a conditional decoding lower bound.
+For any fixed additive noisy-forecast error e<2/5, a uniform decoder resolving
+all legal histories in polynomial time in n+T would imply P=NP. Repeating
+label1 M times per edge of an unweighted graph gives posterior9^(M*cut).
+Approximate anchor forecasts choose a branch with latent mass at least
+gamma=1/2-e/(4/5). Repeating each chosen label M times preserves a maximum
+cut because the total inconsistent/nonoptimal posterior mass is at most
+2^(n-1)/9^M<=gamma/2. Each choice retains an optimum; n-1 choices recover it.
+No edge-dependent giant forcing weight is needed: the same M suffices.
+
+M is O(n+log(1/gamma)), history length is M(m+n-1), and each signed count
+is bounded by2M. This avoids an invalid reduction from binary-weighted
+MAX CUT by expanded labels. The cited primary result proves NP-completeness
+already for unweighted simple graphs. The exact native normalizer remains10.
+At e=2/5 the constant forecast1/2 works, so the accuracy threshold is sharp.
+An exact scalar decoder streams2^(n-1) worlds with polynomial workspace;
+no matching exponential time lower bound is claimed.
+
+The audit explores all1,098 graphs on2..5 vertices at four rational error
+bounds,32,089 adaptive states and every permitted threshold decision.
+All8,617 terminal assignments are optimal; ordered products and count
+decoding agree at each state. Twenty small settings additionally execute183
+complete native units and36 query decisions. Proof and minimal evidence are
+in FORECAST_DECODING_COMPLEXITY.md and its linked report.
+
+The bound concerns uniform compact-model decoding, with preprocessing paid.
+It does not concern polynomial time in the exponentially expanded graph,
+typical IID risk, a fixed machine, or the cause of an RN-5 timeout. Adversarial
+oracle histories are conditional-input problems, not a fresh stochastic
+Runtime protocol. This result separates retained information from computation
+without changing Foundation, ERC-1, sources, U or architecture actions.

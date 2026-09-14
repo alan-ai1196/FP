@@ -11,6 +11,13 @@ unchanged. Two bounded development jobs check587 CUDA and587 binary64 phases,
 including reversal and profile/install. This is separate extension validation;
 the old nine-job matrix stays bound to08fa7bc and live RN-5 stays at38b27b3.
 
+The [compact forecast decoding theorem](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
+adds a computational limit for this existing learner family: uniform error
+below2/5 with polynomial time in n+T would imply P=NP. Its exact audit explores
+32,089 permitted adaptive states and183 complete native units. This is theory
+and exact verification, not a new decoder installed in Runtime, an average-case
+claim, or a diagnosis of RN-5's finite execution failures.
+
 **Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 and component
 v3 extensions: separately audited. Registered experiments: UNHELD within their tested scopes.** Source
 `5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 CPU and
