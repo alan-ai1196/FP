@@ -140,19 +140,21 @@ and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertain
 preregistered with its larger joint-family execution envelope. Execute the
 31 workers, independently reconstruct forecasts and fresh decisions, and
 compare with the strong adaptive posterior without filling failed tails. Execution is active at
-`38b27b3`. Independent analysis now verifies twenty-six completed attempts:
-nineteen EXECUTED and seven FAILED. All four n16/c2 FP workers record final-auditor
+`38b27b3`. Independent analysis now verifies twenty-eight completed attempts:
+twenty EXECUTED and eight FAILED. All four n16/c2 FP workers record final-auditor
 snapshot MemoryErrors at the declared host envelope, with no scored or fully
 audited FP trajectory. All n8/c4 streams now seal, two install; candidate
 unseen CE means0.4168832454/0.4333859733 still exceed the strong posterior's
-0.3654471094 on these two seeds. The prefix has76 checked descriptive scores,
-twelve fresh decisions and1,024 posterior GPU forecasts. Both n16/c4 seed18
+0.3654471094 on these two seeds. The prefix has80 checked descriptive scores,
+twelve fresh decisions and1,280 posterior GPU forecasts. Both n16/c4 seed18
 rates time out at their fixed two-hour limits, with no valid report or model
 score. Peak job commitments are8,913,358,848/9,165,230,080 bytes, below16GiB.
 The corresponding posterior completes256 forecasts with unseen AMP CE
 0.3305557522. Seed19 rate1 also times out at two hours, with peak job
-commitment9,577,873,408 bytes and no report or score. Seed19 rate4/posterior
-and selected-stress outcomes require their unchanged registered executions;
+commitment9,577,873,408 bytes and no report or score. Seed19 rate4 also times
+out, with peak job commitment9,627,586,560 bytes and no valid report. Its
+posterior completes256 forecasts with unseen AMP CE0.3308954459. All n16
+attempts are terminal; the selected-stress cases continue unchanged;
 do not restart a failed rate or enlarge its limit.
 Remaining outcomes come only from the unchanged live matrix. The
 [scale-dynamics result](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) explains

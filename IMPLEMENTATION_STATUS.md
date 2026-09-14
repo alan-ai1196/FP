@@ -190,10 +190,10 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-twenty-six-attempt prefix contains nineteen EXECUTED workers and seven FAILED jobs.
+twenty-eight-attempt prefix contains twenty EXECUTED workers and eight FAILED jobs.
 Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
-are independently checked. Seven new posterior workers supply1,024 actual GPU
-forecasts; post-analysis verifies76 descriptive scores and twelve fresh
+are independently checked. Eight new posterior workers supply1,280 actual GPU
+forecasts; post-analysis verifies80 descriptive scores and twelve fresh
 FP decisions. The two n16/c2 posterior workers have mean unseen CE0.3269395091.
 All four n16/c2 FP workers fail in the final CUDA auditor's arena snapshot
 with MemoryError under the fixed16GiB host envelope. They retain no FP model
@@ -207,9 +207,13 @@ the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
 score, installation, seal or complete phase count. The seed18 posterior
 completes256 independently reconstructed forecasts with unseen AMP CE
 0.3305557522. Seed19 rate1 also reaches its two-hour timeout with peak job
-commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4,
-its posterior and the selected stress remain pending. Read the live main
-journal for its newest prefix; the research branch retains26 attempts.
+commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4
+also times out, with peak job commitment9,627,586,560 bytes and no valid
+report. The seed19 posterior completes256 forecasts with unseen AMP CE
+0.3308954459; the two n16/c4 posterior cases average0.3307255990. All eight
+n16 FP attempts are now terminal without model scores. Only the selected
+stress cases remain. Read the live main journal for its newest prefix; the
+research branch retains28 attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 

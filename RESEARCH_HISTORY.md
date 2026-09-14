@@ -4278,3 +4278,32 @@ on2026-09-14. No complete new model outcome is yet available. Main RN-5
 task27 independently remains live at38b27b3. Source/dependency guards pass
 for both executions while this research branch advances within the same
 canonical Git repository. Foundation, ERC-1 and semantic actions are unchanged.
+
+## 123. Finish the n16 RN-5 cases without inventing unavailable FP results
+
+Task27, n16/c4 seed19 rate4 at38b27b3, reaches the registered two-hour timeout.
+The completed job records PID12732, creation tick134338289186817892, exit1223,
+attached-before-resume true, no host-limit process termination, and peak job
+commitment9,627,586,560 bytes under16GiB. No valid worker report is available,
+so the attempt supplies no score, install, seal or complete phase count.
+
+Task28's unchanged adaptive posterior then completes as PID4704, creation
+tick134338361192023420, exit0 and peak job commitment2,309,148,672 bytes. It
+reconstructs256 actual GPU forecasts; unseen exact/AMP CE is0.3308954323/
+0.3308954459, and full-domain exact/AMP CE is0.3299872356/0.3299872479. The
+same16GiB/two-hour envelope remains. Parent11020 proceeds to task29, selected
+n8 stress seed20 rate1, as worker21596 at05:08:48 UTC.
+
+The preceding26 journal rows are identical. Independent analysis runs in the
+original38b27b3 main checkout and verifies the28-attempt prefix:20 EXECUTED,
+eight FAILED,12 sealed FP streams, nine installs,80 descriptive score checks,
+12 fresh decisions,6,552 CUDA/binary64 phases each and1,280 new posterior GPU
+forecasts. All eight n16 FP attempts now lack model scores: four c2 snapshot
+MemoryErrors and four c4 timeouts. This is a finite execution result, not a
+semantic infeasibility or complexity lower bound for those individual inputs.
+
+The research runner's retained-baseline check now permits appended RN-5
+rows while requiring the entire referenced26-row prefix and registration to
+remain identical. Its four n8 controls are unchanged. The already running
+n8 likelihood matrix stays in its immutable90f3883 checkout, retaining the
+original26-row source snapshot. Neither live execution is patched or restarted.

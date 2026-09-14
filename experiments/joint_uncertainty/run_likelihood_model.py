@@ -63,7 +63,12 @@ def git(*args):
 
 def retained_baselines():
     report = json.loads(git('show', BASELINE_COMMIT+':'+BASELINE_PATH))
-    assert report == json.loads((ROOT/BASELINE_PATH).read_text(encoding='utf-8'))
+    current = json.loads((ROOT/BASELINE_PATH).read_text(encoding='utf-8'))
+    # A later RN-5 prefix may append completed jobs. The referenced prefix and
+    # its registration must remain identical; new rows cannot change a control.
+    assert current['workers'][:len(report['workers'])] == report['workers']
+    assert {k:v for k,v in current.items() if k not in ('status', 'workers')} == {
+        k:v for k,v in report.items() if k not in ('status', 'workers')}
     rows = [r for r in report['workers'] if r.get('kind') == 'posterior' and tuple(r['case']) in CASES]
     assert tuple(tuple(r['case']) for r in rows) == CASES
     for row in rows:
