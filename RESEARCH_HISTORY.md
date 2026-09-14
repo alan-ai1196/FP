@@ -3970,3 +3970,46 @@ raw observations, pre-target query identities, provenance and evidence stay
 owned. The existing FP32 reversal failure remains unchanged. The next issue
 is a paid physical decoder and its continuation relation, with exact count
 overflow guards and no reconstructed value supplied through a helper port.
+
+## 114. Exact likelihood memory and approximate causal quotients have different tests
+
+The phase encoding now extends to fixed finite positive rational likelihood
+banks under the unit simplex U. Prime valuations of world likelihood ratios
+give integer increments. At a known T, their affine rank rho determines
+Theta((T+1)^rho) distinct posteriors, with a matching additive-coordinate
+encoding and counting lower bound. Full future signatures make these exactly
+the reachable predictive classes. A two-world bank with odds increments 2
+and 3 has rho=2 despite having only one free real posterior coordinate.
+Another bank has raw rank 2 but fixed-cut rank 1, exposing the clock's role.
+
+The sharp Hilbert/TV bound from Cohen and Fausti gives the appropriate
+positive-perturbation geometry. Common likelihood updates preserve Hilbert
+distance. Thus some distinct same-cut states remain arbitrarily close under
+every common future; the single-noise relation packing constant does not
+generalize to every rational bank. This initially suggests an approximate
+cover, but such a cover need not commute with the learner transitions.
+
+For pure deterministic encodings, reference commutativity and transition
+consistency amplify any merged pair through repeated block substitutions.
+In a reversible two-world bank this forces a future forecast gap approaching
+the expert contrast. Uniform per-run error below half that contrast therefore
+requires all exact posterior classes. The threshold is sharp for prediction-
+only codes: the expert midpoint uses no posterior information at the boundary.
+This theorem does not cover arbitrary history-dependent physical lifts or
+promise that an indefinitely long word fits an actual resource envelope.
+
+An exact native witness makes the distinction concrete. Nineteen labels with
+odds factor 2 and twelve labels with factor 3 plus seven identity observations
+give a pair whose every-future forecast gap is below 7153/4194304 < 0.002.
+Merging them in a pure encoding forces the commuting length-38 block states
+to merge; a common inverse then exposes gap 7153/2111458 > 0.002 at cut 76.
+These are different continuation words linked by global quotient consistency,
+not a contradiction to the original pair's small common-future distance.
+
+The Fraction audit checks 2,339 complete native caches/observations/commits,
+2,408 histogram-coordinate bijections, relation ranks through n5, 48 future
+word rows, 5,535 positive-tilt bounds and 510 constant-midpoint forecasts.
+Known likelihood/prior construction is explicit, full gradients/clocks stay
+present, and raw observations/provenance are never quotiented. No Runtime
+source, AMP lowering, Foundation action, ERC-1 limit or live RN-5 contract
+changes. The result constrains a future paid codec before implementation.

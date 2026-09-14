@@ -405,6 +405,22 @@ the representation cannot be selected by optimizer name alone. This is an
 encoding theorem; the existing Runtime/AMP backend is unchanged. A physical
 decoder still needs owned storage, actual event binding and paid arithmetic.
 
+The [likelihood information law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md)
+now supplies a general exact exponent: Theta((T+1)^rho) predictive classes
+at a known T, using the rational affine rank of likelihood-ratio valuation
+increments. Two worlds can have rho=2. Exact checks cover 2,339 complete
+native event phases, 2,408 histograms and 5,535 projective bounds. The
+important approximation boundary is also closed: a length-19 pair stays
+within 0.002 under every common future, yet any pure deterministic encoding
+merging it and commuting with reference updates must merge a cut-76 pair
+whose forecast gap exceeds 0.002. For reversible two-world banks this
+argument gives the exact information lower bound whenever uniform error
+is below half the expert contrast. History-dependent lifts and bounded
+claims need separate arguments. Proceed toward a paid physical lowering;
+do not install an approximate pair cover as a causal state quotient.
+The existing AMP reversal failure, live RN-5 contract and main source stay
+unchanged. New mathematical audits run from the linked research worktree.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

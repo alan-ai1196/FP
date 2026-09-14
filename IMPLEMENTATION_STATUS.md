@@ -353,6 +353,18 @@ caches,1,146 observed states and1,146 commits, plus profile attachment and
 scope refusals. No Runtime code or CUDA state representation is changed;
 the theorem provides no constructor, physical resource or install authority.
 
+`experiments/joint_uncertainty/likelihood_information.py` now checks the
+[general finite-bank law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md).
+Seven literal positive native banks use the registered unit simplex U.
+Independent product likelihoods, integer ratio coordinates, full caches
+and full ambient gradients agree in 2,339 native event checks and 2,408
+histograms. The audit includes duplicate experts, nonuniform priors,
+three labels and the known-clock rank reduction. Another 5,535 exact
+positive-tilt checks support the sharp future-error bound. A cut-19/76
+native witness rules out confusing a small pairwise future distance with
+a consistent pure encoding. This is mathematical evidence only: no
+Runtime/AMP representation, helper authority or release scope is changed.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

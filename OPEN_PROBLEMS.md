@@ -223,6 +223,19 @@ exponential world work and growing integer output precision. A resource-
 accounted physical realization remains open. Fractional rates and larger
 update units have explicit same-count, different-state examples and cannot
 inherit this representation without a new proof.
+The [finite likelihood law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md)
+closes the fixed-bank exact information exponent and a further quotient
+boundary. Integer likelihood-ratio affine rank, rather than the number of
+real posterior parameters, gives Theta((T+1)^rho) classes at a known cut.
+Hilbert distance bounds every common future of a positive perturbation,
+but pairwise closeness alone cannot define a causal codec. In reversible
+two-world banks, a pure deterministic encoding commuting with the reference
+updates must retain exact predictive classes below half the expert contrast.
+The target remains a paid physical representation of the actual complete
+learner, or an explicitly bounded/expected-risk alternative. A different
+history-dependent implementation is not excluded by the pure-encoding
+theorem. None of these results supply free arithmetic, source values,
+provenance, persistence or install reachability.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

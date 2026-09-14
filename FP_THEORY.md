@@ -2466,6 +2466,21 @@ Fractional-rate and batched order counterexamples bound the scope. Exact
 representation does not make decoding, physical realization or complete
 Compiler equivalence free; the existing AMP failure is not relabeled.
 
+The [finite likelihood information law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md)
+generalizes the exact count exponent to a fixed positive rational bank:
+at a known commit count T there are Theta((T+1)^rho) reachable predictive
+classes, where rho is the rational affine rank of integer likelihood-ratio
+valuations. Full legal future signatures establish minimality. The rank
+can exceed K-1 even with only K worlds. A sharp Hilbert-distance bound
+controls every common future of two positive posterior perturbations.
+Distinct classes need not have a fixed positive separation, but a pure
+deterministic encoding must also commute with updates. For reversible
+two-world banks, that stronger requirement forces exact class separation
+at uniform forecast error below half the maximum expert contrast. The
+exact cut-19/76 witness distinguishes pairwise approximation from a causal
+quotient. This is scoped learner theory, not a complete Omega equivalence,
+a universal history-dependent algorithm bound or a new physical codec.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.
