@@ -1,0 +1,67 @@
+{
+  "status": "DEVELOPMENT_REGRESSION_PASS",
+  "scope": "small owned CUDA profile/install with the corrected exact gain checker; no new n8 model or full release claim",
+  "Runtime_source_unchanged_from": "125fd1d",
+  "audit_code": "committed alongside this evidence; development working tree at execution",
+  "command": "python -B experiments/joint_uncertainty/likelihood_lowering.py --case profile-install",
+  "completed_job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2358722560,
+    "peak_job_commit": 2359934976,
+    "user_100ns": 436093750,
+    "kernel_100ns": 26250000,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 22196,
+    "process_creation_100ns": 134338416767823506
+  },
+  "result": {
+    "case": "profile-install",
+    "status": "SEALED_CUDA_STREAM",
+    "CUDA": {
+      "checked_phases": 286,
+      "refused_phases": 0,
+      "independent_commit_operation_tapes": 94,
+      "factorization_ranks": [
+        0,
+        3
+      ],
+      "maximum_output_cells": 484,
+      "largest_phase_frame_used": 41326,
+      "actual_arena_bytes": 16777216
+    },
+    "independent_binary64_phases": 286,
+    "fresh_score_checks": 40,
+    "install_cursor": 22,
+    "class_certificate": false,
+    "historical_class": "UNRESOLVED",
+    "binary64_maxima": {
+      "state_error": "544749440806571900381425327740371322207827/151648354448082894963927422584966005418110382863087042560",
+      "native_error": "27361721431319/7244150201409025856031948800",
+      "normalizer_error": "17/4503599627370496",
+      "probability_error": "1197251518256201978860292467430176929609/4212454290224524860109095071804611261637008049863393280",
+      "division_error": "4683743612465315/50706024009129162549069246103552"
+    },
+    "CUDA_maxima": {
+      "state_error": "47369256319806631293606740915705998096531601/282467071801578430391712901340734223682638970880",
+      "native_error": "4/3281",
+      "normalizer_error": "639/524288",
+      "probability_error": "7989/209715200",
+      "division_error": "7549989/117281413660672"
+    },
+    "process_id": 22196,
+    "host": {
+      "process_id": 22196,
+      "creation_100ns": 134338416767823506,
+      "lifetime_process_commit_peak": 2358722560,
+      "job_commit_peak": 2359934976,
+      "process_user_100ns": 431250000,
+      "process_kernel_100ns": 25781250,
+      "job_user_100ns": 431250000,
+      "job_kernel_100ns": 25781250
+    }
+  }
+}

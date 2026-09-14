@@ -115,3 +115,31 @@ that same source-bound partial journal. Existing evidence is never overwritten
 by a new run. Unexpected auditor/driver failures stop the matrix with the
 completed attempt retained; they cannot be resumed as though validation passed.
 Memory exhaustion and timeout remain registered resource outcomes.
+
+## Auditor correction after the original stopped attempt
+
+The first worker at90f3883 exits1 in the inherited100-digit Decimal gain
+cross-check. The [original failure journal](../../evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json)
+retains the completed job and traceback: no timeout, attached before resume,
+peak job commitment15,474,765,824 bytes within16GiB. The driver stops before
+the other three cases. No valid model score, installation, seal or complete
+independent phase count is inferred from this incomplete report.
+
+An exact reproduction finds a correct reference gain from case0 at cursor65
+that the100-digit check rejects. A separate forged zero-width log(3/2)
+interval passes that same rounded comparison. The original worker did not
+retain the offending event, so the reproduction is not a recovered GPU trace.
+The [independent exact checker](../../theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
+uses a different rational range reduction and log2 decomposition, returns
+only after proving interval containment, and fails unresolved on an
+inconclusive bounded calculation. Its defaults are128 series terms and
+262,144 operand/preflight bits; Runtime's32768-bit arithmetic is unchanged.
+
+After this checker is independently audited and committed, execute the same
+four-case matrix from a new immutable source, retaining this earlier attempt
+separately. The runner checks that the complete original model/resource
+registration dictionary is identical before launching any corrected worker.
+The original data, Gamma/U, graph class, baseline references, profile,
+bound6/bet3/4, alpha, AMP/reference tolerances,16GiB/two-hour limits and other
+caps remain unchanged. This is an auditor correction, not outcome-dependent
+model/resource tuning. No old control is rerun or failed attempt relabeled.

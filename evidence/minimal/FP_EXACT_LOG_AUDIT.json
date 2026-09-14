@@ -1,0 +1,49 @@
+{
+  "status": "EXACT_AUDIT_PASS",
+  "scope": "independent scalar log-enclosure verification; no Runtime authority or new GPU/model score",
+  "positive_rational_grid_checks": 1024,
+  "near_one_checks": 14,
+  "scale_checks": 21,
+  "same_cut_posterior_label_checks": 512,
+  "accepted_valid_intervals": 1572,
+  "maximum_accepted_series_terms": 32,
+  "maximum_accepted_operand_bits": 8103,
+  "correct_interval_rejected_by_old_checker": {
+    "probability": "1436234048776862726818201/2872468070873849901111602",
+    "baseline": "1/2",
+    "new_audit": {
+      "terms": 16,
+      "maximum_operand_bits": 2674,
+      "operations": 167
+    }
+  },
+  "wrong_zero_width_interval_accepted_by_old_checker": {
+    "ratio": "3/2",
+    "endpoint": "1013662770270410954945032788660872841429976058656235494035035810360251678122285628169381069543283503/2500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "new_checker_rejects": true
+  },
+  "all_same_cut_legacy_false_rejections": [
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "cursor": 65,
+      "label": 0,
+      "actual_target": true
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "cursor": 50,
+      "label": 1,
+      "actual_target": true
+    }
+  ],
+  "negative_and_budget_checks": 5,
+  "original_failed_job_retained_without_scores": true
+}

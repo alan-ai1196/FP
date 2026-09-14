@@ -18,15 +18,33 @@ below2/5 with polynomial time in n+T would imply P=NP. Its exact audit explores
 and exact verification, not a new decoder installed in Runtime, an average-case
 claim, or a diagnosis of RN-5's finite execution failures.
 
-The [n8 likelihood model matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
-is running from immutable90f3883 in `F:\FP-likelihood-model-run`, with no
-completed worker outcome yet. Parent15872/worker2720 are verified live.
-Four owned FP jobs reuse all four retained n8 IID cases and their unchanged
-exact/AMP posterior controls. It tests native v7/profile/unit-U/fresh-install
-execution at128 worlds, separately scoring candidate and deployment. Host16GiB,
-two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
-tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
-checkout; retain all original RN-5 outcomes and keep the likelihood execution checkout fixed.
+The [n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
+stops after its first90f3883 attempt. Worker2720 exits1 in the inherited
+100-digit Decimal gain auditor, with no timeout and peak job commitment
+15,474,765,824 bytes. Parent15872 is terminal; the other three cases were
+not attempted. The [original failure](evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json)
+is retained verbatim. It supplies no model score, install, seal or complete
+independent phase count. The original execution checkout remains historical.
+
+The [exact replacement](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md) proves
+scalar log-interval containment using an independent rational calculation.
+It rejects a forged zero-width interval accepted by the old check and accepts
+the correct near-neutral reference interval that the old check rejected.
+All1,572 valid scalar cases pass; accepted cases need at most32 terms and
+8,103-bit operands. Unresolved overlap/bit limits never count as a pass.
+Reference, paired CPU persistence and full owned-policy regressions pass.
+A bounded development
+CUDA profile/install seals at cursor22 with286 CUDA/binary64 phases each
+and40 fresh-score checks. This is no n8 result or new complete release.
+
+The corrected four-case protocol keeps every model/resource registration
+field identical to the failed attempt, which the runner checks before launch.
+It retains the same baselines, Gamma/U, graph, data, profile, bound6/bet3/4,
+alpha, tolerances,16GiB/two hours,8GiB packed and4MiB frames. Execute only
+after the checker correction is committed, in a new immutable checkout
+`F:\FP-likelihood-model-v2-run`; keep its HEAD/dependencies fixed throughout.
+The new journal must link the original failure. Do not resume90f3883 as
+though its auditor succeeded or fill its unavailable model results.
 
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.

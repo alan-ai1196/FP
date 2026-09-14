@@ -16,13 +16,15 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Learn from later labels while preserving current uncertainty
 
-The next concrete pressure test is the [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md):
-all four retained IID cases, their unchanged strong controls, and complete
-native construction/profile/learning/fresh-install execution. It runs from
-immutable90f3883 in `F:\FP-likelihood-model-run`; preflight passes and
-new model outcomes are not yet established. Treat its four fixed resource
-attempts as a matched mechanism test, preserving candidate/deployed separation
-and all failures. Reused tapes are not new IID or prospective evidence.
+The [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
+stops after its first90f3883 job fails in the100-digit Decimal gain auditor.
+No model result is established. The [exact checker](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
+fixes both a correct-interval rejection and an incorrect-interval acceptance,
+with explicit unresolved budgets. Execute the corrected four cases from a
+committed immutable source, retaining the failed attempt and all original
+model/resource settings. The runner requires exact registration-dictionary
+equality. Keep candidate/deployed results separate and do not rerun the
+retained strong controls. Reused tapes remain retrospective evidence.
 
 Selected-weight rounding drift in the current count decoder now has a
 [history-uniform RNE32 bound](theory/proofs/LIKELIHOOD_DECODE_ERROR.md): below

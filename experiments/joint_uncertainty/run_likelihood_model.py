@@ -51,9 +51,11 @@ PACKED, WORK, ARENA, FRAME, CELLS = 8 << 30, 10**15, 256 << 20, 4 << 20, 65536
 OUTPUT = ROOT/'evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json'
 BASELINE_COMMIT = '6c202ea'
 BASELINE_PATH = 'evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json'
+PRIOR_FAILURE_PATH = 'evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json'
+PROTOCOL_ORIGIN = '90f38834668546636b420f66b1a831b5969a2a13'
 DEPENDENCIES = tuple(dict.fromkeys(previous.DEPENDENCIES+LOWERING_DEPENDENCIES+(
     'experiments/joint_uncertainty/run_likelihood_model.py',
-    'experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md', BASELINE_PATH)))
+    'experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md', BASELINE_PATH, PRIOR_FAILURE_PATH)))
 
 
 def git(*args):
@@ -81,6 +83,26 @@ def retained_baselines():
     return rows, {'journal': BASELINE_PATH, 'journal_commit': git('rev-parse', BASELINE_COMMIT),
                   'execution_source': report['registration_source'], 'cases': CASES,
                   'scope': 'completed retained exact/AMP adaptive posterior; no new baseline execution'}
+
+
+def prior_auditor_failure(registration_value):
+    prior = json.loads((ROOT/PRIOR_FAILURE_PATH).read_text(encoding='utf-8'))
+    assert prior['status'] == 'STOPPED_AUDITOR_FAILURE'
+    assert prior['registration_source'] == PROTOCOL_ORIGIN
+    row, = prior['workers']
+    assert row['case_index'] == 0 and tuple(row['case']) == CASES[0]
+    assert row['execution_source'] == PROTOCOL_ORIGIN and row['worker_status'] == 'FAILED'
+    job = row['completed_job']
+    assert job['exit_code'] == 1 and not job['timed_out'] and job['attached_before_resume']
+    assert 'audit_reference_persistence.py' in row['result']['traceback']
+    assert 'AssertionError' in row['result']['traceback']
+    # The correction changes the independent checker, never the registered
+    # model, data, baseline, budgets, tolerances, learning or evidence rule.
+    assert prior['registration'] == registration_value
+    return {'journal': PRIOR_FAILURE_PATH, 'execution_source': PROTOCOL_ORIGIN,
+            'attempted_workers': 1, 'case': list(CASES[0]),
+            'model_and_resource_registration_identical': True,
+            'scope': 'original failed attempt retained; no inferred model score or complete phase count'}
 
 
 def setup(case):
@@ -330,14 +352,17 @@ def matrix(write=False, resume=False):
     source_clean()
     registration_value = json.loads(json.dumps(preflight()))
     baselines, _ = retained_baselines()
+    prior_failure = prior_auditor_failure(registration_value)
     if resume:
         report = json.loads(OUTPUT.read_text(encoding='utf-8'))
         assert report['status'] == 'PARTIAL_EXECUTION' and report['registration_source'] == source
         assert report['registration'] == registration_value
+        assert report['prior_auditor_failure'] == prior_failure
         assert [r['case_index'] for r in report['workers']] == list(range(len(report['workers'])))
     else:
         assert not write or not OUTPUT.exists(), 'retain earlier evidence; no silent rerun'
         report = {'status': 'PARTIAL_EXECUTION', 'registration_source': source,
+                  'protocol_origin': PROTOCOL_ORIGIN, 'prior_auditor_failure': prior_failure,
                   'registration': registration_value, 'workers': []}
     def publish():
         if write:

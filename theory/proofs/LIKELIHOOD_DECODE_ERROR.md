@@ -144,6 +144,7 @@ The width term cannot simply be dropped because each individual power is
 accurate. No sharp normalization constant or universal optimum is claimed.
 
 No Torch or GPU model worker is run by this audit. Previously source-bound
-GPU traces remain evidence only for their actually observed words. The live
-n8 matrix retains its original tolerances, caps and90f3883 source; this
-arithmetic theorem does not supply a missing execution or installation.
+GPU traces remain evidence only for their actually observed words. The n8
+matrix keeps its original tolerances and caps. Its90f3883 auditor failure
+has no model score; a corrected execution must retain that attempt. This
+arithmetic theorem supplies no missing execution or installation.

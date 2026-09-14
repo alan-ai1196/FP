@@ -2544,8 +2544,8 @@ context-specific coefficients must agree wherever both gain signs occur.
 An exact native counterexample shows that choosing them after the context
 can cause false crossing even without target leakage. The registered Runtime
 rule already prevents that substitution. A proved common global bound can
-support a future registration; the running likelihood experiment remains at
-its original bound6 and source90f3883.
+support a future registration; the likelihood model contract keeps bound6.
+Its first90f3883 attempt is retained as an independent-auditor failure.
 
 The [history-uniform radix9 decoder bound](theory/proofs/LIKELIHOOD_DECODE_ERROR.md)
 quantifies the current coordinate lowering's selected-weight error. Under
@@ -2556,3 +2556,12 @@ arithmetic family; the integer coordinates remain essential for future
 recovery. Full native gradients, actual operation-word verification and
 finite counter/work/storage/install obligations are separate. This is no
 new semantic action, Runtime certificate or unlimited-resource guarantee.
+
+The [independent exact log audit](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
+replaces a fixed100-digit comparison that can reject correct intervals and
+accept incorrect ones after Decimal rounding. Its proved scalar enclosure
+uses a different rational reduction and log2 decomposition; inconclusive
+finite budgets return unresolved. It changes no production log arithmetic,
+U, persistence null or authority. The first90f3883 likelihood attempt remains
+failed without model results, and the corrected matrix must keep its entire
+original model/resource registration identical.

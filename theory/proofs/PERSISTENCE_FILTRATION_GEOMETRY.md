@@ -169,7 +169,7 @@ Every computed lower enclosure must still pass its bound check; failed
 attempts must retain the existing predeclared range-safe stopping semantics.
 Conditioning retrospectively on passed phases is not a validity argument.
 
-The running n8 likelihood matrix keeps bound6 and coefficient1/8. No job is
+The registered n8 likelihood matrix keeps bound6 and coefficient1/8. No job is
 patched or rerun, no counterfactual installation is recorded, and no power
 ordering between the two coefficients is claimed. Larger bets can lose more
 on adverse labels. Choosing a useful common predictable coefficient is a

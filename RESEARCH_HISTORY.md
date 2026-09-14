@@ -4419,3 +4419,51 @@ existing gates. Exact coordinates remain necessary for future recovery.
 The active90f3883 likelihood matrix is unchanged; no unavailable outcome
 is filled. No extra radix special cases or sharp constants are pursued.
 Foundation R4, ERC-1 and semantic actions remain unchanged.
+
+## 128. Retain the first n8 likelihood failure and replace its unsound scalar auditor
+
+The first likelihood job at90f3883, n8/c2 seed16, exits1 in the inherited
+100-digit Decimal gain comparison. The driver stops before the other three
+cases. The complete original failure journal is retained verbatim, including
+PID2720, creation tick134338339003000493, attachment before resume, no timeout
+or job-limit process termination, and peak commitment15,474,765,824 bytes.
+No valid model score, install, seal or complete independent phase count is
+inferred from the missing report. The original execution checkout stays
+historical; parent15872 and worker2720 are terminal.
+
+Passive exact reconstruction reproduces a correct interval rejected by the
+old check at case0/cursor65, for probability1436234048776862726818201/
+2872468070873849901111602 against1/2. The job did not retain its offending
+event, so this is not a recovered CUDA trace. A separate false-positive
+example supplies the100-digit rounded log(3/2) as a rational zero-width
+interval; the old check accepts it. Fixed Decimal comparison therefore has
+both failure directions. No production log/U/wealth rule is changed.
+
+The independent replacement normalizes the ratio into[3/4,3/2), uses signed
+atanh series and log2=log(3/2)+log(4/3), and returns only when its proved
+rational enclosure lies inside the claimed interval. Disjoint intervals
+are rejected. Overlap after128 terms or a262,144-bit preflight/operand
+failure returns LogAuditUnresolved. The Runtime keeps its32768-bit guard.
+This verifies one scalar containment, without granting source, lineage,
+freshness, alpha, bridge or install authority.
+
+Exact audit passes1,572 valid intervals:1,024 rational/term grid cases,
+14 near-one cases,21 scale cases, the concrete reproduction and512 retained
+posterior label checks. Accepted cases use at most32 terms and8,103-bit
+operands. It retains five rejection/budget tests and both known actual-label
+legacy failures, at case0/cursor65 and case2/cursor50. Full reference,
+paired CPU persistence and owned compiler policy regressions pass; the last
+checks all64 six-label streams and256 independent gain/wealth events.
+A bounded development CUDA warm-
+profile job seals/installs at cursor22, checking286 CUDA and286 binary64
+phases and40 fresh scores, with peak job commitment2,359,934,976 bytes.
+Its compact record explicitly remains a development regression, not n8
+model evidence or a new source-bound release.
+
+The corrected protocol must rerun its four-case matrix only after this
+checker is committed and tested. Before launch the runner requires exact
+equality of the complete original model/resource registration dictionary,
+and links the separately retained failed attempt. That equality passes:
+no data, Gamma/U, graph, profile, baseline, bound6/bet3/4, alpha, numerical
+tolerance,16GiB/two-hour or other resource parameter is changed. The failed
+attempt is not relabeled; the corrected workers must earn their own results.

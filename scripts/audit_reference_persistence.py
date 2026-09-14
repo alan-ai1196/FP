@@ -95,10 +95,9 @@ def decimal(value):
 
 
 def check_gain(value):
-    with localcontext() as context:
-        context.prec = 100
-        truth = (decimal(value.candidate_probability)/decimal(value.base_probability)).ln()
-        assert decimal(value.gain.lower) <= truth <= decimal(value.gain.upper)
+    from log_enclosure_audit import verify_log_ratio
+    return verify_log_ratio(value.candidate_probability, value.base_probability,
+                            value.gain.lower, value.gain.upper)
 
 
 def wealth_oracle(wealth, gain_sum, count, registration):

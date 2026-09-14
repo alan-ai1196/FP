@@ -175,7 +175,7 @@ def exhaustive():
         by_id = {item.identity_id: item for item in snapshot.persistence_identities}
         wealth = {key: F(1) for key in by_id}
         for item in snapshot.persistence_events:
-            check_gain(item)  # independent Decimal log enclosure
+            check_gain(item)  # independent exact log enclosure
             rule = by_id[item.identity_id].rule
             assert item.epoch_finished
             wealth[item.identity_id] = wealth_oracle(wealth[item.identity_id], item.gain.lower, 1, rule)
