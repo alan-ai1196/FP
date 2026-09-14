@@ -474,6 +474,20 @@ does not establish IID hardness or explain RN-5 timeouts. Continue useful
 model-scale tests and structured solver work with honest unresolved budgets;
 the theory supplies no free forecast or new target/fresh-evidence authority.
 
+The [n8 likelihood model protocol](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
+registers four new owned FP jobs, covering all retained RN-5 n8 IID cases:
+c2 seeds16/17 and c4 seeds18/19. Reuse their complete adaptive posterior rows
+at6c202ea; do not rerun the baselines. Native v7 construction, a complete
+one-pass training profile, unit simplex learning and paired fresh installation
+are tested with128 worlds, actual fair Gamma and the likelihood backend.
+Reference forecasts must equal the same-cut independent posterior; measure
+candidate and deployment separately. Preflight passes with31,554 prediction
+cells,41,949 observation cells and2,029,576,576 bytes of conservative scratch.
+The fixed envelope is16GiB host/two hours,8GiB packed and4MiB phase frames.
+This commit registers the retrospective mechanism matrix; it contains no new
+n8 worker outcome. Execute from an immutable checkout while main RN-5 remains
+at38b27b3. Unreported failures supply no invented score or complete phase count.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

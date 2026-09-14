@@ -18,6 +18,15 @@ below2/5 with polynomial time in n+T would imply P=NP. Its exact audit explores
 and exact verification, not a new decoder installed in Runtime, an average-case
 claim, or a diagnosis of RN-5's finite execution failures.
 
+The [n8 likelihood model matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
+is now registered, with preflight passing and no worker outcome at this commit.
+Four owned FP jobs reuse all four retained n8 IID cases and their unchanged
+exact/AMP posterior controls. It tests native v7/profile/unit-U/fresh-install
+execution at128 worlds, separately scoring candidate and deployment. Host16GiB,
+two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
+tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
+checkout; preserve the main RN-5 source and all original outcomes.
+
 **Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 and component
 v3 extensions: separately audited. Registered experiments: UNHELD within their tested scopes.** Source
 `5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 CPU and

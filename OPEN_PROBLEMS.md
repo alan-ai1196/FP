@@ -16,6 +16,13 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Learn from later labels while preserving current uncertainty
 
+The next concrete pressure test is the [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md):
+all four retained IID cases, their unchanged strong controls, and complete
+native construction/profile/learning/fresh-install execution. Preflight passes;
+new model outcomes are not yet established. Treat its four fixed resource
+attempts as a matched mechanism test, preserving candidate/deployed separation
+and all failures. Reused tapes are not new IID or prospective evidence.
+
 The [compact forecast decoder](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
 now has a scoped computational boundary: unless P=NP, it cannot uniformly
 resolve all legal relation histories at any constant error below2/5 in time

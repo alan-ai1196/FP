@@ -4210,3 +4210,29 @@ typical IID risk, a fixed machine, or the cause of an RN-5 timeout. Adversarial
 oracle histories are conditional-input problems, not a fresh stochastic
 Runtime protocol. This result separates retained information from computation
 without changing Foundation, ERC-1, sources, U or architecture actions.
+
+## 121. Register useful-scale likelihood learning against retained strong controls
+
+The next matrix tests all four original RN-5 n8 IID cases, c2 seeds16/17 and
+c4 seeds18/19, with four new FP workers and the unchanged completed adaptive
+posterior rows at6c202ea. This is a retrospective matched mechanism comparison.
+The native v7 graph starts from actual fair Gamma, learns a complete one-pass
+training profile under unit simplex U, then continues through ordinary
+reference/binary64/AMP phases and paired fresh installation. Reference
+forecasts are checked before each target against an independent posterior
+which has no Runtime value authority. Candidate and deployment are scored
+separately, with full independent numerical and wealth replays.
+
+The fixed new envelope is16GiB host/two hours,8GiB packed,10^15 work per role,
+32768-bit guards, native cap16, binary64 tolerance10^-9, AMP tolerances0.01
+and0.001,256MiB arena and512MiB allocator. The phase frame is explicitly4MiB.
+The complete graph has128 worlds,338 nodes,258 SUMs,64 PRODUCTs,10,368 edges
+and129 slots; broad constructor caps double its five graph counts. The
+historical decision class stays unresolved under one proposal.
+
+Preflight passes without Torch or a new GPU execution. It records31,554
+prediction cells,41,949 observation cells,58,433,467,456 prepaid derivation
+work and2,029,576,576 scratch bytes. The same conservative formulas remain.
+No n8 outcome is claimed at registration. Use an immutable experiment
+checkout so the research branch can continue without changing an active job's
+source. Main RN-5 remains at38b27b3, with its task27 still running.
