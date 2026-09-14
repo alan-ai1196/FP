@@ -48,6 +48,15 @@ Keep that checkout's HEAD/dependencies fixed throughout; main may advance.
 Do not resume90f3883 as though its auditor succeeded or fill its unavailable
 model results.
 
+The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
+composes the actual mixture learner, original coefficient1/8, successful
+AMP probability relation and grid16 wealth. Its64-event bounds are scoped
+to the declared posterior-mixture alternative, with physical completion
+remaining separate. Exact audit checks384 native units/floor compositions,
+1,536 mixture comparisons and126 noise cutoffs; a45-event native absorption
+counterexample prevents an almost-sure power claim. This passive theorem
+adds no Runtime action, installed outcome or new model evidence.
+
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.
 Under its RNE32 schedule, error is at most(K-1)u/72+gamma_(K-1)+u+2^-150,

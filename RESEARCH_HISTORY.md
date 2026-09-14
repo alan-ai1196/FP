@@ -4474,3 +4474,56 @@ Parent23668 launches first worker16644. The initial journal records zero
 completed outcomes and its explicit reference to the original failed attempt;
 all execution dependencies are verified clean. Keep this source fixed while
 main continues research. No running job is counted as a successful model.
+
+## 129. Compose uncertainty learning with finite physical persistence power
+
+The running n8 matrix exposes a scientific distinction that remains even
+after exact posterior forecasts are proved: useful prediction does not
+immediately imply fresh paired crossing, and valid downward rounding does
+not automatically retain power. The earlier power result left physical
+wealth composition open. A new scoped theorem closes that composition for
+the actual likelihood model and its original coefficient1/8, with no new
+bet, bound, grid, model or semantic action.
+
+At the post-profile cut, the power alternative draws the hidden relation
+world from the candidate's posterior and supplies independent noise1/10.
+Queries may be causal but cannot add unmodeled latent or current-target
+information. Exact native Bayesian telescoping and the chord of the log
+evidence factor give a pathwise lower bound: initial world uncertainty costs
+A log(1/w_h), where A is approximately0.1344964. No per-event positive gap
+or prior identification is assumed. Conditional noise counts are binomial.
+
+Under that alternative, inverse ideal wealth is a supermartingale because
+the log-loss second moment is at most three times its mean and the existing
+factor is above3/4. This controls downward excursions. The actual score
+relation, including AMP error0.001 and12-term lower logs, gives common
+score deficit below1/98 and factor distortion587/588. The actual grid16
+recurrence is bounded below by the ideal product less its accumulated floor
+losses. One common drawdown event covers both reference and AMP paths.
+
+At horizon64, alpha1/4 and analysis parameter kappa1/4, the drawdown allowance
+is below0.004356. Exact binomial cutoff sums using only the four retained
+training profiles give lower bounds0.892775,0.892855,0.808954 and0.809044,
+rounded down. These are posterior-mixture law bounds for paired crossing
+when required computations remain available. Without that completion premise
+they bound crossing or operational failure; they never condition on passing
+workers or substitute for measured installation. No evaluation targets or
+new GPU scores enter the calculation.
+
+Two scope attacks succeed. A single adverse label in the native two-world
+learner gives forecast(9/50,41/50); inverse-factor mean exceeds1 conditional
+on the equal-bit world but is below1 under the posterior mixture. Thus the
+reciprocal result cannot be asserted under every fixed hidden world. Also,
+45 consecutive adverse self-query labels drive actual grid16 wealth to zero,
+with1/65536 immediately before absorption. This has probability10^-45 under
+the correct IID noise law, despite positive unrounded log drift. It falsifies
+almost-sure-power transfer, not the validity of lower wealth.
+
+Exact audit passes158 interior chord inequalities,81 reciprocal expectations,
+all64 six-label words with384 continuous native units and384 actual floor
+composition checks,1,536 mixture comparisons and126 certified noise cutoffs.
+Independent rational log verification precedes outward96-bit interval
+arithmetic. The two native counterexamples and small probability bounds are
+retained, without weights or event tapes. The matrix at immutable86083a0
+continues unchanged and supplies no completed outcome yet. Statistical
+composition is settled in this scope; continue actual model execution.

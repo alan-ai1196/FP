@@ -1,0 +1,144 @@
+{
+  "status": "EXACT_AUDIT_PASS",
+  "scope": "conditional finite fresh-power theorem; no Runtime/GPU execution or new model outcome",
+  "scalar": {
+    "chord_interior_checks": 158,
+    "reciprocal_contraction_checks": 81,
+    "twelve_term_uniform_log_width_upper": "1/2353579470675",
+    "common_score_error": "1/98",
+    "multiplicative_distortion": "587/588",
+    "chord_slope": [
+      "147880363125/1099511627776",
+      "73940181563/549755813888"
+    ],
+    "positive_log_factor": [
+      "38977410655/549755813888",
+      "77954821311/1099511627776"
+    ],
+    "negative_log_factor": [
+      "-123485773527/549755813888",
+      "-246971547053/1099511627776"
+    ]
+  },
+  "native": {
+    "all_six_label_words": 64,
+    "native_continuous_unit_checks": 384,
+    "exact_mixture_domination_checks": 1536,
+    "actual_wealth_helper_floor_composition_checks": 384,
+    "perturbation_scope": "fixed rational pre-target tube witness; no GPU phase"
+  },
+  "absorption": {
+    "native_self_query_units_until_absorption": 45,
+    "positive_wealth_immediately_before_zero": "1/65536",
+    "absorbing_zero_even_on_next_favorable_score": true,
+    "correct_law_probability_of_this_prefix": "1/1000000000000000000000000000000000000000000000",
+    "unrounded_positive_mean_log_increment": [
+      "22731092237/549755813888",
+      "45462184475/1099511627776"
+    ],
+    "scope": "positive-probability failure of eventual power; no failure of null validity"
+  },
+  "fixed_world_scope": {
+    "native_unit_after_one_label": 1,
+    "next_candidate_probabilities": [
+      "9/50",
+      "41/50"
+    ],
+    "fixed_equal_world_inverse_factor_mean": [
+      "618991575967/549755813888",
+      "1237983151935/1099511627776"
+    ],
+    "posterior_mixture_inverse_factor_mean": [
+      "537990548643/549755813888",
+      "1075981097287/1099511627776"
+    ],
+    "scope": "reciprocal supermartingale cannot be asserted conditional on every fixed hidden world"
+  },
+  "finite_power": {
+    "horizon": 64,
+    "alpha": "1/4",
+    "wealth_grid_bits": 16,
+    "kappa": "1/4",
+    "drawdown_allowance": [
+      "4789280241/1099511627776",
+      "2394640121/549755813888"
+    ],
+    "ideal_terminal_log_threshold": [
+      "1960333168087/1099511627776",
+      "245041646011/137438953472"
+    ],
+    "exact_noise_cutoff_comparisons": 126,
+    "profiles": [
+      {
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "training_events": 60,
+        "worlds": 128,
+        "distinct_initial_weights_checked": 22,
+        "power_lower_outward_interval": [
+          "490808753565/549755813888",
+          "981617507131/1099511627776"
+        ],
+        "power_lower_rounded_down_to_millionth": "35711/40000",
+        "scope": "posterior-mixture alternative; paired crossing or operational failure by64; no evaluation targets or empirical outcome"
+      },
+      {
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "training_events": 60,
+        "worlds": 128,
+        "distinct_initial_weights_checked": 21,
+        "power_lower_outward_interval": [
+          "981705391795/1099511627776",
+          "245426347949/274877906944"
+        ],
+        "power_lower_rounded_down_to_millionth": "178571/200000",
+        "scope": "posterior-mixture alternative; paired crossing or operational failure by64; no evaluation targets or empirical outcome"
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "training_events": 40,
+        "worlds": 128,
+        "distinct_initial_weights_checked": 12,
+        "power_lower_outward_interval": [
+          "889454380313/1099511627776",
+          "444727190157/549755813888"
+        ],
+        "power_lower_rounded_down_to_millionth": "404477/500000",
+        "scope": "posterior-mixture alternative; paired crossing or operational failure by64; no evaluation targets or empirical outcome"
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "training_events": 40,
+        "worlds": 128,
+        "distinct_initial_weights_checked": 8,
+        "power_lower_outward_interval": [
+          "444776844553/549755813888",
+          "889553689107/1099511627776"
+        ],
+        "power_lower_rounded_down_to_millionth": "202261/250000",
+        "scope": "posterior-mixture alternative; paired crossing or operational failure by64; no evaluation targets or empirical outcome"
+      }
+    ]
+  },
+  "independent_exact_log_checks": {
+    "distinct_24_term_intervals": 316,
+    "maximum_verifier_terms": 32,
+    "maximum_verifier_operand_bits": 11015,
+    "outward_interval_fractional_bits": 96
+  }
+}

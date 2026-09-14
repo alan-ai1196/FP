@@ -2565,3 +2565,15 @@ finite budgets return unresolved. It changes no production log arithmetic,
 U, persistence null or authority. The first90f3883 likelihood attempt remains
 failed without model results, and the corrected matrix must keep its entire
 original model/resource registration identical.
+
+The [finite likelihood persistence power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
+connects the actual native mixture update to the existing bound6/bet3/4
+evidence rule. Bayesian telescoping and a log-factor chord charge initial
+uncertainty additively; a reciprocal supermartingale controls drawdown under
+the declared posterior-mixture alternative. Explicit AMP/lower-log distortion
+and grid16 floor losses then yield finite-horizon paired crossing bounds.
+Operational completion is not inferred or conditioned upon: without a proved
+completion premise the result bounds crossing or operational failure. A native
+45-adverse-label absorption witness refutes transfer of unrounded almost-sure
+power to the finite grid. The original mean-null, semantics, evidence actions
+and running model registration remain unchanged.

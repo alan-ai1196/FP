@@ -499,6 +499,19 @@ Keep that checkout's HEAD/dependencies fixed throughout; main may advance.
 Do not resume90f3883 as though its auditor succeeded or fill its unavailable
 model results.
 
+The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
+now accounts for uncertainty learning, AMP error and the existing wealth
+floor at the original coefficient1/8. Under the explicit posterior-mixture
+alternative, the four training profiles give64-event lower bounds0.892775,
+0.892855,0.808954 and0.809044. They concern paired crossing if all required
+computations remain available; otherwise only crossing or operational
+failure. They do not condition on successful workers, establish actual
+installations or use evaluation targets. The exact audit also reaches
+absorbing grid16 zero after45 adverse native self-query labels and refutes
+the reciprocal claim under a fixed hidden world. Preserve those scope limits.
+The statistical composition is closed for this model; use actual execution
+to study the remaining resource and deployment outcomes.
+
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.
 Under its RNE32 schedule, error is at most(K-1)u/72+gamma_(K-1)+u+2^-150,

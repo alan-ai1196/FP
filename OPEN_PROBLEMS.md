@@ -42,7 +42,18 @@ to adapting that coefficient after the context. Improve paid global bounds
 or common predictable choices, or explicitly declare the additional law a
 new method uses. The owned likelihood bank admits global gain bound13/8
 against uniform under its0.001 AMP probability relation, but the registered
-matrix keeps bound6. No faster installation or power gain is established.
+matrix keeps bound6. No measured installation improvement or power ordering
+between these two bets is established.
+
+The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
+for the owned likelihood learner, including successful AMP score error and
+the actual wealth floor. It uses the explicit posterior-mixture alternative,
+not every fixed hidden world or the mean-null alone. The four profile-based
+64-event lower bounds range from0.808954 to0.892855 if required computations
+remain available; otherwise they bound crossing or operational failure.
+Fixed-grid almost-sure power is false. This scoped statistical composition
+is settled; do not turn it into another constants or bet-menu study. The
+remaining question is actual complete execution and useful deployed behavior.
 
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 settles the distribution-wide condition for this exact one-event U. It does

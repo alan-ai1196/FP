@@ -190,3 +190,12 @@ Validity of the mean-null e-process remains as stated. What fails without the
 extra premise is the proposed positive-drift/power guarantee, not Ville's theorem.
 
 Exact inequality/enclosure audit: `theory/numerical_checks/log_loss_persistence_audit.py`.
+
+The later [likelihood persistence theorem](LIKELIHOOD_PERSISTENCE_POWER.md)
+handles the existing bounded wealth implementation for a different,
+explicitly declared posterior-mixture alternative. It composes cumulative
+learning regret, AMP score error and downward grid rounding without this
+section's uniform per-event gap assumption. It does not transfer the
+constants above or establish general physical completion. A native positive-
+probability absorption example also rules out unrounded almost-sure power
+as a guarantee for a fixed wealth grid.
