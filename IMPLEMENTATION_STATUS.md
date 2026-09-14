@@ -343,6 +343,16 @@ hidden and no complete stream or install is claimed. All raw history,
 reference state and failed evidence remain owned. Eight CPU and four CUDA
 development regression scripts also pass; this is not a new31-script release.
 
+`experiments/joint_uncertainty/count_learner_encoding.py` separately checks
+an exact [complete learner/cache representation](theory/proofs/COUNT_LEARNER_ENCODING.md).
+For the unit-rate/unit-event known-noise graph, committed counts plus the
+actual uncommitted event and two clocks reconstruct every reference field.
+The decoder uses closed count/gradient/cache formulas rather than calling
+the production derivative to manufacture expected states. It checks1,146
+caches,1,146 observed states and1,146 commits, plus profile attachment and
+scope refusals. No Runtime code or CUDA state representation is changed;
+the theorem provides no constructor, physical resource or install authority.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

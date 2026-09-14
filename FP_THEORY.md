@@ -2457,6 +2457,14 @@ while the CPU control completes100 labels and returns to the uniform prior.
 This is loss in the physical learner coordinate, not erasure of Runtime's
 retained history/reference state or a Foundation counterexample. Current
 pointwise accuracy does not certify every future numerical continuation.
+The [count encoding corollary](theory/proofs/COUNT_LEARNER_ENCODING.md)
+then extends model sufficiency to every reference learner field and native
+cache in this fixed unit-rate/unit-event family. It retains the actual
+uncommitted event and both clocks; the selected gradients' weighted mean
+equals the nonzero fixed-feature gradient. Profile multiplicity survives.
+Fractional-rate and batched order counterexamples bound the scope. Exact
+representation does not make decoding, physical realization or complete
+Compiler equivalence free; the existing AMP failure is not relabeled.
 
 ## Frozen research rule
 

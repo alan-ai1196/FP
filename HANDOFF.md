@@ -394,6 +394,17 @@ The next research question concerns a declared representation that preserves
 future evidence, or an explicit expected-risk approximation claim. Enlarging
 a tolerance cannot recover an absorbed posterior coordinate.
 
+The [count encoding proof](theory/proofs/COUNT_LEARNER_ENCODING.md) now covers
+every reference learner field and native forward-cache value for the actual
+unit-rate/unit-event relation model. Counts of committed events, the actual
+uncommitted query/label and both clocks reconstruct theta and the full
+gradient, including the fixed slot. Exact checks cover1,146 caches and each
+observed/committed complete state, repeated profiles and a late-birth reversal.
+Rate1/2 and two-event units have within-contract order counterexamples, so
+the representation cannot be selected by optimizer name alone. This is an
+encoding theorem; the existing Runtime/AMP backend is unchanged. A physical
+decoder still needs owned storage, actual event binding and paid arithmetic.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

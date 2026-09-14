@@ -214,6 +214,15 @@ reference state preserved. For this representation, widening a tolerance
 does not restore the lost learner response. Future-preserving physical
 coordinates or explicit expected-risk approximation remain distinct research
 directions; neither may silently replace the all-future claim.
+The [phase-level count encoding](theory/proofs/COUNT_LEARNER_ENCODING.md)
+closes the exact reference-state part of that question for the fixed
+unit-rate/unit-event relation model: retain committed counts, the actual
+uncommitted event and both clocks. It reconstructs even the nonzero fixed
+slot gradient and full forward cache. Exact count decoding still has
+exponential world work and growing integer output precision. A resource-
+accounted physical realization remains open. Fractional rates and larger
+update units have explicit same-count, different-state examples and cannot
+inherit this representation without a new proof.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

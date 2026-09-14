@@ -3938,3 +3938,35 @@ state. Normalizer10 does not solve the latter; a tolerance increase cannot
 recover the absorbed coordinate. A different declared representation or a
 properly scoped expected-risk approximation must carry its own resource and
 continuation claims. No architecture action or Foundation patch is introduced.
+
+## 113. Preserve the whole learner phase, not only its posterior prediction
+
+The count-state idea now has an exact encoding for the actual reference
+unit-rate/unit-event relation learner. Committed counts determine theta;
+the actual uncommitted query/label determines its complete gradient. At
+target mass M the fixed-slot gradient is1/M-1/5 and each latent-slot gradient
+is4/5-8*I/M. The former equals the weighted mean of the latter. Omitting
+the fixed coordinate or clearing a diagonal event early would erase a real
+uncommitted gradient even when counts and theta do not change.
+
+Retaining both cursor and optimizer-step count handles late birth and actual
+profile multiplicity. Exact transition/cache decoding commutes with native
+initialization, prediction, observation, registered commit and profile
+attachment. Independent checks compare1,146 full native caches and both
+observed/committed states, including exhaustive n2/n3 prefixes, n4 cycles,
+three profile multiplicities and a100-event late-birth reversal. A conservative
+integer guard acts before materializing large powers; world/phase refusals
+remain explicit. Decoder work and exact output precision are not erased.
+
+The representation has a sharp scope. Under the same rate1/2 contract, labels
+01 and10 give equal counts but first weights77/170 and93/170. With the same
+two-event update schedule,0001 and0100 give equal counts but weights61/82
+and9/10. Thus a physical specialization must bind the actual rate, unit,
+Gamma, graph and source domain; the optimizer name is insufficient.
+
+This proves a complete reference learner/cache encoding for the fixed model,
+not an installed physical codec or a resource-equivalence theorem. Existing
+raw observations, pre-target query identities, provenance and evidence stay
+owned. The existing FP32 reversal failure remains unchanged. The next issue
+is a paid physical decoder and its continuation relation, with exact count
+overflow guards and no reconstructed value supplied through a helper port.
