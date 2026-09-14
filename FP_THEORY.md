@@ -2491,8 +2491,10 @@ A transient decoded zero can recover after a contrary event because its
 likelihood coordinate was retained. Profiles preserve both clocks, and
 fresh installation preserves the complete resident state. Counter, work,
 range and bridge limits still cause refusal; unsupported members remain
-in the constructor class. The source-bound nine-job audit is separately
-registered; development successes are not a new release or model result.
+in the constructor class. Nine source-bound jobs now verify the reversal,
+two-pass fresh installation, six refusals and complete tiny-grammar handling.
+They replay994 checked/3 refused CUDA and997 binary64 phases, with no new
+class certificate, full release or model-comparison claim.
 
 ## Frozen research rule
 

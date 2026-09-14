@@ -434,10 +434,18 @@ reversal and the n3 two-pass profile/fresh-install path at the original
 tolerances. The fixed-slot gradient and all native cache fields remain
 checked. The fresh score reader now retains the tagged full forecast.
 Counter overflow and source/work/scratch guards remain explicit refusals.
-The nine source-bound jobs are registered but not yet evidence at this
-commit; finish them before asserting an audited installed codec. This is
-the same exact unit U with a different numerical lowering, not an ERC-1
-change or a repair to the live RN-5 source. Run it from the research worktree.
+All nine source-bound jobs now execute at08fa7bc: two sealed streams, six
+preserved refusals and complete20-member grammar handling with15 unresolved
+members and no class proof. Independent replay checks994/3 checked/refused
+CUDA phases,997 binary64 phases,326 GPU commit tapes and40 fresh scores.
+The reversed weight returns from zero to a positive subnormal at53 and to
+1/2 at100; the two-pass candidate installs at22. Largest job commitment is
+2,371,022,848 bytes under4GiB. The [minimal report](evidence/minimal/FP_LIKELIHOOD_LOWERING_AUDIT.json)
+binds every outcome to its completed job. This closes the paid finite codec
+demonstration for the stated subclass. Continue to useful-scale model and
+resource tests; do not infer uniform unlimited accuracy or whole-Compiler
+compression. The exact U, ERC-1 and live RN-5 source are unchanged. New code
+remains on the research branch until the live main workers finish.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

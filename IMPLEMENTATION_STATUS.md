@@ -378,9 +378,16 @@ prevent an underflowed theta from concealing a changed predecessor.
 fresh same-path scoring. Profile and installation retain the actual physical
 state. The independent audit checks 958 exact transitions and replays the
 GPU decoder from native vertex likelihood products, not production counts.
-Development reversal and two-pass install runs pass; the nine source-bound
-jobs are registered separately and have no execution result at this commit.
-No full release or live RN-5 source change is asserted.
+All nine source-bound jobs execute at08fa7bc. Reversal and two-pass install
+streams seal; six intended refusals preserve their state; all20 tiny-grammar
+members remain accounted for, with15 unresolved and no certificate. The
+minimal report records994 checked/3 refused independently replayed CUDA
+learner phases,997 binary64 phases,326 GPU commit tapes and40 fresh scores.
+The count and descriptor attacks are caught despite unchanged numeric theta;
+prepayment denies work/scratch shortages before calling the analyzer. Peak
+job commitment is2,371,022,848 bytes under4GiB. Four existing CPU/learner
+scripts and ten selected old CUDA cases also pass. This is an audited finite
+lowering extension; no full release or live RN-5 source change is asserted.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

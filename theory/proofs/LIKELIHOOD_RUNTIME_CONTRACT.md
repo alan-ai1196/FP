@@ -211,4 +211,61 @@ failures. No weights, tensor cache or full raw tape is dumped. Development
 checks are not source-bound matrix evidence, and this finite lowering audit
 is not a new full Runtime release or a matched model comparison. Shared-board
 VRAM is only the existing uniform physical upper bound, with no exclusivity
-or performance claim. Execution outcomes will be recorded after registration.
+or performance claim.
+
+## 5. Executed source-bound result
+
+All nine registered jobs execute from
+`08fa7bcc85320aa699cffb25ea9f6e292b036f0b`. The retained
+[minimal evidence](../../evidence/minimal/FP_LIKELIHOOD_LOWERING_AUDIT.json)
+contains each completed job, actual PID/lifetime/counters, outcome and audit
+summary. An independent report check verifies all nine process/job bindings
+and the complete registered case order. There is no failed or missing job.
+
+| Case | Owned outcome | Checked/refused CUDA learner phases | Binary64 phases |
+|---|---|---:|---:|
+| 100-event reversal | Sealed | 301 / 0 | 301 |
+| n3 two-pass profile and fresh install | Sealed; install at22 | 286 / 0 | 286 |
+| Six-bit counter | Unresolved before32nd commit | 96 / 1 | 97 |
+| Count corruption at50 | Execution failure before next target; root halted | 151 / 1 | 152 |
+| Descriptor corruption at50 | Execution failure before next target; root halted | 151 / 1 | 152 |
+| Insufficient work | Unresolved before model derivation | No learner phase executed | Not a replay claim |
+| Insufficient scratch | Unresolved before model derivation | No learner phase executed | Not a replay claim |
+| Substituted source subset | Initialization rejected as execution failure | No device arithmetic executed | Not a replay claim |
+| Complete tiny grammar | 20 members; 5 compared,15 unresolved; no class proof | 9 / 0 | 9 |
+
+The independently replayed totals are994 checked and3 refused CUDA learner
+phases,997 binary64 phases,326 full positive GPU commit-operation tapes and40
+fresh score events. The source-substitution guard additionally retains its
+failed model-initialization record; it is not included as a replayed numeric
+phase. Expected corruption failures remain `EXECUTION_FAILED` phase records
+and raised backend errors, even though the enclosing terminal run label is
+`HALTED_UNRESOLVED`. They are not mathematical admissibility rejections.
+
+On reversal, the physical minority master is zero at events48 and50, becomes
+the smallest positive binary32 subnormal (raw word1) at53, and returns to
+exactly1/2 at100. The source-bound run keeps the original0.01/0.001 tolerances.
+Its largest native error is4/3281 and its largest proper-probability error is
+421009/34407971678. This is a paid recovery from preserved information, not
+a tolerance change or a continuation of the old failed run.
+
+The six-bit refusal leaves the published cursor at31, retains32 observations
+including the last revealed label, and keeps the staged full gradient and
+pending event at cursor32/T31/q=-31. No GPU power is executed for its refused
+commit. Both metadata attacks leave theta's raw numeric fields unchanged at
+the zero cut; predecessor identity exposes them before another target is read.
+
+The n3 warm profile actually executes four replay events, attaches cursor2
+with T4, earns both fresh crossings at22, installs the complete resident
+states and continues through all46 ordinary events. Its historical decision
+class stays UNRESOLVED. Neither successful stream claims global model quality
+or an unlimited future-error guarantee.
+
+The largest completed-job commitment is2,371,022,848 bytes under4GiB. Reversal
+and profile packed peaks are81,167,353 and77,267,870 bytes. The largest used
+phase frame is41,326 bytes and the maximum phase output is484 cells, within
+the registered fixed envelopes. The evidence file is29,287 bytes; no raw
+tensor tape or trained weight artifact is retained. Four existing CPU/learner
+scripts and ten selected default CUDA prefix/install/policy cases also pass
+on the implementation source. This is a finite extension result, not a new
+full release audit, a resource-optimal implementation or a model comparison.

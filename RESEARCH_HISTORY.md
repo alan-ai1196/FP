@@ -4087,3 +4087,49 @@ Before registration, the four existing reference-event, profile, binary64
 Runtime and simplex-contract scripts pass, as do ten selected default CUDA
 prefix/install/policy cases, including the learned policy installation.
 This focused regression check does not replace the frozen full release audit.
+
+## 117. Exact likelihood information survives owned AMP underflow and fresh installation
+
+All nine preregistered jobs execute from08fa7bcc85320aa699cffb25ea9f6e292b036f0b.
+The100-event reversal seals at the original tolerances: the minority FP32
+master is zero at48/50, becomes raw word1 at53 and returns to1/2 at100.
+Independent exact rounded replay checks all100 GPU commit operation tapes
+and301 complete CUDA phases, alongside301 binary64 phases. The largest
+native error is4/3281, with proper-probability error421009/34407971678.
+No epsilon floor or trained reference theta is used to revive the weight.
+
+The n3 candidate executes its actual two-pass profile, preserving T4 at the
+cursor2 attachment. Both fresh score paths cross at22; installation keeps
+all resident coordinates and the stream seals at46. Independent checks
+cover286 phases per numerical path and40 fresh score events. Its historical
+decision class stays unresolved. A separate complete20-program enumeration
+compares five actual endpoints, retains15 initializer failures and withholds
+a class proof despite exhausting syntax.
+
+Six-bit overflow refuses before the32nd GPU commit, preserving the published
+cursor31 and all32 revealed observations, including the pending full gradient
+and event at cursor32/T31/q=-31. Count and descriptor corruption at the zero
+cut both fail before the next target even though numeric theta is unchanged.
+They remain explicit backend execution failures with retained phase records;
+the enclosing terminal label does not turn them into admissibility theorems.
+Work and scratch shortages call no model analyzer. A substituted source
+subset cannot initialize the physical learner or acquire any continuation.
+
+Across the six executed learner-prefix cases, independent replay checks994
+valid and3 refused CUDA phases,997 binary64 phases and326 complete GPU commit
+tapes. The three construction guards retain their separate outcomes without
+invented numeric replay counts. The report binds every completed job to its
+PID, creation time, commitment and CPU counters. All9 jobs exit successfully
+after their required outcome, with no timeout or host-limit termination.
+Largest job commitment is2,371,022,848 bytes under4GiB. Reversal/profile packed
+peaks are81,167,353/77,267,870 bytes, largest frame41,326 bytes and maximum
+phase output484 cells. The complete minimal report is29,287 bytes.
+
+This resolves the finite owned representation question exposed by the old
+underflow/reversal counterexample. It does not repair that historical run,
+claim unlimited numerical accuracy, compress all reference/history state,
+establish a model win, or complete a new full release. The next frontier is
+useful model scale under explicit native, exact-reference and audit costs.
+Foundation and ERC-1 stay frozen. Main's running RN-5 source remains38b27b3;
+the implementation and both source-bound commits stay on the linked research
+branch until the main experiment is terminal.
