@@ -19,6 +19,9 @@ from .float64_bridge import Float64Contract, check_state, check_prediction
 from .float64_learner import Float64LearnerState, Float64Evaluation
 from .cuda_storage import CudaArena, CudaStorageContract, CudaStorageUnresolved
 from . import cuda_learner as gpu
+from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
+    BACKEND_ID as COUNT_BACKEND_ID, ENCODING_ID, prepare_model, preparation_work,
+    power_schedule)
 
 
 @dataclass(frozen=True)
@@ -33,14 +36,24 @@ class CudaPrefixContract:
     install: CudaInstallContract | None = None
     device: CudaDeviceContract = field(default_factory=lambda: CudaDeviceContract(24 << 30,
         {role: 24 << 30 for role in ('deployment', 'compiler')}))
-    backend_id: str = field(default=gpu.BACKEND_ID, init=False)
-    work_model: str = field(default='prepaid-output-cells-packed-evidence-and-exact-forward-v2', init=False)
+    likelihood_encoding: LikelihoodEncodingContract | None = None
+    backend_id: str = field(default='', init=False)
+    work_model: str = field(default='', init=False)
     forward_id: str = field(default=FORWARD_ID, init=False)
 
     def __post_init__(self):
-        if (self.backend_id != gpu.BACKEND_ID or self.forward_id != FORWARD_ID
-                or self.work_model != 'prepaid-output-cells-packed-evidence-and-exact-forward-v2'):
+        if self.likelihood_encoding is not None:
+            if type(self.likelihood_encoding) is not LikelihoodEncodingContract:
+                raise ContractError('registered immutable likelihood encoding contract required')
+            self.likelihood_encoding.__post_init__()
+        backend = gpu.BACKEND_ID if self.likelihood_encoding is None else COUNT_BACKEND_ID
+        work_model = ('prepaid-output-cells-packed-evidence-and-exact-forward-v2' if self.likelihood_encoding is None
+                      else 'prepaid-likelihood-factorization-coordinates-and-CUDA-output-v1')
+        if (self.backend_id not in ('', backend) or self.forward_id != FORWARD_ID
+                or self.work_model not in ('', work_model)):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')
+        object.__setattr__(self, 'backend_id', backend)
+        object.__setattr__(self, 'work_model', work_model)
         if type(self.storage) is not CudaStorageContract:
             raise ContractError('immutable physical CUDA storage contract required')
         self.storage.__post_init__()
@@ -91,6 +104,7 @@ class CudaPhase:
     status: str
     reason: str
     forward_operations: int = 0
+    encoding_model: LikelihoodModel | None = None
 
 
 @dataclass(frozen=True)
@@ -106,27 +120,46 @@ class CudaPrefixSnapshot:
 
 
 def widened_state(raw):
-    theta, delayed, gradient, count, cursor, steps = raw
+    """Numeric component only; Runtime separately proves encoded transitions."""
+    if type(raw) is not tuple or len(raw) not in (6, 7):
+        raise ContractError('registered complete CUDA state encoding required')
+    if len(raw) == 7:
+        _encoded_raw(raw[6])
+    theta, delayed, gradient, count, cursor, steps = raw[:6]
     return Float64LearnerState(tuple(widen(v, 32) for v in theta),
         tuple((key, tuple(widen(v, 16) for v in values)) for key, values in delayed),
         tuple(widen(v, 32) for v in gradient), count, cursor, steps)
 
 
 def raw_prediction(value):
-    return (gpu.raw_tensor(value.values), gpu.raw_tensor(value.theta_half), gpu.raw_tensor(value.excesses),
+    numeric = (gpu.raw_tensor(value.values), gpu.raw_tensor(value.theta_half), gpu.raw_tensor(value.excesses),
             gpu.raw_tensor(value.masses), gpu.raw_tensor(value.normalizer), gpu.raw_tensor(value.probabilities),
             tuple((key, gpu.raw_tensor(values)) for key, values in value.delayed))
+    return numeric if value.encoding_query is None else numeric+(value.encoding_query,)
 
 
 def widened_prediction(raw):
-    values, theta, excesses, masses, normalizer, probabilities, delayed = raw
+    if type(raw) is not tuple or len(raw) not in (7, 8):
+        raise ContractError('registered complete CUDA prediction encoding required')
+    if len(raw) == 8:
+        natural(raw[7], 'retained likelihood prediction source row')
+    values, theta, excesses, masses, normalizer, probabilities, delayed = raw[:7]
     return Float64Evaluation(tuple(widen(v, 16) for v in values), tuple(widen(v, 16) for v in excesses),
         tuple(widen(v, 32) for v in masses), widen(normalizer[0], 32),
         tuple(widen(v, 32) for v in probabilities),
         tuple((key, tuple(widen(v, 16) for v in row)) for key, row in delayed))
 
 
-def output_cells(kind, program, rules, spec):
+def _encoded_raw(raw):
+    if (type(raw) is not tuple or len(raw) != 4 or raw[0] != ENCODING_ID
+            or type(raw[1]) is not str or len(raw[1]) != 64
+            or type(raw[2]) is not tuple or any(type(v) is not int for v in raw[2])):
+        raise ContractError('complete raw likelihood coordinate encoding required')
+    if raw[3] is not None:
+        natural(raw[3], 'retained uncommitted likelihood event')
+
+
+def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, bit_limit=None):
     """Exact output-extent count of this fixed lowering, including empty views.
 
     Derived by summing its explicit output/cast/copy/mask allocations. This
@@ -139,6 +172,10 @@ def output_cells(kind, program, rules, spec):
     if kind == 'attach':
         return 0
     if kind == 'commit':
+        if encoded_state is not None:
+            successor = encoded_state.commit()
+            differences, bits = power_schedule(successor, steps+1, bit_limit=bit_limit)
+            return 3+max(bits-1, 0)+sum(v.bit_count() for v in differences)+3*len(spec.simplex_slots)+2*slots
         from .learner import SIMPLEX_GRADIENT
         if spec.optimizer_id == SIMPLEX_GRADIENT:
             return 7+15*len(spec.simplex_slots)+2*slots
@@ -199,7 +236,7 @@ class _CudaPrefix:
 
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-                normalizer_cap, activation_cap):
+                normalizer_cap, activation_cap, source_domain=None):
         if bit_limit < 1075:
             raise ArithmeticUnresolved('exact raw-value relation decoder exceeds its reference integer allowance')
         use_staged = origin == 'profile' or kind == 'commit'
@@ -210,22 +247,48 @@ class _CudaPrefix:
         prediction = None if prediction_id is None else self._values[prediction_id]
         result, actual_prediction, relation, error, arithmetic, workspace = state, None, None, None, None, None
         forward_operations = 0
+        encoding_model = None
+        before_raw = None
         try:
-            if state is not None and gpu.raw_state(state) != self.phases[input_id].raw_state:
-                raise ContractError('private CUDA predecessor changed after its owned phase')
+            if state is not None:
+                before_raw = gpu.raw_state(state)
+                if before_raw != self.phases[input_id].raw_state:
+                    raise ContractError('private CUDA predecessor changed after its owned phase')
+                if (state.encoding is None) != (self.contract.likelihood_encoding is None):
+                    raise ContractError('CUDA predecessor lost or changed its registered physical representation')
+                if state.encoding is not None:
+                    model = state.encoding.model
+                    if (model.contract != self.contract.likelihood_encoding or model.learner != spec
+                            or model.program_id != program.program_id or model.semantics != rules):
+                        raise ContractError('CUDA likelihood predecessor changed its complete encoding binding')
             if prediction is not None and raw_prediction(prediction) != self.phases[prediction_id].raw_prediction:
                 raise ContractError('private sealed CUDA prediction changed before observation')
+            if state is not None and state.encoding is not None and kind == 'observe':
+                if (prediction is None or self.phases[prediction_id].input_phase != input_id
+                        or self.phases[prediction_id].observation_id != observation_id):
+                    raise ContractError('likelihood observation lost its actual predecessor prediction or event identity')
+            if kind == 'initialize' and self.contract.likelihood_encoding is not None:
+                encoding_model = prepare_model(program, rules, reference.theta, spec, source_domain,
+                    self.contract.likelihood_encoding, bit_limit=bit_limit,
+                    work_limit=preparation_work(program, rules, spec, source_domain, bit_limit))
+                actual_domain = ((),) if source_domain is None and not rules.sources else tuple(dict.fromkeys(source_domain))
+                if (type(encoding_model) is not LikelihoodModel or encoding_model.program_id != program.program_id
+                        or encoding_model.semantics != rules or encoding_model.initial_theta != reference.theta
+                        or encoding_model.learner != spec or encoding_model.contract != self.contract.likelihood_encoding
+                        or encoding_model.source_domain != actual_domain):
+                    raise ContractError('derived likelihood model changed the actual program, Gamma, U or complete source domain')
             with self.arena.phase(object_id) as workspace:
                 arithmetic = gpu.CudaArithmetic(bit_limit, self.contract.storage.device,
                     workspace=workspace, output_cell_limit=self.contract.phase_output_cells)
                 tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
                 if kind == 'initialize':
-                    result = gpu.initialize(program, rules, reference.theta, reference.cursor, arithmetic)
+                    result = gpu.initialize(program, rules, reference.theta, reference.cursor, arithmetic,
+                                            encoding_model=encoding_model)
                 elif kind == 'predict':
                     state_relation = check_state(reference, widened_state(gpu.raw_state(state)), tolerance, bit_limit=bit_limit)
                     actual_prediction = gpu.evaluate(program, rules, state, sources, arithmetic)
                     forward_operations = check_forward(program, rules, gpu.raw_state(state), sources,
-                        raw_prediction(actual_prediction), bit_limit=bit_limit)
+                        raw_prediction(actual_prediction)[:7], bit_limit=bit_limit)
                     relation = check_prediction(reference_prediction, widened_prediction(raw_prediction(actual_prediction)),
                         tolerance, rules, normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)
                     relation = replace(relation, state_error=state_relation.state_error)
@@ -238,8 +301,13 @@ class _CudaPrefix:
                 else:
                     raise ContractError('unregistered owned CUDA phase')
                 arithmetic.check()
-                if arithmetic.output_cells != output_cells(kind, program, rules, spec):
+                if arithmetic.output_cells != output_cells(kind, program, rules, spec,
+                        encoded_state=None if state is None else state.encoding,
+                        steps=None if state is None else state.optimizer_steps, bit_limit=bit_limit):
                     raise ContractError('CUDA endpoint did not execute its registered output schedule')
+                if self.contract.likelihood_encoding is not None:
+                    self._check_encoding_transition(kind, before_raw, state, result, actual_prediction,
+                        prediction, encoding_model, sources, target)
                 if kind != 'predict':
                     relation = check_state(reference, widened_state(gpu.raw_state(result)), tolerance, bit_limit=bit_limit)
                 if state is not None and gpu.raw_state(state) != self.phases[input_id].raw_state:
@@ -257,12 +325,41 @@ class _CudaPrefix:
             None if workspace is None else workspace.index,
             'CHECKED_CUDA_PREFIX_PHASE' if error is None else
                 'UNRESOLVED' if isinstance(error, (ResourceExceeded, ArithmeticUnresolved)) else 'EXECUTION_FAILED',
-            '' if error is None else f'{type(error).__name__}: {error}', forward_operations)
+            '' if error is None else f'{type(error).__name__}: {error}', forward_operations, encoding_model)
         # Even failed completed outputs retain their physical handle. Only
         # Runtime may retain/check this record and advance staged/current IDs.
         self._values[object_id] = actual_prediction if kind == 'predict' else result
         self.phases[object_id] = record
         return record, error
+
+    def _check_encoding_transition(self, kind, before_raw, state, result, actual_prediction,
+                                   prediction, encoding_model, sources, target):
+        """Exact coordinate/event relation, separate from numerical closeness."""
+        from .core import stable_hash
+        if kind == 'initialize':
+            expected = (ENCODING_ID, stable_hash(encoding_model), (0,)*encoding_model.rank, None)
+        else:
+            before = before_raw[6]
+            _encoded_raw(before)
+            if kind == 'observe':
+                query = prediction.encoding_query
+                natural(query, 'actual owned pre-target likelihood query')
+                if query >= len(state.encoding.model.source_domain):
+                    raise ContractError('owned likelihood prediction has an invalid source row')
+                expected = before[:3]+(query*state.encoding.model.labels+target,)
+            elif kind == 'commit':
+                pending = before[3]
+                if pending is None:
+                    raise ContractError('owned likelihood commit lost its uncommitted event')
+                increment = state.encoding.model.event_increments[pending]
+                expected = before[:2]+(tuple(a+b for a, b in zip(before[2], increment)), None)
+            else:
+                expected = before
+        if kind == 'predict':
+            if actual_prediction.encoding_query != state.encoding.model.query_index(sources):
+                raise ContractError('CUDA likelihood prediction mislabeled its actual complete source input')
+        if result is None or result.encoding is None or result.encoding.raw() != expected:
+            raise ContractError('CUDA likelihood coordinates did not follow the registered complete event transition')
 
     def accept(self, record):
         if record.status != 'CHECKED_CUDA_PREFIX_PHASE' or self.phases.get(record.object_id) != record:

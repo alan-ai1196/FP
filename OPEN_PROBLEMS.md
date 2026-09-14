@@ -220,8 +220,7 @@ closes the exact reference-state part of that question for the fixed
 unit-rate/unit-event relation model: retain committed counts, the actual
 uncommitted event and both clocks. It reconstructs even the nonzero fixed
 slot gradient and full forward cache. Exact count decoding still has
-exponential world work and growing integer output precision. A resource-
-accounted physical realization remains open. Fractional rates and larger
+exponential world work and growing integer output precision. Fractional rates and larger
 update units have explicit same-count, different-state examples and cannot
 inherit this representation without a new proof.
 The [finite likelihood law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md)
@@ -237,6 +236,16 @@ learner, or an explicitly bounded/expected-risk alternative. A different
 history-dependent implementation is not excluded by the pure-encoding
 theorem. None of these results supply free arithmetic, source values,
 provenance, persistence or install reachability.
+The [registered physical lowering](theory/proofs/LIKELIHOOD_RUNTIME_CONTRACT.md)
+now implements the commensurate affine case with paid derivation, exact
+coordinates and actual GPU decoding. Development tests recover the reversal
+and pass owned two-pass profiling and fresh installation. The immediate
+closure test is its source-bound nine-job audit, including counter/metadata
+corruption, prepayment and complete tiny-grammar refusals. If it passes,
+the question moves to useful model scale and explicit numerical/resource
+limits; do not expand static subclass theorems merely to avoid those tests.
+General multiprime banks, alternative U and unlimited uniform numerical
+accuracy are outside this implementation's claim.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

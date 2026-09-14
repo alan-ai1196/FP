@@ -366,6 +366,22 @@ native witness rules out confusing a small pairwise future distance with
 a consistent pure encoding. This is mathematical evidence only: no
 Runtime/AMP representation, helper authority or release scope is changed.
 
+The [likelihood lowering](theory/proofs/LIKELIHOOD_RUNTIME_CONTRACT.md) now
+adds a separately declared CUDA representation to the research branch.
+`likelihood_encoding.py` performs paid exact affine analysis, commensurate
+ratio derivation and rank factorization on actual constructor inputs.
+The complete native forward/gradient remains executed; count/pending-event
+state and both clocks drive a positive binary32 GPU decoder of the exact U.
+The initial packed descriptor and later primitive identity/count records
+prevent an underflowed theta from concealing a changed predecessor.
+`cuda_range.stored_probability` accepts the owned tagged full forecast for
+fresh same-path scoring. Profile and installation retain the actual physical
+state. The independent audit checks 958 exact transitions and replays the
+GPU decoder from native vertex likelihood products, not production counts.
+Development reversal and two-pass install runs pass; the nine source-bound
+jobs are registered separately and have no execution result at this commit.
+No full release or live RN-5 source change is asserted.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

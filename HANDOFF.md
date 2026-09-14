@@ -406,8 +406,8 @@ gradient, including the fixed slot. Exact checks cover1,146 caches and each
 observed/committed complete state, repeated profiles and a late-birth reversal.
 Rate1/2 and two-event units have within-contract order counterexamples, so
 the representation cannot be selected by optimizer name alone. This is an
-encoding theorem; the existing Runtime/AMP backend is unchanged. A physical
-decoder still needs owned storage, actual event binding and paid arithmetic.
+encoding theorem; by itself it changes no Runtime/AMP backend. A physical
+decoder needs owned storage, actual event binding and paid arithmetic.
 
 The [likelihood information law](theory/proofs/LIKELIHOOD_INFORMATION_LAW.md)
 now supplies a general exact exponent: Theta((T+1)^rho) predictive classes
@@ -420,10 +420,24 @@ merging it and commuting with reference updates must merge a cut-76 pair
 whose forecast gap exceeds 0.002. For reversible two-world banks this
 argument gives the exact information lower bound whenever uniform error
 is below half the expert contrast. History-dependent lifts and bounded
-claims need separate arguments. Proceed toward a paid physical lowering;
-do not install an approximate pair cover as a causal state quotient.
+claims need separate arguments. Do not install an approximate pair cover
+as a causal state quotient.
 The existing AMP reversal failure, live RN-5 contract and main source stay
 unchanged. New mathematical audits run from the linked research worktree.
+
+The subsequent [owned likelihood lowering](theory/proofs/LIKELIHOOD_RUNTIME_CONTRACT.md)
+is implemented on that research branch. It derives a commensurate finite
+affine bank from actual Program/Gamma/U/full source-domain inputs, retains
+integer coordinates and pending events, and decodes weights with actual
+positive binary32 GPU arithmetic. Development checks seal the 100-event
+reversal and the n3 two-pass profile/fresh-install path at the original
+tolerances. The fixed-slot gradient and all native cache fields remain
+checked. The fresh score reader now retains the tagged full forecast.
+Counter overflow and source/work/scratch guards remain explicit refusals.
+The nine source-bound jobs are registered but not yet evidence at this
+commit; finish them before asserting an audited installed codec. This is
+the same exact unit U with a different numerical lowering, not an ERC-1
+change or a repair to the live RN-5 source. Run it from the research worktree.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

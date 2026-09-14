@@ -22,6 +22,7 @@ from typing import Mapping
 from .binary_arithmetic import BinaryFormat, round_binary
 from .core import ContractError, natural
 from .learner import SIMPLEX_GRADIENT, LearnerSpec
+from .likelihood_encoding import EncodedLikelihoodState, LikelihoodModel, power_schedule
 from .numerics import compare_exact
 from .program import Product, Program, SemanticRules, Source, State, Sum, name
 from .semantics import ArithmeticUnresolved
@@ -77,6 +78,7 @@ class CudaLearnerState:
     unit_count: int
     cursor: int
     optimizer_steps: int
+    encoding: EncodedLikelihoodState | None = None
 
     def __post_init__(self):
         _tensor(self.theta, 'float32', dimension=1, nonnegative=True)
@@ -91,6 +93,10 @@ class CudaLearnerState:
             natural(getattr(self, label), 'CUDA '+label)
         if self.unit_count > self.cursor:
             raise ContractError('CUDA accumulator exceeds its local clock')
+        if self.encoding is not None:
+            if type(self.encoding) is not EncodedLikelihoodState:
+                raise ContractError('registered complete CUDA likelihood encoding required')
+            self.encoding.validate_phase(self.theta.numel(), self.unit_count, self.optimizer_steps, self.delayed)
 
 
 @dataclass(frozen=True, eq=False)
@@ -102,6 +108,7 @@ class CudaEvaluation:
     normalizer: object
     probabilities: object
     delayed: tuple
+    encoding_query: int | None = None
 
     def __post_init__(self):
         for label in ('values', 'theta_half', 'excesses'):
@@ -114,6 +121,8 @@ class CudaEvaluation:
             raise ContractError('CUDA readout shapes differ')
         if any(word & 0x7fffffff == 0 for word in raw_tensor(self.masses)+raw_tensor(self.normalizer)):
             raise ArithmeticUnresolved('actual CUDA readout lost a positive base or normalizer')
+        if self.encoding_query is not None:
+            natural(self.encoding_query, 'actual CUDA likelihood source row')
 
 
 class CudaArithmetic:
@@ -356,10 +365,14 @@ def _state(program, rules, state, arith):
     state.__post_init__()  # Ownership precedes reading any numeric payload.
     if tuple((key, value.numel()) for key, value in state.delayed) != tuple((s.state_id, s.delay) for s in rules.states):
         raise ContractError('CUDA delayed histories differ from the registered interface')
+    if state.encoding is not None:
+        model = state.encoding.model
+        if model.program_id != program.program_id or model.semantics != rules:
+            raise ContractError('CUDA likelihood coordinates belong to a different native program or semantics')
 
 
 def initialize(program: Program, rules: SemanticRules, theta: tuple[F, ...],
-               cursor: int, arith: CudaArithmetic) -> CudaLearnerState:
+               cursor: int, arith: CudaArithmetic, *, encoding_model=None) -> CudaLearnerState:
     if type(program) is not Program or type(rules) is not SemanticRules:
         raise ContractError('exact immutable native program and rules required')
     program.validate(rules)
@@ -367,13 +380,19 @@ def initialize(program: Program, rules: SemanticRules, theta: tuple[F, ...],
     natural(cursor, 'CUDA birth cursor')
     if type(theta) is not tuple or len(theta) != program.slot_count or any(type(v) is not F or v < 0 for v in theta):
         raise ContractError('CUDA birth requires every registered nonnegative initializer slot')
+    encoding = None
+    if encoding_model is not None:
+        if (type(encoding_model) is not LikelihoodModel or encoding_model.program_id != program.program_id
+                or encoding_model.semantics != rules or encoding_model.initial_theta != theta):
+            raise ContractError('CUDA likelihood initialization lost its actual program, semantics or Gamma')
+        encoding = EncodedLikelihoodState(encoding_model, (0,)*encoding_model.rank, None)
     values = arith.ingress(theta)
     zero = arith.constant(F(0))
     half_zero = arith.cast(zero, 'float16')
     delayed = tuple((s.state_id, arith.repeat(half_zero, s.delay)) for s in rules.states)
     gradient = arith.repeat(zero, program.slot_count)
     arith.check()
-    return CudaLearnerState(values, delayed, gradient, 0, cursor, 0)
+    return CudaLearnerState(values, delayed, gradient, 0, cursor, 0, encoding)
 
 
 def evaluate(program: Program, rules: SemanticRules, state: CudaLearnerState,
@@ -385,6 +404,7 @@ def evaluate(program: Program, rules: SemanticRules, state: CudaLearnerState,
         value = source_values[spec.source_id]
         if type(value) is not F or value < 0 or compare_exact(value, spec.upper, bit_limit=arith.bit_limit) > 0:
             raise ContractError('CUDA source exceeds its registered exact input range')
+    encoding_query = None if state.encoding is None else state.encoding.model.query_index(source_values)
     sources = arith.cast(arith.ingress(tuple(source_values[s.source_id] for s in rules.sources)), 'float16')
     available = {s.source_id: sources[i] for i, s in enumerate(rules.sources)}
     theta_half = arith.cast(state.theta, 'float16')
@@ -414,7 +434,7 @@ def evaluate(program: Program, rules: SemanticRules, state: CudaLearnerState,
     bodies = {binding.state_id: values[binding.body] for binding in program.bindings}
     delayed = tuple((s.state_id, arith.concatenate((histories[s.state_id][1:], bodies[s.state_id].reshape(1)))) for s in rules.states)
     arith.check()
-    return CudaEvaluation(values, theta_half, excesses, masses, normalizer, probabilities, delayed)
+    return CudaEvaluation(values, theta_half, excesses, masses, normalizer, probabilities, delayed, encoding_query)
 
 
 def observe_event(program: Program, rules: SemanticRules, state: CudaLearnerState,
@@ -432,6 +452,13 @@ def observe_event(program: Program, rules: SemanticRules, state: CudaLearnerStat
                   prediction.normalizer, prediction.probabilities, *(values for _, values in prediction.delayed)):
         arith._operands(value)
     prediction.__post_init__()
+    encoding = state.encoding
+    if encoding is not None:
+        if spec != encoding.model.learner or prediction.encoding_query is None:
+            raise ContractError('CUDA likelihood observation lost its actual U or pre-target query')
+        encoding = encoding.observe(prediction.encoding_query, target)
+    elif prediction.encoding_query is not None:
+        raise ContractError('a likelihood prediction cannot change an ordinary CUDA learner representation')
     if (prediction.values.numel() != len(program.nodes) or prediction.theta_half.numel() != program.slot_count
             or prediction.masses.numel() != len(program.heads)
             or tuple((key, value.numel()) for key, value in prediction.delayed)
@@ -462,7 +489,7 @@ def observe_event(program: Program, rules: SemanticRules, state: CudaLearnerStat
     accumulated = arith.add(state.gradient_sum, current)
     arith.check()
     return replace(state, delayed=prediction.delayed, gradient_sum=accumulated,
-                   unit_count=state.unit_count+1, cursor=state.cursor+1)
+                   unit_count=state.unit_count+1, cursor=state.cursor+1, encoding=encoding)
 
 
 def commit_event(state: CudaLearnerState, spec: LearnerSpec,
@@ -475,6 +502,8 @@ def commit_event(state: CudaLearnerState, spec: LearnerSpec,
     state.__post_init__()
     if state.theta.device != arith.device or state.unit_count != spec.update_unit or state.cursor % spec.update_unit:
         raise ContractError('CUDA commit is outside a full registered update unit or device')
+    if state.encoding is not None:
+        return _commit_encoded(state, spec, arith)
     scale = arith.div(arith.constant(spec.learning_rate), arith.constant(F(spec.update_unit)))
     if spec.optimizer_id == SIMPLEX_GRADIENT:
         if spec.simplex_slots[-1] >= state.theta.numel():
@@ -525,6 +554,42 @@ def commit_event(state: CudaLearnerState, spec: LearnerSpec,
                    unit_count=0, optimizer_steps=state.optimizer_steps+1)
 
 
+def _commit_encoded(state, spec, arith):
+    """Actual GPU decoder of paid integer coordinates, never reference theta.
+
+    The native observed gradient is retained in the predecessor. Its exact
+    unit-simplex transition has the proved integer-coordinate simulation.
+    All physical power/normalization arithmetic below is binary32 on device.
+    """
+    if spec != state.encoding.model.learner:
+        raise ContractError('CUDA likelihood commit differs from its actual registered U')
+    encoding = state.encoding.commit()
+    differences, bits = power_schedule(encoding, state.optimizer_steps+1, bit_limit=arith.bit_limit)
+    radix_inverse = arith.constant(1/encoding.model.contract.radix)
+    one, zero = arith.constant(F(1)), arith.constant(F(0))
+    powers = [radix_inverse]
+    for _ in range(1, bits):
+        powers.append(arith.mul(powers[-1], powers[-1]))
+    weights = []
+    for exponent in differences:
+        value = one
+        for bit in range(bits):
+            if exponent & (1 << bit):
+                value = arith.mul(value, powers[bit])
+        weights.append(value)
+    total = zero
+    for value in weights:
+        total = arith.add(total, value)
+    normalized = arith.div(arith.stack(weights), total)
+    selected = {slot: k for k, slot in enumerate(spec.simplex_slots)}
+    updated = arith.stack([normalized[selected[i]] if i in selected else state.theta[i]
+                          for i in range(state.theta.numel())])
+    gradient = arith.repeat(zero, state.theta.numel())
+    arith.check()
+    return replace(state, theta=updated, gradient_sum=gradient, unit_count=0,
+                   optimizer_steps=state.optimizer_steps+1, encoding=encoding)
+
+
 def attach_clock(state: CudaLearnerState, cursor: int, spec: LearnerSpec) -> CudaLearnerState:
     """Mechanical full-unit profile clock attachment; no profile authority."""
     natural(cursor, 'CUDA attached cursor')
@@ -532,6 +597,8 @@ def attach_clock(state: CudaLearnerState, cursor: int, spec: LearnerSpec) -> Cud
             or state.cursor % spec.update_unit or cursor % spec.update_unit):
         raise ContractError('CUDA profile attachment requires a whole update unit')
     state.__post_init__()
+    if state.encoding is not None and spec != state.encoding.model.learner:
+        raise ContractError('CUDA likelihood profile attachment changed its registered U')
     return replace(state, cursor=cursor)
 
 
@@ -547,5 +614,6 @@ def raw_tensor(value):
 def raw_state(state: CudaLearnerState):
     if type(state) is not CudaLearnerState:
         raise ContractError('complete CUDA learner required for raw observation')
-    return (raw_tensor(state.theta), tuple((key, raw_tensor(value)) for key, value in state.delayed),
-            raw_tensor(state.gradient_sum), state.unit_count, state.cursor, state.optimizer_steps)
+    numeric = (raw_tensor(state.theta), tuple((key, raw_tensor(value)) for key, value in state.delayed),
+               raw_tensor(state.gradient_sum), state.unit_count, state.cursor, state.optimizer_steps)
+    return numeric if state.encoding is None else numeric+(state.encoding.raw(),)

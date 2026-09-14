@@ -2481,6 +2481,19 @@ exact cut-19/76 witness distinguishes pairwise approximation from a causal
 quotient. This is scoped learner theory, not a complete Omega equivalence,
 a universal history-dependent algorithm bound or a new physical codec.
 
+The [likelihood Runtime contract](theory/proofs/LIKELIHOOD_RUNTIME_CONTRACT.md)
+now defines a physical lowering for the commensurate finite affine subclass.
+Runtime derives its exact integer coordinates from the actual native graph,
+Gamma, unit U and complete source domain before physical initialization.
+The native AMP cache and every gradient remain executed and checked; a paid
+GPU power/normalization decoder implements the same exact unit transition.
+A transient decoded zero can recover after a contrary event because its
+likelihood coordinate was retained. Profiles preserve both clocks, and
+fresh installation preserves the complete resident state. Counter, work,
+range and bridge limits still cause refusal; unsupported members remain
+in the constructor class. The source-bound nine-job audit is separately
+registered; development successes are not a new release or model result.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.

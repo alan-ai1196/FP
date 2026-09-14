@@ -4040,3 +4040,50 @@ decisions,6,552 independently checked phases per CUDA/binary64 path and
 original task order; task26, n16/c4 seed19 rate1, starts as worker22612 at
 01:08:38 UTC on2026-09-14. Main HEAD and all execution dependencies remain
 bound to38b27b3; integrate the research branch only after all workers finish.
+
+## 116. Lower the exact likelihood state instead of persisting an absorbed weight
+
+The count/likelihood information laws now support an owned numerical lowering
+of the existing unit-rate/unit-event simplex U. A bounded analyzer derives
+affine selected heads, equal expert normalizers and commensurate likelihood
+ratios from the actual native graph, Gamma and complete source domain. It
+selects independent integer rows and checks every reconstruction. The exact
+coordinates, actual pending event and both clocks simulate U; no posterior,
+fitted coefficient or helper-supplied successor is admitted.
+
+The new GPU commit decodes those coordinates using positive binary32 powers
+and normalization. It still executes the complete native AMP forward and
+reverse derivative before each commit, including fixed-slot gradients.
+An exact native square with fixed zero multiplier retains gradient -1/8,
+showing why current head affineness does not license deleting its interior.
+The independent exact audit checks 958 transitions and ranks1,3,6, plus
+nonuniform priors, noncontiguous slots, rational radices and scope refusals.
+
+Runtime prepays model derivation and scratch before using the analyzer, stores
+the complete descriptor in the initial phase frame, and binds later counts
+with a primitive descriptor digest. The digest specifically exposes mutation
+of an aliased descriptor at a cut whose physical theta has already underflowed.
+Counter overflow preserves the actual pending event/gradient and refuses the
+next commit. Profiles retain their replay multiplicity and attached clock;
+installation retains the complete resident learner and tensor leases.
+
+Development reversal checks seal all100 events and independently replay all
+301 phases per numeric path: weight zero at48, positive subnormal at53,
+uniform at100. A first development profile check exposed the score reader's
+old seven-field forecast requirement. Accepting and validating the additional
+pre-target query tag closes that interface mismatch; the subsequent two-pass
+n3 profile run seals and installs at22 after both fresh paths cross. Its286
+phases per numeric path and40 fresh events replay independently. These are
+development observations, not clean-source matrix evidence or model scores.
+
+The nine-job registration covers those two successes, six corruption/resource
+refusals, and complete enumeration of a20-program class that must remain
+unresolved because15 members lack admissible actual simplex initializers.
+The old reversal failure is preserved. General multiprime banks, other U,
+unlimited numerical accuracy and whole-Compiler compression are not claimed.
+Foundation, ERC-1, live RN-5 and main HEAD remain unchanged; execute the new
+registration from the canonical research branch after committing its source.
+Before registration, the four existing reference-event, profile, binary64
+Runtime and simplex-contract scripts pass, as do ten selected default CUDA
+prefix/install/policy cases, including the learned policy installation.
+This focused regression check does not replace the frozen full release audit.

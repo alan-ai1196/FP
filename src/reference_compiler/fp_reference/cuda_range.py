@@ -192,9 +192,14 @@ def stored_probability(prediction, target, *, bit_limit):
     """
     natural(target, 'CUDA stored-mass target label')
     natural(bit_limit, 'CUDA stored-mass integer limit', positive=True)
-    if (type(prediction) is not tuple or len(prediction) != 7
+    if (type(prediction) is not tuple or len(prediction) not in (7, 8)
             or type(prediction[3]) is not tuple or target >= len(prediction[3])):
         raise ContractError('complete retained CUDA forecast and in-range target required')
+    if len(prediction) == 8:
+        # The likelihood lowering also retains the actual pre-target source
+        # row. Its complete-input binding is checked by the owned prefix;
+        # decoding a score cannot remove or manufacture that binding.
+        natural(prediction[7], 'retained likelihood forecast query')
     total, selected = F(0), None
     for index, word in enumerate(prediction[3]):
         value = _read(word, 32, bit_limit).value

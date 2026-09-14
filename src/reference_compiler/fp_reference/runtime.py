@@ -51,6 +51,10 @@ from .simplex_relation_proposal import (SOLVER as SIMPLEX_RELATION_SOLVER,
     simplex_relation_proposal, proposal_work_bound as simplex_proposal_work_bound)
 from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
+from .likelihood_encoding import (require_learner as require_likelihood_learner,
+    preparation_work as likelihood_preparation_work,
+    preparation_workspace as likelihood_preparation_workspace,
+    phase_work as likelihood_phase_work)
 
 
 @dataclass(frozen=True)
@@ -323,6 +327,8 @@ class ReferenceCompilerRuntime:
             if type(cuda) is not CudaPrefixContract or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
+            if cuda.likelihood_encoding is not None:
+                require_likelihood_learner(online.learner)
             if policy is not None:
                 if type(policy) is not CudaCompilerPolicy:
                     raise ContractError('the CPU install/run policy has no transition proof for a target CUDA root')
@@ -691,6 +697,24 @@ class ReferenceCompilerRuntime:
         cfg = self._cuda.contract
         label = f'{candidate}:cuda:{origin}:{kind}:{len(self._cuda.phases)}'
         charge = 128*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        likelihood_workspace = 0
+        if cfg.likelihood_encoding is not None:
+            # The registered alternative lowering owns its actual program/Gamma
+            # derivation and integer state. No caller supplies a likelihood bank
+            # or trained value. Descriptor integrity checks are paid by the
+            # same finite evidence envelope that retains its initial body.
+            charge += 8*cfg.phase_evidence_bytes
+            if kind == 'initialize':
+                charge += likelihood_preparation_work(program, self._contract.semantics,
+                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits)
+                likelihood_workspace = likelihood_preparation_workspace(program, self._contract.semantics,
+                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits)
+            else:
+                handles = self._cuda.staged if origin == 'profile' or kind == 'commit' else self._cuda.current
+                physical = self._cuda._values[handles[candidate]]
+                if physical.encoding is None:
+                    raise ContractError('registered likelihood lowering lost its owned coordinates')
+                charge += 4*likelihood_phase_work(physical.encoding.model)
         if kind == 'predict':
             charge += forward_work(program, self._contract.semantics)
         if origin == 'construction':
@@ -706,6 +730,12 @@ class ReferenceCompilerRuntime:
         self._ledger.allocate(self._data_owner, (extent,))
         frame = bytearray(cfg.phase_evidence_bytes)
         self._buffers[label] = frame
+        workspace_id = label+':likelihood-scratch' if likelihood_workspace else None
+        if workspace_id is not None:
+            scratch = ObjectSpec(workspace_id, 'likelihood_derivation_scratch',
+                {'reference_payload_bytes': likelihood_workspace, 'physical_objects': 1}, self._chi)
+            self._ledger.allocate(self._data_owner, (scratch,))
+            self._buffers[workspace_id] = bytearray(likelihood_workspace)
 
         def write(value):
             size = packed_size(value)
@@ -718,39 +748,45 @@ class ReferenceCompilerRuntime:
                 offset += len(part)
             frame[:8] = size.to_bytes(8, 'big')
 
-        write((label, 'ADMITTED_CUDA_PHASE'))
         try:
-            record, error = self._cuda.execute(label, kind, program, candidate, reference,
-                rules=self._contract.semantics, spec=self._online.learner,
-                bit_limit=self._contract.reference_integer_bits, ordinary_cursor=self._cursor,
-                origin=origin, observation_id=observation_id, sources=sources,
-                reference_prediction=reference_prediction, target=target,
-                normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap)
-        except (ResourceExceeded, ArithmeticUnresolved):
-            raise
-        except ContractError as error:
-            # Malformed backend output can also fail raw-record extraction.
-            # Already admitted native input cannot become an admissibility
-            # rejection just because that internal diagnostic failed too.
-            raise RuntimeError('registered CUDA execution or raw capture violated its admitted inputs') from error
-        try:
-            write(record)
-        except MemoryError:
-            raise
-        except Exception as retain_error:
-            expected = (ArithmeticUnresolved, ResourceExceeded)
-            failure = error if error is not None and not isinstance(error, expected) else retain_error
-            self._cuda.phases[label] = replace(record,
-                status='UNRESOLVED' if isinstance(failure, expected) else 'EXECUTION_FAILED',
-                reason=record.reason+'; CUDA evidence retention failed: '+str(retain_error))
-            if isinstance(failure, ContractError) and not isinstance(failure, expected):
-                raise RuntimeError('registered CUDA execution violated its admitted inputs') from failure
-            raise failure
-        if error is not None:
-            if isinstance(error, ContractError) and not isinstance(error, (ArithmeticUnresolved, ResourceExceeded)):
-                raise RuntimeError('registered CUDA execution violated its admitted inputs') from error
-            raise error
-        self._cuda.accept(record)
+            write((label, 'ADMITTED_CUDA_PHASE'))
+            try:
+                record, error = self._cuda.execute(label, kind, program, candidate, reference,
+                    rules=self._contract.semantics, spec=self._online.learner,
+                    bit_limit=self._contract.reference_integer_bits, ordinary_cursor=self._cursor,
+                    origin=origin, observation_id=observation_id, sources=sources,
+                    reference_prediction=reference_prediction, target=target,
+                    normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
+                    source_domain=self._contract.source_domain)
+            except (ResourceExceeded, ArithmeticUnresolved):
+                raise
+            except ContractError as error:
+                # Malformed backend output can also fail raw-record extraction.
+                # Already admitted native input cannot become an admissibility
+                # rejection just because that internal diagnostic failed too.
+                raise RuntimeError('registered CUDA execution or raw capture violated its admitted inputs') from error
+            try:
+                write(record)
+            except MemoryError:
+                raise
+            except Exception as retain_error:
+                expected = (ArithmeticUnresolved, ResourceExceeded)
+                failure = error if error is not None and not isinstance(error, expected) else retain_error
+                self._cuda.phases[label] = replace(record,
+                    status='UNRESOLVED' if isinstance(failure, expected) else 'EXECUTION_FAILED',
+                    reason=record.reason+'; CUDA evidence retention failed: '+str(retain_error))
+                if isinstance(failure, ContractError) and not isinstance(failure, expected):
+                    raise RuntimeError('registered CUDA execution violated its admitted inputs') from failure
+                raise failure
+            if error is not None:
+                if isinstance(error, ContractError) and not isinstance(error, (ArithmeticUnresolved, ResourceExceeded)):
+                    raise RuntimeError('registered CUDA execution violated its admitted inputs') from error
+                raise error
+            self._cuda.accept(record)
+        finally:
+            if workspace_id is not None:
+                self._ledger.release(self._data_owner, workspace_id)
+                self._buffers.pop(workspace_id, None)
 
     def _float64_only_execute(self, kind, program, candidate, reference, floating=None, *,
                          origin='ordinary', observation_id=None, sources=None,
