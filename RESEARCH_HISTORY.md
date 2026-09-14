@@ -4013,3 +4013,30 @@ Known likelihood/prior construction is explicit, full gradients/clocks stay
 present, and raw observations/provenance are never quotiented. No Runtime
 source, AMP lowering, Foundation action, ERC-1 limit or live RN-5 contract
 changes. The result constrains a future paid codec before implementation.
+
+## 115. The resumed n16/c4 rate4 reaches its original timeout; its baseline completes
+
+RN-5 task24, n16/c4 seed18 rate4, resumes after the separately retained
+unreported interruption and now reaches a completed two-hour timeout at
+the unchanged source38b27b3. The attached job records exit1223, no host-limit
+termination and peak commitment9,165,230,080 bytes under16GiB. It yields no
+valid worker report, model score, seal, install or complete phase count.
+Together with rate1, both seed18 FP rates fail within their original limits.
+The earlier interruption remains an unknown-cause event, not an extra score
+or a completed timed-out job.
+
+Task25's strong posterior baseline completes normally. Independent exact
+post-analysis reconstructs all256 pre-target forecasts, the AMP encoding,
+four score records and reported integer/payload bounds. Its unseen AMP CE
+is0.33055575219484024 and full-domain CE0.32970063130197597. Its job peak is
+2,309,025,792 bytes. No score is assigned to either failed FP rate and no
+infinite-time or infeasibility conclusion is inferred from their timeouts.
+
+The preserved prefix now has25 attempts:19 EXECUTED and six FAILED. The
+previous23 rows are unchanged. Totals are twelve sealed FP streams, nine
+installs,76 independently checked descriptive score records, twelve fresh
+decisions,6,552 independently checked phases per CUDA/binary64 path and
+1,024 newly executed posterior GPU forecasts. Parent11020 continues the
+original task order; task26, n16/c4 seed19 rate1, starts as worker22612 at
+01:08:38 UTC on2026-09-14. Main HEAD and all execution dependencies remain
+bound to38b27b3; integrate the research branch only after all workers finish.

@@ -183,10 +183,10 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-twenty-three-attempt prefix contains eighteen EXECUTED workers and five FAILED jobs.
+twenty-five-attempt prefix contains nineteen EXECUTED workers and six FAILED jobs.
 Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
-are independently checked. Six new posterior workers supply768 actual GPU
-forecasts; post-analysis verifies72 descriptive scores and twelve fresh
+are independently checked. Seven new posterior workers supply1,024 actual GPU
+forecasts; post-analysis verifies76 descriptive scores and twelve fresh
 FP decisions. The two n16/c2 posterior workers have mean unseen CE0.3269395091.
 All four n16/c2 FP workers fail in the final CUDA auditor's arena snapshot
 with MemoryError under the fixed16GiB host envelope. They retain no FP model
@@ -194,12 +194,13 @@ score, install, seal or complete trajectory-audit claim. All four n8/c4 FP
 streams seal; two install. Their two-seed candidate unseen CE means are
 0.4168832454 at rate1 and0.4333859733 at rate4, versus the strong posterior's
 0.3654471094. Deployed means are0.6113593240 and0.6210014211. These are finite
-registered-sample observations. The n16/c4 seed18 rate1 worker now records a
-two-hour timeout: exit1223, peak job commitment8,913,358,848 bytes under the
-unchanged16GiB cap, and no valid worker report. It supplies no FP score,
-installation, seal or complete phase count. Rate4 and the remaining n16/c4
-and selected-stress outcomes are pending. Read the live main journal for its
-newest prefix; the research branch currently retains twenty-three attempts.
+registered-sample observations. Both n16/c4 seed18 rates now record two-hour
+timeouts: exit1223, peak job commitments8,913,358,848/9,165,230,080 bytes under
+the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
+score, installation, seal or complete phase count. The seed18 posterior
+completes256 independently reconstructed forecasts with unseen AMP CE
+0.3305557522. Seed19 and selected-stress outcomes are pending. Read the live
+main journal for its newest prefix; the research branch retains25 attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 
@@ -209,8 +210,11 @@ The separate [interruption record](evidence/minimal/FP_JOINT_UNCERTAINTY_INTERRU
 retains this unreported attempt without inventing a cause, score or completed
 job counters. After the source guard passed, the existing `--write --resume`
 driver resumed task24 at23:08:27 UTC with the same source and limits.
-The new parent/worker PIDs are11020/15576. Recheck actual processes and the
-main journal before any continuation; these PIDs are an observation, not a lease.
+The resumed parent/worker PIDs were11020/15576. The resumed rate4 worker
+subsequently timed out at its original two-hour limit. At2026-09-14 01:08 UTC,
+task25's seed18 posterior is complete and parent11020 has started task26,
+n16/c4 seed19 rate1, as worker22612 in fp-joint-model-6mzfci14. Recheck actual
+processes and the main journal; these PIDs are an observation, not a lease.
 
 Post-RN-5 source extensions are committed on `research/joint-learner-geometry`
 in a linked worktree of this same canonical Git repository. Run their new
