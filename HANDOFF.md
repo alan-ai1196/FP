@@ -499,6 +499,16 @@ Keep that checkout's HEAD/dependencies fixed throughout; main may advance.
 Do not resume90f3883 as though its auditor succeeded or fill its unavailable
 model results.
 
+The [independent result reader](experiments/joint_uncertainty/LIKELIHOOD_MODEL_ANALYSIS.md)
+is prepared for this matrix. Keep its introducing commit in the separate
+analysis checkout `F:\FP-likelihood-model-audit`; imported execution
+dependencies must match86083a0. Read the live journal with `--partial` and
+omit that option once terminal. Development checks reject twelve forged
+word/readout/freshness/job/class cases and recheck sixteen retained control
+scores. There are still zero completed model rows, so the successful result
+branch awaits real worker evidence. Do not rerun any baseline. A one-identity
+summary without its path label receives unresolved fresh reconstruction.
+
 The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 now accounts for uncertainty learning, AMP error and the existing wealth
 floor at the original coefficient1/8. Under the explicit posterior-mixture

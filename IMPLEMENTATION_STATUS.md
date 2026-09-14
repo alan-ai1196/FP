@@ -48,6 +48,14 @@ Keep that checkout's HEAD/dependencies fixed throughout; main may advance.
 Do not resume90f3883 as though its auditor succeeded or fill its unavailable
 model results.
 
+The [independent likelihood result reader](experiments/joint_uncertainty/LIKELIHOOD_MODEL_ANALYSIS.md)
+now reconstructs proper-mass versus raw-division scores and paired fresh
+crossings from minimal records, with a source guard against86083a0. It keeps
+failed/unresolved streams unscored and rejects complete-class or early-install
+claims. Twelve adversarial development checks and sixteen retained control
+score checks pass; validation on a completed corrected model worker remains
+pending. The analysis checkout stays separate from advancing Runtime code.
+
 The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 composes the actual mixture learner, original coefficient1/8, successful
 AMP probability relation and grid16 wealth. Its64-event bounds are scoped

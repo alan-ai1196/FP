@@ -4527,3 +4527,30 @@ arithmetic. The two native counterexamples and small probability bounds are
 retained, without weights or event tapes. The matrix at immutable86083a0
 continues unchanged and supplies no completed outcome yet. Statistical
 composition is settled in this scope; continue actual model execution.
+
+## 130. Prepare independent minimal-record analysis for the running n8 matrix
+
+The corrected first worker remains live at86083a0 with no completed result.
+An independent reader now checks the retained attempt/job/source identities,
+reconstructs exact stored-mass probabilities from binary32 words, and keeps
+raw divisions separate. It recomputes reference posterior forecasts in a
+different world order, checks expected CE with binary64 and Brier intervals
+with an independent exact expansion, and uses the corrected exact log checker
+for fresh reference/CUDA wealth. Deployment receives only forecasts at its
+actual installation cut. No complete-class proof is inferred from one v7
+proposal, and crossing alone does not force an installation.
+
+The reader summarizes the completed worker's independent full phase audits;
+the minimal mass-word journal is not misrepresented as another full raw-tape
+replay. A single admitted identity without a retained path label gives
+unresolved fresh reconstruction. Failed jobs and halted streams have no
+imputed complete scores. The original90f3883 failure remains separate.
+
+Development validation passes twelve malformed/nonfinite word, duplicate or
+missing readout, stale cursor, zero mass, premature install, extra fresh
+event, failed-job promotion and false-class-certificate checks. It explicitly
+accepts paired crossing without installation. Sixteen retained strong-control
+scores are independently checked, without a baseline worker rerun. The initial
+prefix still has zero completed model rows; successful model-result validation
+awaits the actual corrected worker. Preserve the reader's committed source in
+`F:\FP-likelihood-model-audit` while main continues implementation research.
