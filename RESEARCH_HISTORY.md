@@ -4467,3 +4467,10 @@ and links the separately retained failed attempt. That equality passes:
 no data, Gamma/U, graph, profile, baseline, bound6/bet3/4, alpha, numerical
 tolerance,16GiB/two-hour or other resource parameter is changed. The failed
 attempt is not relabeled; the corrected workers must earn their own results.
+
+The corrected matrix starts from clean committed86083a0 in detached linked
+checkout `F:\FP-likelihood-model-v2-run`, on2026-09-14 at07:06:48 UTC.
+Parent23668 launches first worker16644. The initial journal records zero
+completed outcomes and its explicit reference to the original failed attempt;
+all execution dependencies are verified clean. Keep this source fixed while
+main continues research. No running job is counted as a successful model.

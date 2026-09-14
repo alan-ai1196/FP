@@ -1,0 +1,200 @@
+{
+  "status": "PARTIAL_EXECUTION",
+  "registration_source": "86083a0406292660115224f8e507626de4b442c5",
+  "protocol_origin": "90f38834668546636b420f66b1a831b5969a2a13",
+  "prior_auditor_failure": {
+    "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json",
+    "execution_source": "90f38834668546636b420f66b1a831b5969a2a13",
+    "attempted_workers": 1,
+    "case": [
+      8,
+      "iid-c2",
+      16
+    ],
+    "model_and_resource_registration_identical": true,
+    "scope": "original failed attempt retained; no inferred model score or complete phase count"
+  },
+  "registration": {
+    "cases": [
+      {
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "training_events": 60,
+        "native": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "grammar": {
+          "nodes": 676,
+          "SUMs": 516,
+          "PRODUCTs": 128,
+          "edges": 20736,
+          "slots": 258
+        },
+        "prepaid_derivation_work": 58433467456,
+        "prepaid_scratch_bytes": 2029576576,
+        "predict_cells": 31554,
+        "observe_cells": 41949
+      },
+      {
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "training_events": 60,
+        "native": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "grammar": {
+          "nodes": 676,
+          "SUMs": 516,
+          "PRODUCTs": 128,
+          "edges": 20736,
+          "slots": 258
+        },
+        "prepaid_derivation_work": 58433467456,
+        "prepaid_scratch_bytes": 2029576576,
+        "predict_cells": 31554,
+        "observe_cells": 41949
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "training_events": 40,
+        "native": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "grammar": {
+          "nodes": 676,
+          "SUMs": 516,
+          "PRODUCTs": 128,
+          "edges": 20736,
+          "slots": 258
+        },
+        "prepaid_derivation_work": 58433467456,
+        "prepaid_scratch_bytes": 2029576576,
+        "predict_cells": 31554,
+        "observe_cells": 41949
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "training_events": 40,
+        "native": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "grammar": {
+          "nodes": 676,
+          "SUMs": 516,
+          "PRODUCTs": 128,
+          "edges": 20736,
+          "slots": 258
+        },
+        "prepaid_derivation_work": 58433467456,
+        "prepaid_scratch_bytes": 2029576576,
+        "predict_cells": 31554,
+        "observe_cells": 41949
+      }
+    ],
+    "baseline": {
+      "journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+      "journal_commit": "6c202ea0caba09da252cc431ba19f6b8a9f430e3",
+      "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+      "cases": [
+        [
+          8,
+          "iid-c2",
+          16
+        ],
+        [
+          8,
+          "iid-c2",
+          17
+        ],
+        [
+          8,
+          "iid-c4",
+          18
+        ],
+        [
+          8,
+          "iid-c4",
+          19
+        ]
+      ],
+      "scope": "completed retained exact/AMP adaptive posterior; no new baseline execution"
+    },
+    "host_cap": 17179869184,
+    "timeout_ms": 7200000,
+    "packed_cap": 8589934592,
+    "work_per_role": 1000000000000000,
+    "phase_frame_bytes": 4194304,
+    "phase_output_cells": 65536,
+    "arena_bytes": 268435456,
+    "allocator_bytes": 536870912,
+    "reference_bits": 32768,
+    "native_cap": "16",
+    "binary64_tolerances": "1/1000000000",
+    "AMP_state_native_normalizer_tolerance": "1/100",
+    "AMP_probability_tolerance": "1/1000",
+    "Gamma": "feature1; 128 selected weights1/128",
+    "unit": 1,
+    "rate": "1",
+    "profile_passes": 1,
+    "likelihood_radix": "9",
+    "counter_bits": 64,
+    "execution_identity": [
+      "2.12.0+cu132",
+      "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+      "13.2",
+      "NVIDIA GeForce RTX 3090",
+      [
+        8,
+        6
+      ]
+    ],
+    "scope": "retrospective matched mechanism matrix; no new IID sample, class certificate or timing claim"
+  },
+  "workers": []
+}

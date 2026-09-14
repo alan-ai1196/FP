@@ -20,10 +20,11 @@ The [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_M
 stops after its first90f3883 job fails in the100-digit Decimal gain auditor.
 No model result is established. The [exact checker](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
 fixes both a correct-interval rejection and an incorrect-interval acceptance,
-with explicit unresolved budgets. Execute the corrected four cases from a
-committed immutable source, retaining the failed attempt and all original
-model/resource settings. The runner requires exact registration-dictionary
-equality. Keep candidate/deployed results separate and do not rerun the
+with explicit unresolved budgets. The corrected four cases now execute at
+immutable86083a0 in `F:\FP-likelihood-model-v2-run`, with no completed outcome
+yet. The failed attempt and all original model/resource settings remain;
+the runner verifies exact registration-dictionary equality. Keep
+candidate/deployed results separate and do not rerun the
 retained strong controls. Reused tapes remain retrospective evidence.
 
 Selected-weight rounding drift in the current count decoder now has a

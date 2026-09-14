@@ -40,11 +40,13 @@ and40 fresh-score checks. This is no n8 result or new complete release.
 The corrected four-case protocol keeps every model/resource registration
 field identical to the failed attempt, which the runner checks before launch.
 It retains the same baselines, Gamma/U, graph, data, profile, bound6/bet3/4,
-alpha, tolerances,16GiB/two hours,8GiB packed and4MiB frames. Execute only
-after the checker correction is committed, in a new immutable checkout
-`F:\FP-likelihood-model-v2-run`; keep its HEAD/dependencies fixed throughout.
-The new journal must link the original failure. Do not resume90f3883 as
-though its auditor succeeded or fill its unavailable model results.
+alpha, tolerances,16GiB/two hours,8GiB packed and4MiB frames. The corrected
+matrix starts at immutable86083a0 in `F:\FP-likelihood-model-v2-run` on
+2026-09-14 at07:06:48 UTC, parent23668 and first worker16644. Its initial
+journal has zero completed outcomes and links the original failed attempt.
+Keep that checkout's HEAD/dependencies fixed throughout; main may advance.
+Do not resume90f3883 as though its auditor succeeded or fill its unavailable
+model results.
 
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.
