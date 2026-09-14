@@ -484,9 +484,27 @@ Reference forecasts must equal the same-cut independent posterior; measure
 candidate and deployment separately. Preflight passes with31,554 prediction
 cells,41,949 observation cells and2,029,576,576 bytes of conservative scratch.
 The fixed envelope is16GiB host/two hours,8GiB packed and4MiB phase frames.
-This commit registers the retrospective mechanism matrix; it contains no new
-n8 worker outcome. Execute from an immutable checkout while main RN-5 remains
-at38b27b3. Unreported failures supply no invented score or complete phase count.
+The matrix executes at90f3883 in the detached linked checkout
+`F:\FP-likelihood-model-run`. Parent15872 starts worker2720 for case0 at04:31:40
+UTC on2026-09-14; its separate journal is
+`evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json` in that checkout. The
+worker is verified live with no completed outcome yet. Keep that checkout's
+HEAD/dependencies fixed. Main RN-5 independently remains at38b27b3, task27
+worker12732. All checkouts share this canonical Git repository; the research
+branch may advance without changing either running execution source. Unreported
+failures supply no invented score or complete phase count.
+
+The [normalized likelihood theorem](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
+now characterizes the guarantee over all interior weights: a positive-rate
+informative fixed Bayes update requires rate1 and an affine normalized forecast.
+Nonlinear native masses can qualify through a common positive factor, but
+their full gradients/caches are not equivalent. A second native construction
+is Bayesian on every trajectory from fair Gamma because w2=w3 stays invariant,
+yet fails normalized affinity off that invariant. Thus the full-simplex
+criterion must not be imposed as necessary on every reachable-state codec.
+Exact checks cover a10,544-graph grammar,44,880 native units, two nonlinear
+160-transition pair audits and36 four-world units. This mathematical result
+does not extend the running physical analyzer or the parked static program.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic

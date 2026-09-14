@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact Fraction and native32768-bit guards",
+  "grammar_audits": [
+    {
+      "maximum_SUMs": 1,
+      "complete_three_slot_graphs": 3184,
+      "normalized_affine_certificates": 2212,
+      "informative_certificates": 0,
+      "beyond_strict_affine_mass_verifier": 270,
+      "informative_beyond_strict_verifier": 0,
+      "exact_native_unit_checks": 13272,
+      "native_nonaffinity_witnesses": 972,
+      "source_domain": [
+        "one=1"
+      ],
+      "fixed_feature": "1",
+      "selected_slots": [
+        1,
+        2
+      ]
+    },
+    {
+      "maximum_SUMs": 2,
+      "complete_three_slot_graphs": 10544,
+      "normalized_affine_certificates": 7480,
+      "informative_certificates": 20,
+      "beyond_strict_affine_mass_verifier": 884,
+      "informative_beyond_strict_verifier": 0,
+      "exact_native_unit_checks": 44880,
+      "native_nonaffinity_witnesses": 3064,
+      "source_domain": [
+        "one=1"
+      ],
+      "fixed_feature": "1",
+      "selected_slots": [
+        1,
+        2
+      ]
+    }
+  ],
+  "nonlinear": {
+    "common_factor": "1+w1*w2 at fixed feature t=1",
+    "equal_native_forecast_and_selected_update_pairs": 160,
+    "strict_mass_verifier_refuses": true,
+    "reachable_fixed_slot_gradients": [
+      "0",
+      "144/22345"
+    ],
+    "half_rate_incompatible_fixed_likelihood_ratios": [
+      "7/3",
+      "39/19"
+    ],
+    "double_rate_registration_refusal": true
+  },
+  "multivariate": {
+    "four_world_complete_source_rows": 9,
+    "multivariate_native_units": 36
+  },
+  "reachable_orbit_counterexample": {
+    "invariant": "w2=w3",
+    "informative_native_update_pairs": 160,
+    "first_selected_successor": [
+      "9/11",
+      "1/11",
+      "1/11"
+    ],
+    "full_simplex_identity_rejects": true,
+    "outside_invariant_forecasts": [
+      "1/2",
+      "177/352"
+    ],
+    "initial_fixed_slot_gradients": [
+      "0",
+      "-8/605"
+    ]
+  },
+  "scope": "distribution-wide exact theorem and passive polynomial audit; no Runtime extension or complete-state quotient"
+}

@@ -4236,3 +4236,45 @@ work and2,029,576,576 scratch bytes. The same conservative formulas remain.
 No n8 outcome is claimed at registration. Use an immutable experiment
 checkout so the research branch can continue without changing an active job's
 source. Main RN-5 remains at38b27b3, with its task27 still running.
+
+## 122. Normalize the likelihood theorem, then attack its reachable-state scope
+
+The one-event native simplex U now has a distribution-wide characterization.
+At every interior weight and all labels, a fixed positive likelihood update
+implies p_y=c_y*(w dot ell_y)^(1/eta). The second tangent derivative of the
+normalization identity SUM_y p_y=1 is a positive sum of squares when0<eta<1.
+It can vanish only for a readout independent of the selected weights.
+Consequently an informative law forces eta=1, and normalized forecasts must
+be affine on the simplex. The converse follows from the actual CE tangent;
+ambient normal components cancel without erasing fixed-slot derivatives.
+
+This removes affine unnormalized masses as a necessary global hypothesis.
+A positive native common factor1+w1*w2 leaves forecasts and selected updates
+unchanged but gives a reachable fixed-slot gradient144/22345 instead of0.
+The exact criterion is the polynomial identity M_y-T*(w dot p_y(vertices))=0
+modulo SUM(w)-1. The passive audit uses rational substitution; the running
+Runtime still has its original narrower paid analyzer.
+
+Attacking the quantifier produces an informative counterexample. A positive
+three-world readout adds h=(w2-w3)^2 to one commonly scaled affine mass.
+From fair Gamma, w2=w3 is preserved under every label, h and its selected
+gradient vanish, and all selected updates are Bayesian. Off that invariant,
+forecasts1/2 and177/352 differ. Thus full-simplex affinity is not necessary
+for every reachable-orbit codec. Initial fixed gradients0 and-8/605 also
+prevent a complete-state equivalence claim.
+
+The larger complete tiny grammar has10,544 graphs,7,480 normalized-affine
+certificates including20 informative cases,44,880 native unit checks and
+3,064 independent native refusal witnesses. The retained3,184-graph subset
+has no informative certificate; it is not counted as new independent graphs.
+Two nonlinear examples each check160 paired continuous native transitions
+over all five-label words, with clocks retained. Four-world substitution
+adds36 native units over all nine source rows. Proof and minimal evidence
+are in NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md and its linked report.
+
+Meanwhile the n8 matrix starts at90f3883 in the detached linked checkout
+F:\FP-likelihood-model-run: parent15872, first worker2720, start04:31:40 UTC
+on2026-09-14. No complete new model outcome is yet available. Main RN-5
+task27 independently remains live at38b27b3. Source/dependency guards pass
+for both executions while this research branch advances within the same
+canonical Git repository. Foundation, ERC-1 and semantic actions are unchanged.

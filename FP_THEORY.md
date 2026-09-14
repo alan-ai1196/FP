@@ -2514,6 +2514,18 @@ bound for the compact family, not an exponential lower bound, an IID risk
 claim, a bound in explicit native graph size, or an explanation of a fixed
 job's failure. It creates no new semantic action or class certificate.
 
+The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
+removes unnormalized-head affinity from the distribution-wide unit-U theorem.
+For a positive common step size and every interior weight state, an informative
+fixed likelihood update exists exactly when the rate is1 and the normalized
+forecast is affine on the simplex. Exact polynomial identities can certify
+this property even when common positive factors make the native masses nonlinear.
+This is not a necessary condition for every fixed-Gamma orbit: an informative
+positive native counterexample preserves w2=w3 under all labels while differing
+away from that invariant. Equal selected updates also preserve neither full
+ambient gradients nor native caches/costs. The physical analyzer and both live
+experiment sources remain unchanged; no new semantic action is introduced.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.

@@ -18,10 +18,19 @@ implementation/experiment correctness counterexample to its semantics.
 
 The next concrete pressure test is the [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md):
 all four retained IID cases, their unchanged strong controls, and complete
-native construction/profile/learning/fresh-install execution. Preflight passes;
+native construction/profile/learning/fresh-install execution. It runs from
+immutable90f3883 in `F:\FP-likelihood-model-run`; preflight passes and
 new model outcomes are not yet established. Treat its four fixed resource
 attempts as a matched mechanism test, preserving candidate/deployed separation
 and all failures. Reused tapes are not new IID or prospective evidence.
+
+The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
+settles the distribution-wide condition for this exact one-event U. It does
+not classify every fixed-Gamma reachable encoding: the informative invariant
+w2=w3 supplies an exact counterexample to that stronger necessity claim.
+The current physical analyzer remains conservatively sufficient. Do not
+expand it merely to admit more algebraic examples; let useful model execution
+expose which paid solver improvements or reachable invariants are needed.
 
 The [compact forecast decoder](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
 now has a scoped computational boundary: unless P=NP, it cannot uniformly

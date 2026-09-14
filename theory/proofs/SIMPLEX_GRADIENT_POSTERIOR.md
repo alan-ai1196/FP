@@ -1,10 +1,18 @@
 # A simplex gradient law for positive affine readouts
 
-Status: **PROVED, SCOPED; EXACT NATIVE-GRADIENT AUDIT**. The learner rule
-below is not implemented by the current ReferenceCompilerRuntime. It is a
-different U and initialization, not a change to the positive graph grammar
-or a graph-only emergence result. No Runtime, class, installation or AMP
-authority is obtained by the arithmetic audit.
+Status: **PROVED, SCOPED; EXACT NATIVE-GRADIENT AUDIT**. The initial theorem
+introduced this rule before its [scoped Runtime integration](SIMPLEX_RUNTIME_CONTRACT.md).
+It is a distinct U and initialization, not a change to the positive graph
+grammar or a graph-only emergence result. The arithmetic audit itself grants
+no Runtime, class, installation or AMP authority.
+
+The subsequent [normalized likelihood characterization](NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
+proves the distribution-wide converse without assuming affine masses: an
+informative fixed likelihood update requires unit rate and affine normalized
+forecasts on the simplex. Nonlinear common factors can satisfy that condition.
+A separate informative reachable-orbit counterexample prevents treating the
+global condition as necessary for every fixed-Gamma encoding. The current
+physical backend retains its narrower sufficient analyzer.
 
 ## 1. Affine native readout and the declared weight state
 

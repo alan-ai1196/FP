@@ -19,13 +19,23 @@ and exact verification, not a new decoder installed in Runtime, an average-case
 claim, or a diagnosis of RN-5's finite execution failures.
 
 The [n8 likelihood model matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
-is now registered, with preflight passing and no worker outcome at this commit.
+is running from immutable90f3883 in `F:\FP-likelihood-model-run`, with no
+completed worker outcome yet. Parent15872/worker2720 are verified live.
 Four owned FP jobs reuse all four retained n8 IID cases and their unchanged
 exact/AMP posterior controls. It tests native v7/profile/unit-U/fresh-install
 execution at128 worlds, separately scoring candidate and deployment. Host16GiB,
 two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
 tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
 checkout; preserve the main RN-5 source and all original outcomes.
+
+The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
+is a theorem/passive audit, with no Runtime analyzer expansion. Distribution-wide
+fixed Bayesian updates require affine normalized forecasts and unit positive
+rate when informative. A native invariant-orbit counterexample prevents an
+unjustified converse for fixed-Gamma codecs. The larger exact grammar contains
+10,544 graphs,7,480 certificates including20 informative cases, and3,064 native
+nonaffinity witnesses;44,880 one-event updates pass. Full fixed-slot gradient
+differences remain explicit in both nonlinear examples.
 
 **Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 and component
 v3 extensions: separately audited. Registered experiments: UNHELD within their tested scopes.** Source
