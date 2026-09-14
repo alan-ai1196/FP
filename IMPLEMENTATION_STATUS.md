@@ -9,7 +9,7 @@ banks. n6 preparation uses304,892 counted operations versus2,536,316 before;
 prepaid work/scratch, native execution and the supported decision class are
 unchanged. Two bounded development jobs check587 CUDA and587 binary64 phases,
 including reversal and profile/install. This is separate extension validation;
-the old nine-job matrix stays bound to08fa7bc and live RN-5 stays at38b27b3.
+the old nine-job matrix stays bound to08fa7bc and completed RN-5 remains bound to38b27b3.
 
 The [compact forecast decoding theorem](theory/proofs/FORECAST_DECODING_COMPLEXITY.md)
 adds a computational limit for this existing learner family: uniform error
@@ -26,7 +26,7 @@ exact/AMP posterior controls. It tests native v7/profile/unit-U/fresh-install
 execution at128 worlds, separately scoring candidate and deployment. Host16GiB,
 two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
 tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
-checkout; preserve the main RN-5 source and all original outcomes.
+checkout; retain all original RN-5 outcomes and keep the likelihood execution checkout fixed.
 
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 is a theorem/passive audit, with no Runtime analyzer expansion. Distribution-wide
@@ -188,34 +188,26 @@ runner links all three earlier attempts and keeps every model/data/resource
 parameter fixed when executing the same 31-worker matrix. Results remain
 pending; this repairs evidence checking, not a model or budget outcome.
 
-RN-5 is running from execution source `38b27b3`, retaining protocol origin
-`e3df252` and the separate auditor-failure journal. The independently checked
-twenty-eight-attempt prefix contains twenty EXECUTED workers and eight FAILED jobs.
-Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
-are independently checked. Eight new posterior workers supply1,280 actual GPU
-forecasts; post-analysis verifies80 descriptive scores and twelve fresh
-FP decisions. The two n16/c2 posterior workers have mean unseen CE0.3269395091.
-All four n16/c2 FP workers fail in the final CUDA auditor's arena snapshot
-with MemoryError under the fixed16GiB host envelope. They retain no FP model
-score, install, seal or complete trajectory-audit claim. All four n8/c4 FP
-streams seal; two install. Their two-seed candidate unseen CE means are
-0.4168832454 at rate1 and0.4333859733 at rate4, versus the strong posterior's
-0.3654471094. Deployed means are0.6113593240 and0.6210014211. These are finite
-registered-sample observations. Both n16/c4 seed18 rates now record two-hour
-timeouts: exit1223, peak job commitments8,913,358,848/9,165,230,080 bytes under
-the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
-score, installation, seal or complete phase count. The seed18 posterior
-completes256 independently reconstructed forecasts with unseen AMP CE
-0.3305557522. Seed19 rate1 also reaches its two-hour timeout with peak job
-commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4
-also times out, with peak job commitment9,627,586,560 bytes and no valid
-report. The seed19 posterior completes256 forecasts with unseen AMP CE
-0.3308954459; the two n16/c4 posterior cases average0.3307255990. All eight
-n16 FP attempts are now terminal without model scores. Only the selected
-stress cases remain. Read the live main journal for its newest prefix; the
-research branch retains28 attempts.
-The unchanged matrix continues. Do not impute scores, enlarge failed budgets
-or change main HEAD/execution dependencies until all bound workers are terminal.
+[RN-5 is complete](experiments/joint_uncertainty/RESULTS.md) at execution
+source `38b27b3`, retaining protocol origin `e3df252` and all 31 registered
+attempts. Fourteen n8 FP streams seal, nine install, and nine new adaptive
+posterior workers complete. Four n16/c2 FP workers fail in the final auditor's
+arena snapshot; all four n16/c4 FP workers time out at two hours. These eight
+attempts supply no model score or complete trajectory-audit claim. The largest
+completed job counter is17,180,921,856 bytes, slightly above the nominal16GiB
+cap; the c4 timeout counters stay below it. Original limits remain unchanged.
+
+Independent analysis in the original execution checkout verifies7,564 CUDA
+and7,564 binary64 phases,92 descriptive scores, fourteen fresh decisions and
+1,344 new posterior GPU forecasts. The n8/c2 candidate unseen means are
+0.390115/0.443602 at rates1/4, versus posterior0.338493; n8/c4 means are
+0.416883/0.433386 versus0.365447. Deployed means are0.588589/0.610303 and
+0.611359/0.621001. Both selected wrong-sign stress candidates seal without
+installation, with candidate CE0.551847/0.522697 versus posterior0.418238;
+the deployed stream stays uniform. The stress tape is not an IID sample.
+Four conditioned searches retain only historical fixed-state reference-class
+bounds; the ten other sealed searches remain UNRESOLVED. The final journal,
+source-bound post-analysis and inspected plot retain all unavailable scores.
 
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.

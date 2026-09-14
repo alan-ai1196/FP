@@ -71,7 +71,11 @@ direct recovery path. Its scoped source-bound CPU/CUDA evidence, including
 retained numerical/range refusals, changes no Foundation definition below.
 The [empirical sign obstruction](theory/proofs/EMPIRICAL_SIGN_OBSTRUCTION.md)
 bounds that emitted family while leaving retained data and future native
-constructions available. RN-5 tests the scoped limitation under the frozen contract.
+constructions available. [Completed RN-5](experiments/joint_uncertainty/RESULTS.md)
+retains14 sealed n8 streams, nine installations and eight failed n16 attempts.
+Both n8 IID groups trail the strong adaptive posterior; the selected wrong-
+sign candidates never install. These are scoped model/execution outcomes,
+not a counterexample to the frozen Foundation or a new class certificate.
 The [joint learner geometry](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md)
 likewise retains a prediction-invariant coordinate when future SGD can use it.
 Its real-parameter relaxation has an exact fixed-sign risk optimum, distinct

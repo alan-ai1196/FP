@@ -4307,3 +4307,37 @@ rows while requiring the entire referenced26-row prefix and registration to
 remain identical. Its four n8 controls are unchanged. The already running
 n8 likelihood matrix stays in its immutable90f3883 checkout, retaining the
 original26-row source snapshot. Neither live execution is patched or restarted.
+
+## 124. Close RN-5 with its candidate gap, deployment waits and eight failures
+
+The original38b27b3 driver completes all31 registered attempts. Tasks29/30,
+selected n8 wrong-sign stress at rates1/4, both seal without installation;
+task31's adaptive posterior completes. Their unseen candidate CE is
+0.5518468081/0.5226972479 versus posterior0.4182379697, and deployed CE
+remains log(2). The final status is COMPLETE_WITH_FAILURES:23 EXECUTED and
+8 FAILED, with14 sealed n8 FP streams and9 installations. Every n16 FP
+attempt lacks a valid model score:4 c2 final-auditor snapshot MemoryErrors
+and4 c4 two-hour timeouts. The four n16 posterior controls all complete.
+
+The complete analysis runs in the original execution checkout before any
+source integration. It verifies7,564 CUDA and7,564 binary64 phases,92 dynamic
+scores, fourteen fresh decisions and1,344 new posterior GPU forecasts. All
+first28 journal rows remain byte-equivalent as parsed records. The original
+budgets, separate earlier auditor failures and unreported interruption remain.
+The largest completed job counter17,180,921,856 is slightly above the nominal
+16GiB cap; only the four timeout counters are uniformly below that cap.
+
+The inspected plot and RESULTS.md distinguish continuously updated candidates
+from actual deployment, and all unavailable scores from scored cases. Rate1
+has lower mean candidate CE than rate4 on both n8 IID groups, but both remain
+above their strong adaptive posterior controls. Five sealed candidates do
+not install, including both selected stress runs. Historical conditioned
+class bounds keep their exact fixed-state empirical scope; the other ten
+sealed class decisions remain UNRESOLVED. No future/model/AMP completeness
+claim follows from sealing. The fixed-state sign-risk bound is not promoted
+to a dynamic unseen-score bound.
+
+The source-bound n8 likelihood matrix remains independent at90f3883; RN-5
+completion neither supplies its model outcomes nor changes its fixed contract.
+Foundation and ERC-1 remain frozen. This is closure of one registered model
+experiment, not completion of the broader FP research goal.

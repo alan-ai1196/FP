@@ -181,58 +181,38 @@ runner links all three earlier attempts and keeps every model/data/resource
 parameter fixed when executing the same 31-worker matrix. Results remain
 pending; this repairs evidence checking, not a model or budget outcome.
 
-RN-5 is running from execution source `38b27b3`, retaining protocol origin
-`e3df252` and the separate auditor-failure journal. The independently checked
-twenty-eight-attempt prefix contains twenty EXECUTED workers and eight FAILED jobs.
-Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
-are independently checked. Eight new posterior workers supply1,280 actual GPU
-forecasts; post-analysis verifies80 descriptive scores and twelve fresh
-FP decisions. The two n16/c2 posterior workers have mean unseen CE0.3269395091.
-All four n16/c2 FP workers fail in the final CUDA auditor's arena snapshot
-with MemoryError under the fixed16GiB host envelope. They retain no FP model
-score, install, seal or complete trajectory-audit claim. All four n8/c4 FP
-streams seal; two install. Their two-seed candidate unseen CE means are
-0.4168832454 at rate1 and0.4333859733 at rate4, versus the strong posterior's
-0.3654471094. Deployed means are0.6113593240 and0.6210014211. These are finite
-registered-sample observations. Both n16/c4 seed18 rates now record two-hour
-timeouts: exit1223, peak job commitments8,913,358,848/9,165,230,080 bytes under
-the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
-score, installation, seal or complete phase count. The seed18 posterior
-completes256 independently reconstructed forecasts with unseen AMP CE
-0.3305557522. Seed19 rate1 also reaches its two-hour timeout with peak job
-commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4
-also times out, with peak job commitment9,627,586,560 bytes and no valid
-report. The seed19 posterior completes256 forecasts with unseen AMP CE
-0.3308954459; the two n16/c4 posterior cases average0.3307255990. All eight
-n16 FP attempts are now terminal without model scores. Only the selected
-stress cases remain. Read the live main journal for its newest prefix; the
-research branch retains28 attempts.
-The unchanged matrix continues. Do not impute scores, enlarge failed budgets
-or change main HEAD/execution dependencies until all bound workers are terminal.
+[RN-5 is complete](experiments/joint_uncertainty/RESULTS.md) at execution
+source `38b27b3`, retaining protocol origin `e3df252` and all 31 registered
+attempts. Fourteen n8 FP streams seal, nine install, and nine new adaptive
+posterior workers complete. Four n16/c2 FP workers fail in the final auditor's
+arena snapshot; all four n16/c4 FP workers time out at two hours. These eight
+attempts supply no model score or complete trajectory-audit claim. The largest
+completed job counter is17,180,921,856 bytes, slightly above the nominal16GiB
+cap; the c4 timeout counters stay below it. Original limits remain unchanged.
 
-At2026-09-13 23:06:55 UTC, no Python worker/parent remains and the rate4
-attempt directory is empty; the journal still has23 completed attempts.
-The separate [interruption record](evidence/minimal/FP_JOINT_UNCERTAINTY_INTERRUPTION.json)
-retains this unreported attempt without inventing a cause, score or completed
-job counters. After the source guard passed, the existing `--write --resume`
-driver resumed task24 at23:08:27 UTC with the same source and limits.
-The resumed parent/worker PIDs were11020/15576. The resumed rate4 worker
-subsequently timed out at its original two-hour limit. At2026-09-14 01:08 UTC,
-task25's seed18 posterior is complete and parent11020 has started task26,
-n16/c4 seed19 rate1, as worker22612 in fp-joint-model-6mzfci14. Recheck actual
-processes and the main journal; these PIDs are an observation, not a lease.
-Task26 subsequently reaches its two-hour timeout. At2026-09-14 03:08:38 UTC,
-parent11020 starts task27, n16/c4 seed19 rate4, as worker12732 in
-fp-joint-model-v_shik8b. Main execution dependencies remain unchanged.
-Task27 subsequently times out. Task28's n16/c4 seed19 posterior completes
-successfully as worker4704. Parent11020 starts task29, n8 selected stress
-seed20 rate1, at05:08:48 UTC as worker21596 in fp-joint-model-ea3jkhmp.
+Independent analysis in the original execution checkout verifies7,564 CUDA
+and7,564 binary64 phases,92 descriptive scores, fourteen fresh decisions and
+1,344 new posterior GPU forecasts. The n8/c2 candidate unseen means are
+0.390115/0.443602 at rates1/4, versus posterior0.338493; n8/c4 means are
+0.416883/0.433386 versus0.365447. Deployed means are0.588589/0.610303 and
+0.611359/0.621001. Both selected wrong-sign stress candidates seal without
+installation, with candidate CE0.551847/0.522697 versus posterior0.418238;
+the deployed stream stays uniform. The stress tape is not an IID sample.
+Four conditioned searches retain only historical fixed-state reference-class
+bounds; the ten other sealed searches remain UNRESOLVED. The final journal,
+source-bound post-analysis and inspected plot retain all unavailable scores.
 
-Post-RN-5 source extensions are committed on `research/joint-learner-geometry`
-in a linked worktree of this same canonical Git repository. Run their new
-source-dependent audits from that checkout while main remains bound to the
-live matrix; integrate the branch after all main workers are terminal.
-The mirrored theory/status files do not authorize changing main's live code.
+The earlier auditor failures and the separately retained
+[unreported interruption](evidence/minimal/FP_JOINT_UNCERTAINTY_INTERRUPTION.json)
+remain distinct from this31-attempt matrix. No cause or completed job counters
+are invented for the interruption. Its original-source resume and subsequent
+timeout remain documented in research history.
+
+All main RN-5 workers and parent11020 are terminal. Research extensions are
+committed on `research/joint-learner-geometry`, a linked worktree of this same
+canonical repository. They can now be integrated into main after retaining
+its final journal and plot. The separate likelihood matrix still requires its
+own immutable90f3883 execution checkout; do not patch or restart that run.
 
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.
@@ -496,11 +476,11 @@ The matrix executes at90f3883 in the detached linked checkout
 UTC on2026-09-14; its separate journal is
 `evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json` in that checkout. The
 worker is verified live with no completed outcome yet. Keep that checkout's
-HEAD/dependencies fixed. Main RN-5 independently remains at38b27b3, task29
-worker21596 after the final n16 FP timeout and successful posterior. All
-checkouts share this canonical Git repository; the research
-branch may advance without changing either running execution source. Unreported
-failures supply no invented score or complete phase count.
+HEAD/dependencies fixed. RN-5 has independently completed all31 attempts at
+38b27b3; its final results do not change this registered likelihood experiment.
+All checkouts share this canonical Git repository. Research/main can advance
+without changing the running likelihood execution source. Unreported failures
+supply no invented score or complete phase count.
 
 The [normalized likelihood theorem](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 now characterizes the guarantee over all interior weights: a positive-rate

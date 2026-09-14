@@ -136,27 +136,17 @@ and install; a separate old-tolerance CUDA run honestly halts after an earlier
 installation. The failed phase is completely retained and independently
 replayed. The source-bound matrices at `9f9fa0b` are now complete: seven CPU
 and eight CUDA workers, with 2,496 and 2,752 corresponding binary64 phases
-and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertainty/PROTOCOL.md) is now
-preregistered with its larger joint-family execution envelope. Execute the
-31 workers, independently reconstruct forecasts and fresh decisions, and
-compare with the strong adaptive posterior without filling failed tails. Execution is active at
-`38b27b3`. Independent analysis now verifies twenty-eight completed attempts:
-twenty EXECUTED and eight FAILED. All four n16/c2 FP workers record final-auditor
-snapshot MemoryErrors at the declared host envelope, with no scored or fully
-audited FP trajectory. All n8/c4 streams now seal, two install; candidate
-unseen CE means0.4168832454/0.4333859733 still exceed the strong posterior's
-0.3654471094 on these two seeds. The prefix has80 checked descriptive scores,
-twelve fresh decisions and1,280 posterior GPU forecasts. Both n16/c4 seed18
-rates time out at their fixed two-hour limits, with no valid report or model
-score. Peak job commitments are8,913,358,848/9,165,230,080 bytes, below16GiB.
-The corresponding posterior completes256 forecasts with unseen AMP CE
-0.3305557522. Seed19 rate1 also times out at two hours, with peak job
-commitment9,577,873,408 bytes and no report or score. Seed19 rate4 also times
-out, with peak job commitment9,627,586,560 bytes and no valid report. Its
-posterior completes256 forecasts with unseen AMP CE0.3308954459. All n16
-attempts are terminal; the selected-stress cases continue unchanged;
-do not restart a failed rate or enlarge its limit.
-Remaining outcomes come only from the unchanged live matrix. The
+and all 2,752 CUDA phases checked. The [RN-5 matrix](experiments/joint_uncertainty/RESULTS.md)
+is complete at38b27b3:31 attempts,14 sealed n8 FP streams, nine installs and
+nine new completed adaptive posterior controls. Four n16/c2 snapshot failures
+and four n16/c4 timeouts supply no FP scores. Independent analysis verifies
+7,564 CUDA/binary64 phases each,92 scores, fourteen fresh decisions and1,344
+new posterior GPU forecasts. Both n8 IID groups retain a candidate gap to the
+strong posterior, and five sealed streams do not install. The selected wrong-
+sign stress candidates also retain a gap and never install. These observations
+close execution of this matrix; they leave useful uncertainty learning and
+finite-resource completion open. Preserve every failure and use the already
+registered likelihood experiment for the next matched pressure test. The
 [scale-dynamics result](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) explains
 why current prediction equivalence cannot remove an optimizer state variable.
 It also closes the fixed-sign population-risk gap in the real-parameter
@@ -193,7 +183,7 @@ adaptation at matched information/resource cuts. The origin-tail criterion
 and exact replay counterexamples prevent treating any replay as an implicit
 reset. Noise identification, whole-history affordability and a full class
 optimum remain separate; no further static resource family is requested.
-RN-5 continues unchanged.
+RN-5 outcomes remain at their original source and resources.
 
 The [positive constraint contraction](theory/proofs/POSITIVE_CONSTRAINT_CONTRACTION.md)
 removes latent-world multiplicity from the initialized mass range and provides
