@@ -4381,3 +4381,14 @@ at most0.001 give |gain|<13/8 by exact endpoint enclosures. It can justify a
 future common coefficient6/13 at bet3/4. The active bound6 experiment is not
 patched, rerun or reinterpreted; no power improvement or new installation is
 claimed. There is no Runtime code, semantic action or ERC-1 change.
+
+## 126. Reproduce RN-5 analysis from a clean original-source checkout
+
+After main integration, a fresh detached38b27b3 checkout receives only the
+committed analyzer and final journal from33a12e4. Complete post-analysis
+passes its original dependency guard and produces exactly the same parsed
+summary and all per-worker details as the pre-integration analysis. No
+model or GPU target is rerun. RESULTS.md now records the two-artifact source
+reconstruction commands; the guarded replay remains in F:/FP-rn5-audit.
+The running90f3883 likelihood checkout is unchanged. This validates audit
+reproducibility after research integration without weakening source binding.

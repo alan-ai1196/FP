@@ -153,6 +153,29 @@ All retained 31 rows were independently analyzed in the original execution
 checkout with `analyze_joint.py --details --plot`, and the resulting plot
 was inspected. No target rerun or budget adjustment was used to close RN-5.
 
+After research integration, a fresh detached checkout of the original source
+reproduced the entire analysis: every summary field and per-worker detail
+matched exactly. Only the committed post-analysis script and final journal
+were added to that checkout. Execution dependencies remained at `38b27b3`.
+To reproduce from the repository root, choose an unused sibling directory:
+
+```powershell
+git worktree add --detach ../FP-rn5-audit 38b27b300c22aa89ed2c458c4fbf1038a4a6b910
+@'
+from pathlib import Path
+import subprocess
+root = Path('../FP-rn5-audit')
+for name in ('experiments/joint_uncertainty/analyze_joint.py',
+             'evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json'):
+    (root/name).write_bytes(subprocess.check_output(['git', 'show', '33a12e4:'+name]))
+'@ | python -B
+python -B ../FP-rn5-audit/experiments/joint_uncertainty/analyze_joint.py --details
+```
+
+This executes no model/GPU worker. Running the analysis against changed
+execution dependencies correctly fails its source check; do not suppress
+that check to analyze an old journal in a newer runtime.
+
 The next registered pressure test is the [owned likelihood matrix](LIKELIHOOD_MODEL_PROTOCOL.md).
 Its unit-simplex update can reproduce the known-model posterior exactly in
 reference arithmetic, but useful n8 construction, complete execution,

@@ -215,6 +215,13 @@ guard and complete independent analysis passed, main fast-forwarded through
 The separate likelihood matrix still requires its immutable90f3883 execution
 checkout; do not patch or restart that run.
 
+RN-5 post-analysis was then reproduced from a fresh detached38b27b3 checkout
+at `F:\FP-rn5-audit`, adding only the analyzer and final journal from33a12e4.
+Every summary field and per-worker detail matches the original analysis.
+The [results](experiments/joint_uncertainty/RESULTS.md) include reproducible
+commands. This is passive analysis, not another model run; its source check
+should continue to reject changed execution dependencies.
+
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.
 An exact mass-drift identity covers all orientation counts. For K8, projected
