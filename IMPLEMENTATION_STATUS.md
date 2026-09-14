@@ -28,6 +28,17 @@ two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
 tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
 checkout; retain all original RN-5 outcomes and keep the likelihood execution checkout fixed.
 
+The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
+the existing selected-weight commit for every accepted exponent vector.
+Under its RNE32 schedule, error is at most(K-1)u/72+gamma_(K-1)+u+2^-150,
+with u=2^-24. At128 worlds this is below7.735e-6, independent of history
+length. A finite64-exponent lemma and a proved zero-power tail cover all
+counts; exact audit checks12,481 ordered three-weight vectors,520 width/order
+controls and143,614 rounded operations against binary64. The largest observed
+K128 control error is6.46782e-6. No persistent count is erased. Full native
+gradients, evidence, counter/work/storage limits and actual GPU words still
+require their existing checks; this creates no complete Runtime certificate.
+
 The [persistence filtration result](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
 closes an apparent shortcut exposed by RN-5's deployment wait. Under the
 registered pre-context mean-null and an unrestricted finite outcome law,

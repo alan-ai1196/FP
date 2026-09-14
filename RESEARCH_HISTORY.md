@@ -4392,3 +4392,30 @@ model or GPU target is rerun. RESULTS.md now records the two-artifact source
 reconstruction commands; the guarded replay remains in F:/FP-rn5-audit.
 The running90f3883 likelihood checkout is unchanged. This validates audit
 reproducibility after research integration without weakening source binding.
+
+## 127. Bound current count-decoder rounding uniformly over accepted histories
+
+The owned radix9 decoder reconstructs selected weights from exact counts at
+every commit. Under its registered RNE32 schedule, the squared power for
+exponent64 is zero and all later squared powers remain zero. Exact checking
+of d=0,...,63 plus this analytic tail proves a uniform unnormalized absolute
+error u/72, attained at d=1, with u=2^-24. The last nonzero decoded exponent
+is47, with raw word1. These zeros do not replace the persistent coordinates.
+
+Positive normalization gives the bound(K-1)u/72+gamma_(K-1)+u+2^-150 for all
+accepted exponent vectors. The input normalization, actual serial SUM and
+rounded division are all retained in the argument. At K128 the bound is
+7.734587804e-6, independent of history length. Exact audit checks3,713 high-
+bit tails,12,481 ordered three-weight vectors and520 controls at K2/8/128;
+143,614 rounded operations agree with a separate binary64/cast calculation.
+The largest observed K128 error is6.467816932e-6, with a compact retained
+exponent/order witness, so the normalization contribution is material.
+
+This is an arithmetic theorem for the existing selected-weight commit,
+not a new actual GPU run or complete native-gradient/Runtime certificate.
+Counter overflow, model derivation, source binding, actual operation words,
+full gradient/cache state, evidence and host/device/work costs keep their
+existing gates. Exact coordinates remain necessary for future recovery.
+The active90f3883 likelihood matrix is unchanged; no unavailable outcome
+is filled. No extra radix special cases or sharp constants are pursued.
+Foundation R4, ERC-1 and semantic actions remain unchanged.

@@ -2546,3 +2546,13 @@ can cause false crossing even without target leakage. The registered Runtime
 rule already prevents that substitution. A proved common global bound can
 support a future registration; the running likelihood experiment remains at
 its original bound6 and source90f3883.
+
+The [history-uniform radix9 decoder bound](theory/proofs/LIKELIHOOD_DECODE_ERROR.md)
+quantifies the current coordinate lowering's selected-weight error. Under
+its registered RNE32 arithmetic schedule,128-world decoding stays below
+7.735e-6 for every accepted exponent vector, with no history-length term.
+Exact finite power checks and a zero-power tail justify the infinite
+arithmetic family; the integer coordinates remain essential for future
+recovery. Full native gradients, actual operation-word verification and
+finite counter/work/storage/install obligations are separate. This is no
+new semantic action, Runtime certificate or unlimited-resource guarantee.

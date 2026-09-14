@@ -122,6 +122,14 @@ tagged full forecast only after the existing exact-checked pre-target lineage
 test; its probability is formed from actual CUDA stored masses. Reference
 wealth does not stand in for CUDA wealth.
 
+The later [RNE32 decode theorem](LIKELIHOOD_DECODE_ERROR.md) supplies a
+history-uniform **selected-weight** bound for the existing radix9 schedule:
+(K-1)u/72+gamma_(K-1)+u+2^-150, below7.735e-6 at128 worlds. It assumes valid
+exact coordinates and the registered arithmetic, and erases neither counts
+nor current gradients. It does not establish a full native-gradient bridge,
+all future actual GPU words or unlimited resource feasibility. The complete
+phase and per-operation checks above remain required.
+
 ## 3. Finite resources and authority
 
 Counter precision is registered between 2 and 64 bits. Coordinates, decoded

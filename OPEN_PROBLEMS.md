@@ -24,6 +24,13 @@ new model outcomes are not yet established. Treat its four fixed resource
 attempts as a matched mechanism test, preserving candidate/deployed separation
 and all failures. Reused tapes are not new IID or prospective evidence.
 
+Selected-weight rounding drift in the current count decoder now has a
+[history-uniform RNE32 bound](theory/proofs/LIKELIHOOD_DECODE_ERROR.md): below
+7.735e-6 at128 worlds, for every accepted exact coordinate state. This does
+not bound full native gradients or solve the model worker's host/time costs.
+Keep the complete count/provenance state and attack actual execution; no
+additional static radix cases or tighter normalization constants are needed.
+
 RN-5's deployment wait does not license context-specific betting under the
 same null. The [finite persistence criterion](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
 proves that valid factors for the pre-context mean-only null are dominated
