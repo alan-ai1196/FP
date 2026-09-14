@@ -509,6 +509,18 @@ scores. There are still zero completed model rows, so the successful result
 branch awaits real worker evidence. Do not rerun any baseline. A one-identity
 summary without its path label receives unresolved fresh reconstruction.
 
+Main now uses [slotted complete arena-region records](theory/proofs/ARENA_REGION_STORAGE.md).
+All ten fields and complete snapshots remain. Four512MiB host jobs check
+1.5 million rows and show peak reductions12,582,912/25,907,200 bytes at250k/
+500k regions. The full CUDA storage and thirteen-case installation audits
+pass; a4GiB likelihood profile job seals/installs with286 CUDA and286
+binary64 phases,94 commit tapes and40 fresh scores. These are targeted
+development regressions, not new model outcomes or a whole-project freeze.
+The original n16 failures remain; this change alone does not prove recovery.
+The analysis checkout is pinned at b85b39d and the running matrix at86083a0.
+Use the pinned analysis checkout because main's execution dependencies now
+differ from the running source.
+
 The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 now accounts for uncertainty learning, AMP error and the existing wealth
 floor at the original coefficient1/8. Under the explicit posterior-mixture

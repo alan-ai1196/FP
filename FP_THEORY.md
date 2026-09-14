@@ -2577,3 +2577,10 @@ completion premise the result bounds crossing or operational failure. A native
 45-adverse-label absorption witness refutes transfer of unrounded almost-sure
 power to the finite grid. The original mean-null, semantics, evidence actions
 and running model registration remain unchanged.
+
+The [arena-region representation proof](theory/proofs/ARENA_REGION_STORAGE.md)
+preserves every metadata field and legal extent/lease check while reducing
+measured host overhead with frozen slotted records. Complete snapshots and
+actual resource accounting remain in force. This is an implementation
+representation change, not information pruning or a new semantic action;
+recovery of the failed n16 model jobs has not been established.

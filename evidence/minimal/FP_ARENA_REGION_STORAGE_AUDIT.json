@@ -1,0 +1,155 @@
+{
+  "status": "DEVELOPMENT_HOST_AUDIT_PASS",
+  "baseline_source": "b85b39da8fa8440c243814a0ce6ee930d79f7ffe",
+  "scope": "same complete metadata/snapshot values; measured Python host overhead only; no n16 recovery or GPU timing claim",
+  "field_audit": {
+    "complete_field_replace_and_detached_snapshot_cases": 360,
+    "fields": [
+      "sequence",
+      "phase",
+      "owner",
+      "operation",
+      "offset",
+      "byte_size",
+      "reserved_size",
+      "shape",
+      "dtype",
+      "initialized"
+    ],
+    "old_regions_remain_unchanged_on_mark": true,
+    "no_per_instance_dictionary": true,
+    "scope": "ordinary immutable field/value operations; actual CUDA extent guards tested separately"
+  },
+  "fixed_job_commit_cap": 536870912,
+  "fixed_job_timeout_ms": 120000,
+  "workers": [
+    {
+      "mode": "baseline",
+      "regions": 250000,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 146726912,
+        "peak_job_commit": 147939328,
+        "user_100ns": 16718750,
+        "kernel_100ns": 781250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27444,
+        "process_creation_100ns": 134338464982321236
+      },
+      "result": {
+        "status": "PASS",
+        "process_id": 27444,
+        "region_count": 250000,
+        "complete_snapshot_rows_checked": 250000,
+        "fields_per_region": 10,
+        "has_instance_dictionary": true,
+        "shallow_region_plus_dictionary_bytes": 200,
+        "shallow_size_excludes_field_referents": true,
+        "no_GPU_import_or_model_execution": true
+      }
+    },
+    {
+      "mode": "slotted",
+      "regions": 250000,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 134139904,
+        "peak_job_commit": 135356416,
+        "user_100ns": 16718750,
+        "kernel_100ns": 1093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 23664,
+        "process_creation_100ns": 134338464999921501
+      },
+      "result": {
+        "status": "PASS",
+        "process_id": 23664,
+        "region_count": 250000,
+        "complete_snapshot_rows_checked": 250000,
+        "fields_per_region": 10,
+        "has_instance_dictionary": false,
+        "shallow_region_plus_dictionary_bytes": 112,
+        "shallow_size_excludes_field_referents": true,
+        "no_GPU_import_or_model_execution": true
+      }
+    },
+    {
+      "mode": "baseline",
+      "regions": 500000,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 275742720,
+        "peak_job_commit": 276951040,
+        "user_100ns": 30781250,
+        "kernel_100ns": 1250000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9264,
+        "process_creation_100ns": 134338465018086857
+      },
+      "result": {
+        "status": "PASS",
+        "process_id": 9264,
+        "region_count": 500000,
+        "complete_snapshot_rows_checked": 500000,
+        "fields_per_region": 10,
+        "has_instance_dictionary": true,
+        "shallow_region_plus_dictionary_bytes": 200,
+        "shallow_size_excludes_field_referents": true,
+        "no_GPU_import_or_model_execution": true
+      }
+    },
+    {
+      "mode": "slotted",
+      "regions": 500000,
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 249819136,
+        "peak_job_commit": 251043840,
+        "user_100ns": 32031250,
+        "kernel_100ns": 937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21728,
+        "process_creation_100ns": 134338465050336676
+      },
+      "result": {
+        "status": "PASS",
+        "process_id": 21728,
+        "region_count": 500000,
+        "complete_snapshot_rows_checked": 500000,
+        "fields_per_region": 10,
+        "has_instance_dictionary": false,
+        "shallow_region_plus_dictionary_bytes": 112,
+        "shallow_size_excludes_field_referents": true,
+        "no_GPU_import_or_model_execution": true
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "regions": 250000,
+      "observed_peak_job_commit_reduction_bytes": 12582912,
+      "both_complete_snapshot_tables_checked": true
+    },
+    {
+      "regions": 500000,
+      "observed_peak_job_commit_reduction_bytes": 25907200,
+      "both_complete_snapshot_tables_checked": true
+    }
+  ]
+}

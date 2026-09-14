@@ -34,6 +34,14 @@ not bound full native gradients or solve the model worker's host/time costs.
 Keep the complete count/provenance state and attack actual execution; no
 additional static radix cases or tighter normalization constants are needed.
 
+The observed arena-snapshot cost now has a [field-preserving representation
+improvement](theory/proofs/ARENA_REGION_STORAGE.md): frozen slotted regions
+retain complete metadata and reduce measured host peaks. Targeted CUDA
+storage, installation and likelihood transport regressions pass. No previous
+n16 failure is relabeled or rerun, and complete model recovery is still
+unproved. Use actual source-bound outcomes to assess that question; a small
+metadata fixture does not establish a whole-worker resource bound.
+
 RN-5's deployment wait does not license context-specific betting under the
 same null. The [finite persistence criterion](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
 proves that valid factors for the pre-context mean-only null are dominated

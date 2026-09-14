@@ -40,7 +40,7 @@ class CudaStorageContract:
         object.__setattr__(self, 'role_caps', freeze_data(caps))
 
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class CudaRegion:
     sequence: int
     phase: int

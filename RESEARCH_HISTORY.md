@@ -4554,3 +4554,42 @@ scores are independently checked, without a baseline worker rerun. The initial
 prefix still has zero completed model rows; successful model-result validation
 awaits the actual corrected worker. Preserve the reader's committed source in
 `F:\FP-likelihood-model-audit` while main continues implementation research.
+
+## 131. Reduce arena metadata overhead while preserving complete snapshots
+
+The retained four RN-5 n16/c2 failures occur while materializing the complete
+region table in CudaArena.snapshot. The storage source is unchanged from38b27b3
+through b85b39d. The region record carries ten fields in an ordinary frozen
+Python dataclass. Main now uses a frozen slotted dataclass with the identical
+field set and defaults; no record, old extent, snapshot row or guard is removed.
+
+The preservation argument covers construction, field access, immutable
+replacement on a whole-extent write, detached snapshots, initialized reads
+and installation leases. Every relevant arena continuation uses those retained
+fields and explicit sequence/phase/owner identities. Physical Python layout
+and resource outcomes can change; complete-state byte charges, native arena,
+allocator history, frame caps, actual job accounting and all admission gates
+remain in force. This is no new architecture action or Foundation revision.
+
+Four attached512MiB/120-second host jobs compare the actual old source with
+the slotted representation at250,000 and500,000 regions. Every field in all
+1,500,000 snapshot rows matches the declared construction. Peak job bytes
+fall147,939,328 to135,356,416 and276,951,040 to251,043,840, respectively.
+The separate360-case field/replacement/detachment audit passes. A shallow
+object-size diagnostic materializes one ordinary instance dictionary and is
+not extrapolated into process memory. No GPU throughput claim is made.
+
+The full existing CUDA storage audit passes, including1,306 learner phases,
+32,996 initialized views,216 typed allocation sequences and648 requests.
+All thirteen installation cases pass, including learned/recurrent state,
+corruption/extent guards, capacity refusals and fresh evidence against a new
+baseline after an earlier install. The bounded likelihood profile job also
+seals at cursor46 and installs at22:286 CUDA and286 binary64 phases,94 commit
+tapes and40 fresh scores; peak job commitment2,354,864,128 bytes within4GiB.
+Its full constructor class remains UNRESOLVED. Compact development reports
+retain these checks without raw region tables, weights or large tapes.
+
+No n16 model job has been recovered by this evidence. Original failures and
+the current n8 matrix remain unchanged. The latter executes at86083a0 while
+its independent reader is pinned at b85b39d in the separate analysis checkout.
+Main can advance without silently changing either source or their outcomes.

@@ -1,0 +1,391 @@
+{
+  "status": "DEVELOPMENT_CUDA_REGRESSIONS_PASS",
+  "scope": "complete targeted storage/installation and bounded likelihood regression; no new model result or complete release",
+  "runtime_change": "CudaRegion uses frozen slots; all ten fields and complete snapshot table retained",
+  "full_cuda_storage_audit": {
+    "status": "PASS",
+    "scope": "actual bounded CUDA tensor arena and complete learner mechanics; no Runtime or total-device authority",
+    "registration": {
+      "malformed_caps_rejected": true,
+      "shared_arena_role_refusal_precedes_device_allocation": true,
+      "insufficient_real_allocator_segment_cap_refused_before_allocation": true,
+      "allocation_counter_after_all_registration_refusals": 0
+    },
+    "actual_initial_reservation_classes": {
+      "small": {
+        "request_bytes": 512,
+        "pre_admitted_segment_bytes": 2097152,
+        "actual_allocator_reserved_bytes": 2097152,
+        "explicit_allocator_configuration": "large_segment_size_mb:20",
+        "native_counter": [
+          1,
+          512,
+          1
+        ]
+      },
+      "medium": {
+        "request_bytes": 2097152,
+        "pre_admitted_segment_bytes": 20971520,
+        "actual_allocator_reserved_bytes": 20971520,
+        "explicit_allocator_configuration": "large_segment_size_mb:20",
+        "native_counter": [
+          1,
+          2097152,
+          1
+        ]
+      },
+      "large": {
+        "request_bytes": 10485760,
+        "pre_admitted_segment_bytes": 10485760,
+        "actual_allocator_reserved_bytes": 10485760,
+        "explicit_allocator_configuration": "large_segment_size_mb:20",
+        "native_counter": [
+          1,
+          10485760,
+          1
+        ]
+      },
+      "hidden-setting-witness": {
+        "same_reported_settings_as_initial_default": true,
+        "before_allocation_counter": 0,
+        "request_bytes": 2097152,
+        "actual_allocator_reserved_bytes": 41943040
+      },
+      "hidden-setting-binding": {
+        "request_bytes": 2097152,
+        "pre_admitted_segment_bytes": 20971520,
+        "actual_allocator_reserved_bytes": 20971520,
+        "explicit_allocator_configuration": "large_segment_size_mb:20",
+        "native_counter": [
+          1,
+          2097152,
+          1
+        ]
+      }
+    },
+    "exhaustive_learners": {
+      "all_binary_context_target_three_event_streams": 64,
+      "ordinary_events": 192,
+      "reference_and_CUDA_baseline_candidate_paths": 4,
+      "all_parameters_accumulators_queues_and_clocks_compared": true,
+      "predecessor_device_tensors_unchanged": true,
+      "partial_final_units_preserved": true,
+      "actual_CUDA_phases": 1024,
+      "half_arithmetic_or_ingress_results": 3392,
+      "actual_half_multiply_results": 1152,
+      "single_arithmetic_or_ingress_results": 18880,
+      "reference_state_coordinates_compared": 1152,
+      "coordinates_differing_from_recast_exact_reference": 320,
+      "largest_observed_state_absolute_error_float64_summary": 0.00021627924165312497
+    },
+    "recurrent_profile": {
+      "original_revealed_profile_records": 2,
+      "actual_profile_replayed_events": 6,
+      "ordinary_events": 6,
+      "candidate_final_optimizer_steps": 5,
+      "profile_attachment_preserves_all_device_buffers": true,
+      "both_delayed_queue_positions_compared_every_event": true,
+      "actual_CUDA_phases": 42,
+      "half_arithmetic_or_ingress_results": 130,
+      "actual_half_multiply_results": 40,
+      "single_arithmetic_or_ingress_results": 794,
+      "reference_state_coordinates_compared": 48,
+      "coordinates_differing_from_recast_exact_reference": 6,
+      "largest_observed_state_absolute_error_float64_summary": 8.747709532115362e-05
+    },
+    "varied_native_graphs": {
+      "seeded_native_graphs": 24,
+      "events_per_graph": 4,
+      "labels": 3,
+      "repeated_edges_heads_squares_and_unused_slots": true,
+      "host_single_then_device_half_source_rounding_checked": true,
+      "all_full_states_and_native_predictions_match_exact_rounded_model": true,
+      "actual_CUDA_phases": 240,
+      "half_arithmetic_or_ingress_results": 2500,
+      "actual_half_multiply_results": 1260,
+      "single_arithmetic_or_ingress_results": 12032,
+      "reference_state_coordinates_compared": 0,
+      "coordinates_differing_from_recast_exact_reference": 0,
+      "largest_observed_state_absolute_error_float64_summary": null
+    },
+    "learner_storage": {
+      "allocation_id": "single-cuda-tensor-arena-ordered-out-v1",
+      "device_name": "NVIDIA GeForce RTX 3090",
+      "capability": [
+        8,
+        6
+      ],
+      "torch": "2.12.0+cu132",
+      "torch_git_version": "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+      "CUDA_runtime": "13.2",
+      "actual_tensor_arena_bytes": 16777216,
+      "actual_allocator_reserved_bytes": 16777216,
+      "lifetime_tensor_peak_bytes": 16777216,
+      "lifetime_allocator_reserved_peak_bytes": 16777216,
+      "native_allocation_counter_at_binding": [
+        1,
+        16777216,
+        1
+      ],
+      "native_allocation_counter_current": [
+        1,
+        16777216,
+        1
+      ],
+      "consumed_arena_extent": 304064,
+      "actual_initialized_view_extents": 32996
+    },
+    "extents": {
+      "complete_typed_allocation_request_sequences": 216,
+      "actual_extent_requests": 648,
+      "real_offsets_and_storage_identity_match_independent_model": true,
+      "uninitialized_cross_extent_reinterpreted_and_lazy_negative_reads_rejected": true,
+      "old_or_already_initialized_extent_cannot_be_redeclared_written": true,
+      "failed_large_extent_does_not_allocate_or_advance_cursor": true,
+      "whole_actual_backing_arena_charged_to_each_role_once_globally": true
+    },
+    "grid_and_failure": {
+      "exact_grid_coordinates_inside_owned_arena": 1340,
+      "complete_predecessor_preserved_after_actual_masked_overflow": true,
+      "failed_phase_extents_and_infinite_intermediate_retained": true
+    },
+    "escaped_allocation": {
+      "freed_foreign_tensor_restores_current_bytes_but_does_not_erase_allocation_history": true,
+      "native_counter_before": [
+        1,
+        16777216,
+        1
+      ],
+      "native_counter_after_freed_foreign_allocation": [
+        2,
+        16777728,
+        2
+      ],
+      "actual_current_bytes_after_foreign_tensor_free": 16777216,
+      "original_unexpected_failure_not_downgraded_by_storage_refusal": true,
+      "actual_completed_write_retained_with_failed_phase": true,
+      "storage_failure_is_terminal_without_counter_reset_or_identity_reuse": true
+    },
+    "not_closed": [
+      "Runtime device registration, paid host evidence and joint event publication",
+      "driver/context/non-PyTorch allocations or total-device accounting",
+      "target range, same-path AMP persistence, build/copy/install and science release",
+      "liveness-optimal storage or a GPU performance claim"
+    ]
+  },
+  "full_cuda_installation_audit": {
+    "status": "PASS",
+    "scope": "owned serialized same-device CUDA installation; tensor/packed-host model, not full device release",
+    "small": {
+      "phases": 151,
+      "actual_arena_bytes": 16777216,
+      "largest_phase_frame_used": 3343,
+      "maximum_output_cells": 20,
+      "native_class_size": 35,
+      "install_cursor": 22,
+      "trained_nonzero_state": false,
+      "recurrent": false,
+      "independent_CPU_phases": 151,
+      "one_complete_root_publication": true,
+      "identical_device_objects_and_extents": true,
+      "peak_before_install": 19090118,
+      "peak_during_install": 19152529,
+      "deployment_work_before": 36946063,
+      "deployment_work_after": 342914928
+    },
+    "learned": {
+      "phases": 870,
+      "actual_arena_bytes": 16777216,
+      "largest_phase_frame_used": 3985,
+      "maximum_output_cells": 25,
+      "native_class_size": 774,
+      "install_cursor": 18,
+      "trained_nonzero_state": true,
+      "recurrent": false,
+      "independent_CPU_phases": 870,
+      "one_complete_root_publication": true,
+      "identical_device_objects_and_extents": true,
+      "peak_before_install": 115642699,
+      "peak_during_install": 116573123,
+      "deployment_work_before": 30228597,
+      "deployment_work_after": 1883174246
+    },
+    "recurrent": {
+      "phases": 240,
+      "actual_arena_bytes": 16777216,
+      "largest_phase_frame_used": 3663,
+      "maximum_output_cells": 22,
+      "native_class_size": 124,
+      "install_cursor": 22,
+      "trained_nonzero_state": false,
+      "recurrent": true,
+      "independent_CPU_phases": 240,
+      "one_complete_root_publication": true,
+      "identical_device_objects_and_extents": true,
+      "peak_before_install": 31153137,
+      "peak_during_install": 31332160,
+      "deployment_work_before": 37177019,
+      "deployment_work_after": 536402668
+    },
+    "no-cpu": {
+      "phases": 151,
+      "actual_arena_bytes": 16777216,
+      "largest_phase_frame_used": 3343,
+      "maximum_output_cells": 20,
+      "native_class_size": 35,
+      "install_cursor": 22,
+      "trained_nonzero_state": false,
+      "recurrent": false,
+      "independent_CPU_phases": 0,
+      "one_complete_root_publication": true,
+      "identical_device_objects_and_extents": true,
+      "peak_before_install": 18826746,
+      "peak_during_install": 18887803,
+      "deployment_work_before": 36487231,
+      "deployment_work_after": 338121344
+    },
+    "guards": {
+      "wrong_path_fake_proof_partial_unit_and_same_graph_newborn_refused": true,
+      "CPU_and_generic_tokens_cannot_install_the_CUDA_root": true
+    },
+    "late": {
+      "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+      "actual_work_peak_and_attempt_IDs_not_refunded": true,
+      "case": "late"
+    },
+    "unknown": {
+      "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+      "actual_work_peak_and_attempt_IDs_not_refunded": true,
+      "case": "unknown"
+    },
+    "pending": {
+      "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+      "actual_work_peak_and_attempt_IDs_not_refunded": true,
+      "case": "pending"
+    },
+    "corrupt": {
+      "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+      "out_of_extent_view_refused_before_numeric_read": false
+    },
+    "extent": {
+      "observed_device_metadata_corruption_is_terminal_without_a_live_old_crossing": true,
+      "out_of_extent_view_refused_before_numeric_read": true
+    },
+    "continuation": {
+      "install_cursors": [
+        22,
+        38
+      ],
+      "native_classes": [
+        35,
+        35
+      ],
+      "second_comparison_uses_actual_new_base_and_fresh_alpha": true,
+      "no_alpha_refund_after_two_installs": true,
+      "independent_CUDA_phases": 306
+    },
+    "byte-cap": {
+      "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+      "actual_work_peak_and_attempt_IDs_not_refunded": true,
+      "case": "capacity",
+      "registered_cap": 19121323
+    },
+    "work-cap": {
+      "failed_preparation_preserves_old_learners_evidence_and_frontier": true,
+      "actual_work_peak_and_attempt_IDs_not_refunded": true,
+      "case": "capacity",
+      "registered_cap": 189930495
+    }
+  },
+  "bounded_likelihood_profile_install": {
+    "worker_status": "EXECUTED",
+    "completed_job": {
+      "exit_code": 0,
+      "timed_out": false,
+      "commit_limit": 4294967296,
+      "peak_process_commit": 2353651712,
+      "peak_job_commit": 2354864128,
+      "user_100ns": 431406250,
+      "kernel_100ns": 25781250,
+      "total_processes": 2,
+      "limit_terminated_processes": 0,
+      "attached_before_resume": true,
+      "process_id": 12256,
+      "process_creation_100ns": 134338468132196655
+    },
+    "result": {
+      "case": "profile-install",
+      "status": "SEALED_CUDA_STREAM",
+      "expected_refusal": null,
+      "observed_cursor": 46,
+      "retained_observations": 46,
+      "profile_events": 4,
+      "checkpoints": [],
+      "independent_binary64_phases": 286,
+      "CUDA": {
+        "checked_phases": 286,
+        "refused_phases": 0,
+        "independent_commit_operation_tapes": 94,
+        "factorization_ranks": [
+          0,
+          3
+        ],
+        "maximum_output_cells": 484,
+        "largest_phase_frame_used": 41326,
+        "actual_arena_bytes": 16777216
+      },
+      "fresh_score_checks": 40,
+      "install_cursor": 22,
+      "class_certificate": false,
+      "historical_class": "UNRESOLVED",
+      "binary64_maxima": {
+        "state_error": "544749440806571900381425327740371322207827/151648354448082894963927422584966005418110382863087042560",
+        "native_error": "27361721431319/7244150201409025856031948800",
+        "normalizer_error": "17/4503599627370496",
+        "probability_error": "1197251518256201978860292467430176929609/4212454290224524860109095071804611261637008049863393280",
+        "division_error": "4683743612465315/50706024009129162549069246103552"
+      },
+      "CUDA_maxima": {
+        "state_error": "47369256319806631293606740915705998096531601/282467071801578430391712901340734223682638970880",
+        "native_error": "4/3281",
+        "normalizer_error": "639/524288",
+        "probability_error": "7989/209715200",
+        "division_error": "7549989/117281413660672"
+      },
+      "packed_peak": 77267869,
+      "device": {
+        "identity": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "execution_identity": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "physical_vram_upper": 25769803776,
+        "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+      },
+      "process_id": 12256,
+      "host": {
+        "process_id": 12256,
+        "creation_100ns": 134338468132196655,
+        "lifetime_process_commit_peak": 2352783360,
+        "job_commit_peak": 2353995776,
+        "process_user_100ns": 426562500,
+        "process_kernel_100ns": 25468750,
+        "job_user_100ns": 426562500,
+        "job_kernel_100ns": 25468750
+      }
+    }
+  }
+}

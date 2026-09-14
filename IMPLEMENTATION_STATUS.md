@@ -56,6 +56,15 @@ claims. Twelve adversarial development checks and sixteen retained control
 score checks pass; validation on a completed corrected model worker remains
 pending. The analysis checkout stays separate from advancing Runtime code.
 
+The [arena-region storage change](theory/proofs/ARENA_REGION_STORAGE.md) uses
+frozen slots for the same ten metadata fields. It preserves complete
+snapshot values, initialized extents and installation leases. All360 field
+cases and four bounded host comparisons pass; the full CUDA storage and
+thirteen-case installation audits pass, as does the bounded likelihood
+profile/install with286 independently checked phases per path. The measured
+host saving is scoped to the metadata fixture; n16 recovery remains open.
+The matrix at86083a0 and reader checkout at b85b39d remain immutable.
+
 The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 composes the actual mixture learner, original coefficient1/8, successful
 AMP probability relation and grid16 wealth. Its64-event bounds are scoped
