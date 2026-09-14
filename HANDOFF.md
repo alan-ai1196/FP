@@ -183,7 +183,7 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-twenty-five-attempt prefix contains nineteen EXECUTED workers and six FAILED jobs.
+twenty-six-attempt prefix contains nineteen EXECUTED workers and seven FAILED jobs.
 Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
 are independently checked. Seven new posterior workers supply1,024 actual GPU
 forecasts; post-analysis verifies76 descriptive scores and twelve fresh
@@ -199,8 +199,10 @@ timeouts: exit1223, peak job commitments8,913,358,848/9,165,230,080 bytes under
 the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
 score, installation, seal or complete phase count. The seed18 posterior
 completes256 independently reconstructed forecasts with unseen AMP CE
-0.3305557522. Seed19 and selected-stress outcomes are pending. Read the live
-main journal for its newest prefix; the research branch retains25 attempts.
+0.3305557522. Seed19 rate1 also reaches its two-hour timeout with peak job
+commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4,
+its posterior and the selected stress remain pending. Read the live main
+journal for its newest prefix; the research branch retains26 attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 
@@ -215,6 +217,9 @@ subsequently timed out at its original two-hour limit. At2026-09-14 01:08 UTC,
 task25's seed18 posterior is complete and parent11020 has started task26,
 n16/c4 seed19 rate1, as worker22612 in fp-joint-model-6mzfci14. Recheck actual
 processes and the main journal; these PIDs are an observation, not a lease.
+Task26 subsequently reaches its two-hour timeout. At2026-09-14 03:08:38 UTC,
+parent11020 starts task27, n16/c4 seed19 rate4, as worker12732 in
+fp-joint-model-v_shik8b. Main execution dependencies remain unchanged.
 
 Post-RN-5 source extensions are committed on `research/joint-learner-geometry`
 in a linked worktree of this same canonical Git repository. Run their new

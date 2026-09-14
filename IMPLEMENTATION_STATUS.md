@@ -155,7 +155,7 @@ pending; this repairs evidence checking, not a model or budget outcome.
 
 RN-5 is running from execution source `38b27b3`, retaining protocol origin
 `e3df252` and the separate auditor-failure journal. The independently checked
-twenty-five-attempt prefix contains nineteen EXECUTED workers and six FAILED jobs.
+twenty-six-attempt prefix contains nineteen EXECUTED workers and seven FAILED jobs.
 Twelve FP streams seal, nine install, and6,552 CUDA/binary64 phases per path
 are independently checked. Seven new posterior workers supply1,024 actual GPU
 forecasts; post-analysis verifies76 descriptive scores and twelve fresh
@@ -171,8 +171,10 @@ timeouts: exit1223, peak job commitments8,913,358,848/9,165,230,080 bytes under
 the unchanged16GiB cap, and no valid worker reports. Neither supplies an FP
 score, installation, seal or complete phase count. The seed18 posterior
 completes256 independently reconstructed forecasts with unseen AMP CE
-0.3305557522. Seed19 and selected-stress outcomes are pending. Read the live
-main journal for its newest prefix; the research branch retains25 attempts.
+0.3305557522. Seed19 rate1 also reaches its two-hour timeout with peak job
+commitment9,577,873,408 bytes and no valid report or score. Seed19 rate4,
+its posterior and the selected stress remain pending. Read the live main
+journal for its newest prefix; the research branch retains26 attempts.
 The unchanged matrix continues. Do not impute scores, enlarge failed budgets
 or change main HEAD/execution dependencies until all bound workers are terminal.
 

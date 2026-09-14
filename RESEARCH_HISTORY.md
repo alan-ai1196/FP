@@ -4133,3 +4133,20 @@ useful model scale under explicit native, exact-reference and audit costs.
 Foundation and ERC-1 stay frozen. Main's running RN-5 source remains38b27b3;
 the implementation and both source-bound commits stay on the linked research
 branch until the main experiment is terminal.
+
+## 118. RN-5 seed19 rate1 reaches the same finite execution boundary
+
+Task26, n16/c4 seed19 rate1, reaches its registered two-hour limit at source
+38b27b3. The completed attached job records exit1223, no host-limit process
+termination, peak job commitment9,577,873,408 bytes under16GiB, and no valid
+worker report. Its process identity is22612 with creation tick134338217182366094.
+The missing report supplies no model score, install, seal or complete phase
+count. This is a finite execution failure, not a proof that the decision
+class is infeasible or that no slower solver could finish.
+
+The preceding25 journal rows are unchanged. The retained prefix is now26
+attempts:19 EXECUTED and seven FAILED. Existing score, phase and fresh-evidence
+totals do not change. Parent11020 starts the original task27, n16/c4 seed19
+rate4, at03:08:38 UTC on2026-09-14 as worker12732. Main HEAD and all execution
+dependencies remain bound to38b27b3. Preserve the remaining original matrix;
+do not repeat the failed rate, fill its scores or enlarge its budget.
