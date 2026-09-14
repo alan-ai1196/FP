@@ -205,6 +205,15 @@ not whether a helper can supply posterior values. Larger update units give
 an average of single-event posterior steps, not joint conditioning. Changing
 U creates a new lineage and cannot inherit an old profile, persistence or
 class proof.
+The existing simplex FP32 master now has a concrete [whole-history limit](theory/proofs/SIMPLEX_REVERSAL.md):
+48 agreeing labels absorb a positive weight into zero; on a legal reversal,
+the owned target halts before label98 at the first declared bridge breach.
+The CPU100-event control returns to the uniform posterior. This numerical
+failure occurs inside the fixed resource envelope, with full history and
+reference state preserved. For this representation, widening a tolerance
+does not restore the lost learner response. Future-preserving physical
+coordinates or explicit expected-risk approximation remain distinct research
+directions; neither may silently replace the all-future claim.
 The [recurrent objective audit](theory/proofs/RECURRENT_SELECTION_OBJECTIVE.md)
 now rules out treating that initial model's retrospective training fit as
 causal evidence or learned noise. On a one-observation forest, all common

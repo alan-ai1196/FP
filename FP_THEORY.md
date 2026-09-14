@@ -2448,6 +2448,15 @@ and long-history AMP behavior require their own evidence.
 The scoped eight-job audit at b34bf7b executes all declared CPU/CUDA roots,
 including four fresh installations, with1,208 independently replayed binary64
 phases and604 CUDA phases. Its historical searched classes stay unresolved.
+The subsequent [dynamic reversal audit](theory/proofs/SIMPLEX_REVERSAL.md)
+proves and observes the physical boundary of that result. Even with exact
+normalizer10, a binary32 posterior coordinate becomes zero after48 agreeing
+labels. A legal reversal exposes native error4/365 after97 observed labels;
+the owned target retains the failed prediction and halts before its target,
+while the CPU control completes100 labels and returns to the uniform prior.
+This is loss in the physical learner coordinate, not erasure of Runtime's
+retained history/reference state or a Foundation counterexample. Current
+pointwise accuracy does not certify every future numerical continuation.
 
 ## Frozen research rule
 

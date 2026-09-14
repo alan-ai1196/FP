@@ -332,6 +332,17 @@ All four searched classes remain unresolved. Largest packed/job peaks are
 77,265,284/2,417,373,184 bytes within the unchanged bounds. This extends the
 learner implementation, not the frozen baseline release or RN-5's SGD class.
 
+The [registered reversal audit](theory/proofs/SIMPLEX_REVERSAL.md) at619e3cf
+then confirms the dynamic precision limit without changing the learner or
+caps. Both audit jobs complete: CPU seals100 labels and independently replays
+301 binary64 phases; CUDA halts after97 labels with292 checked phases and
+one retained refused prediction, all independently replayed, plus293
+binary64 phases. The actual first zero weight occurs at48. The next context
+fails with native error4/365 and probability error2/1825; its target stays
+hidden and no complete stream or install is claimed. All raw history,
+reference state and failed evidence remain owned. Eight CPU and four CUDA
+development regression scripts also pass; this is not a new31-script release.
+
 
 The earlier Reference/CPU 21-script prerequisite passed from a
 clean clone of `ebe2c4cf23f296fe517d4fe237cef45eaa98d309`, using CPython

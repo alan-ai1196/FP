@@ -3900,3 +3900,41 @@ lose a binary32 posterior weight at event48. The first declared bridge
 tolerance violation is predicted at the context after97 observed events,
 with native error4/365 and probability error2/1825. A source-bound owned
 execution is required before calling this an observed device/Runtime result.
+
+## 112. Actual posterior underflow is exposed by a legal future and honestly refused
+
+The two reversal jobs were registered at619e3cf with the existing U, native
+graph, source domain, arithmetic, host/arena bounds and tolerances unchanged.
+An exact absorbing-zero argument and independent rounded native preflight
+predicted the first lost world weight at48 and the first bridge breach after
+97 observed labels. The actual RTX3090 path matches both predictions.
+
+CPU seals all100 observations and returns to exact weights1/2,1/2, with301
+independently checked binary64 phases. CUDA executes97 labels, then retains
+the failed next prediction and halts unresolved before revealing its target.
+All293 target raw phases are independently checked:292 successful and the
+one refusal. The same prefix has293 verified binary64 phases. Its exact
+weights are729/730,1/730 while the physical weights are1,0; native error4/365
+and probability error2/1825 exceed the original bounds. The failed target
+stream receives no seal, later forecast, model score or install claim.
+
+The two jobs jointly check197 successful posterior forecasts. Peak packed
+state is2,259,936/79,009,431 bytes and completed job commitment is
+41,050,112/2,416,918,528 bytes on CPU/CUDA. This is numerical underflow within
+the fixed resource envelope. Raw observations, exact reference state and
+failed physical evidence remain owned. The blind continuation to weights1,0
+after the balanced100-event tape belongs only to the independent arithmetic
+counterexample; the real target stops at its first failing bridge.
+
+The selected existing regression scripts pass during this extension:
+reference events, profiles, search, binary64 Runtime, owned CPU policy,
+CPU installation, reference run, causal relation proposal, CUDA learner,
+CUDA Runtime, CUDA installation and CUDA policy/run. These working-tree
+regressions do not relabel the frozen31-script release. New source-bound
+evidence remains the eight jobs at b34bf7b and the two jobs at619e3cf.
+
+The result separates exact learner geometry from future-preserving physical
+state. Normalizer10 does not solve the latter; a tolerance increase cannot
+recover the absorbed coordinate. A different declared representation or a
+properly scoped expected-risk approximation must carry its own resource and
+continuation claims. No architecture action or Foundation patch is introduced.

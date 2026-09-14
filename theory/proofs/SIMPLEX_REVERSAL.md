@@ -1,9 +1,10 @@
 # A bounded-range posterior can still lose a legal future in finite precision
 
-**Status at registration:** exact model-level argument and independent
-round-to-nearest binary32 preflight; the two owned CPU/CUDA jobs below have
-not yet supplied device or Runtime evidence. This study keeps the registered
-[simplex U and lowering](SIMPLEX_RUNTIME_CONTRACT.md) unchanged.
+**Status:** exact model-level argument, independent round-to-nearest binary32
+preflight, and two completed owned jobs at source619e3cf. CPU seals the full
+reversal; RTX3090 retains the predicted failed phase and halts unresolved.
+This study keeps the registered [simplex U and lowering](SIMPLEX_RUNTIME_CONTRACT.md)
+unchanged. Audit completion must not be confused with a completed target stream.
 
 ## 1. An absorbing zero in a whole-history learner
 
@@ -98,6 +99,34 @@ plus one retained refused phase, and293 binary64 phases in that same prefix.
 The CPU control expects301 binary64 phases. Completed-job accounting includes
 the final replay, and the minimal journal preserves all outcomes without
 rerunning failed cases or increasing limits after observing a failure.
+
+## 4. Observed result at the registered source
+
+The [minimal journal](../../evidence/minimal/FP_SIMPLEX_REVERSAL_AUDIT.json)
+binds619e3cf7bf2fff8265788e3a771b0daba5f35328. Both bounded audit jobs exit0
+without timeout or resource enlargement:
+
+| Path | Runtime outcome | Observed labels | Independent binary64 phases | Independent CUDA raw phases |
+| --- | --- | ---: | ---: | ---: |
+| CPU | SEALED_REFERENCE_STREAM; exact weights return to(1/2,1/2) |100|301| none |
+| RTX3090 | HALTED_UNRESOLVED; next target stays hidden |97|293|292 checked +1 refused |
+
+Actual CUDA words first lose the second world weight at event48. The failed
+prediction after97 observed labels matches the independent raw arithmetic,
+including native error4/365 and mass-normalized probability error2/1825.
+Runtime reports that the native prediction error exceeds its registered
+bound, retains the pending unlabelled context and failed evidence frame,
+and preserves the pre-prediction reference learner/device current state.
+The exact current weights remain(729/730,1/730); the physical current weights
+are(1,0). No later label is revealed, stream seal issued or install attempted.
+
+The independent audits verify197 successful reference posterior forecasts
+across the two jobs and every encoded target phase, including the refusal.
+Peak packed state is2,259,936 bytes on CPU and79,009,431 bytes on CUDA;
+completed job peaks are41,050,112 and2,416,918,528 bytes, below the original
+caps. The target's maximum phase uses207 output cells and18,334 frame bytes.
+The failure is numerical, not an exhausted declared integer, memory or time
+budget. The original eight successful simplex jobs remain separate evidence.
 
 Passing this audit means a sealed CPU control and an honest CUDA refusal,
 not a successful100-event target model. If these outcomes occur, subsequent

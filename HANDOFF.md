@@ -379,7 +379,20 @@ classes remain unresolved. Largest packed/job peaks are77,265,284 and
 2,417,373,184 bytes within the fixed caps.
 Run its source-dependent audits from the research worktree. This is a
 different lineage and a known-model control; matched model usefulness and
-long-history AMP reliability remain research questions.
+long-history AMP reliability remain research questions. The first dynamic
+precision boundary is now [proved and observed](theory/proofs/SIMPLEX_REVERSAL.md):
+under50 agreeing and50 contrary labels, the existing FP32 master loses a
+world weight at48. At source619e3cf the CPU control seals100 observations
+and returns to the uniform posterior; RTX3090 halts after97 observed labels,
+before revealing the next target. All293 CUDA raw phases, including the
+refused prediction, and594 binary64 phases across both jobs are independently
+checked. The failure has native/probability errors4/365 and2/1825 within
+the original resource caps. A bounded normalizer and a currently small
+parameter error do not preserve every legal future. Raw history and the
+complete reference state remain owned; this is not a Foundation loophole.
+The next research question concerns a declared representation that preserves
+future evidence, or an explicit expected-risk approximation claim. Enlarging
+a tolerance cannot recover an absorbed posterior coordinate.
 
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
