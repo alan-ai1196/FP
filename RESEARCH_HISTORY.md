@@ -4341,3 +4341,43 @@ The source-bound n8 likelihood matrix remains independent at90f3883; RN-5
 completion neither supplies its model outcomes nor changes its fixed contract.
 Foundation and ERC-1 remain frozen. This is closure of one registered model
 experiment, not completion of the broader FP research goal.
+
+## 125. Refute context-dependent betting under the original persistence null
+
+After RN-5 final analysis passes, main fast-forwards through33a12e4 with all
+final evidence and research commits retained. The separate n8 likelihood
+matrix remains bound to90f3883. Subsequent research resumes in main.
+
+The deployment gap suggests using each pre-target forecast to choose a
+smaller local gain bound. Attacking that proposal exposes its invalid
+filtration: the registered null conditions before the context, not merely
+before the target. For every distribution on a finite outcome alphabet with
+nonpositive mean gain, a nonnegative evidence factor is valid iff one common
+nonnegative linear bet dominates it pointwise. One- and two-outcome nulls
+give an elementary complete proof. Context-specific linear coefficients must
+therefore agree when every active context has positive and negative gains.
+
+A two-context positive native SUM graph predicts(0.9,0.1) and(0.6,0.4)
+against uniform. The registered rate-zero native learner keeps it fixed
+through ordinary gradient commits and advancing clocks, without retrospective
+reset. A full-support IID joint law has
+mean gain-0.01477198482, while valid-looking local bounds2 and1/4 with bet3/4
+yield mean factor1.4049798428 and mean log factor0.2687293842. The unrounded
+false-crossing probability exceeds705/961 by256 steps, and eventual crossing
+is certain. Actual grid16 helper arithmetic also has initial expected wealth
+4603797/3276800>1; repeated rounded eventual crossing is not claimed. Runtime
+cannot select an owned rule after ingress, so no existing certificate or
+Foundation theorem is falsified. The proposed shortcut is rejected.
+
+The exact audit checks27,725 factor tables against134,450 independently
+constructed null-vertex expectations,5,890 valid tables,256 context-bet
+combinations and384 continuous native units. Rational logarithm enclosures
+are independently checked with160-digit Decimal. The proof links established
+e-variable literature without claiming novelty for mean-constraint duality.
+
+The same examination identifies a legal pre-context bound for the likelihood
+bank: exact p in[0.1,0.9], actual uniform comparator and AMP probability error
+at most0.001 give |gain|<13/8 by exact endpoint enclosures. It can justify a
+future common coefficient6/13 at bet3/4. The active bound6 experiment is not
+patched, rerun or reinterpreted; no power improvement or new installation is
+claimed. There is no Runtime code, semantic action or ERC-1 change.

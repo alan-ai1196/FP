@@ -24,6 +24,16 @@ new model outcomes are not yet established. Treat its four fixed resource
 attempts as a matched mechanism test, preserving candidate/deployed separation
 and all failures. Reused tapes are not new IID or prospective evidence.
 
+RN-5's deployment wait does not license context-specific betting under the
+same null. The [finite persistence criterion](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
+proves that valid factors for the pre-context mean-only null are dominated
+by a common linear bet, and supplies a native false-crossing counterexample
+to adapting that coefficient after the context. Improve paid global bounds
+or common predictable choices, or explicitly declare the additional law a
+new method uses. The owned likelihood bank admits global gain bound13/8
+against uniform under its0.001 AMP probability relation, but the registered
+matrix keeps bound6. No faster installation or power gain is established.
+
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 settles the distribution-wide condition for this exact one-event U. It does
 not classify every fixed-Gamma reachable encoding: the informative invariant

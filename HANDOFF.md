@@ -208,11 +208,12 @@ remain distinct from this31-attempt matrix. No cause or completed job counters
 are invented for the interruption. Its original-source resume and subsequent
 timeout remain documented in research history.
 
-All main RN-5 workers and parent11020 are terminal. Research extensions are
-committed on `research/joint-learner-geometry`, a linked worktree of this same
-canonical repository. They can now be integrated into main after retaining
-its final journal and plot. The separate likelihood matrix still requires its
-own immutable90f3883 execution checkout; do not patch or restart that run.
+All main RN-5 workers and parent11020 are terminal. After its final source
+guard and complete independent analysis passed, main fast-forwarded through
+33a12e4, retaining every final journal row, plot and research commit from
+`research/joint-learner-geometry`. Main is now the active research checkout.
+The separate likelihood matrix still requires its immutable90f3883 execution
+checkout; do not patch or restart that run.
 
 The [scale-dynamics proof](theory/proofs/JOINT_LEARNER_SCALE_DYNAMICS.md) adds
 a model-level explanation, without changing Foundation or the experiment.
@@ -222,10 +223,10 @@ other family sizes have decreasing examples. Equal one-hot forecasts under
 rescaling still give different next SGD predictions. Synthetic audits verify
 1,008 identities, 8,352 gradient coordinates and 384 projection controls.
 Grid16/AMP monotonicity is not inferred. The independent analysis records
-rounded-scale observations separately from the theorem. Research commits are
-being retained on `research/joint-learner-geometry` in the same repository;
-integrate them into main only after all bound workers are terminal. The live
-main worktree keeps the matching research files and the evolving journal.
+rounded-scale observations separately from the theorem. Research commits
+through33a12e4 are integrated into main after all RN-5 workers terminated
+and the complete original-source analysis passed. Continue research in main;
+the historical research checkout is no longer the active execution boundary.
 The same proof now characterizes the cross-query real-parameter mixture
 relaxation and excludes suboptimal first-order stationary points there.
 Another 336 exact direction checks and a pure-square zero-gradient
@@ -332,8 +333,8 @@ the same16GiB cap. All three paths total84 CUDA/binary64 phases each;
 matched registrations and resource/error maxima without launching another job.
 Prefer the centered graph in this n2,H3 scope. The general contraction remains
 a representation bound with large window/domain costs, not an affordable
-large-n model result. All three new jobs and both drivers are terminal; main RN-5 remains
-bound to its own source until all its workers finish.
+large-n model result. All three new jobs and both drivers are terminal.
+Their results and completed RN-5 retain their original execution sources.
 
 The [whole-history predictive-state proof](theory/proofs/WHOLE_HISTORY_PREDICTIVE_STATE.md)
 now identifies what the known-noise posterior must remember: signed nonloop
@@ -414,8 +415,8 @@ argument gives the exact information lower bound whenever uniform error
 is below half the expert contrast. History-dependent lifts and bounded
 claims need separate arguments. Do not install an approximate pair cover
 as a causal state quotient.
-The existing AMP reversal failure, live RN-5 contract and main source stay
-unchanged. New mathematical audits run from the linked research worktree.
+The existing AMP reversal failure and completed RN-5 retain their original
+contracts and results. Their subsequent research is now integrated into main.
 
 The subsequent [owned likelihood lowering](theory/proofs/LIKELIHOOD_RUNTIME_CONTRACT.md)
 is implemented on that research branch. It derives a commensurate finite
@@ -436,8 +437,8 @@ The reversed weight returns from zero to a positive subnormal at53 and to
 binds every outcome to its completed job. This closes the paid finite codec
 demonstration for the stated subclass. Continue to useful-scale model and
 resource tests; do not infer uniform unlimited accuracy or whole-Compiler
-compression. The exact U, ERC-1 and live RN-5 source are unchanged. New code
-remains on the research branch until the live main workers finish.
+compression. The exact U, ERC-1 and original RN-5 outcomes are unchanged.
+The new code is integrated into main after RN-5 completion.
 
 The [sparse affine analyzer](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md) now
 preserves the dense result while reducing n6 derivation operations from
@@ -481,6 +482,21 @@ HEAD/dependencies fixed. RN-5 has independently completed all31 attempts at
 All checkouts share this canonical Git repository. Research/main can advance
 without changing the running likelihood execution source. Unreported failures
 supply no invented score or complete phase count.
+
+The [persistence filtration result](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
+closes an apparent shortcut exposed by RN-5's deployment wait. Under the
+registered pre-context mean-null and an unrestricted finite outcome law,
+every valid nonnegative one-step factor is dominated by one common linear
+bet. At contexts with both gain signs, context-specific linear coefficients
+must agree. A native two-context, rate-zero learner has negative mean gain
+but context-weighted expected factor1.40498 and positive log drift; its
+unrounded false-crossing probability by256 events exceeds705/961. The
+current Runtime fixes its rule before ingress and is not vulnerable to that
+substitution. Exact audit checks27,725 factor tables,134,450 null-vertex
+expectations,256 context-bet tables and384 continuous native units.
+A common global bound13/8 follows for the known likelihood bank against
+uniform with its0.001 AMP probability relation. This is a possible future
+preregistration, not a change to the running bound6 matrix or a power claim.
 
 The [normalized likelihood theorem](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 now characterizes the guarantee over all interior weights: a positive-rate

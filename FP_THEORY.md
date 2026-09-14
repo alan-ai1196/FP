@@ -2527,11 +2527,22 @@ this property even when common positive factors make the native masses nonlinear
 This is not a necessary condition for every fixed-Gamma orbit: an informative
 positive native counterexample preserves w2=w3 under all labels while differing
 away from that invariant. Equal selected updates also preserve neither full
-ambient gradients nor native caches/costs. The physical analyzer and both live
-experiment sources remain unchanged; no new semantic action is introduced.
+ambient gradients nor native caches/costs. The physical analyzer and original
+experiment contracts remain unchanged; no new semantic action is introduced.
 
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.
 
 Prefer removing artificial mechanisms and exposing a smaller native invariant over adding another hand-written controller action.
+
+The [persistence filtration criterion](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
+is a corollary of the existing pre-context null, not a new semantic action.
+For a finite unrestricted outcome law with nonpositive mean gain, every valid
+nonnegative factor is dominated by one common nonnegative linear bet. Local
+context-specific coefficients must agree wherever both gain signs occur.
+An exact native counterexample shows that choosing them after the context
+can cause false crossing even without target leakage. The registered Runtime
+rule already prevents that substitution. A proved common global bound can
+support a future registration; the running likelihood experiment remains at
+its original bound6 and source90f3883.

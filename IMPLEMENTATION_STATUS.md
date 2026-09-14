@@ -28,6 +28,21 @@ two hours, packed8GiB and4MiB phase frames are explicit; ordinary bridge
 tolerances remain0.01/0.001 and binary64 tolerance10^-9. Run from an immutable
 checkout; retain all original RN-5 outcomes and keep the likelihood execution checkout fixed.
 
+The [persistence filtration result](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
+closes an apparent shortcut exposed by RN-5's deployment wait. Under the
+registered pre-context mean-null and an unrestricted finite outcome law,
+every valid nonnegative one-step factor is dominated by one common linear
+bet. At contexts with both gain signs, context-specific linear coefficients
+must agree. A native two-context, rate-zero learner has negative mean gain
+but context-weighted expected factor1.40498 and positive log drift; its
+unrounded false-crossing probability by256 events exceeds705/961. The
+current Runtime fixes its rule before ingress and is not vulnerable to that
+substitution. Exact audit checks27,725 factor tables,134,450 null-vertex
+expectations,256 context-bet tables and384 continuous native units.
+A common global bound13/8 follows for the known likelihood bank against
+uniform with its0.001 AMP probability relation. This is a possible future
+preregistration, not a change to the running bound6 matrix or a power claim.
+
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 is a theorem/passive audit, with no Runtime analyzer expansion. Distribution-wide
 fixed Bayesian updates require affine normalized forecasts and unit positive
@@ -217,10 +232,10 @@ other family sizes have decreasing examples. Equal one-hot forecasts under
 rescaling still give different next SGD predictions. Synthetic audits verify
 1,008 identities, 8,352 gradient coordinates and 384 projection controls.
 Grid16/AMP monotonicity is not inferred. The independent analysis records
-rounded-scale observations separately from the theorem. Research commits are
-being retained on `research/joint-learner-geometry` in the same repository;
-integrate them into main only after all bound workers are terminal. The live
-main worktree keeps the matching research files and the evolving journal.
+rounded-scale observations separately from the theorem. Research commits
+through33a12e4 are integrated into main after all RN-5 workers terminated
+and the complete original-source analysis passed. Continue research in main;
+the historical research checkout is no longer the active execution boundary.
 The same proof now characterizes the cross-query real-parameter mixture
 relaxation and excludes suboptimal first-order stationary points there.
 Another 336 exact direction checks and a pure-square zero-gradient
@@ -291,7 +306,7 @@ checking1,090 binary64 phases,545 CUDA phases and288 actual fresh-score/
 wealth updates. Maximum job commitment is106,569,728 bytes for CPU and
 2,423,279,616 for CUDA; maximum packed payload49,239,902, native extent590,704,
 frame75,759 and output cells958. This is not a new full implementation release. These source edits
-stay on the canonical research branch while main RN-5 workers are active.
+are now integrated into main after all RN-5 workers terminated.
 
 The first four jobs at35ba35b failed during final report generation: the
 wrapper spawned Git inside a one-active-process job and received WinError1816.
@@ -420,7 +435,7 @@ The count and descriptor attacks are caught despite unchanged numeric theta;
 prepayment denies work/scratch shortages before calling the analyzer. Peak
 job commitment is2,371,022,848 bytes under4GiB. Four existing CPU/learner
 scripts and ten selected old CUDA cases also pass. This is an audited finite
-lowering extension; no full release or live RN-5 source change is asserted.
+lowering extension; no new full release or retrospective RN-5 source change is asserted.
 
 
 The earlier Reference/CPU 21-script prerequisite passed from a

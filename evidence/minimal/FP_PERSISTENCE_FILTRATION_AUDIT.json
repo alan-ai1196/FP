@@ -1,0 +1,116 @@
+{
+  "status": "EXACT_AUDIT_PASS",
+  "scope": "finite pre-context mean-null, passive native forecasts",
+  "domination": {
+    "factor_tables": 27725,
+    "valid_tables": 5890,
+    "independent_null_vertex_expectations": 134450,
+    "two_context_bet_tables": 256,
+    "score_alphabet": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "factor_grid": [
+      "0",
+      "1/2",
+      "1",
+      "3/2",
+      "2"
+    ],
+    "outcomes": [
+      2,
+      3,
+      4
+    ],
+    "sorted_scores_cover_permutations": true
+  },
+  "counterexample": {
+    "native_candidate_probabilities": [
+      [
+        "9/10",
+        "1/10"
+      ],
+      [
+        "3/5",
+        "2/5"
+      ]
+    ],
+    "native_forecast_checks": 4,
+    "native_rate_zero_continuous_unit_checks": 384,
+    "outcome_order": [
+      "A:0",
+      "A:1",
+      "B:0",
+      "B:1"
+    ],
+    "full_support_IID_joint_law": [
+      "1/100",
+      "11/100",
+      "87/100",
+      "1/100"
+    ],
+    "local_bounds": [
+      "2",
+      "1/4"
+    ],
+    "bet_fraction": "3/4",
+    "context_coefficients": [
+      "3/8",
+      "3"
+    ],
+    "mean_true_gain": [
+      "-16241969077/1099511627776",
+      "-4060492269/274877906944"
+    ],
+    "mean_unrounded_factor": [
+      "1544791673947/1099511627776",
+      "386197918487/274877906944"
+    ],
+    "mean_unrounded_log_factor": [
+      "73867770667/274877906944",
+      "295471082669/1099511627776"
+    ],
+    "first_step_actual_grid16_factors": [
+      "79981/65536",
+      "12991/32768",
+      "101381/65536",
+      "677/2048"
+    ],
+    "first_step_actual_grid16_mean": "4603797/3276800",
+    "common_coefficient_1_over_8_mean": [
+      "1097481381641/1099511627776",
+      "548740690821/549755813888"
+    ],
+    "unrounded_by_256_crossing_probability_lower": "705/961",
+    "unrounded_eventual_crossing_probability": "1",
+    "grid16_eventual_crossing_claimed": false,
+    "no_Runtime_authority_or_actual_installation": true
+  },
+  "global_likelihood_bound": {
+    "exact_candidate_probability_range": [
+      "1/10",
+      "9/10"
+    ],
+    "AMP_mass_probability_error": "1/1000",
+    "actual_baseline_probability": "1/2",
+    "implied_successful_AMP_probability_range": [
+      "99/1000",
+      "901/1000"
+    ],
+    "global_bound": "13/8",
+    "common_coefficient_at_bet_3_over_4": "6/13",
+    "lower_endpoint_log_enclosure": [
+      "-1780646160039/1099511627776",
+      "-890323080019/549755813888"
+    ],
+    "upper_endpoint_log_enclosure": [
+      "647499274089/1099511627776",
+      "323749637045/549755813888"
+    ],
+    "original_bound_6_experiment_unchanged": true,
+    "power_or_installation_improvement_claimed": false
+  }
+}
