@@ -1,7 +1,8 @@
 """Independent exact and raw-CUDA audits of the likelihood-coordinate lowering.
 
-The expected likelihoods come from native graph evaluations at simplex vertices,
-not from the production affine analyzer or its integer-coordinate decoder.
+The expected likelihoods come from an independent positive-degree proof and
+native mass derivatives, cross-checked against simplex vertices on small graphs.
+They do not come from the production affine analyzer or its coordinate decoder.
 This file is a passive auditor; it cannot supply a Runtime model or successor.
 """
 from dataclasses import replace
@@ -65,10 +66,63 @@ def vertex_bank(graph, rules, theta, spec, domain):
     return tuple(rows)
 
 
+def reverse_bank(graph, rules, theta, spec, domain):
+    """Independent positive-degree proof and scalar native mass derivatives.
+
+    A positive polynomial vanishes at a strictly positive selected Gamma iff
+    it is identically zero on that selected slice. Thus exact initializer
+    values certify zero support; integer degrees certify affine heads. Their
+    native mass Jacobians then determine all vertices without K evaluations.
+    This uses neither the producer's affine maps nor its likelihood factors.
+    """
+    selected = set(spec.simplex_slots)
+    assert all(theta[i] > 0 for i in selected) and sum(theta[i] for i in selected) == 1
+    assert not rules.states
+    rows = []
+    for point in domain:
+        prediction = evaluate(graph, rules, theta,
+            dict(zip((s.source_id for s in rules.sources), point)), bit_limit=BITS)
+        degrees = []
+        for index, node in enumerate(graph.nodes):
+            if prediction.values[index] == 0:
+                degree = -1
+            elif type(node) is Source:
+                degree = 0
+            elif type(node) is Product:
+                degree = min(2, degrees[node.left]+degrees[node.right])
+            else:
+                assert type(node) is Sum
+                degree = max(min(2, degrees[t.parent]+int(t.slot in selected))
+                    for t in node.terms if theta[t.slot] and prediction.values[t.parent])
+            degrees.append(degree)
+        assert all(degrees[head] <= 1 for head in graph.heads), 'native positive head is not affine on the selected slice'
+        masses = []
+        for y, head in enumerate(graph.heads):
+            adjoint, gradient = [F(0)]*len(graph.nodes), [F(0)]*graph.slot_count
+            adjoint[head] = F(1)
+            for index in reversed(range(len(graph.nodes))):
+                node, seed = graph.nodes[index], adjoint[index]
+                if type(node) is Product:
+                    adjoint[node.left] += seed*prediction.values[node.right]
+                    adjoint[node.right] += seed*prediction.values[node.left]
+                elif type(node) is Sum:
+                    for term in node.terms:
+                        gradient[term.slot] += seed*prediction.values[term.parent]
+                        adjoint[term.parent] += seed*theta[term.slot]
+            coefficients = tuple(gradient[i] for i in spec.simplex_slots)
+            constant = prediction.masses[y]-sum(theta[i]*gradient[i] for i in spec.simplex_slots)
+            assert constant >= rules.base[y] and min(coefficients) >= 0
+            masses.append(tuple(constant+a for a in coefficients))
+        normalizers = tuple(map(sum, zip(*masses)))
+        assert len(set(normalizers)) == 1 and min(normalizers) > 0
+        rows.extend(tuple(mass/z for mass, z in zip(row, normalizers)) for row in masses)
+    return tuple(rows)
+
+
 def verify_model(model, graph, rules, theta, spec, domain):
     assert (model.program_id, model.semantics, model.initial_theta, model.learner,
             model.source_domain) == (graph.program_id, rules, theta, spec, tuple(dict.fromkeys(domain)))
-    bank = vertex_bank(graph, rules, theta, spec, model.source_domain)
+    bank = reverse_bank(graph, rules, theta, spec, model.source_domain)
     prior = tuple(theta[i] for i in spec.simplex_slots)
     prior_powers = tuple(power(w/prior[0], model.contract.radix) for w in prior)
     increments = tuple(tuple(power(w/row[0], model.contract.radix) for w in row) for row in bank)
@@ -107,6 +161,7 @@ def exact_audit():
         model = derive(cfg, graph, online)
         bank, representatives = verify_model(model, graph, cfg.semantics, cfg.initializer_pattern,
                                              online.learner, cfg.source_domain)
+        assert bank == vertex_bank(graph, cfg.semantics, cfg.initializer_pattern, online.learner, cfg.source_domain)
         assert model.rank == n*(n-1)//2
         initial = native.initial_state(graph, cfg.semantics, cfg.initializer_pattern, 0,
                                        spec=online.learner, bit_limit=BITS)
@@ -174,6 +229,7 @@ def exact_audit():
     additional_updates = 0
     for model, actual_rules, initial_theta in ((affine, rules, theta), (affine_rational, rational_rules, rational_theta)):
         bank, representatives = verify_model(model, graph, actual_rules, initial_theta, spec, ((F(1),),))
+        assert bank == vertex_bank(graph, actual_rules, initial_theta, spec, ((F(1),),))
         state = native.initial_state(graph, actual_rules, initial_theta, 6, spec=spec, bit_limit=BITS)
         encoded = EncodedLikelihoodState(model, (0,)*model.rank, None)
         joint = tuple(initial_theta[i] for i in spec.simplex_slots)

@@ -2496,6 +2496,13 @@ two-pass fresh installation, six refusals and complete tiny-grammar handling.
 They replay994 checked/3 refused CUDA and997 binary64 phases, with no new
 class certificate, full release or model-comparison claim.
 
+The [sparse likelihood analyzer](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md)
+omits only identically zero formal coefficients at each complete-domain row.
+An independent positivity/degree proof and native mass Jacobian verify its
+bank. Agreement of all simplex-vertex forecasts alone is insufficient to
+certify affinity or the actual unit U. Native nodes and fixed-slot derivatives
+remain intact; the conservative resource envelope and decision class persist.
+
 ## Frozen research rule
 
 The theory is reopened only if a counterexample distinguishes the object declared here from the object a faithful implementation must optimize/execute. If the counterexample attacks only a solver acceleration, acquisition policy or computational shortcut, weaken that component and keep the semantic foundation fixed.

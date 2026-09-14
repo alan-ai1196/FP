@@ -452,6 +452,16 @@ resource tests; do not infer uniform unlimited accuracy or whole-Compiler
 compression. The exact U, ERC-1 and live RN-5 source are unchanged. New code
 remains on the research branch until the live main workers finish.
 
+The [sparse affine analyzer](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md) now
+preserves the dense result while reducing n6 derivation operations from
+2,536,316 to304,892. Its independent verifier proves positive polynomial
+degree and uses native mass derivatives; vertex agreement alone does not
+prove a legal unit update. All28,656 small-grammar cases agree, including
+21,204 independent bank/vertex checks. Two further bounded development jobs
+pass587 CUDA/binary64 phases each, with profile install22 and reversal
+recovery53. Conservative budgets and the nine old source-bound jobs retain
+their original scope. This code also stays on the research branch.
+
 Reopen Foundation only when experiment correctness exposes a semantic loophole.
 Slow search, loose bounds, scarce data, resources or uncertain arithmetic
 still call for solver work or UNRESOLVED, not another static theory program.

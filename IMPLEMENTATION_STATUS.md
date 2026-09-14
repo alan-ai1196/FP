@@ -2,6 +2,15 @@
 
 ## Current release (2026-09-13)
 
+The research branch now has a [sparse exact likelihood analyzer and independent
+positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete
+small-grammar differential audit checks28,656 cases and21,204 native vertex
+banks. n6 preparation uses304,892 counted operations versus2,536,316 before;
+prepaid work/scratch, native execution and the supported decision class are
+unchanged. Two bounded development jobs check587 CUDA and587 binary64 phases,
+including reversal and profile/install. This is separate extension validation;
+the old nine-job matrix stays bound to08fa7bc and live RN-5 stays at38b27b3.
+
 **Reference/CPU and RTX 3090 AMP baseline: FROZEN. Prospective v2 and component
 v3 extensions: separately audited. Registered experiments: UNHELD within their tested scopes.** Source
 `5e55eb4f359016d18d68239938bdfb15893238eb` passes all 21 CPU and

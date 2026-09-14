@@ -16,6 +16,14 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Learn from later labels while preserving current uncertainty
 
+The affine preparation bottleneck is partly reduced by the [sparse exact
+analyzer and independent degree verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md).
+The same complete descriptor costs304,892 counted operations at n6 rather
+than2,536,316. This does not remove exponential native worlds, full reference
+state, audit snapshots, conservative prepaid scratch or model-scale uncertainty.
+Use the paid lowering to test useful model cuts against the retained strong
+adaptive posterior; the small reversal/install checks are not that comparison.
+
 The first [known-table resource experiment](experiments/erc1_rtx3090/RESULTS.md)
 is complete: 54 registered configurations, 44 sealed and ten unresolved.
 Its measured precision plateau and constructor-dependent range failures

@@ -125,47 +125,59 @@ def _affine_heads(program, rules, theta, slots, point, arithmetic):
     selected slice; its ambient fixed-slot derivative remains native work.
     """
     k = len(slots)
-    selected = {slot: i+1 for i, slot in enumerate(slots)}
-    zero = (F(0),)*(k+1)
+    # Absence means an identically zero formal coefficient at this registered
+    # source point, for every selected-parameter value. It is not a threshold
+    # on the current theta. Other source points are analyzed independently.
+    selected = {slot: (F(0), {i: F(1)}) for i, slot in enumerate(slots)}
+    zero = (F(0), {})
     source = dict(zip((s.source_id for s in rules.sources), point))
+
+    def is_zero(value):
+        return value is not None and not value[0] and not value[1]
 
     def multiply(left, right):
         arithmetic.take()
-        if left == zero or right == zero:
+        if is_zero(left) or is_zero(right):
             return zero
         if left is None or right is None:
             return None
-        if any(left[1:]) and any(right[1:]):
+        if left[1] and right[1]:
             return None
-        if any(left[1:]):
+        if left[1]:
             left, right = right, left
-        return tuple(arithmetic.mul(left[0], value) for value in right)
+        return (arithmetic.mul(left[0], right[0]),
+                {i: arithmetic.mul(left[0], value) for i, value in right[1].items()})
 
     values = []
     for node in program.nodes:
         arithmetic.take()
         if type(node) is Source:
-            value = (source[node.source_id],)+(F(0),)*k
+            value = (source[node.source_id], {})
         elif type(node) is State:
             raise ArithmeticUnresolved('likelihood encoding has no delayed-state simulation')
         elif type(node) is Product:
             value = multiply(values[node.left], values[node.right])
         else:
             assert type(node) is Sum
-            value = zero
+            # This fresh dictionary belongs only to this SUM. Parent maps and
+            # the shared zero/variable forms are read-only throughout analysis.
+            value = (F(0), {})
             for term in node.terms:
-                if term.slot in selected:
-                    parameter = tuple(F(i == selected[term.slot]) for i in range(k+1))
-                else:
-                    parameter = (theta[term.slot],)+(F(0),)*k
+                parameter = selected[term.slot] if term.slot in selected else (theta[term.slot], {})
                 term_value = multiply(parameter, values[term.parent])
-                value = (None if value is None or term_value is None else
-                         tuple(arithmetic.add(a, b) for a, b in zip(value, term_value)))
+                if value is None or term_value is None:
+                    value = None
+                else:
+                    coefficients = value[1]
+                    for i, coefficient in term_value[1].items():
+                        coefficients[i] = arithmetic.add(coefficients.get(i, F(0)), coefficient)
+                    value = (arithmetic.add(value[0], term_value[0]), coefficients)
         values.append(value)
     heads = tuple(values[i] for i in program.heads)
     if any(row is None for row in heads):
         raise ArithmeticUnresolved('this bounded analyzer cannot prove affine selected heads')
-    return tuple((arithmetic.add(base, row[0]),)+row[1:] for base, row in zip(rules.base, heads))
+    return tuple((arithmetic.add(base, row[0]),)+tuple(row[1].get(i, F(0)) for i in range(k))
+                 for base, row in zip(rules.base, heads))
 
 
 def _row_basis(rows, arithmetic):

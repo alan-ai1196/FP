@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "dense_source": "08fa7bcc85320aa699cffb25ea9f6e292b036f0b",
+  "complete_three_slot_graphs": 3184,
+  "coefficient_checks": 28656,
+  "affine_results": 28596,
+  "nonlinear_refusals": 60,
+  "independent_bank_and_vertex_checks": 21204,
+  "independent_degree_or_normalizer_refusals": 7452,
+  "dense_scalar_operations": 565227,
+  "sparse_scalar_operations": 397123,
+  "prepared_model_comparisons": [
+    {
+      "n": 2,
+      "rank": 1,
+      "dense_operations": 1078,
+      "sparse_operations": 734,
+      "prepaid_work_unchanged": 28387648
+    },
+    {
+      "n": 3,
+      "rank": 3,
+      "dense_operations": 8459,
+      "sparse_operations": 4103,
+      "prepaid_work_unchanged": 100254784
+    },
+    {
+      "n": 4,
+      "rank": 6,
+      "dense_operations": 59072,
+      "sparse_operations": 19008,
+      "prepaid_work_unchanged": 316557376
+    },
+    {
+      "n": 5,
+      "rank": 10,
+      "dense_operations": 393077,
+      "sparse_operations": 79077,
+      "prepaid_work_unchanged": 951888960
+    },
+    {
+      "n": 6,
+      "rank": 15,
+      "dense_operations": 2536316,
+      "sparse_operations": 304892,
+      "prepaid_work_unchanged": 2910229312
+    }
+  ],
+  "vertex_alias": {
+    "same_vertex_probabilities": true,
+    "same_initial_probabilities": true,
+    "nonlinear_raw_unit_weights": [
+      "7/6",
+      "-1/6"
+    ],
+    "degree_verifier_refuses": true
+  },
+  "scope": "exact mathematical differential and certificate audit; no host/runtime or timing claim"
+}

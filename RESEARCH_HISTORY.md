@@ -4150,3 +4150,29 @@ totals do not change. Parent11020 starts the original task27, n16/c4 seed19
 rate4, at03:08:38 UTC on2026-09-14 as worker12732. Main HEAD and all execution
 dependencies remain bound to38b27b3. Preserve the remaining original matrix;
 do not repeat the failed rate, fill its scores or enlarge its budget.
+
+## 119. Prove sparse coefficients and audit affinity independently
+
+Likelihood preparation now carries only nonzero formal coefficients at each
+registered source row. These are identities for all selected weights, not
+current-weight thresholds. Native nodes, fixed-slot derivatives and the full
+domain remain. The dense analyzer at08fa7bc and the sparse pass agree on28,656
+cases from the complete3,184-graph three-slot grammar portion. n2..6 model
+descriptors agree except for recorded operation counts; n6 drops from2,536,316
+to304,892. The conservative prepaid work/scratch formulas remain unchanged.
+
+The passive verifier takes a different route: exact positive Gamma values
+prove zero support, degrees prove affinity, and native mass reverse derivatives
+recover coefficients. It checks21,204 banks against native vertices and
+agrees on7,452 refusals. Vertex forecasts alone are insufficient:1+8w and
+1+8w^2 share all simplex vertices and their normalized initial forecast, but
+the latter's native unit step is(7/6,-1/6) and refuses. The production analyzer
+already excluded the example; no false historical Runtime certificate is claimed.
+
+Existing exact likelihood audits pass. Two further bounded development jobs,
+PIDs22568/24360, seal profile/install and100-label reversal, replaying587 CUDA
+and587 binary64 phases,194 commit tapes and40 fresh scores. Install22 and
+recovery53/uniform100 persist. These are functional checks, not a replacement
+for the nine source-bound jobs or a useful-scale model comparison. Proof and
+minimal exact evidence are in SPARSE_LIKELIHOOD_ANALYSIS.md and its linked
+report. Main execution remains fixed at38b27b3 while RN-5 task27 runs.

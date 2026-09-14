@@ -167,9 +167,12 @@ ERC-1 remain frozen.
 
 ## 4. Audit registration and evidence discipline
 
-`scripts/audit_likelihood_encoding.py` independently evaluates actual native
-graphs at every selected simplex vertex. It checks the derived factors and
-rank against that bank and reconstructs complete ordered likelihood products.
+At the initial08fa7bc source, `scripts/audit_likelihood_encoding.py` independently
+evaluates actual native graphs at every selected simplex vertex. The current
+[sparse derivation and verifier](SPARSE_LIKELIHOOD_ANALYSIS.md) additionally
+proves affinity by positivity and reconstructs the bank using native mass
+derivatives, with exhaustive small vertex cross-checks. It checks the derived
+factors and rank and reconstructs complete ordered likelihood products.
 The initial exact audit covers 958 native transitions and relation ranks
 1,3,6, plus noncontiguous selected slots, nonuniform priors, rational radices,
 fixed-zero nonlinear interiors and scope/resource refusals. It does not call
