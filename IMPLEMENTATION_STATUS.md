@@ -64,28 +64,31 @@ refusals pass. All seven bounded jobs pass atbc209a8:308 posterior forecasts,
 1,990 binary64/1,138 CUDA phases and280 fresh scores, with actual installation
 at22 and all constructor classes UNRESOLVED. This includes the existing
 likelihood encoding and two v7 regressions. The n3 used frame shrinks while
-the packed peak grows; there is no whole-model resource win yet. The n8
+the packed peak grows; the completed matched n8 tradeoff is below. The n8
 graph lies outside the old grammar caps, and even its
 smaller n16 schedule exceeds the old65,536-cell allowance. No existing
 experiment, complete-state quotient or decision-class certificate changes.
 
 The [matched n8 model measurement](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
-is registered next: exactly v7 then v8 on seed16/c2 from the same current
+registers exactly v7 then v8 on seed16/c2 from the same current
 source, with common finite grammar and unchanged full4-MiB frames,16-GiB
 jobs, numerical/fresh rules and final auditors. The original model worker
 and result reader now accept a declared solver; their original defaults,
 historical registrations and12 reader-negative checks still pass. The new
-preflight checks all remaining contracts equal. The immutableec373e7 run
-starts at19:41:16 UTC on2026-09-20, parent20984/first worker6820. Its initial
-journal has zero completed outcomes and four independent baseline checks;
-the separate process observation records overlap with old worker30700.
-The [first current-source outcome](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
-is now collected: v7 seals124/installs119 with job peak13,067,034,624 and packed
-peak3,208,909,851 bytes. All748 CUDA/binary64 phases per path,248 commit tapes,
-six independent scores and two fresh paths pass. The constructor class is
-UNRESOLVED. Shared-v8 worker4836 starts21:26:52 UTC under the same parent;
-its result is pending. No paired resource or word-equivalence result follows
-from this one completed control.
+preflight checks all remaining contracts equal. Both immutable ec373e7
+workers now [complete and pass their original readers](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md).
+Job peak falls13,067,034,624 to7,253,889,024 bytes (44.49%); paid packed peak
+increases3,208,909,851 to3,501,994,887 (9.13%). All full4-MiB frames remain.
+Both seal124/install119, with identical64 candidate stored-mass/raw-division
+word arrays and model scores. The pair verifies1,496 phases per arithmetic
+path,496 commit tapes,236 fresh scores,12 independently read model scores
+and four fresh paths. Both constructor classes remain UNRESOLVED, and
+fixed-feature gradients/internal values remain specific to each Program.
+Terminal collection preserves the original registration and earlier v7 row;
+parent20984/final worker4836 are absent at22:04:23 UTC on2026-09-20. No job
+remains pending. The historical overlap with the old likelihood matrix is
+retained, so no exclusive-device timing comparison follows. This one memory
+tradeoff gives no n16 feasibility or general resource-dominance certificate.
 
 Completed CUDA frames now become immutable after their final write, preserving
 all bytes and labels. The extra copy extent and publication work are paid;

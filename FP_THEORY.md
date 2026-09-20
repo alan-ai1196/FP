@@ -2710,16 +2710,21 @@ quotient follows. Exact native audits and seven bounded owned CPU/AMP
 profile/install jobs now pass under their own finite declarations atbc209a8,
 including the existing likelihood encoding and v7 regressions. Every class
 decision stays UNRESOLVED. Smaller used operation frames coexist with a
-larger packed peak in the n3 comparison; no model-scale resource win follows.
+larger packed peak in the n3 comparison; that small audit alone establishes
+no model-scale resource win.
 Count encodings, compact decoding hardness, Foundation, ERC-1 and existing
 model experiments remain unchanged.
 
 The [matched n8 comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
-now has a complete current-source literal control at ec373e7: seal124,
-install119, job peak13,067,034,624 bytes and packed peak3,208,909,851 bytes.
-All748 CUDA/binary64 phases per path and the same-source independent reader
-pass. The shared worker remains running; no paired physical saving, word
-equivalence or complete-class certificate is inferred from the first row.
+now completes both current-source ec373e7 workers: both seal124/install119.
+Job peak falls13,067,034,624 to7,253,889,024 bytes (44.49%), while packed peak
+increases3,208,909,851 to3,501,994,887 (9.13%). Every full4-MiB frame remains
+owned. All64 candidate stored-mass/raw-division word arrays agree, and all
+1,496 CUDA/binary64 phases per path and same-source independent readers pass.
+Each graph retains its own full gradients and internal values; readout
+agreement is no complete-state quotient. Both constructor classes remain
+UNRESOLVED. This is an actual one-case memory tradeoff, with no general
+resource dominance, n16 feasibility or exclusive-device timing conclusion.
 
 The separate [fixed n16 v5 execution test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
 now completes at75e4f93 under its original16-GiB/two-hour envelope, with all

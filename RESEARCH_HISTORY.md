@@ -5560,3 +5560,32 @@ labels at n8 and14-24 at n16. These passive snapshot diagnostics explain why
 forest structure cannot simply be kept throughout the exposed evaluation
 stream. They do not measure worker resources, rerun models, change the live
 v7/v8 protocol, or supply a new native-state/AMP certificate.
+
+## 163. Shared marginal model reduces job memory but raises packed cost (2026-09-21)
+
+The fixed ec373e7 matched comparison completes both original v7/v8 workers
+on n8/c2 seed16. The shared graph reduces completed job peak from
+13,067,034,624 to7,253,889,024 bytes,44.49%, while increasing paid packed peak
+from3,208,909,851 to3,501,994,887 bytes,9.13%. The larger preparation workspace,
+node count and every full4-MiB frame remain paid. This is the first matched
+model-scale physical benefit for this graph, with an explicit unfavorable
+resource coordinate; it is not uniform dominance or an n16 result.
+
+Both Programs seal124/install119. All64 candidate stored-mass arrays and
+all64 raw-division arrays match exactly. Candidate/deployed unseen CE remains
+0.34296129149293825/0.6764169893250136, leaving the deployment-quality gap.
+The pair checks128 posterior forecasts,1,496 CUDA and1,496 binary64 phases,
+496 commit tapes and236 fresh scores. The original source reader verifies
+12 model scores/four fresh paths plus four retained strong-baseline scores.
+The full graphs retain different fixed-feature gradients/internal values;
+both constructor classes remain UNRESOLVED.
+
+Terminal collection captures the source journal once, verifies clean original
+dependencies and recomputed preflight, preserves every registration field
+and the previously collected v7 row, rereads both outcomes and recomputes the
+paired comparison. Parent20984 and final worker4836 are absent at2026-09-20
+22:04:23 UTC. All registered model processes are now terminal; neither this
+comparison nor the completed deployment matrix needs a restart. Historical
+overlap remains recorded, so no exclusive-device timing inference is made.
+See `experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md` and
+`evidence/minimal/FP_PAIR_MARGINAL_MODEL_EXPERIMENT.json`.

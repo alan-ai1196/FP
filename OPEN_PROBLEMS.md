@@ -33,8 +33,8 @@ representation, or declare and bound their approximation. Even changing
 linear parity coordinates at each snapshot finds a full-rank active block
 after7-11 fresh evaluation labels on the retained n8 tapes and14-24 at n16.
 The native closing-cycle witness gives next761/882 versus Bayes37/42.
-Keep the registered model comparison fixed; its full physical result remains
-necessary, and the structural theorem grants no new Runtime quotient.
+The fixed model comparison now has a complete physical result below;
+the structural theorem grants no new Runtime quotient.
 
 The [fixed positive partition-decoder question](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 is also settled in its exact all-history circuit class: bounded edge factors
@@ -45,32 +45,32 @@ The generic implication from hard masses to hard forecasts is false because
 normalization can cancel them. Keep these scopes separate from the existing
 P!=NP-conditional all-algorithm result and from actual resource measurements.
 
-**New model-construction question:** does the [positive shared marginal
-circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
-owned learner's execution? The incidence order is now settled for explicit
+**Remaining model-construction question:** how far does the [positive shared
+marginal circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve owned
+execution across cases and scales? The incidence order is settled for explicit
 independent world weights, and for the fixed-Gamma native world-posterior
 slot law: O(K+n^2) upper, K-1 read lower. Exact selected
 updates survive, but full gradients/caches differ and n8 nodes increase.
 Owned n2/n3 construction/profile/CPU/AMP/install paths now pass in seven
 bounded jobs, including likelihood encoding and v7 regressions. The actual
 n3 used frame shrinks while packed peak grows, and the n8 conservative
-preparation workspace is larger. Measure complete model-scale execution
-against a matched current-source literal control. The old class caps exclude
-v8; no graph substitution or old model-score transfer is allowed. This does
-not reopen the static ERC special-case program.
+preparation workspace is larger. The completed n8 comparison below establishes
+a whole-job memory benefit with a packed-memory regression. It does not
+establish n16 likelihood feasibility: even the smaller n16 schedule exceeds
+the old65,536-cell cap. The old class caps exclude v8; no graph substitution
+or old model-score transfer is allowed. This does not reopen the static ERC
+special-case program.
 
-The [next fixed comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
-registers two sequential current-source workers on n8/c2 seed16, v7 then v8,
-with identical caps and a common explicitly declared grammar. It includes
-the unfavorable v8 preparation workspace and full fixed phase padding.
-Preflight passes and execution is running at immutableec373e7. The [literal
-control now completes](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md):
-seal124/install119, job peak13,067,034,624 and packed peak3,208,909,851 bytes,
-with all748 phases per path and the independent score/fresh reader passing.
-Shared-v8 worker4836 starts21:26:52 UTC under parent20984. Its complete physical
-outcome is the remaining registered question; the current prefix establishes
-no paired resource saving. Keep both attempts and the fixed caps. The old
-completed likelihood matrix and all old model results stay unchanged.
+The [fixed comparison is resolved](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
+for both original ec373e7 workers on n8/c2 seed16. Job peak falls13,067,034,624
+to7,253,889,024 bytes (44.49%), but packed peak increases3,208,909,851 to
+3,501,994,887 (9.13%). Both seal124/install119 and match all64 candidate
+stored-mass/raw-division word arrays. All1,496 phases per arithmetic path
+and the same-source model/fresh readers pass. The unfavorable workspace
+and full frame padding remain paid. Both classes stay UNRESOLVED; complete
+states differ and no uniform resource or deployment-quality win follows.
+No registered worker remains live. Preserve both completed attempts and
+the independent completed likelihood matrix; neither needs a restart.
 
 The fixed n16 execution-recovery question is [resolved for its one declared
 case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current

@@ -61,6 +61,49 @@
       "baseline_checks": 4,
       "paired_comparison": "UNRESOLVED_MISSING_COMPLETE_PAIR",
       "scope": "One completed matched control; second worker observed live, without an outcome or resource-saving inference."
+    },
+    {
+      "observed_utc": "2026-09-20T22:04:23Z",
+      "status": "COMPLETE_EXECUTION_BOTH_VERIFIED",
+      "observed_absent_process_ids": [
+        20984,
+        4836
+      ],
+      "completed_worker_process_ids": [
+        6820,
+        4836
+      ],
+      "same_source_model_score_checks": 12,
+      "same_source_fresh_path_checks": 4,
+      "baseline_checks": 4,
+      "paired_comparison": {
+        "status": "BOTH_COMPLETE",
+        "candidate_mass_word_matches": 64,
+        "candidate_division_word_matches": 64,
+        "forecast_rows": 64,
+        "job_peaks_in_variant_order": [
+          13067034624,
+          7253889024
+        ],
+        "packed_peaks_in_variant_order": [
+          3208909851,
+          3501994887
+        ],
+        "install_cursors_in_variant_order": [
+          119,
+          119
+        ],
+        "candidate_unseen_CE_in_variant_order": [
+          0.34296129149293825,
+          0.34296129149293825
+        ],
+        "deployed_unseen_CE_in_variant_order": [
+          0.6764169893250136,
+          0.6764169893250136
+        ],
+        "scope": "two current-source executions on one retained tape; no universal resource or population ordering"
+      },
+      "scope": "Both original attempts are complete and independently verified at ec373e7; no restart or exclusive-device timing inference."
     }
   ]
 }

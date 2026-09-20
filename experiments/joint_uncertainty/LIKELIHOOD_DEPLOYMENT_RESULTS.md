@@ -89,5 +89,6 @@ Parent14264 and final worker4056 are absent at the terminal observation
 2026-09-20 20:58:54 UTC, and the source journal is `COMPLETE_EXECUTION`.
 This matrix is finished; do not restart it. It overlapped both the completed
 n16 recovery at `75e4f93` and the separately registered matched v7/v8 run at
-`ec373e7`. No exclusive-device timing claim is made. The matched experiment
-remains independent and continues under its original protocol.
+`ec373e7`. No exclusive-device timing claim is made. The independent matched
+experiment now [also completes](PAIR_MARGINAL_MODEL_RESULTS.md) under its
+original protocol.

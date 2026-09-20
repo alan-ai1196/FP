@@ -15,7 +15,8 @@ updates/1,192 full states pass. An actual closing-cycle update loses correlation
 next761/882 versus37/42. A separate linear-coordinate snapshot law shows one
 full-rank block after7-11 evaluation labels on the retained n8 tapes and14-24
 at n16. This is passive structural evidence, not a new model outcome, Runtime
-solver or AMP quotient; the live v8 experiment remains unchanged.
+solver or AMP quotient; the matched model experiment completes below under
+its unchanged protocol.
 
 **Current normalization result, 2026-09-21:** the [positive rational readout
 compiler](theory/proofs/POSITIVE_RATIONAL_READOUT.md) lowers any positive
@@ -84,20 +85,23 @@ CPU/AMP profiles, n3 likelihood encoding and v7 regressions. They all seal46
 and install22 with classes UNRESOLVED:308 forecasts,1,990 binary64 phases,
 1,138 CUDA phases and280 fresh scores are checked. The n3 used AMP frame
 shrinks but packed peak grows; n8 preparation also has a larger conservative
-workspace. The [two-worker matched model protocol](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
-now fixes n8/c2 seed16, current v7 then v8, under identical caps and the common
-grammar985/839/130/10,368/129. It is now running at immutableec373e7 in
-`F:\FP-pair-marginal-model-run`: parent20984 and first v7 worker6820 start
-at19:41:16/17 UTC on2026-09-20. The [literal control now completes](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md):
-seal124/install119, job peak13,067,034,624 bytes and packed peak3,208,909,851.
-It checks64 posterior forecasts,748 CUDA/binary64 phases per path and248
-commit tapes. The same-source reader checks six scores/two fresh paths and
-four baseline scores. Candidate/deployed unseen CE is0.3429612915/0.6764169893;
-the class remains UNRESOLVED. Shared-v8 worker4836 starts21:26:52 UTC and is
-verified live under the same parent at21:30:37. The canonical journal has
-one completed outcome; the paired comparison remains unresolved. Collect
-the second full outcome and reader before claiming physical savings.
-The separate likelihood matrix is complete; preserve its original registration.
+workspace. The [matched model comparison is now complete](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
+at immutable ec373e7: n8/c2 seed16, current v7 then v8, identical caps and the
+common grammar985/839/130/10,368/129. Job peak falls13,067,034,624 to7,253,889,024
+bytes (44.49%), while packed peak grows3,208,909,851 to3,501,994,887 (9.13%).
+Both retain every full4-MiB frame and seal124/install119. All64 candidate
+stored-mass and raw-division word arrays match. Candidate/deployed unseen CE
+is0.3429612915/0.6764169893 for both; the deployment-quality gap remains.
+Together the pair checks128 posterior forecasts,1,496 CUDA/binary64 phases
+per path,496 commit tapes and236 fresh scores. The same-source reader verifies
+12 scores/four fresh paths and four retained baseline scores, with original
+registration and the earlier v7 row preserved exactly. Each complete graph
+has its own gradients and AMP relation; both constructor classes remain
+UNRESOLVED. This is a measured memory tradeoff on one case, without uniform
+resource dominance, n16 feasibility or an exclusive-device timing claim.
+Parent20984 and final worker4836 are absent at22:04:23 UTC on2026-09-20;
+the terminal journal is COMPLETE_EXECUTION. Both this comparison and the
+separate likelihood matrix are finished. Preserve them; no restart is due.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
@@ -679,8 +683,9 @@ The terminal journal retains256 posterior forecasts,2,752 phases per path,
 scores/eight fresh paths and all controls. All four prior crossing intervals
 and eight risk envelopes hold. Every constructor class stays UNRESOLVED.
 Parent14264 and worker4056 are absent at20:58:54 UTC on2026-09-20; the journal
-is COMPLETE_EXECUTION. Only the independent matched v7/v8 experiment remains
-running. Preserve both protocols and do not restart the completed matrix.
+is COMPLETE_EXECUTION. The independent matched v7/v8 experiment is also
+complete. No registered model job remains live; preserve both protocols
+and do not restart the completed attempts.
 
 After registration, [exact conditional analysis](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired crossings119/67/54/50 if the required owned computations and
