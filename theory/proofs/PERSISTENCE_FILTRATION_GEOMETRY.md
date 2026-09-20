@@ -175,6 +175,13 @@ ordering between the two coefficients is claimed. Larger bets can lose more
 on adverse labels. Choosing a useful common predictable coefficient is a
 statistical and resource question within the existing contract.
 
+The later [owned mass-box refinement](CURRENT_MASS_PERSISTENCE_BOUND.md)
+closes that implementation premise directly from whole-domain mathematical
+mass bounds, including failed attempts. It rechecks current-state bounds
+before another context. Bounded CPU/CUDA profile fixtures at13/8 now install
+at8; this is separate development evidence, not a new n8 matrix result or
+finite-horizon power ordering.
+
 ## 6. Evidence and relation to established statistics
 
 Run `python -B experiments/joint_uncertainty/persistence_filtration.py --write`.

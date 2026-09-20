@@ -69,6 +69,17 @@ canonical journal and independent b85b39d analysis contain every outcome;
 parent23668 and all four workers are terminal. No baseline reruns, new IID
 claim, n16 recovery or new complete release follow from this result.
 
+[Current mass-box persistence bounds](theory/proofs/CURRENT_MASS_PERSISTENCE_BOUND.md)
+now refine a failed class-cap bound from owned complete-domain enclosures.
+The new proof-scope field distinguishes current-state from class-wide bounds;
+ACTIVE refinements are rechecked before another context. Same path/null,
+alpha, complete lineage and install ownership remain.2025 exact box pairs
+and181,440 normalized corner checks pass. Bounded n2 CPU/CUDA profiles admit
+bound13/8 and install at8;280 phases per path and12 fresh scores per job pass.
+A still-native-safe update that invalidates the tighter bound correctly stops
+its identity. Whole-domain and prepaid-work refusals, plus all three existing
+persistence suites, pass. No new n8 matrix or complete release is claimed.
+
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,
 intermediates and failure checks remain; padding is never decoded and the
@@ -131,8 +142,10 @@ current Runtime fixes its rule before ingress and is not vulnerable to that
 substitution. Exact audit checks27,725 factor tables,134,450 null-vertex
 expectations,256 context-bet tables and384 continuous native units.
 A common global bound13/8 follows for the known likelihood bank against
-uniform with its0.001 AMP probability relation. This is a possible future
-preregistration, not a change to the running bound6 matrix or a power claim.
+uniform with its0.001 AMP probability relation. The newer owned mass-box
+solver separately proves current all-context physical ranges and admits13/8
+in development fixtures. The completed n8 matrix keeps bound6; no n8 result
+or power ordering for the new coefficient is inferred.
 
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 is a theorem/passive audit, with no Runtime analyzer expansion. Distribution-wide

@@ -29,6 +29,7 @@ from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresol
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
 from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, CUDA_PATH, CROSSINGS, LIVE_STATUSES, next_wealth, threshold_crossed
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
+from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
 from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix, widened_state
@@ -1601,6 +1602,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             return stopped
 
     def _check_persistence_lineages(self, identity: PersistenceIdentity):
+        if identity.ratio_bound_kind not in ('native-class-cap', 'current-native-mass-box'):
+            raise ContractError('persistence lost its registered ratio-bound proof scope')
         base = self._candidates.get(identity.base_lineage_id)
         candidate = self._candidates.get(identity.candidate_lineage_id)
         if (self._deployed_id != identity.base_lineage_id or base is None or candidate is None
@@ -1677,6 +1680,41 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         raise ArithmeticUnresolved('current binary64 queue violates its whole-domain invariant')
             result.append(bound)
         return tuple(result)
+
+    def _persistence_mass_ratio(self, identity, base, candidate):
+        """Paid refinement from owned whole-domain bounds, before next ingress.
+
+        The original class cap is tried first at admission. This refinement
+        applies to current learners and must be refreshed while evidence is
+        active. It never relies on a successful next-query AMP relation.
+        """
+        rows = 1 if self._contract.source_domain is None else len(self._contract.source_domain)
+        labels = len(self._contract.semantics.base)
+        bits = self._contract.reference_integer_bits
+        self._event_router.charge_work('information', {'work': mass_box_work(rows, labels)
+            +log_enclosure_work(identity.rule.log_terms)+compare_exact_work()},
+            f'{identity.identity_id}:current-whole-domain-mass-ratio:{identity.cursor}')
+        if identity.rule.score_path == REFERENCE_PATH:
+            boxes = tuple(tuple(tuple((m.lower, m.upper) for m in bound.masses)
+                                for bound in state.range_evidence) for state in (base, candidate))
+        else:
+            if identity.rule.score_path == FLOAT64_PATH:
+                bounds = (identity.base_float64_range, identity.candidate_float64_range)
+                read = lambda value: value.exact
+            else:
+                bounds = (identity.base_cuda_range, identity.candidate_cuda_range)
+                read = lambda value: value
+            boxes = tuple(tuple(tuple((read(lower), read(upper))
+                                      for lower, upper in zip(bound.base_lower, bound.masses_upper))
+                                for bound in side) for side in bounds)
+        if (any(len(side) != rows for side in boxes)
+                or any(len(row) != labels for side in boxes for row in side)):
+            raise ContractError('owned mass bounds lost complete source/label coverage')
+        ratio = paired_mass_ratio_bound(*boxes, bit_limit=bits)
+        bound = log_enclosure(ratio, terms=identity.rule.log_terms, bit_limit=bits)
+        if compare_exact(bound.upper, identity.rule.bound, bit_limit=bits) > 0:
+            raise ArithmeticUnresolved('current whole-domain mass boxes do not prove the registered gain bound')
+        return ratio
 
     def admit_reference_persistence(self, candidate_id: str, rule_id: str) -> PersistenceResult:
         """Admit future reference evidence before context ingress; no AMP token."""
@@ -1791,7 +1829,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     ratio_bound = ratio
             bound = log_enclosure(ratio_bound, terms=rule.log_terms, bit_limit=bit_limit)
             if compare_exact(bound.upper, rule.bound, bit_limit=bit_limit) > 0:
-                raise ArithmeticUnresolved('registered gain bound is not proved over the full native range class')
+                ratio_bound = self._persistence_mass_ratio(identity, base, candidate)
+                identity = replace(identity, ratio_bound_kind='current-native-mass-box')
             identity = self._save_persistence(replace(identity, ratio_bound=ratio_bound, status='ACTIVE',
                 reason=f'future {score_path} epochs admitted under the retained external stochastic-law assumption'))
         except HostExecutionUnresolved:
@@ -1915,6 +1954,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                             'conditional CUDA stored-mass mean-null crossed; complete AMP bridge, installation and release remain unverified'))
                 elif finished and epochs == identity.rule.max_epochs:
                     next_identity = replace(next_identity, status='UNRESOLVED', reason='finite persistence horizon ended without crossing; no rejection')
+                if next_identity.status == 'ACTIVE' and next_identity.ratio_bound_kind == 'current-native-mass-box':
+                    next_identity = replace(next_identity, ratio_bound=self._persistence_mass_ratio(next_identity,
+                        successors[identity.base_lineage_id], successors[identity.candidate_lineage_id]))
                 self._save_persistence(next_identity)
             except HostExecutionUnresolved:
                 raise

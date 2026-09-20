@@ -2614,3 +2614,16 @@ even aliases held by failure tracebacks, and up to six complete captures are
 charged. This is a physical representation/observation change with different
 work and residency costs, not a new semantic action, erased learner state,
 helper authority or proof of model scaling.
+
+The [current mass-box bound](theory/proofs/CURRENT_MASS_PERSISTENCE_BOUND.md)
+strengthens persistence admission using already owned positive mass intervals.
+For masses L_y<=m_y<=U_y, proper probability has sharp box bounds
+L_y/(L_y+sum_(z!=y)U_z) and U_y/(U_y+sum_(z!=y)L_z). One maximum candidate/base
+ratio across all domain rows supplies a common pre-context gain bound.
+The physical intervals describe the declared mathematical rounded predictor,
+including failing attempts; successful-query closeness is not substituted.
+Current-state bounds are refreshed while ACTIVE, with honest termination if
+an update or proof budget invalidates them. The original class-cap proof,
+stopped mean-null and wealth rule remain. Exact corner checking and bounded
+CPU/CUDA profile/install evidence establish the implementation scope, not
+new n8 model performance or a finite-horizon power ordering.

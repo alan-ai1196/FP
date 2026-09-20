@@ -521,6 +521,20 @@ workers are terminal; do not restart them. Preserve the original90f3883
 failure. These retained tapes establish no new IID success rate, isolated
 mechanism effect, n16 recovery or full Runtime release.
 
+The deployment obstacle now has an [owned pre-context mass-bound refinement](theory/proofs/CURRENT_MASS_PERSISTENCE_BOUND.md).
+It derives one common probability-ratio bound from the existing complete
+native mass enclosures, including mathematical forecasts on failing next
+attempts. The old class-cap proof remains the cheap first route; a tighter
+current-state proof is marked in the paid identity and refreshed after each
+active event. If it fails, that identity stops before next ingress. No query-
+conditional bet or changed null is introduced. The exact2025-box audit checks
+181,440 corner ratios. Bounded CPU/CUDA n2 profiles both install at8 after
+six fresh labels, versus22 in retained B6 fixtures; each checks280 binary64
+phases and the CUDA job280 device phases. Reference, paired CPU and CUDA
+persistence regressions pass. This is development reachability, not a new n8
+outcome. Register the next model procedure at bound13/8 before executing it;
+keep all four completed bound6 outcomes and strong controls.
+
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
 host workspace copies the phase span and decodes only initialized floating
@@ -592,8 +606,10 @@ current Runtime fixes its rule before ingress and is not vulnerable to that
 substitution. Exact audit checks27,725 factor tables,134,450 null-vertex
 expectations,256 context-bet tables and384 continuous native units.
 A common global bound13/8 follows for the known likelihood bank against
-uniform with its0.001 AMP probability relation. This is a possible future
-preregistration, not a change to the running bound6 matrix or a power claim.
+uniform with its0.001 AMP probability relation. The newer owned mass-box
+solver separately proves current all-context physical ranges and admits13/8
+in development fixtures. The completed n8 matrix keeps bound6; no n8 result
+or power ordering for the new coefficient is inferred.
 
 The [normalized likelihood theorem](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 now characterizes the guarantee over all interior weights: a positive-rate

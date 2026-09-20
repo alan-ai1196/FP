@@ -1,0 +1,206 @@
+{
+  "status": "DEVELOPMENT_MASS_BOUND_AUDIT_PASS",
+  "exact": {
+    "box_pairs": 2025,
+    "normalized_corner_ratio_checks": 181440,
+    "sharp_probability_endpoints": 306,
+    "malformed_or_budget_refusals": 8,
+    "uniform_vs_mass_1_to_9_ratio_bound": "5"
+  },
+  "current_state_refusal": {
+    "initial_ratio": "1",
+    "updated_candidate_theta": "4",
+    "updated_native_range_still_safe": true,
+    "refinement_stops_before_next_context": true,
+    "current_zero_gain_retained_and_spent_alpha_not_refunded": true,
+    "no_revival_on_another_ordinary_event": true
+  },
+  "workers": [
+    {
+      "path": "cpu",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 36548608,
+        "peak_job_commit": 37785600,
+        "user_100ns": 49218750,
+        "kernel_100ns": 1406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24384,
+        "process_creation_100ns": 134343894194973480
+      },
+      "result": {
+        "status": "OWNED_REFINED_GAIN_PROFILE_INSTALL_PASS",
+        "path": "cpu",
+        "registered_bound": "13/8",
+        "registered_bet_fraction": "3/4",
+        "registered_gain_coefficient": "6/13",
+        "bound_computations": {
+          "binary64-stored-mass": {
+            "count": 6,
+            "maximum_ratio": "5629499534213123/1125899906842624"
+          },
+          "exact-reference": {
+            "count": 6,
+            "maximum_ratio": "5"
+          }
+        },
+        "pre_context_or_post_previous_target_cut_checked": true,
+        "complete_owned_result": {
+          "n": 2,
+          "profiles": true,
+          "profile_passes": 1,
+          "status": "SEALED_REFERENCE_STREAM",
+          "native_posterior_forecasts": 44,
+          "independent_binary64_phases": 280,
+          "CUDA": null,
+          "profile_events": 2,
+          "retained_observations": 46,
+          "fresh_score_checks": 12,
+          "install_cursor": 8,
+          "class_certificate": false,
+          "historical_class": "UNRESOLVED",
+          "binary64_maxima": {
+            "state_error": "1995419197093669964767213409778721927547/1872201906766455493381820031913160560728810133169111040",
+            "native_error": "115948205403227/57953201611272206848255590400",
+            "normalizer_error": "9/4503599627370496",
+            "probability_error": "112117/1196700996584515567616",
+            "division_error": "40533006786842833/405648192073033453514941299425280"
+          },
+          "CUDA_maxima": null,
+          "packed_peak": 1730153,
+          "device": null,
+          "host": {
+            "process_id": 24384,
+            "creation_100ns": 134343894194973480,
+            "lifetime_process_commit_peak": 36286464,
+            "job_commit_peak": 37523456,
+            "process_user_100ns": 49062500,
+            "process_kernel_100ns": 1406250,
+            "job_user_100ns": 49062500,
+            "job_kernel_100ns": 1406250
+          },
+          "process_id": 24384,
+          "host_scope": "bind to completed job separately"
+        },
+        "process_id": 24384
+      }
+    },
+    {
+      "path": "cuda",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2390618112,
+        "peak_job_commit": 2391838720,
+        "user_100ns": 172187500,
+        "kernel_100ns": 14843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26268,
+        "process_creation_100ns": 134343894245431350
+      },
+      "result": {
+        "status": "OWNED_REFINED_GAIN_PROFILE_INSTALL_PASS",
+        "path": "cuda",
+        "registered_bound": "13/8",
+        "registered_bet_fraction": "3/4",
+        "registered_gain_coefficient": "6/13",
+        "bound_computations": {
+          "cuda-half-single-stored-mass": {
+            "count": 6,
+            "maximum_ratio": "5"
+          },
+          "exact-reference": {
+            "count": 6,
+            "maximum_ratio": "5"
+          }
+        },
+        "pre_context_or_post_previous_target_cut_checked": true,
+        "complete_owned_result": {
+          "n": 2,
+          "profiles": true,
+          "profile_passes": 1,
+          "status": "SEALED_CUDA_STREAM",
+          "native_posterior_forecasts": 44,
+          "independent_binary64_phases": 280,
+          "CUDA": {
+            "phases": 280,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 18370,
+            "maximum_output_cells": 207
+          },
+          "profile_events": 2,
+          "retained_observations": 46,
+          "fresh_score_checks": 12,
+          "install_cursor": 8,
+          "class_certificate": false,
+          "historical_class": "UNRESOLVED",
+          "binary64_maxima": {
+            "state_error": "1995419197093669964767213409778721927547/1872201906766455493381820031913160560728810133169111040",
+            "native_error": "115948205403227/57953201611272206848255590400",
+            "normalizer_error": "9/4503599627370496",
+            "probability_error": "112117/1196700996584515567616",
+            "division_error": "40533006786842833/405648192073033453514941299425280"
+          },
+          "CUDA_maxima": {
+            "state_error": "2041/20971520",
+            "native_error": "4/3281",
+            "normalizer_error": "319/262144",
+            "probability_error": "213457/17203982558",
+            "division_error": "209715/7330078916608"
+          },
+          "packed_peak": 75152017,
+          "device": {
+            "identity": {
+              "runtime_version": 13040,
+              "driver_api_version": 13040,
+              "driver_version": "616.92",
+              "pci_bus_id": "0000:0B:00.0",
+              "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+              "physical_vram_bytes": 25769803776
+            },
+            "execution_identity": [
+              "2.12.0+cu132",
+              "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+              "13.2",
+              "NVIDIA GeForce RTX 3090",
+              [
+                8,
+                6
+              ]
+            ],
+            "physical_vram_upper": 25769803776,
+            "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+          },
+          "host": {
+            "process_id": 26268,
+            "creation_100ns": 134343894245431350,
+            "lifetime_process_commit_peak": 2390618112,
+            "job_commit_peak": 2391838720,
+            "process_user_100ns": 168593750,
+            "process_kernel_100ns": 14062500,
+            "job_user_100ns": 168593750,
+            "job_kernel_100ns": 14062500
+          },
+          "process_id": 26268,
+          "host_scope": "bind to completed job separately"
+        },
+        "process_id": 26268
+      }
+    }
+  ],
+  "domain_and_work_refusals": {
+    "unseen_bad_context_prevents_tight_admission": true,
+    "later_harmless_context_does_not_revive_failed_identity": true,
+    "refinement_work_paid_before_arithmetic": true,
+    "failed_refinement_admission_keeps_spent_alpha": true,
+    "work_refusal_cap": 6864
+  },
+  "scope": "working-tree development evidence committed with implementation; exact box audit and bounded owned profile/install fixtures, no n8 model result"
+}

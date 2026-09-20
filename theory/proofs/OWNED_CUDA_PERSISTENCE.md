@@ -200,6 +200,13 @@ CUDA root. The separate [resident installation](OWNED_CUDA_INSTALLATION.md)
 now executes its own full transition checks from these owned identities;
 complete device resource/run/release closure remains open.
 
+The later [current mass-box solver](CURRENT_MASS_PERSISTENCE_BOUND.md) adds
+an owned fallback when the class-cap gain bound is too loose. It uses the
+already retained whole-domain mathematical mass bounds, not closeness of a
+successful query. Its current-state proof is refreshed while ACTIVE; failure
+stops the identity before next ingress. The above stopped-null, exact actual
+forecast conformance and installation requirements continue to apply.
+
 ## 5. Minimal executed evidence
 
 The audit checks 16 mixed PRODUCT/SUM boxes against 400 independent rounded

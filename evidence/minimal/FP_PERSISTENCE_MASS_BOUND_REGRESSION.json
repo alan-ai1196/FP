@@ -1,0 +1,196 @@
+{
+  "status": "DEVELOPMENT_CURRENT_MASS_PERSISTENCE_REGRESSIONS_PASS",
+  "scope": "existing reference, binary64 and CUDA persistence suites on the current development implementation; not a full release or new model matrix",
+  "reference": {
+    "status": "PASS",
+    "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+    "null_id": "bounded-pre-context-stopped-reference-epoch-mean-v1",
+    "scores": {
+      "sealed_probability_and_Decimal_log_checks": 12,
+      "registered_epoch_events": 3,
+      "optimizer_update_unit": 2,
+      "completed_epochs": 4,
+      "optimizer_commits": 6,
+      "committed_successor_probabilities_differ_from_scored_predictions": 6,
+      "independent_exact_dyadic_wealth_checks": 12
+    },
+    "crossing": {
+      "positive_crossing_cursor": 6,
+      "positive_crossing_wealth_lower": "298761/65536",
+      "H1_epochs_are_distinct_from_optimizer_commits": true,
+      "crossing_at_cursor_3_with_optimizer_unit_count_1_is_legal": true,
+      "continued_lineages_track_after_statistic_stops": true,
+      "retirement_invalidates_current_crossing_without_refund": true,
+      "equal_forecasts_end_without_crossing_or_rejection": true,
+      "reference_crossing_cannot_authorize_install": true
+    },
+    "null": {
+      "complete_fair_label_paths": 32,
+      "actual_ordinary_events": 160,
+      "exact_conditional_lower_wealth_inequalities": 31,
+      "first_crossing_probability": "1/8",
+      "allocated_alpha": "1/2",
+      "null_justification": "fixed ratio product (4/3)*(2/3)=8/9<1 under fair independent labels"
+    },
+    "freshness": {
+      "shared_fresh_event_is_scored_for_every_preadmitted_identity": true,
+      "target_time_admission_cancellation_and_old_ID_backfill_rejected": true,
+      "cancel_retire_and_newborn_have_no_alpha_or_wealth_refund": true,
+      "global_allocated_alpha": "3/4",
+      "explicit_external_stochastic_assumption_required": true,
+      "profile_and_proposal_old_observations_are_not_fresh_persistence": true
+    },
+    "failures": {
+      "real_integer_cap_stops_identity_without_skipping_outcome": true,
+      "real_work_cap_stops_identity_while_ordinary_continuation_remains_legal": true,
+      "failed_numeric_and_physical_admission_keep_spent_alpha": true,
+      "unexpected_score_failure_keeps_target_and_halts_ordinary_prefix": true,
+      "ordinary_commit_failure_after_crossing_invalidates_current_evidence": true,
+      "first_crossing_workspace_failure_cannot_activate_or_resume_evidence": true,
+      "ordinary_publication_failure_revokes_all_staged_crossings": true,
+      "failed_identity_cannot_resume_or_inherit_prior_wealth": true
+    },
+    "not_closed": [
+      "external producer stochastic-law verification",
+      "paired reference and actual AMP persistence",
+      "full ERC-1 physical resources",
+      "atomic installation and complete Runtime release"
+    ]
+  },
+  "binary64": {
+    "status": "PASS",
+    "scope": "owned exact-reference and actual CPU binary64 stored-mass persistence",
+    "range": {
+      "independent_box_declarations": 16,
+      "independent_direct_float_context_checks": 400,
+      "full_delayed_box_cases": 125,
+      "upward_source_rounding_base_underflow_and_final_division_underflow_rejected": true
+    },
+    "scores": {
+      "same_event_independent_score_and_wealth_checks": 24,
+      "events_with_different_reference_and_finite_probabilities": 12,
+      "stored_mass_probabilities_differing_from_rounded_output": 12,
+      "post_optimizer_range_recertifications": 6,
+      "independent_four_trajectory_phase_checks": 62
+    },
+    "nontransfer": {
+      "delta": "1/18014398509481984",
+      "normalizer_cap": "36028797018963969/18014398509481984",
+      "reference_crossing_cursor": 5,
+      "reference_wealth_lower": "322095/65536",
+      "finite_mass_gain": "0",
+      "finite_wealth": "1",
+      "reference_crossing_cannot_transfer_to_physical_path": true
+    },
+    "null": {
+      "complete_fair_label_paths": 32,
+      "ordinary_events": 160,
+      "two_path_conditional_wealth_inequalities": 62,
+      "path_crossing_probabilities": [
+        "1/32",
+        "1/32"
+      ],
+      "each_path_alpha": "1/3",
+      "null_justification": "both fixed stored-mass ratio products are (4/3)*(2/3)=8/9<1 under fair independent labels",
+      "two_actual_crossings_and_post_crossing_finite_failure_checked": true
+    },
+    "failures": {
+      "observed_safe_context_cannot_substitute_for_whole_domain": true,
+      "rounded_optimizer_invalidates_future_domain_before_next_context": true,
+      "reference_integer_exhaustion_cannot_borrow_finite_evidence": true,
+      "unowned_finite_first_crossing_cannot_authorize_pair": true,
+      "actual_work_and_byte_cap_admission_failures_keep_alpha": true,
+      "different_start_boundaries_and_wrong_score_paths_cannot_pair": true,
+      "cancelled_physical_identity_cannot_recycle_alpha": true
+    },
+    "freshness": {
+      "profile_events": 4,
+      "original_profile_observations": 2,
+      "new_identity_start_cursor": 2,
+      "first_fresh_observation": "observation-2",
+      "complete_profile_states_retained_without_wealth_or_alpha_transfer": true
+    },
+    "not_closed": [
+      "external producer law verification",
+      "target AMP",
+      "full ERC-1 resources",
+      "atomic install and complete Runtime release"
+    ]
+  },
+  "CUDA": {
+    "status": "PASS",
+    "scope": "current CUDA whole-domain bounds, exact actual forecasts and owned fresh same-path evidence; no install/release",
+    "range": {
+      "independent_product_sum_boxes": 16,
+      "independent_context_checks": 400,
+      "complete_recurrent_queue_checks": 125,
+      "full_tail_unused_slot_source_rounding_product_overflow_and_both_normalizers_rejected": true,
+      "two_stage_source_witness": "33570817/67108864"
+    },
+    "null": {
+      "complete_fair_label_paths": 32,
+      "ordinary_events": 160,
+      "independent_owned_CUDA_phase_checks": 832,
+      "two_path_conditional_wealth_inequalities": 62,
+      "crossing_probabilities": [
+        "1/32",
+        "1/32"
+      ],
+      "each_path_alpha": "1/3",
+      "external_null": "fair independent labels; both fixed mass ratio products are 8/9 < 1"
+    },
+    "scores": {
+      "phases": 62,
+      "actual_arena_bytes": 16777216,
+      "largest_phase_frame_used": 5908,
+      "maximum_output_cells": 47,
+      "independent_score_log_and_wealth_checks": 24,
+      "optimizer_range_recomputations": 6,
+      "reference_CUDA_score_differences": 12,
+      "proper_probability_differs_from_raw_division": 12,
+      "unchanged_theta_reuses_its_owned_range": true,
+      "CPU_binary64_phases": 62
+    },
+    "crossing": {
+      "crossing_cursor": 6,
+      "phases_before_failure": 36,
+      "both_published_paths_and_spent_alpha_preserved_after_injected_CUDA_commit_failure": true
+    },
+    "nontransfer": {
+      "delta": "1/33554432",
+      "reference_crossing_cursor": 5,
+      "CUDA_gain": "0",
+      "CUDA_wealth": "1",
+      "reference_evidence_transfer_rejected": true,
+      "phases": 42
+    },
+    "range-admission": {
+      "reference_safe_but_actual_half_range_unproved": true,
+      "failed_admission_alpha_retained": "1/4",
+      "harmless_context_does_not_reactivate_failed_identity": true
+    },
+    "range-refresh": {
+      "exact_new_theta": "3/10",
+      "future_half_theta": "1229/4096",
+      "ordinary_successor_published_but_unproved_future_CUDA_evidence_stopped": true
+    },
+    "double-round": {
+      "exact_source": "33570817/67108864",
+      "actual_R16_R32_source": "1/2",
+      "wrong_direct_R16_source": "1025/2048",
+      "owned_bound_and_actual_forecast_preserve_both_roundings": true
+    },
+    "mismatch": {
+      "one_ULP_forecast_error_within_reference_tolerance_rejected_before_target": true,
+      "actual_output_retained_without_repair_from_reference": true
+    },
+    "freshness": {
+      "cancel_readmit_retire_cannot_refund_or_inherit_alpha_wealth_or_old_targets": true,
+      "different_starting_device_trajectories_cannot_pair": true
+    },
+    "failed-crossing": {
+      "retained_threshold_score_does_not_replace_failed_owned_crossing_state": true,
+      "ordinary_continuation_does_not_resume_failed_identity": true
+    }
+  }
+}

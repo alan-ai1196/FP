@@ -4748,3 +4748,51 @@ Every completed n8 model ran the earlier86083a0 source; none used these
 optimizations. No previous n16 failure is erased and no recovery is claimed.
 The next research question remains useful deployment and complete model
 execution under a separately declared, semantically valid procedure.
+
+## 136. Close the pre-context range gap for a tighter owned persistence rule
+
+The completed n8 study isolates fresh-evidence delay after exact posterior
+learning. The previous13/8 likelihood bound used successful AMP closeness;
+that alone cannot define a bounded score on a failing next attempt. Existing
+Runtime admission instead used binary base one and R16 to prove log15, so it
+could not admit13/8. This is a loose solver bound, not a Foundation failure.
+
+For positive mass intervals L<=m<=U, normalized probability has sharp box
+endpoints L_y/(L_y+sum_other U) and U_y/(U_y+sum_other L). Maximizing the paired
+ratios across every declared source row gives one common pre-context bound.
+The proof uses native positive masses and already owned domain enclosures;
+no context-specific coefficient, new source or architecture action enters.
+Physical enclosures concern the mathematical rounded predictor on failing
+attempts as well as successes. Against uniform, candidate masses in[1,9]
+give K5, with log5<13/8 independently of a next-query tolerance check.
+
+Runtime keeps the cheap original class-cap proof, then pays for this
+refinement when necessary. The existing identity now records whether its
+ratio bound is class-wide or current-state. An ACTIVE current-state proof
+is refreshed after the event and before next ingress. Current event scoring
+uses the old pre-context bound. Failure leaves the identity unresolved,
+spent alpha and actual event history retained. Crossing stops the statistic;
+ordinary lineage and install checks still apply. No rule is changed in place.
+
+Exact enumeration checks2025 paired boxes,181,440 normalized corner ratios,
+306 sharp endpoints and eight malformed/budget refusals. An actual candidate
+starts uniform under B1/4, updates to theta4 while still native-range-safe,
+and correctly loses its tighter evidence identity before another context.
+A harmless actual context cannot overcome an unsafe alternative domain row.
+A calibrated work cap refuses refinement before its arithmetic executes and
+retains the allocated alpha.
+
+Two bounded n2 profile/install jobs, CPU and RTX3090, register B13/8 with the
+existing3/4 fraction, yielding common coefficient6/13. Both seal/install at8
+after six fresh labels; each checks280 binary64 phases and12 fresh scores,
+and the CUDA job also checks280 device phases. Every bound calculation's
+information cut is checked. Retained B6 fixtures installed at22 after20
+fresh labels; no baseline is rerun. Maximum job commitment is37,785,600 bytes
+for CPU and2,391,838,720 for CUDA, within512MiB/4GiB and180 seconds.
+
+Full reference, paired CPU and CUDA persistence suites pass, retaining their
+existing fair-null, failure, nontransfer and same-path evidence checks. The
+current solver is a validated route to a separately registered deployment
+experiment. It establishes neither n8 improvement nor a power ordering, and
+does not transfer an uninterrupted or differently stopped epoch-null to the
+new procedure. The completed four-case bound6 study remains unchanged.

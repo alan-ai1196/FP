@@ -60,8 +60,13 @@ to adapting that coefficient after the context. Improve paid global bounds
 or common predictable choices, or explicitly declare the additional law a
 new method uses. The owned likelihood bank admits global gain bound13/8
 against uniform under its0.001 AMP probability relation, but the registered
-matrix keeps bound6. No measured installation improvement or power ordering
-between these two bets is established.
+completed n8 matrix keeps bound6. A new [owned mass-box proof](theory/proofs/CURRENT_MASS_PERSISTENCE_BOUND.md)
+now closes the all-branch pre-context range obligation independently of
+successful-query AMP closeness. Current bounds are rechecked after updates;
+failed refinements stop before next ingress. Bounded CPU/CUDA n2 profiles
+install at8 rather than the retained bound6 fixture's22. Useful n8 deployment
+improvement and a power ordering remain unproved. Register and execute the
+next model test; do not replace these questions with a bet-menu study.
 
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and

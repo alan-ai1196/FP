@@ -55,6 +55,13 @@ For example, a random gain equal to `1` with probability `9/10` and `-9`
 with probability `1/10` has mean zero. Clipping it into `[-1,1]` produces
 mean `4/5`, so the original mean-null no longer authorizes that statistic.
 
+The class-cap formula remains Runtime's cheap first proof. The later
+[current mass-box refinement](CURRENT_MASS_PERSISTENCE_BOUND.md) can establish
+a smaller registered bound for the actual owned pair when this class proof
+is too loose. That proof is retained as current-state scope and refreshed
+before further evidence. An unresolved class-wide bound does not imply that
+no such owned bound exists. The stopped statistic and null below are unchanged.
+
 ## 2. The actual filtration and the admitted epoch
 
 Let F contain the complete revealed Runtime history: inputs and targets,

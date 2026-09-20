@@ -54,6 +54,7 @@ class PersistenceIdentity:
     current_candidate_float64: Float64LearnerState | None = None
     base_float64_range: tuple[Float64Range, ...] = ()
     candidate_float64_range: tuple[Float64Range, ...] = ()
+    ratio_bound_kind: str = 'native-class-cap'
 
 
 @dataclass(frozen=True)
