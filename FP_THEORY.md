@@ -2704,3 +2704,12 @@ quotient follows. Exact native audits pass; the new graph requires its own
 finite constructor declaration and owned physical checks. Count encodings,
 compact decoding hardness, Foundation, ERC-1 and existing experiments remain
 unchanged. This is not a measured GPU or model-quality result.
+
+The separate [fixed n16 v5 execution test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
+now completes at75e4f93 under its original16-GiB/two-hour envelope, with all
+1,958 CUDA and1,958 binary64 phases checked and an8,229,326,848-byte job peak.
+It seals396 and installs216; its same-source independent score/fresh reader
+passes. This is one empirical implementation recovery, with all eight old
+failures retained. Candidate/deployed unseen CE0.349567/0.445247 remains
+worse than the strong posterior0.326940. No isolated optimization effect,
+class proof, likelihood-bank scaling or model superiority is inferred.

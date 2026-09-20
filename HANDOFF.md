@@ -26,17 +26,16 @@ Both original report failures remain retained. This targets
 repeated complete-history copies, with no information pruning or n16 recovery
 claim. The live likelihood matrix remains at immutable8ccacc0.
 
-The next [fixed whole-worker test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
-registers one new execution of the first old n16/c2 failure: seed16, rate1.
-The existing v5 model worker/data files and original16-GiB/two-hour envelope
-stay fixed; all eight old n16 failures and posterior controls remain intact.
-This is a current-implementation recovery question, not a new model or a
-single-optimization attribution. It started at immutable75e4f93 on
-2026-09-20 at18:18:57 UTC, parent27688/worker2660, in
-`F:\FP-model-storage-recovery-run`. The [canonical journal](evidence/minimal/FP_MODEL_STORAGE_RECOVERY_EXPERIMENT.json)
-has zero completed outcomes at launch. Its separate [process observation](evidence/minimal/FP_MODEL_STORAGE_RECOVERY_EXECUTION.json)
-records overlap with likelihood worker6920. Collect the same-source terminal
-journal and reader result; retain any failure without an automatic retry.
+The [fixed whole-worker test is complete](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
+at immutable75e4f93: n16/c2 seed16 rate1 seals396, passes1,958 CUDA and1,958
+binary64 phases, and installs216 after76 fresh events. Completed job peak is
+8,229,326,848 bytes under the original16-GiB cap; the same-source reader
+passes all four model scores and both fresh trajectories. Candidate/deployed
+unseen CE is0.349567/0.445247 versus the retained strong AMP posterior0.326940.
+This recovers one actual v5 execution, without a model win or isolated-change
+attribution. All eight old failures stay unchanged. The terminal journal and
+launch process identity are collected and verified; no retry is due.
+The separate8ccacc0 likelihood matrix continues unchanged.
 
 ## 1. Current research state
 

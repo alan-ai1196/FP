@@ -12,22 +12,15 @@ check its actual profile, reference/AMP bridge, resources and installation.
 The old class caps exclude it; no graph substitution or old model-score
 transfer is allowed. This does not reopen the static ERC special-case program.
 
-**Active execution question:** does sharing complete immutable CUDA evidence
-reduce measured whole-worker memory enough to improve scale? The [preservation
-argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) and exact failure
-checks now pass, as do both actual profile/install paths and six CUDA failure
-workers. The fixed host comparison now passes with62.2% lower job peak;
-both original report failures remain retained. Measure a complete model
-worker separately; metadata and other mutable buffers are still costs.
-Do not infer n16 recovery from the completed-frame payload formula.
-
-The [one-case model recovery protocol](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
-now fixes the first old n16/c2 failure, seed16/rate1, for one new execution
-under its original caps and unchanged worker/data. Its result must include
-all final auditors. No other old failure or baseline is filled or rerun.
-The job is running at immutable75e4f93, parent27688/worker2660, with zero
-completed outcomes in the initial canonical journal. Read the same-source
-terminal worker and independent-reader result before assessing recovery.
+The fixed n16 execution-recovery question is [resolved for its one declared
+case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current
+source75e4f93 seals396 and installs216 at an8,229,326,848-byte job peak under
+the original16-GiB/two-hour envelope, including all final auditors. This does
+not resolve scaling across cases or isolate one optimization. No other old
+failure is filled or rerun. More importantly, v5 candidate/deployed unseen
+CE0.349567/0.445247 remains above the strong posterior0.326940 despite correct
+training-edge majorities. Execution recovery leaves the learning and
+deployment-quality questions open; metadata and full evidence remain costs.
 
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in

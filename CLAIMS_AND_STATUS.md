@@ -13,12 +13,14 @@ copy raises the paid packed peak by one MiB. The two earlier serializer
 failures remain unscored. No whole-model memory bound, n16 recovery or new
 completeness claim follows.
 
-One [new n16/c2 seed16 rate1 job](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
-is running from75e4f93 under the original16-GiB/two-hour envelope, with the
-existing worker/data files checked unchanged from38b27b3. Status is
-**REGISTERED / RUNNING; ZERO COMPLETED OUTCOMES**. It tests the accumulated
-implementation changes and cannot isolate one optimization or supply results
-for the other seven retained n16 failures.
+The [new n16/c2 seed16 rate1 job](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
+**COMPLETES** at75e4f93 under the original16-GiB/two-hour envelope, with
+the worker/data files unchanged from38b27b3. Peak8,229,326,848 bytes;
+seal396/install216;1,958 independently checked phases per arithmetic path.
+The same-source score/fresh reader passes. Candidate/deployed unseen
+CE0.349567/0.445247 trails the strong posterior0.326940. This is one observed
+execution recovery, without isolated-optimization attribution or outcomes
+for the other seven retained n16 failures; all eight old failures stay intact.
 
 Status vocabulary:
 

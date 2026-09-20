@@ -1,5 +1,8 @@
 # One registered n16 complete-execution recovery test
 
+The registered execution is now [complete](MODEL_STORAGE_RECOVERY_RESULTS.md)
+at75e4f93. The declaration below is retained as written before that run.
+
 Status: **REGISTER BEFORE EXECUTION**. This is a retrospective execution
 test, not a new model-quality sample or an attribution to one optimization.
 Foundation R4 and ERC-1 remain frozen.

@@ -5203,3 +5203,25 @@ An input within each scalar range but outside the one-hot domain gives
 forecasts13/18 versus49/66, showing that the complete source restriction
 is essential. No in-place learner quotient or borrowed Runtime authority
 is granted. Both registered model runs continue at their immutable sources.
+
+## 150. The fixed n16 v5 recovery completes, exposing the remaining quality gap
+
+The [registered one-case test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
+finishes at75e4f93 with exit0, no timeout and an8,229,326,848-byte job peak
+under the original16-GiB/two-hour envelope. Worker2660 seals396 and installs216
+after76 fresh events, leaving180 evaluation forecasts. All1,958 CUDA and1,958
+binary64 phases pass their independent auditors. The terminal registration,
+immutable dependencies and launch PID/creation binding are checked; the
+same-source independent reader is rerun and agrees on four model scores and
+both exact fresh trajectories. Reference/AMP crossing wealth is267635/65536
+and267609/65536. The constructor decision remains UNRESOLVED.
+
+Candidate/deployed unseen CE is0.3495667302/0.4452470990 versus the retained
+strong AMP posterior0.3269395303. Every training edge has a correct strict
+majority, both empirical components have size8, and the reader finds no
+incorrect internal orientation. This is a complete physical execution
+recovery, not a model win. The old final-snapshot failure and all seven
+other n16 failures remain unchanged and unscored. Current-source execution
+includes all intervening runtime changes, so its lower observed peak cannot
+be attributed to immutable frames alone. The unchanged8ccacc0 likelihood
+matrix overlaps execution; no exclusive-device timing claim is made.

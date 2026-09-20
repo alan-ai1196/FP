@@ -25,11 +25,13 @@ The packed peak honestly increases by one MiB for the temporary copy. Both
 original report failures remain retained. This is not a new full release,
 whole-worker bound or model result.
 
-The [one-case n16 execution test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
-is now running at immutable75e4f93 with the original v5 worker/data and
-16-GiB/two-hour caps. Parent27688/worker2660 started at18:18:57 UTC on
-2026-09-20. Its canonical journal currently records zero completed workers;
-all original n16 failures remain unscored and unchanged.
+The [one-case n16 execution test now passes](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
+at immutable75e4f93 with the original v5 worker/data and16-GiB/two-hour caps.
+Worker2660 seals396 and installs216;1,958 CUDA and1,958 binary64 phases and
+the same-source model/fresh reader pass. Job peak is8,229,326,848 bytes.
+Candidate/deployed unseen CE0.349567/0.445247 still trails the retained
+strong posterior0.326940. All eight original failures remain unchanged;
+this one recovery is neither a new full release nor an isolated-change claim.
 
 The research branch now has a [sparse exact likelihood analyzer and independent
 positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete

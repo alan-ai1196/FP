@@ -1,6 +1,6 @@
 {
   "experiment": "one-case-n16-model-storage-recovery",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "registration_source": "75e4f93698a8f09ff8cb0333e8f46342e4e47ab5",
   "registration": {
     "case": [
@@ -136,5 +136,366 @@
     },
     "scope": "one current-source execution recovery; no population or isolated-change claim"
   },
-  "workers": []
+  "workers": [
+    {
+      "kind": "FP",
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "rate": "1",
+      "execution_source": "75e4f93698a8f09ff8cb0333e8f46342e4e47ab5",
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 8228077568,
+        "peak_job_commit": 8229326848,
+        "user_100ns": 33481718750,
+        "kernel_100ns": 257187500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2660,
+        "process_creation_100ns": 134344019385459474
+      },
+      "run_status": "SEALED_CUDA_STREAM",
+      "halted": null,
+      "cursor": 396,
+      "training_events": 140,
+      "evaluation_events": 256,
+      "counts": [
+        [
+          0,
+          1,
+          2,
+          8
+        ],
+        [
+          1,
+          2,
+          1,
+          9
+        ],
+        [
+          2,
+          3,
+          2,
+          8
+        ],
+        [
+          3,
+          4,
+          10,
+          0
+        ],
+        [
+          4,
+          5,
+          9,
+          1
+        ],
+        [
+          5,
+          6,
+          9,
+          1
+        ],
+        [
+          6,
+          7,
+          8,
+          2
+        ],
+        [
+          8,
+          9,
+          8,
+          2
+        ],
+        [
+          9,
+          10,
+          9,
+          1
+        ],
+        [
+          10,
+          11,
+          0,
+          10
+        ],
+        [
+          11,
+          12,
+          0,
+          10
+        ],
+        [
+          12,
+          13,
+          7,
+          3
+        ],
+        [
+          13,
+          14,
+          0,
+          10
+        ],
+        [
+          14,
+          15,
+          10,
+          0
+        ]
+      ],
+      "proposal_status": "PROPOSED_NATIVE",
+      "proposal_reason": "native joint orientation weights a+a^2 retain transitive gradients and a direct recovery path without a shared output gate",
+      "proposal_assignment": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ],
+      "components": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "proposal_scale": "8",
+      "native_candidate": {
+        "nodes": 294,
+        "sources": 32,
+        "state_reads": 0,
+        "SUMs": 6,
+        "PRODUCTs": 256,
+        "SUM_edges": 644,
+        "edges": 1156,
+        "slots": 3,
+        "bindings": 0
+      },
+      "cutoff_search_status": "UNRESOLVED",
+      "actually_compared": 1,
+      "reference_proofs": 0,
+      "final_class_decisions": [
+        {
+          "status": "UNRESOLVED",
+          "has_proof": false,
+          "scope": "historical fixed-state empirical CE over registered native endpoints plus actual baseline",
+          "ordinary_cursor": 140,
+          "grammar": {
+            "nodes": 306,
+            "SUMs": 274,
+            "PRODUCTs": 260,
+            "edges": 4624,
+            "slots": 242
+          }
+        }
+      ],
+      "install_cursor": 216,
+      "alpha_spent": "1/2",
+      "final_policy_stage": "INSTALLED_CUDA",
+      "independent_CUDA": {
+        "phases": 1958,
+        "actual_arena_bytes": 268435456,
+        "largest_phase_frame_used": 312259,
+        "maximum_output_cells": 3911
+      },
+      "independent_binary64_phases": 1958,
+      "phase_audit_status": "ALL_EXECUTED_PHASES_CHECKED",
+      "float64_relation_maxima": {
+        "state_error": "62889342552136723837/329927523303102016005430657832452096",
+        "native_error": "0",
+        "normalizer_error": "0",
+        "probability_error": "326633/5919666458204601057280",
+        "division_error": "326633/5919666458204601057280"
+      },
+      "CUDA_relation_maxima": {
+        "state_error": "11/16384",
+        "native_error": "57489/4194304",
+        "normalizer_error": "71754389/4294967296",
+        "probability_error": "8644232402491/31364272894246912",
+        "division_error": "321/10779361280"
+      },
+      "resources": {
+        "peak_packed_bytes": 4172413580,
+        "consumed_native_arena_extent": 12698080
+      },
+      "device": {
+        "native": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "execution_identity": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "physical_vram_upper": 25769803776,
+        "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+      },
+      "host": {
+        "process_id": 2660,
+        "creation_100ns": 134344019385459474,
+        "lifetime_process_commit_peak": 8074493952
+      },
+      "candidate_stream_unseen": {
+        "contexts": 212,
+        "expected_CE_binary64": 0.3495667302243978,
+        "raw_division_expected_CE_binary64": 0.34956673045189585,
+        "expected_Brier_exact_enclosure": [
+          "11748839305230003/59672695062659072",
+          "5874419652615107/29836347531329536"
+        ],
+        "Brier_grid_bits": 48,
+        "maximum_per_query_Brier_integer_bits": 38,
+        "mean_true_probability_gap_binary64": 0.048988455311907896,
+        "latent_relation_error_with_half_ties": "3/424"
+      },
+      "candidate_stream_full_domain": {
+        "contexts": 256,
+        "expected_CE_binary64": 0.34536486357896934,
+        "raw_division_expected_CE_binary64": 0.34536486373643766,
+        "expected_Brier_exact_enclosure": [
+          "13978287400563713/72057594037927936",
+          "54602685158453/281474976710656"
+        ],
+        "Brier_grid_bits": 48,
+        "maximum_per_query_Brier_integer_bits": 38,
+        "mean_true_probability_gap_binary64": 0.04092451605827611,
+        "latent_relation_error_with_half_ties": "3/512"
+      },
+      "deployed_stream_unseen": {
+        "contexts": 212,
+        "expected_CE_binary64": 0.44524709898602116,
+        "raw_division_expected_CE_binary64": 0.44524709945903235,
+        "expected_Brier_exact_enclosure": [
+          "16793732690322139/59672695062659072",
+          "1049608293145143/3729543441416192"
+        ],
+        "Brier_grid_bits": 48,
+        "maximum_per_query_Brier_integer_bits": 38,
+        "mean_true_probability_gap_binary64": 0.14628954910585573,
+        "latent_relation_error_with_half_ties": "63/424"
+      },
+      "deployed_stream_full_domain": {
+        "contexts": 256,
+        "expected_CE_binary64": 0.44328798609523845,
+        "raw_division_expected_CE_binary64": 0.4432879861078692,
+        "expected_Brier_exact_enclosure": [
+          "10097019236787299/36028797018963968",
+          "10097019236787389/36028797018963968"
+        ],
+        "Brier_grid_bits": 48,
+        "maximum_per_query_Brier_integer_bits": 38,
+        "mean_true_probability_gap_binary64": 0.14167575853362774,
+        "latent_relation_error_with_half_ties": "19/128"
+      }
+    }
+  ],
+  "analysis": {
+    "status": "SAME_SOURCE_INDEPENDENT_READER_PASS",
+    "model_score_checks": 4,
+    "details": {
+      "recomputed_install_cursor": 216,
+      "fresh_trajectory": {
+        "reference": {
+          "first_crossing_fresh_offset": 76,
+          "exact_wealth_at_crossing_or_end": "267635/65536",
+          "maximum_exact_wealth": "267635/65536",
+          "signs_until_crossing_or_end": {
+            "zero": 1,
+            "positive": 61,
+            "negative": 14
+          }
+        },
+        "AMP": {
+          "first_crossing_fresh_offset": 76,
+          "exact_wealth_at_crossing_or_end": "267609/65536",
+          "maximum_exact_wealth": "267609/65536",
+          "signs_until_crossing_or_end": {
+            "zero": 1,
+            "positive": 61,
+            "negative": 14
+          }
+        }
+      },
+      "empirical_component_sizes": [
+        8,
+        8
+      ],
+      "incorrect_strict_edge_majorities": 0,
+      "tied_edge_counts": 0,
+      "sign_obstruction": {
+        "residual_sign_counts": [
+          [
+            8,
+            0
+          ],
+          [
+            0,
+            8
+          ]
+        ],
+        "wrong_ordered_internal_pairs": 0,
+        "prequential_expected_CE_lower_binary64": 0.3250829733914482,
+        "fixed_state_uniform_risk_lower_binary64": 0.3250829733914482,
+        "fixed_state_bound_is_not_a_prequential_bound": true
+      },
+      "scale_dynamics": {
+        "scope": "post hoc descriptive grid16 scale trace, not an unrounded/AMP monotonicity theorem",
+        "orientation_members": 2,
+        "cross_updates": 128,
+        "initial_reference_cross_polynomial_mass": "6",
+        "final_reference_cross_polynomial_mass": "6741280057/268435456",
+        "reference_cross_mass_increases": 119,
+        "reference_cross_mass_decreases": 9,
+        "reference_cross_mass_unchanged": 0,
+        "minimum_reference_cross_mass_change": "-424832511/268435456",
+        "maximum_actual_AMP_cross_forward_normalizer": "1599/64"
+      }
+    },
+    "execution_source": "75e4f93698a8f09ff8cb0333e8f46342e4e47ab5"
+  }
 }
