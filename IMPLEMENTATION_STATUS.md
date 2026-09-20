@@ -125,6 +125,15 @@ CUDA profile and installation of this rule are still pending.
 The optional identity field changes packed charges, including constant-rule
 records; no byte-equivalence or whole-project freeze is claimed.
 
+The [finite-power analysis](theory/proofs/MIXTURE_PERSISTENCE_POWER.md)
+checks the production curve and fixed scalar kernels against a pathwise
+bound that needs no reciprocal-wealth assumption. It covers each fixed
+world under known fresh noise, with explicit precision and operational
+failure terms.2,430 scalar compositions,768 continuous native units and
+1,536 score/curve checks pass. The equally precise fixed comparator gets
+a stronger lower bound with less statistical state. These checks add no
+Runtime authority, physical completion premise or model outcome.
+
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,
 intermediates and failure checks remain; padding is never decoded and the

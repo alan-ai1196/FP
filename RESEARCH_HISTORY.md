@@ -4962,3 +4962,38 @@ The minimal record preserves bounded attempt provenance across subsequent
 audit writes. New-rule CUDA and larger model value remain unverified; the
 ongoing registered8ccacc0 source is unchanged. This is a scoped reachability
 and adversarial result, not a new release or complete-class certificate.
+
+## 142. Prove finite power without the failed reciprocal premise
+
+The positive curve's absolute rounding bound composes directly with its
+classical pathwise comparison to any fixed coefficient. At q=T+p, every
+successful path has wealth at least r^T W_c/R_T minus2^-p, with R_T at most
+2sqrt(T). Native Bayesian telescoping and the endpoint chord lower-bound
+W_c by the realized noise count and the initial weight of each world.
+No division by earlier wealth or reciprocal-contraction premise is used.
+
+This also removes the old proof's need to draw the actual world from the
+learner's posterior. The loss inequality is worldwise, and fresh1/10 noise
+gives a binomial count under each fixed world, including adaptive past-only
+queries. The theorem bounds crossing or operational/premise failure, never
+success conditioned on completion. With a fixed finite positive weight
+vector and q=T+p, the finite-declaration bounds tend to one. This is neither
+fixed-precision almost-sure power nor free alpha across restarts.
+
+Attacking necessity gives a useful limitation: a fixed comparator with the
+same fine scalar precision also has bounded absolute rounding error and
+needs no R_T penalty. Its matched lower bounds are stronger and its statistic
+is one rational. At uniform128-world initialization, T128 and160 fractional
+bits, the mixture's bound is0.861239 versus0.970213 for the fine-grid fixed
+control. These are worldwise conditional-law lower bounds, not empirical
+rates or actual first-passage ordering. The mixture still supplies simultaneous
+coefficient comparison, whose complete resource value remains unproved.
+
+The exact audit checks2,430 curve compositions and matched fixed-control
+updates. Two native initial weight vectors, one nonuniform, each execute
+all64 six-label words:768 complete units,3,072 worldwise compositions and
+1,536 production score/curve checks. Rational pre-target perturbations test
+the physical score tube without pretending to execute AMP. Uniform-prior
+power examples use no model tape. The6/13 comparator also has positive
+distorted growth even though its old reciprocal lemma is false. The actual
+registered experiment, Runtime declarations and Foundation/ERC-1 stay fixed.

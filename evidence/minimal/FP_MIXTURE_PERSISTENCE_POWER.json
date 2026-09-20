@@ -1,0 +1,118 @@
+{
+  "status": "EXACT_MIXTURE_POWER_AUDIT_PASS",
+  "retained_model_tapes_used": false,
+  "model_or_GPU_workers": 0,
+  "scalar": {
+    "complete_five_score_words_per_grid": 243,
+    "coefficient_bits": [
+      3,
+      21
+    ],
+    "production_kernel_compositions": 2430,
+    "fine_grid_fixed_control_compositions": 2430,
+    "independent_signed_monomial_readouts": 2430
+  },
+  "native": {
+    "all_six_label_words_per_initial_state": 64,
+    "initial_world_weights": [
+      [
+        "1/4",
+        "1/4",
+        "1/4",
+        "1/4"
+      ],
+      [
+        "1/10",
+        "1/5",
+        "3/10",
+        "2/5"
+      ]
+    ],
+    "native_continuous_units": 768,
+    "exact_world_compositions": 3072,
+    "production_score_and_curve_checks": 1536,
+    "fine_grid_fixed_control_checks": 1536,
+    "second_path": "rational pre-target probability tube; no AMP execution"
+  },
+  "finite_power": {
+    "analysis_comparator": "1/3",
+    "normalized_comparator_fraction": "13/24",
+    "common_score_error": "1/98",
+    "factor_distortion": "535/539",
+    "alpha_per_path": "1/4",
+    "uniform_rounding_error_upper": "1/4294967296",
+    "distorted_mean_log_growth": [
+      "84323336575/1099511627776",
+      "658776067/8589934592"
+    ],
+    "tighter_fixed_comparator_distorted_growth": [
+      "67302490177/1099511627776",
+      "33651245089/549755813888"
+    ],
+    "exact_cutoff_comparisons": 118,
+    "uniform_prior_examples": [
+      {
+        "horizon": 64,
+        "fractional_bits": 96,
+        "uniform_initial_worlds": 2,
+        "mixture": {
+          "certified_noise_cutoff": 7,
+          "power_lower_rounded_down_to_millionth": "69217/100000"
+        },
+        "fine_grid_fixed_control": {
+          "certified_noise_cutoff": 9,
+          "power_lower_rounded_down_to_millionth": "897213/1000000"
+        }
+      },
+      {
+        "horizon": 64,
+        "fractional_bits": 96,
+        "uniform_initial_worlds": 128,
+        "mixture": {
+          "certified_noise_cutoff": 5,
+          "power_lower_rounded_down_to_millionth": "74541/200000"
+        },
+        "fine_grid_fixed_control": {
+          "certified_noise_cutoff": 7,
+          "power_lower_rounded_down_to_millionth": "69217/100000"
+        }
+      },
+      {
+        "horizon": 128,
+        "fractional_bits": 160,
+        "uniform_initial_worlds": 2,
+        "mixture": {
+          "certified_noise_cutoff": 18,
+          "power_lower_rounded_down_to_millionth": "47381/50000"
+        },
+        "fine_grid_fixed_control": {
+          "certified_noise_cutoff": 21,
+          "power_lower_rounded_down_to_millionth": "30991/31250"
+        }
+      },
+      {
+        "horizon": 128,
+        "fractional_bits": 160,
+        "uniform_initial_worlds": 128,
+        "mixture": {
+          "certified_noise_cutoff": 16,
+          "power_lower_rounded_down_to_millionth": "861239/1000000"
+        },
+        "fine_grid_fixed_control": {
+          "certified_noise_cutoff": 19,
+          "power_lower_rounded_down_to_millionth": "970213/1000000"
+        }
+      }
+    ],
+    "alternative": "each fixed relation world with fresh Bernoulli(1/10) noise; queries precede the current noise",
+    "uniform_prior_scope": "each row holds for every supported fixed world, hence any mixture over those worlds",
+    "scope": "paired crossing or operational/premise failure; no physical completion probability"
+  },
+  "independent_exact_logs": {
+    "comparison_intervals": 196,
+    "production_score_intervals": 1536,
+    "maximum_verifier_terms": 32,
+    "maximum_verifier_operand_bits": 16126,
+    "outward_fractional_bits": 96
+  }
+}

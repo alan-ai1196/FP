@@ -583,6 +583,18 @@ CUDA remains unverified for the new rule. Keep every bounded attempt and
 its own execution source; this is no full-release or model result.
 The fixed8ccacc0 source and experiment remain unchanged.
 
+The [mixture finite-power proof](theory/proofs/MIXTURE_PERSISTENCE_POWER.md)
+now composes native learning, score error and q=T+p rounding without the
+failed reciprocal-contraction premise. It holds separately for every fixed
+supported world with fresh1/10 noise; the learner's weights need not be the
+actual world law. The matched fine-grid fixed-bet control has a better
+comparator bound and one scalar statistic. This limits the claim for the
+adaptive curve to its simultaneous coefficient comparison; its model value
+and resource tradeoff are open.2,430 scalar compositions,768 native units
+and1,536 production score checks pass, with equally precise fixed controls.
+Uniform-prior examples use no model tape and count operational failure
+together with crossing; they supply no completion probability.
+
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
 host workspace copies the phase span and decodes only initialized floating

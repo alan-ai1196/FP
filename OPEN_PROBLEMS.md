@@ -97,6 +97,15 @@ now passes at10 in a bounded512MiB job; three paired failures refuse false
 authority. Target CUDA, larger-scale physical resources and model value
 remain open. Preserve the fixed8ccacc0 experiment and assess its actual outcomes.
 
+The [finite-power obstruction is now scoped more sharply](theory/proofs/MIXTURE_PERSISTENCE_POWER.md):
+pathwise precision/comparator bounds prove power for each fixed supported
+world without reciprocal contraction. A fine-grid fixed bet obtains a
+stronger matched-comparator bound using one scalar. The adaptive curve
+earns simultaneous comparison across coefficients, with an explicit regret
+and state cost; whether that is useful under equal complete resources is
+unresolved. Power alone no longer justifies choosing the larger state.
+No model tape, new experiment or physical completion claim enters this law.
+
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and
 the actual wealth floor. It uses the explicit posterior-mixture alternative,

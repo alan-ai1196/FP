@@ -2656,3 +2656,13 @@ now retains the rounded curve and exact wealth together, with prepaid work,
 guarded integers and terminal failure publication. Exact, actual paired
 failure and bounded CPU installation audits pass; CUDA installation of this
 new rule remains a separate obligation. The fixed experiment remains unchanged.
+
+The [finite-power composition](theory/proofs/MIXTURE_PERSISTENCE_POWER.md)
+uses a pathwise comparator and finite precision to avoid a reciprocal-wealth
+assumption. It gives worldwise crossing-or-operational-failure bounds for the
+native likelihood learner under fresh known-noise labels, even when the
+actual world is fixed rather than drawn from the learner's weights. A
+matched fine-grid fixed-bet control has a stronger comparator bound with
+less statistical state. Thus finite power does not make the adaptive curve
+necessary, or order actual deployment performance. These are scoped theory
+and exact audits, not new physical or model outcomes.
