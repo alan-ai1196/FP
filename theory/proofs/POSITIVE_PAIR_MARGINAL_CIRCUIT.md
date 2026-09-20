@@ -28,7 +28,10 @@ These are the existing known-noise relation forecasts. The new circuit
 uses O(K+n^2) nodes and incidences, compared with O(n^2*K) incidences in
 the literal world-by-query construction. Any explicit-slot circuit valid
 for all independent simplex weights must read at least K-1 selected
-coordinates. Consequently the new circuit's incidence order is Theta(K).
+coordinates. The same lower bound holds from the single fair initializer
+when the native learner must retain the declared world-posterior slot law;
+that version needs no assumption about off-trajectory weights. Consequently
+the new circuit's incidence order is Theta(K) in either stated class.
 
 This is an explicit-coordinate circuit law. It is neither a lower bound on
 the [count encoding](COUNT_LEARNER_ENCODING.md) nor a replacement for the
@@ -176,7 +179,7 @@ the existing 65,536-cell allowance, and its 65,540-cell initialization also
 exceeds that allowance. No n16 likelihood execution recovery is implied.
 The separately running n16 recovery experiment uses the older v5 model.
 
-## 5. Incidence lower bound
+## 5. Incidence lower bounds
 
 Consider any fixed circuit with these K independent selected simplex
 coordinates, required to return the forecasts above for every interior
@@ -195,6 +198,43 @@ independent simplex inputs; it cannot be applied to a compressed history
 decoder, a restricted reachable invariant, a query-specific oracle, or a
 complete Runtime memory bound. In particular it leaves the earlier
 information-rank and count-encoding results intact.
+
+There is also a lower bound directly at the fixed initializer. Require a
+fixed native Program with these K selected reference world slots, the
+registered unit simplex U, and the same world-posterior update from Gamma
+for every legal first query/label. If fewer than K-1 selected coordinates
+occur on SUM incidences, at least two slots a,b never occur. The actual
+native reverse CE derivative is identically zero in each absent slot.
+After observing an event, both therefore have gradient zero. With weighted
+mean mu, their proposed updates are
+
+    w'_a = w_a*(1+mu)/N,   w'_b = w_b*(1+mu)/N,
+
+where N is the same actual native normalization. If the update succeeds,
+it preserves equality of the two weights. But anchored worlds a,b
+differ at some bit j. Query(0,j) followed by either label gives a required
+posterior ratio9 or1/9 between these slots, a contradiction. A refused
+update cannot supply the required posterior either. Thus at least K-1
+parameter incidences are necessary even on this fixed-Gamma learner orbit.
+
+This argument uses the actual optimizer's inability to distinguish two
+unread slots. It does not assume affine heads, independently variable
+off-orbit weights, or correctness on every simplex point. It does require
+the existing reference world-slot interpretation and U. It is not a lower
+bound for all forecast-equivalent alternative learners or physical count
+encodings that decode the same logical state.
+
+The added exact audit removes every incidence of two selected slots from
+the constructed Program, while retaining both slots and all other state.
+For every pair of worlds at n=2,...,5 it chooses a distinguishing anchor
+query and both labels:310 cases. Each altered Program still gives the
+correct first forecast(1/2,1/2). Twelve n3 updates correctly refuse a
+negative successor; the other298 commit with equal unread weights and
+already give a wrong forecast on the next identical query. The true target
+probability there is41/50. The smallest witness is the two-world Program
+with neither weight read: it stays fair instead of updating to(9/10,1/10).
+These are separately constructed counterexamples, not modified Runtime
+states or discarded evidence.
 
 ## 6. Adversarial scope and evidence
 

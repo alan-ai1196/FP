@@ -5,8 +5,11 @@ This file is written for a capable researcher/model that has **no access to prio
 **Current model-construction result, 2026-09-21:** a [shared positive marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) reduces all-pair
 relation inference from O(n^2 K) to O(K+n^2) native incidences, K=2^(n-1).
-A K-1 coordinate-read lower bound matches its order for independent explicit
-simplex weights. Exact forecasts and selected unit updates agree; complete
+A K-1 coordinate-read lower bound matches its order both for independent
+weights and for the fixed-Gamma native world-posterior slot law. Two unread
+slots retain their ratio under U, contradicted by a first distinguishing
+observation.310 exact deletion witnesses agree initially but then refuse
+or predict incorrectly. Exact forecasts and selected unit updates agree; complete
 learners do not, as the retained fixed-slot gradient changes. The audit
 passes680 forecasts,1,360 full gradients and966 native observe/commit pairs.
 At n8 edges fall10,368 to2,004 but nodes grow338 to985, exceeding the old

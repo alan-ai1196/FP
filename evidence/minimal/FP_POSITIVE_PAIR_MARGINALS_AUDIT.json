@@ -323,5 +323,13 @@
     "lower_bound_scope": "independent simplex coordinates in an explicit-slot circuit; not encoded histories",
     "complete_learner_equivalence_claimed": false,
     "runtime_reachability_or_GPU_execution_claimed": false
+  },
+  "fixed_initializer_read_lower": {
+    "first_observation_cases": 310,
+    "native_nonnegative_domain_refusals": 12,
+    "legal_but_nonposterior_commits": 298,
+    "wrong_next_same_query_forecasts": 298,
+    "initial_query_forecast_is_correct_in_every_case": true,
+    "scope": "fixed-Gamma reference world-slot updates, not arbitrary alternative representations or forecast-only learners"
   }
 }

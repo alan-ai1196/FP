@@ -20,7 +20,7 @@ from fp_reference.learner import (SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearne
     initial_state, ce_gradient, observe_event, commit_event)
 from fp_reference.profile import attach_boundary
 from fp_reference.program import Product, Program, SemanticRules, Source, SourceSpec, Sum, Term
-from fp_reference.semantics import evaluate
+from fp_reference.semantics import ArithmeticUnresolved, evaluate
 import simplex_gradient as literal
 
 BITS = 32768
@@ -310,6 +310,51 @@ def scope_audit():
         'runtime_reachability_or_GPU_execution_claimed': False}
 
 
+def unread_update_audit():
+    """Fixed-Gamma witnesses: a matching first forecast does not restore U."""
+    checked = refused = unequal = 0
+    for n in range(2, 6):
+        rules, graph, worlds = relation_graph(n)
+        k = len(worlds)
+        spec = LearnerSpec(1, F(1), optimizer_id=SIMPLEX_GRADIENT,
+                           simplex_slots=tuple(range(1, k+1)))
+        for a, b in combinations(range(k), 2):
+            j = next(j for j in range(1, n) if worlds[a][j] != worlds[b][j])
+            # A counterexample Program, never a replacement Runtime state.
+            nodes = tuple(Sum(node.type_id, tuple(t for t in node.terms if t.slot not in (a+1, b+1)))
+                          if type(node) is Sum else node for node in graph.nodes)
+            missing = replace(graph, nodes=nodes)
+            missing.validate(rules)
+            initial = initial_state(missing, rules, (F(1),)+(F(1, k),)*k, 0,
+                                    spec=spec, bit_limit=BITS)
+            prediction = evaluate(missing, rules, initial.theta, literal.context(n, 0, j), (), bit_limit=BITS)
+            assert prediction.probabilities == (F(1, 2),)*2
+            for y in (0, 1):
+                observed = observe_event(missing, initial, spec, prediction, y, bit_limit=BITS)
+                assert observed.gradient_sum[a+1] == observed.gradient_sum[b+1] == 0
+                desired = tuple(F(1+8*int(z[j] == y), 5*k) for z in worlds)
+                assert desired[a] != desired[b]
+                try:
+                    actual = commit_event(observed, spec, bit_limit=BITS)
+                except ArithmeticUnresolved as error:
+                    assert k == 4 and 'nonnegative domain' in str(error)
+                    refused += 1
+                else:
+                    assert actual.theta[a+1] == actual.theta[b+1]
+                    assert actual.theta[1:] != desired
+                    following = evaluate(missing, rules, actual.theta,
+                        literal.context(n, 0, j), (), bit_limit=BITS)
+                    expected = tuple(m/10 for m in direct_masses(worlds, desired, (0, j)))
+                    assert expected[y] == F(41, 50) and following.probabilities != expected
+                    unequal += 1
+                checked += 1
+    return {'first_observation_cases': checked, 'native_nonnegative_domain_refusals': refused,
+            'legal_but_nonposterior_commits': unequal,
+            'wrong_next_same_query_forecasts': unequal,
+            'initial_query_forecast_is_correct_in_every_case': True,
+            'scope': 'fixed-Gamma reference world-slot updates, not arbitrary alternative representations or forecast-only learners'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path)
@@ -317,7 +362,8 @@ def main():
     result = {'status': 'PASS', 'scope': 'exact passive native Program construction; no Runtime certificate',
         'arithmetic': 'fractions.Fraction with 32768-bit registered exact operation bound',
         'arbitrary_weights': arbitrary_weight_audit(), 'learner': history_audit(),
-        'circuit_counts': circuit_counts(), 'scope_checks': scope_audit()}
+        'circuit_counts': circuit_counts(), 'scope_checks': scope_audit(),
+        'fixed_initializer_read_lower': unread_update_audit()}
     raw = json.dumps(result, indent=2)+'\n'
     if args.output:
         args.output.write_text(raw, encoding='utf-8')

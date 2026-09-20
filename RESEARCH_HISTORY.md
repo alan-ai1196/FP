@@ -5294,3 +5294,23 @@ later. The source-bound initial journal is collected with zero completed
 workers and four independently checked baseline scores. Its separate
 process observation records overlap with likelihood parent14264/worker30700.
 No score or physical saving is inferred from launch.
+
+## 154. The incidence lower bound also holds at the actual fixed initializer
+
+The first proof used independent simplex inputs. A stronger learner-scoped
+argument needs only the actual Gamma and a legal first observation. Two
+world slots absent from every native SUM incidence have identically zero
+CE gradients; the registered normalized simplex U preserves their ratio.
+Distinct anchored worlds admit an anchor query whose first label must change
+that ratio by9 or1/9. Thus K-1 incidences are necessary for the same reference
+world-posterior slot law even on the fixed-initializer orbit, without assuming
+affine heads or off-orbit weight variation. The O(K) construction matches it.
+
+The additional exact audit constructs310 omitted-pair/query/label witnesses
+for n2 through n5. Every first forecast is still correct. Twelve n3 updates
+refuse their negative successor;298 legal updates keep the two absent slots
+equal and already predict the next identical query incorrectly, against the
+true target probability41/50. No existing Runtime state is altered. This
+does not rule out alternative forecast-equivalent learners or compressed
+physical encodings; it settles the native incidence order for the declared
+world-slot posterior learner. Both immutable model runs continue unchanged.

@@ -2696,8 +2696,11 @@ recovery or a whole-process resource law.
 The [shared positive pair-marginal circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
 gives a scoped native model-construction law: all relation forecasts over
 K=2^(n-1) explicit simplex weights use O(K+n^2) SUM/PRODUCT incidences,
-with a matching-order K-1 coordinate-read lower bound for arbitrary
-independent weights. It preserves selected unit posterior updates on the
+with matching-order K-1 coordinate-read lower bounds for arbitrary
+independent weights and, separately, the fixed-Gamma native world-slot
+posterior learner. The latter follows from the preserved ratio of two
+unread slots under the actual simplex U, requiring only a first legal
+observation. It preserves selected unit posterior updates on the
 complete one-hot source domain, while its actual fixed-slot gradient and
 evaluation state differ from the literal Program. No installed-state
 quotient follows. Exact native audits and seven bounded owned CPU/AMP

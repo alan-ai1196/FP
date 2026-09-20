@@ -5,7 +5,8 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 **New model-construction question:** does the [positive shared marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
 owned learner's execution? The incidence order is now settled for explicit
-independent world weights: O(K+n^2) upper, K-1 read lower. Exact selected
+independent world weights, and for the fixed-Gamma native world-posterior
+slot law: O(K+n^2) upper, K-1 read lower. Exact selected
 updates survive, but full gradients/caches differ and n8 nodes increase.
 Owned n2/n3 construction/profile/CPU/AMP/install paths now pass in seven
 bounded jobs, including likelihood encoding and v7 regressions. The actual
