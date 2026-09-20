@@ -5521,3 +5521,42 @@ the completed current control is not evidence of a shared-graph memory win.
 Both physical outcomes, full audits and raw word comparisons remain required
 by the unchanged protocol. Historical overlap with the completed likelihood
 matrix precludes an exclusive-device timing interpretation.
+
+## 162. Exact independent-factor closure is governed by query dependencies, not coordinate names
+
+The original-coordinate factor obstruction leaves open a natural escape:
+choose different, possibly nonlinear, latent coordinates. For a fixed
+bijection into a full Cartesian product, however, a positive two-valued
+likelihood is multiplicatively separable only if it depends on one factor.
+Every minimal XOR relation among query bits must then lie inside one factor.
+The classical binary-matroid components therefore give irreducible query
+groups, and a rank-r group forces at least2^r categorical values. Choosing
+a parity basis within each component attains those ranks.
+
+This distinguishes forest query families from the complete all-pair domain.
+Forest edge parities are independent coordinates; two triangles sharing
+one vertex yield two rank2 factors. The complete graph instead has one
+rank(n-1) component, forcing one full-world factor under every fixed bijective
+encoding. This is not an explicit-storage lower bound or an impossibility
+for compressed counts, changing representations or nonproduct learners.
+
+The exact audit exhausts40,320 eight-world bijections, including38,976
+nonlinear ones, in both nontrivial factor shapes. All64 query subgraphs
+match the rank criterion, and no encoding closes K4 with proper factors.
+Independent simple-cycle enumeration agrees with fundamental GF(2) circuit
+components on1,098 graphs. A distinct linear-coordinate snapshot theorem
+is checked against244,944 exact posterior factorizations from729 legal count
+profiles and168 invertible maps. All tests retain positive likelihoods.
+
+Actual native Programs using rate1/m pass596 observe/commit pairs and1,192
+complete-state checks, including an explicitly nonlinear encoding and four
+profile attachments. Three further updates show the failure when a query
+closes a cycle: the next forecast is761/882 instead of37/42. This is lost
+correlation, with exact arithmetic and the original simplex semantics.
+
+On the eight existing RN-5 tapes, signed-count active graphs start with
+independent forest factors but acquire a full-rank block after7-11 evaluation
+labels at n8 and14-24 at n16. These passive snapshot diagnostics explain why
+forest structure cannot simply be kept throughout the exposed evaluation
+stream. They do not measure worker resources, rerun models, change the live
+v7/v8 protocol, or supply a new native-state/AMP certificate.

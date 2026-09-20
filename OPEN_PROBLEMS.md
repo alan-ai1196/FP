@@ -22,11 +22,19 @@ The [PRODUCT-belief closure question](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 is now settled for a fixed partition of coordinates: the existing simplex U
 computes posterior marginals at block mass/rate1/m, but exact joint learning
 requires every legal likelihood to separate. The complete all-pair domain
-forces one joint block in that family, so independent factors cannot replace
-the current learner. Useful compact alternatives must retain the correlations
-future queries can read, or declare and bound their approximation. No general
-lower bound against different encodings follows. Continue the registered
-model comparisons; this result does not authorize changing their learners.
+forces one joint block in that family. The [query-matroid extension](theory/proofs/FACTOR_QUERY_MATROID.md)
+now closes the escape through any fixed bijective coordinates, including
+nonlinear ones: every rank-r query component requires one factor with2^r
+categories, and a parity basis attains the requirement. Complete all-pair
+closure needs one full-world factor. This is a categorical capacity result,
+not a storage lower bound for encoded factors or arbitrary learners. The
+remaining compact alternatives must preserve correlations, use a different
+representation, or declare and bound their approximation. Even changing
+linear parity coordinates at each snapshot finds a full-rank active block
+after7-11 fresh evaluation labels on the retained n8 tapes and14-24 at n16.
+The native closing-cycle witness gives next761/882 versus Bayes37/42.
+Keep the registered model comparison fixed; its full physical result remains
+necessary, and the structural theorem grants no new Runtime quotient.
 
 The [fixed positive partition-decoder question](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 is also settled in its exact all-history circuit class: bounded edge factors

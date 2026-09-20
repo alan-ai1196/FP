@@ -145,10 +145,19 @@ blocks has the likelihood slice `[[9,1],[1,9]]` up to a common scalar. Its
 determinant80 is nonzero, so it cannot separate. All non-anchor pairs are
 legal in the current full domain. For n>=3, exact joint closure in this
 fixed-coordinate product family therefore requires one block containing all
-n-1 bits, with2^(n-1) categorical entries. More generally the query graph's
-connected components must each lie in a block. This is about all permitted
+n-1 bits, with2^(n-1) categorical entries. More generally the connected
+components of the query graph on the free coordinates must each lie in a
+block; queries incident to the fixed anchor are already local. This is about all permitted
 future queries, not just edges already observed. It supplies no lower bound
 against different coordinates, compressed histories or arbitrary learners.
+
+The separate [query-matroid theorem](FACTOR_QUERY_MATROID.md) now extends
+this closure obstruction to every fixed bijection into categorical product
+factors, including nonlinear coordinates. The complete all-pair family still
+forces one2^(n-1)-category factor. Restricted query families behave differently:
+forest edge-parity coordinates remain independent, and the irreducible ranks
+are cycle-matroid component ranks. This extension still supplies no lower
+bound against compact encoded factors or arbitrary nonproduct learners.
 
 ## 4. A linear-size positive native realization
 

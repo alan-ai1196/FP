@@ -1,0 +1,531 @@
+{
+  "status": "PASS",
+  "scope": "fixed product encodings, exact closure and native passive audits",
+  "arbitrary_bijections": {
+    "worlds": 8,
+    "bijections": 40320,
+    "affine_bijections": 1344,
+    "nonlinear_bijections": 38976,
+    "factor_shapes": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "encoding_shape_checks": 80640,
+    "graph_shape_existence_checks": 128,
+    "two_valued_tensor_minor_checks": 1024,
+    "separable_binary_tables_in_shape_order": [
+      18,
+      8
+    ],
+    "examples": [
+      {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "component_ranks": [
+          1,
+          1,
+          1
+        ],
+        "valid_bijections_in_shape_order": [
+          144,
+          48
+        ]
+      },
+      {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "component_ranks": [
+          2,
+          1
+        ],
+        "valid_bijections_in_shape_order": [
+          48,
+          0
+        ]
+      },
+      {
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "component_ranks": [
+          3
+        ],
+        "valid_bijections_in_shape_order": [
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "cycle_components": {
+    "all_simple_graphs_through_n": 5,
+    "graphs_checked": 1098,
+    "independent_reference": "all simple cycles, rather than fundamental GF(2) circuits"
+  },
+  "linear_snapshot_posteriors": {
+    "signed_counts_per_pair": [
+      -1,
+      0,
+      1
+    ],
+    "legal_count_profiles": 729,
+    "invertible_binary_maps": 168,
+    "exact_posterior_factorization_checks": 244944,
+    "profiles_with_no_nontrivial_linear_product_encoding": 304,
+    "scope": "snapshot necessity only for linear parity coordinates; arbitrary-bijection theorem concerns future closure"
+  },
+  "native_learner": {
+    "cases": [
+      {
+        "case": "forest",
+        "n": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "factor_sizes": [
+          2,
+          2,
+          2
+        ],
+        "native": {
+          "nodes": 48,
+          "sources": 3,
+          "state_reads": 0,
+          "SUMs": 22,
+          "PRODUCTs": 23,
+          "SUM_edges": 36,
+          "edges": 82,
+          "slots": 7,
+          "bindings": 0
+        },
+        "native_units": 261
+      },
+      {
+        "case": "two_triangles_sharing_one_vertex",
+        "n": 5,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "factor_sizes": [
+          4,
+          4
+        ],
+        "native": {
+          "nodes": 67,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 29,
+          "PRODUCTs": 32,
+          "SUM_edges": 66,
+          "edges": 130,
+          "slots": 9,
+          "bindings": 0
+        },
+        "native_units": 159
+      },
+      {
+        "case": "complete_graph",
+        "n": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "factor_sizes": [
+          8
+        ],
+        "native": {
+          "nodes": 63,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 28,
+          "PRODUCTs": 29,
+          "SUM_edges": 89,
+          "edges": 147,
+          "slots": 9,
+          "bindings": 0
+        },
+        "native_units": 159
+      },
+      {
+        "case": "nonlinear_bijection",
+        "n": 4,
+        "edges": [
+          [
+            0,
+            1
+          ]
+        ],
+        "factor_sizes": [
+          2,
+          4
+        ],
+        "native": {
+          "nodes": 30,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 17,
+          "PRODUCTs": 12,
+          "SUM_edges": 25,
+          "edges": 49,
+          "slots": 7,
+          "bindings": 0
+        },
+        "native_units": 17
+      }
+    ],
+    "native_units": 596,
+    "complete_state_checks": 1192,
+    "profile_attachments": 4
+  },
+  "legal_closing_cycle": {
+    "history": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ]
+    ],
+    "native_units": 3,
+    "native_next_probability0": "761/882",
+    "full_posterior_next_probability0": "37/42",
+    "absolute_gap": "8/441",
+    "first_two_updates_preserve_independence_third_does_not": true
+  },
+  "retained_tape_structure": {
+    "scope": "passive active signed-count graph; snapshot parity coordinates only, not GPU/model outcomes",
+    "cases": [
+      {
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "training_events": 60,
+        "evaluation_events": 64,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          7
+        ],
+        "first_single_full_rank_block_cursor": 68,
+        "largest_active_block_rank_at_or_after_training": 7,
+        "post_training_cuts_with_full_rank_block": 57
+      },
+      {
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "training_events": 60,
+        "evaluation_events": 64,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          7
+        ],
+        "first_single_full_rank_block_cursor": 71,
+        "largest_active_block_rank_at_or_after_training": 7,
+        "post_training_cuts_with_full_rank_block": 54
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "training_events": 140,
+        "evaluation_events": 256,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          15
+        ],
+        "first_single_full_rank_block_cursor": 154,
+        "largest_active_block_rank_at_or_after_training": 15,
+        "post_training_cuts_with_full_rank_block": 243
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "training_events": 140,
+        "evaluation_events": 256,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          15
+        ],
+        "first_single_full_rank_block_cursor": 161,
+        "largest_active_block_rank_at_or_after_training": 15,
+        "post_training_cuts_with_full_rank_block": 236
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "training_events": 40,
+        "evaluation_events": 64,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          7
+        ],
+        "first_single_full_rank_block_cursor": 47,
+        "largest_active_block_rank_at_or_after_training": 7,
+        "post_training_cuts_with_full_rank_block": 58
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "training_events": 40,
+        "evaluation_events": 64,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          7
+        ],
+        "first_single_full_rank_block_cursor": 50,
+        "largest_active_block_rank_at_or_after_training": 7,
+        "post_training_cuts_with_full_rank_block": 55
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "training_events": 120,
+        "evaluation_events": 256,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          15
+        ],
+        "first_single_full_rank_block_cursor": 140,
+        "largest_active_block_rank_at_or_after_training": 15,
+        "post_training_cuts_with_full_rank_block": 237
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "training_events": 120,
+        "evaluation_events": 256,
+        "training_active_component_ranks": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "final_active_component_ranks": [
+          15
+        ],
+        "first_single_full_rank_block_cursor": 144,
+        "largest_active_block_rank_at_or_after_training": 15,
+        "post_training_cuts_with_full_rank_block": 233
+      }
+    ]
+  }
+}

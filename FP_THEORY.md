@@ -2746,6 +2746,23 @@ native audits pass2,896 complete-state updates and36 rate checks. This is
 learner theory, with no new semantic action, production solver, AMP authority
 or change to any registered model experiment.
 
+The [query-matroid closure theorem](theory/proofs/FACTOR_QUERY_MATROID.md)
+removes the restriction to original latent coordinates. Under any fixed
+bijection into categorical factors, a positive two-valued likelihood can
+preserve independence only by depending on one factor. Minimal binary parity
+dependencies must stay within that factor. Each matroid component of rank r
+therefore needs2^r categories; a basis grouped by component attains the bound.
+Forest query families admit binary factors, but the complete all-pair family
+forces one factor containing all2^(n-1) worlds, even for nonlinear coordinates.
+This is not a storage lower bound for encoded factors, a general decoder
+lower bound or a complete native-state quotient.40,320 arbitrary bijections,
+1,098 simple graphs and596 native updates/1,192 full states pass the audit.
+A native closing cycle produces next761/882 rather than37/42. The distinct
+snapshot theorem for linear parity coordinates passes244,944 exact checks;
+active signed-count blocks reach full rank after7-11/14-24 evaluation labels
+on the retained n8/n16 tapes. Those are passive structural diagnostics, with
+no production, AMP, installation or model-outcome authority.
+
 The [positive count-partition decoder law](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 gives a separate unconditional2^Theta(n) scalar-circuit bound for exact
 unnormalized inference from bounded edge factors9^-c. Uniform agreement on

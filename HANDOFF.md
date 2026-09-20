@@ -2,6 +2,21 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current learner-structure result, 2026-09-21:** the [query-matroid closure law](theory/proofs/FACTOR_QUERY_MATROID.md)
+extends the independent-factor obstruction to every fixed bijective world
+encoding, including nonlinear coordinates. Positive two-valued likelihoods
+must be local to one factor; minimal parity dependencies then force each
+matroid component of rank r into a factor with at least2^r categories. A
+parity basis attains these ranks. Forest families admit binary factors, but
+the complete all-pair family forces one2^(n-1)-category factor. This does not
+lower-bound encoded factor storage or arbitrary learners. All40,320 eight-
+world bijections,1,098 small graphs,244,944 exact snapshot checks and596 native
+updates/1,192 full states pass. An actual closing-cycle update loses correlation:
+next761/882 versus37/42. A separate linear-coordinate snapshot law shows one
+full-rank block after7-11 evaluation labels on the retained n8 tapes and14-24
+at n16. This is passive structural evidence, not a new model outcome, Runtime
+solver or AMP quotient; the live v8 experiment remains unchanged.
+
 **Current normalization result, 2026-09-21:** the [positive rational readout
 compiler](theory/proofs/POSITIVE_RATIONAL_READOUT.md) lowers any positive
 {+,multiply,divide} circuit over1+theta into ordinary native SUM/PRODUCT

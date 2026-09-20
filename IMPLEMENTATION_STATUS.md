@@ -2,6 +2,18 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [query-matroid factor audit](theory/proofs/FACTOR_QUERY_MATROID.md)
+now checks exact independent-factor closure under arbitrary fixed world
+bijections. All40,320 encodings of eight worlds and both nontrivial factor
+shapes agree with the component-rank criterion. It also checks1,098 graphs,
+244,944 exact linear snapshot factorizations,596 native units/1,192 full states,
+four profile attachments and a three-update closing-cycle counterexample.
+The existing simplex U attains the allowable local factors at rate1/m; the
+all-pair family requires a single factor even after nonlinear re-encoding.
+Eight passive signed-count diagnostics find full-rank active blocks soon
+after evaluation begins. No production constructor, complete-state encoding,
+AMP relation, model score or registered experiment changes.
+
 The [positive rational readout compiler](theory/proofs/POSITIVE_RATIONAL_READOUT.md)
 is a passive native Program builder, with linear node overhead, fixed feature1
 and bases(1,1); production constructors do not import it. It checks400 generic
