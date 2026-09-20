@@ -8,10 +8,15 @@ with linear native graph overhead and bases(1,1). Directed-tree polynomials
 give a nonconstant separation from direct positive polynomial cost. Thus a
 general normalized-forecast lower bound cannot be inferred from the partition
 law. The remaining relation-decoder question must address its actual rational
-function and declared resources. This particular compiler has factorial
-degree and n7/n8 numerical refusals; it supplies no efficient physical model
-or justification for adding a division action. Keep full-state/AMP proofs
-and finite resource measurements separate from pointwise readout identities.
+function and declared resources. The original emitter's factorial degree is
+avoidable: [shared positive denominators](theory/proofs/SHARED_DENOMINATOR_READOUT.md)
+reduce it to2^(n-2), recovering n7/n8 exact and binary64 execution. Exact
+uniform checks pass through n12 and two binary64 units per initializer through
+n10. The new graph still has Theta(2^n log n) output numerator bits, n11
+binary64 overflow and an n13 exact guard refusal. These are emitter-specific
+limits, not a lower bound for all normalized graphs or a reason for a new
+division action. Keep full native-state/AMP proofs and finite measurements
+separate from selected-gradient and readout identities.
 
 The [PRODUCT-belief closure question](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 is now settled for a fixed partition of coordinates: the existing simplex U
@@ -53,7 +58,7 @@ the unfavorable v8 preparation workspace and full fixed phase padding.
 Preflight passes and execution is running at immutableec373e7, parent20984/
 first v7 worker6820. The initial journal has zero completed outcomes; wait
 for the same-source terminal/prefix results and independent readers. The old
-live matrix and all old model results stay unchanged.
+completed likelihood matrix and all old model results stay unchanged.
 
 The fixed n16 execution-recovery question is [resolved for its one declared
 case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current

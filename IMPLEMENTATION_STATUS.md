@@ -12,6 +12,17 @@ checks return UNRESOLVED under the32768-bit guard; passive binary64 also
 becomes nonfinite. The cheap rational oracle cannot replace native values,
 feature gradients or bridge evidence. No AMP or Runtime installation follows.
 
+The [shared-denominator tree emitter](theory/proofs/SHARED_DENOMINATOR_READOUT.md)
+now improves that passive construction: maximum selected degree2^(n-2),
+O(n^3) native graph size, and Theta(2^n log n) output numerator bits at uniform
+initialization. At n8 the actual graph has1704 nodes and493-bit maximum forward
+operands. It passes25 tree cases/50 full gradients,51 native units/102 complete
+states, and exact uniform forward/full-gradient checks through n12. Ordered
+CPU binary64 primitives pass both one-event branches through n10; n11 onward
+overflow. The n13 exact audit refuses the unchanged32768-bit guard. All
+feature gradients and native values belong to this new graph. No production
+constructor, state quotient, AMP bridge or registered model run changes.
+
 The new [factorized learner audit](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 uses existing native Programs and simplex U without production changes.
 At block mass/rate1/m it verifies2,896 posterior-marginal and factorized-history

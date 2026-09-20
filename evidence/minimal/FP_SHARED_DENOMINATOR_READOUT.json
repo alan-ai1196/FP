@@ -1,0 +1,422 @@
+{
+  "status": "PASS_WITH_DECLARED_NUMERICAL_REFUSALS",
+  "scope": "passive positive compiler and complete CPU learner audits; no Runtime or AMP authority",
+  "tree_oracle": {
+    "n_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "independent_enumerated_tree_cases": 25,
+    "complete_native_gradient_checks": 50
+  },
+  "complete_learner": {
+    "native_observe_commit_pairs": 51,
+    "complete_state_checks": 102,
+    "all_binary_history_depth": 3,
+    "two_pass_profile_attachments": 3
+  },
+  "resource_pressure": {
+    "reference_integer_bits": 32768,
+    "rows": [
+      {
+        "n": 2,
+        "rational_nodes": 3,
+        "native": {
+          "nodes": 10,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 5,
+          "PRODUCTs": 4,
+          "SUM_edges": 7,
+          "edges": 15,
+          "slots": 2,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 1,
+        "denominator_degree": 0,
+        "old_emitter_degree": 1,
+        "retained_old_exact_status": "PASS",
+        "retained_old_binary64_status": "FINITE_FORWARD_ONLY",
+        "exact_probability_oracle": "2/3",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 2,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 175,
+          "maximum_relative_native_value_error_upper": "0",
+          "maximum_absolute_probability_error_upper": "2932031007403/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "733007751851/39614081257132168796771975168",
+          "maximum_absolute_committed_parameter_error_upper": "0"
+        }
+      },
+      {
+        "n": 3,
+        "rational_nodes": 10,
+        "native": {
+          "nodes": 47,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 24,
+          "PRODUCTs": 22,
+          "SUM_edges": 42,
+          "edges": 86,
+          "slots": 5,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 2,
+        "denominator_degree": 0,
+        "old_emitter_degree": 3,
+        "retained_old_exact_status": "PASS",
+        "retained_old_binary64_status": "FINITE_FORWARD_ONLY",
+        "exact_probability_oracle": "75/91",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 7,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 762,
+          "maximum_relative_native_value_error_upper": "0",
+          "maximum_absolute_probability_error_upper": "205403271123/4951760157141521099596496896",
+          "maximum_absolute_full_gradient_error_upper": "15175676972381/19807040628566084398385987584",
+          "maximum_absolute_committed_parameter_error_upper": "1649670193177/79228162514264337593543950336"
+        }
+      },
+      {
+        "n": 4,
+        "rational_nodes": 31,
+        "native": {
+          "nodes": 150,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 73,
+          "PRODUCTs": 76,
+          "SUM_edges": 135,
+          "edges": 287,
+          "slots": 10,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 4,
+        "denominator_degree": 1,
+        "old_emitter_degree": 11,
+        "retained_old_exact_status": "PASS",
+        "retained_old_binary64_status": "FINITE_FORWARD_ONLY",
+        "exact_probability_oracle": "16000/16729",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 19,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 2303,
+          "maximum_relative_native_value_error_upper": "2585171739227/9903520314283042199192993792",
+          "maximum_absolute_probability_error_upper": "88983280833/1237940039285380274899124224",
+          "maximum_absolute_full_gradient_error_upper": "43105556242389/39614081257132168796771975168",
+          "maximum_absolute_committed_parameter_error_upper": "439099934271/19807040628566084398385987584"
+        }
+      },
+      {
+        "n": 5,
+        "rational_nodes": 70,
+        "native": {
+          "nodes": 341,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 162,
+          "PRODUCTs": 178,
+          "SUM_edges": 306,
+          "edges": 662,
+          "slots": 17,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 8,
+        "denominator_degree": 4,
+        "old_emitter_degree": 57,
+        "retained_old_exact_status": "PASS",
+        "retained_old_binary64_status": "FINITE_FORWARD_ONLY",
+        "exact_probability_oracle": "10440125/10505661",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 44,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 5106,
+          "maximum_relative_native_value_error_upper": "0",
+          "maximum_absolute_probability_error_upper": "2974930299335/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "202948955678283/79228162514264337593543950336",
+          "maximum_absolute_committed_parameter_error_upper": "2716061968989/79228162514264337593543950336"
+        }
+      },
+      {
+        "n": 6,
+        "rational_nodes": 133,
+        "native": {
+          "nodes": 645,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 302,
+          "PRODUCTs": 342,
+          "SUM_edges": 577,
+          "edges": 1261,
+          "slots": 26,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 16,
+        "denominator_degree": 11,
+        "old_emitter_degree": 377,
+        "retained_old_exact_status": "PASS",
+        "retained_old_binary64_status": "FINITE_FORWARD_ONLY",
+        "exact_probability_oracle": "15398263296/15408028921",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 102,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 9517,
+          "maximum_relative_native_value_error_upper": "48158132732217/79228162514264337593543950336",
+          "maximum_absolute_probability_error_upper": "1761657074489/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "52393695170169/4951760157141521099596496896",
+          "maximum_absolute_committed_parameter_error_upper": "571752298931/39614081257132168796771975168"
+        }
+      },
+      {
+        "n": 7,
+        "rational_nodes": 226,
+        "native": {
+          "nodes": 1090,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 505,
+          "PRODUCTs": 584,
+          "SUM_edges": 972,
+          "edges": 2140,
+          "slots": 37,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 32,
+        "denominator_degree": 26,
+        "old_emitter_degree": 2935,
+        "retained_old_exact_status": "UNRESOLVED",
+        "retained_old_binary64_status": "UNRESOLVED",
+        "exact_probability_oracle": "43122163756063/43124340538399",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 221,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 15920,
+          "maximum_relative_native_value_error_upper": "2388384486029/618970019642690137449562112",
+          "maximum_absolute_probability_error_upper": "2218225679357/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "1585805836647415/79228162514264337593543950336",
+          "maximum_absolute_committed_parameter_error_upper": "2189651220213/79228162514264337593543950336"
+        }
+      },
+      {
+        "n": 8,
+        "rational_nodes": 355,
+        "native": {
+          "nodes": 1704,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 783,
+          "PRODUCTs": 920,
+          "SUM_edges": 1515,
+          "edges": 3355,
+          "slots": 50,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 64,
+        "denominator_degree": 57,
+        "old_emitter_degree": 25955,
+        "retained_old_exact_status": "UNRESOLVED",
+        "retained_old_binary64_status": "UNRESOLVED",
+        "exact_probability_oracle": "204800000000000000/204800678223072849",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 493,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 24699,
+          "maximum_relative_native_value_error_upper": "22456915130345/79228162514264337593543950336",
+          "maximum_absolute_probability_error_upper": "9602179137341/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "713857589168791/9903520314283042199192993792",
+          "maximum_absolute_committed_parameter_error_upper": "24165996227/2475880078570760549798248448"
+        }
+      },
+      {
+        "n": 9,
+        "rational_nodes": 526,
+        "native": {
+          "nodes": 2515,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 1148,
+          "PRODUCTs": 1366,
+          "SUM_edges": 2230,
+          "edges": 4962,
+          "slots": 65,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 128,
+        "denominator_degree": 120,
+        "old_emitter_degree": 256153,
+        "exact_probability_oracle": "1524068262066659765625/1524068543541636476281",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 1043,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 36238,
+          "maximum_relative_native_value_error_upper": "6370490824885/19807040628566084398385987584",
+          "maximum_absolute_probability_error_upper": "1700153864169/19807040628566084398385987584",
+          "maximum_absolute_full_gradient_error_upper": "1130130024563229/39614081257132168796771975168",
+          "maximum_absolute_committed_parameter_error_upper": "108522504443/4951760157141521099596496896"
+        }
+      },
+      {
+        "n": 10,
+        "rational_nodes": 745,
+        "native": {
+          "nodes": 3551,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 1612,
+          "PRODUCTs": 1938,
+          "SUM_edges": 3141,
+          "edges": 7017,
+          "slots": 82,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 256,
+        "denominator_degree": 247,
+        "old_emitter_degree": 2788329,
+        "retained_old_exact_status": "NOT_RUN",
+        "retained_old_binary64_status": "NOT_RUN",
+        "exact_probability_oracle": "16761955040970803200000000/16761955191065438496999121",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 2216,
+        "checked_binary64": {
+          "status": "PASS_TWO_COMPLETE_UNITS",
+          "checked_scalar_operations": 50921,
+          "maximum_relative_native_value_error_upper": "188794498762909/39614081257132168796771975168",
+          "maximum_absolute_probability_error_upper": "5010336207905/79228162514264337593543950336",
+          "maximum_absolute_full_gradient_error_upper": "14759209726620373/39614081257132168796771975168",
+          "maximum_absolute_committed_parameter_error_upper": "1697374716331/79228162514264337593543950336"
+        }
+      },
+      {
+        "n": 11,
+        "rational_nodes": 1018,
+        "native": {
+          "nodes": 4840,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 2187,
+          "PRODUCTs": 2652,
+          "SUM_edges": 4272,
+          "edges": 9576,
+          "slots": 101,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 512,
+        "denominator_degree": 502,
+        "old_emitter_degree": 33174439,
+        "exact_probability_oracle": "260464119004086209990686588691/260464119104086209990686588691",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 4557,
+        "checked_binary64": {
+          "status": "UNRESOLVED",
+          "phase": "forward",
+          "reason": "registered binary result overflows",
+          "checked_scalar_operations": 11059
+        }
+      },
+      {
+        "n": 12,
+        "rational_nodes": 1351,
+        "native": {
+          "nodes": 6410,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 2885,
+          "PRODUCTs": 3524,
+          "SUM_edges": 5647,
+          "edges": 12695,
+          "slots": 122,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 1024,
+        "denominator_degree": 1013,
+        "old_emitter_degree": 428193867,
+        "retained_old_exact_status": "NOT_RUN",
+        "retained_old_binary64_status": "NOT_RUN",
+        "exact_probability_oracle": "5517858991227701104599116726403072/5517858991309103853985956487516393",
+        "exact": "PASS",
+        "maximum_forward_operand_bits": 9738,
+        "checked_binary64": {
+          "status": "UNRESOLVED",
+          "phase": "forward",
+          "reason": "registered binary result overflows",
+          "checked_scalar_operations": 14512
+        }
+      },
+      {
+        "n": 13,
+        "rational_nodes": 1750,
+        "native": {
+          "nodes": 8289,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 3718,
+          "PRODUCTs": 4570,
+          "SUM_edges": 7290,
+          "edges": 16430,
+          "slots": 145,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 2048,
+        "denominator_degree": 2036,
+        "old_emitter_degree": 5958465857,
+        "exact_probability_oracle": "154807822579499298450186647587158203125/154807822579578795297390038431291644661",
+        "exact": "UNRESOLVED",
+        "reason": "reference operation may exceed its integer work limit",
+        "checked_binary64": {
+          "status": "UNRESOLVED",
+          "phase": "forward",
+          "reason": "registered binary result overflows",
+          "checked_scalar_operations": 18491
+        }
+      },
+      {
+        "n": 16,
+        "rational_nodes": 3403,
+        "native": {
+          "nodes": 16060,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 7147,
+          "PRODUCTs": 8912,
+          "SUM_edges": 14067,
+          "edges": 31891,
+          "slots": 226,
+          "bindings": 0
+        },
+        "maximum_selected_degree": 16384,
+        "denominator_degree": 16369,
+        "old_emitter_degree": 23979687541891,
+        "retained_old_exact_status": "NOT_RUN",
+        "retained_old_binary64_status": "NOT_RUN",
+        "evaluation": "NOT_RUN; syntax and degree only"
+      }
+    ],
+    "reported_error_upper_grid_bits": 96,
+    "relative_value_and_absolute_gradient_state_tolerance": "1/1000000000",
+    "absolute_probability_tolerance": "1/1000000000000",
+    "old_rows_are_retained_evidence_not_rerun": true,
+    "Runtime_or_AMP_authority": false,
+    "reference_operand_representation": "explicit reduced rational scalars",
+    "forward_operand_scope": "retained values, masses, normalizer and probabilities; excludes arithmetic temporaries"
+  },
+  "nonerasable_information": {
+    "n": 4,
+    "correct_probability0": "16000/16729",
+    "erased_denominator_probability0": "160000/162187",
+    "old_fixed_feature_gradient": "35727879337439/6691600000000",
+    "new_fixed_feature_gradient": "3884387/501870",
+    "selected_gradients_identical_but_complete_observed_states_different": true
+  }
+}

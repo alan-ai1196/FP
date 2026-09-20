@@ -124,6 +124,12 @@ construction and verification of the resulting native learner and costs.
 
 ## 3. The cost hidden in this compiler's shared denominators
 
+The generic fraction-clearing order below is now accompanied by a
+[common-denominator alternative](SHARED_DENOMINATOR_READOUT.md): the latter
+has degree2^(n-2), exact full-gradient checks through n12 and checked binary64
+units through n10. The factorial law and n7/n8 refusals below remain valid
+for this original emitter; they are not necessary costs of the forecast.
+
 Polynomial graph size does not give a polynomial resource contract. For the
 specific elimination and fraction-clearing order above, let b_k be the degree
 of each **unreduced** edge denominator when k vertices remain. In the original

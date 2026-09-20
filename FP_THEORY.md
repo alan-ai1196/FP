@@ -2764,3 +2764,17 @@ small syntax does not give a bounded physical learner. Exact full-gradient
 and complete-state audits pass in the declared smaller cases. The rational
 oracle is not the complete native state or its AMP bridge, and no existing
 model, constructor, semantic action or resource contract changes.
+
+The [shared-denominator compilation](theory/proofs/SHARED_DENOMINATOR_READOUT.md)
+improves that tree emitter without changing the represented forecast or
+selected unit-rate learner. A common N_ij/Q invariant and proved positive
+pivot cancellation give degree2^(n-2) at O(n^3) graph size. This particular
+graph's output numerator needs Theta(2^n log n) bits at uniform initialization;
+neither that cost nor the old factorial degree lower-bounds all emitters.
+Exact full-gradient checks pass through n12; checked CPU binary64 forward
+and both one-event units pass through n10, then forward overflow occurs.
+The n13 exact check refuses the same32768-bit operation guard.25 tree cases,
+51 native units and102 complete states pass independently. The fixed-feature
+gradient differs from the old graph, so equality of selected learning does
+not grant a complete-state substitution or an AMP bridge. This is a passive
+compiler result, with no new semantic action or production/model authority.

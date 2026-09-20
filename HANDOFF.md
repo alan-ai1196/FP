@@ -14,9 +14,17 @@ it does not give a fast relation decoder. Full native state remains material:
 400 generated forecasts/800 full gradients,25 independent tree cases and27
 native commits pass, while the emitter's degree grows factorially. The n7/n8
 full exact audits refuse the32768-bit guard and passive binary64 overflows;
-larger cases are syntax-only. No new division primitive, production solver,
-AMP bridge or installation authority is introduced. Optimize representation
-or return UNRESOLVED when these costs exceed a declared contract.
+larger original cases are syntax-only. The [shared-denominator alternative](theory/proofs/SHARED_DENOMINATOR_READOUT.md)
+now reduces degree to2^(n-2) with O(n^3) syntax. At n8 nodes change1683 to1704,
+degree25955 to64, and exact forward operands use493 bits. Exact/full-gradient
+checks pass through n12, and checked binary64 forward plus both one-event
+units pass through n10. The n11 binary64 path still overflows and n13 exact
+audit refuses the same bit guard. This graph's output needs Theta(2^n log n)
+bits at uniform initialization; no lower bound for all emitters follows.
+The audit adds25 tree cases/50 full gradients and51 native commits/102 full
+states. Fixed-feature gradients differ, so it is a new complete Program,
+not a quotient of the old one. No production solver, division primitive,
+AMP bridge or installation authority is introduced.
 
 **Current learner-theory result, 2026-09-21:** the [PRODUCT-belief law](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 derives exact posterior-marginal updates from the existing global simplex U:

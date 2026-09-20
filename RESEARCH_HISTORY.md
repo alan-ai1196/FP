@@ -5463,3 +5463,36 @@ gain and a remaining deployment gap. It falsifies uniform improvement and
 establishes no population power ordering or complete constructor class.
 The independent matched v7/v8 experiment at ec373e7 remains running under
 its original protocol; the completed matrix must not be restarted.
+
+## 160. Shared denominators recover the native tree learner's finite execution
+
+The original positive rational compiler deliberately retained every generic
+cross multiplication. Its factorial degree is not intrinsic to the directed-
+tree forecast. Keeping one symbolic denominator Q for all surviving edges
+gives N'_ij=N_ij*S+N_iv*N_vj and Q'=Q*S. The product of positive pivots
+reduces before compilation to S_last divided by a product of earlier pivot
+prefixes. Both resulting masses have small positive circuits and admit the
+same native positive-base lowering, without a new division primitive.
+
+The largest selected degree is now2^(n-2), with O(n^3) nodes. Its actual
+output numerator still needs Theta(2^n log n) bits at uniform initialization.
+At n8, nodes grow1683 to1704 while degree falls25955 to64 and the maximum
+exact forward operand has493 bits. All exact forward/full-gradient checks
+through n12 pass under the original32768-bit guard. Actual checked binary64
+forward and both one-event observe/commit branches pass through n10. The
+n11/n12/n13 binary64 paths overflow, and the n13 exact audit also refuses
+the declared guard. The n16 row is syntax-only. Original failures remain
+retained as outcomes of the original emitter.
+
+Independent labelled-tree enumeration checks25 cases/50 full gradients.
+An exhaustive binary-history audit through depth3 plus three profile
+attachments checks51 native updates/102 complete states. The two emitters'
+selected learning agrees, but their fixed-feature gradients do not; both
+graphs must retain their own full evidence. A separate n4 witness rejects
+discarding the final denominator. Exact error comparisons are retained as
+short upward dyadic enclosures, without large intermediate tapes.
+
+This is an improved compiler upper construction and an explicit remaining
+cost for that construction. It establishes no optimal forecast resource law,
+relation decoder, complete-state quotient or AMP bridge, and does not change
+either the completed deployment matrix or the running matched model protocol.
