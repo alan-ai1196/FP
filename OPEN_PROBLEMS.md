@@ -74,6 +74,14 @@ every result; do not replace this question with a bet menu.
 Its reader distinguishes numerical thresholds, retained owned crossings and
 actual installs, and never fills an evidence path after it stops.
 
+The [fixed-rule conditional prediction](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
+already rules out a uniform deployment improvement: paired cursors would be
+119/67/54/50 if all necessary owned gates succeed. Seed16 is later than its
+old114 and has more than0.016 extra unseen CE; the other three are earlier.
+Even a correct native p9/10 predictor has expected reciprocal factor above1
+at6/13, so the old power proof cannot transfer. Keep the registered test
+unchanged and compare its actual results; these are not completed outcomes.
+
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and
 the actual wealth floor. It uses the explicit posterior-mixture alternative,

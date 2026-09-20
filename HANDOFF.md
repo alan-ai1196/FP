@@ -547,6 +547,16 @@ failed crossing retention; nine forged records are rejected. All24 old model
 scores, four decisions and16 strong-control scores pass without rerunning a
 baseline. See the [reader audit](evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_READER_AUDIT.json).
 
+After registration, [exact conditional analysis](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
+predicts paired crossings119/67/54/50 if the required owned computations and
+gates succeed. The first is later than the old114, with more than0.016 worse
+unseen deployed CE; the other three are earlier. Its reference wealth falls
+to873/32768 before recovering. A native p9/10 witness also disproves transfer
+of the old reciprocal-power lemma to6/13 despite faster ideal log growth.
+The record contains256 reference forecasts,90 production wealth updates and
+1,964 independent exact log checks. This is passive retained-tape analysis,
+not a GPU result or reason to change the fixed running procedure.
+
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
 host workspace copies the phase span and decodes only initialized floating

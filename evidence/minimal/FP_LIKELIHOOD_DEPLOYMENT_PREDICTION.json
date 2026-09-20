@@ -1,0 +1,395 @@
+{
+  "status": "CONDITIONAL_FIXED_RULE_PREDICTION_AND_COUNTEREXAMPLE_PASS",
+  "registration_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "retained_control": {
+    "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json",
+    "analysis": "evidence/minimal/FP_LIKELIHOOD_MODEL_ANALYSIS.json",
+    "retained_at": "09ee265b56c15d0142f26914894158f0b31f287c",
+    "execution_source": "86083a0406292660115224f8e507626de4b442c5",
+    "analysis_source": "b85b39da8fa8440c243814a0ce6ee930d79f7ffe",
+    "original_failed_attempt": {
+      "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json",
+      "execution_source": "90f38834668546636b420f66b1a831b5969a2a13",
+      "attempted_workers": 1,
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "model_and_resource_registration_identical": true,
+      "scope": "original failed attempt retained; no inferred model score or complete phase count"
+    },
+    "scope": "all four completed B6 owned controls retained exactly; no new control worker"
+  },
+  "evaluation_tapes_used": true,
+  "new_model_or_baseline_workers": 0,
+  "scope": "fixed registered rule; passive conditional prediction, no actual new crossing, score or installation",
+  "premises": "paired identities admitted at cutoff; exact posterior; proper-mass error<=0.001; all necessary proof refresh/physical/retention/install gates succeed",
+  "coefficient": "6/13",
+  "probability_tolerance": "1/1000",
+  "uniform_production_log_width_upper": "1/2353579470675",
+  "reciprocal_power_counterexample": {
+    "native_query": [
+      0,
+      0
+    ],
+    "native_probabilities": [
+      "9/10",
+      "1/10"
+    ],
+    "critical_coefficient_for_ideal_reciprocal_contraction": [
+      "213894422663/549755813888",
+      "427788845327/1099511627776"
+    ],
+    "rules": [
+      {
+        "coefficient": "1/8",
+        "ideal_expected_reciprocal": [
+          "529736217819/549755813888",
+          "1059472435639/1099511627776"
+        ],
+        "ideal_expected_log_growth": [
+          "22731092237/549755813888",
+          "45462184475/1099511627776"
+        ],
+        "production_one_step_wealth": [
+          "70351/65536",
+          "52351/65536"
+        ],
+        "production_expected_reciprocal": "3548839936/3682945201"
+      },
+      {
+        "coefficient": "6/13",
+        "ideal_expected_reciprocal": [
+          "602957558685/549755813888",
+          "1205915117371/1099511627776"
+        ],
+        "ideal_expected_log_growth": [
+          "44106504365/549755813888",
+          "88213008731/1099511627776"
+        ],
+        "production_one_step_wealth": [
+          "83315/65536",
+          "8427/32768"
+        ],
+        "production_expected_reciprocal": "3850256384/3510477525"
+      }
+    ],
+    "scope": "correct-posterior alternative; does not falsify mean-null validity"
+  },
+  "cases": [
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "retained_B6_install_cursor": 114,
+      "fresh": {
+        "reference_cursor": 119,
+        "AMP_earliest_cursor": 118,
+        "AMP_latest_cursor": 119,
+        "paired_cursor_interval": [
+          119,
+          119
+        ],
+        "reference_wealth_at_crossing": "79419/16384",
+        "lower_tube_wealth_at_crossing": "136101/32768",
+        "upper_tube_wealth_at_crossing": "145213/32768",
+        "minimum_reference_wealth_before_stopping": "873/32768",
+        "minimum_reference_wealth_cursor": 84,
+        "actual_wealth_helper_prefix_checks": 59
+      },
+      "remaining_forecasts_if_installed": [
+        5,
+        5
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 44,
+          "reference_candidate_expected_CE": [
+            "188544989203/549755813888",
+            "377089978407/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "376980415927/1099511627776",
+            "94301516663/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "185932086247/274877906944",
+            "743728624301/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "22907659853/68719476736",
+            "366747929061/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "18395039797/1099511627776",
+            "18395319111/1099511627776"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "185473509645/549755813888",
+            "370947019291/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "185435847543/549755813888",
+            "92757187557/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "730506910133/1099511627776",
+            "365253695101/549755813888"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "359478639973/1099511627776",
+            "359635215047/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "31616474651/1099511627776",
+            "15808477361/549755813888"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "retained_B6_install_cursor": 90,
+      "fresh": {
+        "reference_cursor": 67,
+        "AMP_earliest_cursor": 67,
+        "AMP_latest_cursor": 67,
+        "paired_cursor_interval": [
+          67,
+          67
+        ],
+        "reference_wealth_at_crossing": "266125/65536",
+        "lower_tube_wealth_at_crossing": "259/64",
+        "upper_tube_wealth_at_crossing": "267029/65536",
+        "minimum_reference_wealth_before_stopping": "1",
+        "minimum_reference_wealth_cursor": 60,
+        "actual_wealth_helper_prefix_checks": 7
+      },
+      "remaining_forecasts_if_installed": [
+        57,
+        57
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 44,
+          "reference_candidate_expected_CE": [
+            "183633754467/549755813888",
+            "367267508935/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "183605771279/549755813888",
+            "367329845145/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "412617628629/1099511627776",
+            "412623008855/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "22646581855/549755813888",
+            "45406086071/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-34490699621/274877906944",
+            "-8622338641/68719476736"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "45524258941/137438953472",
+            "364194071529/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "91038898661/274877906944",
+            "364238847939/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "401695573749/1099511627776",
+            "200850548453/549755813888"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "37462248967/1099511627776",
+            "37539979105/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-72717891701/549755813888",
+            "-145430260243/1099511627776"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "retained_B6_install_cursor": 72,
+      "fresh": {
+        "reference_cursor": 54,
+        "AMP_earliest_cursor": 54,
+        "AMP_latest_cursor": 54,
+        "paired_cursor_interval": [
+          54,
+          54
+        ],
+        "reference_wealth_at_crossing": "304521/65536",
+        "lower_tube_wealth_at_crossing": "301349/65536",
+        "upper_tube_wealth_at_crossing": "38463/8192",
+        "minimum_reference_wealth_before_stopping": "1",
+        "minimum_reference_wealth_cursor": 40,
+        "actual_wealth_helper_prefix_checks": 14
+      },
+      "remaining_forecasts_if_installed": [
+        50,
+        50
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 48,
+          "reference_candidate_expected_CE": [
+            "418552612167/1099511627776",
+            "52319076521/137438953472"
+          ],
+          "AMP_candidate_expected_CE": [
+            "209126849277/549755813888",
+            "209429153401/549755813888"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "225097557381/549755813888",
+            "450210692869/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "31352386067/1099511627776",
+            "31941416209/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-50575886171/549755813888",
+            "-50568097117/549755813888"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "100818146963/274877906944",
+            "403272587853/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "50381050153/137438953472",
+            "201751708477/549755813888"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "111493587043/274877906944",
+            "445987279929/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "42483862975/1099511627776",
+            "10731486737/274877906944"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-14225449855/137438953472",
+            "-113790667081/1099511627776"
+          ]
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "retained_B6_install_cursor": 72,
+      "fresh": {
+        "reference_cursor": 50,
+        "AMP_earliest_cursor": 50,
+        "AMP_latest_cursor": 50,
+        "paired_cursor_interval": [
+          50,
+          50
+        ],
+        "reference_wealth_at_crossing": "314235/65536",
+        "lower_tube_wealth_at_crossing": "312423/65536",
+        "upper_tube_wealth_at_crossing": "158027/32768",
+        "minimum_reference_wealth_before_stopping": "1",
+        "minimum_reference_wealth_cursor": 40,
+        "actual_wealth_helper_prefix_checks": 10
+      },
+      "remaining_forecasts_if_installed": [
+        54,
+        54
+      ],
+      "conditional_scores": {
+        "unseen": {
+          "contexts": 48,
+          "reference_candidate_expected_CE": [
+            "24067290525/68719476736",
+            "385076648401/1099511627776"
+          ],
+          "AMP_candidate_expected_CE": [
+            "192464661065/549755813888",
+            "385230686173/1099511627776"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "104114871625/274877906944",
+            "416470653327/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "31239967153/1099511627776",
+            "31530164371/1099511627776"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-151749520419/1099511627776",
+            "-75869176795/549755813888"
+          ]
+        },
+        "full_domain": {
+          "contexts": 64,
+          "reference_candidate_expected_CE": [
+            "378165613609/1099511627776",
+            "189082806805/549755813888"
+          ],
+          "AMP_candidate_expected_CE": [
+            "189027559453/549755813888",
+            "94570669539/274877906944"
+          ],
+          "deployed_expected_CE_if_installed": [
+            "420672626975/1099511627776",
+            "420682250273/1099511627776"
+          ],
+          "deployment_minus_same_AMP_candidate_CE": [
+            "10599893029/274877906944",
+            "21308754035/549755813888"
+          ],
+          "conditional_deployed_CE_change_from_B6": [
+            "-139105320037/1099511627776",
+            "-139095696737/1099511627776"
+          ]
+        }
+      }
+    }
+  ],
+  "exact_pre_target_forecasts": 256,
+  "actual_wealth_helper_prefix_checks": 90,
+  "independent_exact_log_enclosures": 1964,
+  "maximum_independent_log_terms": 32,
+  "maximum_independent_log_operand_bits": 16061
+}

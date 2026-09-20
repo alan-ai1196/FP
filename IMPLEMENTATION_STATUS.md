@@ -95,6 +95,13 @@ initial journal and same-source reader record zero completed outcomes and
 live at launch; keep the execution source fixed. No success is inferred
 from the small n2 reachability audit or the larger coefficient.
 
+The [new rule's conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
+predicts paired cursors119/67/54/50, conditional on all required owned gates.
+Seed16 is later than its old114. A native correct-posterior witness gives
+expected reciprocal factor1.096773 at6/13, invalidating transfer of the old
+power argument.256 forecasts,90 production wealth prefixes and1,964 exact
+log checks pass. No running source, rule, model score or cap is changed.
+
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,
 intermediates and failure checks remain; padding is never decoded and the

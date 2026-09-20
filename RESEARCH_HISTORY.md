@@ -4833,3 +4833,32 @@ is retained only after same-source registration and reader checks; it has
 zero completed outcomes. The reader rechecks24 B6 scores, four B6 decisions
 and16 posterior scores. These launch observations establish no new model
 outcome. Keep the execution source fixed while main research proceeds.
+
+## 138. Faster ideal evidence growth need not give earlier deployment
+
+After the13/8 protocol is committed and launched, passive exact analysis
+predicts its outcome under successful owned proof/retention/physical/install
+premises. The same full AMP probability tube gives unique paired cursors
+119/67/54/50. The first case is later than its retained B6 cursor114 and
+would have more than0.016 worse unseen deployed CE; the other three are
+earlier. Its reference wealth falls to873/32768 at cursor84 before recovery.
+This result is retained before a completed new worker is observed, and the
+running rule, source, caps and case order remain unchanged.
+
+The failure is not a mass-bound or mean-null-validity counterexample. Keeping
+the3/4 fraction while tightening B increases the actual risk coefficient.
+For a correct binary posterior p against uniform, write a=log(2p),
+b=log(2(1-p)) and mu=p*a+(1-p)*b. The exact expected reciprocal contracts
+iff the coefficient is at most mu/(-a*b). The native p9/10 self-query has
+expected reciprocal0.963585 at1/8 and1.096773 at6/13, while expected log
+growth rises from0.041348 to0.080229. Downward production rounding cannot
+repair the latter reciprocal inequality. Thus the earlier finite-power
+proof's reciprocal step does not transfer even to a correct native posterior.
+
+The exact audit checks that native witness,256 pre-target forecasts,90
+production wealth updates before crossing and1,964 independently enclosed
+logs, using at most32 series terms and16,061-bit operands. Conditional CE
+intervals cover all allowed AMP perturbations and keep failed gates unscored.
+No model or baseline is rerun, and no new rule is chosen from these labels.
+Compare the fixed physical outcomes next; do not confuse larger ideal growth,
+improved admission bounds, finite first passage and useful deployment.

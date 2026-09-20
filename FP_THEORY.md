@@ -2636,3 +2636,10 @@ The minimal reader explicitly separates a numerical threshold from a retained
 owned crossing and actual installation; a failed save cannot supply authority.
 Its two reference scenarios and nine adversarial refusals are development
 evidence, not a new model result or general power theorem.
+
+The [fixed-rule counterexample and conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
+show why a stronger valid bound is not a power-ordering theorem. The6/13
+coefficient fails the old reciprocal contraction even for a correct native
+p9/10 posterior. Conditional paired crossing on seed16 moves from114 to119,
+while the other three retained tapes cross earlier. These exact scoped
+results change neither validity, Foundation nor the fixed running experiment.
