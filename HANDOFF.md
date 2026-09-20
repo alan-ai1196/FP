@@ -589,7 +589,12 @@ new-rule CPU profile/bridge/install:44 exact forecasts,280 binary64 phases,
 16 fresh scores, install10 and a sealed46-observation stream. Its peak is
 39,084,032 bytes. Three paired failure cases check42 additional scores,
 reference-only crossing, finite-save failure and failed ordinary publication.
-CUDA remains unverified for the new rule. Keep every bounded attempt and
+The separate CUDA job at3490d76 now also passes:44 forecasts,280 CUDA and
+280 binary64 phases,16 fresh scores, install10 and a sealed46-observation
+stream. PID17356 peaks at2,392,080,384 host bytes under4GiB. It overlaps
+live model worker6920 during the17:24:56-17:25:33 UTC observation bracket;
+both sources and all model declarations remain fixed. Record that overlap,
+and make no exclusive-device timing claim. Keep every bounded attempt and
 its own execution source; this is no full-release or model result.
 The fixed8ccacc0 source and experiment remain unchanged.
 

@@ -130,7 +130,11 @@ The new-rule complete CPU profile/bridge/install passes in a512MiB job from
 4daf126:44 forecasts,280 binary64 phases,16 fresh scores, install10, and
 39,084,032-byte peak. Three paired failure cases check42 scores and prohibit
 reference-to-finite transfer and authority after failed ordinary publication.
-CUDA profile and installation of this rule are still pending.
+The separate actual RTX 3090 job at3490d76 also seals/installs at10:280 CUDA
+and280 binary64 phases,44 forecasts and16 fresh scores. Its host peak is
+2,392,080,384 bytes under4GiB. The short overlap with model worker6920 is
+recorded, so no exclusive-device timing claim is made. This is scoped
+profile/bridge/install evidence, not new model utility or a full release.
 The optional identity field changes packed charges, including constant-rule
 records; no byte-equivalence or whole-project freeze is claimed.
 

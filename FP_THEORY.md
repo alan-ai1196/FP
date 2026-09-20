@@ -2660,8 +2660,9 @@ a quotient of complete Compiler state, new semantic action or model
 improvement. The [owned implementation](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md)
 now retains the rounded curve and exact wealth together, with prepaid work,
 guarded integers and terminal failure publication. Exact, actual paired
-failure and bounded CPU installation audits pass; CUDA installation of this
-new rule remains a separate obligation. The fixed experiment remains unchanged.
+failure and separate bounded CPU/CUDA installation audits pass. The small
+CUDA fixture checks280 phases per path and installs at10; it grants no
+model advantage or complete-class claim. The fixed experiment remains unchanged.
 
 The [finite-power composition](theory/proofs/MIXTURE_PERSISTENCE_POWER.md)
 uses a pathwise comparator and finite precision to avoid a reciprocal-wealth

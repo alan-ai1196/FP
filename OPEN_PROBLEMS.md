@@ -99,10 +99,12 @@ wealth alone is insufficient, and rounding makes gain order relevant. The
 15,625-word audit passes. This is not a uniquely preferred rule or an
 earlier-crossing guarantee. The [owned reference extension](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md)
 now passes curve/wealth publication, prepaid work, real integer exhaustion,
-fair-label and changing-learner audits. The complete CPU profile/bridge/install
-now passes at10 in a bounded512MiB job; three paired failures refuse false
-authority. Target CUDA, larger-scale physical resources and model value
-remain open. Preserve the fixed8ccacc0 experiment and assess its actual outcomes.
+fair-label and changing-learner audits. Complete CPU and RTX 3090
+profile/bridge/install now pass at10 in separate bounded jobs; the CUDA job
+checks280 phases per path. Three paired failures refuse false authority.
+Larger-scale physical resources and model value remain open. The short GPU
+audit's overlap with model worker6920 is recorded; preserve the fixed8ccacc0
+experiment and assess its actual outcomes.
 
 The [finite-power obstruction is now scoped more sharply](theory/proofs/MIXTURE_PERSISTENCE_POWER.md):
 pathwise precision/comparator bounds prove power for each fixed supported

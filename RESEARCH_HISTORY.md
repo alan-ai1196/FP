@@ -5049,3 +5049,24 @@ regret alone. Keep the equally precise fixed control, keep the existing
 curve's continuation obligations intact, and do not turn this comparison
 into a menu search on the same labels. The live8ccacc0 matrix and actual
 first-row result remain separate and unchanged.
+
+## 145. Close the exercised adaptive CUDA bridge and install path
+
+The new rule's actual RTX 3090 development worker runs from committed clean
+3490d76 in a4GiB job attached before resumption. PID17356 exits normally with
+peak2,392,080,384 host bytes. It checks44 exact posterior forecasts,280 actual
+CUDA and280 binary64 phases, and16 independently reconstructed fresh curves.
+Reference and CUDA wealth differ; both cross at10, complete transport/install
+passes, and the46-observation stream seals. Each stopped curve has nine cells
+and53,248 paid update work. The class remains `UNRESOLVED`.
+
+The previous CPU job/source remain in the same minimal attempt history.
+The GPU audit overlaps model worker6920, observed live before and after
+it in the17:24:56-17:25:33 UTC bracket on2026-09-20. This overlap is explicit
+evidence, not hidden under an exclusive-device timing claim. The registered
+model source stays8ccacc0 and no rule, cap, case order or outcome is changed.
+
+This closes the exercised mixed-precision reachability gap. It neither
+completes all possible failure tests nor changes the retrospective deployment
+reversals. The extra adaptive state still needs a research justification
+against the strong scalar control; implementation success is not that proof.

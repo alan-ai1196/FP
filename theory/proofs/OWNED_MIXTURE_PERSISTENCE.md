@@ -1,8 +1,8 @@
 # Owned positive mixture persistence
 
-Status: **IMPLEMENTED; EXACT/PAIRED FAILURE AUDITS AND BOUNDED CPU INSTALL PASS**.
-Actual CUDA profile, bridge and installation audits remain separate
-obligations. This extension does not change the running8ccacc0 experiment,
+Status: **IMPLEMENTED; EXACT/PAIRED FAILURES AND BOUNDED CPU/CUDA INSTALL PASS**.
+This is scoped endpoint evidence, not a complete release or a model
+advantage. This extension does not change the running8ccacc0 experiment,
 Foundation R4, ERC-1 or any search decision class.
 
 ## 1. Declaration and sufficient state
@@ -151,10 +151,39 @@ still pass the original install gates. The search class remains `UNRESOLVED`.
 
 The retained constant-fraction3/4 fixture at the same B installed at8. The
 new result establishes actual CPU reachability, not an earlier-crossing
-guarantee or population/model advantage. No new CUDA worker has run, and no
-CPU result substitutes for target AMP evidence. The registered n8 experiment
-continues from its separate immutable8ccacc0 source.
+guarantee or population/model advantage. CPU evidence does not substitute
+for target AMP; that path is tested separately below.
 
-This result closes ownership and CPU install reachability on the exercised
+## 6. Actual RTX 3090 bridge and installation
+
+`python -B scripts/audit_mixture_persistence.py --profile-cuda --write` runs
+from committed clean3490d76. The4GiB job is attached before resumption,
+exits normally and peaks at2,392,080,384 host bytes. PID17356 and its
+creation time bind the runtime observation to the completed job. The
+previous CPU attempt and its distinct execution source stay retained.
+
+The n2 fixture checks44 native posterior forecasts,280 actual CUDA phases,
+280 independently replayed binary64 phases and16 fresh score/curve updates.
+Both paths cross at10 after eight fresh events; complete transport/install
+passes and the46-observation CUDA stream seals. Each curve retains nine
+cells and53,248 paid update work. Reference and CUDA terminal wealth differ
+and are independently reconstructed from their own scores. The class remains
+`UNRESOLVED`; this is one selected native proposal, not a complete search.
+
+This short development job overlaps registered model worker6920, which is
+observed live before and after it. External observations bracket the audit
+between17:24:56 and17:25:33 UTC on2026-09-20. The overlap is retained explicitly;
+neither run is presented as an exclusive-device timing measurement. The
+model's source stays8ccacc0 and its rule, caps, case order and journal are
+unchanged. The board-capacity record is also not measured per-process VRAM.
+
+This closes the new rule's exercised CUDA profile/bridge/install path.
+The reference/paired fault audits above remain scoped to their actual
+executions; this single CUDA success is not every possible failure test.
+The [retrospective comparison](../../experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md)
+still limits its model value: first-passage reversals and the strong fine-grid
+fixed control remain, regardless of successful implementation.
+
+This result closes ownership and CPU/CUDA install reachability on the exercised
 paths. It does not prove first-passage dominance, model utility, full release
 or any new `CERTIFIED_COMPLETE` class. The fixed n8 matrix is unchanged.
