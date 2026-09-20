@@ -2,6 +2,17 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [normalization gap](theory/proofs/POSITIVE_RATIONAL_READOUT.md) is now
+concrete: a positive fraction-pair compiler realizes positive rational odds
+with linear native graph overhead and bases(1,1). Directed-tree polynomials
+give a nonconstant separation from direct positive polynomial cost. Thus a
+general normalized-forecast lower bound cannot be inferred from the partition
+law. The remaining relation-decoder question must address its actual rational
+function and declared resources. This particular compiler has factorial
+degree and n7/n8 numerical refusals; it supplies no efficient physical model
+or justification for adding a division action. Keep full-state/AMP proofs
+and finite resource measurements separate from pointwise readout identities.
+
 The [PRODUCT-belief closure question](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 is now settled for a fixed partition of coordinates: the existing simplex U
 computes posterior marginals at block mass/rate1/m, but exact joint learning

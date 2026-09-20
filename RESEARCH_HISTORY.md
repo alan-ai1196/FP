@@ -5401,3 +5401,37 @@ arbitrary normalized prediction, finite contracts or approximation. It also
 does not establish a particular worker's memory/time necessity. The existing
 P!=NP-conditional forecast theorem stays distinct, as do actual GPU outcomes.
 Both immutable model experiments are still running under their fixed rules.
+
+## 158. Native normalization already expresses rational computations, at explicit value cost
+
+An attempted extension of the positive partition lower bound meets a real
+counterexample family. Classical subtraction-free algorithms can be much
+smaller than direct positive polynomial circuits. A general fraction-pair
+construction, augmented by positive recurrences for(P,P-1), now compiles
+such odds circuits over1+theta into native SUM/PRODUCT Programs with bases(1,1)
+and linear graph overhead. No huge constant coefficient is imported or
+subtracted. A single final normalization computes R/(1+R). The exact unit
+source domain and fixed feature coordinate are substantive hypotheses.
+
+The directed-tree elimination algorithm gives a nonconstant separation:
+the shifted tree polynomial retains its exponential monotone cost by highest
+homogeneous-component extraction, while the normalized graph has O(n^3)
+nodes. This uses classical tree-circuit results and a concrete FP compiler;
+it does not claim a fast normalized relation decoder or new inference method.
+The old partition theorem remains valid in its division-free exact class.
+
+The cost is not hidden. This emitter's denominator degree satisfies
+b_(k-1)=1+(k+2)b_k and its output degree grows as Theta((n+1)!). At uniform
+simplex initialization, one actual numerator needs at least
+floor(a_n log2(d+1))+1 bits. The n6 graph has636 nodes, degree377 and exact
+forward operands up to2006 bits. The n7/n8 full exact audits return UNRESOLVED
+under the32768-bit operation guard, and passive binary64 first overflows at
+nodes1032/1412. No alternative-emitter impossibility or GPU outcome follows.
+
+The retained audit also passes400 generated rational forecasts/800 complete
+gradients,25 directed-tree value/derivative cases, and27 native observe/commit
+pairs including three profile attachments. All native feature gradients and
+state coordinates are retained. Replacing the native phase with its cheap
+rational oracle would require a separate complete-state/bridge proof. No
+production solver or division action is added; both fixed model experiments
+continue unchanged.

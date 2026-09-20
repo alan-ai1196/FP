@@ -163,6 +163,14 @@ general implication, not a statement that the actual relation forecast is
 constant. Its existing all-algorithm approximate lower bound remains the
 separate P!=NP-conditional theorem.
 
+The subsequent [positive rational readout compiler](POSITIVE_RATIONAL_READOUT.md)
+gives a nonconstant infinite-family separation: shifted directed-tree odds
+are expensive positive polynomials, but their normalized forecasts have
+polynomial-size native graphs with bases(1,1). This follows from a general
+positive fraction-pair/constant-excess construction. Its particular emitter
+has factorial degree growth and declared exact/binary64 refusals, so small
+syntax is still not a physical resource guarantee.
+
 The result also does not constrain a single fixed history, adaptive changes
 of circuit, algorithms with other primitives, finite declared horizons or
 approximate/UNRESOLVED decisions. Paying to compute likelihood powers, exact

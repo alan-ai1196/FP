@@ -1,0 +1,258 @@
+{
+  "status": "PASS_WITH_DECLARED_RESOURCE_REFUSALS",
+  "scope": "passive native positive rational readout compilation; no Runtime or AMP authority",
+  "general_circuits": {
+    "deterministic_seed": 20260921,
+    "circuits": 100,
+    "rational_operations_per_generation": 8,
+    "native_forecasts": 400,
+    "full_gradient_checks": 800
+  },
+  "directed_tree_oracle": {
+    "n_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "priors_per_n": 5,
+    "native_forecasts_with_independent_tree_derivatives": 25,
+    "full_gradient_checks": 50
+  },
+  "complete_learner": {
+    "native_observe_commit_pairs": 27,
+    "complete_state_boundaries": 54,
+    "two_pass_profile_cases": 3
+  },
+  "resource_pressure": {
+    "reference_bit_limit": 32768,
+    "rows": [
+      {
+        "n": 2,
+        "rational_nodes": 3,
+        "native": {
+          "nodes": 10,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 5,
+          "PRODUCTs": 4,
+          "SUM_edges": 7,
+          "edges": 15,
+          "slots": 2,
+          "bindings": 0
+        },
+        "max_selected_degree": 1,
+        "exact_probability_oracle": "2/3",
+        "exact": "PASS",
+        "maximum_operand_bits": 2,
+        "probability0": "2/3",
+        "binary64": {
+          "status": "FINITE_FORWARD_ONLY",
+          "probability0": 0.6666666666666666
+        }
+      },
+      {
+        "n": 3,
+        "rational_nodes": 11,
+        "native": {
+          "nodes": 53,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 26,
+          "PRODUCTs": 26,
+          "SUM_edges": 46,
+          "edges": 98,
+          "slots": 5,
+          "bindings": 0
+        },
+        "max_selected_degree": 3,
+        "exact_probability_oracle": "75/91",
+        "exact": "PASS",
+        "maximum_operand_bits": 9,
+        "probability0": "75/91",
+        "binary64": {
+          "status": "FINITE_FORWARD_ONLY",
+          "probability0": 0.8241758241758241
+        }
+      },
+      {
+        "n": 4,
+        "rational_nodes": 31,
+        "native": {
+          "nodes": 153,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 74,
+          "PRODUCTs": 78,
+          "SUM_edges": 137,
+          "edges": 293,
+          "slots": 10,
+          "bindings": 0
+        },
+        "max_selected_degree": 11,
+        "exact_probability_oracle": "16000/16729",
+        "exact": "PASS",
+        "maximum_operand_bits": 44,
+        "probability0": "16000/16729",
+        "binary64": {
+          "status": "FINITE_FORWARD_ONLY",
+          "probability0": 0.9564229780620479
+        }
+      },
+      {
+        "n": 5,
+        "rational_nodes": 69,
+        "native": {
+          "nodes": 338,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 161,
+          "PRODUCTs": 176,
+          "SUM_edges": 304,
+          "edges": 656,
+          "slots": 17,
+          "bindings": 0
+        },
+        "max_selected_degree": 57,
+        "exact_probability_oracle": "10440125/10505661",
+        "exact": "PASS",
+        "maximum_operand_bits": 269,
+        "probability0": "10440125/10505661",
+        "binary64": {
+          "status": "FINITE_FORWARD_ONLY",
+          "probability0": 0.9937618394501784
+        }
+      },
+      {
+        "n": 6,
+        "rational_nodes": 131,
+        "native": {
+          "nodes": 636,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 299,
+          "PRODUCTs": 336,
+          "SUM_edges": 571,
+          "edges": 1243,
+          "slots": 26,
+          "bindings": 0
+        },
+        "max_selected_degree": 377,
+        "exact_probability_oracle": "15398263296/15408028921",
+        "exact": "PASS",
+        "maximum_operand_bits": 2006,
+        "probability0": "15398263296/15408028921",
+        "binary64": {
+          "status": "FINITE_FORWARD_ONLY",
+          "probability0": 0.9993661989440654
+        }
+      },
+      {
+        "n": 7,
+        "rational_nodes": 223,
+        "native": {
+          "nodes": 1075,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 500,
+          "PRODUCTs": 574,
+          "SUM_edges": 962,
+          "edges": 2110,
+          "slots": 37,
+          "bindings": 0
+        },
+        "max_selected_degree": 2935,
+        "exact_probability_oracle": "43122163756063/43124340538399",
+        "exact": "UNRESOLVED",
+        "reason": "reference operation may exceed its integer work limit",
+        "binary64": {
+          "status": "UNRESOLVED",
+          "first_nonfinite_node": 1032
+        }
+      },
+      {
+        "n": 8,
+        "rational_nodes": 351,
+        "native": {
+          "nodes": 1683,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 776,
+          "PRODUCTs": 906,
+          "SUM_edges": 1501,
+          "edges": 3313,
+          "slots": 50,
+          "bindings": 0
+        },
+        "max_selected_degree": 25955,
+        "exact_probability_oracle": "204800000000000000/204800678223072849",
+        "exact": "UNRESOLVED",
+        "reason": "reference operation may exceed its integer work limit",
+        "binary64": {
+          "status": "UNRESOLVED",
+          "first_nonfinite_node": 1412
+        }
+      },
+      {
+        "n": 10,
+        "rational_nodes": 739,
+        "native": {
+          "nodes": 3518,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 1601,
+          "PRODUCTs": 1916,
+          "SUM_edges": 3119,
+          "edges": 6951,
+          "slots": 82,
+          "bindings": 0
+        },
+        "max_selected_degree": 2788329,
+        "evaluation": "NOT_RUN; syntax and degree only"
+      },
+      {
+        "n": 12,
+        "rational_nodes": 1343,
+        "native": {
+          "nodes": 6365,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 2870,
+          "PRODUCTs": 3494,
+          "SUM_edges": 5617,
+          "edges": 12605,
+          "slots": 122,
+          "bindings": 0
+        },
+        "max_selected_degree": 428193867,
+        "evaluation": "NOT_RUN; syntax and degree only"
+      },
+      {
+        "n": 16,
+        "rational_nodes": 3391,
+        "native": {
+          "nodes": 15991,
+          "sources": 1,
+          "state_reads": 0,
+          "SUMs": 7124,
+          "PRODUCTs": 8866,
+          "SUM_edges": 14021,
+          "edges": 31753,
+          "slots": 226,
+          "bindings": 0
+        },
+        "max_selected_degree": 23979687541891,
+        "evaluation": "NOT_RUN; syntax and degree only"
+      }
+    ],
+    "binary64_is_passive_forward_only": true,
+    "GPU_or_Runtime_authority": false
+  },
+  "source_scope": {
+    "source_range_does_not_prove_unit_domain": true,
+    "valid_probability": "75/91",
+    "zero_source_probability": "1/2",
+    "fixed_slot_gradient_is_retained": true
+  }
+}

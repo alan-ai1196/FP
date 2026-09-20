@@ -2748,3 +2748,17 @@ histories. Normalized forecasts may cancel a hard common mass, so this is
 not a general forecast lower bound, finite-horizon impossibility or explanation
 of any measured worker failure. It leaves the existing conditional decoder
 theorem, Foundation, ERC-1 and registered experiments in their stated scopes.
+
+The [positive rational readout theorem](theory/proofs/POSITIVE_RATIONAL_READOUT.md)
+shows that final normalization can express positive rational odds without a
+new native operation. Fraction pairs and the positive(P,P-1) recurrence
+compile a {+,multiply,divide} circuit over1+theta into a linear-size native
+SUM/PRODUCT graph with bases(1,1), at the declared fixed unit feature/source.
+Shifted directed-tree polynomials give a nonconstant separation between direct
+positive polynomial cost and normalized graph size. This prevents a generic
+transfer of the partition lower bound to forecast graphs. The specific
+elimination emitter has factorial degree and exact/binary64 refusals at n7/n8;
+small syntax does not give a bounded physical learner. Exact full-gradient
+and complete-state audits pass in the declared smaller cases. The rational
+oracle is not the complete native state or its AMP bridge, and no existing
+model, constructor, semantic action or resource contract changes.
