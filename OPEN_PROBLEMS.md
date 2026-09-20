@@ -91,11 +91,12 @@ every result; do not replace this question with a bet menu.
 Its reader distinguishes numerical thresholds, retained owned crossings and
 actual installs, and never fills an evidence path after it stops.
 
-The [first actual row](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
-now confirms the delayed case: install119 versus114, with identical candidate
-words and deployed unseen CE0.676417 versus0.659687. Full execution and the
-same-source reader pass. Three cases remain; worker6920 is live after the
-first completes. This already defeats uniform improvement, while the full
+The [first two actual rows](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+now confirm opposite effects: seed16 installs119 versus114 with unseen
+CE0.676417 versus0.659687; seed17 installs67 versus90 with CE0.375274 versus
+0.500750. Candidate words are identical to the old controls in both. Full
+execution and the same-source reader pass. Two c4 cases remain; worker30700
+continues the fixed order. Uniform improvement is false, while the full
 matrix's tradeoff remains open. Keep every result and the fixed procedure.
 
 The [fixed-rule conditional prediction](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)

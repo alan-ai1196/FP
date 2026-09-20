@@ -5149,3 +5149,29 @@ observation binds their creation identities and records concurrent n8
 likelihood parent14264/worker6920 at8ccacc0. Both original experiments and
 all old failures remain unchanged. The new worker must finish and its own
 same-source reader must pass before any recovery result is granted.
+
+## 148. The second actual tighter-bound case confirms the beneficial side of the tradeoff
+
+The unchanged8ccacc0 matrix completes seed17 at18:30:54 UTC. Worker6920
+seals124 and installs67 versus the retained B6 install90, leaving57 rather
+than34 forecasts. Every candidate stored-mass and raw-division word remains
+bitwise identical. Unseen deployed CE improves0.5007499814 to0.3752735502;
+full-domain CE improves0.4976130705 to0.3653399982. Both owned/numerical paths
+cross67 after seven scores each, and the actual transport/install receipt
+passes. Historical identities remain nonreusable after the deployed base
+changes; the constructor class is still UNRESOLVED.
+
+The worker checks64 exact posterior forecasts,748 CUDA and748 binary64
+phases,248 commit tapes and14 fresh scores. Peak job commitment is
+15,034,691,584 bytes under16GiB, with exit0 and no timeout. The same-source
+partial reader now checks12 new scores/four fresh paths, plus all24 old
+scores/four decisions/16 strong-control scores. The canonical old worker
+prefix and every registration field are checked unchanged before collection.
+Both actual install cursors and all four deployed risk values satisfy the
+earlier fixed conditional predictions.
+
+The fixed c2 mean improves0.5802183897 to0.5258452698, but the two per-case
+effects have opposite signs. Neither uniform power improvement nor a
+population effect follows. Two c4 jobs remain: parent14264 starts worker30700
+at18:30:54 UTC. The separately registered n16 recovery worker2660 is still
+live; concurrency is explicit, with no exclusive-device timing claim.

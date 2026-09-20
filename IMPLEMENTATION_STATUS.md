@@ -117,11 +117,13 @@ from the small n2 reachability audit or the larger coefficient.
 The [first tighter-bound job now completes](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
 at8ccacc0: install119/seal124,64 posterior forecasts,748 phases per path,
 248 commit tapes and118 fresh scores. Peak15,047,073,792 bytes fits16GiB.
-The independent same-source reader retains one completed case and verifies
-both fresh paths, six new scores and all controls. Candidate words match
-B6 exactly, but unseen deployed CE is0.676417 versus0.659687 because the
-new wait is59 instead of54 labels. Worker6920 continues the fixed matrix;
-the other three cases remain unreported and every class stays `UNRESOLVED`.
+The second case now also seals: install67 versus90, unseen deployed
+CE0.375274 versus0.500750, with candidate words again identical. Peak
+15,034,691,584 bytes fits16GiB. The two-case reader checks12 new scores,
+four fresh paths and all controls;1,496 phases per path and132 fresh scores
+are retained. The first wait grows54 to59 while the second falls30 to7.
+Worker30700 continues the fixed matrix; two c4 cases remain unreported and
+every constructor class stays `UNRESOLVED`.
 
 The [new rule's conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired cursors119/67/54/50, conditional on all required owned gates.
