@@ -247,5 +247,6 @@ costs. It is not solved by substituting this helper into a Runtime forecast.
 The [finite-mantissa continuation](RADIX9_FRONTIER_PRECISION.md) addresses
 the decoder's numerical range: a frustrated triangle defeats independent
 local scaling, while per-entry integer exponents give a positive-tape error
-bound independent of count magnitudes. Its finite CPU evidence and fixed
-CUDA protocol remain separate from the complete native bridge required here.
+bound independent of count magnitudes. Its finite CPU evidence and completed
+273,832-word actual CUDA diagnostic remain separate from the complete native
+bridge required here.

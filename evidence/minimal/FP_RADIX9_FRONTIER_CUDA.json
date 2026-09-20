@@ -1,0 +1,330 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "7cb6259f5132a018b67d4749d30245dcdd9ac1d0",
+    "scope": "passive arithmetic experiment, not ReferenceCompilerRuntime or a model stream",
+    "process_commit_cap": 4294967296,
+    "deadline_ms": 240000,
+    "cases": [
+      {
+        "name": "frustrated_triangle",
+        "n": 3,
+        "query": [
+          0,
+          1
+        ],
+        "count_rows": 11
+      },
+      {
+        "name": "triangle_query_1_2",
+        "n": 3,
+        "query": [
+          1,
+          2
+        ],
+        "count_rows": 4
+      },
+      {
+        "name": "triangle_query_1_1",
+        "n": 3,
+        "query": [
+          1,
+          1
+        ],
+        "count_rows": 4
+      },
+      {
+        "name": "frustrated_cycle_8",
+        "n": 8,
+        "query": [
+          0,
+          2
+        ],
+        "count_rows": 4
+      },
+      {
+        "name": "frustrated_cycle_64",
+        "n": 64,
+        "query": [
+          0,
+          16
+        ],
+        "count_rows": 4
+      }
+    ],
+    "exhaustive_triangle": {
+      "profiles": 125,
+      "ordered_queries": 9
+    },
+    "mantissas": "FP32 storage, explicit FP16 input casts/products, FP32 alignment/sums/divisions",
+    "exponents": "guarded host integers; actual GPU normalization predicates determine carries",
+    "alignment_cutoff": 16,
+    "exponent_cap": 4611686018427387903,
+    "comparison": "all floating words against exact RNE machine; outputs against independent integer decoder",
+    "claimed_timing_comparison": false
+  },
+  "workers": [
+    {
+      "worker_status": "EXECUTED_AND_INDEPENDENTLY_MATCHED",
+      "execution_source": "7cb6259f5132a018b67d4749d30245dcdd9ac1d0",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2231971840,
+        "peak_job_commit": 2233196544,
+        "user_100ns": 156562500,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 13036,
+        "process_creation_100ns": 134344202661792024
+      },
+      "raw_result_bytes": 6188,
+      "result": {
+        "status": "PASS_ACTUAL_AMP_ARITHMETIC_ONLY",
+        "process_id": 13036,
+        "torch": "2.12.0+cu132",
+        "CUDA": "13.2",
+        "device": "NVIDIA GeForce RTX 3090",
+        "scope": "host integer exponents and actual half products/single sums; no Runtime bridge or model outcome",
+        "cases": [
+          {
+            "case": "frustrated_triangle",
+            "n": 3,
+            "query": [
+              0,
+              1
+            ],
+            "support": "triangle",
+            "count_magnitudes": [
+              0,
+              1,
+              7,
+              8,
+              16,
+              47,
+              48,
+              64,
+              339,
+              340,
+              384
+            ],
+            "negative_edges": [
+              [
+                1,
+                2
+              ]
+            ],
+            "positive_tape_nodes": 31,
+            "mass_roundoff_budget": 8,
+            "scalar_rounding_results": 1452,
+            "actual_binary64_primitive_checks": 0,
+            "checked_device_words": 2233,
+            "checked_selection_entries": 693,
+            "largest_retained_exponent": 769,
+            "alignment_truncations": 24,
+            "probabilities": [
+              "1/2",
+              "1323483/2097152",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608",
+              "5312785/8388608"
+            ],
+            "maximum_absolute_error_float": 6.1668333460073e-05,
+            "all_forecasts_within_1e_3": true,
+            "history_uniform_local_epsilon": "1/512",
+            "maximum_relative_normalization_factor_float": 1.0357815833247737
+          },
+          {
+            "case": "triangle_query_1_2",
+            "n": 3,
+            "query": [
+              1,
+              2
+            ],
+            "support": "triangle",
+            "count_magnitudes": [
+              0,
+              1,
+              48,
+              384
+            ],
+            "negative_edges": [
+              [
+                1,
+                2
+              ]
+            ],
+            "positive_tape_nodes": 31,
+            "mass_roundoff_budget": 7,
+            "scalar_rounding_results": 528,
+            "actual_binary64_primitive_checks": 0,
+            "checked_device_words": 812,
+            "checked_selection_entries": 252,
+            "largest_retained_exponent": 769,
+            "alignment_truncations": 6,
+            "probabilities": [
+              "1/2",
+              "12378847/33554432",
+              "12303291/33554432",
+              "12303291/33554432"
+            ],
+            "maximum_absolute_error_float": 6.593006556151343e-05,
+            "all_forecasts_within_1e_3": true,
+            "history_uniform_local_epsilon": "1/512",
+            "maximum_relative_normalization_factor_float": 1.031743448496997
+          },
+          {
+            "case": "triangle_query_1_1",
+            "n": 3,
+            "query": [
+              1,
+              1
+            ],
+            "support": "triangle",
+            "count_magnitudes": [
+              0,
+              1,
+              48,
+              384
+            ],
+            "negative_edges": [
+              [
+                1,
+                2
+              ]
+            ],
+            "positive_tape_nodes": 31,
+            "mass_roundoff_budget": 9,
+            "scalar_rounding_results": 528,
+            "actual_binary64_primitive_checks": 0,
+            "checked_device_words": 812,
+            "checked_selection_entries": 252,
+            "largest_retained_exponent": 769,
+            "alignment_truncations": 8,
+            "probabilities": [
+              "7549747/8388608",
+              "15099005/16777216",
+              "15099495/16777216",
+              "15099495/16777216"
+            ],
+            "maximum_absolute_error_float": 2.917051315307617e-05,
+            "all_forecasts_within_1e_3": true,
+            "history_uniform_local_epsilon": "1/512",
+            "maximum_relative_normalization_factor_float": 1.039835522985536
+          },
+          {
+            "case": "frustrated_cycle_8",
+            "n": 8,
+            "query": [
+              0,
+              2
+            ],
+            "support": "cycle",
+            "count_magnitudes": [
+              0,
+              1,
+              8,
+              64
+            ],
+            "negative_edges": [
+              [
+                0,
+                7
+              ]
+            ],
+            "positive_tape_nodes": 141,
+            "mass_roundoff_budget": 23,
+            "scalar_rounding_results": 2544,
+            "actual_binary64_primitive_checks": 0,
+            "checked_device_words": 3836,
+            "checked_selection_entries": 1188,
+            "largest_retained_exponent": 449,
+            "alignment_truncations": 24,
+            "probabilities": [
+              "1/2",
+              "1429397/2097152",
+              "11744051/16777216",
+              "11744051/16777216"
+            ],
+            "maximum_absolute_error_float": 2.2201343237609518e-05,
+            "all_forecasts_within_1e_3": true,
+            "history_uniform_local_epsilon": "1/512",
+            "maximum_relative_normalization_factor_float": 1.0982852712339246
+          },
+          {
+            "case": "frustrated_cycle_64",
+            "n": 64,
+            "query": [
+              0,
+              16
+            ],
+            "support": "cycle",
+            "count_magnitudes": [
+              0,
+              1,
+              8,
+              64
+            ],
+            "negative_edges": [
+              [
+                0,
+                63
+              ]
+            ],
+            "positive_tape_nodes": 1345,
+            "mass_roundoff_budget": 191,
+            "scalar_rounding_results": 24496,
+            "actual_binary64_primitive_checks": 0,
+            "checked_device_words": 36764,
+            "checked_selection_entries": 11380,
+            "largest_retained_exponent": 4034,
+            "alignment_truncations": 140,
+            "probabilities": [
+              "1/2",
+              "134007/262144",
+              "2933473/4194304",
+              "2933473/4194304"
+            ],
+            "maximum_absolute_error_float": 0.0006055355072021485,
+            "all_forecasts_within_1e_3": true,
+            "history_uniform_local_epsilon": "1/512",
+            "maximum_relative_normalization_factor_float": 2.117002035546802
+          }
+        ],
+        "exhaustive_triangle": {
+          "signed_count_profiles": 125,
+          "ordered_queries": 9,
+          "forecasts": 1125,
+          "maximum_absolute_error": "53287/403701760",
+          "maximum_absolute_error_float": 0.00013199595661906452,
+          "witness": {
+            "counts": [
+              -2,
+              1,
+              1
+            ],
+            "query": [
+              1,
+              2
+            ],
+            "computed_probability": "546215/1048576",
+            "exact_probability": "401/770"
+          },
+          "scalar_rounding_results": 149250,
+          "checked_device_words": 229375
+        },
+        "peak_torch_allocated_bytes": 629248,
+        "peak_torch_reserved_bytes": 2097152
+      }
+    }
+  ]
+}

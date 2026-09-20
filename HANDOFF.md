@@ -14,10 +14,11 @@ arithmetic and2^-46 for binary64. The declared exponent field remains paid
 and finite.27 fixed forecasts and1,125 exhaustive triangle forecasts pass
 the exact machine;51,672 actual binary64 primitives also pass. The largest
 observed AMP-machine error is0.000606, but the general bound is much looser.
-The committed fixed4-GiB/240-second CUDA diagnostic is pending; it must
-check all actual words against this oracle. This supplies no Runtime bridge,
-native phase/gradient replacement or model result. All earlier model jobs
-remain terminal and must not be restarted.
+The sole fixed4-GiB/240-second CUDA diagnostic now completes at7cb6259:
+273,832 actual words and all1,152 forecasts match the oracle, with job peak
+2,233,196,544 bytes and no timeout/limit termination. This supplies no Runtime
+bridge, native phase/gradient replacement or model result. This diagnostic
+and all earlier model jobs are terminal and must not be restarted.
 
 **Current exact-decoding result, 2026-09-21:** the [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
 retains the correlated posterior in count coordinates and computes exact

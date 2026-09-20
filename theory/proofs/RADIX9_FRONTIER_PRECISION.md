@@ -1,8 +1,8 @@
 # Finite mantissas for a correlated positive frontier
 
-Status: **PROVED, SCOPED NUMERICAL LAW; EXACT AND CHECKED BINARY64 AUDITS**.
-The fixed CUDA protocol below is committed before its first execution. Its
-device outcome is pending. This concerns a scalar decoder for the existing
+Status: **PROVED, SCOPED NUMERICAL LAW; EXACT, BINARY64 AND ACTUAL AMP AUDITS**.
+The fixed CUDA protocol below was committed before its sole execution,
+which passes at7cb6259. This concerns a scalar decoder for the existing
 [count state](COUNT_LEARNER_ENCODING.md), not a new native Program or a
 complete Runtime/AMP bridge. Foundation and ERC-1 remain unchanged.
 
@@ -230,10 +230,38 @@ process identity, completed job accounting and Torch memory peaks. Retain
 failures and reader exceptions; no silent restart or retrospective threshold
 change. No timing advantage or exclusive-device comparison is claimed.
 
-The terminal record belongs at
-`evidence/minimal/FP_RADIX9_FRONTIER_CUDA.json`; no weights, large table cache
-or full diagnostic transcript is retained. At this proof's initial commit
-the GPU outcome is pending. A passing diagnostic would establish this
-finite hybrid decoder's arithmetic execution only. Full native operation
+The [terminal record](../../evidence/minimal/FP_RADIX9_FRONTIER_CUDA.json)
+contains no weights, large table cache or full diagnostic transcript. At
+this proof's initial commit the GPU outcome was pending; its completed
+outcome is below. A passing diagnostic establishes this finite hybrid
+decoder's arithmetic execution only. Full native operation
 words, gradients, phase evidence, ownership, fresh persistence and install
 reachability still require their own bridge before any Runtime substitution.
+
+## 7. Completed actual RTX 3090 outcome
+
+The sole registered child completes at source
+`7cb6259f5132a018b67d4749d30245dcdd9ac1d0`, with clean execution dependencies
+and the committed CPU reference. Device NVIDIA GeForce RTX3090, Torch
+2.12.0+cu132, CUDA13.2. All27 fixed and1,125 exhaustive forecasts reproduce
+the retained AMP-machine fractions and errors exactly. The5 fixed cases
+check44,457 device words; the exhaustive triangle checks229,375, giving
+273,832 actual floating-word checks in total. This includes178,798 rounded
+scalar results and coefficient/normalization selections.
+
+All1,152 forecasts meet the registered0.001 threshold. The largest error
+is0.0006055355072021485 on the64-cycle; its largest exponent is4,034.
+The exact-machine worst triangle witness also reproduces. No actual
+arithmetic mismatch, timeout, job-limit termination or reader exception
+occurs. Worker13036 exits0 after attachment before resume. Completed peak
+process/job commit is2,231,971,840/2,233,196,544 bytes under4,294,967,296;
+Torch allocated/reserved peaks are629,248/2,097,152 bytes. Host exponent
+and independent exact-oracle work belong to the child diagnostic. The
+launcher is outside that measured child scope. Raw accounting retains
+total_processes=2 and limit_terminated_processes=0 under the one-active-
+process cap; cumulative OS counts are not rewritten as a process inventory.
+
+Only the9,958-byte terminal JSON is retained. The completed job is not a
+model stream, complete native AMP bridge, timing comparison or total Runtime
+resource claim. The theoretical factor2.117003 at B191 remains unchanged;
+passing these cases does not strengthen it into a uniform0.001 theorem.

@@ -5699,3 +5699,31 @@ witnesses, recording completed process accounting and every failure. Its
 device outcome is pending at this entry. The experiment is a passive hybrid
 decoder with host integer metadata, not a Runtime substitution, new native
 architecture action, installed model or reopened static ERC contract.
+
+## 167. The correlated exponent decoder passes actual mixed precision (2026-09-21)
+
+The sole registered [radix9 frontier diagnostic](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+completes at7cb6259 on RTX3090, Torch2.12.0+cu132/CUDA13.2. Its actual half
+products and single alignment/sums/divisions match273,832 independently
+derived floating words. All27 fixed and1,125 exhaustive triangle forecasts
+reproduce the committed exact-machine outputs. The largest forecast error
+is0.0006055355072021485 on the64-cycle, whose retained exponent reaches4,034.
+The exhaustive witness(-2,1,1), query(1,2), also reproduces. All registered
+0.001 finite thresholds pass; the proof's much looser uniform bound remains.
+
+Worker13036 exits0 under the unchanged4-GiB/240-second Windows job, attached
+before its first instruction, without timeout, limit termination or reader
+failure. Completed process/job peaks are2,231,971,840/2,233,196,544 bytes.
+Torch allocated/reserved peaks are629,248/2,097,152 bytes. Host integer
+exponents and exact diagnostic work are included in that child's cost;
+the launcher is outside it. Raw cumulative process accounting remains2,
+without inventing an additional active worker or rewriting the record.
+The terminal journal is9,958 bytes and every registered dependency/reference
+remains at the original committed source through collection.
+
+This establishes actual finite arithmetic for a correlation-preserving
+decoder. It does not replace native gradients, caches, full phase frames,
+ownership, future persistence or installation, and supplies no new model
+score or resource dominance. This diagnostic and every earlier model job
+are terminal. Further bridge research must use their retained evidence,
+not restart them or substitute their scalar outputs for complete execution.

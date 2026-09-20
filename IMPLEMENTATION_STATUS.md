@@ -8,10 +8,12 @@ It avoids the frustrated-triangle zero-partition failure of local scaling,
 with a positive-tape error bound independent of count magnitudes. The CPU
 audit checks27 fixed forecasts,51,672 actual binary64 primitives and178,798
 AMP-machine rounded results, including1,125 exhaustive triangle forecasts.
-The fixed actual GPU word audit is committed before execution and remains
-pending under4 GiB/240 seconds. Host exponent metadata, complete diagnostic
-job costs and the loose relative bound are explicit. This helper is not
-imported by production Runtime and grants no complete-state/AMP authority.
+The sole fixed actual GPU audit completes at7cb6259 under4 GiB/240 seconds:
+273,832 actual words agree, all1,152 forecasts reproduce, and completed job
+peak is2,233,196,544 bytes without timeout or limit termination. Host exponent
+metadata, complete diagnostic job costs and the loose relative bound are
+explicit. This helper is not imported by production Runtime and grants no
+complete-state/AMP authority; its terminal diagnostic must not be restarted.
 
 The passive [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
 now computes exact correlated count-state marginals without projecting to
