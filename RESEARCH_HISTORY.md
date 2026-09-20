@@ -4938,3 +4938,27 @@ release or universal resource-feasibility preservation is claimed. The
 bounded development audit preserves failed process attempts and requires
 committed clean execution dependencies. No such worker has run yet. The
 registered8ccacc0 n8 experiment stays immutable and all old controls remain.
+
+## 141. Exercise the adaptive state through CPU install and paired failures
+
+A committed4daf126 development worker now passes the existing complete n2
+likelihood profile, binary64 bridge and installation gates. The512MiB job
+is attached before resumption, exits normally and peaks at39,084,032 bytes.
+It checks44 exact posterior forecasts,280 binary64 phases and16 independent
+fresh scores. Both positive curves cross after eight fresh events and install
+at cursor10; the46-observation stream seals. Each curve retains nine cells
+and53,248 paid update work. The historical search class stays `UNRESOLVED`.
+The fixed-fraction3/4 fixture at the same bound had installed at8; reaching
+installation supplies no general first-passage or model advantage.
+
+Three new-rule paired failure cases independently replay42 scores. A native
+mass increment2^-54 produces a reference crossing at6 but zero stored finite
+gain and unit finite wealth. A refused finite crossing save keeps its old
+curve and cannot borrow a live reference crossing. Failed shared ordinary
+publication leaves both executed crossing curves as history while revoking
+current paired authority. Targets and both alpha allocations stay retained.
+
+The minimal record preserves bounded attempt provenance across subsequent
+audit writes. New-rule CUDA and larger model value remain unverified; the
+ongoing registered8ccacc0 source is unchanged. This is a scoped reachability
+and adversarial result, not a new release or complete-class certificate.

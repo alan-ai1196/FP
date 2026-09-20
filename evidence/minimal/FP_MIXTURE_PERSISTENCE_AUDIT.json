@@ -1,5 +1,5 @@
 {
-  "status": "OWNED_REFERENCE_MIXTURE_AUDIT_PASS",
+  "status": "OWNED_MIXTURE_REFERENCE_AND_PAIRED_AUDIT_PASS",
   "kernel": {
     "complete_words": 243,
     "guarded_updates": 1215,
@@ -32,5 +32,98 @@
     },
     "arithmetic_and_unexpected_failures_cannot_resume": true
   },
-  "scope": "owned reference endpoints; actual paired CPU/CUDA installation remain separate"
+  "paired_failures": {
+    "independent_curve_score_checks": 42,
+    "reference_only_crossing_cursor": 6,
+    "finite_stored_mass_gain_and_wealth": [
+      "0",
+      "1"
+    ],
+    "unretained_finite_crossing_cannot_pair": true,
+    "shared_publication_failure_revokes_both_executed_crossings": true
+  },
+  "scope": "owned reference and paired binary64 failures; bounded profile/install evidence is separate; bounded profile attempts retained with their own source, path and status",
+  "bounded_profiles": [
+    {
+      "path": "cpu",
+      "execution_source": "4daf126ed391e1fb30bca9de2d5cc697d36c7a76",
+      "status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 37851136,
+        "peak_job_commit": 39084032,
+        "user_100ns": 52187500,
+        "kernel_100ns": 1406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25540,
+        "process_creation_100ns": 134343963124071880
+      },
+      "result": {
+        "n": 2,
+        "profiles": true,
+        "profile_passes": 1,
+        "status": "SEALED_REFERENCE_STREAM",
+        "native_posterior_forecasts": 44,
+        "independent_binary64_phases": 280,
+        "CUDA": null,
+        "profile_events": 2,
+        "retained_observations": 46,
+        "fresh_score_checks": 16,
+        "install_cursor": 10,
+        "class_certificate": false,
+        "historical_class": "UNRESOLVED",
+        "binary64_maxima": {
+          "state_error": "1995419197093669964767213409778721927547/1872201906766455493381820031913160560728810133169111040",
+          "native_error": "115948205403227/57953201611272206848255590400",
+          "normalizer_error": "9/4503599627370496",
+          "probability_error": "112117/1196700996584515567616",
+          "division_error": "40533006786842833/405648192073033453514941299425280"
+        },
+        "CUDA_maxima": null,
+        "packed_peak": 1739260,
+        "device": null,
+        "host": {
+          "process_id": 25540,
+          "creation_100ns": 134343963124071880,
+          "lifetime_process_commit_peak": 37851136,
+          "job_commit_peak": 39084032,
+          "process_user_100ns": 51562500,
+          "process_kernel_100ns": 1406250,
+          "job_user_100ns": 51718750,
+          "job_kernel_100ns": 1406250
+        },
+        "process_id": 25540,
+        "host_scope": "bind to completed job separately",
+        "mixture": {
+          "independent_curve_score_checks": 16,
+          "paths": [
+            {
+              "score_path": "exact-reference",
+              "bound": "13/8",
+              "coefficient_grid_bits": 72,
+              "epochs": 8,
+              "coefficient_cells": 9,
+              "wealth": "782256602239282090645210553/154742504910672534362390528",
+              "crossing_cursor": 10,
+              "paid_step_work": 53248
+            },
+            {
+              "score_path": "binary64-stored-mass",
+              "bound": "13/8",
+              "coefficient_grid_bits": 72,
+              "epochs": 8,
+              "coefficient_cells": 9,
+              "wealth": "391128301119641051947175811/77371252455336267181195264",
+              "crossing_cursor": 10,
+              "paid_step_work": 53248
+            }
+          ]
+        }
+      }
+    }
+  ]
 }

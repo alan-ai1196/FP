@@ -1,7 +1,7 @@
 # Owned positive mixture persistence
 
-Status: **IMPLEMENTED; EXACT KERNEL AND OWNED REFERENCE AUDIT PASS**.
-Actual paired CPU/CUDA profile, bridge and installation audits are separate
+Status: **IMPLEMENTED; EXACT/PAIRED FAILURE AUDITS AND BOUNDED CPU INSTALL PASS**.
+Actual CUDA profile, bridge and installation audits remain separate
 obligations. This extension does not change the running8ccacc0 experiment,
 Foundation R4, ERC-1 or any search decision class.
 
@@ -118,15 +118,43 @@ identity, unchanged feasibility at every cap, or a renewed project release.
   128-bit limit with q124 admits the identity but refuses the first product,
   preserving the old curve, target, spent alpha and ordinary continuation.
   Injected numerical and unexpected backend failures also stop correctly.
+* Three actual paired binary64 failure cases independently replay42 curve
+  scores. A native mass increment2^-54 gives a reference crossing at6 while
+  stored finite gains stay zero and finite wealth stays one. Refusing only
+  the finite crossing save cannot borrow the reference crossing. If both
+  successors cross at7 before ordinary publication fails, both remain
+  auditable history but the paired result is `UNRESOLVED`.
 
 Full existing reference, paired CPU binary64 and scalar-kernel persistence
 audits pass on this extension; the [compact regression record](../../evidence/minimal/FP_MIXTURE_PERSISTENCE_REGRESSION.json)
 retains their relevant counts and failures. Their reference/finite nontransfer, freshness,
 ordinary-publication failure, integer/work/byte failure and no-refund checks
-remain meaningful. They do not validate this new rule's actual paired
-profile or CUDA installation. The new bounded audit entrypoints exist for
-that next check, but no bounded profile result is claimed here.
+remain meaningful. They do not validate a new rule's actual installation.
 
-This result closes ownership of the scalar state on the exercised reference
+## 5. Source-bound complete CPU path
+
+`python -B scripts/audit_mixture_persistence.py --profile-cpu --write` ran
+from committed clean4daf126. The512MiB job was attached before resumption,
+exited normally, and peaked at39,084,032 bytes. PID25540 and its creation
+time bind the runtime host record to the completed job. The minimal audit
+retains the job, execution source and separate path records; subsequent
+audit writes preserve all bounded attempts, including failures.
+
+The fixed n2 native likelihood fixture admits after its two-event profile,
+registers B13/8, alpha1/4 per path, horizon40 and q72. It independently checks
+44 posterior forecasts,280 binary64 phases and16 fresh scores. Both owned
+curves cross after eight fresh events; full installation occurs at cursor10,
+and the ordinary stream seals at46 retained observations. Each stopped curve
+has nine cells and53,248 paid update work. Every curve readout is independently
+reconstructed; its score, complete trajectory, phase replay and transport
+still pass the original install gates. The search class remains `UNRESOLVED`.
+
+The retained constant-fraction3/4 fixture at the same B installed at8. The
+new result establishes actual CPU reachability, not an earlier-crossing
+guarantee or population/model advantage. No new CUDA worker has run, and no
+CPU result substitutes for target AMP evidence. The registered n8 experiment
+continues from its separate immutable8ccacc0 source.
+
+This result closes ownership and CPU install reachability on the exercised
 paths. It does not prove first-passage dominance, model utility, full release
 or any new `CERTIFIED_COMPLETE` class. The fixed n8 matrix is unchanged.

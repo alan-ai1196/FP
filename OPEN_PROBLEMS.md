@@ -92,9 +92,10 @@ wealth alone is insufficient, and rounding makes gain order relevant. The
 15,625-word audit passes. This is not a uniquely preferred rule or an
 earlier-crossing guarantee. The [owned reference extension](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md)
 now passes curve/wealth publication, prepaid work, real integer exhaustion,
-fair-label and changing-learner audits. Actual paired CPU/CUDA bridge and
-installation, physical resources and model value still need separate
-evidence. Preserve the fixed8ccacc0 experiment and assess its actual outcomes.
+fair-label and changing-learner audits. The complete CPU profile/bridge/install
+now passes at10 in a bounded512MiB job; three paired failures refuse false
+authority. Target CUDA, larger-scale physical resources and model value
+remain open. Preserve the fixed8ccacc0 experiment and assess its actual outcomes.
 
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and

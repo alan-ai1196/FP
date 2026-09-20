@@ -117,7 +117,11 @@ The guarded kernel prepays linear primitive work and publishes curve/wealth
 together.1,215 updates,160 actual fair-label scores, three-event epochs,
 failed crossing retention, real work/bit limits and all three legacy CPU
 persistence audits pass. No helper grants crossing/install authority.
-Actual new-rule paired CPU/CUDA profile and installation are still pending.
+The new-rule complete CPU profile/bridge/install passes in a512MiB job from
+4daf126:44 forecasts,280 binary64 phases,16 fresh scores, install10, and
+39,084,032-byte peak. Three paired failure cases check42 scores and prohibit
+reference-to-finite transfer and authority after failed ordinary publication.
+CUDA profile and installation of this rule are still pending.
 The optional identity field changes packed charges, including constant-rule
 records; no byte-equivalence or whole-project freeze is claimed.
 

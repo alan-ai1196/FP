@@ -574,9 +574,13 @@ publishes the complete curve/wealth in the existing persistence identity.
 It passes1,215 guarded updates,160 actual fair-label scores, a changing
 learner with three-event epochs, failed crossing retention, prepaid work
 refusals and a real128-bit exhaustion. The old reference, paired CPU and
-kernel audits pass. Actual new-rule paired profile/bridge/install remains
-unverified: commit execution dependencies before the bounded development
-worker and retain failed attempts. This is no full-release or model result.
+kernel audits pass. A512MiB job from committed4daf126 now completes the
+new-rule CPU profile/bridge/install:44 exact forecasts,280 binary64 phases,
+16 fresh scores, install10 and a sealed46-observation stream. Its peak is
+39,084,032 bytes. Three paired failure cases check42 additional scores,
+reference-only crossing, finite-save failure and failed ordinary publication.
+CUDA remains unverified for the new rule. Keep every bounded attempt and
+its own execution source; this is no full-release or model result.
 The fixed8ccacc0 source and experiment remain unchanged.
 
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).

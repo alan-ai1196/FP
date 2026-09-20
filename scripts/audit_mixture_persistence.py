@@ -306,10 +306,91 @@ def failure_audit():
             'arithmetic_and_unexpected_failures_cannot_resume': True}
 
 
+def paired_audit():
+    import audit_paired_cpu_persistence as paired
+    from ingress_audit_support import deliver_context
+    from audit_reference_construction import domain
+
+    def registration(bound=F(3, 4), horizon=10):
+        return PersistenceContract(F(3, 4), tuple(rule(label=label, path=path, bound=bound, horizon=horizon)
+            for label, path in (('ref', REFERENCE_PATH), ('finite', FLOAT64_PATH))))
+
+    # The reference has real positive gains that actual binary64 mass storage
+    # loses. An owned adaptive reference crossing still cannot fill that path.
+    delta = F(1, 1 << 54)
+    graph = Program((Source('x0_0'), Sum('mass', (Term(0, 0),)), Sum('mass', ())), 1, (1, 2))
+    rt, candidate = paired.fixture(cfg=paired.config(cap=2+delta, peak=1, pattern=(delta,)),
+        graph=graph, count=10, rate=F(0), persistence=registration(delta, 8))
+    rid, fid = paired.pair(rt, candidate)
+    for _ in range(8):
+        event(rt, 0)
+    snap = owned(rt)
+    score_checks = check_snapshot(snap)
+    ref, finite = identity(rt, rid), identity(rt, fid)
+    assert ref.crossing_cursor == 6 and rt.reference_persistence_result(rid).status == 'REFERENCE_CROSSED'
+    assert finite.wealth == 1 and finite.crossing_cursor is None
+    assert all(e.gain.lower == e.gain.upper == 0 for e in snap.persistence_events if e.identity_id == fid)
+    assert rt.paired_persistence_result(rid, fid).status == 'UNRESOLVED'
+    before = rt.snapshot()
+    assert rt.install(candidate, rt.paired_persistence_result(rid, fid)).status == 'UNRESOLVED'
+    assert rt.snapshot() == before
+
+    # Refuse just the finite crossing save; the reference crossing survives,
+    # but the numerical finite threshold has no retained pair authority.
+    rt, candidate = paired.fixture(cfg=paired.config(cap=3, peak=1), graph=paired.SOURCE_PAIR,
+        count=12, persistence=registration())
+    rid, fid = paired.pair(rt, candidate)
+    for _ in range(6):
+        event(rt, 0)
+    before = identity(rt, fid)
+    allocate = rt._allocate
+    failed_writes = []
+
+    def fail_crossing(owner, objects):
+        if any(o.spec.kind == 'binary64_persistence_state' and o.value.status == 'FLOAT64_CROSSED' for o in objects):
+            failed_writes.append(owner)
+            raise ResourceExceeded('injected owned mixture finite crossing save failure')
+        return allocate(owner, objects)
+
+    with patch.object(rt, '_allocate', side_effect=fail_crossing):
+        event(rt, 0)
+    snap = owned(rt)
+    score_checks += check_snapshot(snap)
+    after = identity(rt, fid)
+    assert len(failed_writes) == 1 and rt.reference_persistence_result(rid).status == 'REFERENCE_CROSSED'
+    assert after.mixture_coefficients == before.mixture_coefficients and after.wealth == before.wealth
+    assert after.status == 'UNRESOLVED' and after.crossing_cursor is None
+    assert rt.paired_persistence_result(rid, fid).status == 'UNRESOLVED'
+    assert snap.alpha_spent == F(1, 2) and not snap.halted
+
+    # Both complete evidence successors cross, then ordinary publication
+    # fails. Both curves remain auditable history but neither is current.
+    rt, candidate = paired.fixture(cfg=paired.config(cap=3, peak=1), graph=paired.SOURCE_PAIR,
+        count=12, persistence=registration())
+    ids = paired.pair(rt, candidate)
+    for _ in range(6):
+        event(rt, 0)
+    before = rt.snapshot()
+    deliver_context(rt, 'observation-6', domain(1)[0])
+    with patch.object(rt._ledger, 'release_many', side_effect=RuntimeError('injected mixture ordinary publication failure')):
+        rejects(lambda: rt.observe(0), RuntimeError)
+    snap = owned(rt)
+    score_checks += check_snapshot(snap)
+    assert snap.halted and snap.cursor == 6 and snap.candidates == before.candidates
+    assert snap.observations[-1].target == 0 and snap.alpha_spent == F(1, 2)
+    assert all(identity(rt, iid).crossing_cursor == 7 for iid in ids)
+    assert rt.paired_persistence_result(*ids).status == 'UNRESOLVED'
+    return {'independent_curve_score_checks': score_checks,
+            'reference_only_crossing_cursor': 6, 'finite_stored_mass_gain_and_wealth': ['0', '1'],
+            'unretained_finite_crossing_cannot_pair': True,
+            'shared_publication_failure_revokes_both_executed_crossings': True}
+
+
 def audit():
-    result = {'status': 'OWNED_REFERENCE_MIXTURE_AUDIT_PASS', 'kernel': kernel_audit(),
+    result = {'status': 'OWNED_MIXTURE_REFERENCE_AND_PAIRED_AUDIT_PASS', 'kernel': kernel_audit(),
               'owned_reference': reference_audit(), 'fair_null': fair_null_audit(), 'failures': failure_audit(),
-              'scope': 'owned reference endpoints; actual paired CPU/CUDA installation remain separate'}
+              'paired_failures': paired_audit(),
+              'scope': 'owned reference and paired binary64 failures; bounded profile/install evidence is separate'}
     assert 'torch' not in sys.modules
     return result
 

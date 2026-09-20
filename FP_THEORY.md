@@ -2653,6 +2653,6 @@ also retain order sensitivity. This is a restricted scalar interface, not
 a quotient of complete Compiler state, new semantic action or model
 improvement. The [owned implementation](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md)
 now retains the rounded curve and exact wealth together, with prepaid work,
-guarded integers and terminal failure publication. Exact and actual reference
-audits pass; paired CPU/CUDA installation of this new rule remains a separate
-obligation. The fixed experiment remains unchanged.
+guarded integers and terminal failure publication. Exact, actual paired
+failure and bounded CPU installation audits pass; CUDA installation of this
+new rule remains a separate obligation. The fixed experiment remains unchanged.
