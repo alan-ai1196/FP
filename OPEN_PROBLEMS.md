@@ -6,8 +6,9 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 reduce measured whole-worker memory enough to improve scale? The [preservation
 argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) and exact failure
 checks now pass, as do both actual profile/install paths and six CUDA failure
-workers. Repeat the fixed host comparison after its report-only serializer
-correction, retaining both original failures, before making a host-saving claim.
+workers. The fixed host comparison now passes with62.2% lower job peak;
+both original report failures remain retained. Measure a complete model
+worker separately; metadata and other mutable buffers are still costs.
 Do not infer n16 recovery from the completed-frame payload formula.
 
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision

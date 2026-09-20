@@ -6,10 +6,10 @@ This file is written for a capable researcher/model that has **no access to prio
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
 It pays for copy coexistence and publishes through the existing complete-root
 transaction. Exact checks and eight bounded CUDA workers pass atc133008,
-including simplex and likelihood installation. The two host jobs need a
-report-only mapping-to-dict correction; retain both failed attempts. The
-fixed comparison is 128 one-MiB frames,
-two simultaneous complete snapshots, 512-MiB/60-second jobs. This targets
+including simplex and likelihood installation. The corrected host jobs at
+5d58bc2 pass: job peak falls432,934,912 to163,622,912 bytes,62.2%, for128
+one-MiB frames and two complete snapshots under512-MiB/60-second caps.
+Both original report failures remain retained. This targets
 repeated complete-history copies, with no information pruning or n16 recovery
 claim. The live likelihood matrix remains at immutable8ccacc0.
 

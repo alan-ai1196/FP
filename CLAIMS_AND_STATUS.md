@@ -6,10 +6,12 @@ distinct frame payload changes from(S+1)NF toNF, with an additionalF-byte
 owned extent during conversion. Every byte and explicit label remains.
 This sublaw excludes other metadata, failed mutable frames and total host
 costs. Eight bounded CUDA regressions now pass atc133008, including both
-profile/install paths and four new finalization-failure boundaries. The two
-host reports failed on a mappingproxy serializer and are retained unscored;
-corrected host measurement is pending. No whole-model memory bound, n16
-recovery or new completeness claim follows.
+profile/install paths and four new finalization-failure boundaries. Corrected
+host jobs at5d58bc2 pass:128 one-MiB frames with two live complete snapshots
+peak at432,934,912 versus163,622,912 bytes, a62.2% fixture saving. The extra
+copy raises the paid packed peak by one MiB. The two earlier serializer
+failures remain unscored. No whole-model memory bound, n16 recovery or new
+completeness claim follows.
 
 Status vocabulary:
 

@@ -1,7 +1,7 @@
 # Complete CUDA evidence with one retained immutable payload
 
-Status: **IMPLEMENTED; EXACT AND BOUNDED CUDA AUDITS PASS; HOST REPORT CORRECTION**.
-Bounded host measurements await a corrected report described below.
+Status: **IMPLEMENTED; EXACT, BOUNDED HOST AND CUDA AUDITS PASS**.
+Two earlier host report failures remain retained as described below.
 Foundation R4, ERC-1, numerical semantics and the running
 `8ccacc0` likelihood matrix are unchanged.
 
@@ -147,3 +147,13 @@ The correction converts only the report mapping to dict; Runtime, counts,
 caps and deadlines are unchanged. Repeat only these host jobs. Model worker
 6920 was observed live during and after the CUDA batch; no exclusive-device
 throughput or timing claim is made.
+
+The corrected host jobs at `5d58bc2` both finish within the unchanged caps.
+Each compares268,435,456 frame bytes across its two complete snapshots.
+The legacy fixture retains384 distinct one-MiB payloads; the immutable one
+retains128. Their job peaks are432,934,912 and163,622,912 bytes respectively,
+a269,312,000-byte reduction (62.2%) in this fixed fixture. The registered
+packed peak increases by exactly one MiB, from134,222,983 to135,271,559 bytes,
+because copy coexistence is paid even though actual host use falls. This
+distinction between an honest owned reservation and physical snapshot cost
+is part of the result. It does not establish whole-model memory or time.

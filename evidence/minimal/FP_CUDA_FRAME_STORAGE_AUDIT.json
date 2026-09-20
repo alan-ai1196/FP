@@ -21,6 +21,29 @@
     "prepare-router:RuntimeError"
   ],
   "no_model_execution_or_certificate": true,
+  "bounded_attempt_notes": {
+    "host_report_failure": {
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "cases": [
+        "legacy",
+        "immutable"
+      ],
+      "diagnosis": "After the storage checks, JSON serialization of the read-only packed_peak mapping fails; no worker result was written. Both original failed jobs and counters remain retained and unscored.",
+      "independent_two_frame_reproduction": "TypeError: Object of type mappingproxy is not JSON serializable",
+      "correction": "Convert only the report peak mapping to a plain dict; no Runtime, fixture sizes, cap or deadline change."
+    },
+    "external_overlap_observation": {
+      "model_execution_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+      "model_parent_pid": 14264,
+      "model_worker_pid": 6920,
+      "model_worker_creation_local": "2026-09-21 01:09:20.910328 +08:00",
+      "observations_UTC": [
+        "2026-09-20 18:07:20",
+        "2026-09-20 18:09:19"
+      ],
+      "scope": "Same model worker observed live during and after the bounded CUDA batch; no exclusive-device throughput or timing claim. Model source, caps and case order unchanged."
+    }
+  },
   "bounded_attempts": [
     {
       "case": "legacy",
@@ -502,29 +525,86 @@
         "terminal_partial_allocation_prefix": false,
         "original_executor_error_preserved": true
       }
-    }
-  ],
-  "bounded_attempt_notes": {
-    "host_report_failure": {
-      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
-      "cases": [
-        "legacy",
-        "immutable"
-      ],
-      "diagnosis": "After the storage checks, JSON serialization of the read-only packed_peak mapping fails; no worker result was written. Both original failed jobs and counters remain retained and unscored.",
-      "independent_two_frame_reproduction": "TypeError: Object of type mappingproxy is not JSON serializable",
-      "correction": "Convert only the report peak mapping to a plain dict; no Runtime, fixture sizes, cap or deadline change."
     },
-    "external_overlap_observation": {
-      "model_execution_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
-      "model_parent_pid": 14264,
-      "model_worker_pid": 6920,
-      "model_worker_creation_local": "2026-09-21 01:09:20.910328 +08:00",
-      "observations_UTC": [
-        "2026-09-20 18:07:20",
-        "2026-09-20 18:09:19"
-      ],
-      "scope": "Same model worker observed live during and after the bounded CUDA batch; no exclusive-device throughput or timing claim. Model source, caps and case order unchanged."
+    {
+      "case": "legacy",
+      "execution_source": "5d58bc2d3bfd8280b2f98f19cb9d4ca46cc35361",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 431697920,
+        "peak_job_commit": 432934912,
+        "user_100ns": 4062500,
+        "kernel_100ns": 1093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27888,
+        "process_creation_100ns": 134344014616946879
+      },
+      "result": {
+        "status": "SYNTHETIC_COMPLETE_SNAPSHOT_STORAGE_PASS",
+        "process_id": 27888,
+        "representation": "legacy",
+        "frames": 128,
+        "bytes_per_frame": 1048576,
+        "simultaneous_complete_snapshots": 2,
+        "full_frame_bytes_compared": 268435456,
+        "distinct_live_frame_payloads": 384,
+        "distinct_live_frame_payload_bytes": 402653184,
+        "packed_peak": {
+          "reference_payload_bytes": 134222983,
+          "physical_objects": 132
+        },
+        "no_CUDA_or_model_outcome": true
+      }
+    },
+    {
+      "case": "immutable",
+      "execution_source": "5d58bc2d3bfd8280b2f98f19cb9d4ca46cc35361",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 162390016,
+        "peak_job_commit": 163622912,
+        "user_100ns": 4843750,
+        "kernel_100ns": 468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26936,
+        "process_creation_100ns": 134344014624607332
+      },
+      "result": {
+        "status": "SYNTHETIC_COMPLETE_SNAPSHOT_STORAGE_PASS",
+        "process_id": 26936,
+        "representation": "immutable",
+        "frames": 128,
+        "bytes_per_frame": 1048576,
+        "simultaneous_complete_snapshots": 2,
+        "full_frame_bytes_compared": 268435456,
+        "distinct_live_frame_payloads": 128,
+        "distinct_live_frame_payload_bytes": 134217728,
+        "packed_peak": {
+          "reference_payload_bytes": 135271559,
+          "physical_objects": 133
+        },
+        "no_CUDA_or_model_outcome": true
+      }
     }
-  }
+  ]
 }

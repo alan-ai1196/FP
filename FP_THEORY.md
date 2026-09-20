@@ -2687,4 +2687,7 @@ immutable payloads. It explicitly pays copy coexistence and root publication;
 resource refusals cannot grant phase acceptance. Its exact payload sublaw is
 not a whole-host memory or time bound. This is a registered implementation
 representation change, with no additional Foundation action or information
-quotient; bounded physical validation is recorded separately.
+quotient. Bounded CUDA profile/install and failure checks pass; the fixed
+128-frame/two-snapshot host fixture measures62.2% lower job peak while paying
+an extra temporary extent. These physical checks do not imply model-scale
+recovery or a whole-process resource law.

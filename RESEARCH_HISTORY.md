@@ -5110,3 +5110,11 @@ Their original jobs/counters remain retained unscored. A small independent
 reproduction confirms the TypeError; converting the report mapping to dict
 changes neither Runtime nor the fixed fixture. Only those two jobs need
 repetition. The CUDA passes are not rerun for this reporting correction.
+
+The corrected two host jobs at5d58bc2 both pass, each comparing268,435,456
+bytes. Their distinct live frame payload counts are384 and128; job peaks
+are432,934,912 and163,622,912 bytes. The fixed fixture therefore saves
+269,312,000 host bytes,62.2%, while the paid packed peak rises by exactly
+one MiB for the copy. Both original failures remain in the same minimal
+attempt history. This closes the exercised storage question, not complete
+model scaling or n16 execution; those need separate source-bound outcomes.
