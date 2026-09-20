@@ -2,6 +2,16 @@
 
 ## Current implementation state (2026-09-21)
 
+The [positive rational readout compiler](theory/proofs/POSITIVE_RATIONAL_READOUT.md)
+is a passive native Program builder, with linear node overhead, fixed feature1
+and bases(1,1); production constructors do not import it. It checks400 generic
+forecasts/800 full gradients,25 independent directed-tree cases and27 native
+observe/commit pairs with54 complete boundaries. Its selected degrees grow
+factorially even though node counts are polynomial. Both n7/n8 full exact
+checks return UNRESOLVED under the32768-bit guard; passive binary64 also
+becomes nonfinite. The cheap rational oracle cannot replace native values,
+feature gradients or bridge evidence. No AMP or Runtime installation follows.
+
 The new [factorized learner audit](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 uses existing native Programs and simplex U without production changes.
 At block mass/rate1/m it verifies2,896 posterior-marginal and factorized-history

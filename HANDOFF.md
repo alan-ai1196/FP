@@ -2,6 +2,22 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current normalization result, 2026-09-21:** the [positive rational readout
+compiler](theory/proofs/POSITIVE_RATIONAL_READOUT.md) lowers any positive
+{+,multiply,divide} circuit over1+theta into ordinary native SUM/PRODUCT
+with bases(1,1) and linear graph overhead. It carries(P,P-1) by positive
+recurrences, avoiding huge fitted constants, and expresses odds R as forecast
+R/(1+R). Shifted directed-tree polynomials give a nonconstant exponential
+separation between direct positive polynomial cost and normalized graph size.
+This disproves a generic transfer of the partition lower bound to forecasts;
+it does not give a fast relation decoder. Full native state remains material:
+400 generated forecasts/800 full gradients,25 independent tree cases and27
+native commits pass, while the emitter's degree grows factorially. The n7/n8
+full exact audits refuse the32768-bit guard and passive binary64 overflows;
+larger cases are syntax-only. No new division primitive, production solver,
+AMP bridge or installation authority is introduced. Optimize representation
+or return UNRESOLVED when these costs exceed a declared contract.
+
 **Current learner-theory result, 2026-09-21:** the [PRODUCT-belief law](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
 derives exact posterior-marginal updates from the existing global simplex U:
 each of m factor blocks has mass1/m and the learning rate is1/m. The represented
