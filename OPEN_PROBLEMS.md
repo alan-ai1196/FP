@@ -82,6 +82,18 @@ Even a correct native p9/10 predictor has expected reciprocal factor above1
 at6/13, so the old power proof cannot transfer. Keep the registered test
 unchanged and compare its actual results; these are not completed outcomes.
 
+A [positive state for a classical predictable mixture](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
+now has a scalar construction and precision proof, without reading the model
+tapes. Its common coefficient is predictable, and coefficientwise downward
+rounding preserves the same mean-null. Horizon H with H+p fractional bits
+gives uniform wealth error below2^-p using polynomial finite arithmetic.
+Exact future-readout equivalence requires the appropriate moments; current
+wealth alone is insufficient, and rounding makes gain order relevant. The
+15,625-word audit passes. This is not a Runtime extension, uniquely preferred
+rule or earlier-crossing guarantee. Complete ownership and model value would
+need separate evidence; the fixed8ccacc0 experiment remains the next actual
+outcome to assess.
+
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and
 the actual wealth floor. It uses the explicit posterior-mixture alternative,

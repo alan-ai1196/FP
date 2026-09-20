@@ -1,6 +1,6 @@
 # FP Implementation Status
 
-## Current implementation state (2026-09-20)
+## Current implementation state (2026-09-21)
 
 The research branch now has a [sparse exact likelihood analyzer and independent
 positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete
@@ -101,6 +101,15 @@ Seed16 is later than its old114. A native correct-posterior witness gives
 expected reciprocal factor1.096773 at6/13, invalidating transfer of the old
 power argument.256 forecasts,90 production wealth prefixes and1,964 exact
 log checks pass. No running source, rule, model score or cap is changed.
+
+The [positive predictable-mixture prototype](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
+is confined to passive scalar research. Its exact continuation and rounding
+proofs are checked over15,625 words,39,060 rounded updates,31,248 zero-mean
+null pairs and39,062 independent readouts, plus160 complete native units.
+It uses no model tape and adds no Runtime endpoint. The constructive payload/
+arithmetic bounds are not physical resource admission or release evidence.
+Current wealth alone and unordered rounded gain histories both fail as state
+replacements. The running8ccacc0 source and constant persistence rule remain fixed.
 
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,

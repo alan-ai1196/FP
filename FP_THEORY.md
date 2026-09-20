@@ -2643,3 +2643,12 @@ coefficient fails the old reciprocal contraction even for a correct native
 p9/10 posterior. Conditional paired crossing on seed16 moves from114 to119,
 while the other three retained tapes cross earlier. These exact scoped
 results change neither validity, Foundation nor the fixed running experiment.
+
+The [positive predictable-mixture state analysis](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
+gives a finite rational realization of a classical common adaptive bet.
+It specifies exact future-readout equivalence and proves conservative
+coefficient rounding with finite horizon/precision/payload bounds. Current
+wealth alone cannot replace its continuation information; rounded updates
+also retain order sensitivity. This is a restricted scalar interface, not
+a quotient of complete Compiler state, new semantic action, owned Runtime
+extension or model improvement. The fixed experiment remains unchanged.

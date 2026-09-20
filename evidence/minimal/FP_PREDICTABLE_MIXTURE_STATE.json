@@ -1,0 +1,125 @@
+{
+  "status": "EXACT_PASSIVE_MIXTURE_STATE_AUDIT_PASS",
+  "scope": "classical continuous mixture, positive state and finite precision proofs; no Runtime extension",
+  "retained_model_tapes_used": false,
+  "new_model_or_baseline_workers": 0,
+  "finite_model_check": {
+    "horizon": 6,
+    "score_alphabet": [
+      "-1",
+      "-1/3",
+      "0",
+      "1/2",
+      "1"
+    ],
+    "coefficient_grid_bits": [
+      3,
+      22
+    ],
+    "complete_scalar_words": 15625,
+    "prefixes": 19531,
+    "rounded_state_updates": 39060,
+    "zero_mean_null_pairs": 31248,
+    "nonpositive_point_nulls": 23436,
+    "independent_readouts": 39062,
+    "maximum_coefficient_numerator_bits": 30
+  },
+  "classical_regret": {
+    "largest_horizon": 64,
+    "basis_maximum_checks": 2145,
+    "all_adverse_sharp_ratio_checks": 65,
+    "regret_factor_at_64": "170141183460469231731687303715884105728/11975573020964041433067793888190275875"
+  },
+  "counterexamples": {
+    "same_wealth_and_clock": {
+      "words": [
+        [
+          "1/2",
+          "-4/11"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "wealths": [
+        "1",
+        "1"
+      ],
+      "first_moments": [
+        "87/176",
+        "1/2"
+      ],
+      "common_continuation": "1/2",
+      "subsequent_wealths": [
+        "439/352",
+        "5/4"
+      ]
+    },
+    "rounding_destroys_permutation_equivalence": {
+      "grid_bits": 1,
+      "word": [
+        "-1/4",
+        "1/2"
+      ],
+      "forward_and_reverse_numerators": [
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          2
+        ]
+      ],
+      "forward_and_reverse_wealths": [
+        "13/16",
+        "1"
+      ]
+    },
+    "no_first_passage_dominance": {
+      "three_scores": [
+        "1",
+        "1",
+        "1"
+      ],
+      "threshold": "4",
+      "mixture_wealth": "63/16",
+      "fixed_fraction_3_over_4_wealth": "343/64"
+    }
+  },
+  "horizon_and_precision": {
+    "horizon": 64,
+    "fractional_bits": 96,
+    "uniform_absolute_error_upper": "1/4294967296",
+    "deterministic_words": 4,
+    "verified_prefixes": 256,
+    "word_definitions": [
+      "all +1",
+      "all -1",
+      "alternating +/-1/3",
+      "((17*t)%19-9)/9"
+    ],
+    "measured_integer_encoding_maxima": {
+      "coefficient_numerator_bits": 195,
+      "wealth_numerator_bits": 221,
+      "wealth_denominator_bits": 223,
+      "coefficient_payload_bits": 11125
+    },
+    "scope": "integer bit lengths, not Python/process/owned resource bytes"
+  },
+  "native_score_check": {
+    "exact_native_self_forecast": [
+      "9/10",
+      "1/10"
+    ],
+    "label_words": 32,
+    "native_pre_target_forecasts": 160,
+    "complete_native_units": 160,
+    "coefficient_bits": 21,
+    "absolute_error_upper": "1/65536",
+    "scope": "native forecast and scalar recurrence; no owned persistence or installation"
+  }
+}

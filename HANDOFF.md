@@ -557,6 +557,19 @@ The record contains256 reference forecasts,90 production wealth updates and
 1,964 independent exact log checks. This is passive retained-tape analysis,
 not a GPU result or reason to change the fixed running procedure.
 
+The [predictable-mixture state proof](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
+investigates adaptation without using any model tape or changing that run.
+It expresses the classical arcsine wealth mixture with positive coefficients,
+one common pre-context fraction and exact rational readout. Downward
+coefficient rounding preserves mean-null validity; H+p fractional bits give
+less than2^-p error through horizon H with polynomial scalar resources.
+Equal wealth can conceal different future readouts, and low-precision
+updates destroy gain-order equivalence.15,625 scalar words,31,248 zero-mean
+null checks and160 complete native units pass. This is passive theory and
+audit, not an owned evidence identity, GPU result or first-passage dominance.
+Do not inject its state into the current constant-rule Runtime or change the
+fixed experiment. Its documentation gives the exact interface and limits.
+
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
 host workspace copies the phase span and decodes only initialized floating

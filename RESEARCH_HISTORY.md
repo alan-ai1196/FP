@@ -4862,3 +4862,48 @@ intervals cover all allowed AMP perturbations and keep failed gates unscored.
 No model or baseline is rerun, and no new rule is chosen from these labels.
 Compare the fixed physical outcomes next; do not confuse larger ideal growth,
 improved admission bounds, finite first passage and useful deployment.
+
+## 139. Derive the state and precision obligations of a common adaptive bet
+
+The fixed-coefficient counterexample motivates investigating adaptation, while
+the registered GPU run remains untouched. Classical continuous wealth mixtures
+already supply one common predictable coefficient under the same mean-null.
+The research issue is which past information a finite implementation must
+retain, rather than a menu of bets selected from the exposed model tapes.
+No model tape is used in this analysis and no novelty is claimed for the
+Cover–Ordentlich mixture or its classical regret bound.
+
+An arcsine mixture has a positive Bernstein-coefficient recurrence driven
+by z=1+x>=0. Both wealth and its next common coefficient are finite rational
+readouts. Exact continuation equivalence is equality of the moments needed
+by the remaining scalar horizon; sufficient remaining future inputs determine
+the whole normalized polynomial. Two length-two words have the same unit
+wealth but a common continuation separates them by1/352. This is a scalar
+interface result, not permission to quotient complete Compiler state.
+
+Coefficientwise downward rounding preserves a one-step supermartingale
+inequality against the rounded state's own previous wealth. At horizon H,
+H+p fractional bits ensure error below2^-p on every allowed history. The
+coefficient payload and streamed exact readout have explicit polynomial bit
+bounds, with O(H^2) arithmetic operations. Expanding the arcsine moments shows
+the readout weights are dyadic; the apparent factorial denominator is
+unnecessary, and O(q+H) readout bits suffice. The constant coefficient prevents
+absorbing-zero wealth at finite live cuts. These facts do not include an
+extra scalar wealth rounding, physical resource success or an owned install.
+
+Precision changes equivalence: at grid one,(-1/4,1/2) and its reversal give
+13/16 versus1 although their exact products commute. A gain histogram cannot
+replace the state of that rounded procedure. Classical wealth regret also
+does not imply first-passage dominance: after three unit positive scores,
+the mixture remains below4 while the fixed3/4 fraction has crossed.
+
+Exact audit covers15,625 six-score words,19,531 prefixes,39,060 rounded
+updates,31,248 zero-mean null pairs and39,062 independent monomial readouts.
+The sharp classical comparison is checked through64.32 native five-label
+words check160 pre-target forecasts/complete units and the production-score
+precision bound. Four64-event words check256 prefixes at96 fractional bits,
+including non-dyadic input scores and the readout/payload bounds. All evidence
+is passive. Runtime still has its fixed-rule
+contract; ownership, failure publication, separate AMP evidence and actual
+model utility are not inferred from this prototype. Foundation/ERC-1 and
+the running8ccacc0 experiment remain unchanged.
