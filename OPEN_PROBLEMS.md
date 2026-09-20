@@ -15,6 +15,13 @@ against a matched current-source literal control. The old class caps exclude
 v8; no graph substitution or old model-score transfer is allowed. This does
 not reopen the static ERC special-case program.
 
+The [next fixed comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
+registers two sequential current-source workers on n8/c2 seed16, v7 then v8,
+with identical caps and a common explicitly declared grammar. It includes
+the unfavorable v8 preparation workspace and full fixed phase padding.
+Preflight passes; complete outcomes and independent reader results remain
+to be executed. The old live matrix and all old model results stay unchanged.
+
 The fixed n16 execution-recovery question is [resolved for its one declared
 case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current
 source75e4f93 seals396 and installs216 at an8,229,326,848-byte job peak under

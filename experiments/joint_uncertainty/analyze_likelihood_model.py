@@ -138,7 +138,7 @@ def check_job(row, source, device):
     return True
 
 
-def check_result(result, case, baseline, *, fresh_checker=check_fresh):
+def check_result(result, case, baseline, *, fresh_checker=check_fresh, solver=model.SOLVER):
     hidden, edges, train, evaluation = model.data(case)
     cutoff, count = len(train), len(evaluation)
     assert result['case'] == list(case) and result['training_events'] == cutoff and result['evaluation_events'] == count == 64
@@ -165,7 +165,7 @@ def check_result(result, case, baseline, *, fresh_checker=check_fresh):
     assert cut['candidate_created'] is candidate and cut['compared_members'] == int(candidate)
     assert not cut['candidate_selected'] or candidate
     if candidate:
-        _, graph, _, _, _, _ = model.setup(case)
+        _, graph, _, _, _, _ = model.setup(case, solver=solver)
         assert result['candidate_native'] == graph.counts()
         assert cut['proposal_status'] == 'PROPOSED_NATIVE'
     assert result['reference_posterior_forecast_checks'] == (count if candidate else 0)
@@ -211,7 +211,8 @@ def check_result(result, case, baseline, *, fresh_checker=check_fresh):
     division_error = max(abs(p-q) for key in mass for p, q in zip(mass[key], raw[key]))
     assert division_error <= F(result['CUDA_maxima']['division_error'])
     return {'status': 'SEALED_CUDA_STREAM', 'candidate': candidate, 'install_cursor': installed,
-            'fresh': decision, 'class': 'UNRESOLVED: one owned v7 proposal, no complete-class proof',
+            'fresh': decision, 'class': ('UNRESOLVED: one owned v7 proposal, no complete-class proof'
+                if solver == model.SOLVER else 'UNRESOLVED: one owned v8 proposal, no complete-class proof'),
             'expected_CE_binary64': {key: value['expected_CE_binary64'] for key, value in result['scores'].items()},
             'maximum_candidate_mass_posterior_error': result['maximum_candidate_mass_posterior_error']}, score_checks, decision_checks
 

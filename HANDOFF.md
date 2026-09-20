@@ -17,8 +17,11 @@ CPU/AMP profiles, n3 likelihood encoding and v7 regressions. They all seal46
 and install22 with classes UNRESOLVED:308 forecasts,1,990 binary64 phases,
 1,138 CUDA phases and280 fresh scores are checked. The n3 used AMP frame
 shrinks but packed peak grows; n8 preparation also has a larger conservative
-workspace. Next measure complete model-scale execution against a matched
-current-source literal control before claiming physical savings.
+workspace. The [two-worker matched model protocol](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
+now fixes n8/c2 seed16, current v7 then v8, under identical caps and the common
+grammar985/839/130/10,368/129. Preflight passes; no new model worker has run
+at registration. Execute the committed protocol before claiming physical
+savings, retaining both complete physical outcomes and independent readers.
 Keep the running likelihood experiment and its registration unchanged.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a

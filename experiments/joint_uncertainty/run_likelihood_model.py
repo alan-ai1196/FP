@@ -105,17 +105,19 @@ def prior_auditor_failure(registration_value):
             'scope': 'original failed attempt retained; no inferred model score or complete phase count'}
 
 
-def setup(case, *, gain_bound=F(6)):
+def setup(case, *, gain_bound=F(6), solver=SOLVER, grammar=None):
     assert case in CASES
     n, cutoff = case[0], 10*len(support(case))
-    cfg, graph, online, _ = fixture(n)
-    grammar = GrammarLimits(**{key: 2*graph.counts()[key] for key in cfg.graph_limits})
+    cfg, graph, online, _ = fixture(n, solver=solver)
+    if grammar is None:
+        grammar = GrammarLimits(**{key: 2*graph.counts()[key] for key in cfg.graph_limits})
+    assert type(grammar) is GrammarLimits and grammar.admits(graph)
     cfg = replace(cfg, graph_limits=asdict(grammar), limits=limits(PACKED, WORK))
     ids = tuple(f'likelihood-model-{i}' for i in range(cutoff+n*n))
     stream = replace(online.data, streams=(StreamSpec('online', 'online', ids),),
         stream_law=StochasticStreamLaw('RN-5 external branch-invariant noise premise; retained tapes are a retrospective mechanism test'))
     profile = ProfileSpec('warm', ids[:cutoff], 1)
-    source = RelationSourceSpec(tuple((f'x0:{j}', f'x1:{j}') for j in range(n)), solver=SOLVER)
+    source = RelationSourceSpec(tuple((f'x0:{j}', f'x1:{j}') for j in range(n)), solver=solver)
     search = ReferenceSearchSpec('native', grammar, ids[:cutoff], profile.profile_id, relation_sources=source)
     persistence = registration(bound=gain_bound, horizon=n*n)
     persistence = replace(persistence, rules=tuple(replace(rule, rule_id='cuda', score_path=CUDA_PATH)
@@ -185,9 +187,9 @@ def fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate, *, detaile
     return result
 
 
-def worker(case, *, gain_bound=F(6), detailed_fresh=False):
+def worker(case, *, gain_bound=F(6), detailed_fresh=False, solver=SOLVER, grammar=None):
     hidden, edges, train, evaluation = data(case)
-    cfg, graph, online, cuda, policy, host = setup(case, gain_bound=gain_bound)
+    cfg, graph, online, cuda, policy, host = setup(case, gain_bound=gain_bound, solver=solver, grammar=grammar)
     zero = Program((Sum('mass', ()),), graph.slot_count, (0, 0))
     rt = ReferenceCompilerRuntime(cfg, zero, online=online, cuda=cuda, policy=policy, host=host)
     base = rt.snapshot().deployed_id

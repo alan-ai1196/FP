@@ -18,6 +18,14 @@ graph lies outside the old grammar caps, and even its
 smaller n16 schedule exceeds the old65,536-cell allowance. No existing
 experiment, complete-state quotient or decision-class certificate changes.
 
+The [matched n8 model measurement](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
+is registered next: exactly v7 then v8 on seed16/c2 from the same current
+source, with common finite grammar and unchanged full4-MiB frames,16-GiB
+jobs, numerical/fresh rules and final auditors. The original model worker
+and result reader now accept a declared solver; their original defaults,
+historical registrations and12 reader-negative checks still pass. The new
+preflight checks all remaining contracts equal; no outcome exists yet.
+
 Completed CUDA frames now become immutable after their final write, preserving
 all bytes and labels. The extra copy extent and publication work are paid;
 publication failures retain both actual buffers and leases. The unchanged

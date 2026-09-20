@@ -5267,3 +5267,23 @@ conservative preparation envelope likewise grows2,029,576,576 to2,723,988,736
 bytes. This validates the incidence theorem's limited scope and motivates a
 matched complete model measurement; no whole-resource dominance or n8 model
 outcome is claimed. Concurrency with the fixed likelihood worker is explicit.
+
+## 153. Register a matched complete-model test of the incidence saving
+
+The new [two-worker protocol](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
+fixes the first retained n8/c2 seed16 tape, current-source literal v7 then
+shared v8. Both use the common grammar985 nodes/839 SUMs/130 PRODUCTs/
+10,368 incidences/129 slots, unchanged data/Gamma/U/profile and existing
+likelihood encoding. Both have16-GiB/two-hour jobs,4-MiB complete frames,
+the same bit guards/tolerances and bound13/8 fresh rule. The strong existing
+exact/AMP posterior remains the quality baseline, and v7 receives all the
+current Runtime storage improvements. No old class or result is relabeled.
+
+The preflight verifies every remaining contract equal after changing only
+solver provenance. It records v8's larger2,723,988,736-byte preparation
+envelope against v7's2,029,576,576; no unfavorable cost is waived. The
+existing worker and independent reader now accept the declared solver,
+while original default registrations and all12 reader-negative checks pass.
+The parent will retain physical attempts before reader outcomes and require
+two complete runs for paired claims. No new model execution has occurred
+at this registration, and there is no automatic retry or timing claim.
