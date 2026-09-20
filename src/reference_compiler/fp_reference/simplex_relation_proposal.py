@@ -12,6 +12,7 @@ from .data_usage import DataContract
 from .empirical_bound import EmpiricalUpper
 from .learner import SIMPLEX_GRADIENT, LearnerSpec
 from .native_search import GrammarLimits
+from .pair_marginal_program import SOLVER as MARGINAL_SOLVER, marginal_counts, _emit_pair_marginals
 from .profile import ProfileSpec
 from .program import Product, Program, Source, Sum, Term
 from .relation_proposal import RelationSourceSpec
@@ -19,6 +20,7 @@ from .semantics import _guard
 
 
 SOLVER = 'native-binary-relation-simplex-posterior-v7'
+SOLVERS = (SOLVER, MARGINAL_SOLVER)
 
 
 @dataclass(frozen=True)
@@ -33,6 +35,8 @@ class SimplexRelationProposal:
 
 def proposal_work_bound(n, domain_rows, grammar):
     # K is checked against grammar.slots before exponentiation or allocation.
+    # The same conservative n^2*K envelope covers both literal emission and
+    # the shared emitter's O(K+n^2) integer-indexed nodes/edges and layer scans.
     return 4096+128*(n*n*(grammar.slots+1)+n*domain_rows+grammar.slots+1)
 
 
@@ -47,7 +51,7 @@ def simplex_relation_proposal(upper, rules, grammar, pattern, registration, *,
     def outcome(program=None, reason=''):
         return SimplexRelationProposal('PROPOSED_NATIVE' if program is not None else 'UNRESOLVED',
             program, K, prior, reason)
-    if registration.solver != SOLVER or learner.optimizer_id != SIMPLEX_GRADIENT:
+    if registration.solver not in SOLVERS or learner.optimizer_id != SIMPLEX_GRADIENT:
         return outcome(reason='this emitter requires its registered simplex learner')
     if learner.update_unit != 1 or learner.learning_rate != 1 or learner.commit_grid_bits is not None:
         return outcome(reason='the posterior interpretation requires the declared unit event/update and no grid')
@@ -59,8 +63,10 @@ def simplex_relation_proposal(upper, rules, grammar, pattern, registration, *,
     K = 1 << (n-1)
     counts = {'nodes': 2*n+n*n+2*K+2, 'SUMs': 2*K+2, 'PRODUCTs': n*n,
               'edges': 2*n*n+K*n*n+16*K, 'slots': K+1}
+    if registration.solver == MARGINAL_SOLVER:
+        counts = marginal_counts(n, K)
     if any(value > getattr(grammar, key) for key, value in counts.items()):
-        return outcome(reason='the literal affine native graph exceeds its registered grammar')
+        return outcome(reason='the declared affine native graph exceeds its registered grammar')
     if learner.simplex_slots != tuple(range(1, K+1)):
         return outcome(reason='the actual learner block does not match the full latent simplex')
     prior = F(1, K)
@@ -90,6 +96,12 @@ def simplex_relation_proposal(upper, rules, grammar, pattern, registration, *,
         seen.add(tuple(active))
     if len(seen) != n*n:
         return outcome(reason='the source domain omits a legal ordered pair')
+    if registration.solver == MARGINAL_SOLVER:
+        graph = _emit_pair_marginals(rules, registration.token_atoms, K)
+        graph.validate(rules)
+        if not grammar.admits(graph) or any(graph.counts()[key] != value for key, value in counts.items()):
+            raise ContractError('shared marginal emission disagrees with its prepaid native count')
+        return outcome(graph, 'positive shared marginals; actual initializer, complete profile, comparison and evidence remain owned')
     nodes = [Source(s.source_id) for s in rules.sources]
     def emit(node):
         nodes.append(node)

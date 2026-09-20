@@ -49,7 +49,7 @@ from .search import ComparisonRow, ReferenceSearchResult, ReferenceSearchSession
 from .empirical_bound import empirical_upper, verify_empirical_upper
 from .relation_proposal import relation_proposal
 from .causal_relation_proposal import SOLVER as CAUSAL_RELATION_SOLVER, causal_relation_proposal, proposal_work_bound
-from .simplex_relation_proposal import (SOLVER as SIMPLEX_RELATION_SOLVER,
+from .simplex_relation_proposal import (SOLVERS as SIMPLEX_RELATION_SOLVERS,
     simplex_relation_proposal, proposal_work_bound as simplex_proposal_work_bound)
 from .resources import CostRouter, ObjectSpec, ResourceExceeded, ResourceLedger, ResourceLimits
 from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _operation, enclose, evaluate, reset_delayed
@@ -2366,7 +2366,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                     len(self._contract.semantics.sources), len(self._contract.semantics.states),
                     len(self._contract.source_domain or ()), session.spec.grammar,
                     len(self._contract.initializer_pattern), len(session.spec.observation_ids), self._cursor)
-            if session.spec.relation_sources.solver == SIMPLEX_RELATION_SOLVER:
+            if session.spec.relation_sources.solver in SIMPLEX_RELATION_SOLVERS:
                 work += simplex_proposal_work_bound(len(session.spec.relation_sources.token_atoms),
                     len(self._contract.source_domain or ()), session.spec.grammar)
             self._event_router.charge_work('information', {'work': work}, f'{session.search_id}:empirical-upper-and-proposal')
@@ -2394,7 +2394,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         range_cap=range_cap,
                         profile=profile, ordinary_cursor=self._cursor,
                         bit_limit=self._contract.reference_integer_bits)
-                elif session.spec.relation_sources.solver == SIMPLEX_RELATION_SOLVER:
+                elif session.spec.relation_sources.solver in SIMPLEX_RELATION_SOLVERS:
                     profile = next((p for p in self._online.profiles if p.profile_id == session.spec.profile_id), None)
                     proposal = simplex_relation_proposal(upper, self._contract.semantics, session.spec.grammar,
                         self._contract.initializer_pattern, session.spec.relation_sources,

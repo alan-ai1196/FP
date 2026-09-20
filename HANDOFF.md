@@ -10,10 +10,12 @@ simplex weights. Exact forecasts and selected unit updates agree; complete
 learners do not, as the retained fixed-slot gradient changes. The audit
 passes680 forecasts,1,360 full gradients and966 native observe/commit pairs.
 At n8 edges fall10,368 to2,004 but nodes grow338 to985, exceeding the old
-grammar caps. This is a new passive Program construction, not yet an owned
-Runtime candidate or AMP result. Next test its actual construction/profile,
-full-state bridge and installation under an explicit new finite declaration.
-Keep both running experiments and their registrations unchanged.
+grammar caps. The new v8 solver now emits it through the existing complete
+constructor context; syntax and15 refusal checks pass. The seven-job
+`scripts/audit_pair_marginal_runtime.py` matrix is registered but unexecuted.
+Run it from the committed source to test actual construction/profile,
+full-state bridge and installation under its explicit finite declarations.
+Keep the running likelihood experiment and its registration unchanged.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).

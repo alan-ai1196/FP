@@ -35,7 +35,7 @@ from fp_reference.program import Program, Sum
 from fp_reference.relation_proposal import RelationSourceSpec
 from fp_reference.runtime import OnlineContract
 from fp_reference.search import ReferenceSearchSpec, likelihood
-from fp_reference.simplex_relation_proposal import SOLVER
+from fp_reference.simplex_relation_proposal import SOLVER, MARGINAL_SOLVER, SOLVERS
 from audit_reference_construction import contract, limits, validate_residency
 from audit_float64_runtime import replay
 from ingress_audit_support import deliver_context
@@ -49,8 +49,13 @@ DEPENDENCIES = ('src/reference_compiler','scripts','experiments/joint_uncertaint
                 'experiments/joint_uncertainty/predictive_counts.py','theory/proofs/SIMPLEX_RUNTIME_CONTRACT.md')
 
 
-def fixture(n=2, *, unit=1, rate=F(1)):
-    rules, graph, worlds = model.relation_graph(n)
+def fixture(n=2, *, unit=1, rate=F(1), solver=SOLVER):
+    assert solver in SOLVERS
+    if solver == MARGINAL_SOLVER:
+        from positive_pair_marginals import relation_graph
+        rules, graph, worlds = relation_graph(n)
+    else:
+        rules, graph, worlds = model.relation_graph(n)
     tape = (((0, 1, 0), (0, 1, 0), (0, 1, 1), (1, 0, 1), (0, 0, 1), (0, 1, 0)) if n == 2 else
             ((0, 1, 0), (1, 2, 0), (0, 2, 1), (0, 1, 1), (2, 2, 0), (0, 2, 0)))
     rows = tuple(tuple(model.context(n, i, j).values()) for i, j in product(range(n), repeat=2))
@@ -68,8 +73,9 @@ def fixture(n=2, *, unit=1, rate=F(1)):
     return cfg, graph, online, tape
 
 
-def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False):
-    cfg, graph, online, tape = fixture(n)
+def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False, solver=SOLVER, encoding=False):
+    assert not encoding or cuda
+    cfg, graph, online, tape = fixture(n, solver=solver)
     zero = Program((Sum('mass', ()),), graph.slot_count, (0, 0))
     options = {'policy': CompilerPolicy(())}
     cut = 2
@@ -81,7 +87,7 @@ def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False):
             stream_law=StochasticStreamLaw('external branch-invariant stochastic relation producer; audit tape alone proves no probability law'))
         profile = ProfileSpec('warm', ids[:cut], passes)
         bounds = GrammarLimits(**{key: graph.counts()[key] for key in cfg.graph_limits})
-        source = RelationSourceSpec(tuple((f'x0:{j}', f'x1:{j}') for j in range(n)), solver=SOLVER)
+        source = RelationSourceSpec(tuple((f'x0:{j}', f'x1:{j}') for j in range(n)), solver=solver)
         search = ReferenceSearchSpec('native', bounds, ids[:cut], profile.profile_id, relation_sources=source)
         online = replace(online, data=data, profiles=(profile,), searches=(search,),
             cpu_install=CpuInstallContract(), persistence=registration(bound=F(6), horizon=40))
@@ -91,6 +97,9 @@ def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False):
         options = {'policy': CudaCompilerPolicy(()), 'cuda': cuda_contract(
             state_atol=F(1, 100), probability_atol=F(1, 1000), phase_output_cells=4096, phase_evidence_bytes=262144,
             install=CudaInstallContract() if profiles else None)}
+        if encoding:
+            from fp_reference.likelihood_encoding import LikelihoodEncodingContract
+            options['cuda'] = replace(options['cuda'], likelihood_encoding=LikelihoodEncodingContract())
         if profiles:
             online = replace(online, cpu_install=None, persistence=replace(online.persistence, rules=tuple(
                 replace(rule, rule_id='cuda', score_path=CUDA_PATH) if rule.score_path==FLOAT64_PATH else rule
@@ -185,7 +194,10 @@ def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False):
     phases, *_ = replay(rt)
     device = None
     if cuda:
-        from audit_cuda_runtime import audit_snapshot
+        if encoding:
+            from audit_likelihood_encoding import audit_snapshot
+        else:
+            from audit_cuda_runtime import audit_snapshot
         device = audit_snapshot(rt)
     else:
         assert 'torch' not in sys.modules
@@ -196,7 +208,8 @@ def owned(n=2, *, profiles=False, cuda=False, passes=1, bounded=False):
          'process_user_100ns','process_kernel_100ns','job_user_100ns','job_kernel_100ns')}
     maxima = lambda traces: {key:str(max((getattr(t.relation,key) for t in traces if t.relation is not None),default=F(0)))
         for key in ('state_error','native_error','normalizer_error','probability_error','division_error')}
-    return {'n': n, 'profiles': profiles, 'profile_passes': passes if profiles else 0,
+    return {'n': n, 'solver': solver, 'likelihood_encoding': encoding, 'graph_counts': graph.counts(),
+            'profiles': profiles, 'profile_passes': passes if profiles else 0,
             'status': snapshot.run.status, 'native_posterior_forecasts': compared,
             'independent_binary64_phases': phases, 'CUDA': device,
             'profile_events': len(snapshot.profile_events), 'retained_observations': len(snapshot.observations),

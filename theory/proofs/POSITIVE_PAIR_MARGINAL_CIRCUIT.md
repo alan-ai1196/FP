@@ -220,3 +220,37 @@ bound. These finite checks audit the proof. They do not grant construction
 reachability, reference/AMP bridges, fresh persistence, installation,
 model improvement, or `CERTIFIED_COMPLETE` for any decision class. Those
 remain separate owned execution obligations. Foundation and ERC-1 are unchanged.
+
+## 7. Registered owned implementation audit
+
+Solver `native-binary-relation-positive-pair-marginals-v8` now emits this
+syntax through the existing complete simplex proposer. The original v7
+solver remains separately identified. v8 checks the complete learner,
+fixed initializer, source/domain/data/profile and exact graph caps before
+allocation, within the same conservative prepaid proposal-work envelope.
+The ordinary Runtime construction, empirical comparison, full-state bridge,
+fresh evidence, installation and closure paths are unchanged.
+
+The production emitter uses integer-indexed prefix layers, independently
+checked against the proof builder's tuple-prefix graph for n=2,...,8.
+Fifteen invalid contexts refuse before emission. The actual Runtime rejects
+an unregistered construction attempt and a non-one-hot input; nine legal
+forecasts also pass after permuting source declaration order. The existing
+simplex contract audit still passes its603 exact commits and both20-program
+finite classes, including all15 unresolved simplex initializations.
+
+Before physical execution, `scripts/audit_pair_marginal_runtime.py` fixes
+seven sequential jobs: v8 CPU n2/n3, v8 ordinary AMP n2/n3, v8 likelihood
+encoding AMP n3, and v7 CPU/AMP n3 regressions. Each uses the existing
+46-event owned profile/install fixture, one profile pass for n2 and two
+for n3; all other numerical, fresh-rule and resource settings remain those
+of that fixture. Every search grammar is the actual emitted graph's exact
+five counts, not a relabeled old decision class. CPU jobs have512-MiB host
+caps, CUDA jobs4-GiB caps, and each has180 seconds. Graphs remain full native
+Programs, and a helper supplies no learned state or certificate.
+
+The matrix requires committed clean dependencies and binds the source,
+Windows job identity, peaks and any failure before retaining a score.
+It has no automatic retry. Existing live model experiments remain immutable;
+any concurrent device use precludes an exclusive-device timing claim.
+This registration itself reports no physical outcome.

@@ -5225,3 +5225,25 @@ other n16 failures remain unchanged and unscored. Current-source execution
 includes all intervening runtime changes, so its lower observed peak cannot
 be attributed to immutable frames alone. The unchanged8ccacc0 likelihood
 matrix overlaps execution; no exclusive-device timing claim is made.
+
+## 151. Register shared-marginal syntax in the existing owned constructor
+
+The v8 emitter uses integer-indexed prefix layers and matches the independent
+proof builder exactly for n2 through n8. It is selected by a distinct solver
+identity within the complete simplex proposer, retaining the original v7
+route and the same conservative prepaid work bound. No parameter value,
+native primitive, architecture action or certificate is added. Exact graph
+caps, complete data/source domain, initializer and profile checks precede
+emission; fifteen invalid contexts are refused before graph allocation.
+Actual Runtime tests reject a constructor-policy bypass and a non-one-hot
+ingress. Nine legal forecasts survive reordered source declarations.
+
+The original simplex contract audit passes603 exact commits and both
+20-program finite classes, including15 honestly unresolved simplex members.
+The new seven-job matrix registers v8 CPU/AMP n2/n3, an n3 likelihood-encoding
+AMP path, and v7 CPU/AMP regressions. All use actual46-event profiles,
+comparison, full-state replay, fresh persistence and installation, with
+512-MiB CPU or4-GiB CUDA job caps and180-second deadlines. Execution must
+bind a clean source and retain any failed attempt; no result exists at this
+registration. Both constructor classes remain unresolved unless the actual
+existing proof route establishes otherwise; the fixtures expect no proof.

@@ -7,8 +7,10 @@ now emits an ordinary native graph with O(K+n^2) incidences while retaining
 all K world slots. Its passive exact audit checks680 forecasts,1,360 complete
 gradients,966 native observe/commit pairs and actual graph counts through n16.
 Selected updates match the literal learner; fixed-slot gradients and caches
-belong to the new Program. It has not yet entered the owned constructor or
-AMP bridge. The n8 graph lies outside the old grammar caps, and even its
+belong to the new Program. The v8 emitter is now registered in the existing
+owned construction route. Independent syntax checks and15 preallocation
+refusals pass; seven source-bound CPU/AMP profile/install jobs are declared
+but have no results yet. The n8 graph lies outside the old grammar caps, and even its
 smaller n16 schedule exceeds the old65,536-cell allowance. No existing
 experiment, complete-state quotient or decision-class certificate changes.
 
