@@ -2,6 +2,23 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current numerical-decoding result, 2026-09-21:** the [radix9 frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+exposes a one-forecast failure of local factor normalization. On the signed
+triangle(h,h,-h), small local entries round to zero at h8/48/340 in
+binary16/32/64; the rounded constraints have zero partition although the
+exact forecast tends to19/30. Per-entry integer exponents preserve these
+alternatives without floating likelihood powers. Positive arithmetic gives
+a count-magnitude-independent relative bound R^(+/- (B+1)), with
+R=(1+epsilon)/(1-epsilon), epsilon1/512 for actual half-product/single-sum
+arithmetic and2^-46 for binary64. The declared exponent field remains paid
+and finite.27 fixed forecasts and1,125 exhaustive triangle forecasts pass
+the exact machine;51,672 actual binary64 primitives also pass. The largest
+observed AMP-machine error is0.000606, but the general bound is much looser.
+The committed fixed4-GiB/240-second CUDA diagnostic is pending; it must
+check all actual words against this oracle. This supplies no Runtime bridge,
+native phase/gradient replacement or model result. All earlier model jobs
+remain terminal and must not be restarted.
+
 **Current exact-decoding result, 2026-09-21:** the [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
 retains the correlated posterior in count coordinates and computes exact
 pair marginals by positive variable elimination. Given an order of anchored

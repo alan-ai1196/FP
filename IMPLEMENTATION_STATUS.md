@@ -2,6 +2,17 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [radix9 frontier decoder](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+uses one finite mantissa and guarded integer exponent per positive entry.
+It avoids the frustrated-triangle zero-partition failure of local scaling,
+with a positive-tape error bound independent of count magnitudes. The CPU
+audit checks27 fixed forecasts,51,672 actual binary64 primitives and178,798
+AMP-machine rounded results, including1,125 exhaustive triangle forecasts.
+The fixed actual GPU word audit is committed before execution and remains
+pending under4 GiB/240 seconds. Host exponent metadata, complete diagnostic
+job costs and the loose relative bound are explicit. This helper is not
+imported by production Runtime and grants no complete-state/AMP authority.
+
 The passive [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
 now computes exact correlated count-state marginals without projecting to
 independent beliefs. It reproduces953 full literal-native caches and1,906

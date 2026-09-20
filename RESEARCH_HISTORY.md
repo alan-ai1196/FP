@@ -5663,3 +5663,39 @@ The six audited final n16 queries use up to4,096-8,192 join cells, but as many
 as350,773 positive table operations. These are scalar structural diagnostics,
 not GPU resource or model outcomes. No native graph, original AMP operation
 word, complete phase frame or installation is replaced by the decoder.
+
+## 166. Frustration requires preserving local mass before normalization (2026-09-21)
+
+The [radix9 frontier analysis](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+attacks the exact decoder's finite realization. Separately normalizing edge
+tables to maximum1 is unsafe even within a single forecast. For counts
+(h,h,-h) on a triangle, the best rounded small likelihood becomes zero at
+h8/48/340 in binary16/32/64. The resulting hard constraints are inconsistent,
+so the rounded partition vanishes while the true forecast tends to19/30.
+The existing global world-score decoder retains a unit world and is not
+falsified by this local counterexample.
+
+Each positive entry can instead keep an exact integer exponent and a finite
+mantissa in[1,9). Inputs9^d become(1,d) exactly. Half products/single sums,
+finite exponent-alignment cutoff16 and canonical zero handling admit a
+local relative error epsilon1/512; binary64 admits2^-46. Positivity gives
+the tape budget b(SUM)=max(b1,b2)+1, b(PRODUCT)=b1+b2+1. Each noisy head has
+B<=m+2(n-1)+4, and its normalized forecast has relative factor
+((1+epsilon)/(1-epsilon))^(B+1), independent of count magnitudes. Counts
+remain the exact retained prior; no rounded message is fed to a later label.
+The exponent field is finite and guarded, and its bits remain a resource.
+
+The audit checks27 fixed forecasts,51,672 actual binary64 primitives and
+29,548 AMP-machine rounded results, including a64-cycle with exponent4,034.
+An additional1,125 forecasts exhaust125 signed triangle profiles and nine
+ordered queries, checking149,250 rounded results. Worst fixed AMP-machine
+error is0.000605536; worst exhaustive error is53287/403701760. All pass0.001,
+but the general AMP bound permits factor2.117003 at B191. Numerical evidence
+is not relabelled as a uniform tolerance theorem.
+
+A source-bound4-GiB/240-second actual CUDA diagnostic is committed before
+its first launch. It must match every floating word and all retained output
+witnesses, recording completed process accounting and every failure. Its
+device outcome is pending at this entry. The experiment is a passive hybrid
+decoder with host integer metadata, not a Runtime substitution, new native
+architecture action, installed model or reopened static ERC contract.

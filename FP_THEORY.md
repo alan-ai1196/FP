@@ -127,6 +127,15 @@ and about91MB packed peak for centering versus571MB for partition contraction.
 
 ---
 
+The [finite-mantissa frontier decoder](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+preserves correlated count likelihoods using per-entry integer exponents.
+A frustrated triangle falsifies local maximum-one factor normalization:
+rounded small entries can erase the entire compatible partition. The new
+positive-tape rounding envelope is independent of count magnitudes, with
+explicit exponent cost and finite precision; exact/actual binary64 audits
+pass and the fixed CUDA diagnostic is pending. This numerical decoder proof
+grants no native-state/AMP quotient and changes no frozen definition below.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

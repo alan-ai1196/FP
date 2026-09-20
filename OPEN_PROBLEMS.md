@@ -2,6 +2,19 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [finite-mantissa frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
+now removes one numerical obstruction: independent local scaling can erase
+every globally compatible world, whereas per-entry integer exponents admit
+a count-magnitude-independent positive-tape error bound. The bound remains
+loose for large tapes and does not certify uniform0.001 AMP accuracy. The
+next fixed diagnostic must execute actual half products/single sums and
+match every device word against the committed oracle. Even a pass supplies
+only decoder arithmetic: complete native gradients/phase evidence, ownership,
+fresh persistence and installation still require an owned bridge. Do not
+substitute the mathematical helper for those obligations, infer a model win,
+or restart an already completed experiment. A tighter required tolerance
+needs a sharper numerical bound or precision refinement, otherwise UNRESOLVED.
+
 The [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
 now gives a concrete exact alternative to independent-factor approximation:
 retain count-encoded correlations and eliminate latent variables with
