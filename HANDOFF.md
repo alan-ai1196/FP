@@ -11,10 +11,14 @@ learners do not, as the retained fixed-slot gradient changes. The audit
 passes680 forecasts,1,360 full gradients and966 native observe/commit pairs.
 At n8 edges fall10,368 to2,004 but nodes grow338 to985, exceeding the old
 grammar caps. The new v8 solver now emits it through the existing complete
-constructor context; syntax and15 refusal checks pass. The seven-job
-`scripts/audit_pair_marginal_runtime.py` matrix is registered but unexecuted.
-Run it from the committed source to test actual construction/profile,
-full-state bridge and installation under its explicit finite declarations.
+constructor context; syntax and15 refusal checks pass. All seven jobs in
+`scripts/audit_pair_marginal_runtime.py` now pass atbc209a8, including n2/n3
+CPU/AMP profiles, n3 likelihood encoding and v7 regressions. They all seal46
+and install22 with classes UNRESOLVED:308 forecasts,1,990 binary64 phases,
+1,138 CUDA phases and280 fresh scores are checked. The n3 used AMP frame
+shrinks but packed peak grows; n8 preparation also has a larger conservative
+workspace. Next measure complete model-scale execution against a matched
+current-source literal control before claiming physical savings.
 Keep the running likelihood experiment and its registration unchanged.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a

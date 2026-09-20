@@ -7,10 +7,13 @@ circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
 owned learner's execution? The incidence order is now settled for explicit
 independent world weights: O(K+n^2) upper, K-1 read lower. Exact selected
 updates survive, but full gradients/caches differ and n8 nodes increase.
-Construct it through the real Runtime under a declared finite class, then
-check its actual profile, reference/AMP bridge, resources and installation.
-The old class caps exclude it; no graph substitution or old model-score
-transfer is allowed. This does not reopen the static ERC special-case program.
+Owned n2/n3 construction/profile/CPU/AMP/install paths now pass in seven
+bounded jobs, including likelihood encoding and v7 regressions. The actual
+n3 used frame shrinks while packed peak grows, and the n8 conservative
+preparation workspace is larger. Measure complete model-scale execution
+against a matched current-source literal control. The old class caps exclude
+v8; no graph substitution or old model-score transfer is allowed. This does
+not reopen the static ERC special-case program.
 
 The fixed n16 execution-recovery question is [resolved for its one declared
 case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current

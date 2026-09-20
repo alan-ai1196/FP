@@ -9,8 +9,12 @@ gradients,966 native observe/commit pairs and actual graph counts through n16.
 Selected updates match the literal learner; fixed-slot gradients and caches
 belong to the new Program. The v8 emitter is now registered in the existing
 owned construction route. Independent syntax checks and15 preallocation
-refusals pass; seven source-bound CPU/AMP profile/install jobs are declared
-but have no results yet. The n8 graph lies outside the old grammar caps, and even its
+refusals pass. All seven bounded jobs pass atbc209a8:308 posterior forecasts,
+1,990 binary64/1,138 CUDA phases and280 fresh scores, with actual installation
+at22 and all constructor classes UNRESOLVED. This includes the existing
+likelihood encoding and two v7 regressions. The n3 used frame shrinks while
+the packed peak grows; there is no whole-model resource win yet. The n8
+graph lies outside the old grammar caps, and even its
 smaller n16 schedule exceeds the old65,536-cell allowance. No existing
 experiment, complete-state quotient or decision-class certificate changes.
 

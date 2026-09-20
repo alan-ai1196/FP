@@ -5247,3 +5247,23 @@ comparison, full-state replay, fresh persistence and installation, with
 bind a clean source and retain any failed attempt; no result exists at this
 registration. Both constructor classes remain unresolved unless the actual
 existing proof route establishes otherwise; the fixtures expect no proof.
+
+## 152. Shared marginals reach actual CPU/AMP installation with full state retained
+
+All seven registered jobs pass atbc209a8. Each46-event fixture seals and
+installs22; every constructor-class decision remains UNRESOLVED. The new
+Program runs through its actual initializer/profile, comparison, complete
+binary64/AMP bridge, fresh persistence and transport. Independent readers
+check308 posterior forecasts,1,990 binary64 phases,1,138 CUDA phases and280
+fresh scores. The likelihood-encoding case also checks94 independent commit
+tapes and ranks0/3. CPU peaks stay below512 MiB and CUDA peaks below4 GiB;
+the maxima are42,233,856 and2,307,776,512 bytes. Both v7 regressions pass.
+
+The n3 literal/shared comparison has286 CUDA phases each. Maximum cells
+fall484 to297 and largest used frame41,078 to24,395 bytes, but paid packed
+peak rises77,520,214 to77,789,663. The fixed full phase allocations, larger
+native graph and complete caches/provenance remain costs. At n8 the existing
+conservative preparation envelope likewise grows2,029,576,576 to2,723,988,736
+bytes. This validates the incidence theorem's limited scope and motivates a
+matched complete model measurement; no whole-resource dominance or n8 model
+outcome is claimed. Concurrency with the fixed likelihood worker is explicit.

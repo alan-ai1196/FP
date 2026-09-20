@@ -4,7 +4,8 @@
 audit passed.** This is a new ordinary SUM/PRODUCT Program. It preserves the
 relation learner's predictions and selected unit-simplex updates, while
 retaining its own complete gradient and evaluation state. It is not a quotient
-of an installed learner, a Runtime certificate, or a measured GPU result.
+of an installed learner. The circuit theorem supplies no Runtime authority;
+section8 reports separately source-bound owned CPU/AMP executions.
 
 The [executable construction](../../experiments/joint_uncertainty/positive_pair_marginals.py)
 and [minimal audit](../../evidence/minimal/FP_POSITIVE_PAIR_MARGINALS_AUDIT.json)
@@ -159,7 +160,8 @@ schedule gives, for n>=3,
 
 At n=2 add ten to each expression. The audit checks the expressions against
 the registered schedule function. These are scheduled scalar-output cells,
-not measured bytes or elapsed time; the graph has not executed on CUDA.
+not measured bytes or elapsed time. The n8/n16 graphs in the comparison below
+have not executed on CUDA; section8 covers smaller owned fixtures.
 
 | n | Literal / shared nodes | Literal / shared incidences | Literal / shared observe cells |
 |---|---:|---:|---:|
@@ -219,7 +221,8 @@ Arithmetic is exact `Fraction`; native operations use the declared 32,768-bit
 bound. These finite checks audit the proof. They do not grant construction
 reachability, reference/AMP bridges, fresh persistence, installation,
 model improvement, or `CERTIFIED_COMPLETE` for any decision class. Those
-remain separate owned execution obligations. Foundation and ERC-1 are unchanged.
+are separate owned execution obligations, discharged for the fixtures in
+section8 below. Foundation and ERC-1 are unchanged.
 
 ## 7. Registered owned implementation audit
 
@@ -254,3 +257,43 @@ Windows job identity, peaks and any failure before retaining a score.
 It has no automatic retry. Existing live model experiments remain immutable;
 any concurrent device use precludes an exclusive-device timing claim.
 This registration itself reports no physical outcome.
+
+## 8. Actual owned CPU/AMP results
+
+All seven registered jobs pass at `bc209a87d662f6a1ca6fec93bc8790418eec090a`.
+The [minimal source/job-bound journal](../../evidence/minimal/FP_PAIR_MARGINAL_RUNTIME_AUDIT.json)
+contains all outcomes. Each46-event stream seals and installs its actually
+constructed/profiled candidate at22. Every constructor-class decision stays
+UNRESOLVED with no class proof. The v8 source/domain/initializer/gradient
+checks do not bypass actual comparison, fresh persistence or transport.
+
+Across the seven jobs, independent readers check308 posterior forecasts,
+1,990 binary64 phases,1,138 actual CUDA phases and280 fresh scores. The
+likelihood-encoding case additionally checks94 independent GPU commit
+operation tapes and factorization ranks0/3. The largest CPU job peak is
+42,233,856 bytes, below512 MiB; the largest CUDA job peak is2,307,776,512,
+below4 GiB. No worker times out or receives a false complete-class certificate.
+The v7 regression jobs also seal/install under the unchanged ordinary solver.
+
+The same-source n3 ordinary AMP fixtures demonstrate the resource tradeoff:
+
+| Actual quantity | Literal v7 | Shared v8 |
+|---|---:|---:|
+| Independently checked CUDA phases | 286 | 286 |
+| Maximum phase output cells | 484 | 297 |
+| Largest used phase frame | 41,078 bytes | 24,395 bytes |
+| Paid packed reference peak | 77,520,214 bytes | 77,789,663 bytes |
+
+The used operation frame shrinks while the packed peak grows. Each phase
+still owns its full fixed256-KiB frame; all other new-Program state and
+provenance remain paid. Fewer incidences alone do not imply a smaller complete
+resource vector. Similarly, the existing conservative preparation-workspace
+formula at n8 gives2,029,576,576 bytes for v7 and2,723,988,736 for v8 at the
+same32,768-bit limit and full64-row domain. Its per-node affine envelope
+grows with the larger graph. These are specific declared representation
+costs, not a lower bound on preparation or complete physical execution.
+
+The jobs overlap the fixed likelihood experiment; no exclusive-device speed
+comparison is claimed. This is a scoped correctness extension. A matched
+model-scale measurement is still required before claiming an end-to-end
+resource advantage, n8 deployment outcome or n16 likelihood execution.
