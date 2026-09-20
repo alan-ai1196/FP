@@ -2,6 +2,17 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [radix9 tolerance reader](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+now uses the checked binary64 error theorem to enclose the exact target with
+small rational endpoints. All27 old GPU forecasts certify below0.001, with
+zero new executions of that terminal diagnostic.1,125 small exact targets
+and298,125 new binary64 primitives validate containment/decisions. The new
+256-cycle witness instead has AMP-machine error above0.002274, so positive
+mantissas alone do not assure the desired tolerance. Four stress forecasts
+at counts16/10^12 produce two within/two outside decisions,90,240 binary64
+checks and three explicit integer-height refusals. The new fixed GPU word
+diagnostic is pending; no production Runtime API or phase format changes.
+
 The passive [radix9 frontier decoder](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 uses one finite mantissa and guarded integer exponent per positive entry.
 It avoids the frustrated-triangle zero-partition failure of local scaling,

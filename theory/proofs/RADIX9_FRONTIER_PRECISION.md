@@ -265,3 +265,9 @@ Only the9,958-byte terminal JSON is retained. The completed job is not a
 model stream, complete native AMP bridge, timing comparison or total Runtime
 resource claim. The theoretical factor2.117003 at B191 remains unchanged;
 passing these cases does not strengthen it into a uniform0.001 theorem.
+
+The [tolerance-enclosure continuation](RADIX9_ACCURACY_ENCLOSURE.md) now
+certifies these27 retained GPU forecasts from the checked binary64 bound,
+without replaying the diagnostic. It also supplies a256-cycle counterexample
+to uniform0.001 AMP accuracy and handles large-count enclosures without
+materializing huge likelihood integers. The original finite result stands.

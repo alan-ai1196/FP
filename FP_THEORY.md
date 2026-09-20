@@ -137,6 +137,13 @@ pass; the sole fixed RTX3090 diagnostic at7cb6259 also matches273,832 words
 and1,152 forecasts. This numerical decoder proof grants no native-state/AMP
 quotient and changes no frozen definition below.
 
+The [binary64 enclosure continuation](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+now gives rigorous scalar tolerance decisions with small rational endpoints,
+including synthetic counts10^12 where explicit integer likelihoods refuse.
+It also finds a256-cycle AMP-machine error above0.002274, falsifying uniform
+0.001 accuracy for that decoder. The exact scalar proofs and pending new
+device diagnostic do not replace complete native phase/AMP obligations.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

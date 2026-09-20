@@ -2,6 +2,22 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current tolerance result, 2026-09-21:** the [binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+turns the radix decoder's error proof into rigorous per-forecast decisions.
+For q=B+1 and t=2*q*epsilon/(1-epsilon)<1, the checked binary64 result v
+encloses the exact probability in[v(1-t),v/(1-t)], intersected with the
+known-noise range. This needs small rational arithmetic, not9^H or a large
+R^q. All27 retained GPU forecasts certify below0.001 without a rerun;1,125
+triangle targets are enclosed with298,125 actual binary64 primitive checks.
+The AMP machine also exposes a real accuracy failure: a256-cycle query(0,96)
+at h16 has error above0.0022741198408. Four new stress forecasts at h16/10^12
+certify two within/two outside0.001, despite three exact-integer height
+refusals. An independent cycle tail bound confirms their target enclosures.
+These are synthetic reachable states, not executed trillion-event histories.
+The fixed new4-GiB/240-second GPU tolerance diagnostic is pending; its success
+must include correctly reproducing the two rejected forecasts. No Runtime
+phase evidence, complete-state bridge or installation authority follows.
+
 **Current numerical-decoding result, 2026-09-21:** the [radix9 frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 exposes a one-forecast failure of local factor normalization. On the signed
 triangle(h,h,-h), small local entries round to zero at h8/48/340 in

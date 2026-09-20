@@ -1,0 +1,275 @@
+{
+  "status": "PASS_CONDITIONAL_DECODER_ENCLOSURES",
+  "scope": "scalar numerical decisions; no Runtime or complete native-state authority",
+  "tolerance": "1/1000",
+  "bound_audit": {
+    "exact_geometric_checks": 10,
+    "decision_boundaries": 3,
+    "uninformative_budget_refusals": 1
+  },
+  "retained_device_reader": {
+    "source": "7cb6259f5132a018b67d4749d30245dcdd9ac1d0",
+    "forecast_checks": 27,
+    "new_device_executions": 0,
+    "maximum_reference_interval_width_float": 7.639755494913548e-12,
+    "maximum_certified_absolute_error": "42644858555676797974359427/70425033345627436559475146752",
+    "maximum_certified_absolute_error_float": 0.0006055355110218708
+  },
+  "small_exact_audit": {
+    "profiles": 125,
+    "ordered_queries": 9,
+    "forecasts": 1125,
+    "actual_binary64_primitives": 298125,
+    "maximum_reference_interval_width_float": 4.603069905740126e-13,
+    "maximum_certified_absolute_error_float": 0.0001319959567374691
+  },
+  "original_search": [
+    {
+      "n": 16,
+      "query": [
+        0,
+        4
+      ],
+      "h": 16,
+      "AMP_probability": "11745279/16777216",
+      "exact_absolute_error_float": 7.31825828552246e-05,
+      "within_1e_3": true
+    },
+    {
+      "n": 32,
+      "query": [
+        0,
+        8
+      ],
+      "h": 16,
+      "AMP_probability": "734195/1048576",
+      "exact_absolute_error_float": 0.00018291473388671876,
+      "within_1e_3": true
+    },
+    {
+      "n": 64,
+      "query": [
+        0,
+        16
+      ],
+      "h": 16,
+      "AMP_probability": "2933473/4194304",
+      "exact_absolute_error_float": 0.0006055355072021485,
+      "within_1e_3": true
+    },
+    {
+      "n": 128,
+      "query": [
+        0,
+        32
+      ],
+      "h": 16,
+      "AMP_probability": "5867527/8388608",
+      "exact_absolute_error_float": 0.0005362749099731446,
+      "within_1e_3": true
+    },
+    {
+      "n": 256,
+      "query": [
+        0,
+        64
+      ],
+      "h": 16,
+      "AMP_probability": "5880331/8388608",
+      "exact_absolute_error_float": 0.0009900808334350586,
+      "within_1e_3": true
+    },
+    {
+      "n": 256,
+      "query": [
+        0,
+        16
+      ],
+      "h": 16,
+      "AMP_probability": "1781511/2097152",
+      "exact_absolute_error_float": 0.0005093574523925781,
+      "within_1e_3": true
+    },
+    {
+      "n": 256,
+      "query": [
+        0,
+        32
+      ],
+      "h": 16,
+      "AMP_probability": "13409373/16777216",
+      "exact_absolute_error_float": 0.0007390856742858886,
+      "within_1e_3": true
+    },
+    {
+      "n": 256,
+      "query": [
+        0,
+        96
+      ],
+      "h": 16,
+      "AMP_probability": "10104483/16777216",
+      "exact_absolute_error_float": 0.0022741198539733888,
+      "within_1e_3": false
+    },
+    {
+      "n": 256,
+      "query": [
+        0,
+        128
+      ],
+      "h": 16,
+      "AMP_probability": "1/2",
+      "exact_absolute_error_float": 0.0,
+      "within_1e_3": true
+    },
+    {
+      "n": 512,
+      "query": [
+        0,
+        128
+      ],
+      "h": 8,
+      "AMP_probability": "11665429/16777216",
+      "exact_absolute_error_float": 0.004686248298923004,
+      "within_1e_3": false
+    }
+  ],
+  "stress_cases": [
+    {
+      "case": "triangle_huge_counts",
+      "n": 3,
+      "query": [
+        0,
+        1
+      ],
+      "negative_edge": [
+        1,
+        2
+      ],
+      "positive_tape_nodes": 31,
+      "mass_budget": 8,
+      "actual_binary64_primitives": 264,
+      "AMP_scalar_rounding_results": 132,
+      "checked_device_words": 0,
+      "largest_exponent": 2000000000001,
+      "maximum_exponent_bits": 41,
+      "forecasts": [
+        {
+          "count_magnitude": 1000000000000,
+          "binary64_probability": "1426139882000657/2251799813685248",
+          "AMP_probability": "5312785/8388608",
+          "exact_probability_enclosure": [
+            "33451890839347019867604904255/52818775009508807795758071808",
+            "33451890839355576706896908197/52818775009495296996875960320"
+          ],
+          "independent_cycle_interval_contained": true,
+          "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "419757351185365068095/52818775009508807795758071808",
+            "maximum_absolute_error": "419774464863841701797/52818775009495296996875960320",
+            "minimum_absolute_error_float": 7.947123936702382e-09,
+            "maximum_absolute_error_float": 7.94744794418989e-09
+          }
+        }
+      ]
+    },
+    {
+      "case": "cycle64_huge_counts",
+      "n": 64,
+      "query": [
+        0,
+        16
+      ],
+      "negative_edge": [
+        0,
+        63
+      ],
+      "positive_tape_nodes": 1345,
+      "mass_budget": 191,
+      "actual_binary64_primitives": 10536,
+      "AMP_scalar_rounding_results": 6124,
+      "checked_device_words": 0,
+      "largest_exponent": 63000000000002,
+      "maximum_exponent_bits": 46,
+      "forecasts": [
+        {
+          "count_magnitude": 1000000000000,
+          "binary64_probability": "6305039478318693/9007199254740992",
+          "AMP_probability": "2933473/4194304",
+          "exact_probability_enclosure": [
+            "147892570025817583936150525449/211275100038035231183032287232",
+            "49297523342208209663125106051/70425033345627436559475146752"
+          ],
+          "independent_cycle_interval_contained": true,
+          "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "127934574053638422381549065/211275100038035231183032287232",
+            "maximum_absolute_error": "42644858555676797974359427/70425033345627436559475146752",
+            "minimum_absolute_error_float": 0.0006055355033821152,
+            "maximum_absolute_error_float": 0.0006055355110218708
+          }
+        }
+      ]
+    },
+    {
+      "case": "cycle256_accuracy_failure",
+      "n": 256,
+      "query": [
+        0,
+        96
+      ],
+      "negative_edge": [
+        0,
+        255
+      ],
+      "positive_tape_nodes": 5153,
+      "mass_budget": 767,
+      "actual_binary64_primitives": 79440,
+      "AMP_scalar_rounding_results": 46296,
+      "checked_device_words": 0,
+      "largest_exponent": 255000000000003,
+      "maximum_exponent_bits": 48,
+      "forecasts": [
+        {
+          "count_magnitude": 16,
+          "binary64_probability": "5404319552844599/9007199254740992",
+          "AMP_probability": "10104483/16777216",
+          "exact_probability_enclosure": [
+            "126765060020054216232505562691/211275100038035231183032287232",
+            "126765060022821227843561997379/211275100033423545164604899328"
+          ],
+          "independent_cycle_interval_contained": true,
+          "integer_oracle": "CHECKED_EXACT_INTEGER_DECODER",
+          "decision": {
+            "status": "OUTSIDE_TOLERANCE",
+            "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+            "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+            "minimum_absolute_error_float": 0.002274119840876243,
+            "maximum_absolute_error_float": 0.0022741198670696906
+          }
+        },
+        {
+          "count_magnitude": 1000000000000,
+          "binary64_probability": "5404319552844599/9007199254740992",
+          "AMP_probability": "10104483/16777216",
+          "exact_probability_enclosure": [
+            "126765060020054216232505562691/211275100038035231183032287232",
+            "126765060022821227843561997379/211275100033423545164604899328"
+          ],
+          "independent_cycle_interval_contained": true,
+          "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+          "decision": {
+            "status": "OUTSIDE_TOLERANCE",
+            "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+            "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+            "minimum_absolute_error_float": 0.002274119840876243,
+            "maximum_absolute_error_float": 0.0022741198670696906
+          }
+        }
+      ]
+    }
+  ]
+}

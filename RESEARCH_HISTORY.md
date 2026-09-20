@@ -5727,3 +5727,41 @@ ownership, future persistence or installation, and supplies no new model
 score or resource dominance. This diagnostic and every earlier model job
 are terminal. Further bridge research must use their retained evidence,
 not restart them or substitute their scalar outputs for complete execution.
+
+## 168. A numerical enclosure decides accuracy and exposes a positive-decoder failure (2026-09-21)
+
+The [binary64 enclosure analysis](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+turns the prior positive-tape theorem into a useful numerical decision.
+For q=B+1, epsilon2^-46 and t=2q*epsilon/(1-epsilon)<1, the actual checked
+binary64 value v encloses the exact target in[v(1-t),v/(1-t)]. A binomial/
+geometric inequality proves this without forming R^q or9^H. Exact endpoint
+comparison can certify within tolerance, prove outside tolerance, or remain
+unresolved when the bound straddles the requested threshold.
+
+The independent reader certifies all27 terminal7cb6259 GPU forecasts below
+0.001 without a new device execution. All1,125 triangle targets from125
+signed profiles/nine queries lie in the new enclosures;298,125 actual checked
+binary64 primitives support these tests. Their interval widths stay below
+4.604e-13. Endpoint ambiguity and a nonpositive geometric denominator are
+explicit unresolved outcomes, not favorable default comparisons.
+
+The ten-row adversarial cycle search instead finds two real precision
+failures. On the256-cycle, query(0,96), h16, the AMP machine returns
+10104483/16777216, with exact-target error above0.0022741198408. The512-cycle
+query(0,128), h8, exceeds0.004686248. Every input factor remains positive;
+this is finite arithmetic within a fresh decode, not prior-state erasure.
+The old uniform R^(B+1) theorem survives, but a uniform0.001 claim is false.
+
+An independent cycle argument counts odd numbers of violated preferences.
+The n singly violated worlds give limit9/10-4j/(5n), and all higher-violation
+mass has relative upper y^2/(1-y), y=n/9^h<1. Using h0=min(h,16) gives an
+independent narrow exact tube even at h=10^12. Four stress forecasts certify
+two within/two outside0.001, with90,240 binary64 checks and three honest
+explicit-integer height refusals. Exponents reach255,000,000,000,003 (48 bits).
+No trillion-event stream is claimed to have executed or provided evidence.
+
+The new fixed4-GiB/240-second GPU diagnostic is committed before execution.
+It must match all words and reproduce both accepted and rejected tolerance
+decisions; its actual outcome is pending at this entry. This is a scalar
+numerical certificate, not a complete Runtime/AMP or native evidence bridge,
+model experiment, semantic architecture action or reopened static ERC law.

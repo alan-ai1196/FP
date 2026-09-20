@@ -2,6 +2,17 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [new binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+settles individual scalar tolerance decisions without explicit likelihood
+integers: it certifies all27 retained GPU forecasts below0.001 and supports
+counts10^12 under the fixed exponent guard. A256-cycle instead gives an
+AMP-machine error above0.002274. Uniform0.001 accuracy for the present
+half-product decoder is therefore false, not merely unproved by a loose
+bound. The new fixed GPU diagnostic must reproduce both accurate and
+rejected forecasts. A failed tolerance requires numerical refinement or
+UNRESOLVED, without altering the target. Complete native gradients, phase
+records, owned execution and installation remain separate bridge obligations.
+
 The [finite-mantissa frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 now removes one numerical obstruction: independent local scaling can erase
 every globally compatible world, whereas per-entry integer exponents admit
