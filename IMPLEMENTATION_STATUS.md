@@ -10,8 +10,10 @@ and298,125 new binary64 primitives validate containment/decisions. The new
 256-cycle witness instead has AMP-machine error above0.002274, so positive
 mantissas alone do not assure the desired tolerance. Four stress forecasts
 at counts16/10^12 produce two within/two outside decisions,90,240 binary64
-checks and three explicit integer-height refusals. The new fixed GPU word
-diagnostic is pending; no production Runtime API or phase format changes.
+checks and three explicit integer-height refusals. The sole new GPU diagnostic
+completes at80f9538:78,848 actual words match, including both true tolerance
+rejections; job peak2,235,232,256 bytes stays below4 GiB. No timeout/limit
+termination occurs. No production Runtime API or phase format changes.
 
 The passive [radix9 frontier decoder](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 uses one finite mantissa and guarded integer exponent per positive entry.

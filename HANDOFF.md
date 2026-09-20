@@ -14,9 +14,12 @@ at h16 has error above0.0022741198408. Four new stress forecasts at h16/10^12
 certify two within/two outside0.001, despite three exact-integer height
 refusals. An independent cycle tail bound confirms their target enclosures.
 These are synthetic reachable states, not executed trillion-event histories.
-The fixed new4-GiB/240-second GPU tolerance diagnostic is pending; its success
-must include correctly reproducing the two rejected forecasts. No Runtime
-phase evidence, complete-state bridge or installation authority follows.
+The sole new4-GiB/240-second GPU tolerance diagnostic now completes at80f9538:
+78,848 actual words match, including both rejected forecasts and both within-
+tolerance controls. Job peak is2,235,232,256 bytes without timeout or limit
+termination. No Runtime phase evidence, complete-state bridge or installation
+authority follows. Both numerical diagnostics are terminal; retain their
+original outputs and do not restart them.
 
 **Current numerical-decoding result, 2026-09-21:** the [radix9 frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 exposes a one-forecast failure of local factor normalization. On the signed

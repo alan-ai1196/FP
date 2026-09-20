@@ -140,9 +140,10 @@ quotient and changes no frozen definition below.
 The [binary64 enclosure continuation](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 now gives rigorous scalar tolerance decisions with small rational endpoints,
 including synthetic counts10^12 where explicit integer likelihoods refuse.
-It also finds a256-cycle AMP-machine error above0.002274, falsifying uniform
-0.001 accuracy for that decoder. The exact scalar proofs and pending new
-device diagnostic do not replace complete native phase/AMP obligations.
+It also finds a256-cycle actual GPU error above0.002274, falsifying uniform
+0.001 accuracy for that decoder. The80f9538 diagnostic matches78,848 words
+and both within/outside decisions. These scalar proofs and measurements do
+not replace complete native phase/AMP obligations.
 
 ## 0. Research object and root principle
 

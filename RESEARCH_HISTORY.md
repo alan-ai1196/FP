@@ -5765,3 +5765,30 @@ It must match all words and reproduce both accepted and rejected tolerance
 decisions; its actual outcome is pending at this entry. This is a scalar
 numerical certificate, not a complete Runtime/AMP or native evidence bridge,
 model experiment, semantic architecture action or reopened static ERC law.
+
+## 169. Actual CUDA reproduces both the certified outputs and the accuracy failures (2026-09-21)
+
+The sole fixed [radix9 tolerance diagnostic](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
+completes at80f9538 on RTX3090, Torch2.12.0+cu132/CUDA13.2. All78,848 actual
+floating words match, including52,552 rounded scalar results. The triangle
+and64-cycle at h=10^12 certify within0.001; the256-cycle query(0,96) at h16
+and10^12 certifies outside0.001. Both rejected forecasts have actual error
+above0.0022741198408. Every binary64 enclosure, independent cycle containment
+and expected integer-height refusal reproduces the committed CPU report.
+This is an actual precision counterexample, not an inference from a loose
+bound, and diagnostic success includes rejection of the inaccurate outputs.
+
+Worker28616 exits0 under the registered4-GiB/240-second job, attached before
+resume, without timeout, limit termination or reader exception. Completed
+process/job peaks are2,233,999,360/2,235,232,256 bytes; Torch allocated/reserved
+peaks are2,128,384/4,194,304. The child's cost includes host integer metadata,
+90,240 checked binary64 primitives and the exact diagnostic controls. The
+parent is outside this measurement. Raw cumulative process count2 is retained
+under the one-active-process cap, and the terminal journal is8,406 bytes.
+
+Both numerical diagnostics and all earlier model experiments are terminal.
+The count decoder now has a rigorous way to accept or reject individual
+numerical tolerances without enormous integer likelihoods. It still needs
+an owned complete-state/phase bridge before replacing Runtime execution;
+a tolerance rejection cannot be hidden by changing reference semantics or
+promoting a scalar helper into installation authority.

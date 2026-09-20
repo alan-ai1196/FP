@@ -1,0 +1,222 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "80f9538319b70e84ee63835eca340a61d3f05ab8",
+    "process_commit_cap": 4294967296,
+    "deadline_ms": 240000,
+    "scope": "four synthetic count-state forecasts; no trillion-event replay, Runtime bridge or model score",
+    "cases": [
+      {
+        "name": "triangle_huge_counts",
+        "n": 3,
+        "query": [
+          0,
+          1
+        ],
+        "count_magnitudes": [
+          1000000000000
+        ]
+      },
+      {
+        "name": "cycle64_huge_counts",
+        "n": 64,
+        "query": [
+          0,
+          16
+        ],
+        "count_magnitudes": [
+          1000000000000
+        ]
+      },
+      {
+        "name": "cycle256_accuracy_failure",
+        "n": 256,
+        "query": [
+          0,
+          96
+        ],
+        "count_magnitudes": [
+          16,
+          1000000000000
+        ]
+      }
+    ],
+    "arithmetic": "actual FP16 products, FP32 alignment/sums; host integer exponents; checked binary64 enclosure",
+    "tolerance": "1/1000",
+    "expected_decisions": [
+      "WITHIN_TOLERANCE",
+      "WITHIN_TOLERANCE",
+      "OUTSIDE_TOLERANCE",
+      "OUTSIDE_TOLERANCE"
+    ],
+    "success_criterion": "all words and both accepted/rejected accuracy outcomes reproduce the committed CPU oracle",
+    "claimed_timing_comparison": false
+  },
+  "workers": [
+    {
+      "worker_status": "EXECUTED_AND_MATCHED_EXPECTED_DECISIONS",
+      "execution_source": "80f9538319b70e84ee63835eca340a61d3f05ab8",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2233999360,
+        "peak_job_commit": 2235232256,
+        "user_100ns": 263906250,
+        "kernel_100ns": 12343750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28616,
+        "process_creation_100ns": 134344215494282754
+      },
+      "raw_result_bytes": 5426,
+      "result": {
+        "status": "PASS_ACTUAL_AMP_TOLERANCE_DIAGNOSTIC",
+        "process_id": 28616,
+        "torch": "2.12.0+cu132",
+        "CUDA": "13.2",
+        "device": "NVIDIA GeForce RTX 3090",
+        "stress_cases": [
+          {
+            "case": "triangle_huge_counts",
+            "n": 3,
+            "query": [
+              0,
+              1
+            ],
+            "negative_edge": [
+              1,
+              2
+            ],
+            "positive_tape_nodes": 31,
+            "mass_budget": 8,
+            "actual_binary64_primitives": 264,
+            "AMP_scalar_rounding_results": 132,
+            "checked_device_words": 203,
+            "largest_exponent": 2000000000001,
+            "maximum_exponent_bits": 41,
+            "forecasts": [
+              {
+                "count_magnitude": 1000000000000,
+                "binary64_probability": "1426139882000657/2251799813685248",
+                "AMP_probability": "5312785/8388608",
+                "exact_probability_enclosure": [
+                  "33451890839347019867604904255/52818775009508807795758071808",
+                  "33451890839355576706896908197/52818775009495296996875960320"
+                ],
+                "independent_cycle_interval_contained": true,
+                "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+                "decision": {
+                  "status": "WITHIN_TOLERANCE",
+                  "minimum_absolute_error": "419757351185365068095/52818775009508807795758071808",
+                  "maximum_absolute_error": "419774464863841701797/52818775009495296996875960320",
+                  "minimum_absolute_error_float": 7.947123936702382e-09,
+                  "maximum_absolute_error_float": 7.94744794418989e-09
+                }
+              }
+            ]
+          },
+          {
+            "case": "cycle64_huge_counts",
+            "n": 64,
+            "query": [
+              0,
+              16
+            ],
+            "negative_edge": [
+              0,
+              63
+            ],
+            "positive_tape_nodes": 1345,
+            "mass_budget": 191,
+            "actual_binary64_primitives": 10536,
+            "AMP_scalar_rounding_results": 6124,
+            "checked_device_words": 9191,
+            "largest_exponent": 63000000000002,
+            "maximum_exponent_bits": 46,
+            "forecasts": [
+              {
+                "count_magnitude": 1000000000000,
+                "binary64_probability": "6305039478318693/9007199254740992",
+                "AMP_probability": "2933473/4194304",
+                "exact_probability_enclosure": [
+                  "147892570025817583936150525449/211275100038035231183032287232",
+                  "49297523342208209663125106051/70425033345627436559475146752"
+                ],
+                "independent_cycle_interval_contained": true,
+                "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+                "decision": {
+                  "status": "WITHIN_TOLERANCE",
+                  "minimum_absolute_error": "127934574053638422381549065/211275100038035231183032287232",
+                  "maximum_absolute_error": "42644858555676797974359427/70425033345627436559475146752",
+                  "minimum_absolute_error_float": 0.0006055355033821152,
+                  "maximum_absolute_error_float": 0.0006055355110218708
+                }
+              }
+            ]
+          },
+          {
+            "case": "cycle256_accuracy_failure",
+            "n": 256,
+            "query": [
+              0,
+              96
+            ],
+            "negative_edge": [
+              0,
+              255
+            ],
+            "positive_tape_nodes": 5153,
+            "mass_budget": 767,
+            "actual_binary64_primitives": 79440,
+            "AMP_scalar_rounding_results": 46296,
+            "checked_device_words": 69454,
+            "largest_exponent": 255000000000003,
+            "maximum_exponent_bits": 48,
+            "forecasts": [
+              {
+                "count_magnitude": 16,
+                "binary64_probability": "5404319552844599/9007199254740992",
+                "AMP_probability": "10104483/16777216",
+                "exact_probability_enclosure": [
+                  "126765060020054216232505562691/211275100038035231183032287232",
+                  "126765060022821227843561997379/211275100033423545164604899328"
+                ],
+                "independent_cycle_interval_contained": true,
+                "integer_oracle": "CHECKED_EXACT_INTEGER_DECODER",
+                "decision": {
+                  "status": "OUTSIDE_TOLERANCE",
+                  "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+                  "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+                  "minimum_absolute_error_float": 0.002274119840876243,
+                  "maximum_absolute_error_float": 0.0022741198670696906
+                }
+              },
+              {
+                "count_magnitude": 1000000000000,
+                "binary64_probability": "5404319552844599/9007199254740992",
+                "AMP_probability": "10104483/16777216",
+                "exact_probability_enclosure": [
+                  "126765060020054216232505562691/211275100038035231183032287232",
+                  "126765060022821227843561997379/211275100033423545164604899328"
+                ],
+                "independent_cycle_interval_contained": true,
+                "integer_oracle": "UNRESOLVED_INTEGER_HEIGHT",
+                "decision": {
+                  "status": "OUTSIDE_TOLERANCE",
+                  "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+                  "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+                  "minimum_absolute_error_float": 0.002274119840876243,
+                  "maximum_absolute_error_float": 0.0022741198670696906
+                }
+              }
+            ]
+          }
+        ],
+        "peak_torch_allocated_bytes": 2128384,
+        "peak_torch_reserved_bytes": 4194304
+      }
+    }
+  ]
+}

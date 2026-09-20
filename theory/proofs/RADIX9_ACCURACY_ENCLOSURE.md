@@ -1,8 +1,8 @@
 # Deciding a decoder tolerance without explicit likelihood integers
 
-Status: **PROVED, SCOPED ENCLOSURE; EXACT AND CHECKED BINARY64 AUDITS;
-AMP-MACHINE COUNTEREXAMPLE**. The new fixed actual CUDA diagnostic is pending
-at this initial commit. The earlier7cb6259 diagnostic is terminal and is
+Status: **PROVED, SCOPED ENCLOSURE; EXACT/BINARY64 AUDITS;
+ACTUAL AMP ACCURACY COUNTEREXAMPLE**. The sole new CUDA diagnostic completes
+at80f9538 and reproduces both tolerance rejections. The earlier7cb6259 diagnostic is terminal and is
 only read here. Foundation, ERC-1 and native learner semantics are unchanged.
 
 The [radix9 frontier law](RADIX9_FRONTIER_PRECISION.md) solves the local
@@ -69,6 +69,10 @@ If t>=1, the local execution refuses, or the exponent envelope is exceeded,
 the checker also remains unresolved. A tighter bound or more reference
 precision may decide a straddling case. These are numerical refinements,
 not changes to FP semantics or permission to discard a failed label.
+
+An OUTSIDE decision rejects this numerical realization at the requested
+tolerance. The underlying reference Program remains legal; a complete
+Runtime attempt still needs refinement or an unresolved numerical boundary.
 
 The helper returns conditional scalar evidence only. In the device experiment,
 the actual observed word, case inputs, original source and checked arithmetic
@@ -188,6 +192,32 @@ Register one Windows job before resuming the child, with one active process,
 measurement. Retain device/software identity, process identity, completed
 job accounting, Torch peaks and every outcome, including reader failure.
 No source change, silent restart, tolerance change or timing comparison is
-allowed. The terminal record is
-`evidence/minimal/FP_RADIX9_ACCURACY_CUDA.json`. Its outcome is pending at
-this initial proof commit.
+allowed. The [terminal record](../../evidence/minimal/FP_RADIX9_ACCURACY_CUDA.json)
+retains the completed outcome below. At this proof's initial commit the
+outcome was pending; the fixed cases, thresholds and limits did not change.
+
+## 7. Completed actual CUDA accuracy counterexample
+
+The sole attempt completes at source
+`80f9538319b70e84ee63835eca340a61d3f05ab8` on RTX3090, Torch2.12.0+cu132,
+CUDA13.2. All78,848 floating-word checks agree with the independent machine,
+including52,552 rounded scalar results and coefficient/normalization
+selections. The exact same CPU enclosures and decisions reproduce: triangle
+and64-cycle within0.001, both256-cycle forecasts outside0.001. Thus the
+error interval above0.0022741198408 is now an actual GPU result, including
+the large-count state that the explicit integer reference cannot materialize.
+No approximate binary64 answer is treated as an exact target in that claim.
+
+Worker28616 exits0 after attachment before resume, with no timeout, limit
+termination or reader failure. Completed process/job commit peaks are
+2,233,999,360/2,235,232,256 bytes under the fixed4,294,967,296-byte envelope.
+Torch allocated/reserved peaks are2,128,384/4,194,304 bytes. The child includes
+host exponent updates,90,240 checked binary64 primitives, independent exact
+machine work and the bounded integer/analytic controls. Raw accounting keeps
+total_processes=2 and limit_terminated_processes=0 under the one-active-process
+cap. There is no exclusive-device timing or complete Runtime-resource claim.
+
+The terminal journal is8,406 bytes. Neither this diagnostic nor the older
+one should be restarted. The result proves a precision failure and validates
+a numerical rejection mechanism; it does not grant bridge authority to an
+inaccurate realization or replace any complete native-state obligation.
