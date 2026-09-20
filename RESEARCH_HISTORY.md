@@ -5118,3 +5118,26 @@ are432,934,912 and163,622,912 bytes. The fixed fixture therefore saves
 one MiB for the copy. Both original failures remain in the same minimal
 attempt history. This closes the exercised storage question, not complete
 model scaling or n16 execution; those need separate source-bound outcomes.
+
+## 147. Register one complete n16 execution test against the retained memory failure
+
+The original first n16/c2 rate1 attempt fails while the final independent
+auditor creates another complete arena snapshot. Its17,180,917,760-byte job
+peak slightly exceeds the nominal16-GiB cap, and no model result is granted.
+The complete frame-copy law and bounded physical saving now motivate one
+whole-worker test of the accumulated runtime improvements.
+
+The [fixed protocol](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
+registers exactly(16,iid-c2,16), rate1, with the existing run_joint.py worker
+and joint_model.py data files verified unchanged from38b27b3. It retains140
+training and256 evaluation events, solver v5, original updates/fresh rule,
+2-MiB frames,16-GiB/two-hour job and all original resource/numerical gates.
+No new predictor or weaker baseline is introduced. The strong same-case
+posterior remains reused at its original source, as do all eight n16 failures.
+
+Preflight passes before this new worker starts. Execution will bind a clean
+immutable source and use the same independent score/fresh-decision reader.
+One result cannot establish all-case recovery, population performance or
+causal attribution to immutable frames alone. The separate8ccacc0 likelihood
+matrix continues unchanged; any overlap is explicit. No result exists at
+registration, and there is no automatic retry after a failed attempt.

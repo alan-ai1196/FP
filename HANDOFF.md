@@ -13,6 +13,14 @@ Both original report failures remain retained. This targets
 repeated complete-history copies, with no information pruning or n16 recovery
 claim. The live likelihood matrix remains at immutable8ccacc0.
 
+The next [fixed whole-worker test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
+registers one new execution of the first old n16/c2 failure: seed16, rate1.
+The existing v5 model worker/data files and original16-GiB/two-hour envelope
+stay fixed; all eight old n16 failures and posterior controls remain intact.
+This is a current-implementation recovery question, not a new model or a
+single-optimization attribution. Register and execute from an immutable
+source; retain any failure without an automatic retry.
+
 ## 1. Current research state
 
 The current canonical theory is [`FP_THEORY.md`](FP_THEORY.md). Its status is:

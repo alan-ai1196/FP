@@ -11,6 +11,11 @@ both original report failures remain retained. Measure a complete model
 worker separately; metadata and other mutable buffers are still costs.
 Do not infer n16 recovery from the completed-frame payload formula.
 
+The [one-case model recovery protocol](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_PROTOCOL.md)
+now fixes the first old n16/c2 failure, seed16/rate1, for one new execution
+under its original caps and unchanged worker/data. Its result must include
+all final auditors. No other old failure or baseline is filled or rerun.
+
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
