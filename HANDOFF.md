@@ -595,6 +595,14 @@ and1,536 production score checks pass, with equally precise fixed controls.
 Uniform-prior examples use no model tape and count operational failure
 together with crossing; they supply no completion probability.
 
+The [precision-matched retrospective comparison](experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md)
+now fixes exactly the arcsine curve and coefficient1/3 control at96
+fractional bits, following48b0ba3. The passive analysis requires committed
+clean dependencies before reading the four already exposed n8 tapes. It
+checks monotone score-tube propagation, retains missing crossings explicitly
+and grants no owned outcome. At declaration, this comparison has not run.
+It cannot modify or replace the live8ccacc0 matrix or its controls.
+
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
 host workspace copies the phase span and decodes only initialized floating
