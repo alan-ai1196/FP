@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-09-20T18:20:14.2290662Z",
+  "processes": [
+    {
+      "ProcessId": 14264,
+      "ParentProcessId": 8940,
+      "CreationUtc": "2026-09-20T15:25:40.9181860Z",
+      "CommandLine": "\"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -B experiments/joint_uncertainty/run_likelihood_deployment.py --matrix --write"
+    },
+    {
+      "ProcessId": 6920,
+      "ParentProcessId": 14264,
+      "CreationUtc": "2026-09-20T17:09:20.9103280Z",
+      "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP-likelihood-deployment-run\\experiments\\joint_uncertainty\\run_likelihood_deployment.py --worker 1 --output F:\\FP-likelihood-deployment-run\\fp-deployment-model-zm8w6a37\\result.json"
+    },
+    {
+      "ProcessId": 27688,
+      "ParentProcessId": 7876,
+      "CreationUtc": "2026-09-20T18:18:57.8066580Z",
+      "CommandLine": "\"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -B experiments/joint_uncertainty/run_model_storage_recovery.py --run"
+    },
+    {
+      "ProcessId": 2660,
+      "ParentProcessId": 27688,
+      "CreationUtc": "2026-09-20T18:18:58.5459470Z",
+      "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP-model-storage-recovery-run\\experiments\\joint_uncertainty\\run_joint.py --worker FP --case 16 iid-c2 16 --rate 1 --worker-output F:\\FP-model-storage-recovery-run\\fp-storage-recovery-wy8tdidd\\worker.json"
+    }
+  ],
+  "execution_source": "75e4f93698a8f09ff8cb0333e8f46342e4e47ab5",
+  "execution_checkout": "F:/FP-model-storage-recovery-run",
+  "parent_process_id": 27688,
+  "worker_process_id": 2660,
+  "status": "LAUNCHED_NO_COMPLETED_OUTCOME",
+  "concurrent_likelihood_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "scope": "One fixed n16/rate1 worker observed with the existing n8 worker; no exclusive-device timing claim. Completed job binding and outcome await the terminal source journal."
+}

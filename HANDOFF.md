@@ -18,8 +18,12 @@ registers one new execution of the first old n16/c2 failure: seed16, rate1.
 The existing v5 model worker/data files and original16-GiB/two-hour envelope
 stay fixed; all eight old n16 failures and posterior controls remain intact.
 This is a current-implementation recovery question, not a new model or a
-single-optimization attribution. Register and execute from an immutable
-source; retain any failure without an automatic retry.
+single-optimization attribution. It started at immutable75e4f93 on
+2026-09-20 at18:18:57 UTC, parent27688/worker2660, in
+`F:\FP-model-storage-recovery-run`. The [canonical journal](evidence/minimal/FP_MODEL_STORAGE_RECOVERY_EXPERIMENT.json)
+has zero completed outcomes at launch. Its separate [process observation](evidence/minimal/FP_MODEL_STORAGE_RECOVERY_EXECUTION.json)
+records overlap with likelihood worker6920. Collect the same-source terminal
+journal and reader result; retain any failure without an automatic retry.
 
 ## 1. Current research state
 

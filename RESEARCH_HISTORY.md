@@ -5141,3 +5141,11 @@ One result cannot establish all-case recovery, population performance or
 causal attribution to immutable frames alone. The separate8ccacc0 likelihood
 matrix continues unchanged; any overlap is explicit. No result exists at
 registration, and there is no automatic retry after a failed attempt.
+
+Execution starts at immutable75e4f93 in`F:\FP-model-storage-recovery-run`
+at18:18:57 UTC on2026-09-20. Parent27688 launches worker2660; the initial
+canonical journal has zero completed outcomes. The18:20:14 UTC process
+observation binds their creation identities and records concurrent n8
+likelihood parent14264/worker6920 at8ccacc0. Both original experiments and
+all old failures remain unchanged. The new worker must finish and its own
+same-source reader must pass before any recovery result is granted.

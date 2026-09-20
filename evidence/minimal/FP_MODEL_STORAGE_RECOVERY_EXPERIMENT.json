@@ -1,0 +1,140 @@
+{
+  "experiment": "one-case-n16-model-storage-recovery",
+  "status": "RUNNING",
+  "registration_source": "75e4f93698a8f09ff8cb0333e8f46342e4e47ab5",
+  "registration": {
+    "case": [
+      16,
+      "iid-c2",
+      16
+    ],
+    "rate": "1",
+    "new_workers": 1,
+    "training_events": 140,
+    "evaluation_events": 256,
+    "host_cap": 17179869184,
+    "packed_cap": 8589934592,
+    "work_cap_per_role": 1000000000000000,
+    "native_arena_bytes": 268435456,
+    "allocator_cap": 536870912,
+    "phase_frame_bytes": 2097152,
+    "phase_output_cells": 65536,
+    "timeout_ms": 7200000,
+    "solver": "empirical-binary-relation-joint-polynomial-v5",
+    "reference_integer_bits": 32768,
+    "data_and_model_worker": "unchanged existing RN-5 fp_worker, configuration and data",
+    "worker_and_data_files_unchanged_from": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+    "independent_reader": "existing analyze_joint.check_fp from this same source",
+    "control": {
+      "canonical_path": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+      "artifact_commit": "33a12e4f5862b65a7028c1b4507826f10fb5b27d",
+      "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+      "all_original_n16_failures_retained": 8,
+      "selected_failure": {
+        "worker_status": "FAILED",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 373, in main\n    result = fp_worker(case, args.rate) if args.worker == 'FP' else baseline_worker(case)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\run_joint.py\", line 152, in fp_worker\n    cuda = rn1.audit_snapshot(rt) if phase_checked else None\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_cuda_runtime.py\", line 84, in audit_snapshot\n    snapshot = validate_residency(runtime)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_reference_construction.py\", line 79, in validate_residency\n    snapshot = runtime.snapshot()\n               ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 38, in guarded\n    result = method(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 2662, in snapshot\n    None if self._cuda is None else self._cuda.snapshot())\n                                    ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_prefix.py\", line 175, in snapshot\n    tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),\n                                                                ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in snapshot\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 246, in <genexpr>\n    'regions': tuple((r.sequence, r.phase, r.owner, r.operation, r.offset, r.byte_size,\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nMemoryError\n",
+        "process_id": 9196,
+        "kind": "FP",
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "rate": "1",
+        "completed_job": {
+          "exit_code": 1,
+          "timed_out": false,
+          "commit_limit": 17179869184,
+          "peak_process_commit": 17179660288,
+          "peak_job_commit": 17180917760,
+          "user_100ns": 32151250000,
+          "kernel_100ns": 453593750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 9196,
+          "process_creation_100ns": 134337681602169957
+        },
+        "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910"
+      },
+      "reused_strong_control": {
+        "kind": "posterior",
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "rate": "none",
+        "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+        "completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 17179869184,
+          "peak_process_commit": 2309763072,
+          "peak_job_commit": 2311000064,
+          "user_100ns": 85625000,
+          "kernel_100ns": 7343750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 13212,
+          "process_creation_100ns": 134337747346715450
+        },
+        "adaptive_exact_unseen": {
+          "contexts": 212,
+          "expected_CE_binary64": 0.3269395147987739,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "1354351962228271/7459086882832384",
+            "10834815697826379/59672695062659072"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 1305,
+          "mean_true_probability_gap_binary64": 0.0023167398544161463,
+          "latent_relation_error_with_half_ties": "1/424"
+        },
+        "adaptive_AMP_unseen": {
+          "contexts": 212,
+          "expected_CE_binary64": 0.3269395302762026,
+          "raw_division_expected_CE_binary64": 0.32693951630888246,
+          "expected_Brier_exact_enclosure": [
+            "10834815946323809/59672695062659072",
+            "2708703986581005/14918173765664768"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 53,
+          "mean_true_probability_gap_binary64": 0.00235516283342271,
+          "latent_relation_error_with_half_ties": "1/424"
+        },
+        "adaptive_exact_full_domain": {
+          "contexts": 256,
+          "expected_CE_binary64": 0.3266204217443898,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "408253047292955/2251799813685248",
+            "13064097513374815/72057594037927936"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 1305,
+          "mean_true_probability_gap_binary64": 0.001918550282568492,
+          "latent_relation_error_with_half_ties": "1/512"
+        },
+        "adaptive_AMP_full_domain": {
+          "contexts": 256,
+          "expected_CE_binary64": 0.3266204354893652,
+          "raw_division_expected_CE_binary64": 0.326620423602559,
+          "expected_Brier_exact_enclosure": [
+            "13064097785943765/72057594037927936",
+            "3266024446486005/18014398509481984"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 53,
+          "mean_true_probability_gap_binary64": 0.0019546434357960592,
+          "latent_relation_error_with_half_ties": "1/512"
+        }
+      }
+    },
+    "scope": "one current-source execution recovery; no population or isolated-change claim"
+  },
+  "workers": []
+}

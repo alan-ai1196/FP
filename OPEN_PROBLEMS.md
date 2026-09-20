@@ -15,6 +15,9 @@ The [one-case model recovery protocol](experiments/joint_uncertainty/MODEL_STORA
 now fixes the first old n16/c2 failure, seed16/rate1, for one new execution
 under its original caps and unchanged worker/data. Its result must include
 all final auditors. No other old failure or baseline is filled or rerun.
+The job is running at immutable75e4f93, parent27688/worker2660, with zero
+completed outcomes in the initial canonical journal. Read the same-source
+terminal worker and independent-reader result before assessing recovery.
 
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
