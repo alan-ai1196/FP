@@ -2,6 +2,22 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current exact-decoding result, 2026-09-21:** the [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
+retains the correlated posterior in count coordinates and computes exact
+pair marginals by positive variable elimination. Given an order of anchored
+width w, retaining at most two query endpoints gives at most2^(w+3) join
+cells and O((m+n)2^(w+3)) table arithmetic, with O(n+H)-bit integers. Count
+input, powers, order search and full output have separate costs. A cycle
+needs one factor with2^(n-1) categories under the closure theorem yet has
+linear exact decoding; n64 checks use at most eight join cells. On the eight
+retained tapes, first full-rank blocks have anchored widths1-3 at n8 and4-5
+at n16, then final widths4-5/11. All144 fixed snapshot queries agree with
+world enumeration.953 complete native caches and1,906 observed/committed
+states also pass, including profile clocks. This is an exact reference
+decoder, not an owned Runtime lowering: explicit K-entry output and all
+original AMP operation words still require their paid realization. No
+completed experiment is rerun or relabeled.
+
 **Current learner-dynamics result, 2026-09-21:** [repeated relative evidence](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
 can force the native product-belief learner toward false certainty. Exact
 Bayes preserves00:11 odds because every repeated query gives those worlds

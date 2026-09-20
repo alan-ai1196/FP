@@ -230,3 +230,11 @@ contains aggregates and the small witnesses, with no permutation cache:
 The proof and tests concern exact independent-factor closure and its native
 realization. They grant no Runtime ownership, fresh evidence, AMP relation,
 install reachability or complete constructor decision.
+
+The [positive frontier decoder](POSITIVE_FRONTIER_DECODER.md) gives an explicit
+separation between this categorical closure law and computational decoding:
+a single cycle has one rank-(n-1) component, yet positive exact inference is
+linear in n. Its anchored graph is a path. The full-world categorical factor
+can therefore have a compact, efficiently decoded correlated representation.
+Later observations may increase width; no future count or correlation is
+discarded to preserve the small bound.

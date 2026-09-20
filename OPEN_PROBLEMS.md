@@ -2,6 +2,20 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
+now gives a concrete exact alternative to independent-factor approximation:
+retain count-encoded correlations and eliminate latent variables with
+positive table arithmetic. A full-rank query component does not imply
+exponential decoding; cycles give a linear counterexample. On the retained
+n16 tapes the first such block has anchored width4-5, increasing to11 at
+the final cuts. All144 fixed snapshot queries and the small complete-native
+state audit pass. The remaining obstacle is an owned physical realization
+that pays for complete state, numerical execution and evidence. Exact fast
+marginals do not replace the original AMP operation words, and explicit
+K-entry native output still costs Omega(K). Order search and increasing
+width also remain costs. No registered model has been rerun or improved
+by this passive decoder alone.
+
 Compact approximate inference must now address the [dynamic repetition
 obstruction](theory/proofs/FACTOR_REPETITION_DYNAMICS.md). The native product
 learner can change conditional odds that its observations do not identify,
@@ -9,9 +23,9 @@ then reinforce those changes. Every fixed positive damping rate retains
 the limiting failure. A fixed-Gamma two-bit history also gives Theta(2^k)
 explicit rational parameter bits, versus Theta(k) for full Bayes, with actual
 gradient refusal at repetition12 and a passing full-joint native control.
-The remaining question is a representation that preserves the relevant
-correlation or a justified finite-history approximation, including its
-complete numerical state. Constant parameter count, bounded range and
+The exact count/frontier representation above preserves the relevant
+correlation mathematically. Its owned numerical realization, or a justified
+finite-history approximation, remains open. Constant parameter count, bounded range and
 one-step posterior-marginal correctness do not settle this. The result
 neither excludes compact symbolic encodings nor reopens static ERC cases.
 

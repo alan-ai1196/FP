@@ -117,6 +117,16 @@ integer powers and normalizes them. Its exponential work and output space
 are retained; neither a cheap inverse mean map nor a new FP space lower
 bound follows from the count representation.
 
+The [positive frontier decoder](POSITIVE_FRONTIER_DECODER.md) now exploits
+structure within this same exact encoding. It normalizes positive edge
+factors by variable elimination, then recovers the original cache and every
+gradient coordinate. Its work is exponential in a witnessed anchored
+elimination width, which can stay small even when the posterior has one
+full-rank query component. Cycles give a linear decoder. Count input, order
+search, integer bits and explicit K-entry output remain costs, and original
+finite-arithmetic traces still require their own paid bridge. This is a
+reference decoding improvement, not a new owned Runtime representation.
+
 A future physical lowering may retain counts and materialize rounded values
 only when needed, so a temporary zero need not destroy persistent evidence.
 It must bind counts to the actual Gamma, program, source events, clocks and

@@ -1,0 +1,1386 @@
+{
+  "status": "PASS",
+  "scope": "exact count decoder; no native graph substitution or Runtime/AMP authority",
+  "operation_count_scope": "positive integer table joins/sums only; excludes factor powers, order search, scalar readout division, metadata and full native output",
+  "integer_bit_scope": "factors, table products/sums and partition Z; scalar readout needs at most four more bits",
+  "live_cell_scope": "logical integer table cells with coexistence, not process bytes or a Runtime reservation",
+  "reference_integer_bits": 32768,
+  "exact_width": {
+    "graphs": 1099,
+    "independent_elimination_orders": 124469,
+    "exact_order_free_vertex_cap": 15
+  },
+  "signed_tensors": {
+    "signed_count_profiles": 759,
+    "all_pair_integer_partition_checks": 11919
+  },
+  "complete_native": {
+    "exhaustive_native_units": 926,
+    "profile_and_continuation_units": 27,
+    "complete_native_caches": 953,
+    "complete_observed_and_committed_states": 1906,
+    "profile_attachments": 3
+  },
+  "irreducible_cycles": [
+    {
+      "n": 3,
+      "query_component_rank": 2,
+      "fixed_product_required_categories": 4,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 5,
+      "maximum_join_cells": 4,
+      "maximum_positive_scalar_operations": 17,
+      "maximum_integer_bits": 16
+    },
+    {
+      "n": 4,
+      "query_component_rank": 3,
+      "fixed_product_required_categories": 8,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 6,
+      "maximum_join_cells": 8,
+      "maximum_positive_scalar_operations": 37,
+      "maximum_integer_bits": 20
+    },
+    {
+      "n": 8,
+      "query_component_rank": 7,
+      "fixed_product_required_categories": 128,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 6,
+      "maximum_join_cells": 8,
+      "maximum_positive_scalar_operations": 117,
+      "maximum_integer_bits": 39
+    },
+    {
+      "n": 16,
+      "query_component_rank": 15,
+      "fixed_product_required_categories": 32768,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 6,
+      "maximum_join_cells": 8,
+      "maximum_positive_scalar_operations": 277,
+      "maximum_integer_bits": 77
+    },
+    {
+      "n": 32,
+      "query_component_rank": 31,
+      "fixed_product_required_categories": 2147483648,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 6,
+      "maximum_join_cells": 8,
+      "maximum_positive_scalar_operations": 597,
+      "maximum_integer_bits": 154
+    },
+    {
+      "n": 64,
+      "query_component_rank": 63,
+      "fixed_product_required_categories": 9223372036854775808,
+      "anchored_elimination_width": 1,
+      "exact_query_checks": 6,
+      "maximum_join_cells": 8,
+      "maximum_positive_scalar_operations": 1237,
+      "maximum_integer_bits": 309
+    }
+  ],
+  "retained_tapes": {
+    "scope": "passive fixed-tape structure and exact scalar decoding; no model rerun or physical outcome",
+    "cases": [
+      {
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "worlds": 128,
+        "first_full_rank_query_component_cursor": 68,
+        "snapshots": [
+          {
+            "cursor": 60,
+            "stage": "training",
+            "active_nonloop_edges": 6,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 34,
+            "maximum_positive_scalar_operations": 89,
+            "maximum_integer_bits": 147
+          },
+          {
+            "cursor": 68,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 12,
+            "exact_anchored_treewidth": 3,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 32,
+            "maximum_live_integer_cells": 92,
+            "maximum_positive_scalar_operations": 449,
+            "maximum_integer_bits": 165
+          },
+          {
+            "cursor": 124,
+            "stage": "final",
+            "active_nonloop_edges": 21,
+            "exact_anchored_treewidth": 4,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 180,
+            "maximum_positive_scalar_operations": 1029,
+            "maximum_integer_bits": 273
+          }
+        ]
+      },
+      {
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "worlds": 128,
+        "first_full_rank_query_component_cursor": 71,
+        "snapshots": [
+          {
+            "cursor": 60,
+            "stage": "training",
+            "active_nonloop_edges": 6,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 34,
+            "maximum_positive_scalar_operations": 89,
+            "maximum_integer_bits": 166
+          },
+          {
+            "cursor": 71,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 12,
+            "exact_anchored_treewidth": 2,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              3,
+              2,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 32,
+            "maximum_live_integer_cells": 86,
+            "maximum_positive_scalar_operations": 425,
+            "maximum_integer_bits": 191
+          },
+          {
+            "cursor": 124,
+            "stage": "final",
+            "active_nonloop_edges": 24,
+            "exact_anchored_treewidth": 5,
+            "witness_order_zero_based_free_vertices": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 192,
+            "maximum_positive_scalar_operations": 1223,
+            "maximum_integer_bits": 317
+          }
+        ]
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "worlds": 32768,
+        "first_full_rank_query_component_cursor": 154,
+        "snapshots": [
+          {
+            "cursor": 140,
+            "stage": "training",
+            "active_nonloop_edges": 14,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 66,
+            "maximum_positive_scalar_operations": 249,
+            "maximum_integer_bits": 350
+          },
+          {
+            "cursor": 154,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 25,
+            "exact_anchored_treewidth": 4,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 200,
+            "maximum_positive_scalar_operations": 1849,
+            "maximum_integer_bits": 390
+          },
+          {
+            "cursor": 396,
+            "stage": "final",
+            "active_nonloop_edges": 99,
+            "exact_anchored_treewidth": 11,
+            "witness_order_zero_based_free_vertices": [
+              4,
+              3,
+              5,
+              0,
+              1,
+              2,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 4096,
+            "maximum_live_integer_cells": 8518,
+            "maximum_positive_scalar_operations": 243903,
+            "maximum_integer_bits": 945
+          }
+        ]
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "worlds": 32768,
+        "first_full_rank_query_component_cursor": 161,
+        "snapshots": [
+          {
+            "cursor": 140,
+            "stage": "training",
+            "active_nonloop_edges": 14,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 66,
+            "maximum_positive_scalar_operations": 249,
+            "maximum_integer_bits": 357
+          },
+          {
+            "cursor": 161,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 33,
+            "exact_anchored_treewidth": 5,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              2,
+              3,
+              5,
+              6,
+              4,
+              7,
+              8,
+              9,
+              1,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 256,
+            "maximum_live_integer_cells": 572,
+            "maximum_positive_scalar_operations": 4601,
+            "maximum_integer_bits": 413
+          },
+          {
+            "cursor": 396,
+            "stage": "final",
+            "active_nonloop_edges": 99,
+            "exact_anchored_treewidth": 11,
+            "witness_order_zero_based_free_vertices": [
+              2,
+              4,
+              6,
+              0,
+              1,
+              3,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 4096,
+            "maximum_live_integer_cells": 10522,
+            "maximum_positive_scalar_operations": 252841,
+            "maximum_integer_bits": 951
+          }
+        ]
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "worlds": 128,
+        "first_full_rank_query_component_cursor": 47,
+        "snapshots": [
+          {
+            "cursor": 40,
+            "stage": "training",
+            "active_nonloop_edges": 4,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 4,
+            "maximum_live_integer_cells": 20,
+            "maximum_positive_scalar_operations": 45,
+            "maximum_integer_bits": 105
+          },
+          {
+            "cursor": 47,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 9,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              4,
+              3,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 42,
+            "maximum_positive_scalar_operations": 115,
+            "maximum_integer_bits": 123
+          },
+          {
+            "cursor": 104,
+            "stage": "final",
+            "active_nonloop_edges": 25,
+            "exact_anchored_treewidth": 5,
+            "witness_order_zero_based_free_vertices": [
+              1,
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 194,
+            "maximum_positive_scalar_operations": 1209,
+            "maximum_integer_bits": 248
+          }
+        ]
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "worlds": 128,
+        "first_full_rank_query_component_cursor": 50,
+        "snapshots": [
+          {
+            "cursor": 40,
+            "stage": "training",
+            "active_nonloop_edges": 4,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 4,
+            "maximum_live_integer_cells": 20,
+            "maximum_positive_scalar_operations": 45,
+            "maximum_integer_bits": 111
+          },
+          {
+            "cursor": 50,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 11,
+            "exact_anchored_treewidth": 2,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              3,
+              4,
+              2,
+              1,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 32,
+            "maximum_live_integer_cells": 80,
+            "maximum_positive_scalar_operations": 277,
+            "maximum_integer_bits": 134
+          },
+          {
+            "cursor": 104,
+            "stage": "final",
+            "active_nonloop_edges": 23,
+            "exact_anchored_treewidth": 5,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                7
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                7,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 186,
+            "maximum_positive_scalar_operations": 1145,
+            "maximum_integer_bits": 241
+          }
+        ]
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "worlds": 32768,
+        "first_full_rank_query_component_cursor": 140,
+        "snapshots": [
+          {
+            "cursor": 120,
+            "stage": "training",
+            "active_nonloop_edges": 12,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 58,
+            "maximum_positive_scalar_operations": 155,
+            "maximum_integer_bits": 308
+          },
+          {
+            "cursor": 140,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 28,
+            "exact_anchored_treewidth": 4,
+            "witness_order_zero_based_free_vertices": [
+              1,
+              3,
+              5,
+              10,
+              6,
+              0,
+              2,
+              7,
+              8,
+              9,
+              4,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 128,
+            "maximum_live_integer_cells": 258,
+            "maximum_positive_scalar_operations": 1905,
+            "maximum_integer_bits": 356
+          },
+          {
+            "cursor": 376,
+            "stage": "final",
+            "active_nonloop_edges": 102,
+            "exact_anchored_treewidth": 11,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              8,
+              3,
+              1,
+              2,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8192,
+            "maximum_live_integer_cells": 16674,
+            "maximum_positive_scalar_operations": 350773,
+            "maximum_integer_bits": 932
+          }
+        ]
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "worlds": 32768,
+        "first_full_rank_query_component_cursor": 144,
+        "snapshots": [
+          {
+            "cursor": 120,
+            "stage": "training",
+            "active_nonloop_edges": 12,
+            "exact_anchored_treewidth": 1,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8,
+            "maximum_live_integer_cells": 58,
+            "maximum_positive_scalar_operations": 155,
+            "maximum_integer_bits": 333
+          },
+          {
+            "cursor": 144,
+            "stage": "first_full_rank_query_component",
+            "active_nonloop_edges": 28,
+            "exact_anchored_treewidth": 4,
+            "witness_order_zero_based_free_vertices": [
+              0,
+              1,
+              2,
+              4,
+              6,
+              3,
+              5,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 64,
+            "maximum_live_integer_cells": 154,
+            "maximum_positive_scalar_operations": 1489,
+            "maximum_integer_bits": 390
+          },
+          {
+            "cursor": 376,
+            "stage": "final",
+            "active_nonloop_edges": 103,
+            "exact_anchored_treewidth": 11,
+            "witness_order_zero_based_free_vertices": [
+              3,
+              4,
+              0,
+              1,
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14
+            ],
+            "audited_queries": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                15
+              ],
+              [
+                1,
+                8
+              ],
+              [
+                8,
+                15
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                15,
+                1
+              ]
+            ],
+            "exact_partition_checks": 6,
+            "maximum_join_cells": 8192,
+            "maximum_live_integer_cells": 14632,
+            "maximum_positive_scalar_operations": 281209,
+            "maximum_integer_bits": 958
+          }
+        ]
+      }
+    ]
+  },
+  "refusals": {
+    "checks": 2,
+    "reasons": [
+      "passive exact-order audit is capped at15 free vertices",
+      "positive integer decoder exponent envelope exceeds its bit cap"
+    ]
+  }
+}

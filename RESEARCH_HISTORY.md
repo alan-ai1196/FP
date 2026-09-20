@@ -5628,3 +5628,38 @@ by more than9/1000. All its terminal parameters remain positive. This separates
 the inference failure from finite rounding and from the native-reference
 refusal. No production learner, Runtime/AMP authority, Foundation action,
 completed model outcome or static ERC contract is changed.
+
+## 165. Correlated count decoding separates frontier width from factor rank (2026-09-21)
+
+The [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
+keeps exact correlations and applies classical variable elimination to the
+existing phase-level count encoding. Signed counts produce integer edge
+factors9^|d_e| or1; canceled coordinates stay in the complete state while
+their current factors are exactly1. Pinning the anchor yields unary incident
+factors. Retaining at most two query endpoints adds at most two to any
+witnessed elimination width, giving O((m+n)2^(w+3)) positive table arithmetic.
+Every integer has O(n+H) bits. Input, powers, order search, full output and
+physical evidence remain separately paid obligations.
+
+A cycle has one query-matroid component of rank n-1, yet anchoring leaves
+a path of width1. Its exact pair forecasts therefore have linear positive
+decoding even though fixed independent-factor closure needs one factor with
+2^(n-1) categories. An independent parity-arc oracle confirms cycles through
+n64, with at most eight cells in the tested joins. This attacks an overreading
+of the prior closure result, without changing that theorem or claiming a
+general cheap decoder for arbitrary later chords.
+
+The exact audit checks11,919 all-pair partitions from759 signed count profiles,
+953 complete native caches and1,906 observed/committed states, including
+profile multiplicity and ordinary-clock reattachment. An exact subset-width
+solver agrees with124,469 independently enumerated orders on1,099 small graphs.
+Two unfunded passive computations refuse before exponential allocation or
+large exponentiation.
+
+On all eight retained model tapes,24 fixed snapshots supply144 independent
+all-world comparisons. The first full-rank active component has anchored
+width1-3 at n8 and4-5 at n16; all four final n16 graphs have exact width11.
+The six audited final n16 queries use up to4,096-8,192 join cells, but as many
+as350,773 positive table operations. These are scalar structural diagnostics,
+not GPU resource or model outcomes. No native graph, original AMP operation
+word, complete phase frame or installation is replaced by the decoder.

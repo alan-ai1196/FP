@@ -2789,6 +2789,24 @@ checked binary64 units support the result; the latter reproduces the inference
 error while matching the affordable exact prefix. No Runtime/AMP certificate
 or change to completed model experiments follows.
 
+The [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
+applies the known-factor elimination principle to the exact count state.
+Positive edge factors9^|d_e| or1 retain the correlated joint law. After
+pinning the anchor, an elimination order of width w and at most two retained
+query endpoints gives O((m+n)2^(w+3)) positive table arithmetic and
+O(n+H)-bit integers. Input scanning, factor powers, order search and full
+native output are separate. This computes exact marginals and the original
+literal learner's complete cache/gradient coordinates; explicit vectors
+still have Omega(2^(n-1)) output size. It supplies no original finite-arithmetic
+operation words or owned physical bridge. A single cycle has full query
+component rank n-1 but width1 after anchoring, giving linear scalar decoding
+despite its2^(n-1)-category fixed-factor requirement. The closure theorem is
+therefore not a decoder lower bound.953 full native caches/1,906 state cuts,
+11,919 signed partition tests and144 retained-tape snapshot queries pass.
+The first full-rank blocks have widths1-3 at n8/4-5 at n16; final widths are
+4-5/11. These are exact finite structural diagnostics, not model outcomes,
+device speedups or a complete constructor decision.
+
 The [positive count-partition decoder law](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 gives a separate unconditional2^Theta(n) scalar-circuit bound for exact
 unnormalized inference from bounded edge factors9^-c. Uniform agreement on

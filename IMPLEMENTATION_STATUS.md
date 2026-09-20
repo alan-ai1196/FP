@@ -2,6 +2,19 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [positive frontier decoder](theory/proofs/POSITIVE_FRONTIER_DECODER.md)
+now computes exact correlated count-state marginals without projecting to
+independent beliefs. It reproduces953 full literal-native caches and1,906
+observed/committed states, including three profile attachments.11,919 signed
+all-pair partitions match independent enumeration. The anchored-width solver
+is independently checked on1,099 graphs/124,469 orders; six cycle families
+and24 retained-tape snapshots add144 model-tape partition checks. Final n16
+anchored width is11 in all four cases, with4,096-8,192 largest joins over the
+six audited queries. Integer cell/work counts exclude powers, order search,
+metadata, explicit full output and physical evidence. Two unfunded exact
+computations refuse before large powers/subset allocation. Production
+Runtime, native graph, complete AMP tapes and constructor classes are unchanged.
+
 The passive [factor-repetition audit](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
 now checks a dynamic failure under the existing simplex U: product beliefs
 change odds between worlds receiving identical evidence and acquire false
