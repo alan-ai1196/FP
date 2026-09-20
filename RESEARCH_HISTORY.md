@@ -4670,3 +4670,39 @@ Parent23668 continues at the same source. Worker10820 starts c2/seed17 at
 09:02:48 UTC on2026-09-14; the two c4 cases follow. No aggregate conclusion
 is drawn from the remaining uncompleted cases. Main's subsequent readback
 optimization does not change this execution or receive credit for its result.
+
+## 134. Complete the four-case owned posterior matrix and measure its deployment cost
+
+All four corrected n8 likelihood jobs at86083a0 finish under their unchanged
+16GiB/two-hour limits. Each constructs/selects the native v7 member, profiles
+its training stream, seals and installs. The full classes remain UNRESOLVED.
+All256 exact pre-target forecasts equal the independent adaptive posterior.
+Independent worker replay checks2,752 CUDA and2,752 binary64 phases,912
+actual commit-operation tapes and296 fresh scores. Maximum job commitment
+is15,478,538,240 bytes; packed peak3,208,396,061 bytes, output cells41,949
+and frame bytes3,544,209 stay within their original caps.
+
+The paired paths cross and the policy installs at114/90/72/72, after54/30/
+32/32 fresh labels. Candidate/deployed unseen CE means are0.338495/0.580218
+for c2 and0.365450/0.509115 for c4. The largest stored-mass posterior error
+is below6.677962e-5. All four conditional crossing envelopes and24 candidate,
+deployed and waiting-cost risk envelopes from section132 contain the actual
+results. The first case's0.316725507 waiting penalty confirms the distinction
+between posterior learning and useful deployment. Close CE does not erase
+its changed near-neutral relation-error metric.
+
+The pinned b85b39d reader independently reconstructs24 model scores and
+four fresh decisions, rechecks16 original strong-control scores, and verifies
+the terminal journal/source/registration. No baseline is rerun. Both retained
+RN-5 v5 rates and exact/AMP posterior controls appear in the results and
+comparison figure. Every likelihood candidate scores lower than both v5
+rates on its retained case, but graph, Gamma, U, lowering and resources change
+together; this is no isolated-mechanism or population conclusion. The separate
+posterior predictors receive no invented FP deployment record.
+
+The canonical final journal is copied after registration/prefix equality
+checks; the original90f3883 failed attempt remains verbatim and unscored.
+All four workers and parent23668 are terminal. Later main storage/readout
+changes did not run in86083a0 and cannot explain these outcomes. n16 recovery,
+useful evidence efficiency and broader model performance remain open; this
+experiment does not reopen Foundation/ERC-1 or freeze a new full release.

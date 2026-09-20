@@ -9,16 +9,16 @@ worker. It analyzes the corrected86083a0 journal, preserves the earlier
 Keep an immutable analysis checkout at `F:\FP-likelihood-model-audit`, from
 the commit introducing this reader. Its imported model/audit dependencies
 must still match86083a0; the reader checks that condition and its own clean
-committed file. Main may then advance without changing either the running
-worker or the analysis source.
+committed file. Main may advance without changing the retained execution or
+analysis source. The complete matrix is now terminal.
 
-From that analysis checkout, while the matrix is live:
+From that analysis checkout, analyze the final canonical journal:
 
 ```powershell
-python -B experiments/joint_uncertainty/analyze_likelihood_model.py --journal F:\FP-likelihood-model-v2-run\evidence\minimal\FP_LIKELIHOOD_MODEL_EXPERIMENT.json --partial
+python -B experiments/joint_uncertainty/analyze_likelihood_model.py --journal F:\FP\evidence\minimal\FP_LIKELIHOOD_MODEL_EXPERIMENT.json
 ```
 
-Omit `--partial` after the journal becomes terminal. A stopped auditor
+Use `--partial` only for an incomplete historical prefix. A stopped auditor
 failure is a terminal outcome, not a successful four-case matrix. The output
 records the distinct execution and analysis sources. The default journal
 path is the canonical file in the current checkout; an initial copied
@@ -70,8 +70,8 @@ checks twelve adversarial word/readout/freshness/job/class cases, accepts
 paired crossing without installation, and refuses promotion of the retained
 failed job. Its initial run independently checks sixteen retained control
 scores and reports zero completed model rows. The
-[first completed corrected worker](LIKELIHOOD_MODEL_RESULTS.md) now also passes
-the successful-model branch: six reconstructed scores, one paired decision
-and748 worker-verified phases per path. Its reader runs from unchanged
-b85b39d against the live86083a0 journal. No synthetic model worker is
-published as validation evidence.
+[complete corrected matrix](LIKELIHOOD_MODEL_RESULTS.md) now passes the
+successful-model branch for all four cases:24 reconstructed scores, four
+paired decisions and2,752 worker-verified phases per path. Its reader runs
+from unchanged b85b39d against the terminal86083a0 journal. No synthetic
+model worker is published as validation evidence.

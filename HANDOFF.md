@@ -500,26 +500,26 @@ Do not resume90f3883 as though its auditor succeeded or fill its unavailable
 model results.
 
 The [independent result reader](experiments/joint_uncertainty/LIKELIHOOD_MODEL_ANALYSIS.md)
-is prepared for this matrix. Keep its introducing commit in the separate
-analysis checkout `F:\FP-likelihood-model-audit`; imported execution
-dependencies must match86083a0. Read the live journal with `--partial` and
-omit that option once terminal. Development checks reject twelve forged
-word/readout/freshness/job/class cases and recheck sixteen retained control
-scores. The first completed model now passes the successful result branch
-with actual worker evidence. Do not rerun any baseline. A one-identity
-summary without its path label receives unresolved fresh reconstruction.
+now verifies the complete matrix. Its immutable analysis checkout at
+`F:\FP-likelihood-model-audit` stays at b85b39d, with imported execution
+dependencies matching86083a0. Run against the final canonical journal without
+`--partial`. All24 model scores, four paired decisions and sixteen retained
+control scores pass; no baseline is rerun. A one-identity summary without
+its path label still receives unresolved fresh reconstruction.
 
-[The first corrected n8 case is complete](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md).
-At86083a0, c2/seed16 seals at124 and installs at114; all64 reference forecasts
-equal the adaptive posterior. The worker independently checks748 CUDA and748
-binary64 phases,248 commit tapes and108 fresh scores. The b85b39d reader
-reconstructs six scores and the paired decision. Actual candidate/deployed
-unseen CE is0.342961/0.659687: ten remaining forecasts leave a0.316726 waiting
-penalty, inside the prior conditional envelope. Full class remains UNRESOLVED.
-Peak job bytes15,478,538,240 fit16GiB and the unchanged two-hour watchdog.
-Parent23668 continues; worker10820 starts c2/seed17 at09:02:48 UTC on
-2026-09-14. The canonical journal is a verified one-row prefix; the other
-three outcomes remain pending. Keep execution/analysis sources fixed.
+[All four corrected n8 cases are complete](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md).
+At86083a0 they seal and install at114/90/72/72, after54/30/32/32 fresh events.
+All256 exact reference forecasts equal the adaptive posterior. The workers
+independently check2,752 CUDA and2,752 binary64 phases,912 commit tapes and
+296 fresh scores. Candidate/deployed mean unseen CE is0.338495/0.580218 for
+c2 and0.365450/0.509115 for c4. All four crossings and24 risk envelopes agree
+with the prior conditional prediction. Every full class remains UNRESOLVED.
+Maximum job commitment15,478,538,240 bytes fits16GiB; all four finish within
+the unchanged two-hour watchdog. The canonical journal and analysis are
+terminal, registration and prior prefix verified. Parent23668 and all four
+workers are terminal; do not restart them. Preserve the original90f3883
+failure. These retained tapes establish no new IID success rate, isolated
+mechanism effect, n16 recovery or full Runtime release.
 
 Main now uses [slotted complete arena-region records](theory/proofs/ARENA_REGION_STORAGE.md).
 All ten fields and complete snapshots remain. Four512MiB host jobs check
@@ -529,9 +529,9 @@ pass; a4GiB likelihood profile job seals/installs with286 CUDA and286
 binary64 phases,94 commit tapes and40 fresh scores. These are targeted
 development regressions, not new model outcomes or a whole-project freeze.
 The original n16 failures remain; this change alone does not prove recovery.
-The analysis checkout is pinned at b85b39d and the running matrix at86083a0.
+The analysis checkout is pinned at b85b39d and the completed matrix at86083a0.
 Use the pinned analysis checkout because main's execution dependencies now
-differ from the running source.
+differ from that execution source.
 
 The [finite fresh-power result](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 now accounts for uncertainty learning, AMP error and the existing wealth
@@ -553,9 +553,9 @@ successful original fresh/AMP premises the paired crossing cursors are
 0.316620 extra unseen CE over the same candidate solely through waiting.
 All46,656 six-event label/perturbation paths and55,986 actual wealth floors
 pass the exact tube audit. This analysis explicitly uses retained evaluation
-labels; it is neither prospective power nor a completed model result. Compare
-completed workers with the scalar envelopes, preserve failed outcomes, and
-keep the registered rule unchanged while the matrix runs.
+labels; it is not prospective power or installation authority. The completed
+matrix now satisfies every crossing/risk envelope. Preserve that distinction
+between the conditional theorem and its subsequent empirical verification.
 
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.

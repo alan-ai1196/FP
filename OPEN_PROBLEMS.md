@@ -2,7 +2,7 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-**Current priority, 2026-09-13:** the scoped joint PRODUCT/SUM/range/precision
+**Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
 registered RTX 3090 resource and model experiments. The Reference/CPU
@@ -16,21 +16,18 @@ implementation/experiment correctness counterexample to its semantics.
 
 ## 1. Learn from later labels while preserving current uncertainty
 
-The [registered n8 likelihood matrix](experiments/joint_uncertainty/LIKELIHOOD_MODEL_PROTOCOL.md)
-stops after its first90f3883 job fails in the100-digit Decimal gain auditor.
-No model result is established. The [exact checker](theory/proofs/EXACT_LOG_ENCLOSURE_AUDIT.md)
-fixes both a correct-interval rejection and an incorrect-interval acceptance,
-with explicit unresolved budgets. The corrected four cases now execute at
-immutable86083a0 in `F:\FP-likelihood-model-v2-run`. Its
-[first c2/seed16 case now seals and installs](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md):
-all64 reference forecasts match the posterior,748 CUDA/binary64 phases per
-path pass, and the independent reader checks six scores plus paired crossing.
-Candidate unseen CE is0.342961 but deployment remains0.659687 after waiting
-54 fresh events, confirming the conditional delay prediction. The other three
-outcomes remain pending. The failed attempt and all original settings remain;
-the runner verifies exact registration-dictionary equality. Keep
-candidate/deployed results separate and do not rerun the
-retained strong controls. Reused tapes remain retrospective evidence.
+The [corrected n8 likelihood matrix is complete](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md)
+at immutable86083a0: all four cases seal and install, all256 reference
+forecasts equal the posterior, and2,752 CUDA/binary64 phases per path pass.
+The original90f3883 auditor failure remains retained and unscored. Exact
+posterior learning is now realized through the owned model path at n8;
+the remaining obstacle is useful deployment and larger-scale execution.
+Current installation waits54/30/32/32 fresh events. Candidate/deployed mean
+unseen CE is0.338495/0.580218 for c2 and0.365450/0.509115 for c4, despite close
+agreement with both retained exact and actual AMP posterior controls. Every
+full constructor class remains UNRESOLVED. Reused tapes provide retrospective
+evidence, not a new IID success rate or a single-mechanism comparison. Keep
+all original outcomes and both v5 rates; do not rerun completed baselines.
 
 Selected-weight rounding drift in the current count decoder now has a
 [history-uniform RNE32 bound](theory/proofs/LIKELIHOOD_DECODE_ERROR.md): below
@@ -73,9 +70,10 @@ shows that candidate accuracy alone cannot resolve the latter: the first
 posterior-exact case must wait54-55 of64 fresh events under its current
 successful AMP/evidence premises. Its waiting cost is at least0.316620 unseen
 CE over the same candidate. This uses the retained evaluation tape and grants
-no failed worker a score. Check the original matrix against these conditional
-predictions before considering a separately declared change to evidence
-efficiency; keep the active model, rule and resource registration fixed.
+no failed worker a score. All four completed workers now satisfy their
+crossing/risk envelopes. A useful next experiment must separately declare
+any improvement to evidence efficiency and prove its original-null validity;
+it cannot retroactively change this completed registration.
 
 The [normalized likelihood characterization](theory/proofs/NORMALIZED_LIKELIHOOD_CHARACTERIZATION.md)
 settles the distribution-wide condition for this exact one-event U. It does

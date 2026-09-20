@@ -1,6 +1,6 @@
 # FP Implementation Status
 
-## Current release (2026-09-13)
+## Current implementation state (2026-09-20)
 
 The research branch now has a [sparse exact likelihood analyzer and independent
 positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete
@@ -53,19 +53,21 @@ now reconstructs proper-mass versus raw-division scores and paired fresh
 crossings from minimal records, with a source guard against86083a0. It keeps
 failed/unresolved streams unscored and rejects complete-class or early-install
 claims. Twelve adversarial development checks and sixteen retained control
-score checks pass. The first completed corrected model now also passes its
-successful-result branch. The analysis checkout stays separate from advancing Runtime code.
+score checks pass. All four completed corrected models pass its successful
+branch:24 score reconstructions and four paired decisions. The analysis
+checkout stays separate from advancing Runtime code.
 
-[The first n8 likelihood outcome](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md)
-seals c2/seed16 at124 and installs at114, at the unchanged86083a0 source.
-Its64 exact reference forecasts equal the retained adaptive posterior;
-748 CUDA/binary64 phases per path,248 commit tapes and108 fresh scores pass
-the worker replay. The b85b39d reader rechecks six scores and the paired
-decision. Actual candidate/deployed unseen CE is0.342961/0.659687, matching
-the previously proved delay envelope. Peak job commitment15,478,538,240 bytes
-fits16GiB; full class remains UNRESOLVED. The verified canonical prefix has
-one outcome. Worker10820 starts the second case at09:02:48 UTC on2026-09-14;
-parent23668 and the same four-case registration continue.
+[The n8 likelihood matrix is complete](experiments/joint_uncertainty/LIKELIHOOD_MODEL_RESULTS.md)
+at the unchanged86083a0 source. All four cases seal and install, with all256
+exact reference forecasts equal to the retained adaptive posterior. Worker
+replays check2,752 CUDA/binary64 phases per path,912 commit tapes and296 fresh
+scores. Candidate/deployed mean unseen CE is0.338495/0.580218 for c2 and
+0.365450/0.509115 for c4. Actual installs114/90/72/72 and all24 conditional
+risk envelopes pass. Maximum job commitment15,478,538,240 bytes fits16GiB;
+all jobs finish under two hours. Full classes remain UNRESOLVED. The verified
+canonical journal and independent b85b39d analysis contain every outcome;
+parent23668 and all four workers are terminal. No baseline reruns, new IID
+claim, n16 recovery or new complete release follow from this result.
 
 The [arena-region storage change](theory/proofs/ARENA_REGION_STORAGE.md) uses
 frozen slots for the same ten metadata fields. It preserves complete
@@ -91,8 +93,9 @@ under the original successful fresh/AMP premises. An exact native/floor audit
 checks46,656 perturbation/label paths and55,986 wealth updates; the256 n8
 reference forecasts agree with the retained controls. The first case's
 waiting penalty is at least0.316620 unseen CE over the same AMP candidate.
-These are passive implications for the running procedure, not executed
-model scores, installation authority or changes to its registered rule.
+These are passive implications, not installation authority or changes to
+the registered rule. All four completed workers now match their crossing
+and risk envelopes, as recorded separately in the final model results.
 
 The [radix9 decode theorem](theory/proofs/LIKELIHOOD_DECODE_ERROR.md) now bounds
 the existing selected-weight commit for every accepted exponent vector.

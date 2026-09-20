@@ -1,15 +1,15 @@
 {
-  "journal_status": "PARTIAL_EXECUTION",
+  "journal_status": "COMPLETE_EXECUTION",
   "execution_source": "86083a0406292660115224f8e507626de4b442c5",
   "analysis_source": "b85b39da8fa8440c243814a0ce6ee930d79f7ffe",
   "scope": "retained retrospective outcomes; no new GPU execution, IID draw or Runtime authority",
-  "attempted_workers": 1,
-  "sealed_workers": 1,
+  "attempted_workers": 4,
+  "sealed_workers": 4,
   "failed_workers": 0,
   "halted_unresolved_workers": 0,
-  "independent_model_score_checks": 6,
-  "independent_fresh_decisions": 1,
-  "worker_verified_CUDA_and_binary64_phases_each": 748,
+  "independent_model_score_checks": 24,
+  "independent_fresh_decisions": 4,
+  "worker_verified_CUDA_and_binary64_phases_each": 2752,
   "reused_control_score_checks": 16,
   "new_baseline_workers": 0,
   "original_failed_attempt_preserved": {
@@ -28,22 +28,22 @@
   "groups": [
     {
       "law": "iid-c2",
-      "scored_workers": 1,
-      "installed_workers": 1,
+      "scored_workers": 2,
+      "installed_workers": 2,
       "expected_CE_binary64": {
-        "candidate_stream_unseen": 0.34296129149293825,
-        "deployed_stream_unseen": 0.6596867980900819,
-        "adaptive_exact_unseen": 0.34296133745245244
+        "candidate_stream_unseen": 0.33849455179274046,
+        "deployed_stream_unseen": 0.5802183897241564,
+        "adaptive_exact_unseen": 0.3384945954807084
       }
     },
     {
       "law": "iid-c4",
-      "scored_workers": 0,
-      "installed_workers": 0,
+      "scored_workers": 2,
+      "installed_workers": 2,
       "expected_CE_binary64": {
-        "candidate_stream_unseen": null,
-        "deployed_stream_unseen": null,
-        "adaptive_exact_unseen": null
+        "candidate_stream_unseen": 0.36544982089266287,
+        "deployed_stream_unseen": 0.5091150769756967,
+        "adaptive_exact_unseen": 0.3654482773382397
       }
     }
   ],
@@ -93,6 +93,144 @@
         "deployed_stream_full_domain": 0.6356371481898676
       },
       "maximum_candidate_mass_posterior_error": "45364585462733968791358691782086828254235151867/1688849981762488992868376157760130874611202401180790"
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "status": "SEALED_CUDA_STREAM",
+      "candidate": true,
+      "install_cursor": 90,
+      "fresh": {
+        "reference": {
+          "crossing_cursor": 90,
+          "events": 30,
+          "terminal_or_crossing_wealth": "280121/65536",
+          "maximum_wealth": "280121/65536",
+          "gain_signs": {
+            "zero": 1,
+            "positive": 27,
+            "negative": 2
+          }
+        },
+        "CUDA_stored_mass": {
+          "crossing_cursor": 90,
+          "events": 30,
+          "terminal_or_crossing_wealth": "17507/4096",
+          "maximum_wealth": "17507/4096",
+          "gain_signs": {
+            "zero": 1,
+            "positive": 27,
+            "negative": 2
+          }
+        },
+        "paired_crossing_without_install": false,
+        "scope": "independent scalar/cursor replay; worker source checked the full owned transport"
+      },
+      "class": "UNRESOLVED: one owned v7 proposal, no complete-class proof",
+      "expected_CE_binary64": {
+        "adaptive_exact_unseen": 0.3340278535089644,
+        "adaptive_exact_full_domain": 0.33123257847224075,
+        "candidate_stream_unseen": 0.3340278120925426,
+        "candidate_stream_full_domain": 0.3312325499984506,
+        "deployed_stream_unseen": 0.5007499813582309,
+        "deployed_stream_full_domain": 0.4976130705016812
+      },
+      "maximum_candidate_mass_posterior_error": "199790461616814580617338324537994060526960773343915/16322508155835650507684772079499712944511485397148589482"
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "status": "SEALED_CUDA_STREAM",
+      "candidate": true,
+      "install_cursor": 72,
+      "fresh": {
+        "reference": {
+          "crossing_cursor": 72,
+          "events": 32,
+          "terminal_or_crossing_wealth": "280083/65536",
+          "maximum_wealth": "280083/65536",
+          "gain_signs": {
+            "positive": 27,
+            "zero": 3,
+            "negative": 2
+          }
+        },
+        "CUDA_stored_mass": {
+          "crossing_cursor": 72,
+          "events": 32,
+          "terminal_or_crossing_wealth": "140039/32768",
+          "maximum_wealth": "140039/32768",
+          "gain_signs": {
+            "positive": 26,
+            "zero": 4,
+            "negative": 2
+          }
+        },
+        "paired_crossing_without_install": false,
+        "scope": "independent scalar/cursor replay; worker source checked the full owned transport"
+      },
+      "class": "UNRESOLVED: one owned v7 proposal, no complete-class proof",
+      "expected_CE_binary64": {
+        "adaptive_exact_unseen": 0.38067138317997246,
+        "adaptive_exact_full_domain": 0.36677428202210427,
+        "candidate_stream_unseen": 0.3806734299925536,
+        "candidate_stream_full_domain": 0.36677581688907807,
+        "deployed_stream_unseen": 0.5014470726596864,
+        "deployed_stream_full_domain": 0.5091150769756967
+      },
+      "maximum_candidate_mass_posterior_error": "134248121239574092949105173671/3522218816758010821006003516094930"
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "status": "SEALED_CUDA_STREAM",
+      "candidate": true,
+      "install_cursor": 72,
+      "fresh": {
+        "reference": {
+          "crossing_cursor": 72,
+          "events": 32,
+          "terminal_or_crossing_wealth": "273277/65536",
+          "maximum_wealth": "273277/65536",
+          "gain_signs": {
+            "zero": 3,
+            "positive": 27,
+            "negative": 2
+          }
+        },
+        "CUDA_stored_mass": {
+          "crossing_cursor": 72,
+          "events": 32,
+          "terminal_or_crossing_wealth": "273271/65536",
+          "maximum_wealth": "273271/65536",
+          "gain_signs": {
+            "zero": 3,
+            "positive": 27,
+            "negative": 2
+          }
+        },
+        "paired_crossing_without_install": false,
+        "scope": "independent scalar/cursor replay; worker source checked the full owned transport"
+      },
+      "class": "UNRESOLVED: one owned v7 proposal, no complete-class proof",
+      "expected_CE_binary64": {
+        "adaptive_exact_unseen": 0.35022517149650695,
+        "adaptive_exact_full_domain": 0.34393962197024225,
+        "candidate_stream_unseen": 0.3502262117927722,
+        "candidate_stream_full_domain": 0.3439404021924412,
+        "deployed_stream_unseen": 0.5167830812917071,
+        "deployed_stream_full_domain": 0.5091150769756967
+      },
+      "maximum_candidate_mass_posterior_error": "1055845445464353/15810895495970635730"
     }
   ]
 }
