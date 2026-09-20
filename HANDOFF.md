@@ -30,7 +30,7 @@ correlation and defeats the product learner (next1/2 versus41/50); erasing
 inactive factors that equal1 also changes gradients and the third forecast.
 The current complete all-pair query domain forces one joint block within
 this fixed-coordinate family. This therefore supplies no shortcut for either
-running model protocol. Their original source, caps and readers remain fixed.
+fixed model protocol. Their original source, caps and readers remain fixed.
 
 The [exact positive count-partition decoder](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 also has a proved2^Theta(n) scalar-circuit cost. This grants bounded edge
@@ -68,7 +68,7 @@ grammar985/839/130/10,368/129. It is now running at immutableec373e7 in
 at19:41:16/17 UTC on2026-09-20. The collected initial journal has zero
 completed outcomes and four checked baseline scores. Collect both complete
 physical outcomes and independent readers before claiming physical savings.
-Keep the running likelihood experiment and its registration unchanged.
+The separate likelihood matrix is complete; preserve its original registration.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
@@ -79,7 +79,7 @@ including simplex and likelihood installation. The corrected host jobs at
 one-MiB frames and two complete snapshots under512-MiB/60-second caps.
 Both original report failures remain retained. This targets
 repeated complete-history copies, with no information pruning or n16 recovery
-claim. The live likelihood matrix remains at immutable8ccacc0.
+claim. The completed likelihood matrix uses immutable8ccacc0.
 
 The [fixed whole-worker test is complete](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
 at immutable75e4f93: n16/c2 seed16 rate1 seals396, passes1,958 CUDA and1,958
@@ -90,7 +90,7 @@ unseen CE is0.349567/0.445247 versus the retained strong AMP posterior0.326940.
 This recovers one actual v5 execution, without a model win or isolated-change
 attribution. All eight old failures stay unchanged. The terminal journal and
 launch process identity are collected and verified; no retry is due.
-The separate8ccacc0 likelihood matrix continues unchanged.
+The separate8ccacc0 likelihood matrix now has four completed, verified outcomes.
 
 ## 1. Current research state
 
@@ -628,30 +628,30 @@ learner, tapes, alpha, resource caps and all prior controls. The matrix starts
 at immutable8ccacc0 in `F:\FP-likelihood-deployment-run` on2026-09-20 at
 15:25:40 UTC, parent14264 and first worker2444. Both are live at launch
 verification; the initial canonical journal contains zero completed outcomes.
-Keep that execution checkout's HEAD/dependencies fixed. Do not start a second
-parent or resume merely because an observation handle is lost. Use its
-committed independent reader with `--partial` until the journal is terminal.
+The execution checkout's HEAD/dependencies stayed fixed through completion.
+Its committed independent reader now passes on the terminal journal. Do not
+restart this completed matrix.
 The reader checks retained score prefixes and separates numerical crossings,
 owned crossings and installation. Two actual reference scenarios include
 failed crossing retention; nine forged records are rejected. All24 old model
 scores, four decisions and16 strong-control scores pass without rerunning a
 baseline. See the [reader audit](evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_READER_AUDIT.json).
 
-The [first model result is now retained](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md):
-worker2444 seals at124 and installs at119, exactly as predicted, versus the
-old114. Candidate words are identical; deployed unseen CE worsens from
-0.6596867981 to0.6764169893. It checks64 reference forecasts,748 phases per
-path,248 commit tapes and118 fresh scores; host peak15,047,073,792 bytes.
-The second case, seed17, now also seals: worker6920 installs67 versus90,
-with identical candidate words and deployed unseen CE0.3752735502 versus
-0.5007499814. Its peak is15,034,691,584 bytes. The third c4/seed18 case also
-seals104 and installs54 versus72: unseen deployed CE0.4094547653 versus
-0.5014470727, with identical candidate words and peak12,994,330,624 bytes.
-Canonical journal/analysis contain three completed rows,2,124 phases per
-path and160 fresh scores. The same-source reader validates18 new scores/
-six fresh paths and all controls; all three prior cursors and six risk
-envelopes hold. Parent14264 continues with final worker4056, started
-19:45:44 UTC on2026-09-20. Keep its checkout unchanged; one case remains.
+The [four-case matrix is complete](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md).
+All workers seal and install at119/67/54/50 versus old114/90/72/72, with
+every candidate readout word unchanged. The first case worsens, while the
+other three improve. Mean deployed unseen CE falls0.5446667333 to0.4599788507;
+the strong exact posterior mean remains0.3519714364. This is a fixed-case
+descriptive gain, with no uniform or population improvement claim. Final
+worker4056 seals104 and installs50, with unseen CE0.3787700980 versus
+0.5167830813 and completed job peak13,017,206,784 bytes. All four fit16GiB.
+The terminal journal retains256 posterior forecasts,2,752 phases per path,
+912 commit tapes and180 fresh scores. The same-source reader checks24 new
+scores/eight fresh paths and all controls. All four prior crossing intervals
+and eight risk envelopes hold. Every constructor class stays UNRESOLVED.
+Parent14264 and worker4056 are absent at20:58:54 UTC on2026-09-20; the journal
+is COMPLETE_EXECUTION. Only the independent matched v7/v8 experiment remains
+running. Preserve both protocols and do not restart the completed matrix.
 
 After registration, [exact conditional analysis](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired crossings119/67/54/50 if the required owned computations and
@@ -661,7 +661,7 @@ to873/32768 before recovering. A native p9/10 witness also disproves transfer
 of the old reciprocal-power lemma to6/13 despite faster ideal log growth.
 The record contains256 reference forecasts,90 production wealth updates and
 1,964 independent exact log checks. This is passive retained-tape analysis,
-not a GPU result or reason to change the fixed running procedure.
+not itself a GPU result or reason to change the fixed procedure.
 
 The [predictable-mixture state proof](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
 investigates adaptation without using any model tape or changing that run.

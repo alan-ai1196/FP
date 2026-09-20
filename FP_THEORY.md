@@ -2637,20 +2637,22 @@ owned crossing and actual installation; a failed save cannot supply authority.
 Its two reference scenarios and nine adversarial refusals are development
 evidence, not a new model result or general power theorem.
 
-The [first three actual tighter-bound results](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
-now seal. Seed16 installs119 versus114 and its deployed unseen CE rises
-0.659687 to0.676417; seed17 installs67 versus90 and CE falls0.500750 to0.375274.
-The first c4 case installs54 versus72 and CE falls0.501447 to0.409455.
-Every candidate's AMP readout words are identical to its retained control.
-These opposite actual effects confirm the deployment tradeoff. One c4 job
-remains, and all constructor classes stay `UNRESOLVED`.
+The [four actual tighter-bound results](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+now complete with the terminal same-source reader. Installs119/67/54/50
+replace114/90/72/72: the first case worsens, while the other three improve.
+The final c4 case has unseen deployed CE0.378770 versus0.516783. Every
+candidate's AMP readout words are identical to its retained control. Mean
+deployed unseen CE falls0.544667 to0.459979 on these fixed exposed cases;
+this supplies no population or uniform improvement theorem. All four prior
+crossing intervals and eight risk envelopes pass. The deployment tradeoff
+is actual, and all constructor classes stay `UNRESOLVED`.
 
 The [fixed-rule counterexample and conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 show why a stronger valid bound is not a power-ordering theorem. The6/13
 coefficient fails the old reciprocal contraction even for a correct native
 p9/10 posterior. Conditional paired crossing on seed16 moves from114 to119,
 while the other three retained tapes cross earlier. These exact scoped
-results change neither validity, Foundation nor the fixed running experiment.
+results change neither validity, Foundation nor the fixed experiment.
 
 The [positive predictable-mixture state analysis](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
 gives a finite rational realization of a classical common adaptive bet.

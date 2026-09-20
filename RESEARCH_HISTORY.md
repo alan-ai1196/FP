@@ -5435,3 +5435,31 @@ state coordinates are retained. Replacing the native phase with its cheap
 rational oracle would require a separate complete-state/bridge proof. No
 production solver or division action is added; both fixed model experiments
 continue unchanged.
+
+## 159. The tighter-bound deployment matrix finishes with opposite effects
+
+The fourth fixed n8 case, iid-c4 seed19, seals104 and installs50 versus the
+old72. Its candidate stored-mass and raw-division words are unchanged, while
+deployed unseen CE improves0.5167830813 to0.3787700980. Reference and AMP
+cross after ten fresh labels each. The completed job peak is13,017,206,784
+bytes under the original16-GiB/two-hour caps, with no timeout or limit
+termination. Parent14264 and worker4056 are absent at20:58:54 UTC on2026-09-20;
+the source journal is COMPLETE_EXECUTION.
+
+Execution and terminal independent reading both use immutable8ccacc0.
+Before collection, all registration fields and the first three complete
+worker rows are checked unchanged. The reader consumes a single frozen raw
+journal capture and checks24 new scores/eight fresh paths, plus all24 old
+B6 scores, four old decisions and16 strong-control scores. The complete
+matrix retains256 posterior forecasts,2,752 CUDA/binary64 phases per path,
+912 commit tapes and180 fresh scores. All four prior crossing intervals and
+eight deployed risk envelopes pass. No baseline is rerun or failure omitted.
+
+The final installs119/67/54/50 replace114/90/72/72. Seed16 worsens and the
+other three improve. Mean deployed unseen CE falls0.5446667333 to0.4599788507;
+the unchanged candidate mean is0.3519721863 and the strong exact posterior
+mean0.3519714364. This closes the fixed retrospective matrix with a descriptive
+gain and a remaining deployment gap. It falsifies uniform improvement and
+establishes no population power ordering or complete constructor class.
+The independent matched v7/v8 experiment at ec373e7 remains running under
+its original protocol; the completed matrix must not be restarted.

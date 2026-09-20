@@ -171,17 +171,17 @@ initial journal and same-source reader record zero completed outcomes and
 live at launch; keep the execution source fixed. No success is inferred
 from the small n2 reachability audit or the larger coefficient.
 
-The [first tighter-bound job now completes](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
-at8ccacc0: install119/seal124,64 posterior forecasts,748 phases per path,
-248 commit tapes and118 fresh scores. Peak15,047,073,792 bytes fits16GiB.
-The second case now also seals: install67 versus90, unseen deployed
-CE0.375274 versus0.500750, with candidate words again identical. Peak
-15,034,691,584 bytes fits16GiB. The third case seals104 and installs54 versus72,
-with unseen CE0.409455 versus0.501447 and identical candidate words. Its peak
-is12,994,330,624 bytes. The three-case reader checks18 new scores/six fresh
-paths and all controls;2,124 phases per path and160 fresh scores are retained.
-The actual waits change54/30/32 to59/7/14. Final worker4056 continues the
-fixed matrix; one c4 case remains and every class stays `UNRESOLVED`.
+The [four tighter-bound jobs now complete](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+at8ccacc0, including the terminal same-source reader. Installs change
+114/90/72/72 to119/67/54/50 and waits54/30/32/32 to59/7/14/10. All candidate
+words are identical. The first case worsens and three improve; fixed-case
+mean deployed unseen CE falls0.544667 to0.459979. The final job seals104,
+installs50 and peaks at13,017,206,784 bytes. All four fit16GiB, with maximum
+15,047,073,792 bytes. The reader checks24 new scores/eight fresh paths plus
+all controls;256 posterior forecasts,2,752 phases per path,912 commit tapes
+and180 fresh scores are retained. All four prior crossing and eight risk
+intervals pass. Every class stays `UNRESOLVED`; the completed matrix is not
+a population or uniform-improvement theorem. No restart is due.
 
 The [new rule's conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired cursors119/67/54/50, conditional on all required owned gates.

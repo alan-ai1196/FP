@@ -1,107 +1,93 @@
-# Tighter-bound owned likelihood deployment: partial results
+# Tighter-bound owned likelihood deployment: completed results
 
-Status: **THREE OF FOUR JOBS COMPLETE; REGISTERED MATRIX STILL RUNNING**.
-Execution and independent reader both use immutable8ccacc0. The
-[protocol](LIKELIHOOD_DEPLOYMENT_PROTOCOL.md), ordered cases and all caps
-remain fixed. The [journal](../../evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_EXPERIMENT.json)
+Status: **COMPLETE FOUR-CASE MATRIX; THREE IMPROVE, ONE WORSENS**.
+All four registered workers seal, pass their independent readers and install
+under the original caps. Execution and analysis both use immutable `8ccacc0`.
+The [protocol](LIKELIHOOD_DEPLOYMENT_PROTOCOL.md), ordered cases and controls
+are unchanged. The [terminal journal](../../evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_EXPERIMENT.json)
 and [same-source analysis](../../evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_ANALYSIS.json)
-retain all three actual outcomes. No uncompleted case receives a score.
+retain every outcome.
 
-## 1. A valid tighter bound can worsen actual deployment
+## 1. Deployment timing changes while candidate predictions stay identical
 
-Case(8,iid-c2,16) seals at124 and installs at119, leaving five forecasts.
-The old B6 result installed at114 and left ten. The exact and actual AMP
-candidate forecasts have not deteriorated: all candidate stored-mass and
-raw-division words equal the retained control. The loss comes from later
-deployment, despite the larger valid evidence coefficient.
+The new common bound is 13/8 with coefficient 6/13; the retained B6 procedure
+uses coefficient 1/8. Every candidate stored-mass and raw-division word is
+identical to its old control. The observed score differences therefore come
+from deployment timing on these fixed tapes.
 
-| Procedure | Install | Fresh wait | Candidate unseen CE | Deployed unseen CE |
-|---|---:|---:|---:|---:|
-| Retained B6, coefficient1/8 |114|54|0.3429612915|0.6596867981|
-| Current B13/8, coefficient6/13 |119|59|0.3429612915|0.6764169893|
+| n8 case | Install, old -> new | Fresh wait, old -> new | Candidate unseen CE, both | Deployed unseen CE, old | Deployed unseen CE, new |
+|---|---:|---:|---:|---:|---:|
+| iid-c2, seed16 | 114 -> 119 | 54 -> 59 | 0.3429612915 | 0.6596867981 | 0.6764169893 |
+| iid-c2, seed17 | 90 -> 67 | 30 -> 7 | 0.3340278121 | 0.5007499814 | 0.3752735502 |
+| iid-c4, seed18 | 72 -> 54 | 32 -> 14 | 0.3806734300 | 0.5014470727 | 0.4094547653 |
+| iid-c4, seed19 | 72 -> 50 | 32 -> 10 | 0.3502262118 | 0.5167830813 | 0.3787700980 |
 
-The new unseen CE is0.0167301912 worse. Full-domain deployed CE changes
-from0.6356371482 to0.6643921644. This is an actual retrospective counterexample
-to uniform deployment improvement, not an estimate of a population effect
-or the completed matrix's average. The candidate remains useful in isolation.
+Seed16 loses five deployed forecasts and its unseen CE worsens by
+0.0167301912 despite the tighter valid bound. Seeds17/18/19 gain 23/18/22
+deployed forecasts. Full-domain deployed CE changes respectively
+0.6356371482 -> 0.6643921644, 0.4976130705 -> 0.3653399982,
+0.5091150770 -> 0.4056148270 and 0.5091150770 -> 0.3826013266.
 
-Both owned reference and CUDA paths score59 fresh labels and cross at119;
-the full transport/install receipt passes. Their terminal identities become
-historical when deployment changes, rather than granting reusable authority.
-The constructor class stays `UNRESOLVED`: this is one executed v7 proposal.
+Across these four fixed cases, mean deployed unseen CE falls from
+0.5446667333 to 0.4599788507, a descriptive improvement of 0.0846878826.
+Mean full-domain deployed CE falls from 0.5378700932 to 0.4544870790.
+The unchanged candidate mean unseen CE is 0.3519721863; the retained strong
+exact posterior mean is 0.3519714364. Thus a substantial deployment gap
+remains. All strong AMP posterior controls are also retained and rechecked.
+These are exposed retrospective cases, with no population effect estimate
+or uniform first-passage ordering. Uniform improvement is falsified by seed16.
 
-## 2. The next tape benefits from the same fixed change
+## 2. Actual crossings and prior conditional predictions
 
-Case(8,iid-c2,17) also seals at124, but installs at67 versus the old90.
-Its wait falls30 to7 events, leaving57 instead of34 deployed forecasts.
-Again, every candidate mass and raw-division word equals the retained B6
-control. The change affects deployment timing, not candidate quality.
+Both owned reference and CUDA paths cross at 119/67/54/50, exactly at the
+actual installation cursors. Each transport/install receipt passes. The
+terminal identities retain those historical crossings but become
+`UNRESOLVED` after deployment changes the base; they grant no reusable
+authority. Every constructor class also remains `UNRESOLVED`: one owned v7
+proposal executes per case, with no complete-class proof.
 
-| Procedure | Install | Fresh wait | Candidate unseen CE | Deployed unseen CE |
-|---|---:|---:|---:|---:|
-| Retained B6, coefficient1/8 |90|30|0.3340278121|0.5007499814|
-| Current B13/8, coefficient6/13 |67|7|0.3340278121|0.3752735502|
-
-The unseen improvement is0.1254764312; full-domain deployed CE changes
-0.4976130705 to0.3653399982. Both reference and CUDA paths cross at67 after
-seven actual scores each; transport and installation pass. The terminal
-identities retain historical crossings after the base changes, and the full
-constructor class remains UNRESOLVED.
-
-Across these two fixed c2 tapes, mean deployed unseen CE changes0.5802183897
-to0.5258452698. The per-case effects have opposite signs. This is a descriptive
-two-case mean, not a population power ordering or the unfinished matrix mean.
-The retained strong posterior controls and all old outcomes remain included.
-
-## 3. The first c4 case also deploys earlier
-
-Case(8,iid-c4,18) seals at104 and installs at54 versus the old72. The wait
-falls32 to14 fresh events, leaving50 instead of32 deployed forecasts.
-Every candidate stored-mass and raw-division word again equals the B6 control.
-
-| Procedure | Install | Fresh wait | Candidate unseen CE | Deployed unseen CE |
-|---|---:|---:|---:|---:|
-| Retained B6, coefficient1/8 |72|32|0.3806734300|0.5014470727|
-| Current B13/8, coefficient6/13 |54|14|0.3806734300|0.4094547653|
-
-Unseen deployed CE improves by0.0919923073; full-domain CE changes
-0.5091150770 to0.4056148270. Both paths cross54, at exact reference/AMP
-wealth304521/65536 and304503/65536. Actual paired transport and installation
-pass. The historical identities become nonreusable after the deployed base
-changes, and the constructor class remains UNRESOLVED.
-
-## 4. Execution and independent checks
-
-Worker2444 exits normally under its16GiB/two-hour cap. It was attached to
-the job before resumption and peaks at15,047,073,792 bytes. The completed
-source checks64 exact pre-target posterior forecasts,748 actual CUDA and
-748 binary64 phases,248 native likelihood commit tapes and118 fresh scores.
-The reader independently rechecks six model scores and both fresh paths,
-plus all24 old B6 scores, four old decisions and16 strong-control scores.
-It confirms bitwise equality of both candidate readout forms to the old run.
-
-Worker6920 also exits normally, with peak15,034,691,584 bytes under the same
-cap,64 exact posterior forecasts,748 CUDA/binary64 phases per path,248 commit
-tapes and14 fresh scores. Worker30700 exits0 with no timeout and peak
-12,994,330,624 bytes; it checks64 forecasts,628 phases per path,208 commit
-tapes and28 fresh scores. The three-case totals are192 forecasts,2,124 phases
-per path,704 commit tapes and160 fresh scores. The same-source reader now
-checks18 new scores and six fresh paths, plus the unchanged24 old B6 scores,
-four old decisions and16 strong-control scores. Both earlier worker records
-and every registration field are checked unchanged before collection.
+The final worker seals at cursor 104 after 40 training and 64 evaluation
+events. Its two paths each score ten fresh labels, crossing at 50 with
+reference wealth 314235/65536 and AMP wealth 19639/4096. Installation leaves
+54 forecasts, compared with 32 under B6. The total alpha spent is 1/2.
 
 The [earlier conditional prediction](../../theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
-already fixed paired cursor119 and both risk envelopes before a completed
-new outcome was available. It also fixed cursor67 for seed17 and54 for
-seed18. All three actual cursors and all six unseen/full-domain CE values
-lie inside the prior envelopes. This verifies their premises on these
-executed cases; it does not turn the final case's prediction into an outcome.
+fixed all four paired cursors and unseen/full-domain deployed risk envelopes
+before any completed new outcome. All four actual cursors and all eight
+deployed CE values lie inside those prior exact intervals. This verifies
+the conditional calculation on the completed executions; it does not turn
+that calculation into a general power ordering.
 
-The fourth worker4056 starts at2026-09-20 19:45:44 UTC under the same parent
-14264 and is verified live afterward. Continue the registered order. Do not
-restart, change coefficients, rerun controls or infer future success from
-these rows. Use the reader in the immutable execution checkout with `--partial`
-until all remaining attempts are terminal.
-The run overlapped the now-completed n16 recovery at75e4f93. The separately
-registered matched v7/v8 experiment at ec373e7 is also live, currently with
-literal worker6820. No exclusive-device timing claim is made.
+## 3. Complete execution and independent evidence
+
+Every worker exits 0 without timeout or a job-limit termination. Each was
+attached to its bounded job before resumption, under 16 GiB and two hours.
+
+| Worker / seed | Seal cursor | Completed job peak, bytes | Posterior forecasts | CUDA and binary64 phases, each | Native commit tapes | Fresh scores, both paths |
+|---|---:|---:|---:|---:|---:|---:|
+| 2444 / 16 | 124 | 15,047,073,792 | 64 | 748 | 248 | 118 |
+| 6920 / 17 | 124 | 15,034,691,584 | 64 | 748 | 248 | 14 |
+| 30700 / 18 | 104 | 12,994,330,624 | 64 | 628 | 208 | 28 |
+| 4056 / 19 | 104 | 13,017,206,784 | 64 | 628 | 208 | 20 |
+| Total checks | | | 256 | 2,752 | 912 | 180 |
+
+The same-source terminal reader independently checks 24 new model scores
+and eight fresh paths, plus all 24 old B6 scores, four old decisions and
+16 strong-control scores. No baseline worker is rerun. Before final
+collection, every registration field and the first three complete worker
+records are checked unchanged. The reader then consumes one frozen byte
+capture of the terminal journal, and its first three analysis rows are
+also checked unchanged. The retained raw journal and analysis suffice;
+no weights, cache or additional completion bundle is retained.
+
+The final worker's packed peak is 2,694,743,715 bytes and maximum candidate
+mass-posterior error is 1055845445464353/15810895495970635730. Its 628 phases
+per path, 208 commit tapes and all candidate words pass the same checks as
+the earlier rows.
+
+Parent14264 and final worker4056 are absent at the terminal observation
+2026-09-20 20:58:54 UTC, and the source journal is `COMPLETE_EXECUTION`.
+This matrix is finished; do not restart it. It overlapped both the completed
+n16 recovery at `75e4f93` and the separately registered matched v7/v8 run at
+`ec373e7`. No exclusive-device timing claim is made. The matched experiment
+remains independent and continues under its original protocol.

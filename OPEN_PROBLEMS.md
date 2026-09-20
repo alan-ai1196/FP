@@ -127,32 +127,34 @@ completed n8 matrix keeps bound6. A new [owned mass-box proof](theory/proofs/CUR
 now closes the all-branch pre-context range obligation independently of
 successful-query AMP closeness. Current bounds are rechecked after updates;
 failed refinements stop before next ingress. Bounded CPU/CUDA n2 profiles
-install at8 rather than the retained bound6 fixture's22. Useful n8 deployment
-improvement and a power ordering remain unproved. The [next fixed four-case
+install at8 rather than the retained bound6 fixture's22. A general power
+ordering does not follow. The [fixed four-case
 protocol](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
 registers bound13/8, coefficient6/13, unchanged learner/tapes/resource caps
-and all retained controls. It is running at immutable8ccacc0, with zero
-completed outcomes in the initial journal. Keep that source fixed and retain
-every result; do not replace this question with a bet menu.
+and all retained controls. It completes at immutable8ccacc0 with all four
+outcomes retained. Preserve that source and every result; do not replace
+the completed question with a bet menu.
 Its reader distinguishes numerical thresholds, retained owned crossings and
 actual installs, and never fills an evidence path after it stops.
 
-The [first three actual rows](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
-now confirm opposite effects: seed16 installs119 versus114 with unseen
-CE0.676417 versus0.659687; seed17 installs67 versus90 with CE0.375274 versus
-0.500750; seed18 installs54 versus72 with CE0.409455 versus0.501447. All
-candidate words are identical to the old controls. Full execution and the
-same-source reader pass. One c4 case remains; worker4056 continues the
-fixed order. Uniform improvement is false, while the full
-matrix's tradeoff remains open. Keep every result and the fixed procedure.
+The [completed four-case result](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+closes this experimental question: installs119/67/54/50 versus114/90/72/72,
+with the first case worse and three better. The descriptive mean deployed
+unseen CE falls0.544667 to0.459979; the strong exact posterior remains at
+0.351971. All candidate words are unchanged. Every full execution, terminal
+reader, prior crossing interval and risk envelope passes. Uniform improvement
+is false. A general first-passage ordering and closing the remaining
+deployment-quality gap are separate questions; neither follows from this
+fixed matrix. All constructor classes remain UNRESOLVED.
 
 The [fixed-rule conditional prediction](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 already rules out a uniform deployment improvement: paired cursors would be
 119/67/54/50 if all necessary owned gates succeed. Seed16 is later than its
 old114 and has more than0.016 extra unseen CE; the other three are earlier.
 Even a correct native p9/10 predictor has expected reciprocal factor above1
-at6/13, so the old power proof cannot transfer. Keep the registered test
-unchanged and compare its actual results; these are not completed outcomes.
+at6/13, so the old power proof cannot transfer. The completed experiment
+now agrees with all four conditional crossings; the prediction artifact
+remains a passive analysis, distinct from the actual execution evidence.
 
 A [positive state for a classical predictable mixture](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
 now has a scalar construction and precision proof, without reading the model
