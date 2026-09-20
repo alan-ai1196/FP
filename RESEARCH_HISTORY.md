@@ -5095,3 +5095,18 @@ actual simplex/likelihood installation and finalization failures have their
 own4-GiB/180-second fixtures. These bounded executions are pending at this
 commit. The live8ccacc0 experiment remains unchanged. No n16 or whole-model
 recovery is inferred from the exact frame-payload law.
+
+The bounded `c133008` batch then passes eight CUDA workers. The simplex and
+likelihood profiles seal and install at22, with566 independently checked
+CUDA/binary64 phases each,80 fresh score checks and94 likelihood commit tapes.
+The observer compares148,373,504 complete frame bytes across these profiles.
+Existing frame-cap/combined-failure checks and four new finalization fault
+workers also pass, including target retention, no acceptance and original
+unexpected-error priority. Model worker6920 remains live during and after
+the batch, explicitly excluding exclusive-device timing claims.
+
+Both host jobs fail in report serialization of their read-only peak mapping.
+Their original jobs/counters remain retained unscored. A small independent
+reproduction confirms the TypeError; converting the report mapping to dict
+changes neither Runtime nor the fixed fixture. Only those two jobs need
+repetition. The CUDA passes are not rerun for this reporting correction.

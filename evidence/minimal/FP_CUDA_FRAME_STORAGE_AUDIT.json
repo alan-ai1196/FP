@@ -20,5 +20,511 @@
     "prepare-router:ResourceExceeded",
     "prepare-router:RuntimeError"
   ],
-  "no_model_execution_or_certificate": true
+  "no_model_execution_or_certificate": true,
+  "bounded_attempts": [
+    {
+      "case": "legacy",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "FAILED",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 430620672,
+        "peak_job_commit": 431861760,
+        "user_100ns": 4687500,
+        "kernel_100ns": 625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27872,
+        "process_creation_100ns": 134344012311235490
+      },
+      "failure": {
+        "type": "AssertionError",
+        "reason": ""
+      }
+    },
+    {
+      "case": "immutable",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "FAILED",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 536870912,
+        "peak_process_commit": 161529856,
+        "peak_job_commit": 162750464,
+        "user_100ns": 4218750,
+        "kernel_100ns": 937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28116,
+        "process_creation_100ns": 134344012318508676
+      },
+      "failure": {
+        "type": "AssertionError",
+        "reason": ""
+      }
+    },
+    {
+      "case": "simplex-profile",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2303774720,
+        "peak_job_commit": 2304999424,
+        "user_100ns": 188593750,
+        "kernel_100ns": 13593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27364,
+        "process_creation_100ns": 134344012325743040
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FRAME_PRESERVATION_PASS",
+        "process_id": 27364,
+        "case": "simplex-profile",
+        "retained_frame_checks": {
+          "frames": 280,
+          "full_frame_bytes_compared": 73400320,
+          "maximum_copy_bytes": 262144
+        },
+        "complete_existing_audit": {
+          "n": 2,
+          "profiles": true,
+          "profile_passes": 1,
+          "status": "SEALED_CUDA_STREAM",
+          "native_posterior_forecasts": 44,
+          "independent_binary64_phases": 280,
+          "CUDA": {
+            "phases": 280,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 18370,
+            "maximum_output_cells": 207
+          },
+          "profile_events": 2,
+          "retained_observations": 46,
+          "fresh_score_checks": 40,
+          "install_cursor": 22,
+          "class_certificate": false,
+          "historical_class": "UNRESOLVED",
+          "binary64_maxima": {
+            "state_error": "1995419197093669964767213409778721927547/1872201906766455493381820031913160560728810133169111040",
+            "native_error": "115948205403227/57953201611272206848255590400",
+            "normalizer_error": "9/4503599627370496",
+            "probability_error": "112117/1196700996584515567616",
+            "division_error": "40533006786842833/405648192073033453514941299425280"
+          },
+          "CUDA_maxima": {
+            "state_error": "2041/20971520",
+            "native_error": "4/3281",
+            "normalizer_error": "319/262144",
+            "probability_error": "213457/17203982558",
+            "division_error": "209715/7330078916608"
+          },
+          "packed_peak": 75440642,
+          "device": {
+            "identity": {
+              "runtime_version": 13040,
+              "driver_api_version": 13040,
+              "driver_version": "616.92",
+              "pci_bus_id": "0000:0B:00.0",
+              "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+              "physical_vram_bytes": 25769803776
+            },
+            "execution_identity": [
+              "2.12.0+cu132",
+              "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+              "13.2",
+              "NVIDIA GeForce RTX 3090",
+              [
+                8,
+                6
+              ]
+            ],
+            "physical_vram_upper": 25769803776,
+            "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+          },
+          "host": {
+            "process_id": 27364,
+            "creation_100ns": 134344012325743040,
+            "lifetime_process_commit_peak": 2303774720,
+            "job_commit_peak": 2304999424,
+            "process_user_100ns": 183593750,
+            "process_kernel_100ns": 13281250,
+            "job_user_100ns": 183593750,
+            "job_kernel_100ns": 13281250
+          },
+          "process_id": 27364,
+          "host_scope": "bind to completed job separately"
+        }
+      }
+    },
+    {
+      "case": "likelihood-profile",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2238287872,
+        "peak_job_commit": 2239508480,
+        "user_100ns": 407968750,
+        "kernel_100ns": 15468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29412,
+        "process_creation_100ns": 134344012553763593
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FRAME_PRESERVATION_PASS",
+        "process_id": 29412,
+        "case": "likelihood-profile",
+        "retained_frame_checks": {
+          "frames": 286,
+          "full_frame_bytes_compared": 74973184,
+          "maximum_copy_bytes": 262144
+        },
+        "complete_existing_audit": {
+          "case": "profile-install",
+          "status": "SEALED_CUDA_STREAM",
+          "expected_refusal": null,
+          "observed_cursor": 46,
+          "retained_observations": 46,
+          "profile_events": 4,
+          "checkpoints": [],
+          "independent_binary64_phases": 286,
+          "CUDA": {
+            "checked_phases": 286,
+            "refused_phases": 0,
+            "independent_commit_operation_tapes": 94,
+            "factorization_ranks": [
+              0,
+              3
+            ],
+            "maximum_output_cells": 484,
+            "largest_phase_frame_used": 41326,
+            "actual_arena_bytes": 16777216
+          },
+          "fresh_score_checks": 40,
+          "install_cursor": 22,
+          "class_certificate": false,
+          "historical_class": "UNRESOLVED",
+          "binary64_maxima": {
+            "state_error": "544749440806571900381425327740371322207827/151648354448082894963927422584966005418110382863087042560",
+            "native_error": "27361721431319/7244150201409025856031948800",
+            "normalizer_error": "17/4503599627370496",
+            "probability_error": "1197251518256201978860292467430176929609/4212454290224524860109095071804611261637008049863393280",
+            "division_error": "4683743612465315/50706024009129162549069246103552"
+          },
+          "CUDA_maxima": {
+            "state_error": "47369256319806631293606740915705998096531601/282467071801578430391712901340734223682638970880",
+            "native_error": "4/3281",
+            "normalizer_error": "639/524288",
+            "probability_error": "7989/209715200",
+            "division_error": "7549989/117281413660672"
+          },
+          "packed_peak": 77522755,
+          "device": {
+            "identity": {
+              "runtime_version": 13040,
+              "driver_api_version": 13040,
+              "driver_version": "616.92",
+              "pci_bus_id": "0000:0B:00.0",
+              "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+              "physical_vram_bytes": 25769803776
+            },
+            "execution_identity": [
+              "2.12.0+cu132",
+              "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+              "13.2",
+              "NVIDIA GeForce RTX 3090",
+              [
+                8,
+                6
+              ]
+            ],
+            "physical_vram_upper": 25769803776,
+            "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+          },
+          "process_id": 29412,
+          "host": {
+            "process_id": 29412,
+            "creation_100ns": 134344012553763593,
+            "lifetime_process_commit_peak": 2238287872,
+            "job_commit_peak": 2239508480,
+            "process_user_100ns": 403125000,
+            "process_kernel_100ns": 14843750,
+            "job_user_100ns": 403281250,
+            "job_kernel_100ns": 14843750
+          }
+        }
+      }
+    },
+    {
+      "case": "frame-cap",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2196262912,
+        "peak_job_commit": 2197565440,
+        "user_100ns": 17343750,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2972,
+        "process_creation_100ns": 134344013007049855
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FRAME_PRESERVATION_PASS",
+        "process_id": 2972,
+        "case": "frame-cap",
+        "retained_frame_checks": {
+          "frames": 3,
+          "full_frame_bytes_compared": 14400,
+          "maximum_copy_bytes": 4800
+        },
+        "complete_existing_audit": {
+          "actual_evidence_frame_cap_cannot_leave_an_unowned_checked_phase": true,
+          "admitted_frame_and_actual_device_outputs_retained": true
+        }
+      }
+    },
+    {
+      "case": "combined-failure",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222837760,
+        "peak_job_commit": 2224156672,
+        "user_100ns": 19375000,
+        "kernel_100ns": 6406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2592,
+        "process_creation_100ns": 134344013035631440
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FRAME_PRESERVATION_PASS",
+        "process_id": 2592,
+        "case": "combined-failure",
+        "retained_frame_checks": {
+          "frames": 5,
+          "full_frame_bytes_compared": 655360,
+          "maximum_copy_bytes": 131072
+        },
+        "complete_existing_audit": {
+          "all_published_reference_and_CUDA_states_unchanged": true,
+          "revealed_target_and_executed_prefix_retained": true,
+          "completed_CUDA_phases": 6,
+          "case": "combined-failure"
+        }
+      }
+    },
+    {
+      "case": "seal-publish-expected",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2207035392,
+        "peak_job_commit": 2208346112,
+        "user_100ns": 17656250,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7532,
+        "process_creation_100ns": 134344013064460934
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FINALIZATION_FAILURE_PASS",
+        "case": "seal-publish-expected",
+        "process_id": 7532,
+        "received_target_and_actual_device_prefix_retained": true,
+        "failed_phase_never_accepted": true,
+        "both_copies_retained_and_owned": true,
+        "terminal_partial_allocation_prefix": false,
+        "original_executor_error_preserved": false
+      }
+    },
+    {
+      "case": "seal-publish-unexpected",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2205548544,
+        "peak_job_commit": 2206855168,
+        "user_100ns": 17031250,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24068,
+        "process_creation_100ns": 134344013092760089
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FINALIZATION_FAILURE_PASS",
+        "case": "seal-publish-unexpected",
+        "process_id": 24068,
+        "received_target_and_actual_device_prefix_retained": true,
+        "failed_phase_never_accepted": true,
+        "both_copies_retained_and_owned": true,
+        "terminal_partial_allocation_prefix": false,
+        "original_executor_error_preserved": false
+      }
+    },
+    {
+      "case": "seal-copy-memory",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2206654464,
+        "peak_job_commit": 2207961088,
+        "user_100ns": 17812500,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25652,
+        "process_creation_100ns": 134344013120795393
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FINALIZATION_FAILURE_PASS",
+        "case": "seal-copy-memory",
+        "process_id": 25652,
+        "received_target_and_actual_device_prefix_retained": true,
+        "failed_phase_never_accepted": true,
+        "both_copies_retained_and_owned": false,
+        "terminal_partial_allocation_prefix": true,
+        "original_executor_error_preserved": false
+      }
+    },
+    {
+      "case": "seal-executor-priority",
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "status": "PASS",
+      "baseline_check": {
+        "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+        "actual_snapshot_and_constructor_AST_unchanged": true,
+        "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+      },
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2181398528,
+        "peak_job_commit": 2182701056,
+        "user_100ns": 18593750,
+        "kernel_100ns": 7187500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27192,
+        "process_creation_100ns": 134344013148949252
+      },
+      "result": {
+        "status": "ACTUAL_CUDA_FINALIZATION_FAILURE_PASS",
+        "case": "seal-executor-priority",
+        "process_id": 27192,
+        "received_target_and_actual_device_prefix_retained": true,
+        "failed_phase_never_accepted": true,
+        "both_copies_retained_and_owned": true,
+        "terminal_partial_allocation_prefix": false,
+        "original_executor_error_preserved": true
+      }
+    }
+  ],
+  "bounded_attempt_notes": {
+    "host_report_failure": {
+      "execution_source": "c133008d9c15678e53713c77edaa4503cdf5cad7",
+      "cases": [
+        "legacy",
+        "immutable"
+      ],
+      "diagnosis": "After the storage checks, JSON serialization of the read-only packed_peak mapping fails; no worker result was written. Both original failed jobs and counters remain retained and unscored.",
+      "independent_two_frame_reproduction": "TypeError: Object of type mappingproxy is not JSON serializable",
+      "correction": "Convert only the report peak mapping to a plain dict; no Runtime, fixture sizes, cap or deadline change."
+    },
+    "external_overlap_observation": {
+      "model_execution_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+      "model_parent_pid": 14264,
+      "model_worker_pid": 6920,
+      "model_worker_creation_local": "2026-09-21 01:09:20.910328 +08:00",
+      "observations_UTC": [
+        "2026-09-20 18:07:20",
+        "2026-09-20 18:09:19"
+      ],
+      "scope": "Same model worker observed live during and after the bounded CUDA batch; no exclusive-device throughput or timing claim. Model source, caps and case order unchanged."
+    }
+  }
 }

@@ -7,8 +7,12 @@ all bytes and labels. The extra copy extent and publication work are paid;
 publication failures retain both actual buffers and leases. The unchanged
 snapshot method can share finalized bytes. The [exact audit](evidence/minimal/FP_CUDA_FRAME_STORAGE_AUDIT.json)
 passes33 frames,17,904 byte comparisons, two real pre-copy resource refusals
-and four injected prepublication failures. Bounded host/CUDA checks are the
-next execution obligation; this is not a new full release or model result.
+and four injected prepublication failures. Eight bounded CUDA workers pass
+atc133008: two actual installing profiles with566 phases per arithmetic path
+and six failure checks. The host fixture's report serializer failed on its
+read-only peak mapping; its report-only correction requires two new jobs.
+Both original failures remain retained. This is not a new full release or
+model result.
 
 The research branch now has a [sparse exact likelihood analyzer and independent
 positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete

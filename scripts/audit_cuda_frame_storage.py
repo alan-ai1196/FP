@@ -183,7 +183,7 @@ def host_worker(mode):
             'simultaneous_complete_snapshots': HOST_SNAPSHOTS, 'full_frame_bytes_compared': byte_checks,
             'distinct_live_frame_payloads': len(identities),
             'distinct_live_frame_payload_bytes': len(identities)*HOST_EXTENT,
-            'packed_peak': root._ledger.snapshot()['peak'],
+            'packed_peak': dict(root._ledger.snapshot()['peak']),
             'no_CUDA_or_model_outcome': True}
 
 
@@ -345,7 +345,10 @@ if __name__ == '__main__':
                                   'traceback': traceback.format_exc(limit=10)[-5000:]}}
     else:
         result = exact_audit()
-        previous = json.loads(OUTPUT.read_text(encoding='utf-8')).get('bounded_attempts', []) if args.write and OUTPUT.exists() else []
+        prior = json.loads(OUTPUT.read_text(encoding='utf-8')) if args.write and OUTPUT.exists() else {}
+        previous = prior.get('bounded_attempts', [])
+        if 'bounded_attempt_notes' in prior:
+            result['bounded_attempt_notes'] = prior['bounded_attempt_notes']
         for case in args.bounded or ():
             row = bounded(case)
             previous.append(row)

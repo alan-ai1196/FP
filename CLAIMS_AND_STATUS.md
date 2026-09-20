@@ -5,8 +5,11 @@ For S simultaneous snapshots of N successfully finalized F-byte frames, the
 distinct frame payload changes from(S+1)NF toNF, with an additionalF-byte
 owned extent during conversion. Every byte and explicit label remains.
 This sublaw excludes other metadata, failed mutable frames and total host
-costs. Physical measurements and actual CUDA regressions are pending; no
-whole-model memory bound, n16 recovery or new completeness claim follows.
+costs. Eight bounded CUDA regressions now pass atc133008, including both
+profile/install paths and four new finalization-failure boundaries. The two
+host reports failed on a mappingproxy serializer and are retained unscored;
+corrected host measurement is pending. No whole-model memory bound, n16
+recovery or new completeness claim follows.
 
 Status vocabulary:
 

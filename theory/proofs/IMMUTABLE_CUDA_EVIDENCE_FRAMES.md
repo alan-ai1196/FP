@@ -1,8 +1,8 @@
 # Complete CUDA evidence with one retained immutable payload
 
-Status: **IMPLEMENTED; EXACT PRESERVATION AND FAILURE AUDITS PASS**.
-Bounded host measurements and actual CUDA regressions are separately reported
-when executed. Foundation R4, ERC-1, numerical semantics and the running
+Status: **IMPLEMENTED; EXACT AND BOUNDED CUDA AUDITS PASS; HOST REPORT CORRECTION**.
+Bounded host measurements await a corrected report described below.
+Foundation R4, ERC-1, numerical semantics and the running
 `8ccacc0` likelihood matrix are unchanged.
 
 ## 1. The cost is copying, not missing information
@@ -128,3 +128,22 @@ persistence and installation checks supply their own authority obligations.
 Source, job identity, failed attempts and measured peaks belong in the
 [minimal evidence](../../evidence/minimal/FP_CUDA_FRAME_STORAGE_AUDIT.json).
 Neither fixture alters the fixed n8 matrix or upgrades any old n16 failure.
+
+At `c133008`, both actual profile fixtures seal and install at cursor22,
+with566 independently checked CUDA and566 binary64 phases in total,80 fresh
+score checks and94 likelihood commit-operation tapes. Their whole-frame
+comparisons cover148,373,504 bytes. Both constructor classes stay UNRESOLVED.
+Six additional CUDA failure workers pass: the existing frame-cap/combined
+faults and new expected/unexpected publication, copy-MemoryError and original
+executor-error precedence checks. The new cases retain the received target
+and prevent failed-phase acceptance. Both actual copies stay paid except for
+the terminal, only partly materialized MemoryError diagnostic prefix.
+
+The two initial host jobs fail while serializing a read-only peak mapping,
+after the storage routine returns. Their jobs and counters remain retained
+without scored fixture results. A two-frame diagnostic reproduces
+`TypeError: Object of type mappingproxy is not JSON serializable`.
+The correction converts only the report mapping to dict; Runtime, counts,
+caps and deadlines are unchanged. Repeat only these host jobs. Model worker
+6920 was observed live during and after the CUDA batch; no exclusive-device
+throughput or timing claim is made.

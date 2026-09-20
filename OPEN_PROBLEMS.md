@@ -5,8 +5,9 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 **Active execution question:** does sharing complete immutable CUDA evidence
 reduce measured whole-worker memory enough to improve scale? The [preservation
 argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) and exact failure
-checks now pass. Measure the fixed bounded old/new snapshot fixture and run
-actual likelihood/AMP installation regressions before making a physical claim.
+checks now pass, as do both actual profile/install paths and six CUDA failure
+workers. Repeat the fixed host comparison after its report-only serializer
+correction, retaining both original failures, before making a host-saving claim.
 Do not infer n16 recovery from the completed-frame payload formula.
 
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision

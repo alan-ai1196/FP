@@ -5,8 +5,10 @@ This file is written for a capable researcher/model that has **no access to prio
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
 It pays for copy coexistence and publishes through the existing complete-root
-transaction. Exact byte/snapshot/failure checks pass; bounded host and actual
-CUDA measurements are pending. The fixed comparison is 128 one-MiB frames,
+transaction. Exact checks and eight bounded CUDA workers pass atc133008,
+including simplex and likelihood installation. The two host jobs need a
+report-only mapping-to-dict correction; retain both failed attempts. The
+fixed comparison is 128 one-MiB frames,
 two simultaneous complete snapshots, 512-MiB/60-second jobs. This targets
 repeated complete-history copies, with no information pruning or n16 recovery
 claim. The live likelihood matrix remains at immutable8ccacc0.
