@@ -1,0 +1,36 @@
+{
+  "status": "OWNED_REFERENCE_MIXTURE_AUDIT_PASS",
+  "kernel": {
+    "complete_words": 243,
+    "guarded_updates": 1215,
+    "maximum_instrumented_integer_kernel_calls_per_update": 300,
+    "forged_state_rule_score_and_budget_refusals": 9,
+    "work_scope": "instrumented guarded calls plus fixed rational allowance; no machine-time claim"
+  },
+  "owned_reference": {
+    "owned_first_crossing_cursor": 7,
+    "tracked_through_cursor": 12,
+    "constant_forecast_scores": 7,
+    "changing_learner_epoch_scores": 12,
+    "three_event_epochs": 4,
+    "optimizer_commits": 6,
+    "scalar_crossing_does_not_authorize_install": true
+  },
+  "fair_null": {
+    "actual_fair_label_words": 32,
+    "owned_score_checks": 160,
+    "conditional_wealth_inequalities": 31
+  },
+  "failures": {
+    "crossing_retention_failure_keeps_old_owned_curve": true,
+    "retained_numerical_threshold_has_no_crossing_authority": true,
+    "immutable_work_cap_refuses_before_arithmetic": 25823,
+    "immutable_admission_cap_refuses_before_seed": 6537,
+    "actual_integer_limit_refuses_with_old_curve": {
+      "bit_limit": 128,
+      "coefficient_grid_bits": 124
+    },
+    "arithmetic_and_unexpected_failures_cannot_resume": true
+  },
+  "scope": "owned reference endpoints; actual paired CPU/CUDA installation remain separate"
+}

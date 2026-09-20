@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "scope": "targeted unchanged constant-rule reference, paired binary64 and kernel suites on the owned mixture extension; not a full release or byte-identity claim",
+  "reference": {
+    "scores": {
+      "sealed_probability_and_Decimal_log_checks": 12,
+      "registered_epoch_events": 3,
+      "optimizer_update_unit": 2,
+      "completed_epochs": 4,
+      "optimizer_commits": 6,
+      "committed_successor_probabilities_differ_from_scored_predictions": 6,
+      "independent_exact_dyadic_wealth_checks": 12
+    },
+    "failures": {
+      "real_integer_cap_stops_identity_without_skipping_outcome": true,
+      "real_work_cap_stops_identity_while_ordinary_continuation_remains_legal": true,
+      "failed_numeric_and_physical_admission_keep_spent_alpha": true,
+      "unexpected_score_failure_keeps_target_and_halts_ordinary_prefix": true,
+      "ordinary_commit_failure_after_crossing_invalidates_current_evidence": true,
+      "first_crossing_workspace_failure_cannot_activate_or_resume_evidence": true,
+      "ordinary_publication_failure_revokes_all_staged_crossings": true,
+      "failed_identity_cannot_resume_or_inherit_prior_wealth": true
+    }
+  },
+  "paired_binary64": {
+    "scores": {
+      "same_event_independent_score_and_wealth_checks": 24,
+      "events_with_different_reference_and_finite_probabilities": 12,
+      "stored_mass_probabilities_differing_from_rounded_output": 12,
+      "post_optimizer_range_recertifications": 6,
+      "independent_four_trajectory_phase_checks": 62
+    },
+    "nontransfer": {
+      "delta": "1/18014398509481984",
+      "normalizer_cap": "36028797018963969/18014398509481984",
+      "reference_crossing_cursor": 5,
+      "reference_wealth_lower": "322095/65536",
+      "finite_mass_gain": "0",
+      "finite_wealth": "1",
+      "reference_crossing_cannot_transfer_to_physical_path": true
+    },
+    "failures": {
+      "observed_safe_context_cannot_substitute_for_whole_domain": true,
+      "rounded_optimizer_invalidates_future_domain_before_next_context": true,
+      "reference_integer_exhaustion_cannot_borrow_finite_evidence": true,
+      "unowned_finite_first_crossing_cannot_authorize_pair": true,
+      "actual_work_and_byte_cap_admission_failures_keep_alpha": true,
+      "different_start_boundaries_and_wrong_score_paths_cannot_pair": true,
+      "cancelled_physical_identity_cannot_recycle_alpha": true
+    }
+  },
+  "kernel": {
+    "invalid_registration_or_argument_cases": 52,
+    "pointwise_floor_bound_and_threshold_cases": 1586,
+    "global_error_composition": {
+      "complete_shared_observation_paths": 256,
+      "global_alpha": "3/8",
+      "actual_spending_values": [
+        "1/4",
+        "3/8",
+        "5/16"
+      ],
+      "any_false_crossing_probability": "23/128"
+    }
+  }
+}

@@ -565,10 +565,19 @@ coefficient rounding preserves mean-null validity; H+p fractional bits give
 less than2^-p error through horizon H with polynomial scalar resources.
 Equal wealth can conceal different future readouts, and low-precision
 updates destroy gain-order equivalence.15,625 scalar words,31,248 zero-mean
-null checks and160 complete native units pass. This is passive theory and
-audit, not an owned evidence identity, GPU result or first-passage dominance.
-Do not inject its state into the current constant-rule Runtime or change the
-fixed experiment. Its documentation gives the exact interface and limits.
+null checks and160 complete native units pass. The theory alone gives no
+GPU result or first-passage dominance.
+
+The [owned mixture extension](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md) now
+declares coefficient precision separately from scalar wealth precision and
+publishes the complete curve/wealth in the existing persistence identity.
+It passes1,215 guarded updates,160 actual fair-label scores, a changing
+learner with three-event epochs, failed crossing retention, prepaid work
+refusals and a real128-bit exhaustion. The old reference, paired CPU and
+kernel audits pass. Actual new-rule paired profile/bridge/install remains
+unverified: commit execution dependencies before the bounded development
+worker and retain failed attempts. This is no full-release or model result.
+The fixed8ccacc0 source and experiment remain unchanged.
 
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte

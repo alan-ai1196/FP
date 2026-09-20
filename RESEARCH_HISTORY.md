@@ -4907,3 +4907,34 @@ is passive. Runtime still has its fixed-rule
 contract; ownership, failure publication, separate AMP evidence and actual
 model utility are not inferred from this prototype. Foundation/ERC-1 and
 the running8ccacc0 experiment remain unchanged.
+
+## 140. Retain the adaptive curve as owned persistence state
+
+The scalar proof now has a guarded implementation inside the existing fresh
+persistence lifecycle. A separate immutable arcsine declaration names its
+coefficient precision; it does not carry an unused fixed coefficient or
+pretend coefficient rounding is scalar wealth rounding. The complete tuple
+and its exact streamed readout share one owned identity update. No new
+semantic architecture action, search certificate or install bypass is added.
+
+Work is charged before seed/update arithmetic, exact integer operations
+preflight their bit extent, and alpha remains spent on terminal failure.
+A failed crossing save can retain a numerical threshold event while keeping
+the previous owned curve. The stopped identity has no crossing authority and
+cannot revive. A real128-bit limit with q124 also admits successfully, then
+refuses the first product without losing the target or refunding alpha.
+
+The audit checks243 scalar words/1,215 updates using independent monomial
+integration, nine malformed/numerical refusals,160 actual fair-label scores
+and31 conditional inequalities. A changing learner checks four three-event
+evidence epochs separately from six optimizer commits. Calibrated immutable
+work caps refuse both initialization and epoch arithmetic before entry.
+The old reference, paired CPU binary64 and kernel suites also pass.
+
+This is an owned reference result. New-rule paired CPU/CUDA profile, bridge,
+physical-resource and install evidence remains separate. The added optional
+field changes packed identity sizes even for constant rules; no complete
+release or universal resource-feasibility preservation is claimed. The
+bounded development audit preserves failed process attempts and requires
+committed clean execution dependencies. No such worker has run yet. The
+registered8ccacc0 n8 experiment stays immutable and all old controls remain.

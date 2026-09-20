@@ -1,6 +1,8 @@
 # Positive state for a common predictable evidence coefficient
 
-Status: **SCOPED THEOREMS AND EXACT PASSIVE AUDIT; NOT A RUNTIME EXTENSION**.
+Status: **SCOPED THEOREMS AND EXACT PASSIVE AUDIT**. The separate
+[owned implementation audit](OWNED_MIXTURE_PERSISTENCE.md) states its tested
+Runtime scope; the scalar proof itself grants no evidence authority.
 The fixed8ccacc0 experiment remains unchanged. No retained model tape is
 used to select or assess this procedure. The question follows the
 [fixed-coefficient tradeoff](TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md): what
@@ -34,7 +36,7 @@ It is strictly between0 and1 and known before the next context. Direct
 expansion gives M_t=M_(t-1)*(1+b_t*x_t). Hence M is the same kind of common
 nonnegative supermartingale already allowed by [Foundation XIV.20](../../FP_THEORY.md#20-lineage-specific-e-process). One
 mixture starts with unit wealth and uses one identity's alpha; its continuum
-does not create free independent test attempts. Any future implementation
+does not create free independent test attempts. An implementation
 must start at its own fresh cut with its own paid state and spent alpha.
 
 The chosen measure specifies this statistic, rather than a new source law.

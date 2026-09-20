@@ -103,13 +103,23 @@ power argument.256 forecasts,90 production wealth prefixes and1,964 exact
 log checks pass. No running source, rule, model score or cap is changed.
 
 The [positive predictable-mixture prototype](theory/proofs/PREDICTABLE_MIXTURE_STATE.md)
-is confined to passive scalar research. Its exact continuation and rounding
+supplies the scalar theory. Its exact continuation and rounding
 proofs are checked over15,625 words,39,060 rounded updates,31,248 zero-mean
 null pairs and39,062 independent readouts, plus160 complete native units.
-It uses no model tape and adds no Runtime endpoint. The constructive payload/
-arithmetic bounds are not physical resource admission or release evidence.
+It uses no model tape. The constructive payload/arithmetic bounds are not
+physical resource admission or release evidence.
 Current wealth alone and unordered rounded gain histories both fail as state
 replacements. The running8ccacc0 source and constant persistence rule remain fixed.
+
+The [owned implementation](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md) adds an
+immutable arcsine rule and one coefficient tuple to the existing identity.
+The guarded kernel prepays linear primitive work and publishes curve/wealth
+together.1,215 updates,160 actual fair-label scores, three-event epochs,
+failed crossing retention, real work/bit limits and all three legacy CPU
+persistence audits pass. No helper grants crossing/install authority.
+Actual new-rule paired CPU/CUDA profile and installation are still pending.
+The optional identity field changes packed charges, including constant-rule
+records; no byte-equivalence or whole-project freeze is claimed.
 
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,

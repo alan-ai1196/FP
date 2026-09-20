@@ -60,16 +60,48 @@ class PersistenceRule:
 
 
 @dataclass(frozen=True)
+class ArcsinePersistenceRule:
+    """One fixed positive-coefficient arithmetic, not caller-selected bets.
+
+    The coefficient grid is distinct from the constant rule's wealth grid.
+    Wealth is the exact rational readout of the retained rounded curve.
+    """
+    rule_id: str
+    epoch_events: int
+    max_epochs: int
+    alpha: F
+    bound: F
+    log_terms: int
+    coefficient_grid_bits: int
+    score_path: str = REFERENCE_PATH
+    null_id: str = field(default='bounded-pre-context-stopped-reference-epoch-mean-v1', init=False)
+
+    def __post_init__(self):
+        if type(self.score_path) is not str or self.score_path not in NULLS:
+            raise ContractError('unregistered persistence score path')
+        object.__setattr__(self, 'null_id', NULLS[self.score_path])
+        name(self.rule_id, 'persistence rule ID')
+        natural(self.epoch_events, 'registered events per persistence epoch', positive=True)
+        natural(self.max_epochs, 'registered persistence horizon', positive=True)
+        natural(self.log_terms, 'registered logarithm terms', positive=True)
+        natural(self.coefficient_grid_bits, 'registered coefficient fractional bits')
+        object.__setattr__(self, 'alpha', rational(self.alpha, 'identity alpha', positive=True))
+        object.__setattr__(self, 'bound', rational(self.bound, 'predictable gain bound', positive=True))
+        if self.alpha >= 1:
+            raise ContractError('persistence requires alpha < 1')
+
+
+@dataclass(frozen=True)
 class PersistenceContract:
     alpha_total: F
-    rules: tuple[PersistenceRule, ...]
+    rules: tuple[PersistenceRule | ArcsinePersistenceRule, ...]
 
     def __post_init__(self):
         object.__setattr__(self, 'alpha_total', rational(self.alpha_total, 'global persistence alpha', positive=True))
         if self.alpha_total >= 1:
             raise ContractError('global persistence alpha must be less than one')
         rules = tuple(self.rules)
-        if any(type(rule) is not PersistenceRule for rule in rules):
+        if any(type(rule) not in (PersistenceRule, ArcsinePersistenceRule) for rule in rules):
             raise ContractError('exact immutable persistence rule declarations required')
         if len({rule.rule_id for rule in rules}) != len(rules):
             raise ContractError('duplicate persistence rule ID')

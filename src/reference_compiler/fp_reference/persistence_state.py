@@ -7,7 +7,7 @@ from .learner import ReferenceLearnerState
 from .float64_learner import Float64LearnerState
 from .float64_range import Float64Range
 from .numerics import LogInterval
-from .persistence import PersistenceRule, REFERENCE_PATH
+from .persistence import PersistenceRule, ArcsinePersistenceRule, REFERENCE_PATH
 
 
 @dataclass(frozen=True)
@@ -23,7 +23,7 @@ class AlphaAllocation:
 @dataclass(frozen=True)
 class PersistenceIdentity:
     identity_id: str
-    rule: PersistenceRule
+    rule: PersistenceRule | ArcsinePersistenceRule
     allocation_id: str
     base_lineage_id: str
     candidate_lineage_id: str
@@ -55,6 +55,7 @@ class PersistenceIdentity:
     base_float64_range: tuple[Float64Range, ...] = ()
     candidate_float64_range: tuple[Float64Range, ...] = ()
     ratio_bound_kind: str = 'native-class-cap'
+    mixture_coefficients: tuple[int, ...] | None = None
 
 
 @dataclass(frozen=True)

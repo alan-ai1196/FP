@@ -89,10 +89,12 @@ rounding preserves the same mean-null. Horizon H with H+p fractional bits
 gives uniform wealth error below2^-p using polynomial finite arithmetic.
 Exact future-readout equivalence requires the appropriate moments; current
 wealth alone is insufficient, and rounding makes gain order relevant. The
-15,625-word audit passes. This is not a Runtime extension, uniquely preferred
-rule or earlier-crossing guarantee. Complete ownership and model value would
-need separate evidence; the fixed8ccacc0 experiment remains the next actual
-outcome to assess.
+15,625-word audit passes. This is not a uniquely preferred rule or an
+earlier-crossing guarantee. The [owned reference extension](theory/proofs/OWNED_MIXTURE_PERSISTENCE.md)
+now passes curve/wealth publication, prepaid work, real integer exhaustion,
+fair-label and changing-learner audits. Actual paired CPU/CUDA bridge and
+installation, physical resources and model value still need separate
+evidence. Preserve the fixed8ccacc0 experiment and assess its actual outcomes.
 
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and

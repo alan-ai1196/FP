@@ -27,9 +27,10 @@ from .run_state import ReferenceRunManifest, ReferenceRunClosure, ReferenceRunSn
 from .program import Program, SemanticRules, name, rational
 from .profile import ProfileEvent, ProfileExecution, ProfileSpec, ProfileUnresolved, attach_boundary
 from .numerics import LogInterval, compare_exact, compare_exact_work, log_enclosure, log_enclosure_work
-from .persistence import PersistenceContract, REFERENCE_PATH, FLOAT64_PATH, CUDA_PATH, CROSSINGS, LIVE_STATUSES, next_wealth, threshold_crossed
+from .persistence import PersistenceContract, ArcsinePersistenceRule, REFERENCE_PATH, FLOAT64_PATH, CUDA_PATH, CROSSINGS, LIVE_STATUSES, next_wealth, threshold_crossed
 from .persistence_state import AlphaAllocation, PersistenceEvent, PersistenceIdentity, PersistenceResult, PairedPersistenceResult
 from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
+from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
 from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix, widened_state
@@ -159,8 +160,9 @@ class OnlineContract:
             for rule in self.persistence.rules:
                 if rule.score_path == FLOAT64_PATH and self.float64 is None:
                     raise ContractError('binary64 persistence requires its independently executed registered learner')
-                if rule.wealth_grid_bits >= construction.reference_integer_bits:
-                    raise ContractError('persistence wealth grid exceeds reference integer work limit')
+                grid = rule.coefficient_grid_bits if type(rule) is ArcsinePersistenceRule else rule.wealth_grid_bits
+                if grid >= construction.reference_integer_bits:
+                    raise ContractError('persistence numerical grid exceeds reference integer work limit')
 
 
 @dataclass(frozen=True)
@@ -1604,6 +1606,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
     def _check_persistence_lineages(self, identity: PersistenceIdentity):
         if identity.ratio_bound_kind not in ('native-class-cap', 'current-native-mass-box'):
             raise ContractError('persistence lost its registered ratio-bound proof scope')
+        if type(identity.rule) is ArcsinePersistenceRule:
+            if (type(identity.mixture_coefficients) is not tuple
+                    or len(identity.mixture_coefficients) != identity.epochs_completed+1):
+                raise ContractError('persistence lost its owned complete mixture state')
+        elif identity.mixture_coefficients is not None:
+            raise ContractError('constant persistence acquired an undeclared mixture state')
         base = self._candidates.get(identity.base_lineage_id)
         candidate = self._candidates.get(identity.candidate_lineage_id)
         if (self._deployed_id != identity.base_lineage_id or base is None or candidate is None
@@ -1799,6 +1807,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             identity = self._save_persistence(identity)
             self._retain_program(base)
             self._retain_program(candidate)
+            if type(rule) is ArcsinePersistenceRule:
+                self._event_router.charge_work('information', {'work': mixture.initial_work()},
+                                              f'{identity_id}:mixture-initialization')
+                identity = replace(identity, mixture_coefficients=mixture.initial_coefficients(rule, bit_limit=bit_limit))
             native_base = self._contract.semantics.base
             if score_path == FLOAT64_PATH:
                 base_bounds = self._persistence_float64_range(base)
@@ -1933,7 +1945,14 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 epochs = identity.epochs_completed
                 if finished:
                     mean = _operation(lower, F(1, count), multiply=True, bit_limit=bit_limit)
-                    wealth = next_wealth(wealth, mean, identity.rule, bit_limit=bit_limit)
+                    if type(identity.rule) is ArcsinePersistenceRule:
+                        self._event_router.charge_work('information', {'work': mixture.step_work(epochs)},
+                            f'{identity_id}:mixture-epoch:{epochs}')
+                        coefficients, wealth = mixture.next_mixture(identity.mixture_coefficients,
+                            wealth, mean, epochs, identity.rule, bit_limit=bit_limit)
+                        next_identity = replace(next_identity, mixture_coefficients=coefficients)
+                    else:
+                        wealth = next_wealth(wealth, mean, identity.rule, bit_limit=bit_limit)
                     epochs += 1
                 event = PersistenceEvent(identity_id, record.observation_id, record.cursor,
                     identity.base_lineage_id, identity.candidate_lineage_id, base, candidate, gain,
