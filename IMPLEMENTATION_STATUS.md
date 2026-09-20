@@ -2,6 +2,16 @@
 
 ## Current implementation state (2026-09-21)
 
+The new [factorized learner audit](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
+uses existing native Programs and simplex U without production changes.
+At block mass/rate1/m it verifies2,896 posterior-marginal and factorized-history
+updates,5,792 complete state boundaries,36 damped-rate checks and two exact
+failure witnesses. Its linear-size graph is exact for single-factor queries;
+coupled likelihoods lose correlations, and deleting value-one normalizers
+changes the actual U. The complete all-pair domain excludes this independent
+factor shortcut. This is passive exact arithmetic, with no new candidate,
+resource certificate, AMP transport or installed-state quotient.
+
 The [positive pair-marginal construction](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
 now emits an ordinary native graph with O(K+n^2) incidences while retaining
 all K world slots. Its passive exact audit checks680 forecasts,1,360 complete

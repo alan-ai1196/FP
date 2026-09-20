@@ -5337,3 +5337,36 @@ are retained exactly. No final-case or population effect is inferred.
 Parent14264 starts final worker4056 at19:45:44 UTC on2026-09-20. The separate
 matched ec373e7 v7 worker6820 continues concurrently; n16 recovery is already
 complete. The remaining fixed runs are not restarted or modified.
+
+## 156. PRODUCT beliefs derive a marginal learner and expose its exactness boundary
+
+The explicit world-slot incidence law left alternative native learners open.
+A product of categorical factors admits a different use of the existing
+global simplex optimizer: each block has mass1/m and rate1/m. For positive
+multilinear excess heads with common column totals, the full ambient CE
+gradient computes the exact posterior marginals from the current product
+prior. The resulting product is the classical forward-KL projection. It
+retains the full joint posterior iff every legal likelihood separates across
+the chosen blocks. This is a scoped derivation inside FP, not a new general
+inference algorithm or optimizer action.
+
+A native construction uses2m+1 slots and22m+10 incidences for noisy queries
+of individual binary factors, representing2^m joint worlds without enumerating
+them. Exact audits check2,896 updates and5,792 complete boundaries, including
+337 exhaustive likelihood tensors and six two-pass profile cases;36 further
+checks verify the derived rate/damping. Independent joint posteriors, tensor
+minors and forward dual derivatives supply separate mathematical oracles.
+
+Two counterexamples are decisive. Noisy equality from fair independent bits
+creates posterior(9,1,1,9)/20 while the native learner remains stationary;
+its next forecast is1/2 rather than41/50. Separately, deleting inactive block
+sums that always equal1 preserves the first two forecasts and first complete
+commit but changes the next ambient gradients: the third forecast becomes
+9413/10570 instead of73/82. Thus reachable value identities do not justify
+gradient-learner erasure. All-pair legal futures cross every nontrivial fixed
+coordinate partition, forcing one joint block in this family. The result
+does not transfer to arbitrary encodings or imply a new Foundation defect.
+
+The proof and minimal exact evidence are retained as learner theory. Neither
+production Runtime nor AMP paths change; both immutable model runs continue
+under their original protocols.

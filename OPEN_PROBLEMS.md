@@ -2,6 +2,16 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [PRODUCT-belief closure question](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
+is now settled for a fixed partition of coordinates: the existing simplex U
+computes posterior marginals at block mass/rate1/m, but exact joint learning
+requires every legal likelihood to separate. The complete all-pair domain
+forces one joint block in that family, so independent factors cannot replace
+the current learner. Useful compact alternatives must retain the correlations
+future queries can read, or declare and bound their approximation. No general
+lower bound against different encodings follows. Continue the registered
+model comparisons; this result does not authorize changing their learners.
+
 **New model-construction question:** does the [positive shared marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
 owned learner's execution? The incidence order is now settled for explicit

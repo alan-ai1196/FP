@@ -2,6 +2,20 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current learner-theory result, 2026-09-21:** the [PRODUCT-belief law](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
+derives exact posterior-marginal updates from the existing global simplex U:
+each of m factor blocks has mass1/m and the learning rate is1/m. The represented
+joint posterior stays exact iff every legal likelihood separates across the
+blocks. A native single-factor-query graph uses2m+1 slots and22m+10 incidences
+for2^m joint worlds;2,896 exact updates check complete states, with36 additional
+rate checks. Exhaustive tensor cases confirm the closure boundary. No new
+optimizer, Runtime solver or AMP claim is introduced. Noisy equality creates
+correlation and defeats the product learner (next1/2 versus41/50); erasing
+inactive factors that equal1 also changes gradients and the third forecast.
+The current complete all-pair query domain forces one joint block within
+this fixed-coordinate family. This therefore supplies no shortcut for either
+running model protocol. Their original source, caps and readers remain fixed.
+
 **Current model-construction result, 2026-09-21:** a [shared positive marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) reduces all-pair
 relation inference from O(n^2 K) to O(K+n^2) native incidences, K=2^(n-1).

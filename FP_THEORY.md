@@ -2720,3 +2720,19 @@ passes. This is one empirical implementation recovery, with all eight old
 failures retained. Candidate/deployed unseen CE0.349567/0.445247 remains
 worse than the strong posterior0.326940. No isolated optimization effect,
 class proof, likelihood-bank scaling or model superiority is inferred.
+
+The [PRODUCT-belief learner law](theory/proofs/FACTOR_SIMPLEX_POSTERIOR.md)
+derives a different exact use of the existing global simplex U. With m factor
+blocks of mass1/m, positive multilinear excess heads with common column totals,
+and rate1/m, its actual ambient CE step computes the exact one-observation
+posterior marginals. The represented product is the classical forward-KL
+product projection; it is the full joint posterior iff the likelihood separates
+across the blocks. Single-factor observations admit a linear-size native
+realization, while a noisy parity observation already defeats this shortcut
+for coupled queries. Factors that equal1 on the invariant still affect U
+through their ambient gradients and cannot be erased on value agreement alone.
+The complete all-pair relation domain forces a single block within this
+fixed-coordinate family; no general encoding lower bound follows. Exact
+native audits pass2,896 complete-state updates and36 rate checks. This is
+learner theory, with no new semantic action, production solver, AMP authority
+or change to any registered model experiment.

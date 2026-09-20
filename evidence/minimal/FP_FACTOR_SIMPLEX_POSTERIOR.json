@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact Fraction; guarded native bound 32768 bits",
+  "scope": "passive native Programs; no Runtime or AMP authority",
+  "tensor_marginal_audit": {
+    "native_marginal_updates": 294,
+    "complete_state_checks": 588,
+    "cases": [
+      {
+        "factor_sizes": [
+          2
+        ],
+        "prior_cases": 4,
+        "tables": 3,
+        "targets_per_prior": 7
+      },
+      {
+        "factor_sizes": [
+          2,
+          2
+        ],
+        "prior_cases": 6,
+        "tables": 3,
+        "targets_per_prior": 7
+      },
+      {
+        "factor_sizes": [
+          2,
+          3
+        ],
+        "prior_cases": 8,
+        "tables": 3,
+        "targets_per_prior": 7
+      },
+      {
+        "factor_sizes": [
+          2,
+          2,
+          2
+        ],
+        "prior_cases": 10,
+        "tables": 3,
+        "targets_per_prior": 7
+      },
+      {
+        "factor_sizes": [
+          2,
+          3,
+          2
+        ],
+        "prior_cases": 14,
+        "tables": 3,
+        "targets_per_prior": 7
+      }
+    ]
+  },
+  "factorization_boundary_audit": {
+    "cases": [
+      {
+        "factor_sizes": [
+          2,
+          2
+        ],
+        "coefficient_levels": [
+          0,
+          1,
+          2
+        ],
+        "complete_tables": 81,
+        "native_updates_and_closure_checks": 324,
+        "factorized_posteriors": 60,
+        "correlated_posteriors": 264
+      },
+      {
+        "factor_sizes": [
+          2,
+          2,
+          2
+        ],
+        "coefficient_levels": [
+          0,
+          8
+        ],
+        "complete_tables": 256,
+        "native_updates_and_closure_checks": 1024,
+        "factorized_posteriors": 32,
+        "correlated_posteriors": 992
+      }
+    ],
+    "native_updates": 1348
+  },
+  "rate_audit": {
+    "native_damped_marginal_updates": 36,
+    "informative_exact_Bayes_rate": "1/m; other tested rates give the derived damping"
+  },
+  "factorized_history_audit": {
+    "native_observe_commit_pairs": 1254,
+    "complete_state_checks": 2508,
+    "two_pass_profile_cases": 6,
+    "cases": [
+      {
+        "factors": 1,
+        "exhaustive_depth": 3,
+        "event_alphabet": 2,
+        "priors": 2,
+        "terminal_histories_per_prior": 8
+      },
+      {
+        "factors": 2,
+        "exhaustive_depth": 4,
+        "event_alphabet": 4,
+        "priors": 2,
+        "terminal_histories_per_prior": 256
+      },
+      {
+        "factors": 3,
+        "exhaustive_depth": 3,
+        "event_alphabet": 6,
+        "priors": 2,
+        "terminal_histories_per_prior": 216
+      }
+    ]
+  },
+  "correlation_counterexample": {
+    "exact_joint_posterior": [
+      "9/20",
+      "1/20",
+      "1/20",
+      "9/20"
+    ],
+    "native_next_probability": "1/2",
+    "whole_history_Bayes_next_probability": "41/50",
+    "complete_gradient_is_zero": true,
+    "no_learning_rate_can_repair_this_step": true
+  },
+  "value_one_erasure_counterexample": {
+    "identical_first_two_forecasts": [
+      "1/2",
+      "41/50"
+    ],
+    "identical_first_complete_commit": true,
+    "third_intact_probability": "73/82",
+    "third_erased_probability": "9413/10570",
+    "intact_block_masses": [
+      "1/2",
+      "1/2"
+    ],
+    "erased_block_masses": [
+      "213/410",
+      "197/410"
+    ],
+    "second_selected_gradients_intact": [
+      "-72/205",
+      "8/5",
+      "-32/205",
+      "-32/205"
+    ],
+    "second_selected_gradients_erased": [
+      "-72/205",
+      "8/5",
+      "0",
+      "0"
+    ]
+  },
+  "actual_graph_counts": [
+    {
+      "factors": 1,
+      "represented_joint_worlds": 2,
+      "native": {
+        "nodes": 20,
+        "sources": 1,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 9,
+        "SUM_edges": 14,
+        "edges": 32,
+        "slots": 3,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 2,
+      "represented_joint_worlds": 4,
+      "native": {
+        "nodes": 31,
+        "sources": 2,
+        "state_reads": 0,
+        "SUMs": 13,
+        "PRODUCTs": 16,
+        "SUM_edges": 22,
+        "edges": 54,
+        "slots": 5,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 3,
+      "represented_joint_worlds": 8,
+      "native": {
+        "nodes": 42,
+        "sources": 3,
+        "state_reads": 0,
+        "SUMs": 16,
+        "PRODUCTs": 23,
+        "SUM_edges": 30,
+        "edges": 76,
+        "slots": 7,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 8,
+      "represented_joint_worlds": 256,
+      "native": {
+        "nodes": 97,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 31,
+        "PRODUCTs": 58,
+        "SUM_edges": 70,
+        "edges": 186,
+        "slots": 17,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 16,
+      "represented_joint_worlds": 65536,
+      "native": {
+        "nodes": 185,
+        "sources": 16,
+        "state_reads": 0,
+        "SUMs": 55,
+        "PRODUCTs": 114,
+        "SUM_edges": 134,
+        "edges": 362,
+        "slots": 33,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 32,
+      "represented_joint_worlds": 4294967296,
+      "native": {
+        "nodes": 361,
+        "sources": 32,
+        "state_reads": 0,
+        "SUMs": 103,
+        "PRODUCTs": 226,
+        "SUM_edges": 262,
+        "edges": 714,
+        "slots": 65,
+        "bindings": 0
+      }
+    },
+    {
+      "factors": 64,
+      "represented_joint_worlds": 18446744073709551616,
+      "native": {
+        "nodes": 713,
+        "sources": 64,
+        "state_reads": 0,
+        "SUMs": 199,
+        "PRODUCTs": 450,
+        "SUM_edges": 518,
+        "edges": 1418,
+        "slots": 129,
+        "bindings": 0
+      }
+    }
+  ]
+}
