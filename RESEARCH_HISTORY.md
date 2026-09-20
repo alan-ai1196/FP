@@ -5370,3 +5370,34 @@ does not transfer to arbitrary encodings or imply a new Foundation defect.
 The proof and minimal exact evidence are retained as learner theory. Neither
 production Runtime nor AMP paths change; both immutable model runs continue
 under their original protocols.
+
+## 157. Bounded count factors do not yield a small positive partition decoder
+
+The next question concerns retaining correlation rather than discarding it.
+For actual histories containing c_e copies of label0 per pair, canceling a
+common likelihood scale gives bounded factors x_e=9^-c_e and partition
+Z_n=SUM_z PRODUCT_{cut edges} x_e. A fixed positive arithmetic circuit that
+matches this partition on every finite count vector must equal its formal
+polynomial, by repeated univariate polynomial identity. This step uses legal
+histories and does not assume a continuous source domain.
+
+A multilinear monotone circuit can be completed with cut/non-cut variables
+at at most(D+1) operation overhead, D=binom(n,2). The completed cut words
+admit balanced product rectangles of at most2^(n-r) words, where r is the
+least integer with binom(r,2)>=ceil(D/3). Covering all2^(n-1) words therefore
+requires at least2^(r-1) products. This yields the unconditional lower
+2^(r-1)/(D+1), and world enumeration gives the matching exponential order
+2^Theta(n). The balanced-product method is classical; the retained proof
+states the exact FP count interface and the necessary completion reduction.
+
+An exhaustive audit checks29,614 edge partitions through n6, five symbolic
+completion DAGs through n7, and91 actual count histories with273 native
+commits and1,267 all-pair forecasts. Inputs stay in(0,1], and the native
+world learner's readout total remains10. No native interface or solver changes.
+
+The scope limitation is substantive: masses(1+Z_n,1+Z_n) normalize to a
+constant forecast, so this does not prove an unconditional lower bound for
+arbitrary normalized prediction, finite contracts or approximation. It also
+does not establish a particular worker's memory/time necessity. The existing
+P!=NP-conditional forecast theorem stays distinct, as do actual GPU outcomes.
+Both immutable model experiments are still running under their fixed rules.

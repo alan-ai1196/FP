@@ -2736,3 +2736,15 @@ fixed-coordinate family; no general encoding lower bound follows. Exact
 native audits pass2,896 complete-state updates and36 rate checks. This is
 learner theory, with no new semantic action, production solver, AMP authority
 or change to any registered model experiment.
+
+The [positive count-partition decoder law](theory/proofs/POSITIVE_COUNT_PARTITION.md)
+gives a separate unconditional2^Theta(n) scalar-circuit bound for exact
+unnormalized inference from bounded edge factors9^-c. Uniform agreement on
+all finite legal count histories implies the cut polynomial identity; a
+positive edge-completion reduction and balanced cut-word rectangles force
+exponentially many operations even with shared subexpressions. The exact
+audit checks29,614 partitions, five completed DAGs and91 actual native
+histories. Normalized forecasts may cancel a hard common mass, so this is
+not a general forecast lower bound, finite-horizon impossibility or explanation
+of any measured worker failure. It leaves the existing conditional decoder
+theorem, Foundation, ERC-1 and registered experiments in their stated scopes.

@@ -12,6 +12,15 @@ future queries can read, or declare and bound their approximation. No general
 lower bound against different encodings follows. Continue the registered
 model comparisons; this result does not authorize changing their learners.
 
+The [fixed positive partition-decoder question](theory/proofs/POSITIVE_COUNT_PARTITION.md)
+is also settled in its exact all-history circuit class: bounded edge factors
+and shared positive arithmetic still require2^Theta(n) scalar operations.
+This does not settle arbitrary normalized forecast circuits, other computation
+primitives, finite-horizon approximation or useful typical-case execution.
+The generic implication from hard masses to hard forecasts is false because
+normalization can cancel them. Keep these scopes separate from the existing
+P!=NP-conditional all-algorithm result and from actual resource measurements.
+
 **New model-construction question:** does the [positive shared marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
 owned learner's execution? The incidence order is now settled for explicit

@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact integers and native Fractions",
+  "scope": "fixed nonnegative scalar arithmetic circuit for exact unnormalized partition",
+  "cut_rectangles": {
+    "partitions_checked": 29614,
+    "cases": [
+      {
+        "n": 3,
+        "balanced_edge_partitions": 6,
+        "largest_actual_rectangle": 2,
+        "actual_rectangle_cover_lower": 2,
+        "proved_completed_polynomial_gate_lower": 2
+      },
+      {
+        "n": 4,
+        "balanced_edge_partitions": 50,
+        "largest_actual_rectangle": 2,
+        "actual_rectangle_cover_lower": 4,
+        "proved_completed_polynomial_gate_lower": 4
+      },
+      {
+        "n": 5,
+        "balanced_edge_partitions": 672,
+        "largest_actual_rectangle": 2,
+        "actual_rectangle_cover_lower": 8,
+        "proved_completed_polynomial_gate_lower": 8
+      },
+      {
+        "n": 6,
+        "balanced_edge_partitions": 28886,
+        "largest_actual_rectangle": 4,
+        "actual_rectangle_cover_lower": 8,
+        "proved_completed_polynomial_gate_lower": 8
+      }
+    ]
+  },
+  "edge_completion": [
+    {
+      "n": 3,
+      "monomials": 4,
+      "original_operations": 6,
+      "completed_operations": 11,
+      "general_overhead_bound": 24
+    },
+    {
+      "n": 4,
+      "monomials": 8,
+      "original_operations": 23,
+      "completed_operations": 40,
+      "general_overhead_bound": 161
+    },
+    {
+      "n": 5,
+      "monomials": 16,
+      "original_operations": 74,
+      "completed_operations": 123,
+      "general_overhead_bound": 814
+    },
+    {
+      "n": 6,
+      "monomials": 32,
+      "original_operations": 217,
+      "completed_operations": 346,
+      "general_overhead_bound": 3472
+    },
+    {
+      "n": 7,
+      "monomials": 64,
+      "original_operations": 600,
+      "completed_operations": 921,
+      "general_overhead_bound": 13200
+    }
+  ],
+  "actual_count_grid": {
+    "independent_count_grid_histories": 91,
+    "native_commits": 273,
+    "all_pair_native_forecasts": 1267
+  },
+  "scope_counterexample": {
+    "constant_forecast_despite_hard_common_mass": [
+      {
+        "partition": "8",
+        "heads_with_positive_bases": [
+          "9",
+          "9"
+        ],
+        "normalized_probability": "1/2"
+      },
+      {
+        "partition": "2200/2187",
+        "heads_with_positive_bases": [
+          "4387/2187",
+          "4387/2187"
+        ],
+        "normalized_probability": "1/2"
+      },
+      {
+        "partition": "65800/59049",
+        "heads_with_positive_bases": [
+          "124849/59049",
+          "124849/59049"
+        ],
+        "normalized_probability": "1/2"
+      }
+    ],
+    "general_normalized_forecast_lower_bound_claimed": false,
+    "finite_horizon_or_approximate_lower_bound_claimed": false,
+    "Runtime_source_or_installation_authority_claimed": false
+  }
+}

@@ -16,6 +16,17 @@ The current complete all-pair query domain forces one joint block within
 this fixed-coordinate family. This therefore supplies no shortcut for either
 running model protocol. Their original source, caps and readers remain fixed.
 
+The [exact positive count-partition decoder](theory/proofs/POSITIVE_COUNT_PARTITION.md)
+also has a proved2^Theta(n) scalar-circuit cost. This grants bounded edge
+likelihood factors for free, allows shared positive subexpressions, and uses
+all finite legal label0 count histories to establish polynomial identity.
+A balanced cut-word rectangle argument and edge completion supply the lower
+bound;29,614 finite partitions and91 actual native histories pass the audit.
+This does not lower-bound every normalized forecast: hard common masses can
+cancel, as the retained counterexample shows. The all-algorithm approximate
+forecast lower bound remains separately P!=NP-conditional. No finite worker
+failure or cap necessity is inferred, and production code is unchanged.
+
 **Current model-construction result, 2026-09-21:** a [shared positive marginal
 circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) reduces all-pair
 relation inference from O(n^2 K) to O(K+n^2) native incidences, K=2^(n-1).

@@ -41,6 +41,13 @@ in n. Polynomial time in that expanded graph's size is not ruled out. No
 uniformly exponential time lower bound, finite-machine impossibility, or
 hardness of a particular RN-5 worker follows from P!=NP.
 
+A separate [positive partition-decoder law](POSITIVE_COUNT_PARTITION.md)
+now gives an unconditional2^Theta(n) circuit bound for a narrower computation:
+a fixed positive arithmetic DAG returning the exact unnormalized partition
+from bounded edge factors over all finite count histories. It does not turn
+this theorem into an unconditional lower bound on normalized forecasts,
+approximate algorithms or finite resource contracts.
+
 ## 2. Reduction using only actual finite labels
 
 Take an unweighted simple graph G on n vertices, with m edges. Let C(z) be

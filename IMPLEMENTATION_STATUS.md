@@ -12,6 +12,14 @@ changes the actual U. The complete all-pair domain excludes this independent
 factor shortcut. This is passive exact arithmetic, with no new candidate,
 resource certificate, AMP transport or installed-state quotient.
 
+The passive [positive count-partition audit](theory/proofs/POSITIVE_COUNT_PARTITION.md)
+adds a restricted exact decoder law without production changes. It checks
+29,614 cut-support partitions, five symbolic circuit completions and91 actual
+native histories (273 commits/1,267 forecasts). The unconditional exponential
+bound concerns fixed positive circuits for the unnormalized partition;
+normalization cancellation is an explicit counterexample to overextending it.
+No current worker timing, memory limit or decision-class status follows.
+
 The [positive pair-marginal construction](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
 now emits an ordinary native graph with O(K+n^2) incidences while retaining
 all K world slots. Its passive exact audit checks680 forecasts,1,360 complete
