@@ -5019,3 +5019,33 @@ committed prediction. No future case is inferred. Parent14264 starts worker
 6920 at17:09:20 UTC on2026-09-20; it is verified live at17:11:45 UTC. The
 remaining three attempts proceed under the same source, rule, order and
 limits. All constructor classes remain `UNRESOLVED`.
+
+## 144. Test the adaptive curve against an equally precise fixed control
+
+The protocol and passive analysis code are fixed at57ac5a9 before execution:
+arcsine coefficients on grid96 versus the preceding theorem's coefficient
+1/3 scalar control on grid96, both at B13/8 and alpha1/4 per path. There is
+no coefficient sweep, rule retuning or new GPU worker. All four exposed n8
+tapes and all retained controls remain in the calculation.
+
+Positive-state monotonicity gives conditional AMP first-crossing envelopes.
+Mixture paired cursors are117/69/55/51; the fixed control gives100-101/69/56/52.
+The first adaptive curve waits16-17 more events and has over0.075284 worse
+unseen CE. Its58 cells carry7,760 unsigned coefficient payload bits plus416
+wealth bits, versus the fixed control's one190-bit scalar. These are statistic
+costs only. On the last two cases the mixture gains one full-domain prediction,
+about0.00575 CE, while unseen envelopes coincide. Neither first-passage ordering
+nor universal deployment benefit follows from the classical wealth guarantee.
+
+The exact audit checks10,368 prefix enclosures and31,104 independent readouts,
+reconstructs256 reference forecasts, and verifies1,954 exact log intervals.
+Synthetic censored-path checks separately refuse a physical upper-envelope
+crossing as a substitute for an uncrossed reference identity and retain
+possible continued uniform deployment when the AMP lower path does not
+cross. No scalar outcome becomes a model result or an install certificate.
+
+This is evidence against promoting the larger adaptive state from power or
+regret alone. Keep the equally precise fixed control, keep the existing
+curve's continuation obligations intact, and do not turn this comparison
+into a menu search on the same labels. The live8ccacc0 matrix and actual
+first-row result remain separate and unchanged.

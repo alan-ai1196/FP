@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "all_paths_censored_procedures": 2,
+  "AMP_upper_crossing_cannot_replace_missing_reference": true,
+  "missing_AMP_lower_crossing_keeps_uniform_deployment_in_risk": true,
+  "ambiguous_reference_cursor": 63,
+  "scope": "synthetic report branches; no native model or physical execution"
+}

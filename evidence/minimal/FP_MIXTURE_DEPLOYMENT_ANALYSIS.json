@@ -1,0 +1,607 @@
+{
+  "status": "CONDITIONAL_PRECISION_MATCHED_ANALYSIS_PASS",
+  "analysis_source": "57ac5a98ce455e3ce1549d5d7f4e7cc683e32583",
+  "protocol": "experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md",
+  "evaluation_tapes_used": true,
+  "new_model_or_baseline_workers": 0,
+  "scope": "two fixed retrospective procedures; conditional scalar crossings and risk, no owned execution or imputed failed result",
+  "premises": "unchanged exact posterior; pre-cut admission; proper-mass error<=0.001; complete range, work, physical, retention, bridge and install gates succeed",
+  "declaration": {
+    "bound": "13/8",
+    "horizon": 64,
+    "epoch_events": 1,
+    "alpha_per_path": "1/4",
+    "log_terms": 12,
+    "mixture_coefficient_bits": 96,
+    "fixed_wealth_bits": 96,
+    "fixed_coefficient": "1/3"
+  },
+  "retained_owned_controls": {
+    "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json",
+    "analysis": "evidence/minimal/FP_LIKELIHOOD_MODEL_ANALYSIS.json",
+    "retained_at": "09ee265b56c15d0142f26914894158f0b31f287c",
+    "execution_source": "86083a0406292660115224f8e507626de4b442c5",
+    "analysis_source": "b85b39da8fa8440c243814a0ce6ee930d79f7ffe",
+    "original_failed_attempt": {
+      "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json",
+      "execution_source": "90f38834668546636b420f66b1a831b5969a2a13",
+      "attempted_workers": 1,
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "model_and_resource_registration_identical": true,
+      "scope": "original failed attempt retained; no inferred model score or complete phase count"
+    },
+    "scope": "all four completed B6 owned controls retained exactly; no new control worker"
+  },
+  "retained_posterior_controls": {
+    "journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+    "journal_commit": "6c202ea0caba09da252cc431ba19f6b8a9f430e3",
+    "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+    "cases": [
+      [
+        8,
+        "iid-c2",
+        16
+      ],
+      [
+        8,
+        "iid-c2",
+        17
+      ],
+      [
+        8,
+        "iid-c4",
+        18
+      ],
+      [
+        8,
+        "iid-c4",
+        19
+      ]
+    ],
+    "scope": "completed retained exact/AMP adaptive posterior; no new baseline execution"
+  },
+  "enclosure_audit": {
+    "complete_score_and_perturbation_words_per_method": 1296,
+    "paired_method_prefix_enclosures": 10368,
+    "independent_readout_and_floor_checks": 31104
+  },
+  "reference_forecasts": 256,
+  "rechecked_retained_reference_candidate_scores": 32,
+  "independent_exact_log_checks": 1954,
+  "maximum_independent_log_terms": 32,
+  "maximum_independent_log_operand_bits": 16061,
+  "cases": [
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "retained_B6_actual_install": 114,
+      "registered_B13_8_conditional_paired_cursors": [
+        119,
+        119
+      ],
+      "procedures": {
+        "mixture": {
+          "fresh": {
+            "reference_cursor": 117,
+            "AMP_earliest_possible_cursor": 117,
+            "AMP_guaranteed_by_cursor": 117,
+            "paired_first_possible_cursor": 117,
+            "paired_guaranteed_by_cursor": 117,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "552187377303291843347566945043555473125/1361129467683753853853498429727072845824",
+            "reference_terminal_or_crossing_wealth": "441908668933238126376220381608821337928206010803285004837824813/102844034832575377634685573909834406561420991602098741459288064",
+            "arithmetic_prefix_checks": 171,
+            "reference_completed_epochs": 57,
+            "reference_statistic_payload": {
+              "coefficient_cells": 58,
+              "coefficient_unsigned_payload_bits": 7760,
+              "scalar_wealth_numerator_denominator_bits": 416
+            },
+            "reference_curve_update_work": 1809408
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 44,
+              "reference_candidate_CE": [
+                "188544989203/549755813888",
+                "377089978407/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "376980415927/1099511627776",
+                "94301516663/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "734530825089/1099511627776",
+                "367265622029/549755813888"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "185473509645/549755813888",
+                "370947019291/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "185435847543/549755813888",
+                "92757187557/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "44866270017/68719476736",
+                "717860992369/1099511627776"
+              ]
+            }
+          }
+        },
+        "fixed_control": {
+          "fresh": {
+            "reference_cursor": 100,
+            "AMP_earliest_possible_cursor": 100,
+            "AMP_guaranteed_by_cursor": 101,
+            "paired_first_possible_cursor": 100,
+            "paired_guaranteed_by_cursor": 101,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "16768026988859534332577639267/79228162514264337593543950336",
+            "reference_terminal_or_crossing_wealth": "41615340078188080623846617401/9903520314283042199192993792",
+            "arithmetic_prefix_checks": 121,
+            "reference_completed_epochs": 40,
+            "reference_statistic_payload": {
+              "coefficient_cells": 0,
+              "coefficient_unsigned_payload_bits": 0,
+              "scalar_wealth_numerator_denominator_bits": 190
+            },
+            "reference_curve_update_work": 0
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 44,
+              "reference_candidate_CE": [
+                "188544989203/549755813888",
+                "377089978407/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "376980415927/1099511627776",
+                "94301516663/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "160638906525/274877906944",
+                "325877410911/549755813888"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "185473509645/549755813888",
+                "370947019291/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "185435847543/549755813888",
+                "92757187557/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "305182153227/549755813888",
+                "616689809663/1099511627776"
+              ]
+            }
+          }
+        }
+      },
+      "mixture_minus_fixed_conditional_CE": {
+        "unseen": [
+          "82776003267/1099511627776",
+          "45987808979/549755813888"
+        ],
+        "full_domain": [
+          "101170510609/1099511627776",
+          "107496685915/1099511627776"
+        ]
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "training_events": 60,
+      "evaluation_events": 64,
+      "retained_B6_actual_install": 90,
+      "registered_B13_8_conditional_paired_cursors": [
+        67,
+        67
+      ],
+      "procedures": {
+        "mixture": {
+          "fresh": {
+            "reference_cursor": 69,
+            "AMP_earliest_possible_cursor": 69,
+            "AMP_guaranteed_by_cursor": 69,
+            "paired_first_possible_cursor": 69,
+            "paired_guaranteed_by_cursor": 69,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "25378896644740648741898254722894103/5192296858534827628530496329220096",
+            "arithmetic_prefix_checks": 27,
+            "reference_completed_epochs": 9,
+            "reference_statistic_payload": {
+              "coefficient_cells": 10,
+              "coefficient_unsigned_payload_bits": 1025,
+              "scalar_wealth_numerator_denominator_bits": 228
+            },
+            "reference_curve_update_work": 64512
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 44,
+              "reference_candidate_CE": [
+                "183633754467/549755813888",
+                "367267508935/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "183605771279/549755813888",
+                "367329845145/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "412617628629/1099511627776",
+                "412623008855/1099511627776"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "45524258941/137438953472",
+                "364194071529/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "91038898661/274877906944",
+                "364238847939/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "207171081805/549755813888",
+                "103586873685/274877906944"
+              ]
+            }
+          }
+        },
+        "fixed_control": {
+          "fresh": {
+            "reference_cursor": 69,
+            "AMP_earliest_possible_cursor": 69,
+            "AMP_guaranteed_by_cursor": 69,
+            "paired_first_possible_cursor": 69,
+            "paired_guaranteed_by_cursor": 69,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "40229643458751885097531707819/9903520314283042199192993792",
+            "arithmetic_prefix_checks": 27,
+            "reference_completed_epochs": 9,
+            "reference_statistic_payload": {
+              "coefficient_cells": 0,
+              "coefficient_unsigned_payload_bits": 0,
+              "scalar_wealth_numerator_denominator_bits": 190
+            },
+            "reference_curve_update_work": 0
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 44,
+              "reference_candidate_CE": [
+                "183633754467/549755813888",
+                "367267508935/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "183605771279/549755813888",
+                "367329845145/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "412617628629/1099511627776",
+                "412623008855/1099511627776"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "45524258941/137438953472",
+                "364194071529/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "91038898661/274877906944",
+                "364238847939/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "207171081805/549755813888",
+                "103586873685/274877906944"
+              ]
+            }
+          }
+        }
+      },
+      "mixture_minus_fixed_conditional_CE": {
+        "unseen": [
+          "-2690113/549755813888",
+          "2690113/549755813888"
+        ],
+        "full_domain": [
+          "-2665565/549755813888",
+          "2665565/549755813888"
+        ]
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "retained_B6_actual_install": 72,
+      "registered_B13_8_conditional_paired_cursors": [
+        54,
+        54
+      ],
+      "procedures": {
+        "mixture": {
+          "fresh": {
+            "reference_cursor": 55,
+            "AMP_earliest_possible_cursor": 55,
+            "AMP_guaranteed_by_cursor": 55,
+            "paired_first_possible_cursor": 55,
+            "paired_guaranteed_by_cursor": 55,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "22949977761031354867913547603921748677/5316911983139663491615228241121378304",
+            "arithmetic_prefix_checks": 45,
+            "reference_completed_epochs": 15,
+            "reference_statistic_payload": {
+              "coefficient_cells": 16,
+              "coefficient_unsigned_payload_bits": 1704,
+              "scalar_wealth_numerator_denominator_bits": 248
+            },
+            "reference_curve_update_work": 153600
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 48,
+              "reference_candidate_CE": [
+                "418552612167/1099511627776",
+                "52319076521/137438953472"
+              ],
+              "AMP_candidate_CE": [
+                "209126849277/549755813888",
+                "209429153401/549755813888"
+              ],
+              "conditional_deployed_CE": [
+                "57326815621/137438953472",
+                "229312532929/549755813888"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "100818146963/274877906944",
+                "403272587853/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "50381050153/137438953472",
+                "201751708477/549755813888"
+              ],
+              "conditional_deployed_CE": [
+                "226144452913/549755813888",
+                "452298059671/1099511627776"
+              ]
+            }
+          }
+        },
+        "fixed_control": {
+          "fresh": {
+            "reference_cursor": 56,
+            "AMP_earliest_possible_cursor": 56,
+            "AMP_guaranteed_by_cursor": 56,
+            "paired_first_possible_cursor": 56,
+            "paired_guaranteed_by_cursor": 56,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "362492221099802564404298247373/79228162514264337593543950336",
+            "arithmetic_prefix_checks": 48,
+            "reference_completed_epochs": 16,
+            "reference_statistic_payload": {
+              "coefficient_cells": 0,
+              "coefficient_unsigned_payload_bits": 0,
+              "scalar_wealth_numerator_denominator_bits": 196
+            },
+            "reference_curve_update_work": 0
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 48,
+              "reference_candidate_CE": [
+                "418552612167/1099511627776",
+                "52319076521/137438953472"
+              ],
+              "AMP_candidate_CE": [
+                "209126849277/549755813888",
+                "209429153401/549755813888"
+              ],
+              "conditional_deployed_CE": [
+                "57326815621/137438953472",
+                "229312532929/549755813888"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "100818146963/274877906944",
+                "403272587853/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "50381050153/137438953472",
+                "201751708477/549755813888"
+              ],
+              "conditional_deployed_CE": [
+                "114653050189/274877906944",
+                "114655314647/274877906944"
+              ]
+            }
+          }
+        }
+      },
+      "mixture_minus_fixed_conditional_CE": {
+        "unseen": [
+          "-5270445/549755813888",
+          "5270445/549755813888"
+        ],
+        "full_domain": [
+          "-3166176381/549755813888",
+          "-6314141085/1099511627776"
+        ]
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "training_events": 40,
+      "evaluation_events": 64,
+      "retained_B6_actual_install": 72,
+      "registered_B13_8_conditional_paired_cursors": [
+        50,
+        50
+      ],
+      "procedures": {
+        "mixture": {
+          "fresh": {
+            "reference_cursor": 51,
+            "AMP_earliest_possible_cursor": 51,
+            "AMP_guaranteed_by_cursor": 51,
+            "paired_first_possible_cursor": 51,
+            "paired_guaranteed_by_cursor": 51,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "188171406653556794627111471052951491/41538374868278621028243970633760768",
+            "arithmetic_prefix_checks": 33,
+            "reference_completed_epochs": 11,
+            "reference_statistic_payload": {
+              "coefficient_cells": 12,
+              "coefficient_unsigned_payload_bits": 1246,
+              "scalar_wealth_numerator_denominator_bits": 234
+            },
+            "reference_curve_update_work": 90112
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 48,
+              "reference_candidate_CE": [
+                "24067290525/68719476736",
+                "385076648401/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "192464661065/549755813888",
+                "385230686173/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "424880992781/1099511627776",
+                "53110941265/137438953472"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "378165613609/1099511627776",
+                "189082806805/549755813888"
+              ],
+              "AMP_candidate_CE": [
+                "189027559453/549755813888",
+                "94570669539/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "213494378343/549755813888",
+                "106748726967/274877906944"
+              ]
+            }
+          }
+        },
+        "fixed_control": {
+          "fresh": {
+            "reference_cursor": 52,
+            "AMP_earliest_possible_cursor": 52,
+            "AMP_guaranteed_by_cursor": 52,
+            "paired_first_possible_cursor": 52,
+            "paired_guaranteed_by_cursor": 52,
+            "no_paired_crossing_within_horizon_forced": false,
+            "continued_uniform_deployment_in_envelope": false,
+            "reference_minimum_wealth": "1",
+            "reference_terminal_or_crossing_wealth": "181359865312329639801595874481/39614081257132168796771975168",
+            "arithmetic_prefix_checks": 36,
+            "reference_completed_epochs": 12,
+            "reference_statistic_payload": {
+              "coefficient_cells": 0,
+              "coefficient_unsigned_payload_bits": 0,
+              "scalar_wealth_numerator_denominator_bits": 194
+            },
+            "reference_curve_update_work": 0
+          },
+          "scores": {
+            "unseen": {
+              "contexts": 48,
+              "reference_candidate_CE": [
+                "24067290525/68719476736",
+                "385076648401/1099511627776"
+              ],
+              "AMP_candidate_CE": [
+                "192464661065/549755813888",
+                "385230686173/1099511627776"
+              ],
+              "conditional_deployed_CE": [
+                "424880992781/1099511627776",
+                "53110941265/137438953472"
+              ]
+            },
+            "full_domain": {
+              "contexts": 64,
+              "reference_candidate_CE": [
+                "378165613609/1099511627776",
+                "189082806805/549755813888"
+              ],
+              "AMP_candidate_CE": [
+                "189027559453/549755813888",
+                "94570669539/274877906944"
+              ],
+              "conditional_deployed_CE": [
+                "13541001613/34359738368",
+                "433318106785/1099511627776"
+              ]
+            }
+          }
+        }
+      },
+      "mixture_minus_fixed_conditional_CE": {
+        "unseen": [
+          "-6537339/1099511627776",
+          "6537339/1099511627776"
+        ],
+        "full_domain": [
+          "-6329350099/1099511627776",
+          "-1579285937/274877906944"
+        ]
+      }
+    }
+  ]
+}

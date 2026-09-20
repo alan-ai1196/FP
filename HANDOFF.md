@@ -609,9 +609,16 @@ The [precision-matched retrospective comparison](experiments/joint_uncertainty/M
 now fixes exactly the arcsine curve and coefficient1/3 control at96
 fractional bits, following48b0ba3. The passive analysis requires committed
 clean dependencies before reading the four already exposed n8 tapes. It
-checks monotone score-tube propagation, retains missing crossings explicitly
-and grants no owned outcome. At declaration, this comparison has not run.
-It cannot modify or replace the live8ccacc0 matrix or its controls.
+now runs at committed57ac5a9: mixture paired cursors117/69/55/51 versus fixed
+100-101/69/56/52. The first mixture case has over0.075284 worse unseen CE;
+the last two gain one full-domain prediction, with matching unseen envelopes.
+There are10,368 exhaustive prefix bounds,31,104 independent readouts,256
+model-reference forecasts and1,954 exact log checks. Separate synthetic
+tests preserve censored reference/AMP paths and possible uniform deployment.
+These are conditional comparisons, not owned outcomes. Do not expand this
+into a coefficient search or replace the live8ccacc0 matrix. Keep the simpler
+fine-grid control in any future adaptive comparison; no general ordering is
+proved and the extra curve state has not earned a model recommendation.
 
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte

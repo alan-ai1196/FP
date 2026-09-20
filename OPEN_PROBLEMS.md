@@ -113,6 +113,15 @@ and state cost; whether that is useful under equal complete resources is
 unresolved. Power alone no longer justifies choosing the larger state.
 No model tape, new experiment or physical completion claim enters this law.
 
+The [subsequent fixed retrospective comparison](experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md)
+does use all four exposed tapes, without changing either declaration.
+Mixture117 versus fixed100-101 on the first case costs over0.075284 unseen
+CE; mixture55/51 versus fixed56/52 on the last two gains one prediction.
+Thus the adaptive state has no uniform deployment advantage, and these
+conditional results do not justify enlarging that design. Preserve the
+strong fine-grid scalar control and obtain actual complete outcomes before
+any model recommendation. Censored scalar paths never grant authority.
+
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and
 the actual wealth floor. It uses the explicit posterior-mixture alternative,

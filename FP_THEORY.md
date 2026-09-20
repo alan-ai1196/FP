@@ -2672,3 +2672,10 @@ matched fine-grid fixed-bet control has a stronger comparator bound with
 less statistical state. Thus finite power does not make the adaptive curve
 necessary, or order actual deployment performance. These are scoped theory
 and exact audits, not new physical or model outcomes.
+
+The [fixed precision-matched retrospective comparison](experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md)
+now encloses both procedures on all four retained tapes. The mixture waits
+16-17 more events on the first, with over0.075284 extra unseen CE, while
+crossing one event earlier on the last two. Its first curve has58 cells
+versus one scalar for the fixed control. These conditional reversals do not
+grant actual GPU outcomes or make either rule universally preferable.

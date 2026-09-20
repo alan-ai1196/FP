@@ -143,6 +143,15 @@ failure terms.2,430 scalar compositions,768 continuous native units and
 a stronger lower bound with less statistical state. These checks add no
 Runtime authority, physical completion premise or model outcome.
 
+The [precision-matched deployment calculation](experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md)
+runs from57ac5a9 with two fixed declarations. Monotone positive-state and
+scalar-floor tubes pass10,368 prefix checks/31,104 independent readouts.
+On256 retained reference forecasts, mixture paired cursors are117/69/55/51
+versus fixed100-101/69/56/52. The first mixture case's unseen CE is over
+0.075284 worse; the last two cross one event earlier. Separate censored-path
+checks prevent an AMP envelope from filling missing reference authority or
+dropping possible uniform deployment. No new model worker runs.
+
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,
 intermediates and failure checks remain; padding is never decoded and the

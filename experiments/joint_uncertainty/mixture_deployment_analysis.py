@@ -20,6 +20,7 @@ from fp_reference.persistence_mixture import initial_coefficients, next_mixture,
 
 B, C, GRID, HORIZON, BITS = F(13, 8), F(1, 3), 96, 64, 32768
 OUTPUT = ROOT/'evidence/minimal/FP_MIXTURE_DEPLOYMENT_ANALYSIS.json'
+SELF_OUTPUT = ROOT/'evidence/minimal/FP_MIXTURE_DEPLOYMENT_READER_AUDIT.json'
 PROTOCOL = 'experiments/joint_uncertainty/MIXTURE_DEPLOYMENT_ANALYSIS.md'
 DEPENDENCIES = ('src/reference_compiler', 'scripts', 'experiments/joint_uncertainty',
                 'experiments/adaptive_uncertainty', 'experiments/relation_noise')
@@ -147,6 +148,35 @@ def risks(case, exact, hidden, edges, evaluation, cutoff, possible):
     return result
 
 
+def censoring_audit():
+    words = ((0, 0, 0),)*HORIZON
+    for rule in declarations().values():
+        detail, possible = crossings({(0, 0): (F(1, 2), F(1, 2))}, words, 0, rule)
+        assert detail['reference_cursor'] is None and detail['AMP_earliest_possible_cursor'] is None
+        assert detail['no_paired_crossing_within_horizon_forced'] and possible == (None,)
+    fixed = declarations()['fixed_control']
+    p = F(5337, 10000)
+    absent, possible = crossings({(0, 0): (p, 1-p)}, words, 0, fixed)
+    assert absent['reference_cursor'] is None and absent['AMP_earliest_possible_cursor'] is not None
+    assert possible == (None,) and absent['no_paired_crossing_within_horizon_forced']
+    p = F(5347, 10000)
+    uncertain, possible = crossings({(0, 0): (p, 1-p)}, words, 0, fixed)
+    assert uncertain['reference_cursor'] < HORIZON and uncertain['AMP_guaranteed_by_cursor'] is None
+    assert None in possible and not uncertain['no_paired_crossing_within_horizon_forced']
+    evaluation = tuple((i, j, 0) for i, j in product(range(8), repeat=2))
+    exact = {(i, j): (p, 1-p) for i, j, _ in evaluation}
+    values = risks((8, 'synthetic-report-audit', 0), exact, (0,)*8, (), evaluation, 0, possible)
+    uniform = envelope.log(F(2))
+    for score in values.values():
+        lo, hi = map(F, score['conditional_deployed_CE'])
+        assert lo < uniform.lo <= uniform.hi <= hi
+    return {'status': 'PASS', 'all_paths_censored_procedures': 2,
+        'AMP_upper_crossing_cannot_replace_missing_reference': True,
+        'missing_AMP_lower_crossing_keeps_uniform_deployment_in_risk': True,
+        'ambiguous_reference_cursor': uncertain['reference_cursor'],
+        'scope': 'synthetic report branches; no native model or physical execution'}
+
+
 def audit():
     model = fixed_experiment.model
     source = model.git('rev-parse', 'HEAD')
@@ -203,9 +233,10 @@ def audit():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--self-test', action='store_true')
     args = parser.parse_args()
-    result = audit()
+    result = censoring_audit() if args.self_test else audit()
     text = json.dumps(result, indent=2)+'\n'
     if args.write:
-        OUTPUT.write_text(text, encoding='utf-8')
+        (SELF_OUTPUT if args.self_test else OUTPUT).write_text(text, encoding='utf-8')
     print(text, end='')
