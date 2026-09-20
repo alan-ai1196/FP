@@ -2605,3 +2605,12 @@ measured host overhead with frozen slotted records. Complete snapshots and
 actual resource accounting remain in force. This is an implementation
 representation change, not information pruning or a new semantic action;
 recovery of the failed n16 model jobs has not been established.
+
+The [raw CUDA observation proof](theory/proofs/CUDA_RAW_READOUT.md) preserves
+all declared binary16/32 phase words through one prepaid byte-span copy per
+capture. Only initialized views are decoded; opaque transport is cleared
+while every device record remains. A retained8C-byte Runtime workspace owns
+even aliases held by failure tracebacks, and up to six complete captures are
+charged. This is a physical representation/observation change with different
+work and residency costs, not a new semantic action, erased learner state,
+helper authority or proof of model scaling.

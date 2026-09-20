@@ -416,7 +416,13 @@ class ReferenceCompilerRuntime:
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
         if cuda is not None:
-            self._event_router.charge_work('information', {'work': 4096}, 'bind-actual-CUDA-prefix-storage')
+            readout_bytes = 8*cuda.phase_output_cells
+            self._event_router.charge_work('information', {'work': 4096+readout_bytes}, 'bind-actual-CUDA-prefix-storage')
+            readout_id = f'{self._runtime_id}:cuda-raw-readout'
+            readout = ObjectSpec(readout_id, 'cuda_raw_readout_workspace',
+                {'reference_payload_bytes': readout_bytes, 'physical_objects': 1}, self._chi)
+            self._ledger.allocate(self._data_owner, (readout,))
+            self._buffers[readout_id] = bytearray(readout_bytes)
             self._cuda = _CudaPrefix(cuda)
         initial = self._construct(initial_program, 'deployment')
         if initial.status != 'BUILT_REFERENCE':
@@ -696,7 +702,12 @@ class ReferenceCompilerRuntime:
                       sources, reference_prediction, target):
         cfg = self._cuda.contract
         label = f'{candidate}:cuda:{origin}:{kind}:{len(self._cuda.phases)}'
-        charge = 128*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        # In addition to the existing phase charge, prepay six complete raw
+        # readbacks, byte decoding/clearing and view/extent checks. This primitive
+        # allowance is not a CPU wall-time or total Python-heap theorem.
+        # Unencoded simplex commits check both normalizers and their proposal,
+        # then the endpoint, prefix and retained trace: six captures in total.
+        charge = 320*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
         likelihood_workspace = 0
         if cfg.likelihood_encoding is not None:
             # The registered alternative lowering owns its actual program/Gamma
@@ -730,6 +741,9 @@ class ReferenceCompilerRuntime:
         self._ledger.allocate(self._data_owner, (extent,))
         frame = bytearray(cfg.phase_evidence_bytes)
         self._buffers[label] = frame
+        # The complete reusable readout extent was owned before CUDA binding.
+        # Keep it resident, including when an error traceback retains an alias.
+        readout_id = f'{self._runtime_id}:cuda-raw-readout'
         workspace_id = label+':likelihood-scratch' if likelihood_workspace else None
         if workspace_id is not None:
             scratch = ObjectSpec(workspace_id, 'likelihood_derivation_scratch',
@@ -757,7 +771,7 @@ class ReferenceCompilerRuntime:
                     origin=origin, observation_id=observation_id, sources=sources,
                     reference_prediction=reference_prediction, target=target,
                     normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
-                    source_domain=self._contract.source_domain)
+                    source_domain=self._contract.source_domain, readout_buffer=self._buffers[readout_id])
             except (ResourceExceeded, ArithmeticUnresolved):
                 raise
             except ContractError as error:

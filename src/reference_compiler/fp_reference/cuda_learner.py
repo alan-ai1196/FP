@@ -134,7 +134,8 @@ class CudaArithmetic:
     """
     backend_id = BACKEND_ID
 
-    def __init__(self, bit_limit: int, device=0, *, workspace=None, output_cell_limit=None):
+    def __init__(self, bit_limit: int, device=0, *, workspace=None, output_cell_limit=None,
+                 readout_buffer=None):
         natural(bit_limit, 'CUDA reference integer work limit', positive=True)
         natural(device, 'CUDA device ordinal')
         torch = _torch()
@@ -153,6 +154,9 @@ class CudaArithmetic:
             natural(output_cell_limit, 'prepaid CUDA output-cell allowance', positive=True)
         self.output_cell_limit = output_cell_limit
         self.output_cells = 0
+        if readout_buffer is not None and (workspace is None or type(readout_buffer) is not bytearray):
+            raise ContractError('bulk raw observation requires an owned phase and actual host workspace')
+        self._readout_buffer = readout_buffer
 
     def _keep(self, operation, value):
         if self._workspace is not None:
@@ -328,9 +332,9 @@ class CudaArithmetic:
         return self._keep('floor-grid', result)
 
     def check(self):
-        for _, value in self._records:
+        for (_, value), words in zip(self._records, self._raw_words()):
             mask = 0x7c00 if value.dtype == _torch().float16 else 0x7f800000
-            if any(word & mask == mask for word in raw_tensor(value)):
+            if any(word & mask == mask for word in words):
                 raise ArithmeticUnresolved('nonfinite actual CUDA phase intermediate retained')
         if self._workspace is not None:
             self._workspace.arena.check()
@@ -338,12 +342,14 @@ class CudaArithmetic:
     def raw_trace(self):
         """Raw results including a failed phase's infinities/NaNs, no authority."""
         torch = _torch()
-        result = []
-        for operation, value in self._records:
-            width = 16 if value.dtype == torch.float16 else 32
-            words = value.reshape(-1).view(getattr(torch, 'int'+str(width))).cpu().tolist()
-            result.append((operation, width, tuple(word & ((1 << width)-1) for word in words)))
-        return tuple(result)
+        return tuple((operation, 16 if value.dtype == torch.float16 else 32, words)
+                     for (operation, value), words in zip(self._records, self._raw_words()))
+
+    def _raw_words(self):
+        values = tuple(value for _, value in self._records)
+        if self._readout_buffer is not None:
+            return self._workspace.raw_words(values, self._readout_buffer)
+        return tuple(raw_tensor(value) for value in values)
 
 
 def _arithmetic(arith):

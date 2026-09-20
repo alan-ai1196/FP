@@ -236,7 +236,7 @@ class _CudaPrefix:
 
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-                normalizer_cap, activation_cap, source_domain=None):
+                normalizer_cap, activation_cap, source_domain=None, readout_buffer=None):
         if bit_limit < 1075:
             raise ArithmeticUnresolved('exact raw-value relation decoder exceeds its reference integer allowance')
         use_staged = origin == 'profile' or kind == 'commit'
@@ -279,7 +279,8 @@ class _CudaPrefix:
                     raise ContractError('derived likelihood model changed the actual program, Gamma, U or complete source domain')
             with self.arena.phase(object_id) as workspace:
                 arithmetic = gpu.CudaArithmetic(bit_limit, self.contract.storage.device,
-                    workspace=workspace, output_cell_limit=self.contract.phase_output_cells)
+                    workspace=workspace, output_cell_limit=self.contract.phase_output_cells,
+                    readout_buffer=readout_buffer)
                 tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
                 if kind == 'initialize':
                     result = gpu.initialize(program, rules, reference.theta, reference.cursor, arithmetic,

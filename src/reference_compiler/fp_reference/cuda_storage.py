@@ -310,6 +310,49 @@ class CudaWorkspace:
         self._open()
         self.arena.require_initialized(value)
 
+    def raw_words(self, values, buffer):
+        """Fresh read-only observation into borrowed, prepaid host workspace.
+
+        This also works after phase closure for failed-phase diagnostics. It
+        grants no continuation authority and does not clear an arena failure.
+        Only declared initialized floating views of this phase are decoded;
+        intervening bytes are opaque transport, never numeric inputs.
+        """
+        import torch
+        if type(values) is not tuple or type(buffer) is not bytearray:
+            raise ContractError('complete CUDA readout views and actual host buffer required')
+        layout = []
+        for value in values:
+            index = self.arena._region_for(value)
+            region = self.arena._regions[index]
+            if (region.phase != self.index or not region.initialized
+                    or value.dtype not in (torch.float16, torch.float32)):
+                raise ContractError('raw phase readout needs its initialized floating extents')
+            layout.append((value.storage_offset()*value.element_size(),
+                           value.numel(), value.element_size()))
+        nonempty = [(offset, count*width) for offset, count, width in layout if count]
+        if not nonempty:
+            return tuple(() for _ in layout)
+        first = min(offset for offset, _ in nonempty)
+        end = max(offset+size for offset, size in nonempty)
+        size = end-first
+        if size > len(buffer):
+            raise CudaStorageUnresolved('raw CUDA observation exceeds its prepaid host workspace')
+        # Borrow the paid bytearray, with no new CUDA allocation, arithmetic,
+        # dtype conversion or pinned-memory pool. The synchronous copy finishes
+        # before any CPU byte is decoded. Every call rereads the actual device.
+        host = torch.frombuffer(buffer, dtype=torch.uint8, count=size)
+        try:
+            host.copy_(self.arena._storage[first:end], non_blocking=False)
+            data = memoryview(buffer)
+            return tuple(tuple(int.from_bytes(data[offset-first+i*width:offset-first+(i+1)*width], 'little')
+                               for i in range(count)) for offset, count, width in layout)
+        finally:
+            # Opaque transport bytes must not become a new information source
+            # in a later public snapshot. Runtime starts this owned workspace
+            # at zero; each call changes and clears only this same prefix.
+            host.zero_()
+
     def finish(self, status):
         if self._closed or self.arena._active is not self:
             raise ContractError('CUDA workspace no longer has current phase ownership')

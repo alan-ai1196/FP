@@ -4706,3 +4706,45 @@ All four workers and parent23668 are terminal. Later main storage/readout
 changes did not run in86083a0 and cannot explain these outcomes. n16 recovery,
 useful evidence efficiency and broader model performance remain open; this
 experiment does not reopen Foundation/ERC-1 or freeze a new full release.
+
+## 135. Batch raw CUDA observation without losing words, ownership or failed state
+
+A short nonblocking sample of the original86083a0 worker motivates reducing
+per-intermediate device-to-host copies; its65 successful/34 failed samples
+are explicitly not a whole-job time estimate. The new observer copies the
+covering byte span once and decodes the same ordered initialized binary16/32
+views. No GPU arithmetic, complete operation record, failed intermediate,
+coordinate or lineage is removed. Opaque padding never becomes a numeric
+source and the CPU transport prefix is cleared in finally.
+
+The arena's per-allocation padding bound proves8C bytes suffice for a phase
+with C charged output cells, including zero-size and integer/bool temporaries.
+Runtime owns that workspace before CUDA binding and keeps it resident. An
+injected post-copy exception shows why phase-local freeing would be wrong:
+the actual traceback retains a CPU tensor alias. The retained owner covers
+that alias, and all four public cuts retain a zeroed buffer without cursor
+advance or failed-phase promotion.
+
+Final proof review finds that the draft's three-pass allowance misses an
+unencoded simplex commit: two positive-normalizer checks, proposal and final
+checks, outer prefix and trace total six captures. The work coefficient is
+corrected from the old128C to320C before commitment. An actual six-event
+simplex Runtime seals, independently checks19 phases per path and counts13
+three-capture phases plus six six-capture commits. This is an accounting
+correction within the existing work model, not an architecture action.
+
+The bounded observer audit checks all65,536 half words,526 single words,
+ordered/duplicate/subviews/empty views, nine refusals, padding/buffer poison
+and fresh detection of an infinity introduced after a prior successful check.
+Three4GiB/120-second jobs pass. An ABBA fixture reduces8,192 synchronous
+copies to one; scalar trials take0.237/0.269 seconds and bulk0.022/0.035,
+without any model-throughput claim. Full CUDA Runtime and13 installation
+cases pass again after the six-pass correction; a bounded likelihood stream
+seals at46 and installs at22 with286 phases per path,94 commit tapes and40
+fresh scores. These targeted checks do not relabel the baseline release.
+
+The added resident extent and increased declared work can change feasibility.
+Every completed n8 model ran the earlier86083a0 source; none used these
+optimizations. No previous n16 failure is erased and no recovery is claimed.
+The next research question remains useful deployment and complete model
+execution under a separately declared, semantically valid procedure.

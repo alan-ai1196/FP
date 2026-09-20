@@ -1,0 +1,59 @@
+{
+  "status": "PASSIVE_NONBLOCKING_DIAGNOSTIC",
+  "execution_source": "86083a0406292660115224f8e507626de4b442c5",
+  "process_id": 16644,
+  "process_creation_100ns": 134338432092245557,
+  "observer": "py-spy0.4.2, Windows binary wheel; separate process",
+  "observer_documentation": "https://github.com/benfred/py-spy#how-can-i-avoid-pausing-the-python-program",
+  "requested_seconds": 20,
+  "requested_samples_per_second": 5,
+  "record_output_time_UTC": "2026-09-14T08:42:49.853636+00:00",
+  "command": "py-spy record --pid 16644 --nonblocking --duration 20 --rate 5 --format raw",
+  "successful_stack_samples": 65,
+  "nonblocking_read_errors": 34,
+  "stacks_containing_raw_tensor_or_raw_trace": 20,
+  "stacks_containing_install_attempt_call": 5,
+  "leading_leaf_counts": [
+    [
+      "raw_tensor (fp_reference\\cuda_learner.py:611)",
+      13
+    ],
+    [
+      "raw_trace (fp_reference\\cuda_learner.py:344)",
+      7
+    ],
+    [
+      "mul (fp_reference\\cuda_learner.py:258)",
+      5
+    ],
+    [
+      "_array (fp_reference\\encoding.py:78)",
+      4
+    ],
+    [
+      "add (fp_reference\\cuda_learner.py:251)",
+      3
+    ],
+    [
+      "empty (fp_reference\\cuda_storage.py:296)",
+      3
+    ],
+    [
+      "<genexpr> (fp_reference\\semantics.py:67)",
+      2
+    ],
+    [
+      "_guard (fp_reference\\semantics.py:66)",
+      2
+    ],
+    [
+      "write (fp_reference\\runtime.py:745)",
+      2
+    ],
+    [
+      "(partial stack)",
+      2
+    ]
+  ],
+  "scope": "one short non-atomic diagnostic window; no pause, source change, model score, cursor claim or whole-job time proportion; missing/partial stacks may bias counts"
+}

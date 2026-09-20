@@ -44,6 +44,14 @@ n16 failure is relabeled or rerun, and complete model recovery is still
 unproved. Use actual source-bound outcomes to assess that question; a small
 metadata fixture does not establish a whole-worker resource bound.
 
+The repeated raw readback cost now has an [owned bulk observer](theory/proofs/CUDA_RAW_READOUT.md).
+It retains every device intermediate and adds a paid reusable host extent,
+including failure-alias lifetime. Exact word and complete Runtime/installation
+regressions pass; six captures in unencoded simplex commits are charged.
+An8,192-view fixture reduces8,192 copies to one, but useful model speed and
+n16 recovery remain unmeasured. Do not mistake that fixture or the earlier
+metadata saving for a complete-worker resource theorem.
+
 RN-5's deployment wait does not license context-specific betting under the
 same null. The [finite persistence criterion](theory/proofs/PERSISTENCE_FILTRATION_GEOMETRY.md)
 proves that valid factors for the pre-context mean-only null are dominated

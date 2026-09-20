@@ -69,6 +69,17 @@ canonical journal and independent b85b39d analysis contain every outcome;
 parent23668 and all four workers are terminal. No baseline reruns, new IID
 claim, n16 recovery or new complete release follow from this result.
 
+[Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
+retained8C-byte host workspace owned before device binding. All actual words,
+intermediates and failure checks remain; padding is never decoded and the
+workspace is cleared before public cuts. The lifetime includes exception
+traceback aliases. Binding and up to six captures per phase are prepaid,
+raising the phase coefficient128C to320C. The bounded word/failure/simplex
+audit, full CUDA Runtime and13-case installation audits, and bounded286-phase
+likelihood profile/install pass. These are targeted development checks, not
+new model outcomes or a complete release. Different work/storage charges
+can change admissible resource configurations.
+
 The [arena-region storage change](theory/proofs/ARENA_REGION_STORAGE.md) uses
 frozen slots for the same ten metadata fields. It preserves complete
 snapshot values, initialized extents and installation leases. All360 field

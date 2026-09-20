@@ -521,6 +521,18 @@ workers are terminal; do not restart them. Preserve the original90f3883
 failure. These retained tapes establish no new IID success rate, isolated
 mechanism effect, n16 recovery or full Runtime release.
 
+Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
+The device arithmetic and full operation tape stay intact. One retained8C-byte
+host workspace copies the phase span and decodes only initialized floating
+views, then clears opaque transport bytes. It stays owned even when an
+exception traceback retains a CPU alias. The phase fee rises128C to320C:
+unencoded simplex commits require six captures, a branch missed by an initial
+three-pass allowance. All65,536 half patterns,526 single patterns, failure
+ownership and actual six-capture commits pass. Complete Runtime/installation
+and bounded likelihood profile regressions pass separately. The measured
+8,192-to-one copy reduction is a fixture result; no model speed or n16
+recovery is established, and86083a0 did not execute this optimization.
+
 Main now uses [slotted complete arena-region records](theory/proofs/ARENA_REGION_STORAGE.md).
 All ten fields and complete snapshots remain. Four512MiB host jobs check
 1.5 million rows and show peak reductions12,582,912/25,907,200 bytes at250k/

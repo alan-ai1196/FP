@@ -1,0 +1,187 @@
+{
+  "status": "DEVELOPMENT_CUDA_READOUT_AUDIT_PASS",
+  "workers": [
+    {
+      "case": "words",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2085519360,
+        "peak_job_commit": 2086744064,
+        "user_100ns": 50000000,
+        "kernel_100ns": 20625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24500,
+        "process_creation_100ns": 134343882560920847
+      },
+      "result": {
+        "status": "BOUNDED_RAW_READOUT_FIXTURE_PASS",
+        "process_id": 24500,
+        "all_binary16_words_checked": 65536,
+        "binary32_words_checked": 526,
+        "ordered_duplicate_subview_and_empty_rows_checked": 7,
+        "readout_guard_rejections": 9,
+        "opaque_padding_poison_preserved_logical_words": true,
+        "buffer_poison_cannot_replace_fresh_device_observation": true,
+        "failed_phase_infinity_reread_and_old_record_detachment": true,
+        "benchmark_scalar_views": 8192,
+        "readback_trials": [
+          {
+            "mode": "scalar",
+            "host_elapsed_seconds": 0.23663039999996727,
+            "synchronous_device_to_host_copies": 8192
+          },
+          {
+            "mode": "bulk",
+            "host_elapsed_seconds": 0.02244939999991402,
+            "synchronous_device_to_host_copies": 1
+          },
+          {
+            "mode": "bulk",
+            "host_elapsed_seconds": 0.03534689999992224,
+            "synchronous_device_to_host_copies": 1
+          },
+          {
+            "mode": "scalar",
+            "host_elapsed_seconds": 0.26885559999982434,
+            "synchronous_device_to_host_copies": 8192
+          }
+        ],
+        "actual_arena_bytes": 16777216,
+        "native_allocation_counter": [
+          1,
+          16777216,
+          1
+        ],
+        "new_device_allocation_during_readout": false,
+        "scope": "exact helper word and guard audit; timings are this fixture only; no model outcome or complete Runtime certificate"
+      }
+    },
+    {
+      "case": "owned",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224807936,
+        "peak_job_commit": 2226036736,
+        "user_100ns": 18593750,
+        "kernel_100ns": 6562500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25744,
+        "process_creation_100ns": 134343882610929728
+      },
+      "result": {
+        "status": "OWNED_READOUT_LIFETIME_AND_FAILURE_AUDIT_PASS",
+        "process_id": 25744,
+        "zero_owned_workspace_public_boundaries": 4,
+        "owned_workspace_bytes": 32768,
+        "checked_CUDA_phases_before_injected_failure": 6,
+        "failed_copy_retains_its_actual_exception": true,
+        "traceback_alias_still_has_a_paid_live_owner": true,
+        "opaque_transport_bytes_cleared_before_failed_public_cut": true,
+        "failed_phase_not_promoted_or_previous_cursor_advanced": true
+      }
+    },
+    {
+      "case": "simplex",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2304315392,
+        "peak_job_commit": 2305540096,
+        "user_100ns": 30000000,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8180,
+        "process_creation_100ns": 134343882639789589
+      },
+      "result": {
+        "status": "UNENCODED_SIMPLEX_RAW_CAPTURE_BOUND_PASS",
+        "process_id": 8180,
+        "raw_capture_count_phase_histogram": {
+          "3": 13,
+          "6": 6
+        },
+        "maximum_complete_captures_per_phase": 6,
+        "complete_owned_simplex_audit": {
+          "n": 2,
+          "profiles": false,
+          "profile_passes": 0,
+          "status": "SEALED_CUDA_STREAM",
+          "native_posterior_forecasts": 6,
+          "independent_binary64_phases": 19,
+          "CUDA": {
+            "phases": 19,
+            "actual_arena_bytes": 16777216,
+            "largest_phase_frame_used": 18334,
+            "maximum_output_cells": 207
+          },
+          "profile_events": 0,
+          "retained_observations": 6,
+          "fresh_score_checks": 0,
+          "install_cursor": null,
+          "class_certificate": false,
+          "historical_class": null,
+          "binary64_maxima": {
+            "state_error": "187/101330991615836160",
+            "native_error": "3/1125899906842624",
+            "normalizer_error": "1/562949953421312",
+            "probability_error": "1/4503599627370496",
+            "division_error": "1125899906842625/25353012004564592533533691478016"
+          },
+          "CUDA_maxima": {
+            "state_error": "148277/94371840",
+            "native_error": "1/512",
+            "normalizer_error": "1/512",
+            "probability_error": "1639/16777216",
+            "division_error": "1/41943040"
+          },
+          "packed_peak": 5178697,
+          "device": {
+            "identity": {
+              "runtime_version": 13040,
+              "driver_api_version": 13040,
+              "driver_version": "616.92",
+              "pci_bus_id": "0000:0B:00.0",
+              "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+              "physical_vram_bytes": 25769803776
+            },
+            "execution_identity": [
+              "2.12.0+cu132",
+              "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+              "13.2",
+              "NVIDIA GeForce RTX 3090",
+              [
+                8,
+                6
+              ]
+            ],
+            "physical_vram_upper": 25769803776,
+            "scope": "uniform physical-board VRAM residency upper; not measured process usage, exclusive availability, host backing or cumulative allocation volume"
+          },
+          "host": {
+            "process_id": 8180,
+            "creation_100ns": 134343882639789589,
+            "lifetime_process_commit_peak": 2304315392,
+            "job_commit_peak": 2305540096,
+            "process_user_100ns": 27031250,
+            "process_kernel_100ns": 7812500,
+            "job_user_100ns": 27031250,
+            "job_kernel_100ns": 7812500
+          },
+          "process_id": 8180,
+          "host_scope": "bind to completed job separately"
+        }
+      }
+    }
+  ]
+}
