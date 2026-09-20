@@ -5175,3 +5175,31 @@ effects have opposite signs. Neither uniform power improvement nor a
 population effect follows. Two c4 jobs remain: parent14264 starts worker30700
 at18:30:54 UTC. The separately registered n16 recovery worker2660 is still
 live; concurrency is explicit, with no exclusive-device timing claim.
+
+## 149. Share positive marginals without identifying complete learners
+
+The literal likelihood graph repeats every ordered query inside every
+latent world. A new [ordinary positive circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
+shares prefix masses, bit-filtered trees and balanced parity sums before
+combining them with the actual query sources. It uses O(K+n^2) incidences
+for K=2^(n-1) worlds. Fewer than K-1 explicit weight reads cannot serve all
+independent simplex vectors: two unread worlds admit an observable mass
+transfer. This matches incidence order without claiming compact-history
+memory hardness or optimal constants.
+
+At n8, actual graph edges fall10,368 to2,004 and scheduled observe cells
+41,949 to8,876. Nodes grow338 to985; the new graph exceeds the old grammar
+caps. At n16 edges fall8,913,408 to459,684, but even the smaller schedule
+still exceeds the old phase allowance. These are construction/schedule
+counts, not actual physical execution or the separate v5 recovery result.
+
+The exact audit checks680 forecasts,1,360 full gradients,966 actual native
+observe/commit pairs, eight profile/attachment cases,155 unread-coordinate
+witnesses and graph counts through n16. Every selected posterior update
+agrees. The fixed feature gradient differs by degree n+4 for n>=3, and
+its complete observed accumulator is retained and independently checked.
+At n2 diagonal query/target0 the literal/shared gradients are-4/45 and-8/15.
+An input within each scalar range but outside the one-hot domain gives
+forecasts13/18 versus49/66, showing that the complete source restriction
+is essential. No in-place learner quotient or borrowed Runtime authority
+is granted. Both registered model runs continue at their immutable sources.

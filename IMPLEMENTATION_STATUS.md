@@ -2,6 +2,16 @@
 
 ## Current implementation state (2026-09-21)
 
+The [positive pair-marginal construction](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
+now emits an ordinary native graph with O(K+n^2) incidences while retaining
+all K world slots. Its passive exact audit checks680 forecasts,1,360 complete
+gradients,966 native observe/commit pairs and actual graph counts through n16.
+Selected updates match the literal learner; fixed-slot gradients and caches
+belong to the new Program. It has not yet entered the owned constructor or
+AMP bridge. The n8 graph lies outside the old grammar caps, and even its
+smaller n16 schedule exceeds the old65,536-cell allowance. No existing
+experiment, complete-state quotient or decision-class certificate changes.
+
 Completed CUDA frames now become immutable after their final write, preserving
 all bytes and labels. The extra copy extent and publication work are paid;
 publication failures retain both actual buffers and leases. The unchanged

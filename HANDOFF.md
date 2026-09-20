@@ -2,6 +2,19 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current model-construction result, 2026-09-21:** a [shared positive marginal
+circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) reduces all-pair
+relation inference from O(n^2 K) to O(K+n^2) native incidences, K=2^(n-1).
+A K-1 coordinate-read lower bound matches its order for independent explicit
+simplex weights. Exact forecasts and selected unit updates agree; complete
+learners do not, as the retained fixed-slot gradient changes. The audit
+passes680 forecasts,1,360 full gradients and966 native observe/commit pairs.
+At n8 edges fall10,368 to2,004 but nodes grow338 to985, exceeding the old
+grammar caps. This is a new passive Program construction, not yet an owned
+Runtime candidate or AMP result. Next test its actual construction/profile,
+full-state bridge and installation under an explicit new finite declaration.
+Keep both running experiments and their registrations unchanged.
+
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a
 [byte-preserving immutable representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
 It pays for copy coexistence and publishes through the existing complete-root

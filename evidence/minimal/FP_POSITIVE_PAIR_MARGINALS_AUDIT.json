@@ -1,0 +1,327 @@
+{
+  "status": "PASS",
+  "scope": "exact passive native Program construction; no Runtime certificate",
+  "arithmetic": "fractions.Fraction with 32768-bit registered exact operation bound",
+  "arbitrary_weights": {
+    "forecasts": 680,
+    "complete_gradient_checks": 1360,
+    "fixed_slot_counterexample": {
+      "n": 2,
+      "weights": [
+        "1/2",
+        "1/2"
+      ],
+      "query": [
+        0,
+        0
+      ],
+      "target": 0,
+      "masses": [
+        "9",
+        "1"
+      ],
+      "literal_fixed_gradient": "-4/45",
+      "shared_fixed_gradient": "-8/15"
+    },
+    "cases": [
+      {
+        "n": 2,
+        "weight_cases": 4,
+        "ordered_queries": 4,
+        "shared": {
+          "nodes": 24,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 10,
+          "SUM_edges": 18,
+          "edges": 38,
+          "slots": 3,
+          "bindings": 0
+        },
+        "literal": {
+          "nodes": 14,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 6,
+          "PRODUCTs": 4,
+          "SUM_edges": 40,
+          "edges": 48,
+          "slots": 3,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 3,
+        "weight_cases": 6,
+        "ordered_queries": 9,
+        "shared": {
+          "nodes": 42,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 16,
+          "PRODUCTs": 20,
+          "SUM_edges": 38,
+          "edges": 78,
+          "slots": 5,
+          "bindings": 0
+        },
+        "literal": {
+          "nodes": 25,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 9,
+          "SUM_edges": 100,
+          "edges": 118,
+          "slots": 5,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 4,
+        "weight_cases": 10,
+        "ordered_queries": 16,
+        "shared": {
+          "nodes": 79,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 37,
+          "PRODUCTs": 34,
+          "SUM_edges": 88,
+          "edges": 156,
+          "slots": 9,
+          "bindings": 0
+        },
+        "literal": {
+          "nodes": 42,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 18,
+          "PRODUCTs": 16,
+          "SUM_edges": 256,
+          "edges": 288,
+          "slots": 9,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 5,
+        "weight_cases": 18,
+        "ordered_queries": 25,
+        "shared": {
+          "nodes": 147,
+          "sources": 10,
+          "state_reads": 0,
+          "SUMs": 85,
+          "PRODUCTs": 52,
+          "SUM_edges": 194,
+          "edges": 298,
+          "slots": 17,
+          "bindings": 0
+        },
+        "literal": {
+          "nodes": 69,
+          "sources": 10,
+          "state_reads": 0,
+          "SUMs": 34,
+          "PRODUCTs": 25,
+          "SUM_edges": 656,
+          "edges": 706,
+          "slots": 17,
+          "bindings": 0
+        }
+      }
+    ]
+  },
+  "learner": {
+    "native_observe_commit_pairs": 966,
+    "two_pass_profile_cases": 8,
+    "complete_state_checks": 1932,
+    "cases": [
+      {
+        "n": 2,
+        "exhaustive_depth": 3,
+        "alphabet": 8,
+        "histories_at_maximum_depth": 512
+      },
+      {
+        "n": 3,
+        "exhaustive_depth": 2,
+        "alphabet": 18,
+        "histories_at_maximum_depth": 324
+      }
+    ]
+  },
+  "circuit_counts": [
+    {
+      "n": 2,
+      "worlds": 2,
+      "shared": {
+        "nodes": 24,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 10,
+        "SUM_edges": 18,
+        "edges": 38,
+        "slots": 3,
+        "bindings": 0
+      },
+      "literal_nodes": 14,
+      "literal_edges": 48,
+      "shared_predict_output_cells": 122,
+      "shared_observe_output_cells": 153,
+      "literal_predict_output_cells": 168,
+      "literal_observe_output_cells": 207
+    },
+    {
+      "n": 3,
+      "worlds": 4,
+      "shared": {
+        "nodes": 42,
+        "sources": 6,
+        "state_reads": 0,
+        "SUMs": 16,
+        "PRODUCTs": 20,
+        "SUM_edges": 38,
+        "edges": 78,
+        "slots": 5,
+        "bindings": 0
+      },
+      "literal_nodes": 25,
+      "literal_edges": 118,
+      "shared_predict_output_cells": 222,
+      "shared_observe_output_cells": 297,
+      "literal_predict_output_cells": 374,
+      "literal_observe_output_cells": 484
+    },
+    {
+      "n": 4,
+      "worlds": 8,
+      "shared": {
+        "nodes": 79,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 37,
+        "PRODUCTs": 34,
+        "SUM_edges": 88,
+        "edges": 156,
+        "slots": 9,
+        "bindings": 0
+      },
+      "literal_nodes": 42,
+      "literal_edges": 288,
+      "shared_predict_output_cells": 452,
+      "shared_observe_output_cells": 602,
+      "literal_predict_output_cells": 882,
+      "literal_observe_output_cells": 1165
+    },
+    {
+      "n": 5,
+      "worlds": 16,
+      "shared": {
+        "nodes": 147,
+        "sources": 10,
+        "state_reads": 0,
+        "SUMs": 85,
+        "PRODUCTs": 52,
+        "SUM_edges": 194,
+        "edges": 298,
+        "slots": 17,
+        "bindings": 0
+      },
+      "literal_nodes": 69,
+      "literal_edges": 706,
+      "shared_predict_output_cells": 916,
+      "shared_observe_output_cells": 1190,
+      "literal_predict_output_cells": 2146,
+      "literal_observe_output_cells": 2852
+    },
+    {
+      "n": 8,
+      "worlds": 128,
+      "shared": {
+        "nodes": 985,
+        "sources": 16,
+        "state_reads": 0,
+        "SUMs": 839,
+        "PRODUCTs": 130,
+        "SUM_edges": 1744,
+        "edges": 2004,
+        "slots": 129,
+        "bindings": 0
+      },
+      "literal_nodes": 338,
+      "literal_edges": 10368,
+      "shared_predict_output_cells": 7360,
+      "shared_observe_output_cells": 8876,
+      "literal_predict_output_cells": 31554,
+      "literal_observe_output_cells": 41949
+    },
+    {
+      "n": 12,
+      "worlds": 2048,
+      "shared": {
+        "nodes": 14539,
+        "sources": 24,
+        "state_reads": 0,
+        "SUMs": 14225,
+        "PRODUCTs": 290,
+        "SUM_edges": 28600,
+        "edges": 29180,
+        "slots": 2049,
+        "bindings": 0
+      },
+      "literal_nodes": 4266,
+      "literal_edges": 327968,
+      "shared_predict_output_cells": 116964,
+      "shared_observe_output_cells": 136254,
+      "literal_predict_output_cells": 993658,
+      "literal_observe_output_cells": 1321717
+    },
+    {
+      "n": 16,
+      "worlds": 32768,
+      "shared": {
+        "nodes": 229741,
+        "sources": 32,
+        "state_reads": 0,
+        "SUMs": 229195,
+        "PRODUCTs": 514,
+        "SUM_edges": 458656,
+        "edges": 459684,
+        "slots": 32769,
+        "bindings": 0
+      },
+      "literal_nodes": 65826,
+      "literal_edges": 8913408,
+      "shared_predict_output_cells": 1868264,
+      "shared_observe_output_cells": 2164736,
+      "literal_predict_output_cells": 26903154,
+      "literal_observe_output_cells": 35816749
+    }
+  ],
+  "scope_checks": {
+    "unread_pair_witnesses": 155,
+    "source_range_without_one_hot_counterexample": {
+      "n": 3,
+      "active_sources": [
+        "x0:0",
+        "x0:1",
+        "x1:0"
+      ],
+      "literal_probabilities": [
+        "13/18",
+        "5/18"
+      ],
+      "shared_probabilities": [
+        "49/66",
+        "17/66"
+      ]
+    },
+    "lower_bound_scope": "independent simplex coordinates in an explicit-slot circuit; not encoded histories",
+    "complete_learner_equivalence_claimed": false,
+    "runtime_reachability_or_GPU_execution_claimed": false
+  }
+}

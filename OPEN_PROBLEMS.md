@@ -2,6 +2,16 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+**New model-construction question:** does the [positive shared marginal
+circuit](theory/proofs/POSITIVE_PAIR_MARGINAL_CIRCUIT.md) improve the actual
+owned learner's execution? The incidence order is now settled for explicit
+independent world weights: O(K+n^2) upper, K-1 read lower. Exact selected
+updates survive, but full gradients/caches differ and n8 nodes increase.
+Construct it through the real Runtime under a declared finite class, then
+check its actual profile, reference/AMP bridge, resources and installation.
+The old class caps exclude it; no graph substitution or old model-score
+transfer is allowed. This does not reopen the static ERC special-case program.
+
 **Active execution question:** does sharing complete immutable CUDA evidence
 reduce measured whole-worker memory enough to improve scale? The [preservation
 argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) and exact failure
