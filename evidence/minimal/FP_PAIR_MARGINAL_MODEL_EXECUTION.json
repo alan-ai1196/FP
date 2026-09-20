@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-09-20T19:42:16.5565010Z",
+  "processes": [
+    {
+      "ProcessId": 14264,
+      "ParentProcessId": 8940,
+      "CreationUtc": "2026-09-20T15:25:40.9181860Z",
+      "CommandLine": "\"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -B experiments/joint_uncertainty/run_likelihood_deployment.py --matrix --write"
+    },
+    {
+      "ProcessId": 30700,
+      "ParentProcessId": 14264,
+      "CreationUtc": "2026-09-20T18:30:54.9411780Z",
+      "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP-likelihood-deployment-run\\experiments\\joint_uncertainty\\run_likelihood_deployment.py --worker 2 --output F:\\FP-likelihood-deployment-run\\fp-deployment-model-oz75_0h6\\result.json"
+    },
+    {
+      "ProcessId": 20984,
+      "ParentProcessId": 27804,
+      "CreationUtc": "2026-09-20T19:41:16.9474610Z",
+      "CommandLine": "\"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -B experiments/joint_uncertainty/run_pair_marginal_model.py --matrix"
+    },
+    {
+      "ProcessId": 6820,
+      "ParentProcessId": 20984,
+      "CreationUtc": "2026-09-20T19:41:17.9086380Z",
+      "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP-pair-marginal-model-run\\experiments\\joint_uncertainty\\run_pair_marginal_model.py --worker 0 --output F:\\FP-pair-marginal-model-run\\fp-pair-marginal-model-h71tqual\\result.json"
+    }
+  ],
+  "execution_source": "ec373e78592c760d3987d74384924df9f0fc0079",
+  "execution_checkout": "F:/FP-pair-marginal-model-run",
+  "parent_process_id": 20984,
+  "worker_process_id": 6820,
+  "variant": "literal-v7",
+  "status": "LAUNCHED_NO_COMPLETED_OUTCOME",
+  "concurrent_likelihood_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "scope": "First worker of the fixed v7/v8 comparison; no exclusive-device timing claim. Terminal job binding and results await the source journal."
+}

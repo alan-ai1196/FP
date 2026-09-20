@@ -19,9 +19,11 @@ and install22 with classes UNRESOLVED:308 forecasts,1,990 binary64 phases,
 shrinks but packed peak grows; n8 preparation also has a larger conservative
 workspace. The [two-worker matched model protocol](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PROTOCOL.md)
 now fixes n8/c2 seed16, current v7 then v8, under identical caps and the common
-grammar985/839/130/10,368/129. Preflight passes; no new model worker has run
-at registration. Execute the committed protocol before claiming physical
-savings, retaining both complete physical outcomes and independent readers.
+grammar985/839/130/10,368/129. It is now running at immutableec373e7 in
+`F:\FP-pair-marginal-model-run`: parent20984 and first v7 worker6820 start
+at19:41:16/17 UTC on2026-09-20. The collected initial journal has zero
+completed outcomes and four checked baseline scores. Collect both complete
+physical outcomes and independent readers before claiming physical savings.
 Keep the running likelihood experiment and its registration unchanged.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a

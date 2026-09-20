@@ -19,8 +19,10 @@ The [next fixed comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PR
 registers two sequential current-source workers on n8/c2 seed16, v7 then v8,
 with identical caps and a common explicitly declared grammar. It includes
 the unfavorable v8 preparation workspace and full fixed phase padding.
-Preflight passes; complete outcomes and independent reader results remain
-to be executed. The old live matrix and all old model results stay unchanged.
+Preflight passes and execution is running at immutableec373e7, parent20984/
+first v7 worker6820. The initial journal has zero completed outcomes; wait
+for the same-source terminal/prefix results and independent readers. The old
+live matrix and all old model results stay unchanged.
 
 The fixed n16 execution-recovery question is [resolved for its one declared
 case](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md): current

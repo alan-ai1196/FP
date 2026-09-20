@@ -1,0 +1,144 @@
+{
+  "status": "PARTIAL_EXECUTION",
+  "registration_source": "ec373e78592c760d3987d74384924df9f0fc0079",
+  "registration": {
+    "case": [
+      8,
+      "iid-c2",
+      16
+    ],
+    "variants_in_order": [
+      {
+        "name": "literal-v7",
+        "solver": "native-binary-relation-simplex-posterior-v7",
+        "native": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "predict_cells": 31554,
+        "observe_cells": 41949,
+        "prepaid_scratch_bytes": 2029576576,
+        "prepaid_derivation_work": 58433467456
+      },
+      {
+        "name": "shared-v8",
+        "solver": "native-binary-relation-positive-pair-marginals-v8",
+        "native": {
+          "nodes": 985,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 839,
+          "PRODUCTs": 130,
+          "SUM_edges": 1744,
+          "edges": 2004,
+          "slots": 129,
+          "bindings": 0
+        },
+        "predict_cells": 7360,
+        "observe_cells": 8876,
+        "prepaid_scratch_bytes": 2723988736,
+        "prepaid_derivation_work": 54355928128
+      }
+    ],
+    "common_grammar": {
+      "nodes": 985,
+      "SUMs": 839,
+      "PRODUCTs": 130,
+      "edges": 10368,
+      "slots": 129
+    },
+    "training_events": 60,
+    "evaluation_events": 64,
+    "profile_passes": 1,
+    "Gamma": "fixed feature1; all128 selected worlds at1/128",
+    "unit": 1,
+    "rate": "1",
+    "reference_integer_bits": 32768,
+    "native_range_caps": "16",
+    "binary64_tolerances": "1/1000000000",
+    "AMP_state_native_normalizer_tolerance": "1/100",
+    "AMP_probability_tolerance": "1/1000",
+    "host_cap": 17179869184,
+    "timeout_ms": 7200000,
+    "packed_cap": 8589934592,
+    "work_per_role": 1000000000000000,
+    "phase_frame_bytes": 4194304,
+    "phase_output_cells": 65536,
+    "arena_bytes": 268435456,
+    "allocator_bytes": 536870912,
+    "persistence": {
+      "bound": "13/8",
+      "bet": "3/4",
+      "coefficient": "6/13",
+      "alpha_per_path": "1/4",
+      "total_alpha_allowance": "3/4",
+      "epoch_events": 1,
+      "horizon": 64,
+      "log_terms": 12,
+      "wealth_grid_bits": 16
+    },
+    "likelihood_encoding": {
+      "radix": "9",
+      "counter_bits": 64
+    },
+    "execution_identity": [
+      "2.12.0+cu132",
+      "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+      "13.2",
+      "NVIDIA GeForce RTX 3090",
+      [
+        8,
+        6
+      ]
+    ],
+    "retained_strong_posterior": {
+      "provenance": {
+        "journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+        "journal_commit": "6c202ea0caba09da252cc431ba19f6b8a9f430e3",
+        "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+        "cases": [
+          [
+            8,
+            "iid-c2",
+            16
+          ],
+          [
+            8,
+            "iid-c2",
+            17
+          ],
+          [
+            8,
+            "iid-c4",
+            18
+          ],
+          [
+            8,
+            "iid-c4",
+            19
+          ]
+        ],
+        "scope": "completed retained exact/AMP adaptive posterior; no new baseline execution"
+      },
+      "selected_case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "exact_unseen_CE": 0.34296133745245244,
+      "AMP_unseen_CE": 0.34295774970328297
+    },
+    "primary_endpoint": "complete execution, including final auditors, and completed job/packed peaks",
+    "secondary_endpoints": "actual frame/cell counts, bit words, native posterior agreement, fresh installation and deployed CE",
+    "scope": "one exposed fixed case; common finite grammar, no class proof, population or exclusive-device timing claim"
+  },
+  "baseline_score_checks": 4,
+  "workers": []
+}

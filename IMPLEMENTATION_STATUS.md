@@ -24,7 +24,10 @@ source, with common finite grammar and unchanged full4-MiB frames,16-GiB
 jobs, numerical/fresh rules and final auditors. The original model worker
 and result reader now accept a declared solver; their original defaults,
 historical registrations and12 reader-negative checks still pass. The new
-preflight checks all remaining contracts equal; no outcome exists yet.
+preflight checks all remaining contracts equal. The immutableec373e7 run
+starts at19:41:16 UTC on2026-09-20, parent20984/first worker6820. Its initial
+journal has zero completed outcomes and four independent baseline checks;
+the separate process observation records overlap with old worker30700.
 
 Completed CUDA frames now become immutable after their final write, preserving
 all bytes and labels. The extra copy extent and publication work are paid;

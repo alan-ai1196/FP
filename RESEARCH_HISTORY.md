@@ -5287,3 +5287,10 @@ while original default registrations and all12 reader-negative checks pass.
 The parent will retain physical attempts before reader outcomes and require
 two complete runs for paired claims. No new model execution has occurred
 at this registration, and there is no automatic retry or timing claim.
+
+The matrix starts at immutableec373e7 in`F:\FP-pair-marginal-model-run` on
+2026-09-20 at19:41:16 UTC, parent20984; literal worker6820 starts one second
+later. The source-bound initial journal is collected with zero completed
+workers and four independently checked baseline scores. Its separate
+process observation records overlap with likelihood parent14264/worker30700.
+No score or physical saving is inferred from launch.
