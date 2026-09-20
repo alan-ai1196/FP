@@ -5070,3 +5070,28 @@ This closes the exercised mixed-precision reachability gap. It neither
 completes all possible failure tests nor changes the retrospective deployment
 reversals. The extra adaptive state still needs a research justification
 against the strong scalar control; implementation success is not that proof.
+
+## 146. Preserve every CUDA frame byte while eliminating repeated snapshot payload copies
+
+The first tighter-bound n8 worker peaks at15,047,073,792 host bytes. Code
+inspection identifies a concrete representation cost: all completed CUDA
+frames remain bytearrays, and every complete snapshot copies them again.
+The748 four-MiB frames alone total3,137,339,392 bytes per copy. This is an
+extent calculation, not a measured attribution of the whole-worker peak.
+
+The [new representation](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md)
+converts a frame only after its final write, preserves all padding and fields,
+prepays work and the duplicate extent, and publishes with the existing root
+transaction. Expected or unexpected preparation failure keeps both buffers
+owned. Phase acceptance still follows successful retention. No mutable
+ingress, learner buffer, numerical operation or installed identity changes.
+
+The exact audit passes33 frames and17,904 complete-byte comparisons, checks
+all256 values and nonzero padding, preserves prior snapshots after a new
+frame, refuses two real resource boundaries before copying, and retains both
+buffers in four injected prepublication faults. The fixed host comparison
+uses128 one-MiB frames, two live complete snapshots,512-MiB/60-second jobs;
+actual simplex/likelihood installation and finalization failures have their
+own4-GiB/180-second fixtures. These bounded executions are pending at this
+commit. The live8ccacc0 experiment remains unchanged. No n16 or whole-model
+recovery is inferred from the exact frame-payload law.

@@ -1,5 +1,13 @@
 # FP Claims and Status
 
+Completed CUDA frames have a [scoped byte-preservation proof and exact audit](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
+For S simultaneous snapshots of N successfully finalized F-byte frames, the
+distinct frame payload changes from(S+1)NF toNF, with an additionalF-byte
+owned extent during conversion. Every byte and explicit label remains.
+This sublaw excludes other metadata, failed mutable frames and total host
+costs. Physical measurements and actual CUDA regressions are pending; no
+whole-model memory bound, n16 recovery or new completeness claim follows.
+
 Status vocabulary:
 
 - **PROVED** — theorem-level under stated assumptions.

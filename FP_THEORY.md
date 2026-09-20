@@ -2680,3 +2680,11 @@ now encloses both procedures on all four retained tapes. The mixture waits
 crossing one event earlier on the last two. Its first curve has58 cells
 versus one scalar for the fixed control. These conditional reversals do not
 grant actual GPU outcomes or make either rule universally preferable.
+
+The [completed-frame representation argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md)
+retains every CUDA evidence byte while allowing complete snapshots to share
+immutable payloads. It explicitly pays copy coexistence and root publication;
+resource refusals cannot grant phase acceptance. Its exact payload sublaw is
+not a whole-host memory or time bound. This is a registered implementation
+representation change, with no additional Foundation action or information
+quotient; bounded physical validation is recorded separately.

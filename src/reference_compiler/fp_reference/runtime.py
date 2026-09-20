@@ -784,6 +784,10 @@ class ReferenceCompilerRuntime:
                 raise RuntimeError('registered CUDA execution or raw capture violated its admitted inputs') from error
             try:
                 write(record)
+                # The final writer must retain no mutable alias across the
+                # publication below, including through a later traceback.
+                frame = None
+                self._seal_cuda_frame(label, origin=origin, candidate=candidate)
             except MemoryError:
                 raise
             except Exception as retain_error:
@@ -804,6 +808,51 @@ class ReferenceCompilerRuntime:
             if workspace_id is not None:
                 self._ledger.release(self._data_owner, workspace_id)
                 self._buffers.pop(workspace_id, None)
+
+    def _seal_cuda_frame(self, label, *, origin, candidate):
+        """Retain every completed frame byte once, with paid copy coexistence.
+
+        Only the registered final CUDA writer calls this private operation.
+        Snapshots already expose bytes; immutable frames can be shared by all
+        future snapshots. This does not seal a run or grant phase authority.
+        """
+        extent = self._ledger._objects[label]
+        if (extent.kind != 'owned_cuda_phase_frame' or extent.provenance != self._chi
+                or self._ledger._refs[label] != {self._data_owner: 1}
+                or type(self._buffers[label]) is not bytearray
+                or extent.residency != {'reference_payload_bytes': len(self._buffers[label]), 'physical_objects': 1}):
+            raise ContractError('finalization requires the single owned mutable CUDA evidence frame')
+        # Count a conservative envelope for the detached ledger/root copies as
+        # well as every copied payload byte. This is primitive work, not a
+        # bit-time or complete Python-heap bound. No old frame bytes are read
+        # while deriving the fee.
+        ledger = self._ledger
+        entries = (len(ledger._objects)*(len(ledger._owners)+2)
+                   +len(ledger._events)+len(ledger._owners)+len(ledger._retired)
+                   +len(self._buffers)+len(self.__dict__)+16)
+        work = len(self._buffers[label])+64*entries
+        if origin == 'construction':
+            self._router.charge_work('construct', {'work': work}, label+':seal-frame')
+        else:
+            purpose = 'deployment_event' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler_event'
+            self._event_router.charge_work(purpose, {'work': work}, label+':seal-frame')
+        copy_id = label+':immutable-copy'
+        self._ledger.allocate(self._data_owner, (ObjectSpec(copy_id, 'cuda_frame_copy_workspace',
+            extent.residency, self._chi),))
+        # Exact builtins on an exact bytearray; allocation failure retains the
+        # failed paid prefix and is handled by the public MemoryError guard.
+        self._buffers[copy_id] = bytes(self._buffers[label])
+        # Before the sole publication point, any failure leaves both actual
+        # buffers in the old root with live leases. The new root keeps the
+        # immutable payload under the same frame label and retires the
+        # temporary extent. No local retains the old mutable buffer.
+        ledger = self._ledger.prepare_transfer((), ((self._data_owner, copy_id, 1),))
+        buffers = dict(self._buffers)
+        buffers[label] = buffers.pop(copy_id)
+        next_root = dict(self.__dict__)
+        next_root.update(_ledger=ledger, _router=CostRouter(ledger, self._contract.work_roles),
+            _event_router=CostRouter(ledger, self._event_router.snapshot()), _buffers=buffers)
+        self.__dict__ = next_root
 
     def _float64_only_execute(self, kind, program, candidate, reference, floating=None, *,
                          origin='ordinary', observation_id=None, sources=None,

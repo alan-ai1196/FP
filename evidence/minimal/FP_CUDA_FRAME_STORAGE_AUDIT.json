@@ -1,0 +1,24 @@
+{
+  "status": "EXACT_FRAME_PRESERVATION_PASS",
+  "frames": 33,
+  "full_frame_bytes_compared": 17904,
+  "all_256_byte_values_exercised": true,
+  "prior_snapshot_unchanged_after_next_frame": true,
+  "new_snapshot_reuses_every_old_immutable_frame": true,
+  "unchanged_snapshot_source": {
+    "baseline": "b0c409c2c248e437450aaa7b9f081771303b22de",
+    "actual_snapshot_and_constructor_AST_unchanged": true,
+    "legacy_representation": "one bytearray per completed frame; exact prior snapshot method"
+  },
+  "pre_copy_refusals": [
+    "copy-residency",
+    "copy-work"
+  ],
+  "both_actual_buffers_remain_owned_after_faults": [
+    "prepare-release:ResourceExceeded",
+    "prepare-release:RuntimeError",
+    "prepare-router:ResourceExceeded",
+    "prepare-router:RuntimeError"
+  ],
+  "no_model_execution_or_certificate": true
+}

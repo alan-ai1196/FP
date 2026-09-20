@@ -2,6 +2,14 @@
 
 ## Current implementation state (2026-09-21)
 
+Completed CUDA frames now become immutable after their final write, preserving
+all bytes and labels. The extra copy extent and publication work are paid;
+publication failures retain both actual buffers and leases. The unchanged
+snapshot method can share finalized bytes. The [exact audit](evidence/minimal/FP_CUDA_FRAME_STORAGE_AUDIT.json)
+passes33 frames,17,904 byte comparisons, two real pre-copy resource refusals
+and four injected prepublication failures. Bounded host/CUDA checks are the
+next execution obligation; this is not a new full release or model result.
+
 The research branch now has a [sparse exact likelihood analyzer and independent
 positivity verifier](theory/proofs/SPARSE_LIKELIHOOD_ANALYSIS.md). The complete
 small-grammar differential audit checks28,656 cases and21,204 native vertex

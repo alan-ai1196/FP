@@ -221,8 +221,11 @@ collisions return UNRESOLVED before code can be replaced.
 not a buffer or lease. Runtime checks the complete allocation batch before
 writing directly to the owned buffer. Identity hashes stream the same typed
 coordinates without a duplicate tagged tree. ASCII bytes stay compatible;
-non-ASCII encodings change. All buffers are private bytearrays, with public
+non-ASCII encodings change. Mutable buffers are private bytearrays, with public
 snapshot byte copies and the same object-preserving CPU install contract.
+Completed CUDA evidence frames now become immutable after their final write;
+snapshots share their complete bytes. The copy coexistence and publication
+are paid and audited in [the frame-preservation proof](../../theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
 Read [`OWNED_ENCODING.md`](../../theory/proofs/OWNED_ENCODING.md) and run
 `scripts/audit_owned_encoding.py` for the actual historical alias failure,
 code-point/size checks and old/new workspace measurements. They do not close

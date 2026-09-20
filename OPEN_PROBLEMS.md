@@ -2,6 +2,13 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+**Active execution question:** does sharing complete immutable CUDA evidence
+reduce measured whole-worker memory enough to improve scale? The [preservation
+argument](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) and exact failure
+checks now pass. Measure the fixed bounded old/new snapshot fixture and run
+actual likelihood/AMP installation regressions before making a physical claim.
+Do not infer n16 recovery from the completed-frame payload formula.
+
 **Current priority, 2026-09-20:** the scoped joint PRODUCT/SUM/range/precision
 law in XVII.31 closes the static resource study. ERC-1 is frozen in
 [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md). Work on
