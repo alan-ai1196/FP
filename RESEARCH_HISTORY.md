@@ -5496,3 +5496,28 @@ This is an improved compiler upper construction and an explicit remaining
 cost for that construction. It establishes no optimal forecast resource law,
 relation decoder, complete-state quotient or AMP bridge, and does not change
 either the completed deployment matrix or the running matched model protocol.
+
+## 161. The matched n8 literal control completes before the shared outcome
+
+The first worker of the fixed ec373e7 v7/v8 comparison completes normally.
+Current-source literal v7 seals124 and installs119, with completed job peak
+13,067,034,624 bytes and paid packed peak3,208,909,851 bytes. It retains64
+posterior checks,748 CUDA and748 binary64 phases,248 native commit tapes,
+41,949 maximum output cells and3,544,209 used frame bytes. Full4-MiB frames
+and every other registered cap remain unchanged. There is no timeout or
+job-limit termination, and the constructor class remains UNRESOLVED.
+
+The independent same-source reader passes six scores and two fresh paths,
+plus four retained strong-baseline scores. Candidate/deployed unseen CE is
+0.34296129149293825/0.6764169893250136. Collection verifies every dependency,
+the original registration, freshly recomputed preflight and exact agreement
+with the independently reread analysis before copying one raw journal capture.
+No baseline or model attempt is rerun.
+
+The second, shared-v8 worker4836 starts21:26:52 UTC on2026-09-20 under the
+same parent20984 and is observed live at21:30:37. Its outcome is pending.
+The paired comparison therefore remains UNRESOLVED_MISSING_COMPLETE_PAIR;
+the completed current control is not evidence of a shared-graph memory win.
+Both physical outcomes, full audits and raw word comparisons remain required
+by the unchanged protocol. Historical overlap with the completed likelihood
+matrix precludes an exclusive-device timing interpretation.

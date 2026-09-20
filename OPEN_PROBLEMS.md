@@ -55,9 +55,13 @@ The [next fixed comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_PR
 registers two sequential current-source workers on n8/c2 seed16, v7 then v8,
 with identical caps and a common explicitly declared grammar. It includes
 the unfavorable v8 preparation workspace and full fixed phase padding.
-Preflight passes and execution is running at immutableec373e7, parent20984/
-first v7 worker6820. The initial journal has zero completed outcomes; wait
-for the same-source terminal/prefix results and independent readers. The old
+Preflight passes and execution is running at immutableec373e7. The [literal
+control now completes](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md):
+seal124/install119, job peak13,067,034,624 and packed peak3,208,909,851 bytes,
+with all748 phases per path and the independent score/fresh reader passing.
+Shared-v8 worker4836 starts21:26:52 UTC under parent20984. Its complete physical
+outcome is the remaining registered question; the current prefix establishes
+no paired resource saving. Keep both attempts and the fixed caps. The old
 completed likelihood matrix and all old model results stay unchanged.
 
 The fixed n16 execution-recovery question is [resolved for its one declared

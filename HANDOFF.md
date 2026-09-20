@@ -73,9 +73,15 @@ workspace. The [two-worker matched model protocol](experiments/joint_uncertainty
 now fixes n8/c2 seed16, current v7 then v8, under identical caps and the common
 grammar985/839/130/10,368/129. It is now running at immutableec373e7 in
 `F:\FP-pair-marginal-model-run`: parent20984 and first v7 worker6820 start
-at19:41:16/17 UTC on2026-09-20. The collected initial journal has zero
-completed outcomes and four checked baseline scores. Collect both complete
-physical outcomes and independent readers before claiming physical savings.
+at19:41:16/17 UTC on2026-09-20. The [literal control now completes](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md):
+seal124/install119, job peak13,067,034,624 bytes and packed peak3,208,909,851.
+It checks64 posterior forecasts,748 CUDA/binary64 phases per path and248
+commit tapes. The same-source reader checks six scores/two fresh paths and
+four baseline scores. Candidate/deployed unseen CE is0.3429612915/0.6764169893;
+the class remains UNRESOLVED. Shared-v8 worker4836 starts21:26:52 UTC and is
+verified live under the same parent at21:30:37. The canonical journal has
+one completed outcome; the paired comparison remains unresolved. Collect
+the second full outcome and reader before claiming physical savings.
 The separate likelihood matrix is complete; preserve its original registration.
 
 **Current storage experiment, 2026-09-21:** completed CUDA evidence now has a

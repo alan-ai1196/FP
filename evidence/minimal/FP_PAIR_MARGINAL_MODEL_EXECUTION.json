@@ -33,5 +33,34 @@
   "variant": "literal-v7",
   "status": "LAUNCHED_NO_COMPLETED_OUTCOME",
   "concurrent_likelihood_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
-  "scope": "First worker of the fixed v7/v8 comparison; no exclusive-device timing claim. Terminal job binding and results await the source journal."
+  "scope": "First worker of the fixed v7/v8 comparison; no exclusive-device timing claim. Terminal job binding and results await the source journal.",
+  "followup_observations": [
+    {
+      "observed_utc": "2026-09-20T21:30:37.2789776Z",
+      "processes": [
+        {
+          "ProcessId": 20984,
+          "ParentProcessId": 27804,
+          "CreationUtc": "2026-09-20T19:41:16.9474610Z",
+          "CommandLine": "\"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -B experiments/joint_uncertainty/run_pair_marginal_model.py --matrix"
+        },
+        {
+          "ProcessId": 4836,
+          "ParentProcessId": 20984,
+          "CreationUtc": "2026-09-20T21:26:52.1495310Z",
+          "CommandLine": "C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -B F:\\FP-pair-marginal-model-run\\experiments\\joint_uncertainty\\run_pair_marginal_model.py --worker 1 --output F:\\FP-pair-marginal-model-run\\fp-pair-marginal-model-bxr3yk81\\result.json"
+        }
+      ],
+      "status": "LITERAL_CONTROL_VERIFIED_SHARED_WORKER_RUNNING",
+      "completed_worker_process_id": 6820,
+      "active_worker_process_id": 4836,
+      "active_variant": "shared-v8",
+      "completed_job_peak_bytes": 13067034624,
+      "same_source_model_score_checks": 6,
+      "same_source_fresh_path_checks": 2,
+      "baseline_checks": 4,
+      "paired_comparison": "UNRESOLVED_MISSING_COMPLETE_PAIR",
+      "scope": "One completed matched control; second worker observed live, without an outcome or resource-saving inference."
+    }
+  ]
 }

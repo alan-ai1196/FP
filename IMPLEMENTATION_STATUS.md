@@ -67,6 +67,13 @@ preflight checks all remaining contracts equal. The immutableec373e7 run
 starts at19:41:16 UTC on2026-09-20, parent20984/first worker6820. Its initial
 journal has zero completed outcomes and four independent baseline checks;
 the separate process observation records overlap with old worker30700.
+The [first current-source outcome](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
+is now collected: v7 seals124/installs119 with job peak13,067,034,624 and packed
+peak3,208,909,851 bytes. All748 CUDA/binary64 phases per path,248 commit tapes,
+six independent scores and two fresh paths pass. The constructor class is
+UNRESOLVED. Shared-v8 worker4836 starts21:26:52 UTC under the same parent;
+its result is pending. No paired resource or word-equivalence result follows
+from this one completed control.
 
 Completed CUDA frames now become immutable after their final write, preserving
 all bytes and labels. The extra copy extent and publication work are paid;

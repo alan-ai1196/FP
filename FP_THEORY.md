@@ -2714,6 +2714,13 @@ larger packed peak in the n3 comparison; no model-scale resource win follows.
 Count encodings, compact decoding hardness, Foundation, ERC-1 and existing
 model experiments remain unchanged.
 
+The [matched n8 comparison](experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md)
+now has a complete current-source literal control at ec373e7: seal124,
+install119, job peak13,067,034,624 bytes and packed peak3,208,909,851 bytes.
+All748 CUDA/binary64 phases per path and the same-source independent reader
+pass. The shared worker remains running; no paired physical saving, word
+equivalence or complete-class certificate is inferred from the first row.
+
 The separate [fixed n16 v5 execution test](experiments/joint_uncertainty/MODEL_STORAGE_RECOVERY_RESULTS.md)
 now completes at75e4f93 under its original16-GiB/two-hour envelope, with all
 1,958 CUDA and1,958 binary64 phases checked and an8,229,326,848-byte job peak.
