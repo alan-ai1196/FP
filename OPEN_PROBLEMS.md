@@ -68,8 +68,9 @@ install at8 rather than the retained bound6 fixture's22. Useful n8 deployment
 improvement and a power ordering remain unproved. The [next fixed four-case
 protocol](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
 registers bound13/8, coefficient6/13, unchanged learner/tapes/resource caps
-and all retained controls. It has no new model outcome yet. Execute it from
-one committed immutable source; do not replace this question with a bet menu.
+and all retained controls. It is running at immutable8ccacc0, with zero
+completed outcomes in the initial journal. Keep that source fixed and retain
+every result; do not replace this question with a bet menu.
 Its reader distinguishes numerical thresholds, retained owned crossings and
 actual installs, and never fills an evidence path after it stops.
 

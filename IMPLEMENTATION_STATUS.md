@@ -87,8 +87,12 @@ declaration differs and retains the complete B6 and strong posterior controls.
 Its detailed fresh recorder separates numerical threshold, owned crossing
 and installation, including a failed save after a crossing event. The
 independent reader validates only retained scalar prefixes and checks all
-old results. Two actual reference cases and nine adversarial refusals pass;
-there are zero new model workers at registration. No success is inferred
+old results. Two actual reference cases and nine adversarial refusals pass.
+The committed matrix starts at8ccacc0 on2026-09-20 at15:25:40 UTC in
+`F:\FP-likelihood-deployment-run`, parent14264/first worker2444. The verified
+initial journal and same-source reader record zero completed outcomes and
+24/4/16 old model-score/decision/strong-control checks. Both processes are
+live at launch; keep the execution source fixed. No success is inferred
 from the small n2 reachability audit or the larger coefficient.
 
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a

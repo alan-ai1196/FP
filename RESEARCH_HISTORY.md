@@ -4825,3 +4825,11 @@ and16 strong posterior scores. These are reader-development results with
 zero new model workers. Execute the committed protocol from an immutable
 checkout before making any n8 improvement claim; no bet menu or control
 rerun is authorized by this registration.
+
+The registered matrix starts from immutable8ccacc0 in a separate execution
+checkout on2026-09-20 at15:25:40 UTC. Parent14264 and first worker2444 are
+observed live with matching commands and creation times. The initial journal
+is retained only after same-source registration and reader checks; it has
+zero completed outcomes. The reader rechecks24 B6 scores, four B6 decisions
+and16 posterior scores. These launch observations establish no new model
+outcome. Keep the execution source fixed while main research proceeds.

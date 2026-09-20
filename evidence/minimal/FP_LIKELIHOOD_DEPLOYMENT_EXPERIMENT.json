@@ -1,0 +1,236 @@
+{
+  "status": "PARTIAL_EXECUTION",
+  "registration_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "registration": {
+    "model_and_resources": {
+      "cases": [
+        {
+          "case": [
+            8,
+            "iid-c2",
+            16
+          ],
+          "training_events": 60,
+          "native": {
+            "nodes": 338,
+            "sources": 16,
+            "state_reads": 0,
+            "SUMs": 258,
+            "PRODUCTs": 64,
+            "SUM_edges": 10240,
+            "edges": 10368,
+            "slots": 129,
+            "bindings": 0
+          },
+          "grammar": {
+            "nodes": 676,
+            "SUMs": 516,
+            "PRODUCTs": 128,
+            "edges": 20736,
+            "slots": 258
+          },
+          "prepaid_derivation_work": 58433467456,
+          "prepaid_scratch_bytes": 2029576576,
+          "predict_cells": 31554,
+          "observe_cells": 41949
+        },
+        {
+          "case": [
+            8,
+            "iid-c2",
+            17
+          ],
+          "training_events": 60,
+          "native": {
+            "nodes": 338,
+            "sources": 16,
+            "state_reads": 0,
+            "SUMs": 258,
+            "PRODUCTs": 64,
+            "SUM_edges": 10240,
+            "edges": 10368,
+            "slots": 129,
+            "bindings": 0
+          },
+          "grammar": {
+            "nodes": 676,
+            "SUMs": 516,
+            "PRODUCTs": 128,
+            "edges": 20736,
+            "slots": 258
+          },
+          "prepaid_derivation_work": 58433467456,
+          "prepaid_scratch_bytes": 2029576576,
+          "predict_cells": 31554,
+          "observe_cells": 41949
+        },
+        {
+          "case": [
+            8,
+            "iid-c4",
+            18
+          ],
+          "training_events": 40,
+          "native": {
+            "nodes": 338,
+            "sources": 16,
+            "state_reads": 0,
+            "SUMs": 258,
+            "PRODUCTs": 64,
+            "SUM_edges": 10240,
+            "edges": 10368,
+            "slots": 129,
+            "bindings": 0
+          },
+          "grammar": {
+            "nodes": 676,
+            "SUMs": 516,
+            "PRODUCTs": 128,
+            "edges": 20736,
+            "slots": 258
+          },
+          "prepaid_derivation_work": 58433467456,
+          "prepaid_scratch_bytes": 2029576576,
+          "predict_cells": 31554,
+          "observe_cells": 41949
+        },
+        {
+          "case": [
+            8,
+            "iid-c4",
+            19
+          ],
+          "training_events": 40,
+          "native": {
+            "nodes": 338,
+            "sources": 16,
+            "state_reads": 0,
+            "SUMs": 258,
+            "PRODUCTs": 64,
+            "SUM_edges": 10240,
+            "edges": 10368,
+            "slots": 129,
+            "bindings": 0
+          },
+          "grammar": {
+            "nodes": 676,
+            "SUMs": 516,
+            "PRODUCTs": 128,
+            "edges": 20736,
+            "slots": 258
+          },
+          "prepaid_derivation_work": 58433467456,
+          "prepaid_scratch_bytes": 2029576576,
+          "predict_cells": 31554,
+          "observe_cells": 41949
+        }
+      ],
+      "baseline": {
+        "journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+        "journal_commit": "6c202ea0caba09da252cc431ba19f6b8a9f430e3",
+        "execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+        "cases": [
+          [
+            8,
+            "iid-c2",
+            16
+          ],
+          [
+            8,
+            "iid-c2",
+            17
+          ],
+          [
+            8,
+            "iid-c4",
+            18
+          ],
+          [
+            8,
+            "iid-c4",
+            19
+          ]
+        ],
+        "scope": "completed retained exact/AMP adaptive posterior; no new baseline execution"
+      },
+      "host_cap": 17179869184,
+      "timeout_ms": 7200000,
+      "packed_cap": 8589934592,
+      "work_per_role": 1000000000000000,
+      "phase_frame_bytes": 4194304,
+      "phase_output_cells": 65536,
+      "arena_bytes": 268435456,
+      "allocator_bytes": 536870912,
+      "reference_bits": 32768,
+      "native_cap": "16",
+      "binary64_tolerances": "1/1000000000",
+      "AMP_state_native_normalizer_tolerance": "1/100",
+      "AMP_probability_tolerance": "1/1000",
+      "Gamma": "feature1; 128 selected weights1/128",
+      "unit": 1,
+      "rate": "1",
+      "profile_passes": 1,
+      "likelihood_radix": "9",
+      "counter_bits": 64,
+      "execution_identity": [
+        "2.12.0+cu132",
+        "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+        "13.2",
+        "NVIDIA GeForce RTX 3090",
+        [
+          8,
+          6
+        ]
+      ],
+      "scope": "retrospective matched mechanism matrix; no new IID sample, class certificate or timing claim"
+    },
+    "owned_B6_control": {
+      "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_EXPERIMENT.json",
+      "analysis": "evidence/minimal/FP_LIKELIHOOD_MODEL_ANALYSIS.json",
+      "retained_at": "09ee265b56c15d0142f26914894158f0b31f287c",
+      "execution_source": "86083a0406292660115224f8e507626de4b442c5",
+      "analysis_source": "b85b39da8fa8440c243814a0ce6ee930d79f7ffe",
+      "original_failed_attempt": {
+        "journal": "evidence/minimal/FP_LIKELIHOOD_MODEL_AUDITOR_FAILURE.json",
+        "execution_source": "90f38834668546636b420f66b1a831b5969a2a13",
+        "attempted_workers": 1,
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "model_and_resource_registration_identical": true,
+        "scope": "original failed attempt retained; no inferred model score or complete phase count"
+      },
+      "scope": "all four completed B6 owned controls retained exactly; no new control worker"
+    },
+    "persistence": {
+      "bound": "13/8",
+      "bet": "3/4",
+      "coefficient": "6/13",
+      "alpha_per_identity": "1/4",
+      "alpha_total": "3/4",
+      "epoch_events": 1,
+      "horizon": 64,
+      "log_terms": 12,
+      "wealth_grid_bits": 16,
+      "score_paths": [
+        "exact-reference",
+        "cuda-half-single-stored-mass"
+      ],
+      "null_ids": [
+        "bounded-pre-context-stopped-reference-epoch-mean-v1",
+        "bounded-pre-context-stopped-cuda-mass-epoch-mean-v1"
+      ]
+    },
+    "implementation": {
+      "mass_bound_solver_introduced_at": "1997cb9",
+      "refined_proof_kind": "current-native-mass-box",
+      "raw_observation_workspace_bytes": 524288,
+      "phase_output_work_coefficient": 320,
+      "mass_refinement_work_per_attempt": 45880
+    },
+    "scope": "four retained tapes; complete owned deployment with a tighter predeclared common bound; no new IID or timing claim"
+  },
+  "workers": []
+}

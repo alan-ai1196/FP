@@ -1,0 +1,41 @@
+{
+  "journal_status": "PARTIAL_EXECUTION",
+  "execution_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "analysis_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
+  "scope": "retained retrospective outcomes; no new GPU execution or Runtime authority",
+  "attempted_workers": 0,
+  "sealed_workers": 0,
+  "failed_workers": 0,
+  "halted_unresolved_workers": 0,
+  "independent_model_score_checks": 0,
+  "independent_fresh_path_checks": 0,
+  "worker_verified_CUDA_and_binary64_phases_each": 0,
+  "retained_B6_score_checks": 24,
+  "retained_B6_decisions": 4,
+  "retained_posterior_score_checks": 16,
+  "new_control_workers": 0,
+  "maximum_completed_job_bytes": null,
+  "groups": [
+    {
+      "law": "iid-c2",
+      "scored_workers": 0,
+      "installed_workers": 0,
+      "expected_CE_binary64": {
+        "candidate_stream_unseen": null,
+        "deployed_stream_unseen": null,
+        "adaptive_exact_unseen": null
+      }
+    },
+    {
+      "law": "iid-c4",
+      "scored_workers": 0,
+      "installed_workers": 0,
+      "expected_CE_binary64": {
+        "candidate_stream_unseen": null,
+        "deployed_stream_unseen": null,
+        "adaptive_exact_unseen": null
+      }
+    }
+  ],
+  "workers": []
+}

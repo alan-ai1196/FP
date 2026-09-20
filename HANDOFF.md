@@ -534,10 +534,13 @@ phases and the CUDA job280 device phases. Reference, paired CPU and CUDA
 persistence regressions pass. This is development reachability, not a new n8
 outcome. The [next deployment protocol](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
 now fixes the same four cases at bound13/8 and coefficient6/13, keeping the
-learner, tapes, alpha, resource caps and all prior controls. No new model job
-has run at registration. Use `run_likelihood_deployment.py --matrix --write`
-from a separate committed clean checkout and keep that source immutable.
-Use its independent reader with `--partial` until the journal is terminal.
+learner, tapes, alpha, resource caps and all prior controls. The matrix starts
+at immutable8ccacc0 in `F:\FP-likelihood-deployment-run` on2026-09-20 at
+15:25:40 UTC, parent14264 and first worker2444. Both are live at launch
+verification; the initial canonical journal contains zero completed outcomes.
+Keep that execution checkout's HEAD/dependencies fixed. Do not start a second
+parent or resume merely because an observation handle is lost. Use its
+committed independent reader with `--partial` until the journal is terminal.
 The reader checks retained score prefixes and separates numerical crossings,
 owned crossings and installation. Two actual reference scenarios include
 failed crossing retention; nine forged records are rejected. All24 old model
