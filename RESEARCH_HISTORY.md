@@ -4796,3 +4796,32 @@ current solver is a validated route to a separately registered deployment
 experiment. It establishes neither n8 improvement nor a power ordering, and
 does not transfer an uninterrupted or differently stopped epoch-null to the
 new procedure. The completed four-case bound6 study remains unchanged.
+
+## 137. Register the tighter-bound deployment test and distinguish threshold from authority
+
+The mass-box proof makes the existing common coefficient6/13 reachable, but
+does not show useful n8 deployment or a finite-horizon ordering over1/8.
+One fixed protocol therefore registers B13/8 on all four retained tapes.
+The runner compares full setups: only the persistence declaration differs;
+learner, graph, Gamma/U, alpha and all resource caps stay fixed. Current
+slotted metadata and owned bulk observation are included with their actual
+charges, so successful execution and candidate-word agreement must be tested.
+All four B6 results, the original auditor failure, both earlier v5 rates and
+the exact/actual AMP posterior controls remain at their original sources.
+
+Before launch, actual reference execution exposes a reporting distinction:
+an event can cross the numerical threshold while retaining its crossing
+identity fails. The event is real, but installation authority is absent.
+The detailed recorder preserves both facts, each path's retained scalar
+prefix and paid refinement attempts. It never supplies hypothetical scores
+after an identity stops. The independent reader checks rule, path, alpha,
+wealth floor, cursor, owned crossing and paired installation separately;
+complete phase, range and transport evidence remains the worker's scope.
+
+Two actual reference paths, including injected crossing-retention failure,
+pass. Nine forged rule/scope/wealth/cursor/work/install records are refused.
+The common reader still checks all24 prior model scores, four old decisions
+and16 strong posterior scores. These are reader-development results with
+zero new model workers. Execute the committed protocol from an immutable
+checkout before making any n8 improvement claim; no bet menu or control
+rerun is authorized by this registration.

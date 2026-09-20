@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "actual_reference_scenarios": 2,
+  "forged_rule_scope_wealth_cursor_work_and_install_refusals": 9,
+  "numeric_crossing_without_owned_crossing_preserved": true,
+  "scope": "reader development cases; no synthetic successful model worker",
+  "retained_B6_score_checks": 24,
+  "retained_B6_decisions": 4,
+  "retained_posterior_score_checks": 16,
+  "new_model_workers": 0
+}

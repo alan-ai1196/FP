@@ -105,7 +105,7 @@ def prior_auditor_failure(registration_value):
             'scope': 'original failed attempt retained; no inferred model score or complete phase count'}
 
 
-def setup(case):
+def setup(case, *, gain_bound=F(6)):
     assert case in CASES
     n, cutoff = case[0], 10*len(support(case))
     cfg, graph, online, _ = fixture(n)
@@ -117,7 +117,7 @@ def setup(case):
     profile = ProfileSpec('warm', ids[:cutoff], 1)
     source = RelationSourceSpec(tuple((f'x0:{j}', f'x1:{j}') for j in range(n)), solver=SOLVER)
     search = ReferenceSearchSpec('native', grammar, ids[:cutoff], profile.profile_id, relation_sources=source)
-    persistence = registration(bound=F(6), horizon=n*n)
+    persistence = registration(bound=gain_bound, horizon=n*n)
     persistence = replace(persistence, rules=tuple(replace(rule, rule_id='cuda', score_path=CUDA_PATH)
         if rule.score_path == FLOAT64_PATH else rule for rule in persistence.rules))
     online = replace(online, data=stream, profiles=(profile,), searches=(search,), persistence=persistence)
@@ -130,7 +130,7 @@ def setup(case):
     return cfg, graph, online, cuda, policy, host
 
 
-def fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate):
+def fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate, *, detailed=False):
     identities = {p.identity_id: p for p in snapshot.persistence_identities}
     wealth, crossings = {key: F(1) for key in identities}, {}
     for event in snapshot.persistence_events:
@@ -140,6 +140,7 @@ def fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate):
         assert rule.score_path in (REFERENCE_PATH, CUDA_PATH)
         assert event.cursor >= identity.start_cursor and event.epoch_finished
         assert event.wealth_before == wealth[event.identity_id]
+        assert event.identity_id not in crossings, 'a numerically crossed path cannot score another event'
         assert (event.base_probability, event.candidate_probability) == expected[event.observation_id]
         check_gain(event)
         assert event.wealth_after == wealth_oracle(event.wealth_before, event.gain.lower, 1, rule)
@@ -147,22 +148,46 @@ def fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate):
         if event.wealth_after*rule.alpha >= 1:
             crossings.setdefault(event.identity_id, event.cursor+1)
     for key, identity in identities.items():
-        assert identity.crossing_cursor == crossings.get(key)
+        if detailed and identity.crossing_cursor is None and key in crossings:
+            assert identity.status == 'UNRESOLVED', 'an unretained crossing cannot remain active'
+        else:
+            assert identity.crossing_cursor == crossings.get(key)
+    owned_crossings = sorted(p.crossing_cursor for p in identities.values() if p.crossing_cursor is not None)
     if snapshot.install_receipts:
         receipt, = snapshot.install_receipts
-        assert len(crossings) == 2 and snapshot.deployed_id == candidate
-        assert receipt.attempt.cursor == max(crossings.values())
+        assert len(owned_crossings) == 2 and snapshot.deployed_id == candidate
+        assert receipt.attempt.cursor == max(owned_crossings)
         phases = {p.object_id: p for p in snapshot.cuda.phases}
         for key, phase_id, raw, leases in receipt.cuda_transport.current:
             assert raw == phases[phase_id].raw_state and len(raw) == 7 and raw[6][3] is None and leases
         assert {row[0] for row in receipt.cuda_transport.current} == {base, candidate}
-    return {'events': len(snapshot.persistence_events), 'identities': len(identities),
-            'crossings': sorted(crossings.values()), 'install_transport_checked': bool(snapshot.install_receipts)}
+    result = {'events': len(snapshot.persistence_events), 'identities': len(identities),
+              'crossings': owned_crossings, 'install_transport_checked': bool(snapshot.install_receipts)}
+    if detailed:
+        result['numerical_crossings'] = sorted(crossings.values())
+        result['paths'] = []
+        for key, identity in identities.items():
+            events = tuple(e for e in snapshot.persistence_events if e.identity_id == key)
+            prefix = key+':current-whole-domain-mass-ratio:'
+            charges = tuple(e for e in snapshot.resources['events'] if e[1] == 'work' and e[5].startswith(prefix))
+            result['paths'].append({'score_path': identity.rule.score_path, 'status': identity.status,
+                'start_cursor': identity.start_cursor, 'cursor': identity.cursor,
+                'bound': str(identity.rule.bound), 'bet': str(identity.rule.bet), 'alpha': str(identity.rule.alpha),
+                'ratio_bound_kind': identity.ratio_bound_kind,
+                'ratio_bound': None if identity.ratio_bound is None else str(identity.ratio_bound),
+                'epochs_completed': identity.epochs_completed, 'epoch_events': identity.epoch_events,
+                'wealth': str(identity.wealth), 'crossing_cursor': identity.crossing_cursor,
+                'crossing_wealth': None if identity.crossing_wealth is None else str(identity.crossing_wealth),
+                'numerical_crossing_cursor': crossings.get(key), 'reason': identity.reason,
+                'score_records': [(e.cursor, str(e.wealth_after)) for e in events],
+                'refinement_charge_cursors': [int(e[5][len(prefix):]) for e in charges],
+                'refinement_charged_work': sum(dict(e[4])['work'] for e in charges)})
+    return result
 
 
-def worker(case):
+def worker(case, *, gain_bound=F(6), detailed_fresh=False):
     hidden, edges, train, evaluation = data(case)
-    cfg, graph, online, cuda, policy, host = setup(case)
+    cfg, graph, online, cuda, policy, host = setup(case, gain_bound=gain_bound)
     zero = Program((Sum('mass', ()),), graph.slot_count, (0, 0))
     rt = ReferenceCompilerRuntime(cfg, zero, online=online, cuda=cuda, policy=policy, host=host)
     base = rt.snapshot().deployed_id
@@ -241,7 +266,7 @@ def worker(case):
             'mass_words': phase.raw_prediction[3], 'division_words': phase.raw_prediction[5]})
     cuda_scores = {obs: tuple(mass[key, obs][observations[obs].target] for key in (base, candidate))
                    for obs in exact_scores if all((key, obs) in mass for key in (base, candidate))}
-    fresh = fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate) if phase_checked else None
+    fresh = fresh_audit(snapshot, exact_scores, cuda_scores, base, candidate, detailed=detailed_fresh) if phase_checked else None
     install = snapshot.install_receipts[0].attempt.cursor if snapshot.install_receipts else None
     measured = {}
     maximum_posterior_error = None
@@ -291,12 +316,13 @@ def worker(case):
     return result
 
 
-def bounded(index):
+def bounded(index, *, worker_script=None, directory_prefix='fp-likelihood-model-'):
     from windows_job_audit_support import run_in_job
-    directory = Path(tempfile.mkdtemp(prefix='fp-likelihood-model-', dir=ROOT))
+    directory = Path(tempfile.mkdtemp(prefix=directory_prefix, dir=ROOT))
     assert directory.resolve().parent == ROOT.resolve()
     output = directory/'result.json'
-    job = run_in_job(__file__, ('--worker', str(index), '--output', str(output)), commit_limit=CAP, timeout_ms=TIMEOUT)
+    job = run_in_job(__file__ if worker_script is None else worker_script,
+                     ('--worker', str(index), '--output', str(output)), commit_limit=CAP, timeout_ms=TIMEOUT)
     row = {'worker_status': 'FAILED', 'completed_job': asdict(job)}
     try:
         if output.exists():

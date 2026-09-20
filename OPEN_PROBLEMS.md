@@ -65,8 +65,13 @@ now closes the all-branch pre-context range obligation independently of
 successful-query AMP closeness. Current bounds are rechecked after updates;
 failed refinements stop before next ingress. Bounded CPU/CUDA n2 profiles
 install at8 rather than the retained bound6 fixture's22. Useful n8 deployment
-improvement and a power ordering remain unproved. Register and execute the
-next model test; do not replace these questions with a bet-menu study.
+improvement and a power ordering remain unproved. The [next fixed four-case
+protocol](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
+registers bound13/8, coefficient6/13, unchanged learner/tapes/resource caps
+and all retained controls. It has no new model outcome yet. Execute it from
+one committed immutable source; do not replace this question with a bet menu.
+Its reader distinguishes numerical thresholds, retained owned crossings and
+actual installs, and never fills an evidence path after it stops.
 
 The original bound6 rule now has a [finite-horizon power theorem](theory/proofs/LIKELIHOOD_PERSISTENCE_POWER.md)
 for the owned likelihood learner, including successful AMP score error and

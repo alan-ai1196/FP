@@ -2627,3 +2627,11 @@ an update or proof budget invalidates them. The original class-cap proof,
 stopped mean-null and wealth rule remain. Exact corner checking and bounded
 CPU/CUDA profile/install evidence establish the implementation scope, not
 new n8 model performance or a finite-horizon power ordering.
+
+The [registered tighter-bound experiment](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
+now tests that solver on the four retained n8 cases with coefficient6/13.
+It changes neither Foundation nor the learner and retains all old controls.
+The minimal reader explicitly separates a numerical threshold from a retained
+owned crossing and actual installation; a failed save cannot supply authority.
+Its two reference scenarios and nine adversarial refusals are development
+evidence, not a new model result or general power theorem.

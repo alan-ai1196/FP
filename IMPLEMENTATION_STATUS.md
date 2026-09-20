@@ -80,6 +80,17 @@ A still-native-safe update that invalidates the tighter bound correctly stops
 its identity. Whole-domain and prepaid-work refusals, plus all three existing
 persistence suites, pass. No new n8 matrix or complete release is claimed.
 
+The [bound13/8 deployment matrix](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
+is now registered for those same four n8 tapes, with coefficient6/13 and
+unchanged learner/resource caps. Its runner checks that only the persistence
+declaration differs and retains the complete B6 and strong posterior controls.
+Its detailed fresh recorder separates numerical threshold, owned crossing
+and installation, including a failed save after a crossing event. The
+independent reader validates only retained scalar prefixes and checks all
+old results. Two actual reference cases and nine adversarial refusals pass;
+there are zero new model workers at registration. No success is inferred
+from the small n2 reachability audit or the larger coefficient.
+
 [Bulk raw CUDA observation](theory/proofs/CUDA_RAW_READOUT.md) now uses a
 retained8C-byte host workspace owned before device binding. All actual words,
 intermediates and failure checks remain; padding is never decoded and the

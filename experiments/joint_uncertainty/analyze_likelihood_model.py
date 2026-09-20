@@ -138,7 +138,7 @@ def check_job(row, source, device):
     return True
 
 
-def check_result(result, case, baseline):
+def check_result(result, case, baseline, *, fresh_checker=check_fresh):
     hidden, edges, train, evaluation = model.data(case)
     cutoff, count = len(train), len(evaluation)
     assert result['case'] == list(case) and result['training_events'] == cutoff and result['evaluation_events'] == count == 64
@@ -172,7 +172,7 @@ def check_result(result, case, baseline):
     mass, raw = readouts(result['CUDA_readouts'], evaluation, cutoff, candidate)
     exact, _, _ = posterior_predictions(case[0], model.counts_from_training(case[0], train), case[1], evaluation)
     amp = {pair[:2]: mass['posterior', cutoff+i] for i, pair in enumerate(evaluation)} if candidate else None
-    decision, decision_checks = check_fresh(result, exact if candidate else None, amp, evaluation, cutoff)
+    decision, decision_checks = fresh_checker(result, exact if candidate else None, amp, evaluation, cutoff)
     installed = result['install_cursor']
     predictions = {'adaptive_exact': exact}
     divisions = {'adaptive_exact': None}

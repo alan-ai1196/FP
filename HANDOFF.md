@@ -532,8 +532,17 @@ conditional bet or changed null is introduced. The exact2025-box audit checks
 six fresh labels, versus22 in retained B6 fixtures; each checks280 binary64
 phases and the CUDA job280 device phases. Reference, paired CPU and CUDA
 persistence regressions pass. This is development reachability, not a new n8
-outcome. Register the next model procedure at bound13/8 before executing it;
-keep all four completed bound6 outcomes and strong controls.
+outcome. The [next deployment protocol](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_PROTOCOL.md)
+now fixes the same four cases at bound13/8 and coefficient6/13, keeping the
+learner, tapes, alpha, resource caps and all prior controls. No new model job
+has run at registration. Use `run_likelihood_deployment.py --matrix --write`
+from a separate committed clean checkout and keep that source immutable.
+Use its independent reader with `--partial` until the journal is terminal.
+The reader checks retained score prefixes and separates numerical crossings,
+owned crossings and installation. Two actual reference scenarios include
+failed crossing retention; nine forged records are rejected. All24 old model
+scores, four decisions and16 strong-control scores pass without rerunning a
+baseline. See the [reader audit](evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_READER_AUDIT.json).
 
 Main now uses [prepaid bulk CUDA observation](theory/proofs/CUDA_RAW_READOUT.md).
 The device arithmetic and full operation tape stay intact. One retained8C-byte
