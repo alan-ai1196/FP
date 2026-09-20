@@ -2,6 +2,20 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [factor-repetition audit](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
+now checks a dynamic failure under the existing simplex U: product beliefs
+change odds between worlds receiving identical evidence and acquire false
+certainty. The exact native factor path completes13 units, then refuses the
+gradient at repetition12 under32768 bits. A full-joint native control completes
+130 units, including128 repetitions, under the same guard. Another200 units
+check signed asymmetric priors and four fixed rates; all343 exact units check
+686 complete boundaries. An independent integer recurrence reaches104,343
+parameter-denominator bits at repetition15, with no large fractions retained.
+The actual binary64 learner completes66 units/25,450 checked primitives,
+matching the affordable13-unit reference prefix below10^-12 while retaining
+the later inference error. No production semantics, constructor, AMP bridge,
+model execution or resource certificate changes.
+
 The passive [query-matroid factor audit](theory/proofs/FACTOR_QUERY_MATROID.md)
 now checks exact independent-factor closure under arbitrary fixed world
 bijections. All40,320 encodings of eight worlds and both nontrivial factor

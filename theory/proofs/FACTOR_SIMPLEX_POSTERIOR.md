@@ -4,7 +4,7 @@ Status: **PROVED, SCOPED; EXACT NATIVE AUDIT AND COUNTEREXAMPLES**.
 This is a learner law for a different parameterization of a product belief.
 It uses the existing positive SUM/PRODUCT grammar and registered simplex U.
 It changes neither Foundation R4 nor ERC-1, and issues no Runtime, AMP,
-installation or complete-class certificate. The running model protocols
+installation or complete-class certificate. The registered model protocols
 remain unchanged.
 
 The [world-slot incidence lower bound](POSITIVE_PAIR_MARGINAL_CIRCUIT.md)
@@ -158,6 +158,14 @@ forces one2^(n-1)-category factor. Restricted query families behave differently:
 forest edge-parity coordinates remain independent, and the irreducible ranks
 are cycle-matroid component ranks. This extension still supplies no lower
 bound against compact encoded factors or arbitrary nonproduct learners.
+
+The [repeated-evidence extension](FACTOR_REPETITION_DYNAMICS.md) shows a
+dynamic consequence: even when the first projected marginals are exact,
+repetition can change odds between identically observed worlds and force
+false certainty. Positive constant damping does not remove this limit.
+A fixed-Gamma native witness also has Theta(2^k) explicit rational parameter
+bits after k events of the repeated query, versus Theta(k) for its exact
+full-joint control. Bounded graph size and range do not prevent this growth.
 
 ## 4. A linear-size positive native realization
 

@@ -2,6 +2,22 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current learner-dynamics result, 2026-09-21:** [repeated relative evidence](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
+can force the native product-belief learner toward false certainty. Exact
+Bayes preserves00:11 odds because every repeated query gives those worlds
+the same likelihood; projection changes the odds and then uses that false
+prior again. Every fixed positive damping rate has the same collapse or
+zero-bias failure. From uniform Gamma and two anchor labels, the native
+symmetric bias obeys m'=9m/(5+4m^2), m0=4/5; its later anchor forecast tends
+to9/10 instead of73/82. Reduced rational parameter denominators need
+Theta(2^k) bits after k repetitions despite44 nodes, four learned slots and
+bounded[0,8] internal values. Full Bayes needs Theta(k) bits here. The native
+32768-bit guard refuses repetition12 in the gradient; the full-joint native
+control completes128 repetitions with409-bit parameters. In total343 exact
+units/686 full states and66 checked binary64 units pass; finite arithmetic
+reproduces the inference gap. This is a scoped dynamic counterexample, not
+an encoded-state lower bound, Foundation change, Runtime or AMP extension.
+
 **Current learner-structure result, 2026-09-21:** the [query-matroid closure law](theory/proofs/FACTOR_QUERY_MATROID.md)
 extends the independent-factor obstruction to every fixed bijective world
 encoding, including nonlinear coordinates. Positive two-valued likelihoods

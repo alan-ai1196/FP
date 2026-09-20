@@ -2,6 +2,19 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+Compact approximate inference must now address the [dynamic repetition
+obstruction](theory/proofs/FACTOR_REPETITION_DYNAMICS.md). The native product
+learner can change conditional odds that its observations do not identify,
+then reinforce those changes. Every fixed positive damping rate retains
+the limiting failure. A fixed-Gamma two-bit history also gives Theta(2^k)
+explicit rational parameter bits, versus Theta(k) for full Bayes, with actual
+gradient refusal at repetition12 and a passing full-joint native control.
+The remaining question is a representation that preserves the relevant
+correlation or a justified finite-history approximation, including its
+complete numerical state. Constant parameter count, bounded range and
+one-step posterior-marginal correctness do not settle this. The result
+neither excludes compact symbolic encodings nor reopens static ERC cases.
+
 The [normalization gap](theory/proofs/POSITIVE_RATIONAL_READOUT.md) is now
 concrete: a positive fraction-pair compiler realizes positive rational odds
 with linear native graph overhead and bases(1,1). Directed-tree polynomials

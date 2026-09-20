@@ -2768,6 +2768,27 @@ active signed-count blocks reach full rank after7-11/14-24 evaluation labels
 on the retained n8/n16 tapes. Those are passive structural diagnostics, with
 no production, AMP, installation or model-outcome authority.
 
+The [repetition dynamics law](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
+shows why local posterior-marginal correctness is also insufficient for a
+bounded approximation over long histories. For two binary factors, repeated
+positive noisy equality evidence preserves exact00:11 posterior odds but
+changes the native product learner's represented odds. Every fixed positive
+rate eta<=1/2 collapses nonzero total bias toward one equal world; zero total
+bias instead tends to independent fair bits and loses the equality evidence.
+These are correlation-loss failures under the existing U, not new semantics.
+From uniform Gamma and two anchor observations, rate1/2 gives
+m'=9m/(5+4m^2), m0=4/5, and limiting next anchor forecasts9/10 versus73/82.
+After the first two reductions the integer recurrence has no cancellation,
+forcing Theta(2^k) bits in the actual reduced rational parameters after k
+repetitions, despite a fixed degree-two44-node Program and bounded native
+range. The same history's full posterior uses Theta(k) scalar bits. These
+are representation-specific laws, not arbitrary-encoding lower bounds.
+The native32768-bit guard refuses the12th repetition's gradient; a full-joint
+native control passes128 repetitions.343 exact units/686 full states and66
+checked binary64 units support the result; the latter reproduces the inference
+error while matching the affordable exact prefix. No Runtime/AMP certificate
+or change to completed model experiments follows.
+
 The [positive count-partition decoder law](theory/proofs/POSITIVE_COUNT_PARTITION.md)
 gives a separate unconditional2^Theta(n) scalar-circuit bound for exact
 unnormalized inference from bounded edge factors9^-c. Uniform agreement on

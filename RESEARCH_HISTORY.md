@@ -5589,3 +5589,42 @@ comparison nor the completed deployment matrix needs a restart. Historical
 overlap remains recorded, so no exclusive-device timing inference is made.
 See `experiments/joint_uncertainty/PAIR_MARGINAL_MODEL_RESULTS.md` and
 `evidence/minimal/FP_PAIR_MARGINAL_MODEL_EXPERIMENT.json`.
+
+## 164. Factor repetition manufactures certainty and exponential scalar height (2026-09-21)
+
+The [dynamic factor analysis](theory/proofs/FACTOR_REPETITION_DYNAMICS.md)
+attacks the native PRODUCT-belief learner beyond its one-step closure test.
+Relative equality observations give worlds00 and11 identical likelihood,
+so exact Bayes preserves their conditional odds. The native posterior-marginal
+projection changes these odds and uses the altered product as its next prior.
+For every fixed positive damping rate, nonzero total bias converges to one
+equal world; zero total bias tends to independent fair bits. Thus neither
+local marginal correctness nor smaller positive steps restore full-history
+inference. The classical assumed-density/growth-transformation connections
+remain explicit; the FP realization and resource law are proved directly.
+
+From fixed uniform Gamma, two legal anchor labels give bias4/5. Repeating
+label0 on the relative query yields m'=9m/(5+4m^2), while full Bayes retains
+the exact world law proportional to(81*9^k,9,9,9^k). The first repetition's
+marginals agree, but its product00:11 odds already change81 to1681. Later
+anchor forecasts tend to9/10 instead of73/82. After the first two rational
+reductions, coprimality proves5b_k^2<b_(k+1)<9b_k^2. Actual selected parameter
+denominators are4b_k, hence requireTheta(2^k) bits despite fixed44-node syntax,
+four learned slots, degree2 and internal values bounded by8. The full joint
+posterior usesTheta(k) explicit scalar bits. Symbolic encodings are not excluded.
+
+The audit checks13 complete native factor units before the unchanged32768-bit
+guard refuses the12th repetition's gradient. The full-joint native control
+passes130 units, including128 repetitions, with409-bit parameters. Another200
+native units check asymmetric priors, both labels and four fixed rates, for
+343 total exact units/686 complete states. The independent integer recurrence
+reaches104,343 parameter-denominator bits at k=15 under its declared131072-bit
+oracle ceiling. Only short fractions and bit counts are retained.
+
+Actual ordered binary64 executes66 units with25,450 exactly checked primitive
+results. Its13-unit affordable reference prefix has full value/gradient/state
+errors below10^-12, yet its later anchor probability0.9 differs from full Bayes
+by more than9/1000. All its terminal parameters remain positive. This separates
+the inference failure from finite rounding and from the native-reference
+refusal. No production learner, Runtime/AMP authority, Foundation action,
+completed model outcome or static ERC contract is changed.
