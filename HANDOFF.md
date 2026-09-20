@@ -547,6 +547,16 @@ failed crossing retention; nine forged records are rejected. All24 old model
 scores, four decisions and16 strong-control scores pass without rerunning a
 baseline. See the [reader audit](evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_READER_AUDIT.json).
 
+The [first model result is now retained](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md):
+worker2444 seals at124 and installs at119, exactly as predicted, versus the
+old114. Candidate words are identical; deployed unseen CE worsens from
+0.6596867981 to0.6764169893. It checks64 reference forecasts,748 phases per
+path,248 commit tapes and118 fresh scores; host peak15,047,073,792 bytes.
+The same-source reader validates six new scores/two fresh paths and all old
+controls. Canonical journal/analysis now contain one completed row. Parent
+14264 continues with worker6920, started17:09:20 UTC and verified live at
+17:11:45 UTC on2026-09-20. Keep its execution checkout unchanged; no restart.
+
 After registration, [exact conditional analysis](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired crossings119/67/54/50 if the required owned computations and
 gates succeed. The first is later than the old114, with more than0.016 worse

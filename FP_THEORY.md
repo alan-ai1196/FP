@@ -2637,6 +2637,12 @@ owned crossing and actual installation; a failed save cannot supply authority.
 Its two reference scenarios and nine adversarial refusals are development
 evidence, not a new model result or general power theorem.
 
+The [first actual tighter-bound result](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+now seals and installs at119 instead of the old114. Candidate AMP readout
+words are identical, but deployed unseen CE rises0.659687 to0.676417. This
+confirms an actual deployment regression on that retained tape; the other
+three jobs are not yet outcomes. The class remains `UNRESOLVED`.
+
 The [fixed-rule counterexample and conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 show why a stronger valid bound is not a power-ordering theorem. The6/13
 coefficient fails the old reciprocal contraction even for a correct native

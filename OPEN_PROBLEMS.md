@@ -74,6 +74,13 @@ every result; do not replace this question with a bet menu.
 Its reader distinguishes numerical thresholds, retained owned crossings and
 actual installs, and never fills an evidence path after it stops.
 
+The [first actual row](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+now confirms the delayed case: install119 versus114, with identical candidate
+words and deployed unseen CE0.676417 versus0.659687. Full execution and the
+same-source reader pass. Three cases remain; worker6920 is live after the
+first completes. This already defeats uniform improvement, while the full
+matrix's tradeoff remains open. Keep every result and the fixed procedure.
+
 The [fixed-rule conditional prediction](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 already rules out a uniform deployment improvement: paired cursors would be
 119/67/54/50 if all necessary owned gates succeed. Seed16 is later than its

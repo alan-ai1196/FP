@@ -4997,3 +4997,25 @@ the physical score tube without pretending to execute AMP. Uniform-prior
 power examples use no model tape. The6/13 comparator also has positive
 distorted growth even though its old reciprocal lemma is false. The actual
 registered experiment, Runtime declarations and Foundation/ERC-1 stay fixed.
+
+## 143. Observe the predicted deployment regression in the first actual job
+
+The fixed8ccacc0 matrix's first worker2444 completes normally and seals at124.
+Its reference and CUDA identities each score59 labels, cross at119 and pass
+full transport/install. The old B6 control installed at114. Both candidate
+readout forms are bitwise identical to the old control, yet deployed unseen
+CE rises from0.6596867981 to0.6764169893. This is an actual retrospective
+counterexample to uniform benefit from the tighter valid bound.
+
+The job checks64 exact posterior forecasts,748 phases per path,248 native
+commit tapes and118 fresh scores. Peak15,047,073,792 bytes fits16GiB.
+The independent reader runs from the same immutable source, verifies six
+new scores and two fresh paths, and rechecks all24 old B6 scores/four
+decisions/16 strong-control scores. Its journal/analysis append only the
+verified new row. The old prefix and registration are preserved.
+
+The actual cursor and both conditional risk envelopes match the previously
+committed prediction. No future case is inferred. Parent14264 starts worker
+6920 at17:09:20 UTC on2026-09-20; it is verified live at17:11:45 UTC. The
+remaining three attempts proceed under the same source, rule, order and
+limits. All constructor classes remain `UNRESOLVED`.

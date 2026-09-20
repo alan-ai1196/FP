@@ -95,6 +95,15 @@ initial journal and same-source reader record zero completed outcomes and
 live at launch; keep the execution source fixed. No success is inferred
 from the small n2 reachability audit or the larger coefficient.
 
+The [first tighter-bound job now completes](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+at8ccacc0: install119/seal124,64 posterior forecasts,748 phases per path,
+248 commit tapes and118 fresh scores. Peak15,047,073,792 bytes fits16GiB.
+The independent same-source reader retains one completed case and verifies
+both fresh paths, six new scores and all controls. Candidate words match
+B6 exactly, but unseen deployed CE is0.676417 versus0.659687 because the
+new wait is59 instead of54 labels. Worker6920 continues the fixed matrix;
+the other three cases remain unreported and every class stays `UNRESOLVED`.
+
 The [new rule's conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired cursors119/67/54/50, conditional on all required owned gates.
 Seed16 is later than its old114. A native correct-posterior witness gives
