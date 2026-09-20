@@ -3,13 +3,13 @@
   "execution_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
   "analysis_source": "8ccacc05fefe9060ad6d7a72c4b325c26baefdaa",
   "scope": "retained retrospective outcomes; no new GPU execution or Runtime authority",
-  "attempted_workers": 2,
-  "sealed_workers": 2,
+  "attempted_workers": 3,
+  "sealed_workers": 3,
   "failed_workers": 0,
   "halted_unresolved_workers": 0,
-  "independent_model_score_checks": 12,
-  "independent_fresh_path_checks": 4,
-  "worker_verified_CUDA_and_binary64_phases_each": 1496,
+  "independent_model_score_checks": 18,
+  "independent_fresh_path_checks": 6,
+  "worker_verified_CUDA_and_binary64_phases_each": 2124,
   "retained_B6_score_checks": 24,
   "retained_B6_decisions": 4,
   "retained_posterior_score_checks": 16,
@@ -28,12 +28,12 @@
     },
     {
       "law": "iid-c4",
-      "scored_workers": 0,
-      "installed_workers": 0,
+      "scored_workers": 1,
+      "installed_workers": 1,
       "expected_CE_binary64": {
-        "candidate_stream_unseen": null,
-        "deployed_stream_unseen": null,
-        "adaptive_exact_unseen": null
+        "candidate_stream_unseen": 0.3806734299925536,
+        "deployed_stream_unseen": 0.409454765312494,
+        "adaptive_exact_unseen": 0.38067138317997246
       }
     }
   ],
@@ -147,6 +147,62 @@
           "candidate_stream_full_domain": 0.3312325499984506,
           "deployed_stream_unseen": 0.5007499813582309,
           "deployed_stream_full_domain": 0.4976130705016812
+        }
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "status": "SEALED_CUDA_STREAM",
+      "candidate": true,
+      "install_cursor": 54,
+      "fresh": {
+        "paths": [
+          {
+            "score_path": "exact-reference",
+            "recorded_score_count": 14,
+            "numerical_crossing_cursor": 54,
+            "owned_crossing_cursor": 54,
+            "terminal_status": "UNRESOLVED",
+            "refinement_work_attempts": 14,
+            "unretained_numerical_threshold": false
+          },
+          {
+            "score_path": "cuda-half-single-stored-mass",
+            "recorded_score_count": 14,
+            "numerical_crossing_cursor": 54,
+            "owned_crossing_cursor": 54,
+            "terminal_status": "UNRESOLVED",
+            "refinement_work_attempts": 14,
+            "unretained_numerical_threshold": false
+          }
+        ],
+        "paired_owned_crossing_without_install": false,
+        "scope": "recorded scalar prefixes only; worker source supplies whole-domain range and owned transport evidence"
+      },
+      "class": "UNRESOLVED: one owned v7 proposal, no complete-class proof",
+      "expected_CE_binary64": {
+        "adaptive_exact_unseen": 0.38067138317997246,
+        "adaptive_exact_full_domain": 0.36677428202210427,
+        "candidate_stream_unseen": 0.3806734299925536,
+        "candidate_stream_full_domain": 0.36677581688907807,
+        "deployed_stream_unseen": 0.409454765312494,
+        "deployed_stream_full_domain": 0.4056148270432558
+      },
+      "maximum_candidate_mass_posterior_error": "134248121239574092949105173671/3522218816758010821006003516094930",
+      "retained_B6_comparison": {
+        "previous_install_cursor": 72,
+        "candidate_readout_words_identical": true,
+        "previous_expected_CE_binary64": {
+          "adaptive_exact_unseen": 0.38067138317997246,
+          "adaptive_exact_full_domain": 0.36677428202210427,
+          "candidate_stream_unseen": 0.3806734299925536,
+          "candidate_stream_full_domain": 0.36677581688907807,
+          "deployed_stream_unseen": 0.5014470726596864,
+          "deployed_stream_full_domain": 0.5091150769756967
         }
       }
     }

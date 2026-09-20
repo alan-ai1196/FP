@@ -148,11 +148,12 @@ at8ccacc0: install119/seal124,64 posterior forecasts,748 phases per path,
 248 commit tapes and118 fresh scores. Peak15,047,073,792 bytes fits16GiB.
 The second case now also seals: install67 versus90, unseen deployed
 CE0.375274 versus0.500750, with candidate words again identical. Peak
-15,034,691,584 bytes fits16GiB. The two-case reader checks12 new scores,
-four fresh paths and all controls;1,496 phases per path and132 fresh scores
-are retained. The first wait grows54 to59 while the second falls30 to7.
-Worker30700 continues the fixed matrix; two c4 cases remain unreported and
-every constructor class stays `UNRESOLVED`.
+15,034,691,584 bytes fits16GiB. The third case seals104 and installs54 versus72,
+with unseen CE0.409455 versus0.501447 and identical candidate words. Its peak
+is12,994,330,624 bytes. The three-case reader checks18 new scores/six fresh
+paths and all controls;2,124 phases per path and160 fresh scores are retained.
+The actual waits change54/30/32 to59/7/14. Final worker4056 continues the
+fixed matrix; one c4 case remains and every class stays `UNRESOLVED`.
 
 The [new rule's conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired cursors119/67/54/50, conditional on all required owned gates.

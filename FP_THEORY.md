@@ -2637,12 +2637,13 @@ owned crossing and actual installation; a failed save cannot supply authority.
 Its two reference scenarios and nine adversarial refusals are development
 evidence, not a new model result or general power theorem.
 
-The [first two actual tighter-bound results](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
+The [first three actual tighter-bound results](experiments/joint_uncertainty/LIKELIHOOD_DEPLOYMENT_RESULTS.md)
 now seal. Seed16 installs119 versus114 and its deployed unseen CE rises
 0.659687 to0.676417; seed17 installs67 versus90 and CE falls0.500750 to0.375274.
-Both candidates' AMP readout words are identical to their retained controls.
-These opposite actual effects confirm the deployment tradeoff. Two c4 jobs
-remain, and both constructor classes stay `UNRESOLVED`.
+The first c4 case installs54 versus72 and CE falls0.501447 to0.409455.
+Every candidate's AMP readout words are identical to its retained control.
+These opposite actual effects confirm the deployment tradeoff. One c4 job
+remains, and all constructor classes stay `UNRESOLVED`.
 
 The [fixed-rule counterexample and conditional envelope](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 show why a stronger valid bound is not a power-ordering theorem. The6/13

@@ -1,11 +1,11 @@
 # Tighter-bound owned likelihood deployment: partial results
 
-Status: **TWO OF FOUR JOBS COMPLETE; REGISTERED MATRIX STILL RUNNING**.
+Status: **THREE OF FOUR JOBS COMPLETE; REGISTERED MATRIX STILL RUNNING**.
 Execution and independent reader both use immutable8ccacc0. The
 [protocol](LIKELIHOOD_DEPLOYMENT_PROTOCOL.md), ordered cases and all caps
 remain fixed. The [journal](../../evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_EXPERIMENT.json)
 and [same-source analysis](../../evidence/minimal/FP_LIKELIHOOD_DEPLOYMENT_ANALYSIS.json)
-retain both actual outcomes. No uncompleted case receives a score.
+retain all three actual outcomes. No uncompleted case receives a score.
 
 ## 1. A valid tighter bound can worsen actual deployment
 
@@ -53,7 +53,24 @@ to0.5258452698. The per-case effects have opposite signs. This is a descriptive
 two-case mean, not a population power ordering or the unfinished matrix mean.
 The retained strong posterior controls and all old outcomes remain included.
 
-## 3. Execution and independent checks
+## 3. The first c4 case also deploys earlier
+
+Case(8,iid-c4,18) seals at104 and installs at54 versus the old72. The wait
+falls32 to14 fresh events, leaving50 instead of32 deployed forecasts.
+Every candidate stored-mass and raw-division word again equals the B6 control.
+
+| Procedure | Install | Fresh wait | Candidate unseen CE | Deployed unseen CE |
+|---|---:|---:|---:|---:|
+| Retained B6, coefficient1/8 |72|32|0.3806734300|0.5014470727|
+| Current B13/8, coefficient6/13 |54|14|0.3806734300|0.4094547653|
+
+Unseen deployed CE improves by0.0919923073; full-domain CE changes
+0.5091150770 to0.4056148270. Both paths cross54, at exact reference/AMP
+wealth304521/65536 and304503/65536. Actual paired transport and installation
+pass. The historical identities become nonreusable after the deployed base
+changes, and the constructor class remains UNRESOLVED.
+
+## 4. Execution and independent checks
 
 Worker2444 exits normally under its16GiB/two-hour cap. It was attached to
 the job before resumption and peaks at15,047,073,792 bytes. The completed
@@ -65,22 +82,26 @@ It confirms bitwise equality of both candidate readout forms to the old run.
 
 Worker6920 also exits normally, with peak15,034,691,584 bytes under the same
 cap,64 exact posterior forecasts,748 CUDA/binary64 phases per path,248 commit
-tapes and14 fresh scores. The two-case totals are128 forecasts,1,496 phases
-per path,496 commit tapes and132 fresh scores. The same-source reader now
-checks12 new scores and four fresh paths, plus the unchanged24 old B6 scores,
-four old decisions and16 strong-control scores.
+tapes and14 fresh scores. Worker30700 exits0 with no timeout and peak
+12,994,330,624 bytes; it checks64 forecasts,628 phases per path,208 commit
+tapes and28 fresh scores. The three-case totals are192 forecasts,2,124 phases
+per path,704 commit tapes and160 fresh scores. The same-source reader now
+checks18 new scores and six fresh paths, plus the unchanged24 old B6 scores,
+four old decisions and16 strong-control scores. Both earlier worker records
+and every registration field are checked unchanged before collection.
 
 The [earlier conditional prediction](../../theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 already fixed paired cursor119 and both risk envelopes before a completed
-new outcome was available. It also fixed cursor67 for seed17. Both actual
-cursors and all four unseen/full-domain CE values lie inside the prior
-envelopes. This verifies their premises on these executed cases; it does
-not turn predictions for the two c4 cases into outcomes.
+new outcome was available. It also fixed cursor67 for seed17 and54 for
+seed18. All three actual cursors and all six unseen/full-domain CE values
+lie inside the prior envelopes. This verifies their premises on these
+executed cases; it does not turn the final case's prediction into an outcome.
 
-The third worker30700 starts at2026-09-20 18:30:54 UTC under the same parent
+The fourth worker4056 starts at2026-09-20 19:45:44 UTC under the same parent
 14264 and is verified live afterward. Continue the registered order. Do not
 restart, change coefficients, rerun controls or infer future success from
 these rows. Use the reader in the immutable execution checkout with `--partial`
 until all remaining attempts are terminal.
-The separate n16 recovery worker2660 runs concurrently from75e4f93, as
-recorded in its launch evidence. No exclusive-device timing claim is made.
+The run overlapped the now-completed n16 recovery at75e4f93. The separately
+registered matched v7/v8 experiment at ec373e7 is also live, currently with
+literal worker6820. No exclusive-device timing claim is made.

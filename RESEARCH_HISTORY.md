@@ -5314,3 +5314,26 @@ true target probability41/50. No existing Runtime state is altered. This
 does not rule out alternative forecast-equivalent learners or compressed
 physical encodings; it settles the native incidence order for the declared
 world-slot posterior learner. Both immutable model runs continue unchanged.
+
+## 155. The third fixed tighter-bound worker realizes its earlier deployment prediction
+
+The unchanged8ccacc0 matrix completes c4/seed18: worker30700 seals104 and
+installs54 versus the retained72, after14 rather than32 fresh observations.
+Every candidate mass/division word stays identical. Deployed unseen CE falls
+0.5014470727 to0.4094547653 and full-domain CE0.5091150770 to0.4056148270.
+Both owned paths cross54, with reference/AMP wealth304521/65536 and304503/65536;
+actual transport passes. The identities stay historical after the base
+changes and the constructor class stays UNRESOLVED.
+
+The completed job exits0 without timeout and peaks12,994,330,624 bytes.
+It checks64 forecasts,628 CUDA and628 binary64 phases,208 commit tapes and28
+fresh scores. The verified immutable three-row prefix totals192 forecasts,
+2,124 phases per path,704 commit tapes and160 fresh scores. The same-source
+reader checks18 new model scores/six fresh paths and all unchanged controls.
+All three actual cursors and six deployed risk values satisfy their prior
+conditional predictions. Both earlier rows and every registration field
+are retained exactly. No final-case or population effect is inferred.
+
+Parent14264 starts final worker4056 at19:45:44 UTC on2026-09-20. The separate
+matched ec373e7 v7 worker6820 continues concurrently; n16 recovery is already
+complete. The remaining fixed runs are not restarted or modified.

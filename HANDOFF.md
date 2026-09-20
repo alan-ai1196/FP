@@ -603,12 +603,14 @@ old114. Candidate words are identical; deployed unseen CE worsens from
 path,248 commit tapes and118 fresh scores; host peak15,047,073,792 bytes.
 The second case, seed17, now also seals: worker6920 installs67 versus90,
 with identical candidate words and deployed unseen CE0.3752735502 versus
-0.5007499814. Its peak is15,034,691,584 bytes. Canonical journal/analysis
-contain two completed rows,1,496 phases per path and132 fresh scores.
-The same-source reader validates12 new scores/four fresh paths and all old
-controls; both cursor predictions and all four prior risk envelopes hold.
-Parent14264 continues with worker30700, started18:30:54 UTC on2026-09-20.
-Keep its execution checkout unchanged; two c4 cases remain, with no restart.
+0.5007499814. Its peak is15,034,691,584 bytes. The third c4/seed18 case also
+seals104 and installs54 versus72: unseen deployed CE0.4094547653 versus
+0.5014470727, with identical candidate words and peak12,994,330,624 bytes.
+Canonical journal/analysis contain three completed rows,2,124 phases per
+path and160 fresh scores. The same-source reader validates18 new scores/
+six fresh paths and all controls; all three prior cursors and six risk
+envelopes hold. Parent14264 continues with final worker4056, started
+19:45:44 UTC on2026-09-20. Keep its checkout unchanged; one case remains.
 
 After registration, [exact conditional analysis](theory/proofs/TIGHTER_BOUND_DEPLOYMENT_TRADEOFF.md)
 predicts paired crossings119/67/54/50 if the required owned computations and
