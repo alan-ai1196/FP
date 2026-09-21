@@ -47,7 +47,7 @@ STEP = CudaCompilationStep(2, 'native', 10000, 'ref', 'cuda')
 def parameters(*, count=40, learned=False, recurrent=False, continued=False, cpu=True, horizon=30,
                byte_cap=500_000_000):
     cfg = config(cap=10, peak=10, pattern=(F(2),)) if learned else config(cap=4, peak=1)
-    cfg = replace(cfg, limits=limits(byte_cap, 20_000_000_000))
+    cfg = replace(cfg, limits=limits(byte_cap, 60_000_000_000))
     if recurrent:
         cfg = replace(cfg, semantics=replace(cfg.semantics, states=(DelayedStateSpec('h', 'mass', 2, F(1)),)))
     cfg, online = configuration(cfg=cfg, count=count, continued=continued,

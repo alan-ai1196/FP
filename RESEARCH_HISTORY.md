@@ -6228,3 +6228,25 @@ and second-commit failure controls pass. A1/A2/A3/A4 are all terminal and
 retained separately. The replacement conditional argument is now backed by
 the registered actual boundary tests, without a complete-release or
 class-optimality claim.
+
+## 182. Fund full native regressions under the already changed readback tariff (2026-09-21)
+
+The two retained learned-search failures predate the endpoint repair.
+History identifies56dfea0 as the shared work-tariff change: each prepaid
+output cell increased from128 to320 units to cover six complete raw
+readbacks. Native fixtures reserve4096 cells, adding786,432 work units per
+phase and32,768 at initial readout binding. Their old cumulative budgets
+were left at4 billion for installation and20 billion for policy.
+
+The fixture registrations now fund12 billion and60 billion respectively.
+This changes neither a decision class, trajectory, numerical tolerance,
+target, test assertion nor Runtime tariff. The old resource refusals remain
+evidence. The factor-three funding is a new declared allowance, not an
+assertion that every resource history scales by exactly three.
+
+`scripts/audit_cuda_readback_regressions.py --attempt 1` registers the two
+complete batteries, keeps their existing process/job protocols and applies
+the strict complete-section/counter parser. Execution inputs must remain
+equal to the recorded committed source; unrelated research documents may
+advance. Its actual result is pending at this source. No old GPU/model job
+is restarted and no new complete release is asserted.
