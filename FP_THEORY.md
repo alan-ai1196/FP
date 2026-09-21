@@ -218,8 +218,9 @@ left inverse. Its scoped indexed bound E<=12(N+C)+B removes the old
 removing a native coordinate or changing an arithmetic schedule. Runtime
 prepays the codec and checks all decoded bytes before acceptance. Actual
 A1 passes its registered integration faults and moves the n16 cursor173
-to194. A new CPU alias witness nevertheless shows that a writer and its
-checker can share a mutated expected record. Actual probes are registered;
+to194. CPU and actual alias witnesses nevertheless show that a writer and
+its checker can share a mutated expected record. Both actual probes at
+ba48cb3 publish false local output/plan conformance with unchanged words;
 the codec extension is HOLD pending a bound immutable input interface.
 The byte theorem remains valid and supplies no execution-binding theorem. Equal
 information does not imply equal physical histories, free decoding or

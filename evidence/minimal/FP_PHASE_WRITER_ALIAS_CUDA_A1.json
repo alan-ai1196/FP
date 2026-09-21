@@ -1,0 +1,105 @@
+{
+  "status": "FALSIFIED_WRITER_INPUT_BINDING",
+  "execution_source": "ba48cb353c3de45e39286c7afd4ce6f648981f09",
+  "registration": {
+    "cases": [
+      "output-count",
+      "plan-position"
+    ],
+    "status": "REGISTERED_BEFORE_ACTUAL_ALIAS_PROBES",
+    "production_anchor": "3d3711e",
+    "only_injected_interface": "codec.write receives a mutable phase/plan object",
+    "attack": "mutate only the supplied input, preserve both declared lengths, then call the honest writer",
+    "expected_class": "counterexample to evidence/execution binding, not to byte-codec invertibility",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true
+  },
+  "workers": [
+    {
+      "case": "output-count",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2188709888,
+        "peak_job_commit": 2189930496,
+        "user_100ns": 19531250,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4624,
+        "process_creation_100ns": 134344571979989197
+      },
+      "result": {
+        "status": "ACTUAL_WRITER_INPUT_ALIAS_COUNTEREXAMPLE",
+        "process_id": 4624,
+        "case": "output-count",
+        "published_status": "PREDICTED_REFERENCE",
+        "phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+        "cursor": 0,
+        "next_target_revealed": false,
+        "native_learner_advanced": false,
+        "phase_output_conformance_or_plan_binding": "FALSE_BUT_ACCEPTED",
+        "numerical_point_probability_counterexample": false,
+        "actual_plan_output_cells": 58,
+        "retained_phase_output_cells": 57,
+        "decoded_bytes_match_mutated_record": true,
+        "decoded_bytes_differ_from_pre_writer_record": true,
+        "raw_readout_and_operations_unchanged": true,
+        "encoded_and_expanded_extents_unchanged": true,
+        "padding_unchanged": true
+      }
+    },
+    {
+      "case": "plan-position",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190544896,
+        "peak_job_commit": 2191769600,
+        "user_100ns": 18593750,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26636,
+        "process_creation_100ns": 134344572009817399
+      },
+      "result": {
+        "status": "ACTUAL_WRITER_INPUT_ALIAS_COUNTEREXAMPLE",
+        "process_id": 26636,
+        "case": "plan-position",
+        "published_status": "PREDICTED_REFERENCE",
+        "phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+        "cursor": 1,
+        "next_target_revealed": false,
+        "native_learner_advanced": false,
+        "phase_output_conformance_or_plan_binding": "FALSE_BUT_ACCEPTED",
+        "numerical_point_probability_counterexample": false,
+        "support": [
+          [
+            1,
+            2
+          ]
+        ],
+        "actual_count_addresses": [
+          2
+        ],
+        "retained_count_addresses": [
+          0
+        ],
+        "retained_plan_rejects_unchanged_actual_operations": true,
+        "decoded_bytes_match_mutated_record": true,
+        "decoded_bytes_differ_from_pre_writer_record": true,
+        "raw_readout_and_operations_unchanged": true,
+        "encoded_and_expanded_extents_unchanged": true,
+        "padding_unchanged": true
+      }
+    }
+  ]
+}

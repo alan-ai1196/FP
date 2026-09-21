@@ -22,14 +22,18 @@ All1498 sealed records pass;33 common model readout rows are identical.
 Both model prefixes remain unscored, with targets unrevealed. Maximum job
 commitment is5309132800 bytes. Full frames/padding remain paid.
 
-**New binding obstacle: this codec extension is HOLD.** A CPU retention
+**New binding obstacle: this codec extension is HOLD.** A retention
 counterexample mutates the phase/plan object supplied to the writer, then
 encodes it honestly. Both sides of the later comparison see the mutation.
 False output counts and a false count address seal with unchanged lengths,
-padding and raw words. The numerical owner in this CPU fixture is mocked;
-two fresh actual probes are now registered in
-`scripts/audit_phase_writer_binding.py`, with production unchanged from
-3d3711e. Run them before repairing the boundary and retain all outcomes.
+padding and raw words. The first CPU fixture mocks its numerical owner;
+both fresh actual probes now reproduce publication at ba48cb3, with
+production unchanged from3d3711e. Runtime publishes checked phases with
+58 actual outputs reported as57, and count address2 replaced by0 while
+support(1,2) and actual words remain. Both jobs are terminal below4 GiB;
+maximum2191769600 bytes. Targets remain unrevealed and native learners
+do not advance. `FP_PHASE_WRITER_ALIAS_CUDA_A1.json` retains both witnesses.
+Do not rerun them or the terminal17-job matrix before changing the design.
 The byte left-inverse theorem remains valid; execution binding does not
 follow from it. Do not add another comparison against the same mutable
 alias. Bind immutable input before delegation, with its workspace paid.

@@ -6815,3 +6815,30 @@ The codec extension is HOLD. Two fresh actual probes are registered in
 The design question is an immutable information interface before delegation,
 with its workspace and failure retention paid. Another check against the
 same alias would not resolve it. Foundation and native learning are unchanged.
+
+## 203. Reproduce false phase conformance through the actual writer alias (2026-09-21)
+
+Both registered fresh CUDA probes at ba48cb3 reproduce the CPU mechanism,
+with production unchanged from3d3711e. On n3 query(0,1), a writer changes
+the supplied phase's58 outputs to57. After(1,2,0), it instead changes the
+supplied plan's count address2 to0 while keeping support(1,2). Each altered
+object is passed to the honest encoder. Encoded and expanded lengths,
+padding, raw readout and operation words all remain unchanged.
+
+Runtime nevertheless publishes PREDICTED_REFERENCE, seals the frame and
+accepts CHECKED_CUDA_PREFIX_PHASE. The decoded bytes equal the changed
+record and differ from the execution record before the writer. The wrong
+plan fails independent replay of the retained actual operations. No target
+is revealed and no native learner advances; the witnesses falsify local
+executed output/plan conformance, not point probability, search completeness
+or installation. Both jobs exit zero without timeout or limit termination;
+maximum job commitment is2191769600 bytes, below4 GiB. All jobs are terminal.
+
+This pinpoints a missing causal boundary, not a new native architecture
+action: invertibility preserves whichever input was encoded, while execution
+evidence must remain bound to the input before delegation. The new codec
+extension stays HOLD. Repair must remove mutable authority from the helper
+interface or independently bind the whole record to owned execution inputs,
+including paid workspace and failure retention. The stronger conventional
+compression baseline makes a simpler immutable-byte interface worth testing.
+All earlier byte theorems, scoped A1 outcomes and both counterexamples remain.

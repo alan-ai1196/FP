@@ -1,9 +1,9 @@
 # Lossless complete phase encoding and its resource boundary
 
 Status: proved byte reconstruction on the declared typed domain; CPU and
-the scoped actual A1 matrix pass. A new writer-input alias counterexample
-in the CPU retention hook invalidates unqualified evidence/execution
-binding. Actual alias probes are registered below and pending; this codec
+the scoped actual A1 matrix pass. Writer-input alias counterexamples in
+both CPU and actual CUDA invalidate unqualified evidence/execution
+binding. Both actual probes are terminal at ba48cb3; this codec
 extension is HOLD for further model use pending that boundary's repair.
 Foundation R4, ERC-1, native learning and numerical
 tolerances are unchanged. This is a physical representation, with an
@@ -309,10 +309,24 @@ actual probes, one per witness, with production unchanged from3d3711e.
 They retain actual publication status, immutable frame equality, plan/raw
 word mismatch, target nonreceipt and native learner state. Each attempt
 gets a new `FP_PHASE_WRITER_ALIAS_CUDA_A*.json`; no silent retry is allowed.
-These probes are pending. If publication occurs, the accepted output/plan
-conformance claim is false, even if the point probability remains correct.
-This would be an implementation information-interface mismatch, not a
-counterexample to the lossless byte theorem or a new semantic action.
+`FP_PHASE_WRITER_ALIAS_CUDA_A1.json` is terminal at ba48cb3, with production
+unchanged from3d3711e. Both actual probes publish `PREDICTED_REFERENCE` and
+seal `CHECKED_CUDA_PREFIX_PHASE` despite their false metadata:
+
+| Actual witness | Executed input/result | Retained checked record |
+|---|---|---|
+| n3, query(0,1), cursor0 | 58 output cells in the plan | 57 output cells |
+| n3 after(1,2,0), query(0,1), cursor1 | Support(1,2), count address2 | Same support, count address0 |
+
+Both keep the raw readout/operation words, encoded/expanded lengths and
+padding unchanged. The latter retained plan fails independent replay of
+the actual operation trace. No target is revealed and neither native
+learner advances. Both jobs exit zero without timeout or limit termination,
+below4 GiB; maximum job commitment is2191769600 bytes. No numerical point
+probability error, class-completeness certificate or installation failure
+is alleged: the falsified claim is the local executed phase's output/plan
+conformance. This is an implementation information-interface mismatch,
+not a counterexample to the byte theorem or a new semantic action.
 
 The repair must bind the input before delegation and prevent helper access
 to mutable authority. Repeating the same check against the same alias does

@@ -15,10 +15,13 @@ advances173 to194 and then hits the unchanged reference join cap. All1498
 sealed records pass their full byte audits. Maximum job peak5309132800 bytes.
 Both model prefixes remain unresolved and unscored.
 
-The extension is now HOLD at a newly found writer-input boundary. CPU
-retention accepts a mutated output count or plan address because the writer
-and its later checker share the same object. Actual probes are registered
-with production unchanged. The fixed-input byte theorem remains valid;
+The extension is now HOLD at a newly found writer-input boundary. Both CPU
+and actual CUDA retention accept a mutated output count or plan address because the writer
+and its later checker share the same object. Both actual probes at ba48cb3
+publish checked phases:58 outputs reported as57, and count address2 changed
+to0 with support/words unchanged. Maximum job2191769600 bytes; both jobs
+are terminal with targets unrevealed and native learners unchanged.
+Production remains3d3711e. The fixed-input byte theorem remains valid;
 complete execution binding requires immutable input before delegation and
 paid workspace. Ordinary zlib beats the custom format on all four passive
 records, so format complexity must also be reconsidered. No new release,
