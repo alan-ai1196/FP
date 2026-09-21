@@ -13,10 +13,13 @@ learning. The current attack is narrower and more fundamental to the claimed
 refinement: can a helper change a final tensor within tolerance after its
 local RNE/copy checks? A3 demonstrates actual false acceptance at0e53b8c;
 the independent endpoint/schedule check is now implemented and passes the
-exact CPU audit. It also restores the separate division error between raw
-probabilities and exact normalized stored masses. A4 must verify the repair
-on actual CUDA, including gradient/trace mutation and older-extent substitution.
-Native-class search/fallback and model usefulness remain open.
+exact CPU audit and all twelve actual A4 cases, including gradient/trace
+mutation and older-extent substitution. Separate proper-normalization and
+division checks also pass. The remaining regression task is explicit
+funding of two legacy learned-search batteries after the earlier readback
+tariff increase. Native-class search/fallback, query-dependent inference
+cost and model usefulness remain open. A solved endpoint-binding issue
+must not become a reason to expand unrelated static cases.
 
 The [finite-basis indexed bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) now
 provides a conditional numerical relation for every native reference

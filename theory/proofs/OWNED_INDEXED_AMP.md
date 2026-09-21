@@ -1,11 +1,12 @@
 # Owned indexed AMP execution and resident transport
 
-Status: **A3 COUNTEREXAMPLE RETAINED; INDEPENDENT CONFORMANCE REPAIR
-IMPLEMENTED; EXACT CPU AUDIT PASSES; ACTUAL REPAIR AUDIT PENDING**.
+Status: **A3 COUNTEREXAMPLE RETAINED; REPLACEMENT CONDITIONAL REFINEMENT;
+EXACT CPU AND ALL TWELVE ACTUAL A4 CASES PASS**.
 
 The [endpoint counterexample](INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md)
 reproduces actual false acceptance at source0e53b8c. Section6 supplies the
-replacement argument and implemented check; its actual A4 audit is pending.
+replacement argument and implemented check; Section7 reports actual A4
+verification on source6a62a45.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
@@ -305,4 +306,24 @@ on the repaired source, A3's endpoint attack, gradient substitution, a
 changed retained intermediate with unchanged endpoint, mutation of the
 pre-target prediction, and reuse of an older owned output extent. These
 are fresh verification jobs; A1/A2/A3 and all older model jobs stay terminal.
-The actual A4 outcome is pending; no complete release is claimed.
+## 7. Actual verification of the repaired boundary
+
+[A4](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A4.json) executes source
+`6a62a45`. All twelve workers pass, finish normally and stay within their
+4-GiB/900-second job limits. The endpoint forgery is retained as a failed
+phase before target revelation; its passive tolerance still passes, while
+the separate division discrepancy correctly reports1/16777216. Gradient
+substitution retains the actual target and bad physical gradient with no
+published advance. Changing the retained nine to eight is rejected despite
+unchanged final words. Mutation of the pre-target prediction and an older
+owned output extent with identical words are also rejected.
+
+Ordinary/profile/install/closure again check182 phases,45,933 floating words
+including15,996 half words, with the same exact results as A1/A2. n256 runs
+without world builders and has a2,385,383,424-byte job peak, the maximum
+across A4. Paired crossing at20, resident installation, alpha1/2 and continued
+learning to21 still pass. The three earlier failure controls also pass.
+All A1/A2/A3/A4 jobs remain terminal and individually auditable. This verifies
+the scoped repaired integration; it is not a new complete release or class
+certificate. The two legacy learned-search budget failures remain separately
+recorded until their funded regression checks complete.

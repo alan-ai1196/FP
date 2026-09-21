@@ -27,8 +27,14 @@ operation to the fixed schedule, requires current-phase output ownership,
 and checks unchanged input predictions. Proper normalization and division
 errors are separate and truthful. The full CPU audit passes, plus21/189/18
 prediction/operation/gradient word adversaries and nine trace-shape attacks.
-**Next:** `scripts/run_indexed_amp_audit.py --attempt 4` verifies all twelve
-registered actual cases on the repaired source. Its outcome is pending.
+A4 at6a62a45 is terminal with all twelve cases passing, including every new
+attack, n256 and resident installation. Maximum job peak is2,385,383,424
+bytes. The fixed-transition boundary is now checked independently; no
+further A4 rerun is needed. Next, finish the two legacy learned-search
+regressions with explicitly updated work budgets: their shared tariff rose
+from128 to320 units per prepaid output cell in56dfea0. Research can then
+address query-dependent inference cost and model usefulness while keeping
+the complete count history, rather than adding static size special cases.
 Retain A1/A2 and all old terminal jobs. No complete release or class
 certificate is claimed; Foundation R4 and ERC-1 remain frozen.
 

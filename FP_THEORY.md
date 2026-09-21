@@ -204,8 +204,9 @@ passing coordinate tolerances does not bind a returned tensor to the recorded
 arithmetic. The original implementation refinement claim is withdrawn.
 The replacement independently checks complete endpoints and operations,
 current-phase output ownership, unchanged inputs, and proper-normalization
-versus rounded-probability errors. Its exact CPU audit passes; A4 actual
-verification is pending. No new semantic action,
+versus rounded-probability errors. Its exact CPU audit and all twelve A4
+actual cases pass at6a62a45, including n256 and resident installation.
+No new semantic action,
 class completeness or complete release is claimed.
 
 ## 0. Research object and root principle

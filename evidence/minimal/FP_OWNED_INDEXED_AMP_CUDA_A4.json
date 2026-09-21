@@ -1,0 +1,464 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "6a62a45499b5627a9b358072793b196553f5d071",
+    "cases": [
+      "endpoint-binding",
+      "gradient-binding",
+      "trace-binding",
+      "predecessor-binding",
+      "old-output",
+      "profiles",
+      "large",
+      "install",
+      "closure",
+      "unfunded",
+      "target-swap",
+      "second-commit"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "endpoint-binding",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2201731072,
+        "peak_job_commit": 2203041792,
+        "user_100ns": 18750000,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29488,
+        "process_creation_100ns": 134344382398653141
+      },
+      "raw_result_bytes": 636,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 29488,
+        "case": "endpoint-binding",
+        "result": {
+          "certificate_claim": "REFUSED",
+          "scope": "fixed AMP transition conformance; passive numerical tolerance still passes",
+          "runtime_status": "REFUSED_BEFORE_TARGET",
+          "phase_status": "EXECUTION_FAILED",
+          "arithmetic_probability_word": 1056964608,
+          "accepted_final_probability_word": 1056964609,
+          "probability_error": "1/16777216",
+          "reported_division_error": "1/16777216",
+          "actual_stored_mass_division_error": "1/16777216",
+          "output_cells": 54,
+          "target_revealed": false
+        }
+      }
+    },
+    {
+      "case": "gradient-binding",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2200678400,
+        "peak_job_commit": 2201989120,
+        "user_100ns": 18437500,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9104,
+        "process_creation_100ns": 134344382427463040
+      },
+      "raw_result_bytes": 570,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 9104,
+        "case": "gradient-binding",
+        "result": {
+          "certificate_claim": "REFUSED",
+          "case": "gradient-binding",
+          "phase_status": "EXECUTION_FAILED",
+          "reason": "ContractError: indexed AMP final endpoint differs from the fixed RNE schedule",
+          "retained_actual_target": 0,
+          "published_advances": 0,
+          "arithmetic_gradient_words": [
+            0,
+            3209481421,
+            1061997773
+          ],
+          "retained_gradient_words": [
+            0,
+            3209481420,
+            1061997773
+          ]
+        }
+      }
+    },
+    {
+      "case": "trace-binding",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2201182208,
+        "peak_job_commit": 2202497024,
+        "user_100ns": 19687500,
+        "kernel_100ns": 6718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27472,
+        "process_creation_100ns": 134344382455896402
+      },
+      "raw_result_bytes": 325,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 27472,
+        "case": "trace-binding",
+        "result": {
+          "certificate_claim": "REFUSED",
+          "phase_status": "EXECUTION_FAILED",
+          "endpoint_unchanged": true,
+          "expected_constant": 9,
+          "retained_changed_constant": 8,
+          "target_revealed": false
+        }
+      }
+    },
+    {
+      "case": "predecessor-binding",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2201284608,
+        "peak_job_commit": 2202591232,
+        "user_100ns": 17968750,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21316,
+        "process_creation_100ns": 134344382484071074
+      },
+      "raw_result_bytes": 567,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 21316,
+        "case": "predecessor-binding",
+        "result": {
+          "certificate_claim": "REFUSED",
+          "case": "predecessor-binding",
+          "phase_status": "EXECUTION_FAILED",
+          "reason": "ContractError: indexed CUDA mutated its owned pre-target prediction",
+          "retained_actual_target": 0,
+          "published_advances": 0,
+          "arithmetic_gradient_words": [
+            0,
+            3209481421,
+            1061997773
+          ],
+          "retained_gradient_words": [
+            0,
+            3209481421,
+            1061997773
+          ]
+        }
+      }
+    },
+    {
+      "case": "old-output",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189312000,
+        "peak_job_commit": 2190626816,
+        "user_100ns": 18593750,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21704,
+        "process_creation_100ns": 134344382512130652
+      },
+      "raw_result_bytes": 322,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 21704,
+        "case": "old-output",
+        "result": {
+          "certificate_claim": "REFUSED",
+          "phase_status": "EXECUTION_FAILED",
+          "equal_final_words": true,
+          "older_owned_extent_not_a_current_phase_output": true,
+          "second_target_revealed": false
+        }
+      }
+    },
+    {
+      "case": "profiles",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2238918656,
+        "peak_job_commit": 2240151552,
+        "user_100ns": 43593750,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2376,
+        "process_creation_100ns": 134344382541113843
+      },
+      "raw_result_bytes": 377,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 2376,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1666,
+          "actual_half_words": 72,
+          "cursor": 8,
+          "packed_current_bytes": 15930130,
+          "consumed_arena_bytes": 14656,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "large",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2384158720,
+        "peak_job_commit": 2385383424,
+        "user_100ns": 1029843750,
+        "kernel_100ns": 71875000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26360,
+        "process_creation_100ns": 134344382599343949
+      },
+      "raw_result_bytes": 377,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 26360,
+        "case": "large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205594734,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "install",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2214305792,
+        "peak_job_commit": 2215526400,
+        "user_100ns": 45156250,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28700,
+        "process_creation_100ns": 134344383506549171
+      },
+      "raw_result_bytes": 492,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 28700,
+        "case": "install",
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1482,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21816642,
+          "consumed_arena_bytes": 13744,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true
+        }
+      }
+    },
+    {
+      "case": "closure",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191028224,
+        "peak_job_commit": 2192343040,
+        "user_100ns": 21718750,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2680,
+        "process_creation_100ns": 134344383572974639
+      },
+      "raw_result_bytes": 357,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 2680,
+        "case": "closure",
+        "result": {
+          "checked_phases": 10,
+          "actual_floating_words": 191,
+          "actual_half_words": 0,
+          "cursor": 3,
+          "packed_current_bytes": 3195996,
+          "consumed_arena_bytes": 1752,
+          "closure": "SEALED_CUDA_STREAM",
+          "class_decisions": 0
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1856811008,
+        "peak_job_commit": 1858134016,
+        "user_100ns": 16875000,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 19452,
+        "process_creation_100ns": 134344383605859614
+      },
+      "raw_result_bytes": 275,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 19452,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "retained_received_context": true,
+          "executor_entries": 0,
+          "failed_phase_retained": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189938688,
+        "peak_job_commit": 2191249408,
+        "user_100ns": 19687500,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27176,
+        "process_creation_100ns": 134344383630351512
+      },
+      "raw_result_bytes": 292,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 27176,
+        "case": "target-swap",
+        "result": {
+          "false_pending_target": 1,
+          "retained_actual_target": 0,
+          "failed_phase": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "owned_target_binding": "REFUSED"
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "6a62a45499b5627a9b358072793b196553f5d071",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191831040,
+        "peak_job_commit": 2193141760,
+        "user_100ns": 19375000,
+        "kernel_100ns": 7343750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29872,
+        "process_creation_100ns": 134344383658318454
+      },
+      "raw_result_bytes": 272,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 29872,
+        "case": "second-commit",
+        "result": {
+          "commit_calls": 2,
+          "status": "UNRESOLVED",
+          "retained_actual_target": 0,
+          "observed_lineages_retained": 2,
+          "published_advances": 0
+        }
+      }
+    }
+  ]
+}

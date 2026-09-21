@@ -6207,3 +6207,24 @@ prediction and substitution of an older owned output extent. Actual results
 are pending at this source. A3's counterexample remains canonical. The same
 scoped resource guards and fixed checker trust boundary apply; no complete
 release or class certificate is inferred.
+
+## 181. Repaired owned indexed AMP passes every registered actual attack and continuation (2026-09-21)
+
+[A4](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A4.json), source6a62a45,
+executes all twelve registered workers. Each finishes normally under its
+attached-before-resume4-GiB/900-second job. The maximum job peak is
+2,385,383,424 bytes in n256. The false final probability is rejected before
+the target; a corrupted gradient retains the actual target and bad physical
+state without publication. A changed operation record with unchanged final
+words, changed pre-target prediction and older owned output extent are all
+rejected. Proper division error reports1/16777216 for the passive endpoint
+forgery instead of0.
+
+The successful ordinary/profile/install/closure groups again check182 phases,
+45,933 floating words including15,996 half words. n256 executes with world
+builders disabled; fresh paired evidence crosses at20, resident installation
+preserves alpha1/2 and learning continues to21. Unfunded entry, target-swap
+and second-commit failure controls pass. A1/A2/A3/A4 are all terminal and
+retained separately. The replacement conditional argument is now backed by
+the registered actual boundary tests, without a complete-release or
+class-optimality claim.

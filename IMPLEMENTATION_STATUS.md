@@ -23,8 +23,11 @@ A3 at0e53b8c reproduces false acceptance; fixed-transition refinement is
 withdrawn for that source. An independent endpoint/operation check is now
 implemented, with current-phase output ownership, unchanged input prediction
 and truthful proper-normalization/division diagnostics. The full CPU audit
-and new exact word/trace adversaries pass. A4 registers twelve actual cases
-on this repaired source; its outcome is pending. No complete release is claimed.
+and new exact word/trace adversaries pass. A4 at6a62a45 passes all twelve
+actual cases, including the new attacks, n256 and resident installation.
+Its maximum job peak is2,385,383,424 bytes. Two legacy learned-search
+regressions still need updated work funding after the earlier readback
+tariff increase. No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

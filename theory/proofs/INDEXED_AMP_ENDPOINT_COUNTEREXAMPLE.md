@@ -53,5 +53,5 @@ needed.
 
 The subsequent repair is described in [the owned AMP proof, Section6](OWNED_INDEXED_AMP.md).
 It adds independent schedule/endpoint checks and truthful normalization
-diagnostics. Its exact CPU audit passes; actual repair verification is pending.
+diagnostics. Its exact CPU audit and all twelve actual A4 cases pass.
 The historical A3 result is not overwritten.
