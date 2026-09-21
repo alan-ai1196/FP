@@ -239,10 +239,16 @@ unchanged; join/output limits still require a paid solver.
 The [query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 now derives exact tape/output minima for the fixed positive bucket class
 and proves why reordering plus uniform-frame enlargement cannot recover
-the n16 model realization at its packed cap. Exhaustive small checks and
+the uncompressed n16 realization at its packed cap. Exhaustive small checks and
 all 1,544 exposed n16 prefix queries support its finite decision scopes.
 This resolves a solver/representation question, supplies no all-decoder
 lower bound, and changes no Foundation definition or numerical relation.
+
+The [gauge/query-width refinement](theory/proofs/GAUGE_AND_QUERY_WIDTH.md)
+gives the exact minimum join at each anchor through the query-augmented
+graph's treewidth. Anchor choice changes this optimum by at most a factor
+of two. Exact enumeration and selected all-anchor model obstructions pass;
+this remains a decoder-class result with no new native action or free search.
 
 The [matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 is terminal at caa66f1: both schedules complete all four n8 cases, while all

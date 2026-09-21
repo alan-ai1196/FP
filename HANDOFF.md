@@ -85,10 +85,19 @@ and four require 65,574 outputs above the 65,536 cap. Selected hard queries
 prove an 8,192-cell minimum join. These are passive class-specific results,
 not executed continuations of A1 or Runtime certificates.
 
+The [anchor refinement](theory/proofs/GAUGE_AND_QUERY_WIDTH.md) is also
+settled: J_a=2^(tw((G+query-edge)-a)+1), so optimum join size varies by at
+most two across anchors. All52,812 small decisions and29,664 exact partition
+pairs pass. On the hard selected n16 cuts, c2/17 recovers at another anchor,
+but c4/18's65,574-output minimum survives all anchors; two later cuts still
+need8,192 joined cells over the entire anchor/order class. Do not implement
+an arbitrary query-endpoint anchor as a general repair. Native coordinates
+and Runtime's current anchor/order remain unchanged; paid execution is next.
+
 Independently minimizing stored nodes proves that a uniform frame large
 enough for each n16 tape would retain at least 15.0--18.1 billion bytes,
 already above the 8-GiB packed cap. Thus reordering and uniform frame
-enlargement cannot by themselves finish this registered realization.
+enlargement cannot by themselves finish that uncompressed realization.
 The next attack was a reversible, paid evidence representation and a solver
 with its complete resource/numerical bridge. No production order, codec,
 cap or tolerance changed in that audit; the codec above is a separate

@@ -34,7 +34,7 @@ The current model frontier requires a paid evidence representation and
 resource-aware decoder with a complete numerical/ownership bridge. The
 [exact order-class law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 already rules out recovery by order search plus uniform-frame enlargement
-under the current encoding and 8-GiB packed cap. On the n16 tapes, 147 query
+under the former uncompressed encoding and 8-GiB packed cap. On the n16 tapes, 147 query
 cuts have no order within the table caps, four exceed the output cap at its
 exact minimum, and all four streams have a uniform-frame lower bound above
 the whole packed budget. These settled restrictions do not imply an
@@ -42,6 +42,15 @@ all-decoder impossibility. Complete execution with a paid representation,
 nonuniform retention or another solver remains open; their correctness and
 whole-resource costs must be established before claiming recovery. The fixed native learner and
 declared numerical relation need no semantic patch.
+
+An arbitrary query-endpoint anchor is not a general escape. The
+[exact anchor/query-width law](theory/proofs/GAUGE_AND_QUERY_WIDTH.md)
+limits optimum join variation to a factor of two. Two selected hard cuts
+still require8,192 cells over all anchors and orders; the65,574-output
+obstruction also survives all anchors under its table caps. Another cut
+does improve, so the old fixed-anchor bounds retain their precise scope.
+The open work is a paid solver and complete physical bridge, with honest
+refusals outside its resources, not further anchoring special cases.
 
 The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) now
 passes its exact CPU and scoped actual A8/A9 integration audits, including

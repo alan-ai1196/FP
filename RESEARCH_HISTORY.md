@@ -6917,3 +6917,40 @@ counts remain. Both model readers validate unresolved prefixes with no full
 score. No isolated memory/runtime dominance, all-n16 recovery or full release
 is inferred. The next scientific boundary is the paid decoder under the same
 native learner, not protection of the former custom format.
+
+## 206. Bound anchor choice exactly and attack the fixed-anchor obstructions (2026-09-21)
+
+While the byte-only matrix kept its execution inputs frozen, a passive audit
+tested the next apparent shortcut: pinning a query endpoint. The gauge map
+w_i=z_i XOR z_a has an exact inverse and preserves every parity-factor weight
+and both unnormalized query partitions. It changes a decoder coordinate,
+not the native count state or future interface.
+
+For the original complete binary bucket class, add the query edge to G
+to form H. The minimum largest joined table at anchor a is exactly
+2^(tw(H-a)+1). Rooting a minimum-width decomposition at the retained query
+clique proves attainment, and any bucket order supplies the matching lower
+bound. Vertex deletion changes treewidth by at most one, so anchor choice
+changes this optimum by at most a factor of two. A five-vertex example
+attains the factor; complete graphs retain exponential cost at every anchor.
+This applies to maximum join size, not total work, live cells or AMP words.
+
+Independent clique-fill enumeration and direct bucket geometry agree on
+52,812 anchor decisions across all1,098 supports through n5,10,650 queries
+and186,700 orders. All759 ternary count states through n4 give23,664 checked
+bijective world images and29,664 exact partition comparisons. No floating
+or Runtime authority is involved.
+
+Every anchor is then checked at four exposed whole-program n16 cuts. The
+c2/17 cursor332 refusal at anchor0 has a30,758-output/184,831-node witness
+at anchor1 or7. In contrast, c4/18 cursor276 still requires65,574 outputs
+at every feasible anchor under the table caps; either query-endpoint anchor
+has no4,096-cell order. At c4/18 cursor372 and c4/19 cursor368, all16 anchors
+refuse4,096 cells even with a vacuous live cap, and a directly compiled
+8,192-cell order proves the exact minimum over every anchor and order.
+
+The result strengthens two class-specific obstructions and falsifies a
+general endpoint-anchoring repair, without overstating a fixed-anchor lower
+bound. The script, proof and minimal evidence are retained. No production
+order, anchor, numerical tolerance, cap or semantic action changes. The
+next work remains paid decoding and its complete numerical/ownership bridge.

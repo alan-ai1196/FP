@@ -179,7 +179,7 @@ event. A completed T-event stream therefore retains at least(1+3T)F bytes.
 The [immutable-frame law](IMMUTABLE_CUDA_EVIDENCE_FRAMES.md) permits sharing
 completed frames across snapshots; it does not erase these distinct frames.
 
-The current typed encoding stores every binary tape node. Even the smallest
+The uncompressed typed encoding stores every binary tape node. Even the smallest
 `('add',0,0)` or `('mul',0,0)` node takes65 bytes. All real nonnegative operand
 addresses take at least that much. Ignoring every other field, separators,
 power tags and operation words gives the valid phase-frame lower bound
@@ -215,3 +215,16 @@ The actionable frontier is a paid representation and solver improvement
 with a complete bridge, or honest UNRESOLVED. Changing the native learner,
 forgetting old counts or relaxing a declared numerical relation is not
 justified by these results.
+
+## 6. Allowing a different anchor
+
+The separate [gauge/query-width law](GAUGE_AND_QUERY_WIDTH.md) now gives
+`J_a=2^(tw((G+uv)-a)+1)` for the optimum largest join at anchor a. Across
+anchors this optimum varies by at most a factor of two. All52,812 small
+anchor decisions agree with independent bucket/graph enumeration.
+On the selected model cuts, changing the anchor recovers the c2/17 join
+refusal, but cannot reduce c4/18's65,574-output minimum under the table caps.
+Two later cuts still need8,192 joined cells over every anchor and order.
+These findings neither change the fixed-anchor decision classes above nor
+fund their search. They prevent extrapolating a fixed-anchor refusal into
+an all-anchor lower bound or assuming an endpoint anchor always improves it.

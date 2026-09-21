@@ -52,13 +52,20 @@ The passive [query-order resource audit](theory/proofs/QUERY_ORDER_RESOURCE_FRON
 now gives exact tape/output minima over the declared bucket-order class,
 with both lexicographic objectives checked against 87,422 compiled orders.
 Its 128,432 small comparisons and all 1,544 n16 prefix classifications pass.
-The current realization cannot be recovered merely by searching orders and
+The uncompressed realization cannot be recovered merely by searching orders and
 enlarging uniform frames: 147 prefix queries have no order within the table
 caps, four exceed the output cap even at their minimum, and the typed-plan
 uniform-frame lower bound exceeds 8 GiB on every n16 tape. This is a passive
 solver/encoding frontier result. Runtime still uses its original declared
 orders, frames and caps. The replacement codec passes its scoped binding gate;
 a paid solver bridge remains outstanding.
+
+The passive [anchor/query-width law](theory/proofs/GAUGE_AND_QUERY_WIDTH.md)
+now characterizes the exact optimum join for every anchor and bounds its
+variation by a factor of two. All52,812 small anchor decisions pass. Selected
+all-anchor audits preserve two8,192-cell join obstructions and the65,574-output
+obstruction, while another old fixed-anchor refusal has a legal witness.
+Runtime's anchor, order, caps and physical schedule are unchanged by this audit.
 
 The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 completes all 16 source-bound jobs at caa66f1. Both schedules seal all four
