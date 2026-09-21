@@ -222,6 +222,16 @@ audits pass, but production integration and a separately verified AMP
 schedule remain open. This is a decoder/response consequence, not a change
 to Foundation R4 or the frozen Experiment Resource Contract.
 
+The [count-reachable construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
+proves that this strict horizon hierarchy also occurs in the native
+uniform-prior count learner. Legal unit-count histories produce boundary
+laws proportional to `1 +/- a*chi`, where chi is the full even boundary character, with
+a!=0 proved by a discrete valuation identity at likelihood ratio9. Two
+owned n8 histories verify the first separation through complete native
+phases. The scope is the boundary interface; additional-vertex queries and
+native parameter reads retain their full meaning. Reachability of the
+separate arbitrary-message coefficient grid remains unproved.
+
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.
 
 The repeated v1→v155 failure mode is now compressed to one rule:

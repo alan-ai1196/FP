@@ -12,6 +12,13 @@ AMP lowering needs its own declared schedule; real-valued cancellation
 does not preserve current rounded words. Worst-case hard blocks, explicit
 native outputs and model usefulness remain unresolved by this theorem.
 
+The strict horizon hierarchy's count-family reachability is now
+[proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
+and checked in actual owned n8 phases. The separate independent-coordinate
+grid lower bound still ranges over arbitrary positive boundary messages;
+it is not yet a reachable-class bound for the native learner. Higher-order
+information alone also does not prove a dense storage requirement.
+
 The [indexed AMP path](theory/proofs/OWNED_INDEXED_AMP.md) now has code for
 owned phases, complete coordinate checks, actual-target binding, fresh
 paired persistence and resident installation. Its CPU schedule/native

@@ -3,6 +3,19 @@
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
 **Current research result, 2026-09-21:**
+[legal count histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md) now
+realize every strict level of the boundary horizon hierarchy inside the
+existing native learner. For each even b, unit signed counts on independent
+additional vertices produce a pure b-spin boundary interaction. A discrete
+3-adic valuation identity proves its coefficient is nonzero at ratio9.
+Two actual owned n8 histories have all six boundary forecasts1/2; after
+the same observation(0,1,0), query(2,3) gives726561/3091522 versus
+2364961/3091522. Full native caches, gradients, parameters and clocks match
+independent literal execution. This closes the reachability objection for
+strictness, not for the arbitrary-message grid lower bound or a full-state
+quotient. No new architecture, resource advantage or GPU result is claimed.
+
+The
 [query-boundary response](theory/proofs/QUERY_BOUNDARY_RESPONSE.md) proves
 that h legal boundary observations expose exactly the even moments through
 order2h+2. The horizon hierarchy is strict and determines the full normalized

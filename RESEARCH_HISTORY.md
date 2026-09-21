@@ -6323,3 +6323,32 @@ mathematical grammar, initializer objective, inputs and assertions remain
 unchanged; resource registration and its identity change. Readback A3 runs
 only the incomplete installation battery. Its result is pending at this
 source; all previous executions and refusals remain canonical evidence.
+
+## 186. Legal count histories realize the strict boundary horizon hierarchy (2026-09-21)
+
+The boundary theorem's arbitrary-message scope raised a substantive
+objection: perhaps native pairwise counts cannot reach the higher-order
+messages used to prove strictness. The [new construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
+closes that objection without changing G, Gamma or U. For every even b,
+2^(b-2) additional vertices and b*2^(b-2) actual unit-count observations
+produce a pure b-spin boundary interaction. The two label histories have
+the same queries and clocks. Their parity response values A and B satisfy
+v3(A)-v3(B)=2*(-1)^(b/2)*binom(b-2,b/2-1), so A!=B at the fixed ratio9.
+This proves native strictness at every boundary horizon, rather than only
+at an unspecified real coupling or an uploaded boundary table.
+
+The exact symbolic audit covers b4/6/8/10. Two n8 histories are also run
+through actual owned byte ingress, observations and complete native state
+checks:36 caches,34 observed states
+and34 committed states. All six current boundary forecasts equal1/2.
+After the same observation(0,1,0), the owned pre-target query(2,3) returns
+726561/3091522 versus2364961/3091522. Both packed current roots use312,911
+bytes; no total-memory or physical advantage follows.
+
+The scope matters: queries involving additional vertices or explicit
+native parameters may distinguish the full states earlier. These compact
+pure-interaction messages do not prove dense-table storage necessary.
+The separate arbitrary-message independent-coordinate grid has not been
+shown reachable by this construction. Foundation R4/ERC-1 and the existing
+full-count representation remain unchanged; the general current-query
+projection is still valid precisely because it does not erase those counts.

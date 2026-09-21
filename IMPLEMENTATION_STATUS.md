@@ -2,6 +2,15 @@
 
 ## Current implementation state (2026-09-21)
 
+The [reachable boundary construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
+passes exact symbolic checks and two actual owned n8 histories. Each uses
+sixteen legal observations to reach a pure four-spin boundary interaction;
+all current boundary pairs agree, but a common observation separates a
+later forecast. The two runs check36 complete native caches and34 observed
+and34 committed states, including all parameter/gradient coordinates.
+This is a semantic counterexample to retaining only current boundary pair
+moments. Production retains full counts; no implementation action is added.
+
 The new [query-boundary theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 and diagnostic pass exact exhaustive checks. They identify the information
 exposed by finite boundary futures and a positive current-query block

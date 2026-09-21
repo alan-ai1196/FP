@@ -1,0 +1,271 @@
+{
+  "status": "PASS_REACHABLE_BOUNDARY_MESSAGES",
+  "scope": "legal histories inside the existing native count learner; restricted boundary future sharpness; no new architecture, GPU run or resource advantage",
+  "general_identity": "v3(M_even)-v3(M_odd)=2*(-1)^(b/2)*binom(b-2,b/2-1)",
+  "symbolic_cases": [
+    {
+      "boundary_vertices": 4,
+      "interior_vertices": 4,
+      "native_vertices": 8,
+      "legal_observations_per_history": 16,
+      "nonzero_count_magnitude": 1,
+      "boundary_assignments_per_history": 8,
+      "nonconstant_Fourier_support": "full boundary character only",
+      "valuation3_difference": 4,
+      "maximum_message_integer_bits": 39,
+      "indistinguishable_boundary_horizon": 0,
+      "first_distinguishing_boundary_observation_count": 1
+    },
+    {
+      "boundary_vertices": 6,
+      "interior_vertices": 16,
+      "native_vertices": 22,
+      "legal_observations_per_history": 96,
+      "nonzero_count_magnitude": 1,
+      "boundary_assignments_per_history": 32,
+      "nonconstant_Fourier_support": "full boundary character only",
+      "valuation3_difference": -12,
+      "maximum_message_integer_bits": 210,
+      "indistinguishable_boundary_horizon": 1,
+      "first_distinguishing_boundary_observation_count": 2
+    },
+    {
+      "boundary_vertices": 8,
+      "interior_vertices": 64,
+      "native_vertices": 72,
+      "legal_observations_per_history": 512,
+      "nonzero_count_magnitude": 1,
+      "boundary_assignments_per_history": 128,
+      "nonconstant_Fourier_support": "full boundary character only",
+      "valuation3_difference": 40,
+      "maximum_message_integer_bits": 1067,
+      "indistinguishable_boundary_horizon": 2,
+      "first_distinguishing_boundary_observation_count": 3
+    },
+    {
+      "boundary_vertices": 10,
+      "interior_vertices": 256,
+      "native_vertices": 266,
+      "legal_observations_per_history": 2560,
+      "nonzero_count_magnitude": 1,
+      "boundary_assignments_per_history": 512,
+      "nonconstant_Fourier_support": "full boundary character only",
+      "valuation3_difference": -140,
+      "maximum_message_integer_bits": 5171,
+      "indistinguishable_boundary_horizon": 3,
+      "first_distinguishing_boundary_observation_count": 4
+    }
+  ],
+  "small_exact_message_values": [
+    27898526736,
+    296637086736
+  ],
+  "small_absolute_parity_coefficient": "1280000/1545761",
+  "owned_CPU_cases": [
+    {
+      "pattern_sign": 1,
+      "actual_history": [
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          3,
+          4,
+          0
+        ],
+        [
+          0,
+          5,
+          0
+        ],
+        [
+          1,
+          5,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          1,
+          6,
+          0
+        ],
+        [
+          2,
+          6,
+          1
+        ],
+        [
+          3,
+          6,
+          1
+        ],
+        [
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          7,
+          0
+        ],
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          3,
+          7,
+          0
+        ]
+      ],
+      "native_vertices": 8,
+      "actual_observations": 17,
+      "full_native_caches_checked": 18,
+      "full_native_observed_and_committed_states_checked_each": 17,
+      "all_current_boundary_pair_forecasts": "1/2",
+      "common_boundary_observation": [
+        0,
+        1,
+        0
+      ],
+      "next_owned_query": [
+        2,
+        3
+      ],
+      "owned_noisy_forecast": "726561/3091522",
+      "final_target_revealed": false,
+      "packed_current_bytes": 312911
+    },
+    {
+      "pattern_sign": -1,
+      "actual_history": [
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          1
+        ],
+        [
+          3,
+          4,
+          1
+        ],
+        [
+          0,
+          5,
+          0
+        ],
+        [
+          1,
+          5,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          3,
+          5,
+          0
+        ],
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          1,
+          6,
+          0
+        ],
+        [
+          2,
+          6,
+          1
+        ],
+        [
+          3,
+          6,
+          0
+        ],
+        [
+          0,
+          7,
+          0
+        ],
+        [
+          1,
+          7,
+          0
+        ],
+        [
+          2,
+          7,
+          0
+        ],
+        [
+          3,
+          7,
+          1
+        ]
+      ],
+      "native_vertices": 8,
+      "actual_observations": 17,
+      "full_native_caches_checked": 18,
+      "full_native_observed_and_committed_states_checked_each": 17,
+      "all_current_boundary_pair_forecasts": "1/2",
+      "common_boundary_observation": [
+        0,
+        1,
+        0
+      ],
+      "next_owned_query": [
+        2,
+        3
+      ],
+      "owned_noisy_forecast": "2364961/3091522",
+      "final_target_revealed": false,
+      "packed_current_bytes": 312911
+    }
+  ],
+  "arbitrary_message_grid_reachability": "NOT_CLAIMED"
+}

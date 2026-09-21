@@ -111,6 +111,14 @@ does not identify these two distributions from their current pair moments.
 The audit does not assert count-family reachability of these particular
 tables. It tests the broader boundary-response theorem exactly.
 
+The subsequent [reachable-message construction](REACHABLE_BOUNDARY_MESSAGES.md)
+closes that escape route for strictness itself: legal unit-count histories
+produce a nonzero pure b-spin boundary character for every even b. A
+3-adic identity proves nonvanishing at likelihood ratio9, and two n8 owned
+Runtime histories exhibit the one-step separation. Their coefficient differs
+from the convenient a1/2 tables above; arbitrary-grid reachability is still
+not claimed.
+
 For b0 or b1 a flip-symmetric message has only a common positive scale.
 Such a branch is invisible to all continuations confined to its unchanged
 boundary. For b2 a message is exactly a two-entry parity response. This
