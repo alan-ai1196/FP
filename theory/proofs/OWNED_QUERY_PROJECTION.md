@@ -1,9 +1,9 @@
 # Owned exact query projection with the complete native state
 
 Status: **IMPLEMENTED REFERENCE REFINEMENT; EXACT AND OWNED CPU AUDITS PASS**.
-The independently declared AMP schedule remains global. Its new source-bound
-integration audit is separate; no projected physical kernel or complete
-release is claimed here.
+The independently declared AMP schedule remains global. Its actual A5
+integration audit passes all thirteen cases atae7f915; no projected physical
+kernel or complete release is claimed here.
 
 The [boundary response theorem](QUERY_BOUNDARY_RESPONSE.md) now supplies the
 prediction executor inside `ReferenceCompilerRuntime`. It changes the
@@ -161,10 +161,28 @@ The n256 current packed root is62,469,341 bytes, without a total-RAM claim.
 
 The unchanged exact AMP schedule audit passes270 predictions,540
 observations and all endpoint/operation adversaries. This is a CPU audit.
-The next source-bound actual CUDA attempt rechecks the owned integration
-and adds a star boundary control: reference projection may succeed while
-the unchanged global AMP preflight must honestly refuse. It must not be
-reported as a projected physical decoder or transferred A4 certificate.
+[Actual A5](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A5.json) atae7f915
+then passes all thirteen source-bound RTX3090 workers under4 GiB and900
+seconds each. The successful prefixes contain222 independently checked
+phases and51,146 floating words, including17,712 half words. Maximum job
+peak is2,384,936,960 bytes. n256 still checks42,594 floating words with
+literal builders disabled. Fresh paired evidence crosses at20; resident
+installation and learning to21 pass with alpha1/2 retained and without a
+historical selection proof.
+
+The new star control checks40 successful phases/5213 floating words,
+including1716 half words, before the leaf query. That query's exact
+reference forecast189/250 is retained in the failed physical phase, while
+global AMP preflight returns UNRESOLVED before producing floating outputs.
+All13 counts remain, the target is unrevealed, and no prediction or learner
+advance is published. This is an executed distinction between the two
+schedules, not a projected physical decoder or a transferred A4 certificate.
+The earlier A1-A4 results and failures remain retained.
+
+The [selected complete native CPU regressions](../../evidence/minimal/FP_QUERY_PROJECTION_REGRESSIONS.json)
+also pass atae7f915: context ingress, profiles and finite-run closure,
+using the strict full-section/counter validator. No full release is inferred
+from these selected regressions. All A5 and CPU jobs are terminal.
 
 Run `python -X utf8 -B scripts/audit_query_projection.py --write` and
 `python -X utf8 -B scripts/audit_indexed_runtime.py --write`.

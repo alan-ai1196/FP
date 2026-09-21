@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "execution_source": "ae7f915c3c44226c15a904c82211b707dc55bde3",
+  "scope": "complete selected native CPU regressions for the shared Runtime input binding and manifest changes; no complete release",
+  "registered_audits": [
+    "context_ingress",
+    "reference_profiles",
+    "reference_run"
+  ],
+  "audits": {
+    "context_ingress": {
+      "status": "PASS",
+      "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+      "seconds": 3.62,
+      "complete_sections": [
+        "codec",
+        "chunking",
+        "admission",
+        "failures",
+        "filtration"
+      ],
+      "evidence": {
+        "chunking.all_legal_chunkings": 208,
+        "chunking.equal_prefix_complete_snapshot_checks": 1328,
+        "admission.unchanged_unfunded_denials": 64,
+        "filtration.locked_action_prefix_positions": 90
+      },
+      "completed_jobs": {}
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "seconds": 11.08,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "evidence": {
+        "existing_value_path.actual_profile_predictions_and_observations": 512,
+        "exhaustive_replay": {
+          "all_two_event_binary_context_target_streams": 16,
+          "independent_profile_prediction_and_gradient_checks": 64
+        },
+        "recurrent_attachment.recurrent_profile_events": 8
+      },
+      "completed_jobs": {}
+    },
+    "reference_run": {
+      "status": "PASS",
+      "scope": "owned single-root finite reference run, actual CPU protocol and terminal report",
+      "seconds": 11.33,
+      "complete_sections": [
+        "cases.registration",
+        "cases.finite_streams",
+        "cases.installed",
+        "cases.failures",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.finite_streams": {
+          "all_binary_streams_at_lengths_2_3_4": 28,
+          "terminal_port_denials_without_history_growth": 783,
+          "partial_optimizer_unit_retained_without_flush": true,
+          "end_of_stream_not_evidence_crossing_or_rejection": true,
+          "waiting_and_active_stages_report_unresolved_without_history_erasure": true
+        },
+        "cases.installed": {
+          "cursor": 22,
+          "native_class_size": 35,
+          "independent_binary64_phase_checks": 141,
+          "sealed_port_denials": 27,
+          "alpha_spent": "1/2",
+          "closure_included_in_actual_owned_payload_bytes": true
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 32616448,
+          "peak_job_commit": 33845248,
+          "user_100ns": 22187500,
+          "kernel_100ns": 781250,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 13520,
+          "process_creation_100ns": 134344437770297290
+        }
+      }
+    }
+  }
+}

@@ -15,6 +15,10 @@ does not preserve current rounded words. Worst-case hard blocks, explicit
 native outputs and model usefulness remain unresolved by this theorem.
 The unchanged global AMP schedule must still refuse when its own table
 preflight fails, even if the new exact reference projection succeeds.
+Actual A5 atae7f915 now verifies this boundary and all twelve existing
+integration cases, including installation and continued learning. The
+projected physical schedule itself remains open; its arithmetic words,
+resource plan and independent conformance check must be declared afresh.
 
 The strict horizon hierarchy's count-family reachability is now
 [proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

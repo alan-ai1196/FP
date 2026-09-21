@@ -13,9 +13,13 @@ Nine owned plan/result attacks and combined resource refusals pass. The
 remain. A later connected query also exposes retained off-path information.
 The complete Runtime audit and unchanged exact AMP CPU audit pass.
 The new reference arithmetic is explicitly declared; the actual global AMP
-schedule is unchanged. The next source-bound CUDA attempt checks that
-integration, including a control where reference succeeds and AMP must
-remain UNRESOLVED. No physical projection or new complete release is claimed.
+schedule is unchanged. A5 atae7f915 now passes all thirteen actual cases,
+including installation and the star control where reference succeeds but
+AMP remains UNRESOLVED before producing floating outputs.222 successful
+phases/51,146 floating words include17,712 half words. Maximum job peak
+is2,384,936,960 bytes under4 GiB. All three selected complete native CPU
+regressions pass. All jobs are terminal. Projected AMP and a complete new
+release are still not claimed.
 
 **Current research result, 2026-09-21:**
 [reachable boundary information](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
@@ -116,18 +120,19 @@ histories give 776 full native phase comparisons. The n256 path executes
 four observations and a four-event profile with world builders disabled.
 An independent literal Runtime matches fresh evidence, crossing at cursor
 20 and retaining alpha 1/4 after retirement. Planning and table execution
-have separate prepaid debits. A 13-observation star exposes a natural-order
-width refusal with history retained; no inference impossibility follows.
-Nine complete CPU regression batteries pass, including the full 36-class
-model check and owned policy. This is an exact reference extension, not a
+have separate prepaid debits. The query projection now recovers the former
+13-observation star refusal while retaining its complete history. Nine
+complete CPU regressions passed for the original admission source, including
+the full36-class model check and owned policy; the current selected
+regressions are recorded above. This is an exact reference extension, not a
 new complete release, resource advantage or `CERTIFIED_COMPLETE`.
 
-**Next work at the reference milestone:** the AMP obligations now have the
-implementation and pending actual protocol above; native-class search or a
-funded fallback remains open. The reference registration refuses unsupported
-physical/search integrations. Empty-policy finite reference closure works.
-No GPU/model job was launched for this result; every previous job remains
-terminal. Do not return to additional static cycle-size studies. Foundation
+**Next work at the reference milestone:** projected AMP needs a separately
+declared schedule and checked execution; integration with the current global
+AMP schedule now passes actual A5. Native-class search or a funded fallback
+remains open. Empty-policy finite reference closure works. The original
+admission milestone was CPU-only; the later actual AMP jobs described above
+are now terminal. Do not return to additional static cycle-size studies. Foundation
 R4 and ERC-1 stay frozen.
 
 **Current complete-coordinate bridge, 2026-09-21:** the
