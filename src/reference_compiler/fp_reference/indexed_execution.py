@@ -170,6 +170,25 @@ class IndexedPredictionPlan:
     bit_limit: int
 
 
+def _execute_owned_prediction(plan, n):
+    """Fixed exact kernel; Runtime never delegates this call to a planner.
+
+    Its records belong to the owner. The replaceable proposal port sees
+    immutable values only and cannot retain any of these argument aliases.
+    This arithmetic remains in the explicitly trusted reference kernel.
+    """
+    if type(plan) is not IndexedPredictionPlan or plan.before.n != n:
+        raise ContractError('complete indexed execution plan required')
+    before, query = plan.before, plan.query
+    parts, stats = projection.execute(before, query, plan.projection)
+    total = sum(parts)
+    excesses = tuple(F(8*v, total) for v in parts)
+    masses = tuple(1+v for v in excesses)
+    probabilities = tuple(v/10 for v in masses)
+    _guard(*excesses, *masses, *probabilities, F(10), bit_limit=plan.bit_limit)
+    return IndexedEvaluation(before, query, excesses, masses, F(10), probabilities, tuple(stats.items()))
+
+
 @dataclass(frozen=True)
 class IndexedRangeBound:
     descriptor: tuple[str, int]
@@ -224,7 +243,9 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         # Pay the metadata schedule before planning. Numeric tables receive
         # a separate debit for their actual planned shape, including index
         # visits; the full unused table allowance is not spent each event.
-        return 64*(n+1)**2*(d+n+1)+128*(d+n+1)
+        # Closed value transfer (including fresh categorical declarations)
+        # is paid before the delegated preparation port is reached.
+        return 64*(n+1)**2*(d+n+1)+2048*(d+n+16)
 
     def observation_work(self, program):
         self.require_program(program)
@@ -273,7 +294,11 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
             raise ContractError('complete indexed execution plan required')
         budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, plan.bit_limit))
-        if plan.projection != projection.prepare(plan.before, plan.query, budget):
+        from .indexed_values import freeze, same, reference_cells
+        expected = projection.prepare(plan.before, plan.query, budget)
+        limit = reference_cells(self.schema.n)
+        if not same(freeze(plan.projection, cells=limit, bits=plan.bit_limit),
+                    freeze(expected, cells=limit, bits=plan.bit_limit)):
             raise ContractError('indexed projection differs from complete input preflight')
         shape = dict(plan.projection.shape)
         # Each scalar join includes its at-most-n projection/index visits.
@@ -283,16 +308,9 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         return 32*(self.schema.n+1)*(shape['positive_multiplications']+shape['positive_additions'])+64*self.state_work(self.schema)+64
 
     def execute_prediction(self, plan):
-        if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
-            raise ContractError('complete indexed execution plan required')
-        before, query = plan.before, plan.query
-        parts, stats = projection.execute(before, query, plan.projection)
-        total = sum(parts)
-        excesses = tuple(F(8*v, total) for v in parts)
-        masses = tuple(1+v for v in excesses)
-        probabilities = tuple(v/10 for v in masses)
-        _guard(*excesses, *masses, *probabilities, F(10), bit_limit=plan.bit_limit)
-        return IndexedEvaluation(before, query, excesses, masses, F(10), probabilities, tuple(stats.items()))
+        # Passive convenience for arithmetic audits. Runtime uses the fixed
+        # private kernel after accepting a value-only metadata proposal.
+        return _execute_owned_prediction(plan, self.schema.n)
 
     def observe(self, program, state, spec, prediction, target, *, bit_limit):
         self.require_program(program)

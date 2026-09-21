@@ -2,13 +2,30 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**New input-binding counterexample: indexed extension HOLD.**
+**Current frontier: continuation-stable delegation; indexed extension HOLD.**
+The [component law and reference repair](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+separate frame preservation from numerical refinement. A new exact
+poison/restore witness proves that copying arguments and comparing them after
+the call is insufficient. Runtime now sends only immutable metadata values
+to reference planning, reconstructs the result privately, checks the full
+plan and runs the fixed exact kernel itself. The redundant numerical
+delegation is retired. No Foundation action or arithmetic schedule changes.
+CPU passes2048 finite heap schedules,759 count reconstructions, six actual
+Runtime fault/continuation cases and prepaid refusal. Full indexed and
+projection regressions pass, including388 histories/776 native phase checks,
+n256, profiles and fresh reference persistence. Ten fresh4-GiB/900-second
+CUDA cases are registered: six faults plus four profile/n256/fresh-install
+integrations. Actual outcomes are pending. Other native/AMP
+helper surfaces remain outside this scoped repair and still need analysis.
+Paid order implementation has not begun.
+
+**Retained input-binding counterexamples:**
 The [real CPU Runtime probes](theory/proofs/INDEXED_INPUT_ALIAS.md) show that
 a planner can modify its supplied source dictionary and publish41/50 for
 an actual context requiring1/2. The following actual target commits the
 wrong native count. Two count-record mutations also publish wrong forecasts
 and change an earlier snapshot. These are supplied-argument attacks, without
-owner globals or a numerical-owner mock. Production is still a559d7a.
+owner globals or a numerical-owner mock. These probes concern production a559d7a.
 All three fresh CUDA probes at058489e reproduce their registered outcomes.
 The source-map case passes AMP checks and commits the wrong count in both
 paths; count attacks trigger refusal after corrupting the native history
@@ -16,8 +33,8 @@ and one older sealed phase's live metadata. All jobs are terminal below4 GiB,
 maximum2,192,297,984 bytes. The paid order implementation has not
 started; source stability now has priority. The byte-only codec's scoped
 gate below remains valid and does not establish upstream causal input binding.
-Do not rerun these terminal probes before changing the interface. Repair
-must preserve the owned input and historical state even on helper failure.
+Do not rerun the old counterexample scripts on repaired production. The new
+value-boundary audit checks the changed interface and retained failure state.
 
 **Current resource result, 2026-09-21:**
 The [byte-only evidence boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)

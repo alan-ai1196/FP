@@ -6,6 +6,12 @@ all terminal. The indexed input boundary is HOLD for extension and
 further model use. Foundation R4 and the earlier byte-only codec theorem
 are unchanged.
 
+The subsequent [continuation-stable reference boundary](CONTINUATION_STABLE_DELEGATION.md)
+implements a scoped repair: immutable metadata proposals, private accepted
+plans and removal of redundant numerical delegation. CPU regressions pass;
+actual repair probes are registered and pending. The old witnesses below
+remain source-bound, while broader indexed helper ownership remains HOLD.
+
 ## 1. The causal input can change before its own check
 
 The existing owned reference path calls

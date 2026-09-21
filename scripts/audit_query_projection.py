@@ -132,7 +132,7 @@ def off_path_height():
 def binding_attacks():
     rows = []
     for kind in ('plan-query','plan-state','plan-bits','plan-shape','plan-block-omission',
-                 'plan-block-vertices','plan-block-query','result-query','result-state'):
+                 'plan-block-vertices','plan-block-query'):
         cfg,schema,online = fixture(3,3)
         runtime = ReferenceCompilerRuntime(cfg,schema,online=online)
         if kind.startswith('plan-block-'):
@@ -141,7 +141,7 @@ def binding_attacks():
             step(runtime,schema,(1,2,0),models)
         before = runtime.snapshot()
         query = (0,2) if kind.startswith('plan-block-') else (0,1)
-        method = 'prepare_prediction' if kind.startswith('plan-') else 'execute_prediction'
+        method = 'prepare_prediction'
         original = getattr(IndexedReferenceMachine,method)
         def changed(machine,*args,**kwargs):
             result = original(machine,*args,**kwargs)
@@ -172,7 +172,7 @@ def binding_attacks():
         planning = runtime._machine.evaluation_work(schema,cfg.semantics)
         spent = after.resources['spent']['deployment']['work']
         phase_spent = spent-before.resources['spent']['deployment']['work']
-        assert (phase_spent == planning) if kind.startswith('plan-') else (phase_spent > planning)
+        assert phase_spent == planning
         rows.append({'attack':kind,'published_predictions':0,'actual_cursor':after.cursor,
             'spent_deployment_work':spent,'phase_deployment_work':phase_spent,
             'received_context_and_spent_work_retained':True})

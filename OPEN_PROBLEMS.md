@@ -2,14 +2,24 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The immediate obstacle is [owned indexed prediction input binding](theory/proofs/INDEXED_INPUT_ALIAS.md).
+The immediate obstacle is complete indexed helper ownership. The
+[continuation-stability law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+now has a scoped reference prediction implementation: immutable value-only
+metadata delegation, private accepted plans and one fixed owned exact
+execution. CPU and native regressions pass; ten actual CUDA probes are
+registered and pending. Other native/AMP argument and returned-record
+surfaces, including later retained aliases, remain to be assessed. No complete
+Runtime release follows from this single component boundary.
+
+The retained [owned input witnesses](theory/proofs/INDEXED_INPUT_ALIAS.md)
+explain why that boundary is needed.
 Real CPU Runtime now demonstrates a source-map mutation that changes the
 published forecast and complete native update, plus two count aliases that
 rewrite earlier snapshots. Independent checks against the same mutated
 inputs do not establish the original causal context or predecessor.
 All three actual CUDA probes at058489e reproduce: both paths accept the wrong
 source-driven update, while AMP count refusal leaves corrupted retained
-state. A paid boundary preserving live/history state takes priority over the order
+state. Complete paid boundaries preserving live/history state take priority over the order
 solver; the latter remains unimplemented. No Foundation action is needed.
 
 The 23-job actual A1 gate is terminal at b53889e for the

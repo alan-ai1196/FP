@@ -211,6 +211,17 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [continuation-stable delegation law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+states the implementation premise joining causal input binding, historical
+frame preservation and checked execution. Immutable value exchange and
+private accepted records establish the frame property; native refinement
+still requires an independently validated plan and a trusted fixed executor.
+Copying arguments followed by after-call equality is insufficient, as an
+exact poison/restore witness shows. The reference prediction port now uses
+this law and retires its redundant numerical delegation. CPU regressions
+pass; its actual CUDA cases are pending, and other indexed helper surfaces
+remain HOLD. No Foundation definition or semantic action changes.
+
 The [indexed supplied-input counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md)
 now put that extension on HOLD: real CPU Runtime accepts a changed helper
 source mapping as the actual query and commits a wrong native update;

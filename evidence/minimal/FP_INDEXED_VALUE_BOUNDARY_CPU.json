@@ -1,0 +1,133 @@
+{
+  "status": "PASS_INDEXED_VALUE_BOUNDARY_CPU",
+  "scope": "reference prediction delegation only; no complete Runtime or other-helper release",
+  "copy_restore_counterexample": {
+    "scope": "passive counterexample to copy-plus-after-equality; not the repaired Runtime",
+    "metadata_restored": true,
+    "required_probability": "41/50",
+    "wrong_probability": "9/50",
+    "consequence": "the owned path removes the replaceable numerical executor"
+  },
+  "heap_model": [
+    {
+      "shared_input": false,
+      "shared_output": false,
+      "trials": 512,
+      "accepted": 128,
+      "input_failures": 0,
+      "history_failures": 0,
+      "semantic_failures": 0
+    },
+    {
+      "shared_input": false,
+      "shared_output": true,
+      "trials": 512,
+      "accepted": 128,
+      "input_failures": 0,
+      "history_failures": 96,
+      "semantic_failures": 0
+    },
+    {
+      "shared_input": true,
+      "shared_output": false,
+      "trials": 512,
+      "accepted": 128,
+      "input_failures": 384,
+      "history_failures": 0,
+      "semantic_failures": 96
+    },
+    {
+      "shared_input": true,
+      "shared_output": true,
+      "trials": 512,
+      "accepted": 128,
+      "input_failures": 384,
+      "history_failures": 96,
+      "semantic_failures": 96
+    }
+  ],
+  "closed_values": {
+    "ternary_states": 759,
+    "malformed_or_unfunded_values_refused": 12,
+    "native_records_detached": true,
+    "rational_objects_cannot_cross": true,
+    "exact_primitive_types_checked": true
+  },
+  "funding": {
+    "unfunded_helper_calls": 0,
+    "received_context_retained": true,
+    "status": "UNRESOLVED"
+  },
+  "larger_nominal_limit": {
+    "nominal_reference_bits": 65536,
+    "decoder_bits": 32768,
+    "forecast": "1/2"
+  },
+  "runtime": [
+    {
+      "case": "planner-sources",
+      "refused": true,
+      "error": "ContractError: indexed plan differs from the private predecessor or actual input",
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "private_planning_work_paid": 52224
+    },
+    {
+      "case": "planner-counts",
+      "refused": true,
+      "error": "ContractError: indexed plan differs from the private predecessor or actual input",
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "private_planning_work_paid": 52224
+    },
+    {
+      "case": "planner-raises",
+      "refused": true,
+      "error": "RuntimeError: registered supplied-input failure after mutation",
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "private_planning_work_paid": 52224
+    },
+    {
+      "case": "planner-poison-restore",
+      "refused": false,
+      "error": null,
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "complete_native_update_matches_literal": true,
+      "private_planning_work_paid": 53632
+    },
+    {
+      "case": "retained-result",
+      "refused": false,
+      "error": null,
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "complete_native_update_matches_literal": true,
+      "prior_accepted_output_unchanged_after_later_helper": true,
+      "private_planning_work_paid": 53632
+    },
+    {
+      "case": "retired-executor",
+      "refused": false,
+      "error": null,
+      "old_snapshot_unchanged": true,
+      "native_predecessor_unchanged": true,
+      "actual_context_retained": true,
+      "target_before_decision": null,
+      "complete_native_update_matches_literal": true,
+      "retired_executor_calls": 0,
+      "private_planning_work_paid": 53632
+    }
+  ]
+}

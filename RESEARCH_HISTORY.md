@@ -7012,3 +7012,44 @@ distinctions. No fresh-evidence certificate, installation, class-completeness
 or Foundation counterexample is asserted. The indexed input boundary stays
 HOLD until helpers cannot mutate owned inputs or historical accepted outputs
 through supplied aliases. Paid order search remains the subsequent frontier.
+
+## 209. Separate the frame law from numerical refinement and remove redundant delegation (2026-09-21)
+
+The supplied-input counterexamples lead to a component composition law:
+comparison requires a continuation-stable referent. Closed immutable inputs
+and private reconstructed results establish a frame property across helper
+failure and later retained aliases; accepted native refinement additionally
+requires independent plan validation and a trusted executor. Reference/AMP
+agreement alone cannot bound the discrepancy between an altered input and
+the actual causal input.
+
+A new exact poison/restore witness rules out a copying-only repair. An
+executor flips a copied count, calls honest arithmetic, then restores the
+input and aliased returned metadata. All before/query comparisons pass, but
+the forecast remains9/50 instead of41/50. Copying preserved the owner while
+failing to establish numerical refinement. Runtime therefore removes that
+unnecessary numerical delegation instead of adding another after-call check.
+
+The implemented reference prediction port passes bounded immutable metadata
+values only. A fresh local machine/schema/source/state serves the planner;
+returned plans are reconstructed privately, fully checked, and executed
+once by the fixed exact kernel. All counts and causal information remain.
+The transfer/check work is prepaid; transient Python workspace is not
+misrepresented as a paid dummy buffer or a total-memory theorem. Native
+arithmetic, AMP schedules, tolerances and Foundation definitions are unchanged.
+
+CPU evidence includes all2048 schedules in the stated finite heap model,
+759 count reconstructions,12 malformed/resource refusals, six real Runtime
+fault/continuation probes and refusal before an unfunded helper. The complete
+indexed regression passes388 histories/776 native phase checks, profiles,
+n256, fresh reference persistence and finite closure. The projection audit
+passes1098 supports/10650 path checks,11919 full native caches, seven active
+proposal substitutions and four numeric preflights. The old numerical
+result-substitution port is retired and independently checked to receive
+zero Runtime calls. Historical evidence is retained separately.
+
+Ten fresh4-GiB/900-second CUDA jobs are registered before execution: the six
+component faults/continuations and four global/projected profile, n256 and
+fresh-install integrations. Their outcomes are pending. This closes no
+other native/AMP helper boundary and grants no complete Runtime release.
+The broader indexed extension remains HOLD; paid order search has not begun.

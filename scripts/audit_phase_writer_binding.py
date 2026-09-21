@@ -129,7 +129,7 @@ def preflight():
 def matrix(attempt, *, script=None, cases=None, journal_prefix='FP_PHASE_WRITER_ALIAS_CUDA',
            registration_fn=None, production_anchor='3d3711e',
            result_status='ACTUAL_WRITER_INPUT_ALIAS_COUNTEREXAMPLE',
-           final_status='FALSIFIED_WRITER_INPUT_BINDING'):
+           final_status='FALSIFIED_WRITER_INPUT_BINDING', worker_status='COUNTEREXAMPLE_REPRODUCED'):
     assert attempt>0
     script = Path(__file__).resolve() if script is None else Path(script).resolve()
     cases = CASES if cases is None else cases
@@ -172,7 +172,7 @@ def matrix(attempt, *, script=None, cases=None, journal_prefix='FP_PHASE_WRITER_
                 assert job.attached_before_resume and job.peak_job_commit<=indexed.CAP
                 assert row['result']['process_id']==job.process_id
                 assert row['result']['status']==result_status
-                row['worker_status']='COUNTEREXAMPLE_REPRODUCED'
+                row['worker_status']=worker_status
             else:
                 stop = True
         except Exception:

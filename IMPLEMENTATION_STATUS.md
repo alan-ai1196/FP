@@ -2,16 +2,25 @@
 
 ## Current implementation state (2026-09-21)
 
-**Indexed input binding is HOLD.** Three
+**Reference prediction delegation is value-isolated; broader indexed binding stays HOLD.**
+The [continuation-stability repair](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+keeps actual inputs and accepted results private, delegates only bounded
+immutable plan values, and retires the replaceable numerical executor.
+A poison/restore witness rules out copying-only numerical delegation.
+The new CPU audit and complete indexed/projection regressions pass;
+ten fresh actual CUDA fault/integration cases are registered and pending. Other native/AMP
+helper surfaces and complete release are not covered by this component gate.
+
+Three historical
 [actual CPU counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md) at a559d7a
 show supplied source/count aliases bypassing the plan checks. Ordinary
 dictionary mutation publishes41/50 where the retained actual context requires
 1/2, then commits the wrong native update. Count mutations before or after
 plan validation also change old snapshots. All three actual CUDA probes at
 058489e reproduce: the source case passes AMP checks and commits wrongly;
-count cases refuse after native/history corruption. No production repair
-is present. All jobs are terminal below4 GiB. The next
-step is stable owned inputs before adding paid order search.
+count cases refuse after native/history corruption. All old jobs are
+terminal below4 GiB. The reference-only repair above is the current change;
+complete helper ownership precedes paid order search.
 
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps
