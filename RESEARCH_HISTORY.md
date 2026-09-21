@@ -6352,3 +6352,21 @@ The separate arbitrary-message independent-coordinate grid has not been
 shown reachable by this construction. Foundation R4/ERC-1 and the existing
 full-count representation remain unchanged; the general current-query
 projection is still valid precisely because it does not erase those counts.
+
+## 187. Funded installation reaches a distinct capacity-fixture failure (2026-09-21)
+
+[Readback A3](evidence/minimal/FP_CUDA_READBACK_REGRESSIONS_A3.json), source
+4f6bc2c, is terminal. With60-billion work, execution reaches the later
+top-level assertion requiring the small installation case to raise the
+all-time packed-memory peak. That strict inequality fails before the
+byte-cap and work-cap controls are executed. This is a distinct failure
+from the earlier learned class's unresolved work debits. The source code
+reaches this point only after the preceding subcase loop returns, but the
+terminal record contains no complete per-case report; no full battery pass,
+new exact class count or capacity-control outcome is inferred.
+
+The complete policy pass and all previous failures stay retained. The
+remaining obligation is to establish a valid, actually exercised installation
+capacity control without assuming installation must exceed every historical
+peak. Research continues on the boundary information law; no semantic change
+or Foundation/R4 exception follows from this fixture failure.

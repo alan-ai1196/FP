@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE_WITH_FAILURE",
+  "registration": {
+    "source": "4f6bc2c7fab25433cf3cfd55542e38a072d9f118",
+    "cases": [
+      "cuda_installation"
+    ],
+    "tariff_change_source": "56dfea0",
+    "prepaid_output_cells": 4096,
+    "old_per_cell_work": 128,
+    "current_per_cell_work": 320,
+    "additional_work_per_native_phase": 786432,
+    "additional_initial_readout_work": 32768,
+    "installation_work_budget": {
+      "old": 4000000000,
+      "retained_incomplete_attempt": 12000000000,
+      "current": 60000000000
+    },
+    "policy_work_budget": {
+      "old": 20000000000,
+      "current": 60000000000
+    },
+    "scope": "complete unchanged native decision classes, trajectories and failure controls with explicitly funded current work tariffs; no complete release",
+    "enforcement": "existing complete battery process/job protocols; strict full-section and counter validation; 7200-second battery deadline",
+    "earlier_failure": "FP_INDEXED_AMP_CUDA_REGRESSIONS.json"
+  },
+  "audits": {
+    "cuda_installation": {
+      "status": "FAILED",
+      "failure": "scripts/audit_cuda_installation.py: exit 1\nTraceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 320, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 308, in main\r\n    assert baseline['peak_before_install'] < cap < baseline['peak_during_install']\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError\r\n"
+    }
+  }
+}

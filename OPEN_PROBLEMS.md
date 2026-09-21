@@ -35,7 +35,11 @@ mutation and older-extent substitution. Separate proper-normalization and
 division checks also pass. The legacy policy battery now passes with explicit
 work funding. Installation still leaves232 class comparisons unresolved at
 12-billion work; A2 identifies cumulative work exhaustion for all232. A3
-tests installation at the already-used policy allowance of60 billion.
+at the already-used policy allowance of60 billion reaches a later failing
+memory-cap calibration assertion. The full battery remains incomplete;
+the fixture assumes installation raises the all-time packed peak, which
+its current execution does not establish. Retain the failure and resolve
+that capacity-control obligation before claiming a full installation pass.
 Native-class search/fallback, query-dependent inference
 cost and model usefulness remain open. A solved endpoint-binding issue
 must not become a reason to expand unrelated static cases.

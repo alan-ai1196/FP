@@ -325,5 +325,8 @@ across A4. Paired crossing at20, resident installation, alpha1/2 and continued
 learning to21 still pass. The three earlier failure controls also pass.
 All A1/A2/A3/A4 jobs remain terminal and individually auditable. This verifies
 the scoped repaired integration; it is not a new complete release or class
-certificate. The two legacy learned-search budget failures remain separately
+certificate. The legacy policy battery subsequently passes with explicitly
+funded current tariffs. Installation at60-billion work reaches a later
+failing memory-cap calibration assertion; its full battery remains incomplete.
+The earlier learned-search work refusals remain separately
 recorded until their funded regression checks complete.

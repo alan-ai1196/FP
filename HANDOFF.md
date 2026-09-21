@@ -67,8 +67,12 @@ This alone does not prove all visited class members were resolved. Installation
 with12-billion work still leaves232 comparisons unresolved, after542 compare.
 A2 confirms that all232 rows hit `compiler cumulative work exhausted`,
 with no other unresolved reason. A3 registers only the incomplete installation
-battery at the policy fixture's existing60-billion allowance. A1/A2 and the
-full policy pass remain retained; A3 is pending at this source.
+battery at the policy fixture's existing60-billion allowance. A3 is now
+terminal: execution reaches the later assertion requiring installation to
+raise the all-time packed-memory peak, and that assertion fails. The full
+battery does not pass; its terminal record retains no complete per-case
+report. This is no longer the earlier class-exhaustion failure. A1/A2 and
+the full policy pass remain retained.
 Retain A1/A2 and all old terminal jobs. No complete release or class
 certificate is claimed; Foundation R4 and ERC-1 remain frozen.
 
