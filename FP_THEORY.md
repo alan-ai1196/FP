@@ -223,7 +223,10 @@ now implements this consequence with full global counts, independently
 bound plans, prepaid arithmetic and guarded global parameter reads. The
 13-event star refusal is recovered; later queries still expose retained
 off-path information. A separately verified projected AMP schedule remains
-open. This is a decoder/response consequence, not a change
+open. A5 atae7f915 checks actual integration with the unchanged global AMP
+schedule, including a query that reference solves while AMP correctly
+refuses before execution. All thirteen cases pass, including fresh
+installation and continued learning. This is a decoder/response consequence, not a change
 to Foundation R4 or the frozen Experiment Resource Contract.
 
 The [count-reachable construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

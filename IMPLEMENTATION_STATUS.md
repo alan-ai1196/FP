@@ -11,8 +11,13 @@ reconstruction binds every block to the owned input before numerical debit.
 checks, nine binding adversaries and aggregate resource refusals pass.
 The complete Runtime audit recovers the13-event star query as189/250 and
 passes the original profile, persistence, failure and n256 cases. Current
-n256 packed bytes are62,469,341. The unchanged AMP CPU schedule audit passes;
-actual integration under this new reference source is the next audit.
+n256 packed bytes are62,469,341. The unchanged AMP CPU schedule audit passes.
+A5 atae7f915 passes all thirteen actual CUDA cases:222 checked successful
+phases/51,146 floating words, including17,712 half words, plus the guarded
+star refusal after reference success. Installation and learning to21 pass;
+maximum job peak2,384,936,960 bytes stays under4 GiB. The complete native
+ingress, profile and finite-run regression batteries also pass at that
+source. Every job is terminal.
 Projected AMP remains unimplemented and the global schedule keeps its own
 width limits. No complete release or whole-resource saving is inferred.
 

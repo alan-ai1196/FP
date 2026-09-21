@@ -13,9 +13,13 @@ Nine owned plan/result attacks and combined resource refusals pass. The
 remain. A later connected query also exposes retained off-path information.
 The complete Runtime audit and unchanged exact AMP CPU audit pass.
 The new reference arithmetic is explicitly declared; the actual global AMP
-schedule is unchanged. The next source-bound CUDA attempt checks that
-integration, including a control where reference succeeds and AMP must
-remain UNRESOLVED. No physical projection or new complete release is claimed.
+schedule is unchanged. A5 atae7f915 now passes all thirteen actual cases,
+including installation and the star control where reference succeeds but
+AMP remains UNRESOLVED before producing floating outputs.222 successful
+phases/51,146 floating words include17,712 half words. Maximum job peak
+is2,384,936,960 bytes under4 GiB. All three selected complete native CPU
+regressions pass. All jobs are terminal. Projected AMP and a complete new
+release are still not claimed.
 
 **Current research result, 2026-09-21:**
 [reachable boundary information](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)

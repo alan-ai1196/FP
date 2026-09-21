@@ -6440,3 +6440,32 @@ a star control that must preserve that reference/AMP distinction. No new
 AMP kernel, complete release, class certificate or Foundation action is
 claimed. The coarse metadata tariff remains unchanged; no total-process
 resource saving is inferred from a smaller current partition.
+
+## 190. Actual AMP integration preserves the reference projection's distinct execution boundary (2026-09-21)
+
+[A5](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A5.json) atae7f915 passes all
+thirteen actual RTX3090 workers, each attached to its existing4-GiB job
+before execution and bounded by900 seconds. All exit successfully without
+timeout or limit termination. Maximum job peak is2,384,936,960 bytes. The
+five reported successful paths/prefixes check222 phases,51,146 floating
+words and17,712 half words. n256 keeps literal builders disabled; fresh
+paired crossing at20, resident installation and learning to21 pass with
+alpha1/2 retained and no historical selection proof.
+
+The additional star control checks40 actual phases/5213 floating words,
+including1716 half words. After13 observations, the new reference projection
+computes189/250 from two bridge responses, but the unchanged global AMP
+preflight refuses its16384-cell join. It produces no floating outputs,
+reveals no target and publishes no prediction or learner advance. The
+failed physical phase retains the exact reference result and all counts.
+Thus improved exact inference has not silently expanded the physical
+schedule's admissible class or borrowed an earlier certificate.
+
+Three [complete selected native CPU regressions](evidence/minimal/FP_QUERY_PROJECTION_REGRESSIONS.json)
+also pass atae7f915 under the strict full-section/counter validator: context
+ingress, profile replay and finite-run closure. All A5 and CPU jobs are
+terminal. The separately retained legacy installation capacity-fixture
+failure still prevents claiming that complete battery. The next numerical
+research step is a separately declared projected AMP schedule with full
+endpoint/operation conformance; Foundation R4/ERC-1 and the closed static
+special-case program remain unchanged.

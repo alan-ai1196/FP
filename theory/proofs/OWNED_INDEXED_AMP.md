@@ -330,3 +330,23 @@ funded current tariffs. Installation at60-billion work reaches a later
 failing memory-cap calibration assertion; its full battery remains incomplete.
 The earlier learned-search work refusals remain separately
 recorded until their funded regression checks complete.
+
+## Integration with the query-projected reference
+
+The [owned query projection](OWNED_QUERY_PROJECTION.md) changes reference
+arithmetic while keeping this physical schedule global. Actual A5 atae7f915
+passes all thirteen source-bound workers, including every existing failure
+control, n256, fresh paired crossing, resident installation and subsequent
+learning. The five reported successful paths/prefixes check222 phases and
+51,146 floating words, including17,712 half words. Maximum job peak is
+2,384,936,960 bytes under the existing4-GiB/900-second worker registration.
+
+The new star control checks40 phases before query(2,3). Its exact reference
+projection computes189/250 using two bridge responses while keeping all13
+nonzero counts. This unchanged AMP preflight then refuses its16384-cell
+global join before any floating output. The failed physical phase retains
+the exact reference result; the target remains unrevealed and no prediction
+or learner advance is published. This verifies the actual admission boundary,
+not a projected AMP implementation. All A5 jobs are terminal; earlier
+attempts and the separate legacy installation capacity-fixture failure
+remain retained. No new complete release or class certificate follows.
