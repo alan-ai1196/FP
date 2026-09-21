@@ -5,6 +5,12 @@ The independently declared AMP schedule remains global. Its actual A5
 integration audit passes all thirteen cases atae7f915; no projected physical
 kernel or complete release is claimed here.
 
+A subsequent [projected physical schedule](PROJECTED_INDEXED_AMP.md) now
+shares this geometry with its own exponent guards and arithmetic identity.
+Its exact CPU audit passes; actual A8 is pending. The present proof remains
+the exact-reference result and does not transfer its evidence to that device
+schedule.
+
 The [boundary response theorem](QUERY_BOUNDARY_RESPONSE.md) now supplies the
 prediction executor inside `ReferenceCompilerRuntime`. It changes the
 arithmetic for a current query, while preserving G, Gamma, U, every source,

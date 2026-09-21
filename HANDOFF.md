@@ -2,6 +2,20 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current physical lowering, 2026-09-21:**
+[projected AMP](theory/proofs/PROJECTED_INDEXED_AMP.md) is implemented under
+its own ProjectedIndexedCudaPrefixContract and forward identity. It scans
+all counts, builds only selected block partition tapes, remaps factors to
+global addresses and combines parity responses by positive convolution.
+Full native state, future learning, global theta and ownership remain.
+The tape/output law is derived;11,919 exact small query tapes and280 RNE
+predictions/560 observations pass, with552 half outputs and full native
+coordinate checks. General plan binding, cross-schedule refusal and separate
+exponent/resource guards pass. The old exact AMP and complete reference
+projection audits also pass unchanged. A8 is prepared for all fifteen global
+and sixteen projected actual CUDA cases, including star recovery, later
+information, profiles and fresh installation. Actual execution is pending.
+
 **Current adversarial finding, 2026-09-21:**
 [AMP plan binding](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) is an upstream
 obligation before projected AMP. An exact n3 witness changes a factor's
@@ -23,7 +37,8 @@ wrong address refuses before floating execution; a post-execution plan
 mutation retains62 actual cells but refuses its declared61. Neither publishes
 a prediction or reveals a target. All jobs are terminal below4 GiB; maximum
 peak2,385,313,792 bytes. The thirteen previous scopes still pass, including
-fresh installation. Projected AMP is now the next research step.
+fresh installation. The projected extension above now uses this repaired
+premise; its own actual A8 execution remains to be checked.
 
 **Current owned decoder result, 2026-09-21:**
 [query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented
@@ -84,9 +99,9 @@ global count. All59,808 small count states/1,488,144 ordered queries and
 89,875 finite-horizon comparisons pass exactly. An off-path count still
 changes native theta and a later connected query. Exact cancellation also
 changes existing AMP words, so it cannot borrow the A4 schedule certificate.
-**Research next:** derive and check the corresponding projected AMP schedule,
-with its own operation/endpoint evidence and resource declaration. The owned
-exact reference integration above is complete within its stated scope. Do not
+**Research next:** execute the newly declared projected AMP A8 protocol and
+attack its operation/endpoint, resource and native-continuation claims. The
+owned exact reference integration above is complete within its stated scope. Do not
 replace this general law with more static graph-size cases.
 
 **Current indexed AMP integration, 2026-09-21:** the

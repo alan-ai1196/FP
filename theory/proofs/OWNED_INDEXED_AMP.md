@@ -8,6 +8,11 @@ reproduces actual false acceptance at source0e53b8c. Section6 supplies the
 replacement argument and implemented check; Section7 reports actual A4
 verification on source6a62a45.
 
+The separately declared [projected schedule](PROJECTED_INDEXED_AMP.md) now
+uses this complete physical learner and scalar interpreter with a query-block
+tape. Its CPU audit passes and actual A8 is pending. This document's global
+schedule and its earlier execution evidence remain unchanged.
+
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
 physical schedule for the same literal G, uniform Gamma, unit simplex U

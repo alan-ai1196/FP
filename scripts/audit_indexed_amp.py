@@ -18,7 +18,7 @@ from fp_reference import indexed_amp as amp
 from fp_reference.indexed_count import CountState
 from fp_reference.indexed_execution import IndexedState, IndexedEvaluation
 from fp_reference.indexed_relation import IndexedRelation
-from fp_reference.cuda_prefix import IndexedCudaPrefixContract
+from fp_reference.cuda_prefix import IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract
 from fp_reference.cuda_storage import CudaStorageContract
 from fp_reference.cuda_installation import CudaInstallContract
 from fp_reference.float64_bridge import Float64Contract
@@ -173,12 +173,13 @@ def cpu_audit():
         'independent_endpoint_and_normalization_checks': binding_audit()}
 
 
-def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, **cuda_changes):
+def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, projected=False, **cuda_changes):
     cfg, schema, online = fixture(n, length, profiles=profiles, persistence=persistence, law=law,
                                   byte_cap=1 << 30, work_cap=10**14)
     cfg = replace(cfg, normalizer_cap=F(18))
     arena = 32 << 20
-    cuda = IndexedCudaPrefixContract(CudaStorageContract(arena, 2*arena,
+    contract = ProjectedIndexedCudaPrefixContract if projected else IndexedCudaPrefixContract
+    cuda = contract(CudaStorageContract(arena, 2*arena,
         {role: (arena, 2*arena) for role in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
         n=n, phase_output_cells=65536, phase_evidence_bytes=(4 << 20) if n > 32 else 262144,
         install=CudaInstallContract() if install else None)
@@ -199,7 +200,7 @@ def step(rt, schema, event):
     assert result.status == 'OBSERVED_REFERENCE', result
 
 
-def check_phases(rt):
+def check_phases(rt, *, projected=False):
     snapshot = validate_residency(rt)
     no_device_handles(snapshot)
     words = half = phases = 0
@@ -210,8 +211,16 @@ def check_phases(rt):
         if kind == 'predict':
             raw = record.raw_prediction
             state = amp.IndexedAmpState(raw.before)
-            expected, _, execution, _ = component.execute_predictions((component.CompactState(raw.before),), raw.query)
-            assert raw.words == expected[0].words
+            if projected:
+                from fp_reference import projected_amp
+                schema = IndexedRelation(raw.before.n)
+                plan = projected_amp.prepare_prediction(schema,state,schema.rules(),
+                    schema.source_row(raw.query[0]*schema.n+raw.query[1]),output_cap=65536)
+                expected,_ = amp._prediction_schedule(plan,state,amp._Arithmetic(32768))
+                assert raw.words == expected.words
+            else:
+                expected, _, execution, _ = component.execute_predictions((component.CompactState(raw.before),), raw.query)
+                assert raw.words == expected[0].words
             assert record.forward_operations > 0
             assert record.output_cells == record.execution_plan.output_cells
         elif kind == 'observe':
@@ -234,6 +243,9 @@ def check_phases(rt):
 
 
 def worker(case):
+    if case.startswith('projected-'):
+        from audit_projected_amp import worker as projected_worker
+        return projected_worker(case[len('projected-'):])
     if case in ('plan-binding','executor-plan-binding'):
         from audit_indexed_amp_plan_binding import evaluate_plan
         rt,schema = configuration(3,2)
@@ -531,10 +543,12 @@ def worker(case):
 
 
 def main():
+    from audit_projected_amp import PROJECTED_CASES
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
     parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap',
-        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding', 'executor-plan-binding'))
+        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding', 'executor-plan-binding')
+        +tuple('projected-'+case for case in PROJECTED_CASES))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:

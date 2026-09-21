@@ -36,7 +36,7 @@ from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
 from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
-from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, CudaRunManifest,
+from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, CudaRunManifest,
     CudaPrefixSnapshot, _CudaPrefix, widened_state)
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
@@ -350,7 +350,7 @@ class ReferenceCompilerRuntime:
         self._contract = contract
         self._cuda = None
         if cuda is not None:
-            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract) or online is None:
+            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract) or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
             if cuda.likelihood_encoding is not None:
@@ -369,7 +369,7 @@ class ReferenceCompilerRuntime:
         indexed = type(contract.initializer_pattern) is IndexedInitializer
         if indexed and online is None:
             raise ContractError('indexed realization requires its registered reference learner')
-        if cuda is not None and (indexed != (type(cuda) is IndexedCudaPrefixContract)
+        if cuda is not None and (indexed != (type(cuda) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract))
                 or indexed and cuda.n != contract.initializer_pattern.n):
             raise ContractError('reference and CUDA registrations require the same complete native representation')
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,

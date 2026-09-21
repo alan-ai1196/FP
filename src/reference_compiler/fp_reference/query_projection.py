@@ -9,7 +9,7 @@ from itertools import combinations
 
 from .core import ContractError
 from .indexed_count import CountState, query as require_query
-from .indexed_relation import DecodeAllowance, allowance, partition_plan
+from .indexed_relation import DecodeAllowance, allowance, partition_plan, partition_shape_plan
 from . import positive_partition as partition
 from .semantics import ArithmeticUnresolved
 
@@ -111,11 +111,12 @@ def _local(before, vertices):
     return CountState(len(vertices),tuple(values),None,before.cursor,before.steps)
 
 
-def prepare(before, query, budget):
+def _prepare(before, query, budget, *, integer):
     if type(before) is not CountState or before.pending is not None or type(budget) is not DecodeAllowance:
         raise ContractError('complete committed count state and decoder allowance required')
     if type(query) is not tuple or len(query) != 2:
         raise ContractError('complete ordered query required')
+    before.__post_init__()
     require_query(before.n,*query)
     support = tuple(edge for edge,d in zip(combinations(range(before.n),2),before.counts) if d)
     path = _path(before.n,support,query)
@@ -125,12 +126,17 @@ def prepare(before, query, budget):
         height += sum(map(abs,local.counts))
         edge_count += sum(d != 0 for d in local.counts)
         local_query = vertices.index(u),vertices.index(v)
-        shape = partition_plan(local,local_query,tuple(range(local.n-1)),budget)
+        order = tuple(range(local.n-1))
+        if integer:
+            shape = partition_plan(local,local_query,order,budget)
+        else:
+            active = tuple(edge for edge,d in zip(combinations(range(local.n),2),local.counts) if d)
+            shape = partition_shape_plan(local.n,active,local_query,order,budget)
         blocks.append(BlockPlan(vertices,local_query,tuple(shape.items())))
     vertices = 1+sum(len(block.vertices)-1 for block in blocks) if blocks else 0
     # Positive block convolution also needs this combined height envelope.
     # Off-path counts are retained, but no power of them is evaluated here.
-    if vertices+4*height+8 > budget.integer_bits:
+    if integer and vertices+4*height+8 > budget.integer_bits:
         raise ArithmeticUnresolved('projected response integer envelope exceeds its declared allowance')
     shapes = tuple(dict(block.shape) for block in blocks)
     convolutions = max(0,len(blocks)-1)
@@ -147,6 +153,16 @@ def prepare(before, query, budget):
     allowance(shape['largest_join_cells'],budget.join_cells,'projected join-cell allowance')
     allowance(shape['peak_live_integer_cells'],budget.live_cells,'projected live-cell allowance')
     return ProjectionPlan(tuple(blocks),tuple(shape.items()))
+
+
+def prepare(before, query, budget):
+    """Exact integer decoder: combined and individual height guards apply."""
+    return _prepare(before,query,budget,integer=True)
+
+
+def prepare_shape(before, query, budget):
+    """Only table geometry; mantissa/exponent execution needs its own guard."""
+    return _prepare(before,query,budget,integer=False)
 
 
 def execute(before, query, plan):

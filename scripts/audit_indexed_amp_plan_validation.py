@@ -16,7 +16,7 @@ from fp_reference.semantics import ArithmeticUnresolved
 from audit_reference_construction import rejects
 
 
-def audit():
+def audit(planner=amp):
     changed_fields = clones = typed = extras = budgets = 0
     fields = set()
     cases = ((2,(0,),(0,1)),(3,(0,0,1),(0,1)),
@@ -26,12 +26,12 @@ def audit():
         height = sum(map(abs,values))
         state = amp.IndexedAmpState(CountState(n,values,None,height,height))
         rules,sources = schema.rules(),schema.source_row(query[0]*n+query[1])
-        plan = amp.prepare_prediction(schema,state,rules,sources,output_cap=65536)
+        plan = planner.prepare_prediction(schema,state,rules,sources,output_cap=65536)
         def validate(value,cap=65536):
-            return amp.check_prediction_plan(value,schema,state,rules,sources,output_cap=cap)
+            return planner.check_prediction_plan(value,schema,state,rules,sources,output_cap=cap)
         def forbidden(*args,**kwargs):
             raise AssertionError('validation used the replaceable preparation helper')
-        with patch.object(amp,'prepare_prediction',forbidden):
+        with patch.object(planner,'prepare_prediction',forbidden):
             validate(replace(plan))
             clones += 1
             changes = {
@@ -39,12 +39,13 @@ def audit():
                 'support':((0,1),) if not plan.support else ((1,0),)+plan.support[1:],
                 'positions':(0,) if not plan.positions else (plan.positions[0]+1,)+plan.positions[1:],
                 'nodes':plan.nodes[:2]+(('one',),)+plan.nodes[3:],
-                'partitions':plan.partitions[::-1],
+                'partitions':(plan.partitions[0]+1,plan.partitions[1]),
                 'power_tags':(not plan.power_tags[0],)+plan.power_tags[1:],
                 'table_shape':tuple((key,value+1 if k == 0 else value) for k,(key,value) in enumerate(plan.table_shape)),
                 'output_cells':plan.output_cells+1}
             assert set(changes) == set(vars(plan))
             for name,value in changes.items():
+                assert value != getattr(plan,name), 'a field fault must actually change the plan'
                 rejects(lambda: validate(replace(plan,**{name:value})))
                 changed_fields += 1
                 fields.add(name)
@@ -65,8 +66,8 @@ def audit():
     schema = IndexedRelation(3)
     a = amp.IndexedAmpState(CountState(3,(0,0,1),None,1,1))
     b = amp.IndexedAmpState(CountState(3,(0,0,2),None,2,2))
-    plan = amp.prepare_prediction(schema,a,schema.rules(),schema.source_row(1),output_cap=65536)
-    amp.check_prediction_plan(plan,schema,b,schema.rules(),schema.source_row(1),output_cap=65536)
+    plan = planner.prepare_prediction(schema,a,schema.rules(),schema.source_row(1),output_cap=65536)
+    planner.check_prediction_plan(plan,schema,b,schema.rules(),schema.source_row(1),output_cap=65536)
     return {'status':'PASS_COMPLETE_AMP_PLAN_BINDING','complete_fields':sorted(fields),
         'valid_independent_reconstructions':clones,'individual_field_substitutions_refused':changed_fields,
         'equality_coercion_or_mutable_container_substitutions_refused':typed,

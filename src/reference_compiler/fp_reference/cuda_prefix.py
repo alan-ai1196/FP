@@ -23,6 +23,7 @@ from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
     BACKEND_ID as COUNT_BACKEND_ID, ENCODING_ID, prepare_model, preparation_work,
     power_schedule)
 from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
+from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
 
 
 @dataclass(frozen=True)
@@ -92,6 +93,17 @@ class IndexedCudaPrefixContract(CudaPrefixContract):
         if self.likelihood_encoding is not None:
             raise ContractError('indexed native lowering cannot borrow a dense likelihood encoding')
         return indexed.BACKEND_ID, 'prepaid-indexed-positive-tape-and-owned-scalar-arena-v1', indexed.FORWARD_ID
+
+
+@dataclass(frozen=True, kw_only=True)
+class ProjectedIndexedCudaPrefixContract(IndexedCudaPrefixContract):
+    """Distinct fixed physical schedule for the same complete native learner."""
+    forward_id: str = field(default=PROJECTED_FORWARD_ID, init=False)
+
+    def _arithmetic_ids(self):
+        from . import projected_amp
+        _,work,_ = super()._arithmetic_ids()
+        return projected_amp.BACKEND_ID,work,projected_amp.FORWARD_ID
 
 
 @dataclass(frozen=True)
@@ -215,7 +227,7 @@ def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, 
 
 class _CudaPrefix:
     def __init__(self, contract):
-        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract):
+        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract):
             raise ContractError('registered private CUDA prefix contract required')
         contract.__post_init__()
         import torch
@@ -234,7 +246,7 @@ class _CudaPrefix:
 
     @property
     def indexed(self):
-        return type(self.contract) is IndexedCudaPrefixContract
+        return type(self.contract) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract)
 
     def relation_work(self, program, rules):
         if self.indexed:

@@ -6558,3 +6558,36 @@ AMP star remains honestly unresolved before floating execution. Every job
 is terminal. This closes the tested plan-binding obligation and permits
 continuing projected AMP; no new complete release or class certificate is
 claimed. A6's actual false conformance remains separately retained.
+
+## 195. Lower query-block responses to an independently bound AMP tape (2026-09-21)
+
+The [new physical schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) shares
+only geometry with the exact decoder. It keeps all counts, compiles each
+selected block through its parity partitions, remaps factors to global
+addresses and combines responses by positive convolution. A distinct fixed
+contract binds its arithmetic identity. The full plan is independently
+reconstructed before and after execution; native coordinate, target,
+predecessor, current output extent and actual operation checks remain.
+
+The emitted graph has N=3+SUM_b(F_b+P_b+S_b-1)+6c nodes. If J counts
+additions and G counts products without a syntactic power input, it produces
+exactly38+4J+6G floating cells, including3G half outputs. All selected tape
+cells and exponent height are guarded before construction. Logical local
+table peaks do not stand for retained floating tape or whole process memory;
+actual arena, packed history and host/device caps remain independent.
+
+All11,919 small ternary ordered-query tapes match independent native world
+sums.280 RNE predictions,560 observations and552 half outputs pass full
+native coordinate comparisons. The retained two-triangle example still
+differs from the global readout by one ULP in six coordinates, while the
+new schedule uses54 cells versus74. The original global arithmetic and the
+complete exact query-projection audit both pass unchanged. Foreign plans,
+arithmetic identities and unfunded numeric entry are refused. The same
+45 typed-plan/resource faults pass for the new builder.
+
+A8 is prepared for31 source-bound actual workers: all fifteen current
+global cases and sixteen projected cases, including identical full profile,
+n256, persistence/install and adversarial fixtures; star recovery with
+learning; future use of retained off-path counts; and foreign/post-execution
+plan faults. Execution is pending. No Foundation action, new complete
+release, model advantage or universal precision theorem is claimed.

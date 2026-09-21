@@ -19,7 +19,7 @@ class Tape:
         return len(self.nodes)-1
 
 
-def compile_tape(n, support, query, *, order=None):
+def compile_tape(n, support, query, *, order=None, readout=True):
     tape = Tape()
     signed = tuple(int(e in support) for e in exact.edges(n))
     order = exact.greedy_order(exact.adjacency(n, signed)) if order is None else tuple(order)
@@ -68,6 +68,8 @@ def compile_tape(n, support, query, *, order=None):
     # retaining this metadata changes no existing node or scalar operation.
     tape.partition_heads = tuple(parts)
     tape.elimination_order = order
+    if not readout:
+        return tape, tape.partition_heads
     heads = (tape.op('add', tape.op('mul', 2, parts[0]), parts[1]),
              tape.op('add', parts[0], tape.op('mul', 2, parts[1])))
     assert max(tape.budgets[h] for h in heads) <= len(support)+2*(n-1)+4

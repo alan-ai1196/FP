@@ -8,7 +8,7 @@ from .semantics import ArithmeticUnresolved
 from .float64_bridge import Float64Contract
 from .indexed_count import CountState, commit, attach
 from .indexed_execution import IndexedLearner, CategoricalPairDomain
-from .cuda_prefix import IndexedCudaPhase
+from .cuda_prefix import IndexedCudaPhase, ProjectedIndexedCudaPrefixContract
 from . import cuda_learner as gpu, indexed_amp as indexed
 
 
@@ -23,6 +23,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     result, actual_prediction, error, relation = state, None, None, None
     arithmetic, workspace, plan, checked = None, None, None, 0
     before_raw = before_prediction = None
+    from . import projected_amp
+    planner = projected_amp if type(prefix.contract) is ProjectedIndexedCudaPrefixContract else indexed
     try:
         if (type(program) is not indexed.IndexedRelation or program.n != prefix.contract.n
                 or type(spec) is not IndexedLearner or spec.n != program.n
@@ -47,9 +49,9 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if before_prediction != prefix.phases[prediction_id].raw_prediction:
                 raise ContractError('indexed CUDA prediction changed before target observation')
         if kind == 'predict':
-            plan = indexed.prepare_prediction(program, before_raw, rules, sources,
+            plan = planner.prepare_prediction(program, before_raw, rules, sources,
                                               output_cap=prefix.contract.phase_output_cells)
-            indexed.check_prediction_plan(plan,program,before_raw,rules,sources,
+            planner.check_prediction_plan(plan,program,before_raw,rules,sources,
                                           output_cap=prefix.contract.phase_output_cells)
         expected_cells = plan.output_cells if kind == 'predict' else 13 if kind == 'observe' else 0
         indexed.allowance(max(1, expected_cells), prefix.contract.phase_output_cells,
@@ -87,7 +89,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if arithmetic.output_cells != expected_cells:
                 raise ContractError('indexed CUDA executed a different output extent schedule')
             if kind == 'predict':
-                indexed.check_prediction_plan(plan,program,before_raw,rules,sources,
+                planner.check_prediction_plan(plan,program,before_raw,rules,sources,
                                               output_cap=prefix.contract.phase_output_cells)
                 actual = indexed.IndexedAmpPrediction(actual_prediction.before, actual_prediction.query,
                     workspace.raw_words((actual_prediction.readout,), readout_buffer)[0])

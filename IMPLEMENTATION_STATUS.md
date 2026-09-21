@@ -2,6 +2,17 @@
 
 ## Current implementation state (2026-09-21)
 
+The [projected AMP extension](theory/proofs/PROJECTED_INDEXED_AMP.md) now
+executes a separately declared query-block tape through the existing private
+CUDA owner. Shared geometry forms no reference numerical answer; each
+factor reads its global count coordinate. The complete plan is reconstructed
+before and after execution, with the same endpoint/trace/target and numerical
+checks. Exact tape semantics pass11,919 small queries;280 RNE predictions,
+560 observations and552 half outputs pass full native comparisons. The
+global AMP audit and complete exact query-projection audit also pass.
+A8's31 actual workers are prepared, not yet executed. No projected device,
+full release or model advantage is claimed before that evidence.
+
 The [AMP plan-binding audit](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 identifies a missing premise in fixed-forward conformance. A changed count
 address yields the same complete readout but a different operation trace;
@@ -19,8 +30,8 @@ existing exact270-prediction/540-observation audit is unchanged. A7 at16fdda7
 passes all fifteen actual CUDA cases, including both plan attacks. The
 thirteen prior cases retain222 successful phases/51,146 floating words,
 including17,712 half words. All jobs are terminal, maximum peak2,385,313,792
-bytes below4 GiB. Projected AMP is not yet implemented. No scalar schedule,
-tariff or tolerance has changed.
+bytes below4 GiB. The global scalar schedule, tariff and tolerance are
+unchanged; the projected extension above has its own arithmetic identity.
 
 The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
 executes inside ReferenceCompilerRuntime under a new explicit reference

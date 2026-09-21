@@ -2,6 +2,13 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) is now
+implemented and CPU audited. A8 must test its separately declared physical
+identity through actual owned phases, star recovery, future count use,
+profiles, fresh paired evidence and resident installation. The31 registered
+workers include all fifteen current global cases as strong controls. No
+device success or resource/model advantage is inferred before execution.
+
 The [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) has a
 general implemented repair: independently reconstruct every typed plan
 field from owned inputs before execution and after helper return. Actual
@@ -26,8 +33,8 @@ The unchanged global AMP schedule must still refuse when its own table
 preflight fails, even if the new exact reference projection succeeds.
 Actual A5 atae7f915 now verifies this boundary and all twelve existing
 integration cases, including installation and continued learning. The
-projected physical schedule itself remains open; its arithmetic words,
-resource plan and independent conformance check must be declared afresh.
+projected physical schedule now has its own declared words, resource plan
+and independent conformance check; its actual A8 integration remains open.
 
 The strict horizon hierarchy's count-family reachability is now
 [proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

@@ -123,8 +123,14 @@ def _prepare_prediction(program, state, rules, sources, *, output_cap):
     tape, _ = compile_tape(program.n, support, query, order=order)
     if len(tape.nodes) != tape_cells:
         raise ContractError('indexed AMP tape differs from its metadata preflight')
+    return _finish_plan(program.n,query,support,positions,tuple(tape.nodes),
+                        tape.partition_heads,tuple(shape.items()),output_cap)
+
+
+def _finish_plan(n,query,support,positions,nodes,partitions,shape,output_cap):
+    """Common syntactic power aliases and the unchanged scalar output tariff."""
     powers, general, additions = [], 0, 0
-    for tag, *args in tape.nodes:
+    for tag, *args in nodes:
         if tag in ('zero', 'one', 'nine', 'factor'):
             powers.append(tag != 'zero')
         else:
@@ -141,8 +147,7 @@ def _prepare_prediction(program, state, rules, sources, *, output_cap):
     # six per non-power product; twenty for the complete seven-value readout.
     cells = 38+6*general+4*additions
     allowance(cells, output_cap, 'indexed AMP numeric output allowance')
-    return IndexedAmpPlan(program.n, query, support, positions, tuple(tape.nodes),
-                          tape.partition_heads, tuple(powers), tuple(shape.items()), cells)
+    return IndexedAmpPlan(n,query,support,positions,nodes,partitions,tuple(powers),shape,cells)
 
 
 def prepare_prediction(program, state, rules, sources, *, output_cap):
@@ -168,6 +173,10 @@ def check_prediction_plan(plan, program, state, rules, sources, *, output_cap):
     accepting the returned operation trace. No hashes or external plan IDs.
     """
     expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
+    _check_plan(plan,expected)
+
+
+def _check_plan(plan,expected):
     if (type(plan) is not IndexedAmpPlan or vars(plan).keys() != vars(expected).keys()
             or any(not _same_plan_value(value,vars(expected)[key]) for key,value in vars(plan).items())):
         raise ContractError('indexed AMP plan differs from the declared owned input mapping')

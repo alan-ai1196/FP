@@ -11,9 +11,11 @@ import traceback
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from windows_job_audit_support import run_in_job
+from audit_projected_amp import PROJECTED_CASES
+from fp_reference import indexed_amp, projected_amp
 
 CASES = ('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit',
-         'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding', 'executor-plan-binding')
+         'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding', 'executor-plan-binding')+tuple('projected-'+case for case in PROJECTED_CASES)
 CAP = 4 << 30
 DEADLINE = 900000
 
@@ -42,6 +44,8 @@ def main():
         'state_atol': '1/100', 'probability_atol': '1/1000', 'normalizer_cap': 18, 'activation_cap': 8,
         'reference_model': 'exact indexed counts and positive partitions',
         'physical_model': 'independent counts, half products, single readout/gradient in owned CUDA arena',
+        'declared_forward_id_by_case':{case:projected_amp.FORWARD_ID if case.startswith('projected-')
+            else indexed_amp.FORWARD_ID for case in args.cases},
         'old_job_policy': 'all earlier terminal model/component jobs stay terminal'}, 'workers': []}
     def publish():
         temporary = output.with_suffix('.tmp')

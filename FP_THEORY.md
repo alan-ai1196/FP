@@ -211,6 +211,14 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [projected AMP lowering](theory/proofs/PROJECTED_INDEXED_AMP.md) now
+realizes current-query block responses under a separate physical declaration.
+It retains every global count and native continuation, proves an additive
+tape/output law, and passes11,919 exact small query tapes plus280 RNE
+predictions/560 observations. The global AMP schedule remains unchanged.
+Actual A8 verification is pending. This is a guarded physical refinement,
+not a new architecture action, state quotient or class-complete decision.
+
 The [indexed AMP plan-binding witness](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 adds an implementation obligation to the fixed-forward argument: independently
 bind the complete plan to its owned inputs before checking execution against
