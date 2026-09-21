@@ -170,6 +170,24 @@ class IndexedPredictionPlan:
     bit_limit: int
 
 
+def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_limit):
+    """The unique declared exact schedule, constructed inside its owner."""
+    if type(state) is not IndexedState or state.encoded.n != program.n or state.unit_count:
+        raise ContractError('owned committed indexed predecessor required')
+    query, _ = program.source_query(rules, sources)
+    budget = replace(budget, integer_bits=min(budget.integer_bits, bit_limit))
+    plan = projection.prepare(state.encoded, query, budget)
+    return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
+
+
+def _owned_prediction_work(plan):
+    """Numeric tariff for the owner's already constructed fixed plan."""
+    n = plan.before.n
+    shape = dict(plan.projection.shape)
+    return (32*(n+1)*(shape['positive_multiplications']+shape['positive_additions'])
+            +64*(n*(n-1)//2+8)+64)
+
+
 def _execute_owned_prediction(plan, n):
     """Fixed exact kernel; Runtime never delegates this call to a planner.
 
@@ -215,7 +233,7 @@ class IndexedRangeBound:
 class IndexedReferenceMachine(ReferenceMachineModel):
     schema: IndexedRelation
     budget: DecodeAllowance
-    model_id = 'packed-indexed-reference-payload-v1'
+    model_id = 'packed-indexed-reference-payload-v2'
     initializer_id = 'indexed-uniform-unit-simplex-initializer-v1'
     program_type = IndexedRelation
 
@@ -243,9 +261,9 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         # Pay the metadata schedule before planning. Numeric tables receive
         # a separate debit for their actual planned shape, including index
         # visits; the full unused table allowance is not spent each event.
-        # Closed value transfer (including fresh categorical declarations)
-        # is paid before the delegated preparation port is reached.
-        return 64*(n+1)**2*(d+n+1)+2048*(d+n+16)
+        # One private fixed-plan construction. Keep the former conservative
+        # two-pass metadata envelope; the redundant value-transfer fee goes.
+        return 64*(n+1)**2*(d+n+1)+128*(d+n+1)
 
     def observation_work(self, program):
         self.require_program(program)
@@ -282,13 +300,10 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         return IndexedState(counts.CountState(program.n, theta.signed, None, cursor, 0))
 
     def prepare_prediction(self, program, rules, state, sources, *, bit_limit):
+        # Passive convenience. The fixed Runtime class has no plan producer
+        # whose answer can differ from the private checker's unique result.
         self.require_program(program)
-        if type(state) is not IndexedState or state.encoded.n != program.n or state.unit_count:
-            raise ContractError('owned committed indexed predecessor required')
-        query, _ = program.source_query(rules, sources)
-        budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, bit_limit))
-        plan = projection.prepare(state.encoded, query, budget)
-        return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
+        return _prepare_owned_prediction(program, rules, state, sources, budget=self.budget, bit_limit=bit_limit)
 
     def prediction_execution_work(self, plan):
         if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
@@ -300,12 +315,11 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         if not same(freeze(plan.projection, cells=limit, bits=plan.bit_limit),
                     freeze(expected, cells=limit, bits=plan.bit_limit)):
             raise ContractError('indexed projection differs from complete input preflight')
-        shape = dict(plan.projection.shape)
         # Each scalar join includes its at-most-n projection/index visits.
         # Guarded powers use at most 2*14 multiplications per active factor
         # under the fixed <=32768-bit integer envelope. GCD/bit complexity
         # and Python heap are outside this declared logical work metric.
-        return 32*(self.schema.n+1)*(shape['positive_multiplications']+shape['positive_additions'])+64*self.state_work(self.schema)+64
+        return _owned_prediction_work(plan)
 
     def execute_prediction(self, plan):
         # Passive convenience for arithmetic audits. Runtime uses the fixed

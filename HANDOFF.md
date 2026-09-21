@@ -2,57 +2,44 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**Current frontier: continuation-stable delegation; indexed extension HOLD.**
-The [component law and reference repair](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
-separate frame preservation from numerical refinement. A new exact
-poison/restore witness proves that copying arguments and comparing them after
-the call is insufficient. Runtime now sends only immutable metadata values
-to reference planning, reconstructs the result privately, checks the full
-plan and runs the fixed exact kernel itself. The redundant numerical
-delegation is retired. No Foundation action or arithmetic schedule changes.
-CPU passes2048 finite heap schedules,759 count reconstructions, six actual
-Runtime fault/continuation cases and prepaid refusal. Full indexed and
-projection regressions pass, including388 histories/776 native phase checks,
-n256, profiles and fresh reference persistence. Ten fresh4-GiB/900-second
-CUDA cases are terminal atda532dc: all six faults and four profile/n256/
-fresh-install integrations pass. All264 complete phase records pass;
-the integrations independently check4416 floating words,144 half words.
-Maximum job commitment2,357,059,584 bytes; no timeout/limit termination.
-Fresh paired evidence crosses at20, installs and learns to21 with alpha1/2
-retained. Other native/AMP
-helper surfaces remain outside this scoped repair and still need analysis.
-Paid order implementation has not begun. Do not rerun terminal probes;
-apply the frame/refinement analysis to the remaining helper surfaces next.
+**Current frontier: eliminate redundant singleton-plan producers; actual CUDA gate pending.**
+The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
+removes a producer when the trusted checker already constructs its only
+acceptable answer. Runtime now uses those existing private builders and
+fixed numerical kernels directly, for exact reference and global/projected
+AMP. The earlier reference value-copy wiring is superseded. All native
+inputs and history remain; equal plans can still have different predictions.
+No arithmetic schedule, Foundation action or ERC-1 rule changes.
 
-That analysis now has [two passive AMP metadata witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md).
-A physical input-count alias survives a correct native bridge refusal;
-a later planner can change its own retained old output, invalidating an
-earlier checked plan while its current plan is correct. Both fresh actual
-CUDA probes reproduce atab39b56, with production unchanged from7fe0471.
-The count case refuses after physical/history corruption; the later-plan
-case publishes a correct new phase and native update while rewriting an
-old checked plan62 to61. Each changes one old snapshot/phase metadata
-record behind intact sealed bytes. Maximum job2,195,173,376 bytes; all
-terminal without timeout/limit termination.
-They use only the supplied count or retained returned plan, with no tensor
-writes or owner globals. No AMP production repair has yet been made.
+CPU evidence passes1300 finite elimination cases,388 native histories/776
+phase comparisons with all six retired ports forbidden, full reference
+n256/fresh-persistence regressions,11919 native projection caches and
+11919 projected tapes. Exact AMP audits cover270/540 global and280/560
+projected predictions/observations. Private preflight/kernel spies retain
+unfunded refusal checks. The reference/work identities change to v2;
+conservative work and actual arena/frame ownership remain explicit.
 
-**Retained input-binding counterexamples:**
-The [real CPU Runtime probes](theory/proofs/INDEXED_INPUT_ALIAS.md) show that
-a planner can modify its supplied source dictionary and publish41/50 for
-an actual context requiring1/2. The following actual target commits the
-wrong native count. Two count-record mutations also publish wrong forecasts
-and change an earlier snapshot. These are supplied-argument attacks, without
-owner globals or a numerical-owner mock. These probes concern production a559d7a.
-All three fresh CUDA probes at058489e reproduce their registered outcomes.
-The source-map case passes AMP checks and commits the wrong count in both
-paths; count attacks trigger refusal after corrupting the native history
-and one older sealed phase's live metadata. All jobs are terminal below4 GiB,
-maximum2,192,297,984 bytes. The paid order implementation has not
-started; source stability now has priority. The byte-only codec's scoped
-gate below remains valid and does not establish upstream causal input binding.
-Do not rerun the old counterexample scripts on repaired production. The new
-value-boundary audit checks the changed interface and retained failure state.
+Fifteen fresh4-GiB/900-second device jobs are registered before execution:
+retired-port continuations, fresh one-bit numerical faults, global/projected
+profiles/n256/fresh installation, closure and retained resource/commit
+refusals. Their gate is pending; no new complete release or model outcome
+is claimed. Keep execution source fixed while live and retain every result.
+After the scoped gate, return to paid query-order choice. A non-singleton
+order class has real use for a value-only proposal boundary; the current
+fixed schedules do not.
+
+Historical source-bound evidence is retained. The
+[reference value boundary](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+passed all ten actual jobs atda532dc. The later
+[AMP continuation witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md)
+reproduced both aliases atab39b56/production7fe0471: correct refusal after
+physical predecessor corruption, and an old62-output plan rewritten to61
+during a correct later prediction/update. Earlier
+[source/count witnesses](theory/proofs/INDEXED_INPUT_ALIAS.md) include a
+wrong source-driven native update. Those counterexamples remain valid at
+their sources; do not run their retired-port attacks as current gate tests.
+The new gate probes physical value faults without replacing trusted private
+kernels, and checks that the removed producer interfaces receive zero calls.
 
 **Current resource result, 2026-09-21:**
 The [byte-only evidence boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)

@@ -7129,3 +7129,38 @@ both cases. The actual journal retains these distinct consequences. No
 Foundation change follows. All jobs are terminal; the needed AMP repair is
 stable ownership of both inputs and accepted outputs, with an explicit
 physical numerical/workspace trust boundary.
+
+## 213. Remove the producer when its checker already knows the only answer (2026-09-21)
+
+The current reference and both AMP plan classes are singletons. Their
+independent checkers reconstruct the complete accepted plan, so a producer
+cannot contribute a different legal choice. The conditional elimination
+law preserves valid fixed-input numerical executions using the same builder
+and kernel. Removing proposal/exchange work is a resource refinement, not
+equality of complete resource histories or a whole-process memory theorem.
+The complete plan is not sufficient state: counts+1 and-1 can have the same
+plan and different predictions. All native state and history remain.
+
+Runtime now directly owns these existing builders and fixed kernels. This
+also deletes the reference value-copy wiring introduced atda532dc, instead
+of extending it to another redundant boundary. The private AMP schedules,
+RNE interpreter and independent checkers have unchanged AST bodies. Native
+initialize/observe/commit/attach remain fixed trusted G/Gamma/U code; there
+is no arbitrary Python sandbox claim. The byte-only compressor still has a
+real value boundary, as will a future order solver with multiple valid plans.
+
+CPU passes1300 finite cases,388 histories/776 phase comparisons with all
+six old ports forbidden, full indexed Runtime including n256 and fresh
+persistence,11919 projection caches,11919 projected tapes, and270/540 global
+plus280/560 projected exact prediction/observation checks. Prepaid refusal
+spies now target the actual private kernel. New reference/work IDs distinguish
+the realization; the redundant reference transfer fee disappears and paid
+numerical/arena/frame ownership remains.
+
+Fifteen fresh4-GiB/900-second CUDA jobs are registered before execution.
+They test removed ports, fresh one-bit physical output faults, unchanged
+history on refusal/continuation, both profiles/n256/fresh installation paths,
+closure and resource/second-commit boundaries. Actual results are pending;
+no complete indexed release, class certificate or model outcome is inferred.
+After this scoped gate the substantive frontier remains paid query-order
+choice. Foundation and ERC-1 remain unchanged.

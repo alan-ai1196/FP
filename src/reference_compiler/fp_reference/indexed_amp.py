@@ -398,11 +398,16 @@ def _observation_schedule(state, prediction, target, arithmetic, *, resident_pre
 
 
 def execute_prediction(plan, state, arithmetic):
-    """Physical helper; its returned raw data is not execution authority."""
+    """Passive convenience; Runtime owns the fixed schedule directly.
+
+    This function is not a delegated Runtime numerical port. A numerical
+    workspace is authority over physical effects and stays in the owner.
+    """
     return _prediction_schedule(plan, state, arithmetic)
 
 
 def execute_observation(state, prediction, target, arithmetic, *, resident_prediction=None):
+    """Passive convenience, with no Runtime continuation authority."""
     return _observation_schedule(state, prediction, target, arithmetic,
                                  resident_prediction=resident_prediction)
 

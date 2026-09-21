@@ -1,5 +1,11 @@
 # Delegation requires a stable referent and private accepted results
 
+Current implementation note: [singleton-plan elimination](SINGLETON_PLAN_ELIMINATION.md)
+supersedes the fixed Runtime's redundant proposal interfaces. The law and
+historical source-bound evidence below remain; current CPU checks pass and
+the new actual gate is pending. Do not apply retired-port probes to the new
+implementation as though those ports were still authoritative.
+
 Status: **proved component law; implemented for reference prediction
 delegation; exact CPU audits and all ten actual CUDA A1 jobs pass**.
 The broader indexed helper/continuation boundary remains HOLD. This is an

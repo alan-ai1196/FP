@@ -30,6 +30,7 @@ from fp_reference.program import Program, Sum
 from fp_reference.runtime import ConstructionContract, OnlineContract
 from fp_reference.semantics import ArithmeticUnresolved, evaluate
 from fp_reference import indexed_execution as indexed
+from fp_reference import runtime as runtime_owner
 from audit_reference_construction import limits, rejects, validate_residency
 from ingress_audit_support import deliver_context
 
@@ -255,8 +256,8 @@ def adversaries():
     narrow = replace(cfg, limits=replace(cfg.limits, role_cumulative={
         'deployment': {'work': 1}, 'compiler': {'work': 10**14}}))
     denied = ReferenceCompilerRuntime(narrow, schema, online=online)
-    with patch.object(IndexedReferenceMachine, 'prepare_prediction', forbidden), \
-            patch.object(IndexedReferenceMachine, 'execute_prediction', forbidden):
+    with patch.object(runtime_owner, '_prepare_owned_prediction', forbidden), \
+            patch.object(runtime_owner, '_execute_owned_prediction', forbidden):
         result = deliver_context(denied, online.data.active.observation_ids[0], tuple(schema.source_row(1).values()))
     assert result.status == 'UNRESOLVED', result
     stopped = validate_residency(denied)
@@ -269,7 +270,7 @@ def adversaries():
     planning_only = replace(cfg, limits=replace(cfg.limits, role_cumulative={
         'deployment': {'work': planning}, 'compiler': {'work': 10**14}}))
     denied_execution = ReferenceCompilerRuntime(planning_only, schema, online=online)
-    with patch.object(IndexedReferenceMachine, 'execute_prediction', forbidden):
+    with patch.object(runtime_owner, '_execute_owned_prediction', forbidden):
         result = deliver_context(denied_execution, online.data.active.observation_ids[0], tuple(schema.source_row(1).values()))
     assert result.status == 'UNRESOLVED', result
     stopped = validate_residency(denied_execution)

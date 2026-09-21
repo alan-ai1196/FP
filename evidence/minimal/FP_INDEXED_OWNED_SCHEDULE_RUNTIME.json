@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "complete_audit": true,
+  "scope": "owned indexed exact reference execution; no new complete AMP or installation release",
+  "small": {
+    "groups": [
+      {
+        "n": 2,
+        "complete_length_two_histories": 64
+      },
+      {
+        "n": 3,
+        "complete_length_two_histories": 324
+      }
+    ],
+    "owned_histories": 388,
+    "complete_prediction_observation_commit_comparisons": 776
+  },
+  "profile": {
+    "ordinary_component_phases": 12,
+    "profile_events": 4,
+    "ordinary_cursor": 7,
+    "optimizer_steps": [
+      7,
+      9
+    ],
+    "forbidden_value_or_resource_injection_refusals": 2
+  },
+  "large": {
+    "n": 256,
+    "logical_worlds_power_of_two": 255,
+    "actual_ingress_events": 4,
+    "ordinary_component_phases": 6,
+    "profile_events": 4,
+    "deployed_forecasts": [
+      "1/2",
+      "9/10",
+      "1/2",
+      "189/250"
+    ],
+    "optimizer_steps": [
+      4,
+      6
+    ],
+    "explicit_full_output_refusals": 2,
+    "logical_graph_counts": {
+      "nodes": 115792089237316195423570985008687907853269984665640564039457584007913129705986,
+      "sources": 512,
+      "state_reads": 0,
+      "SUMs": 115792089237316195423570985008687907853269984665640564039457584007913129639938,
+      "PRODUCTs": 65536,
+      "SUM_edges": 3795201516842275621202962604644754867798777017401035126957261773443360737078542336,
+      "edges": 3795201516842275621202962604644754867798777017401035126957261773443360737078673408,
+      "slots": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
+      "bindings": 0
+    },
+    "packed_current_bytes": 62469341,
+    "scope": "actual owned reference phases and packed leases; no total-process or comparative resource bound"
+  },
+  "closure": {
+    "status": "SEALED_REFERENCE_STREAM",
+    "events": 3,
+    "scope": "owned empty Compiler strategy and finite ordinary stream; no class-optimality or install claim"
+  },
+  "adversaries": {
+    "registration_binding_refusals": 6,
+    "unimplemented_native_translation_unresolved": 1,
+    "invalid_structure_or_supplied_state_refusals": 2,
+    "locked_or_invalid_target_refusals": 4,
+    "bad_domain_retained_ingress": true,
+    "unfunded_deployment_prediction_refused_before_executor": true,
+    "planning_funded_but_table_execution_refused_before_executor": true,
+    "integer_allowance_refused_before_partition": true,
+    "actual_star_history_events_before_projection_recovery": 13,
+    "old_global_width_refusal_verified_before_tables": true,
+    "owned_star_query_recovered_with_complete_history": true,
+    "second_lineage_failure_retains_target_and_both_observed_states": true,
+    "published_learners_advanced_on_failure": 0,
+    "helper_install_authority": false
+  },
+  "persistence": {
+    "fresh_start_cursor": 16,
+    "ordinary_events": 36,
+    "paired_native_root_comparisons": 20,
+    "crossing_cursor": 20,
+    "crossing_wealth": "167995/32768",
+    "fresh_score_events": 4,
+    "alpha_after_retirement": "1/4",
+    "foreign_root_admission_refusals": 1,
+    "unpaired_installation": "UNRESOLVED",
+    "scope": "exact same-path reference statistic under a declared external law; finite tape proves no stochastic law"
+  }
+}

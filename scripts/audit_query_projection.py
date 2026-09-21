@@ -129,54 +129,19 @@ def off_path_height():
         'packed_current_bytes':after.resources['current']['reference_payload_bytes']}
 
 
-def binding_attacks():
-    rows = []
-    for kind in ('plan-query','plan-state','plan-bits','plan-shape','plan-block-omission',
-                 'plan-block-vertices','plan-block-query'):
-        cfg,schema,online = fixture(3,3)
-        runtime = ReferenceCompilerRuntime(cfg,schema,online=online)
-        if kind.startswith('plan-block-'):
-            models = {runtime.snapshot().deployed_id:native_fixture(3)}
-            step(runtime,schema,(0,1,0),models)
-            step(runtime,schema,(1,2,0),models)
-        before = runtime.snapshot()
-        query = (0,2) if kind.startswith('plan-block-') else (0,1)
-        method = 'prepare_prediction'
-        original = getattr(IndexedReferenceMachine,method)
-        def changed(machine,*args,**kwargs):
-            result = original(machine,*args,**kwargs)
-            if kind.startswith('plan-block-'):
-                blocks = result.projection.blocks
-                assert len(blocks) == 2
-                if kind.endswith('omission'):
-                    blocks = blocks[:1]
-                elif kind.endswith('vertices'):
-                    blocks = (replace(blocks[0],vertices=(0,2)),)+blocks[1:]
-                else:
-                    blocks = (replace(blocks[0],query=(0,0)),)+blocks[1:]
-                return replace(result,projection=replace(result.projection,blocks=blocks))
-            if kind.endswith('query'):
-                return replace(result,query=(0,0))
-            if kind.endswith('state'):
-                return replace(result,before=replace(result.before,cursor=before.cursor+1))
-            if kind.endswith('bits'):
-                return replace(result,bit_limit=result.bit_limit+1)
-            shape = tuple((key,value+1 if key == 'positive_multiplications' else value) for key,value in result.projection.shape)
-            return replace(result,projection=replace(result.projection,shape=shape))
-        with patch.object(IndexedReferenceMachine,method,changed):
-            rejects(lambda: own_prediction(runtime,schema,query))
-        after = validate_residency(runtime)
-        assert after.halted and after.cursor == before.cursor and after.candidates == before.candidates
-        assert after.pending.record.target is None and after.pending.record.sources
-        assert not after.pending.predictions
-        planning = runtime._machine.evaluation_work(schema,cfg.semantics)
-        spent = after.resources['spent']['deployment']['work']
-        phase_spent = spent-before.resources['spent']['deployment']['work']
-        assert phase_spent == planning
-        rows.append({'attack':kind,'published_predictions':0,'actual_cursor':after.cursor,
-            'spent_deployment_work':spent,'phase_deployment_work':phase_spent,
-            'received_context_and_spent_work_retained':True})
-    return rows
+def retired_producers():
+    cfg,schema,online = fixture(3,3)
+    runtime = ReferenceCompilerRuntime(cfg,schema,online=online)
+    models = {runtime.snapshot().deployed_id:native_fixture(3)}
+    def forbidden(*args,**kwargs):
+        raise AssertionError('a redundant producer reached the fixed owned schedule')
+    with patch.object(IndexedReferenceMachine,'prepare_prediction',side_effect=forbidden) as prepare, \
+            patch.object(IndexedReferenceMachine,'execute_prediction',side_effect=forbidden) as execute:
+        for event in ((0,1,0),(1,2,0),(0,2,1)):
+            step(runtime,schema,event,models)
+    assert not prepare.called and not execute.called
+    return {'retired_producer_calls':0,'complete_native_events':3,
+        'scope':'the fixed schedule accepts no externally produced plan or numerical result'}
 
 
 def guard_cases():
@@ -204,7 +169,7 @@ def main():
         'scope':'fixed owned exact reference block decoder; full global state retained; no new AMP schedule, total resource or complete-class certificate',
         'structural':structural(),'exhaustive_native':exhaustive_native(),
         'off_path_future_information':future_information(),'off_path_height':off_path_height(),
-        'binding_attacks':binding_attacks(),'guard_cases':guard_cases()}
+        'retired_producer_boundary':retired_producers(),'guard_cases':guard_cases()}
     if args.write:
         (ROOT/'evidence/minimal/FP_OWNED_QUERY_PROJECTION.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2))

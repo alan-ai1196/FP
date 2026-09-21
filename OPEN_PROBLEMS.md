@@ -2,37 +2,31 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The immediate obstacle is complete indexed helper ownership. The
-[continuation-stability law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
-now has a scoped reference prediction implementation: immutable value-only
-metadata delegation, private accepted plans and one fixed owned exact
-execution. CPU and native regressions pass; all ten actual CUDA A1 probes
-pass atda532dc, including n256 and fresh installation/learning. Their264
-complete records pass all readers, with maximum job2,357,059,584 bytes.
-Other native/AMP argument and returned-record
-surfaces, including later retained aliases, remain to be assessed. No complete
-Runtime release follows from this single component boundary.
+The immediate registered gate is actual execution of
+[singleton-plan elimination](theory/proofs/SINGLETON_PLAN_ELIMINATION.md).
+For the current fixed schedules, the independent checker already computes
+the producer's sole acceptable answer. Runtime now uses those same private
+builders and numerical kernels, eliminating the redundant reference/AMP
+proposal ports. Complete native state and history remain. CPU/native/RNE
+regressions pass; fifteen fresh device jobs are registered and pending.
+No complete indexed release follows from the CPU result.
 
-The remaining [AMP metadata boundary](theory/proofs/AMP_METADATA_CONTINUATION.md)
-now has exact passive witnesses for both an input alias and a later retained
-output alias. Both actual CUDA probes reproduce atab39b56, production7fe0471:
-correct refusal leaves a corrupted physical predecessor, while a later
-successful call rewrites an old checked plan. Both damage earlier metadata
-behind intact sealed bytes; all jobs are terminal below4 GiB.
-The physical executor's workspace capability must be included in the
-eventual trust boundary; copying one record field alone is not a complete
-isolation argument.
+The historical [input aliases](theory/proofs/INDEXED_INPUT_ALIAS.md) and
+[later AMP metadata aliases](theory/proofs/AMP_METADATA_CONTINUATION.md)
+are source-bound counterexamples, not reasons to preserve an unnecessary
+producer and add another exchange mechanism. The value-only frame law
+remains relevant to the byte compressor and a future non-singleton solver.
+The registered device gate checks fresh numerical faults, unchanged past
+records, full native updates and fresh installation without granting an
+arbitrary producer the owner's numerical workspace.
 
-The retained [owned input witnesses](theory/proofs/INDEXED_INPUT_ALIAS.md)
-explain why that boundary is needed.
-Real CPU Runtime now demonstrates a source-map mutation that changes the
-published forecast and complete native update, plus two count aliases that
-rewrite earlier snapshots. Independent checks against the same mutated
-inputs do not establish the original causal context or predecessor.
-All three actual CUDA probes at058489e reproduce: both paths accept the wrong
-source-driven update, while AMP count refusal leaves corrupted retained
-state. Complete paid boundaries preserving live/history state take priority over the order
-solver; the latter remains unimplemented. No Foundation action is needed.
+The next substantive solver frontier is paid query-order choice. Its exact
+finite order/resource laws already exist, but the Runtime alternative-order
+solver does not. It must pay for search and scratch before use, retain full
+native state, specify its actual rounding schedule and return UNRESOLVED
+when its declared search/feasibility class is not certified. Removing a
+singleton producer is no certificate for this larger class or for a model
+experiment. Foundation and ERC-1 stay fixed.
 
 The 23-job actual A1 gate is terminal at b53889e for the
 [byte-only evidence repair](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md).

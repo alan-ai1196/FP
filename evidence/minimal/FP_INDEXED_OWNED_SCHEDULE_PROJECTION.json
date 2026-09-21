@@ -1,0 +1,102 @@
+{
+  "status": "PASS_OWNED_QUERY_PROJECTION",
+  "scope": "fixed owned exact reference block decoder; full global state retained; no new AMP schedule, total resource or complete-class certificate",
+  "structural": {
+    "all_supports_n2_through_n5": 1098,
+    "independent_simple_path_edge_union_checks": 10650
+  },
+  "exhaustive_native": {
+    "ternary_count_states": 759,
+    "complete_native_cache_comparisons": 11919
+  },
+  "off_path_future_information": [
+    {
+      "initial_actual_event": [
+        1,
+        2,
+        0
+      ],
+      "initial_current_query_forecast": "1/2",
+      "initial_native_theta_1": "9/40",
+      "common_actual_suffix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      "owned_final_query": [
+        0,
+        3
+      ],
+      "owned_final_forecast": "881/1250",
+      "full_native_caches_checked": 4,
+      "full_observed_and_committed_states_checked_each": 3,
+      "retained_complete_count_coordinates": 6,
+      "actual_cursor": 3,
+      "final_target_revealed": false
+    },
+    {
+      "initial_actual_event": [
+        1,
+        2,
+        1
+      ],
+      "initial_current_query_forecast": "1/2",
+      "initial_native_theta_1": "1/40",
+      "common_actual_suffix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      "owned_final_query": [
+        0,
+        3
+      ],
+      "owned_final_forecast": "369/1250",
+      "full_native_caches_checked": 4,
+      "full_observed_and_committed_states_checked_each": 3,
+      "retained_complete_count_coordinates": 6,
+      "actual_cursor": 3,
+      "final_target_revealed": false
+    }
+  ],
+  "off_path_height": {
+    "actual_observations": 4,
+    "registered_reference_bits": 24,
+    "global_parameter_reader_still_guarded": true,
+    "owned_query_forecast": "1/2",
+    "irrelevant_partition_kernel_calls": 0,
+    "retained_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "packed_current_bytes": 68687
+  },
+  "retired_producer_boundary": {
+    "retired_producer_calls": 0,
+    "complete_native_events": 3,
+    "scope": "the fixed schedule accepts no externally produced plan or numerical result"
+  },
+  "guard_cases": {
+    "hard_block_preflight_refusals": 1,
+    "aggregate_convolution_preflight_refusals": 3,
+    "unfunded_numerical_kernel_calls": 0
+  }
+}

@@ -49,10 +49,11 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if before_prediction != prefix.phases[prediction_id].raw_prediction:
                 raise ContractError('indexed CUDA prediction changed before target observation')
         if kind == 'predict':
-            plan = planner.prepare_prediction(program, before_raw, rules, sources,
+            # The complete private builder was already the independent
+            # validator's trusted implementation. Its accepted class is a
+            # singleton; a separate producer cannot add a legal alternative.
+            plan = planner._prepare_prediction(program, before_raw, rules, sources,
                                               output_cap=prefix.contract.phase_output_cells)
-            planner.check_prediction_plan(plan,program,before_raw,rules,sources,
-                                          output_cap=prefix.contract.phase_output_cells)
         expected_cells = plan.output_cells if kind == 'predict' else 13 if kind == 'observe' else 0
         indexed.allowance(max(1, expected_cells), prefix.contract.phase_output_cells,
                           'indexed CUDA phase output allowance')
@@ -67,13 +68,15 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 result = indexed.ResidentState(CountState(program.n, (0,)*(program.n*(program.n-1)//2), None, reference.cursor, 0))
             elif kind == 'predict':
                 prior_relation = indexed.check_state(reference, before_raw, tolerance, bit_limit=bit_limit)
-                raw, actual_prediction = indexed.execute_prediction(plan, before_raw, scalar)
+                # This fixed kernel owns the live numerical workspace. There
+                # is no Runtime plan or numerical-result proposal port.
+                raw, actual_prediction = indexed._prediction_schedule(plan, before_raw, scalar)
                 if type(actual_prediction) is not indexed.ResidentPrediction:
                     raise ContractError('indexed CUDA helper returned another prediction representation')
                 if raw != actual_prediction.raw():
                     raise ContractError('indexed prediction lost its actual output words')
             elif kind == 'observe':
-                raw, result = indexed.execute_observation(before_raw, before_prediction, target, scalar,
+                raw, result = indexed._observation_schedule(before_raw, before_prediction, target, scalar,
                                                          resident_prediction=prediction)
                 if type(result) is not indexed.ResidentState:
                     raise ContractError('indexed CUDA helper returned another state representation')

@@ -2,39 +2,31 @@
 
 ## Current implementation state (2026-09-21)
 
-**Reference prediction delegation is value-isolated; broader indexed binding stays HOLD.**
-The [continuation-stability repair](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
-keeps actual inputs and accepted results private, delegates only bounded
-immutable plan values, and retires the replaceable numerical executor.
-A poison/restore witness rules out copying-only numerical delegation.
-The new CPU audit and complete indexed/projection regressions pass;
-all ten fresh actual CUDA A1 cases pass atda532dc. Full readers check264
-records; four integrations check4416 floating words, including144 half.
-Maximum job2,357,059,584 bytes; all jobs exit0 without timeout/limit
-termination. n256 and fresh installation/learning to21 pass. Other native/AMP
-helper surfaces and complete release are not covered by this component gate.
+**Fixed indexed plans are now constructed and executed inside Runtime; actual gate pending.**
+The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
+shows why the prior reference value-copy boundary and the remaining AMP
+proposal ports are redundant: their trusted validators already construct
+the complete unique accepted plan. Runtime uses those same builders and
+fixed numerical kernels directly. Native inputs/history remain complete;
+the arithmetic interpreter/checker bodies are unchanged. No new semantic
+action or Python sandbox claim follows.
 
-Two [passive AMP metadata counterexamples](theory/proofs/AMP_METADATA_CONTINUATION.md)
-now exercise the remaining boundary: the raw physical input shares its
-CountState with the predecessor, and an accepted phase retains the planner's
-own mutable output. Current numerical refusal/checks do not protect these
-aliases across later calls. Both fresh CUDA probes reproduce atab39b56,
-production unchanged from7fe0471, with maximum job2,195,173,376 bytes.
-One refuses with a corrupted physical predecessor; one publishes a correct
-new phase while an old checked plan changes62 to61. Both change earlier
-snapshot/phase metadata behind intact sealed bytes. All jobs are terminal;
-the reference value boundary is unaffected.
+CPU passes1300 finite cases,388 histories/776 phase comparisons with all
+six retired ports forbidden, and full n256/profile/fresh-reference gates.
+Projection checks11919 caches; the projected AMP audit checks11919 tapes.
+Global/projected exact rounding audits pass270/540 and280/560 prediction/
+observation cases. Prepaid-refusal tests now spy on the actual private
+kernel. Reference/work IDs are v2; the absent reference transfer fee is
+removed while conservative planning and paid numerical/arena extents remain.
 
-Three historical
-[actual CPU counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md) at a559d7a
-show supplied source/count aliases bypassing the plan checks. Ordinary
-dictionary mutation publishes41/50 where the retained actual context requires
-1/2, then commits the wrong native update. Count mutations before or after
-plan validation also change old snapshots. All three actual CUDA probes at
-058489e reproduce: the source case passes AMP checks and commits wrongly;
-count cases refuse after native/history corruption. All old jobs are
-terminal below4 GiB. The reference-only repair above is the current change;
-complete helper ownership precedes paid order search.
+Fifteen fresh4-GiB/900-second actual jobs are registered, including genuine
+one-bit faults in fresh device outputs and both fresh-install paths. Their
+results are pending; indexed complete release and model science stay HOLD.
+All old terminal outcomes are retained. The reference value adapter passed
+its ten-job gate atda532dc and is now a passive component witness. Both
+AMP continuation aliases reproduced atab39b56/production7fe0471. These
+historical counterexamples explain removal of the redundant ports; a future
+non-singleton order solver still requires a stable proposal boundary.
 
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps

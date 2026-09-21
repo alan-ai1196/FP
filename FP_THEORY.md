@@ -211,24 +211,25 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
-The [continuation-stable delegation law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
-states the implementation premise joining causal input binding, historical
-frame preservation and checked execution. Immutable value exchange and
-private accepted records establish the frame property; native refinement
-still requires an independently validated plan and a trusted fixed executor.
-Copying arguments followed by after-call equality is insufficient, as an
-exact poison/restore witness shows. The reference prediction port now uses
-this law and retires its redundant numerical delegation. CPU regressions
-pass; all ten actual CUDA cases atda532dc pass their264 complete record
-readers and scoped numerical/installation checks. Other indexed helper
-surfaces remain HOLD. No Foundation definition or semantic action changes.
+The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
+removes a redundant producer when its trusted validator already constructs
+the sole accepted plan. Runtime now uses the existing private builders and
+fixed numerical kernels for the exact reference/global/projected AMP paths.
+All native inputs/history remain: equal complete plans can have different
+predictions. CPU/native/RNE regressions pass; a fifteen-job actual device
+gate is registered and pending. No new Foundation action, class-completeness
+claim or indexed complete release follows.
 
-Two subsequent [passive AMP witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md)
-exercise both sides of that law: a failed physical call can damage its
-shared predecessor, and a later planner can mutate a previously accepted
-returned plan. Both actual CUDA probes atab39b56 reproduce on production
-unchanged from7fe0471, with one old sealed record's metadata changed in each
-case. The scoped reference repair remains intact; the AMP repair is open.
+The [continuation-stable delegation law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
+continues to separate frame preservation from numerical refinement. Its
+reference value-only implementation passed ten actual jobs atda532dc; that
+Runtime exchange is now superseded by eliminating its singleton producer.
+The [AMP metadata witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md)
+remain counterexamples atab39b56/production7fe0471: shared inputs can corrupt
+history even on refusal, and retained producer outputs can change during
+later correct calls. Actual-input authority and stable accepted history
+remain necessary for every real delegation boundary, including the byte
+compressor and future non-singleton order search.
 
 The [indexed supplied-input counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md)
 now put that extension on HOLD: real CPU Runtime accepts a changed helper

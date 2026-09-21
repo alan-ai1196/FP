@@ -1,5 +1,11 @@
 # AMP metadata must survive rejection and later helper calls
 
+Current implementation note: [singleton-plan elimination](SINGLETON_PLAN_ELIMINATION.md)
+supersedes the fixed Runtime's redundant proposal interfaces. The law and
+historical source-bound evidence below remain; current CPU checks pass and
+the new actual gate is pending. Do not apply retired-port probes to the new
+implementation as though those ports were still authoritative.
+
 Status: **two exact passive CPU and two actual owned CUDA counterexamples**.
 Actual probes atab39b56 use production unchanged from7fe0471. The repaired reference
 prediction component remains valid in its stated fault class. The broader

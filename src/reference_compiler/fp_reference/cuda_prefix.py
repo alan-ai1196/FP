@@ -102,7 +102,7 @@ class IndexedCudaPrefixContract(CudaPrefixContract):
         indexed.IndexedRelation(self.n)
         if self.likelihood_encoding is not None:
             raise ContractError('indexed native lowering cannot borrow a dense likelihood encoding')
-        return indexed.BACKEND_ID, 'prepaid-indexed-positive-tape-and-owned-scalar-arena-v1', indexed.FORWARD_ID
+        return indexed.BACKEND_ID, 'prepaid-indexed-owned-plan-and-scalar-arena-v2', indexed.FORWARD_ID
 
 
 @dataclass(frozen=True, kw_only=True)

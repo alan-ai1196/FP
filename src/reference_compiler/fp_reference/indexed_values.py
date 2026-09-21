@@ -1,6 +1,8 @@
-"""Closed value exchange for indexed prediction proposals and results.
+"""Passive value-exchange witness retained for the component frame audits.
 
-Only exact immutable primitives cross the delegated reference boundary.
+Runtime's fixed schedule now eliminates this redundant proposal boundary.
+This module is not an alternate Runtime, admission path or resource owner.
+Only exact immutable primitives cross the passive delegated boundary below.
 The owner, this bounded reifier and the fixed numerical kernels are trusted;
 helpers receive no owner, live source dictionary, live native record or old accepted result.
 This is an alias/frame guarantee, not attestation of arbitrary Python code.

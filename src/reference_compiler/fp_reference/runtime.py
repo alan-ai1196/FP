@@ -21,7 +21,7 @@ from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .indexed_relation import IndexedRelation, DecodeAllowance
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
-from . import indexed_values
+from .indexed_execution import _prepare_owned_prediction, _owned_prediction_work, _execute_owned_prediction
 from .encoding import packed_size, write_packed, fragments, bounded_packed_size
 from . import phase_deflate as phase_codec
 from .host_failure import guard_host_allocations
@@ -1071,8 +1071,11 @@ class ReferenceCompilerRuntime:
 
     def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit):
         if type(self._machine) is IndexedReferenceMachine:
-            return indexed_values.predict(self._machine, program, rules, state, sources,
-                bit_limit=bit_limit, execution_debit=execution_debit)
+            self._machine.require_program(program)
+            plan = _prepare_owned_prediction(program, rules, state, sources,
+                budget=self._machine.budget, bit_limit=bit_limit)
+            execution_debit(_owned_prediction_work(plan))
+            return _execute_owned_prediction(plan, program.n)
         return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)
 
     def _reference_observe(self, program, state, spec, prediction, target, *, bit_limit):
