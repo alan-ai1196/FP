@@ -221,3 +221,10 @@ The terminal journal is8,406 bytes. Neither this diagnostic nor the older
 one should be restarted. The result proves a precision failure and validates
 a numerical rejection mechanism; it does not grant bridge authority to an
 inaccurate realization or replace any complete native-state obligation.
+
+The [static radix-power refinement](RADIX9_POWER_LOWERING.md) now removes
+unnecessary half casts and proves a sharper mixed-rounding bound. Its new
+CPU audit recovers the failing256-cycle, with a uniform error<0.000883 for
+that fixed tape over all admitted signed counts. The old failure remains
+valid for the original schedule; the new lowering needs its own device and
+eventual complete-state evidence.

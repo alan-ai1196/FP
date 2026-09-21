@@ -2,6 +2,21 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current precision refinement, 2026-09-21:** the [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
+removes repeated half casts at products by proved radix powers. A syntax-only
+invariant covers inputs1/9/factors and products of powers; it never mistakes
+a rounded mantissa1 for an exact power. The lowering aliases the immutable
+mantissa and adds guarded exponents, preserving the count dependence. All
+other products still use FP16. Separate product/SUM error budgets(H,S) give
+eta=3H*u16+(2H+19S)*u32 and absolute error at most eta/(2-eta)+2/(2^19-1).
+The256-cycle query(0,96) has(1,256), proving error<0.000883 for every admitted
+signed count vector under the declared arithmetic. Its old measured failure
+is retained; the new machine error certifies below0.000030911.61,406 exact
+node checks/1,530 forecasts pass. The512-cycle's individual forecast passes,
+but its uniform bound still exceeds0.001. The fixed new4-GiB/240-second GPU
+diagnostic is pending; no old worker is restarted, and no Runtime/native
+phase bridge or physical memory/speed advantage is claimed.
+
 **Current tolerance result, 2026-09-21:** the [binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 turns the radix decoder's error proof into rigorous per-forecast decisions.
 For q=B+1 and t=2*q*epsilon/(1-epsilon)<1, the checked binary64 result v

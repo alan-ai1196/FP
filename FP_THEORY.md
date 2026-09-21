@@ -145,6 +145,14 @@ It also finds a256-cycle actual GPU error above0.002274, falsifying uniform
 and both within/outside decisions. These scalar proofs and measurements do
 not replace complete native phase/AMP obligations.
 
+The [static radix-power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
+now removes avoidable mantissa casts using a syntax-proved exact exponent
+shift. Separate product/SUM roundoff budgets and positive normalization give
+a uniform error<0.000883 for the256-cycle query(0,96), under the declared
+arithmetic and exponent guards. Exact CPU audits pass; a new device protocol
+is pending. This is a numerical PRODUCT lowering, not a new semantic action
+or a complete native-state/AMP bridge, and changes no frozen definition.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

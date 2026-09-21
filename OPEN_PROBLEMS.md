@@ -2,6 +2,17 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md) now proves
+the exact-shift refinement and its error law. It recovers a uniform bound
+below0.001 on the256-cycle query(0,96) for all admitted signed counts under
+the declared RNE arithmetic.61,406 exact node checks and1,530 forecasts pass;
+the new device protocol remains pending. This does not settle larger general
+product budgets: the512-cycle uniform bound is still about0.00102726 even
+though its tested point has a tight passing enclosure. Continue with actual
+arithmetic evidence, justified further precision refinement where needed,
+and an owned complete-state/phase realization. Alias metadata and exponent
+work are costs; fewer rounded results are not a whole-runtime resource bound.
+
 The [new binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 settles individual scalar tolerance decisions without explicit likelihood
 integers: it certifies all27 retained GPU forecasts below0.001 and supports
@@ -12,15 +23,6 @@ bound. The sole80f9538 GPU diagnostic matches78,848 words and reproduces
 both accurate and rejected forecasts. A failed tolerance requires numerical refinement or
 UNRESOLVED, without altering the target. Complete native gradients, phase
 records, owned execution and installation remain separate bridge obligations.
-
-A concrete refinement to investigate is exact multiplication by a radix
-power. An input factor is represented as(1,e), so multiplying a message by
-that factor can shift its exponent without rounding the mantissa. The
-current generic half-product path instead recasts that mantissa at each
-such multiplication. A syntax-derived power-only invariant could remove
-these repeated rounding steps while preserving every count coordinate.
-Its complete error bound, actual device behavior and physical accounting
-remain unverified; it cannot borrow the original operation-word evidence.
 
 The [finite-mantissa frontier law](theory/proofs/RADIX9_FRONTIER_PRECISION.md)
 now removes one numerical obstruction: independent local scaling can erase

@@ -5792,3 +5792,40 @@ numerical tolerances without enormous integer likelihoods. It still needs
 an owned complete-state/phase bridge before replacing Runtime execution;
 a tolerance rejection cannot be hidden by changing reference semantics or
 promoting a scalar helper into installation authority.
+
+## 170. Exact radix-power products remove avoidable precision loss (2026-09-21)
+
+The [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md) attacks
+the observed precision failure at its arithmetic source. An input factor
+is always(1,e), so multiplying by it can preserve the other mantissa and
+add exponents exactly. The old generic half-product path instead recasts
+that mantissa repeatedly. A syntax-only power invariant covers inputs and
+products of powers; SUMs remain unmarked even when they round to mantissa1.
+Both original counts and every logical tape node remain, with shared immutable
+mantissas and guarded integer metadata. This changes the physical schedule,
+not the exact positive expression or native semantic action set.
+
+Separate error budgets H,S count general products and sums. Positivity gives
+mass factors(1+/-u16)^(3H)*(1+/-u32)^(2H+19S). With
+eta=3H*u16+(2H+19S)*u32<1, a positive odds argument bounds final absolute
+error by eta/(2-eta)+2/(2^19-1). The256-cycle query(0,96) has H1/S256,
+giving exact upper7751553917/8788358216065<0.000883 for every accepted signed
+count vector. Thus this particular0.001 class is settled under the declared
+arithmetic. The512-cycle's H1/S512 bound remains above0.001; its passing
+pointwise enclosure cannot be promoted to a uniform claim.
+
+All1,530 small forecasts,61,406 exact node enclosures and39,686 proved-power
+checks pass, including branching general products, diagonals, both signs
+and zero counts. A targeted case rejects treating rounded-one SUMs as powers.
+Five stress forecasts certify within0.001; the failing256-cycle changes
+from10104483/16777216 to10065811/16777216, with error below0.000030911.
+The512-cycle certifies below0.000061799 using85,800 new checked binary64
+primitives. Old terminal references are read, never re-executed.
+
+The first four matched stress inputs need7,660 rounded scalar results versus
+52,552 originally. This excludes integer arithmetic, static analysis, alias
+metadata and physical ownership costs. A new fixed4-GiB/240-second GPU
+diagnostic is committed before launch and remains pending at this entry.
+It must reproduce all actual words and the new decisions. No Runtime/native
+phase bridge, model outcome, job-memory advantage or static ERC extension
+is inferred from this passive lowering.

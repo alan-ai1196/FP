@@ -2,6 +2,17 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [static radix-power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
+shares a mantissa and adds exponents only when syntax proves one input is an
+exact power. Remaining products retain actual half arithmetic in the fixed
+GPU protocol.61,406 exact node enclosures/39,686 power checks and1,530 small
+forecasts pass in the CPU audit; five stress forecasts also certify within
+0.001. The256-cycle's static bound is<0.000883 over all admitted signed counts,
+while the512-cycle still needs its per-forecast reference enclosure. On the
+four matched old stress inputs, scalar rounding results fall52,552 to7,660;
+integer/static/alias costs remain separate. The new source-bound GPU job is
+pending. Production Runtime APIs, graphs and phase evidence remain unchanged.
+
 The passive [radix9 tolerance reader](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 now uses the checked binary64 error theorem to enclose the exact target with
 small rational endpoints. All27 old GPU forecasts certify below0.001, with

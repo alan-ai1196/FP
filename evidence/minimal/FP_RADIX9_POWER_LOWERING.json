@@ -1,0 +1,289 @@
+{
+  "status": "PASS_STATIC_POWER_LOWERING_AUDIT",
+  "scope": "passive decoder arithmetic, not a native Program/Runtime bridge",
+  "local_bounds": {
+    "local_inequality_cases": 16,
+    "rounded_one_is_not_a_power_proof": true,
+    "exhausted_error_budget_refusals": 1,
+    "uniform_bound_H1_S256": "7751553917/8788358216065",
+    "uniform_bound_H1_S512": "9026615037/8787083150081"
+  },
+  "small_audit": [
+    {
+      "n": 3,
+      "profiles": 125,
+      "queries": 9,
+      "forecasts": 1125,
+      "exact_node_enclosures": 35000,
+      "exact_power_node_checks": 23000,
+      "static_shift_nodes_over_queries": 127,
+      "general_product_nodes_over_queries": 0,
+      "scalar_rounding_results": 54000,
+      "checked_device_words": 0,
+      "maximum_absolute_error": "31/687865856",
+      "maximum_absolute_error_float": 4.506692653749047e-08,
+      "witness": {
+        "counts": [
+          2,
+          -2,
+          0
+        ],
+        "query": [
+          0,
+          1
+        ],
+        "computed": "14935815/16777216",
+        "exact": "73/82"
+      }
+    },
+    {
+      "n": 5,
+      "profiles": 81,
+      "queries": 5,
+      "forecasts": 405,
+      "exact_node_enclosures": 26406,
+      "exact_power_node_checks": 16686,
+      "static_shift_nodes_over_queries": 167,
+      "general_product_nodes_over_queries": 16,
+      "scalar_rounding_results": 36288,
+      "checked_device_words": 0,
+      "maximum_absolute_error": "7/83886080",
+      "maximum_absolute_error_float": 8.344650268554687e-08,
+      "witness": {
+        "counts": [
+          0,
+          -1,
+          0,
+          0
+        ],
+        "query": [
+          0,
+          0
+        ],
+        "computed": "15099493/16777216",
+        "exact": "9/10"
+      }
+    }
+  ],
+  "stress_cases": [
+    {
+      "case": "triangle_huge_counts",
+      "n": 3,
+      "query": [
+        0,
+        1
+      ],
+      "mass_budget_H_S": [
+        0,
+        3
+      ],
+      "uniform_absolute_error_bound": "96993109/17592122605625",
+      "uniform_absolute_error_bound_float": 5.513439803391712e-06,
+      "uniform_1e_3_class_decided": true,
+      "static_exact_shift_nodes": 14,
+      "general_product_nodes": 0,
+      "positive_tape_nodes": 31,
+      "scalar_rounding_results": 48,
+      "checked_device_words": 0,
+      "baseline_scalar_rounding_results": 132,
+      "baseline_source": "80f9538319b70e84ee63835eca340a61d3f05ab8",
+      "new_binary64_primitive_checks": 0,
+      "largest_exponent": 2000000000001,
+      "forecasts": [
+        {
+          "count_magnitude": 1000000000000,
+          "AMP_probability": "5312785/8388608",
+          "baseline_probability": "5312785/8388608",
+          "reference_interval": [
+            "33451890839347019867604904255/52818775009508807795758071808",
+            "33451890839355576706896908197/52818775009495296996875960320"
+          ],
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "419757351185365068095/52818775009508807795758071808",
+            "maximum_absolute_error": "419774464863841701797/52818775009495296996875960320",
+            "minimum_absolute_error_float": 7.947123936702382e-09,
+            "maximum_absolute_error_float": 7.94744794418989e-09
+          },
+          "baseline_decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "419757351185365068095/52818775009508807795758071808",
+            "maximum_absolute_error": "419774464863841701797/52818775009495296996875960320",
+            "minimum_absolute_error_float": 7.947123936702382e-09,
+            "maximum_absolute_error_float": 7.94744794418989e-09
+          }
+        }
+      ]
+    },
+    {
+      "case": "cycle64_huge_counts",
+      "n": 64,
+      "query": [
+        0,
+        16
+      ],
+      "mass_budget_H_S": [
+        1,
+        64
+      ],
+      "uniform_absolute_error_bound": "6795258077/8789314515553",
+      "uniform_absolute_error_bound_float": 0.0007731271949565069,
+      "uniform_1e_3_class_decided": true,
+      "static_exact_shift_nodes": 868,
+      "general_product_nodes": 2,
+      "positive_tape_nodes": 1345,
+      "scalar_rounding_results": 916,
+      "checked_device_words": 0,
+      "baseline_scalar_rounding_results": 6124,
+      "baseline_source": "80f9538319b70e84ee63835eca340a61d3f05ab8",
+      "new_binary64_primitive_checks": 0,
+      "largest_exponent": 63000000000002,
+      "forecasts": [
+        {
+          "count_magnitude": 1000000000000,
+          "AMP_probability": "11744051/16777216",
+          "baseline_probability": "2933473/4194304",
+          "reference_interval": [
+            "147892570025817583936150525449/211275100038035231183032287232",
+            "49297523342208209663125106051/70425033345627436559475146752"
+          ],
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "2517788379638469580297/211275100038035231183032287232",
+            "maximum_absolute_error": "839800823243725090179/70425033345627436559475146752",
+            "minimum_absolute_error_float": 1.1917108921899455e-08,
+            "maximum_absolute_error_float": 1.1924748677394368e-08
+          },
+          "baseline_decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "127934574053638422381549065/211275100038035231183032287232",
+            "maximum_absolute_error": "42644858555676797974359427/70425033345627436559475146752",
+            "minimum_absolute_error_float": 0.0006055355033821152,
+            "maximum_absolute_error_float": 0.0006055355110218708
+          }
+        }
+      ]
+    },
+    {
+      "case": "cycle256_accuracy_failure",
+      "n": 256,
+      "query": [
+        0,
+        96
+      ],
+      "mass_budget_H_S": [
+        1,
+        256
+      ],
+      "uniform_absolute_error_bound": "7751553917/8788358216065",
+      "uniform_absolute_error_bound_float": 0.0008820252573262505,
+      "uniform_1e_3_class_decided": true,
+      "static_exact_shift_nodes": 3300,
+      "general_product_nodes": 2,
+      "positive_tape_nodes": 5153,
+      "scalar_rounding_results": 6696,
+      "checked_device_words": 0,
+      "baseline_scalar_rounding_results": 46296,
+      "baseline_source": "80f9538319b70e84ee63835eca340a61d3f05ab8",
+      "new_binary64_primitive_checks": 0,
+      "largest_exponent": 255000000000003,
+      "forecasts": [
+        {
+          "count_magnitude": 16,
+          "AMP_probability": "10065811/16777216",
+          "baseline_probability": "10104483/16777216",
+          "reference_interval": [
+            "126765060020054216232505562691/211275100038035231183032287232",
+            "126765060022821227843561997379/211275100033423545164604899328"
+          ],
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "6530715254453957899966019/211275100038035231183032287232",
+            "maximum_absolute_error": "6530720788334628330292291/211275100033423545164604899328",
+            "minimum_absolute_error_float": 3.091095568421576e-05,
+            "maximum_absolute_error_float": 3.091098187766317e-05
+          },
+          "baseline_decision": {
+            "status": "OUTSIDE_TOLERANCE",
+            "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+            "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+            "minimum_absolute_error_float": 0.002274119840876243,
+            "maximum_absolute_error_float": 0.0022741198670696906
+          }
+        },
+        {
+          "count_magnitude": 1000000000000,
+          "AMP_probability": "10065811/16777216",
+          "baseline_probability": "10104483/16777216",
+          "reference_interval": [
+            "126765060020054216232505562691/211275100038035231183032287232",
+            "126765060022821227843561997379/211275100033423545164604899328"
+          ],
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "6530715254453957899966019/211275100038035231183032287232",
+            "maximum_absolute_error": "6530720788334628330292291/211275100033423545164604899328",
+            "minimum_absolute_error_float": 3.091095568421576e-05,
+            "maximum_absolute_error_float": 3.091098187766317e-05
+          },
+          "baseline_decision": {
+            "status": "OUTSIDE_TOLERANCE",
+            "minimum_absolute_error": "480464896869121491839204285/211275100033423545164604899328",
+            "maximum_absolute_error": "480464902413632240686868925/211275100038035231183032287232",
+            "minimum_absolute_error_float": 0.002274119840876243,
+            "maximum_absolute_error_float": 0.0022741198670696906
+          }
+        }
+      ]
+    },
+    {
+      "case": "cycle512_recovery",
+      "n": 512,
+      "query": [
+        0,
+        128
+      ],
+      "mass_budget_H_S": [
+        1,
+        512
+      ],
+      "uniform_absolute_error_bound": "9026615037/8787083150081",
+      "uniform_absolute_error_bound_float": 0.0010272595448145717,
+      "uniform_1e_3_class_decided": false,
+      "static_exact_shift_nodes": 7140,
+      "general_product_nodes": 2,
+      "positive_tape_nodes": 10977,
+      "scalar_rounding_results": 7188,
+      "checked_device_words": 0,
+      "baseline_scalar_rounding_results": null,
+      "baseline_source": "retained CPU AMP-machine search; no old device execution for this512-cycle",
+      "new_binary64_primitive_checks": 85800,
+      "largest_exponent": 4091,
+      "forecasts": [
+        {
+          "count_magnitude": 8,
+          "AMP_probability": "183517/262144",
+          "baseline_probability": "11665429/16777216",
+          "reference_interval": [
+            "147892570019421046325435052889/211275100038035231183032287232",
+            "147892570025877406751200773977/211275100028811859146177511424"
+          ],
+          "decision": {
+            "status": "WITHIN_TOLERANCE",
+            "minimum_absolute_error": "13056393142162473839884455/211275100028811859146177511424",
+            "maximum_absolute_error": "13056406055453312231787687/211275100038035231183032287232",
+            "minimum_absolute_error_float": 6.179806868098492e-05,
+            "maximum_absolute_error_float": 6.179812979902887e-05
+          },
+          "baseline_decision": {
+            "status": "OUTSIDE_TOLERANCE",
+            "minimum_absolute_error": "990087571701633947109045081/211275100038035231183032287232",
+            "maximum_absolute_error": "990087584571131787122444121/211275100028811859146177511424",
+            "minimum_absolute_error_float": 0.004686248268363813,
+            "maximum_absolute_error_float": 0.004686248329481857
+          }
+        }
+      ]
+    }
+  ]
+}
