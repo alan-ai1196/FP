@@ -13,9 +13,13 @@ global AMP audit and complete exact query-projection audit also pass.
 A8 at16afe06 completes31 workers:30 pass, including the projected star,
 n256, profiles, installation and all plan/endpoint/target faults. The
 two-history future fixture refuses a second Runtime's initialization under
-the existing fresh CUDA allocator requirement; its pair remains unverified.
-Maximum job peak2,385,580,032 bytes is below4 GiB. Execute the two histories
-in separate fresh jobs. No full release or model advantage is claimed.
+the existing fresh CUDA allocator requirement; A8 supplies no completed pair.
+Maximum job peak2,385,580,032 bytes is below4 GiB. A9 atfcecb91 now completes
+both histories in separate fresh jobs with production unchanged:22 phases,
+484 words/48 half words, all counts retained, final native forecasts881/1250
+and369/1250 distinguished by actual AMP words. All32 logical integration
+cases are covered across A8/A9; the failed combined fixture stays failed.
+All jobs are terminal. No full release or model advantage is claimed.
 
 The [AMP plan-binding audit](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 identifies a missing premise in fixed-forward conformance. A changed count

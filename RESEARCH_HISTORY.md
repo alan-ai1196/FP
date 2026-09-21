@@ -6617,3 +6617,26 @@ A9 is prepared for exactly two fresh worker processes, one per unchanged
 future history. The parent compares their final words after both complete.
 Production arithmetic, resource ownership and allocator guards are unchanged;
 no successful A8 worker is rerun merely to replace its source label.
+
+## 197. Separate fresh jobs verify that projected AMP retains future information (2026-09-21)
+
+A9 atfcecb91 passes both unchanged n4 histories in separate source-bound
+processes. Production code is identical to16afe06. Both attached-before-run
+jobs exit0 without timeout or limit termination; peaks2,226,651,136 and
+2,223,763,456 bytes stay below4 GiB. The parent comparison also passes.
+
+After(1,2,0) versus(1,2,1), both observe(0,1,0),(2,3,0) and predict(0,3).
+Each retains all six count coordinates and eleven complete phases/242
+floating words, including24 half words. Exact native forecasts881/1250 and
+369/1250 correspond to actual words1060401129 and1050091566. The final target
+stays unrevealed. Previously off-path information remains available to the
+same later continuation. No allocator history is cleared or guard weakened.
+
+A8's30 successful cases plus A9's two corrected cases cover all32 logical
+global/projected integration scopes. The seven successful projected groups
+and histories check248 phases/4114 floating words/156 half words. A8's
+combined-fixture refusal remains a failed attempt. All jobs are terminal;
+the separate legacy installation capacity fixture still prevents claiming
+its complete battery. This closes the scoped projected Runtime/AMP frontier
+and moves the next scientific question to registered model experiments
+with strong current controls, not additional static graph cases.

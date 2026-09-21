@@ -2,25 +2,17 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) is now
-implemented and CPU audited. A8 tests its separately declared physical
-identity through actual owned phases, star recovery, profiles, fresh paired
-evidence and resident installation, with all fifteen current global cases
-as strong controls. No whole-resource or model advantage is inferred.
-A8 at16afe06 now passes30
-cases, including actual star recovery and fresh installation. Its future
-fixture refuses a second Runtime in the same allocator history; the paired
-continuation comparison needs two separate fresh jobs. A9 is prepared for
-exactly those unchanged histories; preserve A8 and all allocator guards.
-
-The [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) has a
-general implemented repair: independently reconstruct every typed plan
-field from owned inputs before execution and after helper return. Actual
-A6's zero-native-error false conformance remains retained. The new exact
-plan audit, unchanged scalar/native audit and all fifteen actual A7 cases
-now pass at16fdda7. Wrong-address preparation and post-execution plan mutation
-both refuse before publication. This repaired premise is available for the
-new projected schedule; it does not provide that schedule's missing evidence.
+The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) now
+passes its exact CPU and scoped actual A8/A9 integration audits, including
+star recovery, retained future information, profiles, fresh evidence and
+resident installation. All32 logical global/projected cases are covered;
+A8's combined-fixture allocator refusal stays failed. Complete typed plan
+binding has its independent repair and actual evidence. The remaining
+scientific question is useful model execution under declared resources as
+support grows, selected blocks become difficult and evidence accumulates.
+Register model experiments with strong current controls and complete
+resource/failure accounting. No whole-resource dominance, model advantage
+or new complete release follows from the integration fixtures.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary
@@ -30,7 +22,7 @@ pays for the full count scan, checked structural plan and block arithmetic,
 retaining global theta/count/history meaning and failure/lineage checks.
 It recovers the previous star-query refusal and passes the complete Runtime
 audit, including native phases, profiles and fresh evidence. A matching
-AMP lowering needs its own declared schedule; real-valued cancellation
+AMP lowering has its own declared schedule; real-valued cancellation
 does not preserve current rounded words. Worst-case hard blocks, explicit
 native outputs and model usefulness remain unresolved by this theorem.
 The unchanged global AMP schedule must still refuse when its own table
@@ -38,7 +30,9 @@ preflight fails, even if the new exact reference projection succeeds.
 Actual A5 atae7f915 now verifies this boundary and all twelve existing
 integration cases, including installation and continued learning. The
 projected physical schedule now has its own declared words, resource plan
-and independent conformance check; its actual A8 integration remains open.
+and independent conformance check; its scoped actual A8/A9 integration
+passes. Hard blocks, explicit output costs, native-class search and model
+usefulness remain separate open obligations.
 
 The strict horizon hierarchy's count-family reachability is now
 [proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

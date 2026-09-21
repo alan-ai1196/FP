@@ -1,7 +1,7 @@
 # Query-block AMP with full native state and a declared physical schedule
 
-Status: **IMPLEMENTED; EXACT TAPE/RNE AUDITS PASS; ACTUAL A8 HAS30 PASSES
-AND ONE RETAINED FRESH-ALLOCATOR FIXTURE REFUSAL**.
+Status: **IMPLEMENTED; EXACT TAPE/RNE AUDITS AND SCOPED ACTUAL A8/A9
+INTEGRATION PASS; A8'S FRESH-ALLOCATOR FIXTURE REFUSAL RETAINED**.
 
 The [boundary response law](QUERY_BOUNDARY_RESPONSE.md) and
 [owned exact decoder](OWNED_QUERY_PROJECTION.md) justify removing common
@@ -202,8 +202,37 @@ freshness boundary, not evidence against projection or permission to reset
 allocator history. A follow-up must execute each history in its own fresh
 source-bound job, preserving both complete learner continuations.
 
-A9 is now prepared as exactly two fresh workers, `projected-future-0` and
+A9 was prepared as exactly two fresh workers, `projected-future-0` and
 `projected-future-1`. Each executes one unchanged history with the original
 caps; the parent compares their final actual words only after both complete.
 Production code, numerical tolerances and allocator guards are unchanged.
-The thirty successful A8 cases are not rerun to hide the failed fixture.
+The thirty successful A8 cases and the failed fixture retain their original
+source-bound results.
+
+## 6. A9 completes the retained-information continuation check
+
+[A9](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A9.json) atfcecb91
+passes both fresh jobs and their parent comparison. Production code is
+unchanged from16afe06; only the fixture/process separation and result
+collection changed. Both workers attach before resume, exit0 without
+timeout or limit termination, and stay below4 GiB/900 seconds. Their job
+peaks are2,226,651,136 and2,223,763,456 bytes. Each raw report is758 bytes.
+
+Starting with(1,2,0) versus(1,2,1), both then observe the identical suffix
+(0,1,0),(2,3,0) and predict the actual pre-target query(0,3). Exact native
+forecasts are881/1250 and369/1250; independently checked actual words are
+1060401129 and1050091566. Each keeps all six count coordinates and checks
+eleven complete phases/242 floating words, including24 half words. Neither
+final target is revealed. Thus a count that was initially off the query's
+path remains available when later observations connect that path.
+
+Together A8's30 successful cases and A9's two corrected fresh cases verify
+all32 logical integration cases: fifteen global controls and seventeen
+projected cases. The seven reported successful projected groups/histories
+check248 phases,4114 floating words and156 half words. A8's failed combined
+fixture remains a failed attempt; it is not relabeled as a pass. All jobs
+are terminal. This is a scoped Runtime/AMP integration result, not a new
+complete release or model advantage. The separate legacy installation
+capacity-calibration battery remains incomplete. The next scientific test
+is a registered model experiment with strong current controls and complete
+resource/failure accounting.

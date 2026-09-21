@@ -217,8 +217,9 @@ It retains every global count and native continuation, proves an additive
 tape/output law, and passes11,919 exact small query tapes plus280 RNE
 predictions/560 observations. The global AMP schedule remains unchanged.
 A8 at16afe06 now passes30 actual cases, including star recovery and fresh
-installation; a two-root fixture refuses reused allocator history, leaving
-its paired future check incomplete. This is a guarded physical refinement,
+installation; a two-root fixture refuses reused allocator history. A9
+atfcecb91 completes the paired future check in separate fresh jobs, with
+all global counts retained and production unchanged. This is a guarded physical refinement,
 not a new architecture action, state quotient or class-complete decision.
 
 The [indexed AMP plan-binding witness](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)

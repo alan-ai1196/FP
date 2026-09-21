@@ -12,15 +12,20 @@ The tape/output law is derived;11,919 exact small query tapes and280 RNE
 predictions/560 observations pass, with552 half outputs and full native
 coordinate checks. General plan binding, cross-schedule refusal and separate
 exponent/resource guards pass. The old exact AMP and complete reference
-projection audits also pass unchanged. A8 is prepared for all fifteen global
+projection audits also pass unchanged. A8 registered all fifteen global
 and sixteen projected actual CUDA cases, including star recovery, later
 information, profiles and fresh installation. A8 at16afe06 is now terminal:
 30 cases pass and the two-history fixture hits the existing fresh-allocator
-guard when it tries a second Runtime in one process. No completed pair is
-claimed. The star succeeds at189/250, learns and then predicts169/210 with
+guard when it tries a second Runtime in one process. A8 supplies no completed
+pair. The star succeeds at189/250, learns and then predicts169/210 with
 all14 counts retained. Projected n256 uses514 words versus42,594 globally;
 packed payload remains about205.6 MB. Fresh installation and continuation
-pass. Run the two future histories in separate fresh jobs; retain A8's refusal.
+pass. A9 atfcecb91 now completes the two histories in separate fresh jobs,
+with production code unchanged. Both eleven-phase histories retain all six
+counts and give native881/1250 versus369/1250 with distinct actual words.
+All32 logical global/projected cases are now covered; A8's combined-fixture
+failure remains retained. All jobs are terminal. Next, register model tests
+with strong current controls and full resource/failure accounting.
 
 **Current adversarial finding, 2026-09-21:**
 [AMP plan binding](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) is an upstream
@@ -44,7 +49,7 @@ mutation retains62 actual cells but refuses its declared61. Neither publishes
 a prediction or reveals a target. All jobs are terminal below4 GiB; maximum
 peak2,385,313,792 bytes. The thirteen previous scopes still pass, including
 fresh installation. The projected extension above now uses this repaired
-premise; its own actual A8 execution remains to be checked.
+premise; its scoped actual A8/A9 integration is now checked.
 
 **Current owned decoder result, 2026-09-21:**
 [query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented
@@ -105,9 +110,10 @@ global count. All59,808 small count states/1,488,144 ordered queries and
 89,875 finite-horizon comparisons pass exactly. An off-path count still
 changes native theta and a later connected query. Exact cancellation also
 changes existing AMP words, so it cannot borrow the A4 schedule certificate.
-**Research next:** execute the newly declared projected AMP A8 protocol and
-attack its operation/endpoint, resource and native-continuation claims. The
-owned exact reference integration above is complete within its stated scope. Do not
+**Research next:** test the checked projected Runtime/AMP path in registered
+model experiments, retaining hard-block/numerical/resource failures and
+strong current controls. The owned integration above is complete within
+its stated scope. Do not
 replace this general law with more static graph-size cases.
 
 **Current indexed AMP integration, 2026-09-21:** the

@@ -7,7 +7,7 @@ kernel or complete release is claimed here.
 
 A subsequent [projected physical schedule](PROJECTED_INDEXED_AMP.md) now
 shares this geometry with its own exponent guards and arithmetic identity.
-Its exact CPU audit passes; actual A8 is pending. The present proof remains
+Its exact CPU and scoped actual A8/A9 audits pass. The present proof remains
 the exact-reference result and does not transfer its evidence to that device
 schedule.
 

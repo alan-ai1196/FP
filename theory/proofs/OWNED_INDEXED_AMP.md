@@ -10,7 +10,7 @@ verification on source6a62a45.
 
 The separately declared [projected schedule](PROJECTED_INDEXED_AMP.md) now
 uses this complete physical learner and scalar interpreter with a query-block
-tape. Its CPU audit passes and actual A8 is pending. This document's global
+tape. Its CPU and scoped actual A8/A9 audits pass. This document's global
 schedule and its earlier execution evidence remain unchanged.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)

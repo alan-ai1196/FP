@@ -1,0 +1,157 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "fcecb9166d1b124fd2e99b2caba666ae35b4f306",
+    "cases": [
+      "projected-future-0",
+      "projected-future-1"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "declared_forward_id_by_case": {
+      "projected-future-0": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+      "projected-future-1": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+    },
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "projected-future-0",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "fcecb9166d1b124fd2e99b2caba666ae35b4f306",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2225340416,
+        "peak_job_commit": 2226651136,
+        "user_100ns": 22031250,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16872,
+        "process_creation_100ns": 134344479704518931
+      },
+      "raw_result_bytes": 758,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 16872,
+        "case": "projected-future-0",
+        "result": {
+          "checked_phases": 11,
+          "actual_floating_words": 242,
+          "actual_half_words": 24,
+          "cursor": 3,
+          "packed_current_bytes": 3465532,
+          "consumed_arena_bytes": 2200,
+          "initial_event": [
+            1,
+            2,
+            0
+          ],
+          "common_suffix": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ]
+          ],
+          "final_query": [
+            0,
+            3
+          ],
+          "reference_forecast": "881/1250",
+          "actual_forecast_word": 1060401129,
+          "retained_complete_count_coordinates": 6,
+          "target_revealed": false,
+          "discarded_off_path_information": false
+        }
+      }
+    },
+    {
+      "case": "projected-future-1",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "fcecb9166d1b124fd2e99b2caba666ae35b4f306",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222452736,
+        "peak_job_commit": 2223763456,
+        "user_100ns": 22343750,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14288,
+        "process_creation_100ns": 134344479737663662
+      },
+      "raw_result_bytes": 758,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 14288,
+        "case": "projected-future-1",
+        "result": {
+          "checked_phases": 11,
+          "actual_floating_words": 242,
+          "actual_half_words": 24,
+          "cursor": 3,
+          "packed_current_bytes": 3465554,
+          "consumed_arena_bytes": 2200,
+          "initial_event": [
+            1,
+            2,
+            1
+          ],
+          "common_suffix": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              3,
+              0
+            ]
+          ],
+          "final_query": [
+            0,
+            3
+          ],
+          "reference_forecast": "369/1250",
+          "actual_forecast_word": 1050091566,
+          "retained_complete_count_coordinates": 6,
+          "target_revealed": false,
+          "discarded_off_path_information": false
+        }
+      }
+    }
+  ],
+  "projected_future_comparison": {
+    "status": "PASS_SEPARATE_FRESH_HISTORIES",
+    "reference_forecasts": [
+      "881/1250",
+      "369/1250"
+    ],
+    "actual_forecast_words": [
+      1060401129,
+      1050091566
+    ],
+    "complete_count_coordinates_each": 6,
+    "new_target_revealed": false
+  }
+}
