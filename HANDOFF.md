@@ -3,8 +3,23 @@
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
 **Current research result, 2026-09-21:**
-[legal count histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md) now
-realize every strict level of the boundary horizon hierarchy inside the
+[reachable boundary information](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
+now has an exact code law for an explicit native family. In a fixed program,
+identical queries and clocks reach L^D_h(b) distinct boundary response
+classes; independent discrete couplings and a strictly convex mean map
+prove it. The family needs exactly ceil(log2(L^D_h(b))) isolated code bits.
+This does not give a universal precision upper bound: two interior paths
+in an n4 program give binom(L+1,2) classes at T=8L with D_h(2)=1. The audit
+passes2988 complete small-grid world sums,190 larger-grid samples and1365
+precision-counterexample states. Two actual n8 histories add90 native
+caches and88 observed/88 committed state checks. No physical saving or
+full Compiler quotient follows. The arbitrary linear table grid itself
+is still not claimed reachable; this different native family attains its
+class-count lower bound.
+
+The earlier
+[legal count construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
+realizes every strict level of the boundary horizon hierarchy inside the
 existing native learner. For each even b, unit signed counts on independent
 additional vertices produce a pure b-spin boundary interaction. A discrete
 3-adic valuation identity proves its coefficient is nonzero at ratio9.
@@ -12,7 +27,7 @@ Two actual owned n8 histories have all six boundary forecasts1/2; after
 the same observation(0,1,0), query(2,3) gives726561/3091522 versus
 2364961/3091522. Full native caches, gradients, parameters and clocks match
 independent literal execution. This closes the reachability objection for
-strictness, not for the arbitrary-message grid lower bound or a full-state
+strictness, not by itself for the arbitrary-message grid lower bound or a full-state
 quotient. No new architecture, resource advantage or GPU result is claimed.
 
 The

@@ -2,6 +2,15 @@
 
 ## Current implementation state (2026-09-21)
 
+The [reachable boundary information audit](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
+passes2988 exhaustive native marginal comparisons,190 larger-grid samples
+and1365 states of a dimension/precision counterexample. Two owned n8
+44-event histories verify90 full native caches and88 observed/88 committed
+states. The matching family code law and the counterexample concern
+restricted boundary responses. Full counts and actual histories remain
+in Runtime; neither a compact boundary codec nor a new arithmetic schedule
+has been installed.
+
 The [reachable boundary construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
 passes exact symbolic checks and two actual owned n8 histories. Each uses
 sixteen legal observations to reach a pure four-spin boundary interaction;

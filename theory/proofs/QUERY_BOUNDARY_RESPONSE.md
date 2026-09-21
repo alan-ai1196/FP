@@ -87,6 +87,12 @@ deterministic code across an isolating cut, counting all recoverable side
 information. This finite family concerns arbitrary boundary messages;
 reachability of every member from the fixed count initializer is not claimed.
 
+The later [reachable information law](REACHABLE_BOUNDARY_INFORMATION.md)
+attains the same L^D_h(b) class count with a different, count-reachable
+exponential family at common queries and clock. Its isolated code bound
+has a matching upper. It also falsifies a universal O(T^D_h(b)) bound on
+all count-reachable boundary classes: dimension alone is not precision.
+
 ## 3. The horizon bound is sharp
 
 Once `h >= floor(b/2)-1`, every even moment is included. The even characters

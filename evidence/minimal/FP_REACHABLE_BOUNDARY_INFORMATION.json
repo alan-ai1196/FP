@@ -1,0 +1,178 @@
+{
+  "status": "PASS_REACHABLE_BOUNDARY_INFORMATION",
+  "scope": "exact restricted boundary response in the fixed native count learner; legal common-clock histories, no complete Compiler quotient or physical saving",
+  "discrete_parameter_valuation_checks": 25,
+  "grid_cases": [
+    {
+      "boundary_vertices": 2,
+      "boundary_horizon": 0,
+      "native_vertices": 2,
+      "coordinate_count": 1,
+      "levels": 8,
+      "common_observation_clock": 14,
+      "grid_words_checked": 8,
+      "exhaustive_grid": true,
+      "independent_full_world_marginals_checked": 8,
+      "maximum_unnormalized_message_bits": 45,
+      "proved_family_class_count": 8,
+      "proved_fixed_width_code_bits": 3
+    },
+    {
+      "boundary_vertices": 3,
+      "boundary_horizon": 0,
+      "native_vertices": 3,
+      "coordinate_count": 3,
+      "levels": 4,
+      "common_observation_clock": 18,
+      "grid_words_checked": 64,
+      "exhaustive_grid": true,
+      "independent_full_world_marginals_checked": 64,
+      "maximum_unnormalized_message_bits": 58,
+      "proved_family_class_count": 64,
+      "proved_fixed_width_code_bits": 6
+    },
+    {
+      "boundary_vertices": 4,
+      "boundary_horizon": 0,
+      "native_vertices": 4,
+      "coordinate_count": 6,
+      "levels": 3,
+      "common_observation_clock": 24,
+      "grid_words_checked": 729,
+      "exhaustive_grid": true,
+      "independent_full_world_marginals_checked": 729,
+      "maximum_unnormalized_message_bits": 77,
+      "proved_family_class_count": 729,
+      "proved_fixed_width_code_bits": 10
+    },
+    {
+      "boundary_vertices": 4,
+      "boundary_horizon": 1,
+      "native_vertices": 8,
+      "coordinate_count": 7,
+      "levels": 3,
+      "common_observation_clock": 88,
+      "grid_words_checked": 2187,
+      "exhaustive_grid": true,
+      "independent_full_world_marginals_checked": 2187,
+      "maximum_unnormalized_message_bits": 206,
+      "proved_family_class_count": 2187,
+      "proved_fixed_width_code_bits": 12
+    },
+    {
+      "boundary_vertices": 6,
+      "boundary_horizon": 1,
+      "native_vertices": 66,
+      "coordinate_count": 30,
+      "levels": 2,
+      "common_observation_clock": 510,
+      "grid_words_checked": 190,
+      "exhaustive_grid": false,
+      "independent_full_world_marginals_checked": 0,
+      "maximum_unnormalized_message_bits": 1157,
+      "proved_family_class_count": 1073741824,
+      "proved_fixed_width_code_bits": 30
+    }
+  ],
+  "owned_CPU_cases": [
+    {
+      "grid_word": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual_observations": 44,
+      "full_native_caches_checked": 45,
+      "full_native_observed_and_committed_states_checked_each": 44,
+      "owned_pre_target_query": [
+        0,
+        1
+      ],
+      "owned_noisy_forecast": "1/2",
+      "final_target_revealed": false,
+      "packed_current_bytes": 774720
+    },
+    {
+      "grid_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "actual_observations": 44,
+      "full_native_caches_checked": 45,
+      "full_native_observed_and_committed_states_checked_each": 44,
+      "owned_pre_target_query": [
+        0,
+        1
+      ],
+      "owned_noisy_forecast": "413258281348153/460432086362162",
+      "final_target_revealed": false,
+      "packed_current_bytes": 784947
+    }
+  ],
+  "dimension_is_not_a_precision_upper_bound": [
+    {
+      "levels": 1,
+      "common_observation_clock": 8,
+      "ordered_count_states_checked": 1,
+      "distinct_boundary_future_classes": 1,
+      "fixed_width_code_bits": 0,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    },
+    {
+      "levels": 2,
+      "common_observation_clock": 16,
+      "ordered_count_states_checked": 4,
+      "distinct_boundary_future_classes": 3,
+      "fixed_width_code_bits": 2,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    },
+    {
+      "levels": 4,
+      "common_observation_clock": 32,
+      "ordered_count_states_checked": 16,
+      "distinct_boundary_future_classes": 10,
+      "fixed_width_code_bits": 4,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    },
+    {
+      "levels": 8,
+      "common_observation_clock": 64,
+      "ordered_count_states_checked": 64,
+      "distinct_boundary_future_classes": 36,
+      "fixed_width_code_bits": 6,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    },
+    {
+      "levels": 16,
+      "common_observation_clock": 128,
+      "ordered_count_states_checked": 256,
+      "distinct_boundary_future_classes": 136,
+      "fixed_width_code_bits": 8,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    },
+    {
+      "levels": 32,
+      "common_observation_clock": 256,
+      "ordered_count_states_checked": 1024,
+      "distinct_boundary_future_classes": 528,
+      "fixed_width_code_bits": 10,
+      "boundary_response_dimension": 1,
+      "only_collisions": "exchange of the two interior vertices"
+    }
+  ],
+  "arbitrary_linear_message_grid_reachability": "NOT_CLAIMED; a distinct reachable exponential family is proved"
+}

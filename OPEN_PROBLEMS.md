@@ -14,10 +14,15 @@ native outputs and model usefulness remain unresolved by this theorem.
 
 The strict horizon hierarchy's count-family reachability is now
 [proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)
-and checked in actual owned n8 phases. The separate independent-coordinate
-grid lower bound still ranges over arbitrary positive boundary messages;
-it is not yet a reachable-class bound for the native learner. Higher-order
-information alone also does not prove a dense storage requirement.
+and checked in actual owned n8 phases. The stronger
+[reachable information law](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
+now attains the L^D_h(b) class-count lower bound with a different native
+exponential family at common queries and clock. Its isolated code bound is
+exact. A proposed universal O(T^D_h(b)) class-count upper bound is falsified
+by a fixed n4 two-path family with D=1 and Theta(T^2) classes. The linear
+arbitrary-message grid itself is not asserted reachable. Uniform precision
+or reconstruction costs for all reachable boundary messages remain open;
+dimension and higher-order interaction alone do not establish them.
 
 The [indexed AMP path](theory/proofs/OWNED_INDEXED_AMP.md) now has code for
 owned phases, complete coordinate checks, actual-target binding, fresh

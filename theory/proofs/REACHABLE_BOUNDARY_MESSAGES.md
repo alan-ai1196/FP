@@ -108,6 +108,13 @@ independent coefficient grids are count-reachable. Nor does a higher-order
 interaction require a dense table: these messages themselves have compact
 symbolic descriptions. Full counts already preserve the required information.
 
+The subsequent [independent grid construction](REACHABLE_BOUNDARY_INFORMATION.md)
+attains L^D_h(b) count-reachable h-response classes using a different
+exponential family. Thus the arbitrary-message lower bound's class count
+is reachable, although the particular linear table grid is not asserted
+reachable. That stronger result also separates response dimension from
+precision using a two-path native counterexample.
+
 ## 5. Small actual owned witness
 
 For b4 there are four additional vertices, sixteen actual observations and

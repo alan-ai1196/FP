@@ -6370,3 +6370,36 @@ remaining obligation is to establish a valid, actually exercised installation
 capacity control without assuming installation must exceed every historical
 peak. Research continues on the boundary information law; no semantic change
 or Foundation/R4 exception follows from this fixture failure.
+
+## 188. Reachable boundary grids have an exact code law; dimension is not precision (2026-09-21)
+
+The previous pure-interaction construction composes across disjoint private
+interiors. For every selected even boundary subset, repeated legal query
+pairs independently choose a signed count2t, with unused pairs labeled0,1.
+All words have the same fixed native G/Gamma/U, queries and clock. Rational
+3-adic valuations make each coordinate's effective coupling injective in t.
+Strict convexity of the selected-character log partition then makes the
+entire selected moment map injective. The
+[new law](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md) gives exactly
+L^D_h(b) response classes and ceil(log2(L^D_h(b))) isolated persistent code
+bits for this constructed family, with n independent of L. This closes the
+reachable class-count lower bound without claiming arbitrary boundary-table
+uploads, free reconstruction or a full Compiler-state quotient.
+
+An attempted universal converse fails. Two private paths in a fixed n4
+native program leave only one boundary response coordinate, yet their
+odds determine the unordered pair of path counts: a rational valuation
+reveals their sum, and unique positional expansion reveals the two values.
+At the common query schedule and clock T=8L there are exactly binom(L+1,2)
+classes, or Theta(T^2), despite D_h(2)=1. Response dimension therefore does
+not bound the polynomial degree of exact count-class growth. These exact
+distinctions do not imply that fixed precision can resolve nearby forecasts.
+
+The audit exhausts2988 grid words against literal native world sums and
+checks190 samples of the b6,h1,n66 grid. Its2^30 class count is proved, not
+enumerated. Two actual n8 histories execute44 observations each, checking
+90 full native caches and88 observed/88 committed states. Final pre-target
+forecasts are1/2 and413258281348153/460432086362162. Another1365 two-path
+states verify exactly the predicted exchange collisions. Only aggregate
+evidence and the two small coordinate words are retained. Foundation R4,
+ERC-1, complete state ownership and the planned query projection are unchanged.

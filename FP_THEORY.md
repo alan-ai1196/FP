@@ -229,8 +229,15 @@ laws proportional to `1 +/- a*chi`, where chi is the full even boundary characte
 a!=0 proved by a discrete valuation identity at likelihood ratio9. Two
 owned n8 histories verify the first separation through complete native
 phases. The scope is the boundary interface; additional-vertex queries and
-native parameter reads retain their full meaning. Reachability of the
-separate arbitrary-message coefficient grid remains unproved.
+native parameter reads retain their full meaning. The subsequent
+[reachable information law](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
+attains L^D_h(b) distinct response classes with independent legal counts
+in one fixed program, at the same queries and clock. Its exact isolated
+family code length is ceil(log2(L^D_h(b))) bits. This uses a different
+exponential family from the earlier arbitrary-message linear grid.
+It is not a universal precision upper bound: a fixed n4 program with one
+boundary response coordinate has exactly binom(L+1,2) classes at T=8L.
+Response dimension alone therefore does not bound class growth by T^D_h(b).
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.
 
