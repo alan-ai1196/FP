@@ -14,8 +14,13 @@ affected native CPU batteries pass. Actual A1 at665c81d passes five workers:
 58 profile phases/1666 floating words including72 half words, finite closure,
 and all three failure controls. Its n256 worker refuses an undersized2-MiB
 frame; installation admission refuses a horizon longer than the remaining
-schedule. Both are retained. The corrected4-MiB/36-event registrations await
-attempt A2 on those two cases only. No complete release is claimed.
+schedule. Both are retained. A2 atda46578 completes both corrected cases:
+n256 checks34 phases/42,594 words with world builders disabled; fresh paired
+crossing at20, resident installation and post-install learning to21 pass.
+The endpoint-binding adversary is registered for A3: local RNE/copy checks
+and numerical tolerance may not bind the helper's returned final tensor.
+Its actual outcome is pending. The separate division-error field is also
+unchecked in this new indexed relation. No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

@@ -237,5 +237,7 @@ these obligations.
 The subsequent [owned indexed AMP implementation](OWNED_INDEXED_AMP.md)
 connects this exact reference to an independent physical count learner,
 complete actual word/target checks and the existing persistence/transport
-paths. Its CPU schedule audit passes; source-bound actual CUDA workers are
-pending. This reference proof alone supplies no physical execution result.
+paths. Its CPU schedule and seven source-bound actual CUDA cases pass across
+A1/A2, with two earlier registration refusals retained. A separate endpoint
+conformance attack is pending. This reference proof alone supplies no
+physical execution result.

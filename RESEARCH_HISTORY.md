@@ -6124,3 +6124,29 @@ and both failures remain canonical evidence. The corrected fixture funds a
 tolerance or already specified data prefix. Attempt A2 is registered only
 for these two incomplete cases; its outcome is pending. No complete release,
 resource advantage, class certificate or Foundation/ERC change follows.
+
+## 178. Owned indexed large-state execution and resident installation pass; endpoint binding remains under attack (2026-09-21)
+
+Actual [attempt A2](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A2.json) runs
+source da46578 with only the previously corrected frame and finite schedule.
+Both 4-GiB/900-second jobs finish without timeout or limit termination.
+n256 checks34 phases and42,594 actual floating words, including15,924 half
+words. Four observations and a four-event profile run with native world
+builders disabled. The packed root is205,594,734 bytes and job peak is
+2,383,417,344 bytes. The installation path checks80 phases/1482 words:
+both fresh paths cross at20, installation preserves resident state and
+alpha1/2, and actual learning continues to21. A1 and its failures remain.
+
+Successful ordinary/profile/install/closure groups across A1/A2 total182
+phases,45,933 floating words and15,996 half words. These finite successes
+do not establish every claimed phase-refinement condition. The helper
+locally checks output copies but Runtime subsequently trusts a raw endpoint
+returned by that same helper. A passive one-ULP perturbation of1/2 passes
+tolerance; its actual fixed-RNE result differs. The indexed relation also
+reports division error0 without comparing exact stored-mass normalization
+against the independently rounded probability words.
+
+A3 registers one actual owned endpoint-substitution attack, with no other
+GPU/model jobs restarted. Its actual outcome is pending at this source.
+No new semantic action, full release, resource advantage or class certificate
+is inferred; Foundation R4 and ERC-1 stay frozen.

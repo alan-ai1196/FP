@@ -1,7 +1,7 @@
 # Owned indexed AMP execution and resident transport
 
-Status: **SCOPED REFINEMENT ARGUMENT; EXACT CPU AND FIVE OWNED CUDA CASES
-PASS; TWO REGISTRATION REFUSALS RETAINED**.
+Status: **SCOPED REFINEMENT ARGUMENT; SEVEN OWNED CUDA CASES PASS ACROSS
+A1/A2; TWO EARLIER REFUSALS RETAINED; ENDPOINT CONFORMANCE UNDER ATTACK**.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
@@ -148,8 +148,8 @@ CUDA phase, arena byte, prefix map and device coordinate. Fallible
 preparation precedes the joint root/lease publication. The old base remains
 as a shadow; previous evidence is invalidated without alpha refund or
 rebasing. Empty-strategy finite CUDA closure uses the same complete frame
-and does not establish class optimality. These integration paths require
-the pending actual audit below before being reported as executed results.
+and does not establish class optimality. The actual integration results
+below cover these paths, subject to the separate conformance audit.
 
 ## 5. Evidence and registered actual tests
 
@@ -199,6 +199,37 @@ a 4-MiB n256 frame and declares 36 events for the installation fixture. The
 learner, tolerances, data prefix and phase implementation are unchanged.
 Only the two incomplete cases are registered for a new attempt:
 `scripts/run_indexed_amp_audit.py --attempt 2 --cases large install`.
-Its actual outcome remains pending. A1 is not overwritten or restarted.
-All earlier model/component jobs also remain terminal. No new complete
-CPU/CUDA release or model-science improvement is claimed.
+### Second actual attempt
+
+[Attempt A2](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A2.json), source
+`da46578`, is terminal with both workers passing under the same process and
+time limits. The n256 worker checks 34 phases and 42,594 floating words,
+including 15,924 half words, with every native world builder disabled.
+Four observations and a four-event profile complete; the packed root has
+205,594,734 bytes, consumed arena 341,504 bytes and job peak 2,383,417,344
+bytes. Installation checks 80 phases/1482 words: both fresh paths cross at
+cursor20, `INSTALLED_CUDA` preserves resident state, alpha remains1/2 and
+learning continues to cursor21 without a historical class-selection proof.
+The installation job peak is 2,082,893,824 bytes.
+
+The four successful ordinary/profile/install/closure groups across A1/A2
+check 182 phases, 45,933 floating words and 15,996 half words. The three
+failure controls have separate retained results. A1 and all older jobs
+remain terminal; no new complete release or model advantage follows.
+
+### Endpoint substitution audit
+
+The local copy check above occurs inside the physical execution helper.
+It does not by itself prove that the helper returns the same final tensor.
+A passive one-ULP change of the uniform probability from raw1056964608 to
+raw1056964609 still passes the registered probability tolerance, with
+error1/16777216. The indexed relation also currently reports division
+error0 instead of checking the proper stored-mass ratio separately.
+
+Attempt A3 is registered only for `endpoint-binding`. It executes the
+original owned arithmetic, changes the final copied probability in the
+same paid tensor extent, and returns its freshly read words. The test asks
+whether Runtime accepts this endpoint despite a different retained division
+result. **The actual outcome is pending.** The universal fixed-transition
+claim in Section2 must not be inferred from A1/A2 while this obligation is
+open. This tests an implementation refinement claim, not a new FP action.

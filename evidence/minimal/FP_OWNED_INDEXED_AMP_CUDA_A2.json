@@ -1,0 +1,96 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "da465785686db1ca15a43171e101dcf3395d71f8",
+    "cases": [
+      "large",
+      "install"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "large",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "da465785686db1ca15a43171e101dcf3395d71f8",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2382188544,
+        "peak_job_commit": 2383417344,
+        "user_100ns": 933437500,
+        "kernel_100ns": 43125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29476,
+        "process_creation_100ns": 134344363054243003
+      },
+      "raw_result_bytes": 377,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 29476,
+        "case": "large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205594734,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "install",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "da465785686db1ca15a43171e101dcf3395d71f8",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2081669120,
+        "peak_job_commit": 2082893824,
+        "user_100ns": 43281250,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1672,
+        "process_creation_100ns": 134344363926842803
+      },
+      "raw_result_bytes": 491,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 1672,
+        "case": "install",
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1482,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21816642,
+          "consumed_arena_bytes": 13744,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true
+        }
+      }
+    }
+  ]
+}

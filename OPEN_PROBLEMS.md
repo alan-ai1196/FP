@@ -7,10 +7,14 @@ owned phases, complete coordinate checks, actual-target binding, fresh
 paired persistence and resident installation. Its CPU schedule/native
 audit passes. Five A1 CUDA workers pass; the n256 and install fixtures stop
 at an undersized evidence frame and insufficient registered fresh horizon.
-Both refusals are explained exactly and retained. Run only those two cases
-under the corrected A2 registrations next. Actual large-state and transport
-correctness remain unverified; native-class search/fallback and model
-usefulness also remain open.
+Both refusals are explained exactly and retained. A2 completes both cases,
+including n256 actual half products and resident installation with subsequent
+learning. The current attack is narrower and more fundamental to the claimed
+refinement: can a helper change a final tensor within tolerance after its
+local RNE/copy checks? A3 tests actual owned endpoint substitution; its
+outcome is pending. The indexed checker also omits the separate division
+error between raw probabilities and exact normalized stored masses.
+Native-class search/fallback and model usefulness remain open.
 
 The [finite-basis indexed bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) now
 provides a conditional numerical relation for every native reference

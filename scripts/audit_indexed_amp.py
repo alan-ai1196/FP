@@ -165,6 +165,40 @@ def check_phases(rt):
 
 
 def worker(case):
+    if case == 'endpoint-binding':
+        rt, schema = configuration(2, 1)
+        before = rt.snapshot()
+        original = amp.execute_prediction
+        executed = {}
+        def substituted(plan, state, arithmetic):
+            raw, resident = original(plan, state, arithmetic)
+            assert raw.words[5] == 1056964608  # exact single 1/2
+            executed['words'] = raw.words
+            # Same owned extent and all original arithmetic; only its final
+            # copied probability changes after the helper's local copy check.
+            resident.readout[5].fill_(float(amp.single(raw.words[5]+1)))
+            return resident.raw(), resident
+        with patch.object(amp, 'execute_prediction', substituted):
+            result = deliver_context(rt, before.online.data.active.observation_ids[0],
+                                     tuple(schema.source_row(1).values()))
+        after = validate_residency(rt)
+        no_device_handles(after)
+        phase = after.cuda.phases[-1]
+        assert result.status == 'PREDICTED_REFERENCE', result
+        assert phase.status == 'CHECKED_CUDA_PREFIX_PHASE', phase
+        assert phase.raw_prediction.words[5] == executed['words'][5]+1
+        assert phase.raw_operations[-2] == ('div', 32, (executed['words'][5],))
+        assert phase.relation.probability_error == F(1, 16777216)
+        assert phase.relation.division_error == 0
+        assert after.cursor == 0 and after.candidates == before.candidates
+        return {'certificate_claim': 'FALSIFIED', 'scope': 'fixed AMP transition conformance; numerical tolerance still passes',
+                'runtime_status': result.status, 'phase_status': phase.status,
+                'arithmetic_probability_word': executed['words'][5],
+                'accepted_final_probability_word': phase.raw_prediction.words[5],
+                'probability_error': str(phase.relation.probability_error),
+                'reported_division_error': str(phase.relation.division_error),
+                'actual_stored_mass_division_error': '1/16777216',
+                'output_cells': phase.output_cells, 'target_revealed': False}
     if case == 'profiles':
         rt, schema = configuration(5, 8, profiles=(ProfileSpec('twice', ('indexed-event:0', 'indexed-event:1'), 2),))
         for k, event in enumerate(((1, 2, 0), (3, 4, 0), (2, 4, 0), (0, 0, 0),
@@ -287,21 +321,22 @@ def worker(case):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
-    parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit'))
+    parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit', 'endpoint-binding'))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:
         report = {'status': 'FAILED', 'process_id': os.getpid(), 'case': args.worker}
         try:
             report['result'] = worker(args.worker)
-            report['status'] = 'PASS_OWNED_INDEXED_CUDA'
+            report['status'] = ('COUNTEREXAMPLE_REPRODUCED' if report['result'].get('certificate_claim') == 'FALSIFIED'
+                                else 'PASS_OWNED_INDEXED_CUDA')
         except Exception:
             report['traceback'] = traceback.format_exc()
         if args.output is None:
             parser.error('--worker requires a bounded result --output')
         args.output.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
         print(json.dumps({'status': report['status'], 'case': args.worker}))
-        if report['status'] != 'PASS_OWNED_INDEXED_CUDA':
+        if report['status'] not in ('PASS_OWNED_INDEXED_CUDA', 'COUNTEREXAMPLE_REPRODUCED'):
             raise SystemExit(1)
     else:
         report = cpu_audit()

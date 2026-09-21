@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from windows_job_audit_support import run_in_job
 
-CASES = ('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit')
+CASES = ('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit', 'endpoint-binding')
 CAP = 4 << 30
 DEADLINE = 900000
 
@@ -65,8 +65,9 @@ def main():
             clean()
             if (job.exit_code == 0 and not job.timed_out and job.attached_before_resume
                     and not job.limit_terminated_processes and row['result']['process_id'] == job.process_id
-                    and row['result']['status'] == 'PASS_OWNED_INDEXED_CUDA'):
-                row['worker_status'] = 'EXECUTED_AND_CHECKED'
+                    and row['result']['status'] in ('PASS_OWNED_INDEXED_CUDA', 'COUNTEREXAMPLE_REPRODUCED')):
+                row['worker_status'] = ('COUNTEREXAMPLE_REPRODUCED' if row['result']['status'] == 'COUNTEREXAMPLE_REPRODUCED'
+                                        else 'EXECUTED_AND_CHECKED')
         except Exception:
             row['collection_traceback'] = traceback.format_exc()
         report['workers'].append(row)
@@ -75,13 +76,14 @@ def main():
         if raw_path.exists():
             assert raw_path.resolve().parent == directory
             raw_path.unlink()
-    report['status'] = ('COMPLETE_EXECUTION' if all(r['worker_status'] == 'EXECUTED_AND_CHECKED' for r in report['workers'])
-                        else 'COMPLETE_WITH_FAILURE')
+    statuses = {r['worker_status'] for r in report['workers']}
+    report['status'] = ('COMPLETE_WITH_FAILURE' if 'FAILED' in statuses else
+        'COMPLETE_WITH_COUNTEREXAMPLE' if 'COUNTEREXAMPLE_REPRODUCED' in statuses else 'COMPLETE_EXECUTION')
     publish()
     assert directory.parent == ROOT.resolve()
     directory.rmdir()
     print(json.dumps({'status': report['status'], 'cases': list(args.cases)}))
-    if report['status'] != 'COMPLETE_EXECUTION':
+    if report['status'] == 'COMPLETE_WITH_FAILURE':
         raise SystemExit(1)
 
 

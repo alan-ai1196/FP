@@ -196,9 +196,13 @@ states. Its full-domain stored masses lie in [1,9], with conservative
 normalizer bound18. Existing fresh paired evidence and resident transport
 are connected. Actual A1 at665c81d passes profiles, finite closure and three
 failure boundaries, while correctly refusing an undersized n256 evidence
-frame and insufficient fresh horizon. Corrected registrations for those
-two cases await A2. No new semantic action, class completeness or complete
-release is claimed.
+frame and insufficient fresh horizon. A2 completes those two cases, including
+n256 actual half products, fresh paired crossing, resident installation and
+continued learning. A new endpoint-substitution audit attacks the claimed
+fixed-transition conformance: passing coordinate tolerances does not bind a
+returned tensor to the recorded arithmetic. The separate stored-mass division
+error is also missing in this indexed checker. No new semantic action,
+class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
