@@ -12,7 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from windows_job_audit_support import run_in_job
 
-CASES = ('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit', 'endpoint-binding')
+CASES = ('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit',
+         'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output')
 CAP = 4 << 30
 DEADLINE = 900000
 

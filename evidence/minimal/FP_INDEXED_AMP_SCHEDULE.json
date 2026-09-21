@@ -18,5 +18,18 @@
   "half_precision_scalar_outputs": 279,
   "maximum_gradient_error": "49/188743680",
   "independently_bound_target_forgery": "REFUSED",
-  "insufficient_whole_domain_range_cap": "UNRESOLVED"
+  "insufficient_whole_domain_range_cap": "UNRESOLVED",
+  "independent_endpoint_and_normalization_checks": {
+    "status": "PASS",
+    "prediction_word_substitutions_refused": 21,
+    "operation_word_substitutions_refused": 189,
+    "gradient_word_substitutions_refused_including_inactive_diagonal_forms": 18,
+    "changed_trace_length_or_operation_refused": 9,
+    "division_errors": [
+      "0",
+      "1/41943040",
+      "0"
+    ],
+    "proper_probability_error_with_unchanged_rounded_probability": "REFUSED_AT_ZERO_TOLERANCE"
+  }
 }

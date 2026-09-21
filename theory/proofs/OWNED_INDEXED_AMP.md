@@ -1,10 +1,11 @@
 # Owned indexed AMP execution and resident transport
 
-Status: **FIXED-TRANSITION REFINEMENT FALSIFIED BY A3; A1/A2 FINITE
-EXECUTIONS AND EXACT NATIVE COORDINATE IDENTITIES RETAINED**.
+Status: **A3 COUNTEREXAMPLE RETAINED; INDEPENDENT CONFORMANCE REPAIR
+IMPLEMENTED; EXACT CPU AUDIT PASSES; ACTUAL REPAIR AUDIT PENDING**.
 
 The [endpoint counterexample](INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md)
-reproduces actual false acceptance at source0e53b8c. The repair is pending.
+reproduces actual false acceptance at source0e53b8c. Section6 supplies the
+replacement argument and implemented check; its actual A4 audit is pending.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
@@ -236,3 +237,72 @@ result. **A3 reproduces false acceptance at source0e53b8c.** It records both
 different words and a checked phase; the stronger claim is withdrawn.
 The [counterexample note](INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md) states the
 missing obligation and precise scope. This is not a new FP action.
+
+## 6. Independent conformance before coordinate comparison
+
+The physical helper and the Runtime verifier now have separate entrypoints.
+Both interpret the same declared positive scalar schedule: the helper uses
+actual CUDA operations; the verifier uses exact RNE on the independently
+retained physical predecessor and query/actual target. The verifier does
+not call the helper or consume its local assertion as authority. The pure
+schedule and exact word arithmetic are part of the declared trusted checker,
+as the native backend's independent rounded-forward checker already is.
+This is a conditional implementation argument, not a sandbox against
+arbitrary modification of the checker or Runtime's own memory.
+
+After the helper returns, Runtime requires the exact resident output type
+and reads its final words through `CudaWorkspace.raw_words`. That reader
+requires an initialized extent belonging to the current phase. An older
+owned tensor with equal words cannot substitute for this phase's output.
+The verifier compares every freshly captured raw operation (tag, width and
+word) and the complete seven-word prediction or three-word gradient against
+the fixed schedule. It also compares complete count metadata. A prediction
+used by observation is retained before the helper call and checked again
+afterward, just as the input learner is. Failed outputs and operations stay
+in the failed phase; neither current learner maps nor future evidence advance.
+
+**Replacement conditional refinement.** Assume the fixed declarations,
+trusted exact checker and primitive/arena contract. For a successful phase,
+independent interpretation determines the complete expected words from the
+owned physical inputs. Acceptance equates these words with the freshly
+observed current-phase output and retained operation sequence. Thus output
+conformance follows even if a helper changes its output after local checks.
+The separate native finite-basis comparison then proves the registered
+reference relation. Exact count/clock maps and unchanged predecessors allow
+induction over admitted ordinary/profile phases. This statement does not
+use a numerical reference answer as a physical input.
+
+All three stored gradient forms participate in conformance, including a
+diagonal's physically present but native-inactive form. The native relation
+still compares exactly the forms that occur in the literal gradient vector.
+Keeping these two claims separate avoids strengthening either by accident.
+
+The prediction relation now checks three normalizers: exact reference mass
+sum, exact sum of actual stored masses, and actual rounded normalizer. Its
+normalizer error is the maximum pairwise discrepancy. Probability error
+covers both the proper stored-mass ratio and the actual rounded probability
+against the exact reference. Division error separately bounds their mutual
+difference. All declared caps and both tolerances are enforced. For the
+honest diagonal9/10 forecast, division error is exactly1/41943040, not0.
+
+No physical operation, word format, output extent or numerical tolerance is
+changed. The existing conservative work allowance covers both scalar
+interpretations and fresh readbacks: prediction prepays the plan traversal
+and `128(n+1)` per output cell, while the common phase debit reserves320
+units per output cell plus two complete relation allowances. Reference
+integer height, packed frames, arena and actual process caps remain separate
+guards. These tariffs are not wall-time or physical-resource lower bounds.
+
+The complete CPU audit still passes270 forecasts/540 observations. New exact
+adversaries refuse21 substituted prediction words,189 substituted operation
+words,18 substituted gradient words (including inactive diagonal forms),
+and nine changed trace lengths/tags. Exact normalizer/probability/division
+diagnostics are checked against their definitions. A changed stored mass
+with unchanged rounded probabilities is rejected at zero probability tolerance.
+
+A4 registers twelve source-bound actual workers: the seven earlier scopes
+on the repaired source, A3's endpoint attack, gradient substitution, a
+changed retained intermediate with unchanged endpoint, mutation of the
+pre-target prediction, and reuse of an older owned output extent. These
+are fresh verification jobs; A1/A2/A3 and all older model jobs stay terminal.
+The actual A4 outcome is pending; no complete release is claimed.

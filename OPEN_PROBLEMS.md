@@ -12,8 +12,10 @@ including n256 actual half products and resident installation with subsequent
 learning. The current attack is narrower and more fundamental to the claimed
 refinement: can a helper change a final tensor within tolerance after its
 local RNE/copy checks? A3 demonstrates actual false acceptance at0e53b8c;
-an independent endpoint/schedule check is now required. The indexed checker also omits the separate division
-error between raw probabilities and exact normalized stored masses.
+the independent endpoint/schedule check is now implemented and passes the
+exact CPU audit. It also restores the separate division error between raw
+probabilities and exact normalized stored masses. A4 must verify the repair
+on actual CUDA, including gradient/trace mutation and older-extent substitution.
 Native-class search/fallback and model usefulness remain open.
 
 The [finite-basis indexed bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) now

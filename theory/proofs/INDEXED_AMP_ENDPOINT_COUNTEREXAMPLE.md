@@ -50,3 +50,8 @@ charge the verification and reject before publication. The helper's own
 raw return or copy witness cannot serve as independent execution authority.
 This is an implementation mismatch; no semantic architecture action is
 needed.
+
+The subsequent repair is described in [the owned AMP proof, Section6](OWNED_INDEXED_AMP.md).
+It adds independent schedule/endpoint checks and truthful normalization
+diagnostics. Its exact CPU audit passes; actual repair verification is pending.
+The historical A3 result is not overwritten.

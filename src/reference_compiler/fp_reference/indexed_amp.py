@@ -270,7 +270,7 @@ class _Wide:
     exponent: int
 
 
-def execute_prediction(plan, state, arithmetic):
+def _prediction_schedule(plan, state, arithmetic):
     if type(plan) is not IndexedAmpPlan or type(state) is not IndexedAmpState or state.unit_count:
         raise ContractError('complete indexed AMP plan/predecessor required')
     arith = arithmetic
@@ -341,7 +341,7 @@ def execute_prediction(plan, state, arithmetic):
     return raw, None if result is None else ResidentPrediction(state.encoded, plan.query, result)
 
 
-def execute_observation(state, prediction, target, arithmetic, *, resident_prediction=None):
+def _observation_schedule(state, prediction, target, arithmetic, *, resident_prediction=None):
     if type(state) is not IndexedAmpState or type(prediction) is not IndexedAmpPrediction or state.encoded != prediction.before:
         raise ContractError('indexed observation lost its complete predecessor prediction')
     following = observe(state.encoded, *prediction.query, target)
@@ -357,6 +357,42 @@ def execute_observation(state, prediction, target, arithmetic, *, resident_predi
     raw = IndexedAmpState(following, tuple(value.word for value in columns))
     output = arith.stack(columns)
     return raw, None if output is None else ResidentState(following, output)
+
+
+def execute_prediction(plan, state, arithmetic):
+    """Physical helper; its returned raw data is not execution authority."""
+    return _prediction_schedule(plan, state, arithmetic)
+
+
+def execute_observation(state, prediction, target, arithmetic, *, resident_prediction=None):
+    return _observation_schedule(state, prediction, target, arithmetic,
+                                 resident_prediction=resident_prediction)
+
+
+def _check_execution(expected, actual, arithmetic, operations):
+    # Interpret the fixed schedule on independently retained inputs. The
+    # helper's local trace/copy assertions cannot certify its later return.
+    expected_operations = tuple(('host-RNE32-ingress' if tag == 'constant' else
+        'cast-float'+str(width) if tag == 'cast' else tag, width, (word,))
+        for tag, width, word in arithmetic.trace)
+    if operations != expected_operations:
+        raise ContractError('indexed AMP retained operations differ from the fixed RNE schedule')
+    if actual != expected:
+        raise ContractError('indexed AMP final endpoint differs from the fixed RNE schedule')
+    return len(expected_operations)
+
+
+def check_prediction_execution(plan, before, actual, operations, *, bit_limit):
+    """Passive conformance check; neither adopts an endpoint nor signs it."""
+    arithmetic = _Arithmetic(bit_limit)
+    expected, _ = _prediction_schedule(plan, before, arithmetic)
+    return _check_execution(expected, actual, arithmetic, operations)
+
+
+def check_observation_execution(before, prediction, target, actual, operations, *, bit_limit):
+    arithmetic = _Arithmetic(bit_limit)
+    expected, _ = _observation_schedule(before, prediction, target, arithmetic)
+    return _check_execution(expected, actual, arithmetic, operations)
 
 
 def check_state(reference, raw, tolerance, *, bit_limit):
@@ -379,20 +415,45 @@ def check_prediction(reference, raw, tolerance, *, normalizer_cap, activation_ca
             or reference.before != raw.before or reference.query != raw.query):
         raise ContractError('indexed AMP cache lost its complete predecessor or ordered query')
     check = _Check(tolerance, bit_limit)
+    cap = check.exact(normalizer_cap, 'indexed normalizer cap', positive=True)
+    activation = check.exact(activation_cap, 'indexed activation cap', positive=True)
     observed = raw.decoded()
+    for value in reference.masses+reference.probabilities+(reference.normalizer,):
+        check.exact(value, 'indexed reference positive readout', positive=True)
     native = check.paired(reference.excesses+reference.masses, observed.excesses+observed.masses, 'indexed native heads')
     normalizer = check.error(F(0), reference.normalizer, observed.normalizer)
     probabilities = check.paired(reference.probabilities, observed.probabilities, 'indexed probabilities')
-    for value in observed.activation_basis():
+    for value in reference.activation_basis()+observed.activation_basis():
         check.exact(value, 'indexed activation', nonnegative=True)
-        check.bound(value, activation_cap, 'indexed activation')
+        check.bound(value, activation, 'indexed activation')
     for value in observed.masses+observed.probabilities+(observed.normalizer,):
         check.exact(value, 'indexed positive readout', positive=True)
-    check.bound(observed.normalizer, normalizer_cap, 'indexed normalizer')
+    ref_sum = check.add(*reference.masses)
+    actual_sum = check.add(*observed.masses)
+    if check.compare(ref_sum, reference.normalizer) != 0 or any(
+            check.compare(check.add(F(1), e), m) != 0 for e, m in zip(reference.excesses, reference.masses)):
+        raise ContractError('indexed reference readout is not its exact base/excess normalization')
+    for value in (reference.normalizer, observed.normalizer, actual_sum):
+        check.bound(value, cap, 'indexed normalizer or stored-mass sum')
+    normalizer = check.error(normalizer, reference.normalizer, actual_sum)
+    normalizer = check.error(normalizer, observed.normalizer, actual_sum)
+    inverse_ref = F(ref_sum.denominator, ref_sum.numerator)
+    inverse_actual = F(actual_sum.denominator, actual_sum.numerator)
+    division = F(0)
+    for rm, am, rp, ap in zip(reference.masses, observed.masses, reference.probabilities, observed.probabilities):
+        check.bound(rp, F(1), 'indexed reference probability')
+        check.bound(ap, F(1), 'indexed rounded probability')
+        if check.compare(check.mul(rm, inverse_ref), rp) != 0:
+            raise ContractError('indexed reference probability is not its exact normalized mass')
+        proper = check.mul(am, inverse_actual)
+        probabilities = check.error(probabilities, rp, proper)
+        division = check.error(division, proper, ap)
     check.bound(native, tolerance.state_atol, 'indexed native coordinate error')
     check.bound(normalizer, tolerance.state_atol, 'indexed normalizer error')
     check.bound(probabilities, tolerance.probability_atol, 'indexed probability error')
-    return Float64Relation(native_error=native, normalizer_error=normalizer, probability_error=probabilities)
+    check.bound(division, tolerance.probability_atol, 'indexed stored-mass versus rounded probability error')
+    return Float64Relation(native_error=native, normalizer_error=normalizer,
+                           probability_error=probabilities, division_error=division)
 
 
 @dataclass(frozen=True)

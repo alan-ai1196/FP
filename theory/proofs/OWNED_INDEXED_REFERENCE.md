@@ -239,6 +239,7 @@ connects this exact reference to an independent physical count learner,
 complete actual word/target checks and the existing persistence/transport
 paths. Its CPU schedule and seven source-bound actual CUDA cases pass across
 A1/A2, with two earlier registration refusals retained. A3 subsequently
-falsifies universal fixed-transition conformance; its repair is pending.
+falsifies the original universal fixed-transition claim. Its independent
+conformance repair passes exact CPU checks; actual verification is pending.
 This reference proof alone supplies no
 physical execution result.

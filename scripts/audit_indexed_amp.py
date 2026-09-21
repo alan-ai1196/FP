@@ -39,6 +39,74 @@ import count_learner_encoding as native_counts
 CAP = 4 << 30
 
 
+def binding_audit():
+    """Exact adversaries against conformance and proper probability bounds."""
+    def operations(arithmetic):
+        return tuple(('host-RNE32-ingress' if tag == 'constant' else
+            'cast-float'+str(width) if tag == 'cast' else tag, width, (word,))
+            for tag, width, word in arithmetic.trace)
+    endpoint_words = operation_words = gradient_words = 0
+    division_errors = []
+    cases = ((2, (0,), (0, 1)), (2, (0,), (0, 0)),
+             (5, (0, 0, 0, 0, 1, 0, 0, 0, 0, -1), (2, 4)))
+    for n, d, query in cases:
+        schema = IndexedRelation(n)
+        c = CountState(n, d, None, sum(map(abs, d)), sum(map(abs, d)))
+        before = amp.IndexedAmpState(c)
+        plan = amp.prepare_prediction(schema, before, schema.rules(),
+            schema.source_row(query[0]*n+query[1]), output_cap=262144)
+        arithmetic = amp._Arithmetic(32768)
+        raw, _ = amp.execute_prediction(plan, before, arithmetic)
+        tape = operations(arithmetic)
+        amp.check_prediction_execution(plan, before, raw, tape, bit_limit=32768)
+        for k in range(7):
+            words = tuple(word ^ (int(j == k)) for j, word in enumerate(raw.words))
+            rejects(lambda: amp.check_prediction_execution(plan, before, replace(raw, words=words), tape,
+                bit_limit=32768))
+            endpoint_words += 1
+        for k, (tag, width, (word,)) in enumerate(tape):
+            changed = tape[:k]+((tag, width, (word ^ 1,)),)+tape[k+1:]
+            rejects(lambda: amp.check_prediction_execution(plan, before, raw, changed, bit_limit=32768))
+            operation_words += 1
+        for changed in (tape[:-1], tape+tape[-1:], (('mul', tape[0][1], tape[0][2]),)+tape[1:]):
+            rejects(lambda: amp.check_prediction_execution(plan, before, raw, changed, bit_limit=32768))
+        rules, graph, _, _ = literal(n)
+        native = native_counts.decode(c)
+        exact = evaluate(graph, rules, native.theta, schema.source_row(query[0]*n+query[1]), (), bit_limit=32768)
+        ref = IndexedEvaluation(c, query, exact.excesses, exact.masses, exact.normalizer, exact.probabilities, ())
+        relation = amp.check_prediction(ref, raw, Float64Contract(F(1, 100), F(1, 1000)),
+            normalizer_cap=F(18), activation_cap=F(8), bit_limit=32768)
+        decoded = raw.decoded()
+        proper = tuple(m/sum(decoded.masses) for m in decoded.masses)
+        division = max(abs(p-q) for p,q in zip(proper, decoded.probabilities))
+        assert relation.division_error == division
+        assert relation.probability_error == max(abs(p-q) for p,row in zip(ref.probabilities,
+            zip(proper, decoded.probabilities)) for q in row)
+        assert relation.normalizer_error == max(abs(ref.normalizer-decoded.normalizer),
+            abs(ref.normalizer-sum(decoded.masses)), abs(decoded.normalizer-sum(decoded.masses)))
+        division_errors.append(str(division))
+        if n == 2 and query == (0, 1):
+            changed = replace(raw, words=raw.words[:2]+(raw.words[2]+1,)+raw.words[3:])
+            rejects(lambda: amp.check_prediction(ref, changed, Float64Contract(F(1, 100), F(0)),
+                normalizer_cap=F(18), activation_cap=F(8), bit_limit=32768), ArithmeticUnresolved)
+        for target in (0, 1):
+            arithmetic = amp._Arithmetic(32768)
+            observed, _ = amp.execute_observation(before, raw, target, arithmetic)
+            tape = operations(arithmetic)
+            amp.check_observation_execution(before, raw, target, observed, tape, bit_limit=32768)
+            for k in range(3):
+                words = tuple(word ^ int(j == k) for j, word in enumerate(observed.gradient_words))
+                rejects(lambda: amp.check_observation_execution(before, raw, target,
+                    replace(observed, gradient_words=words), tape, bit_limit=32768))
+                gradient_words += 1
+    assert division_errors[1] == '1/41943040'
+    return {'status': 'PASS', 'prediction_word_substitutions_refused': endpoint_words,
+        'operation_word_substitutions_refused': operation_words,
+        'gradient_word_substitutions_refused_including_inactive_diagonal_forms': gradient_words,
+        'changed_trace_length_or_operation_refused': 9, 'division_errors': division_errors,
+        'proper_probability_error_with_unchanged_rounded_probability': 'REFUSED_AT_ZERO_TOLERANCE'}
+
+
 def cpu_audit():
     predictions = observations = half_outputs = 0
     maximum = F(0)
@@ -101,7 +169,8 @@ def cpu_audit():
     return {'status': 'PASS', 'scope': 'exact RNE schedule and complete native coordinates; no actual GPU or owned provenance claim',
         'groups': groups, 'predictions': predictions, 'observations': observations,
         'half_precision_scalar_outputs': half_outputs, 'maximum_gradient_error': str(maximum),
-        'independently_bound_target_forgery': 'REFUSED', 'insufficient_whole_domain_range_cap': 'UNRESOLVED'}
+        'independently_bound_target_forgery': 'REFUSED', 'insufficient_whole_domain_range_cap': 'UNRESOLVED',
+        'independent_endpoint_and_normalization_checks': binding_audit()}
 
 
 def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, **cuda_changes):
@@ -179,26 +248,97 @@ def worker(case):
             resident.readout[5].fill_(float(amp.single(raw.words[5]+1)))
             return resident.raw(), resident
         with patch.object(amp, 'execute_prediction', substituted):
-            result = deliver_context(rt, before.online.data.active.observation_ids[0],
-                                     tuple(schema.source_row(1).values()))
+            rejects(lambda: deliver_context(rt, before.online.data.active.observation_ids[0],
+                                            tuple(schema.source_row(1).values())), RuntimeError)
         after = validate_residency(rt)
         no_device_handles(after)
         phase = after.cuda.phases[-1]
-        assert result.status == 'PREDICTED_REFERENCE', result
-        assert phase.status == 'CHECKED_CUDA_PREFIX_PHASE', phase
+        assert phase.status == 'EXECUTION_FAILED' and 'final endpoint' in phase.reason, phase
         assert phase.raw_prediction.words[5] == executed['words'][5]+1
         assert phase.raw_operations[-2] == ('div', 32, (executed['words'][5],))
-        assert phase.relation.probability_error == F(1, 16777216)
-        assert phase.relation.division_error == 0
-        assert after.cursor == 0 and after.candidates == before.candidates
-        return {'certificate_claim': 'FALSIFIED', 'scope': 'fixed AMP transition conformance; numerical tolerance still passes',
-                'runtime_status': result.status, 'phase_status': phase.status,
+        relation = amp.check_prediction(phase.reference_prediction, phase.raw_prediction,
+            Float64Contract(F(1, 100), F(1, 1000)), normalizer_cap=F(18), activation_cap=F(8), bit_limit=32768)
+        assert relation.probability_error == relation.division_error == F(1, 16777216)
+        assert after.cursor == 0 and after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        return {'certificate_claim': 'REFUSED', 'scope': 'fixed AMP transition conformance; passive numerical tolerance still passes',
+                'runtime_status': 'REFUSED_BEFORE_TARGET', 'phase_status': phase.status,
                 'arithmetic_probability_word': executed['words'][5],
                 'accepted_final_probability_word': phase.raw_prediction.words[5],
-                'probability_error': str(phase.relation.probability_error),
-                'reported_division_error': str(phase.relation.division_error),
+                'probability_error': str(relation.probability_error),
+                'reported_division_error': str(relation.division_error),
                 'actual_stored_mass_division_error': '1/16777216',
                 'output_cells': phase.output_cells, 'target_revealed': False}
+    if case in ('gradient-binding', 'predecessor-binding'):
+        rt, schema = configuration(2, 1)
+        before = rt.snapshot()
+        assert deliver_context(rt, before.online.data.active.observation_ids[0],
+                               tuple(schema.source_row(1).values())).status == 'PREDICTED_REFERENCE'
+        original = amp.execute_observation
+        executed = {}
+        def substituted(state, prediction, target, arithmetic, **kwargs):
+            raw, resident = original(state, prediction, target, arithmetic, **kwargs)
+            executed['gradient_words'] = raw.gradient_words
+            if case == 'gradient-binding':
+                resident.gradient[1].fill_(float(amp.single(raw.gradient_words[1] ^ 1)))
+            else:
+                kwargs['resident_prediction'].readout[5].fill_(float(amp.single(prediction.words[5]+1)))
+            return resident.raw(), resident
+        with patch.object(amp, 'execute_observation', substituted):
+            rejects(lambda: rt.observe(0), RuntimeError)
+        after = validate_residency(rt)
+        phase = after.cuda.phases[-1]
+        assert phase.status == 'EXECUTION_FAILED', phase
+        reason = 'final endpoint' if case == 'gradient-binding' else 'pre-target prediction'
+        assert reason in phase.reason, phase
+        assert after.pending.record.target == after.observations[-1].target == 0
+        assert after.cursor == 0 and after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        assert phase.raw_state.encoded.pending == (0, 1, 0)
+        return {'certificate_claim': 'REFUSED', 'case': case, 'phase_status': phase.status,
+                'reason': phase.reason, 'retained_actual_target': 0, 'published_advances': 0,
+                'arithmetic_gradient_words': list(executed['gradient_words']),
+                'retained_gradient_words': list(phase.raw_state.gradient_words)}
+    if case == 'trace-binding':
+        rt, schema = configuration(2, 1)
+        before = rt.snapshot()
+        original = amp.execute_prediction
+        def substituted(plan, state, arithmetic):
+            raw, resident = original(plan, state, arithmetic)
+            arithmetic.device._records[2][1].fill_(8)  # nine's extent, after its uses
+            return raw, resident
+        with patch.object(amp, 'execute_prediction', substituted):
+            rejects(lambda: deliver_context(rt, before.online.data.active.observation_ids[0],
+                                            tuple(schema.source_row(1).values())), RuntimeError)
+        after = validate_residency(rt)
+        phase = after.cuda.phases[-1]
+        assert phase.status == 'EXECUTION_FAILED' and 'retained operations' in phase.reason, phase
+        assert phase.raw_prediction.words[5] == 1056964608
+        assert amp.single(phase.raw_operations[2][2][0]) == 8
+        assert after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        return {'certificate_claim': 'REFUSED', 'phase_status': phase.status, 'endpoint_unchanged': True,
+                'expected_constant': 9, 'retained_changed_constant': 8, 'target_revealed': False}
+    if case == 'old-output':
+        rt, schema = configuration(2, 2)
+        original = amp.execute_prediction
+        captured = {}
+        def substituted(plan, state, arithmetic):
+            raw, resident = original(plan, state, arithmetic)
+            if not captured:
+                captured['old'] = resident
+                return raw, resident
+            stale = amp.ResidentPrediction(raw.before, raw.query, captured['old'].readout)
+            assert stale.raw() == raw  # equal words do not prove fresh extent ownership
+            return raw, stale
+        with patch.object(amp, 'execute_prediction', substituted):
+            step(rt, schema, (0, 0, 0))
+            before = rt.snapshot()
+            rejects(lambda: deliver_context(rt, before.online.data.active.observation_ids[1],
+                                            tuple(schema.source_row(0).values())), RuntimeError)
+        after = validate_residency(rt)
+        phase = after.cuda.phases[-1]
+        assert phase.status == 'EXECUTION_FAILED' and 'raw phase readout' in phase.reason, phase
+        assert after.cursor == 1 and after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        return {'certificate_claim': 'REFUSED', 'phase_status': phase.status, 'equal_final_words': True,
+                'older_owned_extent_not_a_current_phase_output': True, 'second_target_revealed': False}
     if case == 'profiles':
         rt, schema = configuration(5, 8, profiles=(ProfileSpec('twice', ('indexed-event:0', 'indexed-event:1'), 2),))
         for k, event in enumerate(((1, 2, 0), (3, 4, 0), (2, 4, 0), (0, 0, 0),
@@ -321,7 +461,8 @@ def worker(case):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
-    parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit', 'endpoint-binding'))
+    parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap',
+        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output'))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:

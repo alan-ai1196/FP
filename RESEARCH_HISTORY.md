@@ -6179,3 +6179,31 @@ observation2 and likewise exhausts its work budget. Neither failure issues
 the requested completed proof/installation. These are terminal executions;
 their changed cost or registration cause still needs diagnosis. They do
 not supply a new complete release.
+
+## 180. Separate fixed AMP conformance from complete native numerical agreement (2026-09-21)
+
+The [replacement argument](theory/proofs/OWNED_INDEXED_AMP.md) interprets
+the fixed scalar schedule at the Runtime acceptance boundary, independently
+of the physical helper's returned raw data and local copy checks. It compares
+every retained operation tag/width/word and all seven prediction or three
+gradient words, using the owned physical predecessor and actual query/target.
+Fresh output reads require the current paid phase's initialized extents.
+Observation also rechecks its retained pre-target prediction after the helper.
+Neither a reference answer nor a helper-issued assertion becomes physical
+execution authority. No kernel, word format, tolerance or FP action changes.
+
+The indexed numerical relation now separately checks exact reference and
+stored-mass sums, rounded normalizer, proper probabilities, rounded outputs
+and division discrepancy. An honest diagonal9/10 output has division error
+1/41943040. The complete270/540 CPU audit passes; new adversaries reject21
+prediction-word substitutions,189 operation-word substitutions,18 gradient
+word substitutions including inactive diagonal forms, and nine trace-shape
+changes. A changed mass with unchanged rounded probabilities is refused
+under zero probability tolerance.
+
+A4 registers twelve fresh actual workers on the repaired source: all seven
+previous scopes plus endpoint/gradient/trace mutation, changed pre-target
+prediction and substitution of an older owned output extent. Actual results
+are pending at this source. A3's counterexample remains canonical. The same
+scoped resource guards and fixed checker trust boundary apply; no complete
+release or class certificate is inferred.

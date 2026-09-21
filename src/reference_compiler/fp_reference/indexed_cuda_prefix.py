@@ -22,7 +22,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     prediction = None if prediction_id is None else prefix._values[prediction_id]
     result, actual_prediction, error, relation = state, None, None, None
     arithmetic, workspace, plan, checked = None, None, None, 0
-    before_raw = None
+    before_raw = before_prediction = None
     try:
         if (type(program) is not indexed.IndexedRelation or program.n != prefix.contract.n
                 or type(spec) is not IndexedLearner or spec.n != program.n
@@ -43,7 +43,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                     or prefix.phases[prediction_id].observation_id != observation_id):
                 raise ContractError('indexed observation lost its actual pre-target phase or event identity')
             prefix.arena.require_initialized(prediction.readout)
-            if prediction.raw() != prefix.phases[prediction_id].raw_prediction:
+            before_prediction = prediction.raw()
+            if before_prediction != prefix.phases[prediction_id].raw_prediction:
                 raise ContractError('indexed CUDA prediction changed before target observation')
         if kind == 'predict':
             plan = indexed.prepare_prediction(program, before_raw, rules, sources,
@@ -63,15 +64,15 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             elif kind == 'predict':
                 prior_relation = indexed.check_state(reference, before_raw, tolerance, bit_limit=bit_limit)
                 raw, actual_prediction = indexed.execute_prediction(plan, before_raw, scalar)
+                if type(actual_prediction) is not indexed.ResidentPrediction:
+                    raise ContractError('indexed CUDA helper returned another prediction representation')
                 if raw != actual_prediction.raw():
                     raise ContractError('indexed prediction lost its actual output words')
-                relation = indexed.check_prediction(reference_prediction, raw, tolerance,
-                    normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)
-                relation = replace(relation, state_error=prior_relation.state_error)
-                checked = len(scalar.trace)
             elif kind == 'observe':
-                raw, result = indexed.execute_observation(before_raw, prediction.raw(), target, scalar,
+                raw, result = indexed.execute_observation(before_raw, before_prediction, target, scalar,
                                                          resident_prediction=prediction)
+                if type(result) is not indexed.ResidentState:
+                    raise ContractError('indexed CUDA helper returned another state representation')
                 if raw != result.raw() or raw.encoded.pending != prediction.query+(target,):
                     raise ContractError('indexed observation differs from the independently owned actual target')
             elif kind == 'commit':
@@ -83,10 +84,25 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             arithmetic.check()
             if arithmetic.output_cells != expected_cells:
                 raise ContractError('indexed CUDA executed a different output extent schedule')
+            if kind == 'predict':
+                actual = indexed.IndexedAmpPrediction(actual_prediction.before, actual_prediction.query,
+                    workspace.raw_words((actual_prediction.readout,), readout_buffer)[0])
+                checked = indexed.check_prediction_execution(plan, before_raw, actual,
+                    arithmetic.raw_trace(), bit_limit=bit_limit)
+                relation = indexed.check_prediction(reference_prediction, actual, tolerance,
+                    normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)
+                relation = replace(relation, state_error=prior_relation.state_error)
+            elif kind == 'observe':
+                actual = indexed.IndexedAmpState(result.encoded,
+                    workspace.raw_words((result.gradient,), readout_buffer)[0])
+                indexed.check_observation_execution(before_raw, before_prediction, target, actual,
+                    arithmetic.raw_trace(), bit_limit=bit_limit)
             if kind != 'predict':
                 relation = indexed.check_state(reference, result.raw(), tolerance, bit_limit=bit_limit)
             if state is not None and state.raw() != before_raw:
                 raise ContractError('indexed CUDA mutated its owned predecessor')
+            if prediction is not None and prediction.raw() != before_prediction:
+                raise ContractError('indexed CUDA mutated its owned pre-target prediction')
     except MemoryError:
         raise
     except Exception as exc:

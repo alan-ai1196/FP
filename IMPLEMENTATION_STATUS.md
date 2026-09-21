@@ -20,9 +20,11 @@ crossing at20, resident installation and post-install learning to21 pass.
 The endpoint-binding adversary is registered for A3: local RNE/copy checks
 and numerical tolerance may not bind the helper's returned final tensor.
 A3 at0e53b8c reproduces false acceptance; fixed-transition refinement is
-withdrawn pending an independent endpoint/schedule check. The separate
-division-error field is also unchecked in this new indexed relation.
-No complete release is claimed.
+withdrawn for that source. An independent endpoint/operation check is now
+implemented, with current-phase output ownership, unchanged input prediction
+and truthful proper-normalization/division diagnostics. The full CPU audit
+and new exact word/trace adversaries pass. A4 registers twelve actual cases
+on this repaired source; its outcome is pending. No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits
