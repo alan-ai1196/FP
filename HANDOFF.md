@@ -9,8 +9,11 @@ count address from2 to0 while keeping its declared support(1,2). All seven
 readout words and native errors remain identical, but the operation trace
 changes. The conditional checker accepts the trace against the altered
 plan and rejects it against the declared plan. Runtime currently supplies
-the same helper-returned plan to both executors. A6 is prepared to test
-actual owned acceptance; no actual result is claimed yet. Full independent
+the same helper-returned plan to both executors. A6 at783614f now reproduces
+actual owned acceptance with CHECKED_CUDA_PREFIX_PHASE, unchanged readout
+and zero native errors. Peak2,126,520,320 bytes stays below4 GiB; the job
+is terminal and its final target is unrevealed. The declared-plan binding
+claim is falsified at that source. Full independent
 plan binding is required, not a special-case check for this address alone.
 
 **Current owned decoder result, 2026-09-21:**

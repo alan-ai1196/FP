@@ -7,8 +7,11 @@ identifies a missing premise in fixed-forward conformance. A changed count
 address yields the same complete readout but a different operation trace;
 the exact conditional interpreter accepts it when given the changed plan.
 The current owned prefix does not independently reconstruct that plan.
-An actual A6 test is prepared. This does not falsify the native numerical
-relation in the witness; full plan binding must precede projected AMP.
+A6 at783614f reproduces actual acceptance with CHECKED_CUDA_PREFIX_PHASE,
+unchanged readout and zero native errors; the declared-plan binding claim
+is falsified. The job is terminal, below4 GiB, with its target unrevealed.
+This does not falsify the native numerical relation in the witness;
+full plan binding must precede projected AMP.
 
 The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
 executes inside ReferenceCompilerRuntime under a new explicit reference

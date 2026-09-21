@@ -1,0 +1,103 @@
+{
+  "status": "COMPLETE_WITH_COUNTEREXAMPLE",
+  "registration": {
+    "source": "783614f21dbfd654c584042613e596036eb74e98",
+    "cases": [
+      "plan-binding"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "plan-binding",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "execution_source": "783614f21dbfd654c584042613e596036eb74e98",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2125209600,
+        "peak_job_commit": 2126520320,
+        "user_100ns": 20937500,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28456,
+        "process_creation_100ns": 134344448620050248
+      },
+      "raw_result_bytes": 1295,
+      "result": {
+        "status": "COUNTEREXAMPLE_REPRODUCED",
+        "process_id": 28456,
+        "case": "plan-binding",
+        "result": {
+          "certificate_claim": "FALSIFIED",
+          "scope": "declared factor-address/fixed-forward conformance; native numeric relation still holds",
+          "runtime_status": "PREDICTED_REFERENCE",
+          "phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+          "actual_prefix": [
+            [
+              1,
+              2,
+              0
+            ]
+          ],
+          "current_query": [
+            0,
+            1
+          ],
+          "declared_factor_positions": [
+            2
+          ],
+          "accepted_factor_positions": [
+            0
+          ],
+          "unchanged_complete_readout_words": [
+            1082130432,
+            1082130432,
+            1084227584,
+            1084227584,
+            1092616192,
+            1056964608,
+            1056964608
+          ],
+          "first_operation_difference": [
+            18,
+            [
+              "mul",
+              32,
+              [
+                1038323257
+              ]
+            ],
+            [
+              "mul",
+              32,
+              [
+                1065353216
+              ]
+            ]
+          ],
+          "native_state_error": "0",
+          "native_probability_error": "0",
+          "native_division_error": "0",
+          "forward_operations": 55,
+          "output_cells": 62,
+          "target_revealed": false,
+          "learner_advances": 0,
+          "false_class_or_statistical_certificate": false
+        }
+      }
+    }
+  ]
+}

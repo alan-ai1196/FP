@@ -6491,3 +6491,23 @@ the address substitution through actual owned CUDA phases at the existing
 no actual acceptance is inferred. Earlier A4/A5 observed results remain
 valid but do not establish the new obligation. The repair must bind the
 whole plan; a one-address special case would leave the underlying issue.
+
+## 192. Actual A6 accepts the wrong AMP factor address with zero native error (2026-09-21)
+
+[A6](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A6.json) at783614f reproduces
+the owned counterexample. After the actual n3 event(1,2,0), changing only
+the helper-returned count address from2 to0 makes Runtime publish
+PREDICTED_REFERENCE with CHECKED_CUDA_PREFIX_PHASE. Its declared support
+still names(1,2). All seven readout words and native state/probability/division
+errors are unchanged, but operation18 differs from the independently retained
+declared trace. The phase reports55 checked operations and62 output cells.
+
+The final target stays unrevealed and the learner does not advance. The
+attached-before-run4-GiB/900-second job exits0 without timeout or limit
+termination, with peak2,126,520,320 bytes; the raw result is1295 bytes.
+The terminal counterexample falsifies the claimed declared factor-plan
+binding through783614f. It does not falsify conditional RNE arithmetic,
+the native numerical relation or a statistical/class-complete certificate.
+The proof premise must be repaired by full independent plan binding before
+the new projected physical schedule is introduced. Earlier A4/A5 executed
+results and the A3 endpoint falsification remain retained.

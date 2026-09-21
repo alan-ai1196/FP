@@ -333,6 +333,15 @@ recorded until their funded regression checks complete.
 
 ## Integration with the query-projected reference
 
+**Subsequent plan-binding counterexample:** A6 at783614f shows that the
+prefix can accept an altered factor address with unchanged numerical
+readout but a different declared trace. The conditional scalar interpreter
+remains correct for its given plan; the refinement argument above lacks an
+independently established input-to-plan premise. Its unconditional
+declared-plan conclusion is withdrawn through that source. See
+[the retained actual counterexample](INDEXED_AMP_PLAN_BINDING.md). The
+successful A4/A5 observations below remain valid for their executed cases.
+
 The [owned query projection](OWNED_QUERY_PROJECTION.md) changes reference
 arithmetic while keeping this physical schedule global. Actual A5 atae7f915
 passes all thirteen source-bound workers, including every existing failure

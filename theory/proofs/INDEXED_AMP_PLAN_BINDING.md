@@ -1,6 +1,6 @@
 # A conditional trace check does not bind the declared factor addresses
 
-Status: **EXACT PASSIVE COUNTEREXAMPLE; ACTUAL OWNED A6 TEST PREPARED**.
+Status: **EXACT PASSIVE AND ACTUAL OWNED A6 COUNTEREXAMPLE REPRODUCED**.
 
 The A4 repair independently checks every endpoint and operation against
 the supplied indexed AMP plan. A5 exercises that repaired path successfully.
@@ -67,11 +67,21 @@ as reported; they do not cover an altered plan constructor result.
 
 The new `plan-binding` CUDA worker constructs the same history through
 actual Runtime ingress and learning. It alters only the returned factor
-address tuple. The planned A6 attempt uses the existing attached-before-run
-4-GiB/900-second worker protocol. It will check whether Runtime publishes
-`PREDICTED_REFERENCE` with `CHECKED_CUDA_PREFIX_PHASE` despite disagreement
-with an independently retained declared trace. Its final target stays
-unrevealed. An actual outcome is not yet claimed at this source.
+address tuple. [Actual A6](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A6.json)
+at783614f reproduces acceptance: Runtime publishes `PREDICTED_REFERENCE`
+with `CHECKED_CUDA_PREFIX_PHASE`, despite disagreement with the independently
+retained declared trace. Its seven readout words and all three native
+error diagnostics are identical to the honest result. The phase checks55
+operations and produces62 output cells. The final target remains unrevealed
+and the learner has not advanced beyond the one actual prefix observation.
+
+The attached-before-run job exits0 without timeout or limit termination;
+its peak2,126,520,320 bytes stays below4 GiB and its deadline is900 seconds.
+The raw result is1295 bytes. The worker is terminal. This falsifies the
+prefix's claimed declared-plan binding at that source, while preserving
+the conditional interpreter's arithmetic and the native numerical relation.
+The fixed-forward refinement claim without independent plan binding is
+withdrawn through783614f. No statistical/class-complete claim is falsified.
 
 A repair must bind the entire program/query/count/resource-specific plan
 to independently owned inputs before executing it. One special address

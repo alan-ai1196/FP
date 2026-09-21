@@ -6,8 +6,8 @@ The current [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 must be closed before projected AMP: a helper-returned plan currently serves
 both actual execution and independent RNE interpretation. Exact agreement
 with that plan does not establish its declared factor-address provenance.
-The passive counterexample has zero native numerical error; actual A6
-acceptance is pending. Bind the full plan to independently owned program,
+The counterexample has zero native numerical error; actual A6 at783614f
+now reproduces owned acceptance. Bind the full plan to independently owned program,
 counts, query, resource allowance and arithmetic identity before execution.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)

@@ -216,8 +216,10 @@ adds an implementation obligation to the fixed-forward argument: independently
 bind the complete plan to its owned inputs before checking execution against
 it. An exact altered-address example preserves all native readout values
 while changing the operation trace. The conditional RNE interpreter remains
-correct relative to its supplied plan; actual owned acceptance is the next
-audit. No Foundation or semantic architecture change follows.
+correct relative to its supplied plan. Actual A6 at783614f now reproduces
+owned acceptance with the wrong factor address and zero native errors;
+the fixed-forward claim without independent plan binding is withdrawn at
+that source. No Foundation or semantic architecture change follows.
 
 The [query-boundary response theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 sharpens the continuation quantifier within the fixed relation model. For
