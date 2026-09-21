@@ -1,7 +1,10 @@
 # Owned indexed AMP execution and resident transport
 
-Status: **SCOPED REFINEMENT ARGUMENT; SEVEN OWNED CUDA CASES PASS ACROSS
-A1/A2; TWO EARLIER REFUSALS RETAINED; ENDPOINT CONFORMANCE UNDER ATTACK**.
+Status: **FIXED-TRANSITION REFINEMENT FALSIFIED BY A3; A1/A2 FINITE
+EXECUTIONS AND EXACT NATIVE COORDINATE IDENTITIES RETAINED**.
+
+The [endpoint counterexample](INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md)
+reproduces actual false acceptance at source0e53b8c. The repair is pending.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
@@ -73,15 +76,14 @@ are exact, so the seven-value check covers every other native cache and
 readout coordinate. Actual activation/normalizer caps and separate state
 and probability tolerances are checked as well.
 
-**Conditional phase refinement.** Under the fixed declarations and resource
-guards, every accepted physical phase is the independently executed stated
-AMP transition and lies within the registered complete native-coordinate
-tolerances of the owned exact reference phase. Initialization and the
-count/clock maps commute exactly. Prediction and observation use the
-finite coordinate basis above. Induction over ordinary and profile phases
-proves the continuous relation. A target swap cannot be repaired by reporting
-a matching pending tag: the reference observed state and explicit target
-come independently from the actual owned observation record.
+**Withdrawn phase-refinement claim.** The draft inferred independently
+executed fixed AMP transitions from local operation/copy checks and complete
+coordinate tolerances. A3 falsifies that implication: a later final-tensor
+write passes this implementation's acceptance boundary. Initialization,
+count/clock identities, finite-coordinate comparison and independently
+bound actual targets remain valid separate facts. Continuous fixed-machine
+refinement needs an independent endpoint/schedule check before induction
+over ordinary or profile phases applies.
 
 This statement does not extend the owned reference decoder past its current
 integer-height or table allowances. A numerical or resource refusal leaves
@@ -230,6 +232,7 @@ Attempt A3 is registered only for `endpoint-binding`. It executes the
 original owned arithmetic, changes the final copied probability in the
 same paid tensor extent, and returns its freshly read words. The test asks
 whether Runtime accepts this endpoint despite a different retained division
-result. **The actual outcome is pending.** The universal fixed-transition
-claim in Section2 must not be inferred from A1/A2 while this obligation is
-open. This tests an implementation refinement claim, not a new FP action.
+result. **A3 reproduces false acceptance at source0e53b8c.** It records both
+different words and a checked phase; the stronger claim is withdrawn.
+The [counterexample note](INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md) states the
+missing obligation and precise scope. This is not a new FP action.

@@ -1,0 +1,167 @@
+{
+  "status": "COMPLETE_WITH_FAILURE",
+  "scope": "complete affected legacy CUDA runtime, persistence, installation and finite policy batteries; no model/component job rerun",
+  "audits": {
+    "cuda_runtime": {
+      "status": "PASS",
+      "scope": "owned actual CUDA prefix and per-phase relations; no target persistence/install/release",
+      "seconds": 231.0,
+      "complete_sections": [
+        "complete_binary_three_event_streams",
+        "profile",
+        "search",
+        "search-exhaustion",
+        "output-cap",
+        "prepaid-frame",
+        "frame-cap",
+        "unexpected-backend",
+        "combined-failure",
+        "malformed-backend",
+        "unexecuted-endpoint",
+        "allocation-escape",
+        "zero-tolerance",
+        "normalization"
+      ],
+      "evidence": {
+        "complete_binary_three_event_streams": 64,
+        "independently_replayed_stream_CUDA_phases": 1024,
+        "all_finite_half_exact_widenings_including_zero_sign": 63488,
+        "profile": {
+          "phases": 44,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 6170,
+          "maximum_output_cells": 46,
+          "CPU_binary64_phases": 44,
+          "ordinary_events": 6,
+          "replayed_events": 6
+        },
+        "search": {
+          "phases": 41,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 3341,
+          "maximum_output_cells": 20,
+          "independent_complete_native_members": 35,
+          "decision_class": "fixed-state reference empirical CE over the registered initializer endpoints plus actual baseline"
+        },
+        "search-exhaustion": {
+          "actual_CUDA_evidence_budget_failure_leaves_native_search_unresolved": true,
+          "no_reference_class_proof_issued": true,
+          "global_packed_cap": 1000000
+        },
+        "malformed-backend": {
+          "malformed_backend_and_failed_raw_capture_cannot_become_admissibility_rejection": true
+        },
+        "unexecuted-endpoint": {
+          "all_published_reference_and_CUDA_states_unchanged": true,
+          "revealed_target_and_executed_prefix_retained": true,
+          "completed_CUDA_phases": 5,
+          "case": "unexecuted-endpoint"
+        },
+        "normalization": {
+          "actual_single_readout_refused_by_preregistered_zero_probability_tolerance": true,
+          "rounded_normalizer_raw": 1065353216,
+          "target_not_revealed": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_persistence": {
+      "status": "PASS",
+      "scope": "current CUDA whole-domain bounds, exact actual forecasts and owned fresh same-path evidence; no install/release",
+      "seconds": 140.47,
+      "complete_sections": [
+        "range",
+        "null",
+        "scores",
+        "crossing",
+        "nontransfer",
+        "range-admission",
+        "range-refresh",
+        "double-round",
+        "mismatch",
+        "freshness",
+        "failed-crossing"
+      ],
+      "evidence": {
+        "range": {
+          "independent_product_sum_boxes": 16,
+          "independent_context_checks": 400,
+          "complete_recurrent_queue_checks": 125,
+          "full_tail_unused_slot_source_rounding_product_overflow_and_both_normalizers_rejected": true,
+          "two_stage_source_witness": "33570817/67108864"
+        },
+        "null": {
+          "complete_fair_label_paths": 32,
+          "ordinary_events": 160,
+          "independent_owned_CUDA_phase_checks": 832,
+          "two_path_conditional_wealth_inequalities": 62,
+          "crossing_probabilities": [
+            "1/32",
+            "1/32"
+          ],
+          "each_path_alpha": "1/3",
+          "external_null": "fair independent labels; both fixed mass ratio products are 8/9 < 1"
+        },
+        "scores": {
+          "phases": 62,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 5908,
+          "maximum_output_cells": 47,
+          "independent_score_log_and_wealth_checks": 24,
+          "optimizer_range_recomputations": 6,
+          "reference_CUDA_score_differences": 12,
+          "proper_probability_differs_from_raw_division": 12,
+          "unchanged_theta_reuses_its_owned_range": true,
+          "CPU_binary64_phases": 62
+        },
+        "nontransfer": {
+          "delta": "1/33554432",
+          "reference_crossing_cursor": 5,
+          "CUDA_gain": "0",
+          "CUDA_wealth": "1",
+          "reference_evidence_transfer_rejected": true,
+          "phases": 42
+        },
+        "range-admission": {
+          "reference_safe_but_actual_half_range_unproved": true,
+          "failed_admission_alpha_retained": "1/4",
+          "harmless_context_does_not_reactivate_failed_identity": true
+        },
+        "range-refresh": {
+          "exact_new_theta": "3/10",
+          "future_half_theta": "1229/4096",
+          "ordinary_successor_published_but_unproved_future_CUDA_evidence_stopped": true
+        },
+        "double-round": {
+          "exact_source": "33570817/67108864",
+          "actual_R16_R32_source": "1/2",
+          "wrong_direct_R16_source": "1025/2048",
+          "owned_bound_and_actual_forecast_preserve_both_roundings": true
+        },
+        "mismatch": {
+          "one_ULP_forecast_error_within_reference_tolerance_rejected_before_target": true,
+          "actual_output_retained_without_repair_from_reference": true
+        },
+        "failed-crossing": {
+          "retained_threshold_score_does_not_replace_failed_owned_crossing_state": true,
+          "ordinary_continuation_does_not_resume_failed_identity": true
+        }
+      },
+      "completed_jobs": {}
+    },
+    "cuda_installation": {
+      "status": "FAILED",
+      "failure": "ReferenceSearchResult UNRESOLVED before installation: ResourceExceeded: compiler cumulative work exhausted",
+      "programs_compared": 361,
+      "unresolved_programs": 334,
+      "best_likelihood": "4/9",
+      "proof_id": null,
+      "legacy_fixture_admission": "not yet diagnosed; no certificate issued"
+    },
+    "cuda_policy_run": {
+      "status": "FAILED",
+      "failure": "scripts/audit_cuda_policy_run.py: exit 1\nTraceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_policy_run.py\", line 409, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_policy_run.py\", line 376, in main\r\n    assert job.exit_code == 0 and not job.timed_out, (case, job, output.read_text() if output.exists() else '')\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: ('learned', JobRun(exit_code=1, timed_out=False, commit_limit=4294967296, peak_process_commit=2220232704, peak_job_commit=2221453312, user_100ns=2436562500, kernel_100ns=10468750, total_processes=2, limit_terminated_processes=0, attached_before_resume=True, process_id=4100, process_creation_100ns=134344371306539707), '{\"failure\": \"Traceback (most recent call last):\\\\n  File \\\\\"F:\\\\\\\\FP\\\\\\\\scripts\\\\\\\\audit_cuda_policy_run.py\\\\\", line 362, in main\\\\n    result = success(args.case) if args.case in CASES[:4] else failure(args.case) if args.case.startswith(\\'report-\\') else short(args.case)\\\\n             ^^^^^^^^^^^^^^^^^^\\\\n  File \\\\\"F:\\\\\\\\FP\\\\\\\\scripts\\\\\\\\audit_cuda_policy_run.py\\\\\", line 141, in success\\\\n    event(rt, target)\\\\n  File \\\\\"F:\\\\\\\\FP\\\\\\\\scripts\\\\\\\\audit_reference_persistence.py\\\\\", line 73, in event\\\\n    assert predicted.status == \\'PREDICTED_REFERENCE\\', predicted\\\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\\\nAssertionError: PredictionResult(status=\\'UNRESOLVED\\', observation_id=\\'observation-2\\', cursor=2, predictions=(), reason=\\'compiler cumulative work exhausted\\')\\\\n\"}')\r\n"
+    }
+  },
+  "execution_source": "da465785686db1ca15a43171e101dcf3395d71f8"
+}

@@ -6150,3 +6150,32 @@ A3 registers one actual owned endpoint-substitution attack, with no other
 GPU/model jobs restarted. Its actual outcome is pending at this source.
 No new semantic action, full release, resource advantage or class certificate
 is inferred; Foundation R4 and ERC-1 stay frozen.
+
+## 179. Actual indexed CUDA accepts a tensor inconsistent with its retained arithmetic (2026-09-21)
+
+[Attempt A3](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A3.json) executes
+source0e53b8c in one attached-before-resume4-GiB job. The original n2 uniform
+forward completes every operation and its local stack-copy check. The
+worker then changes final probability word1056964608 to1056964609 inside
+the same paid tensor extent and returns freshly observed words. Runtime
+accepts `PREDICTED_REFERENCE` / `CHECKED_CUDA_PREFIX_PHASE`, although the
+retained division result is still1056964608. Error1/16777216 passes the
+declared tolerance. The reported division error0 is also false.
+
+[The counterexample](theory/proofs/INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md)
+withdraws the universal fixed-physical-transition refinement claim through
+this source. Exact count/native identities and the A1/A2 finite executions
+remain valid. No target was revealed and no statistical/class conclusion
+was produced. The missing implication is between locally checked execution
+and the later returned endpoint; the repair needs an independent owned
+schedule/endpoint comparison, including complete operation and gradient
+words, before publication. Foundation R4 and ERC-1 are not changed.
+
+[Affected legacy CUDA regressions](evidence/minimal/FP_INDEXED_AMP_CUDA_REGRESSIONS.json)
+retain two complete passes (runtime and persistence), plus two failures.
+Installation's learned search compares361 programs, leaving334 unresolved
+when its compiler-work budget is exhausted. The learned policy reaches
+observation2 and likewise exhausts its work budget. Neither failure issues
+the requested completed proof/installation. These are terminal executions;
+their changed cost or registration cause still needs diagnosis. They do
+not supply a new complete release.

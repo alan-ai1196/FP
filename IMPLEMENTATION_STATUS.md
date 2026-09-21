@@ -19,8 +19,10 @@ n256 checks34 phases/42,594 words with world builders disabled; fresh paired
 crossing at20, resident installation and post-install learning to21 pass.
 The endpoint-binding adversary is registered for A3: local RNE/copy checks
 and numerical tolerance may not bind the helper's returned final tensor.
-Its actual outcome is pending. The separate division-error field is also
-unchecked in this new indexed relation. No complete release is claimed.
+A3 at0e53b8c reproduces false acceptance; fixed-transition refinement is
+withdrawn pending an independent endpoint/schedule check. The separate
+division-error field is also unchecked in this new indexed relation.
+No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

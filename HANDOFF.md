@@ -18,11 +18,12 @@ A2 at `da46578` is now terminal with both cases passing. n256 checks34
 phases/42,594 words, including15,924 half words, with world builders disabled.
 Paired evidence crosses at20; resident installation and learning to21 pass
 with alpha1/2 retained. Both jobs stay below4 GiB and900 seconds.
-**Next:** `scripts/run_indexed_amp_audit.py --attempt 3 --cases endpoint-binding`.
-This new adversary changes a final tensor by one ULP after the helper's
-local copy check. Numerical tolerance alone cannot certify the fixed AMP
-transition; actual Runtime acceptance/refusal remains to be established.
-The missing separate stored-mass division-error check also needs repair.
+**A3 now falsifies fixed-transition conformance at source0e53b8c:** the
+Runtime checks a final probability one ULP above its retained division.
+[The counterexample](theory/proofs/INDEXED_AMP_ENDPOINT_COUNTEREXAMPLE.md)
+withdraws the universal refinement claim. Next, independently bind every
+final prediction/gradient word and operation result to the fixed schedule;
+also repair the omitted separate stored-mass division-error check.
 Retain A1/A2 and all old terminal jobs. No complete release or class
 certificate is claimed; Foundation R4 and ERC-1 remain frozen.
 

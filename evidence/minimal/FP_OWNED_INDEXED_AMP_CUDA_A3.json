@@ -1,0 +1,59 @@
+{
+  "status": "COMPLETE_WITH_COUNTEREXAMPLE",
+  "registration": {
+    "source": "0e53b8c12f643358e31575390e6470244f90402f",
+    "cases": [
+      "endpoint-binding"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "endpoint-binding",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "execution_source": "0e53b8c12f643358e31575390e6470244f90402f",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2200772608,
+        "peak_job_commit": 2202075136,
+        "user_100ns": 20000000,
+        "kernel_100ns": 7812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7256,
+        "process_creation_100ns": 134344374469867918
+      },
+      "raw_result_bytes": 629,
+      "result": {
+        "status": "COUNTEREXAMPLE_REPRODUCED",
+        "process_id": 7256,
+        "case": "endpoint-binding",
+        "result": {
+          "certificate_claim": "FALSIFIED",
+          "scope": "fixed AMP transition conformance; numerical tolerance still passes",
+          "runtime_status": "PREDICTED_REFERENCE",
+          "phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+          "arithmetic_probability_word": 1056964608,
+          "accepted_final_probability_word": 1056964609,
+          "probability_error": "1/16777216",
+          "reported_division_error": "0",
+          "actual_stored_mass_division_error": "1/16777216",
+          "output_cells": 54,
+          "target_revealed": false
+        }
+      }
+    }
+  ]
+}

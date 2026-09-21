@@ -199,8 +199,10 @@ failure boundaries, while correctly refusing an undersized n256 evidence
 frame and insufficient fresh horizon. A2 completes those two cases, including
 n256 actual half products, fresh paired crossing, resident installation and
 continued learning. A new endpoint-substitution audit attacks the claimed
-fixed-transition conformance: passing coordinate tolerances does not bind a
-returned tensor to the recorded arithmetic. The separate stored-mass division
+fixed-transition conformance and A3 reproduces false acceptance at0e53b8c:
+passing coordinate tolerances does not bind a returned tensor to the recorded
+arithmetic. That implementation refinement claim is withdrawn pending repair.
+The separate stored-mass division
 error is also missing in this indexed checker. No new semantic action,
 class completeness or complete release is claimed.
 

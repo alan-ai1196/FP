@@ -11,8 +11,8 @@ Both refusals are explained exactly and retained. A2 completes both cases,
 including n256 actual half products and resident installation with subsequent
 learning. The current attack is narrower and more fundamental to the claimed
 refinement: can a helper change a final tensor within tolerance after its
-local RNE/copy checks? A3 tests actual owned endpoint substitution; its
-outcome is pending. The indexed checker also omits the separate division
+local RNE/copy checks? A3 demonstrates actual false acceptance at0e53b8c;
+an independent endpoint/schedule check is now required. The indexed checker also omits the separate division
 error between raw probabilities and exact normalized stored masses.
 Native-class search/fallback and model usefulness remain open.
 
