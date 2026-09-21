@@ -4,12 +4,16 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 
 The first reversible candidate now has a
 [complete byte left inverse and indexed upper bound](theory/proofs/LOSSLESS_PHASE_ENCODING.md).
-It fits four hard passive records into the existing frame without dropping
-a field. The open question is actual owned execution: seventeen registered
-fresh jobs test generic/indexed/projected paths, fresh installation, writer
-faults and the matched n16/c2/16 model frontier. A codec size bound does not
-prove whole-stream recovery. Uniform frames remain paid, and the table
-and output obstructions below still apply.
+It fits four hard passive records without dropping a field; actual A1 moves
+the matched n16 cursor173 to194 before the reference join cap. Its15 other
+integration/fault cases and all1498 sealed records pass. A new CPU alias
+counterexample nevertheless puts this codec extension on HOLD: the writer
+can mutate the same phase object used by the subsequent expected-byte
+check. Two actual probes are registered; repairing immutable input binding
+and its paid workspace is the immediate question. Ordinary zlib already
+beats the custom format's passive byte count. Do not protect that format
+or treat invertibility as execution binding. Uniform frames remain paid,
+and the table/output obstructions below still apply.
 
 The current model frontier requires a paid evidence representation and
 resource-aware decoder with a complete numerical/ownership bridge. The

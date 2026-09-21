@@ -257,13 +257,44 @@ def regression_audit():
     return result
 
 
+def compression_audit():
+    """Strong conventional byte baseline; passive, outside Runtime authority."""
+    import subprocess
+    import zlib
+    source = subprocess.check_output(('git','rev-parse','HEAD'),cwd=ROOT,encoding='utf-8').strip()
+    report = {'status':'PASS_PASSIVE_FULL_RECORD_COMPRESSION','execution_source':source,
+        'scope':'ordinary zlib level6 against both complete legacy and typed-binary phase payloads; exact decompression only, no Runtime or resource authority',
+        'zlib_runtime':zlib.ZLIB_RUNTIME_VERSION,'level':6,'rows':[]}
+    frontier = json.loads((ROOT/'evidence/minimal/FP_QUERY_ORDER_RESOURCE_FRONTIER.json').read_text())
+    for row in frontier['tapes']:
+        case,w = tuple(row['case']),row['maximum_output_witness']
+        phase,_ = phase_fixture(16,state_at(case,w['cursor']),tuple(w['query']),tuple(w['blocks'][0]['order']))
+        raw = pack(phase)
+        extent = codec.extent(phase,encoded_cap=4<<20)
+        binary = bytearray(extent.encoded_bytes)
+        assert codec.write(phase,binary)==extent
+        first,second = zlib.compress(raw,6),zlib.compress(binary,6)
+        assert zlib.decompress(first)==raw and zlib.decompress(second)==binary
+        assert codec.check(binary,phase)==len(raw)
+        result = {'case':case,'cursor':w['cursor'],'query':w['query'],'legacy_bytes':len(raw),
+            'typed_binary_bytes':len(binary),'zlib_legacy_bytes':len(first),'zlib_binary_bytes':len(second),
+            'exact_complete_decompression':True}
+        report['rows'].append(result)
+        print(json.dumps(result),flush=True)
+    return report
+
+
 if __name__=='__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--bounds',action='store_true')
     parser.add_argument('--regressions',action='store_true')
+    parser.add_argument('--compression',action='store_true')
     parser.add_argument('--output',type=Path)
     args = parser.parse_args()
-    if args.regressions:
+    if args.compression:
+        report = compression_audit()
+        args.output = args.output or ROOT/'evidence/minimal/FP_PHASE_COMPRESSION_CPU_A1.json'
+    elif args.regressions:
         report = regression_audit()
         args.output = args.output or ROOT/'evidence/minimal/FP_PHASE_ENCODING_REGRESSION_CPU.json'
     elif args.bounds:
@@ -280,7 +311,13 @@ if __name__=='__main__':
     assert 'torch' not in sys.modules
     normalized = json.loads(json.dumps(report))
     if args.output.exists():
-        assert json.loads(args.output.read_text())==normalized
+        prior = json.loads(args.output.read_text())
+        # Reproduction compares all observations while preserving the first
+        # observation's provenance. The initial compression audit was inline;
+        # this function makes those exact steps a reusable repository command.
+        if args.compression:
+            normalized['execution_source']=prior['execution_source']
+        assert prior==normalized
     else:
         args.output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'status':report['status']}),flush=True)

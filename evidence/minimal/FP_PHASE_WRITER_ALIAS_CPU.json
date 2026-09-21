@@ -1,0 +1,39 @@
+{
+  "status": "COUNTEREXAMPLES_IN_REAL_RETENTION_WITH_MOCKED_NUMERICAL_OWNER",
+  "scope": "no actual CUDA or complete learner authority; input/output alias in the real retention hook",
+  "rows": [
+    {
+      "case": "output-count",
+      "mocked_owner_accept_calls": 1,
+      "actual_plan_output_cells": 54,
+      "retained_phase_output_cells": 53,
+      "decoded_bytes_match_mutated_record": true,
+      "decoded_bytes_differ_from_pre_writer_record": true,
+      "raw_readout_and_operations_unchanged": true,
+      "encoded_and_expanded_extents_unchanged": true,
+      "padding_unchanged": true
+    },
+    {
+      "case": "plan-position",
+      "mocked_owner_accept_calls": 1,
+      "support": [
+        [
+          1,
+          2
+        ]
+      ],
+      "actual_count_addresses": [
+        2
+      ],
+      "retained_count_addresses": [
+        0
+      ],
+      "retained_plan_rejects_unchanged_actual_operations": true,
+      "decoded_bytes_match_mutated_record": true,
+      "decoded_bytes_differ_from_pre_writer_record": true,
+      "raw_readout_and_operations_unchanged": true,
+      "encoded_and_expanded_extents_unchanged": true,
+      "padding_unchanged": true
+    }
+  ]
+}

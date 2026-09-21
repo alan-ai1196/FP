@@ -9,10 +9,20 @@ acceptance. Under the stated indexed bounds E<=12(N+C)+B, four passive
 hard n16 records have B=4507--4781 and encode in 2.91--3.42 MB instead of
 22.7--26.7 MB. CPU primitive, bit-fault, bound and retention tests pass;
 the retention fixture mocks its numerical owner. The unchanged exact
-270-prediction/540-observation bridge also passes. Seventeen fresh actual
-CUDA jobs are registered and pending, including a matched n16/c2/16 model
-prefix. Arithmetic, orders, tolerances and frame/table/output caps remain
-unchanged. This supplies no complete-stream or new full-release result.
+270-prediction/540-observation bridge also passes. All17 actual A1 jobs are
+terminal at3d3711e:15 integration/fault cases pass; the matched n16 cursor
+advances173 to194 and then hits the unchanged reference join cap. All1498
+sealed records pass their full byte audits. Maximum job peak5309132800 bytes.
+Both model prefixes remain unresolved and unscored.
+
+The extension is now HOLD at a newly found writer-input boundary. CPU
+retention accepts a mutated output count or plan address because the writer
+and its later checker share the same object. Actual probes are registered
+with production unchanged. The fixed-input byte theorem remains valid;
+complete execution binding requires immutable input before delegation and
+paid workspace. Ordinary zlib beats the custom format on all four passive
+records, so format complexity must also be reconsidered. No new release,
+numerical change or Foundation action is justified.
 
 The passive [query-order resource audit](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 now gives exact tape/output minima over the declared bucket-order class,
@@ -23,8 +33,8 @@ enlarging uniform frames: 147 prefix queries have no order within the table
 caps, four exceed the output cap even at their minimum, and the typed-plan
 uniform-frame lower bound exceeds 8 GiB on every n16 tape. This is a passive
 solver/encoding frontier result. Runtime still uses its original declared
-orders, frames and caps; the optional codec above has actual integration
-pending and a paid solver bridge remains outstanding.
+orders, frames and caps; the optional codec above has scoped actual evidence
+but an open writer-binding defect, and a paid solver bridge remains outstanding.
 
 The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 completes all 16 source-bound jobs at caa66f1. Both schedules seal all four

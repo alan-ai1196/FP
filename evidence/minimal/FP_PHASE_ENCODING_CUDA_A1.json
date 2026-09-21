@@ -1,0 +1,1516 @@
+{
+  "status": "COMPLETE_WITH_RETAINED_OUTCOMES",
+  "execution_source": "3d3711e5157c48cf0ef28786181663e52ce6ad97",
+  "registration": {
+    "status": "REGISTERED_BEFORE_CUDA_EXECUTION",
+    "cases": [
+      "generic-legacy-profile",
+      "generic-binary-profile",
+      "indexed-legacy-profiles",
+      "indexed-binary-profiles",
+      "projected-binary-profiles",
+      "indexed-binary-large",
+      "projected-binary-install",
+      "indexed-binary-endpoint-binding",
+      "indexed-binary-plan-binding",
+      "projected-binary-foreign-plan",
+      "fault-predict-payload",
+      "fault-observe-header",
+      "fault-observe-padding",
+      "fault-predict-extent",
+      "fault-predict-resize",
+      "model-global-legacy",
+      "model-global-binary"
+    ],
+    "encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+    "decoded_bytes": "entire legacy typed phase record",
+    "expansion_cap": 134217728,
+    "depth_cap": 64,
+    "string_cap": 4096,
+    "integer_bits": 32768,
+    "extra_work_per_phase": "32*134217728 + 16*frame_bytes",
+    "fixture_job_cap": 4294967296,
+    "fixture_deadline_ms": 900000,
+    "generic_work_cap_for_both_encodings": 100000000000000,
+    "model_case": [
+      16,
+      "iid-c2",
+      16
+    ],
+    "model_job_cap": 17179869184,
+    "model_deadline_ms": 7200000,
+    "model_packed_cap": 8589934592,
+    "model_frame_bytes": 4194304,
+    "model_output_cells": 65536,
+    "model_work_cap_per_role": 1000000000000000,
+    "matched_changes": [
+      "declared evidence encoding",
+      "prepaid encoding work tariff"
+    ],
+    "unchanged": [
+      "native G/Gamma/U",
+      "source and target tape",
+      "physical forward schedule",
+      "reference/AMP tolerances",
+      "full uniform frame and padding",
+      "join/live/tape/output caps"
+    ],
+    "model_scope": "retrospective n16/c2/16 retention frontier; all original A1 failures retained; no incomplete score",
+    "not_claimed": [
+      "all n16 completion",
+      "whole-memory improvement",
+      "new full release",
+      "population superiority"
+    ]
+  },
+  "workers": [
+    {
+      "case": "generic-legacy-profile",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2372255744,
+        "peak_job_commit": 2373578752,
+        "user_100ns": 27656250,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 292,
+        "process_creation_100ns": 134344557688302472
+      },
+      "raw_result_bytes": 744,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "generic-legacy-profile",
+        "process_id": 292,
+        "result": {
+          "phases": 44,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 6170,
+          "maximum_output_cells": 46,
+          "CPU_binary64_phases": 44,
+          "ordinary_events": 6,
+          "replayed_events": 6
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 44,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 173803,
+          "reconstructed_legacy_bytes": 173803,
+          "largest_payload_bytes": 6162,
+          "largest_legacy_record_bytes": 6162,
+          "declared_encoding": "typed-reference-json-v4",
+          "physical_frame_bytes": 131072,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "generic-binary-profile",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2370195456,
+        "peak_job_commit": 2371506176,
+        "user_100ns": 31406250,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 23832,
+        "process_creation_100ns": 134344557729150077
+      },
+      "raw_result_bytes": 777,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "generic-binary-profile",
+        "process_id": 23832,
+        "result": {
+          "phases": 44,
+          "actual_arena_bytes": 16777216,
+          "largest_phase_frame_used": 2014,
+          "maximum_output_cells": 46,
+          "CPU_binary64_phases": 44,
+          "ordinary_events": 6,
+          "replayed_events": 6
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 44,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 59436,
+          "reconstructed_legacy_bytes": 173803,
+          "largest_payload_bytes": 2006,
+          "largest_legacy_record_bytes": 6162,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 131072,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "indexed-legacy-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2236014592,
+        "peak_job_commit": 2237243392,
+        "user_100ns": 47968750,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5044,
+        "process_creation_100ns": 134344557771765036
+      },
+      "raw_result_bytes": 800,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "indexed-legacy-profiles",
+        "process_id": 5044,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1666,
+          "actual_half_words": 72,
+          "cursor": 8,
+          "packed_current_bytes": 15944161,
+          "consumed_arena_bytes": 14656,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 58,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 405791,
+          "reconstructed_legacy_bytes": 405791,
+          "largest_payload_bytes": 18966,
+          "largest_legacy_record_bytes": 18966,
+          "declared_encoding": "typed-reference-json-v4",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "indexed-binary-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2237550592,
+        "peak_job_commit": 2238783488,
+        "user_100ns": 54062500,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16512,
+        "process_creation_100ns": 134344557836014786
+      },
+      "raw_result_bytes": 832,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "indexed-binary-profiles",
+        "process_id": 16512,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1666,
+          "actual_half_words": 72,
+          "cursor": 8,
+          "packed_current_bytes": 15944229,
+          "consumed_arena_bytes": 14656,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 58,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 104512,
+          "reconstructed_legacy_bytes": 405791,
+          "largest_payload_bytes": 3498,
+          "largest_legacy_record_bytes": 18966,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "projected-binary-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2236952576,
+        "peak_job_commit": 2238181376,
+        "user_100ns": 37656250,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26080,
+        "process_creation_100ns": 134344557904924696
+      },
+      "raw_result_bytes": 932,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "projected-binary-profiles",
+        "process_id": 26080,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 978,
+          "actual_half_words": 48,
+          "cursor": 8,
+          "packed_current_bytes": 15944254,
+          "consumed_arena_bytes": 9152,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ],
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 58,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 91293,
+          "reconstructed_legacy_bytes": 294823,
+          "largest_payload_bytes": 3549,
+          "largest_legacy_record_bytes": 18629,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "indexed-binary-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2424455168,
+        "peak_job_commit": 2425675776,
+        "user_100ns": 1880156250,
+        "kernel_100ns": 73437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27352,
+        "process_creation_100ns": 134344557957113400
+      },
+      "raw_result_bytes": 839,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "indexed-binary-large",
+        "process_id": 27352,
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205602506,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 34,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 6341224,
+          "reconstructed_legacy_bytes": 61945906,
+          "largest_payload_bytes": 354264,
+          "largest_legacy_record_bytes": 3349352,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 4194304,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "projected-binary-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2210754560,
+        "peak_job_commit": 2211983360,
+        "user_100ns": 47187500,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21700,
+        "process_creation_100ns": 134344559711084407
+      },
+      "raw_result_bytes": 1048,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "projected-binary-install",
+        "process_id": 21700,
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1258,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21837069,
+          "consumed_arena_bytes": 11952,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true,
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 80,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 123628,
+          "reconstructed_legacy_bytes": 363171,
+          "largest_payload_bytes": 2395,
+          "largest_legacy_record_bytes": 8920,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "indexed-binary-endpoint-binding",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2203557888,
+        "peak_job_commit": 2204876800,
+        "user_100ns": 19843750,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 30648,
+        "process_creation_100ns": 134344559781918561
+      },
+      "raw_result_bytes": 1085,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "indexed-binary-endpoint-binding",
+        "process_id": 30648,
+        "result": {
+          "certificate_claim": "REFUSED",
+          "scope": "fixed AMP transition conformance; passive numerical tolerance still passes",
+          "runtime_status": "REFUSED_BEFORE_TARGET",
+          "phase_status": "EXECUTION_FAILED",
+          "arithmetic_probability_word": 1056964608,
+          "accepted_final_probability_word": 1056964609,
+          "probability_error": "1/16777216",
+          "reported_division_error": "1/16777216",
+          "actual_stored_mass_division_error": "1/16777216",
+          "output_cells": 54,
+          "target_revealed": false
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 2,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 3244,
+          "reconstructed_legacy_bytes": 10695,
+          "largest_payload_bytes": 2272,
+          "largest_legacy_record_bytes": 8849,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "indexed-binary-plan-binding",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191470592,
+        "peak_job_commit": 2192777216,
+        "user_100ns": 18906250,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17180,
+        "process_creation_100ns": 134344559811294795
+      },
+      "raw_result_bytes": 1112,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "indexed-binary-plan-binding",
+        "process_id": 17180,
+        "result": {
+          "certificate_claim": "REFUSED",
+          "scope": "complete registered plan binding before execution and after helper return",
+          "attack": "plan-binding",
+          "runtime_status": "REFUSED_BEFORE_TARGET",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_prefix": [
+            [
+              1,
+              2,
+              0
+            ]
+          ],
+          "current_query": [
+            0,
+            1
+          ],
+          "actual_output_cells": 0,
+          "retained_plan_output_cells": 62,
+          "target_revealed": false,
+          "published_predictions": 0,
+          "learner_advances": 0
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 5,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 7481,
+          "reconstructed_legacy_bytes": 22542,
+          "largest_payload_bytes": 2474,
+          "largest_legacy_record_bytes": 10058,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "projected-binary-foreign-plan",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189512704,
+        "peak_job_commit": 2190823424,
+        "user_100ns": 19531250,
+        "kernel_100ns": 8593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 24268,
+        "process_creation_100ns": 134344559841867386
+      },
+      "raw_result_bytes": 830,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "projected-binary-foreign-plan",
+        "process_id": 24268,
+        "result": {
+          "certificate_claim": "REFUSED",
+          "attack": "foreign-plan",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells": 0,
+          "declared_plan_output_cells": 62,
+          "target_revealed": false,
+          "published_predictions_or_learner_advances": 0
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 5,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 7174,
+          "reconstructed_legacy_bytes": 20144,
+          "largest_payload_bytes": 2167,
+          "largest_legacy_record_bytes": 7660,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "fault-predict-payload",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2055962624,
+        "peak_job_commit": 2057269248,
+        "user_100ns": 19687500,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 13664,
+        "process_creation_100ns": 134344559872136063
+      },
+      "raw_result_bytes": 856,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "fault-predict-payload",
+        "process_id": 13664,
+        "result": {
+          "status": "PASS_WRITER_FAULT_REFUSAL",
+          "stage": "predict",
+          "attack": "payload",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells_before_writer_fault": 58,
+          "published_learner_advances": 0,
+          "received_target": null,
+          "retained_failed_frame_bytes": 262144
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 1,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 980,
+          "reconstructed_legacy_bytes": 1926,
+          "largest_payload_bytes": 980,
+          "largest_legacy_record_bytes": 1926,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "fault-observe-header",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191491072,
+        "peak_job_commit": 2192801792,
+        "user_100ns": 19062500,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 244,
+        "process_creation_100ns": 134344559900835256
+      },
+      "raw_result_bytes": 852,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "fault-observe-header",
+        "process_id": 244,
+        "result": {
+          "status": "PASS_WRITER_FAULT_REFUSAL",
+          "stage": "observe",
+          "attack": "header",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells_before_writer_fault": 13,
+          "published_learner_advances": 0,
+          "received_target": 0,
+          "retained_failed_frame_bytes": 262144
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 2,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 3414,
+          "reconstructed_legacy_bytes": 11721,
+          "largest_payload_bytes": 2434,
+          "largest_legacy_record_bytes": 9795,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "fault-observe-padding",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189774848,
+        "peak_job_commit": 2191081472,
+        "user_100ns": 18593750,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5940,
+        "process_creation_100ns": 134344559930490937
+      },
+      "raw_result_bytes": 855,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "fault-observe-padding",
+        "process_id": 5940,
+        "result": {
+          "status": "PASS_WRITER_FAULT_REFUSAL",
+          "stage": "observe",
+          "attack": "padding",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells_before_writer_fault": 13,
+          "published_learner_advances": 0,
+          "received_target": 0,
+          "retained_failed_frame_bytes": 262144
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 2,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 3414,
+          "reconstructed_legacy_bytes": 11721,
+          "largest_payload_bytes": 2434,
+          "largest_legacy_record_bytes": 9795,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "fault-predict-extent",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2187956224,
+        "peak_job_commit": 2189254656,
+        "user_100ns": 20156250,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 30524,
+        "process_creation_100ns": 134344559960592303
+      },
+      "raw_result_bytes": 854,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "fault-predict-extent",
+        "process_id": 30524,
+        "result": {
+          "status": "PASS_WRITER_FAULT_REFUSAL",
+          "stage": "predict",
+          "attack": "extent",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells_before_writer_fault": 58,
+          "published_learner_advances": 0,
+          "received_target": null,
+          "retained_failed_frame_bytes": 262144
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 1,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 980,
+          "reconstructed_legacy_bytes": 1926,
+          "largest_payload_bytes": 980,
+          "largest_legacy_record_bytes": 1926,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "fault-predict-resize",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2188800000,
+        "peak_job_commit": 2190106624,
+        "user_100ns": 19843750,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 13468,
+        "process_creation_100ns": 134344559989347295
+      },
+      "raw_result_bytes": 854,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "fault-predict-resize",
+        "process_id": 13468,
+        "result": {
+          "status": "PASS_WRITER_FAULT_REFUSAL",
+          "stage": "predict",
+          "attack": "resize",
+          "phase_status": "EXECUTION_FAILED",
+          "actual_output_cells_before_writer_fault": 58,
+          "published_learner_advances": 0,
+          "received_target": null,
+          "retained_failed_frame_bytes": 262144
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 1,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 980,
+          "reconstructed_legacy_bytes": 1926,
+          "largest_payload_bytes": 980,
+          "largest_legacy_record_bytes": 1926,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 262144,
+          "all_padding_and_owned_extents_checked": true
+        }
+      }
+    },
+    {
+      "case": "model-global-legacy",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4659011584,
+        "peak_job_commit": 4660322304,
+        "user_100ns": 1328593750,
+        "kernel_100ns": 101093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3076,
+        "process_creation_100ns": 134344560018129900
+      },
+      "raw_result_bytes": 5775,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "model-global-legacy",
+        "process_id": 3076,
+        "result": {
+          "status": "UNRESOLVED_MODEL",
+          "case": [
+            16,
+            "iid-c2",
+            16
+          ],
+          "mode": "global",
+          "process_id": 3076,
+          "run_status": "HALTED_UNRESOLVED",
+          "cursor": 173,
+          "refusal": {
+            "stage": "predict",
+            "cursor": 173,
+            "query": [
+              3,
+              7
+            ],
+            "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+          },
+          "received_pending_target": null,
+          "training_events": 140,
+          "evaluation_events": 256,
+          "reference_posterior_checks": 173,
+          "completed_evaluation_predictions": 33,
+          "scores": {},
+          "evaluation_readouts": [
+            [
+              1084227584,
+              1084227584,
+              1056964608,
+              1056964608
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353344,
+              1091567600,
+              1036832154,
+              1063675469
+            ],
+            [
+              1072064102,
+              1090728756,
+              1043878378,
+              1062333317
+            ],
+            [
+              1091567600,
+              1065353344,
+              1063675469,
+              1036832154
+            ],
+            [
+              1091464064,
+              1066181633,
+              1063509811,
+              1038157416
+            ],
+            [
+              1091555983,
+              1065446282,
+              1063656882,
+              1036980854
+            ],
+            [
+              1065353469,
+              1091567584,
+              1036832354,
+              1063675443
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091566318,
+              1065363597,
+              1063673418,
+              1036848558
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353218,
+              1063675494,
+              1036831952
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065355503,
+              1091567330,
+              1036835608,
+              1063675037
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1065353344,
+              1091567600,
+              1036832154,
+              1063675469
+            ],
+            [
+              1091567614,
+              1065353232,
+              1063675491,
+              1036831974
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567600,
+              1065353342,
+              1063675469,
+              1036832150
+            ],
+            [
+              1065353230,
+              1091567614,
+              1036831971,
+              1063675491
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567614,
+              1065353230,
+              1063675491,
+              1036831971
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ]
+          ],
+          "audit": {
+            "native_committed_units": 173,
+            "retained_unpublished_local_commits": 0,
+            "checked_CUDA_phases": 520,
+            "actual_floating_words": 111781,
+            "actual_half_words": 17580,
+            "maximum_prediction_tape_nodes": 17497,
+            "maximum_phase_output_cells": 7982,
+            "maximum_join_cells": 1024,
+            "maximum_projected_blocks": 0,
+            "retained_failed_phases": [
+              {
+                "phase": "ordinary:predict",
+                "status": "UNRESOLVED",
+                "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+              }
+            ],
+            "complete_global_count_coordinates": 120,
+            "class_decisions": 0
+          },
+          "initial_program_is_deployment": true,
+          "class_certificate": false,
+          "construction_search": "NOT_INVOKED",
+          "installations": 0,
+          "alpha_spent": "0",
+          "packed_peak": 2192098799,
+          "packed_current": 2192098799,
+          "consumed_arena_bytes": 1082168,
+          "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+          "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+          "oracle_assignment_visits": 34013184
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 520,
+          "failed_mutable_frames_retained": 1,
+          "used_payload_bytes": 26735925,
+          "reconstructed_legacy_bytes": 26735925,
+          "largest_payload_bytes": 2146715,
+          "largest_legacy_record_bytes": 2146715,
+          "declared_encoding": "typed-reference-json-v4",
+          "physical_frame_bytes": 4194304,
+          "all_padding_and_owned_extents_checked": true
+        }
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": "model-global-binary",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 5307809792,
+        "peak_job_commit": 5309132800,
+        "user_100ns": 5474375000,
+        "kernel_100ns": 344843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25856,
+        "process_creation_100ns": 134344561328368567
+      },
+      "raw_result_bytes": 7754,
+      "result": {
+        "status": "EXECUTED_AND_AUDITED",
+        "case": "model-global-binary",
+        "process_id": 25856,
+        "result": {
+          "status": "UNRESOLVED_MODEL",
+          "case": [
+            16,
+            "iid-c2",
+            16
+          ],
+          "mode": "global",
+          "process_id": 25856,
+          "run_status": "HALTED_UNRESOLVED",
+          "cursor": 194,
+          "refusal": {
+            "stage": "predict",
+            "cursor": 194,
+            "query": [
+              6,
+              9
+            ],
+            "reason": "partition join-cell allowance is insufficient for this explicit read"
+          },
+          "received_pending_target": null,
+          "training_events": 140,
+          "evaluation_events": 256,
+          "reference_posterior_checks": 194,
+          "completed_evaluation_predictions": 54,
+          "scores": {},
+          "evaluation_readouts": [
+            [
+              1084227584,
+              1084227584,
+              1056964608,
+              1056964608
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353344,
+              1091567600,
+              1036832154,
+              1063675469
+            ],
+            [
+              1072064102,
+              1090728756,
+              1043878378,
+              1062333317
+            ],
+            [
+              1091567600,
+              1065353344,
+              1063675469,
+              1036832154
+            ],
+            [
+              1091464064,
+              1066181633,
+              1063509811,
+              1038157416
+            ],
+            [
+              1091555983,
+              1065446282,
+              1063656882,
+              1036980854
+            ],
+            [
+              1065353469,
+              1091567584,
+              1036832354,
+              1063675443
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091566318,
+              1065363597,
+              1063673418,
+              1036848558
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353218,
+              1063675494,
+              1036831952
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065355503,
+              1091567330,
+              1036835608,
+              1063675037
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1065353344,
+              1091567600,
+              1036832154,
+              1063675469
+            ],
+            [
+              1091567614,
+              1065353232,
+              1063675491,
+              1036831974
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567600,
+              1065353342,
+              1063675469,
+              1036832150
+            ],
+            [
+              1065353230,
+              1091567614,
+              1036831971,
+              1063675491
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567614,
+              1065353230,
+              1063675491,
+              1036831971
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353218,
+              1063675494,
+              1036831952
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1065353218,
+              1091567616,
+              1036831952,
+              1063675494
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1065353216,
+              1091567616,
+              1036831949,
+              1063675494
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567614,
+              1065353230,
+              1063675491,
+              1036831971
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ],
+            [
+              1091567616,
+              1065353216,
+              1063675494,
+              1036831949
+            ]
+          ],
+          "audit": {
+            "native_committed_units": 194,
+            "retained_unpublished_local_commits": 0,
+            "checked_CUDA_phases": 583,
+            "actual_floating_words": 457450,
+            "actual_half_words": 55212,
+            "maximum_prediction_tape_nodes": 69909,
+            "maximum_phase_output_cells": 25390,
+            "maximum_join_cells": 4096,
+            "maximum_projected_blocks": 0,
+            "retained_failed_phases": [],
+            "complete_global_count_coordinates": 120,
+            "class_decisions": 0
+          },
+          "initial_program_is_deployment": true,
+          "class_certificate": false,
+          "construction_search": "NOT_INVOKED",
+          "installations": 0,
+          "alpha_spent": "0",
+          "packed_peak": 2457162057,
+          "packed_current": 2452989068,
+          "consumed_arena_bytes": 3673576,
+          "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+          "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+          "oracle_assignment_visits": 38141952
+        },
+        "frame_audit": {
+          "sealed_complete_records_checked": 583,
+          "failed_mutable_frames_retained": 0,
+          "used_payload_bytes": 15835845,
+          "reconstructed_legacy_bytes": 121016192,
+          "largest_payload_bytes": 1013847,
+          "largest_legacy_record_bytes": 7860141,
+          "declared_encoding": "typed-phase-varints-interned-strings-short-sequences-v1",
+          "physical_frame_bytes": 4194304,
+          "all_padding_and_owned_extents_checked": true
+        }
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    }
+  ],
+  "paired_readers": {
+    "generic-legacy-profile": {
+      "both_independently_checked_phases": 44
+    },
+    "indexed-legacy-profiles": {
+      "both_independently_checked_phases": 58
+    },
+    "model-global-legacy": {
+      "legacy_cursor": 173,
+      "binary_cursor": 194,
+      "identical_common_evaluation_readouts": 33,
+      "legacy_refusal": {
+        "stage": "predict",
+        "cursor": 173,
+        "query": [
+          3,
+          7
+        ],
+        "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+      },
+      "binary_refusal": {
+        "stage": "predict",
+        "cursor": 194,
+        "query": [
+          6,
+          9
+        ],
+        "reason": "partition join-cell allowance is insufficient for this explicit read"
+      }
+    }
+  }
+}

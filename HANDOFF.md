@@ -16,9 +16,26 @@ mocks its numerical owner. The unchanged 270-prediction/540-observation RNE
 audit also passes. Seventeen actual jobs are preregistered in
 `scripts/run_phase_encoding.py`, including matched profiles, fresh
 installation, writer faults and the unchanged global n16/c2/16 model worker.
-Actual execution is pending. Commit every input before launch; keep
-HEAD/dependencies fixed and retain all outcomes. Full frames and padding
-remain paid. No all-n16 recovery or whole-memory improvement is claimed.
+A1 at3d3711e is now terminal: all15 integration/fault jobs pass, and binary
+advances the matched n16 cursor173 to194 before a reference join-cap refusal.
+All1498 sealed records pass;33 common model readout rows are identical.
+Both model prefixes remain unscored, with targets unrevealed. Maximum job
+commitment is5309132800 bytes. Full frames/padding remain paid.
+
+**New binding obstacle: this codec extension is HOLD.** A CPU retention
+counterexample mutates the phase/plan object supplied to the writer, then
+encodes it honestly. Both sides of the later comparison see the mutation.
+False output counts and a false count address seal with unchanged lengths,
+padding and raw words. The numerical owner in this CPU fixture is mocked;
+two fresh actual probes are now registered in
+`scripts/audit_phase_writer_binding.py`, with production unchanged from
+3d3711e. Run them before repairing the boundary and retain all outcomes.
+The byte left-inverse theorem remains valid; execution binding does not
+follow from it. Do not add another comparison against the same mutable
+alias. Bind immutable input before delegation, with its workspace paid.
+Ordinary zlib also compresses the four old complete records to0.96--1.13 MB,
+beating the custom format's observed size; do not defend an unnecessary
+format or mistake a passive compression result for Runtime authority.
 
 **Preceding order/encoding restriction, 2026-09-21:**
 [the exact query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
@@ -36,7 +53,7 @@ Independently minimizing stored nodes proves that a uniform frame large
 enough for each n16 tape would retain at least 15.0--18.1 billion bytes,
 already above the 8-GiB packed cap. Thus reordering and uniform frame
 enlargement cannot by themselves finish this registered realization.
-The next attack is a reversible, paid evidence representation and a solver
+The next attack was a reversible, paid evidence representation and a solver
 with its complete resource/numerical bridge. No production order, codec,
 cap or tolerance changed in that audit; the codec above is a separate
 extension. Preserve all A1 failures; do not launch a

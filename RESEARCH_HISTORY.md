@@ -6774,3 +6774,44 @@ n16/c2 seed16 model prefix. Only codec and tariff differ in matched pairs.
 Full frame/padding residency, numerical/structural caps, strong controls
 and original A1 failures remain. Execution is pending; no whole-memory
 improvement, all-n16 completion or new release follows.
+
+## 202. Move the actual retention frontier, then attack the writer's input (2026-09-21)
+
+The registered A1 matrix at3d3711e completes all17 fresh jobs. Fifteen
+integration/fault fixtures pass, including generic/indexed profiles,
+n256, projected fresh installation and continuation, numerical/plan
+adversaries and five actual writer faults. All1498 sealed records reconstruct
+their entire typed payload and padding. All jobs exit zero without timeout
+or limit termination; maximum host commitment is5309132800 bytes.
+
+The matched legacy n16/c2/16 worker reproduces its frame refusal at173.
+Binary retains21 further committed events and stops at194, query(6,9),
+when the reference natural-order join needs8192 cells. No new CUDA phase
+starts at that refusal. All367 reference forecasts match the independent
+posterior;33 common evaluation word rows match exactly. Both next targets
+remain unrevealed and all120 counts remain. Packed peaks2192098799 versus
+2457162057 reflect different retained prefixes, not memory improvement.
+Neither incomplete stream receives a model score.
+
+A conventional zlib level6 baseline compresses all four passive old phase
+records to964910--1127439 bytes, versus2913532--3417988 for the typed codec.
+Compressing the typed representation reaches511098--600355 bytes. Every
+original byte reconstructs exactly. This is passive byte evidence only,
+but it defeats any claim that the custom format is necessary on these
+records. Its structural upper bound remains a useful constructive witness.
+
+A more serious counterexample then exposes an input alias in the new
+retention interface. A writer can mutate only its supplied phase or nested
+plan and invoke the honest encoder. A one-cell output undercount and the
+known support(1,2)/address2-to0 substitution preserve both encoded lengths,
+padding and raw words. The independent decoder matches the changed object;
+the original execution record is no longer the comparison anchor. Both
+seal and reach the mocked numerical owner's accept callback. This does
+not falsify fixed-input invertibility and is not yet actual CUDA evidence.
+
+The codec extension is HOLD. Two fresh actual probes are registered in
+`audit_phase_writer_binding.py`, with production unchanged from3d3711e,
+4-GiB jobs and900-second deadlines. Their outcomes must precede repair.
+The design question is an immutable information interface before delegation,
+with its workspace and failure retention paid. Another check against the
+same alias would not resolve it. Foundation and native learning are unchanged.

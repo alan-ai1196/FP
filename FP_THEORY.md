@@ -216,8 +216,12 @@ preserves the entire old typed record through an independent streaming
 left inverse. Its scoped indexed bound E<=12(N+C)+B removes the old
 65-byte-per-node encoding obstruction for the audited records without
 removing a native coordinate or changing an arithmetic schedule. Runtime
-prepays the codec and checks all decoded bytes before acceptance. CPU
-evidence passes; actual CUDA integration is registered and pending. Equal
+prepays the codec and checks all decoded bytes before acceptance. Actual
+A1 passes its registered integration faults and moves the n16 cursor173
+to194. A new CPU alias witness nevertheless shows that a writer and its
+checker can share a mutated expected record. Actual probes are registered;
+the codec extension is HOLD pending a bound immutable input interface.
+The byte theorem remains valid and supplies no execution-binding theorem. Equal
 information does not imply equal physical histories, free decoding or
 identical resource-constrained continuations. Foundation and ERC-1 remain
 unchanged; join/output limits still require a paid solver.

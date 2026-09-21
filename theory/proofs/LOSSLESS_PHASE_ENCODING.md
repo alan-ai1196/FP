@@ -1,8 +1,11 @@
 # Lossless complete phase encoding and its resource boundary
 
-Status: proved byte reconstruction on the declared typed domain; exact CPU
-and owned-retention-hook audits pass. The actual CUDA matrix below is
-registered and pending. Foundation R4, ERC-1, native learning and numerical
+Status: proved byte reconstruction on the declared typed domain; CPU and
+the scoped actual A1 matrix pass. A new writer-input alias counterexample
+in the CPU retention hook invalidates unqualified evidence/execution
+binding. Actual alias probes are registered below and pending; this codec
+extension is HOLD for further model use pending that boundary's repair.
+Foundation R4, ERC-1, native learning and numerical
 tolerances are unchanged. This is a physical representation, with an
 explicit contract identity and work tariff, not a new architecture action.
 
@@ -164,7 +167,9 @@ reserved padding, then writes the used length. The live view prevents
 ordinary helper resizing from introducing an unowned bytearray tail. The
 view is released before the existing paid immutable finalization. Only
 after retention and finalization succeed can the numerical owner accept
-the phase. Byte/type/extent faults cannot authorize publication.
+the phase. The tested byte/type/extent faults cannot authorize publication
+when the expected input stays fixed. Section 7 shows why this premise is
+not established by the current helper interface.
 
 Failed mutable frames and actually received context/targets remain owned;
 they do not certify a successful phase. A final retention refusal may
@@ -174,7 +179,7 @@ decoding assertion. All padding remains paid: using fewer bytes inside
 the same F-byte frame does not lower its retained residency. Existing
 snapshots continue to share prior immutable frames without mutation.
 
-## 5. Evidence and preregistered actual CUDA matrix
+## 5. Evidence and the actual CUDA matrix
 
 `FP_PHASE_ENCODING_CPU.json` retains 3195 typed round trips, eleven malformed
 stream refusals, five resource/prewrite refusals, all 19216 single-bit
@@ -228,7 +233,92 @@ score. The parent compares common evaluation words between the two model
 prefixes. Every attempt, timeout, resource refusal and unexpected failure
 is retained in a new `FP_PHASE_ENCODING_CUDA_A*.json` journal; failures
 are never silently restarted. HEAD and all execution dependencies remain
-fixed while jobs run. No actual result is claimed before that journal.
+fixed while jobs run.
+
+`FP_PHASE_ENCODING_CUDA_A1.json` is terminal at 3d3711e. All fifteen
+integration/fault fixtures pass. The two matched n16 jobs remain unresolved:
+
+| Global n16/c2/16 | Legacy | Typed binary |
+|---|---:|---:|
+| Committed cursor | 173 | 194 |
+| Successful CUDA phases | 520 | 583 |
+| Checked floating words | 111781 | 457450 |
+| Largest retained payload | 2146715 | 1013847 |
+| Largest reconstructed old record | 2146715 | 7860141 |
+| Packed peak | 2192098799 | 2457162057 |
+| Host job peak | 4660322304 | 5309132800 |
+
+Legacy reproduces its original phase-frame refusal at query(3,7). Binary
+continues for 21 additional ordinary events, then the reference decoder
+refuses the 8192-cell natural-order join at query(6,9), before a new CUDA
+phase. Both retain all120 counts and leave the next target unrevealed.
+All367 published reference forecasts match the independent posterior;
+the33 common evaluation word rows are identical. Neither gets a complete
+model score. The larger retained prefix increases packed residency; these
+different endpoints do not establish isolated memory or runtime savings.
+
+Across all17 jobs,1498 sealed complete records pass full byte/padding
+comparison; six failed mutable frames remain owned. Every job exits zero
+without timeout or limit termination, and all jobs are terminal. Maximum
+host commitment is5309132800 bytes. The generic matched pair has44 checked
+phases each, the indexed pair58; fresh installation and subsequent learning
+pass. This is the registered fault class, not a proof against input mutation.
+
+## 6. Attack the need for a custom format
+
+The conventional baseline `zlib.compress(payload,6)` reconstructs every
+original byte in all four passive fixtures. No compressed bodies are
+retained. `FP_PHASE_COMPRESSION_CPU_A1.json` records the initial inline
+CPU audit at3d3711e; `audit_phase_encoding.py --compression` reproduces its
+steps and observations. These are byte measurements, not Runtime or
+bounded-workspace compression evidence.
+
+| Case | Typed binary | zlib of old typed JSON | zlib of typed binary |
+|---|---:|---:|---:|
+| c2/16 | 2966634 | 971929 | 525029 |
+| c2/17 | 2943076 | 964910 | 511098 |
+| c4/18 | 3417988 | 1127439 | 600355 |
+| c4/19 | 2913532 | 1034033 | 551688 |
+
+Thus the custom format is not needed to fit these observed records. Its
+constructive upper bound remains valid, but claiming it is the best
+practical encoding would be unsupported. A simpler standard compressor
+is a serious alternative, subject to a paid and bound Runtime interface.
+
+## 7. Fixed-input invertibility does not prove execution binding
+
+The independent decoder can be correct while its expected value has changed.
+Runtime passes the same phase object to `codec.write` and later `codec.check`.
+An injected writer changes only that supplied object and then invokes the
+honest writer. No owner globals or external inputs are modified. Two CPU
+witnesses preserve both encoded and expanded lengths and every padding byte:
+
+- Decrement the phase output count by one, leaving its actual execution
+  plan and raw operation words unchanged.
+- After count(1,2)=1, query(0,1), change the plan's count address from2 to0
+  while retaining its declared support(1,2), readout and operation words.
+
+In the real retention hook both records seal and reach its mocked numerical
+owner's accept callback. Their decoded bytes match the mutated record and
+differ from the record before the writer. The second retained plan fails
+an independent operation replay. `FP_PHASE_WRITER_ALIAS_CPU.json` supplies
+this narrow evidence; it does not establish actual CUDA publication.
+
+`scripts/audit_phase_writer_binding.py` registers two fresh4-GiB/900-second
+actual probes, one per witness, with production unchanged from3d3711e.
+They retain actual publication status, immutable frame equality, plan/raw
+word mismatch, target nonreceipt and native learner state. Each attempt
+gets a new `FP_PHASE_WRITER_ALIAS_CUDA_A*.json`; no silent retry is allowed.
+These probes are pending. If publication occurs, the accepted output/plan
+conformance claim is false, even if the point probability remains correct.
+This would be an implementation information-interface mismatch, not a
+counterexample to the lossless byte theorem or a new semantic action.
+
+The repair must bind the input before delegation and prevent helper access
+to mutable authority. Repeating the same check against the same alias does
+not establish that boundary. Immutable canonical bytes plus a standard
+compressor are a candidate, but their workspace, work, failure retention
+and actual bridge still require an implementation and evidence.
 
 The outstanding scientific question is how far a paid lossless encoding
 can move the actual execution boundary. The 147 empty join/live order
