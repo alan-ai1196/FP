@@ -1,0 +1,20 @@
+{
+  "status": "AMP_METADATA_ALIAS_COUNTEREXAMPLES",
+  "scope": "passive exact CPU components; not an owned CUDA execution",
+  "physical_input": {
+    "native_reference_count": 1,
+    "mutated_physical_count": -1,
+    "required_reference_probability": "41/50",
+    "actual_RNE_probability": "12079595/67108864",
+    "conditional_plan_and_RNE_checks_pass": true,
+    "native_bridge_refuses": true,
+    "predecessor_already_corrupted": true
+  },
+  "later_result": {
+    "earlier_plan_accepted_before_mutation": true,
+    "old_output_cells": 62,
+    "changed_old_output_cells": 61,
+    "current_plan_check_passes": true,
+    "earlier_plan_now_fails_its_original_check": true
+  }
+}

@@ -14,6 +14,13 @@ Maximum job2,357,059,584 bytes; all jobs exit0 without timeout/limit
 termination. n256 and fresh installation/learning to21 pass. Other native/AMP
 helper surfaces and complete release are not covered by this component gate.
 
+Two [passive AMP metadata counterexamples](theory/proofs/AMP_METADATA_CONTINUATION.md)
+now exercise the remaining boundary: the raw physical input shares its
+CountState with the predecessor, and an accepted phase retains the planner's
+own mutable output. Current numerical refusal/checks do not protect these
+aliases across later calls. Two fresh CUDA probes are registered and pending
+at unchanged production7fe0471; the reference value boundary is unaffected.
+
 Three historical
 [actual CPU counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md) at a559d7a
 show supplied source/count aliases bypassing the plan checks. Ordinary

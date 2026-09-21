@@ -24,6 +24,14 @@ helper surfaces remain outside this scoped repair and still need analysis.
 Paid order implementation has not begun. Do not rerun terminal probes;
 apply the frame/refinement analysis to the remaining helper surfaces next.
 
+That analysis now has [two passive AMP metadata witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md).
+A physical input-count alias survives a correct native bridge refusal;
+a later planner can change its own retained old output, invalidating an
+earlier checked plan while its current plan is correct. Two fresh actual
+CUDA probes are registered at unchanged production7fe0471 and pending.
+They use only the supplied count or retained returned plan, with no tensor
+writes or owner globals. No AMP production repair has yet been made.
+
 **Retained input-binding counterexamples:**
 The [real CPU Runtime probes](theory/proofs/INDEXED_INPUT_ALIAS.md) show that
 a planner can modify its supplied source dictionary and publish41/50 for

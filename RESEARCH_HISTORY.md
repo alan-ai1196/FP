@@ -7083,3 +7083,25 @@ the declared trusted implementation. Other native/physical helper arguments
 and retained returned records have not received this ownership guarantee;
 the broader indexed extension stays HOLD. No complete optimization class,
 model-science release, resource dominance or Foundation change is inferred.
+
+## 211. Attack physical predecessors and historical planner outputs across later calls (2026-09-21)
+
+Applying the frame law to AMP exposes two remaining sharing edges. A raw
+physical state shares its CountState with the resident predecessor and
+earlier phase metadata. The accepted phase also retains the planner's own
+returned plan object, which that planner can keep and mutate on a later call.
+
+Exact passive witnesses separate their consequences. Changing the physical
+count+1 to-1 leaves conditional plan and RNE checks consistent with the
+altered input; the unchanged native reference correctly refuses, after the
+predecessor has already changed. Changing an old valid n3 plan's output
+count62 to61 during a later preparation makes that old plan invalid while
+the new plan remains correct. No arithmetic kernel or tensor was changed.
+
+The script, proof and minimal passive evidence are retained. Two fresh
+4-GiB/900-second actual CUDA jobs are registered at production7fe0471 before
+any repair. They test corrupted refusal state and historical metadata
+mutation through a later successful continuation, including a full legal
+native update. Actual results are pending. The reference value gate is
+unchanged; the remaining physical trust boundary must cover the executor's
+workspace capability as well as its metadata arguments and returned records.

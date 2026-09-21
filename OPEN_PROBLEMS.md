@@ -13,6 +13,13 @@ Other native/AMP argument and returned-record
 surfaces, including later retained aliases, remain to be assessed. No complete
 Runtime release follows from this single component boundary.
 
+The remaining [AMP metadata boundary](theory/proofs/AMP_METADATA_CONTINUATION.md)
+now has exact passive witnesses for both an input alias and a later retained
+output alias. Two actual CUDA probes are registered and pending at7fe0471.
+The physical executor's workspace capability must be included in the
+eventual trust boundary; copying one record field alone is not a complete
+isolation argument.
+
 The retained [owned input witnesses](theory/proofs/INDEXED_INPUT_ALIAS.md)
 explain why that boundary is needed.
 Real CPU Runtime now demonstrates a source-map mutation that changes the
