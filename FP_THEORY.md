@@ -169,7 +169,9 @@ coordinate. Counts encode parameters exactly; seven readout words and three
 gradient forms have complete interval checks. The target must be bound
 independently of the physical pending report: unchanged gradient words can
 otherwise conceal a label flip and reverse the next update. Exact/native
-and binary64 audits pass; the one actual GPU component diagnostic is pending.
+and binary64 audits pass; the sole `b0b1f3b` RTX3090 diagnostic reproduces
+293,008 actual words and every complete-coordinate decision under its
+registered4-GiB/600-second job. The diagnostic is terminal.
 This conditional component relation supplies neither owned Runtime nor full
 Compiler-state authority and changes no Foundation or ERC definition.
 

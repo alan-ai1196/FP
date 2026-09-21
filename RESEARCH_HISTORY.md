@@ -5962,3 +5962,45 @@ conditional component bridge. Production owned indexed admission, source/
 target provenance, complete physical phases, fresh persistence and reachable
 installation remain separate, necessary work. No Foundation or ERC change,
 complete-Compiler quotient or CERTIFIED_COMPLETE is asserted.
+
+## 174. The complete indexed coordinate bridge executes on RTX3090 (2026-09-21)
+
+The sole registered diagnostic executes source
+`b0b1f3b95f38528bf4d60ea9046cb6a4224739ee` and completes successfully. Its
+[17,168-byte report](evidence/minimal/FP_INDEXED_PHASE_BRIDGE_CUDA.json)
+retains the fixed registration, raw result and enforcing job. Every actual
+word is checked against the independent RNE machine, and every component
+field except the added device-word counts equals the committed CPU audit.
+
+The actual RTX3090 executes293,008 checked words across1,645 distinct
+pre-target predictions and3,177 observed component states. The small grids
+and sequential profile/reversal paths supply3,169 independent full native
+observation/commit comparisons. Four n256 prefix events and four correlated
+observations use the proved finite coordinate basis and independent closed
+form or cycle bounds, without constructing literal world tables. The paths
+retain170,562 rounded scalar results and736,038 checked binary64 primitives.
+Every tested live phase passes its complete native-coordinate tolerances.
+The n256 prefix's largest gradient upper bound is below0.003259 and its
+largest probability upper bound is below0.000242276. No all-history numerical
+guarantee follows from these finite cases.
+
+The self-reported-label and nearby-readout controls reproduce their CPU
+refusals. They remain explicit binding/coordinate counterexamples, not
+observed main-kernel failures. The immutable pending clock-overflow state
+and pre-numerical resource refusals also reproduce.
+
+Worker PID2712, creation134344290691241388, is attached before resume and
+exits0 without timeout or limit termination under4 GiB/600 seconds. Peak
+process/job commit are2,088,697,856/2,089,934,848 bytes. Torch2.12.0+cu132,
+CUDA13.2 and the RTX3090 are matched explicitly; Torch peak allocated/
+reserved bytes are675,840/2,097,152. Raw result size is12,513 bytes. No timing
+or memory advantage over another Runtime or model is claimed.
+
+The job and all earlier diagnostics/model streams are terminal and must
+not be restarted. The conditional component bridge is now numerically
+executed; the production Runtime still materializes native Program/prior/
+selected-slot and phase arrays. Owned indexed admission and execution must
+carry actual source/target lineage, complete physical phase evidence,
+resource ownership, fresh persistence and reachable installation. The
+frozen Foundation and ERC remain unchanged; no new semantic action, whole-
+Compiler quotient or CERTIFIED_COMPLETE is introduced.

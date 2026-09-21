@@ -1,0 +1,459 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration": {
+    "source": "b0b1f3b95f38528bf4d60ea9046cb6a4224739ee",
+    "process_commit_cap": 4294967296,
+    "deadline_ms": 600000,
+    "scope": "complete indexed native-reference coordinate/phase component, not an owned Runtime or model stream",
+    "device": "NVIDIA GeForce RTX 3090",
+    "torch": "2.12.0+cu132",
+    "CUDA": "13.2",
+    "state_native_normalizer_atol": "1/100",
+    "probability_atol": "1/1000",
+    "small_groups": [
+      {
+        "n": 3,
+        "profiles": 125,
+        "queries": 9,
+        "targets": 2
+      },
+      {
+        "n": 5,
+        "profiles": 81,
+        "queries": 5,
+        "targets": 2
+      }
+    ],
+    "sequential_component_traces": [
+      "nine-event profile/continuation",
+      "100-event late-birth reversal",
+      "four-event n256 prefix with cursor attachment"
+    ],
+    "correlated_phase_inputs": {
+      "n": 256,
+      "query": [
+        0,
+        96
+      ],
+      "heights": [
+        16,
+        1000000000000
+      ],
+      "targets": [
+        0,
+        1
+      ]
+    },
+    "synthetic_history_scope": "large count/clock values are reachable phase inputs, not replayed historical events",
+    "boundary_controls": "CPU exact; self-reported target and nearby-readout adversaries are not main GPU kernel failures",
+    "success_criterion": "every actual word and complete-coordinate decision matches the independent CPU audit; all live component phases pass",
+    "old_execution_policy": "no terminal model or GPU diagnostic is rerun",
+    "claimed_timing_or_memory_advantage": false
+  },
+  "workers": [
+    {
+      "worker_status": "EXECUTED_AND_INDEPENDENTLY_MATCHED",
+      "execution_source": "b0b1f3b95f38528bf4d60ea9046cb6a4224739ee",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2088697856,
+        "peak_job_commit": 2089934848,
+        "user_100ns": 1620312500,
+        "kernel_100ns": 16093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2712,
+        "process_creation_100ns": 134344290691241388
+      },
+      "raw_result_bytes": 12513,
+      "result": {
+        "status": "PASS_ACTUAL_COMPACT_PHASES",
+        "small_audit": [
+          {
+            "n": 3,
+            "count_profiles": 125,
+            "queries": 9,
+            "targets_per_query": 2,
+            "distinct_pre_target_predictions": 1125,
+            "native_preparation_units": 450,
+            "complete_native_phase_comparisons": 2250,
+            "general_product_nodes": 0,
+            "rounded_scalar_results": 88875,
+            "checked_binary64_primitives": 298125,
+            "checked_device_words": 144000,
+            "maximum_exact_native_errors": {
+              "state_error": "2859/3449815040",
+              "native_error": "1/1376256",
+              "normalizer_error": "1/1048576",
+              "probability_error": "101/1551892480"
+            }
+          },
+          {
+            "n": 5,
+            "count_profiles": 81,
+            "queries": 5,
+            "targets_per_query": 2,
+            "distinct_pre_target_predictions": 405,
+            "native_preparation_units": 216,
+            "complete_native_phase_comparisons": 810,
+            "general_product_nodes": 8,
+            "rounded_scalar_results": 50139,
+            "checked_binary64_primitives": 307881,
+            "checked_device_words": 92664,
+            "maximum_exact_native_errors": {
+              "state_error": "49/188743680",
+              "native_error": "1/1310720",
+              "normalizer_error": "1/1048576",
+              "probability_error": "11/262144000"
+            }
+          }
+        ],
+        "trajectories": [
+          {
+            "name": "profile_and_continuation",
+            "events": 9,
+            "final_cursor": 23,
+            "final_steps": 9,
+            "checked_device_words": 1052,
+            "rounded_scalar_results": 626,
+            "checked_binary64_primitives": 2193,
+            "maximum_exact_native_errors": {
+              "state_error": "5503/14533263360",
+              "native_error": "5/13139968",
+              "normalizer_error": "0",
+              "probability_error": "1681/33638318080"
+            }
+          },
+          {
+            "name": "late_birth_reversal",
+            "events": 100,
+            "final_cursor": 107,
+            "final_steps": 100,
+            "checked_device_words": 9800,
+            "rounded_scalar_results": 6200,
+            "checked_binary64_primitives": 14982,
+            "maximum_exact_native_errors": {
+              "state_error": "13796971/22568883978240",
+              "native_error": "2095/3440377856",
+              "normalizer_error": "1/1048576",
+              "probability_error": "7100813/200612302028800"
+            }
+          }
+        ],
+        "large_prefix": {
+          "n": 256,
+          "logical_worlds_power_of_two": 255,
+          "executed_component_events": 4,
+          "profile_attachment": [
+            3,
+            20
+          ],
+          "final_cursor": 21,
+          "final_steps": 4,
+          "parameter_formula": "(81,81,1,81)/(61*K), repeated over free coordinates",
+          "explicit_full_output_refusals": 2,
+          "phases": [
+            {
+              "event": [
+                0,
+                1,
+                0
+              ],
+              "exact_reference_probability0": "1/2",
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "1/83886080",
+                  "14101236626227/1180591620717394526208"
+                ],
+                "native_error": [
+                  "0",
+                  "5120/70368744176639"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "0",
+                  "512/70368744176639"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              },
+              "general_product_nodes": 506
+            },
+            {
+              "event": [
+                0,
+                0,
+                0
+              ],
+              "exact_reference_probability0": "9/10",
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "1/188743680",
+                  "63538178947404519412750433917/11963051961888967796903978965800058880"
+                ],
+                "native_error": [
+                  "0",
+                  "41748298176980321287/316912650057052846774548430848"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "15103223085547253871205/633825300114105693549096861696",
+                  "1/41943040"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              },
+              "general_product_nodes": 254
+            },
+            {
+              "event": [
+                1,
+                2,
+                0
+              ],
+              "exact_reference_probability0": "1/2",
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "1/83886080",
+                  "14101236626227/1180591620717394526208"
+                ],
+                "native_error": [
+                  "0",
+                  "5120/70368744176639"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "0",
+                  "512/70368744176639"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              },
+              "general_product_nodes": 1008
+            },
+            {
+              "event": [
+                0,
+                2,
+                1
+              ],
+              "exact_reference_probability0": "189/250",
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "528481736426601490001253342028899/162165815476048242948865968255795200",
+                  "176160594871418938414206268358821/54055271831032524222387877243256832"
+                ],
+                "native_error": [
+                  "76780084228366756579404415/31691265005242314635761156096",
+                  "127966818715992414597509325/52818775009508807795758071808"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "15356016845673351315880883/63382530010484629271522312192",
+                  "25593363743198482919501865/105637550019017615591516143616"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              },
+              "general_product_nodes": 506
+            }
+          ],
+          "checked_device_words": 28764,
+          "rounded_scalar_results": 17964,
+          "checked_binary64_primitives": 33417
+        },
+        "correlated_states": {
+          "n": 256,
+          "query": [
+            0,
+            96
+          ],
+          "synthetic_reachable_states": 2,
+          "executed_component_observations": 4,
+          "history_scope": "phase-map inputs; the n*height historical events are not replayed",
+          "phases": [
+            {
+              "height": 16,
+              "target": 0,
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "730462221380518697677879549177031/10633823966047069587217260232342241280",
+                  "730462840366482783608345472565959/10633823966279183344583269197094584320"
+                ],
+                "native_error": [
+                  "32640983294982137291550543/105637550019017615591516143616",
+                  "32641010964385764321088847/105637550016711772582302449664"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "6530715254453957899966019/211275100038035231183032287232",
+                  "6530720788334628330292291/211275100033423545164604899328"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              }
+            },
+            {
+              "height": 1000000000000,
+              "target": 0,
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "730462221380518697677879549177031/10633823966047069587217260232342241280",
+                  "730462840366482783608345472565959/10633823966279183344583269197094584320"
+                ],
+                "native_error": [
+                  "32640983294982137291550543/105637550019017615591516143616",
+                  "32641010964385764321088847/105637550016711772582302449664"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "6530715254453957899966019/211275100038035231183032287232",
+                  "6530720788334628330292291/211275100033423545164604899328"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              }
+            },
+            {
+              "height": 16,
+              "target": 1,
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "273727903565100364552545433949771/1772303994437889214655270214246072320",
+                  "273728135654958128939530480538699/1772303994283146709744597639081492480"
+                ],
+                "native_error": [
+                  "32640983294982137291550543/105637550019017615591516143616",
+                  "32641010964385764321088847/105637550016711772582302449664"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "6530715254453957899966019/211275100038035231183032287232",
+                  "6530720788334628330292291/211275100033423545164604899328"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              }
+            },
+            {
+              "height": 1000000000000,
+              "target": 1,
+              "relation": {
+                "status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+                "state_error": [
+                  "273727903565100364552545433949771/1772303994437889214655270214246072320",
+                  "273728135654958128939530480538699/1772303994283146709744597639081492480"
+                ],
+                "native_error": [
+                  "32640983294982137291550543/105637550019017615591516143616",
+                  "32641010964385764321088847/105637550016711772582302449664"
+                ],
+                "normalizer_error": [
+                  "0",
+                  "0"
+                ],
+                "probability_error": [
+                  "6530715254453957899966019/211275100038035231183032287232",
+                  "6530720788334628330292291/211275100033423545164604899328"
+                ],
+                "parameter_error": "0",
+                "exact_discrete_state": true
+              }
+            }
+          ],
+          "checked_device_words": 16728,
+          "rounded_scalar_results": 6758,
+          "checked_binary64_primitives": 79440
+        },
+        "gradient_counterexample": {
+          "scope": "synthetic nearby-readout adversary, not an actual main-kernel failure or weak baseline",
+          "reference_count": 4,
+          "target": 1,
+          "probability_shift": "1/2000",
+          "maximum_probability_error": "6881095/13761511424",
+          "maximum_native_error": "68807669/13761511424",
+          "maximum_gradient_error": "54706105/1377828864",
+          "complete_relation": {
+            "status": "OUTSIDE_COMPLETE_REFERENCE_TOLERANCES",
+            "state_error": [
+              "6605096276063354180243313825210651/166356063934736702413340469069086720",
+              "6605096279441046560305287313161521/166356063934288106383609168679403520"
+            ],
+            "native_error": [
+              "396141456588601329282875357/79228162514263211693637107712",
+              "396141456791179564824029367/79228162514251952694568681472"
+            ],
+            "normalizer_error": [
+              "0",
+              "0"
+            ],
+            "probability_error": [
+              "79232069210906561519058937/158456325028526423387274215424",
+              "79232069251422208090418827/158456325028503905389137362944"
+            ],
+            "parameter_error": "0",
+            "exact_discrete_state": true
+          }
+        },
+        "boundaries": {
+          "bad_phase_state_query_or_word_refusals": 11,
+          "retained_pending_clock_refusals": 1,
+          "pre_numeric_resource_refusals": 3,
+          "self_reported_target_counterexample": {
+            "actual_target": 0,
+            "forged_target": 1,
+            "unchanged_gradient_words": [
+              0,
+              3209481421,
+              1061997773
+            ],
+            "circular_check_status": "WITHIN_COMPLETE_REFERENCE_TOLERANCES",
+            "independent_actual_target_check": "REFUSED",
+            "decoded_gradient_swap": "13421773/8388608",
+            "correct_next_probability": "41/50",
+            "forged_next_probability": "9/50"
+          },
+          "clock_case_scope": "synthetic reachable endpoint; no COUNTER_CAP-event history is replayed"
+        },
+        "scope": "complete native-reference coordinate/phase component bridge; no owned Runtime, source acquisition, persistence or installation authority",
+        "process_id": 2712,
+        "torch": "2.12.0+cu132",
+        "CUDA": "13.2",
+        "device": "NVIDIA GeForce RTX 3090",
+        "peak_torch_allocated_bytes": 675840,
+        "peak_torch_reserved_bytes": 2097152
+      }
+    }
+  ]
+}

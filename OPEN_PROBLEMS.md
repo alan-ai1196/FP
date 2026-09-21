@@ -9,8 +9,9 @@ entries for that mathematical comparison, while retaining explicit-output
 costs. It also exposes a decisive binding requirement: the target must come
 from the owned observation record, not from the physical pending tag being
 verified. Full-coordinate numerical checks alone cannot repair circular
-information authority. The source-bound4-GiB/600-second RTX3090 component
-audit is pending. The main integration problem remains owned indexed
+information authority. The source-bound `b0b1f3b` RTX3090 component audit
+now matches293,008 actual words and every complete-coordinate decision under
+its4-GiB/600-second job; it is terminal. The main integration problem remains owned indexed
 admission/execution, descriptor and source/label lineage, complete physical
 phase records, fresh persistence and reachable installation. The new helper
 must not enter the old array-based API as apparent existing authority.

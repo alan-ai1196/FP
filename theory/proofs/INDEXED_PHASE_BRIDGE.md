@@ -1,7 +1,7 @@
 # A finite basis for every native reference coordinate
 
-Status: **PROVED, CONDITIONAL COMPONENT BRIDGE; EXACT/BINARY64 AUDIT;
-ACTUAL GPU DIAGNOSTIC PENDING**.
+Status: **PROVED, CONDITIONAL COMPONENT BRIDGE; EXACT/BINARY64 AND
+ACTUAL RTX3090 AUDITS PASS**.
 
 The [indexed literal representation](INDEXED_RELATION_REFERENCE.md) extends
 to a complete numerical phase relation without checking K=2^(n-1) entries.
@@ -233,7 +233,7 @@ There are1530 distinct pre-target predictions and3060 complete observed/
 committed pairs. Preparing the controls executes666 exact native units.
 The same prediction is reused across the two possible label branches.
 
-Across these paths, the retained CPU audit checks170562 rounded scalar
+Across the small, sequential and large paths, the CPU audit checks170562 rounded scalar
 results and736038 actual binary64 primitives. The largest small native
 gradient error is2859/3449815040; the larger n256 prefix still passes its
 declared full-state tolerance through the per-phase interval check. The
@@ -257,10 +257,10 @@ histories. No cycle-size resource or precision contract is extended.
 
 The minimal [CPU report](../../evidence/minimal/FP_INDEXED_PHASE_BRIDGE.json)
 is produced by `experiments/joint_uncertainty/indexed_phase_bridge.py`.
-The one registered actual GPU diagnostic must reproduce all words, complete
-basis decisions and failures under a4-GiB/600-second enforced Windows job.
-Its source is committed before launch; every attempt and completed process
-binding is retained. No old GPU diagnostic or model stream is restarted.
+The one registered actual GPU diagnostic now reproduces all words and
+complete basis decisions under its4-GiB/600-second enforced Windows job.
+Its source was committed before launch; the completed process binding is
+retained below. No old GPU diagnostic or model stream was restarted.
 
 The production Runtime still expects literal Program/prior/slot tuples,
 complete native arrays and its registered phase/evidence formats. This new
@@ -270,3 +270,48 @@ acquisition, charged complete phases, fresh persistence and reachable
 installation remain required. The finite coordinate theorem supplies a way
 to check those new phases without an exponential native-array scan; it does
 not grant the missing ownership or continuity itself.
+
+## 7. Actual RTX3090 phase audit (2026-09-21)
+
+Source `b0b1f3b95f38528bf4d60ea9046cb6a4224739ee` executes exactly once through
+`run_indexed_phase_bridge.py`. The
+[17,168-byte GPU report](../../evidence/minimal/FP_INDEXED_PHASE_BRIDGE_CUDA.json)
+is **COMPLETE_EXECUTION**. Torch2.12.0+cu132, CUDA13.2 and the actual RTX3090
+execute293,008 checked device words. Every non-device-count field of the
+component reports equals the committed CPU audit, including the numerical
+error bounds, native comparisons, retained failures and both adversaries.
+The adversarial controls themselves use the declared CPU exact audit; they
+are not reported as failures of the main GPU kernel.
+
+| Executed component group | Checked device words | Rounded scalar results | Checked binary64 primitives |
+|---|---:|---:|---:|
+| n3, 125 profiles, 9 queries, both labels |144000|88875|298125|
+| n5, 81 profiles, 5 queries, both labels |92664|50139|307881|
+| Nine-event profile/continuation |1052|626|2193|
+| 100-event late-birth reversal |9800|6200|14982|
+| Four-event n256 prefix |28764|17964|33417|
+| Two n256 correlated inputs, both labels |16728|6758|79440|
+| Total |293008|170562|736038|
+
+The actual paths contain1,645 distinct pre-target predictions and3,177
+observed component states. Of those observations,3,169 also have an
+independent full literal native observation/commit comparison; the eight
+large states instead use the proved finite basis and independent formulas
+or cycle enclosures. The largest retained n256 prefix gradient-error upper
+bound is below0.003259, with probability-error upper bound below0.000242276.
+All tested live component phases satisfy the registered tolerances. This
+is a finite execution result, not a uniform guarantee for all histories.
+
+The worker PID2712, creation134344290691241388, exits0. It is attached to
+the enforcing job before resume; no timeout or limit termination occurs.
+Peak process/job commit are2,088,697,856/2,089,934,848 bytes, below4 GiB.
+Torch peak allocated/reserved bytes are675,840/2,097,152. The raw worker
+report is12,513 bytes; the final evidence additionally retains registration
+and the completed job. These are observed resource values for this audit,
+not an optimized Runtime cost or a comparative resource advantage.
+
+This diagnostic is terminal. The next work is owned indexed admission and
+complete execution in ReferenceCompilerRuntime, preserving actual source/
+target provenance, resource roles, phase evidence, fresh persistence and
+installation reachability. These results do not reopen the frozen static
+resource program or authorize another cycle-size study.

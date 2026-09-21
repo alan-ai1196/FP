@@ -251,6 +251,8 @@ The subsequent [finite-basis numerical bridge](INDEXED_PHASE_BRIDGE.md)
 checks every native reference coordinate with exact count binding, seven
 readout words and three gradient forms. It requires the independently owned
 target; a self-reported target gives an explicit false-certificate example.
-This supplies a conditional numerical component, while the production
+Its sole `b0b1f3b` RTX3090 audit now matches293,008 actual device words and
+all complete-coordinate decisions. This supplies a conditional numerical
+component, while the production
 admission, physical ownership, evidence and installation obligations above
 remain open.

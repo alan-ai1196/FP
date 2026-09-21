@@ -10,8 +10,11 @@ physical pending tag. A circular-label forgery and a forecast-only false
 promotion are retained.3,060 small observed/committed pairs and109 sequential
 component events match the independent native learner; the n256 paths avoid
 literal world tables. The CPU audit checks170,562 rounded results and736,038
-actual binary64 primitives. The sole4-GiB/600-second GPU diagnostic is
-registered but pending. Shared table-geometry preflight is factored out,
+actual binary64 primitives. The sole4-GiB/600-second GPU diagnostic completes
+at `b0b1f3b`:293,008 checked RTX3090 words and all complete-coordinate decisions
+match the CPU report. Job peak2,089,934,848 bytes, exit0 and no timeout/limit
+termination are retained in17,168 bytes. The worker is terminal. Shared
+table-geometry preflight is factored out,
 and the previous indexed-reference audit remains identical. Runtime and its
 owned array-based phase formats are unchanged; this is not a new backend
 admission or installation path.

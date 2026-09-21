@@ -14,9 +14,13 @@ also passes forecast/native tolerances but has gradient error>0.0397.
 The CPU audit passes3,060 small observed/committed pairs,109 sequential
 profile/reversal events, four n256 component events and four correlated
 observations at counts16/10^12.736,038 checked binary64 primitives support
-these component paths. One4-GiB/600-second RTX3090 diagnostic is registered
-and pending at this source. No earlier GPU/model job is restarted. This is
-a conditional native-reference component bridge; owned Runtime admission,
+these component paths. The sole source-bound RTX3090 diagnostic now completes
+at `b0b1f3b`:293,008 actual device words and all complete-coordinate decisions
+match. Job peak2,089,934,848 bytes stays below4 GiB, with no timeout or limit
+termination. The17,168-byte [GPU report](evidence/minimal/FP_INDEXED_PHASE_BRIDGE_CUDA.json)
+retains the completed process binding. This diagnostic and every earlier
+GPU/model job are terminal; do not restart them. This is a conditional
+native-reference component bridge; owned Runtime admission,
 actual information acquisition, complete physical evidence, fresh persistence
 and reachable installation still require integration.
 
