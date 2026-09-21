@@ -211,6 +211,14 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
+now derives exact tape/output minima for the fixed positive bucket class
+and proves why reordering plus uniform-frame enlargement cannot recover
+the n16 model realization at its packed cap. Exhaustive small checks and
+all 1,544 exposed n16 prefix queries support its finite decision scopes.
+This resolves a solver/representation question, supplies no all-decoder
+lower bound, and changes no Foundation definition or numerical relation.
+
 The [matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 is terminal at caa66f1: both schedules complete all four n8 cases, while all
 eight n16 runs retain evidence-frame refusals. All 2,298 published reference

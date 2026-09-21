@@ -6692,3 +6692,41 @@ The learner starts from the full G/Gamma/U with an empty policy; no search,
 profile, fresh evidence or installation occurs. The earlier full release
 and installation battery keep their separate scopes. The next attack is
 the paid solver/retention resource frontier, with all A1 failures retained.
+
+## 200. Solve the finite order-cost class and rule out uniform-frame recovery (2026-09-21)
+
+The actual n16 frame refusals do not justify assuming that a larger frame
+or a better elimination order completes the learner. The new exact
+[query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
+uses an order-independent subset state: remaining original factors plus
+one boundary factor per eliminated connected component, including scalar
+and isolated-component factors. For a bucket with a original and b component
+factors over j cells, M=(a+b)j, A=j/2 and G=max(b-1,0)j. The terminal join
+has A=j instead. Thus the actual partition tape has N=3+F+SUM(M+A) nodes
+and C=38+4SUM(A)+6SUM(G) floating outputs.
+
+Subset dynamic programming gives the exact lexicographic C/N minimum under
+join/live caps, and independently the N/C minimum. It supplies matching
+lower and upper bounds for this fixed anchored query-retaining bucket
+class, not every decoder or a paid Runtime search. Exhaustive compilation
+of 87,422 orders on 1,098 supports supplies 128,432 objective comparisons;
+all pass, including every returned witness and 30,882 empty table-feasible
+classes. No Torch is imported.
+
+On all 1,544 n16 native prefix queries, 1,393 orders witness all four
+structural limits, 147 queries have no order within the table caps, and
+four require at least 65,574 outputs above the 65,536 cap. No output-fitting
+minimum has an oversized tape on these cases. Three selected later cuts
+prove a minimum join of 8,192 cells, even after removing the live-cap
+restriction, with directly checked matching orders. Current natural-order
+refusals can sometimes be improved, but order search alone is insufficient.
+
+The second objective proves a distinct retention obstruction on every n16
+tape. Each binary node needs at least 65 bytes in the existing typed plan
+encoding. Minimum node counts therefore require uniform frames of at least
+13.3--16.0 million bytes. Retaining 1+3T such frames needs at least
+15,000,783,652--18,053,599,652 bytes, exceeding the whole 8-GiB packed cap
+before other state. Even ideal order selection plus uniform-frame enlargement
+cannot recover that realization. The lower bound leaves reversible encodings,
+nonuniform paid frames and other solvers open; it does not alter the native
+learner or numerical relation. All original model failures remain retained.

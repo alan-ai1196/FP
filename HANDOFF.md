@@ -2,6 +2,27 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current resource result, 2026-09-21:**
+[the exact query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
+settles the next proposed shortcuts in the actual model frontier. Current
+factor scopes depend only on the eliminated set, yielding exact additive
+tape/output costs and subset minima over all query-retaining bucket orders.
+Both output-first and node-first objectives pass 128,432 comparisons against
+87,422 directly compiled small orders. On all 1,544 n16 prefix queries,
+1,393 admit all four structural limits; 147 have no join/live-feasible order,
+and four require 65,574 outputs above the 65,536 cap. Selected hard queries
+prove an 8,192-cell minimum join. These are passive class-specific results,
+not executed continuations of A1 or Runtime certificates.
+
+Independently minimizing stored nodes proves that a uniform frame large
+enough for each n16 tape would retain at least 15.0--18.1 billion bytes,
+already above the 8-GiB packed cap. Thus reordering and uniform frame
+enlargement cannot by themselves finish this registered realization.
+The next attack is a reversible, paid evidence representation and a solver
+with its complete resource/numerical bridge. No production order, codec,
+cap or tolerance has changed. Preserve all A1 failures; do not launch a
+frame-only retry or reopen Foundation to hide these resource limits.
+
 **Current model result, 2026-09-21:**
 [the matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 is terminal at caa66f1, with all 16 jobs retained. Both schedules complete

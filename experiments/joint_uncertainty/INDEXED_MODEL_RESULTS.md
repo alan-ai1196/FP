@@ -97,3 +97,10 @@ history costs, and later dense queries can defeat the current natural order.
 Those possibilities require exact resource analysis before another actual
 attempt; they do not justify erasing counts, changing U or borrowing a
 complete-release claim. Foundation R4 and ERC-1 remain unchanged.
+
+The subsequent [exact order-class audit](../../theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
+now resolves that proposed frame/order recovery: it is insufficient under
+the existing encoding and packed cap. The audit classifies all 1,544 n16
+native prefix queries and gives independent minimum-node uniform-retention
+lower bounds. Those passive future-tape calculations do not replace or
+continue any of the actual halted jobs above.

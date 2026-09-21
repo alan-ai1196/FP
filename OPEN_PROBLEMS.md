@@ -2,6 +2,19 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The current model frontier requires a paid evidence representation and
+resource-aware decoder with a complete numerical/ownership bridge. The
+[exact order-class law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
+already rules out recovery by order search plus uniform-frame enlargement
+under the current encoding and 8-GiB packed cap. On the n16 tapes, 147 query
+cuts have no order within the table caps, four exceed the output cap at its
+exact minimum, and all four streams have a uniform-frame lower bound above
+the whole packed budget. These settled restrictions do not imply an
+all-decoder impossibility. Reversible encodings, paid nonuniform retention
+and other solvers remain open; their correctness and whole-resource costs
+must be proved before claiming recovery. The fixed native learner and
+declared numerical relation need no semantic patch.
+
 The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) now
 passes its exact CPU and scoped actual A8/A9 integration audits, including
 star recovery, retained future information, profiles, fresh evidence and
@@ -19,9 +32,10 @@ is terminal: all eight n8 runs complete with exact posterior relations and
 audited AMP words; all eight n16 runs stop at their phase-frame allowance.
 The frontier is completing growing supports and retained evidence under a
 useful whole-resource envelope. A bigger uniform frame charges every phase;
-smaller projected tapes alone do not reduce complete packed state. Analyze
-later order/tape limits before another actual attempt. The empty policy
-grants no search or installation claim, and failed prefixes remain unscored.
+smaller projected tapes alone do not reduce complete packed state. The
+exact order/retention restrictions above now narrow that problem. The empty
+policy grants no search or installation claim, and failed prefixes remain
+unscored.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary

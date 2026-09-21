@@ -1,0 +1,629 @@
+{
+  "status": "PASS_EXACT_ORDER_RESOURCE_FRONTIER",
+  "scope": "passive finite order class; no Runtime certificate, numerical continuation or model score",
+  "model_attempt": "evidence/minimal/FP_INDEXED_MODEL_A1.json",
+  "native_execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+  "decision_class": "all query-retaining binary bucket orders within each existing anchored query block; fixed power-alias interpreter and partition-only tape",
+  "structural_caps": {
+    "join_cells": 4096,
+    "logical_live_cells": 32768,
+    "tape_nodes": 262144,
+    "floating_outputs": 65536
+  },
+  "precision_scope": "cost tags only; no finite-mantissa accuracy or exponent claim",
+  "search_scope": "at most 15 free vertices; subset search and whole-resource execution remain unfunded here",
+  "small_audit": {
+    "supports": 1098,
+    "query_states": 16054,
+    "direct_compiled_orders": 87422,
+    "join_live_limit_decisions": 64216,
+    "lexicographic_objective_checks": 128432,
+    "empty_join_live_classes": 30882,
+    "vertex_guard_refusals": 2
+  },
+  "tapes": [
+    {
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "queries": 396,
+      "no_join_live_order": 0,
+      "minimum_output_exceeds_65536": 0,
+      "lex_minimum_within_all_four_limits": 396,
+      "minimum_output_fits_but_its_tape_exceeds_262144": 0,
+      "maximum_minimum_output": 61478,
+      "maximum_tape_at_minimum_output": 219521,
+      "first_output_refusal": null,
+      "first_natural_geometry_refusal": {
+        "cursor": 194,
+        "query": [
+          6,
+          9
+        ],
+        "reason": "partition join-cell allowance is insufficient for this explicit read"
+      },
+      "maximum_output_witness": {
+        "cursor": 366,
+        "query": [
+          4,
+          15
+        ],
+        "minimum_output_cells": 61478,
+        "tape_nodes_at_minimum_output": 210817,
+        "blocks": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "local_query": [
+              4,
+              15
+            ],
+            "order": [
+              4,
+              9,
+              12,
+              2,
+              0,
+              1,
+              5,
+              6,
+              7,
+              8,
+              10,
+              11,
+              13,
+              3,
+              14
+            ],
+            "partition_only_output_cells": 61478,
+            "partition_only_tape_nodes": 210817,
+            "subset_states": 1803,
+            "transitions": 9492
+          }
+        ]
+      },
+      "DP_cache_misses": 240
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        17
+      ],
+      "queries": 396,
+      "no_join_live_order": 3,
+      "minimum_output_exceeds_65536": 0,
+      "lex_minimum_within_all_four_limits": 393,
+      "minimum_output_fits_but_its_tape_exceeds_262144": 0,
+      "maximum_minimum_output": 61478,
+      "maximum_tape_at_minimum_output": 238203,
+      "first_output_refusal": null,
+      "first_natural_geometry_refusal": {
+        "cursor": 192,
+        "query": [
+          10,
+          5
+        ],
+        "reason": "partition join-cell allowance is insufficient for this explicit read"
+      },
+      "maximum_output_witness": {
+        "cursor": 328,
+        "query": [
+          4,
+          1
+        ],
+        "minimum_output_cells": 61478,
+        "tape_nodes_at_minimum_output": 207353,
+        "blocks": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "local_query": [
+              4,
+              1
+            ],
+            "order": [
+              2,
+              9,
+              14,
+              5,
+              13,
+              11,
+              4,
+              7,
+              10,
+              1,
+              6,
+              8,
+              12,
+              0,
+              3
+            ],
+            "partition_only_output_cells": 61478,
+            "partition_only_tape_nodes": 207353,
+            "subset_states": 1035,
+            "transitions": 5136
+          }
+        ]
+      },
+      "DP_cache_misses": 238
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        18
+      ],
+      "queries": 376,
+      "no_join_live_order": 89,
+      "minimum_output_exceeds_65536": 4,
+      "lex_minimum_within_all_four_limits": 283,
+      "minimum_output_fits_but_its_tape_exceeds_262144": 0,
+      "maximum_minimum_output": 65574,
+      "maximum_tape_at_minimum_output": 246407,
+      "first_output_refusal": {
+        "cursor": 276,
+        "query": [
+          2,
+          5
+        ],
+        "minimum_output_cells": 65574,
+        "tape_nodes_at_minimum_output": 246407
+      },
+      "first_natural_geometry_refusal": {
+        "cursor": 200,
+        "query": [
+          9,
+          2
+        ],
+        "reason": "partition join-cell allowance is insufficient for this explicit read"
+      },
+      "maximum_output_witness": {
+        "cursor": 276,
+        "query": [
+          2,
+          5
+        ],
+        "minimum_output_cells": 65574,
+        "tape_nodes_at_minimum_output": 246407,
+        "blocks": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "local_query": [
+              2,
+              5
+            ],
+            "order": [
+              12,
+              14,
+              11,
+              3,
+              7,
+              2,
+              6,
+              8,
+              0,
+              5,
+              9,
+              10,
+              13,
+              1,
+              4
+            ],
+            "partition_only_output_cells": 65574,
+            "partition_only_tape_nodes": 246407,
+            "subset_states": 1028,
+            "transitions": 5125
+          }
+        ]
+      },
+      "DP_cache_misses": 236
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        19
+      ],
+      "queries": 376,
+      "no_join_live_order": 55,
+      "minimum_output_exceeds_65536": 0,
+      "lex_minimum_within_all_four_limits": 321,
+      "minimum_output_fits_but_its_tape_exceeds_262144": 0,
+      "maximum_minimum_output": 40998,
+      "maximum_tape_at_minimum_output": 224753,
+      "first_output_refusal": null,
+      "first_natural_geometry_refusal": {
+        "cursor": 242,
+        "query": [
+          2,
+          7
+        ],
+        "reason": "partition join-cell allowance is insufficient for this explicit read"
+      },
+      "maximum_output_witness": {
+        "cursor": 297,
+        "query": [
+          5,
+          7
+        ],
+        "minimum_output_cells": 40998,
+        "tape_nodes_at_minimum_output": 224753,
+        "blocks": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "local_query": [
+              5,
+              7
+            ],
+            "order": [
+              12,
+              10,
+              2,
+              11,
+              5,
+              14,
+              3,
+              9,
+              13,
+              0,
+              1,
+              7,
+              8,
+              4,
+              6
+            ],
+            "partition_only_output_cells": 40998,
+            "partition_only_tape_nodes": 224753,
+            "subset_states": 1545,
+            "transitions": 7950
+          }
+        ]
+      },
+      "DP_cache_misses": 234
+    }
+  ],
+  "obstructions": [
+    {
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "uniform_frame_obstruction": {
+        "cursor": 366,
+        "query": [
+          4,
+          15
+        ],
+        "minimum_tape_nodes": 210817,
+        "initial_factor_cells": 386,
+        "minimum_binary_nodes": 210428,
+        "frame_bytes_lower_bound": 13677828,
+        "required_phases": 1189,
+        "frame_bytes_upper_from_8GiB_alone": 7224503,
+        "retained_frames_bytes_lower_bound": 16262937492,
+        "node_minimizing_order": [
+          4,
+          9,
+          12,
+          2,
+          0,
+          1,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          13,
+          3,
+          14
+        ],
+        "node_minimizing_shape": {
+          "positive_multiplications": 201212,
+          "positive_additions": 9217,
+          "largest_join_cells": 4096,
+          "peak_live_integer_cells": 9514
+        }
+      },
+      "selected_order_infeasibility_witness": null
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        17
+      ],
+      "uniform_frame_obstruction": {
+        "cursor": 328,
+        "query": [
+          4,
+          1
+        ],
+        "minimum_tape_nodes": 207353,
+        "initial_factor_cells": 374,
+        "minimum_binary_nodes": 206976,
+        "frame_bytes_lower_bound": 13453448,
+        "required_phases": 1189,
+        "frame_bytes_upper_from_8GiB_alone": 7224503,
+        "retained_frames_bytes_lower_bound": 15996149672,
+        "node_minimizing_order": [
+          2,
+          9,
+          14,
+          5,
+          13,
+          11,
+          4,
+          7,
+          10,
+          1,
+          6,
+          8,
+          12,
+          0,
+          3
+        ],
+        "node_minimizing_shape": {
+          "positive_multiplications": 197760,
+          "positive_additions": 9217,
+          "largest_join_cells": 4096,
+          "peak_live_integer_cells": 10480
+        }
+      },
+      "selected_order_infeasibility_witness": {
+        "cursor": 332,
+        "query": [
+          8,
+          7
+        ],
+        "minimum_join_cells": 8192,
+        "width_search_live_cap": 1048576,
+        "witness_order": [
+          5,
+          2,
+          12,
+          13,
+          9,
+          11,
+          0,
+          4,
+          1,
+          3,
+          8,
+          10,
+          14,
+          6,
+          7
+        ],
+        "witness_shape": {
+          "positive_multiplications": 240896,
+          "positive_additions": 10753,
+          "largest_join_cells": 8192,
+          "peak_live_integer_cells": 13144
+        }
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        18
+      ],
+      "uniform_frame_obstruction": {
+        "cursor": 276,
+        "query": [
+          2,
+          5
+        ],
+        "minimum_tape_nodes": 246407,
+        "initial_factor_cells": 392,
+        "minimum_binary_nodes": 246012,
+        "frame_bytes_lower_bound": 15990788,
+        "required_phases": 1129,
+        "frame_bytes_upper_from_8GiB_alone": 7608445,
+        "retained_frames_bytes_lower_bound": 18053599652,
+        "node_minimizing_order": [
+          12,
+          14,
+          11,
+          3,
+          7,
+          2,
+          6,
+          8,
+          0,
+          5,
+          9,
+          10,
+          13,
+          1,
+          4
+        ],
+        "node_minimizing_shape": {
+          "positive_multiplications": 235772,
+          "positive_additions": 10241,
+          "largest_join_cells": 4096,
+          "peak_live_integer_cells": 10540
+        }
+      },
+      "selected_order_infeasibility_witness": {
+        "cursor": 372,
+        "query": [
+          15,
+          1
+        ],
+        "minimum_join_cells": 8192,
+        "width_search_live_cap": 1048576,
+        "witness_order": [
+          9,
+          4,
+          10,
+          13,
+          3,
+          8,
+          1,
+          2,
+          5,
+          6,
+          7,
+          11,
+          12,
+          0,
+          14
+        ],
+        "witness_shape": {
+          "positive_multiplications": 228352,
+          "positive_additions": 10753,
+          "largest_join_cells": 8192,
+          "peak_live_integer_cells": 14642
+        }
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        19
+      ],
+      "uniform_frame_obstruction": {
+        "cursor": 297,
+        "query": [
+          5,
+          7
+        ],
+        "minimum_tape_nodes": 204785,
+        "initial_factor_cells": 370,
+        "minimum_binary_nodes": 204412,
+        "frame_bytes_lower_bound": 13286788,
+        "required_phases": 1129,
+        "frame_bytes_upper_from_8GiB_alone": 7608445,
+        "retained_frames_bytes_lower_bound": 15000783652,
+        "node_minimizing_order": [
+          12,
+          10,
+          2,
+          3,
+          11,
+          5,
+          14,
+          9,
+          13,
+          0,
+          1,
+          7,
+          8,
+          4,
+          6
+        ],
+        "node_minimizing_shape": {
+          "positive_multiplications": 195196,
+          "positive_additions": 9217,
+          "largest_join_cells": 4096,
+          "peak_live_integer_cells": 8518
+        }
+      },
+      "selected_order_infeasibility_witness": {
+        "cursor": 368,
+        "query": [
+          4,
+          13
+        ],
+        "minimum_join_cells": 8192,
+        "width_search_live_cap": 1048576,
+        "witness_order": [
+          4,
+          8,
+          11,
+          7,
+          6,
+          1,
+          2,
+          9,
+          13,
+          0,
+          5,
+          10,
+          14,
+          3,
+          12
+        ],
+        "witness_shape": {
+          "positive_multiplications": 268416,
+          "positive_additions": 11265,
+          "largest_join_cells": 8192,
+          "peak_live_integer_cells": 14686
+        }
+      }
+    }
+  ]
+}
