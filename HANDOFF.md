@@ -13,9 +13,12 @@ The256-cycle query(0,96) has(1,256), proving error<0.000883 for every admitted
 signed count vector under the declared arithmetic. Its old measured failure
 is retained; the new machine error certifies below0.000030911.61,406 exact
 node checks/1,530 forecasts pass. The512-cycle's individual forecast passes,
-but its uniform bound still exceeds0.001. The fixed new4-GiB/240-second GPU
-diagnostic is pending; no old worker is restarted, and no Runtime/native
-phase bridge or physical memory/speed advantage is claimed.
+but its uniform bound still exceeds0.001. The sole new GPU diagnostic now
+completes at0c49618:209,197 actual words/1,535 forecasts reproduce, including
+the recovered256-cycle; job peak2,206,646,272 bytes stays under4 GiB with
+no timeout/limit termination. All three radix diagnostics are terminal and
+must not be restarted. No Runtime/native phase bridge or physical memory/
+speed advantage is claimed.
 
 **Current tolerance result, 2026-09-21:** the [binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 turns the radix decoder's error proof into rigorous per-forecast decisions.

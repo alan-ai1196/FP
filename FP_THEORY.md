@@ -149,8 +149,8 @@ The [static radix-power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
 now removes avoidable mantissa casts using a syntax-proved exact exponent
 shift. Separate product/SUM roundoff budgets and positive normalization give
 a uniform error<0.000883 for the256-cycle query(0,96), under the declared
-arithmetic and exponent guards. Exact CPU audits pass; a new device protocol
-is pending. This is a numerical PRODUCT lowering, not a new semantic action
+arithmetic and exponent guards. Exact CPU audits and the sole0c49618 RTX3090
+diagnostic pass209,197 word checks and1,535 forecasts. This is a numerical PRODUCT lowering, not a new semantic action
 or a complete native-state/AMP bridge, and changes no frozen definition.
 
 ## 0. Research object and root principle

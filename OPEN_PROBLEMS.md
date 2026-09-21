@@ -5,13 +5,27 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 The [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md) now proves
 the exact-shift refinement and its error law. It recovers a uniform bound
 below0.001 on the256-cycle query(0,96) for all admitted signed counts under
-the declared RNE arithmetic.61,406 exact node checks and1,530 forecasts pass;
-the new device protocol remains pending. This does not settle larger general
+the declared RNE arithmetic. The sole0c49618 device diagnostic now matches
+209,197 words and1,535 forecasts, including61,406 exact node checks and the
+recovered256-cycle. This does not settle larger general
 product budgets: the512-cycle uniform bound is still about0.00102726 even
-though its tested point has a tight passing enclosure. Continue with actual
-arithmetic evidence, justified further precision refinement where needed,
-and an owned complete-state/phase realization. Alias metadata and exponent
+though its tested point has a tight passing enclosure. Continue with
+justified further precision refinement where needed and an owned complete-
+state/phase realization. All three radix diagnostics are terminal; do not
+restart them. Alias metadata and exponent
 work are costs; fewer rounded results are not a whole-runtime resource bound.
+
+The central representation question is now admission and complete execution,
+not another cycle-size precision constant. Can an owned lowering avoid the
+exponential explicit Program/slot tables at admission, retain its own actual
+numerical tape, and still provide a total, paid decoder for every native
+learner/cache/gradient coordinate relevant to legal continuations? The exact
+count-state theorem and the numerical results supply parts of this argument.
+They do not yet bind compact code to the actual G, Gamma, U, source interface,
+profile clocks and provenance, or account for a later full-state read or
+transition outside the compact family. A new physical schedule need not
+reproduce an older schedule's words, but it needs its own complete bridge;
+explicitly requested K-entry output retains its Omega(K) cost.
 
 The [new binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 settles individual scalar tolerance decisions without explicit likelihood

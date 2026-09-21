@@ -225,6 +225,7 @@ inaccurate realization or replace any complete native-state obligation.
 The [static radix-power refinement](RADIX9_POWER_LOWERING.md) now removes
 unnecessary half casts and proves a sharper mixed-rounding bound. Its new
 CPU audit recovers the failing256-cycle, with a uniform error<0.000883 for
-that fixed tape over all admitted signed counts. The old failure remains
+that fixed tape over all admitted signed counts. Its sole0c49618 GPU diagnostic
+also reproduces209,197 words and the improved forecasts. The old failure remains
 valid for the original schedule; the new lowering needs its own device and
 eventual complete-state evidence.

@@ -10,8 +10,10 @@ forecasts pass in the CPU audit; five stress forecasts also certify within
 0.001. The256-cycle's static bound is<0.000883 over all admitted signed counts,
 while the512-cycle still needs its per-forecast reference enclosure. On the
 four matched old stress inputs, scalar rounding results fall52,552 to7,660;
-integer/static/alias costs remain separate. The new source-bound GPU job is
-pending. Production Runtime APIs, graphs and phase evidence remain unchanged.
+integer/static/alias costs remain separate. The sole0c49618 GPU job completes:
+209,197 actual words and1,535 forecasts reproduce, with job peak2,206,646,272
+bytes under4 GiB and no timeout/limit termination. Production Runtime APIs,
+graphs and phase evidence remain unchanged. The diagnostic is terminal.
 
 The passive [radix9 tolerance reader](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 now uses the checked binary64 error theorem to enclose the exact target with

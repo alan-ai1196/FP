@@ -5829,3 +5829,31 @@ diagnostic is committed before launch and remains pending at this entry.
 It must reproduce all actual words and the new decisions. No Runtime/native
 phase bridge, model outcome, job-memory advantage or static ERC extension
 is inferred from this passive lowering.
+
+## 171. The exact-power lowering recovers the failed forecasts on RTX 3090 (2026-09-21)
+
+The sole [power-lowering diagnostic](theory/proofs/RADIX9_POWER_LOWERING.md)
+completes at0c49618 on RTX3090, Torch2.12.0+cu132/CUDA13.2. All209,197 actual
+floating words match, including105,136 rounded scalar results.1,530 small
+forecasts reproduce61,406 exact node enclosures and39,686 power checks;
+five stress forecasts certify within0.001. The256-cycle at h16 and10^12 now
+returns10065811/16777216 with error below0.000030911, versus the retained old
+error above0.0022741198408. Its uniform arithmetic-model bound remains
+below0.000883. The512-cycle's tested forecast passes, but its uniform bound
+remains above0.001 and is not upgraded by that observation.
+
+The first four matching stress forecasts require18,992 actual floating-word
+checks versus78,848 previously, and7,660 rounded results versus52,552.
+Host exponent additions, static analysis and alias metadata remain costs.
+Worker25280 exits0 under the unchanged4-GiB/240-second job, attached before
+resume, without timeout, limit termination or reader exception. Completed
+process/job peaks are2,205,425,664/2,206,646,272 bytes; Torch allocated/reserved
+peaks are930,304/2,097,152. The child includes85,800 new checked binary64
+primitives and exact diagnostic work. Raw cumulative process count2 remains;
+there is no whole-job memory or timing comparison.
+
+The15,118-byte terminal journal preserves the sole attempt. All three radix
+diagnostics and all earlier model jobs are terminal. This is a proved exact
+PRODUCT lowering with verified numerical improvement, not a new semantic
+action, a native-state/AMP bridge, installed model or resource-completeness
+certificate. Those complete owned-state obligations remain explicit.

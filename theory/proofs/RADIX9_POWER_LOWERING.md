@@ -1,7 +1,7 @@
 # Exact radix powers remove repeated half rounding
 
-Status: **PROVED, SCOPED LOWERING AND PRECISION LAW; EXACT/CPU AUDITS**.
-The new fixed CUDA diagnostic is pending at this initial commit. Earlier
+Status: **PROVED, SCOPED LOWERING AND PRECISION LAW; EXACT/ACTUAL CUDA AUDITS**.
+The sole new CUDA diagnostic completes at0c49618. Earlier
 radix diagnostics are terminal and remain unchanged, including their actual
 [accuracy failures](RADIX9_ACCURACY_ENCLOSURE.md). No Runtime, native graph,
 source interface, optimizer semantics or frozen ERC contract is changed.
@@ -206,6 +206,37 @@ changes, and no exclusive-device timing or memory advantage is claimed.
 The source-bound reader must match every retained CPU result other than its
 new positive device-word count. A passing diagnostic proves this numerical
 realization only; it does not issue Runtime, native-state/AMP or installation
-authority. The terminal record will be
-`evidence/minimal/FP_RADIX9_POWER_LOWERING_CUDA.json`; it is pending at this
-initial proof commit.
+authority. The [terminal record](../../evidence/minimal/FP_RADIX9_POWER_LOWERING_CUDA.json)
+contains the completed outcome below. It was pending at the initial proof
+commit; the registered cases, thresholds and limits did not change.
+
+## 6. Completed actual mixed-precision outcome
+
+The sole attempt completes at source
+`0c4961890bf8b16fa84a3f549f83a19546ab1506` on RTX3090, Torch2.12.0+cu132,
+CUDA13.2. All209,197 actual floating-word checks match the exact machine,
+including105,136 rounded scalar results. The1,530 small forecasts reproduce
+all61,406 exact node enclosures and39,686 power checks. All five stress
+forecasts reproduce their certified intervals and pass0.001, including the
+two256-cycle inputs whose old physical schedule failed. Their new actual
+probability is10065811/16777216, with certified error below0.000030911.
+
+The first four matching stress inputs check18,992 actual floating words,
+versus78,848 in the retained80f9538 schedule. Rounded scalar results change
+52,552 to7,660 as predicted. Host exponent additions and static-plan/alias
+metadata remain real work and storage; these counts are not total resource
+dominance. The512-cycle's pointwise outcome passes, while its larger uniform
+bound still does not decide the full0.001 class.
+
+Worker25280 exits0 after attachment before resume, with no timeout, limit
+termination or reader exception. Completed process/job commit peaks are
+2,205,425,664/2,206,646,272 bytes under4,294,967,296. Torch allocated/reserved
+peaks are930,304/2,097,152 bytes. The child includes static analysis, host
+metadata, exact node/oracle work and85,800 new checked binary64 primitives;
+the launcher is outside this measurement. Raw total_processes=2 and
+limit_terminated_processes=0 remain recorded under the one-active-process
+cap. No whole-job memory advantage or timing comparison is inferred.
+
+The terminal journal is15,118 bytes. This diagnostic and both older radix
+diagnostics are terminal and must not be restarted. The owned complete-state,
+phase, persistence and installation bridge remains a separate requirement.
