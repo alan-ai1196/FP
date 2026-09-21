@@ -15,17 +15,22 @@ state/phase realization. All three radix diagnostics are terminal; do not
 restart them. Alias metadata and exponent
 work are costs; fewer rounded results are not a whole-runtime resource bound.
 
-The central representation question is now admission and complete execution,
-not another cycle-size precision constant. Can an owned lowering avoid the
-exponential explicit Program/slot tables at admission, retain its own actual
-numerical tape, and still provide a total, paid decoder for every native
-learner/cache/gradient coordinate relevant to legal continuations? The exact
-count-state theorem and the numerical results supply parts of this argument.
-They do not yet bind compact code to the actual G, Gamma, U, source interface,
-profile clocks and provenance, or account for a later full-state read or
-transition outside the compact family. A new physical schedule need not
-reproduce an older schedule's words, but it needs its own complete bridge;
-explicitly requested K-entry output retains its Omega(K) cost.
+The central question is now **owned admission and complete execution**.
+The [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
+settles the mathematical representation part: the exact ordered G, uniform
+Gamma, selected-slot U, complete categorical source interface and every
+reference state/cache coordinate have explicit index decoders.795 native
+nodes/17,116 terms and5,427 complete caches agree; n256 point reads avoid
+constructing2^255 world entries. Width/height preflight and full-output
+allowances remain separate. Production still requires explicit Program,
+prior/slot and dense likelihood tables. Replace that admission bottleneck
+only through an owned representation with actual source/provenance and
+resource binding, its own numerical tape, complete bridge, fresh persistence
+and reachable installation. The passive reader grants none of those acts.
+A new physical schedule need not reproduce an older schedule's words, but
+explicit K-entry output retains its Omega(K) cost. Leaving this fixed family
+requires a proved encoding or funded fallback, otherwise UNRESOLVED. Do not
+return to additional cycle-size precision constants or rerun terminal jobs.
 
 The [new binary64 enclosure](theory/proofs/RADIX9_ACCURACY_ENCLOSURE.md)
 settles individual scalar tolerance decisions without explicit likelihood

@@ -153,6 +153,16 @@ arithmetic and exponent guards. Exact CPU audits and the sole0c49618 RTX3090
 diagnostic pass209,197 word checks and1,535 forecasts. This is a numerical PRODUCT lowering, not a new semantic action
 or a complete native-state/AMP bridge, and changes no frozen definition.
 
+The [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
+now describes every native relation node, ordered incidence, initializer and
+selected learner slot without expanding the world table. Combined with the
+complete count state, it recovers every reference parameter, gradient and
+cache coordinate with explicit inference and full-output costs. Exact native
+and n256 index audits pass. This identifies exponential admission tables as
+a representation choice for this fixed family, not a semantic necessity.
+Owned Runtime admission, numerical phase evidence and complete Compiler
+resource/provenance obligations remain open; no frozen definition changes.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

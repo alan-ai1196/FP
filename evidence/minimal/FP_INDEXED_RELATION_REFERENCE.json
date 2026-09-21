@@ -1,0 +1,115 @@
+{
+  "schema": "literal-anchored-relation-index-v1",
+  "exact_literal_code": [
+    {
+      "n": 2,
+      "nodes": 14,
+      "ordered_SUM_terms": 40,
+      "slots": 3
+    },
+    {
+      "n": 3,
+      "nodes": 25,
+      "ordered_SUM_terms": 100,
+      "slots": 5
+    },
+    {
+      "n": 4,
+      "nodes": 42,
+      "ordered_SUM_terms": 256,
+      "slots": 9
+    },
+    {
+      "n": 5,
+      "nodes": 69,
+      "ordered_SUM_terms": 656,
+      "slots": 17
+    },
+    {
+      "n": 6,
+      "nodes": 114,
+      "ordered_SUM_terms": 1664,
+      "slots": 33
+    },
+    {
+      "n": 7,
+      "nodes": 193,
+      "ordered_SUM_terms": 4160,
+      "slots": 65
+    },
+    {
+      "n": 8,
+      "nodes": 338,
+      "ordered_SUM_terms": 10240,
+      "slots": 129
+    }
+  ],
+  "native_phase_audit": {
+    "cases": [
+      {
+        "n": 2,
+        "depth": 3,
+        "boundary_histories": 585,
+        "transitions": 584
+      },
+      {
+        "n": 3,
+        "depth": 2,
+        "boundary_histories": 343,
+        "transitions": 342
+      }
+    ],
+    "checks": {
+      "boundary_states": 928,
+      "native_caches": 5427,
+      "observed_states": 926,
+      "committed_states": 926
+    }
+  },
+  "profile_audit": {
+    "profiles": 3,
+    "complete_state_comparisons": 39
+  },
+  "schedule_audit": {
+    "active_graphs": 64,
+    "orders_per_graph": 6,
+    "ordered_queries_per_order": 16,
+    "complete_plan_and_partition_comparisons": 6144,
+    "maximum_logical_work": {
+      "largest_join_cells": 8,
+      "peak_live_integer_cells": 30,
+      "positive_arithmetic": 50
+    }
+  },
+  "boundary_audit": {
+    "literal_binding_refusals": 14,
+    "complete_source_refusals": 5,
+    "stale_clock_pending_or_orientation_refusals": 4,
+    "preallocation_partition_refusals": 5,
+    "invalid_index_order_or_prototype_refusals": 12
+  },
+  "large_index_audit": {
+    "n": 256,
+    "logical_worlds_power_of_two": 255,
+    "signed_count_coordinates": 32640,
+    "logical_nodes": "2^256 + 66050",
+    "logical_SUM_terms": "65552 * 2^255",
+    "native_index_witnesses": 37,
+    "sampled_parameter_slots_per_state": 5,
+    "actual_count_reference_commits": 3,
+    "profile_attachment_cursor": 20,
+    "anchor_probability": "41/50",
+    "anchor_partition_integer_bits": 258,
+    "anchor_partition_work": {
+      "positive_multiplications": 510,
+      "positive_additions": 257,
+      "largest_join_cells": 2,
+      "peak_live_integer_cells": 258,
+      "maximum_integer_bits": 258,
+      "base_order_width": 0
+    },
+    "explicit_full_read_refusals": 5,
+    "scope": "exact symbolic/reference execution; no large native Program or K-entry state is materialized"
+  },
+  "scope": "exact indexed G/Gamma/U and reference coordinates; no Runtime admission, AMP bridge, physical resource or completeness certificate"
+}

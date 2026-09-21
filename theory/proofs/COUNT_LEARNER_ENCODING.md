@@ -127,6 +127,13 @@ search, integer bits and explicit K-entry output remain costs, and original
 finite-arithmetic traces still require their own paid bridge. This is a
 reference decoding improvement, not a new owned Runtime representation.
 
+The [indexed literal reference](INDEXED_RELATION_REFERENCE.md) additionally
+recovers the exact ordered Program, Gamma and selected-slot U without first
+constructing their K-entry tables. Its complete point reader preserves the
+same phase diagram and source orientation. Inference and full explicit
+output have separate preflights; descriptor identity is not the literal
+program hash, and owned Runtime admission remains a separate obligation.
+
 A future physical lowering may retain counts and materialize rounded values
 only when needed, so a temporary zero need not destroy persistent evidence.
 It must bind counts to the actual Gamma, program, source events, clocks and

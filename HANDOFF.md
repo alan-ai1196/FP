@@ -2,6 +2,25 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current admission-representation result, 2026-09-21:** the
+[indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
+recovers every native node, ordered SUM incidence, slot tie, initializer and
+selected learner slot from a fixed schema plus n. Combined with complete
+count state and the actual ordered source query, it decodes every reference
+parameter, gradient and cache coordinate.795 nodes/17,116 ordered terms,
+5,427 complete caches and1,852 observed/committed states match native code;
+6,144 inference schedules match their preflight work counts. At n256,
+three actual count-reference commits and a profile attachment preserve the
+state without constructing2^255 world entries; five full-read requests
+refuse before materialization. Inference still depends on width and integer
+height, and explicit whole-state reads still cost Omega(K). This proves a
+compact representation of the existing code, not a new native action or
+owned admission. Production still requires literal Program/prior/slot and
+dense likelihood tables. Next work is the owned indexed admission and
+complete numerical phase bridge, including resource/identity/provenance
+binding and reachable installation. Do not add more cycle-size constants
+or rerun any terminal GPU/model diagnostic. No Runtime API changes here.
+
 **Current precision refinement, 2026-09-21:** the [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
 removes repeated half casts at products by proved radix powers. A syntax-only
 invariant covers inputs1/9/factors and products of powers; it never mistakes

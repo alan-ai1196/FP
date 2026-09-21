@@ -5857,3 +5857,52 @@ diagnostics and all earlier model jobs are terminal. This is a proved exact
 PRODUCT lowering with verified numerical improvement, not a new semantic
 action, a native-state/AMP bridge, installed model or resource-completeness
 certificate. Those complete owned-state obligations remain explicit.
+
+## 172. Exact indexed code removes the need for initial world tables (2026-09-21)
+
+The [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
+advances from scalar decoding to code admission and complete reference
+coordinates. A fixed schema and n describe the same literal world-slot
+Program: every source, PRODUCT, indicator SUM and head incidence has an
+exact index decoder. Native lexicographic world order, empty SUMs, eight
+repeated incidences and all slot ties are preserved. The uniform Gamma and
+selected unit-rate/unit-event U have corresponding point descriptions.
+The descriptor is not substituted for the native serialized program hash.
+
+Combined with C=(n,d,pending,cursor,steps) and the actual ordered categorical
+source row, this recovers every reference parameter, ambient gradient and
+cache field. The gradient uses the actual pending query even when the view
+is bound to another query. Cursor/step/pending/orientation changes invalidate
+the binding. Unsupported priors, learner settings or source domains require
+another encoding or funded fallback; they are not declared illegal FP.
+
+The code proof gives2n+n^2+2K+2 nodes andK(n^2+16) SUM terms, K=2^(n-1).
+Point code access does not require these tables. State access still needs
+normalization: a metadata-only simulation checks the declared elimination
+schedule's join cells, live cells, table arithmetic and integer height before
+powers or numerical tables are built. Full native output has a separate
+Omega(K) cost and is refused before allocation when its allowance fails.
+Logical decoder metrics are not whole-process resource certificates.
+
+Exact comparison checks795 nodes,17,116 ordered terms and261 slots across
+n2..8. The complete phase audit checks928 boundary histories,5,427 native
+caches and926 observed/926 committed states, with39 more profile comparisons.
+All64 n4 active graphs,6 elimination orders and16 ordered queries give6,144
+matching plans/partitions. Fourteen code/initialization/learner/interface
+mutations, five malformed source rows, four stale bindings, five preflight
+failures and twelve invalid index/order/prototype cases are rejected.
+
+With the literal builder disabled, n256 executes three count-reference
+commits and a profile attachment;37 sampled code incidences and selected
+complete-state coordinates match independent formulas. The first anchor
+observation has Z=5K and forecast41/50, using258-bit partition integers,
+two-cell joins and767 table operations. A later relative event has Z=25K;
+a diagonal retains its nonzero pending gradient. Five exponential full-read
+requests refuse. No large native graph, GPU job or model experiment executes.
+
+Production still requires exact Program objects, prior/selected-slot tuples
+and dense likelihood preparation tables. This is an implementation mismatch
+with a proved compact representation, not a Foundation counterexample or a
+completed Runtime path. Owned indexed admission, source/provenance/resource
+binding, complete numerical phase evidence, fresh persistence and reachable
+installation remain the next work. All earlier GPU/model jobs stay terminal.

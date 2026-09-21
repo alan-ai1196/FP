@@ -2,6 +2,20 @@
 
 ## Current implementation state (2026-09-21)
 
+The passive [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
+now binds a compact description to every ordered native node/incidence,
+uniform Gamma, selected-slot U and complete categorical source interface.
+Its exact point reader retains all count-state clocks and pending gradients;
+5,427 native caches,1,852 observed/committed states and39 profile states pass.
+Full code comparison checks795 nodes and17,116 terms. Metadata-only inference
+preflight agrees on6,144 schedules and refuses five unfunded reads before
+entering numerical decoding. The n256 example disables the literal builder,
+executes three count-reference commits and refuses five exponential full
+outputs. This is an exact reference representation with logical work metrics,
+not a physical resource certificate or production integration. Runtime
+Program admission, dense likelihood preparation, AMP phases and ownership
+remain unchanged; an owned compact path is still required.
+
 The passive [static radix-power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
 shares a mantissa and adds exponents only when syntax proves one input is an
 exact power. Remaining products retain actual half arithmetic in the fixed

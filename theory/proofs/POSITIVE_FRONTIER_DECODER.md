@@ -159,6 +159,14 @@ has its own operation order, intermediates, gradients and retained phase
 frames. Replacing its executor or encoding those frames requires a complete
 paid realization and bridge proof. None is issued by this passive solver.
 
+The [indexed literal reference](INDEXED_RELATION_REFERENCE.md) now also
+provides every code node/incidence, Gamma entry and selected learner slot
+without a pre-existing world table. Its metadata-only schedule preflight
+guards this decoder before powers or numerical tables are built. The n256
+point example and complete small native comparisons pass, while whole-state
+output retains its explicit size. This supplies a compact code binding and
+reference reader, not an owned production or numerical phase substitution.
+
 ## 4. One irreducible component can have a cheap decoder
 
 Let the active observation graph be a single cycle on n>=3 vertices. Its
