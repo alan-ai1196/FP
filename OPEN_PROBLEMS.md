@@ -2,6 +2,15 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The immediate obstacle is [owned indexed prediction input binding](theory/proofs/INDEXED_INPUT_ALIAS.md).
+Real CPU Runtime now demonstrates a source-map mutation that changes the
+published forecast and complete native update, plus two count aliases that
+rewrite earlier snapshots. Independent checks against the same mutated
+inputs do not establish the original causal context or predecessor.
+Three actual CUDA probes are registered before repair. Their outcomes and
+a paid boundary preserving live/history state take priority over the order
+solver; the latter remains unimplemented. No Foundation action is needed.
+
 The 23-job actual A1 gate is terminal at b53889e for the
 [byte-only evidence repair](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md).
 CPU and actual evidence reject both input-alias forgeries: the compressor has no
@@ -12,8 +21,8 @@ jobs pass, including numerical, lineage, fresh/install and gradient faults.
 Both model readers pass but the prefixes remain unresolved at173/194; the
 compressed path now reaches the reference join cap. This remains a
 component interface proof, not a Python sandbox or compressor-bit-pattern
-certificate. The observed alias mismatch is closed. The immediate question
-is the paid solver and growing-support restrictions below.
+certificate. That writer alias mismatch is closed. The upstream input
+counterexamples above are distinct; paid decoding follows their repair.
 
 The former reversible candidate has a
 [complete byte left inverse and indexed upper bound](theory/proofs/LOSSLESS_PHASE_ENCODING.md).

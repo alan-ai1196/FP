@@ -1,0 +1,161 @@
+{
+  "status": "FALSIFIED_OWNED_REFERENCE_INPUT_BINDING",
+  "scope": "actual CPU Runtime; no numerical owner mock",
+  "production_source": "a559d7a965c3905e463377fc8a48894f1e9cc4e8",
+  "rows": [
+    {
+      "case": "planner-sources",
+      "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+      "method": "prepare_prediction",
+      "only_mutated_argument": "ordinary writes to the supplied mapping only",
+      "recorded_actual_query": [
+        0,
+        1
+      ],
+      "produced_reference_query": [
+        1,
+        2
+      ],
+      "legal_history_probabilities": [
+        "1/2",
+        "1/2"
+      ],
+      "produced_reference_probabilities": [
+        "41/50",
+        "9/50"
+      ],
+      "published_prediction": true,
+      "prediction_status": "PREDICTED_REFERENCE",
+      "failure": null,
+      "original_counts": [
+        0,
+        0,
+        1
+      ],
+      "retained_counts_before_next_target": [
+        0,
+        0,
+        1
+      ],
+      "earlier_snapshot_native_payload_changed": false,
+      "pre_target_cursor": 1,
+      "pre_target_received_target": null,
+      "continuation": {
+        "actual_received_history": [
+          [
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "legal_counts": [
+          1,
+          0,
+          1
+        ],
+        "published_counts": [
+          0,
+          0,
+          2
+        ],
+        "cursor": 2,
+        "literal_native_theta": [
+          "1",
+          "81/100",
+          "9/100",
+          "1/100",
+          "9/100"
+        ],
+        "published_native_theta": [
+          "1",
+          "81/164",
+          "1/164",
+          "1/164",
+          "81/164"
+        ],
+        "full_native_update_is_wrong": true
+      }
+    },
+    {
+      "case": "planner-counts",
+      "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+      "method": "prepare_prediction",
+      "only_mutated_argument": "mutation of the supplied CountState only",
+      "recorded_actual_query": [
+        1,
+        2
+      ],
+      "produced_reference_query": [
+        1,
+        2
+      ],
+      "legal_history_probabilities": [
+        "41/50",
+        "9/50"
+      ],
+      "produced_reference_probabilities": [
+        "9/50",
+        "41/50"
+      ],
+      "published_prediction": true,
+      "prediction_status": "PREDICTED_REFERENCE",
+      "failure": null,
+      "original_counts": [
+        0,
+        0,
+        1
+      ],
+      "retained_counts_before_next_target": [
+        0,
+        0,
+        -1
+      ],
+      "earlier_snapshot_native_payload_changed": true,
+      "pre_target_cursor": 1,
+      "pre_target_received_target": null
+    },
+    {
+      "case": "executor-counts",
+      "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+      "method": "execute_prediction",
+      "only_mutated_argument": "mutation of the supplied CountState only",
+      "recorded_actual_query": [
+        1,
+        2
+      ],
+      "produced_reference_query": [
+        1,
+        2
+      ],
+      "legal_history_probabilities": [
+        "41/50",
+        "9/50"
+      ],
+      "produced_reference_probabilities": [
+        "9/50",
+        "41/50"
+      ],
+      "published_prediction": true,
+      "prediction_status": "PREDICTED_REFERENCE",
+      "failure": null,
+      "original_counts": [
+        0,
+        0,
+        1
+      ],
+      "retained_counts_before_next_target": [
+        0,
+        0,
+        -1
+      ],
+      "earlier_snapshot_native_payload_changed": true,
+      "pre_target_cursor": 1,
+      "pre_target_received_target": null
+    }
+  ]
+}

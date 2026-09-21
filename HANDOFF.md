@@ -2,6 +2,18 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**New input-binding counterexample: indexed extension HOLD.**
+The [real CPU Runtime probes](theory/proofs/INDEXED_INPUT_ALIAS.md) show that
+a planner can modify its supplied source dictionary and publish41/50 for
+an actual context requiring1/2. The following actual target commits the
+wrong native count. Two count-record mutations also publish wrong forecasts
+and change an earlier snapshot. These are supplied-argument attacks, without
+owner globals or a numerical-owner mock. Production is still a559d7a.
+Three fresh CUDA probes are registered in `audit_indexed_source_binding.py`;
+their outcomes must precede repair. The paid order implementation has not
+started; source stability now has priority. The byte-only codec's scoped
+gate below remains valid and does not establish upstream causal input binding.
+
 **Current resource result, 2026-09-21:**
 The [byte-only evidence boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 replaces the unsafe record-taking Runtime codec. Runtime keeps the checked

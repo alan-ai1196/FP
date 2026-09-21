@@ -6954,3 +6954,33 @@ general endpoint-anchoring repair, without overstating a fixed-anchor lower
 bound. The script, proof and minimal evidence are retained. No production
 order, anchor, numerical tolerance, cap or semantic action changes. The
 next work remains paid decoding and its complete numerical/ownership bridge.
+
+## 207. Find a causal-input forgery before extending the order planner (2026-09-21)
+
+Tracing the proposed paid planner's ownership reveals a stronger mismatch
+than a resource refusal. Runtime supplies its live native state and source
+dictionary to preparation, then checks the result against those same inputs.
+After the actual n3 event(1,2,0), a helper clears only its supplied mapping
+and replaces query(0,1) with(1,2), then calls honest preparation. CPU Runtime
+retains the actual context but publishes41/50 instead of1/2. After the actual
+target0, it commits counts(0,0,2) instead of(1,0,1). Independent literal native
+execution also disagrees with the complete published theta.
+
+Two further real CPU probes flip only a supplied CountState from(0,0,1) to
+(0,0,-1), once in preparation and once through the already checked execution
+plan. Both publish9/50 instead of41/50 without a new target or cursor advance.
+The live native history and an earlier snapshot both change. The latter
+attacks use the same supplied-frozen-record mutation class as the former
+writer counterexample; the source-map case needs only ordinary dict writes.
+No owner global, stack inspection, arbitrary process memory or mocked
+numerical owner is involved.
+
+The deterministic reproducer and exact evidence are retained. Production
+remains a559d7a. Three fresh4-GiB/900-second CUDA jobs are registered: the
+source-map case tests prediction followed by a complete actual observation;
+the count cases test whether AMP refusal still leaves corrupted native and
+historical state. Actual outcomes are pending and must precede repair.
+The indexed input boundary is HOLD; paid order implementation has not begun.
+Foundation, native algebra and the byte-only codec's isolated retention
+proof remain unchanged. The missing premise is stable causal input across
+delegation, not another semantic architecture action.

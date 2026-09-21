@@ -211,6 +211,14 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [indexed supplied-input counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md)
+now put that extension on HOLD: real CPU Runtime accepts a changed helper
+source mapping as the actual query and commits a wrong native update;
+count-record aliases also change earlier snapshots. Three actual CUDA probes
+are registered and pending. This is a causal input/ownership mismatch in
+the implementation, with no new Foundation action or invalid partition
+identity. The separate byte-only retention result below remains scoped.
+
 The [lossless phase representation](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
 preserves the entire old typed record through an independent streaming
 left inverse. Its scoped indexed bound E<=12(N+C)+B removes the old

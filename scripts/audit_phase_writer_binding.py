@@ -126,18 +126,24 @@ def preflight():
         'job_cap':indexed.CAP,'deadline_ms':900000,'fresh_owner_per_job':True}
 
 
-def matrix(attempt):
+def matrix(attempt, *, script=None, cases=None, journal_prefix='FP_PHASE_WRITER_ALIAS_CUDA',
+           registration_fn=None, production_anchor='3d3711e',
+           result_status='ACTUAL_WRITER_INPUT_ALIAS_COUNTEREXAMPLE',
+           final_status='FALSIFIED_WRITER_INPUT_BINDING'):
     assert attempt>0
-    output = ROOT/f'evidence/minimal/FP_PHASE_WRITER_ALIAS_CUDA_A{attempt}.json'
+    script = Path(__file__).resolve() if script is None else Path(script).resolve()
+    cases = CASES if cases is None else cases
+    registration_fn = preflight if registration_fn is None else registration_fn
+    output = ROOT/f'evidence/minimal/{journal_prefix}_A{attempt}.json'
     assert not output.exists(), 'do not overwrite any actual attempt'
     git = registration.model.git
     source = git('rev-parse','HEAD')
     def clean():
         assert git('rev-parse','HEAD')==source
         assert not git('status','--porcelain','--',*registration.DEPENDENCIES)
-        assert not git('diff','3d3711e','--','src/reference_compiler'), 'probe the unchanged production source'
+        assert not git('diff',production_anchor,'--','src/reference_compiler'), 'probe the unchanged production source'
     clean()
-    report = {'status':'REGISTERED_NOT_COMPLETED','execution_source':source,'registration':preflight(),'workers':[]}
+    report = {'status':'REGISTERED_NOT_COMPLETED','execution_source':source,'registration':registration_fn(),'workers':[]}
     def publish():
         temp = output.with_suffix('.tmp')
         temp.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
@@ -146,13 +152,13 @@ def matrix(attempt):
     directory = Path(tempfile.mkdtemp(prefix='fp-phase-alias-',dir=ROOT)).resolve()
     assert directory.parent==ROOT.resolve()
     stop = False
-    for case in CASES:
+    for case in cases:
         path = directory/(case+'.json')
         row = {'case':case,'worker_status':'FAILED'}
         print('START '+case,flush=True)
         try:
             clean()
-            job = run_in_job(str(Path(__file__).resolve()),('--worker',case,'--output',path),
+            job = run_in_job(str(script),('--worker',case,'--output',path),
                 commit_limit=indexed.CAP,timeout_ms=900000)
             row['completed_job'] = asdict(job)
             if path.exists():
@@ -165,7 +171,7 @@ def matrix(attempt):
             if job.exit_code==0 and not job.timed_out and not job.limit_terminated_processes:
                 assert job.attached_before_resume and job.peak_job_commit<=indexed.CAP
                 assert row['result']['process_id']==job.process_id
-                assert row['result']['status']=='ACTUAL_WRITER_INPUT_ALIAS_COUNTEREXAMPLE'
+                assert row['result']['status']==result_status
                 row['worker_status']='COUNTEREXAMPLE_REPRODUCED'
             else:
                 stop = True
@@ -181,7 +187,7 @@ def matrix(attempt):
             path.unlink()
         if stop:
             break
-    report['status']='STOPPED_EXECUTION_OR_AUDIT_FAILURE' if stop else 'FALSIFIED_WRITER_INPUT_BINDING'
+    report['status']='STOPPED_EXECUTION_OR_AUDIT_FAILURE' if stop else final_status
     publish()
     directory.rmdir()
     if stop:

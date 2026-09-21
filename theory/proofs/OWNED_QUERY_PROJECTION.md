@@ -1,6 +1,11 @@
 # Owned exact query projection with the complete native state
 
 Status: **IMPLEMENTED REFERENCE REFINEMENT; EXACT AND OWNED CPU AUDITS PASS**.
+The valid-input arithmetic results below remain. Subsequent
+[supplied-input alias counterexamples](INDEXED_INPUT_ALIAS.md) at a559d7a
+falsify the unqualified helper-binding conclusion: a shared source mapping
+or CountState can change before its own comparison. This indexed boundary
+is HOLD, with three actual CUDA probes registered before repair.
 The independently declared AMP schedule remains global. Its actual A5
 integration audit passes all thirteen cases atae7f915; no projected physical
 kernel or complete release is claimed here.
@@ -61,6 +66,10 @@ refinement with guarded point readers, not equivalence to a literal array
 execution under identical physical resources.
 
 ## 2. Plans cannot determine their own input or funding
+
+The comparisons described here are insufficient when the helper can mutate
+their input aliases. The linked counterexamples take precedence over any
+unqualified source/predecessor binding claim in this section.
 
 The Runtime obtains the query independently from its owned source row and
 checks the plan's complete predecessor, ordered query and integer limit.

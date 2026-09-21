@@ -2,6 +2,15 @@
 
 ## Current implementation state (2026-09-21)
 
+**Indexed input binding is HOLD.** Three
+[actual CPU counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md) at a559d7a
+show supplied source/count aliases bypassing the plan checks. Ordinary
+dictionary mutation publishes41/50 where the retained actual context requires
+1/2, then commits the wrong native update. Count mutations before or after
+plan validation also change old snapshots. No production repair is present;
+three fresh source-bound CUDA probes are registered and pending. The next
+step is stable owned inputs before adding paid order search.
+
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps
 the checked record and serialization iterator; the encoder receives only
