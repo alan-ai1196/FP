@@ -2,17 +2,28 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The first reversible candidate now has a
+The immediate experiment is the registered 23-job actual gate for the
+[byte-only evidence repair](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md).
+CPU evidence now rejects both input-alias forgeries: the compressor has no
+record/plan capability, only immutable bytes; Runtime owns serialization,
+frame writes and full independent recovery checks. Its paid 64-KiB staging,
+bounded expansion and failure retention are explicit. Actual numerical,
+lineage, fresh/install and model evidence is still pending. This remains a
+component interface proof, not a Python sandbox or compressor-bit-pattern
+certificate. Passing that gate would close the observed alias mismatch,
+not the paid solver and growing-support restrictions below.
+
+The former reversible candidate has a
 [complete byte left inverse and indexed upper bound](theory/proofs/LOSSLESS_PHASE_ENCODING.md).
 It fits four hard passive records without dropping a field; actual A1 moves
 the matched n16 cursor173 to194 before the reference join cap. Its15 other
 integration/fault cases and all1498 sealed records pass. CPU and actual
-writer-input alias counterexamples put this codec extension on HOLD: the writer
+writer-input alias counterexamples falsify its Runtime interface: the writer
 can mutate the same phase object used by the subsequent expected-byte
 check. Both actual probes at ba48cb3 publish false output/plan conformance,
 with unchanged words and no target or native learner advance. The probes
-are terminal; repairing immutable input binding and its paid workspace is
-the immediate question. Ordinary zlib already beats the custom format's
+are terminal and that registration is now retired. Actual validation of
+the replacement is the immediate question. Ordinary zlib beats the custom format's
 passive byte count. Do not protect that format
 or treat invertibility as execution binding. Uniform frames remain paid,
 and the table/output obstructions below still apply.

@@ -3,13 +3,38 @@
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
 **Current resource result, 2026-09-21:**
+The [byte-only evidence boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
+replaces the unsafe record-taking Runtime codec. Runtime keeps the checked
+phase and canonical iterator private; a standard zlib encoder receives only
+immutable chunks of at most 65,536 bytes. Runtime owns the full frame and
+compares every expanded byte before its unchanged immutable sealer and
+acceptance. The declared fault class excludes arbitrary process-memory
+attacks and trusts the canonical serializer and independent format reader.
+It certifies full record recovery, not a unique compressed bit pattern.
+One actual reusable 64-KiB staging buffer is paid before CUDA binding;
+complete frames, finalization copies and the expansion tariff remain paid.
+Transient/C-library memory remains under the whole-process job limit.
+
+Exact CPU checks pass: 23 round trips, 1,177,634 recovered bytes, 1,152 bit
+variants (1,150 refused; two valid identical expansions), all 144 truncations,
+eight byte-only faults, ten retention resource refusals, a multi-block Unicode
+record and staging refusal before CUDA binding. Both old forgeries now
+refuse without changing the original phase or plan in the mocked-owner
+retention fixture. The retired record-taking codec cannot be registered.
+**Actual validation is pending:** `scripts/run_phase_deflate.py` registers
+23 fresh jobs, including numerical/plan/lineage/fresh/install regressions,
+actual byte faults and the matched n16/c2 seed16 model pair. Commit all inputs
+before A1, keep HEAD fixed while live, and retain every outcome. No new
+release or recovered model follows from CPU evidence alone.
+
+**Preceding byte theorem and falsified interface:**
 The [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md) now has
 an independent streaming left inverse for every byte of the old typed
 record. Full indexed records obey E<=12(N+C)+B under the stated bounds.
 Four hard passive n16 records shrink from 22.7--26.7 MB to 2.91--3.42 MB,
 with B=4507--4781. These are CPU RNE candidate orders, not executed Runtime
 continuations; the 65574-output fixture still exceeds the output cap.
-Runtime declares the codec, prepays its work and checks the full decoded
+At source 3d3711e Runtime declares the codec, prepays its work and checks the full decoded
 record before paid immutable sealing and acceptance. CPU primitive,
 bit-fault, bound and retention audits pass; the retention fixture explicitly
 mocks its numerical owner. The unchanged 270-prediction/540-observation RNE
@@ -22,7 +47,7 @@ All1498 sealed records pass;33 common model readout rows are identical.
 Both model prefixes remain unscored, with targets unrevealed. Maximum job
 commitment is5309132800 bytes. Full frames/padding remain paid.
 
-**New binding obstacle: this codec extension is HOLD.** A retention
+**The former binding claim is falsified; that Runtime codec is retired.** A retention
 counterexample mutates the phase/plan object supplied to the writer, then
 encodes it honestly. Both sides of the later comparison see the mutation.
 False output counts and a false count address seal with unchanged lengths,
@@ -33,10 +58,10 @@ production unchanged from3d3711e. Runtime publishes checked phases with
 support(1,2) and actual words remain. Both jobs are terminal below4 GiB;
 maximum2191769600 bytes. Targets remain unrevealed and native learners
 do not advance. `FP_PHASE_WRITER_ALIAS_CUDA_A1.json` retains both witnesses.
-Do not rerun them or the terminal17-job matrix before changing the design.
+Do not rerun the terminal probes or the old 17-job matrix on the replacement.
 The byte left-inverse theorem remains valid; execution binding does not
 follow from it. Do not add another comparison against the same mutable
-alias. Bind immutable input before delegation, with its workspace paid.
+alias. The replacement above removes this alias; its actual gate is pending.
 Ordinary zlib also compresses the four old complete records to0.96--1.13 MB,
 beating the custom format's observed size; do not defend an unnecessary
 format or mistake a passive compression result for Runtime authority.

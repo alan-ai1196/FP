@@ -6842,3 +6842,43 @@ interface or independently bind the whole record to owned execution inputs,
 including paid workspace and failure retention. The stronger conventional
 compression baseline makes a simpler immutable-byte interface worth testing.
 All earlier byte theorems, scoped A1 outcomes and both counterexamples remain.
+
+## 204. Keep execution authority private across a byte-only compressor (2026-09-21)
+
+The repair removes the mutable capability rather than checking the same alias
+again. Runtime keeps the checked phase and canonical iterator private and
+passes only immutable chunks of at most 65,536 bytes to a no-argument encoder.
+Runtime alone writes the prepaid frame and compares every expanded byte
+before its unchanged immutable sealer and acceptance. Under the declared
+component fault model, the encoder cannot change the source record. The
+serializer and independent format reader remain trusted; no Python sandbox
+or arbitrary-memory attestation is claimed.
+
+Standard zlib replaces the unnecessary custom Runtime format. Its configured
+parameters and compile/runtime versions enter the contract identity; the old
+record-taking registration refuses and its passive grammar remains. One real
+reusable 64-KiB staging buffer is owned before CUDA binding. Full frames,
+sealing copies and an explicit expansion tariff remain paid. The tariff is
+not a bound on zlib instructions or total Python/C heap; actual transient
+memory remains under the whole-process job limit. No complete uncompressed
+record body is created by this path.
+
+CPU evidence checks 23 round trips over 1,177,634 bytes, 1,152 single-bit
+variants, every 144 truncations, trailing/second-stream inputs, bounded
+expansion and aggregate preflight. Two bit variants legitimately recover
+the identical record: the decision class is full recovery, not canonical
+compressed bits. The actual retention hook with a mocked numerical owner
+rejects eight byte-only faults, including both old forgeries, while preserving
+the original phase/plan/readout. Two successful frames, an additional
+329,625-byte Unicode record, ten resource refusals and staging refusal before
+CUDA binding pass. The existing full canonical encoding audit also passes.
+
+Twenty-three fresh actual jobs are registered in `run_phase_deflate.py`:
+legacy/deflate profile controls, projected and n256 integration, fresh
+installation/continuation, numerical/plan adversaries, the byte-only interface,
+eight prediction faults, two observation faults and the matched global
+n16/c2 seed16 model pair. Whole-job, packed, frame, output, numerical and
+native/data limits are unchanged; the compressed path pays its extra staging
+and work. All dependencies must be committed before execution and frozen
+while live. Actual results are pending; no new release or model recovery is
+asserted by the CPU result or registration. Foundation R4 and ERC-1 are unchanged.

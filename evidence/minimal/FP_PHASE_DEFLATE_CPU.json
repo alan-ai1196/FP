@@ -1,0 +1,94 @@
+{
+  "status": "PASS_BYTE_ONLY_PHASE_CPU",
+  "encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+  "primitive": {
+    "round_trips": 23,
+    "full_bytes_checked": 1177634,
+    "single_bit_variants_checked": 1152,
+    "bit_variants_refused_by_decoder": 1150,
+    "bit_variants_with_identical_expansion": 2,
+    "bit_variants_requiring_owner_content_refusal": 0,
+    "all_truncations_refused": 144,
+    "trailing_or_second_stream_refusals": 2,
+    "immutable_chunk_and_lifecycle_refusals": 8,
+    "expansion_bomb_refused": true,
+    "aggregate_input_guard_precedes_size_traversal": true,
+    "old_mutable_record_codec_registration_refused": true
+  },
+  "retention": {
+    "scope": "real Runtime retention with explicitly mocked numerical owner; no CUDA authority",
+    "successful_frames": 2,
+    "older_immutable_frame_preserved": true,
+    "paid_reusable_staging_bytes": 65536,
+    "additional_multiblock_UTF8_frame_bytes": 329625,
+    "multiblock_immutable_encoder_input_lengths": [
+      116,
+      65536,
+      65536,
+      65536,
+      65536,
+      65536,
+      1945
+    ],
+    "faults": [
+      {
+        "case": "output-count",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "plan-position",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "readout",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "input-mutation",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "nonbytes",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "oversized",
+        "status": "UNRESOLVED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "truncated",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      },
+      {
+        "case": "trailing",
+        "status": "EXECUTION_FAILED",
+        "original_record_and_plan_unchanged": true
+      }
+    ],
+    "resource_refusals": [
+      "frame-1",
+      "frame-2",
+      "frame-3",
+      "frame-4",
+      "frame-5",
+      "frame-6",
+      "frame-7",
+      "frame-8",
+      "final-frame",
+      "prepaid-work"
+    ]
+  },
+  "staging_refused_before_CUDA_binding": true,
+  "staging_admission_allocation_kinds": [
+    "immutable_run_manifest",
+    "cuda_raw_readout_workspace",
+    "cuda_phase_byte_staging"
+  ]
+}

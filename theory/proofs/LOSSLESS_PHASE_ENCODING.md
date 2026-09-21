@@ -3,8 +3,11 @@
 Status: proved byte reconstruction on the declared typed domain; CPU and
 the scoped actual A1 matrix pass. Writer-input alias counterexamples in
 both CPU and actual CUDA invalidate unqualified evidence/execution
-binding. Both actual probes are terminal at ba48cb3; this codec
-extension is HOLD for further model use pending that boundary's repair.
+binding. Both actual probes are terminal at ba48cb3. This record-taking
+Runtime codec is now retired; the passive grammar and byte law remain.
+The [byte-only replacement](BYTE_ONLY_PHASE_EVIDENCE.md) has exact CPU
+evidence and a registered actual gate, still pending. Integration statements
+below describe the original source-bound implementation and experiments.
 Foundation R4, ERC-1, native learning and numerical
 tolerances are unchanged. This is a physical representation, with an
 explicit contract identity and work tariff, not a new architecture action.
@@ -331,8 +334,9 @@ not a counterexample to the byte theorem or a new semantic action.
 The repair must bind the input before delegation and prevent helper access
 to mutable authority. Repeating the same check against the same alias does
 not establish that boundary. Immutable canonical bytes plus a standard
-compressor are a candidate, but their workspace, work, failure retention
-and actual bridge still require an implementation and evidence.
+compressor are now implemented in the [byte-only replacement](BYTE_ONLY_PHASE_EVIDENCE.md).
+Its paid staging, work and failure retention pass CPU checks; its registered
+actual bridge is pending. No claim below transfers that gate in advance.
 
 The outstanding scientific question is how far a paid lossless encoding
 can move the actual execution boundary. The 147 empty join/live order

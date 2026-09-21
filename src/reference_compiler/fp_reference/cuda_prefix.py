@@ -25,6 +25,7 @@ from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
 from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
 from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
 from .phase_encoding import ENCODING_ID as BINARY_PHASE_ENCODING_ID
+from .phase_deflate import ENCODING_ID as DEFLATE_PHASE_ENCODING_ID
 
 LEGACY_PHASE_ENCODING_ID = 'typed-reference-json-v4'
 
@@ -54,15 +55,15 @@ class CudaPrefixContract:
 
     def __post_init__(self):
         if (type(self.evidence_encoding) is not str or self.evidence_encoding not in
-                (LEGACY_PHASE_ENCODING_ID,BINARY_PHASE_ENCODING_ID)):
+                (LEGACY_PHASE_ENCODING_ID,DEFLATE_PHASE_ENCODING_ID)):
             raise ContractError('fixed registered CUDA evidence encoding required')
         if self.likelihood_encoding is not None:
             if type(self.likelihood_encoding) is not LikelihoodEncodingContract:
                 raise ContractError('registered immutable likelihood encoding contract required')
             self.likelihood_encoding.__post_init__()
         backend, work_model, forward = self._arithmetic_ids()
-        if self.evidence_encoding == BINARY_PHASE_ENCODING_ID:
-            work_model += '+prepaid-lossless-phase-expansion-v1'
+        if self.evidence_encoding == DEFLATE_PHASE_ENCODING_ID:
+            work_model += '+prepaid-byte-only-phase-compression-v1'
         if (self.backend_id not in ('', backend) or self.forward_id != forward
                 or self.work_model not in ('', work_model)):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')

@@ -220,8 +220,14 @@ prepays the codec and checks all decoded bytes before acceptance. Actual
 A1 passes its registered integration faults and moves the n16 cursor173
 to194. CPU and actual alias witnesses nevertheless show that a writer and
 its checker can share a mutated expected record. Both actual probes at
-ba48cb3 publish false local output/plan conformance with unchanged words;
-the codec extension is HOLD pending a bound immutable input interface.
+ba48cb3 publish false local output/plan conformance with unchanged words.
+That record-taking Runtime codec is now retired. The
+[byte-only replacement](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md) keeps the
+checked record private and gives a standard compressor only immutable
+chunks; Runtime compares the complete expansion. Its explicit component
+fault model supplies the missing source-stability premise. Paid staging,
+full frames and failure retention have exact CPU evidence; the 23-job actual
+gate is registered and pending. No new release follows before that gate.
 The byte theorem remains valid and supplies no execution-binding theorem. Equal
 information does not imply equal physical histories, free decoding or
 identical resource-constrained continuations. Foundation and ERC-1 remain

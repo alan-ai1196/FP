@@ -21,8 +21,8 @@ from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .indexed_relation import IndexedRelation, DecodeAllowance
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine, IndexedPredictionPlan)
-from .encoding import packed_size, write_packed, fragments
-from . import phase_encoding as phase_codec
+from .encoding import packed_size, write_packed, fragments, bounded_packed_size
+from . import phase_deflate as phase_codec
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
 from .policy import (CompilerPolicy, CudaCompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot,
@@ -458,6 +458,12 @@ class ReferenceCompilerRuntime:
                 {'reference_payload_bytes': readout_bytes, 'physical_objects': 1}, self._chi)
             self._ledger.allocate(self._data_owner, (readout,))
             self._buffers[readout_id] = bytearray(readout_bytes)
+            if cuda.evidence_encoding == phase_codec.ENCODING_ID:
+                self._event_router.charge_work('information', {'work':phase_codec.BLOCK}, 'bind-phase-byte-staging')
+                staging_id = f'{self._runtime_id}:cuda-phase-byte-staging'
+                self._ledger.allocate(self._data_owner,(ObjectSpec(staging_id,'cuda_phase_byte_staging',
+                    {'reference_payload_bytes':phase_codec.BLOCK,'physical_objects':1},self._chi),))
+                self._buffers[staging_id] = bytearray(phase_codec.BLOCK)
             self._cuda = _CudaPrefix(cuda)
         initial = self._construct(initial_program, 'deployment')
         if initial.status != 'BUILT_REFERENCE':
@@ -797,22 +803,69 @@ class ReferenceCompilerRuntime:
         def write(value):
             if cfg.evidence_encoding == phase_codec.ENCODING_ID:
                 if len(frame) <= 8:
-                    raise ResourceExceeded('binary phase has no funded encoded prefix')
-                expected = phase_codec.extent(value,encoded_cap=len(frame)-8)
-                header = bytes(frame[:8])
-                # Keep a live fixed-size export during the helper call so
-                # ordinary bytearray resizing cannot create an unowned tail.
-                # Release this mutable view before immutable finalization.
-                with memoryview(frame) as view:
-                    measured = phase_codec.write(value,view,start=8)
-                    if (type(measured) is not phase_codec.PhaseExtent or
-                            any(type(v) is not int for v in vars(measured).values()) or
-                            measured != expected or len(frame) != cfg.phase_evidence_bytes or frame[:8] != header):
-                        raise ContractError('binary phase writer changed its complete extent or header')
-                    phase_codec.check(view[8:8+expected.encoded_bytes],value)
-                    if any(view[8+expected.encoded_bytes:]):
-                        raise ContractError('binary phase writer changed reserved padding')
-                frame[:8] = expected.encoded_bytes.to_bytes(8,'big')
+                    raise ResourceExceeded('compressed phase has no funded encoded prefix')
+                expected = bounded_packed_size(value,byte_limit=phase_codec.EXPANDED_CAP)
+                staging = self._buffers[f'{self._runtime_id}:cuda-phase-byte-staging']
+                offset,used,received = 8,0,0
+                encoder = phase_codec.new_encoder()
+                def append(part):
+                    nonlocal offset
+                    if type(part) is not bytes:
+                        raise ContractError('phase compressor returned a non-byte payload')
+                    end = offset+len(part)
+                    if end>len(frame):
+                        raise ResourceExceeded('compressed phase exceeds its prepaid frame')
+                    frame[offset:end] = part
+                    offset = end
+                # Only immutable, bounded byte chunks cross the compressor
+                # interface. No record, iterator, frame, staging view or owner
+                # is supplied; the expected value remains private to Runtime.
+                with memoryview(staging) as view:
+                    for fragment in fragments(value,packed=True):
+                        part = fragment.encode('utf-8','surrogatepass')
+                        start = 0
+                        while start<len(part):
+                            count = min(len(part)-start,len(view)-used)
+                            view[used:used+count] = part[start:start+count]
+                            used += count
+                            start += count
+                            received += count
+                            if received>expected:
+                                raise ContractError('canonical phase serialization exceeded its measured extent')
+                            if used==len(view):
+                                append(encoder.compress(bytes(view)))
+                                used = 0
+                    if received!=expected:
+                        raise ContractError('canonical phase serialization lost a coordinate')
+                    if used:
+                        append(encoder.compress(bytes(view[:used])))
+                    append(encoder.finish())
+                # The independent decoder receives compressed bytes only.
+                # The byte comparison and canonical expected iterator stay in
+                # the owner, rather than sharing a mutable input with a helper.
+                expected_chunks = iter(part.encode('utf-8','surrogatepass') for part in fragments(value,packed=True))
+                current,position,compared = b'',0,0
+                for actual in phase_codec.decoded_fragments(memoryview(frame)[8:offset].toreadonly()):
+                    start = 0
+                    while start<len(actual):
+                        if position==len(current):
+                            current = next(expected_chunks,None)
+                            if current is None:
+                                raise ContractError('compressed phase exceeds the complete expected record')
+                            position = 0
+                            if not current:
+                                continue
+                        count = min(len(actual)-start,len(current)-position)
+                        if actual[start:start+count]!=current[position:position+count]:
+                            raise ContractError('compressed phase differs from the owned execution record')
+                        start += count
+                        position += count
+                        compared += count
+                if compared!=expected or position!=len(current) or any(expected_chunks):
+                    raise ContractError('compressed phase lost part of the owned execution record')
+                if any(memoryview(frame)[offset:]):
+                    raise ContractError('compressed phase has nonzero reserved padding')
+                frame[:8] = (offset-8).to_bytes(8,'big')
                 return
             size = packed_size(value)
             if size+8 > len(frame):

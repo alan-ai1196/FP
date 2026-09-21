@@ -59,6 +59,55 @@ def packed_size(value):
     _invalid('unsupported packed reference payload')
 
 
+def bounded_packed_size(value, *, byte_limit, depth_limit=64, integer_bits=32768):
+    """Bound aggregate traversal before computing the exact canonical extent.
+
+This belongs to the trusted canonical serializer. A delegated compressor
+never receives the value or the iterator used to traverse it.
+"""
+    from .resources import ResourceExceeded
+    if any(type(n) is not int or n<=0 for n in (byte_limit,depth_limit,integer_bits)):
+        _invalid('positive canonical traversal limits required')
+    charged = 0
+    def debit(amount):
+        nonlocal charged
+        charged += amount
+        if charged>byte_limit:
+            raise ResourceExceeded('canonical phase traversal allowance exhausted')
+    def walk(item,depth):
+        debit(1)
+        if depth>depth_limit:
+            raise ResourceExceeded('canonical phase depth allowance exhausted')
+        if item is None or type(item) is bool:
+            return
+        if type(item) is str:
+            debit(len(item))
+            return
+        if type(item) in (int,F):
+            numbers = (item,) if type(item) is int else (item.numerator,item.denominator)
+            if any(n.bit_length()>integer_bits for n in numbers):
+                raise ResourceExceeded('canonical phase integer allowance exhausted')
+            debit(sum(max(1,(n.bit_length()+3)//4) for n in numbers))
+            return
+        if type(item) in (tuple,list):
+            children = iter(item)
+        elif isinstance(item,Mapping):
+            children = (child for pair in item.items() for child in pair)
+        elif is_dataclass(item) and not isinstance(item,type):
+            walk(type(item).__module__,depth+1)
+            walk(type(item).__qualname__,depth+1)
+            children = (child for f in fields(item) for child in (f.name,getattr(item,f.name)))
+        else:
+            _invalid('unsupported packed reference payload')
+        for child in children:
+            walk(child,depth+1)
+    walk(value,0)
+    result = packed_size(value)
+    if result>byte_limit:
+        raise ResourceExceeded('canonical phase exceeds its expanded allowance')
+    return result
+
+
 def _string(value):
     yield '"'
     # Raw non-ASCII code points remain distinct. ensure_ascii=True would

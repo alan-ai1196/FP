@@ -2,8 +2,24 @@
 
 ## Current implementation state (2026-09-21)
 
-The optional [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
-is integrated with a fixed contract/work identity, full paid frames and
+The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
+is implemented with a versioned standard zlib identity. Runtime alone keeps
+the checked record and serialization iterator; the encoder receives only
+bounded immutable bytes. Full recovery is independently compared inside
+the owner before unchanged immutable sealing and numerical acceptance.
+One reusable 65,536-byte staging buffer is owned before CUDA binding;
+full frames, sealing copies and expansion work remain paid. The trusted
+serializer/reader and component fault scope are explicit, with no arbitrary
+Python attestation or total-host-workspace claim.
+
+Exact CPU evidence passes, including both former forgeries, raw-word faults,
+multiblock Unicode and resource/failure retention. The old record-taking
+codec registration now refuses; legacy uncompressed evidence is unchanged.
+The 23-job actual matrix in `run_phase_deflate.py` is registered and pending.
+This extension remains unreleased until that source-bound gate is read.
+
+The preceding [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
+was integrated at 3d3711e with a fixed identity, full paid frames and
 independent whole-record byte comparison before immutable sealing and
 acceptance. Under the stated indexed bounds E<=12(N+C)+B, four passive
 hard n16 records have B=4507--4781 and encode in 2.91--3.42 MB instead of
@@ -15,16 +31,16 @@ advances173 to194 and then hits the unchanged reference join cap. All1498
 sealed records pass their full byte audits. Maximum job peak5309132800 bytes.
 Both model prefixes remain unresolved and unscored.
 
-The extension is now HOLD at a newly found writer-input boundary. Both CPU
+That interface is falsified at its writer-input boundary. Both CPU
 and actual CUDA retention accept a mutated output count or plan address because the writer
 and its later checker share the same object. Both actual probes at ba48cb3
 publish checked phases:58 outputs reported as57, and count address2 changed
 to0 with support/words unchanged. Maximum job2191769600 bytes; both jobs
 are terminal with targets unrevealed and native learners unchanged.
-Production remains3d3711e. The fixed-input byte theorem remains valid;
+Those probes used production 3d3711e. The fixed-input byte theorem remains valid;
 complete execution binding requires immutable input before delegation and
 paid workspace. Ordinary zlib beats the custom format on all four passive
-records, so format complexity must also be reconsidered. No new release,
+records and motivates the simpler replacement above. No new release,
 numerical change or Foundation action is justified.
 
 The passive [query-order resource audit](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
@@ -36,8 +52,8 @@ enlarging uniform frames: 147 prefix queries have no order within the table
 caps, four exceed the output cap even at their minimum, and the typed-plan
 uniform-frame lower bound exceeds 8 GiB on every n16 tape. This is a passive
 solver/encoding frontier result. Runtime still uses its original declared
-orders, frames and caps; the optional codec above has scoped actual evidence
-but an open writer-binding defect, and a paid solver bridge remains outstanding.
+orders, frames and caps. The replacement codec awaits its actual binding gate;
+a paid solver bridge remains outstanding.
 
 The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 completes all 16 source-bound jobs at caa66f1. Both schedules seal all four

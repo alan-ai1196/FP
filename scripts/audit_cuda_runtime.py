@@ -21,7 +21,7 @@ sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts')]
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference import cuda_learner as gpu
 from fp_reference.cuda_prefix import CudaPrefixContract, CudaRunManifest, widen, output_cells
-from fp_reference.cuda_prefix import LEGACY_PHASE_ENCODING_ID, BINARY_PHASE_ENCODING_ID
+from fp_reference.cuda_prefix import LEGACY_PHASE_ENCODING_ID, BINARY_PHASE_ENCODING_ID, DEFLATE_PHASE_ENCODING_ID
 from fp_reference.phase_encoding import decoded_fragments
 from fp_reference.cuda_range import forward_operations
 from fp_reference.cuda_storage import CudaStorageContract, CudaStorageUnresolved
@@ -53,6 +53,9 @@ def phase_payload(snapshot,frame):
     kind = getattr(snapshot.cuda.contract,'evidence_encoding',LEGACY_PHASE_ENCODING_ID)
     if kind == LEGACY_PHASE_ENCODING_ID:
         return frame[8:8+size]
+    if kind == DEFLATE_PHASE_ENCODING_ID:
+        from fp_reference.phase_deflate import decoded_fragments as expand
+        return b''.join(expand(memoryview(frame)[8:8+size]))
     assert kind == BINARY_PHASE_ENCODING_ID
     return b''.join(decoded_fragments(memoryview(frame)[8:8+size]))
 

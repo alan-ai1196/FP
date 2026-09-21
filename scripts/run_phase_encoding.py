@@ -199,16 +199,21 @@ def worker(name):
         'result':result,'frame_audit':frames(roots[0])}
 
 
-def matrix(attempt):
+def matrix(attempt, *, script=None, journal_prefix='FP_PHASE_ENCODING_CUDA',
+           cases=None, registration_fn=None, dependencies=None):
     assert attempt>0
-    output = ROOT/f'evidence/minimal/FP_PHASE_ENCODING_CUDA_A{attempt}.json'
+    script = Path(__file__).resolve() if script is None else Path(script).resolve()
+    cases = CASES if cases is None else cases
+    registration_fn = preflight if registration_fn is None else registration_fn
+    dependencies = DEPENDENCIES if dependencies is None else dependencies
+    output = ROOT/f'evidence/minimal/{journal_prefix}_A{attempt}.json'
     assert not output.exists(), 'all attempted jobs are retained; never overwrite or silently restart'
     source = model.git('rev-parse','HEAD')
     def clean():
         assert model.git('rev-parse','HEAD')==source
-        assert not model.git('status','--porcelain','--',*DEPENDENCIES), 'commit every execution input first'
+        assert not model.git('status','--porcelain','--',*dependencies), 'commit every execution input first'
     clean()
-    report = {'status':'REGISTERED_NOT_COMPLETED','execution_source':source,'registration':preflight(),'workers':[]}
+    report = {'status':'REGISTERED_NOT_COMPLETED','execution_source':source,'registration':registration_fn(),'workers':[]}
     def publish():
         temporary = output.with_suffix('.tmp')
         temporary.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
@@ -219,14 +224,14 @@ def matrix(attempt):
     directory = Path(tempfile.mkdtemp(prefix='fp-phase-encoding-',dir=ROOT)).resolve()
     assert directory.parent==ROOT.resolve()
     stop = False
-    for case in CASES:
+    for case in cases:
         path = directory/(case+'.json')
         row = {'case':case,'worker_status':'FAILED'}
         print('START '+case,flush=True)
         cap,deadline = (model.CAP,model.DEADLINE) if case.startswith('model-') else (indexed.CAP,900000)
         try:
             clean()
-            job = run_in_job(str(Path(__file__).resolve()),('--worker',case,'--output',path),
+            job = run_in_job(str(script),('--worker',case,'--output',path),
                 commit_limit=cap,timeout_ms=deadline)
             row['completed_job'] = asdict(job)
             if path.exists():
@@ -267,7 +272,7 @@ def matrix(attempt):
         try:
             pairs = {}
             by_case = {row['case']:row for row in report['workers']}
-            for first,second in ((CASES[0],CASES[1]),(CASES[2],CASES[3]),(CASES[-2],CASES[-1])):
+            for first,second in ((cases[0],cases[1]),(cases[2],cases[3]),(cases[-2],cases[-1])):
                 a,b = by_case[first],by_case[second]
                 if a['worker_status'] not in ('PASS','COMPLETE_MODEL','UNRESOLVED_MODEL') or b['worker_status'] not in ('PASS','COMPLETE_MODEL','UNRESOLVED_MODEL'):
                     continue
@@ -275,9 +280,9 @@ def matrix(attempt):
                 if first.startswith('model-'):
                     length = min(len(x['evaluation_readouts']),len(y['evaluation_readouts']))
                     assert x['evaluation_readouts'][:length]==y['evaluation_readouts'][:length]
-                    pairs[first] = {'legacy_cursor':x['cursor'],'binary_cursor':y['cursor'],
+                    pairs[first] = {'legacy_cursor':x['cursor'],'encoded_cursor':y['cursor'],
                         'identical_common_evaluation_readouts':length,
-                        'legacy_refusal':x['refusal'],'binary_refusal':y['refusal']}
+                        'legacy_refusal':x['refusal'],'encoded_refusal':y['refusal']}
                 else:
                     field = 'phases' if first.startswith('generic-') else 'checked_phases'
                     assert x[field]==y[field]
