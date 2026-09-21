@@ -2,6 +2,20 @@
 
 ## Current implementation state (2026-09-21)
 
+The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
+executes inside ReferenceCompilerRuntime under a new explicit reference
+arithmetic declaration. It keeps full counts, global theta, clocks and
+history; only current-query partition arithmetic is projected. Metadata
+reconstruction binds every block to the owned input before numerical debit.
+11,919 complete native cache comparisons,10,650 independent graph-path
+checks, nine binding adversaries and aggregate resource refusals pass.
+The complete Runtime audit recovers the13-event star query as189/250 and
+passes the original profile, persistence, failure and n256 cases. Current
+n256 packed bytes are62,469,341. The unchanged AMP CPU schedule audit passes;
+actual integration under this new reference source is the next audit.
+Projected AMP remains unimplemented and the global schedule keeps its own
+width limits. No complete release or whole-resource saving is inferred.
+
 The [reachable boundary information audit](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
 passes2988 exhaustive native marginal comparisons,190 larger-grid samples
 and1365 states of a dimension/precision counterexample. Two owned n8
@@ -23,8 +37,8 @@ moments. Production retains full counts; no implementation action is added.
 The new [query-boundary theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 and diagnostic pass exact exhaustive checks. They identify the information
 exposed by finite boundary futures and a positive current-query block
-projection. **Production still uses the existing global decoder**; neither
-reference planning nor AMP has adopted this optimization. Full counts and
+projection. **Production reference planning now uses that projection**;
+AMP continues to use the global schedule. Full counts and
 native parameter meaning remain mandatory. Existing AMP words provably
 change under the exact cancellation, requiring a new physical declaration.
 
@@ -75,9 +89,10 @@ The complete audit passes 388 histories/776 native phase comparisons,
 ordinary/profile attachments, fresh reference evidence against a separate
 literal Runtime, and finite empty-policy closure. At n256, four actual
 observations and four profile events execute with world builders disabled;
-the packed root is 62,461,693 bytes, with no total-process resource claim.
-Thirteen actual star observations expose a natural-order width refusal;
-this remains solver uncertainty. Nine full CPU regression batteries pass,
+the packed root is now62,469,341 bytes, with no total-process resource claim.
+Thirteen actual star observations formerly exposed a global natural-order
+width refusal; the owned projection now recovers that query. Nine full CPU
+regression batteries passed for the earlier admission source,
 including all 36 model-check classes and the owned policy. The old complete
 indexed-reference evidence remains identical after core promotion.
 

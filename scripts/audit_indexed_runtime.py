@@ -203,7 +203,7 @@ def closure_audit():
     assert snapshot.run.status == 'SEALED_REFERENCE_STREAM'
     assert not snapshot.run.closure.decisions
     assert snapshot.run.manifest.machine_id == IndexedReferenceMachine.model_id
-    assert snapshot.run.manifest.reference_arithmetic == 'indexed-literal-count-positive-natural-order-reference-v1'
+    assert snapshot.run.manifest.reference_arithmetic == 'indexed-literal-count-positive-query-block-reference-v1'
     rejects(lambda: rt.construct_candidate(schema))
     return {'status': snapshot.run.status, 'events': snapshot.cursor,
             'scope': 'owned empty Compiler strategy and finite ordinary stream; no class-optimality or install claim'}
@@ -293,8 +293,8 @@ def adversaries():
     # The fixed natural order can become expensive even on a tree. Build a
     # star through actual observations while its center is kept in each
     # query; a subsequent leaf query would eliminate that center first.
-    # This is a decoder allowance failure, not lost correlation or an
-    # impossibility theorem for a better funded elimination order.
+    # The new block response must recover that query without dropping any
+    # count; the old global preflight remains an independent refusal witness.
     tree_cfg, tree_schema, tree_online = fixture(15, 14)
     tree = ReferenceCompilerRuntime(tree_cfg, tree_schema, online=tree_online)
     for k, leaf in enumerate(range(2, 15)):
@@ -303,13 +303,19 @@ def adversaries():
         assert result.status == 'PREDICTED_REFERENCE' and result.predictions[0][1] == (F(1, 2), F(1, 2))
         assert tree.observe(0).status == 'OBSERVED_REFERENCE'
     before = tree.snapshot()
-    with patch.object(indexed.partition, 'decode', forbidden):
-        result = deliver_context(tree, tree_online.data.active.observation_ids[13],
-            tuple(tree_schema.source_row(2*15+3).values()))
-    assert result.status == 'UNRESOLVED' and 'join-cell allowance' in result.reason, result
+    # The old global schedule still refuses; the owned block projection
+    # now computes the required two-edge response, retaining all13 counts.
+    rejects(lambda: indexed.partition_plan(before.candidates[0].learner.encoded,
+        (2,3),tuple(range(14)),indexed.DecodeAllowance()),ArithmeticUnresolved)
+    result = deliver_context(tree, tree_online.data.active.observation_ids[13],
+        tuple(tree_schema.source_row(2*15+3).values()))
+    assert result.status == 'PREDICTED_REFERENCE' and result.predictions[0][1][0] == F(189,250), result
     after = validate_residency(tree)
     assert after.cursor == 13 and after.observations == before.observations and after.candidates == before.candidates
     assert after.pending.record.sources and after.pending.record.target is None
+    prediction = after.pending.predictions[0][1]
+    assert prediction.before == before.candidates[0].learner.encoded
+    assert dict(prediction.table_work)['projected_active_edges'] == 2
 
     # The first candidate completes its local commit; the second fails.
     # Neither published learner advances, and both the target and all
@@ -346,8 +352,9 @@ def adversaries():
             'bad_domain_retained_ingress': True, 'unfunded_deployment_prediction_refused_before_executor': True,
             'planning_funded_but_table_execution_refused_before_executor': True,
             'integer_allowance_refused_before_partition': True,
-            'actual_star_history_events_before_natural_order_refusal': 13,
-            'width_allowance_refused_before_partition_with_history_retained': True,
+            'actual_star_history_events_before_projection_recovery': 13,
+            'old_global_width_refusal_verified_before_tables': True,
+            'owned_star_query_recovered_with_complete_history': True,
             'second_lineage_failure_retains_target_and_both_observed_states': True,
             'published_learners_advanced_on_failure': 0, 'helper_install_authority': False}
 
@@ -424,7 +431,7 @@ def main():
     functions = {'small': small_audit, 'profile': profile_audit, 'large': large_audit, 'closure': closure_audit,
                  'adversaries': adversaries, 'persistence': persistence_audit}
     report = {'status': 'PASS', 'complete_audit': args.section is None,
-              'scope': 'owned indexed reference execution in ReferenceCompilerRuntime; AMP and install integration remain open'}
+              'scope': 'owned indexed exact reference execution; no new complete AMP or installation release'}
     for name, function in functions.items():
         if args.section in (None, name):
             report[name] = function()

@@ -9,6 +9,7 @@ from fractions import Fraction as F
 
 from .core import ContractError, natural
 from . import indexed_count as counts, positive_partition as partition
+from . import query_projection as projection
 from .indexed_relation import IndexedRelation, DecodeAllowance, ReferenceView, allowance, index, partition_plan
 from .learner import SIMPLEX_GRADIENT, ReferenceLearnerState
 from .machine import ReferenceMachineModel
@@ -165,7 +166,7 @@ class IndexedEvaluation:
 class IndexedPredictionPlan:
     before: counts.CountState
     query: tuple[int, int]
-    shape: tuple[tuple[str, int], ...]
+    projection: projection.ProjectionPlan
     bit_limit: int
 
 
@@ -265,14 +266,16 @@ class IndexedReferenceMachine(ReferenceMachineModel):
             raise ContractError('owned committed indexed predecessor required')
         query, _ = program.source_query(rules, sources)
         budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, bit_limit))
-        order = tuple(range(program.n-1))
-        plan = partition_plan(state.encoded, query, order, budget)
-        return IndexedPredictionPlan(state.encoded, query, tuple(plan.items()), bit_limit)
+        plan = projection.prepare(state.encoded, query, budget)
+        return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
 
     def prediction_execution_work(self, plan):
         if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
             raise ContractError('complete indexed execution plan required')
-        shape = dict(plan.shape)
+        budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, plan.bit_limit))
+        if plan.projection != projection.prepare(plan.before, plan.query, budget):
+            raise ContractError('indexed projection differs from complete input preflight')
+        shape = dict(plan.projection.shape)
         # Each scalar join includes its at-most-n projection/index visits.
         # Guarded powers use at most 2*14 multiplications per active factor
         # under the fixed <=32768-bit integer envelope. GCD/bit complexity
@@ -280,11 +283,10 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         return 32*(self.schema.n+1)*(shape['positive_multiplications']+shape['positive_additions'])+64*self.state_work(self.schema)+64
 
     def execute_prediction(self, plan):
-        self.prediction_execution_work(plan)  # Typed complete plan, no authority.
+        if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
+            raise ContractError('complete indexed execution plan required')
         before, query = plan.before, plan.query
-        parts, stats = partition.decode(before.n, before.counts, query, order=tuple(range(before.n-1)))
-        if any(stats[key] != value for key, value in plan.shape):
-            raise ContractError('executed indexed partition differs from its preflight schedule')
+        parts, stats = projection.execute(before, query, plan.projection)
         total = sum(parts)
         excesses = tuple(F(8*v, total) for v in parts)
         masses = tuple(1+v for v in excesses)

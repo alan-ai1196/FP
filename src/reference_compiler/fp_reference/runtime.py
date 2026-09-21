@@ -20,7 +20,7 @@ from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commi
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .indexed_relation import IndexedRelation, DecodeAllowance
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
-    IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
+    IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine, IndexedPredictionPlan)
 from .encoding import packed_size, write_packed, fragments
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
@@ -992,10 +992,18 @@ class ReferenceCompilerRuntime:
     def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit):
         if type(self._machine) is IndexedReferenceMachine:
             plan = self._machine.prepare_prediction(program, rules, state, sources, bit_limit=bit_limit)
+            query, _ = program.source_query(rules, sources)
+            if (type(plan) is not IndexedPredictionPlan or plan.before != state.encoded
+                    or plan.query != query or plan.bit_limit != bit_limit):
+                raise ContractError('indexed plan differs from the owned predecessor or input')
             # This private debit comes from the already fixed ordinary or
             # profile role. No supplied plan or callback enters a public API.
             execution_debit(self._machine.prediction_execution_work(plan))
-            return self._machine.execute_prediction(plan)
+            prediction = self._machine.execute_prediction(plan)
+            if (type(prediction) is not IndexedEvaluation or prediction.before != state.encoded
+                    or prediction.query != query):
+                raise ContractError('indexed result differs from the owned predecessor or input')
+            return prediction
         return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)
 
     def _reference_observe(self, program, state, spec, prediction, target, *, bit_limit):

@@ -218,8 +218,12 @@ to h legal boundary observations is exactly equality of even moments through
 order2h+2. The hierarchy is strict; full projective response is exposed by
 h=floor(b/2)-1. It also yields a positive current-query block projection
 without erasing full counts or changing native theta. Exact exhaustive
-audits pass, but production integration and a separately verified AMP
-schedule remain open. This is a decoder/response consequence, not a change
+audits pass. [Owned reference projection](theory/proofs/OWNED_QUERY_PROJECTION.md)
+now implements this consequence with full global counts, independently
+bound plans, prepaid arithmetic and guarded global parameter reads. The
+13-event star refusal is recovered; later queries still expose retained
+off-path information. A separately verified projected AMP schedule remains
+open. This is a decoder/response consequence, not a change
 to Foundation R4 or the frozen Experiment Resource Contract.
 
 The [count-reachable construction](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

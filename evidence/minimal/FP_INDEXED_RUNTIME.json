@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "complete_audit": true,
-  "scope": "owned indexed reference execution in ReferenceCompilerRuntime; AMP and install integration remain open",
+  "scope": "owned indexed exact reference execution; no new complete AMP or installation release",
   "small": {
     "groups": [
       {
@@ -54,7 +54,7 @@
       "slots": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
       "bindings": 0
     },
-    "packed_current_bytes": 62461693,
+    "packed_current_bytes": 62469341,
     "scope": "actual owned reference phases and packed leases; no total-process or comparative resource bound"
   },
   "closure": {
@@ -71,8 +71,9 @@
     "unfunded_deployment_prediction_refused_before_executor": true,
     "planning_funded_but_table_execution_refused_before_executor": true,
     "integer_allowance_refused_before_partition": true,
-    "actual_star_history_events_before_natural_order_refusal": 13,
-    "width_allowance_refused_before_partition_with_history_retained": true,
+    "actual_star_history_events_before_projection_recovery": 13,
+    "old_global_width_refusal_verified_before_tables": true,
+    "owned_star_query_recovered_with_complete_history": true,
     "second_lineage_failure_retains_target_and_both_observed_states": true,
     "published_learners_advanced_on_failure": 0,
     "helper_install_authority": false

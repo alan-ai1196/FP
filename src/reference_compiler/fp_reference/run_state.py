@@ -29,7 +29,7 @@ class ReferenceRunManifest:
     def __post_init__(self):
         if self.machine_id == 'packed-indexed-reference-payload-v1':
             object.__setattr__(self, 'reference_arithmetic',
-                               'indexed-literal-count-positive-natural-order-reference-v1')
+                               'indexed-literal-count-positive-query-block-reference-v1')
 
 
 @dataclass(frozen=True)

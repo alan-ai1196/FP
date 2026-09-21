@@ -15,6 +15,11 @@ not a new architecture action. Foundation R4 and ERC-1 are unchanged. No
 `CERTIFIED_COMPLETE`, whole-Compiler quotient, resource equivalence or new
 CPU/CUDA release is claimed.
 
+The [owned query projection](OWNED_QUERY_PROJECTION.md) now extends this
+reference realization. Predictions use current-query block responses;
+global native parameter readers retain the original full partition.
+The original global-schedule refusal remains an audited historical result.
+
 ## 1. Exact declaration and decision scope
 
 For fixed 2 <= n <= 1024 let K=2^(n-1), D=n(n-1)/2. The registered syntax
@@ -88,8 +93,10 @@ commit and attachment is the corresponding exact native phase under the
 same G/Gamma/U, ordered source values and independently acquired targets.
 
 **Proof.** Initialization has d=0, so all K weights are 1/K and both
-accumulators are empty. Positive partition elimination computes exactly
-Z_0 and Z_1 by finite distributivity, with no dropped world or cancellation.
+accumulators are empty. Positive partition elimination within the required
+query blocks, followed by parity convolution, computes responses
+proportional to Z_0 and Z_1. The boundary theorem justifies cancellation of
+the positive off-path factors for this readout; full counts remain stored.
 The cache/readout projection above is the literal native evaluation. The
 native reverse derivative is exactly the three stated gradient forms,
 including the fixed feature slot. The existing unit simplex update is
@@ -121,11 +128,13 @@ the exact minimum nonzero activation, maximum activation and rational
 encoding-width diagnostics over the full cache.
 
 The registered arithmetic is
-`indexed-literal-count-positive-natural-order-reference-v1`. It uses
-natural anchored elimination order, at most 4096 join cells, 32768 live
-integer cells and 2,000,000 positive table operations. The exact integer
-envelope is at most min(32768, registered reference bits), with preflight
-`n + 4*SUM |d| + 8` before powers or numerical tables. Retained counters
+`indexed-literal-count-positive-query-block-reference-v1`. It uses natural
+anchored elimination within the required blocks, positive convolution,
+at most4096 join cells,32768 live integer cells and2,000,000 operations.
+The combined integer preflight is `V + 4*H + 8`, where V and H concern the
+selected block path, under min(32768,registered reference bits). Full native
+parameter readers keep the global `n + 4*SUM |d| + 8` preflight. The
+companion proof specifies the aggregate cells and operation counts. Retained counters
 have a separate (2^62)-1 envelope. A compact exact expression may survive a
 boundary whose next rational decoding is unfunded; no uniform inexpensive
 inference claim follows from count storage.
@@ -163,12 +172,14 @@ local commits remain in the trace, all observed states and the actual
 target survive, and no published learner advances. Spent work and received
 ingress are retained. There is no rollback to a fictitious cheaper past.
 
-The star audit illustrates the precise solver boundary. Thirteen actual
+The star audit now illustrates an executed solver recovery. Thirteen actual
 observations of edges (1,j), j=2..14, pass because each prediction keeps the
 center. A following query (2,3) makes natural elimination try a 16384-cell
-join and refuses before decoding. This tree admits a much better order;
-the refusal is not a lower bound for all inference algorithms or a reason
-to alter the native state.
+join and refuses before decoding under the former full-graph schedule.
+The current owned projection uses the two relevant bridge responses and
+predicts189/250 while retaining all13 counts and the complete history.
+The old preflight refusal is still checked; it never was an inference
+lower bound or a reason to alter the native state.
 
 ## 4. Fresh reference evidence and finite closure
 

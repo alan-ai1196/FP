@@ -6403,3 +6403,40 @@ forecasts are1/2 and413258281348153/460432086362162. Another1365 two-path
 states verify exactly the predicted exchange collisions. Only aggregate
 evidence and the two small coordinate words are retained. Foundation R4,
 ERC-1, complete state ownership and the planned query projection are unchanged.
+
+## 189. Owned query projection recovers the star while retaining every future distinction (2026-09-21)
+
+The [proved block response](theory/proofs/OWNED_QUERY_PROJECTION.md) now
+executes inside ReferenceCompilerRuntime. Full count scans build a current
+query path; each selected block keeps global vertex order and uses the
+existing positive partition routine. Positive convolution combines responses.
+Global theta still uses its full normalizer. The new reference arithmetic
+has its own manifest identifier; G/Gamma/U, source semantics and complete
+state/lineage/history remain unchanged.
+
+Runtime independently binds the plan to the owned predecessor, query and
+integer allowance. The machine reconstructs every block and table count
+before charging numerical execution. Work, live cells and integer height
+also cover the combined response. Nine actual binding faults and four
+unfunded preflight cases refuse without publishing predictions or deleting
+received information. The exact audit covers all1098 n2..5 supports,
+10,650 independent path-edge checks and11,919 complete native caches over
+all759 ternary n2..4 count states.
+
+The complete Runtime audit passes388 histories/776 native phase comparisons,
+profiles, n256 without literal builders, failure retention, fresh crossing
+at20 and alpha1/4 after retirement. The13-observation star now predicts
+189/250 from two edges while all13 counts remain; its old16384-cell global
+preflight still refuses independently. Two actual n4 suffixes expose an
+initially off-path count, producing881/1250 versus369/1250 with complete
+native phases. A24-bit case predicts1/2 while its separate global parameter
+reader remains guarded. This is semantic refinement, not equal physical
+cost or permission to discard a global state.
+
+The existing exact AMP CPU audit passes unchanged. The global physical
+schedule has not been projected and retains its own width limits. A new
+source-bound actual attempt is prepared to check the integration, including
+a star control that must preserve that reference/AMP distinction. No new
+AMP kernel, complete release, class certificate or Foundation action is
+claimed. The coarse metadata tariff remains unchanged; no total-process
+resource saving is inferred from a smaller current partition.

@@ -234,6 +234,31 @@ def check_phases(rt):
 
 
 def worker(case):
+    if case == 'projection-boundary':
+        rt,schema = configuration(15,14)
+        for leaf in range(2,15):
+            step(rt,schema,(1,leaf,0))
+        checked = check_phases(rt)
+        before = rt.snapshot()
+        key = before.online.data.active.observation_ids[before.cursor]
+        def forbidden(*args,**kwargs):
+            raise AssertionError('unfunded global AMP table execution began')
+        with patch.object(amp,'execute_prediction',forbidden):
+            result = deliver_context(rt,key,tuple(schema.source_row(2*15+3).values()))
+        assert result.status == 'UNRESOLVED' and 'join-cell allowance' in result.reason,result
+        after = validate_residency(rt)
+        no_device_handles(after)
+        phase = after.cuda.phases[-1]
+        assert phase.status == 'UNRESOLVED' and phase.reference_prediction.probabilities[0] == F(189,250)
+        assert dict(phase.reference_prediction.table_work)['projected_active_edges'] == 2
+        assert phase.output_cells == 0 and not phase.raw_operations and phase.raw_prediction is None
+        assert after.cursor == 13 and after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        assert after.pending.record.target is None and not after.pending.predictions
+        assert phase.reference_prediction.before == before.candidates[0].learner.encoded
+        return {**checked,'actual_star_observations':13,'reference_forecast':'189/250',
+            'reference_projected_active_edges':2,'retained_nonzero_counts':13,
+            'unchanged_global_AMP_status':result.status,'unfunded_AMP_output_cells':0,
+            'target_revealed':False,'published_predictions_or_learner_advances':0}
     if case == 'endpoint-binding':
         rt, schema = configuration(2, 1)
         before = rt.snapshot()
@@ -462,7 +487,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
     parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap',
-        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output'))
+        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary'))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:

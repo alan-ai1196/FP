@@ -2,6 +2,21 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current owned decoder result, 2026-09-21:**
+[query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented
+inside ReferenceCompilerRuntime. It reads every count, independently checks
+the complete plan against owned inputs, prepays block arithmetic and retains
+the original global state. Global theta still uses its full normalizer.
+All1098 small supports/10,650 path checks and11,919 full native caches pass.
+Nine owned plan/result attacks and combined resource refusals pass. The
+13-event star now predicts189/250 through two blocks while all13 counts
+remain. A later connected query also exposes retained off-path information.
+The complete Runtime audit and unchanged exact AMP CPU audit pass.
+The new reference arithmetic is explicitly declared; the actual global AMP
+schedule is unchanged. The next source-bound CUDA attempt checks that
+integration, including a control where reference succeeds and AMP must
+remain UNRESOLVED. No physical projection or new complete release is claimed.
+
 **Current research result, 2026-09-21:**
 [reachable boundary information](theory/proofs/REACHABLE_BOUNDARY_INFORMATION.md)
 now has an exact code law for an explicit native family. In a fixed program,
@@ -42,9 +57,9 @@ global count. All59,808 small count states/1,488,144 ordered queries and
 89,875 finite-horizon comparisons pass exactly. An off-path count still
 changes native theta and a later connected query. Exact cancellation also
 changes existing AMP words, so it cannot borrow the A4 schedule certificate.
-**Research next:** implement the proved query projection in the owned exact
-reference decoder with paid planning and full global state; any corresponding
-AMP optimization needs a separately declared and checked schedule. Do not
+**Research next:** derive and check the corresponding projected AMP schedule,
+with its own operation/endpoint evidence and resource declaration. The owned
+exact reference integration above is complete within its stated scope. Do not
 replace this general law with more static graph-size cases.
 
 **Current indexed AMP integration, 2026-09-21:** the

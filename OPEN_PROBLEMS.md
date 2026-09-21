@@ -4,13 +4,17 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary
-horizon and proves current-query block projection. Its main open consequence
-is owned implementation: pay for the full count scan and structural plan,
-retain global theta/count/history meaning, evaluate only required positive
-block responses, and preserve existing failure/lineage checks. A matching
+horizon and proves current-query block projection. Its
+[owned exact implementation](theory/proofs/OWNED_QUERY_PROJECTION.md) now
+pays for the full count scan, checked structural plan and block arithmetic,
+retaining global theta/count/history meaning and failure/lineage checks.
+It recovers the previous star-query refusal and passes the complete Runtime
+audit, including native phases, profiles and fresh evidence. A matching
 AMP lowering needs its own declared schedule; real-valued cancellation
 does not preserve current rounded words. Worst-case hard blocks, explicit
 native outputs and model usefulness remain unresolved by this theorem.
+The unchanged global AMP schedule must still refuse when its own table
+preflight fails, even if the new exact reference projection succeeds.
 
 The strict horizon hierarchy's count-family reachability is now
 [proved by legal histories](theory/proofs/REACHABLE_BOUNDARY_MESSAGES.md)

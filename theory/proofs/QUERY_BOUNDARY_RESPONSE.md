@@ -3,8 +3,10 @@
 Status: **PROVED, SCOPED; EXACT EXHAUSTIVE AUDITS PASS**. These are
 predictive-response and decoder results. The complete CountState, literal
 native parameter meaning, observation history and Compiler resources remain
-unchanged. No Runtime integration, new AMP schedule or Foundation action is
-claimed. Foundation R4 and ERC-1 remain frozen.
+unchanged. The subsequent [owned reference integration](OWNED_QUERY_PROJECTION.md)
+now implements the projection with complete state and resource checks.
+No new AMP schedule or Foundation action follows from this mathematical
+proof. Foundation R4 and ERC-1 remain frozen.
 
 The existing [query-matroid theorem](FACTOR_QUERY_MATROID.md) identifies
 cycle blocks for a fixed family of legal queries. Here the active count
