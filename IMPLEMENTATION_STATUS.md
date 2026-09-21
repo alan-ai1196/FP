@@ -35,8 +35,10 @@ and new exact word/trace adversaries pass. A4 at6a62a45 passes all twelve
 actual cases, including the new attacks, n256 and resident installation.
 Its maximum job peak is2,385,383,424 bytes. The fully funded legacy policy
 battery passes atfb3b45a. Installation at12-billion work still leaves232
-comparisons unresolved; A2 adds bounded reason diagnostics to that incomplete
-battery without another funding change. No complete release is claimed.
+comparisons unresolved; A2 confirms every one hit cumulative work exhaustion.
+A3 registers the incomplete installation battery at60-billion work, matching
+the policy fixture's existing allowance. Its result is pending. No complete
+release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

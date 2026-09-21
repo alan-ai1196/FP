@@ -6307,3 +6307,19 @@ in a failed assertion. Readback A2 is registered only for the incomplete
 installation battery, with unchanged inputs/funding except this diagnostic.
 The earlier A1 result and complete policy pass remain terminal. No complete
 release is inferred.
+
+## 185. Every unresolved legacy installation row is an exhausted work debit (2026-09-21)
+
+[Readback A2](evidence/minimal/FP_CUDA_READBACK_REGRESSIONS_A2.json), source
+f2481a3, retains the complete bounded diagnostic:774 syntax rows,542
+successful comparisons and232 unresolved rows, all with reason
+`compiler cumulative work exhausted`. No other unresolved reason is omitted.
+No class proof is issued. This distinguishes the actual failure from an
+unproved feasibility or numerical claim.
+
+The installation fixture is now explicitly funded at60-billion work, the
+same allowance already exercised by the complete policy battery. The
+mathematical grammar, initializer objective, inputs and assertions remain
+unchanged; resource registration and its identity change. Readback A3 runs
+only the incomplete installation battery. Its result is pending at this
+source; all previous executions and refusals remain canonical evidence.

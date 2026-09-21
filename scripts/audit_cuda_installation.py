@@ -34,7 +34,7 @@ from audit_reference_persistence import event, identity, owned
 from audit_float64_runtime import replay
 
 
-def fixture(*, learned=False, recurrent=False, continued=False, cpu=True, host=None, byte_cap=500_000_000, work_cap=12_000_000_000):
+def fixture(*, learned=False, recurrent=False, continued=False, cpu=True, host=None, byte_cap=500_000_000, work_cap=60_000_000_000):
     cfg = config(cap=10, peak=10, pattern=(F(2),)) if learned else config(cap=4, peak=1)
     if recurrent:
         cfg = replace(cfg, semantics=replace(cfg.semantics, states=(DelayedStateSpec('h', 'mass', 2, F(1)),)))

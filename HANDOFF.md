@@ -52,9 +52,10 @@ the complete policy battery after explicit funding; its learned case visits
 774 rows, installs at18 and seals at40, checking970 CPU and970 CUDA phases.
 This alone does not prove all visited class members were resolved. Installation
 with12-billion work still leaves232 comparisons unresolved, after542 compare.
-The exact reason histogram was missing, so A2 reruns only that incomplete
-battery with bounded failure diagnostics and unchanged funding. Do not
-increase another allowance without first identifying these retained reasons.
+A2 confirms that all232 rows hit `compiler cumulative work exhausted`,
+with no other unresolved reason. A3 registers only the incomplete installation
+battery at the policy fixture's existing60-billion allowance. A1/A2 and the
+full policy pass remain retained; A3 is pending at this source.
 Retain A1/A2 and all old terminal jobs. No complete release or class
 certificate is claimed; Foundation R4 and ERC-1 remain frozen.
 

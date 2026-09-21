@@ -27,8 +27,9 @@ exact CPU audit and all twelve actual A4 cases, including gradient/trace
 mutation and older-extent substitution. Separate proper-normalization and
 division checks also pass. The legacy policy battery now passes with explicit
 work funding. Installation still leaves232 class comparisons unresolved at
-12-billion work; A2 must identify their retained reasons before any further
-resource or solver change. Native-class search/fallback, query-dependent inference
+12-billion work; A2 identifies cumulative work exhaustion for all232. A3
+tests installation at the already-used policy allowance of60 billion.
+Native-class search/fallback, query-dependent inference
 cost and model usefulness remain open. A solved endpoint-binding issue
 must not become a reason to expand unrelated static cases.
 

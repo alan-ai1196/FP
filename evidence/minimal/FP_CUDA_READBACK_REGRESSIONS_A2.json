@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE_WITH_FAILURE",
+  "registration": {
+    "source": "f2481a33984e46579c38f1e402dabe43dad4209f",
+    "cases": [
+      "cuda_installation"
+    ],
+    "tariff_change_source": "56dfea0",
+    "prepaid_output_cells": 4096,
+    "old_per_cell_work": 128,
+    "current_per_cell_work": 320,
+    "additional_work_per_native_phase": 786432,
+    "additional_initial_readout_work": 32768,
+    "installation_work_budget": {
+      "old": 4000000000,
+      "current": 12000000000
+    },
+    "policy_work_budget": {
+      "old": 20000000000,
+      "current": 60000000000
+    },
+    "scope": "complete unchanged native decision classes, trajectories and failure controls with explicitly funded current work tariffs; no complete release",
+    "enforcement": "existing complete battery process/job protocols; strict full-section and counter validation; 7200-second battery deadline",
+    "earlier_failure": "FP_INDEXED_AMP_CUDA_REGRESSIONS.json"
+  },
+  "audits": {
+    "cuda_installation": {
+      "status": "FAILED",
+      "failure": "scripts/audit_cuda_installation.py: exit 1\nTraceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 320, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 305, in main\r\n    report[case] = execute(case)\r\n                   ^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 301, in execute\r\n    raise RuntimeError(process.stdout+process.stderr)\r\nRuntimeError: Traceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 320, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 287, in main\r\n    result = success_case(learned=args.case == 'learned', recurrent=args.case == 'recurrent', cpu=args.case != 'no-cpu')\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 102, in success_case\r\n    rt, selected, ids = fixture(learned=learned, recurrent=recurrent, cpu=cpu)\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 52, in fixture\r\n    search, ids = select(rt, 'native', 'ref', 'cuda')\r\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 64, in select\r\n    raise AssertionError(json.dumps({'search_result': repr(search), 'total_rows': len(session.rows),\r\nAssertionError: {\"search_result\": \"ReferenceSearchResult(status='UNRESOLVED', search_id='9806394f370477a3667fc52f:search:0', decision_class_id='af240e56d1a094877358073b6e3120f26ec6b65eb14c5520a765803dd022538f', programs_compared=542, unresolved_programs=232, best_candidate_id='9806394f370477a3667fc52f:candidate:362', best_likelihood=Fraction(9, 16), proof_id=None, reason='syntax exhausted, but at least one value/feasibility/comparison remains unresolved')\", \"total_rows\": 774, \"unresolved_reasons\": [{\"status\": \"UNRESOLVED\", \"reason\": \"compiler cumulative work exhausted\", \"rows\": 232}], \"other_unresolved_rows\": 0}\r\n\r\n"
+    }
+  }
+}
