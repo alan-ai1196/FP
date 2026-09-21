@@ -2,6 +2,23 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current research result, 2026-09-21:**
+[query-boundary response](theory/proofs/QUERY_BOUNDARY_RESPONSE.md) proves
+that h legal boundary observations expose exactly the even moments through
+order2h+2. The horizon hierarchy is strict and determines the full normalized
+message by h=floor(b/2)-1. This is a scoped predictive-response result,
+not a Compiler-state quotient or a count-family reachability claim for every
+abstract message. Its current-query corollary evaluates only cycle blocks
+on the query path using positive parity convolution, while retaining every
+global count. All59,808 small count states/1,488,144 ordered queries and
+89,875 finite-horizon comparisons pass exactly. An off-path count still
+changes native theta and a later connected query. Exact cancellation also
+changes existing AMP words, so it cannot borrow the A4 schedule certificate.
+**Research next:** implement the proved query projection in the owned exact
+reference decoder with paid planning and full global state; any corresponding
+AMP optimization needs a separately declared and checked schedule. Do not
+replace this general law with more static graph-size cases.
+
 **Current indexed AMP integration, 2026-09-21:** the
 [owned AMP implementation](theory/proofs/OWNED_INDEXED_AMP.md) now binds an
 independent count learner and actual half/single schedule to the existing

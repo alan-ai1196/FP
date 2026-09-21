@@ -211,6 +211,17 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [query-boundary response theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
+sharpens the continuation quantifier within the fixed relation model. For
+positive flip-symmetric messages on b boundary vertices, equality after up
+to h legal boundary observations is exactly equality of even moments through
+order2h+2. The hierarchy is strict; full projective response is exposed by
+h=floor(b/2)-1. It also yields a positive current-query block projection
+without erasing full counts or changing native theta. Exact exhaustive
+audits pass, but production integration and a separately verified AMP
+schedule remain open. This is a decoder/response consequence, not a change
+to Foundation R4 or the frozen Experiment Resource Contract.
+
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.
 
 The repeated v1→v155 failure mode is now compressed to one rule:

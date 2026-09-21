@@ -2,6 +2,14 @@
 
 ## Current implementation state (2026-09-21)
 
+The new [query-boundary theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
+and diagnostic pass exact exhaustive checks. They identify the information
+exposed by finite boundary futures and a positive current-query block
+projection. **Production still uses the existing global decoder**; neither
+reference planning nor AMP has adopted this optimization. Full counts and
+native parameter meaning remain mandatory. Existing AMP words provably
+change under the exact cancellation, requiring a new physical declaration.
+
 The [indexed owned AMP implementation](theory/proofs/OWNED_INDEXED_AMP.md)
 now connects the independent count learner, positive half/single schedule,
 complete phase frames and actual target to the existing CUDA owner. Its

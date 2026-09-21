@@ -6250,3 +6250,40 @@ the strict complete-section/counter parser. Execution inputs must remain
 equal to the recorded committed source; unrelated research documents may
 advance. Its actual result is pending at this source. No old GPU/model job
 is restarted and no new complete release is asserted.
+
+## 183. Finite boundary futures expose a sharp moment hierarchy and a general query projection (2026-09-21)
+
+[The new response theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md) fixes
+the continuation class before deciding what information may be omitted.
+For positive flip-symmetric messages on b boundary vertices, h pair/label
+observations followed by any pair forecast identify exactly the even moments
+through order2h+2. Sufficiency follows by expanding positive likelihood
+products; necessity recovers each even character from joint labels on a
+matching. Full projective response appears by h=floor(b/2)-1. Positive
+higher-order perturbations prove every earlier horizon can lose information
+that the next one reveals. Linear response rank and a finite-grid bit lower
+bound are stated only for the declared arbitrary-message class.
+
+The b1 response is constant and the b2 response is a positive parity pair.
+Applying this to the current nonzero count support gives a general decoder:
+retain only blocks on the block/vertex path between queried vertices and
+compose their parity pairs by positive convolution. This extends the
+repository's existing cycle-block factor result to current-query arithmetic.
+The input count vector, complete native theta meaning and future all-pair
+interface stay intact. Outside counts already distinguish current native
+parameters and can affect the same query after two legal bridge observations.
+
+The exact audit covers all1098 small supports against an independent
+simple-path oracle, all59,808 ternary count states and1,488,144 ordered
+queries against full anchored worlds, plus89,875 complete small-horizon
+comparisons. The strict horizon examples separate at33/50 versus17/50,
+157/250 versus93/250, and753/1250 versus497/1250. Exact star-response
+inversion independently checks the full boundary-message claim.
+
+An adversarial numerical audit also finds that eliminating an irrelevant
+triangle changes the old RNE schedule's final words despite identical exact
+probability3281/9842. Therefore this mathematical projection cannot inherit
+the existing physical certificate. Production reference planning and any
+new AMP schedule remain separate owned implementation obligations. No
+Foundation/ERC change, static graph-size campaign, model win or complete
+Compiler quotient is claimed.

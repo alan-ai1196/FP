@@ -1,0 +1,287 @@
+{
+  "status": "PASS_EXACT_QUERY_PROJECTION",
+  "scope": "current exact normalized readout and restricted boundary futures; full count/state/provenance retained; no Runtime integration",
+  "groups": [
+    {
+      "n": 2,
+      "all_graph_supports": 2,
+      "all_ternary_count_states": 3,
+      "all_ordered_queries_checked": 12,
+      "strictly_smaller_query_edge_sets": 4
+    },
+    {
+      "n": 3,
+      "all_graph_supports": 8,
+      "all_ternary_count_states": 27,
+      "all_ordered_queries_checked": 243,
+      "strictly_smaller_query_edge_sets": 150
+    },
+    {
+      "n": 4,
+      "all_graph_supports": 64,
+      "all_ternary_count_states": 729,
+      "all_ordered_queries_checked": 11664,
+      "strictly_smaller_query_edge_sets": 6728
+    },
+    {
+      "n": 5,
+      "all_graph_supports": 1024,
+      "all_ternary_count_states": 59049,
+      "all_ordered_queries_checked": 1476225,
+      "strictly_smaller_query_edge_sets": 651760
+    }
+  ],
+  "boundary_response": {
+    "invertible_positive_star_response_checks": [
+      {
+        "boundary_vertices": 2,
+        "positive_message_coordinates": 2,
+        "exact_star_responses": 2
+      },
+      {
+        "boundary_vertices": 3,
+        "positive_message_coordinates": 4,
+        "exact_star_responses": 4
+      },
+      {
+        "boundary_vertices": 4,
+        "positive_message_coordinates": 8,
+        "exact_star_responses": 8
+      },
+      {
+        "boundary_vertices": 5,
+        "positive_message_coordinates": 16,
+        "exact_star_responses": 16
+      },
+      {
+        "boundary_vertices": 6,
+        "positive_message_coordinates": 32,
+        "exact_star_responses": 32
+      },
+      {
+        "boundary_vertices": 7,
+        "positive_message_coordinates": 64,
+        "exact_star_responses": 64
+      }
+    ],
+    "strict_finite_horizon_ladder": [
+      {
+        "boundary_vertices": 4,
+        "indistinguishable_through_future_observations": 0,
+        "all_history_next_pair_checks": 6,
+        "first_distinguishing_suffix": [
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "next_pair": [
+          2,
+          3
+        ],
+        "different_forecasts": [
+          "33/50",
+          "17/50"
+        ]
+      },
+      {
+        "boundary_vertices": 6,
+        "indistinguishable_through_future_observations": 1,
+        "all_history_next_pair_checks": 465,
+        "first_distinguishing_suffix": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            3,
+            0
+          ]
+        ],
+        "next_pair": [
+          4,
+          5
+        ],
+        "different_forecasts": [
+          "157/250",
+          "93/250"
+        ]
+      },
+      {
+        "boundary_vertices": 8,
+        "indistinguishable_through_future_observations": 2,
+        "all_history_next_pair_checks": 89404,
+        "first_distinguishing_suffix": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            2,
+            3,
+            0
+          ],
+          [
+            4,
+            5,
+            0
+          ]
+        ],
+        "next_pair": [
+          6,
+          7
+        ],
+        "different_forecasts": [
+          "753/1250",
+          "497/1250"
+        ]
+      }
+    ],
+    "equal_current_pair_moments_do_not_determine_arbitrary_boundary_messages": {
+      "messages_on_anchored_assignments": [
+        [
+          3,
+          1,
+          1,
+          3,
+          1,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          3,
+          3,
+          1,
+          3,
+          1,
+          1,
+          3
+        ]
+      ],
+      "common_legal_boundary_observation": [
+        0,
+        1,
+        0
+      ],
+      "next_query": [
+        2,
+        3
+      ],
+      "future_noisy_probabilities": [
+        "33/50",
+        "17/50"
+      ],
+      "scope": "arbitrary positive flip-symmetric messages; count-family reachability of these two tables is not claimed"
+    }
+  },
+  "counterexamples": {
+    "current_query_projection_is_not_a_full_state_quotient": {
+      "n": 4,
+      "counts": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "query": [
+        0,
+        3
+      ],
+      "current_forecasts": [
+        "1/2",
+        "1/2"
+      ],
+      "current_first_world_theta": [
+        "9/40",
+        "1/40"
+      ],
+      "common_suffix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          0
+        ]
+      ],
+      "future_forecasts": [
+        "881/1250",
+        "369/1250"
+      ]
+    },
+    "exact_cancellation_does_not_preserve_the_fixed_AMP_words": {
+      "query": [
+        1,
+        2
+      ],
+      "exact_latent_equal_probability": "3281/9842",
+      "executions": [
+        {
+          "n": 5,
+          "counts": [
+            -2,
+            -2,
+            -2,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "words": [
+            1076539164,
+            1084926067,
+            1080733468,
+            1087023219,
+            1092616192,
+            1052491594,
+            1059201116
+          ],
+          "output_cells": 74
+        },
+        {
+          "n": 3,
+          "counts": [
+            -2,
+            -2,
+            -2
+          ],
+          "words": [
+            1076539163,
+            1084926066,
+            1080733467,
+            1087023218,
+            1092616192,
+            1052491593,
+            1059201115
+          ],
+          "output_cells": 62
+        }
+      ],
+      "scope": "exact RNE simulation; no new actual CUDA or transfer of the A4 certificate"
+    }
+  }
+}

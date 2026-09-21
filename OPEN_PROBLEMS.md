@@ -2,6 +2,16 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
+now characterizes exact predictive equivalence for a declared boundary
+horizon and proves current-query block projection. Its main open consequence
+is owned implementation: pay for the full count scan and structural plan,
+retain global theta/count/history meaning, evaluate only required positive
+block responses, and preserve existing failure/lineage checks. A matching
+AMP lowering needs its own declared schedule; real-valued cancellation
+does not preserve current rounded words. Worst-case hard blocks, explicit
+native outputs and model usefulness remain unresolved by this theorem.
+
 The [indexed AMP path](theory/proofs/OWNED_INDEXED_AMP.md) now has code for
 owned phases, complete coordinate checks, actual-target binding, fresh
 paired persistence and resident installation. Its CPU schedule/native
