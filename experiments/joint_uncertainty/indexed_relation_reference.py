@@ -221,22 +221,34 @@ class DecodeAllowance:
 
 def partition_plan(state, query, order, budget):
     """Metadata-only simulation of the actual positive decoder table schedule."""
-    counts.query(state.n, *query)
     # The extra eight bits also cover the fixed rational readout/gradient
     # multipliers, not just the positive partition's n+4*height bound.
     if state.n+4*sum(map(abs, state.counts))+8 > budget.integer_bits:
         raise ArithmeticUnresolved('partition integer envelope exceeds its declared allowance')
+    support = tuple(edge for edge, d in zip(combinations(range(state.n), 2), state.counts) if d)
+    return partition_shape_plan(state.n, support, query, order, budget)
+
+
+def partition_shape_plan(n, support, query, order, budget):
+    """Table geometry only; mantissa/exponent execution has its own bit guard."""
+    counts.query(n, *query)
+    if (type(support) is not tuple or any(type(e) is not tuple or len(e) != 2 for e in support)
+            or tuple(sorted(set(support))) != support):
+        raise ContractError('complete ordered distinct active edge support required')
+    for i, j in support:
+        counts.query(n, i, j)
+        if i >= j:
+            raise ContractError('active support uses canonical nonloop edges')
     if (type(order) is not tuple or any(type(v) is not int for v in order)
-            or sorted(order) != list(range(state.n-1))):
+            or sorted(order) != list(range(n-1))):
         raise ContractError('complete declared elimination order required')
     scopes = []
     initial = 0
-    for (i, j), d in zip(combinations(range(state.n), 2), state.counts):
-        if d:
-            scope = tuple(v for v in (i, j) if v)
-            initial += 1 << len(scope)
-            allowance(initial, budget.live_cells, 'initial partition cell allowance')
-            scopes.append(scope)
+    for i, j in support:
+        scope = tuple(v for v in (i, j) if v)
+        initial += 1 << len(scope)
+        allowance(initial, budget.live_cells, 'initial partition cell allowance')
+        scopes.append(scope)
     kept = tuple(sorted({v for v in query if v}))
     multiply = add = 0
     peak_join, peak_live = 1, initial

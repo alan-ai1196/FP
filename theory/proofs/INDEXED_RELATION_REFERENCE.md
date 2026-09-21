@@ -246,3 +246,11 @@ passed to that API as a pretend Program. Owned indexed admission, resource
 and identity binding, actual event acquisition, complete numerical phase
 evidence, fresh persistence and reachable installation remain the next
 implementation/bridge obligations.
+
+The subsequent [finite-basis numerical bridge](INDEXED_PHASE_BRIDGE.md)
+checks every native reference coordinate with exact count binding, seven
+readout words and three gradient forms. It requires the independently owned
+target; a self-reported target gives an explicit false-certificate example.
+This supplies a conditional numerical component, while the production
+admission, physical ownership, evidence and installation obligations above
+remain open.

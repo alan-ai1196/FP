@@ -163,6 +163,16 @@ a representation choice for this fixed family, not a semantic necessity.
 Owned Runtime admission, numerical phase evidence and complete Compiler
 resource/provenance obligations remain open; no frozen definition changes.
 
+The [finite-basis indexed phase bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md)
+extends that representation to every native reference parameter/cache/gradient
+coordinate. Counts encode parameters exactly; seven readout words and three
+gradient forms have complete interval checks. The target must be bound
+independently of the physical pending report: unchanged gradient words can
+otherwise conceal a label flip and reverse the next update. Exact/native
+and binary64 audits pass; the one actual GPU component diagnostic is pending.
+This conditional component relation supplies neither owned Runtime nor full
+Compiler-state authority and changes no Foundation or ERC definition.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

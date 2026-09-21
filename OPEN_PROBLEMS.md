@@ -2,6 +2,19 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The [finite-basis indexed bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) now
+provides a conditional numerical relation for every native reference
+parameter, cache and gradient coordinate. It eliminates the need to scan K
+entries for that mathematical comparison, while retaining explicit-output
+costs. It also exposes a decisive binding requirement: the target must come
+from the owned observation record, not from the physical pending tag being
+verified. Full-coordinate numerical checks alone cannot repair circular
+information authority. The source-bound4-GiB/600-second RTX3090 component
+audit is pending. The main integration problem remains owned indexed
+admission/execution, descriptor and source/label lineage, complete physical
+phase records, fresh persistence and reachable installation. The new helper
+must not enter the old array-based API as apparent existing authority.
+
 The [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md) now proves
 the exact-shift refinement and its error law. It recovers a uniform bound
 below0.001 on the256-cycle query(0,96) for all admitted signed counts under
@@ -26,7 +39,8 @@ allowances remain separate. Production still requires explicit Program,
 prior/slot and dense likelihood tables. Replace that admission bottleneck
 only through an owned representation with actual source/provenance and
 resource binding, its own numerical tape, complete bridge, fresh persistence
-and reachable installation. The passive reader grants none of those acts.
+and reachable installation. The passive reader and new numerical component
+grant none of those acts.
 A new physical schedule need not reproduce an older schedule's words, but
 explicit K-entry output retains its Omega(K) cost. Leaving this fixed family
 requires a proved encoding or funded fallback, otherwise UNRESOLVED. Do not

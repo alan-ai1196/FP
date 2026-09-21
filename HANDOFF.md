@@ -2,6 +2,24 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current complete-coordinate bridge, 2026-09-21:** the
+[indexed phase bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) keeps parameters
+exactly count-encoded and checks every native cache/gradient coordinate using
+seven readout words and three pending-gradient forms. An independently bound
+binary64 target interval gives finite bounds for the entire native vector.
+The actual label must be supplied independently: a draft checker accepted a
+flipped self-reported label with unchanged gradient words, reversing the next
+forecast41/50 to9/50. The corrected check rejects it. A nearby-readout adversary
+also passes forecast/native tolerances but has gradient error>0.0397.
+The CPU audit passes3,060 small observed/committed pairs,109 sequential
+profile/reversal events, four n256 component events and four correlated
+observations at counts16/10^12.736,038 checked binary64 primitives support
+these component paths. One4-GiB/600-second RTX3090 diagnostic is registered
+and pending at this source. No earlier GPU/model job is restarted. This is
+a conditional native-reference component bridge; owned Runtime admission,
+actual information acquisition, complete physical evidence, fresh persistence
+and reachable installation still require integration.
+
 **Current admission-representation result, 2026-09-21:** the
 [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
 recovers every native node, ordered SUM incidence, slot tie, initializer and

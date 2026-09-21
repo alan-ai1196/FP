@@ -5906,3 +5906,59 @@ with a proved compact representation, not a Foundation counterexample or a
 completed Runtime path. Owned indexed admission, source/provenance/resource
 binding, complete numerical phase evidence, fresh persistence and reachable
 installation remain the next work. All earlier GPU/model jobs stay terminal.
+
+## 173. Complete indexed phase checks require an independently bound target (2026-09-21)
+
+The [finite-basis phase bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) extends
+the indexed code/state result to actual numerical readout and gradient maps.
+Counts encode every parameter exactly. The original source/PRODUCT/parity
+cache coordinates have exact index decoders; seven readout words and three
+pending-gradient forms cover the remaining native coordinates. A checked
+binary64 forecast interval transforms monotonically into all exact target
+mass and gradient intervals. Maxima over the occurring classes bound the
+entire native vectors without K-entry comparisons.
+
+The draft verifier exposed an information-interface flaw. It reconstructed
+its expected target from the physical pending label. At the uniform prior,
+both labels give identical three-word gradient forms, but exchange which
+world slots receive them. Changing only the pending label therefore passed
+the circular comparison and reversed the next forecast41/50 to9/50. The
+decoded gradient swap is13421773/8388608. The final checker requires the
+independent actual target and rejects the forgery before numerical checks.
+Runtime must supply that target from its owned observation record; a helper
+record or self-reported label cannot provide the missing authority.
+
+A separate nearby-readout adversary after four n2 equality labels shifts p0
+by1/2000. Both forecast and activation/mass tolerances pass, while the
+matching rare-world gradient has error54706105/1377828864>0.0397. This is a
+constructed admissible-error comparison, not a measured main-kernel failure
+or weakened model baseline. It demonstrates why probability accuracy alone
+does not settle a complete-state relation.
+
+The proposed phase uses the existing actual-half/general-product and exact
+radix-power lowering, followed by positive binary32 partition normalization,
+native excess/mass construction and three explicit gradient calculations.
+Its count commit is the proved exact unit-simplex rewrite; no reference
+posterior is cast/uploaded as a GPU successor. Counts, pending data and both
+clocks persist, including profile attachment and failed commit boundaries.
+Full output and table/tape/batch/exponent allowances remain explicit.
+
+The CPU audit checks1,530 distinct small predictions and3,060 full native
+observed/committed pairs, using666 actual native preparation units. A9-event
+profile/continuation and100-event late-birth reversal add109 sequential
+component events. Four n256 events execute with the literal builder disabled;
+the final original parameter map is(81,81,1,81)/(61K) across free coordinates.
+Two256-cycle states at heights16/10^12 support both observed labels, with
+independent cycle target enclosures. These are phase inputs, not replayed
+trillion-event histories. All paths pass170,562 rounded scalar results and
+736,038 checked binary64 primitives. Eleven bad phase/word cases, one
+retained pending clock overflow and three pre-numerical resource failures
+are refused. The prior indexed-reference audit remains exactly unchanged.
+
+One4-GiB/600-second RTX3090 diagnostic is registered before execution and
+remains pending at this source. It must match every actual word and complete
+coordinate decision; all earlier GPU/model jobs remain terminal. This is a
+conditional component bridge. Production owned indexed admission, source/
+target provenance, complete physical phases, fresh persistence and reachable
+installation remain separate, necessary work. No Foundation or ERC change,
+complete-Compiler quotient or CERTIFIED_COMPLETE is asserted.

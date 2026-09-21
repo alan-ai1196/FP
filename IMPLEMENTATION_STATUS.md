@@ -2,6 +2,20 @@
 
 ## Current implementation state (2026-09-21)
 
+The [indexed numerical phase component](theory/proofs/INDEXED_PHASE_BRIDGE.md)
+now stores exact counts, all clocks/pending data, seven actual readout words
+and three gradient forms. Its finite checker covers every native reference
+coordinate and explicitly binds the target supplied independently of the
+physical pending tag. A circular-label forgery and a forecast-only false
+promotion are retained.3,060 small observed/committed pairs and109 sequential
+component events match the independent native learner; the n256 paths avoid
+literal world tables. The CPU audit checks170,562 rounded results and736,038
+actual binary64 primitives. The sole4-GiB/600-second GPU diagnostic is
+registered but pending. Shared table-geometry preflight is factored out,
+and the previous indexed-reference audit remains identical. Runtime and its
+owned array-based phase formats are unchanged; this is not a new backend
+admission or installation path.
+
 The passive [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
 now binds a compact description to every ordered native node/incidence,
 uniform Gamma, selected-slot U and complete categorical source interface.
