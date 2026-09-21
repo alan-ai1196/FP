@@ -1,0 +1,386 @@
+{
+  "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+  "execution_source": "da532dc7ce001f4943b84013134e4257edcbdcd0",
+  "registration": {
+    "status": "REGISTERED_INDEXED_VALUE_BOUNDARY",
+    "cases": [
+      "planner-sources",
+      "planner-counts",
+      "planner-raises",
+      "planner-poison-restore",
+      "retained-result",
+      "retired-executor",
+      "integration-profiles",
+      "integration-projected-profiles",
+      "integration-projected-large",
+      "integration-projected-install"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "source": "all execution dependencies committed at launch HEAD",
+    "hypotheses": "input faults refuse before AMP; harmless/restored proposals execute the actual input; retained aliases cannot change old records",
+    "scope": "reference prediction delegation only; no complete Runtime or other-helper release"
+  },
+  "workers": [
+    {
+      "case": "planner-sources",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191048704,
+        "peak_job_commit": 2192273408,
+        "user_100ns": 20156250,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8548,
+        "process_creation_100ns": 134344654654688788
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "planner-sources",
+        "process_id": 8548,
+        "result": {
+          "case": "planner-sources",
+          "refused": true,
+          "error": "ContractError: indexed plan differs from the private predecessor or actual input",
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "private_planning_work_paid": 52224,
+          "checked_full_phase_records": 4,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "planner-counts",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2192441344,
+        "peak_job_commit": 2193666048,
+        "user_100ns": 20156250,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4344,
+        "process_creation_100ns": 134344654686888196
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "planner-counts",
+        "process_id": 4344,
+        "result": {
+          "case": "planner-counts",
+          "refused": true,
+          "error": "ContractError: indexed plan differs from the private predecessor or actual input",
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "private_planning_work_paid": 52224,
+          "checked_full_phase_records": 4,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "planner-raises",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190069760,
+        "peak_job_commit": 2191298560,
+        "user_100ns": 21250000,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29056,
+        "process_creation_100ns": 134344654718074106
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "planner-raises",
+        "process_id": 29056,
+        "result": {
+          "case": "planner-raises",
+          "refused": true,
+          "error": "RuntimeError: registered supplied-input failure after mutation",
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "private_planning_work_paid": 52224,
+          "checked_full_phase_records": 4,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "planner-poison-restore",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2193752064,
+        "peak_job_commit": 2194980864,
+        "user_100ns": 21406250,
+        "kernel_100ns": 8593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27104,
+        "process_creation_100ns": 134344654749238825
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "planner-poison-restore",
+        "process_id": 27104,
+        "result": {
+          "case": "planner-poison-restore",
+          "refused": false,
+          "error": null,
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "complete_native_update_matches_literal": true,
+          "private_planning_work_paid": 4354336704,
+          "checked_full_phase_records": 7,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "retained-result",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2194706432,
+        "peak_job_commit": 2195931136,
+        "user_100ns": 22656250,
+        "kernel_100ns": 7812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21544,
+        "process_creation_100ns": 134344654781720613
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "retained-result",
+        "process_id": 21544,
+        "result": {
+          "case": "retained-result",
+          "refused": false,
+          "error": null,
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "complete_native_update_matches_literal": true,
+          "prior_accepted_output_unchanged_after_later_helper": true,
+          "private_planning_work_paid": 4354336704,
+          "checked_full_phase_records": 8,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "retired-executor",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2192990208,
+        "peak_job_commit": 2194227200,
+        "user_100ns": 21718750,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14084,
+        "process_creation_100ns": 134344654815618695
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "retired-executor",
+        "process_id": 14084,
+        "result": {
+          "case": "retired-executor",
+          "refused": false,
+          "error": null,
+          "old_snapshot_unchanged": true,
+          "native_predecessor_unchanged": true,
+          "actual_context_retained": true,
+          "target_before_decision": null,
+          "complete_native_update_matches_literal": true,
+          "retired_executor_calls": 0,
+          "private_planning_work_paid": 4354336704,
+          "checked_full_phase_records": 7,
+          "older_sealed_metadata_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "integration-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2236870656,
+        "peak_job_commit": 2238099456,
+        "user_100ns": 51718750,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27168,
+        "process_creation_100ns": 134344654848113188
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "integration-profiles",
+        "process_id": 27168,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1666,
+          "actual_half_words": 72,
+          "cursor": 8,
+          "packed_current_bytes": 16009769,
+          "consumed_arena_bytes": 14656,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "integration-projected-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2236850176,
+        "peak_job_commit": 2238074880,
+        "user_100ns": 34375000,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2068,
+        "process_creation_100ns": 134344654915198109
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "integration-projected-profiles",
+        "process_id": 2068,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 978,
+          "actual_half_words": 48,
+          "cursor": 8,
+          "packed_current_bytes": 16009794,
+          "consumed_arena_bytes": 9152,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ],
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-projected-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2355826688,
+        "peak_job_commit": 2357059584,
+        "user_100ns": 1055312500,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26744,
+        "process_creation_100ns": 134344654965344987
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "integration-projected-large",
+        "process_id": 26744,
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 514,
+          "actual_half_words": 24,
+          "cursor": 4,
+          "packed_current_bytes": 205668071,
+          "consumed_arena_bytes": 4864,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4,
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-projected-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2212315136,
+        "peak_job_commit": 2213543936,
+        "user_100ns": 45625000,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14940,
+        "process_creation_100ns": 134344656044218346
+      },
+      "result": {
+        "status": "PASS_ACTUAL_INDEXED_VALUE_BOUNDARY",
+        "case": "integration-projected-install",
+        "process_id": 14940,
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1258,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21902609,
+          "consumed_arena_bytes": 11952,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true,
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        }
+      }
+    }
+  ]
+}

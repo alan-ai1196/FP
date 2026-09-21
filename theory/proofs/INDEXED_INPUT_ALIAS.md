@@ -8,8 +8,8 @@ are unchanged.
 
 The subsequent [continuation-stable reference boundary](CONTINUATION_STABLE_DELEGATION.md)
 implements a scoped repair: immutable metadata proposals, private accepted
-plans and removal of redundant numerical delegation. CPU regressions pass;
-actual repair probes are registered and pending. The old witnesses below
+plans and removal of redundant numerical delegation. CPU regressions and
+all ten actual CUDA A1 repair/integration jobs atda532dc pass. The old witnesses below
 remain source-bound, while broader indexed helper ownership remains HOLD.
 
 ## 1. The causal input can change before its own check

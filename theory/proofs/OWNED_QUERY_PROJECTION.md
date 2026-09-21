@@ -8,8 +8,8 @@ or CountState can change before its own comparison. This indexed boundary
 is HOLD. All three actual CUDA probes at058489e reproduce before repair.
 The subsequent [reference value boundary](CONTINUATION_STABLE_DELEGATION.md)
 repairs this prediction delegation with private inputs/results and a fixed
-owned exact kernel. Its CPU regressions pass; actual repair probes are
-pending. Broader indexed helper ownership is not yet released.
+owned exact kernel. Its CPU regressions and all ten actual CUDA A1 jobs
+atda532dc pass. Broader indexed helper ownership is not yet released.
 The independently declared AMP schedule remains global. Its actual A5
 integration audit passes all thirteen cases atae7f915; no projected physical
 kernel or complete release is claimed here.

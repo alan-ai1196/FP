@@ -14,10 +14,15 @@ CPU passes2048 finite heap schedules,759 count reconstructions, six actual
 Runtime fault/continuation cases and prepaid refusal. Full indexed and
 projection regressions pass, including388 histories/776 native phase checks,
 n256, profiles and fresh reference persistence. Ten fresh4-GiB/900-second
-CUDA cases are registered: six faults plus four profile/n256/fresh-install
-integrations. Actual outcomes are pending. Other native/AMP
+CUDA cases are terminal atda532dc: all six faults and four profile/n256/
+fresh-install integrations pass. All264 complete phase records pass;
+the integrations independently check4416 floating words,144 half words.
+Maximum job commitment2,357,059,584 bytes; no timeout/limit termination.
+Fresh paired evidence crosses at20, installs and learns to21 with alpha1/2
+retained. Other native/AMP
 helper surfaces remain outside this scoped repair and still need analysis.
-Paid order implementation has not begun.
+Paid order implementation has not begun. Do not rerun terminal probes;
+apply the frame/refinement analysis to the remaining helper surfaces next.
 
 **Retained input-binding counterexamples:**
 The [real CPU Runtime probes](theory/proofs/INDEXED_INPUT_ALIAS.md) show that

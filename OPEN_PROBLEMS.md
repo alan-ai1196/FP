@@ -6,8 +6,10 @@ The immediate obstacle is complete indexed helper ownership. The
 [continuation-stability law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
 now has a scoped reference prediction implementation: immutable value-only
 metadata delegation, private accepted plans and one fixed owned exact
-execution. CPU and native regressions pass; ten actual CUDA probes are
-registered and pending. Other native/AMP argument and returned-record
+execution. CPU and native regressions pass; all ten actual CUDA A1 probes
+pass atda532dc, including n256 and fresh installation/learning. Their264
+complete records pass all readers, with maximum job2,357,059,584 bytes.
+Other native/AMP argument and returned-record
 surfaces, including later retained aliases, remain to be assessed. No complete
 Runtime release follows from this single component boundary.
 

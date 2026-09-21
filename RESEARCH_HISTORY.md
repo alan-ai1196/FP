@@ -7053,3 +7053,33 @@ component faults/continuations and four global/projected profile, n256 and
 fresh-install integrations. Their outcomes are pending. This closes no
 other native/AMP helper boundary and grants no complete Runtime release.
 The broader indexed extension remains HOLD; paid order search has not begun.
+
+## 210. Validate continuation-stable reference delegation on the actual device (2026-09-21)
+
+All ten registered CUDA A1 jobs pass atda532dc, with fixed committed
+dependencies. Every job is attached before execution, exits zero below4 GiB
+and has no timeout or limit termination. Maximum job commitment is
+2,357,059,584 bytes. All jobs are terminal.
+
+The supplied source/count faults and the raising planner refuse before
+entering a new AMP phase. Native predecessors, actual contexts, unrevealed
+targets, earlier snapshots and sealed metadata remain intact. Poisoned then
+restored metadata cannot poison the private exact forecast. Later writes
+through a planner-retained result cannot alter accepted history. Successful
+continuations match the complete literal native learner, and the retired
+numerical delegation receives zero calls.
+
+Full readers check264 phase records:34 in the six component probes and230
+in four integration jobs. The integrations independently check4416 floating
+words,144 of them half words. Global/projected profiles each pass58 phases;
+projected n256 passes34 phases/514 words with world builders disabled.
+Fresh paired reference/AMP evidence crosses at20, installs with alpha1/2
+retained, and learns to21 across80 checked phases/1258 words.
+
+This closes the reference prediction component in its explicit fault class,
+without treating an arbitrary replaceable numerical producer as trusted
+evidence. The fixed exact kernel, private checker and value reifier remain
+the declared trusted implementation. Other native/physical helper arguments
+and retained returned records have not received this ownership guarantee;
+the broader indexed extension stays HOLD. No complete optimization class,
+model-science release, resource dominance or Foundation change is inferred.

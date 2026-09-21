@@ -8,7 +8,10 @@ keeps actual inputs and accepted results private, delegates only bounded
 immutable plan values, and retires the replaceable numerical executor.
 A poison/restore witness rules out copying-only numerical delegation.
 The new CPU audit and complete indexed/projection regressions pass;
-ten fresh actual CUDA fault/integration cases are registered and pending. Other native/AMP
+all ten fresh actual CUDA A1 cases pass atda532dc. Full readers check264
+records; four integrations check4416 floating words, including144 half.
+Maximum job2,357,059,584 bytes; all jobs exit0 without timeout/limit
+termination. n256 and fresh installation/learning to21 pass. Other native/AMP
 helper surfaces and complete release are not covered by this component gate.
 
 Three historical

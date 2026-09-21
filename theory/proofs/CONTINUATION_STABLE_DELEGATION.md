@@ -1,7 +1,7 @@
 # Delegation requires a stable referent and private accepted results
 
 Status: **proved component law; implemented for reference prediction
-delegation; exact CPU audits pass; actual CUDA checks registered, pending**.
+delegation; exact CPU audits and all ten actual CUDA A1 jobs pass**.
 The broader indexed helper/continuation boundary remains HOLD. This is an
 implementation refinement of Foundation R4, not a new semantic action,
 resource optimum, statistical certificate or complete Runtime release.
@@ -207,7 +207,7 @@ execution dependencies must be committed before launch; source remains
 fixed while live, and every outcome is retained. Refused reference proposals
 must not enter AMP; successful cases must preserve all old sealed metadata,
 pass full phase readers and learn the literal native update. The actual
-results are pending. The full indexed Runtime regression also passes all388
+results are given below. The full indexed Runtime regression also passes all388
 two-event histories/776 native phase comparisons, profiles, n256, fresh
 reference persistence and finite empty-policy closure. The projection audit
 passes all1098 supports/10650 path checks and11919 complete native cache
@@ -218,3 +218,38 @@ These source-specific reports are retained separately from older evidence.
 Other native/physical helper argument surfaces still
 need the same frame/refinement analysis before the indexed extension can
 leave HOLD. Paid order search has not begun.
+
+## 7. Actual CUDA A1 result
+
+`FP_INDEXED_VALUE_BOUNDARY_CUDA_A1.json` retains all ten fresh jobs at
+da532dc7ce001f4943b84013134e4257edcbdcd0. All are terminal with exit0,
+attachment before their first instruction, no timeout and no limit
+termination. Maximum job commitment is2,357,059,584 bytes, below4 GiB.
+Every execution dependency remained committed and fixed while live.
+
+The source/count mutations and raising planner refuse before a new AMP
+phase. Each preserves the actual context, unrevealed target, native
+predecessor, earlier snapshot and four old sealed records. The restored
+metadata and later-retained-alias cases execute the correct native input,
+learn the complete literal native update and preserve historical frames.
+The retired numerical helper receives zero Runtime calls. The six cases
+check34 full phase records in total.
+
+The four integration jobs check230 more complete records and independently
+check4416 floating words, including144 half words. Global/projected profiles
+check58 phases each. Projected n256 checks34 phases/514 words with world
+builders disabled. Projected fresh evidence crosses at20, installs with
+alpha1/2 retained and learns to21; its80 phases and1258 words pass. There is
+no historical selection proof or complete optimization-class claim.
+
+All264 phase records pass their full byte readers; earlier sealed metadata
+does not change. The journal field `private_planning_work_paid` records the
+whole prediction-phase deployment debit: on successful CUDA calls it also
+includes numerical/retention work. It is not an isolated planning-cost
+measurement. No time/memory dominance is inferred.
+
+This actual gate closes the registered reference prediction delegation
+fault class. It does not close the other native/physical helper surfaces,
+public snapshot mutation, or arbitrary Python faults. The broader indexed
+extension remains HOLD until those continuation interfaces are addressed.
+Do not rerun these terminal jobs without a substantive change.
