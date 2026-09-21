@@ -1,0 +1,268 @@
+{
+  "status": "FALSIFIED_OWNED_INDEXED_INPUT_BINDING",
+  "execution_source": "058489e94484c7033188d8da1933e95ab852cd4a",
+  "registration": {
+    "status": "REGISTERED_BEFORE_ACTUAL_INDEXED_INPUT_ALIAS_PROBES",
+    "cases": [
+      "planner-sources",
+      "planner-counts",
+      "executor-counts"
+    ],
+    "production_anchor": "a559d7a",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "unchanged": [
+      "production",
+      "native learner",
+      "byte-only evidence codec",
+      "RNE checks",
+      "numerical tolerances"
+    ],
+    "faults": "only supplied source mapping or CountState; no owner globals, stack or arbitrary process memory",
+    "expected_source_case": "false source-bound prediction and complete native/AMP update",
+    "expected_count_cases": "AMP refuses count mismatch but live native history and earlier snapshots are corrupted",
+    "not_claimed": [
+      "Foundation counterexample",
+      "optimization completeness",
+      "false fresh-evidence certificate",
+      "installation"
+    ]
+  },
+  "workers": [
+    {
+      "case": "planner-sources",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191077376,
+        "peak_job_commit": 2192297984,
+        "user_100ns": 21875000,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28232,
+        "process_creation_100ns": 134344629322384887
+      },
+      "result": {
+        "status": "ACTUAL_INDEXED_SOURCE_ALIAS_COUNTEREXAMPLE",
+        "case": "planner-sources",
+        "process_id": 28232,
+        "result": {
+          "case": "planner-sources",
+          "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+          "method": "prepare_prediction",
+          "only_mutated_argument": "ordinary writes to the supplied mapping only",
+          "recorded_actual_query": [
+            0,
+            1
+          ],
+          "produced_reference_query": [
+            1,
+            2
+          ],
+          "legal_history_probabilities": [
+            "1/2",
+            "1/2"
+          ],
+          "produced_reference_probabilities": [
+            "41/50",
+            "9/50"
+          ],
+          "published_prediction": true,
+          "prediction_status": "PREDICTED_REFERENCE",
+          "failure": null,
+          "original_counts": [
+            0,
+            0,
+            1
+          ],
+          "retained_counts_before_next_target": [
+            0,
+            0,
+            1
+          ],
+          "earlier_snapshot_native_payload_changed": false,
+          "pre_target_cursor": 1,
+          "pre_target_received_target": null,
+          "phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+          "actual_source_rejects_checked_AMP_plan": true,
+          "published_AMP_probabilities": [
+            "13757317/16777216",
+            "12079595/67108864"
+          ],
+          "older_sealed_records_no_longer_matching_live_metadata": 0,
+          "continuation": {
+            "actual_received_history": [
+              [
+                1,
+                2,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "legal_counts": [
+              1,
+              0,
+              1
+            ],
+            "published_counts": [
+              0,
+              0,
+              2
+            ],
+            "cursor": 2,
+            "literal_native_theta": [
+              "1",
+              "81/100",
+              "9/100",
+              "1/100",
+              "9/100"
+            ],
+            "published_native_theta": [
+              "1",
+              "81/164",
+              "1/164",
+              "1/164",
+              "81/164"
+            ],
+            "full_native_update_is_wrong": true,
+            "published_AMP_commit_is_wrong": true
+          }
+        }
+      }
+    },
+    {
+      "case": "planner-counts",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190274560,
+        "peak_job_commit": 2191503360,
+        "user_100ns": 20781250,
+        "kernel_100ns": 7656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10816,
+        "process_creation_100ns": 134344629355016822
+      },
+      "result": {
+        "status": "ACTUAL_INDEXED_SOURCE_ALIAS_COUNTEREXAMPLE",
+        "case": "planner-counts",
+        "process_id": 10816,
+        "result": {
+          "case": "planner-counts",
+          "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+          "method": "prepare_prediction",
+          "only_mutated_argument": "mutation of the supplied CountState only",
+          "recorded_actual_query": [
+            1,
+            2
+          ],
+          "produced_reference_query": [
+            1,
+            2
+          ],
+          "legal_history_probabilities": [
+            "41/50",
+            "9/50"
+          ],
+          "produced_reference_probabilities": [
+            "9/50",
+            "41/50"
+          ],
+          "published_prediction": false,
+          "prediction_status": null,
+          "failure": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "original_counts": [
+            0,
+            0,
+            1
+          ],
+          "retained_counts_before_next_target": [
+            0,
+            0,
+            -1
+          ],
+          "earlier_snapshot_native_payload_changed": true,
+          "pre_target_cursor": 1,
+          "pre_target_received_target": null,
+          "phase_status": "EXECUTION_FAILED",
+          "older_sealed_records_no_longer_matching_live_metadata": 1
+        }
+      }
+    },
+    {
+      "case": "executor-counts",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190356480,
+        "peak_job_commit": 2191589376,
+        "user_100ns": 20781250,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29628,
+        "process_creation_100ns": 134344629386049017
+      },
+      "result": {
+        "status": "ACTUAL_INDEXED_SOURCE_ALIAS_COUNTEREXAMPLE",
+        "case": "executor-counts",
+        "process_id": 29628,
+        "result": {
+          "case": "executor-counts",
+          "status": "OWNED_INPUT_ALIAS_COUNTEREXAMPLE",
+          "method": "execute_prediction",
+          "only_mutated_argument": "mutation of the supplied CountState only",
+          "recorded_actual_query": [
+            1,
+            2
+          ],
+          "produced_reference_query": [
+            1,
+            2
+          ],
+          "legal_history_probabilities": [
+            "41/50",
+            "9/50"
+          ],
+          "produced_reference_probabilities": [
+            "9/50",
+            "41/50"
+          ],
+          "published_prediction": false,
+          "prediction_status": null,
+          "failure": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "original_counts": [
+            0,
+            0,
+            1
+          ],
+          "retained_counts_before_next_target": [
+            0,
+            0,
+            -1
+          ],
+          "earlier_snapshot_native_payload_changed": true,
+          "pre_target_cursor": 1,
+          "pre_target_received_target": null,
+          "phase_status": "EXECUTION_FAILED",
+          "older_sealed_records_no_longer_matching_live_metadata": 1
+        }
+      }
+    }
+  ]
+}

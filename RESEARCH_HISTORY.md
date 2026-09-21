@@ -6984,3 +6984,31 @@ The indexed input boundary is HOLD; paid order implementation has not begun.
 Foundation, native algebra and the byte-only codec's isolated retention
 proof remain unchanged. The missing premise is stable causal input across
 delegation, not another semantic architecture action.
+
+## 208. Propagate a forged context through actual AMP and expose damaged refusal state (2026-09-21)
+
+All three registered fresh CUDA probes reproduce at058489e with production
+unchanged from a559d7a. Every job exits zero, with no timeout or limit
+termination, below4 GiB; maximum commitment2,192,297,984 bytes.
+
+The planner-source attack publishes CHECKED_CUDA_PREFIX_PHASE for query(1,2)
+while the retained actual context is(0,1). Its actual probabilities are
+13757317/16777216 and12079595/67108864, instead of the legal native(1/2,1/2).
+An independent full-plan check using the actual retained context rejects
+that checked plan. After the actual target0, both reference and AMP commit
+counts(0,0,2) instead of(1,0,1), and the full native theta is wrong. No codec,
+floating schedule or tolerance was changed; both paths followed the same
+altered source dictionary.
+
+The two supplied-count mutations instead fail the independent AMP count
+comparison before publication. Their native predecessor and older snapshot
+have nevertheless already changed from+1 to-1 without another target or
+clock advance. One older sealed phase's bytes no longer match its live
+metadata in each case. A correct current refusal is therefore insufficient
+to establish a valid retained failure state.
+
+The actual journal and independent literal/source readers preserve these
+distinctions. No fresh-evidence certificate, installation, class-completeness
+or Foundation counterexample is asserted. The indexed input boundary stays
+HOLD until helpers cannot mutate owned inputs or historical accepted outputs
+through supplied aliases. Paid order search remains the subsequent frontier.

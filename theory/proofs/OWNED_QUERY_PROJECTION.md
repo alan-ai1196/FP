@@ -5,7 +5,7 @@ The valid-input arithmetic results below remain. Subsequent
 [supplied-input alias counterexamples](INDEXED_INPUT_ALIAS.md) at a559d7a
 falsify the unqualified helper-binding conclusion: a shared source mapping
 or CountState can change before its own comparison. This indexed boundary
-is HOLD, with three actual CUDA probes registered before repair.
+is HOLD. All three actual CUDA probes at058489e reproduce before repair.
 The independently declared AMP schedule remains global. Its actual A5
 integration audit passes all thirteen cases atae7f915; no projected physical
 kernel or complete release is claimed here.

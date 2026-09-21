@@ -7,8 +7,10 @@
 show supplied source/count aliases bypassing the plan checks. Ordinary
 dictionary mutation publishes41/50 where the retained actual context requires
 1/2, then commits the wrong native update. Count mutations before or after
-plan validation also change old snapshots. No production repair is present;
-three fresh source-bound CUDA probes are registered and pending. The next
+plan validation also change old snapshots. All three actual CUDA probes at
+058489e reproduce: the source case passes AMP checks and commits wrongly;
+count cases refuse after native/history corruption. No production repair
+is present. All jobs are terminal below4 GiB. The next
 step is stable owned inputs before adding paid order search.
 
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)

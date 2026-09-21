@@ -7,8 +7,9 @@ Real CPU Runtime now demonstrates a source-map mutation that changes the
 published forecast and complete native update, plus two count aliases that
 rewrite earlier snapshots. Independent checks against the same mutated
 inputs do not establish the original causal context or predecessor.
-Three actual CUDA probes are registered before repair. Their outcomes and
-a paid boundary preserving live/history state take priority over the order
+All three actual CUDA probes at058489e reproduce: both paths accept the wrong
+source-driven update, while AMP count refusal leaves corrupted retained
+state. A paid boundary preserving live/history state takes priority over the order
 solver; the latter remains unimplemented. No Foundation action is needed.
 
 The 23-job actual A1 gate is terminal at b53889e for the

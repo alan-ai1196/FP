@@ -214,8 +214,9 @@ class completeness or complete release is claimed.
 The [indexed supplied-input counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md)
 now put that extension on HOLD: real CPU Runtime accepts a changed helper
 source mapping as the actual query and commits a wrong native update;
-count-record aliases also change earlier snapshots. Three actual CUDA probes
-are registered and pending. This is a causal input/ownership mismatch in
+count-record aliases also change earlier snapshots. All three actual CUDA
+probes at058489e reproduce: the source case passes AMP and commits wrongly;
+count cases refuse after history corruption. This is a causal input/ownership mismatch in
 the implementation, with no new Foundation action or invalid partition
 identity. The separate byte-only retention result below remains scoped.
 

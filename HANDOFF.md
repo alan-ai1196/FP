@@ -9,10 +9,15 @@ an actual context requiring1/2. The following actual target commits the
 wrong native count. Two count-record mutations also publish wrong forecasts
 and change an earlier snapshot. These are supplied-argument attacks, without
 owner globals or a numerical-owner mock. Production is still a559d7a.
-Three fresh CUDA probes are registered in `audit_indexed_source_binding.py`;
-their outcomes must precede repair. The paid order implementation has not
+All three fresh CUDA probes at058489e reproduce their registered outcomes.
+The source-map case passes AMP checks and commits the wrong count in both
+paths; count attacks trigger refusal after corrupting the native history
+and one older sealed phase's live metadata. All jobs are terminal below4 GiB,
+maximum2,192,297,984 bytes. The paid order implementation has not
 started; source stability now has priority. The byte-only codec's scoped
 gate below remains valid and does not establish upstream causal input binding.
+Do not rerun these terminal probes before changing the interface. Repair
+must preserve the owned input and historical state even on helper failure.
 
 **Current resource result, 2026-09-21:**
 The [byte-only evidence boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)

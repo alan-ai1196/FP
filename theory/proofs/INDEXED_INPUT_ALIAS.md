@@ -1,8 +1,8 @@
 # Owned prediction inputs cannot share writable authority with their helpers
 
-Status: **three actual CPU Runtime counterexamples at a559d7a**; three fresh
-actual CUDA probes registered and pending. No production change has been
-made for these probes. The indexed input boundary is HOLD for extension and
+Status: **three actual CPU and three actual CUDA counterexamples**. The
+fresh CUDA probes at058489e use production unchanged from a559d7a and are
+all terminal. The indexed input boundary is HOLD for extension and
 further model use. Foundation R4 and the earlier byte-only codec theorem
 are unchanged.
 
@@ -109,3 +109,34 @@ from CPU. Even a correct numerical refusal would not by itself repair a
 corrupted retained predecessor. The research obligation is a causally stable,
 paid input interface that leaves both live and historical state valid after
 helper faults, followed by the normal source/AMP/lineage gates.
+
+## 6. Actual CUDA results
+
+`FP_INDEXED_SOURCE_ALIAS_CUDA_A1.json` retains all three fresh jobs at
+058489e94484c7033188d8da1933e95ab852cd4a. Every job exits zero below4 GiB,
+with no timeout or limit termination and attachment before its first
+instruction. Maximum job commitment is2,192,297,984 bytes.
+
+The source-map case publishes both PREDICTED_REFERENCE and
+CHECKED_CUDA_PREFIX_PHASE for the wrong query. The actual AMP probabilities
+are13757317/16777216 and12079595/67108864, approximately0.82 and0.18; the
+actual context's legal native forecast remains(1/2,1/2). Independent plan
+validation using the retained actual context refuses the supposedly checked
+AMP plan. The original counts are still correct at this pre-target cut.
+After the actual target0, both reference and AMP publish counts(0,0,2)
+instead of(1,0,1), at cursor2. The full native theta comparison also fails.
+
+Both count cases take the other registered branch: AMP detects the exact
+predecessor mismatch and raises an execution failure before prediction
+publication. Nevertheless the native count already reads-1, the earlier
+snapshot has changed, and one older sealed phase no longer agrees with its
+live metadata. The target remains unrevealed at cursor1. Correct refusal
+alone therefore does not establish a valid retained failure state.
+
+The byte encoder, actual RNE interpreter and tolerances were unchanged.
+Their local checks can correctly preserve or interpret a phase for the
+wrong causal query. No statistical certificate, installation or Foundation
+counterexample is inferred. The needed repair is a private, stable owned
+input boundary, with helper arguments and accepted outputs unable to mutate
+live or historical ownership through aliases. All six witnesses remain;
+do not rerun the terminal probes on unchanged production.
