@@ -11,6 +11,16 @@ All jobs are terminal. The current fixed schedules now use their existing
 private builders/kernels directly; all native state and history remain.
 This closes the stated component gate, not a complete indexed release.
 
+An [exact n4 witness](theory/proofs/ORDER_PRECISION_SEPARATION.md) now rules
+out precision-safe pruning merely by equal resource labels. The structural
+DP picks an order that fails a fixed forward bridge, while its equal-cost
+alternative passes. Both have(C,N)=(70,69), join8 and live30. Even a full
+Pareto cost table that collapses ties would not settle that numerical
+existence question. This does not require numerical search for the first
+paid solver: use the structural order as a proposal, independently validate
+it, and keep failure UNRESOLVED without a separate complete certificate.
+No existing structural theorem or actual model contract has changed.
+
 The historical [input aliases](theory/proofs/INDEXED_INPUT_ALIAS.md) and
 [later AMP metadata aliases](theory/proofs/AMP_METADATA_CONTINUATION.md)
 are source-bound counterexamples, not reasons to preserve an unnecessary

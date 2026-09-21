@@ -33,6 +33,16 @@ with explicit structural and numerical decision classes. A non-singleton
 order class can use a value-only proposal boundary; the current fixed
 schedules need no redundant producer. Do not rerun terminal probes.
 
+A new [exact order/precision separation](theory/proofs/ORDER_PRECISION_SEPARATION.md)
+constrains that solver's certificate. After eleven owned reference events,
+the complete n4 two-order class has equal resources(C,N)=(70,69), join8
+and live30. The DP-selected order fails a fixed1.5e-8 forward precision
+contract; its tied alternative passes. Complete literal-native and exact
+RNE/bridge checks establish both outcomes. This is passive physical evidence,
+not a current Runtime false certificate or model result. Structural DP
+remains valid; numerical failure of its witness leaves the larger existence
+question UNRESOLVED. A safely checked structural proposal can still proceed.
+
 Historical source-bound evidence is retained. The
 [reference value boundary](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
 passed all ten actual jobs atda532dc. The later

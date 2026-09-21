@@ -1,0 +1,126 @@
+{
+  "status": "PASS_ORDER_RESOURCE_PRECISION_SEPARATION",
+  "scope": "exact native input and passive RNE counterexample to precision-safe resource tie pruning; no existing structural theorem falsified and no actual CUDA claim",
+  "n": 4,
+  "query": [
+    0,
+    3
+  ],
+  "counts": [
+    -2,
+    -2,
+    -2,
+    -2,
+    -2,
+    -1
+  ],
+  "owned_reference_events": 11,
+  "full_native_learner_and_query_cache_match_literal": true,
+  "next_target_revealed": false,
+  "exact_native_probabilities": [
+    "59013/328010",
+    "268997/328010"
+  ],
+  "contract": {
+    "state_atol": "1/1000000",
+    "probability_atol": "3/200000000",
+    "normalizer_cap": "10000001/1000000",
+    "activation_cap": "8",
+    "join_cells": 4096,
+    "live_cells": 32768,
+    "output_cells": 65536,
+    "tape_nodes": 262144
+  },
+  "structural_DP": {
+    "order": [
+      0,
+      1,
+      2
+    ],
+    "partition_only_output_cells": 70,
+    "partition_only_tape_nodes": 69,
+    "subset_states": 4,
+    "transitions": 4
+  },
+  "complete_query_retaining_order_class": [
+    {
+      "order": [
+        0,
+        1,
+        2
+      ],
+      "output_cells": 70,
+      "tape_nodes": 69,
+      "table_shape": {
+        "positive_multiplications": 40,
+        "positive_additions": 9,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 30
+      },
+      "half_outputs": 0,
+      "checked_RNE_operations": 63,
+      "readout_words": [
+        1061983041,
+        1088843160,
+        1072056736,
+        1090729676,
+        1092616192,
+        1043872486,
+        1062334790
+      ],
+      "probabilities": [
+        "6036851/33554432",
+        "6879395/8388608"
+      ],
+      "exact_errors": {
+        "state_error": "0",
+        "native_error": "1043/8598585344",
+        "normalizer_error": "0",
+        "probability_error": "99553/5503094620160",
+        "division_error": "1/41943040"
+      },
+      "status": "UNRESOLVED_SELECTED_ORDER",
+      "reason": "indexed probability error exceeds its registered bound"
+    },
+    {
+      "order": [
+        1,
+        0,
+        2
+      ],
+      "output_cells": 70,
+      "tape_nodes": 69,
+      "table_shape": {
+        "positive_multiplications": 40,
+        "positive_additions": 9,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 30
+      },
+      "half_outputs": 0,
+      "checked_RNE_operations": 63,
+      "readout_words": [
+        1061983042,
+        1088843160,
+        1072056737,
+        1090729676,
+        1092616192,
+        1043872487,
+        1062334790
+      ],
+      "probabilities": [
+        "12073703/67108864",
+        "6879395/8388608"
+      ],
+      "exact_errors": {
+        "state_error": "0",
+        "native_error": "1043/8598585344",
+        "normalizer_error": "1/8388608",
+        "probability_error": "16113/1375773655040",
+        "division_error": "9897821/703687450165248"
+      },
+      "status": "SATISFIES_FIXED_BRIDGE",
+      "reason": null
+    }
+  ],
+  "conclusion": "the selected order is numerically unresolved; the two-order resource-and-precision feasible class is nonempty"
+}

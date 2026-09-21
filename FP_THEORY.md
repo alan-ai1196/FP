@@ -222,6 +222,14 @@ learning paths, and resource/second-lineage refusal. This is a component
 gate; no Foundation action, class-completeness claim or new indexed complete
 release follows.
 
+The [order/precision counterexample](theory/proofs/ORDER_PRECISION_SEPARATION.md)
+separately shows why the structural order DP cannot erase tied numerical
+histories: equal table/tape/output resources can yield opposite forward
+precision decisions. Eleven owned reference events, full literal-native
+checks and exact RNE establish the finite witness. Structural optimality
+remains valid; selected-order numerical failure supplies no all-order
+infeasibility certificate. No model tolerance or frozen definition changes.
+
 The [continuation-stable delegation law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
 continues to separate frame preservation from numerical refinement. Its
 reference value-only implementation passed ten actual jobs atda532dc; that

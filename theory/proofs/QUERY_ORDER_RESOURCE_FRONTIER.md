@@ -125,6 +125,15 @@ separate obligations. A structural witness supplies none of their authority.
 Different elimination orders also have different rounded traces; deploying
 one requires a declared physical schedule and independently checked bridge.
 
+The subsequent [exact tie counterexample](ORDER_PRECISION_SEPARATION.md)
+makes this boundary concrete. Two n4 orders have identical complete
+structural costs(C,N)=(70,69), join8 and live30, but opposite decisions
+under the same forward precision contract. The DP selects the failing
+order. Even a Pareto resource table that merges ties cannot certify joint
+numerical infeasibility from that representative's failure. The structural
+minimum theorem above is intact; the larger existence question stays
+UNRESOLVED unless separately established.
+
 ## 4. Audit and model frontier
 
 The exact audit exhausts1,098 anchored supports through n5 and16,054

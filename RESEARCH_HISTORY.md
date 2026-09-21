@@ -7187,3 +7187,29 @@ indexed release, optimization certificate or model performance result is
 inferred. The next useful search must contribute a choice among genuinely
 different orders, pay for its work/scratch and keep its structural certificate
 separate from actual numerical feasibility. No Foundation/ERC-1 change.
+
+## 215. Break precision-safe pruning of tied resource orders (2026-09-21)
+
+Before implementing paid order search, attack the tempting extension from
+structural optimality to joint precision feasibility. The n4 native input
+(-2,-2,-2,-2,-2,-1), query(0,3), is reached by eleven actual reference Runtime
+events. Every native update and the final complete query cache match the
+independent literal FP learner; the next target is unrevealed.
+
+The complete effective two-order class has identical structural resources:
+70 floating outputs,69 tape nodes, largest join8 and live peak30. The subset
+DP chooses(0,1,2). Exact RNE and the existing full forward bridge show that
+it fails probability/division tolerance3/200000000, while(1,0,2) satisfies
+that same contract, with all other bounds fixed. Both63-operation traces
+pass exact conformance. The seven-word readouts, exact errors and both
+outcomes are retained in one small report. No GPU or model job is claimed.
+
+Resource-label equivalence is therefore insufficient for numerical
+feasibility, even if all distinct Pareto cost pairs were retained. This
+falsifies a proposed extension, not the existing explicitly structural DP
+law or a Runtime certificate. A paid solver can still propose the structural
+optimum and independently check it; its numerical failure must remain
+UNRESOLVED for the larger existence question unless another complete
+certificate is obtained. No numerical tolerance or Foundation/ERC-1 rule
+changes, and no numerical search machinery is added merely to protect an
+unsupported completeness claim.

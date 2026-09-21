@@ -33,6 +33,15 @@ AMP continuation aliases reproduced atab39b56/production7fe0471. These
 historical counterexamples explain removal of the redundant ports; a future
 non-singleton order solver still requires a stable proposal boundary.
 
+The [two-order precision counterexample](theory/proofs/ORDER_PRECISION_SEPARATION.md)
+now fixes the next solver's decision boundary: equal70-output/69-node plans
+can have opposite exact forward-bridge decisions. Eleven owned reference
+events and the complete literal learner agree; both passive RNE traces pass
+their operation checks. This changes no production code or model tolerance.
+Resource optimization cannot promote failure of its chosen order into a
+numerical infeasibility certificate for all orders. Paid order search is
+still unimplemented, and its structural result must remain separately scoped.
+
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps
 the checked record and serialization iterator; the encoder receives only
