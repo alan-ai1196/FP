@@ -84,6 +84,20 @@ def main():
     statuses = {r['worker_status'] for r in report['workers']}
     report['status'] = ('COMPLETE_WITH_FAILURE' if 'FAILED' in statuses else
         'COMPLETE_WITH_COUNTEREXAMPLE' if 'COUNTEREXAMPLE_REPRODUCED' in statuses else 'COMPLETE_EXECUTION')
+    paired_cases = ('projected-future-0','projected-future-1')
+    paired = {row['case']:row for row in report['workers'] if row['case'] in paired_cases}
+    if len(paired) == 2 and all(row['worker_status'] == 'EXECUTED_AND_CHECKED' for row in paired.values()):
+        try:
+            rows = [paired[case]['result']['result'] for case in paired_cases]
+            assert rows[0]['actual_forecast_word'] != rows[1]['actual_forecast_word']
+            assert rows[0]['common_suffix'] == rows[1]['common_suffix'] and rows[0]['final_query'] == rows[1]['final_query']
+            report['projected_future_comparison'] = {'status':'PASS_SEPARATE_FRESH_HISTORIES',
+                'reference_forecasts':[row['reference_forecast'] for row in rows],
+                'actual_forecast_words':[row['actual_forecast_word'] for row in rows],
+                'complete_count_coordinates_each':6,'new_target_revealed':False}
+        except Exception:
+            report['status'] = 'COMPLETE_WITH_FAILURE'
+            report['projected_future_comparison'] = {'status':'FAILED','traceback':traceback.format_exc()}
     publish()
     assert directory.parent == ROOT.resolve()
     directory.rmdir()

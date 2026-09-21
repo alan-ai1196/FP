@@ -14,7 +14,13 @@ coordinate checks. General plan binding, cross-schedule refusal and separate
 exponent/resource guards pass. The old exact AMP and complete reference
 projection audits also pass unchanged. A8 is prepared for all fifteen global
 and sixteen projected actual CUDA cases, including star recovery, later
-information, profiles and fresh installation. Actual execution is pending.
+information, profiles and fresh installation. A8 at16afe06 is now terminal:
+30 cases pass and the two-history fixture hits the existing fresh-allocator
+guard when it tries a second Runtime in one process. No completed pair is
+claimed. The star succeeds at189/250, learns and then predicts169/210 with
+all14 counts retained. Projected n256 uses514 words versus42,594 globally;
+packed payload remains about205.6 MB. Fresh installation and continuation
+pass. Run the two future histories in separate fresh jobs; retain A8's refusal.
 
 **Current adversarial finding, 2026-09-21:**
 [AMP plan binding](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) is an upstream

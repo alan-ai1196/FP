@@ -10,8 +10,12 @@ before and after execution, with the same endpoint/trace/target and numerical
 checks. Exact tape semantics pass11,919 small queries;280 RNE predictions,
 560 observations and552 half outputs pass full native comparisons. The
 global AMP audit and complete exact query-projection audit also pass.
-A8's31 actual workers are prepared, not yet executed. No projected device,
-full release or model advantage is claimed before that evidence.
+A8 at16afe06 completes31 workers:30 pass, including the projected star,
+n256, profiles, installation and all plan/endpoint/target faults. The
+two-history future fixture refuses a second Runtime's initialization under
+the existing fresh CUDA allocator requirement; its pair remains unverified.
+Maximum job peak2,385,580,032 bytes is below4 GiB. Execute the two histories
+in separate fresh jobs. No full release or model advantage is claimed.
 
 The [AMP plan-binding audit](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 identifies a missing premise in fixed-forward conformance. A changed count

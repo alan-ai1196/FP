@@ -1,6 +1,7 @@
 # Query-block AMP with full native state and a declared physical schedule
 
-Status: **IMPLEMENTED; EXACT TAPE AND RNE/NATIVE AUDITS PASS; ACTUAL A8 PENDING**.
+Status: **IMPLEMENTED; EXACT TAPE/RNE AUDITS PASS; ACTUAL A8 HAS30 PASSES
+AND ONE RETAINED FRESH-ALLOCATOR FIXTURE REFUSAL**.
 
 The [boundary response law](QUERY_BOUNDARY_RESPONSE.md) and
 [owned exact decoder](OWNED_QUERY_PROJECTION.md) justify removing common
@@ -158,5 +159,51 @@ with the new declared contract. Four add star-query recovery with subsequent
 learning, retained off-path information exposed by a common future suffix,
 a foreign global plan, and post-execution plan mutation. All execution inputs
 must be committed before launch and remain unchanged until completion.
-Actual A8 is pending; no successful device, full release or model score is
-inferred from this CPU result.
+Actual A8 results follow below. No full release or model score is inferred.
+
+## 5. Actual A8: star recovery, installation, and a retained fixture refusal
+
+[A8](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A8.json) at16afe06
+finishes all31 registered jobs:30 pass and `projected-future` fails. All are
+attached before resume and terminate without timeout or limit termination.
+Maximum job peak is2,385,580,032 bytes under4 GiB. The jobs are terminal.
+
+All fifteen global controls and fifteen of sixteen projected cases pass.
+The same13-observation star that makes the global plan refuse now executes
+the projected query(2,3): exact forecast189/250, actual word1061259575,
+86 floating output cells, two selected factors and all13 nonzero counts.
+After observing(2,3,0), the next query(2,4) also succeeds, with exact forecast
+169/210, four selected factors and all14 counts retained. That final target
+remains unrevealed. The full star worker checks44 phases/709 floating words,
+including24 half words. This is actual guarded inference and continued
+learning, not just a successful passive partition.
+
+The matched n256 workers both check34 phases with native world builders
+disabled. Actual floating words fall from42,594 globally to514 projected;
+half words from15,924 to24; consumed arena bytes from341,504 to4,864.
+The complete packed current payload rises from205,602,382 to205,602,407
+bytes, reflecting the different declaration. Job peaks are2,385,580,032
+and2,344,685,568 bytes. Fewer floating outputs do not imply a comparable
+whole-state saving or a uniform resource dominance theorem.
+
+Projected profiles, finite closure, numerical-entry/target/commit faults,
+endpoint/gradient/trace/predecessor/old-extent faults, foreign-plan and
+post-execution-plan faults all pass. Paired fresh evidence crosses at20,
+resident installation succeeds, alpha1/2 remains spent, and learning to21
+passes. Its80 phases produce1258 words. No class-complete claim follows.
+
+The future-information fixture attempted to initialize two separate Runtime
+roots sequentially in one process. `CudaArena` requires a fresh default
+allocator and untouched allocation history for its first-allocation extent
+proof. The first root binds that process's allocator; the next initialization
+therefore refuses. The failed worker exits1 with peak2,224,152,576 bytes.
+It supplies no completed two-history result. This is the existing physical
+freshness boundary, not evidence against projection or permission to reset
+allocator history. A follow-up must execute each history in its own fresh
+source-bound job, preserving both complete learner continuations.
+
+A9 is now prepared as exactly two fresh workers, `projected-future-0` and
+`projected-future-1`. Each executes one unchanged history with the original
+caps; the parent compares their final actual words only after both complete.
+Production code, numerical tolerances and allocator guards are unchanged.
+The thirty successful A8 cases are not rerun to hide the failed fixture.

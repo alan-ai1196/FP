@@ -31,7 +31,7 @@ import count_learner_encoding as native_counts
 
 SHARED_CASES = ('profiles','large','install','closure','unfunded','target-swap','second-commit',
     'endpoint-binding','gradient-binding','trace-binding','predecessor-binding','old-output')
-PROJECTED_CASES = SHARED_CASES+('star','future','foreign-plan','executor-plan-binding')
+PROJECTED_CASES = SHARED_CASES+('star','future-0','future-1','foreign-plan','executor-plan-binding')
 
 
 def arguments(n,values,query):
@@ -223,27 +223,27 @@ def worker(case):
             'following_reference_forecast':str(phase.reference_prediction.probabilities[0]),
             'following_projected_active_edges':len(phase.execution_plan.positions),
             'following_retained_nonzero_counts':14,'final_target_revealed':False}
-    if case == 'future':
-        rows = []
-        for target in (0,1):
-            rt,schema = legacy.configuration(4,4,projected=True)
-            for event in ((1,2,target),(0,1,0),(2,3,0)):
-                legacy.step(rt,schema,event)
-            before = rt.snapshot()
-            key = before.online.data.active.observation_ids[before.cursor]
-            assert deliver_context(rt,key,tuple(schema.source_row(3).values())).status == 'PREDICTED_REFERENCE'
-            after = validate_residency(rt)
-            phase = after.cuda.phases[-1]
-            expected = F(881 if target == 0 else 369,1250)
-            assert phase.reference_prediction.probabilities[0] == expected
-            assert phase.raw_prediction.before.counts[3] == 1-2*target  # edge(1,2)
-            assert after.cursor == 3 and after.pending.record.target is None
-            rows.append({**legacy.check_phases(rt,projected=True),'initial_event':[1,2,target],
-                'common_suffix':[[0,1,0],[2,3,0]],'final_query':[0,3],
-                'reference_forecast':str(expected),'actual_forecast_word':phase.raw_prediction.words[5],
-                'retained_complete_count_coordinates':6,'target_revealed':False})
-        assert rows[0]['actual_forecast_word'] != rows[1]['actual_forecast_word']
-        return {'histories':rows,'discarded_off_path_information':False}
+    if case in ('future-0','future-1'):
+        # Each complete history gets its own fresh process/allocator. No
+        # second root, cache clearing, counter reset or altered arena guard.
+        target = int(case[-1])
+        rt,schema = legacy.configuration(4,4,projected=True)
+        for event in ((1,2,target),(0,1,0),(2,3,0)):
+            legacy.step(rt,schema,event)
+        before = rt.snapshot()
+        key = before.online.data.active.observation_ids[before.cursor]
+        assert deliver_context(rt,key,tuple(schema.source_row(3).values())).status == 'PREDICTED_REFERENCE'
+        after = validate_residency(rt)
+        phase = after.cuda.phases[-1]
+        expected = F(881 if target == 0 else 369,1250)
+        assert phase.reference_prediction.probabilities[0] == expected
+        assert phase.raw_prediction.before.counts[3] == 1-2*target  # edge(1,2)
+        assert after.cursor == 3 and after.pending.record.target is None
+        return {**legacy.check_phases(rt,projected=True),'initial_event':[1,2,target],
+            'common_suffix':[[0,1,0],[2,3,0]],'final_query':[0,3],
+            'reference_forecast':str(expected),'actual_forecast_word':phase.raw_prediction.words[5],
+            'retained_complete_count_coordinates':6,'target_revealed':False,
+            'discarded_off_path_information':False}
     if case in ('foreign-plan','executor-plan-binding'):
         rt,schema = legacy.configuration(3,2,projected=True)
         legacy.step(rt,schema,(1,2,0))

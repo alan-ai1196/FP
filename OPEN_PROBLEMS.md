@@ -3,11 +3,15 @@
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
 The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) is now
-implemented and CPU audited. A8 must test its separately declared physical
-identity through actual owned phases, star recovery, future count use,
-profiles, fresh paired evidence and resident installation. The31 registered
-workers include all fifteen current global cases as strong controls. No
-device success or resource/model advantage is inferred before execution.
+implemented and CPU audited. A8 tests its separately declared physical
+identity through actual owned phases, star recovery, profiles, fresh paired
+evidence and resident installation, with all fifteen current global cases
+as strong controls. No whole-resource or model advantage is inferred.
+A8 at16afe06 now passes30
+cases, including actual star recovery and fresh installation. Its future
+fixture refuses a second Runtime in the same allocator history; the paired
+continuation comparison needs two separate fresh jobs. A9 is prepared for
+exactly those unchanged histories; preserve A8 and all allocator guards.
 
 The [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) has a
 general implemented repair: independently reconstruct every typed plan

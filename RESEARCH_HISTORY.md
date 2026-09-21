@@ -6591,3 +6591,29 @@ n256, persistence/install and adversarial fixtures; star recovery with
 learning; future use of retained off-path counts; and foreign/post-execution
 plan faults. Execution is pending. No Foundation action, new complete
 release, model advantage or universal precision theorem is claimed.
+
+## 196. Actual projected AMP recovers the star; retain the two-root fixture refusal (2026-09-21)
+
+A8 at16afe06 completes31 source-bound RTX3090 workers with30 passes and one
+retained refusal. The projected star predicts189/250 with86 floating outputs,
+two active factors and all13 counts. It learns(2,3,0), then predicts169/210
+for(2,4), retaining all14 counts. All44 phases and709 words, including24
+half words, are checked. The matched n256 cases both check34 phases with
+world builders disabled; words fall42,594 to514 and arena extent341,504 to4864
+bytes, while complete packed payload rises by25 bytes to205,602,407. Projected
+profiles, closure, fresh crossing at20, installation and learning to21 pass.
+
+Every global control and all projected adversarial controls also pass.
+Maximum job peak2,385,580,032 bytes is below4 GiB; all jobs terminate without
+timeout or limit termination. The two-history worker instead fails during
+the second Runtime initialization: its process already has owned CUDA
+allocator history. This preserves the existing first-allocation proof's
+freshness boundary. No completed paired result is inferred. Execute the two
+histories in separate fresh jobs; do not reset history or weaken the guard.
+All A8 outcomes remain retained. No whole-model resource dominance, complete
+release or new statistical/class-complete certificate is claimed.
+
+A9 is prepared for exactly two fresh worker processes, one per unchanged
+future history. The parent compares their final words after both complete.
+Production arithmetic, resource ownership and allocator guards are unchanged;
+no successful A8 worker is rerun merely to replace its source label.
