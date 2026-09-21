@@ -2,6 +2,31 @@
 
 ## Current implementation state (2026-09-21)
 
+The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
+now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits
+the exact indexed native G, Gamma, U and full categorical domain, and
+executes through existing ingress, target, profile, lease, failure, lineage
+and reference-persistence paths. Planning and actual table execution are
+charged before their respective executors. Width/height and funding
+failures retain the received context and completed history. A failed second
+commit retains both observed states and advances neither published learner.
+
+The complete audit passes 388 histories/776 native phase comparisons,
+ordinary/profile attachments, fresh reference evidence against a separate
+literal Runtime, and finite empty-policy closure. At n256, four actual
+observations and four profile events execute with world builders disabled;
+the packed root is 62,461,693 bytes, with no total-process resource claim.
+Thirteen actual star observations expose a natural-order width refusal;
+this remains solver uncertainty. Nine full CPU regression batteries pass,
+including all 36 model-check classes and the owned policy. The old complete
+indexed-reference evidence remains identical after core promotion.
+
+This extension is not a new complete release. Indexed AMP/physical phase
+evidence, native-class search, fresh paired persistence and installation
+remain open and cannot be registered through the new reference mode yet.
+No new GPU job was run. The old source-bound component diagnostics remain
+terminal. Foundation R4 and ERC-1 are unchanged.
+
 The [indexed numerical phase component](theory/proofs/INDEXED_PHASE_BRIDGE.md)
 now stores exact counts, all clocks/pending data, seven actual readout words
 and three gradient forms. Its finite checker covers every native reference
@@ -15,9 +40,9 @@ at `b0b1f3b`:293,008 checked RTX3090 words and all complete-coordinate decisions
 match the CPU report. Job peak2,089,934,848 bytes, exit0 and no timeout/limit
 termination are retained in17,168 bytes. The worker is terminal. Shared
 table-geometry preflight is factored out,
-and the previous indexed-reference audit remains identical. Runtime and its
-owned array-based phase formats are unchanged; this is not a new backend
-admission or installation path.
+and the previous indexed-reference audit remains identical. That standalone
+component does not change the owned array-based physical phase formats;
+the new CPU reference admission above grants no indexed AMP/install path.
 
 The passive [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
 now binds a compact description to every ordered native node/incidence,
@@ -29,9 +54,10 @@ preflight agrees on6,144 schedules and refuses five unfunded reads before
 entering numerical decoding. The n256 example disables the literal builder,
 executes three count-reference commits and refuses five exponential full
 outputs. This is an exact reference representation with logical work metrics,
-not a physical resource certificate or production integration. Runtime
-Program admission, dense likelihood preparation, AMP phases and ownership
-remain unchanged; an owned compact path is still required.
+not a physical resource certificate. Its core now supports the owned CPU
+reference extension above. Dense likelihood preparation and array-based
+AMP phases remain the older physical path; owned indexed physical
+integration is still required.
 
 The passive [static radix-power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
 shares a mantissa and adds exponents only when syntax proves one input is an

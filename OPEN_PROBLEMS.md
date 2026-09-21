@@ -11,10 +11,13 @@ from the owned observation record, not from the physical pending tag being
 verified. Full-coordinate numerical checks alone cannot repair circular
 information authority. The source-bound `b0b1f3b` RTX3090 component audit
 now matches293,008 actual words and every complete-coordinate decision under
-its4-GiB/600-second job; it is terminal. The main integration problem remains owned indexed
-admission/execution, descriptor and source/label lineage, complete physical
-phase records, fresh persistence and reachable installation. The new helper
-must not enter the old array-based API as apparent existing authority.
+its4-GiB/600-second job; it is terminal. The
+[owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) now closes
+CPU admission, actual source/target lineage, profiles, packed ownership and
+fresh reference evidence. The main integration problem is indexed AMP
+execution with complete physical phase records, fresh paired persistence
+and reachable installation. The numerical helper must not enter the old
+array-based API as apparent existing authority.
 
 The [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md) now proves
 the exact-shift refinement and its error law. It recovers a uniform bound
@@ -29,19 +32,27 @@ state/phase realization. All three radix diagnostics are terminal; do not
 restart them. Alias metadata and exponent
 work are costs; fewer rounded results are not a whole-runtime resource bound.
 
-The central question is now **owned admission and complete execution**.
+The central question is now **owned physical execution and installation**.
 The [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
 settles the mathematical representation part: the exact ordered G, uniform
 Gamma, selected-slot U, complete categorical source interface and every
 reference state/cache coordinate have explicit index decoders.795 native
 nodes/17,116 terms and5,427 complete caches agree; n256 point reads avoid
 constructing2^255 world entries. Width/height preflight and full-output
-allowances remain separate. Production still requires explicit Program,
-prior/slot and dense likelihood tables. Replace that admission bottleneck
-only through an owned representation with actual source/provenance and
-resource binding, its own numerical tape, complete bridge, fresh persistence
-and reachable installation. The passive reader and new numerical component
-grant none of those acts.
+allowances remain separate. The new Runtime reference realization executes
+388 exhaustive short histories and the n256 prefix without expanding world
+tables; it retains actual ingress, all phase coordinates and resource
+history. An independent literal Runtime matches fresh reference evidence.
+Its fixed natural order also exposes a retained, pre-decoder width refusal
+after 13 actual star observations. Better ordering is a solver opportunity,
+not a reason to discard correlations or expand static special cases.
+
+The older physical path still requires explicit Program, prior/slot and
+dense likelihood tables. The new owned reference path must acquire its own
+actual AMP tape, complete bridge, fresh paired persistence and reachable
+installation. Native-class search and a funded fallback beyond the indexed
+family also remain open; finite empty-policy closure proves no class
+optimality. No existing component certificate grants these missing acts.
 A new physical schedule need not reproduce an older schedule's words, but
 explicit K-entry output retains its Omega(K) cost. Leaving this fixed family
 requires a proved encoding or funded fallback, otherwise UNRESOLVED. Do not

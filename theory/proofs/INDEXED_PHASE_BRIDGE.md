@@ -310,8 +310,14 @@ report is12,513 bytes; the final evidence additionally retains registration
 and the completed job. These are observed resource values for this audit,
 not an optimized Runtime cost or a comparative resource advantage.
 
-This diagnostic is terminal. The next work is owned indexed admission and
-complete execution in ReferenceCompilerRuntime, preserving actual source/
-target provenance, resource roles, phase evidence, fresh persistence and
-installation reachability. These results do not reopen the frozen static
-resource program or authorize another cycle-size study.
+This diagnostic is terminal. The subsequent
+[owned indexed reference](OWNED_INDEXED_REFERENCE.md) now admits the exact
+indexed G/Gamma/U through `ReferenceCompilerRuntime` and preserves actual
+source/target provenance, complete reference phases, profiles, resource
+roles, failures and fresh reference persistence. It passes exhaustive small
+native comparisons and an actual n256 reference prefix. This component's
+physical state and operation words still need their own owned Runtime
+path, complete phase evidence, fresh paired persistence and reachable
+installation. The original CUDA evidence remains bound to its original
+source. These results do not reopen the frozen static resource program or
+authorize another cycle-size study.

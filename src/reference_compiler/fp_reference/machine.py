@@ -17,6 +17,7 @@ from fractions import Fraction as F
 
 from .core import ContractError
 from .learner import SIMPLEX_GRADIENT
+from .semantics import reset_delayed
 from .program import Program, SemanticRules, rational
 from .resources import ObjectSpec
 from .encoding import pack, packed_size
@@ -42,6 +43,27 @@ class ReferenceMachineModel:
     # Every admitted Compiler control request pays this positive charge before
     # it can mint identities, change revisions or retain failure history.
     control_admission_work = 1
+    program_type = Program
+
+    @staticmethod
+    def node_count(program):
+        return len(program.nodes)
+
+    @staticmethod
+    def state_work(program):
+        return program.slot_count
+
+    @staticmethod
+    def initializer_validation_work(program, spec):
+        return len(spec.simplex_slots)+1 if spec is not None and spec.optimizer_id == SIMPLEX_GRADIENT else 0
+
+    @staticmethod
+    def zero_payload(program, rules):
+        return (F(0),)*program.slot_count, reset_delayed(rules)
+
+    @staticmethod
+    def activation_values(prediction):
+        return prediction.values
 
     @staticmethod
     def realize(object_id: str, kind: str, value, provenance: str) -> PlannedObject:

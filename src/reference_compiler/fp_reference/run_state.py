@@ -26,6 +26,11 @@ class ReferenceRunManifest:
     reference_scope: str = field(default='registered constructor endpoints and baseline; executed CPU prefix only', init=False)
     target_amp: str = field(default='UNRESOLVED: actual target AMP is not implemented', init=False)
 
+    def __post_init__(self):
+        if self.machine_id == 'packed-indexed-reference-payload-v1':
+            object.__setattr__(self, 'reference_arithmetic',
+                               'indexed-literal-count-positive-natural-order-reference-v1')
+
 
 @dataclass(frozen=True)
 class RunDecision:
@@ -55,6 +60,7 @@ class PredictionDiagnostics:
 
 def prediction_diagnostics(predictions, path, bit_limit):
     """Paid by Runtime before scanning; no reevaluation or authority here."""
+    from .indexed_execution import IndexedEvaluation
     count = numerator = denominator = 0
     amin = amax = mmin = tmax = None
 
@@ -71,7 +77,9 @@ def prediction_diagnostics(predictions, path, bit_limit):
         count += 1
         decode = (lambda value: value.exact) if path in ('cpu-binary64', 'cuda-half-single') else (lambda value: value)
         for label in ('values', 'masses', 'probabilities', 'normalizer'):
-            values = (prediction.normalizer,) if label == 'normalizer' else getattr(prediction, label)
+            values = ((prediction.normalizer,) if label == 'normalizer' else
+                      prediction.activation_basis() if label == 'values' and type(prediction) is IndexedEvaluation else
+                      getattr(prediction, label))
             for raw in values:
                 value = decode(raw)
                 _guard(value, bit_limit=bit_limit)

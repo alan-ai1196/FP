@@ -160,8 +160,9 @@ complete count state, it recovers every reference parameter, gradient and
 cache coordinate with explicit inference and full-output costs. Exact native
 and n256 index audits pass. This identifies exponential admission tables as
 a representation choice for this fixed family, not a semantic necessity.
-Owned Runtime admission, numerical phase evidence and complete Compiler
-resource/provenance obligations remain open; no frozen definition changes.
+The subsequent owned reference result below closes CPU admission; indexed
+physical phase evidence and complete Compiler integration remain open.
+No frozen definition changes.
 
 The [finite-basis indexed phase bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md)
 extends that representation to every native reference parameter/cache/gradient
@@ -174,6 +175,19 @@ and binary64 audits pass; the sole `b0b1f3b` RTX3090 diagnostic reproduces
 registered4-GiB/600-second job. The diagnostic is terminal.
 This conditional component relation supplies neither owned Runtime nor full
 Compiler-state authority and changes no Foundation or ERC definition.
+
+The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) now
+executes the same G/Gamma/U inside `ReferenceCompilerRuntime`, retaining
+actual source/target ingress, every reference state/cache coordinate,
+profile clocks, packed ownership, failures and fresh reference persistence.
+Exact phase refinement follows from the count/index theorems and induction
+over existing operations. All 388 short histories, the n256 owned prefix,
+and nine complete CPU regression batteries pass. Separate planning/table
+debits and an actual star-history width refusal preserve honest
+`UNRESOLVED`. Finite empty-policy stream closure carries no class decision.
+This does not identify complete resource states or confer indexed AMP,
+paired persistence, search or installation authority. Those integrations
+remain open; Foundation R4 and ERC-1 stay frozen.
 
 ## 0. Research object and root principle
 

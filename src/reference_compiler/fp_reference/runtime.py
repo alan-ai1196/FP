@@ -18,6 +18,9 @@ from .data_usage import DataContract, DataUsageLedger, ObservationRecord, Stocha
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
+from .indexed_relation import IndexedRelation, DecodeAllowance
+from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
+    IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
 from .encoding import packed_size, write_packed, fragments
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
@@ -66,11 +69,11 @@ class ConstructionContract:
     limits: ResourceLimits
     work_roles: Mapping[str, str]
     graph_limits: Mapping[str, int]
-    initializer_pattern: tuple[F, ...]
+    initializer_pattern: tuple[F, ...] | IndexedInitializer
     normalizer_cap: F
     activation_cap: F
     reference_integer_bits: int
-    source_domain: tuple[tuple[F, ...], ...] | None = None
+    source_domain: tuple[tuple[F, ...], ...] | CategoricalPairDomain | None = None
 
     def __post_init__(self):
         if type(self.semantics) is not SemanticRules or type(self.limits) is not ResourceLimits:
@@ -88,14 +91,24 @@ class ConstructionContract:
             raise ContractError('declare every separate native graph budget')
         object.__setattr__(self, 'graph_limits', freeze_data({key: natural(value, key) for key, value in self.graph_limits.items()}))
         object.__setattr__(self, 'work_roles', freeze_data(self.work_roles))
-        pattern = tuple(rational(v, 'registered initializer') for v in self.initializer_pattern)
-        if not pattern:
-            raise ContractError('registered initializer pattern is empty')
+        if type(self.initializer_pattern) is IndexedInitializer:
+            pattern = self.initializer_pattern
+            pattern.__post_init__()
+            IndexedRelation(pattern.n).validate(self.semantics)
+            if type(self.source_domain) is not CategoricalPairDomain or self.source_domain != CategoricalPairDomain(pattern.n):
+                raise ContractError('indexed Gamma requires the complete matching categorical domain')
+            self.source_domain.__post_init__()
+        else:
+            pattern = tuple(rational(v, 'registered initializer') for v in self.initializer_pattern)
+            if not pattern:
+                raise ContractError('registered initializer pattern is empty')
+            if type(self.source_domain) is CategoricalPairDomain:
+                raise ContractError('indexed source domain requires its registered indexed realization')
         object.__setattr__(self, 'initializer_pattern', pattern)
         object.__setattr__(self, 'normalizer_cap', rational(self.normalizer_cap, 'normalizer cap', positive=True))
         object.__setattr__(self, 'activation_cap', rational(self.activation_cap, 'activation cap', positive=True))
         natural(self.reference_integer_bits, 'exact reference integer work limit', positive=True)
-        if self.source_domain is not None:
+        if self.source_domain is not None and type(self.source_domain) is not CategoricalPairDomain:
             domain = tuple(tuple(rational(v, 'declared source-domain value') for v in row) for row in self.source_domain)
             if not domain or any(len(row) != len(self.semantics.sources) for row in domain):
                 raise ContractError('complete nonempty source-domain rows required')
@@ -108,7 +121,7 @@ class ConstructionContract:
 class OnlineContract:
     """Registered revealed-data continuation, not the full ERC-1 run manifest."""
     data: DataContract
-    learner: LearnerSpec
+    learner: LearnerSpec | IndexedLearner
     queries: tuple[QuerySpec, ...] = ()
     profiles: tuple[ProfileSpec, ...] = ()
     searches: tuple[ReferenceSearchSpec, ...] = ()
@@ -117,7 +130,7 @@ class OnlineContract:
     cpu_install: CpuInstallContract | None = None
 
     def __post_init__(self):
-        if type(self.data) is not DataContract or type(self.learner) is not LearnerSpec:
+        if type(self.data) is not DataContract or type(self.learner) not in (LearnerSpec, IndexedLearner):
             raise ContractError('immutable data and learner declarations required')
         queries = tuple(self.queries)
         if any(type(q) is not QuerySpec for q in queries) or len({q.query_id for q in queries}) != len(queries):
@@ -142,6 +155,15 @@ class OnlineContract:
 
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
+        indexed = type(construction.initializer_pattern) is IndexedInitializer
+        if indexed != (type(self.learner) is IndexedLearner):
+            raise ContractError('initializer and learner require the same registered realization')
+        if indexed:
+            self.learner.__post_init__()
+            if self.learner.n != construction.initializer_pattern.n:
+                raise ContractError('indexed Gamma and U describe different native slots')
+            if self.float64 is not None or self.cpu_install is not None or self.searches:
+                raise ContractError('indexed reference realization has no registered physical or native-class search integration yet')
         if self.cpu_install is not None:
             self.cpu_install.__post_init__()
             if sys.implementation.name != 'cpython':
@@ -171,8 +193,8 @@ class ConstructedState:
     physical_owner: str
     program_id: str
     birth_cursor: int
-    learner: ReferenceLearnerState
-    range_evidence: tuple[RangeBound, ...]
+    learner: ReferenceLearnerState | IndexedState
+    range_evidence: tuple[RangeBound | IndexedRangeBound, ...]
     range_safe: bool
     object_ids: tuple[str, ...]
     initializer_id: str
@@ -263,7 +285,7 @@ class RuntimeSnapshot:
     cursor: int
     deployed_id: str
     next_candidate: int
-    programs: tuple[tuple[str, Program], ...]
+    programs: tuple[tuple[str, Program | IndexedRelation], ...]
     candidates: tuple[ConstructedState, ...]
     resources: Mapping
     buffers: tuple[tuple[str, bytes], ...]
@@ -343,6 +365,11 @@ class ReferenceCompilerRuntime:
                 if (sys.implementation.name != 'cpython' or online.persistence is None or not online.searches
                         or not {REFERENCE_PATH, CUDA_PATH}.issubset(r.score_path for r in online.persistence.rules)):
                     raise ContractError('CUDA install requires serialized CPython, owned native selection and both fresh score paths')
+        indexed = type(contract.initializer_pattern) is IndexedInitializer
+        if indexed and (online is None or cuda is not None):
+            raise ContractError('indexed realization requires its registered reference learner; owned AMP integration is not yet available')
+        machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
+            DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits))) if indexed else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
@@ -360,7 +387,7 @@ class ReferenceCompilerRuntime:
         self._policy_state = None
         self._policy_running = False
         self._manifest = ReferenceRunManifest(contract, initial_program, online, host, policy,
-            ReferenceMachineModel.model_id, ReferenceMachineModel.initializer_id,
+            machine.model_id, machine.initializer_id,
             (sys.implementation.name, tuple(sys.version_info)),
             None if online is None or online.float64 is None else
             (Float64Arithmetic.backend_id, BINARY64,
@@ -379,7 +406,7 @@ class ReferenceCompilerRuntime:
         # implementation before outcomes. No public action can route a debit.
         self._event_router = CostRouter(self._ledger, {'deployment_event': 'deployment',
                                        'compiler_event': 'compiler', 'information': 'compiler'})
-        self._machine = ReferenceMachineModel()
+        self._machine = machine
         self._cursor = 0
         self._revision = 0
         self._next_search = 0
@@ -673,6 +700,10 @@ class ReferenceCompilerRuntime:
         self._buffers = {key: value for key, value in self._buffers.items() if key in live}
 
     def _range(self, program: Program, theta, label: str) -> tuple[RangeBound, ...]:
+        if type(self._machine) is IndexedReferenceMachine:
+            self._router.charge_work('range_audit', {'work': self._machine.state_work(program)+2*program.n+1},
+                                     f'{label}:indexed-all-categorical-range')
+            return (self._machine.range_bound(program, self._contract.semantics, theta, self._contract.source_domain),)
         evidence = []
         rows = (None,) if self._contract.source_domain is None else self._contract.source_domain
         for index, row in enumerate(rows):
@@ -951,6 +982,35 @@ class ReferenceCompilerRuntime:
     def _learner_payload(reference, floating):
         return reference if floating is None else (reference, floating)
 
+    def _reference_initial_state(self, program, rules, theta, cursor, *, spec, bit_limit):
+        if type(self._machine) is IndexedReferenceMachine:
+            return self._machine.initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
+        return initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
+
+    def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit):
+        if type(self._machine) is IndexedReferenceMachine:
+            plan = self._machine.prepare_prediction(program, rules, state, sources, bit_limit=bit_limit)
+            # This private debit comes from the already fixed ordinary or
+            # profile role. No supplied plan or callback enters a public API.
+            execution_debit(self._machine.prediction_execution_work(plan))
+            return self._machine.execute_prediction(plan)
+        return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)
+
+    def _reference_observe(self, program, state, spec, prediction, target, *, bit_limit):
+        if type(self._machine) is IndexedReferenceMachine:
+            return self._machine.observe(program, state, spec, prediction, target, bit_limit=bit_limit)
+        return observe_event(program, state, spec, prediction, target, bit_limit=bit_limit)
+
+    def _reference_commit(self, state, spec, *, bit_limit):
+        if type(self._machine) is IndexedReferenceMachine:
+            return self._machine.commit(state, spec, bit_limit=bit_limit)
+        return commit_event(state, spec, bit_limit=bit_limit)
+
+    def _reference_attach(self, state, cursor, spec):
+        if type(self._machine) is IndexedReferenceMachine:
+            return self._machine.attach(state, cursor, spec)
+        return attach_boundary(state, cursor, spec)
+
     def _construct(self, program: Program, role: str, profile_id: str | None = None) -> ConstructionResult:
         number = self._next_candidate
         self._next_candidate += 1
@@ -968,9 +1028,11 @@ class ReferenceCompilerRuntime:
                 profile = next((p for p in self._online.profiles if p.profile_id == profile_id), None)
                 if profile is None:
                     raise ContractError('unregistered profile implementation')
-            if type(program) is not Program:
-                raise ContractError('candidate structure must use the native Program grammar')
-            if len(program.nodes) > self._contract.graph_limits['nodes'] or program.slot_count > self._contract.graph_limits['slots']:
+            if type(program) is not self._machine.program_type:
+                if type(program) in (Program, IndexedRelation):
+                    raise ArithmeticUnresolved('registered machine has no funded translation for this native-code representation')
+                raise ContractError('candidate structure differs from the registered native-code representation')
+            if self._machine.node_count(program) > self._contract.graph_limits['nodes'] or program.slot_count > self._contract.graph_limits['slots']:
                 raise ContractError('candidate header exceeds a registered native budget')
             counts = program.counts()
             self._router.charge_work('construct', {'work': self._machine.construction_work(program, self._contract.semantics)}, f'{candidate}:construct')
@@ -980,8 +1042,7 @@ class ReferenceCompilerRuntime:
             program_id = program.program_id
             if program_id in self._programs and self._programs[program_id] != program:
                 raise IdentityUnresolved('content address collision cannot identify distinct native programs')
-            delayed = reset_delayed(self._contract.semantics)
-            zero = (F(0),)*program.slot_count
+            zero, delayed = self._machine.zero_payload(program, self._contract.semantics)
             code = self._machine.realize(f'{candidate}:code', 'native_program', program, program_id)
             initial = self._machine.realize(f'{candidate}:zero', 'zero_slot_state', (zero, delayed), program_id)
             self._allocate(owner, (code, initial))
@@ -989,15 +1050,16 @@ class ReferenceCompilerRuntime:
             # registered profile is executed below, never supplied as theta.
             theta = self._machine.initializer(program.slot_count, self._contract.initializer_pattern)
             spec = None if self._online is None else self._online.learner
-            if spec is not None and spec.optimizer_id == SIMPLEX_GRADIENT:
-                self._router.charge_work('construct', {'work': len(spec.simplex_slots)+1}, f'{candidate}:simplex-initializer-validation')
-            learner = initial_state(program, self._contract.semantics, theta, self._cursor,
+            validation_work = self._machine.initializer_validation_work(program, spec)
+            if validation_work:
+                self._router.charge_work('construct', {'work': validation_work}, f'{candidate}:simplex-initializer-validation')
+            learner = self._reference_initial_state(program, self._contract.semantics, theta, self._cursor,
                                     spec=spec, bit_limit=self._contract.reference_integer_bits)
             if self._cuda is not None or self._online is not None and self._online.float64 is not None:
                 self._retain_code(program, program_id, code.spec.object_id, candidate)
             floating = self._float64_execute('initialize', program, candidate, learner, origin='construction')
             initialized = self._machine.realize(f'{candidate}:values', 'initialized_reference_state', self._learner_payload(learner, floating), program_id)
-            self._router.charge_work('construct', {'work': program.slot_count}, f'{candidate}:registered-initialize')
+            self._router.charge_work('construct', {'work': self._machine.state_work(program)}, f'{candidate}:registered-initialize')
             self._allocate(owner, (initialized,))
             self._ledger.release(owner, initial.spec.object_id)
             del self._buffers[initial.spec.object_id]
@@ -1163,9 +1225,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._retain_code(program, initial.program_id, initial.object_ids[0], candidate)
             # Local replay clock starts at zero. All numerical/causal fields
             # are the registered newborn state, with no copied trained values.
-            local = replace(initial.learner, cursor=0)
+            local = (self._reference_attach(initial.learner, 0, spec) if type(self._machine) is IndexedReferenceMachine
+                     else replace(initial.learner, cursor=0))
             local_float64 = self._float64_execute('attach', program, candidate, local, initial.float64, origin='profile')
-            work(program.slot_count+sum(s.delay for s in rules.states)+1, 'local-clock')
+            work(self._machine.state_work(program)+sum(s.delay for s in rules.states)+1, 'local-clock')
             local_object = self._machine.realize(f'{prefix}:local-initial', 'profile_initial_state', self._learner_payload(local, local_float64), initial.program_id)
             self._allocate(owner, (local_object,))
             self._ledger.release(owner, initial.object_ids[1])
@@ -1179,9 +1242,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 self._data_usage.record((observation,), 'profile', candidate, self._cursor)
                 update(stage='predict')
                 work(self._machine.evaluation_work(program, rules), f'{position}:predict')
-                prediction = evaluate(program, rules, local.theta, dict(observation.sources), local.delayed,
-                                      bit_limit=self._contract.reference_integer_bits)
-                if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in prediction.values):
+                prediction = self._reference_predict(program, rules, local, dict(observation.sources),
+                                      bit_limit=self._contract.reference_integer_bits,
+                                      execution_debit=lambda amount: work(amount, f'{position}:indexed-table-execution'))
+                if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in self._machine.activation_values(prediction)):
                     raise ContractError('profile execution contradicts a sufficient native range bound')
                 float64_prediction = self._float64_execute('predict', program, candidate, local, local_float64,
                     origin='profile', observation_id=observation.observation_id, sources=dict(observation.sources), reference_prediction=prediction)
@@ -1191,7 +1255,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 retain(event, 'predicted')
                 update(stage='observe')
                 work(self._machine.observation_work(program), f'{position}:observe')
-                observed = observe_event(program, local, spec, prediction, observation.target,
+                observed = self._reference_observe(program, local, spec, prediction, observation.target,
                                          bit_limit=self._contract.reference_integer_bits)
                 floating_successor = self._float64_execute('observe', program, candidate, observed, local_float64,
                     origin='profile', observation_id=observation.observation_id, floating_prediction=float64_prediction, target=observation.target)
@@ -1203,7 +1267,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 if (position+1) % spec.update_unit == 0:
                     update(stage='commit')
                     work(self._machine.commit_work(program, spec), f'{position}:commit')
-                    successor = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
+                    successor = self._reference_commit(observed, spec, bit_limit=self._contract.reference_integer_bits)
                     floating_successor = self._float64_execute('commit', program, candidate, successor, floating_successor,
                         origin='profile', observation_id=observation.observation_id)
                     event = replace(event, after_commit=successor)
@@ -1224,8 +1288,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 local_float64 = floating_successor
                 update(events_completed=position+1, stage='replay', local=local)
             update(stage='attach')
-            work(program.slot_count+sum(s.delay for s in rules.states)+1, 'attach-boundary')
-            attached = attach_boundary(local, self._cursor, spec)
+            work(self._machine.state_work(program)+sum(s.delay for s in rules.states)+1, 'attach-boundary')
+            attached = self._reference_attach(local, self._cursor, spec)
             attached_float64 = self._float64_execute('attach', program, candidate, attached, local_float64, origin='profile')
             attached_object = self._machine.realize(f'{prefix}:attached', 'profiled_newborn_state', self._learner_payload(attached, attached_float64), initial.program_id)
             self._allocate(owner, (attached_object,))
@@ -1398,7 +1462,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         # failed domain/numeric check retains that prefix and halts ingress.
         sources = read_sources(data, self._cursor, inputs, tuple(self._observations))
         source_map = dict(sources)
-        if self._contract.source_domain is not None and tuple(source_map[s.source_id] for s in rules.sources) not in self._contract.source_domain:
+        domain = self._contract.source_domain
+        source_values = tuple(source_map[s.source_id] for s in rules.sources)
+        valid_domain = (domain.contains(source_values) if type(domain) is CategoricalPairDomain
+                        else domain is None or source_values in domain)
+        if not valid_domain:
             raise ContractError('actual causal context is outside the complete registered source domain')
         if any(s.learner.cursor != self._cursor for s in self._candidates.values() if s.range_safe):
             raise ContractError('an active reference lineage lost the common exogenous cursor')
@@ -1426,9 +1494,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 self._retain_program(state)
                 program = self._programs[state.program_id]
                 self._event_work(state, self._machine.evaluation_work(program, rules), 'predict')
-                prediction = evaluate(program, rules, state.theta, source_map, state.delayed,
-                                      bit_limit=self._contract.reference_integer_bits)
-                if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in prediction.values):
+                prediction = self._reference_predict(program, rules, state.learner, source_map,
+                                      bit_limit=self._contract.reference_integer_bits,
+                                      execution_debit=lambda amount: self._event_work(state, amount, 'indexed-table-execution'))
+                if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in self._machine.activation_values(prediction)):
                     raise ContractError('a certified range enclosure disagrees with actual native execution')
                 floating_prediction = self._float64_execute('predict', program, state.candidate_id, state.learner, state.float64,
                     observation_id=observation_id, sources=source_map, reference_prediction=prediction)
@@ -1487,7 +1556,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 state = self._candidates[candidate]
                 program = self._programs[state.program_id]
                 self._event_work(state, self._machine.observation_work(program), 'observe-and-accumulate')
-                observed = observe_event(program, state.learner, spec, prediction, target,
+                observed = self._reference_observe(program, state.learner, spec, prediction, target,
                                          bit_limit=self._contract.reference_integer_bits)
                 floating_successor = self._float64_execute('observe', program, candidate, observed, state.float64,
                     observation_id=record.observation_id, floating_prediction=float64_predictions.get(candidate), target=target)
@@ -1500,7 +1569,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 evidence = state.range_evidence
                 if do_commit:
                     self._event_work(state, self._machine.commit_work(program, spec), 'optimizer-commit')
-                    committed = commit_event(observed, spec, bit_limit=self._contract.reference_integer_bits)
+                    committed = self._reference_commit(observed, spec, bit_limit=self._contract.reference_integer_bits)
                     floating_successor = self._float64_execute('commit', program, candidate, committed, floating_successor,
                         observation_id=record.observation_id)
                     trace = replace(trace, after_commit=committed)
@@ -1513,7 +1582,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 # delayed queue. They already quantify over every registered
                 # source point and the declared delayed invariant. Preserve
                 # the actual owned proof object when those dependencies agree.
-                self._event_work(state, program.slot_count+1, 'range-dependency-check')
+                self._event_work(state, self._machine.state_work(program)+1, 'range-dependency-check')
                 unchanged_range = final_state.theta == state.learner.theta
                 if not unchanged_range:
                     evidence = self._range(program, final_state.theta, f'{candidate}:commit:{cursor+1}')
@@ -1745,7 +1814,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         applies to current learners and must be refreshed while evidence is
         active. It never relies on a successful next-query AMP relation.
         """
-        rows = 1 if self._contract.source_domain is None else len(self._contract.source_domain)
+        rows = 1 if self._contract.source_domain is None or type(self._contract.source_domain) is CategoricalPairDomain else len(self._contract.source_domain)
         labels = len(self._contract.semantics.base)
         bits = self._contract.reference_integer_bits
         self._event_router.charge_work('information', {'work': mass_box_work(rows, labels)

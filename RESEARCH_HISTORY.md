@@ -6004,3 +6004,58 @@ carry actual source/target lineage, complete physical phase evidence,
 resource ownership, fresh persistence and reachable installation. The
 frozen Foundation and ERC remain unchanged; no new semantic action, whole-
 Compiler quotient or CERTIFIED_COMPLETE is introduced.
+
+## 175. Indexed native reference execution enters the owned Runtime (2026-09-21)
+
+The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md)
+closes the CPU admission gap. The exact count, ordered-code index and
+positive-partition cores move into production modules while the experiment
+oracles remain independent literal builders/derivatives. The original full
+indexed-reference audit reproduces its committed JSON exactly. The Runtime
+now registers matching indexed G, uniform Gamma, unit simplex U and the
+complete categorical domain; it expands no world, selected-slot or domain
+table. The code identity uses an explicit indexed-description namespace,
+without equating it to an unread fully serialized Program hash.
+
+All numerical phases run through the existing root's actual byte ingress,
+target observation, profile replay, resource roles, leases, retained traces,
+lineage and fresh reference evidence. An exact induction over the original
+count/native phase identities proves complete numerical refinement for
+admitted funded traces; it does not identify resource histories or complete
+Compiler roots. A normalized-count invariant proves the full-domain range
+without scanning K slots. Native descriptions unsupported by the fixed
+machine return UNRESOLVED rather than a false semantic rejection.
+
+Planning receives its own prepaid metadata tariff. Only after shape/height
+preflight does the Runtime debit planned table execution, before any powers
+or numeric tables. Independent sentinels verify both refusal boundaries.
+A real 13-observation star retains all correlations but makes natural-order
+elimination request a 16384-cell join on a subsequent leaf query. Its
+pre-decoder UNRESOLVED retains the received context and history; a better
+elimination order remains possible. Integer-height refusal is likewise
+solver uncertainty. Injecting failure on a second candidate's commit keeps
+the actual target, both observed states and the first local commit trace,
+while advancing neither published learner.
+
+The complete new CPU audit covers all 64 n2 and 324 n3 length-two histories,
+776 full native phase comparisons, ordinary/profile clocks and finite
+empty-policy closure. At n256, four actual observations and a four-event
+profile execute with world builders disabled. Forecasts are 1/2, 9/10, 1/2,
+189/250; final optimizer clocks are 4 and 6. Guarded full outputs refuse.
+The complete packed root is 62,461,693 bytes; total process RAM, physical
+speed and comparative resource advantages are not inferred.
+
+An independent literal Runtime matches all 20 post-admission reference
+persistence comparisons. Admission is fresh at cursor16; four scored
+events cross at cursor20 with wealth167995/32768. Retirement preserves
+alpha1/4 and evidence history. The external stochastic law stays an
+assumption, and reference crossing cannot authorize installation.
+
+Nine complete native CPU regression batteries pass, including the full
+36-class model check and full owned policy. The ordinary/profile/ingress
+batteries also pass after the split execution debit. No new GPU or model
+job runs, and no terminal diagnostic is restarted. This is a scoped exact
+reference extension, not a new full release or CERTIFIED_COMPLETE. Owned
+indexed AMP execution, complete physical phase evidence, paired persistence,
+native-class search/fallback and installation remain open. Foundation R4
+and ERC-1 are unchanged; the next work is that owned numerical bridge.

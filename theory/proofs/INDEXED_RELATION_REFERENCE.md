@@ -237,9 +237,9 @@ The large case is exact symbolic/reference execution of three events, not
 an executed exponential native graph, GPU run or measured physical saving.
 The audit imports no Torch and does not rerun any terminal model experiment.
 
-The current production `prepare_model` still requires an exact `Program`,
+At this result's source, production `prepare_model` required an exact `Program`,
 explicit prior/selected-slot tuples, and dense expert increment and
-reconstruction tables. The Runtime also admits literal Program objects.
+reconstruction tables. The Runtime admitted literal Program objects.
 Those are real integration constraints, not a theorem that semantic state
 requires exponential storage. The new representation is deliberately not
 passed to that API as a pretend Program. Owned indexed admission, resource
@@ -253,6 +253,15 @@ readout words and three gradient forms. It requires the independently owned
 target; a self-reported target gives an explicit false-certificate example.
 Its sole `b0b1f3b` RTX3090 audit now matches293,008 actual device words and
 all complete-coordinate decisions. This supplies a conditional numerical
-component, while the production
-admission, physical ownership, evidence and installation obligations above
-remain open.
+component, without itself satisfying production admission, physical
+ownership, evidence or installation obligations.
+
+The subsequent [owned indexed reference](OWNED_INDEXED_REFERENCE.md) now
+uses these exact cores inside `ReferenceCompilerRuntime`. It closes CPU
+admission, actual ingress/target binding, complete reference phases,
+profiles, packed leases and fresh reference evidence. Its 388 exhaustive
+short histories and n256 owned prefix pass, and this proof's original full
+audit still matches its committed JSON exactly after core promotion. The
+older physical likelihood path retains its dense tables. Owned indexed
+AMP evidence, paired persistence, native-class search and installation
+remain open; the standalone index reader supplies none of that authority.

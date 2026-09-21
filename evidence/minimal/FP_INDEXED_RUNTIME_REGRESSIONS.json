@@ -1,0 +1,322 @@
+{
+  "status": "PASS",
+  "scope": "complete CPU regression batteries for the shared Runtime phase dispatch; not an old GPU/model rerun",
+  "audits": {
+    "context_ingress": {
+      "status": "PASS",
+      "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+      "seconds": 3.56,
+      "complete_sections": [
+        "codec",
+        "chunking",
+        "admission",
+        "failures",
+        "filtration"
+      ],
+      "evidence": {
+        "chunking.all_legal_chunkings": 208,
+        "chunking.equal_prefix_complete_snapshot_checks": 1328,
+        "admission.unchanged_unfunded_denials": 64,
+        "filtration.locked_action_prefix_positions": 90
+      },
+      "completed_jobs": {}
+    },
+    "reference_persistence": {
+      "status": "PASS",
+      "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+      "seconds": 3.27,
+      "complete_sections": [
+        "scores",
+        "crossing",
+        "null",
+        "freshness",
+        "failures"
+      ],
+      "evidence": {
+        "null.complete_fair_label_paths": 32,
+        "null.exact_conditional_lower_wealth_inequalities": 31,
+        "null.first_crossing_probability": "1/8",
+        "freshness.global_allocated_alpha": "3/4"
+      },
+      "completed_jobs": {}
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "seconds": 10.8,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "evidence": {
+        "existing_value_path.actual_profile_predictions_and_observations": 512,
+        "exhaustive_replay": {
+          "all_two_event_binary_context_target_streams": 16,
+          "independent_profile_prediction_and_gradient_checks": 64
+        },
+        "recurrent_attachment.recurrent_profile_events": 8
+      },
+      "completed_jobs": {}
+    },
+    "reference_events": {
+      "status": "PASS",
+      "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+      "seconds": 41.16,
+      "complete_sections": [
+        "gradient_audit",
+        "exhaustive_endpoint",
+        "clock_data_boundaries",
+        "causality",
+        "query_precision",
+        "failure_prefixes",
+        "existing_value_path"
+      ],
+      "evidence": {
+        "gradient_audit.independent_exact_gradient_vectors": 960,
+        "exhaustive_endpoint.streams": 64,
+        "exhaustive_endpoint.individual_optimizer_commits": 128,
+        "causality.exact_causal_source_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "cpu_installation": {
+      "status": "PASS",
+      "scope": "serialized CPU root/lease installation from owned exact proposal and two-path evidence",
+      "seconds": 262.84,
+      "complete_sections": [
+        "ledger",
+        "success",
+        "learned",
+        "failures",
+        "capacity",
+        "continuation"
+      ],
+      "evidence": {
+        "ledger.independent_complete_lease_cases": 2016,
+        "success.complete_native_class_programs": 35,
+        "learned.complete_native_class_programs": 774,
+        "learned.independent_continuous_binary64_phase_checks": 870,
+        "continuation.install_cursors": [
+          22,
+          38
+        ]
+      },
+      "completed_jobs": {}
+    },
+    "reference_run": {
+      "status": "PASS",
+      "scope": "owned single-root finite reference run, actual CPU protocol and terminal report",
+      "seconds": 11.24,
+      "complete_sections": [
+        "cases.registration",
+        "cases.finite_streams",
+        "cases.installed",
+        "cases.failures",
+        "cases.bounded"
+      ],
+      "evidence": {
+        "cases.finite_streams": {
+          "all_binary_streams_at_lengths_2_3_4": 28,
+          "terminal_port_denials_without_history_growth": 783,
+          "partial_optimizer_unit_retained_without_flush": true,
+          "end_of_stream_not_evidence_crossing_or_rejection": true,
+          "waiting_and_active_stages_report_unresolved_without_history_erasure": true
+        },
+        "cases.installed": {
+          "cursor": 22,
+          "native_class_size": 35,
+          "independent_binary64_phase_checks": 141,
+          "sealed_port_denials": 27,
+          "alpha_spent": "1/2",
+          "closure_included_in_actual_owned_payload_bytes": true
+        }
+      },
+      "completed_jobs": {
+        "cases.bounded.completed_job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 32391168,
+          "peak_job_commit": 33628160,
+          "user_100ns": 22343750,
+          "kernel_100ns": 468750,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 24264,
+          "process_creation_100ns": 134344314922941520
+        }
+      }
+    },
+    "float64_runtime": {
+      "status": "PASS",
+      "scope": "owned actual CPU binary64 and exact reference learner prefixes; no target AMP authorization",
+      "seconds": 8.41,
+      "complete_sections": [
+        "exhaustive",
+        "profiles",
+        "normalization",
+        "failures",
+        "crossing"
+      ],
+      "evidence": {
+        "exhaustive.independent_bitwise_phase_checks": 1024,
+        "exhaustive.actual_finite_coordinates_differing_from_recast_exact_endpoints": 406,
+        "profiles.profile_and_initial_prefix_phase_checks": 30,
+        "profiles.recurrent_phase_checks": 22
+      },
+      "completed_jobs": {}
+    },
+    "reference_model_check": {
+      "status": "PASS",
+      "scope": "owned finite Runtime and independently exhaustive exact native/learner model",
+      "seconds": 766.42,
+      "complete_sections": [
+        "counts",
+        "seed",
+        "distinct_class_shapes",
+        "selected_cases"
+      ],
+      "evidence": {
+        "counts": {
+          "runs": 36,
+          "complete_native_members": 2665,
+          "exact_endpoint_scores": 2619,
+          "range_unresolved_members": 46,
+          "complete_class_proofs": 33,
+          "initial_range_unresolved_members": 44,
+          "profile_range_unresolved_members": 2,
+          "infeasible_class_results_unresolved": 3,
+          "ordinary_successor_checks": 361,
+          "halted_unsafe_ordinary_commits": 3,
+          "independent_binary64_phases": 23274
+        },
+        "distinct_class_shapes": 34,
+        "seed": 2026091367
+      },
+      "completed_jobs": {}
+    },
+    "owned_compiler_policy": {
+      "status": "PASS",
+      "scope": "registered owned sequential native-class Compiler strategy on actual CPU Runtime",
+      "seconds": 1182.47,
+      "complete_sections": [
+        "registration",
+        "success",
+        "learned",
+        "exhaustive",
+        "failures",
+        "bounded"
+      ],
+      "evidence": {
+        "success.native_class_sizes": [
+          35,
+          35
+        ],
+        "success.installed_at_cursors": [
+          22,
+          38
+        ],
+        "learned.native_class_sizes": [
+          774
+        ],
+        "learned.installed_at_cursors": [
+          18
+        ],
+        "exhaustive": {
+          "all_six_label_streams": 64,
+          "outcomes": {
+            "BASELINE_SELECTED": 32,
+            "UNRESOLVED": 30,
+            "INSTALLED_CPU": 2
+          },
+          "independent_log_and_exact_wealth_checks": 256
+        }
+      },
+      "completed_jobs": {
+        "bounded.job": {
+          "exit_code": 0,
+          "timed_out": false,
+          "commit_limit": 67108864,
+          "peak_process_commit": 36524032,
+          "peak_job_commit": 37752832,
+          "user_100ns": 183750000,
+          "kernel_100ns": 625000,
+          "total_processes": 2,
+          "limit_terminated_processes": 0,
+          "attached_before_resume": true,
+          "process_id": 29484,
+          "process_creation_100ns": 134344324149048604
+        }
+      }
+    }
+  },
+  "post_split_debit": {
+    "context_ingress": {
+      "status": "PASS",
+      "seconds": 3.59,
+      "complete_sections": [
+        "codec",
+        "chunking",
+        "admission",
+        "failures",
+        "filtration"
+      ],
+      "matches_primary_evidence": true
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "seconds": 10.86,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "matches_primary_evidence": true
+    },
+    "reference_events": {
+      "status": "PASS",
+      "seconds": 40.59,
+      "complete_sections": [
+        "gradient_audit",
+        "exhaustive_endpoint",
+        "clock_data_boundaries",
+        "causality",
+        "query_precision",
+        "failure_prefixes",
+        "existing_value_path"
+      ],
+      "matches_primary_evidence": true
+    }
+  },
+  "post_split_scope": "Repeat affected native ordinary/profile dispatch and ingress after separating indexed planning and table execution charges; no repeat of unchanged long search/model-check batteries."
+}

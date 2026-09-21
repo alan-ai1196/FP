@@ -2,6 +2,31 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current owned reference result, 2026-09-21:**
+[owned indexed execution](theory/proofs/OWNED_INDEXED_REFERENCE.md) now runs
+inside the existing `ReferenceCompilerRuntime`. The same literal G, uniform
+Gamma and unit simplex U enter through matching indexed declarations; actual
+byte ingress, targets, complete states/caches, profiles, packed leases,
+failure history and fresh reference evidence remain owned. All 388 short
+histories give 776 full native phase comparisons. The n256 path executes
+four observations and a four-event profile with world builders disabled.
+An independent literal Runtime matches fresh evidence, crossing at cursor
+20 and retaining alpha 1/4 after retirement. Planning and table execution
+have separate prepaid debits. A 13-observation star exposes a natural-order
+width refusal with history retained; no inference impossibility follows.
+Nine complete CPU regression batteries pass, including the full 36-class
+model check and owned policy. This is an exact reference extension, not a
+new complete release, resource advantage or `CERTIFIED_COMPLETE`.
+
+**Next work:** owned indexed AMP execution and complete physical phase
+evidence, independently bound actual target, fresh paired persistence and
+reachable installation; native-class search or a funded fallback also
+remains open. The new reference registration explicitly refuses unsupported
+physical/search integration. Empty-policy finite reference closure works.
+No GPU/model job was launched for this result; every previous job remains
+terminal. Do not return to additional static cycle-size studies. Foundation
+R4 and ERC-1 stay frozen.
+
 **Current complete-coordinate bridge, 2026-09-21:** the
 [indexed phase bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) keeps parameters
 exactly count-encoded and checks every native cache/gradient coordinate using
@@ -20,9 +45,9 @@ match. Job peak2,089,934,848 bytes stays below4 GiB, with no timeout or limit
 termination. The17,168-byte [GPU report](evidence/minimal/FP_INDEXED_PHASE_BRIDGE_CUDA.json)
 retains the completed process binding. This diagnostic and every earlier
 GPU/model job are terminal; do not restart them. This is a conditional
-native-reference component bridge; owned Runtime admission,
-actual information acquisition, complete physical evidence, fresh persistence
-and reachable installation still require integration.
+native-reference component bridge. The owned reference result above now
+binds admission and information acquisition; complete indexed physical
+evidence, fresh paired persistence and reachable installation remain open.
 
 **Current admission-representation result, 2026-09-21:** the
 [indexed literal reference](theory/proofs/INDEXED_RELATION_REFERENCE.md)
@@ -36,12 +61,12 @@ three actual count-reference commits and a profile attachment preserve the
 state without constructing2^255 world entries; five full-read requests
 refuse before materialization. Inference still depends on width and integer
 height, and explicit whole-state reads still cost Omega(K). This proves a
-compact representation of the existing code, not a new native action or
-owned admission. Production still requires literal Program/prior/slot and
-dense likelihood tables. Next work is the owned indexed admission and
-complete numerical phase bridge, including resource/identity/provenance
-binding and reachable installation. Do not add more cycle-size constants
-or rerun any terminal GPU/model diagnostic. No Runtime API changes here.
+compact representation of the existing code, without a new native action.
+The owned reference extension above now uses it. The older physical
+likelihood path still requires literal Program/prior/slot and dense tables;
+it cannot inherit the indexed component's bridge authority. Next work is
+the owned numerical phase bridge and reachable installation. Do not add
+more cycle-size constants or rerun any terminal GPU/model diagnostic.
 
 **Current precision refinement, 2026-09-21:** the [static power lowering](theory/proofs/RADIX9_POWER_LOWERING.md)
 removes repeated half casts at products by proved radix powers. A syntax-only
