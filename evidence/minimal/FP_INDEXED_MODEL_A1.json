@@ -1,0 +1,7120 @@
+{
+  "status": "COMPLETE_WITH_UNRESOLVED",
+  "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+  "registration": {
+    "status": "REGISTERED_BEFORE_EXECUTION",
+    "cases": [
+      {
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "training_events": 60,
+        "evaluation_events": 64,
+        "native_program_counts": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.34296133745245244,
+        "AMP_readout_control_unseen_CE": 0.34295774970328297
+      },
+      {
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "training_events": 60,
+        "evaluation_events": 64,
+        "native_program_counts": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.3340278535089644,
+        "AMP_readout_control_unseen_CE": 0.33402782235726025
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "training_events": 140,
+        "evaluation_events": 256,
+        "native_program_counts": {
+          "nodes": 65826,
+          "sources": 32,
+          "state_reads": 0,
+          "SUMs": 65538,
+          "PRODUCTs": 256,
+          "SUM_edges": 8912896,
+          "edges": 8913408,
+          "slots": 32769,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.3269395147987739,
+        "AMP_readout_control_unseen_CE": 0.3269395302762026
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "training_events": 140,
+        "evaluation_events": 256,
+        "native_program_counts": {
+          "nodes": 65826,
+          "sources": 32,
+          "state_reads": 0,
+          "SUMs": 65538,
+          "PRODUCTs": 256,
+          "SUM_edges": 8912896,
+          "edges": 8913408,
+          "slots": 32769,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.3269394918145259,
+        "AMP_readout_control_unseen_CE": 0.32693948802372763
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "training_events": 40,
+        "evaluation_events": 64,
+        "native_program_counts": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.38067138317997246,
+        "AMP_readout_control_unseen_CE": 0.38066910952157745
+      },
+      {
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "training_events": 40,
+        "evaluation_events": 64,
+        "native_program_counts": {
+          "nodes": 338,
+          "sources": 16,
+          "state_reads": 0,
+          "SUMs": 258,
+          "PRODUCTs": 64,
+          "SUM_edges": 10240,
+          "edges": 10368,
+          "slots": 129,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.35022517149650695,
+        "AMP_readout_control_unseen_CE": 0.35022510930730544
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "training_events": 120,
+        "evaluation_events": 256,
+        "native_program_counts": {
+          "nodes": 65826,
+          "sources": 32,
+          "state_reads": 0,
+          "SUMs": 65538,
+          "PRODUCTs": 256,
+          "SUM_edges": 8912896,
+          "edges": 8913408,
+          "slots": 32769,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.33055558992217193,
+        "AMP_readout_control_unseen_CE": 0.33055575219484024
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "training_events": 120,
+        "evaluation_events": 256,
+        "native_program_counts": {
+          "nodes": 65826,
+          "sources": 32,
+          "state_reads": 0,
+          "SUMs": 65538,
+          "PRODUCTs": 256,
+          "SUM_edges": 8912896,
+          "edges": 8913408,
+          "slots": 32769,
+          "bindings": 0
+        },
+        "reference_control_unseen_CE": 0.330895432337523,
+        "AMP_readout_control_unseen_CE": 0.33089544588844205
+      }
+    ],
+    "modes": [
+      "global",
+      "projected"
+    ],
+    "native_initial_program": "complete indexed literal relation; uniform Gamma; unit-one rate-one simplex U",
+    "ordinary_training": true,
+    "profiles": 0,
+    "compiler_policy_steps": 0,
+    "class_certificate": false,
+    "construction_search": "NOT_INVOKED",
+    "installations": 0,
+    "sole_matched_configuration_differences": [
+      "CUDA backend_id",
+      "CUDA forward_id"
+    ],
+    "host_job_cap": 17179869184,
+    "deadline_ms": 7200000,
+    "packed_bytes": 8589934592,
+    "work_per_role": 1000000000000000,
+    "arena_bytes": 268435456,
+    "allocator_cap": 536870912,
+    "phase_frame_bytes": 4194304,
+    "phase_output_cells": 65536,
+    "reference_integer_bits": 32768,
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "AMP_state_atol": "1/100",
+    "AMP_probability_atol": "1/1000",
+    "baseline_journal": "evidence/minimal/FP_JOINT_UNCERTAINTY_EXPERIMENT.json",
+    "baseline_anchor": "7ebfea18986177a30267c2304d48e31be7a5ad86",
+    "baseline_execution_source": "38b27b300c22aa89ed2c458c4fbf1038a4a6b910",
+    "baseline_scope": "retained full adaptive exact posterior and its actual AMP readout; no new baseline execution or matched memory claim",
+    "scientific_scope": "retrospective complete execution and predictive quality on all eight exposed IID RN-5 cases; no population, search or installation claim"
+  },
+  "workers": [
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3906568192,
+        "peak_job_commit": 3907878912,
+        "user_100ns": 294843750,
+        "kernel_100ns": 18437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2712,
+        "process_creation_100ns": 134344494433568955
+      },
+      "raw_result_bytes": 9192,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "mode": "global",
+        "process_id": 2712,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 124,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 60,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 124,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.34296133745245244,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "2416686553997755/12384898975268864",
+              "1208343276998899/6192449487634432"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 397,
+            "mean_true_probability_gap_binary64": 0.022105361249963106,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "AMP_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.3429613375586764,
+            "raw_division_expected_CE_binary64": 0.3429613459120081,
+            "expected_Brier_exact_enclosure": [
+              "1208343277883259/6192449487634432",
+              "6865586806155/35184372088832"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.022105357677600548,
+            "latent_relation_error_with_half_ties": "1/44"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.3373743486833886,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3429996470156115/18014398509481984",
+              "1714998235078089/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 403,
+            "mean_true_probability_gap_binary64": 0.015197436218250537,
+            "latent_relation_error_with_half_ties": "1/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.33737434875641764,
+            "raw_division_expected_CE_binary64": 0.33737436113500663,
+            "expected_Brier_exact_enclosure": [
+              "1714998235962439/9007199254740992",
+              "857499117981235/4503599627370496"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.015197433738626495,
+            "latent_relation_error_with_half_ties": "1/64"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1066171617,
+            1091465316,
+            1038141390,
+            1063511814
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091556125,
+            1065445146,
+            1063657109,
+            1036979037
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1065445147,
+            1091556124,
+            1036979040,
+            1063657109
+          ],
+          [
+            1065373667,
+            1091565060,
+            1036864670,
+            1063671405
+          ],
+          [
+            1091567474,
+            1065354354,
+            1063675267,
+            1036833770
+          ],
+          [
+            1091566194,
+            1065364593,
+            1063673219,
+            1036850152
+          ],
+          [
+            1065353356,
+            1091567598,
+            1036832173,
+            1063675466
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1065354479,
+            1091567458,
+            1036833970,
+            1063675242
+          ],
+          [
+            1065354368,
+            1091567472,
+            1036833792,
+            1063675264
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065363569,
+            1091566322,
+            1036848514,
+            1063673424
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567472,
+            1065354367,
+            1063675264,
+            1036833790
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 124,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 373,
+          "actual_floating_words": 32180,
+          "actual_half_words": 2328,
+          "maximum_prediction_tape_nodes": 1783,
+          "maximum_phase_output_cells": 622,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1571532889,
+        "packed_current": 1567349958,
+        "consumed_arena_bytes": 266376,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 95232
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        16
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3900194816,
+        "peak_job_commit": 3901505536,
+        "user_100ns": 244062500,
+        "kernel_100ns": 13906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26836,
+        "process_creation_100ns": 134344494788989500
+      },
+      "raw_result_bytes": 9199,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c2",
+          16
+        ],
+        "mode": "projected",
+        "process_id": 26836,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 124,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 60,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 124,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.34296133745245244,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "2416686553997755/12384898975268864",
+              "1208343276998899/6192449487634432"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 397,
+            "mean_true_probability_gap_binary64": 0.022105361249963106,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "AMP_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.3429613375586764,
+            "raw_division_expected_CE_binary64": 0.3429613459120081,
+            "expected_Brier_exact_enclosure": [
+              "1208343277883259/6192449487634432",
+              "6865586806155/35184372088832"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.022105357677600548,
+            "latent_relation_error_with_half_ties": "1/44"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.3373743486833886,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3429996470156115/18014398509481984",
+              "1714998235078089/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 403,
+            "mean_true_probability_gap_binary64": 0.015197436218250537,
+            "latent_relation_error_with_half_ties": "1/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.33737434875641764,
+            "raw_division_expected_CE_binary64": 0.33737436113500663,
+            "expected_Brier_exact_enclosure": [
+              "1714998235962439/9007199254740992",
+              "857499117981235/4503599627370496"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.015197433738626495,
+            "latent_relation_error_with_half_ties": "1/64"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1066171617,
+            1091465316,
+            1038141390,
+            1063511814
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091556125,
+            1065445146,
+            1063657109,
+            1036979037
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1065445147,
+            1091556124,
+            1036979040,
+            1063657109
+          ],
+          [
+            1065373667,
+            1091565060,
+            1036864670,
+            1063671405
+          ],
+          [
+            1091567474,
+            1065354354,
+            1063675267,
+            1036833770
+          ],
+          [
+            1091566194,
+            1065364593,
+            1063673219,
+            1036850152
+          ],
+          [
+            1065353356,
+            1091567598,
+            1036832173,
+            1063675466
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1065354479,
+            1091567458,
+            1036833970,
+            1063675242
+          ],
+          [
+            1065354368,
+            1091567472,
+            1036833792,
+            1063675264
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065363569,
+            1091566322,
+            1036848514,
+            1063673424
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567472,
+            1065354367,
+            1063675264,
+            1036833790
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 124,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 373,
+          "actual_floating_words": 22460,
+          "actual_half_words": 396,
+          "maximum_prediction_tape_nodes": 1761,
+          "maximum_phase_output_cells": 614,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 3,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1571532914,
+        "packed_current": 1567349973,
+        "consumed_arena_bytes": 188616,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 95232
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3912368128,
+        "peak_job_commit": 3913674752,
+        "user_100ns": 312187500,
+        "kernel_100ns": 20312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 240,
+        "process_creation_100ns": 134344495087286837
+      },
+      "raw_result_bytes": 9202,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "mode": "global",
+        "process_id": 240,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 124,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 60,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 124,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.3340278535089644,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "2323011076497283/12384898975268864",
+              "1161505538248663/6192449487634432"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 480,
+            "mean_true_probability_gap_binary64": 0.011162301242137887,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "AMP_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.33402783848463335,
+            "raw_division_expected_CE_binary64": 0.33402785525214296,
+            "expected_Brier_exact_enclosure": [
+              "1161505483399105/6192449487634432",
+              "2323010966798253/12384898975268864"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.011162269689422405,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.33123257847224075,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3336320992655643/18014398509481984",
+              "1668160496327853/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 480,
+            "mean_true_probability_gap_binary64": 0.007674082716955768,
+            "latent_relation_error_with_half_ties": "1/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.33123256814301305,
+            "raw_division_expected_CE_binary64": 0.33123258607351874,
+            "expected_Brier_exact_enclosure": [
+              "1668160441478285/9007199254740992",
+              "3336320882956633/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.007674060914392076,
+            "latent_relation_error_with_half_ties": "1/128"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064104,
+            1062333317,
+            1043878381
+          ],
+          [
+            1066171630,
+            1091465314,
+            1038141411,
+            1063511811
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065445146,
+            1091556125,
+            1036979037,
+            1063657109
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353219,
+            1063675494,
+            1036831954
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1065354353,
+            1091567474,
+            1036833768,
+            1063675267
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1065354352,
+            1091567474,
+            1036833766,
+            1063675267
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1091567474,
+            1065354352,
+            1063675267,
+            1036833766
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 124,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 373,
+          "actual_floating_words": 34824,
+          "actual_half_words": 2286,
+          "maximum_prediction_tape_nodes": 1837,
+          "maximum_phase_output_cells": 558,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1571554439,
+        "packed_current": 1567371669,
+        "consumed_arena_bytes": 287528,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 95232
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c2",
+        17
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3904008192,
+        "peak_job_commit": 3905314816,
+        "user_100ns": 258281250,
+        "kernel_100ns": 19062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2236,
+        "process_creation_100ns": 134344495463048044
+      },
+      "raw_result_bytes": 9206,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c2",
+          17
+        ],
+        "mode": "projected",
+        "process_id": 2236,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 124,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 60,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 124,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.3340278535089644,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "2323011076497283/12384898975268864",
+              "1161505538248663/6192449487634432"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 480,
+            "mean_true_probability_gap_binary64": 0.011162301242137887,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "AMP_unseen": {
+            "contexts": 44,
+            "expected_CE_binary64": 0.33402783812405007,
+            "raw_division_expected_CE_binary64": 0.3340278543835243,
+            "expected_Brier_exact_enclosure": [
+              "1161505482526403/6192449487634432",
+              "2323010965052849/12384898975268864"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.011162266078120946,
+            "latent_relation_error_with_half_ties": "1/88"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.33123257847224075,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3336320992655643/18014398509481984",
+              "1668160496327853/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 480,
+            "mean_true_probability_gap_binary64": 0.007674082716955768,
+            "latent_relation_error_with_half_ties": "1/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.3312325678951121,
+            "raw_division_expected_CE_binary64": 0.3312325854763435,
+            "expected_Brier_exact_enclosure": [
+              "1668160440605583/9007199254740992",
+              "3336320881211229/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.007674058431622324,
+            "latent_relation_error_with_half_ties": "1/128"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064104,
+            1062333317,
+            1043878381
+          ],
+          [
+            1066171617,
+            1091465316,
+            1038141390,
+            1063511814
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065445146,
+            1091556125,
+            1036979037,
+            1063657109
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353219,
+            1063675494,
+            1036831954
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1065354353,
+            1091567474,
+            1036833768,
+            1063675267
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1065354352,
+            1091567474,
+            1036833766,
+            1063675267
+          ],
+          [
+            1065363443,
+            1091566337,
+            1036848313,
+            1063673449
+          ],
+          [
+            1091567474,
+            1065354352,
+            1063675267,
+            1036833766
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 124,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 373,
+          "actual_floating_words": 25296,
+          "actual_half_words": 294,
+          "maximum_prediction_tape_nodes": 1833,
+          "maximum_phase_output_cells": 550,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 4,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1571554464,
+        "packed_current": 1567371684,
+        "consumed_arena_bytes": 211304,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 95232
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4656562176,
+        "peak_job_commit": 4657889280,
+        "user_100ns": 1102031250,
+        "kernel_100ns": 93125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4008,
+        "process_creation_100ns": 134344495781803579
+      },
+      "raw_result_bytes": 4728,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "mode": "global",
+        "process_id": 4008,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 173,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 173,
+          "query": [
+            3,
+            7
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 140,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 173,
+        "completed_evaluation_predictions": 33,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1072064102,
+            1090728756,
+            1043878378,
+            1062333317
+          ],
+          [
+            1091567600,
+            1065353344,
+            1063675469,
+            1036832154
+          ],
+          [
+            1091464064,
+            1066181633,
+            1063509811,
+            1038157416
+          ],
+          [
+            1091555983,
+            1065446282,
+            1063656882,
+            1036980854
+          ],
+          [
+            1065353469,
+            1091567584,
+            1036832354,
+            1063675443
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091566318,
+            1065363597,
+            1063673418,
+            1036848558
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065355503,
+            1091567330,
+            1036835608,
+            1063675037
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 173,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 520,
+          "actual_floating_words": 111781,
+          "actual_half_words": 17580,
+          "maximum_prediction_tape_nodes": 17497,
+          "maximum_phase_output_cells": 7982,
+          "maximum_join_cells": 1024,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2192098743,
+        "packed_current": 2192098743,
+        "consumed_arena_bytes": 1082168,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34013184
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4626767872,
+        "peak_job_commit": 4628074496,
+        "user_100ns": 911562500,
+        "kernel_100ns": 82656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2316,
+        "process_creation_100ns": 134344496854139853
+      },
+      "raw_result_bytes": 4732,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "mode": "projected",
+        "process_id": 2316,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 173,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 173,
+          "query": [
+            3,
+            7
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 140,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 173,
+        "completed_evaluation_predictions": 33,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1072064204,
+            1090728743,
+            1043878461,
+            1062333298
+          ],
+          [
+            1091567600,
+            1065353344,
+            1063675469,
+            1036832154
+          ],
+          [
+            1091464031,
+            1066181892,
+            1063509758,
+            1038157830
+          ],
+          [
+            1091555983,
+            1065446282,
+            1063656882,
+            1036980854
+          ],
+          [
+            1065353469,
+            1091567584,
+            1036832354,
+            1063675443
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091566319,
+            1065363589,
+            1063673419,
+            1036848546
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065355504,
+            1091567330,
+            1036835610,
+            1063675037
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 173,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 520,
+          "actual_floating_words": 73829,
+          "actual_half_words": 5952,
+          "maximum_prediction_tape_nodes": 17493,
+          "maximum_phase_output_cells": 7974,
+          "maximum_join_cells": 1024,
+          "maximum_projected_blocks": 4,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2192098768,
+        "packed_current": 2192098768,
+        "consumed_arena_bytes": 778488,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34013184
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        17
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4630388736,
+        "peak_job_commit": 4631699456,
+        "user_100ns": 1360468750,
+        "kernel_100ns": 142812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26876,
+        "process_creation_100ns": 134344497727276624
+      },
+      "raw_result_bytes": 4370,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "mode": "global",
+        "process_id": 26876,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 169,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 169,
+          "query": [
+            4,
+            3
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 140,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 169,
+        "completed_evaluation_predictions": 29,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1091565060,
+            1065373667,
+            1063671405,
+            1036864670
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1072064102,
+            1090728756,
+            1043878378,
+            1062333317
+          ],
+          [
+            1091465102,
+            1066173320,
+            1063511473,
+            1038144117
+          ],
+          [
+            1065445413,
+            1091556091,
+            1036979464,
+            1063657054
+          ],
+          [
+            1065363607,
+            1091566317,
+            1036848574,
+            1063673416
+          ],
+          [
+            1065354357,
+            1091567473,
+            1036833774,
+            1063675266
+          ],
+          [
+            1065353274,
+            1091567609,
+            1036832042,
+            1063675483
+          ],
+          [
+            1065353721,
+            1091567553,
+            1036832757,
+            1063675394
+          ],
+          [
+            1091566335,
+            1065363463,
+            1063673445,
+            1036848344
+          ],
+          [
+            1091567472,
+            1065354370,
+            1063675264,
+            1036833795
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567598,
+            1065353360,
+            1063675466,
+            1036832179
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353219,
+            1063675494,
+            1036831954
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567611,
+            1065353258,
+            1063675486,
+            1036832016
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353219,
+            1091567616,
+            1036831954,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 169,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 508,
+          "actual_floating_words": 135629,
+          "actual_half_words": 16932,
+          "maximum_prediction_tape_nodes": 33867,
+          "maximum_phase_output_cells": 13422,
+          "maximum_join_cells": 2048,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2141602561,
+        "packed_current": 2141602561,
+        "consumed_arena_bytes": 1278296,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 33226752
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        17
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4594749440,
+        "peak_job_commit": 4596060160,
+        "user_100ns": 1142031250,
+        "kernel_100ns": 130781250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9068,
+        "process_creation_100ns": 134344498981254792
+      },
+      "raw_result_bytes": 4373,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "mode": "projected",
+        "process_id": 9068,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 169,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 169,
+          "query": [
+            4,
+            3
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 140,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 169,
+        "completed_evaluation_predictions": 29,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1091565060,
+            1065373667,
+            1063671405,
+            1036864670
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1072065012,
+            1090728642,
+            1043879107,
+            1062333136
+          ],
+          [
+            1091465118,
+            1066173197,
+            1063511498,
+            1038143918
+          ],
+          [
+            1065445451,
+            1091556087,
+            1036979525,
+            1063657048
+          ],
+          [
+            1065363611,
+            1091566316,
+            1036848582,
+            1063673416
+          ],
+          [
+            1065354357,
+            1091567473,
+            1036833774,
+            1063675266
+          ],
+          [
+            1065353274,
+            1091567609,
+            1036832042,
+            1063675483
+          ],
+          [
+            1065353721,
+            1091567553,
+            1036832757,
+            1063675394
+          ],
+          [
+            1091566335,
+            1065363463,
+            1063673445,
+            1036848344
+          ],
+          [
+            1091567472,
+            1065354370,
+            1063675264,
+            1036833795
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567598,
+            1065353360,
+            1063675466,
+            1036832179
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353219,
+            1063675494,
+            1036831954
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567611,
+            1065353258,
+            1063675486,
+            1036832016
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353219,
+            1091567616,
+            1036831954,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 169,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 508,
+          "actual_floating_words": 92125,
+          "actual_half_words": 5586,
+          "maximum_prediction_tape_nodes": 33863,
+          "maximum_phase_output_cells": 13414,
+          "maximum_join_cells": 2048,
+          "maximum_projected_blocks": 5,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2141602586,
+        "packed_current": 2141602586,
+        "consumed_arena_bytes": 930200,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 33226752
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3654807552,
+        "peak_job_commit": 3656122368,
+        "user_100ns": 273593750,
+        "kernel_100ns": 17500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12528,
+        "process_creation_100ns": 134344499995541913
+      },
+      "raw_result_bytes": 9192,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "mode": "global",
+        "process_id": 12528,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 104,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 40,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 104,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.38067138317997246,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3077160958889695/13510798882111488",
+              "769290239722435/3377699720527872"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 340,
+            "mean_true_probability_gap_binary64": 0.05805264275241175,
+            "latent_relation_error_with_half_ties": "5/96"
+          },
+          "AMP_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.380668095549755,
+            "raw_division_expected_CE_binary64": 0.3806681083861952,
+            "expected_Brier_exact_enclosure": [
+              "3077127194171099/13510798882111488",
+              "3077127194171143/13510798882111488"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.05805003231511489,
+            "latent_relation_error_with_half_ties": "1/16"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.36677428202210427,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "485976112522941/2251799813685248",
+              "3887808900183589/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 340,
+            "mean_true_probability_gap_binary64": 0.04354138726180241,
+            "latent_relation_error_with_half_ties": "5/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.3667718162995946,
+            "raw_division_expected_CE_binary64": 0.36677183069996866,
+            "expected_Brier_exact_enclosure": [
+              "485971891933241/2251799813685248",
+              "971943783866497/4503599627370496"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.04353942959205221,
+            "latent_relation_error_with_half_ties": "3/64"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091566337,
+            1065363443,
+            1063673449,
+            1036848313
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728756,
+            1072064102,
+            1062333317,
+            1043878378
+          ],
+          [
+            1089464575,
+            1075850754,
+            1061154201,
+            1048585422
+          ],
+          [
+            1080435770,
+            1087172068,
+            1052253435,
+            1059320195
+          ],
+          [
+            1091142768,
+            1068752003,
+            1062995738,
+            1041228700
+          ],
+          [
+            1068909005,
+            1091123142,
+            1041354302,
+            1062964336
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1072064102,
+            1090728756,
+            1043878378,
+            1062333317
+          ],
+          [
+            1066172450,
+            1091465212,
+            1038142723,
+            1063511648
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1066262290,
+            1091453982,
+            1038286467,
+            1063493680
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091554834,
+            1065455469,
+            1063655043,
+            1036995554
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065454241,
+            1091554988,
+            1036993589,
+            1063655290
+          ],
+          [
+            1091567334,
+            1065355475,
+            1063675043,
+            1036835563
+          ],
+          [
+            1091465330,
+            1066171508,
+            1063511837,
+            1038141216
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065455472,
+            1091554834,
+            1036995558,
+            1063655043
+          ],
+          [
+            1091567598,
+            1065353356,
+            1063675466,
+            1036832173
+          ],
+          [
+            1091566195,
+            1065364581,
+            1063673221,
+            1036850133
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567456,
+            1065354493,
+            1063675238,
+            1036833992
+          ],
+          [
+            1065353231,
+            1091567614,
+            1036831973,
+            1063675491
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1091567614,
+            1065353233,
+            1063675491,
+            1036831976
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 104,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 313,
+          "actual_floating_words": 30836,
+          "actual_half_words": 1962,
+          "maximum_prediction_tape_nodes": 1877,
+          "maximum_phase_output_cells": 558,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1319497199,
+        "packed_current": 1315314143,
+        "consumed_arena_bytes": 254184,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 79872
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        18
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3650338816,
+        "peak_job_commit": 3651649536,
+        "user_100ns": 232343750,
+        "kernel_100ns": 16093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29480,
+        "process_creation_100ns": 134344500322947633
+      },
+      "raw_result_bytes": 9204,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c4",
+          18
+        ],
+        "mode": "projected",
+        "process_id": 29480,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 104,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 40,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 104,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.38067138317997246,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "3077160958889695/13510798882111488",
+              "769290239722435/3377699720527872"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 340,
+            "mean_true_probability_gap_binary64": 0.05805264275241175,
+            "latent_relation_error_with_half_ties": "5/96"
+          },
+          "AMP_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.3806629974841864,
+            "raw_division_expected_CE_binary64": 0.38066300952362103,
+            "expected_Brier_exact_enclosure": [
+              "3077075491023001/13510798882111488",
+              "1025691830341015/4503599627370496"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.058048560065662336,
+            "latent_relation_error_with_half_ties": "1/16"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.36677428202210427,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "485976112522941/2251799813685248",
+              "3887808900183589/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 340,
+            "mean_true_probability_gap_binary64": 0.04354138726180241,
+            "latent_relation_error_with_half_ties": "5/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.36676799275041816,
+            "raw_division_expected_CE_binary64": 0.36676800655303804,
+            "expected_Brier_exact_enclosure": [
+              "1943861716158915/9007199254740992",
+              "1943861716158945/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.043538325404962795,
+            "latent_relation_error_with_half_ties": "3/64"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091566337,
+            1065363443,
+            1063673449,
+            1036848313
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1089463093,
+            1075853719,
+            1061153015,
+            1048587794
+          ],
+          [
+            1080435770,
+            1087172068,
+            1052253435,
+            1059320195
+          ],
+          [
+            1091142768,
+            1068752003,
+            1062995738,
+            1041228700
+          ],
+          [
+            1068909005,
+            1091123142,
+            1041354302,
+            1062964336
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1072064102,
+            1090728756,
+            1043878378,
+            1062333317
+          ],
+          [
+            1066172450,
+            1091465212,
+            1038142723,
+            1063511648
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1066262290,
+            1091453982,
+            1038286467,
+            1063493680
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091554834,
+            1065455469,
+            1063655043,
+            1036995554
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065454241,
+            1091554988,
+            1036993589,
+            1063655290
+          ],
+          [
+            1091567334,
+            1065355475,
+            1063675043,
+            1036835563
+          ],
+          [
+            1091465330,
+            1066171508,
+            1063511837,
+            1038141216
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065455472,
+            1091554834,
+            1036995558,
+            1063655043
+          ],
+          [
+            1091567598,
+            1065353356,
+            1063675466,
+            1036832173
+          ],
+          [
+            1091566195,
+            1065364581,
+            1063673221,
+            1036850133
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567456,
+            1065354493,
+            1063675238,
+            1036833992
+          ],
+          [
+            1065353231,
+            1091567614,
+            1036831973,
+            1063675491
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1091567614,
+            1065353233,
+            1063675491,
+            1036831976
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 104,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 313,
+          "actual_floating_words": 23144,
+          "actual_half_words": 468,
+          "maximum_prediction_tape_nodes": 1873,
+          "maximum_phase_output_cells": 550,
+          "maximum_join_cells": 128,
+          "maximum_projected_blocks": 5,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1319497224,
+        "packed_current": 1315314168,
+        "consumed_arena_bytes": 192648,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 79872
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3652247552,
+        "peak_job_commit": 3653570560,
+        "user_100ns": 244062500,
+        "kernel_100ns": 15156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8332,
+        "process_creation_100ns": 134344500607675634
+      },
+      "raw_result_bytes": 9200,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "mode": "global",
+        "process_id": 8332,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 104,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 40,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 104,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.35022517149650695,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "1359531367902097/6755399441055744",
+              "2719062735804239/13510798882111488"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 351,
+            "mean_true_probability_gap_binary64": 0.030567272461075542,
+            "latent_relation_error_with_half_ties": "1/32"
+          },
+          "AMP_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.3502244433488559,
+            "raw_division_expected_CE_binary64": 0.3502244588814873,
+            "expected_Brier_exact_enclosure": [
+              "2719055573113997/13510798882111488",
+              "1359527786557021/6755399441055744"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.030566316352802794,
+            "latent_relation_error_with_half_ties": "1/32"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.34393962197024225,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "1764855334365441/9007199254740992",
+              "3529710668730943/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 355,
+            "mean_true_probability_gap_binary64": 0.02292545441989948,
+            "latent_relation_error_with_half_ties": "3/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.34393907585950395,
+            "raw_division_expected_CE_binary64": 0.34393909309691306,
+            "expected_Brier_exact_enclosure": [
+              "3529703506040685/18014398509481984",
+              "1764851753020373/9007199254740992"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.022924737264602094,
+            "latent_relation_error_with_half_ties": "3/128"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1075585608,
+            1089597148,
+            1048170611,
+            1061260259
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1073341936,
+            1090569026,
+            1044900646,
+            1062077750
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091522943,
+            1065710602,
+            1063604018,
+            1037403766
+          ],
+          [
+            1091462883,
+            1066191079,
+            1063507922,
+            1038172530
+          ],
+          [
+            1066182551,
+            1091463949,
+            1038158885,
+            1063509627
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065446388,
+            1091555969,
+            1036981024,
+            1063656859
+          ],
+          [
+            1065446279,
+            1091555982,
+            1036980851,
+            1063656881
+          ],
+          [
+            1065363569,
+            1091566322,
+            1036848514,
+            1063673424
+          ],
+          [
+            1091566322,
+            1065363568,
+            1063673424,
+            1036848512
+          ],
+          [
+            1091566334,
+            1065363471,
+            1063673443,
+            1036848357
+          ],
+          [
+            1065355739,
+            1091567300,
+            1036835987,
+            1063674990
+          ],
+          [
+            1091567598,
+            1065353356,
+            1063675466,
+            1036832173
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091556109,
+            1065445272,
+            1063657083,
+            1036979238
+          ],
+          [
+            1065363471,
+            1091566334,
+            1036848357,
+            1063673443
+          ],
+          [
+            1091567472,
+            1065354367,
+            1063675264,
+            1036833790
+          ],
+          [
+            1091567600,
+            1065353344,
+            1063675469,
+            1036832154
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 104,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 313,
+          "actual_floating_words": 27592,
+          "actual_half_words": 3396,
+          "maximum_prediction_tape_nodes": 1309,
+          "maximum_phase_output_cells": 526,
+          "maximum_join_cells": 64,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1319498292,
+        "packed_current": 1315315242,
+        "consumed_arena_bytes": 228232,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 79872
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        8,
+        "iid-c4",
+        19
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "COMPLETE_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3644129280,
+        "peak_job_commit": 3645440000,
+        "user_100ns": 199375000,
+        "kernel_100ns": 18125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3676,
+        "process_creation_100ns": 134344500900422315
+      },
+      "raw_result_bytes": 9206,
+      "result": {
+        "status": "COMPLETE_MODEL",
+        "case": [
+          8,
+          "iid-c4",
+          19
+        ],
+        "mode": "projected",
+        "process_id": 3676,
+        "run_status": "SEALED_CUDA_STREAM",
+        "cursor": 104,
+        "refusal": null,
+        "received_pending_target": null,
+        "training_events": 40,
+        "evaluation_events": 64,
+        "reference_posterior_checks": 104,
+        "completed_evaluation_predictions": 64,
+        "scores": {
+          "reference_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.35022517149650695,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "1359531367902097/6755399441055744",
+              "2719062735804239/13510798882111488"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 351,
+            "mean_true_probability_gap_binary64": 0.030567272461075542,
+            "latent_relation_error_with_half_ties": "1/32"
+          },
+          "AMP_unseen": {
+            "contexts": 48,
+            "expected_CE_binary64": 0.35022444558136545,
+            "raw_division_expected_CE_binary64": 0.3502244635992036,
+            "expected_Brier_exact_enclosure": [
+              "1359527792256617/6755399441055744",
+              "2719055584513279/13510798882111488"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.03056635873238776,
+            "latent_relation_error_with_half_ties": "1/32"
+          },
+          "reference_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.34393962197024225,
+            "raw_division_expected_CE_binary64": null,
+            "expected_Brier_exact_enclosure": [
+              "1764855334365441/9007199254740992",
+              "3529710668730943/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 355,
+            "mean_true_probability_gap_binary64": 0.02292545441989948,
+            "latent_relation_error_with_half_ties": "3/128"
+          },
+          "AMP_full_domain": {
+            "contexts": 64,
+            "expected_CE_binary64": 0.34393907753388614,
+            "raw_division_expected_CE_binary64": 0.34393909663520034,
+            "expected_Brier_exact_enclosure": [
+              "1764851758719961/9007199254740992",
+              "3529703517439983/18014398509481984"
+            ],
+            "Brier_grid_bits": 48,
+            "maximum_per_query_Brier_integer_bits": 55,
+            "mean_true_probability_gap_binary64": 0.02292476904929082,
+            "latent_relation_error_with_half_ties": "3/128"
+          }
+        },
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1075585608,
+            1089597148,
+            1048170611,
+            1061260259
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1073341936,
+            1090569026,
+            1044900646,
+            1062077750
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091522924,
+            1065710751,
+            1063603987,
+            1037404005
+          ],
+          [
+            1091462880,
+            1066191100,
+            1063507917,
+            1038172563
+          ],
+          [
+            1066182551,
+            1091463949,
+            1038158885,
+            1063509627
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065446388,
+            1091555969,
+            1036981024,
+            1063656859
+          ],
+          [
+            1065446279,
+            1091555982,
+            1036980851,
+            1063656881
+          ],
+          [
+            1065363569,
+            1091566322,
+            1036848514,
+            1063673424
+          ],
+          [
+            1091566322,
+            1065363568,
+            1063673424,
+            1036848512
+          ],
+          [
+            1091566334,
+            1065363471,
+            1063673443,
+            1036848357
+          ],
+          [
+            1065355739,
+            1091567300,
+            1036835987,
+            1063674990
+          ],
+          [
+            1091567598,
+            1065353356,
+            1063675466,
+            1036832173
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091556109,
+            1065445272,
+            1063657083,
+            1036979238
+          ],
+          [
+            1065363471,
+            1091566334,
+            1036848357,
+            1063673443
+          ],
+          [
+            1091567472,
+            1065354367,
+            1063675264,
+            1036833790
+          ],
+          [
+            1091567600,
+            1065353344,
+            1063675469,
+            1036832154
+          ],
+          [
+            1091567614,
+            1065353232,
+            1063675491,
+            1036831974
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 104,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 313,
+          "actual_floating_words": 20232,
+          "actual_half_words": 1716,
+          "maximum_prediction_tape_nodes": 1305,
+          "maximum_phase_output_cells": 518,
+          "maximum_join_cells": 64,
+          "maximum_projected_blocks": 4,
+          "retained_failed_phases": [],
+          "complete_global_count_coordinates": 28,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 1319498317,
+        "packed_current": 1315315257,
+        "consumed_arena_bytes": 169352,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 79872
+      },
+      "reader": {
+        "status": "PASS_COMPLETE_MODEL_READER",
+        "actual_readout_pairs_recomputed": 64,
+        "retained_exact_posterior_score_controls_checked": 2,
+        "decision_class": "empty registered compiler policy; no optimization certificate"
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        18
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4896518144,
+        "peak_job_commit": 4897832960,
+        "user_100ns": 3023906250,
+        "kernel_100ns": 363281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29636,
+        "process_creation_100ns": 134344501156622163
+      },
+      "raw_result_bytes": 6890,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "mode": "global",
+        "process_id": 29636,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 177,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 177,
+          "query": [
+            3,
+            1
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 120,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 177,
+        "completed_evaluation_predictions": 57,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1066181561,
+            1091464073,
+            1038157301,
+            1063509826
+          ],
+          [
+            1090728756,
+            1072064102,
+            1062333317,
+            1043878378
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1072134013,
+            1090720016,
+            1043934308,
+            1062319334
+          ],
+          [
+            1091565088,
+            1065373439,
+            1063671450,
+            1036864306
+          ],
+          [
+            1091365422,
+            1066970774,
+            1063351983,
+            1039420040
+          ],
+          [
+            1065536880,
+            1091544658,
+            1037125811,
+            1063638762
+          ],
+          [
+            1065373679,
+            1091565058,
+            1036864690,
+            1063671402
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065364594,
+            1091566194,
+            1036850154,
+            1063673219
+          ],
+          [
+            1065365828,
+            1091566040,
+            1036852128,
+            1063672973
+          ],
+          [
+            1065354618,
+            1091567441,
+            1036834192,
+            1063675214
+          ],
+          [
+            1091556107,
+            1065445286,
+            1063657080,
+            1036979261
+          ],
+          [
+            1065353233,
+            1091567614,
+            1036831976,
+            1063675491
+          ],
+          [
+            1065363459,
+            1091566335,
+            1036848339,
+            1063673446
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1065354354,
+            1091567474,
+            1036833770,
+            1063675267
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065354354,
+            1091567474,
+            1036833770,
+            1063675267
+          ],
+          [
+            1091567616,
+            1065353217,
+            1063675494,
+            1036831950
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 177,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 532,
+          "actual_floating_words": 310965,
+          "actual_half_words": 32004,
+          "maximum_prediction_tape_nodes": 36853,
+          "maximum_phase_output_cells": 11950,
+          "maximum_join_cells": 2048,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2242639086,
+        "packed_current": 2242639086,
+        "consumed_arena_bytes": 2616024,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34799616
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        18
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4848517120,
+        "peak_job_commit": 4849823744,
+        "user_100ns": 2719062500,
+        "kernel_100ns": 355312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29572,
+        "process_creation_100ns": 134344503541772370
+      },
+      "raw_result_bytes": 6897,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "mode": "projected",
+        "process_id": 29572,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 177,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 177,
+          "query": [
+            3,
+            1
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 120,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 177,
+        "completed_evaluation_predictions": 57,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1090728755,
+            1072064104,
+            1062333317,
+            1043878381
+          ],
+          [
+            1066181594,
+            1091464068,
+            1038157355,
+            1063509819
+          ],
+          [
+            1090728755,
+            1072064104,
+            1062333317,
+            1043878381
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1072137790,
+            1090719544,
+            1043937330,
+            1062318579
+          ],
+          [
+            1091565087,
+            1065373446,
+            1063671448,
+            1036864317
+          ],
+          [
+            1091365415,
+            1066970827,
+            1063351973,
+            1039420126
+          ],
+          [
+            1065537005,
+            1091544642,
+            1037126011,
+            1063638736
+          ],
+          [
+            1065373688,
+            1091565057,
+            1036864704,
+            1063671400
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065364594,
+            1091566194,
+            1036850154,
+            1063673219
+          ],
+          [
+            1065365828,
+            1091566040,
+            1036852128,
+            1063672973
+          ],
+          [
+            1065354618,
+            1091567441,
+            1036834192,
+            1063675214
+          ],
+          [
+            1091556107,
+            1065445286,
+            1063657080,
+            1036979261
+          ],
+          [
+            1065353233,
+            1091567614,
+            1036831976,
+            1063675491
+          ],
+          [
+            1065363454,
+            1091566336,
+            1036848330,
+            1063673446
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353232,
+            1091567614,
+            1036831974,
+            1063675491
+          ],
+          [
+            1065354354,
+            1091567474,
+            1036833770,
+            1063675267
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065354354,
+            1091567474,
+            1036833770,
+            1063675267
+          ],
+          [
+            1091567616,
+            1065353217,
+            1063675494,
+            1036831950
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353342,
+            1091567600,
+            1036832150,
+            1063675469
+          ],
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567614,
+            1065353230,
+            1063675491,
+            1036831971
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353218,
+            1063675494,
+            1036831952
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 177,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 532,
+          "actual_floating_words": 254321,
+          "actual_half_words": 18252,
+          "maximum_prediction_tape_nodes": 36849,
+          "maximum_phase_output_cells": 11942,
+          "maximum_join_cells": 2048,
+          "maximum_projected_blocks": 5,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2242639111,
+        "packed_current": 2242639111,
+        "consumed_arena_bytes": 2162808,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34799616
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        19
+      ],
+      "mode": "global",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4764811264,
+        "peak_job_commit": 4766130176,
+        "user_100ns": 2000156250,
+        "kernel_100ns": 206093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12404,
+        "process_creation_100ns": 134344505661914586
+      },
+      "raw_result_bytes": 6620,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "mode": "global",
+        "process_id": 12404,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 174,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 174,
+          "query": [
+            3,
+            4
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 120,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 174,
+        "completed_evaluation_predictions": 54,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064104,
+            1062333317,
+            1043878381
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1075847538,
+            1089466183,
+            1048582850,
+            1061155487
+          ],
+          [
+            1067034708,
+            1091357430,
+            1039522336,
+            1063339197
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1090728642,
+            1072065008,
+            1062333136,
+            1043879104
+          ],
+          [
+            1065353465,
+            1091567584,
+            1036832348,
+            1063675445
+          ],
+          [
+            1091465316,
+            1066171617,
+            1063511814,
+            1038141390
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1066261305,
+            1091454104,
+            1038284893,
+            1063493877
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091555984,
+            1065446275,
+            1063656883,
+            1036980843
+          ],
+          [
+            1065363568,
+            1091566322,
+            1036848512,
+            1063673424
+          ],
+          [
+            1065354366,
+            1091567472,
+            1036833789,
+            1063675264
+          ],
+          [
+            1091566336,
+            1065363461,
+            1063673445,
+            1036848340
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1072064102,
+            1090728755,
+            1043878379,
+            1062333317
+          ],
+          [
+            1066172740,
+            1091465176,
+            1038143187,
+            1063511590
+          ],
+          [
+            1065445273,
+            1091556109,
+            1036979240,
+            1063657083
+          ],
+          [
+            1091567612,
+            1065353244,
+            1063675488,
+            1036831994
+          ],
+          [
+            1065363459,
+            1091566335,
+            1036848339,
+            1063673446
+          ],
+          [
+            1091567474,
+            1065354354,
+            1063675267,
+            1036833770
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 174,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 523,
+          "actual_floating_words": 219486,
+          "actual_half_words": 41154,
+          "maximum_prediction_tape_nodes": 27989,
+          "maximum_phase_output_cells": 17078,
+          "maximum_join_cells": 1024,
+          "maximum_projected_blocks": 0,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2204777352,
+        "packed_current": 2204777352,
+        "consumed_arena_bytes": 1904008,
+        "declared_forward_id": "indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34209792
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        19
+      ],
+      "mode": "projected",
+      "execution_source": "caa66f13100995b2290d5905383e56772960eb09",
+      "worker_status": "UNRESOLVED_MODEL",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4731215872,
+        "peak_job_commit": 4732526592,
+        "user_100ns": 1798281250,
+        "kernel_100ns": 201562500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29732,
+        "process_creation_100ns": 134344507392964748
+      },
+      "raw_result_bytes": 6627,
+      "result": {
+        "status": "UNRESOLVED_MODEL",
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "mode": "projected",
+        "process_id": 29732,
+        "run_status": "HALTED_UNRESOLVED",
+        "cursor": 174,
+        "refusal": {
+          "stage": "predict",
+          "cursor": 174,
+          "query": [
+            3,
+            4
+          ],
+          "reason": "actual CUDA phase evidence exceeds its prepaid frame"
+        },
+        "received_pending_target": null,
+        "training_events": 120,
+        "evaluation_events": 256,
+        "reference_posterior_checks": 174,
+        "completed_evaluation_predictions": 54,
+        "scores": {},
+        "evaluation_readouts": [
+          [
+            1091567600,
+            1065353342,
+            1063675469,
+            1036832150
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1090728755,
+            1072064102,
+            1062333317,
+            1043878379
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1084227584,
+            1084227584,
+            1056964608,
+            1056964608
+          ],
+          [
+            1075847538,
+            1089466183,
+            1048582850,
+            1061155487
+          ],
+          [
+            1067034708,
+            1091357430,
+            1039522336,
+            1063339197
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1090728756,
+            1072064102,
+            1062333317,
+            1043878378
+          ],
+          [
+            1065353465,
+            1091567585,
+            1036832347,
+            1063675445
+          ],
+          [
+            1091465316,
+            1066171617,
+            1063511814,
+            1038141390
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1066261495,
+            1091454080,
+            1038285197,
+            1063493838
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091555979,
+            1065446311,
+            1063656875,
+            1036980901
+          ],
+          [
+            1065363568,
+            1091566322,
+            1036848512,
+            1063673424
+          ],
+          [
+            1065354367,
+            1091567472,
+            1036833790,
+            1063675264
+          ],
+          [
+            1091566335,
+            1065363458,
+            1063673446,
+            1036848337
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1072064102,
+            1090728755,
+            1043878379,
+            1062333317
+          ],
+          [
+            1066172406,
+            1091465218,
+            1038142651,
+            1063511656
+          ],
+          [
+            1065445273,
+            1091556109,
+            1036979240,
+            1063657083
+          ],
+          [
+            1091567612,
+            1065353244,
+            1063675488,
+            1036831994
+          ],
+          [
+            1065363459,
+            1091566335,
+            1036848339,
+            1063673446
+          ],
+          [
+            1091567474,
+            1065354354,
+            1063675267,
+            1036833770
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353344,
+            1091567600,
+            1036832154,
+            1063675469
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353230,
+            1091567614,
+            1036831971,
+            1063675491
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353218,
+            1091567616,
+            1036831952,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1065353216,
+            1091567616,
+            1036831949,
+            1063675494
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ],
+          [
+            1091567616,
+            1065353216,
+            1063675494,
+            1036831949
+          ]
+        ],
+        "audit": {
+          "native_committed_units": 174,
+          "retained_unpublished_local_commits": 0,
+          "checked_CUDA_phases": 523,
+          "actual_floating_words": 174550,
+          "actual_half_words": 28068,
+          "maximum_prediction_tape_nodes": 27985,
+          "maximum_phase_output_cells": 17070,
+          "maximum_join_cells": 1024,
+          "maximum_projected_blocks": 5,
+          "retained_failed_phases": [
+            {
+              "phase": "ordinary:predict",
+              "status": "UNRESOLVED",
+              "reason": "; CUDA evidence retention failed: actual CUDA phase evidence exceeds its prepaid frame"
+            }
+          ],
+          "complete_global_count_coordinates": 120,
+          "class_decisions": 0
+        },
+        "initial_program_is_deployment": true,
+        "class_certificate": false,
+        "construction_search": "NOT_INVOKED",
+        "installations": 0,
+        "alpha_spent": "0",
+        "packed_peak": 2204777377,
+        "packed_current": 2204777377,
+        "consumed_arena_bytes": 1544456,
+        "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+        "oracle_scope": "independent full-assignment integer posterior; no values supplied to Runtime",
+        "oracle_assignment_visits": 34209792
+      },
+      "reader": {
+        "status": "VALIDATED_UNRESOLVED_PREFIX",
+        "complete_model_scores": 0
+      }
+    }
+  ]
+}

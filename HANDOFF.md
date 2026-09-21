@@ -2,19 +2,21 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**Current model registration, 2026-09-21:**
-[the matched indexed model protocol](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
-registers16 fresh jobs: global and projected AMP on all eight retained RN-5
-n8/n16 IID cases, in the existing case order. Both start from the same full
-native relation G with uniform Gamma and learn every ordinary label. This
-tests complete known-model execution, not construction/search/installation;
-the compiler policy is empty. Caps, U, data and numerical tolerances match,
-with only the physical schedule declaration differing. Every reference
-forecast is independently checked against the full adaptive integer posterior.
-The retained exact posterior and its actual AMP readout remain strong quality
-controls. The no-Torch preflight passes; model execution is not yet launched.
-Commit all inputs before `run_indexed_model.py --attempt 1`, preserve source
-while jobs live, retain every failure, and score only complete sealed streams.
+**Current model result, 2026-09-21:**
+[the matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
+is terminal at caa66f1, with all 16 jobs retained. Both schedules complete
+all four n8 streams; every n16 run returns UNRESOLVED at the 4-MiB phase-frame
+limit, cursor 173/169/177/174. Targets stay unrevealed and full counts remain.
+All 2,298 published reference forecasts match the independent adaptive
+posterior; 6,910 successful CUDA phases pass full audits. Complete n8 words
+fall 125,432 to 91,132 with projection, while packed peak rises by 25 bytes
+per pair. No incomplete n16 score or model superiority is inferred. Every
+job exits zero below 16 GiB, without timeout or limit termination; maximum
+job peak is 4,897,832,960 bytes. The native learner starts already complete,
+with an empty policy and no search or installation. Strong exact/AMP-readout
+controls stay retained. A1 must not be rerun or overwritten. The next
+research question is a paid solver/evidence representation that can finish
+n16; frame enlargement and reordering each need a complete resource argument.
 
 **Current physical lowering, 2026-09-21:**
 [projected AMP](theory/proofs/PROJECTED_INDEXED_AMP.md) is implemented under
@@ -38,8 +40,8 @@ pass. A9 atfcecb91 now completes the two histories in separate fresh jobs,
 with production code unchanged. Both eleven-phase histories retain all six
 counts and give native881/1250 versus369/1250 with distinct actual words.
 All32 logical global/projected cases are now covered; A8's combined-fixture
-failure remains retained. All jobs are terminal. Next, register model tests
-with strong current controls and full resource/failure accounting.
+failure remains retained. All jobs are terminal. The matched model matrix
+above is now terminal too; its n16 resource frontier remains unresolved.
 
 **Current adversarial finding, 2026-09-21:**
 [AMP plan binding](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) is an upstream

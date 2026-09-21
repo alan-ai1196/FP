@@ -1,6 +1,10 @@
 # Complete indexed learner execution on all eight RN-5 IID tapes
 
-Status: **REGISTERED BEFORE MODEL EXECUTION**.
+Status: **REGISTERED BEFORE MODEL EXECUTION; A1 NOW TERMINAL**.
+The declaration below was committed at `caa66f1` before the first worker.
+The [completed results](INDEXED_MODEL_RESULTS.md) retain eight complete n8
+runs and eight unresolved n16 runs. No registration or failed outcome is
+replaced by those results.
 
 The [projected AMP integration](../../theory/proofs/PROJECTED_INDEXED_AMP.md)
 passes its scoped CPU and actual A8/A9 obligations. The next question is

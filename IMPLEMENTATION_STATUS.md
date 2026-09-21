@@ -2,14 +2,16 @@
 
 ## Current implementation state (2026-09-21)
 
-The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
-is registered for all eight exposed RN-5 n8/n16 IID cases with matched
-global/projected physical schedules, same complete initial native learner,
-same data/caps/U and an empty compiler policy. The preflight verifies every
-configuration pair and retained exact/AMP-readout control without importing
-Torch. The independent reader checks all complete native transitions, actual
-RNE phase words and final scores; unresolved prefixes receive no model score.
-Execution is pending. No production arithmetic or semantic action changed.
+The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
+completes all 16 source-bound jobs at caa66f1. Both schedules seal all four
+n8 streams; every n16 run retains a prepaid-frame refusal at cursor
+173/169/177/174. All 2,298 published reference forecasts match the independent
+posterior; 6,910 successful CUDA phases and all complete word/score rows pass
+their readers. Projection reduces completed n8 outputs 125,432 to 91,132;
+packed peak rises by 25 bytes per pair. No n16 score is assigned. Maximum
+job peak 4,897,832,960 bytes stays below 16 GiB; all jobs are terminal without
+timeout/limit termination. Same G/Gamma/U/data/caps, empty policy, no search
+or installation. No production arithmetic or semantic action changed.
 
 The [projected AMP extension](theory/proofs/PROJECTED_INDEXED_AMP.md) now
 executes a separately declared query-block tape through the existing private

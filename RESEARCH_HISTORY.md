@@ -6666,3 +6666,29 @@ All16 fresh jobs are pending. Each uses the same16-GiB/7200-second job,
 8-GiB packed cap,256-MiB arena,512-MiB allocator cap,65536 outputs and full
 4-MiB phase frames. Source stays fixed during execution. No new production
 mechanism, tolerance change or static special case is added.
+
+## 199. Complete n8 indexed model streams and retain the n16 frame frontier (2026-09-21)
+
+The matched A1 matrix at caa66f1 runs all 16 registered jobs. Both global
+and projected AMP seal all four n8 streams. Every n16 worker instead
+retains a prediction-frame refusal at cursor 173/169/177/174, with the next
+target unrevealed and all 120 counts preserved. No incomplete stream
+receives a model score. All jobs exit zero below 16 GiB, without timeout
+or limit termination; maximum job commitment is 4,897,832,960 bytes.
+
+All 2,298 published reference forecasts match an independent full integer
+posterior. The child checks 6,910 successful CUDA phases with actual
+input/target binding, RNE words, full native relations and count/clock/unit
+transitions. The parent recomputes all 512 complete evaluation word pairs
+and their scores, matching the unchanged exact controls. Maximum unseen
+CE differences from the reference are 3.287631e-6 globally and 8.385696e-6
+with projection; these rounding observations establish no model superiority.
+
+Across the completed n8 cases, floating outputs fall 125,432 to 91,132
+(27.35%) and half outputs 9,972 to 2,874. Packed peak rises by 25 bytes in
+every pair: the complete uniform frames and padding remain paid. Smaller
+numerical tapes therefore do not establish whole-state memory savings.
+The learner starts from the full G/Gamma/U with an empty policy; no search,
+profile, fresh evidence or installation occurs. The earlier full release
+and installation battery keep their separate scopes. The next attack is
+the paid solver/retention resource frontier, with all A1 failures retained.

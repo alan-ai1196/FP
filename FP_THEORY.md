@@ -211,11 +211,13 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
-The [matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
-now registers complete ordinary learner execution on all eight exposed RN-5
-IID cases, under global/projected AMP with the same native G/Gamma/U and caps.
-Its no-Torch preflight passes; actual model execution is pending. The empty
-compiler policy asserts no search optimum or installation result. Foundation
+The [matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
+is terminal at caa66f1: both schedules complete all four n8 cases, while all
+eight n16 runs retain evidence-frame refusals. All 2,298 published reference
+forecasts match an independent full posterior; 6,910 successful CUDA phases
+pass their full input/word/native audits. On complete runs projection reduces
+floating outputs by 27.35%, with packed payload essentially unchanged. The
+empty policy asserts no search optimum or installation result. Foundation
 definitions and ERC-1 remain unchanged.
 
 The [projected AMP lowering](theory/proofs/PROJECTED_INDEXED_AMP.md) now

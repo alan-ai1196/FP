@@ -10,16 +10,18 @@ A8's combined-fixture allocator refusal stays failed. Complete typed plan
 binding has its independent repair and actual evidence. The remaining
 scientific question is useful model execution under declared resources as
 support grows, selected blocks become difficult and evidence accumulates.
-Register model experiments with strong current controls and complete
-resource/failure accounting. No whole-resource dominance, model advantage
-or new complete release follows from the integration fixtures.
+The first model matrix below now exposes a concrete n16 frontier. No
+whole-resource dominance, model advantage or new complete release follows
+from the integration fixtures.
 
-The [first matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
-is now registered:16 jobs across all eight retained n8/n16 IID cases. It
-asks whether the same complete native learner finishes the full stream
-under global versus projected AMP and maintains its posterior relation.
-Execution is pending. The empty policy grants no search or installation
-claim; later hard blocks and numerical/resource refusals must remain visible.
+The [first matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
+is terminal: all eight n8 runs complete with exact posterior relations and
+audited AMP words; all eight n16 runs stop at their phase-frame allowance.
+The frontier is completing growing supports and retained evidence under a
+useful whole-resource envelope. A bigger uniform frame charges every phase;
+smaller projected tapes alone do not reduce complete packed state. Analyze
+later order/tape limits before another actual attempt. The empty policy
+grants no search or installation claim, and failed prefixes remain unscored.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary
