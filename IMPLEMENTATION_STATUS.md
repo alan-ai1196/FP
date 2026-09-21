@@ -2,7 +2,7 @@
 
 ## Current implementation state (2026-09-21)
 
-**Fixed indexed plans are now constructed and executed inside Runtime; actual gate pending.**
+**Fixed indexed plans are constructed and executed inside Runtime; all fifteen actual gate jobs pass.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 shows why the prior reference value-copy boundary and the remaining AMP
 proposal ports are redundant: their trusted validators already construct
@@ -19,9 +19,14 @@ observation cases. Prepaid-refusal tests now spy on the actual private
 kernel. Reference/work IDs are v2; the absent reference transfer fee is
 removed while conservative planning and paid numerical/arena extents remain.
 
-Fifteen fresh4-GiB/900-second actual jobs are registered, including genuine
-one-bit faults in fresh device outputs and both fresh-install paths. Their
-results are pending; indexed complete release and model science stay HOLD.
+All fifteen fresh4-GiB/900-second actual jobs pass atcdea7db. Removed ports
+receive no calls; one-bit device faults refuse without changing predecessors
+or older metadata. The six probes read35 full records; seven integrations
+check354 phases/48663 floating words,16080 half. Both n256 and fresh-install/
+learn-to21 paths pass. Preflight and second-lineage refusal retain their
+complete received data. Max job2,394,525,696 bytes, all terminal with no
+timeout/limit termination. The component gate closes; no new complete
+indexed release, optimization-class certificate or model outcome follows.
 All old terminal outcomes are retained. The reference value adapter passed
 its ten-job gate atda532dc and is now a passive component witness. Both
 AMP continuation aliases reproduced atab39b56/production7fe0471. These

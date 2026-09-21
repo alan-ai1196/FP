@@ -2,8 +2,8 @@
 
 Current implementation note: [singleton-plan elimination](SINGLETON_PLAN_ELIMINATION.md)
 supersedes the fixed Runtime's redundant proposal interfaces. The law and
-historical source-bound evidence below remain; current CPU checks pass and
-the new actual gate is pending. Do not apply retired-port probes to the new
+historical source-bound evidence below remain; current CPU checks and all
+fifteen new actual gate jobs pass atcdea7db. Do not apply retired-port probes to the new
 implementation as though those ports were still authoritative.
 
 Status: **proved component law; implemented for reference prediction

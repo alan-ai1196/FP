@@ -1,8 +1,8 @@
 # Eliminate a proposal that has exactly one acceptable answer
 
 Status: **proved conditional implementation law; implemented for the fixed
-indexed reference and global/projected AMP schedules; CPU audited; actual
-CUDA gate registered below and pending**. No Foundation or ERC-1 change.
+indexed reference and global/projected AMP schedules; CPU and all fifteen actual
+CUDA A1 jobs pass**. No Foundation or ERC-1 change.
 
 ## 1. The removable object is the producer, not its input
 
@@ -147,3 +147,33 @@ No `CERTIFIED_COMPLETE` class, indexed full release, model-science advantage
 or completed model stream is claimed by this component gate. The next
 substantive solver frontier is still paid query-order choice; it is not a
 reason to change FP semantics or discard the complete retained native state.
+
+## 6. Actual CUDA A1 result
+
+All fifteen fresh jobs pass atcdea7db05577ecd8771e6903a921f7a7018cdb18 in
+`FP_INDEXED_OWNED_SCHEDULE_CUDA_A1.json`. Each is attached to its4-GiB job
+before execution and exits zero without timeout or limit termination.
+Maximum job commitment is2,394,525,696 bytes. Source and all execution
+inputs stayed committed and fixed throughout the matrix.
+
+Both removed-port cases receive zero calls, preserve earlier snapshots and
+sealed metadata, and complete the literal native/AMP update. All four
+one-bit physical faults are refused with no publication/learner advance;
+predecessors and old records remain intact. Only the gradient case has an
+observed target, which is retained as0. These six cases check35 complete
+phase records, including their failed final frames.
+
+Seven numerical integrations check354 phases and48663 floating words,
+including16080 half words. Both profile paths pass58 phases. The global
+n256 path checks42594 words and the projected path514, with literal world
+builders disabled in both. Both fresh-evidence paths cross at20, install
+with alpha1/2 retained, and learn to21. Projected ordinary closure seals
+without a class decision. The two other integrations separately confirm
+preflight refusal before any numerical executor entry and second-lineage
+commit refusal retaining the observed target and both observed states.
+
+This closes the stated fixed-schedule producer and fresh-output fault gate.
+It is not a complete indexed release or an optimization-class certificate.
+No model worker ran, and no time/memory superiority is inferred. Continue
+with paid order search and its explicit structural/numerical decision class;
+do not rerun these terminal jobs without a substantive new change.

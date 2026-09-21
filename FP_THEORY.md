@@ -216,9 +216,11 @@ removes a redundant producer when its trusted validator already constructs
 the sole accepted plan. Runtime now uses the existing private builders and
 fixed numerical kernels for the exact reference/global/projected AMP paths.
 All native inputs/history remain: equal complete plans can have different
-predictions. CPU/native/RNE regressions pass; a fifteen-job actual device
-gate is registered and pending. No new Foundation action, class-completeness
-claim or indexed complete release follows.
+predictions. CPU/native/RNE regressions and all fifteen actual device jobs
+atcdea7db pass: preserved history on faults, both n256 and fresh-install/
+learning paths, and resource/second-lineage refusal. This is a component
+gate; no Foundation action, class-completeness claim or new indexed complete
+release follows.
 
 The [continuation-stable delegation law](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)
 continues to separate frame preservation from numerical refinement. Its

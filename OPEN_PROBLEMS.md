@@ -2,21 +2,21 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The immediate registered gate is actual execution of
-[singleton-plan elimination](theory/proofs/SINGLETON_PLAN_ELIMINATION.md).
-For the current fixed schedules, the independent checker already computes
-the producer's sole acceptable answer. Runtime now uses those same private
-builders and numerical kernels, eliminating the redundant reference/AMP
-proposal ports. Complete native state and history remain. CPU/native/RNE
-regressions pass; fifteen fresh device jobs are registered and pending.
-No complete indexed release follows from the CPU result.
+The immediate frontier is paid query-order choice. The
+[singleton-plan elimination gate](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
+passes all fifteen actual CUDA jobs atcdea7db, including fresh numerical
+faults, both n256 and fresh-install/learning paths, closure and resource/
+second-lineage refusal. No old metadata changes; max job2,394,525,696 bytes.
+All jobs are terminal. The current fixed schedules now use their existing
+private builders/kernels directly; all native state and history remain.
+This closes the stated component gate, not a complete indexed release.
 
 The historical [input aliases](theory/proofs/INDEXED_INPUT_ALIAS.md) and
 [later AMP metadata aliases](theory/proofs/AMP_METADATA_CONTINUATION.md)
 are source-bound counterexamples, not reasons to preserve an unnecessary
 producer and add another exchange mechanism. The value-only frame law
 remains relevant to the byte compressor and a future non-singleton solver.
-The registered device gate checks fresh numerical faults, unchanged past
+The completed device gate checks fresh numerical faults, unchanged past
 records, full native updates and fresh installation without granting an
 arbitrary producer the owner's numerical workspace.
 

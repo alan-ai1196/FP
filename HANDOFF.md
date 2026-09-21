@@ -2,7 +2,7 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**Current frontier: eliminate redundant singleton-plan producers; actual CUDA gate pending.**
+**Current frontier: paid order choice; singleton-plan elimination passes its actual gate.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 removes a producer when the trusted checker already constructs its only
 acceptable answer. Runtime now uses those existing private builders and
@@ -19,14 +19,19 @@ projected predictions/observations. Private preflight/kernel spies retain
 unfunded refusal checks. The reference/work identities change to v2;
 conservative work and actual arena/frame ownership remain explicit.
 
-Fifteen fresh4-GiB/900-second device jobs are registered before execution:
-retired-port continuations, fresh one-bit numerical faults, global/projected
-profiles/n256/fresh installation, closure and retained resource/commit
-refusals. Their gate is pending; no new complete release or model outcome
-is claimed. Keep execution source fixed while live and retain every result.
-After the scoped gate, return to paid query-order choice. A non-singleton
-order class has real use for a value-only proposal boundary; the current
-fixed schedules do not.
+All fifteen fresh4-GiB/900-second device jobs pass atcdea7db. Removed
+producer ports receive zero calls; fresh one-bit output/gradient/operation
+faults refuse with intact predecessors and old metadata. Six probes read35
+complete records; seven numerical integrations check354 phases/48663 words,
+16080 half. Both n256 paths disable world builders. Both fresh-evidence
+paths cross20, install with alpha1/2 retained and learn to21. Preflight and
+second-lineage commit refusals preserve received data. Maximum job
+2,394,525,696 bytes; every job exits zero without timeout/limit termination.
+This closes the stated component gate, not a complete indexed release or
+model result. All jobs are terminal. Return to paid query-order choice,
+with explicit structural and numerical decision classes. A non-singleton
+order class can use a value-only proposal boundary; the current fixed
+schedules need no redundant producer. Do not rerun terminal probes.
 
 Historical source-bound evidence is retained. The
 [reference value boundary](theory/proofs/CONTINUATION_STABLE_DELEGATION.md)

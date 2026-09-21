@@ -7164,3 +7164,26 @@ closure and resource/second-commit boundaries. Actual results are pending;
 no complete indexed release, class certificate or model outcome is inferred.
 After this scoped gate the substantive frontier remains paid query-order
 choice. Foundation and ERC-1 remain unchanged.
+
+## 214. Complete the owned fixed-schedule gate with actual output faults (2026-09-21)
+
+All fifteen fresh actual CUDA A1 jobs pass atcdea7db. Every job attaches
+before execution and exits zero without timeout/limit termination; max
+commitment2,394,525,696 bytes under4 GiB. Execution source stays fixed.
+
+The two retired-producer continuations make zero calls and learn the full
+literal native state. Four one-bit faults in fresh physical prediction,
+gradient or add outputs refuse before publication/learner advance, preserving
+both predecessors and earlier snapshot/sealed metadata. Only the gradient
+case has observed target0 and it remains retained. These probes read35
+full records. Seven numerical integrations check354 phases/48663 floating
+words,16080 half; both n256 paths disable world builders. Global/projected
+fresh evidence crosses20, installs with alpha1/2 retained and learns to21.
+Projected ordinary closure and separate unfunded/second-commit refusal
+cases pass, with received context/target and observed lineages preserved.
+
+This closes the stated fixed-schedule component fault gate. No complete
+indexed release, optimization certificate or model performance result is
+inferred. The next useful search must contribute a choice among genuinely
+different orders, pay for its work/scratch and keep its structural certificate
+separate from actual numerical feasibility. No Foundation/ERC-1 change.
