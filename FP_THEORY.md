@@ -220,8 +220,8 @@ correct relative to its supplied plan. Actual A6 at783614f now reproduces
 owned acceptance with the wrong factor address and zero native errors;
 the fixed-forward claim without independent plan binding is withdrawn at
 that source. The complete typed-plan repair now reconstructs the declared
-mapping before execution and after helper return; its exact CPU audit passes,
-while actual A7 verification is pending. No Foundation or semantic
+mapping before execution and after helper return; its exact CPU audit and
+all fifteen actual A7 cases pass at16fdda7. No Foundation or semantic
 architecture change follows.
 
 The [query-boundary response theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)

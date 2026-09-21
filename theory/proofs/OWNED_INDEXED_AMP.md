@@ -344,8 +344,10 @@ successful A4/A5 observations below remain valid for their executed cases.
 
 The implemented repair independently reconstructs every typed plan field
 before numerical entry and after helper return. Its exact plan audit and
-unchanged scalar/native audit pass. A7's fifteen actual workers are pending;
-the replacement proof and trust boundary are in section4 of the same note.
+unchanged scalar/native audit pass. A7 at16fdda7 passes all fifteen actual
+workers, including both plan attacks; maximum job peak2,385,313,792 bytes.
+The replacement proof, trust boundary and actual results are in sections4/5
+of the same note. No physical schedule or native tolerance has changed.
 
 The [owned query projection](OWNED_QUERY_PROJECTION.md) changes reference
 arithmetic while keeping this physical schedule global. Actual A5 atae7f915

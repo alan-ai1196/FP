@@ -6,9 +6,10 @@ The [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) has a
 general implemented repair: independently reconstruct every typed plan
 field from owned inputs before execution and after helper return. Actual
 A6's zero-native-error false conformance remains retained. The new exact
-plan audit and unchanged scalar/native audit pass. Actual A7 must now test
-all fifteen registered cases, including wrong-address preparation and
-post-execution plan mutation, before claiming repaired device conformance.
+plan audit, unchanged scalar/native audit and all fifteen actual A7 cases
+now pass at16fdda7. Wrong-address preparation and post-execution plan mutation
+both refuse before publication. This repaired premise is available for the
+new projected schedule; it does not provide that schedule's missing evidence.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary

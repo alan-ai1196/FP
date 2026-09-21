@@ -6538,3 +6538,23 @@ extent (must refuse publication while retaining the actual words). These
 jobs are pending. The projected physical schedule remains future work with
 its own arithmetic declaration. A6 and all earlier outcomes stay retained;
 no Foundation change or class-completeness claim follows.
+
+## 194. Actual A7 closes both sides of the plan-binding gap (2026-09-21)
+
+[A7](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A7.json) at16fdda7 completes
+all fifteen RTX3090 workers without timeout or limit termination. Maximum
+job peak is2,385,313,792 bytes under the unchanged4-GiB/900-second limits.
+The original wrong-address helper is refused before producing any floating
+output. Honest execution followed by an altered plan retains the exact
+honest trace and62 output cells, but the plan's declared61 is rejected by
+the second independent reconstruction. Neither failure publishes a
+prediction, reveals a target or advances an owned learner.
+
+All thirteen previous cases also pass. Five successful groups/prefixes
+check222 phases,51,146 floating words and17,712 half words. n256 retains
+its disabled-world-builder control; fresh paired crossing at20, resident
+installation, alpha1/2 and continuation to21 pass. The unchanged global
+AMP star remains honestly unresolved before floating execution. Every job
+is terminal. This closes the tested plan-binding obligation and permits
+continuing projected AMP; no new complete release or class certificate is
+claimed. A6's actual false conformance remains separately retained.

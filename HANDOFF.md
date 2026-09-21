@@ -18,9 +18,12 @@ typed plan independently before execution and after helper return. Exact
 CPU checks refuse27 field substitutions,12 type/container changes, three
 extra fields and three unfunded plans; equal valid plans under distinct
 current counts pass. The unchanged270-prediction/540-observation arithmetic
-audit passes. A7 registers all thirteen previous CUDA cases plus pre- and
-post-execution plan attacks; actual execution is pending. Complete projected
-AMP remains the next research step after verifying this repaired premise.
+audit passes. A7 at16fdda7 now passes all fifteen actual CUDA cases. The
+wrong address refuses before floating execution; a post-execution plan
+mutation retains62 actual cells but refuses its declared61. Neither publishes
+a prediction or reveals a target. All jobs are terminal below4 GiB; maximum
+peak2,385,313,792 bytes. The thirteen previous scopes still pass, including
+fresh installation. Projected AMP is now the next research step.
 
 **Current owned decoder result, 2026-09-21:**
 [query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented

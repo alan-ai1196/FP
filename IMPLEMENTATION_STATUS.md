@@ -15,9 +15,12 @@ The repair independently reconstructs all nine typed plan fields before
 execution and after helper return. CPU evidence refuses27 field changes,
 12 type/container changes, three undeclared fields and three insufficient
 allowances. Equal valid plans under different current counts pass. The
-existing exact270-prediction/540-observation audit is unchanged. A7's fifteen
-actual CUDA cases are prepared but not yet executed; projected AMP is not
-yet implemented. No scalar schedule, tariff or tolerance has changed.
+existing exact270-prediction/540-observation audit is unchanged. A7 at16fdda7
+passes all fifteen actual CUDA cases, including both plan attacks. The
+thirteen prior cases retain222 successful phases/51,146 floating words,
+including17,712 half words. All jobs are terminal, maximum peak2,385,313,792
+bytes below4 GiB. Projected AMP is not yet implemented. No scalar schedule,
+tariff or tolerance has changed.
 
 The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
 executes inside ReferenceCompilerRuntime under a new explicit reference

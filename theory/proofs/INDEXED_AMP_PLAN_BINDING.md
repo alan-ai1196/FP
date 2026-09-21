@@ -1,7 +1,7 @@
 # A conditional trace check does not bind the declared factor addresses
 
 Status: **EXACT PASSIVE AND ACTUAL OWNED A6 COUNTEREXAMPLE REPRODUCED;
-COMPLETE PLAN REPAIR IMPLEMENTED AND CPU AUDITED; ACTUAL A7 PENDING**.
+COMPLETE PLAN REPAIR IMPLEMENTED; EXACT CPU AND ALL FIFTEEN ACTUAL A7 CASES PASS**.
 
 The A4 repair independently checks every endpoint and operation against
 the supplied indexed AMP plan. A5 exercises that repaired path successfully.
@@ -151,9 +151,32 @@ allowances. A valid equal plan under distinct counts passes. The unchanged
 exact scalar/native audit passes270 predictions and540 observations, including
 all existing endpoint/operation/gradient attacks.
 
-A7 registers all thirteen existing actual CUDA cases plus the original
+A7 registered all thirteen existing actual CUDA cases plus the original
 wrong-address fault (must refuse before any floating output) and a new
 post-execution output-extent mutation (must retain honest numerical evidence
-but refuse publication). Their execution is pending; CPU evidence alone
-does not establish the actual owned result. Projected AMP is still separate
+but refuse publication). Their actual result follows below. Projected AMP is still separate
 future work, with its own declared schedule and this same plan obligation.
+
+## 5. Actual A7 verification
+
+[A7](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A7.json) executes source
+16fdda7. All fifteen workers pass, each attached before resume to its4-GiB
+job and bounded by900 seconds. No timeout or limit termination occurs;
+maximum job peak is2,385,313,792 bytes. All jobs are terminal.
+
+The original address substitution now fails before floating execution:
+zero output cells, no raw prediction, no target revelation or publication.
+The post-execution mutation retains exactly the honest readout, operation
+trace and62 actual output cells, but its changed plan declares61. The second
+independent reconstruction refuses it before publication. Both failures
+retain the original counts, received context and failed phase; neither
+advances a learner or current CUDA predecessor.
+
+The thirteen earlier integration cases also pass. The five successful
+groups/prefixes check222 phases,51,146 floating words and17,712 half words.
+n256 still disables literal world builders. Fresh paired crossing at20,
+resident installation, alpha1/2 and learning to21 pass. The global AMP star
+preflight still returns UNRESOLVED with zero floating outputs when its own
+join allowance fails. This verifies the repaired declared-plan premise in
+the tested physical integration. It supplies no projected AMP result, new
+complete release, model advantage or class-completeness certificate.
