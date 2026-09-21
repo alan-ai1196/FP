@@ -6882,3 +6882,38 @@ native/data limits are unchanged; the compressed path pays its extra staging
 and work. All dependencies must be committed before execution and frozen
 while live. Actual results are pending; no new release or model recovery is
 asserted by the CPU result or registration. Foundation R4 and ERC-1 are unchanged.
+
+## 205. Close the writer alias on actual CUDA and recover the solver boundary (2026-09-21)
+
+All 23 registered fresh jobs finish at b53889e. The 21 integration/fault
+fixtures pass, including generic/indexed profiles, n256, projected fresh
+installation and learning, existing endpoint/full-plan adversaries and all
+ten byte-only faults. The two former forgeries refuse, as do altered
+readout/gradient words. Original actual records still pass independent
+numerical/plan replay after each fault. Failed frames remain owned;
+prediction targets stay unrevealed and received observation targets remain0.
+No published learner or CUDA predecessor advances on a fault.
+
+All 1,513 sealed records recover their entire canonical contents and padding;
+11 failed mutable frames remain. Every job exits zero, with no timeout or
+limit termination. Maximum whole-job commitment is 5,235,593,216 bytes.
+The alias mismatch is closed in the declared component fault class, with
+the private owner, canonical serializer and independent format reader trusted.
+
+The matched n16/c2 seed16 control reproduces its frame refusal at173. The
+byte-only standard compressor reaches194/query(6,9), then the unchanged
+reference natural-order join refuses before another CUDA phase. Its583
+successful phases use 5,295,557 compressed payload bytes to retain every
+byte of 121,016,192 old typed bytes; the largest payload is337,710 bytes.
+Full4-MiB frames remain paid. Packed peak2,457,227,597 is not reduced merely
+because the used payload is smaller.
+
+All367 published reference forecasts match the independent posterior, and
+all33 common evaluation readouts agree. The compressed prefix also matches
+all54 evaluation rows and numerical aggregates of the historical typed-codec
+prefix:457,450 floating words,55,212 half words,69,909 maximum tape nodes and
+25,390 maximum phase outputs. Both next targets remain unrevealed and all120
+counts remain. Both model readers validate unresolved prefixes with no full
+score. No isolated memory/runtime dominance, all-n16 recovery or full release
+is inferred. The next scientific boundary is the paid decoder under the same
+native learner, not protection of the former custom format.

@@ -226,8 +226,11 @@ That record-taking Runtime codec is now retired. The
 checked record private and gives a standard compressor only immutable
 chunks; Runtime compares the complete expansion. Its explicit component
 fault model supplies the missing source-stability premise. Paid staging,
-full frames and failure retention have exact CPU evidence; the 23-job actual
-gate is registered and pending. No new release follows before that gate.
+full frames and failure retention pass exact CPU and scoped actual checks.
+All21 integration/fault jobs pass at b53889e; both matched model prefixes
+remain unresolved at173/194, with independent readers passing. This closes
+the observed alias defect in the declared component fault class and does
+not constitute a new full release or model completion.
 The byte theorem remains valid and supplies no execution-binding theorem. Equal
 information does not imply equal physical histories, free decoding or
 identical resource-constrained continuations. Foundation and ERC-1 remain

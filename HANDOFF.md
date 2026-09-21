@@ -21,11 +21,18 @@ eight byte-only faults, ten retention resource refusals, a multi-block Unicode
 record and staging refusal before CUDA binding. Both old forgeries now
 refuse without changing the original phase or plan in the mocked-owner
 retention fixture. The retired record-taking codec cannot be registered.
-**Actual validation is pending:** `scripts/run_phase_deflate.py` registers
-23 fresh jobs, including numerical/plan/lineage/fresh/install regressions,
-actual byte faults and the matched n16/c2 seed16 model pair. Commit all inputs
-before A1, keep HEAD fixed while live, and retain every outcome. No new
-release or recovered model follows from CPU evidence alone.
+**Actual A1 is terminal at b53889e:** all 21 integration/fault jobs pass,
+including both old forgeries, changed gradients, n256 and projected fresh
+installation/continuation. All 1,513 sealed frames and 11 failed mutable
+frames pass their readers. Maximum job commitment is 5,235,593,216 bytes;
+no timeout or limit termination. The matched legacy model refuses at173;
+byte-only zlib reaches194 before the reference join cap. All367 reference
+forecasts and33 common evaluation readouts agree. At194, all54 readouts and
+numerical aggregates also match the former typed-codec prefix. Both streams
+stay unscored, with next targets unrevealed and all120 counts retained.
+The alias mismatch is closed in the stated component fault class. No new
+full release follows. Continue with the paid solver/resource frontier;
+do not rerun these terminal jobs without a new substantive change.
 
 **Preceding byte theorem and falsified interface:**
 The [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md) now has
@@ -61,7 +68,7 @@ do not advance. `FP_PHASE_WRITER_ALIAS_CUDA_A1.json` retains both witnesses.
 Do not rerun the terminal probes or the old 17-job matrix on the replacement.
 The byte left-inverse theorem remains valid; execution binding does not
 follow from it. Do not add another comparison against the same mutable
-alias. The replacement above removes this alias; its actual gate is pending.
+alias. The replacement above removes this alias and passes its scoped actual gate.
 Ordinary zlib also compresses the four old complete records to0.96--1.13 MB,
 beating the custom format's observed size; do not defend an unnecessary
 format or mistake a passive compression result for Runtime authority.

@@ -6,7 +6,7 @@ both CPU and actual CUDA invalidate unqualified evidence/execution
 binding. Both actual probes are terminal at ba48cb3. This record-taking
 Runtime codec is now retired; the passive grammar and byte law remain.
 The [byte-only replacement](BYTE_ONLY_PHASE_EVIDENCE.md) has exact CPU
-evidence and a registered actual gate, still pending. Integration statements
+evidence and a passing scoped actual gate at b53889e. Integration statements
 below describe the original source-bound implementation and experiments.
 Foundation R4, ERC-1, native learning and numerical
 tolerances are unchanged. This is a physical representation, with an
@@ -335,8 +335,8 @@ The repair must bind the input before delegation and prevent helper access
 to mutable authority. Repeating the same check against the same alias does
 not establish that boundary. Immutable canonical bytes plus a standard
 compressor are now implemented in the [byte-only replacement](BYTE_ONLY_PHASE_EVIDENCE.md).
-Its paid staging, work and failure retention pass CPU checks; its registered
-actual bridge is pending. No claim below transfers that gate in advance.
+Its paid staging, work and failure retention pass CPU and scoped actual
+checks at b53889e. The replacement retains its separate source-bound evidence.
 
 The outstanding scientific question is how far a paid lossless encoding
 can move the actual execution boundary. The 147 empty join/live order

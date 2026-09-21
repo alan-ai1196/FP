@@ -1,7 +1,8 @@
 # A byte-only boundary for complete execution evidence
 
-Status: implemented; exact CPU codec/retention checks pass; 23 actual CUDA
-jobs are registered below and pending. The former record-taking codec is
+Status: implemented; exact CPU checks and all 21 actual integration/fault
+jobs pass at b53889e. The two matched model prefixes remain UNRESOLVED,
+with their readers passing. All 23 jobs are terminal. The former record-taking codec is
 retired from Runtime registration. Its byte theorem and both actual alias
 counterexamples remain historical evidence. This changes a physical
 information interface, not Foundation R4, native learning or ERC-1.
@@ -112,8 +113,7 @@ insufficient work, expansion or frame capacity produces UNRESOLVED.
 The existing first-unexpected-executor-error priority is preserved.
 Failed mutable frames, staging storage, raw execution records and actually
 received context/targets remain owned. No false phase is accepted and no
-learner advances on those failures. This statement has CPU evidence below;
-actual evidence is pending.
+learner advances on those failures. CPU and actual evidence are below.
 
 ## 4. Exact CPU evidence
 
@@ -172,3 +172,61 @@ Every job, timeout and refusal goes into a new
 execution dependencies stay fixed while jobs run. Unexpected failures stop
 the matrix and remain evidence. No all-n16 completion, whole-resource
 dominance, new full release or model superiority is claimed by registration.
+
+## 6. Actual RTX 3090 outcomes
+
+`FP_PHASE_DEFLATE_CUDA_A1.json` retains all 23 terminal fresh jobs at
+`b53889eb2ae8e6410b935588fd4f0248fdc4754e`. All 21 integration/fault fixtures
+pass. Both model readers validate unresolved prefixes. Every job was
+attached before its first instruction, exited zero and stayed below its
+registered cap without timeout or limit termination. Maximum job commitment
+is 5,235,593,216 bytes. There are 1,513 independently checked complete sealed
+frames and 11 retained failed mutable frames, including the legacy model's
+frame refusal.
+
+Both matched generic profiles check 44 phases, and both indexed profiles
+check 58. Projected profiles, n256, projected fresh persistence/installation
+and subsequent learning pass. All preceding endpoint, complete-plan and
+foreign-plan adversaries still refuse. The direct interface fixture observes
+12 immutable chunks while two ordinary events commit; its seven phases and
+130 actual floating words pass the independent reader.
+
+Every byte-only attack refuses before publication. Wrong output counts,
+the count address2-to0 substitution, changed readout/gradient words, attempted
+input mutation, wrong return type, truncation and trailing data retain
+EXECUTION_FAILED phases. An over-cap result returns UNRESOLVED. The actual
+original phase still passes full numerical and plan replay after each
+attack. Failed frames retain all 262,144 owned bytes. Prediction targets
+remain unrevealed; both observation targets remain0. Published learners,
+cursors and current CUDA predecessors do not advance.
+
+The matched n16/c2 seed16 model pair gives:
+
+| Measure | Legacy | Byte-only zlib |
+|---|---:|---:|
+| Committed events / independent reference checks | 173 | 194 |
+| Checked complete CUDA phases | 520 | 583 |
+| Retained used payload bytes | 26,735,925 | 5,295,557 |
+| Reconstructed old typed bytes | 26,735,925 | 121,016,192 |
+| Largest used payload | 2,146,715 | 337,710 |
+| Largest old typed record | 2,146,715 | 7,860,141 |
+| Packed peak | 2,192,098,799 | 2,457,227,597 |
+| Whole-job peak | 4,659,236,864 | 5,235,593,216 |
+
+Legacy reproduces its frame refusal at cursor173/query(3,7). The compressed
+path reaches cursor194/query(6,9), then refuses the unchanged reference
+natural-order join allowance before another CUDA phase. Both next targets
+remain unrevealed and all120 global counts remain. All367 published native
+forecasts match the independent full posterior, and the33 common evaluation
+readout rows agree exactly. The compressed prefix also matches all54
+evaluation readouts and every numerical audit aggregate of the historical
+typed-codec prefix at3d3711e: 457,450 floating words, 55,212 half words,
+69,909 maximum tape nodes and25,390 maximum phase outputs.
+
+This closes the observed mutable-writer mismatch in the declared component
+fault class. It does not finish either model or certify a new full Runtime
+release. Uniform4-MiB frames and padding still dominate packed retention;
+smaller used payloads are not smaller complete frames. Different reached
+prefixes and source-bound fixture timings do not establish isolated memory
+or speed dominance. The next obstacle is a paid solver and its complete
+numerical/ownership bridge under the unchanged native learner.

@@ -15,8 +15,13 @@ Python attestation or total-host-workspace claim.
 Exact CPU evidence passes, including both former forgeries, raw-word faults,
 multiblock Unicode and resource/failure retention. The old record-taking
 codec registration now refuses; legacy uncompressed evidence is unchanged.
-The 23-job actual matrix in `run_phase_deflate.py` is registered and pending.
-This extension remains unreleased until that source-bound gate is read.
+The 23-job actual A1 matrix is terminal at b53889e: all 21 integration/fault
+cases pass, including both old forgeries and observation gradient corruption.
+All1,513 complete frames and11 failed mutable frames pass; no timeout/limit
+termination, maximum job5,235,593,216 bytes. Both model readers pass but
+remain unresolved: legacy stops at173, zlib at194 on the reference join cap.
+All367 reference checks and33 common readouts agree. This closes the scoped
+binding defect; no full release or model completion is claimed.
 
 The preceding [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
 was integrated at 3d3711e with a fixed identity, full paid frames and
@@ -52,7 +57,7 @@ enlarging uniform frames: 147 prefix queries have no order within the table
 caps, four exceed the output cap even at their minimum, and the typed-plan
 uniform-frame lower bound exceeds 8 GiB on every n16 tape. This is a passive
 solver/encoding frontier result. Runtime still uses its original declared
-orders, frames and caps. The replacement codec awaits its actual binding gate;
+orders, frames and caps. The replacement codec passes its scoped binding gate;
 a paid solver bridge remains outstanding.
 
 The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
