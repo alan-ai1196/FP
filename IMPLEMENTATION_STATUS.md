@@ -2,6 +2,14 @@
 
 ## Current implementation state (2026-09-21)
 
+The [AMP plan-binding audit](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
+identifies a missing premise in fixed-forward conformance. A changed count
+address yields the same complete readout but a different operation trace;
+the exact conditional interpreter accepts it when given the changed plan.
+The current owned prefix does not independently reconstruct that plan.
+An actual A6 test is prepared. This does not falsify the native numerical
+relation in the witness; full plan binding must precede projected AMP.
+
 The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
 executes inside ReferenceCompilerRuntime under a new explicit reference
 arithmetic declaration. It keeps full counts, global theta, clocks and

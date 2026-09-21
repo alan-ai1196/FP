@@ -2,6 +2,17 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current adversarial finding, 2026-09-21:**
+[AMP plan binding](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) is an upstream
+obligation before projected AMP. An exact n3 witness changes a factor's
+count address from2 to0 while keeping its declared support(1,2). All seven
+readout words and native errors remain identical, but the operation trace
+changes. The conditional checker accepts the trace against the altered
+plan and rejects it against the declared plan. Runtime currently supplies
+the same helper-returned plan to both executors. A6 is prepared to test
+actual owned acceptance; no actual result is claimed yet. Full independent
+plan binding is required, not a special-case check for this address alone.
+
 **Current owned decoder result, 2026-09-21:**
 [query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented
 inside ReferenceCompilerRuntime. It reads every count, independently checks

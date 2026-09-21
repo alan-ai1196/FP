@@ -6469,3 +6469,25 @@ failure still prevents claiming that complete battery. The next numerical
 research step is a separately declared projected AMP schedule with full
 endpoint/operation conformance; Foundation R4/ERC-1 and the closed static
 special-case program remain unchanged.
+
+## 191. Before projecting AMP, expose the missing plan-binding premise (2026-09-21)
+
+The fixed-forward checker receives the same helper-returned plan as the
+physical executor. An [exact passive witness](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
+shows why this is insufficient to establish the declared input-to-plan
+mapping. After the n3 native event(1,2,0), the plan for query(0,1) names
+support(1,2) at count address2. Changing only that address to0 preserves all
+seven readout words and gives zero native state/probability/division error,
+but changes the actual operation sequence. The conditional interpreter
+checks55 altered operations successfully; the declared plan rejects them.
+The first difference is multiplication word1038323257 versus1065353216 at
+operation18. The complete CountState remains unchanged.
+
+The mathematical interpreter is correct for the plan it receives. The
+missing premise is independent binding of that plan to the registered
+program, owned input and arithmetic identity. A6 is prepared to exercise
+the address substitution through actual owned CUDA phases at the existing
+4-GiB/900-second limits, without target revelation. Until that run completes,
+no actual acceptance is inferred. Earlier A4/A5 observed results remain
+valid but do not establish the new obligation. The repair must bind the
+whole plan; a one-address special case would leave the underlying issue.

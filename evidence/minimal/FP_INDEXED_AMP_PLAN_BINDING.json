@@ -1,0 +1,67 @@
+{
+  "status": "PASS_PASSIVE_PLAN_BINDING_COUNTEREXAMPLE",
+  "scope": "conditional interpreter accepts a different factor-address plan with an identical complete readout; actual owned acceptance is a separate audit",
+  "native_vertices": 3,
+  "reachable_prefix": [
+    [
+      1,
+      2,
+      0
+    ]
+  ],
+  "current_query": [
+    0,
+    1
+  ],
+  "complete_counts": [
+    0,
+    0,
+    1
+  ],
+  "declared_support": [
+    [
+      1,
+      2
+    ]
+  ],
+  "declared_factor_positions": [
+    2
+  ],
+  "substituted_factor_positions": [
+    0
+  ],
+  "unchanged_complete_readout_words": [
+    1082130432,
+    1082130432,
+    1084227584,
+    1084227584,
+    1092616192,
+    1056964608,
+    1056964608
+  ],
+  "native_probability": "1/2",
+  "native_state_error": "0",
+  "native_probability_error": "0",
+  "native_division_error": "0",
+  "conditional_operations_checked": 55,
+  "output_cells": 62,
+  "first_operation_difference": [
+    18,
+    [
+      "mul",
+      32,
+      [
+        1038323257
+      ]
+    ],
+    [
+      "mul",
+      32,
+      [
+        1065353216
+      ]
+    ]
+  ],
+  "declared_plan_refusal": "indexed AMP retained operations differ from the fixed RNE schedule",
+  "false_statistical_or_class_complete_certificate": "NOT_CLAIMED"
+}

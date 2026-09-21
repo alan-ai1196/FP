@@ -211,6 +211,14 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [indexed AMP plan-binding witness](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
+adds an implementation obligation to the fixed-forward argument: independently
+bind the complete plan to its owned inputs before checking execution against
+it. An exact altered-address example preserves all native readout values
+while changing the operation trace. The conditional RNE interpreter remains
+correct relative to its supplied plan; actual owned acceptance is the next
+audit. No Foundation or semantic architecture change follows.
+
 The [query-boundary response theorem](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 sharpens the continuation quantifier within the fixed relation model. For
 positive flip-symmetric messages on b boundary vertices, equality after up
