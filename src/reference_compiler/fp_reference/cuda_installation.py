@@ -111,24 +111,26 @@ def _frame(prefix, candidates):
     if set(prefix.current) != {c.candidate_id for c in candidates}:
         arena._fail('CUDA installation found a lost or additional published learner binding')
     current = []
+    from .indexed_amp import ResidentState
+    state_type = ResidentState if prefix.indexed else gpu.CudaLearnerState
     for candidate in candidates:
         phase_id = prefix.current[candidate.candidate_id]
         record, value = prefix.phases.get(phase_id), prefix._values.get(phase_id)
         try:
-            if (record is None or type(value) is not gpu.CudaLearnerState
+            if (record is None or type(value) is not state_type
                     or record.status != 'CHECKED_CUDA_PREFIX_PHASE' or record.phase.endswith(':predict')
                     or record.candidate_id != candidate.candidate_id or record.program_id != candidate.program_id
                     or value.cursor != candidate.learner.cursor):
                 arena._fail('CUDA installation lost an actual complete learner or its retained state encoding')
             leases = []
-            for label, tensor in (('theta', value.theta), ('gradient', value.gradient_sum), *value.delayed):
+            for label, tensor in prefix.state_tensors(value):
                 # Ownership/extent checks precede even finite-value readback.
                 arena.require_initialized(tensor)
                 region = arena._regions[arena._region_for(tensor)]
                 leases.append((label, region.sequence, tensor.storage_offset()*tensor.element_size(),
                                tensor.numel()*tensor.element_size(), tuple(tensor.shape), str(tensor.dtype)))
             value.__post_init__()
-            if record.raw_state != gpu.raw_state(value):
+            if record.raw_state != prefix.raw_state(value):
                 arena._fail('CUDA installation changed its retained complete learner encoding')
         except MemoryError:
             raise

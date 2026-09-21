@@ -36,7 +36,8 @@ from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
 from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
-from .cuda_prefix import CudaPrefixContract, CudaRunManifest, CudaPrefixSnapshot, _CudaPrefix, widened_state
+from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, CudaRunManifest,
+    CudaPrefixSnapshot, _CudaPrefix, widened_state)
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
 from .cuda_installation import CudaInstallAttempt, CudaInstallReceipt, CudaInstallResult, prepare_transport, verify_transport
@@ -349,7 +350,7 @@ class ReferenceCompilerRuntime:
         self._contract = contract
         self._cuda = None
         if cuda is not None:
-            if type(cuda) is not CudaPrefixContract or online is None:
+            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract) or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
             if cuda.likelihood_encoding is not None:
@@ -362,12 +363,15 @@ class ReferenceCompilerRuntime:
             if contract.reference_integer_bits < 1075:
                 raise ArithmeticUnresolved('registered CUDA relation decoding exceeds the reference integer budget')
             if cuda.install is not None:
-                if (sys.implementation.name != 'cpython' or online.persistence is None or not online.searches
+                if (sys.implementation.name != 'cpython' or online.persistence is None
                         or not {REFERENCE_PATH, CUDA_PATH}.issubset(r.score_path for r in online.persistence.rules)):
-                    raise ContractError('CUDA install requires serialized CPython, owned native selection and both fresh score paths')
+                    raise ContractError('CUDA install requires serialized CPython, owned candidate starts and both fresh score paths')
         indexed = type(contract.initializer_pattern) is IndexedInitializer
-        if indexed and (online is None or cuda is not None):
-            raise ContractError('indexed realization requires its registered reference learner; owned AMP integration is not yet available')
+        if indexed and online is None:
+            raise ContractError('indexed realization requires its registered reference learner')
+        if cuda is not None and (indexed != (type(cuda) is IndexedCudaPrefixContract)
+                or indexed and cuda.n != contract.initializer_pattern.n):
+            raise ContractError('reference and CUDA registrations require the same complete native representation')
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
             DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits))) if indexed else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
@@ -517,9 +521,7 @@ class ReferenceCompilerRuntime:
                     # Includes every retained shadow at its own local clock;
                     # partial optimizer units survive the horizon unchanged.
                     raw = self._cuda_learner_record(state).raw_state
-                    check_state(state.learner, widened_state(raw),
-                        Float64Contract(self._cuda.contract.state_atol, self._cuda.contract.probability_atol),
-                        bit_limit=self._contract.reference_integer_bits)
+                    self._cuda.check_state(state.learner, raw, bit_limit=self._contract.reference_integer_bits)
                 diagnostics.append(cuda_diagnostics(self._cuda, self._contract.reference_integer_bits))
                 checked = sum(p.status == 'CHECKED_CUDA_PREFIX_PHASE' for p in self._cuda.phases.values())
                 target_fields = dict(cuda_device=self._cuda._device.snapshot(), cuda_transport=transport[-1],
@@ -741,7 +743,7 @@ class ReferenceCompilerRuntime:
         # allowance is not a CPU wall-time or total Python-heap theorem.
         # Unencoded simplex commits check both normalizers and their proposal,
         # then the endpoint, prefix and retained trace: six captures in total.
-        charge = 320*cfg.phase_output_cells+2*relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        charge = 320*cfg.phase_output_cells+2*self._cuda.relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
         likelihood_workspace = 0
         if cfg.likelihood_encoding is not None:
             # The registered alternative lowering owns its actual program/Gamma
@@ -761,7 +763,7 @@ class ReferenceCompilerRuntime:
                     raise ContractError('registered likelihood lowering lost its owned coordinates')
                 charge += 4*likelihood_phase_work(physical.encoding.model)
         if kind == 'predict':
-            charge += forward_work(program, self._contract.semantics)
+            charge += self._cuda.forward_work(program, self._contract.semantics)
         if origin == 'construction':
             self._router.charge_work('construct', {'work': charge}, label)
         else:
@@ -1752,7 +1754,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 current = self._cuda_learner_record(state)
                 if current.object_id != phase_id:
                     raise ContractError('persistence lost its continuous complete CUDA trajectory')
-                if identity.rule.score_path == CUDA_PATH and (not bounds or any(b.theta != current.raw_state[0] for b in bounds)):
+                if identity.rule.score_path == CUDA_PATH and (not bounds or any(b.theta != self._cuda.theta_binding(current.raw_state) for b in bounds)):
                     raise ContractError('CUDA persistence lost its current whole-domain invariant')
         elif identity.rule.score_path == CUDA_PATH:
             raise ContractError('CUDA score identity has no owned CUDA trajectory')
@@ -1764,7 +1766,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         record = self._cuda.phases.get(phase_id)
         if (record is None or record.status != 'CHECKED_CUDA_PREFIX_PHASE' or record.raw_state is None
                 or record.phase.endswith(':predict') or record.candidate_id != state.candidate_id
-                or record.program_id != state.program_id or record.raw_state[4] != state.learner.cursor):
+                or record.program_id != state.program_id or self._cuda.state_cursor(record.raw_state) != state.learner.cursor):
             raise ContractError('CUDA evidence lost its owned complete learner phase')
         return record
 
@@ -1772,6 +1774,12 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         """Paid whole-domain proof bound to this root's current device state."""
         program, rules = self._programs[state.program_id], self._contract.semantics
         record = self._cuda_learner_record(state, staged=staged)
+        if self._cuda.indexed:
+            from .indexed_amp import range_bound
+            self._event_router.charge_work('information', {'work': self._cuda.relation_work(program, rules)},
+                                          f'{state.candidate_id}:indexed-CUDA-domain')
+            return (range_bound(program, rules, record.raw_state, self._contract.source_domain,
+                normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap),)
         rows = (None,) if self._contract.source_domain is None else self._contract.source_domain
         bounds = []
         for index, row in enumerate(rows):
@@ -2005,13 +2013,13 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                             (identity.candidate_lineage_id, identity.current_candidate_cuda, 'candidate_cuda_range')):
                         successor = successors[lineage_id]
                         following = self._cuda_learner_record(successor, staged=True)
-                        if following.raw_state[0] != self._cuda.phases[previous_id].raw_state[0]:
+                        if self._cuda.theta_binding(following.raw_state) != self._cuda.theta_binding(self._cuda.phases[previous_id].raw_state):
                             next_identity = replace(next_identity, **{field: self._persistence_cuda_range(successor, staged=True)})
                         else:
                             self._event_router.charge_work('information',
-                                {'work': 128*(1+sum(s.delay for s in self._contract.semantics.states))},
+                                {'work': self._cuda.queue_work(self._programs[successor.program_id], self._contract.semantics)},
                                 f'{identity_id}:CUDA-queue:{record.cursor}')
-                            check_queue(self._contract.semantics, following.raw_state[1], bit_limit=bit_limit)
+                            self._cuda.check_queue(self._contract.semantics, following.raw_state, bit_limit=bit_limit)
                 if identity.status in CROSSINGS.values():
                     # Stop the statistic at first crossing, but keep tracking
                     # the same complete learner trajectories. No later reset
@@ -2040,7 +2048,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                         if (forecast.status != 'CHECKED_CUDA_PREFIX_PHASE' or forecast.forward_operations <= 0
                                 or forecast.observation_id != record.observation_id or forecast.input_phase != input_id):
                             raise ContractError('CUDA evidence lost its pre-target exact-checked owned forecast')
-                        probabilities.append(cuda_stored_probability(forecast.raw_prediction, record.target, bit_limit=bit_limit))
+                        probabilities.append(self._cuda.stored_probability(forecast.raw_prediction, record.target, bit_limit=bit_limit))
                     base, candidate = probabilities
                 ratio = _operation(candidate, F(base.denominator, base.numerator), multiply=True, bit_limit=bit_limit)
                 k = identity.ratio_bound
@@ -2777,20 +2785,19 @@ after all fallible construction, checks and physical preparation complete.
                 if state.learner.unit_count or state.float64 is not None and state.float64.unit_count:
                     raise ProfileUnresolved('installation requires both actual optimizer accumulators to be at a full boundary')
                 self._ledger.charge_work(registration.work_role,
-                    {'work': relation_work(self._programs[state.program_id], self._contract.semantics)},
+                    {'work': self._cuda.relation_work(self._programs[state.program_id], self._contract.semantics) if cuda
+                     else relation_work(self._programs[state.program_id], self._contract.semantics)},
                     note=f'{attempt_id}:current-complete-state-bridge')
                 if state.float64 is not None:
                     check_state(state.learner, state.float64, self._online.float64, bit_limit=self._contract.reference_integer_bits)
                 if cuda:
                     raw = self._cuda_learner_record(state).raw_state
-                    if raw[3]:
+                    if self._cuda.state_unit(raw):
                         raise ProfileUnresolved('CUDA installation cannot erase an actual partial gradient unit')
                     self._ledger.charge_work(registration.work_role,
-                        {'work': relation_work(self._programs[state.program_id], self._contract.semantics)},
+                        {'work': self._cuda.relation_work(self._programs[state.program_id], self._contract.semantics)},
                         note=f'{attempt_id}:current-CUDA-state-bridge')
-                    check_state(state.learner, widened_state(raw),
-                        Float64Contract(self._cuda.contract.state_atol, self._cuda.contract.probability_atol),
-                        bit_limit=self._contract.reference_integer_bits)
+                    self._cuda.check_state(state.learner, raw, bit_limit=self._contract.reference_integer_bits)
             self._event_phase = 'installing'
             for owner, role in ((stage_owner, registration.workspace_role), (target_owner, 'deployment'), (old_owner, 'compiler')):
                 self._ledger.register_owner(owner, role)

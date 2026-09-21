@@ -25,6 +25,10 @@ class CudaRunSnapshot(ReferenceRunSnapshot):
 def cuda_diagnostics(prefix, bit_limit):
     # Runtime prepays this scan. Raw phase words are already owned evidence;
     # no kernel rerun, callback, new forecast or supplied resource observation.
+    if prefix.indexed:
+        predictions = (phase.raw_prediction.decoded() for phase in prefix.phases.values()
+            if phase.status == 'CHECKED_CUDA_PREFIX_PHASE' and phase.raw_prediction is not None)
+        return prediction_diagnostics(predictions, 'indexed-cuda-half-single', bit_limit)
     predictions = (widened_prediction(phase.raw_prediction) for phase in prefix.phases.values()
         if phase.status == 'CHECKED_CUDA_PREFIX_PHASE' and phase.raw_prediction is not None)
     return prediction_diagnostics(predictions, 'cuda-half-single', bit_limit)

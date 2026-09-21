@@ -22,6 +22,7 @@ from . import cuda_learner as gpu
 from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
     BACKEND_ID as COUNT_BACKEND_ID, ENCODING_ID, prepare_model, preparation_work,
     power_schedule)
+from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
 
 
 @dataclass(frozen=True)
@@ -41,19 +42,23 @@ class CudaPrefixContract:
     work_model: str = field(default='', init=False)
     forward_id: str = field(default=FORWARD_ID, init=False)
 
+    def _arithmetic_ids(self):
+        return (gpu.BACKEND_ID if self.likelihood_encoding is None else COUNT_BACKEND_ID,
+            'prepaid-output-cells-packed-evidence-and-exact-forward-v2' if self.likelihood_encoding is None
+            else 'prepaid-likelihood-factorization-coordinates-and-CUDA-output-v1', FORWARD_ID)
+
     def __post_init__(self):
         if self.likelihood_encoding is not None:
             if type(self.likelihood_encoding) is not LikelihoodEncodingContract:
                 raise ContractError('registered immutable likelihood encoding contract required')
             self.likelihood_encoding.__post_init__()
-        backend = gpu.BACKEND_ID if self.likelihood_encoding is None else COUNT_BACKEND_ID
-        work_model = ('prepaid-output-cells-packed-evidence-and-exact-forward-v2' if self.likelihood_encoding is None
-                      else 'prepaid-likelihood-factorization-coordinates-and-CUDA-output-v1')
-        if (self.backend_id not in ('', backend) or self.forward_id != FORWARD_ID
+        backend, work_model, forward = self._arithmetic_ids()
+        if (self.backend_id not in ('', backend) or self.forward_id != forward
                 or self.work_model not in ('', work_model)):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')
         object.__setattr__(self, 'backend_id', backend)
         object.__setattr__(self, 'work_model', work_model)
+        object.__setattr__(self, 'forward_id', forward)
         if type(self.storage) is not CudaStorageContract:
             raise ContractError('immutable physical CUDA storage contract required')
         self.storage.__post_init__()
@@ -74,6 +79,19 @@ class CudaPrefixContract:
                 or len(self.execution_identity[4]) != 2
                 or any(type(v) is not int or v < 0 for v in self.execution_identity[4])):
             raise ContractError('immutable actual Torch/build/device/SM identity required')
+
+
+@dataclass(frozen=True, kw_only=True)
+class IndexedCudaPrefixContract(CudaPrefixContract):
+    n: int
+    forward_id: str = field(default=INDEXED_FORWARD_ID, init=False)
+
+    def _arithmetic_ids(self):
+        from . import indexed_amp as indexed
+        indexed.IndexedRelation(self.n)
+        if self.likelihood_encoding is not None:
+            raise ContractError('indexed native lowering cannot borrow a dense likelihood encoding')
+        return indexed.BACKEND_ID, 'prepaid-indexed-positive-tape-and-owned-scalar-arena-v1', indexed.FORWARD_ID
 
 
 @dataclass(frozen=True)
@@ -105,6 +123,11 @@ class CudaPhase:
     reason: str
     forward_operations: int = 0
     encoding_model: LikelihoodModel | None = None
+
+
+@dataclass(frozen=True, kw_only=True)
+class IndexedCudaPhase(CudaPhase):
+    execution_plan: object = None
 
 
 @dataclass(frozen=True)
@@ -192,7 +215,7 @@ def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, 
 
 class _CudaPrefix:
     def __init__(self, contract):
-        if type(contract) is not CudaPrefixContract:
+        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract):
             raise ContractError('registered private CUDA prefix contract required')
         contract.__post_init__()
         import torch
@@ -208,6 +231,64 @@ class _CudaPrefix:
         self.arena = CudaArena(contract.storage)
         self.current, self.staged, self.predicted = {}, {}, {}
         self.phases, self._values = {}, {}
+
+    @property
+    def indexed(self):
+        return type(self.contract) is IndexedCudaPrefixContract
+
+    def relation_work(self, program, rules):
+        if self.indexed:
+            return 512*(program.n*(program.n-1)//2+2*program.n+16)
+        from .float64_bridge import relation_work
+        return relation_work(program, rules)
+
+    def forward_work(self, program, rules):
+        if self.indexed:
+            n, d = program.n, program.n*(program.n-1)//2
+            return 256*(n+1)**2*(d+n+1)+128*(n+1)*self.contract.phase_output_cells
+        from .cuda_range import forward_work
+        return forward_work(program, rules)
+
+    def state_cursor(self, raw):
+        return raw.cursor if self.indexed else raw[4]
+
+    def state_unit(self, raw):
+        return raw.unit_count if self.indexed else raw[3]
+
+    def theta_binding(self, raw):
+        return raw.theta if self.indexed else raw[0]
+
+    def queue_work(self, program, rules):
+        return self.relation_work(program, rules) if self.indexed else 128*(1+sum(s.delay for s in rules.states))
+
+    def check_queue(self, rules, raw, *, bit_limit):
+        if self.indexed:
+            from .indexed_amp import IndexedAmpState
+            if type(raw) is not IndexedAmpState or rules.states:
+                raise ContractError('indexed CUDA lost its declared empty delayed interface')
+            return
+        from .cuda_range import check_queue
+        return check_queue(rules, raw[1], bit_limit=bit_limit)
+
+    def stored_probability(self, raw, target, *, bit_limit):
+        if self.indexed:
+            from .indexed_amp import stored_probability
+        else:
+            from .cuda_range import stored_probability
+        return stored_probability(raw, target, bit_limit=bit_limit)
+
+    def raw_state(self, value):
+        return value.raw() if self.indexed else gpu.raw_state(value)
+
+    def state_tensors(self, value):
+        return value.tensors() if self.indexed else (('theta', value.theta), ('gradient', value.gradient_sum), *value.delayed)
+
+    def check_state(self, reference, raw, *, bit_limit):
+        tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
+        if self.indexed:
+            from .indexed_amp import check_state as indexed_check
+            return indexed_check(reference, raw, tolerance, bit_limit=bit_limit)
+        return check_state(reference, widened_state(raw), tolerance, bit_limit=bit_limit)
 
     def snapshot(self):
         try:
@@ -237,6 +318,13 @@ class _CudaPrefix:
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
                 normalizer_cap, activation_cap, source_domain=None, readout_buffer=None):
+        if self.indexed:
+            from .indexed_cuda_prefix import execute
+            return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
+                bit_limit=bit_limit, ordinary_cursor=ordinary_cursor, origin=origin,
+                observation_id=observation_id, sources=sources, reference_prediction=reference_prediction,
+                target=target, normalizer_cap=normalizer_cap, activation_cap=activation_cap,
+                source_domain=source_domain, readout_buffer=readout_buffer)
         if bit_limit < 1075:
             raise ArithmeticUnresolved('exact raw-value relation decoder exceeds its reference integer allowance')
         use_staged = origin == 'profile' or kind == 'commit'

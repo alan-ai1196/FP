@@ -189,6 +189,14 @@ This does not identify complete resource states or confer indexed AMP,
 paired persistence, search or installation authority. Those integrations
 remain open; Foundation R4 and ERC-1 stay frozen.
 
+The [owned indexed AMP extension](theory/proofs/OWNED_INDEXED_AMP.md) now
+implements an independent count learner and half/single schedule in the
+existing CUDA owner. Exact CPU checks cover 270 forecasts and 540 observed
+states. Its full-domain stored masses lie in [1,9], with conservative
+normalizer bound18. Existing fresh paired evidence and resident transport
+are connected, but actual CUDA auditing is pending. No new semantic action,
+class completeness or physical execution result follows from this source.
+
 ## 0. Research object and root principle
 
 FP asks whether a **typed causal positive program** can allocate useful distinctions and physical graph structure under ordinary task loss and hard resources without being handed a fixed architecture topology or a finite menu of model actions.

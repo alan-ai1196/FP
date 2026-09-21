@@ -1,0 +1,314 @@
+"""Exact indexed AMP schedule audit and source-bound owned CUDA workers."""
+from dataclasses import replace
+from fractions import Fraction as F
+from itertools import product
+from pathlib import Path
+from unittest.mock import patch
+import argparse
+import json
+import os
+import sys
+import traceback
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts'),
+               str(ROOT/'experiments/joint_uncertainty')]
+from fp_reference import ReferenceCompilerRuntime
+from fp_reference import indexed_amp as amp
+from fp_reference.indexed_count import CountState
+from fp_reference.indexed_execution import IndexedState, IndexedEvaluation
+from fp_reference.indexed_relation import IndexedRelation
+from fp_reference.cuda_prefix import IndexedCudaPrefixContract
+from fp_reference.cuda_storage import CudaStorageContract
+from fp_reference.cuda_installation import CudaInstallContract
+from fp_reference.float64_bridge import Float64Contract
+from fp_reference.host_resources import HostResourceContract
+from fp_reference.learner import observe_event
+from fp_reference.semantics import ArithmeticUnresolved, evaluate
+from fp_reference.core import ContractError
+from fp_reference.persistence import PersistenceContract, PersistenceRule, REFERENCE_PATH, CUDA_PATH
+from fp_reference.policy import CudaCompilerPolicy
+from fp_reference.profile import ProfileSpec
+from audit_indexed_runtime import fixture, literal, check_state as check_native_state
+from audit_reference_construction import rejects, validate_residency
+from audit_cuda_runtime import no_device_handles
+from ingress_audit_support import deliver_context
+import indexed_phase_bridge as component
+import count_learner_encoding as native_counts
+
+CAP = 4 << 30
+
+
+def cpu_audit():
+    predictions = observations = half_outputs = 0
+    maximum = F(0)
+    groups = []
+    for n in (3, 5):
+        schema = IndexedRelation(n)
+        rules, graph, spec, _ = literal(n)
+        rows = tuple(product((-1, 0, 1), repeat=3 if n == 3 else 2))
+        queries = tuple(product(range(n), repeat=2)) if n == 3 else ((0, 1), (2, 4), (4, 4))
+        for row in rows:
+            d = row if n == 3 else (0, 0, 0, 0, row[0], 0, 0, 0, 0, row[1])
+            clock = sum(map(abs, d))
+            c = CountState(n, d, None, clock, clock)
+            state = amp.IndexedAmpState(c)
+            native_state = native_counts.decode(c)
+            for query in queries:
+                sources = schema.source_row(query[0]*n+query[1])
+                plan = amp.prepare_prediction(schema, state, rules, sources, output_cap=262144)
+                arithmetic = amp._Arithmetic(32768)
+                raw, _ = amp.execute_prediction(plan, state, arithmetic)
+                assert len(arithmetic.trace)+7 == plan.output_cells
+                half_outputs += sum(width == 16 for _, width, _ in arithmetic.trace)
+                expected, _, execution, _ = component.execute_predictions((component.CompactState(c),), query)
+                assert raw.words == expected[0].words
+                exact = evaluate(graph, rules, native_state.theta, sources, (), bit_limit=32768)
+                reference = IndexedEvaluation(c, query, exact.excesses, exact.masses, exact.normalizer, exact.probabilities, ())
+                tolerance = Float64Contract(F(1, 100), F(1, 1000))
+                relation = amp.check_prediction(reference, raw, tolerance, normalizer_cap=F(18), activation_cap=F(8), bit_limit=32768)
+                physical = raw.decoded().materialize(scalar_cap=10000)
+                actual_error = max(abs(a-b) for a, b in zip(exact.values+exact.masses, physical.values+physical.masses))
+                assert actual_error == relation.native_error
+                for target in (0, 1):
+                    arithmetic = amp._Arithmetic(32768)
+                    observed, _ = amp.execute_observation(state, raw, target, arithmetic)
+                    assert len(arithmetic.trace)+3 == 13
+                    old = component.execute_observations((component.CompactState(c),), expected, (target,), execution)[0]
+                    assert observed.encoded == old.encoded and observed.gradient_words == old.gradient_words
+                    full = observe_event(graph, native_state, spec, exact, target, bit_limit=32768)
+                    mass = exact.masses[target]
+                    ref = IndexedState(observed.encoded, (1/mass-F(1, 5), F(4, 5)-8/mass, F(4, 5)))
+                    relation = amp.check_state(ref, observed, tolerance, bit_limit=32768)
+                    decoded = old.materialize(scalar_cap=10000)
+                    error = max(abs(a-b) for a, b in zip(full.gradient_sum, decoded.gradient_sum))
+                    assert error == relation.state_error and full.theta == decoded.theta
+                    maximum = max(maximum, error)
+                    observations += 1
+                predictions += 1
+        groups.append({'n': n, 'profiles': len(rows), 'ordered_queries': len(queries)})
+    assert half_outputs > 0
+    c = CountState(2, (0,), None, 0, 0)
+    schema = IndexedRelation(2)
+    raw, _ = amp.execute_prediction(amp.prepare_prediction(schema, amp.IndexedAmpState(c), schema.rules(),
+        schema.source_row(1), output_cap=1000), amp.IndexedAmpState(c), amp._Arithmetic(32768))
+    observed, _ = amp.execute_observation(amp.IndexedAmpState(c), raw, 0, amp._Arithmetic(32768))
+    ref = IndexedState(observed.encoded, (F(0), F(-4, 5), F(4, 5)))
+    forged = replace(observed, encoded=replace(observed.encoded, pending=(0, 1, 1)))
+    rejects(lambda: amp.check_state(ref, forged, Float64Contract(F(1, 100), F(1, 1000)), bit_limit=32768))
+    rejects(lambda: amp.range_bound(schema, schema.rules(), amp.IndexedAmpState(c), amp.CategoricalPairDomain(2),
+        normalizer_cap=F(10), activation_cap=F(8)), ArithmeticUnresolved)
+    return {'status': 'PASS', 'scope': 'exact RNE schedule and complete native coordinates; no actual GPU or owned provenance claim',
+        'groups': groups, 'predictions': predictions, 'observations': observations,
+        'half_precision_scalar_outputs': half_outputs, 'maximum_gradient_error': str(maximum),
+        'independently_bound_target_forgery': 'REFUSED', 'insufficient_whole_domain_range_cap': 'UNRESOLVED'}
+
+
+def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, **cuda_changes):
+    cfg, schema, online = fixture(n, length, profiles=profiles, persistence=persistence, law=law,
+                                  byte_cap=1 << 30, work_cap=10**14)
+    cfg = replace(cfg, normalizer_cap=F(18))
+    arena = 32 << 20
+    cuda = IndexedCudaPrefixContract(CudaStorageContract(arena, 2*arena,
+        {role: (arena, 2*arena) for role in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
+        n=n, phase_output_cells=65536, phase_evidence_bytes=(2 << 20) if n > 32 else 262144,
+        install=CudaInstallContract() if install else None)
+    cuda = replace(cuda, **cuda_changes)
+    rt = ReferenceCompilerRuntime(cfg, schema, online=online,
+        host=HostResourceContract(CAP, {role: CAP for role in ('deployment', 'compiler')}),
+        cuda=cuda, policy=CudaCompilerPolicy(()) if policy else None)
+    return rt, schema
+
+
+def step(rt, schema, event):
+    i, j, target = event
+    cursor = rt.snapshot().cursor
+    key = rt.snapshot().online.data.active.observation_ids[cursor]
+    result = deliver_context(rt, key, tuple(schema.source_row(i*schema.n+j).values()))
+    assert result.status == 'PREDICTED_REFERENCE', result
+    result = rt.observe(target)
+    assert result.status == 'OBSERVED_REFERENCE', result
+
+
+def check_phases(rt):
+    snapshot = validate_residency(rt)
+    no_device_handles(snapshot)
+    words = half = phases = 0
+    for record in snapshot.cuda.phases:
+        assert record.status == 'CHECKED_CUDA_PREFIX_PHASE', record
+        kind = record.phase.split(':')[-1]
+        assert type(record.raw_state) is amp.IndexedAmpState
+        if kind == 'predict':
+            raw = record.raw_prediction
+            state = amp.IndexedAmpState(raw.before)
+            expected, _, execution, _ = component.execute_predictions((component.CompactState(raw.before),), raw.query)
+            assert raw.words == expected[0].words
+            assert record.forward_operations > 0
+            assert record.output_cells == record.execution_plan.output_cells
+        elif kind == 'observe':
+            actual = record.raw_state
+            old = component.CompactState(actual.encoded, actual.gradient_words)
+            if actual.encoded.n <= 5:
+                native = native_counts.decode(actual.encoded)
+                materialized = old.materialize(scalar_cap=10000)
+                assert native.theta == materialized.theta
+                assert max(abs(a-b) for a,b in zip(native.gradient_sum, materialized.gradient_sum)) == record.relation.state_error
+        else:
+            assert record.raw_state.encoded == record.reference.encoded and not record.raw_state.gradient_words
+        for _, width, values in record.raw_operations:
+            words += len(values)
+            half += len(values) if width == 16 else 0
+        phases += 1
+    return {'checked_phases': phases, 'actual_floating_words': words, 'actual_half_words': half,
+        'cursor': snapshot.cursor, 'packed_current_bytes': snapshot.resources['current']['reference_payload_bytes'],
+        'consumed_arena_bytes': snapshot.cuda.storage['consumed_arena_extent']}
+
+
+def worker(case):
+    if case == 'profiles':
+        rt, schema = configuration(5, 8, profiles=(ProfileSpec('twice', ('indexed-event:0', 'indexed-event:1'), 2),))
+        for k, event in enumerate(((1, 2, 0), (3, 4, 0), (2, 4, 0), (0, 0, 0),
+                                   (1, 3, 1), (2, 4, 1), (0, 1, 0), (4, 4, 1))):
+            step(rt, schema, event)
+            if k == 1:
+                assert rt.construct_candidate(schema, profile_id='twice').status == 'BUILT_REFERENCE'
+        result = check_phases(rt)
+        assert result['actual_half_words'] > 0
+        assert sorted(c.learner.optimizer_steps for c in rt.snapshot().candidates) == [8, 10]
+        return {**result, 'profile_events': len(rt.snapshot().profile_events), 'optimizer_steps': [8, 10]}
+    if case == 'large':
+        def forbidden(*a, **kw):
+            raise AssertionError('owned indexed AMP tried to build a world table')
+        with patch.object(component.native, 'relation_graph', forbidden), \
+                patch.object(IndexedRelation, 'materialize_program', forbidden), \
+                patch.object(IndexedRelation, 'materialize_learner', forbidden):
+            rt, schema = configuration(256, 4, profiles=(ProfileSpec('twice', ('indexed-event:0', 'indexed-event:1'), 2),))
+            for k, event in enumerate(((0, 1, 0), (0, 0, 0), (1, 2, 0), (0, 2, 1))):
+                step(rt, schema, event)
+                if k == 1:
+                    assert rt.construct_candidate(schema, profile_id='twice').status == 'BUILT_REFERENCE'
+        return {**check_phases(rt), 'n': 256, 'world_builders': 'DISABLED', 'profile_events': 4}
+    if case == 'install':
+        persistence = PersistenceContract(F(1, 2), tuple(PersistenceRule(name, 1, 20, F(1, 4), F(3, 4), F(3), 12, 16,
+            score_path=path) for name,path in (('ref',REFERENCE_PATH),('cuda',CUDA_PATH))))
+        rt, schema = configuration(2, 26, persistence=persistence, law=True, install=True)
+        for _ in range(16):
+            step(rt, schema, (0, 1, 1))
+        candidate = rt.construct_candidate(schema)
+        assert candidate.status == 'BUILT_REFERENCE'
+        r = rt.admit_reference_persistence(candidate.candidate_id, 'ref')
+        c = rt.admit_cuda_persistence(candidate.candidate_id, 'cuda')
+        assert r.identity_id and c.identity_id
+        assert all(i.status == 'ACTIVE' for i in rt.snapshot().persistence_identities)
+        for _ in range(8):
+            step(rt, schema, (0, 1, 0))
+            if rt.paired_cuda_persistence_result(r.identity_id, c.identity_id).status == 'PAIRED_CUDA_CROSSED':
+                break
+        paired = rt.paired_cuda_persistence_result(r.identity_id, c.identity_id)
+        assert paired.status == 'PAIRED_CUDA_CROSSED', paired
+        before = rt.snapshot()
+        installed = rt.install_cuda(candidate.candidate_id, reference_identity=r.identity_id, cuda_identity=c.identity_id)
+        assert installed.status == 'INSTALLED_CUDA', installed
+        after = rt.snapshot()
+        assert after.deployed_id == candidate.candidate_id
+        assert tuple(c.learner for c in before.candidates) == tuple(c.learner for c in after.candidates)
+        assert before.cuda.current == after.cuda.current and before.cuda.phases == after.cuda.phases
+        assert after.alpha_spent == F(1, 2) and all(i.status == 'UNRESOLVED' for i in after.persistence_identities)
+        step(rt, schema, (0, 1, 0))
+        return {**check_phases(rt), 'paired_crossing_cursor': before.cursor, 'installation': installed.status,
+                'alpha_after_installation': str(after.alpha_spent), 'historical_selection_proof': None,
+                'post_install_continuation': True}
+    if case == 'closure':
+        rt, schema = configuration(3, 3, policy=True)
+        for event in ((0, 1, 0), (1, 2, 0), (0, 2, 1)):
+            step(rt, schema, event)
+        assert rt.snapshot().run.status == 'SEALED_CUDA_STREAM'
+        assert not rt.snapshot().run.closure.decisions
+        return {**check_phases(rt), 'closure': rt.snapshot().run.status, 'class_decisions': 0}
+    if case == 'unfunded':
+        rt, schema = configuration(3, 1, phase_output_cells=2)
+        before = rt.snapshot()
+        def forbidden(*args, **kwargs):
+            raise AssertionError('unfunded indexed GPU executor entered')
+        with patch.object(amp._Arithmetic, '__init__', forbidden):
+            result = deliver_context(rt, before.online.data.active.observation_ids[0], tuple(schema.source_row(1).values()))
+        assert result.status == 'UNRESOLVED', result
+        after = validate_residency(rt)
+        failed = after.cuda.phases[-1]
+        assert failed.status == 'UNRESOLVED' and failed.arena_phase is None and failed.output_cells == 0
+        assert after.cursor == 0 and after.candidates == before.candidates
+        assert after.pending.record.sources and after.pending.record.target is None
+        assert len(after.buffers) > len(before.buffers)
+        return {'status': result.status, 'retained_received_context': True, 'executor_entries': 0,
+                'failed_phase_retained': True, 'published_advances': 0}
+    if case == 'target-swap':
+        rt, schema = configuration(2, 1)
+        before = rt.snapshot()
+        assert deliver_context(rt, before.online.data.active.observation_ids[0], tuple(schema.source_row(1).values())).status == 'PREDICTED_REFERENCE'
+        original = amp.execute_observation
+        def swapped(state, prediction, target, arithmetic, **kwargs):
+            return original(state, prediction, 1-target, arithmetic, **kwargs)
+        with patch.object(amp, 'execute_observation', swapped):
+            rejects(lambda: rt.observe(0), RuntimeError)
+        after = validate_residency(rt)
+        failed = after.cuda.phases[-1]
+        assert failed.status == 'EXECUTION_FAILED' and failed.raw_state.encoded.pending == (0, 1, 1)
+        assert after.pending.record.target == after.observations[-1].target == 0
+        assert after.cursor == 0 and after.candidates == before.candidates and after.cuda.current == before.cuda.current
+        return {'false_pending_target': 1, 'retained_actual_target': 0, 'failed_phase': failed.status,
+                'published_advances': 0, 'owned_target_binding': 'REFUSED'}
+    if case == 'second-commit':
+        from fp_reference import indexed_cuda_prefix
+        rt, schema = configuration(3, 1)
+        assert rt.construct_candidate(schema).status == 'BUILT_REFERENCE'
+        before = rt.snapshot()
+        assert deliver_context(rt, before.online.data.active.observation_ids[0], tuple(schema.source_row(1).values())).status == 'PREDICTED_REFERENCE'
+        calls = 0
+        original = indexed_cuda_prefix.commit
+        def failed_second(state):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                raise ArithmeticUnresolved('injected second indexed CUDA commit refusal')
+            return original(state)
+        with patch.object(indexed_cuda_prefix, 'commit', failed_second):
+            result = rt.observe(0)
+        assert result.status == 'UNRESOLVED' and calls == 2
+        after = validate_residency(rt)
+        assert after.candidates == before.candidates and after.cuda.current == before.cuda.current and after.cursor == 0
+        assert after.pending.record.target == after.observations[-1].target == 0
+        assert all(t.after_observe.encoded.pending == (0, 1, 0) for t in after.event_traces)
+        assert after.cuda.phases[-1].status == 'UNRESOLVED' and after.cuda.phases[-1].raw_state.encoded.pending == (0, 1, 0)
+        return {'commit_calls': calls, 'status': result.status, 'retained_actual_target': 0,
+                'observed_lineages_retained': len(after.event_traces), 'published_advances': 0}
+    raise ValueError(case)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--write', action='store_true')
+    parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap', 'second-commit'))
+    parser.add_argument('--output', type=Path)
+    args = parser.parse_args()
+    if args.worker:
+        report = {'status': 'FAILED', 'process_id': os.getpid(), 'case': args.worker}
+        try:
+            report['result'] = worker(args.worker)
+            report['status'] = 'PASS_OWNED_INDEXED_CUDA'
+        except Exception:
+            report['traceback'] = traceback.format_exc()
+        if args.output is None:
+            parser.error('--worker requires a bounded result --output')
+        args.output.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+        print(json.dumps({'status': report['status'], 'case': args.worker}))
+        if report['status'] != 'PASS_OWNED_INDEXED_CUDA':
+            raise SystemExit(1)
+    else:
+        report = cpu_audit()
+        if args.write:
+            (ROOT/'evidence/minimal/FP_INDEXED_AMP_SCHEDULE.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+        print(json.dumps(report, indent=2))
+
+
+if __name__ == '__main__':
+    main()

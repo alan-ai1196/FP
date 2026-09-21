@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scope": "exact RNE schedule and complete native coordinates; no actual GPU or owned provenance claim",
+  "groups": [
+    {
+      "n": 3,
+      "profiles": 27,
+      "ordered_queries": 9
+    },
+    {
+      "n": 5,
+      "profiles": 9,
+      "ordered_queries": 3
+    }
+  ],
+  "predictions": 270,
+  "observations": 540,
+  "half_precision_scalar_outputs": 279,
+  "maximum_gradient_error": "49/188743680",
+  "independently_bound_target_forgery": "REFUSED",
+  "insufficient_whole_domain_range_cap": "UNRESOLVED"
+}

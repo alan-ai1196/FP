@@ -2,6 +2,17 @@
 
 ## Current implementation state (2026-09-21)
 
+The [indexed owned AMP implementation](theory/proofs/OWNED_INDEXED_AMP.md)
+now connects the independent count learner, positive half/single schedule,
+complete phase frames and actual target to the existing CUDA owner. Its
+full-domain stored-mass box is [1,9] per label with conservative normalizer
+cap18. Existing paired evidence and resident installation are extended to
+these complete records; a historical class selection remains optional.
+270 CPU forecasts/540 observations match the independent component and
+full native coordinates. The complete indexed reference audit and three
+affected native CPU batteries pass. **The seven registered actual CUDA
+workers remain pending**; no physical execution/release result is claimed.
+
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits
 the exact indexed native G, Gamma, U and full categorical domain, and
@@ -21,11 +32,11 @@ this remains solver uncertainty. Nine full CPU regression batteries pass,
 including all 36 model-check classes and the owned policy. The old complete
 indexed-reference evidence remains identical after core promotion.
 
-This extension is not a new complete release. Indexed AMP/physical phase
-evidence, native-class search, fresh paired persistence and installation
-remain open and cannot be registered through the new reference mode yet.
-No new GPU job was run. The old source-bound component diagnostics remain
-terminal. Foundation R4 and ERC-1 are unchanged.
+This reference milestone is not a new complete release. The later AMP
+implementation above awaits actual phase/persistence/install audits;
+native-class search remains unimplemented. No new GPU job has run at this
+source. Old source-bound component diagnostics remain terminal. Foundation
+R4 and ERC-1 are unchanged.
 
 The [indexed numerical phase component](theory/proofs/INDEXED_PHASE_BRIDGE.md)
 now stores exact counts, all clocks/pending data, seven actual readout words

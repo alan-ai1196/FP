@@ -233,3 +233,9 @@ evidence, fresh paired persistence and reachable installation through this
 owned root. Native-class search or an explicit funded translation/fallback
 also remains open. Further static cycle-size special cases do not close
 these obligations.
+
+The subsequent [owned indexed AMP implementation](OWNED_INDEXED_AMP.md)
+connects this exact reference to an independent physical count learner,
+complete actual word/target checks and the existing persistence/transport
+paths. Its CPU schedule audit passes; source-bound actual CUDA workers are
+pending. This reference proof alone supplies no physical execution result.

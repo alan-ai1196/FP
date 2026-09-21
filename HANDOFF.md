@@ -2,6 +2,19 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current indexed AMP integration, 2026-09-21:** the
+[owned AMP implementation](theory/proofs/OWNED_INDEXED_AMP.md) now binds an
+independent count learner and actual half/single schedule to the existing
+CUDA arena, complete phase frames, actual target, fresh paired evidence and
+resident installation paths. The exact CPU audit passes 270 predictions
+and 540 observations, including full native coordinates. The complete
+indexed reference audit and three affected native CPU batteries also pass.
+**Actual CUDA verification is pending.** The next action is the seven
+source-bound workers in `scripts/run_indexed_amp_audit.py --attempt 1`, each
+under 4 GiB/900 seconds. Retain every attempt. No new GPU result, complete
+release or class certificate follows from the CPU audit. Existing jobs stay
+terminal; Foundation R4 and ERC-1 remain frozen.
+
 **Current owned reference result, 2026-09-21:**
 [owned indexed execution](theory/proofs/OWNED_INDEXED_REFERENCE.md) now runs
 inside the existing `ReferenceCompilerRuntime`. The same literal G, uniform
@@ -18,11 +31,10 @@ Nine complete CPU regression batteries pass, including the full 36-class
 model check and owned policy. This is an exact reference extension, not a
 new complete release, resource advantage or `CERTIFIED_COMPLETE`.
 
-**Next work:** owned indexed AMP execution and complete physical phase
-evidence, independently bound actual target, fresh paired persistence and
-reachable installation; native-class search or a funded fallback also
-remains open. The new reference registration explicitly refuses unsupported
-physical/search integration. Empty-policy finite reference closure works.
+**Next work at the reference milestone:** the AMP obligations now have the
+implementation and pending actual protocol above; native-class search or a
+funded fallback remains open. The reference registration refuses unsupported
+physical/search integrations. Empty-policy finite reference closure works.
 No GPU/model job was launched for this result; every previous job remains
 terminal. Do not return to additional static cycle-size studies. Foundation
 R4 and ERC-1 stay frozen.

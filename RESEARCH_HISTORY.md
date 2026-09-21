@@ -6059,3 +6059,41 @@ reference extension, not a new full release or CERTIFIED_COMPLETE. Owned
 indexed AMP execution, complete physical phase evidence, paired persistence,
 native-class search/fallback and installation remain open. Foundation R4
 and ERC-1 are unchanged; the next work is that owned numerical bridge.
+
+## 176. Indexed AMP phases are bound to the existing owner and actual target (2026-09-21)
+
+The [owned indexed AMP extension](theory/proofs/OWNED_INDEXED_AMP.md) now
+implements an independent count learner, single readout/gradient words and
+half products in the existing CUDA arena. Positive tape construction is
+shared with the prior component; scalar choices/gathers become aliases of
+owned tensors, with a separately declared physical schedule. Every actual
+arithmetic word and output copy is checked against exact RNE, and the
+complete seven-value/three-form basis is compared directly with the owned
+exact reference. No reference posterior or forecast is uploaded to CUDA.
+
+The physical pending event is checked against Runtime's actual target and
+the independently observed reference state. Count commits and profile
+attachments retain every clock and predecessor. The new phase record
+contains the exact positive plan, raw operation outputs, complete state and
+readout. No additional owner, signer or Runtime root field is introduced.
+
+A monotonicity argument bounds all admitted categorical stored masses by
+[1,9] and their rounded normalizer by18. The latter is conservative: cap10
+does not pass this box, without proving an actual cap10 violation. Proper
+CUDA evidence normalizes its own stored masses exactly. The existing
+prospective installation proof requires no training maximum, so the extra
+nonempty-search registration gate is removed; owned candidates, both fresh
+crossings and complete resident transport remain required.
+
+The exact CPU audit passes 270 forecasts and 540 observed states, with
+279 half scalar results and maximum gradient error49/188743680. Full native
+caches/gradients and independent component words agree. Target forgery and
+insufficient range-cap refusals pass. The complete owned indexed reference
+audit and three affected native CPU batteries pass as well.
+
+Seven source-bound actual CUDA workers are registered under 4 GiB and
+900 seconds each: profiles, n256 without world builders, paired evidence/
+installation, finite closure, unfunded entry, target substitution and second
+commit failure. **They have not run at this source.** No new device outcome,
+complete release, model benefit or CERTIFIED_COMPLETE is asserted. All old
+jobs remain terminal; Foundation R4 and ERC-1 are unchanged.

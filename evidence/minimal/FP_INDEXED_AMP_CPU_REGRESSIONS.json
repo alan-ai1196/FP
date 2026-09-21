@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "scope": "complete affected native CPU event/profile/persistence batteries; not a new full release",
+  "audits": {
+    "reference_persistence": {
+      "status": "PASS",
+      "scope": "actual owned Runtime reference evidence under an explicit external conditional stochastic-law assumption",
+      "seconds": 3.22,
+      "complete_sections": [
+        "scores",
+        "crossing",
+        "null",
+        "freshness",
+        "failures"
+      ],
+      "evidence": {
+        "null.complete_fair_label_paths": 32,
+        "null.exact_conditional_lower_wealth_inequalities": 31,
+        "null.first_crossing_probability": "1/8",
+        "freshness.global_allocated_alpha": "3/4"
+      },
+      "completed_jobs": {}
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "seconds": 10.76,
+      "complete_sections": [
+        "existing_value_path",
+        "exhaustive_replay",
+        "recurrent_attachment",
+        "adversaries"
+      ],
+      "evidence": {
+        "existing_value_path.actual_profile_predictions_and_observations": 512,
+        "exhaustive_replay": {
+          "all_two_event_binary_context_target_streams": 16,
+          "independent_profile_prediction_and_gradient_checks": 64
+        },
+        "recurrent_attachment.recurrent_profile_events": 8
+      },
+      "completed_jobs": {}
+    },
+    "reference_events": {
+      "status": "PASS",
+      "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+      "seconds": 40.01,
+      "complete_sections": [
+        "gradient_audit",
+        "exhaustive_endpoint",
+        "clock_data_boundaries",
+        "causality",
+        "query_precision",
+        "failure_prefixes",
+        "existing_value_path"
+      ],
+      "evidence": {
+        "gradient_audit.independent_exact_gradient_vectors": 960,
+        "exhaustive_endpoint.streams": 64,
+        "exhaustive_endpoint.individual_optimizer_commits": 128,
+        "causality.exact_causal_source_rows": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ]
+      },
+      "completed_jobs": {}
+    }
+  }
+}
