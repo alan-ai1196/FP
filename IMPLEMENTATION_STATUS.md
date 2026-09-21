@@ -2,6 +2,15 @@
 
 ## Current implementation state (2026-09-21)
 
+The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
+is registered for all eight exposed RN-5 n8/n16 IID cases with matched
+global/projected physical schedules, same complete initial native learner,
+same data/caps/U and an empty compiler policy. The preflight verifies every
+configuration pair and retained exact/AMP-readout control without importing
+Torch. The independent reader checks all complete native transitions, actual
+RNE phase words and final scores; unresolved prefixes receive no model score.
+Execution is pending. No production arithmetic or semantic action changed.
+
 The [projected AMP extension](theory/proofs/PROJECTED_INDEXED_AMP.md) now
 executes a separately declared query-block tape through the existing private
 CUDA owner. Shared geometry forms no reference numerical answer; each

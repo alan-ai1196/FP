@@ -211,6 +211,13 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
+now registers complete ordinary learner execution on all eight exposed RN-5
+IID cases, under global/projected AMP with the same native G/Gamma/U and caps.
+Its no-Torch preflight passes; actual model execution is pending. The empty
+compiler policy asserts no search optimum or installation result. Foundation
+definitions and ERC-1 remain unchanged.
+
 The [projected AMP lowering](theory/proofs/PROJECTED_INDEXED_AMP.md) now
 realizes current-query block responses under a separate physical declaration.
 It retains every global count and native continuation, proves an additive

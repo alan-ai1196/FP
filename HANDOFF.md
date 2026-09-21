@@ -2,6 +2,20 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
+**Current model registration, 2026-09-21:**
+[the matched indexed model protocol](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
+registers16 fresh jobs: global and projected AMP on all eight retained RN-5
+n8/n16 IID cases, in the existing case order. Both start from the same full
+native relation G with uniform Gamma and learn every ordinary label. This
+tests complete known-model execution, not construction/search/installation;
+the compiler policy is empty. Caps, U, data and numerical tolerances match,
+with only the physical schedule declaration differing. Every reference
+forecast is independently checked against the full adaptive integer posterior.
+The retained exact posterior and its actual AMP readout remain strong quality
+controls. The no-Torch preflight passes; model execution is not yet launched.
+Commit all inputs before `run_indexed_model.py --attempt 1`, preserve source
+while jobs live, retain every failure, and score only complete sealed streams.
+
 **Current physical lowering, 2026-09-21:**
 [projected AMP](theory/proofs/PROJECTED_INDEXED_AMP.md) is implemented under
 its own ProjectedIndexedCudaPrefixContract and forward identity. It scans

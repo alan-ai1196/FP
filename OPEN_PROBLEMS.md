@@ -14,6 +14,13 @@ Register model experiments with strong current controls and complete
 resource/failure accounting. No whole-resource dominance, model advantage
 or new complete release follows from the integration fixtures.
 
+The [first matched indexed model matrix](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
+is now registered:16 jobs across all eight retained n8/n16 IID cases. It
+asks whether the same complete native learner finishes the full stream
+under global versus projected AMP and maintains its posterior relation.
+Execution is pending. The empty policy grants no search or installation
+claim; later hard blocks and numerical/resource refusals must remain visible.
+
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary
 horizon and proves current-query block projection. Its

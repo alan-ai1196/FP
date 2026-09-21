@@ -6640,3 +6640,29 @@ the separate legacy installation capacity fixture still prevents claiming
 its complete battery. This closes the scoped projected Runtime/AMP frontier
 and moves the next scientific question to registered model experiments
 with strong current controls, not additional static graph cases.
+
+## 198. Register a complete model test of the indexed learner and its two physical schedules (2026-09-21)
+
+The next [model protocol](experiments/joint_uncertainty/INDEXED_MODEL_PROTOCOL.md)
+registers global then projected AMP for all eight existing RN-5 n8/n16 IID
+cases. Both use the identical full initial relation G, fair Gamma, unit-one
+simplex U, ordinary data and finite resource envelope. Starting with the
+full native learner differs explicitly from older constant-initial-program
+construction/install studies. The empty compiler policy has zero decisions;
+no search, newly discovered architecture, installation or population claim
+is inferred. This is a retrospective complete execution/mechanism test.
+
+The strong full adaptive exact posterior and its actual AMP readout controls
+remain unchanged at their retained source. Preflight checks every paired
+configuration and control without Torch: only backend/forward declarations
+differ. Every new reference forecast will be checked against an independent
+integer posterior before its target enters either learner. The child audits
+all native count/clock/unit transitions and checked RNE phases; the parent
+recomputes scores from compact mass/division word rows. Incomplete prefixes
+receive no complete-domain score. Resource refusals remain outcomes;
+unexpected execution/reader failures stop the matrix with evidence retained.
+
+All16 fresh jobs are pending. Each uses the same16-GiB/7200-second job,
+8-GiB packed cap,256-MiB arena,512-MiB allocator cap,65536 outputs and full
+4-MiB phase frames. Source stays fixed during execution. No new production
+mechanism, tolerance change or static special case is added.
