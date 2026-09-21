@@ -33,9 +33,10 @@ implemented, with current-phase output ownership, unchanged input prediction
 and truthful proper-normalization/division diagnostics. The full CPU audit
 and new exact word/trace adversaries pass. A4 at6a62a45 passes all twelve
 actual cases, including the new attacks, n256 and resident installation.
-Its maximum job peak is2,385,383,424 bytes. Two legacy learned-search
-regressions still need updated work funding after the earlier readback
-tariff increase. No complete release is claimed.
+Its maximum job peak is2,385,383,424 bytes. The fully funded legacy policy
+battery passes atfb3b45a. Installation at12-billion work still leaves232
+comparisons unresolved; A2 adds bounded reason diagnostics to that incomplete
+battery without another funding change. No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

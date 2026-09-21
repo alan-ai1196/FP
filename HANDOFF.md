@@ -47,11 +47,14 @@ prediction/operation/gradient word adversaries and nine trace-shape attacks.
 A4 at6a62a45 is terminal with all twelve cases passing, including every new
 attack, n256 and resident installation. Maximum job peak is2,385,383,424
 bytes. The fixed-transition boundary is now checked independently; no
-further A4 rerun is needed. Next, finish the two legacy learned-search
-regressions with explicitly updated work budgets: their shared tariff rose
-from128 to320 units per prepaid output cell in56dfea0. Research can then
-address query-dependent inference cost and model usefulness while keeping
-the complete count history, rather than adding static size special cases.
+further A4 rerun is needed. The legacy readback A1 campaign atfb3b45a passes
+the complete policy battery after explicit funding; its learned case visits
+774 rows, installs at18 and seals at40, checking970 CPU and970 CUDA phases.
+This alone does not prove all visited class members were resolved. Installation
+with12-billion work still leaves232 comparisons unresolved, after542 compare.
+The exact reason histogram was missing, so A2 reruns only that incomplete
+battery with bounded failure diagnostics and unchanged funding. Do not
+increase another allowance without first identifying these retained reasons.
 Retain A1/A2 and all old terminal jobs. No complete release or class
 certificate is claimed; Foundation R4 and ERC-1 remain frozen.
 

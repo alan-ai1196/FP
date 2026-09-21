@@ -1,0 +1,385 @@
+{
+  "status": "COMPLETE_WITH_FAILURE",
+  "registration": {
+    "source": "fb3b45ab2c0184a937e07ed79c3a04ae138885ff",
+    "cases": [
+      "cuda_installation",
+      "cuda_policy_run"
+    ],
+    "tariff_change_source": "56dfea0",
+    "prepaid_output_cells": 4096,
+    "old_per_cell_work": 128,
+    "current_per_cell_work": 320,
+    "additional_work_per_native_phase": 786432,
+    "additional_initial_readout_work": 32768,
+    "installation_work_budget": {
+      "old": 4000000000,
+      "current": 12000000000
+    },
+    "policy_work_budget": {
+      "old": 20000000000,
+      "current": 60000000000
+    },
+    "scope": "complete unchanged native decision classes, trajectories and failure controls with explicitly funded current work tariffs; no complete release",
+    "enforcement": "existing complete battery process/job protocols; strict full-section and counter validation; 7200-second battery deadline",
+    "earlier_failure": "FP_INDEXED_AMP_CUDA_REGRESSIONS.json"
+  },
+  "audits": {
+    "cuda_installation": {
+      "status": "FAILED",
+      "failure": "scripts/audit_cuda_installation.py: exit 1\nTraceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 312, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 297, in main\r\n    report[case] = execute(case)\r\n                   ^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 293, in execute\r\n    raise RuntimeError(process.stdout+process.stderr)\r\nRuntimeError: Traceback (most recent call last):\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 312, in <module>\r\n    main()\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 279, in main\r\n    result = success_case(learned=args.case == 'learned', recurrent=args.case == 'recurrent', cpu=args.case != 'no-cpu')\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 94, in success_case\r\n    rt, selected, ids = fixture(learned=learned, recurrent=recurrent, cpu=cpu)\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 51, in fixture\r\n    search, ids = select(rt, 'native', 'ref', 'cuda')\r\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"F:\\FP\\scripts\\audit_cuda_installation.py\", line 59, in select\r\n    assert search.status == 'REFERENCE_CLASS_EXHAUSTED', search\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nAssertionError: ReferenceSearchResult(status='UNRESOLVED', search_id='448bca88ba0ae33b2c51d73f:search:0', decision_class_id='af240e56d1a094877358073b6e3120f26ec6b65eb14c5520a765803dd022538f', programs_compared=542, unresolved_programs=232, best_candidate_id='448bca88ba0ae33b2c51d73f:candidate:362', best_likelihood=Fraction(9, 16), proof_id=None, reason='syntax exhausted, but at least one value/feasibility/comparison remains unresolved')\r\n\r\n"
+    },
+    "cuda_policy_run": {
+      "status": "PASS",
+      "scope": "owned finite CUDA policy/run under registered host, tensor and framebuffer resource coordinates; no model-science or complete release claim",
+      "seconds": 471.53,
+      "complete_sections": [
+        "success",
+        "learned",
+        "recurrent",
+        "no-cpu",
+        "registration",
+        "partial",
+        "search-budget",
+        "unfinished",
+        "horizon-budget",
+        "report-resource",
+        "report-memory",
+        "report-device",
+        "report-unexpected",
+        "admit-policy-failure",
+        "install-policy-failure",
+        "late-frame",
+        "host_enforcement",
+        "finite_branches"
+      ],
+      "evidence": {
+        "success": {
+          "native_classes": [
+            35,
+            35
+          ],
+          "install_cursors": [
+            22,
+            38
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 60,
+          "sealed_control_denials": 49,
+          "alpha_spent": "3/4",
+          "independent_CUDA_phases": 456,
+          "independent_CPU_phases": 456,
+          "host": {
+            "process_id": 9028,
+            "creation_100ns": 134344388914686282,
+            "lifetime_process_commit_peak": 2132983808
+          },
+          "completed_job": {
+            "peak_process_commit": 2143825920,
+            "peak_job_commit": 2145054720,
+            "user_100ns": 191562500,
+            "kernel_100ns": 12656250
+          }
+        },
+        "learned": {
+          "native_classes": [
+            774
+          ],
+          "install_cursors": [
+            18
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 970,
+          "independent_CPU_phases": 970,
+          "host": {
+            "process_id": 1904,
+            "creation_100ns": 134344389147180984,
+            "lifetime_process_commit_peak": 2387722240
+          },
+          "completed_job": {
+            "peak_process_commit": 2414166016,
+            "peak_job_commit": 2415390720,
+            "user_100ns": 2760312500,
+            "kernel_100ns": 14687500
+          }
+        },
+        "recurrent": {
+          "native_classes": [
+            124
+          ],
+          "install_cursors": [
+            22
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 320,
+          "independent_CPU_phases": 320,
+          "host": {
+            "process_id": 5512,
+            "creation_100ns": 134344391942156584,
+            "lifetime_process_commit_peak": 2221486080
+          },
+          "completed_job": {
+            "peak_process_commit": 2221486080,
+            "peak_job_commit": 2222698496,
+            "user_100ns": 192500000,
+            "kernel_100ns": 11562500
+          }
+        },
+        "no-cpu": {
+          "native_classes": [
+            35
+          ],
+          "install_cursors": [
+            22
+          ],
+          "policy_and_learner_publish_together": true,
+          "cursor": 40,
+          "sealed_control_denials": 49,
+          "alpha_spent": "1/2",
+          "independent_CUDA_phases": 231,
+          "independent_CPU_phases": 0,
+          "host": {
+            "process_id": 5092,
+            "creation_100ns": 134344392168289000,
+            "lifetime_process_commit_peak": 2091233280
+          },
+          "completed_job": {
+            "peak_process_commit": 2095931392,
+            "peak_job_commit": 2097156096,
+            "user_100ns": 76250000,
+            "kernel_100ns": 9218750
+          }
+        },
+        "registration": {
+          "registration_rejections_before_native_tensor_allocation": 10,
+          "compiler_control_denials": 22,
+          "host": {
+            "process_id": 13668,
+            "creation_100ns": 134344392273706656,
+            "lifetime_process_commit_peak": 2101084160
+          },
+          "completed_job": {
+            "peak_process_commit": 2101084160,
+            "peak_job_commit": 2102308864,
+            "user_100ns": 15937500,
+            "kernel_100ns": 6718750
+          }
+        },
+        "partial": {
+          "case": "partial",
+          "cursor": 3,
+          "partial_optimizer_events": 1,
+          "stage_outcomes": [],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 8,
+          "host": {
+            "process_id": 14148,
+            "creation_100ns": 134344392296431407,
+            "lifetime_process_commit_peak": 2208718848
+          },
+          "completed_job": {
+            "peak_process_commit": 2210021376,
+            "peak_job_commit": 2211250176,
+            "user_100ns": 20000000,
+            "kernel_100ns": 7500000
+          }
+        },
+        "search-budget": {
+          "case": "search-budget",
+          "cursor": 4,
+          "partial_optimizer_events": 0,
+          "stage_outcomes": [
+            "UNRESOLVED"
+          ],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 11,
+          "host": {
+            "process_id": 7800,
+            "creation_100ns": 134344392325861468,
+            "lifetime_process_commit_peak": 2210119680
+          },
+          "completed_job": {
+            "peak_process_commit": 2210435072,
+            "peak_job_commit": 2211663872,
+            "user_100ns": 19531250,
+            "kernel_100ns": 9375000
+          }
+        },
+        "unfinished": {
+          "case": "unfinished",
+          "cursor": 3,
+          "partial_optimizer_events": 1,
+          "stage_outcomes": [
+            "UNRESOLVED",
+            "UNRESOLVED"
+          ],
+          "terminal_denials": 27,
+          "independent_CUDA_phases": 45,
+          "host": {
+            "process_id": 24352,
+            "creation_100ns": 134344392357243559,
+            "lifetime_process_commit_peak": 2215858176
+          },
+          "completed_job": {
+            "peak_process_commit": 2217455616,
+            "peak_job_commit": 2218680320,
+            "user_100ns": 30625000,
+            "kernel_100ns": 8125000
+          }
+        },
+        "horizon-budget": {
+          "30_epoch_second_admission_exceeds_remaining_16_events": true,
+          "no_unadmitted_identity_or_alpha_debit": true,
+          "first_install_and_second_selection_retained": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 21128,
+            "creation_100ns": 134344392397812902,
+            "lifetime_process_commit_peak": 2225516544
+          },
+          "completed_job": {
+            "peak_process_commit": 2225516544,
+            "peak_job_commit": 2226749440,
+            "user_100ns": 105937500,
+            "kernel_100ns": 10937500
+          }
+        },
+        "report-resource": {
+          "case": "report-resource",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 27732,
+            "creation_100ns": 134344392533594956,
+            "lifetime_process_commit_peak": 2223714304
+          },
+          "completed_job": {
+            "peak_process_commit": 2223714304,
+            "peak_job_commit": 2224939008,
+            "user_100ns": 52187500,
+            "kernel_100ns": 7812500
+          }
+        },
+        "report-memory": {
+          "case": "report-memory",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 20324,
+            "creation_100ns": 134344392604827239,
+            "lifetime_process_commit_peak": 2224222208
+          },
+          "completed_job": {
+            "peak_process_commit": 2224222208,
+            "peak_job_commit": 2225446912,
+            "user_100ns": 50000000,
+            "kernel_100ns": 10312500
+          }
+        },
+        "report-device": {
+          "case": "report-device",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": false,
+          "host": {
+            "process_id": 4376,
+            "creation_100ns": 134344392675840432,
+            "lifetime_process_commit_peak": 2224758784
+          },
+          "completed_job": {
+            "peak_process_commit": 2224758784,
+            "peak_job_commit": 2225979392,
+            "user_100ns": 52031250,
+            "kernel_100ns": 8437500
+          }
+        },
+        "report-unexpected": {
+          "case": "report-unexpected",
+          "completed_target_install_and_alpha_survive_failed_report": true,
+          "original_unexpected_exception_preserved": true,
+          "host": {
+            "process_id": 18016,
+            "creation_100ns": 134344392746959400,
+            "lifetime_process_commit_peak": 2091360256
+          },
+          "completed_job": {
+            "peak_process_commit": 2091360256,
+            "peak_job_commit": 2092584960,
+            "user_100ns": 51250000,
+            "kernel_100ns": 9375000
+          }
+        },
+        "admit-policy-failure": {
+          "case": "admit-policy-failure",
+          "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 18136,
+            "creation_100ns": 134344392819032783,
+            "lifetime_process_commit_peak": 2217230336
+          },
+          "completed_job": {
+            "peak_process_commit": 2218582016,
+            "peak_job_commit": 2219806720,
+            "user_100ns": 28125000,
+            "kernel_100ns": 7812500
+          }
+        },
+        "install-policy-failure": {
+          "case": "install-policy-failure",
+          "ordinary_event_and_spent_alpha_retained_without_install_or_retry": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 10652,
+            "creation_100ns": 134344392857461338,
+            "lifetime_process_commit_peak": 2224787456
+          },
+          "completed_job": {
+            "peak_process_commit": 2224787456,
+            "peak_job_commit": 2226012160,
+            "user_100ns": 52500000,
+            "kernel_100ns": 9375000
+          }
+        },
+        "late-frame": {
+          "prepared_owned_report_bytes_are_not_a_published_run": true,
+          "post-preparation_device_corruption_keeps_completed_event_but_revokes_authority": true,
+          "terminal_denials": 27,
+          "host": {
+            "process_id": 26836,
+            "creation_100ns": 134344392931598433,
+            "lifetime_process_commit_peak": 2208284672
+          },
+          "completed_job": {
+            "peak_process_commit": 2209456128,
+            "peak_job_commit": 2210689024,
+            "user_100ns": 19687500,
+            "kernel_100ns": 7656250
+          }
+        },
+        "host_enforcement": {
+          "workers": 32,
+          "commit_cap": 4294967296,
+          "all_successful_exits_and_PID_lifetime_matches": true,
+          "all_fenced_before_execution": true,
+          "maximum_process_commit": 2414166016,
+          "maximum_job_commit": 2415390720
+        },
+        "finite_branches": {
+          "complete_binary_four_event_streams": 16,
+          "native_members_per_run": 35,
+          "independent_CUDA_phases": 776,
+          "baseline_selected": 8,
+          "evidence_unresolved": 8,
+          "sealed_port_denials": 432
+        }
+      },
+      "completed_jobs": {}
+    }
+  }
+}

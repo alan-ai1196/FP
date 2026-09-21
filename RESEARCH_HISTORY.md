@@ -6287,3 +6287,23 @@ the existing physical certificate. Production reference planning and any
 new AMP schedule remain separate owned implementation obligations. No
 Foundation/ERC change, static graph-size campaign, model win or complete
 Compiler quotient is claimed.
+
+## 184. Full legacy policy passes; installation needs the actual unresolved reasons (2026-09-21)
+
+[Readback regression A1](evidence/minimal/FP_CUDA_READBACK_REGRESSIONS_A1.json),
+sourcefb3b45a, completes both selected batteries. Policy passes its entire
+strictly parsed coverage in471.53 seconds. The learned case visits774 class
+rows, installs at18, seals at40 and checks970 independent CPU/970 CUDA
+phases. Visited rows alone do not certify complete resolution of that class;
+policy can use a prospectively justified candidate without a historical
+maximum assertion.
+
+Installation still fails at its strict class-exhaustion assertion under the
+12-billion work declaration:542 comparisons succeed and232 are unresolved,
+with syntax exhausted and no proof. The earlier aggregate error does not
+retain the reasons for those232 rows. Further allowance changes would be
+speculation, so the fixture now includes a bounded status/reason histogram
+in a failed assertion. Readback A2 is registered only for the incomplete
+installation battery, with unchanged inputs/funding except this diagnostic.
+The earlier A1 result and complete policy pass remain terminal. No complete
+release is inferred.

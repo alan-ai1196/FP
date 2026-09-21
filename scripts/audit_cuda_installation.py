@@ -6,6 +6,7 @@ CPU lease algebra has its separate exhaustive audit; this checks device
 identity, quiescence and the complete combined publication on real CUDA.
 """
 from dataclasses import replace
+from collections import Counter
 from fractions import Fraction as F
 from pathlib import Path
 import argparse
@@ -56,7 +57,14 @@ def fixture(*, learned=False, recurrent=False, continued=False, cpu=True, host=N
 def select(rt, search_name, ref_rule, cuda_rule):
     search = rt.start_reference_search(search_name)
     search = rt.advance_reference_search(search.search_id, transitions=10000)
-    assert search.status == 'REFERENCE_CLASS_EXHAUSTED', search
+    if search.status != 'REFERENCE_CLASS_EXHAUSTED':
+        session = next(s for s in rt.snapshot().searches if s.search_id == search.search_id)
+        histogram = Counter((row.status, row.reason) for row in session.rows if row.status != 'COMPARED_REFERENCE')
+        largest = histogram.most_common(8)
+        raise AssertionError(json.dumps({'search_result': repr(search), 'total_rows': len(session.rows),
+            'unresolved_reasons': [{'status': status, 'reason': reason, 'rows': count}
+                                   for (status, reason), count in largest],
+            'other_unresolved_rows': sum(histogram.values())-sum(count for _, count in largest)}))
     r = rt.admit_reference_persistence(search.best_candidate_id, ref_rule)
     c = rt.admit_cuda_persistence(search.best_candidate_id, cuda_rule)
     ids = r.identity_id, c.identity_id
