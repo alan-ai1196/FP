@@ -226,8 +226,9 @@ surfaces remain HOLD. No Foundation definition or semantic action changes.
 Two subsequent [passive AMP witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md)
 exercise both sides of that law: a failed physical call can damage its
 shared predecessor, and a later planner can mutate a previously accepted
-returned plan. Their actual CUDA probes are registered and pending at
-unchanged production7fe0471. The scoped reference repair remains intact.
+returned plan. Both actual CUDA probes atab39b56 reproduce on production
+unchanged from7fe0471, with one old sealed record's metadata changed in each
+case. The scoped reference repair remains intact; the AMP repair is open.
 
 The [indexed supplied-input counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md)
 now put that extension on HOLD: real CPU Runtime accepts a changed helper

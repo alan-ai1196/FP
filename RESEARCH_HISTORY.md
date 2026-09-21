@@ -7105,3 +7105,27 @@ mutation through a later successful continuation, including a full legal
 native update. Actual results are pending. The reference value gate is
 unchanged; the remaining physical trust boundary must cover the executor's
 workspace capability as well as its metadata arguments and returned records.
+
+## 212. Reproduce both AMP continuation aliases on the device (2026-09-21)
+
+Both actual A1 jobs reproduce atab39b56 with production unchanged from7fe0471.
+They exit zero below4 GiB, with attachment before execution and no timeout
+or limit termination; maximum job commitment2,195,173,376 bytes.
+
+The physical-count mutation causes EXECUTION_FAILED before publication or
+target observation. The correct reference still holds+1, while the current
+physical predecessor and earlier snapshot read-1. One old ordinary:commit
+record's live metadata no longer matches its intact sealed bytes.
+
+The later planner mutation takes the successful branch: the new forecast is
+correct and checked, and the following actual target produces the complete
+legal native/AMP update to(1,0,1). Yet an older checked prediction still
+reports62 outputs while its retained shared plan has changed to61. An
+earlier snapshot changes too; the old sealed bytes remain intact. This is
+a temporal evidence-binding counterexample, not a wrong current learner.
+
+The unchanged reference value boundary preserves its native predecessor in
+both cases. The actual journal retains these distinct consequences. No
+Foundation change follows. All jobs are terminal; the needed AMP repair is
+stable ownership of both inputs and accepted outputs, with an explicit
+physical numerical/workspace trust boundary.

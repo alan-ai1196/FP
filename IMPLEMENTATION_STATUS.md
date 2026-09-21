@@ -18,8 +18,12 @@ Two [passive AMP metadata counterexamples](theory/proofs/AMP_METADATA_CONTINUATI
 now exercise the remaining boundary: the raw physical input shares its
 CountState with the predecessor, and an accepted phase retains the planner's
 own mutable output. Current numerical refusal/checks do not protect these
-aliases across later calls. Two fresh CUDA probes are registered and pending
-at unchanged production7fe0471; the reference value boundary is unaffected.
+aliases across later calls. Both fresh CUDA probes reproduce atab39b56,
+production unchanged from7fe0471, with maximum job2,195,173,376 bytes.
+One refuses with a corrupted physical predecessor; one publishes a correct
+new phase while an old checked plan changes62 to61. Both change earlier
+snapshot/phase metadata behind intact sealed bytes. All jobs are terminal;
+the reference value boundary is unaffected.
 
 Three historical
 [actual CPU counterexamples](theory/proofs/INDEXED_INPUT_ALIAS.md) at a559d7a

@@ -15,7 +15,10 @@ Runtime release follows from this single component boundary.
 
 The remaining [AMP metadata boundary](theory/proofs/AMP_METADATA_CONTINUATION.md)
 now has exact passive witnesses for both an input alias and a later retained
-output alias. Two actual CUDA probes are registered and pending at7fe0471.
+output alias. Both actual CUDA probes reproduce atab39b56, production7fe0471:
+correct refusal leaves a corrupted physical predecessor, while a later
+successful call rewrites an old checked plan. Both damage earlier metadata
+behind intact sealed bytes; all jobs are terminal below4 GiB.
 The physical executor's workspace capability must be included in the
 eventual trust boundary; copying one record field alone is not a complete
 isolation argument.

@@ -27,8 +27,13 @@ apply the frame/refinement analysis to the remaining helper surfaces next.
 That analysis now has [two passive AMP metadata witnesses](theory/proofs/AMP_METADATA_CONTINUATION.md).
 A physical input-count alias survives a correct native bridge refusal;
 a later planner can change its own retained old output, invalidating an
-earlier checked plan while its current plan is correct. Two fresh actual
-CUDA probes are registered at unchanged production7fe0471 and pending.
+earlier checked plan while its current plan is correct. Both fresh actual
+CUDA probes reproduce atab39b56, with production unchanged from7fe0471.
+The count case refuses after physical/history corruption; the later-plan
+case publishes a correct new phase and native update while rewriting an
+old checked plan62 to61. Each changes one old snapshot/phase metadata
+record behind intact sealed bytes. Maximum job2,195,173,376 bytes; all
+terminal without timeout/limit termination.
 They use only the supplied count or retained returned plan, with no tensor
 writes or owner globals. No AMP production repair has yet been made.
 

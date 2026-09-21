@@ -1,7 +1,7 @@
 # AMP metadata must survive rejection and later helper calls
 
-Status: **two exact passive CPU counterexamples; two actual CUDA probes
-registered, pending**. Production remains7fe0471. The repaired reference
+Status: **two exact passive CPU and two actual owned CUDA counterexamples**.
+Actual probes atab39b56 use production unchanged from7fe0471. The repaired reference
 prediction component remains valid in its stated fault class. The broader
 indexed helper boundary is HOLD.
 
@@ -93,5 +93,31 @@ remains fixed while live and every outcome is retained in a new
   and AMP update with the legal history((1,2,0),(0,1,0)); that update should
   remain correct.
 
-These are hypotheses, not actual outcomes borrowed from the passive CPU
-witnesses. They will be resolved before production repair.
+These hypotheses were registered before execution or production repair.
+
+## 5. Actual CUDA A1 result
+
+Both fresh jobs reproduce atab39b56007336ddd0e314ee4dac9c6a74057f11d.
+They exit zero below4 GiB, attach before the first instruction and have no
+timeout or limit termination. Maximum job commitment is2,195,173,376 bytes.
+`FP_INDEXED_AMP_ALIAS_CUDA_A1.json` retains both terminal outcomes.
+
+The physical-input case triggers EXECUTION_FAILED without publishing a
+prediction or revealing a target. The exact reference still holds(0,0,1),
+but the current physical predecessor reads(0,0,-1). An earlier snapshot's
+AMP metadata changes, and one old ordinary:commit record no longer matches
+its unchanged sealed bytes.
+
+The retained-result case publishes a new CHECKED_CUDA_PREFIX_PHASE with the
+correct current forecast. The old ordinary:predict phase remains marked
+checked and reports62 output cells, while its shared execution plan now says61.
+That old snapshot/metadata no longer matches its intact sealed bytes. The
+following actual target still produces the correct complete native and AMP
+update to counts(1,0,1) at cursor2. Thus this witness is temporal historical
+binding failure, with no claim of an incorrect current forecast or learner.
+
+The codec and arithmetic were unchanged. The private reference prediction
+boundary worked as declared; the two surviving AMP sharing edges violate
+the frame premise independently. All jobs are terminal. Do not rerun the
+unchanged probes; repair must address both supplied inputs and retained
+outputs while making the numerical/workspace trust boundary explicit.

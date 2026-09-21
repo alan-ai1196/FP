@@ -1,0 +1,110 @@
+{
+  "status": "FALSIFIED_AMP_METADATA_CONTINUATION_BINDING",
+  "execution_source": "ab39b56007336ddd0e314ee4dac9c6a74057f11d",
+  "registration": {
+    "status": "REGISTERED_BEFORE_ACTUAL_AMP_METADATA_ALIAS_PROBES",
+    "cases": [
+      "physical-input-counts",
+      "later-planner-result"
+    ],
+    "production_anchor": "7fe0471",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "physical_input_hypothesis": "bridge refuses but physical predecessor and old snapshot/phase metadata already changed",
+    "later_result_hypothesis": "a later planner mutates its own retained output; new execution passes while old checked phase no longer matches its sealed bytes",
+    "fault_scope": "supplied count argument or retained returned plan only; no owner globals, stack, tensor writes or codec changes"
+  },
+  "workers": [
+    {
+      "case": "physical-input-counts",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189643776,
+        "peak_job_commit": 2190864384,
+        "user_100ns": 20781250,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15616,
+        "process_creation_100ns": 134344662928131085
+      },
+      "result": {
+        "status": "ACTUAL_AMP_METADATA_ALIAS_COUNTEREXAMPLE",
+        "case": "physical-input-counts",
+        "process_id": 15616,
+        "result": {
+          "case": "physical-input-counts",
+          "status": "ACTUAL_AMP_METADATA_ALIAS_COUNTEREXAMPLE",
+          "reference_native_predecessor_unchanged": true,
+          "earlier_snapshot_AMP_metadata_changed": true,
+          "old_sealed_bytes_unchanged": true,
+          "old_sealed_metadata_mismatches": [
+            "ordinary:commit"
+          ],
+          "current_phase_status": "EXECUTION_FAILED",
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "ordinary_cursor": 1,
+          "target": null,
+          "current_physical_predecessor_counts": [
+            0,
+            0,
+            -1
+          ],
+          "reference_counts": [
+            0,
+            0,
+            1
+          ],
+          "published_new_prediction": false
+        }
+      }
+    },
+    {
+      "case": "later-planner-result",
+      "worker_status": "COUNTEREXAMPLE_REPRODUCED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2193940480,
+        "peak_job_commit": 2195173376,
+        "user_100ns": 21093750,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17852,
+        "process_creation_100ns": 134344662959703925
+      },
+      "result": {
+        "status": "ACTUAL_AMP_METADATA_ALIAS_COUNTEREXAMPLE",
+        "case": "later-planner-result",
+        "process_id": 17852,
+        "result": {
+          "case": "later-planner-result",
+          "status": "ACTUAL_AMP_METADATA_ALIAS_COUNTEREXAMPLE",
+          "reference_native_predecessor_unchanged": true,
+          "earlier_snapshot_AMP_metadata_changed": true,
+          "old_sealed_bytes_unchanged": true,
+          "old_sealed_metadata_mismatches": [
+            "ordinary:predict"
+          ],
+          "current_phase_status": "CHECKED_CUDA_PREFIX_PHASE",
+          "error": null,
+          "ordinary_cursor": 1,
+          "target": null,
+          "published_new_prediction": true,
+          "old_phase_output_cells": 62,
+          "old_plan_output_cells": 61,
+          "old_phase_still_marked_checked": true,
+          "complete_native_and_AMP_update_still_correct": true,
+          "cursor_after_actual_target": 2
+        }
+      }
+    }
+  ]
+}
