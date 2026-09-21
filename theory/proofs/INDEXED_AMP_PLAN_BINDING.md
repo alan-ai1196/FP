@@ -1,6 +1,7 @@
 # A conditional trace check does not bind the declared factor addresses
 
-Status: **EXACT PASSIVE AND ACTUAL OWNED A6 COUNTEREXAMPLE REPRODUCED**.
+Status: **EXACT PASSIVE AND ACTUAL OWNED A6 COUNTEREXAMPLE REPRODUCED;
+COMPLETE PLAN REPAIR IMPLEMENTED AND CPU AUDITED; ACTUAL A7 PENDING**.
 
 The A4 repair independently checks every endpoint and operation against
 the supplied indexed AMP plan. A5 exercises that repaired path successfully.
@@ -94,3 +95,65 @@ Evidence: [exact passive witness](../../evidence/minimal/FP_INDEXED_AMP_PLAN_BIN
 Run `python -X utf8 -B scripts/audit_indexed_amp_plan_binding.py --write`.
 Only the small count/address witness, one differing operation and aggregate
 checks are retained; no complete trace, weights or cache is dumped.
+
+## 4. Composition after independently establishing the plan premise
+
+Let P(x,c) be the registered deterministic plan constructor on owned input x
+and current resource allowance c. The scalar conformance theorem is
+conditional: given plan p, the retained operations and endpoints follow
+the fixed RNE interpretation of p. To conclude the registered transition,
+the owner must also establish p=P(x,c). Numerical agreement with the native
+reference cannot replace that premise, as the witness above proves.
+
+`check_prediction_plan` now reconstructs P with a private trusted builder,
+independently of the replaceable public preparation helper. It requires
+the exact plan class, exact field set and recursively equal types and values
+for every field: n, query, support, positions, nodes, partition heads,
+power tags, table-shape metadata and output cells. Ordinary Python equality
+is insufficient because booleans, integers and rational/float values can
+compare equal. Mutable containers and undeclared fields are also refused.
+The owner checks before numerical entry and after the executor returns,
+before fresh endpoint/schedule interpretation and publication. The second
+check covers a helper that executes honestly and then changes the plan.
+
+This is a functional binding, not an identity token. Two current count
+states can legitimately induce the same plan: counts(0,0,1) and(0,0,2)
+at n3 have identical support and geometry. Fresh reconstruction validates
+either; the executor still reads the independently owned current counts.
+No historical hash or numerical answer is needed. The registered arithmetic
+identity remains bound by the existing immutable CUDA prefix contract.
+
+The trusted base comprises the private deterministic builder, scalar
+interpreter, exact word arithmetic and owner. This is not an attestation
+against arbitrary edits to Python internals. Under that base, plan equality
+plus the conditional trace/endpoint theorem proves the declared physical
+transition; the separate native-coordinate relation then checks its numerical
+accuracy. Failure of any premise leaves no published prediction.
+
+The scalar schedule, word formats, tolerances, output extents and work
+tariff are unchanged. The existing prediction debit is
+`256(n+1)^2(D+n+1)+128(n+1)*output_allowance`, with the separate common
+phase debit of320 per output cell, two relation allowances and evidence
+bytes. Reconstruction makes three builder traversals in total, followed by
+two strict linear comparisons. Geometric scans are O(n^2(D+n)); an elimination
+bucket contains at most2n-2 factors and the final bucket at most n+1.
+Thus tape products are O(n) per summed table cell; every tape addition pays
+four floating outputs, and initial factor cells are O(D). The conservative
+registered tariff covers these extra bounded traversals. It is not a bound
+on elapsed bit complexity, Python heap usage or physical process memory;
+the latter remains independently capped and measured.
+
+The [complete typed audit](../../evidence/minimal/FP_INDEXED_AMP_PLAN_VALIDATION.json)
+validates three independently reconstructed plans with the public helper
+disabled. It refuses27 individual field substitutions,12 type/container
+substitutions, three undeclared fields and three insufficient current output
+allowances. A valid equal plan under distinct counts passes. The unchanged
+exact scalar/native audit passes270 predictions and540 observations, including
+all existing endpoint/operation/gradient attacks.
+
+A7 registers all thirteen existing actual CUDA cases plus the original
+wrong-address fault (must refuse before any floating output) and a new
+post-execution output-extent mutation (must retain honest numerical evidence
+but refuse publication). Their execution is pending; CPU evidence alone
+does not establish the actual owned result. Projected AMP is still separate
+future work, with its own declared schedule and this same plan obligation.

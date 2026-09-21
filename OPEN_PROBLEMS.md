@@ -2,13 +2,13 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The current [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
-must be closed before projected AMP: a helper-returned plan currently serves
-both actual execution and independent RNE interpretation. Exact agreement
-with that plan does not establish its declared factor-address provenance.
-The counterexample has zero native numerical error; actual A6 at783614f
-now reproduces owned acceptance. Bind the full plan to independently owned program,
-counts, query, resource allowance and arithmetic identity before execution.
+The [AMP plan-binding gap](theory/proofs/INDEXED_AMP_PLAN_BINDING.md) has a
+general implemented repair: independently reconstruct every typed plan
+field from owned inputs before execution and after helper return. Actual
+A6's zero-native-error false conformance remains retained. The new exact
+plan audit and unchanged scalar/native audit pass. Actual A7 must now test
+all fifteen registered cases, including wrong-address preparation and
+post-execution plan mutation, before claiming repaired device conformance.
 
 The [finite-future boundary law](theory/proofs/QUERY_BOUNDARY_RESPONSE.md)
 now characterizes exact predictive equivalence for a declared boundary

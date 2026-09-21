@@ -8,13 +8,19 @@ obligation before projected AMP. An exact n3 witness changes a factor's
 count address from2 to0 while keeping its declared support(1,2). All seven
 readout words and native errors remain identical, but the operation trace
 changes. The conditional checker accepts the trace against the altered
-plan and rejects it against the declared plan. Runtime currently supplies
-the same helper-returned plan to both executors. A6 at783614f now reproduces
+plan and rejects it against the declared plan. The prefix through783614f supplies
+the same helper-returned plan to both executors. A6 at783614f reproduces
 actual owned acceptance with CHECKED_CUDA_PREFIX_PHASE, unchanged readout
 and zero native errors. Peak2,126,520,320 bytes stays below4 GiB; the job
 is terminal and its final target is unrevealed. The declared-plan binding
-claim is falsified at that source. Full independent
-plan binding is required, not a special-case check for this address alone.
+claim is falsified at that source. The repair now reconstructs the entire
+typed plan independently before execution and after helper return. Exact
+CPU checks refuse27 field substitutions,12 type/container changes, three
+extra fields and three unfunded plans; equal valid plans under distinct
+current counts pass. The unchanged270-prediction/540-observation arithmetic
+audit passes. A7 registers all thirteen previous CUDA cases plus pre- and
+post-execution plan attacks; actual execution is pending. Complete projected
+AMP remains the next research step after verifying this repaired premise.
 
 **Current owned decoder result, 2026-09-21:**
 [query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) is now implemented

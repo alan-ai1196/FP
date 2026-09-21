@@ -1,0 +1,22 @@
+{
+  "status": "PASS_COMPLETE_AMP_PLAN_BINDING",
+  "complete_fields": [
+    "n",
+    "nodes",
+    "output_cells",
+    "partitions",
+    "positions",
+    "power_tags",
+    "query",
+    "support",
+    "table_shape"
+  ],
+  "valid_independent_reconstructions": 3,
+  "individual_field_substitutions_refused": 27,
+  "equality_coercion_or_mutable_container_substitutions_refused": 12,
+  "undeclared_field_substitutions_refused": 3,
+  "insufficient_current_output_allowance_refused": 3,
+  "equal_plan_under_distinct_current_counts_validated": true,
+  "replacement_helper_calls_during_validation": 0,
+  "scope": "complete typed registered plan relation; no numerical answer or ownership authority from the helper"
+}

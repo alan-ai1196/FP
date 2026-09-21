@@ -6,12 +6,18 @@ The [AMP plan-binding audit](theory/proofs/INDEXED_AMP_PLAN_BINDING.md)
 identifies a missing premise in fixed-forward conformance. A changed count
 address yields the same complete readout but a different operation trace;
 the exact conditional interpreter accepts it when given the changed plan.
-The current owned prefix does not independently reconstruct that plan.
+The prefix through783614f does not independently reconstruct that plan.
 A6 at783614f reproduces actual acceptance with CHECKED_CUDA_PREFIX_PHASE,
 unchanged readout and zero native errors; the declared-plan binding claim
 is falsified. The job is terminal, below4 GiB, with its target unrevealed.
-This does not falsify the native numerical relation in the witness;
-full plan binding must precede projected AMP.
+This does not falsify the native numerical relation in the witness.
+The repair independently reconstructs all nine typed plan fields before
+execution and after helper return. CPU evidence refuses27 field changes,
+12 type/container changes, three undeclared fields and three insufficient
+allowances. Equal valid plans under different current counts pass. The
+existing exact270-prediction/540-observation audit is unchanged. A7's fifteen
+actual CUDA cases are prepared but not yet executed; projected AMP is not
+yet implemented. No scalar schedule, tariff or tolerance has changed.
 
 The [owned query projection](theory/proofs/OWNED_QUERY_PROJECTION.md) now
 executes inside ReferenceCompilerRuntime under a new explicit reference

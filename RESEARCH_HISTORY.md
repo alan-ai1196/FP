@@ -6511,3 +6511,30 @@ the native numerical relation or a statistical/class-complete certificate.
 The proof premise must be repaired by full independent plan binding before
 the new projected physical schedule is introduced. Earlier A4/A5 executed
 results and the A3 endpoint falsification remain retained.
+
+## 193. Supply the complete plan premise without changing the AMP arithmetic (2026-09-21)
+
+The A6 counterexample requires a compositional repair: establish the declared
+input-to-plan relation independently, then apply the existing conditional
+RNE trace/endpoint theorem. The owner now reconstructs every field with a
+private deterministic builder, before execution and after helper return.
+Exact class, field set and recursive primitive types prevent equality
+coercions and unregistered containers. The scalar schedule, tolerances,
+formats, output counts and conservative tariff remain unchanged.
+
+The exact audit refuses27 individual field changes,12 type/container
+substitutions, three undeclared fields and three insufficient allowances,
+with the public helper disabled throughout validation. It also accepts a
+legitimately equal plan under different current count magnitudes; a hash or
+historical identity token is unnecessary. The unchanged numerical audit
+passes270 predictions and540 observations, including all endpoint, operation
+and gradient faults. The private builder, interpreter and owner remain the
+trusted implementation base; arbitrary Python modification is not covered.
+
+A7 registers fifteen actual RTX3090 cases: all thirteen earlier integration
+cases, the original wrong-address preparation fault (must refuse before
+floating execution), and honest execution followed by a changed plan output
+extent (must refuse publication while retaining the actual words). These
+jobs are pending. The projected physical schedule remains future work with
+its own arithmetic declaration. A6 and all earlier outcomes stay retained;
+no Foundation change or class-completeness claim follows.

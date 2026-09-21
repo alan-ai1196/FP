@@ -342,6 +342,11 @@ declared-plan conclusion is withdrawn through that source. See
 [the retained actual counterexample](INDEXED_AMP_PLAN_BINDING.md). The
 successful A4/A5 observations below remain valid for their executed cases.
 
+The implemented repair independently reconstructs every typed plan field
+before numerical entry and after helper return. Its exact plan audit and
+unchanged scalar/native audit pass. A7's fifteen actual workers are pending;
+the replacement proof and trust boundary are in section4 of the same note.
+
 The [owned query projection](OWNED_QUERY_PROJECTION.md) changes reference
 arithmetic while keeping this physical schedule global. Actual A5 atae7f915
 passes all thirteen source-bound workers, including every existing failure

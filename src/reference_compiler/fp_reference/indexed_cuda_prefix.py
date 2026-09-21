@@ -49,6 +49,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
         if kind == 'predict':
             plan = indexed.prepare_prediction(program, before_raw, rules, sources,
                                               output_cap=prefix.contract.phase_output_cells)
+            indexed.check_prediction_plan(plan,program,before_raw,rules,sources,
+                                          output_cap=prefix.contract.phase_output_cells)
         expected_cells = plan.output_cells if kind == 'predict' else 13 if kind == 'observe' else 0
         indexed.allowance(max(1, expected_cells), prefix.contract.phase_output_cells,
                           'indexed CUDA phase output allowance')
@@ -85,6 +87,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if arithmetic.output_cells != expected_cells:
                 raise ContractError('indexed CUDA executed a different output extent schedule')
             if kind == 'predict':
+                indexed.check_prediction_plan(plan,program,before_raw,rules,sources,
+                                              output_cap=prefix.contract.phase_output_cells)
                 actual = indexed.IndexedAmpPrediction(actual_prediction.before, actual_prediction.query,
                     workspace.raw_words((actual_prediction.readout,), readout_buffer)[0])
                 checked = indexed.check_prediction_execution(plan, before_raw, actual,

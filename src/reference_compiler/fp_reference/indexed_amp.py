@@ -105,9 +105,10 @@ class IndexedAmpPlan:
     output_cells: int
 
 
-def prepare_prediction(program, state, rules, sources, *, output_cap):
+def _prepare_prediction(program, state, rules, sources, *, output_cap):
     if type(program) is not IndexedRelation or type(state) is not IndexedAmpState or state.unit_count:
         raise ContractError('owned indexed syntax and committed AMP state required')
+    state.__post_init__()
     if state.encoded.n != program.n:
         raise ContractError('indexed AMP state differs from its program')
     query, _ = program.source_query(rules, sources)
@@ -142,6 +143,34 @@ def prepare_prediction(program, state, rules, sources, *, output_cap):
     allowance(cells, output_cap, 'indexed AMP numeric output allowance')
     return IndexedAmpPlan(program.n, query, support, positions, tuple(tape.nodes),
                           tape.partition_heads, tuple(powers), tuple(shape.items()), cells)
+
+
+def prepare_prediction(program, state, rules, sources, *, output_cap):
+    """Construct a passive plan; its returned binding is checked by Runtime."""
+    return _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
+
+
+def _same_plan_value(actual, expected):
+    # Ordinary Python equality admits False==0 and 1.0==1. The registered
+    # plan consists only of exact primitive types and finite tuples.
+    if type(actual) is not type(expected):
+        return False
+    if type(expected) is tuple:
+        return len(actual) == len(expected) and all(_same_plan_value(a,b) for a,b in zip(actual,expected))
+    return type(expected) in (str,int,bool) and actual == expected
+
+
+def check_prediction_plan(plan, program, state, rules, sources, *, output_cap):
+    """Bind every plan coordinate to independently supplied owned inputs.
+
+    This trusted reconstruction does not invoke the replaceable preparation
+    helper. It checks the declared plan before execution and again before
+    accepting the returned operation trace. No hashes or external plan IDs.
+    """
+    expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
+    if (type(plan) is not IndexedAmpPlan or vars(plan).keys() != vars(expected).keys()
+            or any(not _same_plan_value(value,vars(expected)[key]) for key,value in vars(plan).items())):
+        raise ContractError('indexed AMP plan differs from the declared owned input mapping')
 
 
 @dataclass(frozen=True, eq=False)

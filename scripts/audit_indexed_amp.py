@@ -234,7 +234,7 @@ def check_phases(rt):
 
 
 def worker(case):
-    if case == 'plan-binding':
+    if case in ('plan-binding','executor-plan-binding'):
         from audit_indexed_amp_plan_binding import evaluate_plan
         rt,schema = configuration(3,2)
         step(rt,schema,(1,2,0))
@@ -245,32 +245,42 @@ def worker(case):
         original = amp.prepare_prediction
         honest_plan = original(schema,prior,schema.rules(),schema.source_row(1),output_cap=65536)
         honest,expected_operations = evaluate_plan(honest_plan,prior)
+        physical = amp.execute_prediction
         def substituted(*args,**kwargs):
             plan = original(*args,**kwargs)
             assert plan.support == ((1,2),) and plan.positions == (2,)
             return replace(plan,positions=(0,))
+        def changed_after_execution(plan,*args,**kwargs):
+            result = physical(plan,*args,**kwargs)
+            object.__setattr__(plan,'output_cells',plan.output_cells-1)
+            return result
+        def forbidden(*args,**kwargs):
+            raise AssertionError('a plan with the wrong factor address executed')
         key = before.online.data.active.observation_ids[before.cursor]
-        with patch.object(amp,'prepare_prediction',substituted):
-            result = deliver_context(rt,key,tuple(schema.source_row(1).values()))
-        assert result.status == 'PREDICTED_REFERENCE',result
+        if case == 'plan-binding':
+            with patch.object(amp,'prepare_prediction',substituted),patch.object(amp,'execute_prediction',forbidden):
+                rejects(lambda: deliver_context(rt,key,tuple(schema.source_row(1).values())),RuntimeError)
+        else:
+            with patch.object(amp,'execute_prediction',changed_after_execution):
+                rejects(lambda: deliver_context(rt,key,tuple(schema.source_row(1).values())),RuntimeError)
         after = validate_residency(rt)
         no_device_handles(after)
         phase = after.cuda.phases[-1]
-        assert phase.status == 'CHECKED_CUDA_PREFIX_PHASE'
-        assert phase.execution_plan.positions == (0,) and phase.execution_plan.support == ((1,2),)
-        assert phase.raw_prediction.words == honest.words and phase.raw_operations != expected_operations
-        assert phase.relation.state_error == phase.relation.probability_error == phase.relation.division_error == 0
-        rejects(lambda: amp.check_prediction_execution(honest_plan,prior,phase.raw_prediction,
-            phase.raw_operations,bit_limit=32768))
+        assert phase.status == 'EXECUTION_FAILED' and 'plan differs' in phase.reason
+        if case == 'plan-binding':
+            assert phase.execution_plan.positions == (0,) and phase.execution_plan.support == ((1,2),)
+            assert not phase.raw_operations and phase.output_cells == 0 and phase.raw_prediction is None
+        else:
+            assert phase.raw_prediction.words == honest.words and phase.raw_operations == expected_operations
+            assert phase.execution_plan.output_cells == honest_plan.output_cells-1
+            assert phase.output_cells == honest_plan.output_cells
         assert after.cursor == 1 and after.candidates == before.candidates and after.pending.record.target is None
-        difference = next((k,a,b) for k,(a,b) in enumerate(zip(expected_operations,phase.raw_operations)) if a != b)
-        return {'certificate_claim':'FALSIFIED','scope':'declared factor-address/fixed-forward conformance; native numeric relation still holds',
-            'runtime_status':result.status,'phase_status':phase.status,'actual_prefix':[[1,2,0]],
-            'current_query':[0,1],'declared_factor_positions':[2],'accepted_factor_positions':[0],
-            'unchanged_complete_readout_words':list(honest.words),'first_operation_difference':difference,
-            'native_state_error':'0','native_probability_error':'0','native_division_error':'0',
-            'forward_operations':phase.forward_operations,'output_cells':phase.output_cells,
-            'target_revealed':False,'learner_advances':0,'false_class_or_statistical_certificate':False}
+        assert not after.pending.predictions and after.cuda.current == before.cuda.current
+        return {'certificate_claim':'REFUSED','scope':'complete registered plan binding before execution and after helper return',
+            'attack':case,'runtime_status':'REFUSED_BEFORE_TARGET','phase_status':phase.status,
+            'actual_prefix':[[1,2,0]],'current_query':[0,1],
+            'actual_output_cells':phase.output_cells,'retained_plan_output_cells':phase.execution_plan.output_cells,
+            'target_revealed':False,'published_predictions':0,'learner_advances':0}
     if case == 'projection-boundary':
         rt,schema = configuration(15,14)
         for leaf in range(2,15):
@@ -524,7 +534,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
     parser.add_argument('--worker', choices=('profiles', 'large', 'install', 'closure', 'unfunded', 'target-swap',
-        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding'))
+        'second-commit', 'endpoint-binding', 'gradient-binding', 'trace-binding', 'predecessor-binding', 'old-output', 'projection-boundary', 'plan-binding', 'executor-plan-binding'))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:
