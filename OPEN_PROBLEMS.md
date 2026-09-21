@@ -5,10 +5,12 @@ Only genuinely unresolved problems belong here. Historical problems that were so
 The [indexed AMP path](theory/proofs/OWNED_INDEXED_AMP.md) now has code for
 owned phases, complete coordinate checks, actual-target binding, fresh
 paired persistence and resident installation. Its CPU schedule/native
-audit passes, while the seven source-bound actual CUDA workers are pending.
-Execute and attack that owned path next; implementation intent or CPU
-rounding simulation cannot establish actual device/resource/transport
-correctness. Native-class search/fallback and model usefulness remain open.
+audit passes. Five A1 CUDA workers pass; the n256 and install fixtures stop
+at an undersized evidence frame and insufficient registered fresh horizon.
+Both refusals are explained exactly and retained. Run only those two cases
+under the corrected A2 registrations next. Actual large-state and transport
+correctness remain unverified; native-class search/fallback and model
+usefulness also remain open.
 
 The [finite-basis indexed bridge](theory/proofs/INDEXED_PHASE_BRIDGE.md) now
 provides a conditional numerical relation for every native reference

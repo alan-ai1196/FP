@@ -111,7 +111,7 @@ def configuration(n, length, *, profiles=(), persistence=None, law=False, instal
     arena = 32 << 20
     cuda = IndexedCudaPrefixContract(CudaStorageContract(arena, 2*arena,
         {role: (arena, 2*arena) for role in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
-        n=n, phase_output_cells=65536, phase_evidence_bytes=(2 << 20) if n > 32 else 262144,
+        n=n, phase_output_cells=65536, phase_evidence_bytes=(4 << 20) if n > 32 else 262144,
         install=CudaInstallContract() if install else None)
     cuda = replace(cuda, **cuda_changes)
     rt = ReferenceCompilerRuntime(cfg, schema, online=online,
@@ -191,15 +191,15 @@ def worker(case):
     if case == 'install':
         persistence = PersistenceContract(F(1, 2), tuple(PersistenceRule(name, 1, 20, F(1, 4), F(3, 4), F(3), 12, 16,
             score_path=path) for name,path in (('ref',REFERENCE_PATH),('cuda',CUDA_PATH))))
-        rt, schema = configuration(2, 26, persistence=persistence, law=True, install=True)
+        rt, schema = configuration(2, 36, persistence=persistence, law=True, install=True)
         for _ in range(16):
             step(rt, schema, (0, 1, 1))
         candidate = rt.construct_candidate(schema)
         assert candidate.status == 'BUILT_REFERENCE'
         r = rt.admit_reference_persistence(candidate.candidate_id, 'ref')
         c = rt.admit_cuda_persistence(candidate.candidate_id, 'cuda')
-        assert r.identity_id and c.identity_id
-        assert all(i.status == 'ACTIVE' for i in rt.snapshot().persistence_identities)
+        assert r.identity_id and c.identity_id, (r, c)
+        assert all(i.status == 'ACTIVE' for i in rt.snapshot().persistence_identities), rt.snapshot().persistence_identities
         for _ in range(8):
             step(rt, schema, (0, 1, 0))
             if rt.paired_cuda_persistence_result(r.identity_id, c.identity_id).status == 'PAIRED_CUDA_CROSSED':

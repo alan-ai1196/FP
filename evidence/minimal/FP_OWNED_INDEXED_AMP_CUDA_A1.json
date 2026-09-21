@@ -1,0 +1,248 @@
+{
+  "status": "COMPLETE_WITH_FAILURE",
+  "registration": {
+    "source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+    "cases": [
+      "profiles",
+      "large",
+      "install",
+      "closure",
+      "unfunded",
+      "target-swap",
+      "second-commit"
+    ],
+    "process_commit_cap": 4294967296,
+    "deadline_ms_per_worker": 900000,
+    "scope": "actual owned indexed ReferenceCompilerRuntime/AMP phases, resource and installation boundaries; no model advantage or class-optimality claim",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "normalizer_cap": 18,
+    "activation_cap": 8,
+    "reference_model": "exact indexed counts and positive partitions",
+    "physical_model": "independent counts, half products, single readout/gradient in owned CUDA arena",
+    "old_job_policy": "all earlier terminal model/component jobs stay terminal"
+  },
+  "workers": [
+    {
+      "case": "profiles",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2234925056,
+        "peak_job_commit": 2236157952,
+        "user_100ns": 42031250,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 29580,
+        "process_creation_100ns": 134344359835688094
+      },
+      "raw_result_bytes": 378,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 29580,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1666,
+          "actual_half_words": 72,
+          "cursor": 8,
+          "packed_current_bytes": 15930130,
+          "consumed_arena_bytes": 14656,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "large",
+      "worker_status": "FAILED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2232786944,
+        "peak_job_commit": 2234105856,
+        "user_100ns": 54062500,
+        "kernel_100ns": 13281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 23176,
+        "process_creation_100ns": 134344359893669516
+      },
+      "raw_result_bytes": 742,
+      "result": {
+        "status": "FAILED",
+        "process_id": 23176,
+        "case": "large",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 296, in main\n    report['result'] = worker(args.worker)\n                       ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 187, in worker\n    step(rt, schema, event)\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 128, in step\n    assert result.status == 'PREDICTED_REFERENCE', result\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: PredictionResult(status='UNRESOLVED', observation_id='indexed-event:0', cursor=0, predictions=(), reason='actual CUDA phase evidence exceeds its prepaid frame')\n"
+      }
+    },
+    {
+      "case": "install",
+      "worker_status": "FAILED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2202771456,
+        "peak_job_commit": 2203992064,
+        "user_100ns": 28750000,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21452,
+        "process_creation_100ns": 134344359947422036
+      },
+      "raw_result_bytes": 462,
+      "result": {
+        "status": "FAILED",
+        "process_id": 21452,
+        "case": "install",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 296, in main\n    report['result'] = worker(args.worker)\n                       ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 201, in worker\n    assert r.identity_id and c.identity_id\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      }
+    },
+    {
+      "case": "closure",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190258176,
+        "peak_job_commit": 2191568896,
+        "user_100ns": 22656250,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26056,
+        "process_creation_100ns": 134344359992988395
+      },
+      "raw_result_bytes": 358,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 26056,
+        "case": "closure",
+        "result": {
+          "checked_phases": 10,
+          "actual_floating_words": 191,
+          "actual_half_words": 0,
+          "cursor": 3,
+          "packed_current_bytes": 3195996,
+          "consumed_arena_bytes": 1752,
+          "closure": "SEALED_CUDA_STREAM",
+          "class_decisions": 0
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1855537152,
+        "peak_job_commit": 1856843776,
+        "user_100ns": 16093750,
+        "kernel_100ns": 6718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15804,
+        "process_creation_100ns": 134344360025086462
+      },
+      "raw_result_bytes": 275,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 15804,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "retained_received_context": true,
+          "executor_entries": 0,
+          "failed_phase_retained": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2188713984,
+        "peak_job_commit": 2190016512,
+        "user_100ns": 18281250,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22532,
+        "process_creation_100ns": 134344360048984723
+      },
+      "raw_result_bytes": 292,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 22532,
+        "case": "target-swap",
+        "result": {
+          "false_pending_target": 1,
+          "retained_actual_target": 0,
+          "failed_phase": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "owned_target_binding": "REFUSED"
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "EXECUTED_AND_CHECKED",
+      "execution_source": "665c81d29fd42b3be5d3e5d31b61e745bab745c5",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189787136,
+        "peak_job_commit": 2191097856,
+        "user_100ns": 19218750,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12408,
+        "process_creation_100ns": 134344360076994128
+      },
+      "raw_result_bytes": 272,
+      "result": {
+        "status": "PASS_OWNED_INDEXED_CUDA",
+        "process_id": 12408,
+        "case": "second-commit",
+        "result": {
+          "commit_calls": 2,
+          "status": "UNRESOLVED",
+          "retained_actual_target": 0,
+          "observed_lineages_retained": 2,
+          "published_advances": 0
+        }
+      }
+    }
+  ]
+}

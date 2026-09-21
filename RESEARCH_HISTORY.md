@@ -6097,3 +6097,30 @@ installation, finite closure, unfunded entry, target substitution and second
 commit failure. **They have not run at this source.** No new device outcome,
 complete release, model benefit or CERTIFIED_COMPLETE is asserted. All old
 jobs remain terminal; Foundation R4 and ERC-1 are unchanged.
+
+## 177. Owned indexed CUDA exposes two correctly enforced registration limits (2026-09-21)
+
+Actual [attempt A1](evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A1.json) executes
+source665c81d in seven separate 4-GiB/900-second jobs. Five workers pass.
+The n5 profile path checks58 phases,1666 actual floating words including72
+half words, four profile events and optimizer clocks8/10. Its job peak is
+2,236,157,952 bytes. The empty CUDA strategy seals with ten phases/191 words.
+Unfunded numeric entry, substituted target and failure on the second CUDA
+commit retain their required context/target/observed states while advancing
+no published learners. The target-swap case retains actual target0 and the
+rejected physical pending target1 in the same failed owned phase.
+
+The n256 worker fails at its first prediction's evidence retention: its
+2-MiB frame is too small. Exact packing gives652,999 bytes for one complete
+zero CountState, so the four retained occurrences already need2,611,996
+bytes. No world table or arithmetic failure is implicated. The installation
+worker correctly refuses persistence admission: a26-event schedule at
+cursor16 cannot accommodate the declared20-event future horizon. An exact
+CPU Runtime replay reproduces that refusal.
+
+All seven jobs are terminal without timeout or job-limit termination. A1
+and both failures remain canonical evidence. The corrected fixture funds a
+4-MiB n256 frame and36 declared installation events, changing no learner,
+tolerance or already specified data prefix. Attempt A2 is registered only
+for these two incomplete cases; its outcome is pending. No complete release,
+resource advantage, class certificate or Foundation/ERC change follows.

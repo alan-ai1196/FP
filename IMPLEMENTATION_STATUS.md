@@ -10,8 +10,12 @@ cap18. Existing paired evidence and resident installation are extended to
 these complete records; a historical class selection remains optional.
 270 CPU forecasts/540 observations match the independent component and
 full native coordinates. The complete indexed reference audit and three
-affected native CPU batteries pass. **The seven registered actual CUDA
-workers remain pending**; no physical execution/release result is claimed.
+affected native CPU batteries pass. Actual A1 at665c81d passes five workers:
+58 profile phases/1666 floating words including72 half words, finite closure,
+and all three failure controls. Its n256 worker refuses an undersized2-MiB
+frame; installation admission refuses a horizon longer than the remaining
+schedule. Both are retained. The corrected4-MiB/36-event registrations await
+attempt A2 on those two cases only. No complete release is claimed.
 
 The [owned indexed reference](theory/proofs/OWNED_INDEXED_REFERENCE.md) is
 now implemented in `ReferenceCompilerRuntime`. Its fixed machine admits

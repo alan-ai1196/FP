@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "exact retained CountState extent lower bound and replayed reference admission refusal; no new GPU execution",
+  "one_n256_zero_count_state_bytes": 652999,
+  "four_required_prediction_count_occurrences_bytes": 2611996,
+  "original_phase_frame_bytes": 2097152,
+  "corrected_phase_frame_bytes": 4194304,
+  "original_install_schedule_events": 26,
+  "admission_cursor": 16,
+  "registered_fresh_horizon": 20,
+  "corrected_install_schedule_events": 36
+}

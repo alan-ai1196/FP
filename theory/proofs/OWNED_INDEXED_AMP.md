@@ -1,7 +1,7 @@
 # Owned indexed AMP execution and resident transport
 
-Status: **SCOPED REFINEMENT ARGUMENT AND EXACT CPU SCHEDULE AUDIT;
-SOURCE-BOUND ACTUAL CUDA AUDIT PENDING**.
+Status: **SCOPED REFINEMENT ARGUMENT; EXACT CPU AND FIVE OWNED CUDA CASES
+PASS; TWO REGISTRATION REFUSALS RETAINED**.
 
 This extends [owned indexed reference execution](OWNED_INDEXED_REFERENCE.md)
 inside the same `ReferenceCompilerRuntime`. It implements a new declared
@@ -172,6 +172,33 @@ before resume to a 4-GiB job with a 900-second deadline. Source and complete
 inputs must be committed first. Every attempt has its own retained report;
 failed attempts are never overwritten or silently restarted.
 
-**No new actual GPU outcome is claimed at this source.** All earlier model
-and standalone component jobs remain terminal. This is not a new complete
-CPU/CUDA release or a model-science improvement.
+### First actual attempt
+
+[Attempt A1](../../evidence/minimal/FP_OWNED_INDEXED_AMP_CUDA_A1.json), source
+`665c81d`, is terminal with five passing workers and two retained failures.
+Every worker was attached before resume and finished without timeout or job
+limit termination. The profiles case checks 58 actual phases, 1666 floating
+words including 72 half words, four profile events and final optimizer
+clocks 8/10. Its job peak is 2,236,157,952 bytes. Finite closure checks ten
+phases/191 words and seals an empty-strategy stream. Unfunded numeric entry,
+target substitution and second CUDA commit failure all preserve the
+required context/target/history and advance no published learners.
+
+The n256 worker reaches its first prediction but cannot retain that phase
+in the registered 2-MiB evidence frame. This is a real funded-prefix
+refusal, not an arithmetic or world-table failure. One complete zero
+CountState has exactly 652,999 packed bytes; the four occurrences in this
+complete prediction phase alone require 2,611,996 bytes. The fresh admission
+fixture also correctly refuses: at cursor16 its 26-event schedule has only
+ten remaining observations, while the declared horizon requires twenty.
+An exact CPU replay reproduces that admission refusal without a GPU rerun.
+
+[The admission audit](../../evidence/minimal/FP_INDEXED_AMP_ADMISSION_AUDIT.json)
+retains these extents and horizon checks. The corrected registration funds
+a 4-MiB n256 frame and declares 36 events for the installation fixture. The
+learner, tolerances, data prefix and phase implementation are unchanged.
+Only the two incomplete cases are registered for a new attempt:
+`scripts/run_indexed_amp_audit.py --attempt 2 --cases large install`.
+Its actual outcome remains pending. A1 is not overwritten or restarted.
+All earlier model/component jobs also remain terminal. No new complete
+CPU/CUDA release or model-science improvement is claimed.

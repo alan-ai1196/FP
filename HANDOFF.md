@@ -9,11 +9,16 @@ CUDA arena, complete phase frames, actual target, fresh paired evidence and
 resident installation paths. The exact CPU audit passes 270 predictions
 and 540 observations, including full native coordinates. The complete
 indexed reference audit and three affected native CPU batteries also pass.
-**Actual CUDA verification is pending.** The next action is the seven
-source-bound workers in `scripts/run_indexed_amp_audit.py --attempt 1`, each
-under 4 GiB/900 seconds. Retain every attempt. No new GPU result, complete
-release or class certificate follows from the CPU audit. Existing jobs stay
-terminal; Foundation R4 and ERC-1 remain frozen.
+Actual attempt A1 at `665c81d` is terminal: profiles, finite closure and all
+three failure controls pass. The n256 prediction correctly exceeds its
+2-MiB frame; four required CountState occurrences alone need 2,611,996 bytes.
+Installation admission correctly refuses a horizon20 with only ten events
+remaining. The corrected fixture funds a 4-MiB frame and a 36-event schedule.
+**Next:** `scripts/run_indexed_amp_audit.py --attempt 2 --cases large install`,
+under the same 4-GiB/900-second jobs. Retain A1 and do not rerun its five
+completed cases. Full indexed device/install verification remains pending;
+no new complete release or class certificate is claimed. Foundation R4 and
+ERC-1 remain frozen.
 
 **Current owned reference result, 2026-09-21:**
 [owned indexed execution](theory/proofs/OWNED_INDEXED_REFERENCE.md) now runs

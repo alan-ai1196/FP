@@ -194,8 +194,11 @@ implements an independent count learner and half/single schedule in the
 existing CUDA owner. Exact CPU checks cover 270 forecasts and 540 observed
 states. Its full-domain stored masses lie in [1,9], with conservative
 normalizer bound18. Existing fresh paired evidence and resident transport
-are connected, but actual CUDA auditing is pending. No new semantic action,
-class completeness or physical execution result follows from this source.
+are connected. Actual A1 at665c81d passes profiles, finite closure and three
+failure boundaries, while correctly refusing an undersized n256 evidence
+frame and insufficient fresh horizon. Corrected registrations for those
+two cases await A2. No new semantic action, class completeness or complete
+release is claimed.
 
 ## 0. Research object and root principle
 
