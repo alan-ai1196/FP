@@ -6730,3 +6730,47 @@ before other state. Even ideal order selection plus uniform-frame enlargement
 cannot recover that realization. The lower bound leaves reversible encodings,
 nonuniform paid frames and other solvers open; it does not alter the native
 learner or numerical relation. All original model failures remain retained.
+
+## 201. Retain complete phase records through a paid lossless encoding (2026-09-21)
+
+The old uniform-frame lower bound is an encoding obstruction. A fixed
+typed grammar now uses minimal varints, exact string interning and short
+sequence tags. Its independent decoder reconstructs every byte of the old
+record, including full counts, clocks, plans, operation words, gradients,
+identities, lineage and failure fields. No sufficient-statistic claim or
+free continuation decoder is assumed.
+
+On the stated indexed domain, a node plus its power flag and a raw scalar
+operation row each need at most twelve bytes apart from string definitions.
+Independently encoding the remaining metadata yields E<=12(N+C)+B. At
+existing node/output caps, B<=262136 suffices for a 4-MiB frame including
+its header. Four hard passive n16 RNE records have B=4507--4781 and shrink
+from 22.7--26.7 MB to 2.91--3.42 MB with exact whole-record byte equality.
+Their optimized orders are not paid Runtime executions; one still needs
+65574 outputs above the 65536 cap.
+
+Exact evidence includes 3195 typed round trips, eleven malformed streams,
+five resource/prewrite refusals, all 19216 single-bit changes and 2402
+truncations of a complete small phase. Runtime declares and prepays the
+codec, retains the full frame, confines the writer through a fixed-size
+view, checks the decoded record and padding, and uses its paid immutable
+sealer before acceptance. Two seals, ten resource refusals and six writer
+faults pass in the real retention hook with a mocked numerical owner.
+Aggregate input length is checked before legacy size traversal; oversized
+raw strings refuse before copying. Per-string limits alone would not
+bound that preflight work.
+
+Current primitive and retention regressions, unchanged exact 270/540 RNE
+execution and 33 complete frame-preservation fixtures pass. The old storage
+script's pre-indexed-constructor identity predicate is already false at
+the pre-codec source e8fa568; that failed predicate is retained explicitly.
+The reused component audit instead binds constructor, snapshot and sealer
+ASTs unchanged from e8fa568, without altering the old experiment's scope.
+
+Seventeen actual fresh CUDA jobs are preregistered: matched generic/indexed
+profiles, projected profiles and fresh installation, n256, existing
+numerical/plan adversaries, five writer faults and a matched legacy/binary
+n16/c2 seed16 model prefix. Only codec and tariff differ in matched pairs.
+Full frame/padding residency, numerical/structural caps, strong controls
+and original A1 failures remain. Execution is pending; no whole-memory
+improvement, all-n16 completion or new release follows.

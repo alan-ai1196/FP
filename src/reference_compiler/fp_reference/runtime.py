@@ -22,6 +22,7 @@ from .indexed_relation import IndexedRelation, DecodeAllowance
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine, IndexedPredictionPlan)
 from .encoding import packed_size, write_packed, fragments
+from . import phase_encoding as phase_codec
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
 from .policy import (CompilerPolicy, CudaCompilerPolicy, CompilerPolicyState, CompilerPolicySnapshot,
@@ -744,6 +745,12 @@ class ReferenceCompilerRuntime:
         # Unencoded simplex commits check both normalizers and their proposal,
         # then the endpoint, prefix and retained trace: six captures in total.
         charge = 320*cfg.phase_output_cells+2*self._cuda.relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        if cfg.evidence_encoding == phase_codec.ENCODING_ID:
+            # Both admission and final retention prepay guarded traversals,
+            # byte generation, independent expanded-byte comparison and the
+            # full padding check. This is a primitive tariff, not a Python
+            # heap, bit-time or wall-time bound; the host job remains binding.
+            charge += 32*phase_codec.EXPANDED_CAP+16*cfg.phase_evidence_bytes
         likelihood_workspace = 0
         if cfg.likelihood_encoding is not None:
             # The registered alternative lowering owns its actual program/Gamma
@@ -788,6 +795,25 @@ class ReferenceCompilerRuntime:
             self._buffers[workspace_id] = bytearray(likelihood_workspace)
 
         def write(value):
+            if cfg.evidence_encoding == phase_codec.ENCODING_ID:
+                if len(frame) <= 8:
+                    raise ResourceExceeded('binary phase has no funded encoded prefix')
+                expected = phase_codec.extent(value,encoded_cap=len(frame)-8)
+                header = bytes(frame[:8])
+                # Keep a live fixed-size export during the helper call so
+                # ordinary bytearray resizing cannot create an unowned tail.
+                # Release this mutable view before immutable finalization.
+                with memoryview(frame) as view:
+                    measured = phase_codec.write(value,view,start=8)
+                    if (type(measured) is not phase_codec.PhaseExtent or
+                            any(type(v) is not int for v in vars(measured).values()) or
+                            measured != expected or len(frame) != cfg.phase_evidence_bytes or frame[:8] != header):
+                        raise ContractError('binary phase writer changed its complete extent or header')
+                    phase_codec.check(view[8:8+expected.encoded_bytes],value)
+                    if any(view[8+expected.encoded_bytes:]):
+                        raise ContractError('binary phase writer changed reserved padding')
+                frame[:8] = expected.encoded_bytes.to_bytes(8,'big')
+                return
             size = packed_size(value)
             if size+8 > len(frame):
                 raise ResourceExceeded('actual CUDA phase evidence exceeds its prepaid frame')

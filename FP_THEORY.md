@@ -211,6 +211,17 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [lossless phase representation](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
+preserves the entire old typed record through an independent streaming
+left inverse. Its scoped indexed bound E<=12(N+C)+B removes the old
+65-byte-per-node encoding obstruction for the audited records without
+removing a native coordinate or changing an arithmetic schedule. Runtime
+prepays the codec and checks all decoded bytes before acceptance. CPU
+evidence passes; actual CUDA integration is registered and pending. Equal
+information does not imply equal physical histories, free decoding or
+identical resource-constrained continuations. Foundation and ERC-1 remain
+unchanged; join/output limits still require a paid solver.
+
 The [query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 now derives exact tape/output minima for the fixed positive bucket class
 and proves why reordering plus uniform-frame enlargement cannot recover

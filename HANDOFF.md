@@ -3,6 +3,24 @@
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
 **Current resource result, 2026-09-21:**
+The [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md) now has
+an independent streaming left inverse for every byte of the old typed
+record. Full indexed records obey E<=12(N+C)+B under the stated bounds.
+Four hard passive n16 records shrink from 22.7--26.7 MB to 2.91--3.42 MB,
+with B=4507--4781. These are CPU RNE candidate orders, not executed Runtime
+continuations; the 65574-output fixture still exceeds the output cap.
+Runtime declares the codec, prepays its work and checks the full decoded
+record before paid immutable sealing and acceptance. CPU primitive,
+bit-fault, bound and retention audits pass; the retention fixture explicitly
+mocks its numerical owner. The unchanged 270-prediction/540-observation RNE
+audit also passes. Seventeen actual jobs are preregistered in
+`scripts/run_phase_encoding.py`, including matched profiles, fresh
+installation, writer faults and the unchanged global n16/c2/16 model worker.
+Actual execution is pending. Commit every input before launch; keep
+HEAD/dependencies fixed and retain all outcomes. Full frames and padding
+remain paid. No all-n16 recovery or whole-memory improvement is claimed.
+
+**Preceding order/encoding restriction, 2026-09-21:**
 [the exact query-order resource law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 settles the next proposed shortcuts in the actual model frontier. Current
 factor scopes depend only on the eliminated set, yielding exact additive
@@ -20,7 +38,8 @@ already above the 8-GiB packed cap. Thus reordering and uniform frame
 enlargement cannot by themselves finish this registered realization.
 The next attack is a reversible, paid evidence representation and a solver
 with its complete resource/numerical bridge. No production order, codec,
-cap or tolerance has changed. Preserve all A1 failures; do not launch a
+cap or tolerance changed in that audit; the codec above is a separate
+extension. Preserve all A1 failures; do not launch a
 frame-only retry or reopen Foundation to hide these resource limits.
 
 **Current model result, 2026-09-21:**

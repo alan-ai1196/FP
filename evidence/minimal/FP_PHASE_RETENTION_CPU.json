@@ -1,0 +1,27 @@
+{
+  "status": "PASS_OWNED_PHASE_RETENTION_HOOK_CPU",
+  "scope": "real Runtime retention hook with explicitly mocked numerical owner; no actual CUDA authority",
+  "successful_complete_frames": 2,
+  "resource_refusals": [
+    "frame-1",
+    "frame-2",
+    "frame-3",
+    "frame-4",
+    "frame-5",
+    "frame-6",
+    "frame-7",
+    "frame-8",
+    "final-frame",
+    "prepaid-work"
+  ],
+  "writer_fault_refusals": [
+    "payload",
+    "header",
+    "padding",
+    "extent",
+    "extent-type",
+    "resize"
+  ],
+  "old_immutable_snapshot_preserved": true,
+  "all_actual_buffers_remain_owned": true
+}

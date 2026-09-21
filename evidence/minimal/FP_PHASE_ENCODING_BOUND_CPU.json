@@ -1,0 +1,87 @@
+{
+  "status": "PASS_INDEXED_PHASE_BYTE_BOUND",
+  "law": "E <= 12*(N+C)+B",
+  "scope": "fixed scalar indexed records with N<=262144, at most128 strings, and stated metadata allowance; not arbitrary FP records",
+  "rows": [
+    {
+      "case": [
+        16,
+        "iid-c2",
+        16
+      ],
+      "cursor": 366,
+      "query": [
+        4,
+        15
+      ],
+      "tape_nodes": 210817,
+      "floating_outputs": 61478,
+      "encoded_bytes": 2966634,
+      "non_tape_record_bytes": 4684,
+      "removed_string_definition_allowance": 88,
+      "metadata_allowance_B": 4781,
+      "encoded_upper_bound": 3272321,
+      "four_MiB_sufficient_at_registered_N_C_caps": true
+    },
+    {
+      "case": [
+        16,
+        "iid-c2",
+        17
+      ],
+      "cursor": 328,
+      "query": [
+        4,
+        1
+      ],
+      "tape_nodes": 207353,
+      "floating_outputs": 61478,
+      "encoded_bytes": 2943076,
+      "non_tape_record_bytes": 4510,
+      "removed_string_definition_allowance": 88,
+      "metadata_allowance_B": 4607,
+      "encoded_upper_bound": 3230579,
+      "four_MiB_sufficient_at_registered_N_C_caps": true
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        18
+      ],
+      "cursor": 276,
+      "query": [
+        2,
+        5
+      ],
+      "tape_nodes": 246407,
+      "floating_outputs": 65574,
+      "encoded_bytes": 3417988,
+      "non_tape_record_bytes": 4412,
+      "removed_string_definition_allowance": 88,
+      "metadata_allowance_B": 4509,
+      "encoded_upper_bound": 3748281,
+      "four_MiB_sufficient_at_registered_N_C_caps": true
+    },
+    {
+      "case": [
+        16,
+        "iid-c4",
+        19
+      ],
+      "cursor": 297,
+      "query": [
+        5,
+        7
+      ],
+      "tape_nodes": 224753,
+      "floating_outputs": 40998,
+      "encoded_bytes": 2913532,
+      "non_tape_record_bytes": 4438,
+      "removed_string_definition_allowance": 60,
+      "metadata_allowance_B": 4507,
+      "encoded_upper_bound": 3193519,
+      "four_MiB_sufficient_at_registered_N_C_caps": true
+    }
+  ]
+}

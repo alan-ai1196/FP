@@ -27,7 +27,7 @@ from audit_reference_events import forward_oracle
 from audit_reference_construction import validate_residency
 from audit_float64_runtime import replay
 from audit_cuda_runtime import (audit_snapshot,cuda_contract,raw_model,raw_model_prediction,
-    model_initial,model_predict,model_observe,model_commit,HALF,SINGLE,pack,output_cells,forward_operations)
+    model_initial,model_predict,model_observe,model_commit,HALF,SINGLE,pack,output_cells,forward_operations,phase_payload)
 from fp_reference import ReferenceCompilerRuntime,CudaCompilerPolicy,CudaCompilationStep
 from fp_reference.cuda_installation import CudaInstallContract
 from fp_reference.persistence import CUDA_PATH,FLOAT64_PATH
@@ -309,7 +309,7 @@ def failed_prediction_audit(rt):
         assert record.forward_operations==(forward_operations(graph,rt.contract.semantics) if kind=='predict' else 0)
         assert record.output_cells==output_cells(kind,graph,rt.contract.semantics,rt.online_contract.learner)<=snapshot.cuda.contract.phase_output_cells
         frame=buffers[record.object_id];size=int.from_bytes(frame[:8],'big')
-        assert size>0 and frame[8:8+size]==pack(record) and not any(frame[8+size:])
+        assert size>0 and phase_payload(snapshot,frame)==pack(record) and not any(frame[8+size:])
         assert len(frame)==snapshot.cuda.contract.phase_evidence_bytes and record.arena_phase is not None
     value=expected[last.object_id];ref=last.reference_prediction
     error=max(abs(a-b) for key in ('values','excesses','masses') for a,b in zip(getattr(ref,key),value[key]))

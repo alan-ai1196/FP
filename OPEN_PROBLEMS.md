@@ -2,6 +2,15 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
+The first reversible candidate now has a
+[complete byte left inverse and indexed upper bound](theory/proofs/LOSSLESS_PHASE_ENCODING.md).
+It fits four hard passive records into the existing frame without dropping
+a field. The open question is actual owned execution: seventeen registered
+fresh jobs test generic/indexed/projected paths, fresh installation, writer
+faults and the matched n16/c2/16 model frontier. A codec size bound does not
+prove whole-stream recovery. Uniform frames remain paid, and the table
+and output obstructions below still apply.
+
 The current model frontier requires a paid evidence representation and
 resource-aware decoder with a complete numerical/ownership bridge. The
 [exact order-class law](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
@@ -10,9 +19,9 @@ under the current encoding and 8-GiB packed cap. On the n16 tapes, 147 query
 cuts have no order within the table caps, four exceed the output cap at its
 exact minimum, and all four streams have a uniform-frame lower bound above
 the whole packed budget. These settled restrictions do not imply an
-all-decoder impossibility. Reversible encodings, paid nonuniform retention
-and other solvers remain open; their correctness and whole-resource costs
-must be proved before claiming recovery. The fixed native learner and
+all-decoder impossibility. Complete execution with a paid representation,
+nonuniform retention or another solver remains open; their correctness and
+whole-resource costs must be established before claiming recovery. The fixed native learner and
 declared numerical relation need no semantic patch.
 
 The [projected AMP schedule](theory/proofs/PROJECTED_INDEXED_AMP.md) now

@@ -24,6 +24,9 @@ from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
     power_schedule)
 from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
 from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
+from .phase_encoding import ENCODING_ID as BINARY_PHASE_ENCODING_ID
+
+LEGACY_PHASE_ENCODING_ID = 'typed-reference-json-v4'
 
 
 @dataclass(frozen=True)
@@ -33,6 +36,7 @@ class CudaPrefixContract:
     probability_atol: F
     phase_output_cells: int = 4096
     phase_evidence_bytes: int = 131072
+    evidence_encoding: str = field(default=LEGACY_PHASE_ENCODING_ID, kw_only=True)
     execution_identity: tuple = ('2.12.0+cu132', '7661cd9c6b841b62b7f411aa52ec51f05457263b',
                                  '13.2', 'NVIDIA GeForce RTX 3090', (8, 6))
     install: CudaInstallContract | None = None
@@ -49,11 +53,16 @@ class CudaPrefixContract:
             else 'prepaid-likelihood-factorization-coordinates-and-CUDA-output-v1', FORWARD_ID)
 
     def __post_init__(self):
+        if (type(self.evidence_encoding) is not str or self.evidence_encoding not in
+                (LEGACY_PHASE_ENCODING_ID,BINARY_PHASE_ENCODING_ID)):
+            raise ContractError('fixed registered CUDA evidence encoding required')
         if self.likelihood_encoding is not None:
             if type(self.likelihood_encoding) is not LikelihoodEncodingContract:
                 raise ContractError('registered immutable likelihood encoding contract required')
             self.likelihood_encoding.__post_init__()
         backend, work_model, forward = self._arithmetic_ids()
+        if self.evidence_encoding == BINARY_PHASE_ENCODING_ID:
+            work_model += '+prepaid-lossless-phase-expansion-v1'
         if (self.backend_id not in ('', backend) or self.forward_id != forward
                 or self.work_model not in ('', work_model)):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')

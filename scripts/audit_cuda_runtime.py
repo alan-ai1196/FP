@@ -21,6 +21,8 @@ sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts')]
 from fp_reference import ReferenceCompilerRuntime
 from fp_reference import cuda_learner as gpu
 from fp_reference.cuda_prefix import CudaPrefixContract, CudaRunManifest, widen, output_cells
+from fp_reference.cuda_prefix import LEGACY_PHASE_ENCODING_ID, BINARY_PHASE_ENCODING_ID
+from fp_reference.phase_encoding import decoded_fragments
 from fp_reference.cuda_range import forward_operations
 from fp_reference.cuda_storage import CudaStorageContract, CudaStorageUnresolved
 from fp_reference.float64_bridge import Float64Contract
@@ -42,6 +44,17 @@ def cuda_contract(**changes):
     size = 16 << 20
     return replace(CudaPrefixContract(CudaStorageContract(size, 2*size,
         {role: (size, 2*size) for role in ('deployment', 'compiler')}), F(1, 100), F(1, 100)), **changes)
+
+
+def phase_payload(snapshot,frame):
+    """Independent audit view of a complete frame's declared typed record."""
+    size = int.from_bytes(frame[:8],'big')
+    assert 0<size<=len(frame)-8
+    kind = getattr(snapshot.cuda.contract,'evidence_encoding',LEGACY_PHASE_ENCODING_ID)
+    if kind == LEGACY_PHASE_ENCODING_ID:
+        return frame[8:8+size]
+    assert kind == BINARY_PHASE_ENCODING_ID
+    return b''.join(decoded_fragments(memoryview(frame)[8:8+size]))
 
 
 def configuration():
@@ -114,7 +127,7 @@ def audit_snapshot(runtime):
         expected[record.object_id] = result
         frame = buffers[record.object_id]
         size = int.from_bytes(frame[:8], 'big')
-        assert size > 0 and frame[8:8+size] == pack(record)
+        assert size > 0 and phase_payload(snapshot,frame) == pack(record)
         assert len(frame) == snapshot.cuda.contract.phase_evidence_bytes
         assert not any(frame[8+size:])
         assert record.relation is not None
@@ -292,7 +305,7 @@ def failure_case(case):
         assert snapshot.pending.record.target is None
         frame = dict(snapshot.buffers)[record.object_id]
         size = int.from_bytes(frame[:8], 'big')
-        assert frame[8:8+size] == pack((record.object_id, 'ADMITTED_CUDA_PHASE'))
+        assert phase_payload(snapshot,frame) == pack((record.object_id, 'ADMITTED_CUDA_PHASE'))
         assert len(frame) == 4800 and snapshot.halted
         return {'actual_evidence_frame_cap_cannot_leave_an_unowned_checked_phase': True,
                 'admitted_frame_and_actual_device_outputs_retained': True}

@@ -1,0 +1,100 @@
+{
+  "status": "PASS_PHASE_ENCODING_CPU_REGRESSIONS",
+  "aggregate_length_preflight_refusals": 2,
+  "oversized_raw_string_refused_before_copy": true,
+  "current_primitive_audit": {
+    "typed_round_trips": 3195,
+    "encoded_bytes": 20157,
+    "exact_legacy_bytes_reconstructed": 92769,
+    "malformed_streams_refused": 11,
+    "resource_and_prewrite_refusals": 5,
+    "source_code_points_and_primitive_types_distinct": true
+  },
+  "immutable_frame_audit": {
+    "status": "EXACT_FRAME_PRESERVATION_PASS",
+    "frames": 33,
+    "full_frame_bytes_compared": 17904,
+    "all_256_byte_values_exercised": true,
+    "prior_snapshot_unchanged_after_next_frame": true,
+    "new_snapshot_reuses_every_old_immutable_frame": true,
+    "unchanged_snapshot_source": {
+      "baseline": "e8fa568254ac7674fe7ed5e49282b97fa443d5fd",
+      "constructor_snapshot_and_sealer_AST_unchanged_since_precodec": true,
+      "old_storage_experiment_anchor": "b0c409c2c248e437450aaa7b9f081771303b22de",
+      "old_constructor_predicate": "FAILS_ALREADY_BEFORE_CODEC_DUE_TO_INDEXED_EXTENSION; no old-scope rerun claim"
+    },
+    "pre_copy_refusals": [
+      "copy-residency",
+      "copy-work"
+    ],
+    "both_actual_buffers_remain_owned_after_faults": [
+      "prepare-release:ResourceExceeded",
+      "prepare-release:RuntimeError",
+      "prepare-router:ResourceExceeded",
+      "prepare-router:RuntimeError"
+    ],
+    "no_model_execution_or_certificate": true
+  },
+  "owned_retention_hook": {
+    "status": "PASS_OWNED_PHASE_RETENTION_HOOK_CPU",
+    "scope": "real Runtime retention hook with explicitly mocked numerical owner; no actual CUDA authority",
+    "successful_complete_frames": 2,
+    "resource_refusals": [
+      "frame-1",
+      "frame-2",
+      "frame-3",
+      "frame-4",
+      "frame-5",
+      "frame-6",
+      "frame-7",
+      "frame-8",
+      "final-frame",
+      "prepaid-work"
+    ],
+    "writer_fault_refusals": [
+      "payload",
+      "header",
+      "padding",
+      "extent",
+      "extent-type",
+      "resize"
+    ],
+    "old_immutable_snapshot_preserved": true,
+    "all_actual_buffers_remain_owned": true
+  },
+  "unchanged_exact_RNE_bridge": {
+    "status": "PASS",
+    "scope": "exact RNE schedule and complete native coordinates; no actual GPU or owned provenance claim",
+    "groups": [
+      {
+        "n": 3,
+        "profiles": 27,
+        "ordered_queries": 9
+      },
+      {
+        "n": 5,
+        "profiles": 9,
+        "ordered_queries": 3
+      }
+    ],
+    "predictions": 270,
+    "observations": 540,
+    "half_precision_scalar_outputs": 279,
+    "maximum_gradient_error": "49/188743680",
+    "independently_bound_target_forgery": "REFUSED",
+    "insufficient_whole_domain_range_cap": "UNRESOLVED",
+    "independent_endpoint_and_normalization_checks": {
+      "status": "PASS",
+      "prediction_word_substitutions_refused": 21,
+      "operation_word_substitutions_refused": 189,
+      "gradient_word_substitutions_refused_including_inactive_diagonal_forms": 18,
+      "changed_trace_length_or_operation_refused": 9,
+      "division_errors": [
+        "0",
+        "1/41943040",
+        "0"
+      ],
+      "proper_probability_error_with_unchanged_rounded_probability": "REFUSED_AT_ZERO_TOLERANCE"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "status": "PASS_LOSSLESS_TYPED_PHASE_CPU",
+  "codec": "typed-phase-varints-interned-strings-short-sequences-v1",
+  "scope": "exact byte reconstruction and passive CPU RNE records; no Runtime, GPU, whole-memory or installation claim",
+  "primitive": {
+    "typed_round_trips": 3195,
+    "encoded_bytes": 20157,
+    "exact_legacy_bytes_reconstructed": 92769,
+    "malformed_streams_refused": 11,
+    "resource_and_prewrite_refusals": 5,
+    "source_code_points_and_primitive_types_distinct": true
+  },
+  "phase": {
+    "complete_record_bit_substitutions_refused": 19216,
+    "complete_record_truncations_refused": 2402,
+    "full_phase_scope": "passive exact RNE candidate orders, not registered or executed CUDA phases",
+    "model_prefix_records": [
+      {
+        "case": [
+          16,
+          "iid-c2",
+          16
+        ],
+        "cursor": 366,
+        "query": [
+          4,
+          15
+        ],
+        "tape_nodes": 210817,
+        "floating_outputs": 61478,
+        "encoded_bytes": 2966634,
+        "legacy_bytes": 23255926,
+        "string_definitions": 85,
+        "point_numerical_relation": "PASS_POINT_RELATION",
+        "fixed_old_output_cap_fits": true
+      },
+      {
+        "case": [
+          16,
+          "iid-c2",
+          17
+        ],
+        "cursor": 328,
+        "query": [
+          4,
+          1
+        ],
+        "tape_nodes": 207353,
+        "floating_outputs": 61478,
+        "encoded_bytes": 2943076,
+        "legacy_bytes": 22997299,
+        "string_definitions": 85,
+        "point_numerical_relation": "PASS_POINT_RELATION",
+        "fixed_old_output_cap_fits": true
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          18
+        ],
+        "cursor": 276,
+        "query": [
+          2,
+          5
+        ],
+        "tape_nodes": 246407,
+        "floating_outputs": 65574,
+        "encoded_bytes": 3417988,
+        "legacy_bytes": 26693458,
+        "string_definitions": 85,
+        "point_numerical_relation": "PASS_POINT_RELATION",
+        "fixed_old_output_cap_fits": false
+      },
+      {
+        "case": [
+          16,
+          "iid-c4",
+          19
+        ],
+        "cursor": 297,
+        "query": [
+          5,
+          7
+        ],
+        "tape_nodes": 224753,
+        "floating_outputs": 40998,
+        "encoded_bytes": 2913532,
+        "legacy_bytes": 22661585,
+        "string_definitions": 83,
+        "point_numerical_relation": "PASS_POINT_RELATION",
+        "fixed_old_output_cap_fits": true
+      }
+    ]
+  }
+}

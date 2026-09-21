@@ -27,7 +27,7 @@ from fp_reference.semantics import ArithmeticUnresolved, evaluate
 from audit_simplex_learner import fixture
 from audit_reference_construction import rejects, validate_residency
 from audit_cuda_learner import model_initial, model_predict, model_observe, q, SINGLE
-from audit_cuda_runtime import no_device_handles, raw_model, raw_model_prediction
+from audit_cuda_runtime import no_device_handles, raw_model, raw_model_prediction, phase_payload
 from fp_reference.cuda_range import forward_operations
 from fp_reference.cuda_prefix import output_cells
 from likelihood_information import rank
@@ -344,7 +344,7 @@ def audit_snapshot(runtime, *, expected_failure=None, pre_attack_models=()):
         graph, kind = graphs[record.program_id], record.phase.split(':')[1]
         frame = buffers[record.object_id]
         size = int.from_bytes(frame[:8], 'big')
-        assert size > 0 and frame[8:8+size] == pack(record)
+        assert size > 0 and phase_payload(snapshot,frame) == pack(record)
         assert len(frame) == snapshot.cuda.contract.phase_evidence_bytes and not any(frame[8+size:])
         if record.status != 'CHECKED_CUDA_PREFIX_PHASE':
             assert expected_failure is not None and observed_record == snapshot.cuda.phases[-1]

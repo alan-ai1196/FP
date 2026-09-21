@@ -31,7 +31,8 @@ from fp_reference.policy import CudaCompilerPolicy
 from fp_reference.profile import ProfileSpec
 from audit_indexed_runtime import fixture, literal, check_state as check_native_state
 from audit_reference_construction import rejects, validate_residency
-from audit_cuda_runtime import no_device_handles
+from audit_cuda_runtime import no_device_handles, phase_payload
+from fp_reference.encoding import pack
 from ingress_audit_support import deliver_context
 import indexed_phase_bridge as component
 import count_learner_encoding as native_counts
@@ -203,9 +204,13 @@ def step(rt, schema, event):
 def check_phases(rt, *, projected=False):
     snapshot = validate_residency(rt)
     no_device_handles(snapshot)
+    buffers = dict(snapshot.buffers)
     words = half = phases = 0
     for record in snapshot.cuda.phases:
         assert record.status == 'CHECKED_CUDA_PREFIX_PHASE', record
+        frame = buffers[record.object_id]
+        size = int.from_bytes(frame[:8],'big')
+        assert phase_payload(snapshot,frame)==pack(record) and not any(frame[8+size:])
         kind = record.phase.split(':')[-1]
         assert type(record.raw_state) is amp.IndexedAmpState
         if kind == 'predict':

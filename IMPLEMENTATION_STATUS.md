@@ -2,6 +2,18 @@
 
 ## Current implementation state (2026-09-21)
 
+The optional [lossless phase codec](theory/proofs/LOSSLESS_PHASE_ENCODING.md)
+is integrated with a fixed contract/work identity, full paid frames and
+independent whole-record byte comparison before immutable sealing and
+acceptance. Under the stated indexed bounds E<=12(N+C)+B, four passive
+hard n16 records have B=4507--4781 and encode in 2.91--3.42 MB instead of
+22.7--26.7 MB. CPU primitive, bit-fault, bound and retention tests pass;
+the retention fixture mocks its numerical owner. The unchanged exact
+270-prediction/540-observation bridge also passes. Seventeen fresh actual
+CUDA jobs are registered and pending, including a matched n16/c2/16 model
+prefix. Arithmetic, orders, tolerances and frame/table/output caps remain
+unchanged. This supplies no complete-stream or new full-release result.
+
 The passive [query-order resource audit](theory/proofs/QUERY_ORDER_RESOURCE_FRONTIER.md)
 now gives exact tape/output minima over the declared bucket-order class,
 with both lexicographic objectives checked against 87,422 compiled orders.
@@ -11,7 +23,8 @@ enlarging uniform frames: 147 prefix queries have no order within the table
 caps, four exceed the output cap even at their minimum, and the typed-plan
 uniform-frame lower bound exceeds 8 GiB on every n16 tape. This is a passive
 solver/encoding frontier result. Runtime still uses its original declared
-orders, frames and caps; a paid representation/solver bridge is outstanding.
+orders, frames and caps; the optional codec above has actual integration
+pending and a paid solver bridge remains outstanding.
 
 The [indexed model experiment](experiments/joint_uncertainty/INDEXED_MODEL_RESULTS.md)
 completes all 16 source-bound jobs at caa66f1. Both schedules seal all four
