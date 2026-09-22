@@ -4,10 +4,12 @@
 pass, including both n16 width recoveries, n256 controls, fresh/install and
 continued learning. The nineteenth case fails because its test creates a
 second CUDA owner in one process; its allocator refusal is retained.
-The pending six-job A2 continuation separates funded control and refusal
-into fresh processes, then checks both scratch paths and malformed orders.
-Run `scripts/audit_paid_order_cuda.py --attempt 2` only after committing
-all inputs. Production is unchanged; do not repeat the18 passing cases.
+A2 retains a passing fresh funded control and a refusal-fixture failure:
+an audit-only git subprocess exceeded the two-process Windows job limit
+before CUDA initialization. The parent now checks source identity; A3 reuses
+that completed control and registers the five remaining boundary jobs.
+Run `scripts/audit_paid_order_cuda.py --attempt 3` only after committing
+all inputs. Production is unchanged; do not repeat the19 passing jobs.
 
 **Canonical status (2026-09-13): THEORY AND EXPERIMENT RESOURCE CONTRACT FROZEN; REFERENCE/CPU AND RTX 3090 AMP BASELINE FROZEN; PROSPECTIVE STRATEGY EXTENSION AUDITED; REGISTERED EXPERIMENTS UNHELD WITHIN THEIR SCOPES.**
 

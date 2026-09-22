@@ -7284,3 +7284,12 @@ source; it proves no solver funding defect and leaves the later four cases
 unrun. A2 registers separate fresh funded control and refusal jobs plus
 those four remaining cases. No production source changes or repetition of
 the18 passing cases is warranted. All A1 jobs are terminal.
+
+A2 at7f96595 passes its fresh funded control. The refusal fixture then
+fails before CUDA initialization: an audit-only git subprocess exceeds
+the two-process Windows job limit. The parent already owns the source
+check; keep it there and reuse the terminal funded-control artifact.
+A3 registers the five outstanding boundary cases with the exact predeclared
+cap4354016255, one below the observed prior-debit total4354016256. The3456-unit
+search fee and all production code remain unchanged. A2 is terminal and
+its failed audit is retained separately.

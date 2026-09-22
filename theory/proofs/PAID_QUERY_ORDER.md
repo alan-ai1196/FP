@@ -2,7 +2,7 @@
 
 Status: **packed algorithm proved and exhaustively audited; reference
 Runtime prototype and passive AMP integration pass scoped CPU checks;
-scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 continuation registered**.
+scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A3 continuation registered**.
 Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
 
 ## 1. A bounded representation of the existing exact DP
@@ -252,3 +252,12 @@ funded control and one-unit-short refusal, both scratch continuations and
 the two malformed orders. Its resource cap is predeclared as the control's
 prior-debit total minus one. Production source remains byte-unchanged from
 ad68440; the18 passing cases are not repeated.
+
+A2 at7f96595 retains one passing fresh funded control: its search debit is
+3456 and total prior deployment work4354016256. Its refusal worker fails
+before CUDA initialization because its audit-only git subprocess exceeds
+the Windows job's two-process limit. The source check moves to the parent;
+A3 consumes the terminal control artifact and sets work cap4354016255.
+No control, arithmetic, allowance or production implementation is changed.
+Both earlier fixture failures remain retained; only the five outstanding
+boundary cases are registered in A3.

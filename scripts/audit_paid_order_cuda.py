@@ -28,6 +28,8 @@ EXTRA = ('width-recovery', 'projected-width-recovery', 'search-class-refusal', '
 CASES = owned.FAULTS+tuple('integration-'+case for case in INTEGRATION)+EXTRA
 A2_CASES = ('search-funding-control', 'search-funding-refusal', 'scratch-frame',
             'projected-scratch-frame', 'missing-order', 'bool-order')
+A3_CASES = A2_CASES[1:]
+CONTROL_SOURCE = '7f965952a17fd331ea5a8bb262bbdc1ca07084ae'
 
 
 def preserved(rt, before):
@@ -100,8 +102,10 @@ def funding():
     # The control lives in a distinct fresh job. Its registered one-unit
     # deficit selects a resource allowance, never a native numerical value.
     journal = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A2.json').read_text())
-    assert journal['execution_source'] == runner.registration.model.git('rev-parse', 'HEAD')
-    assert len(journal['workers']) == 1
+    # Parent preflight binds unchanged production to this terminal control.
+    # Do not spawn git inside the two-process Windows execution job.
+    assert journal['execution_source'] == CONTROL_SOURCE
+    assert journal['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE' and len(journal['workers']) == 2
     row = journal['workers'][0]
     assert row['case'] == 'search-funding-control' and row['worker_status'] == 'PASS'
     job = row['completed_job']
@@ -255,9 +259,17 @@ def preflight():
         job = row['completed_job']
         assert job['attached_before_resume'] and not job['timed_out'] and not job['limit_terminated_processes']
         assert job['peak_job_commit'] <= indexed.CAP
-    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A2_CONTINUATION', 'cases': A2_CASES,
+    a2 = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A2.json').read_text())
+    assert a2['execution_source'] == CONTROL_SOURCE and a2['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+    assert len(a2['workers']) == 2 and a2['workers'][0]['worker_status'] == 'PASS'
+    assert a2['workers'][1]['worker_status'] == 'FAILED'
+    assert 'WinError 1816' in a2['workers'][1]['result']['traceback']
+    assert not runner.registration.model.git('diff', CONTROL_SOURCE, '--', 'src/reference_compiler')
+    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A3_CONTINUATION', 'cases': A3_CASES,
         'previous_source': old['execution_source'], 'retained_A1_passes': 18,
         'retained_A1_failure': 'two-owner funding fixture refused default allocator state; no production failure inferred',
+        'retained_A2_control': CONTROL_SOURCE,
+        'retained_A2_failure': 'refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization',
         'funding_protocol': 'separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one',
         'job_cap': indexed.CAP, 'deadline_ms': 900000, 'source': 'all execution inputs committed at launch HEAD',
         'search_class': 'lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate',
@@ -271,8 +283,8 @@ def preflight():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
-    parser.add_argument('--attempt', type=int, choices=(2,))
-    parser.add_argument('--worker', choices=A2_CASES)
+    parser.add_argument('--attempt', type=int, choices=(3,))
+    parser.add_argument('--worker', choices=A3_CASES)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:
@@ -288,7 +300,7 @@ if __name__ == '__main__':
     elif args.preflight:
         print(json.dumps(preflight(), indent=2))
     elif args.attempt is not None:
-        runner.matrix(args.attempt, script=__file__, cases=A2_CASES, journal_prefix='FP_PAID_ORDER_CUDA',
+        runner.matrix(args.attempt, script=__file__, cases=A3_CASES, journal_prefix='FP_PAID_ORDER_CUDA',
             registration_fn=preflight, production_anchor='HEAD', result_status='PASS_ACTUAL_PAID_QUERY_ORDER',
             final_status='PASS_ACTUAL_PAID_QUERY_ORDER', worker_status='PASS')
     else:
