@@ -2,25 +2,30 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**Current frontier (2026-09-23): bind the paid order solver's scratch extent before CUDA.**
-The [paid order-search prototype](theory/proofs/PAID_QUERY_ORDER.md) now exists
-in Runtime. Its real packed table needs12*2^r bytes, at most393216;128432
-independent exhaustive objective checks pass. Work is debited before each
-search. The complete reference regression, including n256 and fresh
-persistence, passes with search enabled. On the same28-event K(2,14) history,
-fixed order refuses query(2,3); paid order answers the independent32768-world
-forecast while retaining all120 counts. Both passive AMP variants pass280
-predictions/560 observations, and11919 projected tapes match native sums.
+**Current frontier (2026-09-23): run the registered paid-order CUDA gate.**
+The [paid order-search implementation](theory/proofs/PAID_QUERY_ORDER.md)
+uses actual12*2^r-byte tables and prior work debits. All128432 exhaustive
+structural comparisons pass through its writable views; the complete owned
+reference regression, including n256 and fresh persistence, passes. On the
+same28-event K(2,14) history it recovers the query blocked by fixed order,
+retaining all120 counts and matching an independent32768-world exact sum.
 
-**The supplied scratch boundary is falsified, so new actual CUDA remains HOLD.**
-A solver can extend its supplied bytearray, then resize its retained old
-handle during a later call. Runtime publishes two correct native forecasts
-while billing48 bytes for50. `FP_ORDER_WORKSPACE_RESIZE_CPU.json` retains
-this actual CPU counterexample. The needed repair is an owner-held buffer
-export that outlives every solver view, with immutable snapshot copies;
-an after-call size check cannot undo the already unpaid allocation.
-No Foundation action or numerical relaxation follows. All current CPU
-jobs are terminal; no actual new-order CUDA job has been launched.
+**The scratch counterexample is preserved at03a200f; its capacity repair passes CPU.**
+The original supplied bytearray could grow from48 to50 bytes without a new
+resource charge. Runtime now holds a private export for the owner's lifetime
+and supplies a separate solver view. In-call, later-handle, released-view
+and between-call resize attempts all fail; contents remain writable and
+old snapshots immutable. `FP_ORDER_WORKSPACE_PINNED_CPU.json`,
+`FP_QUERY_ORDER_VIEW_STORAGE.json` and `FP_PAID_ORDER_PINNED_REFERENCE.json`
+retain the scoped checks. Foundation/ERC-1 and numerical limits are unchanged.
+
+The23-job registration is `scripts/audit_paid_order_cuda.py --attempt 1`.
+It includes both width recoveries, full native/AMP learning, fresh/install,
+funding/class/order refusal and scratch continuations. Commit all inputs
+before launch; keep source fixed while live and preserve every outcome.
+No actual new-order CUDA result is claimed yet. The global n256 control is
+fixed-order; enabled global n>16 is unresolved, while projected n256 can
+search small local blocks. Full indexed release and model science stay HOLD.
 
 **Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)

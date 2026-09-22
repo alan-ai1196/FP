@@ -2,7 +2,7 @@
 
 Status: **packed algorithm proved and exhaustively audited; reference
 Runtime prototype and passive AMP integration pass scoped CPU checks;
-prototype scratch-resize counterexample reproduced; actual CUDA HOLD**.
+scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual CUDA registered, not yet run**.
 Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
 
 ## 1. A bounded representation of the existing exact DP
@@ -90,7 +90,7 @@ n/E/query and occurs before the first DP entry. Reference and physical
 searches are paid separately in their fixed event roles. The table bytes
 are the algorithm's real working storage, not an unused accounting dummy.
 Failure retains the received context/target, paid work, workspace and all
-previous native state. The current unpinned extent defect is given below.
+previous native state. The original unpinned-extent defect and its repair are given below.
 
 Only an immutable order proposal reaches the complete builder. Its
 permutation, joins/live cells, arithmetic, integer/exponent envelope,
@@ -151,10 +151,10 @@ refuse, while a fully rebuilt alternative passes only the expanded class.
 Separate fixed-schedule regressions remain retained. No device run is
 inferred from these passive arithmetic checks.
 
-## 5. The prototype's remaining counterexample: mutable extent authority
+## 5. Counterexample at03a200f: mutable extent authority
 
 `audit_order_workspace_frame.py --expect unbounded` reproduces a real CPU
-Runtime mismatch in this prototype. The solver receives Runtime's actual
+Runtime mismatch in the03a200f prototype. The solver receives Runtime's actual
 `bytearray`, extends it by one byte, and returns the honest order. During
 the next solver call, it resizes the retained old backing handle again.
 Both native predictions and the intervening native update are correct;
@@ -182,3 +182,42 @@ The claim will be scoped to the supplied-view/backing-handle operations,
 excluding arbitrary process-memory access and owner introspection. It will
 not be a Python sandbox or a total-host-heap theorem. No semantic resize
 action, new native state or weakened numerical limit is justified.
+
+## 6. Lifetime-bound scratch capacity
+
+Runtime now retains a private memoryview over the paid backing bytearray.
+Each solver call receives a separate view, released on exit. The owner
+view is never supplied to the solver or to snapshots. The helper may retain
+the backing object, mutate its contents, or release its own view; none of
+these operations releases the owner's export. Therefore the backing extent
+cannot grow or shrink by the documented bytearray operations while the
+resource owner is live. Its reserved payload remains exactly the ledger
+extent through success, refusal, later calls and installation. Public
+snapshots copy it to immutable bytes. Arbitrary owner introspection,
+process-memory writes and helper-created unrelated allocations remain
+outside this supplied-capability statement.
+
+`FP_ORDER_WORKSPACE_PINNED_CPU.json` tests two honest predictions with
+in-call and retained-handle resize attacks, helper-view release and
+between-call clear attempts. All six extent attacks refuse; legitimate
+scratch writes succeed, old snapshots remain unchanged, and billed/actual
+payloads both remain48 bytes. The initial negative assertion accidentally
+restored a test byte after two toggles; the probe now writes distinct call
+indices. No production correction was needed for that assertion.
+
+`FP_QUERY_ORDER_VIEW_STORAGE.json` repeats all128432 structural comparisons
+through writable views, retaining bytearray maximum-class checks. Six
+additional malformed/read-only/released view types refuse before writes.
+`FP_PAID_ORDER_PINNED_REFERENCE.json` repeats the complete owned reference,
+fresh persistence, funding and K(2,14) recovery audit after the representation
+change. Its funding spy sees a distinct helper view of the actual owned
+backing buffer, preceded by the declared work debit.
+
+`scripts/audit_paid_order_cuda.py` registers23 fresh4-GiB/900-second jobs:
+retired producer ports, four fresh numerical faults, both profiles and
+fresh/install paths, projected n256/closure/refusals, the fixed global n256
+control, both n16 width recoveries, global n17 class refusal, insufficient
+physical search funding, both scratch continuations and two malformed
+orders. Global n256 is explicitly fixed-order because the searched global
+class ends at n16. Every source is committed before launch; failures and
+limits remain evidence. This registration is not actual CUDA evidence.

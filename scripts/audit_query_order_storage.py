@@ -27,7 +27,8 @@ def adapter(n, support, query, join_cap=4096, live_cap=32768, objective='outputs
         # The production kernel still exposes ArithmeticUnresolved.
         raise ValueError(str(exc)) from exc
     buffer = buffers.setdefault(size, bytearray(b'\xa5'*size+TAIL))
-    result = packed.search(n, support, query, join_cap, live_cap, buffer, objective=objective)
+    with memoryview(buffer) as borrowed:
+        result = packed.search(n, support, query, join_cap, live_cap, borrowed, objective=objective)
     assert bytes(buffer[size:]) == TAIL
     return None if result is None else {'order': result.order,
         'partition_only_output_cells': result.output_cells, 'partition_only_tape_nodes': result.tape_nodes,
@@ -88,20 +89,55 @@ def large():
     return rows
 
 
+def view_guards():
+    rows = []
+    for name in ('readonly', 'strided', 'signed', 'multidimensional', 'short', 'released'):
+        backing = bytearray(b'\xa5'*96)
+        if name == 'readonly':
+            view = memoryview(backing).toreadonly()
+        elif name == 'strided':
+            view = memoryview(backing)[::2]
+        elif name == 'signed':
+            view = memoryview(backing).cast('b')
+        elif name == 'multidimensional':
+            view = memoryview(backing).cast('B', shape=[2, 48])
+        elif name == 'short':
+            view = memoryview(backing)[:47]
+        else:
+            view = memoryview(backing)
+            view.release()
+        before = bytes(backing)
+        try:
+            packed.search(4, ((0, 1), (1, 2)), (0, 3), 4096, 32768, view)
+        except ResourceExceeded:
+            pass
+        else:
+            raise AssertionError('invalid scratch view accepted: '+name)
+        assert bytes(backing) == before
+        view.release()
+        rows.append(name)
+    return {'invalid_views_refused_before_writes': rows,
+            'exhaustive_adapter': 'writable contiguous byte view',
+            'maximum_class_adapter': 'bytearray'}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     with patch.object(oracle, 'subset_costs', adapter):
         complete = oracle.small_audit()
     report = {'status': 'PASS_PACKED_QUERY_ORDER_STORAGE',
         'scope': 'passive exact structural search with actual packed DP bytes; no Runtime debit, precision, GPU or installation authority',
         'complete_independent_tape_enumeration': complete,
-        'guard_cases': guards(), 'maximum_class_cases': large(),
+        'guard_cases': guards(), 'view_guards': view_guards(), 'maximum_class_cases': large(),
         'row_bytes': 12, 'maximum_free_vertices': 15, 'maximum_scratch_bytes': 393216,
         'work_model': packed.WORK_MODEL, 'outside_extent_and_reused_buffer_checks': 'PASS'}
-    if args.write:
-        (ROOT/'evidence/minimal/FP_QUERY_ORDER_STORAGE.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+    if args.write or args.output:
+        output = args.output or ROOT/'evidence/minimal/FP_QUERY_ORDER_STORAGE.json'
+        assert not output.exists(), 'retain each source-bound outcome separately'
+        output.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, indent=2))
 
 

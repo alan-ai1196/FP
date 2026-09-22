@@ -60,7 +60,9 @@ def funding():
         events = [e for e in current.resources['events'] if 'query-order-search' in e[-1]]
         assert events and dict(events[-1][4])['work'] == query_order.search_work(n, len(support), query)
         key = next(k for k, _ in current.buffers if 'query-order-storage' in k)
-        assert workspace is seed._buffers[key]
+        owned = seed._buffers[key]
+        assert type(workspace) is memoryview and workspace is not owned
+        assert workspace.obj is owned.obj and len(workspace) == len(owned)
         observed.append((n, len(workspace), dict(events[-1][4])['work']))
         return original(n, support, query, join, live, workspace, **kwargs)
     with patch.object(query_order, 'search', paid):
@@ -194,8 +196,11 @@ def cpu():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--write', action='store_true')
+    parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     report = cpu()
-    if args.write:
-        (ROOT/'evidence/minimal/FP_PAID_QUERY_ORDER_CPU.json').write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
+    if args.write or args.output:
+        output = args.output or ROOT/'evidence/minimal/FP_PAID_QUERY_ORDER_CPU.json'
+        assert not output.exists(), 'retain each source-bound outcome separately'
+        output.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, indent=2))

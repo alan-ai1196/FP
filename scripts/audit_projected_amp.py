@@ -182,14 +182,18 @@ def worker(case):
         # Reuse the full original fixtures and assertions. Only their declared
         # physical contract and independent expected-plan audit change.
         original = legacy.configuration
+        forward = []
         def configuration(*args,**kwargs):
             rt,schema = original(*args,projected=True,**kwargs)
-            assert rt._cuda.contract.forward_id == projected.FORWARD_ID
+            expected = projected.ORDERED_FORWARD_ID if rt._cuda.contract.order_search else projected.FORWARD_ID
+            assert rt._cuda.contract.forward_id == expected
+            forward.append(expected)
             return rt,schema
         with patch.object(legacy,'configuration',configuration), \
                 patch.object(legacy,'check_phases',partial(legacy.check_phases,projected=True)):
             result = legacy.worker(case)
-        return {**result,'declared_forward_id':projected.FORWARD_ID}
+        assert forward and len(set(forward)) == 1
+        return {**result,'declared_forward_id':forward[0]}
     if case == 'star':
         rt,schema = legacy.configuration(15,15,projected=True)
         for leaf in range(2,15):

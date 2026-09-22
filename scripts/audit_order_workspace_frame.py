@@ -21,7 +21,7 @@ def probe(expect):
     before = rt.snapshot()
     assert all(type(b) is bytes for _, b in before.buffers)
     old_storage = next(b for k, b in before.buffers if 'query-order-storage' in k)
-    retained, attempts = [], []
+    retained, attempts, continuation_checks = [], [], []
     original = query_order.search
     def changed(n, support, query, join, live, workspace, **kwargs):
         backing = workspace.obj if type(workspace) is memoryview else workspace
@@ -33,13 +33,32 @@ def probe(expect):
         except BufferError:
             attempts.append('RESIZE_BLOCKED')
         retained.append(backing)
-        return original(n, support, query, join, live, workspace, **kwargs)
+        result = original(n, support, query, join, live, workspace, **kwargs)
+        if expect == 'bounded':
+            # Contents are genuinely writable, and the helper can release its
+            # own view. Neither operation transfers the owner's resize right.
+            workspace[-1] = len(retained)
+            workspace.release()
+            try:
+                backing.extend(b'x')
+            except BufferError:
+                continuation_checks.append('OWN_VIEW_RELEASE_CANNOT_UNPIN_OWNER')
+            else:
+                raise AssertionError('releasing the solver view enabled resizing')
+        return result
     history = ((0, 1, 0),)
     with patch.object(query_order, 'search', changed):
         for k in range(2):
             assert predict(rt, schema, (0, 1)).status == 'PREDICTED_REFERENCE'
             expected, _ = native(schema, history, (0, 1))
             assert rt.snapshot().pending.predictions[0][1].materialize(scalar_cap=1000) == expected
+            if expect == 'bounded':
+                try:
+                    retained[0].clear()
+                except BufferError:
+                    continuation_checks.append('BETWEEN_CALLS_RESIZE_BLOCKED')
+                else:
+                    raise AssertionError('retained backing resized between calls')
             if k == 0:
                 assert rt.observe(0).status == 'OBSERVED_REFERENCE'
                 history += ((0, 1, 0),)
@@ -53,12 +72,14 @@ def probe(expect):
         assert attempts == ['RESIZED', 'RESIZED'] and len(value) == billed+2 and mismatch == 2
     else:
         assert attempts == ['RESIZE_BLOCKED', 'RESIZE_BLOCKED'] and len(value) == billed and mismatch == 0
+        assert continuation_checks == ['OWN_VIEW_RELEASE_CANNOT_UNPIN_OWNER',
+            'BETWEEN_CALLS_RESIZE_BLOCKED']*2 and value != old_storage
     return {'status': 'UNPAID_SCRATCH_RESIZE_COUNTEREXAMPLE' if expect == 'unbounded' else 'PASS_PINNED_SCRATCH_FRAME',
         'scope': 'actual CPU Runtime; supplied scratch and a later retained backing handle only; no owner globals or native-input mutation',
         'attempts': attempts, 'billed_scratch_bytes': billed, 'actual_scratch_bytes': len(value),
         'unpaid_payload_bytes': mismatch, 'published_correct_native_forecasts': 2,
         'ordinary_cursor': after.cursor, 'next_target_revealed': False,
-        'earlier_snapshot_bytes_unchanged': True}
+        'earlier_snapshot_bytes_unchanged': True, 'later_extent_checks': continuation_checks}
 
 
 if __name__ == '__main__':

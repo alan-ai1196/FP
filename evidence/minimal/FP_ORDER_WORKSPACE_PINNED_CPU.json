@@ -1,0 +1,21 @@
+{
+  "status": "PASS_PINNED_SCRATCH_FRAME",
+  "scope": "actual CPU Runtime; supplied scratch and a later retained backing handle only; no owner globals or native-input mutation",
+  "attempts": [
+    "RESIZE_BLOCKED",
+    "RESIZE_BLOCKED"
+  ],
+  "billed_scratch_bytes": 48,
+  "actual_scratch_bytes": 48,
+  "unpaid_payload_bytes": 0,
+  "published_correct_native_forecasts": 2,
+  "ordinary_cursor": 2,
+  "next_target_revealed": false,
+  "earlier_snapshot_bytes_unchanged": true,
+  "later_extent_checks": [
+    "OWN_VIEW_RELEASE_CANNOT_UNPIN_OWNER",
+    "BETWEEN_CALLS_RESIZE_BLOCKED",
+    "OWN_VIEW_RELEASE_CANNOT_UNPIN_OWNER",
+    "BETWEEN_CALLS_RESIZE_BLOCKED"
+  ]
+}

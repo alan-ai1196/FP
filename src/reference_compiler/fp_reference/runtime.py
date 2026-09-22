@@ -440,7 +440,7 @@ class ReferenceCompilerRuntime:
         self._programs: dict[str, Program] = {}
         self._retained_programs: dict[str, str] = {}
         self._candidates: dict[str, ConstructedState] = {}
-        self._buffers: dict[str, bytes | bytearray] = {}
+        self._buffers: dict[str, bytes | bytearray | memoryview] = {}
         self._attempts: list[tuple[str, str, str]] = []
         self._deployed_id = ''
         self._event_phase = 'idle'
@@ -467,7 +467,10 @@ class ReferenceCompilerRuntime:
             search_id = f'{self._runtime_id}:query-order-storage'
             self._ledger.allocate(self._data_owner, (ObjectSpec(search_id, 'query_order_dp_workspace',
                 {'reference_payload_bytes': search_bytes, 'physical_objects': 1}, self._chi),))
-            self._buffers[search_id] = bytearray(search_bytes)
+            # Keep the export private for the owner's entire lifetime. A
+            # solver can retain the backing bytearray, so a call-local view
+            # alone would not prevent an unpaid resize during a later call.
+            self._buffers[search_id] = memoryview(bytearray(search_bytes))
         if cuda is not None:
             readout_bytes = 8*cuda.phase_output_cells
             self._event_router.charge_work('information', {'work': 4096+readout_bytes}, 'bind-actual-CUDA-prefix-storage')
@@ -1098,7 +1101,8 @@ class ReferenceCompilerRuntime:
             if query_order.workspace_bytes(n, query) > len(workspace):
                 raise ResourceExceeded('owned order-search extent is insufficient')
             debit(query_order.search_work(n, len(support), query))
-            result = query_order.search(n, support, query, join_cap, live_cap, workspace)
+            with memoryview(workspace) as borrowed:
+                result = query_order.search(n, support, query, join_cap, live_cap, borrowed)
             if result is None:
                 raise ArithmeticUnresolved('no query-retaining order fits the declared join/live class')
             if type(result) is not query_order.OrderMinimum:
@@ -3048,7 +3052,7 @@ after all fallible construction, checks and physical preparation complete.
         return RuntimeSnapshot(self._chi, self._runtime_id, self.recovery_phase, self._cursor,
                                self._deployed_id, self._next_candidate, tuple(self._programs.items()),
                                tuple(self._candidates.values()), self._ledger.snapshot(),
-                               tuple((key, bytes(value) if type(value) is bytearray else value) for key, value in self._buffers.items()), tuple(self._attempts),
+                               tuple((key, bytes(value) if type(value) in (bytearray, memoryview) else value) for key, value in self._buffers.items()), tuple(self._attempts),
                                self._online, self._event_phase, self._pending, tuple(self._observations),
                                tuple(self._event_traces), self._data_usage.snapshot(), tuple(self._query_records), self._halted,
                                tuple(self._retained_programs.items()), tuple(self._profile_executions.values()), tuple(self._profile_events),

@@ -7247,3 +7247,23 @@ actual CUDA stay HOLD. Retain an owner-private buffer export for the whole
 workspace lifetime, hand out separate views, and copy scratch on snapshot;
 checking size only after a call would be too late to repair the paid peak.
 Foundation/ERC-1 and all native arithmetic rules remain unchanged.
+
+## 217. Preserve scratch capacity through every later solver view (2026-09-23)
+
+Commit03a200f preserves the paid-search prototype and its48-to50-byte
+unpaid resize counterexample. The repair holds an owner-private buffer
+export for the complete workspace lifetime, supplies a distinct view per
+call and copies scratch into snapshot bytes. Writes remain legal; resizing
+through the current or retained backing object remains blocked even after
+the helper releases its own view. Six actual CPU attacks preserve the
+48-byte ledger/extent equality and both correct forecasts. A test that
+initially toggled its canary back to the original value was corrected to
+write call indices; this was a test assertion error, not another owner defect.
+
+All128432 independent structural comparisons pass through the real view
+representation; six additional invalid view forms refuse before writes.
+The complete reference regression, fresh persistence, funding refusals and
+K(2,14) query recovery pass after the change. No arithmetic kernel or
+Foundation/ERC-1 rule changes. The23-job source-bound actual CUDA gate is
+registered, including both width recoveries and complete continuations;
+this entry records no actual new-order device outcome yet.

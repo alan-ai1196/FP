@@ -1,0 +1,136 @@
+{
+  "status": "PASS_PACKED_QUERY_ORDER_STORAGE",
+  "scope": "passive exact structural search with actual packed DP bytes; no Runtime debit, precision, GPU or installation authority",
+  "complete_independent_tape_enumeration": {
+    "supports": 1098,
+    "query_states": 16054,
+    "direct_compiled_orders": 87422,
+    "join_live_limit_decisions": 64216,
+    "lexicographic_objective_checks": 128432,
+    "empty_join_live_classes": 30882,
+    "vertex_guard_refusals": 2
+  },
+  "guard_cases": {
+    "refused_before_any_scratch_write": [
+      "vertex-class",
+      "bool-query",
+      "bool-edge",
+      "noncanonical-edge",
+      "duplicate-edge",
+      "bad-cap",
+      "bad-objective",
+      "short-buffer",
+      "immutable-buffer"
+    ],
+    "resource_refusal_is_not_empty_class": true
+  },
+  "view_guards": {
+    "invalid_views_refused_before_writes": [
+      "readonly",
+      "strided",
+      "signed",
+      "multidimensional",
+      "short",
+      "released"
+    ],
+    "exhaustive_adapter": "writable contiguous byte view",
+    "maximum_class_adapter": "bytearray"
+  },
+  "maximum_class_cases": [
+    {
+      "case": "all-subsets-empty-support",
+      "scratch_bytes": 393216,
+      "prepaid_work_tariff": 1073774592,
+      "minimum": {
+        "order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "output_cells": 186,
+        "tape_nodes": 34,
+        "subset_states": 32768,
+        "transitions": 245760
+      }
+    },
+    {
+      "case": "chain",
+      "scratch_bytes": 196608,
+      "prepaid_work_tariff": 1040250880,
+      "minimum": {
+        "order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "output_cells": 158,
+        "tape_nodes": 205,
+        "subset_states": 16384,
+        "transitions": 114688
+      }
+    },
+    {
+      "case": "dense-refusal",
+      "scratch_bytes": 196608,
+      "prepaid_work_tariff": 4563681280,
+      "minimum": null
+    },
+    {
+      "case": "dense-wide",
+      "scratch_bytes": 196608,
+      "prepaid_work_tariff": 4563681280,
+      "minimum": {
+        "order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "output_cells": 131110,
+        "tape_nodes": 983493,
+        "subset_states": 16384,
+        "transitions": 114688
+      }
+    }
+  ],
+  "row_bytes": 12,
+  "maximum_free_vertices": 15,
+  "maximum_scratch_bytes": 393216,
+  "work_model": "prepaid-packed-query-order-subsets-v1",
+  "outside_extent_and_reused_buffer_checks": "PASS"
+}

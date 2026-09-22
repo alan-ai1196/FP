@@ -71,7 +71,15 @@ def search(n, support, query, join_cap, live_cap, workspace, *, objective='outpu
     if type(objective) is not str or objective not in ('outputs', 'nodes'):
         raise ContractError('registered structural lexicographic objective required')
     rows = 1 << len(choices)
-    if type(workspace) is not bytearray or len(workspace) < rows*_ROW.size:
+    valid = type(workspace) is bytearray
+    if type(workspace) is memoryview:
+        try:
+            valid = (workspace.format == 'B' and workspace.ndim == 1
+                     and workspace.itemsize == 1 and workspace.c_contiguous
+                     and not workspace.readonly and len(workspace) == workspace.nbytes)
+        except ValueError:  # a released view has no accessible byte extent
+            valid = False
+    if not valid or len(workspace) < rows*_ROW.size:
         raise ResourceExceeded('query-order DP needs its complete owned byte extent')
     scopes = tuple(sum(1 << (v-1) for v in edge if v) for edge in support)
     m, full = n-1, (1 << (n-1))-1

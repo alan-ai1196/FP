@@ -211,15 +211,14 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
-The [paid query-order prototype](theory/proofs/PAID_QUERY_ORDER.md) now has
-an exact packed subset representation and prior Runtime work debits. Its
-structural, native and passive AMP audits pass, including an n16 query
-recovery without dropping counts. Its supplied scratch can still be resized
-after payment: correct native forecasts coexist with a stale resource
-ledger. This is a concrete implementation mismatch, requiring an owner-held
-extent across future helper calls. New actual CUDA remains HOLD; no frozen
-semantic definition or architecture action changes.
-
+The [paid query-order implementation](theory/proofs/PAID_QUERY_ORDER.md)
+now has an exact packed subset representation and prior Runtime work debits.
+Its original scratch-resize counterexample is preserved at03a200f: correct
+forecasts coexisted with a stale extent ledger. The repair retains an
+owner-private buffer export across all later solver views, with immutable
+snapshot copies. Scoped resize attacks and complete CPU regressions pass;
+actual CUDA is registered but unrun. Structural minimization still does not
+certify precision feasibility, and no Foundation definition changes.
 
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 removes a redundant producer when its trusted validator already constructs

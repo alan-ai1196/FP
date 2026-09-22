@@ -2,15 +2,15 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The immediate obstacle is the paid solver's mutable scratch extent. The
-[packed DP/Runtime prototype](theory/proofs/PAID_QUERY_ORDER.md) now passes
-exhaustive structural, owned-reference and passive AMP gates and recovers a
-blocked n16 query. Its actual CPU counterexample nevertheless publishes
-correct predictions with48 billed scratch bytes and50 actual bytes, using
-only a supplied buffer and a later retained handle. Preserve a lifetime-long
-owner buffer export, separate solver views and immutable snapshots before
-registering any new-order CUDA execution. A post-call length check cannot
-repair a resource peak already exceeded. No actual new-order job has run.
+The next gate is actual paid-order execution after its capacity repair.
+The [packed DP/Runtime path](theory/proofs/PAID_QUERY_ORDER.md) passes
+exhaustive structural, complete owned-reference and passive AMP audits and
+recovers a blocked n16 query. The03a200f scratch counterexample is repaired
+by an owner-private export that outlives separate solver views. Six resize
+attacks now fail with exact residency and immutable snapshots. The23-job
+CUDA registration must still test physical width recovery, numerical faults,
+fresh/install, funding/class/order refusal and later scratch handles.
+No new-order actual result is claimed before those jobs run.
 
 The preceding singleton-plan gate remains source-bound atcdea7db. That
 result is not a release of this larger, choice-bearing search interface.
@@ -34,7 +34,7 @@ The completed device gate checks fresh numerical faults, unchanged past
 records, full native updates and fresh installation without granting an
 arbitrary producer the owner's numerical workspace.
 
-After the extent repair, the paid order path still needs actual global/
+The capacity-repaired paid order path still needs actual global/
 projected numerical, lineage, fresh/install, width-recovery and refusal gates.
 The structural prototype class has at most15 free vertices per searched
 block. Global larger searches must remain UNRESOLVED; projected n256 can
