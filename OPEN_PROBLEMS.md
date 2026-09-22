@@ -1,36 +1,24 @@
 # FP Open Problems
 
-**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
-pass, including both n16 width recoveries, n256 controls, fresh/install and
-continued learning. The nineteenth case fails because its test creates a
-second CUDA owner in one process; its allocator refusal is retained.
-A2 retains a passing fresh funded control and a refusal-fixture failure:
-an audit-only git subprocess exceeded the two-process Windows job limit
-before CUDA initialization. The parent now checks source identity; A3 reuses
-that completed control. A3 reaches the actual refusal, but its reader
-incorrectly expects a sealed frame with only3455 work left; the immutable
-copy alone needs at least262144. A4 verifies the complete pre-seal refusal
-bytes and explicit added seal-failure diagnostic, retaining the mutable
-paid extent and no completion claim. It registers the five remaining jobs.
-A4 passes that byte reader, then hits a test-only AttributeError while
-inspecting a function replacement as a mock. A5 corrects that inspection.
-Run `scripts/audit_paid_order_cuda.py --attempt 5` after committing inputs.
-Production is unchanged; do not repeat the19 passing jobs.
+Only genuinely unresolved problems belong here. Historical results remain
+in their source-bound proofs, evidence and research history.
 
-Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
+The immediate research frontier is useful execution on the existing
+n16/iid-c2/16 stream. The [paid-order component gate](theory/proofs/PAID_QUERY_ORDER.md)
+is complete: all23 logical cases plus a fresh funded control pass; all28
+attempts, including four failed audits, are terminal. No production change
+was needed afterad68440. Lifetime scratch capacity, prior payment and
+complete native/AMP continuations have their scoped proof and actual evidence.
 
-The next gate is actual paid-order execution after its capacity repair.
-The [packed DP/Runtime path](theory/proofs/PAID_QUERY_ORDER.md) passes
-exhaustive structural, complete owned-reference and passive AMP audits and
-recovers a blocked n16 query. The03a200f scratch counterexample is repaired
-by an owner-private export that outlives separate solver views. Six resize
-attacks now fail with exact residency and immutable snapshots. The23-job
-CUDA registration must still test physical width recovery, numerical faults,
-fresh/install, funding/class/order refusal and later scratch handles.
-A1 and the pending A2 continuation above determine the current actual scope.
-
-The preceding singleton-plan gate remains source-bound atcdea7db. That
-result is not a release of this larger, choice-bearing search interface.
+All396 cuts on that exposed tape have structural witnesses within the
+current table/output limits, but numerical, retained-evidence and total
+resource feasibility still need actual execution. The old compressed
+natural-order path stops at194. Register the paid solver under the same
+original caps, data, native learner and tolerances. Keep the strong retained
+posterior control; an incomplete prefix has no complete-model score.
+This component result does not freeze the full indexed Runtime or reopen
+Foundation/ERC-1. It removes the need for another static special case
+before that scientific test.
 
 An [exact n4 witness](theory/proofs/ORDER_PRECISION_SEPARATION.md) now rules
 out precision-safe pruning merely by equal resource labels. The structural
@@ -51,13 +39,10 @@ The completed device gate checks fresh numerical faults, unchanged past
 records, full native updates and fresh installation without granting an
 arbitrary producer the owner's numerical workspace.
 
-The capacity-repaired paid order path still needs actual global/
-projected numerical, lineage, fresh/install, width-recovery and refusal gates.
-The structural prototype class has at most15 free vertices per searched
-block. Global larger searches must remain UNRESOLVED; projected n256 can
-use smaller local blocks while preserving its full native state. Fixed
-natural execution remains a separate registered control. These solver
-choices change no Foundation semantics or model tolerance.
+The searched class has at most15 free vertices per block. Global larger
+searches remain UNRESOLVED; projected n256 uses local blocks while preserving
+all native coordinates. A structural optimum that fails precision remains
+UNRESOLVED for the larger order-existence question.
 
 The 23-job actual A1 gate is terminal at b53889e for the
 [byte-only evidence repair](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md).

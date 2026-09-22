@@ -1,22 +1,5 @@
 # Factor Programs (FP) — Canonical Theory
 
-**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
-pass, including both n16 width recoveries, n256 controls, fresh/install and
-continued learning. The nineteenth case fails because its test creates a
-second CUDA owner in one process; its allocator refusal is retained.
-A2 retains a passing fresh funded control and a refusal-fixture failure:
-an audit-only git subprocess exceeded the two-process Windows job limit
-before CUDA initialization. The parent now checks source identity; A3 reuses
-that completed control. A3 reaches the actual refusal, but its reader
-incorrectly expects a sealed frame with only3455 work left; the immutable
-copy alone needs at least262144. A4 verifies the complete pre-seal refusal
-bytes and explicit added seal-failure diagnostic, retaining the mutable
-paid extent and no completion claim. It registers the five remaining jobs.
-A4 passes that byte reader, then hits a test-only AttributeError while
-inspecting a function replacement as a mock. A5 corrects that inspection.
-Run `scripts/audit_paid_order_cuda.py --attempt 5` after committing inputs.
-Production is unchanged; do not repeat the19 passing jobs.
-
 **Canonical status (2026-09-13): THEORY AND EXPERIMENT RESOURCE CONTRACT FROZEN; REFERENCE/CPU AND RTX 3090 AMP BASELINE FROZEN; PROSPECTIVE STRATEGY EXTENSION AUDITED; REGISTERED EXPERIMENTS UNHELD WITHIN THEIR SCOPES.**
 
 This file is the **only normative theory source** for FP. Historical v1–v155 canonicals, v156–v164 attack drafts, R2/R3/R4 working files and experiment-era theory snapshots are provenance only. If an older statement conflicts with this file, this file wins.
@@ -229,13 +212,14 @@ class completeness or complete release is claimed.
 ## 0. Research object and root principle
 
 The [paid query-order implementation](theory/proofs/PAID_QUERY_ORDER.md)
-now has an exact packed subset representation and prior Runtime work debits.
-Its original scratch-resize counterexample is preserved at03a200f: correct
-forecasts coexisted with a stale extent ledger. The repair retains an
-owner-private buffer export across all later solver views, with immutable
-snapshot copies. Scoped resize attacks and complete CPU regressions pass;
-actual A1 has18 passing cases and one retained fixture failure; its remaining continuation is registered. Structural minimization still does not
-certify precision feasibility, and no Foundation definition changes.
+now passes its declared reference/AMP component gate. Actual packed subset
+storage and prior work debits support independently checked order proposals.
+A preserved scratch-resize counterexample led to a private owner export
+that keeps capacity fixed across all later helper views. Both actual n16
+query recoveries, full native continuations, fresh/install, numerical faults
+and scoped resource/order refusals pass. Four failed audits remain retained;
+no complete Runtime release or numerical-existence certificate is inferred.
+Foundation R4 and ERC-1 remain unchanged.
 
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 removes a redundant producer when its trusted validator already constructs

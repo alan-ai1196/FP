@@ -1,0 +1,214 @@
+{
+  "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+  "execution_source": "4d0df7920eaf6b613ce63e155a9eab7eb58cfde7",
+  "registration": {
+    "status": "REGISTERED_PAID_QUERY_ORDER_CUDA_A5_CONTINUATION",
+    "cases": [
+      "search-funding-refusal",
+      "scratch-frame",
+      "projected-scratch-frame",
+      "missing-order",
+      "bool-order"
+    ],
+    "previous_source": "ad68440d76d272c14a4b36f9dcab5613e28858f0",
+    "retained_A1_passes": 18,
+    "retained_A1_failure": "two-owner funding fixture refused default allocator state; no production failure inferred",
+    "retained_A2_control": "7f965952a17fd331ea5a8bb262bbdc1ca07084ae",
+    "retained_A2_failure": "refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization",
+    "retained_A3_failure": "reader assumed a sealed final frame despite insufficient remaining work for its immutable copy",
+    "retained_A4_failure": "complete refusal-byte reader passed, then a function replacement was incorrectly inspected as a mock",
+    "failed_frame_reader": "compare all pre-seal refusal bytes, retain the seal diagnostic and mutable extent; no failed completion claim",
+    "funding_protocol": "separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "source": "all execution inputs committed at launch HEAD",
+    "search_class": "lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate",
+    "scratch": "12*2^r actual bytes; owner export outlives separate writable helper views",
+    "work_model": "prepaid-packed-query-order-subsets-v1",
+    "numerics": "unchanged RNE kernels and 1/100 state, 1/1000 probability tolerances",
+    "fixed_control": "only integration-large uses fixed global n256; projected n256 searches local blocks",
+    "scope": "paid reference/AMP component gate, full native continuations and scoped refusals; no full indexed release or model comparison"
+  },
+  "workers": [
+    {
+      "case": "search-funding-refusal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1858691072,
+        "peak_job_commit": 1859891200,
+        "user_100ns": 16406250,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8712,
+        "process_creation_100ns": 134345936503692219
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "search-funding-refusal",
+        "process_id": 8712,
+        "result": {
+          "case": "search-funding-refusal",
+          "funded_control_process_id": 13056,
+          "prior_deployment_debit": 4354016256,
+          "search_fee": 3456,
+          "denied_work_cap": 4354016255,
+          "unfunded_solver_entries": 0,
+          "unfunded_numerical_entries": 0,
+          "phase_status": "UNRESOLVED",
+          "reason": "ResourceExceeded: deployment cumulative work exhausted; CUDA evidence retention failed: deployment cumulative work exhausted",
+          "old_state_and_scratch_unchanged": true,
+          "target_revealed": false,
+          "checked_full_records": 2,
+          "current_failed_frame": "complete pre-seal refusal plus explicit unfunded-seal diagnostic; mutable, no completion authority"
+        }
+      }
+    },
+    {
+      "case": "scratch-frame",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2194804736,
+        "peak_job_commit": 2196025344,
+        "user_100ns": 21406250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 6496,
+        "process_creation_100ns": 134345936529233501
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "scratch-frame",
+        "process_id": 6496,
+        "result": {
+          "checked_phases": 8,
+          "actual_floating_words": 173,
+          "actual_half_words": 0,
+          "cursor": 2,
+          "packed_current_bytes": 2729096,
+          "consumed_arena_bytes": 1576,
+          "blocked_resize_attempts": 10,
+          "solver_calls": 4,
+          "charged_and_actual_scratch_bytes": 48,
+          "old_snapshots_and_native_history_unchanged": true,
+          "helper_release_and_between_call_handles_cannot_resize": true
+        }
+      }
+    },
+    {
+      "case": "projected-scratch-frame",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2192687104,
+        "peak_job_commit": 2193891328,
+        "user_100ns": 22812500,
+        "kernel_100ns": 8593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11304,
+        "process_creation_100ns": 134345936563321528
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "projected-scratch-frame",
+        "process_id": 11304,
+        "result": {
+          "checked_phases": 8,
+          "actual_floating_words": 129,
+          "actual_half_words": 0,
+          "cursor": 2,
+          "packed_current_bytes": 2729121,
+          "consumed_arena_bytes": 1224,
+          "blocked_resize_attempts": 10,
+          "solver_calls": 4,
+          "charged_and_actual_scratch_bytes": 48,
+          "old_snapshots_and_native_history_unchanged": true,
+          "helper_release_and_between_call_handles_cannot_resize": true
+        }
+      }
+    },
+    {
+      "case": "missing-order",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1859633152,
+        "peak_job_commit": 1860833280,
+        "user_100ns": 15781250,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22612,
+        "process_creation_100ns": 134345936597038063
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "missing-order",
+        "process_id": 22612,
+        "result": {
+          "case": "missing-order",
+          "phase_status": "EXECUTION_FAILED",
+          "reason": "ContractError: complete declared elimination order required",
+          "solver_entries": 1,
+          "numerical_entries": 0,
+          "published_advances": 0,
+          "full_retained_count_coordinates": 3,
+          "target_revealed": false,
+          "checked_full_records": 2,
+          "native_and_physical_predecessors_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "bool-order",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1858207744,
+        "peak_job_commit": 1859428352,
+        "user_100ns": 17187500,
+        "kernel_100ns": 6406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8696,
+        "process_creation_100ns": 134345936622304545
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "bool-order",
+        "process_id": 8696,
+        "result": {
+          "case": "bool-order",
+          "phase_status": "EXECUTION_FAILED",
+          "reason": "ContractError: complete declared elimination order required",
+          "solver_entries": 1,
+          "numerical_entries": 0,
+          "published_advances": 0,
+          "full_retained_count_coordinates": 3,
+          "target_revealed": false,
+          "checked_full_records": 2,
+          "native_and_physical_predecessors_unchanged": true
+        }
+      }
+    }
+  ]
+}

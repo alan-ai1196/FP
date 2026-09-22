@@ -7309,3 +7309,25 @@ raises AttributeError by inspecting a direct function replacement's
 nonexistent `.called`. A5 uses actual mock call counters and reruns only
 the five outstanding cases. Production and the numerical/resource contract
 are unchanged; the fourth failed audit remains retained.
+
+## 219. Close the paid-order component gate and return to the blocked model stream (2026-09-23)
+
+A5 at4d0df79 passes all five remaining boundary cases. The control-derived
+one-unit deficit prevents both solver and numerical entry, with actual
+state/scratch unchanged and the unpaid final seal explicitly unresolved.
+Each actual scratch path blocks ten resize attempts across four solver
+calls, retains48 charged/actual bytes, old snapshots and complete native
+forecasts/updates. Missing and bool orders refuse before numerical entry.
+
+Across A1/A2/A5,24 passing fresh jobs cover the23 original logical cases
+and separate funded control. The four failed A1--A4 audits remain preserved.
+All28 jobs terminate without timeout/limit termination; max2393862144 bytes.
+Production stays byte-unchanged fromad68440. Passing numerical integrations
+check544 phases/63786 words/20226 half outputs. Both fresh/install paths
+cross20 and learn21; both K(2,14) paths recover the fixed-order obstruction.
+
+This closes a declared component gate, not complete indexed release or
+numerical order-class existence. Move to the existing n16/iid-c2/16 stream:
+all396 structural query cuts fit, but its actual rounded/retention behavior
+under the original resource envelope remains unknown. Do not add another
+static special case or weaken a bound to manufacture completion.

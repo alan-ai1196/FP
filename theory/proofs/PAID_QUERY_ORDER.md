@@ -1,9 +1,12 @@
 # Paid structural query-order search
 
-Status: **packed algorithm proved and exhaustively audited; reference
-Runtime prototype and passive AMP integration pass scoped CPU checks;
-scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A5 continuation registered**.
-Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
+Status: **packed structural law proved and exhaustively audited; paid
+Runtime/reference/AMP component gate complete across A1/A2/A5**. All23
+original logical cases plus the separate funded control have passing
+fresh jobs. Four failed audits in A1--A4 remain retained. Production is
+unchanged fromad68440 throughout those attempts. This is not a complete
+indexed release, numerical-existence certificate or model result.
+Foundation R4 and ERC-1 are unchanged.
 
 ## 1. A bounded representation of the existing exact DP
 
@@ -280,3 +283,35 @@ when the test reads `.called` on a direct function replacement. The
 replacement now uses `patch(..., side_effect=...)` so the call counter is
 real. A5 retains the same five cases, caps and unchanged production. A4's
 AttributeError remains a failed audit, not a passed complete gate.
+
+## 8. The component gate is terminal
+
+A5 at4d0df79 passes all five remaining cases. The3456-unit physical search
+fee is refused with zero solver and numerical entries under the unchanged
+control-derived cap4354016255. All old native/physical state and scratch
+bytes remain. The full pre-seal refusal is readable, its failed immutable
+copy is explicit, and neither failure grants completion authority.
+
+Both actual scratch continuations pass four real solver calls and ten
+resize attacks each. Current/later backing handles, helper-view release
+and between-call operations cannot change the charged48-byte extent.
+Scratch writes, complete native forecasts and updates, old snapshots and
+all16 phase records remain valid. Both malformed order proposals are
+rejected before numerical entry with complete old state and no target.
+
+Across A1/A2/A5 there are24 passing jobs covering the23 original logical
+cases plus the additional fresh funded control. A1--A4 also retain four
+failed audit attempts; none is relabeled or omitted. All28 jobs terminate
+without timeout or memory-limit termination, maximum job commitment
+2393862144 bytes. The passing numerical integrations, including the funded
+control and scratch continuations, check544 phases and63786 floating words,
+of which20226 are binary16. Fault/class/order/refusal records are checked
+separately. Both fresh installations cross at20 and learn through21.
+
+The next scientific test is the previously exposed n16/iid-c2/16 stream.
+Its396 query cuts all have structural witnesses under the current limits;
+this does not prove complete numerical or retained-evidence feasibility.
+The old compressed fixed-order run stops at194. A paid searched run must
+keep its original data, native learner, numerical limits and resource
+caps, pay the new work/storage and retain every failure without scoring an
+incomplete prefix. No further static special case is needed for that test.

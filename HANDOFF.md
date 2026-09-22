@@ -1,48 +1,37 @@
 # FP Handoff
 
-**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
-pass, including both n16 width recoveries, n256 controls, fresh/install and
-continued learning. The nineteenth case fails because its test creates a
-second CUDA owner in one process; its allocator refusal is retained.
-A2 retains a passing fresh funded control and a refusal-fixture failure:
-an audit-only git subprocess exceeded the two-process Windows job limit
-before CUDA initialization. The parent now checks source identity; A3 reuses
-that completed control. A3 reaches the actual refusal, but its reader
-incorrectly expects a sealed frame with only3455 work left; the immutable
-copy alone needs at least262144. A4 verifies the complete pre-seal refusal
-bytes and explicit added seal-failure diagnostic, retaining the mutable
-paid extent and no completion claim. It registers the five remaining jobs.
-A4 passes that byte reader, then hits a test-only AttributeError while
-inspecting a function replacement as a mock. A5 corrects that inspection.
-Run `scripts/audit_paid_order_cuda.py --attempt 5` after committing inputs.
-Production is unchanged; do not repeat the19 passing jobs.
+This file is written for a researcher with no prior chat context. The
+repository, especially `FP_THEORY.md`, is authoritative.
 
-This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
+**Current frontier (2026-09-23): test paid order search on the blocked n16 model stream.**
+The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
+complete:24 passing fresh jobs cover all23 original cases plus a funded
+control. A1--A4 retain four failed audits; A5 closes the remaining cases.
+Production remains byte-unchanged fromad68440. All28 attempted jobs are
+terminal, with no timeout/limit termination and max2393862144 bytes. Do not
+repeat these terminal probes.
 
-**Current frontier (2026-09-23): run the registered paid-order CUDA gate.**
-The [paid order-search implementation](theory/proofs/PAID_QUERY_ORDER.md)
-uses actual12*2^r-byte tables and prior work debits. All128432 exhaustive
-structural comparisons pass through its writable views; the complete owned
-reference regression, including n256 and fresh persistence, passes. On the
-same28-event K(2,14) history it recovers the query blocked by fixed order,
-retaining all120 counts and matching an independent32768-world exact sum.
+The packed solver uses actual12*2^r bytes and prior work debits. Its128432
+independent structural checks and complete reference/fresh persistence
+audits pass. The03a200f unpaid scratch-growth counterexample is preserved;
+a private owner export now blocks resizing across helper release and later
+calls. Both actual scratch paths block ten attacks each with48 billed/actual
+bytes. Insufficient search work and malformed orders refuse before numeric
+entry, retaining native state, received information and paid failed evidence.
 
-**The scratch counterexample is preserved at03a200f; its capacity repair passes CPU.**
-The original supplied bytearray could grow from48 to50 bytes without a new
-resource charge. Runtime now holds a private export for the owner's lifetime
-and supplies a separate solver view. In-call, later-handle, released-view
-and between-call resize attempts all fail; contents remain writable and
-old snapshots immutable. `FP_ORDER_WORKSPACE_PINNED_CPU.json`,
-`FP_QUERY_ORDER_VIEW_STORAGE.json` and `FP_PAID_ORDER_PINNED_REFERENCE.json`
-retain the scoped checks. Foundation/ERC-1 and numerical limits are unchanged.
+Both actual K(2,14) paths learn28 events and answer the formerly blocked
+query with all120 counts. The final global/projected plans use702/694 outputs
+and the same checked probability word; exact error is about4.28e-8. The
+gate includes both n256 controls, profiles, fresh/install/learning, numerical
+faults, closure and lineage refusal. This is a component result, not a
+complete indexed release or precision-existence certificate.
 
-The original23-job A1 registration is retained atad68440.
-It includes both width recoveries, full native/AMP learning, fresh/install,
-funding/class/order refusal and scratch continuations. Commit all inputs
-before launch; keep source fixed while live and preserve every outcome.
-The partial actual A1 result and pending A2 continuation are stated above. The global n256 control is
-fixed-order; enabled global n>16 is unresolved, while projected n256 can
-search small local blocks. Full indexed release and model science stay HOLD.
+The next substantive test is the existing n16/iid-c2/16 tape. Its396 query
+cuts have structural witnesses, while the old compressed natural-order run
+stops at194. Register paid order search under the same data, learner,
+precision, table/output, memory and work limits; audit all native posteriors
+and actual AMP words. Keep every refusal and do not score incomplete runs.
+No new model outcome is claimed yet. Foundation/ERC-1 stay frozen.
 
 **Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)

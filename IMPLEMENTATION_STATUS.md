@@ -1,38 +1,22 @@
 # FP Implementation Status
 
-**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
-pass, including both n16 width recoveries, n256 controls, fresh/install and
-continued learning. The nineteenth case fails because its test creates a
-second CUDA owner in one process; its allocator refusal is retained.
-A2 retains a passing fresh funded control and a refusal-fixture failure:
-an audit-only git subprocess exceeded the two-process Windows job limit
-before CUDA initialization. The parent now checks source identity; A3 reuses
-that completed control. A3 reaches the actual refusal, but its reader
-incorrectly expects a sealed frame with only3455 work left; the immutable
-copy alone needs at least262144. A4 verifies the complete pre-seal refusal
-bytes and explicit added seal-failure diagnostic, retaining the mutable
-paid extent and no completion claim. It registers the five remaining jobs.
-A4 passes that byte reader, then hits a test-only AttributeError while
-inspecting a function replacement as a mock. A5 corrects that inspection.
-Run `scripts/audit_paid_order_cuda.py --attempt 5` after committing inputs.
-Production is unchanged; do not repeat the19 passing jobs.
-
 ## Current implementation state (2026-09-23)
 
-**Paid order search passes its capacity repair and CPU gates; actual CUDA is registered.**
-The [packed DP and Runtime wiring](theory/proofs/PAID_QUERY_ORDER.md) pass
-128432 structural objective checks through real writable views, plus the
-complete owned reference/fresh persistence regression and n16 K(2,14)
-recovery. The prior48-to50-byte unpaid scratch growth is source-bound at
-03a200f. A private lifetime-long export now blocks resize even through old
-backing handles after the helper releases its own view. Snapshot bytes stay
-immutable and actual extent equals the ledger. Six explicit extent attacks
-and six malformed view cases pass their refusal checks.
+**Paid query-order search passes its complete declared component gate.**
+[Proof and evidence](theory/proofs/PAID_QUERY_ORDER.md): actual packed rows,
+prior work debits, lifetime-bound scratch, independently checked complete
+plans and unchanged numerical kernels. All128432 structural comparisons,
+complete reference/fresh audits and23 logical CUDA cases pass. A separate
+funded control makes24 successful jobs; four failed audits remain source-
+bound. All28 jobs are terminal without timeout/limit termination, max
+2393862144 bytes. Production is unchanged fromad68440.
 
-The original23-job gate has the partial terminal A1 outcome stated above. They cover
-new-order numerical/continuation/fresh-install paths and scoped resource,
-class, scratch and malformed-order refusals. The fixed natural control
-remains available. No complete release or new model result is claimed.
+Both n16 width recoveries, n256 controls, profiles, fresh/install/learning,
+physical faults, class/funding/order refusals and scratch continuations
+pass. The numerical integrations check544 phases/63786 words,20226 binary16.
+No complete indexed release, numerical-existence certificate or new model
+result follows. The next test is the previously blocked n16/iid-c2/16 stream
+under its original resource and numerical envelope.
 
 **Fixed indexed plans are constructed and executed inside Runtime; all fifteen actual gate jobs pass.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
@@ -72,7 +56,7 @@ events and the complete literal learner agree; both passive RNE traces pass
 their operation checks. This changes no production code or model tolerance.
 Resource optimization cannot promote failure of its chosen order into a
 numerical infeasibility certificate for all orders. The paid implementation above has a repaired extent boundary; its structural
-result remains separately scoped and its actual CUDA gate is pending.
+result remains separately scoped and its scoped actual gate now passes.
 
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps
