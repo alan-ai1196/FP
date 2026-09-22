@@ -163,6 +163,8 @@ def audit_prefix(snapshot,case,mode):
         assert not snapshot.run.closure.decisions
     phases = {phase.object_id:phase for phase in snapshot.cuda.phases}
     planner = amp if mode == 'global' else projected_amp
+    ordered = snapshot.cuda.contract.order_search
+    assert snapshot.cuda.contract.forward_id == (planner.ORDERED_FORWARD_ID if ordered else planner.FORWARD_ID)
     tolerance = Float64Contract(F(1,100),F(1,1000))
     checked = words = half = maximum_cells = maximum_nodes = maximum_join = maximum_blocks = 0
     failures = []
@@ -177,7 +179,8 @@ def audit_prefix(snapshot,case,mode):
         elif kind == 'predict':
             i,j,_ = by_id[phase.observation_id]
             sources = schema.source_row(i*n+j)
-            planner.check_prediction_plan(phase.execution_plan,schema,before,schema.rules(),sources,output_cap=CELLS)
+            planner.check_prediction_plan(phase.execution_plan,schema,before,schema.rules(),sources,
+                output_cap=CELLS,allow_orders=ordered)
             assert phase.raw_prediction.before == before.encoded and phase.raw_prediction.query == (i,j)
             operations = amp.check_prediction_execution(phase.execution_plan,before,phase.raw_prediction,
                 phase.raw_operations,bit_limit=32768)

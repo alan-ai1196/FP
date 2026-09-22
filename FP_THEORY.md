@@ -211,6 +211,12 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
+is registered under the prior resource and numerical envelope. It changes
+only the paid solver and its declared rounded realization, retaining the
+complete native learner and strong posterior control. No result is assumed
+from structural feasibility alone.
+
 The [paid query-order implementation](theory/proofs/PAID_QUERY_ORDER.md)
 now passes its declared reference/AMP component gate. Actual packed subset
 storage and prior work debits support independently checked order proposals.

@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The next experiment is now preregistered in
+[`PAID_ORDER_MODEL_PROTOCOL.md`](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md):
+one actual global n16/iid-c2/16 stream with paid search, the existing compressed
+frames and unchanged original limits. The fixed run stopped at194. All
+native posteriors and actual AMP traces will be audited; incomplete prefixes
+remain unscored. Commit inputs before `scripts/run_paid_order_model.py --attempt 1`
+and keep source fixed until terminal. No new model outcome is claimed here.
+
 ## Current implementation state (2026-09-23)
 
 **Paid query-order search passes its complete declared component gate.**

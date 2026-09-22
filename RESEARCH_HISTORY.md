@@ -7331,3 +7331,21 @@ numerical order-class existence. Move to the existing n16/iid-c2/16 stream:
 all396 structural query cuts fit, but its actual rounded/retention behavior
 under the original resource envelope remains unknown. Do not add another
 static special case or weaken a bound to manufacture completion.
+
+## 220. Register a paid-order execution of the blocked n16 tape (2026-09-23)
+
+The component gate is complete. Register one actual global n16/iid-c2/16
+run using the original140 training and256 evaluation events. The old
+compressed fixed-order run stops at194; all396 structural cuts have order
+witnesses. The experiment enables paid reference/physical search and the
+393216-byte owned DP table, keeping every original resource/numerical limit,
+native learner, empty policy and retained strong posterior control.
+
+The existing worker continues to check every native forecast against its
+independent exact full-assignment posterior. The reader now accepts the
+explicit registered ordered class and reconstructs its complete tape before
+checking every RNE operation; the fixed class remains fixed. A final full
+sealed-frame reader and actual work/extent report accompany the result.
+One fresh job, committed source, immutable execution inputs, all outcomes
+retained, no score for an incomplete prefix. This entry records registration
+only; no completion or new model result is assumed.
