@@ -7293,3 +7293,13 @@ A3 registers the five outstanding boundary cases with the exact predeclared
 cap4354016255, one below the observed prior-debit total4354016256. The3456-unit
 search fee and all production code remain unchanged. A2 is terminal and
 its failed audit is retained separately.
+
+A3 at95f39a9 reaches the actual short-budget refusal, then fails its reader:
+it expects a sealed final record although only3455 work remains, less than
+the262144-byte immutable-copy work alone. Runtime correctly retains the
+mutable pre-seal refusal and appends an explicit seal-failure diagnostic;
+no completion authority follows. A4 checks the complete pre-seal bytes,
+diagnostic extension, paid mutable extent, untouched old records and zero
+solver/numerical entry. The underlying resource contract is not relaxed.
+All three failed audits remain source-bound and terminal; production is
+still unchanged fromad68440.

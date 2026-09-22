@@ -2,7 +2,7 @@
 
 Status: **packed algorithm proved and exhaustively audited; reference
 Runtime prototype and passive AMP integration pass scoped CPU checks;
-scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A3 continuation registered**.
+scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A4 continuation registered**.
 Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
 
 ## 1. A bounded representation of the existing exact DP
@@ -261,3 +261,16 @@ A3 consumes the terminal control artifact and sets work cap4354016255.
 No control, arithmetic, allowance or production implementation is changed.
 Both earlier fixture failures remain retained; only the five outstanding
 boundary cases are registered in A3.
+
+A3 at95f39a9 reaches the intended funding refusal, then its full-record reader
+fails. Inspection identifies a second expected resource refusal: only3455
+work units remain, while immutable frame finalization alone costs at least
+262144. Runtime retains a mutable frame containing the complete pre-seal
+UNRESOLVED record and appends a seal-failure diagnostic to the in-memory
+failed record; it grants no completion authority. The prior reader wrongly
+required equality with that later diagnostic extension. A4 checks every
+pre-seal refusal byte against the otherwise identical record, requires the
+explicit seal diagnostic and mutable paid extent, and checks all earlier
+sealed records and native state unchanged. This corrects an audit premise;
+production, the control-derived cap and all five registered cases remain
+unchanged. The failed A3 reader stays in the canonical journal.

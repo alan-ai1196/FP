@@ -1,0 +1,55 @@
+{
+  "status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+  "execution_source": "95f39a9bc0e85ad5e8148efec2a38aa05b4b460e",
+  "registration": {
+    "status": "REGISTERED_PAID_QUERY_ORDER_CUDA_A3_CONTINUATION",
+    "cases": [
+      "search-funding-refusal",
+      "scratch-frame",
+      "projected-scratch-frame",
+      "missing-order",
+      "bool-order"
+    ],
+    "previous_source": "ad68440d76d272c14a4b36f9dcab5613e28858f0",
+    "retained_A1_passes": 18,
+    "retained_A1_failure": "two-owner funding fixture refused default allocator state; no production failure inferred",
+    "retained_A2_control": "7f965952a17fd331ea5a8bb262bbdc1ca07084ae",
+    "retained_A2_failure": "refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization",
+    "funding_protocol": "separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "source": "all execution inputs committed at launch HEAD",
+    "search_class": "lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate",
+    "scratch": "12*2^r actual bytes; owner export outlives separate writable helper views",
+    "work_model": "prepaid-packed-query-order-subsets-v1",
+    "numerics": "unchanged RNE kernels and 1/100 state, 1/1000 probability tolerances",
+    "fixed_control": "only integration-large uses fixed global n256; projected n256 searches local blocks",
+    "scope": "paid reference/AMP component gate, full native continuations and scoped refusals; no full indexed release or model comparison"
+  },
+  "workers": [
+    {
+      "case": "search-funding-refusal",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1859465216,
+        "peak_job_commit": 1860669440,
+        "user_100ns": 16562500,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2076,
+        "process_creation_100ns": 134345934072484675
+      },
+      "result": {
+        "status": "FAILED_AUDIT",
+        "case": "search-funding-refusal",
+        "process_id": 2076,
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 294, in <module>\n    report.update(status='PASS_ACTUAL_PAID_QUERY_ORDER', result=worker(args.worker))\n                                                                ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 238, in worker\n    return funding()\n           ^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 132, in funding\n    after, phase = preserved(denied, before)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 36, in preserved\n    after = owned.frames(rt, before, tuple(pack(p) for p in before.cuda.phases))\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_indexed_owned_schedule.py\", line 116, in frames\n    assert phase_payload(after, buffers[phase.object_id]) == pack(phase)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+      }
+    }
+  ]
+}

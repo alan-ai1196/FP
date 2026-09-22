@@ -17,6 +17,7 @@ from fp_reference.core import ContractError
 from fp_reference.encoding import pack
 from audit_indexed_source_binding import predict, native
 from audit_reference_construction import validate_residency
+from audit_cuda_runtime import phase_payload
 import audit_indexed_amp as indexed
 import audit_indexed_owned_schedule as owned
 import audit_phase_writer_binding as runner
@@ -32,8 +33,24 @@ A3_CASES = A2_CASES[1:]
 CONTROL_SOURCE = '7f965952a17fd331ea5a8bb262bbdc1ca07084ae'
 
 
-def preserved(rt, before):
-    after = owned.frames(rt, before, tuple(pack(p) for p in before.cuda.phases))
+def preserved(rt, before, *, unsealed_refusal=False):
+    after = validate_residency(rt)
+    saved = tuple(pack(p) for p in before.cuda.phases)
+    assert tuple(pack(p) for p in after.cuda.phases[:len(saved)]) == saved
+    assert tuple(pack(p) for p in before.cuda.phases) == saved
+    buffers = dict(after.buffers)
+    for phase in after.cuda.phases:
+        expected = phase
+        if unsealed_refusal and phase is after.cuda.phases[-1]:
+            # The search fee is refused with only3455 work left. This also
+            # cannot fund the >=262144-unit immutable frame copy. Audit the
+            # complete pre-seal refusal bytes and the explicit added diagnostic;
+            # this mutable failed frame grants no completion authority.
+            reason, separator, failure = phase.reason.partition('; CUDA evidence retention failed: ')
+            assert separator and failure and phase.status == 'UNRESOLVED'
+            assert type(rt._buffers[phase.object_id]) is bytearray
+            expected = replace(phase, reason=reason)
+        assert phase_payload(after, buffers[phase.object_id]) == pack(expected)
     assert after.cursor == before.cursor and after.candidates == before.candidates
     assert after.cuda.current == before.cuda.current and after.pending.record.target is None
     assert after.pending.record.sources and not after.pending.predictions
@@ -129,7 +146,7 @@ def funding():
     with patch.object(query_order, 'search', forbidden) as search, \
             patch.object(gpu.CudaArithmetic, '__init__', forbidden) as numerical:
         result = predict(denied, relation, (0, 1))
-    after, phase = preserved(denied, before)
+    after, phase = preserved(denied, before, unsealed_refusal=True)
     assert result.status == phase.status == 'UNRESOLVED' and not search.called and not numerical.called
     assert after.resources['spent']['deployment']['work'] == cap+1-fee
     old = {k: b for k, b in before.buffers if 'query-order-storage' in k}
@@ -139,7 +156,8 @@ def funding():
         'unfunded_solver_entries': 0, 'unfunded_numerical_entries': 0,
         'phase_status': phase.status, 'reason': phase.reason,
         'old_state_and_scratch_unchanged': True, 'target_revealed': False,
-        'checked_full_records': len(after.cuda.phases)}
+        'checked_full_records': len(after.cuda.phases),
+        'current_failed_frame': 'complete pre-seal refusal plus explicit unfunded-seal diagnostic; mutable, no completion authority'}
 
 
 def scratch(projected):
@@ -265,11 +283,17 @@ def preflight():
     assert a2['workers'][1]['worker_status'] == 'FAILED'
     assert 'WinError 1816' in a2['workers'][1]['result']['traceback']
     assert not runner.registration.model.git('diff', CONTROL_SOURCE, '--', 'src/reference_compiler')
-    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A3_CONTINUATION', 'cases': A3_CASES,
+    a3 = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A3.json').read_text())
+    assert a3['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE' and len(a3['workers']) == 1
+    assert a3['workers'][0]['worker_status'] == 'FAILED'
+    assert 'phase_payload(after, buffers[phase.object_id]) == pack(phase)' in a3['workers'][0]['result']['traceback']
+    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A4_CONTINUATION', 'cases': A3_CASES,
         'previous_source': old['execution_source'], 'retained_A1_passes': 18,
         'retained_A1_failure': 'two-owner funding fixture refused default allocator state; no production failure inferred',
         'retained_A2_control': CONTROL_SOURCE,
         'retained_A2_failure': 'refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization',
+        'retained_A3_failure': 'reader assumed a sealed final frame despite insufficient remaining work for its immutable copy',
+        'failed_frame_reader': 'compare all pre-seal refusal bytes, retain the seal diagnostic and mutable extent; no failed completion claim',
         'funding_protocol': 'separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one',
         'job_cap': indexed.CAP, 'deadline_ms': 900000, 'source': 'all execution inputs committed at launch HEAD',
         'search_class': 'lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate',
@@ -283,7 +307,7 @@ def preflight():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
-    parser.add_argument('--attempt', type=int, choices=(3,))
+    parser.add_argument('--attempt', type=int, choices=(4,))
     parser.add_argument('--worker', choices=A3_CASES)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()

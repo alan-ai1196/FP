@@ -7,9 +7,13 @@ second CUDA owner in one process; its allocator refusal is retained.
 A2 retains a passing fresh funded control and a refusal-fixture failure:
 an audit-only git subprocess exceeded the two-process Windows job limit
 before CUDA initialization. The parent now checks source identity; A3 reuses
-that completed control and registers the five remaining boundary jobs.
-Run `scripts/audit_paid_order_cuda.py --attempt 3` only after committing
-all inputs. Production is unchanged; do not repeat the19 passing jobs.
+that completed control. A3 reaches the actual refusal, but its reader
+incorrectly expects a sealed frame with only3455 work left; the immutable
+copy alone needs at least262144. A4 verifies the complete pre-seal refusal
+bytes and explicit added seal-failure diagnostic, retaining the mutable
+paid extent and no completion claim. It registers the five remaining jobs.
+Run `scripts/audit_paid_order_cuda.py --attempt 4` after committing inputs.
+Production is unchanged; do not repeat the19 passing jobs.
 
 **Canonical status (2026-09-13): THEORY AND EXPERIMENT RESOURCE CONTRACT FROZEN; REFERENCE/CPU AND RTX 3090 AMP BASELINE FROZEN; PROSPECTIVE STRATEGY EXTENSION AUDITED; REGISTERED EXPERIMENTS UNHELD WITHIN THEIR SCOPES.**
 
