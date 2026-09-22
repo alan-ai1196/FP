@@ -143,8 +143,8 @@ def funding():
     before = validate_residency(denied)
     def forbidden(*args, **kwargs):
         raise AssertionError('unfunded structural or numerical kernel entered')
-    with patch.object(query_order, 'search', forbidden) as search, \
-            patch.object(gpu.CudaArithmetic, '__init__', forbidden) as numerical:
+    with patch.object(query_order, 'search', side_effect=forbidden) as search, \
+            patch.object(gpu.CudaArithmetic, '__init__', side_effect=forbidden) as numerical:
         result = predict(denied, relation, (0, 1))
     after, phase = preserved(denied, before, unsealed_refusal=True)
     assert result.status == phase.status == 'UNRESOLVED' and not search.called and not numerical.called
@@ -287,12 +287,16 @@ def preflight():
     assert a3['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE' and len(a3['workers']) == 1
     assert a3['workers'][0]['worker_status'] == 'FAILED'
     assert 'phase_payload(after, buffers[phase.object_id]) == pack(phase)' in a3['workers'][0]['result']['traceback']
-    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A4_CONTINUATION', 'cases': A3_CASES,
+    a4 = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A4.json').read_text())
+    assert a4['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE' and len(a4['workers']) == 1
+    assert "'function' object has no attribute 'called'" in a4['workers'][0]['result']['traceback']
+    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A5_CONTINUATION', 'cases': A3_CASES,
         'previous_source': old['execution_source'], 'retained_A1_passes': 18,
         'retained_A1_failure': 'two-owner funding fixture refused default allocator state; no production failure inferred',
         'retained_A2_control': CONTROL_SOURCE,
         'retained_A2_failure': 'refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization',
         'retained_A3_failure': 'reader assumed a sealed final frame despite insufficient remaining work for its immutable copy',
+        'retained_A4_failure': 'complete refusal-byte reader passed, then a function replacement was incorrectly inspected as a mock',
         'failed_frame_reader': 'compare all pre-seal refusal bytes, retain the seal diagnostic and mutable extent; no failed completion claim',
         'funding_protocol': 'separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one',
         'job_cap': indexed.CAP, 'deadline_ms': 900000, 'source': 'all execution inputs committed at launch HEAD',
@@ -307,7 +311,7 @@ def preflight():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
-    parser.add_argument('--attempt', type=int, choices=(4,))
+    parser.add_argument('--attempt', type=int, choices=(5,))
     parser.add_argument('--worker', choices=A3_CASES)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()

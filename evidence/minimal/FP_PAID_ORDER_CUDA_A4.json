@@ -1,0 +1,57 @@
+{
+  "status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+  "execution_source": "d4960ab6f6c873f4e705e37c71f733a658b0fd57",
+  "registration": {
+    "status": "REGISTERED_PAID_QUERY_ORDER_CUDA_A4_CONTINUATION",
+    "cases": [
+      "search-funding-refusal",
+      "scratch-frame",
+      "projected-scratch-frame",
+      "missing-order",
+      "bool-order"
+    ],
+    "previous_source": "ad68440d76d272c14a4b36f9dcab5613e28858f0",
+    "retained_A1_passes": 18,
+    "retained_A1_failure": "two-owner funding fixture refused default allocator state; no production failure inferred",
+    "retained_A2_control": "7f965952a17fd331ea5a8bb262bbdc1ca07084ae",
+    "retained_A2_failure": "refusal fixture tried to spawn git inside the two-process Windows job before CUDA initialization",
+    "retained_A3_failure": "reader assumed a sealed final frame despite insufficient remaining work for its immutable copy",
+    "failed_frame_reader": "compare all pre-seal refusal bytes, retain the seal diagnostic and mutable extent; no failed completion claim",
+    "funding_protocol": "separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one",
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "source": "all execution inputs committed at launch HEAD",
+    "search_class": "lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate",
+    "scratch": "12*2^r actual bytes; owner export outlives separate writable helper views",
+    "work_model": "prepaid-packed-query-order-subsets-v1",
+    "numerics": "unchanged RNE kernels and 1/100 state, 1/1000 probability tolerances",
+    "fixed_control": "only integration-large uses fixed global n256; projected n256 searches local blocks",
+    "scope": "paid reference/AMP component gate, full native continuations and scoped refusals; no full indexed release or model comparison"
+  },
+  "workers": [
+    {
+      "case": "search-funding-refusal",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1858539520,
+        "peak_job_commit": 1859739648,
+        "user_100ns": 16562500,
+        "kernel_100ns": 7812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 6172,
+        "process_creation_100ns": 134345935814997024
+      },
+      "result": {
+        "status": "FAILED_AUDIT",
+        "case": "search-funding-refusal",
+        "process_id": 6172,
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 318, in <module>\n    report.update(status='PASS_ACTUAL_PAID_QUERY_ORDER', result=worker(args.worker))\n                                                                ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 256, in worker\n    return funding()\n           ^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 150, in funding\n    assert result.status == phase.status == 'UNRESOLVED' and not search.called and not numerical.called\n                                                                 ^^^^^^^^^^^^^\nAttributeError: 'function' object has no attribute 'called'\n"
+      }
+    }
+  ]
+}

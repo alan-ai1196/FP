@@ -2,7 +2,7 @@
 
 Status: **packed algorithm proved and exhaustively audited; reference
 Runtime prototype and passive AMP integration pass scoped CPU checks;
-scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A4 continuation registered**.
+scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 funded control passes; five-job A5 continuation registered**.
 Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
 
 ## 1. A bounded representation of the existing exact DP
@@ -274,3 +274,9 @@ explicit seal diagnostic and mutable paid extent, and checks all earlier
 sealed records and native state unchanged. This corrects an audit premise;
 production, the control-derived cap and all five registered cases remain
 unchanged. The failed A3 reader stays in the canonical journal.
+
+A4 atd4960ab passes the corrected complete refusal-byte check, then fails
+when the test reads `.called` on a direct function replacement. The
+replacement now uses `patch(..., side_effect=...)` so the call counter is
+real. A5 retains the same five cases, caps and unchanged production. A4's
+AttributeError remains a failed audit, not a passed complete gate.

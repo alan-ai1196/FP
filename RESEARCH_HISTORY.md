@@ -7303,3 +7303,9 @@ diagnostic extension, paid mutable extent, untouched old records and zero
 solver/numerical entry. The underlying resource contract is not relaxed.
 All three failed audits remain source-bound and terminal; production is
 still unchanged fromad68440.
+
+A4 atd4960ab passes the complete failed-frame byte reader, then the test
+raises AttributeError by inspecting a direct function replacement's
+nonexistent `.called`. A5 uses actual mock call counters and reruns only
+the five outstanding cases. Production and the numerical/resource contract
+are unchanged; the fourth failed audit remains retained.

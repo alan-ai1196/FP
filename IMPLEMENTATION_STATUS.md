@@ -12,7 +12,9 @@ incorrectly expects a sealed frame with only3455 work left; the immutable
 copy alone needs at least262144. A4 verifies the complete pre-seal refusal
 bytes and explicit added seal-failure diagnostic, retaining the mutable
 paid extent and no completion claim. It registers the five remaining jobs.
-Run `scripts/audit_paid_order_cuda.py --attempt 4` after committing inputs.
+A4 passes that byte reader, then hits a test-only AttributeError while
+inspecting a function replacement as a mock. A5 corrects that inspection.
+Run `scripts/audit_paid_order_cuda.py --attempt 5` after committing inputs.
 Production is unchanged; do not repeat the19 passing jobs.
 
 ## Current implementation state (2026-09-23)
