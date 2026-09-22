@@ -4,7 +4,7 @@ Planning reads the complete support before any numerical tables or powers.
 The immutable plan is not a resource lease, learner state or certificate.
 """
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from itertools import combinations
 
 from .core import ContractError
@@ -19,6 +19,7 @@ class BlockPlan:
     vertices: tuple[int, ...]
     query: tuple[int, int]
     shape: tuple[tuple[str, int], ...]
+    order: tuple[int, ...]
 
 
 @dataclass(frozen=True)
@@ -111,7 +112,7 @@ def _local(before, vertices):
     return CountState(len(vertices),tuple(values),None,before.cursor,before.steps)
 
 
-def _prepare(before, query, budget, *, integer):
+def _prepare(before, query, budget, *, integer, order_search=None, orders=None):
     if type(before) is not CountState or before.pending is not None or type(budget) is not DecodeAllowance:
         raise ContractError('complete committed count state and decoder allowance required')
     if type(query) is not tuple or len(query) != 2:
@@ -120,19 +121,30 @@ def _prepare(before, query, budget, *, integer):
     require_query(before.n,*query)
     support = tuple(edge for edge,d in zip(combinations(range(before.n),2),before.counts) if d)
     path = _path(before.n,support,query)
+    if orders is not None and (order_search is not None or type(orders) is not tuple or len(orders) != len(path)):
+        raise ContractError('one complete immutable order per declared query block required')
+    local_budget = budget
+    if (order_search is not None or orders is not None) and len(path) > 1:
+        if budget.live_cells <= 8:
+            raise ArithmeticUnresolved('projected convolution leaves no local table allowance')
+        local_budget = replace(budget, live_cells=budget.live_cells-8)
     blocks, height, edge_count = [], 0, 0
-    for vertices,u,v in path:
+    for k,(vertices,u,v) in enumerate(path):
         local = _local(before,vertices)
         height += sum(map(abs,local.counts))
         edge_count += sum(d != 0 for d in local.counts)
         local_query = vertices.index(u),vertices.index(v)
         order = tuple(range(local.n-1))
+        active = tuple(edge for edge,d in zip(combinations(range(local.n),2),local.counts) if d)
+        if order_search is not None:
+            order = order_search(local.n, active, local_query, local_budget.join_cells, local_budget.live_cells)
+        elif orders is not None:
+            order = orders[k]
         if integer:
-            shape = partition_plan(local,local_query,order,budget)
+            shape = partition_plan(local,local_query,order,local_budget)
         else:
-            active = tuple(edge for edge,d in zip(combinations(range(local.n),2),local.counts) if d)
-            shape = partition_shape_plan(local.n,active,local_query,order,budget)
-        blocks.append(BlockPlan(vertices,local_query,tuple(shape.items())))
+            shape = partition_shape_plan(local.n,active,local_query,order,local_budget)
+        blocks.append(BlockPlan(vertices,local_query,tuple(shape.items()),order))
     vertices = 1+sum(len(block.vertices)-1 for block in blocks) if blocks else 0
     # Positive block convolution also needs this combined height envelope.
     # Off-path counts are retained, but no power of them is evaluated here.
@@ -155,14 +167,14 @@ def _prepare(before, query, budget, *, integer):
     return ProjectionPlan(tuple(blocks),tuple(shape.items()))
 
 
-def prepare(before, query, budget):
+def prepare(before, query, budget, *, order_search=None):
     """Exact integer decoder: combined and individual height guards apply."""
-    return _prepare(before,query,budget,integer=True)
+    return _prepare(before,query,budget,integer=True,order_search=order_search)
 
 
-def prepare_shape(before, query, budget):
+def prepare_shape(before, query, budget, *, order_search=None, orders=None):
     """Only table geometry; mantissa/exponent execution needs its own guard."""
-    return _prepare(before,query,budget,integer=False)
+    return _prepare(before,query,budget,integer=False,order_search=order_search,orders=orders)
 
 
 def execute(before, query, plan):
@@ -175,7 +187,7 @@ def execute(before, query, plan):
     multiply = add = 0
     for k,block in enumerate(plan.blocks):
         local = _local(before,block.vertices)
-        parts,stats = partition.decode(local.n,local.counts,block.query,order=tuple(range(local.n-1)))
+        parts,stats = partition.decode(local.n,local.counts,block.query,order=block.order)
         if any(stats[key] != value for key,value in block.shape):
             raise ContractError('executed block differs from its prepaid table schedule')
         multiply += stats['positive_multiplications']

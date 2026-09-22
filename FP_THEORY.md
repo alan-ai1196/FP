@@ -211,6 +211,16 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [paid query-order prototype](theory/proofs/PAID_QUERY_ORDER.md) now has
+an exact packed subset representation and prior Runtime work debits. Its
+structural, native and passive AMP audits pass, including an n16 query
+recovery without dropping counts. Its supplied scratch can still be resized
+after payment: correct native forecasts coexist with a stale resource
+ledger. This is a concrete implementation mismatch, requiring an owner-held
+extent across future helper calls. New actual CUDA remains HOLD; no frozen
+semantic definition or architecture action changes.
+
+
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 removes a redundant producer when its trusted validator already constructs
 the sole accepted plan. Runtime now uses the existing private builders and

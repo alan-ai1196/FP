@@ -42,7 +42,7 @@ def audit(planner=amp):
                 'partitions':(plan.partitions[0]+1,plan.partitions[1]),
                 'power_tags':(not plan.power_tags[0],)+plan.power_tags[1:],
                 'table_shape':tuple((key,value+1 if k == 0 else value) for k,(key,value) in enumerate(plan.table_shape)),
-                'output_cells':plan.output_cells+1}
+                'output_cells':plan.output_cells+1,'orders':plan.orders+((),)}
             assert set(changes) == set(vars(plan))
             for name,value in changes.items():
                 assert value != getattr(plan,name), 'a field fault must actually change the plan'
@@ -51,7 +51,7 @@ def audit(planner=amp):
                 fields.add(name)
             for change in ({'n':float(n)},{'query':tuple(F(v) for v in query)},
                            {'power_tags':tuple(int(v) for v in plan.power_tags)},
-                           {'positions':list(plan.positions)}):
+                           {'positions':list(plan.positions)},{'orders':list(plan.orders)}):
                 rejects(lambda: validate(replace(plan,**change)))
                 typed += 1
             extra = replace(plan)

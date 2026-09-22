@@ -27,7 +27,8 @@ class ReferenceRunManifest:
     target_amp: str = field(default='UNRESOLVED: actual target AMP is not implemented', init=False)
 
     def __post_init__(self):
-        if self.machine_id in ('packed-indexed-reference-payload-v1', 'packed-indexed-reference-payload-v2'):
+        if self.machine_id in ('packed-indexed-reference-payload-v1', 'packed-indexed-reference-payload-v2',
+                               'packed-indexed-reference-payload-v3'):
             object.__setattr__(self, 'reference_arithmetic',
                                'indexed-literal-count-positive-query-block-reference-v1')
 

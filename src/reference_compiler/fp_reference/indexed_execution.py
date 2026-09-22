@@ -170,13 +170,13 @@ class IndexedPredictionPlan:
     bit_limit: int
 
 
-def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_limit):
-    """The unique declared exact schedule, constructed inside its owner."""
+def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_limit, order_search=None):
+    """Build and bound the owner's selected exact schedule."""
     if type(state) is not IndexedState or state.encoded.n != program.n or state.unit_count:
         raise ContractError('owned committed indexed predecessor required')
     query, _ = program.source_query(rules, sources)
     budget = replace(budget, integer_bits=min(budget.integer_bits, bit_limit))
-    plan = projection.prepare(state.encoded, query, budget)
+    plan = projection.prepare(state.encoded, query, budget, order_search=order_search)
     return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
 
 
@@ -233,7 +233,7 @@ class IndexedRangeBound:
 class IndexedReferenceMachine(ReferenceMachineModel):
     schema: IndexedRelation
     budget: DecodeAllowance
-    model_id = 'packed-indexed-reference-payload-v2'
+    model_id = 'packed-indexed-reference-payload-v3'
     initializer_id = 'indexed-uniform-unit-simplex-initializer-v1'
     program_type = IndexedRelation
 

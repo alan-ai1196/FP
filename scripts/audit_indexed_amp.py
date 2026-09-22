@@ -174,15 +174,16 @@ def cpu_audit():
         'independent_endpoint_and_normalization_checks': binding_audit()}
 
 
-def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, projected=False, **cuda_changes):
+def configuration(n, length, *, profiles=(), persistence=None, law=False, install=False, policy=False, projected=False,
+                  order_search=False, **cuda_changes):
     cfg, schema, online = fixture(n, length, profiles=profiles, persistence=persistence, law=law,
                                   byte_cap=1 << 30, work_cap=10**14)
-    cfg = replace(cfg, normalizer_cap=F(18))
+    cfg = replace(cfg, normalizer_cap=F(18), indexed_order_search=order_search)
     arena = 32 << 20
     contract = ProjectedIndexedCudaPrefixContract if projected else IndexedCudaPrefixContract
     cuda = contract(CudaStorageContract(arena, 2*arena,
         {role: (arena, 2*arena) for role in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
-        n=n, phase_output_cells=65536, phase_evidence_bytes=(4 << 20) if n > 32 else 262144,
+        n=n, order_search=order_search, phase_output_cells=65536, phase_evidence_bytes=(4 << 20) if n > 32 else 262144,
         install=CudaInstallContract() if install else None)
     cuda = replace(cuda, **cuda_changes)
     rt = ReferenceCompilerRuntime(cfg, schema, online=online,
@@ -216,7 +217,15 @@ def check_phases(rt, *, projected=False):
         if kind == 'predict':
             raw = record.raw_prediction
             state = amp.IndexedAmpState(raw.before)
-            if projected:
+            if snapshot.cuda.contract.order_search:
+                from fp_reference import projected_amp
+                planner = projected_amp if projected else amp
+                schema = IndexedRelation(raw.before.n)
+                sources = schema.source_row(raw.query[0]*schema.n+raw.query[1])
+                planner.check_prediction_plan(record.execution_plan,schema,state,schema.rules(),sources,
+                    output_cap=snapshot.cuda.contract.phase_output_cells,allow_orders=True)
+                amp.check_prediction_execution(record.execution_plan,state,raw,record.raw_operations,bit_limit=32768)
+            elif projected:
                 from fp_reference import projected_amp
                 schema = IndexedRelation(raw.before.n)
                 plan = projected_amp.prepare_prediction(schema,state,schema.rules(),

@@ -2,7 +2,27 @@
 
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
-**Current frontier: paid order choice; singleton-plan elimination passes its actual gate.**
+**Current frontier (2026-09-23): bind the paid order solver's scratch extent before CUDA.**
+The [paid order-search prototype](theory/proofs/PAID_QUERY_ORDER.md) now exists
+in Runtime. Its real packed table needs12*2^r bytes, at most393216;128432
+independent exhaustive objective checks pass. Work is debited before each
+search. The complete reference regression, including n256 and fresh
+persistence, passes with search enabled. On the same28-event K(2,14) history,
+fixed order refuses query(2,3); paid order answers the independent32768-world
+forecast while retaining all120 counts. Both passive AMP variants pass280
+predictions/560 observations, and11919 projected tapes match native sums.
+
+**The supplied scratch boundary is falsified, so new actual CUDA remains HOLD.**
+A solver can extend its supplied bytearray, then resize its retained old
+handle during a later call. Runtime publishes two correct native forecasts
+while billing48 bytes for50. `FP_ORDER_WORKSPACE_RESIZE_CPU.json` retains
+this actual CPU counterexample. The needed repair is an owner-held buffer
+export that outlives every solver view, with immutable snapshot copies;
+an after-call size check cannot undo the already unpaid allocation.
+No Foundation action or numerical relaxation follows. All current CPU
+jobs are terminal; no actual new-order CUDA job has been launched.
+
+**Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
 removes a producer when the trusted checker already constructs its only
 acceptable answer. Runtime now uses those existing private builders and
@@ -28,8 +48,8 @@ paths cross20, install with alpha1/2 retained and learn to21. Preflight and
 second-lineage commit refusals preserve received data. Maximum job
 2,394,525,696 bytes; every job exits zero without timeout/limit termination.
 This closes the stated component gate, not a complete indexed release or
-model result. All jobs are terminal. Return to paid query-order choice,
-with explicit structural and numerical decision classes. A non-singleton
+model result. Those jobs are terminal. Their results remain source-bound; the new
+solver and remaining extent defect are described above. A non-singleton
 order class can use a value-only proposal boundary; the current fixed
 schedules need no redundant producer. Do not rerun terminal probes.
 

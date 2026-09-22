@@ -1,0 +1,44 @@
+{
+  "status": "PASS_PAID_ORDER_PASSIVE_AMP",
+  "scope": "exact structural plans, RNE and complete native-coordinate relations; no device or owned resource authority",
+  "projected_complete_small_tapes": {
+    "ternary_count_states": 759,
+    "complete_ordered_query_tapes_against_native_world_sums": 11919
+  },
+  "global": {
+    "predictions": 280,
+    "observations": 560,
+    "selected_order_differs_from_natural": 112,
+    "half_outputs": 387,
+    "maximum_complete_coordinate_errors": {
+      "native": "96025793/275834208256",
+      "probability": "38407029/1103336833024",
+      "division": "11001251/175921852055552",
+      "gradient": "101840539/130044395520"
+    },
+    "fixed_tolerance_unresolved": []
+  },
+  "projected": {
+    "predictions": 280,
+    "observations": 560,
+    "selected_order_differs_from_natural": 24,
+    "half_outputs": 552,
+    "maximum_complete_coordinate_errors": {
+      "native": "27076805/68958552064",
+      "probability": "5415361/137917104128",
+      "division": "11001251/175921852055552",
+      "gradient": "114924649/130044395520"
+    },
+    "fixed_tolerance_unresolved": []
+  },
+  "global_order_class_binding": {
+    "order_or_tape_substitutions_refused": 8,
+    "complete_alternative_order_accepted_in_expanded_class": true,
+    "same_alternative_refused_in_fixed_natural_class": true
+  },
+  "projected_order_class_binding": {
+    "order_or_tape_substitutions_refused": 8,
+    "complete_alternative_order_accepted_in_expanded_class": true,
+    "same_alternative_refused_in_fixed_natural_class": true
+  }
+}

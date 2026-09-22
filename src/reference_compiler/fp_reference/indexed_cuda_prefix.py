@@ -14,7 +14,7 @@ from . import cuda_learner as gpu, indexed_amp as indexed
 
 def execute(prefix, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
             ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-            normalizer_cap, activation_cap, source_domain, readout_buffer):
+            normalizer_cap, activation_cap, source_domain, readout_buffer, order_search=None):
     source = prefix.staged if origin == 'profile' or kind == 'commit' else prefix.current
     input_id = None if kind == 'initialize' else source[candidate]
     prediction_id = prefix.predicted.get(candidate) if kind == 'observe' else None
@@ -49,11 +49,13 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if before_prediction != prefix.phases[prediction_id].raw_prediction:
                 raise ContractError('indexed CUDA prediction changed before target observation')
         if kind == 'predict':
-            # The complete private builder was already the independent
-            # validator's trusted implementation. Its accepted class is a
-            # singleton; a separate producer cannot add a legal alternative.
+            if prefix.contract.order_search != (order_search is not None):
+                raise ContractError('indexed prediction lost its owned order-search funding boundary')
+            # The owner keeps inputs and accepted metadata private. With
+            # search enabled, only a funded immutable order proposal enters
+            # the complete builder; the fixed class still uses natural order.
             plan = planner._prepare_prediction(program, before_raw, rules, sources,
-                                              output_cap=prefix.contract.phase_output_cells)
+                                              output_cap=prefix.contract.phase_output_cells,order_search=order_search)
         expected_cells = plan.output_cells if kind == 'predict' else 13 if kind == 'observe' else 0
         indexed.allowance(max(1, expected_cells), prefix.contract.phase_output_cells,
                           'indexed CUDA phase output allowance')
@@ -93,7 +95,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 raise ContractError('indexed CUDA executed a different output extent schedule')
             if kind == 'predict':
                 planner.check_prediction_plan(plan,program,before_raw,rules,sources,
-                                              output_cap=prefix.contract.phase_output_cells)
+                                              output_cap=prefix.contract.phase_output_cells,
+                                              allow_orders=prefix.contract.order_search)
                 actual = indexed.IndexedAmpPrediction(actual_prediction.before, actual_prediction.query,
                     workspace.raw_words((actual_prediction.readout,), readout_buffer)[0])
                 checked = indexed.check_prediction_execution(plan, before_raw, actual,

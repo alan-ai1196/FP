@@ -22,6 +22,7 @@ from .semantics import ArithmeticUnresolved, _operation
 
 BACKEND_ID = 'owned-indexed-radix9-half-products-single-readout-v1'
 FORWARD_ID = 'indexed-positive-natural-order-exact-power-aliases-rne16-rne32-v1'
+ORDERED_FORWARD_ID = 'indexed-positive-paid-order-exact-power-aliases-rne16-rne32-v1'
 CUTOFF = 16
 MAX_TAPE_CELLS = 262144
 
@@ -103,9 +104,10 @@ class IndexedAmpPlan:
     power_tags: tuple[bool, ...]
     table_shape: tuple[tuple[str, int], ...]
     output_cells: int
+    orders: tuple[tuple[int, ...], ...] = ()
 
 
-def _prepare_prediction(program, state, rules, sources, *, output_cap):
+def _prepare_prediction(program, state, rules, sources, *, output_cap, order_search=None, orders=None):
     if type(program) is not IndexedRelation or type(state) is not IndexedAmpState or state.unit_count:
         raise ContractError('owned indexed syntax and committed AMP state required')
     state.__post_init__()
@@ -115,6 +117,13 @@ def _prepare_prediction(program, state, rules, sources, *, output_cap):
     active = tuple((p, edge) for p, edge in enumerate(combinations(range(program.n), 2)) if state.encoded.counts[p])
     positions, support = tuple(p for p, _ in active), tuple(edge for _, edge in active)
     order = tuple(range(program.n-1))
+    if orders is not None:
+        if order_search is not None or type(orders) is not tuple or len(orders) != 1:
+            raise ContractError('one complete global query order required')
+        order = orders[0]
+    elif order_search is not None:
+        budget = DecodeAllowance()
+        order = order_search(program.n, support, query, budget.join_cells, budget.live_cells)
     shape = partition_shape_plan(program.n, support, query, order, DecodeAllowance())
     tape_cells = sum(2 if i == 0 else 4 for i, j in support)+shape['positive_multiplications']+shape['positive_additions']+6
     allowance(tape_cells, MAX_TAPE_CELLS, 'indexed AMP tape-cell allowance')
@@ -124,10 +133,10 @@ def _prepare_prediction(program, state, rules, sources, *, output_cap):
     if len(tape.nodes) != tape_cells:
         raise ContractError('indexed AMP tape differs from its metadata preflight')
     return _finish_plan(program.n,query,support,positions,tuple(tape.nodes),
-                        tape.partition_heads,tuple(shape.items()),output_cap)
+                        tape.partition_heads,tuple(shape.items()),output_cap,orders=(order,))
 
 
-def _finish_plan(n,query,support,positions,nodes,partitions,shape,output_cap):
+def _finish_plan(n,query,support,positions,nodes,partitions,shape,output_cap,*,orders=()):
     """Common syntactic power aliases and the unchanged scalar output tariff."""
     powers, general, additions = [], 0, 0
     for tag, *args in nodes:
@@ -147,7 +156,7 @@ def _finish_plan(n,query,support,positions,nodes,partitions,shape,output_cap):
     # six per non-power product; twenty for the complete seven-value readout.
     cells = 38+6*general+4*additions
     allowance(cells, output_cap, 'indexed AMP numeric output allowance')
-    return IndexedAmpPlan(n,query,support,positions,nodes,partitions,tuple(powers),shape,cells)
+    return IndexedAmpPlan(n,query,support,positions,nodes,partitions,tuple(powers),shape,cells,orders)
 
 
 def prepare_prediction(program, state, rules, sources, *, output_cap):
@@ -165,14 +174,17 @@ def _same_plan_value(actual, expected):
     return type(expected) in (str,int,bool) and actual == expected
 
 
-def check_prediction_plan(plan, program, state, rules, sources, *, output_cap):
+def check_prediction_plan(plan, program, state, rules, sources, *, output_cap, allow_orders=False):
     """Bind every plan coordinate to independently supplied owned inputs.
 
     This trusted reconstruction does not invoke the replaceable preparation
     helper. It checks the declared plan before execution and again before
     accepting the returned operation trace. No hashes or external plan IDs.
     """
-    expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
+    if type(allow_orders) is not bool or type(plan) is not IndexedAmpPlan:
+        raise ContractError('registered plan and immutable order-class flag required')
+    expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap,
+                                   orders=plan.orders if allow_orders else None)
     _check_plan(plan,expected)
 
 

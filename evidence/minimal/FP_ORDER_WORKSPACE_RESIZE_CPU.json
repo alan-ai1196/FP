@@ -1,0 +1,15 @@
+{
+  "status": "UNPAID_SCRATCH_RESIZE_COUNTEREXAMPLE",
+  "scope": "actual CPU Runtime; supplied scratch and a later retained backing handle only; no owner globals or native-input mutation",
+  "attempts": [
+    "RESIZED",
+    "RESIZED"
+  ],
+  "billed_scratch_bytes": 48,
+  "actual_scratch_bytes": 50,
+  "unpaid_payload_bytes": 2,
+  "published_correct_native_forecasts": 2,
+  "ordinary_cursor": 2,
+  "next_target_revealed": false,
+  "earlier_snapshot_bytes_unchanged": true
+}

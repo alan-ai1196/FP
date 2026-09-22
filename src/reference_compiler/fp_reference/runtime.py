@@ -22,6 +22,7 @@ from .indexed_relation import IndexedRelation, DecodeAllowance
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
 from .indexed_execution import _prepare_owned_prediction, _owned_prediction_work, _execute_owned_prediction
+from . import query_order
 from .encoding import packed_size, write_packed, fragments, bounded_packed_size
 from . import phase_deflate as phase_codec
 from .host_failure import guard_host_allocations
@@ -77,8 +78,12 @@ class ConstructionContract:
     activation_cap: F
     reference_integer_bits: int
     source_domain: tuple[tuple[F, ...], ...] | CategoricalPairDomain | None = None
+    indexed_order_search: bool = False
 
     def __post_init__(self):
+        if type(self.indexed_order_search) is not bool or (self.indexed_order_search
+                and type(self.initializer_pattern) is not IndexedInitializer):
+            raise ContractError('bounded order search requires the registered indexed native family')
         if type(self.semantics) is not SemanticRules or type(self.limits) is not ResourceLimits:
             raise ContractError('immutable semantic and resource declarations required')
         if set(self.limits.role_residency) != {'deployment', 'compiler'}:
@@ -374,6 +379,8 @@ class ReferenceCompilerRuntime:
         if cuda is not None and (indexed != (type(cuda) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract))
                 or indexed and cuda.n != contract.initializer_pattern.n):
             raise ContractError('reference and CUDA registrations require the same complete native representation')
+        if cuda is not None and indexed and cuda.order_search != contract.indexed_order_search:
+            raise ContractError('reference and AMP order-search registrations must agree')
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
             DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits))) if indexed else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
@@ -451,6 +458,16 @@ class ReferenceCompilerRuntime:
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
+        if contract.indexed_order_search:
+            # One actual reusable DP extent, owned before construction/CUDA.
+            # Larger blocks remain UNRESOLVED; this cap never truncates state.
+            search_n = min(contract.initializer_pattern.n, query_order.MAX_FREE+1)
+            search_bytes = query_order.workspace_bytes(search_n, (0, 0))
+            self._event_router.charge_work('information', {'work': search_bytes}, 'bind-query-order-storage')
+            search_id = f'{self._runtime_id}:query-order-storage'
+            self._ledger.allocate(self._data_owner, (ObjectSpec(search_id, 'query_order_dp_workspace',
+                {'reference_payload_bytes': search_bytes, 'physical_objects': 1}, self._chi),))
+            self._buffers[search_id] = bytearray(search_bytes)
         if cuda is not None:
             readout_bytes = 8*cuda.phase_output_cells
             self._event_router.charge_work('information', {'work': 4096+readout_bytes}, 'bind-actual-CUDA-prefix-storage')
@@ -887,7 +904,11 @@ class ReferenceCompilerRuntime:
                     origin=origin, observation_id=observation_id, sources=sources,
                     reference_prediction=reference_prediction, target=target,
                     normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
-                    source_domain=self._contract.source_domain, readout_buffer=self._buffers[readout_id])
+                    source_domain=self._contract.source_domain, readout_buffer=self._buffers[readout_id],
+                    order_search=self._order_search(lambda amount: (
+                        self._router.charge_work('construct', {'work': amount}, label+':query-order-search')
+                        if origin == 'construction' else self._event_router.charge_work(
+                            purpose, {'work': amount}, label+':query-order-search'))) if kind == 'predict' else None)
             except (ResourceExceeded, ArithmeticUnresolved):
                 raise
             except ContractError as error:
@@ -1069,11 +1090,30 @@ class ReferenceCompilerRuntime:
             return self._machine.initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
         return initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
 
-    def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit):
+    def _order_search(self, debit):
+        if not self._contract.indexed_order_search:
+            return None
+        workspace = self._buffers[f'{self._runtime_id}:query-order-storage']
+        def choose(n, support, query, join_cap, live_cap):
+            if query_order.workspace_bytes(n, query) > len(workspace):
+                raise ResourceExceeded('owned order-search extent is insufficient')
+            debit(query_order.search_work(n, len(support), query))
+            result = query_order.search(n, support, query, join_cap, live_cap, workspace)
+            if result is None:
+                raise ArithmeticUnresolved('no query-retaining order fits the declared join/live class')
+            if type(result) is not query_order.OrderMinimum:
+                raise ContractError('structural search returned another result representation')
+            # Only the immutable order is a proposal. The builder independently
+            # validates its permutation, table costs and complete numerical tape.
+            # No optimization or precision-completeness token is minted here.
+            return result.order
+        return choose
+
+    def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit, search_debit):
         if type(self._machine) is IndexedReferenceMachine:
             self._machine.require_program(program)
             plan = _prepare_owned_prediction(program, rules, state, sources,
-                budget=self._machine.budget, bit_limit=bit_limit)
+                budget=self._machine.budget, bit_limit=bit_limit, order_search=self._order_search(search_debit))
             execution_debit(_owned_prediction_work(plan))
             return _execute_owned_prediction(plan, program.n)
         return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)
@@ -1326,7 +1366,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 work(self._machine.evaluation_work(program, rules), f'{position}:predict')
                 prediction = self._reference_predict(program, rules, local, dict(observation.sources),
                                       bit_limit=self._contract.reference_integer_bits,
-                                      execution_debit=lambda amount: work(amount, f'{position}:indexed-table-execution'))
+                                      execution_debit=lambda amount: work(amount, f'{position}:indexed-table-execution'),
+                                      search_debit=lambda amount: work(amount, f'{position}:query-order-search'))
                 if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in self._machine.activation_values(prediction)):
                     raise ContractError('profile execution contradicts a sufficient native range bound')
                 float64_prediction = self._float64_execute('predict', program, candidate, local, local_float64,
@@ -1578,7 +1619,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 self._event_work(state, self._machine.evaluation_work(program, rules), 'predict')
                 prediction = self._reference_predict(program, rules, state.learner, source_map,
                                       bit_limit=self._contract.reference_integer_bits,
-                                      execution_debit=lambda amount: self._event_work(state, amount, 'indexed-table-execution'))
+                                      execution_debit=lambda amount: self._event_work(state, amount, 'indexed-table-execution'),
+                                      search_debit=lambda amount: self._event_work(state, amount, 'query-order-search'))
                 if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in self._machine.activation_values(prediction)):
                     raise ContractError('a certified range enclosure disagrees with actual native execution')
                 floating_prediction = self._float64_execute('predict', program, state.candidate_id, state.learner, state.float64,

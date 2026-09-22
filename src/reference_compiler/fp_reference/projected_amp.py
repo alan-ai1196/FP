@@ -13,16 +13,17 @@ from .semantics import ArithmeticUnresolved
 
 BACKEND_ID = 'owned-indexed-query-block-radix9-half-products-single-readout-v1'
 FORWARD_ID = 'indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1'
+ORDERED_FORWARD_ID = 'indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1'
 
 
-def _prepare_prediction(program,state,rules,sources,*,output_cap):
+def _prepare_prediction(program,state,rules,sources,*,output_cap,order_search=None,orders=None):
     if type(program) is not IndexedRelation or type(state) is not amp.IndexedAmpState or state.unit_count:
         raise ContractError('owned indexed syntax and committed AMP state required')
     state.__post_init__()
     if state.encoded.n != program.n:
         raise ContractError('projected AMP state differs from its program')
     query,_ = program.source_query(rules,sources)
-    geometry = projection.prepare_shape(state.encoded,query,DecodeAllowance())
+    geometry = projection.prepare_shape(state.encoded,query,DecodeAllowance(),order_search=order_search,orders=orders)
     blocks,edges,height,tape_cells = [],set(),0,3
     for block in geometry.blocks:
         local = projection._local(state.encoded,block.vertices)
@@ -51,7 +52,7 @@ def _prepare_prediction(program,state,rules,sources,*,output_cap):
 
     for k,(block,local_support) in enumerate(blocks):
         tape,heads = compile_tape(len(block.vertices),local_support,block.query,
-            order=tuple(range(len(block.vertices)-1)),readout=False)
+            order=block.order,readout=False)
         mapping = [0,1,2]
         for tag,*args in tape.nodes[3:]:
             if tag == 'factor':
@@ -72,13 +73,17 @@ def _prepare_prediction(program,state,rules,sources,*,output_cap):
     if len(nodes) != tape_cells:
         raise ContractError('projected AMP tape differs from its metadata preflight')
     shape = geometry.shape+(('partition_tape_cells',tape_cells),)
-    return amp._finish_plan(program.n,query,support,positions,tuple(nodes),parts,shape,output_cap)
+    return amp._finish_plan(program.n,query,support,positions,tuple(nodes),parts,shape,output_cap,
+                            orders=tuple(block.order for block in geometry.blocks))
 
 
 def prepare_prediction(program,state,rules,sources,*,output_cap):
     return _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
 
 
-def check_prediction_plan(plan,program,state,rules,sources,*,output_cap):
-    expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap)
+def check_prediction_plan(plan,program,state,rules,sources,*,output_cap,allow_orders=False):
+    if type(allow_orders) is not bool or type(plan) is not amp.IndexedAmpPlan:
+        raise ContractError('registered plan and immutable order-class flag required')
+    expected = _prepare_prediction(program,state,rules,sources,output_cap=output_cap,
+                                   orders=plan.orders if allow_orders else None)
     amp._check_plan(plan,expected)

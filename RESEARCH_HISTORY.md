@@ -7213,3 +7213,37 @@ UNRESOLVED for the larger existence question unless another complete
 certificate is obtained. No numerical tolerance or Foundation/ERC-1 rule
 changes, and no numerical search machinery is added merely to protect an
 unsupported completeness claim.
+
+## 216. Pay for actual subset search, recover a native query, then break its scratch extent (2026-09-23)
+
+The structural DP now uses its actual supplied12-byte rows rather than
+exponential Python dictionaries. Compressing out retained-query bits gives
+12*2^r bytes, at most393216. Explicit count bounds fit unsigned32 words; a
+conservative prepaid primitive tariff covers setup, all rows/choices and
+reconstruction. All128432 independent exhaustive objective comparisons pass,
+as do dirty reuse/canary and pre-write refusal checks.
+
+The Runtime prototype reserves real storage and debits each search before
+entry. Builders independently check immutable order proposals and their
+full tapes; solver cost claims grant no resource or optimality authority.
+The full reference regression, including388 histories/776 phases, n256 and
+fresh persistence, passes. Both global/projected passive AMP paths pass280
+predictions/560 complete-coordinate observations;11919 projected tapes agree
+with native world sums. No actual CUDA run is claimed.
+
+The same28 native events on K(2,14) leave fixed order unable to answer
+query(2,3) at the join cap. Paid search answers exactly the independent sum
+over32768 worlds, retaining all120 counts and an unrevealed next target.
+Search work actually debited is1866985728. This is a concrete native query
+recovery, not a model score, whole-process advantage or precision certificate.
+
+Attack the supplied workspace before releasing the prototype: ordinary
+bytearray.extend in one solver call, then a resize through its retained old
+handle in the next, leaves48 billed bytes for50 actual bytes. Two correct
+native forecasts still publish, and the intervening native update is legal.
+This actual CPU counterexample defeats extent ownership despite correct
+work debits and immutable old snapshots. The optional new solver and new
+actual CUDA stay HOLD. Retain an owner-private buffer export for the whole
+workspace lifetime, hand out separate views, and copy scratch on snapshot;
+checking size only after a call would be too late to repair the paid peak.
+Foundation/ERC-1 and all native arithmetic rules remain unchanged.

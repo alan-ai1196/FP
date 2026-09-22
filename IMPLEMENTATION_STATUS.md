@@ -1,6 +1,22 @@
 # FP Implementation Status
 
-## Current implementation state (2026-09-21)
+## Current implementation state (2026-09-23)
+
+**Paid order search is implemented as a prototype; its scratch extent is not yet safe.**
+The [packed DP and Runtime wiring](theory/proofs/PAID_QUERY_ORDER.md) pass
+128432 structural objective checks and the full owned reference regression.
+Every search receives actual reserved table bytes and a prior work debit.
+The n16 K(2,14) query is recovered at the unchanged join cap with all120
+counts retained. Both new passive AMP paths pass280 predictions/560 full
+coordinate observations;11919 projected tapes agree with exact native sums.
+Fixed-schedule regressions and complete new order/tape binding checks pass.
+
+A supplied-buffer counterexample still defeats residency accounting: the
+solver grows its48-byte bytearray to50 across two correct native predictions.
+Old snapshots are intact but the payload growth is unpaid. The optional
+search mode and all actual new-order experiments stay HOLD until Runtime
+retains capacity authority across later solver calls. The fixed schedule
+remains available; no new complete release or model result is claimed.
 
 **Fixed indexed plans are constructed and executed inside Runtime; all fifteen actual gate jobs pass.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
@@ -39,8 +55,8 @@ can have opposite exact forward-bridge decisions. Eleven owned reference
 events and the complete literal learner agree; both passive RNE traces pass
 their operation checks. This changes no production code or model tolerance.
 Resource optimization cannot promote failure of its chosen order into a
-numerical infeasibility certificate for all orders. Paid order search is
-still unimplemented, and its structural result must remain separately scoped.
+numerical infeasibility certificate for all orders. The paid prototype above still needs its extent repair; its structural
+result remains separately scoped.
 
 The [byte-only phase boundary](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md)
 is implemented with a versioned standard zlib identity. Runtime alone keeps

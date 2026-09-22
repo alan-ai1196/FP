@@ -64,7 +64,7 @@ class CudaPrefixContract:
         backend, work_model, forward = self._arithmetic_ids()
         if self.evidence_encoding == DEFLATE_PHASE_ENCODING_ID:
             work_model += '+prepaid-byte-only-phase-compression-v1'
-        if (self.backend_id not in ('', backend) or self.forward_id != forward
+        if (self.backend_id not in ('', backend) or self.forward_id not in ('', forward)
                 or self.work_model not in ('', work_model)):
             raise ContractError('CUDA prefix cannot replace the registered executor or work model')
         object.__setattr__(self, 'backend_id', backend)
@@ -95,25 +95,32 @@ class CudaPrefixContract:
 @dataclass(frozen=True, kw_only=True)
 class IndexedCudaPrefixContract(CudaPrefixContract):
     n: int
-    forward_id: str = field(default=INDEXED_FORWARD_ID, init=False)
+    order_search: bool = False
+    forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
         from . import indexed_amp as indexed
+        from .query_order import WORK_MODEL
         indexed.IndexedRelation(self.n)
         if self.likelihood_encoding is not None:
             raise ContractError('indexed native lowering cannot borrow a dense likelihood encoding')
-        return indexed.BACKEND_ID, 'prepaid-indexed-owned-plan-and-scalar-arena-v2', indexed.FORWARD_ID
+        if type(self.order_search) is not bool:
+            raise ContractError('immutable indexed order-search registration required')
+        work = 'prepaid-indexed-owned-plan-and-scalar-arena-v2'
+        return (indexed.BACKEND_ID, work+('+'+WORK_MODEL if self.order_search else ''),
+                indexed.ORDERED_FORWARD_ID if self.order_search else indexed.FORWARD_ID)
 
 
 @dataclass(frozen=True, kw_only=True)
 class ProjectedIndexedCudaPrefixContract(IndexedCudaPrefixContract):
     """Distinct fixed physical schedule for the same complete native learner."""
-    forward_id: str = field(default=PROJECTED_FORWARD_ID, init=False)
+    forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
         from . import projected_amp
         _,work,_ = super()._arithmetic_ids()
-        return projected_amp.BACKEND_ID,work,projected_amp.FORWARD_ID
+        return (projected_amp.BACKEND_ID,work,
+                projected_amp.ORDERED_FORWARD_ID if self.order_search else projected_amp.FORWARD_ID)
 
 
 @dataclass(frozen=True)
@@ -339,14 +346,14 @@ class _CudaPrefix:
 
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-                normalizer_cap, activation_cap, source_domain=None, readout_buffer=None):
+                normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None):
         if self.indexed:
             from .indexed_cuda_prefix import execute
             return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
                 bit_limit=bit_limit, ordinary_cursor=ordinary_cursor, origin=origin,
                 observation_id=observation_id, sources=sources, reference_prediction=reference_prediction,
                 target=target, normalizer_cap=normalizer_cap, activation_cap=activation_cap,
-                source_domain=source_domain, readout_buffer=readout_buffer)
+                source_domain=source_domain, readout_buffer=readout_buffer, order_search=order_search)
         if bit_limit < 1075:
             raise ArithmeticUnresolved('exact raw-value relation decoder exceeds its reference integer allowance')
         use_staged = origin == 'profile' or kind == 'commit'

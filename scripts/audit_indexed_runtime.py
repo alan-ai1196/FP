@@ -365,7 +365,7 @@ def persistence_audit():
     cfg, schema, online = fixture(2, 36, persistence=registration, law=True)
     rules, graph, spec, _ = literal(2)
     native_cfg = replace(cfg, initializer_pattern=(F(1), F(1, 2), F(1, 2)),
-        source_domain=tuple(tuple(schema.source_row(k).values()) for k in range(4)))
+        source_domain=tuple(tuple(schema.source_row(k).values()) for k in range(4)), indexed_order_search=False)
     native_online = replace(online, learner=spec)
     executions = (ReferenceCompilerRuntime(cfg, schema, online=online),
                   ReferenceCompilerRuntime(native_cfg, graph, online=native_online))

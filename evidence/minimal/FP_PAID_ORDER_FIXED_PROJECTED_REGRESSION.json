@@ -1,0 +1,95 @@
+{
+  "status": "PASS_PROJECTED_AMP_CPU",
+  "scope": "exact projected tape semantics and exact RNE/native coordinate audit; actual CUDA evidence separate",
+  "backend_id": "owned-indexed-query-block-radix9-half-products-single-readout-v1",
+  "forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1",
+  "exhaustive": {
+    "ternary_count_states": 759,
+    "complete_ordered_query_tapes_against_native_world_sums": 11919
+  },
+  "numerical": {
+    "predictions": 280,
+    "observations": 560,
+    "half_precision_outputs": 552,
+    "maximum_complete_coordinate_errors": {
+      "native": "27076805/68958552064",
+      "probability": "5415361/137917104128",
+      "gradient": "114924649/130044395520"
+    },
+    "distinct_registered_rounding_example": [
+      {
+        "n": 5,
+        "counts": [
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          0,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "query": [
+          1,
+          2
+        ],
+        "exact_parity_probability": "3281/9842",
+        "global_words": [
+          1076539164,
+          1084926067,
+          1080733468,
+          1087023219,
+          1092616192,
+          1052491594,
+          1059201116
+        ],
+        "projected_words": [
+          1076539163,
+          1084926066,
+          1080733467,
+          1087023218,
+          1092616192,
+          1052491593,
+          1059201115
+        ],
+        "global_output_cells": 74,
+        "projected_output_cells": 54
+      }
+    ]
+  },
+  "guards": {
+    "exact_reference_numeric_calls_during_physical_preparation": 0,
+    "independent_mantissa_exponent_height": 1000000000,
+    "reference_integer_height_refusal": true,
+    "hard_block_tape_and_exponent_refusals_before_tape_construction": 3,
+    "output_allowance_refusals": 1,
+    "foreign_schedule_plan_refusals": 2,
+    "foreign_arithmetic_identity_refusals": 1,
+    "large_exponent_scope": "passive physical schedule only; owned reference height may refuse the phase"
+  },
+  "complete_plan_binding": {
+    "status": "PASS_COMPLETE_AMP_PLAN_BINDING",
+    "complete_fields": [
+      "n",
+      "nodes",
+      "orders",
+      "output_cells",
+      "partitions",
+      "positions",
+      "power_tags",
+      "query",
+      "support",
+      "table_shape"
+    ],
+    "valid_independent_reconstructions": 3,
+    "individual_field_substitutions_refused": 30,
+    "equality_coercion_or_mutable_container_substitutions_refused": 15,
+    "undeclared_field_substitutions_refused": 3,
+    "insufficient_current_output_allowance_refused": 3,
+    "equal_plan_under_distinct_current_counts_validated": true,
+    "replacement_helper_calls_during_validation": 0,
+    "scope": "complete typed registered plan relation; no numerical answer or ownership authority from the helper"
+  }
+}

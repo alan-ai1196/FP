@@ -2,14 +2,18 @@
 
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
-The immediate frontier is paid query-order choice. The
-[singleton-plan elimination gate](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
-passes all fifteen actual CUDA jobs atcdea7db, including fresh numerical
-faults, both n256 and fresh-install/learning paths, closure and resource/
-second-lineage refusal. No old metadata changes; max job2,394,525,696 bytes.
-All jobs are terminal. The current fixed schedules now use their existing
-private builders/kernels directly; all native state and history remain.
-This closes the stated component gate, not a complete indexed release.
+The immediate obstacle is the paid solver's mutable scratch extent. The
+[packed DP/Runtime prototype](theory/proofs/PAID_QUERY_ORDER.md) now passes
+exhaustive structural, owned-reference and passive AMP gates and recovers a
+blocked n16 query. Its actual CPU counterexample nevertheless publishes
+correct predictions with48 billed scratch bytes and50 actual bytes, using
+only a supplied buffer and a later retained handle. Preserve a lifetime-long
+owner buffer export, separate solver views and immutable snapshots before
+registering any new-order CUDA execution. A post-call length check cannot
+repair a resource peak already exceeded. No actual new-order job has run.
+
+The preceding singleton-plan gate remains source-bound atcdea7db. That
+result is not a release of this larger, choice-bearing search interface.
 
 An [exact n4 witness](theory/proofs/ORDER_PRECISION_SEPARATION.md) now rules
 out precision-safe pruning merely by equal resource labels. The structural
@@ -30,13 +34,13 @@ The completed device gate checks fresh numerical faults, unchanged past
 records, full native updates and fresh installation without granting an
 arbitrary producer the owner's numerical workspace.
 
-The next substantive solver frontier is paid query-order choice. Its exact
-finite order/resource laws already exist, but the Runtime alternative-order
-solver does not. It must pay for search and scratch before use, retain full
-native state, specify its actual rounding schedule and return UNRESOLVED
-when its declared search/feasibility class is not certified. Removing a
-singleton producer is no certificate for this larger class or for a model
-experiment. Foundation and ERC-1 stay fixed.
+After the extent repair, the paid order path still needs actual global/
+projected numerical, lineage, fresh/install, width-recovery and refusal gates.
+The structural prototype class has at most15 free vertices per searched
+block. Global larger searches must remain UNRESOLVED; projected n256 can
+use smaller local blocks while preserving its full native state. Fixed
+natural execution remains a separate registered control. These solver
+choices change no Foundation semantics or model tolerance.
 
 The 23-job actual A1 gate is terminal at b53889e for the
 [byte-only evidence repair](theory/proofs/BYTE_ONLY_PHASE_EVIDENCE.md).
