@@ -1,5 +1,14 @@
 # Factor Programs (FP) — Canonical Theory
 
+**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
+pass, including both n16 width recoveries, n256 controls, fresh/install and
+continued learning. The nineteenth case fails because its test creates a
+second CUDA owner in one process; its allocator refusal is retained.
+The pending six-job A2 continuation separates funded control and refusal
+into fresh processes, then checks both scratch paths and malformed orders.
+Run `scripts/audit_paid_order_cuda.py --attempt 2` only after committing
+all inputs. Production is unchanged; do not repeat the18 passing cases.
+
 **Canonical status (2026-09-13): THEORY AND EXPERIMENT RESOURCE CONTRACT FROZEN; REFERENCE/CPU AND RTX 3090 AMP BASELINE FROZEN; PROSPECTIVE STRATEGY EXTENSION AUDITED; REGISTERED EXPERIMENTS UNHELD WITHIN THEIR SCOPES.**
 
 This file is the **only normative theory source** for FP. Historical v1–v155 canonicals, v156–v164 attack drafts, R2/R3/R4 working files and experiment-era theory snapshots are provenance only. If an older statement conflicts with this file, this file wins.
@@ -217,7 +226,7 @@ Its original scratch-resize counterexample is preserved at03a200f: correct
 forecasts coexisted with a stale extent ledger. The repair retains an
 owner-private buffer export across all later solver views, with immutable
 snapshot copies. Scoped resize attacks and complete CPU regressions pass;
-actual CUDA is registered but unrun. Structural minimization still does not
+actual A1 has18 passing cases and one retained fixture failure; its remaining continuation is registered. Structural minimization still does not
 certify precision feasibility, and no Foundation definition changes.
 
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)

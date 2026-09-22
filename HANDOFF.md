@@ -1,5 +1,14 @@
 # FP Handoff
 
+**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
+pass, including both n16 width recoveries, n256 controls, fresh/install and
+continued learning. The nineteenth case fails because its test creates a
+second CUDA owner in one process; its allocator refusal is retained.
+The pending six-job A2 continuation separates funded control and refusal
+into fresh processes, then checks both scratch paths and malformed orders.
+Run `scripts/audit_paid_order_cuda.py --attempt 2` only after committing
+all inputs. Production is unchanged; do not repeat the18 passing cases.
+
 This file is written for a capable researcher/model that has **no access to prior chat history**. Treat the repository, especially `FP_THEORY.md`, as authoritative.
 
 **Current frontier (2026-09-23): run the registered paid-order CUDA gate.**
@@ -19,11 +28,11 @@ old snapshots immutable. `FP_ORDER_WORKSPACE_PINNED_CPU.json`,
 `FP_QUERY_ORDER_VIEW_STORAGE.json` and `FP_PAID_ORDER_PINNED_REFERENCE.json`
 retain the scoped checks. Foundation/ERC-1 and numerical limits are unchanged.
 
-The23-job registration is `scripts/audit_paid_order_cuda.py --attempt 1`.
+The original23-job A1 registration is retained atad68440.
 It includes both width recoveries, full native/AMP learning, fresh/install,
 funding/class/order refusal and scratch continuations. Commit all inputs
 before launch; keep source fixed while live and preserve every outcome.
-No actual new-order CUDA result is claimed yet. The global n256 control is
+The partial actual A1 result and pending A2 continuation are stated above. The global n256 control is
 fixed-order; enabled global n>16 is unresolved, while projected n256 can
 search small local blocks. Full indexed release and model science stay HOLD.
 

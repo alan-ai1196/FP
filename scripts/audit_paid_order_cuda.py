@@ -26,6 +26,8 @@ INTEGRATION = ('profiles', 'projected-profiles', 'large', 'projected-large', 'in
 EXTRA = ('width-recovery', 'projected-width-recovery', 'search-class-refusal', 'search-funding-refusal',
          'scratch-frame', 'projected-scratch-frame', 'missing-order', 'bool-order')
 CASES = owned.FAULTS+tuple('integration-'+case for case in INTEGRATION)+EXTRA
+A2_CASES = ('search-funding-control', 'search-funding-refusal', 'scratch-frame',
+            'projected-scratch-frame', 'missing-order', 'bool-order')
 
 
 def preserved(rt, before):
@@ -73,7 +75,7 @@ def refusal(case):
         'native_and_physical_predecessors_unchanged': True}
 
 
-def funding():
+def funding_control():
     seed, schema = indexed.configuration(3, 1)
     original = query_order.search
     charged = []
@@ -88,7 +90,28 @@ def funding():
         assert predict(seed, schema, (0, 1)).status == 'PREDICTED_REFERENCE'
     successful = indexed.check_phases(seed)
     assert len(charged) == 1
-    cap, fee = charged[0][0]-1, charged[0][1]
+    return {'case': 'search-funding-control', 'funded_control': successful,
+        'prior_deployment_debit': charged[0][0], 'search_fee': charged[0][1],
+        'denied_work_cap': charged[0][0]-1, 'query': [0, 1], 'n': 3,
+        'scope': 'one fresh CUDA owner; no target revealed'}
+
+
+def funding():
+    # The control lives in a distinct fresh job. Its registered one-unit
+    # deficit selects a resource allowance, never a native numerical value.
+    journal = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A2.json').read_text())
+    assert journal['execution_source'] == runner.registration.model.git('rev-parse', 'HEAD')
+    assert len(journal['workers']) == 1
+    row = journal['workers'][0]
+    assert row['case'] == 'search-funding-control' and row['worker_status'] == 'PASS'
+    job = row['completed_job']
+    assert job['exit_code'] == 0 and not job['timed_out'] and not job['limit_terminated_processes']
+    assert job['attached_before_resume'] and job['peak_job_commit'] <= indexed.CAP
+    assert row['result']['process_id'] == job['process_id']
+    control = row['result']['result']
+    cap, fee = control['denied_work_cap'], control['search_fee']
+    assert control['query'] == [0, 1] and control['n'] == 3
+    assert cap == control['prior_deployment_debit']-1 and fee == query_order.search_work(3, 0, (0, 1))
     fixture = indexed.fixture
     def narrow(*args, **kwargs):
         cfg, relation, online = fixture(*args, **kwargs)
@@ -107,8 +130,8 @@ def funding():
     assert after.resources['spent']['deployment']['work'] == cap+1-fee
     old = {k: b for k, b in before.buffers if 'query-order-storage' in k}
     assert old == {k: b for k, b in after.buffers if 'query-order-storage' in k}
-    return {'case': 'search-funding-refusal', 'successful_funded_control': successful,
-        'prior_deployment_debit': charged[0][0], 'search_fee': fee, 'denied_work_cap': cap,
+    return {'case': 'search-funding-refusal', 'funded_control_process_id': job['process_id'],
+        'prior_deployment_debit': cap+1, 'search_fee': fee, 'denied_work_cap': cap,
         'unfunded_solver_entries': 0, 'unfunded_numerical_entries': 0,
         'phase_status': phase.status, 'reason': phase.reason,
         'old_state_and_scratch_unchanged': True, 'target_revealed': False,
@@ -209,6 +232,8 @@ def worker(case):
             return refusal(case)
         if case == 'search-funding-refusal':
             return funding()
+        if case == 'search-funding-control':
+            return funding_control()
         if case.endswith('scratch-frame'):
             return scratch(case.startswith('projected-'))
         if case.endswith('width-recovery'):
@@ -218,7 +243,22 @@ def worker(case):
 
 def preflight():
     assert 'torch' not in sys.modules
-    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA', 'cases': CASES,
+    old = json.loads((ROOT/'evidence/minimal/FP_PAID_ORDER_CUDA_A1.json').read_text())
+    assert old['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE' and len(old['workers']) == 19
+    assert tuple(r['case'] for r in old['workers']) == CASES[:19]
+    assert all(r['worker_status'] == 'PASS' for r in old['workers'][:18])
+    failed = old['workers'][-1]
+    assert failed['worker_status'] == 'FAILED'
+    assert 'initial CUDA extent model requires the actual default allocator settings' in failed['result']['traceback']
+    assert not runner.registration.model.git('diff', old['execution_source'], '--', 'src/reference_compiler')
+    for row in old['workers']:
+        job = row['completed_job']
+        assert job['attached_before_resume'] and not job['timed_out'] and not job['limit_terminated_processes']
+        assert job['peak_job_commit'] <= indexed.CAP
+    return {'status': 'REGISTERED_PAID_QUERY_ORDER_CUDA_A2_CONTINUATION', 'cases': A2_CASES,
+        'previous_source': old['execution_source'], 'retained_A1_passes': 18,
+        'retained_A1_failure': 'two-owner funding fixture refused default allocator state; no production failure inferred',
+        'funding_protocol': 'separate fresh control/refusal jobs; refusal work cap equals prior-debit control minus one',
         'job_cap': indexed.CAP, 'deadline_ms': 900000, 'source': 'all execution inputs committed at launch HEAD',
         'search_class': 'lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate',
         'scratch': '12*2^r actual bytes; owner export outlives separate writable helper views',
@@ -231,8 +271,8 @@ def preflight():
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
-    parser.add_argument('--attempt', type=int)
-    parser.add_argument('--worker', choices=CASES)
+    parser.add_argument('--attempt', type=int, choices=(2,))
+    parser.add_argument('--worker', choices=A2_CASES)
     parser.add_argument('--output', type=Path)
     args = parser.parse_args()
     if args.worker:
@@ -248,7 +288,7 @@ if __name__ == '__main__':
     elif args.preflight:
         print(json.dumps(preflight(), indent=2))
     elif args.attempt is not None:
-        runner.matrix(args.attempt, script=__file__, cases=CASES, journal_prefix='FP_PAID_ORDER_CUDA',
+        runner.matrix(args.attempt, script=__file__, cases=A2_CASES, journal_prefix='FP_PAID_ORDER_CUDA',
             registration_fn=preflight, production_anchor='HEAD', result_status='PASS_ACTUAL_PAID_QUERY_ORDER',
             final_status='PASS_ACTUAL_PAID_QUERY_ORDER', worker_status='PASS')
     else:

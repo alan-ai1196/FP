@@ -7267,3 +7267,20 @@ K(2,14) query recovery pass after the change. No arithmetic kernel or
 Foundation/ERC-1 rule changes. The23-job source-bound actual CUDA gate is
 registered, including both width recoveries and complete continuations;
 this entry records no actual new-order device outcome yet.
+
+## 218. Recover the blocked query on CUDA; retain an invalid combined funding fixture (2026-09-23)
+
+Actual A1 atad68440 passes its first18 cases. Both K(2,14) variants learn
+28 native events and recover query(2,3) with all120 counts,702/694 final
+outputs and checked probability word1063352127. The exact error is about
+4.28e-8 under the unchanged1/1000 relation. All numerical fault, profile,
+n256, fresh/install/learn, closure, ordinary resource/commit and global n17
+class-refusal cases before it pass. No Foundation rule or tolerance changes.
+
+The nineteenth case fails before its intended funding refusal because it
+creates two actual CUDA owners in one process. The second constructor
+rejects the altered allocator state. Preserve this failed audit at its
+source; it proves no solver funding defect and leaves the later four cases
+unrun. A2 registers separate fresh funded control and refusal jobs plus
+those four remaining cases. No production source changes or repetition of
+the18 passing cases is warranted. All A1 jobs are terminal.

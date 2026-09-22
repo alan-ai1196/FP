@@ -2,7 +2,7 @@
 
 Status: **packed algorithm proved and exhaustively audited; reference
 Runtime prototype and passive AMP integration pass scoped CPU checks;
-scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual CUDA registered, not yet run**.
+scratch-resize counterexample preserved at03a200f and owner-export repair passes CPU; actual A1 has18 passes and a retained two-owner fixture failure; A2 continuation registered**.
 Foundation R4 and ERC-1 are unchanged. This prototype is not a release.
 
 ## 1. A bounded representation of the existing exact DP
@@ -221,3 +221,34 @@ physical search funding, both scratch continuations and two malformed
 orders. Global n256 is explicitly fixed-order because the searched global
 class ends at n16. Every source is committed before launch; failures and
 limits remain evidence. This registration is not actual CUDA evidence.
+
+## 7. Actual A1 width recovery and retained fixture refusal
+
+`FP_PAID_ORDER_CUDA_A1.json` is terminal atad68440. The first18 cases pass:
+retired producer ports, four fresh numerical faults, both profiles, fixed
+global and searched projected n256, both fresh/install/learn continuations,
+closure, both existing refusals, both width recoveries and the global n17
+search-class refusal. Both fresh paths cross at20 and continue after install.
+All19 attempted jobs are attached before resume, with no timeout or limit
+termination. The nineteenth exits1 for the fixture error below; no claim
+that all23 registered cases passed is made.
+
+Both actual K(2,14) runs complete28 native events and answer query(2,3).
+Each retains all120 counts and matches the exact32768-world forecast.
+The final global/projected plans use702/694 floating outputs and publish
+the same checked word1063352127. The exact probability error is
+13599875408302088571439/318173418872990660094303666176, about4.28e-8,
+within the unchanged1/1000 relation. The two paths respectively pay
+23276495104 and3733971456 actual search-work units. Their86-phase audits
+check10671/4155 words, including3258/900 half outputs. These are component
+query recoveries, not a model score or total-resource dominance result.
+
+The funding fixture constructs a successful control, then attempts a
+second CUDA owner in the same process. That second constructor refuses
+the non-default allocator state before the intended underfunded query.
+This is a real retained failed audit, not evidence of a solver funding
+failure or a completed refusal test. A2 registers six fresh jobs: separate
+funded control and one-unit-short refusal, both scratch continuations and
+the two malformed orders. Its resource cap is predeclared as the control's
+prior-debit total minus one. Production source remains byte-unchanged from
+ad68440; the18 passing cases are not repeated.

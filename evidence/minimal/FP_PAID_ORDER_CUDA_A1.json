@@ -1,0 +1,729 @@
+{
+  "status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+  "execution_source": "ad68440d76d272c14a4b36f9dcab5613e28858f0",
+  "registration": {
+    "status": "REGISTERED_PAID_QUERY_ORDER_CUDA",
+    "cases": [
+      "retired-producers",
+      "projected-retired-producers",
+      "fault-prediction-word",
+      "fault-gradient-word",
+      "fault-operation-word",
+      "projected-fault-prediction-word",
+      "integration-profiles",
+      "integration-projected-profiles",
+      "integration-large",
+      "integration-projected-large",
+      "integration-install",
+      "integration-projected-install",
+      "integration-projected-closure",
+      "integration-projected-unfunded",
+      "integration-projected-second-commit",
+      "width-recovery",
+      "projected-width-recovery",
+      "search-class-refusal",
+      "search-funding-refusal",
+      "scratch-frame",
+      "projected-scratch-frame",
+      "missing-order",
+      "bool-order"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "source": "all execution inputs committed at launch HEAD",
+    "search_class": "lex(C,N) at most15 free vertices per searched block; no numerical-existence certificate",
+    "scratch": "12*2^r actual bytes; owner export outlives separate writable helper views",
+    "work_model": "prepaid-packed-query-order-subsets-v1",
+    "numerics": "unchanged RNE kernels and 1/100 state, 1/1000 probability tolerances",
+    "fixed_control": "only integration-large uses fixed global n256; projected n256 searches local blocks",
+    "scope": "paid reference/AMP component gate, full native continuations and scoped refusals; no full indexed release or model comparison"
+  },
+  "workers": [
+    {
+      "case": "retired-producers",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2191884288,
+        "peak_job_commit": 2193096704,
+        "user_100ns": 25937500,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11456,
+        "process_creation_100ns": 134345927698575873
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "retired-producers",
+        "process_id": 11456,
+        "result": {
+          "case": "retired-producers",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": null,
+          "actual_target_retained": null,
+          "checked_full_records": 7,
+          "retired_producer_calls": 0,
+          "complete_native_and_AMP_update_matches_literal": true
+        }
+      }
+    },
+    {
+      "case": "projected-retired-producers",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2126200832,
+        "peak_job_commit": 2127409152,
+        "user_100ns": 21406250,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8548,
+        "process_creation_100ns": 134345927749707011
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "projected-retired-producers",
+        "process_id": 8548,
+        "result": {
+          "case": "projected-retired-producers",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": null,
+          "actual_target_retained": null,
+          "checked_full_records": 7,
+          "retired_producer_calls": 0,
+          "complete_native_and_AMP_update_matches_literal": true
+        }
+      }
+    },
+    {
+      "case": "fault-prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2215424000,
+        "peak_job_commit": 2216644608,
+        "user_100ns": 20937500,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12684,
+        "process_creation_100ns": 134345927781655746
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "fault-prediction-word",
+        "process_id": 12684,
+        "result": {
+          "case": "fault-prediction-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-gradient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2215796736,
+        "peak_job_commit": 2217009152,
+        "user_100ns": 20468750,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8,
+        "process_creation_100ns": 134345927813130534
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "fault-gradient-word",
+        "process_id": 8,
+        "result": {
+          "case": "fault-gradient-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": 0,
+          "checked_full_records": 6,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-operation-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2215804928,
+        "peak_job_commit": 2217021440,
+        "user_100ns": 21875000,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17984,
+        "process_creation_100ns": 134345927845457459
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "fault-operation-word",
+        "process_id": 17984,
+        "result": {
+          "case": "fault-operation-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "projected-fault-prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2214031360,
+        "peak_job_commit": 2215251968,
+        "user_100ns": 20468750,
+        "kernel_100ns": 7812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1508,
+        "process_creation_100ns": 134345927876672185
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "projected-fault-prediction-word",
+        "process_id": 1508,
+        "result": {
+          "case": "projected-fault-prediction-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "integration-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2236506112,
+        "peak_job_commit": 2237726720,
+        "user_100ns": 39531250,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14536,
+        "process_creation_100ns": 134345927907612185
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-profiles",
+        "process_id": 14536,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1610,
+          "actual_half_words": 60,
+          "cursor": 8,
+          "packed_current_bytes": 16010057,
+          "consumed_arena_bytes": 14208,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "integration-projected-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2234949632,
+        "peak_job_commit": 2236162048,
+        "user_100ns": 37343750,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25972,
+        "process_creation_100ns": 134345927960869084
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-profiles",
+        "process_id": 25972,
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 978,
+          "actual_half_words": 48,
+          "cursor": 8,
+          "packed_current_bytes": 16010082,
+          "consumed_arena_bytes": 9152,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ],
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2392645632,
+        "peak_job_commit": 2393862144,
+        "user_100ns": 1587656250,
+        "kernel_100ns": 75468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8712,
+        "process_creation_100ns": 134345928010935559
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-large",
+        "process_id": 8712,
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205668109,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "integration-projected-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2350878720,
+        "peak_job_commit": 2352107520,
+        "user_100ns": 1041562500,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17292,
+        "process_creation_100ns": 134345929467150844
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-large",
+        "process_id": 17292,
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 514,
+          "actual_half_words": 24,
+          "cursor": 4,
+          "packed_current_bytes": 206061383,
+          "consumed_arena_bytes": 4864,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4,
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2211987456,
+        "peak_job_commit": 2213191680,
+        "user_100ns": 44375000,
+        "kernel_100ns": 11250000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22376,
+        "process_creation_100ns": 134345930533509542
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-install",
+        "process_id": 22376,
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1482,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21902704,
+          "consumed_arena_bytes": 13744,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true
+        }
+      }
+    },
+    {
+      "case": "integration-projected-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2212237312,
+        "peak_job_commit": 2213453824,
+        "user_100ns": 42968750,
+        "kernel_100ns": 10937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16520,
+        "process_creation_100ns": 134345930601877787
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-install",
+        "process_id": 16520,
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 1258,
+          "actual_half_words": 0,
+          "cursor": 21,
+          "packed_current_bytes": 21902729,
+          "consumed_arena_bytes": 11952,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true,
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-projected-closure",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2221907968,
+        "peak_job_commit": 2223116288,
+        "user_100ns": 20625000,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 19104,
+        "process_creation_100ns": 134345930668933370
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-closure",
+        "process_id": 19104,
+        "result": {
+          "checked_phases": 10,
+          "actual_floating_words": 171,
+          "actual_half_words": 12,
+          "cursor": 3,
+          "packed_current_bytes": 3264167,
+          "consumed_arena_bytes": 1592,
+          "closure": "SEALED_CUDA_STREAM",
+          "class_decisions": 0,
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-projected-unfunded",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1857294336,
+        "peak_job_commit": 1858514944,
+        "user_100ns": 16718750,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 20208,
+        "process_creation_100ns": 134345930703573458
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-unfunded",
+        "process_id": 20208,
+        "result": {
+          "status": "UNRESOLVED",
+          "retained_received_context": true,
+          "executor_entries": 0,
+          "failed_phase_retained": true,
+          "published_advances": 0,
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "integration-projected-second-commit",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2190516224,
+        "peak_job_commit": 2191736832,
+        "user_100ns": 20468750,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11740,
+        "process_creation_100ns": 134345930729757721
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "integration-projected-second-commit",
+        "process_id": 11740,
+        "result": {
+          "commit_calls": 2,
+          "status": "UNRESOLVED",
+          "retained_actual_target": 0,
+          "observed_lineages_retained": 2,
+          "published_advances": 0,
+          "declared_forward_id": "indexed-positive-paid-query-block-order-convolution-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "width-recovery",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2228727808,
+        "peak_job_commit": 2229932032,
+        "user_100ns": 173750000,
+        "kernel_100ns": 11093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15340,
+        "process_creation_100ns": 134345930760539897
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "width-recovery",
+        "process_id": 15340,
+        "result": {
+          "checked_phases": 86,
+          "actual_floating_words": 10671,
+          "actual_half_words": 3258,
+          "cursor": 28,
+          "packed_current_bytes": 24569350,
+          "consumed_arena_bytes": 87432,
+          "family": "K(2,14), anchor0",
+          "complete_count_coordinates": 120,
+          "exact_world_terms": 32768,
+          "exact_forecast": "33405247401130534720401/37929227217792351257122",
+          "actual_forecast_word": 1063352127,
+          "final_output_cells": 702,
+          "final_orders": [
+            [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              0,
+              1,
+              2
+            ]
+          ],
+          "probability_error": "13599875408302088571439/318173418872990660094303666176",
+          "all_search_work_paid": 23276495104,
+          "target_revealed": false
+        }
+      }
+    },
+    {
+      "case": "projected-width-recovery",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2235191296,
+        "peak_job_commit": 2236411904,
+        "user_100ns": 84687500,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 6864,
+        "process_creation_100ns": 134345930963154155
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "projected-width-recovery",
+        "process_id": 6864,
+        "result": {
+          "checked_phases": 86,
+          "actual_floating_words": 4155,
+          "actual_half_words": 900,
+          "cursor": 28,
+          "packed_current_bytes": 24569375,
+          "consumed_arena_bytes": 35304,
+          "family": "K(2,14), anchor0",
+          "complete_count_coordinates": 120,
+          "exact_world_terms": 32768,
+          "exact_forecast": "33405247401130534720401/37929227217792351257122",
+          "actual_forecast_word": 1063352127,
+          "final_output_cells": 694,
+          "final_orders": [
+            [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              0,
+              1,
+              2
+            ]
+          ],
+          "probability_error": "13599875408302088571439/318173418872990660094303666176",
+          "all_search_work_paid": 3733971456,
+          "target_revealed": false
+        }
+      }
+    },
+    {
+      "case": "search-class-refusal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1861201920,
+        "peak_job_commit": 1862410240,
+        "user_100ns": 16875000,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3836,
+        "process_creation_100ns": 134345931077422046
+      },
+      "result": {
+        "status": "PASS_ACTUAL_PAID_QUERY_ORDER",
+        "case": "search-class-refusal",
+        "process_id": 3836,
+        "result": {
+          "case": "search-class-refusal",
+          "phase_status": "UNRESOLVED",
+          "reason": "ArithmeticUnresolved: query-order search exceeds its declared 1..15 free-vertex class",
+          "solver_entries": 0,
+          "numerical_entries": 0,
+          "published_advances": 0,
+          "full_retained_count_coordinates": 136,
+          "target_revealed": false,
+          "checked_full_records": 2,
+          "native_and_physical_predecessors_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "search-funding-refusal",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2189455360,
+        "peak_job_commit": 2190684160,
+        "user_100ns": 19062500,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5272,
+        "process_creation_100ns": 134345931103462255
+      },
+      "result": {
+        "status": "FAILED_AUDIT",
+        "case": "search-funding-refusal",
+        "process_id": 5272,
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 242, in <module>\n    report.update(status='PASS_ACTUAL_PAID_QUERY_ORDER', result=worker(args.worker))\n                                                                ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 211, in worker\n    return funding()\n           ^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 98, in funding\n    denied, relation = indexed.configuration(3, 1)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_paid_order_cuda.py\", line 201, in configured\n    return original(*args, **{**kwargs, 'order_search': case != 'integration-large',\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_indexed_amp.py\", line 189, in configuration\n    rt = ReferenceCompilerRuntime(cfg, schema, online=online,\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 488, in __init__\n    self._cuda = _CudaPrefix(cuda)\n                 ^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_prefix.py\", line 260, in __init__\n    self.arena = CudaArena(contract.storage)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_storage.py\", line 108, in __init__\n    raise CudaStorageUnresolved('initial CUDA extent model requires the actual default allocator settings')\nfp_reference.cuda_storage.CudaStorageUnresolved: initial CUDA extent model requires the actual default allocator settings\n"
+      }
+    }
+  ]
+}

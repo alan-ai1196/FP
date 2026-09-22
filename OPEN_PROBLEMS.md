@@ -1,5 +1,14 @@
 # FP Open Problems
 
+**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
+pass, including both n16 width recoveries, n256 controls, fresh/install and
+continued learning. The nineteenth case fails because its test creates a
+second CUDA owner in one process; its allocator refusal is retained.
+The pending six-job A2 continuation separates funded control and refusal
+into fresh processes, then checks both scratch paths and malformed orders.
+Run `scripts/audit_paid_order_cuda.py --attempt 2` only after committing
+all inputs. Production is unchanged; do not repeat the18 passing cases.
+
 Only genuinely unresolved problems belong here. Historical problems that were solved or falsified are documented elsewhere.
 
 The next gate is actual paid-order execution after its capacity repair.
@@ -10,7 +19,7 @@ by an owner-private export that outlives separate solver views. Six resize
 attacks now fail with exact residency and immutable snapshots. The23-job
 CUDA registration must still test physical width recovery, numerical faults,
 fresh/install, funding/class/order refusal and later scratch handles.
-No new-order actual result is claimed before those jobs run.
+A1 and the pending A2 continuation above determine the current actual scope.
 
 The preceding singleton-plan gate remains source-bound atcdea7db. That
 result is not a release of this larger, choice-bearing search interface.

@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+**Paid-order actual gate update:** A1 atad68440 is terminal:18 cases
+pass, including both n16 width recoveries, n256 controls, fresh/install and
+continued learning. The nineteenth case fails because its test creates a
+second CUDA owner in one process; its allocator refusal is retained.
+The pending six-job A2 continuation separates funded control and refusal
+into fresh processes, then checks both scratch paths and malformed orders.
+Run `scripts/audit_paid_order_cuda.py --attempt 2` only after committing
+all inputs. Production is unchanged; do not repeat the18 passing cases.
+
 ## Current implementation state (2026-09-23)
 
 **Paid order search passes its capacity repair and CPU gates; actual CUDA is registered.**
@@ -12,7 +21,7 @@ backing handles after the helper releases its own view. Snapshot bytes stay
 immutable and actual extent equals the ledger. Six explicit extent attacks
 and six malformed view cases pass their refusal checks.
 
-The23 actual CUDA jobs are registered but not yet launched. They cover
+The original23-job gate has the partial terminal A1 outcome stated above. They cover
 new-order numerical/continuation/fresh-install paths and scoped resource,
 class, scratch and malformed-order refusals. The fixed natural control
 remains available. No complete release or new model result is claimed.
