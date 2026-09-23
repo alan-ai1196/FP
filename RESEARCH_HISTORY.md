@@ -7565,3 +7565,30 @@ changing the native learner or invalidating the elimination lower bounds.
 The empty policy supplies no constructor-class, fresh/install or full indexed
 release claim. Retain the44162-byte journal; the job is terminal. Foundation
 R4 and ERC-1 remain frozen.
+
+## 228. Separate projective and underflow errors in parity composition (2026-09-23)
+
+For the existing independent binary query-block algebra, prove that exact
+parity convolution is1-Lipschitz in the maximum norm of input log odds.
+Its two-input absolute derivative sum is(|x|+|y|)/(1+|xy|)<=1 for the
+classical tanh parity update. The sharp constant is approached by positive
+near-identity branches. Pointwise likelihood PRODUCT over a shared latent
+variable instead adds log-odds errors; a two-input rational witness gives
+output odds distortion4 from local distortion2.
+
+Derive sharp native readout bounds from t=tanh(delta/4): probability(4/5)t
+and largest gradient(64/9)t, with exact attaining pairs. Absolute tails
+obey the separate sharp binary-TV law(1-PRODUCT(1-2e_i))/2. A positive
+reference/rounded-zero witness falsifies a maximum-local-tail claim.
+Rounded-tree relative errors follow the largest root-path sum; inherited
+absolute errors also require the node's diagonal reweighting before adding
+fresh noise. Omitting this reweighting has an exact counterexample.
+
+The Fraction audit passes120050 two/three-block projective comparisons,
+3721 TV and405 reweighting checks,36 readout comparisons/eight attaining
+pairs, and3840 generated mixed-error trees with30720 internal nodes.
+Sharpness sequences and all three false extensions are retained compactly.
+The proof connects histogram partition bounds to the existing query-block
+algebra, without inventing per-operation bounds for the actual projected
+kernel. No production code, backend, numerical registration, Foundation
+definition or ERC-1 condition changes; no device evidence is borrowed.

@@ -7,6 +7,14 @@ Peak job7676411904 bytes. Both order-class obstructions are crossed without
 invalidating their scoped lower bounds. Other tapes, global n>16 histogram
 execution and the complete indexed release remain separate open questions.
 
+The [parity composition theorem](theory/proofs/PARITY_COMPOSITION_PRECISION.md)
+settles how independent local errors propagate: maximum log-odds error,
+sharp absolute-tail aggregation and conditional rounded-tree path bounds.
+It does not prove the current projected kernel's local rounding budgets
+or register a histogram/projected hybrid. Those are physical realization
+questions if a subsequent experiment needs them; no new static backend
+or semantic action is justified merely by the conditional theorem.
+
 The [owned histogram implementation](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 passes its CPU/native/resource gate and all17 actual Runtime CUDA A1 jobs.
 Fresh/install, failure retention, scratch lifetime, transient underflow/

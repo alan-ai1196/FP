@@ -237,6 +237,17 @@ precision. Peak job7676411904 bytes; unseen CE differs by about1.15e-7.
 This source-bound execution supplies no constructor or full-release claim.
 This decoder theorem changes no Foundation definition or ERC-1 condition.
 
+For the existing independent binary query-block responses, the
+[precision composition theorem](theory/proofs/PARITY_COMPOSITION_PRECISION.md)
+proves that exact parity convolution propagates the maximum local log-odds
+error. Absolute underflow tails have the distinct sharp bound
+`(1-PRODUCT_i(1-2e_i))/2` for e_i<=1/2. Conditional rounded-tree errors
+follow a maximum root-path sum and a reweighted absolute-tail recurrence.
+Sharp native-gradient transfer and exact audits pass. Same-latent likelihood
+PRODUCT does not obey the maximum law. This numerical sublaw adds no
+architecture action, physical schedule or release; actual local operation
+bounds remain necessary.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

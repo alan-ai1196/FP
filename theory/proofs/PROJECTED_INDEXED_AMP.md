@@ -79,6 +79,13 @@ range caps. A long or difficult response can exceed them and remains
 UNRESOLVED. Exact projection alone supplies no uniform new precision bound
 and no evidence crossing, installation or model advantage.
 
+The subsequent [parity precision theorem](PARITY_COMPOSITION_PRECISION.md)
+proves a maximum law for exact composition of local log-odds errors and
+a sharp, different law for absolute tails. It also gives conditional
+root-path bounds for rounded convolution trees. It does not supply this
+kernel's local rounding budgets or change its registered serial schedule;
+the physical precision obligation above remains.
+
 ## 3. Additive tape law and separate resource boundaries
 
 Let B be the number of selected blocks, c=max(0,B-1), and F_b the number

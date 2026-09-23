@@ -9,6 +9,15 @@ unseen AMP CE0.33055547444132355 versus exact0.33055558992217193 is a rounding
 difference. Production remains unchanged froma2af24a. The job is terminal;
 do not repeat it. No full indexed release or constructor certificate follows.
 
+**New scoped theorem:** [parity precision composition](theory/proofs/PARITY_COMPOSITION_PRECISION.md)
+separates maximum local log-odds error from accumulating underflow tails.
+It proves sharp native readout/gradient transfer and conditional rounded-tree
+path/tail recurrences. Exact checks cover120050 projective comparisons and
+3840 mixed-error trees. Same-latent PRODUCT, maximum absolute-tail error and
+omitted reweighting each have a counterexample. This is no new backend or
+GPU precision release. Do not substitute assumed rounding budgets for the
+current projected kernel's actual schedule, or discard complete counts.
+
 **Current work:** the [owned histogram realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 is implemented and passes its complete CPU gate:11919 exact/RNE queries,
 388 owned histories/776 native phases, profiles, fresh evidence, refusals

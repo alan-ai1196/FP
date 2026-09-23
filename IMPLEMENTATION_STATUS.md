@@ -8,6 +8,12 @@ limits. Peak job7676411904 bytes; unseen AMP CE0.33055547444132355 differs
 from exact by about1.15e-7. Production remains unchanged froma2af24a.
 The job is terminal; no full indexed release or class certificate follows.
 
+The [parity composition precision proof](theory/proofs/PARITY_COMPOSITION_PRECISION.md)
+and Fraction audit now establish maximum projective error, sharp TV tails,
+native-gradient transfer and conditional rounded-tree recurrences. The
+audit checks120050 projective comparisons and3840 mixed-error trees. It
+changes no production code, numerical registration or device claim.
+
 **Owned histogram implementation: CPU and all17 actual Runtime CUDA A1 jobs PASS.**
 [Scope, tariffs and gate](theory/proofs/OWNED_HISTOGRAM_DECODER.md): one
 prepaid3176-byte pinned extent, full native state and independent physical

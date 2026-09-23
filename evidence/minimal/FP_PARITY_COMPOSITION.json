@@ -1,0 +1,53 @@
+{
+  "status": "PASS_EXACT_PARITY_COMPOSITION",
+  "arithmetic": "fractions.Fraction",
+  "scope": "conditional response and numerical-error laws; no physical kernel or Runtime release",
+  "checks": {
+    "two_block_projective_comparisons": 2401,
+    "three_block_projective_comparisons": 117649,
+    "native_readout_comparisons": 36,
+    "attaining_readout_pairs": 8,
+    "two_block_TV_comparisons": 3721,
+    "common_reweighting_comparisons": 405,
+    "mixed_error_trees": 3840,
+    "mixed_error_internal_nodes": 30720,
+    "projective_sharpness_sequence": 7,
+    "rounded_path_sharpness_witnesses": 3
+  },
+  "sharp_readout_extremizers": [
+    {
+      "sqrt_odds_distortion": "101/100",
+      "sharp_TV": "1/201",
+      "sharp_match_gradient": "64/1809"
+    },
+    {
+      "sqrt_odds_distortion": "9/8",
+      "sharp_TV": "1/17",
+      "sharp_match_gradient": "64/153"
+    },
+    {
+      "sqrt_odds_distortion": "2",
+      "sharp_TV": "1/3",
+      "sharp_match_gradient": "64/27"
+    },
+    {
+      "sqrt_odds_distortion": "10",
+      "sharp_TV": "9/11",
+      "sharp_match_gradient": "64/11"
+    }
+  ],
+  "counterexamples": {
+    "shared_latent_product": {
+      "local_odds_distortion": "2",
+      "output_odds_distortion": "4"
+    },
+    "underflow_maximum_error": {
+      "local_absolute_error": "1/1427247692705959881058285969449495136382746624",
+      "output_to_local_error_ratio": "1427247692705959881058285969449495136382746623/713623846352979940529142984724747568191373312"
+    },
+    "omitted_reweighting": {
+      "inherited_TV": "1/256",
+      "output_TV": "2/257"
+    }
+  }
+}

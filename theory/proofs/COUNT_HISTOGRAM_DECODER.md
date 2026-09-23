@@ -142,6 +142,12 @@ still need their own funding. The count is not a whole-model memory bound.
 
 ## 4. Uniform precision law
 
+The subsequent [parity composition law](PARITY_COMPOSITION_PRECISION.md)
+shows how this section's relative and absolute partition errors compose
+across independent query blocks. Relative log-odds error obeys a maximum
+law; underflow tails obey a separate sharp TV law. Actual composition
+rounding still needs its declared local bounds; no new backend follows.
+
 Write u=2^-24, v=2^-11, tau=2^-150. For an upper bound Lstar on L, take
 d=ceil(log2 Lstar) and define
 
