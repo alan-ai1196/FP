@@ -4,7 +4,7 @@ Status (2026-09-23): **PROVED, SCOPED; EXACT/DECIMAL CPU AUDIT PASS.**
 An owned Reference continuation supplies a resource-selection counterexample.
 The rounded forecast in that example is the registered exact-RNE simulation,
 not an actual CUDA execution. No Foundation, ERC-1, Runtime, experiment input
-or certificate class changes. This result is independent of the running
+or certificate class changes. This result is independent of the completed
 [n64 model matrix](../../experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md).
 
 The logarithmic-score/KL and quadratic-score identities below are classical
@@ -318,3 +318,14 @@ conditioning on future completion. Fixed-hidden-teacher CE differences
 still contain the signed first-order term in section3, while reference-to-
 proper-AMP KL is nonnegative. A better uniform error upper or fewer floating
 operations does not imply a smaller realized discrepancy on every tape.
+
+The [retained model audit](../../evidence/minimal/FP_RETAINED_PARTITION_RISK.json)
+now checks2000 actual saved forecasts: four realizations on each of the two
+n64 tapes,250 evaluation queries each. Their native reference forecasts
+are identical. Direct partitions have mean all-query KL upper bounds
+3.51241e-10 and3.56162e-10 nats. Exact intervals place them above projected
+and carry-free on both tapes, above global on seed0 and below it on seed1.
+The fixed-hidden-teacher CE ranking differs; the section3 identity explains
+why it is not a calibrated numerical-quality ranking. These are source-bound
+path measurements. The earlier owned resource-selection counterexample
+remains Reference/RNE evidence, with no added actual-device claim.

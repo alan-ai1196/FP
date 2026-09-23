@@ -1,13 +1,16 @@
 # Direct partitions on the two completed n64 tapes
 
-Status (2026-09-23): **DECLARED BEFORE DIRECT-PARTITION MODEL EXECUTION.**
-Launch only after the separate20-job owned gate passes. This is a follow-up
-on exposed tapes, not a blind model-selection or population experiment.
+Status (2026-09-23): **BOTH DECLARED JOBS COMPLETE; ORIGINAL REGISTRATION PRESERVED.**
+The separate 20-job owned gate passed before launch. This follow-up uses
+exposed tapes; it is not a blind model-selection or population experiment.
 
 At4c4a057, seed0 completes but the parent collector raises a `JobRun`
 dictionary-access TypeError before launching seed1. The original A1 remains
 unchanged. Its250 readouts pass the corrected independent reader without
 another device run; see [results](DIRECT_PARTITION_MODEL_RESULTS.md).
+The declared seed1-only A2 now also completes ate395c55. Both jobs and all
+retained readers are terminal and pass; neither job was repeated. The
+declarations below remain the original inputs and limits, not a new launch.
 
 ## Question and controls
 
@@ -83,8 +86,8 @@ The separate `--read PATH` recomputes scores without GPU execution. Report
 expected CE/Brier on all250 queries and the124 initial-training-unseen
 queries, as in the original protocol.
 
-A completed result would establish these tapes and their measured resource
-use. It would not prove GPU sum-product inference, universal efficiency,
+The completed results establish these tapes and their measured resource
+use. They do not prove GPU sum-product inference, universal efficiency,
 population improvement, architecture discovery or a full indexed release.
 The n256 1-GiB CPU refusal and separately funded2-GiB reversal remain their
 own evidence. Foundation R4 and ERC-1 stay unchanged.

@@ -10,8 +10,7 @@ strong physical controls complete; carry-free uses more floating words
 than both on each seed, so this is no carry-free efficiency win. All jobs
 are terminal. Do not restart the matrix or infer a full indexed release.
 
-**Current research: remove the transient histogram where the claim needs
-only its fixed-base9 value.** The
+**Direct partitions now close the two-tape model comparison.** The
 [direct-partition upper](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
 has the same elimination geometry, n+4H-bit integers and29 floating
 prediction outputs, with uniform probability/gradient bounds0.000195701/
@@ -26,20 +25,30 @@ n256 profiles and77-event n32 learning pass. Peak job2395172864 bytes stays
 under4 GiB; every job is terminal. Do not repeat the gate. Preserve the original n256 1-GiB refusal
 at observation181. The separately declared2-GiB continuation seals257
 events and exact recovery after128 opposite labels, with1525442448 peak
-packed bytes. The [two-job n64 follow-up](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
-has [seed0 complete at4c4a057](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md):
-376 events,1129 phases,12032 words/752 half and250 independently read
-evaluation outputs. A parent `JobRun` access error stops collection before
-seed1; A1 and the complete seed0 result remain retained. Do not rerun seed0.
-The collector is repaired and its reader/fault audit passes. Commit inputs,
-then run `scripts/run_direct_partition_model.py --attempt 2 --remaining`
-for **seed1 only**, under the original16-GiB/two-hour limits. Keep HEAD and
-dependencies fixed until it ends. No production code changes after42802f6.
+packed bytes. The [two-job n64 results](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md)
+are complete at 4c4a057/e395c55 under the original limits: 752 native checks,
+2258 phases/full frames, 24064 words/1504 half and 500 independently read
+evaluation outputs. A1 preserves the parent `JobRun` collection error after
+seed0 completed; A2 executes only seed1. All readers pass. Both jobs are
+terminal, and neither was rerun. No production code changes after 42802f6.
+
+The new path uses fewer floating words and less consumed arena extent on
+both tapes, but slightly more packed memory than global/projected. The
+[exact retained-risk audit](evidence/minimal/FP_RETAINED_PARTITION_RISK.json)
+checks 2000 saved forecasts with rational KL/Brier enclosures. Direct KL
+exceeds projected and carry-free on both seeds; the ranking against global
+changes by seed. Its errors stay within the proved bound. This is a measured
+computational/numerical tradeoff, not uniform dominance or population risk.
+The exposed-tape comparison is closed; complete indexed release and claims
+beyond those tapes remain separate research obligations. Do not restart any
+terminal component or model job as a substitute for new evidence.
 
 The [score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
 gives a sharp calibrated log-regret bound at the pre-target cut and an
 owned n3 counterexample to retrospective completion selection. Its ideal-law
 band risk calculation is distinct from the two fixed-seed measurements.
+The segment-integral enclosure separates posterior numerical discrepancy
+from the signed first-order term in fixed-hidden-teacher score differences.
 
 **Owned carry-free frontier closed within its declared component:** the
 [Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md) passes its CPU

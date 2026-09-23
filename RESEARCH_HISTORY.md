@@ -7961,3 +7961,49 @@ and name the completed A1 result before launching. Preserve both attempts
 and keep source fixed until the new job is terminal; do not relabel A1 or
 silently restart seed0. The repair changes collection, not FP semantics,
 the physical worker, model controls or a constructor decision class.
+
+## 241. Complete the direct-partition comparison and audit the numerical tradeoff (2026-09-23)
+
+The declared seed1-only A2 completes at e395c55 under the original 16-GiB/
+two-hour envelope. Production remains unchanged from 42802f6. The original
+seed0 job at 4c4a057 and its parent collection error remain in A1; the
+independent reader validates the completed job without repeating it. Both
+jobs are terminal. Across them, 752 native posterior checks, 2258 actual
+CUDA phases/full frames, 24064 primitive words/1504 half casts and 500 saved
+evaluation readouts pass. Peak jobs are 7555497984/7555358720 bytes, without
+timeout or memory termination. Each retains all 2016 count coordinates.
+
+Both tapes use fewer floating words and consumed arena bytes than the six
+retained global/projected/carry-free controls. Each direct run additionally
+pays 211356 integer-table bytes, and its packed peak is slightly higher
+than global/projected. Complete host inference, history, auditors and all
+4-MiB frames remain paid. This is no uniform memory or throughput dominance.
+Unseen AMP CE is 0.387187542826/0.390248037510, compared with the identical
+native posterior's 0.387184823203/0.390244965658. Those differences are rounding
+on exposed tapes, not better inference or a population result.
+
+Derive a cancellation-free exact enclosure for posterior scoring error.
+For e=q-p and r(t)=p+te, KL(p||q)=e^2 integral_0^1 t/[r(t)(1-r(t))] dt.
+Thus e^2/(2M) <= KL <= e^2/(2m), where m/M are the segment's minimum/maximum
+of r(1-r); the interior maximum at 1/2 must be included. Conditional Brier
+excess is exactly 2e^2. This is a proof for rational native and retained
+binary32 proper probabilities; finite Decimal checks only test the formula.
+
+The retained-data audit independently reconstructs 500 native forecasts and
+checks 2000 saved forecasts across all four realizations, with exact errors
+and outward 96-bit rational KL/Brier intervals. Direct's maximum probability
+errors are below 0.000146525/0.000109740, within the proved 0.000195701 upper.
+Its mean all-query KL upper bounds are 3.51241e-10/3.56162e-10 nats. Exact
+intervals place direct above projected and carry-free on both seeds and in
+both scoring groups, above global on seed0, and below global on seed1.
+Fewer operations and a better uniform bound do not imply pointwise accuracy
+dominance. Fixed-hidden-teacher CE has the previously proved signed
+first-order term and gives a different ranking; do not confuse it with
+nonnegative posterior KL or completion-selected population risk.
+
+The 44604-byte A2 and 15460-byte risk artifacts retain the minimal readouts,
+source/job/resource outcomes and exact enclosures. No device job is repeated
+for this analysis. This closes the registered comparison and records its
+computational/numerical tradeoff. The empty policy issues no class decision,
+spends no alpha and installs nothing. Full indexed release and evidence
+outside these tapes remain separate; Foundation R4 and ERC-1 stay frozen.

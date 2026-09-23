@@ -327,16 +327,22 @@ restoring the half forecast and retaining1525442448 peak packed bytes.
 This representation-specific retention limit is not an information lower
 bound against other lossless encodings or a Foundation counterexample.
 
-The [direct-partition n64 follow-up](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
-is registered for the same two exposed tapes and original whole-resource
-limits, using the six completed strong controls. Before every forecast,
-H<=375 gives1564 direct partition bits,7536 conservative readout bits and29
-floating outputs, conditional on the existing width bound. Seed0 at4c4a057
-now completes376 events/1129 actual phases with12032 primitive words/752
-half casts; all250 retained readouts pass. A collector type error stops A1
-before seed1, while preserving the complete worker result. The declared A2
-runs only that unexecuted seed, with unchanged production and limits. This
-tests complete learning and resources, not blind selection or throughput.
+The [direct-partition n64 comparison](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md)
+now completes both exposed tapes under the original whole-resource limits,
+using the six retained strong controls. Before every forecast, H<=375 gives
+1564 direct partition bits, 7536 conservative readout bits and 29 floating
+outputs, conditional on the existing width bound. Seed0 at 4c4a057 and seed1
+at e395c55 pass 752 native checks, 2258 actual phases/full frames and 500
+retained readouts, with 24064 primitive words/1504 half casts. The original
+A1 collection failure remains; its completed seed0 result was independently
+read without a rerun. A2 executed only seed1. Production stays at 42802f6.
+Floating word counts and consumed arena extent fall on both tapes, while
+packed peaks exceed global/projected slightly. Exact rational
+[posterior KL enclosures](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md#7-exact-discrepancy-intervals-from-retained-hardware-readouts)
+put direct above projected/carry-free on both seeds and on opposite sides
+of global. This computational/numerical tradeoff is within the proved
+tolerance; no uniform dominance, population result or full indexed release
+follows. All jobs are terminal. Foundation R4 and ERC-1 remain unchanged.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

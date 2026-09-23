@@ -1,0 +1,326 @@
+{
+  "status": "PASS_RETAINED_POSTERIOR_AMP_RISK_ENCLOSURES",
+  "scope": "exact per-query errors and rational KL/Brier enclosures on exposed completed evaluation paths; no population or completion-selected risk estimate; no new GPU execution",
+  "arithmetic": "Fraction; 96-bit outward grids; Decimal only for separate interval checks",
+  "interval_checks": {
+    "exact_segment_bound_decimal_checks": 12,
+    "interior_one_half_case_checked": true
+  },
+  "proper_probability_interval": [
+    "1/10",
+    "9/10"
+  ],
+  "sources": {
+    "controls": "45b40b463f40644ff7a5c06b67200677e8c7d9ac",
+    "direct_seed0": "4c4a057720940c87c7dc7436be08a91699601353",
+    "direct_seed1": "e395c55d6eb2409a49e97a99abc8f23e71629d41"
+  },
+  "cases": [
+    {
+      "case": [
+        64,
+        "iid-band2",
+        0
+      ],
+      "rows": [
+        {
+          "mode": "global",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "33891972497093/742743730632600090",
+          "maximum_probability_error_binary64": 4.563077559500498e-05,
+          "maximum_error_evaluation_index": 97,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "2496169961920108580571/9824292151768777861599449841664",
+            "624119593796743680689/2456073037942194465399862460416"
+          ],
+          "mean_KL_upper_binary64": 2.5411279882770033e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "44781482440185279143/307009129742774308174982807552",
+            "1433007438085928932693/9824292151768777861599449841664"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -2.9110846061497497e-06
+        },
+        {
+          "mode": "global",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "33891972497093/742743730632600090",
+          "maximum_probability_error_binary64": 4.563077559500498e-05,
+          "maximum_error_evaluation_index": 97,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "2929358590057563005733/19807040628566084398385987584000",
+            "2929682543168721126387/19807040628566084398385987584000"
+          ],
+          "mean_KL_upper_binary64": 1.4791116947291348e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "1758035830628330124287/19807040628566084398385987584000",
+            "1758035830628330124527/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -1.0197298811465139e-06
+        },
+        {
+          "mode": "projected",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "902289/19614924800",
+          "maximum_probability_error_binary64": 4.6000125373919356e-05,
+          "maximum_error_evaluation_index": 66,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "1899015846844031640949/9824292151768777861599449841664",
+            "1899305250373269039355/9824292151768777861599449841664"
+          ],
+          "mean_KL_upper_binary64": 1.933274398839326e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "301442398665072483357/2456073037942194465399862460416",
+            "1205769594660289933545/9824292151768777861599449841664"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -1.87082133901173e-06
+        },
+        {
+          "mode": "projected",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "902289/19614924800",
+          "maximum_probability_error_binary64": 4.6000125373919356e-05,
+          "maximum_error_evaluation_index": 66,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "120323016930002060857/1237940039285380274899124224000",
+            "962729656938695886413/9903520314283042199192993792000"
+          ],
+          "mean_KL_upper_binary64": 9.721085294793905e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "1215981858770708169661/19807040628566084398385987584000",
+            "1215981858770708169901/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -9.245528546641957e-07
+        },
+        {
+          "mode": "carry-free",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "14266869121020631318175044389663051411949/838490973293402677479616734323279095696601190",
+          "maximum_probability_error_binary64": 1.701493465693924e-05,
+          "maximum_error_evaluation_index": 208,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "215353067969622405957/4912146075884388930799724920832",
+            "107682822265455376413/2456073037942194465399862460416"
+          ],
+          "mean_KL_upper_binary64": 4.3843493496299586e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "255284963565268730337/9824292151768777861599449841664",
+            "127642481782634365227/4912146075884388930799724920832"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -6.752278869370798e-08
+        },
+        {
+          "mode": "carry-free",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "14266869121020631318175044389663051411949/838490973293402677479616734323279095696601190",
+          "maximum_probability_error_binary64": 1.701493465693924e-05,
+          "maximum_error_evaluation_index": 208,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "298084836291583719961/9903520314283042199192993792000",
+            "59620373373717998927/1980704062856608439838598758400"
+          ],
+          "mean_KL_upper_binary64": 3.010059629389177e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "352998004889072386243/19807040628566084398385987584000",
+            "352998004889072386483/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 2.202479593704787e-07
+        },
+        {
+          "mode": "direct-partition",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "7017494868017282888915765218593449346929143/47892980923455793898352525430214295789491978240",
+          "maximum_probability_error_binary64": 0.00014652449550452674,
+          "maximum_error_evaluation_index": 124,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "6177525448830091773563/9824292151768777861599449841664",
+            "3088885163984422524369/4912146075884388930799724920832"
+          ],
+          "mean_KL_upper_binary64": 6.288259991185819e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "5306161202351115868605/9824292151768777861599449841664",
+            "2653080601175557934361/4912146075884388930799724920832"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 2.7196225549364073e-06
+        },
+        {
+          "mode": "direct-partition",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "7017494868017282888915765218593449346929143/47892980923455793898352525430214295789491978240",
+          "maximum_probability_error_binary64": 0.00014652449550452674,
+          "maximum_error_evaluation_index": 124,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "6956690915072698347257/19807040628566084398385987584000",
+            "6957032860896636574499/19807040628566084398385987584000"
+          ],
+          "mean_KL_upper_binary64": 3.512403993791518e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "575346384845289817883/1980704062856608439838598758400",
+            "575346384845289817907/1980704062856608439838598758400"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 1.423218811080762e-06
+        }
+      ]
+    },
+    {
+      "case": [
+        64,
+        "iid-band2",
+        1
+      ],
+      "rows": [
+        {
+          "mode": "global",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "326958208993/2778741730181120",
+          "maximum_probability_error_binary64": 0.00011766412309635149,
+          "maximum_error_evaluation_index": 147,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "5003235534451211357269/4912146075884388930799724920832",
+            "625557880358782128345/614018259485548616349965615104"
+          ],
+          "mean_KL_upper_binary64": 1.0187936119080595e-09,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "445023086098605774465/614018259485548616349965615104",
+            "1780092344394423097889/2456073037942194465399862460416"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -4.350385157225745e-06
+        },
+        {
+          "mode": "global",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "326958208993/2778741730181120",
+          "maximum_probability_error_binary64": 0.00011766412309635149,
+          "maximum_error_evaluation_index": 147,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "7576921140162074628087/9903520314283042199192993792000",
+            "121261094512042403013/158456325028528675187087900672"
+          ],
+          "mean_KL_upper_binary64": 7.652650942788835e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "2655933343867329917587/4951760157141521099596496896000",
+            "10623733375469319670583/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": -1.4056241639526235e-06
+        },
+        {
+          "mode": "projected",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "6344051/141012510566",
+          "maximum_probability_error_binary64": 4.498927772107644e-05,
+          "maximum_error_evaluation_index": 7,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "937688447538416835019/9824292151768777861599449841664",
+            "468898893001781198263/4912146075884388930799724920832"
+          ],
+          "mean_KL_upper_binary64": 9.545703359755238e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "650522097991703843557/9824292151768777861599449841664",
+            "650522097991703843673/9824292151768777861599449841664"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 8.091076341698589e-07
+        },
+        {
+          "mode": "projected",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "10241483835297903715961/140925348994091587519888530",
+          "maximum_probability_error_binary64": 7.267311316523535e-05,
+          "maximum_error_evaluation_index": 218,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "57359369805977555373/618970019642690137449562112000",
+            "1835615560867977077929/19807040628566084398385987584000"
+          ],
+          "mean_KL_upper_binary64": 9.26749025909816e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "378234061573128671679/4951760157141521099596496896000",
+            "1512936246292514686951/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 8.79348580562489e-07
+        },
+        {
+          "mode": "carry-free",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "1459697/56404996830",
+          "maximum_probability_error_binary64": 2.5878859711656508e-05,
+          "maximum_error_evaluation_index": 7,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "357764314611728101997/4912146075884388930799724920832",
+            "178894893148287706887/2456073037942194465399862460416"
+          ],
+          "mean_KL_upper_binary64": 7.283777411529003e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "106684205909297502151/2456073037942194465399862460416",
+            "26671051477324375545/614018259485548616349965615104"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 1.100682745058812e-06
+        },
+        {
+          "mode": "carry-free",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "1459697/56404996830",
+          "maximum_probability_error_binary64": 2.5878859711656508e-05,
+          "maximum_error_evaluation_index": 7,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "241087085953695251049/4951760157141521099596496896000",
+            "964408005765431138611/19807040628566084398385987584000"
+          ],
+          "mean_KL_upper_binary64": 4.8690161435552563e-11,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "298452658108398801109/9903520314283042199192993792000",
+            "596905316216797602453/19807040628566084398385987584000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 5.231854561249527e-07
+        },
+        {
+          "mode": "direct-partition",
+          "group": "unseen",
+          "contexts": 124,
+          "maximum_probability_error_exact": "152468888573/1389370865090560",
+          "maximum_probability_error_binary64": 0.00010973951765071883,
+          "maximum_error_evaluation_index": 147,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "130690228085670626287/316912650057057350374175801344",
+            "4051521926561533128375/9824292151768777861599449841664"
+          ],
+          "mean_KL_upper_binary64": 4.123983554206592e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "113449136247133993853/316912650057057350374175801344",
+            "3516923223661153809559/9824292151768777861599449841664"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 3.071851958635907e-06
+        },
+        {
+          "mode": "direct-partition",
+          "group": "evaluation_domain",
+          "contexts": 250,
+          "maximum_probability_error_exact": "152468888573/1389370865090560",
+          "maximum_probability_error_binary64": 0.00010973951765071883,
+          "maximum_error_evaluation_index": 147,
+          "mean_reference_to_proper_AMP_KL_exact_enclosure": [
+            "440871521561723326269/1237940039285380274899124224000",
+            "7054496234732987787581/19807040628566084398385987584000"
+          ],
+          "mean_KL_upper_binary64": 3.5616104227901976e-10,
+          "mean_conditional_Brier_excess_exact_enclosure": [
+            "5548232338420071437479/19807040628566084398385987584000",
+            "2774116169210035718857/9903520314283042199192993792000"
+          ],
+          "fixed_teacher_expected_CE_gap_binary64": 1.3463128594182194e-06
+        }
+      ]
+    }
+  ]
+}

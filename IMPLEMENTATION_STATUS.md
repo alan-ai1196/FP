@@ -13,23 +13,33 @@ counts and the actual query. Its complete CPU gate and all20 actual CUDA
 A1 jobs pass at42802f6:735 new phases/7674 primitive words/475 half casts;
 with four controls,919 phases/53210 words/16987 half casts. Fresh/install,
 104-event reversal, n256 profiles and77-event n32 learning pass. Peak job
-2395172864 bytes is below4 GiB; all jobs are terminal. No direct-partition
-model result or full indexed release is inferred. The original1-GiB n256 test
-refuses at observation181; the declared2-GiB continuation seals all257 events,
+2395172864 bytes is below4 GiB; all jobs are terminal. This component evidence
+is separate from the model results below and a full indexed release. The
+original 1-GiB n256 test refuses at observation181; the declared2-GiB
+continuation seals all257 events,
 restores the half forecast and peaks at1525442448 packed bytes.11919 paid
 queries,388 histories/776 native triples and all plan/funding/buffer faults
 pass. The model-reader CPU faults and old1500-readout reader also pass.
 The terminal n64 matrix retains its existing implementations and source.
 
-The [direct-partition model registration](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
-adds exactly two n64 jobs on those exposed tapes, keeping all original model
-limits and the six retained strong controls. Preflight verifies the owned
-CPU/20-job gate, unchanged production at42802f6, every retained control and
-common native/data contracts. Seed0 at4c4a057 now completes376 events/1129
-phases,12032 words/752 half and all250 readouts. A collector `JobRun` type
-error stops A1 before seed1; the original artifact and error remain. The
-independent reader and nine mutation checks pass without a GPU rerun. The
-declared A2 executes only seed1, with production and all limits unchanged.
+The [direct-partition model comparison](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md)
+completes both n64 jobs at 4c4a057/e395c55, with all original model limits,
+the six retained strong controls and production unchanged from 42802f6.
+Together they pass 752 native checks, 2258 phases/full frames, 24064 words/
+1504 half casts and 500 retained readouts. The A1 `JobRun` collection error
+after successful seed0 remains intact; the independent reader and nine
+mutations pass. A2 runs only seed1. No completed device job was repeated.
+Peak jobs are 7555497984/7555358720 bytes under 16 GiB. Direct uses fewer
+floating words and consumed arena bytes but slightly more packed memory
+than global/projected. All jobs and readers are terminal and pass.
+
+The exact retained-risk reader compares 2000 forecasts across all four
+realizations, enclosing posterior KL and Brier excess with rational outward
+grids. Direct's mean all-query KL is at most 3.51241e-10/3.56162e-10 nats;
+its intervals exceed projected/carry-free on both seeds, while its ranking
+against global changes. This is a numerical tradeoff within the proved
+tolerance, not better inference. No GPU execution, full indexed release,
+population estimate or class-completeness claim is added by that reader.
 
 The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
 now completes all six jobs at45b40b4, with production unchanged fromd600dba.

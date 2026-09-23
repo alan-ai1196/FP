@@ -1,26 +1,26 @@
 # FP Open Problems
 
 The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
-exposes a simpler realization to test: the current fixed-base9 response
-does not need all energy coefficients. Its n+4H-bit construction and29-word
-uniform mixed-precision readout pass passive native/RNE checks. The open
-question is now complete model use after its
-[owned gate](theory/proofs/OWNED_INTEGER_PARTITIONS.md) passed all CPU checks
-and all20 actual CUDA A1 jobs at42802f6.735 new phases/7674 words/475 half
-casts and all four legacy controls pass, including fresh/install, reversal,
-n256 profiles and77-event n32 learning. All jobs are terminal; do not repeat
-the gate. The [two-job n64 registration](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
-now has seed0 complete at4c4a057, with all native/device/retained-reader checks
-passing. A parent collection type error stops before seed1. Preserve A1
-and its corrected reader; the declared A2 executes only the missing seed1
-under the same limits. The full two-seed comparison remains open. Keep every
-outcome and do not rerun the completed seed or score incomplete prefixes.
-Preserve the original1-GiB
-n256 refusal and distinguish the completed2-GiB/257-event continuation,
-whose peak packed payload is1525442448 bytes. Neither a small
-readout nor a larger retention budget is a whole-resource efficiency proof.
-Do not supply reference partitions through a helper, borrow the histogram
-gate, or rerun the terminal n64 controls as a substitute for new evidence.
+now closes its [declared two-tape n64 comparison](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md).
+Its n+4H-bit construction and 29-word mixed-precision readout passed the
+owned CPU/20-job CUDA gate at 42802f6 and both model jobs at 4c4a057/e395c55.
+The two jobs pass 752 native checks, 2258 actual phases/full frames and
+500 retained readouts under the original limits. A1 preserves a collection
+failure after completed seed0; A2 runs only seed1. All readers pass, and no
+completed job was rerun. The full declared comparison is closed.
+
+The [exact retained-risk audit](evidence/minimal/FP_RETAINED_PARTITION_RISK.json)
+exposes a computational/numerical tradeoff: direct uses fewer floating
+words and consumed arena bytes, but slightly more packed memory than
+global/projected. Its posterior KL exceeds projected/carry-free on both
+seeds; global's ranking changes. None exceeds the proved tolerance.
+These are exposed-path measurements, not universal resource dominance or
+population risk. Claims outside those tapes and full indexed release remain
+open; further experiments need a distinct research question and evidence.
+Preserve the original 1-GiB n256 refusal and separate completed 2-GiB,
+257-event Reference CPU reversal, whose packed peak is 1525442448 bytes.
+Neither a small readout nor a larger history budget proves whole-resource
+efficiency. All component and model jobs are terminal; do not repeat them.
 
 The larger-model question on the two declared n64 tapes is
 [closed](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md): all six
@@ -29,8 +29,8 @@ All2256 native comparisons,6774 actual phases/full frames and1500 readouts
 pass. Projected uses fewer floating words and arena bytes on both seeds;
 carry-free has no efficiency win here. The conditional resource bounds and
 these executions neither settle dense/all-pair tasks nor freeze the full
-indexed release. Do not rerun these terminal jobs as a substitute for the
-new realization's missing owned/device evidence.
+indexed release. The subsequent direct realization above has its own
+completed evidence; do not rerun these terminal controls.
 
 The [owned carry-free CPU gate](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 closes prepaid table/compaction construction, complete native continuation
