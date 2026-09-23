@@ -7682,3 +7682,38 @@ profile continuations, fresh/install, underflow reversal, physical faults
 and legacy controls. Commit inputs before execution; retain every attempt.
 Actual owned GPU results, useful larger-model outcomes and full indexed
 release remain unclaimed at this registration cut.
+
+## 232. Close the actual owned carry-free Runtime gate (2026-09-23)
+
+All19 registered RTX3090 A1 jobs pass atd600dba with fixed production and
+caps. Every job exits zero without timeout or memory termination; peak
+whole-job commitment2394722304 bytes stays under4 GiB. The24487-byte journal
+retains the complete source/process/limit bindings and compact results.
+The jobs are terminal and are not repeated.
+
+Seven new integration flows check735 complete phases,34623 primitive words/
+9933 half and37030 outputs including copies.241 prediction readers compare
+independent coefficients and prototype RNE words; seven probes read36 full
+records. Fresh evidence crosses20, physical installation retains alpha1/2,
+and learning reaches21. Six paid buffer entries block12 resizes. Transient
+underflow at52 retains its positive native coordinate and reverses after52
+contrary events, restoring count zero and forecast1/2 at104.
+
+The n32 band is built through76 actual observations; its full496-count
+state yields119 terms for a new end-to-end query over2^31 latent assignments.
+A subsequent target-one observation reaches77 events/232 physical phases.
+The original result field called this an opposite label; clarify that it
+is the first observation on edge(0,31), and correct only the harness label
+after collection. No numerical execution changes or GPU repeat follow.
+
+The n256 ordinary/profile tape passes34 phases with449 primitive words and
+81 half, a paid4227904-byte table extent and32893 maximum compaction moves.
+Both existing n256 controls pass: global42594 words/15924 half; projected514
+words/24 half. The stronger projected comparison prevents mistaking a
+large saving against global elimination for blanket efficiency dominance.
+Wide integer storage/work remain explicit tradeoffs. Gray profiles also
+pass; all ten integration flows total861 phases/78945 words/26163 half.
+
+This closes the owned component frontier, not a larger-model score or full
+indexed release. Foundation/ERC-1 stay frozen. Useful larger-model evidence
+with strong exact and physical controls is the next research obligation.

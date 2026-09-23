@@ -1,15 +1,18 @@
 # FP Handoff
 
-**Current owned frontier:** the [carry-free Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
-is implemented and passes its scoped CPU gate. Actual wide tables occupy
-one paid pinned extent; forward compaction preserves the peak-cell plan.
-All11919 small exact/RNE queries,388 histories/776 native phase triples,
-profiles, fresh reference evidence, n256 continuation and funding/plan/buffer
-faults pass. Legacy CPU controls pass. The19-job RTX3090 gate is registered
-in `scripts/audit_owned_packed_histogram_cuda.py`; commit inputs before
-attempt1, retain every outcome and stop on failure. It tests actual learning,
-fresh/install, reversal, n32 bands and n256 profiles under4 GiB/job.
-No actual owned GPU result or full indexed release is claimed yet.
+**Owned carry-free frontier closed within its declared component:** the
+[Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md) passes its CPU
+gate and all19 actual RTX3090 A1 jobs atd600dba. Wide tables occupy one paid
+pinned extent; forward compaction preserves the peak-cell plan. New flows
+check735 complete phases/34623 primitive words/9933 half; with legacy controls,
+861 phases/78945 words/26163 half. Fresh/install/learn21,104-event reversal,
+n256 profiles and an actually learned77-event n32 band pass. Peak whole-job
+commitment2394722304 bytes under4 GiB. Every job is terminal; do not rerun it.
+The stronger n256 projected control uses514 words versus449 for the new
+path, which additionally pays4227904 table bytes; no blanket efficiency
+claim follows. Production remains atd600dba; a later harness label correction
+changes no numerical code. Next pursue useful larger-model evidence with
+strong controls; full indexed release remains a separate obligation.
 
 **Current attack: histogram computation beyond world enumeration.** The
 [carry-free construction](theory/proofs/PACKED_COUNT_HISTOGRAM.md) evaluates
@@ -24,8 +27,8 @@ passes. Actual arithmetic A1 now also passes at3e85306:16 fixtures/48 phases,
 5354 output words/1554 half, peak job2051858432 bytes. The separate reader
 checks208 endpoints. That job is terminal; do not rerun it. That component
 left production unchanged. The implementation above now supplies paid wide
-tables, coefficient output and numerical identity; its actual owned gate
-remains separate. This earlier result is numerical
+tables, coefficient output and numerical identity; its separate actual
+owned gate now also passes. This earlier result is numerical
 component evidence, not admission to the existing Runtime or a model score.
 
 **Completed model recovery:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)

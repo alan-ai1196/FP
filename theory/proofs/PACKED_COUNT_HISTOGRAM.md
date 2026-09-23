@@ -292,3 +292,10 @@ this prototype to ReferenceCompilerRuntime, establish its paid table/scratch
 ownership, fresh/install continuations, full indexed release or a larger
 model result. Those obligations cannot borrow the n16 Gray decoder's gate.
 All source and limits stayed fixed; the job is terminal and is not repeated.
+
+The separate [owned integration](OWNED_PACKED_HISTOGRAM.md) subsequently
+supplies prepaid contiguous wide tables and proves safe compaction without
+increasing the table-cell bound. Its CPU and all19 actual Runtime jobs pass
+atd600dba, including fresh/install and n32/n256 continuations. That evidence
+has its own numerical ownership checks and does not borrow this component
+gate or imply a complete indexed release.

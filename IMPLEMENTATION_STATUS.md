@@ -5,8 +5,11 @@ now has paid contiguous wide tables, safe forward compaction, full native
 state/plan binding and a separately registered coefficient-normalized AMP
 identity. Its CPU gate passes11919 queries,388 histories/776 native triples,
 profiles/fresh evidence, n256 continuation and adversarial funding/plan/word/
-buffer checks. Legacy CPU regressions pass. The19-job actual Runtime CUDA
-gate is registered but not yet executed; no full indexed release follows.
+buffer checks. Legacy CPU regressions and all19 actual Runtime CUDA A1 jobs
+pass atd600dba. New flows check735 phases/34623 primitive words/9933 half;
+including controls,861 phases/78945 words/26163 half. Fresh/install,
+underflow recovery, n256 profiles and77-event n32 learning pass. Peak job
+2394722304 bytes, every job terminal. No full indexed release follows.
 
 The [carry-free histogram prototype](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
 uses exact positive elimination instead of enumerating worlds, with explicit

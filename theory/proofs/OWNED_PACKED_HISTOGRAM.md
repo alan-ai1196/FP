@@ -1,7 +1,7 @@
 # Owned carry-free histogram construction
 
-Status (2026-09-23): **IMPLEMENTED; SCOPED CPU GATE PASS; ACTUAL RUNTIME
-CUDA GATE REGISTERED, NOT YET EXECUTED.**
+Status (2026-09-23): **IMPLEMENTED; SCOPED CPU AND ALL19 ACTUAL RUNTIME
+CUDA A1 JOBS PASS** atd600dba. Full indexed release remains separate.
 
 The [carry-free theorem](PACKED_COUNT_HISTOGRAM.md) proves exact coefficients
 and the coefficient-normalized AMP law. This implementation supplies paid
@@ -133,3 +133,52 @@ every successful integration phase, with independent world or vertex-prefix
 coefficient oracles and prototype RNE traces. Commit inputs before launch;
 stop on failure and retain every attempt without changing caps. This gate
 does not establish a larger-model score or a complete indexed release.
+
+## Actual A1 outcome
+
+All19 registered jobs pass atd600dba with fixed source and caps, exiting
+zero without timeout or limit termination. Peak whole-job commitment is
+2394722304 bytes under4 GiB. The24487-byte
+`evidence/minimal/FP_OWNED_PACKED_HISTOGRAM_CUDA_A1.json` retains every job,
+its source/process/limit binding and compact checked result. All jobs are
+terminal; do not repeat them unchanged.
+
+The ten integration flows check861 complete phases,78945 primitive words
+and26163 half words. Of these, seven new carry-free flows check735 phases,
+34623 primitive words/9933 half and37030 outputs including copies;241
+prediction readers compare independent coefficients and prototype RNE.
+Seven additional probes read36 full records. Fresh evidence crosses at20,
+installation retains alpha1/2 and learning continues to21. Six actual buffer
+calls reject12 resize attempts across reference construction, physical
+construction and independent reconstruction. At cursor52 a positive native
+coordinate transiently rounds to zero;52 contrary observations restore
+count zero and forecast1/2 at104 without losing the native coordinate.
+
+The n32 band is built through76 observations, retaining all496 count
+positions. Its new end-to-end query has119 terms and a2464-bit envelope
+for2^31 latent assignments; one more target-one observation commits, reaching
+77 events/232 phases/27757 primitive words. Maximum actual compaction is3484
+cells, in a1632464-byte paid extent. That last event concerns previously
+unseen edge(0,31), not reversal of an earlier count on that edge. The original
+journal's `continued_opposite_label` field names this target-one continuation;
+the harness field is clarified afterward without changing numerical code
+or repeating the terminal job.
+
+The n256 continuation includes four ordinary and four profile events,
+34 complete physical phases,449 primitive words and81 half. Its actual
+4227904-byte table extent and32893 maximum compaction moves are paid.
+Both existing n256 controls also pass on the same ordinary/profile tape:
+
+| Realization | Primitive words | Half words | Consumed arena bytes |
+|---|---:|---:|---:|
+| Existing global | 42594 | 15924 | 341504 |
+| Existing projected | 514 | 24 | 4864 |
+| Carry-free histogram | 449 | 81 | 4344 |
+
+The projected control is the stronger comparison: the new path trades
+additional wide integer storage/work for modestly fewer floating outputs
+on this tape and uses more half operations. These counts establish neither
+overall efficiency dominance nor a throughput benchmark. The earlier Gray
+profile control passes too. Actual continuation correctness is closed for
+this declared component; useful larger-model evidence and full indexed
+release remain separate research obligations.

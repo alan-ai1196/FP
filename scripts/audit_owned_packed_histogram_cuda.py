@@ -147,7 +147,7 @@ def band():
     assert final.cursor == desired.steps+1 and final.candidates[0].learner.encoded != desired
     return {**check_phases(rt), 'n': 32, 'constructed_span': desired.steps,
         'complete_count_coordinates': len(actual.counts), 'final_query_terms': plan.term_count,
-        'worlds_not_enumerated': 1 << 31, 'continued_opposite_label': True}
+        'worlds_not_enumerated': 1 << 31, 'continued_target_one_on_new_edge': True}
 
 
 def worker(case):

@@ -264,8 +264,10 @@ The [owned carry-free implementation](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 realizes those wide tables in one prepaid contiguous buffer. Forward
 compaction preserves the peak table-cell bound with two paid roots and
 explicit copy work. Its scoped CPU gate passes11919 queries,388 owned
-histories/776 phase triples and n256 profile continuations. A separate19-job
-actual Runtime gate is registered but not yet executed. This changes no
+histories/776 phase triples and n256 profile continuations. All19 separate
+actual Runtime A1 jobs now pass atd600dba:735 new complete phases/34623
+primitive words, fresh/install,104-event reversal and77-event n32 learning.
+With controls,861 phases pass; peak job2394722304 bytes under4 GiB. This changes no
 Foundation/ERC-1 semantics and issues no constructor completeness certificate.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)

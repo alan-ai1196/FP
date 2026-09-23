@@ -1,0 +1,730 @@
+{
+  "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+  "execution_source": "d600dba80a60c05909feca4106bc285aef311472",
+  "registration": {
+    "status": "REGISTERED_OWNED_PACKED_HISTOGRAM_GATE",
+    "cases": [
+      "profiles",
+      "install",
+      "closure",
+      "unfunded",
+      "second-commit",
+      "retired-producers",
+      "fault-prediction-word",
+      "fault-gradient-word",
+      "fault-operation-word",
+      "old-output",
+      "target-swap",
+      "plan-term",
+      "workspace",
+      "underflow-reversal",
+      "large",
+      "band",
+      "legacy-large",
+      "legacy-projected-large",
+      "legacy-gray-profiles"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true,
+    "budget": {
+      "join_cells": 4096,
+      "live_cells": 1024,
+      "arithmetic": 16384,
+      "span_cap": 396,
+      "integer_bits": 32768
+    },
+    "workspace_bytes_n3_n32_n256": [
+      153668,
+      1632464,
+      4227904
+    ],
+    "reference_machine": "packed-indexed-carry-free-histogram-reference-payload-v1",
+    "forward_id": "packed-count-coefficient-normalized-histogram-rne16-rne32-v1",
+    "arena_bytes": 33554432,
+    "phase_output_cap": 65536,
+    "phase_frame_bytes": 262144,
+    "n256_frame_bytes": 4194304,
+    "evidence_encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "fault_scope": "fresh device words, stale output, coefficient mutation, paid buffer lifetime and actual target; trusted fixed checker",
+    "failure_policy": "stop at first failure; retain every outcome; no silent retry or cap changes",
+    "scope": "complete owned component continuations, n32 learned band and n256 native profiles; no model score or complete indexed release"
+  },
+  "workers": [
+    {
+      "case": "profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2237714432,
+        "peak_job_commit": 2238930944,
+        "user_100ns": 33906250,
+        "kernel_100ns": 12031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8568,
+        "process_creation_100ns": 134346096918392886
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 8568,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1214,
+          "output_words_including_copies": 1394,
+          "actual_half_words": 282,
+          "independent_coefficient_and_RNE_prediction_readers": 18,
+          "cursor": 8,
+          "wide_table_billed_and_actual_bytes": 256268,
+          "maximum_compacted_cells": 21,
+          "packed_current_bytes": 16259072,
+          "consumed_arena_bytes": 11040,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2241146880,
+        "peak_job_commit": 2242355200,
+        "user_100ns": 40625000,
+        "kernel_100ns": 10781250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9980,
+        "process_creation_100ns": 134346096970543438
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 9980,
+        "case": "install",
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 988,
+          "output_words_including_copies": 1248,
+          "actual_half_words": 156,
+          "independent_coefficient_and_RNE_prediction_readers": 26,
+          "cursor": 21,
+          "wide_table_billed_and_actual_bytes": 103394,
+          "maximum_compacted_cells": 0,
+          "packed_current_bytes": 21995326,
+          "consumed_arena_bytes": 9792,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true
+        }
+      }
+    },
+    {
+      "case": "closure",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2220621824,
+        "peak_job_commit": 2221826048,
+        "user_100ns": 22343750,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1948,
+        "process_creation_100ns": 134346097035987067
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 1948,
+        "case": "closure",
+        "result": {
+          "checked_phases": 10,
+          "actual_floating_words": 141,
+          "output_words_including_copies": 171,
+          "actual_half_words": 27,
+          "independent_coefficient_and_RNE_prediction_readers": 3,
+          "cursor": 3,
+          "wide_table_billed_and_actual_bytes": 153668,
+          "maximum_compacted_cells": 2,
+          "packed_current_bytes": 3417037,
+          "consumed_arena_bytes": 1352,
+          "closure": "SEALED_CUDA_STREAM",
+          "class_decisions": 0
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1857912832,
+        "peak_job_commit": 1859121152,
+        "user_100ns": 16093750,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11212,
+        "process_creation_100ns": 134346097071380290
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 11212,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "retained_received_context": true,
+          "executor_entries": 0,
+          "failed_phase_retained": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222829568,
+        "peak_job_commit": 2224037888,
+        "user_100ns": 20156250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26240,
+        "process_creation_100ns": 134346097097713209
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 26240,
+        "case": "second-commit",
+        "result": {
+          "commit_calls": 2,
+          "status": "UNRESOLVED",
+          "retained_actual_target": 0,
+          "observed_lineages_retained": 2,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "retired-producers",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222452736,
+        "peak_job_commit": 2223669248,
+        "user_100ns": 19531250,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17172,
+        "process_creation_100ns": 134346097129463623
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 17172,
+        "case": "retired-producers",
+        "result": {
+          "case": "retired-producers",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": null,
+          "actual_target_retained": null,
+          "checked_full_records": 7,
+          "retired_producer_calls": 0,
+          "complete_native_and_AMP_update_matches_literal": true
+        }
+      }
+    },
+    {
+      "case": "fault-prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2245955584,
+        "peak_job_commit": 2247188480,
+        "user_100ns": 21406250,
+        "kernel_100ns": 8593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12704,
+        "process_creation_100ns": 134346097162174943
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 12704,
+        "case": "fault-prediction-word",
+        "result": {
+          "case": "fault-prediction-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-gradient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2245042176,
+        "peak_job_commit": 2246246400,
+        "user_100ns": 21250000,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26236,
+        "process_creation_100ns": 134346097194263767
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 26236,
+        "case": "fault-gradient-word",
+        "result": {
+          "case": "fault-gradient-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": 0,
+          "checked_full_records": 6,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-operation-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2246213632,
+        "peak_job_commit": 2247434240,
+        "user_100ns": 21093750,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5672,
+        "process_creation_100ns": 134346097226713681
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 5672,
+        "case": "fault-operation-word",
+        "result": {
+          "case": "fault-operation-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "old-output",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2221244416,
+        "peak_job_commit": 2222456832,
+        "user_100ns": 19843750,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5720,
+        "process_creation_100ns": 134346097258673903
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 5720,
+        "case": "old-output",
+        "result": {
+          "case": "old-output",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: raw phase readout needs its initialized floating extents",
+          "checked_full_records": 5,
+          "actual_target_retained": null,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2221211648,
+        "peak_job_commit": 2222428160,
+        "user_100ns": 18906250,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16224,
+        "process_creation_100ns": 134346097290554971
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 16224,
+        "case": "target-swap",
+        "result": {
+          "case": "target-swap",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: indexed observation differs from the independently owned actual target",
+          "checked_full_records": 3,
+          "actual_target_retained": 0,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "plan-term",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222698496,
+        "peak_job_commit": 2223902720,
+        "user_100ns": 20781250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17204,
+        "process_creation_100ns": 134346097321227959
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 17204,
+        "case": "plan-term",
+        "result": {
+          "case": "plan-term",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: carry-free histogram plan differs from its complete native input",
+          "checked_full_records": 5,
+          "actual_target_retained": null,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "workspace",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2223767552,
+        "peak_job_commit": 2224988160,
+        "user_100ns": 23593750,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7360,
+        "process_creation_100ns": 134346097354105573
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 7360,
+        "case": "workspace",
+        "result": {
+          "checked_phases": 7,
+          "actual_floating_words": 94,
+          "output_words_including_copies": 114,
+          "actual_half_words": 18,
+          "independent_coefficient_and_RNE_prediction_readers": 2,
+          "cursor": 2,
+          "wide_table_billed_and_actual_bytes": 153668,
+          "maximum_compacted_cells": 1,
+          "packed_current_bytes": 2613032,
+          "consumed_arena_bytes": 904,
+          "prepaid_reference_physical_and_reconstruction_calls": 6,
+          "blocked_resizes": 12,
+          "old_history_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "underflow-reversal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2240086016,
+        "peak_job_commit": 2241318912,
+        "user_100ns": 169843750,
+        "kernel_100ns": 13437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11892,
+        "process_creation_100ns": 134346097388280231
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 11892,
+        "case": "underflow-reversal",
+        "result": {
+          "checked_phases": 314,
+          "actual_floating_words": 3980,
+          "output_words_including_copies": 5027,
+          "actual_half_words": 630,
+          "independent_coefficient_and_RNE_prediction_readers": 105,
+          "cursor": 104,
+          "wide_table_billed_and_actual_bytes": 103394,
+          "maximum_compacted_cells": 0,
+          "packed_current_bytes": 84327899,
+          "consumed_arena_bytes": 39376,
+          "transient_zero_at_cursor": 52,
+          "native_zeroed_coordinate_remains_positive": true,
+          "contrary_events": 52,
+          "returned_forecast": [
+            "1/2",
+            "1/2"
+          ],
+          "complete_counts_preserved_and_recovered": true
+        }
+      }
+    },
+    {
+      "case": "large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2363670528,
+        "peak_job_commit": 2364891136,
+        "user_100ns": 1164218750,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3244,
+        "process_creation_100ns": 134346097626141297
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 3244,
+        "case": "large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 449,
+          "output_words_including_copies": 549,
+          "actual_half_words": 81,
+          "independent_coefficient_and_RNE_prediction_readers": 10,
+          "cursor": 4,
+          "wide_table_billed_and_actual_bytes": 4227904,
+          "maximum_compacted_cells": 32893,
+          "packed_current_bytes": 209892597,
+          "consumed_arena_bytes": 4344,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "band",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2232160256,
+        "peak_job_commit": 2233364480,
+        "user_100ns": 462187500,
+        "kernel_100ns": 17968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5448,
+        "process_creation_100ns": 134346098814144071
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 5448,
+        "case": "band",
+        "result": {
+          "checked_phases": 232,
+          "actual_floating_words": 27757,
+          "output_words_including_copies": 28527,
+          "actual_half_words": 8739,
+          "independent_coefficient_and_RNE_prediction_readers": 77,
+          "cursor": 77,
+          "wide_table_billed_and_actual_bytes": 1632464,
+          "maximum_compacted_cells": 3484,
+          "packed_current_bytes": 71250143,
+          "consumed_arena_bytes": 227608,
+          "n": 32,
+          "constructed_span": 76,
+          "complete_count_coordinates": 496,
+          "final_query_terms": 119,
+          "worlds_not_enumerated": 2147483648,
+          "continued_opposite_label": true
+        }
+      }
+    },
+    {
+      "case": "legacy-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2393518080,
+        "peak_job_commit": 2394722304,
+        "user_100ns": 1578125000,
+        "kernel_100ns": 79687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11896,
+        "process_creation_100ns": 134346099356108054
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 11896,
+        "case": "legacy-large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205668181,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "legacy-projected-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2353270784,
+        "peak_job_commit": 2354483200,
+        "user_100ns": 1048125000,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3640,
+        "process_creation_100ns": 134346100812426219
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 3640,
+        "case": "legacy-projected-large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 514,
+          "actual_half_words": 24,
+          "cursor": 4,
+          "packed_current_bytes": 205668206,
+          "consumed_arena_bytes": 4864,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4,
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "legacy-gray-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2102677504,
+        "peak_job_commit": 2103898112,
+        "user_100ns": 34218750,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10976,
+        "process_creation_100ns": 134346101885913227
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_PACKED_HISTOGRAM",
+        "process_id": 10976,
+        "case": "legacy-gray-profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1214,
+          "output_words_including_copies": 1394,
+          "actual_half_words": 282,
+          "independent_histogram_prediction_readers": 18,
+          "cursor": 8,
+          "histogram_billed_and_actual_bytes": 3176,
+          "packed_current_bytes": 15988336,
+          "consumed_arena_bytes": 11040,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    }
+  ]
+}
