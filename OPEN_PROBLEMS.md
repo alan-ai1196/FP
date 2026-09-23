@@ -1,24 +1,24 @@
 # FP Open Problems
 
-The immediate experiment is the [registered n16/c4/seed18 histogram stream](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md):
-376 events, original whole-resource/numerical limits, unchanged strong
-posterior controls. It tests recovery beyond both known order-class
-obstructions. No model outcome exists yet; source must remain fixed during
-the actual job and every terminal outcome must be retained.
+The [n16/c4/seed18 histogram stream](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+is closed: COMPLETE_MODEL at143ddc9,376 native posterior checks,1129 actual
+CUDA phases, full frames and256 readouts, under every original limit.
+Peak job7676411904 bytes. Both order-class obstructions are crossed without
+invalidating their scoped lower bounds. Other tapes, global n>16 histogram
+execution and the complete indexed release remain separate open questions.
 
 The [owned histogram implementation](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 passes its CPU/native/resource gate and all17 actual Runtime CUDA A1 jobs.
 Fresh/install, failure retention, scratch lifetime, transient underflow/
-reversal, dense n16 learning and both legacy controls pass. The next open
-test is a harder exposed n16 model stream under the unchanged original
-envelope. No histogram model stream has yet been run, and no complete
-indexed release is inferred from the component gate.
+reversal, dense n16 learning and both legacy controls pass. The harder
+n16/c4/18 stream also completes. No complete indexed release is inferred
+from the component gate or that single model tape.
 
 The [paid-order n16/iid-c2/16 test](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is closed: COMPLETE_MODEL at7815f08 under every original limit, with all396
 events,1189 CUDA phases, complete frames and scores independently checked.
-The original194-cut failure remains retained. Other tapes, whole-resource
-histogram execution and the broader indexed release remain separate questions.
+The original194-cut failure remains retained. Its model and the histogram
+model answer distinct source-bound execution questions.
 
 Only genuinely unresolved problems belong here. Historical results remain
 in their source-bound proofs, evidence and research history.
@@ -27,11 +27,10 @@ The [exponent-histogram decoder](theory/proofs/COUNT_HISTOGRAM_DECODER.md)
 now supplies a different realization for the same complete native counts.
 Its exact grouping and uniform half/single precision bound are proved;
 exhaustive small native/RNE checks pass. Paid owned CPU execution now also
-passes, as does the registered actual physical continuation gate. Complete
-harder model streams remain open.
+passes, as do the actual physical continuation gate and c4/18 model stream.
 Explicit32768-world traversal handles the five selected n16 hard cuts
-with2087--2843 floating outputs; this gives no global n256 algorithm,
-whole-resource Runtime recovery or new model score. The current histogram
+with2087--2843 floating outputs; this gives no global n256 algorithm.
+Whole-resource recovery now has the separate c4/18 evidence. The current histogram
 alone is provably insufficient persistent state, so all counts/history stay.
 
 The paid-order model result and histogram arithmetic A1 are now retained.
@@ -51,10 +50,9 @@ complete native/AMP continuations have their scoped proof and actual evidence.
 
 All396 cuts on that exposed tape now execute, retain evidence and pass
 their numerical/native relations within the original whole-resource limits.
-That case supplies no all-decoder or other-tape result. The next substantive
-question is whether the proved histogram realization can be paid, owned
-and executed on the harder exposed cuts and complete streams. This does
-not freeze the full indexed Runtime or reopen Foundation/ERC-1.
+That case supplies no all-decoder or other-tape result. Paid owned histogram
+execution now closes c4/18 separately. This does not freeze the full indexed
+Runtime or reopen Foundation/ERC-1.
 
 An [exact n4 witness](theory/proofs/ORDER_PRECISION_SEPARATION.md) now rules
 out precision-safe pruning merely by equal resource labels. The structural

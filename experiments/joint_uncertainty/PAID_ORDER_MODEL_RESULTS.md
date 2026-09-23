@@ -69,5 +69,6 @@ original envelope. It does not decide the other three n16 tapes, whose
 elimination classes include proved obstructions. The empty Compiler policy
 makes no constructor-class decision; there is no optimization certificate,
 fresh-evidence claim, installation or new complete indexed release.
-Foundation R4 and ERC-1 remain unchanged. The next registered numerical
-test is the histogram schedule, followed by its complete owned integration.
+Foundation R4 and ERC-1 remain unchanged. The separate histogram schedule,
+owned continuation gate and [c4/18 model recovery](HISTOGRAM_MODEL_RESULTS.md)
+subsequently pass; none changes this source-bound result.

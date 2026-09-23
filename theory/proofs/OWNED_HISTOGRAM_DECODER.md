@@ -224,6 +224,8 @@ Peak job commitment is2246258688 bytes. This is an owned causal continuation
 of all120 counts, not an imported passive endpoint.
 
 This closes the declared histogram component gate. It supplies no model
-score, constructor-class completeness or full indexed release. The next
-test is an exposed n16 model stream under its unchanged original envelope;
-do not repeat terminal A1 jobs without a substantive new question.
+score, constructor-class completeness or full indexed release. The separate
+[n16/c4/18 model test](../../experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+now completes at143ddc9 under its unchanged original envelope, with376
+native posterior checks and1129 actual CUDA phases. Do not repeat terminal
+A1 jobs without a substantive new question.

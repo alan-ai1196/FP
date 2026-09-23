@@ -229,10 +229,12 @@ prepaid packed scratch and full point decoders. All17 actual physical
 continuation/fresh/install A1 jobs also pass ata2af24a, including dense n16
 learning and a104-event recovery after transient underflow. These finite
 component results supply no constructor-class certificate or full release.
-The [registered n16/c4/seed18 model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md)
-now targets both exposed order-class obstructions under the original
-numerical and whole-resource limits, with unchanged strong posterior
-controls. Its outcome is unknown; no Foundation/ERC-1 definition changes.
+The [n16/c4/seed18 model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+now completes at143ddc9 through both exposed order-class obstructions under
+the original limits. All376 forecasts,1129 CUDA phases and complete frames
+pass;256 retained readouts match the strong exact posterior to numerical
+precision. Peak job7676411904 bytes; unseen CE differs by about1.15e-7.
+This source-bound execution supplies no constructor or full-release claim.
 This decoder theorem changes no Foundation definition or ERC-1 condition.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)

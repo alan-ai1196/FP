@@ -7540,3 +7540,28 @@ control is0.33055558992217193; rounded differences supply no superiority
 claim. Commit inputs before launch and preserve source through terminal
 collection. No model outcome, full release or constructor-class authority
 is assumed by this registration.
+
+## 227. Complete the doubly obstructed n16 stream with the owned histogram (2026-09-23)
+
+The sole registered c4/seed18 job is COMPLETE_MODEL at143ddc9, with production
+unchanged froma2af24a and every original resource/numerical limit intact.
+It learns all120 training and256 ordered evaluation events; every reference
+forecast equals the independent full-assignment posterior. All1129 CUDA
+phases,593983 primitive words/195477 half, complete frames and256 retained
+readouts pass independent checks, including a separate retained-data read.
+No phase fails and no pending target or unpublished local commit remains.
+
+Both prior order-class obstructions are crossed. The histogram's largest
+observed phase uses2753 outputs,304 terms and32768 assignment visits; maximum
+span295. Peak whole-job commitment is7676411904 bytes, packed4754388405 and
+consumed arena4778944. The process exits zero without timeout or memory-limit
+termination. All3176 scratch bytes and full4-MiB phase frames remain paid.
+
+Unseen CE is0.33055547444132355 versus the unchanged exact0.33055558992217193;
+full-domain CE is0.32970039615228053 versus0.32970049358924636. The differences
+are rounding, not better inference. This exposed retrospective execution
+closes the specified whole-stream obstruction without weakening the baseline,
+changing the native learner or invalidating the elimination lower bounds.
+The empty policy supplies no constructor-class, fresh/install or full indexed
+release claim. Retain the44162-byte journal; the job is terminal. Foundation
+R4 and ERC-1 remain frozen.

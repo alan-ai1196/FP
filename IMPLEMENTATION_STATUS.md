@@ -1,11 +1,12 @@
 # FP Implementation Status
 
-The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md)
-is preregistered for n16/c4/seed18,376 events under the original16-GiB/
-two-hour envelope. Production is unchanged from the complete a2af24a gate.
-The shared prefix reader now checks histogram plans without borrowing the
-elimination class; all three reader paths and three corruption probes pass
-CPU checks. Actual model outcome remains unknown.
+The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+is COMPLETE_MODEL at143ddc9: all376 native forecasts,1129 CUDA phases,
+593983 primitive words/195477 half, full frames and256 retained readouts
+pass. Both exposed order-class obstructions are crossed within the original
+limits. Peak job7676411904 bytes; unseen AMP CE0.33055547444132355 differs
+from exact by about1.15e-7. Production remains unchanged froma2af24a.
+The job is terminal; no full indexed release or class certificate follows.
 
 **Owned histogram implementation: CPU and all17 actual Runtime CUDA A1 jobs PASS.**
 [Scope, tariffs and gate](theory/proofs/OWNED_HISTOGRAM_DECODER.md): one
@@ -16,7 +17,7 @@ continuation pass. At a2af24a, eight actual integration flows check901 phases,
 112947 primitive words/37395 half; seven probes read36 records. Fresh/install,
 underflow/reversal, dense n16 recovery and both legacy n256 controls pass.
 Peak job2393034752 bytes, all17 jobs terminal without timeout or limit
-termination. No histogram model result or complete indexed release is claimed.
+termination. The separate model result above does not freeze the indexed release.
 
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal and complete at7815f08 under the original limits:396 events,
@@ -24,7 +25,8 @@ is terminal and complete at7815f08 under the original limits:396 events,
 readouts checked. Peak job14741692416 bytes. AMP unseen CE0.32693951163272406
 differs from the retained exact posterior by about-3.2e-9. The old194-cut
 refusal is preserved; no complete indexed release or construction/install
-claim follows. Continue with owned histogram Runtime integration.
+claim follows. The separate owned histogram integration and c4/18 model
+recovery now also pass.
 
 ## Current implementation state (2026-09-23)
 

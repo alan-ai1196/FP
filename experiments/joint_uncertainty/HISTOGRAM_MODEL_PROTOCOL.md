@@ -1,8 +1,11 @@
 # Owned histogram test on the exposed n16/c4 stream
 
-Status: **REGISTERED BEFORE EXECUTION; OUTCOME UNKNOWN** (2026-09-23).
-Run `python -X utf8 -B scripts/run_histogram_model.py --attempt 1` after
-committing its inputs. One fresh bounded job, one complete native learner.
+Status: **EXECUTED; COMPLETE_MODEL, ALL READERS PASS** (2026-09-23).
+The original registration below executes once at143ddc9; its
+[terminal result](HISTOGRAM_MODEL_RESULTS.md) retains all376 events and
+the original limits. Do not rerun the terminal job. Recheck its retained
+readouts with `python -X utf8 -B scripts/run_histogram_model.py --read
+evidence/minimal/FP_HISTOGRAM_MODEL_A1.json`.
 
 ## Question and fixed case
 

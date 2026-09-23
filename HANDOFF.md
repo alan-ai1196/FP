@@ -1,13 +1,13 @@
 # FP Handoff
 
-**Next registered execution:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md),
-one fresh job with the original16-GiB/two-hour model envelope. It must learn
-120 training and256 evaluation events and pass the strong exact posterior,
-full phase/frame and retained-score readers. Both exposed order-class
-obstructions lie on this tape. Run `scripts/run_histogram_model.py --attempt 1`
-from committed inputs; keep HEAD/source fixed through collection. No
-outcome is assumed, no incomplete prefix is scored, and no silent retry
-or cap relaxation is allowed. Production remains unchanged froma2af24a.
+**Completed model recovery:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+is COMPLETE_MODEL at143ddc9 under the original16-GiB/two-hour envelope.
+All376 native forecasts,1129 CUDA phases/593983 primitive words/195477 half,
+complete frames and256 retained readouts pass independent readers. Both
+exposed order-class obstructions are crossed. Peak job7676411904 bytes;
+unseen AMP CE0.33055547444132355 versus exact0.33055558992217193 is a rounding
+difference. Production remains unchanged froma2af24a. The job is terminal;
+do not repeat it. No full indexed release or constructor certificate follows.
 
 **Current work:** the [owned histogram realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 is implemented and passes its complete CPU gate:11919 exact/RNE queries,
@@ -18,9 +18,9 @@ All17 actual Runtime CUDA A1 jobs now pass ata2af24a:901 integration phases,
 112947 primitive words/37395 half; seven probes read36 full records. Fresh
 evidence crosses20, installation retains alpha1/2 and learns to21; transient
 underflow reverses after104 events; dense n16 learning reaches121. Peak
-job2393034752 bytes, all terminal without timeout/limit termination. Next
-test a harder exposed n16 model stream under its original envelope. No
-complete indexed release or histogram model result follows from this gate.
+job2393034752 bytes, all terminal without timeout/limit termination. The
+separate harder model stream above now also completes. Neither result
+supplies a complete indexed release.
 
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal: **COMPLETE_MODEL** at7815f08 under the original limits. All396
@@ -54,7 +54,7 @@ its actual phase/event/lineage/fresh/install component gate also passes.
 This is a new execution of the same native learner, with no Foundation or
 ERC-1 change. Do not promote passive decoding into an owned model recovery.
 
-**Current frontier (2026-09-23): histogram recovery of a harder n16 model stream.**
+**Current frontier (2026-09-23): beyond the two completed n16 execution recoveries.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded
 control. A1--A4 retain four failed audits; A5 closes the remaining cases.
@@ -81,7 +81,9 @@ The existing n16/iid-c2/16 test now completes under those original limits;
 its396 structural witnesses become an actual source-bound execution result.
 Other n16 tapes retain their separate order-class obstructions. The histogram
 theorem supplies a different decoder whose paid owned component gate now
-passes. Complete harder model streams remain open. Foundation/ERC-1 stay frozen.
+passes and n16/c4/18 completes. Other tapes, scalability beyond the declared
+histogram class and a complete indexed release remain separate open claims.
+Foundation/ERC-1 stay frozen.
 
 **Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)

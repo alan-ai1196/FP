@@ -34,10 +34,13 @@ Status vocabulary:
 
 `FP_THEORY.md` is normative. This file is a status index, not a second theory source.
 
-The [histogram n16/c4/seed18 model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md)
-is **REGISTERED, NO OUTCOME YET**:376 events, original16-GiB/two-hour
-envelope and unchanged exact posterior controls. Its complete component
-gate passes; preregistration supplies no model or release claim.
+The [histogram n16/c4/seed18 model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
+is **COMPLETE_MODEL; ALL READERS PASS AT143ddc9**:376 events,1129 CUDA phases,
+593983 primitive words/195477 half, complete frames and256 evaluation readouts.
+Peak job7676411904 bytes under the original16-GiB/two-hour envelope. Both
+order-class obstructions are crossed; unseen AMP CE0.33055547444132355
+differs from exact0.33055558992217193 by rounding. Empty policy: no constructor
+certificate, fresh/install or full indexed release follows from this test.
 
 | Claim | Status | Dependencies / scope | Proof or evidence |
 |---|---|---|---|
