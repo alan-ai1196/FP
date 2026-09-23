@@ -1,5 +1,14 @@
 # FP Handoff
 
+**Next registered execution:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md),
+one fresh job with the original16-GiB/two-hour model envelope. It must learn
+120 training and256 evaluation events and pass the strong exact posterior,
+full phase/frame and retained-score readers. Both exposed order-class
+obstructions lie on this tape. Run `scripts/run_histogram_model.py --attempt 1`
+from committed inputs; keep HEAD/source fixed through collection. No
+outcome is assumed, no incomplete prefix is scored, and no silent retry
+or cap relaxation is allowed. Production remains unchanged froma2af24a.
+
 **Current work:** the [owned histogram realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 is implemented and passes its complete CPU gate:11919 exact/RNE queries,
 388 owned histories/776 native phases, profiles, fresh evidence, refusals

@@ -7515,3 +7515,28 @@ The declared histogram component question is closed. Full indexed release,
 constructor-class completeness and model outcomes remain distinct. Proceed
 to a harder exposed n16 stream under its original whole-resource limits;
 the frozen Foundation/ERC-1 are unchanged.
+
+## 226. Register the histogram decoder on the doubly obstructed n16 model tape (2026-09-23)
+
+After all17 owned Runtime jobs pass, register one fresh n16/iid-c4/seed18
+execution, using production unchanged froma2af24a. Its120 training and256
+ordered evaluation events, native Gamma/U, empty Compiler policy and strong
+exact posterior controls remain fixed. The old order class needs at least
+65574 outputs at276/(2,5) and8192 joined cells at372/(15,1), exceeding its
+65536/4096 allowances. Those lower bounds remain class-specific and valid.
+
+The new test keeps the original16-GiB/two-hour job,8-GiB packed cap,
+10^15 work per role,256-MiB arena,4-MiB frames and all numerical tolerances.
+Only the explicit exact/physical histogram realization and its3176-byte
+paid extent change. The fixed byte-only compression remains in use.
+Every native forecast is compared with the independent full-assignment
+integer posterior; the complete reader now checks histogram plans/RNE
+phases. Passive records on real native histories pass all three reader
+paths and reject coefficient, endpoint and trace corruption.
+
+Retain all376 causal events, complete frame audits and256 four-word
+evaluation readouts if the stream seals. The unchanged exact unseen
+control is0.33055558992217193; rounded differences supply no superiority
+claim. Commit inputs before launch and preserve source through terminal
+collection. No model outcome, full release or constructor-class authority
+is assumed by this registration.

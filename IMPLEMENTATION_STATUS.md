@@ -1,5 +1,12 @@
 # FP Implementation Status
 
+The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md)
+is preregistered for n16/c4/seed18,376 events under the original16-GiB/
+two-hour envelope. Production is unchanged from the complete a2af24a gate.
+The shared prefix reader now checks histogram plans without borrowing the
+elimination class; all three reader paths and three corruption probes pass
+CPU checks. Actual model outcome remains unknown.
+
 **Owned histogram implementation: CPU and all17 actual Runtime CUDA A1 jobs PASS.**
 [Scope, tariffs and gate](theory/proofs/OWNED_HISTOGRAM_DECODER.md): one
 prepaid3176-byte pinned extent, full native state and independent physical

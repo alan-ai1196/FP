@@ -164,9 +164,17 @@ def audit_prefix(snapshot,case,mode):
     phases = {phase.object_id:phase for phase in snapshot.cuda.phases}
     planner = amp if mode == 'global' else projected_amp
     ordered = snapshot.cuda.contract.order_search
+    histogram_budget = snapshot.cuda.contract.histogram
+    kernel, scratch = amp, None
+    if histogram_budget is not None:
+        from fp_reference import histogram_decoder, histogram_amp
+        assert not ordered and mode == 'global'
+        planner = kernel = histogram_amp
+        scratch = memoryview(bytearray(histogram_decoder.workspace_bytes(histogram_budget)))
     assert snapshot.cuda.contract.forward_id == (planner.ORDERED_FORWARD_ID if ordered else planner.FORWARD_ID)
     tolerance = Float64Contract(F(1,100),F(1,1000))
     checked = words = half = maximum_cells = maximum_nodes = maximum_join = maximum_blocks = 0
+    maximum_terms = maximum_worlds = maximum_span = 0
     failures = []
     for phase in snapshot.cuda.phases:
         if phase.status != 'CHECKED_CUDA_PREFIX_PHASE':
@@ -179,19 +187,28 @@ def audit_prefix(snapshot,case,mode):
         elif kind == 'predict':
             i,j,_ = by_id[phase.observation_id]
             sources = schema.source_row(i*n+j)
-            planner.check_prediction_plan(phase.execution_plan,schema,before,schema.rules(),sources,
-                output_cap=CELLS,allow_orders=ordered)
+            if histogram_budget is None:
+                planner.check_prediction_plan(phase.execution_plan,schema,before,schema.rules(),sources,
+                    output_cap=CELLS,allow_orders=ordered)
+            else:
+                planner.check_prediction_plan(phase.execution_plan,schema,before,schema.rules(),sources,
+                    output_cap=CELLS, budget=histogram_budget, workspace=scratch, bit_limit=32768)
             assert phase.raw_prediction.before == before.encoded and phase.raw_prediction.query == (i,j)
-            operations = amp.check_prediction_execution(phase.execution_plan,before,phase.raw_prediction,
+            operations = kernel.check_prediction_execution(phase.execution_plan,before,phase.raw_prediction,
                 phase.raw_operations,bit_limit=32768)
             assert phase.forward_operations == operations and phase.output_cells == phase.execution_plan.output_cells
             relation = amp.check_prediction(phase.reference_prediction,phase.raw_prediction,tolerance,
                 normalizer_cap=F(18),activation_cap=F(8),bit_limit=32768)
             assert relation == phase.relation
-            shape = dict(phase.execution_plan.table_shape)
-            maximum_nodes = max(maximum_nodes,len(phase.execution_plan.nodes))
-            maximum_join = max(maximum_join,shape['largest_join_cells'])
-            maximum_blocks = max(maximum_blocks,shape.get('projected_blocks',0))
+            if histogram_budget is None:
+                shape = dict(phase.execution_plan.table_shape)
+                maximum_nodes = max(maximum_nodes,len(phase.execution_plan.nodes))
+                maximum_join = max(maximum_join,shape['largest_join_cells'])
+                maximum_blocks = max(maximum_blocks,shape.get('projected_blocks',0))
+            else:
+                maximum_terms = max(maximum_terms,phase.execution_plan.term_count)
+                maximum_worlds = max(maximum_worlds,phase.execution_plan.world_visits)
+                maximum_span = max(maximum_span,phase.execution_plan.span)
         elif kind == 'observe':
             prediction = phases[phase.prediction_phase].raw_prediction
             target = observed[phase.observation_id].target
@@ -208,11 +225,15 @@ def audit_prefix(snapshot,case,mode):
             words += len(values)
             half += len(values) if width == 16 else 0
         checked += 1
+    if scratch is not None:
+        scratch.release()
     return {'native_committed_units':committed,'retained_unpublished_local_commits':local_commits,'checked_CUDA_phases':checked,
         'actual_floating_words':words,'actual_half_words':half,'maximum_prediction_tape_nodes':maximum_nodes,
         'maximum_phase_output_cells':maximum_cells,'maximum_join_cells':maximum_join,
         'maximum_projected_blocks':maximum_blocks,'retained_failed_phases':failures,
-        'complete_global_count_coordinates':len(expected.counts),'class_decisions':0}
+        'complete_global_count_coordinates':len(expected.counts),'class_decisions':0,
+        'maximum_histogram_terms':maximum_terms,'maximum_histogram_world_visits':maximum_worlds,
+        'maximum_histogram_span':maximum_span}
 
 
 def worker(case,mode):

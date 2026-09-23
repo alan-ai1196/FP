@@ -34,6 +34,11 @@ Status vocabulary:
 
 `FP_THEORY.md` is normative. This file is a status index, not a second theory source.
 
+The [histogram n16/c4/seed18 model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md)
+is **REGISTERED, NO OUTCOME YET**:376 events, original16-GiB/two-hour
+envelope and unchanged exact posterior controls. Its complete component
+gate passes; preregistration supplies no model or release claim.
+
 | Claim | Status | Dependencies / scope | Proof or evidence |
 |---|---|---|---|
 | A prepaid packed exponent histogram can execute the same complete count learner inside the existing Runtime. | **IMPLEMENTED; EXACT CPU/NATIVE AND ALL17 ACTUAL RUNTIME CUDA A1 JOBS PASS** |3176 actual pinned scratch bytes at S396, prior debits, full counts/history.11919 RNE queries,388 owned histories/776 native phases. Actual a2af24a:901 integration phases/112947 primitive words/37395 half; seven probes read36 records. Fresh crossing20/install/learn21,104-event underflow reversal, dense n16 recovery through121 events and legacy n256 controls pass. Peak job2393034752 bytes; no histogram model score, class token or complete indexed release | [Owned histogram](theory/proofs/OWNED_HISTOGRAM_DECODER.md); `evidence/minimal/FP_OWNED_HISTOGRAM_CPU.json`; `evidence/minimal/FP_OWNED_HISTOGRAM_CUDA_A1.json` |

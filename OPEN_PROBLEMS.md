@@ -1,5 +1,11 @@
 # FP Open Problems
 
+The immediate experiment is the [registered n16/c4/seed18 histogram stream](experiments/joint_uncertainty/HISTOGRAM_MODEL_PROTOCOL.md):
+376 events, original whole-resource/numerical limits, unchanged strong
+posterior controls. It tests recovery beyond both known order-class
+obstructions. No model outcome exists yet; source must remain fixed during
+the actual job and every terminal outcome must be retained.
+
 The [owned histogram implementation](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 passes its CPU/native/resource gate and all17 actual Runtime CUDA A1 jobs.
 Fresh/install, failure retention, scratch lifetime, transient underflow/
