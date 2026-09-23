@@ -1,12 +1,27 @@
 # FP Open Problems
 
+The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
+closes the mathematical readout obstacle for the current S=20 joint-noise
+learner. Positive elimination handles changing cyclic support when its
+resources fit; exact aggregation leaves only two excess integers for the
+floating prediction. A uniform bound covers all native masses and ambient
+gradient classes at the original tolerances. Native scale remains essential:
+the S=120 two-event counterexample exceeds 1/100 mass error. Remaining work
+is a distinct owned implementation with complete G/Gamma/U/input derivation,
+paid construction and failure lifetime, independent plan binding, actual
+AMP conformance and fresh/install continuation. No new semantic action is
+needed by the proved construction. A scalar bound or same current readout
+does not supply that authority or permit erasing joint evidence.
+
 The [shared-noise closure/decoding result](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
 closes two theoretical questions. All fixed independent-factor re-encodings
 need one J*2^r-category factor for J common rates and query rank r, including
 forest families. Nevertheless retained joint counts admit a positive exact
 forest decoder with polynomial arithmetic and a complete native relation.
 The exponential category count is therefore not a decoder resource lower
-bound. A physical implementation must own its rate-specific unnormalized
+bound. The joint-excess result above extends exact decoding through cyclic
+supports and proves its S=20 scalar numerical basis. A physical implementation
+must own its rate-specific unnormalized
 partitions, full state, work and AMP bridge. Its admitted domain must handle
 changing support honestly: a new cycle can require a different paid solver
 or UNRESOLVED, and a canceled edge still contributes to rate evidence through

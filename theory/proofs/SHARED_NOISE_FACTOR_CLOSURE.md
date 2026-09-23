@@ -284,3 +284,10 @@ conditional-mixture block optimizer remains a different learner. The next
 physical step must preserve this original joint state, own the complete
 decoder resources and establish its actual native-to-AMP relation.
 Foundation R4 and ERC-1 are unchanged.
+
+The subsequent [joint-excess bridge](JOINT_EXCESS_PARTITION_BRIDGE.md)
+extends the decoder to ordinary positive elimination across cyclic support.
+Two integer excess aggregates supply a constant-size floating prediction,
+with a complete native coordinate basis and a uniform S=20 arithmetic bound.
+It retains the original joint counts and every rate's evidence. Ownership,
+actual device conformance and Runtime continuation remain separate.

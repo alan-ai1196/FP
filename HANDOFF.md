@@ -1,5 +1,22 @@
 # FP Handoff
 
+**Joint-noise decoding now has a complete numerical basis and an all-history
+bound for the S=20 schedule.** The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
+uses ordinary positive elimination across cyclic support, retaining (T,d,s)
+and all model/phase coordinates. Two unnormalized excess integers give a
+29-word half/single prediction; 2J+1 gradient classes recover every native
+slot. At the current rates 1/10 and 1/4, the uniform sufficient bounds are
+below the original state tolerance 1/100 and probability tolerance 1/1000,
+conditional on exact construction and arithmetic conformance. The two-event
+S=120 witness still violates 1/100 mass accuracy; scale cannot be omitted.
+The exact audit covers 21,604 partition queries, 597 full native triples,
+3,608 rounded predictions/7,216 observations and independent n32/n64 cyclic
+oracles. No production or GPU job changes. The next obligation is an owned
+implementation of this original joint learner, with independently bound
+plans, full resource/failure lifetime and actual device/continuation evidence.
+Its encoded parameters and single-precision heads are a different physical
+realization from the terminal dense rational A1/A2 jobs; keep both verdicts.
+
 **Shared-noise closure now has a sharp structural law and an exact decoder
 separation.** The [new proof](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
 shows that J distinct common noise rates and query rank r require one factor
@@ -13,8 +30,10 @@ condition holds again. The 8,463-byte audit covers all 40,320 eight-world
 bijections under two shapes/priors, 20,436 exact query partitions, 267 complete
 native triples and eight larger forest queries. No production or device job
 changes. The remaining physical obligation is an owned decoder and complete
-AMP relation for the original joint learner, with honest cyclic/width cases;
+actual AMP relation for the original joint learner, with honest width cases;
 neither independent-factor replacement nor factor size alone settles it.
+The subsequent joint-excess result above now closes the mathematical
+cyclic-decoding and S=20 numerical-basis obligations.
 
 **New structural obstruction: conditional closure is not a native update
 certificate.** The [conditional-mixture law](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)

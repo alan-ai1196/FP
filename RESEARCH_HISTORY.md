@@ -8359,3 +8359,67 @@ passive algorithm measurements, not host ownership or model performance.
 The lower and upper price different representations, so they must not be
 collapsed into a false universal exponential memory law. No production,
 device job, native optimizer, Runtime certificate or Foundation/ERC-1 changes.
+
+## 250. Joint excess partitions close the S=20 numerical basis without erasing rate evidence (2026-09-23)
+
+Attack the next boundary after forest decoding. The original joint native
+Program has integer likelihood excess coefficients summing to S-2 for each
+world. Positive variable elimination can compute rate/parity partitions on
+the same support/order geometry for each rate. Combining those unnormalized
+partitions by the actual coefficients produces just two integers N0,N1,
+with N0+N1=(S-2)Z. This is a transient response computation; all (T,d,s),
+model, pending event and phase clocks remain the persistent representation.
+Two one-observation histories have identical (N0,N1,Z)=(720,720,80) on query
+02 but next-query 01 probabilities 289/400 and 1/2, so these aggregates are
+not a legal state quotient.
+
+Derive the complete coordinate basis for the actual canonical graph:
+parameters are exactly count-decoded, non-head caches come from the ordered
+source and exact integer feature coefficients, seven prediction words cover
+the heads/masses/normalizer/probabilities, and 2J+1 gradient classes cover
+every native slot including the fixed derivative and rare worlds. The same
+expert law in another ambient graph would require another proof; no arbitrary
+graph equivalence follows. Actual target and rate/world slot bindings remain
+independent obligations.
+
+Generalize the two-mantissa half/single readout to excess scale a=S-2. Its
+integer multiplication is not generally exact as the old factor eight was,
+so retain that rounding term. A positive ratio bound and the identity
+(1+a*q)^2-4(a+1)q(1-q)=(1-(a+2)q)^2 give a uniform all-gradient upper.
+For S=20 the outward bounds are native 0.004401567, normalizer 0.000010968,
+probability 0.000220198 and gradient 0.004265781: all meet the original
+1/100 state and 1/1000 probability tolerances. They are conditional on exact
+construction/resources and the declared scalar arithmetic, not history size.
+The same canonical arithmetic bound applies beyond this pair geometry when
+its exact excess integers and complete coordinate mapping are established.
+
+Find a genuine scope counterexample, not only an inconclusive upper. For
+rates 1/8,1/5,1/3 and prior 1/7,2/7,4/7, S=120. Two 01 label1 events give
+native error 65863667/4117889024 >1/100 although probability error is below
+1/1000. Independently execute both native prefixes and readouts, including
+the old S=20 A1 cut at step29/cursor27 with its profile attachment. The new
+schedule passes that cut's original tolerances; the old dense half-forward
+normalizer failure remains 1/64, with its terminal A1/A2 outcomes unchanged.
+
+The exact audit covers 1,516 reachable cuts, all 21,604 ordered-query integer
+partitions and 26,660 world weights. The prior forest oracle agrees on
+20,436 cases; all 1,168 cyclic refusals are now decoded by positive elimination.
+There are 597 complete native triples, two extra complete witness predictions
+and four observed states. The 80-update profile/cycle/reversal word ends at
+cursor78/step80. Four n32/n64 cyclic-band queries agree with an independent
+energy-coefficient oracle. The rounding audit covers 288,804 scalar words,
+including 7,215 half rounds, across 3,608 predictions and 7,216 both-target
+observations; all complete native coordinates obey the scale-specific law.
+Fifteen input/binding/resource cases refuse,
+including a total integer-work cap that admits one rate's geometry but not
+the full mixture's powers, tables and aggregation.
+
+An additional mixed-rate 1,000/1,000 reversal has a temporary zero excess and
+recovers the fair forecast while retaining first-rate mass
+9^1000/(9^1000+16^1000). These are two reachable exact/RNE snapshots, not a
+2,000-event device run. No Torch or production code changes. The two-part
+readout does not hide the O(J*tape-size) integer work, O(n+T)-bit values,
+retained tape-value array, count scan or complete output costs. Owned plans,
+failure lifetime, actual AMP and fresh/install continuations are the next
+physical obligations. No new Foundation action, CERTIFIED_COMPLETE or full
+indexed release is claimed.

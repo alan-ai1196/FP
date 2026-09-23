@@ -1,5 +1,18 @@
 # FP Implementation Status
 
+The [joint-excess prototype](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
+reuses the existing positive elimination geometry for each finite noise rate,
+then combines unnormalized integer contributions into two native excesses.
+Its passive complete coordinate basis has seven prediction words and 2J+1
+gradient words; the prediction schedule produces at most 29 outputs including
+copies. Exact tests cover 21,604 partitions, 26,660 world weights, 597 full
+native triples, 288,804 scalar floating words and 15 binding/resource refusals.
+Four larger cyclic cases use an independent histogram oracle. The S=20
+uniform full-native bound passes the original tolerances; S=120 has an exact
+two-event mass counterexample. Counts, diagonal evidence and profile clocks
+stay exact. These research modules grant no owned Runtime or actual CUDA
+authority, and no production path or terminal device job changes.
+
 The [shared-noise factor/decoder audit](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
 adds a passive positive forest decoder from complete joint counts. It compares
 20,436 ordered-query partition pairs and 25,220 weight points with independent

@@ -263,3 +263,11 @@ status is MANUAL_PARTIAL even though the numerical, fresh, installation and
 continued-learning checks pass. It is a scoped component result, not model
 superiority or CERTIFIED_COMPLETE. All A1/A2 jobs are terminal; do not repeat
 them. A full indexed release remains a separate obligation.
+
+The subsequent [joint-excess proof](JOINT_EXCESS_PARTITION_BRIDGE.md) gives
+a different prospective indexed realization for this canonical joint-noise
+graph. Its encoded parameters, exact integer excess aggregation and single
+heads admit a uniform S=20 full-native bound at 1/100, including the old A1
+mathematical cut. This is new passive/native/RNE evidence, not the old dense
+half-forward schedule, a replay of its jobs or a revision of either verdict.
+It still requires independent ownership and actual device validation.

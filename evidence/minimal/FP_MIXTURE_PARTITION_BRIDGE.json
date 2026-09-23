@@ -1,0 +1,402 @@
+{
+  "status": "PASS_SCOPED_JOINT_EXCESS_BRIDGE",
+  "arithmetic_identity": "joint-noise-integer-excess-half-mantissas-single-readout-v1",
+  "precision": "exact integers/Fraction native oracle and scalar RNE16/RNE32; no actual CUDA",
+  "integer_decoding": [
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "all_reachable_cuts_n2_to_n4_through_time3": 758,
+      "all_ordered_query_partition_pairs": 10802,
+      "full_weight_points": 10664,
+      "independent_forest_comparisons": 10218,
+      "cyclic_queries_now_decoded": 584,
+      "maximum_integer_bits": 21,
+      "maximum_tape_nodes": 52
+    },
+    {
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "prior": [
+        "1/7",
+        "2/7",
+        "4/7"
+      ],
+      "all_reachable_cuts_n2_to_n4_through_time3": 758,
+      "all_ordered_query_partition_pairs": 10802,
+      "full_weight_points": 15996,
+      "independent_forest_comparisons": 10218,
+      "cyclic_queries_now_decoded": 584,
+      "maximum_integer_bits": 32,
+      "maximum_tape_nodes": 52
+    }
+  ],
+  "native_continuations": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 72,
+      "native_graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 296,
+        "edges": 304,
+        "slots": 5,
+        "bindings": 0
+      }
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 342,
+      "native_graph": {
+        "nodes": 33,
+        "sources": 6,
+        "state_reads": 0,
+        "SUMs": 18,
+        "PRODUCTs": 9,
+        "SUM_edges": 1312,
+        "edges": 1330,
+        "slots": 9,
+        "bindings": 0
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 72,
+      "native_graph": {
+        "nodes": 22,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 14,
+        "PRODUCTs": 4,
+        "SUM_edges": 2844,
+        "edges": 2852,
+        "slots": 7,
+        "bindings": 0
+      }
+    },
+    {
+      "n": 3,
+      "word": "01:0,12:0 twice; attach cursor2; 02:1 x36; 02:0 x36; 22:1 x4",
+      "complete_native_triples": 80,
+      "final_cursor": 78,
+      "final_steps": 80,
+      "final_counts": [
+        2,
+        0,
+        2
+      ],
+      "final_diagonal": -4,
+      "maximum_errors_exact": {
+        "native": "419964228372086012556661202682020819179977838848168784089/169309011256149138591529952336879163867311566122339030007808",
+        "normalizer": "1/524288",
+        "probability": "1343950117052903690627861079429763099328454151287300791393/10835776720393544869857916949560266487507940231829697920499712",
+        "proper_mass_division": "10364595/175921852055552",
+        "gradient": "23575039762982816412114903822676307444806790961535723/14562457447031325575750647438070024273750732789388410880"
+      }
+    }
+  ],
+  "rounding": {
+    "predictions": 3608,
+    "both_target_observations": 7216,
+    "floating_words_including_copies": 288804,
+    "half_words": 7215,
+    "maximum_errors_exact": {
+      "native": "44766467/2488139776",
+      "normalizer": "1/131072",
+      "probability": "179084851/1194307092480",
+      "proper_mass_division": "11283163/175921852055552",
+      "gradient": "2321188841568716716135096649000429/963465677892085323433759805881712640"
+    }
+  },
+  "larger_cyclic_decoding": [
+    {
+      "n": 32,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "steps": 83,
+      "diagonal": -3,
+      "query": [
+        0,
+        31
+      ],
+      "native_worlds": "4294967296",
+      "prediction_outputs": 29,
+      "tape_nodes": 1077,
+      "integer_envelope": 454,
+      "table_geometry_per_rate": {
+        "positive_multiplications": 714,
+        "positive_additions": 121,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 252
+      },
+      "tape_value_slots_per_rate": 1077,
+      "integer_evaluation": {
+        "positive_multiplications": 1760,
+        "positive_additions": 252,
+        "maximum_integer_bits": 335
+      },
+      "oracle": "independent vertex/energy coefficient DP, evaluated at every rational rate"
+    },
+    {
+      "n": 32,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "steps": 83,
+      "diagonal": -3,
+      "query": [
+        0,
+        31
+      ],
+      "native_worlds": "6442450944",
+      "prediction_outputs": 29,
+      "tape_nodes": 1077,
+      "integer_envelope": 623,
+      "table_geometry_per_rate": {
+        "positive_multiplications": 714,
+        "positive_additions": 121,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 252
+      },
+      "tape_value_slots_per_rate": 1077,
+      "integer_evaluation": {
+        "positive_multiplications": 2640,
+        "positive_additions": 378,
+        "maximum_integer_bits": 550
+      },
+      "oracle": "independent vertex/energy coefficient DP, evaluated at every rational rate"
+    },
+    {
+      "n": 64,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "steps": 163,
+      "diagonal": -3,
+      "query": [
+        0,
+        63
+      ],
+      "native_worlds": "18446744073709551616",
+      "prediction_outputs": 29,
+      "tape_nodes": 2229,
+      "integer_envelope": 886,
+      "table_geometry_per_rate": {
+        "positive_multiplications": 1482,
+        "positive_additions": 249,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 508
+      },
+      "tape_value_slots_per_rate": 2229,
+      "integer_evaluation": {
+        "positive_multiplications": 3616,
+        "positive_additions": 508,
+        "maximum_integer_bits": 668
+      },
+      "oracle": "independent vertex/energy coefficient DP, evaluated at every rational rate"
+    },
+    {
+      "n": 64,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "steps": 163,
+      "diagonal": -3,
+      "query": [
+        0,
+        63
+      ],
+      "native_worlds": "27670116110564327424",
+      "prediction_outputs": 29,
+      "tape_nodes": 2229,
+      "integer_envelope": 1215,
+      "table_geometry_per_rate": {
+        "positive_multiplications": 1482,
+        "positive_additions": 249,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 508
+      },
+      "tape_value_slots_per_rate": 2229,
+      "integer_evaluation": {
+        "positive_multiplications": 5424,
+        "positive_additions": 762,
+        "maximum_integer_bits": 1088
+      },
+      "oracle": "independent vertex/energy coefficient DP, evaluated at every rational rate"
+    }
+  ],
+  "uniform_bounds_outward": {
+    "10": {
+      "native": "0.001956285",
+      "normalizer": "0.000005007",
+      "probability": "0.000195748",
+      "proper_mass_division": "0.000000120",
+      "gradient": "0.001757799"
+    },
+    "20": {
+      "native": "0.004401567",
+      "normalizer": "0.000010968",
+      "probability": "0.000220198",
+      "proper_mass_division": "0.000000120",
+      "gradient": "0.004265781"
+    },
+    "40": {
+      "native": "0.009292130",
+      "normalizer": "0.000022889",
+      "probability": "0.000232423",
+      "proper_mass_division": "0.000000120",
+      "gradient": "0.009483132"
+    },
+    "120": {
+      "native": "0.028854383",
+      "normalizer": "0.000070572",
+      "probability": "0.000240573",
+      "proper_mass_division": "0.000000120",
+      "gradient": "0.032780309"
+    }
+  },
+  "directed_witnesses": [
+    {
+      "case": "old-A1-step29-cut",
+      "native_scale": 20,
+      "complete_counts": [
+        29,
+        29,
+        0
+      ],
+      "ordinary_cursor": 27,
+      "witness_prefix_native_triples": 29,
+      "final_full_native_predictions": 1,
+      "final_full_native_observations": 2,
+      "prediction_words": [
+        1099424035,
+        1065479635,
+        1099948323,
+        1073805034,
+        1101004800,
+        1063662853,
+        1036933085
+      ],
+      "exact_errors": {
+        "native": "110380751013396335024919227049495681/5646125214623384337266566652247070474240",
+        "normalizer": "1/2097152",
+        "probability": "893815137315970775447130928693494803/903380034339741493962650664359531275878400",
+        "proper_mass_division": "23475461/703687458553856",
+        "gradient": "7880458197520038691292218344164818137/8123604527407294009752839028556595168542720"
+      }
+    },
+    {
+      "case": "scale120-two-label-one-events",
+      "native_scale": 120,
+      "complete_counts": [
+        2,
+        -2,
+        0
+      ],
+      "ordinary_cursor": 2,
+      "witness_prefix_native_triples": 2,
+      "final_full_native_predictions": 1,
+      "final_full_native_observations": 2,
+      "prediction_words": [
+        1108153366,
+        1118139894,
+        1108415510,
+        1118270966,
+        1123024897,
+        1050329111,
+        1060282357
+      ],
+      "exact_errors": {
+        "native": "65863667/4117889024",
+        "normalizer": "1/131072",
+        "probability": "140494495/1054179590144",
+        "proper_mass_division": "6463477/263882807443456",
+        "gradient": "755548613/597153546240"
+      }
+    },
+    {
+      "case": "mixed-rate-temporary-underflow-and-reversal",
+      "rates": [
+        "1/10",
+        "1/5"
+      ],
+      "declared_reachable_word": "01 label0 x1000, then label1 x1000",
+      "first_exact_excess_one_positive": true,
+      "first_rounded_excess_one_word": 0,
+      "recovered_probability_words": [
+        1056964608,
+        1056964608
+      ],
+      "recovered_counts": [
+        2000,
+        0,
+        0
+      ],
+      "recovered_first_rate_mass_formula": "9^1000/(9^1000+16^1000)",
+      "scope": "two exact/RNE snapshots and independent repeated-word likelihood; no 2000-event device trajectory"
+    },
+    {
+      "case": "equal-current-excesses-are-not-a-persistent-state",
+      "left_history": "01 label0",
+      "right_history": "12 label0",
+      "current_query": [
+        0,
+        2
+      ],
+      "equal_excess_integers": [
+        720,
+        720
+      ],
+      "equal_normalization": 80,
+      "next_query": [
+        0,
+        1
+      ],
+      "different_next_zero_probabilities": [
+        "289/400",
+        "1/2"
+      ]
+    }
+  ],
+  "refusals": {
+    "distinct_binding_or_resource_refusals": 15,
+    "input_states_unchanged": true,
+    "dense_n16_4096_join_status": "UNRESOLVED"
+  },
+  "scope": "Complete native coordinate basis and conditional all-history arithmetic bound for this schedule. No owned Runtime, new semantic Program/U, supplied reference posterior, constructor certificate or physical release."
+}

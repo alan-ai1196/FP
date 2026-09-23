@@ -423,6 +423,20 @@ forbidden by the joint likelihood; a later cycle can make this decoder
 unresolved. Exhaustive encoding, integer and complete native audits pass.
 No new native U, physical backend or Foundation/ERC-1 change follows.
 
+The [joint-excess numerical law](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
+provides a complete finite coordinate basis for this canonical joint-noise
+Program. Positive elimination preserves each rate's unnormalized evidence
+through cyclic supports. Aggregating its two integer excesses gives seven
+prediction coordinates and 2J+1 pending-gradient classes, with exact encoded
+parameters and phase clocks. The declared two-half-mantissa/single-readout
+schedule has a uniform full-native error bound depending on native scale S,
+not history length or world count; integer and width resources remain.
+At S=20 the bound meets state tolerance 1/100 and probability tolerance
+1/1000. At S=120 an exact two-event witness exceeds the state tolerance
+despite a small forecast error. This is a distinct conditional arithmetic
+realization, not an arbitrary same-likelihood Program equivalence, owned
+Runtime bridge or revision of the terminal rational A1/A2 outcomes.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native
