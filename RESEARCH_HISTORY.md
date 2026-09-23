@@ -7592,3 +7592,38 @@ The proof connects histogram partition bounds to the existing query-block
 algebra, without inventing per-operation bounds for the actual projected
 kernel. No production code, backend, numerical registration, Foundation
 definition or ERC-1 condition changes; no device evidence is borrowed.
+
+## 229. Compute histograms without world enumeration and normalize coefficient magnitude (2026-09-23)
+
+Apply classical Kronecker substitution to the existing positive count
+elimination circuit: evaluate at2^n, then extract n-bit energy coefficients.
+Assignment provenance bounds every intermediate coefficient by2^(n-1),
+so no carry crosses an energy digit. Width n is the smallest uniform
+power-of-two field including diagonal queries; zero counts give the matching
+short-field counterexample. Every packed value has at most n(H+1) bits.
+The same table geometry and scalar operation counts remain; wide-integer
+bit work, outputs and actual ownership are explicitly separate costs.
+
+The earlier occupied-energy-only scale cannot simply extend beyond n16:
+n256 zero counts overflow from coefficient2^254 despite exact forecast1/2.
+Normalize additionally by the largest term's binary exponent, derived from
+coefficient/denominator bit lengths. Exact scaled total lies in[1/4,L].
+The same half-product/single-sum operation count now has proved uniform
+native/probability/gradient bounds0.005877/0.000587760/0.005266, conditional
+on integer/output resources, independent of global world count.
+
+All11972 predictions/23944 target observations pass exact native/RNE checks:
+1071311 words including copies,183495 half. Independent literal histories
+match1054 complete phase triples, three profile attachments and104-event
+underflow reversal. The generic decoder handles n32/n64 signed bands,
+n128 path and n256 empty/one-edge counts without enumerating worlds, with
+independent coefficient oracles. n128 uses four-cell joins and16257-bit
+integers for2^127 anchored worlds. Dense n16 still honestly refuses the
+4096-cell join cap. The old n16 theorem and actual model results stand.
+
+Register16 fresh actual arithmetic fixtures under4 GiB/600 seconds, with
+one16-MiB arena and unchanged tolerances. Commit inputs before launch and
+retain all outcomes. This is a new numerical schedule, not a new native
+action or a hidden replacement of an existing physical prefix. Production,
+Foundation and ERC-1 are unchanged; Runtime integration and model usefulness
+must acquire their own evidence.

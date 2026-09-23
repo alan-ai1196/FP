@@ -1,5 +1,18 @@
 # FP Handoff
 
+**Current attack: histogram computation beyond world enumeration.** The
+[carry-free construction](theory/proofs/PACKED_COUNT_HISTOGRAM.md) evaluates
+the existing positive elimination circuit at2^n and extracts exact energy
+coefficients. It keeps every native count, pays n(H+1)-bit integers and
+retains width/work refusals. Coefficient-aware scaling also removes global
+world count from the half/single range and precision bounds. CPU checks pass
+11972 predictions/23944 observations and1054 complete native phase triples;
+generic n32/n64/n128/n256 fixtures use no world enumeration. The old n16
+scale overflows on an unsupported n256 zero-count extension; the new one
+passes. Production is unchanged. Commit and run the registered16-case actual
+arithmetic A1 with `scripts/audit_packed_histogram_cuda.py --attempt 1`,
+keeping source fixed through terminal collection. No physical outcome yet.
+
 **Completed model recovery:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
 is COMPLETE_MODEL at143ddc9 under the original16-GiB/two-hour envelope.
 All376 native forecasts,1129 CUDA phases/593983 primitive words/195477 half,

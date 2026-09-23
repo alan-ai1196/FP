@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [carry-free histogram prototype](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
+uses exact positive elimination instead of enumerating worlds, with explicit
+table and n(H+1)-bit guards. Its coefficient-normalized half/single schedule
+has a proved full-coordinate bound and passes11972 predictions/23944 target
+observations,1071311 words/183495 half, plus1054 native phase triples.
+Independent n32..256 coefficients pass. The16-case actual arithmetic gate
+is registered but unexecuted. This is research code; Runtime and prior
+production schedules are unchanged, with no borrowed device/release claim.
+
 The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
 is COMPLETE_MODEL at143ddc9: all376 native forecasts,1129 CUDA phases,
 593983 primitive words/195477 half, full frames and256 retained readouts

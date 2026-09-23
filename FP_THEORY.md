@@ -248,6 +248,16 @@ PRODUCT does not obey the maximum law. This numerical sublaw adds no
 architecture action, physical schedule or release; actual local operation
 bounds remain necessary.
 
+The [carry-free histogram decoder](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
+now computes the same energy coefficients by positive integer elimination
+at base2^n, without enumerating worlds. Coefficient width n is uniformly
+necessary when diagonal queries are included; n(H+1) bounds intermediate
+integer bits, while table width and bit work remain paid obligations.
+Coefficient-aware normalization gives a uniform full-coordinate half/single
+precision bound independent of n, conditional on integer and output limits.
+Exact/native/RNE audits include n32..256 fixtures. The actual numerical gate
+is registered; no new Runtime, model outcome or class authority follows.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native
