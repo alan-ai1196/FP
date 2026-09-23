@@ -263,3 +263,36 @@ Source/workspace ownership, prepaid reconstruction, retained phase evidence,
 full event/lineage binding, fresh persistence and installation remain
 obligations for any future owned implementation. An incomplete or unfunded
 calculation must stay UNRESOLVED.
+
+## 6. Registered actual arithmetic fixture
+
+`scripts/audit_count_histogram_cuda.py --attempt 1` is registered before
+execution: one fresh4-GiB Windows job,600-second deadline, one16-MiB CUDA
+arena with32-MiB allocator cap and65536 outputs per phase. Its16 cases are
+the n3 prior on an ordinary/diagonal query; n2 signed counts+/-46,+/-47,+/-48
+around the single-precision subnormal boundary; count396; both dense n16
+fixtures; and the five exposed cuts in section5. Each executes one prediction
+and both independent target branches, for48 actual device phases.
+
+The helper prototype now returns its actual resident output tensor as well
+as the complete raw prediction. The arithmetic is unchanged. The fixture
+freshly reads the endpoint after execution, compares every operation with
+the independently reconstructed exact RNE schedule, and checks all native
+prediction/gradient coordinates against the independent assignment oracle.
+It checks arena extents and the actual RTX3090/build identity. No reference
+posterior or forecast enters the numerical kernel.
+
+The parent checks committed clean inputs and binds the source before launch;
+the child starts attached to the declared job. Each completed case is retained
+in the worker result before advancing. Keep every terminal failure or timeout;
+do not retry silently or relax any cap. Commit inputs before execution and
+keep that checkout's HEAD/input files fixed until the parent has collected
+the terminal journal. This registration claims no physical outcome yet.
+
+This is an arithmetic fixture. Its host enumeration/readout/metadata are
+bounded by the job, without pretending to be prepaid Runtime records.
+It has no new constructor, native event admission, lineage, bridge issuance,
+fresh persistence, installation, model score or complete-release authority.
+Those require the owned integration described above. Existing source-bound
+model work must finish before this new device job is launched; there is no
+exclusive-device throughput or elapsed-time comparison.
