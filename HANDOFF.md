@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Joint native indexing and contiguous integer storage now pass their exact
+component audit.** The [derivation](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
+and modules `joint_relation.py` / `joint_partition_decoder.py` describe the
+original graph/Gamma/U, keep complete (T,d,s)/model/phase coordinates, and
+reuse one live-table extent across rates. All 21,604 small partition queries,
+566 full native triples and five larger independent oracle checks pass.
+The n64 three-rate cyclic query uses 78,584 table bytes over 3*2^63 worlds;
+this excludes the rest of the host/Runtime. Step-based preflight preserves
+the cost of canceled evidence. Seventeen plan mutations and complete-input,
+resource and failure-lifetime attacks pass. Runtime still rejects this new
+indexed type: the remaining work is owner registration, paid verification
+and retention, complete actual AMP phases, lineage, fresh persistence and
+installation. No production registration or terminal GPU result changes.
+
 **Joint-noise decoding now has a complete numerical basis and an all-history
 bound for the S=20 schedule.** The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 uses ordinary positive elimination across cyclic support, retaining (T,d,s)

@@ -321,3 +321,9 @@ integer plans, paid live storage and failure lifetime, phase/device evidence,
 lineage, fresh persistence and installation. A small current readout cannot
 replace any of those checks. No CERTIFIED_COMPLETE, full indexed release,
 model superiority or Foundation/ERC-1 change is claimed.
+
+The subsequent [joint native indexing/storage component](JOINT_NATIVE_PARTITION_STORAGE.md)
+now supplies the literal description and contiguous integer construction,
+with exact native and adversarial input/extent checks. It remains unregistered
+inside Runtime; paid whole-owner execution and actual device conformance are
+still required.

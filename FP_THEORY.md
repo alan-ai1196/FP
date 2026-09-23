@@ -437,6 +437,15 @@ despite a small forecast error. This is a distinct conditional arithmetic
 realization, not an arbitrary same-likelihood Program equivalence, owned
 Runtime bridge or revision of the terminal rational A1/A2 outcomes.
 
+The [joint native indexing/storage derivation](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
+now realizes this exact G/Gamma/U description and retained count state without
+enumerating the worlds. Its positive integer decoder shares one contiguous
+table region across all rates, retaining their unnormalized contributions in
+three joint root cells. Admission guards use total optimizer steps, including
+canceled evidence, and the full mixture's arithmetic. Literal and exact native
+audits pass; caller-owned storage and passive input reconstruction remain
+distinct from registration inside the complete Runtime.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

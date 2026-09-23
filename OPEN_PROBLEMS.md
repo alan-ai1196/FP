@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The [joint native indexing/storage component](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
+now closes literal description and contiguous integer construction for the
+new joint-excess schedule. Its exact audits include changing cyclic support,
+profile clocks, canceled-history resource bounds and independently bound
+plans. It is not registered inside ReferenceCompilerRuntime. The active
+boundary is integrating that component into the existing owner's complete
+state, prepaid resource/failure lifetime, actual AMP relation, lineage,
+fresh persistence and installation. No extra native architecture action is
+needed, and a passive storage result is not an install certificate.
+
 The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 closes the mathematical readout obstacle for the current S=20 joint-noise
 learner. Positive elimination handles changing cyclic support when its

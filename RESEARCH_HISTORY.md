@@ -8423,3 +8423,55 @@ retained tape-value array, count scan or complete output costs. Owned plans,
 failure lifetime, actual AMP and fresh/install continuations are the next
 physical obligations. No new Foundation action, CERTIFIED_COMPLETE or full
 indexed release is claimed.
+
+## 251. Joint native indexing and shared integer storage preserve the canceled-history cost (2026-09-23)
+
+Move the joint-excess construction toward a physical owner without changing
+the native learner. `joint_relation.py` describes every original source,
+pair PRODUCT, repeated feature SUM incidence, selected head slot, Gamma and
+unit simplex U. Its counts are closed form in K=J*2^(n-1). Literal expansion
+at n2..4 exactly equals the original six graphs, including their interior
+caches. Typed complete comparison rejects altered graph/Gamma/U, extra fields
+and a boolean source-delay substitution that ordinary equality would accept.
+
+The closed count encoding keeps model, all signed counts, diagonal evidence,
+optimizer T, ordinary cursor and pending event. The new packed decoder uses
+T for its construction cap. A canceled d=0,s=0,T=4 history still refuses a
+step cap of three before any write; H=0 does not make its joint noise state
+or integer arithmetic free. Late birth and profile attachment keep ordinary
+cursor separate from committed multiplicity.
+
+Replace the passive prototype's per-tape bigint vector with a contiguous
+(live_cells+5)*cell_bytes extent. Each rate reuses the same positive table
+region, two parity roots and forward-safe table compaction. Three separate
+joint roots retain N0,N1,Z under the exact rate constants. All powers,
+table arithmetic and final aggregation are preflighted together, then
+matched against execution. Compaction and byte traffic remain separate
+work. The integer array has no multiplicative J factor; model, complete
+counts, metadata, temporary bigints, returned roots and future Runtime
+records are explicitly outside this table-byte number.
+
+Audit all 1,516 small reachable cuts, 21,604 ordered queries and 64,812 reads
+of the actual packed joint roots against independent world sums. All six
+n4 elimination orders agree on all sixteen queries. Another 566 full native
+triples include late birth and the 80-update profile/cycle/reversal word.
+Four n32/n64 cyclic-band queries agree with an independent energy histogram;
+the n64 three-rate case represents 3*2^63 worlds using 78,584 table bytes,
+1,088 executed integer bits, 5,424 multiplies, 765 adds and 45,396 compaction
+copies. The extra three adds relative to the tape prototype are its explicit
+per-rate raw root sums. An n256 path over 3*2^255 worlds also agrees with
+the independent forest recurrence, using 531,727 table bytes.
+
+Seventeen plan substitutions fail independent reconstruction, including
+doubling all three roots without changing a current forecast. Seven input
+substitutions, five prewrite resource boundaries, canceled-height-zero
+exhaustion, three malformed extents and dense n16 width refuse. A postwrite
+fault leaves count state unchanged and the caller's own extent pinned.
+This is not a Runtime lifetime certificate: the future owner must retain
+and fund scratch, plans, validation and exception lifetime itself.
+
+The existing Runtime explicitly rejects this unregistered indexed type.
+No production registration, device execution, historical GPU verdict or
+Foundation/ERC-1 rule changes. The component clears the graph-description
+and packed-integer construction obligations; complete owner registration,
+actual AMP phases and fresh/install continuation remain the active boundary.

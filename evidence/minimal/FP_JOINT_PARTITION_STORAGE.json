@@ -1,0 +1,379 @@
+{
+  "status": "PASS_JOINT_PARTITION_STORAGE_COMPONENT",
+  "complete_audit": true,
+  "scope": "Exact literal indexing, count transitions and caller-owned integer extent. No Runtime registration, device execution or completeness certificate.",
+  "indexing": {
+    "complete_graph_initializer_learner_matches": [
+      {
+        "n": 2,
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "complete_literal_counts": {
+          "nodes": 18,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 4,
+          "SUM_edges": 296,
+          "edges": 304,
+          "slots": 5,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 3,
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "complete_literal_counts": {
+          "nodes": 33,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 18,
+          "PRODUCTs": 9,
+          "SUM_edges": 1312,
+          "edges": 1330,
+          "slots": 9,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 4,
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "complete_literal_counts": {
+          "nodes": 58,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 34,
+          "PRODUCTs": 16,
+          "SUM_edges": 4640,
+          "edges": 4672,
+          "slots": 17,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 2,
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "complete_literal_counts": {
+          "nodes": 22,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 14,
+          "PRODUCTs": 4,
+          "SUM_edges": 2844,
+          "edges": 2852,
+          "slots": 7,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 3,
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "complete_literal_counts": {
+          "nodes": 41,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 26,
+          "PRODUCTs": 9,
+          "SUM_edges": 12768,
+          "edges": 12786,
+          "slots": 13,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 4,
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "complete_literal_counts": {
+          "nodes": 74,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 50,
+          "PRODUCTs": 16,
+          "SUM_edges": 45360,
+          "edges": 45392,
+          "slots": 25,
+          "bindings": 0
+        }
+      }
+    ],
+    "literal_binding_refusals": 8,
+    "pre_materialization_resource_refusals": 3
+  },
+  "enumeration": [
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "reachable_cuts": 758,
+      "ordered_queries": 10802,
+      "packed_joint_root_checks": 32406,
+      "exact_extent_bytes_by_n": {
+        "2": 399,
+        "3": 532,
+        "4": 532
+      },
+      "maximum_compacted_cells": 32,
+      "maximum_integer_bits": 21,
+      "external_canary_bytes_unchanged": true
+    },
+    {
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "reachable_cuts": 758,
+      "ordered_queries": 10802,
+      "packed_joint_root_checks": 32406,
+      "exact_extent_bytes_by_n": {
+        "2": 665,
+        "3": 665,
+        "4": 665
+      },
+      "maximum_compacted_cells": 48,
+      "maximum_integer_bits": 32,
+      "external_canary_bytes_unchanged": true
+    }
+  ],
+  "orders": {
+    "complete_order_query_cases": 96,
+    "independent_tape_values_agree": true
+  },
+  "zero_parts": [
+    {
+      "rate": "1/3",
+      "native_scale": 3,
+      "query": [
+        0,
+        0
+      ],
+      "steps": 396,
+      "second_excess_is_zero": true,
+      "maximum_integer_bits": 397
+    },
+    {
+      "rate": "1/3",
+      "native_scale": 3,
+      "query": [
+        0,
+        1
+      ],
+      "steps": 396,
+      "second_excess_is_zero": false,
+      "maximum_integer_bits": 397
+    },
+    {
+      "rate": "1/10",
+      "native_scale": 10,
+      "query": [
+        0,
+        0
+      ],
+      "steps": 396,
+      "second_excess_is_zero": true,
+      "maximum_integer_bits": 1259
+    },
+    {
+      "rate": "1/10",
+      "native_scale": 10,
+      "query": [
+        0,
+        1
+      ],
+      "steps": 396,
+      "second_excess_is_zero": false,
+      "maximum_integer_bits": 1259
+    }
+  ],
+  "native": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 72
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 342
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "birth_cursor": 7,
+      "complete_native_triples": 72
+    },
+    {
+      "n": 3,
+      "complete_native_triples": 80,
+      "profile_attachment": {
+        "steps": 4,
+        "cursor": 2
+      },
+      "final_cursor": 78,
+      "final_steps": 80,
+      "diagonal": -4,
+      "counts": [
+        2,
+        0,
+        2
+      ],
+      "changing_support_and_reversal": true
+    }
+  ],
+  "larger": [
+    {
+      "n": 32,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "worlds": "4294967296",
+      "steps": 83,
+      "workspace_bytes": 14877,
+      "cell_bytes": 57,
+      "table_geometry": {
+        "positive_multiplications": 714,
+        "positive_additions": 121,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 252
+      },
+      "total_multiplications": 1760,
+      "total_additions": 254,
+      "maximum_integer_bits": 335,
+      "compacted_cells": 6968
+    },
+    {
+      "n": 32,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "worlds": "6442450944",
+      "steps": 83,
+      "workspace_bytes": 20358,
+      "cell_bytes": 78,
+      "table_geometry": {
+        "positive_multiplications": 714,
+        "positive_additions": 121,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 252
+      },
+      "total_multiplications": 2640,
+      "total_additions": 381,
+      "maximum_integer_bits": 550,
+      "compacted_cells": 10452
+    },
+    {
+      "n": 64,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "worlds": "18446744073709551616",
+      "steps": 163,
+      "workspace_bytes": 57387,
+      "cell_bytes": 111,
+      "table_geometry": {
+        "positive_multiplications": 1482,
+        "positive_additions": 249,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 508
+      },
+      "total_multiplications": 3616,
+      "total_additions": 510,
+      "maximum_integer_bits": 668,
+      "compacted_cells": 30264
+    },
+    {
+      "n": 64,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "worlds": "27670116110564327424",
+      "steps": 163,
+      "workspace_bytes": 78584,
+      "cell_bytes": 152,
+      "table_geometry": {
+        "positive_multiplications": 1482,
+        "positive_additions": 249,
+        "largest_join_cells": 8,
+        "peak_live_integer_cells": 508
+      },
+      "total_multiplications": 5424,
+      "total_additions": 765,
+      "maximum_integer_bits": 1088,
+      "compacted_cells": 45396
+    },
+    {
+      "n": 256,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "worlds": "173688133855974293135356477513031861779904976998460846059186376011869694459904",
+      "steps": 258,
+      "workspace_bytes": 531727,
+      "maximum_integer_bits": 1787,
+      "total_multiplications": 7665,
+      "total_additions": 1551,
+      "oracle": "independent positive forest path recurrence"
+    }
+  ],
+  "boundaries": {
+    "bound_plan_refusals": 17,
+    "complete_input_refusals": 7,
+    "prewrite_resource_refusals": [
+      "join_cells",
+      "live_cells",
+      "arithmetic",
+      "step_cap",
+      "integer_bits"
+    ],
+    "canceled_height_zero_step_refusal": true,
+    "workspace_shape_refusals": 3,
+    "dense_n16_status": "UNRESOLVED",
+    "postwrite_fault_keeps_input_and_caller_pin": true
+  },
+  "admission": {
+    "runtime_status": "REJECTED_ADMISSIBILITY",
+    "registered_production_paths_changed": false,
+    "no_indexed_joint_admission_or_constructor_certificate": true
+  }
+}
