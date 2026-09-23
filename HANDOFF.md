@@ -1,5 +1,21 @@
 # FP Handoff
 
+**New structural obstruction: conditional closure is not a native update
+certificate.** The [conditional-mixture law](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
+shows that a compact conditional SUM/PRODUCT family can contain the exact
+unknown-noise posterior while the native global simplex U updates it wrongly.
+At the ordinary block-scaled rate, conditional rows receive only their
+posterior-responsibility fraction of the exact update. The repeat-forecast
+gap has a positive variance formula; the two-rate witness gives89/800.
+No fixed block masses and one scalar rate repair its two-event continuation,
+even if the scalar rate changes between events. This covers native readouts
+with the stated conditional interpretation, not all encodings.933 complete
+native triples and13 independent binary64 phases pass the audit; the exact
+joint control verifies statistical closure through258 prefixes. No production
+code or device jobs change. The next structural decoder must compute the
+original joint learner from retained evidence and prove its full relation;
+replacing its Program by conditional parameters is a different learner.
+
 **Current theoretical result: learning a finite unknown noise rate does not
 remove worst-case forecast hardness.** The [new reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)
 uses ordinary diagonal observations to keep the smallest-rate posterior

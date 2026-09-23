@@ -395,6 +395,19 @@ deletion. Exact small-graph and complete native checks pass; rare conditional
 histories establish no average-case hardness, new physical backend or model
 advantage. Foundation R4 and ERC-1 are unchanged.
 
+The [conditional-mixture update law](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
+separates statistical closure from native realizability under U. A conditional
+SUM of PRODUCTs contains the exact local-observation posterior family, but
+the usual equal-block simplex step updates each conditional row by only its
+posterior-responsibility fraction. Its repeated-label forecast has an exact
+positive variance deficit. Tangent-gradient differences prove that no fixed
+positive block masses and one common scalar rate reproduce the two-event
+unknown-noise continuation, even with different ambient graph extensions or
+event-dependent scalar rates, provided the readout represents the declared
+conditional law on its positive manifold. This is a parameterization-scoped
+obstruction, not an impossibility for all codecs or a Foundation change.
+933 full native triples and13 executed binary64 phases audit the result.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -1,5 +1,17 @@
 # FP Open Problems
 
+The [conditional-mixture update obstruction](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
+rules out a tempting structural shortcut. Conditional independence can make
+the exact posterior family compact, but compiling those gate/conditional
+probabilities as fixed-mass blocks of one native simplex does not implement
+its Bayes update. A two-event witness excludes every fixed block scaling and
+one scalar rate, including event-dependent scalar rates, within that declared
+forecast parameterization. A graph's current values and statistical closure
+therefore cannot replace a learner-transition proof. This does not rule out
+a paid structural decoder of the original joint state. Derive such a decoder
+from retained evidence, preserving unnormalized rate weights and all native
+state obligations; do not repair the shortcut by silently changing U.
+
 The [unknown-noise forecast reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)
 closes the question whether the existing worst-case decoding obstruction
 depends on being supplied the noise rate. A legal diagonal prefix, protected

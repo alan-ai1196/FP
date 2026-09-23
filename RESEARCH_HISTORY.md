@@ -8265,3 +8265,47 @@ including176 ordinary calibration events. No Torch/GPU or Runtime authority
 is used. The proof supplies the arbitrary-n result; finite checks audit it.
 The primary1976 Simple MAX CUT result was checked through the publisher's
 abstract; the conditioning/reduction argument here is self-contained.
+
+## 248. Distinguish conditional posterior closure from the native mixture update (2026-09-23)
+
+Investigate a compact conditional SUM/PRODUCT alternative to explicit joint
+unknown-noise worlds. The statistical family pi_j PRODUCT_a q_(j,a) is
+closed under local factor observations and diagonal noise evidence. However,
+representing the gate and conditional rows as fixed-mass blocks of one
+selected simplex gives a different native transition. The actual positive
+multihomogeneous graph updates the marginals of independent auxiliary
+variables. At the ordinary block-scaled rate the gate moves to rho, but a
+queried row becomes(1-rho_j)q_j+rho_j q*_j instead of q*_j.
+
+Derive the exact next repeated-label deficit SUM rho_j(1-rho_j) Var(ell_j)/l_j.
+It is strictly positive at positive informative conditional priors. From fair
+two-rate1/10,1/4 priors, the native forecast after one label0 is489/800,
+versus289/400 for the full joint native control, an exact gap89/800. Increasing
+the scalar rate from1/3 to2/3 makes the first update exact, but the second
+gate becomes367/578 instead of164/289. Both actual updates remain nonnegative.
+The discrepancy is present in exact arithmetic and checked binary64.
+
+Attack graph and scale repairs. For any native readout that represents this
+conditional law throughout its positive block manifold, tangent-gradient
+differences force tau=lambda_gate on informative gate updates and
+lambda_j=tau rho_j on informative conditional updates. Normal derivatives
+cannot change these differences. The first fair event requires equal fixed
+conditional block masses; the next requires their ratio164/125. Thus no
+fixed block masses and one scalar rate implement both events, even if the
+scalar rate may change. This is not a theorem against other encodings or
+forecasts that agree only on a specially engineered reachable orbit.
+
+The3951-byte artifact retains672 exact native triples over two/three rates,
+one/two conditional factors, nonuniform priors, all local/diagonal queries,
+both labels and two rate scales. Independent augmented tensor sums and
+forward dual propagation check every selected and fixed-slot gradient.
+The strong joint control executes258 native triples and confirms exact
+conditional closure on every three-event prefix. Three further witness
+triples give933 total. Thirteen independent binary64 phases pass complete
+relations at1e-10 while retaining the mathematical forecast discrepancies.
+
+No production change, GPU job, conditional optimizer, architecture action
+or Runtime certificate is introduced. Statistical closure supplies a possible
+internal computation strategy, not permission to replace the native Program
+and reuse its optimizer. Continue structural inference from retained joint
+evidence with a complete learner relation. Foundation R4 and ERC-1 stand.

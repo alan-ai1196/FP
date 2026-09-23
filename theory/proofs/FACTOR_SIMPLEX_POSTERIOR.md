@@ -254,3 +254,11 @@ are arithmetic evidence for the proved claims, not physical execution or
 Compiler equivalence. Nothing is installed or erased from a Runtime. The
 current all-pair CPU/AMP learners, strong controls and model runs retain their
 complete states and their existing decision-class status.
+
+The subsequent [conditional-mixture law](CONDITIONAL_MIXTURE_UPDATE.md)
+exposes a separate boundary: a posterior family can be statistically closed
+as a SUM of conditional PRODUCTs while its block-parameterized native U
+still follows auxiliary marginals rather than the required conditional rows.
+A tangent-gradient argument rules out every fixed block scaling and scalar
+rate on a two-event unknown-noise continuation, within that parameterization.
+This does not prohibit compact exact decoders of the original joint learner.

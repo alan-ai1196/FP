@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "precision": "exact Fraction native guard32768; independent executed binary64",
+  "one_step": [
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "conditional_binary_factors": 1,
+      "native_graph": {
+        "nodes": 36,
+        "sources": 2,
+        "state_reads": 0,
+        "SUMs": 12,
+        "PRODUCTs": 22,
+        "SUM_edges": 123,
+        "edges": 167,
+        "slots": 7,
+        "bindings": 0
+      },
+      "complete_native_triples": 144
+    },
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "conditional_binary_factors": 2,
+      "native_graph": {
+        "nodes": 61,
+        "sources": 3,
+        "state_reads": 0,
+        "SUMs": 18,
+        "PRODUCTs": 40,
+        "SUM_edges": 206,
+        "edges": 286,
+        "slots": 11,
+        "bindings": 0
+      },
+      "complete_native_triples": 96
+    },
+    {
+      "rates": [
+        "1/10",
+        "1/5",
+        "3/10"
+      ],
+      "conditional_binary_factors": 1,
+      "native_graph": {
+        "nodes": 51,
+        "sources": 2,
+        "state_reads": 0,
+        "SUMs": 16,
+        "PRODUCTs": 33,
+        "SUM_edges": 93,
+        "edges": 159,
+        "slots": 10,
+        "bindings": 0
+      },
+      "complete_native_triples": 432
+    }
+  ],
+  "exact_conditional_closure": {
+    "conditional_binary_factors": 2,
+    "all_three_event_prefixes": 258,
+    "complete_exact_joint_native_triples": 258,
+    "native_graph": {
+      "nodes": 21,
+      "sources": 3,
+      "state_reads": 0,
+      "SUMs": 18,
+      "PRODUCTs": 0,
+      "SUM_edges": 448,
+      "edges": 448,
+      "slots": 9,
+      "bindings": 0
+    }
+  },
+  "witnesses": {
+    "native": [
+      {
+        "rate": "1/3",
+        "ordinary_events": 1,
+        "native_factors": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "7/10",
+            "3/10"
+          ],
+          [
+            "5/8",
+            "3/8"
+          ]
+        ],
+        "exact_conditional_factors": [
+          [
+            "1/2",
+            "1/2"
+          ],
+          [
+            "9/10",
+            "1/10"
+          ],
+          [
+            "3/4",
+            "1/4"
+          ]
+        ],
+        "next_native_forecast": "489/800",
+        "next_exact_forecast": "289/400",
+        "signed_exact_minus_native": "89/800",
+        "binary64_phases": 5,
+        "maximum_binary64_relation_error": "1/281474976710656"
+      },
+      {
+        "rate": "2/3",
+        "ordinary_events": 2,
+        "native_factors": [
+          [
+            "367/578",
+            "211/578"
+          ],
+          [
+            "2889/2890",
+            "1/2890"
+          ],
+          [
+            "1017/1156",
+            "139/1156"
+          ]
+        ],
+        "exact_conditional_factors": [
+          [
+            "164/289",
+            "125/289"
+          ],
+          [
+            "81/82",
+            "1/82"
+          ],
+          [
+            "9/10",
+            "1/10"
+          ]
+        ],
+        "next_native_forecast": "27499093/33408400",
+        "next_exact_forecast": "467/578",
+        "signed_exact_minus_native": "-506493/33408400",
+        "binary64_phases": 8,
+        "maximum_binary64_relation_error": "9/2251799813685248"
+      }
+    ],
+    "fixed_block_mass_contradiction": {
+      "forced_common_rate": "1/2",
+      "forced_gate_mass": "1/2",
+      "first_event_required_conditional_masses": [
+        "1/4",
+        "1/4"
+      ],
+      "second_event_required_conditional_masses": [
+        "82/289",
+        "125/578"
+      ]
+    }
+  },
+  "scope": "Fixed block-scaled conditional-mixture parameters and one global native simplex step. No impossibility for all encodings, Foundation change, Runtime certificate or GPU/model performance claim."
+}

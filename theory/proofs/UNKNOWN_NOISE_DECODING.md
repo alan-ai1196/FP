@@ -199,3 +199,9 @@ hardness claim, all-history AMP guarantee or full indexed release is added.
 The calibrated prefixes can be exceptionally unlikely. Forest information
 and disjoint-cycle acquisition results retain their own different scopes.
 Foundation R4 and ERC-1 are unchanged.
+
+The subsequent [conditional-mixture update result](CONDITIONAL_MIXTURE_UPDATE.md)
+attacks a proposed tractable representation. Conditional posterior closure
+does not imply that replacing the Program by fixed-mass conditional blocks
+preserves the native U. A paid structural decoder of the original joint
+state remains a different, open implementation route.

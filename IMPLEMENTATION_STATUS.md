@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [conditional-mixture audit](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
+adds actual positive native graphs and strong exact joint controls, without
+changing production.672 complete native triples verify the responsibility-
+weighted update and predictive-gap formula,258 native control triples verify
+conditional posterior closure, and three witness triples falsify equivalence
+at the ordinary and increased scalar rates. Thirteen independently executed
+binary64 phases confirm the discrepancies. The3951-byte artifact also records
+the exact fixed-block-mass contradiction. It grants no Runtime or AMP authority.
+
 The [unknown-noise decoding audit](theory/proofs/UNKNOWN_NOISE_DECODING.md)
 adds a passive exact experiment, with no production changes after5937e1b.
 It implements a bounded-future calibration proof and exhaustive reduction
