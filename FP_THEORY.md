@@ -211,6 +211,18 @@ class completeness or complete release is claimed.
 
 ## 0. Research object and root principle
 
+The [exponent-histogram decoder](theory/proofs/COUNT_HISTOGRAM_DECODER.md)
+regroups the fixed count learner's positive likelihood sum without changing
+its complete state. It pays exponential assignment visits and has at most
+2(H+1) polynomial terms. A fixed half-product/single-sum schedule has proved
+uniform n<=16 bounds for every native readout and gradient coordinate under
+the existing1/100 and1/1000 relations; H<=396 requires at most7163 outputs.
+Exact native/RNE audits pass, including exposed cuts whose elimination
+order classes do not fit. A current histogram is not a persistent-state
+quotient: an explicit later query distinguishes equal current histograms.
+Actual arithmetic and owned Runtime realization remain separate obligations.
+This decoder theorem changes no Foundation definition or ERC-1 condition.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 is registered under the prior resource and numerical envelope. It changes
 only the paid solver and its declared rounded realization, retaining the

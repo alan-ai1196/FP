@@ -16,7 +16,7 @@ from fp_reference.core import ContractError, natural
 from fp_reference.indexed_count import CountState, query as require_query, world_count
 from fp_reference.indexed_execution import IndexedEvaluation
 from fp_reference.indexed_amp import (_Arithmetic, IndexedAmpState,
-    IndexedAmpPrediction, _observation_schedule)
+    IndexedAmpPrediction, ResidentPrediction, _observation_schedule)
 from fp_reference.semantics import ArithmeticUnresolved
 
 MAX_WORLDS = 32768
@@ -154,8 +154,9 @@ def _rounded_schedule(state, hist, arith):
     normalizer = arith.op('add', *masses)
     probabilities = tuple(arith.op('div', value, normalizer) for value in masses)
     columns = excesses+masses+(normalizer,)+probabilities
-    arith.stack(columns)
-    return IndexedAmpPrediction(state, hist.query, tuple(v.word for v in columns))
+    output = arith.stack(columns)
+    raw = IndexedAmpPrediction(state, hist.query, tuple(v.word for v in columns))
+    return raw, None if output is None else ResidentPrediction(state, hist.query, output)
 
 
 def rounded_prediction(state, query, *, output_cap=65536, **limits):
@@ -165,7 +166,7 @@ def rounded_prediction(state, query, *, output_cap=65536, **limits):
     if hist.output_cells > output_cap:
         raise ArithmeticUnresolved('histogram floating output allowance insufficient')
     arithmetic = _Arithmetic(limits.get('bit_limit', 32768))
-    raw = _rounded_schedule(state, hist, arithmetic)
+    raw, _ = _rounded_schedule(state, hist, arithmetic)
     assert len(arithmetic.trace)+7 == hist.output_cells
     assert sum(width == 16 for _, width, _ in arithmetic.trace) == 3*hist.term_count
     return raw, hist, tuple(arithmetic.trace)

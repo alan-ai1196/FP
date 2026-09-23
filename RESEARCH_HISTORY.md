@@ -7349,3 +7349,48 @@ sealed-frame reader and actual work/extent report accompany the result.
 One fresh job, committed source, immutable execution inputs, all outcomes
 retained, no score for an incomplete prefix. This entry records registration
 only; no completion or new model result is assumed.
+
+## 221. Replace joined tables by positive exponent histograms, with a uniform precision proof (2026-09-23)
+
+While the source-bound paid-order model job runs, derive and audit a new
+decoder in an isolated worktree of this repository. Its original checkout
+and HEAD remain fixed. Group each anchored world by query parity and the
+integer exponent of its native likelihood. Gray traversal computes the
+histogram with K=2^(n-1) visits and at most(n-1)(K-1) incident updates;
+positive polynomial evaluation then gives the exact native partition pair.
+The full signed counts, clocks, pending event and history remain unchanged.
+Two legal n3 histories have the same current histogram but disagree on a
+later query, explicitly forbidding its use as complete persistent state.
+
+Normalize at the largest occupied exponent, computed by that enumeration.
+The cheaper local bound H cannot replace it: the n3 counts(-80,-80,-80)
+have H=240 and occupied maximum160; H scaling rounds every term to zero.
+The proof prices the occupied maximum through the complete traversal.
+Each nonzero term is a product
+of two mantissas in[1/2,1] and a guarded binary scale. Actual half casts and
+products therefore avoid half underflow; balanced single sums have a short
+rounding path. A positive-ratio bound and the sharp identity
+`(1+8q)^2-36q(1-q)=(1-10q)^2` cover every native gradient, including the
+fixed feature slot. For n<=16 the probability bound is below0.000587736
+and the full gradient bound below0.005265784, uniformly in count magnitude
+when integer work is available. H<=396 has at most7163 floating outputs.
+This is not a polynomial-time claim, a fixed positive-circuit lower-bound
+counterexample, or a new semantic architecture action.
+
+The exact audit passes all11919 ordered queries of759 small signed-count
+states; dense/stress/exposed cases and a scale-shortcut counterexample make
+11930 predictions and23860 target observations,1067834 words/182946 half.
+1054 literal-native phase triples,
+three profiles and a104-event late-birth reversal pass. A rounded zero
+temporary recovers after contrary data because its exact counts persist.
+Both dense n16 signs have17 terms/170 outputs despite a32768-cell first
+join for every elimination order. Five exposed hard cuts need2087--2843
+outputs; c4/18/276 no longer has its old65574-output schedule obstruction.
+These are passive decodes, with no resumed Runtime or model scores.
+
+Register one16-case/48-phase actual RTX3090 arithmetic job under4 GiB,
+600 seconds and a16-MiB arena, to run after the existing model job ends.
+The prototype now returns its resident endpoint for a fresh final-word
+check; the exhaustive CPU report is unchanged. No new `src/reference_compiler`
+implementation, paid histogram ownership or complete release is claimed.
+Foundation/ERC-1 remain frozen; owned execution is the next research test.

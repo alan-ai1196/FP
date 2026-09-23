@@ -10,6 +10,18 @@ and keep source fixed until terminal. No new model outcome is claimed here.
 
 ## Current implementation state (2026-09-23)
 
+**Exponent-histogram decoding has a scoped proof and exhaustive native/RNE audit.**
+[Proof](theory/proofs/COUNT_HISTOGRAM_DECODER.md): exact integer grouping
+retains the full count learner and gives a positive polynomial with
+L<=min(2^(n-1),2(H+1)) terms. Its schedule uses9L+21-2b outputs, with3L half
+outputs. Uniform n<=16 bounds cover every native gradient and the proper
+stored-mass forecast at the existing tolerances. Exact enumeration/RNE
+checks11930 predictions/23860 observations;1054 complete native phase
+triples, profiles and a104-event underflow/reversal continuation pass.
+This remains an experimental decoder, outside `src/reference_compiler`.
+The16-case actual arithmetic fixture is registered, not executed; owned
+funding, retention, event/lineage and fresh/install integration remain open.
+
 **Paid query-order search passes its complete declared component gate.**
 [Proof and evidence](theory/proofs/PAID_QUERY_ORDER.md): actual packed rows,
 prior work debits, lifetime-bound scratch, independently checked complete

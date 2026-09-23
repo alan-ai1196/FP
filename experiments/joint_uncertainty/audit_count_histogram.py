@@ -13,7 +13,9 @@ sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(Path(__file__).parent)]
 import count_histogram as decoder
 import count_learner_encoding as native
 from fp_reference import indexed_amp as amp
+from fp_reference.binary_arithmetic import round_binary
 from fp_reference.core import ContractError
+from fp_reference.cuda_range import SINGLE
 from fp_reference.float64_bridge import Float64Contract
 from fp_reference.indexed_count import CountState, observe, commit, attach
 from fp_reference.indexed_execution import IndexedState
@@ -235,6 +237,24 @@ def future_counterexample():
         'histogram_is_a_complete_persistent_state': False}
 
 
+def unfunded_scale_shortcut(audit):
+    before, query = state(3, (-80, -80, -80)), (0, 1)
+    hist = decoder.histogram(before, query)
+    top = max(k for part in hist.terms for k, _ in part)
+    assert (hist.span, top) == (240, 160)
+    # Giving even exact terms a single RNE32 rounding cannot rescue this
+    # looser scale: all three grouped terms fall below half a subnormal.
+    loose = tuple(F(h, 9**(hist.span-k)) for part in hist.terms for k, h in part)
+    assert max(loose) < F(1, 1 << 150)
+    rounded = tuple(round_binary(v, SINGLE, bit_limit=32768).value for v in loose)
+    assert rounded == (F(0),)*3
+    correct = audit.check(before, query)
+    return {'n': 3, 'counts': before.counts, 'query': query, 'H': hist.span,
+        'actual_maximum_occupied_exponent': top, 'H_scaled_RNE32_terms': list(map(str, rounded)),
+        'H_scaled_denominator': '0', 'correct_occupied_scale': correct,
+        'scope': 'the registered schedule cannot replace its computed occupied maximum by H for free'}
+
+
 def refusals():
     ordinary = state(3, (1, -1, 1))
     inputs = ((object(), (0, 1), {}), (observe(ordinary, 0, 1, 0), (0, 1), {}),
@@ -290,12 +310,14 @@ def run():
     for before, query in ((state(2, (396,)), (0, 1)), (state(2, (-396,)), (1, 0)),
                          (state(4, (198, -100, 40, -20, 20, -18)), (0, 3))):
         stress.append(audit.check(before, query))
+    scale_shortcut = unfunded_scale_shortcut(audit)
     return {'status': 'PASS_SCOPED_EXACT_HISTOGRAM_AND_RNE_AUDIT',
         'scope': 'passive decoder, exact native states and RNE; no actual CUDA or Runtime registration',
         'small_complete_grid': small, 'native': native_cases,
         'numerical': audit.report(), 'exact_uniform_bounds': bounds(),
         'dense_all_order_obstructions': dense, 'exposed_model_cuts': cuts,
         'range_stress': stress, 'future_histogram_counterexample': future_counterexample(),
+        'local_upper_bound_scale_counterexample': scale_shortcut,
         'preflight_refusals': refusals()}
 
 

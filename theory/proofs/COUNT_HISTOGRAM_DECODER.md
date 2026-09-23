@@ -91,9 +91,17 @@ Assume2<=n<=16. Let U be the largest occupied exponent and put
 
     t_(y,k) = h_y(k)*9^(k-U),   Zbar=sum_(y,k)t_(y,k).
 
-At least one world has exponent U, so1<=Zbar<=K<=32768. This normalization
-does not require knowing either partition or its ratio. For each occupied
-coefficient h at lag l=U-k, let D=9^l, a_exp=bit_length(h), b_len=bit_length(D),
+At least one world has exponent U, so1<=Zbar<=K<=32768. U is computed from
+the complete enumeration's occupied bins; it is not a free global energy
+optimizer or the sum of possibly incompatible local maxima. Replacing it
+by H is unsafe: on the n3 triangle with counts(-80,-80,-80), H=240 but
+U=160. All three grouped terms scaled by9^-H round to zero even if each
+exact term receives only one binary32 rounding. The correct occupied scale
+retains a positive denominator and passes the full native relation.
+
+This normalization does not require knowing either partition or its ratio.
+For each occupied coefficient h at lag l=U-k, let D=9^l,
+a_exp=bit_length(h), b_len=bit_length(D),
 
     a=h/2^a_exp,  b=2^(b_len-1)/D,  e=a_exp+1-b_len.
 
@@ -227,8 +235,9 @@ aggregate counts, bounds and small source-reconstructible witnesses:
   implementation uses incident-edge updates along a Gray traversal.
 - Every one of these queries also passes the existing complete native/AMP
   coordinate checker under exact scalar RNE. Dense cases, exposed cuts and
- 396-span stress give11929 predictions and23858 both-target observations:
- 1067764 words including declared output copies,182937 binary16 words.
+ 396-span stress and the normalization counterexample give11930 predictions
+  and23860 both-target observations:1067834 words including declared output
+  copies,182946 binary16 words.
   Maximum probability error is about4.081e-5; maximum gradient error is
   about4.843e-4. These observed maxima do not replace the uniform proof.
 - Actual literal-native evaluation/observation/commit checks1054 complete
@@ -263,3 +272,36 @@ Source/workspace ownership, prepaid reconstruction, retained phase evidence,
 full event/lineage binding, fresh persistence and installation remain
 obligations for any future owned implementation. An incomplete or unfunded
 calculation must stay UNRESOLVED.
+
+## 6. Registered actual arithmetic fixture
+
+`scripts/audit_count_histogram_cuda.py --attempt 1` is registered before
+execution: one fresh4-GiB Windows job,600-second deadline, one16-MiB CUDA
+arena with32-MiB allocator cap and65536 outputs per phase. Its16 cases are
+the n3 prior on an ordinary/diagonal query; n2 signed counts+/-46,+/-47,+/-48
+around the single-precision subnormal boundary; count396; both dense n16
+fixtures; and the five exposed cuts in section5. Each executes one prediction
+and both independent target branches, for48 actual device phases.
+
+The helper prototype now returns its actual resident output tensor as well
+as the complete raw prediction. The arithmetic is unchanged. The fixture
+freshly reads the endpoint after execution, compares every operation with
+the independently reconstructed exact RNE schedule, and checks all native
+prediction/gradient coordinates against the independent assignment oracle.
+It checks arena extents and the actual RTX3090/build identity. No reference
+posterior or forecast enters the numerical kernel.
+
+The parent checks committed clean inputs and binds the source before launch;
+the child starts attached to the declared job. Each completed case is retained
+in the worker result before advancing. Keep every terminal failure or timeout;
+do not retry silently or relax any cap. Commit inputs before execution and
+keep that checkout's HEAD/input files fixed until the parent has collected
+the terminal journal. This registration claims no physical outcome yet.
+
+This is an arithmetic fixture. Its host enumeration/readout/metadata are
+bounded by the job, without pretending to be prepaid Runtime records.
+It has no new constructor, native event admission, lineage, bridge issuance,
+fresh persistence, installation, model score or complete-release authority.
+Those require the owned integration described above. Existing source-bound
+model work must finish before this new device job is launched; there is no
+exclusive-device throughput or elapsed-time comparison.

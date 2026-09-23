@@ -11,6 +11,25 @@ and keep source fixed until terminal. No new model outcome is claimed here.
 This file is written for a researcher with no prior chat context. The
 repository, especially `FP_THEORY.md`, is authoritative.
 
+**New decoder result:** the [exponent-histogram theorem](theory/proofs/COUNT_HISTOGRAM_DECODER.md)
+escapes the elimination-order obstructions by explicitly enumerating integer
+energies and grouping equal positive likelihoods. Full counts/history remain.
+For n<=16, its proved half/single schedule meets the existing1/100 state
+and1/1000 probability relations uniformly in count magnitude, conditional
+on available integer resources. For H<=396 it uses at most7163 prediction
+outputs. It still pays exponential assignment work; no Runtime integration
+or complete certificate exists yet. The exact audit checks11930 predictions,
+23860 observations and1054 complete native phase triples. Five exposed hard
+cuts use2087--2843 outputs, including the old65574-output obstruction.
+
+The next numerical check is registered in
+`scripts/audit_count_histogram_cuda.py`:16 fixtures,48 actual phases, one
+fresh4-GiB/600-second job. Run it only after the existing model job is terminal.
+Its hardware outcome is still unknown. Then pursue prepaid owned histogram
+construction, complete phase evidence and event/lineage/fresh/install binding.
+This is a new execution of the same native learner, with no Foundation or
+ERC-1 change. Do not promote passive decoding into an owned model recovery.
+
 **Current frontier (2026-09-23): test paid order search on the blocked n16 model stream.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded

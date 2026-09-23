@@ -11,6 +11,23 @@ and keep source fixed until terminal. No new model outcome is claimed here.
 Only genuinely unresolved problems belong here. Historical results remain
 in their source-bound proofs, evidence and research history.
 
+The [exponent-histogram decoder](theory/proofs/COUNT_HISTOGRAM_DECODER.md)
+now supplies a different realization for the same complete native counts.
+Its exact grouping and uniform half/single precision bound are proved;
+exhaustive small native/RNE checks pass. The remaining problem is paid
+owned execution, not another elimination-order or anchor special case.
+Explicit32768-world traversal handles the five selected n16 hard cuts
+with2087--2843 floating outputs; this gives no global n256 algorithm,
+whole-resource Runtime recovery or new model score. The current histogram
+alone is provably insufficient persistent state, so all counts/history stay.
+
+Finish and retain the already registered paid-order model job, then execute
+the registered16-case histogram arithmetic fixture. Actual CUDA conformance
+and subsequent Runtime ownership/phase/fresh/install integration are open.
+The passive schedule cannot bypass any of those gates or borrow an earlier
+indexed release. Its theorem separates numerical feasibility from integer
+work, histogram storage, retained evidence and full physical resources.
+
 The immediate research frontier is useful execution on the existing
 n16/iid-c2/16 stream. The [paid-order component gate](theory/proofs/PAID_QUERY_ORDER.md)
 is complete: all23 logical cases plus a fresh funded control pass; all28
