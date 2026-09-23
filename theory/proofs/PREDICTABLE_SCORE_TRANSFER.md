@@ -271,3 +271,50 @@ the six registered model jobs and issues no CERTIFIED_COMPLETE claim.
 Reproduce with `python -X utf8 -B theory/numerical_checks/audit_predictable_score_transfer.py`.
 The default mode checks the retained artifact without overwriting it;
 `--output PATH` only creates a new file.
+
+## 7. Exact discrepancy intervals from retained hardware readouts
+
+Let p be the exact native label-zero probability and q the exact proper
+normalization of the two retained binary32 masses. For any p,q in(0,1),
+put e=q-p and r(t)=p+t*e. Differentiating binary KL in its second argument
+and integrating from p gives
+
+    KL(p||q) = e^2 integral_0^1 t/[r(t)(1-r(t))] dt.
+
+Let m and M be the minimum and maximum of r(1-r) on the interval between
+p and q. Concavity gives m=min(p(1-p),q(1-q)). The maximum is1/4 if the
+interval contains1/2, otherwise max(p(1-p),q(1-q)). Consequently
+
+    e^2/(2M) <= KL(p||q) <= e^2/(2m).                         (9)
+
+Every quantity in(9) is rational for retained binary32 masses and the exact
+count posterior. This gives an enclosure without evaluating a logarithm or
+subtracting nearly equal signed log terms. The interior maximum matters:
+using only endpoint maxima at p=2/5,q=3/5 gives a false lower bound.
+The two-coordinate conditional Brier excess remains exactly2e^2.
+
+If both p and q lie in[a,1-a], (9) also gives
+
+    KL(p||q) <= (p-q)^2/[2a(1-a)].                            (10)
+
+This is a smaller hypothesis class than the sharp error-only bound(3),
+which allows q outside the native interval. In the current binary readout,
+stored masses in[1,9] imply their **proper** probabilities lie in[1/10,9/10].
+The retained reader checks that range explicitly. It does not silently
+substitute independently rounded division words for a proper distribution.
+
+`scripts/audit_retained_partition_risk.py` reconstructs each native forecast
+with the independent vertex-prefix posterior, using only earlier labels.
+For each retained four-word output it checks exact probability discrepancies
+and encloses(9) and2e^2 on an outward96-bit rational grid. Average intervals
+are obtained by adding their integer endpoints and dividing by the exact
+number of contexts. Decimal arithmetic is used only for twelve separate
+checks of the interval formula, including the interior-maximum case; it
+does not determine the reported model KL enclosures.
+
+These are deterministic audits of completed, exposed evaluation paths.
+Their means are not population estimates or guarantees obtained by
+conditioning on future completion. Fixed-hidden-teacher CE differences
+still contain the signed first-order term in section3, while reference-to-
+proper-AMP KL is nonnegative. A better uniform error upper or fewer floating
+operations does not imply a smaller realized discrepancy on every tape.
