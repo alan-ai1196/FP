@@ -47,7 +47,7 @@ from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
 from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
-from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, CudaRunManifest,
+from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, CudaRunManifest,
     CudaPrefixSnapshot, _CudaPrefix, widened_state)
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
@@ -393,7 +393,7 @@ class ReferenceCompilerRuntime:
         self._contract = contract
         self._cuda = None
         if cuda is not None:
-            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract) or online is None:
+            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract) or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
             if cuda.likelihood_encoding is not None:
@@ -413,8 +413,11 @@ class ReferenceCompilerRuntime:
         joint = type(contract.initializer_pattern) is JointInitializer
         if (indexed or joint) and online is None:
             raise ContractError('indexed realization requires its registered reference learner')
-        if joint and cuda is not None:
-            raise ContractError('joint indexed CUDA phases have not been registered; a passive bridge is not authority')
+        if cuda is not None and joint != (type(cuda) is JointCudaPrefixContract):
+            raise ContractError('joint reference and CUDA require the same complete native representation')
+        if cuda is not None and joint and (cuda.schema != contract.initializer_pattern.schema
+                or cuda.partitions != contract.indexed_histogram):
+            raise ContractError('joint reference and CUDA differ in their complete model or integer allowance')
         if cuda is not None and (indexed != (type(cuda) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract))
                 or indexed and cuda.n != contract.initializer_pattern.n):
             raise ContractError('reference and CUDA registrations require the same complete native representation')
@@ -983,7 +986,9 @@ class ReferenceCompilerRuntime:
                         if origin == 'construction' else self._event_router.charge_work(
                             purpose, {'work': amount}, label+':query-order-search'))) if kind == 'predict' else None,
                     histogram_workspace=(memoryview(self._buffers[f'{self._runtime_id}:histogram-storage'])
-                        if self._contract.indexed_histogram is not None else None),
+                        if self._contract.indexed_histogram is not None and not self._cuda.joint else None),
+                    joint_workspace=(memoryview(self._buffers[f'{self._runtime_id}:joint-partition-storage'])
+                        if self._cuda.joint else None),
                     likelihood_workspace=(memoryview(self._buffers[workspace_id])
                         if rational_likelihood and workspace_id is not None else None))
             except (ResourceExceeded, ArithmeticUnresolved):
@@ -1991,7 +1996,10 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         program, rules = self._programs[state.program_id], self._contract.semantics
         record = self._cuda_learner_record(state, staged=staged)
         if self._cuda.indexed:
-            from .indexed_amp import range_bound
+            if self._cuda.joint:
+                from .joint_amp import range_bound
+            else:
+                from .indexed_amp import range_bound
             self._event_router.charge_work('information', {'work': self._cuda.relation_work(program, rules)},
                                           f'{state.candidate_id}:indexed-CUDA-domain')
             return (range_bound(program, rules, record.raw_state, self._contract.source_domain,

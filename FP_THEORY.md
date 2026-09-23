@@ -454,8 +454,19 @@ profile replay and attachment, including canceled evidence and distinct
 optimizer/ordinary clocks. Actual fresh reference statistics agree with an
 independent literal Runtime. Width, precision, work and failed replay retain
 history and return UNRESOLVED. This adds no semantic action or constructor
-decision class; exact reference closure does not provide the still-missing
-actual joint AMP phases, paired freshness or install reachability.
+decision class; exact reference closure alone does not provide actual joint
+AMP phases, paired freshness or install reachability.
+
+The [owned joint AMP refinement](theory/proofs/OWNED_JOINT_AMP.md) now
+implements that separate physical path. It retains complete count/phase
+state, constructs the physical integers from its own state and actual inputs,
+checks every primitive against exact RNE, and compares the complete native
+coordinate basis. Monotone rounding gives whole-domain physical masses in
+[1,S-1], with stored sum and rounded normalizer at most 2(S-1). Same-path
+physical fresh scores use properly normalized stored masses. The exact CPU
+gate passes, preserving the S=120 native-error refusal; actual CUDA lifetime,
+paired evidence and identity installation remain hypotheses for the
+registered fresh jobs. No new semantic action or constructor class follows.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

@@ -1,10 +1,21 @@
 # FP Open Problems
 
+The [joint AMP implementation and protocol](theory/proofs/OWNED_JOINT_AMP.md)
+now bind physical state, actual causal inputs, independent integer
+construction, all RNE primitives and the complete native relation inside the
+existing owner. Exact CPU tests pass, including expected S=120 refusals and
+a narrower integer allowance. The immediate unresolved claim is actual
+device conformance and lifetime through profiles, failed phases, paired
+freshness and installation. Seventeen fresh bounded jobs are registered to
+test it. Their outcomes must be retained before treating this implementation
+as an executed bridge. This changes no Foundation/ERC-1 or decision class.
+
 The [owned joint reference result](theory/proofs/OWNED_JOINT_REFERENCE.md)
 closes exact Runtime registration, complete native phases, profile clocks,
 paid integer scratch/failure lifetime and same-path fresh reference evidence
-for the original joint-noise learner. The next boundary is the distinct owned
-half/single realization: actual causal inputs and complete state must bind
+for the original joint-noise learner. Its next boundary was the distinct owned
+half/single realization, now implemented above and awaiting actual execution:
+actual causal inputs and complete state must bind
 independently to the physical integer construction and floating schedule,
 with primitive conformance, retained phase/storage costs and failure lifetime.
 Then fresh paired evidence and installation must be reachable inside the

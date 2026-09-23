@@ -1,5 +1,18 @@
 # FP Implementation Status
 
+The [owned joint AMP implementation](theory/proofs/OWNED_JOINT_AMP.md) adds
+`joint_amp.py`, `joint_cuda_prefix.py` and a closed `JointCudaPrefixContract`.
+It binds the same full native model and integer allowance as the reference
+path, independently builds physical partitions in the paid pinned extent,
+checks all actual RNE words and native coordinates, and uses the existing
+paired persistence and identity transport. No root/prefix/arena field is
+added. Its exact CPU audit passes 2,844 predictions/5,688 observations and
+80 native triples, including narrower integer precision, complete input and
+word faults; 182 native S=120 cases correctly refuse at tolerance 1/100.
+The 17-job actual CUDA gate is registered with original tolerances and fresh
+owners, but has not run. Physical conformance, failed-phase lifetime and
+actual installation therefore remain unverified on this new path.
+
 The [owned joint reference path](theory/proofs/OWNED_JOINT_REFERENCE.md) adds
 `joint_execution.py` and registers the complete joint initializer, learner,
 state and range relation inside ReferenceCompilerRuntime. Its actual table
@@ -10,8 +23,10 @@ fresh-reference comparison. The n64 root peaks at 3,261,728 packed bytes;
 29,841 bytes are its integer scratch. Resource refusals, failed replay and
 multi-lineage atomic failure preserve the required history. Old literal
 ordinary-event and known-rate indexed regressions pass. No new root field,
-semantic action, constructor decision class, actual joint AMP or installation
-authority is introduced. Joint floating and class-search registrations refuse.
+semantic action or constructor decision class is introduced. That reference
+result at 4907b1d introduced no actual AMP or installation authority. The new
+joint AMP registration above is separate; joint binary64 and class-search
+registrations still refuse.
 
 The [joint native storage component](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
 adds `joint_relation.py` and `joint_partition_decoder.py`. Six complete literal

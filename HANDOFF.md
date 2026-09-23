@@ -1,5 +1,20 @@
 # FP Handoff
 
+**The owned joint AMP path is implemented and its fresh device gate is
+registered, not yet executed.** Read
+[OWNED_JOINT_AMP](theory/proofs/OWNED_JOINT_AMP.md) and
+`scripts/audit_joint_cuda.py`. The exact CPU gate passes 2,844 predictions,
+5,688 both-target observations and 80 complete native continuation triples;
+182 S=120 cut/query cases correctly refuse the original state tolerance.
+The physical path independently constructs its two excess integers from its
+own complete state and actual sources, checks every half/single primitive,
+and retains the existing owner, arena and identity installation transport.
+Seventeen fresh 4-GiB/900-second jobs cover profiles, paired freshness,
+installation, n64 closure, reversal and output/target/storage faults. Commit
+the protocol before A1 and keep execution dependencies fixed while jobs run.
+No actual joint device result, model conclusion or new decision class is
+established by registration; all old GPU attempts remain terminal.
+
 **The joint-noise learner now has an owned exact Reference Runtime path.**
 The [refinement and audit](theory/proofs/OWNED_JOINT_REFERENCE.md) bind its
 complete native model/Gamma/U and categorical domain inside the existing
@@ -10,10 +25,11 @@ with 29,841 actual table bytes and 3,261,728 peak packed bytes. These are
 distinct from whole-host memory. Allocation, work, precision, changing-query
 width, canceled-history and replay refusals preserve history and paid scratch;
 a second-lineage failure publishes no successor. Empty-policy reference
-closure has zero constructor decisions. The active boundary is now the
-separate owned joint AMP schedule, complete phase/resource evidence, fresh
-paired persistence and install reachability. Joint CUDA registration currently
-refuses before executor creation. No terminal GPU result changes.
+closure has zero constructor decisions. At reference source 4907b1d, joint
+CUDA registration refused before executor creation. The separate AMP
+registration above now implements that path; complete actual phase/resource
+evidence, paired persistence and install reachability await its fresh gate.
+No terminal GPU result changes.
 
 **Joint native indexing and contiguous integer storage now pass their exact
 component audit.** The [derivation](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)

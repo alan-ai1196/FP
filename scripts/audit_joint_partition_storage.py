@@ -1,7 +1,7 @@
 """Exact audit of joint native indexing and contiguous positive elimination.
 
-Caller-owned component only. The existing Runtime must still reject this
-unregistered indexed representation; no actual CUDA phase is executed.
+Caller-owned component only. A separate owned registration is tested by
+audit_joint_runtime.py; no actual CUDA phase is executed here.
 """
 from dataclasses import replace
 from fractions import Fraction as F

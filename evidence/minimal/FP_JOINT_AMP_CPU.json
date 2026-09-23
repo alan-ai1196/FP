@@ -1,0 +1,151 @@
+{
+  "status": "PASS_JOINT_AMP_CPU",
+  "complete_audit": true,
+  "scope": "Exact native/RNE schedule and relation audit. No actual device, owned AMP phase, installation or constructor certificate.",
+  "enumeration": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 8760,
+      "half_words": 240,
+      "original_tolerance_prediction_refusals": 0,
+      "maximum_errors": {
+        "native": "1478641/999292928",
+        "normalizer": "1/524288",
+        "probability": "591647/7994343424",
+        "proper_mass_division": "11283163/175921852055552",
+        "gradient": "16969073/11083448320"
+      }
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "reachable_cuts": 138,
+      "predictions": 1242,
+      "both_target_observations": 2484,
+      "words_including_copies": 90666,
+      "half_words": 2484,
+      "original_tolerance_prediction_refusals": 0,
+      "maximum_errors": {
+        "native": "48017/23674880",
+        "normalizer": "1/524288",
+        "probability": "6147621/60607692800",
+        "proper_mass_division": "11283163/175921852055552",
+        "gradient": "16969073/11083448320"
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 10680,
+      "half_words": 240,
+      "original_tolerance_prediction_refusals": 20,
+      "maximum_errors": {
+        "native": "44766467/2488139776",
+        "normalizer": "1/131072",
+        "probability": "179084851/1194307092480",
+        "proper_mass_division": "12453437/263882799054848",
+        "gradient": "1262855899/781854965760"
+      }
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "reachable_cuts": 138,
+      "predictions": 1242,
+      "both_target_observations": 2484,
+      "words_including_copies": 110538,
+      "half_words": 2484,
+      "original_tolerance_prediction_refusals": 162,
+      "maximum_errors": {
+        "native": "44766467/2488139776",
+        "normalizer": "1/131072",
+        "probability": "179084851/1194307092480",
+        "proper_mass_division": "12453437/263882799054848",
+        "gradient": "1262855899/781854965760"
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/3"
+      ],
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 6600,
+      "half_words": 180,
+      "original_tolerance_prediction_refusals": 0,
+      "maximum_errors": {
+        "native": "1/12582912",
+        "normalizer": "1/8388608",
+        "probability": "3/83886080",
+        "proper_mass_division": "2330169/105553120460800",
+        "gradient": "1/15728640"
+      }
+    }
+  ],
+  "native": {
+    "complete_literal_native_triples": 80,
+    "profile_attachment_step": 4,
+    "profile_attachment_cursor": 2,
+    "final_cursor": 78,
+    "final_steps": 80,
+    "all_slots_and_caches_checked": true,
+    "maximum_native_activation_error": "434733971534827/162567445550202880"
+  },
+  "witnesses": {
+    "scale_and_historical_cut": [
+      {
+        "case": "S120-two-event-native-refusal",
+        "native_error": "65863667/4117889024",
+        "normalizer_error": "1/131072",
+        "probability_error": "140494495/1054179590144",
+        "status": "UNRESOLVED"
+      },
+      {
+        "case": "old-A1-cut-new-schedule",
+        "native_error": "110380751013396335024919227049495681/5646125214623384337266566652247070474240",
+        "normalizer_error": "1/2097152",
+        "probability_error": "893815137315970775447130928693494803/903380034339741493962650664359531275878400",
+        "status": "PASS"
+      }
+    ],
+    "temporary_zero_excess_restores_half_forecast": true,
+    "d_zero_does_not_erase_T_or_rate_posterior": true,
+    "reversal_scope": "two reachable exact/RNE snapshots, not 2000 device events"
+  },
+  "adversaries": {
+    "plan_field_refusals": 13,
+    "common_root_scaling_refused": true,
+    "prediction_word_refusals": 7,
+    "gradient_word_refusals": 5,
+    "operation_word_refusals": 22,
+    "trace_length_refusals": 2,
+    "extra_field_and_boolean_word_refusals": 2,
+    "actual_target_binding_refusals": 2,
+    "output_extent_refusals": 1,
+    "foreign_cuda_registration_refusals": 2,
+    "narrower_integer_allowance_preserves_the_same_RNE_words": 4096
+  }
+}

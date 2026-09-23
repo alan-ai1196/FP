@@ -8543,3 +8543,53 @@ unimplemented, and CUDA refuses before executor creation. No Torch execution,
 terminal GPU rerun or new CERTIFIED_COMPLETE class is involved. The remaining
 frontier is actual joint AMP conformance, paid physical phase/failure lifetime,
 fresh paired evidence and install reachability within the same owner.
+
+## 253. Register independent joint-excess AMP phases and actual fresh/install tests (2026-09-23)
+
+Implement the proved two-excess half/single schedule inside the existing
+private CUDA owner. The physical state retains model, complete signed counts,
+diagonal evidence, total optimizer steps, ordinary cursor and pending event;
+the resident gradient contains every ambient derivative class. Initialization
+derives Gamma independently and count commits implement the original unit
+simplex U. GPU kernels compute readouts and gradients; integer elimination
+and count transitions remain paid host operations.
+
+Bind the physical prediction to its own complete predecessor and actual
+source row. Independently reconstruct its integer plan after execution,
+rejecting even common root rescaling. Read every current-arena primitive and
+endpoint word, then compare exact RNE and all native cache/gradient classes.
+Use the smaller reference/integer bit allowance in both scalar execution and
+checking; the 4096/32768 case exposed an implementation mismatch before any
+device job. The public API, fixed trusted kernel and serializer boundary
+remain unchanged. No external plan/result proposal or new authority is added.
+
+Prove the whole-domain physical mass box [1,S-1] and sum/normalizer cap
+2(S-1) by monotone rounding. Use proper stored-mass probabilities for the
+existing physical fresh process. Reuse the paid pinned integer scratch and
+existing identity transport; extend only its closed resident-state dispatch.
+No new root, prefix or arena coordinate is needed. Whole-host admission and
+retained evidence remain separate from table/arena extents.
+
+The exact CPU gate passes 366 reachable cuts, 2,844 predictions, 5,688
+both-target observations, 227,244 output words including copies and 5,628
+half words against an independent integer-tape/RNE implementation. All S=20
+and S=3 cases pass the original tolerances; 182 S=120 cut/query cases correctly
+refuse. Eighty full native triples preserve profile attachment and continued
+cycle/diagonal/reversal updates. The old A1 count cut passes this distinct
+schedule; the old dense GPU verdicts do not change. Two 1000/1000 snapshots
+recover a half forecast after a transient zero excess without deleting rate
+evidence. Plan, word, trace, actual-target, extent and foreign-registration
+attacks pass, as do complete joint-reference and old known-rate AMP regates.
+
+Preregister seventeen fresh Windows jobs under 4 GiB and 900 seconds each,
+with original 1/100 state and 1/1000 probability tolerances. Cases cover
+profiles with narrower integer precision; fresh paired evidence, actual
+installation and continuation; n64 empty-policy closure; the historical A1
+count cut under this new realization; actual reversal; the expected S=120
+refusal; and output/target/ownership/workspace/publication faults. The reader
+checks retained ingress, complete phase transitions, every frame/padding byte,
+independent native states and every actual operation word. Stop on the first
+unexpected failure and retain every outcome without silent retry. At this
+registration commit no new Torch execution has run; device conformance and
+install reachability remain unverified. No Foundation, ERC-1, model superiority
+or CERTIFIED_COMPLETE claim changes.

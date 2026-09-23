@@ -30,6 +30,8 @@ from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
 from .phase_encoding import ENCODING_ID as BINARY_PHASE_ENCODING_ID
 from .phase_deflate import ENCODING_ID as DEFLATE_PHASE_ENCODING_ID
 from .histogram_decoder import HistogramBudget
+from .joint_relation import JointRelation
+from .joint_partition_decoder import JointPartitionAllowance
 
 LEGACY_PHASE_ENCODING_ID = 'typed-reference-json-v4'
 
@@ -138,6 +140,29 @@ class ProjectedIndexedCudaPrefixContract(IndexedCudaPrefixContract):
         _,work,_ = super()._arithmetic_ids()
         return (projected_amp.BACKEND_ID,work,
                 projected_amp.ORDERED_FORWARD_ID if self.order_search else projected_amp.FORWARD_ID)
+
+
+@dataclass(frozen=True, kw_only=True)
+class JointCudaPrefixContract(CudaPrefixContract):
+    schema: JointRelation
+    partitions: JointPartitionAllowance
+    forward_id: str = field(default='', init=False)
+
+    def _arithmetic_ids(self):
+        from .joint_execution import closed
+        from . import joint_amp
+        closed(self.schema, JointRelation)
+        closed(self.partitions, JointPartitionAllowance)
+        self.schema.__post_init__()
+        self.partitions.__post_init__()
+        if self.likelihood_encoding is not None:
+            raise ContractError('joint indexed lowering cannot substitute a dense likelihood representation')
+        return joint_amp.BACKEND_ID, joint_amp.WORK_MODEL, joint_amp.FORWARD_ID
+
+    def __post_init__(self):
+        super().__post_init__()
+        from .joint_execution import closed
+        closed(self, JointCudaPrefixContract)
 
 
 @dataclass(frozen=True)
@@ -263,7 +288,7 @@ def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, 
 
 class _CudaPrefix:
     def __init__(self, contract):
-        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract):
+        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract):
             raise ContractError('registered private CUDA prefix contract required')
         contract.__post_init__()
         import torch
@@ -282,15 +307,24 @@ class _CudaPrefix:
 
     @property
     def indexed(self):
-        return type(self.contract) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract)
+        return type(self.contract) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract)
+
+    @property
+    def joint(self):
+        return type(self.contract) is JointCudaPrefixContract
 
     def relation_work(self, program, rules):
+        if self.joint:
+            return 512*(program.n*(program.n-1)//2+2*program.n+8*len(program.rates)+32)
         if self.indexed:
             return 512*(program.n*(program.n-1)//2+2*program.n+16)
         from .float64_bridge import relation_work
         return relation_work(program, rules)
 
     def forward_work(self, program, rules):
+        if self.joint:
+            from .joint_amp import forward_work
+            return forward_work(program, self.contract.partitions, self.contract.phase_output_cells)
         if self.indexed:
             if self.contract.histogram is not None:
                 from .histogram_amp import implementation
@@ -316,14 +350,18 @@ class _CudaPrefix:
     def check_queue(self, rules, raw, *, bit_limit):
         if self.indexed:
             from .indexed_amp import IndexedAmpState
-            if type(raw) is not IndexedAmpState or rules.states:
+            from .joint_amp import JointAmpState
+            if type(raw) is not (JointAmpState if self.joint else IndexedAmpState) or rules.states:
                 raise ContractError('indexed CUDA lost its declared empty delayed interface')
+            raw.__post_init__()
             return
         from .cuda_range import check_queue
         return check_queue(rules, raw[1], bit_limit=bit_limit)
 
     def stored_probability(self, raw, target, *, bit_limit):
-        if self.indexed:
+        if self.joint:
+            from .joint_amp import stored_probability
+        elif self.indexed:
             from .indexed_amp import stored_probability
         else:
             from .cuda_range import stored_probability
@@ -337,6 +375,9 @@ class _CudaPrefix:
 
     def check_state(self, reference, raw, *, bit_limit):
         tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
+        if self.joint:
+            from .joint_amp import check_state as joint_check
+            return joint_check(reference, raw, tolerance, bit_limit=bit_limit)
         if self.indexed:
             from .indexed_amp import check_state as indexed_check
             return indexed_check(reference, raw, tolerance, bit_limit=bit_limit)
@@ -370,7 +411,16 @@ class _CudaPrefix:
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
                 normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None,
-                histogram_workspace=None, likelihood_workspace=None):
+                histogram_workspace=None, likelihood_workspace=None, joint_workspace=None):
+        if self.joint:
+            if order_search is not None or histogram_workspace is not None or likelihood_workspace is not None:
+                raise ContractError('joint CUDA requires only its registered fixed integer workspace')
+            from .joint_cuda_prefix import execute
+            return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
+                bit_limit=bit_limit, ordinary_cursor=ordinary_cursor, origin=origin,
+                observation_id=observation_id, sources=sources, reference_prediction=reference_prediction,
+                target=target, normalizer_cap=normalizer_cap, activation_cap=activation_cap,
+                source_domain=source_domain, readout_buffer=readout_buffer, workspace=joint_workspace)
         if self.indexed:
             from .indexed_cuda_prefix import execute
             return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
