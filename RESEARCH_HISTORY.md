@@ -7779,3 +7779,35 @@ can help in expectation; the two exposed seeds are not a population test.
 The CPU audit checks189 probability cases, exact rational identities,
 70-digit Decimal formulas and all three owned selection paths. The proof,
 reproducer and3306-byte artifact change no model input or Foundation rule.
+
+## 235. Remove the histogram from the fixed-base9 readout construction (2026-09-23)
+
+Attack whether carry-free coefficient extraction was needed at all. The
+native current query asks for P_0(9),P_1(9), while complete counts preserve
+every legal future query and update. Positive integer elimination can
+compute those two values directly with the same width and operation plan.
+Assignment provenance bounds every table integer by2^(n-1)9^H, giving
+n+4H bits instead of the packed coefficient envelope n(H+1). The order
+n+H is necessary for worst-case explicit partition integers, not for all
+possible symbolic or approximate realizations.
+
+Normalize each positive partition by its own bit length, quantize its
+mantissa through binary32/binary16, widen, and restore a common binary
+scale in single precision. The exact scaled total is at least1/2; the
+same native readout and gradient argument gives uniform probability and
+gradient upper bounds0.000195701 and0.001753567. There are29 prediction
+output words, including copies. All inference before that readout is
+explicit exact host integer work, not GPU sum-product or a free reference
+answer. A new physical identity and independent owned construction are
+required; no Foundation or ERC-1 action is added.
+
+The passive audit checks759 states/11919 ordered queries against literal
+assignment sums, the sixteen preceding larger/range fixtures and two
+n256 count+/-128 witnesses. Those witnesses use660 actual integer bits
+under envelope768 while the old packed envelope33024 honestly refuses
+the unchanged32768-bit cap. Dense n16 retains its join refusal. In total,
+11937 predictions/23874 target observations check644515 output words and
+20869 half casts. The4695-byte artifact and reproducer establish a
+conditional numerical construction, not an owned Runtime or device gate.
+Research proceeds in an isolated worktree of the same repository while
+the six n64 jobs keep their fixed45b40b4 inputs; integrate after they end.

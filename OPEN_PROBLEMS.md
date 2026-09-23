@@ -1,5 +1,16 @@
 # FP Open Problems
 
+The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
+exposes a simpler realization to test: the current fixed-base9 response
+does not need all energy coefficients. Its n+4H-bit construction and29-word
+uniform mixed-precision readout pass passive native/RNE checks. The open
+question is faithful owned execution with paid host integer inference,
+independent physical construction, actual arithmetic, complete continuations
+and measured whole resources. Do not supply reference partitions through
+a helper, borrow the histogram gate, or infer throughput from floating
+word counts. Keep the registered n64 matrix intact before integrating this
+new implementation work.
+
 The immediate larger-model question is now
 [registered at n64](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md):
 two376-event band-distributed tapes, existing global/projected AMP and

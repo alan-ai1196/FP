@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The [direct integer partition prototype](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
+has a uniform full-coordinate readout proof and passes11937 passive RNE
+forecasts/23874 target observations. It replaces transient coefficient
+histograms with two directly computed base9 partitions: n+4H integer bits,
+the same elimination geometry and29 floating prediction outputs. Exact
+integer inference remains host work; only quantization/readout uses half
+and single precision. It has no production registration, owned resource
+debit or actual device evidence yet. The running n64 matrix retains its
+existing implementations and fixed source.
+
 The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md)
 is registered, not yet executed. Two376-event tapes retain the full native
 learner and compare all three physical realizations with an independent exact

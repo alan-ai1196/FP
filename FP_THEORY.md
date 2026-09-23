@@ -291,6 +291,18 @@ pair ablation0.58227033; fixed tapes prove no population statement. These
 scoped consequences neither change persistence's registered null nor add
 a Foundation action or complete certificate.
 
+The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
+removes an unnecessary transient histogram for the fixed-base9 response.
+Positive elimination directly computes the same two partition integers
+with at most n+4H bits and unchanged table geometry. Separate half
+mantissas and single scaling/readout need29 prediction outputs and give
+uniform probability/gradient upper bounds0.000195701/0.001753567. All
+11937 passive native/RNE forecasts and23874 target updates pass. In this
+distinct proposed realization, inference is paid exact host integer work;
+mixed precision performs quantization/readout. No reference cache is an
+admitted input, no count is discarded, and no owned Runtime/CUDA result
+is inferred. Foundation/ERC-1 remain fixed.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

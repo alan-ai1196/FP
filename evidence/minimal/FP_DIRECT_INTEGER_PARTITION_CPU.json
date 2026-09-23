@@ -1,0 +1,187 @@
+{
+  "status": "PASS_DIRECT_INTEGER_PARTITION_CPU",
+  "base_commit": "45b40b463f40644ff7a5c06b67200677e8c7d9ac",
+  "scope": "passive exact integer construction and RNE full-coordinate arithmetic; no Runtime admission, owned memory or actual CUDA",
+  "construction": "positive base9 variable elimination from complete native counts; half mantissas/single scaling and readout",
+  "states": 759,
+  "small_ordered_queries": 11919,
+  "predictions": 11937,
+  "both_target_observations": 23874,
+  "floating_words_including_copies": 644515,
+  "half_words": 20869,
+  "uniform_bounds_outward": {
+    "native": "0.001955809",
+    "normalizer": "0.000004054",
+    "probability": "0.000195701",
+    "proper_mass_division": "0.000000120",
+    "gradient": "0.001753567"
+  },
+  "maximum_errors_exact": {
+    "native": "1040097/1719664640",
+    "normalizer": "1/1048576",
+    "probability": "2079989/34393292800",
+    "proper_mass_division": "11723715/175921852055552",
+    "gradient": "2015441/2773483520"
+  },
+  "larger_previous_fixtures": [
+    {
+      "case": "prior-offdiagonal",
+      "n": 3,
+      "span": 0,
+      "integer_envelope": 3,
+      "maximum_integer_bits": 3,
+      "floating_outputs": 29
+    },
+    {
+      "case": "prior-diagonal",
+      "n": 3,
+      "span": 0,
+      "integer_envelope": 3,
+      "maximum_integer_bits": 3,
+      "floating_outputs": 25
+    },
+    {
+      "case": "subnormal-46",
+      "n": 2,
+      "span": 46,
+      "integer_envelope": 186,
+      "maximum_integer_bits": 146,
+      "floating_outputs": 29
+    },
+    {
+      "case": "subnormal--46",
+      "n": 2,
+      "span": 46,
+      "integer_envelope": 186,
+      "maximum_integer_bits": 146,
+      "floating_outputs": 29
+    },
+    {
+      "case": "subnormal-47",
+      "n": 2,
+      "span": 47,
+      "integer_envelope": 190,
+      "maximum_integer_bits": 149,
+      "floating_outputs": 29
+    },
+    {
+      "case": "subnormal--47",
+      "n": 2,
+      "span": 47,
+      "integer_envelope": 190,
+      "maximum_integer_bits": 149,
+      "floating_outputs": 29
+    },
+    {
+      "case": "subnormal-48",
+      "n": 2,
+      "span": 48,
+      "integer_envelope": 194,
+      "maximum_integer_bits": 153,
+      "floating_outputs": 29
+    },
+    {
+      "case": "subnormal--48",
+      "n": 2,
+      "span": 48,
+      "integer_envelope": 194,
+      "maximum_integer_bits": 153,
+      "floating_outputs": 29
+    },
+    {
+      "case": "range-396",
+      "n": 2,
+      "span": 396,
+      "integer_envelope": 1586,
+      "maximum_integer_bits": 1256,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n32-band",
+      "n": 32,
+      "span": 76,
+      "integer_envelope": 336,
+      "maximum_integer_bits": 241,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n64-band",
+      "n": 64,
+      "span": 156,
+      "integer_envelope": 688,
+      "maximum_integer_bits": 495,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n128-path",
+      "n": 128,
+      "span": 127,
+      "integer_envelope": 636,
+      "maximum_integer_bits": 422,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n256-empty",
+      "n": 256,
+      "span": 0,
+      "integer_envelope": 256,
+      "maximum_integer_bits": 256,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n256-empty-diagonal",
+      "n": 256,
+      "span": 0,
+      "integer_envelope": 256,
+      "maximum_integer_bits": 256,
+      "floating_outputs": 25
+    },
+    {
+      "case": "n256-positive80",
+      "n": 256,
+      "span": 80,
+      "integer_envelope": 576,
+      "maximum_integer_bits": 508,
+      "floating_outputs": 29
+    },
+    {
+      "case": "n256-negative80",
+      "n": 256,
+      "span": 80,
+      "integer_envelope": 576,
+      "maximum_integer_bits": 508,
+      "floating_outputs": 29
+    }
+  ],
+  "bit_envelope_separation": [
+    {
+      "n": 256,
+      "single_count": -128,
+      "query": [
+        0,
+        1
+      ],
+      "direct_integer_envelope": 768,
+      "maximum_integer_bits": 660,
+      "packed_integer_envelope": 33024,
+      "same_integer_limit": 32768,
+      "old_carry_free_status": "UNRESOLVED",
+      "new_passive_outputs": 29
+    },
+    {
+      "n": 256,
+      "single_count": 128,
+      "query": [
+        0,
+        1
+      ],
+      "direct_integer_envelope": 768,
+      "maximum_integer_bits": 660,
+      "packed_integer_envelope": 33024,
+      "same_integer_limit": 32768,
+      "old_carry_free_status": "UNRESOLVED",
+      "new_passive_outputs": 29
+    }
+  ],
+  "dense_n16_unchanged_width_refusal": "UNRESOLVED"
+}
