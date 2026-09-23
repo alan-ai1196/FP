@@ -355,10 +355,10 @@ def admission_boundary():
     before = validate_residency(runtime)
     result = runtime.construct_candidate(joint.JointRelation(2, *DEFAULT))
     after = validate_residency(runtime)
-    assert result.status == 'REJECTED_ADMISSIBILITY'
+    assert result.status == 'UNRESOLVED'
     assert before.candidates == after.candidates and before.programs == after.programs
-    return {'runtime_status': result.status, 'registered_production_paths_changed': False,
-            'no_indexed_joint_admission_or_constructor_certificate': True}
+    return {'runtime_status': result.status, 'literal_machine_has_no_funded_joint_translation': True,
+            'no_candidate_or_constructor_certificate_from_passive_component': True}
 
 
 SECTIONS = {'indexing': indexing, 'enumeration': enumeration, 'orders': order_audit, 'zero_parts': zero_parts,
@@ -367,7 +367,7 @@ SECTIONS = {'indexing': indexing, 'enumeration': enumeration, 'orders': order_au
 
 def run(section=None):
     report = {'status': 'PASS_JOINT_PARTITION_STORAGE_COMPONENT', 'complete_audit': section is None,
-              'scope': 'Exact literal indexing, count transitions and caller-owned integer extent. No Runtime registration, device execution or completeness certificate.'}
+              'scope': 'Exact literal indexing, count transitions and caller-owned integer extent. Separate owner registration is audited by audit_joint_runtime.py; this component result grants no device or completeness authority.'}
     for key, function in SECTIONS.items():
         if section in (None, key):
             report[key] = function()

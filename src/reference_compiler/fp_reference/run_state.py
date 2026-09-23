@@ -30,6 +30,9 @@ class ReferenceRunManifest:
         from .histogram_decoder import MODEL_ID
         from .packed_histogram_decoder import MODEL_ID as PACKED_MODEL_ID
         from .integer_partition_decoder import MODEL_ID as DIRECT_MODEL_ID
+        from .joint_execution import MODEL_ID as JOINT_MODEL_ID, ARITHMETIC_ID as JOINT_ARITHMETIC
+        if self.machine_id == JOINT_MODEL_ID:
+            object.__setattr__(self, 'reference_arithmetic', JOINT_ARITHMETIC)
         if self.machine_id == DIRECT_MODEL_ID:
             object.__setattr__(self, 'reference_arithmetic',
                                'indexed-literal-count-direct-partition-reference-v1')
@@ -74,6 +77,7 @@ class PredictionDiagnostics:
 def prediction_diagnostics(predictions, path, bit_limit):
     """Paid by Runtime before scanning; no reevaluation or authority here."""
     from .indexed_execution import IndexedEvaluation
+    from .joint_execution import JointEvaluation
     count = numerator = denominator = 0
     amin = amax = mmin = tmax = None
 
@@ -91,7 +95,7 @@ def prediction_diagnostics(predictions, path, bit_limit):
         decode = (lambda value: value.exact) if path in ('cpu-binary64', 'cuda-half-single') else (lambda value: value)
         for label in ('values', 'masses', 'probabilities', 'normalizer'):
             values = ((prediction.normalizer,) if label == 'normalizer' else
-                      prediction.activation_basis() if label == 'values' and type(prediction) is IndexedEvaluation else
+                      prediction.activation_basis() if label == 'values' and type(prediction) in (IndexedEvaluation, JointEvaluation) else
                       getattr(prediction, label))
             for raw in values:
                 value = decode(raw)

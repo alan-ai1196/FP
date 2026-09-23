@@ -1,5 +1,18 @@
 # FP Implementation Status
 
+The [owned joint reference path](theory/proofs/OWNED_JOINT_REFERENCE.md) adds
+`joint_execution.py` and registers the complete joint initializer, learner,
+state and range relation inside ReferenceCompilerRuntime. Its actual table
+extent is prepaid, retained and pinned by the existing owner. The complete
+CPU audit passes 1,032 exhaustive native triples, four profile triples,
+fourteen ordinary profile-lineage triples, eight n64 events and a two-root
+fresh-reference comparison. The n64 root peaks at 3,261,728 packed bytes;
+29,841 bytes are its integer scratch. Resource refusals, failed replay and
+multi-lineage atomic failure preserve the required history. Old literal
+ordinary-event and known-rate indexed regressions pass. No new root field,
+semantic action, constructor decision class, actual joint AMP or installation
+authority is introduced. Joint floating and class-search registrations refuse.
+
 The [joint native storage component](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
 adds `joint_relation.py` and `joint_partition_decoder.py`. Six complete literal
 G/Gamma/U comparisons, 21,604 exact queries, 64,812 packed-root reads and
@@ -8,9 +21,10 @@ independent n32/n64 cyclic and n256 forest oracles. The shared extent holds
 live tables, two reusable rate roots and three joint roots; all rates' positive
 integer operations are preflighted before writes. Typed complete-input reconstruction rejects
 normalized-equivalent forged parts as well as clocks, order and model swaps.
-These modules are unregistered components: an explicit Runtime admission
-test rejects the indexed joint description. Whole-owner and CUDA integration
-remain open; no existing registered execution path changes.
+These modules remain passive components; their separate owned reference
+registration is the result above. The updated component audit verifies that
+a literal machine cannot translate/admit this indexed type from its passive
+plan. Actual CUDA integration and installation remain open.
 
 The [joint-excess prototype](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 reuses the existing positive elimination geometry for each finite noise rate,

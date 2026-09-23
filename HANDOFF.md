@@ -1,5 +1,20 @@
 # FP Handoff
 
+**The joint-noise learner now has an owned exact Reference Runtime path.**
+The [refinement and audit](theory/proofs/OWNED_JOINT_REFERENCE.md) bind its
+complete native model/Gamma/U and categorical domain inside the existing
+owner. All 516 small two-event histories pass 1,032 full native triples;
+profile replay and actual fresh reference statistics match independent
+literal Runtime controls. An eight-event n64 run represents 2^64 hypotheses
+with 29,841 actual table bytes and 3,261,728 peak packed bytes. These are
+distinct from whole-host memory. Allocation, work, precision, changing-query
+width, canceled-history and replay refusals preserve history and paid scratch;
+a second-lineage failure publishes no successor. Empty-policy reference
+closure has zero constructor decisions. The active boundary is now the
+separate owned joint AMP schedule, complete phase/resource evidence, fresh
+paired persistence and install reachability. Joint CUDA registration currently
+refuses before executor creation. No terminal GPU result changes.
+
 **Joint native indexing and contiguous integer storage now pass their exact
 component audit.** The [derivation](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
 and modules `joint_relation.py` / `joint_partition_decoder.py` describe the
@@ -9,10 +24,11 @@ reuse one live-table extent across rates. All 21,604 small partition queries,
 The n64 three-rate cyclic query uses 78,584 table bytes over 3*2^63 worlds;
 this excludes the rest of the host/Runtime. Step-based preflight preserves
 the cost of canceled evidence. Seventeen plan mutations and complete-input,
-resource and failure-lifetime attacks pass. Runtime still rejects this new
-indexed type: the remaining work is owner registration, paid verification
-and retention, complete actual AMP phases, lineage, fresh persistence and
-installation. No production registration or terminal GPU result changes.
+resource and failure-lifetime attacks pass. The component at e2802c8 was
+unregistered; the owned reference result above now closes that boundary for
+exact execution, profiles and reference freshness. The component's current
+cross-machine test returns UNRESOLVED for a literal machine without a funded
+joint translation. Actual joint AMP and installation remain separate.
 
 **Joint-noise decoding now has a complete numerical basis and an all-history
 bound for the S=20 schedule.** The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
@@ -25,9 +41,9 @@ conditional on exact construction and arithmetic conformance. The two-event
 S=120 witness still violates 1/100 mass accuracy; scale cannot be omitted.
 The exact audit covers 21,604 partition queries, 597 full native triples,
 3,608 rounded predictions/7,216 observations and independent n32/n64 cyclic
-oracles. No production or GPU job changes. The next obligation is an owned
-implementation of this original joint learner, with independently bound
-plans, full resource/failure lifetime and actual device/continuation evidence.
+oracles. This numerical component changes no GPU job. The owned reference
+path above implements the exact learner and resource/failure lifetime; actual
+device input binding, conformance and continuation remain to be established.
 Its encoded parameters and single-precision heads are a different physical
 realization from the terminal dense rational A1/A2 jobs; keep both verdicts.
 

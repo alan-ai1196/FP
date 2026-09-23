@@ -23,6 +23,13 @@ from . import histogram_decoder as histogram
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
 from .indexed_execution import _prepare_owned_prediction, _owned_prediction_work, _execute_owned_prediction
+from .joint_relation import JointRelation
+from . import joint_partition_decoder as joint_decoder
+from .joint_execution import (JointInitializer, JointLearner, JointState, JointEvaluation,
+    JointRangeBound, JointReferenceMachine)
+from .joint_execution import (_prepare_owned_prediction as _prepare_joint_prediction,
+    _prediction_execution_work as _joint_prediction_work,
+    _execute_owned_prediction as _execute_joint_prediction)
 from . import query_order
 from .encoding import packed_size, write_packed, fragments, bounded_packed_size
 from . import phase_deflate as phase_codec
@@ -75,16 +82,24 @@ class ConstructionContract:
     limits: ResourceLimits
     work_roles: Mapping[str, str]
     graph_limits: Mapping[str, int]
-    initializer_pattern: tuple[F, ...] | IndexedInitializer
+    initializer_pattern: tuple[F, ...] | IndexedInitializer | JointInitializer
     normalizer_cap: F
     activation_cap: F
     reference_integer_bits: int
     source_domain: tuple[tuple[F, ...], ...] | CategoricalPairDomain | None = None
     indexed_order_search: bool = False
-    indexed_histogram: histogram.HistogramBudget | None = None
+    # Historical field name: it already includes direct integer partitions.
+    # Its exact type binds a closed decoder implementation, never a callback.
+    indexed_histogram: histogram.HistogramBudget | joint_decoder.JointPartitionAllowance | None = None
 
     def __post_init__(self):
-        if self.indexed_histogram is not None:
+        joint = type(self.initializer_pattern) is JointInitializer
+        if joint:
+            self.initializer_pattern.__post_init__()
+            if type(self.indexed_histogram) is not joint_decoder.JointPartitionAllowance or self.indexed_order_search:
+                raise ContractError('joint Gamma requires its complete fixed integer-decoder allowance')
+            joint_decoder.construction_work(self.initializer_pattern.schema, self.indexed_histogram)
+        elif self.indexed_histogram is not None:
             if (type(self.indexed_histogram) not in histogram.ALLOWANCES
                     or type(self.initializer_pattern) is not IndexedInitializer or self.indexed_order_search):
                 raise ContractError('histogram realization requires its fixed indexed family and traversal')
@@ -109,13 +124,15 @@ class ConstructionContract:
             raise ContractError('declare every separate native graph budget')
         object.__setattr__(self, 'graph_limits', freeze_data({key: natural(value, key) for key, value in self.graph_limits.items()}))
         object.__setattr__(self, 'work_roles', freeze_data(self.work_roles))
-        if type(self.initializer_pattern) is IndexedInitializer:
+        if type(self.initializer_pattern) in (IndexedInitializer, JointInitializer):
             pattern = self.initializer_pattern
             pattern.__post_init__()
-            IndexedRelation(pattern.n).validate(self.semantics)
+            (pattern.schema if joint else IndexedRelation(pattern.n)).validate(self.semantics)
             if type(self.source_domain) is not CategoricalPairDomain or self.source_domain != CategoricalPairDomain(pattern.n):
                 raise ContractError('indexed Gamma requires the complete matching categorical domain')
             self.source_domain.__post_init__()
+            if joint and set(vars(self.source_domain)) != {'n'}:
+                raise ContractError('joint registration requires the complete closed categorical domain')
         else:
             pattern = tuple(rational(v, 'registered initializer') for v in self.initializer_pattern)
             if not pattern:
@@ -139,7 +156,7 @@ class ConstructionContract:
 class OnlineContract:
     """Registered revealed-data continuation, not the full ERC-1 run manifest."""
     data: DataContract
-    learner: LearnerSpec | IndexedLearner
+    learner: LearnerSpec | IndexedLearner | JointLearner
     queries: tuple[QuerySpec, ...] = ()
     profiles: tuple[ProfileSpec, ...] = ()
     searches: tuple[ReferenceSearchSpec, ...] = ()
@@ -148,7 +165,7 @@ class OnlineContract:
     cpu_install: CpuInstallContract | None = None
 
     def __post_init__(self):
-        if type(self.data) is not DataContract or type(self.learner) not in (LearnerSpec, IndexedLearner):
+        if type(self.data) is not DataContract or type(self.learner) not in (LearnerSpec, IndexedLearner, JointLearner):
             raise ContractError('immutable data and learner declarations required')
         queries = tuple(self.queries)
         if any(type(q) is not QuerySpec for q in queries) or len({q.query_id for q in queries}) != len(queries):
@@ -174,8 +191,17 @@ class OnlineContract:
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
         indexed = type(construction.initializer_pattern) is IndexedInitializer
+        joint = type(construction.initializer_pattern) is JointInitializer
         if indexed != (type(self.learner) is IndexedLearner):
             raise ContractError('initializer and learner require the same registered realization')
+        if joint != (type(self.learner) is JointLearner):
+            raise ContractError('joint Gamma and U require the same complete registered representation')
+        if joint:
+            self.learner.__post_init__()
+            if self.learner.schema != construction.initializer_pattern.schema:
+                raise ContractError('joint Gamma and U differ in their ordered model or prior')
+            if self.float64 is not None or self.cpu_install is not None or self.searches:
+                raise ContractError('joint indexed execution has no registered floating install or native-class search yet')
         if indexed:
             self.learner.__post_init__()
             if self.learner.n != construction.initializer_pattern.n:
@@ -211,8 +237,8 @@ class ConstructedState:
     physical_owner: str
     program_id: str
     birth_cursor: int
-    learner: ReferenceLearnerState | IndexedState
-    range_evidence: tuple[RangeBound | IndexedRangeBound, ...]
+    learner: ReferenceLearnerState | IndexedState | JointState
+    range_evidence: tuple[RangeBound | IndexedRangeBound | JointRangeBound, ...]
     range_safe: bool
     object_ids: tuple[str, ...]
     initializer_id: str
@@ -303,7 +329,7 @@ class RuntimeSnapshot:
     cursor: int
     deployed_id: str
     next_candidate: int
-    programs: tuple[tuple[str, Program | IndexedRelation], ...]
+    programs: tuple[tuple[str, Program | IndexedRelation | JointRelation], ...]
     candidates: tuple[ConstructedState, ...]
     resources: Mapping
     buffers: tuple[tuple[str, bytes], ...]
@@ -384,8 +410,11 @@ class ReferenceCompilerRuntime:
                         or not {REFERENCE_PATH, CUDA_PATH}.issubset(r.score_path for r in online.persistence.rules)):
                     raise ContractError('CUDA install requires serialized CPython, owned candidate starts and both fresh score paths')
         indexed = type(contract.initializer_pattern) is IndexedInitializer
-        if indexed and online is None:
+        joint = type(contract.initializer_pattern) is JointInitializer
+        if (indexed or joint) and online is None:
             raise ContractError('indexed realization requires its registered reference learner')
+        if joint and cuda is not None:
+            raise ContractError('joint indexed CUDA phases have not been registered; a passive bridge is not authority')
         if cuda is not None and (indexed != (type(cuda) in (IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract))
                 or indexed and cuda.n != contract.initializer_pattern.n):
             raise ContractError('reference and CUDA registrations require the same complete native representation')
@@ -395,7 +424,8 @@ class ReferenceCompilerRuntime:
             raise ContractError('reference and AMP histogram registrations must agree')
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
             contract.indexed_histogram or DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits)))
-            if indexed else ReferenceMachineModel())
+            if indexed else JointReferenceMachine(contract.initializer_pattern.schema, contract.indexed_histogram)
+            if joint else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
@@ -471,7 +501,16 @@ class ReferenceCompilerRuntime:
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
-        if contract.indexed_histogram is not None:
+        if joint:
+            size = joint_decoder.workspace_bytes(contract.initializer_pattern.schema, contract.indexed_histogram)
+            self._event_router.charge_work('information', {'work': size}, 'bind-joint-partition-storage')
+            storage_id = f'{self._runtime_id}:joint-partition-storage'
+            self._ledger.allocate(self._data_owner, (ObjectSpec(storage_id, joint_decoder.WORKSPACE_KIND,
+                {'reference_payload_bytes': size, 'physical_objects': 1}, self._chi),))
+            # Keep an owner's export for the entire root lifetime. Releasing a
+            # borrowed view, or retaining a failed frame, cannot unpin/resize it.
+            self._buffers[storage_id] = memoryview(bytearray(size))
+        elif contract.indexed_histogram is not None:
             histogram_bytes = histogram.implementation(contract.indexed_histogram).workspace_bytes(
                 contract.indexed_histogram, n=contract.initializer_pattern.n)
             self._event_router.charge_work('information', {'work': histogram_bytes}, 'bind-histogram-storage')
@@ -752,7 +791,7 @@ class ReferenceCompilerRuntime:
         self._buffers = {key: value for key, value in self._buffers.items() if key in live}
 
     def _range(self, program: Program, theta, label: str) -> tuple[RangeBound, ...]:
-        if type(self._machine) is IndexedReferenceMachine:
+        if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine):
             self._router.charge_work('range_audit', {'work': self._machine.state_work(program)+2*program.n+1},
                                      f'{label}:indexed-all-categorical-range')
             return (self._machine.range_bound(program, self._contract.semantics, theta, self._contract.source_domain),)
@@ -1128,7 +1167,7 @@ class ReferenceCompilerRuntime:
         return reference if floating is None else (reference, floating)
 
     def _reference_initial_state(self, program, rules, theta, cursor, *, spec, bit_limit):
-        if type(self._machine) is IndexedReferenceMachine:
+        if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine):
             return self._machine.initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
         return initial_state(program, rules, theta, cursor, spec=spec, bit_limit=bit_limit)
 
@@ -1153,6 +1192,16 @@ class ReferenceCompilerRuntime:
         return choose
 
     def _reference_predict(self, program, rules, state, sources, *, bit_limit, execution_debit, search_debit):
+        if type(self._machine) is JointReferenceMachine:
+            self._machine.require_program(program)
+            # Construction work was debited by the actual ordinary/profile
+            # path before entering this kernel. No public planner supplies a
+            # state, partition, clock or normalized reference forecast.
+            with memoryview(self._buffers[f'{self._runtime_id}:joint-partition-storage']) as borrowed:
+                plan = _prepare_joint_prediction(program, rules, state, sources,
+                    self._machine.budget, borrowed, bit_limit=bit_limit)
+            execution_debit(_joint_prediction_work(plan))
+            return _execute_joint_prediction(plan, program)
         if type(self._machine) is IndexedReferenceMachine:
             self._machine.require_program(program)
             plan = _prepare_owned_prediction(program, rules, state, sources,
@@ -1164,17 +1213,17 @@ class ReferenceCompilerRuntime:
         return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)
 
     def _reference_observe(self, program, state, spec, prediction, target, *, bit_limit):
-        if type(self._machine) is IndexedReferenceMachine:
+        if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine):
             return self._machine.observe(program, state, spec, prediction, target, bit_limit=bit_limit)
         return observe_event(program, state, spec, prediction, target, bit_limit=bit_limit)
 
     def _reference_commit(self, state, spec, *, bit_limit):
-        if type(self._machine) is IndexedReferenceMachine:
+        if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine):
             return self._machine.commit(state, spec, bit_limit=bit_limit)
         return commit_event(state, spec, bit_limit=bit_limit)
 
     def _reference_attach(self, state, cursor, spec):
-        if type(self._machine) is IndexedReferenceMachine:
+        if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine):
             return self._machine.attach(state, cursor, spec)
         return attach_boundary(state, cursor, spec)
 
@@ -1196,7 +1245,7 @@ class ReferenceCompilerRuntime:
                 if profile is None:
                     raise ContractError('unregistered profile implementation')
             if type(program) is not self._machine.program_type:
-                if type(program) in (Program, IndexedRelation):
+                if type(program) in (Program, IndexedRelation, JointRelation):
                     raise ArithmeticUnresolved('registered machine has no funded translation for this native-code representation')
                 raise ContractError('candidate structure differs from the registered native-code representation')
             if self._machine.node_count(program) > self._contract.graph_limits['nodes'] or program.slot_count > self._contract.graph_limits['slots']:
@@ -1392,7 +1441,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             self._retain_code(program, initial.program_id, initial.object_ids[0], candidate)
             # Local replay clock starts at zero. All numerical/causal fields
             # are the registered newborn state, with no copied trained values.
-            local = (self._reference_attach(initial.learner, 0, spec) if type(self._machine) is IndexedReferenceMachine
+            local = (self._reference_attach(initial.learner, 0, spec) if type(self._machine) in (IndexedReferenceMachine, JointReferenceMachine)
                      else replace(initial.learner, cursor=0))
             local_float64 = self._float64_execute('attach', program, candidate, local, initial.float64, origin='profile')
             work(self._machine.state_work(program)+sum(s.delay for s in rules.states)+1, 'local-clock')

@@ -7,11 +7,14 @@ implements the integer construction required by the
 [joint-excess bridge](JOINT_EXCESS_PARTITION_BRIDGE.md). It adds no semantic
 architecture action and makes no change to the original native learner.
 
-This component is deliberately not registered with ReferenceCompilerRuntime.
-An admission test confirms that Runtime rejects the new indexed description.
-Caller-owned bytes and a checked passive plan do not establish paid Runtime
-ownership, provenance, fresh persistence, install reachability or a CUDA phase.
-The existing production registrations and terminal GPU outcomes are unchanged.
+At e2802c8 this component was unregistered with ReferenceCompilerRuntime.
+The subsequent [owned joint reference result](OWNED_JOINT_REFERENCE.md) now
+registers exact native execution, profiles and same-path reference freshness
+with paid root-lifetime storage. The component audit's current cross-machine
+test returns UNRESOLVED for a literal machine without a funded translation.
+Caller-owned bytes and a passive plan still grant no authority by themselves;
+actual joint AMP and installation remain separate. All terminal GPU outcomes
+are unchanged.
 
 ## 1. The indexed description is the actual native graph
 
@@ -21,8 +24,8 @@ The current indexed implementation has 2<=n<=1024 and S<=2^24; these are
 implementation and arithmetic limits, not limits on Foundation semantics.
 
 The decoder's source domain is the complete set of n^2 ordered one-hot pair
-rows. Current source membership is checked on every bound call. Eventual
-Runtime registration must also bind that entire declared domain; fitting one
+rows. Current source membership is checked on every bound call. The separate
+Runtime registration also binds that entire declared domain; fitting one
 current row would not justify using this decoder for a broader future input
 interface. The literal graph itself still has its ordinary native semantics.
 
@@ -173,10 +176,11 @@ also costs work and uses its supplied extent; it is not a free certificate.
 
 Preflight refusal leaves scratch unchanged. After an admitted arithmetic
 failure, scratch may have changed and traceback frames may still refer to it.
-The component never commits a learner or refunds/releases a ledger lease.
+The component never commits an owned learner or refunds/releases a ledger lease.
 The fault-injection audit keeps the caller's own pinned view alive after the
-borrower exits and verifies that the backing buffer cannot resize. Runtime
-must eventually own that lifetime; this test does not supply the owner.
+borrower exits and verifies that the backing buffer cannot resize. The
+subsequent Runtime integration owns that lifetime; this component test alone
+does not supply it.
 
 ## 5. Minimal evidence and exact remaining boundary
 
@@ -207,13 +211,14 @@ records aggregate counts and bounds:
 - Seventeen plan mutations, seven complete-input substitutions, five prewrite
   resource boundaries, canceled-height-zero exhaustion, three malformed extents
   and dense n16 width all refuse. A postwrite fault preserves the count state
-  and the caller's pinned extent. Runtime rejects the unregistered description.
+  and the caller's pinned extent. A literal Runtime without a funded joint
+  translation returns UNRESOLVED; no component plan admits a candidate.
 
 The S=20 numerical theorem still applies to these exact roots under its
 declared scalar schedule. No device operation is inferred from integer
-agreement, and the S=120 numerical counterexample remains. The next boundary
-is registration inside the existing owner: prepaid construction/verification,
-complete Reference and actual AMP state/evidence, retained failure lifetime,
-lineage, fresh persistence and installation. This component returns no
+agreement, and the S=120 numerical counterexample remains. The subsequent
+owned reference path establishes exact construction, state/evidence, failure
+lifetime, lineage and reference freshness. Actual joint AMP, paired freshness
+and installation remain the next boundary. This component returns no
 CERTIFIED_COMPLETE and establishes no new constructor decision class or
 Foundation/ERC-1 revision.

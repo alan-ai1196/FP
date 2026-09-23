@@ -1,0 +1,163 @@
+{
+  "status": "PASS_OWNED_JOINT_REFERENCE_RUNTIME",
+  "complete_audit": true,
+  "scope": "Actual registered ReferenceCompilerRuntime construction/ingress/native phases/profile/freshness and packed ownership. No actual AMP, install or CERTIFIED_COMPLETE.",
+  "small": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "all_two_event_histories": 64,
+      "owned_native_triples": 128
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "all_two_event_histories": 324,
+      "owned_native_triples": 648
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "all_two_event_histories": 64,
+      "owned_native_triples": 128
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/3"
+      ],
+      "all_two_event_histories": 64,
+      "owned_native_triples": 128
+    }
+  ],
+  "profile": {
+    "ordinary_native_triples": 14,
+    "profile_native_triples": 4,
+    "ordinary_cursor": 8,
+    "optimizer_steps": [
+      8,
+      10
+    ],
+    "supplied_state_or_plan_refusals": 2,
+    "closing_cycle_canceling_edge_and_diagonal_evidence": true
+  },
+  "large_closure": {
+    "n": 64,
+    "native_worlds": "18446744073709551616",
+    "ordinary_events": 8,
+    "predictions": [
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "2637/4000",
+        "1363/4000"
+      ],
+      [
+        "555/1363",
+        "808/1363"
+      ],
+      [
+        "591/740",
+        "149/740"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "27433/39400",
+        "11967/39400"
+      ]
+    ],
+    "status": "SEALED_REFERENCE_STREAM",
+    "constructor_decisions": 0,
+    "actual_workspace_bytes": 29841,
+    "packed_peak_bytes": 3261728,
+    "full_output_refusals_before_world_expansion": 2,
+    "complete_counts_diagonal_and_clocks_agree": true
+  },
+  "funding": {
+    "kernel_debit_boundaries": [
+      {
+        "case": "before-integer-construction",
+        "status": "UNRESOLVED",
+        "unfunded_kernel_entries": 0
+      },
+      {
+        "case": "before-rational-readout",
+        "status": "UNRESOLVED",
+        "unfunded_kernel_entries": 0
+      }
+    ],
+    "canceled_history_refusal": {
+      "status": "UNRESOLVED",
+      "committed_steps": 2,
+      "absolute_count_sum": 0,
+      "scratch_unchanged": true
+    },
+    "scope": "actual packed-payload/work ledger, not total host memory or wall time"
+  },
+  "workspace": {
+    "successful_borrowed_compaction_counts": [
+      2
+    ],
+    "actual_retained_workspace_bytes": 21546,
+    "after_construction_failure": "UNRESOLVED",
+    "old_history_and_learners_unchanged": true,
+    "failed_scratch_still_owned_and_pinned": true
+  },
+  "resource_continuation": {
+    "scratch_cap": 21545,
+    "unfunded_table_allocations": 0,
+    "precision_refusal_cursor": 9,
+    "tree_query_width_refusal_cursor": 4,
+    "prewrite_precision_and_width_refusals_preserve_state_and_scratch": true,
+    "failed_profile_completed_steps": 2,
+    "failed_profile_absolute_count_sum": 0,
+    "failed_profile_attached_or_published": false,
+    "scope": "fixed algorithm allowance exhaustion, no impossibility certificate"
+  },
+  "bindings_atomic": {
+    "registration_refusals": 9,
+    "wrong_model_or_supplied_state_refusals": 2,
+    "unregistered_cuda_refusals_before_device_creation": 1,
+    "unsupported_literal_translation": "UNRESOLVED",
+    "locked_or_bad_target_refusals": 3,
+    "both_observed_states_and_actual_target_retained": true,
+    "published_successors_on_second_failure": 0,
+    "retained_invalid_categorical_ingress": true,
+    "supplied_install_flags": "UNRESOLVED"
+  },
+  "fresh": {
+    "fresh_start_cursor": 16,
+    "ordinary_events_per_root": 36,
+    "paired_native_root_comparisons": 20,
+    "crossing_cursor": 20,
+    "crossing_wealth": "266119/65536",
+    "fresh_score_events": 4,
+    "alpha_after_retirement": "1/4",
+    "foreign_root_refusals": 1,
+    "unpaired_install_status": "UNRESOLVED",
+    "scope": "actual same-path reference evidence under an external stream-law assumption, no population or AMP/install claim"
+  }
+}

@@ -446,6 +446,17 @@ canceled evidence, and the full mixture's arithmetic. Literal and exact native
 audits pass; caller-owned storage and passive input reconstruction remain
 distinct from registration inside the complete Runtime.
 
+The [owned joint reference refinement](theory/proofs/OWNED_JOINT_REFERENCE.md)
+now registers that exact model, Gamma/U, complete categorical interface and
+native state inside the existing Runtime. Paid pinned storage and fixed
+internal kernels preserve the full native relation through ordinary phases,
+profile replay and attachment, including canceled evidence and distinct
+optimizer/ordinary clocks. Actual fresh reference statistics agree with an
+independent literal Runtime. Width, precision, work and failed replay retain
+history and return UNRESOLVED. This adds no semantic action or constructor
+decision class; exact reference closure does not provide the still-missing
+actual joint AMP phases, paired freshness or install reachability.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

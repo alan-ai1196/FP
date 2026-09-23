@@ -1,7 +1,7 @@
 {
   "status": "PASS_JOINT_PARTITION_STORAGE_COMPONENT",
   "complete_audit": true,
-  "scope": "Exact literal indexing, count transitions and caller-owned integer extent. No Runtime registration, device execution or completeness certificate.",
+  "scope": "Exact literal indexing, count transitions and caller-owned integer extent. Separate owner registration is audited by audit_joint_runtime.py; this component result grants no device or completeness authority.",
   "indexing": {
     "complete_graph_initializer_learner_matches": [
       {
@@ -372,8 +372,8 @@
     "postwrite_fault_keeps_input_and_caller_pin": true
   },
   "admission": {
-    "runtime_status": "REJECTED_ADMISSIBILITY",
-    "registered_production_paths_changed": false,
-    "no_indexed_joint_admission_or_constructor_certificate": true
+    "runtime_status": "UNRESOLVED",
+    "literal_machine_has_no_funded_joint_translation": true,
+    "no_candidate_or_constructor_certificate_from_passive_component": true
   }
 }

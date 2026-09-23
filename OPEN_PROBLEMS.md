@@ -1,14 +1,24 @@
 # FP Open Problems
 
+The [owned joint reference result](theory/proofs/OWNED_JOINT_REFERENCE.md)
+closes exact Runtime registration, complete native phases, profile clocks,
+paid integer scratch/failure lifetime and same-path fresh reference evidence
+for the original joint-noise learner. The next boundary is the distinct owned
+half/single realization: actual causal inputs and complete state must bind
+independently to the physical integer construction and floating schedule,
+with primitive conformance, retained phase/storage costs and failure lifetime.
+Then fresh paired evidence and installation must be reachable inside the
+same owner. The passive S=20 uniform bound cannot stand in for these facts.
+No new constructor decision class or complete indexed release is established.
+
 The [joint native indexing/storage component](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
 now closes literal description and contiguous integer construction for the
 new joint-excess schedule. Its exact audits include changing cyclic support,
 profile clocks, canceled-history resource bounds and independently bound
-plans. It is not registered inside ReferenceCompilerRuntime. The active
-boundary is integrating that component into the existing owner's complete
-state, prepaid resource/failure lifetime, actual AMP relation, lineage,
-fresh persistence and installation. No extra native architecture action is
-needed, and a passive storage result is not an install certificate.
+plans. Its separate owner registration above now covers exact execution and
+reference persistence. Actual AMP, paired freshness and installation remain
+open. No extra native architecture action is needed, and a passive storage
+result is not an install certificate.
 
 The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 closes the mathematical readout obstacle for the current S=20 joint-noise
@@ -17,9 +27,9 @@ resources fit; exact aggregation leaves only two excess integers for the
 floating prediction. A uniform bound covers all native masses and ambient
 gradient classes at the original tolerances. Native scale remains essential:
 the S=120 two-event counterexample exceeds 1/100 mass error. Remaining work
-is a distinct owned implementation with complete G/Gamma/U/input derivation,
-paid construction and failure lifetime, independent plan binding, actual
-AMP conformance and fresh/install continuation. No new semantic action is
+is the physical counterpart of the now-owned exact reference path, including
+independent actual-input binding, AMP conformance and fresh/install
+continuation. No new semantic action is
 needed by the proved construction. A scalar bound or same current readout
 does not supply that authority or permit erasing joint evidence.
 

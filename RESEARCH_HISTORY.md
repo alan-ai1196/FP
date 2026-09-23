@@ -8475,3 +8475,71 @@ No production registration, device execution, historical GPU verdict or
 Foundation/ERC-1 rule changes. The component clears the graph-description
 and packed-integer construction obligations; complete owner registration,
 actual AMP phases and fresh/install continuation remain the active boundary.
+
+## 252. The joint-noise reference owner preserves full native continuation and honest resource refusal (2026-09-23)
+
+Register the preceding joint graph/count/partition components in the existing
+ReferenceCompilerRuntime. Complete Gamma/U declarations name the same ordered
+rate/prior model and whole categorical source domain. The internal machine
+adds no ingress, signer, persistence service or installation endpoint. Its
+fixed trusted exact kernels accept no caller-supplied plan, learned state or
+forecast. The singleton-plan boundary therefore needs no new helper producer
+or duplicate numerical reconstruction. No Foundation/ERC-1 definition changes.
+
+Make the native relation explicit at every phase. Count-decoded selected
+weights retain the total likelihood multiplicity T as well as d and diagonal
+balance s. Seven readout coordinates and the actual source/rate/world mapping
+determine every native cache; 2J+1 pending gradient forms determine every
+ambient derivative. The unit simplex commit is exactly the original Bayes
+likelihood update. Profile replay starts at Gamma and counts each replayed
+optimizer step; attaching at ordinary cursor two preserves T=4. At ordinary
+cursor eight the original/profiled lineages have T=8 and T=10. Current response
+roots do not replace persistent state or causal history.
+
+Runtime prepays and pins one actual (live_cells+5)*cell_bytes integer extent.
+Every rate reuses it, with whole-mixture construction work charged before
+entry and a separate debit before exact rational readout. The extent remains
+owned for the root lifetime, including after a released borrower or a failed
+construction frame. Packed retained records, plan metadata, temporary bigints
+and total host commitment are separate from the table-byte figure.
+
+All 516 small two-event histories pass 1,032 actual native phase triples
+against independent literal graph/autodiff execution, including S=20, S=120
+and the one-rate S=3 zero-excess case. Four full profile triples and fourteen
+ordinary lineage triples preserve cycle closure, cancellation, diagonal
+evidence and both clocks. An actual eight-event n64 root represents 2^64
+hypotheses, matches a separate positive-tape decoder and forbids literal world
+expansion. Its workspace is 29,841 bytes and observed packed peak 3,261,728
+bytes. Empty-policy closure seals the reference stream with zero constructor
+decisions; it is not class optimality or a whole-host bound.
+
+Attack the actual refusal transitions. Underfunded table/readout kernels are
+never entered, and a table byte cap refuses before allocation. A canceled
+two-step state still exhausts a one-step budget. After nine ordinary events,
+the conservative precision preflight refuses without a scratch write. A
+four-edge star's later leaf query exceeds the fixed natural-order join cap,
+preserving all four counts. A failed four-event profile retains two committed
+replay events with d=0,T=2 and publishes no candidate. An injected failure of
+the second lineage after the first local commit retains both observed states
+and the actual target, while neither published learner advances. No refusal
+is promoted to a representation-independent impossibility theorem.
+
+Run fresh reference persistence in two independent Runtime roots, indexed
+and literal. After sixteen label-one observations, admit a newborn candidate
+before twenty future label-zero observations. Complete learner records,
+probabilities, gain intervals, epoch fields and wealth agree throughout.
+Four fresh score events cross at cursor20 with wealth266119/65536. Foreign-root
+admission refuses; retirement retains alpha1/4 and evidence. This is exact
+same-path reference agreement under an external stochastic-law assumption,
+not a population result, paired AMP certificate or installation. Caller
+certified/bridge flags still return UNRESOLVED.
+
+The new minimal owned artifact passes together with the full integer component
+audit and existing literal ordinary-event/known-rate indexed regressions.
+The component's historical e2802c8 Runtime rejection is now scoped to that
+source; its current cross-machine translation test correctly returns
+UNRESOLVED. New joint binary64/CUDA/search/install registrations remain
+unimplemented, and CUDA refuses before executor creation. No Torch execution,
+terminal GPU rerun or new CERTIFIED_COMPLETE class is involved. The remaining
+frontier is actual joint AMP conformance, paid physical phase/failure lifetime,
+fresh paired evidence and install reachability within the same owner.
