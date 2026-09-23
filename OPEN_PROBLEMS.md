@@ -3,14 +3,16 @@
 The [general rational likelihood arithmetic](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
 is now proved and audited: gcd-free bases preserve the exact information rank,
 and jointly scaled integer weights avoid the all-zero failure of per-basis
-scaling. The remaining obstacle is owned realization. Bind the general bank
-to actual G/Gamma/U and the complete source domain, fund derivation and every
-integer decode, preserve pending native gradients and clocks, and establish
-the full AMP/fresh/install bridge with its own physical identity. The uniform
+scaling. The [owned realization](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md)
+now implements actual G/Gamma/U/domain binding, prepaid integer work/storage,
+failure lifetime and full counter/phase preservation under its own identity.
+Its CPU gate passes. The remaining immediate obstacle is the registered,
+unrun actual CUDA A1: verify full AMP/fresh/install continuations and the
+adversarial refusals under its declared host/packed/work limits. The uniform
 selected-weight bound alone does not bound half-precision forward caches or
 all ambient gradients. This general path should address the mixed-rate bank
-without adding semantic actions or another special noise backend. The current
-Runtime still admits only its original single-radix likelihood representation.
+without adding semantic actions or another special noise backend. Useful
+unknown-noise model evidence and a complete indexed release remain separate.
 
 The [noise acquisition/state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 closes a theoretical prerequisite to learning the supplied relation noise.
@@ -18,8 +20,8 @@ Forest bridges contain no noise information, and independent long cycles
 can require exponentially many samples; that cannot be repaired by a faster
 solver. The finite mixed-rate posterior has the exact statistic (T,d,s) and
 an existing native simplex realization, with exact and functional CPU audits.
-An owned physical realization and model evidence against the strong joint
-unknown-rate posterior remain open. The current one-rational-radix backend
+Actual physical validation and model evidence against the strong joint
+unknown-rate posterior remain open. The original one-rational-radix backend
 cannot cover the two-rate bank; a positive integer construction can preserve
 the rate-dependent evidence without an energy histogram. It must pay its
 work/storage, bind the actual inputs and full native state, and obtain its own

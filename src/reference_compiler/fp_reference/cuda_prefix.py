@@ -21,7 +21,10 @@ from .cuda_storage import CudaArena, CudaStorageContract, CudaStorageUnresolved
 from . import cuda_learner as gpu
 from .likelihood_encoding import (LikelihoodEncodingContract, LikelihoodModel,
     BACKEND_ID as COUNT_BACKEND_ID, ENCODING_ID, prepare_model, preparation_work,
-    power_schedule)
+    power_schedule, RationalLikelihoodContract, RationalLikelihoodModel,
+    RATIONAL_BACKEND_ID, RATIONAL_WORK_ID, RATIONAL_ENCODING_ID,
+    CONTRACTS as LIKELIHOOD_CONTRACTS, MODELS as LIKELIHOOD_MODELS,
+    preparation_workspace, require_workspace)
 from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
 from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
 from .phase_encoding import ENCODING_ID as BINARY_PHASE_ENCODING_ID
@@ -44,12 +47,14 @@ class CudaPrefixContract:
     install: CudaInstallContract | None = None
     device: CudaDeviceContract = field(default_factory=lambda: CudaDeviceContract(24 << 30,
         {role: 24 << 30 for role in ('deployment', 'compiler')}))
-    likelihood_encoding: LikelihoodEncodingContract | None = None
+    likelihood_encoding: LikelihoodEncodingContract | RationalLikelihoodContract | None = None
     backend_id: str = field(default='', init=False)
     work_model: str = field(default='', init=False)
     forward_id: str = field(default=FORWARD_ID, init=False)
 
     def _arithmetic_ids(self):
+        if type(self.likelihood_encoding) is RationalLikelihoodContract:
+            return RATIONAL_BACKEND_ID, RATIONAL_WORK_ID, FORWARD_ID
         return (gpu.BACKEND_ID if self.likelihood_encoding is None else COUNT_BACKEND_ID,
             'prepaid-output-cells-packed-evidence-and-exact-forward-v2' if self.likelihood_encoding is None
             else 'prepaid-likelihood-factorization-coordinates-and-CUDA-output-v1', FORWARD_ID)
@@ -59,7 +64,7 @@ class CudaPrefixContract:
                 (LEGACY_PHASE_ENCODING_ID,DEFLATE_PHASE_ENCODING_ID)):
             raise ContractError('fixed registered CUDA evidence encoding required')
         if self.likelihood_encoding is not None:
-            if type(self.likelihood_encoding) is not LikelihoodEncodingContract:
+            if type(self.likelihood_encoding) not in LIKELIHOOD_CONTRACTS:
                 raise ContractError('registered immutable likelihood encoding contract required')
             self.likelihood_encoding.__post_init__()
         backend, work_model, forward = self._arithmetic_ids()
@@ -215,7 +220,7 @@ def widened_prediction(raw):
 
 
 def _encoded_raw(raw):
-    if (type(raw) is not tuple or len(raw) != 4 or raw[0] != ENCODING_ID
+    if (type(raw) is not tuple or len(raw) != 4 or raw[0] not in (ENCODING_ID, RATIONAL_ENCODING_ID)
             or type(raw[1]) is not str or len(raw[1]) != 64
             or type(raw[2]) is not tuple or any(type(v) is not int for v in raw[2])):
         raise ContractError('complete raw likelihood coordinate encoding required')
@@ -238,6 +243,8 @@ def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, 
     if kind == 'commit':
         if encoded_state is not None:
             successor = encoded_state.commit()
+            if type(successor.model) is RationalLikelihoodModel:
+                return 1+3*len(spec.simplex_slots)+2*slots
             differences, bits = power_schedule(successor, steps+1, bit_limit=bit_limit)
             return 3+max(bits-1, 0)+sum(v.bit_count() for v in differences)+3*len(spec.simplex_slots)+2*slots
         from .learner import SIMPLEX_GRADIENT
@@ -363,7 +370,7 @@ class _CudaPrefix:
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
                 normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None,
-                histogram_workspace=None):
+                histogram_workspace=None, likelihood_workspace=None):
         if self.indexed:
             from .indexed_cuda_prefix import execute
             return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
@@ -403,11 +410,15 @@ class _CudaPrefix:
                         or self.phases[prediction_id].observation_id != observation_id):
                     raise ContractError('likelihood observation lost its actual predecessor prediction or event identity')
             if kind == 'initialize' and self.contract.likelihood_encoding is not None:
+                if type(self.contract.likelihood_encoding) is RationalLikelihoodContract:
+                    require_workspace(likelihood_workspace, preparation_workspace(program, rules, spec,
+                        source_domain, bit_limit, self.contract.likelihood_encoding))
                 encoding_model = prepare_model(program, rules, reference.theta, spec, source_domain,
                     self.contract.likelihood_encoding, bit_limit=bit_limit,
-                    work_limit=preparation_work(program, rules, spec, source_domain, bit_limit))
+                    work_limit=preparation_work(program, rules, spec, source_domain, bit_limit,
+                                                self.contract.likelihood_encoding))
                 actual_domain = ((),) if source_domain is None and not rules.sources else tuple(dict.fromkeys(source_domain))
-                if (type(encoding_model) is not LikelihoodModel or encoding_model.program_id != program.program_id
+                if (type(encoding_model) not in LIKELIHOOD_MODELS or encoding_model.program_id != program.program_id
                         or encoding_model.semantics != rules or encoding_model.initial_theta != reference.theta
                         or encoding_model.learner != spec or encoding_model.contract != self.contract.likelihood_encoding
                         or encoding_model.source_domain != actual_domain):
@@ -415,7 +426,7 @@ class _CudaPrefix:
             with self.arena.phase(object_id) as workspace:
                 arithmetic = gpu.CudaArithmetic(bit_limit, self.contract.storage.device,
                     workspace=workspace, output_cell_limit=self.contract.phase_output_cells,
-                    readout_buffer=readout_buffer)
+                    readout_buffer=readout_buffer, likelihood_workspace=likelihood_workspace)
                 tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
                 if kind == 'initialize':
                     result = gpu.initialize(program, rules, reference.theta, reference.cursor, arithmetic,
@@ -473,7 +484,7 @@ class _CudaPrefix:
         """Exact coordinate/event relation, separate from numerical closeness."""
         from .core import stable_hash
         if kind == 'initialize':
-            expected = (ENCODING_ID, stable_hash(encoding_model), (0,)*encoding_model.rank, None)
+            expected = (encoding_model.encoding_id, stable_hash(encoding_model), (0,)*encoding_model.rank, None)
         else:
             before = before_raw[6]
             _encoded_raw(before)

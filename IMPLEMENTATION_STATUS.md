@@ -7,10 +7,15 @@ weights. Its passive exact/native/RNE audit passes 7,839 factorizations,
 rounding checks, including the two-rate native PRODUCT graphs and a 274-event
 underflow recovery. Per-basis scaling and binary64-before-binary32 ingress
 have retained counterexamples. The mathematical selected-weight bound is
-uniform in history length, conditional on integer resources. These helpers
-are not called by Runtime or CUDA; owned derivation/decoding, a distinct
-physical identity and the full phase/fresh/install gate remain open. Existing
-physical paths and completed source-bound experiments are unchanged.
+uniform in history length, conditional on integer resources. The [owned
+implementation](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md) now uses a distinct
+rational contract, derives the actual bank and prepays each decode. Integer
+weights occupy owned bytes; failed admitted scratch stays charged while a
+traceback may retain its view. The CPU gate passes 3,057 native triples, 19
+negative cases, three payment probes and exact legacy descriptor/metadata
+compatibility. The 13-case actual CUDA A1 is registered and unrun. Full
+AMP/fresh/install verification remains pending; completed experiments and
+the old physical identities retain their original scope.
 
 The [noise acquisition audit](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 adds research evidence without changing production: 168 multigraphs/4155
@@ -21,9 +26,10 @@ on noise rates 1/10 and 1/4, preserve all 13 observations and pass 44 actual
 binary64 phase replays. The unit simplex U is unchanged; G/Gamma explicitly
 include rate/world slots. These functional CPU runs retain unresolved
 whole-host scope and issue no search/install authority. The single-rational-
-radix backend is mathematically insufficient for this bank. The positive
-integer mixture upper has no owned Runtime/AMP implementation yet; existing
-known-rate indexed results retain their source-bound scope.
+radix backend is mathematically insufficient for this bank. The general
+rational implementation above now covers its finite-bank arithmetic, with
+actual AMP validation still pending. The indexed positive-mixture upper and
+existing known-rate results retain their separate source-bound scopes.
 
 The [direct integer partition prototype](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
 has a uniform full-coordinate readout proof and passes11937 passive RNE

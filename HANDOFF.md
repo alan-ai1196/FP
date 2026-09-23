@@ -8,11 +8,15 @@ has an all-zero counterexample at a posterior near one-half. The component
 passes 7,839 factorizations, 2,406 integer plans, 3,325 complete native phase
 triples and 63,876 independent rounding checks. Temporary zeros recover on
 the 274-event word because exact coordinates remain. The general finite-bank
-construction covers the two-rate PRODUCT graphs below. It is still passive:
-the Runtime owns only its existing one-radix likelihood path. Next bind this
-general lowering to actual G/Gamma/U, paid transient arithmetic, full AMP
-phases and fresh/install continuations under a distinct physical identity.
-Do not pass the new helper through the old identity or borrow a full release.
+construction covers the two-rate PRODUCT graphs below. Its [owned registration](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md)
+now binds actual G/Gamma/U, complete source domains and paid transient integer
+bytes under a distinct arithmetic identity. The CPU gate passes 3,057 native
+triples, 19 negative checks, three payment/failure-lifetime probes and exact
+legacy descriptor compatibility. Actual CUDA A1 is registered but has not
+run: execute the 13-case source-bound matrix, retaining every outcome and
+keeping dependencies fixed while any job is live. The mixed-rate case must
+cross both fresh paths, install and keep learning. Do not borrow a full release
+or the old single-radix identity; all historical device jobs remain terminal.
 
 **Current research: distinguish supplied noise from acquired noise.** The
 [noise acquisition/state result](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
@@ -22,7 +26,7 @@ A finite mixed-rate learner needs (T,d,s); diagonal evidence and rate-dependent
 common likelihood factors cannot be discarded. The existing native unit
 simplex learner realizes that posterior. Exact checks and five Reference
 streams/44 independently replayed binary64 phases pass. Their whole-host
-scope remains unresolved; no AMP or full release follows. The current
+scope remains unresolved; no AMP or full release follows. The original
 single-rational-radix backend cannot represent the two-rate bank. A proved
 positive integer mixture gives an implementation direction with all rate
 evidence preserved, not an existing physical certificate. Keep the known-rate

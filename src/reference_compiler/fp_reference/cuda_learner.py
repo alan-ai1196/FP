@@ -22,7 +22,8 @@ from typing import Mapping
 from .binary_arithmetic import BinaryFormat, round_binary
 from .core import ContractError, natural
 from .learner import SIMPLEX_GRADIENT, LearnerSpec
-from .likelihood_encoding import EncodedLikelihoodState, LikelihoodModel, power_schedule
+from .likelihood_encoding import (EncodedLikelihoodState, RationalLikelihoodModel,
+    MODELS as LIKELIHOOD_MODELS, power_schedule, joint_inputs)
 from .numerics import compare_exact
 from .program import Product, Program, SemanticRules, Source, State, Sum, name
 from .semantics import ArithmeticUnresolved
@@ -135,7 +136,7 @@ class CudaArithmetic:
     backend_id = BACKEND_ID
 
     def __init__(self, bit_limit: int, device=0, *, workspace=None, output_cell_limit=None,
-                 readout_buffer=None):
+                 readout_buffer=None, likelihood_workspace=None):
         natural(bit_limit, 'CUDA reference integer work limit', positive=True)
         natural(device, 'CUDA device ordinal')
         torch = _torch()
@@ -157,6 +158,7 @@ class CudaArithmetic:
         if readout_buffer is not None and (workspace is None or type(readout_buffer) is not bytearray):
             raise ContractError('bulk raw observation requires an owned phase and actual host workspace')
         self._readout_buffer = readout_buffer
+        self.likelihood_workspace = likelihood_workspace
 
     def _keep(self, operation, value):
         if self._workspace is not None:
@@ -388,7 +390,7 @@ def initialize(program: Program, rules: SemanticRules, theta: tuple[F, ...],
         raise ContractError('CUDA birth requires every registered nonnegative initializer slot')
     encoding = None
     if encoding_model is not None:
-        if (type(encoding_model) is not LikelihoodModel or encoding_model.program_id != program.program_id
+        if (type(encoding_model) not in LIKELIHOOD_MODELS or encoding_model.program_id != program.program_id
                 or encoding_model.semantics != rules or encoding_model.initial_theta != theta):
             raise ContractError('CUDA likelihood initialization lost its actual program, semantics or Gamma')
         encoding = EncodedLikelihoodState(encoding_model, (0,)*encoding_model.rank, None)
@@ -565,28 +567,40 @@ def _commit_encoded(state, spec, arith):
 
     The native observed gradient is retained in the predecessor. Its exact
     unit-simplex transition has the proved integer-coordinate simulation.
-    All physical power/normalization arithmetic below is binary32 on device.
+    The legacy path uses binary32 powers on device. The distinct rational
+    path combines factors in paid host integers before exact RNE32 ingress;
+    its normalization and the native forward/gradient remain on device.
     """
     if spec != state.encoding.model.learner:
         raise ContractError('CUDA likelihood commit differs from its actual registered U')
     encoding = state.encoding.commit()
-    differences, bits = power_schedule(encoding, state.optimizer_steps+1, bit_limit=arith.bit_limit)
-    radix_inverse = arith.constant(1/encoding.model.contract.radix)
-    one, zero = arith.constant(F(1)), arith.constant(F(0))
-    powers = [radix_inverse]
-    for _ in range(1, bits):
-        powers.append(arith.mul(powers[-1], powers[-1]))
-    weights = []
-    for exponent in differences:
-        value = one
-        for bit in range(bits):
-            if exponent & (1 << bit):
-                value = arith.mul(value, powers[bit])
-        weights.append(value)
-    total = zero
-    for value in weights:
-        total = arith.add(total, value)
-    normalized = arith.div(arith.stack(weights), total)
+    if type(encoding.model) is RationalLikelihoodModel:
+        inputs = joint_inputs(encoding, state.optimizer_steps+1, bit_limit=arith.bit_limit,
+                              workspace=arith.likelihood_workspace)
+        weights = arith.ingress(inputs)
+        zero = arith.constant(F(0))
+        total = zero
+        for value in weights:
+            total = arith.add(total, value)
+        normalized = arith.div(weights, total)
+    else:
+        differences, bits = power_schedule(encoding, state.optimizer_steps+1, bit_limit=arith.bit_limit)
+        radix_inverse = arith.constant(1/encoding.model.contract.radix)
+        one, zero = arith.constant(F(1)), arith.constant(F(0))
+        powers = [radix_inverse]
+        for _ in range(1, bits):
+            powers.append(arith.mul(powers[-1], powers[-1]))
+        weights = []
+        for exponent in differences:
+            value = one
+            for bit in range(bits):
+                if exponent & (1 << bit):
+                    value = arith.mul(value, powers[bit])
+            weights.append(value)
+        total = zero
+        for value in weights:
+            total = arith.add(total, value)
+        normalized = arith.div(arith.stack(weights), total)
     selected = {slot: k for k, slot in enumerate(spec.simplex_slots)}
     updated = arith.stack([normalized[selected[i]] if i in selected else state.theta[i]
                           for i in range(state.theta.numel())])

@@ -367,7 +367,13 @@ conditional on integer resources. Scaling each basis independently can erase
 both weights of a posterior near one-half. The bounded component passes
 exact/native/RNE checks, including a 274-event underflow recovery, but has
 no Runtime, full AMP, installation or constructor authority. The existing
-one-radix physical identity and Foundation/ERC-1 remain unchanged.
+one-radix physical identity and Foundation/ERC-1 remain unchanged. The
+[owned rational registration](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md)
+now implements actual native derivation, paid integer bytes and complete
+counter/phase binding under a distinct identity. Its 3,057-triple CPU gate,
+budget/lifetime probes and legacy compatibility checks pass. Actual CUDA
+A1 is registered and pending; no full AMP, fresh/install or release result
+is inferred from the CPU checks.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

@@ -1,0 +1,181 @@
+{
+  "status": "PASS_RATIONAL_DESCRIPTOR_DECODE_AND_FUNDING_CPU",
+  "native_banks": [
+    {
+      "bank": "uninformative",
+      "rank": 0,
+      "bases": [],
+      "complete_native_triples": 30,
+      "derivation_operations": 103,
+      "prepaid_derivation": 10512320,
+      "prepaid_scratch": 12109696,
+      "integer_decode_scratch": 203776
+    },
+    {
+      "bank": "one_prime",
+      "rank": 1,
+      "bases": [
+        9
+      ],
+      "complete_native_triples": 84,
+      "derivation_operations": 411,
+      "prepaid_derivation": 16875584,
+      "prepaid_scratch": 13490816,
+      "integer_decode_scratch": 303616
+    },
+    {
+      "bank": "two_primes",
+      "rank": 2,
+      "bases": [
+        2,
+        3
+      ],
+      "complete_native_triples": 1554,
+      "derivation_operations": 1019,
+      "prepaid_derivation": 23259072,
+      "prepaid_scratch": 14871936,
+      "integer_decode_scratch": 403456
+    },
+    {
+      "bank": "clock_changes_rank",
+      "rank": 1,
+      "bases": [
+        2,
+        3
+      ],
+      "complete_native_triples": 62,
+      "derivation_operations": 478,
+      "prepaid_derivation": 10513472,
+      "prepaid_scratch": 12109696,
+      "integer_decode_scratch": 403456
+    },
+    {
+      "bank": "three_distinct_worlds",
+      "rank": 2,
+      "bases": [
+        2,
+        3
+      ],
+      "complete_native_triples": 84,
+      "derivation_operations": 746,
+      "prepaid_derivation": 22255232,
+      "prepaid_scratch": 26428416,
+      "integer_decode_scratch": 536576
+    },
+    {
+      "bank": "duplicated_world",
+      "rank": 2,
+      "bases": [
+        2,
+        3
+      ],
+      "complete_native_triples": 258,
+      "derivation_operations": 1447,
+      "prepaid_derivation": 30838400,
+      "prepaid_scratch": 28425216,
+      "integer_decode_scratch": 536576
+    },
+    {
+      "bank": "three_labels",
+      "rank": 1,
+      "bases": [
+        2,
+        3
+      ],
+      "complete_native_triples": 39,
+      "derivation_operations": 366,
+      "prepaid_derivation": 13686720,
+      "prepaid_scratch": 12850176,
+      "integer_decode_scratch": 403456
+    },
+    {
+      "bank": "prior_only_factor",
+      "rank": 0,
+      "bases": [
+        7
+      ],
+      "complete_native_triples": 14,
+      "derivation_operations": 136,
+      "prepaid_derivation": 10511936,
+      "prepaid_scratch": 12109696,
+      "integer_decode_scratch": 303616
+    },
+    {
+      "bank": "joint_noise_n2",
+      "rank": 2,
+      "bases": [
+        2,
+        3,
+        5
+      ],
+      "complete_native_triples": 584,
+      "derivation_operations": 6191,
+      "prepaid_derivation": 49496512,
+      "prepaid_scratch": 49183616,
+      "integer_decode_scratch": 836096
+    },
+    {
+      "bank": "joint_noise_n3",
+      "rank": 4,
+      "bases": [
+        2,
+        3,
+        5
+      ],
+      "complete_native_triples": 342,
+      "derivation_operations": 39624,
+      "prepaid_derivation": 195271104,
+      "prepaid_scratch": 193261056,
+      "integer_decode_scratch": 1501696
+    }
+  ],
+  "adversarial": {
+    "wrong_scratch": 4,
+    "invalid_allowances": 3,
+    "derivation_refusals": 3,
+    "unchanged_buffer_decode_refusals": 2,
+    "counter_refusal": 1,
+    "single_radix_schedule_refusal": 1,
+    "noncoprime_descriptor_refusal": 1,
+    "legacy_incompatible_bank_refusal": 1,
+    "descriptor_mutation": 1,
+    "identity_refusals": 2
+  },
+  "funding": [
+    {
+      "case": "retained-refusal",
+      "backend_entries": 1,
+      "retained_scratch_bytes": 43896,
+      "reason": "CPU probe refuses before any device arithmetic"
+    },
+    {
+      "case": "work-short",
+      "backend_entries": 0,
+      "retained_scratch_bytes": 0,
+      "reason": "deployment cumulative work exhausted"
+    },
+    {
+      "case": "scratch-short",
+      "backend_entries": 0,
+      "retained_scratch_bytes": 0,
+      "reason": "global coexistence exceeds reference_payload_bytes"
+    }
+  ],
+  "legacy_identity": {
+    "source": "1dfe683",
+    "identical_serialized_models": 2,
+    "identical_metadata_transition_triples": 6
+  },
+  "scope": "CPU only; funding backend always refuses; no successful GPU phase, persistence or installation claim",
+  "noncontiguous_late_birth": {
+    "native_triples": 6,
+    "selected_slots": [
+      0,
+      4
+    ],
+    "complete_slots": 6,
+    "initial_cursor": 11,
+    "final_cursor": 17,
+    "final_steps": 6
+  }
+}

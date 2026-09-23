@@ -8,9 +8,10 @@ error bound independent of history length, conditional on integer resources.
 Independent scaling of the bases has an all-zero counterexample.
 
 This is a general arithmetic component and a passive compiler prototype.
-The registered Runtime/CUDA lowering still accepts its original single
-radix. The component supplies no owned bridge, installation, complete-state
-quotient, indexed-model release or constructor decision.
+The subsequent [owned implementation](RATIONAL_LIKELIHOOD_RUNTIME.md) now has
+a distinct rational contract and passes its CPU gate; its actual CUDA A1 is
+registered and pending. This component alone supplies no owned bridge,
+installation, complete-state quotient, indexed release or constructor decision.
 
 ## 1. Model and the restriction being removed
 
@@ -241,13 +242,12 @@ independent integer quotient/tie calculations. It imports no Torch and
 executes no device or new Runtime path. Numerical audits test the stated
 theorems; the proofs above supply their all-input scope.
 
-The next implementation obligation is general rational-bank ownership:
-derive the descriptor from actual G/Gamma/U and the complete information
-interface; prepay derivation and every transient integer decode; preserve
-complete phases and descriptor identity; register a distinct physical
-arithmetic identity; audit actual AMP transitions, fresh persistence and
-installation. No helper output currently authorizes those operations. The
-new representation must not silently enter the old one-radix CUDA identity.
+The [owned implementation](RATIONAL_LIKELIHOOD_RUNTIME.md) now derives the
+descriptor from actual G/Gamma/U and the complete information interface,
+pays for transient integer decoding and has a distinct physical identity.
+Its CPU gate passes. Actual AMP transitions, fresh persistence and
+installation remain pending in its registered A1. The arithmetic component
+alone grants none of that authority and cannot enter the old one-radix identity.
 Foundation R4 and ERC-1 remain unchanged.
 
 ## Source

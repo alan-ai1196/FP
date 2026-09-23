@@ -64,7 +64,8 @@ from .semantics import ArithmeticUnresolved, Evaluation, RangeBound, _guard, _op
 from .likelihood_encoding import (require_learner as require_likelihood_learner,
     preparation_work as likelihood_preparation_work,
     preparation_workspace as likelihood_preparation_workspace,
-    phase_work as likelihood_phase_work)
+    phase_work as likelihood_phase_work, RationalLikelihoodContract,
+    decode_work as likelihood_decode_work, decode_workspace as likelihood_decode_workspace)
 
 
 @dataclass(frozen=True)
@@ -800,6 +801,7 @@ class ReferenceCompilerRuntime:
             # heap, bit-time or wall-time bound; the host job remains binding.
             charge += 32*phase_codec.EXPANDED_CAP+16*cfg.phase_evidence_bytes
         likelihood_workspace = 0
+        rational_likelihood = type(cfg.likelihood_encoding) is RationalLikelihoodContract
         if cfg.likelihood_encoding is not None:
             # The registered alternative lowering owns its actual program/Gamma
             # derivation and integer state. No caller supplies a likelihood bank
@@ -808,15 +810,21 @@ class ReferenceCompilerRuntime:
             charge += 8*cfg.phase_evidence_bytes
             if kind == 'initialize':
                 charge += likelihood_preparation_work(program, self._contract.semantics,
-                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits)
+                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits,
+                    cfg.likelihood_encoding)
                 likelihood_workspace = likelihood_preparation_workspace(program, self._contract.semantics,
-                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits)
+                    self._online.learner, self._contract.source_domain, self._contract.reference_integer_bits,
+                    cfg.likelihood_encoding)
             else:
                 handles = self._cuda.staged if origin == 'profile' or kind == 'commit' else self._cuda.current
                 physical = self._cuda._values[handles[candidate]]
                 if physical.encoding is None:
                     raise ContractError('registered likelihood lowering lost its owned coordinates')
                 charge += 4*likelihood_phase_work(physical.encoding.model)
+                if kind == 'commit' and rational_likelihood:
+                    charge += likelihood_decode_work(physical.encoding.model, self._contract.reference_integer_bits)
+                    likelihood_workspace = likelihood_decode_workspace(physical.encoding.model,
+                                                                        self._contract.reference_integer_bits)
         if kind == 'predict':
             charge += self._cuda.forward_work(program, self._contract.semantics)
         if origin == 'construction':
@@ -837,7 +845,8 @@ class ReferenceCompilerRuntime:
         readout_id = f'{self._runtime_id}:cuda-raw-readout'
         workspace_id = label+':likelihood-scratch' if likelihood_workspace else None
         if workspace_id is not None:
-            scratch = ObjectSpec(workspace_id, 'likelihood_derivation_scratch',
+            scratch = ObjectSpec(workspace_id,
+                'likelihood_integer_decode_scratch' if rational_likelihood and kind == 'commit' else 'likelihood_derivation_scratch',
                 {'reference_payload_bytes': likelihood_workspace, 'physical_objects': 1}, self._chi)
             self._ledger.allocate(self._data_owner, (scratch,))
             self._buffers[workspace_id] = bytearray(likelihood_workspace)
@@ -919,6 +928,7 @@ class ReferenceCompilerRuntime:
                 offset += len(part)
             frame[:8] = size.to_bytes(8, 'big')
 
+        phase_accepted = False
         try:
             write((label, 'ADMITTED_CUDA_PHASE'))
             try:
@@ -934,7 +944,9 @@ class ReferenceCompilerRuntime:
                         if origin == 'construction' else self._event_router.charge_work(
                             purpose, {'work': amount}, label+':query-order-search'))) if kind == 'predict' else None,
                     histogram_workspace=(memoryview(self._buffers[f'{self._runtime_id}:histogram-storage'])
-                        if self._contract.indexed_histogram is not None else None))
+                        if self._contract.indexed_histogram is not None else None),
+                    likelihood_workspace=(memoryview(self._buffers[workspace_id])
+                        if rational_likelihood and workspace_id is not None else None))
             except (ResourceExceeded, ArithmeticUnresolved):
                 raise
             except ContractError as error:
@@ -964,8 +976,12 @@ class ReferenceCompilerRuntime:
                     raise RuntimeError('registered CUDA execution violated its admitted inputs') from error
                 raise error
             self._cuda.accept(record)
+            phase_accepted = True
         finally:
-            if workspace_id is not None:
+            # A failed rational phase can retain the actual memoryview in an
+            # exception traceback. Its extent stays owned and paid until that
+            # failed Runtime is discarded; success publishes no scratch alias.
+            if workspace_id is not None and (not rational_likelihood or phase_accepted):
                 self._ledger.release(self._data_owner, workspace_id)
                 self._buffers.pop(workspace_id, None)
 

@@ -8108,3 +8108,57 @@ identity and full AMP/fresh/install checks. Existing backend identities,
 Foundation R4 and ERC-1 stay unchanged. The earlier noise proof also now
 states explicitly that profile replay changes the algebraic native endpoint
 without acquiring an independent new noisy observation.
+
+## 244. Bind general rational likelihoods to owned derivation and integer bytes (2026-09-23)
+
+Implement a distinct RationalLikelihoodContract and coprime descriptor for
+the complete explicit finite-bank learner. Runtime derives it from actual
+G/Gamma/U and the complete source domain; no supplied likelihood bank or
+trained theta crosses the API. The existing affine-head proof, unit simplex
+restriction, no-delay boundary and complete pending gradient remain. Prior
+and event ratios share one coprime basis, with exact guarded reconstruction
+and optimizer-step clock. Zero event rank and prior-only bases are retained.
+
+Prepay the enlarged derivation/elimination tables and each integer commit.
+Positive weights occupy actual bytes in a separately owned extent; ingress
+reads those bytes under the exact rational-to-binary32 rule. One vector
+ingress, one zero, ordered additions, vector division and the complete master/
+gradient copies use exactly 1+3K+2N output cells. Native prediction/observation
+still execute the existing half/single graph, including all fixed slots.
+Physical counters, descriptor identity and actual source/target linkage are
+checked independently from the numerical full-state relation.
+
+Price a subtle lifetime boundary explicitly: an admitted failed decoder can
+leave its memoryview alive through an exception traceback. Such scratch
+remains owned and charged; successful publication releases it. Counter,
+integer-work and precision refusals retain the actual uncommitted gradient,
+event and both clocks. Work/storage refusal before admission enters no
+decoder. This is an ownership correction needed by the new path, not a new
+semantic action or a reinterpretation of the old one-radix implementation.
+
+The 4548-byte CPU artifact passes 3051 full native phase triples over ten
+banks, plus six late-birth triples with noncontiguous selected slots and all
+fixed/unused coordinates. Independent native derivatives verify the bank;
+full-word rational common denominators and gcd verify integer weights and
+ingress without the production decoder. Nineteen boundary/fault checks pass.
+Three real Runtime-ledger probes use an always-refusing CPU backend: one
+retains a 43896-byte view after failure, while short work/storage enters no
+backend. None is a successful device simulation. The old exact likelihood
+audit passes 958 transitions and 19 negatives. Two old serialized descriptors
+and six raw transition triples match the actual 1dfe683 source exactly.
+
+Register a separate 13-case actual RTX3090 A1, still unrun at this commit.
+It includes the 274-event two-factor recovery, the n3 mixed-rate PRODUCT
+graph, and a 48-event n2 profile/fresh/install/continued-learning path. It
+also checks dormant-coordinate/descriptor corruption, work/scratch/domain
+failures, a counter refusal, a short decode view, and a three-event legacy
+control. The declared 20-member finite class must remain unresolved because
+15 initializer shapes are unsupported; no CERTIFIED_COMPLETE is issued.
+
+Each worker retains the 4-GiB enforced host cap and has six minutes, with a
+1-GiB main packed cap, 10^11 work per role, 32768-bit reference arithmetic,
+eight factor-basis cells and 10^6 factor/decode work each. The class fixture
+retains its stricter old caps. Actual phase/fresh/installation evidence is
+pending, and source must stay fixed while the new jobs run. No historical
+device job is rerun. Existing identities, Foundation R4 and ERC-1 stay intact;
+the new explicit bank path supplies no full indexed release or model result.

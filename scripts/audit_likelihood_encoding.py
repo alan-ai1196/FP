@@ -8,6 +8,7 @@ This file is a passive auditor; it cannot supply a Runtime model or successor.
 from dataclasses import replace
 from fractions import Fraction as F
 from itertools import product
+from math import gcd, lcm
 from pathlib import Path
 import json
 import sys
@@ -20,7 +21,8 @@ from fp_reference.encoding import pack
 from fp_reference import learner as native
 from fp_reference.likelihood_encoding import (ENCODING_ID, EncodedLikelihoodState,
     LikelihoodEncodingContract, exponents, prepare_model, preparation_work,
-    preparation_workspace, require_learner)
+    preparation_workspace, require_learner, RationalLikelihoodModel, RATIONAL_ENCODING_ID,
+    decode_workspace)
 from fp_reference.program import (Binding, DelayedStateSpec, Product, Program,
     SemanticRules, Source, SourceSpec, State, Sum, Term)
 from fp_reference.semantics import ArithmeticUnresolved, evaluate
@@ -124,9 +126,17 @@ def verify_model(model, graph, rules, theta, spec, domain):
             model.source_domain) == (graph.program_id, rules, theta, spec, tuple(dict.fromkeys(domain)))
     bank = reverse_bank(graph, rules, theta, spec, model.source_domain)
     prior = tuple(theta[i] for i in spec.simplex_slots)
-    prior_powers = tuple(power(w/prior[0], model.contract.radix) for w in prior)
-    increments = tuple(tuple(power(w/row[0], model.contract.radix) for w in row) for row in bank)
-    differences = tuple(tuple(row[k]-increments[0][k] for row in increments) for k in range(len(prior)))
+    if type(model) is RationalLikelihoodModel:
+        bases = model.factor_bases
+        assert type(bases) is tuple and all(type(v) is int and v >= 2 for v in bases)
+        assert tuple(sorted(set(bases))) == bases and len(bases) <= model.contract.basis_cells
+        assert all(gcd(a, b) == 1 for i, a in enumerate(bases) for b in bases[i+1:])
+        prior_powers = tuple(e for w in prior for e in coprime_powers(w/prior[0], bases))
+        increments = tuple(tuple(e for w in row for e in coprime_powers(w/row[0], bases)) for row in bank)
+    else:
+        prior_powers = tuple(power(w/prior[0], model.contract.radix) for w in prior)
+        increments = tuple(tuple(power(w/row[0], model.contract.radix) for w in row) for row in bank)
+    differences = tuple(tuple(row[k]-increments[0][k] for row in increments) for k in range(len(prior_powers)))
     assert model.prior_exponents == prior_powers and model.reference_increment == increments[0]
     assert model.rank == rank(differences)
     representatives = tuple(next(k for k, row in enumerate(model.reconstruction)
@@ -134,12 +144,35 @@ def verify_model(model, graph, rules, theta, spec, domain):
     for a, row in enumerate(increments):
         assert model.event_increments[a] == tuple(differences[k][a] for k in representatives)
         assert tuple(sum(c*d for c, d in zip(coefficients, model.event_increments[a]))
-            for coefficients in model.reconstruction) == tuple(row[k]-increments[0][k] for k in range(len(prior)))
-    assert model.preparation_operations <= preparation_work(graph, rules, spec, domain, BITS)
+            for coefficients in model.reconstruction) == tuple(row[k]-increments[0][k] for k in range(len(prior_powers)))
+    assert model.preparation_operations <= preparation_work(graph, rules, spec, domain, BITS, model.contract)
     return bank, representatives
 
 
+def coprime_powers(value, bases):
+    """Audit a supplied factor basis by exact divisibility, with no refinement."""
+    assert value > 0 and all(type(base) is int and base >= 2 for base in bases)
+    numerator, denominator = value.numerator, value.denominator
+    powers = []
+    for base in bases:
+        exponent = 0
+        while numerator % base == 0:
+            numerator //= base
+            exponent += 1
+        while denominator % base == 0:
+            denominator //= base
+            exponent -= 1
+        powers.append(exponent)
+    assert numerator == denominator == 1
+    return tuple(powers)
+
+
 def expected_metadata(model, bank, representatives, joint, steps, pending):
+    if type(model) is RationalLikelihoodModel:
+        powers = tuple(e for w in joint for e in coprime_powers(w/joint[0], model.factor_bases))
+        reference = tuple(e for w in bank[0] for e in coprime_powers(w/bank[0][0], model.factor_bases))
+        coordinates = tuple(powers[k]-model.prior_exponents[k]-steps*reference[k] for k in representatives)
+        return RATIONAL_ENCODING_ID, stable_hash(model), coordinates, pending
     powers = tuple(power(w/joint[0], model.contract.radix) for w in joint)
     coordinates = tuple(powers[k]-model.prior_exponents[k]-steps*power(bank[0][k]/bank[0][0], model.contract.radix)
                         for k in representatives)
@@ -324,6 +357,31 @@ def rounded_commit(before, spec, joint, radix):
     return after, tuple(trace), cells
 
 
+def rounded_rational_commit(before, spec, joint):
+    """Independent full-word LCM/gcd construction, not the factor decoder."""
+    denominator = lcm(*(w.denominator for w in joint))
+    integers = tuple(w.numerator*(denominator//w.denominator) for w in joint)
+    common = gcd(*integers)
+    integers = tuple(v//common for v in integers)
+    scale = 1 << max(v.bit_length() for v in integers)
+    trace = []
+    def operation(name, values):
+        result = tuple(q(v) for v in values)
+        trace.append((name, 32, tuple(SINGLE.encode_exact(v) for v in result)))
+        return result
+    weights = operation('host-RNE32-ingress', tuple(F(v, scale) for v in integers))
+    zero = operation('host-RNE32-ingress', (F(0),))[0]
+    total = zero
+    for weight in weights:
+        total = operation('add', (total+weight,))[0]
+    normalized = operation('div', tuple(v/total for v in weights))
+    theta = list(before.theta)
+    for slot, value in zip(spec.simplex_slots, normalized):
+        theta[slot] = value
+    after = replace(before, theta=tuple(theta), gradient=(F(0),)*len(theta), unit=0, steps=before.steps+1)
+    return after, tuple(trace), 1+3*len(weights)+2*len(theta)
+
+
 def audit_snapshot(runtime, *, expected_failure=None, pre_attack_models=()):
     snapshot = validate_residency(runtime)
     no_device_handles(snapshot)
@@ -387,7 +445,10 @@ def audit_snapshot(runtime, *, expected_failure=None, pre_attack_models=()):
             else:
                 assert kind == 'commit' and pending is not None
                 joint = tuple(w*p for w, p in zip(joint, bank[pending]))
-                result, trace, cells = rounded_commit(before, model.learner, joint, model.contract.radix)
+                if type(model) is RationalLikelihoodModel:
+                    result, trace, cells = rounded_rational_commit(before, model.learner, joint)
+                else:
+                    result, trace, cells = rounded_commit(before, model.learner, joint, model.contract.radix)
                 assert record.raw_operations == trace
                 assert record.output_cells == cells
                 history = model, joint, None
@@ -411,7 +472,14 @@ def audit_snapshot(runtime, *, expected_failure=None, pre_attack_models=()):
     for candidate in snapshot.candidates:
         actual = expected[current[candidate.candidate_id]]
         assert (actual.unit, actual.cursor, actual.steps) == (candidate.learner.unit_count, candidate.learner.cursor, candidate.learner.optimizer_steps)
-    assert not any('likelihood-scratch' in key for key in buffers)
+    scratch = {key: value for key, value in buffers.items() if 'likelihood-scratch' in key}
+    if scratch:
+        assert failed == 1 and snapshot.cuda.phases[-1].phase.endswith(':commit')
+        last = snapshot.cuda.phases[-1]
+        failed_model = physical[last.input_phase][0]
+        assert type(failed_model) is RationalLikelihoodModel
+        assert tuple(scratch) == (last.object_id+':likelihood-scratch',)
+        assert len(scratch[last.object_id+':likelihood-scratch']) == decode_workspace(failed_model, runtime.contract.reference_integer_bits)
     storage, arena_bytes = snapshot.cuda.storage, snapshot.cuda.contract.storage.arena_bytes
     assert storage['actual_tensor_arena_bytes'] == arena_bytes
     assert storage['native_allocation_counter_current'] == storage['native_allocation_counter_at_binding'] == (1, arena_bytes, 1)
