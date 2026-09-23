@@ -1,13 +1,21 @@
 # FP Open Problems
 
-The [new four-tape unknown-noise experiment](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md)
-now registers the next model question. Forest observations alone cannot
-acquire the common rate; repeated edges and later cycles provide evidence.
-The owned joint learner must reproduce an independent full posterior over
-rates/worlds and is compared with an oracle given the true rate. Small exact
-controls and the all-label resource bounds pass. Actual model completion,
-rate-posterior behavior and predictive scores remain unobserved. No finite
-sample is required to choose the true rate, and no failed prefix can be scored.
+The [four-tape unknown-noise result](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
+closes the declared model execution question: all four RTX 3090 jobs complete,
+all native forecasts match an independent full joint posterior, and actual
+AMP scores closely track it. Forests leave the rate prior unchanged; repeated
+edges and cycles acquire evidence. One finite prefix favors the wrong rate.
+These paired tapes establish neither population performance nor arbitrary
+query-width efficiency. A post-execution tolerance-only reader counterexample
+is closed by independent exact reconstruction of all retained output words.
+
+A remaining representation question is whether rational fixed coefficients
+can remove the native range dependence on a common likelihood denominator.
+The old integer-copy program chooses S=lcm(denominators); positivity alone
+does not obviously require that scale. Any alternative must keep its own
+G/Gamma, fixed-slot ambient gradients and complete phase state. Equality of
+selected Bayesian updates does not establish full-state equivalence or AMP
+authority, and the original S=120 refusal remains terminal.
 
 The [joint AMP implementation and protocol](theory/proofs/OWNED_JOINT_AMP.md)
 bind physical state, actual causal inputs, independent integer
@@ -16,8 +24,8 @@ existing owner. Exact CPU tests pass, including expected S=120 refusals and
 a narrower integer allowance. All 17 actual jobs at 2432a25 now pass profiles,
 failed phases, paired freshness and installation, n64 closure, reversal and
 the expected S=120 refusal. The scoped bridge is executed and terminal.
-Unknown-noise model behavior against a strong exact joint posterior under
-declared query/resource conditions remains untested on this path. Arbitrary
+Unknown-noise behavior against a strong exact joint posterior is now measured
+on the four declared tapes above. Arbitrary
 query width, constructor optimality and full indexed release remain separate;
 the phase gate does not establish them. Foundation/ERC-1 and decision classes
 are unchanged.
@@ -92,7 +100,7 @@ working space and an exponential-time enumeration upper. This does not prove
 that exponential time is optimal, that typical noisy streams are hard, or
 that the current explicit finite-bank Runtime cannot finish its jobs.
 The meaningful remaining questions concern structured/average-case inference,
-useful unknown-noise model evidence against the strong joint posterior, and
+unknown-noise behavior beyond the four measured width-two tapes, and
 paid approximations with honest unresolved cases. Present rate concentration
 cannot be extrapolated to unbounded futures; a short reversal witness remains.
 
@@ -122,8 +130,8 @@ Forest bridges contain no noise information, and independent long cycles
 can require exponentially many samples; that cannot be repaired by a faster
 solver. The finite mixed-rate posterior has the exact statistic (T,d,s) and
 an existing native simplex realization, with exact and functional CPU audits.
-Scoped physical validation now passes above; useful model evidence against
-the strong joint unknown-rate posterior remains open. The original one-rational-radix backend
+Scoped physical validation and the four-tape comparison with the strong joint
+unknown-rate posterior now pass above. The original one-rational-radix backend
 cannot cover the two-rate bank; a positive integer construction can preserve
 the rate-dependent evidence without an energy histogram. It must pay its
 work/storage, bind the actual inputs and full native state, and obtain its own

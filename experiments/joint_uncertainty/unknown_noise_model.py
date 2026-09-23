@@ -145,7 +145,7 @@ def replay(case):
     """Exact full control and oracle-rate forecasts; never invokes production."""
     hidden, train, evaluation = data(case)
     control = JointControl(case[0])
-    joint, known, checkpoints = {}, {}, {}
+    joint, known, checkpoints, forecasts = {}, {}, {}, {}
     truth_index = RATES.index(F(case[1]))
     for k, (i, j, y) in enumerate(train+evaluation):
         forecast = control.predict(i, j)
@@ -157,6 +157,7 @@ def replay(case):
             checkpoints[str(k)] = [enclosure(v) for v in forecast.rate_posterior]
         if k >= len(train):
             joint[i, j], known[i, j] = forecast.joint, forecast.conditional[truth_index]
+            forecasts[i, j] = forecast
         control.observe(y)
     checkpoints['376'] = [enclosure(v) for v in control.forecast((0, 0)).rate_posterior]
-    return hidden, evaluation, joint, known, checkpoints, control.statistics()
+    return hidden, evaluation, joint, known, checkpoints, control.statistics(), forecasts

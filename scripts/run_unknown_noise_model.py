@@ -5,6 +5,7 @@ from pathlib import Path
 import argparse
 import json
 import os
+import struct
 import subprocess
 import sys
 import tempfile
@@ -24,12 +25,13 @@ from fp_reference.cuda_prefix import JointCudaPrefixContract
 from fp_reference.cuda_storage import CudaStorageContract
 from fp_reference import joint_amp as amp, joint_partition_decoder as decoder
 from fp_reference.binary_arithmetic import round_binary
-from fp_reference.cuda_range import SINGLE
+from fp_reference.cuda_range import SINGLE, HALF
 
 CAP, DEADLINE, PACKED, WORK = 16 << 30, 7200000, 8 << 30, 10**15
 ARENA, FRAME, CELLS = 256 << 20, 4 << 20, 65536
 CPU = 'evidence/minimal/FP_UNKNOWN_NOISE_MODEL_CPU.json'
 GATE = 'evidence/minimal/FP_JOINT_AMP_CUDA_A1.json'
+EXECUTION_SOURCE = '333cba1180607c8a538cb12a7115705e692c41fa'
 DEPENDENCIES = ('src/reference_compiler', 'scripts', 'experiments/joint_uncertainty',
     'experiments/adaptive_uncertainty', 'experiments/relation_noise', 'theory/numerical_checks',
     'theory/proofs/BAND_MODEL_RESOURCE_BOUND.md', 'evidence/minimal/FP_BAND_MODEL_CONTROL.json', CPU, GATE)
@@ -163,6 +165,32 @@ def decode_readout(row):
     return masses, tuple(v/sum(masses) for v in masses), division
 
 
+def expected_readout(forecast):
+    """Independent unsigned-history integer parts -> four exact RNE words.
+
+    This passive reader uses neither the production partition constructor
+    nor its scalar schedule. It does not establish device execution by itself.
+    """
+    parts = forecast.rate_parts
+    scale = 20
+    roots = tuple(sum((int(scale*(1-rate))-1)*p[y]+(int(scale*rate)-1)*p[1-y]
+                      for rate, p in zip(model.RATES, parts)) for y in (0, 1))
+    assert min(roots) > 0 and sum(roots) == (scale-2)*sum(sum(p) for p in parts)
+    single = lambda v: round_binary(F(v), SINGLE, bit_limit=32768).value
+    half = lambda v: round_binary(F(v), HALF, bit_limit=32768).value
+    common = max(v.bit_length() for v in roots)
+    scaled = []
+    for value in roots:
+        bits = value.bit_length()
+        power = F(0) if bits-common < -149 else F(1, 1 << (common-bits))
+        scaled.append(single(single(half(single(F(value, 1 << bits))))*single(power)))
+    denominator = single(sum(scaled))
+    masses = tuple(single(1+single((scale-2)*single(v/denominator))) for v in scaled)
+    normalizer = single(sum(masses))
+    probabilities = tuple(single(v/normalizer) for v in masses)
+    return tuple(int.from_bytes(struct.pack('<f', float(v)), 'little') for v in masses+probabilities)
+
+
 def read_result(result, case):
     assert tuple(result['case']) == case
     if result['status'] == 'UNRESOLVED_RUNTIME':
@@ -171,7 +199,7 @@ def read_result(result, case):
     assert result['status'] == 'COMPLETE_MODEL' and result['cursor'] == 376
     assert result['closure'] == 'SEALED_CUDA_STREAM' and type(result['constructor_decisions']) is int and result['constructor_decisions'] == 0
     assert result['all_ordinary_native_forecasts_equal_independent_joint'] == result['complete_unsigned_count_successor_checks'] == 376
-    hidden, evaluation, joint, known, checkpoints, stats = model.replay(case)
+    hidden, evaluation, joint, known, checkpoints, stats, forecasts = model.replay(case)
     assert result['rate_checkpoint_grid_bits'] == model.GRID
     assert result['rate_posterior_checkpoint_intervals'] == checkpoints and result['independent_control'] == stats
     words = result['evaluation_four_word_readouts']
@@ -179,6 +207,7 @@ def read_result(result, case):
     actual, maximum_gap, maximum_division = {}, F(0), F(0)
     for (i, j, _), row in zip(evaluation, words):
         masses, proper, division = decode_readout(row)
+        assert tuple(row) == expected_readout(forecasts[i, j]), 'retained mass/readout words differ from the registered complete RNE schedule'
         # Validate the actual scalar readout exactly, including probability
         # words. The worker separately read every intermediate operation.
         maximum_gap = max(maximum_gap, *(abs(a-b) for a, b in zip(proper, joint[i, j])))
@@ -224,12 +253,16 @@ def cpu_readers():
         for length in range(5):
             for labels in product((0, 1), repeat=length):
                 state = initialize(schema, 0)
+                control = model.JointControl(2)
                 for target in labels:
                     state = commit(observe(state, (0, 1), target))
+                    control.predict(0, 1)
+                    control.observe(target)
                 for pair in ((0, 1), (1, 1)):
                     _, raw, _, _, _ = prediction(state, pair, scratch, BUDGET)
                     words = raw.words[2:4]+raw.words[5:7]
                     decode_readout(words)
+                    assert expected_readout(control.forecast(pair)) == words
                     reads += 1
                     for k in (2, 3):
                         altered = list(words)
@@ -258,6 +291,7 @@ def cpu_readers():
 
 def read_report(report):
     assert 'torch' not in sys.modules
+    assert report['execution_source'] == EXECUTION_SOURCE
     assert report['status'] in ('COMPLETE_WITH_RETAINED_OUTCOMES', 'STOPPED_EXECUTION_OR_AUDIT_FAILURE')
     assert report['registration'] == json.loads(json.dumps(preflight()))
     declared = [list(case) for case in model.CASES]
@@ -279,8 +313,45 @@ def read_report(report):
             checked = read_completed_job(job, row['result'], case)
             assert row['reader'] == json.loads(json.dumps(checked))
             rows.append(checked)
+    complete = sum(r['status'] == 'PASS_COMPLETE_UNKNOWN_NOISE_MODEL_READER' for r in rows)
     return {'status': 'PASS_RETAINED_UNKNOWN_NOISE_OUTCOMES', 'execution_source': report['execution_source'],
-        'original_status': report['status'], 'unexecuted_cases': declared[len(rows):], 'workers': rows}
+        'original_status': report['status'], 'unexecuted_cases': declared[len(rows):], 'workers': rows,
+        'independent_integer_to_RNE_retained_word_checks': 1000*complete,
+        'replay_scope': 'post-execution passive strengthening; original worker and journal unchanged; no device rerun'}
+
+
+def reader_adversaries(report):
+    from copy import deepcopy
+    read_report(report)
+    actual = report['workers'][0]['result']['result']
+    case = tuple(actual['case'])
+    altered = deepcopy(actual)
+    row = altered['evaluation_four_word_readouts'][0]
+    original = list(row)
+    row[0] ^= 1
+    masses = tuple(amp.single(v) for v in row[:2])
+    normalizer = round_binary(sum(masses), SINGLE, bit_limit=32768).value
+    row[2:] = [int.from_bytes(struct.pack('<f', float(round_binary(v/normalizer, SINGLE, bit_limit=32768).value)), 'little') for v in masses]
+    decode_readout(row)  # The weaker four-word normalization check still passes.
+    try:
+        read_result(altered, case)
+    except AssertionError as exc:
+        assert 'complete RNE schedule' in str(exc)
+    else:
+        raise AssertionError('changed but tolerance-compatible mass row admitted')
+    source = deepcopy(report)
+    source['execution_source'] = '0'*40
+    try:
+        read_report(source)
+    except AssertionError:
+        pass
+    else:
+        raise AssertionError('foreign source admitted as the declared experiment')
+    return {'status': 'PASS_STRICT_RETAINED_READOUT_ADVERSARIES', 'case': case,
+        'original_four_words': original, 'altered_four_words': row,
+        'self_consistent_altered_divisions_still_pass': True,
+        'complete_independent_RNE_replay_refuses': True, 'foreign_execution_source_refused': True,
+        'scope': 'artifact-reader boundary; actual source-bound Runtime conformance was already strict; original journal unchanged'}
 
 
 def execute(attempt):
@@ -346,6 +417,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
     parser.add_argument('--cpu-readers', action='store_true')
+    parser.add_argument('--reader-adversaries', action='store_true')
     parser.add_argument('--attempt', type=int)
     parser.add_argument('--worker', type=int, choices=range(len(model.CASES)))
     parser.add_argument('--output', type=Path)
@@ -366,7 +438,8 @@ if __name__ == '__main__':
     elif args.cpu_readers:
         print(json.dumps(cpu_readers(), indent=2))
     elif args.read:
-        print(json.dumps(read_report(json.loads(args.read.read_text())), indent=2))
+        report = json.loads(args.read.read_text())
+        print(json.dumps(reader_adversaries(report) if args.reader_adversaries else read_report(report), indent=2))
     elif args.attempt is not None:
         execute(args.attempt)
     else:

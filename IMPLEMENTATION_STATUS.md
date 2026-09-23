@@ -1,15 +1,18 @@
 # FP Implementation Status
 
-The [unknown-noise model protocol](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md)
-registers four new n64 jobs through unchanged production source 2432a25.
-`unknown_noise_model.py` supplies the fixed causal tapes and an independent
-unsigned-history full joint control plus true-rate oracle.
-`audit_unknown_noise_model.py` passes 480 full-assignment forecast checks,
-384 count/native partition matches and the forest/off-band controls.
-The model runner's passive output reader passes 62 exact readouts, 124 changed
-word refusals and the actual JobRun dataclass collection interface. No Torch,
-model scores or actual model jobs have run for this registration. The actual
-joint phase gate below remains terminal; no old experiment is relaunched.
+The [unknown-noise model results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
+complete all four n64 jobs at 333cba1 through unchanged production from 2432a25.
+All 1,504 forecasts/count successors match an independent unsigned-history
+joint control; 4,516 phases, 58,656 operation words and 3,008 half words pass.
+Whole-job commitment peaks at 7,583,363,072 bytes under 16 GiB. The original
+175,543-byte journal is terminal. No retry, limit change or device job remains.
+The passive reader now reconstructs all 4,000 retained evaluation words from
+independent integer parts through exact RNE. A tolerance-compatible altered
+mass/division row and foreign source refuse; the old tolerance-only reader
+had admitted the former. This post-execution strengthening changes no Runtime
+semantics or historical artifact. CPU readers still pass 62 readouts and 124
+changed-word refusals. Scores and rate acquisition are scoped to the declared
+paired tapes, with zero constructor decisions and no population claim.
 
 The [owned joint AMP implementation](theory/proofs/OWNED_JOINT_AMP.md) adds
 `joint_amp.py`, `joint_cuda_prefix.py` and a closed `JointCudaPrefixContract`.

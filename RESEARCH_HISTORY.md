@@ -8685,3 +8685,54 @@ execution. Commit the full protocol before launching. Retain all four
 outcomes, never score incomplete prefixes, and stop unexpected failures
 without silent retries or cap changes. At this registration no model score
 has been inspected and no new actual model job has run.
+
+## 256. Complete unknown-noise model acquisition on RTX 3090 and attack the retained reader (2026-09-23)
+
+Execute all four preregistered n64 tapes at fixed source 333cba1, with production
+unchanged from the 2432a25 gate. Every job completes under 16 GiB/two hours,
+without retry or cap change; peak commitment is 7,583,363,072 bytes. The original
+175,543-byte journal retains all outcomes, resource summaries and 1,000
+four-word evaluation readouts. No model process remains live.
+
+All 1,504 native forecasts equal an independent unsigned-history full joint
+posterior, and all count successors match history. The four jobs check 4,516
+phases, 58,656 operation words, 3,008 half words and 76,704 outputs including
+copies. Each pins 264,453 integer-table bytes and consumes 147,400 arena bytes.
+Peak packed state stays below 4.889 GB. Reference integers/count updates remain
+host work; readout/gradient half/single arithmetic executes on the GPU. No
+literal expansion of the 2^64 native hypotheses is performed at n64.
+
+Each first forest sweep leaves the rate posterior exactly at 1/2. Repetition
+and later cycles concentrate on the true rate. At cut126, the high-noise seed1
+tape instead gives the low rate probability 0.50348689038; it later reverses.
+This is a legitimate finite-prefix outcome. At cut376 all four true-rate
+posterior weights exceed 1-4e-11. Exact positive weights are not deleted when
+a displayed 2^-40 enclosure touches zero or one.
+
+All-evaluation and initial-training-unseen comparisons use proper actual
+stored-mass probabilities, independent exact joint forecasts, and a true-rate
+oracle with additional information. Mean CE differs between AMP and exact by
+at most 3.809352e-6 over the eight declared groups. Brier scores retain exact
+enclosures. A sign reversal in rounding error or oracle/exact ordering on one
+tape does not show a better inference rule. The two seeds are paired across
+true-rate strata; four jobs are not a population guarantee. The full tables
+are in UNKNOWN_NOISE_MODEL_RESULTS.md. Empty-policy closure makes zero
+constructor decisions and invokes no new profile, freshness or installation.
+
+After all jobs terminate, attack the passive artifact reader. Flipping the
+first mass word by one ULP and recomputing both divisions preserves the old
+normalization and tolerance checks, which admitted the alteration. The live
+Runtime had already enforced exact primitive conformance; this was a retained
+reader gap. Now derive excess integers directly from independent unsigned
+rate partitions and replay the exact RNE equations without the production
+decoder or scalar schedule. All 4,000 original retained words pass. The
+self-consistent altered row and foreign source refuse; the 62 small readouts
+and 124 divided-word negatives still pass. Original journal and device runs
+are unchanged. The compact artifact is a source-bound audit report, not a
+standalone proof of arbitrary physical execution.
+
+The scoped model task is closed. Foundation/ERC-1, constructor decision classes
+and full indexed-release status do not change. A new mathematical direction
+is whether fixed rational coefficient slots remove the artificial common-
+denominator native scale while preserving the complete ambient gradients;
+selected-posterior equivalence alone would not authorize state transport.

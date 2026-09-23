@@ -1,6 +1,9 @@
 # Four unknown-noise model tapes through the owned joint AMP path
 
-Status (2026-09-23): **REGISTERED BEFORE ACTUAL MODEL EXECUTION**.
+Status (2026-09-23): **REGISTERED AT 333cba1; ALL FOUR JOBS COMPLETE; TERMINAL**.
+The [results](UNKNOWN_NOISE_MODEL_RESULTS.md) report execution at that fixed
+source and a subsequent passive reader strengthening. The registration below
+records the pre-execution experiment and is not a new launch instruction.
 The complete joint AMP/fresh/install gate passed all 17 jobs at 2432a25.
 This is a new model comparison, not a rerun of any historical device attempt.
 

@@ -1,18 +1,26 @@
 # FP Handoff
 
-**The first owned unknown-noise model comparison is registered, not yet run.**
-Read [the four-tape protocol](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md).
-At n64, two paired seeds cover true rates 1/10 and 1/4; Runtime always receives
-the same equal-rate/fair-world prior. The first 63 forest observations give
-no rate information, the next 63 repeat them, and 250 radius-two queries test
-continued learning. The independent control uses unsigned data and a separate
-vertex-prefix sum; the true-rate oracle is an additional strong control.
-The exact CPU gate passes 480 small forecasts/384 native partition matches;
-the all-label resource bound is 29774 positive operations/1946 integer bits.
-Use `scripts/run_unknown_noise_model.py --preflight`, then the committed
-`--attempt 1` under 16 GiB/two hours per fresh job. Keep HEAD and dependencies
-fixed while any job lives. No model scores or actual device outcomes are
-established by this registration; retain every refusal and never retry silently.
+**All four owned unknown-noise model jobs complete at 333cba1; terminal.**
+Read [the results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
+and original [journal](evidence/minimal/FP_UNKNOWN_NOISE_MODEL_A1.json).
+The RTX 3090 runs check 1,504 native forecasts/count successors, 4,516 complete
+phases and 58,656 operation words. Peak commitment is 7,583,363,072 bytes
+under 16 GiB, with no retry, cap change or production edit. Forest observations
+leave the rate prior unchanged; repetition and cycles produce concentration.
+One high-noise tape initially favors the low rate. The maximum mean CE gap
+between AMP and the exact joint control is 3.81e-6 across the declared groups.
+These are two paired seeds across two true-rate strata, not a population claim.
+The true-rate oracle receives extra information. Empty-policy closure makes
+zero constructor decisions and no model superiority claim.
+
+The passive reader now independently reconstructs all 4,000 retained words;
+the original tolerance-only reader admitted a one-bit mass alteration with
+recomputed divisions. This post-execution gap is closed without changing the
+original journal or rerunning any job; live Runtime was already strict.
+Use `scripts/run_unknown_noise_model.py --read evidence/minimal/FP_UNKNOWN_NOISE_MODEL_A1.json --reader-adversaries`.
+No model job remains live. The next research target is whether rational fixed
+coefficients remove denominator-driven native scale while preserving full
+native gradients; identical selected forecasts alone cannot license transport.
 
 **All 17 fresh owned joint AMP jobs pass at 2432a25; the gate is terminal.** Read
 [OWNED_JOINT_AMP](theory/proofs/OWNED_JOINT_AMP.md) and
@@ -27,9 +35,9 @@ error before the third target. All output/target/storage/publication faults
 pass. Peak whole-job commitment is 2,251,014,144 bytes under 4 GiB; no retry or
 limit change. Use `scripts/read_joint_amp_gate.py --negative-checks` for a
 CPU-only retained reader. No model superiority or constructor decision class
-follows. The next research question is useful unknown-noise model behavior
-against the strong joint posterior under declared query/resource conditions;
-all current and historical gate jobs are terminal.
+follows. The four-tape model comparison above now supplies scoped behavior
+against the strong joint posterior; all current and historical gate jobs are
+terminal.
 
 **The joint-noise learner now has an owned exact Reference Runtime path.**
 The [refinement and audit](theory/proofs/OWNED_JOINT_REFERENCE.md) bind its
