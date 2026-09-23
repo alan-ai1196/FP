@@ -1,15 +1,15 @@
 # Exponent histograms decode the native count learner without join tables
 
 Status: **PROVED, SCOPED; EXACT NATIVE/RNE AND ACTUAL RTX3090 ARITHMETIC PASS;
-OWNED CPU INTEGRATION PASS; ACTUAL RUNTIME GATE OPEN**.
+OWNED CPU AND ACTUAL RUNTIME COMPONENT GATE PASS**.
 This is another execution of the existing
 [complete count representation](COUNT_LEARNER_ENCODING.md), not a new
 learner, sufficient-state quotient or semantic architecture action. The
 implementation in `experiments/joint_uncertainty/count_histogram.py` has no
 Runtime or certificate authority. Foundation R4 and ERC-1 are unchanged.
 The separate [owned realization](OWNED_HISTOGRAM_DECODER.md) now implements
-paid packed traversal and complete native continuations; its actual Runtime
-CUDA gate is registered independently of the arithmetic-only A1 below.
+paid packed traversal and complete native continuations; all17 actual
+Runtime CUDA jobs pass independently of the arithmetic-only A1 below.
 
 The result exchanges exponential assignment visits for a small positive
 polynomial and a uniform mixed-precision error bound. It does not remove
@@ -336,6 +336,6 @@ reproducible with
 `python -X utf8 -B scripts/audit_count_histogram_cuda.py --read evidence/minimal/FP_COUNT_HISTOGRAM_CUDA_A1.json`.
 The actual A1 job is terminal and must not be repeated without a substantive
 new registered test. This closes the numerical component question. The
-owned CPU implementation now passes; actual complete Runtime phase,
-lineage, fresh persistence and installation validation remain open in the
-separate gate. No new model stream or complete indexed release is inferred.
+owned CPU implementation and actual Runtime phase, lineage, fresh
+persistence and installation gate now pass. No new model stream or
+complete indexed release is inferred.

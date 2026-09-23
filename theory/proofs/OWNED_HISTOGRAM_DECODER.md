@@ -1,7 +1,7 @@
 # Owned execution of the complete count histogram decoder
 
-Status: **IMPLEMENTED; EXACT CPU/NATIVE AUDIT PASS; ACTUAL RUNTIME CUDA GATE
-REGISTERED, OUTCOME OPEN** (2026-09-23).
+Status: **IMPLEMENTED; EXACT CPU/NATIVE AND ALL17 ACTUAL RUNTIME CUDA A1
+JOBS PASS** (2026-09-23). Full indexed release remains a separate claim.
 
 The [histogram theorem](COUNT_HISTOGRAM_DECODER.md) already proves the
 positive regrouping, its uniform n<=16 precision law, and the insufficiency
@@ -186,3 +186,44 @@ until collection ends, and retains every terminal outcome. Stop at the
 first failure without silent retries or cap changes. The preregistration
 claims no actual owned Runtime outcome, model score or release yet. The
 earlier16-fixture arithmetic A1 is terminal and is not repeated here.
+
+## 6. Actual Runtime outcome
+
+All17 registered fresh A1 jobs pass at
+`a2af24a39acc9998b7b5882eb249d726fcdc2644`. The
+[source/job-bound journal](../../evidence/minimal/FP_OWNED_HISTOGRAM_CUDA_A1.json)
+is terminal. Every process exits zero before its deadline, with no memory
+limit termination; maximum whole-job commitment is2393034752 bytes.
+No failed attempts, cap changes or numerical-source repairs were needed.
+
+The eight successful integration flows check901 phases and112947 primitive
+floating words, including37395 half words. The six histogram flows account
+for833 phases,69839 primitive words/21447 half, or72586 outputs when endpoint
+copies are included. The two legacy n256 controls pass in their original
+global/projected classes. Seven separate fault/continuation probes decode
+36 complete retained records. Output funding and second-lineage commit
+refusals preserve the admitted context/target and publish no learner advance.
+
+Paired fresh evidence crosses at20; installation preserves both learners
+and the physical prefix, retains alpha1/2, and learning continues to21.
+The actual scratch probe checks six separately funded reference/physical/
+reconstruction calls and blocks twelve release/later-call resize attempts.
+The3176-byte bill equals the pinned extent throughout.
+
+After52 matching labels, an actual prediction has a zero transient excess
+whose exact native value is positive. After52 contrary labels, the complete
+counts return to zero and the actual forecast returns to(1/2,1/2). All314
+phases and105 predictions in that continuation pass independent readers.
+The rounded temporary was never substituted for persistent native state.
+
+The dense n16 job learns all120 edge observations and then executes the
+formerly blocked query with17 terms/170 outputs. A separate32768-assignment
+oracle matches its reference forecast; an opposite target commits correctly
+at121. All364 phases,64632 outputs/20334 half and complete frames pass.
+Peak job commitment is2246258688 bytes. This is an owned causal continuation
+of all120 counts, not an imported passive endpoint.
+
+This closes the declared histogram component gate. It supplies no model
+score, constructor-class completeness or full indexed release. The next
+test is an exposed n16 model stream under its unchanged original envelope;
+do not repeat terminal A1 jobs without a substantive new question.

@@ -225,9 +225,10 @@ including the subnormal boundary and all five exposed cuts. Its independent
 retained reader checks208 endpoint words. The
 [paid Runtime realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md) now
 passes its exact CPU/native gate, including complete dense n16 learning,
-prepaid packed scratch and full point decoders. Its actual physical
-continuation/fresh/install gate is registered and remains open. These
-finite implementation results supply no constructor-class certificate.
+prepaid packed scratch and full point decoders. All17 actual physical
+continuation/fresh/install A1 jobs also pass ata2af24a, including dense n16
+learning and a104-event recovery after transient underflow. These finite
+component results supply no constructor-class certificate or full release.
 This decoder theorem changes no Foundation definition or ERC-1 condition.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)

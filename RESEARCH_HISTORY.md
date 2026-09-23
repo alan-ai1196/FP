@@ -7487,3 +7487,31 @@ physical faults, complete plan binding, scratch continuations, a104-event
 underflow/reversal, dense n16 recovery and both legacy n256 schedules.
 Keep launch source immutable and retain every result; no actual outcome
 is assumed. Full indexed release and model science remain separate.
+
+## 225. Close the owned histogram gate on actual native continuations (2026-09-23)
+
+All17 registered fresh jobs pass ata2af24a with immutable execution inputs.
+Each exits zero, without timeout or memory-limit termination; the largest
+whole-job commitment is2393034752 bytes under4 GiB. No production repair,
+cap change or failed attempt is needed. The journal retains every outcome.
+Eight successful integration flows check901 phases and112947 primitive
+floating words/37395 half. Seven fault/continuation probes decode36 full
+records, and unfunded output/second-lineage refusals publish no advancement.
+
+Paired fresh evidence crosses20, installation retains both learners and
+alpha1/2, then learning continues to21. Six paid reference/physical/checker
+calls block twelve scratch resize attempts through released/later views,
+with3176 actual/billed bytes. At52 matching labels, a physical transient
+excess is zero while its native value is positive;52 contrary labels restore
+counts0 and an actual(1/2,1/2) forecast. All314 phases/105 predictions pass.
+
+The dense n16 job builds all120 counts through ordinary events, executes
+the old join-obstructed query with17 terms/170 outputs, agrees with an
+independent32768-assignment oracle, and commits an opposite label at121.
+Its364 phases and64632 outputs/20334 half pass, with peak2246258688 bytes.
+Both legacy n256 schedules also pass with world builders disabled.
+
+The declared histogram component question is closed. Full indexed release,
+constructor-class completeness and model outcomes remain distinct. Proceed
+to a harder exposed n16 stream under its original whole-resource limits;
+the frozen Foundation/ERC-1 are unchanged.

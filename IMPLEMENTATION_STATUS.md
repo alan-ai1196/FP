@@ -1,13 +1,15 @@
 # FP Implementation Status
 
-**Owned histogram implementation: CPU PASS; actual Runtime CUDA gate registered.**
+**Owned histogram implementation: CPU and all17 actual Runtime CUDA A1 jobs PASS.**
 [Scope, tariffs and gate](theory/proofs/OWNED_HISTOGRAM_DECODER.md): one
 prepaid3176-byte pinned extent, full native state and independent physical
 plan reconstruction.11919 queries,388 owned histories/776 native phases,
 profile/fresh evidence, adversarial refusals and a121-event dense n16
-continuation pass. Legacy CPU/n256 controls pass. The17 fresh actual jobs
-must establish physical continuation, fresh/install and failure binding;
-no histogram model result or complete indexed release is claimed.
+continuation pass. At a2af24a, eight actual integration flows check901 phases,
+112947 primitive words/37395 half; seven probes read36 records. Fresh/install,
+underflow/reversal, dense n16 recovery and both legacy n256 controls pass.
+Peak job2393034752 bytes, all17 jobs terminal without timeout or limit
+termination. No histogram model result or complete indexed release is claimed.
 
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal and complete at7815f08 under the original limits:396 events,
@@ -31,8 +33,8 @@ The original passive decoder remains independent of the owned realization
 now implemented in `src/reference_compiler`.
 The16-case actual arithmetic A1 passes at4a4e730:48 phases,13713 output
 words/4341 half, peak job2185007104 bytes. Its independent retained reader
-checks208 endpoint words. Owned CPU funding/continuation now passes; actual
-retention, event/lineage and fresh/install validation remain open. The terminal arithmetic job is not
+checks208 endpoint words. The separate owned funding/continuation and actual
+retention, event/lineage and fresh/install gate now passes. The arithmetic job alone is not
 a Runtime continuation or complete indexed release.
 
 **Paid query-order search passes its complete declared component gate.**
@@ -42,7 +44,7 @@ plans and unchanged numerical kernels. All128432 structural comparisons,
 complete reference/fresh audits and23 logical CUDA cases pass. A separate
 funded control makes24 successful jobs; four failed audits remain source-
 bound. All28 jobs are terminal without timeout/limit termination, max
-2393862144 bytes. Production is unchanged fromad68440.
+2393862144 bytes. That gate used production unchanged fromad68440.
 
 Both n16 width recoveries, n256 controls, profiles, fresh/install/learning,
 physical faults, class/funding/order refusals and scratch continuations

@@ -2,8 +2,8 @@
 
 The [owned histogram extension](../../theory/proofs/OWNED_HISTOGRAM_DECODER.md)
 executes the same complete native count learner with prepaid integer
-enumeration. Its CPU/native gate passes; its actual Runtime CUDA gate is
-registered and still open. This extension has no complete-release claim.
+enumeration. Its CPU/native gate and all17 actual Runtime CUDA A1 jobs pass.
+This extension has no complete-release claim.
 
 **Status: Reference/CPU and RTX 3090 AMP baseline FROZEN, 2026-09-13;
 prospective v2 strategy separately audited. Experiments are UNHELD within

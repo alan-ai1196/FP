@@ -5,9 +5,13 @@ is implemented and passes its complete CPU gate:11919 exact/RNE queries,
 388 owned histories/776 native phases, profiles, fresh evidence, refusals
 and a121-event dense n16 continuation. It prepays an actual3176-byte pinned
 histogram extent and the complete traversal. Full counts/history remain.
-The17-job actual Runtime CUDA gate is registered in
-`scripts/audit_owned_histogram_cuda.py`; it has no outcome yet. Complete
-that gate before any histogram model test or broader release claim.
+All17 actual Runtime CUDA A1 jobs now pass ata2af24a:901 integration phases,
+112947 primitive words/37395 half; seven probes read36 full records. Fresh
+evidence crosses20, installation retains alpha1/2 and learns to21; transient
+underflow reverses after104 events; dense n16 learning reaches121. Peak
+job2393034752 bytes, all terminal without timeout/limit termination. Next
+test a harder exposed n16 model stream under its original envelope. No
+complete indexed release or histogram model result follows from this gate.
 
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal: **COMPLETE_MODEL** at7815f08 under the original limits. All396
@@ -37,11 +41,11 @@ The registered histogram arithmetic A1 **passes** at4a4e730:16 fixtures,
 whole-job commitment2185007104 bytes; all208 retained endpoint words pass
 an independent reader. The job is terminal; do not repeat it unchanged.
 The implementation and CPU result above now address prepaid construction;
-its actual phase/event/lineage/fresh/install gate remains open.
+its actual phase/event/lineage/fresh/install component gate also passes.
 This is a new execution of the same native learner, with no Foundation or
 ERC-1 change. Do not promote passive decoding into an owned model recovery.
 
-**Current frontier (2026-09-23): actual owned histogram Runtime continuations.**
+**Current frontier (2026-09-23): histogram recovery of a harder n16 model stream.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded
 control. A1--A4 retain four failed audits; A5 closes the remaining cases.
@@ -67,8 +71,8 @@ complete indexed release or precision-existence certificate.
 The existing n16/iid-c2/16 test now completes under those original limits;
 its396 structural witnesses become an actual source-bound execution result.
 Other n16 tapes retain their separate order-class obstructions. The histogram
-theorem supplies a different decoder, whose paid owned realization remains
-open. Foundation/ERC-1 stay frozen.
+theorem supplies a different decoder whose paid owned component gate now
+passes. Complete harder model streams remain open. Foundation/ERC-1 stay frozen.
 
 **Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)

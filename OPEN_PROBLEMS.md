@@ -1,12 +1,12 @@
 # FP Open Problems
 
 The [owned histogram implementation](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
-passes its complete CPU/native/resource gate, including dense n16 recovery
-after120 actual observations and a further legal update. The immediate
-open test is the registered17-job actual Runtime CUDA gate: fresh/install,
-failure retention, scratch lifetime, transient underflow/reversal and
-legacy controls. Commit inputs, retain all outcomes, and keep source fixed
-during execution. No histogram model stream has yet been run.
+passes its CPU/native/resource gate and all17 actual Runtime CUDA A1 jobs.
+Fresh/install, failure retention, scratch lifetime, transient underflow/
+reversal, dense n16 learning and both legacy controls pass. The next open
+test is a harder exposed n16 model stream under the unchanged original
+envelope. No histogram model stream has yet been run, and no complete
+indexed release is inferred from the component gate.
 
 The [paid-order n16/iid-c2/16 test](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is closed: COMPLETE_MODEL at7815f08 under every original limit, with all396
@@ -21,7 +21,8 @@ The [exponent-histogram decoder](theory/proofs/COUNT_HISTOGRAM_DECODER.md)
 now supplies a different realization for the same complete native counts.
 Its exact grouping and uniform half/single precision bound are proved;
 exhaustive small native/RNE checks pass. Paid owned CPU execution now also
-passes. Actual full-resource physical continuation remains open.
+passes, as does the registered actual physical continuation gate. Complete
+harder model streams remain open.
 Explicit32768-world traversal handles the five selected n16 hard cuts
 with2087--2843 floating outputs; this gives no global n256 algorithm,
 whole-resource Runtime recovery or new model score. The current histogram
@@ -31,7 +32,7 @@ The paid-order model result and histogram arithmetic A1 are now retained.
 The latter passes16 actual fixtures/48 phases, including all exposed cuts
 and the single-precision subnormal boundary; its208 endpoint words also
 pass an independent retained reader. The implemented Runtime ownership,
-phase, fresh/install path still needs its registered actual gate.
+phase and fresh/install path now also passes its separate actual gate.
 The passive schedule cannot bypass any of those gates or borrow an earlier
 indexed release. Its theorem separates numerical feasibility from integer
 work, histogram storage, retained evidence and full physical resources.
