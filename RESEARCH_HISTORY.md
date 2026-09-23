@@ -7627,3 +7627,27 @@ retain all outcomes. This is a new numerical schedule, not a new native
 action or a hidden replacement of an existing physical prefix. Production,
 Foundation and ERC-1 are unchanged; Runtime integration and model usefulness
 must acquire their own evidence.
+
+## 230. Verify coefficient-normalized histogram arithmetic on the RTX3090 (2026-09-23)
+
+The sole registered A1 job passes at3e85306 with unchanged source and caps.
+All16 fixtures and48 prediction/both-target phases pass fresh endpoint,
+complete exact-RNE trace and native-coordinate checks. There are4938
+prediction outputs,5354 total outputs including copies and1554 half words.
+Generic n32/n64 signed bands, n128 path, both n256 zero-count query types
+and n256 +/-80 count states pass alongside subnormal and span396 controls.
+No large fixture enumerates worlds, and no reference forecast is uploaded.
+
+Peak whole-job commitment is2051858432 bytes under4 GiB; the job exits zero
+before600 seconds without a memory termination. One16-MiB native arena
+and16-MiB allocator reservation hold all phases. The largest observed
+probability and gradient errors are about8.98242e-5 and0.000287402. A
+separate retained-data reader checks208 endpoint words with no device rerun.
+The complete CPU artifact also reproduces under `--check`, comparing the
+report after ordinary JSON tuple/list normalization; numerical code is unchanged.
+
+The30595-byte journal closes only the declared numerical component. Wide
+table/scratch payment, complete owned state/plan binding, Runtime fresh/
+install continuations and larger model utility remain separate obligations.
+The old Gray-histogram production and its completed model are unchanged.
+No Foundation/ERC-1 action, full indexed release or class certificate follows.

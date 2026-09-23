@@ -3,9 +3,10 @@
 The [carry-free histogram theorem/prototype](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
 removes explicit world enumeration when wide positive elimination fits,
 and supplies a coefficient-aware uniform half/single bound. Its complete
-small/native/RNE and independent n32..256 coefficient audits pass. Next run
-the registered16-case actual arithmetic gate; its outcome is unknown.
-Owned storage/work, independent plan binding, complete Runtime continuation
+small/native/RNE and independent n32..256 coefficient audits pass. Actual A1
+also passes all16 fixtures/48 phases at3e85306, including208 independently
+read retained endpoints. That numerical job is terminal. Owned storage/work,
+independent plan binding, complete Runtime continuation
 and useful larger-model execution remain separate obligations. No dense
 width or whole-resource obstruction is erased by packing integer digits.
 
@@ -13,7 +14,7 @@ The [n16/c4/seed18 histogram stream](experiments/joint_uncertainty/HISTOGRAM_MOD
 is closed: COMPLETE_MODEL at143ddc9,376 native posterior checks,1129 actual
 CUDA phases, full frames and256 readouts, under every original limit.
 Peak job7676411904 bytes. Both order-class obstructions are crossed without
-invalidating their scoped lower bounds. Other tapes, global n>16 histogram
+invalidating their scoped lower bounds. Other tapes, owned global n>16 histogram
 execution and the complete indexed release remain separate open questions.
 
 The [parity composition theorem](theory/proofs/PARITY_COMPOSITION_PRECISION.md)

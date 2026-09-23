@@ -1,11 +1,12 @@
 # Carry-free elimination and coefficient-normalized histogram precision
 
-Status: **PROVED, SCOPED; EXACT/NATIVE/RNE AUDITS PASS; ACTUAL ARITHMETIC REGISTERED**.
+Status: **PROVED, SCOPED; EXACT/NATIVE/RNE AND ACTUAL RTX3090 ARITHMETIC PASS**.
 This removes world enumeration
 from histogram construction when the declared integer elimination fits.
 It also removes global world count from the rounded readout's range bound.
 It changes no native state, Foundation action or ERC-1 condition. The
-prototype supplies no owned Runtime, actual CUDA or complete-class authority.
+prototype supplies no owned Runtime or complete-class authority. The actual
+arithmetic result below is a separate source-bound component gate.
 
 The [first histogram decoder](COUNT_HISTOGRAM_DECODER.md) computes a useful
 positive polynomial but enumerates K=2^(n-1) worlds. Its physical scale and
@@ -260,3 +261,34 @@ terminal collection, with no silent retry or cap relaxation. A separate
 `--read PATH` checks the208 retained endpoint words without device execution.
 No actual result, Runtime ownership, fresh/install or model score is assumed
 by this registration; the new schedule cannot borrow the older n16 gate.
+
+## 8. Actual arithmetic outcome
+
+The sole A1 job passes at
+`3e853065886f6a836e34c5654984fa847bbefbeb`. The
+[terminal journal](../../evidence/minimal/FP_PACKED_HISTOGRAM_CUDA_A1.json)
+retains all16 fixtures/48 phases:4938 prediction outputs and5354 total
+outputs including copies,1554 half operations. Independent exact-RNE
+interpretation checks every primitive and fresh endpoint. All native
+readout/gradient relations pass; the largest observed probability error
+is8.98241998735237e-5 and gradient error0.0002874016768084106. Neither is
+substituted for the uniform theorem's bounds.
+
+The n32 and n64 signed bands, n128 path and both n256 large-coefficient
+query types execute the same generic kernel. The n256 +/-80 cases also
+pass despite a transient underflowed rare partition. No complete native
+world array or reference forecast is supplied to the device schedule.
+CPU integer preprocessing is part of the measured child.
+
+The process exits zero before its600000-ms deadline, without memory-limit
+termination. Peak whole-job commitment is2051858432 bytes under4 GiB.
+The one actual tensor arena and allocator reservation are both16777216
+bytes; native allocation count is1. Device/build identity is RTX3090,
+SM8.6, Torch2.12.0+cu132 / CUDA13.2. A separate retained-data reader passes
+all208 prediction/gradient endpoint words without another device run.
+
+This closes the declared numerical component question. It does not admit
+this prototype to ReferenceCompilerRuntime, establish its paid table/scratch
+ownership, fresh/install continuations, full indexed release or a larger
+model result. Those obligations cannot borrow the n16 Gray decoder's gate.
+All source and limits stayed fixed; the job is terminal and is not repeated.

@@ -5,9 +5,11 @@ uses exact positive elimination instead of enumerating worlds, with explicit
 table and n(H+1)-bit guards. Its coefficient-normalized half/single schedule
 has a proved full-coordinate bound and passes11972 predictions/23944 target
 observations,1071311 words/183495 half, plus1054 native phase triples.
-Independent n32..256 coefficients pass. The16-case actual arithmetic gate
-is registered but unexecuted. This is research code; Runtime and prior
-production schedules are unchanged, with no borrowed device/release claim.
+Independent n32..256 coefficients pass. Actual A1 at3e85306 passes16 fixtures/
+48 phases,5354 outputs/1554 half, peak job2051858432 bytes;208 retained
+endpoint words pass a separate reader. The job is terminal. This is research
+code and numerical component evidence; Runtime and prior production
+schedules are unchanged, with no owned-integration or release claim.
 
 The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
 is COMPLETE_MODEL at143ddc9: all376 native forecasts,1129 CUDA phases,

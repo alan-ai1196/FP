@@ -250,5 +250,5 @@ if __name__ == '__main__':
     if args.write:
         ARTIFACT.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
     else:
-        assert json.loads(ARTIFACT.read_text(encoding='utf-8')) == report
+        assert json.loads(ARTIFACT.read_text(encoding='utf-8')) == json.loads(json.dumps(report))
     print(json.dumps(report, indent=2))

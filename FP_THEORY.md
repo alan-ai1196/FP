@@ -255,8 +255,10 @@ necessary when diagonal queries are included; n(H+1) bounds intermediate
 integer bits, while table width and bit work remain paid obligations.
 Coefficient-aware normalization gives a uniform full-coordinate half/single
 precision bound independent of n, conditional on integer and output limits.
-Exact/native/RNE audits include n32..256 fixtures. The actual numerical gate
-is registered; no new Runtime, model outcome or class authority follows.
+Exact/native/RNE audits include n32..256 fixtures. The actual numerical A1
+passes at3e85306:16 fixtures/48 phases,5354 outputs/1554 half;208 retained
+endpoints independently checked, peak job2051858432 bytes. No new Runtime,
+model outcome or class authority follows from this component evidence.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
