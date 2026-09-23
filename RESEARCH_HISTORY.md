@@ -7426,3 +7426,28 @@ complete indexed release follows. The isolated histogram research commits
 are now fast-forwarded into the canonical checkout after the model collector
 has finished its immutable-source checks. Proceed to the registered actual
 histogram arithmetic fixture, then its owned Runtime integration.
+
+## 223. Verify the histogram schedule on actual RTX3090 arithmetic (2026-09-23)
+
+The sole registered A1 passes at4a4e730, after the paid-order model job is
+terminal. All16 fixtures execute prediction and both target branches:
+48 actual device phases,13713 output words and4341 half operations. Every
+intermediate word and fresh final endpoint agrees with the exact RNE
+schedule. Native readout and full gradient relations pass, including the
+single-precision subnormal boundary, H396, both dense n16 signs and all
+five exposed order/output obstruction cuts. Maximum observed probability
+error is about3.179e-5, gradient error about1.130e-4.
+
+The fresh Windows job exits zero without timeout or limit termination;
+peak commitment2185007104 bytes stays below4 GiB. One16-MiB tensor and
+one16-MiB allocator segment remain fixed. The source/job-bound minimal
+journal retains the endpoints, errors and actual hardware/build tuple.
+A separate reader reconstructs all208 prediction/gradient endpoint words
+and error records without new CUDA execution. The numerical component
+question is closed in that declared scope; the uniform proof is unchanged.
+
+These are independent arithmetic fixtures, not a causal Runtime stream.
+Paid histogram construction/storage, complete phase retention, native
+event binding, lineage, fresh persistence and installation remain the
+next substantive test. Production is still unchanged fromad68440. No
+new Foundation action, model score or complete indexed release follows.

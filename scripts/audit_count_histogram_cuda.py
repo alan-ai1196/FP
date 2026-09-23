@@ -150,6 +150,50 @@ def git(*args):
                           encoding='utf-8', check=True).stdout.strip()
 
 
+def read_journal(path):
+    """Recheck retained endpoints without executing CUDA or rewriting evidence."""
+    report = json.loads(path.read_text(encoding='utf-8'))
+    assert report['status'] == 'PASS_ACTUAL_HISTOGRAM_ARITHMETIC'
+    assert len(report['workers']) == 1
+    row = report['workers'][0]
+    job, actual = row['completed_job'], row['result']
+    assert row['worker_status'] == actual['status'] == report['status']
+    assert job['exit_code'] == 0 and not job['timed_out'] and not job['limit_terminated_processes']
+    assert job['attached_before_resume'] and job['peak_job_commit'] <= report['registration']['host_job_cap']
+    assert actual['process_id'] == job['process_id']
+    assert report['registration'] == json.loads(json.dumps(preflight()))
+    assert len(actual['cases']) == 16
+    checked = 0
+    for (name, before, query), retained in zip(fixtures(), actual['cases']):
+        assert name == retained['case']
+        expected, hist, _ = decoder.rounded_prediction(before, query)
+        assert retained['prediction_outputs'] == hist.output_cells
+        assert retained['checked_prediction_operations']+7 == hist.output_cells
+        assert retained['half_operations'] == 3*hist.term_count
+        assert all(type(word) is int for word in retained['prediction_words'])
+        assert retained['prediction_words'] == list(expected.words)
+        reference, _ = decoder.reference(before, query)
+        relation = amp.check_prediction(reference, expected, TOLERANCE,
+            normalizer_cap=F(18), activation_cap=F(8), bit_limit=32768)
+        assert str(relation.probability_error) == retained['probability_error']
+        checked += 7
+        assert len(retained['observations']) == 2
+        for target, observation in enumerate(retained['observations']):
+            assert type(observation['target']) is int and observation['target'] == target
+            rounded, _ = decoder.rounded_observation(before, expected, target)
+            assert all(type(word) is int for word in observation['gradient_words'])
+            assert observation['gradient_words'] == list(rounded.gradient_words)
+            mass = reference.masses[target]
+            truth = IndexedState(rounded.encoded, (1/mass-F(1, 5), F(4, 5)-8/mass, F(4, 5)))
+            relation = amp.check_state(truth, rounded, TOLERANCE, bit_limit=32768)
+            assert str(relation.state_error) == observation['gradient_error']
+            checked += 3
+    assert checked == 208
+    return {'status': 'PASS_RETAINED_ENDPOINT_READER', 'fixtures': 16,
+        'prediction_and_gradient_words': checked, 'new_CUDA_executions': 0,
+        'scope': 'retained component endpoints; no Runtime or release certificate'}
+
+
 def execute(attempt):
     path = ROOT/f'evidence/minimal/FP_COUNT_HISTOGRAM_CUDA_A{attempt}.json'
     assert attempt > 0 and not path.exists()
@@ -215,8 +259,11 @@ if __name__ == '__main__':
     parser.add_argument('--attempt', type=int)
     parser.add_argument('--worker', action='store_true')
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--read', type=Path)
     args = parser.parse_args()
-    if args.worker:
+    if args.read is not None:
+        print(json.dumps(read_journal(args.read), indent=2))
+    elif args.worker:
         assert args.output is not None
         raise SystemExit(0 if worker(args.output) else 1)
     elif args.preflight:
@@ -224,4 +271,4 @@ if __name__ == '__main__':
     elif args.attempt is not None:
         execute(args.attempt)
     else:
-        parser.error('select --preflight, --attempt or --worker')
+        parser.error('select --read, --preflight, --attempt or --worker')

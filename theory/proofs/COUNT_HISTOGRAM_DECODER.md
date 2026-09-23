@@ -1,6 +1,7 @@
 # Exponent histograms decode the native count learner without join tables
 
-Status: **PROVED, SCOPED; EXACT NATIVE AND RNE AUDIT PASS**.
+Status: **PROVED, SCOPED; EXACT NATIVE/RNE AND ACTUAL RTX3090 ARITHMETIC PASS;
+OWNED RUNTIME INTEGRATION OPEN**.
 This is another execution of the existing
 [complete count representation](COUNT_LEARNER_ENCODING.md), not a new
 learner, sufficient-state quotient or semantic architecture action. The
@@ -69,7 +70,7 @@ the complete input counts remain costs. No assignment or posterior table
 of K floating values is needed. The Python prototype does not equate these
 logical integer-cell counts with its complete heap footprint.
 
-Horner evaluation at9 uses O(H) positive integer scalar operations per
+Horner evaluation at9 uses O(H+1) positive integer scalar operations per
 partition. Since Z_0+Z_1<=K*9^H, partition integers have fewer than
 `n+4H+1` bits. Multiprecision arithmetic is not a unit-cost machine claim.
 The prototype preflights world/span/integer limits before enumeration or
@@ -296,7 +297,7 @@ the child starts attached to the declared job. Each completed case is retained
 in the worker result before advancing. Keep every terminal failure or timeout;
 do not retry silently or relax any cap. Commit inputs before execution and
 keep that checkout's HEAD/input files fixed until the parent has collected
-the terminal journal. This registration claims no physical outcome yet.
+the terminal journal. Section7 records the terminal outcome.
 
 This is an arithmetic fixture. Its host enumeration/readout/metadata are
 bounded by the job, without pretending to be prepaid Runtime records.
@@ -305,3 +306,33 @@ fresh persistence, installation, model score or complete-release authority.
 Those require the owned integration described above. Existing source-bound
 model work must finish before this new device job is launched; there is no
 exclusive-device throughput or elapsed-time comparison.
+
+## 7. Actual RTX3090 outcome
+
+The registered A1 passes all16 cases and48 device phases at
+`4a4e7309e44705410840977a21249ed8f25a3ded`. The
+[minimal source/job-bound journal](../../evidence/minimal/FP_COUNT_HISTOGRAM_CUDA_A1.json)
+retains every case's endpoint words and errors. The job exits zero with
+no timeout or memory-limit termination; peak whole-job commitment is
+2185007104 bytes, below4 GiB. The actual Torch/build/CUDA/RTX3090/SM tuple
+matches the declaration. There is one16-MiB tensor allocation and one
+16-MiB allocator segment throughout.
+
+Actual prediction outputs total13297; both-target observations make13713
+complete output words, including4341 half operations. Every intermediate
+operation and fresh final output agrees with exact RNE, including the
+single-precision subnormal cases. All native readout/gradient checks pass.
+Maximum observed probability error is about3.179e-5 and gradient error
+about1.130e-4. The five exposed cuts use the exact2087--2843 output counts
+in section5; both dense fixtures use170 outputs. The uniform theorem is
+unchanged by these finite hardware observations.
+
+An independent retained-endpoint reader recomputes all208 prediction and
+gradient words and their error records without executing CUDA. It is
+reproducible with
+`python -X utf8 -B scripts/audit_count_histogram_cuda.py --read evidence/minimal/FP_COUNT_HISTOGRAM_CUDA_A1.json`.
+The actual A1 job is terminal and must not be repeated without a substantive
+new registered test. This closes the numerical component question. Paid
+histogram storage/construction and complete Runtime phase, lineage, fresh
+persistence and installation integration remain open; no new model stream
+or complete indexed release is inferred.

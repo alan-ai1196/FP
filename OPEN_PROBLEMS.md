@@ -19,9 +19,11 @@ with2087--2843 floating outputs; this gives no global n256 algorithm,
 whole-resource Runtime recovery or new model score. The current histogram
 alone is provably insufficient persistent state, so all counts/history stay.
 
-The paid-order model result is now retained. Execute the registered16-case
-histogram arithmetic fixture. Actual CUDA conformance
-and subsequent Runtime ownership/phase/fresh/install integration are open.
+The paid-order model result and histogram arithmetic A1 are now retained.
+The latter passes16 actual fixtures/48 phases, including all exposed cuts
+and the single-precision subnormal boundary; its208 endpoint words also
+pass an independent retained reader. Runtime ownership/phase/fresh/install
+integration remains open.
 The passive schedule cannot bypass any of those gates or borrow an earlier
 indexed release. Its theorem separates numerical feasibility from integer
 work, histogram storage, retained evidence and full physical resources.

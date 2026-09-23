@@ -23,15 +23,16 @@ or complete certificate exists yet. The exact audit checks11930 predictions,
 23860 observations and1054 complete native phase triples. Five exposed hard
 cuts use2087--2843 outputs, including the old65574-output obstruction.
 
-The next numerical check is registered in
-`scripts/audit_count_histogram_cuda.py`:16 fixtures,48 actual phases, one
-fresh4-GiB/600-second job. The preceding model job is now terminal.
-Its histogram hardware outcome is still unknown. Then pursue prepaid owned histogram
-construction, complete phase evidence and event/lineage/fresh/install binding.
+The registered histogram arithmetic A1 **passes** at4a4e730:16 fixtures,
+48 actual phases,13713 output words including4341 half operations. Peak
+whole-job commitment2185007104 bytes; all208 retained endpoint words pass
+an independent reader. The job is terminal; do not repeat it unchanged.
+Next pursue prepaid owned histogram construction, complete phase evidence
+and event/lineage/fresh/install binding.
 This is a new execution of the same native learner, with no Foundation or
 ERC-1 change. Do not promote passive decoding into an owned model recovery.
 
-**Current frontier (2026-09-23): actual histogram arithmetic, then complete owned decoding.**
+**Current frontier (2026-09-23): complete owned histogram decoding.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded
 control. A1--A4 retain four failed audits; A5 closes the remaining cases.

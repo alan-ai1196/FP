@@ -6,11 +6,11 @@ is terminal and complete at7815f08 under the original limits:396 events,
 readouts checked. Peak job14741692416 bytes. AMP unseen CE0.32693951163272406
 differs from the retained exact posterior by about-3.2e-9. The old194-cut
 refusal is preserved; no complete indexed release or construction/install
-claim follows. Continue with the registered histogram arithmetic fixture.
+claim follows. Continue with owned histogram Runtime integration.
 
 ## Current implementation state (2026-09-23)
 
-**Exponent-histogram decoding has a scoped proof and exhaustive native/RNE audit.**
+**Exponent-histogram decoding passes its scoped proof, native/RNE and actual CUDA arithmetic gates.**
 [Proof](theory/proofs/COUNT_HISTOGRAM_DECODER.md): exact integer grouping
 retains the full count learner and gives a positive polynomial with
 L<=min(2^(n-1),2(H+1)) terms. Its schedule uses9L+21-2b outputs, with3L half
@@ -19,8 +19,11 @@ stored-mass forecast at the existing tolerances. Exact enumeration/RNE
 checks11930 predictions/23860 observations;1054 complete native phase
 triples, profiles and a104-event underflow/reversal continuation pass.
 This remains an experimental decoder, outside `src/reference_compiler`.
-The16-case actual arithmetic fixture is registered, not executed; owned
-funding, retention, event/lineage and fresh/install integration remain open.
+The16-case actual arithmetic A1 passes at4a4e730:48 phases,13713 output
+words/4341 half, peak job2185007104 bytes. Its independent retained reader
+checks208 endpoint words. Owned funding, retention, event/lineage and
+fresh/install integration remain open; the terminal arithmetic job is not
+a Runtime continuation or complete indexed release.
 
 **Paid query-order search passes its complete declared component gate.**
 [Proof and evidence](theory/proofs/PAID_QUERY_ORDER.md): actual packed rows,
