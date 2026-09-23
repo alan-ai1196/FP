@@ -1,6 +1,9 @@
 # Paid order search on the exposed n16 resource frontier
 
-Status: **registered before execution; no outcome yet**.
+Status: **TERMINAL: COMPLETE_MODEL at7815f08; all native/CUDA/frame/score readers PASS**.
+The [result](PAID_ORDER_MODEL_RESULTS.md) retains the396-event completion
+under every original limit. The registration below is unchanged; this job
+is terminal and must not be silently repeated.
 
 The question is whether the paid structural solver can carry the existing
 complete indexed learner beyond its fixed-order obstruction, under the

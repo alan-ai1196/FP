@@ -1,12 +1,10 @@
 # FP Open Problems
 
-The next experiment is now preregistered in
-[`PAID_ORDER_MODEL_PROTOCOL.md`](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md):
-one actual global n16/iid-c2/16 stream with paid search, the existing compressed
-frames and unchanged original limits. The fixed run stopped at194. All
-native posteriors and actual AMP traces will be audited; incomplete prefixes
-remain unscored. Commit inputs before `scripts/run_paid_order_model.py --attempt 1`
-and keep source fixed until terminal. No new model outcome is claimed here.
+The [paid-order n16/iid-c2/16 test](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
+is closed: COMPLETE_MODEL at7815f08 under every original limit, with all396
+events,1189 CUDA phases, complete frames and scores independently checked.
+The original194-cut failure remains retained. Other tapes, whole-resource
+histogram execution and the broader indexed release remain separate questions.
 
 Only genuinely unresolved problems belong here. Historical results remain
 in their source-bound proofs, evidence and research history.
@@ -21,29 +19,25 @@ with2087--2843 floating outputs; this gives no global n256 algorithm,
 whole-resource Runtime recovery or new model score. The current histogram
 alone is provably insufficient persistent state, so all counts/history stay.
 
-Finish and retain the already registered paid-order model job, then execute
-the registered16-case histogram arithmetic fixture. Actual CUDA conformance
+The paid-order model result is now retained. Execute the registered16-case
+histogram arithmetic fixture. Actual CUDA conformance
 and subsequent Runtime ownership/phase/fresh/install integration are open.
 The passive schedule cannot bypass any of those gates or borrow an earlier
 indexed release. Its theorem separates numerical feasibility from integer
 work, histogram storage, retained evidence and full physical resources.
 
-The immediate research frontier is useful execution on the existing
-n16/iid-c2/16 stream. The [paid-order component gate](theory/proofs/PAID_QUERY_ORDER.md)
+The [paid-order component gate](theory/proofs/PAID_QUERY_ORDER.md)
 is complete: all23 logical cases plus a fresh funded control pass; all28
 attempts, including four failed audits, are terminal. No production change
 was needed afterad68440. Lifetime scratch capacity, prior payment and
 complete native/AMP continuations have their scoped proof and actual evidence.
 
-All396 cuts on that exposed tape have structural witnesses within the
-current table/output limits, but numerical, retained-evidence and total
-resource feasibility still need actual execution. The old compressed
-natural-order path stops at194. Register the paid solver under the same
-original caps, data, native learner and tolerances. Keep the strong retained
-posterior control; an incomplete prefix has no complete-model score.
-This component result does not freeze the full indexed Runtime or reopen
-Foundation/ERC-1. It removes the need for another static special case
-before that scientific test.
+All396 cuts on that exposed tape now execute, retain evidence and pass
+their numerical/native relations within the original whole-resource limits.
+That case supplies no all-decoder or other-tape result. The next substantive
+question is whether the proved histogram realization can be paid, owned
+and executed on the harder exposed cuts and complete streams. This does
+not freeze the full indexed Runtime or reopen Foundation/ERC-1.
 
 An [exact n4 witness](theory/proofs/ORDER_PRECISION_SEPARATION.md) now rules
 out precision-safe pruning merely by equal resource labels. The structural
@@ -105,8 +99,9 @@ under the former uncompressed encoding and 8-GiB packed cap. On the n16 tapes, 1
 cuts have no order within the table caps, four exceed the output cap at its
 exact minimum, and all four streams have a uniform-frame lower bound above
 the whole packed budget. These settled restrictions do not imply an
-all-decoder impossibility. Complete execution with a paid representation,
-nonuniform retention or another solver remains open; their correctness and
+all-decoder impossibility. The c2/16 case now completes with byte-only
+compression and paid order search. Whole-resource execution of the other
+three tapes remains open; alternative realizations' correctness and
 whole-resource costs must be established before claiming recovery. The fixed native learner and
 declared numerical relation need no semantic patch.
 

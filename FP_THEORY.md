@@ -224,10 +224,13 @@ Actual arithmetic and owned Runtime realization remain separate obligations.
 This decoder theorem changes no Foundation definition or ERC-1 condition.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
-is registered under the prior resource and numerical envelope. It changes
-only the paid solver and its declared rounded realization, retaining the
-complete native learner and strong posterior control. No result is assumed
-from structural feasibility alone.
+now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
+at7815f08 under the prior resource and numerical envelope. All396 native
+forecasts,1189 CUDA phases and complete retained records/readouts pass their
+independent checks. Peak job is14741692416 bytes; unseen AMP CE differs from
+the unchanged strong exact control by about3.2e-9. The empty construction
+policy supplies no optimization certificate, fresh/install or full indexed
+release claim. This source-bound result leaves the frozen semantics intact.
 
 The [paid query-order implementation](theory/proofs/PAID_QUERY_ORDER.md)
 now passes its declared reference/AMP component gate. Actual packed subset

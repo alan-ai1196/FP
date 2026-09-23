@@ -7394,3 +7394,35 @@ The prototype now returns its resident endpoint for a fresh final-word
 check; the exhaustive CPU report is unchanged. No new `src/reference_compiler`
 implementation, paid histogram ownership or complete release is claimed.
 Foundation/ERC-1 remain frozen; owned execution is the next research test.
+
+## 222. Complete the n16 posterior stream within its original resource envelope (2026-09-23)
+
+The sole paid-order model job completes at7815f08, with production unchanged
+fromad68440. All140 training and256 ordered evaluation events execute;
+the complete native120-count learner seals at396, without a failed phase,
+unpublished local commit or pending target. Each of396 reference forecasts
+equals the independent full-assignment posterior. The old compressed
+natural-order refusal at194 is preserved at its original source.
+
+All1189 CUDA phases pass complete native/RNE checks:5209660 floating words,
+90252 half. All1189 sealed frames, padding and extents pass the byte reader.
+The parent and a separate reader-only rerun recompute256 evaluation pairs
+and both retained exact score controls. Unseen AMP proper-mass CE is
+0.32693951163272406 versus exact0.3269395147987739; the tiny difference is
+rounding on this exposed tape, with no superiority or population claim.
+
+Whole-job commitment peaks at14741692416 bytes, within16 GiB; the process
+exits zero before the two-hour deadline, without memory-limit termination.
+Packed peak is5007735746 bytes, consumed arena41705800 bytes, largest phase
+61486 outputs and largest tape219525 nodes. There are774 funded searches,
+959807500672 work units and393216 billed/actual scratch bytes. The used
+compressed payload is124229869 bytes, recovering2699547841 legacy bytes;
+all uniform4-MiB frames remain fully paid.
+
+This closes that particular model execution obstruction. Its empty Compiler
+policy makes no constructor-class decision, spends no alpha and installs
+nothing. Other n16 order classes retain their proved obstructions; no new
+complete indexed release follows. The isolated histogram research commits
+are now fast-forwarded into the canonical checkout after the model collector
+has finished its immutable-source checks. Proceed to the registered actual
+histogram arithmetic fixture, then its owned Runtime integration.

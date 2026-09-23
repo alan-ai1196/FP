@@ -1,12 +1,13 @@
 # FP Handoff
 
-The next experiment is now preregistered in
-[`PAID_ORDER_MODEL_PROTOCOL.md`](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md):
-one actual global n16/iid-c2/16 stream with paid search, the existing compressed
-frames and unchanged original limits. The fixed run stopped at194. All
-native posteriors and actual AMP traces will be audited; incomplete prefixes
-remain unscored. Commit inputs before `scripts/run_paid_order_model.py --attempt 1`
-and keep source fixed until terminal. No new model outcome is claimed here.
+The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
+is terminal: **COMPLETE_MODEL** at7815f08 under the original limits. All396
+events,1189 CUDA phases and5209660 floating words pass, including90252 half
+words. Every sealed frame and all256 evaluation readouts pass independent
+readers. Peak job14741692416 bytes; unseen AMP CE0.32693951163272406 agrees
+with the strong exact control to about3.2e-9. The old cursor194 refusal stays
+retained. Do not rerun the terminal job. No new complete indexed release,
+constructor certificate or installation follows.
 
 This file is written for a researcher with no prior chat context. The
 repository, especially `FP_THEORY.md`, is authoritative.
@@ -24,13 +25,13 @@ cuts use2087--2843 outputs, including the old65574-output obstruction.
 
 The next numerical check is registered in
 `scripts/audit_count_histogram_cuda.py`:16 fixtures,48 actual phases, one
-fresh4-GiB/600-second job. Run it only after the existing model job is terminal.
-Its hardware outcome is still unknown. Then pursue prepaid owned histogram
+fresh4-GiB/600-second job. The preceding model job is now terminal.
+Its histogram hardware outcome is still unknown. Then pursue prepaid owned histogram
 construction, complete phase evidence and event/lineage/fresh/install binding.
 This is a new execution of the same native learner, with no Foundation or
 ERC-1 change. Do not promote passive decoding into an owned model recovery.
 
-**Current frontier (2026-09-23): test paid order search on the blocked n16 model stream.**
+**Current frontier (2026-09-23): actual histogram arithmetic, then complete owned decoding.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded
 control. A1--A4 retain four failed audits; A5 closes the remaining cases.
@@ -53,12 +54,11 @@ gate includes both n256 controls, profiles, fresh/install/learning, numerical
 faults, closure and lineage refusal. This is a component result, not a
 complete indexed release or precision-existence certificate.
 
-The next substantive test is the existing n16/iid-c2/16 tape. Its396 query
-cuts have structural witnesses, while the old compressed natural-order run
-stops at194. Register paid order search under the same data, learner,
-precision, table/output, memory and work limits; audit all native posteriors
-and actual AMP words. Keep every refusal and do not score incomplete runs.
-No new model outcome is claimed yet. Foundation/ERC-1 stay frozen.
+The existing n16/iid-c2/16 test now completes under those original limits;
+its396 structural witnesses become an actual source-bound execution result.
+Other n16 tapes retain their separate order-class obstructions. The histogram
+theorem supplies a different decoder, whose paid owned realization remains
+open. Foundation/ERC-1 stay frozen.
 
 **Previous source-bound gate: singleton-plan elimination.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
@@ -87,7 +87,7 @@ second-lineage commit refusals preserve received data. Maximum job
 2,394,525,696 bytes; every job exits zero without timeout/limit termination.
 This closes the stated component gate, not a complete indexed release or
 model result. Those jobs are terminal. Their results remain source-bound; the new
-solver and remaining extent defect are described above. A non-singleton
+solver and its completed extent repair are described above. A non-singleton
 order class can use a value-only proposal boundary; the current fixed
 schedules need no redundant producer. Do not rerun terminal probes.
 

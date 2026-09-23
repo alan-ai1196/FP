@@ -1,12 +1,12 @@
 # FP Implementation Status
 
-The next experiment is now preregistered in
-[`PAID_ORDER_MODEL_PROTOCOL.md`](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md):
-one actual global n16/iid-c2/16 stream with paid search, the existing compressed
-frames and unchanged original limits. The fixed run stopped at194. All
-native posteriors and actual AMP traces will be audited; incomplete prefixes
-remain unscored. Commit inputs before `scripts/run_paid_order_model.py --attempt 1`
-and keep source fixed until terminal. No new model outcome is claimed here.
+The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
+is terminal and complete at7815f08 under the original limits:396 events,
+1189 audited CUDA phases,5209660 words/90252 half, all sealed frames and256
+readouts checked. Peak job14741692416 bytes. AMP unseen CE0.32693951163272406
+differs from the retained exact posterior by about-3.2e-9. The old194-cut
+refusal is preserved; no complete indexed release or construction/install
+claim follows. Continue with the registered histogram arithmetic fixture.
 
 ## Current implementation state (2026-09-23)
 
@@ -34,9 +34,8 @@ bound. All28 jobs are terminal without timeout/limit termination, max
 Both n16 width recoveries, n256 controls, profiles, fresh/install/learning,
 physical faults, class/funding/order refusals and scratch continuations
 pass. The numerical integrations check544 phases/63786 words,20226 binary16.
-No complete indexed release, numerical-existence certificate or new model
-result follows. The next test is the previously blocked n16/iid-c2/16 stream
-under its original resource and numerical envelope.
+No complete indexed release or numerical-existence certificate follows.
+The separate n16/iid-c2/16 model test now completes as reported above.
 
 **Fixed indexed plans are constructed and executed inside Runtime; all fifteen actual gate jobs pass.**
 The [singleton-plan elimination law](theory/proofs/SINGLETON_PLAN_ELIMINATION.md)
