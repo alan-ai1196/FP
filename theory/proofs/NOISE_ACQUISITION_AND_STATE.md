@@ -1,5 +1,10 @@
 # Learning a common noise rate: acquisition and retained state
 
+The subsequent [shared-noise factor law](SHARED_NOISE_FACTOR_CLOSURE.md)
+shows why zero information about eta on a forest does not imply posterior
+independence of eta and its latent parities. It gives a sharp fixed-factor
+alphabet lower and a positive exact forest decoder of the joint state below.
+
 Status (2026-09-23): **PROVED UNDER THE DECLARED MODEL; EXACT AND FUNCTIONAL
 REFERENCE/BINARY64 AUDITS PASS.** This addresses an assumption of the completed
 relation experiments: they supply the noise rate. It gives a matching passive

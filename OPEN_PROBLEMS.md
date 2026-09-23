@@ -1,5 +1,17 @@
 # FP Open Problems
 
+The [shared-noise closure/decoding result](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
+closes two theoretical questions. All fixed independent-factor re-encodings
+need one J*2^r-category factor for J common rates and query rank r, including
+forest families. Nevertheless retained joint counts admit a positive exact
+forest decoder with polynomial arithmetic and a complete native relation.
+The exponential category count is therefore not a decoder resource lower
+bound. A physical implementation must own its rate-specific unnormalized
+partitions, full state, work and AMP bridge. Its admitted domain must handle
+changing support honestly: a new cycle can require a different paid solver
+or UNRESOLVED, and a canceled edge still contributes to rate evidence through
+T. The prototype does not settle general-width or useful model performance.
+
 The [conditional-mixture update obstruction](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
 rules out a tempting structural shortcut. Conditional independence can make
 the exact posterior family compact, but compiling those gate/conditional
@@ -8,9 +20,9 @@ its Bayes update. A two-event witness excludes every fixed block scaling and
 one scalar rate, including event-dependent scalar rates, within that declared
 forecast parameterization. A graph's current values and statistical closure
 therefore cannot replace a learner-transition proof. This does not rule out
-a paid structural decoder of the original joint state. Derive such a decoder
-from retained evidence, preserving unnormalized rate weights and all native
-state obligations; do not repair the shortcut by silently changing U.
+a paid structural decoder of the original joint state. The forest computation
+above now has that mathematical relation; ownership and an actual AMP bridge
+remain separate. Do not repair the shortcut by silently changing U.
 
 The [unknown-noise forecast reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)
 closes the question whether the existing worst-case decoding obstruction

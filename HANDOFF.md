@@ -1,5 +1,21 @@
 # FP Handoff
 
+**Shared-noise closure now has a sharp structural law and an exact decoder
+separation.** The [new proof](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
+shows that J distinct common noise rates and query rank r require one factor
+with J*2^r categories under every fixed independent-factor re-encoding with
+exact Bayesian closure. This already applies to forests. Yet a positive
+integer decoder computes the original joint forest posterior from retained
+(T,d,s) with polynomial work and O(n+T)-bit arithmetic for fixed rates/prior.
+It preserves unnormalized rate evidence, all native state coordinates and
+profile clocks; a closing cycle refuses this algorithm until its support
+condition holds again. The 8,463-byte audit covers all 40,320 eight-world
+bijections under two shapes/priors, 20,436 exact query partitions, 267 complete
+native triples and eight larger forest queries. No production or device job
+changes. The remaining physical obligation is an owned decoder and complete
+AMP relation for the original joint learner, with honest cyclic/width cases;
+neither independent-factor replacement nor factor size alone settles it.
+
 **New structural obstruction: conditional closure is not a native update
 certificate.** The [conditional-mixture law](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
 shows that a compact conditional SUM/PRODUCT family can contain the exact
@@ -12,9 +28,9 @@ even if the scalar rate changes between events. This covers native readouts
 with the stated conditional interpretation, not all encodings.933 complete
 native triples and13 independent binary64 phases pass the audit; the exact
 joint control verifies statistical closure through258 prefixes. No production
-code or device jobs change. The next structural decoder must compute the
-original joint learner from retained evidence and prove its full relation;
-replacing its Program by conditional parameters is a different learner.
+code or device jobs change. The forest decoder above now supplies a scoped
+exact joint computation and native relation. Replacing the Program by
+conditional parameters remains a different learner.
 
 **Current theoretical result: learning a finite unknown noise rate does not
 remove worst-case forecast hardness.** The [new reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)

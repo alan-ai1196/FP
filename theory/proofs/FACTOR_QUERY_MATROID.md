@@ -238,3 +238,11 @@ linear in n. Its anchored graph is a path. The full-world categorical factor
 can therefore have a compact, efficiently decoded correlated representation.
 Later observations may increase width; no future count or correlation is
 discarded to preserve the small bound.
+
+The [shared-noise extension](SHARED_NOISE_FACTOR_CLOSURE.md) changes the closure
+law when eta is an unknown common latent variable. Binary likelihoods for
+both labels can preserve independent factors only when each query is local
+to one factor. Since every query's latent likelihood identifies the same
+eta, all query components must share that factor: its sharp alphabet is
+J*2^r, even for a forest. An exact positive forest decoder still has polynomial
+work. The known-noise matroid theorem above keeps its stated assumptions.

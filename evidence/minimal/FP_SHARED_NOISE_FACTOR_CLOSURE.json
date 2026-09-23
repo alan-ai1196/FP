@@ -1,0 +1,337 @@
+{
+  "status": "PASS",
+  "precision": "exact integers and Fraction; no Torch",
+  "binary_likelihood_lemma": {
+    "normalized_binary_tables": 7915,
+    "both_labels_preserve_products": 99,
+    "one_label_only_counterexample": {
+      "denominator": 10,
+      "zero_likelihood_numerators": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "one_likelihood_determinant": "-1/10"
+    }
+  },
+  "all_reencodings": {
+    "bijections": 40320,
+    "shapes": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ],
+    "prior_count": 2,
+    "encoding_shape_prior_cases": 161280,
+    "complete_one_event_posterior_checks": 709632,
+    "query_family_shape_prior_checks": 64,
+    "cases": [
+      {
+        "prior_ratio": [
+          1,
+          1
+        ],
+        "product_initializers_in_shape_order": [
+          40320,
+          40320
+        ],
+        "families": [
+          {
+            "queries": [],
+            "required_joint_factor_categories": 1,
+            "valid_bijections_in_shape_order": [
+              40320,
+              40320
+            ]
+          },
+          {
+            "queries": [
+              0
+            ],
+            "required_joint_factor_categories": 2,
+            "valid_bijections_in_shape_order": [
+              4608,
+              3456
+            ]
+          },
+          {
+            "queries": [
+              1
+            ],
+            "required_joint_factor_categories": 4,
+            "valid_bijections_in_shape_order": [
+              384,
+              0
+            ]
+          },
+          {
+            "queries": [
+              1,
+              2
+            ],
+            "required_joint_factor_categories": 8,
+            "valid_bijections_in_shape_order": [
+              0,
+              0
+            ]
+          },
+          {
+            "queries": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "required_joint_factor_categories": 8,
+            "valid_bijections_in_shape_order": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "prior_ratio": [
+          1,
+          2
+        ],
+        "product_initializers_in_shape_order": [
+          4608,
+          3456
+        ],
+        "families": [
+          {
+            "queries": [],
+            "required_joint_factor_categories": 1,
+            "valid_bijections_in_shape_order": [
+              4608,
+              3456
+            ]
+          },
+          {
+            "queries": [
+              0
+            ],
+            "required_joint_factor_categories": 2,
+            "valid_bijections_in_shape_order": [
+              4608,
+              3456
+            ]
+          },
+          {
+            "queries": [
+              1
+            ],
+            "required_joint_factor_categories": 4,
+            "valid_bijections_in_shape_order": [
+              384,
+              0
+            ]
+          },
+          {
+            "queries": [
+              1,
+              2
+            ],
+            "required_joint_factor_categories": 8,
+            "valid_bijections_in_shape_order": [
+              0,
+              0
+            ]
+          },
+          {
+            "queries": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "required_joint_factor_categories": 8,
+            "valid_bijections_in_shape_order": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "positive_joint_decoder": {
+    "cases": [
+      {
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "prior": [
+          "1/2",
+          "1/2"
+        ],
+        "all_reachable_forest_cuts_n2_to_n4_through_time3": 718,
+        "ordered_query_partitions_and_both_forecasts": 10218,
+        "complete_weight_point_checks": 10088,
+        "cyclic_query_refusals": 584,
+        "maximum_integer_bits": 21
+      },
+      {
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "prior": [
+          "1/7",
+          "2/7",
+          "4/7"
+        ],
+        "all_reachable_forest_cuts_n2_to_n4_through_time3": 718,
+        "ordered_query_partitions_and_both_forecasts": 10218,
+        "complete_weight_point_checks": 15132,
+        "cyclic_query_refusals": 584,
+        "maximum_integer_bits": 33
+      }
+    ],
+    "pre_power_integer_refusals": 1
+  },
+  "complete_native_relation": {
+    "native_graph": {
+      "nodes": 33,
+      "sources": 6,
+      "state_reads": 0,
+      "SUMs": 18,
+      "PRODUCTs": 9,
+      "SUM_edges": 1312,
+      "edges": 1330,
+      "slots": 9,
+      "bindings": 0
+    },
+    "complete_native_triples": 267,
+    "additional_all_query_cache_checks": 387,
+    "additional_native_weight_points": 3096,
+    "closing_cycle_refused": true,
+    "cancellation_recovered_rate_zero_mass": "12/37",
+    "cancellation_recovered_next_zero_forecast": "46269/74000",
+    "profile_attachment_cursor_and_steps": [
+      2,
+      4
+    ],
+    "profile_continuation_cursor_and_steps": [
+      3,
+      5
+    ]
+  },
+  "large_forest_separation": [
+    {
+      "n": 64,
+      "events": 162,
+      "query": [
+        0,
+        0
+      ],
+      "required_fixed_factor_categories_on_this_forest": "13835058055282163712",
+      "positive_multiplications": 1069,
+      "positive_additions": 198,
+      "integer_envelope": 1208,
+      "largest_integer_bits": 1086
+    },
+    {
+      "n": 64,
+      "events": 162,
+      "query": [
+        0,
+        32
+      ],
+      "required_fixed_factor_categories_on_this_forest": "13835058055282163712",
+      "positive_multiplications": 1357,
+      "positive_additions": 294,
+      "integer_envelope": 1208,
+      "largest_integer_bits": 1086
+    },
+    {
+      "n": 64,
+      "events": 162,
+      "query": [
+        0,
+        63
+      ],
+      "required_fixed_factor_categories_on_this_forest": "13835058055282163712",
+      "positive_multiplications": 1063,
+      "positive_additions": 198,
+      "integer_envelope": 1208,
+      "largest_integer_bits": 1086
+    },
+    {
+      "n": 64,
+      "events": 162,
+      "query": [
+        33,
+        63
+      ],
+      "required_fixed_factor_categories_on_this_forest": "13835058055282163712",
+      "positive_multiplications": 1339,
+      "positive_additions": 288,
+      "integer_envelope": 1208,
+      "largest_integer_bits": 1086
+    },
+    {
+      "n": 256,
+      "events": 642,
+      "query": [
+        0,
+        0
+      ],
+      "required_fixed_factor_categories_on_this_forest": "86844066927987146567678238756515930889952488499230423029593188005934847229952",
+      "positive_multiplications": 4237,
+      "positive_additions": 774,
+      "integer_envelope": 4760,
+      "largest_integer_bits": 4319
+    },
+    {
+      "n": 256,
+      "events": 642,
+      "query": [
+        0,
+        128
+      ],
+      "required_fixed_factor_categories_on_this_forest": "86844066927987146567678238756515930889952488499230423029593188005934847229952",
+      "positive_multiplications": 5389,
+      "positive_additions": 1158,
+      "integer_envelope": 4760,
+      "largest_integer_bits": 4319
+    },
+    {
+      "n": 256,
+      "events": 642,
+      "query": [
+        0,
+        255
+      ],
+      "required_fixed_factor_categories_on_this_forest": "86844066927987146567678238756515930889952488499230423029593188005934847229952",
+      "positive_multiplications": 4231,
+      "positive_additions": 774,
+      "integer_envelope": 4760,
+      "largest_integer_bits": 4319
+    },
+    {
+      "n": 256,
+      "events": 642,
+      "query": [
+        129,
+        255
+      ],
+      "required_fixed_factor_categories_on_this_forest": "86844066927987146567678238756515930889952488499230423029593188005934847229952",
+      "positive_multiplications": 5371,
+      "positive_additions": 1152,
+      "integer_envelope": 4760,
+      "largest_integer_bits": 4319
+    }
+  ],
+  "scope": "Fixed independent-factor closure lower; positive forest snapshot decoder of retained joint counts. No all-encoding memory lower, new native optimizer, Runtime certificate or AMP authority."
+}

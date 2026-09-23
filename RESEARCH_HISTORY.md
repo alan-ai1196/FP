@@ -8309,3 +8309,53 @@ or Runtime certificate is introduced. Statistical closure supplies a possible
 internal computation strategy, not permission to replace the native Program
 and reuse its optimizer. Continue structural inference from retained joint
 evidence with a complete learner relation. Foundation R4 and ERC-1 stand.
+
+## 249. Shared noise forces a joint factor but permits exact forest decoding (2026-09-23)
+
+Attack the fixed-coordinate escape route left by the conditional-mixture
+obstruction. For a positive product prior and normalized binary likelihoods,
+both labels preserve product structure iff the likelihood depends on one
+factor alone. A 2-by-2 complementary determinant proves this without the
+older two-valued-world-likelihood assumption. Checking only one label is
+insufficient: L0=(1,2,2,4)/10 is separable and L1 has determinant -1/10.
+The underlying binary independence phenomenon is classical; the proof is
+self-contained and its related Geiger/Heckerman source was checked.
+
+For a common unknown eta in (0,1/2), every query's latent likelihood identifies
+eta and its queried parity. A nonconstant statistic cannot be a function of
+two different Cartesian factors separately. Hence every exact fixed
+independent-factor re-encoding must put the rate and all queried parities
+in one factor of J*2^r categories. Grouping eta with a query basis attains
+the bound. This holds already for a forest, where the known-noise model
+allows separate edge factors. Zero transcript information about eta on a
+forest is consistent with posterior coupling between eta and its parities.
+
+Do not mistake that category lower for a computational one. Starting from
+the original joint learner's (T,d,s), derive a positive integer forest
+decoder with per-rate constants k_j*b_j^A*a_j^B and edge parity factors.
+Positive path convolution and free component-root multiplicities compute
+the joint rate/parity partitions; normalize only after combining rates.
+The scalar work is polynomial, with integer envelope
+n+bit_length(P)+(T+1)*ceil(log2 S) and explicit additional dense-count,
+metadata, division and whole-output costs. Arbitrary world weights, all
+native cache coordinates and pending full gradients retain their original
+meanings. Profile clocks remain distinct from actual executed T.
+
+The exact 8,463-byte audit checks 7,915 binary tables, all 40,320 eight-world
+bijections under two factor shapes and two priors (161,280 cases), and
+709,632 one-event posterior tensors. All 64 query-family/shape/prior classes
+agree with the sharp lower. Independent all-world arithmetic checks 1,436
+reachable forest cuts, 20,436 partition queries and 25,220 weight points.
+There are 267 full native triples, 387 additional full caches, a profile
+attachment at cursor 2/step 4 and its next ordinary continuation. A closing
+cycle refuses the forest algorithm; opposite evidence cancels its signed
+edge but keeps the noise cost, recovering rate mass 12/37 and next forecast
+46269/74000. Bit and cyclic refusals occur before numerical powers.
+
+Eight n64/n256 queries agree with an independent conditional path identity.
+At n256 the factor alphabet lower is 3*2^254, but the largest executed integer
+has 4,319 bits and the largest positive operation count is 6,547. These are
+passive algorithm measurements, not host ownership or model performance.
+The lower and upper price different representations, so they must not be
+collapsed into a false universal exponential memory law. No production,
+device job, native optimizer, Runtime certificate or Foundation/ERC-1 changes.

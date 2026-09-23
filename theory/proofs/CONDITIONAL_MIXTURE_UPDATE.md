@@ -210,7 +210,10 @@ proved; it cannot silently replace the native Program and reuse its U.
 No per-component learning-rate mechanism, conditional optimizer, semantic
 architecture action or new physical identity is introduced here.
 
-The next structural decoder should operate from the retained joint evidence
-and prove its relation to the existing native learner. These results issue
-no Runtime certificate, model superiority claim, full indexed release or
-Foundation/ERC-1 change.
+The subsequent [shared-noise closure/decoder law](SHARED_NOISE_FACTOR_CLOSURE.md)
+rules out all fixed independent latent re-encodings below the sharp joint
+factor alphabet, while providing a positive forest decoder from retained
+joint evidence. That decoder preserves the original native learner; it is
+not a repair of the conditional optimizer. These results issue no Runtime
+certificate, model superiority claim, full indexed release or Foundation/ERC-1
+change.

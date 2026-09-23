@@ -408,6 +408,21 @@ conditional law on its positive manifold. This is a parameterization-scoped
 obstruction, not an impossibility for all codecs or a Foundation change.
 933 full native triples and13 executed binary64 phases audit the result.
 
+The [shared-noise factor law](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
+extends beyond that conditional chart: for normalized binary observations,
+exact independent-product closure requires each query likelihood to depend
+on just one factor. A common unknown rate is recoverable from every query's
+latent likelihood, so all queried parities and that rate must occupy the
+same factor under every fixed bijection. The sharp alphabet is J*2^r for
+J distinct rates below 1/2 and query rank r, even on forests. This is a
+factor-alphabet lower, not a memory or decoding lower. The same retained
+(T,d,s) admits a positive exact forest decoder with polynomial scalar work,
+O(n+T)-bit arithmetic for fixed rates/prior, and recovery of the original
+joint native cache, weights and gradients. Separate rate normalization is
+forbidden by the joint likelihood; a later cycle can make this decoder
+unresolved. Exhaustive encoding, integer and complete native audits pass.
+No new native U, physical backend or Foundation/ERC-1 change follows.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -204,4 +204,7 @@ The subsequent [conditional-mixture update result](CONDITIONAL_MIXTURE_UPDATE.md
 attacks a proposed tractable representation. Conditional posterior closure
 does not imply that replacing the Program by fixed-mass conditional blocks
 preserves the native U. A paid structural decoder of the original joint
-state remains a different, open implementation route.
+state remains a different implementation route. The subsequent
+[shared-noise forest decoder](SHARED_NOISE_FACTOR_CLOSURE.md) supplies a
+scoped positive exact algorithm and native relation for that route, without
+Runtime ownership or an AMP backend.

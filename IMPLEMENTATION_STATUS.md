@@ -1,5 +1,17 @@
 # FP Implementation Status
 
+The [shared-noise factor/decoder audit](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)
+adds a passive positive forest decoder from complete joint counts. It compares
+20,436 ordered-query partition pairs and 25,220 weight points with independent
+world sums, checks 267 complete native triples plus 387 all-query caches,
+and preserves profile attachment at cursor 2/step 4 and its continuation.
+Cycle and integer refusals precede power construction; cancellation restores
+the decoder without losing rate evidence. The same 8,463-byte artifact contains
+7,915 binary likelihood tests and exhaustive eight-world re-encoding evidence.
+Eight n64/n256 queries verify the categorical-size/computation separation.
+This is exact research code, with no production registration, host ownership,
+new AMP schedule or Runtime authority.
+
 The [conditional-mixture audit](theory/proofs/CONDITIONAL_MIXTURE_UPDATE.md)
 adds actual positive native graphs and strong exact joint controls, without
 changing production.672 complete native triples verify the responsibility-
