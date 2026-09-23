@@ -1,5 +1,16 @@
 # FP Implementation Status
 
+The [unknown-noise model protocol](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md)
+registers four new n64 jobs through unchanged production source 2432a25.
+`unknown_noise_model.py` supplies the fixed causal tapes and an independent
+unsigned-history full joint control plus true-rate oracle.
+`audit_unknown_noise_model.py` passes 480 full-assignment forecast checks,
+384 count/native partition matches and the forest/off-band controls.
+The model runner's passive output reader passes 62 exact readouts, 124 changed
+word refusals and the actual JobRun dataclass collection interface. No Torch,
+model scores or actual model jobs have run for this registration. The actual
+joint phase gate below remains terminal; no old experiment is relaunched.
+
 The [owned joint AMP implementation](theory/proofs/OWNED_JOINT_AMP.md) adds
 `joint_amp.py`, `joint_cuda_prefix.py` and a closed `JointCudaPrefixContract`.
 It binds the same full native model and integer allowance as the reference

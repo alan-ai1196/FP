@@ -8645,3 +8645,43 @@ Foundation/ERC-1 rule, decision class or model-quality claim is inferred.
 The actual owned bridge and paired-install obstruction is closed for this
 realization. Useful unknown-noise model behavior against the strong joint
 posterior under declared query/resource conditions is the next science test.
+
+## 255. Register unknown-rate acquisition and prediction against independent full-joint and true-rate controls (2026-09-23)
+
+After the complete actual joint AMP gate, fix four new n64 model tapes: true
+rates 1/10 and 1/4 under two paired hidden/noise/order seeds. Runtime receives
+the same equal-rate/fair-world prior for every case, never the true rate.
+One adjacent-edge forest sweep supplies no rate information; a repeated
+sweep supplies short-cycle evidence. Then 250 ordered radius-two forecasts
+continue learning, including 124 queries absent from initial training.
+The model/prior, observation law and query distribution are explicit premises.
+
+Use a separate positive vertex-prefix control that stores unsigned counts
+and computes the entire joint rate/world posterior. Its unnormalized rate
+evidence also gives a conditional true-rate oracle with extra information.
+No independent-pair or point-estimate substitute weakens the main comparison.
+Every native forecast and count successor must match independent history;
+score proper actual stored-mass probabilities on all evaluation queries and
+the initial-training-unseen subset. Retain noise posterior grid intervals
+at cuts 0,63,126,376. A sample may favor the wrong rate without constituting
+an implementation failure or a population conclusion.
+
+The small exact control audit passes 480 full-assignment forecasts and
+384 count/native integer-partition comparisons, all sixteen four-edge
+forest label words and an off-band refusal. Reuse the existing 122576-case
+geometry audit. Combining that geometry with p(e)<=2e bounds the joint
+positive work by J*(212n-195+4T+14), giving 29774 operations and 1946 integer
+bits before every registered forecast. The pinned table extent is 264453
+bytes. This conditional construction upper does not assume complete host,
+retention or time costs fit.
+
+Register unchanged production from the executed 2432a25 gate, under the
+established 16-GiB/two-hour model envelope, original accuracy tolerances,
+complete 4-MiB frames and full native interface. No profile, constructor or
+fresh installation runs in these model jobs. The output reader passes
+62 exact RNE readouts and 124 changed-word refusals; a synthetic actual
+JobRun record checks collection and changed-cap rejection without device
+execution. Commit the full protocol before launching. Retain all four
+outcomes, never score incomplete prefixes, and stop unexpected failures
+without silent retries or cap changes. At this registration no model score
+has been inspected and no new actual model job has run.

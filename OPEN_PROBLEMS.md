@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [new four-tape unknown-noise experiment](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md)
+now registers the next model question. Forest observations alone cannot
+acquire the common rate; repeated edges and later cycles provide evidence.
+The owned joint learner must reproduce an independent full posterior over
+rates/worlds and is compared with an oracle given the true rate. Small exact
+controls and the all-label resource bounds pass. Actual model completion,
+rate-posterior behavior and predictive scores remain unobserved. No finite
+sample is required to choose the true rate, and no failed prefix can be scored.
+
 The [joint AMP implementation and protocol](theory/proofs/OWNED_JOINT_AMP.md)
 bind physical state, actual causal inputs, independent integer
 construction, all RNE primitives and the complete native relation inside the

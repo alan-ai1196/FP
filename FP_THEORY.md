@@ -471,6 +471,16 @@ The physical S=120 witness refuses at the original tolerance before its third
 target. This is scoped execution evidence, not an all-resource or model-quality
 theorem. No new semantic action or constructor class follows.
 
+The [registered unknown-noise model comparison](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md)
+uses this executed realization on four n64 tapes, with forest acquisition
+controls, repeated observations and later cyclic queries. The existing
+width-two geometry theorem extends through the joint rate powers: binary
+exponentiation cost p(e)<=2e yields total positive work at most
+J*(212n-195+4T+14). Before each declared forecast, J=2,n=64,T<=375 give
+29774 operations and a 1946-bit integer envelope. This is a sufficient
+construction bound, not a whole-host or model-performance theorem. Exact
+control audits pass; actual model jobs are registered but unexecuted.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

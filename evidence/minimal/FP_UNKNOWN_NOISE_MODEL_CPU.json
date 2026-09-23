@@ -1,0 +1,62 @@
+{
+  "status": "PASS_UNKNOWN_NOISE_MODEL_CPU",
+  "small_full_assignment_forecasts": 480,
+  "complete_unsigned_count_matches": 384,
+  "packed_native_partition_checks": 384,
+  "all_four_edge_forest_label_words": 16,
+  "off_band_refusals": 1,
+  "retained_geometry_cases": 122576,
+  "all_labels_bounds": {
+    "join": 32,
+    "live_cells": 832,
+    "joint_positive_operations": 29774,
+    "integer_envelope": 1946,
+    "readout_bit_guard": 2970,
+    "prediction_outputs": 29,
+    "observation_outputs": 22
+  },
+  "paid_workspace_bytes": 264453,
+  "declaration": [
+    {
+      "case": [
+        64,
+        "1/10",
+        0
+      ],
+      "forest_events": 63,
+      "repeat_events": 63,
+      "evaluation_events": 250
+    },
+    {
+      "case": [
+        64,
+        "1/10",
+        1
+      ],
+      "forest_events": 63,
+      "repeat_events": 63,
+      "evaluation_events": 250
+    },
+    {
+      "case": [
+        64,
+        "1/4",
+        0
+      ],
+      "forest_events": 63,
+      "repeat_events": 63,
+      "evaluation_events": 250
+    },
+    {
+      "case": [
+        64,
+        "1/4",
+        1
+      ],
+      "forest_events": 63,
+      "repeat_events": 63,
+      "evaluation_events": 250
+    }
+  ],
+  "scope": "exact control/native resource audit; no actual model score inspected, Torch or device execution"
+}

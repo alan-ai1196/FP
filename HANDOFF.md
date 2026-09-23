@@ -1,5 +1,19 @@
 # FP Handoff
 
+**The first owned unknown-noise model comparison is registered, not yet run.**
+Read [the four-tape protocol](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_PROTOCOL.md).
+At n64, two paired seeds cover true rates 1/10 and 1/4; Runtime always receives
+the same equal-rate/fair-world prior. The first 63 forest observations give
+no rate information, the next 63 repeat them, and 250 radius-two queries test
+continued learning. The independent control uses unsigned data and a separate
+vertex-prefix sum; the true-rate oracle is an additional strong control.
+The exact CPU gate passes 480 small forecasts/384 native partition matches;
+the all-label resource bound is 29774 positive operations/1946 integer bits.
+Use `scripts/run_unknown_noise_model.py --preflight`, then the committed
+`--attempt 1` under 16 GiB/two hours per fresh job. Keep HEAD and dependencies
+fixed while any job lives. No model scores or actual device outcomes are
+established by this registration; retain every refusal and never retry silently.
+
 **All 17 fresh owned joint AMP jobs pass at 2432a25; the gate is terminal.** Read
 [OWNED_JOINT_AMP](theory/proofs/OWNED_JOINT_AMP.md) and
 the retained [A1 result](evidence/minimal/FP_JOINT_AMP_CUDA_A1.json).
