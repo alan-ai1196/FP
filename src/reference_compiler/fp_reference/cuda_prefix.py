@@ -26,6 +26,7 @@ from .indexed_amp import FORWARD_ID as INDEXED_FORWARD_ID
 from .projected_amp import FORWARD_ID as PROJECTED_FORWARD_ID
 from .phase_encoding import ENCODING_ID as BINARY_PHASE_ENCODING_ID
 from .phase_deflate import ENCODING_ID as DEFLATE_PHASE_ENCODING_ID
+from .histogram_decoder import HistogramAllowance
 
 LEGACY_PHASE_ENCODING_ID = 'typed-reference-json-v4'
 
@@ -96,6 +97,7 @@ class CudaPrefixContract:
 class IndexedCudaPrefixContract(CudaPrefixContract):
     n: int
     order_search: bool = False
+    histogram: HistogramAllowance | None = None
     forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
@@ -106,6 +108,14 @@ class IndexedCudaPrefixContract(CudaPrefixContract):
             raise ContractError('indexed native lowering cannot borrow a dense likelihood encoding')
         if type(self.order_search) is not bool:
             raise ContractError('immutable indexed order-search registration required')
+        if self.histogram is not None:
+            from . import histogram_amp, histogram_decoder
+            if (type(self.histogram) is not HistogramAllowance or self.order_search
+                    or type(self) is not IndexedCudaPrefixContract):
+                raise ContractError('histogram schedule has one fixed complete traversal class')
+            self.histogram.__post_init__()
+            histogram_decoder.enumeration_work(self.n, self.histogram)
+            return histogram_amp.BACKEND_ID, histogram_decoder.WORK_MODEL, histogram_amp.FORWARD_ID
         work = 'prepaid-indexed-owned-plan-and-scalar-arena-v2'
         return (indexed.BACKEND_ID, work+('+'+WORK_MODEL if self.order_search else ''),
                 indexed.ORDERED_FORWARD_ID if self.order_search else indexed.FORWARD_ID)
@@ -273,6 +283,9 @@ class _CudaPrefix:
 
     def forward_work(self, program, rules):
         if self.indexed:
+            if self.contract.histogram is not None:
+                from .histogram_amp import forward_work
+                return forward_work(program.n, self.contract.histogram, self.contract.phase_output_cells)
             n, d = program.n, program.n*(program.n-1)//2
             return 256*(n+1)**2*(d+n+1)+128*(n+1)*self.contract.phase_output_cells
         from .cuda_range import forward_work
@@ -346,14 +359,16 @@ class _CudaPrefix:
 
     def execute(self, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-                normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None):
+                normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None,
+                histogram_workspace=None):
         if self.indexed:
             from .indexed_cuda_prefix import execute
             return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
                 bit_limit=bit_limit, ordinary_cursor=ordinary_cursor, origin=origin,
                 observation_id=observation_id, sources=sources, reference_prediction=reference_prediction,
                 target=target, normalizer_cap=normalizer_cap, activation_cap=activation_cap,
-                source_domain=source_domain, readout_buffer=readout_buffer, order_search=order_search)
+                source_domain=source_domain, readout_buffer=readout_buffer, order_search=order_search,
+                histogram_workspace=histogram_workspace)
         if bit_limit < 1075:
             raise ArithmeticUnresolved('exact raw-value relation decoder exceeds its reference integer allowance')
         use_staged = origin == 'profile' or kind == 'commit'

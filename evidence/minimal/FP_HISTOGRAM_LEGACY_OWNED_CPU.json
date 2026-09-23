@@ -1,0 +1,67 @@
+{
+  "status": "PASS_INDEXED_OWNED_SCHEDULE_CPU",
+  "kernel": {
+    "source_anchor": "7fe0471",
+    "unchanged_arithmetic_and_checker_bodies": [
+      "_Arithmetic",
+      "_prediction_schedule",
+      "_observation_schedule",
+      "_check_execution",
+      "check_prediction_execution",
+      "check_observation_execution",
+      "check_state",
+      "check_prediction"
+    ],
+    "retired_AMP_producer_calls_in_owner_AST": 0
+  },
+  "elimination_model": {
+    "finite_input_proposal_cost_cap_cases": 1300,
+    "old_successes_preserved": 130,
+    "additional_legal_successes": 720,
+    "scope": "exact finite model of singleton proposal elimination; no wall-time or complete Compiler claim"
+  },
+  "input_not_quotiented": {
+    "same_complete_plan": true,
+    "distinct_native_counts": [
+      1,
+      -1
+    ],
+    "different_RNE_probabilities": [
+      "13757317/16777216",
+      "12079595/67108864"
+    ],
+    "consequence": "removing a redundant producer does not permit replacing the native input by its plan"
+  },
+  "actual_reference": {
+    "small": {
+      "groups": [
+        {
+          "n": 2,
+          "complete_length_two_histories": 64
+        },
+        {
+          "n": 3,
+          "complete_length_two_histories": 324
+        }
+      ],
+      "owned_histories": 388,
+      "complete_prediction_observation_commit_comparisons": 776
+    },
+    "profile": {
+      "ordinary_component_phases": 12,
+      "profile_events": 4,
+      "ordinary_cursor": 7,
+      "optimizer_steps": [
+        7,
+        9
+      ],
+      "forbidden_value_or_resource_injection_refusals": 2
+    },
+    "closure": {
+      "status": "SEALED_REFERENCE_STREAM",
+      "events": 3,
+      "scope": "owned empty Compiler strategy and finite ordinary stream; no class-optimality or install claim"
+    },
+    "retired_producer_calls": 0
+  }
+}

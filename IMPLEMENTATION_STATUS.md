@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+**Owned histogram implementation: CPU PASS; actual Runtime CUDA gate registered.**
+[Scope, tariffs and gate](theory/proofs/OWNED_HISTOGRAM_DECODER.md): one
+prepaid3176-byte pinned extent, full native state and independent physical
+plan reconstruction.11919 queries,388 owned histories/776 native phases,
+profile/fresh evidence, adversarial refusals and a121-event dense n16
+continuation pass. Legacy CPU/n256 controls pass. The17 fresh actual jobs
+must establish physical continuation, fresh/install and failure binding;
+no histogram model result or complete indexed release is claimed.
+
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal and complete at7815f08 under the original limits:396 events,
 1189 audited CUDA phases,5209660 words/90252 half, all sealed frames and256
@@ -18,11 +27,12 @@ outputs. Uniform n<=16 bounds cover every native gradient and the proper
 stored-mass forecast at the existing tolerances. Exact enumeration/RNE
 checks11930 predictions/23860 observations;1054 complete native phase
 triples, profiles and a104-event underflow/reversal continuation pass.
-This remains an experimental decoder, outside `src/reference_compiler`.
+The original passive decoder remains independent of the owned realization
+now implemented in `src/reference_compiler`.
 The16-case actual arithmetic A1 passes at4a4e730:48 phases,13713 output
 words/4341 half, peak job2185007104 bytes. Its independent retained reader
-checks208 endpoint words. Owned funding, retention, event/lineage and
-fresh/install integration remain open; the terminal arithmetic job is not
+checks208 endpoint words. Owned CPU funding/continuation now passes; actual
+retention, event/lineage and fresh/install validation remain open. The terminal arithmetic job is not
 a Runtime continuation or complete indexed release.
 
 **Paid query-order search passes its complete declared component gate.**

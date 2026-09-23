@@ -6,6 +6,7 @@ from dataclasses import dataclass, field
 from fractions import Fraction as F
 from itertools import combinations
 from . import indexed_count as counts, positive_partition as frontier
+from . import histogram_decoder as histogram
 from .core import ContractError, natural, stable_hash
 from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState
 from .program import Product, Program, SemanticRules, Source, SourceSpec, Sum, Term, rational
@@ -289,7 +290,7 @@ class ReferenceView:
     state: counts.CountState
     query: tuple[int, int]
     source_values: tuple[F, ...]
-    budget: DecodeAllowance
+    budget: DecodeAllowance | histogram.HistogramAllowance
     order: tuple[int, ...]
     _partitions: dict = field(default_factory=dict, init=False, compare=False, repr=False)
 
@@ -305,8 +306,9 @@ class ReferenceView:
         if (type(self.source_values) is not tuple or any(type(v) not in (int, F) for v in self.source_values)
                 or self.source_values != expected):
             raise ContractError('cache source values differ from its complete ordered query')
-        if type(self.budget) is not DecodeAllowance:
+        if type(self.budget) not in (DecodeAllowance, histogram.HistogramAllowance):
             raise ContractError('explicit decoder allowance required')
+        self.budget.__post_init__()
         if (type(self.order) is not tuple or any(type(v) is not int for v in self.order)
                 or sorted(self.order) != list(range(self.schema.n-1))):
             raise ContractError('complete declared elimination order required')
@@ -354,9 +356,15 @@ class ReferenceView:
         if query not in (self.query, self.state.pending[:2] if self.state.pending else self.query):
             raise ContractError('a view retains only its bound and pending-event query partitions')
         if query not in self._partitions:
-            plan = partition_plan(self.state, query, self.order, self.budget)
-            parts, stats = frontier.decode(self.schema.n, self.state.counts, query, order=self.order)
-            assert all(stats[key] == value for key, value in plan.items())
+            if type(self.budget) is histogram.HistogramAllowance:
+                plan = histogram.passive_plan(self.state, query, self.budget)
+                parts = histogram.exact_parts(plan)
+                stats = {'world_visits': plan.world_visits, 'incident_visits': plan.incident_visits,
+                         'histogram_terms': plan.term_count}
+            else:
+                plan = partition_plan(self.state, query, self.order, self.budget)
+                parts, stats = frontier.decode(self.schema.n, self.state.counts, query, order=self.order)
+                assert all(stats[key] == value for key, value in plan.items())
             self._partitions[query] = (parts, stats)
         return self._partitions[query]
 

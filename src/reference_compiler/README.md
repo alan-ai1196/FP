@@ -1,5 +1,10 @@
 # Foundation-R4 Reference Compiler — scoped CPU and RTX 3090 AMP release
 
+The [owned histogram extension](../../theory/proofs/OWNED_HISTOGRAM_DECODER.md)
+executes the same complete native count learner with prepaid integer
+enumeration. Its CPU/native gate passes; its actual Runtime CUDA gate is
+registered and still open. This extension has no complete-release claim.
+
 **Status: Reference/CPU and RTX 3090 AMP baseline FROZEN, 2026-09-13;
 prospective v2 strategy separately audited. Experiments are UNHELD within
 their tested scopes.** Source

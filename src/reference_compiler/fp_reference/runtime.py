@@ -19,6 +19,7 @@ from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
 from .indexed_relation import IndexedRelation, DecodeAllowance
+from . import histogram_decoder as histogram
 from .indexed_execution import (IndexedInitializer, IndexedLearner, CategoricalPairDomain,
     IndexedState, IndexedEvaluation, IndexedRangeBound, IndexedReferenceMachine)
 from .indexed_execution import _prepare_owned_prediction, _owned_prediction_work, _execute_owned_prediction
@@ -79,8 +80,15 @@ class ConstructionContract:
     reference_integer_bits: int
     source_domain: tuple[tuple[F, ...], ...] | CategoricalPairDomain | None = None
     indexed_order_search: bool = False
+    indexed_histogram: histogram.HistogramAllowance | None = None
 
     def __post_init__(self):
+        if self.indexed_histogram is not None:
+            if (type(self.indexed_histogram) is not histogram.HistogramAllowance
+                    or type(self.initializer_pattern) is not IndexedInitializer or self.indexed_order_search):
+                raise ContractError('histogram realization requires its fixed indexed family and traversal')
+            self.indexed_histogram.__post_init__()
+            histogram.enumeration_work(self.initializer_pattern.n, self.indexed_histogram)
         if type(self.indexed_order_search) is not bool or (self.indexed_order_search
                 and type(self.initializer_pattern) is not IndexedInitializer):
             raise ContractError('bounded order search requires the registered indexed native family')
@@ -381,8 +389,11 @@ class ReferenceCompilerRuntime:
             raise ContractError('reference and CUDA registrations require the same complete native representation')
         if cuda is not None and indexed and cuda.order_search != contract.indexed_order_search:
             raise ContractError('reference and AMP order-search registrations must agree')
+        if cuda is not None and indexed and cuda.histogram != contract.indexed_histogram:
+            raise ContractError('reference and AMP histogram registrations must agree')
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
-            DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits))) if indexed else ReferenceMachineModel())
+            contract.indexed_histogram or DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits)))
+            if indexed else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
             if type(online) is not OnlineContract:
@@ -458,6 +469,13 @@ class ReferenceCompilerRuntime:
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
+        if contract.indexed_histogram is not None:
+            histogram_bytes = histogram.workspace_bytes(contract.indexed_histogram)
+            self._event_router.charge_work('information', {'work': histogram_bytes}, 'bind-histogram-storage')
+            histogram_id = f'{self._runtime_id}:histogram-storage'
+            self._ledger.allocate(self._data_owner, (ObjectSpec(histogram_id, 'exponent_histogram_workspace',
+                {'reference_payload_bytes': histogram_bytes, 'physical_objects': 1}, self._chi),))
+            self._buffers[histogram_id] = memoryview(bytearray(histogram_bytes))
         if contract.indexed_order_search:
             # One actual reusable DP extent, owned before construction/CUDA.
             # Larger blocks remain UNRESOLVED; this cap never truncates state.
@@ -911,7 +929,9 @@ class ReferenceCompilerRuntime:
                     order_search=self._order_search(lambda amount: (
                         self._router.charge_work('construct', {'work': amount}, label+':query-order-search')
                         if origin == 'construction' else self._event_router.charge_work(
-                            purpose, {'work': amount}, label+':query-order-search'))) if kind == 'predict' else None)
+                            purpose, {'work': amount}, label+':query-order-search'))) if kind == 'predict' else None,
+                    histogram_workspace=(memoryview(self._buffers[f'{self._runtime_id}:histogram-storage'])
+                        if self._contract.indexed_histogram is not None else None))
             except (ResourceExceeded, ArithmeticUnresolved):
                 raise
             except ContractError as error:
@@ -1117,7 +1137,9 @@ class ReferenceCompilerRuntime:
         if type(self._machine) is IndexedReferenceMachine:
             self._machine.require_program(program)
             plan = _prepare_owned_prediction(program, rules, state, sources,
-                budget=self._machine.budget, bit_limit=bit_limit, order_search=self._order_search(search_debit))
+                budget=self._machine.budget, bit_limit=bit_limit, order_search=self._order_search(search_debit),
+                histogram_workspace=(memoryview(self._buffers[f'{self._runtime_id}:histogram-storage'])
+                    if self._contract.indexed_histogram is not None else None))
             execution_debit(_owned_prediction_work(plan))
             return _execute_owned_prediction(plan, program.n)
         return evaluate(program, rules, state.theta, sources, state.delayed, bit_limit=bit_limit)

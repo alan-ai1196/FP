@@ -222,8 +222,12 @@ order classes do not fit. A current histogram is not a persistent-state
 quotient: an explicit later query distinguishes equal current histograms.
 The registered actual RTX3090 arithmetic fixture passes16 cases/48 phases,
 including the subnormal boundary and all five exposed cuts. Its independent
-retained reader checks208 endpoint words. Paid complete Runtime realization
-remains open; this finite arithmetic result supplies no class certificate.
+retained reader checks208 endpoint words. The
+[paid Runtime realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md) now
+passes its exact CPU/native gate, including complete dense n16 learning,
+prepaid packed scratch and full point decoders. Its actual physical
+continuation/fresh/install gate is registered and remains open. These
+finite implementation results supply no constructor-class certificate.
 This decoder theorem changes no Foundation definition or ERC-1 condition.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)

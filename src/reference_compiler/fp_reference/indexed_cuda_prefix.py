@@ -14,7 +14,8 @@ from . import cuda_learner as gpu, indexed_amp as indexed
 
 def execute(prefix, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
             ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
-            normalizer_cap, activation_cap, source_domain, readout_buffer, order_search=None):
+            normalizer_cap, activation_cap, source_domain, readout_buffer, order_search=None,
+            histogram_workspace=None):
     source = prefix.staged if origin == 'profile' or kind == 'commit' else prefix.current
     input_id = None if kind == 'initialize' else source[candidate]
     prediction_id = prefix.predicted.get(candidate) if kind == 'observe' else None
@@ -23,8 +24,11 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     result, actual_prediction, error, relation = state, None, None, None
     arithmetic, workspace, plan, checked = None, None, None, 0
     before_raw = before_prediction = None
-    from . import projected_amp
+    from . import projected_amp, histogram_amp
     planner = projected_amp if type(prefix.contract) is ProjectedIndexedCudaPrefixContract else indexed
+    kernel = indexed
+    if prefix.contract.histogram is not None:
+        planner = kernel = histogram_amp
     try:
         if (type(program) is not indexed.IndexedRelation or program.n != prefix.contract.n
                 or type(spec) is not IndexedLearner or spec.n != program.n
@@ -54,8 +58,15 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             # The owner keeps inputs and accepted metadata private. With
             # search enabled, only a funded immutable order proposal enters
             # the complete builder; the fixed class still uses natural order.
-            plan = planner._prepare_prediction(program, before_raw, rules, sources,
-                                              output_cap=prefix.contract.phase_output_cells,order_search=order_search)
+            if prefix.contract.histogram is not None:
+                if histogram_workspace is None or order_search is not None:
+                    raise ContractError('histogram AMP requires its owned fixed traversal workspace')
+                plan = planner._prepare_prediction(program, before_raw, rules, sources,
+                    output_cap=prefix.contract.phase_output_cells, budget=prefix.contract.histogram,
+                    workspace=histogram_workspace, bit_limit=bit_limit)
+            else:
+                plan = planner._prepare_prediction(program, before_raw, rules, sources,
+                                                  output_cap=prefix.contract.phase_output_cells,order_search=order_search)
         expected_cells = plan.output_cells if kind == 'predict' else 13 if kind == 'observe' else 0
         indexed.allowance(max(1, expected_cells), prefix.contract.phase_output_cells,
                           'indexed CUDA phase output allowance')
@@ -72,7 +83,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 prior_relation = indexed.check_state(reference, before_raw, tolerance, bit_limit=bit_limit)
                 # This fixed kernel owns the live numerical workspace. There
                 # is no Runtime plan or numerical-result proposal port.
-                raw, actual_prediction = indexed._prediction_schedule(plan, before_raw, scalar)
+                raw, actual_prediction = kernel._prediction_schedule(plan, before_raw, scalar)
                 if type(actual_prediction) is not indexed.ResidentPrediction:
                     raise ContractError('indexed CUDA helper returned another prediction representation')
                 if raw != actual_prediction.raw():
@@ -94,12 +105,17 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             if arithmetic.output_cells != expected_cells:
                 raise ContractError('indexed CUDA executed a different output extent schedule')
             if kind == 'predict':
-                planner.check_prediction_plan(plan,program,before_raw,rules,sources,
-                                              output_cap=prefix.contract.phase_output_cells,
-                                              allow_orders=prefix.contract.order_search)
+                if prefix.contract.histogram is not None:
+                    planner.check_prediction_plan(plan, program, before_raw, rules, sources,
+                        output_cap=prefix.contract.phase_output_cells, budget=prefix.contract.histogram,
+                        workspace=histogram_workspace, bit_limit=bit_limit)
+                else:
+                    planner.check_prediction_plan(plan,program,before_raw,rules,sources,
+                                                  output_cap=prefix.contract.phase_output_cells,
+                                                  allow_orders=prefix.contract.order_search)
                 actual = indexed.IndexedAmpPrediction(actual_prediction.before, actual_prediction.query,
                     workspace.raw_words((actual_prediction.readout,), readout_buffer)[0])
-                checked = indexed.check_prediction_execution(plan, before_raw, actual,
+                checked = kernel.check_prediction_execution(plan, before_raw, actual,
                     arithmetic.raw_trace(), bit_limit=bit_limit)
                 relation = indexed.check_prediction(reference_prediction, actual, tolerance,
                     normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)

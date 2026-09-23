@@ -1,5 +1,14 @@
 # FP Handoff
 
+**Current work:** the [owned histogram realization](theory/proofs/OWNED_HISTOGRAM_DECODER.md)
+is implemented and passes its complete CPU gate:11919 exact/RNE queries,
+388 owned histories/776 native phases, profiles, fresh evidence, refusals
+and a121-event dense n16 continuation. It prepays an actual3176-byte pinned
+histogram extent and the complete traversal. Full counts/history remain.
+The17-job actual Runtime CUDA gate is registered in
+`scripts/audit_owned_histogram_cuda.py`; it has no outcome yet. Complete
+that gate before any histogram model test or broader release claim.
+
 The [paid-order n16 model run](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 is terminal: **COMPLETE_MODEL** at7815f08 under the original limits. All396
 events,1189 CUDA phases and5209660 floating words pass, including90252 half
@@ -19,7 +28,7 @@ For n<=16, its proved half/single schedule meets the existing1/100 state
 and1/1000 probability relations uniformly in count magnitude, conditional
 on available integer resources. For H<=396 it uses at most7163 prediction
 outputs. It still pays exponential assignment work; no Runtime integration
-or complete certificate exists yet. The exact audit checks11930 predictions,
+or complete certificate follows from that passive result. The exact audit checks11930 predictions,
 23860 observations and1054 complete native phase triples. Five exposed hard
 cuts use2087--2843 outputs, including the old65574-output obstruction.
 
@@ -27,16 +36,16 @@ The registered histogram arithmetic A1 **passes** at4a4e730:16 fixtures,
 48 actual phases,13713 output words including4341 half operations. Peak
 whole-job commitment2185007104 bytes; all208 retained endpoint words pass
 an independent reader. The job is terminal; do not repeat it unchanged.
-Next pursue prepaid owned histogram construction, complete phase evidence
-and event/lineage/fresh/install binding.
+The implementation and CPU result above now address prepaid construction;
+its actual phase/event/lineage/fresh/install gate remains open.
 This is a new execution of the same native learner, with no Foundation or
 ERC-1 change. Do not promote passive decoding into an owned model recovery.
 
-**Current frontier (2026-09-23): complete owned histogram decoding.**
+**Current frontier (2026-09-23): actual owned histogram Runtime continuations.**
 The [paid query-order component gate](theory/proofs/PAID_QUERY_ORDER.md) is
 complete:24 passing fresh jobs cover all23 original cases plus a funded
 control. A1--A4 retain four failed audits; A5 closes the remaining cases.
-Production remains byte-unchanged fromad68440. All28 attempted jobs are
+That gate's production was byte-unchanged fromad68440. All28 attempted jobs are
 terminal, with no timeout/limit termination and max2393862144 bytes. Do not
 repeat these terminal probes.
 

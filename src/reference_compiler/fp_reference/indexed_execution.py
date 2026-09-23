@@ -10,6 +10,7 @@ from fractions import Fraction as F
 from .core import ContractError, natural
 from . import indexed_count as counts, positive_partition as partition
 from . import query_projection as projection
+from . import histogram_decoder as histogram
 from .indexed_relation import IndexedRelation, DecodeAllowance, ReferenceView, allowance, index, partition_plan
 from .learner import SIMPLEX_GRADIENT, ReferenceLearnerState
 from .machine import ReferenceMachineModel
@@ -170,11 +171,16 @@ class IndexedPredictionPlan:
     bit_limit: int
 
 
-def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_limit, order_search=None):
+def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_limit, order_search=None,
+                              histogram_workspace=None):
     """Build and bound the owner's selected exact schedule."""
     if type(state) is not IndexedState or state.encoded.n != program.n or state.unit_count:
         raise ContractError('owned committed indexed predecessor required')
     query, _ = program.source_query(rules, sources)
+    if type(budget) is histogram.HistogramAllowance:
+        if order_search is not None or histogram_workspace is None:
+            raise ContractError('histogram prediction requires its owned extent and fixed traversal')
+        return histogram.prepare(state.encoded, query, budget, histogram_workspace, bit_limit=bit_limit)
     budget = replace(budget, integer_bits=min(budget.integer_bits, bit_limit))
     plan = projection.prepare(state.encoded, query, budget, order_search=order_search)
     return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
@@ -182,6 +188,8 @@ def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_lim
 
 def _owned_prediction_work(plan):
     """Numeric tariff for the owner's already constructed fixed plan."""
+    if type(plan) is histogram.HistogramPlan:
+        return histogram.execution_work(plan)
     n = plan.before.n
     shape = dict(plan.projection.shape)
     return (32*(n+1)*(shape['positive_multiplications']+shape['positive_additions'])
@@ -195,6 +203,8 @@ def _execute_owned_prediction(plan, n):
     immutable values only and cannot retain any of these argument aliases.
     This arithmetic remains in the explicitly trusted reference kernel.
     """
+    if type(plan) is histogram.HistogramPlan and plan.before.n == n:
+        return histogram.reference(plan)
     if type(plan) is not IndexedPredictionPlan or plan.before.n != n:
         raise ContractError('complete indexed execution plan required')
     before, query = plan.before, plan.query
@@ -232,15 +242,19 @@ class IndexedRangeBound:
 @dataclass(frozen=True)
 class IndexedReferenceMachine(ReferenceMachineModel):
     schema: IndexedRelation
-    budget: DecodeAllowance
+    budget: DecodeAllowance | histogram.HistogramAllowance
     model_id = 'packed-indexed-reference-payload-v3'
     initializer_id = 'indexed-uniform-unit-simplex-initializer-v1'
     program_type = IndexedRelation
 
     def __init__(self, n, budget):
         object.__setattr__(self, 'schema', IndexedRelation(n))
-        if type(budget) is not DecodeAllowance:
+        if type(budget) not in (DecodeAllowance, histogram.HistogramAllowance):
             raise ContractError('registered indexed decoder allowance required')
+        budget.__post_init__()
+        if type(budget) is histogram.HistogramAllowance:
+            histogram.enumeration_work(n, budget)
+            object.__setattr__(self, 'model_id', histogram.MODEL_ID)
         object.__setattr__(self, 'budget', budget)
 
     def require_program(self, program):
@@ -257,6 +271,8 @@ class IndexedReferenceMachine(ReferenceMachineModel):
 
     def evaluation_work(self, program, rules):
         self.require_program(program)
+        if type(self.budget) is histogram.HistogramAllowance:
+            return histogram.enumeration_work(program.n, self.budget)
         n, d = program.n, program.n*(program.n-1)//2
         # Pay the metadata schedule before planning. Numeric tables receive
         # a separate debit for their actual planned shape, including index
@@ -303,9 +319,19 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         # Passive convenience. The fixed Runtime class has no plan producer
         # whose answer can differ from the private checker's unique result.
         self.require_program(program)
+        if type(self.budget) is histogram.HistogramAllowance:
+            with memoryview(bytearray(histogram.workspace_bytes(self.budget))) as scratch:
+                return _prepare_owned_prediction(program, rules, state, sources, budget=self.budget,
+                    bit_limit=bit_limit, histogram_workspace=scratch)
         return _prepare_owned_prediction(program, rules, state, sources, budget=self.budget, bit_limit=bit_limit)
 
     def prediction_execution_work(self, plan):
+        if type(self.budget) is histogram.HistogramAllowance:
+            if type(plan) is not histogram.HistogramPlan or plan.n != self.schema.n or plan.before.pending:
+                raise ContractError('complete committed histogram execution plan required')
+            expected = histogram.passive_plan(plan.before, plan.query, self.budget, bit_limit=plan.bit_limit)
+            histogram.check_plan(plan, expected)
+            return histogram.execution_work(plan)
         if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
             raise ContractError('complete indexed execution plan required')
         budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, plan.bit_limit))

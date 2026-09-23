@@ -7451,3 +7451,39 @@ Paid histogram construction/storage, complete phase retention, native
 event binding, lineage, fresh persistence and installation remain the
 next substantive test. Production is still unchanged fromad68440. No
 new Foundation action, model score or complete indexed release follows.
+
+## 224. Own the histogram traversal without changing the native learner (2026-09-23)
+
+Implement the proved decoder inside the existing reference and AMP owners.
+The same complete signed counts, pending event, clocks, source interface,
+profiles and history remain. One3176-byte uint32 extent is funded before
+construction; a private lifetime export pins its capacity, while each
+kernel receives a borrowed view. The fixed Gray traversal pays all K
+assignments and(n-1)(K-1) incident visits before returning a query plan.
+Exact evaluation has a separate prior debit. Physical execution constructs
+its own plan and independently reconstructs all coefficients before full
+RNE/endpoints and native-coordinate checks. Complete point readers use
+the same exact representation for parameters, pending gradients and caches.
+
+The CPU audit passes759 signed states/11919 ordered queries,744462 output
+words/178611 half;388 owned histories/776 native phase triples; profiles,
+attachment and20 paired native fresh-evidence comparisons. Work, span,
+integer and output refusals preserve received data and old native states.
+Four release/later-call resize attempts fail with3176 billed/actual bytes.
+All typed plan, endpoint/operation bit and trace-extent adversaries refuse.
+The empty strategy seals without constructor decisions. Legacy owned
+schedule and n256 reference regressions pass.
+
+A dense n16 learner is built through120 real positive edge observations.
+The existing join class then refuses, but the owned histogram answers
+the same query with17 terms, agrees with an independent32768-assignment
+oracle, decodes all parameter slots with sum1, and commits an opposite
+label at121. This is complete native continuation, not a resumed passive
+cache or model score. The frozen Foundation/ERC-1 remain unchanged.
+
+Register17 fresh actual RTX3090 Runtime jobs, each4 GiB/900 seconds, for
+profiles, fresh/install/learning, closure, refusal/lineage boundaries,
+physical faults, complete plan binding, scratch continuations, a104-event
+underflow/reversal, dense n16 recovery and both legacy n256 schedules.
+Keep launch source immutable and retain every result; no actual outcome
+is assumed. Full indexed release and model science remain separate.
