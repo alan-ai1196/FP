@@ -9,8 +9,11 @@ question is now complete model use after its
 and all20 actual CUDA A1 jobs at42802f6.735 new phases/7674 words/475 half
 casts and all four legacy controls pass, including fresh/install, reversal,
 n256 profiles and77-event n32 learning. All jobs are terminal; do not repeat
-the gate. Test the two exposed n64 tapes against the retained strong controls
-under the same whole-resource caps. Preserve the original1-GiB
+the gate. The [two-job n64 registration](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
+and preflight are ready; both actual jobs are unexecuted. Test the exposed
+tapes against the retained strong controls under the same whole-resource
+caps, preserving every outcome without scoring incomplete prefixes.
+Preserve the original1-GiB
 n256 refusal and distinguish the completed2-GiB/257-event continuation,
 whose peak packed payload is1525442448 bytes. Neither a small
 readout nor a larger retention budget is a whole-resource efficiency proof.

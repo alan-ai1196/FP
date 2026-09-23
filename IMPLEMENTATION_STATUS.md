@@ -21,6 +21,12 @@ queries,388 histories/776 native triples and all plan/funding/buffer faults
 pass. The model-reader CPU faults and old1500-readout reader also pass.
 The terminal n64 matrix retains its existing implementations and source.
 
+The [direct-partition model registration](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
+adds exactly two n64 jobs on those exposed tapes, keeping all original model
+limits and the six retained strong controls. Preflight verifies the owned
+CPU/20-job gate, unchanged production at42802f6, every retained control and
+common native/data contracts. It passes; actual model execution is pending.
+
 The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
 now completes all six jobs at45b40b4, with production unchanged fromd600dba.
 Each processes376 events and1129 actual phases, checking every forecast

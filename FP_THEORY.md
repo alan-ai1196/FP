@@ -327,6 +327,14 @@ restoring the half forecast and retaining1525442448 peak packed bytes.
 This representation-specific retention limit is not an information lower
 bound against other lossless encodings or a Foundation counterexample.
 
+The [direct-partition n64 follow-up](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
+is registered for the same two exposed tapes and original whole-resource
+limits, using the six completed strong controls. Before every forecast,
+H<=375 gives1564 direct partition bits,7536 conservative readout bits and29
+floating outputs, conditional on the existing width bound. CPU preflight
+passes; neither model job has run. The experiment tests complete learning
+and actual resources, not blind selection, GPU sum-product or throughput.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

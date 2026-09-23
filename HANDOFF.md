@@ -26,9 +26,13 @@ n256 profiles and77-event n32 learning pass. Peak job2395172864 bytes stays
 under4 GiB; every job is terminal. Do not repeat the gate. Preserve the original n256 1-GiB refusal
 at observation181. The separately declared2-GiB continuation seals257
 events and exact recovery after128 opposite labels, with1525442448 peak
-packed bytes. Next test complete n64 learning with this realization against
-the retained strong controls, under the original model limits. Do not infer
-model efficiency from floating counts or upload a reference answer.
+packed bytes. The [two-job n64 follow-up](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md)
+is registered and its CPU preflight passes. Commit all inputs, then run
+`scripts/run_direct_partition_model.py --attempt 1`. Both new jobs are still
+unexecuted. Use the retained strong controls and original16-GiB/two-hour
+model limits; retain every outcome and keep HEAD/dependencies fixed until
+both are terminal. Do not infer throughput from floating counts or upload
+a reference answer. This changes no production code after42802f6.
 
 The [score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
 gives a sharp calibrated log-regret bound at the pre-target cut and an

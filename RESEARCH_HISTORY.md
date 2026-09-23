@@ -7905,3 +7905,29 @@ resource dominance, GPU integer inference or a model-quality gain. The
 distinct257-event CPU reversal and retained1-GiB refusal keep their scopes.
 Next compare complete n64 learning with the retained strong controls under
 the same model limits; no Foundation/ERC-1 or class-completeness claim changes.
+
+## 239. Register the direct-partition model comparison before execution (2026-09-23)
+
+Declare exactly two fresh jobs on the existing n64/iid-band2 seeds0/1.
+All376 observations, native counts, query/target order, full interface,
+G/Gamma/U and empty Compiler policy remain. The six completed global,
+projected and carry-free jobs at45b40b4 provide retained strong controls;
+the independent exact joint posterior checks every new forecast. Do not
+rerun those controls or reinterpret pair-only inference as the main baseline.
+
+Keep the original16-GiB/two-hour job,8-GiB packed payload,10^15 work per
+role,256-MiB arena/512-MiB allocator,4-MiB frames,65536 outputs,32768 bits,
+state/probability tolerances1/100 and1/1000, and range8/18. For every label
+history, the prior width bound applies; H<=375 before each forecast gives
+1564 direct partition bits,7536 conservative readout bits and29 outputs.
+Actual table/root storage is211356 bytes. Complete history, integer work,
+oracle and auditors remain charged; no whole-job feasibility is inferred.
+
+Preflight passes the CPU gate, all20 actual component outcomes, unchanged
+production from42802f6, all six retained readers and matched native/data
+contracts. Both new model jobs are unexecuted. Commit inputs before running
+`run_direct_partition_model.py --attempt 1`; retain every outcome and keep
+source fixed until both jobs end. Exposed tapes and differing realization
+sources preclude blind-selection, population and isolated-throughput claims.
+Only minimal readouts, resource/audit summaries and source/job identities
+will be retained. No Foundation/ERC-1 or complete-release claim changes.
