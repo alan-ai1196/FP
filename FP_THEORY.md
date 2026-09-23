@@ -371,9 +371,14 @@ one-radix physical identity and Foundation/ERC-1 remain unchanged. The
 [owned rational registration](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md)
 now implements actual native derivation, paid integer bytes and complete
 counter/phase binding under a distinct identity. Its 3,057-triple CPU gate,
-budget/lifetime probes and legacy compatibility checks pass. Actual CUDA
-A1 is registered and pending; no full AMP, fresh/install or release result
-is inferred from the CPU checks.
+budget/lifetime probes and legacy compatibility checks pass. Twelve actual
+A1 workers pass at5937e1b, including recovery and the n3 mixed-noise stream.
+The profile/install worker fails; exact replay proves normalizer error1/64
+despite master error below1e-7. Thus the whole-native1/100 tolerance cannot
+be inferred from selected-weight accuracy. One-case A2 is registered under
+the explicitly different1/50 native tolerance; no production arithmetic or
+semantics changes. A1 remains failed, and fresh/install completion remains
+pending. No complete release follows from either numerical component.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

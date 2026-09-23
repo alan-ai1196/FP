@@ -13,9 +13,14 @@ rational contract, derives the actual bank and prepays each decode. Integer
 weights occupy owned bytes; failed admitted scratch stays charged while a
 traceback may retain its view. The CPU gate passes 3,057 native triples, 19
 negative cases, three payment probes and exact legacy descriptor/metadata
-compatibility. The 13-case actual CUDA A1 is registered and unrun. Full
-AMP/fresh/install verification remains pending; completed experiments and
-the old physical identities retain their original scope.
+compatibility. Actual A1 at5937e1b is terminal: twelve workers pass their
+checks, totaling1991 checked phases/657 independent commit tapes, with peak
+job2499796992 bytes below4 GiB. The profile/install worker fails. Exact replay
+exhibits a full-native tolerance obstruction at candidate step29: accurate
+master weights coexist with normalizer error1/64>1/100. The original failure
+is retained. One-case A2 is registered, unrun, at state tolerance1/50, with
+production arithmetic, graph/U/tape and all other limits unchanged. Full
+profile/fresh/install completion remains pending under that new contract.
 
 The [noise acquisition audit](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 adds research evidence without changing production: 168 multigraphs/4155
@@ -27,8 +32,9 @@ binary64 phase replays. The unit simplex U is unchanged; G/Gamma explicitly
 include rate/world slots. These functional CPU runs retain unresolved
 whole-host scope and issue no search/install authority. The single-rational-
 radix backend is mathematically insufficient for this bank. The general
-rational implementation above now covers its finite-bank arithmetic, with
-actual AMP validation still pending. The indexed positive-mixture upper and
+rational implementation above now covers its finite-bank arithmetic; its
+n3 actual AMP stream passes, while profile/install completion is pending.
+The indexed positive-mixture upper and
 existing known-rate results retain their separate source-bound scopes.
 
 The [direct integer partition prototype](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)

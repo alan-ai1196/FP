@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "precision": "exact rational native and RNE16/RNE32 interpreter; no Torch/CUDA",
+  "candidate_complete_native_triples": 50,
+  "profile_triples": 4,
+  "final_ordinary_cursor": 48,
+  "final_optimizer_steps": 50,
+  "A1_state_atol": "1/100",
+  "A2_state_atol": "1/50",
+  "unchanged_probability_atol": "1/1000",
+  "maxima": {
+    "master_error": {
+      "exact": "921224531143513/10792598196917031141376",
+      "candidate_step": 12
+    },
+    "native_error": {
+      "exact": "325001795309993548918578657111469/21538258417600190495554224595058710",
+      "candidate_step": 29
+    },
+    "normalizer_error": {
+      "exact": "1/64",
+      "candidate_step": 29
+    },
+    "probability_error": {
+      "exact": "78253/838860800",
+      "candidate_step": 1
+    },
+    "division_error": {
+      "exact": "9087/343547052032",
+      "candidate_step": 30
+    },
+    "gradient_error": {
+      "exact": "11050740973140107875243529280440146424556365245486440958531261/11608689244909096359529099563967268423857230269784742249522790400",
+      "candidate_step": 47
+    }
+  },
+  "A1_prediction_violations": [
+    {
+      "candidate_step": 29,
+      "ordinary_cursor": 27,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 36,
+      "ordinary_cursor": 34,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 42,
+      "ordinary_cursor": 40,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 43,
+      "ordinary_cursor": 41,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 44,
+      "ordinary_cursor": 42,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 45,
+      "ordinary_cursor": 43,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    },
+    {
+      "candidate_step": 48,
+      "ordinary_cursor": 46,
+      "metrics": [
+        "native_error",
+        "normalizer_error"
+      ]
+    }
+  ],
+  "first_witness": {
+    "candidate_step": 29,
+    "ordinary_cursor": 27,
+    "joint_integer_formula": "(18^29,2^29,15^29,5^29)",
+    "master_words": [
+      1065353216,
+      1065268829,
+      293987261,
+      1000657236,
+      615054864
+    ],
+    "half_selected": [
+      "1019/1024",
+      "0",
+      "1319/262144",
+      "0"
+    ],
+    "half_selected_sum": "262183/262144",
+    "unrounded_mass_sum_after_half_cast": "2621791/131072",
+    "reference_masses": [
+      "387363649721493435371057464053945311/21538258417600190495554224595058710",
+      "43401518630510374540027027847228889/21538258417600190495554224595058710"
+    ],
+    "rounded_masses": [
+      "18",
+      "129/64"
+    ],
+    "reference_normalizer": "20",
+    "rounded_normalizer": "1281/64",
+    "master_error": "213569722179622775861099845157457467/10659884405208949628759277839442469055365120",
+    "errors": {
+      "native_error": "325001795309993548918578657111469/21538258417600190495554224595058710",
+      "normalizer_error": "1/64",
+      "probability_error": "9546216091766102414907739016245003/183936726886305626832033078041801383400",
+      "division_error": "55/7163871232"
+    }
+  },
+  "scope": "Fixed previously registered candidate word, including profiles. Subsequent cuts are passive continuations beyond the A1 refusal; no owned execution, fresh evidence, installation or all-history native bound is inferred."
+}

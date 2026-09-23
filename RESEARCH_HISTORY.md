@@ -8162,3 +8162,42 @@ retains its stricter old caps. Actual phase/fresh/installation evidence is
 pending, and source must stay fixed while the new jobs run. No historical
 device job is rerun. Existing identities, Foundation R4 and ERC-1 stay intact;
 the new explicit bank path supplies no full indexed release or model result.
+
+## 245. Retain the rational CUDA failure and separate master accuracy from native accuracy (2026-09-23)
+
+All13 A1 jobs finish at5937e1b under the declared4-GiB/six-minute caps,
+without timeout or limit termination. Twelve workers pass their checks:
+the274-event recovery, n3 mixed-noise learning, corruption/counter/resource
+refusals, the unresolved20-member class and the legacy control. They check
+1991 complete phases and independently reconstruct657 commit tapes. Peak
+whole-job commitment is2499796992 bytes. Retain the36277-byte A1 journal;
+no successful case is repeated.
+
+The mixed profile/install worker fails a harness assertion after a prediction
+refusal. The assertion hid its cursor/reason, so that worker establishes no
+fresh/install completion. An independent exact replay finds a real numerical
+obstruction on the declared path. After29 identical pair-label observations,
+the posterior is the normalization of(18^29,2^29,15^29,5^29). Every selected
+master error is below1e-7, yet the native half casts sum to262183/262144.
+The half-product/single-accumulation/half-storage graph gives masses(18,129/64),
+total20+1/64 instead of20. Both cache and normalizer error exceed1/100.
+
+This is candidate step29 at ordinary cursor27 because the birth profile
+replays two observations twice. Fifty complete exact/RNE triples, including
+all native gradients, locate seven offending prediction cuts. Maximum
+normalizer error is1/64, cache error about0.01509, master error below1e-7,
+gradient error below0.001 and probability error below0.0001. Subsequent cuts
+are passive calculations beyond the failed contract, not an owned Runtime
+continuation. The small exact witness artifact retains the arithmetic.
+The previously proved selected-weight law remains true; the complete native
+bridge cannot be dropped. No false certificate is licensed by this failure.
+
+Register a one-case A2 at full-native tolerance1/50. This is an explicitly
+weaker numerical contract selected after the retained counterexample, not
+a repair of A1's verdict. A preflight checks every other contract field is
+unchanged: same graph/Gamma/U, tape/profile, probability and binary64 limits,
+and host/packed/work budgets. Production arithmetic is unchanged. Failure
+assertions now include the Runtime cursor/reason. A2 remains unrun at this
+commit and must independently establish actual paired fresh evidence,
+installation and continued learning. The twelve passing A1 jobs remain
+terminal. Foundation R4, ERC-1 and complete release status are unchanged.

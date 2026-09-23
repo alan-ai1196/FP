@@ -1,0 +1,1125 @@
+{
+  "status": "COMPLETE_WITH_FAILURES",
+  "registration_source": "5937e1b0f7b48970eb1e192f934675f8258e089c",
+  "registration": {
+    "cases": [
+      "rational-reversal",
+      "noise-n3",
+      "mixed-profile-install",
+      "counter-overflow",
+      "coordinate-corruption",
+      "descriptor-corruption",
+      "prepare-work",
+      "prepare-scratch",
+      "domain-substitution",
+      "decode-work",
+      "decode-scratch-fault",
+      "bounded-class",
+      "legacy-control"
+    ],
+    "host_cap": 4294967296,
+    "timeout_ms": 360000,
+    "packed_cap": 1073741824,
+    "work_per_role": 100000000000,
+    "reference_integer_bits": 32768,
+    "arithmetic": {
+      "counter_bits": 64,
+      "basis_cells": 8,
+      "factor_work": 1000000,
+      "decode_work": 1000000
+    },
+    "backend": "eager-cuda-half-forward-single-gradient-owned-integer-rational-decode-v1",
+    "work_model": "prepaid-coprime-factorization-owned-integer-decode-and-CUDA-output-v1",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "binary64_atol": "1/100000000",
+    "phase_output_cells": 8192,
+    "phase_frame_bytes": {
+      "noise-n3": 1048576,
+      "otherwise": 262144
+    },
+    "bounded_class": "existing <=1-node/no-edge/no-PRODUCT/<=3-slot declared class under the new representation; 20 members, 15 expected unresolved",
+    "bounded_class_overrides": {
+      "packed_cap": 536870912,
+      "binary64_atol": "1/1000000000",
+      "native_caps": "16"
+    },
+    "profile_install": "two prior events replayed twice at cursor2; joint unknown-rate n2; 48 ordinary events; both fresh paths and continued learning",
+    "reversal": "168 ratio2 events then106 ratio1/3 events; full native phases",
+    "scope": "owned numerical component; no model superiority, constructor completeness or full indexed release"
+  },
+  "workers": [
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2498592768,
+        "peak_job_commit": 2499796992,
+        "user_100ns": 2223750000,
+        "kernel_100ns": 31718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21184,
+        "process_creation_100ns": 134346283049877679
+      },
+      "result": {
+        "case": "rational-reversal",
+        "status": "SEALED_CUDA_STREAM",
+        "expected_refusal": null,
+        "cursor": 274,
+        "observations": 274,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 823,
+          "refused_phases": 0,
+          "independent_commit_operation_tapes": 274,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18996,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 823,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1051372203,
+              1059760811
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 31,
+            "theta_words": [
+              1065353216,
+              805306368,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 149,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 168,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 180,
+            "theta_words": [
+              1065353216,
+              2,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                -12,
+                -12
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 274,
+            "theta_words": [
+              1065353216,
+              1056982124,
+              1056929575
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                -106,
+                -106
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "3690180432234641426043881740596753397163669298556651279/4709987951536726930930653620468170276443346123735984766976",
+          "native_error": "11/2304",
+          "normalizer_error": "1/128",
+          "probability_error": "2841443/25820135424"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 222620647,
+        "process_id": 21184,
+        "host": {
+          "process_id": 21184,
+          "creation_100ns": 134346283049877679,
+          "lifetime_process_commit_peak": 2497110016,
+          "job_commit_peak": 2498314240,
+          "process_user_100ns": 2216093750,
+          "process_kernel_100ns": 30781250,
+          "job_user_100ns": 2216093750,
+          "job_kernel_100ns": 30781250
+        }
+      },
+      "case_index": 0,
+      "case": "rational-reversal",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2300096512,
+        "peak_job_commit": 2301313024,
+        "user_100ns": 695625000,
+        "kernel_100ns": 84843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7648,
+        "process_creation_100ns": 134346285445283593
+      },
+      "result": {
+        "case": "noise-n3",
+        "status": "SEALED_CUDA_STREAM",
+        "expected_refusal": null,
+        "cursor": 12,
+        "observations": 12,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 37,
+          "refused_phases": 0,
+          "independent_commit_operation_tapes": 12,
+          "factorization_ranks": [
+            4
+          ],
+          "maximum_output_cells": 5352,
+          "largest_phase_frame_used": 456487,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 37,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1046898278,
+              1046898278,
+              1020054733,
+              1020054733,
+              1044381696,
+              1044381696,
+              1031798784,
+              1031798784
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "3b9666dd5fe7d72444d34ffb9bff5a8558e0c1c784966b43db5ca5bb066d14a2",
+              [
+                0,
+                -2,
+                -2,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 12,
+            "theta_words": [
+              1065353216,
+              991071778,
+              1017438183,
+              991071778,
+              964838772,
+              1044069045,
+              1057778696,
+              1044069045,
+              1031381916
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "3b9666dd5fe7d72444d34ffb9bff5a8558e0c1c784966b43db5ca5bb066d14a2",
+              [
+                2,
+                0,
+                -2,
+                6
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "519521507/1391874539520",
+          "native_error": "1034921/132962624",
+          "normalizer_error": "1/128",
+          "probability_error": "9860477/106328548380"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 195724797,
+        "process_id": 7648,
+        "host": {
+          "process_id": 7648,
+          "creation_100ns": 134346285445283593,
+          "lifetime_process_commit_peak": 2300096512,
+          "job_commit_peak": 2301313024,
+          "process_user_100ns": 688125000,
+          "process_kernel_100ns": 84375000,
+          "job_user_100ns": 688125000,
+          "job_kernel_100ns": 84531250
+        }
+      },
+      "case_index": 1,
+      "case": "noise-n3",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2261929984,
+        "peak_job_commit": 2263150592,
+        "user_100ns": 346093750,
+        "kernel_100ns": 14531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1120,
+        "process_creation_100ns": 134346285991421908
+      },
+      "result": {
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\experiments\\joint_uncertainty\\rational_likelihood_lowering.py\", line 393, in <module>\n    result = owned(args.worker)\n             ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\experiments\\joint_uncertainty\\rational_likelihood_lowering.py\", line 190, in owned\n    assert cursor == 168 and case in ('coordinate-corruption', 'descriptor-corruption')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "process_id": 1120
+      },
+      "case_index": 2,
+      "case": "mixed-profile-install",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2241212416,
+        "peak_job_commit": 2242424832,
+        "user_100ns": 104531250,
+        "kernel_100ns": 10468750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1560,
+        "process_creation_100ns": 134346286369000364
+      },
+      "result": {
+        "case": "counter-overflow",
+        "status": "HALTED_UNRESOLVED",
+        "expected_refusal": "registered likelihood counter precision exhausted",
+        "cursor": 31,
+        "observations": 32,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 96,
+          "refused_phases": 1,
+          "independent_commit_operation_tapes": 31,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18562,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 97,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1051372203,
+              1059760811
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "46dcfeca26fe6ec380515fb81ed4b22c0b61b8d9282fbc745e8a5e100d9e4d7d",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 31,
+            "theta_words": [
+              1065353216,
+              805306368,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "46dcfeca26fe6ec380515fb81ed4b22c0b61b8d9282fbc745e8a5e100d9e4d7d",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "27323/100663296",
+          "native_error": "11/2304",
+          "normalizer_error": "1/128",
+          "probability_error": "2841443/25820135424"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 403456,
+        "packed_peak": 26807218,
+        "process_id": 1560,
+        "host": {
+          "process_id": 1560,
+          "creation_100ns": 134346286369000364,
+          "lifetime_process_commit_peak": 2241212416,
+          "job_commit_peak": 2242424832,
+          "process_user_100ns": 101250000,
+          "process_kernel_100ns": 10000000,
+          "job_user_100ns": 101250000,
+          "job_kernel_100ns": 10000000
+        }
+      },
+      "case_index": 3,
+      "case": "counter-overflow",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2315153408,
+        "peak_job_commit": 2316361728,
+        "user_100ns": 964375000,
+        "kernel_100ns": 24375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25872,
+        "process_creation_100ns": 134346286501301066
+      },
+      "result": {
+        "case": "coordinate-corruption",
+        "status": "HALTED_UNRESOLVED",
+        "expected_refusal": "private CUDA predecessor changed after its owned phase",
+        "cursor": 168,
+        "observations": 168,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 505,
+          "refused_phases": 1,
+          "independent_commit_operation_tapes": 168,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18660,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 506,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1051372203,
+              1059760811
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 31,
+            "theta_words": [
+              1065353216,
+              805306368,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 149,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 168,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "27323/100663296",
+          "native_error": "11/2304",
+          "normalizer_error": "1/128",
+          "probability_error": "2841443/25820135424"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 136716809,
+        "process_id": 25872,
+        "host": {
+          "process_id": 25872,
+          "creation_100ns": 134346286501301066,
+          "lifetime_process_commit_peak": 2314100736,
+          "job_commit_peak": 2315309056,
+          "process_user_100ns": 958593750,
+          "process_kernel_100ns": 23593750,
+          "job_user_100ns": 958593750,
+          "job_kernel_100ns": 23593750
+        }
+      },
+      "case_index": 4,
+      "case": "coordinate-corruption",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2313998336,
+        "peak_job_commit": 2315206656,
+        "user_100ns": 970000000,
+        "kernel_100ns": 19687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1276,
+        "process_creation_100ns": 134346287575409290
+      },
+      "result": {
+        "case": "descriptor-corruption",
+        "status": "HALTED_UNRESOLVED",
+        "expected_refusal": "private CUDA predecessor changed after its owned phase",
+        "cursor": 168,
+        "observations": 168,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 505,
+          "refused_phases": 1,
+          "independent_commit_operation_tapes": 168,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18660,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 506,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1051372203,
+              1059760811
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 31,
+            "theta_words": [
+              1065353216,
+              805306368,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 149,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 168,
+            "theta_words": [
+              1065353216,
+              0,
+              1065353216
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "879f9607d2d14ab8c5f9d1eca61fbf678f67e1778a3c068ef76f510d7c97ecf8",
+              [
+                0,
+                0
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "27323/100663296",
+          "native_error": "11/2304",
+          "normalizer_error": "1/128",
+          "probability_error": "2841443/25820135424"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 136716809,
+        "process_id": 1276,
+        "host": {
+          "process_id": 1276,
+          "creation_100ns": 134346287575409290,
+          "lifetime_process_commit_peak": 2312945664,
+          "job_commit_peak": 2314153984,
+          "process_user_100ns": 964062500,
+          "process_kernel_100ns": 18906250,
+          "job_user_100ns": 964062500,
+          "job_kernel_100ns": 19062500
+        }
+      },
+      "case_index": 5,
+      "case": "descriptor-corruption",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1837621248,
+        "peak_job_commit": 1838841856,
+        "user_100ns": 15156250,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3952,
+        "process_creation_100ns": 134346288651357941
+      },
+      "result": {
+        "case": "prepare-work",
+        "status": "EXPECTED_REFUSAL",
+        "prepare_calls": 0,
+        "retained_failed_scratch_bytes": 0,
+        "reason": "initial registered reference realization failed: UNRESOLVED: compiler cumulative work exhausted",
+        "class_certificate": false,
+        "process_id": 3952,
+        "host": {
+          "process_id": 3952,
+          "creation_100ns": 134346288651357941,
+          "lifetime_process_commit_peak": 1837621248,
+          "job_commit_peak": 1838841856,
+          "process_user_100ns": 12656250,
+          "process_kernel_100ns": 8125000,
+          "job_user_100ns": 12812500,
+          "job_kernel_100ns": 8125000
+        }
+      },
+      "case_index": 6,
+      "case": "prepare-work",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1838354432,
+        "peak_job_commit": 1839554560,
+        "user_100ns": 16406250,
+        "kernel_100ns": 6718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14260,
+        "process_creation_100ns": 134346288675505632
+      },
+      "result": {
+        "case": "prepare-scratch",
+        "status": "EXPECTED_REFUSAL",
+        "prepare_calls": 0,
+        "retained_failed_scratch_bytes": 0,
+        "reason": "initial registered reference realization failed: UNRESOLVED: global coexistence exceeds reference_payload_bytes",
+        "class_certificate": false,
+        "process_id": 14260,
+        "host": {
+          "process_id": 14260,
+          "creation_100ns": 134346288675505632,
+          "lifetime_process_commit_peak": 1838354432,
+          "job_commit_peak": 1839554560,
+          "process_user_100ns": 14062500,
+          "process_kernel_100ns": 6562500,
+          "job_user_100ns": 14062500,
+          "job_kernel_100ns": 6562500
+        }
+      },
+      "case_index": 7,
+      "case": "prepare-scratch",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1852444672,
+        "peak_job_commit": 1853669376,
+        "user_100ns": 15625000,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17548,
+        "process_creation_100ns": 134346288699245285
+      },
+      "result": {
+        "case": "domain-substitution",
+        "status": "EXPECTED_REFUSAL",
+        "prepare_calls": 1,
+        "retained_failed_scratch_bytes": 13490816,
+        "reason": "registered CUDA execution violated its admitted inputs",
+        "class_certificate": false,
+        "process_id": 17548,
+        "host": {
+          "process_id": 17548,
+          "creation_100ns": 134346288699245285,
+          "lifetime_process_commit_peak": 1852444672,
+          "job_commit_peak": 1853669376,
+          "process_user_100ns": 13750000,
+          "process_kernel_100ns": 6406250,
+          "job_user_100ns": 13750000,
+          "job_kernel_100ns": 6406250
+        }
+      },
+      "case_index": 8,
+      "case": "domain-substitution",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2227953664,
+        "peak_job_commit": 2229157888,
+        "user_100ns": 22343750,
+        "kernel_100ns": 7031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16404,
+        "process_creation_100ns": 134346288722995739
+      },
+      "result": {
+        "case": "decode-work",
+        "status": "HALTED_UNRESOLVED",
+        "expected_refusal": "coprime arithmetic exhausted",
+        "cursor": 0,
+        "observations": 1,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 3,
+          "refused_phases": 1,
+          "independent_commit_operation_tapes": 0,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18496,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 4,
+        "checkpoints": [],
+        "CUDA_maxima": {
+          "state_error": "1/25165824",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "0"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 403456,
+        "packed_peak": 14102542,
+        "process_id": 16404,
+        "host": {
+          "process_id": 16404,
+          "creation_100ns": 134346288722995739,
+          "lifetime_process_commit_peak": 2227953664,
+          "job_commit_peak": 2229157888,
+          "process_user_100ns": 19375000,
+          "process_kernel_100ns": 6718750,
+          "job_user_100ns": 19531250,
+          "job_kernel_100ns": 6718750
+        }
+      },
+      "case_index": 9,
+      "case": "decode-work",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2093944832,
+        "peak_job_commit": 2095169536,
+        "user_100ns": 20937500,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8744,
+        "process_creation_100ns": 134346288753975313
+      },
+      "result": {
+        "case": "decode-scratch-fault",
+        "status": "HALTED_UNRESOLVED",
+        "expected_refusal": "exact paid writable scratch extent",
+        "cursor": 0,
+        "observations": 1,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 3,
+          "refused_phases": 1,
+          "independent_commit_operation_tapes": 0,
+          "factorization_ranks": [
+            2
+          ],
+          "maximum_output_cells": 201,
+          "largest_phase_frame_used": 18496,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 4,
+        "checkpoints": [],
+        "CUDA_maxima": {
+          "state_error": "1/25165824",
+          "native_error": "0",
+          "normalizer_error": "0",
+          "probability_error": "0"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 403456,
+        "packed_peak": 14102546,
+        "process_id": 8744,
+        "host": {
+          "process_id": 8744,
+          "creation_100ns": 134346288753975313,
+          "lifetime_process_commit_peak": 2093944832,
+          "job_commit_peak": 2095169536,
+          "process_user_100ns": 18125000,
+          "process_kernel_100ns": 8281250,
+          "job_user_100ns": 18125000,
+          "job_kernel_100ns": 8281250
+        }
+      },
+      "case_index": 10,
+      "case": "decode-scratch-fault",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2228457472,
+        "peak_job_commit": 2229673984,
+        "user_100ns": 25468750,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8676,
+        "process_creation_100ns": 134346288785150808
+      },
+      "result": {
+        "case": "bounded-class",
+        "status": "UNRESOLVED",
+        "class_members": 20,
+        "compared": 5,
+        "unresolved_members": 15,
+        "grammar_complete": true,
+        "class_certificate": false,
+        "seal": false,
+        "install": false,
+        "decision_class": "registered <=1-node, <=1-SUM, no edges/PRODUCT, <=3-slot initializer endpoints plus actual deployed baseline; full U and source domain",
+        "independent_binary64_phases": 9,
+        "CUDA": {
+          "checked_phases": 9,
+          "refused_phases": 0,
+          "independent_commit_operation_tapes": 1,
+          "factorization_ranks": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "maximum_output_cells": 26,
+          "largest_phase_frame_used": 5081,
+          "actual_arena_bytes": 16777216
+        },
+        "process_id": 8676,
+        "host": {
+          "process_id": 8676,
+          "creation_100ns": 134346288785150808,
+          "lifetime_process_commit_peak": 2228457472,
+          "job_commit_peak": 2229673984,
+          "process_user_100ns": 22343750,
+          "process_kernel_100ns": 7343750,
+          "job_user_100ns": 22500000,
+          "job_kernel_100ns": 7343750
+        }
+      },
+      "case_index": 11,
+      "case": "bounded-class",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    },
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2230427648,
+        "peak_job_commit": 2231631872,
+        "user_100ns": 25625000,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7852,
+        "process_creation_100ns": 134346288819977065
+      },
+      "result": {
+        "case": "legacy-control",
+        "status": "SEALED_CUDA_STREAM",
+        "expected_refusal": null,
+        "cursor": 3,
+        "observations": 3,
+        "profile_events": 0,
+        "CUDA": {
+          "checked_phases": 10,
+          "refused_phases": 0,
+          "independent_commit_operation_tapes": 3,
+          "factorization_ranks": [
+            1
+          ],
+          "maximum_output_cells": 207,
+          "largest_phase_frame_used": 18538,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 10,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1063675494,
+              1036831948
+            ],
+            "metadata": [
+              "finite-affine-commensurate-likelihood-coordinates-v1",
+              "716b987dc5566ba13cc756964156cdbfca3106670705806f66cb682bb5200b57",
+              [
+                -1
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 3,
+            "theta_words": [
+              1065353216,
+              1063675494,
+              1036831948
+            ],
+            "metadata": [
+              "finite-affine-commensurate-likelihood-coordinates-v1",
+              "716b987dc5566ba13cc756964156cdbfca3106670705806f66cb682bb5200b57",
+              [
+                -1
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "7913/47185920",
+          "native_error": "1/1280",
+          "normalizer_error": "1/1024",
+          "probability_error": "411/209715200"
+        },
+        "fresh_score_checks": 0,
+        "install_cursor": null,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 3041195,
+        "process_id": 7852,
+        "host": {
+          "process_id": 7852,
+          "creation_100ns": 134346288819977065,
+          "lifetime_process_commit_peak": 2230427648,
+          "job_commit_peak": 2231631872,
+          "process_user_100ns": 22343750,
+          "process_kernel_100ns": 8750000,
+          "job_user_100ns": 22343750,
+          "job_kernel_100ns": 8906250
+        }
+      },
+      "case_index": 12,
+      "case": "legacy-control",
+      "execution_source": "5937e1b0f7b48970eb1e192f934675f8258e089c"
+    }
+  ]
+}

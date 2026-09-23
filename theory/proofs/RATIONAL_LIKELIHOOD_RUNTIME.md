@@ -1,6 +1,7 @@
 # Owned general rational likelihood lowering
 
-Status: **IMPLEMENTED; EXACT CPU GATE PASS; ACTUAL CUDA A1 REGISTERED, PENDING**.
+Status: **IMPLEMENTED; CPU PASS; CUDA A1 TERMINAL WITH ONE FAILURE;
+ONE-CASE A2 REGISTERED, UNRUN**.
 This binds the [coprime component](COPRIME_LIKELIHOOD_READOUT.md) to the
 existing complete native learner and its Runtime. It changes a physical
 representation, not FP syntax, the unit simplex U, the observation law or
@@ -166,8 +167,83 @@ The profile installation uses the existing public constructor and paired
 fresh evidence without an optional historical selection assertion. No
 CERTIFIED_COMPLETE token is claimed anywhere in this gate.
 
-At this registration, A1 has **not run**. Keep source fixed during execution,
-retain failures and continue only the same live job after a polling timeout.
-Do not rerun a terminal case or borrow the old single-radix/full indexed
-release. Actual AMP, fresh transport and installation remain unverified until
-the declared jobs and independent readers have completed successfully.
+The original registration was committed at 5937e1b. Its actual A1 is now
+terminal; the outcome below supersedes the original unrun status.
+
+## 5. A1: successful recovery, and a genuine full-native precision obstruction
+
+The [A1 journal](../../evidence/minimal/FP_RATIONAL_LIKELIHOOD_CUDA_A1.json)
+retains all 13 enforced jobs at 5937e1b. Twelve execute their declared checks.
+The 274-event reversal passes 823 complete CUDA phases and 274 independent
+commit tapes, including temporary zero weights and the expected recovered
+endpoint words. The n3 joint unknown-noise stream passes 37 phases/12 commits.
+Counter overflow, dormant coordinate/descriptor corruption, preparation
+work/storage/domain faults, decode work and a short decode view all refuse
+without a false certificate. Failed admitted scratch stays paid. The finite
+20-member class remains UNRESOLVED with 15 unsupported members; the three-event
+legacy control passes. Across these successful workers there are 1,991
+checked phases and 657 independently reconstructed commit tapes. Peak whole-job
+commitment is 2,499,796,992 bytes, below 4 GiB. None timed out or hit its cap.
+
+The mixed profile/install worker fails an audit assertion after an unexpected
+prediction refusal. Its retained traceback does not contain the refusal
+cursor or reason, so it supplies no fresh/install completion claim. A new
+independent exact replay identifies a necessary numerical refusal on its
+registered trajectory; this is not a reason to erase the failed job.
+
+**Exact counterexample to promoting selected-weight accuracy to full-native
+accuracy.** After 29 copies of the n2 pair (0,1), label0, the four joint
+integer weights are
+
+`(18^29, 2^29, 15^29, 5^29)`.
+
+The native posterior is their normalization. The registered integer decoder
+and RNE32 commit produce selected master words
+`(1065268829, 293987261, 1000657236, 615054864)`; every selected error is less
+than 1e-7. The next native half casts are nevertheless
+
+`h = (1019/1024, 0, 1319/262144, 0)`, `SUM h = 262183/262144`.
+
+For this graph, the two feature rows are (17,1,14,4) and (1,17,4,14), with
+base masses (1,1). Before the remaining arithmetic rounds, their total on h
+is `2+18 SUM h = 2621791/131072`, rather than20. The actual half products,
+ordered single sums and final half node casts give stored masses
+`(18,129/64)`, and their single total is `1281/64 = 20+1/64`.
+The native exact total is20. Thus the normalizer error is exactly1/64,
+strictly above the registered1/100 tolerance. Native-cache error also exceeds
+1/100. Current normalized forecast error is small; it cannot authorize
+erasing the complete cache or unfinished ambient gradient from the bridge.
+
+The profile has replayed two early observations twice. Candidate step29
+therefore occurs at ordinary cursor27, before the next target is revealed.
+The [exact audit](../../experiments/joint_uncertainty/rational_native_precision.py)
+checks all50 candidate predict/observe/commit triples on the originally
+registered word. Seven passive prediction cuts violate1/100. The maximum
+normalizer error is1/64, native error is about0.01508952, master error is below
+1e-7, ambient-gradient error below0.001, and probability error below0.0001.
+The [small artifact](../../evidence/minimal/FP_RATIONAL_NATIVE_PRECISION.json)
+retains exact maxima and the witness. Cuts after the first refusal are passive
+calculations, not an owned continuation of A1. No Torch is imported.
+
+This falsifies the proposed tolerance on that whole-native trajectory, not
+the coprime representation or its selected-weight theorem. The correct A1
+outcome remains refusal. No Foundation or ERC-1 definition changes.
+
+## 6. Separately declared continuation
+
+`python -X utf8 -B experiments/joint_uncertainty/rational_likelihood_lowering.py --matrix --attempt 2 --write`
+registers only `mixed-profile-install-a2`, with full-native state tolerance
+1/50. The exact preflight checks that this is the sole contract difference:
+G, Gamma, U, the48-event tape/four profile updates, probability tolerance1/1000,
+binary64 tolerances and all resource caps remain. No production arithmetic
+changes. Failure diagnostics now retain cursor and Runtime reason.
+
+This is an explicit weaker numerical contract chosen after the retained
+counterexample; it does not turn A1 into a pass. The fixed-word preflight
+proves its bounds only for the specified rounded interpreter and word, not
+all histories. Actual AMP, paired fresh evidence, installation and learning
+after installation must still pass their independent complete readers in A2.
+At this declaration A2 is unrun. Keep its committed source fixed while live;
+retain every outcome. Do not repeat the twelve successful A1 cases or any
+historical device job. Neither gate issues CERTIFIED_COMPLETE or a full
+indexed release.

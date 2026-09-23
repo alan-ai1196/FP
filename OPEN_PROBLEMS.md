@@ -6,13 +6,17 @@ and jointly scaled integer weights avoid the all-zero failure of per-basis
 scaling. The [owned realization](theory/proofs/RATIONAL_LIKELIHOOD_RUNTIME.md)
 now implements actual G/Gamma/U/domain binding, prepaid integer work/storage,
 failure lifetime and full counter/phase preservation under its own identity.
-Its CPU gate passes. The remaining immediate obstacle is the registered,
-unrun actual CUDA A1: verify full AMP/fresh/install continuations and the
-adversarial refusals under its declared host/packed/work limits. The uniform
-selected-weight bound alone does not bound half-precision forward caches or
-all ambient gradients. This general path should address the mixed-rate bank
-without adding semantic actions or another special noise backend. Useful
-unknown-noise model evidence and a complete indexed release remain separate.
+Its CPU gate and twelve actual A1 workers pass. The profile/install worker
+fails, and exact replay proves its1/100 native tolerance impossible on the
+registered trajectory: candidate step29 has master error below1e-7 but
+normalizer error1/64. A1 remains failed. The uniform selected-weight bound
+cannot replace the complete native relation. One-case A2 is registered at
+state tolerance1/50 with the same graph/U/tape, probability tolerance and
+resources; verify actual profile/fresh/install/learning under that explicit
+new contract. Do not repeat the twelve successful A1 jobs. A useful remaining
+numerical question is how complete-native error depends on graph conditioning
+and the actual half/single schedule; this witness forbids a weight-only
+answer. Unknown-noise model evidence and full indexed release remain separate.
 
 The [noise acquisition/state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 closes a theoretical prerequisite to learning the supplied relation noise.

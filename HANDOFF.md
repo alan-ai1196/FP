@@ -12,11 +12,17 @@ construction covers the two-rate PRODUCT graphs below. Its [owned registration](
 now binds actual G/Gamma/U, complete source domains and paid transient integer
 bytes under a distinct arithmetic identity. The CPU gate passes 3,057 native
 triples, 19 negative checks, three payment/failure-lifetime probes and exact
-legacy descriptor compatibility. Actual CUDA A1 is registered but has not
-run: execute the 13-case source-bound matrix, retaining every outcome and
-keeping dependencies fixed while any job is live. The mixed-rate case must
-cross both fresh paths, install and keep learning. Do not borrow a full release
-or the old single-radix identity; all historical device jobs remain terminal.
+legacy descriptor compatibility. Actual A1 is terminal at5937e1b: twelve
+cases pass, including the274-event recovery and n3 mixed-noise learning;
+the profile/install worker fails after an unexpected prediction refusal.
+Exact replay proves a real tolerance obstruction: at candidate step29,
+master error is below1e-7 but the full-native normalizer error is1/64>1/100.
+Retain A1 as failed. A separate one-case A2 is registered, unrun, with only
+the full-native tolerance changed to1/50; graph/U/tape/probability tolerance
+and resource limits remain. Run `rational_likelihood_lowering.py --matrix
+--attempt 2 --write` from its committed source. It must still cross both
+fresh paths, install and keep learning. Do not repeat successful A1 or
+historical jobs, borrow the old physical identity, or infer a full release.
 
 **Current research: distinguish supplied noise from acquired noise.** The
 [noise acquisition/state result](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
