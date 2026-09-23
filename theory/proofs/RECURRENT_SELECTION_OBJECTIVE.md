@@ -114,6 +114,11 @@ depends on epsilon. For three zeros, noise1/10 gives189/1000, whereas
 noise1/4 gives9/64. This is distributional information, not exact recovery
 or a population certificate from one observed triangle.
 
+The later [noise acquisition law](NOISE_ACQUISITION_AND_STATE.md) extends the
+forest/triangle calculation to arbitrary query multigraphs and causal query
+policies. It gives a matching testing cost for independent long cycles,
+without treating a noise-only statistic as the complete future learner.
+
 ## 5. Evidence and implications for construction
 
 Run `python -B experiments/joint_uncertainty/recurrent_selection.py`.

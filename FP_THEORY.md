@@ -344,6 +344,19 @@ of global. This computational/numerical tradeoff is within the proved
 tolerance; no uniform dominance, population result or full indexed release
 follows. All jobs are terminal. Foundation R4 and ERC-1 remain unchanged.
 
+The [noise acquisition and state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
+now separates the supplied noise assumption from learning it. Cycle parities
+contain all current noise information under the fair latent prior; causal
+forest bridges contain none. For two fixed positive rates, independent
+length-L cycles require Theta((rho_0^L-rho_1^L)^(-2)) repetitions to distinguish
+them at fixed testing error. A finite joint rate/world learner retains
+(T,d,s), adding a diagonal signed count; its exact fixed-cut state count has
+order T^(D+1), D=n(n-1)/2. Five ordinary Reference/binary64 streams validate
+native learning under a declared two-rate prior. This is distinct from the
+known-rate indexed family: one rational radix is insufficient, while a
+positive integer mixture is a mathematical upper. No new owned AMP,
+installation, full indexed release or frozen semantic change follows.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -1,0 +1,233 @@
+{
+  "status": "PASS_EXACT_NOISE_ACQUISITION_AND_NATIVE_CONTINUATIONS",
+  "scope": "exact information/state law and functional Reference/binary64 evidence; no new AMP, whole-host release, search or installation claim",
+  "information": {
+    "graphs": 168,
+    "exact_label_noise_likelihoods": 4155,
+    "cycle_syndrome_fibers_checked": true,
+    "adaptive_pre_target_cuts": 15,
+    "adaptive_bridge_cuts_without_noise_information": 9
+  },
+  "acquisition": {
+    "exact_binomial_testing_checks": 96,
+    "independent_cycle_bounds": [
+      {
+        "cycle_length": 1,
+        "one_cycle_TV": "3/20",
+        "one_cycle_chi_squared": "3/25",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 5,
+        "cycles_sufficient_via_sample_mean_upper": 178
+      },
+      {
+        "cycle_length": 2,
+        "one_cycle_TV": "39/200",
+        "one_cycle_chi_squared": "507/3125",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 4,
+        "cycles_sufficient_via_sample_mean_upper": 106
+      },
+      {
+        "cycle_length": 3,
+        "one_cycle_TV": "387/2000",
+        "one_cycle_chi_squared": "16641/109375",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 4,
+        "cycles_sufficient_via_sample_mean_upper": 107
+      },
+      {
+        "cycle_length": 8,
+        "one_cycle_TV": "16386591/200000000",
+        "one_cycle_chi_squared": "89506788200427/3333282470703125",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 19,
+        "cycles_sufficient_via_sample_mean_upper": 596
+      },
+      {
+        "cycle_length": 16,
+        "one_cycle_TV": "281322388820031/20000000000000000",
+        "one_cycle_chi_squared": "1551809538262915744715820411/1960784313268959522247314453125",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 632,
+        "cycles_sufficient_via_sample_mean_upper": 20217
+      },
+      {
+        "cycle_length": 32,
+        "one_cycle_TV": "79228139231199972206581059711/200000000000000000000000000000000",
+        "one_cycle_chi_squared": "192013032517769665137551894265231107720864776706731131/305894588724725459590036980017657697317190468311309814453125",
+        "cycles_required_for_equal_prior_error_at_most_one_quarter_lower": 796547,
+        "cycles_sufficient_via_sample_mean_upper": 25489486
+      }
+    ]
+  },
+  "state": {
+    "history_checks": 928,
+    "native_full_cache_gradient_successor_checks": 996,
+    "positive_integer_mixture_checks": 928,
+    "single_rational_radix_obstruction_rank": 2,
+    "cases": [
+      {
+        "n": 2,
+        "coordinate_dimension": 2,
+        "states_at_each_clock": [
+          1,
+          4,
+          9,
+          16
+        ],
+        "independent_likelihood_valuation_affine_rank": 2,
+        "native_graph": {
+          "nodes": 18,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 4,
+          "SUM_edges": 296,
+          "edges": 304,
+          "slots": 5,
+          "bindings": 0
+        },
+        "declared_noise_hypotheses": [
+          "1/10",
+          "1/4"
+        ]
+      },
+      {
+        "n": 3,
+        "coordinate_dimension": 4,
+        "states_at_each_clock": [
+          1,
+          8,
+          33
+        ],
+        "independent_likelihood_valuation_affine_rank": 4,
+        "native_graph": {
+          "nodes": 33,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 18,
+          "PRODUCTs": 9,
+          "SUM_edges": 1312,
+          "edges": 1330,
+          "slots": 9,
+          "bindings": 0
+        },
+        "declared_noise_hypotheses": [
+          "1/10",
+          "1/4"
+        ]
+      }
+    ],
+    "known_noise_committed_count_states_equal": true,
+    "diagonal_continuations": [
+      {
+        "first_diagonal_label": 0,
+        "noise_one_tenth_posterior": "6/11",
+        "next_diagonal_zero_probability": "183/220"
+      },
+      {
+        "first_diagonal_label": 1,
+        "noise_one_tenth_posterior": "2/7",
+        "next_diagonal_zero_probability": "111/140"
+      }
+    ],
+    "balanced_pair_noise_one_tenth_posterior": "12/37",
+    "equal_noise_posterior_forest_different_next_query": [
+      "2637/4000",
+      "1363/4000"
+    ]
+  },
+  "runtime": [
+    {
+      "case": "diagonal-0",
+      "events": 2,
+      "status": "SEALED_REFERENCE_STREAM",
+      "binary64_phases": 7,
+      "forecast_zero_probabilities": [
+        "33/40",
+        "183/220"
+      ],
+      "noise_one_tenth_posterior_path": [
+        "1/2",
+        "6/11",
+        "36/61"
+      ],
+      "host_scope": "UNRESOLVED: packed payload accounting only; no live host resource binding",
+      "class_decisions": 0,
+      "installations": 0
+    },
+    {
+      "case": "diagonal-1",
+      "events": 2,
+      "status": "SEALED_REFERENCE_STREAM",
+      "binary64_phases": 7,
+      "forecast_zero_probabilities": [
+        "33/40",
+        "111/140"
+      ],
+      "noise_one_tenth_posterior_path": [
+        "1/2",
+        "2/7",
+        "12/37"
+      ],
+      "host_scope": "UNRESOLVED: packed payload accounting only; no live host resource binding",
+      "class_decisions": 0,
+      "installations": 0
+    },
+    {
+      "case": "forest-cycle-0",
+      "events": 3,
+      "status": "SEALED_REFERENCE_STREAM",
+      "binary64_phases": 10,
+      "forecast_zero_probabilities": [
+        "1/2",
+        "1/2",
+        "2637/4000"
+      ],
+      "noise_one_tenth_posterior_path": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "168/293"
+      ],
+      "host_scope": "UNRESOLVED: packed payload accounting only; no live host resource binding",
+      "class_decisions": 0,
+      "installations": 0
+    },
+    {
+      "case": "forest-cycle-1",
+      "events": 3,
+      "status": "SEALED_REFERENCE_STREAM",
+      "binary64_phases": 10,
+      "forecast_zero_probabilities": [
+        "1/2",
+        "1/2",
+        "1363/4000"
+      ],
+      "noise_one_tenth_posterior_path": [
+        "1/2",
+        "1/2",
+        "1/2",
+        "488/1363"
+      ],
+      "host_scope": "UNRESOLVED: packed payload accounting only; no live host resource binding",
+      "class_decisions": 0,
+      "installations": 0
+    },
+    {
+      "case": "balanced-pair",
+      "events": 3,
+      "status": "SEALED_REFERENCE_STREAM",
+      "binary64_phases": 10,
+      "forecast_zero_probabilities": [
+        "1/2",
+        "289/400",
+        "591/740"
+      ],
+      "noise_one_tenth_posterior_path": [
+        "1/2",
+        "1/2",
+        "12/37",
+        "72/197"
+      ],
+      "host_scope": "UNRESOLVED: packed payload accounting only; no live host resource binding",
+      "class_decisions": 0,
+      "installations": 0
+    }
+  ]
+}

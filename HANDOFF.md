@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Current research: distinguish supplied noise from acquired noise.** The
+[noise acquisition/state result](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
+proves zero information from forest bridges and a matching exponential-in-
+cycle-length acquisition cost for a declared disjoint-cycle experiment.
+A finite mixed-rate learner needs (T,d,s); diagonal evidence and rate-dependent
+common likelihood factors cannot be discarded. The existing native unit
+simplex learner realizes that posterior. Exact checks and five Reference
+streams/44 independently replayed binary64 phases pass. Their whole-host
+scope remains unresolved; no AMP or full release follows. The current
+single-rational-radix backend cannot represent the two-rate bank. A proved
+positive integer mixture gives an implementation direction with all rate
+evidence preserved, not an existing physical certificate. Keep the known-rate
+results below in their original scope; do not rerun their terminal jobs.
+
 **The n64 matrix is terminal: all six model jobs and readers pass.**
 [Results](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md) at45b40b4:
 two376-event tapes, each run with global/projected/carry-free AMP, keep all

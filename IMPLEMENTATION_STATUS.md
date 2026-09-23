@@ -1,5 +1,18 @@
 # FP Implementation Status
 
+The [noise acquisition audit](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
+adds research evidence without changing production: 168 multigraphs/4155
+exact likelihoods, 15 adaptive cuts, 96 exact testing calculations, 928
+history/state/integer-mixture checks and 996 full native cache/gradient/
+successor checks pass. Five ordinary Reference streams use a declared prior
+on noise rates 1/10 and 1/4, preserve all 13 observations and pass 44 actual
+binary64 phase replays. The unit simplex U is unchanged; G/Gamma explicitly
+include rate/world slots. These functional CPU runs retain unresolved
+whole-host scope and issue no search/install authority. The single-rational-
+radix backend is mathematically insufficient for this bank. The positive
+integer mixture upper has no owned Runtime/AMP implementation yet; existing
+known-rate indexed results retain their source-bound scope.
+
 The [direct integer partition prototype](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
 has a uniform full-coordinate readout proof and passes11937 passive RNE
 forecasts/23874 target observations. It replaces transient coefficient

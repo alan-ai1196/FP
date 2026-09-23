@@ -8007,3 +8007,49 @@ for this analysis. This closes the registered comparison and records its
 computational/numerical tradeoff. The empty policy issues no class decision,
 spends no alpha and installs nothing. Full indexed release and evidence
 outside these tapes remain separate; Foundation R4 and ERC-1 stay frozen.
+
+## 242. Price unknown-noise acquisition and preserve its additional state (2026-09-23)
+
+Attack the supplied-noise premise of the completed relation models before
+claiming that FP learned it. Under fair latent bits, the classical signed
+even-subgraph expansion shows that current noise likelihood depends only on
+the query multigraph and its cycle parity vector. Conditional gauge labels
+are uniform. Forest bridges carry no noise information, including under a
+causal adaptive query policy; transcript mutual information is at most the
+expected final cycle rank times log 2. The noise-only statistic is not a
+future learner quotient: two labelled forests have the same noise posterior
+yet next-query probabilities 2637/4000 and 1363/4000 under the two-rate prior.
+
+Derive a matching passive acquisition law. For two fixed positive rates and
+R vertex-disjoint length-L cycles, all information is in independent parity
+bits with biases rho_0^L and rho_1^L. An exact chi-squared lower and sample-mean
+upper give R_*=Theta((rho_0^L-rho_1^L)^(-2)) for error at most 1/4. This is
+exponential in L; cycle rank alone cannot price useful evidence. It does not
+bound policies that can acquire shorter cycles or reuse vertices, which
+changes the experiment. No enormous sample matrix is run to verify a proof.
+
+Sharpen the sufficient counters (T,d,s) already identified in the earlier
+whole-history proof, with s retaining diagonal signed labels. At fixed T their parity-restricted L1
+ball is injective on reachable posteriors and gives Theta(T^(D+1)) future
+classes, D=n(n-1)/2. The old known-rate CountState merges opposite diagonal
+labels correctly for its own model; the mixed-rate next forecasts differ.
+Balanced opposite pair labels restore d=0 but change the rate posterior to
+12/37, so per-rate normalization would erase the evidence. These are scope
+counterexamples, not an existing Runtime or Foundation failure.
+
+Register a literal native Program and uniform prior over rate/world pairs
+at rates 1/10 and 1/4. Positive SUMs of categorical pair PRODUCTs have exact
+normalizer 20; the existing unit simplex CE step performs joint Bayesian
+learning, including complete fixed-slot gradients and caches. Ratios 9 and
+5/6 prove that no single rational radix covers this bank. A different exact
+positive-integer mixture retains common rate factors with n+5T+1 bits for
+the explicit total; it is a mathematical upper, not an owned physical path.
+
+The 6926-byte artifact passes 168 multigraphs/4155 exact likelihoods, 15
+adaptive cuts, 96 exact binomial checks, 928 history/state/integer comparisons
+and 996 full native cache/gradient/successor checks. Five ordinary Reference
+streams preserve 13 observations and pass all 44 independent binary64 phase
+replays. Whole-host scope stays explicitly unresolved; no GPU, construction
+decision, fresh crossing or installation is claimed. Production is unchanged.
+The next physical/model obligation has its own prior, evidence and resource
+scope; all known-noise terminal jobs remain intact. Foundation/ERC-1 stay frozen.

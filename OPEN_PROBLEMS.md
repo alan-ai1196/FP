@@ -1,5 +1,20 @@
 # FP Open Problems
 
+The [noise acquisition/state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
+closes a theoretical prerequisite to learning the supplied relation noise.
+Forest bridges contain no noise information, and independent long cycles
+can require exponentially many samples; that cannot be repaired by a faster
+solver. The finite mixed-rate posterior has the exact statistic (T,d,s) and
+an existing native simplex realization, with exact and functional CPU audits.
+An owned physical realization and model evidence against the strong joint
+unknown-rate posterior remain open. The current one-rational-radix backend
+cannot cover the two-rate bank; a positive integer construction can preserve
+the rate-dependent evidence without an energy histogram. It must pay its
+work/storage, bind the actual inputs and full native state, and obtain its own
+bridge and installation evidence. Do not normalize each rate separately or
+discard diagonal labels under a proof that assumes one known rate. No new
+semantic action is needed, and this is not a full indexed release claim.
+
 The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
 now closes its [declared two-tape n64 comparison](experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_RESULTS.md).
 Its n+4H-bit construction and 29-word mixed-precision readout passed the

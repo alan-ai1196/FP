@@ -223,6 +223,13 @@ cannot be reused for noise learning or evidence. At epsilon=1/2 all pair
 forecasts are1/2 and all d are equivalent, so nonzero noise contrast is an
 essential premise of the minimality and separation theorems.
 
+The later [noise acquisition/state result](NOISE_ACQUISITION_AND_STATE.md)
+sharpens this boundary for a positive prior on at least two distinct rational
+rates in (0,1/2): the existing sufficient tuple is injective on reachable
+posteriors, with an exact parity-restricted L1 class count. It also supplies
+general cycle-information and passive-testing laws and actual native
+Reference/binary64 continuations. Those scopes retain this known-rate result.
+
 ## 7. Implementation consequence and minimal evidence
 
 The research problem is affordable inference and reachable native adaptation
