@@ -1,12 +1,13 @@
 # Joint-noise AMP phases inside the existing owner
 
-Status (2026-09-23): **IMPLEMENTED; EXACT CPU GATE PASS; ACTUAL CUDA GATE
-REGISTERED, NOT YET EXECUTED**. This implements the
+Status (2026-09-23): **IMPLEMENTED; EXACT CPU GATE PASS; ALL 17 ACTUAL CUDA
+JOBS PASS AT 2432a25; TERMINAL**. This implements the
 [joint-excess schedule](JOINT_EXCESS_PARTITION_BRIDGE.md) alongside the
-[owned exact reference learner](OWNED_JOINT_REFERENCE.md). Device conformance,
-actual fresh/install continuation and failed-phase lifetime are hypotheses
-for the registered jobs below until their results are retained. No Foundation,
-ERC-1 or constructor decision class changes.
+[owned exact reference learner](OWNED_JOINT_REFERENCE.md). The source-bound
+jobs establish device conformance, fresh/install continuation and failed-phase
+lifetime on their declared cases; see section 6. The registration in section 5
+was committed before execution. No Foundation, ERC-1 or constructor decision
+class changes.
 
 ## 1. The complete physical coordinates
 
@@ -161,7 +162,7 @@ output extent and two foreign CUDA registrations. A narrower 4,096-bit integer
 registration produces the same admitted prediction words. The complete owned
 reference audit and prior known-rate AMP CPU audit also pass.
 
-## 5. Registered actual CUDA gate
+## 5. Original actual CUDA registration (preserved; now terminal)
 
 Commit all code, readers and this protocol before running
 `python -X utf8 -B scripts/audit_joint_cuda.py --attempt 1`. The CPU-only
@@ -196,3 +197,54 @@ and RNE interpretation. It checks every retained frame and padding byte, raw
 operation/endpoint word, and recorded table extent. No model score, all-width
 resource optimum, GPU integer inference or new CERTIFIED_COMPLETE follows,
 even if all jobs pass. At this registration commit, none has yet run.
+
+## 6. Actual result and retained reader
+
+All seventeen jobs complete at source
+`2432a25064ec8f757f8760f24d1e4f27558dccc8`. Every job is attached before its
+first instruction, exits zero, stays under the registered 4-GiB cap and
+900-second deadline, and passes its independent worker reader. The largest
+observed whole-job commitment is 2,251,014,144 bytes. No source, tolerance or
+resource cap changed during execution. No job was retried.
+
+[FP_JOINT_AMP_CUDA_A1.json](../../evidence/minimal/FP_JOINT_AMP_CUDA_A1.json)
+retains all outcomes in 24,448 bytes. The checked joint blocks total 894
+phases, 293 independently decoded/RNE-checked predictions, 869 complete
+literal native phase comparisons, 10,798 actual operation words, 586 half
+words and 14,105 outputs including copies. These totals exclude preparatory
+phases in fault-only reports and refused phases; they are not the total
+executed work of all jobs. The separate fresh known-rate regression adds
+13 checked phases and four independently read predictions.
+
+| Boundary | Observed result |
+| --- | --- |
+| Profile with 4096-bit integer allowance under 32768-bit reference | 58 phases; 18 predictions; four replay events. At ordinary cursor 8, learners retain T=8 and T=10. |
+| Paired fresh evidence and installation | 170 phases; independent reference/physical identities begin at 16; paired crossing installs at 20, followed by continued learning to 36. Alpha 1/2 remains spent. Same resident learners, arena, history and current mappings survive transport. |
+| n64 closure without literal world expansion | 25 phases/eight predictions over 2^64 native hypotheses. Table 1,326,381 bytes; peak packed 18,052,673 bytes; largest encoded frame 3,018 bytes. Empty-policy stream seals with zero constructor decisions. |
+| Historical A1 count cut under the new schedule | 298 phases/98 predictions; reaches T=29, cursor 27 and continues to 48 (profiled T=50). Original tolerances pass. Historical dense A1/A2 are unchanged. |
+| Actual reversible rounded-zero excess | 314 phases/105 predictions; after 52 one-rate updates one excess is zero, but 104 updates restore d=0 and the actual half forecast. T=104 remains; final target is unrevealed. |
+| S=120 native precision boundary | Third prediction after two label-one events returns UNRESOLVED with actual error 65863667/4117889024. Its 29 outputs are retained; third target is not received and neither predecessor advances. |
+| Refusal and corruption | Short output allowance prevents numerical kernel entry. A second-lineage commit failure retains both observed states and actual target without publishing either successor. Prediction/gradient/operation bit flips, equal-word stale output, wrong actual target and common-root mutation all fail. |
+| Scratch and profile lifetime | Six monitored prepaid reference/physical/reconstruction calls use the actual pinned extent; a physical postwrite failure retains it. A one-step profile budget retains two completed replay events with no attachment or newborn publication. |
+
+The largest native error in the summarized checked blocks is
+48017/23674880 (about 0.00203); the largest normalization error is 1/262144.
+The expected refused S=120 endpoint is excluded from checked maxima. Its
+failure is evidence for the scale-dependent numerical boundary, not a failed
+gate or justification to loosen the contract.
+
+Run `python -X utf8 -B scripts/read_joint_amp_gate.py --negative-checks` to
+validate the retained source, complete case list, job identities/admission,
+original declarations, relation tolerances and observed refusal/continuation
+outcomes. Eighteen altered reports are rejected. This reader imports no Torch
+and performs no new device execution. It validates source-bound reports;
+the full phase/native/RNE checks happened inside the original workers. The
+minimal journal does not contain every frame and is not a standalone proof
+of arbitrary physical execution.
+
+This closes the actual owned bridge and fresh/install obstruction for this
+registered realization. It gives neither unknown-noise model-quality evidence
+nor a total-resource law across arbitrary query widths. Exact integer inference
+is still paid host work; gradients and readouts use the actual GPU. Fresh
+stochastic-law assumptions remain external premises. The unchanged decision
+classes and all terminal historical outcomes retain their original scope.

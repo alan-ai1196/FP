@@ -1,25 +1,28 @@
 # FP Open Problems
 
 The [joint AMP implementation and protocol](theory/proofs/OWNED_JOINT_AMP.md)
-now bind physical state, actual causal inputs, independent integer
+bind physical state, actual causal inputs, independent integer
 construction, all RNE primitives and the complete native relation inside the
 existing owner. Exact CPU tests pass, including expected S=120 refusals and
-a narrower integer allowance. The immediate unresolved claim is actual
-device conformance and lifetime through profiles, failed phases, paired
-freshness and installation. Seventeen fresh bounded jobs are registered to
-test it. Their outcomes must be retained before treating this implementation
-as an executed bridge. This changes no Foundation/ERC-1 or decision class.
+a narrower integer allowance. All 17 actual jobs at 2432a25 now pass profiles,
+failed phases, paired freshness and installation, n64 closure, reversal and
+the expected S=120 refusal. The scoped bridge is executed and terminal.
+Unknown-noise model behavior against a strong exact joint posterior under
+declared query/resource conditions remains untested on this path. Arbitrary
+query width, constructor optimality and full indexed release remain separate;
+the phase gate does not establish them. Foundation/ERC-1 and decision classes
+are unchanged.
 
 The [owned joint reference result](theory/proofs/OWNED_JOINT_REFERENCE.md)
 closes exact Runtime registration, complete native phases, profile clocks,
 paid integer scratch/failure lifetime and same-path fresh reference evidence
 for the original joint-noise learner. Its next boundary was the distinct owned
-half/single realization, now implemented above and awaiting actual execution:
-actual causal inputs and complete state must bind
-independently to the physical integer construction and floating schedule,
-with primitive conformance, retained phase/storage costs and failure lifetime.
-Then fresh paired evidence and installation must be reachable inside the
-same owner. The passive S=20 uniform bound cannot stand in for these facts.
+half/single realization, now executed in the separate gate above. That gate
+binds actual causal inputs and complete state independently to the physical
+integer construction and floating schedule, checks primitive conformance and
+retained phase/storage costs, and reaches fresh paired installation inside
+the same owner. The passive S=20 uniform bound alone cannot stand in for
+these facts.
 No new constructor decision class or complete indexed release is established.
 
 The [joint native indexing/storage component](theory/proofs/JOINT_NATIVE_PARTITION_STORAGE.md)
@@ -27,9 +30,9 @@ now closes literal description and contiguous integer construction for the
 new joint-excess schedule. Its exact audits include changing cyclic support,
 profile clocks, canceled-history resource bounds and independently bound
 plans. Its separate owner registration above now covers exact execution and
-reference persistence. Actual AMP, paired freshness and installation remain
-open. No extra native architecture action is needed, and a passive storage
-result is not an install certificate.
+reference persistence. Actual AMP, paired freshness and installation are
+established on the separate gate's cases. No extra native architecture action
+is needed, and a passive storage result is not an install certificate.
 
 The [joint-excess bridge](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 closes the mathematical readout obstacle for the current S=20 joint-noise
@@ -37,11 +40,11 @@ learner. Positive elimination handles changing cyclic support when its
 resources fit; exact aggregation leaves only two excess integers for the
 floating prediction. A uniform bound covers all native masses and ambient
 gradient classes at the original tolerances. Native scale remains essential:
-the S=120 two-event counterexample exceeds 1/100 mass error. Remaining work
-is the physical counterpart of the now-owned exact reference path, including
+the S=120 two-event counterexample exceeds 1/100 mass error. The physical
+counterpart of the owned exact reference path now passes its gate, including
 independent actual-input binding, AMP conformance and fresh/install
-continuation. No new semantic action is
-needed by the proved construction. A scalar bound or same current readout
+continuation. No new semantic action is needed by the proved construction.
+A scalar bound or same current readout
 does not supply that authority or permit erasing joint evidence.
 
 The [shared-noise closure/decoding result](theory/proofs/SHARED_NOISE_FACTOR_CLOSURE.md)

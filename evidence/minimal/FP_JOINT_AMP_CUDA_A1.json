@@ -1,0 +1,720 @@
+{
+  "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+  "execution_source": "2432a25064ec8f757f8760f24d1e4f27558dccc8",
+  "registration": {
+    "status": "REGISTERED_BEFORE_JOINT_CUDA_EXECUTION",
+    "cases": [
+      "profiles",
+      "fresh-install",
+      "large-closure",
+      "old-A1-cut",
+      "reversal",
+      "scale-refusal",
+      "unfunded",
+      "second-commit",
+      "prediction-word",
+      "gradient-word",
+      "operation-word",
+      "old-output",
+      "target-swap",
+      "plan-roots",
+      "workspace",
+      "profile-refusal",
+      "legacy-shared-owner"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true,
+    "budget": {
+      "join_cells": 64,
+      "live_cells": 1024,
+      "arithmetic": 32768,
+      "step_cap": 2048,
+      "integer_bits": 32768
+    },
+    "profile_integer_bits": 4096,
+    "arena_bytes": 33554432,
+    "allocator_cap": 67108864,
+    "output_cells": 64,
+    "frame_bytes_n2_n3": 65536,
+    "frame_bytes_n64": 524288,
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "native_normalizer_cap": "2*(S-1)",
+    "native_activation_cap": "S-2",
+    "forward_id": "joint-noise-integer-excess-half-mantissas-single-readout-v1",
+    "evidence_encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+    "expected_scale_refusal": "S120 third prediction after two label1 events; no tolerance relaxation",
+    "failure_policy": "stop at first unexpected failure; retain every outcome; no retry or changed cap within attempt",
+    "scope": "paid host integer inference and actual GPU half/single phases, profiles, paired fresh install and adversarial lifetime; no model superiority, GPU integer inference or constructor completeness"
+  },
+  "workers": [
+    {
+      "case": "profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2229932032,
+        "peak_job_commit": 2231136256,
+        "user_100ns": 40781250,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10592,
+        "process_creation_100ns": 134346415053731002
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 10592,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "independent_partition_RNE_predictions": 18,
+          "full_literal_native_phases": 58,
+          "actual_operation_words": 702,
+          "actual_half_words": 36,
+          "output_words_including_copies": 918,
+          "cursor": 8,
+          "table_bytes": 526848,
+          "packed_peak_bytes": 4691978,
+          "consumed_arena_bytes": 7088,
+          "largest_encoded_frame_bytes": 1345,
+          "maximum_relation_errors": {
+            "state_error": "33808637/57168363520",
+            "native_error": "48017/23674880",
+            "normalizer_error": "1/1048576",
+            "probability_error": "6147621/60607692800",
+            "division_error": "10364595/175921852055552"
+          },
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "fresh-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2231406592,
+        "peak_job_commit": 2232619008,
+        "user_100ns": 79062500,
+        "kernel_100ns": 10937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26148,
+        "process_creation_100ns": 134346415109451566
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 26148,
+        "case": "fresh-install",
+        "result": {
+          "checked_phases": 170,
+          "independent_partition_RNE_predictions": 56,
+          "full_literal_native_phases": 170,
+          "actual_operation_words": 2184,
+          "actual_half_words": 112,
+          "output_words_including_copies": 2856,
+          "cursor": 36,
+          "table_bytes": 1319178,
+          "packed_peak_bytes": 13386870,
+          "consumed_arena_bytes": 21968,
+          "largest_encoded_frame_bytes": 1490,
+          "maximum_relation_errors": {
+            "state_error": "451162925178155857192637/293615622414513542694174720",
+            "native_error": "394798641854142136737933/343531184663004307165020160",
+            "normalizer_error": "1/1048576",
+            "probability_error": "3158552943266985953836919/54964989546080689146403225600",
+            "division_error": "11210963/175921852055552"
+          },
+          "fresh_start_cursor": 16,
+          "paired_install_cursor": 20,
+          "post_install_continuation_to": 36,
+          "alpha_spent": "1/2",
+          "constructor_certificate": null
+        }
+      }
+    },
+    {
+      "case": "large-closure",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2229497856,
+        "peak_job_commit": 2230714368,
+        "user_100ns": 86093750,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26588,
+        "process_creation_100ns": 134346415218033417
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 26588,
+        "case": "large-closure",
+        "result": {
+          "checked_phases": 25,
+          "independent_partition_RNE_predictions": 8,
+          "full_literal_native_phases": 0,
+          "actual_operation_words": 312,
+          "actual_half_words": 16,
+          "output_words_including_copies": 408,
+          "cursor": 8,
+          "table_bytes": 1326381,
+          "packed_peak_bytes": 18052673,
+          "consumed_arena_bytes": 3144,
+          "largest_encoded_frame_bytes": 3018,
+          "maximum_relation_errors": {
+            "state_error": "33808637/57168363520",
+            "native_error": "10591/6553600",
+            "normalizer_error": "0",
+            "probability_error": "10591/131072000",
+            "division_error": "1/41943040"
+          },
+          "worlds": "18446744073709551616",
+          "closure": "SEALED_CUDA_STREAM",
+          "constructor_decisions": 0
+        }
+      }
+    },
+    {
+      "case": "old-A1-cut",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2233303040,
+        "peak_job_commit": 2234515456,
+        "user_100ns": 117500000,
+        "kernel_100ns": 12656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9488,
+        "process_creation_100ns": 134346415321511057
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 9488,
+        "case": "old-A1-cut",
+        "result": {
+          "checked_phases": 298,
+          "independent_partition_RNE_predictions": 98,
+          "full_literal_native_phases": 298,
+          "actual_operation_words": 3822,
+          "actual_half_words": 196,
+          "output_words_including_copies": 4998,
+          "cursor": 48,
+          "table_bytes": 1319178,
+          "packed_peak_bytes": 22284115,
+          "consumed_arena_bytes": 38448,
+          "largest_encoded_frame_bytes": 1734,
+          "maximum_relation_errors": {
+            "state_error": "153525349/2780928409600",
+            "native_error": "19195839/20478951424",
+            "normalizer_error": "1/524288",
+            "probability_error": "61442309/1310652891136",
+            "division_error": "11728751/175921852055552"
+          },
+          "historical_cut_reached_by_new_source": [
+            [
+              27,
+              27,
+              [
+                27
+              ]
+            ],
+            [
+              27,
+              29,
+              [
+                29
+              ]
+            ]
+          ],
+          "scope": "new joint-excess realization at original tolerances; terminal dense A1/A2 unchanged"
+        }
+      }
+    },
+    {
+      "case": "reversal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2229714944,
+        "peak_job_commit": 2230923264,
+        "user_100ns": 141093750,
+        "kernel_100ns": 16406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2312,
+        "process_creation_100ns": 134346415475842689
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 2312,
+        "case": "reversal",
+        "result": {
+          "checked_phases": 314,
+          "independent_partition_RNE_predictions": 105,
+          "full_literal_native_phases": 314,
+          "actual_operation_words": 3454,
+          "actual_half_words": 210,
+          "output_words_including_copies": 4501,
+          "cursor": 104,
+          "table_bytes": 1054725,
+          "packed_peak_bytes": 23312620,
+          "consumed_arena_bytes": 35168,
+          "largest_encoded_frame_bytes": 1467,
+          "maximum_relation_errors": {
+            "state_error": "3619/23592960",
+            "native_error": "517/10485760",
+            "normalizer_error": "1/2097152",
+            "probability_error": "4131/838860800",
+            "division_error": "434927/6515624771584"
+          },
+          "temporary_zero_excess": true,
+          "restored_zero_count_steps": 104,
+          "restored_actual_half_forecast": true,
+          "final_target_unrevealed": true
+        }
+      }
+    },
+    {
+      "case": "scale-refusal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2227453952,
+        "peak_job_commit": 2228662272,
+        "user_100ns": 26093750,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4452,
+        "process_creation_100ns": 134346415678305556
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 4452,
+        "case": "scale-refusal",
+        "result": {
+          "checked_phases": 7,
+          "independent_partition_RNE_predictions": 2,
+          "full_literal_native_phases": 7,
+          "actual_operation_words": 90,
+          "actual_half_words": 4,
+          "output_words_including_copies": 118,
+          "cursor": 2,
+          "table_bytes": 1846026,
+          "packed_peak_bytes": 2473456,
+          "consumed_arena_bytes": 904,
+          "largest_encoded_frame_bytes": 1290,
+          "maximum_relation_errors": {
+            "state_error": "502387/1976586731520",
+            "native_error": "139/13762560",
+            "normalizer_error": "1/262144",
+            "probability_error": "451/6606028800",
+            "division_error": "27318233/1055531196219392"
+          },
+          "expected_refusal": "UNRESOLVED",
+          "actual_native_error": "65863667/4117889024",
+          "third_target_received": false
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1862471680,
+        "peak_job_commit": 1863696384,
+        "user_100ns": 17343750,
+        "kernel_100ns": 8125000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1292,
+        "process_creation_100ns": 134346415716303652
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 1292,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "executor_entries": 0,
+          "retained_context_and_failed_phase": true
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2157875200,
+        "peak_job_commit": 2159099904,
+        "user_100ns": 21250000,
+        "kernel_100ns": 9375000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9628,
+        "process_creation_100ns": 134346415743854362
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 9628,
+        "case": "second-commit",
+        "result": {
+          "status": "UNRESOLVED",
+          "observed_lineages_retained": 2,
+          "published_advances": 0,
+          "retained_target": 0
+        }
+      }
+    },
+    {
+      "case": "prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2249805824,
+        "peak_job_commit": 2251014144,
+        "user_100ns": 21562500,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11272,
+        "process_creation_100ns": 134346415776801424
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 11272,
+        "case": "prediction-word",
+        "result": {
+          "case": "prediction-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: indexed AMP output copy changed its actual source words"
+        }
+      }
+    },
+    {
+      "case": "gradient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2248011776,
+        "peak_job_commit": 2249236480,
+        "user_100ns": 21562500,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9236,
+        "process_creation_100ns": 134346415809791451
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 9236,
+        "case": "gradient-word",
+        "result": {
+          "case": "gradient-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": 0,
+          "reason": "ContractError: indexed AMP output copy changed its actual source words"
+        }
+      }
+    },
+    {
+      "case": "operation-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2248298496,
+        "peak_job_commit": 2249498624,
+        "user_100ns": 22031250,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 20908,
+        "process_creation_100ns": 134346415843110653
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 20908,
+        "case": "operation-word",
+        "result": {
+          "case": "operation-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: actual indexed AMP operation differs from exact RNE"
+        }
+      }
+    },
+    {
+      "case": "old-output",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2087387136,
+        "peak_job_commit": 2088611840,
+        "user_100ns": 20781250,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7492,
+        "process_creation_100ns": 134346415876106598
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 7492,
+        "case": "old-output",
+        "result": {
+          "case": "old-output",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: raw phase readout needs its initialized floating extents"
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224181248,
+        "peak_job_commit": 2225401856,
+        "user_100ns": 21093750,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16404,
+        "process_creation_100ns": 134346415908655320
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 16404,
+        "case": "target-swap",
+        "result": {
+          "case": "target-swap",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": 0,
+          "reason": "ContractError: joint observation differs from its independently owned actual target"
+        }
+      }
+    },
+    {
+      "case": "plan-roots",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2225586176,
+        "peak_job_commit": 2226798592,
+        "user_100ns": 21875000,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21940,
+        "process_creation_100ns": 134346415942116077
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 21940,
+        "case": "plan-roots",
+        "result": {
+          "case": "plan-roots",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_native_physical_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: joint AMP plan differs from its independently retained actual inputs"
+        }
+      }
+    },
+    {
+      "case": "workspace",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224263168,
+        "peak_job_commit": 2225463296,
+        "user_100ns": 24375000,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17856,
+        "process_creation_100ns": 134346415975601659
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 17856,
+        "case": "workspace",
+        "result": {
+          "checked_phases": 7,
+          "independent_partition_RNE_predictions": 2,
+          "full_literal_native_phases": 7,
+          "actual_operation_words": 78,
+          "actual_half_words": 4,
+          "output_words_including_copies": 102,
+          "cursor": 2,
+          "table_bytes": 1319178,
+          "packed_peak_bytes": 1946918,
+          "consumed_arena_bytes": 792,
+          "largest_encoded_frame_bytes": 1166,
+          "maximum_relation_errors": {
+            "state_error": "3/41943040",
+            "native_error": "0",
+            "normalizer_error": "0",
+            "probability_error": "0",
+            "division_error": "0"
+          },
+          "prepaid_reference_physical_reconstruction_visits": 6,
+          "postwrite_failure": "UNRESOLVED",
+          "failed_table_remains_owned_and_pinned": true
+        }
+      }
+    },
+    {
+      "case": "profile-refusal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2225221632,
+        "peak_job_commit": 2226450432,
+        "user_100ns": 23750000,
+        "kernel_100ns": 11718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15336,
+        "process_creation_100ns": 134346416012097997
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 15336,
+        "case": "profile-refusal",
+        "result": {
+          "checked_phases": 15,
+          "independent_partition_RNE_predictions": 4,
+          "full_literal_native_phases": 15,
+          "actual_operation_words": 156,
+          "actual_half_words": 8,
+          "output_words_including_copies": 204,
+          "cursor": 2,
+          "table_bytes": 2058,
+          "packed_peak_bytes": 1175814,
+          "consumed_arena_bytes": 1592,
+          "largest_encoded_frame_bytes": 1274,
+          "maximum_relation_errors": {
+            "state_error": "3/41943040",
+            "native_error": "1/1310720",
+            "normalizer_error": "1/1048576",
+            "probability_error": "11/419430400",
+            "division_error": "7927235/351843737665536"
+          },
+          "failed_profile_steps_retained": 2,
+          "published_newborns": 0
+        }
+      }
+    },
+    {
+      "case": "legacy-shared-owner",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2225491968,
+        "peak_job_commit": 2226696192,
+        "user_100ns": 21875000,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2260,
+        "process_creation_100ns": 134346416050204533
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_JOINT_AMP",
+        "process_id": 2260,
+        "case": "legacy-shared-owner",
+        "result": {
+          "new_shared_owner_regression": {
+            "checked_phases": 13,
+            "actual_floating_words": 124,
+            "output_words_including_copies": 164,
+            "actual_half_words": 7,
+            "independent_partition_and_RNE_prediction_readers": 4,
+            "cursor": 4,
+            "wide_table_billed_and_actual_bytes": 204174,
+            "maximum_compacted_cells": 4,
+            "packed_current_bytes": 4260883,
+            "consumed_arena_bytes": 1288
+          },
+          "scope": "fresh four-event job after shared owner changes; no old attempt rerun"
+        }
+      }
+    }
+  ]
+}

@@ -9,9 +9,15 @@ paired persistence and identity transport. No root/prefix/arena field is
 added. Its exact CPU audit passes 2,844 predictions/5,688 observations and
 80 native triples, including narrower integer precision, complete input and
 word faults; 182 native S=120 cases correctly refuse at tolerance 1/100.
-The 17-job actual CUDA gate is registered with original tolerances and fresh
-owners, but has not run. Physical conformance, failed-phase lifetime and
-actual installation therefore remain unverified on this new path.
+All 17 fresh actual CUDA jobs pass at 2432a25 under the original tolerances:
+894 phases in summarized joint blocks, 293 prediction readers, 10,798
+operation words and a separate 13-phase known-rate regression. Paired fresh
+installation at 20 continues to 36; n64 closure, reversal, S=120 refusal and
+output/target/scratch/publication faults pass. Observed host peak is
+2,251,014,144 bytes under 4 GiB. The 24,448-byte A1 journal is terminal; a
+CPU-only retained reader rejects 18 altered reports. This establishes the
+declared physical phases and transport, with no new constructor completeness
+or model-quality result.
 
 The [owned joint reference path](theory/proofs/OWNED_JOINT_REFERENCE.md) adds
 `joint_execution.py` and registers the complete joint initializer, learner,
@@ -39,7 +45,8 @@ normalized-equivalent forged parts as well as clocks, order and model swaps.
 These modules remain passive components; their separate owned reference
 registration is the result above. The updated component audit verifies that
 a literal machine cannot translate/admit this indexed type from its passive
-plan. Actual CUDA integration and installation remain open.
+plan. Actual CUDA integration and installation have their separate executed
+gate above; neither authority comes from the passive component.
 
 The [joint-excess prototype](theory/proofs/JOINT_EXCESS_PARTITION_BRIDGE.md)
 reuses the existing positive elimination geometry for each finite noise rate,

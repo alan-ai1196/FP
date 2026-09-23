@@ -464,9 +464,12 @@ checks every primitive against exact RNE, and compares the complete native
 coordinate basis. Monotone rounding gives whole-domain physical masses in
 [1,S-1], with stored sum and rounded normalizer at most 2(S-1). Same-path
 physical fresh scores use properly normalized stored masses. The exact CPU
-gate passes, preserving the S=120 native-error refusal; actual CUDA lifetime,
-paired evidence and identity installation remain hypotheses for the
-registered fresh jobs. No new semantic action or constructor class follows.
+gate passes, preserving the S=120 native-error refusal. All 17 fresh CUDA
+jobs at 2432a25 now establish their declared actual phase/lifetime checks,
+paired evidence and identity installation with post-install continuation.
+The physical S=120 witness refuses at the original tolerance before its third
+target. This is scoped execution evidence, not an all-resource or model-quality
+theorem. No new semantic action or constructor class follows.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

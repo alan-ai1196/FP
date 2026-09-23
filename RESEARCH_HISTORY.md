@@ -8593,3 +8593,55 @@ unexpected failure and retain every outcome without silent retry. At this
 registration commit no new Torch execution has run; device conformance and
 install reachability remain unverified. No Foundation, ERC-1, model superiority
 or CERTIFIED_COMPLETE claim changes.
+
+## 254. The joint-excess AMP owner reaches actual paired installation and preserves numerical/resource refusals (2026-09-23)
+
+Execute all seventeen preregistered fresh jobs at 2432a25. Every job attaches
+before its first instruction, exits zero and remains inside 4 GiB/900 seconds.
+The peak whole-job commitment is 2,251,014,144 bytes. Keep HEAD, code, accuracy
+and resource declarations fixed throughout; no job is retried. The original
+24,448-byte A1 journal retains all successful and expected-refusal outcomes.
+
+The summarized joint blocks contain 894 checked phases, 293 independently
+decoded/RNE-checked predictions, 869 complete literal native phase comparisons,
+10,798 actual operation words, 586 half words and 14,105 outputs including
+copies. These are not all work across fault jobs: their preparatory phases
+and refused phases are excluded. A separate fresh known-rate owner regression
+adds 13 phases/four independent predictions after the shared owner changes.
+
+The profile case verifies 4096-bit integer accounting beneath 32768-bit reference
+arithmetic and preserves ordinary/optimizer clocks 8/8 and 8/10. Actual paired
+freshness is admitted at 16, crosses and installs at 20, and continues to 36.
+The same resident learners, current mappings, arena and phase history survive
+transport, with alpha 1/2 still spent. An n64 eight-event root over 2^64 native
+hypotheses seals the empty-policy stream without a constructor decision;
+world/slot expansion is forbidden. Its paid integer table is 1,326,381 bytes,
+peak packed state 18,052,673 bytes, largest encoded frame 3,018 bytes. These
+figures reflect this gate's declared budgets, not the earlier smaller exact
+reference fixture or a whole-host bound.
+
+The original A1 count cut is reached at T=29/cursor 27 under this distinct
+physical schedule, passes original tolerances and continues through 48 ordinary
+events (profiled T=50). Historical dense A1/A2 verdicts are unchanged. A real
+52/52 one-rate reversal temporarily rounds one excess to zero yet recovers
+the actual half forecast at d=0/T=104. The final prediction remains pre-target.
+Counts and total evidence, not floating excesses, control future continuation.
+
+The S=120 third prediction produces the proved actual native error
+65863667/4117889024 and returns UNRESOLVED before target 3. Its 29 outputs and
+unchanged predecessors remain retained. Short output allocation prevents
+kernel entry; a second-lineage commit refusal retains both observed states
+without publishing either successor. Prediction, gradient and operation word
+changes, equal-word stale output, target substitution and common-root plan
+scaling all fail. Actual pinned scratch survives a physical postwrite fault;
+an exhausted profile retains two completed events with no attachment/newborn.
+
+The CPU-only retained reader checks the complete source-bound case matrix,
+job/PID/admission data, declared limits, checked relation errors and observed
+refusal/continuation outcomes. Eighteen altered reports refuse. The full frame,
+native and primitive reads occurred inside the original workers; the compact
+journal is not a standalone proof of arbitrary execution. No new GPU run,
+Foundation/ERC-1 rule, decision class or model-quality claim is inferred.
+The actual owned bridge and paired-install obstruction is closed for this
+realization. Useful unknown-noise model behavior against the strong joint
+posterior under declared query/resource conditions is the next science test.

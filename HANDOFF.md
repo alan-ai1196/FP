@@ -1,19 +1,21 @@
 # FP Handoff
 
-**The owned joint AMP path is implemented and its fresh device gate is
-registered, not yet executed.** Read
+**All 17 fresh owned joint AMP jobs pass at 2432a25; the gate is terminal.** Read
 [OWNED_JOINT_AMP](theory/proofs/OWNED_JOINT_AMP.md) and
-`scripts/audit_joint_cuda.py`. The exact CPU gate passes 2,844 predictions,
-5,688 both-target observations and 80 complete native continuation triples;
-182 S=120 cut/query cases correctly refuse the original state tolerance.
-The physical path independently constructs its two excess integers from its
-own complete state and actual sources, checks every half/single primitive,
-and retains the existing owner, arena and identity installation transport.
-Seventeen fresh 4-GiB/900-second jobs cover profiles, paired freshness,
-installation, n64 closure, reversal and output/target/storage faults. Commit
-the protocol before A1 and keep execution dependencies fixed while jobs run.
-No actual joint device result, model conclusion or new decision class is
-established by registration; all old GPU attempts remain terminal.
+the retained [A1 result](evidence/minimal/FP_JOINT_AMP_CUDA_A1.json).
+Checked joint blocks contain 894 phases/293 predictions/10,798 operation words;
+a separate fresh known-rate regression adds 13 phases. Paired freshness starts
+at 16, installs at 20 and continues to 36. The n64 eight-event root represents
+2^64 hypotheses without literal world expansion. The old A1 count cut passes
+this new schedule at original tolerances; actual reversal recovers the half
+forecast after 104 updates. S=120 correctly refuses with the predicted mass
+error before the third target. All output/target/storage/publication faults
+pass. Peak whole-job commitment is 2,251,014,144 bytes under 4 GiB; no retry or
+limit change. Use `scripts/read_joint_amp_gate.py --negative-checks` for a
+CPU-only retained reader. No model superiority or constructor decision class
+follows. The next research question is useful unknown-noise model behavior
+against the strong joint posterior under declared query/resource conditions;
+all current and historical gate jobs are terminal.
 
 **The joint-noise learner now has an owned exact Reference Runtime path.**
 The [refinement and audit](theory/proofs/OWNED_JOINT_REFERENCE.md) bind its
@@ -27,8 +29,8 @@ width, canceled-history and replay refusals preserve history and paid scratch;
 a second-lineage failure publishes no successor. Empty-policy reference
 closure has zero constructor decisions. At reference source 4907b1d, joint
 CUDA registration refused before executor creation. The separate AMP
-registration above now implements that path; complete actual phase/resource
-evidence, paired persistence and install reachability await its fresh gate.
+registration above now closes the scoped actual phase/resource, paired
+persistence and install reachability gate.
 No terminal GPU result changes.
 
 **Joint native indexing and contiguous integer storage now pass their exact
@@ -58,8 +60,9 @@ S=120 witness still violates 1/100 mass accuracy; scale cannot be omitted.
 The exact audit covers 21,604 partition queries, 597 full native triples,
 3,608 rounded predictions/7,216 observations and independent n32/n64 cyclic
 oracles. This numerical component changes no GPU job. The owned reference
-path above implements the exact learner and resource/failure lifetime; actual
-device input binding, conformance and continuation remain to be established.
+path above implements the exact learner and resource/failure lifetime. The
+separate actual AMP gate now checks device input binding, conformance and
+continuation on its declared cases.
 Its encoded parameters and single-precision heads are a different physical
 realization from the terminal dense rational A1/A2 jobs; keep both verdicts.
 
