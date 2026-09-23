@@ -270,6 +270,14 @@ primitive words, fresh/install,104-event reversal and77-event n32 learning.
 With controls,861 phases pass; peak job2394722304 bytes under4 GiB. This changes no
 Foundation/ERC-1 semantics and issues no constructor completeness certificate.
 
+A [bounded-input model resource argument](theory/proofs/BAND_MODEL_RESOURCE_BOUND.md)
+now gives label-independent natural-order upper bounds32 joined cells,
+12n+64 live cells and212n-195 positive operations for any subset of a width-two
+interaction graph. It includes every current ordered query and retains all
+native counts; later off-band observations require new resource checks.
+This supports a declared n64 model test with strong exact/global/projected
+controls. It changes no semantics and supplies no unexecuted model outcome.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -16,6 +16,7 @@ from fp_reference.cuda_prefix import IndexedCudaPhase
 from fp_reference.float64_bridge import Float64Contract
 from fp_reference.indexed_count import commit
 from audit_owned_histogram import BUDGET, operations
+from audit_owned_packed_histogram import BUDGET as PACKED_BUDGET
 from audit_indexed_source_binding import predict
 from audit_indexed_runtime import fixture
 from audit_reference_construction import rejects
@@ -26,7 +27,8 @@ TAPE = ((0, 1, 0), (1, 2, 1), (0, 2, 0))
 
 def fixture_snapshot(kind):
     cfg, schema, online = fixture(3, 3)
-    cfg = replace(cfg, indexed_histogram=BUDGET if kind == 'histogram' else None)
+    budget = BUDGET if kind == 'histogram' else PACKED_BUDGET if kind == 'carry-free' else None
+    cfg = replace(cfg, indexed_histogram=budget)
     rt = ReferenceCompilerRuntime(cfg, schema, online=online, policy=CompilerPolicy(()))
     for i, j, target in TAPE:
         assert predict(rt, schema, (i, j)).status == 'PREDICTED_REFERENCE'
@@ -52,11 +54,11 @@ def fixture_snapshot(kind):
             execution_plan=plan))
         return identity
     current_id = append('initialize', None, snapshot.event_traces[0].before, current)
-    planner = histogram_amp if kind == 'histogram' else projected_amp if kind == 'projected' else amp
-    kernel = histogram_amp if kind == 'histogram' else amp
+    planner = histogram_amp.implementation(budget) if budget is not None else projected_amp if kind == 'projected' else amp
+    kernel = planner if budget is not None else amp
     for trace, (i, j, target) in zip(snapshot.event_traces, TAPE):
-        if kind == 'histogram':
-            plan = hist.passive_plan(current.encoded, (i, j), BUDGET)
+        if budget is not None:
+            plan = hist.implementation(budget).passive_plan(current.encoded, (i, j), budget)
         else:
             plan = planner._prepare_prediction(schema, current, schema.rules(), schema.source_row(i*3+j),
                                               output_cap=model.CELLS)
@@ -70,7 +72,7 @@ def fixture_snapshot(kind):
                              input_id=current_id, prediction_id=prediction_id)
         current = amp.IndexedAmpState(commit(observed.encoded))
         current_id = append('commit', trace, trace.after_commit, current, input_id=observed_id)
-    contract = SimpleNamespace(histogram=BUDGET if kind == 'histogram' else None,
+    contract = SimpleNamespace(histogram=budget,
                                order_search=False, forward_id=planner.FORWARD_ID)
     return replace(snapshot, cuda=SimpleNamespace(contract=contract, phases=tuple(phases)))
 
@@ -80,13 +82,13 @@ def audit():
         'scope': 'passive rounded records attached to real reference histories; no actual device evidence',
         'paths': []}
     with patch.object(model, 'data', lambda case: (None, None, TAPE, ())):
-        for kind in ('global', 'projected', 'histogram'):
+        for kind in ('global', 'projected', 'histogram', 'carry-free'):
             snapshot = fixture_snapshot(kind)
-            mode = 'global' if kind == 'histogram' else kind
+            mode = 'global' if kind in ('histogram', 'carry-free') else kind
             checked = model.audit_prefix(snapshot, (3, 'reader-fixture', 0), mode)
             assert checked['checked_CUDA_phases'] == 10 and checked['native_committed_units'] == 3
             result['paths'].append({'kind': kind, 'phases': 10})
-            if kind != 'histogram':
+            if kind not in ('histogram', 'carry-free'):
                 continue
             position = next(i for i, p in enumerate(snapshot.cuda.phases) if p.phase == 'ordinary:predict')
             phase = snapshot.cuda.phases[position]
@@ -101,7 +103,7 @@ def audit():
                 rows = snapshot.cuda.phases[:position]+(changed,)+snapshot.cuda.phases[position+1:]
                 malformed = replace(snapshot, cuda=SimpleNamespace(contract=snapshot.cuda.contract, phases=rows))
                 rejects(lambda: model.audit_prefix(malformed, (3, 'reader-fixture', 0), mode))
-            result['histogram_coefficient_endpoint_and_trace_refusals'] = len(changes)
+            result[kind+'_coefficient_endpoint_and_trace_refusals'] = len(changes)
     assert 'torch' not in sys.modules
     return result
 

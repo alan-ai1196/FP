@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Current research: a complete n64 learning experiment with strong controls.**
+The [registered width-two task](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md)
+has two fixed seeds,376 causal observations and2^63 latent assignments,
+retaining all2016 counts. Compare existing global/projected AMP and the owned
+carry-free path against an independent exact joint posterior. The
+[label-independent bound](theory/proofs/BAND_MODEL_RESOURCE_BOUND.md) gives
+join32/live832/arithmetic13373,24064 packed bits and6785 histogram outputs;
+the old global output bound is17770.122576 geometry cases and1120 independent
+full-assignment forecasts pass. CPU exact controls are retained; no actual
+model job has run yet. Commit inputs, then launch
+`scripts/run_band_model.py --attempt 1` and retain every outcome. Keep source
+fixed during the six fresh16-GiB/two-hour jobs. This is an explicit bounded
+input law, not a narrowed native state or an all-pair/population claim.
+
 **Owned carry-free frontier closed within its declared component:** the
 [Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md) passes its CPU
 gate and all19 actual RTX3090 A1 jobs atd600dba. Wide tables occupy one paid

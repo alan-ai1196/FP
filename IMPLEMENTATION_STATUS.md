@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md)
+is registered, not yet executed. Two376-event tapes retain the full native
+learner and compare all three physical realizations with an independent exact
+joint posterior. Uniform geometry/bit/output bounds and122576 finite geometry
+checks pass;1120 small forecasts match full-assignment inference. The common
+model reader now supports the owned carry-free plan and explicitly declared
+evaluation subsets; all four passive reader paths/fault checks and the old
+n16 retained score reader pass. Production remains unchanged fromd600dba.
+
 The [owned carry-free implementation](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 now has paid contiguous wide tables, safe forward compaction, full native
 state/plan binding and a separately registered coefficient-normalized AMP

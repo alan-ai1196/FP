@@ -7717,3 +7717,38 @@ pass; all ten integration flows total861 phases/78945 words/26163 half.
 This closes the owned component frontier, not a larger-model score or full
 indexed release. Foundation/ERC-1 stay frozen. Useful larger-model evidence
 with strong exact and physical controls is the next research obligation.
+
+## 233. Register a larger learning task with a uniform resource envelope (2026-09-23)
+
+Separate latent assignment count from interaction width before launching
+another model job. For any subset of the width-two band and any current
+query, natural elimination has joined size<=32, live cells<=12n+64 and
+positive operations<=212n-195. The proof counts additional constant/query-only
+messages, avoiding the unjustified assumption that edge deletion monotonically
+reduces live storage. Global syntactic power aliases also give a280n-150
+floating-output upper bound. No full-state coordinate or legal future input
+is deleted; an off-band observation can leave the conditional class.
+
+At n64, two observations per neighboring edge followed by each ordered
+radius-two query yield126 training+250 evaluation=376 events. For every
+label history, carry-free prediction needs at most24064 bits and6785 outputs,
+within the existing allowances. Both existing AMP paths are retained as
+controls under the same original16-GiB/two-hour full model envelope.
+
+An independent exact base9 vertex-prefix joint posterior checks all native
+counts, maintains latent correlations and enumerates no worlds. It matches
+1120 full-assignment forecasts in56 sampled small histories and168 additional
+nonlocal/diagonal integer reads. Exhaustive n2..7 support/query checking covers
+122576 shapes. The two fixed seeds0/1 have exact initial-training-unseen CE
+0.3871848232032782/0.3902449656579961; independent-pair ablation gives
+0.560747982223021/0.5900966433075647. These controls are exposed before GPU
+registration; no population inference or better-than-exact claim follows.
+
+Generalize the common model reader to the declared evaluation subset and
+owned carry-free plan. Its four passive paths, coefficient/word/trace faults
+and the prior completed n16 score reader pass. Production remains unchanged
+fromd600dba. Register all six n64 jobs, global/projected/carry-free for each
+seed, before launch. Keep complete ordinary learning and retained history,
+all numerical/resource caps and the empty compiler policy. Retain every
+refusal, failed job and complete result; no actual model outcome exists at
+this registration cut.

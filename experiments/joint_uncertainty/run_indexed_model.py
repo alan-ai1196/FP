@@ -62,6 +62,13 @@ def controls():
     return rows,retained['registration_source']
 
 
+def scoring_groups(case):
+    _, edges, _, _ = data(case)
+    n = case[0]
+    return (('unseen', unseen_pairs(n, edges)),
+            ('full_domain', tuple((i, j) for i in range(n) for j in range(n))))
+
+
 def setup(case,mode):
     assert case in CASES and mode in MODES
     n = case[0]
@@ -169,12 +176,14 @@ def audit_prefix(snapshot,case,mode):
     if histogram_budget is not None:
         from fp_reference import histogram_decoder, histogram_amp
         assert not ordered and mode == 'global'
-        planner = kernel = histogram_amp
-        scratch = memoryview(bytearray(histogram_decoder.workspace_bytes(histogram_budget)))
+        planner = kernel = histogram_amp.implementation(histogram_budget)
+        engine = histogram_decoder.implementation(histogram_budget)
+        scratch = memoryview(bytearray(engine.workspace_bytes(histogram_budget, n=n)))
     assert snapshot.cuda.contract.forward_id == (planner.ORDERED_FORWARD_ID if ordered else planner.FORWARD_ID)
     tolerance = Float64Contract(F(1,100),F(1,1000))
     checked = words = half = maximum_cells = maximum_nodes = maximum_join = maximum_blocks = 0
     maximum_terms = maximum_worlds = maximum_span = 0
+    maximum_integer_envelope = maximum_compacted = 0
     failures = []
     for phase in snapshot.cuda.phases:
         if phase.status != 'CHECKED_CUDA_PREFIX_PHASE':
@@ -207,8 +216,12 @@ def audit_prefix(snapshot,case,mode):
                 maximum_blocks = max(maximum_blocks,shape.get('projected_blocks',0))
             else:
                 maximum_terms = max(maximum_terms,phase.execution_plan.term_count)
-                maximum_worlds = max(maximum_worlds,phase.execution_plan.world_visits)
+                stats = engine.table_statistics(phase.execution_plan)
+                maximum_worlds = max(maximum_worlds,stats.get('world_visits',0))
                 maximum_span = max(maximum_span,phase.execution_plan.span)
+                maximum_join = max(maximum_join,stats.get('largest_join_cells',0))
+                maximum_integer_envelope = max(maximum_integer_envelope,stats.get('integer_envelope',0))
+                maximum_compacted = max(maximum_compacted,stats.get('compacted_cells',0))
         elif kind == 'observe':
             prediction = phases[phase.prediction_phase].raw_prediction
             target = observed[phase.observation_id].target
@@ -233,7 +246,9 @@ def audit_prefix(snapshot,case,mode):
         'maximum_projected_blocks':maximum_blocks,'retained_failed_phases':failures,
         'complete_global_count_coordinates':len(expected.counts),'class_decisions':0,
         'maximum_histogram_terms':maximum_terms,'maximum_histogram_world_visits':maximum_worlds,
-        'maximum_histogram_span':maximum_span}
+        'maximum_histogram_span':maximum_span,
+        'maximum_histogram_integer_envelope':maximum_integer_envelope,
+        'maximum_histogram_compacted_cells':maximum_compacted}
 
 
 def worker(case,mode):
@@ -287,9 +302,8 @@ def worker(case,mode):
             readouts.append(list(words[2:4]+words[5:]))
         scores = {}
         if complete:
-            assert len(readouts) == len(exact) == case[0]**2
-            for name,pairs in (('unseen',unseen_pairs(case[0],edges)),
-                               ('full_domain',tuple((i,j) for i in range(case[0]) for j in range(case[0])))):
+            assert len(readouts) == len(exact) == len(evaluation)
+            for name,pairs in scoring_groups(case):
                 scores['reference_'+name] = score(exact,None,hidden,pairs)
                 scores['AMP_'+name] = score(proper,raw,hidden,pairs)
         result = {'status':'COMPLETE_MODEL' if complete else 'UNRESOLVED_MODEL','case':case,'mode':mode,
@@ -303,8 +317,9 @@ def worker(case,mode):
             'packed_current':snapshot.resources['current']['reference_payload_bytes'],
             'consumed_arena_bytes':snapshot.cuda.storage['consumed_arena_extent'],
             'declared_forward_id':snapshot.cuda.contract.forward_id,
-            'oracle_scope':'independent full-assignment integer posterior; no values supplied to Runtime',
-            'oracle_assignment_visits':oracle.work}
+            'oracle_scope':getattr(oracle, 'scope', 'independent full-assignment integer posterior; no values supplied to Runtime'),
+            'oracle_assignment_visits':oracle.work,
+            'oracle_statistics':oracle.statistics() if hasattr(oracle, 'statistics') else None}
         return result
 
 
@@ -333,7 +348,7 @@ def read_result(result,case,mode,baseline):
         return {'status':'VALIDATED_UNRESOLVED_PREFIX','complete_model_scores':0}
     assert result['run_status'] == 'SEALED_CUDA_STREAM' and result['refusal'] is None
     assert result['cursor'] == result['reference_posterior_checks'] == len(train)+len(evaluation)
-    assert not result['audit']['retained_failed_phases'] and len(readouts) == case[0]**2
+    assert not result['audit']['retained_failed_phases'] and len(readouts) == len(evaluation)
     assert result['audit']['checked_CUDA_phases'] == 1+3*result['cursor']
     proper,raw = {},{}
     for (i,j,_),words in zip(evaluation,readouts):
@@ -341,8 +356,7 @@ def read_result(result,case,mode,baseline):
         masses = tuple(amp.single(word) for word in words[:2])
         proper[i,j] = tuple(m/sum(masses) for m in masses)
         raw[i,j] = tuple(amp.single(word) for word in words[2:])
-    for name,pairs in (('unseen',unseen_pairs(case[0],edges)),
-                       ('full_domain',tuple((i,j) for i in range(case[0]) for j in range(case[0])))):
+    for name,pairs in scoring_groups(case):
         compare_score(result['scores']['AMP_'+name],score(proper,raw,hidden,pairs))
         compare_score(result['scores']['reference_'+name],baseline['adaptive_exact_'+name])
     return {'status':'PASS_COMPLETE_MODEL_READER','actual_readout_pairs_recomputed':len(readouts),

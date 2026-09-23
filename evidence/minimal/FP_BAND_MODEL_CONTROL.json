@@ -1,0 +1,155 @@
+{
+  "status": "PASS_BAND_MODEL_EXACT_CONTROL_AND_GEOMETRY",
+  "all_support_and_query_geometry_cases": 122576,
+  "observed_small_maxima": {
+    "join": 32,
+    "live": 88,
+    "operations": 361
+  },
+  "independent_full_assignment_histories": 56,
+  "independent_full_assignment_forecasts": 1120,
+  "arbitrary_endpoint_and_diagonal_integer_controls": 168,
+  "off_width_nonzero_count_refusals": 1,
+  "n64_uniform_geometry_bound": {
+    "largest_join_cells": 32,
+    "peak_live_integer_cells": 832,
+    "positive_operations": 13373
+  },
+  "controls": [
+    {
+      "case": [
+        64,
+        "iid-band2",
+        0
+      ],
+      "statistics": {
+        "predictions": 376,
+        "vertex_transitions": 276448,
+        "maximum_integer_bits": 1005,
+        "assignment_visits": 0
+      },
+      "scores": {
+        "adaptive_exact_unseen": {
+          "contexts": 124,
+          "expected_CE_binary64": 0.3871848232032782,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "8064319091158845/34902897112121344",
+            "4032159545579481/17451448556060672"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 379,
+          "mean_true_probability_gap_binary64": 0.05768779152280845,
+          "latent_relation_error_with_half_ties": "17/248"
+        },
+        "independent_pair_unseen": {
+          "contexts": 124,
+          "expected_CE_binary64": 0.560747982223021,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "3310821266061413/8725724278030336",
+            "6621642532122857/17451448556060672"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 11,
+          "mean_true_probability_gap_binary64": 0.26064516129032256,
+          "latent_relation_error_with_half_ties": "35/124"
+        },
+        "adaptive_exact_evaluation_domain": {
+          "contexts": 250,
+          "expected_CE_binary64": 0.3672226915539738,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "15118252651072977/70368744177664000",
+            "15118252651073217/70368744177664000"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 381,
+          "mean_true_probability_gap_binary64": 0.04043324966730536,
+          "latent_relation_error_with_half_ties": "6/125"
+        },
+        "independent_pair_evaluation_domain": {
+          "contexts": 250,
+          "expected_CE_binary64": 0.4729356562775399,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "334561080716693/1099511627776000",
+            "21411909165868531/70368744177664000"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 23,
+          "mean_true_probability_gap_binary64": 0.15809282993651855,
+          "latent_relation_error_with_half_ties": "17/100"
+        }
+      }
+    },
+    {
+      "case": [
+        64,
+        "iid-band2",
+        1
+      ],
+      "statistics": {
+        "predictions": 376,
+        "vertex_transitions": 276448,
+        "maximum_integer_bits": 898,
+        "assignment_visits": 0
+      },
+      "scores": {
+        "adaptive_exact_unseen": {
+          "contexts": 124,
+          "expected_CE_binary64": 0.3902449656579961,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "4096865551373259/17451448556060672",
+            "132156953270107/562949953421312"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 265,
+          "mean_true_probability_gap_binary64": 0.06411572597533663,
+          "latent_relation_error_with_half_ties": "2/31"
+        },
+        "independent_pair_unseen": {
+          "contexts": 124,
+          "expected_CE_binary64": 0.5900966433075647,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "3526994048175197/8725724278030336",
+            "7053988096350425/17451448556060672"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 11,
+          "mean_true_probability_gap_binary64": 0.2761290322580645,
+          "latent_relation_error_with_half_ties": "19/62"
+        },
+        "adaptive_exact_evaluation_domain": {
+          "contexts": 250,
+          "expected_CE_binary64": 0.37850385915318985,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "15786124353923659/70368744177664000",
+            "7893062176961947/35184372088832000"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 265,
+          "mean_true_probability_gap_binary64": 0.05361372485726875,
+          "latent_relation_error_with_half_ties": "29/500"
+        },
+        "independent_pair_evaluation_domain": {
+          "contexts": 250,
+          "expected_CE_binary64": 0.5051483999123624,
+          "raw_division_expected_CE_binary64": null,
+          "expected_Brier_exact_enclosure": [
+            "11662383159552371/35184372088832000",
+            "5831191579776229/17592186044416000"
+          ],
+          "Brier_grid_bits": 48,
+          "maximum_per_query_Brier_integer_bits": 23,
+          "mean_true_probability_gap_binary64": 0.18059140661543602,
+          "latent_relation_error_with_half_ties": "1/5"
+        }
+      }
+    }
+  ],
+  "scope": "exact resource theorem audit and deterministic controls; no actual AMP or population claim"
+}

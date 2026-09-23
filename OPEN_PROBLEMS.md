@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The immediate larger-model question is now
+[registered at n64](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md):
+two376-event band-distributed tapes, existing global/projected AMP and
+carry-free execution, with the full joint posterior as exact control. The
+proved [uniform resource bounds](theory/proofs/BAND_MODEL_RESOURCE_BOUND.md)
+separate2^63 latent assignments from bounded table width without deleting
+counts or weakening the controls. Actual numerical/retention/whole-job and
+predictive outcomes remain untested. Do not substitute these conditional
+bounds for an actual model result or full indexed release.
+
 The [owned carry-free CPU gate](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 closes prepaid table/compaction construction, complete native continuation
 and CPU plan/funding/buffer checks. All19 actual Runtime CUDA A1 jobs also
