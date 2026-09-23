@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [unknown-noise decoding audit](theory/proofs/UNKNOWN_NOISE_DECODING.md)
+adds a passive exact experiment, with no production changes after5937e1b.
+It implements a bounded-future calibration proof and exhaustive reduction
+checks:1856 prefixes/10854 forecasts,316 small graph/error/prior settings,
+1683 adaptive states and571 optimal terminal cuts. Two native trajectories
+pass186 full phase triples, including176 ordinary calibration observations.
+The retained7693-byte artifact records a sharp conditional worst-case
+complexity result; it adds no Runtime certificate, model score or GPU job.
+
 The [coprime likelihood component](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
 implements bounded gcd-free factor coordinates and jointly scaled integer
 weights. Its passive exact/native/RNE audit passes 7,839 factorizations,

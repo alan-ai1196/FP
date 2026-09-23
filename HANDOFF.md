@@ -1,5 +1,20 @@
 # FP Handoff
 
+**Current theoretical result: learning a finite unknown noise rate does not
+remove worst-case forecast hardness.** The [new reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)
+uses ordinary diagonal observations to keep the smallest-rate posterior
+concentrated through every continuation of a declared polynomial length.
+For fixed rates/prior, a uniformly resolving polynomial decoder at error
+below1/2-eta_min implies P=NP; the constant1/2 decoder attains that boundary.
+This does not assume a supplied noise rate. Exact checks pass1856 continuation
+prefixes,10854 forecasts,316 graph/error/prior settings with all allowed
+decisions, and186 complete native triples. Seventeen diagonal zeros followed
+by four ones also refute deleting a rate from present confidence alone.
+The result is worst-case, with potentially rare prefixes, not average-case
+model evidence or an unconditional exponential-time lower bound. No GPU
+job or production change is introduced. Next inference research should
+respect this obstruction while exploiting structure or returning UNRESOLVED.
+
 **Current arithmetic result: general rational likelihoods need no prime
 factorization or single radix.** The [coprime construction](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
 preserves the existing exact information rank. Joint integer scaling has a

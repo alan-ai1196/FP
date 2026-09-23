@@ -1,5 +1,19 @@
 # FP Open Problems
 
+The [unknown-noise forecast reduction](theory/proofs/UNKNOWN_NOISE_DECODING.md)
+closes the question whether the existing worst-case decoding obstruction
+depends on being supplied the noise rate. A legal diagonal prefix, protected
+against every continuation of a chosen length, transfers the sharp threshold
+to any fixed finite positive rate prior: resolving all forecasts below error
+1/2-eta_min in polynomial time implies P=NP. An exact decoder has polynomial
+working space and an exponential-time enumeration upper. This does not prove
+that exponential time is optimal, that typical noisy streams are hard, or
+that the current explicit finite-bank Runtime cannot finish its jobs.
+The meaningful remaining questions concern structured/average-case inference,
+useful unknown-noise model evidence against the strong joint posterior, and
+paid approximations with honest unresolved cases. Present rate concentration
+cannot be extrapolated to unbounded futures; a short reversal witness remains.
+
 The [general rational likelihood arithmetic](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
 is now proved and audited: gcd-free bases preserve the exact information rank,
 and jointly scaled integer weights avoid the all-zero failure of per-basis

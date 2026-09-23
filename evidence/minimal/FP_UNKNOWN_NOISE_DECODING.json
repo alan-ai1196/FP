@@ -1,0 +1,242 @@
+{
+  "status": "PASS",
+  "precision": "exact integer/Fraction; native guard32768 bits",
+  "acquisition": {
+    "cases": [
+      {
+        "n": 2,
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "prior": [
+          "1/2",
+          "1/2"
+        ],
+        "continuation_horizon": 3,
+        "calibration_events": 53,
+        "all_prefixes_checked": 585,
+        "all_pair_forecasts_checked": 2340,
+        "maximum_other_rate_mass": "1387778780781445675529539585113525390625/1398097826239893742466874769174008240344353",
+        "uniform_mass_bound": "1387778780781445675529539585113525390625/23211373272330075312894308797440005311777"
+      },
+      {
+        "n": 3,
+        "rates": [
+          "1/10",
+          "1/4"
+        ],
+        "prior": [
+          "1/2",
+          "1/2"
+        ],
+        "continuation_horizon": 2,
+        "calibration_events": 41,
+        "all_prefixes_checked": 343,
+        "all_pair_forecasts_checked": 3087,
+        "maximum_other_rate_mass": "1136868377216160297393798828125/321956737309465777925526102265949",
+        "uniform_mass_bound": "1136868377216160297393798828125/21188110185481761399152067792989"
+      },
+      {
+        "n": 2,
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "prior": [
+          "1/7",
+          "2/7",
+          "4/7"
+        ],
+        "continuation_horizon": 3,
+        "calibration_events": 120,
+        "all_prefixes_checked": 585,
+        "all_pair_forecasts_checked": 2340,
+        "maximum_other_rate_mass": "206163456455030154431940259927131007001949988835807804195842359784827255726104133982173397124264559005888645993018743739777280839735196398943589007380622516797697784001886903524587003891436140588818702485924519924904105285343938466651830222848/1177784115083260528789294362873581912392188021491218573060577132687045068363675732913148588344733462942399562150206417673404638799378473317295745030261364428477434402075767639864657494656686263663470472182598043046004616060675283187028510961082223",
+        "uniform_mass_bound": "12747311827602410368550116957259247055910234825448766156786659316809685436660453825739900054365502856053343907669916024368317904103664973745828479490398096446651950500049437256761475072/206909796975192203294273819821800055769983923400374682026198653071866149648260579000215947045578002927377879713945355507570691530404695666463040958893830564408117541133501375885911865697"
+      },
+      {
+        "n": 3,
+        "rates": [
+          "1/8",
+          "1/5",
+          "1/3"
+        ],
+        "prior": [
+          "1/7",
+          "2/7",
+          "4/7"
+        ],
+        "continuation_horizon": 2,
+        "calibration_events": 97,
+        "all_prefixes_checked": 343,
+        "all_pair_forecasts_checked": 3087,
+        "maximum_other_rate_mass": "2196656421146378591841835670276819158916012976832953397190954823052828035930377104327224484683775886025643661584991482278290986612728972423601861838373739780451420264402003074978565829441074757632/2558100599012078449060209806393634412174590790417349203001759514147300376645408644253603784644106234564206030427929451211383684062890174166506304139286695715065746136238207071717810904639408115773257",
+        "uniform_mass_bound": "38360046186282912539217066759698427565038773977067165501757320719876567926617279940038321394444189341611953329619844582139264725147094449843693682688/633474230978979190652829898279828751301258353875866450030661774148948690567781999843099149080591263155777229029625364192297708990982081613387394854563"
+      }
+    ],
+    "unprotected_prefix_counterexample": {
+      "diagonal_zero_prefix": 17,
+      "initial_other_rate_mass": "762939453125/17689598897861",
+      "subsequent_diagonal_ones": 4,
+      "final_other_rate_mass": "476837158203125/747663709318901"
+    }
+  },
+  "reduction": [
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "forecast_error": "0",
+      "largest_n": 4,
+      "all_simple_graphs": 74,
+      "all_allowed_adaptive_states": 284,
+      "allowed_decisions": 210,
+      "terminal_optimal_cuts": 74,
+      "maximum_history_length": 253,
+      "maximum_calibration_length": 235,
+      "maximum_integer_weight_bits": 1043
+    },
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "forecast_error": "1/1000",
+      "largest_n": 4,
+      "all_simple_graphs": 74,
+      "all_allowed_adaptive_states": 390,
+      "allowed_decisions": 316,
+      "terminal_optimal_cuts": 130,
+      "maximum_history_length": 253,
+      "maximum_calibration_length": 235,
+      "maximum_integer_weight_bits": 1043
+    },
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "forecast_error": "39/100",
+      "largest_n": 4,
+      "all_simple_graphs": 74,
+      "all_allowed_adaptive_states": 470,
+      "allowed_decisions": 396,
+      "terminal_optimal_cuts": 169,
+      "maximum_history_length": 520,
+      "maximum_calibration_length": 484,
+      "maximum_integer_weight_bits": 2144
+    },
+    {
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "prior": [
+        "1/2",
+        "1/2"
+      ],
+      "forecast_error": "399/1000",
+      "largest_n": 4,
+      "all_simple_graphs": 74,
+      "all_allowed_adaptive_states": 470,
+      "allowed_decisions": 396,
+      "terminal_optimal_cuts": 169,
+      "maximum_history_length": 656,
+      "maximum_calibration_length": 611,
+      "maximum_integer_weight_bits": 2704
+    },
+    {
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "prior": [
+        "1/7",
+        "2/7",
+        "4/7"
+      ],
+      "forecast_error": "0",
+      "largest_n": 3,
+      "all_simple_graphs": 10,
+      "all_allowed_adaptive_states": 28,
+      "allowed_decisions": 18,
+      "terminal_optimal_cuts": 10,
+      "maximum_history_length": 279,
+      "maximum_calibration_length": 269,
+      "maximum_integer_weight_bits": 1868
+    },
+    {
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "prior": [
+        "1/7",
+        "2/7",
+        "4/7"
+      ],
+      "forecast_error": "187/500",
+      "largest_n": 3,
+      "all_simple_graphs": 10,
+      "all_allowed_adaptive_states": 41,
+      "allowed_decisions": 31,
+      "terminal_optimal_cuts": 19,
+      "maximum_history_length": 710,
+      "maximum_calibration_length": 685,
+      "maximum_integer_weight_bits": 4754
+    }
+  ],
+  "native": [
+    {
+      "n": 2,
+      "edges": [],
+      "forecast_error": "0",
+      "ordinary_calibration_events": 33,
+      "complete_native_triples": 35,
+      "returned_cut": 0
+    },
+    {
+      "n": 2,
+      "edges": [
+        [
+          0,
+          1
+        ]
+      ],
+      "forecast_error": "399/1000",
+      "ordinary_calibration_events": 143,
+      "complete_native_triples": 151,
+      "returned_cut": 1
+    }
+  ],
+  "sharp_threshold": {
+    "noise_min": "1/10",
+    "constant_forecast": "1/2",
+    "uniform_error": "2/5",
+    "n3_single_edge_12_tie_assignment": [
+      0,
+      1,
+      1
+    ],
+    "returned_cut": 0,
+    "optimum": 1
+  },
+  "scope": "Mathematical worst-case conditional forecast problems for fixed finite rates/prior and complete pair queries. No average-case acquisition claim, Runtime certificate, GPU/model experiment or unconditional exponential-time lower bound."
+}

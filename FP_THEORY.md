@@ -381,6 +381,20 @@ semantics changes. It checks298 phases/98 commit tapes/42 fresh scores and
 installs at23, continuing through48. A1 remains failed. The manual fixture
 issues no complete search or release claim; its overall run is MANUAL_PARTIAL.
 
+The [unknown-noise decoding law](theory/proofs/UNKNOWN_NOISE_DECODING.md)
+now transfers the known-rate computational obstruction using actual legal
+acquisition. A diagonal-zero prefix of polynomial length concentrates the
+smallest noise rate uniformly through every continuation required by a
+MAX-CUT reduction. For any fixed finite positive prior on distinct rates,
+a decoder that always achieves error below1/2-eta_min in polynomial time
+would imply P=NP. The constant1/2 forecast attains the boundary. Exact
+enumeration supplies a polynomial-space/exponential-time upper while the
+compact sufficient statistic remains(T,d,s). A17-zero/four-one diagonal
+reversal shows why concentration without a future horizon permits no rate
+deletion. Exact small-graph and complete native checks pass; rare conditional
+histories establish no average-case hardness, new physical backend or model
+advantage. Foundation R4 and ERC-1 are unchanged.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -8225,3 +8225,43 @@ status is MANUAL_PARTIAL despite successful numerical/fresh/install/learning
 checks; it grants neither CERTIFIED_COMPLETE nor a full indexed release or
 model-performance claim. All A1/A2 jobs are now terminal; none should be
 repeated. The physical finite-bank component is closed in these scopes.
+
+## 247. Transfer forecast hardness through legal noise acquisition (2026-09-23)
+
+The known-rate MAX-CUT reduction did not itself establish a computational
+obstruction for the joint unknown-noise learner. Close that premise using
+ordinary diagonal observations rather than an external rate oracle. For
+fixed positive rational rates eta_0<...<eta_(r-1)<1/2 and prior pi, R diagonal
+zeros leave conditional worlds uniform and multiply rate odds by at most
+q^R, q=(1-eta_1)/(1-eta_0)<1. Every further length-t word has likelihood at
+least eta_0^t within the selected component and at most1 in any other.
+Hence posterior odds against it are bounded by O q^R eta_0^(-L), uniformly
+over every continuation of length at mostL. Exact arithmetic chooses R=O(L)
+for any fixed required concentration; no future labels are assumed.
+
+Choose that concentration inside the gap e<1/2-eta_0. It protects the entire
+polynomial MAX-CUT reduction, so an always-resolving polynomial joint decoder
+would imply P=NP. The constant1/2 forecast attains the excluded boundary.
+The theorem covers fixed finite rates/prior, complete pair queries including
+diagonals, and worst-case conditional histories. It claims no average-case
+learning barrier or unconditional exponential-time lower bound. A common
+integer likelihood scale supplies an exact2^n poly(n,T)-time/poly(n,T)-space
+upper, while information remains in the existing(T,d,s) statistic. No
+semantic action, static architecture family or physical backend is added.
+
+Attack the continuation premise: with the equal prior on{1/10,1/4},17
+diagonal zeros make the other-rate posterior less than1/20, but four diagonal
+ones raise it above1/2. The calibrated present does not permit future deletion.
+The bounded-future proof, rather than a current confidence threshold, is what
+makes the computational transfer valid.
+
+The7693-byte exact artifact checks1856 complete short prefixes and10854
+forecasts for two priors, including three distinct rates. Ordered integer
+likelihoods equal the independent(T,d,s) reconstruction. Across316 graph/
+error/prior settings it exhausts every permitted threshold decision:1683
+states,1367 branches and571 optimal terminal cuts. Largest tested history710,
+largest weight4754 bits. Two actual native trajectories pass186 full triples,
+including176 ordinary calibration events. No Torch/GPU or Runtime authority
+is used. The proof supplies the arbitrary-n result; finite checks audit it.
+The primary1976 Simple MAX CUT result was checked through the publisher's
+abstract; the conditioning/reduction argument here is self-contained.

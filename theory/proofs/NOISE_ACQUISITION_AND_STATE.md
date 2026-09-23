@@ -167,6 +167,12 @@ This quantifies over the mathematical query/label language; a fixed Runtime
 budget can prevent executing a distinguishing suffix and must then report
 its corresponding unresolved claim.
 
+The [subsequent computational law](UNKNOWN_NOISE_DECODING.md) shows that
+acquiring the finite noise rate does not remove worst-case decoding hardness.
+Ordinary diagonal calibration is protected against every continuation in a
+declared polynomial horizon. This transfers the sharp approximate-forecast
+threshold without deleting any component or assuming eta is supplied.
+
 Put d_* = D+1. The exact reachable counter set at T is
 
     {x in Z^d_* : ||x||_1 <= T, ||x||_1 = T (mod 2)}.                  (8)

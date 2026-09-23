@@ -165,3 +165,9 @@ for the current n16 timeouts. It identifies a real worst-case computation
 obstacle after information preservation has been solved. Structured solvers,
 certified approximations and honest UNRESOLVED outcomes remain appropriate
 without changing the FP semantics or expanding the parked static program.
+
+The subsequent [unknown-noise theorem](UNKNOWN_NOISE_DECODING.md) removes
+the supplied-rate premise for a fixed finite positive rate prior. A legal
+diagonal calibration prefix protects concentration through every bounded
+continuation used in the reduction. Its sharp threshold is1/2-eta_min;
+the rare-history and compact-family scope restrictions remain.
