@@ -4,6 +4,11 @@ Status (2026-09-23): **DECLARED BEFORE DIRECT-PARTITION MODEL EXECUTION.**
 Launch only after the separate20-job owned gate passes. This is a follow-up
 on exposed tapes, not a blind model-selection or population experiment.
 
+At4c4a057, seed0 completes but the parent collector raises a `JobRun`
+dictionary-access TypeError before launching seed1. The original A1 remains
+unchanged. Its250 readouts pass the corrected independent reader without
+another device run; see [results](DIRECT_PARTITION_MODEL_RESULTS.md).
+
 ## Question and controls
 
 The [completed six-job matrix](BAND_MODEL_RESULTS.md) found that carry-free
@@ -83,3 +88,19 @@ use. It would not prove GPU sum-product inference, universal efficiency,
 population improvement, architecture discovery or a full indexed release.
 The n256 1-GiB CPU refusal and separately funded2-GiB reversal remain their
 own evidence. Foundation R4 and ERC-1 stay unchanged.
+
+## Declared A2 after the collection-only failure
+
+Run `--attempt 2 --remaining` for **seed1 only**. Preflight revalidates the
+original seed0 source/PID, successful job, complete worker result and250
+readouts, then includes that source-bound reference in A2's registration.
+Seed0 is not rerun. The original A1 keeps its stopped-collection status;
+the reader reports its one validated executed row and one unexecuted case.
+
+The collector now uses the actual `JobRun` attributes. Its repaired boundary
+is tested with the retained job metadata reconstructed as that dataclass;
+a changed cap is rejected. Nine separate reader mutations check job, cap,
+PID, readout and incomplete-matrix failures. No numerical kernel, worker
+inference, native/data contract or resource limit changes. Commit the repair
+and this declaration before the single A2 job, and keep source fixed until
+it is terminal. A2 does not silently restart or relabel A1.

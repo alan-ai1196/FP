@@ -16,6 +16,7 @@ sys.path[:0] = [str(ROOT/'src/reference_compiler'), str(ROOT/'scripts'),
 import run_band_model as baseline
 import audit_owned_integer_partition_cuda as gate
 from fp_reference import ReferenceCompilerRuntime, integer_partition_decoder as direct
+from windows_job_audit_support import JobRun
 
 model, band, BUDGET = baseline.model, baseline.band, gate.BUDGET
 MODE = 'direct-partition'
@@ -23,6 +24,7 @@ GATE = 'evidence/minimal/FP_OWNED_INTEGER_PARTITION_CUDA_A1.json'
 CPU = 'evidence/minimal/FP_OWNED_INTEGER_PARTITION_CPU.json'
 CONTROLS = 'evidence/minimal/FP_BAND_MODEL_A1.json'
 PROTOCOL = 'experiments/joint_uncertainty/DIRECT_PARTITION_MODEL_PROTOCOL.md'
+FIRST_ATTEMPT = 'evidence/minimal/FP_DIRECT_PARTITION_MODEL_A1.json'
 DEPENDENCIES = baseline.DEPENDENCIES+(CPU, GATE, CONTROLS, PROTOCOL)
 
 
@@ -32,7 +34,7 @@ def configuration(case):
             replace(cuda, histogram=BUDGET), policy, host)
 
 
-def preflight():
+def preflight(remaining=False):
     assert 'torch' not in sys.modules
     cpu = json.loads((ROOT/CPU).read_text(encoding='utf-8'))
     assert cpu['status'] == 'PASS_OWNED_INTEGER_PARTITION_CPU' and cpu['complete_audit']
@@ -58,7 +60,7 @@ def preflight():
         assert {k for k in vars(prior[3]) if getattr(prior[3], k) != getattr(current[3], k)} == {
             'histogram', 'backend_id', 'forward_id', 'work_model'}
         assert current[3].forward_id == gate.physical.FORWARD_ID
-    return {'status': 'REGISTERED_DIRECT_PARTITION_N64_MODEL', 'cases': band.CASES, 'mode': MODE,
+    result = {'status': 'REGISTERED_DIRECT_PARTITION_N64_MODEL', 'cases': band.CASES, 'mode': MODE,
         'component_source': component['execution_source'], 'retained_control_source': retained['execution_source'],
         'retained_control_modes': baseline.MODES, 'retained_control_jobs': 6,
         'component_jobs': len(gate.CASES), 'budget': asdict(BUDGET),
@@ -74,6 +76,10 @@ def preflight():
         'controls': 'same exact joint posterior and retained complete global/projected/carry-free jobs; pair posterior is only an ablation',
         'scope': 'two exposed tapes; paid host integer inference plus half/single readout; no GPU sum-product, blind model selection, throughput, population or complete indexed release claim',
         'failure_policy': 'retain every attempt; no incomplete-prefix scores or cap changes; continue on honest resource/numerical refusal, stop on unexpected execution/audit failure'}
+    result['execution_cases'] = band.CASES[1:] if remaining else band.CASES
+    if remaining:
+        result['prior_completed_attempt'] = completed_first_attempt()
+    return result
 
 
 def worker(case):
@@ -116,12 +122,24 @@ def read_worker(actual, case):
         return model.read_result(result, case, 'global', control['scores'])
 
 
-def read(path):
-    report = json.loads(path.read_text(encoding='utf-8'))
-    assert report['status'] == 'COMPLETE_WITH_RETAINED_OUTCOMES'
-    assert tuple(tuple(row['case']) for row in report['workers']) == band.CASES
+def read_completed_job(job: JobRun, actual, case):
+    assert job.exit_code == 0 and not job.timed_out and not job.limit_terminated_processes
+    assert job.attached_before_resume and job.peak_job_commit <= job.commit_limit == model.CAP
+    assert actual['status'] == 'EXECUTED_AND_AUDITED' and actual['process_id'] == job.process_id
+    return read_worker(actual, case)
+
+
+def read_report(report):
+    assert report['status'] in ('COMPLETE_WITH_RETAINED_OUTCOMES', 'STOPPED_EXECUTION_OR_AUDIT_FAILURE')
+    declared = tuple(tuple(case) for case in report['registration'].get('execution_cases', band.CASES))
+    cases = tuple(tuple(row['case']) for row in report['workers'])
+    assert cases and len(set(cases)) == len(cases) and cases == declared[:len(cases)]
+    assert all(case in band.CASES for case in declared)
+    if report['status'] == 'COMPLETE_WITH_RETAINED_OUTCOMES':
+        assert cases == declared
     results = []
-    for row, case in zip(report['workers'], band.CASES):
+    recovered = 0
+    for row, case in zip(report['workers'], cases):
         job = row['completed_job']
         if row['worker_status'] == 'RESOURCE_TERMINATED':
             assert job['timed_out'] or job['limit_terminated_processes']
@@ -131,20 +149,53 @@ def read(path):
         assert job['exit_code'] == 0 and not job['timed_out'] and not job['limit_terminated_processes']
         assert job['attached_before_resume'] and job['peak_job_commit'] <= job['commit_limit'] == model.CAP
         assert actual['process_id'] == job['process_id'] and actual['status'] == 'EXECUTED_AND_AUDITED'
+        if row['worker_status'] == 'FAILED':
+            # A1 completed the device run before this specific collection bug.
+            # Preserve that failure; independently validate its retained result.
+            assert report['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+            assert report['execution_source'] == '4c4a057720940c87c7dc7436be08a91699601353'
+            assert "TypeError: 'JobRun' object is not subscriptable" in row['collection_traceback']
+            recovered += 1
+        else:
+            assert row['worker_status'] == actual['result']['status']
         results.append({'case': case, **read_worker(actual, case)})
-    return {'status': 'PASS_RETAINED_DIRECT_PARTITION_MODEL_READERS', 'workers': results}
+    return {'status': 'PASS_RETAINED_DIRECT_PARTITION_MODEL_READERS',
+        'original_attempt_status': report['status'], 'execution_source': report['execution_source'],
+        'executed_rows_validated': len(results), 'collection_failures_revalidated': recovered,
+        'unexecuted_declared_cases': declared[len(cases):], 'workers': results}
 
 
-def execute(attempt):
+def read(path):
+    return read_report(json.loads(path.read_text(encoding='utf-8')))
+
+
+def completed_first_attempt():
+    report = json.loads((ROOT/FIRST_ATTEMPT).read_text(encoding='utf-8'))
+    reader = read_report(report)
+    assert report['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+    assert len(report['workers']) == reader['collection_failures_revalidated'] == 1
+    row = report['workers'][0]
+    assert tuple(row['case']) == band.CASES[0] and row['result']['result']['status'] == 'COMPLETE_MODEL'
+    assert reader['workers'][0]['status'] == 'PASS_COMPLETE_MODEL_READER'
+    assert reader['unexecuted_declared_cases'] == band.CASES[1:]
+    return {'path': FIRST_ATTEMPT, 'execution_source': report['execution_source'],
+        'case': band.CASES[0], 'process_id': row['completed_job']['process_id'],
+        'reader': reader, 'device_reruns': 0}
+
+
+def execute(attempt, remaining=False):
+    assert (attempt, remaining) in ((1, False), (2, True)), 'only the original matrix or registered unexecuted-seed follow-up'
     path = ROOT/f'evidence/minimal/FP_DIRECT_PARTITION_MODEL_A{attempt}.json'
     assert attempt > 0 and not path.exists(), 'retain every attempt'
+    selected = tuple(enumerate(band.CASES)) if not remaining else ((1, band.CASES[1]),)
     source = model.git('rev-parse', 'HEAD')
     def clean():
         assert model.git('rev-parse', 'HEAD') == source
-        assert not model.git('status', '--porcelain', '--', *DEPENDENCIES)
+        assert not model.git('status', '--porcelain', '--', *DEPENDENCIES, *([FIRST_ATTEMPT] if remaining else []))
     clean()
     report = {'status': 'REGISTERED_NOT_COMPLETED', 'execution_source': source,
-              'registration': preflight(), 'workers': []}
+              'registration': preflight(remaining), 'workers': []}
+    assert report['registration']['execution_cases'] == tuple(case for _, case in selected)
     def publish():
         temporary = path.with_suffix('.tmp')
         temporary.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
@@ -153,7 +204,7 @@ def execute(attempt):
     directory = Path(tempfile.mkdtemp(prefix='fp-direct-model-', dir=ROOT)).resolve()
     assert directory.parent == ROOT.resolve()
     stop = False
-    for index, case in enumerate(band.CASES):
+    for index, case in selected:
         output = directory/f'{index}.json'
         row = {'case': case, 'mode': MODE, 'worker_status': 'FAILED'}
         print('START '+str(case)+' '+MODE, flush=True)
@@ -173,9 +224,7 @@ def execute(attempt):
                 row['worker_status'] = 'RESOURCE_TERMINATED'
             elif job.exit_code == 0:
                 actual = row['result']
-                assert actual['status'] == 'EXECUTED_AND_AUDITED' and actual['process_id'] == job.process_id
-                assert job['attached_before_resume'] and job['peak_job_commit'] <= model.CAP
-                row['reader'] = read_worker(actual, case)
+                row['reader'] = read_completed_job(job, actual, case)
                 row['worker_status'] = actual['result']['status']
             else:
                 stop = True
@@ -202,6 +251,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--preflight', action='store_true')
     parser.add_argument('--attempt', type=int)
+    parser.add_argument('--remaining', action='store_true')
     parser.add_argument('--worker', type=int, choices=range(len(band.CASES)))
     parser.add_argument('--output', type=Path)
     parser.add_argument('--read', type=Path)
@@ -219,8 +269,8 @@ if __name__ == '__main__':
         if report['status'] == 'FAILED_AUDIT':
             raise SystemExit(1)
     elif args.preflight:
-        print(json.dumps(preflight(), indent=2))
+        print(json.dumps(preflight(args.remaining), indent=2))
     elif args.attempt is not None:
-        execute(args.attempt)
+        execute(args.attempt, args.remaining)
     else:
         parser.error('select --preflight, --attempt, --read or --worker')

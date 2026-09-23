@@ -25,7 +25,11 @@ The [direct-partition model registration](experiments/joint_uncertainty/DIRECT_P
 adds exactly two n64 jobs on those exposed tapes, keeping all original model
 limits and the six retained strong controls. Preflight verifies the owned
 CPU/20-job gate, unchanged production at42802f6, every retained control and
-common native/data contracts. It passes; actual model execution is pending.
+common native/data contracts. Seed0 at4c4a057 now completes376 events/1129
+phases,12032 words/752 half and all250 readouts. A collector `JobRun` type
+error stops A1 before seed1; the original artifact and error remain. The
+independent reader and nine mutation checks pass without a GPU rerun. The
+declared A2 executes only seed1, with production and all limits unchanged.
 
 The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
 now completes all six jobs at45b40b4, with production unchanged fromd600dba.

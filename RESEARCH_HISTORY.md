@@ -7931,3 +7931,33 @@ source fixed until both jobs end. Exposed tapes and differing realization
 sources preclude blind-selection, population and isolated-throughput claims.
 Only minimal readouts, resource/audit summaries and source/job identities
 will be retained. No Foundation/ERC-1 or complete-release claim changes.
+
+## 240. Retain completed n64 seed0 through a parent collection error (2026-09-23)
+
+At4c4a057 the direct-partition seed0 worker completes all376 events and1129
+actual phases, checks12032 primitive words/752 half casts and all2016 native
+counts, and seals its stream. All1129 complete4-MiB frames/padding pass.
+Peak job7555497984 bytes fits16 GiB; packed peak4885002698 bytes fits8 GiB.
+The parent then treats the returned JobRun dataclass as a dictionary and
+raises TypeError. It retains the complete worker result and stops before
+seed1; A1 keeps STOPPED_EXECUTION_OR_AUDIT_FAILURE and the original traceback.
+
+The corrected reader independently validates the successful source/PID-bound
+job, all250 readouts and both exact score controls. Nine altered job, cap,
+PID, readout, failure and matrix records are rejected. The repaired live
+collection boundary is also tested using the actual JobRun type reconstructed
+from retained metadata; a changed cap is rejected. No device rerun occurs.
+
+On seed0 the direct floating word/arena counts beat the retained global,
+projected and carry-free values, but its packed peak is slightly higher
+than global/projected. Exact integer inference and full history remain
+costs. Unseen AMP CE0.3871875428258331 versus exact0.3871848232032782 is a
+rounding difference. No isolated-throughput or whole-resource dominance
+claim follows, and the second seed has not run.
+
+Register A2 with `--attempt 2 --remaining` for seed1 only, under every
+original limit and unchanged production from42802f6. Preflight must revalidate
+and name the completed A1 result before launching. Preserve both attempts
+and keep source fixed until the new job is terminal; do not relabel A1 or
+silently restart seed0. The repair changes collection, not FP semantics,
+the physical worker, model controls or a constructor decision class.

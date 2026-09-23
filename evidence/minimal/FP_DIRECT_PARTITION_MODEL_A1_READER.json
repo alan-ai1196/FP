@@ -1,0 +1,53 @@
+{
+  "status": "PASS_RETAINED_A1_COLLECTION_RECOVERY_CPU",
+  "scope": "independent reader of the retained completed seed0 job; original collection failure preserved; no device rerun",
+  "recovered": {
+    "path": "evidence/minimal/FP_DIRECT_PARTITION_MODEL_A1.json",
+    "execution_source": "4c4a057720940c87c7dc7436be08a91699601353",
+    "case": [
+      64,
+      "iid-band2",
+      0
+    ],
+    "process_id": 22304,
+    "reader": {
+      "status": "PASS_RETAINED_DIRECT_PARTITION_MODEL_READERS",
+      "original_attempt_status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+      "execution_source": "4c4a057720940c87c7dc7436be08a91699601353",
+      "executed_rows_validated": 1,
+      "collection_failures_revalidated": 1,
+      "unexecuted_declared_cases": [
+        [
+          64,
+          "iid-band2",
+          1
+        ]
+      ],
+      "workers": [
+        {
+          "case": [
+            64,
+            "iid-band2",
+            0
+          ],
+          "status": "PASS_COMPLETE_MODEL_READER",
+          "actual_readout_pairs_recomputed": 250,
+          "retained_exact_posterior_score_controls_checked": 2,
+          "decision_class": "empty registered compiler policy; no optimization certificate"
+        }
+      ]
+    },
+    "device_reruns": 0
+  },
+  "rejected_mutations": [
+    "exit",
+    "attachment",
+    "cap",
+    "pid",
+    "missing-word-row",
+    "readout-word",
+    "different-collection-error",
+    "unexecuted-case",
+    "false-complete-attempt"
+  ]
+}

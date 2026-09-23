@@ -331,9 +331,12 @@ The [direct-partition n64 follow-up](experiments/joint_uncertainty/DIRECT_PARTIT
 is registered for the same two exposed tapes and original whole-resource
 limits, using the six completed strong controls. Before every forecast,
 H<=375 gives1564 direct partition bits,7536 conservative readout bits and29
-floating outputs, conditional on the existing width bound. CPU preflight
-passes; neither model job has run. The experiment tests complete learning
-and actual resources, not blind selection, GPU sum-product or throughput.
+floating outputs, conditional on the existing width bound. Seed0 at4c4a057
+now completes376 events/1129 actual phases with12032 primitive words/752
+half casts; all250 retained readouts pass. A collector type error stops A1
+before seed1, while preserving the complete worker result. The declared A2
+runs only that unexecuted seed, with unchanged production and limits. This
+tests complete learning and resources, not blind selection or throughput.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
