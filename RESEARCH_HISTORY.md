@@ -7752,3 +7752,30 @@ seed, before launch. Keep complete ordinary learning and retained history,
 all numerical/resource caps and the empty compiler policy. Retain every
 refusal, failed job and complete result; no actual model outcome exists at
 this registration cut.
+
+## 234. Transfer numerical precision to risk at the correct causal cut (2026-09-23)
+
+Apply proper scoring to the probability actually checked and scored: exact
+normalization of the stored masses. With a calibrated native posterior,
+probability error delta and noise floor a, conditional log regret equals
+KL(p||q) and has sharp error-class upper KL(a||a-delta). Brier excess is
+exactly2(q-p)^2. At the current tolerances the log upper is5.58873e-6 nats.
+Predictable nonnegative weighting preserves the law; retrospective
+completion selection and random-ratio averaging do not automatically do so.
+
+Construct a real n3 Reference path with counts(1,2,-2) and span cap5.
+After the scored target0, span6 makes the next query UNRESOLVED; target1
+leaves span4 and either suffix completes. The registered passive RNE q is
+slightly above the exact p. Its unconditional log excess is positive, yet
+completion-selected realized and hidden-noise expected excesses are
+negative. This refutes a proposed extension of the scoring guarantee,
+not an existing Runtime certificate or the current model protocol.
+
+Independently integrate all16 local training patterns and32 next-label
+branches of the ideal band law. The full joint learner's expected unseen
+CE is at most0.43364435; the independent-pair ablation is0.58227033, giving
+at least0.14862598 nats advantage in that ideal population. Extra history
+can help in expectation; the two exposed seeds are not a population test.
+The CPU audit checks189 probability cases, exact rational identities,
+70-digit Decimal formulas and all three owned selection paths. The proof,
+reproducer and3306-byte artifact change no model input or Foundation rule.

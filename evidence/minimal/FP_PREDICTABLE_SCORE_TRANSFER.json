@@ -1,0 +1,103 @@
+{
+  "status": "PASS_PREDICTABLE_SCORE_TRANSFER_CPU",
+  "source": "45b40b463f40644ff7a5c06b67200677e8c7d9ac",
+  "scope": "exact rational identities, 70-digit Decimal checks, real owned Reference continuation and passive registered RNE; no actual CUDA or population measurement",
+  "probability_grid_checks": 189,
+  "delta": "1/1000",
+  "noise_floor": "1/10",
+  "sharp_log_regret": "0.0000055887297256969075775494362907373026544954329372060094794777318111896",
+  "simple_log_regret_upper": "1/178398",
+  "binary_Brier_regret_upper": "1/500000",
+  "local_training_patterns": 16,
+  "next_label_branches": 32,
+  "exact_informative_probability": "1681/2500",
+  "local_first_query_risk": "0.4728213946921492424647457027962926936238758596290462713421409443369196",
+  "local_second_query_risk": "0.3944673045613418568953970093034097787656579542623630825405529180553995",
+  "band_joint_ideal_law_unseen_risk_upper": "0.4336443496267455496800713560498512361947669069457046769413469311961596",
+  "band_pair_ideal_law_unseen_risk": "0.5822703336850197399814743290929724695302248957669644049371851277062325",
+  "band_joint_advantage_lower": "0.1486259840582741903014029730431212333354579888212597279958381965100729",
+  "selection_witness": {
+    "prefix": [
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        1
+      ]
+    ],
+    "before_counts": [
+      1,
+      2,
+      -2
+    ],
+    "query": [
+      0,
+      1
+    ],
+    "span_cap": 5,
+    "native_p1": "15129/20050",
+    "proper_RNE_p1": "3164991/4194304",
+    "forecast_words": [
+      1069162261,
+      1087469627,
+      1075646346,
+      1089566779,
+      1092616192,
+      1048267792,
+      1061235964
+    ],
+    "delta": "1222167/42047897600",
+    "completion_condition": "scored target is1, regardless of suffix target",
+    "conditional_hidden_noise_p1": "2961/3362",
+    "prior_expected_log_regret": "2.28102918249523255673660523681681483422966396271388695557185924665E-9",
+    "selected_realized_target_log_gap": "-0.00003851962555828242583276360256599824924076424316925304892243575369850648",
+    "selected_hidden_noise_log_gap": "-0.00001979921154401056888615236856952690546899694076069839739887831553600214",
+    "prior_expected_Brier_regret": "1493692175889/884012846290042880000",
+    "selected_hidden_noise_Brier_gap": "-21794738315218737759/1486025594613562081280000",
+    "owned_reference_branches": [
+      {
+        "scored_target": 0,
+        "suffix_target": null,
+        "next_prediction": "UNRESOLVED",
+        "status": "HALTED_UNRESOLVED",
+        "cursor": 6,
+        "after_scored_span": 6
+      },
+      {
+        "scored_target": 1,
+        "suffix_target": 0,
+        "next_prediction": "PREDICTED_REFERENCE",
+        "status": "SEALED_REFERENCE_STREAM",
+        "cursor": 7,
+        "after_scored_span": 4
+      },
+      {
+        "scored_target": 1,
+        "suffix_target": 1,
+        "next_prediction": "PREDICTED_REFERENCE",
+        "status": "SEALED_REFERENCE_STREAM",
+        "cursor": 7,
+        "after_scored_span": 4
+      }
+    ]
+  }
+}

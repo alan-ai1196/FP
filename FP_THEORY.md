@@ -278,6 +278,19 @@ native counts; later off-band observations require new resource checks.
 This supports a declared n64 model test with strong exact/global/projected
 controls. It changes no semantics and supplies no unexecuted model outcome.
 
+The [predictable score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
+connects the existing proper-mass probability bridge to calibrated log/Brier
+risk. With native p in[a,1-a] and |q-p|<=delta<a, conditional expected log
+excess is KL(p||q), sharply at most KL(a||a-delta); two-coordinate Brier
+excess is2(q-p)^2. At a1/10,delta1/1000, the log upper is about5.589e-6.
+Only pre-target measurable inclusion inherits this expectation law. An
+owned n3 span-cap continuation gives a strict reversal after conditioning
+on later completion, including for the hidden-noise expected score. The
+ideal band law separately gives expected joint risk<=0.43364435 versus
+pair ablation0.58227033; fixed tapes prove no population statement. These
+scoped consequences neither change persistence's registered null nor add
+a Foundation action or complete certificate.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native
