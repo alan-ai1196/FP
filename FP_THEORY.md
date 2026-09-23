@@ -357,6 +357,18 @@ known-rate indexed family: one rational radix is insufficient, while a
 positive integer mixture is a mathematical upper. No new owned AMP,
 installation, full indexed release or frozen semantic change follows.
 
+The [coprime likelihood construction](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
+removes prime factorization and the single-radix restriction from the general
+finite-bank arithmetic upper. Pairwise-coprime bases preserve the exact
+affine information rank rho and the rho log2(T+1)+O(1) fixed-cut law.
+Combining each world's factors as positive integers before choosing one
+common binary scale gives a history-uniform selected-weight RNE32 bound,
+conditional on integer resources. Scaling each basis independently can erase
+both weights of a posterior near one-half. The bounded component passes
+exact/native/RNE checks, including a 274-event underflow recovery, but has
+no Runtime, full AMP, installation or constructor authority. The existing
+one-radix physical identity and Foundation/ERC-1 remain unchanged.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

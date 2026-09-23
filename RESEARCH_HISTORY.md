@@ -8053,3 +8053,58 @@ replays. Whole-host scope stays explicitly unresolved; no GPU, construction
 decision, fresh crossing or installation is claimed. Production is unchanged.
 The next physical/model obligation has its own prior, evidence and resource
 scope; all known-noise terminal jobs remain intact. Foundation/ERC-1 stay frozen.
+
+## 243. Preserve rational likelihood information without prime factorization (2026-09-23)
+
+Remove a general arithmetic obstacle exposed by the mixed-rate bank. The
+finite-likelihood information theorem used prime valuations mathematically,
+while the owned backend accepted only powers of one rational radix. A
+deterministic gcd-free refinement of all prior/event ratio numerators and
+denominators terminates because the product of distinct working integers
+falls by at least two per split. Its pairwise-coprime bases may stay composite.
+Their disjoint prime supports prove that the event affine rank and exact
+rho log2(T+1)+O(1) information law are unchanged. This is a bounded simple
+algorithm using established coprime-factorization ideas, not a new near-linear
+factorization claim. Prior-only factors do not increase the event rank.
+
+Extend the numerical argument beyond one radix. Subtract each basis's minimum
+exponent and construct the resulting positive integer weights exactly, then
+choose one binary scale from their maximum bit length. The integer vector is
+primitive for a coprime basis. For a fixed bank it uses O(T+1)-bit transients,
+while persistent information remains logarithmic. This is an upper and a
+materialization-specific bit requirement, not a lower bound for every
+approximate decoder. Work, integer and peak-basis/output-cell guards refuse
+before the prescribed allowance is exceeded; input/output tables and host
+objects still need enclosing ownership and storage payment.
+
+Falsify the tempting per-basis maximum extension of the old scaling rule.
+For a native two-world bank, 168 events with likelihood ratio 2 followed by
+106 with ratio 1/3 give posterior 0.49895593533. Separately scaled weights
+2^-168 and 3^-106 both round to zero. Joint scaling uses the 169-bit integer
+pair (3^106,2^168), so its normalizer stays healthy. A separate exact dyadic
+witness exposes binary64-before-binary32 double rounding; retain the existing
+exact rational ingress when an owned path is built.
+
+Prove a history-uniform selected-master-weight bound for exact joint scaling,
+RNE32 ingress, ordered single summation and single division. With u=2^-24,
+tau=2^-150, epsilon=u+2K tau and gamma=(K-1)u/(1-(K-1)u), the maximum error
+is at most epsilon+gamma/(1-gamma)+u+tau for K<=2^23. Integer resources remain
+binding. This does not bound full half-precision caches or ambient gradients.
+
+The 5922-byte artifact passes 7839 exact factorizations, 2406 integer plans,
+six budget and nine malformed-input refusals, and 63876 independent quotient/
+tie rounding checks. Ten complete finite native banks supply 3051 cache/
+all-gradient/commit triples, with independently derived banks, prime ranks
+and literal likelihood products. Both mixed-rate PRODUCT graphs pass. The
+274-event word adds 274 native triples: a transient selected weight is zero
+at cuts149..179, then recovers to the correct near-half value with endpoint
+error below1e-10. Exact coordinates and the optimizer clock persist.
+
+These helpers and the compression prototype have no Runtime authority; no
+Torch/device job executes and no old terminal job is repeated. The next
+obligation is a general owned rational-bank lowering, with actual G/Gamma/U,
+complete source domain, prepaid arithmetic/storage, a distinct physical
+identity and full AMP/fresh/install checks. Existing backend identities,
+Foundation R4 and ERC-1 stay unchanged. The earlier noise proof also now
+states explicitly that profile replay changes the algebraic native endpoint
+without acquiring an independent new noisy observation.

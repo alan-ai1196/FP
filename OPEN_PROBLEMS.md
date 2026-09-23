@@ -1,5 +1,17 @@
 # FP Open Problems
 
+The [general rational likelihood arithmetic](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
+is now proved and audited: gcd-free bases preserve the exact information rank,
+and jointly scaled integer weights avoid the all-zero failure of per-basis
+scaling. The remaining obstacle is owned realization. Bind the general bank
+to actual G/Gamma/U and the complete source domain, fund derivation and every
+integer decode, preserve pending native gradients and clocks, and establish
+the full AMP/fresh/install bridge with its own physical identity. The uniform
+selected-weight bound alone does not bound half-precision forward caches or
+all ambient gradients. This general path should address the mixed-rate bank
+without adding semantic actions or another special noise backend. The current
+Runtime still admits only its original single-radix likelihood representation.
+
 The [noise acquisition/state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 closes a theoretical prerequisite to learning the supplied relation noise.
 Forest bridges contain no noise information, and independent long cycles

@@ -1,5 +1,17 @@
 # FP Implementation Status
 
+The [coprime likelihood component](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
+implements bounded gcd-free factor coordinates and jointly scaled integer
+weights. Its passive exact/native/RNE audit passes 7,839 factorizations,
+2,406 integer plans, 3,325 full native phase triples and 63,876 independent
+rounding checks, including the two-rate native PRODUCT graphs and a 274-event
+underflow recovery. Per-basis scaling and binary64-before-binary32 ingress
+have retained counterexamples. The mathematical selected-weight bound is
+uniform in history length, conditional on integer resources. These helpers
+are not called by Runtime or CUDA; owned derivation/decoding, a distinct
+physical identity and the full phase/fresh/install gate remain open. Existing
+physical paths and completed source-bound experiments are unchanged.
+
 The [noise acquisition audit](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 adds research evidence without changing production: 168 multigraphs/4155
 exact likelihoods, 15 adaptive cuts, 96 exact testing calculations, 928

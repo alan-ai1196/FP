@@ -148,6 +148,10 @@ Thus (T,d,s) determines the whole joint posterior and updates by one signed
 counter increment per observation. No per-edge unsigned count is necessary.
 Profile repetition contributes each actually executed event; T is the
 optimizer-step count, not a substituted ordinary cursor.
+For a profile that replays the same observation, (7) describes the algebraic
+native endpoint. A replay is not an independent new noisy observation and
+does not acquire fresh rate information. The calibrated posterior statement
+uses ordinary observations under section 1's declared law.
 
 At a known T this encoding is also injective on reachable posteriors. Equality
 of two posteriors implies equality of their within-rate world odds at one

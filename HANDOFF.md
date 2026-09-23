@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Current arithmetic result: general rational likelihoods need no prime
+factorization or single radix.** The [coprime construction](theory/proofs/COPRIME_LIKELIHOOD_READOUT.md)
+preserves the existing exact information rank. Joint integer scaling has a
+history-uniform selected-weight RNE32 bound; independent per-basis scaling
+has an all-zero counterexample at a posterior near one-half. The component
+passes 7,839 factorizations, 2,406 integer plans, 3,325 complete native phase
+triples and 63,876 independent rounding checks. Temporary zeros recover on
+the 274-event word because exact coordinates remain. The general finite-bank
+construction covers the two-rate PRODUCT graphs below. It is still passive:
+the Runtime owns only its existing one-radix likelihood path. Next bind this
+general lowering to actual G/Gamma/U, paid transient arithmetic, full AMP
+phases and fresh/install continuations under a distinct physical identity.
+Do not pass the new helper through the old identity or borrow a full release.
+
 **Current research: distinguish supplied noise from acquired noise.** The
 [noise acquisition/state result](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 proves zero information from forest bridges and a matching exponential-in-

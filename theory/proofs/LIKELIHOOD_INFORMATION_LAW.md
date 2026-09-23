@@ -96,6 +96,10 @@ online encoding. It does not price the graph, evidence, raw data, actual
 cursor, pending gradient or decoder workspace. Exact materialized weights
 can still have Theta(T) integer bits per coordinate. Factorization is a
 fixed-bank mathematical construction, not an efficient registration claim.
+The later [coprime construction](COPRIME_LIKELIHOOD_READOUT.md) realizes the
+same rank and online coordinates without prime factorization. It also gives
+a jointly scaled positive-integer readout with a history-uniform selected-
+weight bound. That bounded component is not yet an owned Runtime lowering.
 
 The event affine rank is essential: with one query and world probabilities
 P(y=0)=(1/3,1/2), the two ratio increments 3/2 and 3/4 have raw valuation
