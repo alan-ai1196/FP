@@ -9,8 +9,12 @@ integer inference remains host work; only quantization/readout uses half
 and single precision. The [owned registration](theory/proofs/OWNED_INTEGER_PARTITIONS.md)
 now supplies fixed identities, prepaid pinned tables, guarded base9 powers,
 complete plan reconstruction and independent physical construction from
-counts and the actual query. Its complete CPU gate passes; the
-separate20-job actual CUDA gate has not run. The original1-GiB n256 test
+counts and the actual query. Its complete CPU gate and all20 actual CUDA
+A1 jobs pass at42802f6:735 new phases/7674 primitive words/475 half casts;
+with four controls,919 phases/53210 words/16987 half casts. Fresh/install,
+104-event reversal, n256 profiles and77-event n32 learning pass. Peak job
+2395172864 bytes is below4 GiB; all jobs are terminal. No direct-partition
+model result or full indexed release is inferred. The original1-GiB n256 test
 refuses at observation181; the declared2-GiB continuation seals all257 events,
 restores the half forecast and peaks at1525442448 packed bytes.11919 paid
 queries,388 histories/776 native triples and all plan/funding/buffer faults

@@ -1,7 +1,7 @@
 # Owned direct integer partitions and a separate physical readout
 
-Status (2026-09-23): **IMPLEMENTED; COMPLETE CPU GATE PASS; ACTUAL CUDA
-GATE REGISTERED, NOT EXECUTED.** This is a realization of the same complete
+Status (2026-09-23): **IMPLEMENTED; COMPLETE CPU GATE AND ALL20 ACTUAL
+RUNTIME CUDA A1 JOBS PASS AT42802f6.** This is a realization of the same complete
 indexed learner. No architecture action, Foundation definition, ERC-1 rule
 or constructor decision class changes.
 
@@ -149,3 +149,38 @@ failure, and do not silently retry or relax a limit. Keep HEAD and all
 execution inputs fixed until every launched job is terminal. No model
 score, optimization certificate or complete indexed release follows from
 this component gate, even if every registered case passes.
+
+## 4. Actual A1 outcome
+
+All20 jobs at42802f6 pass under their original4-GiB/900-second limits. The
+[25906-byte journal](../../evidence/minimal/FP_OWNED_INTEGER_PARTITION_CUDA_A1.json)
+retains every case and source/PID-bound outcome. Each job was attached before
+resumption; none timed out or was terminated for memory. Every job is
+terminal. Do not repeat this gate to manufacture more evidence.
+
+The direct integration paths check735 complete phases and241 independently
+read partition predictions:7674 primitive floating words,475 half casts,
+and10081 outputs including copies. Seven additional probes inspect36 full
+records while checking failed publication, stale results, actual-target
+binding and mutated partition metadata. With the four legacy controls,
+the integration totals are919 phases/53210 words/16987 half casts.
+
+Fresh evidence crosses at20; installation retains alpha1/2 and continues
+learning to21. The104-event reversal restores the half forecast after an
+actual transient zero. The n256 ordinary/profile run preserves all counts
+and distinct clocks. The77-event n32 band checks2464 words/154 half casts
+and pays207252 table bytes. Its final query uses29 outputs and learning
+continues on the received opposite label. These are actual owned histories.
+
+The n256 direct path uses308 floating words and235980 paid table bytes;
+the strong projected control uses514 words and no such table. The two
+small Gray/carry-free profile controls both use1214 words, versus560 for
+the direct path. The whole-job maximum2395172864 bytes belongs to the global
+n256 control. These measurements establish the registered component, not
+uniform efficiency or isolated throughput. Host exact integer inference,
+complete retention and auditors remain in the whole-job cost.
+
+The257-event n256 reversal remains CPU evidence under its separate2-GiB
+packed cap. No direct-partition model tape, constructor-completeness result
+or full indexed release is inferred from these20 jobs. The next question
+is complete n64 learning against the already retained strong controls.

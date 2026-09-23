@@ -19,14 +19,16 @@ prediction outputs, with uniform probability/gradient bounds0.000195701/
 inference before that readout is exact host integer work. The
 [owned implementation](theory/proofs/OWNED_INTEGER_PARTITIONS.md) now prepays
 and pins its actual integer tables and independently constructs the physical
-inputs. The complete CPU gate passes;20 fresh actual CUDA jobs
-are registered but not executed. Preserve the original n256 1-GiB refusal
+inputs. The complete CPU gate and all20 actual CUDA A1 jobs pass at42802f6.
+New paths check735 phases/7674 words/475 half casts; with all four controls,
+919 phases/53210 words/16987 half casts. Fresh/install,104-event reversal,
+n256 profiles and77-event n32 learning pass. Peak job2395172864 bytes stays
+under4 GiB; every job is terminal. Do not repeat the gate. Preserve the original n256 1-GiB refusal
 at observation181. The separately declared2-GiB continuation seals257
 events and exact recovery after128 opposite labels, with1525442448 peak
-packed bytes. Commit inputs, then run
-`scripts/audit_owned_integer_partition_cuda.py --attempt 1` and retain every
-outcome, keeping HEAD and dependencies fixed until all jobs end. Finish its own gate;
-do not borrow the carry-free gate or upload a reference answer.
+packed bytes. Next test complete n64 learning with this realization against
+the retained strong controls, under the original model limits. Do not infer
+model efficiency from floating counts or upload a reference answer.
 
 The [score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
 gives a sharp calibrated log-regret bound at the pre-target cut and an

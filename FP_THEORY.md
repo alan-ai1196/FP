@@ -315,7 +315,12 @@ The [owned direct-partition construction](theory/proofs/OWNED_INTEGER_PARTITIONS
 now registers that realization with one prepaid pinned(C+2)-cell extent,
 complete plan reconstruction, independent reference/physical predecessors
 and prior integer-construction work debits. Its complete CPU continuation
-gate passes; its20-job actual CUDA gate is registered but unexecuted.
+gate passes, as do all20 actual CUDA A1 jobs at42802f6. New paths check735
+complete phases/7674 primitive words/475 half casts; with the four controls,
+919 phases/53210 words/16987 half casts. Fresh/install, underflow reversal,
+n256 profiles and77-event n32 learning pass; peak job2395172864 bytes stays
+under4 GiB. Every job is terminal. This is a component gate, not a model
+comparison, complete indexed release or new constructor decision class.
 The n256 1-GiB packed continuation honestly refuses at observation181;
 the separate2-GiB continuation seals the full257-event bit-cut reversal,
 restoring the half forecast and retaining1525442448 peak packed bytes.

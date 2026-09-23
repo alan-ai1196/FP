@@ -4,10 +4,13 @@ The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_REA
 exposes a simpler realization to test: the current fixed-base9 response
 does not need all energy coefficients. Its n+4H-bit construction and29-word
 uniform mixed-precision readout pass passive native/RNE checks. The open
-question is now its [owned continuation and physical gate](theory/proofs/OWNED_INTEGER_PARTITIONS.md).
-Paid pinned integer tables, independent physical construction and complete
-plan checks are implemented and the full CPU gate passes. Complete the
-registered20 actual jobs before any model claim. Preserve the original1-GiB
+question is now complete model use after its
+[owned gate](theory/proofs/OWNED_INTEGER_PARTITIONS.md) passed all CPU checks
+and all20 actual CUDA A1 jobs at42802f6.735 new phases/7674 words/475 half
+casts and all four legacy controls pass, including fresh/install, reversal,
+n256 profiles and77-event n32 learning. All jobs are terminal; do not repeat
+the gate. Test the two exposed n64 tapes against the retained strong controls
+under the same whole-resource caps. Preserve the original1-GiB
 n256 refusal and distinguish the completed2-GiB/257-event continuation,
 whose peak packed payload is1525442448 bytes. Neither a small
 readout nor a larger retention budget is a whole-resource efficiency proof.

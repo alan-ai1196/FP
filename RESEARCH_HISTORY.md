@@ -7879,3 +7879,29 @@ underflow recovery, n256 profiles, a77-event n32 band and unchanged global,
 projected, Gray and carry-free controls. Commit inputs before execution and
 keep them fixed until every launched job is terminal. No Foundation/ERC-1
 change, constructor completeness or full indexed release follows.
+
+## 238. Close the owned direct-partition RTX3090 gate (2026-09-23)
+
+All20 actual jobs at42802f6 pass under their registered4-GiB/900-second
+limits. Every source/PID-bound job was attached before resumption; none
+times out or terminates for memory. The25906-byte A1 journal retains every
+outcome. All jobs are terminal and must not be rerun as a substitute for
+the remaining model question.
+
+New integration paths check735 complete phases,241 independent partition
+predictions,7674 primitive words/475 half casts and10081 outputs including
+copies. Seven fault/lifetime probes inspect36 full records. With global,
+projected, Gray and carry-free controls, totals are919 phases/53210 words/
+16987 half casts. Fresh evidence crosses20, installs with alpha1/2 and
+learns to21; actual underflow reverses by104. Full n256 ordinary/profile
+continuations and a77-event learned n32 band pass. The band uses2464 words/
+154 half and207252 actual table bytes.
+
+The direct n256 run uses308 floating words plus235980 table bytes; its
+strong projected control uses514 words without that table. Peak whole-job
+commitment2395172864 bytes is below4 GiB and belongs to the global control.
+This is scoped actual conformance and continuation evidence, not uniform
+resource dominance, GPU integer inference or a model-quality gain. The
+distinct257-event CPU reversal and retained1-GiB refusal keep their scopes.
+Next compare complete n64 learning with the retained strong controls under
+the same model limits; no Foundation/ERC-1 or class-completeness claim changes.

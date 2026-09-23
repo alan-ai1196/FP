@@ -1,0 +1,771 @@
+{
+  "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+  "execution_source": "42802f60fbbce160db6a56982155278e813def61",
+  "registration": {
+    "status": "REGISTERED_OWNED_INTEGER_PARTITION_GATE",
+    "cases": [
+      "profiles",
+      "install",
+      "closure",
+      "unfunded",
+      "second-commit",
+      "retired-producers",
+      "fault-prediction-word",
+      "fault-gradient-word",
+      "fault-operation-word",
+      "old-output",
+      "target-swap",
+      "plan-partition",
+      "workspace",
+      "underflow-reversal",
+      "large",
+      "band",
+      "legacy-large",
+      "legacy-projected-large",
+      "legacy-gray-profiles",
+      "legacy-packed-profiles"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true,
+    "budget": {
+      "join_cells": 4096,
+      "live_cells": 1024,
+      "arithmetic": 16384,
+      "span_cap": 396,
+      "integer_bits": 32768
+    },
+    "workspace_bytes_n3_n32_n256": [
+      204174,
+      207252,
+      235980
+    ],
+    "reference_machine": "packed-indexed-direct-partition-reference-payload-v1",
+    "forward_id": "indexed-positive-integer-partition-half-mantissa-single-readout-v1",
+    "arena_bytes": 33554432,
+    "phase_output_cap": 65536,
+    "phase_frame_bytes": 262144,
+    "n256_frame_bytes": 4194304,
+    "evidence_encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "fault_scope": "fresh device words, stale output, partition mutation, paid buffer lifetime and actual target; trusted fixed checker",
+    "failure_policy": "stop at first failure; retain every outcome; no silent retry or cap changes",
+    "scope": "paid exact host integer inference and actual half/single readout; owned continuations, n32 learned band and n256 profiles; no model score, GPU sum-product or complete indexed release"
+  },
+  "workers": [
+    {
+      "case": "profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2237042688,
+        "peak_job_commit": 2238242816,
+        "user_100ns": 32187500,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9476,
+        "process_creation_100ns": 134346186413278361
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 9476,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 560,
+          "output_words_including_copies": 740,
+          "actual_half_words": 32,
+          "independent_partition_and_RNE_prediction_readers": 18,
+          "cursor": 8,
+          "wide_table_billed_and_actual_bytes": 204174,
+          "maximum_compacted_cells": 21,
+          "packed_current_bytes": 16207166,
+          "consumed_arena_bytes": 5808,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2239512576,
+        "peak_job_commit": 2240737280,
+        "user_100ns": 41406250,
+        "kernel_100ns": 11406250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22200,
+        "process_creation_100ns": 134346186461179872
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 22200,
+        "case": "install",
+        "result": {
+          "checked_phases": 80,
+          "actual_floating_words": 832,
+          "output_words_including_copies": 1092,
+          "actual_half_words": 52,
+          "independent_partition_and_RNE_prediction_readers": 26,
+          "cursor": 21,
+          "wide_table_billed_and_actual_bytes": 204174,
+          "maximum_compacted_cells": 0,
+          "packed_current_bytes": 22096620,
+          "consumed_arena_bytes": 8544,
+          "paired_crossing_cursor": 20,
+          "installation": "INSTALLED_CUDA",
+          "alpha_after_installation": "1/2",
+          "historical_selection_proof": null,
+          "post_install_continuation": true
+        }
+      }
+    },
+    {
+      "case": "closure",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222993408,
+        "peak_job_commit": 2224226304,
+        "user_100ns": 22343750,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14908,
+        "process_creation_100ns": 134346186526573411
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 14908,
+        "case": "closure",
+        "result": {
+          "checked_phases": 10,
+          "actual_floating_words": 96,
+          "output_words_including_copies": 126,
+          "actual_half_words": 6,
+          "independent_partition_and_RNE_prediction_readers": 3,
+          "cursor": 3,
+          "wide_table_billed_and_actual_bytes": 204174,
+          "maximum_compacted_cells": 2,
+          "packed_current_bytes": 3467572,
+          "consumed_arena_bytes": 992,
+          "closure": "SEALED_CUDA_STREAM",
+          "class_decisions": 0
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1858961408,
+        "peak_job_commit": 1860165632,
+        "user_100ns": 17187500,
+        "kernel_100ns": 8906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7316,
+        "process_creation_100ns": 134346186561599957
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 7316,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "retained_received_context": true,
+          "executor_entries": 0,
+          "failed_phase_retained": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222039040,
+        "peak_job_commit": 2223251456,
+        "user_100ns": 21250000,
+        "kernel_100ns": 8593750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10612,
+        "process_creation_100ns": 134346186588956103
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 10612,
+        "case": "second-commit",
+        "result": {
+          "commit_calls": 2,
+          "status": "UNRESOLVED",
+          "retained_actual_target": 0,
+          "observed_lineages_retained": 2,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "retired-producers",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2223493120,
+        "peak_job_commit": 2224697344,
+        "user_100ns": 24062500,
+        "kernel_100ns": 7500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10940,
+        "process_creation_100ns": 134346186621050257
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 10940,
+        "case": "retired-producers",
+        "result": {
+          "case": "retired-producers",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": null,
+          "actual_target_retained": null,
+          "checked_full_records": 7,
+          "retired_producer_calls": 0,
+          "complete_native_and_AMP_update_matches_literal": true
+        }
+      }
+    },
+    {
+      "case": "fault-prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2247356416,
+        "peak_job_commit": 2248556544,
+        "user_100ns": 21093750,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7264,
+        "process_creation_100ns": 134346186654862759
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 7264,
+        "case": "fault-prediction-word",
+        "result": {
+          "case": "fault-prediction-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-gradient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2244526080,
+        "peak_job_commit": 2245754880,
+        "user_100ns": 21093750,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26524,
+        "process_creation_100ns": 134346186687274307
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 26524,
+        "case": "fault-gradient-word",
+        "result": {
+          "case": "fault-gradient-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": 0,
+          "checked_full_records": 6,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "fault-operation-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2245939200,
+        "peak_job_commit": 2247159808,
+        "user_100ns": 22031250,
+        "kernel_100ns": 8750000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11772,
+        "process_creation_100ns": 134346186721015349
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 11772,
+        "case": "fault-operation-word",
+        "result": {
+          "case": "fault-operation-word",
+          "native_and_physical_predecessors_unchanged": true,
+          "earlier_snapshot_and_sealed_metadata_unchanged": true,
+          "error": "RuntimeError: registered CUDA execution violated its admitted inputs",
+          "actual_target_retained": null,
+          "checked_full_records": 5,
+          "changed_one_bit_in_one_fresh_output": true,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "old-output",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2222948352,
+        "peak_job_commit": 2224177152,
+        "user_100ns": 20937500,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 1944,
+        "process_creation_100ns": 134346186753435785
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 1944,
+        "case": "old-output",
+        "result": {
+          "case": "old-output",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: raw phase readout needs its initialized floating extents",
+          "checked_full_records": 5,
+          "actual_target_retained": null,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2221920256,
+        "peak_job_commit": 2223124480,
+        "user_100ns": 21718750,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10256,
+        "process_creation_100ns": 134346186786505256
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 10256,
+        "case": "target-swap",
+        "result": {
+          "case": "target-swap",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: indexed observation differs from the independently owned actual target",
+          "checked_full_records": 3,
+          "actual_target_retained": 0,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "plan-partition",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2223661056,
+        "peak_job_commit": 2224861184,
+        "user_100ns": 21406250,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7000,
+        "process_creation_100ns": 134346186818456277
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 7000,
+        "case": "plan-partition",
+        "result": {
+          "case": "plan-partition",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "reason": "ContractError: direct integer partition plan differs from its complete native input",
+          "checked_full_records": 5,
+          "actual_target_retained": null,
+          "native_predecessors_and_old_sealed_records_preserved": true
+        }
+      }
+    },
+    {
+      "case": "workspace",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224123904,
+        "peak_job_commit": 2225332224,
+        "user_100ns": 21406250,
+        "kernel_100ns": 9531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5484,
+        "process_creation_100ns": 134346186851357752
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 5484,
+        "case": "workspace",
+        "result": {
+          "checked_phases": 7,
+          "actual_floating_words": 64,
+          "output_words_including_copies": 84,
+          "actual_half_words": 4,
+          "independent_partition_and_RNE_prediction_readers": 2,
+          "cursor": 2,
+          "wide_table_billed_and_actual_bytes": 204174,
+          "maximum_compacted_cells": 1,
+          "packed_current_bytes": 2663555,
+          "consumed_arena_bytes": 664,
+          "prepaid_reference_physical_and_reconstruction_calls": 6,
+          "blocked_resizes": 12,
+          "old_history_unchanged": true
+        }
+      }
+    },
+    {
+      "case": "underflow-reversal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2240208896,
+        "peak_job_commit": 2241413120,
+        "user_100ns": 163437500,
+        "kernel_100ns": 12500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22840,
+        "process_creation_100ns": 134346186885405754
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 22840,
+        "case": "underflow-reversal",
+        "result": {
+          "checked_phases": 314,
+          "actual_floating_words": 3350,
+          "output_words_including_copies": 4397,
+          "actual_half_words": 210,
+          "independent_partition_and_RNE_prediction_readers": 105,
+          "cursor": 104,
+          "wide_table_billed_and_actual_bytes": 204174,
+          "maximum_compacted_cells": 0,
+          "packed_current_bytes": 84429960,
+          "consumed_arena_bytes": 34336,
+          "transient_zero_at_cursor": 52,
+          "native_zeroed_coordinate_remains_positive": true,
+          "contrary_events": 52,
+          "returned_forecast": [
+            "1/2",
+            "1/2"
+          ],
+          "complete_counts_preserved_and_recovered": true
+        }
+      }
+    },
+    {
+      "case": "large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2355519488,
+        "peak_job_commit": 2356723712,
+        "user_100ns": 1133750000,
+        "kernel_100ns": 12500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25636,
+        "process_creation_100ns": 134346187117408475
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 25636,
+        "case": "large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 308,
+          "output_words_including_copies": 408,
+          "actual_half_words": 17,
+          "independent_partition_and_RNE_prediction_readers": 10,
+          "cursor": 4,
+          "wide_table_billed_and_actual_bytes": 235980,
+          "maximum_compacted_cells": 32893,
+          "packed_current_bytes": 205900786,
+          "consumed_arena_bytes": 3216,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "band",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2232147968,
+        "peak_job_commit": 2233356288,
+        "user_100ns": 250937500,
+        "kernel_100ns": 15937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9664,
+        "process_creation_100ns": 134346188278411900
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 9664,
+        "case": "band",
+        "result": {
+          "checked_phases": 232,
+          "actual_floating_words": 2464,
+          "output_words_including_copies": 3234,
+          "actual_half_words": 154,
+          "independent_partition_and_RNE_prediction_readers": 77,
+          "cursor": 77,
+          "wide_table_billed_and_actual_bytes": 207252,
+          "maximum_compacted_cells": 3484,
+          "packed_current_bytes": 69825311,
+          "consumed_arena_bytes": 25264,
+          "n": 32,
+          "constructed_span": 76,
+          "complete_count_coordinates": 496,
+          "final_prediction_outputs": 29,
+          "worlds_not_enumerated": 2147483648,
+          "continued_target_one_on_new_edge": true
+        }
+      }
+    },
+    {
+      "case": "legacy-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2393960448,
+        "peak_job_commit": 2395172864,
+        "user_100ns": 1586875000,
+        "kernel_100ns": 75156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16112,
+        "process_creation_100ns": 134346188612300477
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 16112,
+        "case": "legacy-large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 42594,
+          "actual_half_words": 15924,
+          "cursor": 4,
+          "packed_current_bytes": 205668181,
+          "consumed_arena_bytes": 341504,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4
+        }
+      }
+    },
+    {
+      "case": "legacy-projected-large",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2352422912,
+        "peak_job_commit": 2353647616,
+        "user_100ns": 1048437500,
+        "kernel_100ns": 11875000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 5924,
+        "process_creation_100ns": 134346190070558961
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 5924,
+        "case": "legacy-projected-large",
+        "result": {
+          "checked_phases": 34,
+          "actual_floating_words": 514,
+          "actual_half_words": 24,
+          "cursor": 4,
+          "packed_current_bytes": 205668206,
+          "consumed_arena_bytes": 4864,
+          "n": 256,
+          "world_builders": "DISABLED",
+          "profile_events": 4,
+          "declared_forward_id": "indexed-positive-query-block-convolution-power-aliases-rne16-rne32-v1"
+        }
+      }
+    },
+    {
+      "case": "legacy-gray-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2238779392,
+        "peak_job_commit": 2239995904,
+        "user_100ns": 36562500,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7852,
+        "process_creation_100ns": 134346191144230806
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 7852,
+        "case": "legacy-gray-profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1214,
+          "output_words_including_copies": 1394,
+          "actual_half_words": 282,
+          "independent_histogram_prediction_readers": 18,
+          "cursor": 8,
+          "histogram_billed_and_actual_bytes": 3176,
+          "packed_current_bytes": 15988336,
+          "consumed_arena_bytes": 11040,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "legacy-packed-profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2238488576,
+        "peak_job_commit": 2239721472,
+        "user_100ns": 35312500,
+        "kernel_100ns": 10781250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4256,
+        "process_creation_100ns": 134346191195657956
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_INTEGER_PARTITION",
+        "process_id": 4256,
+        "case": "legacy-packed-profiles",
+        "result": {
+          "checked_phases": 58,
+          "actual_floating_words": 1214,
+          "output_words_including_copies": 1394,
+          "actual_half_words": 282,
+          "independent_coefficient_and_RNE_prediction_readers": 18,
+          "cursor": 8,
+          "wide_table_billed_and_actual_bytes": 256268,
+          "maximum_compacted_cells": 21,
+          "packed_current_bytes": 16259072,
+          "consumed_arena_bytes": 11040,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    }
+  ]
+}
