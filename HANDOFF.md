@@ -16,9 +16,17 @@ only its fixed-base9 value.** The
 has the same elimination geometry, n+4H-bit integers and29 floating
 prediction outputs, with uniform probability/gradient bounds0.000195701/
 0.001753567.11937 passive predictions and23874 target updates pass. All
-inference before that readout is exact host integer work. Its owned
-construction, full continuations and actual device path need their own
-evidence; do not borrow the carry-free gate or upload a reference answer.
+inference before that readout is exact host integer work. The
+[owned implementation](theory/proofs/OWNED_INTEGER_PARTITIONS.md) now prepays
+and pins its actual integer tables and independently constructs the physical
+inputs. The complete CPU gate passes;20 fresh actual CUDA jobs
+are registered but not executed. Preserve the original n256 1-GiB refusal
+at observation181. The separately declared2-GiB continuation seals257
+events and exact recovery after128 opposite labels, with1525442448 peak
+packed bytes. Commit inputs, then run
+`scripts/audit_owned_integer_partition_cuda.py --attempt 1` and retain every
+outcome, keeping HEAD and dependencies fixed until all jobs end. Finish its own gate;
+do not borrow the carry-free gate or upload a reference answer.
 
 The [score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
 gives a sharp calibrated log-regret bound at the pre-target cut and an

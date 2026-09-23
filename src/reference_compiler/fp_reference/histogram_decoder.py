@@ -13,9 +13,11 @@ from .core import ContractError, natural
 from .indexed_count import CountState, query as require_query, world_count
 from .semantics import ArithmeticUnresolved, _guard
 from .packed_histogram_decoder import PackedHistogramAllowance, PackedHistogramPlan
+from .integer_partition_decoder import DirectPartitionAllowance, DirectPartitionPlan
 
 MODEL_ID = 'packed-indexed-histogram-reference-payload-v1'
 WORK_MODEL = 'prepaid-packed-exponent-histogram-visits-v1'
+WORKSPACE_KIND = 'exponent_histogram_workspace'
 MAX_WORLDS, MAX_BITS = 32768, 32768
 CELL = struct.Struct('<I')
 
@@ -199,18 +201,25 @@ def check_plan(plan, expected):
         raise ContractError('histogram plan differs from its complete native input')
 
 
-ALLOWANCES = (HistogramAllowance, PackedHistogramAllowance)
-PLANS = (HistogramPlan, PackedHistogramPlan)
-HistogramBudget = HistogramAllowance | PackedHistogramAllowance
+ALLOWANCES = (HistogramAllowance, PackedHistogramAllowance, DirectPartitionAllowance)
+PLANS = (HistogramPlan, PackedHistogramPlan, DirectPartitionPlan)
+HistogramBudget = HistogramAllowance | PackedHistogramAllowance | DirectPartitionAllowance
 
 
 def implementation(budget):
-    """Two fixed integer realizations; no external engine registration."""
+    """Fixed integer realizations; no external engine registration.
+
+    The existing configuration field retains its historical histogram name.
+    A direct-partition registration computes no coefficient histogram.
+    """
     if type(budget) is HistogramAllowance:
         return sys.modules[__name__]
     if type(budget) is PackedHistogramAllowance:
         from . import packed_histogram_decoder
         return packed_histogram_decoder
+    if type(budget) is DirectPartitionAllowance:
+        from . import integer_partition_decoder
+        return integer_partition_decoder
     raise ContractError('registered histogram allowance required')
 
 
@@ -220,4 +229,7 @@ def plan_implementation(plan):
     if type(plan) is PackedHistogramPlan:
         from . import packed_histogram_decoder
         return packed_histogram_decoder
+    if type(plan) is DirectPartitionPlan:
+        from . import integer_partition_decoder
+        return integer_partition_decoder
     raise ContractError('registered histogram execution plan required')

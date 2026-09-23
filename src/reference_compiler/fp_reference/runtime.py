@@ -475,7 +475,8 @@ class ReferenceCompilerRuntime:
                 contract.indexed_histogram, n=contract.initializer_pattern.n)
             self._event_router.charge_work('information', {'work': histogram_bytes}, 'bind-histogram-storage')
             histogram_id = f'{self._runtime_id}:histogram-storage'
-            self._ledger.allocate(self._data_owner, (ObjectSpec(histogram_id, 'exponent_histogram_workspace',
+            self._ledger.allocate(self._data_owner, (ObjectSpec(histogram_id,
+                histogram.implementation(contract.indexed_histogram).WORKSPACE_KIND,
                 {'reference_payload_bytes': histogram_bytes, 'physical_objects': 1}, self._chi),))
             self._buffers[histogram_id] = memoryview(bytearray(histogram_bytes))
         if contract.indexed_order_search:

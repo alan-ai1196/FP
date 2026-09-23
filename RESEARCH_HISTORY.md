@@ -7840,3 +7840,42 @@ installation. This closes the declared larger-model execution question,
 not dense-graph feasibility, architecture discovery or the full indexed
 release. Integrate the independent score-transfer and direct-partition
 research only after this terminal cut; Foundation/ERC-1 remain fixed.
+
+## 237. Own direct partition construction and retain the distinct history limit (2026-09-23)
+
+The fixed direct-partition realization now constructs guarded base9 powers
+and positive elimination tables inside a prepaid pinned contiguous extent.
+Its complete plan retains both exact roots, counts/query, geometry, bit
+envelope and compaction. Independent physical construction reads its own
+committed counts and actual source; complete reconstruction rejects even
+a common rescaling of both roots. The fixed machine/arithmetic/forward
+identities make host integer inference explicit. Floating prediction output
+is29 words for nonloop queries; this is not a whole-inference work count.
+
+At C1024/S396/I32768, table/root storage is211356 bytes at n64 and235980
+at n256. Small n can use wider cells than carry-free packing, and explicit
+base9 powering adds work. No universal resource dominance is claimed.
+The complete CPU gate passes11919 exact/RNE queries and388 histories/776
+native triples, profiles/fresh evidence, funding/shape/span/bit refusals,
+plan/word faults and buffer-lifetime checks. The shared model reader also
+passes50 passive phases across five realizations and ten record mutations;
+its retained reader still accepts the original1500 n64 evaluation readouts.
+
+The first1-GiB n256 continuation refuses observation181 on global packed
+coexistence, retaining cursor180, count76 and target1. Its diagnostic writer
+stopped at spent-work serialization. Retain only the emitted prefix as an
+explicit partial capture; do not infer the missing fields or a full gate
+pass. The separately declared2-GiB/10^15-work continuation seals257 events:
+128 same labels cross the old33024-bit packing cut,128 opposite labels
+restore zero counts and the half forecast, followed by one final commit.
+All32640 count coordinates remain; packed peak is1525442448 bytes. This is
+a Reference CPU continuation, not an actual257-event device result.
+This changes neither the original outcome nor production semantics. The
+refusal prices this retained representation, not all lossless encodings.
+
+Twenty fresh4-GiB/900-second actual CUDA jobs are registered but unexecuted.
+They cover owned profiles, fresh/install, refusal/fault retention,104-event
+underflow recovery, n256 profiles, a77-event n32 band and unchanged global,
+projected, Gray and carry-free controls. Commit inputs before execution and
+keep them fixed until every launched job is terminal. No Foundation/ERC-1
+change, constructor completeness or full indexed release follows.

@@ -306,10 +306,21 @@ with at most n+4H bits and unchanged table geometry. Separate half
 mantissas and single scaling/readout need29 prediction outputs and give
 uniform probability/gradient upper bounds0.000195701/0.001753567. All
 11937 passive native/RNE forecasts and23874 target updates pass. In this
-distinct proposed realization, inference is paid exact host integer work;
+distinct realization, inference is paid exact host integer work;
 mixed precision performs quantization/readout. No reference cache is an
-admitted input, no count is discarded, and no owned Runtime/CUDA result
-is inferred. Foundation/ERC-1 remain fixed.
+admitted input and no count is discarded. The passive evidence supplies
+no owned Runtime/CUDA result. Foundation/ERC-1 remain fixed.
+
+The [owned direct-partition construction](theory/proofs/OWNED_INTEGER_PARTITIONS.md)
+now registers that realization with one prepaid pinned(C+2)-cell extent,
+complete plan reconstruction, independent reference/physical predecessors
+and prior integer-construction work debits. Its complete CPU continuation
+gate passes; its20-job actual CUDA gate is registered but unexecuted.
+The n256 1-GiB packed continuation honestly refuses at observation181;
+the separate2-GiB continuation seals the full257-event bit-cut reversal,
+restoring the half forecast and retaining1525442448 peak packed bytes.
+This representation-specific retention limit is not an information lower
+bound against other lossless encodings or a Foundation counterexample.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

@@ -6,9 +6,16 @@ forecasts/23874 target observations. It replaces transient coefficient
 histograms with two directly computed base9 partitions: n+4H integer bits,
 the same elimination geometry and29 floating prediction outputs. Exact
 integer inference remains host work; only quantization/readout uses half
-and single precision. It has no production registration, owned resource
-debit or actual device evidence yet. The terminal n64 matrix retains its
-existing implementations and fixed source.
+and single precision. The [owned registration](theory/proofs/OWNED_INTEGER_PARTITIONS.md)
+now supplies fixed identities, prepaid pinned tables, guarded base9 powers,
+complete plan reconstruction and independent physical construction from
+counts and the actual query. Its complete CPU gate passes; the
+separate20-job actual CUDA gate has not run. The original1-GiB n256 test
+refuses at observation181; the declared2-GiB continuation seals all257 events,
+restores the half forecast and peaks at1525442448 packed bytes.11919 paid
+queries,388 histories/776 native triples and all plan/funding/buffer faults
+pass. The model-reader CPU faults and old1500-readout reader also pass.
+The terminal n64 matrix retains its existing implementations and source.
 
 The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
 now completes all six jobs at45b40b4, with production unchanged fromd600dba.

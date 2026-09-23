@@ -1,0 +1,17 @@
+{
+  "status": "RETAINED_N256_REFERENCE_REFUSAL",
+  "scope": "same 1-GiB packed/10^15 work CPU continuation; no cap or production change",
+  "at_cursor_before_target": 180,
+  "received_target": 1,
+  "outcome": "UNRESOLVED",
+  "reason": "global coexistence exceeds reference_payload_bytes",
+  "published_cursor": 180,
+  "published_count": 76,
+  "pending_target": 1,
+  "packed_cap": 1073741824,
+  "packed_current": 1071653180,
+  "packed_peak": 1071653180,
+  "capture_status": "PARTIAL_DIAGNOSTIC",
+  "capture_note": "The original JSON write stopped at the spent_work field after the fields above were emitted. This retained artifact restores valid JSON using only that captured prefix. No spent-work, final-validation or zero-forecast-restoration result is inferred.",
+  "claim": "The owned 1-GiB continuation returned UNRESOLVED at observation 181; the full 257-event gate did not pass."
+}

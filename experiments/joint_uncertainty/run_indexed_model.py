@@ -182,7 +182,7 @@ def audit_prefix(snapshot,case,mode):
     assert snapshot.cuda.contract.forward_id == (planner.ORDERED_FORWARD_ID if ordered else planner.FORWARD_ID)
     tolerance = Float64Contract(F(1,100),F(1,1000))
     checked = words = half = maximum_cells = maximum_nodes = maximum_join = maximum_blocks = 0
-    maximum_terms = maximum_worlds = maximum_span = 0
+    maximum_terms = maximum_partitions = maximum_worlds = maximum_span = 0
     maximum_integer_envelope = maximum_compacted = 0
     failures = []
     for phase in snapshot.cuda.phases:
@@ -215,8 +215,9 @@ def audit_prefix(snapshot,case,mode):
                 maximum_join = max(maximum_join,shape['largest_join_cells'])
                 maximum_blocks = max(maximum_blocks,shape.get('projected_blocks',0))
             else:
-                maximum_terms = max(maximum_terms,phase.execution_plan.term_count)
                 stats = engine.table_statistics(phase.execution_plan)
+                maximum_terms = max(maximum_terms,stats.get('histogram_terms',0))
+                maximum_partitions = max(maximum_partitions,stats.get('positive_partitions',0))
                 maximum_worlds = max(maximum_worlds,stats.get('world_visits',0))
                 maximum_span = max(maximum_span,phase.execution_plan.span)
                 maximum_join = max(maximum_join,stats.get('largest_join_cells',0))
@@ -248,7 +249,8 @@ def audit_prefix(snapshot,case,mode):
         'maximum_histogram_terms':maximum_terms,'maximum_histogram_world_visits':maximum_worlds,
         'maximum_histogram_span':maximum_span,
         'maximum_histogram_integer_envelope':maximum_integer_envelope,
-        'maximum_histogram_compacted_cells':maximum_compacted}
+        'maximum_histogram_compacted_cells':maximum_compacted,
+        'maximum_positive_integer_partitions':maximum_partitions}
 
 
 def worker(case,mode):

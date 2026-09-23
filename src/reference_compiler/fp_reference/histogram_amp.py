@@ -16,6 +16,9 @@ def implementation(budget):
     if type(budget) is decoder.PackedHistogramAllowance:
         from . import packed_histogram_amp
         return packed_histogram_amp
+    if type(budget) is decoder.DirectPartitionAllowance:
+        from . import integer_partition_amp
+        return integer_partition_amp
     raise ContractError('registered histogram AMP allowance required')
 
 

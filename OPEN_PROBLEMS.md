@@ -4,12 +4,15 @@ The [direct integer partition result](theory/proofs/DIRECT_INTEGER_PARTITION_REA
 exposes a simpler realization to test: the current fixed-base9 response
 does not need all energy coefficients. Its n+4H-bit construction and29-word
 uniform mixed-precision readout pass passive native/RNE checks. The open
-question is faithful owned execution with paid host integer inference,
-independent physical construction, actual arithmetic, complete continuations
-and measured whole resources. Do not supply reference partitions through
-a helper, borrow the histogram gate, or infer throughput from floating
-word counts. Preserve the terminal n64 matrix as its own source-bound result
-when integrating this new implementation work.
+question is now its [owned continuation and physical gate](theory/proofs/OWNED_INTEGER_PARTITIONS.md).
+Paid pinned integer tables, independent physical construction and complete
+plan checks are implemented and the full CPU gate passes. Complete the
+registered20 actual jobs before any model claim. Preserve the original1-GiB
+n256 refusal and distinguish the completed2-GiB/257-event continuation,
+whose peak packed payload is1525442448 bytes. Neither a small
+readout nor a larger retention budget is a whole-resource efficiency proof.
+Do not supply reference partitions through a helper, borrow the histogram
+gate, or rerun the terminal n64 controls as a substitute for new evidence.
 
 The larger-model question on the two declared n64 tapes is
 [closed](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md): all six

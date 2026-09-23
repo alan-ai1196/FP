@@ -17,17 +17,19 @@ from fp_reference.float64_bridge import Float64Contract
 from fp_reference.indexed_count import commit
 from audit_owned_histogram import BUDGET, operations
 from audit_owned_packed_histogram import BUDGET as PACKED_BUDGET
+from audit_owned_integer_partition import BUDGET as DIRECT_BUDGET
 from audit_indexed_source_binding import predict
 from audit_indexed_runtime import fixture
 from audit_reference_construction import rejects
 import run_indexed_model as model
 
 TAPE = ((0, 1, 0), (1, 2, 1), (0, 2, 0))
+BUDGETS = {'histogram': BUDGET, 'carry-free': PACKED_BUDGET, 'direct-partition': DIRECT_BUDGET}
 
 
 def fixture_snapshot(kind):
     cfg, schema, online = fixture(3, 3)
-    budget = BUDGET if kind == 'histogram' else PACKED_BUDGET if kind == 'carry-free' else None
+    budget = BUDGETS.get(kind)
     cfg = replace(cfg, indexed_histogram=budget)
     rt = ReferenceCompilerRuntime(cfg, schema, online=online, policy=CompilerPolicy(()))
     for i, j, target in TAPE:
@@ -82,20 +84,27 @@ def audit():
         'scope': 'passive rounded records attached to real reference histories; no actual device evidence',
         'paths': []}
     with patch.object(model, 'data', lambda case: (None, None, TAPE, ())):
-        for kind in ('global', 'projected', 'histogram', 'carry-free'):
+        for kind in ('global', 'projected', *BUDGETS):
             snapshot = fixture_snapshot(kind)
-            mode = 'global' if kind in ('histogram', 'carry-free') else kind
+            mode = 'global' if kind in BUDGETS else kind
             checked = model.audit_prefix(snapshot, (3, 'reader-fixture', 0), mode)
             assert checked['checked_CUDA_phases'] == 10 and checked['native_committed_units'] == 3
             result['paths'].append({'kind': kind, 'phases': 10})
-            if kind not in ('histogram', 'carry-free'):
+            if kind not in BUDGETS:
                 continue
             position = next(i for i, p in enumerate(snapshot.cuda.phases) if p.phase == 'ordinary:predict')
             phase = snapshot.cuda.phases[position]
             plan = phase.execution_plan
-            k, h = plan.terms[0][0]
-            changes = (
-                replace(phase, execution_plan=replace(plan, terms=(((k, h+1),)+plan.terms[0][1:], plan.terms[1]))),
+            if kind == 'direct-partition':
+                assert checked['maximum_histogram_terms'] == 0
+                assert checked['maximum_positive_integer_partitions'] == 2
+                changed_plans = (replace(plan, parts=tuple(2*v for v in plan.parts)),
+                                 replace(plan, parts=(plan.parts[0]+1, plan.parts[1])))
+            else:
+                assert checked['maximum_positive_integer_partitions'] == 0
+                k, h = plan.terms[0][0]
+                changed_plans = (replace(plan, terms=(((k, h+1),)+plan.terms[0][1:], plan.terms[1])),)
+            changes = tuple(replace(phase, execution_plan=changed) for changed in changed_plans)+(
                 replace(phase, raw_prediction=replace(phase.raw_prediction,
                     words=phase.raw_prediction.words[:5]+(phase.raw_prediction.words[5]^1,)+phase.raw_prediction.words[6:])),
                 replace(phase, raw_operations=phase.raw_operations[:-1]))
@@ -103,7 +112,7 @@ def audit():
                 rows = snapshot.cuda.phases[:position]+(changed,)+snapshot.cuda.phases[position+1:]
                 malformed = replace(snapshot, cuda=SimpleNamespace(contract=snapshot.cuda.contract, phases=rows))
                 rejects(lambda: model.audit_prefix(malformed, (3, 'reader-fixture', 0), mode))
-            result[kind+'_coefficient_endpoint_and_trace_refusals'] = len(changes)
+            result[kind+'_plan_endpoint_and_trace_refusals'] = len(changes)
     assert 'torch' not in sys.modules
     return result
 

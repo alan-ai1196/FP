@@ -2,9 +2,10 @@
 
 Status (2026-09-23): **PROVED, SCOPED; PASSIVE EXACT/RNE CPU AUDIT PASS.**
 This attacks the necessity of the histogram representation, not its proved
-correctness. Production and the running six-job n64 matrix are unchanged.
-There is no owned Runtime admission or actual CUDA evidence for this new
-realization yet.
+correctness. The six-job n64 matrix is terminal with its original source
+and implementations. The subsequent [owned construction](OWNED_INTEGER_PARTITIONS.md)
+has its own resource registration and continuation gates; its status is
+reported there. The passive evidence below supplies no device authority.
 
 ## 1. Compute only the current response, keeping the complete learner
 
@@ -53,12 +54,16 @@ arithmetic temporaries remain additional costs. The existing forward
 compaction proof applies to the same scope/offset geometry; no coefficient
 array or degree scan is required by this construction.
 
-For a declared span cap S and integer limit I, a prospective contiguous
+For a declared span cap S and integer limit I, a contiguous
 implementation can allocate (C+2)*ceil(min(I,n+4S)/8) bytes for tables and
 two roots, and refuse before entry when n+4H>I. At n64/S396/C1024/I32768
 this is211356 bytes, compared with3264928 in the registered carry-free
 layout. At n256 it is235980 versus4227904 bytes. These are representation
-payloads, not measured whole-job savings or an implemented resource debit.
+payloads, not measured whole-job savings. The subsequent owned construction
+actually prepays these extents; its complete resources are separate below.
+The direct bit bound can be larger than n(H+1) at n2 or n3, and base9
+power construction does more arithmetic than a binary shift. This is not
+a uniform storage/work dominance statement across all vertex counts.
 
 If M and A are the multiplication and addition counts and mu(b) is an
 integer multiplication cost, a conservative arithmetic bit-work upper is
@@ -179,7 +184,7 @@ remove those costs while retaining the same full native information.
 
 This challenges the choice of realization, not Foundation R4 or ERC-1.
 The latter requires declaring arithmetic, physical work and independent
-state-bound execution; it does not require an energy histogram. A later
+state-bound execution; it does not require an energy histogram. An
 owned implementation needs its own fixed identity, prior construction
 debits, pinned extents, complete plan checks, actual device arithmetic and
 fresh/install continuation evidence. The existing six-job matrix keeps its

@@ -1,0 +1,306 @@
+{
+  "status": "PASS_OWNED_INTEGER_PARTITION_CPU",
+  "complete_audit": true,
+  "scope": "paid exact host base9 tables and native/RNE continuation; half/single readout; no actual CUDA or completeness claim",
+  "enumeration": {
+    "states": 759,
+    "ordered_queries": 11919,
+    "prediction_output_words": 333639,
+    "half_words": 20835,
+    "maximum_compacted_cells": 17,
+    "workspace_bytes_by_n": {
+      "2": 520,
+      "3": 520,
+      "4": 520
+    },
+    "independent_assignment_oracle_and_prototype_words_equal": true,
+    "paid_partition_root_fields_checked": true
+  },
+  "larger": [
+    {
+      "case": "prior-offdiagonal",
+      "n": 3,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 3,
+      "compacted_cells": 1,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "prior-diagonal",
+      "n": 3,
+      "positive_partitions": 1,
+      "workspace_bytes": 204174,
+      "integer_envelope": 3,
+      "compacted_cells": 1,
+      "prediction_outputs": 25
+    },
+    {
+      "case": "subnormal-46",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 186,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "subnormal--46",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 186,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "subnormal-47",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 190,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "subnormal--47",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 190,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "subnormal-48",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 194,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "subnormal--48",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 194,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "range-396",
+      "n": 2,
+      "positive_partitions": 2,
+      "workspace_bytes": 204174,
+      "integer_envelope": 1586,
+      "compacted_cells": 0,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n32-band",
+      "n": 32,
+      "positive_partitions": 2,
+      "workspace_bytes": 207252,
+      "integer_envelope": 336,
+      "compacted_cells": 3484,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n64-band",
+      "n": 64,
+      "positive_partitions": 2,
+      "workspace_bytes": 211356,
+      "integer_envelope": 688,
+      "compacted_cells": 15132,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n128-path",
+      "n": 128,
+      "positive_partitions": 2,
+      "workspace_bytes": 219564,
+      "integer_envelope": 636,
+      "compacted_cells": 31752,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n256-empty",
+      "n": 256,
+      "positive_partitions": 2,
+      "workspace_bytes": 235980,
+      "integer_envelope": 256,
+      "compacted_cells": 32385,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n256-empty-diagonal",
+      "n": 256,
+      "positive_partitions": 1,
+      "workspace_bytes": 235980,
+      "integer_envelope": 256,
+      "compacted_cells": 32385,
+      "prediction_outputs": 25
+    },
+    {
+      "case": "n256-positive80",
+      "n": 256,
+      "positive_partitions": 2,
+      "workspace_bytes": 235980,
+      "integer_envelope": 576,
+      "compacted_cells": 32893,
+      "prediction_outputs": 29
+    },
+    {
+      "case": "n256-negative80",
+      "n": 256,
+      "positive_partitions": 2,
+      "workspace_bytes": 235980,
+      "integer_envelope": 576,
+      "compacted_cells": 32893,
+      "prediction_outputs": 29
+    }
+  ],
+  "native": {
+    "small": {
+      "groups": [
+        {
+          "n": 2,
+          "complete_length_two_histories": 64
+        },
+        {
+          "n": 3,
+          "complete_length_two_histories": 324
+        }
+      ],
+      "owned_histories": 388,
+      "complete_prediction_observation_commit_comparisons": 776
+    },
+    "profiles": {
+      "ordinary_component_phases": 12,
+      "profile_events": 4,
+      "ordinary_cursor": 7,
+      "optimizer_steps": [
+        7,
+        9
+      ],
+      "forbidden_value_or_resource_injection_refusals": 2
+    },
+    "fresh_reference": {
+      "fresh_start_cursor": 16,
+      "ordinary_events": 36,
+      "paired_native_root_comparisons": 20,
+      "crossing_cursor": 20,
+      "crossing_wealth": "167995/32768",
+      "fresh_score_events": 4,
+      "alpha_after_retirement": "1/4",
+      "foreign_root_admission_refusals": 1,
+      "unpaired_installation": "UNRESOLVED",
+      "scope": "exact same-path reference statistic under a declared external law; finite tape proves no stochastic law"
+    },
+    "retired_producer_calls": 0,
+    "complete_pending_and_committed_histogram_point_reads": true,
+    "owned_n256_profiles": {
+      "n": 256,
+      "logical_worlds_power_of_two": 255,
+      "actual_ingress_events": 4,
+      "ordinary_component_phases": 6,
+      "profile_events": 4,
+      "deployed_forecasts": [
+        "1/2",
+        "9/10",
+        "1/2",
+        "189/250"
+      ],
+      "optimizer_steps": [
+        4,
+        6
+      ],
+      "explicit_full_output_refusals": 2,
+      "logical_graph_counts": {
+        "nodes": 115792089237316195423570985008687907853269984665640564039457584007913129705986,
+        "sources": 512,
+        "state_reads": 0,
+        "SUMs": 115792089237316195423570985008687907853269984665640564039457584007913129639938,
+        "PRODUCTs": 65536,
+        "SUM_edges": 3795201516842275621202962604644754867798777017401035126957261773443360737078542336,
+        "edges": 3795201516842275621202962604644754867798777017401035126957261773443360737078673408,
+        "slots": 57896044618658097711785492504343953926634992332820282019728792003956564819969,
+        "bindings": 0
+      },
+      "packed_current_bytes": 62701768,
+      "scope": "actual owned reference phases and packed leases; no total-process or comparative resource bound"
+    }
+  },
+  "closure": {
+    "status": "SEALED_REFERENCE_STREAM",
+    "events": 3,
+    "constructor_decisions": 0,
+    "machine_id": "packed-indexed-direct-partition-reference-payload-v1"
+  },
+  "funding": {
+    "runtime_refusals": [
+      {
+        "case": "before-table-construction",
+        "status": "UNRESOLVED",
+        "unfunded_entries": 0
+      },
+      {
+        "case": "before-exact-partitions",
+        "status": "UNRESOLVED",
+        "unfunded_entries": 0
+      },
+      {
+        "case": "span",
+        "status": "UNRESOLVED",
+        "prior_full_events": 2,
+        "scratch_untouched_on_preflight_refusal": true
+      },
+      {
+        "case": "integer",
+        "status": "UNRESOLVED",
+        "prior_full_events": 2,
+        "scratch_untouched_on_preflight_refusal": true
+      }
+    ],
+    "unchanged_preflight_table_refusals": [
+      "join_cells",
+      "live_cells",
+      "arithmetic"
+    ],
+    "dense_n16_width_refusal": "UNRESOLVED",
+    "mixed_order_registration_refused": true,
+    "wrong_workspace_refusals": 3
+  },
+  "workspace": {
+    "paid_before_construction_compaction_counts": [
+      1,
+      0
+    ],
+    "blocked_resizes": 4,
+    "billed_and_actual_bytes": 204174,
+    "old_history_unchanged": true
+  },
+  "adversarial": {
+    "full_plan_coordinate_refusals": 12,
+    "endpoint_bit_refusals": 7,
+    "operation_bit_refusals": 22,
+    "trace_extent_refusals": 2,
+    "one_short_output_cap": "UNRESOLVED"
+  },
+  "bit-reversal": {
+    "n": 256,
+    "ordinary_events": 257,
+    "full_count_coordinates": 32640,
+    "packed_cap_bytes": 2147483648,
+    "work_cap_per_role": 1000000000000000,
+    "prior_1_gib_refusal_retained": "FP_DIRECT_PARTITION_N256_REFERENCE_A1.json",
+    "old_packed_bit_cut_crossed": 128,
+    "zero_count_and_half_forecast_restored_at": 256,
+    "paid_table_bytes": 235980,
+    "packed_peak_bytes": 1525442448,
+    "status": "SEALED_REFERENCE_STREAM",
+    "constructor_decisions": 0
+  }
+}

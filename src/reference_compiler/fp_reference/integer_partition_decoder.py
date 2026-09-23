@@ -1,8 +1,7 @@
-"""Carry-free positive elimination in a prepaid contiguous wide-cell extent.
+"""Direct base9 elimination in an owned contiguous integer extent.
 
-Tables and unpacked coefficients use the owner's actual pinned byte buffer.
-Scopes and bounded integer operands remain host scratch, covered by the whole
-host job, not by a claim that this buffer measures all Python heap usage.
+All sum-product inference is exact host integer work. The distinct physical
+schedule quantizes the independently computed partitions and reads them out.
 """
 from dataclasses import dataclass
 from fractions import Fraction as F
@@ -12,14 +11,14 @@ from .core import ContractError, natural
 from .indexed_count import CountState, query as require_query
 from .semantics import ArithmeticUnresolved, _guard
 
-MODEL_ID = 'packed-indexed-carry-free-histogram-reference-payload-v1'
-WORK_MODEL = 'prepaid-contiguous-carry-free-histogram-v1'
-WORKSPACE_KIND = 'exponent_histogram_workspace'
+MODEL_ID = 'packed-indexed-direct-partition-reference-payload-v1'
+WORK_MODEL = 'prepaid-contiguous-base9-partitions-v1'
+WORKSPACE_KIND = 'direct_integer_partition_workspace'
 MAX_BITS, MAX_CELLS, MAX_ARITHMETIC = 32768, 32768, 2_000_000
 
 
 @dataclass(frozen=True)
-class PackedHistogramAllowance:
+class DirectPartitionAllowance:
     join_cells: int = 4096
     live_cells: int = MAX_CELLS
     arithmetic: int = MAX_ARITHMETIC
@@ -29,43 +28,43 @@ class PackedHistogramAllowance:
     def __post_init__(self):
         for name in ('join_cells', 'live_cells', 'arithmetic', 'integer_bits'):
             natural(getattr(self, name), name, positive=True)
-        natural(self.span_cap, 'carry-free histogram span allowance')
+        natural(self.span_cap, 'direct integer partition span allowance')
         if (max(self.join_cells, self.live_cells) > MAX_CELLS
                 or self.arithmetic > MAX_ARITHMETIC or self.integer_bits > MAX_BITS
                 or self.span_cap > (MAX_BITS-1040)//16):
-            raise ContractError('carry-free histogram allowance exceeds its finite implementation class')
+            raise ContractError('direct integer partition allowance exceeds its finite implementation class')
 
 
 def _layout(n, budget):
     from .indexed_relation import IndexedRelation
     IndexedRelation(n)
-    if type(budget) is not PackedHistogramAllowance:
-        raise ContractError('immutable carry-free histogram allowance required')
+    if type(budget) is not DirectPartitionAllowance:
+        raise ContractError('immutable direct integer partition allowance required')
     budget.__post_init__()
-    cell = (min(budget.integer_bits, n*(budget.span_cap+1))+7)//8
-    coefficient = (n+7)//8
-    offset = (budget.live_cells+2)*cell
-    return cell, coefficient, offset, offset+2*(budget.span_cap+1)*coefficient
+    cell = (min(budget.integer_bits, n+4*budget.span_cap)+7)//8
+    return cell, (budget.live_cells+2)*cell
 
 
 def workspace_bytes(budget, *, n):
-    return _layout(n, budget)[3]
+    return _layout(n, budget)[1]
 
 
 def construction_work(n, budget):
     """Prepaid scalar/index/byte tariff; not a bigint bit-time bound."""
-    cell, _, _, size = _layout(n, budget)
+    cell, size = _layout(n, budget)
     d, span = n*(n-1)//2, budget.span_cap
+    # MSB binary powering uses at most two products per exponent bit.
+    powers = 2*d*span.bit_length()
     return (64*(n+1)**2*(d+n+1)
-            +32*(size+(budget.arithmetic+n*budget.live_cells+2*(span+1)+d+16)*(n+1+cell)))
+            +32*(size+(budget.arithmetic+n*budget.live_cells+powers+d+16)*(n+1+cell)))
 
 
 @dataclass(frozen=True)
-class PackedHistogramPlan:
+class DirectPartitionPlan:
     before: CountState
     query: tuple[int, int]
     span: int
-    terms: tuple[tuple[tuple[int, int], ...], tuple[tuple[int, int], ...]]
+    parts: tuple[int, int]
     shape: tuple[tuple[str, int], ...]
     integer_envelope: int
     maximum_integer_bits: int
@@ -77,12 +76,8 @@ class PackedHistogramPlan:
         return self.before.n
 
     @property
-    def term_count(self):
-        return sum(map(len, self.terms))
-
-    @property
     def output_cells(self):
-        return 9*self.term_count+21-2*sum(bool(part) for part in self.terms)
+        return 21+4*sum(bool(value) for value in self.parts)
 
 
 def _preflight(state, query, budget, bit_limit):
@@ -91,17 +86,17 @@ def _preflight(state, query, budget, bit_limit):
         raise ContractError('complete immutable native count predecessor required')
     state.__post_init__()
     if type(query) is not tuple or len(query) != 2:
-        raise ContractError('complete ordered carry-free histogram query required')
+        raise ContractError('complete ordered direct integer partition query required')
     require_query(state.n, *query)
     _layout(state.n, budget)
-    natural(bit_limit, 'carry-free histogram reference integer limit', positive=True)
+    natural(bit_limit, 'direct integer partition reference integer limit', positive=True)
     height = sum(map(abs, state.counts))
-    envelope = state.n*(height+1)
+    envelope = state.n+4*height
     bits = min(bit_limit, budget.integer_bits)
     if height > budget.span_cap:
-        raise ArithmeticUnresolved('carry-free histogram span allowance insufficient')
+        raise ArithmeticUnresolved('direct integer partition span allowance insufficient')
     if max(envelope, 16*height+8*state.n+1024) > bits:
-        raise ArithmeticUnresolved('carry-free histogram integer envelope exceeds allowance')
+        raise ArithmeticUnresolved('direct integer partition integer envelope exceeds allowance')
     support = tuple(e for e, d in zip(combinations(range(state.n), 2), state.counts) if d)
     shape = partition_shape_plan(state.n, support, query, tuple(range(state.n-1)),
         DecodeAllowance(budget.join_cells, budget.live_cells, budget.arithmetic, bits))
@@ -116,10 +111,10 @@ def prepare(state, query, budget, workspace, *, bit_limit):
     All refusal preflights precede clearing even one old workspace byte.
     """
     height, envelope, bits, expected_shape = _preflight(state, query, budget, bit_limit)
-    cell, coefficient, coefficient_offset, size = _layout(state.n, budget)
+    cell, size = _layout(state.n, budget)
     if (type(workspace) is not memoryview or workspace.readonly or workspace.ndim != 1
             or not workspace.c_contiguous or workspace.format != 'B' or len(workspace) != size):
-        raise ContractError('complete writable owned carry-free histogram byte extent required')
+        raise ContractError('complete writable owned direct integer partition byte extent required')
     zero = bytes(4096)
     for offset in range(0, size, len(zero)):
         width = min(len(zero), size-offset)
@@ -132,7 +127,7 @@ def prepare(state, query, budget, workspace, *, bit_limit):
             raise ContractError('positive integer table coordinate required')
         maximum = max(maximum, value.bit_length())
         if maximum > envelope:
-            raise ArithmeticUnresolved('carry-free integer escaped its proved bit envelope')
+            raise ArithmeticUnresolved('direct partition integer escaped its proved bit envelope')
         return value
 
     def get(index):
@@ -153,7 +148,11 @@ def prepare(state, query, budget, workspace, *, bit_limit):
             continue
         scope = tuple(v for v in (i, j) if v)
         length = 1 << len(scope)
-        scale = guard(1 << (n*abs(count)))
+        scale = 1
+        for position in range(abs(count).bit_length()-1, -1, -1):
+            scale = guard(scale*scale)
+            if (abs(count) >> position) & 1:
+                scale = guard(9*scale)
         for word in range(length):
             parity = (0 if i == 0 else word & 1) ^ ((word >> (len(scope)-1)) & 1)
             put(live+word, scale if parity == int(count < 0) else 1)
@@ -221,30 +220,16 @@ def prepare(state, query, budget, workspace, *, bit_limit):
     shape = {'positive_multiplications': multiply, 'positive_additions': add,
         'largest_join_cells': peak_join, 'peak_live_integer_cells': peak_live}
     if shape != expected_shape or compacted > (n-1)*budget.live_cells:
-        raise ContractError('carry-free execution differs from its complete resource plan')
-    mask, stride = (1 << n)-1, budget.span_cap+1
-    for y in (0, 1):
-        value = get(budget.live_cells+y)
-        for k in range(height+1):
-            offset = coefficient_offset+(y*stride+k)*coefficient
-            workspace[offset:offset+coefficient] = ((value >> (n*k)) & mask).to_bytes(coefficient, 'little')
-    parts = []
-    for y in (0, 1):
-        part = []
-        for k in range(height+1):
-            offset = coefficient_offset+(y*stride+k)*coefficient
-            h = int.from_bytes(workspace[offset:offset+coefficient], 'little')
-            if h:
-                part.append((k, h))
-        parts.append(tuple(part))
-    terms = tuple(parts)
-    if sum(h for part in terms for _, h in part) != 1 << (n-1):
-        raise ContractError('carry-free histogram lost a complete native assignment')
-    return PackedHistogramPlan(state, query, height, terms, tuple(shape.items()),
+        raise ContractError('direct partition execution differs from its complete resource plan')
+    parts = tuple(get(budget.live_cells+y) for y in (0, 1))
+    if sum(parts) <= 0:
+        raise ContractError('direct partition construction lost all native mass')
+    return DirectPartitionPlan(state, query, height, parts, tuple(shape.items()),
                                envelope, maximum, compacted, bits)
 
 
-def passive_plan(state, query, budget=PackedHistogramAllowance(), *, bit_limit=MAX_BITS):
+
+def passive_plan(state, query, budget=DirectPartitionAllowance(), *, bit_limit=MAX_BITS):
     """Explicit caller-owned point read; no Runtime payment or admission."""
     _preflight(state, query, budget, bit_limit)
     with memoryview(bytearray(workspace_bytes(budget, n=state.n))) as scratch:
@@ -252,23 +237,24 @@ def passive_plan(state, query, budget=PackedHistogramAllowance(), *, bit_limit=M
 
 
 def exact_parts(plan):
-    from .histogram_decoder import exact_parts as horner
-    return horner(plan)
+    if type(plan) is not DirectPartitionPlan:
+        raise ContractError('complete direct integer partition plan required')
+    return plan.parts
 
 
 def execution_work(plan):
-    return 64*(plan.span+1)+128*(plan.n*(plan.n-1)//2+16)
+    return 128*(plan.n*(plan.n-1)//2+plan.integer_envelope+16)
 
 
 def table_statistics(plan):
-    return dict(plan.shape, histogram_terms=plan.term_count, compacted_cells=plan.compacted_cells,
+    return dict(plan.shape, positive_partitions=sum(bool(v) for v in plan.parts), compacted_cells=plan.compacted_cells,
                 integer_envelope=plan.integer_envelope, maximum_integer_bits=plan.maximum_integer_bits)
 
 
 def reference(plan):
     from .indexed_execution import IndexedEvaluation
-    if type(plan) is not PackedHistogramPlan or plan.before.pending is not None:
-        raise ContractError('owned committed carry-free histogram prediction plan required')
+    if type(plan) is not DirectPartitionPlan or plan.before.pending is not None:
+        raise ContractError('owned committed direct integer partition prediction plan required')
     parts = exact_parts(plan)
     excesses = tuple(F(8*z, sum(parts)) for z in parts)
     masses = tuple(1+v for v in excesses)
@@ -280,12 +266,12 @@ def reference(plan):
 
 def check_plan(plan, expected):
     from .indexed_amp import _same_plan_value
-    if (type(plan) is not PackedHistogramPlan or type(expected) is not PackedHistogramPlan
+    if (type(plan) is not DirectPartitionPlan or type(expected) is not DirectPartitionPlan
             or vars(plan).keys() != vars(expected).keys()
             or type(plan.before) is not CountState
             or set(vars(plan.before)) != {'n', 'counts', 'pending', 'cursor', 'steps'}):
-        raise ContractError('complete carry-free histogram execution plan required')
+        raise ContractError('complete direct integer partition execution plan required')
     plan.before.__post_init__()
     if plan.before != expected.before or any(not _same_plan_value(value, vars(expected)[key])
             for key, value in vars(plan).items() if key != 'before'):
-        raise ContractError('carry-free histogram plan differs from its complete native input')
+        raise ContractError('direct integer partition plan differs from its complete native input')

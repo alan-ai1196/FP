@@ -29,6 +29,10 @@ class ReferenceRunManifest:
     def __post_init__(self):
         from .histogram_decoder import MODEL_ID
         from .packed_histogram_decoder import MODEL_ID as PACKED_MODEL_ID
+        from .integer_partition_decoder import MODEL_ID as DIRECT_MODEL_ID
+        if self.machine_id == DIRECT_MODEL_ID:
+            object.__setattr__(self, 'reference_arithmetic',
+                               'indexed-literal-count-direct-partition-reference-v1')
         if self.machine_id == PACKED_MODEL_ID:
             object.__setattr__(self, 'reference_arithmetic',
                                'indexed-literal-count-carry-free-histogram-reference-v1')
