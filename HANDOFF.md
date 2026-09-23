@@ -17,12 +17,15 @@ cases pass, including the274-event recovery and n3 mixed-noise learning;
 the profile/install worker fails after an unexpected prediction refusal.
 Exact replay proves a real tolerance obstruction: at candidate step29,
 master error is below1e-7 but the full-native normalizer error is1/64>1/100.
-Retain A1 as failed. A separate one-case A2 is registered, unrun, with only
-the full-native tolerance changed to1/50; graph/U/tape/probability tolerance
-and resource limits remain. Run `rational_likelihood_lowering.py --matrix
---attempt 2 --write` from its committed source. It must still cross both
-fresh paths, install and keep learning. Do not repeat successful A1 or
-historical jobs, borrow the old physical identity, or infer a full release.
+Retain A1 as failed. Separate one-case A2 passes at8c57186 with only the
+full-native tolerance changed to1/50; graph/U/tape/probability tolerance and
+resource limits remain. It checks298 phases/98 commit tapes/42 fresh scores,
+installs at cursor23 and learns through48. The overall run is MANUAL_PARTIAL
+because this fixture has no complete constructor policy/search. All A1/A2
+jobs are terminal; do not repeat them or infer a full release. The rational
+finite-bank component is now physically validated in these declared scopes;
+next research should address inference/learning costs and useful model
+evidence, while retaining the demonstrated full-native precision boundary.
 
 **Current research: distinguish supplied noise from acquired noise.** The
 [noise acquisition/state result](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
@@ -31,11 +34,11 @@ cycle-length acquisition cost for a declared disjoint-cycle experiment.
 A finite mixed-rate learner needs (T,d,s); diagonal evidence and rate-dependent
 common likelihood factors cannot be discarded. The existing native unit
 simplex learner realizes that posterior. Exact checks and five Reference
-streams/44 independently replayed binary64 phases pass. Their whole-host
-scope remains unresolved; no AMP or full release follows. The original
-single-rational-radix backend cannot represent the two-rate bank. A proved
-positive integer mixture gives an implementation direction with all rate
-evidence preserved, not an existing physical certificate. Keep the known-rate
+streams/44 independently replayed binary64 phases pass. Those earlier
+functional runs retain unresolved whole-host scope; the separate owned
+rational gate above supplies actual AMP evidence. The original single-radix
+backend cannot represent the two-rate bank. The indexed positive-mixture
+upper remains mathematical and has no physical certificate. Keep the known-rate
 results below in their original scope; do not rerun their terminal jobs.
 
 **The n64 matrix is terminal: all six model jobs and readers pass.**

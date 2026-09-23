@@ -100,7 +100,8 @@ The later [coprime construction](COPRIME_LIKELIHOOD_READOUT.md) realizes the
 same rank and online coordinates without prime factorization. It also gives
 a jointly scaled positive-integer readout with a history-uniform selected-
 weight bound. Its [owned registration](RATIONAL_LIKELIHOOD_RUNTIME.md) now
-passes the CPU gate; the actual AMP/fresh/install gate remains pending.
+passes the CPU gate and scoped actual AMP/fresh/install checks. Its A1 native
+tolerance failure remains retained; the separate A2 numerical contract passes.
 
 The event affine rank is essential: with one query and world probabilities
 P(y=0)=(1/3,1/2), the two ratio increments 3/2 and 3/4 have raw valuation

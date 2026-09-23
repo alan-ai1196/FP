@@ -1,0 +1,164 @@
+{
+  "status": "COMPLETE_EXECUTION",
+  "registration_source": "8c57186b617d27c7ca5a66b19ccb06e9e9c852c1",
+  "registration": {
+    "cases": [
+      "mixed-profile-install-a2"
+    ],
+    "host_cap": 4294967296,
+    "timeout_ms": 360000,
+    "packed_cap": 1073741824,
+    "work_per_role": 100000000000,
+    "reference_integer_bits": 32768,
+    "arithmetic": {
+      "counter_bits": 64,
+      "basis_cells": 8,
+      "factor_work": 1000000,
+      "decode_work": 1000000
+    },
+    "backend": "eager-cuda-half-forward-single-gradient-owned-integer-rational-decode-v1",
+    "work_model": "prepaid-coprime-factorization-owned-integer-decode-and-CUDA-output-v1",
+    "state_atol": "1/50",
+    "probability_atol": "1/1000",
+    "binary64_atol": "1/100000000",
+    "phase_output_cells": 8192,
+    "phase_frame_bytes": {
+      "noise-n3": 1048576,
+      "otherwise": 262144
+    },
+    "bounded_class": "existing <=1-node/no-edge/no-PRODUCT/<=3-slot declared class under the new representation; 20 members, 15 expected unresolved",
+    "bounded_class_overrides": {
+      "packed_cap": 536870912,
+      "binary64_atol": "1/1000000000",
+      "native_caps": "16"
+    },
+    "profile_install": "two prior events replayed twice at cursor2; joint unknown-rate n2; 48 ordinary events; both fresh paths and continued learning",
+    "reversal": "168 ratio2 events then106 ratio1/3 events; full native phases",
+    "scope": "owned numerical component; no model superiority, constructor completeness or full indexed release",
+    "previous": "A1 at 5937e1b retains twelve executed cases and a failed mixed-profile-install worker; none is overwritten",
+    "reason": "Exact passive replay proves the original 1/100 full-native tolerance fails at ordinary cursor27: normalizer error1/64. A2 changes only that tolerance and failure diagnostics, not production arithmetic, graph, U, tape, probability tolerance or resource limits.",
+    "numerical_preflight": "FP_RATIONAL_NATIVE_PRECISION.json checks all50 candidate updates including four profile events; this is a fixed-word calculation, not an all-history native error theorem"
+  },
+  "workers": [
+    {
+      "worker_status": "EXECUTED",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2302365696,
+        "peak_job_commit": 2303578112,
+        "user_100ns": 786718750,
+        "kernel_100ns": 20156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12896,
+        "process_creation_100ns": 134346299582251594
+      },
+      "result": {
+        "case": "mixed-profile-install-a2",
+        "status": "MANUAL_PARTIAL",
+        "expected_refusal": null,
+        "cursor": 48,
+        "observations": 48,
+        "profile_events": 4,
+        "CUDA": {
+          "checked_phases": 298,
+          "refused_phases": 0,
+          "independent_commit_operation_tapes": 98,
+          "factorization_ranks": [
+            0,
+            2
+          ],
+          "maximum_output_cells": 1241,
+          "largest_phase_frame_used": 106891,
+          "actual_arena_bytes": 16777216
+        },
+        "binary64_phases": 298,
+        "checkpoints": [
+          {
+            "cursor": 1,
+            "theta_words": [
+              1065353216,
+              1048576000,
+              1048576000,
+              1048576000,
+              1048576000
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "42d68ab6384254858b31b3c58405fa9891589790ac7779db83457e534e25908c",
+              [],
+              null
+            ]
+          },
+          {
+            "cursor": 31,
+            "theta_words": [
+              1065353216,
+              1065312414,
+              187145239,
+              991912444,
+              553721648
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "26ba27b931cfe876b0c9da18d20bf858f1e5a8d41019c72fd0ce63a409c3bbb1",
+              [
+                -66,
+                0
+              ],
+              null
+            ]
+          },
+          {
+            "cursor": 48,
+            "theta_words": [
+              1065353216,
+              1065336641,
+              9,
+              981565266,
+              369753981
+            ],
+            "metadata": [
+              "finite-affine-coprime-likelihood-coordinates-v1",
+              "26ba27b931cfe876b0c9da18d20bf858f1e5a8d41019c72fd0ce63a409c3bbb1",
+              [
+                -92,
+                2
+              ],
+              null
+            ]
+          }
+        ],
+        "CUDA_maxima": {
+          "state_error": "11050740973140107875243529280440146424556365245486440958531261/11608689244909096359529099563967268423857230269784742249522790400",
+          "native_error": "325001795309993548918578657111469/21538258417600190495554224595058710",
+          "normalizer_error": "1/64",
+          "probability_error": "78253/838860800"
+        },
+        "fresh_score_checks": 42,
+        "install_cursor": 23,
+        "class_certificate": false,
+        "constructor_search_performed": false,
+        "retained_failed_scratch_bytes": 0,
+        "packed_peak": 81549753,
+        "process_id": 12896,
+        "host": {
+          "process_id": 12896,
+          "creation_100ns": 134346299582251594,
+          "lifetime_process_commit_peak": 2302365696,
+          "job_commit_peak": 2303578112,
+          "process_user_100ns": 778906250,
+          "process_kernel_100ns": 19843750,
+          "job_user_100ns": 778906250,
+          "job_kernel_100ns": 19843750
+        }
+      },
+      "case_index": 0,
+      "case": "mixed-profile-install-a2",
+      "execution_source": "8c57186b617d27c7ca5a66b19ccb06e9e9c852c1"
+    }
+  ]
+}

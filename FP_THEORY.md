@@ -375,10 +375,11 @@ budget/lifetime probes and legacy compatibility checks pass. Twelve actual
 A1 workers pass at5937e1b, including recovery and the n3 mixed-noise stream.
 The profile/install worker fails; exact replay proves normalizer error1/64
 despite master error below1e-7. Thus the whole-native1/100 tolerance cannot
-be inferred from selected-weight accuracy. One-case A2 is registered under
+be inferred from selected-weight accuracy. One-case A2 passes at8c57186 under
 the explicitly different1/50 native tolerance; no production arithmetic or
-semantics changes. A1 remains failed, and fresh/install completion remains
-pending. No complete release follows from either numerical component.
+semantics changes. It checks298 phases/98 commit tapes/42 fresh scores and
+installs at23, continuing through48. A1 remains failed. The manual fixture
+issues no complete search or release claim; its overall run is MANUAL_PARTIAL.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

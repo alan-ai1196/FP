@@ -10,13 +10,15 @@ Its CPU gate and twelve actual A1 workers pass. The profile/install worker
 fails, and exact replay proves its1/100 native tolerance impossible on the
 registered trajectory: candidate step29 has master error below1e-7 but
 normalizer error1/64. A1 remains failed. The uniform selected-weight bound
-cannot replace the complete native relation. One-case A2 is registered at
-state tolerance1/50 with the same graph/U/tape, probability tolerance and
-resources; verify actual profile/fresh/install/learning under that explicit
-new contract. Do not repeat the twelve successful A1 jobs. A useful remaining
+cannot replace the complete native relation. One-case A2 passes at state
+tolerance1/50 with the same graph/U/tape, probability tolerance and resources.
+A useful remaining
 numerical question is how complete-native error depends on graph conditioning
 and the actual half/single schedule; this witness forbids a weight-only
-answer. Unknown-noise model evidence and full indexed release remain separate.
+answer. A2 now passes at8c57186:298 phases/98 commit tapes/42 fresh scores,
+install at23 and learning through48, with overall MANUAL_PARTIAL and no
+complete search claim. All jobs are terminal. Unknown-noise model evidence
+and full indexed release remain separate.
 
 The [noise acquisition/state law](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 closes a theoretical prerequisite to learning the supplied relation noise.
@@ -24,8 +26,8 @@ Forest bridges contain no noise information, and independent long cycles
 can require exponentially many samples; that cannot be repaired by a faster
 solver. The finite mixed-rate posterior has the exact statistic (T,d,s) and
 an existing native simplex realization, with exact and functional CPU audits.
-Actual physical validation and model evidence against the strong joint
-unknown-rate posterior remain open. The original one-rational-radix backend
+Scoped physical validation now passes above; useful model evidence against
+the strong joint unknown-rate posterior remains open. The original one-rational-radix backend
 cannot cover the two-rate bank; a positive integer construction can preserve
 the rate-dependent evidence without an energy histogram. It must pay its
 work/storage, bind the actual inputs and full native state, and obtain its own

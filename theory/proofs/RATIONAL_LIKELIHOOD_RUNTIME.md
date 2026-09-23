@@ -1,7 +1,7 @@
 # Owned general rational likelihood lowering
 
 Status: **IMPLEMENTED; CPU PASS; CUDA A1 TERMINAL WITH ONE FAILURE;
-ONE-CASE A2 REGISTERED, UNRUN**.
+ONE-CASE A2 PASSES ITS SEPARATE NUMERICAL CONTRACT**.
 This binds the [coprime component](COPRIME_LIKELIHOOD_READOUT.md) to the
 existing complete native learner and its Runtime. It changes a physical
 representation, not FP syntax, the unit simplex U, the observation law or
@@ -243,7 +243,23 @@ counterexample; it does not turn A1 into a pass. The fixed-word preflight
 proves its bounds only for the specified rounded interpreter and word, not
 all histories. Actual AMP, paired fresh evidence, installation and learning
 after installation must still pass their independent complete readers in A2.
-At this declaration A2 is unrun. Keep its committed source fixed while live;
-retain every outcome. Do not repeat the twelve successful A1 cases or any
-historical device job. Neither gate issues CERTIFIED_COMPLETE or a full
-indexed release.
+The [A2 job](../../evidence/minimal/FP_RATIONAL_LIKELIHOOD_CUDA_A2.json) now
+passes at8c57186, using unchanged production arithmetic from5937e1b. It
+checks298 complete CUDA phases and298 independent binary64 phases,98
+independently reconstructed commit tapes and42 fresh scores. Both fresh
+paths cross; actual installation occurs at cursor23, followed by25 ordinary
+observations through cursor48. Candidate optimizer steps finish at50.
+Resident raw encoding/lease transport and every score/wealth update pass.
+
+Actual maximum errors equal the passive preflight: normalizer1/64, native
+about0.01508952, probability78253/838860800, with the complete state error
+attained by an ambient gradient below0.001. Largest used frame106891 bytes,
+maximum output1241 cells and packed peak81549753 bytes fit their declared
+caps. The enforced job peaks at2303578112 bytes, with no timeout or limit
+termination. The original A1 remains COMPLETE_WITH_FAILURES.
+
+This fixture has no constructor policy or complete search. Its overall run
+status is MANUAL_PARTIAL even though the numerical, fresh, installation and
+continued-learning checks pass. It is a scoped component result, not model
+superiority or CERTIFIED_COMPLETE. All A1/A2 jobs are terminal; do not repeat
+them. A full indexed release remains a separate obligation.

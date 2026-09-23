@@ -18,9 +18,12 @@ checks, totaling1991 checked phases/657 independent commit tapes, with peak
 job2499796992 bytes below4 GiB. The profile/install worker fails. Exact replay
 exhibits a full-native tolerance obstruction at candidate step29: accurate
 master weights coexist with normalizer error1/64>1/100. The original failure
-is retained. One-case A2 is registered, unrun, at state tolerance1/50, with
-production arithmetic, graph/U/tape and all other limits unchanged. Full
-profile/fresh/install completion remains pending under that new contract.
+is retained. One-case A2 passes at8c57186 under state tolerance1/50, with
+production arithmetic, graph/U/tape and all other limits unchanged. It checks
+298 phases/98 commit tapes/42 fresh scores, installs at23 and learns through48.
+Peak job2303578112 bytes fits4 GiB. MANUAL_PARTIAL reflects the fixture's
+absent complete constructor policy/search; no full release follows. All jobs
+are terminal and must not be repeated.
 
 The [noise acquisition audit](theory/proofs/NOISE_ACQUISITION_AND_STATE.md)
 adds research evidence without changing production: 168 multigraphs/4155
@@ -33,7 +36,7 @@ include rate/world slots. These functional CPU runs retain unresolved
 whole-host scope and issue no search/install authority. The single-rational-
 radix backend is mathematically insufficient for this bank. The general
 rational implementation above now covers its finite-bank arithmetic; its
-n3 actual AMP stream passes, while profile/install completion is pending.
+n3 actual AMP stream and separately scoped A2 profile/install continuation pass.
 The indexed positive-mixture upper and
 existing known-rate results retain their separate source-bound scopes.
 

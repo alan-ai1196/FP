@@ -8201,3 +8201,27 @@ assertions now include the Runtime cursor/reason. A2 remains unrun at this
 commit and must independently establish actual paired fresh evidence,
 installation and continued learning. The twelve passing A1 jobs remain
 terminal. Foundation R4, ERC-1 and complete release status are unchanged.
+
+## 246. Close rational fresh installation under its separately declared numerical contract (2026-09-23)
+
+The single A2 worker passes at8c57186, with production arithmetic unchanged
+from5937e1b. It executes48 ordinary observations and four profile events,
+checks298 full CUDA phases and298 binary64 phases, independently reconstructs
+98 commit tapes and verifies42 fresh scores/wealth updates. Both score paths
+cross, actual CUDA installation occurs at cursor23, and25 subsequent ordinary
+events finish at cursor48/candidate optimizer step50. Resident encoding and
+lease transport pass, with no retained failed decode scratch.
+
+The actual maxima equal the exact fixed-word preflight: normalizer1/64,
+native error about0.01508952, probability78253/838860800 and complete-state
+error below0.001. Thus this passes the explicitly registered1/50 native
+tolerance while the original1/100 contract remains failed. Peak enforced
+job commitment2303578112 bytes fits4 GiB; packed peak81549753 bytes, largest
+used frame106891 bytes and1241 output cells also fit. No timeout or limit
+termination occurs. Retain the6012-byte A2 artifact separately from A1.
+
+The manual fixture has no complete constructor policy or search. Its overall
+status is MANUAL_PARTIAL despite successful numerical/fresh/install/learning
+checks; it grants neither CERTIFIED_COMPLETE nor a full indexed release or
+model-performance claim. All A1/A2 jobs are now terminal; none should be
+repeated. The physical finite-bank component is closed in these scopes.

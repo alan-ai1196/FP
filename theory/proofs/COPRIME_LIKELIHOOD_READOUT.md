@@ -9,8 +9,9 @@ Independent scaling of the bases has an all-zero counterexample.
 
 This is a general arithmetic component and a passive compiler prototype.
 The subsequent [owned implementation](RATIONAL_LIKELIHOOD_RUNTIME.md) now has
-a distinct rational contract and passes its CPU gate; its actual CUDA A1 is
-registered and pending. This component alone supplies no owned bridge,
+a distinct rational contract and passes its CPU gate and scoped actual AMP/
+fresh/install checks. A1's native-tolerance failure is retained; the separate
+A2 contract passes. This component alone supplies no owned bridge,
 installation, complete-state quotient, indexed release or constructor decision.
 
 ## 1. Model and the restriction being removed
@@ -245,8 +246,8 @@ theorems; the proofs above supply their all-input scope.
 The [owned implementation](RATIONAL_LIKELIHOOD_RUNTIME.md) now derives the
 descriptor from actual G/Gamma/U and the complete information interface,
 pays for transient integer decoding and has a distinct physical identity.
-Its CPU gate passes. Actual AMP transitions, fresh persistence and
-installation remain pending in its registered A1. The arithmetic component
+Its CPU gate and scoped actual AMP/fresh/install checks pass, with the A1
+native-tolerance failure retained and a separate A2 contract. The arithmetic component
 alone grants none of that authority and cannot enter the old one-radix identity.
 Foundation R4 and ERC-1 remain unchanged.
 
