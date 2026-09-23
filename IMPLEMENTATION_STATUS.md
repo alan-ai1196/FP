@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [owned carry-free implementation](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
+now has paid contiguous wide tables, safe forward compaction, full native
+state/plan binding and a separately registered coefficient-normalized AMP
+identity. Its CPU gate passes11919 queries,388 histories/776 native triples,
+profiles/fresh evidence, n256 continuation and adversarial funding/plan/word/
+buffer checks. Legacy CPU regressions pass. The19-job actual Runtime CUDA
+gate is registered but not yet executed; no full indexed release follows.
+
 The [carry-free histogram prototype](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
 uses exact positive elimination instead of enumerating worlds, with explicit
 table and n(H+1)-bit guards. Its coefficient-normalized half/single schedule
@@ -8,8 +16,8 @@ observations,1071311 words/183495 half, plus1054 native phase triples.
 Independent n32..256 coefficients pass. Actual A1 at3e85306 passes16 fixtures/
 48 phases,5354 outputs/1554 half, peak job2051858432 bytes;208 retained
 endpoint words pass a separate reader. The job is terminal. This is research
-code and numerical component evidence; Runtime and prior production
-schedules are unchanged, with no owned-integration or release claim.
+code and numerical component evidence. The separate owned implementation
+above changes production; this earlier artifact supplies no integration release.
 
 The [histogram model test](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)
 is COMPLETE_MODEL at143ddc9: all376 native forecasts,1129 CUDA phases,

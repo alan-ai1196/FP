@@ -1,13 +1,20 @@
 # FP Open Problems
 
+The [owned carry-free CPU gate](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
+closes prepaid table/compaction construction, complete native continuation
+and CPU plan/funding/buffer checks. Its19-job actual Runtime CUDA gate must
+now test physical fresh/install, fault retention and n32/n256 continuations
+on committed source. Larger-model usefulness and a complete indexed release
+remain separate questions; do not expand static graph cases as a substitute.
+
 The [carry-free histogram theorem/prototype](theory/proofs/PACKED_COUNT_HISTOGRAM.md)
 removes explicit world enumeration when wide positive elimination fits,
 and supplies a coefficient-aware uniform half/single bound. Its complete
 small/native/RNE and independent n32..256 coefficient audits pass. Actual A1
 also passes all16 fixtures/48 phases at3e85306, including208 independently
-read retained endpoints. That numerical job is terminal. Owned storage/work,
-independent plan binding, complete Runtime continuation
-and useful larger-model execution remain separate obligations. No dense
+read retained endpoints. That numerical job is terminal. The owned CPU
+work above is separate evidence; actual owned GPU and useful larger-model
+execution remain obligations. No dense
 width or whole-resource obstruction is erased by packing integer digits.
 
 The [n16/c4/seed18 histogram stream](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)

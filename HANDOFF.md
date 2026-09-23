@@ -1,5 +1,16 @@
 # FP Handoff
 
+**Current owned frontier:** the [carry-free Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
+is implemented and passes its scoped CPU gate. Actual wide tables occupy
+one paid pinned extent; forward compaction preserves the peak-cell plan.
+All11919 small exact/RNE queries,388 histories/776 native phase triples,
+profiles, fresh reference evidence, n256 continuation and funding/plan/buffer
+faults pass. Legacy CPU controls pass. The19-job RTX3090 gate is registered
+in `scripts/audit_owned_packed_histogram_cuda.py`; commit inputs before
+attempt1, retain every outcome and stop on failure. It tests actual learning,
+fresh/install, reversal, n32 bands and n256 profiles under4 GiB/job.
+No actual owned GPU result or full indexed release is claimed yet.
+
 **Current attack: histogram computation beyond world enumeration.** The
 [carry-free construction](theory/proofs/PACKED_COUNT_HISTOGRAM.md) evaluates
 the existing positive elimination circuit at2^n and extracts exact energy
@@ -11,10 +22,10 @@ generic n32/n64/n128/n256 fixtures use no world enumeration. The old n16
 scale overflows on an unsupported n256 zero-count extension; the new one
 passes. Actual arithmetic A1 now also passes at3e85306:16 fixtures/48 phases,
 5354 output words/1554 half, peak job2051858432 bytes. The separate reader
-checks208 endpoints. That job is terminal; do not rerun it. Production is
-unchanged. The next material obligation is a paid owned implementation of
-the wide integer tables, coefficient output and new numerical identity,
-with complete native/phase/fresh/install continuations. This is numerical
+checks208 endpoints. That job is terminal; do not rerun it. That component
+left production unchanged. The implementation above now supplies paid wide
+tables, coefficient output and numerical identity; its actual owned gate
+remains separate. This earlier result is numerical
 component evidence, not admission to the existing Runtime or a model score.
 
 **Completed model recovery:** [histogram n16/c4/seed18](experiments/joint_uncertainty/HISTOGRAM_MODEL_RESULTS.md)

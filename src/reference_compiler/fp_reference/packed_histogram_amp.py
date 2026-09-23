@@ -1,29 +1,17 @@
-"""Fixed histogram AMP schedule; no native or physical continuation authority."""
+"""Coefficient-normalized carry-free histogram schedule, without authority."""
 from fractions import Fraction as F
-import sys
 
-from . import histogram_decoder as decoder, indexed_amp as amp
+from . import packed_histogram_decoder as decoder, indexed_amp as amp
 from .core import ContractError
 from .indexed_relation import IndexedRelation, allowance
 
-BACKEND_ID = 'owned-indexed-histogram-half-products-single-readout-v1'
-FORWARD_ID = 'indexed-positive-exponent-histogram-rne16-rne32-v1'
-
-
-def implementation(budget):
-    if type(budget) is decoder.HistogramAllowance:
-        return sys.modules[__name__]
-    if type(budget) is decoder.PackedHistogramAllowance:
-        from . import packed_histogram_amp
-        return packed_histogram_amp
-    raise ContractError('registered histogram AMP allowance required')
+BACKEND_ID = 'owned-indexed-carry-free-histogram-half-products-single-readout-v1'
+FORWARD_ID = 'packed-count-coefficient-normalized-histogram-rne16-rne32-v1'
 
 
 def forward_work(n, budget, output_cap):
-    # Complete integer traversal twice (construction and independent check),
-    # guarded powers and the exact-RNE replay of the physical scalar schedule.
     terms = min(1 << (n-1), 2*(budget.span_cap+1))
-    return 2*decoder.enumeration_work(n, budget)+1024*(terms+1)+128*(n+1)*output_cap
+    return 2*decoder.construction_work(n, budget)+1024*(terms+1)+128*(n+1)*output_cap
 
 
 def _prepare_prediction(program, state, rules, sources, *, output_cap, budget, workspace, bit_limit):
@@ -31,14 +19,11 @@ def _prepare_prediction(program, state, rules, sources, *, output_cap, budget, w
         raise ContractError('owned indexed syntax and committed AMP state required')
     state.__post_init__()
     if state.encoded.n != program.n:
-        raise ContractError('histogram AMP predecessor differs from its native program')
+        raise ContractError('carry-free AMP predecessor differs from its native program')
     query, _ = program.source_query(rules, sources)
-    # The owner keeps its permanent export. Each reconstruction gets a fresh
-    # borrowed view, so releasing one call's view cannot unpin the paid extent
-    # or invalidate the next complete reconstruction.
     with memoryview(workspace) as borrowed:
         plan = decoder.prepare(state.encoded, query, budget, borrowed, bit_limit=bit_limit)
-    allowance(plan.output_cells, output_cap, 'histogram AMP output allowance')
+    allowance(plan.output_cells, output_cap, 'carry-free histogram AMP output allowance')
     return plan
 
 
@@ -48,22 +33,22 @@ def check_prediction_plan(plan, program, state, rules, sources, **kwargs):
 
 
 def _prediction_schedule(plan, state, arith):
-    if type(plan) is not decoder.HistogramPlan or plan.before != state.encoded or state.unit_count:
-        raise ContractError('histogram schedule lost its committed physical predecessor')
+    if type(plan) is not decoder.PackedHistogramPlan or plan.before != state.encoded or state.unit_count:
+        raise ContractError('carry-free schedule lost its committed physical predecessor')
     top = max(k for part in plan.terms for k, _ in part)
+    common = max(h.bit_length()+1-(9**(top-k)).bit_length() for part in plan.terms for k, h in part)
     sums = []
     for part in plan.terms:
         terms = []
         for k, h in part:
             denominator = 9**(top-k)
             eh, bd = h.bit_length(), denominator.bit_length()
-            exponent = eh+1-bd
+            exponent = eh+1-bd-common
             a = arith.op('constant', constant=F(h, 1 << eh))
             b = arith.op('constant', constant=F(1 << (bd-1), denominator))
             product = arith.op('cast', arith.op('mul',
                 arith.op('cast', a, half=True), arith.op('cast', b, half=True), half=True))
-            scale = F(0) if exponent < -149 else (
-                F(1 << exponent) if exponent >= 0 else F(1, 1 << -exponent))
+            scale = F(0) if exponent < -149 else F(1, 1 << -exponent)
             terms.append(arith.op('mul', product, arith.op('constant', constant=scale)))
         if not terms:
             terms = [arith.op('constant', constant=0)]

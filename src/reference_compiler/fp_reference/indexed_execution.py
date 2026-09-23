@@ -177,10 +177,10 @@ def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_lim
     if type(state) is not IndexedState or state.encoded.n != program.n or state.unit_count:
         raise ContractError('owned committed indexed predecessor required')
     query, _ = program.source_query(rules, sources)
-    if type(budget) is histogram.HistogramAllowance:
+    if type(budget) in histogram.ALLOWANCES:
         if order_search is not None or histogram_workspace is None:
             raise ContractError('histogram prediction requires its owned extent and fixed traversal')
-        return histogram.prepare(state.encoded, query, budget, histogram_workspace, bit_limit=bit_limit)
+        return histogram.implementation(budget).prepare(state.encoded, query, budget, histogram_workspace, bit_limit=bit_limit)
     budget = replace(budget, integer_bits=min(budget.integer_bits, bit_limit))
     plan = projection.prepare(state.encoded, query, budget, order_search=order_search)
     return IndexedPredictionPlan(state.encoded, query, plan, bit_limit)
@@ -188,8 +188,8 @@ def _prepare_owned_prediction(program, rules, state, sources, *, budget, bit_lim
 
 def _owned_prediction_work(plan):
     """Numeric tariff for the owner's already constructed fixed plan."""
-    if type(plan) is histogram.HistogramPlan:
-        return histogram.execution_work(plan)
+    if type(plan) in histogram.PLANS:
+        return histogram.plan_implementation(plan).execution_work(plan)
     n = plan.before.n
     shape = dict(plan.projection.shape)
     return (32*(n+1)*(shape['positive_multiplications']+shape['positive_additions'])
@@ -203,8 +203,8 @@ def _execute_owned_prediction(plan, n):
     immutable values only and cannot retain any of these argument aliases.
     This arithmetic remains in the explicitly trusted reference kernel.
     """
-    if type(plan) is histogram.HistogramPlan and plan.before.n == n:
-        return histogram.reference(plan)
+    if type(plan) in histogram.PLANS and plan.before.n == n:
+        return histogram.plan_implementation(plan).reference(plan)
     if type(plan) is not IndexedPredictionPlan or plan.before.n != n:
         raise ContractError('complete indexed execution plan required')
     before, query = plan.before, plan.query
@@ -242,19 +242,20 @@ class IndexedRangeBound:
 @dataclass(frozen=True)
 class IndexedReferenceMachine(ReferenceMachineModel):
     schema: IndexedRelation
-    budget: DecodeAllowance | histogram.HistogramAllowance
+    budget: DecodeAllowance | histogram.HistogramBudget
     model_id = 'packed-indexed-reference-payload-v3'
     initializer_id = 'indexed-uniform-unit-simplex-initializer-v1'
     program_type = IndexedRelation
 
     def __init__(self, n, budget):
         object.__setattr__(self, 'schema', IndexedRelation(n))
-        if type(budget) not in (DecodeAllowance, histogram.HistogramAllowance):
+        if type(budget) not in (DecodeAllowance, *histogram.ALLOWANCES):
             raise ContractError('registered indexed decoder allowance required')
         budget.__post_init__()
-        if type(budget) is histogram.HistogramAllowance:
-            histogram.enumeration_work(n, budget)
-            object.__setattr__(self, 'model_id', histogram.MODEL_ID)
+        if type(budget) in histogram.ALLOWANCES:
+            engine = histogram.implementation(budget)
+            engine.construction_work(n, budget)
+            object.__setattr__(self, 'model_id', engine.MODEL_ID)
         object.__setattr__(self, 'budget', budget)
 
     def require_program(self, program):
@@ -271,8 +272,8 @@ class IndexedReferenceMachine(ReferenceMachineModel):
 
     def evaluation_work(self, program, rules):
         self.require_program(program)
-        if type(self.budget) is histogram.HistogramAllowance:
-            return histogram.enumeration_work(program.n, self.budget)
+        if type(self.budget) in histogram.ALLOWANCES:
+            return histogram.implementation(self.budget).construction_work(program.n, self.budget)
         n, d = program.n, program.n*(program.n-1)//2
         # Pay the metadata schedule before planning. Numeric tables receive
         # a separate debit for their actual planned shape, including index
@@ -319,19 +320,22 @@ class IndexedReferenceMachine(ReferenceMachineModel):
         # Passive convenience. The fixed Runtime class has no plan producer
         # whose answer can differ from the private checker's unique result.
         self.require_program(program)
-        if type(self.budget) is histogram.HistogramAllowance:
-            with memoryview(bytearray(histogram.workspace_bytes(self.budget))) as scratch:
+        if type(self.budget) in histogram.ALLOWANCES:
+            engine = histogram.implementation(self.budget)
+            with memoryview(bytearray(engine.workspace_bytes(self.budget, n=program.n))) as scratch:
                 return _prepare_owned_prediction(program, rules, state, sources, budget=self.budget,
                     bit_limit=bit_limit, histogram_workspace=scratch)
         return _prepare_owned_prediction(program, rules, state, sources, budget=self.budget, bit_limit=bit_limit)
 
     def prediction_execution_work(self, plan):
-        if type(self.budget) is histogram.HistogramAllowance:
-            if type(plan) is not histogram.HistogramPlan or plan.n != self.schema.n or plan.before.pending:
+        if type(self.budget) in histogram.ALLOWANCES:
+            engine = histogram.implementation(self.budget)
+            if (type(plan) not in histogram.PLANS or histogram.plan_implementation(plan) is not engine
+                    or plan.n != self.schema.n or plan.before.pending):
                 raise ContractError('complete committed histogram execution plan required')
-            expected = histogram.passive_plan(plan.before, plan.query, self.budget, bit_limit=plan.bit_limit)
-            histogram.check_plan(plan, expected)
-            return histogram.execution_work(plan)
+            expected = engine.passive_plan(plan.before, plan.query, self.budget, bit_limit=plan.bit_limit)
+            engine.check_plan(plan, expected)
+            return engine.execution_work(plan)
         if type(plan) is not IndexedPredictionPlan or plan.before.n != self.schema.n:
             raise ContractError('complete indexed execution plan required')
         budget = replace(self.budget, integer_bits=min(self.budget.integer_bits, plan.bit_limit))

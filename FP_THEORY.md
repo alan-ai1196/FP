@@ -260,6 +260,14 @@ passes at3e85306:16 fixtures/48 phases,5354 outputs/1554 half;208 retained
 endpoints independently checked, peak job2051858432 bytes. No new Runtime,
 model outcome or class authority follows from this component evidence.
 
+The [owned carry-free implementation](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
+realizes those wide tables in one prepaid contiguous buffer. Forward
+compaction preserves the peak table-cell bound with two paid roots and
+explicit copy work. Its scoped CPU gate passes11919 queries,388 owned
+histories/776 phase triples and n256 profile continuations. A separate19-job
+actual Runtime gate is registered but not yet executed. This changes no
+Foundation/ERC-1 semantics and issues no constructor completeness certificate.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

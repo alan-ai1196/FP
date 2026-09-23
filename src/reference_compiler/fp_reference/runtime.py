@@ -80,15 +80,16 @@ class ConstructionContract:
     reference_integer_bits: int
     source_domain: tuple[tuple[F, ...], ...] | CategoricalPairDomain | None = None
     indexed_order_search: bool = False
-    indexed_histogram: histogram.HistogramAllowance | None = None
+    indexed_histogram: histogram.HistogramBudget | None = None
 
     def __post_init__(self):
         if self.indexed_histogram is not None:
-            if (type(self.indexed_histogram) is not histogram.HistogramAllowance
+            if (type(self.indexed_histogram) not in histogram.ALLOWANCES
                     or type(self.initializer_pattern) is not IndexedInitializer or self.indexed_order_search):
                 raise ContractError('histogram realization requires its fixed indexed family and traversal')
             self.indexed_histogram.__post_init__()
-            histogram.enumeration_work(self.initializer_pattern.n, self.indexed_histogram)
+            histogram.implementation(self.indexed_histogram).construction_work(
+                self.initializer_pattern.n, self.indexed_histogram)
         if type(self.indexed_order_search) is not bool or (self.indexed_order_search
                 and type(self.initializer_pattern) is not IndexedInitializer):
             raise ContractError('bounded order search requires the registered indexed native family')
@@ -470,7 +471,8 @@ class ReferenceCompilerRuntime:
                                       'retain-immutable-run-manifest')
         self._allocate(self._data_owner, (registered,))
         if contract.indexed_histogram is not None:
-            histogram_bytes = histogram.workspace_bytes(contract.indexed_histogram)
+            histogram_bytes = histogram.implementation(contract.indexed_histogram).workspace_bytes(
+                contract.indexed_histogram, n=contract.initializer_pattern.n)
             self._event_router.charge_work('information', {'work': histogram_bytes}, 'bind-histogram-storage')
             histogram_id = f'{self._runtime_id}:histogram-storage'
             self._ledger.allocate(self._data_owner, (ObjectSpec(histogram_id, 'exponent_histogram_workspace',

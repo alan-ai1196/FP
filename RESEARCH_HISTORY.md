@@ -7651,3 +7651,34 @@ table/scratch payment, complete owned state/plan binding, Runtime fresh/
 install continuations and larger model utility remain separate obligations.
 The old Gray-histogram production and its completed model are unchanged.
 No Foundation/ERC-1 action, full indexed release or class certificate follows.
+
+## 231. Realize carry-free histogram tables in one paid owned extent (2026-09-23)
+
+The theorem's abstract table-cell bound now has a physical construction.
+Keep live tables in a contiguous prefix, build each join/reduction after
+them, then compact retained tables forward. Increasing source order and
+destination<=source prove that no unread value is overwritten. The existing
+peak-cell bound suffices, with two additional paid roots; at most(n-1)C
+cell moves are added. The actual extent also contains wide coefficient
+arrays. Its fixed padding, copies, bit limits and host temporaries are
+explicitly separated from arithmetic and whole-job resource claims.
+
+The existing histogram registration now admits this fixed natural-order
+implementation. Complete state, information, reference/physical independent
+construction, lineage and continuations remain. There is no new native
+action or external engine/plan authority. Dense width failure stays UNRESOLVED.
+
+The CPU gate passes759 states/11919 queries,744462 prediction outputs/
+178611 half,16 larger/range fixtures through n256,388 actual histories/
+776 native phase triples, profiles and fresh evidence. n256 ordinary/profile
+learning also passes. Funding, bit/span/table limits, ten changed plans,
+seven endpoint and46 operation flips, short traces/outputs and four resize
+attempts are rejected without advancing the native predecessor. Legacy Gray
+and indexed CPU continuations pass. The minimal CPU artifact is retained.
+
+Register19 actual Runtime jobs under4 GiB/900 seconds each with unchanged
+numerical tolerances. The new gate includes n32 learned signed-band and n256
+profile continuations, fresh/install, underflow reversal, physical faults
+and legacy controls. Commit inputs before execution; retain every attempt.
+Actual owned GPU results, useful larger-model outcomes and full indexed
+release remain unclaimed at this registration cut.

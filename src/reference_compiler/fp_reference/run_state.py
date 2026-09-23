@@ -28,6 +28,10 @@ class ReferenceRunManifest:
 
     def __post_init__(self):
         from .histogram_decoder import MODEL_ID
+        from .packed_histogram_decoder import MODEL_ID as PACKED_MODEL_ID
+        if self.machine_id == PACKED_MODEL_ID:
+            object.__setattr__(self, 'reference_arithmetic',
+                               'indexed-literal-count-carry-free-histogram-reference-v1')
         if self.machine_id == MODEL_ID:
             object.__setattr__(self, 'reference_arithmetic',
                                'indexed-literal-count-positive-exponent-histogram-reference-v1')

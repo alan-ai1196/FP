@@ -7,10 +7,12 @@ The immutable histogram is a query plan, never a replacement learner state.
 from dataclasses import dataclass
 from fractions import Fraction as F
 import struct
+import sys
 
 from .core import ContractError, natural
 from .indexed_count import CountState, query as require_query, world_count
 from .semantics import ArithmeticUnresolved, _guard
+from .packed_histogram_decoder import PackedHistogramAllowance, PackedHistogramPlan
 
 MODEL_ID = 'packed-indexed-histogram-reference-payload-v1'
 WORK_MODEL = 'prepaid-packed-exponent-histogram-visits-v1'
@@ -34,7 +36,7 @@ class HistogramAllowance:
             raise ContractError('histogram declared span exceeds its finite integer implementation')
 
 
-def workspace_bytes(budget):
+def workspace_bytes(budget, *, n=None):
     if type(budget) is not HistogramAllowance:
         raise ContractError('immutable histogram allowance required')
     budget.__post_init__()
@@ -46,6 +48,10 @@ def enumeration_work(n, budget):
     workspace_bytes(budget)
     K = world_count(n, budget.world_cap)
     return 64*(n+1)*K+32*(2*(budget.span_cap+1)+n*(n-1)//2+1)
+
+
+def construction_work(n, budget):
+    return enumeration_work(n, budget)
 
 
 @dataclass(frozen=True)
@@ -164,6 +170,11 @@ def execution_work(plan):
     return 64*(plan.span+1)+128*(plan.n*(plan.n-1)//2+16)
 
 
+def table_statistics(plan):
+    return {'world_visits': plan.world_visits, 'incident_visits': plan.incident_visits,
+            'histogram_terms': plan.term_count}
+
+
 def reference(plan):
     from .indexed_execution import IndexedEvaluation
     if type(plan) is not HistogramPlan or plan.before.pending is not None:
@@ -186,3 +197,27 @@ def check_plan(plan, expected):
     if plan.before != expected.before or any(not _same_plan_value(value, vars(expected)[key])
             for key, value in vars(plan).items() if key != 'before'):
         raise ContractError('histogram plan differs from its complete native input')
+
+
+ALLOWANCES = (HistogramAllowance, PackedHistogramAllowance)
+PLANS = (HistogramPlan, PackedHistogramPlan)
+HistogramBudget = HistogramAllowance | PackedHistogramAllowance
+
+
+def implementation(budget):
+    """Two fixed integer realizations; no external engine registration."""
+    if type(budget) is HistogramAllowance:
+        return sys.modules[__name__]
+    if type(budget) is PackedHistogramAllowance:
+        from . import packed_histogram_decoder
+        return packed_histogram_decoder
+    raise ContractError('registered histogram allowance required')
+
+
+def plan_implementation(plan):
+    if type(plan) is HistogramPlan:
+        return sys.modules[__name__]
+    if type(plan) is PackedHistogramPlan:
+        from . import packed_histogram_decoder
+        return packed_histogram_decoder
+    raise ContractError('registered histogram execution plan required')

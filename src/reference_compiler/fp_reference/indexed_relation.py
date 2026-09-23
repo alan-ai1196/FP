@@ -290,7 +290,7 @@ class ReferenceView:
     state: counts.CountState
     query: tuple[int, int]
     source_values: tuple[F, ...]
-    budget: DecodeAllowance | histogram.HistogramAllowance
+    budget: DecodeAllowance | histogram.HistogramBudget
     order: tuple[int, ...]
     _partitions: dict = field(default_factory=dict, init=False, compare=False, repr=False)
 
@@ -306,7 +306,7 @@ class ReferenceView:
         if (type(self.source_values) is not tuple or any(type(v) not in (int, F) for v in self.source_values)
                 or self.source_values != expected):
             raise ContractError('cache source values differ from its complete ordered query')
-        if type(self.budget) not in (DecodeAllowance, histogram.HistogramAllowance):
+        if type(self.budget) not in (DecodeAllowance, *histogram.ALLOWANCES):
             raise ContractError('explicit decoder allowance required')
         self.budget.__post_init__()
         if (type(self.order) is not tuple or any(type(v) is not int for v in self.order)
@@ -356,11 +356,11 @@ class ReferenceView:
         if query not in (self.query, self.state.pending[:2] if self.state.pending else self.query):
             raise ContractError('a view retains only its bound and pending-event query partitions')
         if query not in self._partitions:
-            if type(self.budget) is histogram.HistogramAllowance:
-                plan = histogram.passive_plan(self.state, query, self.budget)
-                parts = histogram.exact_parts(plan)
-                stats = {'world_visits': plan.world_visits, 'incident_visits': plan.incident_visits,
-                         'histogram_terms': plan.term_count}
+            if type(self.budget) in histogram.ALLOWANCES:
+                engine = histogram.implementation(self.budget)
+                plan = engine.passive_plan(self.state, query, self.budget)
+                parts = engine.exact_parts(plan)
+                stats = engine.table_statistics(plan)
             else:
                 plan = partition_plan(self.state, query, self.order, self.budget)
                 parts, stats = frontier.decode(self.schema.n, self.state.counts, query, order=self.order)

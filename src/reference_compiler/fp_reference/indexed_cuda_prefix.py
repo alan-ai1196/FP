@@ -28,7 +28,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     planner = projected_amp if type(prefix.contract) is ProjectedIndexedCudaPrefixContract else indexed
     kernel = indexed
     if prefix.contract.histogram is not None:
-        planner = kernel = histogram_amp
+        planner = kernel = histogram_amp.implementation(prefix.contract.histogram)
     try:
         if (type(program) is not indexed.IndexedRelation or program.n != prefix.contract.n
                 or type(spec) is not IndexedLearner or spec.n != program.n
