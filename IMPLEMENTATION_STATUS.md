@@ -7,17 +7,18 @@ histograms with two directly computed base9 partitions: n+4H integer bits,
 the same elimination geometry and29 floating prediction outputs. Exact
 integer inference remains host work; only quantization/readout uses half
 and single precision. It has no production registration, owned resource
-debit or actual device evidence yet. The running n64 matrix retains its
+debit or actual device evidence yet. The terminal n64 matrix retains its
 existing implementations and fixed source.
 
-The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md)
-is registered, not yet executed. Two376-event tapes retain the full native
-learner and compare all three physical realizations with an independent exact
-joint posterior. Uniform geometry/bit/output bounds and122576 finite geometry
-checks pass;1120 small forecasts match full-assignment inference. The common
-model reader now supports the owned carry-free plan and explicitly declared
-evaluation subsets; all four passive reader paths/fault checks and the old
-n16 retained score reader pass. Production remains unchanged fromd600dba.
+The [n64 bounded-width model experiment](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
+now completes all six jobs at45b40b4, with production unchanged fromd600dba.
+Each processes376 events and1129 actual phases, checking every forecast
+against the exact joint posterior. In total2851739 primitive floating words,
+695013 half words,6774 full frames and1500 retained readouts pass. Peak job
+8342597632 bytes stays under16 GiB. Both existing controls complete; projected
+uses the fewest floating words and arena bytes on both seeds. No carry-free
+resource dominance, constructor certificate or full indexed release follows.
+All jobs are terminal and the standalone retained reader passes.
 
 The [owned carry-free implementation](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 now has paid contiguous wide tables, safe forward compaction, full native

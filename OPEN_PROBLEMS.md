@@ -8,18 +8,18 @@ question is faithful owned execution with paid host integer inference,
 independent physical construction, actual arithmetic, complete continuations
 and measured whole resources. Do not supply reference partitions through
 a helper, borrow the histogram gate, or infer throughput from floating
-word counts. Keep the registered n64 matrix intact before integrating this
-new implementation work.
+word counts. Preserve the terminal n64 matrix as its own source-bound result
+when integrating this new implementation work.
 
-The immediate larger-model question is now
-[registered at n64](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md):
-two376-event band-distributed tapes, existing global/projected AMP and
-carry-free execution, with the full joint posterior as exact control. The
-proved [uniform resource bounds](theory/proofs/BAND_MODEL_RESOURCE_BOUND.md)
-separate2^63 latent assignments from bounded table width without deleting
-counts or weakening the controls. Actual numerical/retention/whole-job and
-predictive outcomes remain untested. Do not substitute these conditional
-bounds for an actual model result or full indexed release.
+The larger-model question on the two declared n64 tapes is
+[closed](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md): all six
+global/projected/carry-free jobs complete at45b40b4 under the original limits.
+All2256 native comparisons,6774 actual phases/full frames and1500 readouts
+pass. Projected uses fewer floating words and arena bytes on both seeds;
+carry-free has no efficiency win here. The conditional resource bounds and
+these executions neither settle dense/all-pair tasks nor freeze the full
+indexed release. Do not rerun these terminal jobs as a substitute for the
+new realization's missing owned/device evidence.
 
 The [owned carry-free CPU gate](theory/proofs/OWNED_PACKED_HISTOGRAM.md)
 closes prepaid table/compaction construction, complete native continuation

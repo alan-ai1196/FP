@@ -7811,3 +7811,32 @@ the unchanged32768-bit cap. Dense n16 retains its join refusal. In total,
 conditional numerical construction, not an owned Runtime or device gate.
 Research proceeds in an isolated worktree of the same repository while
 the six n64 jobs keep their fixed45b40b4 inputs; integrate after they end.
+
+## 236. Complete the n64 matrix and reject a carry-free efficiency-win reading (2026-09-23)
+
+All six registered jobs at45b40b4 finish COMPLETE_MODEL under their original
+16-GiB/two-hour caps, without timeout or memory termination. Each retains
+all2016 counts and learns through126 training and250 evaluation events.
+Every native forecast equals the independent full joint posterior. Across
+the matrix,2256 native checks,6774 actual CUDA phases/full frames and1500
+retained readouts pass. Primitive traces contain2851739 floating words,
+including695013 half words. The standalone retained-data reader passes
+without another device execution; all jobs are terminal.
+
+Both strong physical controls succeed. Global uses578212/543076 words on
+the two seeds, projected55720/35488, and carry-free852575/786668. Projected
+also consumes the least arena space and has the smallest measured host
+peaks. Carry-free pays3264928 table/coefficient bytes and peaks at8342597632
+job bytes, still below16 GiB. Its uniform precision upper remains valid;
+this task supplies no carry-free resource dominance or isolated throughput
+claim. Exact joint unseen CE is0.3871848232/0.3902449657; all physical
+score differences are rounding effects on two exposed tapes.
+
+The248842-byte journal retains all six source/PID/resource outcomes and
+the minimal four-word readouts. Complete4-MiB frames remain paid even
+though compressed occupied payload is much smaller. The empty Compiler
+policy issues zero class decisions, spends no alpha and performs no
+installation. This closes the declared larger-model execution question,
+not dense-graph feasibility, architecture discovery or the full indexed
+release. Integrate the independent score-transfer and direct-partition
+research only after this terminal cut; Foundation/ERC-1 remain fixed.

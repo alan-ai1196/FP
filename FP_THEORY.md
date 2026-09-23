@@ -278,6 +278,14 @@ native counts; later off-band observations require new resource checks.
 This supports a declared n64 model test with strong exact/global/projected
 controls. It changes no semantics and supplies no unexecuted model outcome.
 
+The [actual n64 matrix](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md)
+subsequently completes all six jobs at45b40b4:2256 exact posterior checks,
+6774 CUDA phases/full frames and1500 retained readouts pass. Peak job is
+8342597632 bytes under16 GiB. Both existing controls complete, and projected
+uses fewer floating words and arena bytes than carry-free on both seeds.
+This establishes the declared bounded-width tapes, not resource dominance,
+architecture discovery or a full indexed release. All jobs are terminal.
+
 The [predictable score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
 connects the existing proper-mass probability bridge to calibrated log/Brier
 risk. With native p in[a,1-a] and |q-p|<=delta<a, conditional expected log

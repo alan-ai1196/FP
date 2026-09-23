@@ -2,6 +2,11 @@
 
 Status (2026-09-23): **REGISTERED BEFORE ACTUAL MODEL EXECUTION.**
 
+Execution at45b40b4 is now terminal: all six jobs complete and all retained
+readers pass. See [the source-bound results](BAND_MODEL_RESULTS.md).
+The declaration below is the registration used by those jobs; no inputs
+or limits were changed during execution.
+
 ## Question and fixed data
 
 Can the owned carry-free decoder complete a predictive learning task with

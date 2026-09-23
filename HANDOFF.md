@@ -1,18 +1,29 @@
 # FP Handoff
 
-**Current research: a complete n64 learning experiment with strong controls.**
-The [registered width-two task](experiments/joint_uncertainty/BAND_MODEL_PROTOCOL.md)
-has two fixed seeds,376 causal observations and2^63 latent assignments,
-retaining all2016 counts. Compare existing global/projected AMP and the owned
-carry-free path against an independent exact joint posterior. The
-[label-independent bound](theory/proofs/BAND_MODEL_RESOURCE_BOUND.md) gives
-join32/live832/arithmetic13373,24064 packed bits and6785 histogram outputs;
-the old global output bound is17770.122576 geometry cases and1120 independent
-full-assignment forecasts pass. CPU exact controls are retained; no actual
-model job has run yet. Commit inputs, then launch
-`scripts/run_band_model.py --attempt 1` and retain every outcome. Keep source
-fixed during the six fresh16-GiB/two-hour jobs. This is an explicit bounded
-input law, not a narrowed native state or an all-pair/population claim.
+**The n64 matrix is terminal: all six model jobs and readers pass.**
+[Results](experiments/joint_uncertainty/BAND_MODEL_RESULTS.md) at45b40b4:
+two376-event tapes, each run with global/projected/carry-free AMP, keep all
+2016 counts and the same exact joint posterior over2^63 latent assignments.
+2256 native checks,6774 CUDA phases and1500 retained evaluation readouts
+pass. Peak job8342597632 bytes stays under the original16-GiB cap. Both
+strong physical controls complete; carry-free uses more floating words
+than both on each seed, so this is no carry-free efficiency win. All jobs
+are terminal. Do not restart the matrix or infer a full indexed release.
+
+**Current research: remove the transient histogram where the claim needs
+only its fixed-base9 value.** The
+[direct-partition upper](theory/proofs/DIRECT_INTEGER_PARTITION_READOUT.md)
+has the same elimination geometry, n+4H-bit integers and29 floating
+prediction outputs, with uniform probability/gradient bounds0.000195701/
+0.001753567.11937 passive predictions and23874 target updates pass. All
+inference before that readout is exact host integer work. Its owned
+construction, full continuations and actual device path need their own
+evidence; do not borrow the carry-free gate or upload a reference answer.
+
+The [score-transfer law](theory/proofs/PREDICTABLE_SCORE_TRANSFER.md)
+gives a sharp calibrated log-regret bound at the pre-target cut and an
+owned n3 counterexample to retrospective completion selection. Its ideal-law
+band risk calculation is distinct from the two fixed-seed measurements.
 
 **Owned carry-free frontier closed within its declared component:** the
 [Runtime integration](theory/proofs/OWNED_PACKED_HISTOGRAM.md) passes its CPU
