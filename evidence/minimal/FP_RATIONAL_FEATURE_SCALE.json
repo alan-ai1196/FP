@@ -1,0 +1,414 @@
+{
+  "status": "PASS_RATIONAL_FEATURE_SCALE_NATIVE_AND_SCALAR_AUDIT",
+  "native": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "likelihood_scale": 20,
+      "native_scale": "10",
+      "graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 40,
+        "edges": 48,
+        "slots": 8,
+        "bindings": 0
+      },
+      "SUM_incidences": 40,
+      "exhaustive_native_triples": 72,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "likelihood_scale": 20,
+      "native_scale": "10",
+      "graph": {
+        "nodes": 33,
+        "sources": 6,
+        "state_reads": 0,
+        "SUMs": 18,
+        "PRODUCTs": 9,
+        "SUM_edges": 160,
+        "edges": 178,
+        "slots": 12,
+        "bindings": 0
+      },
+      "SUM_incidences": 160,
+      "exhaustive_native_triples": 342,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    },
+    {
+      "n": 4,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "likelihood_scale": 20,
+      "native_scale": "10",
+      "graph": {
+        "nodes": 58,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 34,
+        "PRODUCTs": 16,
+        "SUM_edges": 544,
+        "edges": 576,
+        "slots": 20,
+        "bindings": 0
+      },
+      "SUM_incidences": 544,
+      "exhaustive_native_triples": 32,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "likelihood_scale": 120,
+      "native_scale": "8",
+      "graph": {
+        "nodes": 22,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 14,
+        "PRODUCTs": 4,
+        "SUM_edges": 60,
+        "edges": 68,
+        "slots": 12,
+        "bindings": 0
+      },
+      "SUM_incidences": 60,
+      "exhaustive_native_triples": 72,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "likelihood_scale": 120,
+      "native_scale": "8",
+      "graph": {
+        "nodes": 41,
+        "sources": 6,
+        "state_reads": 0,
+        "SUMs": 26,
+        "PRODUCTs": 9,
+        "SUM_edges": 240,
+        "edges": 258,
+        "slots": 18,
+        "bindings": 0
+      },
+      "SUM_incidences": 240,
+      "exhaustive_native_triples": 342,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    },
+    {
+      "n": 4,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "likelihood_scale": 120,
+      "native_scale": "8",
+      "graph": {
+        "nodes": 74,
+        "sources": 8,
+        "state_reads": 0,
+        "SUMs": 50,
+        "PRODUCTs": 16,
+        "SUM_edges": 816,
+        "edges": 848,
+        "slots": 30,
+        "bindings": 0
+      },
+      "SUM_incidences": 816,
+      "exhaustive_native_triples": 32,
+      "profile_word_triples": 80,
+      "final_cursor": 78,
+      "final_optimizer_steps": 80
+    }
+  ],
+  "exact_noninteger_C5_over2_triples": 16,
+  "noninteger_RNE_schedule_refused": true,
+  "denominator_family": [
+    {
+      "q": "3",
+      "likelihood_scale_bits": 4,
+      "native_scale": 4,
+      "maximum_coefficient": 2,
+      "graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 40,
+        "edges": 48,
+        "slots": 8,
+        "bindings": 0
+      },
+      "complete_native_triples": 72
+    },
+    {
+      "q": "17",
+      "likelihood_scale_bits": 7,
+      "native_scale": 4,
+      "maximum_coefficient": 2,
+      "graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 40,
+        "edges": 48,
+        "slots": 8,
+        "bindings": 0
+      },
+      "complete_native_triples": 72
+    },
+    {
+      "q": "1000000007",
+      "likelihood_scale_bits": 32,
+      "native_scale": 4,
+      "maximum_coefficient": 2,
+      "graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 40,
+        "edges": 48,
+        "slots": 8,
+        "bindings": 0
+      },
+      "complete_native_triples": 72
+    },
+    {
+      "q": "1606938044258990275541962092341162602522202993782792835301377",
+      "likelihood_scale_bits": 203,
+      "native_scale": 4,
+      "maximum_coefficient": 2,
+      "graph": {
+        "nodes": 18,
+        "sources": 4,
+        "state_reads": 0,
+        "SUMs": 10,
+        "PRODUCTs": 4,
+        "SUM_edges": 40,
+        "edges": 48,
+        "slots": 8,
+        "bindings": 0
+      },
+      "complete_native_triples": 72
+    }
+  ],
+  "integer_part_boundary_cases": 858,
+  "complete_native_triples": 1676,
+  "nonzero_ambient_derivatives_at_fixed_zero_coefficients": 1102,
+  "scalar_RNE_predictions": 3376,
+  "scalar_RNE_observations": 3376,
+  "scalar_words_including_copies": 362366,
+  "half_rounding_operations": 6736,
+  "maximum_prediction_words": 29,
+  "maximum_observation_words": 93,
+  "distinct_fixed_coefficient_cache_roundings": 20,
+  "maximum_errors_outward": {
+    "4": {
+      "native": "0.000000158946",
+      "normalizer": "0.000000119210",
+      "probability": "0.000000039737",
+      "proper_mass_division": "0.000000022135",
+      "fixed_gradient": "0.000000041038",
+      "selected_gradient": "0.000000106864"
+    },
+    "8": {
+      "native": "0.000903572895",
+      "normalizer": "0.000000476838",
+      "probability": "0.000112946612",
+      "proper_mass_division": "0.000000046525",
+      "fixed_gradient": "0.000120619336",
+      "selected_gradient": "0.000723784580"
+    },
+    "10": {
+      "native": "0.001478370163",
+      "normalizer": "0.000000953675",
+      "probability": "0.000147848938",
+      "proper_mass_division": "0.000000051658",
+      "fixed_gradient": "0.000123775323",
+      "selected_gradient": "0.000990185132"
+    }
+  },
+  "all_history_bounds_outward": {
+    "4": {
+      "native": "0.000489115919",
+      "normalizer": "0.000001430512",
+      "probability": "0.000122398190",
+      "proper_mass_division": "0.000000119210",
+      "selected_gradient": "0.000327488195",
+      "fixed_gradient": "0.000489548053",
+      "coefficient_cache": "0.000000119210"
+    },
+    "8": {
+      "native": "0.001467228548",
+      "normalizer": "0.000003814698",
+      "probability": "0.000183522778",
+      "proper_mass_division": "0.000000119210",
+      "selected_gradient": "0.001268622220",
+      "fixed_gradient": "0.001467623429",
+      "coefficient_cache": "0.000000357628"
+    },
+    "10": {
+      "native": "0.001956284862",
+      "normalizer": "0.000005006791",
+      "probability": "0.000195747696",
+      "proper_mass_division": "0.000000119210",
+      "selected_gradient": "0.001758275688",
+      "fixed_gradient": "0.001956672292",
+      "coefficient_cache": "0.000000476838"
+    }
+  },
+  "directed_witness": {
+    "history": "01:label1 twice; query01",
+    "old_S120_native_error": "65863667/4117889024",
+    "new_C8_errors_by_target": [
+      {
+        "native": "8950209/16471556096",
+        "normalizer": "1/4194304",
+        "probability": "8950209/131772448768",
+        "proper_mass_division": "975811/46912497516544",
+        "fixed_gradient": "740133729/19542471835648",
+        "selected_gradient": "5551525/9952559104"
+      },
+      {
+        "native": "8950209/16471556096",
+        "normalizer": "1/4194304",
+        "probability": "8950209/131772448768",
+        "proper_mass_division": "975811/46912497516544",
+        "fixed_gradient": "656396262395/92453658414809088",
+        "selected_gradient": "1602857/15327035392"
+      }
+    ],
+    "fixed_zero_slot_gradient_on_initial_diagonal_label0": "1/20",
+    "equal_excess_different_fixed_gradient": {
+      "first_parts": [
+        [
+          30,
+          10
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      "second_parts": [
+        [
+          25,
+          15
+        ],
+        [
+          28,
+          12
+        ]
+      ],
+      "excess": [
+        8000,
+        4800
+      ],
+      "normalization": 80,
+      "first_fixed_gradient_difference": "-1/96",
+      "scope": "two free positive simplex states; no fixed-Gamma reachability claim"
+    },
+    "scope": "different native G/Gamma and passive scalar schedule; no original device verdict changed"
+  },
+  "inadmissible_scale_and_materialization_refusals": 2,
+  "general_bank": {
+    "labels": 3,
+    "queries": 2,
+    "hypotheses": 4,
+    "bases": [
+      "1",
+      "2",
+      "3"
+    ],
+    "sharp_scale": "18",
+    "complete_native_triples": 42,
+    "calibration": [
+      {
+        "hypothesis": 0,
+        "identical_signature_group": [
+          0,
+          3
+        ],
+        "block_length": 120,
+        "repetitions": 2,
+        "outside_group_mass_upper": "0.000000000001",
+        "limiting_normalizer_lower": "18",
+        "finite_prefix_gap_upper": "0.000000000001"
+      },
+      {
+        "hypothesis": 1,
+        "identical_signature_group": [
+          1
+        ],
+        "block_length": 120,
+        "repetitions": 2,
+        "outside_group_mass_upper": "0.000000000107",
+        "limiting_normalizer_lower": "18",
+        "finite_prefix_gap_upper": "0.000000002655"
+      },
+      {
+        "hypothesis": 2,
+        "identical_signature_group": [
+          2
+        ],
+        "block_length": 120,
+        "repetitions": 2,
+        "outside_group_mass_upper": "0.000000000004",
+        "limiting_normalizer_lower": "9",
+        "finite_prefix_gap_upper": "0.000000000009"
+      },
+      {
+        "hypothesis": 3,
+        "identical_signature_group": [
+          0,
+          3
+        ],
+        "block_length": 120,
+        "repetitions": 2,
+        "outside_group_mass_upper": "0.000000000001",
+        "limiting_normalizer_lower": "18",
+        "finite_prefix_gap_upper": "0.000000000001"
+      }
+    ]
+  },
+  "scope": "passive native G/Gamma/U and exact RNE law; no Runtime/AMP ownership, device job, lineage transport or constructor decision"
+}

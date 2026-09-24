@@ -16,6 +16,12 @@ terminal [rational A1/A2 jobs](RATIONAL_LIKELIHOOD_RUNTIME.md). It does not
 repair A1's verdict, resume either job, register a backend, or establish
 Runtime ownership or actual GPU conformance.
 
+The later [rational-feature construction](RATIONAL_FEATURE_SCALE.md) separates
+the likelihood denominator from the native scale by changing G/Gamma. It
+proves a sharp range law and a new complete scalar bound, including its
+different fixed-slot gradients. The S=120 counterexample here and its later
+actual refusal remain correct for this original native program/schedule.
+
 ## 1. The complete learner and its finite coordinate basis
 
 Use the existing finite joint-noise native Program, rational rates eta_j

@@ -47,6 +47,13 @@ This is a finite positive SUM construction; its actual incidences, world
 enumeration, initializer and decoding costs remain. No fitted likelihood
 or posterior is supplied by a helper to an owned Runtime.
 
+That common-denominator embedding is a sufficient construction, not a native
+range lower. The later [rational-feature law](RATIONAL_FEATURE_SCALE.md) proves
+the sharp fixed-base all-history normalizer optimum max b_y/ell_(x,y)(h),
+attained with fixed rational coefficient slots and the same selected update.
+Its different G/Gamma has its own full ambient gradients and scalar relation;
+the information and all-future state laws here do not change.
+
 After T commits, if c_a counts actual candidate-executed events,
 
 `w_k(c) proportional to pi_k PRODUCT_a ell_a(k)^c_a`, `SUM_a c_a=T`. (1)

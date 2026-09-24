@@ -487,6 +487,25 @@ independently reconstructs all 4,000 evaluation words after a tolerance-only
 reader counterexample. This is declared-tape evidence with zero constructor
 decisions, not a population or full indexed-release theorem.
 
+The [rational-feature scale law](theory/proofs/RATIONAL_FEATURE_SCALE.md)
+separates likelihood bit precision from native range. For a finite positive
+bank, fixed positive bases and every legal finite continuation, the optimal
+normalizer supremum is C*=max b_y/ell_(x,y)(h). Calibration concentrates a fixed
+positive prior on any complete likelihood signature and proves the lower even
+for nonconstant normalizers. Fixed rational SUM coefficients C*ell-b and the
+existing unit simplex U attain it. This is a sharp native range law, not a
+whole-resource optimum. A common denominator S=4q can grow without bound while
+the optimal native C stays 4; exact input/inference bit costs persist.
+
+The relation realization changes G/Gamma and has 2J fixed slots, including
+zeros with nonzero ambient derivatives, and a 4J complete gradient basis.
+An explicit integer-excess and half/single schedule now bounds all those
+coordinates at C=10/S=20 and C=8/S=120 within original tolerances. The 1,718
+exact native triples and 3,376 scalar RNE comparisons are passive evidence;
+no owned backend, lineage transport or actual device claim follows. The old
+S=120 native refusal and all completed model jobs remain terminal. Foundation,
+ERC-1 and constructor decision classes are unchanged.
+
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)
 at7815f08 under the prior resource and numerical envelope. All396 native

@@ -8736,3 +8736,70 @@ and full indexed-release status do not change. A new mathematical direction
 is whether fixed rational coefficient slots remove the artificial common-
 denominator native scale while preserving the complete ambient gradients;
 selected-posterior equivalence alone would not authorize state transport.
+
+## 257. Prove the likelihood-floor range optimum and remove integer-copy scale with complete rational-slot gradients (2026-09-25)
+
+Question whether the common likelihood denominator really has to set native
+range. It does not. For fixed positive readout bases and a finite positive
+likelihood bank, the sharp all-history normalizer supremum is
+C*=max_(x,y,h) b_y/ell_(x,y)(h). The lower initially follows at simplex vertices,
+but a stronger fixed-prior argument removes that premise: a legal block with
+each query's label frequencies equal to one hypothesis gives every distinct
+signature a strictly smaller likelihood by KL nonnegativity. Repetition
+concentrates on the chosen signature group, including duplicate hypotheses.
+Since every native mass remains at least its fixed base, any exact realization,
+even with a nonconstant normalizer, approaches the stated lower.
+
+Ordinary positive SUMs with fixed rational coefficients C*ell-b attain it.
+The existing ambient-gradient simplex law still gives the exact Bayesian
+update at unit rate. No new optimizer or semantic architecture action is
+needed. This is a range optimum, not a lower at a bounded horizon or a joint
+optimum for graph, memory, precision, time or whole experiment resources.
+
+For the joint relation bank use two fixed coefficients per rate and one
+incidence per pair in each world/label feature. Nodes stay 2n+n^2+2K+2;
+slots become K+2J and SUM incidences 2K(n^2+1), replacing the old common-
+denominator multiplicities. Rates (1/4,(q+1)/(4q)) have S=4q but optimal
+native C=4 and coefficients (2,0,2-1/q,1/q). Their graph size and native
+range stay fixed as q grows. Literal rational storage still pays log q bits,
+and exact inference pays its denominator- and history-dependent bit envelope.
+
+The new G/Gamma is not the old complete native learner. Its fixed gradients
+are u_j/C-v_jy/M and u_j/C-(u_j-v_jy)/M; selected gradients have the two
+usual likelihood classes per rate. A 4J basis suffices. The initial low-rate
+zero coefficient has gradient 1/20 on a diagonal label0. Two free positive
+simplex states give equal excess integers (8000,4800), Z=80 and every current
+head value yet differ in a fixed gradient by -1/96. No fixed-prior reachability
+is claimed for that second witness. Neither zero coefficient deletion nor
+transport based only on selected Bayes agreement is justified.
+
+Separate the likelihood scale S from native C in the positive construction:
+E_y=sum_j[(C*b_j-S)R_jy+(C*a_j-S)R_j,1-y], with sum E=(C-2)S*Z.
+The old two-excess half/single head law applies at amplitude C-2. A new
+single-mantissa ratio schedule supplies all fixed-gradient rate/parity
+fractions, and rational coefficient ingress is included in selected-gradient
+bounds. These complete all-history sup-norm bounds depend on C, not S, J,
+world count or T, conditional on exact funded construction and primitive
+conformance. Prediction uses at most 29 floating words; observation at most
+6+29J, including all 4J gradient copies. The default C=10 and three-rate C=8
+banks meet original state/probability tolerances. This does not make exact
+integer inference or whole-host execution free or constant-cost.
+
+The new passive audit passes 1,676 binary native triples, including exhaustive
+small words, six 80-event profile traces, 203-bit likelihood denominators and
+noninteger exact C=5/2. Forty-two three-label triples check unequal bases and
+all gradients; four calibration cases include duplicate signatures. The main
+rounding audit checks 3,376 predictions/observations, 362,366 words including
+copies, 6,736 half casts, 20 coefficient ingresses and 858 boundary part arrays,
+with exponent separation through 4000. There are 1,102 nonzero derivatives at
+fixed zero coefficients. Inadmissible scale, unfunded literal materialization
+and a noninteger scale under the integer-only RNE schedule refuse.
+
+The original S=120 two-event native error 65863667/4117889024 remains correct.
+At the same statistical history the different C=8 native program/schedule
+has mass error 8950209/16471556096 and passes both target gradient checks.
+All old actual jobs remain terminal; no device run or production edit occurs.
+The 10,785-byte artifact and RATIONAL_FEATURE_SCALE.md retain the proof,
+numerical scope and minimal witnesses. Foundation/ERC-1 and exact constructor
+decision classes stay unchanged. Next is owned execution for this complete
+new representation, including its fixed-slot state and physical input binding.

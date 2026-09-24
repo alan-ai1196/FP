@@ -1,5 +1,25 @@
 # FP Handoff
 
+**The denominator-driven native scale is a representation choice, not an
+intrinsic range lower.** The [rational-feature law](theory/proofs/RATIONAL_FEATURE_SCALE.md)
+proves the sharp all-history normalizer optimum C*=max b_y/ell_(x,y)(h).
+A calibration continuation establishes the lower even from a fixed positive
+prior, allowing nonconstant normalizers; native rational coefficient SUMs
+and the existing simplex U attain it. The rational input and exact inference
+bit costs remain. A family with S=4q has optimal native C=4 for unbounded q.
+
+This defines a different G/Gamma with 2J fixed slots and a 4J gradient basis.
+Zero coefficients retain ambient gradients. The complete passive scalar law
+meets original tolerances for default C=10/S=20 and C=8/S=120. The old S=120
+actual refusal remains terminal. Exact audits pass 1,718 native triples,
+3,376 scalar RNE predictions/observations and 362,366 words, including a
+203-bit denominator, profile clocks, zero coefficients and underflow boundaries.
+Read the proof and [10,785-byte artifact](evidence/minimal/FP_RATIONAL_FEATURE_SCALE.json).
+No production registration or actual GPU job changes. The next boundary is
+owned native indexing, complete fixed-gradient state and independently bound
+integer/physical execution for this new program; selected Bayes equivalence
+does not authorize transport from the old learner.
+
 **All four owned unknown-noise model jobs complete at 333cba1; terminal.**
 Read [the results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
 and original [journal](evidence/minimal/FP_UNKNOWN_NOISE_MODEL_A1.json).
@@ -18,9 +38,9 @@ the original tolerance-only reader admitted a one-bit mass alteration with
 recomputed divisions. This post-execution gap is closed without changing the
 original journal or rerunning any job; live Runtime was already strict.
 Use `scripts/run_unknown_noise_model.py --read evidence/minimal/FP_UNKNOWN_NOISE_MODEL_A1.json --reader-adversaries`.
-No model job remains live. The next research target is whether rational fixed
-coefficients remove denominator-driven native scale while preserving full
-native gradients; identical selected forecasts alone cannot license transport.
+No model job remains live. The rational-feature result above now closes the
+mathematical scale question; identical selected forecasts still cannot license
+transport between its new program and the executed integer-copy learner.
 
 **All 17 fresh owned joint AMP jobs pass at 2432a25; the gate is terminal.** Read
 [OWNED_JOINT_AMP](theory/proofs/OWNED_JOINT_AMP.md) and

@@ -1,5 +1,22 @@
 # FP Open Problems
 
+The [rational-feature theorem](theory/proofs/RATIONAL_FEATURE_SCALE.md)
+closes the native range question: with fixed positive readout bases, the sharp
+all-history normalizer supremum is max b_y/ell_(x,y)(h), attained by fixed
+rational SUM coefficients and the existing simplex U. Calibration proves the
+lower on fixed-positive-prior continuations, not only the free simplex.
+An unbounded common denominator can coexist with native C=4; input/inference
+bit costs remain. The new complete scalar law covers the changed fixed-slot
+gradients, including nonzero derivatives at zero coefficients, and removes
+the S=120 obstruction for a different C=8 G/Gamma.
+
+The remaining boundary is owned execution for this new program. Its complete
+native indexing and initializer, all 4J gradient coordinates, integer plans,
+paid resource/failure lifetime, actual RNE conformance and lineage must be
+bound inside Runtime before a device or installation claim. The executed old
+program cannot silently change Gamma or gradient layout. The range theorem
+does not optimize graph size, query width, whole-host cost or approximation.
+
 The [four-tape unknown-noise result](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
 closes the declared model execution question: all four RTX 3090 jobs complete,
 all native forecasts match an independent full joint posterior, and actual
@@ -9,13 +26,10 @@ These paired tapes establish neither population performance nor arbitrary
 query-width efficiency. A post-execution tolerance-only reader counterexample
 is closed by independent exact reconstruction of all retained output words.
 
-A remaining representation question is whether rational fixed coefficients
-can remove the native range dependence on a common likelihood denominator.
-The old integer-copy program chooses S=lcm(denominators); positivity alone
-does not obviously require that scale. Any alternative must keep its own
-G/Gamma, fixed-slot ambient gradients and complete phase state. Equality of
-selected Bayesian updates does not establish full-state equivalence or AMP
-authority, and the original S=120 refusal remains terminal.
+The original integer-copy program chooses S=lcm(denominators). The theorem
+above now proves that this scale need not set native range. Equality of
+selected Bayesian updates still does not establish full-state equivalence
+or AMP authority, and the original S=120 refusal remains terminal.
 
 The [joint AMP implementation and protocol](theory/proofs/OWNED_JOINT_AMP.md)
 bind physical state, actual causal inputs, independent integer

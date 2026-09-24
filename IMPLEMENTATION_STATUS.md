@@ -1,5 +1,18 @@
 # FP Implementation Status
 
+The [rational-feature construction](theory/proofs/RATIONAL_FEATURE_SCALE.md)
+is a new passive G/Gamma and scalar schedule, not a production edit.
+`rational_feature_scale.py` builds the literal native graph, all fixed and
+selected gradient classes, positive excess integers and exact half/single
+equations. `audit_rational_feature_scale.py` passes 1,676 binary and 42
+three-label complete native triples, 3,376 RNE predictions/observations and
+362,366 scalar words. Fixed zero coefficients have 1,102 nonzero derivatives.
+The old S=120 two-event counterexample remains; the different C=8 native bank
+passes its original tolerances under a complete all-history scalar bound.
+No owned representation, current-source binding, actual device conformance,
+lineage or install authority is registered for the new program. The production
+path and all completed experiment evidence below remain unchanged.
+
 The [unknown-noise model results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
 complete all four n64 jobs at 333cba1 through unchanged production from 2432a25.
 All 1,504 forecasts/count successors match an independent unsigned-history
