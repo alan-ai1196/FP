@@ -81,6 +81,7 @@ def prediction_diagnostics(predictions, path, bit_limit):
     """Paid by Runtime before scanning; no reevaluation or authority here."""
     from .indexed_execution import IndexedEvaluation
     from .joint_execution import JointEvaluation
+    from .rational_feature_amp import DecodedPrediction
     count = numerator = denominator = 0
     amin = amax = mmin = tmax = None
 
@@ -98,7 +99,7 @@ def prediction_diagnostics(predictions, path, bit_limit):
         decode = (lambda value: value.exact) if path in ('cpu-binary64', 'cuda-half-single') else (lambda value: value)
         for label in ('values', 'masses', 'probabilities', 'normalizer'):
             values = ((prediction.normalizer,) if label == 'normalizer' else
-                      prediction.activation_basis() if label == 'values' and type(prediction) in (IndexedEvaluation, JointEvaluation) else
+                      prediction.activation_basis() if label == 'values' and type(prediction) in (IndexedEvaluation, JointEvaluation, DecodedPrediction) else
                       getattr(prediction, label))
             for raw in values:
                 value = decode(raw)

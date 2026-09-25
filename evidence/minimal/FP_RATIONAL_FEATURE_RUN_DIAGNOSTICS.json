@@ -1,0 +1,11 @@
+{
+  "status": "PASS_RATIONAL_FEATURE_RUN_DIAGNOSTICS",
+  "complete_basis_vs_materialized_reports": 12,
+  "n64_world_expansion_prohibited": true,
+  "actual_rounded_coefficient_zero_distinguished_from_exact_nonzero": true,
+  "physical_minimum_positive_activation": "1",
+  "reference_minimum_positive_activation": "1/(2^200+1)",
+  "unscored_failed_and_empty_prediction_records_skipped": true,
+  "legacy_unit_mode_compared": true,
+  "scope": "passive run-report dispatch only; A1 failure unchanged; actual repaired CUDA closure remains unverified"
+}

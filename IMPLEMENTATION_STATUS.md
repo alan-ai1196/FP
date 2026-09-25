@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+A1 at e16c976 passes actual profiles and paired fresh install/continuation:
+228 checked phases,74 predictions and6,044 primitive words. The n64 case
+fails in the run-report reader's missing DecodedPrediction registration.
+Only that closed type list is repaired; the focused CPU report audit passes.
+The [A1 journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json) stays
+terminal. Repaired actual closure and eighteen unexecuted cases still need
+a separately registered continuation; numerical phases and transport are unchanged.
+
 The [rational-feature AMP implementation](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
 is registered through the existing closed joint contract, with distinct raw/
 resident types and physical IDs. It retains R/Z, 7+2J cache words and 4J gradient
@@ -7,9 +15,9 @@ words, and reuses the existing paid workspace, phase owner and resident
 transport. The exact 8,792-byte CPU gate passes 2,964 queries/5,928 observations,
 550,524 words, 248 full native triples and 108 zero/underflow boundary arrays.
 All feature coefficients and fixed gradients are checked. Legacy AMP CPU and
-Reference plan adversaries pass. Actual CUDA execution, paired fresh install
-and failure lifetime for this layout remain unverified; no new device run or
-release claim follows from this registration.
+Reference plan adversaries pass. The subsequent A1 jobs above establish only
+their declared profile/install executions; the full gate and release remain
+unverified.
 
 The [owned rational-feature reference implementation](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
 extends the existing joint descriptor with an explicit feature scale and a

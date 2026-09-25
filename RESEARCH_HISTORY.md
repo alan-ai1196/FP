@@ -8981,3 +8981,39 @@ pinned workspace/failure lifetime and profile exhaustion. A separate fresh
 four-event original unit-feature job checks the shared owner; no historical
 attempt is rerun. The preflight passes without Torch. Actual outcomes are
 still unverified at this registration commit.
+
+## 261. Establish actual rational-feature installation, expose a missing run-report consumer, and repair its closed registration (2026-09-25)
+
+Execute A1 at e16c976 under the preregistered fresh4-GiB/900-second jobs.
+Profiles pass58 phases/18 predictions/1,452 operation words, ending at
+cursor8 with optimizer steps8/10. Paired fresh installation passes170
+phases/56 predictions/4,592 operation words: admission16, install20,
+continuation36, alpha1/2 spent. The actual resident objects, arena, stream,
+complete reference learners and phase history are preserved across install.
+All228 phases receive independent full native comparisons; totals are6,044
+primitive words,148 half outputs and7,450 outputs including copies.
+
+The third job stops A1 during n64 finite-run sealing. prediction_diagnostics
+has a closed dispatch for old indexed caches but omits DecodedPrediction;
+it requests a nonexistent dense values array and raises AttributeError.
+Peak host commitment2,233,233,408 is below4 GiB; neither timeout nor memory
+termination occurs. No independent phase summary from that failed job is
+retained, so it is unscored. The remaining eighteen cases never run. Preserve
+the entire7,905-byte journal with its original status and execution source.
+
+Reproduce the same diagnostic failure on CPU without Torch, then add only
+DecodedPrediction to the existing closed activation-basis registration.
+Do not invent a dense values array or a generic callback. This is an
+implementation consumer mismatch, not a Foundation or arithmetic failure.
+The physical schedule, source binding, gradient/state relation, ownership,
+fresh process and install transport remain unchanged.
+
+A focused557-byte CPU audit compares twelve basis reports to complete native
+materializations, including the old unit-feature mode, and checks n64 while
+forbidding materialization. The physical rounded-zero coefficient is kept
+distinct from the exact positive coefficient: at q=2^200+1 the physical
+minimum nonzero activation is1, while Reference reports1/q. Failed and empty
+prediction records stay excluded. This diagnostic check does not prove
+actual repaired sealing. Register a separate continuation for the failed
+closure and eighteen unexecuted cases; do not rerun A1's passing jobs or
+relabel its partial outcome as a completed gate.

@@ -1,0 +1,186 @@
+{
+  "status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+  "execution_source": "e16c97619a34773a03d4c5aea05d519ea2ac8af3",
+  "registration": {
+    "status": "REGISTERED_BEFORE_RATIONAL_FEATURE_CUDA",
+    "production_anchor": "e98065e",
+    "cases": [
+      "profiles",
+      "fresh-install",
+      "large-closure",
+      "range-scale",
+      "wide-denominator",
+      "precision-refusal",
+      "reversal",
+      "unfunded",
+      "second-commit",
+      "prediction-word",
+      "coefficient-word",
+      "gradient-word",
+      "operation-word",
+      "old-output",
+      "target-swap",
+      "plan-roots",
+      "rate-parts",
+      "stored-parts",
+      "workspace",
+      "profile-refusal",
+      "legacy-unit"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true,
+    "budget": {
+      "join_cells": 64,
+      "live_cells": 1024,
+      "arithmetic": 32768,
+      "step_cap": 2048,
+      "integer_bits": 32768
+    },
+    "profile_integer_bits": 4096,
+    "wide_step_cap": 8,
+    "precision_step_cap": 100,
+    "arena_bytes": 33554432,
+    "allocator_cap": 67108864,
+    "output_cells": 128,
+    "frame_bytes_n2_n3": 65536,
+    "frame_bytes_n64": 524288,
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "activation_cap": "C-2",
+    "normalizer_cap": "2*(C-1)",
+    "forward_id": "rational-features-half-excess-single-coefficients-and-full-gradient-v1",
+    "evidence_encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+    "literal_audit_bits": 131072,
+    "reference_bits": 32768,
+    "report_error_upper_grid_bits": 48,
+    "expected_reference_refusal": "label0 after 81 diagonal-zero commits at q=2^200+1; last physical prediction passes",
+    "failure_policy": "stop at first unexpected failure; retain every outcome; no retry or changed cap within attempt",
+    "scope": "actual complete native AMP/cache/gradient conformance and owned continuation/fresh install; no model superiority, GPU integer inference or constructor completeness"
+  },
+  "workers": [
+    {
+      "case": "profiles",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2228207616,
+        "peak_job_commit": 2229424128,
+        "user_100ns": 43125000,
+        "kernel_100ns": 11093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3208,
+        "process_creation_100ns": 134347712287386681
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 3208,
+        "case": "profiles",
+        "result": {
+          "checked_phases": 58,
+          "independent_unsigned_RNE_predictions": 18,
+          "full_literal_native_phases": 58,
+          "actual_operation_words": 1452,
+          "actual_half_words": 36,
+          "output_words_including_copies": 1794,
+          "cursor": 8,
+          "table_bytes": 528896,
+          "packed_peak_bytes": 4714998,
+          "consumed_arena_bytes": 13520,
+          "largest_encoded_frame_bytes": 1446,
+          "maximum_relation_error_upper_bounds": {
+            "state_error": "31386584429/35184372088832",
+            "native_error": "415899183767/281474976710656",
+            "normalizer_error": "1/4194304",
+            "probability_error": "41589918377/281474976710656",
+            "division_error": "9455131/281474976710656"
+          },
+          "error_upper_grid_bits": 48,
+          "profile_events": 4,
+          "optimizer_steps": [
+            8,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "case": "fresh-install",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2229571584,
+        "peak_job_commit": 2230788096,
+        "user_100ns": 95468750,
+        "kernel_100ns": 15312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25124,
+        "process_creation_100ns": 134347712360145693
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 25124,
+        "case": "fresh-install",
+        "result": {
+          "checked_phases": 170,
+          "independent_unsigned_RNE_predictions": 56,
+          "full_literal_native_phases": 170,
+          "actual_operation_words": 4592,
+          "actual_half_words": 112,
+          "output_words_including_copies": 5656,
+          "cursor": 36,
+          "table_bytes": 1324306,
+          "packed_peak_bytes": 13475431,
+          "consumed_arena_bytes": 42576,
+          "largest_encoded_frame_bytes": 1612,
+          "maximum_relation_error_upper_bounds": {
+            "state_error": "239230768501/281474976710656",
+            "native_error": "269053100487/281474976710656",
+            "normalizer_error": "1/1048576",
+            "probability_error": "26905310049/281474976710656",
+            "division_error": "18729363/281474976710656"
+          },
+          "error_upper_grid_bits": 48,
+          "fresh_start_cursor": 16,
+          "paired_install_cursor": 20,
+          "post_install_continuation_to": 36,
+          "alpha_spent": "1/2",
+          "same_resident_objects_arena_and_stream": true,
+          "constructor_certificate": null
+        }
+      }
+    },
+    {
+      "case": "large-closure",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2232016896,
+        "peak_job_commit": 2233233408,
+        "user_100ns": 75625000,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2280,
+        "process_creation_100ns": 134347712489846142
+      },
+      "result": {
+        "status": "FAILED_AUDIT",
+        "process_id": 2280,
+        "case": "large-closure",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 504, in <module>\n    report.update(status=STATUS, result=worker(args.worker))\n                                        ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 447, in worker\n    return integration(case)\n           ^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 213, in integration\n    step(runtime, model, event)\n  File \"F:\\FP\\scripts\\audit_joint_cuda.py\", line 57, in step\n    result = runtime.observe(target)\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 43, in guarded\n    self._seal_run()\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 617, in _seal_run\n    diagnostics.append(cuda_diagnostics(self._cuda, self._contract.reference_integer_bits))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\cuda_run.py\", line 31, in cuda_diagnostics\n    return prediction_diagnostics(predictions, 'indexed-cuda-half-single', bit_limit)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\run_state.py\", line 102, in prediction_diagnostics\n    getattr(prediction, label))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'DecodedPrediction' object has no attribute 'values'\n"
+      }
+    }
+  ]
+}

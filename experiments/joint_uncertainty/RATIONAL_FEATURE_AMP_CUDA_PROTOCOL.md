@@ -1,6 +1,6 @@
 # Rational-feature AMP CUDA gate
 
-Registration date: 2026-09-25. Status: **REGISTERED BEFORE EXECUTION**.
+Registration date: 2026-09-25. Status: **A1 STOPPED; TERMINAL**.
 Production anchor: `e98065e`. The execution journal must name the full Git
 commit containing this protocol and the runner. Production files must remain
 identical to the anchor throughout the attempt.
@@ -135,3 +135,17 @@ and becomes evidence to investigate; it does not justify a semantic change.
 This gate claims no population model quality, learning superiority, GPU integer
 inference, constructor completeness or full indexed release. Foundation,
 ERC-1 and all existing exact decision classes remain unchanged.
+
+## A1 outcome (after execution)
+
+The [original journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
+retains execution at e16c976. Profiles and paired fresh installation pass,
+including continuation to36. The third job fails during n64 finite-run
+sealing: the closed diagnostic reader omits DecodedPrediction and requests
+a nonexistent dense `values` array. No job memory/time limit triggers. The
+remaining eighteen cases are unexecuted. A1 is terminal and unscored beyond
+its two passing jobs; its preregistration above is unchanged.
+
+The missing type registration is repaired separately and a focused CPU
+diagnostic audit passes. A continuation attempt must register its changed
+source before any further actual jobs; these original outcomes stay intact.

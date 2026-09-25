@@ -513,8 +513,11 @@ without world expansion and makes zero constructor decisions. The distinct
 [rational-feature AMP implementation](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
 now registers complete R/Z, rounded feature caches and fixed gradients in
 the existing owner. Its exact CPU gate passes 2,964 queries, 5,928 observations,
-550,524 words and 248 full native continuation triples. Actual CUDA and paired
-installation remain unverified. Old AMP types/IDs cannot adopt this new layout.
+550,524 words and 248 full native continuation triples. A1 subsequently passes
+the actual profile and paired-install jobs at e16c976, then fails n64 run
+sealing because its closed diagnostic list omits the new cache type. That
+consumer registration is repaired and CPU checked; repaired actual closure
+and the remaining cases are unverified. Old AMP types/IDs cannot adopt this new layout.
 No new semantic action or full indexed release follows.
 
 There is also a sharp exact-output precision obstruction. In the C=4 bank

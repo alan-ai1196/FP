@@ -1,7 +1,9 @@
 # Owned rational-feature AMP refinement
 
-Status (2026-09-25): **REGISTERED IMPLEMENTATION; EXACT CPU AUDIT PASS;
-ACTUAL CUDA AND PAIRED INSTALLATION UNVERIFIED**.
+Status (2026-09-25): **EXACT CPU PASS; A1 ACTUAL PROFILE AND PAIRED INSTALL
+JOBS PASS; A1 STOPS AT n64 RUN-SEALING MISMATCH**. The missing closed cache
+registration is now repaired and CPU checked. The repaired actual closure
+and remaining cases are still unverified.
 
 This implements the fixed physical schedule from
 [RATIONAL_FEATURE_SCALE.md](RATIONAL_FEATURE_SCALE.md) for the native program
@@ -170,9 +172,10 @@ The existing installation transport dispatches by the contract's closed
 native representation and validates the complete current resident class,
 raw state and every initialized tensor extent. The native descriptor/Gamma
 and the actual count/gradient state are preserved by the same resident
-identity transport. No new owner state is introduced. **Actual fresh paired
-crossing, installation reachability, failure lifetime and post-install
-continuation for this new physical layout still require device evidence.**
+identity transport. No new owner state is introduced. These physical claims
+require device evidence. **A1 in section6 now supplies its declared paired
+crossing/install and post-install continuation; complete failure lifetime
+and the remaining cases still need evidence.**
 The old 17-case joint GPU gate and four model tapes establish none of those
 new facts; their historical outcomes remain terminal.
 
@@ -225,9 +228,58 @@ against production anchor e98065e. Each job has a fixed4-GiB host cap and
 900-second deadline, with original tolerances and no within-attempt retries.
 The gate includes actual paired installation, complete coefficient/part/word
 binding, n64 closure, reversal and the exact-gradient precision refusal.
-Every result must be retained. These remain unresolved physical claims until
-the actual jobs run; they are not consequences of the CPU pass.
+Every result must be retained. The partial actual outcomes in section6 are
+separate from, and are not consequences of, the CPU pass.
 
 Foundation, ERC-1 and all existing `CERTIFIED_COMPLETE` decision classes are
 unchanged. A registered physical implementation is not a constructor optimum
 or a full indexed release.
+
+## 6. A1 actual outcomes and a missing complete-cache consumer
+
+The [original A1 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
+is terminal at source e16c97619a34773a03d4c5aea05d519ea2ac8af3. Two jobs pass:
+
+- Profiles: 58 checked phases,18 independent predictions,1,452 operation
+  words and36 half outputs; cursor8 coexists with steps8/10. Every phase has
+  a full literal native comparison. Peak host commitment2,229,424,128 bytes.
+- Fresh install: 170 checked phases,56 independent predictions,4,592 operation
+  words and112 half outputs. Admission at16, paired install at20, continued
+  execution to36, alpha1/2 spent. Resident objects, arena, stream, reference
+  states and phases are unchanged across the actual installation. Peak host
+  commitment2,230,788,096 bytes.
+
+Together these are 228 checked phases,74 predictions,6,044 operation words,
+148 half outputs and7,450 outputs including copies. They establish these two
+declared executions at that source, not the remainder of the gate or a
+population-quality claim.
+
+The third job, n64 closure, exits1 during finite-run sealing. The actual
+traceback identifies `prediction_diagnostics`: its closed cache-type list
+includes IndexedEvaluation and JointEvaluation but omits the new physical
+DecodedPrediction. It consequently tries to read a nonexistent dense `values`
+array. The job has no memory/time termination (peak2,233,233,408 bytes under
+4 GiB). No independently checked phase totals from that failed job are retained,
+so it is unscored. The remaining eighteen cases do not run.
+
+This is an implementation mismatch in a complete-state consumer, not a
+Foundation counterexample or numerical failure. A standalone CPU reproduction
+raises the same AttributeError without Torch. The repair adds the exact new
+decoded type to the existing closed activation-basis registration; it does
+not add a permissive callback, pretend the basis is a dense native array,
+change any numerical path or alter a resource bound.
+
+The [focused CPU audit](../../evidence/minimal/FP_RATIONAL_FEATURE_RUN_DIAGNOSTICS.json)
+compares twelve complete basis reports with full materializations, including
+the original unit-feature path. n64 materialization is prohibited while its
+complete basis report is checked. With q=2^200+1, the physical report correctly
+has minimum nonzero activation1 while the exact Reference reports1/q; the
+rounded coefficient zero cannot be silently replaced by exact Gamma.
+Failed and empty prediction records remain excluded. This passive audit
+does not seal a Runtime or prove repaired actual device closure.
+
+A separate continuation attempt must fix its source before running the
+failed closure and the eighteen unexecuted cases. A1 is never overwritten
+or relabeled as a complete gate. The profile/install evidence remains bound
+to its original source; only the closed run-report dispatch changes in the
+repair, while physical phases, resources, freshness and transport are intact.

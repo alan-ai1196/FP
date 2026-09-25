@@ -1,15 +1,27 @@
 # FP Handoff
 
+**A1 now proves actual rational-feature profiles and paired installation, but
+stops at a run-sealing mismatch.** The [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
+is terminal at e16c976: 228 checked phases/74 predictions/6,044 primitive words
+across the first two jobs. Install at20 continues to36 with the same resident
+objects, arena and stream. The n64 job fails because the closed diagnostic
+reader omitted DecodedPrediction and requested a dense `.values` array.
+No memory/time cap triggers; the remaining eighteen cases never ran.
+The exact type registration is repaired and a [focused CPU audit](evidence/minimal/FP_RATIONAL_FEATURE_RUN_DIAGNOSTICS.json)
+passes, including twelve full materialized comparisons and n64 without
+expansion. Register a separate continuation for the failed closure and
+unexecuted cases; do not overwrite/relabel A1 or rerun its passing jobs.
+
 The [21-case rational-feature CUDA protocol](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
-and runner are now preregistered against production e98065e, before any new
-device execution. Each case gets a fresh4-GiB/900-second Windows job, original
+and runner were preregistered against production e98065e before A1.
+Each case gets a fresh4-GiB/900-second Windows job, original
 tolerances and full unsigned-history/literal/RNE checks. It includes paired
 install, n64 closure, coefficient/part faults and the exact-gradient refusal.
-Execute only the new attempt; retain all outcomes and stop at an unexpected
-failure. The CPU result below is not an actual device result.
+The terminal A1 outcomes and required continuation are described above.
+The CPU result below is not an actual device result.
 
 **The distinct rational-feature AMP implementation passes its complete CPU
-gate; actual CUDA and paired installation remain unverified.** Read
+gate; the subsequent A1 outcomes are described above.** Read
 [the refinement](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md) and
 [8,792-byte evidence](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CPU.json).
 The existing owner dispatches from the complete G/Gamma into distinct closed
@@ -20,10 +32,9 @@ copies. The exact audit passes 396 reachable cuts, 2,964 queries, 5,928 target
 alternatives, 550,524 scalar words and 248 full native continuation triples.
 Another 108 scalar boundary arrays cover zero rows and exponent 2000. Forged
 equal-head parts, coefficients, gradients and operation words refuse. Legacy
-AMP CPU and Reference plan/input adversaries pass. No Torch or new GPU job ran.
-Next is a separately preregistered fresh-job CUDA gate for this committed
-source, including actual paired freshness/install and failure lifetime. Do not
-rerun historical attempts or infer physical evidence from this CPU gate.
+AMP CPU and Reference plan/input adversaries pass. These CPU audits import
+no Torch and run no device job. Actual evidence comes only from the separately
+registered jobs above; historical attempts remain terminal.
 
 **Rational-feature G/Gamma now runs inside the owned Reference Runtime.**
 Read [the refinement and precision boundary](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
@@ -36,7 +47,7 @@ execution checks all 12 gradients with 39,330 table bytes; paired indexed/litera
 reference freshness crosses at 20 and retains alpha 1/4 after retirement.
 All 516 small two-event histories/1,032 native triples and shared legacy
 partition/reference/AMP CPU regressions pass. The old AMP entrypoints refuse
-the new layout before device creation. No new GPU job has run.
+the new layout before device creation. No new GPU job had run at 86378bf.
 
 An exact resource obstruction is now proved and executed: in the C=4 bank
 with q=2^200+1, the 82nd prediction fits 16,532-bit integers, but its label0
