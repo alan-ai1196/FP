@@ -509,9 +509,13 @@ The [owned rational-feature reference refinement](theory/proofs/OWNED_RATIONAL_F
 now implements complete G/Gamma, fixed gradients and all unnormalized rate
 parts in the existing Runtime owner. Ordinary/profile phases and same-path
 fresh reference statistics match independent literal execution; n64 runs
-without world expansion and makes zero constructor decisions. The old AMP
-entrypoints explicitly refuse this new layout pending its separate physical
-registration. No new semantic action or full indexed release follows.
+without world expansion and makes zero constructor decisions. The distinct
+[rational-feature AMP implementation](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
+now registers complete R/Z, rounded feature caches and fixed gradients in
+the existing owner. Its exact CPU gate passes 2,964 queries, 5,928 observations,
+550,524 words and 248 full native continuation triples. Actual CUDA and paired
+installation remain unverified. Old AMP types/IDs cannot adopt this new layout.
+No new semantic action or full indexed release follows.
 
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed

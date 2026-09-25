@@ -1,0 +1,209 @@
+{
+  "status": "PASS_RATIONAL_FEATURE_AMP_CPU",
+  "scope": "complete actual-input plans, fixed RNE schedule, native coordinates and closed routing; no device execution",
+  "enumeration": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "native_scale": 10,
+      "likelihood_scale_bits": 5,
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 19080,
+      "half_words": 240,
+      "maximum_errors": {
+        "coefficient_cache": "0",
+        "native": "419589/999292928",
+        "normalizer": "1/1048576",
+        "probability": "671533/15988686848",
+        "proper_mass_division": "37110559/703687466942464",
+        "fixed_gradient": "91991397/1430307995648",
+        "selected_gradient": "566527/775946240"
+      }
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "native_scale": 10,
+      "likelihood_scale_bits": 5,
+      "reachable_cuts": 138,
+      "predictions": 1242,
+      "both_target_observations": 2484,
+      "words_including_copies": 199962,
+      "half_words": 2484,
+      "maximum_errors": {
+        "coefficient_cache": "0",
+        "native": "4223515/2858418176",
+        "normalizer": "1/1048576",
+        "probability": "844703/5716836352",
+        "proper_mass_division": "37110559/703687466942464",
+        "fixed_gradient": "91991397/1430307995648",
+        "selected_gradient": "8595967/10076815360"
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "native_scale": 8,
+      "likelihood_scale_bits": 7,
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 26160,
+      "half_words": 240,
+      "maximum_errors": {
+        "coefficient_cache": "1/6291456",
+        "native": "8950209/16471556096",
+        "normalizer": "1/2097152",
+        "probability": "8950209/131772448768",
+        "proper_mass_division": "5950697/140737496743936",
+        "fixed_gradient": "200895297458834935/2959765212591955116032",
+        "selected_gradient": "18394867329/28341676015616"
+      }
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "native_scale": 8,
+      "likelihood_scale_bits": 7,
+      "reachable_cuts": 138,
+      "predictions": 1242,
+      "both_target_observations": 2484,
+      "words_including_copies": 274482,
+      "half_words": 2484,
+      "maximum_errors": {
+        "coefficient_cache": "1/6291456",
+        "native": "62326379/105224601600",
+        "normalizer": "1/2097152",
+        "probability": "62326379/841796812800",
+        "proper_mass_division": "5950697/140737496743936",
+        "fixed_gradient": "200895297458834935/2959765212591955116032",
+        "selected_gradient": "18394867329/28341676015616"
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/3"
+      ],
+      "native_scale": 3,
+      "likelihood_scale_bits": 2,
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 11760,
+      "half_words": 180,
+      "maximum_errors": {
+        "coefficient_cache": "0",
+        "native": "1/12582912",
+        "normalizer": "1/8388608",
+        "probability": "3/83886080",
+        "proper_mass_division": "2330169/105553120460800",
+        "fixed_gradient": "1/25165824",
+        "selected_gradient": "1/15728640"
+      }
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/4",
+        "803469022129495137770981046170581301261101496891396417650689/3213876088517980551083924184682325205044405987565585670602754"
+      ],
+      "native_scale": 4,
+      "likelihood_scale_bits": 203,
+      "reachable_cuts": 30,
+      "predictions": 120,
+      "both_target_observations": 240,
+      "words_including_copies": 19080,
+      "half_words": 240,
+      "maximum_errors": {
+        "coefficient_cache": "1/1606938044258990275541962092341162602522202993782792835301377",
+        "native": "24897093413285957751074447182146966906074677393454621192023757718630876173252101631189882183537456521894470883613187937737731415126307912678541276207205856983820892488592934530606699/522129892458594728695812790569338759410083218450381461781982421245063135580822761728558444131547604321948695714056004373801400672055822143163917537366697989571670270012398018450585099960320",
+        "normalizer": "0",
+        "probability": "24897093413285957751074447182146966906074677393454621192023757718630876173252101631189882183537456521894470883613187937737731415126307912678541276207205856983820892488592934530606699/2088519569834378914783251162277355037640332873801525847127929684980252542323291046914233776526190417287794782856224017495205602688223288572655670149466791958286681080049592073802340399841280",
+        "proper_mass_division": "0",
+        "fixed_gradient": "619865260429887022250425597057894877408877290836152835780198117507792061782010933794372588402256070876557067506565093620441769389827010096754278349571470530205051644937951936125956278310305600587855624437361435608858802656462166618558092074721887196056125071216415848988734272963397803144669580040012390416617060480920531223533532150771750510147122874220018593545/20799226730256934855784392667538533727164509251705913516843870879914656828172856137890115281199457540452959613782153977779577675920027873577148871829886892896054456914990178089236677117141100463824987428366804520399826299919849894131845049381390499760419238065864301969540369659318064940774195029823185764310698681404353097865667410769949901329013820531381461816168153088",
+        "selected_gradient": "4445342955253236182719901193814171864763172214877272184283429955541711023677502102070212281758938823323588177502071076711114685370696367538174940005939949451231785997405982268824410557473448763077507063684256553359505225484939611112091127355/111870718431542817204760874740917337854381793641291611443131034192020564327161298894871365970939701761809611409703984843908270425251456033727008294247770994046399065127465851405938585315107341980294552213515896220474681318505423471233571481964249088"
+      }
+    }
+  ],
+  "native": [
+    {
+      "native_scale": 10,
+      "complete_literal_native_triples": 80,
+      "all_coefficients_fixed_and_selected_gradients_checked": true,
+      "final_cursor": 78,
+      "optimizer_steps": 80,
+      "maximum_complete_cache_error": "4223515/2858418176"
+    },
+    {
+      "native_scale": 8,
+      "complete_literal_native_triples": 80,
+      "all_coefficients_fixed_and_selected_gradients_checked": true,
+      "final_cursor": 78,
+      "optimizer_steps": 80,
+      "maximum_complete_cache_error": "51936211887727949805247375119/52206718644394073244352733249536"
+    },
+    {
+      "native_scale": 4,
+      "complete_literal_native_triples": 8,
+      "all_coefficients_fixed_and_selected_gradients_checked": true,
+      "final_cursor": 6,
+      "optimizer_steps": 8,
+      "maximum_complete_cache_error": "1/1606938044258990275541962092341162602522202993782792835301377"
+    },
+    {
+      "native_scale": 3,
+      "complete_literal_native_triples": 80,
+      "all_coefficients_fixed_and_selected_gradients_checked": true,
+      "final_cursor": 78,
+      "optimizer_steps": 80,
+      "maximum_complete_cache_error": "1/34603008"
+    }
+  ],
+  "adversaries": {
+    "equal_head_changed_parts_refusals": 4,
+    "changed_readout_or_coefficient_words": 11,
+    "changed_gradient_words": 8,
+    "changed_prediction_operations": 26,
+    "changed_gradient_operations": 56,
+    "omitted_extra_or_mistyped_traces": 3,
+    "wrong_or_boolean_target_refusals": 2,
+    "missing_or_mistyped_complete_coordinates": 4,
+    "output_step_and_precision_refusals": 3
+  },
+  "registration": {
+    "distinct_complete_registration": true,
+    "old_graph_or_backend_identity_refusals": 3,
+    "unsupported_noninteger_or_large_scale_refusals": 4,
+    "actual_owner_routing_checked_without_device": true,
+    "zero_fixed_coefficient_retains_nonzero_gradient": true,
+    "S120_C8_native_error": "8950209/16471556096",
+    "original_tolerances_pass": true,
+    "torch_imported": false,
+    "scope": "exact scalar/type audit; no actual CUDA or paired installation evidence"
+  },
+  "boundaries": {
+    "synthetic_arrays": 108,
+    "words_including_copies": 18216,
+    "zero_parity_parts": 198,
+    "largest_binary_exponent": 2000,
+    "narrower_4096_bit_allowance_preserves_words": true,
+    "scope": "scalar array boundaries, including zero rows; no assertion of reachable canonical count cuts"
+  }
+}

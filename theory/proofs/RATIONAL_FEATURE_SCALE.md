@@ -367,4 +367,9 @@ an exact-gradient denominator obstruction despite native C=4: prediction fits
 while a materialized fixed gradient exceeds the reference bit limit. The
 Runtime retains the target and predecessor and returns UNRESOLVED. That
 boundary does not contradict the range optimum or conditional scalar bounds
-here. The new physical path remains unregistered.
+here.
+
+The subsequent [owned AMP code and CPU gate](OWNED_RATIONAL_FEATURE_AMP.md)
+registers all rate parts, rounded coefficient caches and fixed gradients
+inside the existing owner. Actual CUDA and paired installation remain
+unverified; scalar conformance alone supplies neither claim.

@@ -9,12 +9,13 @@ from .indexed_execution import CategoricalPairDomain
 from .joint_relation import JointRelation, initialize, commit, attach
 from .joint_execution import JointLearner, closed
 from .cuda_prefix import IndexedCudaPhase
-from . import cuda_learner as gpu, joint_amp as joint
+from . import cuda_learner as gpu
 
 
 def execute(prefix, object_id, kind, program, candidate, reference, *, rules, spec, bit_limit,
             ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
             normalizer_cap, activation_cap, source_domain, readout_buffer, workspace):
+    joint = prefix.joint_implementation
     source = prefix.staged if origin == 'profile' or kind == 'commit' else prefix.current
     input_id = None if kind == 'initialize' else source[candidate]
     prediction_id = prefix.predicted.get(candidate) if kind == 'observe' else None
@@ -25,7 +26,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     before_raw = before_prediction = None
     try:
         closed(program, JointRelation)
-        joint.require_unit_feature_model(program)
+        joint.require_model(program)
         closed(spec, JointLearner)
         closed(source_domain, CategoricalPairDomain)
         spec.__post_init__()
@@ -55,7 +56,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             plan = joint._prepare_prediction(program, before_raw, rules, sources,
                 output_cap=prefix.contract.phase_output_cells, budget=prefix.contract.partitions,
                 workspace=workspace, bit_limit=bit_limit)
-        expected_cells = plan.output_cells if kind == 'predict' else 6+8*len(program.rates) if kind == 'observe' else 0
+        expected_cells = (joint.prediction_output_cells(plan) if kind == 'predict' else
+                          joint.observation_output_cells(before_prediction) if kind == 'observe' else 0)
         joint.allowance(max(1, expected_cells), prefix.contract.phase_output_cells, 'joint CUDA phase output allowance')
         scalar_bits = min(bit_limit, prefix.contract.partitions.integer_bits)
         with prefix.arena.phase(object_id) as arena_phase:
@@ -92,8 +94,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 joint.check_prediction_plan(plan, program, before_raw, rules, sources,
                     output_cap=prefix.contract.phase_output_cells, budget=prefix.contract.partitions,
                     workspace=workspace, bit_limit=bit_limit)
-                actual = joint.JointAmpPrediction(actual_prediction.before, actual_prediction.query,
-                    arena_phase.raw_words((actual_prediction.readout,), readout_buffer)[0])
+                actual = replace(actual_prediction.raw(),
+                    words=arena_phase.raw_words((actual_prediction.readout,), readout_buffer)[0])
                 checked = joint.check_prediction_execution(plan, before_raw, actual, arithmetic.raw_trace(), bit_limit=scalar_bits)
                 relation = joint.check_prediction(reference_prediction, actual, tolerance,
                     normalizer_cap=normalizer_cap, activation_cap=activation_cap, bit_limit=bit_limit)

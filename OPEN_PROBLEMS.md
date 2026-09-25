@@ -1,12 +1,22 @@
 # FP Open Problems
 
+The [rational-feature AMP code and exact CPU gate](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
+now preserve the complete physical cache, all rate parts and fixed gradients.
+The next unresolved claim is actual CUDA conformance and paired installation
+for this layout. Preregister a new source-bound fresh-job gate and test native
+primitive/state agreement, coefficient and part binding, profile clocks,
+freshness/install continuation, n64 closure and retained failures. The CPU
+evidence supplies none of those actual physical facts, and completed old
+device attempts remain terminal. No further static special case is needed
+to attempt this gate.
+
 The [owned rational-feature reference path](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
 now preserves the changed G/Gamma, all unnormalized rate parts and fixed
 gradients inside the existing owner. Ordinary execution, profiles, reference
 freshness and failure lifetime pass, including n64 and large denominators.
-The next physical boundary is the complete rational-feature AMP realization
-and same-lineage paired installation. Old AMP entrypoints currently refuse
-this layout; a passive scalar law cannot substitute for its actual execution.
+The subsequent AMP implementation/CPU audit above now supplies its fixed
+schedule and closed ownership routing. Same-lineage paired installation still
+needs actual device evidence. Old AMP types continue to refuse this layout.
 
 The same implementation exposes a genuine exact-gradient precision limit.
 For an explicit legal diagonal continuation, a fixed gradient's reduced

@@ -155,10 +155,10 @@ class JointCudaPrefixContract(CudaPrefixContract):
         closed(self.partitions, JointPartitionAllowance)
         self.schema.__post_init__()
         self.partitions.__post_init__()
-        joint_amp.require_unit_feature_model(self.schema)
+        physical = joint_amp.implementation(self.schema)
         if self.likelihood_encoding is not None:
             raise ContractError('joint indexed lowering cannot substitute a dense likelihood representation')
-        return joint_amp.BACKEND_ID, joint_amp.WORK_MODEL, joint_amp.FORWARD_ID
+        return physical.BACKEND_ID, physical.WORK_MODEL, physical.FORWARD_ID
 
     def __post_init__(self):
         super().__post_init__()
@@ -314,6 +314,11 @@ class _CudaPrefix:
     def joint(self):
         return type(self.contract) is JointCudaPrefixContract
 
+    @property
+    def joint_implementation(self):
+        from .joint_amp import implementation
+        return implementation(self.contract.schema)
+
     def relation_work(self, program, rules):
         if self.joint:
             return 512*(program.n*(program.n-1)//2+2*program.n+8*len(program.rates)+32)
@@ -324,8 +329,7 @@ class _CudaPrefix:
 
     def forward_work(self, program, rules):
         if self.joint:
-            from .joint_amp import forward_work
-            return forward_work(program, self.contract.partitions, self.contract.phase_output_cells)
+            return self.joint_implementation.forward_work(program, self.contract.partitions, self.contract.phase_output_cells)
         if self.indexed:
             if self.contract.histogram is not None:
                 from .histogram_amp import implementation
@@ -351,8 +355,7 @@ class _CudaPrefix:
     def check_queue(self, rules, raw, *, bit_limit):
         if self.indexed:
             from .indexed_amp import IndexedAmpState
-            from .joint_amp import JointAmpState
-            if type(raw) is not (JointAmpState if self.joint else IndexedAmpState) or rules.states:
+            if type(raw) is not (self.joint_implementation.JointAmpState if self.joint else IndexedAmpState) or rules.states:
                 raise ContractError('indexed CUDA lost its declared empty delayed interface')
             raw.__post_init__()
             return
@@ -361,7 +364,7 @@ class _CudaPrefix:
 
     def stored_probability(self, raw, target, *, bit_limit):
         if self.joint:
-            from .joint_amp import stored_probability
+            stored_probability = self.joint_implementation.stored_probability
         elif self.indexed:
             from .indexed_amp import stored_probability
         else:
@@ -377,8 +380,7 @@ class _CudaPrefix:
     def check_state(self, reference, raw, *, bit_limit):
         tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
         if self.joint:
-            from .joint_amp import check_state as joint_check
-            return joint_check(reference, raw, tolerance, bit_limit=bit_limit)
+            return self.joint_implementation.check_state(reference, raw, tolerance, bit_limit=bit_limit)
         if self.indexed:
             from .indexed_amp import check_state as indexed_check
             return indexed_check(reference, raw, tolerance, bit_limit=bit_limit)

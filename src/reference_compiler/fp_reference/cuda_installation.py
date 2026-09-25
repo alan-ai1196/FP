@@ -112,8 +112,7 @@ def _frame(prefix, candidates):
         arena._fail('CUDA installation found a lost or additional published learner binding')
     current = []
     from .indexed_amp import ResidentState
-    from .joint_amp import ResidentState as JointResidentState
-    state_type = JointResidentState if prefix.joint else ResidentState if prefix.indexed else gpu.CudaLearnerState
+    state_type = prefix.joint_implementation.ResidentState if prefix.joint else ResidentState if prefix.indexed else gpu.CudaLearnerState
     for candidate in candidates:
         phase_id = prefix.current[candidate.candidate_id]
         record, value = prefix.phases.get(phase_id), prefix._values.get(phase_id)

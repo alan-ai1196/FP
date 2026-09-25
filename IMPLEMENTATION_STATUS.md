@@ -1,5 +1,16 @@
 # FP Implementation Status
 
+The [rational-feature AMP implementation](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
+is registered through the existing closed joint contract, with distinct raw/
+resident types and physical IDs. It retains R/Z, 7+2J cache words and 4J gradient
+words, and reuses the existing paid workspace, phase owner and resident
+transport. The exact 8,792-byte CPU gate passes 2,964 queries/5,928 observations,
+550,524 words, 248 full native triples and 108 zero/underflow boundary arrays.
+All feature coefficients and fixed gradients are checked. Legacy AMP CPU and
+Reference plan adversaries pass. Actual CUDA execution, paired fresh install
+and failure lifetime for this layout remain unverified; no new device run or
+release claim follows from this registration.
+
 The [owned rational-feature reference implementation](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
 extends the existing joint descriptor with an explicit feature scale and a
 distinct G/Gamma/machine identity. It retains 2J additional integer roots in
@@ -14,7 +25,8 @@ The exact-gradient denominator obstruction refuses observation after 81
 commits at 32768 bits, preserving its actual target and predecessor; the final
 prediction itself passes. Legacy partition, full reference and AMP CPU suites
 pass. Old physical entrypoints explicitly reject rational-feature layouts.
-No new owned AMP or installation registration, device run or release follows.
+That Reference result alone supplies no physical evidence. The subsequent AMP
+code/CPU registration above still supplies no actual device or install result.
 
 The [rational-feature construction](theory/proofs/RATIONAL_FEATURE_SCALE.md)
 initially supplied a passive G/Gamma and scalar schedule at 2d0184f.

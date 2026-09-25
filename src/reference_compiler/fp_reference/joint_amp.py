@@ -34,6 +34,30 @@ def require_unit_feature_model(model):
         raise ContractError('rational-feature G/Gamma requires its own complete AMP gradient and cache registration')
 
 
+require_model = require_unit_feature_model
+
+
+def implementation(model):
+    """Closed dispatch by the complete native description, never a callback."""
+    closed(model, JointRelation)
+    model.__post_init__()
+    if model.feature_scale is not None:
+        from . import rational_feature_amp
+        rational_feature_amp.require_model(model)
+        return rational_feature_amp
+    from . import joint_amp
+    return joint_amp
+
+
+def prediction_output_cells(plan):
+    return plan.output_cells
+
+
+def observation_output_cells(prediction):
+    prediction.__post_init__()
+    return 6+8*len(prediction.before.model.rates)
+
+
 @dataclass(frozen=True)
 class JointAmpState:
     encoded: JointCountState

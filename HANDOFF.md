@@ -1,5 +1,22 @@
 # FP Handoff
 
+**The distinct rational-feature AMP implementation passes its complete CPU
+gate; actual CUDA and paired installation remain unverified.** Read
+[the refinement](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md) and
+[8,792-byte evidence](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CPU.json).
+The existing owner dispatches from the complete G/Gamma into distinct closed
+raw/resident types. It keeps every canonical rate/parity part, all 7+2J cache
+words (including rounded feature coefficients) and all 4J gradient words.
+Prediction costs at most 29+4J outputs; observation at most 6+29J, including
+copies. The exact audit passes 396 reachable cuts, 2,964 queries, 5,928 target
+alternatives, 550,524 scalar words and 248 full native continuation triples.
+Another 108 scalar boundary arrays cover zero rows and exponent 2000. Forged
+equal-head parts, coefficients, gradients and operation words refuse. Legacy
+AMP CPU and Reference plan/input adversaries pass. No Torch or new GPU job ran.
+Next is a separately preregistered fresh-job CUDA gate for this committed
+source, including actual paired freshness/install and failure lifetime. Do not
+rerun historical attempts or infer physical evidence from this CPU gate.
+
 **Rational-feature G/Gamma now runs inside the owned Reference Runtime.**
 Read [the refinement and precision boundary](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
 and [7,499-byte audit](evidence/minimal/FP_RATIONAL_FEATURE_REFERENCE_RUNTIME.json).
@@ -19,8 +36,8 @@ fixed gradient has an irreducible 32,863-bit denominator. The 32768-bit
 reference contract correctly refuses observation after 81 commits, preserving
 the target and predecessor. A separate 131072-bit literal audit confirms it.
 This is a limit for materialized exact gradients, not every symbolic encoding.
-The next boundary is the owned rational-feature AMP schedule and paired
-installation, with all rate-part inputs and fixed gradients independently bound.
+The subsequent AMP code and CPU audit are described above; actual paired
+installation and device conformance remain the next boundary.
 
 **The denominator-driven native scale is a representation choice, not an
 intrinsic range lower.** The [rational-feature law](theory/proofs/RATIONAL_FEATURE_SCALE.md)

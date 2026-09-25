@@ -1997,7 +1997,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         record = self._cuda_learner_record(state, staged=staged)
         if self._cuda.indexed:
             if self._cuda.joint:
-                from .joint_amp import range_bound
+                range_bound = self._cuda.joint_implementation.range_bound
             else:
                 from .indexed_amp import range_bound
             self._event_router.charge_work('information', {'work': self._cuda.relation_work(program, rules)},

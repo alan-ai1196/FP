@@ -8883,3 +8883,74 @@ refinement, results and precision lower. Foundation/ERC-1 and all existing
 CERTIFIED_COMPLETE classes are unchanged. Next is the separately owned
 rational-feature AMP schedule, actual primitive/native-state conformance and
 paired installation using all physical rate parts and fixed gradients.
+
+## 259. Register the complete rational-feature AMP layout and pass its exact CPU gate (2026-09-25)
+
+Carry the rational-feature G/Gamma into the existing physical owner without
+changing its native program or unit-simplex U. The same closed joint contract
+dispatches by the complete descriptor into distinct raw/resident classes and
+physical IDs. The original integer-copy module and its IDs continue to reject
+the new layout. Integer C in [3,2^24] is the explicit physical schedule class;
+noninteger C and oversized C return UNRESOLVED, even where exact Reference
+semantics are available. No new constructor class, owner field or optimizer
+action is added.
+
+Complete physical prediction requires more than the seven readout words.
+Retain all canonical R_jy and Z, plus actual RNE32 words for all 2J rational
+feature coefficients. The resident cache therefore has 7+2J words. Non-head
+native activations decode those actual coefficient words; substituting exact
+Gamma there would omit a physical rounding error. Observation retains every
+fixed derivative, including nonzero derivatives at fixed zeros, and all
+selected rate/parity classes, for a 4J gradient basis. The exact count state
+continues to retain G/Gamma, all signed/diagonal evidence, T, ordinary cursor
+and the pending actual query/target.
+
+The physical path constructs its integer parts from its own complete count
+state and actual categorical source in the paid workspace. It receives no
+reference forecast, partition or gradient. Separate reconstruction checks the
+entire plan against independently retained actual inputs. The native relation
+also compares canonical parts and all feature/head/gradient coordinates.
+The actual target mass supplies the GPU reciprocal; independent exact RNE
+replay checks every primitive, final word, coefficient ingress and copy.
+
+Derive the fixed output tariff: prediction emits 21+4k+4J words, where k is
+the number of positive excess integers, hence at most 29+4J. Observation
+emits 6+29J-3z, where z counts zero row-sum/parity numerators, hence at most
+6+29J. These are upper costs of this complete schedule, not lower bounds
+over all encodings. The previous uniform precision law applies, with added
+coefficient-cache error at most (C-2)*2^-24+2^-150. Monotone RNE yields the
+whole-domain activation/mass/normalizer box at C, independent of S.
+
+The exact CPU audit passes 396 reachable count cuts, 2,964 ordered queries,
+5,928 target alternatives, 550,524 words including copies and 5,868 half
+outputs. It compares every canonical rate part with a separate literal-world
+sum, then every scalar word with the separately written theorem schedule.
+Cases include C=10/S=20, C=8/S=120, C=3 and C=4 with a 203-bit likelihood
+denominator. Another 248 complete native continuation triples compare all
+parameters, caches, fixed/selected gradients and commits, including profile
+attachments ending at cursor 78/T80 and cursor 6/T8.
+
+The reachable equal-head/different-fixed-gradient adversary is refused at
+four distinct readers. Individually changing 11 readout/coefficient words,
+eight gradient words, 26 prediction operations and 56 observation operations
+also refuses. Missing or malformed coordinates/traces, wrong targets and
+insufficient output/step/precision contracts refuse. A smaller 4096-bit
+decoder under a 32768-bit reference contract preserves the same RNE words.
+An additional 108 synthetic scalar arrays cover zero rows, 198 zero parity
+parts and exponents to 2000 over 18,216 words. They are not claimed reachable
+canonical count cuts. All errors satisfy the existing uniform bounds.
+
+The different C=8 graph at the old S120 two-event cut has native error
+8950209/16471556096, within the original 1/100 tolerance. The historical
+old-graph refusal remains terminal. Old physical IDs cannot be relabeled
+as the new graph. The full legacy AMP CPU suite and the Reference plan/input
+adversaries pass after the shared routing changes. No historical artifact is
+regenerated and no Torch import or device job is part of this audit.
+
+OWNED_RATIONAL_FEATURE_AMP.md and the 8,792-byte FP_RATIONAL_FEATURE_AMP_CPU
+artifact record the refinement, exact tariff and scope. The actual CUDA,
+profile/failure-lifetime and paired installation claims remain unverified.
+Next is a separately preregistered fresh-job gate at committed source, including
+all rate/word bindings, n64 closure, same-lineage fresh install and continued
+execution. Foundation, ERC-1, existing CERTIFIED_COMPLETE classes and all
+terminal experiment outcomes remain unchanged.

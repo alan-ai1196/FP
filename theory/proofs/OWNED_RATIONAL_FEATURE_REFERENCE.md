@@ -5,7 +5,9 @@ OWNERSHIP AND SAME-PATH FRESHNESS AUDITS PASS**. This implements the different
 G/Gamma from [the rational-feature scale law](RATIONAL_FEATURE_SCALE.md) inside
 the existing `ReferenceCompilerRuntime`. It preserves every rate/parity part
 needed by the fixed-slot gradients. It adds no root owner field, optimizer
-action or constructor decision class. Its distinct AMP path remains unregistered.
+action or constructor decision class. Its distinct AMP path was unregistered
+at 86378bf; the subsequent [AMP implementation and CPU gate](OWNED_RATIONAL_FEATURE_AMP.md)
+now pass, with actual CUDA and paired installation still unverified.
 
 The implementation also exposes an exact precision limit: bounded native
 range can coexist with a fixed gradient whose reduced denominator is almost
@@ -242,8 +244,10 @@ unchanged-production **launch** guard, so future production work does not
 require rerunning historical jobs to read them. The altered-word and foreign-
 source tests still refuse. No launch guard or original outcome is weakened.
 
-The next physical implementation must own this rational-feature layout,
-construct both excess and rate/parity parts from actual physical state,
+The [subsequent physical implementation](OWNED_RATIONAL_FEATURE_AMP.md) now owns
+this rational-feature layout in the existing code path and passes its CPU gate.
+Actual device evidence must establish that it can construct both excess and
+rate/parity parts from actual physical state,
 execute the complete new gradient schedule, independently bind all RNE
 operations and complete native state, and preserve the existing paid extent,
 failure lifetime, lineage and fresh installation relation. The old AMP

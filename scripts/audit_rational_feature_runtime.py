@@ -128,14 +128,17 @@ def input_and_plan_attacks():
     rejects(lambda: JointState(observed.encoded, observed.gradient_forms[:1]+observed.gradient_forms[2:]))
 
     initial = joint.initialize(schema)
+    legacy_contract = JointCudaPrefixContract(CudaStorageContract(512, 2 << 20,
+        {r: (512, 2 << 20) for r in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
+        schema=legacy, partitions=old.BUDGET)
+    # A new registered schedule cannot reassign the original physical IDs.
+    object.__setattr__(legacy_contract, 'schema', schema)
     rejected = [lambda: amp.JointAmpState(initial),
         lambda: amp.JointAmpPrediction(initial, (0, 1), (1065353216,)*7),
         lambda: amp.ResidentState(initial),
         lambda: amp.ResidentPrediction(initial, (0, 1), object()),
         lambda: amp.JointAmpRange(JointTheta(schema, initial.counts, 0, 0), cfg.source_domain),
-        lambda: JointCudaPrefixContract(CudaStorageContract(512, 2 << 20,
-            {r: (512, 2 << 20) for r in ('deployment', 'compiler')}), F(1, 100), F(1, 1000),
-            schema=schema, partitions=old.BUDGET)]
+        legacy_contract.__post_init__]
     for action in rejected:
         rejects(action)
     assert 'torch' not in sys.modules
