@@ -1,7 +1,8 @@
 """Positive joint-noise elimination in one caller-owned integer extent.
 
 All rates reuse the same live table region. Three separate root cells retain
-the unnormalized joint excesses and normalization. No Runtime admission,
+the unnormalized joint excesses and normalization. Rational-feature programs
+also retain every rate/parity root for their complete fixed gradients. No Runtime admission,
 physical backend registration or device authority is provided here.
 """
 from dataclasses import dataclass, fields
@@ -42,10 +43,16 @@ def _layout(model, budget):
         raise ContractError('complete joint native description and decoder allowance required')
     model.__post_init__()
     budget.__post_init__()
-    envelope = model.n+model.prior_scale.bit_length()+(budget.step_cap+1)*(model.scale-1).bit_length()
+    envelope = (model.n+model.prior_scale.bit_length()+(budget.step_cap+1)*(model.scale-1).bit_length()
+                +model.partition_extra_bits)
     cell = (min(budget.integer_bits, envelope)+7)//8
-    # Two per-rate parity roots and three joint roots follow the shared tables.
-    return cell, (budget.live_cells+5)*cell
+    # Two reusable parity roots and three joint roots follow the shared tables.
+    # Rational-feature gradients additionally need the 2J unnormalized parts.
+    return cell, (budget.live_cells+5+_retained_parts(model))*cell
+
+
+def _retained_parts(model):
+    return 0 if model.feature_scale is None else 2*len(model.rates)
 
 
 def workspace_bytes(model, budget):
@@ -81,6 +88,7 @@ class JointPartitionPlan:
     cell_bytes: int
     workspace_bytes: int
     bit_limit: int
+    rate_parts: tuple[tuple[int, int], ...] = ()
 
     @property
     def output_cells(self):
@@ -97,7 +105,8 @@ def _preflight(state, query, budget, bit_limit, order):
     natural(bit_limit, 'joint reference arithmetic limit', positive=True)
     bits = min(bit_limit, budget.integer_bits)
     height = sum(map(abs, state.counts))
-    envelope = model.n+model.prior_scale.bit_length()+(state.steps+1)*(model.scale-1).bit_length()
+    envelope = (model.n+model.prior_scale.bit_length()+(state.steps+1)*(model.scale-1).bit_length()
+                +model.partition_extra_bits)
     if state.steps > budget.step_cap:
         raise ArithmeticUnresolved('joint committed-step allowance exhausted; canceled evidence remains')
     if max(envelope+1024, 1075) > bits:
@@ -133,6 +142,7 @@ def prepare(state, query, budget, workspace, *, bit_limit=MAX_BITS, order=None):
             or not workspace.c_contiguous or workspace.format != 'B' or len(workspace) != size):
         raise ContractError('complete writable contiguous joint integer byte extent required')
     roots = budget.live_cells
+    root_cells = 5+_retained_parts(state.model)
     zero = bytes(4096)
 
     def clear(start, length):
@@ -174,13 +184,13 @@ def prepare(state, query, budget, workspace, *, bit_limit=MAX_BITS, order=None):
         return value
 
     def get(index):
-        if not 0 <= index < budget.live_cells+5:
+        if not 0 <= index < budget.live_cells+root_cells:
             raise ContractError('joint table read outside its supplied extent')
         start = index*cell
         return int.from_bytes(workspace[start:start+cell], 'little')
 
     def put(index, value):
-        if not 0 <= index < budget.live_cells+5:
+        if not 0 <= index < budget.live_cells+root_cells:
             raise ContractError('joint table write outside its supplied extent')
         start = index*cell
         workspace[start:start+cell] = guard(value).to_bytes(cell, 'little')
@@ -263,15 +273,20 @@ def prepare(state, query, budget, workspace, *, bit_limit=MAX_BITS, order=None):
             raise ContractError('joint table execution differs from its complete geometry')
         constant = mul(int(prior*model.prior_scale), mul(power(b, A), power(a, B)))
         z0, z1 = mul(constant, get(roots)), mul(constant, get(roots+1))
-        put(roots+2, add(get(roots+2), add(mul(b-1, z0), mul(a-1, z1))))
-        put(roots+3, add(get(roots+3), add(mul(a-1, z0), mul(b-1, z1))))
+        if model.feature_scale is not None:
+            put(roots+5+2*rate_index, z0)
+            put(roots+6+2*rate_index, z1)
+        matching, other = model.coefficient_integers(rate_index)
+        put(roots+2, add(get(roots+2), add(mul(matching, z0), mul(other, z1))))
+        put(roots+3, add(get(roots+3), add(mul(other, z0), mul(matching, z1))))
         put(roots+4, add(get(roots+4), add(z0, z1)))
     excesses, normalization = (get(roots+2), get(roots+3)), get(roots+4)
     if ((multiplies, adds) != expected_ops or compacted > len(model.rates)*(n-1)*budget.live_cells
-            or normalization <= 0 or sum(excesses) != (model.scale-2)*normalization):
+            or normalization <= 0 or sum(excesses) != (model.native_scale-2)*model.excess_denominator*normalization):
         raise ContractError('joint positive execution lost its complete aggregation or resource binding')
+    parts = tuple((get(roots+5+2*j), get(roots+6+2*j)) for j in range(len(model.rates))) if model.feature_scale is not None else ()
     return JointPartitionPlan(state, query, order, excesses, normalization, tuple(expected_shape.items()),
-        envelope, maximum, multiplies, adds, compacted, cell, size, bits)
+        envelope, maximum, multiplies, adds, compacted, cell, size, bits, parts)
 
 
 def prepare_bound(program, state, rules, sources, budget, workspace, *, bit_limit=MAX_BITS, order=None):
@@ -309,9 +324,9 @@ def reference(plan):
     """Passive exact readout; a supplied plan is not authority to run a phase."""
     if type(plan) is not JointPartitionPlan:
         raise ContractError('complete joint partition plan required')
-    excess = tuple(F(v, plan.normalization) for v in plan.excesses)
+    excess = tuple(F(v, plan.normalization*plan.before.model.excess_denominator) for v in plan.excesses)
     masses = tuple(1+v for v in excess)
-    scale = F(plan.before.model.scale)
+    scale = plan.before.model.native_scale
     probabilities = tuple(v/scale for v in masses)
     _guard(*excess, *masses, scale, *probabilities, bit_limit=plan.bit_limit)
     return excess+masses+(scale,)+probabilities

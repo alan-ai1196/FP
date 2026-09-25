@@ -1,6 +1,7 @@
 """Literal finite-noise relation syntax and complete count coordinates.
 
-An indexed description of the existing native Program, not a new learner.
+Explicitly distinguishes unit-slot integer copies and rational feature slots.
+Each description binds its complete native G/Gamma and the existing simplex U.
 These passive declarations grant no Runtime, ledger or installation authority.
 """
 from dataclasses import dataclass, fields, replace
@@ -14,6 +15,7 @@ from .program import Product, Program, SemanticRules, Source, SourceSpec, Sum, T
 from .semantics import ArithmeticUnresolved
 
 SCHEMA = 'literal-anchored-finite-noise-relation-index-v1'
+RATIONAL_SCHEMA = 'literal-anchored-rational-feature-noise-relation-index-v1'
 COUNTER_CAP = (1 << 62)-1
 
 
@@ -35,9 +37,12 @@ class JointRelation:
     n: int
     rates: tuple[F, ...]
     prior: tuple[F, ...]
+    # None preserves the original unit-slot/integer-incidence program. An
+    # explicit rational scale selects the proved rational-feature G/Gamma.
+    feature_scale: F | None = None
 
     def __post_init__(self):
-        if set(vars(self)) != {'n', 'rates', 'prior'}:
+        if set(vars(self)) != {'n', 'rates', 'prior', 'feature_scale'}:
             raise ContractError('unregistered joint native description coordinate')
         natural(self.n, 'joint native token count')
         if not 2 <= self.n <= MAX_N:
@@ -49,7 +54,10 @@ class JointRelation:
                 or any(not 0 < v < F(1, 2) for v in self.rates)
                 or min(self.prior) <= 0 or sum(self.prior) != 1):
             raise ContractError('complete ordered distinct rational rate bank and positive prior required')
-        if self.scale > 1 << 24:
+        if self.feature_scale is not None and (type(self.feature_scale) is not F
+                or self.feature_scale*min(self.rates) < 1):
+            raise ContractError('rational features require their explicit positive base-one native scale')
+        if self.feature_scale is None and self.scale > 1 << 24:
             raise ArithmeticUnresolved('joint native coefficients exceed the exact binary32 integer class')
 
     @property
@@ -61,8 +69,29 @@ class JointRelation:
         return lcm(*(v.denominator for v in self.prior))
 
     @property
+    def native_scale(self):
+        return F(self.scale) if self.feature_scale is None else self.feature_scale
+
+    @property
+    def fixed_slots(self):
+        return 1 if self.feature_scale is None else 2*len(self.rates)
+
+    @property
+    def excess_denominator(self):
+        return 1 if self.feature_scale is None else self.feature_scale.denominator*self.scale
+
+    @property
+    def partition_extra_bits(self):
+        if self.feature_scale is None:
+            return 0
+        # Includes raw coefficient products and rational denominator metadata,
+        # even when cancellation makes the final coefficient numerator small.
+        return self.feature_scale.numerator.bit_length()+self.feature_scale.denominator.bit_length()
+
+    @property
     def descriptor(self):
-        return SCHEMA, self.n, self.rates, self.prior
+        original = SCHEMA, self.n, self.rates, self.prior
+        return original if self.feature_scale is None else (RATIONAL_SCHEMA, self.n, self.rates, self.prior, self.feature_scale)
 
     @property
     def program_id(self):
@@ -80,7 +109,7 @@ class JointRelation:
 
     @property
     def slot_count(self):
-        return self.K+1
+        return self.K+self.fixed_slots
 
     @property
     def first_feature(self):
@@ -93,10 +122,10 @@ class JointRelation:
 
     def counts(self):
         n, k = self.n, self.K
-        sums = k*((self.scale-2)*n*n+2)
+        sums = k*((self.scale-2)*n*n+2) if self.feature_scale is None else 2*k*(n*n+1)
         return {'nodes': self.first_feature+2*k+2, 'sources': 2*n,
                 'state_reads': 0, 'SUMs': 2*k+2, 'PRODUCTs': n*n,
-                'SUM_edges': sums, 'edges': sums+2*n*n, 'slots': k+1, 'bindings': 0}
+                'SUM_edges': sums, 'edges': sums+2*n*n, 'slots': self.slot_count, 'bindings': 0}
 
     def rules(self):
         sources = tuple(SourceSpec(f'x{side}:{v}', 'mass', 0, F(1))
@@ -144,12 +173,24 @@ class JointRelation:
 
     def coefficients(self, rate):
         index(rate, len(self.rates), 'native noise rate')
+        if self.feature_scale is not None:
+            return self.feature_scale*(1-self.rates[rate])-1, self.feature_scale*self.rates[rate]-1
         a = int(self.scale*self.rates[rate])
         return self.scale-a-1, a-1
 
+    def coefficient_integers(self, rate):
+        index(rate, len(self.rates), 'native noise rate')
+        if self.feature_scale is None:
+            return self.coefficients(rate)
+        a, S = int(self.scale*self.rates[rate]), self.scale
+        numerator, denominator = self.feature_scale.numerator, self.feature_scale.denominator
+        return numerator*(S-a)-denominator*S, numerator*a-denominator*S
+
     def gamma(self, slot):
         index(slot, self.slot_count, 'joint native initializer slot')
-        return F(1) if slot == 0 else self.prior[self.hypothesis(slot-1)[0]]/self.worlds_per_rate
+        if slot < self.fixed_slots:
+            return F(1) if self.feature_scale is None else self.coefficients(slot//2)[slot % 2]
+        return self.prior[self.hypothesis(slot-self.fixed_slots)[0]]/self.worlds_per_rate
 
     def header(self, node):
         index(node, self.counts()['nodes'], 'joint native node')
@@ -161,6 +202,8 @@ class JointRelation:
             return NodeHeader('PRODUCT', parents=(pair//n, n+pair % n))
         if node >= self.heads[0]:
             return NodeHeader('SUM', arity=self.K)
+        if self.feature_scale is not None:
+            return NodeHeader('SUM', arity=n*n)
         hypothesis, target = divmod(node-self.first_feature, 2)
         rate, world = self.hypothesis(hypothesis)
         ones, zeros = world.bit_count(), n-world.bit_count()
@@ -175,9 +218,13 @@ class JointRelation:
             raise ContractError('joint native incidence read requires a SUM')
         index(rank, header.arity, 'ordered joint native SUM incidence')
         if node >= self.heads[0]:
-            return Term(self.first_feature+2*rank+node-self.heads[0], rank+1)
+            return Term(self.first_feature+2*rank+node-self.heads[0], rank+self.fixed_slots)
         hypothesis, target = divmod(node-self.first_feature, 2)
         rate, world = self.hypothesis(hypothesis)
+        if self.feature_scale is not None:
+            i, j = divmod(rank, self.n)
+            mismatch = int(self.world_bit(world, i)^self.world_bit(world, j) != target)
+            return Term(2*self.n+rank, 2*rate+mismatch)
         coefficients = self.coefficients(rate)
         for i in range(self.n):
             for j in range(self.n):
@@ -204,7 +251,7 @@ class JointRelation:
         self.__post_init__()
         allowance(self.slot_count, slot_cap, 'literal joint learner slot allowance')
         return LearnerSpec(1, F(1), optimizer_id=SIMPLEX_GRADIENT,
-                           simplex_slots=tuple(range(1, self.slot_count)))
+                           simplex_slots=tuple(range(self.fixed_slots, self.slot_count)))
 
     def compare_literal(self, program, rules, gamma, learner, *, node_cap, term_cap, slot_cap):
         expected = self.materialize_program(node_cap=node_cap, term_cap=term_cap, slot_cap=slot_cap)

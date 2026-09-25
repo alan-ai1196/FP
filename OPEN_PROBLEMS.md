@@ -1,5 +1,22 @@
 # FP Open Problems
 
+The [owned rational-feature reference path](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
+now preserves the changed G/Gamma, all unnormalized rate parts and fixed
+gradients inside the existing owner. Ordinary execution, profiles, reference
+freshness and failure lifetime pass, including n64 and large denominators.
+The next physical boundary is the complete rational-feature AMP realization
+and same-lineage paired installation. Old AMP entrypoints currently refuse
+this layout; a passive scalar law cannot substitute for its actual execution.
+
+The same implementation exposes a genuine exact-gradient precision limit.
+For an explicit legal diagonal continuation, a fixed gradient's reduced
+denominator has roughly twice the current posterior integer width. At the
+32768-bit limit, prediction passes but observation refuses after 81 commits.
+The target and predecessor remain retained. A symbolic complete-gradient
+encoding might postpone explicit rational materialization; it needs its own
+funded decoder and relation. The current result is not a universal memory
+lower or a Foundation counterexample.
+
 The [rational-feature theorem](theory/proofs/RATIONAL_FEATURE_SCALE.md)
 closes the native range question: with fixed positive readout bases, the sharp
 all-history normalizer supremum is max b_y/ell_(x,y)(h), attained by fixed
@@ -10,12 +27,12 @@ bit costs remain. The new complete scalar law covers the changed fixed-slot
 gradients, including nonzero derivatives at zero coefficients, and removes
 the S=120 obstruction for a different C=8 G/Gamma.
 
-The remaining boundary is owned execution for this new program. Its complete
-native indexing and initializer, all 4J gradient coordinates, integer plans,
-paid resource/failure lifetime, actual RNE conformance and lineage must be
-bound inside Runtime before a device or installation claim. The executed old
-program cannot silently change Gamma or gradient layout. The range theorem
-does not optimize graph size, query width, whole-host cost or approximation.
+The owned reference path above supplies complete native indexing, initializer,
+4J gradient coordinates, integer plans and paid resource/failure lifetime.
+Actual RNE conformance and paired physical lineage must still be bound before
+a device or installation claim. The executed old program cannot silently
+change Gamma or gradient layout. The range theorem does not optimize graph
+size, query width, whole-host cost or approximation.
 
 The [four-tape unknown-noise result](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
 closes the declared model execution question: all four RTX 3090 jobs complete,

@@ -1,7 +1,23 @@
 # FP Implementation Status
 
+The [owned rational-feature reference implementation](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
+extends the existing joint descriptor with an explicit feature scale and a
+distinct G/Gamma/machine identity. It retains 2J additional integer roots in
+the same paid extent and all 4J gradient forms. No Runtime owner fields or
+semantic actions change. The 7,499-byte audit passes 2,844 complete queries,
+22,632 packed-root reads, 1,032 ordinary native triples, profiles, same-path
+freshness and resource/publication failures. An n64 C=8 root checks all 12
+gradients and seals with zero constructor decisions. C=5/2 and a 203-bit
+likelihood denominator also execute under exact reference semantics.
+
+The exact-gradient denominator obstruction refuses observation after 81
+commits at 32768 bits, preserving its actual target and predecessor; the final
+prediction itself passes. Legacy partition, full reference and AMP CPU suites
+pass. Old physical entrypoints explicitly reject rational-feature layouts.
+No new owned AMP or installation registration, device run or release follows.
+
 The [rational-feature construction](theory/proofs/RATIONAL_FEATURE_SCALE.md)
-is a new passive G/Gamma and scalar schedule, not a production edit.
+initially supplied a passive G/Gamma and scalar schedule at 2d0184f.
 `rational_feature_scale.py` builds the literal native graph, all fixed and
 selected gradient classes, positive excess integers and exact half/single
 equations. `audit_rational_feature_scale.py` passes 1,676 binary and 42
@@ -9,9 +25,9 @@ three-label complete native triples, 3,376 RNE predictions/observations and
 362,366 scalar words. Fixed zero coefficients have 1,102 nonzero derivatives.
 The old S=120 two-event counterexample remains; the different C=8 native bank
 passes its original tolerances under a complete all-history scalar bound.
-No owned representation, current-source binding, actual device conformance,
-lineage or install authority is registered for the new program. The production
-path and all completed experiment evidence below remain unchanged.
+The subsequent owned reference implementation above closes its complete
+state/input/storage boundary. Actual device conformance and installation
+remain separate. All completed experiment evidence below remains unchanged.
 
 The [unknown-noise model results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)
 complete all four n64 jobs at 333cba1 through unchanged production from 2432a25.

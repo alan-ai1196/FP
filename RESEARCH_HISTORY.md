@@ -8803,3 +8803,83 @@ The 10,785-byte artifact and RATIONAL_FEATURE_SCALE.md retain the proof,
 numerical scope and minimal witnesses. Foundation/ERC-1 and exact constructor
 decision classes stay unchanged. Next is owned execution for this complete
 new representation, including its fixed-slot state and physical input binding.
+
+## 258. Own the rational-feature Reference Runtime and prove an exact fixed-gradient precision obstruction (2026-09-25)
+
+Implement the rational-feature G/Gamma inside the existing closed joint
+representation and Runtime owner. An explicit optional Fraction feature_scale
+distinguishes it from the original unit-slot/integer-copy graph. None keeps
+the old descriptor identity; the new schema binds its scale, ordered rate
+bank/prior, 2J fixed slots and selected world block. It has distinct machine,
+initializer and reference-arithmetic identities. No owner fields, optimizer
+actions or constructor decision classes are added.
+
+The positive decoder keeps its shared live table and three aggregate roots,
+and retains 2J additional unnormalized rate/parity roots in the same paid
+extent. With C=c/d and likelihood scale S, integer coefficients c*b_j-d*S and
+c*a_j-d*S give native excess N_y/(d*S*Z). The bit envelope includes both scale
+numerator and denominator, including raw products before cancellation. Every
+rate part now survives into the retained cache because fixed gradients need
+u_j/C-v_jy/M, not just the two aggregate head integers. All4J gradient forms,
+all native slot reads, clocks, pending events and profile multiplicities stay.
+
+On an actual reachable two-diagonal-zero cut, changing rate parts
+((648,648),(450,450)) to ((653,643),(442,458)) preserves every head and aggregate
+root but changes one fixed gradient from0 to-1/2196. The independent complete
+plan check rejects it. Six other plan mutations, changed feature mode/scale/
+rate order, malformed scales and omission of a fixed gradient also refuse.
+The actual initial zero coefficient retains its gradient1/20. All six original
+AMP entrypoints reject the rational-feature layout before importing Torch or
+creating a device owner; a passive bound cannot change the old physical state.
+
+The new audit passes seven independent complete literal descriptions,
+366 reachable cuts, 2,844 complete queries and22,632 paid root reads. All516
+small two-event histories yield1,032 complete owned native triples, including
+noninteger C=5/2. The C=8 profile adds four replay and14 ordinary lineage
+triples and ends at cursor8 with optimizer steps8/10. An n64 three-rate root
+matches an independent unsigned-history recurrence and all12 gradients over
+eight cyclic/band/diagonal events. It seals an empty reference policy with
+zero constructor decisions,39,330 integer-table bytes and3,291,472 peak packed
+bytes. An S with203 bits and C=4 completes eight further owned native triples.
+
+Actual funding checks stop before unpaid integer/readout entry. Canceled
+evidence with zero signed height keeps T=2 and refuses a one-step budget.
+Post-construction failure preserves old history and a pinned22,194-byte extent;
+second-lineage commit failure retains both observed states and publishes
+neither successor. Two actual indexed/literal roots agree through20 fresh
+reference comparisons after admission at16, crossing at20 with wealth
+266119/65536. Retirement keeps alpha1/4 spent. No supplied flags, foreign root
+or reference-only crossing obtains physical installation.
+
+Attack the assumption that lower native range also solves exact gradient
+precision. For odd q, rates (1/4,(q+1)/(4q)), C=4 and a=3q,b=a-1, after T>=1
+diagonal label0 events one fixed gradient has irreducible denominator
+4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Consecutive a,b make the two odd power sums
+coprime, with no cancellation against the combined numerator. Its bit width
+is (2T+1)*log2(3q)+O(1), although posterior and prediction widths grow with
+T*log2(3q)+O(log q). This is an exact output-bit lower for materialized
+gradients, not every possible symbolic encoding.
+
+At q=2^200+1 the owned32768-bit run commits81 events. The next prediction
+passes with maximum native integer width16,532, but label0 needs a32,863-bit
+fixed-gradient denominator. Observation honestly returns UNRESOLVED, retaining
+the actual target/prediction and unchanged learner. No partial native observed
+state is published. A literal observer at32768 also refuses; a separate
+131072-bit exact literal calculation verifies the derivative and cache without
+changing the owned run's allowance. This is a resource boundary, not a
+Foundation counterexample, a tolerance relaxation or permission to erase
+fixed derivatives. A symbolic complete-gradient representation remains a
+separate possible improvement with its own paid point-read obligations.
+
+Legacy joint partition, complete Reference Runtime and AMP CPU audits pass;
+no historical artifact or device job is regenerated. Separate the old model
+reader's retained-declaration check from its unchanged-production launch guard.
+It still binds execution source333cba1 and independently reconstructs all4,000
+retained words, rejecting the altered-word and foreign-source adversaries.
+This preserves historical readability while leaving launch restrictions intact.
+
+OWNED_RATIONAL_FEATURE_REFERENCE.md and a7,499-byte artifact retain the exact
+refinement, results and precision lower. Foundation/ERC-1 and all existing
+CERTIFIED_COMPLETE classes are unchanged. Next is the separately owned
+rational-feature AMP schedule, actual primitive/native-state conformance and
+paired installation using all physical rate parts and fixed gradients.

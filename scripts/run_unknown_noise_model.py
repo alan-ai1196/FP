@@ -52,13 +52,13 @@ def configuration(case):
     return cfg, schema, online, cuda, host
 
 
-def preflight():
+def registration():
+    """Check the retained declaration; this does not authorize a new launch."""
     assert 'torch' not in sys.modules
     cpu = json.loads((ROOT/CPU).read_text())
     assert cpu['status'] == 'PASS_UNKNOWN_NOISE_MODEL_CPU'
     gate_result = gate_reader.read(json.loads((ROOT/GATE).read_text()))
     assert gate_result['completed_jobs'] == 17
-    assert not git('diff', gate_reader.SOURCE, '--', 'src/reference_compiler')
     for case in model.CASES:
         cfg, schema, online, cuda, host = configuration(case)
         assert schema.rates == model.RATES and schema.prior == model.PRIOR
@@ -77,6 +77,12 @@ def preflight():
         'score_grid_bits': model.GRID, 'control': 'independent full unsigned-history finite-rate/world posterior; true-rate oracle receives the additional true rate',
         'scope': 'four declared tapes, two shared hidden/noise/order seeds across true-rate strata; no population, model selection, GPU integer inference or constructor optimum claim',
         'failure_policy': 'retain every outcome; no incomplete-prefix scores, retries or cap changes; continue honest resource refusal, stop unexpected execution/audit failure'}
+
+
+def preflight():
+    declared = registration()
+    assert not git('diff', gate_reader.SOURCE, '--', 'src/reference_compiler')
+    return declared
 
 
 def check_coordinates(state, control):
@@ -293,7 +299,7 @@ def read_report(report):
     assert 'torch' not in sys.modules
     assert report['execution_source'] == EXECUTION_SOURCE
     assert report['status'] in ('COMPLETE_WITH_RETAINED_OUTCOMES', 'STOPPED_EXECUTION_OR_AUDIT_FAILURE')
-    assert report['registration'] == json.loads(json.dumps(preflight()))
+    assert report['registration'] == json.loads(json.dumps(registration()))
     declared = [list(case) for case in model.CASES]
     assert [r['case'] for r in report['workers']] == declared[:len(report['workers'])]
     if report['status'] == 'COMPLETE_WITH_RETAINED_OUTCOMES':

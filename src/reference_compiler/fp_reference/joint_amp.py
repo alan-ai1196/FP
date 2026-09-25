@@ -27,6 +27,13 @@ def single(word):
     return widen(word, 32).exact
 
 
+def require_unit_feature_model(model):
+    closed(model, JointRelation)
+    model.__post_init__()
+    if model.feature_scale is not None:
+        raise ContractError('rational-feature G/Gamma requires its own complete AMP gradient and cache registration')
+
+
 @dataclass(frozen=True)
 class JointAmpState:
     encoded: JointCountState
@@ -35,6 +42,7 @@ class JointAmpState:
     def __post_init__(self):
         closed(self, JointAmpState)
         require_state(self.encoded)
+        require_unit_feature_model(self.encoded.model)
         count = 2*len(self.encoded.model.rates)+1 if self.encoded.pending is not None else 0
         if type(self.gradient_words) is not tuple or len(self.gradient_words) != count:
             raise ContractError('complete joint AMP pending gradient words required')
@@ -64,6 +72,7 @@ class JointAmpPrediction:
     def __post_init__(self):
         closed(self, JointAmpPrediction)
         require_state(self.before)
+        require_unit_feature_model(self.before.model)
         self.before.model.query(self.query)
         if self.before.pending is not None or type(self.words) is not tuple or len(self.words) != 7:
             raise ContractError('complete committed joint AMP prediction required')
@@ -84,6 +93,7 @@ class ResidentState:
     def __post_init__(self):
         closed(self, ResidentState)
         require_state(self.encoded)
+        require_unit_feature_model(self.encoded.model)
         if self.gradient is None:
             if self.encoded.pending is not None:
                 raise ContractError('pending joint AMP state lost its resident gradient')
@@ -115,6 +125,7 @@ class ResidentPrediction:
     def __post_init__(self):
         closed(self, ResidentPrediction)
         require_state(self.before)
+        require_unit_feature_model(self.before.model)
         self.before.model.query(self.query)
         from .cuda_learner import _tensor
         _tensor(self.readout, 'float32', dimension=1)
@@ -130,6 +141,7 @@ class ResidentPrediction:
 def forward_work(model, budget, output_cap):
     # Construction plus independent actual-input reconstruction, scalar RNE
     # replay and complete coordinate scans. Not a bigint or host-time bound.
+    require_unit_feature_model(model)
     envelope = model.n+model.prior_scale.bit_length()+(budget.step_cap+1)*(model.scale-1).bit_length()
     return 2*decoder.construction_work(model, budget)+1024*(envelope+len(model.rates)+1)+128*(model.n+1)*output_cap
 
@@ -302,6 +314,16 @@ class JointAmpRange:
     theta: JointTheta
     domain: CategoricalPairDomain
     proof: str = 'joint-positive-excess-rne-mass-box-for-all-admitted-categorical-forecasts-v1'
+
+    def __post_init__(self):
+        closed(self, JointAmpRange)
+        closed(self.theta, JointTheta)
+        self.theta.__post_init__()
+        require_unit_feature_model(self.theta.schema)
+        closed(self.domain, CategoricalPairDomain)
+        self.domain.__post_init__()
+        if self.domain.n != self.theta.schema.n or type(self.proof) is not str or self.proof != type(self).proof:
+            raise ContractError('joint AMP range lost its complete native declaration')
 
     @property
     def masses_upper(self):

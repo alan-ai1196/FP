@@ -501,10 +501,26 @@ The relation realization changes G/Gamma and has 2J fixed slots, including
 zeros with nonzero ambient derivatives, and a 4J complete gradient basis.
 An explicit integer-excess and half/single schedule now bounds all those
 coordinates at C=10/S=20 and C=8/S=120 within original tolerances. The 1,718
-exact native triples and 3,376 scalar RNE comparisons are passive evidence;
-no owned backend, lineage transport or actual device claim follows. The old
-S=120 native refusal and all completed model jobs remain terminal. Foundation,
-ERC-1 and constructor decision classes are unchanged.
+exact native triples and 3,376 scalar RNE comparisons at 2d0184f provided
+passive evidence. The old S=120 native refusal and all completed model jobs
+remain terminal. Foundation, ERC-1 and constructor decision classes are unchanged.
+
+The [owned rational-feature reference refinement](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
+now implements complete G/Gamma, fixed gradients and all unnormalized rate
+parts in the existing Runtime owner. Ordinary/profile phases and same-path
+fresh reference statistics match independent literal execution; n64 runs
+without world expansion and makes zero constructor decisions. The old AMP
+entrypoints explicitly refuse this new layout pending its separate physical
+registration. No new semantic action or full indexed release follows.
+
+There is also a sharp exact-output precision obstruction. In the C=4 bank
+with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed
+gradient has reduced denominator 4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Its bit width
+is (2T+1)*log2(3q)+O(1), despite the constant native normalizer. At q=2^200+1,
+the owned 32768-bit contract passes prediction but refuses observation after 81
+commits because that denominator has 32,863 bits. The actual target and
+predecessor survive. This lower concerns materialized exact gradients;
+symbolic encodings and funded point reads retain their separate scope.
 
 The [paid-order n16 experiment](experiments/joint_uncertainty/PAID_ORDER_MODEL_PROTOCOL.md)
 now [completes](experiments/joint_uncertainty/PAID_ORDER_MODEL_RESULTS.md)

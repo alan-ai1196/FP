@@ -31,8 +31,11 @@ class ReferenceRunManifest:
         from .packed_histogram_decoder import MODEL_ID as PACKED_MODEL_ID
         from .integer_partition_decoder import MODEL_ID as DIRECT_MODEL_ID
         from .joint_execution import MODEL_ID as JOINT_MODEL_ID, ARITHMETIC_ID as JOINT_ARITHMETIC
+        from .joint_execution import RATIONAL_MODEL_ID as RATIONAL_JOINT_MODEL_ID, RATIONAL_ARITHMETIC_ID as RATIONAL_JOINT_ARITHMETIC
         if self.machine_id == JOINT_MODEL_ID:
             object.__setattr__(self, 'reference_arithmetic', JOINT_ARITHMETIC)
+        if self.machine_id == RATIONAL_JOINT_MODEL_ID:
+            object.__setattr__(self, 'reference_arithmetic', RATIONAL_JOINT_ARITHMETIC)
         if self.machine_id == DIRECT_MODEL_ID:
             object.__setattr__(self, 'reference_arithmetic',
                                'indexed-literal-count-direct-partition-reference-v1')

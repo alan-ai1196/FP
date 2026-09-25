@@ -18,6 +18,8 @@ from .semantics import ArithmeticUnresolved, Evaluation, Interval, _guard
 
 MODEL_ID = 'packed-indexed-joint-noise-integer-partition-reference-v1'
 ARITHMETIC_ID = 'indexed-joint-noise-count-excess-partition-reference-v1'
+RATIONAL_MODEL_ID = 'packed-indexed-rational-feature-joint-noise-reference-v1'
+RATIONAL_ARITHMETIC_ID = 'indexed-joint-noise-rational-features-full-rate-parts-reference-v1'
 
 
 def closed(value, kind):
@@ -79,9 +81,11 @@ class JointZeroSlots:
 def _parameter(before, normalization, slot, *, bit_limit):
     model = before.model
     index(slot, model.slot_count, 'joint native parameter slot')
-    if slot == 0:
-        return F(1)
-    rate, world = model.hypothesis(slot-1)
+    if slot < model.fixed_slots:
+        value = model.gamma(slot)
+        _guard(value, bit_limit=bit_limit)
+        return value
+    rate, world = model.hypothesis(slot-model.fixed_slots)
     score = before.diagonal+sum(d*(1-2*(model.world_bit(world, i)^model.world_bit(world, j)))
         for (i, j), d in zip(combinations(range(model.n), 2), before.counts))
     matches = (before.steps+score)//2
@@ -102,7 +106,7 @@ class JointState:
     def __post_init__(self):
         closed(self, JointState)
         require_state(self.encoded)
-        expected = 2*len(self.encoded.model.rates)+1 if self.encoded.pending is not None else 0
+        expected = self.encoded.model.fixed_slots+2*len(self.encoded.model.rates) if self.encoded.pending is not None else 0
         if (type(self.gradient_forms) is not tuple or len(self.gradient_forms) != expected
                 or any(type(v) is not F for v in self.gradient_forms)):
             raise ContractError('complete exact joint pending gradient basis required')
@@ -133,12 +137,12 @@ class JointState:
         index(slot, model.slot_count, 'joint native gradient slot')
         if not self.unit_count:
             return F(0)
-        if slot == 0:
-            return self.gradient_forms[0]
-        rate, world = model.hypothesis(slot-1)
+        if slot < model.fixed_slots:
+            return self.gradient_forms[slot]
+        rate, world = model.hypothesis(slot-model.fixed_slots)
         i, j, target = self.encoded.pending
         mismatch = int(model.world_bit(world, i)^model.world_bit(world, j) != target)
-        return self.gradient_forms[1+2*rate+mismatch]
+        return self.gradient_forms[model.fixed_slots+2*rate+mismatch]
 
     def materialize(self, *, scalar_cap, budget=decoder.JointPartitionAllowance(), bit_limit=32768):
         """Explicit caller-allocated diagnostic, never an owner state setter."""
@@ -163,6 +167,8 @@ class JointEvaluation:
     normalizer: F
     probabilities: tuple[F, F]
     table_work: tuple[tuple[str, int], ...]
+    rate_parts: tuple[tuple[int, int], ...] = ()
+    normalization: int = 0
 
     def __post_init__(self):
         closed(self, JointEvaluation)
@@ -176,6 +182,16 @@ class JointEvaluation:
                 raise ContractError('complete exact joint readout coordinates required')
         if type(self.normalizer) is not F or type(self.table_work) is not tuple:
             raise ContractError('joint cache lost its normalization or operation record')
+        if type(self.rate_parts) is not tuple or type(self.normalization) is not int:
+            raise ContractError('joint cache lost its exact rate-part coordinates')
+        if self.before.model.feature_scale is None:
+            if self.rate_parts or self.normalization:
+                raise ContractError('unit-feature cache acquired undeclared rate-part coordinates')
+        elif (len(self.rate_parts) != len(self.before.model.rates) or self.normalization <= 0
+                or any(type(row) is not tuple or len(row) != 2
+                       or any(type(v) is not int or v < 0 for v in row) for row in self.rate_parts)
+                or sum(map(sum, self.rate_parts)) != self.normalization):
+            raise ContractError('rational-feature cache requires every unnormalized rate/parity part')
 
     @property
     def delayed(self):
@@ -208,12 +224,12 @@ class JointRangeBound:
 
     @property
     def masses(self):
-        low = self.schema.scale*min(self.schema.rates)
-        return (Interval(low, self.schema.scale-low),)*2
+        low = self.schema.native_scale*min(self.schema.rates)
+        return (Interval(low, self.schema.native_scale-low),)*2
 
     @property
     def normalizer(self):
-        return Interval(F(self.schema.scale), F(self.schema.scale))
+        return Interval(self.schema.native_scale, self.schema.native_scale)
 
     def sufficient(self, *, normalizer_cap, activation_cap):
         closed(self, JointRangeBound)
@@ -225,7 +241,7 @@ class JointRangeBound:
                 or self.proof != type(self).proof):
             raise ContractError('joint whole-domain range lost its complete declaration')
         maximum = max(1, max(c for j in range(len(self.schema.rates)) for c in self.schema.coefficients(j)))
-        return normalizer_cap >= self.schema.scale and activation_cap >= maximum
+        return normalizer_cap >= self.schema.native_scale and activation_cap >= maximum
 
 
 def _prepare_owned_prediction(program, rules, state, sources, budget, workspace, *, bit_limit):
@@ -252,7 +268,8 @@ def _execute_owned_prediction(plan, schema):
     statistics = plan.shape+(('joint_multiplications', plan.multiplications), ('joint_additions', plan.additions),
         ('compacted_cells', plan.compacted_cells), ('integer_envelope', plan.integer_envelope),
         ('maximum_integer_bits', plan.maximum_integer_bits), ('workspace_bytes', plan.workspace_bytes))
-    return JointEvaluation(plan.before, plan.query, values[:2], values[2:4], values[4], values[5:], statistics)
+    return JointEvaluation(plan.before, plan.query, values[:2], values[2:4], values[4], values[5:], statistics,
+                           plan.rate_parts, plan.normalization if schema.feature_scale is not None else 0)
 
 
 @dataclass(frozen=True)
@@ -260,9 +277,16 @@ class JointReferenceMachine(ReferenceMachineModel):
     schema: JointRelation
     budget: decoder.JointPartitionAllowance
 
-    model_id = MODEL_ID
-    initializer_id = 'indexed-joint-rate-prior-fair-world-unit-simplex-initializer-v1'
     program_type = JointRelation
+
+    @property
+    def model_id(self):
+        return MODEL_ID if self.schema.feature_scale is None else RATIONAL_MODEL_ID
+
+    @property
+    def initializer_id(self):
+        return ('indexed-joint-rate-prior-fair-world-unit-simplex-initializer-v1' if self.schema.feature_scale is None
+                else 'indexed-joint-rational-features-rate-prior-fair-world-simplex-initializer-v1')
 
     def __post_init__(self):
         closed(self, JointReferenceMachine)
@@ -280,7 +304,8 @@ class JointReferenceMachine(ReferenceMachineModel):
 
     def state_work(self, program):
         self.require_program(program)
-        return program.n*(program.n-1)//2+8*len(program.rates)+32
+        return (program.n*(program.n-1)//2+8*len(program.rates)+32
+                +(4*len(program.rates)+program.partition_extra_bits+16 if program.feature_scale is not None else 0))
 
     def construction_work(self, program, rules):
         self.require_program(program)
@@ -326,6 +351,9 @@ class JointReferenceMachine(ReferenceMachineModel):
             raise ContractError('joint construction must start at its registered prior')
         if program.n+program.prior_scale.bit_length()+8 > bit_limit:
             raise ArithmeticUnresolved('joint initializer exceeds its exact reference integer allowance')
+        if program.feature_scale is not None:
+            _guard(program.native_scale, *(program.gamma(k) for k in range(program.fixed_slots)),
+                   *(p/program.worlds_per_rate for p in program.prior), bit_limit=bit_limit)
         return JointState(initialize(program, cursor))
 
     def observe(self, program, state, spec, prediction, target, *, bit_limit):
@@ -338,8 +366,13 @@ class JointReferenceMachine(ReferenceMachineModel):
         if state.unit_count or state.encoded.model != program or prediction.before != state.encoded:
             raise ContractError('joint observation lost its owned pre-target state and prediction')
         following = observe(state.encoded, prediction.query, target)
-        scale, mass = program.scale, prediction.masses[target]
-        gradients = (1/mass-F(2, scale),)+tuple(F(scale-2, scale)-F(c)/mass
+        scale, mass = program.native_scale, prediction.masses[target]
+        if program.feature_scale is None:
+            fixed = (1/mass-2/scale,)
+        else:
+            fixed = tuple(F(sum(row), prediction.normalization)/scale-F(row[y], prediction.normalization)/mass
+                          for row in prediction.rate_parts for y in (target, 1-target))
+        gradients = fixed+tuple((scale-2)/scale-F(c)/mass
             for j in range(len(program.rates)) for c in program.coefficients(j))
         _guard(*gradients, bit_limit=bit_limit)
         return JointState(following, gradients)

@@ -1,0 +1,272 @@
+{
+  "status": "PASS_OWNED_RATIONAL_FEATURE_REFERENCE_RUNTIME",
+  "scope": "complete native G/Gamma/reference phases, paid parts and actual same-path freshness; no AMP/install or CERTIFIED_COMPLETE",
+  "indexing_parts": {
+    "literal_descriptions": [
+      {
+        "n": 2,
+        "native_scale": "10",
+        "likelihood_scale": 20,
+        "graph": {
+          "nodes": 18,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 4,
+          "SUM_edges": 40,
+          "edges": 48,
+          "slots": 8,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 2,
+        "native_scale": "8",
+        "likelihood_scale": 120,
+        "graph": {
+          "nodes": 22,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 14,
+          "PRODUCTs": 4,
+          "SUM_edges": 60,
+          "edges": 68,
+          "slots": 12,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 3,
+        "native_scale": "10",
+        "likelihood_scale": 20,
+        "graph": {
+          "nodes": 33,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 18,
+          "PRODUCTs": 9,
+          "SUM_edges": 160,
+          "edges": 178,
+          "slots": 12,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 3,
+        "native_scale": "8",
+        "likelihood_scale": 120,
+        "graph": {
+          "nodes": 41,
+          "sources": 6,
+          "state_reads": 0,
+          "SUMs": 26,
+          "PRODUCTs": 9,
+          "SUM_edges": 240,
+          "edges": 258,
+          "slots": 18,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 4,
+        "native_scale": "10",
+        "likelihood_scale": 20,
+        "graph": {
+          "nodes": 58,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 34,
+          "PRODUCTs": 16,
+          "SUM_edges": 544,
+          "edges": 576,
+          "slots": 20,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 4,
+        "native_scale": "8",
+        "likelihood_scale": 120,
+        "graph": {
+          "nodes": 74,
+          "sources": 8,
+          "state_reads": 0,
+          "SUMs": 50,
+          "PRODUCTs": 16,
+          "SUM_edges": 816,
+          "edges": 848,
+          "slots": 30,
+          "bindings": 0
+        }
+      },
+      {
+        "n": 2,
+        "native_scale": "5/2",
+        "likelihood_scale": 35,
+        "graph": {
+          "nodes": 18,
+          "sources": 4,
+          "state_reads": 0,
+          "SUMs": 10,
+          "PRODUCTs": 4,
+          "SUM_edges": 40,
+          "edges": 48,
+          "slots": 8,
+          "bindings": 0
+        }
+      }
+    ],
+    "reachable_cuts": 366,
+    "complete_ordered_queries": 2844,
+    "paid_packed_root_reads": 22632,
+    "external_canaries_preserved": true
+  },
+  "small": [
+    {
+      "n": 2,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "native_scale": "10",
+      "all_two_event_histories": 64,
+      "complete_owned_native_triples": 128
+    },
+    {
+      "n": 3,
+      "rates": [
+        "1/10",
+        "1/4"
+      ],
+      "native_scale": "10",
+      "all_two_event_histories": 324,
+      "complete_owned_native_triples": 648
+    },
+    {
+      "n": 2,
+      "rates": [
+        "1/8",
+        "1/5",
+        "1/3"
+      ],
+      "native_scale": "8",
+      "all_two_event_histories": 64,
+      "complete_owned_native_triples": 128
+    },
+    {
+      "n": 2,
+      "rates": [
+        "2/5",
+        "3/7"
+      ],
+      "native_scale": "5/2",
+      "all_two_event_histories": 64,
+      "complete_owned_native_triples": 128
+    }
+  ],
+  "attacks": {
+    "altered_complete_plans_refused": 7,
+    "equal_readout_different_fixed_gradient": "-1/2196",
+    "wrong_feature_mode_scale_or_rate_order_refused": 3,
+    "malformed_or_inadmissible_scale_refused": 3,
+    "actual_zero_fixed_coefficient_gradient": "1/20",
+    "omitted_gradient_coordinate_refused": true,
+    "legacy_descriptor_identity_preserved": true,
+    "legacy_AMP_entrypoints_refused": 6,
+    "torch_imported": false
+  },
+  "large": {
+    "n": 64,
+    "native_hypotheses": "27670116110564327424",
+    "ordinary_events": 8,
+    "complete_gradient_coordinates": 12,
+    "independent_unsigned_control_matches": true,
+    "status": "SEALED_REFERENCE_STREAM",
+    "constructor_decisions": 0,
+    "integer_workspace_bytes": 39330,
+    "packed_peak_bytes": 3291472,
+    "large_denominator_bits": 203,
+    "large_denominator_native_scale": 4,
+    "large_denominator_owned_native_triples": 8
+  },
+  "precision_obstruction": {
+    "committed_events": 81,
+    "failed_observation_index": 81,
+    "final_prediction_passed": true,
+    "status": "UNRESOLVED",
+    "exact_fixed_gradient_denominator_bits": 32863,
+    "maximum_native_prediction_integer_bits": 16532,
+    "reference_integer_limit": 32768,
+    "full_native_same_limit_refuses": true,
+    "independent_native_131072_bit_gradient_matches": true,
+    "actual_target_retained": true,
+    "no_successor_published": true,
+    "native_normalizer": "4",
+    "likelihood_scale_bits": 203,
+    "scope": "exact materialized native-gradient bit limit; no impossibility claim for every symbolic representation"
+  },
+  "profile": {
+    "ordinary_native_triples": 14,
+    "profile_native_triples": 4,
+    "ordinary_cursor": 8,
+    "optimizer_steps": [
+      8,
+      10
+    ],
+    "supplied_state_or_plan_refusals": 2,
+    "closing_cycle_canceling_edge_and_diagonal_evidence": true
+  },
+  "funding": {
+    "kernel_debit_boundaries": [
+      {
+        "case": "before-integer-construction",
+        "status": "UNRESOLVED",
+        "unfunded_kernel_entries": 0
+      },
+      {
+        "case": "before-rational-readout",
+        "status": "UNRESOLVED",
+        "unfunded_kernel_entries": 0
+      }
+    ],
+    "canceled_history_refusal": {
+      "status": "UNRESOLVED",
+      "committed_steps": 2,
+      "absolute_count_sum": 0,
+      "scratch_unchanged": true
+    },
+    "scope": "actual packed-payload/work ledger, not total host memory or wall time"
+  },
+  "workspace": {
+    "successful_borrowed_compaction_counts": [
+      2
+    ],
+    "actual_retained_workspace_bytes": 22194,
+    "after_construction_failure": "UNRESOLVED",
+    "old_history_and_learners_unchanged": true,
+    "failed_scratch_still_owned_and_pinned": true
+  },
+  "bindings_atomic": {
+    "registration_refusals": 9,
+    "wrong_model_or_supplied_state_refusals": 2,
+    "unregistered_cuda_refusals_before_device_creation": 1,
+    "unsupported_literal_translation": "UNRESOLVED",
+    "locked_or_bad_target_refusals": 3,
+    "both_observed_states_and_actual_target_retained": true,
+    "published_successors_on_second_failure": 0,
+    "retained_invalid_categorical_ingress": true,
+    "supplied_install_flags": "UNRESOLVED"
+  },
+  "fresh": {
+    "fresh_start_cursor": 16,
+    "ordinary_events_per_root": 36,
+    "paired_native_root_comparisons": 20,
+    "crossing_cursor": 20,
+    "crossing_wealth": "266119/65536",
+    "fresh_score_events": 4,
+    "alpha_after_retirement": "1/4",
+    "foreign_root_refusals": 1,
+    "unpaired_install_status": "UNRESOLVED",
+    "scope": "actual same-path reference evidence under an external stream-law assumption, no population or AMP/install claim"
+  }
+}

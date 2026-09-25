@@ -25,6 +25,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     before_raw = before_prediction = None
     try:
         closed(program, JointRelation)
+        joint.require_unit_feature_model(program)
         closed(spec, JointLearner)
         closed(source_domain, CategoricalPairDomain)
         spec.__post_init__()

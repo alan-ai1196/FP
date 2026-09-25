@@ -155,6 +155,7 @@ class JointCudaPrefixContract(CudaPrefixContract):
         closed(self.partitions, JointPartitionAllowance)
         self.schema.__post_init__()
         self.partitions.__post_init__()
+        joint_amp.require_unit_feature_model(self.schema)
         if self.likelihood_encoding is not None:
             raise ContractError('joint indexed lowering cannot substitute a dense likelihood representation')
         return joint_amp.BACKEND_ID, joint_amp.WORK_MODEL, joint_amp.FORWARD_ID

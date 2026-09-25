@@ -1,5 +1,27 @@
 # FP Handoff
 
+**Rational-feature G/Gamma now runs inside the owned Reference Runtime.**
+Read [the refinement and precision boundary](theory/proofs/OWNED_RATIONAL_FEATURE_REFERENCE.md)
+and [7,499-byte audit](evidence/minimal/FP_RATIONAL_FEATURE_REFERENCE_RUNTIME.json).
+The existing closed joint descriptor distinguishes the old unit-slot mode
+from an explicit rational feature scale. Every new fixed slot, unnormalized
+rate/parity part, gradient, clock and pending event is preserved. No new root
+field, optimizer action or constructor class is added. Actual n64 C=8 reference
+execution checks all 12 gradients with 39,330 table bytes; paired indexed/literal
+reference freshness crosses at 20 and retains alpha 1/4 after retirement.
+All 516 small two-event histories/1,032 native triples and shared legacy
+partition/reference/AMP CPU regressions pass. The old AMP entrypoints refuse
+the new layout before device creation. No new GPU job has run.
+
+An exact resource obstruction is now proved and executed: in the C=4 bank
+with q=2^200+1, the 82nd prediction fits 16,532-bit integers, but its label0
+fixed gradient has an irreducible 32,863-bit denominator. The 32768-bit
+reference contract correctly refuses observation after 81 commits, preserving
+the target and predecessor. A separate 131072-bit literal audit confirms it.
+This is a limit for materialized exact gradients, not every symbolic encoding.
+The next boundary is the owned rational-feature AMP schedule and paired
+installation, with all rate-part inputs and fixed gradients independently bound.
+
 **The denominator-driven native scale is a representation choice, not an
 intrinsic range lower.** The [rational-feature law](theory/proofs/RATIONAL_FEATURE_SCALE.md)
 proves the sharp all-history normalizer optimum C*=max b_y/ell_(x,y)(h).
@@ -15,10 +37,10 @@ actual refusal remains terminal. Exact audits pass 1,718 native triples,
 3,376 scalar RNE predictions/observations and 362,366 words, including a
 203-bit denominator, profile clocks, zero coefficients and underflow boundaries.
 Read the proof and [10,785-byte artifact](evidence/minimal/FP_RATIONAL_FEATURE_SCALE.json).
-No production registration or actual GPU job changes. The next boundary is
-owned native indexing, complete fixed-gradient state and independently bound
-integer/physical execution for this new program; selected Bayes equivalence
-does not authorize transport from the old learner.
+Those initial audits introduced no production registration or actual GPU job.
+The owned reference result above now supplies indexing, fixed-gradient state
+and paid integer execution. The new physical path remains separate; selected
+Bayes equivalence does not authorize transport from the old learner.
 
 **All four owned unknown-noise model jobs complete at 333cba1; terminal.**
 Read [the results](experiments/joint_uncertainty/UNKNOWN_NOISE_MODEL_RESULTS.md)

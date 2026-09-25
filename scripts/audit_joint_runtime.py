@@ -44,14 +44,14 @@ BUDGET = decoder.JointPartitionAllowance(join_cells=32, live_cells=128, arithmet
 
 
 def fixture(n, length, *, family=DEFAULT, profiles=(), persistence=None, law=False,
-            budget=BUDGET, byte_cap=128 << 20, work_cap=10**14):
-    schema = JointRelation(n, *family)
+            budget=BUDGET, byte_cap=128 << 20, work_cap=10**14, feature_scale=None):
+    schema = JointRelation(n, *family, feature_scale=feature_scale)
     rules = schema.rules()
     ids = tuple(f'joint-event:{k}' for k in range(length))
     cfg = ConstructionContract(rules, limits(byte_cap, work_cap),
         {'construct': 'compiler', 'range_audit': 'compiler'},
         {k: schema.counts()[k] for k in ('nodes', 'SUMs', 'PRODUCTs', 'edges', 'slots')},
-        JointInitializer(schema), F(schema.scale), F(schema.scale-2), 32768,
+        JointInitializer(schema), schema.native_scale, max(F(1), schema.native_scale-2), 32768,
         CategoricalPairDomain(n), indexed_histogram=budget)
     data = DataContract((StreamSpec('online', 'online', ids),), 'online', (F(1),)*(2*n),
         tuple(SourceRead(source.source_id, 'input', k, 0) for k, source in enumerate(rules.sources)))
@@ -62,6 +62,10 @@ def fixture(n, length, *, family=DEFAULT, profiles=(), persistence=None, law=Fal
 
 
 def literal(schema, cursor=0):
+    if schema.feature_scale is not None:
+        from rational_feature_scale import Bank, native_graph
+        rules, graph, spec, theta, _ = native_graph(Bank(schema.n, schema.rates, schema.prior, schema.feature_scale))
+        return rules, graph, spec, initial_state(graph, rules, theta, cursor, spec=spec, bit_limit=32768)
     bank, rules, graph, spec, _ = native.small_native(prototype.Model(schema.n, schema.rates, schema.prior))
     state = initial_state(graph, rules, (F(1),)+bank.prior, cursor, spec=spec, bit_limit=32768)
     return rules, graph, spec, state
@@ -130,9 +134,9 @@ def small():
     return rows
 
 
-def profile():
+def profile(*, feature_scale=None, family=DEFAULT):
     declared = ProfileSpec('twice', ('joint-event:0', 'joint-event:1'), 2)
-    cfg, schema, online = fixture(3, 8, profiles=(declared,))
+    cfg, schema, online = fixture(3, 8, profiles=(declared,), feature_scale=feature_scale, family=family)
     runtime = ReferenceCompilerRuntime(cfg, schema, online=online)
     models = {runtime.snapshot().deployed_id: literal(schema)}
     phases = 0
@@ -204,8 +208,8 @@ def larger_and_closure():
             'complete_counts_diagonal_and_clocks_agree': True}
 
 
-def funding():
-    cfg, schema, online = fixture(3, 3)
+def funding(*, feature_scale=None, family=DEFAULT):
+    cfg, schema, online = fixture(3, 3, feature_scale=feature_scale, family=family)
     planning = JointReferenceMachine(schema, BUDGET).evaluation_work(schema, cfg.semantics)
     rows = []
     for name, cap in (('before-integer-construction', planning-1), ('before-rational-readout', planning)):
@@ -243,8 +247,8 @@ def funding():
             'scope': 'actual packed-payload/work ledger, not total host memory or wall time'}
 
 
-def workspace_lifetime():
-    cfg, schema, online = fixture(3, 3)
+def workspace_lifetime(*, feature_scale=None, family=DEFAULT):
+    cfg, schema, online = fixture(3, 3, feature_scale=feature_scale, family=family)
     runtime = ReferenceCompilerRuntime(cfg, schema, online=online)
     key = next(k for k in runtime._buffers if k.endswith(':joint-partition-storage'))
     extent = runtime._buffers[key]
@@ -350,8 +354,8 @@ def resource_continuation():
             'failed_profile_attached_or_published': False, 'scope': 'fixed algorithm allowance exhaustion, no impossibility certificate'}
 
 
-def bindings_and_atomic_failure():
-    cfg, schema, online = fixture(3, 3)
+def bindings_and_atomic_failure(*, feature_scale=None, family=DEFAULT):
+    cfg, schema, online = fixture(3, 3, feature_scale=feature_scale, family=family)
     wrong = JointRelation(3, schema.rates[::-1], schema.prior)
     registrations = [lambda: replace(cfg, source_domain=None),
         lambda: replace(cfg, source_domain=CategoricalPairDomain(2)),
@@ -414,9 +418,9 @@ def bindings_and_atomic_failure():
             'retained_invalid_categorical_ingress': True, 'supplied_install_flags': 'UNRESOLVED'}
 
 
-def fresh_reference():
+def fresh_reference(*, feature_scale=None, family=DEFAULT):
     registration = PersistenceContract(F(1, 2), (PersistenceRule('fresh', 1, 20, F(1, 4), F(3, 4), F(3), 12, 16),))
-    cfg, schema, online = fixture(2, 36, persistence=registration, law=True)
+    cfg, schema, online = fixture(2, 36, persistence=registration, law=True, feature_scale=feature_scale, family=family)
     rules, graph, spec, initial = literal(schema)
     native_cfg = replace(cfg, initializer_pattern=initial.theta, indexed_histogram=None,
         source_domain=tuple(tuple(schema.source_row(k).values()) for k in range(4)))

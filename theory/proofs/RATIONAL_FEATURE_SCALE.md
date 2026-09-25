@@ -359,3 +359,12 @@ must preserve those complete coordinates. The existing integer-copy Runtime
 and its completed model experiment are unchanged. Foundation, ERC-1 and all
 `CERTIFIED_COMPLETE` decision classes remain unchanged; this result establishes
 neither an extra semantic action nor a constructor certificate.
+
+The subsequent [owned reference refinement](OWNED_RATIONAL_FEATURE_REFERENCE.md)
+now closes native indexing, full exact phases, paid rate-part storage and
+same-path reference freshness for this G/Gamma. It also proves and executes
+an exact-gradient denominator obstruction despite native C=4: prediction fits
+while a materialized fixed gradient exceeds the reference bit limit. The
+Runtime retains the target and predecessor and returns UNRESOLVED. That
+boundary does not contradict the range optimum or conditional scalar bounds
+here. The new physical path remains unregistered.
