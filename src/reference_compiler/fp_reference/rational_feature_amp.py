@@ -9,7 +9,7 @@ from fractions import Fraction as F
 from itertools import product
 
 from .core import ContractError
-from .float64_bridge import Float64Relation, _Check
+from .float64_bridge import Float64Relation, _ReducedCheck as _Check
 from .indexed_amp import _Arithmetic, _Scalar, _check_execution
 from .indexed_execution import CategoricalPairDomain
 from .indexed_relation import allowance
@@ -21,7 +21,7 @@ from .semantics import ArithmeticUnresolved, Evaluation, _operation
 
 BACKEND_ID = 'owned-indexed-rational-features-full-rate-parts-amp-v1'
 FORWARD_ID = 'rational-features-half-excess-single-coefficients-and-full-gradient-v1'
-WORK_MODEL = 'prepaid-rational-feature-parts-coefficients-and-complete-rne-basis-v1'
+WORK_MODEL = 'prepaid-rational-feature-parts-and-gcd-reduced-complete-native-relation-v2'
 
 
 def require_model(model):
@@ -199,6 +199,15 @@ class ResidentPrediction:
         from .cuda_learner import raw_tensor
         self.__post_init__()
         return JointAmpPrediction(self.before, self.query, raw_tensor(self.readout), self.rate_parts, self.normalization)
+
+
+def relation_work(model):
+    require_model(model)
+    # The registered exact value/order verifier prices the GCD/quotient work;
+    # it does not inherit the cheaper raw-product relation tariff.
+    # Prediction arithmetic is <= 592*J+4504 primitives, state <= 640*J+72;
+    # the larger allowance also funds complete closed-type/value validation.
+    return 2048*(model.n*(model.n-1)//2+2*model.n+8*len(model.rates)+32)
 
 
 def forward_work(model, budget, output_cap):

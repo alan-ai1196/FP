@@ -1,0 +1,85 @@
+{
+  "status": "PASS_REDUCED_EXACT_RELATIONS",
+  "exhaustive": {
+    "unique_signed_fractions": 87,
+    "ordered_pairs": 7569,
+    "bit_limits": [
+      1,
+      3,
+      5,
+      8,
+      12,
+      32
+    ],
+    "outcomes": {
+      "compare": {
+        "exact": 27933,
+        "unresolved": 17481
+      },
+      "add": {
+        "exact": 24257,
+        "unresolved": 21157
+      }
+    }
+  },
+  "guards_and_primitives": {
+    "old_raw_product_promise_preserved": true,
+    "no_unbounded_fallback": true,
+    "conservative_zero_sum_can_remain_unresolved": true,
+    "primitive_call_checks": [
+      {
+        "addition": false,
+        "cases": 5,
+        "instrumented_calls": {
+          "operation": 2,
+          "guard": 5,
+          "gcd": 2
+        },
+        "tariff": 64
+      },
+      {
+        "addition": true,
+        "cases": 5,
+        "instrumented_calls": {
+          "operation": 4,
+          "guard": 10,
+          "gcd": 2
+        },
+        "tariff": 96
+      }
+    ],
+    "scope": "guarded operation/guard/GCD call counts; proof also prices quotients and scalar work; not bigint bit-time"
+  },
+  "continuation": {
+    "predictions": 82,
+    "observed_and_committed": 81,
+    "original_limit": 32768,
+    "old_observation_comparison": {
+      "T": 41,
+      "coordinate": 2,
+      "native_gradient_denominator_bits": 16734,
+      "error_denominator_bits": 16760,
+      "previous_error_denominator_bits": 16760,
+      "shared_denominator_bits": 16760,
+      "raw_cross_product_bits": 33492,
+      "reduced_cross_product_bits": 16732,
+      "error_upper_2_neg_48": "699051/140737488355328"
+    },
+    "compare_only_prediction_failure_at_T": 81,
+    "reduced_mass_sum": "4",
+    "native_gradient_refusal_at_T": 81,
+    "exact_gradient_denominator_bits": 32863,
+    "maximum_native_prediction_bits": 16532,
+    "maximum_observed_gradient_error_upper_2_neg_48": "2796203/140737488355328",
+    "maximum_priced_relation_arithmetic": 5688,
+    "paid_relation_tariff": 108544,
+    "scope": "actual ordered CPU count continuation, exact unsigned/literal sums and passive fixed RNE; no CUDA or live Runtime failure-lifetime claim"
+  },
+  "owner_tariff": {
+    "new_rational_feature_coefficient": 2048,
+    "unchanged_unit_feature_coefficient": 512,
+    "complete_description_dispatch": true,
+    "work_model": "prepaid-rational-feature-parts-and-gcd-reduced-complete-native-relation-v2",
+    "arithmetic_model": "guarded integer, GCD, quotient and scalar primitive tariff; independent bit cap and physical host cap"
+  }
+}

@@ -1,19 +1,22 @@
 # FP Open Problems
 
-A1 proves the declared rational-feature profile and paired-install jobs at
-e16c976 but fails n64 run sealing because of an omitted complete-cache type.
-The exact closed registration is repaired and CPU checked. A2 now registers
-that closure and the eighteen unexecuted cases, preserving
-the [terminal A1 outcomes](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json).
-This is an implementation consumer mismatch; no Foundation or arithmetic
-change is justified by it.
+A1/A2 now supply five passing rational-feature device jobs: profiles,
+paired installation, repaired n64 closure, C8/S120 and a 203-bit denominator.
+A2's precision-refusal job stops at T=41; the remaining fifteen cases never
+run. This falsifies the old verifier's expected T=81 first refusal. The
+[proved reduced arithmetic](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#8-paid-gcd-reduction-exact-valueorder-with-a-distinct-resource-promise)
+removes avoidable shared-factor intermediates and reaches the actual
+materialized-gradient limit in CPU audits. It changes the solver and its
+paid work tariff, not Foundation or physical semantics. Register A3 for
+that changed solver and unexecuted cases, retaining both original journals
+and all five earlier passing jobs without rerunning them.
 
 The [rational-feature AMP code and exact CPU gate](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
 now preserve the complete physical cache, all rate parts and fixed gradients.
 The [registered 21-case gate](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
-now has the partial A1 evidence above. Complete the failed/unexecuted cases
-under a separate registration, including coefficient/part binding, n64
-closure and retained failures. CPU evidence supplies no actual physical
+now has the partial A1/A2 evidence above. Complete the failed/unexecuted cases
+under a separate registration, including coefficient/part binding and
+retained failures. CPU evidence supplies no actual physical
 facts, and completed attempts remain terminal. No further static special
 case is needed to continue this gate.
 

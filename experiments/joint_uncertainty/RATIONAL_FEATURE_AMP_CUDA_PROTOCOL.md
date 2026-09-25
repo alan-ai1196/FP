@@ -171,3 +171,26 @@ After committing this registration, run `--attempt 2`. It writes the separate
 `FP_RATIONAL_FEATURE_AMP_CUDA_A2.json`, preserves all outcomes and stops at
 an unexpected failure. `--attempt 1` is refused by the new runner. A2 is
 **REGISTERED, NOT YET EXECUTED** at this paragraph's registration commit.
+
+## A2 outcome (after execution)
+
+The [original A2 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json)
+is terminal at f298eab. n64 closure, C8/S120 and the 203-bit denominator pass:
+60 phases, 19 independently reconstructed predictions and 1,822 primitive
+words. The precision-refusal case instead stops at observation T=41, with
+`reference operation may exceed its integer work limit`. No memory/time
+limit triggers. No detailed independent phase summary is retained for that
+failed job; it remains unscored. Original cases7..21 never run.
+
+CPU localization finds an exact error-comparison cross product of 33,492
+bits, although canceling the shared denominator reduces it to 16,732 bits.
+The native gradient fits and the rounding error is below tolerance. Thus
+the original expected first refusal at T=81 is false for the A2 verifier.
+Preserve its original preregistration and result; do not relabel it a pass.
+
+The subsequent [paid reduced-arithmetic proof/audit](../../theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#8-paid-gcd-reduction-exact-valueorder-with-a-distinct-resource-promise)
+changes the exact relation solver and work tariff. Native G/Gamma/U, physical
+primitives, caps and tolerances remain. A new CPU continuation reaches the
+true materialized-gradient obstruction after81 commits. This improvement
+requires a separately registered A3 before further device execution; the
+five successful A1/A2 jobs are not repeated or attributed to its source.

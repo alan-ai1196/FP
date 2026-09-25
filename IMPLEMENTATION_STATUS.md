@@ -1,12 +1,25 @@
 # FP Implementation Status
 
+A2 at f298eab passes actual n64 closure, C8/S120 and the 203-bit denominator:
+60 phases/19 predictions/1,822 primitive words. The fourth job honestly
+refuses an exact comparison at T=41, falsifying the expected first refusal
+at T=81 for that verifier. Its [terminal journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json)
+is unchanged; the next fifteen cases never ran. No host/time limit triggers.
+
+The rational-feature verifier now uses proved GCD-reduced addition/comparison
+with a separately paid work ID. Native Reference, physical RNE, bit caps and
+tolerances stay fixed. The [exact audit](evidence/minimal/FP_REDUCED_EXACT_RELATIONS.json)
+passes 90,828 arithmetic calls and an 81-commit CPU continuation up to the
+proved native-gradient obstruction. A new actual continuation remains to be
+registered; earlier passing jobs retain their original source attribution.
+
 A1 at e16c976 passes actual profiles and paired fresh install/continuation:
 228 checked phases,74 predictions and6,044 primitive words. The n64 case
 fails in the run-report reader's missing DecodedPrediction registration.
 Only that closed type list is repaired; the focused CPU report audit passes.
 The [A1 journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json) stays
-terminal. Repaired actual closure and eighteen unexecuted cases still need
-a separately registered continuation; numerical phases and transport are unchanged.
+terminal. A2 subsequently passes the repaired closure as described above;
+the original A1 physical phases and transport retain their source attribution.
 
 The [rational-feature AMP implementation](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)
 is registered through the existing closed joint contract, with distinct raw/

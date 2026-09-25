@@ -1,4 +1,4 @@
-"""Guarded rational log enclosures for owned reference decision calculations.
+"""Guarded exact rational arithmetic for owned reference calculations.
 
 These pure helpers have no observation, e-process, bridge or installation
 authority. Their work count is a conservative reference primitive charge,
@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from fractions import Fraction as F
+from math import gcd
 
 from .core import ContractError, natural
 from .semantics import ArithmeticUnresolved, _guard, _operation
@@ -77,6 +78,56 @@ decide the signs without constructing those products.
 def compare_exact_work() -> int:
     """Conservative fixed reference charge, including both products' guards."""
     return 24
+
+
+def compare_reduced_exact(left: F, right: F, *, bit_limit: int) -> int:
+    """Exact order after canceling factors shared by both cross products.
+
+    Unlike compare_exact, this proves only the order, not affordability of
+    later unreduced Fraction comparisons. Inputs are retained unchanged.
+    GCD/remainders and quotients never exceed the guarded operand widths;
+    every remaining product has the original preflight and result guards.
+    """
+    _fraction(left, 'left reduced comparison operand')
+    _fraction(right, 'right reduced comparison operand')
+    natural(bit_limit, 'reference integer work limit', positive=True)
+    _guard(left, right, bit_limit=bit_limit)
+    denominator_factor = gcd(left.denominator, right.denominator)
+    numerator_factor = gcd(abs(left.numerator), abs(right.numerator)) or 1
+    first = _operation(F(left.numerator//numerator_factor), F(right.denominator//denominator_factor),
+                       multiply=True, bit_limit=bit_limit)
+    second = _operation(F(right.numerator//numerator_factor), F(left.denominator//denominator_factor),
+                        multiply=True, bit_limit=bit_limit)
+    return (first.numerator > second.numerator)-(first.numerator < second.numerator)
+
+
+def add_reduced_exact(left: F, right: F, *, bit_limit: int) -> F:
+    """Guarded canonical rational addition without first multiplying b*d.
+
+    For g=gcd(b,d), s=a*(d/g)+c*(b/g), all possible final denominator
+    cancellation is in gcd(s,g). Guard the signed numerator work first,
+    then form the already reduced denominator. This may still be UNRESOLVED
+    when those guarded numerator operations do not fit.
+    """
+    _fraction(left, 'left reduced sum operand')
+    _fraction(right, 'right reduced sum operand')
+    natural(bit_limit, 'reference integer work limit', positive=True)
+    _guard(left, right, bit_limit=bit_limit)
+    g = gcd(left.denominator, right.denominator)
+    first = _operation(F(left.numerator), F(right.denominator//g), multiply=True, bit_limit=bit_limit)
+    second = _operation(F(right.numerator), F(left.denominator//g), multiply=True, bit_limit=bit_limit)
+    total = _operation(first, second, multiply=False, bit_limit=bit_limit).numerator
+    cancel = gcd(total, g)
+    denominator = _operation(F(left.denominator//g), F(right.denominator//cancel),
+                             multiply=True, bit_limit=bit_limit).numerator
+    result = F(total//cancel, denominator)
+    _guard(result, bit_limit=bit_limit)
+    return result
+
+
+def reduced_exact_work(*, addition=False) -> int:
+    """Fixed guarded integer/GCD/quotient tariff, excluding bigint bit-time."""
+    return 96 if addition else 64
 
 
 def log_enclosure(value: F, *, terms: int, bit_limit: int) -> LogInterval:

@@ -49,6 +49,11 @@ def implementation(model):
     return joint_amp
 
 
+def relation_work(model):
+    require_unit_feature_model(model)
+    return 512*(model.n*(model.n-1)//2+2*model.n+8*len(model.rates)+32)
+
+
 def prediction_output_cells(plan):
     return plan.output_cells
 

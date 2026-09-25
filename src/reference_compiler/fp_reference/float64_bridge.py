@@ -14,7 +14,7 @@ from .binary_arithmetic import Float64Arithmetic, Float64Value
 from .core import ContractError, natural
 from .float64_learner import Float64Evaluation, Float64LearnerState
 from .learner import ReferenceLearnerState
-from .numerics import compare_exact
+from .numerics import compare_exact, compare_reduced_exact, add_reduced_exact
 from .program import Program, SemanticRules, name, rational
 from .semantics import ArithmeticUnresolved, Evaluation, _guard, _operation
 
@@ -152,6 +152,19 @@ class _Check:
         for (_, a), (_, b) in zip(left, right):
             error = self.paired(a, b, 'delayed histories', error)
         return error
+
+
+class _ReducedCheck(_Check):
+    """Order/value-only verifier; grants no unreduced cross-product witness.
+
+    A registered owner must fund this implementation separately. Native
+    semantics and the original raw-product checker retain their old limits.
+    """
+    def compare(self, left, right):
+        return compare_reduced_exact(left, right, bit_limit=self.bit_limit)
+
+    def add(self, left, right):
+        return add_reduced_exact(left, right, bit_limit=self.bit_limit)
 
 
 def check_state(ref: ReferenceLearnerState, finite: Float64LearnerState,

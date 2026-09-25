@@ -1,10 +1,22 @@
 # FP Handoff
 
-**A2 is preregistered for the failed/unexecuted rational-feature cases.**
-The [continuation protocol](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
-anchors production at dcdd3e9. Run the new runner with `--attempt 2`; it fixes
-the original budgets and executes original cases3..21. A1's passing profile/
-install jobs are not rerun. A2 has no actual outcome at this registration.
+**A2 is terminal: n64 closure, C8/S120 and the 203-bit denominator pass;
+the exact verifier refuses earlier than preregistered.** The
+[original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json) is
+bound to f298eab. Its three successful jobs total 60 phases/19 predictions/
+1,822 primitive words; the precision job stops at observation T=41. No
+memory/time limit triggers. The fifteen subsequent cases remain unexecuted.
+
+The [exact arithmetic proof and audit](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#8-paid-gcd-reduction-exact-valueorder-with-a-distinct-resource-promise)
+show why: error comparison constructs a 33,492-bit product although its
+shared denominator cancels, leaving 16,732 bits. A paid GCD-reduced value/
+order checker now replaces only this verifier's addition/comparison. It
+preserves every input, physical word, native semantic and numerical cap;
+its separate work tariff increases and receives a new ID. The exact audit
+passes 90,828 bounded arithmetic calls and reaches the actual 32,863-bit
+native-gradient refusal after 81 CPU commits. Register A3 for the failed
+precision case and fifteen unexecuted cases before any new CUDA job. Do not
+rerun five passing A1/A2 jobs or attribute them to the new verifier source.
 
 **A1 now proves actual rational-feature profiles and paired installation, but
 stops at a run-sealing mismatch.** The [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
@@ -15,8 +27,8 @@ reader omitted DecodedPrediction and requested a dense `.values` array.
 No memory/time cap triggers; the remaining eighteen cases never ran.
 The exact type registration is repaired and a [focused CPU audit](evidence/minimal/FP_RATIONAL_FEATURE_RUN_DIAGNOSTICS.json)
 passes, including twelve full materialized comparisons and n64 without
-expansion. Register a separate continuation for the failed closure and
-unexecuted cases; do not overwrite/relabel A1 or rerun its passing jobs.
+expansion. A2 subsequently passes this repaired closure as described above;
+do not overwrite/relabel A1 or rerun its passing jobs.
 
 The [21-case rational-feature CUDA protocol](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
 and runner were preregistered against production e98065e before A1.

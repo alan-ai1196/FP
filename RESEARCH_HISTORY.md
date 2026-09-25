@@ -9031,3 +9031,43 @@ source/status/traceback in preflight. All original caps, case words, precision,
 frame/output allowances and deadlines remain. The runner refuses attempt1
 and writes a separate A2 journal. Commit this registration before executing
 any A2 job; retain every outcome and stop at the first unexpected failure.
+
+## 263. Separate an avoidable verifier precision barrier from the native-gradient lower bound (2026-09-25)
+
+A2 at f298eab passes repaired n64 sealing, C8/S120 at original tolerances,
+and the203-bit-denominator case with an actual rounded-zero coefficient.
+Those three jobs check60 phases/19 predictions/1,822 primitive words; n64
+represents3*2^63 hypotheses and all12 gradient forms without expansion.
+Peak commitment2,235,342,848 stays below4 GiB, with no time/memory termination.
+Preserve the original A2 journal. The fourth job stops at observationT=41,
+not the preregisteredT=81. It is unscored; fifteen later cases never run.
+
+Exact CPU reconstruction locates the earlier refusal in gradient-error
+ordering:16,760-bit equal denominators lead to a33,492-bit raw product.
+Canceling their shared factor reduces this to16,732 bits. The native
+gradient denominator is16,734 bits and error is below1/100. This falsifies
+the gate's predicted first refusal for that solver, not the native lower.
+A compare-only repair then fails mass addition atT=81 despite exact sum4.
+
+Prove guarded GCD-reduced signed comparison and canonical rational addition.
+Retain all inputs and guard every remaining product/sum. The new comparison
+proves order only; the old raw-product helper remains unchanged because its
+decision class also promises affordable subsequent unreduced comparisons.
+The new helper can still return UNRESOLVED on conservative preflight, even
+for an easily known zero sum. No unlimited fallback or semantic action.
+
+Use the reduced value/order checker only in rational-feature AMP relations.
+Give it a new work ID and a separately prepaid2048-times-dimension tariff;
+the original unit-feature charge stays512. Primitive comparison/addition
+tariffs64/96 cover guards, GCDs and quotients, not bigint time or host bytes.
+Physical words, native Reference operations, all caps and tolerances stay.
+
+The2,614-byte audit checks7,569 signed rational pairs at six caps per
+operation (90,828 calls), strict inputs and honest refusals, primitive calls,
+closed tariff dispatch and all82 CPU forecasts/81 observations/commits.
+The next native gradient correctly refuses its irreducible32,863-bit
+denominator under32768; final prediction fits16,532. A new CUDA continuation
+must register this changed solver before testing it and the remaining
+cases. Keep prior successes at their original sources; no full release.
+The legacy unit-feature AMP, rational-feature AMP, exact numerics and owned
+binary64 Runtime regression suites all pass. Original artifacts remain.

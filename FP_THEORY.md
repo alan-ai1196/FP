@@ -516,9 +516,21 @@ the existing owner. Its exact CPU gate passes 2,964 queries, 5,928 observations,
 550,524 words and 248 full native continuation triples. A1 subsequently passes
 the actual profile and paired-install jobs at e16c976, then fails n64 run
 sealing because its closed diagnostic list omits the new cache type. That
-consumer registration is repaired and CPU checked; repaired actual closure
-and the remaining cases are unverified. Old AMP types/IDs cannot adopt this new layout.
-No new semantic action or full indexed release follows.
+consumer registration is repaired. A2 at f298eab then passes n64 closure,
+C8/S120 and the203-bit denominator:60 phases/19 predictions/1,822 primitive
+words. Its precision job refuses atT=41, earlier than preregistered, and the
+remaining fifteen cases never run. Both original attempts remain terminal.
+
+The exact verifier's error comparison unnecessarily constructs a33,492-bit
+product from two16,760-bit equal denominators. Proved guarded GCD reduction
+needs only16,732 bits and changes no input or physical word. Canonical
+reduced addition also avoids the next unnecessary mass-sum denominator
+product. This separate value/order solver has a new prepaid work tariff;
+the older raw-product helper retains its stronger affordability promise.
+The exact audit passes90,828 bounded calls and reaches81 CPU commits before
+the native-gradient obstruction below. Actual new-solver conformance remains
+to be tested. Old AMP types/IDs cannot adopt this new layout; no semantic
+action, new complete decision class or full indexed release follows.
 
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed

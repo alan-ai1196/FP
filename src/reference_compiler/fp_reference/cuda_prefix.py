@@ -321,7 +321,7 @@ class _CudaPrefix:
 
     def relation_work(self, program, rules):
         if self.joint:
-            return 512*(program.n*(program.n-1)//2+2*program.n+8*len(program.rates)+32)
+            return self.joint_implementation.relation_work(program)
         if self.indexed:
             return 512*(program.n*(program.n-1)//2+2*program.n+16)
         from .float64_bridge import relation_work

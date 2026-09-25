@@ -1,9 +1,10 @@
 # Owned rational-feature AMP refinement
 
-Status (2026-09-25): **EXACT CPU PASS; A1 ACTUAL PROFILE AND PAIRED INSTALL
-JOBS PASS; A1 STOPS AT n64 RUN-SEALING MISMATCH**. The missing closed cache
-registration is now repaired and CPU checked. The repaired actual closure
-and remaining cases are still unverified.
+Status (2026-09-25): **EXACT CPU PASS; FIVE ACTUAL JOBS PASS ACROSS TERMINAL
+A1/A2; A2 EXPOSES AN EARLIER VERIFIER PRECISION REFUSAL**. A2 proves repaired
+n64 closure, C8/S120 and the 203-bit denominator case. Its fourth job stops
+at T=41. Sections 7–8 retain that result and prove/audit a paid exact solver
+improvement. The new solver and remaining cases still need device evidence.
 
 This implements the fixed physical schedule from
 [RATIONAL_FEATURE_SCALE.md](RATIONAL_FEATURE_SCALE.md) for the native program
@@ -25,7 +26,12 @@ The new fixed IDs are:
 
     owned-indexed-rational-features-full-rate-parts-amp-v1
     rational-features-half-excess-single-coefficients-and-full-gradient-v1
-    prepaid-rational-feature-parts-coefficients-and-complete-rne-basis-v1
+    prepaid-rational-feature-parts-and-gcd-reduced-complete-native-relation-v2
+
+The work ID above is the current verifier tariff. A1/A2 used the original
+`prepaid-rational-feature-parts-coefficients-and-complete-rne-basis-v1`.
+Section 8 changes only the exact relation solver and its separate charge;
+the physical backend and forward IDs, primitives and native G/Gamma/U stay fixed.
 
 The existing optional evidence-codec surcharge still applies. Changing the
 descriptor while retaining the original physical IDs is refused. Each module
@@ -288,4 +294,120 @@ The subsequent A2 registration anchors production at dcdd3e9 and runs exactly
 original cases3..21 with unchanged caps/tolerances. The runner checks the
 terminal A1 evidence and that run_state.py is the only changed production
 file. The two passing A1 jobs are not rerun, and their source attribution is
-retained. A2 has no actual result at its registration commit.
+retained. A2 had no actual result at its registration commit; its subsequent
+terminal outcome follows.
+
+## 7. A2: actual closure passes; an arithmetic completeness expectation fails
+
+The original [A2 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json)
+records execution at f298eab, under the unchanged 4-GiB/900-second limits:
+
+- n64 C8 passes 25 phases, eight independently reconstructed predictions,
+  all 12 gradient forms and `SEALED_CUDA_STREAM`, with zero constructor
+  decisions. It represents K=27,670,116,110,564,327,424 hypotheses without
+  expansion. Table bytes are 1,865,070; packed peak is 18,610,671.
+- C8/S120 passes ten phases and three predictions at the original tolerances.
+  Its declared two-event native error is exactly 8950209/16471556096.
+- The C4, 203-bit-denominator case passes 25 phases/eight predictions. The
+  actual coefficient 1/q rounds to zero while exact Gamma remains retained.
+
+These three jobs total 60 phases, 19 predictions, 1,822 primitive words,
+38 half outputs and 2,249 outputs including copies. Peak whole-job commitment
+is 2,235,342,848 bytes. No memory/time termination occurs in any A2 job.
+
+The precision-refusal job then returns UNRESOLVED at observation
+`joint-event:41`, before its expected T=81 obstruction. Its journal reports
+an integer-operation preflight refusal; it retains no detailed independent
+phase summary for the failed job, so that job is unscored. The last fifteen
+cases never run. **The preregistered claim that this verifier first refuses
+at T=81 is falsified.** A2's source, status and original expectation remain.
+
+An exact CPU reproduction locates the refusal in selecting the largest
+gradient error, at fixed coordinate 2. The native gradient denominator has
+16,734 bits; both error denominators have 16,760 bits. Raw comparison would
+construct a 33,492-bit product, exceeding 32,768, even though the common
+denominator cancels. The reduced products need only 16,732 bits. The error
+is at most 699051/140737488355328 on the 2^-48 upper grid, far below 1/100.
+This is an expensive exact verifier, not failed physical accuracy or a
+counterexample to the materialized-gradient lower bound.
+
+## 8. Paid GCD reduction: exact value/order, with a distinct resource promise
+
+**Lemma (signed comparison).** For canonical x=a/b, y=c/d with positive
+denominators, let g=gcd(b,d) and h=gcd(|a|,|c|), taking h=1 if both are zero.
+The sign of x-y equals the order of the signed integers
+
+    (a/h)*(d/g), (c/h)*(b/g).
+
+Both ordinary cross products have been divided by the same positive factor
+gh. GCD remainders and exact quotients never exceed the input integer widths.
+Guard the original operands and each remaining product before evaluating it.
+Success proves the order and retains the complete original operands. It does
+**not** prove that an unreduced future cross multiplication fits. The old
+`compare_exact` deliberately promises the latter as well, so it is unchanged.
+
+**Lemma (canonical addition).** With g=gcd(b,d), set
+
+    p=a*(d/g), r=c*(b/g), s=p+r, t=gcd(s,g).
+    x+y = (s/t) / ((b/g)*(d/t)).
+
+Write b=g*b', d=g*d', where gcd(b',d')=1. Coprimality of each canonical
+input implies gcd(s,b')=gcd(s,d')=1. All final cancellation is consequently
+gcd(s,g)=t; the displayed result is already canonical, including a zero sum.
+Guard p and r, then the signed sum s, then the reduced denominator product.
+No oversized b*d intermediate is required. The result is exact, with no
+state quotient, dropped coordinate or semantic action.
+
+The exact decision class is the success domain of these specified guarded
+operations under a positive bit cap B. If L denotes integer bit length,
+comparison checks both reduced product preflights max(L(u)+L(v),2)<=B.
+Addition checks those of p,r and the final denominator; its integer sum
+preflight is max(L(p),L(r),1)+2<=B. Original operand and final result guards
+also apply. A refusal is UNRESOLVED, not impossibility for another solver.
+For example, a zero sum of opposite large integers can still fail the
+conservative numerator preflight. A canonical output wider than B, however,
+cannot be returned by any materialized exact-Fraction implementation at B.
+These claims do not cover arbitrary symbolic result encodings.
+
+The new `_ReducedCheck` is used only by this rational-feature AMP relation.
+It overrides comparison and addition, retaining all other shape, sign,
+normalization, complete-gradient and source checks. Multiplication, native
+Reference arithmetic, scalar RNE and the original unit-feature/binary64
+relations stay unchanged. A comparison-only repair would fail next at T=81
+prediction: adding its masses naively exceeds the cap although their sum is 4.
+Both lemmas are therefore needed by the existing complete relation.
+
+Comparison is charged 64 and addition 96 guarded integer/GCD/quotient/scalar
+primitives. Comparison has two guarded operations, five guard calls and two
+explicit GCDs; addition has four, ten and two, respectively. The tariffs also
+cover input validation, Fraction construction, quotients, signs and scalar
+control. They do not bound bigint bit-time or Python heap usage. With charges
+4 for `exact` and 24 for the unchanged multiplication, a complete prediction
+uses at most 592J+4504 relation arithmetic primitives and a pending state at
+most 640J+72. The registered owner now prepays
+
+    2048*(n*(n-1)/2 + 2n + 8J + 32)
+
+for either complete relation, also covering the existing closed description,
+coordinate and count validation. The old unit-feature tariff remains 512
+times its same dimension. The changed work ID prevents inheriting the old
+cheaper registration; bit, range, error, time and memory caps do not increase.
+
+The [2,614-byte exact audit](../../evidence/minimal/FP_REDUCED_EXACT_RELATIONS.json)
+checks 7,569 signed rational pairs at six caps for each operation: 90,828
+calls, including honest refusals, all successful results exact. It checks
+strict inputs, zero/coprime/overflow cases, primitive calls and closed owner
+tariff dispatch. An ordered CPU continuation passes all 82 predictions and
+81 observations/commits at the original 32,768 bits; the next Reference
+gradient correctly refuses at its irreducible 32,863-bit denominator.
+Maximum priced relation arithmetic is 5,688 against 108,544 prepaid units.
+The largest accepted gradient error is at most 2796203/140737488355328.
+This passive exact/RNE result does not establish actual CUDA failure lifetime.
+
+The complete legacy unit-feature AMP and rational-feature AMP CPU gates also
+pass on this implementation, as do the original exact-numerics and owned
+binary64 Runtime audits. Their original retained artifacts are not rewritten.
+
+A separately preregistered continuation must test the new solver and the
+fifteen unexecuted cases. Keep all five earlier passing jobs at their original
+sources. No single-source complete 21-case gate or full release is claimed.
