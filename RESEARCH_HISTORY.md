@@ -8954,3 +8954,30 @@ Next is a separately preregistered fresh-job gate at committed source, including
 all rate/word bindings, n64 closure, same-lineage fresh install and continued
 execution. Foundation, ERC-1, existing CERTIFIED_COMPLETE classes and all
 terminal experiment outcomes remain unchanged.
+
+## 260. Preregister the actual rational-feature CUDA and installation gate (2026-09-25)
+
+Register scripts/audit_rational_feature_cuda.py and the 21-case protocol
+against unchanged production e98065e before any new device execution. Every
+case runs in a fresh Windows Job Object attached before its first instruction,
+with a4-GiB commit cap and900-second deadline. Original state/probability
+tolerances stay1/100 and1/1000. No attempt is overwritten, retried or granted
+a larger cap; an unexpected failure stops the attempt and remains evidence.
+
+The independent reader reconstructs each lineage from actual unsigned
+source/target history, checking all canonical rate parts, complete scalar
+words and native gradients. Small n2/n3 phases also get full literal DAG/U
+checks at131072 audit bits; the owned Reference remains32768. n64 uses the
+independent width-two unsigned recurrence and prohibits world expansion.
+Error summaries use exact dyadic upper enclosures at grid2^-48, preserving
+the comparison while avoiding large fraction dumps.
+
+Cases cover profiles, paired fresh install and continued execution, n64
+closure, C8/S120, a203-bit denominator, the32,863-bit exact-gradient refusal,
+physical underflow/reversal, unfunded work, atomic multi-lineage failure,
+readout/coefficient/gradient/operation words, wrong targets, old output
+extents, aggregate and equal-head rate-part forgeries, changed stored parts,
+pinned workspace/failure lifetime and profile exhaustion. A separate fresh
+four-event original unit-feature job checks the shared owner; no historical
+attempt is rerun. The preflight passes without Torch. Actual outcomes are
+still unverified at this registration commit.

@@ -1,5 +1,13 @@
 # FP Handoff
 
+The [21-case rational-feature CUDA protocol](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
+and runner are now preregistered against production e98065e, before any new
+device execution. Each case gets a fresh4-GiB/900-second Windows job, original
+tolerances and full unsigned-history/literal/RNE checks. It includes paired
+install, n64 closure, coefficient/part faults and the exact-gradient refusal.
+Execute only the new attempt; retain all outcomes and stop at an unexpected
+failure. The CPU result below is not an actual device result.
+
 **The distinct rational-feature AMP implementation passes its complete CPU
 gate; actual CUDA and paired installation remain unverified.** Read
 [the refinement](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md) and

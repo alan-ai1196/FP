@@ -219,14 +219,14 @@ Reference input/plan adversaries also pass, with the old-contract attack now
 explicitly attempting to reuse old physical IDs for the new descriptor. No
 historical evidence artifact is regenerated.
 
-A separately registered fresh-job CUDA protocol must bind the committed
-source and retain every outcome before making an actual execution or
-installation claim. Its necessary targets are complete primitive/native
-conformance, physical R/Z and coefficient-word binding, ordinary/profile
-clocks, fresh paired crossing and resident installation, post-install
-continuation, n64 closure without expansion, and retained resource/output/
-target/storage/multi-lineage failures. Those are unresolved physical claims,
-not consequences of the CPU pass.
+The [21-case fresh-job protocol](../../experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
+and `scripts/audit_rational_feature_cuda.py` are now registered before execution
+against production anchor e98065e. Each job has a fixed4-GiB host cap and
+900-second deadline, with original tolerances and no within-attempt retries.
+The gate includes actual paired installation, complete coefficient/part/word
+binding, n64 closure, reversal and the exact-gradient precision refusal.
+Every result must be retained. These remain unresolved physical claims until
+the actual jobs run; they are not consequences of the CPU pass.
 
 Foundation, ERC-1 and all existing `CERTIFIED_COMPLETE` decision classes are
 unchanged. A registered physical implementation is not a constructor optimum
