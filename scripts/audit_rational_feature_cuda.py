@@ -32,13 +32,14 @@ from rational_feature_scale import Bank, reference as exact_readout, rounded, gr
 from audit_rational_feature_amp import WIDE, Q
 import audit_phase_writer_binding as runner
 
-ANCHOR = 'e98065e'
+ANCHOR = 'dcdd3e9'
 CAP, DEADLINE = 4 << 30, 900000
 STATUS = 'PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP'
-CASES = ('profiles', 'fresh-install', 'large-closure', 'range-scale', 'wide-denominator',
+ORIGINAL_CASES = ('profiles', 'fresh-install', 'large-closure', 'range-scale', 'wide-denominator',
     'precision-refusal', 'reversal', 'unfunded', 'second-commit', 'prediction-word',
     'coefficient-word', 'gradient-word', 'operation-word', 'old-output', 'target-swap',
     'plan-roots', 'rate-parts', 'stored-parts', 'workspace', 'profile-refusal', 'legacy-unit')
+CASES = ORIGINAL_CASES[2:]
 WORD = ((0, 1, 0), (1, 2, 0), (0, 2, 1), (0, 2, 0), (2, 2, 1), (2, 2, 0), (1, 0, 1), (0, 1, 0))
 
 
@@ -443,7 +444,7 @@ def workspace():
 
 
 def worker(case):
-    if case in CASES[:7]:
+    if case in ORIGINAL_CASES[:7]:
         return integration(case)
     if case == 'workspace':
         return workspace()
@@ -475,10 +476,22 @@ def preflight():
     assert sum(row['predictions'] for row in cpu['enumeration']) == 2964
     assert sum(row['both_target_observations'] for row in cpu['enumeration']) == 5928
     assert sum(row['words_including_copies'] for row in cpu['enumeration']) == 550524
+    repaired = json.loads((ROOT/'evidence/minimal/FP_RATIONAL_FEATURE_RUN_DIAGNOSTICS.json').read_text())
+    assert repaired['status'] == 'PASS_RATIONAL_FEATURE_RUN_DIAGNOSTICS'
+    prior = json.loads((ROOT/'evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json').read_text())
+    assert prior['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+    assert prior['execution_source'] == 'e16c97619a34773a03d4c5aea05d519ea2ac8af3'
+    assert prior['registration']['cases'] == list(ORIGINAL_CASES)
+    assert [(r['case'], r['worker_status']) for r in prior['workers']] == [
+        ('profiles', 'PASS'), ('fresh-install', 'PASS'), ('large-closure', 'FAILED')]
+    assert "AttributeError: 'DecodedPrediction' object has no attribute 'values'" in prior['workers'][-1]['result']['traceback']
     assert runner.indexed.CAP == CAP
     git = runner.registration.model.git
     assert not git('diff', ANCHOR, '--', 'src/reference_compiler')
-    return dict(status='REGISTERED_BEFORE_RATIONAL_FEATURE_CUDA', production_anchor=ANCHOR,
+    assert git('diff', '--name-only', 'e98065e', ANCHOR, '--', 'src/reference_compiler') == 'src/reference_compiler/fp_reference/run_state.py'
+    return dict(status='REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A2', production_anchor=ANCHOR,
+        prior_attempt='FP_RATIONAL_FEATURE_AMP_CUDA_A1.json', prior_passing_cases=list(ORIGINAL_CASES[:2]),
+        only_changed_production_file='src/reference_compiler/fp_reference/run_state.py',
         cases=CASES, job_cap=CAP, deadline_ms=DEADLINE, fresh_owner_per_job=True,
         budget=asdict(BUDGET), profile_integer_bits=4096, wide_step_cap=8, precision_step_cap=100,
         arena_bytes=32 << 20, allocator_cap=64 << 20, output_cells=128,
@@ -510,6 +523,8 @@ if __name__ == '__main__':
     elif args.preflight:
         print(json.dumps(preflight(), indent=2))
     elif args.attempt is not None:
+        if args.attempt != 2:
+            parser.error('only continuation A2 is registered here; A1 remains terminal')
         runner.matrix(args.attempt, script=__file__, cases=CASES, journal_prefix='FP_RATIONAL_FEATURE_AMP_CUDA',
             registration_fn=preflight, production_anchor=ANCHOR, result_status=STATUS, final_status=STATUS, worker_status='PASS')
     else:

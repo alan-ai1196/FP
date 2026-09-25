@@ -9017,3 +9017,17 @@ prediction records stay excluded. This diagnostic check does not prove
 actual repaired sealing. Register a separate continuation for the failed
 closure and eighteen unexecuted cases; do not rerun A1's passing jobs or
 relabel its partial outcome as a completed gate.
+
+## 262. Register A2 only for the repaired closure and unexecuted rational-feature cases (2026-09-25)
+
+Anchor the separate A2 continuation at dcdd3e9. It runs original cases3..21;
+the profile/install jobs that passed A1 are not rerun or attributed to the
+new source. Only run_state.py differs in production from e98065e, adding the
+exact decoded cache type to the existing complete activation-basis reader.
+Physical phases, relations, resources, freshness and transport are unchanged.
+
+Require the focused CPU diagnostic audit and the terminal original A1
+source/status/traceback in preflight. All original caps, case words, precision,
+frame/output allowances and deadlines remain. The runner refuses attempt1
+and writes a separate A2 journal. Commit this registration before executing
+any A2 job; retain every outcome and stop at the first unexpected failure.

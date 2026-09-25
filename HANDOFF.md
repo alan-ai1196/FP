@@ -1,5 +1,11 @@
 # FP Handoff
 
+**A2 is preregistered for the failed/unexecuted rational-feature cases.**
+The [continuation protocol](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
+anchors production at dcdd3e9. Run the new runner with `--attempt 2`; it fixes
+the original budgets and executes original cases3..21. A1's passing profile/
+install jobs are not rerun. A2 has no actual outcome at this registration.
+
 **A1 now proves actual rational-feature profiles and paired installation, but
 stops at a run-sealing mismatch.** The [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
 is terminal at e16c976: 228 checked phases/74 predictions/6,044 primitive words

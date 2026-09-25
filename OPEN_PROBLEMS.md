@@ -2,8 +2,8 @@
 
 A1 proves the declared rational-feature profile and paired-install jobs at
 e16c976 but fails n64 run sealing because of an omitted complete-cache type.
-The exact closed registration is repaired and CPU checked. Next register a
-continuation for that closure and the eighteen unexecuted cases, preserving
+The exact closed registration is repaired and CPU checked. A2 now registers
+that closure and the eighteen unexecuted cases, preserving
 the [terminal A1 outcomes](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json).
 This is an implementation consumer mismatch; no Foundation or arithmetic
 change is justified by it.

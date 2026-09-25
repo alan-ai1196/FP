@@ -149,3 +149,25 @@ its two passing jobs; its preregistration above is unchanged.
 The missing type registration is repaired separately and a focused CPU
 diagnostic audit passes. A continuation attempt must register its changed
 source before any further actual jobs; these original outcomes stay intact.
+
+## A2 continuation registration (before execution)
+
+Production anchor: `dcdd3e9`. A2 executes exactly the original ordered cases
+3 through21: repaired n64 closure, then the eighteen cases A1 never reached.
+Cases1/2 are not rerun. Their passing profile/install evidence remains bound
+to e16c976, and no single-source complete21-case execution is claimed.
+
+The only production difference from e98065e is the closed cache-type dispatch
+in run_state.py. No physical primitive, learner, range, source binding,
+resource allowance, freshness or installation code changes. The focused
+CPU report audit is a new prerequisite. All original case inputs, numerical
+limits, caps, deadlines, output/frame allowances and expected outcomes above
+remain fixed. This changes the consumer implementation; it is not a cap or
+tolerance rescue of a failed numerical experiment.
+
+The new runner preflight checks the terminal A1 source, two passes, third
+failure and exact missing-type traceback, plus the changed-file boundary.
+After committing this registration, run `--attempt 2`. It writes the separate
+`FP_RATIONAL_FEATURE_AMP_CUDA_A2.json`, preserves all outcomes and stops at
+an unexpected failure. `--attempt 1` is refused by the new runner. A2 is
+**REGISTERED, NOT YET EXECUTED** at this paragraph's registration commit.

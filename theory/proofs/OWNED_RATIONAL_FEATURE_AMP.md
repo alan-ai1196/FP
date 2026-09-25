@@ -283,3 +283,9 @@ failed closure and the eighteen unexecuted cases. A1 is never overwritten
 or relabeled as a complete gate. The profile/install evidence remains bound
 to its original source; only the closed run-report dispatch changes in the
 repair, while physical phases, resources, freshness and transport are intact.
+
+The subsequent A2 registration anchors production at dcdd3e9 and runs exactly
+original cases3..21 with unchanged caps/tolerances. The runner checks the
+terminal A1 evidence and that run_state.py is the only changed production
+file. The two passing A1 jobs are not rerun, and their source attribution is
+retained. A2 has no actual result at its registration commit.
