@@ -7,8 +7,8 @@ run. This falsifies the old verifier's expected T=81 first refusal. The
 [proved reduced arithmetic](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#8-paid-gcd-reduction-exact-valueorder-with-a-distinct-resource-promise)
 removes avoidable shared-factor intermediates and reaches the actual
 materialized-gradient limit in CPU audits. It changes the solver and its
-paid work tariff, not Foundation or physical semantics. Register A3 for
-that changed solver and unexecuted cases, retaining both original journals
+paid work tariff, not Foundation or physical semantics. A3 is now registered
+against95ba561 for that solver and unexecuted cases, retaining both original journals
 and all five earlier passing jobs without rerunning them.
 
 The [rational-feature AMP code and exact CPU gate](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)

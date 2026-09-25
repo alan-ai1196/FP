@@ -9071,3 +9071,14 @@ must register this changed solver before testing it and the remaining
 cases. Keep prior successes at their original sources; no full release.
 The legacy unit-feature AMP, rational-feature AMP, exact numerics and owned
 binary64 Runtime regression suites all pass. Original artifacts remain.
+
+## 264. Preregister the paid reduced-verifier CUDA continuation without repeating earlier successes (2026-09-25)
+
+Anchor A3 at95ba561. It executes original cases6..21: the revised solver's
+precision boundary and fifteen cases never executed in A1/A2. Five prior
+passes retain their original source attribution. All native/physical
+schedules and caps remain; the relation solver and prepaid work ID/tariff
+are explicitly changed. Preflight verifies both terminal journals, the exact
+reduced-arithmetic audit and the five-file production boundary. Commit this
+registration before running, use a separate A3 journal and stop on the first
+unexpected failure. This registers an expectation, not an actual result.

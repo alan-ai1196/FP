@@ -194,3 +194,33 @@ primitives, caps and tolerances remain. A new CPU continuation reaches the
 true materialized-gradient obstruction after81 commits. This improvement
 requires a separately registered A3 before further device execution; the
 five successful A1/A2 jobs are not repeated or attributed to its source.
+
+## A3 continuation registration (before execution)
+
+Production anchor: `95ba561`. Execute original cases6..21, exactly sixteen
+fresh jobs: the wide precision-refusal continuation, then the fifteen
+unexecuted cases. The five successful original cases keep their A1/A2 sources
+and are not run again. No single-source complete21-case gate is claimed.
+
+The changed production boundary is numerics.py and float64_bridge.py for
+the distinct guarded value/order helpers, rational_feature_amp.py for their
+use and work ID, joint_amp.py for its unchanged old tariff, and cuda_prefix.py
+for closed tariff dispatch. The new ID is
+`prepaid-rational-feature-parts-and-gcd-reduced-complete-native-relation-v2`.
+The owner pays2048*(d+2n+8J+32) for either rational-feature relation. The old
+unit-feature coefficient remains512. No native Reference operation or
+physical primitive changes, and all original bit/range/tolerance, output,
+frame, root work/bytes, GPU/host caps and deadlines remain fixed.
+
+The CPU proof/audit of this solver is a new prerequisite. The precision
+case again expects81 commits and a checked82nd prediction before the next
+native gradient's32,863-bit denominator returns UNRESOLVED. This is a
+prospective expectation for the changed solver; A2's earlierT=41 refusal
+remains the actual result of its original registration.
+
+Preflight checks both original journals and the new exact audit, locks the
+production anchor and changed-file boundary, and records the work change.
+Commit this registration before `--attempt 3`; the runner refuses attempts1/2
+and writes a new `FP_RATIONAL_FEATURE_AMP_CUDA_A3.json`. Stop at any unexpected
+failure and retain every outcome. A3 is **REGISTERED, NOT YET EXECUTED** at
+this registration commit. No Foundation/ERC-1 or release scope changes.

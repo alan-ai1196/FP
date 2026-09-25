@@ -1,5 +1,12 @@
 # FP Handoff
 
+**A3 is preregistered against production95ba561.** Run
+`python -X utf8 -B scripts/audit_rational_feature_cuda.py --attempt 3` after
+committing the [registration](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md).
+It tests the new paid reduced-arithmetic verifier in original cases6..21;
+all original caps/tolerances remain. The five A1/A2 passes are not rerun.
+A3 has no actual outcome at this registration commit.
+
 **A2 is terminal: n64 closure, C8/S120 and the 203-bit denominator pass;
 the exact verifier refuses earlier than preregistered.** The
 [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json) is
@@ -14,8 +21,8 @@ order checker now replaces only this verifier's addition/comparison. It
 preserves every input, physical word, native semantic and numerical cap;
 its separate work tariff increases and receives a new ID. The exact audit
 passes 90,828 bounded arithmetic calls and reaches the actual 32,863-bit
-native-gradient refusal after 81 CPU commits. Register A3 for the failed
-precision case and fifteen unexecuted cases before any new CUDA job. Do not
+native-gradient refusal after 81 CPU commits. A3 is now registered for the
+failed precision case and fifteen unexecuted cases. Do not
 rerun five passing A1/A2 jobs or attribute them to the new verifier source.
 
 **A1 now proves actual rational-feature profiles and paired installation, but

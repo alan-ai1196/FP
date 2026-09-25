@@ -32,14 +32,14 @@ from rational_feature_scale import Bank, reference as exact_readout, rounded, gr
 from audit_rational_feature_amp import WIDE, Q
 import audit_phase_writer_binding as runner
 
-ANCHOR = 'dcdd3e9'
+ANCHOR = '95ba561'
 CAP, DEADLINE = 4 << 30, 900000
 STATUS = 'PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP'
 ORIGINAL_CASES = ('profiles', 'fresh-install', 'large-closure', 'range-scale', 'wide-denominator',
     'precision-refusal', 'reversal', 'unfunded', 'second-commit', 'prediction-word',
     'coefficient-word', 'gradient-word', 'operation-word', 'old-output', 'target-swap',
     'plan-roots', 'rate-parts', 'stored-parts', 'workspace', 'profile-refusal', 'legacy-unit')
-CASES = ORIGINAL_CASES[2:]
+CASES = ORIGINAL_CASES[5:]
 WORD = ((0, 1, 0), (1, 2, 0), (0, 2, 1), (0, 2, 0), (2, 2, 1), (2, 2, 0), (1, 0, 1), (0, 1, 0))
 
 
@@ -485,13 +485,30 @@ def preflight():
     assert [(r['case'], r['worker_status']) for r in prior['workers']] == [
         ('profiles', 'PASS'), ('fresh-install', 'PASS'), ('large-closure', 'FAILED')]
     assert "AttributeError: 'DecodedPrediction' object has no attribute 'values'" in prior['workers'][-1]['result']['traceback']
+    second = json.loads((ROOT/'evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A2.json').read_text())
+    assert second['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+    assert second['execution_source'] == 'f298eab090e10089da2d2f8bee6b9f9bfe266797'
+    assert second['registration']['cases'] == list(ORIGINAL_CASES[2:])
+    assert [(r['case'], r['worker_status']) for r in second['workers']] == [
+        ('large-closure', 'PASS'), ('range-scale', 'PASS'), ('wide-denominator', 'PASS'), ('precision-refusal', 'FAILED')]
+    failure = second['workers'][-1]['result']['traceback']
+    assert "observation_id='joint-event:41'" in failure and 'reference operation may exceed its integer work limit' in failure
+    reduced = json.loads((ROOT/'evidence/minimal/FP_REDUCED_EXACT_RELATIONS.json').read_text())
+    assert reduced['status'] == 'PASS_REDUCED_EXACT_RELATIONS'
+    assert reduced['continuation']['predictions'] == 82 and reduced['continuation']['observed_and_committed'] == 81
+    assert reduced['continuation']['exact_gradient_denominator_bits'] == 32863
+    assert reduced['owner_tariff']['work_model'] == amp.WORK_MODEL
     assert runner.indexed.CAP == CAP
     git = runner.registration.model.git
     assert not git('diff', ANCHOR, '--', 'src/reference_compiler')
-    assert git('diff', '--name-only', 'e98065e', ANCHOR, '--', 'src/reference_compiler') == 'src/reference_compiler/fp_reference/run_state.py'
-    return dict(status='REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A2', production_anchor=ANCHOR,
-        prior_attempt='FP_RATIONAL_FEATURE_AMP_CUDA_A1.json', prior_passing_cases=list(ORIGINAL_CASES[:2]),
-        only_changed_production_file='src/reference_compiler/fp_reference/run_state.py',
+    changed = [f'src/reference_compiler/fp_reference/{name}.py' for name in
+               ('cuda_prefix', 'float64_bridge', 'joint_amp', 'numerics', 'rational_feature_amp')]
+    assert git('diff', '--name-only', 'dcdd3e9', ANCHOR, '--', 'src/reference_compiler').splitlines() == changed
+    return dict(status='REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A3', production_anchor=ANCHOR,
+        prior_attempts=['FP_RATIONAL_FEATURE_AMP_CUDA_A1.json', 'FP_RATIONAL_FEATURE_AMP_CUDA_A2.json'],
+        prior_passing_cases=list(ORIGINAL_CASES[:5]), changed_production_files=changed,
+        work_model=amp.WORK_MODEL, relation_tariff='2048*(d+2*n+8*J+32)',
+        changed_scope='paid GCD-reduced exact relation solver; native and physical scalar schedules unchanged',
         cases=CASES, job_cap=CAP, deadline_ms=DEADLINE, fresh_owner_per_job=True,
         budget=asdict(BUDGET), profile_integer_bits=4096, wide_step_cap=8, precision_step_cap=100,
         arena_bytes=32 << 20, allocator_cap=64 << 20, output_cells=128,
@@ -523,8 +540,8 @@ if __name__ == '__main__':
     elif args.preflight:
         print(json.dumps(preflight(), indent=2))
     elif args.attempt is not None:
-        if args.attempt != 2:
-            parser.error('only continuation A2 is registered here; A1 remains terminal')
+        if args.attempt != 3:
+            parser.error('only continuation A3 is registered here; A1/A2 remain terminal')
         runner.matrix(args.attempt, script=__file__, cases=CASES, journal_prefix='FP_RATIONAL_FEATURE_AMP_CUDA',
             registration_fn=preflight, production_anchor=ANCHOR, result_status=STATUS, final_status=STATUS, worker_status='PASS')
     else:
