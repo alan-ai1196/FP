@@ -1,0 +1,29 @@
+{
+  "status": "PASS_COMPLETE_TOKEN_READOUT_RELATION",
+  "scope": "passive complete observed-context prediction relation; no Runtime, learner-state or issued bridge",
+  "binary32_decoder": {
+    "boundary_RNE_words": 524,
+    "fixed_seed_RNE_words": 5528,
+    "overflow_refusals": 36,
+    "zero_denominator_refusals": 28,
+    "exact_ambiguous_rounding_cells": 24,
+    "exhausted_tie_allowance_refuses": true
+  },
+  "exact_mass_totals": {
+    "exponent_fields": 255,
+    "mass_words": 3060,
+    "exact_full_sums": 3,
+    "maximum_numerator_bits": 255,
+    "malformed_or_incomplete_refusals": 8
+  },
+  "predictions": {
+    "literal_probability_comparisons": 7,
+    "binding_tolerance_and_unobserved_label_refusals": 6,
+    "rounded_normalizer": "1",
+    "exact_stored_mass_sum": "33554433/33554432",
+    "raw_probability_sum": "33554433/33554432",
+    "proper_probability": "1/3",
+    "normalization_gap": "1/33554432",
+    "complete_vocabulary_relation_passes_registered_nonzero_tolerances": true
+  }
+}

@@ -9453,3 +9453,33 @@ state transitions, every internal event relation required by XV, and all
 label masses/proper normalization. Batch endpoint and target-only checks
 cannot replace those obligations. Ordinary text remains the research target;
 no corpus reduction, relation variant or new Foundation action is introduced.
+
+## 277. Stream the complete token prediction relation and preserve proper normalization (2026-09-26)
+
+The next-token readout cannot be certified from the observed target alone.
+Add a blockwise actual-device decoder and a conditional binary32 replay
+verifier using exact binary64 products, TwoSum residuals, outward division
+and a finite exact rounding-cell allowance. All output words are compared;
+registered bases and target caches are bound. This supplies no learner
+successor or Runtime authority.
+
+Decode every stored mass into254 exact integer exponent bins per event.
+For V<=2^20 each bin stays below2^44. Their exact sum S differs from the
+rounded device normalizer Z. The bound mmax*|S-Z|/(S*Z), plus the checked
+division rounding error, controls every proper-normalization discrepancy
+without a second device scan or a retained vocabulary-by-unit mass array.
+
+The exact V=3/base1/3 witness gives raw probability sum33554433/33554432
+although native and rounded normalizers both equal1. Properly normalized
+stored probabilities remain exactly1/3. CPU controls pass524 boundary and
+5,528 fixed-seed rounding words,3,060 mass words over255 exponent fields,
+three full exact sums and seven literal native probability comparisons.
+Resource, tolerance, binding, unobserved-label and base mutations refuse.
+
+Preregister one new full-vocabulary/context512/512-real-training-token CUDA
+job: fixed native tolerance1/100, probability1/10^6, division1/10^7,
+activation/normalizer caps2/64, block256, per-array2^24 and4,096 exact-cell
+decisions, inside the existing4-GiB/900-second/pinned3090 envelope. No score,
+commit or validation/test data. Prior terminal jobs are not replayed. After
+this prediction component, complete owned event/state integration and move
+to actual language learning and strong baselines; no relation-task expansion.

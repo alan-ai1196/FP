@@ -1,5 +1,12 @@
 # FP Implementation Status
 
+The [complete token readout predicate](experiments/next_token/COMPLETE_PREDICTION_RELATION.md)
+checks all label/event output words against a binary32 decoder, accumulates
+their exact stored mass sum in bounded integer bins, and bounds both raw
+and properly normalized probability errors. CPU exact/adversarial controls
+pass. The full-context CUDA comparison is preregistered but unexecuted.
+This passive component is not an issued bridge or event-level state relation.
+
 The [owned literal token-source control](experiments/next_token/OWNED_SOURCE_CONTROL.md)
 now runs inside ReferenceCompilerRuntime. Explicit `target_missing` sources
 and actual lag metadata match the declared PAD/token interface. All96 words

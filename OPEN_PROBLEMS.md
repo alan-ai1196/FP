@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The all-label part of the token prediction relation now has a
+[conditional proof and exact CPU control](experiments/next_token/COMPLETE_PREDICTION_RELATION.md).
+Run its one preregistered full-context CUDA comparison, then move directly
+to the remaining owned state/event relation. It cannot certify partial
+gradient accumulators, causal acquisition or future contexts by itself.
+Ordinary text learning and strong controls remain the objective; no further
+relation-task or static numerical catalog is justified by this component.
+
 The [literal Runtime source control](experiments/next_token/OWNED_SOURCE_CONTROL.md)
 closes the missing-PAD and source-delay mismatch and verifies actual retained
 profile/ordinary transitions. The compact full-vocabulary backend must now

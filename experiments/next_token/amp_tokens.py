@@ -189,9 +189,31 @@ class Kernel:
         # reference prediction, gradient or endpoint enters this schedule.
         geometry = reference.Kernel(definition, element_cap=element_cap)
         self.definition, self.levels, self.a = definition, geometry.levels, arithmetic
+        self.element_cap = element_cap
         cache = {v: float(round_binary(v, SINGLE, bit_limit=4096).value) for v in set(definition.output.base)}
         self.base = arithmetic.array([cache[v] for v in definition.output.base], 'float32')
         self.base_total = arithmetic.constant(sum(definition.output.base, F(0)))
+
+    def mass_block(self, pending, first, stop):
+        """Actual complete-label readout slice of the retained prediction.
+
+        This read-only physical decoder costs operations/storage of its own;
+        a caller cannot treat it as an owned or already-issued prediction.
+        """
+        d, a = self.definition, self.a
+        readout.natural(first)
+        readout.natural(stop, positive=True)
+        if type(pending) is not Pending or pending.origin.definition != d or not first < stop <= d.output.labels:
+            raise ValueError('matching retained prediction and declared label block required')
+        reference.size_check((d.output.features, stop-first, len(pending.targets)), self.element_cap)
+        weights = a.transpose(a.scaled_master(pending.origin.W[first:stop], d.output.grid_bits))
+        features = a.cast(pending.values[a.index(d.features)], 'float32')
+        excess = a.reduce(a.mul(weights[:, :, None], features[:, None, :]))
+        masses = a.add(self.base[first:stop, None], excess)
+        probabilities = a.div(masses, pending.normalizer[None, :])
+        if bool((masses <= 0).any()) or bool((probabilities <= 0).any()) or bool((probabilities > 1).any()):
+            raise EnclosureUnresolved('complete physical readout lost positive finite probability range')
+        return excess, masses, probabilities
 
     def unit(self, origin, windows, targets):
         d, a = self.definition, self.a
