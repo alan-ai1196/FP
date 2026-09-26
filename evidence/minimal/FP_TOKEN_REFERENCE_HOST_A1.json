@@ -1,0 +1,167 @@
+{
+  "status": "COMPLETE_RESOURCE_AUDIT",
+  "source_commit": "36851c56a8ad222970c7cfdd212a88892e67ce66",
+  "numerical_anchor": "a0610f0",
+  "cases": [
+    "rational-control",
+    "train-context512"
+  ],
+  "commit_cap": 2147483648,
+  "deadline_ms": 180000,
+  "per_array_element_cap": 16777216,
+  "scope": "fresh bounded CPU numerical/resource jobs; no Runtime/AMP/model-score certificate",
+  "results": [
+    {
+      "case": "rational-control",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 2147483648,
+        "peak_process_commit": 75931648,
+        "peak_job_commit": 77168640,
+        "user_100ns": 36562500,
+        "kernel_100ns": 937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14024,
+        "process_creation_100ns": 134348729818254915
+      },
+      "launch_wall_seconds": 3.757268700000168,
+      "result": {
+        "status": "RESOLVED_EXACT_CONTROL",
+        "vocabulary": 50257,
+        "context": 4,
+        "unit": 512,
+        "endpoint_parameters": 301548,
+        "maximum_common_denominator_bits": 12303,
+        "full_gradient_basis_checked": true,
+        "scalar_and_rational_endpoints_equal": true,
+        "master_payload_bytes": 1206192,
+        "timing_seconds": {
+          "fixture": 0.12180660000012722,
+          "source_windows": 0.0018752000005406444,
+          "pack_origin": 0.030608199999733188,
+          "kernel_compile": 0.06419719999939844,
+          "batch_bound": 0.007294300000467047,
+          "batch_commit": 0.027594199999839475,
+          "scalar_enclosure_unit_and_commit": 0.35949520000031043,
+          "compare_scalar_endpoint": 1.2123658000000432,
+          "rational_unit_with_forward_checks": 0.14742200000000594,
+          "compare_complete_gradient_basis": 0.009193300000333693,
+          "rational_commit": 0.13342660000034812,
+          "compare_rational_endpoint": 1.1811363000006168
+        },
+        "numpy_version": "2.5.1",
+        "before": {
+          "process_id": 14024,
+          "creation_100ns": 134348729818254915,
+          "process_commit": 22335488,
+          "lifetime_process_commit_peak": 29806592,
+          "job_commit_peak": 31043584,
+          "process_user_100ns": 2968750,
+          "process_kernel_100ns": 468750,
+          "job_user_100ns": 2968750,
+          "job_kernel_100ns": 625000,
+          "total_job_processes": 2
+        },
+        "after": {
+          "process_id": 14024,
+          "creation_100ns": 134348729818254915,
+          "process_commit": 34136064,
+          "lifetime_process_commit_peak": 75931648,
+          "job_commit_peak": 77168640,
+          "process_user_100ns": 36406250,
+          "process_kernel_100ns": 781250,
+          "job_user_100ns": 36406250,
+          "job_kernel_100ns": 937500,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "train-context512",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 2147483648,
+        "peak_process_commit": 235683840,
+        "peak_job_commit": 236920832,
+        "user_100ns": 9218750,
+        "kernel_100ns": 2031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 18628,
+        "process_creation_100ns": 134348729855842333
+      },
+      "launch_wall_seconds": 1.1342285999999149,
+      "result": {
+        "status": "RESOLVED_ENCLOSURE",
+        "endpoint_parameters": 603092,
+        "touched_embedding_rows": 250,
+        "observed_target_rows": 249,
+        "endpoint_published": true,
+        "independent_full_unit_rational_control": false,
+        "master_payload_bytes": 2412368,
+        "vocabulary": 50257,
+        "context": 512,
+        "unit": 512,
+        "input_width": 4,
+        "features": 8,
+        "declared_native": {
+          "sources": 25732096,
+          "sum_nodes": 52309,
+          "product_nodes": 4,
+          "incoming_edges": 103332496,
+          "parameter_slots": 603092
+        },
+        "source": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "loss_scored": false,
+        "model_or_online_freshness_claim": false,
+        "timing_seconds": {
+          "fixture_and_training_read": 0.17483679999986634,
+          "kernel_compile": 0.06622849999985192,
+          "batch_bound": 0.40438219999941794,
+          "batch_commit": 0.03720640000028652
+        },
+        "numpy_version": "2.5.1",
+        "before": {
+          "process_id": 18628,
+          "creation_100ns": 134348729855842333,
+          "process_commit": 23142400,
+          "lifetime_process_commit_peak": 30306304,
+          "job_commit_peak": 31543296,
+          "process_user_100ns": 3125000,
+          "process_kernel_100ns": 312500,
+          "job_user_100ns": 3125000,
+          "job_kernel_100ns": 312500,
+          "total_job_processes": 2
+        },
+        "after": {
+          "process_id": 18628,
+          "creation_100ns": 134348729855842333,
+          "process_commit": 30777344,
+          "lifetime_process_commit_peak": 235683840,
+          "job_commit_peak": 236920832,
+          "process_user_100ns": 9218750,
+          "process_kernel_100ns": 1875000,
+          "job_user_100ns": 9218750,
+          "job_kernel_100ns": 1875000,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}

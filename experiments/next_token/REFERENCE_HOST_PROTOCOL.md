@@ -1,8 +1,11 @@
 # CPU feasibility of the complete text reference
 
-Status: **PREREGISTERED; NOT YET EXECUTED, 2026-09-26**.
+Status: **BOTH ORIGINAL JOBS COMPLETE AT36851c5, 2026-09-26**.
 Numerical source anchor: a0610f0. The launch journal binds the complete
 committed source at execution, including this protocol and its runner.
+The preregistration below is unchanged; results are reported separately in
+[REFERENCE_HOST_RESULTS.md](REFERENCE_HOST_RESULTS.md). Do not rerun these
+terminal jobs.
 
 This is a two-case numerical/resource audit. It determines whether the
 batched exact-endpoint reference is practical enough to integrate with the

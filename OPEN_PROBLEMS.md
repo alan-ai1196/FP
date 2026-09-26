@@ -1,5 +1,12 @@
 # FP Open Problems
 
+The [whole-process reference feasibility gate](experiments/next_token/REFERENCE_HOST_RESULTS.md)
+now passes at full vocabulary/context512 on an actual training prefix,
+within2 GiB and180 seconds. The measured enclosure+commit takes0.442 s;
+this removes the immediate affordability question for the fixed fixture.
+Proceed to actual owned text/AMP execution and model comparison. Avoid a
+new benchmark sweep or more passive variants without a correctness need.
+
 The [batched enclosure reference](experiments/next_token/BATCHED_REFERENCE.md)
 closes the basic vectorized numerical implementation, including repeated
 tokens/features, ties and shared products. Its exact endpoint audit passes

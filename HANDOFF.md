@@ -1,5 +1,14 @@
 # FP Handoff
 
+**The bounded text-reference jobs both complete at36851c5.** The
+[original resource results](experiments/next_token/REFERENCE_HOST_RESULTS.md)
+include one context512/full-vocabulary update on512 real training tokens:
+all603,092 masters resolve in0.442 s for enclosure+commit, peaking at
+236,920,832 bytes inside a preattached2-GiB job. The separate small-context
+unit matches scalar and rational controls. No loss, validation, Torch or
+GPU is used. Both jobs are terminal; do not rerun them. Proceed with actual
+Runtime/AMP integration and strong text comparisons, not more passive cases.
+
 **The complete text reference now has a batched numerical kernel.** The
 [refinement and audit](experiments/next_token/BATCHED_REFERENCE.md) preserve
 all retained source records, native gradients and exact grid endpoints.

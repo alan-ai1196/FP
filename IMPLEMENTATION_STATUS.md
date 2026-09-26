@@ -1,5 +1,12 @@
 # FP Implementation Status
 
+The [bounded CPU feasibility audit](experiments/next_token/REFERENCE_HOST_RESULTS.md)
+completes both preregistered jobs at36851c5. A full-vocabulary/context512
+real-training unit resolves603,092 masters with236,920,832-byte peak job
+commitment and0.442 s enclosure+commit. The other job matches scalar and
+rational endpoints. This supports using the reference path; no Runtime,
+AMP or model-quality release follows. Both original jobs remain terminal.
+
 The [batched token reference](experiments/next_token/BATCHED_REFERENCE.md)
 now groups complete retained-unit forward/reverse operations while preserving
 all native incidences and exact committed masters. Explicit interval trees

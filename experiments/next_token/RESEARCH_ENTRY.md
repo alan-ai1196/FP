@@ -84,6 +84,12 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [bounded CPU jobs](REFERENCE_HOST_RESULTS.md) now complete, including
+one actual-training/full-vocabulary/context512 update at0.442 s enclosure
+plus commit and226 MiB peak job commitment. That supports proceeding with
+the reference implementation. Owned text/Runtime and AMP integration are
+next; no further passive benchmark sweep is needed. No model loss is scored.
+
 The [batched complete-unit reference](BATCHED_REFERENCE.md) now preserves
 the exact native endpoints with explicit array enclosures and immutable
 packed masters. Its full-vocabulary audit passes. The immediate execution

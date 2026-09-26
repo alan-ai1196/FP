@@ -9337,3 +9337,27 @@ per-array limits do not certify total memory: packed master payload alone
 is1,206,192 bytes. No text score, timed comparison, owned Runtime or AMP
 result follows. Proceed to a preregistered whole-process feasibility audit
 and ordinary text execution instead of further static variants.
+
+## 273. Complete the bounded reference feasibility gate on ordinary training tokens (2026-09-26)
+
+At committed source36851c5, both preregistered Windows jobs complete inside
+preattached2-GiB/180-second fences. One full-vocabulary/context4 synthetic
+unit matches every301,548 endpoint master against independent scalar
+and rational controls, with its entire gradient basis checked. Enclosure
+plus commit takes0.03489 s; peak job commitment77,168,640 bytes.
+
+The context512 job reads only the first1024 bytes/512 tokens of the verified
+training corpus. Its supplied four-channel native average/PRODUCT fixture
+retains603,092 parameters and resolves the complete update in0.44159 s for
+enclosure plus commit, peaking at236,920,832 bytes. Actual process identities
+match the launcher observations; neither job times out or hits its cap.
+The large-context full rational unit is not materialized. No validation,
+test, language loss, model ranking, Torch or GPU is used.
+
+These are single empirical cost observations, not a universal throughput
+law or architecture selection. The practical reference path is sufficiently
+affordable for its next integration step. Stop passive feasibility variants
+and proceed to owned Runtime/data ingress, the actual native AMP relation,
+and ordinary text with fresh strong baselines. In particular, do not let
+floating subtraction silently erase small steps before native grid projection.
+Both original jobs are terminal and their compact6046-byte journal remains.
