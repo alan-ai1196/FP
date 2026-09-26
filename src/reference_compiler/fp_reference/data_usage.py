@@ -39,12 +39,14 @@ class SourceRead:
 
     def __post_init__(self):
         name(self.source_id, 'source evaluation ID')
-        if self.kind not in ('input', 'target_atom'):
+        if self.kind not in ('input', 'target_atom', 'target_missing'):
             raise ContractError('unimplemented causal source evaluation rule')
         natural(self.index, 'input coordinate or target atom')
         natural(self.lag, 'source lag')
-        if self.kind == 'target_atom' and self.lag == 0:
+        if self.kind in ('target_atom', 'target_missing') and self.lag == 0:
             raise ContractError('the current target is not a primitive score-time source')
+        if self.kind == 'target_missing' and self.index != 0:
+            raise ContractError('missing-history predicate has no selectable token coordinate')
 
 
 @dataclass(frozen=True)
@@ -108,13 +110,18 @@ class DataContract:
             raise ContractError('every source needs its registered causal evaluation rule')
         specs = {s.source_id: s for s in rules.sources}
         for read in self.source_reads:
+            # Passive frozen metadata is not authority; validate its closed
+            # rule again before Runtime adopts the actual causal interface.
+            read.__post_init__()
             if read.kind == 'input':
                 if read.index >= len(self.input_upper):
                     raise ContractError('source reads an undeclared input coordinate')
                 upper = self.input_upper[read.index]
-            else:
+            elif read.kind == 'target_atom':
                 if read.index >= len(rules.base):
                     raise ContractError('source reads an undeclared target atom')
+                upper = F(1)
+            else:
                 upper = F(1)
             if read.lag != specs[read.source_id].availability_delay or upper > specs[read.source_id].upper:
                 raise ContractError('source evaluator delay/range disagrees with native registration')
@@ -139,9 +146,13 @@ def read_sources(contract: DataContract, cursor: int, inputs: tuple[F, ...],
     for read in contract.source_reads:
         origin = cursor-read.lag
         if origin < 0:
-            value = F(0)  # registered empty-prefix initialization, not forgotten replay
+            # Missingness is an explicitly declared causal predicate. Existing
+            # input/token atoms keep their original zero-prefix semantics.
+            value = F(read.kind == 'target_missing')
         elif read.kind == 'input':
             value = inputs[read.index] if read.lag == 0 else history[origin].inputs[read.index]
+        elif read.kind == 'target_missing':
+            value = F(0)
         else:
             value = F(history[origin].target == read.index)
         values.append((read.source_id, value))

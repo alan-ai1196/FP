@@ -1,5 +1,15 @@
 # FP Handoff
 
+**The real Runtime now owns the token PAD/source semantics on the literal
+control.** The [source integration](experiments/next_token/OWNED_SOURCE_CONTROL.md)
+adds a declared past-missing predicate, corrects literal availability delays,
+and revalidates passive reader metadata. It passes384 observations/288
+commits,64 retained-context profile events and32 ordinary candidate
+continuations. Caller-made history atoms and reporting-role leakage refuse.
+Old event/profile/native suites pass. This is the semantic control for the
+full-vocabulary indexed backend, not that backend's release. Its event-level
+state and all-label prediction relations remain the integration frontier.
+
 **Both ordinary-token AMP jobs complete on the RTX3090 at17c9204.** The
 [results](experiments/next_token/AMP_RESULTS.md) reproduce the future-visible
 underflow witness and pass10,020 exact primitive words. The real512-token,

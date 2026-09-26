@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [owned literal token-source control](experiments/next_token/OWNED_SOURCE_CONTROL.md)
+now runs inside ReferenceCompilerRuntime. Explicit `target_missing` sources
+and actual lag metadata match the declared PAD/token interface. All96 words
+pass384 observations/288 commits; sixteen profiles and their next ordinary
+events preserve complete state and original source identities. Nine reader,
+role and ingress attacks refuse. The packed full-V and token AMP backends
+are still separate components awaiting equivalent owned integration.
+
 Both [actual text-AMP jobs](experiments/next_token/AMP_RESULTS.md) now complete
 at17c9204. The small case checks10,020 primitive words exactly; the actual
 training unit matches all CPU mixed-precision values, complete gradient

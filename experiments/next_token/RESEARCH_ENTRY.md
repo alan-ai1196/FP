@@ -84,6 +84,13 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [actual Runtime source control](OWNED_SOURCE_CONTROL.md) now establishes
+ordinary and retained-profile semantics for a literal native token graph,
+including explicit PAD and original source delays. This is the control the
+compact full-vocabulary backend must refine. Preserve every internal event
+relation and the complete normalized readout when integrating batch/AMP;
+the small control does not replace the target task or grant a new release.
+
 The [actual RTX3090 schedule gate](AMP_RESULTS.md) also completes. It
 computes its own complete text-unit successors and matches the CPU physical
 schedule, while native masters can differ. A physical counterexample shows

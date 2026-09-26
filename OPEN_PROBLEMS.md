@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [literal Runtime source control](experiments/next_token/OWNED_SOURCE_CONTROL.md)
+closes the missing-PAD and source-delay mismatch and verifies actual retained
+profile/ordinary transitions. The compact full-vocabulary backend must now
+refine this same ownership and event sequence. In particular, a batched
+endpoint match is insufficient for XV's internal event relations, and a
+target-only mass check is insufficient for the full normalized prediction
+relation. Address these directly without reducing the corpus/vocabulary.
+
 The [actual ordinary-token AMP gate](experiments/next_token/AMP_RESULTS.md)
 now passes its registered numerical jobs, and physically falsifies inferring
 complete native learning from exact current predictions. The affordable real

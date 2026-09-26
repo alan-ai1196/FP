@@ -240,7 +240,8 @@ def materialize(definition):
     from fp_reference.program import Source, SourceSpec, SemanticRules, Program
     d, width, vocabulary = definition, definition.width, definition.sources.vocabulary
     names = tuple(f'lag{lag}/token{token}' for lag in range(1, d.sources.context+1) for token in range(vocabulary+1))
-    rules = SemanticRules(tuple(SourceSpec(name, 'f', 0, F(1)) for name in names),
+    rules = SemanticRules(tuple(SourceSpec(f'lag{lag}/token{token}', 'f', lag, F(1))
+        for lag in range(1, d.sources.context+1) for token in range(vocabulary+1)),
         ('f',), (('f', 'f', 'f'),), 'f', d.output.base)
     nodes = [Source(name) for name in names]
     offset = len(nodes)

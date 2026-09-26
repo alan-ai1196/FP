@@ -9422,3 +9422,34 @@ relation in ReferenceCompilerRuntime, retaining the AMP learner's own state
 and honest unresolved boundaries. The counterexample is numerical, not a
 new semantic architecture action or Foundation refutation. Ordinary text
 learning and fresh strong n-gram/Transformer comparisons remain the goal.
+
+## 276. Bind native token padding and profile sources to the actual Reference Runtime (2026-09-26)
+
+Runtime integration reveals that its existing delayed target atoms all return
+zero before a file starts, while the declared token source family includes a
+distinct PAD atom that must be one. The earlier literal numerical expansion
+also used zero availability-delay metadata. Add the closed positive-lag
+target_missing predicate and declare each literal source's actual lag. This
+is a registered causal source evaluator, not a new graph/action primitive.
+Runtime revalidates reader metadata rather than trusting a passive dataclass.
+
+With empty external input, the actual ReferenceCompilerRuntime now derives
+all token/PAD atoms from owned target history. All96 four-token words across
+six native fixtures pass384 observations,288 commits,3,456 atom checks and
+10,752 complete parameter/gradient coordinate pairs. Retained buffer/owner
+consistency is checked at predictions and successors. Nine schema/delay,
+role, forged-reader and caller-input attacks refuse.
+
+Sixteen actual newborn profiles replay original observations0 and2 twice,
+matching all64 profile events and32 next ordinary candidate events. Their
+final source position3 differs from ordinary cursor4; the next input uses
+the real global prefix. Complete states and actual profile data uses match
+the independent native learner. Existing event/profile/native suites pass.
+Local harness corrections fix result/field names, not production behavior.
+
+This establishes the literal integration control, not full-V indexed or
+AMP authorization. The compact implementation must preserve the same owned
+state transitions, every internal event relation required by XV, and all
+label masses/proper normalization. Batch endpoint and target-only checks
+cannot replace those obligations. Ordinary text remains the research target;
+no corpus reduction, relation variant or new Foundation action is introduced.

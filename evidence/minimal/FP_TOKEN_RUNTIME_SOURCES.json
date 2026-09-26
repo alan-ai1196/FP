@@ -1,0 +1,23 @@
+{
+  "status": "PASS_OWNED_LITERAL_TOKEN_SOURCES",
+  "scope": "actual ReferenceCompilerRuntime source/profile semantics on the literal audit class; no indexed/AMP/release claim",
+  "histories": {
+    "complete_words": 96,
+    "runtime_observations": 384,
+    "optimizer_commits": 288,
+    "owned_causal_atom_checks": 3456,
+    "complete_parameter_and_gradient_coordinate_pairs": 10752
+  },
+  "profiles": {
+    "profiles": 16,
+    "original_context_profile_events": 64,
+    "ordinary_candidate_continuations": 32,
+    "complete_profile_and_ordinary_state_match": true,
+    "owned_profile_data_uses": true
+  },
+  "boundaries": {
+    "schema_delay_role_and_ingress_refusals": 9,
+    "caller_cannot_supply_history_atoms": true,
+    "first_PAD_is_not_token_zero": true
+  }
+}
