@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [passive token mixed-precision schedule](experiments/next_token/AMP_SCHEDULE.md)
+implements half core operations, explicit single reductions/gradients and
+exact integer-grid master updates. Its CPU exact oracle checks10,020 words.
+An actual native witness refutes complete learner equivalence from current
+prediction equality: half underflow changes a master and its next ordinary
+forecast. The two physical GPU jobs are preregistered; Runtime/bridge
+authority remains unimplemented for this representation.
+
 The [bounded CPU feasibility audit](experiments/next_token/REFERENCE_HOST_RESULTS.md)
 completes both preregistered jobs at36851c5. A full-vocabulary/context512
 real-training unit resolves603,092 masters with236,920,832-byte peak job

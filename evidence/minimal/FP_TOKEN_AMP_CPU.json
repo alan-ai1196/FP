@@ -1,0 +1,159 @@
+{
+  "status": "PASS_CPU_SCHEDULE",
+  "schedule": "token-half-core-single-balanced-gradient-integer-grid-v1",
+  "grid": {
+    "exact_projected_cells": 34,
+    "word_envelope_refusals": 1,
+    "naive_float32_master": 65536,
+    "native_integer_master": 65535
+  },
+  "underflow_counterexample": {
+    "native_first_feature": "1/4294967296",
+    "stored_half_feature": 0,
+    "first_probability_error": "0",
+    "native_next_masters": [
+      65535,
+      65536
+    ],
+    "physical_next_masters": [
+      65536,
+      65536
+    ],
+    "next_native_probability": "131072/262143",
+    "next_physical_probability": "1/2",
+    "next_probability_gap": "1/524286",
+    "actual_ordinary_successor": true
+  },
+  "exact_primitive_calls": 2006,
+  "exact_primitive_words": 10020,
+  "half_words": 976,
+  "native_comparisons": [
+    {
+      "unit": 1,
+      "initializer": "mixed",
+      "commits": 6,
+      "full_basis_absolute_error_upper": {
+        "values": 8.94069671639533e-08,
+        "normalizer": 5.4141026106790946e-08,
+        "target_mass": 2.9593366090985285e-08,
+        "embedding": 4.978165039914995e-09,
+        "core": 5.688678521298396e-10,
+        "common": 7.156627837546191e-08,
+        "corrections": 1.1940925876210984e-07
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 2
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    },
+    {
+      "unit": 1,
+      "initializer": "zero-embedding",
+      "commits": 6,
+      "full_basis_absolute_error_upper": {
+        "values": 0.0,
+        "normalizer": 0.0,
+        "target_mass": 0.0,
+        "embedding": 1.4901161658753548e-09,
+        "core": 0.0,
+        "common": 0.0,
+        "corrections": 0.0
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 0
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    },
+    {
+      "unit": 1,
+      "initializer": "zero-core",
+      "commits": 6,
+      "full_basis_absolute_error_upper": {
+        "values": 0.0,
+        "normalizer": 0.0,
+        "target_mass": 0.0,
+        "embedding": 0.0,
+        "core": 1.8626452377018543e-10,
+        "common": 0.0,
+        "corrections": 0.0
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 0
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    },
+    {
+      "unit": 2,
+      "initializer": "mixed",
+      "commits": 3,
+      "full_basis_absolute_error_upper": {
+        "values": 9.23871994019422e-07,
+        "normalizer": 1.3083627004029097e-07,
+        "target_mass": 5.957474524809214e-08,
+        "embedding": 2.464658206864645e-08,
+        "core": 4.374608013509029e-09,
+        "common": 1.3082115753746196e-06,
+        "corrections": 1.8384663286689223e-06
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 2
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    },
+    {
+      "unit": 2,
+      "initializer": "zero-embedding",
+      "commits": 3,
+      "full_basis_absolute_error_upper": {
+        "values": 0.0,
+        "normalizer": 0.0,
+        "target_mass": 0.0,
+        "embedding": 2.235174236669968e-09,
+        "core": 0.0,
+        "common": 0.0,
+        "corrections": 0.0
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 0
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    },
+    {
+      "unit": 2,
+      "initializer": "zero-core",
+      "commits": 3,
+      "full_basis_absolute_error_upper": {
+        "values": 0.0,
+        "normalizer": 0.0,
+        "target_mass": 0.0,
+        "embedding": 0.0,
+        "core": 2.7939678261951206e-10,
+        "common": 0.0,
+        "corrections": 0.0
+      },
+      "maximum_master_grid_distance": {
+        "E": 0,
+        "C": 0,
+        "W": 0
+      },
+      "previous_state_unchanged": true,
+      "complete_source_and_clock_match": true
+    }
+  ],
+  "scope": "exact primitive schedule checks and complete finite native discrepancy report; no Runtime or issued bridge"
+}

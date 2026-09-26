@@ -9361,3 +9361,31 @@ and proceed to owned Runtime/data ingress, the actual native AMP relation,
 and ordinary text with fresh strong baselines. In particular, do not let
 floating subtraction silently erase small steps before native grid projection.
 Both original jobs are terminal and their compact6046-byte journal remains.
+
+## 274. Preserve integer grid updates and expose a future-visible half-underflow error (2026-09-26)
+
+A passive ordinary-token mixed-precision schedule now computes its own
+complete successors: half core operands/products, explicit single SUM and
+gradient reductions, integer grid masters, complete retained sources and
+all gradient incidences. The exact identity floor(q-a)=q-ceil(a) avoids
+losing a small step in floating master subtraction. At q65536 and a2^-12,
+naive single subtraction produces65536 while the native update is65535.
+
+This does not make the floating gradient native. An exact two-label witness
+starts with a PAD embedding2^-16, token1 embedding1, a squared feature,
+unit output weights and bases1. The native feature2^-32 rounds to half0,
+but both current probability vectors are exactly(1/2,1/2). After target1,
+native masters become(65535,65536), while AMP keeps(65536,65536). The next
+actual source is token1; its feature is1 on both paths. Native probability
+131072/262143 differs from AMP1/2 by1/524286. This rejects a complete learner
+bridge inferred only from current forward agreement, without changing FP.
+
+The CPU schedule passes2,006 exact primitive calls/10,020 words, including
+976 half words, and27 complete fixture commits across six trajectories.
+The supplied mixed cases can differ from native output masters by two grid
+units; these are reported, not snapped to the reference or waived. Two
+fresh GPU jobs are preregistered with4-GiB host/900-second limits,512-MiB
+allocator cap and the existing24-GiB whole-board/device identity. One checks
+every small primitive exactly; one executes the fixed real training unit
+and compares all endpoint/basis words. No bridge tolerance or model claim
+is inferred from these numerical controls.

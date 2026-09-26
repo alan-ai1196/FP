@@ -1,5 +1,14 @@
 # FP Handoff
 
+**The first ordinary-token AMP schedule exposes a real learning discrepancy.**
+The [exact witness and GPU preregistration](experiments/next_token/AMP_SCHEDULE.md)
+show a half PRODUCT underflow with zero current probability error, a changed
+native grid update, and next ordinary probability gap1/524286. Current
+prediction agreement cannot certify the complete learner. Integer master
+updates separately avoid float32 subtraction erasing small steps. The CPU
+schedule passes10,020 exact primitive words/27 complete fixture commits;
+device jobs are registered next. No new bridge or model result is issued.
+
 **The bounded text-reference jobs both complete at36851c5.** The
 [original resource results](experiments/next_token/REFERENCE_HOST_RESULTS.md)
 include one context512/full-vocabulary update on512 real training tokens:
