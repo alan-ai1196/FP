@@ -84,6 +84,14 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [actual RTX3090 schedule gate](AMP_RESULTS.md) also completes. It
+computes its own complete text-unit successors and matches the CPU physical
+schedule, while native masters can differ. A physical counterexample shows
+that exact current prediction equality can conceal future-visible learning
+loss. The immediate issue is now an owned complete state/error relation
+inside ReferenceCompilerRuntime, not another passive cost study or static
+variant. The real data/model/baseline research direction remains unchanged.
+
 The [bounded CPU jobs](REFERENCE_HOST_RESULTS.md) now complete, including
 one actual-training/full-vocabulary/context512 update at0.442 s enclosure
 plus commit and226 MiB peak job commitment. That supports proceeding with

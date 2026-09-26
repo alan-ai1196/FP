@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+Both [actual text-AMP jobs](experiments/next_token/AMP_RESULTS.md) now complete
+at17c9204. The small case checks10,020 primitive words exactly; the actual
+training unit matches all CPU mixed-precision values, complete gradient
+basis and603,092 endpoint parameters. Native master differences remain0/1/1
+for input/core/readout. The underflow counterexample is physical. A passive
+reader corrects last-operation rounding in error diagnostics without changing
+the original journal or trajectories. Runtime state/error authority remains
+the next integration boundary; no language-model score is claimed.
+
 The [passive token mixed-precision schedule](experiments/next_token/AMP_SCHEDULE.md)
 implements half core operations, explicit single reductions/gradients and
 exact integer-grid master updates. Its CPU exact oracle checks10,020 words.

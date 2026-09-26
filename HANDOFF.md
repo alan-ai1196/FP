@@ -1,5 +1,15 @@
 # FP Handoff
 
+**Both ordinary-token AMP jobs complete on the RTX3090 at17c9204.** The
+[results](experiments/next_token/AMP_RESULTS.md) reproduce the future-visible
+underflow witness and pass10,020 exact primitive words. The real512-token,
+context512 unit matches every CPU mixed-precision endpoint/basis word;
+native master distances are input0/core1/readout1 grid units. No bridge is
+issued. Original floating discrepancy diagnostics need one outward binary64
+successor; the passive reader corrects them without GPU replay. Both jobs
+are terminal. The next boundary is an owned complete state/error relation
+in ReferenceCompilerRuntime, then actual language learning and strong controls.
+
 **The first ordinary-token AMP schedule exposes a real learning discrepancy.**
 The [exact witness and GPU preregistration](experiments/next_token/AMP_SCHEDULE.md)
 show a half PRODUCT underflow with zero current probability error, a changed

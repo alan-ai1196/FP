@@ -1,6 +1,8 @@
 # Ordinary-token mixed precision and the grid boundary
 
-Status: **PASSIVE CPU EXACT AUDIT; GPU CASES PREREGISTERED, 2026-09-26**.
+Status: **CPU AND BOTH ORIGINAL GPU JOBS COMPLETE AT17c9204, 2026-09-26**.
+The [actual results and reporting correction](AMP_RESULTS.md) preserve the
+preregistration below and the original terminal journal. Do not rerun it.
 Source: [amp_tokens.py](amp_tokens.py). The
 [audit](../../scripts/audit_token_amp_schedule.py) checks this schedule's
 actual primitives and reports its complete discrepancy from native learning.

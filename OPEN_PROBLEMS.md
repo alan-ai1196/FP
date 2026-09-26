@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [actual ordinary-token AMP gate](experiments/next_token/AMP_RESULTS.md)
+now passes its registered numerical jobs, and physically falsifies inferring
+complete native learning from exact current predictions. The affordable real
+unit has native master discrepancies of one grid unit. The next obstacle is
+the owned complete state/error relation, with preregistered tolerances or a
+justified numerical refinement. Current passive helpers grant no Runtime,
+bridge or installation authority. Keep proceeding toward ordinary language
+learning and strong baselines; no new static catalog or relation variant.
+
 The [whole-process reference feasibility gate](experiments/next_token/REFERENCE_HOST_RESULTS.md)
 now passes at full vocabulary/context512 on an actual training prefix,
 within2 GiB and180 seconds. The measured enclosure+commit takes0.442 s;

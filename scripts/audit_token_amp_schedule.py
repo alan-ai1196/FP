@@ -121,16 +121,26 @@ def underflow_witness(a):
         next_probability_gap=str(native_probability-actual_probability), actual_ordinary_successor=True)
 
 
+def distance_upper(actual, enclosed):
+    actual = np.asarray(actual, dtype=np.float64)
+    if not actual.size:
+        return 0.0
+    with np.errstate(over='ignore'):
+        rounded = float(np.max(np.maximum(abs(actual-enclosed.lower), abs(actual-enclosed.upper))))
+    # The endpoint subtraction also rounds. One outward successor makes
+    # this an upper bound, including a tiny physical value opposite a large
+    # interval endpoint. Exact zero needs no gratuitous positive successor.
+    bound = float(np.nextafter(rounded, np.inf)) if rounded else 0.0
+    if not math.isfinite(bound):
+        raise EnclosureUnresolved('discrepancy reporting envelope exhausted')
+    return bound
+
+
 def distances(pending, bounds, a):
     """Full basis discrepancy upper bounds, not a bridge or tolerance waiver."""
-    def upper(actual, enclosed):
-        actual = a.raw(actual).astype(np.float64)
-        if not actual.size:
-            return 0.0
-        return float(np.max(np.maximum(abs(actual-enclosed.lower), abs(actual-enclosed.upper))))
     assert np.array_equal(pending.embedding_ids, bounds.embedding_ids)
     assert np.array_equal(pending.correction_ids, bounds.correction_ids)
-    return {key: upper(getattr(pending, key), getattr(bounds, key)) for key in
+    return {key: distance_upper(a.raw(getattr(pending, key)), getattr(bounds, key)) for key in
         ('values', 'normalizer', 'target_mass', 'embedding', 'core', 'common', 'corrections')}
 
 

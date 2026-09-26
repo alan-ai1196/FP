@@ -1,0 +1,340 @@
+{
+  "status": "COMPLETE_PHYSICAL_SCHEDULE_AUDIT",
+  "source_commit": "17c92045cc9cee30b0ae6079f1714c09b2bf8b9f",
+  "cases": [
+    "small-exact",
+    "train-context512"
+  ],
+  "host_cap": 4294967296,
+  "deadline_ms": 900000,
+  "whole_board_VRAM_upper": 25769803776,
+  "allocator_cap": 536870912,
+  "scope": "actual finite numerical schedule audit; no Runtime, issued bridge, install or model claim",
+  "results": [
+    {
+      "case": "small-exact",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1848086528,
+        "peak_job_commit": 1849323520,
+        "user_100ns": 27343750,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27796,
+        "process_creation_100ns": 134348739089137852
+      },
+      "launch_wall_seconds": 3.8804728999984945,
+      "result": {
+        "status": "PASS_EXACT_PHYSICAL_SCHEDULE",
+        "schedule": "token-half-core-single-balanced-gradient-integer-grid-v1",
+        "grid": {
+          "exact_projected_cells": 34,
+          "word_envelope_refusals": 1,
+          "naive_float32_master": 65536,
+          "native_integer_master": 65535
+        },
+        "underflow_counterexample": {
+          "native_first_feature": "1/4294967296",
+          "stored_half_feature": 0,
+          "first_probability_error": "0",
+          "native_next_masters": [
+            65535,
+            65536
+          ],
+          "physical_next_masters": [
+            65536,
+            65536
+          ],
+          "next_native_probability": "131072/262143",
+          "next_physical_probability": "1/2",
+          "next_probability_gap": "1/524286",
+          "actual_ordinary_successor": true
+        },
+        "exact_primitive_calls": 2006,
+        "exact_primitive_words": 10020,
+        "half_words": 976,
+        "native_comparisons": [
+          {
+            "unit": 1,
+            "initializer": "mixed",
+            "commits": 6,
+            "full_basis_absolute_error_upper": {
+              "values": 8.94069671639533e-08,
+              "normalizer": 5.4141026106790946e-08,
+              "target_mass": 2.9593366090985285e-08,
+              "embedding": 4.978165039914995e-09,
+              "core": 5.688678521298396e-10,
+              "common": 7.156627837546191e-08,
+              "corrections": 1.1940925876210984e-07
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 2
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          },
+          {
+            "unit": 1,
+            "initializer": "zero-embedding",
+            "commits": 6,
+            "full_basis_absolute_error_upper": {
+              "values": 0.0,
+              "normalizer": 0.0,
+              "target_mass": 0.0,
+              "embedding": 1.4901161658753548e-09,
+              "core": 0.0,
+              "common": 0.0,
+              "corrections": 0.0
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 0
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          },
+          {
+            "unit": 1,
+            "initializer": "zero-core",
+            "commits": 6,
+            "full_basis_absolute_error_upper": {
+              "values": 0.0,
+              "normalizer": 0.0,
+              "target_mass": 0.0,
+              "embedding": 0.0,
+              "core": 1.8626452377018543e-10,
+              "common": 0.0,
+              "corrections": 0.0
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 0
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          },
+          {
+            "unit": 2,
+            "initializer": "mixed",
+            "commits": 3,
+            "full_basis_absolute_error_upper": {
+              "values": 9.23871994019422e-07,
+              "normalizer": 1.3083627004029097e-07,
+              "target_mass": 5.957474524809214e-08,
+              "embedding": 2.464658206864645e-08,
+              "core": 4.374608013509029e-09,
+              "common": 1.3082115753746196e-06,
+              "corrections": 1.8384663286689223e-06
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 2
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          },
+          {
+            "unit": 2,
+            "initializer": "zero-embedding",
+            "commits": 3,
+            "full_basis_absolute_error_upper": {
+              "values": 0.0,
+              "normalizer": 0.0,
+              "target_mass": 0.0,
+              "embedding": 2.235174236669968e-09,
+              "core": 0.0,
+              "common": 0.0,
+              "corrections": 0.0
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 0
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          },
+          {
+            "unit": 2,
+            "initializer": "zero-core",
+            "commits": 3,
+            "full_basis_absolute_error_upper": {
+              "values": 0.0,
+              "normalizer": 0.0,
+              "target_mass": 0.0,
+              "embedding": 0.0,
+              "core": 2.7939678261951206e-10,
+              "common": 0.0,
+              "corrections": 0.0
+            },
+            "maximum_master_grid_distance": {
+              "E": 0,
+              "C": 0,
+              "W": 0
+            },
+            "previous_state_unchanged": true,
+            "complete_source_and_clock_match": true
+          }
+        ],
+        "scope": "exact primitive schedule checks and complete finite native discrepancy report; no Runtime or issued bridge",
+        "before": {
+          "process_id": 27796,
+          "creation_100ns": 134348739089137852,
+          "process_commit": 30449664,
+          "lifetime_process_commit_peak": 37142528,
+          "job_commit_peak": 38379520,
+          "process_user_100ns": 2812500,
+          "process_kernel_100ns": 1406250,
+          "job_user_100ns": 2812500,
+          "job_kernel_100ns": 1406250,
+          "total_job_processes": 2
+        },
+        "after": {
+          "process_id": 27796,
+          "creation_100ns": 134348739089137852,
+          "process_commit": 1848033280,
+          "lifetime_process_commit_peak": 1848033280,
+          "job_commit_peak": 1849270272,
+          "process_user_100ns": 25000000,
+          "process_kernel_100ns": 10312500,
+          "job_user_100ns": 25000000,
+          "job_kernel_100ns": 10312500,
+          "total_job_processes": 2
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "build": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "allocator_cap": 536870912,
+        "max_allocated": 26112,
+        "max_reserved": 2097152
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "train-context512",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2076913664,
+        "peak_job_commit": 2078146560,
+        "user_100ns": 25625000,
+        "kernel_100ns": 9062500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 2664,
+        "process_creation_100ns": 134348739127962572
+      },
+      "launch_wall_seconds": 3.484352100000251,
+      "result": {
+        "status": "PASS_ACTUAL_TEXT_SCHEDULE",
+        "vocabulary": 50257,
+        "context": 512,
+        "unit": 512,
+        "parameters": 603092,
+        "physical_operations": 106,
+        "physical_unit_and_commit_seconds": 0.2028429000001779,
+        "full_basis_absolute_error_upper": {
+          "values": 0.0005400092741194573,
+          "normalizer": 0.0053498719880487045,
+          "target_mass": 1.316828775509225e-07,
+          "embedding": 0.0015398243574287207,
+          "core": 0.5629909536241939,
+          "common": 0.002832510750359063,
+          "corrections": 7.587221687528654
+        },
+        "maximum_master_grid_distance": {
+          "E": 0,
+          "C": 1,
+          "W": 1
+        },
+        "complete_CPU_device_endpoint_and_basis_word_equality": true,
+        "previous_state_unchanged": true,
+        "source": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "loss_scored": false,
+        "reference_endpoint_used_for_device_update": false,
+        "scope": "one complete supplied-fixture unit and finite discrepancy report; no owned bridge, online or language-quality claim",
+        "before": {
+          "process_id": 2664,
+          "creation_100ns": 134348739127962572,
+          "process_commit": 28753920,
+          "lifetime_process_commit_peak": 37462016,
+          "job_commit_peak": 38694912,
+          "process_user_100ns": 2968750,
+          "process_kernel_100ns": 937500,
+          "job_user_100ns": 3125000,
+          "job_kernel_100ns": 937500,
+          "total_job_processes": 2
+        },
+        "after": {
+          "process_id": 2664,
+          "creation_100ns": 134348739127962572,
+          "process_commit": 1881690112,
+          "lifetime_process_commit_peak": 2076913664,
+          "job_commit_peak": 2078146560,
+          "process_user_100ns": 23437500,
+          "process_kernel_100ns": 8437500,
+          "job_user_100ns": 23593750,
+          "job_kernel_100ns": 8437500,
+          "total_job_processes": 2
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "build": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "allocator_cap": 536870912,
+        "max_allocated": 50787328,
+        "max_reserved": 69206016
+      },
+      "accepted_execution": true
+    }
+  ]
+}

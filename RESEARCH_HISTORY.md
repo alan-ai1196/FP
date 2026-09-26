@@ -9389,3 +9389,36 @@ allocator cap and the existing24-GiB whole-board/device identity. One checks
 every small primitive exactly; one executes the fixed real training unit
 and compares all endpoint/basis words. No bridge tolerance or model claim
 is inferred from these numerical controls.
+
+## 275. Execute ordinary-token AMP on RTX3090 and retain its complete native discrepancy (2026-09-26)
+
+At17c9204, both preregistered actual-device jobs complete inside their
+4-GiB/900-second host fences and512-MiB allocator cap. The small case passes
+2,006 exact primitive calls/10,020 words, including976 half words and27
+fixture commits. It physically reproduces the underflow witness's zero
+current error and1/524286 next-ordinary-prediction gap.
+
+The real512-token/context512/full-vocabulary fixture executes106 floating
+operations plus its integer commit in0.20284 s. All stored feature,
+normalizer, target-mass and complete gradient-basis words and all603,092
+endpoint masters match independent CPU mixed-precision execution. Device
+successors use only their own prior state, records and computed gradients.
+Against native reference, maximum input/core/readout master distances are
+0/1/1 grid units. This is no issued bridge, tolerance waiver or model result.
+Peak host job commitment is2,078,146,560 bytes and Torch reserved VRAM
+69,206,016 bytes; the complete board remains separately bounded at24 GiB.
+
+Review catches one reporting defect: distance to reference interval endpoints
+was computed by nearest subtraction. |2^-100-(-1)| demonstrates a possible
+rounded-down maximum. A nextafter-up successor of each nonzero reported
+maximum gives a sound upper bound; exact zero remains zero. The original
+11,671-byte journal is unchanged. A passive reader checks its terminal jobs
+and applies the proved correction without GPU replay; future reporting is
+fixed at the measurement site. No physical word or integer comparison and
+no tested bridge threshold depended on the old diagnostic.
+
+Both jobs are terminal. Continue with the actual owned complete state/error
+relation in ReferenceCompilerRuntime, retaining the AMP learner's own state
+and honest unresolved boundaries. The counterexample is numerical, not a
+new semantic architecture action or Foundation refutation. Ordinary text
+learning and fresh strong n-gram/Transformer comparisons remain the goal.
