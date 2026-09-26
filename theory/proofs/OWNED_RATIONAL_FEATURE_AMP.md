@@ -1,10 +1,11 @@
 # Owned rational-feature AMP refinement
 
-Status (2026-09-25): **EXACT CPU PASS; FIVE ACTUAL JOBS PASS ACROSS TERMINAL
-A1/A2; A2 EXPOSES AN EARLIER VERIFIER PRECISION REFUSAL**. A2 proves repaired
-n64 closure, C8/S120 and the 203-bit denominator case. Its fourth job stops
-at T=41. Sections 7–8 retain that result and prove/audit a paid exact solver
-improvement. The new solver and remaining cases still need device evidence.
+Status (2026-09-26): **NINETEEN DISTINCT ACTUAL CASES PASS ACROSS TERMINAL
+A1/A2/A3; THE REVISED VERIFIER REACHES THE PROVED PRECISION BOUNDARY**.
+A3 checks actual reversal and adversarial binding/resource failures, then
+stops in the passive profile-state reader. Section 9 explains the distinct
+audit allowance. A4 is registered for that case and the unexecuted legacy
+regression; no production code changes after A3.
 
 This implements the fixed physical schedule from
 [RATIONAL_FEATURE_SCALE.md](RATIONAL_FEATURE_SCALE.md) for the native program
@@ -411,3 +412,60 @@ binary64 Runtime audits. Their original retained artifacts are not rewritten.
 A separately preregistered continuation must test the new solver and the
 fifteen unexecuted cases. Keep all five earlier passing jobs at their original
 sources. No single-source complete 21-case gate or full release is claimed.
+
+## 9. A3: physical precision boundary and adversaries pass; separate reader funding
+
+The [original A3 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json)
+is terminal at 862e91c. Fourteen jobs pass. Their independently summarized
+blocks total 566 phases, 189 predictions, 12,090 primitive words, 378 half
+outputs and 15,039 outputs including copies. All 566 phases have full literal
+native comparisons. These totals exclude unreported fault-preparation phases
+and the failed job. Peak whole-job commitment is 2,250,600,448 bytes; no job
+has a memory/time termination.
+
+The precision case now checks 245 phases/82 predictions at the original
+32,768 bits, commits 81 observations and preserves the final actual physical
+prediction. The next exact Reference gradient needs 32,863 denominator bits,
+so observation is UNRESOLVED **before physical observation entry**. The actual
+target 0 remains retained, with zero published advances. The largest frame
+is 40,626 bytes under the unchanged 65,536-byte allowance. This establishes
+the predicted materialized-gradient boundary on the owned device path;
+A2's earlier verifier refusal remains a separate, unchanged result.
+
+The reversal job checks 314 phases/105 predictions. After a temporarily zero
+physical excess, 52 opposite labels restore the exact half forecast at T=104;
+the final target remains unrevealed. Output funding, second-lineage commit
+failure, altered prediction/coefficient/gradient/operation words, stale
+output extents, wrong target, root rescaling, equal-head rate-part forgery
+and changed retained parts all refuse as declared. The workspace job checks
+seven phases and six prepaid integer visits before its injected post-write
+failure; the paid table remains owned and pinned, with no publication.
+
+The fifteenth job, profile-refusal, fails in the independent full-state
+reader. A prediction allowance Q=1 permits a forecast from T=1 and its
+commit to T=2, then correctly refuses the next forecast. The old audit tries
+to materialize the T=2 committed state using that same Q=1 allowance.
+Its passive decoder correctly refuses the unfunded read. The original
+traceback, failed status and absence of independently summarized phase totals
+are retained. The final legacy-unit job never runs.
+
+**A valid committed state need not be materializable under the allowance
+that authorized its preceding prediction.** This is not permission to read
+it for free or extend Runtime execution. The independent small literal audit
+now explicitly uses max(Q,T) for materialization, within its separate
+131,072-bit audit and the same whole-process cap/deadline. It reports both
+step allowances. The live runtime still uses Q=1, and no native operation,
+budget, profile, storage, solver or physical schedule changes.
+
+The [564-byte CPU witness](../../evidence/minimal/FP_RATIONAL_FEATURE_READER_BUDGET.json)
+exhausts four two-target histories. Eight complete deployed/failed-profile
+states equal independent literal native execution when the passive reader
+has Q=2; all eight Q=1 reads refuse. Both actual replay events remain, no
+newborn is attached, and every subsequent live prediction still returns
+UNRESOLVED. This exact Reference audit supplies no new device authority.
+
+A4 is preregistered for only original cases20/21, under unchanged production
+95ba561. Its change is the passive reader allowance, explicitly recorded
+before execution. The nineteen prior passing cases are not rerun or
+reattributed. After these final checks, reassess ordinary next-token science
+instead of extending this relation-task branch merely to add more cases.

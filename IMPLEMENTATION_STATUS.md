@@ -1,5 +1,17 @@
 # FP Implementation Status
 
+A3 at862e91c passes fourteen actual jobs, including the proved precision
+boundary at81 commits, reversal at104, word/target/part binding, atomic
+publication and pinned workspace. Summarized blocks check566 full native
+phases/189 predictions/12,090 primitive words. No host/time limit triggers.
+Its [terminal journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json)
+then records an audit-reader failure: committedT=2 cannot be passively
+materialized under live prediction capQ=1. Production is unchanged; the
+independent reader now declares max(Q,T), verified on four exact histories.
+A4 is registered only for profile-refusal and the unexecuted legacy job.
+After this stopping point, reassess ordinary next-token prediction instead
+of adding relation cases by default. Nineteen prior passes are not rerun.
+
 A2 at f298eab passes actual n64 closure, C8/S120 and the 203-bit denominator:
 60 phases/19 predictions/1,822 primitive words. The fourth job honestly
 refuses an exact comparison at T=41, falsifying the expected first refusal
@@ -11,7 +23,7 @@ with a separately paid work ID. Native Reference, physical RNE, bit caps and
 tolerances stay fixed. The [exact audit](evidence/minimal/FP_REDUCED_EXACT_RELATIONS.json)
 passes 90,828 arithmetic calls and an 81-commit CPU continuation up to the
 proved native-gradient obstruction. A new actual continuation remains to be
-registered; earlier passing jobs retain their original source attribution.
+registered at that point; A3's subsequent outcome is described above.
 
 A1 at e16c976 passes actual profiles and paired fresh install/continuation:
 228 checked phases,74 predictions and6,044 primitive words. The n64 case

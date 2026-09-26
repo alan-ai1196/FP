@@ -9082,3 +9082,34 @@ are explicitly changed. Preflight verifies both terminal journals, the exact
 reduced-arithmetic audit and the five-file production boundary. Commit this
 registration before running, use a separate A3 journal and stop on the first
 unexpected failure. This registers an expectation, not an actual result.
+
+## 265. Reach the actual precision boundary and distinguish passive state reading from live prediction funding (2026-09-26)
+
+A3 at862e91c passes fourteen jobs. Summarized blocks check566 full native
+phases/189 predictions/12,090 primitive words. The revised verifier reaches
+81 commits and a checked82nd prediction; the next32,863-bit exact gradient
+correctly refuses before physical observation, retaining target0 with no
+publication. Reversal recovers the half forecast after104 commits. All
+declared binding/word/target/part and funding/atomic/workspace faults pass.
+Peak whole-job commitment2,250,600,448 remains below4 GiB; no memory/time
+termination. Retain the original21,464-byte A3 journal without alteration.
+
+The profile-refusal audit fails while independently materializing aT=2
+committed state under the Runtime's prediction allowanceQ=1. The previous
+prediction atT=1 and its commit are legal; the next prediction must refuse.
+The full-state audit is another computation and requires a separate funded
+read. Four exact two-target histories confirm eight full native states at
+passiveQ=2, eight Q=1 reader refusals, retained replay and no newborn. Every
+subsequent live prediction still refuses. No production behavior is changed.
+
+Declare max(Q,T) only for the passive131072-bit literal materialization,
+inside the unchanged whole-process budget. A4 registers original cases20/21
+only, with production95ba561 unchanged from A3. Nineteen prior passes are
+not rerun or reassigned. Preflight retains all terminal attempts and checks
+the new564-byte witness. Commit before the separate fresh A4 jobs.
+
+The user explicitly requests a scope reassessment at the clean stopping
+point: evaluate ordinary next-token prediction instead of deepening this
+relation branch by default. Complete the two checks, then make that research
+decision from the canonical evidence. This gate proves no language-model
+quality, learned structure or full indexed release.

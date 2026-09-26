@@ -224,3 +224,44 @@ Commit this registration before `--attempt 3`; the runner refuses attempts1/2
 and writes a new `FP_RATIONAL_FEATURE_AMP_CUDA_A3.json`. Stop at any unexpected
 failure and retain every outcome. A3 is **REGISTERED, NOT YET EXECUTED** at
 this registration commit. No Foundation/ERC-1 or release scope changes.
+
+## A3 outcome (after execution)
+
+The [original A3 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json)
+is terminal at862e91c: fourteen jobs pass. Summarized blocks check566 full
+native phases/189 predictions/12,090 primitive words. The actual wide case
+reaches81 commits and a checked82nd prediction before the32,863-bit native
+gradient correctly refuses, retaining its target and publishing nothing.
+Reversal, all declared word/target/part attacks, funding, atomic publication
+and pinned workspace cases pass. No memory/time limit triggers.
+
+The profile-refusal job then fails in its passive full-state reader, which
+tries to materialize committedT=2 under the live prediction capQ=1. Q=1
+legally permits the prediction atT=1 and its commit, then refusesT=2's next
+forecast. A separate materialization needs its own Q>=2 allowance. The job
+remains unscored; the last legacy-unit case never runs. Keep this audit
+failure distinct from a Runtime semantic, resource or physical failure.
+
+## A4 continuation registration (before execution)
+
+Production remains `95ba561`, identical to A3's862e91c execution source.
+A4 runs only original cases20/21: profile-refusal and the unexecuted fresh
+legacy-unit regression. Nineteen prior passes are not repeated or reassigned.
+No production file, runtime cap, physical schedule, solver tariff, tolerance,
+output/frame allowance, host limit or deadline changes.
+
+The passive reader now declares a materialization step cap max(Q,T), where
+Q is the original live prediction allowance and T the encoded committed
+state being independently audited. Its existing literal bit cap remains
+131072; it runs inside the same bounded fresh job. The profile case thus
+reports liveQ=1 and passiveQ=2. These extra audit reads issue no prediction,
+profile, constructor or publication authority to Runtime.
+
+The [CPU witness](../../evidence/minimal/FP_RATIONAL_FEATURE_READER_BUDGET.json)
+checks all four two-target histories, eight full literal comparisons and
+eight old-reader refusals; later live predictions remain UNRESOLVED. This
+is a prerequisite alongside the three terminal journals and earlier exact
+audits. Preflight enforces unchanged production and records the audit change.
+Commit this declaration before `--attempt 4`; only the new separate A4
+journal may be written, with the same stop-first-unexpected-failure policy.
+A4 is **REGISTERED, NOT YET EXECUTED** at this registration commit.

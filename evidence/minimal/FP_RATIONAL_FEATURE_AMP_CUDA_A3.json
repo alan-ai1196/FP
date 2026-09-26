@@ -1,0 +1,584 @@
+{
+  "status": "STOPPED_EXECUTION_OR_AUDIT_FAILURE",
+  "execution_source": "862e91c112a71619f32f2b7aac1704d2fb415ddf",
+  "registration": {
+    "status": "REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A3",
+    "production_anchor": "95ba561",
+    "prior_attempts": [
+      "FP_RATIONAL_FEATURE_AMP_CUDA_A1.json",
+      "FP_RATIONAL_FEATURE_AMP_CUDA_A2.json"
+    ],
+    "prior_passing_cases": [
+      "profiles",
+      "fresh-install",
+      "large-closure",
+      "range-scale",
+      "wide-denominator"
+    ],
+    "changed_production_files": [
+      "src/reference_compiler/fp_reference/cuda_prefix.py",
+      "src/reference_compiler/fp_reference/float64_bridge.py",
+      "src/reference_compiler/fp_reference/joint_amp.py",
+      "src/reference_compiler/fp_reference/numerics.py",
+      "src/reference_compiler/fp_reference/rational_feature_amp.py"
+    ],
+    "work_model": "prepaid-rational-feature-parts-and-gcd-reduced-complete-native-relation-v2",
+    "relation_tariff": "2048*(d+2*n+8*J+32)",
+    "changed_scope": "paid GCD-reduced exact relation solver; native and physical scalar schedules unchanged",
+    "cases": [
+      "precision-refusal",
+      "reversal",
+      "unfunded",
+      "second-commit",
+      "prediction-word",
+      "coefficient-word",
+      "gradient-word",
+      "operation-word",
+      "old-output",
+      "target-swap",
+      "plan-roots",
+      "rate-parts",
+      "stored-parts",
+      "workspace",
+      "profile-refusal",
+      "legacy-unit"
+    ],
+    "job_cap": 4294967296,
+    "deadline_ms": 900000,
+    "fresh_owner_per_job": true,
+    "budget": {
+      "join_cells": 64,
+      "live_cells": 1024,
+      "arithmetic": 32768,
+      "step_cap": 2048,
+      "integer_bits": 32768
+    },
+    "profile_integer_bits": 4096,
+    "wide_step_cap": 8,
+    "precision_step_cap": 100,
+    "arena_bytes": 33554432,
+    "allocator_cap": 67108864,
+    "output_cells": 128,
+    "frame_bytes_n2_n3": 65536,
+    "frame_bytes_n64": 524288,
+    "state_atol": "1/100",
+    "probability_atol": "1/1000",
+    "activation_cap": "C-2",
+    "normalizer_cap": "2*(C-1)",
+    "forward_id": "rational-features-half-excess-single-coefficients-and-full-gradient-v1",
+    "evidence_encoding": "typed-reference-json-v4-zlib-1.3.1-1.3.1-l6-w15-m8-s0-v1",
+    "literal_audit_bits": 131072,
+    "reference_bits": 32768,
+    "report_error_upper_grid_bits": 48,
+    "expected_reference_refusal": "label0 after 81 diagonal-zero commits at q=2^200+1; last physical prediction passes",
+    "failure_policy": "stop at first unexpected failure; retain every outcome; no retry or changed cap within attempt",
+    "scope": "actual complete native AMP/cache/gradient conformance and owned continuation/fresh install; no model superiority, GPU integer inference or constructor completeness"
+  },
+  "workers": [
+    {
+      "case": "precision-refusal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2204766208,
+        "peak_job_commit": 2205986816,
+        "user_100ns": 210156250,
+        "kernel_100ns": 13281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4104,
+        "process_creation_100ns": 134347732606816353
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 4104,
+        "case": "precision-refusal",
+        "result": {
+          "checked_phases": 245,
+          "independent_unsigned_RNE_predictions": 82,
+          "full_literal_native_phases": 245,
+          "actual_operation_words": 6182,
+          "actual_half_words": 164,
+          "output_words_including_copies": 7732,
+          "cursor": 81,
+          "table_bytes": 2648612,
+          "packed_peak_bytes": 33623394,
+          "consumed_arena_bytes": 57944,
+          "largest_encoded_frame_bytes": 40626,
+          "maximum_relation_error_upper_bounds": {
+            "state_error": "2796203/140737488355328",
+            "native_error": "1/281474976710656",
+            "normalizer_error": "0",
+            "probability_error": "1/281474976710656",
+            "division_error": "0"
+          },
+          "error_upper_grid_bits": 48,
+          "expected_refusal": "UNRESOLVED",
+          "actual_target_retained": 0,
+          "failed_observation_index": 81,
+          "exact_fixed_gradient_denominator_bits": 32863,
+          "last_actual_prediction_passed": true,
+          "physical_observation_entered": false,
+          "published_advances": 0
+        }
+      }
+    },
+    {
+      "case": "reversal",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2229776384,
+        "peak_job_commit": 2231013376,
+        "user_100ns": 158750000,
+        "kernel_100ns": 15937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 4412,
+        "process_creation_100ns": 134347732901580952
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 4412,
+        "case": "reversal",
+        "result": {
+          "checked_phases": 314,
+          "independent_unsigned_RNE_predictions": 105,
+          "full_literal_native_phases": 314,
+          "actual_operation_words": 5744,
+          "actual_half_words": 210,
+          "output_words_including_copies": 7105,
+          "cursor": 104,
+          "table_bytes": 1057806,
+          "packed_peak_bytes": 23428781,
+          "consumed_arena_bytes": 54328,
+          "largest_encoded_frame_bytes": 1522,
+          "maximum_relation_error_upper_bounds": {
+            "state_error": "246362604977/281474976710656",
+            "native_error": "99804302541/281474976710656",
+            "normalizer_error": "1/2097152",
+            "probability_error": "9980430255/281474976710656",
+            "division_error": "9394423/140737488355328"
+          },
+          "error_upper_grid_bits": 48,
+          "temporary_zero_excess": true,
+          "restored_zero_count_steps": 104,
+          "restored_actual_half_forecast": true,
+          "final_target_unrevealed": true
+        }
+      }
+    },
+    {
+      "case": "unfunded",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1863897088,
+        "peak_job_commit": 1865117696,
+        "user_100ns": 20000000,
+        "kernel_100ns": 7812500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 22856,
+        "process_creation_100ns": 134347733168378140
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 22856,
+        "case": "unfunded",
+        "result": {
+          "status": "UNRESOLVED",
+          "executor_entries": 0,
+          "retained_context_and_failed_phase": true
+        }
+      }
+    },
+    {
+      "case": "second-commit",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2226475008,
+        "peak_job_commit": 2227687424,
+        "user_100ns": 22812500,
+        "kernel_100ns": 9687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26944,
+        "process_creation_100ns": 134347733199136250
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 26944,
+        "case": "second-commit",
+        "result": {
+          "status": "UNRESOLVED",
+          "observed_lineages_retained": 2,
+          "published_advances": 0,
+          "retained_target": 0
+        }
+      }
+    },
+    {
+      "case": "prediction-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2247712768,
+        "peak_job_commit": 2248937472,
+        "user_100ns": 22656250,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3052,
+        "process_creation_100ns": 134347733235197874
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 3052,
+        "case": "prediction-word",
+        "result": {
+          "case": "prediction-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: indexed AMP output copy changed its actual source words"
+        }
+      }
+    },
+    {
+      "case": "coefficient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2249388032,
+        "peak_job_commit": 2250600448,
+        "user_100ns": 22031250,
+        "kernel_100ns": 10937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7672,
+        "process_creation_100ns": 134347733271263424
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 7672,
+        "case": "coefficient-word",
+        "result": {
+          "case": "coefficient-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: indexed AMP output copy changed its actual source words"
+        }
+      }
+    },
+    {
+      "case": "gradient-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2248622080,
+        "peak_job_commit": 2249846784,
+        "user_100ns": 24375000,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16696,
+        "process_creation_100ns": 134347733308097346
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 16696,
+        "case": "gradient-word",
+        "result": {
+          "case": "gradient-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": 0,
+          "reason": "ContractError: indexed AMP output copy changed its actual source words"
+        }
+      }
+    },
+    {
+      "case": "operation-word",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2114043904,
+        "peak_job_commit": 2115260416,
+        "user_100ns": 23281250,
+        "kernel_100ns": 8437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 8000,
+        "process_creation_100ns": 134347733344947771
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 8000,
+        "case": "operation-word",
+        "result": {
+          "case": "operation-word",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: actual indexed AMP operation differs from exact RNE"
+        }
+      }
+    },
+    {
+      "case": "old-output",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2221928448,
+        "peak_job_commit": 2223157248,
+        "user_100ns": 21406250,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 268,
+        "process_creation_100ns": 134347733381163090
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 268,
+        "case": "old-output",
+        "result": {
+          "case": "old-output",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: raw phase readout needs its initialized floating extents"
+        }
+      }
+    },
+    {
+      "case": "target-swap",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2091089920,
+        "peak_job_commit": 2092310528,
+        "user_100ns": 24531250,
+        "kernel_100ns": 8281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 18780,
+        "process_creation_100ns": 134347733417041810
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 18780,
+        "case": "target-swap",
+        "result": {
+          "case": "target-swap",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": 0,
+          "reason": "ContractError: joint observation differs from its independently owned actual target"
+        }
+      }
+    },
+    {
+      "case": "plan-roots",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2226147328,
+        "peak_job_commit": 2227363840,
+        "user_100ns": 22343750,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27384,
+        "process_creation_100ns": 134347733453930179
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 27384,
+        "case": "plan-roots",
+        "result": {
+          "case": "plan-roots",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: rational-feature plan differs from its complete actual input and paid extent"
+        }
+      }
+    },
+    {
+      "case": "rate-parts",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2227011584,
+        "peak_job_commit": 2228236288,
+        "user_100ns": 23125000,
+        "kernel_100ns": 9218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 17220,
+        "process_creation_100ns": 134347733489816548
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 17220,
+        "case": "rate-parts",
+        "result": {
+          "case": "rate-parts",
+          "status": "EXECUTION_FAILED",
+          "published_advances": 0,
+          "old_frames_and_predecessors_preserved": true,
+          "actual_target": null,
+          "reason": "ContractError: rational-feature plan differs from its complete actual input and paid extent"
+        }
+      }
+    },
+    {
+      "case": "stored-parts",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224668672,
+        "peak_job_commit": 2225885184,
+        "user_100ns": 25000000,
+        "kernel_100ns": 7968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 19152,
+        "process_creation_100ns": 134347733527521848
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 19152,
+        "case": "stored-parts",
+        "result": {
+          "status": "EXECUTION_FAILED",
+          "actual_target": 0,
+          "changed_owned_prediction_parts_refused": true,
+          "published_advances": 0,
+          "reason": "ContractError: joint CUDA prediction changed before actual target observation"
+        }
+      }
+    },
+    {
+      "case": "workspace",
+      "worker_status": "PASS",
+      "completed_job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2224959488,
+        "peak_job_commit": 2226196480,
+        "user_100ns": 23593750,
+        "kernel_100ns": 10937500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3624,
+        "process_creation_100ns": 134347733565752719
+      },
+      "result": {
+        "status": "PASS_ACTUAL_OWNED_RATIONAL_FEATURE_AMP",
+        "process_id": 3624,
+        "case": "workspace",
+        "result": {
+          "checked_phases": 7,
+          "independent_unsigned_RNE_predictions": 2,
+          "full_literal_native_phases": 7,
+          "actual_operation_words": 164,
+          "actual_half_words": 4,
+          "output_words_including_copies": 202,
+          "cursor": 2,
+          "table_bytes": 1324306,
+          "packed_peak_bytes": 1954587,
+          "consumed_arena_bytes": 1528,
+          "largest_encoded_frame_bytes": 1242,
+          "maximum_relation_error_upper_bounds": {
+            "state_error": "1/16777216",
+            "native_error": "0",
+            "normalizer_error": "0",
+            "probability_error": "0",
+            "division_error": "0"
+          },
+          "error_upper_grid_bits": 48,
+          "prepaid_reference_physical_reconstruction_visits": 6,
+          "postwrite_failure": "UNRESOLVED",
+          "failed_table_remains_owned_and_pinned": true
+        }
+      }
+    },
+    {
+      "case": "profile-refusal",
+      "worker_status": "FAILED",
+      "completed_job": {
+        "exit_code": 1,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2223489024,
+        "peak_job_commit": 2224705536,
+        "user_100ns": 28593750,
+        "kernel_100ns": 9843750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10828,
+        "process_creation_100ns": 134347733606011484
+      },
+      "result": {
+        "status": "FAILED_AUDIT",
+        "process_id": 10828,
+        "case": "profile-refusal",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 534, in <module>\n    report.update(status=STATUS, result=worker(args.worker))\n                                        ^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 461, in worker\n    return {**check_phases(runtime), 'failed_profile_steps_retained': 2, 'published_newborns': 0}\n              ^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_rational_feature_cuda.py\", line 175, in check_phases\n    assert record.reference.materialize(scalar_cap=10000, budget=budget, bit_limit=literal_bits) == expected_native\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\joint_execution.py\", line 155, in materialize\n    plan = decoder.passive_plan(before, (0, 0), budget, bit_limit=bit_limit)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\joint_partition_decoder.py\", line 337, in passive_plan\n    _preflight(state, query, budget, bit_limit, order)\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\joint_partition_decoder.py\", line 111, in _preflight\n    raise ArithmeticUnresolved('joint committed-step allowance exhausted; canceled evidence remains')\nfp_reference.semantics.ArithmeticUnresolved: joint committed-step allowance exhausted; canceled evidence remains\n"
+      }
+    }
+  ]
+}

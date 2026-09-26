@@ -528,8 +528,12 @@ reduced addition also avoids the next unnecessary mass-sum denominator
 product. This separate value/order solver has a new prepaid work tariff;
 the older raw-product helper retains its stronger affordability promise.
 The exact audit passes90,828 bounded calls and reaches81 CPU commits before
-the native-gradient obstruction below. Actual new-solver conformance remains
-to be tested. Old AMP types/IDs cannot adopt this new layout; no semantic
+the native-gradient obstruction below. A3 at862e91c then passes fourteen
+actual jobs, including that same obstruction after81 commits, reversal,
+complete binding faults and resource/publication failures. Its independent
+profile-state reader fails to fund aT=2 materialization underQ=1; a separate
+audit allowance is now explicit, with no production or Runtime cap change.
+The last two checks remain under an A4 registration. Old AMP types/IDs cannot adopt this new layout; no semantic
 action, new complete decision class or full indexed release follows.
 
 There is also a sharp exact-output precision obstruction. In the C=4 bank

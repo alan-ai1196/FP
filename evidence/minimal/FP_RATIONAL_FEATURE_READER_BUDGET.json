@@ -1,0 +1,14 @@
+{
+  "status": "PASS_RATIONAL_FEATURE_READER_BUDGET",
+  "two_target_histories": 4,
+  "full_native_state_and_failed_profile_comparisons": 8,
+  "runtime_prediction_step_cap": 1,
+  "independently_funded_materialization_step_cap": 2,
+  "old_passive_read_refusals": 8,
+  "failed_profile_events_retained": 2,
+  "published_newborns": 0,
+  "subsequent_runtime_prediction_unresolved": true,
+  "committed_state_preserved": true,
+  "literal_audit_bits": 131072,
+  "scope": "owned exact Reference histories and passive full native reads; no actual CUDA result"
+}

@@ -39,7 +39,7 @@ ORIGINAL_CASES = ('profiles', 'fresh-install', 'large-closure', 'range-scale', '
     'precision-refusal', 'reversal', 'unfunded', 'second-commit', 'prediction-word',
     'coefficient-word', 'gradient-word', 'operation-word', 'old-output', 'target-swap',
     'plan-roots', 'rate-parts', 'stored-parts', 'workspace', 'profile-refusal', 'legacy-unit')
-CASES = ORIGINAL_CASES[5:]
+CASES = ORIGINAL_CASES[19:]
 WORD = ((0, 1, 0), (1, 2, 0), (0, 2, 1), (0, 2, 0), (2, 2, 1), (2, 2, 0), (1, 0, 1), (0, 1, 0))
 
 
@@ -84,6 +84,7 @@ def check_phases(runtime, *, literal_bits=131072):
     bank = Bank(model.n, model.rates, model.prior, model.native_scale)
     coefficient_words, coefficients = coefficient_trace(model)
     words = halves = outputs = predictions = native_phases = maximum_frame = 0
+    materialization_step_cap = budget.step_cap
     maxima = {}
     for record in snapshot.cuda.phases:
         assert record.status == 'CHECKED_CUDA_PREFIX_PHASE', record.status
@@ -172,9 +173,14 @@ def check_phases(runtime, *, literal_bits=131072):
         if kind in ('initialize', 'commit', 'attach'):
             assert not record.raw_operations and not record.raw_state.gradient_words and record.output_cells == 0
         if expected_native is not None:
-            assert record.reference.materialize(scalar_cap=10000, budget=budget, bit_limit=literal_bits) == expected_native
+            # A legal final commit can produce T=step_cap+1. The independent
+            # literal reader needs its own declared allowance for that state;
+            # this cannot authorize another live Runtime prediction.
+            materialization_step_cap = max(materialization_step_cap, encoded.steps)
+            literal_budget = replace(budget, step_cap=max(budget.step_cap, encoded.steps))
+            assert record.reference.materialize(scalar_cap=10000, budget=literal_budget, bit_limit=literal_bits) == expected_native
             physical = JointState(encoded, tuple(amp.single(v) for v in record.raw_state.gradient_words)).materialize(
-                scalar_cap=10000, budget=budget, bit_limit=literal_bits)
+                scalar_cap=10000, budget=literal_budget, bit_limit=literal_bits)
             assert physical.theta == expected_native.theta
             assert max(abs(a-b) for a, b in zip(physical.gradient_sum, expected_native.gradient_sum)) <= TOLERANCE.state_atol
             native_states[record.object_id] = expected_native
@@ -193,7 +199,8 @@ def check_phases(runtime, *, literal_bits=131072):
         output_words_including_copies=outputs, cursor=snapshot.cursor, table_bytes=len(runtime._buffers[key]),
         packed_peak_bytes=snapshot.resources['peak']['reference_payload_bytes'],
         consumed_arena_bytes=snapshot.cuda.storage['consumed_arena_extent'], largest_encoded_frame_bytes=maximum_frame,
-        maximum_relation_error_upper_bounds={k: upper(v) for k, v in maxima.items()}, error_upper_grid_bits=48)
+        maximum_relation_error_upper_bounds={k: upper(v) for k, v in maxima.items()}, error_upper_grid_bits=48,
+        runtime_prediction_step_cap=budget.step_cap, literal_materialization_step_cap=materialization_step_cap)
 
 
 def integration(case):
@@ -498,17 +505,33 @@ def preflight():
     assert reduced['continuation']['predictions'] == 82 and reduced['continuation']['observed_and_committed'] == 81
     assert reduced['continuation']['exact_gradient_denominator_bits'] == 32863
     assert reduced['owner_tariff']['work_model'] == amp.WORK_MODEL
+    third = json.loads((ROOT/'evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json').read_text())
+    assert third['status'] == 'STOPPED_EXECUTION_OR_AUDIT_FAILURE'
+    assert third['execution_source'] == '862e91c112a71619f32f2b7aac1704d2fb415ddf'
+    assert third['registration']['cases'] == list(ORIGINAL_CASES[5:])
+    assert [(r['case'], r['worker_status']) for r in third['workers']] == [
+        *((case, 'PASS') for case in ORIGINAL_CASES[5:19]), ('profile-refusal', 'FAILED')]
+    failure = third['workers'][-1]['result']['traceback']
+    assert 'record.reference.materialize' in failure and 'joint committed-step allowance exhausted' in failure
+    reader = json.loads((ROOT/'evidence/minimal/FP_RATIONAL_FEATURE_READER_BUDGET.json').read_text())
+    assert reader['status'] == 'PASS_RATIONAL_FEATURE_READER_BUDGET'
+    assert reader['full_native_state_and_failed_profile_comparisons'] == 8
+    assert reader['runtime_prediction_step_cap'] == 1 and reader['independently_funded_materialization_step_cap'] == 2
     assert runner.indexed.CAP == CAP
     git = runner.registration.model.git
     assert not git('diff', ANCHOR, '--', 'src/reference_compiler')
     changed = [f'src/reference_compiler/fp_reference/{name}.py' for name in
                ('cuda_prefix', 'float64_bridge', 'joint_amp', 'numerics', 'rational_feature_amp')]
     assert git('diff', '--name-only', 'dcdd3e9', ANCHOR, '--', 'src/reference_compiler').splitlines() == changed
-    return dict(status='REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A3', production_anchor=ANCHOR,
-        prior_attempts=['FP_RATIONAL_FEATURE_AMP_CUDA_A1.json', 'FP_RATIONAL_FEATURE_AMP_CUDA_A2.json'],
-        prior_passing_cases=list(ORIGINAL_CASES[:5]), changed_production_files=changed,
+    assert not git('diff', '862e91c', '--', 'src/reference_compiler')
+    return dict(status='REGISTERED_RATIONAL_FEATURE_CUDA_CONTINUATION_A4', production_anchor=ANCHOR,
+        prior_attempts=['FP_RATIONAL_FEATURE_AMP_CUDA_A1.json', 'FP_RATIONAL_FEATURE_AMP_CUDA_A2.json',
+                       'FP_RATIONAL_FEATURE_AMP_CUDA_A3.json'],
+        prior_passing_cases=list(ORIGINAL_CASES[:19]), changed_production_files=[],
+        solver_production_files_from_A2=changed, production_unchanged_since='862e91c',
         work_model=amp.WORK_MODEL, relation_tariff='2048*(d+2*n+8*J+32)',
-        changed_scope='paid GCD-reduced exact relation solver; native and physical scalar schedules unchanged',
+        changed_scope='passive literal reader funds max(runtime step_cap, materialized committed T); runtime unchanged from A3',
+        literal_materialization_step_cap='max(runtime step_cap, materialized committed T)',
         cases=CASES, job_cap=CAP, deadline_ms=DEADLINE, fresh_owner_per_job=True,
         budget=asdict(BUDGET), profile_integer_bits=4096, wide_step_cap=8, precision_step_cap=100,
         arena_bytes=32 << 20, allocator_cap=64 << 20, output_cells=128,
@@ -540,8 +563,8 @@ if __name__ == '__main__':
     elif args.preflight:
         print(json.dumps(preflight(), indent=2))
     elif args.attempt is not None:
-        if args.attempt != 3:
-            parser.error('only continuation A3 is registered here; A1/A2 remain terminal')
+        if args.attempt != 4:
+            parser.error('only continuation A4 is registered here; A1/A2/A3 remain terminal')
         runner.matrix(args.attempt, script=__file__, cases=CASES, journal_prefix='FP_RATIONAL_FEATURE_AMP_CUDA',
             registration_fn=preflight, production_anchor=ANCHOR, result_status=STATUS, final_status=STATUS, worker_status='PASS')
     else:

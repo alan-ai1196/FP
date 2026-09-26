@@ -1,5 +1,15 @@
 # FP Open Problems
 
+**Current stopping point and reassessment.** A3 at862e91c now establishes
+the actual rational-feature precision boundary, reversal and adversaries
+across fourteen passing jobs. It stops in a passive reader whose Q=1 cap
+cannot materialize a valid committedT=2 endpoint. The exact witness confirms
+the required separate auditQ=2 and unchanged live refusal. A4 is registered
+only for that reader check and the unexecuted legacy regression, under the
+same production/caps. Once those finish, assess the move to ordinary
+next-token prediction requested by the user; do not prolong this branch
+with further relation-task cases absent a material correctness gap.
+
 A1/A2 now supply five passing rational-feature device jobs: profiles,
 paired installation, repaired n64 closure, C8/S120 and a 203-bit denominator.
 A2's precision-refusal job stops at T=41; the remaining fifteen cases never
@@ -7,8 +17,8 @@ run. This falsifies the old verifier's expected T=81 first refusal. The
 [proved reduced arithmetic](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#8-paid-gcd-reduction-exact-valueorder-with-a-distinct-resource-promise)
 removes avoidable shared-factor intermediates and reaches the actual
 materialized-gradient limit in CPU audits. It changes the solver and its
-paid work tariff, not Foundation or physical semantics. A3 is now registered
-against95ba561 for that solver and unexecuted cases, retaining both original journals
+paid work tariff, not Foundation or physical semantics. A3 subsequently
+executes this solver as described above, retaining both original journals
 and all five earlier passing jobs without rerunning them.
 
 The [rational-feature AMP code and exact CPU gate](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md)

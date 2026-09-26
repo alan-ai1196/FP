@@ -1,11 +1,29 @@
 # FP Handoff
 
-**A3 is preregistered against production95ba561.** Run
-`python -X utf8 -B scripts/audit_rational_feature_cuda.py --attempt 3` after
-committing the [registration](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md).
-It tests the new paid reduced-arithmetic verifier in original cases6..21;
-all original caps/tolerances remain. The five A1/A2 passes are not rerun.
-A3 has no actual outcome at this registration commit.
+**A3 is terminal: fourteen passes establish the actual precision boundary,
+reversal and binding/resource adversaries.** The
+[original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json) is
+bound to862e91c:566 fully compared phases/189 predictions/12,090 primitive
+words in its summarized blocks. It reaches81 commits and a checked82nd
+prediction, then retains the target and publishes nothing when the next
+exact gradient exceeds32768 bits. Reversal restores the half forecast at104.
+No host/time limit triggers.
+
+A3 stops at profile-refusal because the passive reader tries to materialize
+a valid committedT=2 state using live prediction allowanceQ=1. The
+[CPU witness](evidence/minimal/FP_RATIONAL_FEATURE_READER_BUDGET.json) exhausts
+four two-target histories; an explicit passiveQ=2 read matches all eight
+native states, while every next live prediction still refuses atQ=1.
+**A4 is preregistered for only profile-refusal and legacy-unit**, with
+unchanged production95ba561 and runtime limits. Commit the
+[registration](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
+before `python -X utf8 -B scripts/audit_rational_feature_cuda.py --attempt 4`.
+Nineteen prior passes retain their sources. A4 has no actual outcome yet.
+
+**Scope checkpoint:** after these two checks, reassess ordinary next-token
+prediction. The user explicitly requests this reassessment; do not keep
+deepening relation-task special cases by default. No full indexed release
+or language-prediction result follows from this gate.
 
 **A2 is terminal: n64 closure, C8/S120 and the 203-bit denominator pass;
 the exact verifier refuses earlier than preregistered.** The
@@ -21,9 +39,8 @@ order checker now replaces only this verifier's addition/comparison. It
 preserves every input, physical word, native semantic and numerical cap;
 its separate work tariff increases and receives a new ID. The exact audit
 passes 90,828 bounded arithmetic calls and reaches the actual 32,863-bit
-native-gradient refusal after 81 CPU commits. A3 is now registered for the
-failed precision case and fifteen unexecuted cases. Do not
-rerun five passing A1/A2 jobs or attribute them to the new verifier source.
+native-gradient refusal after81 CPU commits. A3 subsequently establishes
+the owned device boundary above. A1/A2 successes retain their original sources.
 
 **A1 now proves actual rational-feature profiles and paired installation, but
 stops at a run-sealing mismatch.** The [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A1.json)
