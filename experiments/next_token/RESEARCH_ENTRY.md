@@ -84,6 +84,15 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [complete passive token learner](NATIVE_TOKEN_LEARNER.md) now supplies
+an explicit native G/Gamma/U: indexed lag/token SUMs with declared embedding
+ties, an arbitrary positive core DAG and the untied readout. It retains
+every parameter/gradient, its causal context and shared update clocks.
+Literal small-program trajectories pass, as does synthetic execution at
+the full vocabulary/context512. This has not selected a useful topology or
+initializer and grants no owned or floating execution authority. The actual
+numerical/resource lowering and model/baseline protocol are next.
+
 The [complete positive readout refinement](../../theory/proofs/NATIVE_POSITIVE_READOUT.md)
 now removes one execution obstacle without changing the native optimizer.
 It retains all final SUM slots and pending gradients using exact common

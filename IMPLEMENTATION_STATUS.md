@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [passive exact token learner](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
+now binds its own causal context to indexed native embedding SUMs, an
+arbitrary positive core DAG and the complete readout. All384 small token
+words compare every parameter/gradient, cache, context and clock through
+2,304 native observations/1,728 commits. Full-vocabulary/context512 synthetic
+execution retains its complete declared graph without one-hot expansion.
+No real text score or owned numerical/runtime path follows. The next
+execution boundary is a funded, explicitly checked lowering of this learner.
+
 The [native positive readout refinement](theory/proofs/NATIVE_POSITIVE_READOUT.md)
 now implements complete exact untied SUM-head SGD without a vocabulary-wide
 commit scan. All parameters and pending gradients are decodable, including

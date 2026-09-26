@@ -1,5 +1,16 @@
 # FP Handoff
 
+**A complete passive native token learner now composes the input, core and
+readout.** Its [definition and exact evidence](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
+retain every parameter, pending gradient, causal context and optimizer clock.
+All384 small token words pass2,304 literal observations/1,728 commits. The
+indexed path also executes eight synthetic events at50,257 labels/context512
+without expanding its103M declared edges. Repeated tokens accumulate every
+gradient occurrence; earlier inactive-row gradients survive to commit.
+Zero PRODUCT factors can be permanently dormant, while readout symmetry
+alone need not be. This is no text score, constructor or owned Runtime/AMP
+claim. Continue toward a funded numerical lowering and the text study.
+
 **The full-vocabulary readout now has an exact native learning refinement.**
 The [proof and passive implementation](theory/proofs/NATIVE_POSITIVE_READOUT.md)
 preserve all untied positive SUM-head parameters, pending gradients and core

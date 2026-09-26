@@ -1,0 +1,146 @@
+{
+  "status": "PASS_EXACT_NATIVE_TOKENS",
+  "scope": "complete passive fixed native token learner; no Runtime, AMP, model-quality or constructor certificate",
+  "native_histories": [
+    {
+      "update_unit": 1,
+      "initializer": "mixed",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 384,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-embedding",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 384,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-core",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 384,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    },
+    {
+      "update_unit": 2,
+      "initializer": "mixed",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 192,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-embedding",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 192,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-core",
+      "complete_token_words": 64,
+      "native_observations": 384,
+      "native_commits": 192,
+      "native_cardinalities": {
+        "sources": 9,
+        "sum_nodes": 11,
+        "product_nodes": 3,
+        "incoming_edges": 47,
+        "parameter_slots": 28
+      }
+    }
+  ],
+  "sparse_gradient_witnesses": {
+    "repeated_token_native_gradient": "-4/231",
+    "incorrect_last_occurrence_only": "-1/33",
+    "earlier_padding_gradient_survives_later_inactive_events": "16/171",
+    "committed_padding_master": "7/16",
+    "initial_padding_master": "1/2"
+  },
+  "initialization": {
+    "all_zero_product_embedding_invariant_words": 32,
+    "invariant_events": 160,
+    "symmetric_readout_first_core_gradient_zero": true,
+    "subsequent_core_gradient": "12800/196173",
+    "zero_direct_SUM_input_can_learn": true
+  },
+  "binding": {
+    "stale_context_and_core_cache_readout_clock_index_and_initializer_refusals": 11
+  },
+  "full_vocabulary_context": {
+    "vocabulary": 50257,
+    "context": 512,
+    "width": 4,
+    "events": 8,
+    "complete_context_and_embedding_cache_checks": 16384,
+    "native_cardinalities": {
+      "sources": 25732096,
+      "sum_nodes": 52306,
+      "product_nodes": 2,
+      "incoming_edges": 103129419,
+      "parameter_slots": 402063
+    },
+    "snapshots": [
+      {
+        "cursor": 2,
+        "embedding_exceptions": 4,
+        "readout_exceptions": 6
+      },
+      {
+        "cursor": 4,
+        "embedding_exceptions": 5,
+        "readout_exceptions": 9
+      },
+      {
+        "cursor": 6,
+        "embedding_exceptions": 7,
+        "readout_exceptions": 10
+      },
+      {
+        "cursor": 8,
+        "embedding_exceptions": 7,
+        "readout_exceptions": 9
+      }
+    ],
+    "EOT_retained_without_reset": true,
+    "literal_large_graph_expanded": false,
+    "scope": "indexed composition execution on synthetic token IDs; small-class full native equivalence is separate; no text quality, owned resource or timing claim"
+  }
+}

@@ -9206,3 +9206,38 @@ compares402,056 masses,1,608,224 pending gradients and804,112 committed
 parameters. There is no text loss, timing or GPU result. This closes a
 readout execution obstacle for ordinary text; useful native features,
 complete practical training and fresh strong baselines remain the priority.
+
+## 269. Compose the complete causal native token learner and test whether its gradients can learn (2026-09-26)
+
+Declare embeddings as indexed ordinary SUMs over the full lag/token family,
+with explicit token/channel slots tied across positions, distinct trainable
+padding and no EOT reset. Append an arbitrary existing positive SUM/PRODUCT
+DAG and the untied readout. Preserve all parameter blocks, pending gradients,
+actual context and shared native SGD clocks. The passive predictor receives
+no current target; observation shifts only the newly acquired token.
+
+Prove the input lookup and full embedding pullback by expanding the one-hot
+SUMs. Repeated occurrences add their signed adjoints. Only rows absent from
+every event in an update unit have provably zero pending gradient. One exact
+repeated-token gradient is-4/231 versus-1/33 for the false last-only update.
+An earlier PAD gradient16/171 survives later inactive events and changes its
+master from1/2 to7/16. No zero-valued slot is silently frozen or removed.
+
+Test learnability at initialization as part of the composition. A pure
+PRODUCT of all-zero embeddings is invariant and cannot train on any token
+continuation. A direct SUM can revive a zero input. Equal-base symmetric
+readouts have zero initial core adjoints, but a legal target update breaks
+the symmetry and the next core gradient is12800/196173. These are concrete
+initializer obligations, not new regularizers or claims of emergent structure.
+
+All384 six-token words across two unit sizes/three initializers pass2,304
+literal native observations and1,728 commits, comparing every slot/gradient,
+cache, context and clock. The full50,257 vocabulary/context512 indexed path
+then runs eight synthetic events, checking16,384 embedding-cache values
+without expanding103,129,419 declared edges. That large graph is not fully
+literally compared. No real text targets, score, Torch or timing claim.
+
+The component is passive exact reference code with unbounded arithmetic;
+it supplies no source-ingress, resource, lineage, AMP, fresh/install or
+constructor authority. Proceed to its funded numerical lowering and the
+ordinary-text study instead of further static or relation-task variants.

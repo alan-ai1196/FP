@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [complete native token learner](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
+now closes the passive exact G/Gamma/U composition with causal context,
+all optimizer blocks and arbitrary positive core DAGs. Repeated-token and
+earlier-pending-gradient witnesses reject incomplete sparse updates. Its
+small literal audits and full-vocabulary synthetic execution do not measure
+language quality. Proceed with the funded numerical path and actual text
+study; do not expand the initializer witnesses into another static catalog.
+
 The [complete positive readout law](theory/proofs/NATIVE_POSITIVE_READOUT.md)
 removes a dense-update obstacle for ordinary text: native projected SGD
 has a common non-target decrease and exact target corrections. Its passive

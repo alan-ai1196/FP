@@ -559,6 +559,14 @@ and full-vocabulary exact control grant no AMP, Runtime or complete-Compiler
 equivalence. This is an execution refinement for the ordinary-text study;
 Foundation, ERC-1 and semantic architecture actions remain unchanged.
 
+The [passive native token composition](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
+now joins indexed lag/token SUMs, an arbitrary positive core and that readout
+under complete existing SGD. Exact small native trajectories include every
+parameter, gradient, causal context and clock. Full-vocabulary/context512
+synthetic execution avoids expanding the declared one-hot graph. Supplied
+tying/topology is explicit; no learned-structure, owned Runtime/AMP or model
+quality claim is inferred. This is not an extension of Foundation semantics.
+
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed
 gradient has reduced denominator 4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Its bit width
