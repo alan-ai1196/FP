@@ -102,6 +102,8 @@ class Learner:
     past: tuple[int, ...]
     embedding_gradient: tuple[tuple[int, F], ...]
     core_gradient: tuple[F, ...]
+    # Default contiguous source-reader position, distinct from U's clock.
+    source_position: int = 0
 
     @property
     def cursor(self):
@@ -129,9 +131,17 @@ class Learner:
         slot -= d.slots
         return self.output.gradient(slot//d.output.features, slot % d.output.features)
 
-    def predict(self):
+    def source_window(self, window=None):
+        if window is None:
+            window = TokenWindow(self.definition.sources, self.source_position, self.past)
+        if type(window) is not TokenWindow or window.schema != self.definition.sources:
+            raise ValueError('complete registered token source point required')
+        window.__post_init__()
+        return window
+
+    def predict(self, window=None):
         d, grid = self.definition, self.definition.output.grid
-        window = TokenWindow(d.sources, self.cursor, self.past)
+        window = self.source_window(window)
         values = [F(self.embedding.master(token*d.width+k), grid)
                   for token in window.past for k in range(d.width)]
         for node in d.nodes:
@@ -142,10 +152,12 @@ class Learner:
         values = tuple(values)
         return Prediction(self, window, values, self.output.predict(tuple(values[i] for i in d.features)))
 
-    def observe(self, prediction, target):
+    def observe(self, prediction, target, *, window=None):
         if type(prediction) is not Prediction or prediction.state is not self:
             raise ValueError('prediction lost its actual complete token learner')
-        expected = self.predict()
+        # The actual source point is an independent argument supplied by its
+        # owner, not reconstructed from potentially altered cache metadata.
+        expected = self.predict(window)
         if (prediction.window != expected.window or prediction.values != expected.values
                 or prediction.output.features != expected.output.features
                 or prediction.output.state is not self.output):
@@ -167,11 +179,12 @@ class Learner:
                 adjoints[node.left] += seed*prediction.values[node.right]
                 adjoints[node.right] += seed*prediction.values[node.left]
         embedding_gradient = dict(self.embedding_gradient)
-        for lag, token in enumerate(self.past):
+        for lag, token in enumerate(expected.window.past):
             for k in range(d.width):
                 coordinate = token*d.width+k
                 embedding_gradient[coordinate] = embedding_gradient.get(coordinate, F(0))+adjoints[lag*d.width+k]
-        return replace(self, output=following_output, past=(target,)+self.past[:-1],
+        following_window = expected.window.append(target)
+        return replace(self, output=following_output, past=following_window.past, source_position=following_window.position,
             embedding_gradient=tuple(sorted(embedding_gradient.items())), core_gradient=tuple(core_gradient))
 
     def commit(self):

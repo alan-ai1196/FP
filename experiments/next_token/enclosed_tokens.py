@@ -2,7 +2,7 @@
 
 A resolved grid commit is an exact native endpoint, not a floating learner
 endpoint. Pending exact gradients remain defined by the immutable unit
-origin and retained target prefix. Ambiguity refuses without erasing them.
+origin and retained source/target records. Ambiguity refuses without erasing them.
 No Runtime, owned resource, AMP or installation authority is supplied.
 """
 from dataclasses import dataclass, replace
@@ -124,11 +124,14 @@ class RetainedUnit:
     origin: tokens.Learner
     targets: tuple[int, ...]
     past: tuple[int, ...]
+    windows: tuple[tokens.TokenWindow, ...]
 
     def exact_decoder(self):
+        if len(self.windows) != len(self.targets):
+            raise ValueError('complete source point required for every retained target')
         state = self.origin
-        for target in self.targets:
-            state = state.observe(state.predict(), target)
+        for window, target in zip(self.windows, self.targets):
+            state = state.observe(state.predict(window), target, window=window)
         return state
 
 
@@ -141,27 +144,37 @@ class Pending:
     corrections: tuple[tuple[int, tuple[Interval, ...]], ...]
     embedding_gradient: tuple[tuple[int, Interval], ...]
     core_gradient: tuple[Interval, ...]
+    windows: tuple[tokens.TokenWindow, ...]
 
     @property
     def cursor(self):
         return self.origin.cursor+len(self.targets)
 
-    def retained_unit(self):
-        return RetainedUnit(self.origin, self.targets, self.past)
+    @property
+    def source_position(self):
+        return self.windows[-1].position+1 if self.windows else self.origin.source_position
 
-    def predict(self):
+    def retained_unit(self):
+        return RetainedUnit(self.origin, self.targets, self.past, self.windows)
+
+    def source_window(self, window=None):
+        if window is None:
+            window = tokens.TokenWindow(self.origin.definition.sources, self.source_position, self.past)
+        return self.origin.source_window(window)
+
+    def predict(self, window=None):
         try:
-            return self._predict()
+            return self._predict(self.source_window(window))
         except EnclosureUnresolved as error:
             error.retained_unit = self.retained_unit()
             raise
 
-    def _predict(self):
+    def _predict(self, window):
         d, grid = self.origin.definition, self.origin.definition.output.grid
         if len(self.targets) >= d.output.update_unit:
             raise ValueError('registered optimizer commit is due')
         values = [Interval.exact(F(self.origin.embedding.master(token*d.width+k), grid))
-                  for token in self.past for k in range(d.width)]
+                  for token in window.past for k in range(d.width)]
         for node in d.nodes:
             if type(node) is Sum:
                 value = sum((Interval.exact(F(self.origin.theta[t.slot], grid))*values[t.parent]
@@ -172,7 +185,7 @@ class Pending:
         totals = tuple(Interval.exact(F(column.total(), grid)) for column in self.origin.output.columns)
         normalizer = Interval.exact(self.origin.output.base_total)+sum(
             (total*values[i] for total, i in zip(totals, d.features)), ZERO)
-        return Prediction(self, tuple(values), totals, normalizer.nonnegative())
+        return Prediction(self, tuple(values), totals, normalizer.nonnegative(), window)
 
     def gradient(self, slot):
         readout.natural(slot)
@@ -188,24 +201,27 @@ class Pending:
         row = next((row for y, row in self.corrections if y == label), (ZERO,)*d.output.features)
         return self.common[feature]-row[feature]
 
-    def observe(self, prediction, target):
+    def observe(self, prediction, target, *, window=None):
         if type(prediction) is not Prediction or prediction.state is not self:
             raise ValueError('enclosure prediction lost its actual predecessor')
         self.origin.output.index(target, 0)
         if len(self.targets) >= self.origin.definition.output.update_unit:
             raise ValueError('registered optimizer commit is due')
-        retained = RetainedUnit(self.origin, self.targets+(target,), (target,)+self.past[:-1])
+        window = self.source_window(window)
+        following_window = window.append(target)
+        retained = RetainedUnit(self.origin, self.targets+(target,), following_window.past, self.windows+(window,))
         try:
-            return self._observe(prediction, target)
+            return self._observe(prediction, target, window)
         except EnclosureUnresolved as error:
             # The exact unit remains defined even when no new gradient
             # enclosure can be published. This is not an old-bound fallback.
             error.retained_unit = retained
             raise
 
-    def _observe(self, prediction, target):
-        expected = self.predict()
-        if (prediction.values, prediction.totals, prediction.normalizer) != (expected.values, expected.totals, expected.normalizer):
+    def _observe(self, prediction, target, window):
+        expected = self.predict(window)
+        if ((prediction.values, prediction.totals, prediction.normalizer, prediction.window)
+                != (expected.values, expected.totals, expected.normalizer, expected.window)):
             raise ValueError('enclosure cache differs from actual execution')
         d, grid = self.origin.definition, self.origin.definition.output.grid
         features, mass = prediction.features, prediction.mass(target)
@@ -227,11 +243,11 @@ class Pending:
                 adjoints[node.left] = adjoints[node.left]+seed*prediction.values[node.right]
                 adjoints[node.right] = adjoints[node.right]+seed*prediction.values[node.left]
         embedding_gradient = dict(self.embedding_gradient)
-        for lag, token in enumerate(self.past):
+        for lag, token in enumerate(window.past):
             for k in range(d.width):
                 coordinate = token*d.width+k
                 embedding_gradient[coordinate] = embedding_gradient.get(coordinate, ZERO)+adjoints[lag*d.width+k]
-        return replace(self, targets=self.targets+(target,), past=(target,)+self.past[:-1], common=common,
+        return replace(self, targets=self.targets+(target,), past=window.append(target).past, windows=self.windows+(window,), common=common,
             corrections=tuple(sorted(corrections.items())), embedding_gradient=tuple(sorted(embedding_gradient.items())),
             core_gradient=tuple(core_gradient))
 
@@ -271,7 +287,7 @@ class Pending:
             columns.append(following)
         output = readout.State(d.output, tuple(columns), self.origin.output.base_total, (F(0),)*d.output.features,
             cursor=self.cursor, optimizer_steps=self.origin.output.optimizer_steps+1)
-        return replace(self.origin, embedding=embedding, theta=theta, output=output, past=self.past,
+        return replace(self.origin, embedding=embedding, theta=theta, output=output, past=self.past, source_position=self.source_position,
             embedding_gradient=(), core_gradient=(F(0),)*d.slots)
 
 
@@ -281,6 +297,7 @@ class Prediction:
     values: tuple[Interval, ...]
     totals: tuple[Interval, ...]
     normalizer: Interval
+    window: tokens.TokenWindow
 
     @property
     def features(self):
@@ -302,4 +319,4 @@ def begin(origin):
     if (origin.output.unit_count or origin.cursor % d.output.update_unit or origin.embedding_gradient
             or any(origin.core_gradient) or any(origin.output.common) or origin.output.corrections):
         raise ValueError('enclosure unit requires a committed complete origin')
-    return Pending(origin, (), origin.past, (ZERO,)*d.output.features, (), (), (ZERO,)*d.slots)
+    return Pending(origin, (), origin.past, (ZERO,)*d.output.features, (), (), (ZERO,)*d.slots, ())

@@ -84,9 +84,17 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [source-clock refinement](SOURCE_AND_LEARNER_CLOCKS.md) now supports
+explicit retained-example contexts and frozen new-file scoring without
+identifying source position with optimizer time. General pending units
+retain every actual source/target record; the original target-only recipe
+requires the contiguous subclass. This supplies the necessary mathematical
+interface, but Runtime must still bind corpus/observation IDs, roles and
+actual acquisition rather than accepting caller-made windows as authority.
+
 The [sound enclosure solver](EXACT_COMMITS_WITH_ENCLOSURES.md) now advances
 exact native committed states without materializing every pending rational:
-it retains the complete unit origin and targets, and resolves only unique
+it retains the complete unit origin and source/target records, and resolves only unique
 grid cells. A full-vocabulary512-event audit matches every resulting master
 against a separate exact control. Ambiguous cells remain unresolved with
 the exact decoder retained. The efficient funded implementation and actual

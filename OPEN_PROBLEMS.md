@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [source-clock audit](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
+closes a concrete obstacle to text validation/profiles: source position is
+independent of learner time, and a general pending unit must retain its
+actual source records. Frozen new-file scoring and retained-context updates
+now match literal native semantics. Runtime still must own stream/observation
+identities, role restrictions, source acquisition and all decoder resources;
+passive source objects cannot supply those facts.
+
 The [sound grid-cell solver](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
 now avoids materializing large pending-gradient rationals on its resolved
 reference path. A full-vocabulary512-event unit gives an exactly matched

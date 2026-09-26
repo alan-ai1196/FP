@@ -9273,3 +9273,38 @@ of materialized precision laws. The code has no owned work/bit/heap budget,
 physical AMP trajectory, model score or constructor certificate. Fund and
 implement its efficient numerical path and bridge, then proceed with the
 ordinary-text study rather than another relation/static special-case branch.
+
+## 271. Separate token source position from learner time and reject incomplete profile replay (2026-09-26)
+
+Runtime integration exposes a mismatch between the contiguous prototype and
+already declared data/profile semantics. New-file reporting starts with PAD
+while retaining trained parameters; retained examples keep original source
+contexts while the optimizer clock advances locally. One clock cannot encode
+both. Introduce a distinct default source position and explicit complete
+source points, without changing the native graph, optimizer or primitives.
+
+An exact two-event witness has identical origins, targets(0,0), final
+contexts and both clocks, but committed target weights0 versus1/16 because
+the first windows differ. Target-only replay remains correct for its original
+contiguous class, but cannot be generalized. Retain every actual window with
+its target in the exact unit decoder, including failed observation records.
+This costs up to O(N L) source entries and must be funded by the eventual owner.
+
+Another witness has equal current embedding values and forward caches but
+gradient-1/20 in different token rows. Bind the cache to the independent
+actual source argument, not to its own alterable window metadata. Five
+substitution/default-source attacks refuse. This grants no caller-supplied
+window a data, profile or reporting permission.
+
+All96 retained schedules from16 small files/six position pairs pass384
+literal native observations and192 exact/enclosed commits, with both clocks
+and complete gradients checked. Another64 frozen predictions preserve all
+learner state while source positions0..3 advance at learner cursor4. Proper
+new-file probability1/2 differs from leaked training-context probability11/15.
+A failed observation retains source position7 and its target; exact decoding
+reaches learner cursor1/source position8. Both old contiguous suites pass.
+
+No real held-out file, model score, Torch or GPU is used. Existing source and
+profile semantics suffice; this is no Foundation counterexample or new
+architecture action. Owned identity/role checks, resource funding and the
+actual AMP path remain the next practical work toward ordinary text.

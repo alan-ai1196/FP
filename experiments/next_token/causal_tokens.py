@@ -78,3 +78,10 @@ class TokenWindow:
         if lag > self.schema.context or token > self.schema.padding:
             raise ValueError('undeclared lag/token atom')
         return int(self.past[lag-1] == token)
+
+    def append(self, target):
+        """Passive source-reader successor after one target is revealed."""
+        natural(target)
+        if target >= self.schema.vocabulary:
+            raise ValueError('target outside the declared prediction alphabet')
+        return TokenWindow(self.schema, self.position+1, (target,)+self.past[:-1])

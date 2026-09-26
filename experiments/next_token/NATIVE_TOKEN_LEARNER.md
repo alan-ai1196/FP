@@ -53,11 +53,14 @@ The audit initializers are test fixtures, not a selected language model.
 
 ## Source and optimizer transitions
 
-The learner retains its own full L-token context tuple. At cursor zero it
-is all PAD. Prediction has no current-target argument and constructs its
-source window from this tuple and cursor. Observation first checks the
-actual predecessor and complete algebraic cache, then acquires the target
-and shifts it into lag1. EOT is a normal token; it never resets context.
+The learner retains a default full L-token context tuple and its distinct
+source position, initially all PAD at position zero. The subsequent
+[source-clock refinement](SOURCE_AND_LEARNER_CLOCKS.md) also permits explicit
+complete source points for retained examples or frozen separate-file scoring.
+Prediction has no current-target argument. Observation checks the actual
+predecessor, independently supplied source point and complete algebraic cache
+before advancing the native update clock and the default source reader.
+EOT is a normal token; it never resets context.
 
 This context queue implements the declared external lag/token source
 interface. It is not an undeclared neural recurrence or backpropagation
@@ -74,7 +77,7 @@ caller chooses separate per-block update clocks. The complete state is:
 
 - all embedding, core and readout parameters;
 - all three blocks' pending gradients, including implicit exact zeros;
-- the context tuple and actual cursor;
+- the default source context/position and distinct actual learner cursor;
 - the update-unit count and optimizer-step count;
 - the immutable definition and initializer-derived reachable values.
 

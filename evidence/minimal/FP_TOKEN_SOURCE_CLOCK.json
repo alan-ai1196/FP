@@ -1,0 +1,48 @@
+{
+  "status": "PASS_EXACT_TOKEN_SOURCE_CLOCK",
+  "scope": "independent supplied source points and native optimizer clock; passive refinement, not owned ingestion, reporting or profile authority",
+  "context_erasure": {
+    "same_origin_targets_final_context_and_both_clocks": true,
+    "target_only_replay_changes_native_commit": true,
+    "correct_target_masters": [
+      "0",
+      "1/16"
+    ],
+    "complete_source_records_retained": [
+      2,
+      2
+    ]
+  },
+  "source_binding": {
+    "equal_forward_values_have_different_embedding_gradient_coordinates": true,
+    "nonzero_coordinate_gradient": "-1/20",
+    "altered_source_binding_refusals": 5
+  },
+  "retained_profiles": {
+    "retained_source_schedules": 96,
+    "literal_native_observations": 384,
+    "literal_and_enclosed_exact_commits": 192,
+    "source_and_learner_clocks_checked_separately": true,
+    "no_profile_admission_or_data_role_authority": true
+  },
+  "frozen_reporting": {
+    "synthetic_reporting_files": 16,
+    "frozen_native_and_enclosed_predictions": 64,
+    "trained_learner_cursor": 4,
+    "reporting_source_positions": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "first_new_file_probability": "1/2",
+    "leaked_training_context_probability": "11/15",
+    "complete_learner_unchanged": true,
+    "no_actual_validation_file_or_model_score": true
+  },
+  "failed_observation": {
+    "failed_new_target_retains_exact_supplied_source": true,
+    "learner_cursor": 1,
+    "source_position": 8
+  }
+}

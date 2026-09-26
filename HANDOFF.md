@@ -1,8 +1,19 @@
 # FP Handoff
 
+**Source position and learner time are now separate.** The
+[source-clock counterexamples and audit](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
+show that identical origins, targets, final contexts and clocks can yield
+different commits when earlier source windows differ. The generalized unit
+decoder therefore retains every source/target record. Explicit source
+binding also rejects equal-output caches with different embedding-row
+gradients. All96 retained schedules/384 literal observations/192 exact
+commits and64 frozen reporting predictions pass. The old contiguous suites
+remain valid and pass. These helpers do not own corpus IDs or data roles;
+Runtime must bind those before actual text training/reporting.
+
 **Sound float64 enclosures now resolve exact native text-learner commits.**
 The [solver and conditional proof](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
-retain a complete exact unit origin/target prefix and enclose every pending
+retain a complete exact unit origin/source-target sequence and enclose every pending
 gradient. They publish an exact grid endpoint only when all relevant cells
 are uniquely determined. All1,728 small commits pass; a512-event/full-vocab
 unit reaches a12,303-bit exact denominator yet all301,548 resulting masters

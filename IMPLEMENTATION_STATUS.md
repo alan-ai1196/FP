@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [native source-clock refinement](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
+now separates file-source position from optimizer time and binds observations
+to an independent complete source point. General exact-unit decoding retains
+all actual source/target records; target-only replay is falsified outside
+the contiguous subclass. Literal/native/enclosed profiles pass384 observations/
+192 commits; frozen reporting passes64 predictions without changing learner
+state. No owned data-role, profile or reporting authority is supplied yet.
+
 The [sound enclosure reference solver](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
 now derives exact committed native token states from uniquely determined
 grid cells while retaining a complete exact pending-unit decoder. It passes

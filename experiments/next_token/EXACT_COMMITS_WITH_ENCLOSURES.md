@@ -12,14 +12,17 @@ Evidence: [FP_ENCLOSED_TOKENS.json](../../evidence/minimal/FP_ENCLOSED_TOKENS.js
 
 ## The complete pending state need not materialize every rational
 
-Within a registered SGD update unit, parameters stay fixed. For this token
-learner, a committed origin contains every parameter, the full context and
-clocks; the following target prefix determines every later source window,
-feature, prediction and event gradient. There is no other external input,
-RNG transition or within-unit parameter update.
+Within a registered SGD update unit, parameters stay fixed. For the original
+contiguous token path, its complete origin and following target prefix
+determine every source window, feature, prediction and event gradient.
+The [subsequent source-clock refinement](SOURCE_AND_LEARNER_CLOCKS.md) permits
+explicit retained-example source points, whose file positions need not
+match the learner clock. In that general path, the target prefix alone is
+insufficient: retain every actual source window with its target. There is
+no RNG transition or within-unit parameter update.
 
-Retain that immutable **complete origin and every target in the current
-unit**. Exact replay then decodes every native pending parameter, gradient,
+Retain that immutable **complete origin and every source/target record in
+the current unit**. Exact replay then decodes every native pending parameter, gradient,
 context and clock. Replay here means the declared pure reference arithmetic
 on retained data, not an additional observation or learner update. Its
 actual work and integer size remain separate obligations. The representation
@@ -88,7 +91,7 @@ remain distinct; this does not claim exact intermediate float values.
 An ambiguous floor/ceiling returns UNRESOLVED. A failed commit retains the
 complete unit. If observation arithmetic fails after a new target arrives,
 the exception carries a separate `RetainedUnit` containing the origin,
-entire target prefix and new context. It exposes an exact decoder, not the
+entire source/target sequence and new context. It exposes an exact decoder, not the
 previous event's stale gradient bounds. No enclosed successor is published.
 An actual Runtime must still reserve storage, own ingress and retain these
 objects through its failure lifetime; the passive exception is not that
@@ -135,8 +138,10 @@ with the separate native reference, and no stale enclosure is published.
 
 The exact control and interval solver run separately; control values never
 choose the interval solver's successors. The materialized control is used
-only by the audit. The solver retains a short exact replay recipe instead
-of those growing gradient rationals. This gives a practical direction for
+only by the audit. The solver retains the complete exact replay recipe instead
+of those growing gradient rationals. The generalized explicit-source path
+also retains up to O(N L) source entries; it does not infer them from targets.
+This gives a practical direction for
 the reference side of text training, not a universal precision/storage lower
 bound or a throughput comparison.
 
