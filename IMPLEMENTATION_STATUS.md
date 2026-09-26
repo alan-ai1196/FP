@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The rational-feature gate closes its original21 cases across four terminal
+attempts, with one successful execution per case and three retained failures.
+A4 at05a4c80 passes15 profile-refusal phases and13 separate legacy phases
+without production changes. The [final scope](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#10-a4-completion-and-the-research-stopping-point)
+totals869 rational-feature phases/286 predictions/20,284 primitive words;
+it is not a single-source full indexed release. No jobs remain live. The
+[next priority](experiments/next_token/RESEARCH_ENTRY.md) is ordinary next-token
+science, with new representation/bridge obligations declared explicitly.
+
 A3 at862e91c passes fourteen actual jobs, including the proved precision
 boundary at81 commits, reversal at104, word/target/part binding, atomic
 publication and pinned workspace. Summarized blocks check566 full native
@@ -8,9 +17,9 @@ Its [terminal journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json)
 then records an audit-reader failure: committedT=2 cannot be passively
 materialized under live prediction capQ=1. Production is unchanged; the
 independent reader now declares max(Q,T), verified on four exact histories.
-A4 is registered only for profile-refusal and the unexecuted legacy job.
-After this stopping point, reassess ordinary next-token prediction instead
-of adding relation cases by default. Nineteen prior passes are not rerun.
+A4 subsequently passes profile-refusal and the unexecuted legacy job.
+The stopping-point decision above now moves research toward ordinary
+next-token prediction. Nineteen prior passes are not rerun.
 
 A2 at f298eab passes actual n64 closure, C8/S120 and the 203-bit denominator:
 60 phases/19 predictions/1,822 primitive words. The fourth job honestly
@@ -22,8 +31,8 @@ The rational-feature verifier now uses proved GCD-reduced addition/comparison
 with a separately paid work ID. Native Reference, physical RNE, bit caps and
 tolerances stay fixed. The [exact audit](evidence/minimal/FP_REDUCED_EXACT_RELATIONS.json)
 passes 90,828 arithmetic calls and an 81-commit CPU continuation up to the
-proved native-gradient obstruction. A new actual continuation remains to be
-registered at that point; A3's subsequent outcome is described above.
+proved native-gradient obstruction. A new actual continuation was required
+at that point; A3's subsequent outcome is described above.
 
 A1 at e16c976 passes actual profiles and paired fresh install/continuation:
 228 checked phases,74 predictions and6,044 primitive words. The n64 case
@@ -59,7 +68,8 @@ commits at 32768 bits, preserving its actual target and predecessor; the final
 prediction itself passes. Legacy partition, full reference and AMP CPU suites
 pass. Old physical entrypoints explicitly reject rational-feature layouts.
 That Reference result alone supplies no physical evidence. The subsequent AMP
-code/CPU registration above still supplies no actual device or install result.
+code/CPU registration alone supplied no device result; A1–A4 now provide
+their actual source-bound install and conformance evidence above.
 
 The [rational-feature construction](theory/proofs/RATIONAL_FEATURE_SCALE.md)
 initially supplied a passive G/Gamma and scalar schedule at 2d0184f.

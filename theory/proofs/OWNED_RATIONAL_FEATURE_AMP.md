@@ -1,11 +1,11 @@
 # Owned rational-feature AMP refinement
 
-Status (2026-09-26): **NINETEEN DISTINCT ACTUAL CASES PASS ACROSS TERMINAL
-A1/A2/A3; THE REVISED VERIFIER REACHES THE PROVED PRECISION BOUNDARY**.
-A3 checks actual reversal and adversarial binding/resource failures, then
-stops in the passive profile-state reader. Section 9 explains the distinct
-audit allowance. A4 is registered for that case and the unexecuted legacy
-regression; no production code changes after A3.
+Status (2026-09-26): **ALL 21 ORIGINAL CASES HAVE A SUCCESSFUL EXECUTION
+ACROSS FOUR TERMINAL ATTEMPTS; THE THREE EARLIER FAILURES REMAIN RETAINED**.
+A4 completes the profile reader and legacy regression without a production
+change. Section 10 fixes the source-by-source scope. This is the stopping
+point for the rational-feature branch, not a single-source full release or
+a language-prediction result.
 
 This implements the fixed physical schedule from
 [RATIONAL_FEATURE_SCALE.md](RATIONAL_FEATURE_SCALE.md) for the native program
@@ -180,13 +180,13 @@ native representation and validates the complete current resident class,
 raw state and every initialized tensor extent. The native descriptor/Gamma
 and the actual count/gradient state are preserved by the same resident
 identity transport. No new owner state is introduced. These physical claims
-require device evidence. **A1 in section6 now supplies its declared paired
-crossing/install and post-install continuation; complete failure lifetime
-and the remaining cases still need evidence.**
+require device evidence. **A1 in section6 supplies its declared paired
+crossing/install and post-install continuation; A2–A4 in sections7–10 supply
+the remaining closure, precision, binding and failure-lifetime evidence.**
 The old 17-case joint GPU gate and four model tapes establish none of those
 new facts; their historical outcomes remain terminal.
 
-## 5. Exact CPU evidence and remaining physical gate
+## 5. Exact CPU evidence
 
 Run `python -X utf8 -B scripts/audit_rational_feature_amp.py --write`.
 The [8,792-byte artifact](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CPU.json)
@@ -409,9 +409,10 @@ The complete legacy unit-feature AMP and rational-feature AMP CPU gates also
 pass on this implementation, as do the original exact-numerics and owned
 binary64 Runtime audits. Their original retained artifacts are not rewritten.
 
-A separately preregistered continuation must test the new solver and the
-fifteen unexecuted cases. Keep all five earlier passing jobs at their original
-sources. No single-source complete 21-case gate or full release is claimed.
+At95ba561, a separately preregistered continuation was required to test the
+new solver and fifteen unexecuted cases. The subsequent outcomes follow.
+All five earlier passes retain their sources; no single-source complete
+21-case gate or full release is claimed.
 
 ## 9. A3: physical precision boundary and adversaries pass; separate reader funding
 
@@ -464,8 +465,52 @@ has Q=2; all eight Q=1 reads refuse. Both actual replay events remain, no
 newborn is attached, and every subsequent live prediction still returns
 UNRESOLVED. This exact Reference audit supplies no new device authority.
 
-A4 is preregistered for only original cases20/21, under unchanged production
+A4 was then preregistered for only original cases20/21, under unchanged production
 95ba561. Its change is the passive reader allowance, explicitly recorded
 before execution. The nineteen prior passing cases are not rerun or
 reattributed. After these final checks, reassess ordinary next-token science
 instead of extending this relation-task branch merely to add more cases.
+
+## 10. A4 completion and the research stopping point
+
+The [original A4 journal](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A4.json)
+records two passes at05a4c80. Production remains95ba561. The profile-refusal
+case independently checks15 complete phases/four predictions/328 primitive
+words, retains two replay events and publishes no newborn. It explicitly
+reports live predictionQ=1 and passive materializationQ=2. The separate new
+unit-feature regression checks13 phases/four predictions/156 primitive words.
+Neither job hits its unchanged4-GiB/900-second limit; peak commitment is
+2,229,022,720 bytes. No job remains live.
+
+| Attempt/source | Successful original cases | Retained unexpected failure |
+|---|---|---|
+| A1 / e16c976 | 1–2: profiles and paired install | 3: missing complete-cache diagnostic type |
+| A2 / f298eab | 3–5: n64 closure, C8/S120, wide denominator | 6: verifier comparison exceeds its bit cap atT41 |
+| A3 / 862e91c | 6–19: precision, reversal, binding/resource failures | 20: independent reader lacks a fundedT2 materialization |
+| A4 / 05a4c80 | 20–21: profile refusal and legacy regression | None |
+
+The original21-case list has exactly one successful execution per case.
+The three failed jobs retain their original status/source/traceback and
+remain unscored. The19 earlier passes were not repeated in A4. Across all
+attempts, no timeout or memory-limit termination occurs; maximum whole-job
+commitment is2,250,600,448 bytes. This accounting does not merge the revisions
+into one tested source or certify an unrestricted indexed Compiler.
+
+Successfully summarized rational-feature blocks total **869 phases, 286
+independent unsigned-history/RNE predictions, 20,284 primitive words, 572
+half outputs and25,142 outputs including copies**. Of these,844 phases have
+complete literal native comparisons; the remaining25 are the n64 unsigned
+width-two audit without world expansion. Fault-preparation phases lacking
+retained detailed totals and failed jobs are excluded. The separate legacy
+regression adds13 phases,156 primitive words, eight half outputs and204 total
+outputs; it is not counted as rational-feature evidence.
+
+The branch has answered its concrete questions: native range need not track
+the likelihood denominator; complete fixed-gradient precision still has an
+exact output lower; a paid verifier can avoid redundant denominator work;
+the owned physical path reaches that boundary and preserves the declared
+bindings, freshness/install and failure behaviors in their executed scopes.
+The evidence gives no reason to add further relation variants by default.
+The next priority is the [ordinary next-token study](../../experiments/next_token/RESEARCH_ENTRY.md),
+with its own native representation, information contract, competitive
+baselines and source-specific bridge. Foundation and ERC-1 stay unchanged.

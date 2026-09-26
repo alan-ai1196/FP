@@ -1,5 +1,15 @@
 # FP Handoff
 
+**The rational-feature gate has reached its stopping point. Move the research
+focus to ordinary next-token prediction.** All21 original cases have one
+successful execution across four terminal attempts, with three earlier
+failures preserved. Read the [final scope](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#10-a4-completion-and-the-research-stopping-point)
+and [next-token reassessment](experiments/next_token/RESEARCH_ENTRY.md).
+Summarized rational-feature evidence contains869 phases/286 predictions/
+20,284 primitive words, plus a separate13-phase legacy regression. No job
+remains live; do not rerun these completed cases. This does not certify a
+single-source full release or useful language structure.
+
 **A3 is terminal: fourteen passes establish the actual precision boundary,
 reversal and binding/resource adversaries.** The
 [original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A3.json) is
@@ -14,16 +24,14 @@ a valid committedT=2 state using live prediction allowanceQ=1. The
 [CPU witness](evidence/minimal/FP_RATIONAL_FEATURE_READER_BUDGET.json) exhausts
 four two-target histories; an explicit passiveQ=2 read matches all eight
 native states, while every next live prediction still refuses atQ=1.
-**A4 is preregistered for only profile-refusal and legacy-unit**, with
-unchanged production95ba561 and runtime limits. Commit the
-[registration](experiments/joint_uncertainty/RATIONAL_FEATURE_AMP_CUDA_PROTOCOL.md)
-before `python -X utf8 -B scripts/audit_rational_feature_cuda.py --attempt 4`.
-Nineteen prior passes retain their sources. A4 has no actual outcome yet.
+**A4 now passes profile-refusal and legacy-unit at05a4c80**, with unchanged
+production95ba561 and runtime limits. It checks15 rational-feature and13
+legacy phases. [The original journal](evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A4.json)
+is terminal; nineteen prior passes retain their sources.
 
-**Scope checkpoint:** after these two checks, reassess ordinary next-token
-prediction. The user explicitly requests this reassessment; do not keep
-deepening relation-task special cases by default. No full indexed release
-or language-prediction result follows from this gate.
+**Scope decision:** the requested reassessment favors ordinary next-token
+research now. Do not keep deepening relation-task special cases by default.
+No full indexed release or language-prediction result follows from this gate.
 
 **A2 is terminal: n64 closure, C8/S120 and the 203-bit denominator pass;
 the exact verifier refuses earlier than preregistered.** The
@@ -97,8 +105,8 @@ fixed gradient has an irreducible 32,863-bit denominator. The 32768-bit
 reference contract correctly refuses observation after 81 commits, preserving
 the target and predecessor. A separate 131072-bit literal audit confirms it.
 This is a limit for materialized exact gradients, not every symbolic encoding.
-The subsequent AMP code and CPU audit are described above; actual paired
-installation and device conformance remain the next boundary.
+The subsequent AMP code, CPU audit and completed actual gate are described
+above, with every execution source and failure preserved.
 
 **The denominator-driven native scale is a representation choice, not an
 intrinsic range lower.** The [rational-feature law](theory/proofs/RATIONAL_FEATURE_SCALE.md)

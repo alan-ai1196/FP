@@ -533,8 +533,14 @@ actual jobs, including that same obstruction after81 commits, reversal,
 complete binding faults and resource/publication failures. Its independent
 profile-state reader fails to fund aT=2 materialization underQ=1; a separate
 audit allowance is now explicit, with no production or Runtime cap change.
-The last two checks remain under an A4 registration. Old AMP types/IDs cannot adopt this new layout; no semantic
-action, new complete decision class or full indexed release follows.
+A4 at05a4c80 completes the last two checks without production changes. All21
+original cases now have one success across four terminal source revisions;
+the three earlier failures remain. Summarized rational-feature blocks contain
+869 phases/286 predictions/20,284 primitive words, plus a separate13-phase
+legacy regression. This is the stopping point for this branch; the
+[next research priority](experiments/next_token/RESEARCH_ENTRY.md) is ordinary
+next-token prediction. Old AMP types/IDs cannot adopt this new layout; no
+semantic action, new complete decision class or full indexed release follows.
 
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed

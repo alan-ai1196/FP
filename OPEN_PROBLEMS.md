@@ -1,14 +1,22 @@
 # FP Open Problems
 
-**Current stopping point and reassessment.** A3 at862e91c now establishes
+**Current priority: ordinary next-token prediction.** The rational-feature
+branch closes all21 original cases across A1–A4, retaining all source scopes
+and three failures. Its [final results](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#10-a4-completion-and-the-research-stopping-point)
+justify stopping further relation variants by default. The
+[next-token entry decision](experiments/next_token/RESEARCH_ENTRY.md) separates
+a scoped empirical training study from the still-unproved forced-structure
+claim. No existing language-model result or general search certificate is
+assumed. Continue with its native/data/resource/baseline design and evidence.
+
+A3 at862e91c establishes
 the actual rational-feature precision boundary, reversal and adversaries
 across fourteen passing jobs. It stops in a passive reader whose Q=1 cap
 cannot materialize a valid committedT=2 endpoint. The exact witness confirms
 the required separate auditQ=2 and unchanged live refusal. A4 is registered
 only for that reader check and the unexecuted legacy regression, under the
-same production/caps. Once those finish, assess the move to ordinary
-next-token prediction requested by the user; do not prolong this branch
-with further relation-task cases absent a material correctness gap.
+same production/caps; both subsequently pass at05a4c80. Do not prolong this
+branch with further relation-task cases absent a material correctness gap.
 
 A1/A2 now supply five passing rational-feature device jobs: profiles,
 paired installation, repaired n64 closure, C8/S120 and a 203-bit denominator.
@@ -1525,7 +1533,15 @@ This is a theorem-audit counterexample, not an executed Runtime/AMP bridge test.
 
 **Known.** Trial 1C falsified raw-width-as-solution; historical native blocks remained behind strong dense/GRU-style baselines; R4.2 failed to instantiate the grammar. Foundation R4 now gives a falsifiable definition of “forced structure.”
 
-**Do not run yet.** Problems 1–3 must close first.
+**Current boundary.** The scoped Reference/CPU and target releases now close
+their declared correctness prerequisites and permit registered experiments.
+The [ordinary next-token entry decision](experiments/next_token/RESEARCH_ENTRY.md)
+therefore starts an empirical native learning study. It does not close every
+indexed representation or certify the stronger forced-structure statement
+above. Any new text representation/lowering needs its own complete bridge;
+any optimality/emergence claim still needs the corresponding decision class
+and comparison proof. The rational-feature branch is not an indefinite
+prerequisite for beginning this scoped research.
 
 ## 5. Native FP block scaling from scratch
 

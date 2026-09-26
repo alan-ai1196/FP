@@ -9113,3 +9113,33 @@ point: evaluate ordinary next-token prediction instead of deepening this
 relation branch by default. Complete the two checks, then make that research
 decision from the canonical evidence. This gate proves no language-model
 quality, learned structure or full indexed release.
+
+## 266. Close the rational-feature gate and move the research priority to ordinary next-token prediction (2026-09-26)
+
+A4 passes both remaining jobs at05a4c80 without any production change.
+The failed-profile reader now independently checks15 complete phases/four
+predictions/328 primitive words with explicit liveQ=1/auditQ=2, retaining
+two replay events and publishing no newborn. A new original unit-feature
+regression checks13 phases/four predictions/156 primitive words. Both
+respect4 GiB/900 seconds; the peak is2,229,022,720 bytes. Preserve the
+original6,574-byte journal. No job remains live.
+
+Across A1–A4 each of the21 original cases has exactly one successful outcome.
+The three earlier failed jobs keep their sources, failures and unscored
+status. Rational-feature summaries total869 phases,286 independent unsigned
+RNE predictions,20,284 primitive words,572 half outputs and25,142 outputs
+including copies. Of869 phases,844 have full literal native comparisons;
+25 belong to the unexpanded n64 audit. The13-phase legacy job is separate.
+No attempt hits memory/time termination; the maximum job peak is2,250,600,448.
+There is no single-source full release or unrestricted constructor claim.
+
+At the user's explicit scope checkpoint, reassess the canonical state.
+The scalar range, complete-gradient precision, ownership and failure
+questions motivating this branch now have proofs and actual evidence.
+Further relation variants would not test useful structure on ordinary
+text. The earlier scoped Reference/AMP releases already allow registered
+experiments; Trial1C specifically warns against another raw-width sweep.
+Choose ordinary next-token research as the next priority and record its
+entry boundary in experiments/next_token/RESEARCH_ENTRY.md. Language quality
+and forced structural emergence remain unproved, and new execution paths
+must earn their own bridge. No semantic action or Foundation change follows.

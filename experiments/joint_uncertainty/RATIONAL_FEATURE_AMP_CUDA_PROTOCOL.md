@@ -265,3 +265,22 @@ audits. Preflight enforces unchanged production and records the audit change.
 Commit this declaration before `--attempt 4`; only the new separate A4
 journal may be written, with the same stop-first-unexpected-failure policy.
 A4 is **REGISTERED, NOT YET EXECUTED** at this registration commit.
+
+## A4 outcome and closure (after execution)
+
+[A4](../../evidence/minimal/FP_RATIONAL_FEATURE_AMP_CUDA_A4.json) passes both
+jobs at05a4c80 with production95ba561 unchanged. The profile case checks15
+full native phases/four predictions/328 primitive words, retains two replay
+events and publishes no newborn; liveQ=1 and independent auditQ=2 are explicit.
+The separate fresh unit-feature case checks13 phases/four predictions/156
+primitive words. Peak whole-job commitment is2,229,022,720 bytes, with no
+memory/time termination. A4 is terminal; do not rerun it.
+
+All21 original cases now have exactly one success across A1–A4. The original
+three failed jobs remain failed and unscored. The
+[final scope and totals](../../theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#10-a4-completion-and-the-research-stopping-point)
+preserve every execution source:869 summarized rational-feature phases and
+286 predictions, plus the separate13-phase legacy regression. This is not
+a single-source complete release, unrestricted search certificate or model
+superiority result. The rational-feature gate is closed at this scope;
+ordinary next-token research is now the priority.
