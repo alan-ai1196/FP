@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The [native positive readout refinement](theory/proofs/NATIVE_POSITIVE_READOUT.md)
+now implements complete exact untied SUM-head SGD without a vocabulary-wide
+commit scan. All parameters and pending gradients are decodable, including
+zeros; arbitrary positive core feature adjoints are exact. The audit passes
+1,808 exhaustive event words/6,720 native observations/4,128 commits,81
+nonlinear-core cases and all50,257 output rows in an independent dense exact
+control. Lazy integer offsets are passive storage, not new semantic actions
+or an AMP equivalence claim. Runtime/causal binding, bounded arithmetic and
+useful text-model training remain separate work.
+
 The new [ordinary-text data audit](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md)
 verifies180M training and2M validation GPT-2 token IDs from the pinned
 historical FineWeb-Edu preparation, including complete file identities and

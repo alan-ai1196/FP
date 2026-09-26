@@ -1,5 +1,16 @@
 # FP Handoff
 
+**The full-vocabulary readout now has an exact native learning refinement.**
+The [proof and passive implementation](theory/proofs/NATIVE_POSITIVE_READOUT.md)
+preserve all untied positive SUM-head parameters, pending gradients and core
+adjoints under the existing grid-projected SGD. Common decreases use lazy
+integer offsets; observed targets receive the combined signed native update.
+Clipping and then adding a correction is falsified by two exact witnesses.
+All1,808 small event words and a50,257-label dense exact control pass. This
+supplies no owned Runtime/AMP or model result. Continue with useful native
+text features, complete learning and competitive baselines, not more
+relation-task variants. Floating execution still needs its own relation.
+
 **Ordinary next-token work now has verified data and a causal source reader.**
 The [data entry](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md) verifies
 the existing FineWeb-Edu180M training/2M validation token files and full50,257

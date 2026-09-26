@@ -84,6 +84,16 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [complete positive readout refinement](../../theory/proofs/NATIVE_POSITIVE_READOUT.md)
+now removes one execution obstacle without changing the native optimizer.
+It retains all final SUM slots and pending gradients using exact common
+offsets and target corrections, and passes an independent dense control at
+all50,257 labels. This is a passive mathematical component: it supplies
+neither useful language features nor an owned or floating training path.
+Do not assume exact reassociation preserves an old AMP schedule. Use the
+result where it makes complete native learning affordable, then continue
+with the actual text core and comparisons rather than deepening static cases.
+
 First recover the actual native G/Gamma/U and complete causal state for the
 proposed text learner, using existing grammar/optimizer operations wherever
 they suffice. The current registered projected SGD can have explicit commit

@@ -551,6 +551,14 @@ grants no model, Runtime, bridge or split-independence certificate. The next
 task is the native language learner under the full declared alphabet and
 resources. No new Foundation mechanism is introduced.
 
+The [positive readout refinement](theory/proofs/NATIVE_POSITIVE_READOUT.md)
+now preserves complete untied final SUM slots and their pending gradients
+under existing grid-projected SGD. Exact common decreases admit lazy integer
+offsets, with target updates combined before projection. The scoped proof
+and full-vocabulary exact control grant no AMP, Runtime or complete-Compiler
+equivalence. This is an execution refinement for the ordinary-text study;
+Foundation, ERC-1 and semantic architecture actions remain unchanged.
+
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed
 gradient has reduced denominator 4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Its bit width

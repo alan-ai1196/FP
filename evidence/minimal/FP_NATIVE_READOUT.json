@@ -1,0 +1,94 @@
+{
+  "status": "PASS_EXACT_NATIVE_READOUT",
+  "scope": "untied positive readout, complete pending gradients, feature adjoints and grid-projected SGD; passive refinement only",
+  "index": {
+    "insertion_permutations": 120,
+    "invariant_and_update_checks": 2400,
+    "zero_values_preserved": true,
+    "old_immutable_roots_preserved": true
+  },
+  "native": [
+    {
+      "labels": 2,
+      "features": 2,
+      "update_unit": 1,
+      "grid_bits": 3,
+      "complete_event_words": 512,
+      "native_observations": 1536,
+      "native_commits": 1536
+    },
+    {
+      "labels": 3,
+      "features": 2,
+      "update_unit": 2,
+      "grid_bits": 2,
+      "complete_event_words": 1296,
+      "native_observations": 5184,
+      "native_commits": 2592
+    }
+  ],
+  "core": {
+    "exact_shared_PRODUCT_and_tied_core_gradient_cases": 81,
+    "readout_slots_untied_from_core": true
+  },
+  "counterexamples": {
+    "noncommuting_projection_witnesses": [
+      {
+        "initial_master": 0,
+        "alpha": "1/2",
+        "target_correction": "1",
+        "correct_target_master": "0",
+        "split_projection_and_correction_master": 1
+      },
+      {
+        "initial_master": 1,
+        "alpha": "1/4",
+        "target_correction": "1/2",
+        "correct_target_master": "1",
+        "split_projection_and_correction_master": 0
+      }
+    ],
+    "equal_current_parameters_and_common_accumulator_have_different_future_commits": true,
+    "target_specific_pending_gradients_are_required": true,
+    "stale_and_changed_cache_refusals": true
+  },
+  "full_vocabulary": {
+    "labels": 50257,
+    "features": 4,
+    "exact_dense_comparison_events": 8,
+    "native_parameter_coordinates": 201028,
+    "complete_output_mass_checks": 402056,
+    "complete_pending_gradient_checks": 1608224,
+    "complete_committed_parameter_checks": 804112,
+    "maximum_index_height": 4,
+    "final_offsets": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "retained_storage_snapshots": [
+      {
+        "cursor": 2,
+        "stored_label_exceptions": 8,
+        "distinct_indexed_values": 12
+      },
+      {
+        "cursor": 4,
+        "stored_label_exceptions": 15,
+        "distinct_indexed_values": 19
+      },
+      {
+        "cursor": 6,
+        "stored_label_exceptions": 22,
+        "distinct_indexed_values": 26
+      },
+      {
+        "cursor": 8,
+        "stored_label_exceptions": 29,
+        "distinct_indexed_values": 33
+      }
+    ],
+    "scope": "full-vocabulary exact synthetic feature/control audit; no text loss, learned language structure, timing comparison or GPU execution"
+  }
+}

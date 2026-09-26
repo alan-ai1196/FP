@@ -9175,3 +9175,34 @@ positions per file. Strict IDs, padding and indices refuse malformed inputs.
 No Torch or model score is used. Prefer this verified ordinary-text substrate
 over reducing the task for implementation convenience. Native G/Gamma/U,
 owned binding, complete learning cost and fresh strong baselines are next.
+
+## 268. Preserve complete native readout learning without a dense vocabulary update (2026-09-26)
+
+For any positive SUM/PRODUCT feature core with distinct untied final SUM
+slots, derive dL/dW_yi=z_i/Z-1[y=t]z_i/M_t and the complete core adjoint.
+Every pending gradient is a common vector minus its target-specific
+correction, including nonzero gradients at zero masters. A legal two-event
+continuation separates equal masters/common vectors with different target
+corrections; discarding those corrections is unsound.
+
+For existing dyadic-grid projected SGD, every non-target integer master
+updates as max(0,q-ceil(a)). Prove a lazy common-offset and ordered-value
+index representation, retaining every label and parameter. Target updates
+must use the old master and combined signed expression before floor/clamp.
+Two exact native witnesses falsify clipping the common step then separately
+adding a rounded correction. Persistent AVL maps preserve all old snapshots,
+and exact threshold sums recover full normalization without output expansion.
+
+Prove component refinement by induction for every legal event word, with
+separate exact arithmetic/index and storage costs. Worst-case dense storage,
+growing integer/rational widths and retained versions remain paid obligations.
+No resource-state quotient, semantic birth, Runtime binding, AMP schedule,
+installation or search certificate follows from the passive representation.
+
+The minimal exact audit passes2,400 map checks, all1,808 small event words
+with6,720 literal observations/4,128 commits, and81 nonlinear core pullbacks.
+At the full50,257-label vocabulary, an independent dense exact control
+compares402,056 masses,1,608,224 pending gradients and804,112 committed
+parameters. There is no text loss, timing or GPU result. This closes a
+readout execution obstacle for ordinary text; useful native features,
+complete practical training and fresh strong baselines remain the priority.

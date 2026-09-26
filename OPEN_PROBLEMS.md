@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [complete positive readout law](theory/proofs/NATIVE_POSITIVE_READOUT.md)
+removes a dense-update obstacle for ordinary text: native projected SGD
+has a common non-target decrease and exact target corrections. Its passive
+implementation passes full-vocabulary and complete small-history controls.
+It does not supply useful features, a numerical bridge or owned training.
+Proceed with the native text core and practical complete learning; avoid
+turning the readout result into another static special-case branch.
+
 The ordinary-text entry now verifies the existing full-vocabulary
 FineWeb-Edu training/validation files and a past-only indexed source reader.
 Read [the exact boundary](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md).
