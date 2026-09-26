@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [batched token reference](experiments/next_token/BATCHED_REFERENCE.md)
+now groups complete retained-unit forward/reverse operations while preserving
+all native incidences and exact committed masters. Explicit interval trees
+replace opaque floating reductions. The small suite passes48,384 full-unit
+gradient checks/1,728 commits; the full-vocabulary512-record control matches
+all301,548 endpoint parameters. Immutable uint32 master buffers and declared
+per-array quotas are implemented; total host/work ownership, Runtime source
+binding, AMP and model science remain the next boundary.
+
 The [native source-clock refinement](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
 now separates file-source position from optimizer time and binds observations
 to an independent complete source point. General exact-unit decoding retains

@@ -1,0 +1,106 @@
+{
+  "status": "PASS_BATCHED_NATIVE_TOKEN_ENCLOSURES",
+  "numpy_version": "2.5.1",
+  "scope": "batched complete retained units, explicit interval reductions and immutable packed exact masters; passive only",
+  "primitives": {
+    "exact_broadcast_operation_checks": 350,
+    "nonpoint_checks": 432,
+    "arithmetic_word_and_type_refusals": 5
+  },
+  "reductions": {
+    "permutations": 120,
+    "signed_balanced_and_segment_checks": 1440,
+    "empty_sum_exact": true
+  },
+  "native_histories": [
+    {
+      "update_unit": 1,
+      "initializer": "mixed",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 10752,
+      "exact_native_commits": 384,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-embedding",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 10752,
+      "exact_native_commits": 384,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-core",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 10752,
+      "exact_native_commits": 384,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "mixed",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 5376,
+      "exact_native_commits": 192,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-embedding",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 5376,
+      "exact_native_commits": 192,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-core",
+      "requested_words": 64,
+      "complete_words": 64,
+      "native_event_comparisons": 384,
+      "complete_gradient_coordinate_checks": 5376,
+      "exact_native_commits": 192,
+      "terminal_unresolved_words": 0,
+      "oracle_resumptions": 0
+    }
+  ],
+  "retained_profiles": {
+    "retained_schedules": 96,
+    "exact_commits": 192,
+    "target_noninterference_units": 192,
+    "immutable_master_views": true,
+    "dimension_element_source_and_target_refusals": 8
+  },
+  "unresolved_and_empty": {
+    "ambiguous_boundary_retains_complete_source_target_unit": true,
+    "empty_SUM_PRODUCT_and_unused_slot_exact_cases": 2
+  },
+  "full_vocabulary": {
+    "vocabulary": 50257,
+    "update_unit": 512,
+    "context": 4,
+    "core_value_checks": 5632,
+    "complete_pending_gradient_basis_checked": true,
+    "complete_endpoint_parameter_checks": 301548,
+    "maximum_exact_common_denominator_bits": 12303,
+    "packed_master_payload_bytes": 1206192,
+    "original_master_payload_unchanged": true,
+    "scope": "synthetic retained-record numerical audit; no actual text loss, online freshness, timing, total memory, Runtime or AMP claim"
+  }
+}

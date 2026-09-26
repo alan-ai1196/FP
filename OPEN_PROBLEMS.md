@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [batched enclosure reference](experiments/next_token/BATCHED_REFERENCE.md)
+closes the basic vectorized numerical implementation, including repeated
+tokens/features, ties and shared products. Its exact endpoint audit passes
+at the full vocabulary. Measure the whole-process time/memory and refusal
+behavior under committed limits next, then integrate owned sources and the
+actual AMP path. Do not turn the passive kernel into another static branch;
+ordinary-text learning and strong fresh baselines remain the objective.
+
 The [source-clock audit](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
 closes a concrete obstacle to text validation/profiles: source position is
 independent of learner time, and a general pending unit must retain its

@@ -178,7 +178,7 @@ def boundary_witnesses():
         stale_forged_and_clock_refusals=4)
 
 
-def long_unit():
+def long_unit_fixture():
     V, L, D, N = 50257, 4, 2, 512
     nodes = (Sum('f', tuple(Term(2*i, i) for i in range(4))), Product('f', 8, 0), Product('f', 1, 7))
     d = tokens.Definition(TokenSources(V, L), D, nodes, 4, (0, 8, 9, 10),
@@ -187,6 +187,12 @@ def long_unit():
     overrides = tuple((token, k, 1+((i+1)*(7919+2*k)) % 65521) for i, token in enumerate(word) for k in range(D))
     origin = tokens.initialize(d, (32768, 16384), (32768, 16384, 8192, 49152), (1, 0, 0, 0),
         embedding_overrides=overrides, output_overrides=((17, 0, 2),))
+    return d, origin, word
+
+
+def long_unit():
+    d, origin, word = long_unit_fixture()
+    V, L, N = d.output.labels, d.sources.context, d.output.update_unit
     pending, exact = bounded.begin(origin), origin
     checkpoints = []
     for count, target in enumerate(word, 1):

@@ -84,6 +84,12 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [batched complete-unit reference](BATCHED_REFERENCE.md) now preserves
+the exact native endpoints with explicit array enclosures and immutable
+packed masters. Its full-vocabulary audit passes. The immediate execution
+step is a committed whole-process feasibility audit, then owned source/Runtime
+integration and AMP; further passive static examples are not the priority.
+
 The [source-clock refinement](SOURCE_AND_LEARNER_CLOCKS.md) now supports
 explicit retained-example contexts and frozen new-file scoring without
 identifying source position with optimizer time. General pending units

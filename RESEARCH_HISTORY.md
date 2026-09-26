@@ -9308,3 +9308,32 @@ No real held-out file, model score, Torch or GPU is used. Existing source and
 profile semantics suffice; this is no Foundation counterexample or new
 architecture action. Owned identity/role checks, resource funding and the
 actual AMP path remain the next practical work toward ordinary text.
+
+## 272. Batch complete retained token units without changing native learning (2026-09-26)
+
+The complete native reference now evaluates events and equal-depth DAG
+nodes in array batches. Fixed parameters within a registered update unit
+justify exact regrouping of the gradient sum; this does not equate arbitrary
+Compiler control or information-acquisition traces. Every actual source
+window and target remains in the pending-unit decoder.
+
+Explicit outward binary64 operations and balanced/segmented trees enclose
+all tied slots, repeated features/tokens and shared PRODUCT incidences.
+Immutable uint32 grid masters give exact ingress; V<=2^20 makes uint64
+readout-column sums and their binary64 conversion exact. Unique cells of
+the complete signed projected update authorize every next master. Ambiguity
+retains the unit; no exact oracle silently chooses its continuation.
+
+All384 small token words pass2,304 event comparisons/48,384 final-unit
+gradient checks/1,728 exact commits. Another96 retained-source schedules
+pass192 commits and target-noninterference checks. The full50,257-label,
+512-event synthetic control compares the full gradient basis and every one
+of301,548 endpoint parameters; exact denominators reach12,303 bits.
+
+Allocation review adds preflight cases for dense input masters, repeated
+feature indices and edge metadata, and removes an implicit four-array
+product stack. Eight dimension/source/target/quota refusals pass. These
+per-array limits do not certify total memory: packed master payload alone
+is1,206,192 bytes. No text score, timed comparison, owned Runtime or AMP
+result follows. Proceed to a preregistered whole-process feasibility audit
+and ordinary text execution instead of further static variants.

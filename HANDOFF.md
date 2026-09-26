@@ -1,5 +1,14 @@
 # FP Handoff
 
+**The complete text reference now has a batched numerical kernel.** The
+[refinement and audit](experiments/next_token/BATCHED_REFERENCE.md) preserve
+all retained source records, native gradients and exact grid endpoints.
+All1,728 small commits pass; the full-vocabulary512-event unit matches all
+301,548 masters. Per-array limits include repeated features and dense input
+masters, but do not bound total memory. The next action is a preregistered
+whole-process feasibility audit, followed by Runtime/AMP integration and
+ordinary-text comparisons. No model outcome or owned execution is claimed.
+
 **Source position and learner time are now separate.** The
 [source-clock counterexamples and audit](experiments/next_token/SOURCE_AND_LEARNER_CLOCKS.md)
 show that identical origins, targets, final contexts and clocks can yield
