@@ -170,3 +170,8 @@ boundaries need an explicitly declared numerical lowering and checks. The
 next practical boundary is that lowering with actual resource ownership,
 followed by the registered text study and fresh strong baselines. This
 component does not re-open the completed relation-task branch.
+
+The subsequent [sound enclosure solver](EXACT_COMMITS_WITH_ENCLOSURES.md)
+now resolves exact native commits from interval bounds while preserving a
+complete exact unit decoder. Its full-vocabulary512-event control closes
+one reference-cost obstacle; efficient owned execution and AMP remain.

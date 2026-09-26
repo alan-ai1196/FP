@@ -567,6 +567,15 @@ synthetic execution avoids expanding the declared one-hot graph. Supplied
 tying/topology is explicit; no learned-structure, owned Runtime/AMP or model
 quality claim is inferred. This is not an extension of Foundation semantics.
 
+The [enclosure reference solver](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
+retains that learner's complete exact unit as its origin and target prefix,
+encloses all pending gradients, and publishes an exact native grid commit
+only when every required cell resolves. A512-event full-vocabulary audit
+matches all301,548 endpoint parameters despite a12,303-bit materialized
+gradient denominator. Arithmetic ambiguity and failure retain the complete
+unit. This conditional solver refinement supplies no owned Runtime, AMP or
+model-quality certificate and does not weaken the existing precision laws.
+
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed
 gradient has reduced denominator 4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Its bit width

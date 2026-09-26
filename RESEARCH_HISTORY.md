@@ -9241,3 +9241,35 @@ The component is passive exact reference code with unbounded arithmetic;
 it supplies no source-ingress, resource, lineage, AMP, fresh/install or
 constructor authority. Proceed to its funded numerical lowering and the
 ordinary-text study instead of further static or relation-task variants.
+
+## 270. Resolve exact native text commits with sound enclosures and retain unresolved target information (2026-09-26)
+
+Large text update units need not materialize every rational gradient before
+deciding an exact native grid endpoint. Their committed origin and retained
+target prefix determine all sources, predictions and gradients. Preserve
+that exact decoder and separately propagate complete binary64 enclosures.
+Prove scalar enclosure under explicit nearest/gradual-underflow assumptions
+and monotone floor/ceiling decisions for every explicit or implicit slot.
+Only uniquely determined cells produce a new exact committed learner.
+
+Nearest float64 subtraction1-2^-60 rounds to1, while exact native floor is0.
+The sound cell test refuses. Conversely, a true symmetric zero gradient
+can have a loose interval and honestly refuse a legal commit. No midpoint
+or hidden exact-oracle continuation repairs it. A legal new target with
+base2^-1024 passes prediction then overflows the observation reciprocal;
+retain the actual target, origin and full exact decoder in a separate failed
+unit, without publishing stale pre-observation gradient bounds.
+
+The audit checks715 point operations,55 honest refusals and504 nonpoint
+comparisons. All384 small token words complete2,304 observations/64,512
+gradient-coordinate checks/1,728 exact commits without an oracle resumption.
+A separate full50,257-vocabulary512-event unit reaches12,303-bit exact
+common-gradient denominators; six full-basis checkpoints are enclosed and
+all301,548 committed parameters match a materialized rational control.
+Those control values never choose the enclosure solver's endpoint.
+
+This is a passive reference-cost result, not a new optimizer or a weakening
+of materialized precision laws. The code has no owned work/bit/heap budget,
+physical AMP trajectory, model score or constructor certificate. Fund and
+implement its efficient numerical path and bridge, then proceed with the
+ordinary-text study rather than another relation/static special-case branch.

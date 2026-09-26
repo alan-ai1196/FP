@@ -84,6 +84,14 @@ constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 
+The [sound enclosure solver](EXACT_COMMITS_WITH_ENCLOSURES.md) now advances
+exact native committed states without materializing every pending rational:
+it retains the complete unit origin and targets, and resolves only unique
+grid cells. A full-vocabulary512-event audit matches every resulting master
+against a separate exact control. Ambiguous cells remain unresolved with
+the exact decoder retained. The efficient funded implementation and actual
+AMP bridge, rather than further static variants, are the next execution work.
+
 The [complete passive token learner](NATIVE_TOKEN_LEARNER.md) now supplies
 an explicit native G/Gamma/U: indexed lag/token SUMs with declared embedding
 ties, an arbitrary positive core DAG and the untied readout. It retains

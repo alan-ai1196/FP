@@ -1,5 +1,16 @@
 # FP Handoff
 
+**Sound float64 enclosures now resolve exact native text-learner commits.**
+The [solver and conditional proof](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
+retain a complete exact unit origin/target prefix and enclose every pending
+gradient. They publish an exact grid endpoint only when all relevant cells
+are uniquely determined. All1,728 small commits pass; a512-event/full-vocab
+unit reaches a12,303-bit exact denominator yet all301,548 resulting masters
+match the separate rational control. Ambiguous cells and observation
+overflow refuse with complete target/decoder retention. This is passive
+reference work, not AMP, owned Runtime or a text score. Continue with its
+funded efficient lowering and actual text experiment, not more static cases.
+
 **A complete passive native token learner now composes the input, core and
 readout.** Its [definition and exact evidence](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 retain every parameter, pending gradient, causal context and optimizer clock.

@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [sound grid-cell solver](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
+now avoids materializing large pending-gradient rationals on its resolved
+reference path. A full-vocabulary512-event unit gives an exactly matched
+301,548-parameter endpoint, while ambiguous cells honestly refuse and retain
+their complete exact unit. The remaining practical issue is funded efficient
+execution and the actual AMP relation for text training. Do not mistake
+this passive numerical result for model performance or complete Runtime.
+
 The [complete native token learner](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 now closes the passive exact G/Gamma/U composition with causal context,
 all optimizer blocks and arbitrary positive core DAGs. Repeated-token and

@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [sound enclosure reference solver](experiments/next_token/EXACT_COMMITS_WITH_ENCLOSURES.md)
+now derives exact committed native token states from uniquely determined
+grid cells while retaining a complete exact pending-unit decoder. It passes
+64,512 small gradient-coordinate comparisons/1,728 commits and a512-event,
+50,257-label unit with301,548 fully compared endpoint parameters. The
+separate exact common-gradient denominator reaches12,303 bits. Ambiguity
+and newly revealed target arithmetic refusal preserve the exact unit.
+No owned budget, AMP schedule, model score or new complete class follows.
+
 The [passive exact token learner](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 now binds its own causal context to indexed native embedding SUMs, an
 arbitrary positive core DAG and the complete readout. All384 small token

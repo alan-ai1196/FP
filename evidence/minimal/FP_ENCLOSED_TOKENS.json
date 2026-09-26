@@ -1,0 +1,134 @@
+{
+  "status": "PASS_SOUND_NATIVE_TOKEN_ENCLOSURES",
+  "scope": "conditional binary64 enclosures, complete retained exact unit and exact grid decisions; passive only",
+  "scalars": {
+    "exact_ingress_values": 14,
+    "point_operation_enclosures": 715,
+    "honest_point_operation_refusals": 55,
+    "nonpoint_interior_and_endpoint_checks": 504,
+    "strict_ingress_nonfinite_order_and_zero_denominator_refusals": 5
+  },
+  "native_histories": [
+    {
+      "update_unit": 1,
+      "initializer": "mixed",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 384,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-embedding",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 384,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-core",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 384,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "mixed",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 192,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-embedding",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 192,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-core",
+      "requested_words": 64,
+      "completed_words": 64,
+      "observations": 384,
+      "full_pending_gradient_checks": 10752,
+      "resolved_exact_commits": 192,
+      "terminal_unresolved_words": 0,
+      "unresolved_reasons": {},
+      "oracle_resumptions": 0
+    }
+  ],
+  "boundary_witnesses": {
+    "naive_float64_grid_master": 1,
+    "exact_grid_master": 0,
+    "grid_cell_refusal": true,
+    "symmetric_exact_zero_gradient": "0",
+    "nonzero_enclosure_width": 7.771561172376097e-16,
+    "unresolved_origin_target_context_and_complete_exact_decoder_retained": true,
+    "failed_observation_new_target_and_exact_unit_retained": true,
+    "no_stale_gradient_enclosure_published": true,
+    "stale_forged_and_clock_refusals": 4
+  },
+  "long_unit": {
+    "vocabulary": 50257,
+    "context": 4,
+    "events": 512,
+    "native_parameter_slots": 301548,
+    "exact_gradient_basis_checkpoint_comparisons": 6,
+    "checkpoints": [
+      {
+        "events": 1,
+        "maximum_common_gradient_denominator_bits": 17
+      },
+      {
+        "events": 8,
+        "maximum_common_gradient_denominator_bits": 225
+      },
+      {
+        "events": 64,
+        "maximum_common_gradient_denominator_bits": 1730
+      },
+      {
+        "events": 128,
+        "maximum_common_gradient_denominator_bits": 3348
+      },
+      {
+        "events": 256,
+        "maximum_common_gradient_denominator_bits": 6404
+      },
+      {
+        "events": 512,
+        "maximum_common_gradient_denominator_bits": 12303
+      }
+    ],
+    "outcome": {
+      "status": "EXACT_NATIVE_COMMIT",
+      "complete_parameter_checks": 301548
+    },
+    "scope": "synthetic-token numerical audit with separate unbounded exact control; no model score, owned work/bit cap, timing or AMP claim"
+  }
+}
