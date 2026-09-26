@@ -1,5 +1,17 @@
 # FP Handoff
 
+**Ordinary next-token work now has verified data and a causal source reader.**
+The [data entry](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md) verifies
+the existing FineWeb-Edu180M training/2M validation token files and full50,257
+vocabulary. This replaces the provisional smaller WikiText/byte direction.
+All file bytes/IDs pass; both files retain their truncated final document.
+The passive indexed lag/token interface passes4,374 exhaustive windows/
+34,992 atom checks and7,630 actual-file lag checks. Padding is distinct from
+token0; EOT does not trigger a hidden reset. No test file, old model result
+or Torch is used. This supplies no Runtime/model certificate. Next derive
+the actual native G/Gamma/U and affordable complete training path for the
+full vocabulary, then implement fresh competitive baselines.
+
 **The rational-feature gate has reached its stopping point. Move the research
 focus to ordinary next-token prediction.** All21 original cases have one
 successful execution across four terminal attempts, with three earlier

@@ -9143,3 +9143,35 @@ Choose ordinary next-token research as the next priority and record its
 entry boundary in experiments/next_token/RESEARCH_ENTRY.md. Language quality
 and forced structural emergence remain unproved, and new execution paths
 must earn their own bridge. No semantic action or Foundation change follows.
+
+## 267. Recover verified ordinary text and preserve the complete causal token interface (2026-09-26)
+
+Before selecting the provisional smaller WikiText/raw-byte task, inspect
+the data location named by the historical FP configuration. It contains
+180M training and2M validation FineWeb-Edu GPT-2 token IDs. Both complete
+files match the identities in the pilot/inherited manifests, with IDs
+0..50256. The public source revision is87f09149ef4734204d70ed1d046ddc9ca3f2b8f9.
+Inspect the original split/tokenization recipe but do not import its Torch-
+loading package or adopt its model results. No test/confirmation file is
+opened, hashed, sampled or scored. The full corpus is not copied into Git.
+
+Both files end in a truncated document, with173,858 and1,900 observed EOTs.
+Preserve those bytes and the full vocabulary. File identity is established;
+raw-source reconstruction, content nonoverlap and stochastic independence
+are not. The historical validation split is a development asset with prior
+exposure. A future test protocol must state its new claim and selection rules.
+
+Implement the passive I.1 lag/token source schema, with distinct PAD=50257,
+lag1 most recent, no implicit EOT reset and no access to index>=forecast t.
+The L-entry token tuple determines every one-hot atom exactly; atL512 there
+are25,732,096 declared atoms without requiring a dense expansion. This does
+not erase old corpus/Compiler state or prove language has sufficient memoryL.
+The helper issues no execution, observation, fresh or installation token.
+
+The2,211-byte audit exhausts243 five-token histories,4,374 windows and34,992
+atom checks;3,645 current/future perturbations preserve the complete source
+point. Another7,630 exact real lag checks cover contexts1,32,512 at seven
+positions per file. Strict IDs, padding and indices refuse malformed inputs.
+No Torch or model score is used. Prefer this verified ordinary-text substrate
+over reducing the task for implementation convenience. Native G/Gamma/U,
+owned binding, complete learning cost and fresh strong baselines are next.

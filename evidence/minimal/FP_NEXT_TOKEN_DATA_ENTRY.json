@@ -1,0 +1,69 @@
+{
+  "status": "PASS_NEXT_TOKEN_DATA_ENTRY",
+  "source": {
+    "repo": "HuggingFaceFW/fineweb-edu",
+    "subset": "sample-10BT",
+    "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+    "local_root": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data",
+    "format": "little-endian uint16",
+    "tokenizer": "gpt2",
+    "vocabulary": 50257,
+    "eot": 50256,
+    "provenance": "historical author manifest and inspected preparation recipe; no independent full raw-corpus reconstruction"
+  },
+  "files": {
+    "train": {
+      "bytes": 360000000,
+      "tokens": 180000000,
+      "sha256": "7cabea904b3a24958d1e3fcd34f7967a52bc4d11a6ef42b3e2842fa9b816facd",
+      "token_id_range": [
+        0,
+        50256
+      ],
+      "eot_count": 173858,
+      "final_token_is_eot": false,
+      "context_lengths": [
+        1,
+        32,
+        512
+      ],
+      "audited_positions": 7,
+      "exact_real_lag_checks": 3815
+    },
+    "val": {
+      "bytes": 4000000,
+      "tokens": 2000000,
+      "sha256": "fe2ce7174972d67b4be62a189f600491dae40cc90e7a0226f1178c8e122b2cb3",
+      "token_id_range": [
+        0,
+        50256
+      ],
+      "eot_count": 1900,
+      "final_token_is_eot": false,
+      "context_lengths": [
+        1,
+        32,
+        512
+      ],
+      "audited_positions": 7,
+      "exact_real_lag_checks": 3815
+    }
+  },
+  "causal_sources": {
+    "complete_five_token_histories": 243,
+    "windows": 4374,
+    "exact_atom_checks": 34992,
+    "current_and_future_perturbations": 3645,
+    "padding_distinct_from_token_zero": true,
+    "strict_shape_index_and_padding_refusals": true
+  },
+  "source_contract": {
+    "padding_id": 50257,
+    "context_order": "lag 1 first; prediction at position t uses only indices < t",
+    "eot_handling": "retained as an ordinary observed token; no implicit context reset",
+    "width_512_indexed_atoms": 25732096
+  },
+  "historical_test_and_confirmation_files_opened": false,
+  "model_scores_computed": false,
+  "scope": "file identity, complete token ranges and passive causal source values; no split independence, statistical law, model or Runtime authority"
+}

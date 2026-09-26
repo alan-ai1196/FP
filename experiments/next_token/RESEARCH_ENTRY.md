@@ -1,7 +1,7 @@
 # Ordinary next-token research: entry decision
 
-Status: **RESEARCH PRIORITY, 2026-09-26; no new language experiment or model
-result is registered by this document.** Foundation and ERC-1 stay frozen.
+Status: **RESEARCH PRIORITY, 2026-09-26; VERIFIED TEXT DATA AND PASSIVE CAUSAL
+SOURCES AVAILABLE; NO NEW MODEL RESULT**. Foundation and ERC-1 stay frozen.
 The user explicitly requested a reassessment when rational-feature/precision
 work reached a clean stopping point. The decision is to move on now.
 
@@ -54,34 +54,33 @@ trained values or all future continuations. Report UNRESOLVED when needed.
 ## Initial study direction
 
 Use ordinary public text, not another generated relation/parity distribution.
-The first corpus candidate is **WikiText-2 raw**, with official train,
-validation and test splits. Its raw version retains tokens before vocabulary
-unknown-word replacement; the publisher provides a character-level variant
-and dataset/license metadata. Pin the actual source revision and preserve
-the selected row/byte construction exactly. This candidate still needs an
-audited manifest and split/boundary protocol before execution.
-[Publisher dataset card](https://huggingface.co/datasets/Salesforce/wikitext).
+The initial WikiText-2/raw-byte proposal was provisional. Inspection then
+found and verified an existing **FineWeb-Edu180M-token training/2M-token
+validation corpus**, with pinned file identities and the full50,257 GPT-2
+vocabulary. The [data/source entry](CORPUS_AND_CAUSAL_SOURCES.md) is now the
+preferred substrate. Corpus provenance is separated from verified file
+identity; historical test files/results supply no new fresh authority.
 
-Prefer an explicit UTF-8 byte alphabet initially: no pretrained tokenizer,
-hidden linguistic features or vocabulary chosen using held-out labels.
-Treat document/row boundaries, initial context, evaluated positions and
-context resets as part of the information contract. Teacher-forced past
-targets become legal later context; the current or future target cannot
-enter a forecast or structural proposal prematurely. Choose the context
-and training budgets from measured feasibility before preregistration.
-Do not shrink the task solely to make FP pass.
+The passive input contract fixes all lag/token atoms and distinct missing-
+history padding, retains EOT without an implicit reset, and proves current/
+future targets cannot change past-only inputs. It does not supply a model
+or owned Runtime ingress. Use the same declared tokenization and context
+conventions for compared learners; no hidden linguistic features or
+held-out vocabulary selection. Choose context and training budgets from
+measured feasibility before preregistration. Do not shrink the task solely
+to make FP pass.
 
 Include a tuned smoothed n-gram control and a competitive causal Transformer
-trained from scratch on the same bytes/splits, in addition to diagnostic
+trained from scratch on the same tokens/splits, in addition to diagnostic
 unigram/SUM-only controls. Modified Kneser–Ney has an established implementation
-in [KenLM](https://github.com/kpu/kenlm); verify its byte vocabulary, boundary
+in [KenLM](https://github.com/kpu/kenlm); verify its token vocabulary, boundary
 and normalization conventions if used. Unigram or deliberately undertrained
 neural baselines alone are insufficient. Give baselines their normal useful
 optimizers and a declared validation tuning allowance. Match the comparison
 being claimed—data, context, parameter/storage and training/inference cost—
 and disclose residual differences instead of claiming every coordinate is
-simultaneously equal. Byte metrics cannot be compared to published word or
-subword perplexities as if they used the same prediction space.
+simultaneously equal. Perplexities on different tokenizations or corpus
+constructions cannot be treated as the same prediction space.
 
 ## Next executable boundary
 

@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The new [ordinary-text data audit](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md)
+verifies180M training and2M validation GPT-2 token IDs from the pinned
+historical FineWeb-Edu preparation, including complete file identities and
+token ranges. A passive indexed lag/token reader passes34,992 exact atom
+checks and current/future perturbations. It grants no Runtime, model or AMP
+authority. No test/confirmation file or model score is inspected; the native
+language learner and owned source binding remain the immediate frontier.
+
 The rational-feature gate closes its original21 cases across four terminal
 attempts, with one successful execution per case and three retained failures.
 A4 at05a4c80 passes15 profile-refusal phases and13 separate legacy phases

@@ -542,6 +542,15 @@ legacy regression. This is the stopping point for this branch; the
 next-token prediction. Old AMP types/IDs cannot adopt this new layout; no
 semantic action, new complete decision class or full indexed release follows.
 
+The ordinary next-token entry now verifies an existing pinned180M-training/
+2M-validation FineWeb-Edu token corpus and a passive indexed lag/token source
+reader. Its causality proof is the direct instance of the primitive schema
+in I.1; the full source family is retained without dense one-hot storage.
+The [data/source audit](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md)
+grants no model, Runtime, bridge or split-independence certificate. The next
+task is the native language learner under the full declared alphabet and
+resources. No new Foundation mechanism is introduced.
+
 There is also a sharp exact-output precision obstruction. In the C=4 bank
 with odd q and a=3q,b=a-1, after T diagonal label0 observations a fixed
 gradient has reduced denominator 4*(a^T+b^T)*(a^(T+1)+b^(T+1)). Its bit width

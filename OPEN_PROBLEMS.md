@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The ordinary-text entry now verifies the existing full-vocabulary
+FineWeb-Edu training/validation files and a past-only indexed source reader.
+Read [the exact boundary](experiments/next_token/CORPUS_AND_CAUSAL_SOURCES.md).
+Do not substitute a smaller corpus/vocabulary merely for easier conformance,
+borrow old neural results as baselines, or confuse a passive source encoding
+with an owned learner. The immediate research problem is native G/Gamma/U
+and useful complete training at this vocabulary/context scale, including
+the full normalized readout and all optimizer coordinates.
+
 **Current priority: ordinary next-token prediction.** The rational-feature
 branch closes all21 original cases across A1–A4, retaining all source scopes
 and three failures. Its [final results](theory/proofs/OWNED_RATIONAL_FEATURE_AMP.md#10-a4-completion-and-the-research-stopping-point)
