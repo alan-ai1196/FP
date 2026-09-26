@@ -1,9 +1,10 @@
 # FP Open Problems
 
 The all-label part of the token prediction relation now has a
-[conditional proof and exact CPU control](experiments/next_token/COMPLETE_PREDICTION_RELATION.md).
-Run its one preregistered full-context CUDA comparison, then move directly
-to the remaining owned state/event relation. It cannot certify partial
+[conditional proof, exact CPU control and actual CUDA pass](experiments/next_token/COMPLETE_PREDICTION_RELATION.md).
+The25.7M-coordinate scan costs26.6 seconds for512 contexts, so it is an audit
+control rather than a full-corpus routine. Move directly to an affordable
+owned state/event relation. The current predicate cannot certify partial
 gradient accumulators, causal acquisition or future contexts by itself.
 Ordinary text learning and strong controls remain the objective; no further
 relation-task or static numerical catalog is justified by this component.

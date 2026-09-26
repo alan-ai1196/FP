@@ -4,8 +4,11 @@ The [complete token readout predicate](experiments/next_token/COMPLETE_PREDICTIO
 checks all label/event output words against a binary32 decoder, accumulates
 their exact stored mass sum in bounded integer bins, and bounds both raw
 and properly normalized probability errors. CPU exact/adversarial controls
-pass. The full-context CUDA comparison is preregistered but unexecuted.
-This passive component is not an issued bridge or event-level state relation.
+pass. The full-context CUDA comparison now passes at35335a9:25,731,584
+coordinates and77,194,752 output words, probability error upper4.5903e-9.
+Its26.6-second scan is an audit control, not a viable full-corpus routine.
+The original job is terminal. This passive component is not an issued bridge
+or event-level state relation; affordable owned integration remains due.
 
 The [owned literal token-source control](experiments/next_token/OWNED_SOURCE_CONTROL.md)
 now runs inside ReferenceCompilerRuntime. Explicit `target_missing` sources

@@ -9483,3 +9483,26 @@ decisions, inside the existing4-GiB/900-second/pinned3090 envelope. No score,
 commit or validation/test data. Prior terminal jobs are not replayed. After
 this prediction component, complete owned event/state integration and move
 to actual language learning and strong baselines; no relation-task expansion.
+
+## 278. Complete all-label token prediction check passes on the actual3090 (2026-09-26)
+
+The single registered job at35335a9 finishes with all25,731,584 label/context
+coordinates,77,194,752 output words and512 target bindings checked. Native
+versus raw/proper probability error upper4.590267123597707e-9 and division
+error upper3.950206924938882e-12 satisfy the fixed1e-6/1e-7 thresholds. All
+native and range checks pass; no threshold is changed. The exact decoder
+computes437,436,928 words and needs zero rational fallback cells. Complete
+mass sums need at most40 numerator/37 denominator bits.
+
+The exhaustive readout verifier costs26.58475 seconds, with29.78500-second
+whole job and2,022,989,824-byte peak commitment. Allocator reserved peak is
+71,303,168 bytes. No timeout/limit termination, loss, optimizer commit or
+validation/test read. The original4,046-byte journal is terminal and must
+not be replayed. This is a complete finite prediction predicate, not an
+owned event/state/learning bridge or language-quality result.
+
+This cost exposes the next practical obstacle: a linear extrapolation to
+180M tokens exceeds100 days for the exhaustive verifier alone. Keep this
+as an independent control while deriving a sound relation exploiting the
+registered readout and retained event state. Do not reduce vocabulary, waive
+state relations or reopen the closed relation task to make a score possible.

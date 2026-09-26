@@ -5,10 +5,13 @@
 separate native probabilities, normalized stored masses and rounded device
 divisions. A block decoder and254 exact exponent bins avoid retaining a
 vocabulary-by-unit tensor. Exact CPU controls pass6,052 rounding words and
-all3,060 mass-sum words; unseen-label/base-cache mutations refuse. One new
-full-vocabulary/context512 GPU job is registered with fixed tolerances; it
-has not run yet. After it, integrate complete event/state ownership and
-ordinary text learning. Do not reopen the closed relation-task branch.
+all3,060 mass-sum words; unseen-label/base-cache mutations refuse. The new
+full-vocabulary/context512 GPU job **passes at35335a9**:25,731,584 coordinates,
+77,194,752 actual output words, probability error upper4.5903e-9 and peak
+job2,022,989,824 bytes. It is terminal; do not rerun. Its26.6-second verifier
+is too costly for routine full-corpus training. Integrate complete event/state
+ownership with an affordable sound relation, then ordinary text learning.
+Do not reopen the closed relation-task branch.
 
 **The real Runtime now owns the token PAD/source semantics on the literal
 control.** The [source integration](experiments/next_token/OWNED_SOURCE_CONTROL.md)

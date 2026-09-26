@@ -137,3 +137,37 @@ retain no arrays/weights. The exclusive original journal is
 terminates this attempt; preserve it unchanged and do not widen its thresholds.
 After this gate, proceed to the owned event/state relation and ordinary text
 learning, not another static numerical catalog.
+
+## Actual result at35335a9
+
+The [original CUDA journal](../../evidence/minimal/FP_TOKEN_READOUT_CUDA_A1.json)
+is terminal and passes its fixed contract. All25,731,584 label/context
+coordinates,77,194,752 actual output words and512 target caches pass across
+197 blocks. The decoder computes437,436,928 words and needs zero exact-cell
+fallbacks. Exact stored sums use at most40 numerator/37 denominator bits.
+
+| Observed upper bound | Value | Registered limit |
+|---|---:|---:|
+| Core/excess/mass error | 0.0005400092741194574 | 1/100 |
+| All normalizer errors | 0.005349871988048705 | 1/100 |
+| Native versus raw/proper probability | 4.590267123597707e-9 | 1/10^6 |
+| Proper versus raw probability | 3.950206924938882e-12 | 1/10^7 |
+| Activation | 0.875 | 2 |
+| Normalizer | 13.014471809364363 | 64 |
+
+The full scan/check takes26.58475 seconds; the whole child takes29.78500
+seconds. Peak job commitment is2,022,989,824 bytes, Torch allocated peak
+50,787,328 bytes and reserved peak71,303,168 bytes. No timeout or limit
+termination occurs. The cumulative job process counter is2; this is not
+two simultaneous active processes under the enforced one-active-process cap.
+
+The origin remains unchanged and neither a commit nor a loss is scored.
+These are observed results for this fixture, not a uniform source-domain,
+future-state, language-quality or owned bridge certificate. No rerun is due.
+
+The exhaustive audit is an independent control, not a viable routine for
+all180M training tokens: a purely linear extrapolation of this verifier's
+time alone exceeds100 days. Actual learning therefore needs a sound complete
+relation that uses the registered readout's algebra and retained event state,
+or an explicitly smaller scientifically justified run. This is a solver/cost
+obstacle, not grounds to weaken semantics, remove labels or widen tolerances.
