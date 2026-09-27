@@ -166,6 +166,29 @@ class JointCudaPrefixContract(CudaPrefixContract):
         closed(self, JointCudaPrefixContract)
 
 
+@dataclass(frozen=True, kw_only=True)
+class TokenCudaPrefixContract(CudaPrefixContract):
+    initializer: object
+    exact_cell_cap: int = 4096
+    forward_id: str = field(default='', init=False)
+
+    def _arithmetic_ids(self):
+        from .token_execution import TokenInitializer, closed
+        closed(self.initializer, TokenInitializer)
+        self.initializer.__post_init__()
+        natural(self.exact_cell_cap, 'token exact rounding-cell allowance')
+        if self.likelihood_encoding is not None or self.install is not None:
+            raise ContractError('token events cannot borrow a likelihood encoding or an installation release')
+        return ('token-half-core-event-gradient-sparse-balanced-carry-integer-grid-v2',
+                'prepaid-complete-token-array-graph-and-cache-relation-v1',
+                'token-half-single-one-event-explicit-arena-arrays-v1')
+
+    def __post_init__(self):
+        super().__post_init__()
+        from .token_execution import closed
+        closed(self, TokenCudaPrefixContract)
+
+
 @dataclass(frozen=True)
 class CudaRunManifest:
     reference: object
@@ -289,7 +312,7 @@ def output_cells(kind, program, rules, spec, *, encoded_state=None, steps=None, 
 
 class _CudaPrefix:
     def __init__(self, contract):
-        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract):
+        if type(contract) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, TokenCudaPrefixContract):
             raise ContractError('registered private CUDA prefix contract required')
         contract.__post_init__()
         import torch
@@ -315,11 +338,18 @@ class _CudaPrefix:
         return type(self.contract) is JointCudaPrefixContract
 
     @property
+    def token(self):
+        return type(self.contract) is TokenCudaPrefixContract
+
+    @property
     def joint_implementation(self):
         from .joint_amp import implementation
         return implementation(self.contract.schema)
 
     def relation_work(self, program, rules):
+        if self.token:
+            from .token_cuda_prefix import relation_work
+            return relation_work(program, self.contract)
         if self.joint:
             return self.joint_implementation.relation_work(program)
         if self.indexed:
@@ -328,6 +358,8 @@ class _CudaPrefix:
         return relation_work(program, rules)
 
     def forward_work(self, program, rules):
+        if self.token:
+            return self.relation_work(program, rules)
         if self.joint:
             return self.joint_implementation.forward_work(program, self.contract.partitions, self.contract.phase_output_cells)
         if self.indexed:
@@ -341,18 +373,27 @@ class _CudaPrefix:
         return forward_work(program, rules)
 
     def state_cursor(self, raw):
-        return raw.cursor if self.indexed else raw[4]
+        return raw.cursor if self.indexed or self.token else raw[4]
 
     def state_unit(self, raw):
-        return raw.unit_count if self.indexed else raw[3]
+        return raw.unit_count if self.indexed or self.token else raw[3]
 
     def theta_binding(self, raw):
+        if self.token:
+            return raw.origin.embedding, raw.origin.core, raw.origin.output
         return raw.theta if self.indexed else raw[0]
 
     def queue_work(self, program, rules):
-        return self.relation_work(program, rules) if self.indexed else 128*(1+sum(s.delay for s in rules.states))
+        return self.relation_work(program, rules) if self.indexed or self.token else 128*(1+sum(s.delay for s in rules.states))
 
     def check_queue(self, rules, raw, *, bit_limit):
+        if self.token:
+            from .token_cuda_state import StateWords
+            from .token_execution import closed
+            closed(raw, StateWords)
+            if rules.states or raw.origin.definition.sources.vocabulary != rules.sources.vocabulary:
+                raise ContractError('token CUDA lost its complete indexed source and empty recurrent interface')
+            return
         if self.indexed:
             from .indexed_amp import IndexedAmpState
             if type(raw) is not (self.joint_implementation.JointAmpState if self.joint else IndexedAmpState) or rules.states:
@@ -363,6 +404,8 @@ class _CudaPrefix:
         return check_queue(rules, raw[1], bit_limit=bit_limit)
 
     def stored_probability(self, raw, target, *, bit_limit):
+        if self.token:
+            raise ContractError('token CUDA persistence probability decoding is not registered')
         if self.joint:
             stored_probability = self.joint_implementation.stored_probability
         elif self.indexed:
@@ -372,12 +415,15 @@ class _CudaPrefix:
         return stored_probability(raw, target, bit_limit=bit_limit)
 
     def raw_state(self, value):
-        return value.raw() if self.indexed else gpu.raw_state(value)
+        return value.raw() if self.indexed or self.token else gpu.raw_state(value)
 
     def state_tensors(self, value):
-        return value.tensors() if self.indexed else (('theta', value.theta), ('gradient', value.gradient_sum), *value.delayed)
+        return value.tensors() if self.indexed or self.token else (('theta', value.theta), ('gradient', value.gradient_sum), *value.delayed)
 
     def check_state(self, reference, raw, *, bit_limit):
+        if self.token:
+            from .token_cuda_prefix import check_state
+            return check_state(reference, raw, self.contract)
         tolerance = Float64Contract(self.contract.state_atol, self.contract.probability_atol)
         if self.joint:
             return self.joint_implementation.check_state(reference, raw, tolerance, bit_limit=bit_limit)
@@ -415,6 +461,15 @@ class _CudaPrefix:
                 ordinary_cursor, origin, observation_id, sources, reference_prediction, target,
                 normalizer_cap, activation_cap, source_domain=None, readout_buffer=None, order_search=None,
                 histogram_workspace=None, likelihood_workspace=None, joint_workspace=None):
+        if self.token:
+            if any(x is not None for x in (order_search, histogram_workspace, likelihood_workspace, joint_workspace)):
+                raise ContractError('token CUDA cannot borrow a foreign constructor workspace')
+            from .token_cuda_prefix import execute
+            return execute(self, object_id, kind, program, candidate, reference, rules=rules, spec=spec,
+                bit_limit=bit_limit, ordinary_cursor=ordinary_cursor, origin=origin,
+                observation_id=observation_id, sources=sources, reference_prediction=reference_prediction,
+                target=target, normalizer_cap=normalizer_cap, activation_cap=activation_cap,
+                source_domain=source_domain, readout_buffer=readout_buffer)
         if self.joint:
             if order_search is not None or histogram_workspace is not None or likelihood_workspace is not None:
                 raise ContractError('joint CUDA requires only its registered fixed integer workspace')

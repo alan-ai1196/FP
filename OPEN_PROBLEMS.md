@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [token AMP owner integration](experiments/next_token/OWNED_TOKEN_AMP.md)
+is implemented and CPU controlled. Execute its new preregistered actual
+Runtime audit, including changed-cache/source and post-target quota refusals
+plus the full-context partial unit. Then address measured long-run retained
+storage and the still-unregistered token persistence/install paths on the way
+to ordinary language learning and strong baselines. Do not reopen the closed
+array component or static relation branches.
+
 The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 now passes independent CPU controls and the actual full 512-event RTX 3090
 audit, including unchanged one-allocation history. Both jobs are terminal;

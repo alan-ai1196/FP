@@ -1,5 +1,15 @@
 # FP Handoff
 
+**Token AMP now has a Runtime phase integration awaiting its actual-owner
+audit.** The [owned phase invariant and fixed preregistration](experiments/next_token/OWNED_TOKEN_AMP.md)
+bind fresh Gamma, source/target/phase identities, complete immutable carry
+state and the native-coordinate/all-label recipe relations to the existing
+owner. CPU controls pass 1,632 transitions and 166,704 exact words. The new
+audit includes ordinary/profile trajectories, real cache/source/quota attacks
+and eight full-vocabulary/context512 training events. It does not release
+token search/persistence/install or a language score. Run only this registered
+owner audit; the earlier component jobs below remain terminal.
+
 **The token event/carry executor passes its actual RTX 3090 arena audit.**
 The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 at 2e815c6 match all 76,935,527 output words of the full 512-event trace and

@@ -51,7 +51,7 @@ from .persistence_bounds import paired_mass_ratio_bound, mass_box_work
 from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
-from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, CudaRunManifest,
+from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, TokenCudaPrefixContract, CudaRunManifest,
     CudaPrefixSnapshot, _CudaPrefix, widened_state)
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
@@ -412,10 +412,10 @@ class ReferenceCompilerRuntime:
             raise ContractError('registered construction contract required')
         self._contract = contract
         self._cuda = None
-        if type(contract.semantics.sources) is TokenAtomFamily and cuda is not None:
-            raise ContractError('indexed token-source CUDA translation is not registered')
+        if type(contract.semantics.sources) is TokenAtomFamily and cuda is not None and type(cuda) is not TokenCudaPrefixContract:
+            raise ContractError('indexed token-source CUDA requires its complete token phase registration')
         if cuda is not None:
-            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract) or online is None:
+            if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, TokenCudaPrefixContract) or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
             cuda.__post_init__()
             if cuda.likelihood_encoding is not None:
@@ -434,6 +434,9 @@ class ReferenceCompilerRuntime:
         indexed = type(contract.initializer_pattern) is IndexedInitializer
         joint = type(contract.initializer_pattern) is JointInitializer
         token = type(contract.initializer_pattern) is TokenInitializer
+        if cuda is not None and (token != (type(cuda) is TokenCudaPrefixContract)
+                or token and (cuda.initializer != contract.initializer_pattern or policy is not None)):
+            raise ContractError('token CUDA requires the identical fresh Gamma and its registered event/profile scope')
         if (indexed or joint or token) and online is None:
             raise ContractError('indexed realization requires its registered reference learner')
         if cuda is not None and joint != (type(cuda) is JointCudaPrefixContract):
@@ -1006,7 +1009,8 @@ class ReferenceCompilerRuntime:
                 record, error = self._cuda.execute(label, kind, program, candidate, reference,
                     rules=self._contract.semantics, spec=self._online.learner,
                     bit_limit=self._contract.reference_integer_bits, ordinary_cursor=self._cursor,
-                    origin=origin, observation_id=observation_id, sources=sources,
+                    origin=origin, observation_id=observation_id,
+                    sources=(source_mapping(sources) if self._cuda.token and type(sources) is TokenContext else sources),
                     reference_prediction=reference_prediction, target=target,
                     normalizer_cap=self._contract.normalizer_cap, activation_cap=self._contract.activation_cap,
                     source_domain=self._contract.source_domain, readout_buffer=self._buffers[readout_id],
@@ -1514,7 +1518,9 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 observed = self._reference_observe(program, local, spec, prediction, observation.target,
                                          bit_limit=self._contract.reference_integer_bits, sources=observation.sources)
                 floating_successor = self._float64_execute('observe', program, candidate, observed, local_float64,
-                    origin='profile', observation_id=observation.observation_id, floating_prediction=float64_prediction, target=observation.target)
+                    origin='profile', observation_id=observation.observation_id, floating_prediction=float64_prediction,
+                    sources=observation.sources if self._cuda is not None and self._cuda.token else None,
+                    target=observation.target)
                 event = replace(event, after_observe=observed)
                 self._profile_events[-1] = event
                 update(local=observed)
@@ -1825,7 +1831,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 observed = self._reference_observe(program, state.learner, spec, prediction, target,
                                          bit_limit=self._contract.reference_integer_bits, sources=record.sources)
                 floating_successor = self._float64_execute('observe', program, candidate, observed, state.float64,
-                    observation_id=record.observation_id, floating_prediction=float64_predictions.get(candidate), target=target)
+                    observation_id=record.observation_id, floating_prediction=float64_predictions.get(candidate),
+                    sources=record.sources if self._cuda is not None and self._cuda.token else None, target=target)
                 trace = EventTrace(record.observation_id, candidate, state.program_id, state.learner, prediction, observed, None)
                 self._event_traces.append(trace)
                 prefix = f'{candidate}:event:{cursor}'

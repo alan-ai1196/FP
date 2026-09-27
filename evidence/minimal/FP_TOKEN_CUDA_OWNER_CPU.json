@@ -1,0 +1,22 @@
+{
+  "status": "PASS_CPU_TOKEN_OWNER_TRANSITIONS",
+  "counts": {
+    "histories": 144,
+    "events": 576,
+    "commits": 336,
+    "profiles": 0,
+    "checked_phases": 1632,
+    "arrays": 188958
+  },
+  "maximum_state_error_upper": "3/32",
+  "exact_primitive_words": 166704,
+  "exact_half_words": 15936,
+  "maximum_phase_cells": {
+    "initialize": 101,
+    "predict": 323,
+    "observe": 716,
+    "commit": 316
+  },
+  "independently_compared_paid_label_words": 2304,
+  "scope": "CPU transition/predicate control; no actual device, Runtime CUDA execution or issued bridge"
+}

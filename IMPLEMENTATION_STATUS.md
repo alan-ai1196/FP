@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [token AMP phase integration](experiments/next_token/OWNED_TOKEN_AMP.md)
+now uses the existing Runtime CUDA owner, independently derived Gamma,
+complete immutable cache records, checked new array graphs and the complete
+native-coordinate/readout predicates. CPU controls pass 576 observations,
+336 commits and 1,632 phases. Actual-owner device jobs are preregistered;
+they have not yet established execution. Token search/persistence/install,
+long-run retained-storage affordability and language quality remain open.
+
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer
 commits using admitted fresh CUDA extents, with no passive-Torch fallback.

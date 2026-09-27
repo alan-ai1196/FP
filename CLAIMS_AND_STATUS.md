@@ -1,5 +1,12 @@
 # FP Claims and Status
 
+The [owned token AMP implementation](experiments/next_token/OWNED_TOKEN_AMP.md)
+has CPU numerical controls for 1,632 phases and 166,704 exact words. Actual
+Runtime CUDA ownership is awaiting its fixed device audit. The proposed
+checked class is one complete owned phase under its declared bounds, with
+all future-used carry caches retained; it is not an architecture-class,
+statistical persistence or installation certificate. No release expands yet.
+
 The [token arena array lowering](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 is **NUMERICALLY VERIFIED** on CPU for 144 histories and 165,444 exact words,
 and **EMPIRICALLY VERIFIED** on the RTX 3090 at 2e815c6 for the two registered

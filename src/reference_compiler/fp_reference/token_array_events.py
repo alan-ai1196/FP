@@ -36,6 +36,7 @@ class Forecast:
 
 class Kernel:
     schedule_id = 'token-half-single-one-event-explicit-arena-arrays-v1'
+    readout_id = 'token-positive-balanced-binary32-mass-and-division-label-recipe-v1'
 
     def __init__(self, definition, *, element_cap):
         definition_check(definition)
@@ -127,10 +128,7 @@ class Kernel:
             raise ContractError('token forecast lost its scalar single normalizer')
         stored = a.cast(prediction.values, 'float32')
         features = a.take(stored, d.features)
-        selected = a.reshape(a.scaled_master(a.take(prepared.origin.W, (target,)), d.output.grid_bits), (d.output.features,))
-        mass = a.add(a.reshape(a.take(prepared.base, (target,)), ()), a.reduce(a.mul(selected, features)))
-        if not np.isfinite(a.raw(mass)).all() or a.raw(mass) <= 0:
-            raise ArithmeticUnresolved('token target mass lost positivity')
+        selected, mass = self._label_mass(prepared, features, target, a)
         z = prediction.normalizer
         common, correction = a.div(features, z), a.div(features, mass)
         seeds = a.sub(a.div(prepared.totals, z), a.div(selected, mass))
@@ -157,6 +155,37 @@ class Kernel:
                            a.reshape(z, (1,)), a.reshape(mass, (1,)), np.asarray(embedding_ids, dtype=np.int64),
                            embedding, gradient, common, np.asarray((target,), dtype=np.int64),
                            a.reshape(correction, (1, d.output.features)))
+
+    def _label_mass(self, prepared, features, label, a):
+        # This is the single registered readout recipe used by BOTH the actual
+        # observed-target path and any separately paid physical label decode.
+        d = self.definition
+        selected = a.reshape(a.scaled_master(a.take(prepared.origin.W, (label,)), d.output.grid_bits), (d.output.features,))
+        mass = a.add(a.reshape(a.take(prepared.base, (label,)), ()), a.reduce(a.mul(selected, features)))
+        if not np.isfinite(a.raw(mass)).all() or a.raw(mass) <= 0:
+            raise ArithmeticUnresolved('token physical label mass lost positivity')
+        return selected, mass
+
+    def readout_label(self, prepared, prediction, label, a):
+        """Paid actual mass/division words; no Runtime/query/bridge authority.
+
+        The complete prediction's positive-mass decoder normalizes all masses
+        mathematically. This returns the separately distinguished rounded
+        division by the stored normalizer; it is not claimed to sum to one.
+        """
+        self._prepared(prepared, a)
+        if (type(prediction) is not Forecast or prediction.prepared is not prepared
+                or type(label) is not int or not 0 <= label < self.definition.output.labels):
+            raise ContractError('registered forecast and complete label coordinate required')
+        a._input(prediction.values)
+        a._input(prediction.normalizer)
+        if (tuple(prediction.values.shape) != (self.definition.input_nodes+len(self.definition.nodes),)
+                or a.dtype(prediction.values) != 'float16' or tuple(prediction.normalizer.shape) != ()
+                or a.dtype(prediction.normalizer) != 'float32'):
+            raise ContractError('complete typed physical readout operands required')
+        features = a.take(a.cast(prediction.values, 'float32'), self.definition.features)
+        _, mass = self._label_mass(prepared, features, label, a)
+        return mass, a.div(mass, prediction.normalizer)
 
     def append(self, previous, leaf, a):
         """Extend all complete carry caches using fresh owned additions."""

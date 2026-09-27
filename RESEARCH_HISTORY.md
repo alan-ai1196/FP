@@ -9766,3 +9766,45 @@ remain the boundary. Bind those in the existing owner; do not widen a static
 fixture catalog. The large launch/metadata/append-only costs also remain
 real implementation constraints. Continue ordinary next-token research and
 fresh strong language baselines, with Foundation/ERC unchanged.
+
+
+## 286. Bind complete token AMP phases to the existing Runtime owner (2026-09-27)
+
+The explicit token array executor now has a private Runtime integration.
+TokenCudaPrefixContract requires the same immutable Gamma as native
+construction. Initialization derives it independently; no trained reference
+endpoint supplies physical masters. Ordinary/profile observation receives
+the original owned source record, with the source decode after the phase
+work charge. Existing target retention, phase frames and atomic publication
+remain in charge. No semantic architecture action or Foundation/ERC change.
+
+Complete immutable phase data retains one shared master origin, prepared
+operands, every event leaf/source/target, all carry blocks and current basis.
+A new phase first rereads every actual predecessor coordinate and compares
+it to the accepted frame. A guarded CPU interpreter checks only the new
+operation graph from those accepted words, then every actual device output
+and resulting complete cache state. Old physical states and forecasts are
+reread afterward. This is the inductive cache invariant, not root closeness.
+
+The native complete-coordinate predicate and positive all-label envelope
+now live in the canonical package. Target observation and separately paid
+label decoding share the actual arena mass routine. Unqueried label division
+words are covered conditionally by the registered recipe theorem, not claimed
+executed. Proper normalization remains distinct from rounded stored-Z division.
+No token persistence/installation or automatic-policy authority is released.
+
+CPU controls pass144 histories/1632 phases/576 observations/336 commits and
+166704 exact floating words,15936 half. Complete state round-trips preserve
+all forests.2304 paid label words match the prior independent recipe. Maximum
+state error3/32 includes unit1 histories under the fixed1/4 tolerance. The
+existing ordinary event/profile and readout predicate regressions pass.
+
+Proof/scope and fixed device preregistration:
+experiments/next_token/OWNED_TOKEN_AMP.md. New owner audit and minimal CPU
+evidence: scripts/audit_token_cuda_owner.py and
+ evidence/minimal/FP_TOKEN_CUDA_OWNER_CPU.json. The fresh suite will use the
+actual Runtime for ordinary/profiles, current-gradient-preserving cache
+forgery, source forgery, post-target quota refusal, then eight events of the
+full-V/context512 unit. Limits/tolerances are fixed before outcomes. Older
+component jobs remain terminal. Actual-owner execution is not yet established;
+continue this audit and the ordinary next-token integration, not static cases.
