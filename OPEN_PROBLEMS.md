@@ -1,5 +1,12 @@
 # FP Open Problems
 
+A [completed first-event CPU profile](experiments/next_token/CPU_PHASE_COST.md)
+now identifies repeated canonical retention as a major measured cost. Any
+compositional alternative must bind complete actual records to independently
+decoded, owned evidence. This is a concrete text-training obstacle; it does
+not justify reopening relation cases or weakening fresh physical checks.
+Assess it together with A2's outcome before another full-V registration.
+
 The [fixed bounded reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
 is ready after A2 terminates and the isolated commits are integrated. It
 tests this new physical lowering and the snapshot correction, not a new

@@ -1,0 +1,498 @@
+{
+  "implementation_source": "59fea46d26b11fd0079c90e4267b83d40667ff44",
+  "job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 8589934592,
+    "peak_process_commit": 374030336,
+    "peak_job_commit": 375259136,
+    "user_100ns": 447656250,
+    "kernel_100ns": 3281250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 24788,
+    "process_creation_100ns": 134349846243131706
+  },
+  "result": {
+    "status": "COMPLETE_CPU_COST_DIAGNOSTIC",
+    "scope": "Stage-separated CPU cost diagnostic for one existing full-V token event.\n\nRuns the complete Runtime/phase/retention logic with the device, arena and\narray substitutions from the snapshot CPU control. This is not a physical\nCUDA certificate, a full-unit run or a model-quality experiment.",
+    "before": {
+      "process_id": 24788,
+      "creation_100ns": 134349846243131706,
+      "process_commit": 36286464,
+      "lifetime_process_commit_peak": 37216256,
+      "job_commit_peak": 38445056,
+      "process_user_100ns": 4375000,
+      "process_kernel_100ns": 1718750,
+      "job_user_100ns": 4375000,
+      "job_kernel_100ns": 1875000,
+      "total_job_processes": 2
+    },
+    "stages": {
+      "predict": {
+        "wall_seconds": 15.879033499993966,
+        "calls": 65108150,
+        "primitive_calls": 62622557,
+        "cumulative_top": [
+          {
+            "function": "scripts/probe_token_phase_cost.py:67:<lambda>",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 5.500000000000001e-06,
+            "cumulative_seconds": 15.878982100000002
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/host_failure.py:22:guarded",
+            "calls": 4,
+            "primitive_calls": 1,
+            "self_seconds": 2.29e-05,
+            "cumulative_seconds": 15.878973
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:1773:predict_next",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 9.100000000000001e-06,
+            "cumulative_seconds": 15.878963500000001
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:1745:finish_context",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 1.67e-05,
+            "cumulative_seconds": 15.8770465
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:1786:_predict_received",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 7.400000000000001e-05,
+            "cumulative_seconds": 15.8770097
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:898:_float64_execute",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 1.76e-05,
+            "cumulative_seconds": 9.7498085
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:913:_cuda_execute",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 0.0065482000000000005,
+            "cumulative_seconds": 9.7497898
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:833:_allocate",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 6.3e-05,
+            "cumulative_seconds": 4.9704516000000005
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:188:allocate",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 0.0141466,
+            "cumulative_seconds": 4.9701547
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:224:seal_cuda_frame",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 0.0207337,
+            "cumulative_seconds": 4.7385449
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:64:bounded_packed_size",
+            "calls": 4,
+            "primitive_calls": 4,
+            "self_seconds": 2.3400000000000003e-05,
+            "cumulative_seconds": 4.2121024
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:41:packed_size",
+            "calls": 639126,
+            "primitive_calls": 8,
+            "self_seconds": 0.5866144000000001,
+            "cumulative_seconds": 3.7016031000000003
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:33:_array_size",
+            "calls": 709337,
+            "primitive_calls": 14,
+            "self_seconds": 0.3024326,
+            "cumulative_seconds": 3.7014859
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:58:<genexpr>",
+            "calls": 69502,
+            "primitive_calls": 73,
+            "self_seconds": 0.0343945,
+            "cumulative_seconds": 3.7013655
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:53:<genexpr>",
+            "calls": 593155,
+            "primitive_calls": 414343,
+            "self_seconds": 0.1299441,
+            "cumulative_seconds": 3.6365977000000003
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:60:_packed_parts",
+            "calls": 91037,
+            "primitive_calls": 91037,
+            "self_seconds": 1.0971598,
+            "cumulative_seconds": 2.9426854000000002
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:983:write",
+            "calls": 2,
+            "primitive_calls": 2,
+            "self_seconds": 0.4294219,
+            "cumulative_seconds": 2.6699904
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:163:fragments",
+            "calls": 2475274,
+            "primitive_calls": 2474974,
+            "self_seconds": 1.2940245000000001,
+            "cumulative_seconds": 2.6429627
+          }
+        ],
+        "self_top": [
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:163:fragments",
+            "calls": 2475274,
+            "primitive_calls": 2474974,
+            "self_seconds": 1.2940245000000001,
+            "cumulative_seconds": 2.6429627
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:20:_string_size",
+            "calls": 732310,
+            "primitive_calls": 732310,
+            "self_seconds": 1.2093028000000001,
+            "cumulative_seconds": 1.7168965
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:60:_packed_parts",
+            "calls": 91037,
+            "primitive_calls": 91037,
+            "self_seconds": 1.0971598,
+            "cumulative_seconds": 2.9426854000000002
+          },
+          {
+            "function": "~:0:<built-in method builtins.len>",
+            "calls": 10332650,
+            "primitive_calls": 10332650,
+            "self_seconds": 0.7927214,
+            "cumulative_seconds": 0.7927214
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:79:walk",
+            "calls": 465263,
+            "primitive_calls": 4,
+            "self_seconds": 0.755954,
+            "cumulative_seconds": 1.8668715
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:84:_compare_stream",
+            "calls": 4,
+            "primitive_calls": 4,
+            "self_seconds": 0.6942766,
+            "cumulative_seconds": 1.912298
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:41:packed_size",
+            "calls": 639126,
+            "primitive_calls": 8,
+            "self_seconds": 0.5866144000000001,
+            "cumulative_seconds": 3.7016031000000003
+          },
+          {
+            "function": "~:0:<built-in method builtins.ord>",
+            "calls": 8329492,
+            "primitive_calls": 8329492,
+            "self_seconds": 0.5075937,
+            "cumulative_seconds": 0.5075937
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:29:_hex_size",
+            "calls": 1173530,
+            "primitive_calls": 1173530,
+            "self_seconds": 0.43918870000000004,
+            "cumulative_seconds": 0.7003011
+          },
+          {
+            "function": "~:0:<built-in method builtins.next>",
+            "calls": 2621064,
+            "primitive_calls": 2198084,
+            "self_seconds": 0.42983960000000004,
+            "cumulative_seconds": 1.466396
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:983:write",
+            "calls": 2,
+            "primitive_calls": 2,
+            "self_seconds": 0.4294219,
+            "cumulative_seconds": 2.6699904
+          },
+          {
+            "function": "~:0:<built-in method builtins.max>",
+            "calls": 2848176,
+            "primitive_calls": 2848176,
+            "self_seconds": 0.36885830000000003,
+            "cumulative_seconds": 0.36940150000000005
+          }
+        ]
+      },
+      "observe": {
+        "wall_seconds": 15.707619299995713,
+        "calls": 63704483,
+        "primitive_calls": 61344098,
+        "cumulative_top": [
+          {
+            "function": "scripts/probe_token_phase_cost.py:71:<lambda>",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 2.8000000000000003e-06,
+            "cumulative_seconds": 15.7075835
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/host_failure.py:22:guarded",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 1.7800000000000002e-05,
+            "cumulative_seconds": 15.707580700000001
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:1868:observe",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 9.89e-05,
+            "cumulative_seconds": 15.7075609
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:833:_allocate",
+            "calls": 2,
+            "primitive_calls": 2,
+            "self_seconds": 0.0001033,
+            "cumulative_seconds": 8.1880071
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:188:allocate",
+            "calls": 2,
+            "primitive_calls": 2,
+            "self_seconds": 0.0227876,
+            "cumulative_seconds": 8.1879038
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:898:_float64_execute",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 4.5e-06,
+            "cumulative_seconds": 6.3497092
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/runtime.py:913:_cuda_execute",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 0.008914700000000001,
+            "cumulative_seconds": 6.3497037
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:64:bounded_packed_size",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 2.02e-05,
+            "cumulative_seconds": 4.288634500000001
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:41:packed_size",
+            "calls": 523578,
+            "primitive_calls": 6,
+            "self_seconds": 0.4920821,
+            "cumulative_seconds": 3.0997456000000003
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:33:_array_size",
+            "calls": 583026,
+            "primitive_calls": 11,
+            "self_seconds": 0.2556239,
+            "cumulative_seconds": 3.0996272
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:58:<genexpr>",
+            "calls": 58220,
+            "primitive_calls": 56,
+            "self_seconds": 0.029891200000000003,
+            "cumulative_seconds": 3.0995792
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:53:<genexpr>",
+            "calls": 485605,
+            "primitive_calls": 461281,
+            "self_seconds": 0.1102168,
+            "cumulative_seconds": 3.0258088
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:60:_packed_parts",
+            "calls": 91845,
+            "primitive_calls": 91845,
+            "self_seconds": 1.1128006000000001,
+            "cumulative_seconds": 2.9849415
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:174:_read",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 2.7600000000000003e-05,
+            "cumulative_seconds": 2.8986058000000003
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:84:_compare_stream",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 0.9902567000000001,
+            "cumulative_seconds": 2.8976631000000004
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:163:fragments",
+            "calls": 2483878,
+            "primitive_calls": 2483650,
+            "self_seconds": 1.31014,
+            "cumulative_seconds": 2.6818621
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:224:seal_cuda_frame",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 0.0133743,
+            "cumulative_seconds": 2.6719487
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/cuda_prefix.py:475:execute",
+            "calls": 1,
+            "primitive_calls": 1,
+            "self_seconds": 0.0005015,
+            "cumulative_seconds": 2.2954771000000003
+          }
+        ],
+        "self_top": [
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:163:fragments",
+            "calls": 2483878,
+            "primitive_calls": 2483650,
+            "self_seconds": 1.31014,
+            "cumulative_seconds": 2.6818621
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:60:_packed_parts",
+            "calls": 91845,
+            "primitive_calls": 91845,
+            "self_seconds": 1.1128006000000001,
+            "cumulative_seconds": 2.9849415
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:20:_string_size",
+            "calls": 602139,
+            "primitive_calls": 602139,
+            "self_seconds": 1.0098147,
+            "cumulative_seconds": 1.4332029000000002
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/shared_reference.py:84:_compare_stream",
+            "calls": 3,
+            "primitive_calls": 3,
+            "self_seconds": 0.9902567000000001,
+            "cumulative_seconds": 2.8976631000000004
+          },
+          {
+            "function": "~:0:<built-in method builtins.len>",
+            "calls": 10946542,
+            "primitive_calls": 10946542,
+            "self_seconds": 0.8449971000000001,
+            "cumulative_seconds": 0.8449971000000001
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:79:walk",
+            "calls": 465426,
+            "primitive_calls": 3,
+            "self_seconds": 0.7581931000000001,
+            "cumulative_seconds": 1.8756956
+          },
+          {
+            "function": "~:0:<built-in method builtins.next>",
+            "calls": 2950517,
+            "primitive_calls": 2248957,
+            "self_seconds": 0.49350390000000005,
+            "cumulative_seconds": 1.9208325000000002
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:41:packed_size",
+            "calls": 523578,
+            "primitive_calls": 6,
+            "self_seconds": 0.4920821,
+            "cumulative_seconds": 3.0997456000000003
+          },
+          {
+            "function": "~:0:<built-in method builtins.ord>",
+            "calls": 6830976,
+            "primitive_calls": 6830976,
+            "self_seconds": 0.42338820000000005,
+            "cumulative_seconds": 0.42338820000000005
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/encoding.py:29:_hex_size",
+            "calls": 955858,
+            "primitive_calls": 955858,
+            "self_seconds": 0.3661807,
+            "cumulative_seconds": 0.5838755
+          },
+          {
+            "function": "~:0:<method 'encode' of 'str' objects>",
+            "calls": 2483641,
+            "primitive_calls": 2483641,
+            "self_seconds": 0.3413684,
+            "cumulative_seconds": 0.3413684
+          },
+          {
+            "function": "src/reference_compiler/fp_reference/token_readout.py:112:exact",
+            "calls": 904644,
+            "primitive_calls": 904644,
+            "self_seconds": 0.3327658,
+            "cumulative_seconds": 1.3437446000000002
+          }
+        ]
+      }
+    },
+    "corpus": {
+      "role": "historical-training",
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 1024,
+      "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+      "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+      "validation_or_test_read": false
+    },
+    "initialization_unprofiled_seconds": 12.39913610000076,
+    "retained_phases": 3,
+    "cursor": 1,
+    "after": {
+      "process_id": 24788,
+      "creation_100ns": 134349846243131706,
+      "process_commit": 256348160,
+      "lifetime_process_commit_peak": 374030336,
+      "job_commit_peak": 375259136,
+      "process_user_100ns": 447500000,
+      "process_kernel_100ns": 2968750,
+      "job_user_100ns": 447500000,
+      "job_kernel_100ns": 3125000,
+      "total_job_processes": 2
+    }
+  }
+}

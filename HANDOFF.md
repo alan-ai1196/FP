@@ -1,5 +1,13 @@
 # FP Handoff
 
+**The first ordinary event has a measured retention cost.** The completed
+[CPU phase diagnostic](experiments/next_token/CPU_PHASE_COST.md) attributes
+65.12% of its separately profiled prediction/observation time to disjoint
+retention calls. This is CPU substitution with instrumentation, not CUDA
+throughput or later-unit cost. It supports investigating repeated canonical
+traversal while preserving complete evidence; storage reuse alone does not
+remove it. A2 remains untouched, and no extra full-V run is registered.
+
 **The next bounded device qualification is fixed, but not launched.**
 [Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md) registers
 two fresh jobs:16 training events/eight units plus frozen reports, and an

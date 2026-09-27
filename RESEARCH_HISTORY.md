@@ -10365,3 +10365,23 @@ The new launcher refuses a running/nonterminal A2, a dirty/noncanonical tree
 or an existing reuse journal. All old jobs stay terminal. This registration
 does not select another full-vocabulary experiment or a language-study budget;
 that decision follows A2's actual evidence and the affordable-learning goal.
+
+
+## 303. Measure the retention cost of an ordinary token event (2026-09-27)
+
+A stage-separated CPU diagnostic uses the existing full-V registration and
+only its previously registered first1,024 training bytes at implementation
+59fea46. It imports no Torch and completes three retained phases at cursor1.
+Initialization takes12.3991 unprofiled seconds; instrumented prediction and
+observation take15.8790/15.7076 seconds and65.1/63.7 million recorded calls.
+The disjoint shared allocation/sealing calls consume65.12% of that combined
+profiled time. Canonical sizing, emission and comparison are leading costs;
+the hypothesis that program hashing dominates is not supported by this trace.
+
+The original bounded CPU job exits successfully with375,259,136 bytes peak
+commitment. Evidence is FP_TOKEN_PHASE_COST_CPU.json and the scope is
+experiments/next_token/CPU_PHASE_COST.md. Instrumentation and device
+substitution prevent a GPU latency, speedup, later-prefix or whole-training
+claim. No new optimization or full-V run is supplied. A2's process/source stay
+unchanged; preserve its result, qualify the prepared reuse lowering, then
+follow the measured ordinary-text constraint with complete evidence intact.

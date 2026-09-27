@@ -1,5 +1,11 @@
 # FP Implementation Status
 
+The completed [first-event CPU cost diagnostic](experiments/next_token/CPU_PHASE_COST.md)
+uses implementation59fea46 and the existing full-V registration. Prediction
+and observation make65.1/63.7 million profiled calls; disjoint retention calls
+account for65.12% of their combined instrumented time. This is no CUDA timing
+or full-unit result. No further serialization optimization is implemented.
+
 The [first actual reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
 is preregistered in `scripts/run_token_reuse_cuda_a1.py`, gated on canonical
 integration and the original A2's actual termination. Its two worker branches

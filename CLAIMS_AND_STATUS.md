@@ -1,5 +1,11 @@
 # FP Claims and Status
 
+The [first ordinary event's retention cost](experiments/next_token/CPU_PHASE_COST.md)
+is **MEASURED IN A CPU-SUBSTITUTED PROFILE**: disjoint allocation/sealing calls
+consume20.5686 of31.5867 instrumented seconds. This establishes a cost in that
+finite diagnostic, not a GPU throughput estimate, whole-unit decomposition,
+universal lower bound or evidence that fresh physical reads may be omitted.
+
 The [sealed token reuse rule](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
 is **PROVED CONDITIONALLY; IMPLEMENTED; CPU RUNTIME CONTROL PASS** for the
 closed token interface. Roots plus unsealed attempts plus current outputs
