@@ -1,5 +1,24 @@
 # FP Open Problems
 
+**Current frontier: make ordinary-token learning affordable.** The original
+shared-retention A2 now passes one complete512-event unit at307251e, including
+its native/AMP commit, in10,603.35036 seconds under all original caps. Both
+A1/A2 and the original reporting jobs are terminal. Their milestone is closed;
+do not repeat it or reopen rational/relation/capacity variants.
+
+The prepared snapshot repair and owned storage reuse are integrated. First
+finish the [already registered finite reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md),
+using its journal to avoid duplicate execution. Its purpose is the new
+physical lowering and corrected value boundary, not language quality. After
+that, repeated complete retention, native-prefix work, fresh reads and host
+history must be addressed together toward an affordable text comparison.
+The first-event CPU profile does not identify the whole GPU cost. Another
+long full-V registration or a model budget needs evidence of meaningful
+progress on this constraint. Strong real-text baselines remain mandatory.
+
+The earlier frontier notes below preserve their chronology. The current
+state above supersedes their pending full-unit/integration instructions.
+
 A [completed first-event CPU profile](experiments/next_token/CPU_PHASE_COST.md)
 now identifies repeated canonical retention as a major measured cost. Any
 compositional alternative must bind complete actual records to independently

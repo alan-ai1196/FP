@@ -473,3 +473,51 @@ This closes the host-image sharing change. It must be integrated only after
 A2 terminates. Do not use it to reinterpret that run, skip fresh readback,
 retire arrays or open another storage-control catalog. The next decision
 continues to depend on actual full-unit feasibility and useful text training.
+
+## 12. Terminal A2: the first complete owned full-vocabulary unit
+
+The single original A2 execution at307251e is **PASS**. The worker and
+launcher exit0, with no timeout or limit-terminated process. The original
+worker identity is PID2616, creation100ns134349761531643860; it was attached
+to its Windows job before resume. Its source, model, corpus prefix, numerical
+tolerances and resource limits stayed unchanged through termination.
+`evidence/minimal/FP_SHARED_CUDA_RETENTION_A2.json` is the terminal evidence;
+the preceding A1 timeout remains a distinct result and neither may be replayed.
+
+The actual owned execution completes512 ordinary observations,1,026 checked
+CUDA phases and80,552,126 checked device words. Native and AMP paths each
+commit one update unit, reach cursor512 and retain no pending records. Every
+original context/target of that unit survives in the retained native record
+and physical leaves. All complete frame and current-state checks pass.
+
+| Observed quantity | Original A2 result |
+|---|---:|
+| Launcher wall seconds | 10,603.35036 |
+| Peak whole-job host commitment | 12,512,567,296 bytes |
+| Peak owned reference payload | 584,438,971 bytes |
+| Retained archive pages / page bytes | 3,593 / 395,595,039 |
+| Complete phase-frame bytes decoded during retention | 68,853,694,464 |
+| Consumed append-only arena bytes | 423,332,336 |
+| Tensor arena / allocator reservation, actual and lifetime peak | 1,073,741,824 bytes each |
+
+The native and final allocation counters both remain(1,1073741824,1), with
+648,337 historical regions and1,026 phases. Thus the first full unit fits
+the original16-GiB host,1-GiB arena/reservation,2-GiB reference-payload and
+four-hour caps. The64.125-GiB decoded-frame total is a cumulative byte count,
+not simultaneous residency. State tolerance16 and probability/division1e-6
+are unchanged. The worker reads only the original1,024 training bytes and
+no validation/test data; it reports no language loss.
+
+This closes the finite full-unit execution question for the registered
+implementation. It proves neither that the time cost is unavoidable nor an
+isolated writer speedup: A1/A2 were not an isolated timing experiment. One
+unit in about2h57m does not establish affordable sustained training. The
+first-event CPU profile separately identifies retention cost but does not
+measure all later GPU/reference work. Future work must address that real
+constraint, not repeat this unit or widen static/relation catalogs.
+
+Only after the original processes terminated was this journal committed,
+followed by integration of the prepared host-image sharing, snapshot repair,
+owned reusable storage and CPU diagnostic. Those changes supply **no part of
+A2's outcome**. Their separately fixed actual reuse qualification follows;
+the source and result of that new execution remain distinct.

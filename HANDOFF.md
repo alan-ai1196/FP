@@ -1,5 +1,51 @@
 # FP Handoff
 
+## Current execution state (2026-09-27)
+
+**The first complete owned full-vocabulary token unit passes.** Shared-retention
+A2 at307251e exits successfully after10,603.35036 seconds under its unchanged
+four-hour,16-GiB host,1-GiB CUDA arena and2-GiB reference-payload limits. It
+retains512 observations,1,026 checked phases,80,552,126 checked device words,
+one native/AMP optimizer commit and every original unit record, with no
+pending records. Peak whole-job commitment is12,512,567,296 bytes. See the
+[terminal result and scope](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit).
+The original A1 timeout, A2 and reporting jobs are terminal: never replay them.
+
+The prepared continuation-storage, snapshot-correction and CPU-cost commits
+are now integrated in canonical main after preserving A2's journal. A2 used
+none of those changes. [Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md)
+is the next already fixed actual-device qualification: two finite workers,
+each8-KiB arena,2-MiB reservation,4-GiB host and180 seconds. Its journal is
+`FP_TOKEN_REUSE_CUDA_A1.json`; inspect its actual status before any launch.
+Its CPU controls pass; no actual-device reuse result is yet claimed here.
+
+**The research frontier is affordable ordinary next-token learning.** One
+unit in about2h57m establishes execution under that registration, not a useful
+training budget or a language-quality result. The
+[first-event CPU profile](experiments/next_token/CPU_PHASE_COST.md) separately
+identifies repeated retention work; its65.12% instrumented share is not a
+whole-GPU decomposition. Later reference-prefix computation, fresh physical
+reads and retained host history also remain. Do not register another long
+full-V trajectory merely to repeat this milestone. Close the fixed reuse
+qualification, then pursue a substantial cost reduction that preserves all
+claim-relevant state and the owned numerical bridge before choosing a text
+comparison budget. No additional retention optimization is implemented.
+
+Foundation/ERC remain frozen and the rational/relation branch is closed.
+The current K8/pooled-context resource fixture is not a selected useful
+language model. Transformer and modified Kneser–Ney adapters pass their CPU
+controls, but adequately trained real-text comparisons remain open. The
+[study boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
+permits a fixed native incumbent without an unused graph-installation gate;
+actual graph replacement still requires its own persistence/install path.
+
+## Earlier milestone notes
+
+The entries below retain their original evidence and chronology. Their
+time-sensitive next-step/status statements are superseded by the current
+execution state above; the research discipline and session protocol still
+apply. Full history and source identities remain in RESEARCH_HISTORY.md.
+
 **The first ordinary event has a measured retention cost.** The completed
 [CPU phase diagnostic](experiments/next_token/CPU_PHASE_COST.md) attributes
 65.12% of its separately profiled prediction/observation time to disjoint

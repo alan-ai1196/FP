@@ -1,5 +1,25 @@
 # FP Implementation Status
 
+## Current token execution boundary (2026-09-27)
+
+Shared-retention A2 at307251e **PASSES** the original full512-event unit:
+1,026 checked phases,80,552,126 device words, one native/AMP commit, zero
+pending records and unchanged lifetime allocation counters. Wall time is
+10,603.35036 seconds; peak whole-job commitment12,512,567,296 bytes is below
+16 GiB. Paid reference peak is584,438,971 bytes below2 GiB. The
+[complete result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit)
+is terminal and supplies no score or sustained-training feasibility claim.
+
+The prepared host-image sharing, public-snapshot repair, generation-bound
+owned reuse and CPU diagnostic are integrated after that result. They were
+not used by A2. The separately preregistered bounded reuse qualification is
+ready on main; inspect FP_TOKEN_REUSE_CUDA_A1.json before launching. No
+device reuse outcome is yet established. Affordable ordinary-text training
+is the priority; repeated full history/reference work remains substantial.
+
+The following milestone notes preserve their earlier scopes. Where their
+dated next-step/status wording conflicts, this current boundary supersedes it.
+
 The completed [first-event CPU cost diagnostic](experiments/next_token/CPU_PHASE_COST.md)
 uses implementation59fea46 and the existing full-V registration. Prediction
 and observation make65.1/63.7 million profiled calls; disjoint retention calls

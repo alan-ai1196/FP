@@ -1,5 +1,19 @@
 # FP Claims and Status
 
+**Current full-unit claim: PASS, finite actual-device execution.** At307251e,
+shared-retention A2 completes exactly one registered512-token unit over the
+full50,257-label alphabet, with1,026 checked phases,80,552,126 device words,
+independent native/AMP commit and complete original records. The original
+caps/tolerances hold;10,603.35036 seconds and12,512,567,296 peak host bytes
+are observed, not universal resource laws. See the
+[terminal scope](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit).
+This is no `CERTIFIED_COMPLETE`, isolated speedup, language score, physical
+reuse result or sustained-corpus feasibility theorem. A2's fixed source did
+not contain the subsequently integrated snapshot/reuse changes.
+
+The milestone notes below retain their stated evidence classes; this current
+result supersedes older assertions that no full owned token unit has run.
+
 The [first ordinary event's retention cost](experiments/next_token/CPU_PHASE_COST.md)
 is **MEASURED IN A CPU-SUBSTITUTED PROFILE**: disjoint allocation/sealing calls
 consume20.5686 of31.5867 instrumented seconds. This establishes a cost in that

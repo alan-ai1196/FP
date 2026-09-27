@@ -10385,3 +10385,29 @@ substitution prevent a GPU latency, speedup, later-prefix or whole-training
 claim. No new optimization or full-V run is supplied. A2's process/source stay
 unchanged; preserve its result, qualify the prepared reuse lowering, then
 follow the measured ordinary-text constraint with complete evidence intact.
+
+
+## 304. Complete the original full owned token unit and integrate its successor (2026-09-27)
+
+Shared-retention A2 at307251e exits successfully under every original cap.
+It completes512 ordinary observations,1,026 checked phases,80,552,126 actual
+device words and one native/AMP optimizer commit. Cursor512 has zero pending
+records; all original unit sources/targets remain. Launcher wall time is
+10,603.35036 seconds. Peak whole-job commitment12,512,567,296 bytes and paid
+reference peak584,438,971 bytes fit16 GiB and2 GiB respectively. One1-GiB
+arena retains unchanged actual/lifetime counters, consuming423,332,336 bytes.
+
+The original terminal journal was committed as1043dcc before any source
+change. Merge c949fbc then integrates the six prepared research commits,
+including the snapshot counterexample/repair and optional continuation-safe
+storage reuse. They were not part of A2's fixed execution. No worker was
+interrupted, restarted or replayed. Original A1 remains a separate timeout.
+
+The full-unit question is closed for this registered source. It is no language
+score, sustained-training feasibility result, isolated speedup or broader
+Compiler certificate. The research frontier is ordinary-text cost: about
+2h57m for one unit is not a selected useful training budget. Complete the
+already fixed small physical reuse qualification, then address repeated
+reference/history work toward an affordable comparison with strong baselines.
+Foundation/ERC and the rational/relation closure remain unchanged. Details
+and limitations are LOSSLESS_SHARED_REFERENCE_RETENTION.md section12.
