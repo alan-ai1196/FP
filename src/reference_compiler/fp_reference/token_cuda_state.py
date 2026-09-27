@@ -6,9 +6,11 @@ Prepared operands, all leaf words, all forest blocks and current basis stay.
 """
 from dataclasses import dataclass, replace
 import math
+from itertools import chain
 import numpy as np
 
 from .core import ContractError
+from .resources import ResourceExceeded
 from .token_execution import closed, definition_check
 from .token_causal import TokenWindow
 from . import token_amp as amp, token_batch as ref, token_streaming as stream
@@ -210,6 +212,13 @@ class Resident:
 
     def raw(self, arithmetic=None):
         a = self.arithmetic if arithmetic is None else arithmetic
+        if getattr(a, 'grouped_reads', False):
+            # There is no numeric write or Runtime callback within _raw. Every
+            # call obtains new physical images; no prior capture can supply one.
+            a = a.capture(tuple(value for _, value in self.tensors(limit=a.capture_view_cap)))
+        return self._raw(a)
+
+    def _raw(self, a):
         if type(self.state) not in (amp.State, stream.Pending) or self.prepared.origin is not self.origin:
             raise ContractError('token resident lost its actual complete prepared origin')
         closed(self, Resident)
@@ -245,16 +254,41 @@ class Resident:
             tuple((key, ForestWords.capture(value, a)) for key, value in p.embedding),
             tuple((key, ForestWords.capture(value, a)) for key, value in p.corrections), basis)
 
-    def tensors(self):
-        rows = [(key, getattr(self.origin, key)) for key in ('E', 'C', 'W')]
-        rows += [('prepared:'+key, getattr(self.prepared, key)) for key in ('theta', 'totals', 'base', 'base_total')]
+    def tensors(self, *, limit=None):
+        # Bounded grouping may not build an arbitrarily large view table before
+        # it checks the declared allowance. The default collection path retains
+        # its original complete enumeration, with the same closed value checks.
+        closed(self, Resident)
+        if type(self.state) not in (amp.State, stream.Pending):
+            raise ContractError('complete token state required for view enumeration')
+        closed(self.state, type(self.state))
+        rows = []
+        def add(label, value):
+            if limit is not None and len(rows) >= limit:
+                raise ResourceExceeded('complete resident view allowance exhausted')
+            rows.append((label, value))
+        def sequence(values):
+            if type(values) is not tuple:
+                raise ContractError('immutable complete resident view metadata required')
+            if limit is not None and len(values) > limit:
+                raise ResourceExceeded('resident view metadata allowance exhausted')
+            return values
+        for key in ('E', 'C', 'W'):
+            add(key, getattr(self.origin, key))
+        for key in ('theta', 'totals', 'base', 'base_total'):
+            add('prepared:'+key, getattr(self.prepared, key))
         if type(self.state) is stream.Pending:
-            for index, leaf in enumerate(self.state.leaves):
-                rows += [(f'leaf:{index}:{key}', getattr(leaf, key)) for key in
-                         ('values', 'normalizer', 'target_mass', 'embedding', 'core', 'common', 'corrections')]
-            forests = (self.state.core, self.state.common)+tuple(f for _, f in self.state.embedding+self.state.corrections)
-            rows += [(f'forest:{i}:{j}', b.value) for i, f in enumerate(forests) for j, b in enumerate(f.blocks)]
-            rows += [('basis:'+key, getattr(self.basis, key)) for key in ('embedding', 'core', 'common', 'corrections')]
+            for index, leaf in enumerate(sequence(self.state.leaves)):
+                for key in ('values', 'normalizer', 'target_mass', 'embedding', 'core', 'common', 'corrections'):
+                    add(f'leaf:{index}:{key}', getattr(leaf, key))
+            forests = chain((self.state.core, self.state.common),
+                (f for _, f in sequence(self.state.embedding)), (f for _, f in sequence(self.state.corrections)))
+            for i, forest in enumerate(forests):
+                closed(forest, stream.Forest)
+                for j, block in enumerate(sequence(forest.blocks)):
+                    add(f'forest:{i}:{j}', block.value)
+            for key in ('embedding', 'core', 'common', 'corrections'):
+                add('basis:'+key, getattr(self.basis, key))
         return tuple(rows)
 
 

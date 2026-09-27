@@ -10539,3 +10539,37 @@ Native bound composition and grouping fresh named reads at unchanged
 observation boundaries are now more relevant than another image/cache variant.
 Both still require complete binding/ownership proofs; this result supplies
 no permission to replace fresh live-device data with old host values.
+
+
+## 310. Group fresh resident reads without crossing observation boundaries (2026-09-27)
+
+The current prefix cost motivates an optional physical transport refinement.
+Named initialized views are freshly copied in bounded spans only inside one
+read-only Resident.raw call. Exact geometry/live generations remain mandatory;
+the local strong-identity image table expires with that call. Opaque gaps are
+never decoded or returned and are cleared after each transfer, including on
+failure. Pre/post-transition checks, every complete leaf/carry record, all
+primitive validation and the independent native bounds remain.
+
+The proof gives transportT <= arena extent + requested bytes. Greedy grouping
+minimizes transfer count only within the exact class of contiguous partitions
+of start-sorted indivisible views under the paid host capacity. Runtime derives
+and enforces a view-table bound before transport and prepays both sorting and
+opaque-copy/clearing work. This changes no Foundation action or arithmetic.
+
+The final CPU control passes6,839 valid layouts,6,268 capacity refusals, actual
+CPU tensor transport/alias/gap tests, nine inherited stale-view refusals and
+four owner failure boundaries. All602 full phase records/24,380,850 bytes and
+both native/physical report totals agree across36 paired histories. It replaces
+32,530 resident copies with2,031 grouped copies, preserving3,918,344 requested
+bytes while increasing total transport to12,071,396 bytes. This is not timing.
+Oversized tables refuse before reads; post-execution copy/MemoryError failures
+keep targets, old learners and failed pins. No CUDA context or corpus is used.
+
+GROUPED_FRESH_TOKEN_READS.md and FP_GROUPED_TOKEN_READS_CPU.json retain scope
+and minimal evidence. The fixed first CUDA comparison observes the original
+first16 targets in two240-second/16-GiB jobs with unchanged full-V model,
+unit512, numerical/storage limits and64-MiB images. After timing, the grouped
+worker must also refuse an actual changed live leaf without a successor or
+new allocation. Commit before launch; never replay the exclusive journal.
+Native prefix recomputation and sustained text affordability remain open.

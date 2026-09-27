@@ -1,0 +1,54 @@
+{
+  "status": "PASS_GROUPED_FRESH_TOKEN_READS_CPU",
+  "scope": "Exact layout and complete CPU-tensor Runtime checks for fresh read grouping.\n\nNo CUDA context, corpus, speed claim or new semantic/numerical action.",
+  "layout": {
+    "valid_layouts": 6839,
+    "capacity_refusals": 6268,
+    "malformed_refusals": 5,
+    "coverage_capacity_transport_bound_and_ordered_optimality": true
+  },
+  "transport": {
+    "byte_comparisons": 8,
+    "stale_generation_control": {
+      "old_words_actually_overwritten": true,
+      "refused_operations": 9,
+      "unsealed_region_and_header_pinned": true
+    },
+    "foreign_uninitialized_oversized_views_refuse": true,
+    "opaque_gaps_and_failed_transfers_cleared": true,
+    "repeated_calls_read_changed_words": true,
+    "closed_workspace_diagnostics_preserved": true
+  },
+  "runtime": {
+    "paired_histories": 36,
+    "identical_complete_phases": 602,
+    "identical_phase_body_bytes": 24380850,
+    "identical_native_and_physical_reports": true,
+    "unchanged_physical_allocation_extents": true,
+    "ungrouped_transport": {
+      "ordinary_copies": 203986,
+      "grouped_copies": 0,
+      "transport_bytes": 3918344,
+      "requested_bytes": 3918344
+    },
+    "grouped_transport": {
+      "ordinary_copies": 171456,
+      "grouped_copies": 2031,
+      "transport_bytes": 12071396,
+      "requested_bytes": 3918344
+    }
+  },
+  "failures": [
+    "unpaid",
+    "transport",
+    "memory",
+    "changed-leaf"
+  ],
+  "tariff": {
+    "full_V_view_bound": 2630175,
+    "full_V_extra_work_per_phase": 31993014784,
+    "final_tariff_rechecked_complete_phases": 15,
+    "final_tariff_record_and_report_equality": true,
+    "oversized_view_table_and_metadata_refused_before_transport": true
+  }
+}

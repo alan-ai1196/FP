@@ -2,13 +2,23 @@
 
 ## Current token execution boundary (2026-09-27)
 
+The optional [grouped fresh token reads](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
+are implemented/default off. Every capture still reads actual named extents;
+only transport within its read-only boundary is combined. The final complete
+CPU-tensor controls preserve602 phase records/24,380,850 bytes and both report
+totals in36 paired histories. Layout optimality/transport bounds, opaque-gap
+clearing, stale/changed views, failed execution and funded planning bounds pass.
+A fixed16-target actual-device pair is preregistered but not launched. Native
+prefix enclosure work and all numerical checks remain unchanged.
+
 The [current prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md)
 is proved from the successful ordinary schedule and checked at every step
 of eight complete CPU-substituted units. Per B-target unit it counts
 B(3B+1)/2 native event evaluations and B(7B+1)/2 leaf captures, each with
-seven raw array reads. At B=512: 393,472 native rows and 6,424,320 leaf raw
-calls, independent of image retention. No read or native check is removed;
-no new runtime optimization, GPU timing or universal lower is claimed.
+seven logical array reads. In the separate-copy path at B=512: 393,472 native
+rows and 6,424,320 leaf raw calls, independent of image retention. The grouped
+path changes transport granularity; the count proof is no GPU timing or
+universal lower.
 
 The optional [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
 preserves complete packed bytes using paid bindings for exact immutable builtin

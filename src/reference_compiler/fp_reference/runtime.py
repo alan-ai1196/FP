@@ -920,6 +920,12 @@ class ReferenceCompilerRuntime:
         # Unencoded simplex commits check both normalizers and their proposal,
         # then the endpoint, prefix and retained trace: six captures in total.
         charge = 320*cfg.phase_output_cells+2*self._cuda.relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        if self._cuda.token and cfg.grouped_reads:
+            # At most four resident snapshots per phase. Grouped transport is
+            # <= arena extent + named bytes per snapshot; the existing tariff
+            # covers named bytes/metadata, this adds opaque-gap copy/clearing.
+            from .readback_groups import resident_work
+            charge += resident_work(program.definition, cfg.storage.arena_bytes)
         if self._cuda.reuses_token_storage:
             from .token_reuse import collection_work
             charge += collection_work(self._cuda)

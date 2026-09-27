@@ -17,6 +17,7 @@ from .token_array_events import Kernel, Prepared
 from .token_cuda_state import (ArrayWords, Resident, PredictionResident, ReadoutResident, StateWords,
                                share_state_bytes)
 from .token_enclosures import EnclosureUnresolved
+from .readback_groups import resident_view_bound
 from . import token_batch as ref, token_amp as amp, token_streaming as stream
 from . import token_state_relation as states, token_readout_relation as readout, token_readout_envelope as envelope
 
@@ -195,7 +196,9 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                               reference.cursor, birth, control)
         control.check()
         with prefix.arena.phase(object_id) as workspace:
-            a = CudaArrays(workspace, readout_buffer, element_cap=cfg.initializer.element_cap, cell_cap=cfg.phase_output_cells)
+            a = CudaArrays(workspace, readout_buffer, element_cap=cfg.initializer.element_cap,
+                           cell_cap=cfg.phase_output_cells, grouped_reads=cfg.grouped_reads,
+                           capture_view_cap=resident_view_bound(program.definition) if cfg.grouped_reads else 0)
             actual = transition(kind, program, cfg, before, prediction, window, target, reference.cursor, birth, a)
             if kind in ('predict', 'readout'):
                 actual_prediction = actual

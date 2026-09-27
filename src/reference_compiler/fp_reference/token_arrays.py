@@ -292,11 +292,15 @@ class _Arrays:
 
 class CPUArrays(_Arrays):
     """Diagnostic interpreter; no owned physical or Runtime execution claim."""
-    def __init__(self, *, element_cap, cell_cap, audit=None):
+    def __init__(self, *, element_cap, cell_cap, audit=None, grouped_reads=False, capture_view_cap=0):
         import numpy as np
         natural(element_cap, 'token array element cap', positive=True)
         natural(cell_cap, 'token phase output cell cap', positive=True)
         self.cuda, self.xp, self.audit = False, np, audit
+        if type(grouped_reads) is not bool:
+            raise ContractError('exact grouped-read registration required')
+        self.grouped_reads = grouped_reads
+        self.capture_view_cap = natural(capture_view_cap, 'capture view allowance', positive=grouped_reads)
         self.element_cap, self.cell_cap = element_cap, cell_cap
         self._dtypes = {name: getattr(np, name) for name in DTYPES}
         self.records, self.cells, self.bytes = [], 0, 0
@@ -305,10 +309,15 @@ class CPUArrays(_Arrays):
         self._input(value)
         return value.copy()
 
+    def capture(self, values):
+        if type(values) is not tuple or len(values) > self.capture_view_cap:
+            raise ResourceExceeded('complete resident view allowance exhausted')
+        return _CapturedArrays(values, tuple(self.raw(value) for value in values))
+
 
 class CudaArrays(_Arrays):
     """Actual fixed-arena executor. There is no unowned or CPU fallback path."""
-    def __init__(self, workspace, readout_buffer, *, element_cap, cell_cap):
+    def __init__(self, workspace, readout_buffer, *, element_cap, cell_cap, grouped_reads=False, capture_view_cap=0):
         import torch
         from .token_reuse import TokenReuseWorkspace
         if type(workspace) not in (CudaWorkspace, TokenReuseWorkspace) or type(readout_buffer) is not bytearray:
@@ -317,6 +326,10 @@ class CudaArrays(_Arrays):
         natural(element_cap, 'token array element cap', positive=True)
         natural(cell_cap, 'token phase output cell cap', positive=True)
         self.workspace, self.readout_buffer = workspace, readout_buffer
+        if type(grouped_reads) is not bool:
+            raise ContractError('exact grouped-read registration required')
+        self.grouped_reads = grouped_reads
+        self.capture_view_cap = natural(capture_view_cap, 'capture view allowance', positive=grouped_reads)
         self.cuda, self.xp, self.audit = True, torch, None
         self.element_cap, self.cell_cap = element_cap, cell_cap
         self._dtypes = {name: getattr(torch, name) for name in DTYPES}
@@ -329,3 +342,35 @@ class CudaArrays(_Arrays):
         self._shape(tuple(value.shape))
         payload = self.workspace.raw_bytes((value,), self.readout_buffer)[0]
         return np.frombuffer(payload, dtype=np.dtype(self.dtype(value))).reshape(tuple(value.shape))
+
+    def capture(self, values):
+        """All fresh named inputs of ONE read-only Resident.raw call."""
+        import numpy as np
+        if type(values) is not tuple:
+            raise ContractError('complete immutable readback view tuple required')
+        if len(values) > self.capture_view_cap:
+            raise ResourceExceeded('complete resident view allowance exhausted')
+        for value in values:
+            if self.dtype(value) not in self._dtypes:
+                raise ContractError('registered token raw dtype required')
+            self._shape(tuple(value.shape))
+        payloads = self.workspace.grouped_raw_bytes(values, self.readout_buffer)
+        raw = tuple(np.frombuffer(data, dtype=np.dtype(self.dtype(value))).reshape(tuple(value.shape))
+                    for value, data in zip(values, payloads, strict=True))
+        return _CapturedArrays(values, raw)
+
+
+class _CapturedArrays:
+    """Local immutable images; expires with the enclosing single raw capture.
+
+    No arithmetic, fallback, persistent memoization or snapshot issuance port.
+    Inputs remain strongly bound by actual object identity throughout the call.
+    """
+    def __init__(self, values, raw):
+        self._entries = {id(value): (value, data) for value, data in zip(values, raw, strict=True)}
+
+    def raw(self, value):
+        entry = self._entries.get(id(value))
+        if entry is None or entry[0] is not value:
+            raise ContractError('resident capture attempted an undeclared physical read')
+        return entry[1]

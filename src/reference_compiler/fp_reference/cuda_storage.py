@@ -387,6 +387,11 @@ class CudaWorkspace:
                 host.zero_()
         return tuple(result)
 
+    def grouped_raw_bytes(self, values, buffer):
+        """Fresh named bytes grouped only within this read-only observation."""
+        from .readback_groups import read
+        return read(self, values, buffer)
+
     def finish(self, status):
         if self._closed or self.arena._active is not self:
             raise ContractError('CUDA workspace no longer has current phase ownership')

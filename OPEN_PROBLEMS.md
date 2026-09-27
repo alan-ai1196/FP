@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [grouped fresh-read refinement](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
+now has a conditional proof, implementation and complete CPU-tensor controls.
+Its fixed16-target CUDA pair will qualify real transport, test actual changed
+leaf refusal and measure unprofiled cost. More transferred opaque bytes may
+offset fewer copies; no speedup is assumed. All ordinary numerical checks and
+native prefix reevaluations remain. No complete-unit or corpus budget follows
+from this preparation, and no image/encoder sweep is due.
+
 The [prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) identifies
 quadratic repetition within an update unit: B(3B+1)/2 native event rows and
 7B(7B+1)/2 leaf-array raw calls. The current B=512 schedule therefore performs
@@ -7,8 +15,9 @@ quadratic repetition within an update unit: B(3B+1)/2 native event rows and
 This is an implementation obstacle, not an FP lower. Investigate native
 enclosure composition and fresh-read granularity under complete ownership
 and unchanged observation boundaries; do not substitute cached host words
-for still-live device arrays. No such numerical/readback lowering is yet
-implemented, and no extra long execution is registered.
+for still-live device arrays. The grouped transport lowering above is now
+implemented; native enclosure composition remains open. No extra long
+execution is registered.
 
 The [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
 now passes exact/CPU preservation controls, including the actual full-V record

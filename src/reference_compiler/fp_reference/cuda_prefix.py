@@ -171,6 +171,7 @@ class TokenCudaPrefixContract(CudaPrefixContract):
     initializer: object
     exact_cell_cap: int = 4096
     reuse_regions: bool = False
+    grouped_reads: bool = False
     forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
@@ -178,8 +179,8 @@ class TokenCudaPrefixContract(CudaPrefixContract):
         closed(self.initializer, TokenInitializer)
         self.initializer.__post_init__()
         natural(self.exact_cell_cap, 'token exact rounding-cell allowance')
-        if type(self.reuse_regions) is not bool:
-            raise ContractError('exact token storage reuse registration required')
+        if type(self.reuse_regions) is not bool or type(self.grouped_reads) is not bool:
+            raise ContractError('exact token storage reuse/readback registration required')
         if self.reuse_regions and (type(self.storage) is not CudaStorageContract
                 or self.storage.arena_bytes & (self.storage.arena_bytes-1)):
             raise ContractError('token reuse requires a power-of-two backing extent')
@@ -187,7 +188,8 @@ class TokenCudaPrefixContract(CudaPrefixContract):
             raise ContractError('token events cannot borrow a likelihood encoding or an installation release')
         return ('token-half-core-event-gradient-sparse-balanced-carry-integer-grid-v2',
                 'prepaid-complete-token-array-graph-and-cache-relation-v1'+
-                    ('+sealed-token-generation-reuse-v1' if self.reuse_regions else ''),
+                    ('+sealed-token-generation-reuse-v1' if self.reuse_regions else '')+
+                    ('+grouped-fresh-resident-readback-v1' if self.grouped_reads else ''),
                 'token-half-single-one-event-explicit-arena-arrays-v1')
 
     def __post_init__(self):

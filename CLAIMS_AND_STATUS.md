@@ -1,10 +1,21 @@
 # FP Claims and Status
 
+**Grouped fresh resident reads: PROVED CONDITIONALLY; IMPLEMENTED; CPU PASS.**
+Grouping preserves complete bytes under the existing read-only observation
+boundary, with transport T <= arena extent + requested bytes and no cache
+across captures. The greedy planner is optimal only among contiguous partitions
+of start-sorted indivisible views under the paid buffer capacity. Complete
+CPU Runtime controls match602 phase records and reports; planning, stale-view,
+mutation and failure controls pass. The [exact scope](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
+issues no certificate or device-speed claim. One actual comparison is fixed,
+not yet launched. Numerical checks and native prefix work remain unchanged.
+
 **Current ordinary-token prefix cost: EXACT SCHEDULE LAW; CPU COUNT PASS.**
 A successful B-target unit reevaluates B(3B+1)/2 native event rows and captures
 B(7B+1)/2 physical leaves, each with seven array reads. At B=512 this means
 393,472 native rows and 6,424,320 leaf raw calls; it is a source-derived count,
-not a new device measurement. Complete CPU Runtime traces match every step.
+not a new device measurement; these raw-call counts describe separate copies.
+Complete CPU Runtime traces match every step.
 The [proof and scope](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) concern this
 implementation, not a universal FP lower, wall-time bound or permission to
 skip fresh reads. For fixed B and N targets the component scales as Theta(NB).

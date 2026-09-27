@@ -4,6 +4,10 @@ Status: **EXACT SCHEDULE LAW; COMPLETE CPU RUNTIME COUNT CONTROL PASS**.
 This concerns the successful ordinary path of the existing implementation,
 not an information lower bound on FP, a new numerical bridge or a wall-time
 theorem. Foundation/ERC and the rational/relation closure remain unchanged.
+The physical raw-call count below refers to the original separate-copy path
+(`grouped_reads=False`). The subsequent [grouped fresh-read lowering](GROUPED_FRESH_TOKEN_READS.md)
+preserves logical leaf inspections and native reevaluations while changing
+the number and size of actual transport calls.
 
 The [owned-image comparison](OWNED_CANONICAL_IMAGES.md#actual-device-result-and-closure)
 reduces the four first ordinary CUDA calls from 18.70098 to 9.84782 seconds
@@ -125,7 +129,9 @@ or image placement cannot remove these structural repetitions. This supplies
 an implementation reason to investigate composing native enclosures over
 immutable retained events and grouping fresh physical reads at unchanged
 observation boundaries. Neither lowering is implemented; its preservation
-and ownership argument still has to be established.
+and ownership argument still has to be established at this entry's source.
+The subsequent grouped-read proof/implementation above now addresses that
+transport question; native enclosure composition remains unimplemented.
 
 The distinction matters for correctness. A stored host leaf is not evidence
 that its still-live device array is unchanged: the existing changed-leaf
