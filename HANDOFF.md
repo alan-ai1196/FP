@@ -2,6 +2,15 @@
 
 ## Current execution state (2026-09-27)
 
+An [exact schedule-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) now
+identifies an obstacle beyond serialization. A successful unit of B targets
+reevaluates B(3B+1)/2 native event rows and performs B(7B+1)/2 physical leaf
+captures. At B=512 these imply 393,472 native rows and 6,424,320 leaf-array
+raw calls. Complete CPU Runtime traces confirm every step across eight
+units. These are current-implementation counts, not FP or wall-time lowers.
+The next cost question is native prefix recomputation and the granularity
+of fresh reads; further image/cache variants do not address this growth.
+
 An optional [owned canonical-image cache](theory/proofs/OWNED_CANONICAL_IMAGES.md)
 now passes exact and complete CPU Runtime preservation checks. It binds only
 immutable builtin subtrees to paid, independently checked bytes. Five full-V

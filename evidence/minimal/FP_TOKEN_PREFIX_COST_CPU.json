@@ -1,0 +1,66 @@
+{
+  "status": "PASS_CURRENT_TOKEN_PREFIX_COST_LAW_CPU",
+  "rows": [
+    {
+      "unit": 1,
+      "completed_units": 2,
+      "observations": 2,
+      "checked_phases": 7,
+      "every_ordinary_step_matches_law": true,
+      "leaf_captures": 8,
+      "leaf_bytes": 1056,
+      "all_raw_calls": 2181,
+      "all_raw_bytes": 44992,
+      "native_bound_calls": 4,
+      "native_event_evaluations": 4
+    },
+    {
+      "unit": 2,
+      "completed_units": 2,
+      "observations": 4,
+      "checked_phases": 11,
+      "every_ordinary_step_matches_law": true,
+      "leaf_captures": 30,
+      "leaf_bytes": 4080,
+      "all_raw_calls": 4140,
+      "all_raw_bytes": 83012,
+      "native_bound_calls": 10,
+      "native_event_evaluations": 14
+    },
+    {
+      "unit": 4,
+      "completed_units": 2,
+      "observations": 8,
+      "checked_phases": 19,
+      "every_ordinary_step_matches_law": true,
+      "leaf_captures": 116,
+      "leaf_bytes": 15664,
+      "all_raw_calls": 8486,
+      "all_raw_bytes": 162636,
+      "native_bound_calls": 22,
+      "native_event_evaluations": 52
+    },
+    {
+      "unit": 8,
+      "completed_units": 2,
+      "observations": 16,
+      "checked_phases": 35,
+      "every_ordinary_step_matches_law": true,
+      "leaf_captures": 456,
+      "leaf_bytes": 61904,
+      "all_raw_calls": 18638,
+      "all_raw_bytes": 350908,
+      "native_bound_calls": 46,
+      "native_event_evaluations": 200
+    }
+  ],
+  "full_unit512_derived_counts": {
+    "native_bound_calls": 1535,
+    "native_event_evaluations": 393472,
+    "leaf_captures": 917760,
+    "leaf_raw_calls": 6424320,
+    "minimum_leaf_bytes": 4216,
+    "minimum_repeated_leaf_read_bytes": 3869276160
+  },
+  "scope": "Count unavoidable repetitions in the current successful token phase schedule.\n\nComplete Runtime logic with CPU array/device substitution, two update units\nper existing synthetic fixture. No timing, corpus, CUDA or new model result.\nThe claims concern this implementation schedule, not lower bounds on FP."
+}

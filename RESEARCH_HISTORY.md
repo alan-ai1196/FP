@@ -10512,3 +10512,30 @@ full-unit result or text-training budget. No cache sweep, extra encoder case
 or long unit replay is due. Later native-prefix computation, growing retained
 history and complete fresh physical validation remain the text-affordability
 frontier. Foundation/ERC and the rational/relation closure remain unchanged.
+
+
+## 309. Locate quadratic prefix verification in the ordinary-token schedule (2026-09-27)
+
+After closing the image comparison, source analysis identifies structural
+repetition that serialization cannot remove. For each successful ordinary
+B-target unit plus its required commit, the native bound is called3B-1 times
+and reevaluatesB(3B+1)/2 event rows. Fresh complete physical capture visits
+B(7B+1)/2 leaves, each issuing seven numeric array reads. The exact weighted
+byte law retains every original event's complete shape and incidence count.
+At the currentB512 shape, this implies393,472 native rows,917,760 leaf captures,
+6,424,320 raw calls and at least3,869,276,160 repeated leaf-read bytes per unit.
+
+The full CPU-substituted Runtime completes two units at eachB in{1,2,4,8}:
+30 observations,72 checked phases and eight commits. Every individual call
+matches the law, including unit resets. The existing pure full-V factory
+supplies shape parameters without opening corpus data; no Torch/CUDA is used.
+FP_TOKEN_PREFIX_COST_CPU.json is the minimal count control. The proof and
+scope are TOKEN_PREFIX_AUDIT_COST.md. No production checks are changed.
+
+This is a current-schedule theorem, not a lower bound on FP or wall time.
+With fixedB andN targets it is Theta(NB), not quadratic in the whole training
+horizon. Checked primitive-word totals are not total raw-read counters.
+Native bound composition and grouping fresh named reads at unchanged
+observation boundaries are now more relevant than another image/cache variant.
+Both still require complete binding/ownership proofs; this result supplies
+no permission to replace fresh live-device data with old host values.

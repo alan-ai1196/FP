@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The [prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) identifies
+quadratic repetition within an update unit: B(3B+1)/2 native event rows and
+7B(7B+1)/2 leaf-array raw calls. The current B=512 schedule therefore performs
+393,472 native event evaluations and 6,424,320 leaf raw calls per complete unit.
+This is an implementation obstacle, not an FP lower. Investigate native
+enclosure composition and fresh-read granularity under complete ownership
+and unchanged observation boundaries; do not substitute cached host words
+for still-live device arrays. No such numerical/readback lowering is yet
+implemented, and no extra long execution is registered.
+
 The [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
 now passes exact/CPU preservation controls, including the actual full-V record
 shapes. Its paired first-event profile reduces combined instrumented CPU time

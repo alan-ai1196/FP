@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Current ordinary-token prefix cost: EXACT SCHEDULE LAW; CPU COUNT PASS.**
+A successful B-target unit reevaluates B(3B+1)/2 native event rows and captures
+B(7B+1)/2 physical leaves, each with seven array reads. At B=512 this means
+393,472 native rows and 6,424,320 leaf raw calls; it is a source-derived count,
+not a new device measurement. Complete CPU Runtime traces match every step.
+The [proof and scope](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) concern this
+implementation, not a universal FP lower, wall-time bound or permission to
+skip fresh reads. For fixed B and N targets the component scales as Theta(NB).
+
 **Owned immutable canonical images: PROVED CONDITIONALLY; IMPLEMENTED; CPU
 CONTROL PASS.** Same-object binding to independently checked immutable bytes
 preserves complete packed records and the original guard decision class.

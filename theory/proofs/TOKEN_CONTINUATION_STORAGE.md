@@ -1,10 +1,9 @@
 # Continuation roots for token device storage
 
-**Status:** sufficient-root/ownership argument, optional owned implementation
-and complete CPU Runtime/array controls. Actual device reuse is not yet
-qualified. The running shared-retention A2 remains fixed at307251e and never
-uses this preparation. The earlier passive trace and generation component
-are now connected by the implemented lowering in the final section.
+**Status:** sufficient-root/ownership argument, optional owned implementation,
+complete CPU Runtime/array controls and both bounded actual-device cases
+passed at6941373. Their finite scope is recorded in the final section.
+The separate full-unit A2 at307251e is terminal and did not use this lowering.
 
 The default ordinary-text executor retains every device temporary. Its
 append-only allocation sum is an implementation cost, not a lower bound on
