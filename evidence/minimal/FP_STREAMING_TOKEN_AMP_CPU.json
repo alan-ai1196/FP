@@ -1,0 +1,58 @@
+{
+  "status": "PASS_STREAMING_TOKEN_AMP_CPU_CONTROL",
+  "schedule": "token-half-core-event-gradient-sparse-balanced-carry-integer-grid-v2",
+  "forests": {
+    "prefixes": 257,
+    "vector_width": 8,
+    "carry_additions": 255,
+    "root_additions": 770,
+    "maximum_live_blocks": 8,
+    "recompute_all_prefix_additions": 32896,
+    "current_root_compression_falsified": {
+      "histories": [
+        [
+          -2,
+          -1,
+          1
+        ],
+        [
+          -2,
+          -2,
+          2
+        ]
+      ],
+      "exact_and_current_sum": "-2",
+      "next_leaf": "1/8388608",
+      "next_roots": [
+        "-16777215/8388608",
+        "-2"
+      ]
+    },
+    "exact_primitive_calls": 1033,
+    "exact_primitive_words": 8208
+  },
+  "events": {
+    "histories": 96,
+    "events": 384,
+    "commits": 144,
+    "pre_target_label_checks": 768,
+    "physical_leaf_and_carry_words_checked": 42630,
+    "prefixes_differing_from_legacy_gradient_association": 73,
+    "maximum_pending_state_error_upper": "6177854496051201/4722366482869645213696",
+    "maximum_committed_parameter_error_upper": "1/32",
+    "fixed_small_fixture_tolerance": "1/4",
+    "exact_primitive_calls": 73080,
+    "exact_primitive_words": 386094,
+    "half_words": 52608,
+    "one_new_event_derivative_per_observation": true,
+    "complete_future_caches_replayed": true
+  },
+  "profiles_and_attacks": {
+    "profile_events": 64,
+    "original_source_clocks_preserved": true,
+    "basis_only_cache_binding_falsified": true,
+    "complete_cache_replay_rejects_forgery": true,
+    "cache_predecessor_identity_refusal": true,
+    "post_target_failure_retains_predecessor_target_and_actual_leaf": true
+  }
+}

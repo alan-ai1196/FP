@@ -9646,3 +9646,53 @@ Repeated origin serialization and O(TL) source records remain costs. Next bind
 the independent AMP state and complete event relation to this same owner,
 make retained state affordable, then run ordinary text with fresh strong
 baselines. No additional static readout or relation-task branch is warranted.
+
+
+## 283. Retain floating continuation state while removing repeated token derivatives (2026-09-27)
+
+The next AMP ownership pass exposed two actual implementation constraints:
+passive Torch tensors allocate outside the fixed arena, and the existing
+observation kernel recomputes every complete prefix. It cannot be registered
+as owned merely by accepting its final arrays. The numerical prefix work is
+now addressed by a distinct incremental physical schedule, leaving the arena
+integration as the next concrete implementation task.
+
+The old reduction is lag-major for embeddings and combines core edges only
+after time reduction. Event-wise derivatives therefore cannot silently reuse
+its physical identity. The new v2 computes one complete event gradient and
+uses balanced binary-carry forests per core/common/sparse row. Exact native
+sums agree because unit masters are fixed; finite associations are explicitly
+different. All current blocks, event workspaces and original records remain.
+No semantic FP architecture action or Foundation revision is introduced.
+
+A tree proof gives exact counts: N-popcount(N) carry adds and popcount(n)-1
+adds to read a prefix root, with a right fold over perfect subtrees. For257
+prefixes this is255+770 adds per coordinate versus32896 full-prefix adds.
+This is a numerical operation law, not whole-process memory or GPU speed.
+Historical records, metadata copying and diagnostic views have separate costs.
+
+An exact counterexample defeats compressing continuation state to a current
+sum: (-2,-1,1) and(-2,-2,2) have both exact and balanced float32 sum-2; append
+2^-23 and their next sums differ by2^-23. A real token-cache attack replaces
+a three-event core forest by(current_root,0), retaining every current ordinary
+coordinate. The old basis predicate passes; complete physical cache replay
+rejects. An eventual owner must prove immutable block provenance and checked
+append induction, not just compare current gradients.
+
+All96 small histories pass384 events,768 pre-target label checks and144 AMP
+commits against native coordinate bounds under the existing1/4 small-fixture
+tolerance.73 prefixes differ from the old gradient association. The exact CPU
+oracle checks386094 event/control primitive words,52608 of them half words;
+complete replay checks42630 retained leaf/carry words.64 out-of-order/repeated
+profile events preserve source positions and learner clocks. Failed carries
+retain the previous complete state, forecast, new target and completed event
+workspace. No corpus, Torch, GPU or old terminal job is used.
+
+Proof/scope: experiments/next_token/STREAMING_AMP_GRADIENTS.md. The component
+is experiments/next_token/streaming_amp.py; audit and minimal evidence are
+scripts/audit_streaming_token_amp.py and
+evidence/minimal/FP_STREAMING_TOKEN_AMP_CPU.json. This is neither an issued
+bridge nor a newly owned CUDA path. Continue with the array event executor
+inside the existing arena and the full cache/coordinate relation, then
+ordinary text learning and fresh strong baselines. Do not deepen static
+readout or relation-task cases to substitute for that integration.

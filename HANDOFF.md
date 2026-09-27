@@ -1,5 +1,19 @@
 # FP Handoff
 
+**The AMP integration now has an incremental gradient schedule and a cache
+counterexample to respect.** The [streaming derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
+computes each event derivative once and retains balanced partial sums for
+future appends. Equal exact/current sums can produce different next sums;
+the current gradient basis alone cannot certify these new caches. Complete
+CPU replay passes 384 events/144 commits, 64 profile events and 386,094 exact
+primitive words. Its reduction law uses 1,025 additions across 257 prefixes,
+versus 32,896 for rebuilding each prefix. This is a separately registered
+physical schedule: 73 tested prefixes differ from v1 in gradient words.
+Next lower its event operations into the existing owned CUDA arena and bind
+the cache invariant plus numerical relation inside Runtime. Passive Torch
+allocations currently escape that arena; no ownership check is relaxed.
+No GPU replay, corpus/model score or new static catalog is due at this point.
+
 **The complete compact token reference learner now runs inside the actual
 Runtime.** The [owned reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 retains every master and pending source/target record. Exact forecasts and

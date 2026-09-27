@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The [incremental token AMP component](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
+now avoids numerical derivative-prefix replay. Binary-carry frontiers retain
+the actual continuation state; replacing them by the current gradient is
+falsified even when exact and floating current sums agree. Complete cache
+replay, native coordinate comparisons, exact primitive controls and profile
+clocks pass. This new physical association differs from the old AMP schedule;
+its passive tensors and old-format diagnostic basis grant no Runtime/bridge
+authority. The next implementation is the owned array event executor and
+an inductively checked immutable cache relation, not another static variant.
+
 The [complete compact token learner](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now uses actual Runtime construction, target-free forecasts, observation,
 commit and newborn profiles. Committed integer buffers and every pending

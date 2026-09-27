@@ -1,5 +1,16 @@
 # FP Open Problems
 
+The [incremental AMP derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
+resolves repeated derivative-prefix evaluation while exposing a necessary
+cache invariant. A current ordinary gradient does not identify future
+floating behavior. The next concrete work is an owned array event kernel
+and immutable retained frontiers, with checked append induction and the
+complete numerical state/readout relation in ReferenceCompilerRuntime.
+The passive Torch allocator cannot satisfy the existing arena contract;
+integrate its operations through admitted extents, not a disabled ownership
+check. The CPU cache replay is a correctness control, not an online solver
+to run at every prefix. No new static cases or relation-task branch is needed.
+
 The [complete compact token reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now passes the actual Runtime event/profile and independent literal controls.
 The next boundary is an owned independent AMP learner and its complete
