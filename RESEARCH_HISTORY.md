@@ -10647,3 +10647,34 @@ the composed arm. Commit first, launch once, never replay the exclusive
 FP_COMPOSED_BOUNDS_CUDA_A1.json journal. No full-unit repeat or model budget
 follows merely from the event-row law; ordinary-text affordability remains
 the empirical decision, with the relation/rational branch closed.
+
+
+## 313. Qualify native composition; counted work falls but early-prefix time barely changes (2026-09-27)
+
+The original CUDA pair at c093979 completes under every registered cap.
+Both workers retain33 checked phases/4,541,709 primitive words, all16 original
+contexts/targets and no commit. Their29,850,216 consumed arena bytes and
+actual/lifetime allocation counters(1,1073741824,1) agree without resets.
+Actual native bound calls/rows are46/376 batch versus16/16 composed.
+
+The32 ordinary calls take83.5949457 versus82.6182149 seconds: ratio1.0118222,
+only1.16841% observed reduction in a single ordered pair with identical
+counters. Initialization is10.22115 versus10.37450 seconds. This is neither
+a statistical/general speedup nor a whole-unit result; the algebraic row
+reduction does not establish affordable training. Late-unit benefit remains
+unmeasured, with all old physical leaf captures and complete retention intact.
+
+The composed worker subsequently zeros its actual first live leaf. Its next
+prediction refuses, retaining a34th failed phase and the changed words while
+preserving the old learner, cursor and sealed evidence. No new tensor
+allocation or successor occurs. Whole-job peak commitment is3,332,599,808
+versus3,456,643,072 bytes; the latter includes the extra fault and does not
+isolate cache overhead. Paid reference peaks are271,544,532 and271,748,870.
+
+FP_COMPOSED_BOUNDS_CUDA_A1.json is terminal. This qualification is closed,
+the option remains default off, and no reduction variant or full-unit replay
+is due. The fixed-origin composition proof remains useful, but remaining
+ordinary-token model-invariant, retention and fresh-read costs must be
+addressed on evidence. These short comparisons do not isolate their full-unit
+contributions. No Foundation/ERC change, relation extension or language-quality
+claim follows; adequately trained strong baselines remain necessary.

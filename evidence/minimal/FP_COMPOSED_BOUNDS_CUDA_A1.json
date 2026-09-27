@@ -1,0 +1,314 @@
+{
+  "status": "COMPLETE_ACTUAL_COMPOSED_BOUNDS_A1",
+  "source_commit": "c093979061ccfa78e8a615b296c2b0c0e3079168",
+  "cases": [
+    "batch",
+    "composed"
+  ],
+  "host_cap": 17179869184,
+  "deadline_ms": 240000,
+  "arena_bytes": 1073741824,
+  "reference_payload_cap": 2147483648,
+  "canonical_image_cap": 67108864,
+  "observed_events": 16,
+  "update_unit": 512,
+  "phase_evidence_bytes": 67108864,
+  "phase_output_cells": 4194304,
+  "exact_cell_cap": 4096,
+  "state_atol": "16",
+  "probability_atol": "1/1000000",
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "Fixed 16-target actual comparison of batch and composed native bounds.\n\nBoth workers keep the original full-V model, unit512, numerical/storage\nlimits, separate fresh reads and 64-MiB owned images. The composed worker then\ncorrupts one live leaf and must refuse the next prediction while retaining\nprior history. Both timed arms include the same lightweight bound-row counter.\nNo complete unit, language score, replay or sustained speed claim.",
+  "results": [
+    {
+      "case": "batch",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3331358720,
+        "peak_job_commit": 3332599808,
+        "user_100ns": 943906250,
+        "kernel_100ns": 16093750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9484,
+        "process_creation_100ns": 134349950547639008
+      },
+      "launch_wall_seconds": 96.74637000000075,
+      "result": {
+        "status": "PASS_ACTUAL_COMPOSED_TOKEN_BOUNDS_PREFIX",
+        "case": "batch",
+        "before": {
+          "process_id": 9484,
+          "creation_100ns": 134349950547639008,
+          "process_commit": 33562624,
+          "lifetime_process_commit_peak": 33562624,
+          "job_commit_peak": 34803712,
+          "process_user_100ns": 2968750,
+          "process_kernel_100ns": 312500,
+          "job_user_100ns": 2968750,
+          "job_kernel_100ns": 468750,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 10.221150500001386,
+          "predict/0": 2.3831208999981754,
+          "observe/0": 2.3791216000026907,
+          "predict/1": 2.5807099000012386,
+          "observe/1": 2.5005601000011666,
+          "predict/2": 2.571420299995225,
+          "observe/2": 2.4652621999994153,
+          "predict/3": 2.632840899997973,
+          "observe/3": 2.416814299998805,
+          "predict/4": 2.592914100001508,
+          "observe/4": 2.4513031000024057,
+          "predict/5": 2.6220958000048995,
+          "observe/5": 2.4309871000004932,
+          "predict/6": 2.5824586000017007,
+          "observe/6": 2.4925768000030075,
+          "predict/7": 2.6273075999997673,
+          "observe/7": 2.503293499998108,
+          "predict/8": 2.678262600005837,
+          "observe/8": 2.601788600004511,
+          "predict/9": 2.725754400002188,
+          "observe/9": 2.5379813999970793,
+          "predict/10": 2.745667900002445,
+          "observe/10": 2.5732095999992453,
+          "predict/11": 2.7488028000007034,
+          "observe/11": 2.6134703000061563,
+          "predict/12": 2.7832590999969398,
+          "observe/12": 2.6620473000002676,
+          "predict/13": 2.8047659000003478,
+          "observe/13": 2.6697060000005877,
+          "predict/14": 2.8158674000005703,
+          "observe/14": 2.694771700000274,
+          "predict/15": 2.8728141999963555,
+          "observe/15": 2.8339896999968914
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true,
+          "native_bound_calls": 46,
+          "native_event_rows": 376
+        },
+        "outcome": {
+          "total_phase_records": 33,
+          "paid_reference_peak": 271544532,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "archive_pages": 118,
+          "actual_page_bytes": 19617028,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 29850216,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 9484,
+          "creation_100ns": 134349950547639008,
+          "process_commit": 3213676544,
+          "lifetime_process_commit_peak": 3331358720,
+          "job_commit_peak": 3332599808,
+          "process_user_100ns": 940625000,
+          "process_kernel_100ns": 15312500,
+          "job_user_100ns": 940625000,
+          "job_kernel_100ns": 15468750,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "composed",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3455418368,
+        "peak_job_commit": 3456643072,
+        "user_100ns": 948593750,
+        "kernel_100ns": 19687500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26028,
+        "process_creation_100ns": 134349951515120959
+      },
+      "launch_wall_seconds": 97.75758589999896,
+      "result": {
+        "status": "PASS_ACTUAL_COMPOSED_TOKEN_BOUNDS_PREFIX",
+        "case": "composed",
+        "before": {
+          "process_id": 26028,
+          "creation_100ns": 134349951515120959,
+          "process_commit": 33492992,
+          "lifetime_process_commit_peak": 33492992,
+          "job_commit_peak": 34717696,
+          "process_user_100ns": 2031250,
+          "process_kernel_100ns": 1250000,
+          "job_user_100ns": 2031250,
+          "job_kernel_100ns": 1406250,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 10.374498199998925,
+          "predict/0": 2.449851999997918,
+          "observe/0": 2.40940910000063,
+          "predict/1": 2.5054297000024235,
+          "observe/1": 2.5081830999988597,
+          "predict/2": 2.540989200002514,
+          "observe/2": 2.497917900000175,
+          "predict/3": 2.507349100000283,
+          "observe/3": 2.4238713000013377,
+          "predict/4": 2.4692006999976,
+          "observe/4": 2.453446299994539,
+          "predict/5": 2.497189999994589,
+          "observe/5": 2.5271710000015446,
+          "predict/6": 2.521961899998132,
+          "observe/6": 2.5162229999987176,
+          "predict/7": 2.5599797000031685,
+          "observe/7": 2.51967169999989,
+          "predict/8": 2.5718015000020387,
+          "observe/8": 2.617703199997777,
+          "predict/9": 2.6082944000008865,
+          "observe/9": 2.5795085999998264,
+          "predict/10": 2.635570300000836,
+          "observe/10": 2.6013442000039504,
+          "predict/11": 2.6216574999998556,
+          "observe/11": 2.67585539999709,
+          "predict/12": 2.653086700003769,
+          "observe/12": 2.704048999999941,
+          "predict/13": 2.640269999996235,
+          "observe/13": 2.7382173000005423,
+          "predict/14": 2.7060495000041556,
+          "observe/14": 2.7635976999954437,
+          "predict/15": 2.7268859000032535,
+          "observe/15": 2.8664779999962775
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "changed_leaf_control": {
+          "actual_inplace_zero": true,
+          "refused": true,
+          "prior_record_unchanged": true,
+          "no_successor": true,
+          "failed_status": "EXECUTION_FAILED",
+          "reason": "ContractError: token CUDA predecessor or continuation cache changed after its owned phase"
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true,
+          "native_bound_calls": 16,
+          "native_event_rows": 16
+        },
+        "outcome": {
+          "total_phase_records": 34,
+          "paid_reference_peak": 271748870,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "archive_pages": 121,
+          "actual_page_bytes": 19831660,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 29850216,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 26028,
+          "creation_100ns": 134349951515120959,
+          "process_commit": 3337736192,
+          "lifetime_process_commit_peak": 3455418368,
+          "job_commit_peak": 3456643072,
+          "process_user_100ns": 945625000,
+          "process_kernel_100ns": 18750000,
+          "job_user_100ns": 945625000,
+          "job_kernel_100ns": 18906250,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}

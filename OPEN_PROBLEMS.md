@@ -5,11 +5,16 @@ The native event-recomputation question now has a conditional proof and an
 unit evaluates2B native event rows, including the unchanged batch commit,
 instead of B(3B+1)/2. CPU exact/owner/storage controls pass. This closes the
 algebraic composition question for the fixed-origin token unit, while all
-physical leaf captures and complete historical retention remain. The next
-bounded evidence is the registered16-target actual batch/composed comparison;
-its total ordinary time must decide whether this counted reduction matters
-on the3090. No full-unit repeat, model budget, relation variant or generic
-cache/transport sweep is justified by the count theorem alone.
+physical leaf captures and complete historical retention remain. Both original
+actual workers now pass at `c093979`, including changed-leaf refusal. Native
+rows fall376 to16; ordinary time falls83.59495 to82.61821 seconds, only1.16841%
+in one ordered pair. This finite qualification is closed/default off, with
+late-unit timing unmeasured. No new native-reduction variant or full-unit
+replay is due. Repeated model validation/exact invariants, complete retention
+and fresh live-data costs remain relevant; the short device comparisons do
+not decompose their whole-unit contributions. Attack the remaining ordinary-
+text cost while preserving complete state, ownership and the physical bridge.
+The relation/rational branch, Foundation and ERC remain closed.
 
 The [grouped fresh-read refinement](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 now has a conditional proof, implementation and complete CPU-tensor controls.

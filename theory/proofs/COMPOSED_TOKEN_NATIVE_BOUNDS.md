@@ -1,6 +1,6 @@
 # Compose native gradient enclosures inside an owned update unit
 
-Status: **CONDITIONAL ENCLOSURE AND SCHEDULE THEOREMS; IMPLEMENTED; CPU PASS**.
+Status: **CONDITIONAL ENCLOSURE AND SCHEDULE THEOREMS; CPU AND FINITE CUDA PASS**.
 The optional `TokenCudaPrefixContract(composed_native=True)` changes the native
 interval solver. It changes no Foundation/ERC definition, G, Gamma, U, token
 source, AMP arithmetic, physical read boundary, persistence or install rule.
@@ -226,3 +226,50 @@ launch; do not reset counters, replay a terminal result or increase caps after
 seeing failure. Its outcome determines whether this solver removes a measured
 cost or only a counted component. No full-unit rerun is authorized by its
 row-count theorem alone.
+
+### Actual-device result and closure
+
+The original pair at `c093979061ccfa78e8a615b296c2b0c0e3079168` completes.
+`FP_COMPOSED_BOUNDS_CUDA_A1.json` is terminal with status
+`COMPLETE_ACTUAL_COMPOSED_BOUNDS_A1`. Never replay it. Both workers exit0
+without timeout or a resource kill, under every original cap and device
+identity. Each positive trace retains33 checked phases/4,541,709 primitive
+words,16 original targets/windows, cursor16, no commit and all16 pending
+records. Their29,850,216 consumed arena bytes and lifetime allocation counters
+`(1,1073741824,1)` agree. Neither allocator history nor peaks are reset.
+
+| Measured component | Batch | Composed |
+| --- | ---: | ---: |
+| Ordinary native bound calls / event rows | 46 / 376 | 16 / 16 |
+| Initialization seconds | 10.22115 | 10.37450 |
+| First eight ordinary pairs, seconds | 40.23279 | 39.90785 |
+| Last eight ordinary pairs, seconds | 43.36216 | 42.71037 |
+| All32 ordinary calls, seconds | 83.59495 | 82.61821 |
+| Whole-job peak commitment, bytes | 3,332,599,808 | 3,456,643,072 |
+| Paid reference peak, bytes | 271,544,532 | 271,748,870 |
+
+The ordinary-time ratio is1.0118222, an observed **1.16841% reduction** in
+one ordered pair with identical counters. This is no statistical/general
+speedup and provides little evidence of a practical early-prefix benefit.
+Late-unit timing is unmeasured. The exact native-row reduction is confirmed,
+but it is not a sufficient explanation of total runtime. Images remain336
+entries/67,102,758 bytes in both arms.
+
+After timing, the composed worker zeros the actual first live leaf. The next
+prediction refuses with the changed-predecessor error, retains a34th complete
+failed phase and the changed words, and leaves the old sealed bytes, native
+learner and cursor intact. No new tensor allocation or successor appears.
+Its whole-job time/commitment and final archive metrics include this extra
+fault, so their difference is not an isolated cache-overhead measurement.
+
+**This qualification is closed; the option remains default off.** The
+algebraic composition question is settled for this fixed-origin unit and
+the owned finite implementation is exercised. No further native-reduction
+variant or full-unit replay follows from this small timing difference.
+Repeated model validation/exact invariant work, complete retention and
+fresh live-data checks remain relevant ordinary-text costs; this experiment
+does not isolate their contributions. The earlier first-event CPU profile
+is evidence about those costs, not a whole-unit decomposition. Progress on
+them must preserve complete state and source/resource/bridge ownership.
+Affordable ordinary next-token learning and strong trained baselines remain
+the scientific objective; Foundation/ERC and the relation closure stay fixed.

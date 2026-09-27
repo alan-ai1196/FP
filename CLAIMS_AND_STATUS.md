@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Owned native gradient composition: CONDITIONAL THEOREM; IMPLEMENTED; CPU PASS.**
+**Owned native gradient composition: CONDITIONAL THEOREM; CPU AND FINITE CUDA PASS.**
 At a fixed token-unit origin, outward addition of independently enclosed event
 gradients contains the same exact pending gradient. Private immutable binding,
 complete source/target retention, prepaid work and sealed publication prevent
@@ -11,8 +11,11 @@ exact popcount law describes numeric cache bytes. No time or total-memory law
 follows. Exact controls pass;839 endpoint differences explicitly refute byte
 equivalence to the batch solver. Twenty paired CPU histories preserve357
 native/physical phase bodies after excluding solver diagnostics/new cache.
-There is no new class certificate, Foundation action or actual-device release;
-the default-off solver's fixed first CUDA qualification is registered.
+Both original actual workers at `c093979` pass33 phases/4,541,709 words and the
+changed-leaf control. Native rows376 to16 accompany ordinary time83.59495 to
+82.61821 seconds, only1.16841% observed reduction in one ordered pair. No
+general speedup, full-unit benefit, class certificate or broader release
+follows. This finite qualification is closed; the option stays default off.
 
 **Grouped fresh resident reads: PROVED CONDITIONALLY; CPU AND FINITE CUDA PASS.**
 Grouping preserves complete bytes under the existing read-only observation

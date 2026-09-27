@@ -10,11 +10,15 @@ claim; all917,760 physical leaf captures and complete retention remain.
 Immutable bound blocks are privately bound to the exact origin and every
 original record, paid and retained in the complete phase/snapshot state.
 Exact controls and20 paired complete CPU Runtime histories pass357 matching
-native/physical phase bodies; interval endpoints can differ. The solver stays
-default off. A new fixed16-target batch/composed CUDA pair is registered in
-the proof and `run_composed_bounds_cuda_a1.py`; commit before launch. No prior
-terminal job may be replayed. Total ordinary time, not the row-count ratio,
-must decide the next ordinary-text resource step.
+native/physical phase bodies; interval endpoints can differ. Both original
+actual workers at `c093979` now pass33 phases/4,541,709 words, including actual
+changed-leaf refusal. Native rows fall376 to16, but ordinary time only falls
+83.59495 to82.61821 seconds:1.16841% in one ordered pair. This qualification
+is closed/default off; `FP_COMPOSED_BOUNDS_CUDA_A1.json` is terminal and must
+never be replayed. No native-reduction variant or long run is justified by
+that small early-prefix difference. Repeated model invariants, complete
+retention and fresh live-data costs remain the ordinary-text frontier;
+their whole-unit contributions are not isolated by these short comparisons.
 
 An optional [grouped fresh-read lowering](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 now preserves all602 complete phase records in36 paired CPU-tensor histories.

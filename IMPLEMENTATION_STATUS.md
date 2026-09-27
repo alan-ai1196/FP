@@ -13,8 +13,13 @@ Twenty complete paired CPU histories preserve357 native/physical phase bodies,
 fresh capture counts, reports and learners; different solver diagnostics and
 the new cache are explicitly excluded from byte equality. Two grouped CPU
 tensor pairs also preserve both storage modes and reports. Source/cache/failure
-attacks pass. The new fixed actual-device qualification is registered; no
-CUDA timing or sustained affordability follows from this CPU gate.
+attacks pass. Both original actual workers at `c093979` now pass33 phases and
+4,541,709 checked words, with native rows376 versus16 and an actual changed-
+leaf refusal. Ordinary time83.59495 versus82.61821 seconds gives only1.16841%
+observed reduction in one ordered pair; late-unit benefit is unmeasured.
+This qualification is closed/default off. Its journal is terminal; no replay
+or new native-reduction variant is due. Remaining ordinary-token costs,
+including repeated model invariants and complete retention, take priority.
 
 The optional [grouped fresh token reads](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 are implemented/default off. Every capture still reads actual named extents;
