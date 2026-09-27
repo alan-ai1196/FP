@@ -7,6 +7,14 @@ capacity/precision catalog. Choose the actual text model and strong baselines
 from feasible measured budgets, and state these class restrictions. A frozen
 head's entropy floor must not be applied to an updating prequential run.
 
+Both [Transformer](experiments/next_token/baselines/TRANSFORMER.md) and
+[upstream n-gram](experiments/next_token/baselines/NGRAM.md) comparison paths
+now pass their CPU controls without opening the experiment corpus or choosing
+a model budget. The prepared branch and all five commits are recorded in
+HANDOFF. Both adapter controls are closed; they are not yet adequately trained
+real-text baselines. Actual FP feasibility/reporting determines the concrete
+preregistration. No further smoothing or normalization catalog is needed.
+
 The [fixed-incumbent reporting boundary](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 now has a proof and exact/CPU implementation checks. Its next step is the
 already specified two-worker actual-device audit after the active retention
@@ -28,11 +36,24 @@ substitute for affordable ordinary-language learning.
 The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 now passes exact whole-byte/padding, coexistence and failure controls. Its
 fixed new actual-owner attempt targets one profile/refusal path and the whole
-512-event full-vocabulary/context512 unit with its first commit. Execute it
-once, retain its real terminal result, then attack the actual remaining
+512-event full-vocabulary/context512 unit with its first commit. The original
+A1 is already running at e3faaf5, with the small actual worker passed. Inspect
+that existing job, retain its real terminal result, then attack the remaining
 obstruction. The original64-MiB frame and2-GiB payload limits are retained;
 an1-GiB arena/16-GiB host envelope supports the larger scope. Do not replay
 old jobs, relax a tolerance after seeing outcomes or add storage variants.
+
+The separate native CPU profile identifies canonical traversal as a concrete
+cost. The tested byte-identical improvement is staged in local commit e157923
+and must not alter the executing A1 source. Apply it after that job terminates;
+see HANDOFF.md for the temporary worktree. No GPU speedup is yet established.
+
+The [first text-study scope](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
+does not require an unused adaptive-installation gate for a fixed incumbent.
+After affordable owned training, qualify the implemented paid frozen-model
+reporting path on the actual device, then compare strong baselines.
+Adaptive persistence/install and their explicit stochastic premises remain
+separate obligations when graph replacement is actually exercised.
 
 The [native lossless retention control](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 is now implemented in the actual Runtime and passes its complete-record,

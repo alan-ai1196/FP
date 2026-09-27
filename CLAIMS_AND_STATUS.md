@@ -35,8 +35,12 @@ of1,114,248 bytes/17 frames with arbitrary nonzero padding and eight refusal/
 publication boundaries. Completed fixed frames become shared roots after
 paying full coexistence; the archive retains every byte. This removes the old
 fixed-F-per-completed-frame premise, not every possible memory obstruction.
-Actual new GPU execution is preregistered, not yet established. No tensor
-retirement, changed numerical tolerance, installation or model-quality claim.
+The actual A1 profile/refusal worker at e3faaf5 **PASSES**44 checked phases
+and the changed-producer refusal. Its full512-event worker remains **RUNNING**;
+the confirmed16-event prefix passes the old frame-count obstruction, not the
+full-unit claim. No tensor retirement, changed numerical tolerance,
+installation or model-quality claim follows. A staged CPU-only serialization
+refinement (e157923) does not replace this running source or its outcomes.
 
 The [shared reference retention result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 has a **PROVED decoded-byte preservation theorem and exact payload identity**,

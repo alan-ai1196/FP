@@ -58,12 +58,44 @@ stronger Foundation claim still requires its exact decision class and a
 valid comparison bound. A finite syntax search also does not certify all
 trained values or all future continuations. Report UNRESOLVED when needed.
 
-The [fixed-incumbent reporting path](FROZEN_TOKEN_REPORTING.md) now has a
-conditional proof and exact/CPU checks. A supplied G/Gamma/U can receive a
-read-only finite-stream report without completing an unused adaptive graph
-installation path. Original reporting contexts and complete ownership remain
-mandatory, and the actual new device boundary is still pending. This is not
-a language result, selected-structure claim or broader Compiler release.
+## First model-score boundary
+
+The first text comparison may train one preregistered native G/Gamma/U from
+its own initialization as the incumbent, with no graph replacement during
+that run. This is an empirical test of that supplied learner, not an adaptive
+Compiler selection or task-resource-forced structure claim. Completing an
+unused token candidate-installation path is therefore not a prerequisite for
+this narrower study. Persistence and install reachability remain mandatory
+when an actual experiment selects/replaces a deployed graph; they are not
+inferred from an empirical text loss. Foundation XIV–XV are unchanged.
+
+The existing owned training trajectory, every internal reference/AMP phase,
+resource limits and complete retained state remain required. The
+[paid frozen-model reporting path](FROZEN_TOKEN_REPORTING.md) now preserves
+original reporting contexts and closes learning/Compiler ports. Its exact/CPU
+controls pass; its fixed actual-device audit is still pending. A passive
+snapshot prediction does not replace that ownership. Ordinary training
+prequential loss remains a separate diagnostic, not a held-out result.
+Compare such an online diagnostic only with genuinely prequential baselines;
+a randomly trained baseline that has seen later targets is a different claim.
+
+Score the native and actual AMP trajectories separately. For the physical
+readout, the probability is the target's stored positive mass m divided by
+the sum S of all stored label masses. The rounded division by stored Z is
+not generally normalized. The existing pre-target readout envelope encloses
+S in [L,U]; after the owned target-mass execution, a reporting decoder can
+enclose negative log probability by [log(L/m),log(U/m)], intersected with
+the known nonnegative loss domain. Bind the operands to that same actual
+forecast and use funded numerical bounds; this formula by itself supplies
+no score, ownership, freshness or installation authority. The A1 resource
+attempt remains unscored under its original registration.
+
+Choose the first affordable model/data budget from actual execution evidence,
+then preregister the graph, initializer, update rule, physical schedule,
+training/reporting identities, tuning allowance, baselines and stop rules.
+Do not shrink the alphabet or use weak baselines to hide an unfavorable
+result. The currently exposed validation file is development data, not newly
+fresh evidence; deterministic unread data alone provide no stochastic law.
 
 ## Initial study direction
 
@@ -110,6 +142,32 @@ structural target symbols and split unknown mass among unseen IDs. The real
 estimator supplies the discounts and trie; an independent ARPA calculation
 checks the adapter. No corpus, model order or tuning budget is selected.
 Both baseline adapter controls are closed; use them in the concrete text trial.
+
+Two implementation conventions govern the baseline comparison. KenLM's
+estimator adds its own sentence/unknown symbols and treats newlines as
+boundaries. Its author also warns that assigning the full unknown probability
+to multiple distinct unseen words does not give a normalized comparison.
+Map GPT-2 IDs injectively, keep EOT as the declared ordinary token, and define
+the probability over the entire50,257-token alphabet, including unseen IDs,
+before scoring. Do not silently introduce extra document resets or count
+several unseen IDs as the same event. See the
+[KenLM estimation documentation](https://kheafield.com/code/kenlm/estimation/)
+and [estimator options](https://github.com/kpu/kenlm/blob/master/lm/builder/lmplz_main.cc).
+
+Likewise, the standard nanoGPT training loop samples random contiguous blocks,
+and its causal attention sees only preceding positions available in each
+block. It is not automatically the same information schedule as chronological
+rolling-context FP. Keep a competitive Transformer and its normal optimizer,
+but state the training exposure and scored-context lengths exactly; do not
+claim matched context or prequential exposure from a shared block_size alone.
+The source references are the
+[training loop](https://github.com/karpathy/nanoGPT/blob/master/train.py)
+and [causal model](https://github.com/karpathy/nanoGPT/blob/master/model.py).
+Its default output width is50,304. Use the declared50,257 categories or mask
+the extra logits during both training and reporting; unused padding rows must
+not take probability mass from the common target alphabet.
+These are implementation conventions to audit, not a fixed model-size choice
+or a claim that this particular repository is the strongest current baseline.
 
 ## Next executable boundary
 

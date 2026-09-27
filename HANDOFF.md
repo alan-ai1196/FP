@@ -64,14 +64,35 @@ preserve every header, record and padding byte before one paid root relocation.
 Seventeen complete frames/1,114,248 bytes and eight failure boundaries pass
 the exact CPU control; the native retention regression still passes. The CPU
 full-unit record preflight fits the existing64-MiB frame/2^22-cell caps.
-The original shared-retention A1 is already running from e3faaf5 in F:\FP:
-its profile/refusal worker passed; inspect its journal/progress and existing
-process before waiting. The full512-event unit has not reached its terminal
-boundary. Do not run another copy or edit that executing source.
+The new shared-retention A1 attempt is already RUNNING at e3faaf5. Its actual
+profile/refusal worker passes44 checked phases and rejects the changed
+post-target byte producer. The full512-event worker is still active; its
+confirmed16-event prefix crosses the old fixed-frame15-event obstruction.
+Inspect evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json and its existing
+active_progress_path/process before waiting; do not launch another copy.
 Its2-GiB reference-payload cap and numerical tolerances stay fixed; full-unit
-host/arena limits are16 GiB/1 GiB. No full-unit success is established yet.
+host/arena limits are16 GiB/1 GiB. No full-unit result is established yet.
 Old device jobs stay terminal. After this attempt, follow its actual resource
 or numerical outcome toward language learning; no more storage-control variants.
+
+The prepared changes are reconciled with the canonical study scope on
+research/token-text-ready in F:\FP-encoder-work. That branch retains all five
+research commits: e157923 (writer), a95375f (owned reporting), 010969a (model
+scope), 44a1c5c (Transformer) and 8996fda (upstream n-gram). The executing
+F:\FP source remains e3faaf5. Once its original A1 is terminal, preserve the
+journal, integrate this prepared branch, record the actual terminal outcome
+and execute the already fixed reporting audit once. Preserve these commits
+before removing the temporary worktree. External n-gram build assets are
+only a dependency cache, not a parallel research state. No corpus score,
+chosen model budget or new device result is supplied by the preparations.
+
+The [first model-score boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
+is now explicit: a preregistered fixed native incumbent can be tested without
+first implementing unused adaptive installation. It still needs affordable
+owned training, a tested paid read-only reporting path and properly normalized
+physical probabilities, with competitive fresh baselines. Persistence/install
+remain required when a study actually selects/replaces the deployed graph.
+The current resource attempt stays unscored; no held-out data are opened.
 
 **Native token retention now has an owned lossless shared representation.**
 The [byte-preservation proof and exact payload law](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
