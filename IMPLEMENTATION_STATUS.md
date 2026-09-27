@@ -8,8 +8,11 @@ only transport within its read-only boundary is combined. The final complete
 CPU-tensor controls preserve602 phase records/24,380,850 bytes and both report
 totals in36 paired histories. Layout optimality/transport bounds, opaque-gap
 clearing, stale/changed views, failed execution and funded planning bounds pass.
-A fixed16-target actual-device pair is preregistered but not launched. Native
-prefix enclosure work and all numerical checks remain unchanged.
+Both original16-target actual workers at `a833b68` now pass33 checked phases/
+4,541,709 words each. Actual live-leaf corruption refuses without a successor.
+The ordinary-call times84.41409 versus82.81775 seconds show only a1.89108%
+observed reduction in one pair; no general or sustained speedup follows.
+This qualification is closed. Native prefix work and numerical checks remain.
 
 The [current prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md)
 is proved from the successful ordinary schedule and checked at every step

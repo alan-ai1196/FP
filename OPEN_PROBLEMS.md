@@ -2,11 +2,12 @@
 
 The [grouped fresh-read refinement](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 now has a conditional proof, implementation and complete CPU-tensor controls.
-Its fixed16-target CUDA pair will qualify real transport, test actual changed
-leaf refusal and measure unprofiled cost. More transferred opaque bytes may
-offset fewer copies; no speedup is assumed. All ordinary numerical checks and
-native prefix reevaluations remain. No complete-unit or corpus budget follows
-from this preparation, and no image/encoder sweep is due.
+Both original16-target CUDA workers pass, including actual changed-leaf refusal.
+Ordinary time84.41409 versus82.81775 seconds gives only a1.89108% observed
+reduction in one ordered pair. This transport qualification is closed; it
+does not justify another variant or a long training run. All numerical checks,
+native prefix reevaluations and complete retention remain. Native bound
+composition is now the more relevant question; no image/encoder sweep is due.
 
 The [prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) identifies
 quadratic repetition within an update unit: B(3B+1)/2 native event rows and

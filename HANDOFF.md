@@ -8,10 +8,14 @@ It groups named views only inside one read-only resident capture, preserving
 all separate observation boundaries. Stale/changed views, unpaid work and
 post-execution failures refuse; oversized planning tables refuse before any
 transport. A conditional byte-preservation proof gives T <= arena extent +
-requested bytes and an explicitly prepaid view/transport bound. The fixed
-16-target actual CUDA pair is preregistered in `run_grouped_reads_cuda_a1.py`,
-with a live-leaf corruption check after the grouped worker's timed trace.
-Commit source/evidence before launching it once. No timing benefit is assumed.
+requested bytes and an explicitly prepaid view/transport bound. Both original
+16-target CUDA workers now pass at `a833b68`:33 checked phases/4,541,709 words
+each, with unchanged numerical/storage limits and allocator history. The
+actual changed-leaf control refuses while preserving the old learner/evidence.
+Ordinary calls take84.41409 versus82.81775 seconds, only a1.89108% observed
+reduction in one ordered pair. `FP_GROUPED_READS_CUDA_A1.json` is terminal;
+this qualification is closed. Native prefix recomputation and complete
+retention cost take priority; no further transport variant or long run is due.
 
 An [exact schedule-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) now
 identifies an obstacle beyond serialization. A successful unit of B targets

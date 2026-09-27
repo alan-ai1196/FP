@@ -10573,3 +10573,32 @@ unit512, numerical/storage limits and64-MiB images. After timing, the grouped
 worker must also refuse an actual changed live leaf without a successor or
 new allocation. Commit before launch; never replay the exclusive journal.
 Native prefix recomputation and sustained text affordability remain open.
+
+
+## 311. Qualify fresh grouped transport; observe little early-prefix time benefit (2026-09-27)
+
+Both original CUDA workers at a833b68 complete their fixed16-target traces
+under240 seconds/16 GiB and all unchanged full-V numerical/storage limits.
+Each retains33 checked phases/4,541,709 primitive words, every original
+context/target and16 pending records without a commit. Both consume29,850,216
+append-only arena bytes with unchanged actual/lifetime counters(1,1073741824,1).
+
+The32 ordinary calls take84.4140945 separate versus82.8177550 grouped seconds:
+ratio1.0192753, an observed1.89108% reduction in a single ordered pair. This
+is not a statistical/general speedup or an affordability result. Grouping
+does not remove native prefix computation or complete serialization. No
+late-unit effect is measured, and another long run is not justified by this
+small early-prefix difference alone.
+
+After timing, the grouped worker zeros its actual first live leaf. The next
+prediction raises the changed-predecessor refusal, retaining a34th failed
+record with the changed words while old sealed bytes, cursor16 and native
+learner remain. No successor or tensor allocation occurs. Peak whole-job
+commitment is3,330,473,984 versus3,455,455,232 bytes; the latter includes the
+extra fault and is not an isolated overhead estimate.
+
+FP_GROUPED_READS_CUDA_A1.json preserves original workers, source/device and
+outcomes. GROUPED_FRESH_TOKEN_READS.md closes this qualification; optional
+grouping stays default off. No transport/encoder sweep is due. Native
+enclosure composition and complete retention cost remain the scientific
+obstruction to affordable ordinary-text learning under the owned bridge.

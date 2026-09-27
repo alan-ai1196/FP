@@ -1,14 +1,17 @@
 # FP Claims and Status
 
-**Grouped fresh resident reads: PROVED CONDITIONALLY; IMPLEMENTED; CPU PASS.**
+**Grouped fresh resident reads: PROVED CONDITIONALLY; CPU AND FINITE CUDA PASS.**
 Grouping preserves complete bytes under the existing read-only observation
 boundary, with transport T <= arena extent + requested bytes and no cache
 across captures. The greedy planner is optimal only among contiguous partitions
 of start-sorted indivisible views under the paid buffer capacity. Complete
 CPU Runtime controls match602 phase records and reports; planning, stale-view,
 mutation and failure controls pass. The [exact scope](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
-issues no certificate or device-speed claim. One actual comparison is fixed,
-not yet launched. Numerical checks and native prefix work remain unchanged.
+issues no completeness certificate. Both original actual workers at `a833b68`
+pass33 phases/4,541,709 checked words; actual changed-leaf refusal preserves
+old evidence and learner. Ordinary time is84.41409 versus82.81775 seconds,
+a1.89108% observed reduction in a single ordered pair, not a general speedup.
+The qualification is closed; native prefix work and all numeric checks remain.
 
 **Current ordinary-token prefix cost: EXACT SCHEDULE LAW; CPU COUNT PASS.**
 A successful B-target unit reevaluates B(3B+1)/2 native event rows and captures

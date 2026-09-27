@@ -1,6 +1,6 @@
 # Group fresh token reads within one observation boundary
 
-Status: **CONDITIONAL PRESERVATION/TRANSPORT LAW; IMPLEMENTED; CPU CONTROL PASS**.
+Status: **CONDITIONAL LAW; IMPLEMENTED; CPU AND FIXED ACTUAL-DEVICE CASES PASS**.
 This is an optional physical transport lowering, registered by
 `TokenCudaPrefixContract(grouped_reads=True)`, default off. It changes no
 native G/Gamma/U, half/single primitive, numerical tolerance, source/target,
@@ -129,9 +129,9 @@ exhaustive layouts against an independent ordered-partition dynamic program,
 actual CPU tensor backing stores in both arena modes, opaque gaps, aliases,
 stale generations, changed named values, and clearing after failed copies.
 Complete Runtime trajectories compare full canonical phase records and native/
-physical reports against the original separate-copy path. No CUDA context or
-corpus data is used. No physical throughput or full-vocabulary benefit is yet
-claimed.
+physical reports against the original separate-copy path. The CPU audit uses
+no CUDA context or corpus data. Its copy counts are separate from the actual
+device comparison recorded below.
 
 The final control passes 6,839 valid layouts, 6,268 capacity refusals and five
 malformed registrations. Eight transport comparisons include signed-word
@@ -198,3 +198,42 @@ comparison and the passing CPU control. It exclusively creates
 at the first failed worker. Existing journals are never replayed. This finite
 comparison supplies no complete512-event unit, text score, general timing
 ratio or sustained-training budget. No additional device variant is registered.
+
+## Actual-device result: qualified, small observed early-prefix time difference
+
+Both original workers pass at `a833b68b15ba6998d29bea90c6f2bbc0ffc76740` on
+the pinned RTX3090. Each positive trace retains16 observations,33 checked
+phases and4,541,709 checked primitive words, with all original sources/targets,
+pending count16 and zero commits. Both consume29,850,216 append-only bytes
+and preserve actual/lifetime allocator counters(1,1073741824,1). All original
+caps and tolerances hold. Each retains336 images/67,102,758 bytes under64 MiB.
+
+| Observed quantity | Separate reads | Grouped reads |
+| --- | ---: | ---: |
+| Initialization seconds | 10.50256 | 10.21104 |
+| First eight predict/observe pairs, seconds | 40.76275 | 39.98898 |
+| Last eight predict/observe pairs, seconds | 43.65134 | 42.82878 |
+| All32 ordinary calls, seconds | 84.41409 | 82.81775 |
+| Entire worker launcher wall seconds | 98.13034 | 98.01929 |
+| Peak whole-job commit bytes | 3,330,473,984 | 3,455,455,232 |
+| Paid reference peak bytes | 271,544,497 | 271,544,531 |
+
+The ordinary-call ratio is1.01928, an observed1.89108% time reduction. This
+single ordered pair does not estimate statistical significance or a general
+speedup. It supplies no material evidence that transport grouping alone makes
+ordinary training affordable. The grouped whole-job measurements additionally
+include its post-timing fault, so they are not isolated memory/time penalties.
+
+The grouped worker zeros the actual first leaf in place. Its next prediction
+refuses with `token CUDA predecessor or continuation cache changed after its
+owned phase`. The34th record is EXECUTION_FAILED and contains the changed
+actual leaf words. Prior sealed words stay intact; cursor16 and the complete
+native learner remain, with no successor or new tensor allocation. This is
+an actual physical freshness check, not a simulated host-payload corruption.
+
+`FP_GROUPED_READS_CUDA_A1.json` records both original processes, source, device,
+stages and outcomes. It is terminal and must not be replayed. The current
+transport qualification is closed and the feature remains optional/default
+off. No gap-threshold sweep, extra transport case or long-unit run is due from
+this result. Late-unit benefit is unmeasured. Follow the still-repeated native
+prefix computation and complete retention cost toward actual text learning.
