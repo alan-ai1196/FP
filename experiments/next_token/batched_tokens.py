@@ -296,6 +296,18 @@ class Bounds:
     correction_ids: np.ndarray
     corrections: ArrayInterval
 
+    @property
+    def unit_count(self):
+        return len(self.unit.targets)
+
+    @property
+    def cursor(self):
+        return self.unit.origin.cursor+self.unit_count
+
+    @property
+    def source(self):
+        return self.unit.windows[-1].append(self.unit.targets[-1])
+
     def mass(self, event, label):
         d = self.unit.origin.definition
         readout.natural(event)
@@ -332,6 +344,8 @@ class Bounds:
 
     def _commit(self):
         origin, d = self.unit.origin, self.unit.origin.definition
+        if self.unit_count != d.output.update_unit:
+            raise ValueError('only the complete registered update unit can commit')
         scale = ArrayInterval.rational(d.output.grid*d.output.learning_rate/d.output.update_unit)
         def project(value, label):
             low, high = np.floor(np.maximum(0.0, value.lower)), np.floor(np.maximum(0.0, value.upper))
@@ -350,6 +364,26 @@ class Bounds:
         W = project(ArrayInterval(low, high), 'readout')
         source = self.unit.windows[-1].append(self.unit.targets[-1])
         return Origin(d, E.tobytes(), C.tobytes(), W.tobytes(), origin.cursor+d.output.update_unit, origin.optimizer_steps+1, source)
+
+
+@dataclass(frozen=True)
+class Prediction:
+    predecessor: object
+    window: tokens.TokenWindow
+    values: ArrayInterval
+    normalizer: ArrayInterval
+
+    @property
+    def origin(self):
+        return self.predecessor.unit.origin if type(self.predecessor) is Bounds else self.predecessor
+
+    def mass(self, label):
+        readout.natural(label)
+        d = self.origin.definition
+        if label >= d.output.labels:
+            raise ValueError('undeclared output label')
+        weights = ArrayInterval.point(np.ldexp(self.origin.W[label].astype(np.float64), -d.output.grid_bits))
+        return (ArrayInterval.rational(d.output.base[label])+reduce_rows(weights*self.values[np.asarray(d.features), 0])).scalar()
 
 
 class Kernel:
@@ -383,11 +417,17 @@ class Kernel:
         self.base_total = ArrayInterval.rational(sum(d.output.base, F(0)))
 
     def bound(self, origin, windows, targets):
+        if type(targets) is not tuple or len(targets) != self.definition.output.update_unit:
+            raise ValueError('one complete registered retained update unit required')
+        return self.prefix(origin, windows, targets)
+
+    def prefix(self, origin, windows, targets):
+        """Complete pending state for an actually retained nonempty prefix."""
         d = self.definition
         if type(origin) is not Origin or origin.definition != d:
             raise ValueError('actual complete packed origin required')
-        if type(windows) is not tuple or type(targets) is not tuple or len(windows) != len(targets) or len(targets) != d.output.update_unit:
-            raise ValueError('one complete registered retained update unit required')
+        if type(windows) is not tuple or type(targets) is not tuple or len(windows) != len(targets) or not 1 <= len(targets) <= d.output.update_unit:
+            raise ValueError('matching revealed nonempty prefix within the registered unit required')
         for window, target in zip(windows, targets):
             if type(window) is not tokens.TokenWindow or window.schema != d.sources:
                 raise ValueError('complete matching retained source points required')
@@ -402,12 +442,47 @@ class Kernel:
             error.retained_unit = unit
             raise
 
-    def _bound(self, unit):
-        origin, d = unit.origin, self.definition
-        N, D, L = d.output.update_unit, d.width, d.sources.context
+    def predict(self, predecessor, window=None):
+        if type(predecessor) not in (Origin, Bounds):
+            raise ValueError('complete committed or pending native predecessor required')
+        origin = predecessor.unit.origin if type(predecessor) is Bounds else predecessor
+        if origin.definition != self.definition or type(predecessor) is Bounds and predecessor.unit_count >= self.definition.output.update_unit:
+            raise ValueError('matching learner must commit its full unit before another prediction')
+        window = predecessor.source if window is None else window
+        if type(window) is not tokens.TokenWindow or window.schema != self.definition.sources:
+            raise ValueError('complete matching source point required')
+        window.__post_init__()
+        values, features, totals, _, _ = self._forward(origin, (window,))
+        normalizer = (self.base_total+reduce_rows(totals[:, None]*features)).positive()
+        return Prediction(predecessor, window, values, normalizer)
+
+    def observe(self, predecessor, prediction, target, *, window=None):
+        """Bind a pre-target cache to one next retained record."""
+        if type(prediction) is not Prediction or prediction.predecessor is not predecessor:
+            raise ValueError('prediction must belong to the complete current predecessor')
+        previous = predecessor.unit if type(predecessor) is Bounds else Unit(predecessor, (), ())
+        actual_window = predecessor.source if window is None else window
+        try:
+            expected = self.predict(predecessor, actual_window)
+        except EnclosureUnresolved as error:
+            error.retained_unit = Unit(previous.origin, previous.windows+(actual_window,), previous.targets+(target,))
+            raise
+        if prediction.window != expected.window or any(
+                type(getattr(prediction, field)) is not ArrayInterval
+                or getattr(prediction, field).lower.shape != getattr(expected, field).lower.shape
+                or getattr(prediction, field).upper.shape != getattr(expected, field).upper.shape
+                or getattr(prediction, field).lower.dtype != np.float64 or getattr(prediction, field).upper.dtype != np.float64
+                or getattr(prediction, field).lower.tobytes() != getattr(expected, field).lower.tobytes()
+                or getattr(prediction, field).upper.tobytes() != getattr(expected, field).upper.tobytes()
+                for field in ('values', 'normalizer')):
+            raise ValueError('prediction differs from its actual source point or native cache')
+        return self.prefix(previous.origin, previous.windows+(expected.window,), previous.targets+(target,))
+
+    def _forward(self, origin, windows):
+        d = self.definition
+        N, D, L = len(windows), d.width, d.sources.context
         node_count = d.input_nodes+len(d.nodes)
-        history = np.asarray([w.past for w in unit.windows], dtype=np.int64)
-        targets = np.asarray(unit.targets, dtype=np.int64)
+        history = np.asarray([w.past for w in windows], dtype=np.int64)
         theta = np.ldexp(origin.C.astype(np.float64), -d.output.grid_bits)
         low, high = np.zeros((node_count, N)), np.zeros((node_count, N))
         inputs = np.ldexp(origin.E[history].astype(np.float64), -d.output.grid_bits).transpose(1, 2, 0).reshape(d.input_nodes, N)
@@ -426,6 +501,14 @@ class Kernel:
         features = values[np.asarray(d.features)]
         # V<=2^20 and uint32 masters keep each integer column sum below2^52.
         totals = ArrayInterval.point(np.ldexp(origin.W.sum(axis=0, dtype=np.uint64).astype(np.float64), -d.output.grid_bits))
+        return values, features, totals, theta, history
+
+    def _bound(self, unit):
+        origin, d = unit.origin, self.definition
+        N, D, L = len(unit.targets), d.width, d.sources.context
+        node_count = d.input_nodes+len(d.nodes)
+        targets = np.asarray(unit.targets, dtype=np.int64)
+        values, features, totals, theta, history = self._forward(origin, unit.windows)
         selected = ArrayInterval.point(np.ldexp(origin.W[targets].astype(np.float64), -d.output.grid_bits)).transpose()
         normalizer = (self.base_total+reduce_rows(totals[:, None]*features)).positive()
         mass = (self.base[targets]+reduce_rows(selected*features)).positive()

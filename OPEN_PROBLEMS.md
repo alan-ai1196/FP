@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [packed token event control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
+now provides target-free prediction, every complete prefix, native/AMP state
+comparison and full-unit-only commits. It is time to integrate these into
+the actual ReferenceCompilerRuntime, including indexed causal source records,
+resource ownership, retained failures and lineage/install transitions. The
+current prefix recomputation is a correctness control; efficient batching
+still needs a proof preserving every legal intermediate Compiler access.
+Neither another readout case nor an endpoint check resolves that boundary.
+
 The [positive-readout envelope](experiments/next_token/READOUT_ENVELOPE.md)
 now removes the exhaustive label-by-context work from the conditional
 numerical predicate. It covers every coordinate with column sums/extrema,

@@ -1,0 +1,35 @@
+{
+  "status": "PASS_CAUSAL_PACKED_TOKEN_EVENT_PREFIXES",
+  "scope": "exact passive event/prefix controls; no Runtime, owned gradient-error or new CUDA bridge",
+  "events": {
+    "histories": 96,
+    "observations": 384,
+    "pre_target_label_forecasts": 768,
+    "complete_reference_gradient_coordinates": 10752,
+    "independent_commits": 144,
+    "early_commit_refusals": 480,
+    "full_unit_prediction_refusals": 288,
+    "exact_physical_primitive_calls": 49110,
+    "exact_physical_primitive_words": 289512,
+    "half_words": 41472,
+    "maximum_master_grid_distance": {
+      "E": 0,
+      "C": 0,
+      "W": 1
+    },
+    "complete_state_relations": 624,
+    "state_tolerance": "1/4",
+    "maximum_state_error_upper": "1/32",
+    "pre_target_words_equal_post_observation_columns": true
+  },
+  "bindings_and_profiles": {
+    "retained_profile_events": 4,
+    "final_source_position": 2,
+    "final_learner_cursor": 4,
+    "original_contexts_preserved": true,
+    "explicit_predecessor_cache_and_arity_refusals": 12,
+    "complete_state_relation_mutation_refusals": 7,
+    "post_target_refusals_preserve_actual_record": 2,
+    "implicit_wrong_profile_source_refuses": true
+  }
+}

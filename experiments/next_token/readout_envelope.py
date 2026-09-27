@@ -21,25 +21,39 @@ def upper(value):
 
 
 def bound(bounds, pending, kernel, contract):
-    if type(contract) is not scan.PredictionContract or type(kernel) is not amp.Kernel or type(pending) is not amp.Pending:
+    prediction = type(bounds) is ref.Prediction and type(pending) is amp.Prediction
+    observed = type(bounds) is ref.Bounds and type(pending) is amp.Pending
+    if type(contract) is not scan.PredictionContract or type(kernel) is not amp.Kernel or not (prediction or observed):
         raise ValueError('registered readout recipe, complete operands and comparison contract required')
     contract.__post_init__()
-    d, a = bounds.unit.origin.definition, kernel.a
-    if (kernel.definition != d or pending.origin.definition != d or bounds.unit.windows != pending.windows
-            or bounds.unit.targets != pending.targets or bounds.unit.origin.cursor != pending.origin.cursor
-            or bounds.unit.origin.optimizer_steps != pending.origin.optimizer_steps):
+    origin = bounds.origin if prediction else bounds.unit.origin
+    windows = (bounds.window,) if prediction else bounds.unit.windows
+    targets = () if prediction else bounds.unit.targets
+    if prediction:
+        left, right = bounds.predecessor, pending.predecessor
+        if (left.cursor != right.cursor or left.source != right.source
+                or (type(left) is ref.Bounds) != (type(right) is amp.Pending)):
+            raise ValueError('paired pre-target learner phases required')
+        if type(left) is ref.Bounds and (left.unit.windows != right.windows or left.unit.targets != right.targets):
+            raise ValueError('complete pre-target records differ')
+    d, a = origin.definition, kernel.a
+    if (kernel.definition != d or pending.origin.definition != d or windows != pending.windows
+            or targets != (() if prediction else pending.targets) or origin.cursor != pending.origin.cursor
+            or origin.optimizer_steps != pending.origin.optimizer_steps):
         raise ValueError('paired actual records, definitions and learner clocks required')
-    N, V, K, p = len(pending.targets), d.output.labels, d.output.features, d.output.grid_bits
+    N, V, K, p = len(windows), d.output.labels, d.output.features, d.output.grid_bits
     if V > 1 << 20 or p > 32 or not N or not K:
         raise EnclosureUnresolved('readout envelope word/geometry domain exhausted')
     for shape in ((V, K), (d.input_nodes+len(d.nodes), N), (K, N)):
         ref.size_check(shape, contract.element_cap)
     actual = a.raw(pending.values)
-    Z32, target32 = a.raw(pending.normalizer), a.raw(pending.target_mass)
+    Z32 = a.raw(pending.normalizer)
+    target32 = a.raw(pending.target_mass) if observed else None
     q, bases = a.raw(pending.origin.W), a.raw(kernel.base)
     if (actual.dtype != np.float16 or actual.shape != bounds.values.lower.shape or np.any(actual < 0)
             or not np.all(np.isfinite(actual)) or Z32.dtype != np.float32 or Z32.shape != (N,)
-            or np.any(Z32 <= 0) or not np.all(np.isfinite(Z32)) or target32.dtype != np.float32 or target32.shape != (N,)):
+            or np.any(Z32 <= 0) or not np.all(np.isfinite(Z32))
+            or observed and (target32.dtype != np.float32 or target32.shape != (N,))):
         raise ValueError('complete finite nonnegative half core and positive normalizer required')
     if q.dtype != np.int64 or q.shape != (V, K) or np.any(q < 0) or np.any(q > ref.WORD_MAX):
         raise ValueError('complete physical uint32-valued integer masters required')
@@ -56,8 +70,8 @@ def bound(bounds, pending, kernel, contract):
     weights = np.ldexp(rounded_q.astype(np.float64), -p).astype(np.float32)
     columns = np.ldexp(rounded_q.sum(axis=0, dtype=np.int64).astype(np.float64), -p)
     weight_max = I.point(np.ldexp(rounded_q.max(axis=0).astype(np.float64), -p))
-    native_max = I.point(np.ldexp(bounds.unit.origin.W.max(axis=0).astype(np.float64), -p))
-    delta = np.max(np.abs(rounded_q-bounds.unit.origin.W.astype(np.int64)), axis=0)
+    native_max = I.point(np.ldexp(origin.W.max(axis=0).astype(np.float64), -p))
+    delta = np.max(np.abs(rounded_q-origin.W.astype(np.int64)), axis=0)
     weight_error = I.point(np.ldexp(delta.astype(np.float64), -p))
     actual = actual.astype(np.float64)
     features = I.point(actual[np.asarray(d.features)])
@@ -104,12 +118,13 @@ def bound(bounds, pending, kernel, contract):
 
     # Bind every already-executed target cache to the fixed recipe. This
     # costs O(KN), with no evaluation of the remaining vocabulary entries.
-    labels = np.asarray(pending.targets)
     decoder = scan.Binary32Decoder(contract.exact_cell_cap)
-    excess = decoder.reduce(decoder.op('mul', weights[labels].T, features.lower.astype(np.float32)))
-    target = decoder.op('add', bases[labels], excess)
-    if target.tobytes() != target32.tobytes():
-        raise EnclosureUnresolved('executed target cache differs from the registered readout recipe')
+    if observed:
+        labels = np.asarray(targets)
+        excess = decoder.reduce(decoder.op('mul', weights[labels].T, features.lower.astype(np.float32)))
+        target = decoder.op('add', bases[labels], excess)
+        if target.tobytes() != target32.tobytes():
+            raise EnclosureUnresolved('executed target cache differs from the registered readout recipe')
     diagnostics = dict(native_error_upper=max(upper(mass_error), float(np.max(scan.absolute_upper(I.point(actual)-bounds.values)))),
         normalizer_error_upper=max(upper(abs_RZ), upper(abs_RS), upper(abs_SZ)),
         probability_error_upper=max(upper(raw_error), upper(proper_error)), division_error_upper=upper(division_error),
@@ -122,7 +137,7 @@ def bound(bounds, pending, kernel, contract):
             raise EnclosureUnresolved('complete recipe envelope unresolved: '+key)
     return dict(status='PASS_CONDITIONAL_COMPLETE_READOUT_ENVELOPE', **diagnostics,
         events=N, labels=V, covered_prediction_coordinates=V*N, readout_master_coordinates=V*K,
-        target_cache_checks=N, target_decoder_words=decoder.words, exact_rounding_cells=decoder.exact_cells,
+        target_cache_checks=N if observed else 0, target_decoder_words=decoder.words, exact_rounding_cells=decoder.exact_cells,
         unqueried_label_contexts_executed=0, balanced_depth=h,
         stored_sum_lower=tuple(float(x) for x in S.lower), stored_sum_upper=tuple(float(x) for x in S.upper),
         scope='conditional RNE32 recipe envelope for retained operands; no issued physical, state/event or Runtime bridge')

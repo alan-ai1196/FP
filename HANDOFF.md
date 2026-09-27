@@ -1,5 +1,17 @@
 # FP Handoff
 
+**Packed token execution can now express the causal event path.** The
+[prefix integration control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
+adds target-free forecasts, complete pending records/gradients, bound observe
+and full-unit-only commits. All384 events/144 independent commits pass624
+complete-state comparisons and289,512 exact physical CPU words. Pre-target
+readout envelopes and source/profile bindings pass; newly revealed targets
+survive arithmetic refusal. Existing unit regressions pass. These are passive
+components, and recomputing prefixes is not a scalable training schedule.
+Next integrate the compact state and source reader into the **existing actual
+ReferenceCompilerRuntime**, preserving ownership, every event relation and
+install/lineage semantics. No more static readout variants or GPU replay.
+
 **Positive readout algebra removes the measured all-label scan cost.** The
 [conditional envelope theorem](experiments/next_token/READOUT_ENVELOPE.md)
 uses full column sums/extrema to cover every label in O(VK+KN), keeping

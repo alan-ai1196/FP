@@ -9535,3 +9535,37 @@ binding. It issues no physical or event-state bridge and cannot certify
 arbitrary substituted output code. No GPU job, loss, commit or validation/
 test read is repeated. Proceed to complete owned event/state integration
 and ordinary text learning; do not keep extending static readout cases.
+
+## 280. Make compact token predictions target-free and retain every pending event state (2026-09-27)
+
+The batch-only kernels could not express XV's internal event obligations.
+Extract their unchanged forward arithmetic and add target-free prediction,
+source/cache-bound observation and explicit revealed prefixes. Reference
+prefixes enclose the exact native cumulative gradient; physical prefixes
+recompute the registered half/single balanced recipe from all actual records.
+Only n=N may commit with the original learning-rate/N scaling. Arithmetic
+refusal after target acquisition retains the newly revealed record.
+
+Add a complete-state predicate for one paired committed origin or one
+paired prefix. Compare every decoded master, all embedding/core gradients
+and the full readout gradient through its common row and all RNE32-corrected
+rows. This covers unobserved labels without materializing V*K gradients.
+The algebraic prediction envelope now also accepts pre-target predictions;
+it never needs a synthetic or future target to establish its bound.
+
+All96 four-token histories at unit2/4 and three initializers pass384 events,
+144 independent commits,768 exact pre-target label comparisons,10,752 native
+gradient coordinates and624 complete state relations. The small-fixture
+state bound is at most1/32 under the declared1/4 audit tolerance. The exact
+physical CPU oracle checks289,512 words, including41,472 half words. All480
+early commits and288 predictions before required commits refuse. Twelve
+cache/binding/arity attacks, seven complete-state mutations and two forced
+post-target arithmetic refusals retain the expected semantics.
+
+Four retained profile events preserve source position2 versus learnercursor4.
+A harness equality check is corrected to compare complete semantic coordinates
+rather than distinct sparse backing layouts. The original batched/reference,
+10,020-word AMP CPU schedule and readout-envelope regressions pass. No GPU,
+loss, validation/test read or new model result is added. The next task is
+actual indexed Runtime ownership; the quadratic prefix evaluator is its
+semantic control, not a claimed full-corpus training schedule.

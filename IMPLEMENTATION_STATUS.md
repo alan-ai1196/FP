@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [compact event/prefix control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
+now represents target-free prediction, each complete pending state and the
+registered full-unit commit. Its exact class is one paired committed state
+or retained prefix; no future or Runtime authority is issued. All384 events,
+144 commits,624 full-state comparisons and289,512 physical CPU words pass.
+State/cache/source mutations and premature transitions refuse; post-target
+arithmetic failures retain the new record. Actual indexed Runtime integration
+and a funded efficient event schedule remain due.
+
 The [algebraic readout envelope](experiments/next_token/READOUT_ENVELOPE.md)
 now bounds all labels through complete coefficient columns/extrema and
 outward normalization intervals, with O(VK+KN) readout work. Exact78-label

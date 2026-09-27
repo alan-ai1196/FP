@@ -165,8 +165,22 @@ class Pending:
     correction_ids: np.ndarray
     corrections: object
 
+    @property
+    def unit_count(self):
+        return len(self.targets)
+
+    @property
+    def cursor(self):
+        return self.origin.cursor+self.unit_count
+
+    @property
+    def source(self):
+        return self.windows[-1].append(self.targets[-1])
+
     def commit(self, arithmetic):
         a, old, d = arithmetic, self.origin, self.origin.definition
+        if self.unit_count != d.output.update_unit:
+            raise ValueError('only the complete registered physical update unit can commit')
         try:
             scale = a.constant(d.output.grid*d.output.learning_rate/d.output.update_unit)
             E = a.copy(old.E)
@@ -181,6 +195,22 @@ class Pending:
         except EnclosureUnresolved as error:
             error.retained_unit = self
             raise
+
+
+@dataclass(frozen=True)
+class Prediction:
+    predecessor: object
+    window: TokenWindow
+    values: object
+    normalizer: object
+
+    @property
+    def origin(self):
+        return self.predecessor.origin if type(self.predecessor) is Pending else self.predecessor
+
+    @property
+    def windows(self):
+        return (self.window,)
 
 
 class Kernel:
@@ -203,9 +233,9 @@ class Kernel:
         d, a = self.definition, self.a
         readout.natural(first)
         readout.natural(stop, positive=True)
-        if type(pending) is not Pending or pending.origin.definition != d or not first < stop <= d.output.labels:
+        if type(pending) not in (Pending, Prediction) or pending.origin.definition != d or not first < stop <= d.output.labels:
             raise ValueError('matching retained prediction and declared label block required')
-        reference.size_check((d.output.features, stop-first, len(pending.targets)), self.element_cap)
+        reference.size_check((d.output.features, stop-first, len(pending.windows)), self.element_cap)
         weights = a.transpose(a.scaled_master(pending.origin.W[first:stop], d.output.grid_bits))
         features = a.cast(pending.values[a.index(d.features)], 'float32')
         excess = a.reduce(a.mul(weights[:, :, None], features[:, None, :]))
@@ -216,6 +246,11 @@ class Kernel:
         return excess, masses, probabilities
 
     def unit(self, origin, windows, targets):
+        if type(targets) is not tuple or len(targets) != self.definition.output.update_unit:
+            raise ValueError('one complete retained source/target update unit required')
+        return self.prefix(origin, windows, targets)
+
+    def _require_origin(self, origin):
         d, a = self.definition, self.a
         if type(origin) is not State or origin.definition != d or origin.cursor % d.output.update_unit:
             raise ValueError('complete committed physical origin required')
@@ -232,8 +267,13 @@ class Kernel:
                 raise ValueError('actual same-device manual-gradient state required')
             if bool((value < 0).any()) or bool((value > reference.WORD_MAX).any()):
                 raise ValueError('physical master outside the registered word range')
-        if type(windows) is not tuple or type(targets) is not tuple or len(windows) != len(targets) or len(targets) != d.output.update_unit:
-            raise ValueError('one complete retained source/target update unit required')
+
+    def prefix(self, origin, windows, targets):
+        """Recompute the declared reduction for only the revealed prefix."""
+        self._require_origin(origin)
+        d = self.definition
+        if type(windows) is not tuple or type(targets) is not tuple or len(windows) != len(targets) or not 1 <= len(targets) <= d.output.update_unit:
+            raise ValueError('matching revealed nonempty prefix within the registered unit required')
         for window, target in zip(windows, targets):
             if type(window) is not TokenWindow or window.schema != d.sources:
                 raise ValueError('actual matching retained source points required')
@@ -249,11 +289,48 @@ class Kernel:
             error.retained_unit = (origin, windows, targets)
             raise
 
-    def _unit(self, origin, windows, targets):
+    def predict(self, predecessor, window=None):
+        if type(predecessor) not in (State, Pending):
+            raise ValueError('complete committed or pending physical predecessor required')
+        origin = predecessor.origin if type(predecessor) is Pending else predecessor
+        self._require_origin(origin)
+        if type(predecessor) is Pending and predecessor.unit_count >= self.definition.output.update_unit:
+            raise ValueError('physical learner must commit its full unit before another prediction')
+        window = predecessor.source if window is None else window
+        if type(window) is not TokenWindow or window.schema != self.definition.sources:
+            raise ValueError('complete matching source point required')
+        window.__post_init__()
+        values, features, totals, _, _, _ = self._forward(origin, (window,))
+        normalizer = self.a.add(self.base_total, self.a.reduce(self.a.mul(totals[:, None], features)))
+        if bool((normalizer <= 0).any()):
+            raise EnclosureUnresolved('physical prediction normalizer lost positivity')
+        return Prediction(predecessor, window, values, normalizer)
+
+    def observe(self, predecessor, prediction, target, *, window=None):
+        if type(prediction) is not Prediction or prediction.predecessor is not predecessor:
+            raise ValueError('prediction must belong to the complete current physical predecessor')
+        origin = predecessor.origin if type(predecessor) is Pending else predecessor
+        windows = predecessor.windows if type(predecessor) is Pending else ()
+        targets = predecessor.targets if type(predecessor) is Pending else ()
+        actual_window = predecessor.source if window is None else window
+        try:
+            expected = self.predict(predecessor, actual_window)
+        except EnclosureUnresolved as error:
+            error.retained_unit = (origin, windows+(actual_window,), targets+(target,))
+            raise
+        if prediction.window != expected.window or any(
+                getattr(prediction, field).dtype != getattr(expected, field).dtype
+                or getattr(prediction, field).shape != getattr(expected, field).shape
+                or self.a.raw(getattr(prediction, field)).tobytes() != self.a.raw(getattr(expected, field)).tobytes()
+                for field in ('values', 'normalizer')):
+            raise ValueError('prediction differs from its actual source point or physical cache')
+        return self.prefix(origin, windows+(expected.window,), targets+(target,))
+
+    def _forward(self, origin, windows):
         d, a = self.definition, self.a
-        N, L, D = d.output.update_unit, d.sources.context, d.width
+        N, L, D = len(windows), d.sources.context, d.width
         count = d.input_nodes+len(d.nodes)
-        history, labels = np.asarray([w.past for w in windows]), np.asarray(targets)
+        history = np.asarray([w.past for w in windows])
         theta = a.cast(a.scaled_master(origin.C, d.output.grid_bits), 'float16')
         values = a.zeros((count, N), 'float16')
         embedded = a.cast(a.scaled_master(origin.E[a.index(history)], d.output.grid_bits), 'float16')
@@ -269,6 +346,14 @@ class Kernel:
         features = stored[a.index(d.features)]
         integer_totals = origin.W.sum(dim=0) if a.cuda else origin.W.sum(axis=0, dtype=np.int64)
         totals = a.scaled_master(integer_totals, d.output.grid_bits)
+        return values, features, totals, theta, stored, history
+
+    def _unit(self, origin, windows, targets):
+        d, a = self.definition, self.a
+        N, L, D = len(targets), d.sources.context, d.width
+        count = d.input_nodes+len(d.nodes)
+        labels = np.asarray(targets)
+        values, features, totals, theta, stored, history = self._forward(origin, windows)
         selected = a.transpose(a.scaled_master(origin.W[a.index(labels)], d.output.grid_bits))
         normalizer = a.add(self.base_total, a.reduce(a.mul(totals[:, None], features)))
         mass = a.add(self.base[a.index(labels)], a.reduce(a.mul(selected, features)))
