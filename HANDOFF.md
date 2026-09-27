@@ -1,5 +1,12 @@
 # FP Handoff
 
+The five prepared research commits below are now reconciled with main's
+first-model scope and baseline conventions on research/token-text-ready in
+F:\FP-encoder-work. Only documentation changed during that merge. After the
+original A1 is terminal, preserve its journal and integrate this prepared
+branch; its individual research commits remain intact. The executing source
+is still e3faaf5. Do not launch another device worker while A1 remains live.
+
 **Complete CUDA frames now have an implemented lossless shared lowering.**
 The [frame proof and fixed full-unit preregistration](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 preserve every header, record and padding byte before one paid root relocation.
