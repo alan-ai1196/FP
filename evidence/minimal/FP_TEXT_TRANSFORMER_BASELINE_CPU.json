@@ -1,0 +1,25 @@
+{
+  "status": "PASS_CPU_TRANSFORMER_COMPARISON_CONTROL",
+  "upstream_commit": "3adf61e154c3fe3fca428ad6bc3818b27a3b8291",
+  "scope": "fresh standard architecture, training/report contexts and full-alphabet losses; no corpus score, chosen model budget or GPU result",
+  "shifted_training_blocks": 4,
+  "upstream_logits_and_all_parameter_gradients_match": true,
+  "input_only_pad_trains_without_output_mass": true,
+  "causal_attention_prefixes": 36,
+  "past_only_report_windows": 19,
+  "report_batch_sizes": [
+    1,
+    3,
+    8,
+    32
+  ],
+  "reporting_parameters_unchanged": true,
+  "ordinary_adamw_update_checked": true,
+  "full_vocabulary": 50257,
+  "full_vocabulary_normalized_rows": 7,
+  "malformed_inputs_refused": 5,
+  "numerical_control_dtype": "float64",
+  "corpus_bytes_read": 0,
+  "cuda_initialized": false,
+  "strongest_baseline_or_language_quality_claim": false
+}

@@ -1,5 +1,14 @@
 # FP Handoff
 
+The [standard Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
+now passes its CPU float64 control. It retains the pinned upstream model and
+AdamW, uses the full predicted alphabet with an input-only PAD row, and makes
+offline block training versus rolling frozen reporting contexts explicit.
+Upstream logits/all gradients, causal reads, reporting invariance and full-V
+normalization pass. No corpus, GPU job or model budget is opened/selected.
+This adapter control is closed; actual FP feasibility and the fixed reporting
+device audit still determine the next empirical text preregistration.
+
 **The resource fixture's model class is now explicit; do not silently promote it.**
 The [frozen-head/context audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
 proves that its eight-feature positive head is a mixture of at most nine

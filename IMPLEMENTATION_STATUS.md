@@ -1,5 +1,11 @@
 # FP Implementation Status
 
+The [Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
+is available outside FP Runtime, with pinned upstream source and CPU float64
+context/output/gradient checks. It initializes from scratch and retains
+ordinary AdamW. It is not a trained baseline or a selected experiment budget;
+no corpus or device result is supplied by this control.
+
 The [text model-scope audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
 checks the current full-vocabulary resource fixture without opening corpus
 files. Its pure model factory now precedes the unchanged data-reading helper.

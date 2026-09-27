@@ -96,6 +96,13 @@ and disclose residual differences instead of claiming every coordinate is
 simultaneously equal. Perplexities on different tokenizations or corpus
 constructions cannot be treated as the same prediction space.
 
+The [standard Transformer adapter](baselines/TRANSFORMER.md) is implemented
+and passes CPU float64 controls for upstream logits/gradients, shifted training
+blocks, rolling frozen contexts and the full output alphabet. It uses a pinned
+unmodified nanoGPT model with one input-only PAD row. This supplies no chosen
+model size, corpus score, adequate-training claim or device result. Its control
+is closed; choose and preregister a competitive run after actual FP feasibility.
+
 ## Next executable boundary
 
 The [actual Runtime source control](OWNED_SOURCE_CONTROL.md) now establishes

@@ -10098,3 +10098,39 @@ implications are in experiments/next_token/FROZEN_READOUT_CAPACITY.md;
 minimal evidence is FP_FROZEN_READOUT_CAPACITY.json. This scope audit is now
 closed. Continue actual reporting qualification and feasible text-model/
 baseline preregistration, not another capacity or precision catalog.
+
+
+## 294. Prepare the ordinary-text Transformer comparison without selecting a weak run (2026-09-27)
+
+While the original FP retention A1 continues under its fixed contract, the
+ordinary-text baseline now has a concrete CPU-tested adapter. The model source
+is unmodified nanoGPT at 3adf61e154c3fe3fca428ad6bc3818b27a3b8291, retained with
+its license. The adapter uses the same hidden computation, initialization,
+tied output weights and ordinary AdamW groups. An additional input-only PAD
+row represents an empty file prefix; only the V real rows enter the output
+projection and either training or reporting normalization. No pretrained or
+historical baseline weights enter the adapter.
+
+The data conventions are explicit. Ordinary shifted blocks expose increasing
+within-block contexts during offline training; these are not retrospectively
+called a chronological prequential baseline. Frozen reports use every target's
+rolling past-only context, including file-initial short contexts, and never
+reset at EOT or batching boundaries. Targets are read only after their input
+windows are constructed and forecast. Actual logits are normalized in float64
+over the complete target alphabet. These baseline numerical checks grant no
+FP exact/AMP bridge or Runtime certificate.
+
+CPU float64 controls match the upstream logits, loss and every parameter
+gradient with the input-only output row excluded. They check 36 attention
+prefixes, 19 past-only reporting windows, four report batch sizes, unchanged
+reporting parameters, an AdamW update and seven full-50,257-label normalized
+forecasts. The test does not open a corpus or initialize CUDA. Evidence is
+FP_TEXT_TRANSFORMER_BASELINE_CPU.json; the implementation/conventions are in
+experiments/next_token/baselines/TRANSFORMER.md.
+
+Model size, adequate training, tuning allowance and the resource comparison
+are deliberately still coordinates of the forthcoming real preregistration,
+not inferred from this synthetic control. A tuned smoothed n-gram remains
+required alongside the competitive Transformer. The adapter control is
+closed. No new architecture/precision catalog or extra FP semantic action is
+introduced, and the executing e3faaf5 source remains unchanged.
