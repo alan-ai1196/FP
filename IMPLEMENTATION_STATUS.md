@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [text model-scope audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+checks the current full-vocabulary resource fixture without opening corpus
+files. Its pure model factory now precedes the unchanged data-reading helper.
+The exact mixture/loss-floor controls, conditional CPU roundoff checks and
+the updating-head counterexample pass. No Runtime execution or model graph
+changes are made for this result. The resource fixture is still unscored and
+does not by itself select a useful language model.
+
 The [terminal frozen-token reporting path](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 is implemented and passes exact/CPU controls. Constructor registration binds
 one declared reporting stream; owned forecasts retain its original source

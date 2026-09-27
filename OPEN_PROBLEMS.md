@@ -1,5 +1,12 @@
 # FP Open Problems
 
+The [current model's scope](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+is now resolved: a pooled/newest-token core, a narrow positive mixture head
+and no authority to erase ordered history. Do not extend this into another
+capacity/precision catalog. Choose the actual text model and strong baselines
+from feasible measured budgets, and state these class restrictions. A frozen
+head's entropy floor must not be applied to an updating prequential run.
+
 The [fixed-incumbent reporting boundary](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 now has a proof and exact/CPU implementation checks. Its next step is the
 already specified two-worker actual-device audit after the active retention

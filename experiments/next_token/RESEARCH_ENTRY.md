@@ -42,6 +42,13 @@ The immediate scientific question is whether a completely specified native
 positive SUM/PRODUCT learner can learn useful conditional text structure
 from ordinary teacher-forced next-token loss under declared resources.
 Report loss and cost against competitive baselines, including failure.
+The [model-scope audit](FROZEN_READOUT_CAPACITY.md) makes two limitations of
+the current resource fixture explicit: it retains the newest token plus a
+pooled older context, and its frozen K-feature positive readout lies in a
+K+1-component mixture class. Its native finite-tape CE is at least empirical
+target entropy minus log(K+1); the registered rounded readout has a proved
+small loss allowance. This is not an online-training or whole-FP bound.
+The resource fixture has not thereby been selected as a language model.
 If structure is supplied by initialization, say so; if a constructor proposes
 structure, expose the actual class, acquired information and search outcome.
 

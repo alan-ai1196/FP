@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+The [frozen positive-head capacity bound](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+is **PROVED** for the specified readout: mean CE >= H(empirical targets)-log C
+>= H(empirical targets)-log(K+1), where C is the sum of componentwise maxima.
+The registered half/single recipe has a **PROVED CONDITIONAL** roundoff loss
+allowance. The current resource graph's pooled/newest-token factorization is
+checked exactly. The whole-updating-run extension is **FALSIFIED** by a legal
+exact U; current forecast equality also fails as a future-state quotient.
+No corpus score, selected model, universal FP lower or GPU authority follows.
+
 The [frozen-token reporting argument](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 is **PROVED CONDITIONALLY** for the closed owned interface: reporting preserves
 the committed native/physical learner, derives proper-mass log-loss bounds,

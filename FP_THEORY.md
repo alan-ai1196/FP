@@ -565,6 +565,13 @@ and full-vocabulary exact control grant no AMP, Runtime or complete-Compiler
 equivalence. This is an execution refinement for the ordinary-text study;
 Foundation, ERC-1 and semantic architecture actions remain unchanged.
 
+The [frozen token readout scope](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+also gives the algebraic K+1-mixture identity and finite-report loss floor
+H(empirical targets)-log(K+1), with a conditional rounded-recipe allowance.
+The bound concerns a fixed head, not an updating run or the entire FP grammar.
+The current resource fixture's newest-token/pooled-context restriction is
+explicit; no ordered source history is erased or useful language model selected.
+
 The [passive native token composition](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 now joins indexed lag/token SUMs, an arbitrary positive core and that readout
 under complete existing SGD. Exact small native trajectories include every

@@ -1,5 +1,18 @@
 # FP Handoff
 
+**The resource fixture's model class is now explicit; do not silently promote it.**
+The [frozen-head/context audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+proves that its eight-feature positive head is a mixture of at most nine
+fixed output distributions. Frozen native CE is at least empirical target
+entropy minus log9; the registered AMP recipe adds a small derived allowance.
+The initial head's sharper log C is0.4964352636 nats, not a learned/model score.
+Its core retains the newest token plus pooled context and cannot learn the
+ordering of older tokens at a fixed prediction. Full source order still
+matters to future appends and remains retained. An exact updating-U example
+disproves applying the frozen-head floor to an entire training run. The
+scope audit is closed; no corpus is opened, graph changed or new device job
+started. Use these limits in the first text preregistration after feasibility.
+
 **Frozen-model token reporting now passes its exact/CPU boundary.**
 The [reporting proof and fixed next device audit](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 bind a preregistered validation/test stream to the actual committed incumbent,

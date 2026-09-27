@@ -10047,3 +10047,54 @@ After its original terminal result, integrate the prepared changes, execute
 the fixed reporting boundary once and return to affordable text training with
 strong fresh baselines. No new relation variant, Foundation action, erased
 continuation information or broader completeness certificate is introduced.
+
+
+## 293. Audit the model class before promoting the text resource fixture (2026-09-27)
+
+The resource fixture remains unscored and is not automatically a selected
+language model. Its actual four SUMs pool all512 embedded lags; its four
+PRODUCTs multiply those pools by a coordinate of the newest token. The
+newest-token parent is not another pooled mean. For every parameter value,
+older-token permutations preserving the newest token and window multiset
+have identical current native forecasts. They can have different forecasts
+after the same appended token, so this invariance does not authorize a
+history/state quotient. The full-vocabulary exact control verifies both the
+invariance and its future-visible limitation without opening corpus data.
+
+The existing positive K-feature head is exactly a convex combination of
+the normalized fixed base and its nonzero normalized weight columns.
+For M_y equal to the largest component probability of y, C=sum_y M_y lies
+between1 andK+1, and every context has p_y<=M_y. Hence frozen finite-tape
+CE >= H(empirical targets)+KL(empirical targets || M/C)-log C
+>= H(empirical targets)-log(K+1). At K8 the coarse allowance is log9, about
+2.197225 nats. The actual initialized head has C about1.642854477 and log C
+about0.496435264 nats; that initial constant does not constrain later W.
+Empirical entropy is an oracle diagnostic, not a feasible replacement for
+strong trained baselines. No corpus entropy or quality score is computed.
+
+For the current half/single recipe, a nonzero decoded master weight is at
+least2^-32 and a nonzero half feature at least2^-24. Products therefore
+cannot underflow in binary32. Positivity and the balanced addition depth
+give a relative mass sandwich with factors (1+-2^-24)^(ceil(log2 K)+2).
+After proper mass normalization the frozen-head loss floor weakens by at
+most their log ratio, about5.9604645e-7 nats at K8. This uses the actual
+rounded operands; it supplies neither native/AMP learner equality nor an
+exact physical rank claim. Existing Runtime/GPU ownership remains required.
+
+The tempting whole-updating-run extension is false. With one constant
+feature, three positive bases, zero Gamma, eta16, unit1 and grid2^-16, native
+projected SGD on three256-token constant-label blocks has certified mean
+prequential CE0.190088570275 nats. The invalid whole-run frozen floor would
+be log(3/2), about0.405465108108. This is a necessary-premise counterexample
+using the existing native U, not a fresh model/task experiment or Runtime
+certificate.
+
+Exact evidence exhausts729 small integer heads,19683 pointwise bounds and
+2187 empirical inequalities,60 CPU recipe cases/180 labels, the full current
+initializer and768 updating events. The model factory is factored out of
+the corpus reader; its complete definition/masters equal the prior factory
+prefix. Nothing in the running e3faaf5 A1 is changed. The proof and experiment
+implications are in experiments/next_token/FROZEN_READOUT_CAPACITY.md;
+minimal evidence is FP_FROZEN_READOUT_CAPACITY.json. This scope audit is now
+closed. Continue actual reporting qualification and feasible text-model/
+baseline preregistration, not another capacity or precision catalog.
