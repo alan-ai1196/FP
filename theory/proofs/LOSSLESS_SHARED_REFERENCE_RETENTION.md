@@ -373,3 +373,39 @@ from this original device outcome. Execute the already fixed reporting audit,
 then preregister the integrated executor's full unit under unchanged limits.
 The successful small storage control is closed. No model score, whole-corpus
 feasibility, erased state or Foundation change follows from this outcome.
+
+## 10. Fixed A2: the same full unit with the integrated implementation
+
+The reporting gate subsequently passes both workers at8adf9af. The next
+attempt is now fixed in `scripts/run_shared_cuda_retention_a2.py`, with a new
+exclusive journal `FP_SHARED_CUDA_RETENTION_A2.json`. Only the full-unit
+worker runs; the successful small/profile/fault controls are not repeated.
+The launcher requires the canonical worktree, clean committed source, the
+original A1 timeout and the terminal successful reporting gate.
+
+This uses the same `audit_shared_cuda_retention.py` full-unit worker, with
+the same registered1,024 training bytes, V=50,257, context512, width4,
+features8,603,092 masters, Gamma, U and one512-event unit. The model-factory
+extraction is byte/equality checked by the earlier scope audit; no model,
+training target, primitive schedule or numerical predicate is changed.
+Only the already integrated implementation is new, principally the
+byte-preserving traversal from section8. The integrated reporting path is
+unused in this worker. No isolated optimization timing claim is preregistered.
+
+All section7 full-worker limits remain:16-GiB host, four hours, one1-GiB
+arena/reservation,2-GiB reference payload,64-MiB full frames,2^22 output cells,
+state tolerance16, probability/division1e-6, exact-cell cap4096 and the same
+shared-storage/work/range allowances. The launcher imports the original cap
+table and requires equality with the retained A1 journal. It does not extend
+the old run, raise its limits, shrink the unit, omit an internal relation,
+retire an old tensor or substitute a native endpoint for the physical learner.
+
+Success requires1,026 checked phases,512 owned observations, one independent
+native/AMP commit, no pending records, every original unit record retained,
+the complete current-state relation and unchanged actual/lifetime allocator
+history. The new journal retains the original child/result or bounded last
+progress on failure. It is exclusive and terminal; no automatic replay.
+On any uncertainty or budget refusal the unit remains unresolved. No corpus
+quality score, general feasibility result or completeness certificate is
+inferred. After the actual result, follow the remaining measured obstruction
+toward meaningful ordinary-text training; do not add control variants.

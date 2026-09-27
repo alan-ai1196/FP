@@ -1,5 +1,11 @@
 # FP Implementation Status
 
+Shared-retention A2 is fixed in `scripts/run_shared_cuda_retention_a2.py` and
+the retention proof's section10. It uses only the original full-unit worker
+under unchanged model, caps and tolerances with the integrated implementation.
+Its own FP_SHARED_CUDA_RETENTION_A2.json records the actual process/outcome;
+the old timeout and both reporting passes remain terminal and separate.
+
 The [modified Kneser–Ney baseline path](experiments/next_token/baselines/NGRAM.md)
 has a pinned native Windows build and a tested full-alphabet C++ reporter.
 The actual upstream estimator, unquantized trie and independent float64 ARPA

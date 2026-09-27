@@ -1,5 +1,15 @@
 # FP Handoff
 
+**A2 is fixed under the original full-unit limits.**
+`scripts/run_shared_cuda_retention_a2.py --run` executes only the original
+512-event full-vocabulary worker with the integrated implementation. Its new
+journal is FP_SHARED_CUDA_RETENTION_A2.json. All A1 model/resource/numerical
+limits remain unchanged, including the four-hour deadline. The original
+timeout and both passed reporting jobs stay terminal. Inspect the new journal
+before any launch; never start a duplicate or replay a completed control.
+Its journal and actual process/progress determine whether it is unstarted,
+running or terminal; a slow progress observation never authorizes a restart.
+
 **The original full token unit timed out; its result is preserved.**
 Shared-retention A1 at e3faaf5 ended at its original four-hour deadline.
 The last completed checkpoint contains320 observations and641 checked phases;

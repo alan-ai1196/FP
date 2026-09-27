@@ -10223,3 +10223,10 @@ complete Compiler release. This closes the reporting control branch. The
 next experiment addresses the observed full-unit execution cost with the
 integrated byte-preserving writer under unchanged model, caps and numerical
 tolerances. Strong real-text comparisons remain the scientific destination.
+
+The next full-unit A2 is preregistered in the retention proof's section10 and
+scripts/run_shared_cuda_retention_a2.py. It runs only the unchanged full-unit
+worker and compares its cap table with the preserved original A1 registration.
+All original model, source-prefix, numerical, host/arena/payload and four-hour
+limits remain fixed. It uses a new exclusive journal, not the old attempt or
+a repeat of the passed small controls. No outcome or speedup is assumed.

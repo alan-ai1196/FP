@@ -1,5 +1,12 @@
 # FP Open Problems
 
+The immediate execution is the separately registered shared-retention A2,
+using the integrated writer and the original full-unit model/resource limits.
+Inspect its own journal and actual process before any action. This addresses
+the observed A1 time boundary without replaying its successful small control.
+Follow its actual outcome toward affordable text training; no extra storage,
+reporting, capacity or precision control catalog is due.
+
 The [current model's scope](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
 is now resolved: a pooled/newest-token core, a narrow positive mixture head
 and no authority to erase ordered history. Do not extend this into another
