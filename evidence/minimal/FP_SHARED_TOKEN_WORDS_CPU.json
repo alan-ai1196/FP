@@ -1,0 +1,18 @@
+{
+  "status": "PASS_FRESH_TOKEN_IMAGE_SHARING_CPU",
+  "histories": 48,
+  "compared_complete_phases": 544,
+  "identical_canonical_bytes": 24368238,
+  "identical_fresh_read_calls": 203394,
+  "identical_fresh_read_bytes": 4030344,
+  "aggregate_unique_state_payload_bytes_without_sharing": 214320,
+  "aggregate_unique_state_payload_bytes_with_sharing": 109748,
+  "changed_payload_fields_preserved": 31,
+  "metadata_and_mutable_hint_cases": 6,
+  "signed_zero_distinguished": true,
+  "actual_array_mutation_refusals": [
+    "master",
+    "leaf"
+  ],
+  "scope": "exact CPU phase-logic/storage control; no CUDA/whole-host/runtime-certificate/throughput/model claim"
+}

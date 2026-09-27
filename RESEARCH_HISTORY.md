@@ -10230,3 +10230,158 @@ worker and compares its cap table with the preserved original A1 registration.
 All original model, source-prefix, numerical, host/arena/payload and four-hour
 limits remain fixed. It uses a new exclusive journal, not the old attempt or
 a repeat of the passed small controls. No outcome or speedup is assumed.
+
+
+## 298. Share equal host images without replacing fresh physical reads (2026-09-27)
+
+While the fixed A2 runs unchanged at307251e, a separate branch removes one
+source of repeated retained host strings. Complete fresh physical captures
+still happen, and only exactly equal immutable master/prepared/leaf payload
+bytes share their predecessor's storage. Every metadata field, canonical
+record, clock and check remains. No device tensor is retired or reused.
+The proof and exact payload scope are in section11 of
+theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md.
+
+The complete phase executor with a CPU array backend preserves all544 phase
+encodings/24,368,238 bytes across48 histories, with all203,394 fresh read calls
+and4,030,344 read bytes unchanged. The aggregate unique retained StateWords
+payload falls from214,320 to109,748 bytes in this control. All31 independently
+altered payloads remain altered; mutable hints, metadata and signed zeros
+are preserved. Actual master/leaf changes still produce the same refusal
+and complete changed failure record. The owned frozen-report phase regression
+passes. Evidence is FP_SHARED_TOKEN_WORDS_CPU.json; there is no GPU, corpus,
+whole-host saving, throughput or model-quality claim. Integrate only after
+A2 is terminal; no new audit job or control variant is registered.
+
+
+## 299. Separate token continuation roots from cumulative device allocation (2026-09-27)
+
+A source-level sufficient-root argument follows the actual token Runtime's
+current/staged/predicted maps, named resident arrays and predecessor links.
+It keeps all new phase outputs through checking/capture/retention, and all
+unsealed failed-attempt allocations remain pinned. Historical phase words
+and resource identities stay. This is a prerequisite for physical reuse,
+not permission to reset the current arena or to skip fresh reads.
+
+The synthetic full-vocabulary two-unit trace checks42,985,243 array inputs
+across2,055 phases. Cumulative padded allocation is834,873,456 bytes, while
+the sufficient root set peaks at16,515,368 and phase coexistence at33,718,200.
+No corpus or GPU is read, no memory is reused, and no layout/whole-host/time
+bound is inferred. The initial over-broad CPU probe was stopped without a
+result; the completed probe reads all named arrays without repeatedly
+reconstructing the model definition. A2 was never interrupted or changed.
+
+CPU tensor views reproduce the stale-view error that would occur if the
+current spatial guard were combined with reuse. The present append-only
+arena remains sound under its stated premise. A passive exact-object
+generation table rejects stale aliases/rebinding, passes27 tensor refusals,
+3,125 action histories and two metadata-failure controls, and initializes
+no CUDA context. It supplies no allocator or Runtime authority.
+
+The proof and limits are theory/proofs/TOKEN_CONTINUATION_STORAGE.md;
+minimal evidence is FP_TOKEN_STORAGE_LIVENESS_CPU.json and
+FP_ARRAY_GENERATIONS_CPU.json. The evidence supports one owned reusable
+implementation as a route toward sustained text training, not more passive
+variants. A2's fixed source and registration remain separate and unchanged.
+
+
+## 300. A public token snapshot can falsify an owned physical loss (2026-09-27)
+
+While preparing continuation-safe device reuse, the immutable-history premise
+failed inspection: token phases had frozen outer dataclasses but writable
+relation/plan mappings. The complete Runtime logic with a CPU array/device
+substitution confirms a counterexample at a7d2232. Writing only the public
+snapshot's normalization bounds produces COMPLETE_REPORT with physical loss
+[0,0] for actual probability8422541/21007274. Both plain/shared retention
+are affected; sealed historical bytes stay intact but disagree with the live
+phase. No private state access or tensor mutation is required.
+
+Token phase publication now detaches/freezes those mappings, and reporting
+uses the freshly checked readout's own normalization witness. Two historical
+reproductions and six corrected Runtime cases pass, including retained
+producer mutation. All48 corrected frames/1,843,572 body bytes match the
+public immutable phases and preserve their original encoding. The physical
+loss encloses an independent Decimal90 calculation. Exact/CPU reporting and
+all544 shared-word phases still pass. Evidence and the scoped invariant are
+FP_TOKEN_SNAPSHOT_BOUNDS_CPU.json and FROZEN_TOKEN_REPORTING.md section7.
+
+This refutes the old implemented passive-snapshot assertion, not the
+conditional loss theorem or Foundation. Earlier device reports retain their
+finite declared scope; corrected device execution is not yet tested. A2
+remains untouched at307251e and does no reporting. No reuse is implemented.
+Integrate only after A2 terminates and return to its measured text-training
+frontier; no new static or relation branch is opened.
+
+
+## 301. Implement token reuse through owner seals and continuation roots (2026-09-27)
+
+The passive liveness result now has an optional complete Runtime lowering.
+One fixed backing allocation is subdivided into buddy blocks. Successful
+complete frame retention grants a seal; collection at the next paid phase
+entry keeps current/staged/predicted transitive roots and all failed/unsealed
+allocations. Every view is generation-bound before numeric use or readback.
+Retirement invalidates old aliases, retains its full metadata and cannot
+resurrect historical phase authority. Native updates and all phase words stay.
+
+The exact occupied sum is8 bytes per retained header plus the live buddy
+blocks. Each block costs less than twice its eight-byte-padded request. This
+is not a fit bound: fragmentation can still cause UNRESOLVED, and the full
+backing allocation remains charged. Neither actual/lifetime CUDA counters
+nor the cache are reset. Whole-host/history costs and elapsed time remain.
+
+CPU execution uses the actual Torch array path, arena/view logic, Runtime
+and sealed frame/reporting code with only device binding/counters substituted.
+Thirty-six paired histories preserve602 complete phases/24,380,806 bytes and
+all scores, with62,386 actual generation retirements. A16-event/eight-unit
+control completes45 phases in8 KiB (5,096-byte live peak), matching an
+append-only104,904-byte execution. All3,125 small allocation/free histories,
+15,625 partition checks, stale-view writes/reads and four target-retaining
+failure boundaries pass. Existing token regressions still pass.
+
+Evidence is FP_OWNED_TOKEN_REUSE_CPU.json; the proof and limits are in
+TOKEN_CONTINUATION_STORAGE.md. No CUDA context, corpus or full-V fit is
+involved. A2 stays fixed at307251e. Actual device qualification follows its
+terminal outcome; stop passive storage variants and continue toward affordable
+ordinary next-token training. Foundation/ERC and the relation closure stand.
+
+
+## 302. Fix the first actual reuse qualification before device outcomes (2026-09-27)
+
+OWNED_TOKEN_REUSE.md and scripts/run_token_reuse_cuda_a1.py preregister two
+bounded workers after canonical integration and original A2 termination.
+The first completes16 synthetic training events/eight units and two reports
+in an8-KiB arena; the second retains an unsealed post-target failure. Both
+require unchanged lifetime allocator history and stale-view refusal. Caps
+are4-GiB host,2-MiB allocator reservation,256-MiB reference payload and180s.
+
+The exact proposed worker branches pass CPU substitution with45/8 retained
+phases and19,164/3,351 checked array words. The shorter failed trace had
+retired its saved forecast but had not overwritten that entire interval;
+its initial pre-device assertion was corrected to require actual reuse
+elsewhere and stale-view refusal. The longer trace requires both for the
+same saved view. No GPU job is launched and no A2 source is changed.
+
+The new launcher refuses a running/nonterminal A2, a dirty/noncanonical tree
+or an existing reuse journal. All old jobs stay terminal. This registration
+does not select another full-vocabulary experiment or a language-study budget;
+that decision follows A2's actual evidence and the affordable-learning goal.
+
+
+## 303. Measure the retention cost of an ordinary token event (2026-09-27)
+
+A stage-separated CPU diagnostic uses the existing full-V registration and
+only its previously registered first1,024 training bytes at implementation
+59fea46. It imports no Torch and completes three retained phases at cursor1.
+Initialization takes12.3991 unprofiled seconds; instrumented prediction and
+observation take15.8790/15.7076 seconds and65.1/63.7 million recorded calls.
+The disjoint shared allocation/sealing calls consume65.12% of that combined
+profiled time. Canonical sizing, emission and comparison are leading costs;
+the hypothesis that program hashing dominates is not supported by this trace.
+
+The original bounded CPU job exits successfully with375,259,136 bytes peak
+commitment. Evidence is FP_TOKEN_PHASE_COST_CPU.json and the scope is
+experiments/next_token/CPU_PHASE_COST.md. Instrumentation and device
+substitution prevent a GPU latency, speedup, later-prefix or whole-training
+claim. No new optimization or full-V run is supplied. A2's process/source stay
+unchanged; preserve its result, qualify the prepared reuse lowering, then
+follow the measured ordinary-text constraint with complete evidence intact.

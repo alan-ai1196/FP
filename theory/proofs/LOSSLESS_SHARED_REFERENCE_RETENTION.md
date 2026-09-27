@@ -409,3 +409,67 @@ On any uncertainty or budget refusal the unit remains unresolved. No corpus
 quality score, general feasibility result or completeness certificate is
 inferred. After the actual result, follow the remaining measured obstruction
 toward meaningful ordinary-text training; do not add control variants.
+
+## 11. Equal immutable state images need not have separate host byte strings
+
+This bounded CPU preparation was made while A2 ran at307251e. It is **not
+part of A2's source** and supplies no new device outcome. It addresses the
+repeated host byte images visible in retained phase records, not the wall
+time of the running attempt or the liveness of CUDA allocations.
+
+Let a fresh complete `StateWords` capture be F and an already retained
+predecessor image be R. For selected byte fields, substitute R's byte string
+only when it is an exact immutable `bytes` object and compares equal to F's
+fresh string. Preserve every other field from F. Then the resulting image
+has exactly F's canonical encoding. This follows field by field from byte
+equality: no source, target, clock, shape, dtype, incidence, forest topology
+or basis is inferred from R. In particular, a changed physical word remains
+changed even when a previous image is available. Identical payloads under
+different metadata may share storage without sharing that metadata. Signed
+zeros remain distinguished by their bytes.
+
+`share_state_bytes` applies this rule only after the existing complete
+`result.raw()` capture, including on failed phases. It shares the three
+master buffers, prepared-array bytes and the seven array payloads of old
+leaves with the retained input phase. All pre-transition, primitive,
+CPU-reference, numerical-relation and post-transition reads/checks remain.
+All metadata still come from the fresh capture and all record identities
+remain distinct; forests,
+current basis, operation records and CUDA residents are unchanged. There is
+no global dictionary, lookup by digest, mutable-array alias or trust in a
+hint's shape/dtype. Unshared fresh data remain authoritative.
+
+For a successful single-candidate trajectory whose masters change only at
+commits, let M be the total master-image byte size,
+J the number of commits and P the number of retained phase states. Unchanged
+masters within a unit now contribute at most (J+1)M distinct retained string
+bytes instead of PM. Each selected leaf payload can similarly reuse its
+first retained string throughout subsequent prefixes of that unit. This is
+a **bound on these immutable payloads**, not on the whole host or even the
+whole StateWords object graph. Prefix containers still grow, and unchanged
+canonical records still contain every repeated occurrence. The fresh full
+capture and old images coexist before substitution; readback, serialization,
+CPU arithmetic, host enforcement and all existing resource tariffs remain.
+No CUDA extent is released or reused. The result proves no sustained-training
+budget, full-unit speedup or smaller reference-payload certificate.
+Failure records containing changed masters remain additional distinct data;
+the successful-trajectory bound does not erase or bound those failures.
+Python byte-string identity supplies no learner, source or ownership identity:
+all such authority stays with the original typed records and explicit IDs.
+
+`scripts/audit_shared_token_words.py` compares sharing enabled/disabled through
+the complete phase logic with a CPU array backend: all48 binary histories
+of length4 at update units1,2,4,544 phases and24,368,238 canonical bytes agree.
+All203,394 actual-backend read calls and4,030,344 read bytes also agree, in
+order. Across these histories, unique retained StateWords byte payloads fall
+from214,320 to109,748 bytes (not a whole-host measurement). Altering each of31
+payload fields is preserved; six metadata/mutable-hint controls and the
+signed-zero control pass. Actual CPU master and old-leaf mutations are
+refused with identical changed failure records and unchanged old snapshots.
+The existing owned frozen-report phase control also passes its eight checked
+phases and three refusals. Minimal evidence is FP_SHARED_TOKEN_WORDS_CPU.json.
+
+This closes the host-image sharing change. It must be integrated only after
+A2 terminates. Do not use it to reinterpret that run, skip fresh readback,
+retire arrays or open another storage-control catalog. The next decision
+continues to depend on actual full-unit feasibility and useful text training.

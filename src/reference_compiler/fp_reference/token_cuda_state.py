@@ -4,7 +4,7 @@ Each origin is encoded once per state. Leaves refer to it by the enclosing
 state, rather than serializing another full model for every observed event.
 Prepared operands, all leaf words, all forest blocks and current basis stay.
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import math
 import numpy as np
 
@@ -142,6 +142,42 @@ class StateWords:
         return amp.Pending(p.origin, p.windows, p.targets, np.concatenate([leaf.values for leaf in p.leaves], axis=1),
             np.concatenate([leaf.normalizer for leaf in p.leaves]), np.concatenate([leaf.target_mass for leaf in p.leaves]),
             b.embedding_ids, b.embedding, b.core, b.common, b.correction_ids, b.corrections)
+
+
+def share_state_bytes(fresh, retained):
+    """Share equal immutable payloads only AFTER a complete fresh capture.
+
+    The retained image is a storage hint, never a source of numerical words.
+    Every field/shape/dtype/clock comes from fresh; bytes are substituted only
+    after full equality. There is no interning table or mutable-array alias.
+    Forests and the current basis are left as captured.
+    """
+    closed(fresh, StateWords)
+    if type(retained) is not StateWords:
+        return fresh
+
+    def payload(value, previous):
+        return previous if type(previous) is bytes and value == previous else value
+
+    def array(value, previous):
+        if type(previous) is not ArrayWords:
+            return value
+        data = payload(value.data, previous.data)
+        return value if data is value.data else replace(value, data=data)
+
+    def leaf(value, previous):
+        if type(previous) is not LeafWords:
+            return value
+        return replace(value, **{key: array(getattr(value, key), getattr(previous, key)) for key in
+            ('values', 'normalizer', 'target_mass', 'embedding', 'core', 'common', 'corrections')})
+
+    origin = replace(fresh.origin, **{key: payload(getattr(fresh.origin, key), getattr(retained.origin, key))
+                                    for key in ('embedding', 'core', 'output')})
+    prepared = tuple(array(value, retained.prepared[i]) if i < len(retained.prepared) else value
+                     for i, value in enumerate(fresh.prepared))
+    leaves = tuple(leaf(value, retained.leaves[i]) if i < len(retained.leaves) else value
+                   for i, value in enumerate(fresh.leaves))
+    return replace(fresh, origin=origin, prepared=prepared, leaves=leaves)
 
 
 @dataclass(frozen=True)

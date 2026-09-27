@@ -1,5 +1,61 @@
 # FP Handoff
 
+**The first ordinary event has a measured retention cost.** The completed
+[CPU phase diagnostic](experiments/next_token/CPU_PHASE_COST.md) attributes
+65.12% of its separately profiled prediction/observation time to disjoint
+retention calls. This is CPU substitution with instrumentation, not CUDA
+throughput or later-unit cost. It supports investigating repeated canonical
+traversal while preserving complete evidence; storage reuse alone does not
+remove it. A2 remains untouched, and no extra full-V run is registered.
+
+**The next bounded device qualification is fixed, but not launched.**
+[Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md) registers
+two fresh jobs:16 training events/eight units plus frozen reports, and an
+unsealed-retention failure. Each has an8-KiB arena,2-MiB reservation,4-GiB host
+and180-second wall limit. Both proposed worker branches pass on CPU; this
+is not a device outcome. Preserve A2, commit its terminal result, integrate
+this branch, then run the canonical launcher once. Do not repeat old jobs,
+launch early or schedule another full-V run before assessing A2's evidence.
+
+**Owned token storage reuse is implemented and CPU checked on this branch.**
+The [continuation lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+collects only sealed unreachable generations at a paid Runtime phase entry.
+Actual stale aliases refuse; all failed/unsealed extents and complete history
+stay. Thirty-six paired histories preserve602 phase encodings and scores.
+A finite16-event/eight-unit control fits8 KiB (5,096-byte peak), whereas its
+append-only counterpart consumes104,904 bytes. Full-vocabulary fit, device
+qualification and training throughput remain unproved. A2 stays untouched;
+integrate only after it terminates. The next justified device execution must
+qualify this new lowering and the snapshot repair, then follow the measured
+text-training constraint. No more passive storage or relation examples are due.
+
+**Public token snapshots could falsify a completed physical loss; CPU repair passes.**
+The [snapshot counterexample](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+changes only the returned forecast relation dictionary. Both plain/shared
+retention then report physical loss [0,0] for probability8422541/21007274,
+despite intact sealed evidence. Token phase relations now detach/freeze their
+complete mappings; fresh readout bounds and target mass come from the same
+checked phase. Two historical reproductions and six corrected CPU Runtime
+cases pass, as do the reporting and shared-word regressions. No corrected
+device result is claimed. The original reporting jobs remain terminal and
+establish only their declared traces. A2 never reports and remains untouched
+at307251e. This correctness repair precedes any device-storage reuse; integrate
+the isolated commits only after A2 terminates, then follow its measured result
+toward actual text learning. No new relation or passive-control branch is due.
+
+**Prepared continuation-storage result; not used by A2.**
+The [token continuation-root argument](theory/proofs/TOKEN_CONTINUATION_STORAGE.md)
+retains current/staged/predicted residents, transitive predecessors and all
+unsealed failed-attempt allocations. A synthetic full-vocabulary two-unit
+CPU trace passes42,985,243 input checks:834,873,456 cumulative padded bytes
+versus33,718,200 bytes peak roots-plus-new-phase coexistence. This is not an
+allocator-fit or whole-host bound. A counterfactual reuse test shows why the
+current address guard cannot authorize reuse; the passive generation guard
+passes its CPU controls. The optional Runtime lowering above is now CPU
+checked, with no device reuse result yet. Preserve the running A2 source
+and outcome. Further passive
+storage variants and the rational/relation branch remain closed.
+
 **A2 is fixed under the original full-unit limits.**
 `scripts/run_shared_cuda_retention_a2.py --run` executes only the original
 512-event full-vocabulary worker with the integrated implementation. Its new

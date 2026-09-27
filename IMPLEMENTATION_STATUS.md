@@ -1,5 +1,38 @@
 # FP Implementation Status
 
+The completed [first-event CPU cost diagnostic](experiments/next_token/CPU_PHASE_COST.md)
+uses implementation59fea46 and the existing full-V registration. Prediction
+and observation make65.1/63.7 million profiled calls; disjoint retention calls
+account for65.12% of their combined instrumented time. This is no CUDA timing
+or full-unit result. No further serialization optimization is implemented.
+
+The [first actual reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
+is preregistered in `scripts/run_token_reuse_cuda_a1.py`, gated on canonical
+integration and the original A2's actual termination. Its two worker branches
+pass CPU substitution. No GPU job/result is supplied by this preparation.
+
+The optional [owned token reuse lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+now connects successful owner seals, complete continuation roots, pinned
+failures and exact-object generations to a buddy arena. Runtime prepays it;
+all existing actual device/counter/readback checks stay. CPU tensor execution
+preserves602 complete phase records across36 paired histories. A45-phase,
+eight-unit synthetic control fits8 KiB and matches all append-only values.
+Allocation partition, stale alias, post-target failure and existing token
+regressions pass. This is not yet actual-device qualification or full-V fit;
+the currently running A2 remains on its original append-only source307251e.
+
+The token phase snapshot boundary is corrected after an actual CPU Runtime
+counterexample: a public mutable normalization dictionary changed an owned
+`COMPLETE_REPORT` to physical loss [0,0] while its true probability was below
+one. Both ordinary and shared retention were affected. Complete relation
+mappings are now detached and recursively frozen, plans are immutable, and
+scoring uses the freshly checked readout's own normalization bounds. Two
+historical reproductions and six corrected cases check all48 retained phase
+frames; reporting and shared-word regressions pass. See the
+[scope and evidence](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair).
+This is CPU Runtime logic with a substituted array/device backend, not a new
+CUDA qualification. A2's unscored source remains fixed at307251e.
+
 Shared-retention A2 is fixed in `scripts/run_shared_cuda_retention_a2.py` and
 the retention proof's section10. It uses only the original full-unit worker
 under unchanged model, caps and tolerances with the integrated implementation.

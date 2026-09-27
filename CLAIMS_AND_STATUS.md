@@ -1,5 +1,35 @@
 # FP Claims and Status
 
+The [first ordinary event's retention cost](experiments/next_token/CPU_PHASE_COST.md)
+is **MEASURED IN A CPU-SUBSTITUTED PROFILE**: disjoint allocation/sealing calls
+consume20.5686 of31.5867 instrumented seconds. This establishes a cost in that
+finite diagnostic, not a GPU throughput estimate, whole-unit decomposition,
+universal lower bound or evidence that fresh physical reads may be omitted.
+
+The [sealed token reuse rule](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+is **PROVED CONDITIONALLY; IMPLEMENTED; CPU RUNTIME CONTROL PASS** for the
+closed token interface. Roots plus unsealed attempts plus current outputs
+suffice for legal physical reads; old generation handles refuse. Complete
+phase/history values remain. Buddy occupancy is the exact sum of its live
+blocks/headers, with less than2x eight-byte padding, **not an allocator-fit
+guarantee**. Thirty-six paired histories preserve602 phase records; a separate
+eight-unit control fits8 KiB versus104,904 append-only bytes. No CUDA reuse,
+full-V capacity, whole-host/time or model-quality result follows. No new
+`CERTIFIED_COMPLETE` class or Foundation action is introduced.
+
+The assertion that exposed token phase metadata were passive immutable
+snapshots is **FALSIFIED IN COMPLETE CPU RUNTIME LOGIC**. Changing only a
+returned forecast relation yields `COMPLETE_REPORT` with physical loss [0,0]
+for actual normalized probability8422541/21007274, under both plain and shared
+retention. The sealed frame stays intact and disagrees with the live record.
+The [value-boundary repair](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+is **IMPLEMENTED; CPU REGRESSION PASS**: detached immutable mappings and
+fresh readout normalization preserve correct positive loss in six cases.
+No new actual-device result or general Compiler certificate follows. Earlier
+reporting device traces remain valid for their stated tests; they did not
+cover this public mapping write. Foundation and the conditional loss law
+are unchanged.
+
 The [frozen positive-head capacity bound](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
 is **PROVED** for the specified readout: mean CE >= H(empirical targets)-log C
 >= H(empirical targets)-log(K+1), where C is the sum of componentwise maxima.

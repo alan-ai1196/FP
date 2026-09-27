@@ -1,0 +1,98 @@
+{
+  "status": "PASS_CPU_TOKEN_CONTINUATION_ROOT_TRACE",
+  "small": {
+    "phases": 23,
+    "allocated_regions": 2768,
+    "checked_array_inputs": 6652,
+    "append_only_padded_bytes": 51920,
+    "peak_live_padded_bytes": 1392,
+    "peak_live_regions": 54,
+    "peak_phase_coexist_padded_bytes": 4984,
+    "terminal_live_padded_bytes": 320,
+    "phases_by_kind": {
+      "initialize": {
+        "phases": 1,
+        "maximum_live_bytes": 288,
+        "maximum_coexist_bytes": 648
+      },
+      "predict": {
+        "phases": 8,
+        "maximum_live_bytes": 1080,
+        "maximum_coexist_bytes": 2976
+      },
+      "observe-staged": {
+        "phases": 8,
+        "maximum_live_bytes": 1392,
+        "maximum_coexist_bytes": 4984
+      },
+      "commit-staged": {
+        "phases": 2,
+        "maximum_live_bytes": 1368,
+        "maximum_coexist_bytes": 3280
+      },
+      "report-predict": {
+        "phases": 2,
+        "maximum_live_bytes": 320,
+        "maximum_coexist_bytes": 2968
+      },
+      "report-readout": {
+        "phases": 2,
+        "maximum_live_bytes": 320,
+        "maximum_coexist_bytes": 888
+      }
+    }
+  },
+  "scope": "synthetic CPU array-access/shape trace; no arena reclamation, device/Runtime authority, allocator-fit or time bound",
+  "full_vocabulary_two_units": {
+    "phases": 2055,
+    "allocated_regions": 3112430,
+    "checked_array_inputs": 42985243,
+    "append_only_padded_bytes": 834873456,
+    "peak_live_padded_bytes": 16515368,
+    "peak_live_regions": 9247,
+    "peak_phase_coexist_padded_bytes": 33718200,
+    "terminal_live_padded_bytes": 5029936,
+    "phases_by_kind": {
+      "initialize": {
+        "phases": 1,
+        "maximum_live_bytes": 5025816,
+        "maximum_coexist_bytes": 18569608
+      },
+      "predict": {
+        "phases": 1024,
+        "maximum_live_bytes": 11489552,
+        "maximum_coexist_bytes": 14623440
+      },
+      "observe-staged": {
+        "phases": 1024,
+        "maximum_live_bytes": 11538856,
+        "maximum_coexist_bytes": 11999400
+      },
+      "commit-staged": {
+        "phases": 2,
+        "maximum_live_bytes": 16515368,
+        "maximum_coexist_bytes": 33718200
+      },
+      "report-predict": {
+        "phases": 2,
+        "maximum_live_bytes": 5029936,
+        "maximum_coexist_bytes": 16761536
+      },
+      "report-readout": {
+        "phases": 2,
+        "maximum_live_bytes": 5029936,
+        "maximum_coexist_bytes": 5038680
+      }
+    }
+  },
+  "fixture": {
+    "vocabulary": 50257,
+    "context": 512,
+    "width": 4,
+    "features": 8,
+    "masters": 603092,
+    "targets": "synthetic affine permutation",
+    "observations": 1024,
+    "corpus_read": false
+  }
+}

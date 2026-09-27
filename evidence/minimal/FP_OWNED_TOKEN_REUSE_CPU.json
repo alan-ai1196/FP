@@ -1,0 +1,44 @@
+{
+  "status": "PASS_OWNED_TOKEN_REUSE_CPU",
+  "scope": "Actual token owner/array logic on a reused CPU tensor backing buffer.\n\nOnly physical device binding/counters are substituted. No CUDA context,\ncorpus, device certificate or measured training-throughput claim.",
+  "overwrite": {
+    "old_words_actually_overwritten": true,
+    "refused_operations": 9,
+    "unsealed_region_and_header_pinned": true
+  },
+  "allocator": {
+    "histories": 3125,
+    "partition_checks": 15625,
+    "unchanged_allocation_refusals": 1266
+  },
+  "failures": {
+    "post_target_boundaries": [
+      "unpaid-collection",
+      "unsealed-frame",
+      "partial-allocation",
+      "retirement-memory"
+    ],
+    "old_learners_and_targets_retained": true
+  },
+  "histories": {
+    "paired_histories": 36,
+    "identical_complete_phases": 602,
+    "identical_retained_body_bytes": 24380806,
+    "actual_retired_generations": 62386,
+    "largest_reuse_peak_bytes": 6072,
+    "largest_cumulative_buddy_bytes": 92184,
+    "profile_events": 8,
+    "exact_physical_and_native_reports": true
+  },
+  "bounded_training": {
+    "ordinary_events": 16,
+    "committed_units": 8,
+    "report_events": 2,
+    "complete_phases": 45,
+    "backing_bytes": 8192,
+    "append_only_consumed_bytes": 104904,
+    "reused_peak_bytes": 5096,
+    "reused_cumulative_buddy_bytes": 120304,
+    "identical_phase_and_score_values": true
+  }
+}

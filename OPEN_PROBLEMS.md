@@ -1,5 +1,31 @@
 # FP Open Problems
 
+A [completed first-event CPU profile](experiments/next_token/CPU_PHASE_COST.md)
+now identifies repeated canonical retention as a major measured cost. Any
+compositional alternative must bind complete actual records to independently
+decoded, owned evidence. This is a concrete text-training obstacle; it does
+not justify reopening relation cases or weakening fresh physical checks.
+Assess it together with A2's outcome before another full-V registration.
+
+The [fixed bounded reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
+is ready after A2 terminates and the isolated commits are integrated. It
+tests this new physical lowering and the snapshot correction, not a new
+reporting/model variant. Assess A2 before choosing any further full-V run.
+
+An exposed token snapshot normalization mapping admitted a false completed
+physical score. The [counterexample and repair](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+now pass CPU Runtime controls; corrected device execution is not yet tested.
+Preserve the running unscored A2, integrate this repair after termination and
+carry its invariant into the next justified device execution. This actual
+correctness hole justifies the repair, not a new catalog of reporting cases.
+The optional [owned storage reuse](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+now passes complete CPU Runtime comparisons and an actual8-KiB capacity
+witness. Device reuse/full-V fit remain unqualified. Its closed interface
+keeps immutable history, failed pins and all proved continuation roots.
+Follow A2's outcome toward text training; do not turn this into more passive
+storage controls. Repeated reference/history traversal and total host costs
+remain real obstacles even when device allocation can be reused.
+
 The immediate execution is the separately registered shared-retention A2,
 using the integrated writer and the original full-unit model/resource limits.
 Inspect its own journal and actual process before any action. This addresses

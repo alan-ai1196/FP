@@ -920,6 +920,9 @@ class ReferenceCompilerRuntime:
         # Unencoded simplex commits check both normalizers and their proposal,
         # then the endpoint, prefix and retained trace: six captures in total.
         charge = 320*cfg.phase_output_cells+2*self._cuda.relation_work(program, self._contract.semantics)+cfg.phase_evidence_bytes
+        if self._cuda.reuses_token_storage:
+            from .token_reuse import collection_work
+            charge += collection_work(self._cuda)
         if cfg.evidence_encoding == phase_codec.ENCODING_ID:
             # Both admission and final retention prepay guarded traversals,
             # byte generation, independent expanded-byte comparison and the
@@ -1058,6 +1061,9 @@ class ReferenceCompilerRuntime:
         try:
             write((label, 'ADMITTED_CUDA_PHASE'))
             try:
+                if self._cuda.reuses_token_storage:
+                    from .token_reuse import collect
+                    collect(self._cuda)
                 record, error = self._cuda.execute(label, kind, program, candidate, reference,
                     rules=self._contract.semantics, spec=self._online.learner,
                     bit_limit=self._contract.reference_integer_bits, ordinary_cursor=self._cursor,
@@ -1113,6 +1119,8 @@ class ReferenceCompilerRuntime:
                 if isinstance(error, ContractError) and not isinstance(error, (ArithmeticUnresolved, ResourceExceeded)):
                     raise RuntimeError('registered CUDA execution violated its admitted inputs') from error
                 raise error
+            if self._cuda.reuses_token_storage:
+                self._cuda.arena.seal(record)
             self._cuda.accept(record)
             phase_accepted = True
         finally:
