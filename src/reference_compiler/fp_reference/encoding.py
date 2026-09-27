@@ -122,22 +122,42 @@ def _string(value):
     yield '"'
 
 
-def _array(items, *, spaced=False):
-    yield '['
+def _elements(values, separator):
     first = True
-    for item in items:
+    for value in values:
         if not first:
-            yield ', ' if spaced else ','
+            yield False, separator
         first = False
-        yield from item
-    yield ']'
+        yield True, value
+    yield False, ']]'
 
 
-def _bytes(value):
-    yield '"'
-    for start in range(0, len(value), 256):
-        yield value[start:start+256].hex()
-    yield '"'
+def _members(value, separator, *, packed):
+    # Preserve the historical compact packed-key / spaced identity-key sort.
+    # Only encoded keys are materialized, exactly as in the recursive writer.
+    keys = sorted(value, key=lambda k: ''.join(fragments(k, packed=packed, spaced=not packed)))
+    first = True
+    for key in keys:
+        yield False, '[' if first else separator+'['
+        first = False
+        yield True, key
+        yield False, separator
+        yield True, value[key]
+        yield False, ']'
+    yield False, ']]'
+
+
+def _fields(value, separator):
+    first = True
+    for field in fields(value):
+        yield False, '[' if first else separator+'['
+        first = False
+        for fragment in _string(field.name):
+            yield False, fragment
+        yield False, separator
+        yield True, getattr(value, field.name)
+        yield False, ']'
+    yield False, ']]'
 
 
 def fragments(value, *, packed=False, spaced=False):
@@ -148,48 +168,76 @@ def fragments(value, *, packed=False, spaced=False):
     workspace, not a complete host-memory theorem. ASCII artifacts stay
     compatible; non-ASCII encodings change to preserve source identities.
 """
-    def sequence(items):
-        return _array(items, spaced=spaced)
-
-    def nested(value, *, spaced=spaced):
-        return fragments(value, packed=packed, spaced=spaced)
-
-    if not packed and isinstance(value, Enum):
-        yield from sequence((_string('enum'), _string(type(value).__module__),
-                             _string(type(value).__qualname__), nested(value.value)))
-    elif type(value) is F:
-        if packed:
-            items = (_string('rational_hex'), _string(format(value.numerator, 'x')), _string(format(value.denominator, 'x')))
+    separator = ', ' if spaced else ','
+    # A child is visited once; its fragments do not bubble through a stack of
+    # recursive generators. This stores only active iterators, not a serialized
+    # value tree or an identity cache. Complete repeated values are still read.
+    stack = [(iter(((True, value),)), None)]
+    active = set()
+    def push(item, children):
+        identity = id(item)
+        if identity in active:
+            _invalid('cyclic complete-state value is not a finite encoding')
+        active.add(identity)
+        stack.append((children, identity))
+    while stack:
+        try:
+            visit, value = next(stack[-1][0])
+        except StopIteration:
+            _, identity = stack.pop()
+            if identity is not None:
+                active.remove(identity)
+            continue
+        if not visit:
+            yield value
+        elif not packed and isinstance(value, Enum):
+            yield '["enum"'+separator
+            yield from _string(type(value).__module__)
+            yield separator
+            yield from _string(type(value).__qualname__)
+            yield separator
+            push(value, iter(((True, value.value), (False, ']'))))
+        elif type(value) is F:
+            if packed:
+                yield ('["rational_hex"'+separator+'"'+format(value.numerator, 'x')+'"'
+                       +separator+'"'+format(value.denominator, 'x')+'"]')
+            else:
+                yield '["rational"'+separator+str(value.numerator)+separator+str(value.denominator)+']'
+        elif type(value) is int:
+            yield ('["integer_hex"'+separator+'"'+format(value, 'x')+'"]' if packed else
+                   '["int"'+separator+str(value)+']')
+        elif value is None or type(value) is bool:
+            atom = 'null' if value is None else 'true' if value else 'false'
+            yield '["'+type(value).__name__+'"'+separator+atom+']'
+        elif type(value) is str:
+            yield '["str"'+separator
+            yield from _string(value)
+            yield ']'
+        elif type(value) is float and not packed:
+            from .core import require_finite
+            require_finite(value, 'state coordinate')
+            yield '["float"'+separator+'"'+value.hex()+'"]'
+        elif type(value) is bytes:
+            yield '["'+('bytes_hex' if packed else 'bytes')+'"'+separator+'"'
+            for start in range(0, len(value), 256):
+                yield value[start:start+256].hex()
+            yield '"]'
+        elif type(value) in (tuple, list):
+            yield '["'+type(value).__name__+'"'+separator+'['
+            push(value, _elements(value, separator))
+        elif isinstance(value, Mapping):
+            yield '["mapping"'+separator+'['
+            push(value, _members(value, separator, packed=packed))
+        elif is_dataclass(value) and not isinstance(value, type):
+            yield '["dataclass"'+separator
+            yield from _string(type(value).__module__)
+            yield separator
+            yield from _string(type(value).__qualname__)
+            yield separator+'['
+            push(value, _fields(value, separator))
         else:
-            items = (_string('rational'), iter((str(value.numerator),)), iter((str(value.denominator),)))
-        yield from sequence(items)
-    elif type(value) is int and packed:
-        yield from sequence((_string('integer_hex'), _string(format(value, 'x'))))
-    elif value is None or type(value) in (bool, str, int):
-        atom = (_string(value) if type(value) is str else iter((
-            'null' if value is None else 'true' if value is True else 'false' if value is False else str(value),)))
-        yield from sequence((_string(type(value).__name__), atom))
-    elif type(value) is float and not packed:
-        from .core import require_finite
-        require_finite(value, 'state coordinate')
-        yield from sequence((_string('float'), _string(value.hex())))
-    elif type(value) is bytes:
-        yield from sequence((_string('bytes_hex' if packed else 'bytes'), _bytes(value)))
-    elif type(value) in (tuple, list):
-        yield from sequence((_string(type(value).__name__), sequence(nested(x) for x in value)))
-    elif isinstance(value, Mapping):
-        # The historical packed key sort was compact; the identity key sort
-        # used json.dumps' default spaces. Preserve both artifact orders.
-        keys = sorted(value, key=lambda k: ''.join(nested(k, spaced=not packed)))
-        pairs = (sequence((nested(k), nested(value[k]))) for k in keys)
-        yield from sequence((_string('mapping'), sequence(pairs)))
-    elif is_dataclass(value) and not isinstance(value, type):
-        entries = (sequence((_string(f.name), nested(getattr(value, f.name)))) for f in fields(value))
-        yield from sequence((_string('dataclass'), _string(type(value).__module__),
-                             _string(type(value).__qualname__), sequence(entries)))
-    else:
-        _invalid('unsupported packed reference payload' if packed else
-                 f'unsupported complete-state coordinate type: {type(value).__name__}')
+            _invalid('unsupported packed reference payload' if packed else
+                     f'unsupported complete-state coordinate type: {type(value).__name__}')
 
 
 def write_packed(value, output):

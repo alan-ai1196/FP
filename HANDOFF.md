@@ -1,5 +1,17 @@
 # FP Handoff
 
+**A measured serialization bottleneck now has a byte-identical traversal fix.**
+The [traversal argument and CPU evidence](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+replace recursive fragment propagation with a stack of active iterators.
+Every canonical byte and identity is preserved; no value cache or reduced
+audit is used. Native initialization plus one full-vocabulary event falls
+from1.39 billion to about165 million cProfile calls. Exact Unicode/type/mode,
+source/collision, shared-retention and ordinary/profile controls pass.
+This supplies no new GPU outcome. The original A1 attempt remains bound to
+e3faaf5; inspect its journal and existing process before any next execution.
+Do not edit its executing source, replay completed controls or reopen the
+relation branch. Follow its actual terminal result toward language learning.
+
 **Complete CUDA frames now have an implemented lossless shared lowering.**
 The [frame proof and fixed full-unit preregistration](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 preserve every header, record and padding byte before one paid root relocation.

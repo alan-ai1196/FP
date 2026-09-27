@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [canonical traversal bottleneck](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+has a tested byte-identical implementation fix; stop encoder variants.
+It does not remove repeated complete-history traversal, native prefix
+enclosure work or growing actual device extents. Inspect the existing A1
+terminal result and use that measured constraint to choose the next full-unit
+step. Its original e3faaf5 execution is not evidence for this new writer.
+Do not increase caps, weaken tolerances or replay a completed control to
+substitute for affordable ordinary-language learning.
+
 The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 now passes exact whole-byte/padding, coexistence and failure controls. Its
 fixed new actual-owner attempt targets one profile/refusal path and the whole

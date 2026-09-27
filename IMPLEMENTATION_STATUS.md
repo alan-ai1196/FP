@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The [canonical traversal refinement](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+removes recursive fragment propagation while preserving complete packed and
+identity bytes. No dictionary of semantic values, omitted field or weaker
+decoder comparison is added. Exact byte/type/Unicode checks, direct Runtime
+identity controls and native/frame/event/profile regressions pass. The
+instrumented full-vocabulary native initialization/one-event diagnostic drops
+from1.39 billion to about165 million Python calls. This is a CPU implementation
+measurement, not a device or training-throughput result. Existing A1 device
+source e3faaf5 and its original outcome remain authoritative for that attempt.
+
 The [complete-frame shared lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 is now implemented for token CUDA events/profiles. The original full frame,
 encoded page copies and root coexist under paid leases until atomic relocation;

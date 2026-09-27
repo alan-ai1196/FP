@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+The [iterative canonical writer](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+has a **PROVED conditional byte-preservation argument** for supported finite
+stable value graphs and **EXACT** old/new byte checks, including Unicode,
+typed values, mapping order and identity modes. Actual current source/collision
+and retained-state controls pass. The reduction from1.39 billion to about165
+million calls is an **EMPIRICAL cProfile CPU diagnostic** for native
+initialization plus one full-vocabulary event. No GPU speedup, whole-history
+linear-work theorem, state quotient or new completeness certificate follows.
+
 The [full CUDA frame extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 has a **PROVED decoded-frame preservation argument** and **EXACT CPU** checks
 of1,114,248 bytes/17 frames with arbitrary nonzero padding and eight refusal/

@@ -1,0 +1,28 @@
+{
+  "status": "PASS_EXACT_STREAMED_CANONICAL_ENCODING",
+  "previous_source": "e3faaf5fdc7c617837fccfc27136561b82fa80d7",
+  "typed_mode_comparisons": 2160,
+  "compared_bytes": 202318,
+  "BMP_codepoints": 65536,
+  "surrogate_pair_classes": 3072,
+  "cyclic_container_refusals": 6,
+  "repeated_acyclic_objects_preserved": true,
+  "whole_records_and_identity_bytes_unchanged": true,
+  "previous_traversal_refusals_preserved": true,
+  "repeated_rational_fragments": {
+    "previous": 57719,
+    "current": 8425
+  },
+  "scope": "canonical byte equality and bounded traversal; no CUDA or model result",
+  "runtime_identity": {
+    "distinct_source_predictions_preserved": true,
+    "forced_collision_refuses_without_code_replacement": true
+  },
+  "native_profile": {
+    "case": "initialization-and-one-full-vocabulary-native-event",
+    "profiled_seconds": 41.14676329999929,
+    "calls": 165146528,
+    "primitive_calls": 157447609,
+    "scope": "cProfile CPU diagnostic, not uninstrumented latency or GPU throughput"
+  }
+}

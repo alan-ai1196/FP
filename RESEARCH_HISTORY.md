@@ -9962,3 +9962,40 @@ FP_SHARED_CUDA_RETENTION_CPU.json and FP_SHARED_CUDA_RETENTION_PREFLIGHT.json.
 There is no new actual GPU success yet. Stop storage-control variants after
 this attempt and follow the measured obstruction toward ordinary language
 learning. Foundation/ERC stay frozen; the rational/relation branch stays closed.
+
+
+## 291. Remove recursive canonical-fragment overhead without changing a byte (2026-09-27)
+
+While the e3faaf5 shared-frame A1 worker runs from its unchanged source, a
+separate CPU-only diagnostic profiles native initialization and one event of
+the same full-vocabulary fixture. It records1,389,070,896 Python calls and
+224.732 instrumented seconds; about191.9 cumulative seconds are inside native
+retention. Recursive typed-JSON fragment propagation is the leading observed
+cost at this boundary. This does not identify every cost of the full device
+unit and does not measure a language model.
+
+The canonical writer now visits values through an explicit iterator stack
+and emits atomic typed expressions directly. All fields, bytes, Unicode code
+points, numeric types, mapping order, spacing and identity bytes remain.
+No semantic cache or presumed equality is introduced. Cyclic containers
+refuse; repeated acyclic values remain repeated occurrences. A structural
+induction proves concatenated-byte equality. Traversal dispatch no longer
+propagates every fragment through all ancestor generators, while repeated
+history walks, scalar formatting and mapping-key sorting remain actual work.
+
+The old/new exact audit passes2160 typed/mode comparisons/202318 bytes,
+all65536 BMP code points,3072 surrogate/astral boundary classes and six cycle
+refusals. Current Runtime source identities and forced address collisions
+remain correct. Native retention, whole-frame coexistence/failure, ordinary
+event and profile regressions pass. The corresponding native cProfile run
+uses about165 million calls; minimal final counts are retained in
+evidence/minimal/FP_STREAMED_ENCODING_CPU.json. Timings are diagnostic, not
+an uninstrumented latency or actual GPU speedup claim.
+
+One historical-test adapter is stale on both the old and new source: it
+passes indexed_order_search to the532d713 Runtime constructor. Its historical
+replay is not called a pass; the current source/collision checks run directly.
+No old experiment is rerun or reinterpreted, no cap/tolerance changes and no
+new semantic architecture action, CERTIFIED_COMPLETE class or model score
+is added. Stop encoder variants, preserve the running A1 result, and proceed
+from the real full-unit boundary toward sustained ordinary-text learning.
