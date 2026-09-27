@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
+now supplies explicit arena operations and passes the independent CPU
+learner controls. The next finite check is its preregistered device audit;
+then bind these operations to actual Runtime token ingress, immutable
+cache induction and the complete numerical state/readout relation. Do not
+make typed caller caches authoritative or feed exact endpoints into AMP.
+The full-unit preflight's408,471 arrays/about402 MB expose future launch,
+metadata and retention costs. Optimize the implementation under the frozen
+semantics; another static relation-task catalog would not address them.
+
 The [incremental AMP derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
 resolves repeated derivative-prefix evaluation while exposing a necessary
 cache invariant. A current ordinary gradient does not identify future

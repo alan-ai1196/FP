@@ -1,5 +1,15 @@
 # FP Claims and Status
 
+The [token arena array lowering](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
+is **NUMERICALLY VERIFIED on CPU** for144 histories/576 events/336 commits
+against the independent v2 learner and165,444 exact primitive words. A
+full-context512 shape preflight consumes402,094,088 padded bytes for one
+unit; this is not measured GPU/host usage or language-model evidence.
+The new fixed-arena device audit is preregistered. Its decision class is
+finite word equality and resource-contract execution for the declared
+traces, with no CERTIFIED_COMPLETE, Runtime/bridge/install or future-event
+claim. Existing Foundation and Experiment Resource Contract stay frozen.
+
 Completed CUDA frames have a [scoped byte-preservation proof and exact audit](theory/proofs/IMMUTABLE_CUDA_EVIDENCE_FRAMES.md).
 For S simultaneous snapshots of N successfully finalized F-byte frames, the
 distinct frame payload changes from(S+1)NF toNF, with an additionalF-byte

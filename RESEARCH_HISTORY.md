@@ -9696,3 +9696,35 @@ bridge nor a newly owned CUDA path. Continue with the array event executor
 inside the existing arena and the full cache/coordinate relation, then
 ordinary text learning and fresh strong baselines. Do not deepen static
 readout or relation-task cases to substitute for that integration.
+
+
+## 284. Lower complete token events and carry forests into explicit arena arrays (2026-09-27)
+
+The passive AMP allocator is no longer the proposed path into the owned
+backend. A closed array interpreter now supplies each gather, product,
+balanced sum, reverse credit, carry merge and integer commit with a fresh
+admitted CUDA extent. Integer masters and named initialized byte readback
+extend the existing arena; allocation histories are never reset, addresses
+are not reused and old states are not overwritten. Exact int64 pair levels
+replace an assumed scratch-free library column reduction. Complete v2
+forests remain, not just their current gradient roots. The canonical AMP
+and streaming implementations now live in fp_reference with import aliases.
+
+The independent CPU audit passes144 histories,576 events,336 commits and
+83322 complete-state words. Exact primitive controls pass165444 words,
+15936 half. Nine refusal/integer-update controls include preallocation
+quotas and overlapping writes. The preflight over the existing real512-token,
+full-V/context512 fixture uses402094088 padded arena bytes,408471 arrays,
+1027 phases and a maximum3216448-byte array. Every AMP master is computed
+independently; no native endpoint is used. No validation/test or loss is read.
+This count exposes large launch/retention costs; no speed advantage is claimed.
+
+Proof, scope and fresh-device preregistration are in
+experiments/next_token/ARENA_EVENT_EXECUTOR.md. CPU and preflight evidence are
+FP_TOKEN_ARRAY_CPU.json and FP_TOKEN_ARRAY_PREFLIGHT.json in evidence/minimal.
+The sole new device launcher requires a clean source commit, two fresh
+4-GiB/900-second Windows jobs, a1-GiB arena/reservation limit and unchanged
+allocator counters. Its finite class checks actual words and resource bounds;
+it does not register Runtime ingress, a complete numerical bridge, persistence
+or installation. Old terminal GPU jobs remain closed. Run this one component
+audit, then integrate the real owner; do not deepen the static branch.

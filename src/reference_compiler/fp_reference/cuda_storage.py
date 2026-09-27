@@ -279,7 +279,7 @@ class CudaWorkspace:
         self._open()
         if type(shape) is not tuple or any(type(v) is not int or v < 0 for v in shape):
             raise ContractError('exact bounded CUDA output shape required')
-        widths = {torch.float16: 2, torch.float32: 4, torch.int32: 4, torch.bool: 1}
+        widths = {torch.float16: 2, torch.float32: 4, torch.int32: 4, torch.int64: 8, torch.bool: 1}
         if dtype not in widths:
             raise ContractError('unregistered CUDA arena storage format')
         available = self.arena.contract.arena_bytes-self.arena._cursor
@@ -352,6 +352,40 @@ class CudaWorkspace:
             # in a later public snapshot. Runtime starts this owned workspace
             # at zero; each call changes and clears only this same prefix.
             host.zero_()
+
+    def raw_bytes(self, values, buffer):
+        """Read named initialized views, including old integer master extents.
+
+        Each view is copied separately: unrelated gaps and other phases are
+        never decoded as data. The borrowed host prefix is cleared on every
+        path. Returned immutable bytes are diagnostic values, not residency
+        leases or permission to reuse an arena extent.
+        """
+        import torch
+        if type(values) is not tuple or type(buffer) is not bytearray:
+            raise ContractError('complete named views and admitted host readout buffer required')
+        layout = []
+        for value in values:
+            index = self.arena._region_for(value)
+            region = self.arena._regions[index]
+            if not region.initialized:
+                raise ContractError('raw bytes require an initialized owned extent')
+            size = value.numel()*value.element_size()
+            if size > len(buffer):
+                raise CudaStorageUnresolved('named CUDA observation exceeds its prepaid host workspace')
+            layout.append((value.storage_offset()*value.element_size(), size))
+        result = []
+        for offset, size in layout:
+            if not size:
+                result.append(b'')
+                continue
+            host = torch.frombuffer(buffer, dtype=torch.uint8, count=size)
+            try:
+                host.copy_(self.arena._storage[offset:offset+size], non_blocking=False)
+                result.append(bytes(memoryview(buffer)[:size]))
+            finally:
+                host.zero_()
+        return tuple(result)
 
     def finish(self, status):
         if self._closed or self.arena._active is not self:

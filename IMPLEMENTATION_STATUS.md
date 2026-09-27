@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
+implements forward/reverse events, complete v2 carry forests and integer
+commits using admitted fresh CUDA extents, with no passive-Torch fallback.
+Its CPU interpreter passes 576 events/336 commits and 165,444 exact words;
+the full512-event preflight uses about402 MB of extents. A fresh bounded
+device audit is preregistered. Actual Runtime token-CUDA dispatch, Gamma,
+cache induction, state/readout relation, lineage and installation remain
+unregistered. No helper or typed cache is treated as an authorized owner.
+
 The [incremental token AMP component](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
 now avoids numerical derivative-prefix replay. Binary-carry frontiers retain
 the actual continuation state; replacing them by the current gradient is

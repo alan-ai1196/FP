@@ -1,0 +1,19 @@
+{
+  "status": "PASS_CPU_ARRAY_EVENTS",
+  "controls": {
+    "histories": 144,
+    "events": 576,
+    "commits": 336,
+    "complete_state_words": 83322,
+    "output_arrays": 187530,
+    "output_cells": 664572,
+    "exact_primitive_calls": 38178,
+    "exact_primitive_words": 165444,
+    "half_words": 15936
+  },
+  "attacks": {
+    "refusals": 9,
+    "duplicate_write_and_budget_refuse_before_allocation": true,
+    "exact_integer_projection_survives_float32_absorption": true
+  }
+}

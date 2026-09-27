@@ -1,5 +1,16 @@
 # FP Handoff
 
+**The token event/carry schedule now has an explicit arena array lowering.**
+The [executor and fixed device preregistration](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
+pass 144 CPU histories/576 events/336 commits, including all retained carry
+words and 165,444 exact floating words. The full-context512 CPU preflight
+uses 402,094,088 arena bytes and 408,471 arrays for one complete 512-token
+update. Run only its new registered fresh-arena audit, then bind the actual
+Runtime owner and complete cache/state/readout relation. No old GPU job is
+replayed; no rounded all-label output, bridge or language score is issued.
+The large array count and append-only retention remain measured-shape costs,
+not a training-efficiency result. Ordinary next-token work remains primary.
+
 **The AMP integration now has an incremental gradient schedule and a cache
 counterexample to respect.** The [streaming derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
 computes each event derivative once and retains balanced partial sums for
