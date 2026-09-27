@@ -1,5 +1,11 @@
 # FP Open Problems
 
+The [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
+now passes exact/CPU preservation controls, including the actual full-V record
+shapes. Measure its paired first-event cost before deciding whether it materially
+advances text feasibility. An immutable-image hit cannot replace a fresh device
+read or a native-gradient bound. No new long GPU run is yet registered.
+
 **Current frontier: make ordinary-token learning affordable.** The original
 shared-retention A2 now passes one complete 512-event unit at `307251e`, including
 its native/AMP commit, in 10,603.35036 seconds under all original caps. Both

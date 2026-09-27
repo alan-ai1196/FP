@@ -10440,3 +10440,31 @@ This closes the current reuse/reporting qualification. It does not qualify
 full-V reuse capacity, a new model budget, corpus loss or sustained training;
 the remaining scientific obstruction is the cost of complete ordinary-token
 execution. No new static/relation branch or control catalog is opened.
+
+
+## 306. Reuse owned immutable encodings without changing complete records (2026-09-27)
+
+The measured repeated-retention cost motivates an optional canonical-image
+lowering. Exact immutable builtin subtrees bind to separately paid byte images
+only after an original writer and independent original traversal agree. Strong
+source bindings prevent identity reuse; snapshots and both resource roles retain
+the image state. Mutable containers, mapping proxies and frozen dataclasses
+themselves never bind. Expanded extent/depth/integer guard decisions remain;
+every record byte, padding byte and fresh physical read remains available.
+
+The complete CPU-substituted Runtime preserves five original full-V phase
+records/133,079,552 bytes and all 3,073 fresh raw reads/154,162,696 bytes across
+the first two events. The 64-MiB image allowance holds 216 images/65,153,526
+bytes. Exact controls pass 1,800 guard decisions, Unicode/mutable-wrapper and
+fully occupied-cache cases, and five corruption/payment/post-target failures.
+Default native/frame/Unicode regressions pass. The test's initial MemoryError
+return expectation and uncoupled owner nonces were corrected; production
+semantics were not relaxed to make those comparisons pass.
+
+Proof and scope are OWNED_CANONICAL_IMAGES.md; minimal exact evidence is
+FP_CANONICAL_IMAGES_CPU.json. This changes no Foundation action or numerical
+bridge and is disabled by default. The paired first-event CPU cost probe is
+prepared with fresh 8-GiB/180-second jobs and a strong uncached baseline.
+No timing, GPU, full-unit or model-quality benefit is assumed. Actual measured
+cost must decide whether this helps the ordinary-text goal; old GPU jobs remain
+terminal and are not evidence for the new optional lowering.

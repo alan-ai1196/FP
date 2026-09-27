@@ -38,8 +38,11 @@ def _array_size(sizes):
     return size+max(0, count-1)
 
 
-def packed_size(value):
+def packed_size(value, *, images=None):
     """Exact byte extent of the typed packed encoding, with no output tree."""
+    known = None if images is None else images.find(value)
+    if known is not None:
+        return known.size
     if type(value) is F:
         return _array_size((_string_size('rational_hex'), _hex_size(value.numerator), _hex_size(value.denominator)))
     if type(value) is int:
@@ -50,18 +53,18 @@ def packed_size(value):
         atom = 4 if value is None or value is True else 5 if value is False else _string_size(value)
         return _array_size((_string_size(type(value).__name__), atom))
     if type(value) in (tuple, list):
-        return _array_size((_string_size(type(value).__name__), _array_size(packed_size(x) for x in value)))
+        return _array_size((_string_size(type(value).__name__), _array_size(packed_size(x, images=images) for x in value)))
     if isinstance(value, Mapping):
-        pairs = (_array_size((packed_size(k), packed_size(v))) for k, v in value.items())
+        pairs = (_array_size((packed_size(k, images=images), packed_size(v, images=images))) for k, v in value.items())
         return _array_size((_string_size('mapping'), _array_size(pairs)))
     if is_dataclass(value) and not isinstance(value, type):
-        entries = (_array_size((_string_size(f.name), packed_size(getattr(value, f.name)))) for f in fields(value))
+        entries = (_array_size((_string_size(f.name), packed_size(getattr(value, f.name), images=images))) for f in fields(value))
         return _array_size((_string_size('dataclass'), _string_size(type(value).__module__),
                             _string_size(type(value).__qualname__), _array_size(entries)))
     _invalid('unsupported packed reference payload')
 
 
-def bounded_packed_size(value, *, byte_limit, depth_limit=64, integer_bits=32768):
+def bounded_packed_size(value, *, byte_limit, depth_limit=64, integer_bits=32768, images=None):
     """Bound aggregate traversal before computing the exact canonical extent.
 
 This belongs to the trusted canonical serializer. A delegated compressor
@@ -77,6 +80,14 @@ never receives the value or the iterator used to traverse it.
         if charged>byte_limit:
             raise ResourceExceeded('canonical phase traversal allowance exhausted')
     def walk(item,depth):
+        known = None if images is None else images.find(item)
+        if known is not None:
+            debit(known.traversal)
+            if depth+known.depth > depth_limit:
+                raise ResourceExceeded('canonical phase depth allowance exhausted')
+            if known.integer_bits > integer_bits:
+                raise ResourceExceeded('canonical phase integer allowance exhausted')
+            return
         debit(1)
         if depth>depth_limit:
             raise ResourceExceeded('canonical phase depth allowance exhausted')
@@ -107,7 +118,7 @@ never receives the value or the iterator used to traverse it.
         for child in children:
             walk(child,depth+1)
     walk(value,0)
-    result = packed_size(value)
+    result = packed_size(value, images=images)
     if result>byte_limit:
         raise ResourceExceeded('canonical phase exceeds its expanded allowance')
     return result
@@ -160,7 +171,7 @@ def _fields(value, separator):
     yield False, ']]'
 
 
-def fragments(value, *, packed=False, spaced=False):
+def fragments(value, *, packed=False, spaced=False, images=None):
     """Yield typed JSON before UTF-8/surrogatepass encoding or hashing.
 
     Preserve each encoder's key-sort spacing. Sorting retains encoded keys
@@ -188,7 +199,10 @@ def fragments(value, *, packed=False, spaced=False):
             if identity is not None:
                 active.remove(identity)
             continue
-        if not visit:
+        known = None if not visit or not packed or spaced or images is None else images.find(value)
+        if known is not None:
+            yield from images.fragments(known)
+        elif not visit:
             yield value
         elif not packed and isinstance(value, Enum):
             yield '["enum"'+separator

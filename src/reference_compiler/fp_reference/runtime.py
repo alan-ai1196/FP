@@ -981,6 +981,7 @@ class ReferenceCompilerRuntime:
             self._buffers[workspace_id] = bytearray(likelihood_workspace)
 
         def write(value):
+            images = None if self._reference_archive is None else self._reference_archive.images
             if cfg.evidence_encoding == phase_codec.ENCODING_ID:
                 if len(frame) <= 8:
                     raise ResourceExceeded('compressed phase has no funded encoded prefix')
@@ -1047,11 +1048,11 @@ class ReferenceCompilerRuntime:
                     raise ContractError('compressed phase has nonzero reserved padding')
                 frame[:8] = (offset-8).to_bytes(8,'big')
                 return
-            size = packed_size(value)
+            size = packed_size(value, images=images)
             if size+8 > len(frame):
                 raise ResourceExceeded('actual CUDA phase evidence exceeds its prepaid frame')
             offset = 8
-            for fragment in fragments(value, packed=True):
+            for fragment in fragments(value, packed=True, images=images):
                 part = fragment.encode('utf-8', 'surrogatepass')
                 frame[offset:offset+len(part)] = part
                 offset += len(part)
@@ -1090,6 +1091,10 @@ class ReferenceCompilerRuntime:
                 # rejection just because that internal diagnostic failed too.
                 raise RuntimeError('registered CUDA execution or raw capture violated its admitted inputs') from error
             try:
+                if self._reference_archive is not None:
+                    role = (self._contract.work_roles['construct'] if origin == 'construction' else
+                            'deployment' if origin in ('ordinary', 'report') and candidate == self._deployed_id else 'compiler')
+                    self._reference_archive.prepare_frame(self, label, record, role=role)
                 write(record)
                 # The final writer must retain no mutable alias across the
                 # publication below, including through a later traceback.

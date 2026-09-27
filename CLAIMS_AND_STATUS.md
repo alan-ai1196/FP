@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Owned immutable canonical images: PROVED CONDITIONALLY; IMPLEMENTED; CPU
+CONTROL PASS.** Same-object binding to independently checked immutable bytes
+preserves complete packed records and the original guard decision class.
+Strong bindings, buffer dependencies and work are owned; mutable wrappers do
+not bind. Five full-V phase records and all fresh reads agree in the finite
+CPU-substituted Runtime control. The
+[proof and exact scope](theory/proofs/OWNED_CANONICAL_IMAGES.md) supply no speedup,
+full-unit, device or language-quality claim. The feature is optional/default off.
+
 **Current full-unit claim: PASS, finite actual-device execution.** At `307251e`,
 shared-retention A2 completes exactly one registered 512-token unit over the
 full 50,257-label alphabet, with 1,026 checked phases, 80,552,126 device words,

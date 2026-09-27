@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-09-27)
 
+The optional [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
+preserves complete packed bytes using paid bindings for exact immutable builtin
+subtrees. The default is disabled. Paired complete CPU execution preserves
+five full-V phase records/133,079,552 bytes and 3,073 fresh reads; 1,800 guard
+decisions, mutable-wrapper/cache-capacity controls and five failure boundaries
+pass. The ordinary native/frame/Unicode regressions pass. No numerical bridge
+or physical read is changed. Performance measurement and device qualification
+remain separate; the paired CPU cost probe is prepared.
+
 Shared-retention A2 at `307251e` **PASSES** the original full 512-event unit:
 1,026 checked phases, 80,552,126 device words, one native/AMP commit, zero
 pending records and unchanged lifetime allocation counters. Wall time is

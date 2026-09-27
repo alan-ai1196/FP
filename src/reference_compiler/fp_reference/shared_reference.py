@@ -25,13 +25,15 @@ class SharedReferenceContract:
     reference_cap: int
     comparison_cap: int
     encoding: str = archive.ENCODING_ID
+    canonical_image_bytes: int = 0
 
     def __post_init__(self):
         if type(self) is not SharedReferenceContract or set(vars(self)) != {f.name for f in fields(self)}:
             raise ContractError('closed immutable shared reference registration required')
         for field in fields(self):
             if field.name != 'encoding':
-                natural(getattr(self, field.name), 'shared reference '+field.name, positive=True)
+                natural(getattr(self, field.name), 'shared reference '+field.name,
+                        positive=field.name != 'canonical_image_bytes')
         if (self.encoding != archive.ENCODING_ID or self.literal_workspace < archive.HEADER.size
                 or archive.U64.size*self.reference_cap > archive.phase_deflate.EXPANDED_CAP):
             raise ContractError('registered archive format and bounded reference expansion required')
@@ -48,6 +50,7 @@ class SharedReferenceSnapshot:
     contract: SharedReferenceContract
     pages: tuple[str, ...]
     workspaces: tuple[str, ...]
+    canonical_images: tuple = ()
 
 
 @dataclass(frozen=True)
@@ -57,14 +60,14 @@ class SharedPlannedObject:
     value: object
 
 
-def _packed_parts(value, staging):
+def _packed_parts(value, staging, images=None):
     """Canonical owner traversal; only emitted bytes reach the producer.
 
     Coalesce short syntax fragments while keeping substantial literal pieces
     aligned across occurrences. This affects storage only, never decoding.
     """
     used = 0
-    for fragment in fragments(value, packed=True):
+    for fragment in fragments(value, packed=True, images=images):
         part = fragment.encode('utf-8', 'surrogatepass')
         if len(part) >= 256:
             if used:
@@ -129,9 +132,13 @@ class _SharedReference:
             runtime._buffers[identity] = bytearray(size)
         for identity in self.workspaces:
             runtime._ledger.acquire(self.deployment_owner, identity)
+        from .canonical_images import _CanonicalImages
+        self.images = (_CanonicalImages(runtime, self.deployment_owner, contract.canonical_image_bytes)
+                       if contract.canonical_image_bytes else None)
 
     def snapshot(self):
-        return SharedReferenceSnapshot(self.contract, tuple(self.pages), self.workspaces)
+        return SharedReferenceSnapshot(self.contract, tuple(self.pages), self.workspaces,
+            () if self.images is None else self.images.snapshot())
 
     def _charge(self, runtime, role, label):
         cfg = self.contract
@@ -145,7 +152,17 @@ class _SharedReference:
         work = (32*cfg.expanded_cap+16*cfg.reference_cap+4*cfg.comparison_cap
                 +8*(cfg.literal_workspace+cfg.program_workspace)
                 +64*entries)
+        if self.images is not None:
+            work += 64*cfg.expanded_cap+64*len(self.images.entries)
         ledger.charge_work(role, {'work': work}, note=label+':shared-reference')
+
+    def prepare_frame(self, runtime, label, value, *, role):
+        if self.images is None:
+            return
+        self._charge(runtime, role, label+':canonical-images')
+        bounded_packed_size(value, byte_limit=self.contract.expanded_cap,
+            integer_bits=runtime._contract.reference_integer_bits, images=self.images)
+        self.images.prepare(value, role=role)
 
     def _begin(self, runtime, size):
         cfg = self.contract
@@ -191,10 +208,12 @@ class _SharedReference:
         self._charge(runtime, runtime._ledger._owners[owner], planned.spec.object_id)
         try:
             size = bounded_packed_size(planned.value, byte_limit=cfg.expanded_cap,
-                                       integer_bits=runtime._contract.reference_integer_bits)
+                                       integer_bits=runtime._contract.reference_integer_bits, images=self.images)
+            if self.images is not None:
+                self.images.prepare(planned.value, role=runtime._ledger._owners[owner])
             staging = runtime._buffers[self.workspaces[3]]
             builder = self._begin(runtime, size)
-            for part in _packed_parts(planned.value, staging):
+            for part in _packed_parts(planned.value, staging, self.images):
                 builder.push(part)
             header = builder.finish()
             if header.expanded_bytes != size:
@@ -206,7 +225,7 @@ class _SharedReference:
             runtime._buffers[root.object_id] = bytearray(ROOT_BYTES)
             # This reader never receives producer indices or expected values.
             self._read(runtime, page_id,
-                (s.encode('utf-8', 'surrogatepass') for s in fragments(planned.value, packed=True)), size)
+                (s.encode('utf-8', 'surrogatepass') for s in fragments(planned.value, packed=True, images=self.images)), size)
             self._accept(runtime, page_id)
             # Fill the admitted mutable 16-byte root in place. It is never
             # rewritten later; public snapshots receive their own byte value.
@@ -237,11 +256,11 @@ class _SharedReference:
         size = len(runtime._buffers[label])
         builder = self._begin(runtime, size)
         used = bounded_packed_size(record, byte_limit=min(self.contract.expanded_cap, size-8),
-                                   integer_bits=runtime._contract.reference_integer_bits)
+                                   integer_bits=runtime._contract.reference_integer_bits, images=self.images)
         if int.from_bytes(memoryview(runtime._buffers[label])[:8], 'big') != used:
             raise ContractError('CUDA frame length lost its complete original record')
         builder.push(bytes(memoryview(runtime._buffers[label])[:8]))
-        for part in _packed_parts(record, runtime._buffers[self.workspaces[3]]):
+        for part in _packed_parts(record, runtime._buffers[self.workspaces[3]], self.images):
             builder.push(part)
         # Keep every actual tail byte, including nonzero padding. No zero-tail
         # assumption, prefix trimming or interpretation of old data is used.

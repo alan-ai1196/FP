@@ -1,0 +1,44 @@
+{
+  "status": "PASS_OWNED_CANONICAL_IMAGES_CPU",
+  "scope": "exact archive/value/resource checks and complete CPU-substituted Runtime; no CUDA or model result",
+  "component": {
+    "limit_checks": 1800,
+    "uncached_bytes_compared": 142640,
+    "old_snapshots": 7,
+    "image_count": 7,
+    "image_bytes": 163662,
+    "exhausted_image_budget": 8192,
+    "mutable_wrappers_not_bound": true,
+    "capacity_misses_preserve_complete_bytes": true,
+    "both_resource_roles_own_images": true
+  },
+  "failures": {
+    "refusals": [
+      "wrong-image",
+      "wrong-page",
+      "unpaid-image",
+      "post-target-ResourceExceeded",
+      "post-target-MemoryError"
+    ],
+    "targets_and_prior_learners_retained": true
+  },
+  "runtime": {
+    "complete_phases": 5,
+    "phase_bytes": 133079552,
+    "identical_raw_reads": 3073,
+    "identical_read_bytes": 154162696,
+    "images": 216,
+    "image_bytes": 65153526,
+    "corpus": {
+      "role": "historical-training",
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 1024,
+      "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+      "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+      "validation_or_test_read": false
+    },
+    "scope": "first two events of the original full-V unit, CPU substitution; not a full unit or language score"
+  }
+}
