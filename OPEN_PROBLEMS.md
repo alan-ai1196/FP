@@ -15,6 +15,13 @@ control passes without reading corpus data or choosing a model budget. It
 is not yet a trained competitive baseline; retain the tuned n-gram and
 adequate-training requirements in the eventual empirical preregistration.
 
+The actual upstream n-gram toolchain and full-alphabet scorer are now prepared
+at 8996fda on research/text-ngram-baseline, after the Transformer adapter.
+The native Windows estimator/trie and independent ARPA/float64 controls pass
+without opening the experiment corpus. Both comparison adapter controls are
+closed; proceed from the real FP resource/reporting outcome to a concrete text
+trial. No additional normalization or smoothing catalog is required.
+
 The read-only token reporting implementation and conditional proper-loss/mean
 bounds are prepared at a95375f on research/frozen-token-reporting, after the
 byte-identical writer commit e157923. Exact/CPU controls pass. Keep the live
