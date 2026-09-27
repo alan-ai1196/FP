@@ -1,5 +1,18 @@
 # FP Handoff
 
+**Prepared continuation-storage result; not used by A2.**
+The [token continuation-root argument](theory/proofs/TOKEN_CONTINUATION_STORAGE.md)
+retains current/staged/predicted residents, transitive predecessors and all
+unsealed failed-attempt allocations. A synthetic full-vocabulary two-unit
+CPU trace passes42,985,243 input checks:834,873,456 cumulative padded bytes
+versus33,718,200 bytes peak roots-plus-new-phase coexistence. This is not an
+allocator-fit or whole-host bound. A counterfactual reuse test shows why the
+current address guard cannot authorize reuse; the passive generation guard
+passes its CPU controls. No CUDA reclamation or Runtime integration exists
+yet. Preserve the running A2 source and outcome, then implement this one
+owned lowering if the actual next training step needs it. Further passive
+storage variants and the rational/relation branch remain closed.
+
 **A2 is fixed under the original full-unit limits.**
 `scripts/run_shared_cuda_retention_a2.py --run` executes only the original
 512-event full-vocabulary worker with the integrated implementation. Its new

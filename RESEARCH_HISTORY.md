@@ -10252,3 +10252,34 @@ and complete changed failure record. The owned frozen-report phase regression
 passes. Evidence is FP_SHARED_TOKEN_WORDS_CPU.json; there is no GPU, corpus,
 whole-host saving, throughput or model-quality claim. Integrate only after
 A2 is terminal; no new audit job or control variant is registered.
+
+
+## 299. Separate token continuation roots from cumulative device allocation (2026-09-27)
+
+A source-level sufficient-root argument follows the actual token Runtime's
+current/staged/predicted maps, named resident arrays and predecessor links.
+It keeps all new phase outputs through checking/capture/retention, and all
+unsealed failed-attempt allocations remain pinned. Historical phase words
+and resource identities stay. This is a prerequisite for physical reuse,
+not permission to reset the current arena or to skip fresh reads.
+
+The synthetic full-vocabulary two-unit trace checks42,985,243 array inputs
+across2,055 phases. Cumulative padded allocation is834,873,456 bytes, while
+the sufficient root set peaks at16,515,368 and phase coexistence at33,718,200.
+No corpus or GPU is read, no memory is reused, and no layout/whole-host/time
+bound is inferred. The initial over-broad CPU probe was stopped without a
+result; the completed probe reads all named arrays without repeatedly
+reconstructing the model definition. A2 was never interrupted or changed.
+
+CPU tensor views reproduce the stale-view error that would occur if the
+current spatial guard were combined with reuse. The present append-only
+arena remains sound under its stated premise. A passive exact-object
+generation table rejects stale aliases/rebinding, passes27 tensor refusals,
+3,125 action histories and two metadata-failure controls, and initializes
+no CUDA context. It supplies no allocator or Runtime authority.
+
+The proof and limits are theory/proofs/TOKEN_CONTINUATION_STORAGE.md;
+minimal evidence is FP_TOKEN_STORAGE_LIVENESS_CPU.json and
+FP_ARRAY_GENERATIONS_CPU.json. The evidence supports one owned reusable
+implementation as a route toward sustained text training, not more passive
+variants. A2's fixed source and registration remain separate and unchanged.

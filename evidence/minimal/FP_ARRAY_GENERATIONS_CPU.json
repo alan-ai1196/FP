@@ -1,0 +1,36 @@
+{
+  "status": "PASS_CPU_GENERATION_GUARD_CONTROL",
+  "spatial_counterexamples": [
+    {
+      "dtype": "torch.float16",
+      "reused_offset": 8,
+      "bytes": 8,
+      "stale_view_passes_spatial_guard": true,
+      "changed_words_visible": true,
+      "stale_generation_refused": true
+    },
+    {
+      "dtype": "torch.float32",
+      "reused_offset": 8,
+      "bytes": 8,
+      "stale_view_passes_spatial_guard": true,
+      "changed_words_visible": true,
+      "stale_generation_refused": true
+    },
+    {
+      "dtype": "torch.int64",
+      "reused_offset": 8,
+      "bytes": 8,
+      "stale_view_passes_spatial_guard": true,
+      "changed_words_visible": true,
+      "stale_generation_refused": true
+    }
+  ],
+  "tensor_refusals": 27,
+  "action_histories": 3125,
+  "actions": 15625,
+  "failed_admissions_keep_generations_distinct": 2,
+  "dead_view_does_not_retire_allocation": true,
+  "cuda_initialized": false,
+  "scope": "CPU counterfactual spatial predicate and passive generation table; no reusable allocator or Runtime integration"
+}
