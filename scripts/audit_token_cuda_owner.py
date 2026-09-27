@@ -27,6 +27,7 @@ from fp_reference.token_arrays import CPUArrays
 from fp_reference.token_execution import TokenReferenceMachine
 from fp_reference.token_sources import TokenValues, TokenContext
 from fp_reference.core import ContractError
+from fp_reference.encoding import packed_size
 
 HOST_CAP, ARENA, CELLS, FRAME, DEADLINE = 4 << 30, 32 << 20, 4096, 1 << 20, 180000
 
@@ -79,7 +80,8 @@ def cpu():
                 label_words += 2
             labels.check()
             check_state(native, physical.raw(), cfg)
-            check_prediction(native, npred, physical.raw(), pred.raw(), cfg, F(100), F(100))
+            report = check_prediction(native, npred, physical.raw(), pred.raw(), cfg, F(100), F(100))
+            assert packed_size((native, npred, physical.raw(), pred.raw(), report)) < FRAME
             old, old_raw = physical, physical.raw()
             native = m.observe(p, native, o.learner, npred, target, rules=cc.semantics, bit_limit=32768, sources=context)
             physical = phase('observe', physical, pred, npred.window, target)

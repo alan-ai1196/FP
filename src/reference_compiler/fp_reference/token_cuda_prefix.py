@@ -19,6 +19,21 @@ from . import token_batch as ref, token_amp as amp, token_streaming as stream
 from . import token_state_relation as states, token_readout_relation as readout, token_readout_envelope as envelope
 
 
+def exact_diagnostics(value):
+    """Preserve actual finite binary64 bound values in canonical exact frames.
+
+    Numeric bound endpoints are rationals, not native floating state. Actual
+    physical words (including signed zeros) remain in ArrayWords unchanged.
+    """
+    if type(value) is float:
+        return F(value)
+    if type(value) is dict:
+        return {key: exact_diagnostics(child) for key, child in value.items()}
+    if type(value) is tuple:
+        return tuple(exact_diagnostics(child) for child in value)
+    return value
+
+
 def relation_work(program, cfg):
     d = program.definition
     edges = sum(len(n.terms) if hasattr(n, 'terms') else 2 for n in d.nodes)
@@ -66,9 +81,9 @@ def check_prediction(reference, native_prediction, resident, prediction, cfg, no
     # The prepared values have already passed their own executed-phase check.
     # The envelope independently binds the complete base operands again.
     numerical.base = resident.prepared[2].array()
-    return envelope.bound(bounds, physical, numerical, readout.PredictionContract(
+    return exact_diagnostics(envelope.bound(bounds, physical, numerical, readout.PredictionContract(
         activation_cap, normalizer_cap, cfg.state_atol, cfg.probability_atol,
-        cfg.probability_atol, 1, cfg.initializer.element_cap, cfg.exact_cell_cap))
+        cfg.probability_atol, 1, cfg.initializer.element_cap, cfg.exact_cell_cap)))
 
 
 def window_from(sources, program, initializer):

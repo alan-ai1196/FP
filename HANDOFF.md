@@ -9,6 +9,11 @@ audit includes ordinary/profile trajectories, real cache/source/quota attacks
 and eight full-vocabulary/context512 training events. It does not release
 token search/persistence/install or a language score. Run only this registered
 owner audit; the earlier component jobs below remain terminal.
+Owner A1 at7f91993 failed first-prediction evidence serialization because
+the passive envelope returned binary64 bound diagnostics. The corrected
+boundary encodes their exact rational values; CPU serialization controls
+pass. A distinct A2 is preregistered with every cap/tolerance unchanged.
+A1 remains failed and is never overwritten.
 
 **The token event/carry executor passes its actual RTX 3090 arena audit.**
 The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)

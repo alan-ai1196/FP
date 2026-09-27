@@ -1,0 +1,82 @@
+{
+  "status": "FAILED",
+  "source_commit": "7f919932ec7a52f6c6b32fc248044b2005e104f8",
+  "cases": [
+    "events-profile",
+    "cache-forgery",
+    "source-forgery",
+    "observation-quota",
+    "train-prefix8"
+  ],
+  "host_cap": 4294967296,
+  "deadline_ms": 180000,
+  "arena_bytes": 33554432,
+  "allocator_reserved_cap": 33554432,
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "actual Runtime token event/profile phases and refusal controls; no persistence/install or model score",
+  "results": [
+    {
+      "case": "events-profile",
+      "job": {
+        "exit_code": 2,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1893249024,
+        "peak_job_commit": 1894469632,
+        "user_100ns": 18437500,
+        "kernel_100ns": 10156250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 23640,
+        "process_creation_100ns": 134349564662198404
+      },
+      "launch_wall_seconds": 2.893877100001191,
+      "result": {
+        "status": "FAILED",
+        "case": "events-profile",
+        "before": {
+          "process_id": 23640,
+          "creation_100ns": 134349564662198404,
+          "process_commit": 36343808,
+          "lifetime_process_commit_peak": 36585472,
+          "job_commit_peak": 37806080,
+          "process_user_100ns": 4062500,
+          "process_kernel_100ns": 1718750,
+          "job_user_100ns": 4062500,
+          "job_kernel_100ns": 1875000,
+          "total_job_processes": 2
+        },
+        "error_type": "RuntimeError",
+        "reason": "registered CUDA execution violated its admitted inputs",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 1035, in _cuda_execute\n    write(record)\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 995, in write\n    size = packed_size(value)\n           ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 60, in packed_size\n    _string_size(type(value).__qualname__), _array_size(entries)))\n                                            ^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 35, in _array_size\n    for child in sizes:\n                 ^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 58, in <genexpr>\n    entries = (_array_size((_string_size(f.name), packed_size(getattr(value, f.name)))) for f in fields(value))\n                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 56, in packed_size\n    return _array_size((_string_size('mapping'), _array_size(pairs)))\n                                                 ^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 35, in _array_size\n    for child in sizes:\n                 ^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 55, in <genexpr>\n    pairs = (_array_size((packed_size(k), packed_size(v))) for k, v in value.items())\n                                          ^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 61, in packed_size\n    _invalid('unsupported packed reference payload')\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\encoding.py\", line 17, in _invalid\n    raise ContractError(message)\nfp_reference.core.ContractError: unsupported packed reference payload\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"F:\\FP\\scripts\\audit_token_cuda_owner.py\", line 282, in worker\n    outcome, rt = actual_runtime(case)\n                  ^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\audit_token_cuda_owner.py\", line 182, in actual_runtime\n    event(i, target)\n  File \"F:\\FP\\scripts\\audit_token_cuda_owner.py\", line 171, in event\n    pred = rt.predict_next(f'train/{i}', encode_context(()))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 38, in guarded\n    result = method(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 1715, in predict_next\n    return self.finish_context(offer.ingress_id)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\host_failure.py\", line 38, in guarded\n    result = method(self, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 1684, in finish_context\n    result = self._predict_received(identity, inputs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 1774, in _predict_received\n    floating_prediction = self._float64_execute('predict', program, state.candidate_id, state.learner, state.float64,\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 857, in _float64_execute\n    self._cuda_execute(kind, program, candidate, reference, origin=origin,\n  File \"F:\\FP\\src\\reference_compiler\\fp_reference\\runtime.py\", line 1049, in _cuda_execute\n    raise RuntimeError('registered CUDA execution violated its admitted inputs') from failure\nRuntimeError: registered CUDA execution violated its admitted inputs\n",
+        "after": {
+          "process_id": 23640,
+          "creation_100ns": 134349564662198404,
+          "process_commit": 1893249024,
+          "lifetime_process_commit_peak": 1893249024,
+          "job_commit_peak": 1894469632,
+          "process_user_100ns": 15625000,
+          "process_kernel_100ns": 9843750,
+          "job_user_100ns": 15625000,
+          "job_kernel_100ns": 10000000,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 1.9917185000012978
+      },
+      "accepted_execution": false
+    }
+  ],
+  "train_prefix_contract": {
+    "host_cap": 8589934592,
+    "deadline_ms": 900000,
+    "arena_bytes": 134217728,
+    "allocator_reserved_cap": 134217728,
+    "phase_output_cells": 4194304,
+    "phase_evidence_bytes": 67108864,
+    "state_atol": "16",
+    "probability_atol": "1/1000000",
+    "observed_events": 8,
+    "update_unit": 512
+  }
+}

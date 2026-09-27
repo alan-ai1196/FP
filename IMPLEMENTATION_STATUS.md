@@ -7,6 +7,10 @@ native-coordinate/readout predicates. CPU controls pass 576 observations,
 336 commits and 1,632 phases. Actual-owner device jobs are preregistered;
 they have not yet established execution. Token search/persistence/install,
 long-run retained-storage affordability and language quality remain open.
+The first actual-owner A1 failed at canonical prediction-frame serialization;
+its binary64 diagnostic bounds now become their exact rational values.
+CPU serialization controls pass. The corrected A2 uses unchanged limits;
+no actual-owner success is inferred from that fix.
 
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer

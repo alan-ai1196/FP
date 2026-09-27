@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 from windows_job_audit_support import run_in_job
 
-JOURNAL = ROOT/'evidence/minimal/FP_TOKEN_CUDA_OWNER_A1.json'
+JOURNAL = ROOT/'evidence/minimal/FP_TOKEN_CUDA_OWNER_A2.json'
 CASES = ('events-profile', 'cache-forgery', 'source-forgery', 'observation-quota', 'train-prefix8')
 CAP, DEADLINE, ARENA = 4 << 30, 180000, 32 << 20
 

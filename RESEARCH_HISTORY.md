@@ -9808,3 +9808,24 @@ forgery, source forgery, post-target quota refusal, then eight events of the
 full-V/context512 unit. Limits/tolerances are fixed before outcomes. Older
 component jobs remain terminal. Actual-owner execution is not yet established;
 continue this audit and the ordinary next-token integration, not static cases.
+
+
+## 287. Preserve the failed owner attempt and repair exact frame diagnostics (2026-09-27)
+
+The actual-owner A1 at7f919932ec7a52f6c6b32fc248044b2005e104f8 is terminal
+FAILED. Its first worker reached prediction evidence retention, where the
+canonical reference serializer rejected binary64 values returned by the
+readout envelope. No successful prediction publication or later case is
+claimed. Evidence remains FP_TOKEN_CUDA_OWNER_A1.json in evidence/minimal.
+This is a concrete integration mismatch, not a Foundation counterexample.
+
+The token phase boundary now encodes finite binary64 diagnostic bounds as
+the exact rationals they represent. Physical words and signed zeros remain
+in unchanged byte encodings. The serializer is not broadened to arbitrary
+floating native payloads. CPU controls now serialize complete prediction
+and relation data; all144 histories/1632 phases still pass.
+
+The separate A2 journal is preregistered in OWNED_TOKEN_AMP.md with all cases,
+resource caps, tolerances and numerical schedules unchanged. It requires a
+new clean source commit; the failed A1 is never overwritten or treated as a
+passed attempt. Continue the real-owner audit, not old component replay.

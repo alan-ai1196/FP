@@ -98,7 +98,7 @@ package, with old experiment imports retained as aliases.
 
 ## 4. Actual owner audit preregistration
 
-The exclusive journal is `evidence/minimal/FP_TOKEN_CUDA_OWNER_A1.json`;
+The original exclusive journal is `evidence/minimal/FP_TOKEN_CUDA_OWNER_A1.json`;
 the launcher is `scripts/run_token_cuda_owner_audit.py --run`. Source must be
 clean and committed. Each child starts suspended and joins its fixed Windows
 job before resume. No older terminal device job is rerun. Each case gets one
@@ -154,3 +154,22 @@ Retain minimal identities, terminal outcomes, counts, bounds and accounting,
 not tensors or a giant phase log. On success stop owner-control variants and
 attack the actual remaining long-run storage/persistence/install and language
 learning barriers. The relation-task branch stays closed.
+
+## 5. A1 serialization mismatch and corrected A2 preregistration
+
+A1 at `7f919932ec7a52f6c6b32fc248044b2005e104f8` is terminal FAILED. The
+first worker reached its first prediction but canonical evidence retention
+rejected binary64 values in the readout-bound report. Its exact serializer
+correctly accepts reference values rather than arbitrary host floats; no
+successful prediction publication or later case is claimed. The actual
+failed journal is retained. This is an implementation mismatch, not a
+Foundation counterexample or a changed numerical tolerance.
+
+The corrected boundary encodes each finite binary64 diagnostic bound as
+the exact rational value it represents. No decimal approximation is used;
+physical words and signed zeros remain in their original byte encodings.
+CPU controls now also serialize the complete prediction and relation data.
+The distinct A2 journal is `evidence/minimal/FP_TOKEN_CUDA_OWNER_A2.json`.
+All cases, resource caps, numerical tolerances, failure rules and primitive
+schedules above remain unchanged. A2 requires a new clean source commit;
+the A1 job is never overwritten or replayed as if it had passed.
