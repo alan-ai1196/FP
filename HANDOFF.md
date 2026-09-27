@@ -25,9 +25,26 @@ worktree F:\FP-encoder-work. Its final diagnostic uses165,146,528 calls;
 ordinary/profile, source/collision and native/frame retention controls pass.
 This is a prepared change in this same Git repository, not the executing A1
 source or a new GPU result. After A1 is terminal, preserve its journal, apply
-that commit to main, reconcile these status paragraphs and remove the clean
-temporary worktree. No new model score or device attempt is authorized by the
-CPU timing alone; use the actual terminal obstruction to choose the next step.
+that commit to main and reconcile these status paragraphs. The same temporary
+worktree now holds the dependent reporting commit described below; preserve
+both before removing the worktree. CPU timing alone supplies no new model
+score or device result; use the actual terminal obstruction to choose the
+next training step.
+
+The terminal frozen-token reporting path is now committed as a95375f on
+research/frozen-token-reporting, after e157923. Its proof, implementation and
+minimal CPU evidence are in that Git tree; the live F:\FP Python source is
+unchanged. It freezes the actual incumbent, preserves original reporting
+contexts, closes ordinary control ports and scores proper native/AMP
+probabilities separately. The loss-width bound uses log(U/L); directed mean
+rounding adds less than2^-p per endpoint independently of stream length.
+All32 finite training/report words,96 events,416 retained records and six
+post-target failure controls pass, along with current event/install/token
+phase regressions. The two-worker reporting GPU audit is fixed but unrun;
+its launcher refuses the active canonical A1. After the original A1 is
+terminal, preserve its result, integrate both prepared commits, reconcile
+the first-model scope paragraphs and execute the fixed reporting audit once.
+No corpus score or additional relation branch is implied by this milestone.
 
 The [first model-score boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
 is now explicit: a preregistered fixed native incumbent can be tested without

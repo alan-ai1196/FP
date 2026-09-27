@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The read-only token reporting implementation and conditional proper-loss/mean
+bounds are prepared at a95375f on research/frozen-token-reporting, after the
+byte-identical writer commit e157923. Exact/CPU controls pass. Keep the live
+e3faaf5 A1 source unchanged until its original terminal boundary; then
+integrate the prepared commits and run the fixed reporting device audit once.
+The canonical HANDOFF records the worktree and scope. This removes a reporting
+implementation prerequisite for a fixed-incumbent text study; it establishes
+no corpus score or full-unit feasibility. Do not expand static/relation cases.
+
 The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 now passes exact whole-byte/padding, coexistence and failure controls. Its
 fixed new actual-owner attempt targets one profile/refusal path and the whole
