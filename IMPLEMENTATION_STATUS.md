@@ -2,6 +2,20 @@
 
 ## Current token execution boundary (2026-09-27)
 
+The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
+is implemented/default off as `composed_native`. A private immutable binding
+image and complete binary64 carry forest are part of paid Runtime state.
+Every new observation differentiates once at its fixed origin; the native
+batch commit and all physical reads/primitive checks remain. The exact per-unit
+native-row count is2B instead of B(3B+1)/2. Exact controls pass23,296 gradient
+and12,516 basis-coordinate comparisons, including tied/square/zero cases.
+Twenty complete paired CPU histories preserve357 native/physical phase bodies,
+fresh capture counts, reports and learners; different solver diagnostics and
+the new cache are explicitly excluded from byte equality. Two grouped CPU
+tensor pairs also preserve both storage modes and reports. Source/cache/failure
+attacks pass. The new fixed actual-device qualification is registered; no
+CUDA timing or sustained affordability follows from this CPU gate.
+
 The optional [grouped fresh token reads](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 are implemented/default off. Every capture still reads actual named extents;
 only transport within its read-only boundary is combined. The final complete

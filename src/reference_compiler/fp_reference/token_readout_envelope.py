@@ -32,9 +32,9 @@ def bound(bounds, pending, kernel, contract):
     if prediction:
         left, right = bounds.predecessor, pending.predecessor
         if (left.cursor != right.cursor or left.source != right.source
-                or (type(left) is ref.Bounds) != (type(right) is amp.Pending)):
+                or (type(left) in (ref.Bounds, ref.GradientBounds)) != (type(right) is amp.Pending)):
             raise ValueError('paired pre-target learner phases required')
-        if type(left) is ref.Bounds and (left.unit.windows != right.windows or left.unit.targets != right.targets):
+        if type(left) in (ref.Bounds, ref.GradientBounds) and (left.unit.windows != right.windows or left.unit.targets != right.targets):
             raise ValueError('complete pre-target records differ')
     d, a = origin.definition, kernel.a
     if (kernel.definition != d or pending.origin.definition != d or windows != pending.windows

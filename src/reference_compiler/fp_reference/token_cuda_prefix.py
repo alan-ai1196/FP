@@ -54,24 +54,24 @@ def native_state(reference, cfg):
         reference.origin, reference.windows, reference.targets) if reference.unit_count else reference.origin)
 
 
-def check_state(reference, raw, cfg):
+def check_state(reference, raw, cfg, *, _native=None):
     closed(raw, StateWords)
     d = reference.origin.definition
     if (raw.origin.definition != d or raw.cursor != reference.cursor or raw.unit_count != reference.unit_count
             or raw.source != reference.source or tuple(x.window for x in raw.leaves) != reference.windows
             or tuple(x.target for x in raw.leaves) != reference.targets):
         raise ContractError('token CUDA state lost its complete native records or clocks')
-    return states.check(native_state(reference, cfg), raw.diagnostic(), amp.Arithmetic(),
+    return states.check(native_state(reference, cfg) if _native is None else _native, raw.diagnostic(), amp.Arithmetic(),
                         states.Contract(cfg.state_atol, cfg.initializer.element_cap, cfg.exact_cell_cap))
 
 
-def check_prediction(reference, native_prediction, resident, prediction, cfg, normalizer_cap, activation_cap):
+def check_prediction(reference, native_prediction, resident, prediction, cfg, normalizer_cap, activation_cap, *, _native=None):
     closed(native_prediction, TokenEvaluation)
     if native_prediction.before is not reference or native_prediction.window != prediction.window:
         raise ContractError('token CUDA relation lost the actual owned pre-target reference forecast')
     before = resident.diagnostic()
     bounds = ref.Kernel(reference.origin.definition, element_cap=cfg.initializer.element_cap).predict(
-        native_state(reference, cfg), prediction.window)
+        native_state(reference, cfg) if _native is None else _native, prediction.window)
     # Bind to the actual exact Runtime forecast, in addition to model/records.
     if (len(native_prediction.values) != len(bounds.values.lower)
             or any(not bounds.values.scalar((i, 0)).contains(value) for i, value in enumerate(native_prediction.values))
@@ -151,6 +151,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     result, actual_prediction, error, relation = before, None, None, None
     a, workspace, window, before_raw, prediction_raw, actual_raw = None, None, None, None, None, None
     checker, checked, raw_operations = None, 0, ()
+    native = None
     try:
         closed(program, TokenProgram)
         program.validate(rules)
@@ -180,10 +181,13 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 raise ContractError('token CUDA pre-target words changed before observation')
         if kind in ('predict', 'observe', 'readout'):
             window = window_from(sources, program, cfg.initializer)
-        if kind in ('predict', 'readout'):
-            check_state(reference, before_raw, cfg)
         if kind == 'observe' and (not reference.targets or reference.targets[-1] != target or reference.windows[-1] != window):
             raise ContractError('token CUDA observation differs from the owned revealed target/context')
+        if cfg.composed_native:
+            from .token_gradient_forest import prepare
+            native = prepare(prefix, object_id, input_id, kind, reference)
+        if kind in ('predict', 'readout'):
+            check_state(reference, before_raw, cfg, _native=native)
         birth = fresh_origin(program, cfg, reference.cursor, spec, rules, bit_limit) if kind == 'initialize' else None
         # Check only the new operation graph. All earlier leaf/carry values come
         # from the immutable checked predecessor, rather than event replay.
@@ -217,12 +221,12 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 raise ContractError('token CUDA complete caches/state differ from the new checked transition')
             if kind == 'predict':
                 relation = check_prediction(reference, reference_prediction, before_raw, actual_raw, cfg,
-                                            normalizer_cap, activation_cap)
+                                            normalizer_cap, activation_cap, _native=native)
             elif kind == 'readout':
                 relation = check_prediction(reference, reference_prediction, before_raw, prediction_raw, cfg,
-                                            normalizer_cap, activation_cap)
+                                            normalizer_cap, activation_cap, _native=native)
             else:
-                relation = check_state(reference, actual_raw, cfg)
+                relation = check_state(reference, actual_raw, cfg, _native=native)
             if before is not None and before.raw(a) != before_raw:
                 raise ContractError('token CUDA mutated a complete owned predecessor')
             if prediction is not None and prediction.raw(a) != prediction_raw:
@@ -243,6 +247,16 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     # Snapshots expose these records directly. Detach producer mappings before
     # publication; sealed bytes cannot protect a separately writable live record.
     # The fresh plan contains only immutable scalars and a frozen TokenWindow.
+    plan = dict(window=window, target=target, schedule=Kernel.schedule_id,
+        readout_recipe=Kernel.readout_id, primitive_words=0 if checker is None else checker.words,
+        exact_rounding_cells=0 if checker is None else checker.decoder.exact_cells)
+    if cfg.composed_native:
+        from .token_gradient_forest import VERSION
+        entry = prefix._native_bounds.get(object_id)
+        # The phase already retains the complete reference from which the
+        # private immutable binding image was derived. Retain the full new
+        # solver cache as well, including a proposal preceding a failed phase.
+        plan['native_gradient_cache'] = (VERSION, None if entry is None else entry[1])
     record = IndexedCudaPhase(object_id, candidate, program.program_id, origin+':'+kind,
         ordinary_cursor, observation_id, input_id, prediction_id, reference, reference_prediction,
         result_raw, None if actual_prediction is None else actual_prediction.raw(),
@@ -250,10 +264,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
         'CHECKED_CUDA_PREFIX_PHASE' if error is None else
             'UNRESOLVED' if isinstance(error, (ResourceExceeded, ArithmeticUnresolved)) else 'EXECUTION_FAILED',
         '' if error is None else f'{type(error).__name__}: {error}', checked,
-        execution_plan=MappingProxyType(dict(window=window, target=target, schedule=Kernel.schedule_id,
-            readout_recipe=Kernel.readout_id,
-            primitive_words=0 if checker is None else checker.words,
-            exact_rounding_cells=0 if checker is None else checker.decoder.exact_cells)))
+        execution_plan=MappingProxyType(plan))
     prefix._values[object_id] = actual_prediction if kind in ('predict', 'readout') else result
     prefix.phases[object_id] = record
     return record, error

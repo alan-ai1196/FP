@@ -926,6 +926,9 @@ class ReferenceCompilerRuntime:
             # covers named bytes/metadata, this adds opaque-gap copy/clearing.
             from .readback_groups import resident_work
             charge += resident_work(program.definition, cfg.storage.arena_bytes)
+        if self._cuda.token and cfg.composed_native:
+            from .token_gradient_forest import work as native_forest_work
+            charge += native_forest_work(program.definition)
         if self._cuda.reuses_token_storage:
             from .token_reuse import collection_work
             charge += collection_work(self._cuda)

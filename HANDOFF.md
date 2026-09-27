@@ -2,6 +2,20 @@
 
 ## Current execution state (2026-09-27)
 
+An optional [owned native gradient composition](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
+now removes repeated event differentiation within a token unit. Native work
+falls from B(3B+1)/2 event rows to2B, including the unchanged independent batch
+commit. At B=512:393,472 to1,024 rows. This is a schedule theorem, not a time
+claim; all917,760 physical leaf captures and complete retention remain.
+Immutable bound blocks are privately bound to the exact origin and every
+original record, paid and retained in the complete phase/snapshot state.
+Exact controls and20 paired complete CPU Runtime histories pass357 matching
+native/physical phase bodies; interval endpoints can differ. The solver stays
+default off. A new fixed16-target batch/composed CUDA pair is registered in
+the proof and `run_composed_bounds_cuda_a1.py`; commit before launch. No prior
+terminal job may be replayed. Total ordinary time, not the row-count ratio,
+must decide the next ordinary-text resource step.
+
 An optional [grouped fresh-read lowering](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 now preserves all602 complete phase records in36 paired CPU-tensor histories.
 It groups named views only inside one read-only resident capture, preserving

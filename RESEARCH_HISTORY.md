@@ -10602,3 +10602,48 @@ outcomes. GROUPED_FRESH_TOKEN_READS.md closes this qualification; optional
 grouping stays default off. No transport/encoder sweep is due. Native
 enclosure composition and complete retention cost remain the scientific
 obstruction to affordable ordinary-text learning under the owned bridge.
+
+
+## 312. Compose owned native gradients without replaying every prefix (2026-09-27)
+
+Within a registered token update unit, masters stay fixed. Each new exact
+event gradient therefore adds to the same pending gradient, including tied
+slots, squares, repeated features and every original lag incidence. Outward
+binary64 event bounds can be combined by immutable binary-carry forests.
+The proof also gives an exact popcount law for numeric endpoint bytes and
+carry additions. It does not imply linear total host storage or wall time.
+
+The default-off composed_native solver is integrated into the actual Runtime
+owner. Its private cache binds exact immutable images of origins and all
+retained records; no public wrapper or caller-supplied certificate supplies
+its next bound. Complete forest proposals are paid/serialized with each
+phase, and every private binding appears in the complete snapshot. Failed
+or unsealed proposals cannot become live roots. Physical leaves, primitive
+checks and observation boundaries remain. Native U still runs the independent
+full batch and publishes only its uniquely resolved exact grid masters.
+
+The successful ordinary law becomes B+1 native bound calls and2B event rows
+per complete unit, including commit, instead of3B-1 and B(3B+1)/2. For B512
+this is393,472 to1,024 native rows;917,760 physical leaf captures remain.
+Interval associations can differ:839 finite gradient endpoint differences
+are observed while both bounds contain the exact value. No solver decision
+equivalence or width dominance is claimed, and no Foundation action changes.
+
+Exact controls pass1,029 boundary prefix sums,192 histories,23,296 gradient
+and12,516 readout-basis coordinates,336 native commits and16 repeated/out-of-
+order profiles. Twenty paired complete CPU Runtime histories preserve357
+native/physical phase bodies after excluding solver diagnostics/new cache,
+plus fresh capture counts, primitive words, learners and reports. Two further
+CPU tensor pairs preserve23 phases each in append-only/reusing arenas with
+grouped reads, including unchanged extents and retirements. Eight failure,
+mutation and source-binding controls pass. No CUDA context is used there.
+
+COMPOSED_TOKEN_NATIVE_BOUNDS.md and FP_COMPOSED_TOKEN_BOUNDS_CPU.json preserve
+the exact scope and evidence. The fixed first device comparison registers
+two16-target fresh240-second/16-GiB workers, with original full-V unit512,
+numeric/storage caps and64-MiB images. Compare total ordinary time under an
+identical native-row counter, then require actual changed-leaf refusal in
+the composed arm. Commit first, launch once, never replay the exclusive
+FP_COMPOSED_BOUNDS_CUDA_A1.json journal. No full-unit repeat or model budget
+follows merely from the event-row law; ordinary-text affordability remains
+the empirical decision, with the relation/rational branch closed.

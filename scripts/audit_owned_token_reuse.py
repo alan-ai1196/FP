@@ -74,6 +74,7 @@ def cpu_device():
         value.contract, value.arena = contract, cpu_arena(contract.storage, contract.reuse_regions)
         value._device = SimpleNamespace(check=lambda: None, snapshot=lambda: None)
         value.current, value.staged, value.predicted, value.phases, value._values = {}, {}, {}, {}, {}
+        value._native_bounds = {}
         return value
     with patch.object(runtime, '_CudaPrefix', prefix), patch.object(runtime.secrets, 'token_hex', return_value='cpu-reuse-control'):
         yield

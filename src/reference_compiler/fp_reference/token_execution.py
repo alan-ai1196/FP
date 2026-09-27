@@ -2,8 +2,9 @@
 
 An immutable committed origin and every pending source/target record decode
 the native learner, including every gradient coordinate. Binary64 enclosures
-are disposable solver workspace; only uniquely proved exact grid masters
-become a successor. No independent ingress, certificate or install endpoint.
+are solver workspace; an optional CUDA owner retains bound forests separately
+under complete binding/payment. Only uniquely proved exact grid masters become
+a successor. No independent ingress, certificate or install endpoint.
 """
 from dataclasses import dataclass, fields, replace
 from fractions import Fraction as F
