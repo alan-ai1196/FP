@@ -54,7 +54,7 @@ from . import persistence_mixture as mixture
 from .binary_arithmetic import BINARY64, Float64Arithmetic
 from . import float64_learner as finite
 from .cuda_prefix import (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract, TokenCudaPrefixContract, CudaRunManifest,
-    CudaPrefixSnapshot, _CudaPrefix, widened_state)
+    CudaPrefixSnapshot, _CudaPrefix, widened_state, LEGACY_PHASE_ENCODING_ID)
 from .cuda_range import forward_work, enclose_cuda, check_queue, stored_probability as cuda_stored_probability
 from .cuda_persistence import CudaPersistenceIdentity, CudaPersistenceResult, PairedCudaPersistenceResult
 from .cuda_installation import CudaInstallAttempt, CudaInstallReceipt, CudaInstallResult, prepare_transport, verify_transport
@@ -440,8 +440,10 @@ class ReferenceCompilerRuntime:
         joint = type(contract.initializer_pattern) is JointInitializer
         token = type(contract.initializer_pattern) is TokenInitializer
         if shared_storage is not None:
-            if type(shared_storage) is not SharedReferenceContract or not token or cuda is not None or policy is not None:
-                raise ContractError('shared reference retention currently requires native token events/profiles')
+            if (type(shared_storage) is not SharedReferenceContract or not token or policy is not None
+                    or cuda is not None and (type(cuda) is not TokenCudaPrefixContract
+                        or cuda.evidence_encoding != LEGACY_PHASE_ENCODING_ID)):
+                raise ContractError('shared retention requires token events/profiles with complete canonical CUDA frames')
             shared_storage.__post_init__()
         if cuda is not None and (token != (type(cuda) is TokenCudaPrefixContract)
                 or token and (cuda.initializer != contract.initializer_pattern or policy is not None)):
@@ -1068,7 +1070,12 @@ class ReferenceCompilerRuntime:
                 # The final writer must retain no mutable alias across the
                 # publication below, including through a later traceback.
                 frame = None
-                self._seal_cuda_frame(label, origin=origin, candidate=candidate)
+                if self._reference_archive is None:
+                    self._seal_cuda_frame(label, origin=origin, candidate=candidate)
+                else:
+                    role = (self._contract.work_roles['construct'] if origin == 'construction' else
+                            'deployment' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler')
+                    self._reference_archive.seal_cuda_frame(self, label, record, role=role)
             except MemoryError:
                 raise
             except Exception as retain_error:
@@ -1077,6 +1084,10 @@ class ReferenceCompilerRuntime:
                 self._cuda.phases[label] = replace(record,
                     status='UNRESOLVED' if isinstance(failure, expected) else 'EXECUTION_FAILED',
                     reason=record.reason+'; CUDA evidence retention failed: '+str(retain_error))
+                if self._reference_archive is not None:
+                    # A failed byte producer/reader may retain a partial page.
+                    # No newborn or profile failure may resume that archive.
+                    self._halt('shared-cuda-frame-retention', failure)
                 if isinstance(failure, ContractError) and not isinstance(failure, expected):
                     raise RuntimeError('registered CUDA execution violated its admitted inputs') from failure
                 raise failure

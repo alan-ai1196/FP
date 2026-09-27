@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+The [full CUDA frame extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
+has a **PROVED decoded-frame preservation argument** and **EXACT CPU** checks
+of1,114,248 bytes/17 frames with arbitrary nonzero padding and eight refusal/
+publication boundaries. Completed fixed frames become shared roots after
+paying full coexistence; the archive retains every byte. This removes the old
+fixed-F-per-completed-frame premise, not every possible memory obstruction.
+Actual new GPU execution is preregistered, not yet established. No tensor
+retirement, changed numerical tolerance, installation or model-quality claim.
+
 The [shared reference retention result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 has a **PROVED decoded-byte preservation theorem and exact payload identity**,
 plus **EXACTLY VERIFIED** actual native Runtime controls:72 candidate

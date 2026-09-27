@@ -1,12 +1,19 @@
 # FP Open Problems
 
+The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
+now passes exact whole-byte/padding, coexistence and failure controls. Its
+fixed new actual-owner attempt targets one profile/refusal path and the whole
+512-event full-vocabulary/context512 unit with its first commit. Execute it
+once, retain its real terminal result, then attack the actual remaining
+obstruction. The original64-MiB frame and2-GiB payload limits are retained;
+an1-GiB arena/16-GiB host envelope supports the larger scope. Do not replay
+old jobs, relax a tolerance after seeing outcomes or add storage variants.
+
 The [native lossless retention control](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 is now implemented in the actual Runtime and passes its complete-record,
 ordinary/profile and post-target failure checks. Stop native-control variants.
-Apply the byte-preservation construction to complete CUDA frames and their
-failure prefixes, then measure a bounded full-vocabulary owned unit. The
-current native registration refuses CUDA, so A2's frame obstruction is not
-yet removed. All arena objects/forests remain retained; physical retirement
+The complete CUDA frame extension is implemented above and awaits its actual
+full-vocabulary owned unit. All arena objects/forests remain retained; physical retirement
 still requires a future-access proof. Serialization traversal and native
 pending-prefix enclosure work also remain real costs, not evidence for a
 Foundation change. Continue toward language learning and strong baselines.

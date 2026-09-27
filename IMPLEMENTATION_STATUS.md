@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The [complete-frame shared lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
+is now implemented for token CUDA events/profiles. The original full frame,
+encoded page copies and root coexist under paid leases until atomic relocation;
+the complete frame remains decodable. Seventeen CPU frames and eight storage
+failure boundaries pass. The native retention regression passes, and the late
+full-unit record preflight fits64-MiB frames and2^22 phase cells. Two new
+actual-owner workers are fixed before outcomes, including the complete512-event
+full-vocabulary unit/first commit. No new device success or training release
+is inferred from the CPU result; all older device jobs remain terminal.
+
 The [lossless shared reference lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 now runs inside the actual native token Runtime with an explicit storage
 registration. It preserves every decoded record byte and keeps old snapshots
@@ -7,8 +17,8 @@ decodable after mutable workspaces are reused. Pages, temporary copies and
 workspace dependencies are paid in both roles; mutable target/ingress slots
 keep their direct protocol. Exact controls pass72 candidate observations,
 24 profile events,526 complete root comparisons and six post-target failures.
-CUDA with this representation currently refuses. Apply it to complete CUDA
-evidence next and measure an actual full-vocabulary owned unit; no new static
+The CUDA frame extension is now implemented above. Measure the actual
+full-vocabulary owned unit next; no new static
 catalog or native-control variants are due.
 
 The [token AMP phase integration](experiments/next_token/OWNED_TOKEN_AMP.md)

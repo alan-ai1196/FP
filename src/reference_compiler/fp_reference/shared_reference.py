@@ -7,7 +7,7 @@ no authority here. All page dependencies stay resident in both resource roles.
 from dataclasses import dataclass, fields, replace
 
 from .core import ContractError, natural
-from .resources import ObjectSpec
+from .resources import ObjectSpec, ResourceExceeded, CostRouter
 from .encoding import bounded_packed_size, fragments
 from . import byte_archive as archive
 
@@ -104,6 +104,11 @@ def _compare_stream(actual, expected, size):
         raise ContractError('shared reference expansion lost bytes')
 
 
+def _raw_parts(raw, start=0):
+    for offset in range(start, len(raw), archive.PIECE_LIMIT):
+        yield bytes(memoryview(raw)[offset:offset+archive.PIECE_LIMIT])
+
+
 class _SharedReference:
     def __init__(self, runtime, contract):
         contract.__post_init__()
@@ -128,58 +133,85 @@ class _SharedReference:
     def snapshot(self):
         return SharedReferenceSnapshot(self.contract, tuple(self.pages), self.workspaces)
 
-    def allocate(self, runtime, owner, planned):
-        """All fallible retention precedes any caller's learner publication."""
+    def _charge(self, runtime, role, label):
         cfg = self.contract
         # Pay bounded traversal, compression, complete independent decoding,
         # collision comparisons, page copies and metadata before any work.
         # Python heap/library workspace remain under the separate host model.
+        ledger = runtime._ledger
+        entries = (len(ledger._objects)*(len(ledger._owners)+2)+len(ledger._events)
+                   +len(ledger._owners)+len(ledger._retired)+len(runtime._buffers)
+                   +len(runtime.__dict__)+len(self.encoder._pieces)+16)
         work = (32*cfg.expanded_cap+16*cfg.reference_cap+4*cfg.comparison_cap
                 +8*(cfg.literal_workspace+cfg.program_workspace)
-                +64*(len(runtime._ledger._objects)+len(self.encoder._pieces)+1))
-        runtime._ledger.charge_work(runtime._ledger._owners[owner], {'work': work},
-                                   note=planned.spec.object_id+':shared-reference')
+                +64*entries)
+        ledger.charge_work(role, {'work': work}, note=label+':shared-reference')
+
+    def _begin(self, runtime, size):
+        cfg = self.contract
+        if size > cfg.expanded_cap:
+            raise ResourceExceeded('complete archive input exceeds its registered allowance')
+        literals, program, refs = (runtime._buffers[key] for key in self.workspaces[:3])
+        return self.encoder.begin(literals, program, refs, byte_cap=max(1, size),
+            reference_cap=cfg.reference_cap, comparison_cap=cfg.comparison_cap)
+
+    def _materialize(self, runtime, builder):
+        page_id = runtime._runtime_id+f':shared-reference:page:{len(self.pages)}'
+        scratch_id = page_id+':copy'
+        extent = {'reference_payload_bytes': builder.extent, 'physical_objects': 1}
+        runtime._ledger.allocate(runtime._data_owner, (
+            ObjectSpec(scratch_id, 'shared_reference_copy_workspace', extent, runtime._chi),))
+        runtime._buffers[scratch_id] = bytearray(builder.extent)
+        runtime._ledger.acquire(self.deployment_owner, scratch_id)
+        builder.write(runtime._buffers[scratch_id])
+        runtime._ledger.allocate(runtime._data_owner, (
+            ObjectSpec(page_id, 'immutable_shared_reference_page', extent, runtime._chi),))
+        runtime._buffers[page_id] = bytes(runtime._buffers[scratch_id])
+        # A tiny root cannot hide its dictionary in the other role's budget.
+        runtime._ledger.acquire(self.deployment_owner, page_id)
+        return page_id, scratch_id
+
+    def _read(self, runtime, page_id, expected, size):
+        cfg = self.contract
+        header = self.reader.add(runtime._buffers[page_id])
+        _compare_stream(self.reader.decoded(header.ordinal, byte_cap=cfg.expanded_cap,
+            reference_cap=cfg.reference_cap), expected, size)
+        return header
+
+    def _accept(self, runtime, page_id):
+        self.encoder.add(runtime._buffers[page_id])
+        self.pages.append(page_id)
+
+    def _scratch_releases(self, runtime, scratch_id):
+        return ((runtime._data_owner, scratch_id, 1), (self.deployment_owner, scratch_id, 1))
+
+    def allocate(self, runtime, owner, planned):
+        """All fallible retention precedes any caller's learner publication."""
+        cfg = self.contract
+        self._charge(runtime, runtime._ledger._owners[owner], planned.spec.object_id)
         try:
             size = bounded_packed_size(planned.value, byte_limit=cfg.expanded_cap,
                                        integer_bits=runtime._contract.reference_integer_bits)
-            literals, program, refs, staging = (runtime._buffers[key] for key in self.workspaces)
-            builder = self.encoder.begin(literals, program, refs, byte_cap=max(1, size),
-                reference_cap=cfg.reference_cap, comparison_cap=cfg.comparison_cap)
+            staging = runtime._buffers[self.workspaces[3]]
+            builder = self._begin(runtime, size)
             for part in _packed_parts(planned.value, staging):
                 builder.push(part)
             header = builder.finish()
             if header.expanded_bytes != size:
                 raise ContractError('shared reference encoder changed the complete extent')
-            page_id = runtime._runtime_id+f':shared-reference:page:{len(self.pages)}'
-            scratch_id = page_id+':copy'
-            extent = {'reference_payload_bytes': builder.extent, 'physical_objects': 1}
-            runtime._ledger.allocate(runtime._data_owner, (
-                ObjectSpec(scratch_id, 'shared_reference_copy_workspace', extent, runtime._chi),))
-            runtime._buffers[scratch_id] = bytearray(builder.extent)
-            runtime._ledger.acquire(self.deployment_owner, scratch_id)
-            builder.write(runtime._buffers[scratch_id])
-            runtime._ledger.allocate(runtime._data_owner, (
-                ObjectSpec(page_id, 'immutable_shared_reference_page', extent, runtime._chi),))
-            runtime._buffers[page_id] = bytes(runtime._buffers[scratch_id])
-            # All dependencies are retained under both roles, conservatively.
-            # A tiny deployment root cannot hide a compiler-owned dictionary.
-            runtime._ledger.acquire(self.deployment_owner, page_id)
+            page_id, scratch_id = self._materialize(runtime, builder)
             root = replace(planned.spec, kind=ROOT_KIND+planned.spec.kind,
                 residency={'reference_payload_bytes': ROOT_BYTES, 'physical_objects': 1})
             runtime._ledger.allocate(owner, (root,))
             runtime._buffers[root.object_id] = bytearray(ROOT_BYTES)
             # This reader never receives producer indices or expected values.
-            self.reader.add(runtime._buffers[page_id])
-            _compare_stream(self.reader.decoded(header.ordinal, byte_cap=cfg.expanded_cap,
-                reference_cap=cfg.reference_cap),
+            self._read(runtime, page_id,
                 (s.encode('utf-8', 'surrogatepass') for s in fragments(planned.value, packed=True)), size)
-            self.encoder.add(runtime._buffers[page_id])
-            self.pages.append(page_id)
+            self._accept(runtime, page_id)
             # Fill the admitted mutable 16-byte root in place. It is never
             # rewritten later; public snapshots receive their own byte value.
             runtime._buffers[root.object_id][:] = ROOT_MAGIC+archive.U64.pack(header.ordinal)
-            runtime._ledger.release_many(((runtime._data_owner, scratch_id, 1),
-                                         (self.deployment_owner, scratch_id, 1)))
+            runtime._ledger.release_many(self._scratch_releases(runtime, scratch_id))
             runtime._buffers.pop(scratch_id)
         except MemoryError:
             raise
@@ -188,6 +220,61 @@ class _SharedReference:
             # keep every lease and target and forbid another page/continuation.
             runtime._halt('shared-reference-retention', error)
             raise
+
+    def seal_cuda_frame(self, runtime, label, record, *, role):
+        """Reencode the whole paid frame, then relocate its root atomically.
+
+        The original writer has already dropped every mutable alias. Neither
+        the tensor arena nor any learner's physical storage is relocated.
+        """
+        self._charge(runtime, role, label)
+        extent = runtime._ledger._objects[label]
+        if (extent.kind != 'owned_cuda_phase_frame' or extent.provenance != runtime._chi
+                or runtime._ledger._refs[label] != {runtime._data_owner: 1}
+                or type(runtime._buffers[label]) is not bytearray
+                or extent.residency != {'reference_payload_bytes': len(runtime._buffers[label]), 'physical_objects': 1}):
+            raise ContractError('shared sealing requires the single complete owned CUDA frame')
+        size = len(runtime._buffers[label])
+        builder = self._begin(runtime, size)
+        used = bounded_packed_size(record, byte_limit=min(self.contract.expanded_cap, size-8),
+                                   integer_bits=runtime._contract.reference_integer_bits)
+        if int.from_bytes(memoryview(runtime._buffers[label])[:8], 'big') != used:
+            raise ContractError('CUDA frame length lost its complete original record')
+        builder.push(bytes(memoryview(runtime._buffers[label])[:8]))
+        for part in _packed_parts(record, runtime._buffers[self.workspaces[3]]):
+            builder.push(part)
+        # Keep every actual tail byte, including nonzero padding. No zero-tail
+        # assumption, prefix trimming or interpretation of old data is used.
+        for part in _raw_parts(runtime._buffers[label], 8+used):
+            builder.push(part)
+        header = builder.finish()
+        if header.expanded_bytes != size:
+            raise ContractError('shared CUDA frame lost its full admitted extent')
+        page_id, scratch_id = self._materialize(runtime, builder)
+        self._read(runtime, page_id, _raw_parts(runtime._buffers[label]), size)
+        root_id = label+':shared-root-copy'
+        root_extent = {'reference_payload_bytes': ROOT_BYTES, 'physical_objects': 1}
+        runtime._ledger.allocate(runtime._data_owner, (
+            ObjectSpec(root_id, 'shared_cuda_frame_root_copy', root_extent, runtime._chi),))
+        runtime._buffers[root_id] = ROOT_MAGIC+archive.U64.pack(header.ordinal)
+        self._accept(runtime, page_id)
+        # Before publication the full original frame, mutable page, immutable
+        # page and new root all coexist with live leases. Failure keeps them.
+        releases = self._scratch_releases(runtime, scratch_id)+((runtime._data_owner, root_id, 1),)
+        ledger = runtime._ledger.prepare_transfer((), releases)
+        # This trusted machine relocation preserves the same semantic label
+        # via its exact decoder. The ledger itself attests only accounting.
+        ledger._objects[label] = replace(extent, kind=ROOT_KIND+extent.kind, residency=root_extent)
+        ledger._check_residency(ledger._objects, ledger._refs)
+        ledger._event('reencode_buffer', runtime._data_owner, (label,),
+                      note='complete CUDA frame retained through immutable shared bytes')
+        buffers = dict(runtime._buffers)
+        buffers[label] = buffers.pop(root_id)
+        buffers.pop(scratch_id)
+        next_root = dict(runtime.__dict__)
+        next_root.update(_ledger=ledger, _router=CostRouter(ledger, runtime._contract.work_roles),
+            _event_router=CostRouter(ledger, runtime._event_router.snapshot()), _buffers=buffers)
+        runtime.__dict__ = next_root
 
 
 def decoded_buffer(snapshot, object_id, *, byte_cap, reference_cap):

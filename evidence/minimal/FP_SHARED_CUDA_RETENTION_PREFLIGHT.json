@@ -1,0 +1,35 @@
+{
+  "status": "PASS_FULL_UNIT_RECORD_SIZE_PREFLIGHT",
+  "phases": {
+    "predict": {
+      "canonical_record_bytes": 54382693,
+      "output_cells": 51809,
+      "pending_count": 511
+    },
+    "observe": {
+      "canonical_record_bytes": 36241896,
+      "output_cells": 98462,
+      "pending_count": 512
+    },
+    "commit": {
+      "canonical_record_bytes": 57394774,
+      "output_cells": 2773374,
+      "pending_count": 0
+    }
+  },
+  "full_vocabulary": 50257,
+  "context": 512,
+  "masters": 603092,
+  "corpus": {
+    "role": "historical-training",
+    "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+    "file_bytes": 360000000,
+    "byte_offset": 0,
+    "bytes_read": 1024,
+    "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+    "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+    "validation_or_test_read": false
+  },
+  "registered_frame_bytes": 67108864,
+  "scope": "late-record CPU size/resource calibration; no actual owner/device execution or model score"
+}

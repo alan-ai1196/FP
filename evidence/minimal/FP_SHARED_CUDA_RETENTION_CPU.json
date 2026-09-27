@@ -1,0 +1,19 @@
+{
+  "status": "PASS_EXACT_SHARED_CUDA_FRAME_RETENTION",
+  "complete_frames": 17,
+  "full_frame_bytes_compared": 1114248,
+  "all_256_byte_values_and_nonzero_padding": true,
+  "original_and_both_page_copies_paid_before_publication": 17,
+  "old_snapshots_decode_after_later_appends": true,
+  "failure_boundaries": [
+    "work",
+    "copy",
+    "root",
+    "wrong-bytes",
+    "prepare-expected",
+    "prepare-unexpected",
+    "router-expected",
+    "router-unexpected"
+  ],
+  "scope": "exact actual Runtime storage hook; synthetic frames, no CUDA execution or model claim"
+}

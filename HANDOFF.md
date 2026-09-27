@@ -1,5 +1,18 @@
 # FP Handoff
 
+**Complete CUDA frames now have an implemented lossless shared lowering.**
+The [frame proof and fixed full-unit preregistration](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
+preserve every header, record and padding byte before one paid root relocation.
+Seventeen complete frames/1,114,248 bytes and eight failure boundaries pass
+the exact CPU control; the native retention regression still passes. The CPU
+full-unit record preflight fits the existing64-MiB frame/2^22-cell caps.
+Run only the new shared-retention attempt: one actual profile/refusal worker,
+then the entire512-event full-vocabulary/context512 unit and first commit.
+Its2-GiB reference-payload cap and numerical tolerances stay fixed; full-unit
+host/arena limits are16 GiB/1 GiB. No actual shared-frame GPU result yet.
+Old device jobs stay terminal. After this attempt, follow its actual resource
+or numerical outcome toward language learning; no more storage-control variants.
+
 **Native token retention now has an owned lossless shared representation.**
 The [byte-preservation proof and exact payload law](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 retain complete packed records through immutable literal pages and explicit
@@ -8,9 +21,8 @@ all dictionary/workspace dependencies are charged to both resource roles.
 The actual native Runtime control passes72 candidate observations,24 profile
 events and526 complete roots/4,921,074 decoded bytes. Six post-target faults
 preserve the target and old learners. Ordinary/profile and CPU installation
-regressions pass. This new storage registration currently
-refuses CUDA: the native control is closed, and the next application is full
-CUDA frame preservation, then a bounded full-vocabulary owned unit. No arena
+regressions pass. The native control is closed; the full-frame extension above
+is now ready for its actual-owner attempt. No arena
 retirement, full-corpus feasibility or model-quality result is implied.
 
 **The actual token AMP Runtime audit passes; stop owner-control variants.**

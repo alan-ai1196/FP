@@ -9916,3 +9916,49 @@ refuses CUDA, policy and non-token machines. Apply the same full-byte argument
 to CUDA evidence and measure a bounded full-vocabulary owned unit next; stop
 native-control variants. Arena retirement, persistence/install and language
 learning remain due. No terminal device job was replayed.
+
+
+## 290. Preserve complete CUDA frames through shared pages and target an owned full unit (2026-09-27)
+
+The shared representation now handles token CUDA evidence through the existing
+actual Runtime hook. Before execution, the full F-byte frame is still admitted.
+After the last writer drops its mutable alias, the byte-only producer receives
+the eight-byte header, complete canonical record and every actual tail byte.
+A separate decoder compares the full original extent, including nonzero
+padding. The original frame, mutable/immutable page copies and16-byte root
+coexist with paid leases before one detached ledger/buffer/root publication.
+No tensor arena address, carry forest, source, target or native update changes.
+
+This gives the frame-retention subterm A+F+2Bi+16 before relocation and
+A+Bi+16 afterward, for previous archive payload A and encoded page size Bi.
+It invalidates the fixed-F-per-completed-frame premise behind the15-event
+obstruction, without promising small Bi, total host memory or corpus fit.
+Unexpected/expected retention errors preserve old frames and paid copies;
+the actual owner halts rather than continuing a partial shared codec. Original
+executor-error priority and native/AMP publication gates remain in charge.
+
+Exact CPU controls compare1114248 bytes across17 full frames, exercise every
+byte value/nonzero padding, preserve old snapshots after later appends and
+check eight work/copy/root/forgery/publication failures. The actual native
+retention regression remains unchanged. The CPU full-unit sizing control uses
+the same previously registered1024 training bytes and independent physical
+schedule. Late prediction/observation/commit records occupy54382693/36241896/
+57394774 canonical bytes; commit plus prepared operands uses2773374 cells.
+These fit the existing64-MiB frame and2^22-cell allowances. This calibration
+does not establish actual owned device execution or language quality.
+
+The new fixed attempt is FP_SHARED_CUDA_RETENTION_A1.json in evidence/minimal,
+launched by scripts/run_shared_cuda_retention_audit.py only after a clean source
+commit. First run the actual small profile path and a changed byte producer
+after real target reveal. Then attempt all512 events and the first commit of
+the full-V/context512/603092-master unit:2-GiB reference payload,16-GiB host,
+one1-GiB arena,4-hour wall cap, and the same numerical tolerances. Shared
+workspace/reference/expansion/comparison caps are fixed in the proof document.
+Retain failures and bounded last progress; no terminal journal is replayed.
+
+Proof, exact payload law and preregistration are in
+theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md. CPU evidence is
+FP_SHARED_CUDA_RETENTION_CPU.json and FP_SHARED_CUDA_RETENTION_PREFLIGHT.json.
+There is no new actual GPU success yet. Stop storage-control variants after
+this attempt and follow the measured obstruction toward ordinary language
+learning. Foundation/ERC stay frozen; the rational/relation branch stays closed.

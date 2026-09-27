@@ -21,10 +21,10 @@ continuation forest. That counterexample remains binding.
 
 `SharedReferenceContract` registers finite literal/program workspaces,
 expanded-byte/reference/comparison allowances and the exact codec identity.
-It is currently accepted only by the actual native token Runtime with its
-ordinary events, profiles and existing information rules. CUDA use explicitly
-refuses pending a separate transition argument. The default representation
-and all old terminal experiments are unchanged.
+At a1dc17d it is accepted only by the actual native token Runtime with its
+ordinary events, profiles and existing information rules. Sections6–7 extend
+that same representation to complete token CUDA evidence. The default
+representation and all old terminal experiments are unchanged.
 
 ## 2. Complete byte format and induction
 
@@ -155,8 +155,117 @@ event/profile and CPU installation regressions pass. Minimal counts are in
 `evidence/minimal/FP_SHARED_TOKEN_RETENTION_CPU.json`.
 
 This closes the native retention control, not the long-run training question.
-Apply the same complete-byte principle to CUDA evidence with explicit frame
-and failure preservation, then measure a bounded full-vocabulary owned unit.
+The full-frame extension below applies the same complete-byte principle;
+an actual bounded full-vocabulary owned unit remains to be measured.
 Arena addresses and floating forests have not been retired or compressed.
 No new static relation cases, device replays, persistence/install or model
 quality claim follow from this result.
+
+## 6. Whole CUDA frames and one relocation point
+
+The new registration admits only TokenCudaPrefixContract's canonical typed
+JSON evidence and the same token event/profile scope. Likelihood codecs,
+policies and installation cannot borrow this extension. The actual GPU
+executor, Gamma derivation, sources, targets, cache induction, state/readout
+predicates and phase acceptance are unchanged.
+
+Before every actual device phase, Runtime still admits and allocates the full
+F-byte mutable frame. The initial admission marker and final complete record
+use the existing writer. After its last successful write, the writer drops
+its mutable alias. Shared finalization requires that exact bytearray, matching
+extent/provenance/kind and exactly the information owner's single lease.
+
+After paying the archive work, the owner verifies the used-length header
+against the canonical record. The byte-only producer receives the actual
+eight-byte header, canonical record bytes and **every actual padding byte**.
+It does not assume the padding is zero. The independent decoder must then
+match every byte of the original full frame, not only the record prefix.
+
+Before relocation, the F-byte original, a mutable Bi-byte encoded page, its
+Bi-byte immutable copy, and a separately admitted16-byte root coexist.
+Pages and their copies remain charged to both roles. A detached ledger/root
+transaction prepares release of the mutable page and temporary root label;
+the original frame label becomes its16-byte shared root. Existing resource
+history, provenance and references remain; an explicit reencoding event is
+recorded. The new root, buffers, ledger and routers publish in one assignment.
+No local or encoder retains the old mutable frame at that point. This is an
+internal evidence-buffer relocation, not replacement of a learner's tensor
+identity, retirement of arena addresses, or a new FP action.
+
+If preparation or router creation fails, the old frame and all completed new
+copies remain owned. A successfully decoded page may remain diagnostic data;
+that is not phase acceptance. The existing outer hook records UNRESOLVED or
+EXECUTION_FAILED and preserves an unexpected executor error's priority over
+a secondary retention error. A failed shared writer/reader halts the Runtime,
+including failed newborn/profile construction, so its partial codec cannot
+resume as a fresh attempt. Actual targets and original contexts stay retained.
+
+With previous archive payload A, normal finalization of this frame has the
+subterm `A + F + 2*Bi + 16` before relocation and `A + Bi + 16` afterward.
+Workspaces are already in A. Other actual buffers remain additional costs.
+Thus the old fixed-F-per-completed-phase obstruction no longer follows;
+information has not disappeared, but moved into the retained pages and their
+complete decoder. This does not prove that Bi or total host memory is small.
+
+The exact CPU control compares1,114,248 bytes from17 full frames, including
+all256 byte values and nonzero padding. Old snapshots remain decodable after
+later appends. Eight work, copy/root quota, byte-forgery and expected/unexpected
+publication faults preserve the original frame and paid copies. The native
+retention regression passes unchanged. These are actual Runtime storage-hook
+controls with synthetic frames, not device execution.
+
+## 7. Fixed actual-owner attempt and full-unit scope
+
+The new journal is `evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json`; the
+launcher refuses an existing journal and requires a clean source commit.
+Every child starts suspended, joins its fixed non-breakaway Windows job,
+then resumes. No prior device job is replayed.
+
+The first worker runs the existing eight-target small ordinary/profile path
+through the new storage representation. All44 successful CUDA phase frames
+must be shared roots with the full original expansion length. It then predicts
+the next target and corrupts the byte producer during observation. The real
+owner must reject it after target reveal, retain the complete old frame and
+actual target/source/native observed recipe, and publish neither successor.
+Caps:4-GiB host commitment,180 seconds,one32-MiB arena and reservation,
+384-MiB reference payload,4096 phase cells,1-MiB full frames, state1/4 and
+probability/division1/10000. Shared literal/program workspaces are2 MiB each,
+expanded cap2 MiB, reference cap2^20, comparison cap8 MiB.
+
+The second worker attempts the **entire512-event full-vocabulary/context512
+unit and its first commit**, using the same previously registered1024 training
+bytes and fixed603,092-master resource fixture. It must check every owned
+phase, retain every original window/target/leaf/forest and finish1026 phases
+with one independently computed native and AMP commit. It reads no validation
+or test data and reports no loss or model score.
+
+The CPU size preflight constructs the last prediction, complete observation
+and commit records from the registered numerical schedule. Their canonical
+body lengths are54,382,693 /36,241,896 /57,394,774 bytes; the commit uses
+2,773,374 output cells, including preparation of its new readout operands.
+These deliberately use longer diagnostic IDs. They fit the unchanged64-MiB
+frame and2^22-cell allowances; this is finite resource calibration, not a
+bound on all possible histories or an issued device receipt.
+
+Full worker caps:16-GiB host commitment,4-hour wall deadline,one1-GiB arena
+and allocator reservation,2-GiB reference payload,work10^15 per role,
+64-MiB full phase frames,2^22 phase cells. Shared workspaces are64-MiB literals,
+16-MiB programs,64-KiB reference staging and512-byte canonical staging;
+expanded cap128 MiB, reference cap2^23 and exact-comparison cap1 GiB.
+State tolerance16, probability/division1e-6, range caps100 and exact-cell
+allowance4096 remain fixed from the owner resource fixture. No tolerance or
+cap may change after outcomes. The larger host/arena envelopes support a full
+unit; no isolated optimization or equal-envelope timing claim is made.
+
+Both workers require the existing pinned Torch2.12.0+cu132/CUDA13.2/RTX3090
+identity and unchanged actual/lifetime allocation history after exactly one
+backing allocation. Counters, peaks and caches are never reset. On timeout,
+resource refusal, numerical uncertainty or integrity failure, retain the
+actual terminal outcome and last bounded progress record, without a scored
+completion. A terminal journal is never overwritten or automatically retried.
+
+After this storage attempt, stop storage-control variants. An owned full-unit
+pass would advance toward persistence/install and ordinary language learning;
+a failure identifies the next real resource or numerical obstruction. Neither
+outcome licenses reopening the rational/relation-task branch or claiming full
+corpus training feasibility.
