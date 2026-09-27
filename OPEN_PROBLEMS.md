@@ -1,18 +1,22 @@
 # FP Open Problems
 
 The [token AMP owner integration](experiments/next_token/OWNED_TOKEN_AMP.md)
-is implemented and CPU controlled. Execute its new preregistered actual
-Runtime audit, including changed-cache/source and post-target quota refusals
-plus the full-context partial unit. Then address measured long-run retained
-storage and the still-unregistered token persistence/install paths on the way
-to ordinary language learning and strong baselines. Do not reopen the closed
-array component or static relation branches.
+passes all five actual-owner A2 workers at86cef1e, including changed-cache/
+source and post-target quota refusals plus the full-context partial unit.
+Stop owner-control variants; all device jobs are terminal. The immediate
+problem is complete retained storage: the current fixed-frame registration
+provably cannot finish15 observations within its2-GiB payload cap, while one
+full unit's frames alone would occupy64.125 GiB. Share immutable origins,
+records and evidence without losing old lineages or original contexts, and
+prove which physical temporaries no supported future can use before retiring
+them. Then complete token persistence/install and ordinary language learning
+with strong baselines. Do not reopen array or static relation branches.
 
 The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 now passes independent CPU controls and the actual full 512-event RTX 3090
 audit, including unchanged one-allocation history. Both jobs are terminal;
-stop component variants. Bind actual Runtime token ingress, immutable
-cache induction and the complete numerical state/readout relation. Do not
+stop component variants. Actual Runtime token ingress, immutable cache
+induction and complete numerical state/readout relations now pass above. Do not
 make typed caller caches authoritative or feed exact endpoints into AMP.
 The full-unit execution's 408,471 arrays/about 402 MB expose future launch,
 metadata and retention costs. Optimize the implementation under the frozen

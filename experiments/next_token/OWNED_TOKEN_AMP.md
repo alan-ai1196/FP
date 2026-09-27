@@ -173,3 +173,64 @@ The distinct A2 journal is `evidence/minimal/FP_TOKEN_CUDA_OWNER_A2.json`.
 All cases, resource caps, numerical tolerances, failure rules and primitive
 schedules above remain unchanged. A2 requires a new clean source commit;
 the A1 job is never overwritten or replayed as if it had passed.
+
+## 6. Actual A2 result and the next resource barrier
+
+All five workers PASS at `86cef1e`, with the unchanged preregistration. A2
+is terminal and must not be rerun; A1 remains a separate failed attempt.
+
+| Actual Runtime case | Result | Peak job commitment | Launch wall time |
+| --- | --- | ---: | ---: |
+| Ordinary events and newborn profile | 44 checked phases; 18,371 device words | 2,010,083,328 bytes | 6.627 s |
+| Same-gradient carry forgery | Complete predecessor refused before prediction | 1,923,276,800 bytes | 3.648 s |
+| Changed forecast source | Actual target retained; neither successor published | 1,896,439,808 bytes | 2.964 s |
+| Observation quota | UNRESOLVED after reveal; actual target retained | 1,897,754,624 bytes | 2.975 s |
+| Full vocabulary/context512, eight targets | 17 checked phases; 3,441,395 device words | 3,997,507,584 bytes | 127.727 s |
+
+The normal worker checks 12 ordinary candidate observations plus four profile
+events over two independent lineages. Both births have the same registered
+fresh integer masters, and every profile uses its original source context.
+The forged forest passes the current-coordinate numerical comparison and
+fails the actual owner equality against its immutable predecessor record.
+The source and quota cases halt without advancing either published learner;
+the target, original context and complete native pending recipe survive.
+
+The full case retains all603,092 masters and all eight windows, targets,
+event leaves and carry forests. Its cursor and pending count are8, and it
+performs zero commits. Its consumed arena extent is24,198,632 bytes. All
+five workers preserve exactly one backing allocation:32 MiB for the first
+four cases and128 MiB for the full case, with matching actual/lifetime
+allocator reservation. A separate passive journal read checks allocation
+counters, process/job bounds and terminal statuses without device replay.
+
+This establishes the declared actual owned event/profile prefix and refusal
+paths. It is not a language score, a completed full-vocabulary unit, a full
+corpus feasibility result, or a persistence/install release. The timings
+include reference execution, verification and serialization; no attribution
+to one optimization or training throughput is made.
+
+There is now a simple decisive obstruction to a longer run under the same
+registration. With one active learner, T successful observations need at
+least `P(T)=1+2T+floor(T/512)` retained CUDA phase frames: initialization,
+prediction/observation, then each complete-unit commit. The existing owner
+retains each64-MiB frame and prepays another64 MiB during immutable
+finalization. Its raw-readout workspace is32 MiB. Other owned data consume
+additional positive space. Hence the reference-payload peak is at least
+
+`(P(T)+1)*64 MiB + 32 MiB`.
+
+At T=15 this lower bound is2,080 MiB, already above the registered2-GiB
+payload cap. Thus this exact registration cannot finish15 observations,
+let alone its512-event unit, regardless of targets or arithmetic success.
+A full unit alone would retain1,026 frames,64.125 GiB, before other payloads.
+This is a lower bound for the present fixed-frame implementation, not FP
+semantics or all legal storage representations. Raising a timeout cannot
+remove it. The eight-target pass must not be presented as a training release.
+
+**Stop owner-control variants here.** The next task is affordable complete
+retention: share immutable origins/definitions/records and evidence, and
+prove which arena temporaries may be retired under every supported future
+access. Data, old lineages and original profile contexts must remain
+decodable; plain current-gradient compression is still falsified. Then
+complete the real persistence/install paths and run ordinary language
+learning with fresh strong baselines. No new static relation catalog is due.

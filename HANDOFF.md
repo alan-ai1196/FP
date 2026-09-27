@@ -1,19 +1,25 @@
 # FP Handoff
 
-**Token AMP now has a Runtime phase integration awaiting its actual-owner
-audit.** The [owned phase invariant and fixed preregistration](experiments/next_token/OWNED_TOKEN_AMP.md)
-bind fresh Gamma, source/target/phase identities, complete immutable carry
-state and the native-coordinate/all-label recipe relations to the existing
-owner. CPU controls pass 1,632 transitions and 166,704 exact words. The new
-audit includes ordinary/profile trajectories, real cache/source/quota attacks
-and eight full-vocabulary/context512 training events. It does not release
-token search/persistence/install or a language score. Run only this registered
-owner audit; the earlier component jobs below remain terminal.
-Owner A1 at7f91993 failed first-prediction evidence serialization because
-the passive envelope returned binary64 bound diagnostics. The corrected
-boundary encodes their exact rational values; CPU serialization controls
-pass. A distinct A2 is preregistered with every cap/tolerance unchanged.
-A1 remains failed and is never overwritten.
+**The actual token AMP Runtime audit passes; stop owner-control variants.**
+The [owned phase invariant and terminal A2 results](experiments/next_token/OWNED_TOKEN_AMP.md)
+at86cef1e cover ordinary/profile trajectories, independent fresh Gamma,
+actual cache/source/quota refusals and eight full-vocabulary/context512
+targets. The full case checks17 phases/3,441,395 device words, retains all
+603,092 masters and eight pending records, and performs zero commits. Its
+peak job commitment is3,997,507,584 bytes. All five workers retain exactly
+one CUDA backing allocation. A1 remains failed; no terminal job is replayed.
+
+**Next: affordable complete retention, then persistence/install and ordinary
+language learning.** A2's fixed64-MiB evidence frames alone prove that its
+2-GiB reference-payload registration cannot finish15 observations; a full
+512-event unit would retain64.125 GiB of frames before other payloads.
+This is an implementation bound, not a Foundation obstruction. Share
+immutable origins/records/evidence and prove future-access liveness before
+reclaiming arena temporaries. Every supported old lineage and original
+profile context must remain decodable. No full-unit owner run, complete
+training release, language score or token search/persistence/install is
+claimed. The component milestones below are historical, not instructions
+to repeat already completed integration or audits.
 
 **The token event/carry executor passes its actual RTX 3090 arena audit.**
 The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
@@ -22,9 +28,9 @@ all 603,092 committed masters. Retained leaves/forests and old states pass;
 allocation history remains exactly one 1-GiB backing allocation. Trajectory
 extent 402,094,088 bytes; peak job 3,094,769,664 bytes; 137.544 s including CPU
 replay/readback, not training throughput. Small/profile controls also pass.
-Both new jobs are terminal; do not rerun or add component variants. Next bind
-actual Runtime Gamma/source/target/phase ownership and the full cache/state/
-readout relation, then ordinary language learning and fresh strong baselines.
+Both new jobs are terminal; do not rerun or add component variants. The owner
+integration above now binds Runtime Gamma/source/target/phase ownership and
+the full cache/state/readout relation for its declared finite traces.
 No complete bridge, installation or model-quality claim is issued. Launch,
 metadata and append-only retention costs remain implementation constraints.
 

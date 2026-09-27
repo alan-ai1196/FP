@@ -4,13 +4,20 @@ The [token AMP phase integration](experiments/next_token/OWNED_TOKEN_AMP.md)
 now uses the existing Runtime CUDA owner, independently derived Gamma,
 complete immutable cache records, checked new array graphs and the complete
 native-coordinate/readout predicates. CPU controls pass 576 observations,
-336 commits and 1,632 phases. Actual-owner device jobs are preregistered;
-they have not yet established execution. Token search/persistence/install,
-long-run retained-storage affordability and language quality remain open.
-The first actual-owner A1 failed at canonical prediction-frame serialization;
-its binary64 diagnostic bounds now become their exact rational values.
-CPU serialization controls pass. The corrected A2 uses unchanged limits;
-no actual-owner success is inferred from that fix.
+336 commits and 1,632 phases. All five actual-owner A2 workers PASS at86cef1e:
+ordinary/profile paths, real cache/source/quota refusals and eight actual
+full-V/context512 targets. The latter checks3,441,395 device words in17
+phases with all603,092 masters and its complete pending unit retained;
+peak job3,997,507,584 bytes. Every worker preserves one backing allocation.
+Both A1 (failed serialization) and A2 are terminal. No owner-control variants
+are due. Token search/persistence/install and language quality remain open.
+
+Long-run retention is the immediate barrier: at least
+`1+2T+floor(T/512)` fixed64-MiB phase frames survive after T observations.
+With the required sealing copy and32-MiB readout workspace, A2's2-GiB
+reference-payload cap cannot admit15 observations. A full unit's frames
+alone total64.125 GiB. Lossless shared state/evidence and proved temporary
+liveness are due; the eight-target pass is not a training release.
 
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer
@@ -18,9 +25,9 @@ commits using admitted fresh CUDA extents, with no passive-Torch fallback.
 CPU controls pass 576 events/336 commits and 165,444 exact words. Both actual
 RTX 3090 jobs pass at 2e815c6: the full 512-event unit matches 76,935,527 output
 words and all 603,092 masters, with one backing allocation and about 402 MB
-of consumed extents. Both jobs are terminal. Actual Runtime token-CUDA
-dispatch, Gamma, cache induction, state/readout relation and installation remain
-unregistered. No helper or typed cache is treated as an authorized owner.
+of consumed extents. Both jobs are terminal. Runtime token-CUDA dispatch,
+Gamma, cache induction and state/readout relations are now integrated above;
+installation remains unregistered. No helper or typed cache supplies authority.
 
 The [incremental token AMP component](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
 now avoids numerical derivative-prefix replay. Binary-carry frontiers retain

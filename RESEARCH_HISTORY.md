@@ -9829,3 +9829,43 @@ The separate A2 journal is preregistered in OWNED_TOKEN_AMP.md with all cases,
 resource caps, tolerances and numerical schedules unchanged. It requires a
 new clean source commit; the failed A1 is never overwritten or treated as a
 passed attempt. Continue the real-owner audit, not old component replay.
+
+
+## 288. Verify the actual token AMP owner and prove its next retention barrier (2026-09-27)
+
+All five registered A2 workers at86cef1e01c720795a530da18cb88e26fd2f3dde4
+PASS. Ordinary/profile execution checks44 CUDA phases and18371 device words,
+including fresh independent Gamma and every original reversed/repeated source
+context. A forged carry forest still passes the current-gradient numerical
+predicate but the actual owner rejects its changed complete predecessor.
+Source forgery and an observation quota after actual target reveal halt with
+that target and its original context retained and neither successor published.
+
+The full-V/context512 worker processes eight actual training targets with
+all603092 masters and its complete partial unit retained. It checks17 phases
+and3441395 actual device words, consumes24198632 arena bytes and performs
+zero commits. Peak job commitment3997507584 bytes, launch wall127.727 seconds;
+the latter includes reference/checking/serialization, not model throughput.
+All five workers preserve exactly one backing allocation:32 MiB for the four
+small controls and128 MiB for the full case. Passive journal verification
+checks allocation history, preattached process/job bounds and terminal results.
+Evidence: evidence/minimal/FP_TOKEN_CUDA_OWNER_A2.json. A1 remains failed.
+Both attempts and all earlier component jobs are terminal; never replay them.
+
+The next obstruction is now proved without running another trajectory.
+With one learner and512-event units, T successful observations require at
+least P(T)=1+2T+floor(T/512) retained phase frames. This registration fixes
+each frame at64 MiB, also pays a64-MiB immutable-sealing copy, and keeps a
+32-MiB raw-readout workspace. At T=15 the resulting lower bound is2080 MiB,
+already over the2-GiB reference-payload cap, before other positive payloads.
+Thus this registration cannot finish15 observations, possibly failing sooner.
+One full unit alone would retain1026 frames/64.125 GiB. This is a present
+implementation obstruction, not a universal FP lower bound or Foundation flaw.
+
+The owner controls have reached a stopping point. Next make complete retained
+state/evidence affordable through lossless immutable sharing and proved
+future-access liveness, then finish persistence/install and ordinary text
+learning with fresh strong baselines. Current-gradient compression remains
+falsified; no old lineage or original profile context may be silently erased.
+No full-unit owner execution, language score, training or install release is
+claimed. Foundation/ERC stay frozen and the relation-task branch stays closed.

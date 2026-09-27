@@ -2,10 +2,20 @@
 
 The [owned token AMP implementation](experiments/next_token/OWNED_TOKEN_AMP.md)
 has CPU numerical controls for 1,632 phases and 166,704 exact words. Actual
-Runtime CUDA ownership is awaiting its fixed device audit. The proposed
-checked class is one complete owned phase under its declared bounds, with
-all future-used carry caches retained; it is not an architecture-class,
-statistical persistence or installation certificate. No release expands yet.
+Runtime ownership is **EMPIRICALLY VERIFIED** by all five registered A2
+workers at86cef1e, including complete-cache/source/quota attacks and eight
+full-vocabulary/context512 targets. The checked class is the complete owned
+phases on these finite traces under the registered bounds, with every
+future-used carry cache retained. It is not CERTIFIED_COMPLETE, a full-unit
+owner execution, architecture-class, persistence, installation or model-quality
+claim. A1 stays failed; both attempts and all component jobs are terminal.
+
+The current registration has a **PROVED implementation resource obstruction**:
+`P(T)=1+2T+floor(T/512)` retained64-MiB CUDA frames plus the sealing copy and
+32-MiB readout workspace require at least2,080 MiB by T=15, exceeding its
+2-GiB reference-payload cap. Failure may occur earlier. This is not a lower
+bound on all legal FP representations. Complete shared retention is the next
+task; eight successful targets do not establish affordable training.
 
 The [token arena array lowering](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 is **NUMERICALLY VERIFIED** on CPU for 144 histories and 165,444 exact words,
