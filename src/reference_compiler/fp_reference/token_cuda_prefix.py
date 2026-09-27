@@ -13,7 +13,8 @@ from .token_causal import TokenWindow
 from .token_arrays import CPUArrays, CudaArrays
 from .token_array_check import CheckedPrimitives
 from .token_array_events import Kernel, Prepared
-from .token_cuda_state import ArrayWords, Resident, PredictionResident, ReadoutResident, StateWords
+from .token_cuda_state import (ArrayWords, Resident, PredictionResident, ReadoutResident, StateWords,
+                               share_state_bytes)
 from .token_enclosures import EnclosureUnresolved
 from . import token_batch as ref, token_amp as amp, token_streaming as stream
 from . import token_state_relation as states, token_readout_relation as readout, token_readout_envelope as envelope
@@ -230,9 +231,14 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
         error = exc
     if a is not None:
         raw_operations = tuple((tag, ArrayWords.capture(value, a)) for tag, value in a.records)
+    # Capture even on a failed phase. Sharing runs only on the resulting
+    # immutable bytes; it cannot replace a readback or hide a changed word.
+    result_raw = None if result is None else result.raw()
+    if result_raw is not None and input_id is not None:
+        result_raw = share_state_bytes(result_raw, prefix.phases[input_id].raw_state)
     record = IndexedCudaPhase(object_id, candidate, program.program_id, origin+':'+kind,
         ordinary_cursor, observation_id, input_id, prediction_id, reference, reference_prediction,
-        None if result is None else result.raw(), None if actual_prediction is None else actual_prediction.raw(),
+        result_raw, None if actual_prediction is None else actual_prediction.raw(),
         raw_operations, relation, 0 if a is None else a.cells, None if workspace is None else workspace.index,
         'CHECKED_CUDA_PREFIX_PHASE' if error is None else
             'UNRESOLVED' if isinstance(error, (ResourceExceeded, ArithmeticUnresolved)) else 'EXECUTION_FAILED',

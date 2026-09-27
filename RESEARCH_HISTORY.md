@@ -10230,3 +10230,25 @@ worker and compares its cap table with the preserved original A1 registration.
 All original model, source-prefix, numerical, host/arena/payload and four-hour
 limits remain fixed. It uses a new exclusive journal, not the old attempt or
 a repeat of the passed small controls. No outcome or speedup is assumed.
+
+
+## 298. Share equal host images without replacing fresh physical reads (2026-09-27)
+
+While the fixed A2 runs unchanged at307251e, a separate branch removes one
+source of repeated retained host strings. Complete fresh physical captures
+still happen, and only exactly equal immutable master/prepared/leaf payload
+bytes share their predecessor's storage. Every metadata field, canonical
+record, clock and check remains. No device tensor is retired or reused.
+The proof and exact payload scope are in section11 of
+theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md.
+
+The complete phase executor with a CPU array backend preserves all544 phase
+encodings/24,368,238 bytes across48 histories, with all203,394 fresh read calls
+and4,030,344 read bytes unchanged. The aggregate unique retained StateWords
+payload falls from214,320 to109,748 bytes in this control. All31 independently
+altered payloads remain altered; mutable hints, metadata and signed zeros
+are preserved. Actual master/leaf changes still produce the same refusal
+and complete changed failure record. The owned frozen-report phase regression
+passes. Evidence is FP_SHARED_TOKEN_WORDS_CPU.json; there is no GPU, corpus,
+whole-host saving, throughput or model-quality claim. Integrate only after
+A2 is terminal; no new audit job or control variant is registered.
