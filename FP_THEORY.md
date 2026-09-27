@@ -6,6 +6,12 @@ This file is the **only normative theory source** for FP. Historical v1–v155 c
 
 The theory is frozen in the following sense: do not add a new architecture-semantic mechanism merely to make search faster. If implementation exposes a mathematical counterexample to the declared object, reopen theory. If it exposes only hard search, weak information, expensive certificates, numerical ambiguity or insufficient fresh evidence, improve the solver or return `UNRESOLVED`.
 
+The [frozen token reporting epilogue](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+implements XIV's read-only validation/test role for a supplied fixed incumbent.
+Its conditional mass-normalized loss/mean bounds and exact/CPU owner checks
+do not change a Foundation definition or supply fresh/installation authority.
+Actual device reporting and a corpus score remain unestablished.
+
 The scoped Reference Compiler runtime and actual target AMP path have passed their complete integration and event-level bridge gates. Registered RTX 3090 experiments may now proceed within that tested scope; execution outside it requires the corresponding evidence, not a borrowed release claim.
 
 The registered Reference/CPU implementation passed its complete integration
@@ -558,6 +564,13 @@ offsets, with target updates combined before projection. The scoped proof
 and full-vocabulary exact control grant no AMP, Runtime or complete-Compiler
 equivalence. This is an execution refinement for the ordinary-text study;
 Foundation, ERC-1 and semantic architecture actions remain unchanged.
+
+The [frozen token readout scope](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+also gives the algebraic K+1-mixture identity and finite-report loss floor
+H(empirical targets)-log(K+1), with a conditional rounded-recipe allowance.
+The bound concerns a fixed head, not an updating run or the entire FP grammar.
+The current resource fixture's newest-token/pooled-context restriction is
+explicit; no ordered source history is erased or useful language model selected.
 
 The [passive native token composition](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 now joins indexed lag/token SUMs, an arbitrary positive core and that readout

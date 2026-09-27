@@ -621,5 +621,5 @@ class _CudaPrefix:
             raise ContractError('only the actual retained phase can advance a CUDA prefix')
         if record.phase.endswith(':predict'):
             self.predicted[record.candidate_id] = record.object_id
-        else:
+        elif record.phase != 'report:readout':
             self.staged[record.candidate_id] = record.object_id

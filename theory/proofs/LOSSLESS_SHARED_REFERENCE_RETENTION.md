@@ -265,7 +265,111 @@ actual terminal outcome and last bounded progress record, without a scored
 completion. A terminal journal is never overwritten or automatically retried.
 
 After this storage attempt, stop storage-control variants. An owned full-unit
-pass would advance toward persistence/install and ordinary language learning;
+pass would advance toward ordinary language learning; adaptive persistence/
+install remain required when a study replaces its graph. As scoped in the
+text-study entry, they are not extra gates for an unchanged incumbent. Here
 a failure identifies the next real resource or numerical obstruction. Neither
 outcome licenses reopening the rational/relation-task branch or claiming full
 corpus training feasibility.
+
+## 8. Preserve the byte stream while removing recursive fragment propagation
+
+The original A1 device attempt is bound to e3faaf5; its source remained
+unchanged throughout execution. A separate CPU diagnostic at that source profiles native
+initialization, prediction of train/0 and observation of its actual target,
+using full_registration() and the same shared storage with no CUDA argument.
+It reads only the already registered training prefix and scores no model.
+
+That diagnostic records1,389,070,896 Python calls,494,159,081 primitive calls
+and224.732 profiled seconds. About191.9 cumulative seconds are inside native
+retention. Recursive fragments/_array propagation dominates the call graph.
+This is an instrumented first-event measurement, not a decomposition of the
+whole GPU run or a claim about later native-gradient costs.
+
+The canonical writer now keeps an explicit stack of active child iterators.
+It emits each atomic tag/value directly, traverses all fields and children,
+and streams long strings/byte payloads in their original bounded chunks.
+It retains the exact packed and identity formats, both spacing modes,
+Unicode surrogatepass transport, signed zeros and mapping-key sort rules.
+No value or identity cache is introduced. A stack-local active-ID set rejects
+cyclic containers; repeated acyclic objects are still fully traversed.
+The existing paid bounded-size walk, depth/integer/expanded limits, output
+admission and independent decoder comparisons are unchanged.
+
+**Byte-preservation argument.** For each atomic type, the new emitted
+concatenation is the old typed JSON expression. For a container, its opening
+metadata, ordered children, separators and closing delimiters are unchanged.
+Induction on the finite stable value graph gives equal child encodings and
+therefore equal complete streams. Mapping keys are sorted using the same
+canonical key streams, so their order also agrees. Sharing a child in several
+positions repeats its entire stream in both writers. Thus packed extents,
+canonical bytes and identity hashes agree. This does not assume that two
+different records have the same identity or compress to the same page.
+
+Let A be visited value occurrences and F the emitted fragments, excluding
+the separately retained cost of key sorting and scalar formatting. The new
+traversal uses O(A+F) iterator/emission steps and O(D) active traversal frames
+at depth D. It removes propagation of each child fragment through every
+ancestor generator. It does not remove repeated value occurrences from A,
+bound the whole interpreter heap, or make repeated complete histories linear
+in the number of events. Encoded mapping keys and integer/string workspace
+remain additional costs. No resource tariff is lowered on the strength of
+this interpreter-level argument.
+
+The exact audit compares2,160 typed/mode cases and202,318 bytes against the
+writer loaded from e3faaf5, all65,536 BMP code points,3,072 surrogate/astral
+boundary classes, both signed zeros, nested records, bytes and mixed mapping
+keys. Cyclic containers refuse; repeated acyclic objects and the existing
+unfunded traversal refusals remain correct. Direct current Runtime controls
+preserve distinct Unicode-source predictions and refuse a forced identity
+collision without replacing owned code. An eight-level repeated-rational
+fixture emits8,425 fragments instead of57,719, with exactly the same bytes.
+
+The corresponding native cProfile diagnostic falls to about165 million
+calls; its complete counts/time are in FP_STREAMED_ENCODING_CPU.json.
+Profile timings include instrumentation and concurrent machine activity;
+they are not uninstrumented latency or a GPU speedup result. Native shared
+retention still passes72 candidate observations,24 profiles and526 roots;
+the17-frame/eight-failure control and ordinary/profile regressions pass.
+Different fragment boundaries may change shared page sizes, not decoded bytes.
+
+The old audit_owned_encoding.identity_audit historical adapter currently
+fails on both unmodified e3faaf5 and this change: it passes the later
+indexed_order_search constructor field to the532d713 Runtime. That adapter
+is not reported as passing. Its current source/collision obligations are
+checked directly by scripts/audit_streamed_encoding.py, without reviving an
+old release or broadening any CERTIFIED_COMPLETE class.
+
+This closes the canonical traversal optimization. The original A1's terminal
+outcome is below. Do not replay its completed control or add storage variants.
+Affordable sustained text training and strong model baselines remain open;
+adaptive persistence/install is a separate requirement for graph replacement.
+
+## 9. Original A1 terminal result and integration decision
+
+At e3faaf5, the profile/refusal worker **PASSES**44 checked phases/18,371
+device words in8.1825606 seconds. It retains46,137,344 decoded full-frame
+bytes in138 archive pages/1,762,205 page bytes; paid reference peak is7,168,693
+bytes. The changed post-target producer is rejected with the complete failed
+frame and target retained and neither learner successor published. All47
+arena phases, including failure, preserve one32-MiB backing allocation.
+
+The full-unit worker **TIMES OUT** at the original14,400,000-ms deadline;
+launcher wall time is14,400.2873112 seconds. The Windows job reports
+timed_out=true, exit1223 and7,650,095,104 bytes peak commitment under16 GiB.
+There is no completed result. The last published checkpoint, at13,741.5514762
+seconds, is an ordinary prefix with320 observations,641 checked phases and
+2,246 archive pages. It is a confirmed prefix, not an assertion that timeout
+occurred exactly at that event. No full512-event unit or first commit is
+established. The observed terminal boundary is wall time, not a host-cap
+termination; this does not prove a time lower bound for other implementations
+or rule out later resource/numerical obstructions.
+
+Minimal original evidence is FP_SHARED_CUDA_RETENTION_A1.json. The launcher
+and both workers are terminal; its journal must not be overwritten or replayed.
+Only after termination were the byte-preserving writer and prepared reporting/
+model-scope/baseline commits integrated. Their CPU evidence remains separate
+from this original device outcome. Execute the already fixed reporting audit,
+then preregister the integrated executor's full unit under unchanged limits.
+The successful small storage control is closed. No model score, whole-corpus
+feasibility, erased state or Foundation change follows from this outcome.

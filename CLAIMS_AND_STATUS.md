@@ -1,5 +1,34 @@
 # FP Claims and Status
 
+The [frozen positive-head capacity bound](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+is **PROVED** for the specified readout: mean CE >= H(empirical targets)-log C
+>= H(empirical targets)-log(K+1), where C is the sum of componentwise maxima.
+The registered half/single recipe has a **PROVED CONDITIONAL** roundoff loss
+allowance. The current resource graph's pooled/newest-token factorization is
+checked exactly. The whole-updating-run extension is **FALSIFIED** by a legal
+exact U; current forecast equality also fails as a future-state quotient.
+No corpus score, selected model, universal FP lower or GPU authority follows.
+
+The [frozen-token reporting argument](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+is **PROVED CONDITIONALLY** for the closed owned interface: reporting preserves
+the committed native/physical learner, derives proper-mass log-loss bounds,
+and adds less than2^-p mean rounding error per endpoint independently of N.
+Its **EXACT/CPU** controls pass32 training/report words,96 report events,
+416 retained records, six post-target failures and the new complete phase
+logic. `COMPLETE_REPORT` covers only the fixed registered finite stream of
+that incumbent. It is not `CERTIFIED_COMPLETE`, population evidence, fresh
+persistence, installation or a full Compiler certificate. Actual CUDA
+reporting is preregistered but unrun; there is no new corpus score.
+
+The [iterative canonical writer](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+has a **PROVED conditional byte-preservation argument** for supported finite
+stable value graphs and **EXACT** old/new byte checks, including Unicode,
+typed values, mapping order and identity modes. Actual current source/collision
+and retained-state controls pass. The reduction from1.39 billion to about165
+million calls is an **EMPIRICAL cProfile CPU diagnostic** for native
+initialization plus one full-vocabulary event. No GPU speedup, whole-history
+linear-work theorem, state quotient or new completeness certificate follows.
+
 The [full CUDA frame extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 has a **PROVED decoded-frame preservation argument** and **EXACT CPU** checks
 of1,114,248 bytes/17 frames with arbitrary nonzero padding and eight refusal/
@@ -7,11 +36,14 @@ publication boundaries. Completed fixed frames become shared roots after
 paying full coexistence; the archive retains every byte. This removes the old
 fixed-F-per-completed-frame premise, not every possible memory obstruction.
 The actual A1 profile/refusal worker at e3faaf5 **PASSES**44 checked phases
-and the changed-producer refusal. Its full512-event worker remains **RUNNING**;
-the confirmed16-event prefix passes the old frame-count obstruction, not the
-full-unit claim. No tensor retirement, changed numerical tolerance,
-installation or model-quality claim follows. A staged CPU-only serialization
-refinement (e157923) does not replace this running source or its outcomes.
+and the changed-producer refusal. Its full512-event worker **TIMES OUT** at
+the original four-hour limit: last completed checkpoint320 observations/641
+phases; peak job7,650,095,104 bytes under16 GiB. The full-unit claim is
+**UNRESOLVED FOR THIS EXECUTION**, with no first commit or accepted completion.
+The partial prefix crosses the old frame-count obstruction; it proves no
+general time lower bound. No tensor retirement, changed numerical tolerance,
+installation or model-quality claim follows. The writer refinement e157923
+was integrated after termination and has no outcome attributed to this job.
 
 The [shared reference retention result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 has a **PROVED decoded-byte preservation theorem and exact payload identity**,
@@ -34,12 +66,14 @@ future-used carry cache retained. It is not CERTIFIED_COMPLETE, a full-unit
 owner execution, architecture-class, persistence, installation or model-quality
 claim. A1 stays failed; both attempts and all component jobs are terminal.
 
-The current registration has a **PROVED implementation resource obstruction**:
+The earlier unshared A2 registration has a **PROVED implementation resource obstruction**:
 `P(T)=1+2T+floor(T/512)` retained64-MiB CUDA frames plus the sealing copy and
 32-MiB readout workspace require at least2,080 MiB by T=15, exceeding its
 2-GiB reference-payload cap. Failure may occur earlier. This is not a lower
-bound on all legal FP representations. Complete shared retention is the next
-task; eight successful targets do not establish affordable training.
+bound on all legal FP representations. Shared retention above changes that
+premise and crosses this obstruction, but its original full-unit attempt times
+out. Neither eight successful targets nor a partial longer prefix establishes
+affordable sustained training.
 
 The [token arena array lowering](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 is **NUMERICALLY VERIFIED** on CPU for 144 histories and 165,444 exact words,

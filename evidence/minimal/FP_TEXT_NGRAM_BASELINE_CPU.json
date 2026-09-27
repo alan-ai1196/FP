@@ -1,0 +1,31 @@
+{
+  "status": "PASS_NATIVE_KENLM_COMPARISON_CONTROL",
+  "scope": "upstream MKN estimator and complete-alphabet frozen score on synthetic tokens; no corpus result or selected trial",
+  "upstream_commit": "5bf7b46558e1c5595bf3b8c9b0b1f9d8d257040a",
+  "vcpkg_baseline": "07f4812200df3d3c931c0c8a6081d3b21fe2bf9f",
+  "port": "kenlm:x64-windows-static@20230531#1",
+  "native_tools_built": true,
+  "estimator": "unpruned interpolated modified Kneser-Ney",
+  "order": 3,
+  "synthetic_training_tokens": 10080,
+  "automatic_discounts_without_fallback": true,
+  "binary_kind": "unquantized trie",
+  "input_chunk_sizes": [
+    1,
+    7,
+    65536
+  ],
+  "one_sentence_per_tape_no_eot_reset": true,
+  "independent_float64_probability_checks": 1248,
+  "maximum_independent_log_probability_difference": 2.898934576833767e-07,
+  "log_probability_tolerance": 1e-05,
+  "causal_suffix_mutations": 8,
+  "full_vocabulary": 50257,
+  "full_vocabulary_unseen_ids": 50177,
+  "unknown_mass_split_control": true,
+  "all_seen_alphabet_excludes_unused_unknown_mass": true,
+  "malformed_reports_refused": 4,
+  "experiment_corpus_bytes_read": 0,
+  "trained_model_or_score_retained": false,
+  "device_claim": false
+}

@@ -1,11 +1,76 @@
 # FP Handoff
 
-The five prepared research commits below are now reconciled with main's
-first-model scope and baseline conventions on research/token-text-ready in
-F:\FP-encoder-work. Only documentation changed during that merge. After the
-original A1 is terminal, preserve its journal and integrate this prepared
-branch; its individual research commits remain intact. The executing source
-is still e3faaf5. Do not launch another device worker while A1 remains live.
+**The original full token unit timed out; its result is preserved.**
+Shared-retention A1 at e3faaf5 ended at its original four-hour deadline.
+The last completed checkpoint contains320 observations and641 checked phases;
+peak job commitment was7,650,095,104 bytes under the16-GiB host cap. No full
+512-event unit or first commit was completed. The profile/refusal worker
+passes44 phases and retains the changed post-target frame. This is an
+unresolved full-unit execution under that registration, not a Foundation
+counterexample or a lower bound on other implementations. The terminal
+journal is evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json; never replay it.
+The five prepared research commits and their scope reconciliation are now
+integrated. Run the fixed reporting audit next, then use the byte-preserving
+writer to address the measured execution cost without changing model, caps
+or tolerances. No text score or sustained-training feasibility is established.
+
+The [upstream modified Kneser–Ney comparison path](experiments/next_token/baselines/NGRAM.md)
+now builds natively on this Windows machine and passes its synthetic CPU
+control. The pinned estimator supplies automatic discounts; the reporter
+normalizes over every real token, divides unknown mass correctly and keeps
+file/EOT contexts explicit. It matches an independent ARPA/float64 control.
+Build assets are outside Git at F:\experiment\FP_next_token_baselines. No
+actual corpus, selected model order or GPU result is involved. Both baseline
+adapter controls are now closed; actual FP feasibility/reporting and a
+concrete adequately trained text comparison remain the experimental priority.
+
+The [standard Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
+now passes its CPU float64 control. It retains the pinned upstream model and
+AdamW, uses the full predicted alphabet with an input-only PAD row, and makes
+offline block training versus rolling frozen reporting contexts explicit.
+Upstream logits/all gradients, causal reads, reporting invariance and full-V
+normalization pass. No corpus, GPU job or model budget is opened/selected.
+This adapter control is closed; actual FP feasibility and the fixed reporting
+device audit still determine the next empirical text preregistration.
+
+**The resource fixture's model class is now explicit; do not silently promote it.**
+The [frozen-head/context audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+proves that its eight-feature positive head is a mixture of at most nine
+fixed output distributions. Frozen native CE is at least empirical target
+entropy minus log9; the registered AMP recipe adds a small derived allowance.
+The initial head's sharper log C is0.4964352636 nats, not a learned/model score.
+Its core retains the newest token plus pooled context and cannot learn the
+ordering of older tokens at a fixed prediction. Full source order still
+matters to future appends and remains retained. An exact updating-U example
+disproves applying the frozen-head floor to an entire training run. The
+scope audit is closed; no corpus is opened, graph changed or new device job
+started. Use these limits in the first text preregistration after feasibility.
+
+**Frozen-model token reporting now passes its exact/CPU boundary.**
+The [reporting proof and fixed next device audit](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+bind a preregistered validation/test stream to the actual committed incumbent,
+preserve its original causal contexts and permanently close learning/Compiler
+ports during reporting. Proper AMP loss uses the target recipe mass divided
+by the sum of all recipe masses; stored-Z division is kept distinct. Directed
+mean rounding adds less than2^-p per endpoint regardless of stream length.
+All32 binary training/report histories,96 report events,416 retained records,
+six post-target failure controls and the full CPU phase checks pass. Ordinary
+events, CPU installation and token phase regressions pass. The two-worker
+actual reporting audit is committed but unrun. The original A1 is now terminal,
+so execute that fixed audit once. No corpus score is claimed.
+This is the fixed-incumbent experiment boundary, not adaptive installation.
+
+**A measured serialization bottleneck now has a byte-identical traversal fix.**
+The [traversal argument and CPU evidence](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+replace recursive fragment propagation with a stack of active iterators.
+Every canonical byte and identity is preserved; no value cache or reduced
+audit is used. Native initialization plus one full-vocabulary event falls
+from1.39 billion to about165 million cProfile calls. Exact Unicode/type/mode,
+source/collision, shared-retention and ordinary/profile controls pass.
+This supplies no new GPU outcome for the writer. The original A1 timeout
+remains attributed to e3faaf5; the writer was integrated only afterward.
+Do not replay completed controls or reopen the relation branch. The next
+full-unit execution must have its own committed registration and journal.
 
 **Complete CUDA frames now have an implemented lossless shared lowering.**
 The [frame proof and fixed full-unit preregistration](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
@@ -13,74 +78,20 @@ preserve every header, record and padding byte before one paid root relocation.
 Seventeen complete frames/1,114,248 bytes and eight failure boundaries pass
 the exact CPU control; the native retention regression still passes. The CPU
 full-unit record preflight fits the existing64-MiB frame/2^22-cell caps.
-The new shared-retention A1 attempt is already RUNNING at e3faaf5. Its actual
-profile/refusal worker passes44 checked phases and rejects the changed
-post-target byte producer. The full512-event worker is still active; its
-confirmed16-event prefix crosses the old fixed-frame15-event obstruction.
-Inspect evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json and its existing
-active_progress_path/process before waiting; do not launch another copy.
-Its2-GiB reference-payload cap and numerical tolerances stay fixed; full-unit
-host/arena limits are16 GiB/1 GiB. No full-unit result is established yet.
-Old device jobs stay terminal. After this attempt, follow its actual resource
-or numerical outcome toward language learning; no more storage-control variants.
+The terminal shared-retention A1 passes its actual profile/refusal worker and
+crosses the old fixed-frame15-event obstruction, but times out before the
+full512-event unit. Its last checkpoint is320 observations/641 phases.
+The2-GiB reference-payload cap, numerical tolerances,16-GiB host and1-GiB arena
+were unchanged throughout. The observed stopping condition is the wall limit;
+this is not evidence that every legal implementation exceeds it. All original
+workers are terminal. No more storage-control variants are due.
 
-A CPU-only profile exposed1.39 billion Python calls for native initialization
-plus one full-vocabulary event, mostly recursive canonical serialization.
-The byte-identical iterative writer and its proof/CPU controls are committed
-locally as e157923 on research/streamed-canonical-encoding, in the temporary
-worktree F:\FP-encoder-work. Its final diagnostic uses165,146,528 calls;
-ordinary/profile, source/collision and native/frame retention controls pass.
-This is a prepared change in this same Git repository, not the executing A1
-source or a new GPU result. After A1 is terminal, preserve its journal, apply
-that commit to main and reconcile these status paragraphs. The same temporary
-worktree now holds the dependent reporting, model-scope and two baseline commits
-described below; preserve all five before removing the worktree. CPU timing alone supplies no new model
-score or device result; use the actual terminal obstruction to choose the
-next training step.
-
-The terminal frozen-token reporting path is now committed as a95375f on
-research/frozen-token-reporting, after e157923. Its proof, implementation and
-minimal CPU evidence are in that Git tree; the live F:\FP Python source is
-unchanged. It freezes the actual incumbent, preserves original reporting
-contexts, closes ordinary control ports and scores proper native/AMP
-probabilities separately. The loss-width bound uses log(U/L); directed mean
-rounding adds less than2^-p per endpoint independently of stream length.
-All32 finite training/report words,96 events,416 retained records and six
-post-target failure controls pass, along with current event/install/token
-phase regressions. The two-worker reporting GPU audit is fixed but unrun;
-its launcher refuses the active canonical A1. After the original A1 is
-terminal, preserve its result, integrate all five prepared commits, reconcile
-the first-model scope paragraphs and execute the fixed reporting audit once.
-No corpus score or additional relation branch is implied by this milestone.
-
-The model-scope result is committed as 010969a on research/token-model-scope,
-after a95375f in the same temporary worktree. Its FROZEN_READOUT_CAPACITY.md
-proves the frozen positive-head mixture/loss floor and a conditional AMP
-allowance. An exact ordinary-U counterexample falsifies extending the floor
-across an updating run. The existing resource fixture sees the newest token
-and pooled older context; equal current forecasts do not authorize erasing
-ordered history. The audit opens no corpus and changes no model or executing
-source. This scope question is closed: use its restrictions when choosing the
-actual text model, rather than adding more capacity or precision variants.
-
-The Transformer comparison adapter is committed as 44a1c5c on
-research/text-transformer-baseline, following 010969a in that same worktree.
-It retains a pinned standard model and ordinary AdamW while enforcing the
-full output alphabet, an input-only PAD and explicit offline-training versus
-rolling frozen-report contexts. Upstream logits/all gradients, causal reads
-and full-vocabulary normalization pass CPU float64 controls. No corpus, model
-budget or device result is selected. This adapter control is closed; actual
-FP feasibility and reporting qualification precede the concrete text trial.
-
-The upstream modified Kneser–Ney comparison path is committed as 8996fda on
-research/text-ngram-baseline, after 44a1c5c in the same worktree. The native
-Windows build, actual automatic-discount estimator, unquantized trie and
-proper full-alphabet scorer pass a synthetic CPU/independent ARPA control.
-Unseen IDs divide one unknown bucket; EOT introduces no artificial reset.
-Build assets stay outside Git at F:\experiment\FP_next_token_baselines.
-Neither a real corpus nor an experimental model order is selected. Both
-baseline adapter controls are now closed. The direct scorer's cost is a
-correctness-control cost, not grounds for claiming an FP inference advantage.
+Main now retains all five research commits: e157923 (writer), a95375f (owned
+reporting), 010969a (model scope), 44a1c5c (Transformer) and8996fda (upstream
+n-gram), with the reconciled study scope from research/token-text-ready.
+The temporary worktree is no longer an integration dependency. External
+n-gram build assets remain a dependency cache, not a parallel research state.
+These preparations supply no corpus score or selected experiment budget.
 
 The [first model-score boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
 is now explicit: a preregistered fixed native incumbent can be tested without
@@ -99,7 +110,7 @@ The actual native Runtime control passes72 candidate observations,24 profile
 events and526 complete roots/4,921,074 decoded bytes. Six post-target faults
 preserve the target and old learners. Ordinary/profile and CPU installation
 regressions pass. The native control is closed; the full-frame extension above
-is now ready for its actual-owner attempt. No arena
+has its terminal original actual-owner result above. No arena
 retirement, full-corpus feasibility or model-quality result is implied.
 
 **The actual token AMP Runtime audit passes; stop owner-control variants.**
@@ -111,17 +122,19 @@ targets. The full case checks17 phases/3,441,395 device words, retains all
 peak job commitment is3,997,507,584 bytes. All five workers retain exactly
 one CUDA backing allocation. A1 remains failed; no terminal job is replayed.
 
-**Next: affordable complete retention, then persistence/install and ordinary
-language learning.** A2's fixed64-MiB evidence frames alone prove that its
+**Historical fixed-frame obstruction; the shared-storage attempt is above.**
+A2's fixed64-MiB evidence frames alone prove that its
 2-GiB reference-payload registration cannot finish15 observations; a full
 512-event unit would retain64.125 GiB of frames before other payloads.
-This is an implementation bound, not a Foundation obstruction. Share
-immutable origins/records/evidence and prove future-access liveness before
-reclaiming arena temporaries. Every supported old lineage and original
-profile context must remain decodable. No full-unit owner run, complete
-training release, language score or token search/persistence/install is
-claimed. The component milestones below are historical, not instructions
-to repeat already completed integration or audits.
+This is an implementation bound for that earlier representation, not a
+Foundation obstruction or a lower bound for the implemented shared storage.
+The original attempt crossed that15-event obstruction but timed out before
+the full unit. The fixed reporting audit and an
+affordable supplied-incumbent text comparison are next. Adaptive persistence/
+installation is required when a study replaces its graph, as scoped above;
+it is not an extra gate for an unchanged incumbent. Arena retirement still
+requires a future-access proof. The component milestones below are historical,
+not instructions to repeat already completed integration or audits.
 
 **The token event/carry executor passes its actual RTX 3090 arena audit.**
 The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)

@@ -9962,3 +9962,242 @@ FP_SHARED_CUDA_RETENTION_CPU.json and FP_SHARED_CUDA_RETENTION_PREFLIGHT.json.
 There is no new actual GPU success yet. Stop storage-control variants after
 this attempt and follow the measured obstruction toward ordinary language
 learning. Foundation/ERC stay frozen; the rational/relation branch stays closed.
+
+
+## 291. Remove recursive canonical-fragment overhead without changing a byte (2026-09-27)
+
+While the e3faaf5 shared-frame A1 worker runs from its unchanged source, a
+separate CPU-only diagnostic profiles native initialization and one event of
+the same full-vocabulary fixture. It records1,389,070,896 Python calls and
+224.732 instrumented seconds; about191.9 cumulative seconds are inside native
+retention. Recursive typed-JSON fragment propagation is the leading observed
+cost at this boundary. This does not identify every cost of the full device
+unit and does not measure a language model.
+
+The canonical writer now visits values through an explicit iterator stack
+and emits atomic typed expressions directly. All fields, bytes, Unicode code
+points, numeric types, mapping order, spacing and identity bytes remain.
+No semantic cache or presumed equality is introduced. Cyclic containers
+refuse; repeated acyclic values remain repeated occurrences. A structural
+induction proves concatenated-byte equality. Traversal dispatch no longer
+propagates every fragment through all ancestor generators, while repeated
+history walks, scalar formatting and mapping-key sorting remain actual work.
+
+The old/new exact audit passes2160 typed/mode comparisons/202318 bytes,
+all65536 BMP code points,3072 surrogate/astral boundary classes and six cycle
+refusals. Current Runtime source identities and forced address collisions
+remain correct. Native retention, whole-frame coexistence/failure, ordinary
+event and profile regressions pass. The corresponding native cProfile run
+uses about165 million calls; minimal final counts are retained in
+evidence/minimal/FP_STREAMED_ENCODING_CPU.json. Timings are diagnostic, not
+an uninstrumented latency or actual GPU speedup claim.
+
+One historical-test adapter is stale on both the old and new source: it
+passes indexed_order_search to the532d713 Runtime constructor. Its historical
+replay is not called a pass; the current source/collision checks run directly.
+No old experiment is rerun or reinterpreted, no cap/tolerance changes and no
+new semantic architecture action, CERTIFIED_COMPLETE class or model score
+is added. Stop encoder variants, preserve the running A1 result, and proceed
+from the real full-unit boundary toward sustained ordinary-text learning.
+
+
+## 292. Own a frozen text-model report without borrowing installation authority (2026-09-27)
+
+Scope review separates the first useful language experiment from an unused
+adaptive graph-installation milestone. A preregistered supplied G/Gamma/U can
+be empirically tested as the fixed incumbent. That does not complete the
+Compiler goal or prove task-forced structure; real graph replacements still
+need their persistence and installation path. Foundation XIV already assigns
+validation/test labels a read-only reporting role.
+
+The new terminal Runtime reporting registration enforces that role. It starts
+only after the whole declared training horizon and a committed range-safe
+incumbent, retains the actual native/physical lineage, rebuilds the original
+reporting contexts from owned reporting labels, and blocks every ordinary
+learning/Compiler port permanently. Learner and reporting source clocks stay
+distinct. A target readout executes the existing physical mass recipe from
+the actual pre-target forecast, with complete word checks, without publishing
+a new current or staged learner. Targets, contexts, forecasts and full paid
+phase records survive post-target refusal.
+
+Scoring distinguishes the proper distribution m_y/sum(m_y) from rounded
+division by stored Z. The existing pre-target all-label envelope S in [L,U]
+and the actually executed target mass m give the loss interval
+[max(0,log(L/m)),log(U/m)], with paid exact logarithm bounds. Its ideal width
+is at most log(U/L). Directed fixed-dyadic integer totals preserve the finite
+mean and add less than2^-p per endpoint independently of stream length,
+without multiplying all per-event rational denominators. Integer/work limits
+remain binding. This is numerical reporting accuracy, not population error.
+
+Exact/CPU evidence covers all32 binary two-token training/three-token report
+histories (96 events),416 complete retained records, literal-native prediction
+agreement,28 closed ordinary/control ports,162 normalized mass cases and64
+mean prefixes. Five injected post-target boundaries and a real logarithm
+integer-limit refusal keep the target and incumbent. The new readout passes
+75 checked CPU array phases/48 label losses, plus8 full phase-logic controls
+and3 identity/source/origin refusals. Ordinary event, complete CPU installation
+and token phase regressions pass. Current host-failure port/prefix sections
+pass; its historical constructor adapter is stale and is not called a pass.
+
+The proof, precise COMPLETE_REPORT class and two-worker device preregistration
+are in experiments/next_token/FROZEN_TOKEN_REPORTING.md. Minimal CPU evidence
+is FP_TOKEN_REPORTING_CPU.json. No held-out corpus is opened. The new device
+attempt is unrun while the unchanged e3faaf5 shared-retention A1 continues.
+After its original terminal result, integrate the prepared changes, execute
+the fixed reporting boundary once and return to affordable text training with
+strong fresh baselines. No new relation variant, Foundation action, erased
+continuation information or broader completeness certificate is introduced.
+
+
+## 293. Audit the model class before promoting the text resource fixture (2026-09-27)
+
+The resource fixture remains unscored and is not automatically a selected
+language model. Its actual four SUMs pool all512 embedded lags; its four
+PRODUCTs multiply those pools by a coordinate of the newest token. The
+newest-token parent is not another pooled mean. For every parameter value,
+older-token permutations preserving the newest token and window multiset
+have identical current native forecasts. They can have different forecasts
+after the same appended token, so this invariance does not authorize a
+history/state quotient. The full-vocabulary exact control verifies both the
+invariance and its future-visible limitation without opening corpus data.
+
+The existing positive K-feature head is exactly a convex combination of
+the normalized fixed base and its nonzero normalized weight columns.
+For M_y equal to the largest component probability of y, C=sum_y M_y lies
+between1 andK+1, and every context has p_y<=M_y. Hence frozen finite-tape
+CE >= H(empirical targets)+KL(empirical targets || M/C)-log C
+>= H(empirical targets)-log(K+1). At K8 the coarse allowance is log9, about
+2.197225 nats. The actual initialized head has C about1.642854477 and log C
+about0.496435264 nats; that initial constant does not constrain later W.
+Empirical entropy is an oracle diagnostic, not a feasible replacement for
+strong trained baselines. No corpus entropy or quality score is computed.
+
+For the current half/single recipe, a nonzero decoded master weight is at
+least2^-32 and a nonzero half feature at least2^-24. Products therefore
+cannot underflow in binary32. Positivity and the balanced addition depth
+give a relative mass sandwich with factors (1+-2^-24)^(ceil(log2 K)+2).
+After proper mass normalization the frozen-head loss floor weakens by at
+most their log ratio, about5.9604645e-7 nats at K8. This uses the actual
+rounded operands; it supplies neither native/AMP learner equality nor an
+exact physical rank claim. Existing Runtime/GPU ownership remains required.
+
+The tempting whole-updating-run extension is false. With one constant
+feature, three positive bases, zero Gamma, eta16, unit1 and grid2^-16, native
+projected SGD on three256-token constant-label blocks has certified mean
+prequential CE0.190088570275 nats. The invalid whole-run frozen floor would
+be log(3/2), about0.405465108108. This is a necessary-premise counterexample
+using the existing native U, not a fresh model/task experiment or Runtime
+certificate.
+
+Exact evidence exhausts729 small integer heads,19683 pointwise bounds and
+2187 empirical inequalities,60 CPU recipe cases/180 labels, the full current
+initializer and768 updating events. The model factory is factored out of
+the corpus reader; its complete definition/masters equal the prior factory
+prefix. Nothing in the running e3faaf5 A1 is changed. The proof and experiment
+implications are in experiments/next_token/FROZEN_READOUT_CAPACITY.md;
+minimal evidence is FP_FROZEN_READOUT_CAPACITY.json. This scope audit is now
+closed. Continue actual reporting qualification and feasible text-model/
+baseline preregistration, not another capacity or precision catalog.
+
+
+## 294. Prepare the ordinary-text Transformer comparison without selecting a weak run (2026-09-27)
+
+While the original FP retention A1 continues under its fixed contract, the
+ordinary-text baseline now has a concrete CPU-tested adapter. The model source
+is unmodified nanoGPT at 3adf61e154c3fe3fca428ad6bc3818b27a3b8291, retained with
+its license. The adapter uses the same hidden computation, initialization,
+tied output weights and ordinary AdamW groups. An additional input-only PAD
+row represents an empty file prefix; only the V real rows enter the output
+projection and either training or reporting normalization. No pretrained or
+historical baseline weights enter the adapter.
+
+The data conventions are explicit. Ordinary shifted blocks expose increasing
+within-block contexts during offline training; these are not retrospectively
+called a chronological prequential baseline. Frozen reports use every target's
+rolling past-only context, including file-initial short contexts, and never
+reset at EOT or batching boundaries. Targets are read only after their input
+windows are constructed and forecast. Actual logits are normalized in float64
+over the complete target alphabet. These baseline numerical checks grant no
+FP exact/AMP bridge or Runtime certificate.
+
+CPU float64 controls match the upstream logits, loss and every parameter
+gradient with the input-only output row excluded. They check 36 attention
+prefixes, 19 past-only reporting windows, four report batch sizes, unchanged
+reporting parameters, an AdamW update and seven full-50,257-label normalized
+forecasts. The test does not open a corpus or initialize CUDA. Evidence is
+FP_TEXT_TRANSFORMER_BASELINE_CPU.json; the implementation/conventions are in
+experiments/next_token/baselines/TRANSFORMER.md.
+
+Model size, adequate training, tuning allowance and the resource comparison
+are deliberately still coordinates of the forthcoming real preregistration,
+not inferred from this synthetic control. A tuned smoothed n-gram remains
+required alongside the competitive Transformer. The adapter control is
+closed. No new architecture/precision catalog or extra FP semantic action is
+introduced, and the executing e3faaf5 source remains unchanged.
+
+
+## 295. Execute the upstream n-gram baseline and normalize its actual full alphabet (2026-09-27)
+
+The missing n-gram comparison now uses the actual KenLM modified Kneser–Ney
+estimator on the Windows machine. Existing Visual Studio/CMake/vcpkg suffice;
+no WSL or replacement smoothing implementation is needed. A committed manifest
+pins registry 07f4812200df3d3c931c0c8a6081d3b21fe2bf9f and its
+kenlm:x64-windows-static@20230531#1 recipe, based on upstream
+5bf7b46558e1c5595bf3b8c9b0b1f9d8d257040a. Build assets remain outside Git.
+
+The token-ID exporter writes one continuous declared view, with exactly one
+final newline and ordinary t50256 EOT words. Frozen reporting starts from its
+own BOS context, never resets on EOT, and scores no artificial final EOS.
+Actual vocabulary strings establish the injective real-ID map. All required
+model columns are evaluated before the next target is read.
+
+The declared full-alphabet predictor renormalizes the actual log-score weights
+of seen IDs plus one unknown bucket when unseen IDs exist. Each unseen ID gets
+one/U of that bucket. If U=0, unknown mass is excluded too. This avoids both
+duplicating unknown probability and silently treating rounded library scores
+as exactly normalized. Float64 log-sum-exp/compensated sums operate on the
+library's actual float32 scores; no FP exact bridge is claimed.
+
+The unpruned interpolated order-3 synthetic control trains on 10,080 tokens
+with automatic discounts and no fallback, then builds an unquantized trie.
+It checks 1,248 complete-label probabilities against independent ARPA/float64
+backoff evaluation, with maximum log difference 2.8989346e-7 nats (registered
+tolerance 1e-5). Causal suffix mutations, file/EOT behavior, chunk-independent
+ingress, four refusals and the full50,257-label unknown-mass calculation pass.
+Only aggregate evidence FP_TEXT_NGRAM_BASELINE_CPU.json is retained; temporary
+models, tapes and scores are not committed. No actual corpus or GPU is read.
+
+The direct reporter's O(T times seen-vocabulary) query cost is explicit and
+must be measured in the eventual study. The synthetic order is not a selected
+strong baseline. Both comparison adapters are now concrete and their controls
+are closed. Follow the original FP resource result, complete its fixed frozen
+reporting audit, then preregister and execute adequately trained real text
+comparisons. Do not add another smoothing/normalization or relation catalog.
+
+
+## 296. Preserve the original owned-unit timeout and integrate the prepared text path (2026-09-27)
+
+The original shared-retention A1 finishes under its original e3faaf5 source
+and fixed limits. Its small profile/refusal worker passes44 phases/18,371
+device words, with actual altered post-target bytes rejected, target/full
+frame retained and no learner successor published. The full-vocabulary unit
+times out at14,400.2873112 seconds under the unchanged four-hour deadline.
+Peak job commitment is7,650,095,104 bytes below16 GiB. Its last completed
+checkpoint is320 observations/641 phases and2,246 pages at13,741.5514762
+seconds. That checkpoint does not identify the exact interrupted operation.
+No full512-event unit or first commit is established; this execution remains
+unresolved. It is not a Foundation counterexample or a general time lower.
+
+The terminal journal is retained as FP_SHARED_CUDA_RETENTION_A1.json. Only
+after the original launcher/worker exited were all five prepared research
+commits integrated: byte-preserving serialization, owned frozen reporting,
+the closed model-scope result, and the Transformer/upstream n-gram adapters.
+Their individual commits and evidence remain intact. The integration also
+corrects obsolete status paragraphs that described completed token binding
+as pending or incorrectly made unused adaptive installation a gate for a
+fixed-incumbent text study. The actual model/resource/numerical contracts are
+unchanged. The next execution is the already fixed reporting audit, followed
+by a separately registered full-unit attempt using the integrated writer.
+No successful control is replayed, no limit is raised and no corpus score is
+opened. The research direction remains ordinary next-token learning with
+strong baselines; the rational/relation branch stays closed.

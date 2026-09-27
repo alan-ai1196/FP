@@ -1,17 +1,60 @@
 # FP Implementation Status
 
+The [modified Kneser–Ney baseline path](experiments/next_token/baselines/NGRAM.md)
+has a pinned native Windows build and a tested full-alphabet C++ reporter.
+The actual upstream estimator, unquantized trie and independent float64 ARPA
+control pass on synthetic data, including unseen-label mass and causal
+contexts. No real text score, selected order or FP Runtime authority follows.
+
+The [Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
+is available outside FP Runtime, with pinned upstream source and CPU float64
+context/output/gradient checks. It initializes from scratch and retains
+ordinary AdamW. It is not a trained baseline or a selected experiment budget;
+no corpus or device result is supplied by this control.
+
+The [text model-scope audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+checks the current full-vocabulary resource fixture without opening corpus
+files. Its pure model factory now precedes the unchanged data-reading helper.
+The exact mixture/loss-floor controls, conditional CPU roundoff checks and
+the updating-head counterexample pass. No Runtime execution or model graph
+changes are made for this result. The resource fixture is still unscored and
+does not by itself select a useful language model.
+
+The [terminal frozen-token reporting path](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+is implemented and passes exact/CPU controls. Constructor registration binds
+one declared reporting stream; owned forecasts retain its original source
+points, and reporting cannot call U or reopen any ordinary control port.
+The actual AMP readout extension keeps complete predecessors/forecast words
+and does not publish a learner. Exact loss bounds normalize recipe masses,
+with directed bounded-denominator mean accumulation. Six target-retaining
+failure controls and current event/install/token-phase regressions pass.
+The fixed actual device audit remains unrun and is now executable: the
+original retention A1 is terminal. No language result or broader token release
+follows from the CPU control.
+
+The [canonical traversal refinement](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+removes recursive fragment propagation while preserving complete packed and
+identity bytes. No dictionary of semantic values, omitted field or weaker
+decoder comparison is added. Exact byte/type/Unicode checks, direct Runtime
+identity controls and native/frame/event/profile regressions pass. The
+instrumented full-vocabulary native initialization/one-event diagnostic drops
+from1.39 billion to about165 million Python calls. This is a CPU implementation
+measurement, not a device or training-throughput result. Existing A1 device
+source e3faaf5 and its original outcome remain authoritative for that attempt.
+
 The [complete-frame shared lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 is now implemented for token CUDA events/profiles. The original full frame,
 encoded page copies and root coexist under paid leases until atomic relocation;
 the complete frame remains decodable. Seventeen CPU frames and eight storage
 failure boundaries pass. The native retention regression passes, and the late
 full-unit record preflight fits64-MiB frames and2^22 phase cells. Two new
-actual-owner workers were fixed before outcomes. A1 at e3faaf5 now passes the
-actual profile/refusal worker (44 phases); its complete512-event full-vocabulary
-unit/first commit remains RUNNING. The16-event prefix passes the old fixed-frame
-barrier, without establishing the full unit or a training release. Inspect the
-existing journal/child; all older device jobs remain terminal. A byte-identical
-CPU traversal improvement is staged as local commit e157923; see HANDOFF.md.
+actual-owner workers were fixed before outcomes. A1 at e3faaf5 passes the
+actual profile/refusal worker (44 phases), but its full-unit worker times out
+at14,400.287 seconds. Its last checkpoint is320 observations/641 phases;
+peak job commitment is7,650,095,104 bytes under16 GiB. No full unit/first commit
+is established. Its original journal and all workers are terminal. The
+byte-identical writer and reporting/baseline preparations are now integrated;
+the next full-unit attempt requires a new registration, with no raised limits.
 
 The [lossless shared reference lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 now runs inside the actual native token Runtime with an explicit storage
@@ -36,12 +79,15 @@ peak job3,997,507,584 bytes. Every worker preserves one backing allocation.
 Both A1 (failed serialization) and A2 are terminal. No owner-control variants
 are due. Token search/persistence/install and language quality remain open.
 
-Long-run retention is the immediate barrier: at least
+The earlier unshared A2 representation has the following retention barrier:
 `1+2T+floor(T/512)` fixed64-MiB phase frames survive after T observations.
 With the required sealing copy and32-MiB readout workspace, A2's2-GiB
 reference-payload cap cannot admit15 observations. A full unit's frames
-alone total64.125 GiB. Lossless shared state/evidence and proved temporary
-liveness are due; the eight-target pass is not a training release.
+alone total64.125 GiB. The implemented shared lowering above changes this
+representation and its terminal A1 crossed that15-event obstruction. The
+full owned unit and affordable longer training remain unestablished; the
+eight-target A2 pass is not a training release. Arena retirement is not
+implemented and still requires a proof of future-access preservation.
 
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer
@@ -60,8 +106,9 @@ falsified even when exact and floating current sums agree. Complete cache
 replay, native coordinate comparisons, exact primitive controls and profile
 clocks pass. This new physical association differs from the old AMP schedule;
 its passive tensors and old-format diagnostic basis grant no Runtime/bridge
-authority. The array executor passes above; the next implementation is
-its Runtime binding and inductively checked immutable cache relation.
+authority. Its array executor and Runtime binding, including the inductively
+checked immutable cache relation, are now implemented above. Their explicit
+finite device scopes do not imply whole-corpus feasibility.
 
 The [complete compact token learner](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now uses actual Runtime construction, target-free forecasts, observation,
@@ -70,9 +117,10 @@ record decode the full native state; enclosures publish only proved exact
 grid cells. Literal controls pass 576 observations/336 commits and every
 pending coordinate; profile/source/cache/work/ambiguity controls pass. The
 five passive reference modules now have one production implementation with
-compatibility imports. Token floating/search/persistence/install registrations
-still refuse. Owned AMP and affordable retained-state storage are next, not
-another static reference case. No whole-corpus or language-quality claim.
+compatibility imports. Owned token AMP and shared retention are now implemented
+above; token search/persistence/install registrations still refuse. Affordable
+complete training and qualified reporting are next for the supplied-incumbent
+study. No whole-corpus or language-quality claim follows from this component.
 
 The [indexed token source representation](experiments/next_token/OWNED_INDEXED_SOURCES.md)
 is now integrated into actual ReferenceCompilerRuntime ordinary events,
@@ -81,7 +129,8 @@ delay is preserved. The full50,257-vocabulary/context512 case avoids all
 25,732,096-atom expansion and retains at most12,059 packed context bytes.
 Its source work is prepaid; mutation/role/ingress attacks refuse. Native
 learner controls and existing event/profile regressions pass. The compact
-reference learner is integrated above; its owned AMP bridge remains due.
+reference learner and scoped owned AMP path are integrated above. This source
+component does not independently extend their release or resource scope.
 
 The [compact event/prefix control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now represents target-free prediction, each complete pending state and the

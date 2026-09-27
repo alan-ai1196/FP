@@ -93,7 +93,8 @@ def compare_basis(bounds, exact):
         assert all(bounds.corrections.scalar((row, k)).contains(g) for k, g in enumerate(corrections[int(token)]))
 
 
-def text_fixture():
+def text_model_fixture():
+    """The existing resource-test model, without reading any corpus bytes."""
     from fractions import Fraction as F
     import numpy as np
     import batched_tokens as batch
@@ -113,6 +114,14 @@ def text_fixture():
     W = 1+(row*(2*feature+1)+17*feature) % 7
     origin = batch.Origin(definition, batch.words(E), batch.words((128,)*D), batch.words(W), 0, 0,
         TokenWindow(schema, 0, (V,)*L))
+    return definition, origin
+
+
+def text_fixture():
+    import numpy as np
+    definition, origin = text_model_fixture()
+    schema = definition.sources
+    V, N = schema.vocabulary, definition.output.update_unit
     # Read only the already registered training prefix. Exact bytes actually
     # used are identified once; do not rehash the 360 MB corpus ceremonially.
     with TRAIN.open('rb') as stream:

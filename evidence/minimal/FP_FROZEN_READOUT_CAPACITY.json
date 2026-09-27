@@ -1,0 +1,68 @@
+{
+  "status": "PASS_EXACT_MODEL_SCOPE_CONTROL",
+  "scope": "frozen positive heads and existing text resource fixture; no model selection, corpus score or Runtime authority",
+  "finite_heads": {
+    "complete_3_by_2_integer_head_class": 729,
+    "exact_probability_bounds": 19683,
+    "exact_empirical_entropy_inequalities": 2187
+  },
+  "physical_heads": {
+    "conditional_recipe_cases": 60,
+    "exact_roundoff_and_dominating_probability_checks": 180,
+    "grid_bits": [
+      0,
+      16,
+      32
+    ],
+    "features": [
+      1,
+      2,
+      3,
+      8
+    ],
+    "subnormal_positive_base_checked": true,
+    "maximum_log_loss_allowance_nats": [
+      "5/8388608",
+      "167772161/281474976710656"
+    ],
+    "device_claim": false
+  },
+  "actual_fixture": {
+    "vocabulary": 50257,
+    "context": 512,
+    "features": 8,
+    "master_coordinates": 603092,
+    "initialized_column_dominance_sum": "8067382656276029006106288799/4910588715616804008951140238",
+    "initialized_log_capacity_nats": [
+      "139734104269083/281474976710656",
+      "34933526067271/70368744177664"
+    ],
+    "every_frozen_native_head_log_capacity_upper_nats": [
+      "618463736733793/281474976710656",
+      "309231868366897/140737488355328"
+    ],
+    "latest_token_is_distinguished": true,
+    "older_context_permutation_is_invisible_at_current_prediction": true,
+    "equal_current_predictions_do_not_authorize_history_erasure": true,
+    "complete_model_equals_prior_factory_prefix": true,
+    "corpus_bytes_read": 0,
+    "trained_model_or_score": false
+  },
+  "frozen_premise": {
+    "native_projected_sgd_events": 768,
+    "features": 1,
+    "update_unit": 1,
+    "eta": "16",
+    "grid_bits": 16,
+    "prequential_loss_enclosure_nats": [
+      "80257763836649/422212465065984",
+      "160515527674075/844424930131968"
+    ],
+    "invalid_whole_run_frozen_floor_nats": [
+      "114128281861729/281474976710656",
+      "57064140930865/140737488355328"
+    ],
+    "fixed_head_premise_is_necessary": true,
+    "corpus_or_runtime_claim": false
+  }
+}

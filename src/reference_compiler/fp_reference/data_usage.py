@@ -211,12 +211,13 @@ class DataUsageLedger:
         self._uses: list[DataUse] = []
 
     def record(self, records: tuple[ObservationRecord, ...], purpose: str, consumer: str, cursor: int):
-        if purpose not in ('ordinary', 'proposal', 'profile', 'persistence'):
+        if purpose not in ('ordinary', 'proposal', 'profile', 'persistence', 'report'):
             raise QueryError('unregistered observation use')
         name(consumer, 'data consumer')
         natural(cursor, 'data-use cursor')
-        if not records or any(r.role not in ('train', 'online') or r.target is None for r in records):
-            raise QueryError('only revealed training/online records can drive learning and discovery')
+        roles = ('validation', 'test') if purpose == 'report' else ('train', 'online')
+        if not records or any(r.role not in roles or r.target is None for r in records):
+            raise QueryError('revealed records must keep their registered learning or reporting role')
         ids = tuple(r.observation_id for r in records)
         if len(set(ids)) != len(ids):
             raise QueryError('duplicate physical observation in one data use')

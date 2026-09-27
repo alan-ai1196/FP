@@ -1,0 +1,77 @@
+{
+  "status": "PASS_EXACT_AND_CPU_CONTROL",
+  "scope": "finite frozen reporting only; no corpus, device or model-quality result",
+  "numerical": {
+    "normalized_mass_cases": 162,
+    "directed_mean_prefixes": 64,
+    "huge_scale_refused_before_shift": true,
+    "precision": "exact Fractions; independent Decimal90 loss check"
+  },
+  "histories": {
+    "histories": 32,
+    "report_events": 96,
+    "source_clocks_distinct_from_frozen_learner": 88,
+    "complete_reporting_records_decoded": 416,
+    "exact_literal_predictions": true,
+    "all_learner_and_training_records_unchanged": true
+  },
+  "authority": {
+    "permanently_frozen_public_ports": [
+      "construct_candidate",
+      "retire_candidate",
+      "begin_context",
+      "receive_context",
+      "finish_context",
+      "predict_next",
+      "observe",
+      "query",
+      "admit_reference_persistence",
+      "admit_float64_persistence",
+      "admit_cuda_persistence",
+      "reference_persistence_result",
+      "float64_persistence_result",
+      "cuda_persistence_result",
+      "paired_persistence_result",
+      "cancel_reference_persistence",
+      "paired_cuda_persistence_result",
+      "cancel_cuda_persistence",
+      "cancel_float64_persistence",
+      "start_reference_search",
+      "advance_reference_search",
+      "cancel_reference_search",
+      "reference_class_proof",
+      "verify_reference_class_proof",
+      "install",
+      "install_cpu",
+      "install_cuda",
+      "begin_report"
+    ],
+    "split_roles_and_order_preserved": true,
+    "partial_training_and_unbounded_precision_refused": true
+  },
+  "failures": {
+    "post_target_failures": [
+      "score-work",
+      "scored-retention",
+      "accumulator-retention",
+      "changed-forecast",
+      "host-memory",
+      "actual-logarithm-integer-limit"
+    ],
+    "actual_target_and_forecast_retained": true,
+    "no_successor_or_score_published": true
+  },
+  "physical_recipe": {
+    "checked_cpu_phases": 75,
+    "normalized_label_losses": 48,
+    "original_residents_unchanged": true,
+    "stored_Z_counterexample": true,
+    "device_authority": false
+  },
+  "owned_phase_control": {
+    "checked_phases": 8,
+    "readout_does_not_publish_staged_or_current_learner": true,
+    "altered_origin_identity_or_forecast_refusals": 3,
+    "actual_device": false
+  }
+}

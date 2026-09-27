@@ -10,6 +10,7 @@ from .core import ContractError
 from .host_resources import HostExecutionUnresolved
 from .policy import POLICY_EXTERNAL_PORTS
 from .cuda_storage import CudaStorageUnresolved
+from .token_reporting import REPORT_PORTS
 
 
 HOST_ALLOCATION_FAILURE = ('host-memory', 'host allocation exhausted; retained prefix has no continuation authority')
@@ -24,6 +25,8 @@ def _guard(method, *, diagnostic):
             raise ContractError('host execution failed; this Runtime is terminal')
         if self._run_closure is not None and not diagnostic:
             raise ContractError('the registered run is sealed; retained evidence has no continuation authority')
+        if self._token_report is not None and not diagnostic and method.__name__ not in REPORT_PORTS:
+            raise ContractError('terminal reporting permanently freezes all learning and Compiler ports')
         if (self._policy_contract is not None and not self._policy_running
                 and method.__name__ not in POLICY_EXTERNAL_PORTS):
             raise ContractError('the registered Runtime strategy owns all Compiler control and authority ports')

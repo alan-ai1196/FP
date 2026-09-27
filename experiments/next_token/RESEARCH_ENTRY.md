@@ -30,11 +30,11 @@ sweep, duplicated alternatives or an added repulsion regularizer would
 repeat that failed direction. Those historical values are not results on a
 new corpus or directly comparable with a new tokenization.
 
-Repository inspection finds no current ordinary-text experiment directory
-alongside the active relation/uncertainty studies. The legacy R4.2 package
-has vocabulary/readout utilities, but its existence does not establish a
-current native Compiler language-model path. Do not silently rehabilitate
-that historical framework to obtain a convenient training loop.
+At this entry's start, repository inspection found no current ordinary-text
+experiment directory alongside the active relation/uncertainty studies. The
+present directory now holds the native token path and its explicit evidence.
+The legacy R4.2 vocabulary/readout utilities supply no authority for this new
+path; do not silently rehabilitate that framework for a convenient loop.
 
 ## Question and claim boundary
 
@@ -42,6 +42,13 @@ The immediate scientific question is whether a completely specified native
 positive SUM/PRODUCT learner can learn useful conditional text structure
 from ordinary teacher-forced next-token loss under declared resources.
 Report loss and cost against competitive baselines, including failure.
+The [model-scope audit](FROZEN_READOUT_CAPACITY.md) makes two limitations of
+the current resource fixture explicit: it retains the newest token plus a
+pooled older context, and its frozen K-feature positive readout lies in a
+K+1-component mixture class. Its native finite-tape CE is at least empirical
+target entropy minus log(K+1); the registered rounded readout has a proved
+small loss allowance. This is not an online-training or whole-FP bound.
+The resource fixture has not thereby been selected as a language model.
 If structure is supplied by initialization, say so; if a constructor proposes
 structure, expose the actual class, acquired information and search outcome.
 
@@ -63,12 +70,12 @@ when an actual experiment selects/replaces a deployed graph; they are not
 inferred from an empirical text loss. Foundation XIV–XV are unchanged.
 
 The existing owned training trajectory, every internal reference/AMP phase,
-resource limits and complete retained state remain required. A frozen-model
-validation report additionally needs a tested, paid, read-only Runtime path
-that preserves the original reporting contexts and cannot update the learner
-or feed held-out labels into construction. That path is not implemented by
-calling a passive predictor on a snapshot. Until it exists, ordinary training
-prequential loss is at most a separate diagnostic, not a held-out result.
+resource limits and complete retained state remain required. The
+[paid frozen-model reporting path](FROZEN_TOKEN_REPORTING.md) now preserves
+original reporting contexts and closes learning/Compiler ports. Its exact/CPU
+controls pass; its fixed actual-device audit is still pending. A passive
+snapshot prediction does not replace that ownership. Ordinary training
+prequential loss remains a separate diagnostic, not a held-out result.
 Compare such an online diagnostic only with genuinely prequential baselines;
 a randomly trained baseline that has seen later targets is a different claim.
 
@@ -89,6 +96,16 @@ training/reporting identities, tuning allowance, baselines and stop rules.
 Do not shrink the alphabet or use weak baselines to hide an unfavorable
 result. The currently exposed validation file is development data, not newly
 fresh evidence; deterministic unread data alone provide no stochastic law.
+
+The original shared-retention A1 is now terminal at e3faaf5: the four-hour
+full-unit worker times out, with a last completed checkpoint of320 observations
+and641 phases and7,650,095,104 bytes peak job commitment under16 GiB. Its
+small profile/refusal worker passes. The full512-token unit and first commit
+remain unestablished. The prepared byte-identical writer, owned reporting,
+model-scope result and both baseline adapters are now integrated. Complete
+the fixed reporting device audit, then address the measured full-unit cost
+under the unchanged model/resource/numerical contract before selecting a
+real text budget. This timeout is not a lower bound on other legal FP executors.
 
 ## Initial study direction
 
@@ -121,7 +138,22 @@ and disclose residual differences instead of claiming every coordinate is
 simultaneously equal. Perplexities on different tokenizations or corpus
 constructions cannot be treated as the same prediction space.
 
-Two baseline details need explicit treatment before implementation. KenLM's
+The [standard Transformer adapter](baselines/TRANSFORMER.md) is implemented
+and passes CPU float64 controls for upstream logits/gradients, shifted training
+blocks, rolling frozen contexts and the full output alphabet. It uses a pinned
+unmodified nanoGPT model with one input-only PAD row. This supplies no chosen
+model size, corpus score, adequate-training claim or device result. Its control
+is closed; choose and preregister a competitive run after actual FP feasibility.
+
+The [upstream modified Kneser–Ney path](baselines/NGRAM.md) also builds and
+passes its synthetic CPU control on the actual Windows machine. Its continuous
+token-ID ingress and full-alphabet reporter treat EOT as ordinary, exclude
+structural target symbols and split unknown mass among unseen IDs. The real
+estimator supplies the discounts and trie; an independent ARPA calculation
+checks the adapter. No corpus, model order or tuning budget is selected.
+Both baseline adapter controls are closed; use them in the concrete text trial.
+
+Two implementation conventions govern the baseline comparison. KenLM's
 estimator adds its own sentence/unknown symbols and treats newlines as
 boundaries. Its author also warns that assigning the full unknown probability
 to multiple distinct unseen words does not give a normalized comparison.

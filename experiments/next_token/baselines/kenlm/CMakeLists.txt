@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.20)
+project(fp_kenlm_report LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(kenlm CONFIG REQUIRED)
+add_executable(fp_kenlm_report report.cc)
+target_link_libraries(fp_kenlm_report PRIVATE kenlm::kenlm)

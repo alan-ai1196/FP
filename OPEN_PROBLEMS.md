@@ -1,55 +1,60 @@
 # FP Open Problems
 
-The current resource model's scope is now resolved at 010969a on
-research/token-model-scope, following the two prepared implementation commits.
-Its frozen positive head has a finite-mixture loss floor; its updating-U
-counterexample and older-context invariance prevent broader interpretations.
-The proof and exact/CPU evidence are committed in the temporary worktree
-recorded by HANDOFF. Preserve and integrate the prepared commits after A1 is
-terminal. This closes the scope audit; actual text execution and competitive
-baselines are next, with no new relation or static capacity catalog.
+The [current model's scope](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
+is now resolved: a pooled/newest-token core, a narrow positive mixture head
+and no authority to erase ordered history. Do not extend this into another
+capacity/precision catalog. Choose the actual text model and strong baselines
+from feasible measured budgets, and state these class restrictions. A frozen
+head's entropy floor must not be applied to an updating prequential run.
 
-The fresh standard Transformer comparison adapter is prepared at 44a1c5c on
-research/text-transformer-baseline. Its CPU context/gradient/full-alphabet
-control passes without reading corpus data or choosing a model budget. It
-is not yet a trained competitive baseline; retain the tuned n-gram and
-adequate-training requirements in the eventual empirical preregistration.
+Both [Transformer](experiments/next_token/baselines/TRANSFORMER.md) and
+[upstream n-gram](experiments/next_token/baselines/NGRAM.md) comparison paths
+now pass their CPU controls without opening the experiment corpus or choosing
+a model budget. All five prepared research commits are now integrated in main.
+Both adapter controls are closed; they are not yet adequately trained
+real-text baselines. Actual FP feasibility/reporting determines the concrete
+preregistration. No further smoothing or normalization catalog is needed.
 
-The actual upstream n-gram toolchain and full-alphabet scorer are now prepared
-at 8996fda on research/text-ngram-baseline, after the Transformer adapter.
-The native Windows estimator/trie and independent ARPA/float64 controls pass
-without opening the experiment corpus. Both comparison adapter controls are
-closed; proceed from the real FP resource/reporting outcome to a concrete text
-trial. No additional normalization or smoothing catalog is required.
+The [fixed-incumbent reporting boundary](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+now has a proof and exact/CPU implementation checks. Its next step is the
+already specified two-worker actual-device audit; the original retention A1
+is now terminal. Do not enlarge the reporting control class before that result.
+Then use the measured training constraint to preregister an affordable text
+study and competitive baselines. Unused adaptive installation is not a
+prerequisite to testing one supplied fixed G/Gamma/U; it remains mandatory
+when a study actually replaces the graph. Relation/static variants stay closed.
 
-The read-only token reporting implementation and conditional proper-loss/mean
-bounds are prepared at a95375f on research/frozen-token-reporting, after the
-byte-identical writer commit e157923. Exact/CPU controls pass. Keep the live
-e3faaf5 A1 source unchanged until its original terminal boundary; then
-integrate the prepared commits and run the fixed reporting device audit once.
-The canonical HANDOFF records the worktree and scope. This removes a reporting
-implementation prerequisite for a fixed-incumbent text study; it establishes
-no corpus score or full-unit feasibility. Do not expand static/relation cases.
+The [canonical traversal bottleneck](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
+has a tested byte-identical implementation fix; stop encoder variants.
+It does not remove repeated complete-history traversal, native prefix
+enclosure work or growing actual device extents. The original A1 times out at
+four hours with a last completed checkpoint of320 observations/641 phases,
+and7,650,095,104 bytes peak host commitment below16 GiB. The measured boundary
+is elapsed execution time, with no completed unit. Its original e3faaf5
+execution is not evidence for the newly integrated writer. After the fixed
+reporting audit, preregister the same full unit under unchanged caps using
+the integrated implementation; do not replay the successful small control.
+Do not increase caps, weaken tolerances or replay a completed control to
+substitute for affordable ordinary-language learning.
 
 The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 now passes exact whole-byte/padding, coexistence and failure controls. Its
 fixed new actual-owner attempt targets one profile/refusal path and the whole
 512-event full-vocabulary/context512 unit with its first commit. The original
-A1 is already running at e3faaf5, with the small actual worker passed. Inspect
-that existing job, retain its real terminal result, then attack the remaining
-obstruction. The original64-MiB frame and2-GiB payload limits are retained;
+A1 at e3faaf5 is terminal: its small worker passes and its full unit times out.
+The original journal is retained unchanged. Attack that measured execution
+cost. The original64-MiB frame and2-GiB payload limits are retained;
 an1-GiB arena/16-GiB host envelope supports the larger scope. Do not replay
 old jobs, relax a tolerance after seeing outcomes or add storage variants.
 
 The separate native CPU profile identifies canonical traversal as a concrete
-cost. The tested byte-identical improvement is staged in local commit e157923
-and must not alter the executing A1 source. Apply it after that job terminates;
-see HANDOFF.md for the temporary worktree. No GPU speedup is yet established.
+cost. The tested byte-identical improvement from e157923 is now integrated,
+after the original A1 terminated. No GPU speedup is yet established.
 
 The [first text-study scope](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
 does not require an unused adaptive-installation gate for a fixed incumbent.
-After affordable owned training, implement paid read-only frozen-model
-reporting and proper normalized AMP loss, then compare strong baselines.
+After affordable owned training, qualify the implemented paid frozen-model
+reporting path on the actual device, then compare strong baselines.
 Adaptive persistence/install and their explicit stochastic premises remain
 separate obligations when graph replacement is actually exercised.
 
@@ -65,14 +70,15 @@ Foundation change. Continue toward language learning and strong baselines.
 The [token AMP owner integration](experiments/next_token/OWNED_TOKEN_AMP.md)
 passes all five actual-owner A2 workers at86cef1e, including changed-cache/
 source and post-target quota refusals plus the full-context partial unit.
-Stop owner-control variants; all device jobs are terminal. The immediate
-problem is complete retained storage: the current fixed-frame registration
-provably cannot finish15 observations within its2-GiB payload cap, while one
-full unit's frames alone would occupy64.125 GiB. Share immutable origins,
-records and evidence without losing old lineages or original contexts, and
-prove which physical temporaries no supported future can use before retiring
-them. Then complete token persistence/install and ordinary language learning
-with strong baselines. Do not reopen array or static relation branches.
+Stop owner-control variants; those five A2 workers are terminal. Their earlier
+fixed-frame registration cannot finish15 observations within its2-GiB payload
+cap, while one full unit's frames alone would occupy64.125 GiB. The shared
+retention implementation above changes that representation and its original
+A1 timed out before its full unit. Its outcome is preserved; continue with
+reporting and affordable ordinary language learning. Physical retirement still requires
+a future-access proof; adaptive persistence/install is required when the
+study replaces a graph. Neither is established by the partial-unit A2 pass.
+Do not reopen array or static relation branches.
 
 The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 now passes independent CPU controls and the actual full 512-event RTX 3090
@@ -88,21 +94,21 @@ The [incremental AMP derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.
 resolves repeated derivative-prefix evaluation while exposing a necessary
 cache invariant. A current ordinary gradient does not identify future
 floating behavior. The explicit array kernel now passes its device audit.
-Next bind its immutable retained frontiers, checked append induction and the
-complete numerical state/readout relation in ReferenceCompilerRuntime.
-The passive Torch allocator cannot satisfy the existing arena contract;
-integrate its operations through admitted extents, not a disabled ownership
-check. The CPU cache replay is a correctness control, not an online solver
-to run at every prefix. No new static cases or relation-task branch is needed.
+Its immutable retained frontiers, checked append induction and complete
+numerical state/readout relation are now bound in ReferenceCompilerRuntime.
+The owned executor uses admitted extents; the passive Torch allocator still
+supplies no arena authority. The CPU cache replay is a correctness control,
+not an online solver to run at every prefix. Affordable full-unit execution
+is the remaining boundary above; no new static or relation-task branch is due.
 
 The [complete compact token reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now passes the actual Runtime event/profile and independent literal controls.
-The next boundary is an owned independent AMP learner and its complete
-pre-target/observation/commit relation. Bind the existing state/readout
-predicates to actual code, operands and owners; do not borrow the old scoped
-release or replace AMP state with exact endpoints. Then ordinary text
-learning and fresh strong baselines are the objective. Repeating static
-readout variants or deepening relation tasks would not resolve this boundary.
+The independent AMP learner and complete pre-target/observation/commit
+relation are now integrated and have the finite owner controls above. Those
+controls do not yet establish affordable full-unit training or a text score.
+Continue toward ordinary text learning and fresh strong baselines under the
+actual ownership predicates. Repeating static readout variants or deepening
+relation tasks would not resolve the remaining execution boundary.
 
 Retained-origin serialization is still repeated across complete event traces.
 A funded shared representation must retain the same complete records and all
