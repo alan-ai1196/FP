@@ -10201,3 +10201,25 @@ by a separately registered full-unit attempt using the integrated writer.
 No successful control is replayed, no limit is raised and no corpus score is
 opened. The research direction remains ordinary next-token learning with
 strong baselines; the rational/relation branch stays closed.
+
+
+## 297. Complete the fixed owned frozen-reporting device boundary (2026-09-27)
+
+After the original retention A1 terminated and its journal was preserved,
+both fixed reporting workers pass at8adf9af. The frozen case completes four
+training events/two units and four reports with unchanged native/physical
+learners,19 checked phases and6,340 device words. Proper physical and native
+mean enclosures remain distinct. Peak job commitment is1,983,094,784 bytes;
+launcher wall time4.8764097 seconds. The changed-forecast case completes the
+same training, alters its actual first reporting forecast, reveals and retains
+the target, and refuses scoring with no published loss or learner. It has12
+checked phases/4,987 words, peak1,848,635,392 bytes and4.1573055-second wall.
+Both preserve one32-MiB backing allocation and unchanged lifetime peaks.
+
+Evidence is FP_TOKEN_REPORTING_A1.json; its jobs and journal are terminal.
+The exact decision class remains the two declared finite toy trajectories,
+not a full-vocabulary score, language result, fresh/install authority or
+complete Compiler release. This closes the reporting control branch. The
+next experiment addresses the observed full-unit execution cost with the
+integrated byte-preserving writer under unchanged model, caps and numerical
+tolerances. Strong real-text comparisons remain the scientific destination.

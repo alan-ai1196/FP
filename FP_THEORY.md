@@ -10,7 +10,8 @@ The [frozen token reporting epilogue](experiments/next_token/FROZEN_TOKEN_REPORT
 implements XIV's read-only validation/test role for a supplied fixed incumbent.
 Its conditional mass-normalized loss/mean bounds and exact/CPU owner checks
 do not change a Foundation definition or supply fresh/installation authority.
-Actual device reporting and a corpus score remain unestablished.
+Both fixed actual-device reporting controls pass at8adf9af. Their finite toy
+scope supplies no full-vocabulary feasibility, corpus score or broader release.
 
 The scoped Reference Compiler runtime and actual target AMP path have passed their complete integration and event-level bridge gates. Registered RTX 3090 experiments may now proceed within that tested scope; execution outside it requires the corresponding evidence, not a borrowed release claim.
 

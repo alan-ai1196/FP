@@ -73,7 +73,8 @@ The existing owned training trajectory, every internal reference/AMP phase,
 resource limits and complete retained state remain required. The
 [paid frozen-model reporting path](FROZEN_TOKEN_REPORTING.md) now preserves
 original reporting contexts and closes learning/Compiler ports. Its exact/CPU
-controls pass; its fixed actual-device audit is still pending. A passive
+controls and both fixed actual-device workers pass at8adf9af. The device
+evidence is a finite toy control, not full-V feasibility or a corpus score. A passive
 snapshot prediction does not replace that ownership. Ordinary training
 prequential loss remains a separate diagnostic, not a held-out result.
 Compare such an online diagnostic only with genuinely prequential baselines;
@@ -102,8 +103,8 @@ full-unit worker times out, with a last completed checkpoint of320 observations
 and641 phases and7,650,095,104 bytes peak job commitment under16 GiB. Its
 small profile/refusal worker passes. The full512-token unit and first commit
 remain unestablished. The prepared byte-identical writer, owned reporting,
-model-scope result and both baseline adapters are now integrated. Complete
-the fixed reporting device audit, then address the measured full-unit cost
+model-scope result and both baseline adapters are now integrated. The fixed
+reporting device audit also passes at8adf9af. Address the measured full-unit cost
 under the unchanged model/resource/numerical contract before selecting a
 real text budget. This timeout is not a lower bound on other legal FP executors.
 

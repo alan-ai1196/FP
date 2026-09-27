@@ -28,9 +28,11 @@ The actual AMP readout extension keeps complete predecessors/forecast words
 and does not publish a learner. Exact loss bounds normalize recipe masses,
 with directed bounded-denominator mean accumulation. Six target-retaining
 failure controls and current event/install/token-phase regressions pass.
-The fixed actual device audit remains unrun and is now executable: the
-original retention A1 is terminal. No language result or broader token release
-follows from the CPU control.
+Both fixed actual RTX3090 workers pass at8adf9af:19 phases/6,340 words for the
+four frozen reports and12 checked phases/4,987 words for the changed-forecast
+refusal after target reveal. Both learners remain unchanged, with one32-MiB
+allocation per worker. The jobs/journal are terminal. This finite toy control
+supplies no language result, full-V reporting feasibility or broader release.
 
 The [canonical traversal refinement](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 removes recursive fragment propagation while preserving complete packed and

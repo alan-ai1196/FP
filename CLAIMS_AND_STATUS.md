@@ -18,7 +18,12 @@ Its **EXACT/CPU** controls pass32 training/report words,96 report events,
 logic. `COMPLETE_REPORT` covers only the fixed registered finite stream of
 that incumbent. It is not `CERTIFIED_COMPLETE`, population evidence, fresh
 persistence, installation or a full Compiler certificate. Actual CUDA
-reporting is preregistered but unrun; there is no new corpus score.
+reporting is **EMPIRICALLY VERIFIED** at8adf9af for the two registered workers:
+four frozen reports after two units, and an altered actual forecast refused
+after target reveal with no score/learner publication. They check19/12 phases
+and6,340/4,987 words respectively, preserve both learners and retain one32-MiB
+allocation each. Both jobs are terminal. No full-V feasibility or corpus score
+is inferred from this finite toy control.
 
 The [iterative canonical writer](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 has a **PROVED conditional byte-preservation argument** for supported finite

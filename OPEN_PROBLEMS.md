@@ -16,11 +16,11 @@ real-text baselines. Actual FP feasibility/reporting determines the concrete
 preregistration. No further smoothing or normalization catalog is needed.
 
 The [fixed-incumbent reporting boundary](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
-now has a proof and exact/CPU implementation checks. Its next step is the
-already specified two-worker actual-device audit; the original retention A1
-is now terminal. Do not enlarge the reporting control class before that result.
-Then use the measured training constraint to preregister an affordable text
-study and competitive baselines. Unused adaptive installation is not a
+now has a proof, exact/CPU checks and both actual-device workers passed at
+8adf9af. Its controls are closed; do not add reporting variants. Full-V
+reporting feasibility is not inferred from the finite toy case. Use the
+measured training constraint to reach a complete unit under unchanged limits,
+then preregister an affordable text study and competitive baselines. Unused adaptive installation is not a
 prerequisite to testing one supplied fixed G/Gamma/U; it remains mandatory
 when a study actually replaces the graph. Relation/static variants stay closed.
 
@@ -31,8 +31,8 @@ enclosure work or growing actual device extents. The original A1 times out at
 four hours with a last completed checkpoint of320 observations/641 phases,
 and7,650,095,104 bytes peak host commitment below16 GiB. The measured boundary
 is elapsed execution time, with no completed unit. Its original e3faaf5
-execution is not evidence for the newly integrated writer. After the fixed
-reporting audit, preregister the same full unit under unchanged caps using
+execution is not evidence for the newly integrated writer. The fixed reporting
+audit now passes. Preregister the same full unit under unchanged caps using
 the integrated implementation; do not replay the successful small control.
 Do not increase caps, weaken tolerances or replay a completed control to
 substitute for affordable ordinary-language learning.
@@ -53,8 +53,8 @@ after the original A1 terminated. No GPU speedup is yet established.
 
 The [first text-study scope](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
 does not require an unused adaptive-installation gate for a fixed incumbent.
-After affordable owned training, qualify the implemented paid frozen-model
-reporting path on the actual device, then compare strong baselines.
+Its implemented paid frozen-model reporting path now passes the fixed device
+controls. Reach affordable owned training, then compare strong baselines.
 Adaptive persistence/install and their explicit stochastic premises remain
 separate obligations when graph replacement is actually exercised.
 

@@ -10,9 +10,10 @@ unresolved full-unit execution under that registration, not a Foundation
 counterexample or a lower bound on other implementations. The terminal
 journal is evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json; never replay it.
 The five prepared research commits and their scope reconciliation are now
-integrated. Run the fixed reporting audit next, then use the byte-preserving
-writer to address the measured execution cost without changing model, caps
-or tolerances. No text score or sustained-training feasibility is established.
+integrated. The fixed reporting audit now passes both workers at8adf9af.
+Next use the byte-preserving writer to address the measured execution cost
+without changing model, caps or tolerances. No text score or sustained-training
+feasibility is established.
 
 The [upstream modified Kneser–Ney comparison path](experiments/next_token/baselines/NGRAM.md)
 now builds natively on this Windows machine and passes its synthetic CPU
@@ -30,8 +31,8 @@ AdamW, uses the full predicted alphabet with an input-only PAD row, and makes
 offline block training versus rolling frozen reporting contexts explicit.
 Upstream logits/all gradients, causal reads, reporting invariance and full-V
 normalization pass. No corpus, GPU job or model budget is opened/selected.
-This adapter control is closed; actual FP feasibility and the fixed reporting
-device audit still determine the next empirical text preregistration.
+This adapter control is closed; actual FP training feasibility determines the
+next empirical text preregistration. The fixed reporting device control passes.
 
 **The resource fixture's model class is now explicit; do not silently promote it.**
 The [frozen-head/context audit](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
@@ -46,7 +47,7 @@ disproves applying the frozen-head floor to an entire training run. The
 scope audit is closed; no corpus is opened, graph changed or new device job
 started. Use these limits in the first text preregistration after feasibility.
 
-**Frozen-model token reporting now passes its exact/CPU boundary.**
+**Frozen-model token reporting passes its exact/CPU and fixed device boundary.**
 The [reporting proof and fixed next device audit](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
 bind a preregistered validation/test stream to the actual committed incumbent,
 preserve its original causal contexts and permanently close learning/Compiler
@@ -55,9 +56,12 @@ by the sum of all recipe masses; stored-Z division is kept distinct. Directed
 mean rounding adds less than2^-p per endpoint regardless of stream length.
 All32 binary training/report histories,96 report events,416 retained records,
 six post-target failure controls and the full CPU phase checks pass. Ordinary
-events, CPU installation and token phase regressions pass. The two-worker
-actual reporting audit is committed but unrun. The original A1 is now terminal,
-so execute that fixed audit once. No corpus score is claimed.
+events, CPU installation and token phase regressions pass. Both actual workers
+pass at8adf9af: frozen reporting checks19 phases/6,340 words, while the changed
+forecast is refused after target reveal with12 checked phases/4,987 words and
+no published loss or learner. Each preserves one32-MiB allocation. The original
+FP_TOKEN_REPORTING_A1.json and both jobs are terminal; stop reporting variants.
+No corpus score or full-vocabulary reporting feasibility is claimed.
 This is the fixed-incumbent experiment boundary, not adaptive installation.
 
 **A measured serialization bottleneck now has a byte-identical traversal fix.**
@@ -129,8 +133,8 @@ A2's fixed64-MiB evidence frames alone prove that its
 This is an implementation bound for that earlier representation, not a
 Foundation obstruction or a lower bound for the implemented shared storage.
 The original attempt crossed that15-event obstruction but timed out before
-the full unit. The fixed reporting audit and an
-affordable supplied-incumbent text comparison are next. Adaptive persistence/
+the full unit. The fixed reporting audit now passes; affordable training and
+a supplied-incumbent text comparison are next. Adaptive persistence/
 installation is required when a study replaces its graph, as scoped above;
 it is not an extra gate for an unchanged incumbent. Arena retirement still
 requires a future-access proof. The component milestones below are historical,

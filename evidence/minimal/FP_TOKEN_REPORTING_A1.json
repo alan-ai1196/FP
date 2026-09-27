@@ -1,0 +1,207 @@
+{
+  "status": "COMPLETE_ACTUAL_FROZEN_TOKEN_REPORTING_AUDIT",
+  "source_commit": "8adf9af1bb8c6d4919587c9a3c2d9981a8dbca53",
+  "cases": [
+    "frozen-report",
+    "forecast-forgery"
+  ],
+  "host_cap": 4294967296,
+  "deadline_ms": 180000,
+  "arena_bytes": 33554432,
+  "allocator_reserved_cap": 33554432,
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "owned frozen native/AMP token reporting and altered-forecast refusal; finite toy control, no corpus or language score",
+  "results": [
+    {
+      "case": "frozen-report",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1981870080,
+        "peak_job_commit": 1983094784,
+        "user_100ns": 34062500,
+        "kernel_100ns": 11718750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16284,
+        "process_creation_100ns": 134349756391286622
+      },
+      "launch_wall_seconds": 4.876409700002114,
+      "result": {
+        "status": "PASS_ACTUAL_FROZEN_TOKEN_REPORTING",
+        "case": "frozen-report",
+        "before": {
+          "process_id": 16284,
+          "creation_100ns": 134349756391286622,
+          "process_commit": 38510592,
+          "lifetime_process_commit_peak": 38813696,
+          "job_commit_peak": 40038400,
+          "process_user_100ns": 4375000,
+          "process_kernel_100ns": 1562500,
+          "job_user_100ns": 4375000,
+          "job_kernel_100ns": 1562500,
+          "total_job_processes": 2
+        },
+        "outcome": {
+          "training_events": 4,
+          "complete_training_units": 2,
+          "report_events": 4,
+          "report_targets": 4,
+          "checked_phases": 19,
+          "checked_device_words": 6340,
+          "frozen_native_and_physical_learners_preserved": true,
+          "owned_reference_peak": 4045956,
+          "native_mean_nats": [
+            "3136684489209/4398046511104",
+            "3136684489213/4398046511104"
+          ],
+          "physical_mean_nats": [
+            "1568341622951/2199023255552",
+            "3136685867347/4398046511104"
+          ],
+          "finite_toy_control_only": true,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "consumed_bytes": 34376,
+            "phases": 19,
+            "regions": 1827,
+            "allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "actual_tensor_arena_bytes": 33554432,
+            "actual_allocator_reserved_bytes": 33554432,
+            "lifetime_tensor_peak_bytes": 33554432,
+            "lifetime_allocator_reserved_peak_bytes": 33554432
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 16284,
+          "creation_100ns": 134349756391286622,
+          "process_commit": 1975521280,
+          "lifetime_process_commit_peak": 1981870080,
+          "job_commit_peak": 1983094784,
+          "process_user_100ns": 31250000,
+          "process_kernel_100ns": 11250000,
+          "job_user_100ns": 31250000,
+          "job_kernel_100ns": 11250000,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 3.9462381999983336
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "forecast-forgery",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1847402496,
+        "peak_job_commit": 1848635392,
+        "user_100ns": 28750000,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9776,
+        "process_creation_100ns": 134349756440069163
+      },
+      "launch_wall_seconds": 4.157305500000803,
+      "result": {
+        "status": "PASS_ACTUAL_FROZEN_TOKEN_REPORTING",
+        "case": "forecast-forgery",
+        "before": {
+          "process_id": 9776,
+          "creation_100ns": 134349756440069163,
+          "process_commit": 37048320,
+          "lifetime_process_commit_peak": 38498304,
+          "job_commit_peak": 39731200,
+          "process_user_100ns": 4843750,
+          "process_kernel_100ns": 1406250,
+          "job_user_100ns": 4843750,
+          "job_kernel_100ns": 1406250,
+          "total_job_processes": 2
+        },
+        "outcome": {
+          "training_events": 4,
+          "complete_training_units": 2,
+          "report_events": 0,
+          "report_targets": 1,
+          "checked_phases": 12,
+          "checked_device_words": 4987,
+          "frozen_native_and_physical_learners_preserved": true,
+          "owned_reference_peak": 3860654,
+          "changed_actual_forecast_refused_after_target": true,
+          "no_loss_or_learner_published": true,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "consumed_bytes": 27280,
+            "phases": 12,
+            "regions": 1394,
+            "allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "actual_tensor_arena_bytes": 33554432,
+            "actual_allocator_reserved_bytes": 33554432,
+            "lifetime_tensor_peak_bytes": 33554432,
+            "lifetime_allocator_reserved_peak_bytes": 33554432
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 9776,
+          "creation_100ns": 134349756440069163,
+          "process_commit": 1841057792,
+          "lifetime_process_commit_peak": 1847402496,
+          "job_commit_peak": 1848635392,
+          "process_user_100ns": 25937500,
+          "process_kernel_100ns": 10312500,
+          "job_user_100ns": 25937500,
+          "job_kernel_100ns": 10312500,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 3.2353200999968976
+      },
+      "accepted_execution": true
+    }
+  ]
+}

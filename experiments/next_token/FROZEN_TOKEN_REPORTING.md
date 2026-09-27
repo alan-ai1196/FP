@@ -1,7 +1,7 @@
 # Frozen token reporting: scope, loss bounds and owned execution
 
-Status: conditional proof and exact/CPU controls pass. The two-worker actual
-CUDA attempt below is preregistered, **not executed**. No corpus, language
+Status: conditional proof, exact/CPU controls and both fixed actual RTX3090
+workers **PASS** at8adf9af. Both workers are terminal. No corpus, language
 score, fresh persistence result, installation or Compiler completeness claim.
 Foundation and ERC-1 remain frozen; the rational/relation branch stays closed.
 
@@ -146,7 +146,7 @@ release. The ordinary cursor, records, learners and existing obligations are
 preserved. Full CUDA frames keep the existing paid whole-byte retention;
 no device allocation, old phase or carry cache is reclaimed.
 
-## 5. Current evidence and the next device boundary
+## 5. Exact/CPU evidence and original device registration
 
 `scripts/audit_token_reporting.py --write` currently passes:
 
@@ -169,10 +169,10 @@ it passes `indexed_order_search` to the dfa1583 constructor, so the full old
 adapter run is **not** reported as passing. No unrelated adapter rewrite or
 old device replay is needed for this result.
 
-After the existing shared-retention A1 reaches its original terminal boundary,
-commit all sources and run `scripts/run_token_reporting_audit.py --run` once.
+The registration required the original shared-retention A1 to terminate and
+all sources to be committed before `scripts/run_token_reporting_audit.py --run`.
 It refuses an existing journal and an active canonical shared-retention A1.
-Two fresh workers are fixed before outcomes:
+The two fresh workers were fixed before outcomes:
 
 - `frozen-report`: the existing mixed native token graph, four training labels
   (two units) followed by four report labels; verify frozen actual learners,
@@ -191,3 +191,34 @@ No corpus is read. Save the original outcome in FP_TOKEN_REPORTING_A1.json;
 do not replay it or infer full-vocabulary feasibility from this small control.
 After this boundary, return to affordable owned text training and competitive
 baselines rather than adding further reporting variants.
+
+## 6. Terminal actual reporting result
+
+Both workers pass at8adf9af on the pinned RTX3090. The original four-hour
+shared-retention A1 had already terminated and its journal was committed
+before this independent reporting attempt began. No corpus was opened.
+
+| Worker | Checked phases / device words | Peak job commitment | Launcher wall |
+|---|---:|---:|---:|
+| frozen-report | 19 / 6,340 | 1,983,094,784 bytes | 4.8764097 s |
+| forecast-forgery | 12 / 4,987 | 1,848,635,392 bytes | 4.1573055 s |
+
+The first worker completes four training events/two units followed by four
+owned reports, retaining separate exact native and proper physical mean
+enclosures. Both actual learners remain frozen. Paid reference peak is
+4,045,956 bytes; arena consumption is34,376 bytes in1,827 regions.
+
+The second completes its same two training units, changes the actual first
+reporting forecast after prediction and then reveals the real target. That
+target remains owned; the readout refuses, with zero scored report events
+and no loss or learner published. Paid reference peak is3,860,654 bytes;
+arena consumption is27,280 bytes in1,394 regions. Both workers preserve the
+original single32-MiB backing allocation and lifetime allocator peaks.
+
+Minimal evidence is `evidence/minimal/FP_TOKEN_REPORTING_A1.json`; the journal
+and jobs are terminal and must not be replayed. This establishes the two
+declared finite device controls, not full-vocabulary reporting feasibility,
+language quality, fresh persistence, installation, a search certificate or a
+complete Compiler release. Stop reporting variants. The remaining immediate
+boundary is affordable owned full-vocabulary training under the original
+model/numerical/resource limits, followed by a concrete strong text comparison.
