@@ -36,6 +36,8 @@ from .joint_execution import (_prepare_owned_prediction as _prepare_joint_predic
     _execute_owned_prediction as _execute_joint_prediction)
 from . import query_order
 from .encoding import packed_size, write_packed, fragments, bounded_packed_size
+from .shared_reference import (SharedReferenceContract, SharedReferenceManifest,
+    SharedReferenceSnapshot, SharedPlannedObject, ROOT_BYTES as SHARED_ROOT_BYTES, _SharedReference)
 from . import phase_deflate as phase_codec
 from .host_failure import guard_host_allocations
 from .host_resources import HostResourceContract, HostResourceObservation, HostExecutionUnresolved, _WindowsProcessHost
@@ -384,6 +386,7 @@ class RuntimeSnapshot:
     compiler_policy: CompilerPolicySnapshot | None = None
     run: ReferenceRunSnapshot | None = None
     cuda: CudaPrefixSnapshot | None = None
+    reference_archive: SharedReferenceSnapshot | None = None
 
 
 @guard_host_allocations
@@ -395,6 +398,7 @@ class ReferenceCompilerRuntime:
     _root_fields = frozenset({
         '_contract', '_online', '_host', '_cuda', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
         '_policy_contract', '_policy_state', '_policy_running',
+        '_reference_archive',
         '_manifest', '_manifest_object_id', '_run_closure',
         '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
         '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
@@ -407,7 +411,8 @@ class ReferenceCompilerRuntime:
 
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
                  host: HostResourceContract | None = None, policy: CompilerPolicy | CudaCompilerPolicy | None = None,
-                 cuda: CudaPrefixContract | None = None):
+                 cuda: CudaPrefixContract | None = None,
+                 shared_storage: SharedReferenceContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
         self._contract = contract
@@ -434,6 +439,10 @@ class ReferenceCompilerRuntime:
         indexed = type(contract.initializer_pattern) is IndexedInitializer
         joint = type(contract.initializer_pattern) is JointInitializer
         token = type(contract.initializer_pattern) is TokenInitializer
+        if shared_storage is not None:
+            if type(shared_storage) is not SharedReferenceContract or not token or cuda is not None or policy is not None:
+                raise ContractError('shared reference retention currently requires native token events/profiles')
+            shared_storage.__post_init__()
         if cuda is not None and (token != (type(cuda) is TokenCudaPrefixContract)
                 or token and (cuda.initializer != contract.initializer_pattern or policy is not None)):
             raise ContractError('token CUDA requires the identical fresh Gamma and its registered event/profile scope')
@@ -454,7 +463,7 @@ class ReferenceCompilerRuntime:
         machine = (IndexedReferenceMachine(contract.initializer_pattern.n,
             contract.indexed_histogram or DecodeAllowance(integer_bits=min(32768, contract.reference_integer_bits)))
             if indexed else JointReferenceMachine(contract.initializer_pattern.schema, contract.indexed_histogram)
-            if joint else TokenReferenceMachine(contract.initializer_pattern)
+            if joint else TokenReferenceMachine(contract.initializer_pattern, shared_storage is not None)
             if token else ReferenceMachineModel())
         self._host = None if host is None else _WindowsProcessHost(host)
         if online is not None:
@@ -482,6 +491,8 @@ class ReferenceCompilerRuntime:
              'each actual primitive checked against exact rounding; nonfinite or mismatch is UNRESOLVED'))
         if cuda is not None:
             self._manifest = CudaRunManifest(self._manifest, cuda)
+        if shared_storage is not None:
+            self._manifest = SharedReferenceManifest(self._manifest, shared_storage)
         self._chi = stable_hash(self._manifest)
         self._runtime_id = secrets.token_hex(12)
         self._manifest_object_id = f'{self._runtime_id}:manifest'
@@ -527,6 +538,9 @@ class ReferenceCompilerRuntime:
         self._halted: tuple[str, str] | None = None
         self._data_owner = f'{self._runtime_id}:retained-information'
         self._ledger.register_owner(self._data_owner, 'compiler')
+        self._reference_archive = None
+        if shared_storage is not None:
+            self._reference_archive = _SharedReference(self, shared_storage)
         registered = self._machine.realize(self._manifest_object_id, 'immutable_run_manifest', self._manifest, self._chi)
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')
@@ -796,9 +810,13 @@ class ReferenceCompilerRuntime:
         finally:
             self._policy_running = False
 
-    def _allocate(self, owner: str, objects: tuple[PackedObject | PlannedObject, ...]):
+    def _allocate(self, owner: str, objects: tuple[PackedObject | PlannedObject | SharedPlannedObject, ...]):
         for obj in objects:
-            if type(obj) is PlannedObject:
+            if type(obj) is SharedPlannedObject:
+                if self._reference_archive is None or obj.spec.kind == 'reserved_target':
+                    raise ContractError('shared root lacks its registered owner/immutable value class')
+                size = SHARED_ROOT_BYTES
+            elif type(obj) is PlannedObject:
                 size = packed_size(obj.value)
             elif type(obj) is PackedObject and type(obj.payload) is bytes:
                 size = len(obj.payload)
@@ -806,6 +824,20 @@ class ReferenceCompilerRuntime:
                 raise ContractError('registered materialization plan or raw reserved payload required')
             if obj.spec.residency != {'reference_payload_bytes': size, 'physical_objects': 1}:
                 raise ContractError('registered packed-object size disagrees with its actual payload')
+        if self._reference_archive is not None:
+            for obj in objects:
+                if type(obj) is SharedPlannedObject:
+                    self._reference_archive.allocate(self, owner, obj)
+                else:
+                    # Mutable ingress/target slots keep their original direct
+                    # representation and write protocol; no shared aliases.
+                    self._ledger.allocate(owner, (obj.spec,))
+                    if type(obj) is PlannedObject:
+                        self._buffers[obj.spec.object_id] = bytearray(obj.spec.residency['reference_payload_bytes'])
+                        write_packed(obj.value, self._buffers[obj.spec.object_id])
+                    else:
+                        self._buffers[obj.spec.object_id] = bytearray(obj.payload)
+            return
         self._ledger.allocate(owner, tuple(obj.spec for obj in objects))
         for obj in objects:
             if type(obj) is PlannedObject:
@@ -3214,4 +3246,5 @@ after all fallible construction, checks and physical preparation complete.
                                None if self._host is None else self._host.observe(),
                                None if self._policy_contract is None else CompilerPolicySnapshot(
                                    self._policy_contract, self._policy_state, self._policy_running), self._run_snapshot(),
-                               None if self._cuda is None else self._cuda.snapshot())
+                               None if self._cuda is None else self._cuda.snapshot(),
+                               None if self._reference_archive is None else self._reference_archive.snapshot())

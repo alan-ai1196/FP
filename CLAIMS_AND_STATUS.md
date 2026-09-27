@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+The [shared reference retention result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
+has a **PROVED decoded-byte preservation theorem and exact payload identity**,
+plus **EXACTLY VERIFIED** actual native Runtime controls:72 candidate
+observations,24 profile events,526 full root comparisons and six post-target
+failure paths. Sharing uses full byte equality; forced checksum collisions
+do not identify different data. Old page dependencies remain paid and
+decodable. This is a new scoped physical encoding, not a semantic action,
+universal memory optimum, CUDA retention/install release or model score.
+Record traversal and Python/library overhead remain costs. No compression
+ratio or full-corpus feasibility is inferred from the small owner controls.
+
 The [owned token AMP implementation](experiments/next_token/OWNED_TOKEN_AMP.md)
 has CPU numerical controls for 1,632 phases and 166,704 exact words. Actual
 Runtime ownership is **EMPIRICALLY VERIFIED** by all five registered A2

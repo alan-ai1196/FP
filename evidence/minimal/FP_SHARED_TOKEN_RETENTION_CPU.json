@@ -1,0 +1,28 @@
+{
+  "status": "PASS_EXACT_SHARED_NATIVE_TOKEN_RETENTION",
+  "scope": "byte preservation and actual native event/profile ownership; no CUDA retention or install release",
+  "bytes": {
+    "pages": 9,
+    "expanded_bytes": 17426,
+    "retained_bytes": 9449,
+    "checksum_collisions_preserve_bytes": true,
+    "independent_reader_and_old_snapshots": true,
+    "future_references_refused": true
+  },
+  "runtime": {
+    "histories": 6,
+    "candidate_observations": 72,
+    "profile_events": 24,
+    "complete_roots_compared": 526,
+    "decoded_bytes_compared": 4921074,
+    "final_page_bytes": 1413884,
+    "both_dependency_roles_charged": true
+  },
+  "failures": {
+    "post_target_failures": 6,
+    "targets_and_old_learners_retained": true
+  },
+  "planning": {
+    "body_unread_before_work_refusal": true
+  }
+}

@@ -260,10 +260,27 @@ class TokenRangeBound:
 @dataclass(frozen=True)
 class TokenReferenceMachine(ReferenceMachineModel):
     pattern: TokenInitializer
+    shared_storage: bool = False
 
-    model_id = 'packed-complete-token-record-reference-v1'
     initializer_id = 'registered-token-block-cyclic-grid-initializer-v1'
     program_type = TokenProgram
+
+    def __post_init__(self):
+        if type(self.shared_storage) is not bool:
+            raise ContractError('fixed token reference storage registration required')
+
+    @property
+    def model_id(self):
+        return ('packed-complete-token-record-reference-v1' if not self.shared_storage else
+                'complete-token-record-shared-byte-reference-v1')
+
+    def realize(self, object_id, kind, value, provenance):
+        if self.shared_storage and kind != 'reserved_target':
+            from .shared_reference import SharedPlannedObject, ROOT_BYTES
+            from .resources import ObjectSpec
+            return SharedPlannedObject(ObjectSpec(object_id, kind,
+                {'reference_payload_bytes': ROOT_BYTES, 'physical_objects': 1}, provenance), value)
+        return super().realize(object_id, kind, value, provenance)
 
     def require_program(self, program):
         closed(program, TokenProgram)

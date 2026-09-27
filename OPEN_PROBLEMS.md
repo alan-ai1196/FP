@@ -1,5 +1,16 @@
 # FP Open Problems
 
+The [native lossless retention control](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
+is now implemented in the actual Runtime and passes its complete-record,
+ordinary/profile and post-target failure checks. Stop native-control variants.
+Apply the byte-preservation construction to complete CUDA frames and their
+failure prefixes, then measure a bounded full-vocabulary owned unit. The
+current native registration refuses CUDA, so A2's frame obstruction is not
+yet removed. All arena objects/forests remain retained; physical retirement
+still requires a future-access proof. Serialization traversal and native
+pending-prefix enclosure work also remain real costs, not evidence for a
+Foundation change. Continue toward language learning and strong baselines.
+
 The [token AMP owner integration](experiments/next_token/OWNED_TOKEN_AMP.md)
 passes all five actual-owner A2 workers at86cef1e, including changed-cache/
 source and post-target quota refusals plus the full-context partial unit.

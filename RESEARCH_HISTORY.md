@@ -9869,3 +9869,50 @@ learning with fresh strong baselines. Current-gradient compression remains
 falsified; no old lineage or original profile context may be silently erased.
 No full-unit owner execution, language score, training or install release is
 claimed. Foundation/ERC stay frozen and the relation-task branch stays closed.
+
+
+## 289. Preserve complete native records through owned shared byte pages (2026-09-27)
+
+The next retention step is now an actual native Runtime lowering rather than
+current-coordinate compression. An explicit SharedReferenceContract binds
+bounded literal/program/reference workspaces, expansion and exact-comparison
+allowances, and the codec identity. Complete canonical records are emitted
+through a byte-only producer boundary. Immutable literal pieces are reused
+only after exact equality; CRC32 is a bucket index and forced collisions
+preserve distinct bytes. A separate decoder receives no producer index or
+expected state and must match every original record byte before publication.
+
+Every accepted page, workspace and temporary copy is owned and conservatively
+charged in both resource roles. Sixteen-byte roots do not hide a compiler
+dictionary from deployment accounting. All pages remain; releasing an old
+root does not lose any dependency or old snapshot. A reconstructed reader
+needs only those immutable pages. Mutable ingress and target slots keep the
+original direct protocol. Actual native learner/source/profile transitions
+are unchanged; no architecture action, Foundation or ERC amendment is made.
+
+The exact payload identity is W+64M+sum_u(4+len(u))+sum_i Zi+16R for fixed
+workspaces W, M retained pages, distinct literal pieces u, compressed reference
+program sizes Zi and R live roots. Finalization also pays the whole mutable
+page alongside its immutable copy. Other native/host/device data remain costs.
+No arbitrary-history compression or complete model-memory theorem is claimed.
+The implementation still traverses complete records while checking them.
+
+Exact controls pass nine raw-byte pages, forced collisions, distinct Unicode
+encodings, old snapshots after workspace overwrite/index reconstruction,
+malformed/future references and expansion/comparison refusals. Six actual
+native ordinary/profile histories match the unchanged learner:72 candidate
+observations,24 profile events,526 roots and4921074 decoded bytes. Changed
+producer output, copy/page quota, deployment dependency quota, archive work
+quota and writer faults preserve the actual target/source and old learners.
+The ordinary event/profile and CPU installation regressions pass, including
+2016 independent lease cases and the existing learned/continuation paths.
+Shared plans defer body-size traversal until after payment. No Torch or GPU
+is used by the retention control.
+
+Proof: theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md. Audit and minimal
+evidence: scripts/audit_shared_token_retention.py and
+evidence/minimal/FP_SHARED_TOKEN_RETENTION_CPU.json. This registration currently
+refuses CUDA, policy and non-token machines. Apply the same full-byte argument
+to CUDA evidence and measure a bounded full-vocabulary owned unit next; stop
+native-control variants. Arena retirement, persistence/install and language
+learning remain due. No terminal device job was replayed.

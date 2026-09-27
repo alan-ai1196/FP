@@ -1,5 +1,18 @@
 # FP Handoff
 
+**Native token retention now has an owned lossless shared representation.**
+The [byte-preservation proof and exact payload law](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
+retain complete packed records through immutable literal pages and explicit
+roots. Every page is independently decoded against the actual owned record;
+all dictionary/workspace dependencies are charged to both resource roles.
+The actual native Runtime control passes72 candidate observations,24 profile
+events and526 complete roots/4,921,074 decoded bytes. Six post-target faults
+preserve the target and old learners. Ordinary/profile and CPU installation
+regressions pass. This new storage registration currently
+refuses CUDA: the native control is closed, and the next application is full
+CUDA frame preservation, then a bounded full-vocabulary owned unit. No arena
+retirement, full-corpus feasibility or model-quality result is implied.
+
 **The actual token AMP Runtime audit passes; stop owner-control variants.**
 The [owned phase invariant and terminal A2 results](experiments/next_token/OWNED_TOKEN_AMP.md)
 at86cef1e cover ordinary/profile trajectories, independent fresh Gamma,
