@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [positive-readout envelope](experiments/next_token/READOUT_ENVELOPE.md)
+now removes the exhaustive label-by-context work from the conditional
+numerical predicate. It covers every coordinate with column sums/extrema,
+passes the same fixture limits and has a0.077-second CPU observation.
+The next work is actual Runtime code/operand ownership and complete pending
+event-state relations. Conditional recipe bounds cannot authorize arbitrary
+physical callbacks or silently substitute for the AMP learner's own state.
+
 The all-label part of the token prediction relation now has a
 [conditional proof, exact CPU control and actual CUDA pass](experiments/next_token/COMPLETE_PREDICTION_RELATION.md).
 The25.7M-coordinate scan costs26.6 seconds for512 contexts, so it is an audit

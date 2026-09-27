@@ -1,0 +1,46 @@
+{
+  "status": "PASS_CONDITIONAL_READOUT_ENVELOPE_CPU",
+  "scope": "exact finite controls and unbounded-host CPU timing; no owned or actual-device bridge",
+  "trajectories": {
+    "independent_native_AMP_units": 27,
+    "exact_all_label_probability_comparisons": 72,
+    "all_normalizer_and_core_mass_bounds_checked": true
+  },
+  "boundaries": {
+    "exact_extreme_master_and_normalization_coordinates": 6,
+    "invalid_binding_or_contract_refusals": 5,
+    "valid_underflow_envelope_unresolved": true,
+    "rounded_master_reaches_integer_2_to_32": true,
+    "unequal_stored_mass_sum_preserved": true
+  },
+  "real_context512": {
+    "status": "PASS_CONDITIONAL_COMPLETE_READOUT_ENVELOPE",
+    "native_error_upper": 0.0005400092741194574,
+    "normalizer_error_upper": 0.00535272428455258,
+    "probability_error_upper": 3.10872794358355e-08,
+    "division_error_upper": 1.4744959367890085e-11,
+    "activation_upper": 0.875,
+    "normalizer_upper": 13.014471809364363,
+    "events": 512,
+    "labels": 50257,
+    "covered_prediction_coordinates": 25731584,
+    "readout_master_coordinates": 402056,
+    "target_cache_checks": 512,
+    "target_decoder_words": 8192,
+    "exact_rounding_cells": 0,
+    "unqueried_label_contexts_executed": 0,
+    "balanced_depth": 3,
+    "scope": "conditional RNE32 recipe envelope for retained operands; no issued physical, state/event or Runtime bridge",
+    "envelope_seconds": 0.07704419999936363,
+    "source": {
+      "role": "historical-training",
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 1024,
+      "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+      "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+      "validation_or_test_read": false
+    }
+  }
+}

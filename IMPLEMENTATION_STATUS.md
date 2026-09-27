@@ -1,5 +1,13 @@
 # FP Implementation Status
 
+The [algebraic readout envelope](experiments/next_token/READOUT_ENVELOPE.md)
+now bounds all labels through complete coefficient columns/extrema and
+outward normalization intervals, with O(VK+KN) readout work. Exact78-label
+controls pass; the full-V/context512 CPU predicate takes0.077 s and meets
+the original fixed thresholds. It is conditional on the registered recipe
+and complete operands; actual code/state ownership and event relations are
+the next boundary. No new GPU or model result follows from this CPU audit.
+
 The [complete token readout predicate](experiments/next_token/COMPLETE_PREDICTION_RELATION.md)
 checks all label/event output words against a binary32 decoder, accumulates
 their exact stored mass sum in bounded integer bins, and bounds both raw

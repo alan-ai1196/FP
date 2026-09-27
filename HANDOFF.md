@@ -1,5 +1,16 @@
 # FP Handoff
 
+**Positive readout algebra removes the measured all-label scan cost.** The
+[conditional envelope theorem](experiments/next_token/READOUT_ENVELOPE.md)
+uses full column sums/extrema to cover every label in O(VK+KN), keeping
+all masters and source records. Its exact controls pass78 probabilities;
+on the same real512-context fixture the CPU predicate takes0.077 s and
+passes the existing1e-6 probability tolerance with upper3.1088e-8. It does
+not execute unqueried labels or grant actual-device authority. Next bind
+this registered recipe and complete pending event state inside Runtime,
+then run ordinary language learning and strong baselines. No new static
+readout/relation variants or GPU replay are due.
+
 **The token prediction relation now covers every output label.** The
 [proof, exact controls and fixed CUDA preregistration](experiments/next_token/COMPLETE_PREDICTION_RELATION.md)
 separate native probabilities, normalized stored masses and rounded device

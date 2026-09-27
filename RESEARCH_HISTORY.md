@@ -9506,3 +9506,32 @@ This cost exposes the next practical obstacle: a linear extrapolation to
 as an independent control while deriving a sound relation exploiting the
 registered readout and retained event state. Do not reduce vocabulary, waive
 state relations or reopen the closed relation task to make a score possible.
+
+## 279. Positive readout algebra removes the exhaustive verification cost (2026-09-27)
+
+Attack the observed26.6-second per-unit verifier cost directly. For balanced
+binary32 readout depth h, the positive computation gives mass error
+rho*A_y+tau, with rho=(1+2^-24)^(h+2)-1 and
+tau=2*K*2^-150*(1+2^-24)^(h+2). Complete coefficient extrema bound every
+native-versus-stored mass; exact rounded-integer column sums give total
+unrounded T and |S-T|<=rho*T+V*tau. Exact denominator identities then bound
+both proper and raw probabilities without executing unqueried labels.
+
+The readout work becomes O(VK+KN), plus complete core comparison, with all
+masters/records retained. The implementation uses outward intervals and the
+unchanged fixed tolerance contract. Exact controls pass78 probabilities
+across27 independent native/AMP trajectory units and boundary witnesses.
+Five binding/cache/tolerance/quota attacks refuse; a valid subnormal-base
+model remains honestly unresolved under this conservative envelope.
+
+The full-V/context512 real-prefix CPU predicate takes0.07704 seconds with
+probability upper3.10872794358355e-8 and division upper1.4744959367890085e-11,
+both within the old thresholds. All402,056 masters and512 target caches
+participate;8,192 target decoder words and zero unqueried label executions.
+This timing is unfenced CPU evidence, not an isolated device speedup claim.
+
+The result is conditional on the fixed RNE recipe and actual operand/code
+binding. It issues no physical or event-state bridge and cannot certify
+arbitrary substituted output code. No GPU job, loss, commit or validation/
+test read is repeated. Proceed to complete owned event/state integration
+and ordinary text learning; do not keep extending static readout cases.
