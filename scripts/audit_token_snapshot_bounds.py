@@ -100,6 +100,7 @@ def cpu_prefix(contract):
     value.contract, value.arena = contract, Arena()
     value._device = SimpleNamespace(check=lambda: None, snapshot=lambda: None)
     value.current, value.staged, value.predicted, value.phases, value._values = {}, {}, {}, {}, {}
+    value._native_bounds = {}
     return value
 
 

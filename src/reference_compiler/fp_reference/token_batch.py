@@ -284,6 +284,37 @@ class Unit:
 
 
 @dataclass(frozen=True)
+class GradientBounds:
+    """Pending-gradient projection, with the complete exact replay recipe.
+
+    This passive value has no historical activation/mass or commit interface.
+    Its producer must establish enclosure; construction is not a certificate.
+    """
+    unit: Unit
+    embedding_ids: np.ndarray
+    embedding: ArrayInterval
+    core: ArrayInterval
+    common: ArrayInterval
+    correction_ids: np.ndarray
+    corrections: ArrayInterval
+
+    @property
+    def unit_count(self):
+        return len(self.unit.targets)
+
+    @property
+    def cursor(self):
+        return self.unit.origin.cursor+self.unit_count
+
+    @property
+    def source(self):
+        return self.unit.windows[-1].append(self.unit.targets[-1])
+
+    def gradient(self, slot):
+        return Bounds.gradient(self, slot)
+
+
+@dataclass(frozen=True)
 class Bounds:
     unit: Unit
     values: ArrayInterval
@@ -375,7 +406,7 @@ class Prediction:
 
     @property
     def origin(self):
-        return self.predecessor.unit.origin if type(self.predecessor) is Bounds else self.predecessor
+        return self.predecessor.unit.origin if type(self.predecessor) in (Bounds, GradientBounds) else self.predecessor
 
     def mass(self, label):
         readout.natural(label)
@@ -443,10 +474,11 @@ class Kernel:
             raise
 
     def predict(self, predecessor, window=None):
-        if type(predecessor) not in (Origin, Bounds):
+        if type(predecessor) not in (Origin, Bounds, GradientBounds):
             raise ValueError('complete committed or pending native predecessor required')
-        origin = predecessor.unit.origin if type(predecessor) is Bounds else predecessor
-        if origin.definition != self.definition or type(predecessor) is Bounds and predecessor.unit_count >= self.definition.output.update_unit:
+        pending = type(predecessor) in (Bounds, GradientBounds)
+        origin = predecessor.unit.origin if pending else predecessor
+        if origin.definition != self.definition or pending and predecessor.unit_count >= self.definition.output.update_unit:
             raise ValueError('matching learner must commit its full unit before another prediction')
         window = predecessor.source if window is None else window
         if type(window) is not tokens.TokenWindow or window.schema != self.definition.sources:
@@ -460,7 +492,7 @@ class Kernel:
         """Bind a pre-target cache to one next retained record."""
         if type(prediction) is not Prediction or prediction.predecessor is not predecessor:
             raise ValueError('prediction must belong to the complete current predecessor')
-        previous = predecessor.unit if type(predecessor) is Bounds else Unit(predecessor, (), ())
+        previous = predecessor.unit if type(predecessor) in (Bounds, GradientBounds) else Unit(predecessor, (), ())
         actual_window = predecessor.source if window is None else window
         try:
             expected = self.predict(predecessor, actual_window)

@@ -61,7 +61,7 @@ def check(native, physical, arithmetic, contract):
     if type(contract) is not Contract:
         raise ValueError('registered complete-state comparison contract required')
     contract.__post_init__()
-    pending = type(native) is ref.Bounds and type(physical) is amp.Pending
+    pending = type(native) in (ref.Bounds, ref.GradientBounds) and type(physical) is amp.Pending
     committed = type(native) is ref.Origin and type(physical) is amp.State
     if not (pending or committed):
         raise ValueError('paired committed states or paired actual prefixes required')

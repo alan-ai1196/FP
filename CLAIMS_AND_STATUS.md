@@ -1,5 +1,19 @@
 # FP Claims and Status
 
+**Owned native gradient composition: CONDITIONAL THEOREM; IMPLEMENTED; CPU PASS.**
+At a fixed token-unit origin, outward addition of independently enclosed event
+gradients contains the same exact pending gradient. Private immutable binding,
+complete source/target retention, prepaid work and sealed publication prevent
+caller cache substitution. Existing full-batch U and all physical checks stay.
+The [scope and exact laws](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md) give2B
+native event rows per unit, including commit, versus B(3B+1)/2 originally; an
+exact popcount law describes numeric cache bytes. No time or total-memory law
+follows. Exact controls pass;839 endpoint differences explicitly refute byte
+equivalence to the batch solver. Twenty paired CPU histories preserve357
+native/physical phase bodies after excluding solver diagnostics/new cache.
+There is no new class certificate, Foundation action or actual-device release;
+the default-off solver's fixed first CUDA qualification is registered.
+
 **Grouped fresh resident reads: PROVED CONDITIONALLY; CPU AND FINITE CUDA PASS.**
 Grouping preserves complete bytes under the existing read-only observation
 boundary, with transport T <= arena extent + requested bytes and no cache

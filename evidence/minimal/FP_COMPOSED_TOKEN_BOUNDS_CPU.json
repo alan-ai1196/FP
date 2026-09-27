@@ -1,0 +1,139 @@
+{
+  "status": "PASS_COMPOSED_TOKEN_NATIVE_BOUNDS_CPU",
+  "primitive": {
+    "exact_prefix_sums": 1029,
+    "carry_merges": 343,
+    "balanced_root_words_match": true,
+    "byte_backed_views_cannot_be_made_writable": true
+  },
+  "exact": {
+    "histories": 192,
+    "events": 768,
+    "exact_gradient_coordinates": 23296,
+    "exact_readout_basis_coordinates": 12516,
+    "unchanged_exact_commits": 336,
+    "repeated_out_of_order_profiles": 16,
+    "differing_batch_gradient_intervals": 839,
+    "endpoint_non_equivalence_witness": {
+      "unit": 2,
+      "initializer": "mixed",
+      "targets": [
+        0,
+        0
+      ],
+      "slot": 5,
+      "exact": "-22094575102550935622914813535926552646928826368/2594308239092594073607653270596429128835440639081",
+      "composed": [
+        "-0x1.17120fd0030b3p-7",
+        "-0x1.17120fd003081p-7"
+      ],
+      "batch": [
+        "-0x1.17120fd0030b2p-7",
+        "-0x1.17120fd003081p-7"
+      ]
+    },
+    "complete_input_recipe_retained": true
+  },
+  "owned": {
+    "paired_histories": 20,
+    "identical_physical_and_native_phase_bodies": 357,
+    "interval_diagnostics_and_new_cache_excluded_from_byte_comparison": true,
+    "identical_fresh_leaf_capture_and_primitive_word_counts": true,
+    "identical_complete_learners_and_reports": true,
+    "rows": [
+      {
+        "unit": 2,
+        "events": 4,
+        "profile": false,
+        "shared": true,
+        "baseline_event_rows": 14,
+        "composed_event_rows": 8,
+        "baseline_bound_calls": 10,
+        "composed_bound_calls": 6,
+        "paired_histories": 16
+      },
+      {
+        "unit": 8,
+        "events": 16,
+        "profile": false,
+        "shared": true,
+        "baseline_event_rows": 200,
+        "composed_event_rows": 32,
+        "baseline_bound_calls": 46,
+        "composed_bound_calls": 18,
+        "paired_histories": 1
+      },
+      {
+        "unit": 4,
+        "events": 8,
+        "profile": false,
+        "shared": true,
+        "baseline_event_rows": 52,
+        "composed_event_rows": 16,
+        "baseline_bound_calls": 22,
+        "composed_bound_calls": 10,
+        "paired_histories": 1
+      },
+      {
+        "unit": 1,
+        "events": 4,
+        "profile": false,
+        "shared": false,
+        "baseline_event_rows": 8,
+        "composed_event_rows": 8,
+        "baseline_bound_calls": 8,
+        "composed_bound_calls": 8,
+        "paired_histories": 1
+      },
+      {
+        "unit": 2,
+        "events": 6,
+        "profile": true,
+        "shared": true,
+        "baseline_event_rows": 42,
+        "composed_event_rows": 24,
+        "baseline_bound_calls": 30,
+        "composed_bound_calls": 18,
+        "paired_histories": 1
+      }
+    ]
+  },
+  "failure_and_binding_controls": [
+    "unpaid",
+    "arithmetic",
+    "memory",
+    "retention",
+    "changed-leaf",
+    "public-cache",
+    "changed-origin",
+    "changed-record"
+  ],
+  "tensor_storage": {
+    "paired_histories": 2,
+    "rows": [
+      {
+        "reuse": false,
+        "checked_phases": 23,
+        "peak_bytes": 51920,
+        "cumulative_bytes": 51920,
+        "retired_generations": 0
+      },
+      {
+        "reuse": true,
+        "checked_phases": 23,
+        "peak_bytes": 5712,
+        "cumulative_bytes": 59640,
+        "retired_generations": 2728
+      }
+    ],
+    "grouped_reads_enabled_in_both_arms": true,
+    "identical_physical_extent_retirements_and_reports": true,
+    "cuda_context_created": false
+  },
+  "full_unit512_derived": {
+    "old_native_event_rows": 393472,
+    "composed_native_event_rows": 1024,
+    "unchanged_physical_leaf_captures": 917760
+  },
+  "scope": "Exact and complete CPU Runtime controls for owned native gradient composition.\n\nNo corpus, CUDA authority, wall-time improvement or class certificate. The\nold batch commit, physical event graph, fresh reads and complete records stay."
+}

@@ -1,13 +1,15 @@
 # Repeated prefix cost of the current ordinary-token verifier
 
 Status: **EXACT SCHEDULE LAW; COMPLETE CPU RUNTIME COUNT CONTROL PASS**.
-This concerns the successful ordinary path of the existing implementation,
+This concerns the successful ordinary path with `composed_native=False`,
 not an information lower bound on FP, a new numerical bridge or a wall-time
 theorem. Foundation/ERC and the rational/relation closure remain unchanged.
 The physical raw-call count below refers to the original separate-copy path
 (`grouped_reads=False`). The subsequent [grouped fresh-read lowering](GROUPED_FRESH_TOKEN_READS.md)
 preserves logical leaf inspections and native reevaluations while changing
 the number and size of actual transport calls.
+The subsequent [owned native gradient composition](COMPOSED_TOKEN_NATIVE_BOUNDS.md)
+changes native event evaluations to 2B while retaining the physical captures.
 
 The [owned-image comparison](OWNED_CANONICAL_IMAGES.md#actual-device-result-and-closure)
 reduces the four first ordinary CUDA calls from 18.70098 to 9.84782 seconds

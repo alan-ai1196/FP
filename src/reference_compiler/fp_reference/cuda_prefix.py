@@ -172,6 +172,7 @@ class TokenCudaPrefixContract(CudaPrefixContract):
     exact_cell_cap: int = 4096
     reuse_regions: bool = False
     grouped_reads: bool = False
+    composed_native: bool = False
     forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
@@ -179,8 +180,8 @@ class TokenCudaPrefixContract(CudaPrefixContract):
         closed(self.initializer, TokenInitializer)
         self.initializer.__post_init__()
         natural(self.exact_cell_cap, 'token exact rounding-cell allowance')
-        if type(self.reuse_regions) is not bool or type(self.grouped_reads) is not bool:
-            raise ContractError('exact token storage reuse/readback registration required')
+        if any(type(v) is not bool for v in (self.reuse_regions, self.grouped_reads, self.composed_native)):
+            raise ContractError('exact token storage/readback/native-solver registration required')
         if self.reuse_regions and (type(self.storage) is not CudaStorageContract
                 or self.storage.arena_bytes & (self.storage.arena_bytes-1)):
             raise ContractError('token reuse requires a power-of-two backing extent')
@@ -189,7 +190,8 @@ class TokenCudaPrefixContract(CudaPrefixContract):
         return ('token-half-core-event-gradient-sparse-balanced-carry-integer-grid-v2',
                 'prepaid-complete-token-array-graph-and-cache-relation-v1'+
                     ('+sealed-token-generation-reuse-v1' if self.reuse_regions else '')+
-                    ('+grouped-fresh-resident-readback-v1' if self.grouped_reads else ''),
+                    ('+grouped-fresh-resident-readback-v1' if self.grouped_reads else '')+
+                    ('+owned-token-native-gradient-forest-v1' if self.composed_native else ''),
                 'token-half-single-one-event-explicit-arena-arrays-v1')
 
     def __post_init__(self):
@@ -243,6 +245,7 @@ class CudaPrefixSnapshot:
     phases: tuple[CudaPhase, ...]
     storage: object
     device: CudaDeviceSnapshot
+    native_bounds: tuple = ()
     scope: str = field(default='owned executed CUDA prefix and exact forecasts; range/persistence authority belongs to Runtime identities; no installation or total-device authority', init=False)
 
 
@@ -341,6 +344,7 @@ class _CudaPrefix:
             self.arena = CudaArena(contract.storage)
         self.current, self.staged, self.predicted = {}, {}, {}
         self.phases, self._values = {}, {}
+        self._native_bounds = {}
 
     @property
     def indexed(self):
@@ -453,7 +457,8 @@ class _CudaPrefix:
         try:
             return CudaPrefixSnapshot(self.contract, tuple(self.current.items()), tuple(self.staged.items()),
                                       tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),
-                                      self._device.snapshot())
+                                      self._device.snapshot(),
+                                      tuple(self._native_bounds.items()) if self.token and self.contract.composed_native else ())
         except MemoryError:
             raise
         except Exception:

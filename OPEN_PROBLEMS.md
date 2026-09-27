@@ -1,13 +1,24 @@
 # FP Open Problems
 
+The native event-recomputation question now has a conditional proof and an
+[owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete
+unit evaluates2B native event rows, including the unchanged batch commit,
+instead of B(3B+1)/2. CPU exact/owner/storage controls pass. This closes the
+algebraic composition question for the fixed-origin token unit, while all
+physical leaf captures and complete historical retention remain. The next
+bounded evidence is the registered16-target actual batch/composed comparison;
+its total ordinary time must decide whether this counted reduction matters
+on the3090. No full-unit repeat, model budget, relation variant or generic
+cache/transport sweep is justified by the count theorem alone.
+
 The [grouped fresh-read refinement](theory/proofs/GROUPED_FRESH_TOKEN_READS.md)
 now has a conditional proof, implementation and complete CPU-tensor controls.
 Both original16-target CUDA workers pass, including actual changed-leaf refusal.
 Ordinary time84.41409 versus82.81775 seconds gives only a1.89108% observed
 reduction in one ordered pair. This transport qualification is closed; it
 does not justify another variant or a long training run. All numerical checks,
-native prefix reevaluations and complete retention remain. Native bound
-composition is now the more relevant question; no image/encoder sweep is due.
+native prefix reevaluations and complete retention remained in that run.
+Native composition is covered above; no image/encoder sweep is due.
 
 The [prefix audit-cost law](theory/proofs/TOKEN_PREFIX_AUDIT_COST.md) identifies
 quadratic repetition within an update unit: B(3B+1)/2 native event rows and
@@ -17,7 +28,7 @@ This is an implementation obstacle, not an FP lower. Investigate native
 enclosure composition and fresh-read granularity under complete ownership
 and unchanged observation boundaries; do not substitute cached host words
 for still-live device arrays. The grouped transport lowering above is now
-implemented; native enclosure composition remains open. No extra long
+implemented; native composition now has the separate CPU gate above. No extra long
 execution is registered.
 
 The [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
