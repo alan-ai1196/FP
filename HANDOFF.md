@@ -3,31 +3,32 @@
 ## Current execution state (2026-09-27)
 
 **The first complete owned full-vocabulary token unit passes.** Shared-retention
-A2 at307251e exits successfully after10,603.35036 seconds under its unchanged
-four-hour,16-GiB host,1-GiB CUDA arena and2-GiB reference-payload limits. It
-retains512 observations,1,026 checked phases,80,552,126 checked device words,
+A2 at `307251e` exits successfully after 10,603.35036 seconds under its unchanged
+four-hour, 16-GiB host, 1-GiB CUDA arena and 2-GiB reference-payload limits. It
+retains 512 observations, 1,026 checked phases, 80,552,126 checked device words,
 one native/AMP optimizer commit and every original unit record, with no
-pending records. Peak whole-job commitment is12,512,567,296 bytes. See the
+pending records. Peak whole-job commitment is 12,512,567,296 bytes. See the
 [terminal result and scope](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit).
 The original A1 timeout, A2 and reporting jobs are terminal: never replay them.
 
 The prepared continuation-storage, snapshot-correction and CPU-cost commits
 are now integrated in canonical main after preserving A2's journal. A2 used
-none of those changes. [Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md)
-is the next already fixed actual-device qualification: two finite workers,
-each8-KiB arena,2-MiB reservation,4-GiB host and180 seconds. Its journal is
-`FP_TOKEN_REUSE_CUDA_A1.json`; inspect its actual status before any launch.
-Its CPU controls pass; no actual-device reuse result is yet claimed here.
+none of those changes. [Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md#actual-device-result-and-closure)
+now **PASSES both original workers at `6941373`**. Eight training units and two
+reports retain 45 checked phases in an 8-KiB arena; stale aliases and public
+snapshot writes refuse. The post-target failure keeps 185 unsealed generation
+pins and publishes no successor. Both workers preserve allocator history.
+`FP_TOKEN_REUSE_CUDA_A1.json` is terminal; no reuse/control variant is due.
 
 **The research frontier is affordable ordinary next-token learning.** One
-unit in about2h57m establishes execution under that registration, not a useful
+unit in about 2h57m establishes execution under that registration, not a useful
 training budget or a language-quality result. The
 [first-event CPU profile](experiments/next_token/CPU_PHASE_COST.md) separately
-identifies repeated retention work; its65.12% instrumented share is not a
+identifies repeated retention work; its 65.12% instrumented share is not a
 whole-GPU decomposition. Later reference-prefix computation, fresh physical
 reads and retained host history also remain. Do not register another long
-full-V trajectory merely to repeat this milestone. Close the fixed reuse
-qualification, then pursue a substantial cost reduction that preserves all
+full-V trajectory merely to repeat this milestone. The fixed reuse
+qualification is closed. Pursue a substantial cost reduction that preserves all
 claim-relevant state and the owned numerical bridge before choosing a text
 comparison budget. No additional retention optimization is implemented.
 

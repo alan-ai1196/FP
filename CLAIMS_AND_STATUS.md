@@ -1,18 +1,28 @@
 # FP Claims and Status
 
-**Current full-unit claim: PASS, finite actual-device execution.** At307251e,
-shared-retention A2 completes exactly one registered512-token unit over the
-full50,257-label alphabet, with1,026 checked phases,80,552,126 device words,
+**Current full-unit claim: PASS, finite actual-device execution.** At `307251e`,
+shared-retention A2 completes exactly one registered 512-token unit over the
+full 50,257-label alphabet, with 1,026 checked phases, 80,552,126 device words,
 independent native/AMP commit and complete original records. The original
-caps/tolerances hold;10,603.35036 seconds and12,512,567,296 peak host bytes
+caps/tolerances hold; 10,603.35036 seconds and 12,512,567,296 peak host bytes
 are observed, not universal resource laws. See the
 [terminal scope](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit).
 This is no `CERTIFIED_COMPLETE`, isolated speedup, language score, physical
 reuse result or sustained-corpus feasibility theorem. A2's fixed source did
 not contain the subsequently integrated snapshot/reuse changes.
 
+**Owned token reuse/snapshot repair: PASS, finite actual-device qualification.**
+Both fixed workers at `6941373` meet their original 8-KiB arena, 2-MiB reservation,
+4-GiB host and 180-second limits. The training trace completes eight units and
+two reports; the failure trace retains all 185 unsealed generation pins and
+the original target without a successor. Old views and public mapping writes
+refuse, and counters are unchanged. This establishes the
+[declared device cases](experiments/next_token/OWNED_TOKEN_REUSE.md#actual-device-result-and-closure),
+not full-V fit, general allocator completeness, corpus feasibility or a score.
+
 The milestone notes below retain their stated evidence classes; this current
-result supersedes older assertions that no full owned token unit has run.
+result supersedes older assertions that no full owned token unit has run,
+and the reuse result supersedes its earlier CPU-only qualification status.
 
 The [first ordinary event's retention cost](experiments/next_token/CPU_PHASE_COST.md)
 is **MEASURED IN A CPU-SUBSTITUTED PROFILE**: disjoint allocation/sealing calls

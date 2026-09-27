@@ -10411,3 +10411,32 @@ already fixed small physical reuse qualification, then address repeated
 reference/history work toward an affordable comparison with strong baselines.
 Foundation/ERC and the rational/relation closure remain unchanged. Details
 and limitations are LOSSLESS_SHARED_REFERENCE_RETENTION.md section12.
+
+
+## 305. Qualify owned reuse and the corrected snapshot boundary on RTX3090 (2026-09-27)
+
+Both originally preregistered token reuse workers pass at6941373 after A2's
+terminal result and canonical integration. Each keeps its original8-KiB
+arena,2-MiB reservation,4-GiB host and180-second cap. Actual/lifetime allocator
+counters stay(1,8192,1), with no reset. The training worker completes16 targets,
+eight commits and two reports:45 checked phases/19,164 words,5,096-byte peak
+occupancy and120,304 cumulative buddy bytes. Its saved view's whole extent is
+actually reused, the stale view refuses, both public mapping writes refuse,
+and frozen learners remain unchanged. The physical mean has positive lower
+bound. Peak job commitment is1,943,650,304 bytes; launcher wall8.6675261s.
+
+The unsealed-retention worker keeps eight records/seven checked phases and
+3,351 checked words, including the final executed failed attempt. All185
+failed generation pins/header and the third revealed target1 survive with
+cursor2 and the old learner; no successor publishes. Its peak job is
+1,951,346,688 bytes and launcher wall3.9082772s. Other addresses are reused;
+the saved forecast is retired/refused without requiring its entire extent
+to be overwritten in this shorter trace. This is exactly the fixed scope.
+
+FP_TOKEN_REUSE_CUDA_A1.json preserves both original processes and outcomes.
+OWNED_TOKEN_REUSE.md, TOKEN_CONTINUATION_STORAGE.md and the reporting proof
+state their finite device scope. All old jobs are terminal and unreplayed.
+This closes the current reuse/reporting qualification. It does not qualify
+full-V reuse capacity, a new model budget, corpus loss or sustained training;
+the remaining scientific obstruction is the cost of complete ordinary-token
+execution. No new static/relation branch or control catalog is opened.

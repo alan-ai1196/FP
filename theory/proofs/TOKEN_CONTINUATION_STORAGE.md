@@ -284,3 +284,29 @@ checks and one constructive toy capacity witness, not a device result,
 full-vocabulary fit, sustained corpus feasibility or `CERTIFIED_COMPLETE`.
 Keep A2 fixed; actual reuse qualification follows its terminal outcome. The
 destination remains affordable ordinary-text learning with strong baselines.
+
+## Actual bounded device qualification
+
+Both original workers registered in
+[OWNED_TOKEN_REUSE.md](../../experiments/next_token/OWNED_TOKEN_REUSE.md#actual-device-result-and-closure)
+pass at6941373 after A2's separate original execution terminated. The
+successful worker completes16 targets/eight commits and two frozen reports,
+with45 checked phases and19,164 checked array words. Actual address reuse
+overwrites the saved forecast extent and the old handle refuses; both public
+normalization writes also refuse. Occupancy peaks at5,096 bytes within one
+8,192-byte allocation, despite120,304 cumulative buddy-reserved bytes and
+5,341 retired generations. The original CPU capacity witness now has this
+scoped physical execution, not a general allocator-fit guarantee.
+
+The second worker retains eight phase records/seven checked records and3,351
+checked words, including the final executed but unsealed failure. It keeps
+all185 failed generations plus their header, the actually revealed third
+target1, cursor2 and the preceding learner. No successor publishes. Both
+workers retain all header history, use2-MiB allocator reservation and preserve
+actual/lifetime counters(1,8192,1). Their host peaks fit the unchanged4-GiB
+caps and neither reaches its180-second deadline.
+
+The journal `FP_TOKEN_REUSE_CUDA_A1.json` is terminal. No full-V fit, corpus
+score, training throughput or whole-Compiler completeness follows. Do not
+extend this into more reuse controls: the remaining ordinary-text obstacle
+is affordable complete execution, including retained host and reference work.

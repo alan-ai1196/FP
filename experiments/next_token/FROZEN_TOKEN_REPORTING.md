@@ -292,3 +292,22 @@ The subsequent [token reuse implementation](../../theory/proofs/TOKEN_CONTINUATI
 uses this corrected immutable-history boundary and passes CPU controls;
 its actual device qualification is pending. Do not extend this into reporting
 variants.
+
+## 8. Corrected boundary on the actual device
+
+After shared-retention A2 terminated and the prepared correction/reuse commits
+were integrated, the two fixed [owned token reuse workers](OWNED_TOKEN_REUSE.md#actual-device-result-and-closure)
+pass on the RTX3090 at6941373. The successful worker completes eight training
+units and two frozen reports in an8-KiB arena, retaining45 checked phases.
+Both attempted public normalization writes raise TypeError and leave the
+phase bytes unchanged. Native/physical learners remain frozen during scoring;
+the physical mean enclosure has a positive lower endpoint and matches the
+previous CPU branch control. The second worker preserves the original learner
+and actual revealed target through an unsealed retention failure.
+
+These are finite actual-device checks of the corrected boundary, not a new
+language score or general mutation certificate. The historical counterexample
+above is still a CPU reproduction of the old implementation. All original
+reporting and reuse workers are terminal; no further reporting variant is due.
+Minimal device evidence is `FP_TOKEN_REUSE_CUDA_A1.json`, with the full fixed
+scope, word counts and resource observations in OWNED_TOKEN_REUSE.md.

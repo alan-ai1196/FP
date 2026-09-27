@@ -2,20 +2,24 @@
 
 ## Current token execution boundary (2026-09-27)
 
-Shared-retention A2 at307251e **PASSES** the original full512-event unit:
-1,026 checked phases,80,552,126 device words, one native/AMP commit, zero
+Shared-retention A2 at `307251e` **PASSES** the original full 512-event unit:
+1,026 checked phases, 80,552,126 device words, one native/AMP commit, zero
 pending records and unchanged lifetime allocation counters. Wall time is
-10,603.35036 seconds; peak whole-job commitment12,512,567,296 bytes is below
-16 GiB. Paid reference peak is584,438,971 bytes below2 GiB. The
+10,603.35036 seconds; peak whole-job commitment 12,512,567,296 bytes is below
+16 GiB. Paid reference peak is 584,438,971 bytes below 2 GiB. The
 [complete result](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#12-terminal-a2-the-first-complete-owned-full-vocabulary-unit)
 is terminal and supplies no score or sustained-training feasibility claim.
 
 The prepared host-image sharing, public-snapshot repair, generation-bound
 owned reuse and CPU diagnostic are integrated after that result. They were
-not used by A2. The separately preregistered bounded reuse qualification is
-ready on main; inspect FP_TOKEN_REUSE_CUDA_A1.json before launching. No
-device reuse outcome is yet established. Affordable ordinary-text training
-is the priority; repeated full history/reference work remains substantial.
+not used by A2. The separately preregistered bounded reuse qualification
+**PASSES both workers at `6941373`**: 45 complete checked training/report phases
+and an eight-phase failed-retention trace. Stale views and public snapshot
+writes refuse; 185 failed generation pins remain. Both use one 8-KiB allocation
+and 2-MiB reservation, with unchanged lifetime counters. The
+[finite device scope](experiments/next_token/OWNED_TOKEN_REUSE.md#actual-device-result-and-closure)
+is terminal. Full-V reuse capacity and affordable sustained training remain
+unproved; repeated full history/reference work remains substantial.
 
 The following milestone notes preserve their earlier scopes. Where their
 dated next-step/status wording conflicts, this current boundary supersedes it.

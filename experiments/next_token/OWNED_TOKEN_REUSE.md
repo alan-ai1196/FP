@@ -1,9 +1,11 @@
 # Fixed qualification of owned token storage reuse
 
-Status: **PREREGISTERED; ACTUAL DEVICE JOBS NOT STARTED**. The lowering has
+Status: **BOTH ORIGINAL ACTUAL DEVICE WORKERS PASS AT6941373; TERMINAL**.
+The registration below remains unchanged; the actual result is at the end.
+The lowering has
 its [continuation proof and CPU controls](../../theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope).
 Both exact proposed worker branches also pass with CPU tensor/device
-substitution. This document supplies no new CUDA outcome or language score.
+substitution. The device result has the same finite scope and no language score.
 
 The new physical lowering retires sealed unreachable allocations while
 retaining every historical word and all unsealed attempts. This requires
@@ -90,3 +92,47 @@ fit, full-corpus feasibility, throughput, installation or model quality.
 After this qualification, stop toy reuse variants and follow the observed
 A2 training constraint toward a concrete ordinary-text comparison with
 adequately trained Transformer and n-gram baselines.
+
+## Actual device result and closure
+
+Both original workers at69413732957f09a206b801ebb9eab24ccc264faf **PASS** and
+exit0. They ran only after original A2 termination, journal commit1043dcc,
+integration c949fbc and scope reconciliation6941373. The terminal journal is
+`evidence/minimal/FP_TOKEN_REUSE_CUDA_A1.json`; no worker was retried and it
+must not be replayed. Source and all registered caps/tolerances stayed fixed.
+
+| Fixed case | Actual result | Peak host job bytes | Launcher wall seconds |
+|---|---|---:|---:|
+| reuse-training | 16 targets,8 commits,2 reports,45 checked phases,19,164 words | 1,943,650,304 | 8.6675261 |
+| unsealed-retention | 2 completed targets,1 commit,8 retained/7 checked phases,3,351 words | 1,951,346,688 | 3.9082772 |
+
+Both retain exactly one8,192-byte tensor backing allocation, with2,097,152
+actual/lifetime reserved bytes and unchanged counters(1,8192,1). Neither
+resets counters or caches. The successful trace peaks at5,096 occupied bytes,
+spends120,304 cumulative buddy bytes and retires5,341 generations. It actually
+overwrites the saved first forecast extent, then rejects that stale view.
+Both public snapshot normalization writes raise TypeError. All45 header
+records survive; the frozen native/physical learners remain unchanged during
+reporting. Its owned reference peak is4,699,152 bytes.
+
+The successful physical mean enclosure is
+`[784545145481/1099511627776, 392272900421/549755813888]` nats, with positive
+lower endpoint. The native enclosure and complete resource observations are
+in the journal. These are the toy qualification's scores, not corpus results.
+
+The failure trace peaks at5,008 occupied bytes, spends21,136 cumulative buddy
+bytes and retires755 generations. After the actual third target1, refusal at
+complete frame sealing keeps all185 failed-phase generations and its header;
+cursor2 and the preceding committed learner remain, with no successor. Its
+saved forecast is retired and refuses; that particular whole interval is not
+overwritten in this shorter trace, exactly as preregistered. Other addresses
+are reused. All eight header records survive; owned reference peak is
+3,629,880 bytes. The3,351 word count includes the failed attempt's completed
+numeric execution, not eight successful retained phases.
+
+This closes the two finite physical-lowering/snapshot-boundary cases. It is
+not a full-V capacity measurement, training-throughput estimate or broader
+Compiler release. Stop reuse/reporting controls here. The full-V A2 establishes
+one unit in about2h57m on its different append-only source; its result must
+not be attributed to this lowering. Address the measured cost of complete
+ordinary-token execution before another long run or a model-budget choice.
