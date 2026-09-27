@@ -26,8 +26,8 @@ ordinary/profile, source/collision and native/frame retention controls pass.
 This is a prepared change in this same Git repository, not the executing A1
 source or a new GPU result. After A1 is terminal, preserve its journal, apply
 that commit to main and reconcile these status paragraphs. The same temporary
-worktree now holds the dependent reporting and model-scope commits described
-below; preserve all three before removing the worktree. CPU timing alone supplies no new model
+worktree now holds the dependent reporting, model-scope and baseline commits
+described below; preserve all four before removing the worktree. CPU timing alone supplies no new model
 score or device result; use the actual terminal obstruction to choose the
 next training step.
 
@@ -42,7 +42,7 @@ All32 finite training/report words,96 events,416 retained records and six
 post-target failure controls pass, along with current event/install/token
 phase regressions. The two-worker reporting GPU audit is fixed but unrun;
 its launcher refuses the active canonical A1. After the original A1 is
-terminal, preserve its result, integrate all three prepared commits, reconcile
+terminal, preserve its result, integrate all four prepared commits, reconcile
 the first-model scope paragraphs and execute the fixed reporting audit once.
 No corpus score or additional relation branch is implied by this milestone.
 
@@ -55,6 +55,15 @@ and pooled older context; equal current forecasts do not authorize erasing
 ordered history. The audit opens no corpus and changes no model or executing
 source. This scope question is closed: use its restrictions when choosing the
 actual text model, rather than adding more capacity or precision variants.
+
+The Transformer comparison adapter is committed as 44a1c5c on
+research/text-transformer-baseline, following 010969a in that same worktree.
+It retains a pinned standard model and ordinary AdamW while enforcing the
+full output alphabet, an input-only PAD and explicit offline-training versus
+rolling frozen-report contexts. Upstream logits/all gradients, causal reads
+and full-vocabulary normalization pass CPU float64 controls. No corpus, model
+budget or device result is selected. This adapter control is closed; actual
+FP feasibility and reporting qualification precede the concrete text trial.
 
 The [first model-score boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
 is now explicit: a preregistered fixed native incumbent can be tested without

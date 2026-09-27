@@ -5,9 +5,15 @@ research/token-model-scope, following the two prepared implementation commits.
 Its frozen positive head has a finite-mixture loss floor; its updating-U
 counterexample and older-context invariance prevent broader interpretations.
 The proof and exact/CPU evidence are committed in the temporary worktree
-recorded by HANDOFF. Preserve and integrate all three commits after A1 is
+recorded by HANDOFF. Preserve and integrate the prepared commits after A1 is
 terminal. This closes the scope audit; actual text execution and competitive
 baselines are next, with no new relation or static capacity catalog.
+
+The fresh standard Transformer comparison adapter is prepared at 44a1c5c on
+research/text-transformer-baseline. Its CPU context/gradient/full-alphabet
+control passes without reading corpus data or choosing a model budget. It
+is not yet a trained competitive baseline; retain the tuned n-gram and
+adequate-training requirements in the eventual empirical preregistration.
 
 The read-only token reporting implementation and conditional proper-loss/mean
 bounds are prepared at a95375f on research/frozen-token-reporting, after the
