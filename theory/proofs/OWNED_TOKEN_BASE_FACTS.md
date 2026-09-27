@@ -1,6 +1,6 @@
 # Reuse declared token invariants without weakening arithmetic guards
 
-Status: **CONDITIONAL PRESERVATION THEOREM; IMPLEMENTED, DEFAULT OFF**.
+Status: **CONDITIONAL PRESERVATION THEOREM; CPU AND FINITE CUDA PASS; DEFAULT OFF**.
 This concerns the ordinary token Runtime under frozen Foundation/ERC. It
 changes no SUM/PRODUCT semantics, G, Gamma, U, physical precision, source
 interface or observation. There is no new architecture action, class
@@ -199,3 +199,51 @@ full-unit benefit, sustainable training budget or language quality. Close
 this qualification at its original outcome; further work must address the
 remaining ordinary-token cost on evidence, with the rational/relation branch,
 Foundation and ERC closed.
+
+## Actual result and closure
+
+The two original workers at `58a969db701051e58997271d425af5657a79d622` pass
+under every registered cap on the declared RTX 3090. Both retain 33 checked
+phases, 4,541,709 primitive words, all original 16 contexts/targets, 16 pending
+records and no commit. Both consume 29,850,216 append-only arena bytes with
+unchanged native/current allocation counters `(1,1073741824,1)` and unchanged
+actual/lifetime 1-GiB tensor and allocator-reservation measurements.
+
+| Original measurement | Repeated base operations | Owned base fact |
+| --- | ---: | ---: |
+| Initialization seconds | 10.2462473 | 9.8550058 |
+| All 32 ordinary calls, seconds | 83.0739114 | 60.5779660 |
+| First eight targets, ordinary seconds | 40.1793952 | 28.9696986 |
+| Last eight targets, ordinary seconds | 42.8945162 | 31.6082674 |
+| Peak whole-job committed bytes | 3,332,583,424 | 3,455,062,016 |
+| Peak paid reference bytes | 271,544,578 | 272,951,904 |
+
+The observed ordinary-time ratio is 1.3713552, a 27.07943% reduction in one
+ordered pair. Initialization includes artifact admission and subsequent
+construction. This result gives no isolated admission-cost estimate and no
+statistical/general, full-unit or sustained-training speedup. The owned arm's
+peak memory also includes the extra post-timing fault; the difference is not
+an isolated fact-overhead measurement. Both image tables retain 336 entries
+and 67,102,758 bytes. The owned fact has the registered 1,407,321 bytes, exact
+sum 1, guard threshold 33, correct identity and both role leases.
+
+After timing, actual in-place zeroing of the first live leaf causes the next
+prediction to refuse with the existing changed-predecessor error. The 34th
+phase retains the changed words; the old sealed record, learner and cursor 16
+remain, with no successor or new tensor allocation. The dynamic scope clears.
+The exclusive `FP_TOKEN_BASE_FACTS_CUDA_A1.json` is terminal. Its original
+worker identities, device evidence and per-call timings remain auditable;
+no replay or raised cap is due.
+
+This qualification is closed and the option stays default off. Avoided
+static scans matter in this finite ordinary-token trace, but 60.58 seconds
+for 16 targets still does not establish affordable learning. Do not extend
+the static-invariant branch or repeat a long full unit on this result alone.
+The next research question is whether already sealed historical workspaces
+can leave the live device state while preserving complete values, aliases,
+ownership, future query costs and all checks on the arrays that remain live.
+This is an open representation/liveness question, not permission to replace
+a still-live read with an old host value. No such new lowering is proved or
+implemented by this result. Foundation/ERC and the relation/rational closure
+remain unchanged; ordinary-text learning and strong trained baselines remain
+the objective.

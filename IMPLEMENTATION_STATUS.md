@@ -12,8 +12,14 @@ owner scope restores the parent even on the audited memory-failure paths.
 Exact controls pass 27,162 decisions; 19 paired complete CPU Runtime histories
 preserve 318 phase bodies/12,853,318 bytes and 117,355 checked primitive words.
 Admission, wrapper/snapshot mutation, nested owners and failure controls pass.
-The fixed first 16-target CUDA pair is registered in the proof and launcher;
-it has no device, full-unit or timing result before that original launch.
+Both original 16-target CUDA workers at `58a969d` now pass 33 phases/4,541,709
+checked words and the actual changed-leaf refusal. The owned artifact has
+1,407,321 bytes, exact sum 1 and guard threshold 33 in both ownership roles.
+Ordinary calls take 83.07391 versus 60.57797 seconds, a 27.07943% reduction in
+one ordered pair. All original limits and allocation history hold. This is
+no general/full-unit benefit or language result. The qualification is closed,
+default off, and its journal terminal. Device-workspace liveness and complete
+historical retention remain open; no new retirement lowering is implemented.
 
 The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 is implemented/default off as `composed_native`. A private immutable binding

@@ -10,12 +10,17 @@ An exact guard-profile theorem, 27,162 small guard decisions and 19 paired
 Runtime histories pass; all 318 complete phase bodies agree. Facts are paid,
 bound by strong source identity and included in complete state. No observed
 target, parameter or physical read is cached. The feature is default off.
-Its fixed first CUDA comparison is registered: two fresh 16-target jobs,
-unchanged full-V model/numerical limits and images, with a 4-MiB fact allowance
-only in the second worker. Commit before launch; never replay the exclusive
-`FP_TOKEN_BASE_FACTS_CUDA_A1.json` journal. This is the last current static
-invariant qualification, not a return to the closed rational/relation branch.
-Ordinary-token affordability remains the decision for what comes next.
+Both original 16-target CUDA workers at `58a969d` now pass 33 phases/4,541,709
+words, including actual changed-leaf refusal. Ordinary time falls 83.07391 to
+60.57797 seconds: a 27.07943% reduction in one ordered pair, with no general
+or full-unit claim. `FP_TOKEN_BASE_FACTS_CUDA_A1.json` is terminal; never replay
+it. This qualification is closed/default off. No further static-invariant
+variant or long run is due. Next, investigate whether sealed historical
+workspaces can leave the live device state while preserving all values,
+aliases, ownership, future queries and actual checks on remaining live arrays.
+That is an open representation question, not an implemented optimization.
+Ordinary-token affordability remains the priority; the rational/relation
+branch, Foundation and ERC stay closed.
 
 An optional [owned native gradient composition](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 now removes repeated event differentiation within a token unit. Native work

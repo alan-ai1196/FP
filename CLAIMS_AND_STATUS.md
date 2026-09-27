@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Owned token base facts: CONDITIONAL GUARD-PRESERVATION THEOREM; CPU PASS.**
+**Owned token base facts: CONDITIONAL GUARD-PRESERVATION THEOREM; CPU AND FINITE CUDA PASS.**
 The original ordered rational fold has an exact threshold: the maximum of
 all operand, preflight and result guards. Reusing only its final value is
 unsound for that decision class; 1/3 + 2/3 requires allowance 5 despite the
@@ -10,8 +10,12 @@ allowance, with the original path on a miss. The paid complete fact changes
 no source semantics, physical arithmetic or live-device observation. Exact
 controls pass 27,162 decisions; 19 paired Runtime histories preserve 318 full
 phase bodies and their learners/reports. This is no class certificate or
-same-budget feasibility theorem. A single fixed CUDA comparison is registered;
-there is no measured device benefit before its original outcome.
+same-budget feasibility theorem. Both original CUDA workers at `58a969d`
+pass 33 phases/4,541,709 words and the changed-live-leaf control. Ordinary
+time falls 83.07391 to 60.57797 seconds, a 27.07943% observed reduction in one
+ordered pair. No statistical/general speedup, full-unit benefit, affordability
+or language-quality claim follows. This qualification is closed/default off;
+its terminal journal must not be replayed.
 
 **Owned native gradient composition: CONDITIONAL THEOREM; CPU AND FINITE CUDA PASS.**
 At a fixed token-unit origin, outward addition of independently enclosed event

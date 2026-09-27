@@ -10719,3 +10719,40 @@ Require actual changed-leaf refusal after timing, commit first and never
 replay FP_TOKEN_BASE_FACTS_CUDA_A1.json. Close this static qualification at its
 outcome and reassess the remaining ordinary-token cost, without reopening the
 rational/relation branch or changing Foundation/ERC.
+
+
+## 315. Qualify token base facts; reduce measured ordinary execution by 27 percent (2026-09-27)
+
+Both original CUDA workers at 58a969d pass all fixed limits and checks. Each
+retains 33 checked phases/4,541,709 primitive words, all 16 original contexts
+and targets, 16 pending records and no commit. Their append-only consumption
+is 29,850,216 bytes with unchanged allocation counters (1,1073741824,1) and
+actual/lifetime 1-GiB arena/reservation. The paid owned fact binds the original
+base tuple in 1,407,321 bytes with exact sum 1 and guard threshold 33.
+
+The 32 ordinary calls take 83.0739114 seconds originally and 60.5779660 with
+the fact, a ratio of 1.3713552 and observed 27.07943% reduction in one ordered
+pair. Initialization is 10.2462473 versus 9.8550058 seconds and includes fact
+admission. No inner arithmetic profiler is used. Peak whole-job commitment
+is 3,332,583,424 versus 3,455,062,016 bytes; paid reference peaks are 271,544,578
+and 272,951,904. The second worker includes a post-timing fault, so the memory
+difference is not isolated cache overhead. This is no statistical/general
+speedup, full-unit benefit, sustained-training budget or language score.
+
+Actual in-place zeroing of the owned worker's first live leaf triggers the
+existing changed-predecessor refusal on its next prediction. The 34th failed
+phase retains changed words while the old sealed evidence, learner and
+cursor 16 remain. There is no new tensor allocation or successor. The scope
+clears and both role leases remain auditable. FP_TOKEN_BASE_FACTS_CUDA_A1.json
+is terminal, with original source, worker/device evidence and timings.
+
+OWNED_TOKEN_BASE_FACTS.md closes this qualification; the option remains
+default off. No static-invariant variant or long replay is due. The result
+justifies the avoided scans in this trace, but 60.58 seconds for 16 tokens is
+still insufficient evidence of affordable learning. The next open question
+is whether sealed historical workspaces can leave live device residency
+while preserving full values and legal future queries. Current carry roots
+can alias leaf arrays, so retirement requires a real liveness/ownership proof,
+not cached substitution for still-live reads. No such lowering is implemented
+here. Foundation/ERC and the rational/relation closure stay intact; ordinary
+text learning with strong trained baselines remains the research direction.

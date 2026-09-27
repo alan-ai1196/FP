@@ -4,14 +4,23 @@ Repeated token-base validation/summation now has an
 [owned guard-preserving implementation](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 and exact/complete CPU controls. The final value alone was insufficient;
 the complete original guard profile supplies the missing decision threshold.
-Its fixed first actual comparison is registered under the unchanged full-V
-limits, adding only a paid 4-MiB fact allowance to the second 16-target worker.
-Close this qualification at its original outcome, without a static-invariant
-sweep or long replay. The scientific question remains whether the complete
-ordinary-token bridge can support affordable learning. A constant-factor
-validation saving cannot by itself remove repeated historical retention and
-fresh-live-state cost. Foundation/ERC and the rational/relation branch stay
-closed; any next research step must target that remaining ordinary workload.
+Both original full-V device workers now pass at `58a969d`, including an actual
+changed-leaf refusal. Ordinary time falls 83.07391 to 60.57797 seconds, a
+27.07943% observed reduction in one ordered pair. This qualification is closed;
+no static-invariant sweep or long replay follows. It still does not establish
+affordable learning or remove repeated historical retention/live-state cost.
+
+**Next research question: live device state versus complete sealed history.**
+Can an already sealed event workspace leave device residency without losing
+any original words, source/target, incidence, alias or legal future query?
+Some event arrays may still alias current carry roots, so merely archiving a
+leaf and freeing its tensors is insufficient. Any lowering must prove actual
+liveness, retain immutable owned values, pay later decoding/transfer work,
+preserve failed/unsealed extents and keep fresh checks on every remaining
+live array. Public frozen wrappers cannot supply trusted archived facts.
+No new representation or retirement rule is proved or implemented yet. This
+question targets the ordinary workload; Foundation/ERC and the closed
+rational/relation branch are unchanged.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

@@ -1,0 +1,322 @@
+{
+  "status": "COMPLETE_ACTUAL_TOKEN_BASE_FACTS_A1",
+  "source_commit": "58a969db701051e58997271d425af5657a79d622",
+  "cases": [
+    "original",
+    "owned-facts"
+  ],
+  "host_cap": 17179869184,
+  "deadline_ms": 240000,
+  "arena_bytes": 1073741824,
+  "reference_payload_cap": 2147483648,
+  "canonical_image_cap": 67108864,
+  "token_fact_cap": 4194304,
+  "grouped_reads": false,
+  "composed_native": false,
+  "reuse_regions": false,
+  "observed_events": 16,
+  "update_unit": 512,
+  "phase_evidence_bytes": 67108864,
+  "phase_output_cells": 4194304,
+  "exact_cell_cap": 4096,
+  "state_atol": "16",
+  "probability_atol": "1/1000000",
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "Fixed 16-target actual comparison of repeated/owned token base invariants.\n\nBoth workers keep the original full-V model, unit512, numerical/storage\nlimits and 64-MiB owned images. The owned-fact worker then corrupts one live\nleaf and must refuse the next prediction while retaining prior history.\nFresh-read grouping, composed native bounds and region reuse stay disabled.\nNo inner-call profiler or arithmetic wrapper is used in either timed arm.\nNo complete unit, language score, replay or sustained speed claim.",
+  "results": [
+    {
+      "case": "original",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3331362816,
+        "peak_job_commit": 3332583424,
+        "user_100ns": 933593750,
+        "kernel_100ns": 20000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10596,
+        "process_creation_100ns": 134349975812233449
+      },
+      "launch_wall_seconds": 96.2465394000028,
+      "result": {
+        "status": "PASS_ACTUAL_TOKEN_BASE_FACTS_PREFIX",
+        "case": "original",
+        "before": {
+          "process_id": 10596,
+          "creation_100ns": 134349975812233449,
+          "process_commit": 33468416,
+          "lifetime_process_commit_peak": 33468416,
+          "job_commit_peak": 34689024,
+          "process_user_100ns": 2500000,
+          "process_kernel_100ns": 625000,
+          "job_user_100ns": 2500000,
+          "job_kernel_100ns": 625000,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 10.246247299997776,
+          "predict/0": 2.5150823000003584,
+          "observe/0": 2.3748793999984628,
+          "predict/1": 2.551178000001528,
+          "observe/1": 2.4998775999993086,
+          "predict/2": 2.617114600005152,
+          "observe/2": 2.429479700003867,
+          "predict/3": 2.6025559000045178,
+          "observe/3": 2.371093900001142,
+          "predict/4": 2.5696189000009326,
+          "observe/4": 2.43090530000336,
+          "predict/5": 2.5638600000020233,
+          "observe/5": 2.4688452999980655,
+          "predict/6": 2.60106779999478,
+          "observe/6": 2.46066250000149,
+          "predict/7": 2.683143599999312,
+          "observe/7": 2.4400304000009783,
+          "predict/8": 2.6081692000007024,
+          "observe/8": 2.583667000006244,
+          "predict/9": 2.685369900005753,
+          "observe/9": 2.5069627999982913,
+          "predict/10": 2.6950442000015755,
+          "observe/10": 2.5674116000009235,
+          "predict/11": 2.729525700000522,
+          "observe/11": 2.5928393000067445,
+          "predict/12": 2.8076602000001003,
+          "observe/12": 2.6112909999937983,
+          "predict/13": 2.7511746999953175,
+          "observe/13": 2.6352208999960567,
+          "predict/14": 2.8162754000004497,
+          "observe/14": 2.656676400001743,
+          "predict/15": 2.780632299996796,
+          "observe/15": 2.866595599996799
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true
+        },
+        "outcome": {
+          "total_phase_records": 33,
+          "paid_reference_peak": 271544578,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "archive_pages": 118,
+          "actual_page_bytes": 19617074,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 29850216,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 10596,
+          "creation_100ns": 134349975812233449,
+          "process_commit": 3213680640,
+          "lifetime_process_commit_peak": 3331362816,
+          "job_commit_peak": 3332583424,
+          "process_user_100ns": 930468750,
+          "process_kernel_100ns": 19375000,
+          "job_user_100ns": 930468750,
+          "job_kernel_100ns": 19375000,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "owned-facts",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3453825024,
+        "peak_job_commit": 3455062016,
+        "user_100ns": 720625000,
+        "kernel_100ns": 18437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 21476,
+        "process_creation_100ns": 134349976774718050
+      },
+      "launch_wall_seconds": 74.8059368999966,
+      "result": {
+        "status": "PASS_ACTUAL_TOKEN_BASE_FACTS_PREFIX",
+        "case": "owned-facts",
+        "before": {
+          "process_id": 21476,
+          "creation_100ns": 134349976774718050,
+          "process_commit": 33710080,
+          "lifetime_process_commit_peak": 33710080,
+          "job_commit_peak": 34947072,
+          "process_user_100ns": 1718750,
+          "process_kernel_100ns": 1250000,
+          "job_user_100ns": 1718750,
+          "job_kernel_100ns": 1250000,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 9.855005799996434,
+          "predict/0": 1.7349312000005739,
+          "observe/0": 1.6807794000051217,
+          "predict/1": 1.819418899998709,
+          "observe/1": 1.7889177999968524,
+          "predict/2": 1.8738807999980054,
+          "observe/2": 1.8032985999961966,
+          "predict/3": 1.883598799999163,
+          "observe/3": 1.7076891000033356,
+          "predict/4": 1.8414854000002379,
+          "observe/4": 1.7495982000036747,
+          "predict/5": 1.8565677000005962,
+          "observe/5": 1.7499032999985502,
+          "predict/6": 1.895888200000627,
+          "observe/6": 1.8477812000055565,
+          "predict/7": 1.9341313999975682,
+          "observe/7": 1.80182860000059,
+          "predict/8": 1.906434700002137,
+          "observe/8": 1.8879576999970595,
+          "predict/9": 1.9303330999973696,
+          "observe/9": 1.8520584999932908,
+          "predict/10": 1.9550095000013243,
+          "observe/10": 1.8930204999996931,
+          "predict/11": 1.984437800005253,
+          "observe/11": 1.936593400001584,
+          "predict/12": 2.059878000000026,
+          "observe/12": 1.9805065999971703,
+          "predict/13": 2.038220900001761,
+          "observe/13": 1.9699288999981945,
+          "predict/14": 2.0610347999972873,
+          "observe/14": 1.996245900001668,
+          "predict/15": 2.0781477999989875,
+          "observe/15": 2.07845929999894
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "owned_fact": {
+          "source_identity_bound": true,
+          "exact_total": "1",
+          "exact_guard_threshold": 33,
+          "paid_bytes": 1407321,
+          "both_roles_hold_artifact": true,
+          "isolated_scope_cleared": true
+        },
+        "changed_leaf_control": {
+          "actual_inplace_zero": true,
+          "refused": true,
+          "prior_record_unchanged": true,
+          "no_successor": true,
+          "failed_status": "EXECUTION_FAILED",
+          "reason": "ContractError: token CUDA predecessor or continuation cache changed after its owned phase"
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true
+        },
+        "outcome": {
+          "total_phase_records": 34,
+          "paid_reference_peak": 272951904,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "archive_pages": 121,
+          "actual_page_bytes": 19638453,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 29850216,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 21476,
+          "creation_100ns": 134349976774718050,
+          "process_commit": 3336146944,
+          "lifetime_process_commit_peak": 3453825024,
+          "job_commit_peak": 3455062016,
+          "process_user_100ns": 716875000,
+          "process_kernel_100ns": 18281250,
+          "job_user_100ns": 716875000,
+          "job_kernel_100ns": 18281250,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}
