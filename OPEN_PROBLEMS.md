@@ -1,5 +1,14 @@
 # FP Open Problems
 
+An exposed token snapshot normalization mapping admitted a false completed
+physical score. The [counterexample and repair](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+now pass CPU Runtime controls; corrected device execution is not yet tested.
+Preserve the running unscored A2, integrate this repair after termination and
+carry its invariant into the next justified device execution. This actual
+correctness hole justifies the repair, not a new catalog of reporting cases.
+Storage reuse remains unimplemented and must preserve immutable history as
+well as the proved continuation roots. Follow A2's outcome toward text training.
+
 The immediate execution is the separately registered shared-retention A2,
 using the integrated writer and the original full-unit model/resource limits.
 Inspect its own journal and actual process before any action. This addresses

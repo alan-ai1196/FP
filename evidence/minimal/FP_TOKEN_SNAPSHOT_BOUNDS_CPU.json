@@ -1,0 +1,201 @@
+{
+  "status": "PASS_IMMUTABLE_TOKEN_SNAPSHOT_BOUNDS_CPU",
+  "scope": "CPU complete Runtime control, no actual device certificate",
+  "counterexample_source": "a7d2232",
+  "counterexamples": [
+    {
+      "attack": "snapshot",
+      "shared_storage": false,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": true,
+      "forecast_frame_matches_public_record": false,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "0",
+        "0"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "8422541/16777216",
+        "8422541/16777216"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 0,
+      "checked_phases": 8
+    },
+    {
+      "attack": "snapshot",
+      "shared_storage": true,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": true,
+      "forecast_frame_matches_public_record": false,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "0",
+        "0"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "8422541/16777216",
+        "8422541/16777216"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 0,
+      "checked_phases": 8
+    }
+  ],
+  "corrected_cases": [
+    {
+      "attack": "none",
+      "shared_storage": false,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    },
+    {
+      "attack": "snapshot",
+      "shared_storage": false,
+      "snapshot_write_refused": true,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    },
+    {
+      "attack": "producer",
+      "shared_storage": false,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    },
+    {
+      "attack": "none",
+      "shared_storage": true,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    },
+    {
+      "attack": "snapshot",
+      "shared_storage": true,
+      "snapshot_write_refused": true,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    },
+    {
+      "attack": "producer",
+      "shared_storage": true,
+      "snapshot_write_refused": false,
+      "snapshot_phase_changed": false,
+      "forecast_frame_matches_public_record": true,
+      "status": "COMPLETE_REPORT",
+      "true_physical_probability": "8422541/21007274",
+      "physical_mean": [
+        "1004906220241/1099511627776",
+        "502453437801/549755813888"
+      ],
+      "native_mean": [
+        "1004906602425/1099511627776",
+        "502453301213/549755813888"
+      ],
+      "used_sum": [
+        "1409773854856843/1125899906842624",
+        "1409774695147893/1125899906842624"
+      ],
+      "original_sum": "10503637/8388608",
+      "complete_phase_bytes_checked": 307262,
+      "checked_phases": 8
+    }
+  ]
+}

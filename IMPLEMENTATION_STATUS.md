@@ -1,5 +1,17 @@
 # FP Implementation Status
 
+The token phase snapshot boundary is corrected after an actual CPU Runtime
+counterexample: a public mutable normalization dictionary changed an owned
+`COMPLETE_REPORT` to physical loss [0,0] while its true probability was below
+one. Both ordinary and shared retention were affected. Complete relation
+mappings are now detached and recursively frozen, plans are immutable, and
+scoring uses the freshly checked readout's own normalization bounds. Two
+historical reproductions and six corrected cases check all48 retained phase
+frames; reporting and shared-word regressions pass. See the
+[scope and evidence](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair).
+This is CPU Runtime logic with a substituted array/device backend, not a new
+CUDA qualification. A2's unscored source remains fixed at307251e.
+
 Shared-retention A2 is fixed in `scripts/run_shared_cuda_retention_a2.py` and
 the retention proof's section10. It uses only the original full-unit worker
 under unchanged model, caps and tolerances with the integrated implementation.

@@ -14,6 +14,14 @@ that a future owned phase can still read.
 The execution premise remains the existing serialized private owner with
 hidden raw tensor handles, not arbitrary external Python/device mutation.
 
+The immutable-history premise needs the subsequent
+[token snapshot repair](../../experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair).
+At a7d2232, public relation/plan mappings were writable despite the frozen
+outer record. A normalization write actually falsified reporting. The repair
+detaches/freezes those mappings and preserves their canonical bytes. This
+corrects that implementation premise; it adds no physical roots and grants
+no device-reuse authority.
+
 ## The boundary and the roots
 
 Consider the existing closed `TokenCudaPrefixContract`, which excludes

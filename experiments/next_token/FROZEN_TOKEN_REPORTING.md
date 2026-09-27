@@ -5,6 +5,11 @@ workers **PASS** at8adf9af. Both workers are terminal. No corpus, language
 score, fresh persistence result, installation or Compiler completeness claim.
 Foundation and ERC-1 remain frozen; the rational/relation branch stays closed.
 
+**Correction:** section7 falsifies the old public-snapshot immutability
+assertion and repairs it in CPU Runtime logic. The two device results above
+remain observations of their declared traces, not coverage of this attack.
+The corrected implementation has no new device qualification yet.
+
 The first text comparison may test one preregistered native G/Gamma/U without
 adaptive graph replacement. Its evaluation must still belong to the same
 paid complete Runtime. A passive predictor applied to an exported snapshot
@@ -222,3 +227,66 @@ language quality, fresh persistence, installation, a search certificate or a
 complete Compiler release. Stop reporting variants. The remaining immediate
 boundary is affordable owned full-vocabulary training under the original
 model/numerical/resource limits, followed by a concrete strong text comparison.
+
+## 7. Public snapshot counterexample and value-boundary repair
+
+At a7d2232, `IndexedCudaPhase` is a frozen outer dataclass, but the token
+producer inserts ordinary relation and execution-plan dictionaries into it.
+Both the public snapshot and the live owner retain that same phase object.
+Sealing a separate immutable encoding does not freeze the original object.
+
+After two ordinary training labels (0,1), freeze the toy incumbent and obtain
+its first reporting forecast through the public Runtime. Its actual target-0
+recipe mass is8422541/16777216 and the sum of both masses is10503637/8388608.
+The proper probability is therefore8422541/21007274, strictly below one.
+Change only the public phase relation's `stored_sum_lower` and
+`stored_sum_upper` entries to that target mass, then reveal target0 normally.
+The old reporter reads these altered bounds from the old forecast and emits
+`COMPLETE_REPORT` with physical mean [0,0]. The native mean remains unchanged.
+The sealed forecast bytes are intact but no longer match the public record.
+Both plain and shared retention admit this counterexample. It needs no
+private Runtime field, tensor write, object-level frozen-dataclass bypass,
+changed model, resource limit or numerical tolerance.
+
+The corrected phase boundary recursively copies relation mappings into
+immutable proxies and converts mutable sequences to tuples. It wraps the
+fresh plan dictionary too; its fields are immutable scalars or the frozen
+`TokenWindow`. No producer-owned mutable mapping remains aliased. Canonical
+encoding is unchanged. Physical scoring now takes the target recipe mass
+and full-alphabet normalization bounds from the **same freshly checked
+readout phase**. That phase already checks the original pre-target forecast,
+source, observation and predecessor. Neither exported diagnostics nor a
+retained producer dictionary can rewrite the future score.
+
+This follows a value-boundary invariant, not a new semantic action: once
+the owner publishes a phase, its live record and sealed bytes describe the
+same fixed value under all supported public continuations. Immutable copies
+establish the value boundary; byte equality checks establish the encoding.
+The two obligations cannot substitute for each other. The proper-loss and
+mean-rounding proofs are unchanged; their witness must be this owned value.
+
+`scripts/audit_token_snapshot_bounds.py --write` runs the actual Runtime,
+token phase, reporting and retention code with only device binding, arena
+checks and the array backend replaced by CPU implementations. It loads the
+two historical function bodies from a7d2232 to reproduce the two old failures,
+then checks six current cases: unchanged, public snapshot write and mutation
+of a retained producer dictionary, each with plain/shared storage. The public
+write raises `TypeError`; producer mutation leaves the record intact. All
+six yield the same physical mean enclosure
+
+    [1004906220241/1099511627776, 502453437801/549755813888],
+
+which encloses the independent Decimal90 value of
+`-ln(8422541/21007274)`. The audit checks every one of their48 retained phase
+frames, zero padding and unchanged canonical encoding (1,843,572 body bytes
+in total), plus immutable relations/plans. It imports no Torch or CUDA.
+Minimal evidence is `evidence/minimal/FP_TOKEN_SNAPSHOT_BOUNDS_CPU.json`.
+Existing exact/CPU reporting and544-phase shared-word regressions still pass.
+
+This is an implementation counterexample and CPU repair, not a Foundation
+refutation or an actual-device mutation result. The old device reporting
+jobs remain terminal; do not replay them. The running A2 does no reporting
+and retains its original source and registration. Integrate the correction
+after A2 terminates, and qualify it with the next justified text execution.
+Device-storage reuse is still unimplemented; its immutable-history premise
+must use the corrected boundary. Do not extend this into reporting variants.

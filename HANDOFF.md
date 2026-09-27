@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Public token snapshots could falsify a completed physical loss; CPU repair passes.**
+The [snapshot counterexample](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+changes only the returned forecast relation dictionary. Both plain/shared
+retention then report physical loss [0,0] for probability8422541/21007274,
+despite intact sealed evidence. Token phase relations now detach/freeze their
+complete mappings; fresh readout bounds and target mass come from the same
+checked phase. Two historical reproductions and six corrected CPU Runtime
+cases pass, as do the reporting and shared-word regressions. No corrected
+device result is claimed. The original reporting jobs remain terminal and
+establish only their declared traces. A2 never reports and remains untouched
+at307251e. This correctness repair precedes any device-storage reuse; integrate
+the isolated commits only after A2 terminates, then follow its measured result
+toward actual text learning. No new relation or passive-control branch is due.
+
 **Prepared continuation-storage result; not used by A2.**
 The [token continuation-root argument](theory/proofs/TOKEN_CONTINUATION_STORAGE.md)
 retains current/staged/predicted residents, transitive predecessors and all

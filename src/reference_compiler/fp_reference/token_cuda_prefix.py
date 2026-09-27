@@ -1,9 +1,10 @@
 """Complete token phases inside the existing Runtime CUDA owner; no signer."""
 from dataclasses import replace
 from fractions import Fraction as F
+from types import MappingProxyType
 import numpy as np
 
-from .core import ContractError
+from .core import ContractError, freeze_data
 from .resources import ResourceExceeded
 from .semantics import ArithmeticUnresolved
 from .token_execution import (TokenProgram, TokenInitializer, TokenLearner, TokenState,
@@ -236,17 +237,20 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     result_raw = None if result is None else result.raw()
     if result_raw is not None and input_id is not None:
         result_raw = share_state_bytes(result_raw, prefix.phases[input_id].raw_state)
+    # Snapshots expose these records directly. Detach producer mappings before
+    # publication; sealed bytes cannot protect a separately writable live record.
+    # The fresh plan contains only immutable scalars and a frozen TokenWindow.
     record = IndexedCudaPhase(object_id, candidate, program.program_id, origin+':'+kind,
         ordinary_cursor, observation_id, input_id, prediction_id, reference, reference_prediction,
         result_raw, None if actual_prediction is None else actual_prediction.raw(),
-        raw_operations, relation, 0 if a is None else a.cells, None if workspace is None else workspace.index,
+        raw_operations, freeze_data(relation), 0 if a is None else a.cells, None if workspace is None else workspace.index,
         'CHECKED_CUDA_PREFIX_PHASE' if error is None else
             'UNRESOLVED' if isinstance(error, (ResourceExceeded, ArithmeticUnresolved)) else 'EXECUTION_FAILED',
         '' if error is None else f'{type(error).__name__}: {error}', checked,
-        execution_plan=dict(window=window, target=target, schedule=Kernel.schedule_id,
+        execution_plan=MappingProxyType(dict(window=window, target=target, schedule=Kernel.schedule_id,
             readout_recipe=Kernel.readout_id,
             primitive_words=0 if checker is None else checker.words,
-            exact_rounding_cells=0 if checker is None else checker.decoder.exact_cells))
+            exact_rounding_cells=0 if checker is None else checker.decoder.exact_cells)))
     prefix._values[object_id] = actual_prediction if kind in ('predict', 'readout') else result
     prefix.phases[object_id] = record
     return record, error

@@ -10283,3 +10283,31 @@ minimal evidence is FP_TOKEN_STORAGE_LIVENESS_CPU.json and
 FP_ARRAY_GENERATIONS_CPU.json. The evidence supports one owned reusable
 implementation as a route toward sustained text training, not more passive
 variants. A2's fixed source and registration remain separate and unchanged.
+
+
+## 300. A public token snapshot can falsify an owned physical loss (2026-09-27)
+
+While preparing continuation-safe device reuse, the immutable-history premise
+failed inspection: token phases had frozen outer dataclasses but writable
+relation/plan mappings. The complete Runtime logic with a CPU array/device
+substitution confirms a counterexample at a7d2232. Writing only the public
+snapshot's normalization bounds produces COMPLETE_REPORT with physical loss
+[0,0] for actual probability8422541/21007274. Both plain/shared retention
+are affected; sealed historical bytes stay intact but disagree with the live
+phase. No private state access or tensor mutation is required.
+
+Token phase publication now detaches/freezes those mappings, and reporting
+uses the freshly checked readout's own normalization witness. Two historical
+reproductions and six corrected Runtime cases pass, including retained
+producer mutation. All48 corrected frames/1,843,572 body bytes match the
+public immutable phases and preserve their original encoding. The physical
+loss encloses an independent Decimal90 calculation. Exact/CPU reporting and
+all544 shared-word phases still pass. Evidence and the scoped invariant are
+FP_TOKEN_SNAPSHOT_BOUNDS_CPU.json and FROZEN_TOKEN_REPORTING.md section7.
+
+This refutes the old implemented passive-snapshot assertion, not the
+conditional loss theorem or Foundation. Earlier device reports retain their
+finite declared scope; corrected device execution is not yet tested. A2
+remains untouched at307251e and does no reporting. No reuse is implemented.
+Integrate only after A2 terminates and return to its measured text-training
+frontier; no new static or relation branch is opened.

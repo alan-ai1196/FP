@@ -1,5 +1,18 @@
 # FP Claims and Status
 
+The assertion that exposed token phase metadata were passive immutable
+snapshots is **FALSIFIED IN COMPLETE CPU RUNTIME LOGIC**. Changing only a
+returned forecast relation yields `COMPLETE_REPORT` with physical loss [0,0]
+for actual normalized probability8422541/21007274, under both plain and shared
+retention. The sealed frame stays intact and disagrees with the live record.
+The [value-boundary repair](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
+is **IMPLEMENTED; CPU REGRESSION PASS**: detached immutable mappings and
+fresh readout normalization preserve correct positive loss in six cases.
+No new actual-device result or general Compiler certificate follows. Earlier
+reporting device traces remain valid for their stated tests; they did not
+cover this public mapping write. Foundation and the conditional loss law
+are unchanged.
+
 The [frozen positive-head capacity bound](experiments/next_token/FROZEN_READOUT_CAPACITY.md)
 is **PROVED** for the specified readout: mean CE >= H(empirical targets)-log C
 >= H(empirical targets)-log(K+1), where C is the sum of componentwise maxima.

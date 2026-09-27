@@ -295,8 +295,9 @@ def _observe(rt, target):
             readout_id = next(reversed(rt._cuda.phases))
             physical = rt._cuda.phases[readout_id]
             physical_mass = F(float(physical.raw_prediction.mass.array()))
-            forecast = rt._cuda.phases[pending.cuda_prediction]
-            physical_sum = (forecast.relation['stored_sum_lower'][0], forecast.relation['stored_sum_upper'][0])
+            # This readout freshly rechecks the owned pre-target forecast.
+            # Bind normalization and target mass to that same checked phase.
+            physical_sum = (physical.relation['stored_sum_lower'][0], physical.relation['stored_sum_upper'][0])
             physical_loss = mass_loss(physical_mass, *physical_sum, terms=cfg.log_terms, bit_limit=bits)
         event = ReportEvent(pending.record, pending.prediction, probability, native_loss,
             pending.cuda_prediction, readout_id, physical_mass, physical_sum, physical_loss)
