@@ -1,15 +1,17 @@
 # FP Handoff
 
-**The token event/carry schedule now has an explicit arena array lowering.**
-The [executor and fixed device preregistration](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
-pass 144 CPU histories/576 events/336 commits, including all retained carry
-words and 165,444 exact floating words. The full-context512 CPU preflight
-uses 402,094,088 arena bytes and 408,471 arrays for one complete 512-token
-update. Run only its new registered fresh-arena audit, then bind the actual
-Runtime owner and complete cache/state/readout relation. No old GPU job is
-replayed; no rounded all-label output, bridge or language score is issued.
-The large array count and append-only retention remain measured-shape costs,
-not a training-efficiency result. Ordinary next-token work remains primary.
+**The token event/carry executor passes its actual RTX 3090 arena audit.**
+The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
+at 2e815c6 match all 76,935,527 output words of the full 512-event trace and
+all 603,092 committed masters. Retained leaves/forests and old states pass;
+allocation history remains exactly one 1-GiB backing allocation. Trajectory
+extent 402,094,088 bytes; peak job 3,094,769,664 bytes; 137.544 s including CPU
+replay/readback, not training throughput. Small/profile controls also pass.
+Both new jobs are terminal; do not rerun or add component variants. Next bind
+actual Runtime Gamma/source/target/phase ownership and the full cache/state/
+readout relation, then ordinary language learning and fresh strong baselines.
+No complete bridge, installation or model-quality claim is issued. Launch,
+metadata and append-only retention costs remain implementation constraints.
 
 **The AMP integration now has an incremental gradient schedule and a cache
 counterexample to respect.** The [streaming derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
@@ -20,9 +22,9 @@ CPU replay passes 384 events/144 commits, 64 profile events and 386,094 exact
 primitive words. Its reduction law uses 1,025 additions across 257 prefixes,
 versus 32,896 for rebuilding each prefix. This is a separately registered
 physical schedule: 73 tested prefixes differ from v1 in gradient words.
-Next lower its event operations into the existing owned CUDA arena and bind
-the cache invariant plus numerical relation inside Runtime. Passive Torch
-allocations currently escape that arena; no ownership check is relaxed.
+Its explicit arena lowering now passes the device audit above; bind the
+cache invariant plus numerical relation inside Runtime. Passive Torch
+allocations remain inadmissible; no ownership check is relaxed.
 No GPU replay, corpus/model score or new static catalog is due at this point.
 
 **The complete compact token reference learner now runs inside the actual

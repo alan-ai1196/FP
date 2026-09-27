@@ -9728,3 +9728,41 @@ allocator counters. Its finite class checks actual words and resource bounds;
 it does not register Runtime ingress, a complete numerical bridge, persistence
 or installation. Old terminal GPU jobs remain closed. Run this one component
 audit, then integrate the real owner; do not deepen the static branch.
+
+
+## 285. Complete the actual full-context token arena audit and stop component variants (2026-09-27)
+
+Both fresh jobs at2e815c67d7ed60ace07a1ff54ede830ad4b5e170 PASS. The small
+worker executes28 events/nine commits, including original-context profiles,
+and compares30371 actual array words plus7327 exact primitive words. The
+full-V/context512 worker completes512 events and one independent commit over
+all603092 masters. All76935527 array output words equal the CPU interpreter;
+complete retained leaves/forests also match the independent passive v2
+learner, and old pending states still match after commit.
+
+Actual initial/final allocation counters in both workers are(1,1073741824,1).
+No CUDA allocation escaped the one1-GiB backing arena; actual and lifetime
+allocator reservation/tensor peaks equal1 GiB. Full-unit extent402094088
+bytes,408471 arrays,1027 phases and maximum3216448-byte array exactly match
+preflight. Eight storage refusals per worker add32 bytes and one phase,
+including one deliberately unread uninitialized extent. Small/full peak job
+commit is2879410176/3094769664 bytes; launch wall time8.301/137.544 seconds.
+Times include CPU execution, replay and synchronous readback; no throughput
+or isolated optimization claim follows. Parent/worker identity, lifetime
+peaks and every preflight count are verified by a separate passive JSON read.
+
+The terminal evidence is evidence/minimal/FP_TOKEN_ARRAY_CUDA_A1.json;
+preregistration, result and scope are in
+experiments/next_token/ARENA_EVENT_EXECUTOR.md. No older job was replayed,
+and neither new job should be rerun. There is no language loss/held-out
+score, complete native/AMP bridge or installation release. The exact finite
+decision class is actual word equality and resource execution on these
+traces, not a CERTIFIED_COMPLETE or future continuation certificate.
+
+This is a clean stopping point for the array component. Code review confirms
+that actual Runtime Gamma/source/target/predecessor ownership, private
+cache induction, complete state/readout relations and atomic publication
+remain the boundary. Bind those in the existing owner; do not widen a static
+fixture catalog. The large launch/metadata/append-only costs also remain
+real implementation constraints. Continue ordinary next-token research and
+fresh strong language baselines, with Foundation/ERC unchanged.

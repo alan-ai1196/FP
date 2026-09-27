@@ -1,0 +1,286 @@
+{
+  "status": "COMPLETE_ACTUAL_ARENA_TOKEN_AUDIT",
+  "source_commit": "2e815c67d7ed60ace07a1ff54ede830ad4b5e170",
+  "cases": [
+    "small",
+    "train-context512"
+  ],
+  "host_cap": 4294967296,
+  "deadline_ms": 900000,
+  "arena_bytes": 1073741824,
+  "allocator_reserved_cap": 1073741824,
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "actual array/carry component; no Runtime ingress, lineage, issued bridge, installation or model score",
+  "results": [
+    {
+      "case": "small",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2878189568,
+        "peak_job_commit": 2879410176,
+        "user_100ns": 60781250,
+        "kernel_100ns": 10000000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 25772,
+        "process_creation_100ns": 134349540510425622
+      },
+      "launch_wall_seconds": 8.300861200000327,
+      "result": {
+        "status": "PASS_ACTUAL_ARENA_TOKEN_SCHEDULE",
+        "case": "small",
+        "before": {
+          "process_id": 25772,
+          "creation_100ns": 134349540510425622,
+          "process_commit": 30531584,
+          "lifetime_process_commit_peak": 38719488,
+          "job_commit_peak": 39940096,
+          "process_user_100ns": 3906250,
+          "process_kernel_100ns": 625000,
+          "job_user_100ns": 3906250,
+          "job_kernel_100ns": 625000,
+          "total_job_processes": 2
+        },
+        "trajectory": [
+          {
+            "events": 8,
+            "commits": 4,
+            "complete_state_words": 1292,
+            "endpoint_parameters": 28,
+            "final_cursor": 8,
+            "optimizer_steps": 4
+          },
+          {
+            "events": 8,
+            "commits": 2,
+            "complete_state_words": 1000,
+            "endpoint_parameters": 28,
+            "final_cursor": 8,
+            "optimizer_steps": 2
+          },
+          {
+            "events": 4,
+            "commits": 1,
+            "complete_state_words": 506,
+            "endpoint_parameters": 28,
+            "final_cursor": 4,
+            "optimizer_steps": 1
+          },
+          {
+            "events": 4,
+            "commits": 1,
+            "complete_state_words": 506,
+            "endpoint_parameters": 28,
+            "final_cursor": 4,
+            "optimizer_steps": 1
+          },
+          {
+            "events": 4,
+            "commits": 1,
+            "complete_state_words": 510,
+            "endpoint_parameters": 28,
+            "final_cursor": 4,
+            "optimizer_steps": 1
+          }
+        ],
+        "storage_controls": {
+          "refusals": 8,
+          "old_initialized_words_unchanged": true,
+          "empty_integer_view_checked": true,
+          "borrowed_readout_cleared": true
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "build": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "exact_primitive_words": 7327,
+        "exact_half_words": 660,
+        "after": {
+          "process_id": 25772,
+          "creation_100ns": 134349540510425622,
+          "process_commit": 2860191744,
+          "lifetime_process_commit_peak": 2878189568,
+          "job_commit_peak": 2879410176,
+          "process_user_100ns": 57812500,
+          "process_kernel_100ns": 9843750,
+          "job_user_100ns": 57812500,
+          "job_kernel_100ns": 9843750,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 7.487877400000798,
+        "arrays": {
+          "phases": 79,
+          "arrays": 8693,
+          "cells": 30371,
+          "extent_bytes": 166424,
+          "maximum_phase_cells": 691,
+          "maximum_array_bytes": 112,
+          "checked_device_words": 30371
+        },
+        "arena": {
+          "status": "ACTIVE",
+          "failure": null,
+          "consumed_extent": 166456,
+          "regions": 8696,
+          "phases": 80,
+          "initialized_regions": 8695,
+          "native_allocation_counter_at_binding": [
+            1,
+            1073741824,
+            1
+          ],
+          "allocation_counter": [
+            1,
+            1073741824,
+            1
+          ],
+          "actual_tensor_arena_bytes": 1073741824,
+          "actual_allocator_reserved_bytes": 1073741824,
+          "lifetime_tensor_peak_bytes": 1073741824,
+          "lifetime_allocator_reserved_peak_bytes": 1073741824
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "train-context512",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 3093549056,
+        "peak_job_commit": 3094769664,
+        "user_100ns": 1281250000,
+        "kernel_100ns": 92031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 16012,
+        "process_creation_100ns": 134349540593446670
+      },
+      "launch_wall_seconds": 137.5435563000001,
+      "result": {
+        "status": "PASS_ACTUAL_ARENA_TOKEN_SCHEDULE",
+        "case": "train-context512",
+        "before": {
+          "process_id": 16012,
+          "creation_100ns": 134349540593446670,
+          "process_commit": 31272960,
+          "lifetime_process_commit_peak": 37830656,
+          "job_commit_peak": 39051264,
+          "process_user_100ns": 3593750,
+          "process_kernel_100ns": 1093750,
+          "job_user_100ns": 3750000,
+          "job_kernel_100ns": 1093750,
+          "total_job_processes": 2
+        },
+        "trajectory": {
+          "events": 512,
+          "commits": 1,
+          "complete_state_words": 4682472,
+          "endpoint_parameters": 603092,
+          "final_cursor": 512,
+          "optimizer_steps": 1,
+          "vocabulary": 50257,
+          "context": 512,
+          "corpus": {
+            "role": "historical-training",
+            "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+            "file_bytes": 360000000,
+            "byte_offset": 0,
+            "bytes_read": 1024,
+            "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+            "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+            "validation_or_test_read": false
+          }
+        },
+        "storage_controls": {
+          "refusals": 8,
+          "old_initialized_words_unchanged": true,
+          "empty_integer_view_checked": true,
+          "borrowed_readout_cleared": true
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "build": [
+          "2.12.0+cu132",
+          "7661cd9c6b841b62b7f411aa52ec51f05457263b",
+          "13.2",
+          "NVIDIA GeForce RTX 3090",
+          [
+            8,
+            6
+          ]
+        ],
+        "after": {
+          "process_id": 16012,
+          "creation_100ns": 134349540593446670,
+          "process_commit": 3064496128,
+          "lifetime_process_commit_peak": 3093549056,
+          "job_commit_peak": 3094769664,
+          "process_user_100ns": 1277500000,
+          "process_kernel_100ns": 91875000,
+          "job_user_100ns": 1277656250,
+          "job_kernel_100ns": 91875000,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 136.6900923000003,
+        "arrays": {
+          "phases": 1027,
+          "arrays": 408471,
+          "cells": 76935527,
+          "extent_bytes": 402094088,
+          "maximum_phase_cells": 1743251,
+          "maximum_array_bytes": 3216448,
+          "checked_device_words": 76935527
+        },
+        "arena": {
+          "status": "ACTIVE",
+          "failure": null,
+          "consumed_extent": 402094120,
+          "regions": 408474,
+          "phases": 1028,
+          "initialized_regions": 408473,
+          "native_allocation_counter_at_binding": [
+            1,
+            1073741824,
+            1
+          ],
+          "allocation_counter": [
+            1,
+            1073741824,
+            1
+          ],
+          "actual_tensor_arena_bytes": 1073741824,
+          "actual_allocator_reserved_bytes": 1073741824,
+          "lifetime_tensor_peak_bytes": 1073741824,
+          "lifetime_allocator_reserved_peak_bytes": 1073741824
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}

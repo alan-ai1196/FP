@@ -126,3 +126,48 @@ The stopping point for this component is this one finite device audit and
 its actual failure diagnosis if needed. Then integrate the Runtime owner;
 do not expand a catalog of static variants. Ordinary next-token learning
 and fresh strong language-model baselines remain the objective.
+
+## 4. Actual result and stopping decision
+
+Both workers **PASS at source `2e815c67d7ed60ace07a1ff54ede830ad4b5e170`**.
+The A1 journal is terminal; do not rerun it. Its source/shape counts and
+resource observations were checked by a fresh passive JSON read, without
+loading tensors, the corpus, Torch or CUDA.
+
+| Worker | Events / commits | Checked device array words | Consumed trajectory bytes | Peak job commit | Launch wall time |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Small and profile controls | 28 / 9 | 30,371 | 166,424 | 2,879,410,176 | 8.301 s |
+| Full V / context 512 | 512 / 1 | 76,935,527 | 402,094,088 | 3,094,769,664 | 137.544 s |
+
+The complete device trace matches the CPU array interpreter bit for bit,
+including integer indices, every floating intermediate and all 603,092 full
+fixture master endpoints. Complete retained leaf/carry states separately
+match the independent passive v2 implementation; old pending states still
+match after commit. The small device run also checks 7,327 exact primitive
+words, 660 half words. Each worker passes all eight real storage refusals.
+
+In both workers, initial and final native allocation counters are exactly
+`(1, 1073741824, 1)`: one allocation, 1 GiB allocated cumulatively, one segment.
+Actual and lifetime tensor/allocator-reservation peaks equal the registered
+1 GiB. The fixed-arena lowering therefore did not hide an additional CUDA
+allocation on either declared trace. The refusal controls add 32 bytes and
+one phase beyond the trajectory preflight; each leaves one deliberately
+uninitialized, unread extent, which remains accounted for. All other
+numeric extents are initialized. Every preflight count matches execution.
+
+This establishes actual finite schedule/resource execution. It does not
+issue a complete reference/AMP bridge, certify unqueried rounded output
+words or show language quality. Timings include CPU execution, independent
+replay and synchronous readback; they cannot be presented as model throughput
+or an isolated optimization benefit. The large array count and retained
+extents remain concrete costs for subsequent integration to address.
+
+**Stop component variants here.** The runtime review confirms that the next
+missing boundary is owned phase identity and authority, not another static
+numerical fixture. Bind independently derived Gamma, original source and
+actual target, immutable prepared caches/forests, complete native-coordinate
+and all-label readout relations, retained failures and atomic state publication
+inside the existing ReferenceCompilerRuntime. A matching type or numerical
+array must not substitute for those bindings. Keep installation/persistence
+unreleased until their real paths are supported. The research direction stays
+ordinary next-token prediction, followed by fresh strong language baselines.

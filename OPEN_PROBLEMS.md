@@ -1,20 +1,20 @@
 # FP Open Problems
 
 The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
-now supplies explicit arena operations and passes the independent CPU
-learner controls. The next finite check is its preregistered device audit;
-then bind these operations to actual Runtime token ingress, immutable
+now passes independent CPU controls and the actual full 512-event RTX 3090
+audit, including unchanged one-allocation history. Both jobs are terminal;
+stop component variants. Bind actual Runtime token ingress, immutable
 cache induction and the complete numerical state/readout relation. Do not
 make typed caller caches authoritative or feed exact endpoints into AMP.
-The full-unit preflight's408,471 arrays/about402 MB expose future launch,
+The full-unit execution's 408,471 arrays/about 402 MB expose future launch,
 metadata and retention costs. Optimize the implementation under the frozen
 semantics; another static relation-task catalog would not address them.
 
 The [incremental AMP derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
 resolves repeated derivative-prefix evaluation while exposing a necessary
 cache invariant. A current ordinary gradient does not identify future
-floating behavior. The next concrete work is an owned array event kernel
-and immutable retained frontiers, with checked append induction and the
+floating behavior. The explicit array kernel now passes its device audit.
+Next bind its immutable retained frontiers, checked append induction and the
 complete numerical state/readout relation in ReferenceCompilerRuntime.
 The passive Torch allocator cannot satisfy the existing arena contract;
 integrate its operations through admitted extents, not a disabled ownership

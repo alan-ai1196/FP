@@ -135,12 +135,12 @@ is deliberately not advertised as an affordable online checker. Failure after
 target reveal retains the previous complete state, forecast, actual source,
 new target and any completed one-event derivative workspace.
 
-The necessary next implementation is the array event executor inside the
-existing owned arena, followed by the inductive cache/coordinate relation in
-ReferenceCompilerRuntime. The existing arena already has admitted immutable
-float32 outputs for addition; indexed reads, integer masters and complete
-token phase binding still need their registered lowering. No allocation
-monitor is disabled and no passive Torch allocation is accepted as owned.
+The [array event executor](ARENA_EVENT_EXECUTOR.md) now passes its actual
+fixed-arena device audit, including indexed reads, integer masters and
+immutable carry outputs. The next implementation is the inductive cache/
+coordinate relation and complete phase binding in ReferenceCompilerRuntime.
+No allocation monitor is disabled and no passive Torch allocation is
+accepted as owned. The component audit is terminal; do not add variants.
 
 ## 5. Evidence and scope
 

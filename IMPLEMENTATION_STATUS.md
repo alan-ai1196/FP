@@ -3,10 +3,11 @@
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer
 commits using admitted fresh CUDA extents, with no passive-Torch fallback.
-Its CPU interpreter passes 576 events/336 commits and 165,444 exact words;
-the full512-event preflight uses about402 MB of extents. A fresh bounded
-device audit is preregistered. Actual Runtime token-CUDA dispatch, Gamma,
-cache induction, state/readout relation, lineage and installation remain
+CPU controls pass 576 events/336 commits and 165,444 exact words. Both actual
+RTX 3090 jobs pass at 2e815c6: the full 512-event unit matches 76,935,527 output
+words and all 603,092 masters, with one backing allocation and about 402 MB
+of consumed extents. Both jobs are terminal. Actual Runtime token-CUDA
+dispatch, Gamma, cache induction, state/readout relation and installation remain
 unregistered. No helper or typed cache is treated as an authorized owner.
 
 The [incremental token AMP component](experiments/next_token/STREAMING_AMP_GRADIENTS.md)
@@ -16,8 +17,8 @@ falsified even when exact and floating current sums agree. Complete cache
 replay, native coordinate comparisons, exact primitive controls and profile
 clocks pass. This new physical association differs from the old AMP schedule;
 its passive tensors and old-format diagnostic basis grant no Runtime/bridge
-authority. The next implementation is the owned array event executor and
-an inductively checked immutable cache relation, not another static variant.
+authority. The array executor passes above; the next implementation is
+its Runtime binding and inductively checked immutable cache relation.
 
 The [complete compact token learner](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now uses actual Runtime construction, target-free forecasts, observation,
