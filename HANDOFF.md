@@ -1,5 +1,14 @@
 # FP Handoff
 
+**The next bounded device qualification is fixed, but not launched.**
+[Owned token reuse A1](experiments/next_token/OWNED_TOKEN_REUSE.md) registers
+two fresh jobs:16 training events/eight units plus frozen reports, and an
+unsealed-retention failure. Each has an8-KiB arena,2-MiB reservation,4-GiB host
+and180-second wall limit. Both proposed worker branches pass on CPU; this
+is not a device outcome. Preserve A2, commit its terminal result, integrate
+this branch, then run the canonical launcher once. Do not repeat old jobs,
+launch early or schedule another full-V run before assessing A2's evidence.
+
 **Owned token storage reuse is implemented and CPU checked on this branch.**
 The [continuation lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
 collects only sealed unreachable generations at a paid Runtime phase entry.

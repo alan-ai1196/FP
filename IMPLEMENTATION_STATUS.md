@@ -1,5 +1,10 @@
 # FP Implementation Status
 
+The [first actual reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
+is preregistered in `scripts/run_token_reuse_cuda_a1.py`, gated on canonical
+integration and the original A2's actual termination. Its two worker branches
+pass CPU substitution. No GPU job/result is supplied by this preparation.
+
 The optional [owned token reuse lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
 now connects successful owner seals, complete continuation roots, pinned
 failures and exact-object generations to a buddy arena. Runtime prepays it;

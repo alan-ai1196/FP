@@ -10343,3 +10343,25 @@ TOKEN_CONTINUATION_STORAGE.md. No CUDA context, corpus or full-V fit is
 involved. A2 stays fixed at307251e. Actual device qualification follows its
 terminal outcome; stop passive storage variants and continue toward affordable
 ordinary next-token training. Foundation/ERC and the relation closure stand.
+
+
+## 302. Fix the first actual reuse qualification before device outcomes (2026-09-27)
+
+OWNED_TOKEN_REUSE.md and scripts/run_token_reuse_cuda_a1.py preregister two
+bounded workers after canonical integration and original A2 termination.
+The first completes16 synthetic training events/eight units and two reports
+in an8-KiB arena; the second retains an unsealed post-target failure. Both
+require unchanged lifetime allocator history and stale-view refusal. Caps
+are4-GiB host,2-MiB allocator reservation,256-MiB reference payload and180s.
+
+The exact proposed worker branches pass CPU substitution with45/8 retained
+phases and19,164/3,351 checked array words. The shorter failed trace had
+retired its saved forecast but had not overwritten that entire interval;
+its initial pre-device assertion was corrected to require actual reuse
+elsewhere and stale-view refusal. The longer trace requires both for the
+same saved view. No GPU job is launched and no A2 source is changed.
+
+The new launcher refuses a running/nonterminal A2, a dirty/noncanonical tree
+or an existing reuse journal. All old jobs stay terminal. This registration
+does not select another full-vocabulary experiment or a language-study budget;
+that decision follows A2's actual evidence and the affordable-learning goal.

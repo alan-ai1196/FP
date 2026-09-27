@@ -1,5 +1,10 @@
 # FP Open Problems
 
+The [fixed bounded reuse qualification](experiments/next_token/OWNED_TOKEN_REUSE.md)
+is ready after A2 terminates and the isolated commits are integrated. It
+tests this new physical lowering and the snapshot correction, not a new
+reporting/model variant. Assess A2 before choosing any further full-V run.
+
 An exposed token snapshot normalization mapping admitted a false completed
 physical score. The [counterexample and repair](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
 now pass CPU Runtime controls; corrected device execution is not yet tested.
