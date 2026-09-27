@@ -10134,3 +10134,42 @@ not inferred from this synthetic control. A tuned smoothed n-gram remains
 required alongside the competitive Transformer. The adapter control is
 closed. No new architecture/precision catalog or extra FP semantic action is
 introduced, and the executing e3faaf5 source remains unchanged.
+
+
+## 295. Execute the upstream n-gram baseline and normalize its actual full alphabet (2026-09-27)
+
+The missing n-gram comparison now uses the actual KenLM modified Kneser–Ney
+estimator on the Windows machine. Existing Visual Studio/CMake/vcpkg suffice;
+no WSL or replacement smoothing implementation is needed. A committed manifest
+pins registry 07f4812200df3d3c931c0c8a6081d3b21fe2bf9f and its
+kenlm:x64-windows-static@20230531#1 recipe, based on upstream
+5bf7b46558e1c5595bf3b8c9b0b1f9d8d257040a. Build assets remain outside Git.
+
+The token-ID exporter writes one continuous declared view, with exactly one
+final newline and ordinary t50256 EOT words. Frozen reporting starts from its
+own BOS context, never resets on EOT, and scores no artificial final EOS.
+Actual vocabulary strings establish the injective real-ID map. All required
+model columns are evaluated before the next target is read.
+
+The declared full-alphabet predictor renormalizes the actual log-score weights
+of seen IDs plus one unknown bucket when unseen IDs exist. Each unseen ID gets
+one/U of that bucket. If U=0, unknown mass is excluded too. This avoids both
+duplicating unknown probability and silently treating rounded library scores
+as exactly normalized. Float64 log-sum-exp/compensated sums operate on the
+library's actual float32 scores; no FP exact bridge is claimed.
+
+The unpruned interpolated order-3 synthetic control trains on 10,080 tokens
+with automatic discounts and no fallback, then builds an unquantized trie.
+It checks 1,248 complete-label probabilities against independent ARPA/float64
+backoff evaluation, with maximum log difference 2.8989346e-7 nats (registered
+tolerance 1e-5). Causal suffix mutations, file/EOT behavior, chunk-independent
+ingress, four refusals and the full50,257-label unknown-mass calculation pass.
+Only aggregate evidence FP_TEXT_NGRAM_BASELINE_CPU.json is retained; temporary
+models, tapes and scores are not committed. No actual corpus or GPU is read.
+
+The direct reporter's O(T times seen-vocabulary) query cost is explicit and
+must be measured in the eventual study. The synthetic order is not a selected
+strong baseline. Both comparison adapters are now concrete and their controls
+are closed. Follow the original FP resource result, complete its fixed frozen
+reporting audit, then preregister and execute adequately trained real text
+comparisons. Do not add another smoothing/normalization or relation catalog.

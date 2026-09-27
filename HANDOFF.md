@@ -1,5 +1,15 @@
 # FP Handoff
 
+The [upstream modified Kneser–Ney comparison path](experiments/next_token/baselines/NGRAM.md)
+now builds natively on this Windows machine and passes its synthetic CPU
+control. The pinned estimator supplies automatic discounts; the reporter
+normalizes over every real token, divides unknown mass correctly and keeps
+file/EOT contexts explicit. It matches an independent ARPA/float64 control.
+Build assets are outside Git at F:\experiment\FP_next_token_baselines. No
+actual corpus, selected model order or GPU result is involved. Both baseline
+adapter controls are now closed; actual FP feasibility/reporting and a
+concrete adequately trained text comparison remain the experimental priority.
+
 The [standard Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
 now passes its CPU float64 control. It retains the pinned upstream model and
 AdamW, uses the full predicted alphabet with an input-only PAD row, and makes

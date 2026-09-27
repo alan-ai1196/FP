@@ -1,5 +1,11 @@
 # FP Implementation Status
 
+The [modified Kneser–Ney baseline path](experiments/next_token/baselines/NGRAM.md)
+has a pinned native Windows build and a tested full-alphabet C++ reporter.
+The actual upstream estimator, unquantized trie and independent float64 ARPA
+control pass on synthetic data, including unseen-label mass and causal
+contexts. No real text score, selected order or FP Runtime authority follows.
+
 The [Transformer comparison adapter](experiments/next_token/baselines/TRANSFORMER.md)
 is available outside FP Runtime, with pinned upstream source and CPU float64
 context/output/gradient checks. It initializes from scratch and retains

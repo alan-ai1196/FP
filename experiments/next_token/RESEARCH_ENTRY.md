@@ -103,6 +103,14 @@ unmodified nanoGPT model with one input-only PAD row. This supplies no chosen
 model size, corpus score, adequate-training claim or device result. Its control
 is closed; choose and preregister a competitive run after actual FP feasibility.
 
+The [upstream modified Kneser–Ney path](baselines/NGRAM.md) also builds and
+passes its synthetic CPU control on the actual Windows machine. Its continuous
+token-ID ingress and full-alphabet reporter treat EOT as ordinary, exclude
+structural target symbols and split unknown mass among unseen IDs. The real
+estimator supplies the discounts and trie; an independent ARPA calculation
+checks the adapter. No corpus, model order or tuning budget is selected.
+Both baseline adapter controls are closed; use them in the concrete text trial.
+
 ## Next executable boundary
 
 The [actual Runtime source control](OWNED_SOURCE_CONTROL.md) now establishes
