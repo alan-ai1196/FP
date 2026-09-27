@@ -10489,3 +10489,26 @@ numerical limits remain. Each must retain five checked phases, original
 records and allocation history, with no optimizer commit. Append-only physical
 storage in both isolates the encoding change. No long unit is replayed; the
 result cannot select a corpus budget or establish a general speedup.
+
+
+## 308. Qualify canonical images and measure short actual-device cost (2026-09-27)
+
+Both original CUDA workers at263086c pass their unchanged180-second/16-GiB
+limits. Each observes two original targets and retains five checked phases,
+2,619,584 actual device words and complete source/target records, with no
+optimizer commit. Both use19,974,624 append-only arena bytes and unchanged
+actual/lifetime counters(1,1073741824,1). Neither old jobs nor counters reset.
+
+The four ordinary calls take18.70098 uncached versus9.84782 owned-image
+seconds without profiling, an observed ratio1.89900. Initialization takes
+13.13054 versus10.13982 seconds; peak whole-job commitment is3,201,957,888
+versus3,282,624,512 bytes. Enabled images retain216 values/65,153,526 bytes;
+paid reference peak rises from207,099,536 to267,706,910 bytes. Source, device,
+original processes and outcomes remain in FP_CANONICAL_IMAGES_CUDA_A1.json.
+
+OWNED_CANONICAL_IMAGES.md records the finite physical scope and closes this
+qualification. A single ordered pair is no statistical speedup estimate,
+full-unit result or text-training budget. No cache sweep, extra encoder case
+or long unit replay is due. Later native-prefix computation, growing retained
+history and complete fresh physical validation remain the text-affordability
+frontier. Foundation/ERC and the rational/relation closure remain unchanged.

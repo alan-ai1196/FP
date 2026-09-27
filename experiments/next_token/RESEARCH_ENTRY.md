@@ -98,15 +98,18 @@ Do not shrink the alphabet or use weak baselines to hide an unfavorable
 result. The currently exposed validation file is development data, not newly
 fresh evidence; deterministic unread data alone provide no stochastic law.
 
-The original shared-retention A1 is now terminal at e3faaf5: the four-hour
-full-unit worker times out, with a last completed checkpoint of320 observations
-and641 phases and7,650,095,104 bytes peak job commitment under16 GiB. Its
-small profile/refusal worker passes. The full512-token unit and first commit
-remain unestablished. The prepared byte-identical writer, owned reporting,
-model-scope result and both baseline adapters are now integrated. The fixed
-reporting device audit also passes at8adf9af. Address the measured full-unit cost
-under the unchanged model/resource/numerical contract before selecting a
-real text budget. This timeout is not a lower bound on other legal FP executors.
+The original shared-retention A1 at e3faaf5 is terminal with a four-hour timeout
+and last completed checkpoint of320 observations/641 phases. Its small
+profile/refusal worker passes. The separate A2 at307251e now completes the
+original512-token unit and first native/AMP commit in10,603.35036 seconds under
+unchanged limits. That full-unit milestone is closed. Prepared storage and
+snapshot repairs are integrated; both fixed actual reuse workers pass at6941373.
+The optional owned-image comparison at263086c passes both two-target workers,
+reducing their four ordinary calls from18.70098 to9.84782 unprofiled seconds
+while preserving complete records and checks. This early finite improvement
+does not measure late-prefix or sustained training. Follow the remaining
+ordinary-text cost before selecting a corpus budget; all original jobs are
+terminal and must not be replayed. No relation or encoder-control branch is due.
 
 ## Initial study direction
 

@@ -10,9 +10,11 @@ decisions, mutable-wrapper/cache-capacity controls and five failure boundaries
 pass. The ordinary native/frame/Unicode regressions pass. No numerical bridge
 or physical read is changed. The paired first-event CPU probe at `78201dc`
 measures 31.82135 versus 15.48325 combined profiled seconds; recorded calls
-fall from 128.8M to 59.6M, with higher retained host memory. This does not
-measure GPU throughput. One short five-phase/two-target actual CUDA comparison
-is preregistered, with original model and numerical/storage limits; not launched.
+fall from 128.8M to 59.6M, with higher retained host memory. The separate
+two-target actual CUDA comparison at `263086c` now passes both workers:
+five phases/2,619,584 checked words each, original limits and records intact.
+Four ordinary calls take 18.70098 versus 9.84782 unprofiled seconds. This finite
+physical qualification is closed; sustained or later-prefix cost is unmeasured.
 
 Shared-retention A2 at `307251e` **PASSES** the original full 512-event unit:
 1,026 checked phases, 80,552,126 device words, one native/AMP commit, zero

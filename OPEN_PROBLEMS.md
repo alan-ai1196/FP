@@ -3,10 +3,12 @@
 The [owned canonical-image lowering](theory/proofs/OWNED_CANONICAL_IMAGES.md)
 now passes exact/CPU preservation controls, including the actual full-V record
 shapes. Its paired first-event profile reduces combined instrumented CPU time
-from 31.82135 to 15.48325 seconds. The fixed two-target actual CUDA comparison
-will test the physical path and unprofiled cost; it cannot establish a useful
-training budget. An immutable-image hit cannot replace a fresh device read or
-a native-gradient bound. No new long GPU run is registered.
+from 31.82135 to 15.48325 seconds. Its original two-target actual CUDA workers
+also pass: 18.70098 versus 9.84782 seconds over four ordinary calls, both with
+five checked phases/2,619,584 words. That finite qualification is closed.
+It cannot establish a useful training budget. An immutable-image hit cannot
+replace a fresh device read or a native-gradient bound. Follow the remaining
+ordinary-text cost; no image sweep or new long GPU run is registered.
 
 **Current frontier: make ordinary-token learning affordable.** The original
 shared-retention A2 now passes one complete 512-event unit at `307251e`, including

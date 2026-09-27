@@ -9,9 +9,12 @@ CPU-substituted Runtime control. The
 [proof and exact scope](theory/proofs/OWNED_CANONICAL_IMAGES.md) now include a
 separate measured first-event CPU profile: 31.82135 versus 15.48325 combined
 instrumented seconds, 128.8M versus 59.6M calls. This is a finite CPU cost
-observation, not an unprofiled GPU speedup, full-unit or language-quality claim.
-The short actual-device comparison is preregistered but not launched.
-The feature is optional/default off.
+observation. A separate **PASS, FINITE ACTUAL-DEVICE COMPARISON** at `263086c`
+retains five checked phases/2,619,584 words in each original worker. Four
+ordinary calls take 18.70098 versus 9.84782 unprofiled seconds (ratio 1.89900),
+with original limits/records intact and higher paid/host memory. A single
+ordered pair is not a statistical, full-unit, sustained-training or quality
+claim. The qualification is closed; the feature stays optional/default off.
 
 **Current full-unit claim: PASS, finite actual-device execution.** At `307251e`,
 shared-retention A2 completes exactly one registered 512-token unit over the

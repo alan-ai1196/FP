@@ -1,6 +1,6 @@
 # Owned canonical images of immutable subtrees
 
-Status: **IMPLEMENTED; EXACT/CPU CONTROLS PASS; FIRST-EVENT CPU COST MEASURED**.
+Status: **IMPLEMENTED; EXACT/CPU CONTROLS PASS; FIXED CUDA COMPARISON PASS**.
 This is a token Runtime serialization refinement under frozen Foundation/ERC.
 It changes no G, Gamma, U, physical arithmetic, source interface or numerical
 bridge. It is not an additional semantic architecture action or a completeness
@@ -196,3 +196,40 @@ successful full-unit, reuse and paired CPU journals. It creates
 identities and stops at the first failure. An existing journal forbids replay.
 No extra long run, optimizer-unit success, model score, statistical speedup
 estimate or later-prefix feasibility follows from this finite comparison.
+
+## Actual-device result and closure
+
+Both original workers at `263086c0881695912da0f26df9e011699998c431` pass under
+their original limits on the pinned RTX 3090. Each retains two observations,
+five checked phases and 2,619,584 checked device words, with two pending
+records and no optimizer commit. All original contexts/targets remain. Both
+consume 19,974,624 append-only arena bytes and retain actual/lifetime counters
+(1, 1073741824, 1), with no reset. This is actual owned execution, separate
+from the earlier CPU-substituted byte/read equality control.
+
+| Observed quantity | Uncached | Owned images |
+| --- | ---: | ---: |
+| Initialization seconds | 13.13054 | 10.13982 |
+| First predict + observe seconds | 9.28812 | 4.88444 |
+| Second predict + observe seconds | 9.41286 | 4.96338 |
+| All four ordinary calls, seconds | 18.70098 | 9.84782 |
+| Launcher wall seconds | 34.70543 | 22.90332 |
+| Peak whole-job commit bytes | 3,201,957,888 | 3,282,624,512 |
+| Paid reference peak bytes | 207,099,536 | 267,706,910 |
+| Archive pages / actual bytes | 20 / 18,156,922 | 20 / 14,967,014 |
+| Retained images / bytes | 0 / 0 | 216 / 65,153,526 |
+
+The observed unprofiled ordinary-call ratio is 1.89900. This single ordered
+pair is a finite execution-cost observation, not a statistical estimate,
+kernel-only speedup or sustained-training ratio. The immutable base is bound
+in the enabled owner. Different fragment/page representations are permitted
+by the proof; actual canonical content remains subject to the complete owner
+checks. Extra retained images increase paid and host residency as expected.
+
+`FP_CANONICAL_IMAGES_CUDA_A1.json` preserves the original processes, attached
+job limits, device identity and outcomes. It is terminal and must not be
+replayed. This closes the current canonical-image qualification; no cache-cap
+sweep, encoder variant or additional toy device case is due. The result
+supports this lowering but does not justify a long training budget by itself.
+Late-prefix reference computation, growing retained history and complete
+fresh physical validation still determine ordinary-text affordability.

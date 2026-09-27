@@ -9,11 +9,12 @@ phase records/133,079,552 bytes and every fresh read agree with an uncached
 control. Mutable wrappers remain uncached and failures retain targets. The
 paired first-event CPU probe at `78201dc` completes: combined profiled time
 falls from 31.82135 to 15.48325 seconds, with calls falling from 128.8M to 59.6M.
-This is instrumented CPU evidence, not device throughput. A fixed two-target
-actual CUDA comparison is now registered in `run_canonical_images_cuda_a1.py`;
-commit its inputs and CPU result before launching it once. Its 180-second
-workers preserve the original model/numerical/storage limits and five complete
-phases; no long full-unit replay is registered.
+This is instrumented CPU evidence, separate from the now completed actual
+CUDA comparison at `263086c`. Both original workers pass five phases and
+2,619,584 checked words. Their four ordinary calls take 18.70098 versus 9.84782
+unprofiled seconds, an observed ratio of 1.89900. All model/numerical/storage
+limits and original records remain. `FP_CANONICAL_IMAGES_CUDA_A1.json` is
+terminal; this qualification is closed. No cache sweep or full-unit replay is due.
 
 **The first complete owned full-vocabulary token unit passes.** Shared-retention
 A2 at `307251e` exits successfully after 10,603.35036 seconds under its unchanged
@@ -43,9 +44,10 @@ reads and retained host history also remain. Do not register another long
 full-V trajectory merely to repeat this milestone. The fixed reuse
 qualification is closed. Pursue a substantial cost reduction that preserves all
 claim-relevant state and the owned numerical bridge before choosing a text
-comparison budget. The optional image lowering above has a measured first-event
-CPU benefit; its short device comparison must precede any inference about
-ordinary-text affordability or another long device execution.
+comparison budget. The optional image lowering above reduces measured early
+actual-device cost, but its two-event result supplies no later-prefix or
+sustained-training budget. Follow the remaining cost rather than adding more
+encoder controls.
 
 Foundation/ERC remain frozen and the rational/relation branch is closed.
 The current K8/pooled-context resource fixture is not a selected useful
