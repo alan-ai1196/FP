@@ -1,5 +1,19 @@
 # FP Handoff
 
+**Frozen-model token reporting now passes its exact/CPU boundary.**
+The [reporting proof and fixed next device audit](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+bind a preregistered validation/test stream to the actual committed incumbent,
+preserve its original causal contexts and permanently close learning/Compiler
+ports during reporting. Proper AMP loss uses the target recipe mass divided
+by the sum of all recipe masses; stored-Z division is kept distinct. Directed
+mean rounding adds less than2^-p per endpoint regardless of stream length.
+All32 binary training/report histories,96 report events,416 retained records,
+six post-target failure controls and the full CPU phase checks pass. Ordinary
+events, CPU installation and token phase regressions pass. The two-worker
+actual reporting audit is committed but unrun; first let the original A1
+retention job terminate under its original limits. No corpus score is claimed.
+This is the fixed-incumbent experiment boundary, not adaptive installation.
+
 **A measured serialization bottleneck now has a byte-identical traversal fix.**
 The [traversal argument and CPU evidence](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 replace recursive fragment propagation with a stack of active iterators.
@@ -18,10 +32,12 @@ preserve every header, record and padding byte before one paid root relocation.
 Seventeen complete frames/1,114,248 bytes and eight failure boundaries pass
 the exact CPU control; the native retention regression still passes. The CPU
 full-unit record preflight fits the existing64-MiB frame/2^22-cell caps.
-Run only the new shared-retention attempt: one actual profile/refusal worker,
-then the entire512-event full-vocabulary/context512 unit and first commit.
+The original shared-retention A1 is already running from e3faaf5 in F:\FP:
+its profile/refusal worker passed; inspect its journal/progress and existing
+process before waiting. The full512-event unit has not reached its terminal
+boundary. Do not run another copy or edit that executing source.
 Its2-GiB reference-payload cap and numerical tolerances stay fixed; full-unit
-host/arena limits are16 GiB/1 GiB. No actual shared-frame GPU result yet.
+host/arena limits are16 GiB/1 GiB. No full-unit success is established yet.
 Old device jobs stay terminal. After this attempt, follow its actual resource
 or numerical outcome toward language learning; no more storage-control variants.
 

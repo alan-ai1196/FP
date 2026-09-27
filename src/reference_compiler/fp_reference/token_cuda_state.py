@@ -155,6 +155,13 @@ class PredictionWords:
 
 
 @dataclass(frozen=True)
+class ReadoutWords:
+    label: int
+    mass: ArrayWords
+    division: ArrayWords
+
+
+@dataclass(frozen=True)
 class Resident:
     state: object
     prepared: Prepared
@@ -230,3 +237,19 @@ class PredictionResident:
 
     def tensors(self):
         return (('values', self.forecast.values), ('normalizer', self.forecast.normalizer))
+
+
+@dataclass(frozen=True)
+class ReadoutResident:
+    prediction: PredictionResident
+    label: int
+    mass: object
+    division: object
+    arithmetic: object
+
+    def raw(self, arithmetic=None):
+        a = self.arithmetic if arithmetic is None else arithmetic
+        return ReadoutWords(self.label, ArrayWords.capture(self.mass, a), ArrayWords.capture(self.division, a))
+
+    def tensors(self):
+        return (('mass', self.mass), ('division', self.division))

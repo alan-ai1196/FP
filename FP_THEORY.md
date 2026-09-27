@@ -6,6 +6,12 @@ This file is the **only normative theory source** for FP. Historical v1–v155 c
 
 The theory is frozen in the following sense: do not add a new architecture-semantic mechanism merely to make search faster. If implementation exposes a mathematical counterexample to the declared object, reopen theory. If it exposes only hard search, weak information, expensive certificates, numerical ambiguity or insufficient fresh evidence, improve the solver or return `UNRESOLVED`.
 
+The [frozen token reporting epilogue](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+implements XIV's read-only validation/test role for a supplied fixed incumbent.
+Its conditional mass-normalized loss/mean bounds and exact/CPU owner checks
+do not change a Foundation definition or supply fresh/installation authority.
+Actual device reporting and a corpus score remain unestablished.
+
 The scoped Reference Compiler runtime and actual target AMP path have passed their complete integration and event-level bridge gates. Registered RTX 3090 experiments may now proceed within that tested scope; execution outside it requires the corresponding evidence, not a borrowed release claim.
 
 The registered Reference/CPU implementation passed its complete integration

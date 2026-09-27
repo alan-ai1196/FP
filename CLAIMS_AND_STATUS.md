@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+The [frozen-token reporting argument](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+is **PROVED CONDITIONALLY** for the closed owned interface: reporting preserves
+the committed native/physical learner, derives proper-mass log-loss bounds,
+and adds less than2^-p mean rounding error per endpoint independently of N.
+Its **EXACT/CPU** controls pass32 training/report words,96 report events,
+416 retained records, six post-target failures and the new complete phase
+logic. `COMPLETE_REPORT` covers only the fixed registered finite stream of
+that incumbent. It is not `CERTIFIED_COMPLETE`, population evidence, fresh
+persistence, installation or a full Compiler certificate. Actual CUDA
+reporting is preregistered but unrun; there is no new corpus score.
+
 The [iterative canonical writer](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 has a **PROVED conditional byte-preservation argument** for supported finite
 stable value graphs and **EXACT** old/new byte checks, including Unicode,

@@ -19,6 +19,8 @@ from .data_usage import (DataContract, DataUsageLedger, ObservationRecord, Stoch
 from .token_sources import TokenAtomFamily, TokenContext
 from .token_execution import (TokenProgram, TokenInitializer, TokenLearner, TokenState,
     TokenRangeBound, TokenProbabilities, TokenEvaluation, TokenReferenceMachine)
+from . import token_reporting
+from .token_reporting import TokenReportingContract, TokenReportingManifest, TokenReport, ReportingResult
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
@@ -387,6 +389,8 @@ class RuntimeSnapshot:
     run: ReferenceRunSnapshot | None = None
     cuda: CudaPrefixSnapshot | None = None
     reference_archive: SharedReferenceSnapshot | None = None
+    reporting: TokenReportingContract | None = None
+    token_report: TokenReport | None = None
 
 
 @guard_host_allocations
@@ -399,6 +403,7 @@ class ReferenceCompilerRuntime:
         '_contract', '_online', '_host', '_cuda', '_chi', '_runtime_id', '_ledger', '_router', '_event_router', '_machine',
         '_policy_contract', '_policy_state', '_policy_running',
         '_reference_archive',
+        '_token_report_contract', '_token_report',
         '_manifest', '_manifest_object_id', '_run_closure',
         '_cursor', '_revision', '_next_search', '_searches', '_reference_proofs', '_next_persistence',
         '_alpha_spent', '_alpha_allocations', '_persistence_identities', '_persistence_events',
@@ -412,7 +417,8 @@ class ReferenceCompilerRuntime:
     def __init__(self, contract: ConstructionContract, initial_program: Program, *, online: OnlineContract | None = None,
                  host: HostResourceContract | None = None, policy: CompilerPolicy | CudaCompilerPolicy | None = None,
                  cuda: CudaPrefixContract | None = None,
-                 shared_storage: SharedReferenceContract | None = None):
+                 shared_storage: SharedReferenceContract | None = None,
+                 reporting: TokenReportingContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
         self._contract = contract
@@ -476,6 +482,16 @@ class ReferenceCompilerRuntime:
                     and any(r.score_path == CUDA_PATH for r in online.persistence.rules)):
                 raise ContractError('CUDA persistence requires its independently executed registered device prefix')
         self._online = online
+        if reporting is not None:
+            if type(reporting) is not TokenReportingContract or not token or online is None or policy is not None:
+                raise ContractError('terminal token reporting requires a fixed manual incumbent registration')
+            reporting.validate(online)
+            if reporting.accumulator_bits+1 > contract.reference_integer_bits:
+                raise ArithmeticUnresolved('report accumulator exceeds the registered integer allowance')
+        # These coordinates stay None on all existing installation classes.
+        # Token reporting freezes the incumbent; it grants no install path.
+        self._token_report_contract = reporting
+        self._token_report = None
         if policy is not None:
             if type(policy) is not (CompilerPolicy if cuda is None else CudaCompilerPolicy):
                 raise ContractError('registered strategy data required; no policy callback or supplied execution state')
@@ -495,6 +511,8 @@ class ReferenceCompilerRuntime:
             self._manifest = CudaRunManifest(self._manifest, cuda)
         if shared_storage is not None:
             self._manifest = SharedReferenceManifest(self._manifest, shared_storage)
+        if reporting is not None:
+            self._manifest = TokenReportingManifest(self._manifest, reporting)
         self._chi = stable_hash(self._manifest)
         self._runtime_id = secrets.token_hex(12)
         self._manifest_object_id = f'{self._runtime_id}:manifest'
@@ -938,7 +956,7 @@ class ReferenceCompilerRuntime:
         if origin == 'construction':
             self._router.charge_work('construct', {'work': charge}, label)
         else:
-            purpose = 'deployment_event' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler_event'
+            purpose = 'deployment_event' if origin in ('ordinary', 'report') and candidate == self._deployed_id else 'compiler_event'
             self._event_router.charge_work(purpose, {'work': charge}, label)
         # A fixed retained frame is paid before any actual device phase. The
         # first eight bytes contain the used encoded length; padding remains
@@ -1074,7 +1092,7 @@ class ReferenceCompilerRuntime:
                     self._seal_cuda_frame(label, origin=origin, candidate=candidate)
                 else:
                     role = (self._contract.work_roles['construct'] if origin == 'construction' else
-                            'deployment' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler')
+                            'deployment' if origin in ('ordinary', 'report') and candidate == self._deployed_id else 'compiler')
                     self._reference_archive.seal_cuda_frame(self, label, record, role=role)
             except MemoryError:
                 raise
@@ -1130,7 +1148,7 @@ class ReferenceCompilerRuntime:
         if origin == 'construction':
             self._router.charge_work('construct', {'work': work}, label+':seal-frame')
         else:
-            purpose = 'deployment_event' if origin == 'ordinary' and candidate == self._deployed_id else 'compiler_event'
+            purpose = 'deployment_event' if origin in ('ordinary', 'report') and candidate == self._deployed_id else 'compiler_event'
             self._event_router.charge_work(purpose, {'work': work}, label+':seal-frame')
         copy_id = label+':immutable-copy'
         self._ledger.allocate(self._data_owner, (ObjectSpec(copy_id, 'cuda_frame_copy_workspace',
@@ -3240,6 +3258,22 @@ after all fallible construction, checks and physical preparation complete.
         self.__dict__ = next_root
         return result
 
+    def begin_report(self) -> ReportingResult:
+        """Freeze the committed incumbent for its preregistered terminal report."""
+        return token_reporting._begin(self)
+
+    def predict_report(self, observation_id: str) -> ReportingResult:
+        """Own a forecast from the reporting stream's original causal prefix."""
+        return token_reporting._predict(self, observation_id)
+
+    def observe_report(self, target: int) -> ReportingResult:
+        """Retain and score the revealed label without a learner transition."""
+        return token_reporting._observe(self, target)
+
+    def report_result(self) -> ReportingResult:
+        """Decode the paid finite-stream mean enclosure; no freshness claim."""
+        return token_reporting._result(self)
+
     def snapshot(self) -> RuntimeSnapshot:
         return RuntimeSnapshot(self._chi, self._runtime_id, self.recovery_phase, self._cursor,
                                self._deployed_id, self._next_candidate, tuple(self._programs.items()),
@@ -3258,4 +3292,5 @@ after all fallible construction, checks and physical preparation complete.
                                None if self._policy_contract is None else CompilerPolicySnapshot(
                                    self._policy_contract, self._policy_state, self._policy_running), self._run_snapshot(),
                                None if self._cuda is None else self._cuda.snapshot(),
-                               None if self._reference_archive is None else self._reference_archive.snapshot())
+                               None if self._reference_archive is None else self._reference_archive.snapshot(),
+                               self._token_report_contract, self._token_report)

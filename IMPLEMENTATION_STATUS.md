@@ -1,5 +1,16 @@
 # FP Implementation Status
 
+The [terminal frozen-token reporting path](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+is implemented and passes exact/CPU controls. Constructor registration binds
+one declared reporting stream; owned forecasts retain its original source
+points, and reporting cannot call U or reopen any ordinary control port.
+The actual AMP readout extension keeps complete predecessors/forecast words
+and does not publish a learner. Exact loss bounds normalize recipe masses,
+with directed bounded-denominator mean accumulation. Six target-retaining
+failure controls and current event/install/token-phase regressions pass.
+The fixed actual device audit remains unrun pending the original retention
+A1's terminal outcome. No language result or broader token release follows.
+
 The [canonical traversal refinement](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 removes recursive fragment propagation while preserving complete packed and
 identity bytes. No dictionary of semantic values, omitted field or weaker

@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [fixed-incumbent reporting boundary](experiments/next_token/FROZEN_TOKEN_REPORTING.md)
+now has a proof and exact/CPU implementation checks. Its next step is the
+already specified two-worker actual-device audit after the active retention
+A1 terminates. Do not enlarge the reporting control class before that result.
+Then use the measured training constraint to preregister an affordable text
+study and competitive baselines. Unused adaptive installation is not a
+prerequisite to testing one supplied fixed G/Gamma/U; it remains mandatory
+when a study actually replaces the graph. Relation/static variants stay closed.
+
 The [canonical traversal bottleneck](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#8-preserve-the-byte-stream-while-removing-recursive-fragment-propagation)
 has a tested byte-identical implementation fix; stop encoder variants.
 It does not remove repeated complete-history traversal, native prefix

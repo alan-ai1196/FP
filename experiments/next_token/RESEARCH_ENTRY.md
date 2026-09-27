@@ -51,6 +51,13 @@ stronger Foundation claim still requires its exact decision class and a
 valid comparison bound. A finite syntax search also does not certify all
 trained values or all future continuations. Report UNRESOLVED when needed.
 
+The [fixed-incumbent reporting path](FROZEN_TOKEN_REPORTING.md) now has a
+conditional proof and exact/CPU checks. A supplied G/Gamma/U can receive a
+read-only finite-stream report without completing an unused adaptive graph
+installation path. Original reporting contexts and complete ownership remain
+mandatory, and the actual new device boundary is still pending. This is not
+a language result, selected-structure claim or broader Compiler release.
+
 ## Initial study direction
 
 Use ordinary public text, not another generated relation/parity distribution.

@@ -9999,3 +9999,51 @@ No old experiment is rerun or reinterpreted, no cap/tolerance changes and no
 new semantic architecture action, CERTIFIED_COMPLETE class or model score
 is added. Stop encoder variants, preserve the running A1 result, and proceed
 from the real full-unit boundary toward sustained ordinary-text learning.
+
+
+## 292. Own a frozen text-model report without borrowing installation authority (2026-09-27)
+
+Scope review separates the first useful language experiment from an unused
+adaptive graph-installation milestone. A preregistered supplied G/Gamma/U can
+be empirically tested as the fixed incumbent. That does not complete the
+Compiler goal or prove task-forced structure; real graph replacements still
+need their persistence and installation path. Foundation XIV already assigns
+validation/test labels a read-only reporting role.
+
+The new terminal Runtime reporting registration enforces that role. It starts
+only after the whole declared training horizon and a committed range-safe
+incumbent, retains the actual native/physical lineage, rebuilds the original
+reporting contexts from owned reporting labels, and blocks every ordinary
+learning/Compiler port permanently. Learner and reporting source clocks stay
+distinct. A target readout executes the existing physical mass recipe from
+the actual pre-target forecast, with complete word checks, without publishing
+a new current or staged learner. Targets, contexts, forecasts and full paid
+phase records survive post-target refusal.
+
+Scoring distinguishes the proper distribution m_y/sum(m_y) from rounded
+division by stored Z. The existing pre-target all-label envelope S in [L,U]
+and the actually executed target mass m give the loss interval
+[max(0,log(L/m)),log(U/m)], with paid exact logarithm bounds. Its ideal width
+is at most log(U/L). Directed fixed-dyadic integer totals preserve the finite
+mean and add less than2^-p per endpoint independently of stream length,
+without multiplying all per-event rational denominators. Integer/work limits
+remain binding. This is numerical reporting accuracy, not population error.
+
+Exact/CPU evidence covers all32 binary two-token training/three-token report
+histories (96 events),416 complete retained records, literal-native prediction
+agreement,28 closed ordinary/control ports,162 normalized mass cases and64
+mean prefixes. Five injected post-target boundaries and a real logarithm
+integer-limit refusal keep the target and incumbent. The new readout passes
+75 checked CPU array phases/48 label losses, plus8 full phase-logic controls
+and3 identity/source/origin refusals. Ordinary event, complete CPU installation
+and token phase regressions pass. Current host-failure port/prefix sections
+pass; its historical constructor adapter is stale and is not called a pass.
+
+The proof, precise COMPLETE_REPORT class and two-worker device preregistration
+are in experiments/next_token/FROZEN_TOKEN_REPORTING.md. Minimal CPU evidence
+is FP_TOKEN_REPORTING_CPU.json. No held-out corpus is opened. The new device
+attempt is unrun while the unchanged e3faaf5 shared-retention A1 continues.
+After its original terminal result, integrate the prepared changes, execute
+the fixed reporting boundary once and return to affordable text training with
+strong fresh baselines. No new relation variant, Foundation action, erased
+continuation information or broader completeness certificate is introduced.

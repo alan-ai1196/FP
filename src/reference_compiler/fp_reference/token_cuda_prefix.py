@@ -13,7 +13,7 @@ from .token_causal import TokenWindow
 from .token_arrays import CPUArrays, CudaArrays
 from .token_array_check import CheckedPrimitives
 from .token_array_events import Kernel, Prepared
-from .token_cuda_state import ArrayWords, Resident, PredictionResident, StateWords
+from .token_cuda_state import ArrayWords, Resident, PredictionResident, ReadoutResident, StateWords
 from .token_enclosures import EnclosureUnresolved
 from . import token_batch as ref, token_amp as amp, token_streaming as stream
 from . import token_state_relation as states, token_readout_relation as readout, token_readout_envelope as envelope
@@ -118,6 +118,12 @@ def transition(kind, program, cfg, before, prediction, window, target, cursor, o
         leaf = k.observe(before.prepared, prediction.forecast, window, target, a)
         pending = k.append(before.state if type(before.state) is stream.Pending else None, leaf, a)
         return Resident(pending, before.prepared, k.basis(pending, a), a)
+    if kind == 'readout':
+        if (type(before.state) is not amp.State or prediction.predecessor is not before
+                or prediction.forecast.window != window):
+            raise ContractError('read-only token score lost its committed physical forecast')
+        mass, division = k.readout_label(before.prepared, prediction.forecast, target, a)
+        return ReadoutResident(prediction, target, mass, division, a)
     if kind == 'commit':
         value = k.commit(before.state, a)
         return Resident(value, k.prepare(value, a), None, a)
@@ -136,7 +142,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     cfg = prefix.contract
     source = prefix.staged if origin == 'profile' or kind == 'commit' else prefix.current
     input_id = None if kind == 'initialize' else source[candidate]
-    prediction_id = prefix.predicted.get(candidate) if kind == 'observe' else None
+    prediction_id = prefix.predicted.get(candidate) if kind in ('observe', 'readout') else None
     before = None if input_id is None else prefix._values[input_id]
     prediction = None if prediction_id is None else prefix._values[prediction_id]
     result, actual_prediction, error, relation = before, None, None, None
@@ -152,6 +158,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 or spec.output != cfg.initializer.output or program.definition.output != spec.output):
             raise ContractError('token CUDA lost its registered complete program/Gamma/U/source domain')
         TokenReferenceMachine(cfg.initializer).require_program(program)
+        if kind == 'readout' and (origin != 'report' or reference.unit_count or prediction is None):
+            raise ContractError('owned readout requires a frozen committed reporting forecast')
         if before is not None:
             closed(before, Resident)
             for _, tensor in before.tensors():
@@ -167,9 +175,9 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             prediction_raw = prediction.raw()
             if prediction_raw != prefix.phases[prediction_id].raw_prediction:
                 raise ContractError('token CUDA pre-target words changed before observation')
-        if kind in ('predict', 'observe'):
+        if kind in ('predict', 'observe', 'readout'):
             window = window_from(sources, program, cfg.initializer)
-        if kind == 'predict':
+        if kind in ('predict', 'readout'):
             check_state(reference, before_raw, cfg)
         if kind == 'observe' and (not reference.targets or reference.targets[-1] != target or reference.windows[-1] != window):
             raise ContractError('token CUDA observation differs from the owned revealed target/context')
@@ -187,7 +195,7 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
         with prefix.arena.phase(object_id) as workspace:
             a = CudaArrays(workspace, readout_buffer, element_cap=cfg.initializer.element_cap, cell_cap=cfg.phase_output_cells)
             actual = transition(kind, program, cfg, before, prediction, window, target, reference.cursor, birth, a)
-            if kind == 'predict':
+            if kind in ('predict', 'readout'):
                 actual_prediction = actual
             else:
                 result = actual
@@ -204,6 +212,9 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
                 raise ContractError('token CUDA complete caches/state differ from the new checked transition')
             if kind == 'predict':
                 relation = check_prediction(reference, reference_prediction, before_raw, actual_raw, cfg,
+                                            normalizer_cap, activation_cap)
+            elif kind == 'readout':
+                relation = check_prediction(reference, reference_prediction, before_raw, prediction_raw, cfg,
                                             normalizer_cap, activation_cap)
             else:
                 relation = check_state(reference, actual_raw, cfg)
@@ -230,6 +241,6 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             readout_recipe=Kernel.readout_id,
             primitive_words=0 if checker is None else checker.words,
             exact_rounding_cells=0 if checker is None else checker.decoder.exact_cells))
-    prefix._values[object_id] = actual_prediction if kind == 'predict' else result
+    prefix._values[object_id] = actual_prediction if kind in ('predict', 'readout') else result
     prefix.phases[object_id] = record
     return record, error
