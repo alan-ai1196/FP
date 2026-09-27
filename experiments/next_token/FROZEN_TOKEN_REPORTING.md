@@ -288,5 +288,7 @@ refutation or an actual-device mutation result. The old device reporting
 jobs remain terminal; do not replay them. The running A2 does no reporting
 and retains its original source and registration. Integrate the correction
 after A2 terminates, and qualify it with the next justified text execution.
-Device-storage reuse is still unimplemented; its immutable-history premise
-must use the corrected boundary. Do not extend this into reporting variants.
+The subsequent [token reuse implementation](../../theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+uses this corrected immutable-history boundary and passes CPU controls;
+its actual device qualification is pending. Do not extend this into reporting
+variants.

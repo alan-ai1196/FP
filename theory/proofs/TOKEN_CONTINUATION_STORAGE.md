@@ -1,15 +1,15 @@
 # Continuation roots for token device storage
 
-**Status:** source-level sufficient-root argument and CPU access probe. No
-arena reclamation is implemented or authorized by this note. The running
-shared-retention A2 remains fixed at307251e and never uses this preparation.
-The passive generation guard below is implemented and CPU checked, but is
-not wired into a CUDA allocator or Runtime.
+**Status:** sufficient-root/ownership argument, optional owned implementation
+and complete CPU Runtime/array controls. Actual device reuse is not yet
+qualified. The running shared-retention A2 remains fixed at307251e and never
+uses this preparation. The earlier passive trace and generation component
+are now connected by the implemented lowering in the final section.
 
-The ordinary-text executor currently retains every device temporary. Its
+The default ordinary-text executor retains every device temporary. Its
 append-only allocation sum is an implementation cost, not a lower bound on
-the device storage needed by the registered learner. Before implementing
-reuse, distinguish the complete historical evidence from physical arrays
+the device storage needed by the registered learner. For reuse,
+distinguish the complete historical evidence from physical arrays
 that a future owned phase can still read.
 The execution premise remains the existing serialized private owner with
 hidden raw tensor handles, not arbitrary external Python/device mutation.
@@ -182,10 +182,105 @@ and15,625 actions against a separate identity/live-set oracle, plus two
 metadata-failure boundaries. No CUDA context is initialized. Aggregate
 evidence is FP_ARRAY_GENERATIONS_CPU.json.
 
-The trace makes a reusable lowering worth implementing: cumulative temporary
-allocation is much larger than this sufficient continuation set. The next
-work is one owned reusable implementation with complete seal/pin/generation
-and resource checks, followed by actual device evidence after A2 terminates.
+The trace motivated the single owned implementation below: cumulative
+temporary allocation is much larger than this sufficient continuation set.
 Do not extend this into more passive storage or relation examples. No change
 to Foundation, the frozen experiment semantics, G/Gamma/U, numerical
 tolerances or current A2 registration follows from these results.
+
+## Implemented owned lowering and its exact scope
+
+`TokenCudaPrefixContract(reuse_regions=True)` now selects
+`token_reuse.TokenReuseArena` and a distinct registered work model. The default
+continues to append. The optional lowering requires a power-of-two backing
+extent and excludes installation and likelihood representations through the
+existing token contract. There is still one actual backing allocation, fully
+charged to both roles with all existing allocator/device lifetime checks.
+No allocator counter or cache is reset.
+
+At the next Runtime phase entry, the owner prepays collection and new-view
+metadata work, allocates its ordinary evidence frame, and computes the roots
+above. The collector frees only generations outside that root closure whose
+successful producing phase has been sealed by the owner. Runtime supplies
+that seal **after actual complete frame retention succeeds**, not when the
+workspace closes or the executor returns CHECKED. Failed/unsealed attempts
+remain pinned, including their headers and initialized or uninitialized
+allocations. This conservatively also pins successfully captured failure
+records. All new outputs survive until the next eligible phase entry.
+
+Every admitted output receives an exact-object generation binding. Supported
+reshapes derive that same live generation after checking backing, dtype and
+extent containment. Numeric inputs, writes and fresh raw readbacks require
+both generation and the original geometry/initialization conditions. Retire
+invalidates the generation before returning its block to the pool. Dead weak
+views may disappear; a retained stale view can never be issued or rebound to
+a new generation. Acceptance requires a sealed, previously unaccepted phase,
+so an old phase cannot resurrect a collected physical resident.
+
+The full historical phase records, all region metadata, generation names,
+allocation totals, headers and retirement records remain available. Only
+sealed physical lookup entries unreachable from the three owner maps are
+removed; source/target records, native states and retained physical words are
+unchanged. Fresh reads of every live predecessor and every new output still
+execute. The snapshot value-boundary correction above is part of this proof.
+
+The pool splits a power-of-two free block and coalesces free buddies on
+release. For array byte size n, define the old padded request and the new
+reserved block by
+
+    a(n) = max(8, 8 ceil(n/8)),
+    b(n) = 2^ceil(log2(max(8,n))).
+
+Then `a(n) <= b(n) < 2 a(n)`. If L is the current set of retained allocation
+generations and H its retained phase headers, the exact occupied-block law is
+
+    occupied = 8 |H| + sum_{i in L} b(n_i).
+
+Thus buddy rounding costs less than twice the corresponding eight-byte-padded
+occupied sum when any block/header is live; both sums are zero otherwise.
+L includes current roots, every unsealed pin and every in-flight
+output; it does not count historical words as live device arrays. This is an
+**occupied-block law conditional on admission**, not a guarantee that an arena
+of twice the ideal live-byte peak can fit every allocation. Fragmentation
+can leave no sufficiently large free block. That condition returns UNRESOLVED;
+the actual whole backing extent remains charged irrespective of occupancy.
+The full-vocabulary passive trace above is not a measured buddy layout.
+
+The induction is now operational: the retained roots can supply every legal
+next read; generation checks exclude recycled aliases; new outputs are
+disjoint until their complete checks/retention; the only next publication is
+the existing owned transition. No new semantic architecture action is added.
+Whole-host metadata/word history, work, elapsed time and fit remain separate
+constraints. Collection failure cannot publish a learner; a partial metadata
+failure closes the arena, and MemoryError uses Runtime's existing terminal
+host-failure boundary.
+
+`scripts/audit_owned_token_reuse.py --write` substitutes only device binding
+and counters with one actual CPU tensor backing buffer. It runs the actual
+Torch array operations, workspace/view guards, complete token Runtime,
+native/physical checks, frame retention and scoring. It provides:
+
+- 36 paired append-only/reusing histories, including all binary four-event
+  words, deeper carries, multi-candidate profiles and plain/shared frames.
+  All602 phase encodings/24,380,806 body bytes and native/physical report
+  accumulators agree. Eight profile events are included. Historical snapshots
+  remain unchanged after actual memory reuse;62,386 generations are retired.
+- One finite capacity witness:16 training events/eight units and two frozen
+  reports complete45 phases using an8,192-byte backing buffer, with5,096 peak
+  occupied bytes. All phase/score values match the append-only run, which
+  consumes104,904 bytes. Cumulative buddy requests total120,304 bytes.
+- Actual address reuse overwrites an old view's words; nine stale/unissued
+  view or authority operations refuse. Unsealed allocations and headers stay.
+- All3,125 five-action allocation/free histories,15,625 independent complete
+  partition checks and1,266 allocation refusals with unchanged pool state.
+- Four post-target boundaries: unpaid collection, unsealed frame, partial
+  allocation and retirement MemoryError. Targets and old learners remain;
+  unsealed pins survive diagnostic collection and memory failure is terminal.
+
+Evidence is `evidence/minimal/FP_OWNED_TOKEN_REUSE_CPU.json`. The existing
+reporting, public-snapshot and544-phase shared-word regressions pass. No CUDA
+context is initialized by this audit. These are finite CPU implementation
+checks and one constructive toy capacity witness, not a device result,
+full-vocabulary fit, sustained corpus feasibility or `CERTIFIED_COMPLETE`.
+Keep A2 fixed; actual reuse qualification follows its terminal outcome. The
+destination remains affordable ordinary-text learning with strong baselines.

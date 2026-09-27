@@ -1,5 +1,17 @@
 # FP Handoff
 
+**Owned token storage reuse is implemented and CPU checked on this branch.**
+The [continuation lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+collects only sealed unreachable generations at a paid Runtime phase entry.
+Actual stale aliases refuse; all failed/unsealed extents and complete history
+stay. Thirty-six paired histories preserve602 phase encodings and scores.
+A finite16-event/eight-unit control fits8 KiB (5,096-byte peak), whereas its
+append-only counterpart consumes104,904 bytes. Full-vocabulary fit, device
+qualification and training throughput remain unproved. A2 stays untouched;
+integrate only after it terminates. The next justified device execution must
+qualify this new lowering and the snapshot repair, then follow the measured
+text-training constraint. No more passive storage or relation examples are due.
+
 **Public token snapshots could falsify a completed physical loss; CPU repair passes.**
 The [snapshot counterexample](experiments/next_token/FROZEN_TOKEN_REPORTING.md#7-public-snapshot-counterexample-and-value-boundary-repair)
 changes only the returned forecast relation dictionary. Both plain/shared
@@ -22,9 +34,9 @@ CPU trace passes42,985,243 input checks:834,873,456 cumulative padded bytes
 versus33,718,200 bytes peak roots-plus-new-phase coexistence. This is not an
 allocator-fit or whole-host bound. A counterfactual reuse test shows why the
 current address guard cannot authorize reuse; the passive generation guard
-passes its CPU controls. No CUDA reclamation or Runtime integration exists
-yet. Preserve the running A2 source and outcome, then implement this one
-owned lowering if the actual next training step needs it. Further passive
+passes its CPU controls. The optional Runtime lowering above is now CPU
+checked, with no device reuse result yet. Preserve the running A2 source
+and outcome. Further passive
 storage variants and the rational/relation branch remain closed.
 
 **A2 is fixed under the original full-unit limits.**

@@ -10311,3 +10311,35 @@ finite declared scope; corrected device execution is not yet tested. A2
 remains untouched at307251e and does no reporting. No reuse is implemented.
 Integrate only after A2 terminates and return to its measured text-training
 frontier; no new static or relation branch is opened.
+
+
+## 301. Implement token reuse through owner seals and continuation roots (2026-09-27)
+
+The passive liveness result now has an optional complete Runtime lowering.
+One fixed backing allocation is subdivided into buddy blocks. Successful
+complete frame retention grants a seal; collection at the next paid phase
+entry keeps current/staged/predicted transitive roots and all failed/unsealed
+allocations. Every view is generation-bound before numeric use or readback.
+Retirement invalidates old aliases, retains its full metadata and cannot
+resurrect historical phase authority. Native updates and all phase words stay.
+
+The exact occupied sum is8 bytes per retained header plus the live buddy
+blocks. Each block costs less than twice its eight-byte-padded request. This
+is not a fit bound: fragmentation can still cause UNRESOLVED, and the full
+backing allocation remains charged. Neither actual/lifetime CUDA counters
+nor the cache are reset. Whole-host/history costs and elapsed time remain.
+
+CPU execution uses the actual Torch array path, arena/view logic, Runtime
+and sealed frame/reporting code with only device binding/counters substituted.
+Thirty-six paired histories preserve602 complete phases/24,380,806 bytes and
+all scores, with62,386 actual generation retirements. A16-event/eight-unit
+control completes45 phases in8 KiB (5,096-byte live peak), matching an
+append-only104,904-byte execution. All3,125 small allocation/free histories,
+15,625 partition checks, stale-view writes/reads and four target-retaining
+failure boundaries pass. Existing token regressions still pass.
+
+Evidence is FP_OWNED_TOKEN_REUSE_CPU.json; the proof and limits are in
+TOKEN_CONTINUATION_STORAGE.md. No CUDA context, corpus or full-V fit is
+involved. A2 stays fixed at307251e. Actual device qualification follows its
+terminal outcome; stop passive storage variants and continue toward affordable
+ordinary next-token training. Foundation/ERC and the relation closure stand.

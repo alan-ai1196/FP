@@ -6,8 +6,13 @@ now pass CPU Runtime controls; corrected device execution is not yet tested.
 Preserve the running unscored A2, integrate this repair after termination and
 carry its invariant into the next justified device execution. This actual
 correctness hole justifies the repair, not a new catalog of reporting cases.
-Storage reuse remains unimplemented and must preserve immutable history as
-well as the proved continuation roots. Follow A2's outcome toward text training.
+The optional [owned storage reuse](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+now passes complete CPU Runtime comparisons and an actual8-KiB capacity
+witness. Device reuse/full-V fit remain unqualified. Its closed interface
+keeps immutable history, failed pins and all proved continuation roots.
+Follow A2's outcome toward text training; do not turn this into more passive
+storage controls. Repeated reference/history traversal and total host costs
+remain real obstacles even when device allocation can be reused.
 
 The immediate execution is the separately registered shared-retention A2,
 using the integrated writer and the original full-unit model/resource limits.

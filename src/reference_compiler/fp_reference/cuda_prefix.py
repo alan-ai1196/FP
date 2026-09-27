@@ -170,6 +170,7 @@ class JointCudaPrefixContract(CudaPrefixContract):
 class TokenCudaPrefixContract(CudaPrefixContract):
     initializer: object
     exact_cell_cap: int = 4096
+    reuse_regions: bool = False
     forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
@@ -177,10 +178,16 @@ class TokenCudaPrefixContract(CudaPrefixContract):
         closed(self.initializer, TokenInitializer)
         self.initializer.__post_init__()
         natural(self.exact_cell_cap, 'token exact rounding-cell allowance')
+        if type(self.reuse_regions) is not bool:
+            raise ContractError('exact token storage reuse registration required')
+        if self.reuse_regions and (type(self.storage) is not CudaStorageContract
+                or self.storage.arena_bytes & (self.storage.arena_bytes-1)):
+            raise ContractError('token reuse requires a power-of-two backing extent')
         if self.likelihood_encoding is not None or self.install is not None:
             raise ContractError('token events cannot borrow a likelihood encoding or an installation release')
         return ('token-half-core-event-gradient-sparse-balanced-carry-integer-grid-v2',
-                'prepaid-complete-token-array-graph-and-cache-relation-v1',
+                'prepaid-complete-token-array-graph-and-cache-relation-v1'+
+                    ('+sealed-token-generation-reuse-v1' if self.reuse_regions else ''),
                 'token-half-single-one-event-explicit-arena-arrays-v1')
 
     def __post_init__(self):
@@ -325,7 +332,11 @@ class _CudaPrefix:
             raise CudaStorageUnresolved('actual CUDA execution identity differs from registration')
         self.contract = contract
         self._device = _CudaDevice(contract.device, device)
-        self.arena = CudaArena(contract.storage)
+        if type(contract) is TokenCudaPrefixContract and contract.reuse_regions:
+            from .token_reuse import TokenReuseArena
+            self.arena = TokenReuseArena(contract.storage)
+        else:
+            self.arena = CudaArena(contract.storage)
         self.current, self.staged, self.predicted = {}, {}, {}
         self.phases, self._values = {}, {}
 
@@ -340,6 +351,10 @@ class _CudaPrefix:
     @property
     def token(self):
         return type(self.contract) is TokenCudaPrefixContract
+
+    @property
+    def reuses_token_storage(self):
+        return self.token and self.contract.reuse_regions
 
     @property
     def joint_implementation(self):
@@ -619,6 +634,8 @@ class _CudaPrefix:
     def accept(self, record):
         if record.status != 'CHECKED_CUDA_PREFIX_PHASE' or self.phases.get(record.object_id) != record:
             raise ContractError('only the actual retained phase can advance a CUDA prefix')
+        if type(self.contract) is TokenCudaPrefixContract and self.contract.reuse_regions:
+            self.arena.accept(record)
         if record.phase.endswith(':predict'):
             self.predicted[record.candidate_id] = record.object_id
         elif record.phase != 'report:readout':

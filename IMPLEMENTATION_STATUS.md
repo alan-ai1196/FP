@@ -1,5 +1,15 @@
 # FP Implementation Status
 
+The optional [owned token reuse lowering](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+now connects successful owner seals, complete continuation roots, pinned
+failures and exact-object generations to a buddy arena. Runtime prepays it;
+all existing actual device/counter/readback checks stay. CPU tensor execution
+preserves602 complete phase records across36 paired histories. A45-phase,
+eight-unit synthetic control fits8 KiB and matches all append-only values.
+Allocation partition, stale alias, post-target failure and existing token
+regressions pass. This is not yet actual-device qualification or full-V fit;
+the currently running A2 remains on its original append-only source307251e.
+
 The token phase snapshot boundary is corrected after an actual CPU Runtime
 counterexample: a public mutable normalization dictionary changed an owned
 `COMPLETE_REPORT` to physical loss [0,0] while its true probability was below

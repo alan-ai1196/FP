@@ -96,7 +96,12 @@ class _Arrays:
         self._shape(shape)
         if math.prod(shape) != math.prod(value.shape):
             raise ContractError('token reshape changed its initialized extent')
-        return value.reshape(shape)
+        result = value.reshape(shape)
+        if self.cuda:
+            from .token_reuse import TokenReuseArena
+            if type(self.workspace.arena) is TokenReuseArena:
+                self.workspace.arena.derive(value, result)
+        return result
 
     def copy(self, value):
         self._input(value)
@@ -305,7 +310,8 @@ class CudaArrays(_Arrays):
     """Actual fixed-arena executor. There is no unowned or CPU fallback path."""
     def __init__(self, workspace, readout_buffer, *, element_cap, cell_cap):
         import torch
-        if type(workspace) is not CudaWorkspace or type(readout_buffer) is not bytearray:
+        from .token_reuse import TokenReuseWorkspace
+        if type(workspace) not in (CudaWorkspace, TokenReuseWorkspace) or type(readout_buffer) is not bytearray:
             raise ContractError('actual owned arena phase and admitted readout bytes required')
         workspace._open()
         natural(element_cap, 'token array element cap', positive=True)

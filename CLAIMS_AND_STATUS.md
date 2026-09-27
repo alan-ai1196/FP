@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+The [sealed token reuse rule](theory/proofs/TOKEN_CONTINUATION_STORAGE.md#implemented-owned-lowering-and-its-exact-scope)
+is **PROVED CONDITIONALLY; IMPLEMENTED; CPU RUNTIME CONTROL PASS** for the
+closed token interface. Roots plus unsealed attempts plus current outputs
+suffice for legal physical reads; old generation handles refuse. Complete
+phase/history values remain. Buddy occupancy is the exact sum of its live
+blocks/headers, with less than2x eight-byte padding, **not an allocator-fit
+guarantee**. Thirty-six paired histories preserve602 phase records; a separate
+eight-unit control fits8 KiB versus104,904 append-only bytes. No CUDA reuse,
+full-V capacity, whole-host/time or model-quality result follows. No new
+`CERTIFIED_COMPLETE` class or Foundation action is introduced.
+
 The assertion that exposed token phase metadata were passive immutable
 snapshots is **FALSIFIED IN COMPLETE CPU RUNTIME LOGIC**. Changing only a
 returned forecast relation yields `COMPLETE_REPORT` with physical loss [0,0]
