@@ -6,9 +6,12 @@ encoded page copies and root coexist under paid leases until atomic relocation;
 the complete frame remains decodable. Seventeen CPU frames and eight storage
 failure boundaries pass. The native retention regression passes, and the late
 full-unit record preflight fits64-MiB frames and2^22 phase cells. Two new
-actual-owner workers are fixed before outcomes, including the complete512-event
-full-vocabulary unit/first commit. No new device success or training release
-is inferred from the CPU result; all older device jobs remain terminal.
+actual-owner workers were fixed before outcomes. A1 at e3faaf5 now passes the
+actual profile/refusal worker (44 phases); its complete512-event full-vocabulary
+unit/first commit remains RUNNING. The16-event prefix passes the old fixed-frame
+barrier, without establishing the full unit or a training release. Inspect the
+existing journal/child; all older device jobs remain terminal. A byte-identical
+CPU traversal improvement is staged as local commit e157923; see HANDOFF.md.
 
 The [lossless shared reference lowering](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 now runs inside the actual native token Runtime with an explicit storage

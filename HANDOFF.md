@@ -6,12 +6,28 @@ preserve every header, record and padding byte before one paid root relocation.
 Seventeen complete frames/1,114,248 bytes and eight failure boundaries pass
 the exact CPU control; the native retention regression still passes. The CPU
 full-unit record preflight fits the existing64-MiB frame/2^22-cell caps.
-Run only the new shared-retention attempt: one actual profile/refusal worker,
-then the entire512-event full-vocabulary/context512 unit and first commit.
+The new shared-retention A1 attempt is already RUNNING at e3faaf5. Its actual
+profile/refusal worker passes44 checked phases and rejects the changed
+post-target byte producer. The full512-event worker is still active; its
+confirmed16-event prefix crosses the old fixed-frame15-event obstruction.
+Inspect evidence/minimal/FP_SHARED_CUDA_RETENTION_A1.json and its existing
+active_progress_path/process before waiting; do not launch another copy.
 Its2-GiB reference-payload cap and numerical tolerances stay fixed; full-unit
-host/arena limits are16 GiB/1 GiB. No actual shared-frame GPU result yet.
+host/arena limits are16 GiB/1 GiB. No full-unit result is established yet.
 Old device jobs stay terminal. After this attempt, follow its actual resource
 or numerical outcome toward language learning; no more storage-control variants.
+
+A CPU-only profile exposed1.39 billion Python calls for native initialization
+plus one full-vocabulary event, mostly recursive canonical serialization.
+The byte-identical iterative writer and its proof/CPU controls are committed
+locally as e157923 on research/streamed-canonical-encoding, in the temporary
+worktree F:\FP-encoder-work. Its final diagnostic uses165,146,528 calls;
+ordinary/profile, source/collision and native/frame retention controls pass.
+This is a prepared change in this same Git repository, not the executing A1
+source or a new GPU result. After A1 is terminal, preserve its journal, apply
+that commit to main, reconcile these status paragraphs and remove the clean
+temporary worktree. No new model score or device attempt is authorized by the
+CPU timing alone; use the actual terminal obstruction to choose the next step.
 
 **Native token retention now has an owned lossless shared representation.**
 The [byte-preservation proof and exact payload law](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)

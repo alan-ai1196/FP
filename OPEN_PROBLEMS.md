@@ -3,11 +3,17 @@
 The [complete CUDA frame retention extension](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md#6-whole-cuda-frames-and-one-relocation-point)
 now passes exact whole-byte/padding, coexistence and failure controls. Its
 fixed new actual-owner attempt targets one profile/refusal path and the whole
-512-event full-vocabulary/context512 unit with its first commit. Execute it
-once, retain its real terminal result, then attack the actual remaining
+512-event full-vocabulary/context512 unit with its first commit. The original
+A1 is already running at e3faaf5, with the small actual worker passed. Inspect
+that existing job, retain its real terminal result, then attack the remaining
 obstruction. The original64-MiB frame and2-GiB payload limits are retained;
 an1-GiB arena/16-GiB host envelope supports the larger scope. Do not replay
 old jobs, relax a tolerance after seeing outcomes or add storage variants.
+
+The separate native CPU profile identifies canonical traversal as a concrete
+cost. The tested byte-identical improvement is staged in local commit e157923
+and must not alter the executing A1 source. Apply it after that job terminates;
+see HANDOFF.md for the temporary worktree. No GPU speedup is yet established.
 
 The [native lossless retention control](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 is now implemented in the actual Runtime and passes its complete-record,
