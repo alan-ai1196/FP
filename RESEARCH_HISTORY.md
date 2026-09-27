@@ -10678,3 +10678,44 @@ ordinary-token model-invariant, retention and fresh-read costs must be
 addressed on evidence. These short comparisons do not isolate their full-unit
 contributions. No Foundation/ERC change, relation extension or language-quality
 claim follows; adequately trained strong baselines remain necessary.
+
+
+## 314. Reuse owned static token facts while preserving exact guard decisions (2026-09-27)
+
+The remaining full-V profile includes repeated positive-base scans and exact
+ordered sums over the same immutable declared tuple. A final-value-only cache
+would be unsound for the existing solver: 1/3 + 2/3 = 1 has one-bit final
+integers but needs allowance 5 for its original intermediate guard. The exact
+threshold is the maximum of every operand, preflight and result guard. A
+successful original fold produces both its exact result and this threshold;
+same-tuple reuse above it preserves the decision class without raising a cap.
+
+The default-off token_invariant_bytes option owns one complete static fact,
+including source, sum, threshold and actual independently checked bytes in
+both roles. Strong identity prevents substitution by an equal/changed tuple;
+all other model fields are revalidated. No target, learned endpoint or live
+device value is cached. Scope is isolated per owner. Source review rejected
+ContextVar.reset cleanup because it can allocate; the actual CPython 3.12.9
+Context.run exit restores the parent without constructing a HAMT path.
+Allocation failures at entry, after binding and after target receipt preserve
+the terminal boundary and clear the disposable scope.
+
+The exact audit checks 2,801 tuples and 27,162 guard decisions. Nineteen paired
+complete CPU Runtime histories preserve all 318 phase bodies/12,853,318 bytes,
+117,355 checked primitive words, learners and reports. Hot positive checks
+and guarded base additions fall from 10,192/676 to 0/0 after paid admission.
+Changed wrappers, snapshots, nested distinct/disabled owners, tight/malformed
+guards and four admission failures pass. Default prefix-cost/token-owner and
+current host-failure sections pass; the legacy aggregate host audit stops in
+an incompatible historical contract fixture, recorded without claiming a pass.
+
+OWNED_TOKEN_BASE_FACTS.md and FP_TOKEN_BASE_FACTS_CPU.json retain the theorem,
+counterexample and scope. The full-V static fact is 1,407,321 bytes with sum 1
+and threshold 33. The first device comparison registers the original first
+16 targets in two fresh 240-second/16-GiB jobs, all original model/numerical
+limits and images intact, with a 4-MiB fact allowance only in the second arm.
+Time initialization separately; no inner arithmetic profiler is admitted.
+Require actual changed-leaf refusal after timing, commit first and never
+replay FP_TOKEN_BASE_FACTS_CUDA_A1.json. Close this static qualification at its
+outcome and reassess the remaining ordinary-token cost, without reopening the
+rational/relation branch or changing Foundation/ERC.

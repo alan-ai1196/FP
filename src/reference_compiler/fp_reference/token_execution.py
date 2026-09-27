@@ -206,6 +206,10 @@ def mul(x, y, bits):
 
 
 def total(values, bits):
+    from .token_base_facts import known_total
+    known = known_total(values, bits)
+    if known is not None:
+        return known
     result = F(0)
     for value in values:
         result = add(result, value, bits)

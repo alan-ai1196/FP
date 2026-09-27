@@ -126,8 +126,10 @@ class Spec:
     def __post_init__(self):
         if type(self.base) is not tuple or len(self.base) < 2:
             raise ValueError('complete fixed readout bases required')
-        for b in self.base:
-            exact(b, positive=True)
+        from .token_base_facts import positive_base_known
+        if not positive_base_known(self.base):
+            for b in self.base:
+                exact(b, positive=True)
         natural(self.features, positive=True)
         natural(self.grid_bits)
         exact(self.learning_rate)

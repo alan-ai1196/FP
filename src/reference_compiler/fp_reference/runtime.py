@@ -611,7 +611,8 @@ class ReferenceCompilerRuntime:
                     {'reference_payload_bytes':phase_codec.BLOCK,'physical_objects':1},self._chi),))
                 self._buffers[staging_id] = bytearray(phase_codec.BLOCK)
             self._cuda = _CudaPrefix(cuda)
-        initial = self._construct(initial_program, 'deployment')
+        from .token_base_facts import run_for
+        initial = run_for(self, self._construct, initial_program, 'deployment')
         if initial.status != 'BUILT_REFERENCE':
             raise ContractError(f'initial registered reference realization failed: {initial.status}: {initial.reason}')
         self._deployed_id = initial.candidate_id

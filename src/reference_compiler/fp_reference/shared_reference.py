@@ -26,6 +26,7 @@ class SharedReferenceContract:
     comparison_cap: int
     encoding: str = archive.ENCODING_ID
     canonical_image_bytes: int = 0
+    token_invariant_bytes: int = 0
 
     def __post_init__(self):
         if type(self) is not SharedReferenceContract or set(vars(self)) != {f.name for f in fields(self)}:
@@ -33,7 +34,7 @@ class SharedReferenceContract:
         for field in fields(self):
             if field.name != 'encoding':
                 natural(getattr(self, field.name), 'shared reference '+field.name,
-                        positive=field.name != 'canonical_image_bytes')
+                        positive=field.name not in ('canonical_image_bytes', 'token_invariant_bytes'))
         if (self.encoding != archive.ENCODING_ID or self.literal_workspace < archive.HEADER.size
                 or archive.U64.size*self.reference_cap > archive.phase_deflate.EXPANDED_CAP):
             raise ContractError('registered archive format and bounded reference expansion required')
@@ -51,6 +52,7 @@ class SharedReferenceSnapshot:
     pages: tuple[str, ...]
     workspaces: tuple[str, ...]
     canonical_images: tuple = ()
+    token_base_facts: tuple = ()
 
 
 @dataclass(frozen=True)
@@ -135,10 +137,14 @@ class _SharedReference:
         from .canonical_images import _CanonicalImages
         self.images = (_CanonicalImages(runtime, self.deployment_owner, contract.canonical_image_bytes)
                        if contract.canonical_image_bytes else None)
+        from .token_base_facts import _TokenBaseFacts
+        self.base_facts = (_TokenBaseFacts(runtime, self.deployment_owner, contract.token_invariant_bytes)
+                           if contract.token_invariant_bytes else None)
 
     def snapshot(self):
         return SharedReferenceSnapshot(self.contract, tuple(self.pages), self.workspaces,
-            () if self.images is None else self.images.snapshot())
+            () if self.images is None else self.images.snapshot(),
+            () if self.base_facts is None else self.base_facts.snapshot())
 
     def _charge(self, runtime, role, label):
         cfg = self.contract

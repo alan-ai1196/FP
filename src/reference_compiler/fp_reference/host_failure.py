@@ -38,7 +38,8 @@ def _guard(method, *, diagnostic):
                 # throughout the body; no allocating post-check is added after
                 # the CPU transaction's sole publication point.
                 self._host.observe()
-            result = method(self, *args, **kwargs)
+            from .token_base_facts import run_for
+            result = run_for(self, method, self, *args, **kwargs)
             if method.__name__ == 'observe' and self._policy_contract is not None and result.status == 'OBSERVED_REFERENCE':
                 # A separate owned post-commit phase, outside observe's failed
                 # target handler. No policy transition is an exogenous event.

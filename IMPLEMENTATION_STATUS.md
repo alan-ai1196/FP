@@ -2,6 +2,19 @@
 
 ## Current token execution boundary (2026-09-27)
 
+The optional [owned token base fact](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
+is implemented as `SharedReferenceContract.token_invariant_bytes`, default 0.
+It retains the exact source tuple, positive-base proof, exact sum and original
+guard threshold in a paid artifact held by both roles. Reuse requires source
+identity and a sufficient guard; tighter/malformed requests take the original
+path. All other model fields and all physical checks remain. An isolated
+owner scope restores the parent even on the audited memory-failure paths.
+Exact controls pass 27,162 decisions; 19 paired complete CPU Runtime histories
+preserve 318 phase bodies/12,853,318 bytes and 117,355 checked primitive words.
+Admission, wrapper/snapshot mutation, nested owners and failure controls pass.
+The fixed first 16-target CUDA pair is registered in the proof and launcher;
+it has no device, full-unit or timing result before that original launch.
+
 The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 is implemented/default off as `composed_native`. A private immutable binding
 image and complete binary64 carry forest are part of paid Runtime state.

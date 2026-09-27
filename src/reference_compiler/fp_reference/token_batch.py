@@ -445,7 +445,9 @@ class Kernel:
                              np.asarray(products, dtype=np.int64).reshape(-1, 3)) for _, (sums, products) in sorted(levels.items()))
         cache = {value: Interval.exact(value) for value in set(d.output.base)}
         self.base = ArrayInterval(np.asarray([cache[v].lower for v in d.output.base]), np.asarray([cache[v].upper for v in d.output.base]))
-        self.base_total = ArrayInterval.rational(sum(d.output.base, F(0)))
+        from .token_base_facts import known_total
+        total = known_total(d.output.base, None)
+        self.base_total = ArrayInterval.rational(sum(d.output.base, F(0)) if total is None else total)
 
     def bound(self, origin, windows, targets):
         if type(targets) is not tuple or len(targets) != self.definition.output.update_unit:

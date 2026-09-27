@@ -1,0 +1,50 @@
+{
+  "status": "PASS_OWNED_TOKEN_BASE_FACTS_CPU",
+  "exact": {
+    "finite_tuples": 2801,
+    "original_guard_decisions": 27162,
+    "signed_zero_and_positive_inputs": true,
+    "all_thresholds_exact": true,
+    "final_sum_only_counterexample": {
+      "values": [
+        "1/3",
+        "2/3"
+      ],
+      "sum": "1",
+      "final_integer_width": 1,
+      "guard_threshold": 5,
+      "refused_allowance": 4
+    }
+  },
+  "owned": {
+    "paired_histories": 19,
+    "identical_complete_phase_bodies": 318,
+    "identical_complete_phase_body_bytes": 12853318,
+    "identical_checked_primitive_words": 117355,
+    "identical_complete_learners_and_reports": true,
+    "baseline_hot_counts": {
+      "positive_checks": 10192,
+      "guarded_base_additions": 676
+    },
+    "owned_hot_counts": {
+      "positive_checks": 0,
+      "guarded_base_additions": 0
+    }
+  },
+  "binding": {
+    "same_identity_only": true,
+    "changed_invalid_base_refuses": true,
+    "malformed_and_tight_guards_preserved": true,
+    "distinct_and_disabled_owner_scopes": true,
+    "isolated_context_failure_restoration": true,
+    "snapshot_replacement_has_no_authority": true,
+    "actual_post_target_memory_failure_retains_target_and_clears_scope": true
+  },
+  "admission_failures": [
+    "capacity",
+    "unpaid",
+    "writer",
+    "copy-memory"
+  ],
+  "scope": "Exact guard-decision and complete Runtime controls for owned token base facts.\n\nNo corpus, CUDA execution, wall-time claim or class certificate. The only\nreused input is an actually owned immutable tuple of declared base Fractions."
+}

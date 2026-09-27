@@ -2,6 +2,21 @@
 
 ## Current execution state (2026-09-27)
 
+Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
+reuse the declared immutable base's positivity and exact sum while preserving
+the original ordered arithmetic guards. The final sum alone is insufficient:
+1/3 + 2/3 = 1 still refuses allowance 4 because an intermediate guard needs 5.
+An exact guard-profile theorem, 27,162 small guard decisions and 19 paired
+Runtime histories pass; all 318 complete phase bodies agree. Facts are paid,
+bound by strong source identity and included in complete state. No observed
+target, parameter or physical read is cached. The feature is default off.
+Its fixed first CUDA comparison is registered: two fresh 16-target jobs,
+unchanged full-V model/numerical limits and images, with a 4-MiB fact allowance
+only in the second worker. Commit before launch; never replay the exclusive
+`FP_TOKEN_BASE_FACTS_CUDA_A1.json` journal. This is the last current static
+invariant qualification, not a return to the closed rational/relation branch.
+Ordinary-token affordability remains the decision for what comes next.
+
 An optional [owned native gradient composition](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 now removes repeated event differentiation within a token unit. Native work
 falls from B(3B+1)/2 event rows to2B, including the unchanged independent batch

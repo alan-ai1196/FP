@@ -1,5 +1,18 @@
 # FP Open Problems
 
+Repeated token-base validation/summation now has an
+[owned guard-preserving implementation](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
+and exact/complete CPU controls. The final value alone was insufficient;
+the complete original guard profile supplies the missing decision threshold.
+Its fixed first actual comparison is registered under the unchanged full-V
+limits, adding only a paid 4-MiB fact allowance to the second 16-target worker.
+Close this qualification at its original outcome, without a static-invariant
+sweep or long replay. The scientific question remains whether the complete
+ordinary-token bridge can support affordable learning. A constant-factor
+validation saving cannot by itself remove repeated historical retention and
+fresh-live-state cost. Foundation/ERC and the rational/relation branch stay
+closed; any next research step must target that remaining ordinary workload.
+
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete
 unit evaluates2B native event rows, including the unchanged batch commit,

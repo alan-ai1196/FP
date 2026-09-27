@@ -1,5 +1,18 @@
 # FP Claims and Status
 
+**Owned token base facts: CONDITIONAL GUARD-PRESERVATION THEOREM; CPU PASS.**
+The original ordered rational fold has an exact threshold: the maximum of
+all operand, preflight and result guards. Reusing only its final value is
+unsound for that decision class; 1/3 + 2/3 requires allowance 5 despite the
+one-bit final sum. The [proof and scope](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
+permit reuse only for the identical owned immutable base tuple and a sufficient
+allowance, with the original path on a miss. The paid complete fact changes
+no source semantics, physical arithmetic or live-device observation. Exact
+controls pass 27,162 decisions; 19 paired Runtime histories preserve 318 full
+phase bodies and their learners/reports. This is no class certificate or
+same-budget feasibility theorem. A single fixed CUDA comparison is registered;
+there is no measured device benefit before its original outcome.
+
 **Owned native gradient composition: CONDITIONAL THEOREM; CPU AND FINITE CUDA PASS.**
 At a fixed token-unit origin, outward addition of independently enclosed event
 gradients contains the same exact pending gradient. Private immutable binding,
