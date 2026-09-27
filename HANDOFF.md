@@ -115,17 +115,19 @@ targets. The full case checks17 phases/3,441,395 device words, retains all
 peak job commitment is3,997,507,584 bytes. All five workers retain exactly
 one CUDA backing allocation. A1 remains failed; no terminal job is replayed.
 
-**Next: affordable complete retention, then persistence/install and ordinary
-language learning.** A2's fixed64-MiB evidence frames alone prove that its
+**Historical fixed-frame obstruction; the shared-storage attempt is above.**
+A2's fixed64-MiB evidence frames alone prove that its
 2-GiB reference-payload registration cannot finish15 observations; a full
 512-event unit would retain64.125 GiB of frames before other payloads.
-This is an implementation bound, not a Foundation obstruction. Share
-immutable origins/records/evidence and prove future-access liveness before
-reclaiming arena temporaries. Every supported old lineage and original
-profile context must remain decodable. No full-unit owner run, complete
-training release, language score or token search/persistence/install is
-claimed. The component milestones below are historical, not instructions
-to repeat already completed integration or audits.
+This is an implementation bound for that earlier representation, not a
+Foundation obstruction or a lower bound for the implemented shared storage.
+The live attempt has crossed that15-event obstruction but has no full-unit
+result yet. After its terminal outcome, the fixed reporting audit and an
+affordable supplied-incumbent text comparison are next. Adaptive persistence/
+installation is required when a study replaces its graph, as scoped above;
+it is not an extra gate for an unchanged incumbent. Arena retirement still
+requires a future-access proof. The component milestones below are historical,
+not instructions to repeat already completed integration or audits.
 
 **The token event/carry executor passes its actual RTX 3090 arena audit.**
 The [executor and terminal results](experiments/next_token/ARENA_EVENT_EXECUTOR.md)

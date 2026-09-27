@@ -67,14 +67,15 @@ Foundation change. Continue toward language learning and strong baselines.
 The [token AMP owner integration](experiments/next_token/OWNED_TOKEN_AMP.md)
 passes all five actual-owner A2 workers at86cef1e, including changed-cache/
 source and post-target quota refusals plus the full-context partial unit.
-Stop owner-control variants; all device jobs are terminal. The immediate
-problem is complete retained storage: the current fixed-frame registration
-provably cannot finish15 observations within its2-GiB payload cap, while one
-full unit's frames alone would occupy64.125 GiB. Share immutable origins,
-records and evidence without losing old lineages or original contexts, and
-prove which physical temporaries no supported future can use before retiring
-them. Then complete token persistence/install and ordinary language learning
-with strong baselines. Do not reopen array or static relation branches.
+Stop owner-control variants; those five A2 workers are terminal. Their earlier
+fixed-frame registration cannot finish15 observations within its2-GiB payload
+cap, while one full unit's frames alone would occupy64.125 GiB. The shared
+retention implementation above changes that representation and its original
+A1 remains active. Preserve its actual outcome, then continue with reporting
+and affordable ordinary language learning. Physical retirement still requires
+a future-access proof; adaptive persistence/install is required when the
+study replaces a graph. Neither is established by the partial-unit A2 pass.
+Do not reopen array or static relation branches.
 
 The [token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 now passes independent CPU controls and the actual full 512-event RTX 3090
@@ -90,21 +91,21 @@ The [incremental AMP derivation](experiments/next_token/STREAMING_AMP_GRADIENTS.
 resolves repeated derivative-prefix evaluation while exposing a necessary
 cache invariant. A current ordinary gradient does not identify future
 floating behavior. The explicit array kernel now passes its device audit.
-Next bind its immutable retained frontiers, checked append induction and the
-complete numerical state/readout relation in ReferenceCompilerRuntime.
-The passive Torch allocator cannot satisfy the existing arena contract;
-integrate its operations through admitted extents, not a disabled ownership
-check. The CPU cache replay is a correctness control, not an online solver
-to run at every prefix. No new static cases or relation-task branch is needed.
+Its immutable retained frontiers, checked append induction and complete
+numerical state/readout relation are now bound in ReferenceCompilerRuntime.
+The owned executor uses admitted extents; the passive Torch allocator still
+supplies no arena authority. The CPU cache replay is a correctness control,
+not an online solver to run at every prefix. Affordable full-unit execution
+is the remaining boundary above; no new static or relation-task branch is due.
 
 The [complete compact token reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now passes the actual Runtime event/profile and independent literal controls.
-The next boundary is an owned independent AMP learner and its complete
-pre-target/observation/commit relation. Bind the existing state/readout
-predicates to actual code, operands and owners; do not borrow the old scoped
-release or replace AMP state with exact endpoints. Then ordinary text
-learning and fresh strong baselines are the objective. Repeating static
-readout variants or deepening relation tasks would not resolve this boundary.
+The independent AMP learner and complete pre-target/observation/commit
+relation are now integrated and have the finite owner controls above. Those
+controls do not yet establish affordable full-unit training or a text score.
+Continue toward ordinary text learning and fresh strong baselines under the
+actual ownership predicates. Repeating static readout variants or deepening
+relation tasks would not resolve the remaining execution boundary.
 
 Retained-origin serialization is still repeated across complete event traces.
 A funded shared representation must retain the same complete records and all

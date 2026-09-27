@@ -30,11 +30,11 @@ sweep, duplicated alternatives or an added repulsion regularizer would
 repeat that failed direction. Those historical values are not results on a
 new corpus or directly comparable with a new tokenization.
 
-Repository inspection finds no current ordinary-text experiment directory
-alongside the active relation/uncertainty studies. The legacy R4.2 package
-has vocabulary/readout utilities, but its existence does not establish a
-current native Compiler language-model path. Do not silently rehabilitate
-that historical framework to obtain a convenient training loop.
+At this entry's start, repository inspection found no current ordinary-text
+experiment directory alongside the active relation/uncertainty studies. The
+present directory now holds the native token path and its explicit evidence.
+The legacy R4.2 vocabulary/readout utilities supply no authority for this new
+path; do not silently rehabilitate that framework for a convenient loop.
 
 ## Question and claim boundary
 

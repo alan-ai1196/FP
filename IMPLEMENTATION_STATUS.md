@@ -77,12 +77,15 @@ peak job3,997,507,584 bytes. Every worker preserves one backing allocation.
 Both A1 (failed serialization) and A2 are terminal. No owner-control variants
 are due. Token search/persistence/install and language quality remain open.
 
-Long-run retention is the immediate barrier: at least
+The earlier unshared A2 representation has the following retention barrier:
 `1+2T+floor(T/512)` fixed64-MiB phase frames survive after T observations.
 With the required sealing copy and32-MiB readout workspace, A2's2-GiB
 reference-payload cap cannot admit15 observations. A full unit's frames
-alone total64.125 GiB. Lossless shared state/evidence and proved temporary
-liveness are due; the eight-target pass is not a training release.
+alone total64.125 GiB. The implemented shared lowering above changes this
+representation and its live A1 has crossed that15-event obstruction. The
+full owned unit and affordable longer training remain unestablished; the
+eight-target A2 pass is not a training release. Arena retirement is not
+implemented and still requires a proof of future-access preservation.
 
 The [explicit token array executor](experiments/next_token/ARENA_EVENT_EXECUTOR.md)
 implements forward/reverse events, complete v2 carry forests and integer
@@ -101,8 +104,9 @@ falsified even when exact and floating current sums agree. Complete cache
 replay, native coordinate comparisons, exact primitive controls and profile
 clocks pass. This new physical association differs from the old AMP schedule;
 its passive tensors and old-format diagnostic basis grant no Runtime/bridge
-authority. The array executor passes above; the next implementation is
-its Runtime binding and inductively checked immutable cache relation.
+authority. Its array executor and Runtime binding, including the inductively
+checked immutable cache relation, are now implemented above. Their explicit
+finite device scopes do not imply whole-corpus feasibility.
 
 The [complete compact token learner](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
 now uses actual Runtime construction, target-free forecasts, observation,
@@ -111,9 +115,10 @@ record decode the full native state; enclosures publish only proved exact
 grid cells. Literal controls pass 576 observations/336 commits and every
 pending coordinate; profile/source/cache/work/ambiguity controls pass. The
 five passive reference modules now have one production implementation with
-compatibility imports. Token floating/search/persistence/install registrations
-still refuse. Owned AMP and affordable retained-state storage are next, not
-another static reference case. No whole-corpus or language-quality claim.
+compatibility imports. Owned token AMP and shared retention are now implemented
+above; token search/persistence/install registrations still refuse. Affordable
+complete training and qualified reporting are next for the supplied-incumbent
+study. No whole-corpus or language-quality claim follows from this component.
 
 The [indexed token source representation](experiments/next_token/OWNED_INDEXED_SOURCES.md)
 is now integrated into actual ReferenceCompilerRuntime ordinary events,
@@ -122,7 +127,8 @@ delay is preserved. The full50,257-vocabulary/context512 case avoids all
 25,732,096-atom expansion and retains at most12,059 packed context bytes.
 Its source work is prepaid; mutation/role/ingress attacks refuse. Native
 learner controls and existing event/profile regressions pass. The compact
-reference learner is integrated above; its owned AMP bridge remains due.
+reference learner and scoped owned AMP path are integrated above. This source
+component does not independently extend their release or resource scope.
 
 The [compact event/prefix control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now represents target-free prediction, each complete pending state and the
