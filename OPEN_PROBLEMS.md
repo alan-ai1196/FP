@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The current resource model's scope is now resolved at 010969a on
+research/token-model-scope, following the two prepared implementation commits.
+Its frozen positive head has a finite-mixture loss floor; its updating-U
+counterexample and older-context invariance prevent broader interpretations.
+The proof and exact/CPU evidence are committed in the temporary worktree
+recorded by HANDOFF. Preserve and integrate all three commits after A1 is
+terminal. This closes the scope audit; actual text execution and competitive
+baselines are next, with no new relation or static capacity catalog.
+
 The read-only token reporting implementation and conditional proper-loss/mean
 bounds are prepared at a95375f on research/frozen-token-reporting, after the
 byte-identical writer commit e157923. Exact/CPU controls pass. Keep the live
