@@ -15,6 +15,13 @@ cost. The tested byte-identical improvement is staged in local commit e157923
 and must not alter the executing A1 source. Apply it after that job terminates;
 see HANDOFF.md for the temporary worktree. No GPU speedup is yet established.
 
+The [first text-study scope](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
+does not require an unused adaptive-installation gate for a fixed incumbent.
+After affordable owned training, implement paid read-only frozen-model
+reporting and proper normalized AMP loss, then compare strong baselines.
+Adaptive persistence/install and their explicit stochastic premises remain
+separate obligations when graph replacement is actually exercised.
+
 The [native lossless retention control](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 is now implemented in the actual Runtime and passes its complete-record,
 ordinary/profile and post-target failure checks. Stop native-control variants.

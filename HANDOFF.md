@@ -29,6 +29,14 @@ that commit to main, reconcile these status paragraphs and remove the clean
 temporary worktree. No new model score or device attempt is authorized by the
 CPU timing alone; use the actual terminal obstruction to choose the next step.
 
+The [first model-score boundary](experiments/next_token/RESEARCH_ENTRY.md#first-model-score-boundary)
+is now explicit: a preregistered fixed native incumbent can be tested without
+first implementing unused adaptive installation. It still needs affordable
+owned training, a tested paid read-only reporting path and properly normalized
+physical probabilities, with competitive fresh baselines. Persistence/install
+remain required when a study actually selects/replaces the deployed graph.
+The current resource attempt stays unscored; no held-out data are opened.
+
 **Native token retention now has an owned lossless shared representation.**
 The [byte-preservation proof and exact payload law](theory/proofs/LOSSLESS_SHARED_REFERENCE_RETENTION.md)
 retain complete packed records through immutable literal pages and explicit
