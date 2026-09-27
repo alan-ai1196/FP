@@ -1,6 +1,6 @@
 # Owned canonical images of immutable subtrees
 
-Status: **IMPLEMENTED; EXACT/CPU CONTROLS PASS; PERFORMANCE NOT YET MEASURED**.
+Status: **IMPLEMENTED; EXACT/CPU CONTROLS PASS; FIRST-EVENT CPU COST MEASURED**.
 This is a token Runtime serialization refinement under frozen Foundation/ERC.
 It changes no G, Gamma, U, physical arithmetic, source interface or numerical
 bridge. It is not an additional semantic architecture action or a completeness
@@ -131,7 +131,68 @@ Evidence is `FP_CANONICAL_IMAGES_CPU.json`. Default-path native retention,
 17 complete/nonzero-padding frame controls and the original typed/Unicode
 writer controls also pass. No Torch or CUDA context is imported by this audit.
 These are value-preservation and finite Runtime checks, not a physical
-qualification, measured speedup, complete update unit or language result.
-Performance must be measured before this is used to justify another long
-full-vocabulary run. The existing terminal GPU jobs stay terminal and retain
-their original source scopes. Ordinary-text affordability remains the goal.
+qualification, complete update unit or language result. The existing terminal
+GPU jobs stay terminal and retain their original source scopes. Ordinary-text
+affordability remains the goal.
+
+## Paired first-event CPU cost
+
+The single registered execution of `probe_canonical_image_cost.py` at
+`78201dcee79d77b49879ff32a3f67b82b1e2b6dc` completes both fresh 8-GiB,
+180-second Windows jobs. Initialization is unprofiled; prediction and
+observation use cProfile. Both complete the original first target with three
+retained phases. No Torch or CUDA backend is loaded. The strong uncached
+baseline disables lookup/admission at the owner, with the same model and
+numeric checks; no raw-read spy participates in this cost measurement.
+
+| Observed quantity | Uncached | Owned images |
+| --- | ---: | ---: |
+| Initialization, unprofiled seconds | 12.43050 | 9.53957 |
+| Prediction, profiled seconds | 16.04085 | 7.76904 |
+| Observation, profiled seconds | 15.78050 | 7.71421 |
+| Combined profiled seconds | 31.82135 | 15.48325 |
+| Recorded prediction/observation calls | 128,812,628 | 59,600,485 |
+| Peak whole-job commit bytes | 375,988,224 | 419,545,088 |
+| Retained image count / bytes | 0 / 0 | 140 / 63,904,156 |
+
+The observed combined instrumented time ratio is 2.05521. Instrumentation and
+CPU substitution prevent interpreting it as a GPU or unprofiled event speedup.
+One event does not measure late-prefix or full-training cost. Remaining
+cumulative profile entries include actual numeric execution, shared retention,
+bounded traversal, repeated OutputSpec/Definition validation and native
+prediction. Their nested times must not be added as disjoint costs. Minimal
+evidence is `FP_CANONICAL_IMAGE_COST_CPU.json`, which preserves both original
+process identities, resource peaks and bounded profile summaries.
+
+## Fixed short actual-device comparison
+
+Before launch, `scripts/run_canonical_images_cuda_a1.py` registers exactly two
+fresh sequential workers, uncached then owned-images, each with a 180-second
+wall limit and 16-GiB host limit. Both use the original full-V registration:
+50,257 labels, context 512, width 4, K=8, 603,092 master coordinates, update
+unit 512 and only the already registered first 1,024 training bytes. They
+observe only its first two targets. G, Gamma, U and the numerical recipe stay
+fixed. Both use the append-only arena to isolate the image lowering; this is
+not a full-V storage-reuse qualification.
+
+Unchanged numerical/storage limits are: 1-GiB tensor arena and allocator
+reservation, 2-GiB paid reference payload, 64-MiB complete phase frames,
+2^22 phase output cells, state atol 16, probability/division atol 10^-6 and
+4,096 exact-rounding cells. The physical device has the original 24-GiB
+whole-board bound. The image allowance is 0 versus 64 MiB. Initialization and
+each of the four ordinary predict/observe calls are timed without profiling.
+
+Acceptance requires exactly five CHECKED_CUDA_PREFIX_PHASE records, cursor 2,
+two pending observations, no optimizer commit, both original contexts/targets
+in native and physical leaves, the final native/AMP state predicate, paid
+residency, every full-frame root, positive and equal checked-word counts,
+and unchanged actual/lifetime allocation counters (1, 1073741824, 1).
+Enabled images must include the immutable base tuple and fit their cap.
+Every original fresh-read/numerical check runs through the ordinary Runtime.
+
+The launcher requires clean committed canonical source and the terminal
+successful full-unit, reuse and paired CPU journals. It creates
+`FP_CANONICAL_IMAGES_CUDA_A1.json` exclusively, records original process
+identities and stops at the first failure. An existing journal forbids replay.
+No extra long run, optimizer-unit success, model score, statistical speedup
+estimate or later-prefix feasibility follows from this finite comparison.

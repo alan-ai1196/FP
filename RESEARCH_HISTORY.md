@@ -10468,3 +10468,24 @@ prepared with fresh 8-GiB/180-second jobs and a strong uncached baseline.
 No timing, GPU, full-unit or model-quality benefit is assumed. Actual measured
 cost must decide whether this helps the ordinary-text goal; old GPU jobs remain
 terminal and are not evidence for the new optional lowering.
+
+
+## 307. Measure canonical-image CPU cost and fix a short physical comparison (2026-09-27)
+
+The original paired cost jobs at78201dc complete successfully, each under
+8 GiB/180 seconds and using only the original first target. Combined profiled
+prediction/observation time falls from31.82135 to15.48325 seconds, and recorded
+calls from128,812,628 to59,600,485. Peak job commitment rises from375,988,224 to
+419,545,088 bytes; the enabled owner retains140 images/63,904,156 bytes. This
+is cProfile with CPU device substitution, not an unprofiled physical speedup
+or later-prefix cost. The original journals retain both process identities.
+
+FP_CANONICAL_IMAGE_COST_CPU.json supplies minimal timing/resource evidence.
+OWNED_CANONICAL_IMAGES.md separates that observation from exact preservation
+and registers one short CUDA comparison: two fresh sequential180-second,
+16-GiB jobs, uncached then64-MiB images, observing only the original first two
+targets. The full-V model, unit512, native/AMP rules and original storage and
+numerical limits remain. Each must retain five checked phases, original
+records and allocation history, with no optimizer commit. Append-only physical
+storage in both isolates the encoding change. No long unit is replayed; the
+result cannot select a corpus budget or establish a general speedup.

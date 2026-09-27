@@ -6,8 +6,12 @@ preserves complete packed records and the original guard decision class.
 Strong bindings, buffer dependencies and work are owned; mutable wrappers do
 not bind. Five full-V phase records and all fresh reads agree in the finite
 CPU-substituted Runtime control. The
-[proof and exact scope](theory/proofs/OWNED_CANONICAL_IMAGES.md) supply no speedup,
-full-unit, device or language-quality claim. The feature is optional/default off.
+[proof and exact scope](theory/proofs/OWNED_CANONICAL_IMAGES.md) now include a
+separate measured first-event CPU profile: 31.82135 versus 15.48325 combined
+instrumented seconds, 128.8M versus 59.6M calls. This is a finite CPU cost
+observation, not an unprofiled GPU speedup, full-unit or language-quality claim.
+The short actual-device comparison is preregistered but not launched.
+The feature is optional/default off.
 
 **Current full-unit claim: PASS, finite actual-device execution.** At `307251e`,
 shared-retention A2 completes exactly one registered 512-token unit over the
