@@ -1,0 +1,190 @@
+{
+  "status": "FAILED",
+  "source_commit": "e3faaf5fdc7c617837fccfc27136561b82fa80d7",
+  "cases": [
+    "profile-and-retention-fault",
+    "full-unit512"
+  ],
+  "contracts": {
+    "profile-and-retention-fault": {
+      "host_cap": 4294967296,
+      "deadline_ms": 180000,
+      "arena_bytes": 33554432,
+      "phase_evidence_bytes": 1048576,
+      "state_atol": "1/4",
+      "probability_atol": "1/10000"
+    },
+    "full-unit512": {
+      "host_cap": 17179869184,
+      "deadline_ms": 14400000,
+      "arena_bytes": 1073741824,
+      "phase_evidence_bytes": 67108864,
+      "state_atol": "16",
+      "probability_atol": "1/1000000",
+      "reference_payload_cap": 2147483648,
+      "phase_output_cells": 4194304,
+      "observed_events": 512,
+      "update_unit": 512
+    }
+  },
+  "whole_board_VRAM_upper": 25769803776,
+  "results": [
+    {
+      "case": "profile-and-retention-fault",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 1979531264,
+        "peak_job_commit": 1980751872,
+        "user_100ns": 67031250,
+        "kernel_100ns": 10625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 7136,
+        "process_creation_100ns": 134349610166926953
+      },
+      "launch_wall_seconds": 8.182560600000215,
+      "result": {
+        "status": "PASS_ACTUAL_SHARED_TOKEN_RETENTION",
+        "case": "profile-and-retention-fault",
+        "before": {
+          "process_id": 7136,
+          "creation_100ns": 134349610166926953,
+          "process_commit": 35848192,
+          "lifetime_process_commit_peak": 37097472,
+          "job_commit_peak": 38318080,
+          "process_user_100ns": 4218750,
+          "process_kernel_100ns": 937500,
+          "job_user_100ns": 4218750,
+          "job_kernel_100ns": 937500,
+          "total_job_processes": 2
+        },
+        "after": {
+          "process_id": 7136,
+          "creation_100ns": 134349610166926953,
+          "process_commit": 1837842432,
+          "lifetime_process_commit_peak": 1979531264,
+          "job_commit_peak": 1980751872,
+          "process_user_100ns": 64062500,
+          "process_kernel_100ns": 10312500,
+          "job_user_100ns": 64062500,
+          "job_kernel_100ns": 10312500,
+          "total_job_processes": 2
+        },
+        "outcome": {
+          "ordinary_targets": 8,
+          "candidate_observations": 12,
+          "profile_events": 4,
+          "checked_cuda_phases": 44,
+          "checked_device_words": 18371,
+          "complete_frame_bytes_decoded": 46137344,
+          "archive_pages": 138,
+          "actual_page_bytes": 1762205,
+          "paid_reference_peak": 7168693,
+          "vocabulary": 2,
+          "context": 3,
+          "master_coordinates": 28,
+          "corpus": null,
+          "changed_page_rejected_after_actual_target": true,
+          "failed_full_frame_retained": true,
+          "no_native_or_amp_successor_published": true,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "consumed_bytes": 107848,
+            "phases": 47,
+            "regions": 5541,
+            "allocation_counter": [
+              1,
+              33554432,
+              1
+            ],
+            "actual_tensor_arena_bytes": 33554432,
+            "actual_allocator_reserved_bytes": 33554432,
+            "lifetime_tensor_peak_bytes": 33554432,
+            "lifetime_allocator_reserved_peak_bytes": 33554432
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        }
+      },
+      "last_progress": {
+        "stage": "complete",
+        "cursor": 8,
+        "observations": 9,
+        "cuda_phases": 47,
+        "archive_pages": 144,
+        "elapsed_seconds": 5.866540899998654,
+        "host": {
+          "process_id": 7136,
+          "creation_100ns": 134349610166926953,
+          "process_commit": 1847308288,
+          "lifetime_process_commit_peak": 1979531264,
+          "job_commit_peak": 1980751872,
+          "process_user_100ns": 63906250,
+          "process_kernel_100ns": 10312500,
+          "job_user_100ns": 63906250,
+          "job_kernel_100ns": 10312500,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "full-unit512",
+      "job": {
+        "exit_code": 1223,
+        "timed_out": true,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 7648833536,
+        "peak_job_commit": 7650095104,
+        "user_100ns": 142914375000,
+        "kernel_100ns": 848281250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 19308,
+        "process_creation_100ns": 134349610248776362
+      },
+      "launch_wall_seconds": 14400.287311199998,
+      "last_progress": {
+        "stage": "ordinary-prefix",
+        "cursor": 320,
+        "observations": 320,
+        "cuda_phases": 641,
+        "archive_pages": 2246,
+        "elapsed_seconds": 13741.5514762,
+        "host": {
+          "process_id": 19308,
+          "creation_100ns": 134349610248776362,
+          "process_commit": 7243165696,
+          "lifetime_process_commit_peak": 7418990592,
+          "job_commit_peak": 7420252160,
+          "process_user_100ns": 136410312500,
+          "process_kernel_100ns": 793437500,
+          "job_user_100ns": 136410312500,
+          "job_kernel_100ns": 793593750,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": false
+    }
+  ],
+  "scope": "actual lossless full-frame retention, post-target refusal, and complete full-vocabulary owned unit; no language score or installation"
+}
