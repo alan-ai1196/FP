@@ -1,8 +1,23 @@
 # FP Open Problems
 
+The [complete compact token reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
+now passes the actual Runtime event/profile and independent literal controls.
+The next boundary is an owned independent AMP learner and its complete
+pre-target/observation/commit relation. Bind the existing state/readout
+predicates to actual code, operands and owners; do not borrow the old scoped
+release or replace AMP state with exact endpoints. Then ordinary text
+learning and fresh strong baselines are the objective. Repeating static
+readout variants or deepening relation tasks would not resolve this boundary.
+
+Retained-origin serialization is still repeated across complete event traces.
+A funded shared representation must retain the same complete records and all
+legal accesses before claiming a training memory improvement. Deferred exact
+gradient evaluation removes numerical prefix recomputation from ordinary
+reference observation; it does not alone remove metadata/serialization costs.
+
 The [full indexed token source interface](experiments/next_token/OWNED_INDEXED_SOURCES.md)
-now runs inside actual Runtime events, profiles and queries. Integrate the
-complete compact token learner and physical event relation with that owner.
+now runs inside actual Runtime events, profiles and queries. The compact
+reference learner also uses that owner; the physical event relation remains.
 Per-record lag vectors still cost O(TL) and full-history checking costs O(T)
 per source read; a funded shared tape/record decoder must preserve all past
 targets, identities and original profile contexts before those costs can be
@@ -10,11 +25,11 @@ removed. The new source encoding supplies no separate installation authority.
 
 The [packed token event control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now provides target-free prediction, every complete prefix, native/AMP state
-comparison and full-unit-only commits. It is time to integrate these into
-the actual ReferenceCompilerRuntime, including indexed causal source records,
-resource ownership, retained failures and lineage/install transitions. The
-current prefix recomputation is a correctness control; efficient batching
-still needs a proof preserving every legal intermediate Compiler access.
+comparison and full-unit-only commits. The actual reference integration now
+owns every pending recipe and invokes the numerical unit solver at commit.
+Its physical counterpart must still preserve every intermediate event relation,
+resource owner, retained failure and lineage/install transition. Efficient
+AMP batching needs that event proof and cannot rely on endpoint equality.
 Neither another readout case nor an endpoint check resolves that boundary.
 
 The [positive-readout envelope](experiments/next_token/READOUT_ENVELOPE.md)

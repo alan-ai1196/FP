@@ -1,0 +1,28 @@
+{
+  "status": "PASS_OWNED_COMPLETE_TOKEN_REFERENCE",
+  "histories": {
+    "histories": 144,
+    "owned_observations": 576,
+    "exact_scalar_probabilities": 1152,
+    "complete_pending_gradient_coordinates": 16128,
+    "exact_grid_commits": 336,
+    "complete_literal_native_equality": true,
+    "owned_state_event_payloads_and_leases_match": true
+  },
+  "profiles": {
+    "newborn_profiles": 16,
+    "original_source_profile_events": 64,
+    "ordinary_candidate_continuations": 32
+  },
+  "boundary_attacks": {
+    "cache_source_clock_registration_and_decoder_refusals": 13,
+    "owned_query_coordinates": 2,
+    "distinct_native_core_construction": true,
+    "streamed_binary_payload_bytes": 1282
+  },
+  "retained_failures": {
+    "numerical_refusal_retains_complete_target_and_unit": true,
+    "commit_debit_precedes_solver": true,
+    "denied_commit_retains_complete_target_and_unit": true
+  }
+}

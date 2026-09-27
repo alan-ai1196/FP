@@ -9600,3 +9600,49 @@ release. Per-record O(L) storage and complete-history validation remain real
 costs; a shared indexed tape must preserve original contexts and all legal
 past-data access before removing them. Next integrate the complete token
 learner/bridge with the same Runtime owner, without a new semantic action.
+
+
+## 282. Own the complete compact token learner and defer gradient evaluation without deleting state (2026-09-27)
+
+The existing ReferenceCompilerRuntime now executes TokenProgram construction,
+exact target-free prediction, observation, proved grid commit and newborn
+profiles. Full graph budgets count the indexed source/edge expansion. Gamma
+registers cyclic integer master blocks and U fixes the existing projected-SGD
+update; different positive native cores remain constructible under matching
+registered shapes. No new semantic architecture action is introduced.
+
+The complete representation is a committed immutable master origin plus every
+pending original source/target record. Its decoder equals native learning at
+every event. Frozen-unit masters make numerical gradient evaluation deferrable
+until needed; pending gradients are encoded, never assumed zero. The existing
+binary64 solver publishes only unique exact grid cells. A categorical source
+range proof uses embedding maxima, positive propagation and complete readout
+column sums/maxima. Every label probability has an exact retained decoder.
+
+The five passive numerical/reference modules now have a single implementation
+in fp_reference; experiment imports are aliases. Immutable master bytes have
+an exact streaming packed extent and are paid through the existing ledger.
+NumPy arrays remain disposable solver workspace, not authoritative state.
+Runtime independently binds original source contexts when validating caches.
+
+All 144 small histories pass 576 observations, 1,152 exact label forecasts,
+16,128 pending gradient coordinates and 336 commits against the independent
+literal native learner. Sixteen newborn profiles preserve 64 reversed/repeated
+original contexts and 32 subsequent ordinary events. Thirteen interface/cache/
+registration attacks refuse, two actual moment coordinates retain their uses,
+and a distinct native core constructs. Forced numerical ambiguity and denied
+commit work retain the actual target and complete unit without publication.
+The initial work-refusal harness incorrectly capped the compiler role as well
+as deployment and stopped at manifest admission; fixing the harness to cap
+only deployment verifies the intended commit boundary. No production waiver.
+Existing ordinary-event and profile regression suites pass.
+
+Proof/scope: experiments/next_token/OWNED_TOKEN_REFERENCE.md. Audit:
+scripts/audit_owned_token_learner.py. Minimal evidence:
+evidence/minimal/FP_OWNED_TOKEN_LEARNER.json. No corpus, loss, Torch, GPU or old
+terminal resource job is used. This closes the small exact owned reference
+control, not token search/persistence/AMP/install or whole-corpus affordability.
+Repeated origin serialization and O(TL) source records remain costs. Next bind
+the independent AMP state and complete event relation to this same owner,
+make retained state affordable, then run ordinary text with fresh strong
+baselines. No additional static readout or relation-task branch is warranted.

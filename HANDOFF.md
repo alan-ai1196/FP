@@ -1,5 +1,18 @@
 # FP Handoff
 
+**The complete compact token reference learner now runs inside the actual
+Runtime.** The [owned reference integration](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
+retains every master and pending source/target record. Exact forecasts and
+uniquely proved grid commits pass 144 exhaustive histories: 576 observations,
+336 commits and 16,128 complete pending gradient coordinates. Sixteen newborn
+profiles preserve 64 reversed/repeated original contexts and 32 ordinary
+continuations. Numerical and work refusals retain the actual target and unit.
+Existing event/profile regressions pass. The small exact integration control
+is closed; next bind the independent AMP learner and complete event relation
+to this owner, and make retained origin/source storage affordable. There is
+no token search/persistence/install/AMP release or language score yet. Stay
+on ordinary next-token work; no new static readout/relation catalog is due.
+
 **The actual Runtime now owns the full indexed lag/token source family.** The
 [source refinement](experiments/next_token/OWNED_INDEXED_SOURCES.md) preserves
 every atom/type/delay through a compact retained lag vector. All384 native
@@ -9,8 +22,8 @@ four real training tokens with atom enumeration disabled:25,732,096 sources,
 at most12,059 packed bytes per source context. Decode work is admitted before
 history copying/allocation; insufficient work retains ingress and publishes
 nothing. This is actual source integration, not the compact learner/AMP
-backend. Next integrate that complete learner into this same Runtime and
-address shared retained-data representation; do not reopen readout variants.
+backend. The owned reference integration above now supplies that learner;
+shared retained-data representation and owned AMP remain due.
 
 **Packed token execution can now express the causal event path.** The
 [prefix integration control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)

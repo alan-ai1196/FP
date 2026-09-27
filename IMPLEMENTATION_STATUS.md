@@ -1,5 +1,16 @@
 # FP Implementation Status
 
+The [complete compact token learner](experiments/next_token/OWNED_TOKEN_REFERENCE.md)
+now uses actual Runtime construction, target-free forecasts, observation,
+commit and newborn profiles. Committed integer buffers and every pending
+record decode the full native state; enclosures publish only proved exact
+grid cells. Literal controls pass 576 observations/336 commits and every
+pending coordinate; profile/source/cache/work/ambiguity controls pass. The
+five passive reference modules now have one production implementation with
+compatibility imports. Token floating/search/persistence/install registrations
+still refuse. Owned AMP and affordable retained-state storage are next, not
+another static reference case. No whole-corpus or language-quality claim.
+
 The [indexed token source representation](experiments/next_token/OWNED_INDEXED_SOURCES.md)
 is now integrated into actual ReferenceCompilerRuntime ordinary events,
 newborn profiles and registered moment queries. Every original atom/type/
@@ -7,7 +18,7 @@ delay is preserved. The full50,257-vocabulary/context512 case avoids all
 25,732,096-atom expansion and retains at most12,059 packed context bytes.
 Its source work is prepaid; mutation/role/ingress attacks refuse. Native
 learner controls and existing event/profile regressions pass. The compact
-token learner and its owned AMP bridge are still the next integration task.
+reference learner is integrated above; its owned AMP bridge remains due.
 
 The [compact event/prefix control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now represents target-free prediction, each complete pending state and the

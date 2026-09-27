@@ -44,6 +44,8 @@ def packed_size(value):
         return _array_size((_string_size('rational_hex'), _hex_size(value.numerator), _hex_size(value.denominator)))
     if type(value) is int:
         return _array_size((_string_size('integer_hex'), _hex_size(value)))
+    if type(value) is bytes:
+        return _array_size((_string_size('bytes_hex'), 2*len(value)+2))
     if value is None or type(value) in (str, bool):
         atom = 4 if value is None or value is True else 5 if value is False else _string_size(value)
         return _array_size((_string_size(type(value).__name__), atom))
@@ -82,6 +84,9 @@ never receives the value or the iterator used to traverse it.
             return
         if type(item) is str:
             debit(len(item))
+            return
+        if type(item) is bytes:
+            debit(2*len(item))
             return
         if type(item) in (int,F):
             numbers = (item,) if type(item) is int else (item.numerator,item.denominator)
@@ -128,6 +133,13 @@ def _array(items, *, spaced=False):
     yield ']'
 
 
+def _bytes(value):
+    yield '"'
+    for start in range(0, len(value), 256):
+        yield value[start:start+256].hex()
+    yield '"'
+
+
 def fragments(value, *, packed=False, spaced=False):
     """Yield typed JSON before UTF-8/surrogatepass encoding or hashing.
 
@@ -161,8 +173,8 @@ def fragments(value, *, packed=False, spaced=False):
         from .core import require_finite
         require_finite(value, 'state coordinate')
         yield from sequence((_string('float'), _string(value.hex())))
-    elif type(value) is bytes and not packed:
-        yield from sequence((_string('bytes'), _string(value.hex())))
+    elif type(value) is bytes:
+        yield from sequence((_string('bytes_hex' if packed else 'bytes'), _bytes(value)))
     elif type(value) in (tuple, list):
         yield from sequence((_string(type(value).__name__), sequence(nested(x) for x in value)))
     elif isinstance(value, Mapping):
