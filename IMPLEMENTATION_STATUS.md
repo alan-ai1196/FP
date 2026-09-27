@@ -1,5 +1,14 @@
 # FP Implementation Status
 
+The [indexed token source representation](experiments/next_token/OWNED_INDEXED_SOURCES.md)
+is now integrated into actual ReferenceCompilerRuntime ordinary events,
+newborn profiles and registered moment queries. Every original atom/type/
+delay is preserved. The full50,257-vocabulary/context512 case avoids all
+25,732,096-atom expansion and retains at most12,059 packed context bytes.
+Its source work is prepaid; mutation/role/ingress attacks refuse. Native
+learner controls and existing event/profile regressions pass. The compact
+token learner and its owned AMP bridge are still the next integration task.
+
 The [compact event/prefix control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now represents target-free prediction, each complete pending state and the
 registered full-unit commit. Its exact class is one paired committed state

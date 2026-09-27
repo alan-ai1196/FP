@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from fractions import Fraction as F
 
 from .core import ContractError, natural, stable_hash
+from .token_sources import TokenAtomFamily, TokenSourceTypes
 
 
 def name(value: str, field: str) -> str:
@@ -55,7 +56,7 @@ class DelayedStateSpec:
 
 @dataclass(frozen=True)
 class SemanticRules:
-    sources: tuple[SourceSpec, ...]
+    sources: tuple[SourceSpec, ...] | TokenAtomFamily
     sum_types: tuple[str, ...]
     product_rules: tuple[tuple[str, str, str], ...]
     readout_type: str
@@ -63,14 +64,18 @@ class SemanticRules:
     states: tuple[DelayedStateSpec, ...] = ()
 
     def __post_init__(self):
-        object.__setattr__(self, 'sources', tuple(self.sources))
+        indexed = type(self.sources) is TokenAtomFamily
+        if indexed:
+            self.sources.__post_init__()
+        else:
+            object.__setattr__(self, 'sources', tuple(self.sources))
         object.__setattr__(self, 'sum_types', tuple(self.sum_types))
         object.__setattr__(self, 'product_rules', tuple(tuple(rule) for rule in self.product_rules))
         object.__setattr__(self, 'states', tuple(self.states))
         object.__setattr__(self, 'base', tuple(rational(v, 'readout base', positive=True) for v in self.base))
-        if not self.sources or any(type(s) is not SourceSpec for s in self.sources):
+        if not self.sources or not indexed and any(type(s) is not SourceSpec for s in self.sources):
             raise ContractError('a fixed nonempty typed source family is required')
-        if len({s.source_id for s in self.sources}) != len(self.sources):
+        if not indexed and len({s.source_id for s in self.sources}) != len(self.sources):
             raise ContractError('duplicate source declaration')
         if any(type(s) is not DelayedStateSpec for s in self.states) or len({s.state_id for s in self.states}) != len(self.states):
             raise ContractError('invalid or duplicate delayed state declaration')
@@ -151,7 +156,7 @@ class Program:
         """Validate an ordered native prefix, independently of its final roots."""
         if type(rules) is not SemanticRules:
             raise ContractError('registered semantic rules required')
-        source_types = {s.source_id: s.type_id for s in rules.sources}
+        source_types = TokenSourceTypes(rules.sources) if type(rules.sources) is TokenAtomFamily else {s.source_id: s.type_id for s in rules.sources}
         state_types = {s.state_id: s.type_id for s in rules.states}
         types = []
 

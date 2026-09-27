@@ -1,0 +1,44 @@
+{
+  "status": "PASS_OWNED_INDEXED_TOKEN_SOURCES",
+  "histories": {
+    "histories": 96,
+    "owned_observations": 384,
+    "optimizer_commits": 288,
+    "all_atom_type_delay_value_checks": 3456,
+    "complete_native_state_and_buffer_ownership_match": true
+  },
+  "profiles": {
+    "profiles": 16,
+    "original_context_profile_events": 64,
+    "ordinary_candidate_continuations": 32,
+    "complete_profile_and_ordinary_state_match": true,
+    "owned_profile_data_uses": true
+  },
+  "queries_and_attacks": {
+    "owned_query_coordinates": 2,
+    "exact_dense_query_equality": true,
+    "malformed_context_role_reader_and_ingress_refusals": 17,
+    "information_use_retained": true
+  },
+  "source_work_admission": {
+    "source_decode_denied_before_history_copy_or_context_allocation": true,
+    "original_ingress_failure_retained": true,
+    "predictions_published": 0
+  },
+  "full_vocabulary": {
+    "vocabulary": 50257,
+    "context": 512,
+    "complete_primitive_source_count": 25732096,
+    "runtime_observations": 4,
+    "atom_enumeration_attempts": 0,
+    "maximum_packed_source_context_bytes": 12059,
+    "all_full_vocabulary_probabilities_checked": true,
+    "owned_query_pass": true,
+    "source_bytes_read": 8,
+    "source_path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+    "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+    "validation_or_test_read": false,
+    "loss_scored": false,
+    "scope": "source integration with supplied elementary graph; no packed token learner, whole-host, AMP or model claim"
+  }
+}

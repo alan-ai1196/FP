@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The [full indexed token source interface](experiments/next_token/OWNED_INDEXED_SOURCES.md)
+now runs inside actual Runtime events, profiles and queries. Integrate the
+complete compact token learner and physical event relation with that owner.
+Per-record lag vectors still cost O(TL) and full-history checking costs O(T)
+per source read; a funded shared tape/record decoder must preserve all past
+targets, identities and original profile contexts before those costs can be
+removed. The new source encoding supplies no separate installation authority.
+
 The [packed token event control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 now provides target-free prediction, every complete prefix, native/AMP state
 comparison and full-unit-only commits. It is time to integrate these into

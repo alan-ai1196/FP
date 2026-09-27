@@ -9569,3 +9569,34 @@ rather than distinct sparse backing layouts. The original batched/reference,
 loss, validation/test read or new model result is added. The next task is
 actual indexed Runtime ownership; the quadratic prefix evaluator is its
 semantic control, not a claimed full-corpus training schedule.
+
+## 281. Own the full indexed token source family in ReferenceCompilerRuntime (2026-09-27)
+
+The literal source interface expands L*(V+1) indicators in metadata and every
+observation. Replace that storage expansion with a closed family header and
+an immutable original-position/lag-vector context. The scalar decoder is
+bijective with the original legal one-hot source blocks and preserves every
+source type, positive delay and PAD predicate. Actual Runtime history alone
+constructs it; no caller-made history or current target is admitted.
+
+Ordinary native evaluation, conservative range checking, actual newborn
+profiles and registered moment queries consume the decoder. Data roles,
+observation/target identities, retained buffers and query uses stay with the
+existing owner. Prepay history-copy/check and lag-decode work before any
+indexed context allocation; fund per-evaluation/query validation separately.
+A work-cap adversary proves the decoder is not called after denied admission.
+
+All96 small native words pass384 events/288 commits and3,456 atom/type/delay
+comparisons. Sixteen actual profiles pass64 original-context events and32
+ordinary continuations. Two moment coordinates match exact dense answers;
+seventeen malformed source/PAD/role/reader/field/index/ingress cases refuse.
+The full50,257-label/context512 Runtime handles four real training tokens
+with enumeration patched to fail:25,732,096 complete primitive sources are
+decodable from source records of at most12,059 packed bytes. No model score,
+validation/test, Torch or GPU. Existing event/profile regressions pass.
+
+This is actual source integration, not the full compact learner or an AMP
+release. Per-record O(L) storage and complete-history validation remain real
+costs; a shared indexed tape must preserve original contexts and all legal
+past-data access before removing them. Next integrate the complete token
+learner/bridge with the same Runtime owner, without a new semantic action.

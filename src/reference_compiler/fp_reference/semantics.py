@@ -11,6 +11,7 @@ from typing import Mapping, Sequence
 
 from .core import ContractError, natural
 from .program import Product, Program, SemanticRules, Source, State, Sum, rational
+from .token_sources import TokenAtomFamily, TokenValues, TokenSourceBounds
 
 
 @dataclass(frozen=True)
@@ -121,11 +122,17 @@ def evaluate(program: Program, rules: SemanticRules, theta: Sequence,
              source_values: Mapping[str, F], delayed: Sequence[tuple[str, Sequence[F]]] = (), *, bit_limit=None) -> Evaluation:
     program.validate(rules)
     slot_values = parameters(program, theta)
-    if set(source_values) != {s.source_id for s in rules.sources}:
-        raise ContractError('source observation differs from the registered complete interface')
-    observed = {s.source_id: rational(source_values[s.source_id], 'source observation') for s in rules.sources}
-    if any(observed[s.source_id] > s.upper for s in rules.sources):
-        raise ContractError('source observation exceeds its registered range')
+    if type(rules.sources) is TokenAtomFamily:
+        if type(source_values) is not TokenValues or source_values.context.family != rules.sources:
+            raise ContractError('complete indexed causal source interface required')
+        source_values.context.__post_init__()
+        observed = source_values
+    else:
+        if set(source_values) != {s.source_id for s in rules.sources}:
+            raise ContractError('source observation differs from the registered complete interface')
+        observed = {s.source_id: rational(source_values[s.source_id], 'source observation') for s in rules.sources}
+        if any(observed[s.source_id] > s.upper for s in rules.sources):
+            raise ContractError('source observation exceeds its registered range')
     histories = dict(delayed)
     if len(histories) != len(delayed) or set(histories) != {s.state_id for s in rules.states}:
         raise ContractError('missing, duplicate or undeclared delayed state')
@@ -159,8 +166,10 @@ def enclose(program: Program, rules: SemanticRules, theta: Sequence, *, source_p
     """
     program.validate(rules)
     slot_values = tuple(Interval(v, v) for v in parameters(program, theta))
-    source_bounds = {s.source_id: Interval(0, s.upper) for s in rules.sources}
+    source_bounds = TokenSourceBounds(rules.sources) if type(rules.sources) is TokenAtomFamily else {s.source_id: Interval(0, s.upper) for s in rules.sources}
     if source_point is not None:
+        if type(rules.sources) is TokenAtomFamily:
+            raise ContractError('this indexed source lowering registers its full conservative box, not a supplied point domain')
         if set(source_point) != set(source_bounds):
             raise ContractError('incomplete declared source point')
         source_bounds = {key: Interval(value, value) for key, value in source_point.items()}

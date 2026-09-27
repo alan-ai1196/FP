@@ -21,6 +21,7 @@ from .semantics import reset_delayed
 from .program import Program, SemanticRules, rational
 from .resources import ObjectSpec
 from .encoding import pack, packed_size
+from .token_sources import TokenAtomFamily
 
 
 @dataclass(frozen=True)
@@ -80,7 +81,8 @@ class ReferenceMachineModel:
         counts = program.counts()
         # Each repeated weighted SUM edge has a multiply and an addition;
         # source/state reads, PRODUCTs and fixed readout arithmetic are retained.
-        return counts['sources']+counts['state_reads']+2*counts['SUM_edges']+counts['PRODUCTs']+3*len(rules.base)+sum(s.delay for s in rules.states)
+        indexed = 2*(rules.sources.context+1) if type(rules.sources) is TokenAtomFamily else 0
+        return indexed+counts['sources']+counts['state_reads']+2*counts['SUM_edges']+counts['PRODUCTs']+3*len(rules.base)+sum(s.delay for s in rules.states)
 
     @staticmethod
     def observation_work(program: Program) -> int:

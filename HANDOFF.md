@@ -1,5 +1,17 @@
 # FP Handoff
 
+**The actual Runtime now owns the full indexed lag/token source family.** The
+[source refinement](experiments/next_token/OWNED_INDEXED_SOURCES.md) preserves
+every atom/type/delay through a compact retained lag vector. All384 native
+events/288 commits,64 profile events and32 continuations pass; registered
+moment queries retain their information uses. Full-V/context512 processes
+four real training tokens with atom enumeration disabled:25,732,096 sources,
+at most12,059 packed bytes per source context. Decode work is admitted before
+history copying/allocation; insufficient work retains ingress and publishes
+nothing. This is actual source integration, not the compact learner/AMP
+backend. Next integrate that complete learner into this same Runtime and
+address shared retained-data representation; do not reopen readout variants.
+
 **Packed token execution can now express the causal event path.** The
 [prefix integration control](experiments/next_token/CAUSAL_EVENT_PREFIXES.md)
 adds target-free forecasts, complete pending records/gradients, bound observe

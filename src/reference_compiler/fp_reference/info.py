@@ -11,9 +11,10 @@ from dataclasses import dataclass
 from fractions import Fraction as F
 
 from .core import ContractError, QueryError, natural
-from .data_usage import ObservationRecord
+from .data_usage import ObservationRecord, source_mapping
 from .program import SemanticRules, name, rational
 from .semantics import _guard, _operation
+from .token_sources import TokenAtomFamily, TokenSourceTypes
 
 
 @dataclass(frozen=True)
@@ -52,10 +53,10 @@ class QuerySpec:
         object.__setattr__(self, 'upper', hi)
 
     def validate(self, rules: SemanticRules, bit_limit: int):
-        names = {s.source_id for s in rules.sources}
+        names = TokenSourceTypes(rules.sources) if type(rules.sources) is TokenAtomFamily else {s.source_id for s in rules.sources}
         if self.bits >= bit_limit:
             raise ContractError('query levels exceed the registered integer work representation')
-        if any(set(c.sources)-names or (c.target_atom is not None and c.target_atom >= len(rules.base)) for c in self.coordinates):
+        if any(any(source not in names for source in c.sources) or (c.target_atom is not None and c.target_atom >= len(rules.base)) for c in self.coordinates):
             raise ContractError('query uses an undeclared source or target atom')
 
     def work(self, record_count: int) -> int:
@@ -110,7 +111,7 @@ def evaluate_query(spec: QuerySpec, records: tuple[ObservationRecord, ...], *, b
         total = F(0)
         for record in records:
             product = F(1) if coord.target_atom is None else F(record.target == coord.target_atom)
-            sources = dict(record.sources)
+            sources = source_mapping(record.sources)
             for source in coord.sources:
                 product = mul(product, sources[source])
             total = add(total, product)

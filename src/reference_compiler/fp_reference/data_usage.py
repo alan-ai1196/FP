@@ -12,6 +12,7 @@ from fractions import Fraction as F
 from .core import ContractError, QueryError, natural
 from .ingress import IngressContract
 from .program import SemanticRules, name, rational
+from .token_sources import TokenAtomFamily, TokenSourceReads, TokenContext, TokenValues
 
 
 @dataclass(frozen=True)
@@ -71,7 +72,7 @@ class DataContract:
     streams: tuple[StreamSpec, ...]
     active_stream: str
     input_upper: tuple[F, ...]
-    source_reads: tuple[SourceRead, ...]
+    source_reads: tuple[SourceRead, ...] | TokenSourceReads
     access_id: str = 'bounded-exact-revealed-train-online-v2'
     stream_law: str | StochasticStreamLaw = 'declared-exogenous-no-probability-guarantee'
     ingress: IngressContract = field(default_factory=IngressContract)
@@ -89,9 +90,15 @@ class DataContract:
         active = next((s for s in streams if s.stream_id == self.active_stream), None)
         if active is None or active.role not in ('train', 'online'):
             raise ContractError('reporting labels cannot drive ordinary learning or discovery')
-        reads = tuple(self.source_reads)
-        if any(type(r) is not SourceRead for r in reads) or len({r.source_id for r in reads}) != len(reads):
-            raise ContractError('distinct registered source evaluators required')
+        if type(self.source_reads) is TokenSourceReads:
+            reads = self.source_reads
+            reads.__post_init__()
+            if self.input_upper:
+                raise ContractError('indexed token sources use only owned past targets')
+        else:
+            reads = tuple(self.source_reads)
+            if any(type(r) is not SourceRead for r in reads) or len({r.source_id for r in reads}) != len(reads):
+                raise ContractError('distinct registered source evaluators required')
         if self.access_id != 'bounded-exact-revealed-train-online-v2' or type(self.ingress) is not IngressContract:
             raise ContractError('registered bounded exact ingress is required; no raw-value or query-only bypass')
         if not (type(self.stream_law) is StochasticStreamLaw or
@@ -106,6 +113,13 @@ class DataContract:
         return next(s for s in self.streams if s.stream_id == self.active_stream)
 
     def validate(self, rules: SemanticRules):
+        if type(self.source_reads) is TokenSourceReads:
+            self.source_reads.__post_init__()
+            if rules.sources != self.source_reads.family or type(rules.sources) is not TokenAtomFamily or len(rules.base) != rules.sources.vocabulary or self.input_upper:
+                raise ContractError('indexed token readers and complete semantic family differ')
+            return
+        if type(rules.sources) is TokenAtomFamily:
+            raise ContractError('indexed token family requires its complete registered reader')
         if {r.source_id for r in self.source_reads} != {s.source_id for s in rules.sources}:
             raise ContractError('every source needs its registered causal evaluation rule')
         specs = {s.source_id: s for s in rules.sources}
@@ -134,14 +148,21 @@ class ObservationRecord:
     role: str
     cursor: int
     inputs: tuple[F, ...]
-    sources: tuple[tuple[str, F], ...]
+    sources: tuple[tuple[str, F], ...] | TokenContext
     target: int | None
 
 
 def read_sources(contract: DataContract, cursor: int, inputs: tuple[F, ...],
-                 history: tuple[ObservationRecord, ...]) -> tuple[tuple[str, F], ...]:
+                 history: tuple[ObservationRecord, ...]) -> tuple[tuple[str, F], ...] | TokenContext:
     if len(history) != cursor or any(record.cursor != i or record.target is None for i, record in enumerate(history)):
         raise ContractError('causal source history is not a continuous revealed prefix')
+    if type(contract.source_reads) is TokenSourceReads:
+        if inputs:
+            raise ContractError('external history atoms cannot replace owned token history')
+        family = contract.source_reads.family
+        return TokenContext(family, cursor, tuple(
+            family.vocabulary if lag > cursor else history[cursor-lag].target
+            for lag in range(1, family.context+1)))
     values = []
     for read in contract.source_reads:
         origin = cursor-read.lag
@@ -157,6 +178,22 @@ def read_sources(contract: DataContract, cursor: int, inputs: tuple[F, ...],
             value = F(history[origin].target == read.index)
         values.append((read.source_id, value))
     return tuple(values)
+
+
+def source_mapping(sources):
+    return TokenValues(sources) if type(sources) is TokenContext else dict(sources)
+
+
+def indexed_source_read_work(contract, cursor):
+    """Fund history-copy/check visits, lag decoding and context validation.
+
+    These are reference work charges, not processor cycles. Query/prediction
+    decoder validations have their own additional charges at the call site.
+    """
+    if type(contract.source_reads) is not TokenSourceReads:
+        raise ContractError('registered indexed source reader required')
+    natural(cursor, 'source read cursor')
+    return 2*cursor+3*(contract.source_reads.family.context+1)
 
 
 @dataclass(frozen=True)

@@ -14,7 +14,9 @@ import sys
 from typing import Mapping
 
 from .core import ContractError, IdentityUnresolved, freeze_data, natural, stable_hash
-from .data_usage import DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources
+from .data_usage import (DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources,
+    source_mapping, indexed_source_read_work)
+from .token_sources import TokenAtomFamily, TokenContext
 from .info import QueryRecord, QueryResult, QuerySpec, evaluate_query
 from .learner import SIMPLEX_GRADIENT, LearnerSpec, ReferenceLearnerState, commit_event, initial_state, observe_event
 from .machine import PackedObject, PlannedObject, ReferenceMachineModel
@@ -111,6 +113,8 @@ class ConstructionContract:
             raise ContractError('bounded order search requires the registered indexed native family')
         if type(self.semantics) is not SemanticRules or type(self.limits) is not ResourceLimits:
             raise ContractError('immutable semantic and resource declarations required')
+        if type(self.semantics.sources) is TokenAtomFamily and self.source_domain is not None:
+            raise ContractError('indexed token sources currently use the complete conservative range box')
         if set(self.limits.role_residency) != {'deployment', 'compiler'}:
             raise ContractError('deployment and compiler resource roles must stay distinct')
         if set(self.limits.global_residency) != ReferenceMachineModel.residency_dimensions:
@@ -190,6 +194,8 @@ class OnlineContract:
 
     def validate(self, construction: ConstructionContract):
         self.data.validate(construction.semantics)
+        if type(construction.semantics.sources) is TokenAtomFamily and (self.float64 is not None or self.searches):
+            raise ContractError('indexed token-source floating/search translation is not registered')
         indexed = type(construction.initializer_pattern) is IndexedInitializer
         joint = type(construction.initializer_pattern) is JointInitializer
         if indexed != (type(self.learner) is IndexedLearner):
@@ -392,6 +398,8 @@ class ReferenceCompilerRuntime:
             raise ContractError('registered construction contract required')
         self._contract = contract
         self._cuda = None
+        if type(contract.semantics.sources) is TokenAtomFamily and cuda is not None:
+            raise ContractError('indexed token-source CUDA translation is not registered')
         if cuda is not None:
             if type(cuda) not in (CudaPrefixContract, IndexedCudaPrefixContract, ProjectedIndexedCudaPrefixContract, JointCudaPrefixContract) or online is None:
                 raise ContractError('actual CUDA prefix needs immutable registration and the ordinary learner interface')
@@ -1463,14 +1471,14 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 self._data_usage.record((observation,), 'profile', candidate, self._cursor)
                 update(stage='predict')
                 work(self._machine.evaluation_work(program, rules), f'{position}:predict')
-                prediction = self._reference_predict(program, rules, local, dict(observation.sources),
+                prediction = self._reference_predict(program, rules, local, source_mapping(observation.sources),
                                       bit_limit=self._contract.reference_integer_bits,
                                       execution_debit=lambda amount: work(amount, f'{position}:indexed-table-execution'),
                                       search_debit=lambda amount: work(amount, f'{position}:query-order-search'))
                 if prediction.normalizer > self._contract.normalizer_cap or any(v > self._contract.activation_cap for v in self._machine.activation_values(prediction)):
                     raise ContractError('profile execution contradicts a sufficient native range bound')
                 float64_prediction = self._float64_execute('predict', program, candidate, local, local_float64,
-                    origin='profile', observation_id=observation.observation_id, sources=dict(observation.sources), reference_prediction=prediction)
+                    origin='profile', observation_id=observation.observation_id, sources=source_mapping(observation.sources), reference_prediction=prediction)
                 event = ProfileEvent(candidate, profile.profile_id, initial.program_id, self._cursor,
                                      position, observation.observation_id, local, prediction)
                 self._profile_events.append(event)
@@ -1680,14 +1688,23 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         inputs = tuple(rational(v, 'pre-target exogenous input') for v in inputs)
         if len(inputs) != len(data.input_upper) or any(v > cap for v, cap in zip(inputs, data.input_upper)):
             raise ContractError('input differs from its registered range/interface')
+        compact_sources = type(rules.sources) is TokenAtomFamily
+        if compact_sources:
+            # Admission precedes even the retained-history tuple copy and
+            # context allocation. Denial keeps the owned ingress and halts.
+            self._event_router.charge_work('information', {'work': indexed_source_read_work(data, self._cursor)},
+                f'{self._runtime_id}:event:{self._cursor}:indexed-source-read')
         # Inputs have already arrived through the owned canonical wire. A
         # failed domain/numeric check retains that prefix and halts ingress.
         sources = read_sources(data, self._cursor, inputs, tuple(self._observations))
-        source_map = dict(sources)
+        source_map = source_mapping(sources)
         domain = self._contract.source_domain
-        source_values = tuple(source_map[s.source_id] for s in rules.sources)
-        valid_domain = (domain.contains(source_values) if type(domain) is CategoricalPairDomain
-                        else domain is None or source_values in domain)
+        if type(sources) is TokenContext:
+            valid_domain = sources.family == rules.sources and domain is None
+        else:
+            source_values = tuple(source_map[s.source_id] for s in rules.sources)
+            valid_domain = (domain.contains(source_values) if type(domain) is CategoricalPairDomain
+                            else domain is None or source_values in domain)
         if not valid_domain:
             raise ContractError('actual causal context is outside the complete registered source domain')
         if any(s.learner.cursor != self._cursor for s in self._candidates.values() if s.range_safe):
@@ -1704,7 +1721,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             _guard(*inputs, bit_limit=self._contract.reference_integer_bits)
             # Reserve the bounded target slot and its write work before the
             # target arrives. A later backend/resource failure cannot unread it.
-            self._event_router.charge_work('information', {'work': len(inputs)+len(sources)+2}, f'{prefix}:ingress')
+            self._event_router.charge_work('information', {'work': len(inputs)+(0 if compact_sources else len(sources))+2}, f'{prefix}:ingress')
             context = self._machine.realize(f'{prefix}:context', 'revealed_context', record, self._chi)
             target_slot = self._machine.realize(f'{prefix}:target', 'reserved_target', self._target_slot(None), self._chi)
             self._allocate(self._data_owner, (context, target_slot))
@@ -1877,7 +1894,8 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
         result = QueryResult(query_id, 'UNRESOLVED', (), (), 'query did not finish')
         error = None
         try:
-            self._event_router.charge_work('information', {'work': spec.work(len(records))}, prefix)
+            indexed_validation = len(spec.coordinates)*sum(r.sources.family.context+1 for r in records if type(r.sources) is TokenContext)
+            self._event_router.charge_work('information', {'work': spec.work(len(records))+indexed_validation}, prefix)
             # Mark before computation, including range/backend failures. The
             # observation cannot become fresh again because no answer arrived.
             self._data_usage.record(records, 'proposal', prefix, self._cursor)
