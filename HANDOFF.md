@@ -15,12 +15,15 @@ bodies/15,064,144 bytes, learners, reports and cumulative allocations agree.
 Actual retirement/stale-view refusal, changed live carry, forged proposals,
 retention failures and partial-retirement MemoryError pass. The unit-eight
 fixture's peak live buddy bytes fall 6,576 to 5,352, but retained metadata and
-an extra observation validation capture cost more; no timing claim follows.
-The first fixed device pair is registered in the proof and
-`run_archived_workspaces_cuda_a1.py`: both use qualified base facts/images,
-generation reuse and unchanged full-V/unit512 limits, with only archival
-different. Commit before launch; its absent journal has never been run. Close
-the qualification at its original result rather than expanding storage variants.
+an extra observation validation capture cost more. Both original 16-target
+RTX 3090 workers at `7913685` now pass 33 phases/4,541,709 checked words, actual
+address-overwrite/stale-view controls and changed-live-carry refusal. Ordinary
+time is 61.64774 versus 61.88329 seconds, a 0.38210% increase in one ordered
+pair; peak live buddy storage stays 24,214,064 bytes. There is no measured
+speed or peak-storage benefit in this prefix. `FP_ARCHIVED_WORKSPACES_CUDA_A1.json`
+is terminal; never replay it. This qualification is closed/default off.
+Reassess the remaining complete validation/retention cost toward an affordable
+ordinary-text budget; no storage-variant sweep or long replay is justified.
 
 Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
 reuse the declared immutable base's positivity and exact sum while preserving

@@ -10,7 +10,7 @@ changed-leaf refusal. Ordinary time falls 83.07391 to 60.57797 seconds, a
 no static-invariant sweep or long replay follows. It still does not establish
 affordable learning or remove repeated historical retention/live-state cost.
 
-**Current frontier: measure the owned numerical liveness boundary.**
+**Current frontier: remaining complete validation/retention cost for ordinary learning.**
 The [workspace continuation theorem](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 now proves that old leaf arrays/incidences and a prior basis need not be
 numerical inputs to future token operations. Their complete immutable images
@@ -24,18 +24,24 @@ allocation counts. Checked immutable images are sealed before generation
 retirement; all current aliases and failed/unsealed pins remain. Stale views,
 changed live carries, forged words/geometry/owner/live roots and retention or
 partial-retirement failures refuse. The default-off representation adds paid
-metadata and one fresh observation validation capture. CPU raw counts and peak
-live storage improve in finite fixtures; wall time and full-V benefit remain
-unmeasured. The first fixed 16-target CUDA pair is registered before launch,
-with identical qualified base facts/images, generation reuse and original
-model/numerical/resource limits in both arms. Close it at its original outcome.
+metadata and one fresh observation validation capture. Both original full-V
+16-target device workers at `7913685` now pass, including actual retired-address
+overwrite with complete history preserved and changed-live-carry refusal.
+Ordinary time is 61.64774 versus 61.88329 seconds, a 0.38210% increase in one
+ordered pair, with identical peak live storage. The representation qualification
+is closed/default off, its journal terminal. No measured early-prefix benefit
+justifies another storage variant or long replay. Full-unit benefit is unmeasured.
 
 The theorem is neither whole-resource equivalence nor a linear-time claim.
 Growing live row support still needs fresh integrity observations under the
 declared word-read interface, and complete historical retention can still
-dominate. Do not turn this into a storage-variant sweep. Ordinary learning
-affordability and strong trained comparisons remain the objective; Foundation/
-ERC and the rational/relation branch remain closed.
+dominate. Source-count improvements alone have not established affordability:
+native composition, grouped reads and archival pass their preservation gates
+but show no substantial early-prefix time benefit. Qualified base-fact reuse
+helps, yet the 16-target trace still takes about 62 seconds. The next research
+must identify the remaining end-to-end validation/retention cost and a feasible
+ordinary-text budget. Strong trained comparisons remain the objective;
+Foundation/ERC and the rational/relation branch remain closed.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

@@ -134,10 +134,12 @@ The image qualification is closed. Optimizing only constant metadata checks
 or image placement cannot remove these structural repetitions. This supplies
 an implementation reason to investigate composing native enclosures over
 immutable retained events and grouping fresh physical reads at unchanged
-observation boundaries. Neither lowering is implemented; its preservation
-and ownership argument still has to be established at this entry's source.
-The subsequent grouped-read proof/implementation above now addresses that
-transport question; native enclosure composition remains unimplemented.
+observation boundaries. Neither lowering existed at this count audit's
+original source. The subsequent grouped-read and native-composition proofs
+linked above now provide those implementations and their separate device
+qualifications. Owned workspace archival later changes historical captures
+under the distinct liveness/ownership proof; the original count law stays
+scoped to the unarchived path.
 
 The distinction matters for correctness. A stored host leaf is not evidence
 that its still-live device array is unchanged: the existing changed-leaf

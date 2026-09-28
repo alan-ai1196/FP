@@ -1,6 +1,6 @@
 # Numerical continuation needs live operands and complete history in different roles
 
-Status: **NUMERICAL CONTINUATION THEOREM; COMPLETE OWNER CPU PASS; FIRST CUDA PAIR REGISTERED**.
+Status: **NUMERICAL CONTINUATION THEOREM; CPU AND FINITE CUDA PASS; QUALIFICATION CLOSED**.
 This is ordinary-token research under frozen Foundation/ERC. It introduces
 no new semantic architecture action, G/Gamma/U, source interface or precision
 rule. The owner implementation below now has complete CPU controls. No CUDA
@@ -338,3 +338,57 @@ and live-storage measurements at its original outcome. No full-unit benefit,
 general speedup, affordable training or language score follows. Close this
 finite qualification afterward; further work must target ordinary learning
 cost on evidence, with Foundation/ERC and the relation/rational branch closed.
+
+## Actual result and closure
+
+Both original workers at `791368565b1d8c54498a119611c5df3c517987ef` pass on the
+declared RTX 3090 under every registered cap. Each retains 33 successful phases,
+4,541,709 checked primitive words, all original 16 contexts/targets, 16 pending
+records and no optimizer commit. Cumulative buddy allocation is 36,772,296 bytes
+in both arms. Native/current allocation counters remain `(1,1073741824,1)`;
+actual/lifetime tensor and allocator reservation remain 1 GiB. The largest
+used arena extent is 24,379,392 bytes and peak live buddy storage is 24,214,064
+bytes in both arms. No measured peak-storage reduction occurs in this prefix.
+
+| Original measurement | Resident history | Archived history |
+| --- | ---: | ---: |
+| Initialization seconds | 9.9378218 | 9.8883847 |
+| All 32 ordinary calls, seconds | 61.6477362 | 61.8832904 |
+| First eight targets, ordinary seconds | 29.5324685 | 29.4672818 |
+| Last eight targets, ordinary seconds | 32.1152677 | 32.4160086 |
+| Peak whole-job committed bytes | 3,328,253,952 | 3,449,225,216 |
+| Peak paid reference bytes | 272,951,974 | 273,083,091 |
+
+Ordinary time increases by 0.38210% in this single ordered pair. This is no
+statistical slowdown claim; it supplies **no evidence of a speed benefit**.
+Whole-job/reference peaks in the archived arm also include its extra fault,
+so their differences are not isolated archival overhead measurements. The
+post-worker live byte counts, 7,212,336 and 6,554,720, likewise follow different
+numbers of collection attempts. They are not a paired terminal live-set claim.
+
+The first event-value generation is 232 in both workers. It stays valid and
+unchanged in the resident arm. In the archived arm it is retired, its old view
+is refused, and direct test instrumentation confirms actual address overwrite.
+The complete original event words still decode unchanged. Actual in-place
+zeroing of a **live common carry** then causes the next prediction to refuse
+with the existing changed-predecessor error. The 34th phase retains changed
+carry words and the original historical leaf image; the earlier sealed record,
+learner and cursor 16 remain, with no successor or new arena allocation.
+
+The exclusive `FP_ARCHIVED_WORKSPACES_CUDA_A1.json` is terminal. Its original
+process/device identities and per-call times remain auditable. This closes
+the finite owner/device representation qualification; the option stays default
+off. Complete historical values can survive actual retirement and overwrite
+while live corruption remains detectable. That correctness result does not
+establish affordable text learning. Later-prefix/full-unit benefit remains
+unmeasured, and no long replay or storage-variant sweep follows from this pair.
+
+The accumulated short comparisons distinguish algebraic/count progress from
+measured affordability: native composition, grouped reads and workspace
+archival all have preservation evidence, but none demonstrates a substantial
+early-prefix time reduction. Qualified base-fact reuse did reduce that cost,
+yet about 62 seconds for 16 targets remains. The next priority is the remaining
+complete validation/retention cost and an evidence-based ordinary-text budget,
+not another static/relation/storage special case. Strong trained baselines
+remain required; this resource fixture supplies no language-quality result.
+Foundation/ERC stay frozen.

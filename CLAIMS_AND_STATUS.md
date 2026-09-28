@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Token workspace liveness: NUMERICAL CONTINUATION THEOREM; COMPLETE OWNER CPU PASS.**
+**Token workspace liveness: NUMERICAL CONTINUATION THEOREM; CPU AND FINITE CUDA PASS.**
 The [exact class and limits](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md) preserve
 the existing token primitive sequence and commits when old event arrays and
 the prior basis are unavailable through their history fields, but complete
@@ -15,9 +15,14 @@ allocations. Complete paid images, source/geometry/owner binding, sealed
 publication, all live aliases and failed/unsealed pins remain. Actual CPU-tensor
 retirement/stale refusal, changed live carry and eight proposal/failure controls
 pass. Extra metadata and one additional observation capture preclude a blanket
-resource-dominance claim. The first fixed CUDA pair is registered, not launched.
-No actual-device result, `CERTIFIED_COMPLETE`, installation authority or
-permission to replace a still-live read follows from this CPU qualification.
+resource-dominance claim. Both original device workers at `7913685` pass 33
+phases/4,541,709 checked words, actual retired-address overwrite with complete
+history preserved, stale-view refusal and changed-live-carry refusal. Ordinary
+time is 61.64774 versus 61.88329 seconds: a 0.38210% increase in one ordered
+pair, with identical peak live storage. This supplies no measured speed benefit
+or statistical slowdown claim. The qualification is closed/default off; its
+journal is terminal. No `CERTIFIED_COMPLETE`, installation authority, full-unit
+affordability or permission to replace a still-live read follows.
 
 **Owned token base facts: CONDITIONAL GUARD-PRESERVATION THEOREM; CPU AND FINITE CUDA PASS.**
 The original ordered rational fold has an exact threshold: the maximum of

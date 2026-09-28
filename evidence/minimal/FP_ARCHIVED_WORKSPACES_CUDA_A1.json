@@ -1,0 +1,356 @@
+{
+  "status": "COMPLETE_ACTUAL_ARCHIVED_WORKSPACES_A1",
+  "source_commit": "791368565b1d8c54498a119611c5df3c517987ef",
+  "cases": [
+    "resident",
+    "archived"
+  ],
+  "host_cap": 17179869184,
+  "deadline_ms": 240000,
+  "arena_bytes": 1073741824,
+  "reference_payload_cap": 2147483648,
+  "canonical_image_cap": 67108864,
+  "token_fact_cap": 4194304,
+  "grouped_reads": false,
+  "composed_native": false,
+  "reuse_regions": true,
+  "observed_events": 16,
+  "update_unit": 512,
+  "phase_evidence_bytes": 67108864,
+  "phase_output_cells": 4194304,
+  "exact_cell_cap": 4096,
+  "state_atol": "16",
+  "probability_atol": "1/1000000",
+  "whole_board_VRAM_upper": 25769803776,
+  "scope": "Fixed 16-target actual comparison of resident/archived token workspaces.\n\nBoth workers keep the original full-V model, unit512, numerical/storage\nlimits, generation reuse, 64-MiB owned images and 4-MiB token base facts.\nBoth use the same phase hook to retain the first actual event-value view.\nThe archived arm must retire that generation, refuse its old view and keep\nthe original words after actual address overwrite. It then corrupts a live\ncarry and must refuse the next prediction. Grouping/composition stay off.\nNo inner arithmetic profiler is used in either timed arm.\nNo complete unit, language score, replay or sustained speed claim.",
+  "results": [
+    {
+      "case": "resident",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3327021056,
+        "peak_job_commit": 3328253952,
+        "user_100ns": 717656250,
+        "kernel_100ns": 18906250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 10052,
+        "process_creation_100ns": 134350756588736769
+      },
+      "launch_wall_seconds": 74.71731619999991,
+      "result": {
+        "status": "PASS_ACTUAL_ARCHIVED_WORKSPACES_PREFIX",
+        "case": "resident",
+        "before": {
+          "process_id": 10052,
+          "creation_100ns": 134350756588736769,
+          "process_commit": 34672640,
+          "lifetime_process_commit_peak": 34672640,
+          "job_commit_peak": 35905536,
+          "process_user_100ns": 2187500,
+          "process_kernel_100ns": 1093750,
+          "job_user_100ns": 2187500,
+          "job_kernel_100ns": 1093750,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 9.93782179999971,
+          "predict/0": 1.8006586000001334,
+          "observe/0": 1.7067982000003212,
+          "predict/1": 1.8147475000000668,
+          "observe/1": 1.8170964999999342,
+          "predict/2": 1.9202894999998534,
+          "observe/2": 1.868604199999936,
+          "predict/3": 1.902983100000256,
+          "observe/3": 1.7686291999998502,
+          "predict/4": 1.855798699999923,
+          "observe/4": 1.7673956999997245,
+          "predict/5": 1.9043867000000319,
+          "observe/5": 1.7831971000000522,
+          "predict/6": 1.9147045999998227,
+          "observe/6": 1.826280300000235,
+          "predict/7": 1.9570674000001418,
+          "observe/7": 1.9238312000002225,
+          "predict/8": 1.932860499999606,
+          "observe/8": 1.8717682999999852,
+          "predict/9": 1.9995693999999276,
+          "observe/9": 1.9008786000003965,
+          "predict/10": 2.017318900000191,
+          "observe/10": 1.9673887999997532,
+          "predict/11": 2.01968719999968,
+          "observe/11": 1.9797066000000996,
+          "predict/12": 2.047653199999786,
+          "observe/12": 2.026677899999868,
+          "predict/13": 2.0281534999999167,
+          "observe/13": 1.9695948000003227,
+          "predict/14": 2.135963499999889,
+          "observe/14": 2.0785581000000093,
+          "predict/15": 2.1142124999996668,
+          "observe/15": 2.025275899999997
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "owned_fact": {
+          "source_identity_bound": true,
+          "exact_total": "1",
+          "exact_guard_threshold": 33,
+          "paid_bytes": 1407321,
+          "both_roles_hold_artifact": true,
+          "isolated_scope_cleared": true
+        },
+        "generation_control": {
+          "first_generation": 232,
+          "retired": false,
+          "stale_refused": false,
+          "actual_bytes_overwritten": false,
+          "original_image_retained": true
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true
+        },
+        "outcome": {
+          "total_phase_records": 33,
+          "paid_reference_peak": 272951974,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "archive_pages": 118,
+          "actual_page_bytes": 19617149,
+          "reuse": {
+            "cumulative_bytes": 36772296,
+            "peak_live_bytes": 24214064,
+            "live_bytes": 7212336,
+            "retired_generations": 6229
+          },
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 24379392,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 10052,
+          "creation_100ns": 134350756588736769,
+          "process_commit": 3209347072,
+          "lifetime_process_commit_peak": 3327021056,
+          "job_commit_peak": 3328253952,
+          "process_user_100ns": 714531250,
+          "process_kernel_100ns": 18125000,
+          "job_user_100ns": 714531250,
+          "job_kernel_100ns": 18125000,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "archived",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3447980032,
+        "peak_job_commit": 3449225216,
+        "user_100ns": 732656250,
+        "kernel_100ns": 20625000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 11728,
+        "process_creation_100ns": 134350757335931167
+      },
+      "launch_wall_seconds": 76.33085329999994,
+      "result": {
+        "status": "PASS_ACTUAL_ARCHIVED_WORKSPACES_PREFIX",
+        "case": "archived",
+        "before": {
+          "process_id": 11728,
+          "creation_100ns": 134350757335931167,
+          "process_commit": 34697216,
+          "lifetime_process_commit_peak": 34697216,
+          "job_commit_peak": 35942400,
+          "process_user_100ns": 2187500,
+          "process_kernel_100ns": 1093750,
+          "job_user_100ns": 2343750,
+          "job_kernel_100ns": 1093750,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 9.888384700000188,
+          "predict/0": 1.8078975999997056,
+          "observe/0": 1.7214438999999402,
+          "predict/1": 1.815988699999707,
+          "observe/1": 1.751961299999948,
+          "predict/2": 1.904211800000212,
+          "observe/2": 1.8775520999997752,
+          "predict/3": 1.9133935999998357,
+          "observe/3": 1.734128800000235,
+          "predict/4": 1.8494378999998844,
+          "observe/4": 1.76387909999994,
+          "predict/5": 1.92079270000022,
+          "observe/5": 1.7897527000000082,
+          "predict/6": 1.9130370999996558,
+          "observe/6": 1.8403560000001562,
+          "predict/7": 1.9278193000000101,
+          "observe/7": 1.9356291999997666,
+          "predict/8": 1.9541456000001745,
+          "observe/8": 1.866979700000229,
+          "predict/9": 1.9640623000000232,
+          "observe/9": 1.9359690000001137,
+          "predict/10": 2.0448467999999593,
+          "observe/10": 1.9571255000000747,
+          "predict/11": 2.0459421999998995,
+          "observe/11": 2.01057690000016,
+          "predict/12": 2.084469700000227,
+          "observe/12": 1.9765206000001854,
+          "predict/13": 2.078946800000267,
+          "observe/13": 2.023630400000002,
+          "predict/14": 2.0800027000000227,
+          "observe/14": 2.1490993000002163,
+          "predict/15": 2.129714199999853,
+          "observe/15": 2.113976900000125
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "owned_fact": {
+          "source_identity_bound": true,
+          "exact_total": "1",
+          "exact_guard_threshold": 33,
+          "paid_bytes": 1407321,
+          "both_roles_hold_artifact": true,
+          "isolated_scope_cleared": true
+        },
+        "generation_control": {
+          "first_generation": 232,
+          "retired": true,
+          "stale_refused": true,
+          "actual_bytes_overwritten": true,
+          "original_image_retained": true
+        },
+        "changed_carry_control": {
+          "actual_inplace_zero": true,
+          "refused": true,
+          "prior_record_unchanged": true,
+          "no_successor": true,
+          "failed_status": "EXECUTION_FAILED",
+          "reason": "ContractError: token CUDA predecessor or continuation cache changed after its owned phase"
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_device_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true
+        },
+        "outcome": {
+          "total_phase_records": 34,
+          "paid_reference_peak": 273083091,
+          "image_count": 334,
+          "image_bytes": 67104776,
+          "archive_pages": 121,
+          "actual_page_bytes": 19760783,
+          "reuse": {
+            "cumulative_bytes": 36772296,
+            "peak_live_bytes": 24214064,
+            "live_bytes": 6554720,
+            "retired_generations": 6662
+          },
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 24379392,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 11728,
+          "creation_100ns": 134350757335931167,
+          "process_commit": 3330301952,
+          "lifetime_process_commit_peak": 3447980032,
+          "job_commit_peak": 3449225216,
+          "process_user_100ns": 729843750,
+          "process_kernel_100ns": 19843750,
+          "job_user_100ns": 730000000,
+          "job_kernel_100ns": 19843750,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}

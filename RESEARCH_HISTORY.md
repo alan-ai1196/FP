@@ -10847,3 +10847,46 @@ The exclusive new journal must start from clean committed source and cannot
 be replayed. Its original outcome will close this qualification; no relation,
 static-invariant or storage-variant expansion follows. Foundation/ERC remain
 frozen and ordinary-token learning affordability remains the research priority.
+
+
+## 318. Qualify actual workspace retirement; find no early-prefix timing benefit (2026-09-28)
+
+Both original workers from clean source 791368565b1d8c54498a119611c5df3c517987ef
+pass under their unchanged 240-second/16-GiB jobs and full-V/unit512 registration.
+Each retains all 16 original contexts/targets, 33 successful phases, 4,541,709
+checked primitive words, 16 pending records and no optimizer commit. Both use
+generation reuse and qualified canonical images/base facts; only archival differs.
+
+Resident ordinary time is 61.6477362 seconds and archived time 61.8832904, a
+0.38210% increase in one ordered pair. Initialization is 9.9378218/9.8883847;
+first-eight times are 29.5324685/29.4672818 and last-eight 32.1152677/32.4160086.
+This supplies no speed benefit or statistical slowdown claim. Cumulative buddy
+allocation is 36,772,296 bytes, peak live buddy storage 24,214,064 bytes and the
+maximum used arena extent 24,379,392 bytes in both arms. All original actual/
+lifetime arena/reservation counters remain one 1-GiB allocation. No measured
+early-prefix peak-storage reduction occurs.
+
+Generation 232, the first event-value view, stays valid/unchanged in the resident
+arm. The archived arm retires it, refuses its old view and confirms actual byte
+overwrite while the original full event image remains unchanged. Zeroing an
+actual live common carry then refuses the next prediction. Its failed 34th
+phase retains changed carry words and the original archived leaf; old learner,
+cursor 16 and sealed record remain, without a successor or new arena allocation.
+
+Whole-job peaks are 3,328,253,952/3,449,225,216 bytes and paid-reference peaks
+272,951,974/273,083,091. The archived arm includes an extra failed prediction,
+so memory differences and post-worker live counts do not isolate archival
+overhead or a paired terminal live-set advantage. The original minimal journal
+FP_ARCHIVED_WORKSPACES_CUDA_A1.json is terminal; never replay or replace it.
+
+This closes the finite owner/device representation qualification, default off.
+The theorem and actual overwrite witness separate retained historical values
+from live numerical operands without erasing information or weakening the AMP
+bridge. They do not make ordinary text learning affordable. Native composition,
+grouped reads and archival all pass preservation gates but show no substantial
+early-prefix time benefit; their source-count improvements are not a throughput
+claim. Base-fact reuse helps, yet about 62 seconds for 16 targets remains.
+Reassess the remaining complete validation/retention cost and a feasible text
+budget, rather than deepen the static/relation/storage branches or launch a
+long replay. Full-unit benefit remains unmeasured. Strong trained baselines
+remain mandatory; Foundation/ERC stay frozen.

@@ -16,10 +16,13 @@ identical learners/reports and cumulative allocations. New archive metadata
 is explicitly excluded from phase-byte equality. Stale views, changed live
 carries, forged proposals, unpaid work and preparation/retention/partial-
 retirement memory failures pass. Peak live storage falls in larger fixtures,
-while frame metadata and an extra fresh observation capture add cost. The
-first fixed full-V 16-target CUDA pair is registered but not launched; both
-arms use the qualified images/base facts and generation reuse. No device,
-whole-unit affordability or language-quality result follows from CPU controls.
+while frame metadata and an extra fresh observation capture add cost. Both
+original full-V 16-target CUDA workers at `7913685` now pass 33 checked phases/
+4,541,709 words, actual address reuse with preserved history, stale-view refusal
+and changed-live-carry refusal. Ordinary time is 61.64774 versus 61.88329 seconds,
+a 0.38210% increase in one ordered pair; peak live buddy bytes are identical.
+This qualification is closed/default off and its journal terminal. No measured
+early-prefix benefit, full-unit affordability or language quality follows.
 
 The optional [owned token base fact](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 is implemented as `SharedReferenceContract.token_invariant_bytes`, default 0.
@@ -38,7 +41,7 @@ Ordinary calls take 83.07391 versus 60.57797 seconds, a 27.07943% reduction in
 one ordered pair. All original limits and allocation history hold. This is
 no general/full-unit benefit or language result. The qualification is closed,
 default off, and its journal terminal. The numerical liveness boundary now
-has the separately qualified CPU owner lowering above; actual CUDA is pending.
+has the separately qualified CPU/device owner lowering above.
 
 The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 is implemented/default off as `composed_native`. A private immutable binding
