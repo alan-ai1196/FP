@@ -11040,3 +11040,43 @@ to establish affordable ordinary-text learning. Remaining complete retention,
 expected-stream generation/comparison and later-prefix cost deserve the next
 attack on evidence. No semantic relaxation, new cache policy or long replay
 is justified by this pair alone. Foundation/ERC and relation closure remain.
+
+
+## 324. Preserve exact archive comparisons through bounded byte copies (2026-09-28)
+
+The terminal CPU diagnosis puts exact producer/independent-reader comparisons
+among the leading self-time routines. They remain unchanged after direct
+extents. The next implementation changes only two comparison sites: copy the
+bounded producer candidate after its original debit, and copy each immutable
+decoded piece before overlap comparison. Both now use ordinary bytes equality.
+No codec, canonical byte, cache policy, expected stream or numerical check changes.
+
+The preservation law explicitly assumes the actual contiguous unsigned-byte
+views and serialized stable-input boundary. Signed-view numeric comparison
+and an expected iterator that mutates a hypothetical actual view give concrete
+counterexamples outside that class. For one page, added byte movement is at
+most C+2D, where C is already charged candidate-comparison length and D is
+decoded extent. At most two pieces/16 KiB of additional local copied payload
+coexist. Existing prepayments and whole-host obligations remain; a new copy
+can fail and confers no resource-dominance or wall-time theorem.
+
+Exact controls pass 131,090 candidate decisions and 70,246 stream-partition
+decisions, including the same early-refusal iterator traces. Nine collision
+pages and 44 ordered candidate comparisons agree. Six paired complete CPU-
+tensor histories preserve 129 phase bodies/5,774,243 bytes, 50,279 primitive
+words, 45,619 raw calls/856,212 bytes and all 441 actual pages/5,457,081 bytes.
+Learners, reports, full frames and arena histories agree. Four post-target
+MemoryErrors at the new copy sites preserve the old learner, actual target
+and frame pins; six native and eight complete-frame failure controls pass.
+The initial combined audit hit an older synthetic-frame audit's no-Torch
+premise after tensor checks; sequencing that component first preserves its
+scope and the complete rerun passes. No production behavior was changed for it.
+
+FP_BYTE_COMPARISONS_CPU.json records the compact evidence. A new fixed actual
+pair is registered before launch: first16 original targets, same full-V/unit512
+model and all current numerical/resource limits, 240-second/16-GiB jobs,
+qualified images/base facts and region reuse in both arms. Only predecessor/
+copied comparison functions differ. After timing, an uncached complete-frame
+check and corrupt-frame refusal after the seventeenth original target must
+pass. The exclusive original journal cannot be replayed. This attacks remaining
+ordinary-token retention cost; it does not reopen Foundation/ERC or relations.

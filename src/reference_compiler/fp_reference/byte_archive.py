@@ -190,7 +190,11 @@ class Builder:
         if self.comparison_bytes+len(right) > self._comparison_cap:
             raise ResourceExceeded('archive exact-comparison allowance exhausted')
         self.comparison_bytes += len(right)
-        return left == right
+        # Both call sites supply a contiguous unsigned-byte view of at most
+        # PIECE_LIMIT bytes. Materialize that bounded candidate after payment
+        # so equality uses bytes, rather than memoryview's element comparison.
+        # CRC remains only a bucket: every candidate still compares in full.
+        return bytes(left) == right
 
     def _append_program(self, part):
         if type(part) is not bytes:

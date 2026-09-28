@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The next fixed ordinary-token execution is the
+[bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md).
+Exact and complete CPU controls now preserve the predecessor's decisions,
+iterator reads, phase bodies and actual archive pages. Two bounded local
+copies could make the same full comparisons cheaper without changing the
+codec, expected stream or semantic state. The first actual old/copied pair is
+registered before launch with all current numerical/ownership checks and a
+post-target corrupt-frame refusal. Close its original result before selecting
+another cost change or training budget; no comparison-variant sweep is due.
+
 The [canonical-image public binding counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 takes correctness priority over extent timing. A returned snapshot shared
 binding wrappers with the private cache, allowing retention of another value's

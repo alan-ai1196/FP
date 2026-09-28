@@ -90,6 +90,10 @@ def _compare_stream(actual, expected, size):
     expected = iter(expected)
     current, position, compared = b'', 0, 0
     for piece in actual:
+        # Reader yields bounded unsigned-byte views of immutable owned pages.
+        # One local copy preserves every byte and the independent expected
+        # traversal while making overlap comparisons ordinary bytes equality.
+        piece = bytes(piece)
         offset = 0
         while offset < len(piece):
             if position == len(current):

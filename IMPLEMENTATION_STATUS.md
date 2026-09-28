@@ -2,6 +2,16 @@
 
 ## Current token execution boundary (2026-09-28)
 
+The [bounded comparison lowering](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
+changes two exact comparison sites only. It preserves comparison credit,
+independent expected traversal, codec and retained bytes. Exact controls pass
+131,090 candidate and 70,246 stream decisions; six paired complete histories
+preserve 129 phase bodies and all 441 actual archive pages. Four new-copy
+MemoryError boundaries and the existing producer/relocation faults pass.
+The first fixed actual comparison is registered, not launched. The law is
+restricted to the existing unsigned-byte/stable-input owner interface; it is
+not a general typed-view conversion or a new certificate class.
+
 The [canonical-image snapshot binding repair](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 detaches every exported `Image` wrapper from the private source-to-buffer index.
 The old public snapshot permitted metadata substitution: a checked public CPU

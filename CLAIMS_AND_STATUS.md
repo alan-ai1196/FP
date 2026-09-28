@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Bounded byte comparisons: CONDITIONAL PRESERVATION LAW; COMPLETE CPU PASS.**
+The [proof and counterexamples](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
+preserve exact interning decisions, comparison credit, independent iterator
+order and complete retained bytes for the actual unsigned/stable view class.
+They do not permit copying arbitrary typed or mutable views. Exact controls
+cover 131,090 candidate and 70,246 stream decisions; six complete paired
+histories preserve 129 phase bodies and all 441 actual archive pages. Added
+copy work is bounded by C+2D for charged candidate bytes C and decoded extent D;
+the local extra live payload is at most 16 KiB. Existing charges remain.
+Copy-allocation failures stay terminal. No actual speedup or new certificate
+authority follows; the first fixed device comparison is registered, not launched.
+
 **Canonical-image public binding isolation: OLD CLAIM FALSIFIED IN THE SNAPSHOT-MUTATION CLASS; CPU REPAIR PASS.**
 The [counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md) changes
 returned image metadata while both source and stored bytes stay immutable.

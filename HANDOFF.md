@@ -2,6 +2,18 @@
 
 ## Current execution state (2026-09-28)
 
+[Bounded byte comparisons](theory/proofs/BOUNDED_BYTE_COMPARISONS.md) now have
+a conditional preservation law and exact/complete CPU controls. Two bounded
+local copies replace unsigned-view equality with bytes equality, preserving
+all exact collision and independent decoded-stream comparisons. The signed-
+view and mutable-input counterexamples explicitly delimit the law. All
+131,090 candidate decisions, 70,246 partition decisions, 129 complete phase
+bodies and 441 actual archive pages agree with the predecessor. Four new-copy
+MemoryErrors preserve targets and old learners. No new cache or codec is added.
+The fixed 16-target RTX 3090 comparison is registered, not launched; both arms
+include uncached-frame validation and a corrupted-frame refusal after the
+seventeenth original target. Commit before launch; never replay its journal.
+
 A [public canonical-image binding alias](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 was found while auditing extent work. Changing only returned snapshot metadata
 made the public CPU prediction port retain bytes different from its actual
