@@ -445,6 +445,8 @@ class ReferenceCompilerRuntime:
         indexed = type(contract.initializer_pattern) is IndexedInitializer
         joint = type(contract.initializer_pattern) is JointInitializer
         token = type(contract.initializer_pattern) is TokenInitializer
+        if type(cuda) is TokenCudaPrefixContract and cuda.archive_workspaces and shared_storage is None:
+            raise ContractError('workspace archives require complete shared retention in both roles')
         if shared_storage is not None:
             if (type(shared_storage) is not SharedReferenceContract or not token or policy is not None
                     or cuda is not None and (type(cuda) is not TokenCudaPrefixContract
@@ -930,6 +932,9 @@ class ReferenceCompilerRuntime:
         if self._cuda.token and cfg.composed_native:
             from .token_gradient_forest import work as native_forest_work
             charge += native_forest_work(program.definition)
+        if self._cuda.token and cfg.archive_workspaces:
+            from .token_workspace_archive import work as workspace_archive_work
+            charge += workspace_archive_work(self._cuda)
         if self._cuda.reuses_token_storage:
             from .token_reuse import collection_work
             charge += collection_work(self._cuda)

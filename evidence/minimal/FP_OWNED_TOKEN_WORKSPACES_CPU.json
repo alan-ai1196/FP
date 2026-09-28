@@ -1,0 +1,68 @@
+{
+  "status": "PASS_OWNED_TOKEN_WORKSPACE_ARCHIVES_CPU",
+  "histories": {
+    "pairs": 21,
+    "matching_numerical_phase_bodies": 363,
+    "matching_phase_bytes": 15064144,
+    "matching_primitive_words": 136391,
+    "identical_learners_reports_and_cumulative_allocations": true,
+    "original_counts": {
+      "raw_calls": 123326,
+      "raw_bytes": 2328076,
+      "frame_bytes": 15064144,
+      "retired": 38229
+    },
+    "archived_counts": {
+      "raw_calls": 118015,
+      "raw_bytes": 2228500,
+      "frame_bytes": 16512140,
+      "retired": 38250
+    },
+    "live_peak_examples": [
+      {
+        "unit": 4,
+        "combined": false,
+        "original": 5712,
+        "archived": 5128
+      },
+      {
+        "unit": 8,
+        "combined": false,
+        "original": 6576,
+        "archived": 5352
+      },
+      {
+        "unit": 4,
+        "combined": true,
+        "original": 5712,
+        "archived": 5128
+      }
+    ],
+    "count_scope": "Raw counters exclude initialization and grouped transfers; no timing or total transport claim."
+  },
+  "boundaries": {
+    "actual_historical_generation_retired": true,
+    "stale_view_refuses": true,
+    "public_image_replacement_has_no_authority": true,
+    "old_sealed_records_unchanged": true,
+    "actual_changed_live_carry_refuses": true,
+    "partial_retirement_memory_failure_is_terminal": true,
+    "old_learner_preserved": true
+  },
+  "failures": [
+    "unpaid",
+    "image",
+    "geometry",
+    "owner",
+    "live-root",
+    "prepare-memory",
+    "retention",
+    "retention-memory"
+  ],
+  "registration": {
+    "generation_reuse_required": true,
+    "exact_boolean_required": true,
+    "shared_retention_in_both_roles_required": true
+  },
+  "scope": "Complete Runtime controls for sealed historical token workspaces.\n\nActual Torch CPU tensor backing, generation reuse and the full owner/bridge/\nretention/reporting logic. Only device binding is substituted. No CUDA,\ncorpus, timing claim or model-quality result."
+}

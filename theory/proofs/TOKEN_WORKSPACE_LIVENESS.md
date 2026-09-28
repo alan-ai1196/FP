@@ -1,10 +1,11 @@
 # Numerical continuation needs live operands and complete history in different roles
 
-Status: **NUMERICAL CONTINUATION THEOREM; PASSIVE CPU CONTROL; OWNER LOWERING OPEN**.
+Status: **NUMERICAL CONTINUATION THEOREM; COMPLETE OWNER CPU PASS; FIRST CUDA PAIR REGISTERED**.
 This is ordinary-token research under frozen Foundation/ERC. It introduces
 no new semantic architecture action, G/Gamma/U, source interface or precision
-rule. No Runtime retirement implementation, CUDA authority, performance
-claim or `CERTIFIED_COMPLETE` follows from this proof alone.
+rule. The owner implementation below now has complete CPU controls. No CUDA
+authority, performance claim or `CERTIFIED_COMPLETE` follows from the proof
+or CPU substitution alone.
 
 The [owned base-fact qualification](OWNED_TOKEN_BASE_FACTS.md#actual-result-and-closure)
 is closed: its original 16-target device comparison reduced ordinary time
@@ -90,11 +91,10 @@ Original allocation/alias history and actual retirement state must also be
 retained by a real owner. Current resource snapshots will correctly differ
 from those of an owner that retains all device allocations indefinitely.
 
-The scope is deliberate. The current Runtime's `Resident.raw`, `tensors`,
-predecessor equality checks, phase retention and collector still expect the
-old representation. Passing a marker-bearing object to them would refuse.
-The theorem is not a drop-in bypass of any of those checks. It identifies the
-numerical read boundary an owned representation may implement and then audit.
+The scope is deliberate. An inaccessible marker cannot bypass `Resident.raw`,
+tensor enumeration, predecessor equality or retention. The theorem identifies
+the numerical read boundary; the owned lowering below separately implements
+complete diagnostic decoding, live-root enumeration and sealed publication.
 
 ## Counterexample: archive a leaf, then free all its arrays
 
@@ -158,7 +158,8 @@ under the current contract.
 ## Ownership premises for an actual lowering
 
 The constructive representation claim is conditional on all of the following.
-The current implementation has not discharged them for archived workspaces.
+The owner implementation and finite controls below address these premises;
+they do not prove arbitrary Python code or grant a new completeness class.
 
 - The image comes from this owner's freshly checked successful physical phase,
   retains all original word/shape/dtype/incidence/source data and provenance,
@@ -211,8 +212,129 @@ from the original windows/targets. There are 832 current core/common alias
 witnesses and zero accesses through the blocked historical fields. These are
 finite numerical/value controls, not complete owned Runtime trajectories.
 
-No corpus or CUDA context is opened. This control does not allocate/reuse a
-device region, execute a complete Runtime retirement or test its failure
-boundary. The next implementation must bind and seal the representation in
-the real owner before any new actual-device qualification is justified.
+No corpus or CUDA context is opened. This passive control does not allocate/
+reuse a device region, execute a complete Runtime retirement or test its
+failure boundary. Those are the separate implementation obligations below.
 The static-invariant and rational/relation branches remain closed.
+
+## Complete owned representation
+
+`TokenCudaPrefixContract.archive_workspaces` is exact-boolean and default off.
+It requires the existing generation-reuse arena and shared complete retention
+in both roles. Backend, primitive schedule, G/Gamma/U, numerical allowances,
+source/persistence rules and installation authority do not change. This is
+a physical storage lowering within the existing realization contract.
+
+After a successful observation, `token_workspace_archive.prepare` proposes
+private historical views for the seven numeric fields of every leaf and the
+four numeric fields of the materialized basis. Each image contains its exact
+shape/dtype/bytes, source capture-phase identity/index/field path, and original
+allocation generation/region/view extent. A weak binding identifies the actual
+owner without a reference cycle. Incidence arrays and causal metadata remain
+original and freshly checked. Current masters, prepared operands, forecasts
+and **every actual carry block** retain their real tensor objects.
+
+The proposal is checked independently against the newly checked full raw state
+and the original device geometry. An equal-valued replacement for a live root
+is refused. Prior image bodies are saved before the producer runs and cannot
+be rewritten by it. A further full decoded capture checks all current operands
+and historical fields before publication. This adds one live-state capture
+per successful observation; it is not the old raw-call schedule unchanged.
+
+Images enter the complete owned phase frame, including source/geometry and
+owner-binding facts in its execution plan. Actual frame encoding/admission
+must fit the existing frame allowance. Runtime retains that frame, seals the
+arena phase and accepts it before the proposal can become a continuation root.
+No retirement happens inside the image producer. Snapshots expose only builtin
+immutable image values, including the owner-binding relation, for every retained
+private resident/proposal. They never expose a private image wrapper or a tensor.
+
+The successful observation consumes its outstanding forecast: its entry is
+removed from `predicted` only after acceptance. The complete forecast phase
+remains retained. The next collector therefore follows every current, staged
+and outstanding-forecast root and its aliases, while every failed
+or unsealed generation remains pinned. It invalidates historical generations
+before physical reuse and retains allocation/alias/retirement history. A leaf
+field can become an image while its former allocation remains live through a
+carry root. Fresh current-root checks continue to detect any changed word.
+
+Complete historical diagnostics decode image words rather than dereferencing
+a retired address. Every later numerical pre/post check still freshly reads
+the actual live arrays. Work is prepaid by the existing complete phase tariff
+plus `16 * phase_evidence_bytes + 1024 * (7 * update_unit + 4)` for image walks,
+binding and additional capture. This is a declared primitive tariff, not a
+Python heap or bit-time theorem. Exact image payloads fit the actual admitted
+phase frames; shared pages/dependencies retain both-role leases. The enforced
+whole-process host limit also covers Python objects and temporary encodings.
+Exhaustion refuses rather than deleting images, skipping checks or raising caps.
+
+Preparation/retention failure leaves the old learner and current authority
+intact, retains the revealed target and all unsealed work, and closes further
+execution. Typed invalid proposals retain a failed phase and their complete
+proposal image. A partial retirement metadata failure is terminal even after
+some historical generations have been invalidated. No such failure can regain
+successful continuation authority.
+
+## Complete CPU owner qualification
+
+`scripts/audit_owned_token_workspaces.py` substitutes only physical device
+binding, using actual Torch CPU tensors, the real generation arena and the
+complete Runtime/bridge/retention/reporting paths. All 21 paired histories pass:
+363 numerical phase bodies/15,064,144 bytes agree after excluding only the new
+archive plan field, as do 136,391 checked primitive words, all learners/reports
+and cumulative buddy allocations. Cases include all four-target binary words,
+unit sizes 1/2/4/8, multiple commits, reverse/repeated original-record profiles
+and one pair combining grouped reads, composed native bounds and owned facts.
+
+Actual generation retirement and stale-view refusal pass. Old sealed records
+remain unchanged; public snapshot replacement has no image authority. Zeroing
+an actual live common carry still refuses the next phase. Unpaid work, forged
+image words/geometry/owner, substituted live roots, preparation MemoryError,
+retention refusal/MemoryError and partial-retirement MemoryError all preserve
+the old learner and close continuation. Missing reuse/shared retention and a
+non-boolean option refuse at registration. The old reuse regression and default
+prefix-cost audit also pass.
+
+The minimal `FP_OWNED_TOKEN_WORKSPACES_CPU.json` retains the counts. Peak live
+buddy bytes in the unit-four and unit-eight examples fall 5,712 to 5,128 and
+6,576 to 5,352. Aggregate raw calls fall 123,326 to 118,015 and raw bytes
+2,328,076 to 2,228,500, while complete frame bytes rise 15,064,144 to 16,512,140.
+These raw counters exclude initialization and grouped transfers. They are no
+total-I/O, timing, fixed-budget dominance or actual-device claim.
+
+## Fixed first CUDA comparison
+
+`scripts/run_archived_workspaces_cuda_a1.py` is registered before its first
+launch. It uses only the already declared first 1,024 training bytes and first
+16 targets. Two fresh workers run in order `resident`, then `archived`, each
+inside a preattached 240-second/16-GiB Windows job. Both keep the original
+V=50,257, L=512, D=4, K=8, unit=512 resource fixture with 603,092 masters,
+1-GiB device arena/reservation, 2-GiB reference payload, 64-MiB phase frame,
+2^22 output-cell bound, 4,096 exact-cell bound, state tolerance 16 and
+probability/division tolerance 10^-6. Both enable generation reuse, 64 MiB of
+owned canonical images and 4 MiB of qualified token-base facts. Grouped reads
+and composed native bounds stay off. Only workspace archival differs.
+
+Both arms use the same lightweight phase hook to keep the first actual event
+value view and its issued generation, with no inner arithmetic profiler. Both
+must preserve 33 checked phases, all original contexts/targets, 16 pending
+records, no optimizer commit and identical checked primitive/cumulative
+allocation counts. Initialization is timed separately from ordinary calls.
+
+After timing, the resident arm must still accept that view. The archived arm
+must have retired its generation and refuse the old view; read-only test
+instrumentation then observes that its actual bytes have been overwritten.
+Those bytes never reenter a learner. The complete original event image must
+remain unchanged. The archived arm then zeros an **actual live common carry**;
+the next prediction must retain a failed phase with changed live words, the
+original historical image, prior sealed record, old learner and cursor 16,
+without a successful successor.
+
+The exclusive `FP_ARCHIVED_WORKSPACES_CUDA_A1.json` records the clean committed
+source, original worker identities, caps and device evidence. Commit before
+launch. Never replay a terminal or partial journal, raise a failed cap or
+replace a failed worker. Judge the one ordered pair's total ordinary-call time
+and live-storage measurements at its original outcome. No full-unit benefit,
+general speedup, affordable training or language score follows. Close this
+finite qualification afterward; further work must target ordinary learning
+cost on evidence, with Foundation/ERC and the relation/rational branch closed.

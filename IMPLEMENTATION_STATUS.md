@@ -2,16 +2,24 @@
 
 ## Current token execution boundary (2026-09-28)
 
-The [workspace liveness proof](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md) and
-`audit_token_workspace_liveness.py` establish a numerical read boundary, with
-152 passive paired CPU histories/742,504 matching output words and exact
-reconstruction of all 640 pending diagnostics. Old event arrays/incidences
-and the prior basis are blocked; actual carry-root aliases remain accessible.
-The finite alias counterexample refutes freeing all arrays of archived leaves.
-Production `Resident.raw`, tensor enumeration, phase retention and collection
-are unchanged. The proof grants no Runtime retirement or actual CUDA authority.
-Integration must retain immutable owned images, complete root/generation
-metadata and all failure pins before changing what remains device-resident.
+The [workspace liveness lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
+is implemented/default off as `archive_workspaces`, requiring generation reuse
+and shared retention in both roles. The existing numerical read boundary keeps
+all actual carry aliases, masters and prepared operands live. Checked historical
+leaf/basis images retain every word, source and allocation geometry in complete
+phase state. Independent proposal validation, owned sealing/acceptance and
+fresh live checks precede retirement. Only consumed forecasts leave the root
+map; their complete phase records stay. No new semantic action is introduced.
+
+The complete CPU audit passes 21 paired histories/363 numerical phase bodies,
+identical learners/reports and cumulative allocations. New archive metadata
+is explicitly excluded from phase-byte equality. Stale views, changed live
+carries, forged proposals, unpaid work and preparation/retention/partial-
+retirement memory failures pass. Peak live storage falls in larger fixtures,
+while frame metadata and an extra fresh observation capture add cost. The
+first fixed full-V 16-target CUDA pair is registered but not launched; both
+arms use the qualified images/base facts and generation reuse. No device,
+whole-unit affordability or language-quality result follows from CPU controls.
 
 The optional [owned token base fact](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 is implemented as `SharedReferenceContract.token_invariant_bytes`, default 0.
@@ -30,7 +38,7 @@ Ordinary calls take 83.07391 versus 60.57797 seconds, a 27.07943% reduction in
 one ordered pair. All original limits and allocation history hold. This is
 no general/full-unit benefit or language result. The qualification is closed,
 default off, and its journal terminal. The numerical liveness boundary now
-has the separate proof above; no owned retirement lowering is implemented.
+has the separately qualified CPU owner lowering above; actual CUDA is pending.
 
 The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 is implemented/default off as `composed_native`. A private immutable binding

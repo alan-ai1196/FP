@@ -10802,3 +10802,48 @@ Runtime retirement implementation, CUDA result or feasibility certificate.
 The actual owned representation is the next required step; no new GPU job or
 static/relation variant follows from this passive result. Foundation/ERC and
 the ordinary-token research direction remain intact.
+
+
+## 317. Own historical workspace images while preserving every live alias (2026-09-28)
+
+The numerical continuation theorem now has a default-off complete Runtime
+lowering, archive_workspaces, requiring owned generation reuse and shared
+retention in both roles. Successful observations propose private exact images
+for old leaf/basis numeric fields. Independent validation binds fresh checked
+words to their actual source phase, owner and original allocation geometry;
+equal-valued live-root substitution is refused. An extra complete capture
+checks the proposal. Sealing/acceptance precede publication and retirement.
+
+All current master/prepared/carry arrays stay actual fresh operands, including
+leaf aliases. Successful observations remove only the consumed forecast from
+the outstanding root map; its complete record stays. Images, provenance,
+geometry, original allocation/retirement history and failure pins remain in
+complete state. Invalid proposals retain failed evidence; preparation,
+retention and partial-retirement failures cannot regain continuation authority.
+New work is prepaid, images fit admitted complete frames, and actual host
+objects remain subject to the whole-job cap. No FP semantic action changes.
+
+The complete CPU audit passes 21 paired histories, including commits, profiles,
+reporting and combined lowerings: 363 numerical phase bodies/15,064,144 bytes,
+136,391 checked primitive words, learners/reports and cumulative allocations
+agree. Only new archive plan metadata is excluded from body equality. Actual
+retirement/stale-view refusal, snapshot replacement, changed live carry, eight
+proposal/work/retention controls and partial-retirement MemoryError pass.
+The existing storage-reuse regression and default prefix-cost control pass.
+
+Unit-four and unit-eight fixture peaks fall 5,712 to 5,128 and 6,576 to 5,352
+live buddy bytes. Aggregate measured raw calls fall 123,326 to 118,015 and raw
+bytes 2,328,076 to 2,228,500, but retained frame bytes rise 15,064,144 to
+16,512,140. Counters exclude initialization and grouped transfers. These are
+finite CPU representation observations, not a total-I/O or timing theorem.
+FP_OWNED_TOKEN_WORKSPACES_CPU.json retains the minimal owner evidence.
+
+TOKEN_WORKSPACE_LIVENESS.md registers the first fixed actual comparison before
+launch. Both original full-V/unit512 workers use owned base facts/images and
+generation reuse with the same numerical/resource caps; only archival differs.
+The archived arm must retain original image words after actual generation
+retirement/address overwrite and must still refuse actual live-carry corruption.
+The exclusive new journal must start from clean committed source and cannot
+be replayed. Its original outcome will close this qualification; no relation,
+static-invariant or storage-variant expansion follows. Foundation/ERC remain
+frozen and ordinary-token learning affordability remains the research priority.

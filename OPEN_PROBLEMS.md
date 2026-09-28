@@ -10,7 +10,7 @@ changed-leaf refusal. Ordinary time falls 83.07391 to 60.57797 seconds, a
 no static-invariant sweep or long replay follows. It still does not establish
 affordable learning or remove repeated historical retention/live-state cost.
 
-**Current frontier: own the proved numerical liveness boundary.**
+**Current frontier: measure the owned numerical liveness boundary.**
 The [workspace continuation theorem](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 now proves that old leaf arrays/incidences and a prior basis need not be
 numerical inputs to future token operations. Their complete immutable images
@@ -18,16 +18,24 @@ still reconstruct every original diagnostic. Passive CPU controls pass 152
 paired histories and 742,504 output words. A concrete counterexample also
 proves that leaf storage can remain live through a carry alias.
 
-The remaining question is a complete owner implementation: seal the actual
-checked images before retirement, retain every value/provenance/alias and
-generation, account for later decoding/transfer, keep failed/unsealed pins
-and freshly check every remaining live root. Public frozen wrappers cannot
-supply trusted archived facts. Current Runtime capture/collection still use
-the old representation, and no actual-device qualification is registered.
-The theorem is neither a whole-resource equivalence nor a linear-time claim;
-growing live row support still requires fresh integrity observations under
-the declared word-read interface. Foundation/ERC and the closed rational/
-relation branch remain unchanged.
+The complete owner lowering now passes 21 paired CPU Runtime histories and
+363 numerical phase bodies, preserving learners, reports and cumulative
+allocation counts. Checked immutable images are sealed before generation
+retirement; all current aliases and failed/unsealed pins remain. Stale views,
+changed live carries, forged words/geometry/owner/live roots and retention or
+partial-retirement failures refuse. The default-off representation adds paid
+metadata and one fresh observation validation capture. CPU raw counts and peak
+live storage improve in finite fixtures; wall time and full-V benefit remain
+unmeasured. The first fixed 16-target CUDA pair is registered before launch,
+with identical qualified base facts/images, generation reuse and original
+model/numerical/resource limits in both arms. Close it at its original outcome.
+
+The theorem is neither whole-resource equivalence nor a linear-time claim.
+Growing live row support still needs fresh integrity observations under the
+declared word-read interface, and complete historical retention can still
+dominate. Do not turn this into a storage-variant sweep. Ordinary learning
+affordability and strong trained comparisons remain the objective; Foundation/
+ERC and the rational/relation branch remain closed.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

@@ -58,12 +58,13 @@ class LeafWords:
         closed(leaf, amp.Pending)
         closed(leaf.windows[0], TokenWindow)
         leaf.windows[0].__post_init__()
+        from .token_workspace_archive import capture
         fields = []
         for key in ('values', 'normalizer', 'target_mass', 'embedding_ids', 'embedding', 'core', 'common', 'correction_ids', 'corrections'):
             value = getattr(leaf, key)
             if key.endswith('_ids') and (type(value) is not np.ndarray or value.dtype != np.int64 or value.ndim != 1):
                 raise ContractError('complete exact int64 incidence coordinates required')
-            fields.append(tuple(map(int, value)) if key.endswith('_ids') else ArrayWords.capture(value, a))
+            fields.append(tuple(map(int, value)) if key.endswith('_ids') else capture(value, a))
         return cls(leaf.windows[0], leaf.targets[0], *fields)
 
     def cpu(self, origin):
@@ -247,8 +248,9 @@ class Resident:
         closed(b, stream.Basis)
         if any(type(ids) is not np.ndarray or ids.dtype != np.int64 or ids.ndim != 1 for ids in (b.embedding_ids, b.correction_ids)):
             raise ContractError('complete typed integer basis incidence required')
-        basis = (tuple(map(int, b.embedding_ids)), *(ArrayWords.capture(getattr(b, key), a) for key in ('embedding', 'core', 'common')),
-                 tuple(map(int, b.correction_ids)), ArrayWords.capture(b.corrections, a))
+        from .token_workspace_archive import capture
+        basis = (tuple(map(int, b.embedding_ids)), *(capture(getattr(b, key), a) for key in ('embedding', 'core', 'common')),
+                 tuple(map(int, b.correction_ids)), capture(b.corrections, a))
         return StateWords(origin, prepared, tuple(LeafWords.capture(leaf, a) for leaf in p.leaves),
             ForestWords.capture(p.core, a), ForestWords.capture(p.common, a),
             tuple((key, ForestWords.capture(value, a)) for key, value in p.embedding),
@@ -278,9 +280,12 @@ class Resident:
         for key in ('theta', 'totals', 'base', 'base_total'):
             add('prepared:'+key, getattr(self.prepared, key))
         if type(self.state) is stream.Pending:
+            from .token_workspace_archive import archived
             for index, leaf in enumerate(sequence(self.state.leaves)):
                 for key in ('values', 'normalizer', 'target_mass', 'embedding', 'core', 'common', 'corrections'):
-                    add(f'leaf:{index}:{key}', getattr(leaf, key))
+                    value = getattr(leaf, key)
+                    if not archived(value):
+                        add(f'leaf:{index}:{key}', value)
             forests = chain((self.state.core, self.state.common),
                 (f for _, f in sequence(self.state.embedding)), (f for _, f in sequence(self.state.corrections)))
             for i, forest in enumerate(forests):
@@ -288,7 +293,9 @@ class Resident:
                 for j, block in enumerate(sequence(forest.blocks)):
                     add(f'forest:{i}:{j}', block.value)
             for key in ('embedding', 'core', 'common', 'corrections'):
-                add('basis:'+key, getattr(self.basis, key))
+                value = getattr(self.basis, key)
+                if not archived(value):
+                    add('basis:'+key, value)
         return tuple(rows)
 
 

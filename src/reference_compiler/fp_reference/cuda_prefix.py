@@ -173,6 +173,7 @@ class TokenCudaPrefixContract(CudaPrefixContract):
     reuse_regions: bool = False
     grouped_reads: bool = False
     composed_native: bool = False
+    archive_workspaces: bool = False
     forward_id: str = field(default='', init=False)
 
     def _arithmetic_ids(self):
@@ -180,8 +181,10 @@ class TokenCudaPrefixContract(CudaPrefixContract):
         closed(self.initializer, TokenInitializer)
         self.initializer.__post_init__()
         natural(self.exact_cell_cap, 'token exact rounding-cell allowance')
-        if any(type(v) is not bool for v in (self.reuse_regions, self.grouped_reads, self.composed_native)):
+        if any(type(v) is not bool for v in (self.reuse_regions, self.grouped_reads, self.composed_native, self.archive_workspaces)):
             raise ContractError('exact token storage/readback/native-solver registration required')
+        if self.archive_workspaces and not self.reuse_regions:
+            raise ContractError('workspace archives require owned generation retirement')
         if self.reuse_regions and (type(self.storage) is not CudaStorageContract
                 or self.storage.arena_bytes & (self.storage.arena_bytes-1)):
             raise ContractError('token reuse requires a power-of-two backing extent')
@@ -191,7 +194,8 @@ class TokenCudaPrefixContract(CudaPrefixContract):
                 'prepaid-complete-token-array-graph-and-cache-relation-v1'+
                     ('+sealed-token-generation-reuse-v1' if self.reuse_regions else '')+
                     ('+grouped-fresh-resident-readback-v1' if self.grouped_reads else '')+
-                    ('+owned-token-native-gradient-forest-v1' if self.composed_native else ''),
+                    ('+owned-token-native-gradient-forest-v1' if self.composed_native else '')+
+                    ('+owned-sealed-token-workspace-images-v1' if self.archive_workspaces else ''),
                 'token-half-single-one-event-explicit-arena-arrays-v1')
 
     def __post_init__(self):
@@ -246,6 +250,7 @@ class CudaPrefixSnapshot:
     storage: object
     device: CudaDeviceSnapshot
     native_bounds: tuple = ()
+    archived_workspaces: tuple = ()
     scope: str = field(default='owned executed CUDA prefix and exact forecasts; range/persistence authority belongs to Runtime identities; no installation or total-device authority', init=False)
 
 
@@ -455,10 +460,13 @@ class _CudaPrefix:
 
     def snapshot(self):
         try:
+            from .token_workspace_archive import images
             return CudaPrefixSnapshot(self.contract, tuple(self.current.items()), tuple(self.staged.items()),
                                       tuple(self.predicted.items()), tuple(self.phases.values()), self.arena.snapshot(),
                                       self._device.snapshot(),
-                                      tuple(self._native_bounds.items()) if self.token and self.contract.composed_native else ())
+                                      tuple(self._native_bounds.items()) if self.token and self.contract.composed_native else (),
+                                      tuple((key, images(value, owner=self)) for key, value in self._values.items())
+                                      if self.token and self.contract.archive_workspaces else ())
         except MemoryError:
             raise
         except Exception:
@@ -647,3 +655,8 @@ class _CudaPrefix:
             self.predicted[record.candidate_id] = record.object_id
         elif record.phase != 'report:readout':
             self.staged[record.candidate_id] = record.object_id
+            if self.token and self.contract.archive_workspaces and record.phase.endswith(':observe'):
+                # This forecast has been consumed by its sealed observation.
+                # Its full words/identity remain in the phase record, but no
+                # legal next target can use it as an outstanding forecast.
+                self.predicted.pop(record.candidate_id)

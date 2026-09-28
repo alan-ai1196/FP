@@ -166,6 +166,8 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
             raise ContractError('owned readout requires a frozen committed reporting forecast')
         if before is not None:
             closed(before, Resident)
+            from .token_workspace_archive import require as require_archives
+            require_archives(prefix, before)
             for _, tensor in before.tensors():
                 prefix.arena.require_initialized(tensor)
             before_raw = before.raw()
@@ -244,6 +246,27 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
     result_raw = None if result is None else result.raw()
     if result_raw is not None and input_id is not None:
         result_raw = share_state_bytes(result_raw, prefix.phases[input_id].raw_state)
+    archive_proposal = None
+    if cfg.archive_workspaces and error is None and kind == 'observe':
+        from .token_workspace_archive import prepare as archive_workspaces, images, validate as validate_archive
+        try:
+            if actual_raw != result_raw:
+                raise ContractError('workspace archival words changed after their complete numerical check')
+            prior_images = images(result, owner=prefix)
+            proposed = archive_workspaces(prefix, object_id, workspace.index, result, result_raw)
+            archive_proposal = images(proposed, owner=prefix)
+            validate_archive(prefix, object_id, workspace.index, result, proposed, result_raw, prior_images)
+            # A helper may not substitute equal-valued but differently owned
+            # live operands. Independently check its full decoded value.
+            if proposed.raw(a) != result_raw:
+                raise ContractError('workspace proposal changed live operands or complete checked words')
+            result = proposed
+        except MemoryError:
+            raise
+        except Exception as exc:
+            # Keep the actual unarchived resident and every unsealed pin. A
+            # failed proposal is evidence, never a next continuation root.
+            error = exc
     # Snapshots expose these records directly. Detach producer mappings before
     # publication; sealed bytes cannot protect a separately writable live record.
     # The fresh plan contains only immutable scalars and a frozen TokenWindow.
@@ -257,6 +280,11 @@ def execute(prefix, object_id, kind, program, candidate, reference, *, rules, sp
         # private immutable binding image was derived. Retain the full new
         # solver cache as well, including a proposal preceding a failed phase.
         plan['native_gradient_cache'] = (VERSION, None if entry is None else entry[1])
+    if cfg.archive_workspaces:
+        from .token_workspace_archive import VERSION as ARCHIVE_VERSION, images
+        plan['archived_workspaces'] = (ARCHIVE_VERSION, images(result, owner=prefix))
+        if error is not None and archive_proposal is not None:
+            plan['failed_workspace_archive_proposal'] = archive_proposal
     record = IndexedCudaPhase(object_id, candidate, program.program_id, origin+':'+kind,
         ordinary_cursor, observation_id, input_id, prediction_id, reference, reference_prediction,
         result_raw, None if actual_prediction is None else actual_prediction.raw(),

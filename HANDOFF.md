@@ -2,18 +2,25 @@
 
 ## Current execution state (2026-09-28)
 
-The [token workspace liveness theorem](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
-now separates numerical continuation operands from complete historical values.
-Future token arithmetic uses masters, prepared operands and carry roots;
-old leaf arrays/incidences and the prior materialized basis can be inaccessible
-while complete immutable images reconstruct their diagnostics. A passive CPU
-control passes 152 paired histories/640 observations/348 commits and 742,504
-identical output words. This is not a Runtime retirement implementation.
-The alias counterexample is decisive: archiving a leaf and then overwriting
-its still-live carry storage changes the next root from 3 to 2. The actual
-owner must seal images, preserve all provenance and alias/generation history,
-keep failure pins, and freshly check every remaining live operand. That
-integration is the current ordinary-token frontier; no GPU run is registered.
+The [token workspace liveness theorem and owner lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
+now separate live numerical operands from complete historical values. The
+default-off `archive_workspaces` path seals checked leaf/basis images before
+retiring unneeded device generations. Current masters, prepared operands and
+all carry aliases stay live and freshly checked. Full image words, provenance,
+geometry, both-role retention and failure pins remain in complete state.
+The original alias counterexample still prohibits freeing all leaf storage.
+
+Complete CPU controls pass 21 paired Runtime histories: 363 numerical phase
+bodies/15,064,144 bytes, learners, reports and cumulative allocations agree.
+Actual retirement/stale-view refusal, changed live carry, forged proposals,
+retention failures and partial-retirement MemoryError pass. The unit-eight
+fixture's peak live buddy bytes fall 6,576 to 5,352, but retained metadata and
+an extra observation validation capture cost more; no timing claim follows.
+The first fixed device pair is registered in the proof and
+`run_archived_workspaces_cuda_a1.py`: both use qualified base facts/images,
+generation reuse and unchanged full-V/unit512 limits, with only archival
+different. Commit before launch; its absent journal has never been run. Close
+the qualification at its original result rather than expanding storage variants.
 
 Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
 reuse the declared immutable base's positivity and exact sum while preserving
@@ -29,7 +36,7 @@ words, including actual changed-leaf refusal. Ordinary time falls 83.07391 to
 or full-unit claim. `FP_TOKEN_BASE_FACTS_CUDA_A1.json` is terminal; never replay
 it. This qualification is closed/default off. No further static-invariant
 variant or long run is due. The numerical liveness result above advances the
-remaining representation question; owned retirement is still unimplemented.
+remaining representation question; complete CPU ownership now passes above.
 Ordinary-token affordability remains the priority; the rational/relation
 branch, Foundation and ERC stay closed.
 
@@ -72,7 +79,7 @@ reevaluates B(3B+1)/2 native event rows and performs B(7B+1)/2 physical leaf
 captures. At B=512 these imply 393,472 native rows and 6,424,320 leaf-array
 raw calls. Complete CPU Runtime traces confirm every step across eight
 units. These are current-implementation counts, not FP or wall-time lowers.
-Those raw-call counts apply to the original separate-copy path. The grouped
+Those raw-call counts apply to the original separate-copy, unarchived path. The grouped
 lowering above addresses transport granularity; native prefix recomputation
 is still unchanged. Further image/cache variants do not address this growth.
 
