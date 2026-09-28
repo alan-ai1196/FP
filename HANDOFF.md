@@ -25,6 +25,14 @@ is terminal; never replay it. This qualification is closed/default off.
 Reassess the remaining complete validation/retention cost toward an affordable
 ordinary-text budget; no storage-variant sweep or long replay is justified.
 
+The [current-path CPU cost diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
+is registered, not launched. It profiles the first and sixteenth events of one
+bounded original 16-target history with qualified facts/images and generation
+reuse. Five non-overlapping call subtrees separate numerical execution, frame
+writing/preparation and retention. The old profile predates base-fact reuse.
+Commit before launch; retain the original outcome in its exclusive journal.
+No further optimization or training budget is selected before this diagnosis.
+
 Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
 reuse the declared immutable base's positivity and exact sum while preserving
 the original ordered arithmetic guards. The final sum alone is insufficient:

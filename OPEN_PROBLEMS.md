@@ -43,6 +43,12 @@ must identify the remaining end-to-end validation/retention cost and a feasible
 ordinary-text budget. Strong trained comparisons remain the objective;
 Foundation/ERC and the rational/relation branch remain closed.
 
+The [fixed current-path CPU diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
+is registered before launch. It samples the first and sixteenth events with
+qualified base facts/images, preserving complete Runtime checks and separating
+five non-overlapping call subtrees. Its original bounded outcome should select
+the next research target; it supplies no CUDA/full-unit throughput estimate.
+
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete
 unit evaluates2B native event rows, including the unchanged batch commit,

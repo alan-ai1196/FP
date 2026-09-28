@@ -10890,3 +10890,26 @@ Reassess the remaining complete validation/retention cost and a feasible text
 budget, rather than deepen the static/relation/storage branches or launch a
 long replay. Full-unit benefit remains unmeasured. Strong trained baselines
 remain mandatory; Foundation/ERC stay frozen.
+
+
+## 319. Register a current-path cost diagnosis before choosing another lowering (2026-09-28)
+
+The old CPU profile predates qualified base-fact reuse. The latest actual
+workspace pair passes its value/owner controls but gives no early-prefix time
+or peak-storage benefit. Another source-count improvement or long experiment
+is therefore not justified without locating the remaining measured cost.
+
+CURRENT_TOKEN_COST.md and probe_current_token_cost.py register one 240-second/
+8-GiB CPU worker before launch, retaining the original full-V/unit512 model,
+checks and first 16 targets. Qualified base facts/images and generation reuse
+match the latest resident arm. Actual Torch CPU tensors replace only device
+binding; no CUDA context is allowed. Separate profiles at event indices 0 and
+15 report five source-identified non-overlapping subtrees, with caller-graph
+checks against double counting, plus leading functions and total call counts.
+All 33 checked phases, 4,541,709 primitive words and original records remain
+required. The exclusive new journal retains the original result without replay.
+
+This is a bounded instrumented diagnosis, not a performance improvement,
+CUDA timing, asymptotic theorem or whole-training budget. It selects the next
+ordinary-token problem after the static/relation/storage qualifications close;
+Foundation/ERC remain unchanged. No new semantic action is proposed.
