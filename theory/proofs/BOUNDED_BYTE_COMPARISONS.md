@@ -1,6 +1,6 @@
 # Exact archive comparisons through bounded byte copies
 
-Status: **CONDITIONAL PRESERVATION LAW; EXACT AND COMPLETE CPU CONTROLS PASS**.
+Status: **CONDITIONAL PRESERVATION LAW; CPU AND FINITE CUDA PASS; COMPARISON CLOSED**.
 This is an implementation of the same full byte comparisons. It changes no
 FP semantics, codec, canonical grammar, image policy, registration option or
 certificate class. Foundation/ERC and the rational/relation closure remain.
@@ -131,3 +131,48 @@ must never be replayed or given a raised cap. One ordered pair can establish
 only its finite correctness and timing observation. Close that qualification
 at its result; no comparison-variant sweep, full-unit replay or useful language
 training budget follows without further evidence.
+
+## Original actual result and closure
+
+Both original workers from `bfb4ce7f1dcb22b67b818eab05bb2e1f9b16bf29` pass
+under their fixed 240-second/16-GiB jobs on the declared RTX 3090. Each timed
+prefix retains all 33 checked phases/4,541,709 primitive words, 16 original
+records, 16 pending targets and zero commits. The baseline loads only the
+two original comparison functions from `d37f939`; every other implementation
+and registration coordinate is current and identical.
+
+| Original measurement | Original comparisons | Copied comparisons |
+| --- | ---: | ---: |
+| Initialization seconds | 7.8419225 | 7.4388145 |
+| All 32 ordinary calls, seconds | 55.5062677 | 44.2221330 |
+| First eight targets, ordinary seconds | 26.7723744 | 21.1186151 |
+| Last eight targets, ordinary seconds | 28.7338933 | 23.1035179 |
+| Peak whole-job committed bytes | 3,583,930,368 | 3,584,421,888 |
+
+The ordinary-time ratio is 1.2551694, a 20.32948% observed reduction in this
+single ordered pair. Both timed prefixes retain 118 pages/19,617,149 actual
+page bytes, with paid-reference peak 272,951,974 bytes. Both retain 336 images/
+67,102,758 bytes. All actual/current/lifetime device accounting remains one
+1-GiB tensor allocation and reservation. Through the additional fault control,
+both cumulative arena allocations are 37,561,152 bytes, peak live arena bytes
+24,214,064 and maximum used extent 24,379,392. Whole-job peaks include the
+same extra controls; their small difference is not a memory-efficiency claim.
+
+The last positive observation's full 67,108,864-byte frame matches its
+14,902,899-byte uncached actual phase body and all zero padding. After the
+seventeenth original target is revealed, deliberately changing the frame
+producer's first byte causes the independent comparison to reject in both
+arms. Each retains that actual target, old learner/cursor 16, the full failed
+64-MiB frame and 317 unsealed generation pins. There are 35 phase records,
+with the last `EXECUTION_FAILED`; the Runtime is terminal. The post-control
+paid-reference peak is 273,189,552 bytes in both arms.
+
+`FP_BYTE_COMPARISONS_CUDA_A1.json` is terminal with original process/device
+identities and per-call times. This finite qualification is closed and must
+never be replayed. It establishes a useful reduction on this trace, not a
+statistical/general speedup, later-unit scaling or an affordable training
+budget. The later half remains slower in both arms; two prefix aggregates
+do not establish its growth law. Remaining canonical stream production,
+complete-state traversal and later-unit validation still deserve the next
+ordinary-token investigation. No comparison-variant sweep, new model/cache
+menu, semantic relaxation or full-unit replay follows from this pair alone.

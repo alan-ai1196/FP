@@ -8,9 +8,13 @@ independent expected traversal, codec and retained bytes. Exact controls pass
 131,090 candidate and 70,246 stream decisions; six paired complete histories
 preserve 129 phase bodies and all 441 actual archive pages. Four new-copy
 MemoryError boundaries and the existing producer/relocation faults pass.
-The first fixed actual comparison is registered, not launched. The law is
-restricted to the existing unsigned-byte/stable-input owner interface; it is
-not a general typed-view conversion or a new certificate class.
+Both original RTX 3090 workers at `bfb4ce7` pass 33 phases/4,541,709 words;
+ordinary time falls 55.50627 to 44.22213 seconds, a 20.32948% reduction in one
+ordered pair. Paid retention and arena totals agree. Both validate an uncached
+complete phase and reject corrupted evidence after the seventeenth target,
+preserving target, old learner and unsealed pins. The qualification is closed
+and its journal terminal. The law stays restricted to the existing unsigned-
+byte/stable-input interface; no general speedup or new certificate class follows.
 
 The [canonical-image snapshot binding repair](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 detaches every exported `Image` wrapper from the private source-to-buffer index.

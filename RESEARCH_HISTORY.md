@@ -11080,3 +11080,40 @@ copied comparison functions differ. After timing, an uncached complete-frame
 check and corrupt-frame refusal after the seventeenth original target must
 pass. The exclusive original journal cannot be replayed. This attacks remaining
 ordinary-token retention cost; it does not reopen Foundation/ERC or relations.
+
+
+## 325. Measure a 20.33% finite reduction with unchanged exact byte checks (2026-09-28)
+
+Both original actual workers from bfb4ce7f1dcb22b67b818eab05bb2e1f9b16bf29
+pass their fixed 240-second/16-GiB jobs. Each timed full-V/unit512 prefix keeps
+33 checked phases/4,541,709 primitive words, 16 original records, 16 pending
+targets and zero commits. The predecessor arm changes only the two comparison
+functions to d37f939; all other current implementation and registration remain.
+
+Ordinary time is 55.5062677 versus 44.2221330 seconds, a 20.32948% observed
+reduction in one ordered pair. Initialization is 7.8419225/7.4388145 seconds;
+first-eight times are 26.7723744/21.1186151 and last-eight 28.7338933/23.1035179.
+Both timed prefixes retain 118 pages/19,617,149 actual bytes, with paid-reference
+peak 272,951,974 bytes. Both retain 336 images/67,102,758 bytes. Whole-job peaks
+are 3,583,930,368/3,584,421,888 bytes including the same post-timing controls;
+their difference is not a memory-efficiency conclusion. All actual/lifetime
+CUDA counters remain one 1-GiB allocation/reservation. Cumulative arena bytes
+through the control are 37,561,152, peak live 24,214,064 and max extent 24,379,392
+in both arms.
+
+Each last positive frame independently matches its 14,902,899-byte uncached
+actual phase plus complete padding in the 64-MiB frame. After the seventeenth
+original target is revealed, changing the producer's first frame byte causes
+independent comparison refusal in both arms. The target remains retained;
+learner/cursor 16 remain; the full failed frame and 317 unsealed generation
+pins remain owned. The 35th phase is EXECUTION_FAILED and the Runtime terminal.
+The post-control paid-reference peak is 273,189,552 bytes in both workers.
+
+FP_BYTE_COMPARISONS_CUDA_A1.json is terminal with original identities and
+per-call times; never replay it. The bounded comparison question is closed.
+This result is useful progress on ordinary-token affordability, not a general
+or later-unit speedup, a growth law or an affordable training budget. The later
+half remains slower in both arms. Remaining canonical production, complete-
+state traversal and later-unit validation warrant the next attack; no new
+comparison variant, semantic relaxation, model/cache menu or long replay is
+justified by this pair alone. Foundation/ERC and relation closure remain.

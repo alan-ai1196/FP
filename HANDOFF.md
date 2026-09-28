@@ -10,9 +10,15 @@ view and mutable-input counterexamples explicitly delimit the law. All
 131,090 candidate decisions, 70,246 partition decisions, 129 complete phase
 bodies and 441 actual archive pages agree with the predecessor. Four new-copy
 MemoryErrors preserve targets and old learners. No new cache or codec is added.
-The fixed 16-target RTX 3090 comparison is registered, not launched; both arms
-include uncached-frame validation and a corrupted-frame refusal after the
-seventeenth original target. Commit before launch; never replay its journal.
+Both original 16-target RTX 3090 workers at `bfb4ce7` now pass 33 phases/
+4,541,709 words. Ordinary time falls 55.50627 to 44.22213 seconds, a 20.32948%
+observed reduction in one ordered pair, with identical paid retention and
+arena totals. Both pass uncached-frame validation and corrupted-frame refusal
+after the seventeenth original target, retaining the target, old learner and
+317 unsealed pins. The comparison is closed and its journal terminal; never
+replay it. Later-unit cost and an affordable text budget remain unestablished.
+Continue toward ordinary-token learning through remaining complete-state
+traversal/stream-production cost; no comparison-variant sweep is due.
 
 A [public canonical-image binding alias](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 was found while auditing extent work. Changing only returned snapshot metadata

@@ -1,14 +1,17 @@
 # FP Open Problems
 
-The next fixed ordinary-token execution is the
-[bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md).
-Exact and complete CPU controls now preserve the predecessor's decisions,
-iterator reads, phase bodies and actual archive pages. Two bounded local
-copies could make the same full comparisons cheaper without changing the
-codec, expected stream or semantic state. The first actual old/copied pair is
-registered before launch with all current numerical/ownership checks and a
-post-target corrupt-frame refusal. Close its original result before selecting
-another cost change or training budget; no comparison-variant sweep is due.
+The fixed ordinary-token
+[bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
+is closed at its original successful result. Exact and complete CPU controls
+preserve the predecessor's decisions, iterator reads, phase bodies and actual
+archive pages. Two bounded local
+copies make the same full comparisons cheaper in the fixed actual trace:
+55.50627 to 44.22213 seconds, a 20.32948% observed reduction in one pair, with
+identical paid retention and arena totals. Both workers pass an uncached
+complete-frame check and post-target corrupt-frame refusal. The journal is
+terminal; never replay it. The remaining ordinary-token question is complete
+stream production/traversal and later-unit cost toward a feasible training
+budget. No comparison-variant sweep, model/cache menu or full-unit replay is due.
 
 The [canonical-image public binding counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
 takes correctness priority over extent timing. A returned snapshot shared
@@ -69,8 +72,9 @@ declared word-read interface, and complete historical retention can still
 dominate. Source-count improvements alone have not established affordability:
 native composition, grouped reads and archival pass their preservation gates
 but show no substantial early-prefix time benefit. Qualified base-fact reuse
-helps; direct extents now bring the 16-target trace to about 55 seconds. The
-next research must address remaining validation/retention cost and a feasible
+helps; direct extents and byte comparisons bring the latest trace to about
+44 seconds for 16 targets. The next research must address remaining
+validation/retention cost and a feasible
 ordinary-text budget. Strong trained comparisons remain the objective;
 Foundation/ERC and the rational/relation branch remain closed.
 

@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Bounded byte comparisons: CONDITIONAL PRESERVATION LAW; COMPLETE CPU PASS.**
+**Bounded byte comparisons: CONDITIONAL PRESERVATION LAW; CPU AND FINITE CUDA PASS.**
 The [proof and counterexamples](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
 preserve exact interning decisions, comparison credit, independent iterator
 order and complete retained bytes for the actual unsigned/stable view class.
@@ -9,8 +9,13 @@ cover 131,090 candidate and 70,246 stream decisions; six complete paired
 histories preserve 129 phase bodies and all 441 actual archive pages. Added
 copy work is bounded by C+2D for charged candidate bytes C and decoded extent D;
 the local extra live payload is at most 16 KiB. Existing charges remain.
-Copy-allocation failures stay terminal. No actual speedup or new certificate
-authority follows; the first fixed device comparison is registered, not launched.
+Copy-allocation failures stay terminal. Both original RTX 3090 workers at
+`bfb4ce7` preserve 33 phases/4,541,709 words and pass uncached-frame and
+post-target corrupt-frame controls. Ordinary time falls 55.50627 to 44.22213
+seconds, a 20.32948% observed reduction in one ordered pair, with identical
+paid retention and arena totals. The comparison is closed and its journal
+terminal. No general/later-unit speedup, affordable training or new certificate
+authority follows.
 
 **Canonical-image public binding isolation: OLD CLAIM FALSIFIED IN THE SNAPSHOT-MUTATION CLASS; CPU REPAIR PASS.**
 The [counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md) changes
