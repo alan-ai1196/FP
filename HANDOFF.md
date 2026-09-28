@@ -26,12 +26,14 @@ Reassess the remaining complete validation/retention cost toward an affordable
 ordinary-text budget; no storage-variant sweep or long replay is justified.
 
 The [current-path CPU cost diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
-is registered, not launched. It profiles the first and sixteenth events of one
-bounded original 16-target history with qualified facts/images and generation
-reuse. Five non-overlapping call subtrees separate numerical execution, frame
-writing/preparation and retention. The old profile predates base-fact reuse.
-Commit before launch; retain the original outcome in its exclusive journal.
-No further optimization or training budget is selected before this diagnosis.
+now completes at `075eba1`: all 33 phases/4,541,709 words and 16 original targets
+pass, with no CUDA context. Four profiles at the first/sixteenth events total
+22.10259 seconds/79,492,456 calls. Disjoint retention/preparation/writing costs
+take 18.46728 seconds (83.55254%); numerical execution takes 13.94965%. These
+are instrumented CPU observations, not GPU fractions or a full-unit budget.
+Its exclusive journal is terminal. The next target is exact canonical encoding
+work under unchanged bytes, guards, field observations and independent checks.
+No new model/storage cache or relaxed evidence contract is justified.
 
 Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
 reuse the declared immutable base's positivity and exact sum while preserving

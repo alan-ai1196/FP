@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Remaining token cost: FINITE INSTRUMENTED CPU OBSERVATION.**
+The [current-path diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
+preserves all 33 phases/4,541,709 words at `075eba1`. Four separate profiles
+total 22.10259 seconds and 79,492,456 calls. Disjoint retention/preparation/
+writing costs occupy 83.55254%; numerical execution occupies 13.94965%.
+No nested selected subtree is counted twice. This identifies canonical encoding
+work in these samples; it is no GPU fraction, universal lower or full-unit budget.
+The original journal is terminal and supplies no new certificate authority.
+
 **Token workspace liveness: NUMERICAL CONTINUATION THEOREM; CPU AND FINITE CUDA PASS.**
 The [exact class and limits](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md) preserve
 the existing token primitive sequence and commits when old event arrays and

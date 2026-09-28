@@ -44,10 +44,14 @@ ordinary-text budget. Strong trained comparisons remain the objective;
 Foundation/ERC and the rational/relation branch remain closed.
 
 The [fixed current-path CPU diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
-is registered before launch. It samples the first and sixteenth events with
-qualified base facts/images, preserving complete Runtime checks and separating
-five non-overlapping call subtrees. Its original bounded outcome should select
-the next research target; it supplies no CUDA/full-unit throughput estimate.
+now completes at `075eba1` with all 33 phases/4,541,709 words. Across four
+instrumented first/sixteenth-event samples, retention/preparation/writing costs
+take 83.55254% of wall time and numerical execution 13.94965%, using disjoint
+call subtrees. Canonical size guards, traversal, fragments and independent
+comparison remain prominent. The next concrete question is cheaper exact
+canonical extent calculation with the same bytes, guard decisions, field-read
+order and independent checks. The journal is terminal. These CPU fractions do
+not estimate GPU/full-unit throughput and justify no new model/cache contract.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

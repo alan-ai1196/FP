@@ -2,6 +2,14 @@
 
 ## Current token execution boundary (2026-09-28)
 
+The [current-path CPU diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
+completes at `075eba1` with qualified base facts/images and all existing checks.
+Four first/sixteenth-event samples attribute 83.55254% of instrumented wall
+time to disjoint retention/preparation/writing calls and 13.94965% to numerical
+execution. All 33 phases/4,541,709 words remain; no CUDA context is opened.
+Its terminal result selects canonical encoding/extent work as the next target.
+It is no GPU cost decomposition, changed contract or training-budget result.
+
 The [workspace liveness lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 is implemented/default off as `archive_workspaces`, requiring generation reuse
 and shared retention in both roles. The existing numerical read boundary keeps

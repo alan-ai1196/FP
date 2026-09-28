@@ -10913,3 +10913,27 @@ This is a bounded instrumented diagnosis, not a performance improvement,
 CUDA timing, asymptotic theorem or whole-training budget. It selects the next
 ordinary-token problem after the static/relation/storage qualifications close;
 Foundation/ERC remain unchanged. No new semantic action is proposed.
+
+
+## 320. Locate current token cost in complete canonical retention (2026-09-28)
+
+The original current-path CPU worker at 075eba1da7493582665b8801a61430ac02876be6
+completes under its 240-second/8-GiB job, with peak commitment 2,497,671,168
+bytes. All 33 phases, 4,541,709 primitive words, 16 original records and zero
+commits pass; no CUDA context is initialized. The qualified images/base facts,
+real CPU tensor generation arena and complete Runtime checks remain active.
+
+The four separate profiles at event indices 0 and 15 total 22.1025896 seconds
+and 79,492,456 calls. Disjoint reference retention, phase preparation, writing
+and frame retention total 18.4672755 seconds, 83.55254% of sample wall time.
+Numerical execution totals 3.0832335 seconds, 13.94965%; the rest is unassigned.
+All caller-graph controls confirm selected subtrees do not overlap. Canonical
+extent guards, size traversal, fragment production and independent comparison
+remain leading routines after base-fact reuse. These instrumented CPU shares
+do not estimate GPU cost or a whole-unit training budget.
+
+FP_CURRENT_TOKEN_COST_CPU_A1.json retains the original compact evidence and is
+terminal. The concrete next question is cheaper canonical extent calculation
+with the same bytes, guard decisions, field observation order and independent
+decoding checks. No model/static/storage cache or new semantic action follows.
+The research remains ordinary-token affordability under frozen Foundation/ERC.
