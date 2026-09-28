@@ -1,6 +1,19 @@
 # FP Handoff
 
-## Current execution state (2026-09-27)
+## Current execution state (2026-09-28)
+
+The [token workspace liveness theorem](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
+now separates numerical continuation operands from complete historical values.
+Future token arithmetic uses masters, prepared operands and carry roots;
+old leaf arrays/incidences and the prior materialized basis can be inaccessible
+while complete immutable images reconstruct their diagnostics. A passive CPU
+control passes 152 paired histories/640 observations/348 commits and 742,504
+identical output words. This is not a Runtime retirement implementation.
+The alias counterexample is decisive: archiving a leaf and then overwriting
+its still-live carry storage changes the next root from 3 to 2. The actual
+owner must seal images, preserve all provenance and alias/generation history,
+keep failure pins, and freshly check every remaining live operand. That
+integration is the current ordinary-token frontier; no GPU run is registered.
 
 Optional [owned token base facts](theory/proofs/OWNED_TOKEN_BASE_FACTS.md) now
 reuse the declared immutable base's positivity and exact sum while preserving
@@ -15,10 +28,8 @@ words, including actual changed-leaf refusal. Ordinary time falls 83.07391 to
 60.57797 seconds: a 27.07943% reduction in one ordered pair, with no general
 or full-unit claim. `FP_TOKEN_BASE_FACTS_CUDA_A1.json` is terminal; never replay
 it. This qualification is closed/default off. No further static-invariant
-variant or long run is due. Next, investigate whether sealed historical
-workspaces can leave the live device state while preserving all values,
-aliases, ownership, future queries and actual checks on remaining live arrays.
-That is an open representation question, not an implemented optimization.
+variant or long run is due. The numerical liveness result above advances the
+remaining representation question; owned retirement is still unimplemented.
 Ordinary-token affordability remains the priority; the rational/relation
 branch, Foundation and ERC stay closed.
 

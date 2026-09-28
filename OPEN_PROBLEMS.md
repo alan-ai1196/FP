@@ -10,17 +10,24 @@ changed-leaf refusal. Ordinary time falls 83.07391 to 60.57797 seconds, a
 no static-invariant sweep or long replay follows. It still does not establish
 affordable learning or remove repeated historical retention/live-state cost.
 
-**Next research question: live device state versus complete sealed history.**
-Can an already sealed event workspace leave device residency without losing
-any original words, source/target, incidence, alias or legal future query?
-Some event arrays may still alias current carry roots, so merely archiving a
-leaf and freeing its tensors is insufficient. Any lowering must prove actual
-liveness, retain immutable owned values, pay later decoding/transfer work,
-preserve failed/unsealed extents and keep fresh checks on every remaining
-live array. Public frozen wrappers cannot supply trusted archived facts.
-No new representation or retirement rule is proved or implemented yet. This
-question targets the ordinary workload; Foundation/ERC and the closed
-rational/relation branch are unchanged.
+**Current frontier: own the proved numerical liveness boundary.**
+The [workspace continuation theorem](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
+now proves that old leaf arrays/incidences and a prior basis need not be
+numerical inputs to future token operations. Their complete immutable images
+still reconstruct every original diagnostic. Passive CPU controls pass 152
+paired histories and 742,504 output words. A concrete counterexample also
+proves that leaf storage can remain live through a carry alias.
+
+The remaining question is a complete owner implementation: seal the actual
+checked images before retirement, retain every value/provenance/alias and
+generation, account for later decoding/transfer, keep failed/unsealed pins
+and freshly check every remaining live root. Public frozen wrappers cannot
+supply trusted archived facts. Current Runtime capture/collection still use
+the old representation, and no actual-device qualification is registered.
+The theorem is neither a whole-resource equivalence nor a linear-time claim;
+growing live row support still requires fresh integrity observations under
+the declared word-read interface. Foundation/ERC and the closed rational/
+relation branch remain unchanged.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

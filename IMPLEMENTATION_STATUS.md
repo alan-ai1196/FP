@@ -1,6 +1,17 @@
 # FP Implementation Status
 
-## Current token execution boundary (2026-09-27)
+## Current token execution boundary (2026-09-28)
+
+The [workspace liveness proof](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md) and
+`audit_token_workspace_liveness.py` establish a numerical read boundary, with
+152 passive paired CPU histories/742,504 matching output words and exact
+reconstruction of all 640 pending diagnostics. Old event arrays/incidences
+and the prior basis are blocked; actual carry-root aliases remain accessible.
+The finite alias counterexample refutes freeing all arrays of archived leaves.
+Production `Resident.raw`, tensor enumeration, phase retention and collection
+are unchanged. The proof grants no Runtime retirement or actual CUDA authority.
+Integration must retain immutable owned images, complete root/generation
+metadata and all failure pins before changing what remains device-resident.
 
 The optional [owned token base fact](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 is implemented as `SharedReferenceContract.token_invariant_bytes`, default 0.
@@ -18,8 +29,8 @@ checked words and the actual changed-leaf refusal. The owned artifact has
 Ordinary calls take 83.07391 versus 60.57797 seconds, a 27.07943% reduction in
 one ordered pair. All original limits and allocation history hold. This is
 no general/full-unit benefit or language result. The qualification is closed,
-default off, and its journal terminal. Device-workspace liveness and complete
-historical retention remain open; no new retirement lowering is implemented.
+default off, and its journal terminal. The numerical liveness boundary now
+has the separate proof above; no owned retirement lowering is implemented.
 
 The [composed native gradient solver](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md)
 is implemented/default off as `composed_native`. A private immutable binding

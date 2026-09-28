@@ -10756,3 +10756,49 @@ can alias leaf arrays, so retirement requires a real liveness/ownership proof,
 not cached substitution for still-live reads. No such lowering is implemented
 here. Foundation/ERC and the rational/relation closure stay intact; ordinary
 text learning with strong trained baselines remains the research direction.
+
+
+## 316. Prove the numerical liveness boundary and falsify naive leaf retirement (2026-09-28)
+
+The next obstruction is not another static invariant. Source analysis shows
+that the existing token numerical continuation reads masters, prepared
+operands and actual carry roots, but not old event arrays/incidences or the
+previously materialized basis through their historical fields. Original
+windows/targets, clocks and all sparse keys/counts remain. Complete immutable
+historical images recover every original diagnostic word. Induction through
+the unchanged primitive sequence therefore preserves forecasts, gradients,
+rounding and commits in this exact numerical continuation class.
+
+Archiving all leaf arrays is not a valid retirement rule: a size-one carry
+block aliases its leaf. The production Forest counterexample retains an
+archive of [1], overwrites the still-live array with zero, then appends [2].
+The next root is [2] instead of [3]. Retirement must follow all current
+allocation-generation aliases, with sealed images and failure pins retained.
+Complete history does not make an aliased numerical operand dead.
+
+The exact live carry coordinate occurrence law is
+(C+K)popcount(t) + D sum_a popcount(e_a) + K sum_y popcount(c_y), with e_a and
+c_y derived from complete original windows and targets. This is no actual
+reserved-memory law or universal FP lower. Under the current direct word-read
+interface, a conclusive exact-integrity acceptance against arbitrary one-word
+corruption must inspect every independently mutable live word; unresolved
+decisions remain possible. Growing row support therefore prevents a blanket
+linear-time claim even if historical workspaces leave device residency.
+
+The passive CPU control makes old arrays/incidences and the old basis refuse
+access after each observation while retaining immutable word images and live
+carry aliases. All 152 paired histories pass 640 observations, 348 commits,
+1,780 numerical phase comparisons and 742,504 matching output words. Every
+pending diagnostic reconstructs, the exact primitive oracle checks 367,502
+floating-word occurrences across both arms, all 640 coordinate laws agree
+with independent record counts, and 832 live-alias witnesses remain. No
+blocked historical field is accessed. Reverse/repeated profiles and zero,
+tied, shared PRODUCT and square cases are included.
+
+TOKEN_WORKSPACE_LIVENESS.md and FP_TOKEN_WORKSPACE_LIVENESS_CPU.json retain
+the theorem, counterexample, finite scope and necessary owner conditions.
+Production capture/retention/collection is unchanged: this is not a complete
+Runtime retirement implementation, CUDA result or feasibility certificate.
+The actual owned representation is the next required step; no new GPU job or
+static/relation variant follows from this passive result. Foundation/ERC and
+the ordinary-token research direction remain intact.

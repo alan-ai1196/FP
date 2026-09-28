@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Token workspace liveness: NUMERICAL CONTINUATION THEOREM; PASSIVE CPU PASS.**
+The [exact class and limits](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md) preserve
+the existing token primitive sequence and commits when old event arrays and
+the prior basis are unavailable through their history fields, but complete
+immutable images and all actual live operands/aliases remain. The carry-block
+coordinate law is explicit; it is no total-memory or performance theorem.
+A concrete live-alias overwrite changes a future sum from 3 to 2 and refutes
+freeing every archived leaf array. All 152 paired CPU histories preserve
+742,504 output words and reconstruct 640 diagnostics without old-workspace
+reads. This is not complete Runtime retirement, an actual-device result or
+permission to substitute stored words for a still-live array.
+
 **Owned token base facts: CONDITIONAL GUARD-PRESERVATION THEOREM; CPU AND FINITE CUDA PASS.**
 The original ordered rational fold has an exact threshold: the maximum of
 all operand, preflight and result guards. Reusing only its final value is

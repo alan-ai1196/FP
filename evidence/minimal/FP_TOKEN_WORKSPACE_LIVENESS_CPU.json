@@ -1,0 +1,22 @@
+{
+  "status": "PASS_NUMERICAL_TOKEN_WORKSPACE_LIVENESS_CPU",
+  "histories": 152,
+  "profile_histories": 2,
+  "events": 640,
+  "commits": 348,
+  "phases": 1780,
+  "compared_output_arrays": 209048,
+  "compared_output_words": 742504,
+  "reconstructed_states": 640,
+  "forest_coordinate_checks": 640,
+  "leaf_alias_witnesses": 832,
+  "exactly_checked_primitive_words": 367502,
+  "old_workspace_accesses": 0,
+  "alias_counterexample": {
+    "archived_leaf_unchanged": true,
+    "root_alias_was_live": true,
+    "expected_next_root": 3,
+    "next_root_after_unsafe_reuse": 2
+  },
+  "scope": "Numerical continuation control for token workspace liveness.\n\nOld leaf arrays/incidences and the previously materialized basis become inaccessible\nsentinels after each observation. Complete immutable word images remain for\ndiagnostic reconstruction; masters, prepared operands and carry roots stay\nlive. This is a passive CPU dataflow audit, not a Runtime retirement lowering,\nresource certificate, CUDA execution or corpus experiment."
+}
