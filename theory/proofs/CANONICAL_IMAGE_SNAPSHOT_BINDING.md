@@ -1,6 +1,6 @@
 # A decoded-byte comparison cannot protect a shared writable expected binding
 
-Status: **COUNTEREXAMPLE REPRODUCED; SNAPSHOT ISOLATION REPAIRED; COMPLETE CPU PASS**.
+Status: **COUNTEREXAMPLE REPRODUCED; ISOLATION REPAIRED; CPU AND FINITE CUDA PASS**.
 This is an implementation mismatch under the existing ownership principle,
 not a Foundation R4 counterexample or a new semantic architecture action.
 
@@ -82,9 +82,14 @@ snapshot MemoryError controls pass. The audit also passes using the prior
 committed extent calculator, so the counterexample and repair do not depend
 on the separate extent optimization under development.
 
-The compact evidence is `FP_CANONICAL_IMAGE_SNAPSHOT_CPU.json`. This proves
-the finite CPU reproduction and repair, not a universal Python isolation or
-new actual-device qualification. Carry the corrected boundary into the next
-justified device execution; do not replay an old terminal journal. The relevant
-general rule is to preserve the source-to-evidence binding itself, including
-its public alias boundary, in addition to preserving both endpoint values.
+The compact CPU evidence is `FP_CANONICAL_IMAGE_SNAPSHOT_CPU.json`. The
+subsequent [fixed actual extent comparison](DIRECT_CANONICAL_EXTENTS.md#actual-result-and-closure)
+at `4090354` qualifies the corrected boundary in both original RTX 3090 workers.
+After each timed 16-target prefix, returned binding metadata is replaced and
+the next public prediction still uses its unchanged private binding. Its full
+64-MiB retained frame matches 27,660,005 uncached actual-phase bytes and the
+complete padding check. Learner/cursor 16 remain; no further target is revealed.
+The original actual journal is terminal. These are finite boundary controls,
+not universal Python isolation. The relevant general rule is to preserve the
+source-to-evidence binding itself, including its public alias boundary, in
+addition to preserving both endpoint values.

@@ -9,19 +9,23 @@ checked phase. Independent decoding did not help because producer and expected
 stream both consulted the changed binding. Snapshot entries now copy their
 wrappers; all-field substitution and snapshot MemoryError controls pass. The
 complete repaired frame matches 26,898,492 uncached phase bytes. This is an
-ownership implementation mismatch, not a Foundation change. The original
-unattacked GPU journals stay terminal; carry this fix into the next justified
-device run. The next fixed pair described below includes that public mutation
-control after timing in both arms.
+ownership implementation mismatch, not a Foundation change. Both original
+RTX 3090 workers at `4090354` now also pass the returned-metadata mutation:
+the fresh retained frame equals 27,660,005 uncached actual-phase bytes with
+complete padding intact. Original journals remain terminal; never replay them.
 
 [Direct canonical extents](theory/proofs/DIRECT_CANONICAL_EXTENTS.md) now have
 an exact grammar law and complete CPU controls: 2,530 guard decisions, 74,564
 string cases and 129 complete paired phase bodies agree with the old calculator,
 including reports, allocations and fresh reads. The original guard walk and
-field/image observation order remain; no cache or encoding changes. The fixed
-first 16-target CUDA pair is registered but not launched. Both arms use the
-repaired public binding boundary and differ only in old/direct extent arithmetic.
-Commit before launch; its exclusive journal must retain the original outcome.
+field/image observation order remain; no cache or encoding changes. Both fixed
+16-target CUDA workers at `4090354` pass 33 phases/4,541,709 words before the
+control. Ordinary time falls 62.05694 to 55.44789 seconds, a 10.64998% observed
+reduction in one pair, with identical paid retention and arena totals. The
+comparison is closed and `FP_CANONICAL_EXTENTS_CUDA_A1.json` terminal. There is
+no general/full-unit speedup or affordable-training claim. The remaining
+complete retention and expected-stream work stays the ordinary-token target;
+no extent-variant sweep or long replay is due.
 
 The [token workspace liveness theorem and owner lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 now separate live numerical operands from complete historical values. The

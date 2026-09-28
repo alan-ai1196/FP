@@ -5,16 +5,21 @@ takes correctness priority over extent timing. A returned snapshot shared
 binding wrappers with the private cache, allowing retention of another value's
 bytes while ordinary prediction and independent byte comparison passed.
 Detached diagnostic wrappers now pass the complete CPU control and allocation
-failure boundary. Carry this repair into the next justified device execution;
-existing terminal measurements did not exercise it. This is an ownership
-implementation mismatch under the existing Foundation, not a new semantic action.
+failure boundary. Both original device workers at `4090354` now also pass
+returned-metadata substitution, with the complete fresh frame equal to its
+uncached actual phase. This ownership mismatch is repaired in the finite
+tested class under the existing Foundation; no new semantic action is needed.
 
 The [direct extent law and implementation](theory/proofs/DIRECT_CANONICAL_EXTENTS.md)
 now pass exact and complete CPU controls without new state, cache policy,
-guard order or serialization bytes. The first fixed 16-target actual pair
-is registered before launch, differing only in old/direct extent calculation
-and testing corrected public binding isolation in both arms. Close this pair
-at its original outcome before selecting another cost change or a text budget.
+guard order or serialization bytes. The original 16-target actual pair now
+passes at `4090354`: ordinary time falls 62.05694 to 55.44789 seconds, a
+10.64998% reduction in one ordered pair, with identical paid retention and
+arena totals. Both pass the public binding control. The comparison is closed
+and its journal terminal. Extent arithmetic is no longer the open question;
+remaining complete retention and expected-stream production/comparison still
+prevent a demonstrated affordable text budget. No new extent sweep, model/cache
+variant or long replay follows from this limited result.
 
 Repeated token-base validation/summation now has an
 [owned guard-preserving implementation](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
@@ -54,8 +59,8 @@ declared word-read interface, and complete historical retention can still
 dominate. Source-count improvements alone have not established affordability:
 native composition, grouped reads and archival pass their preservation gates
 but show no substantial early-prefix time benefit. Qualified base-fact reuse
-helps, yet the 16-target trace still takes about 62 seconds. The next research
-must identify the remaining end-to-end validation/retention cost and a feasible
+helps; direct extents now bring the 16-target trace to about 55 seconds. The
+next research must address remaining validation/retention cost and a feasible
 ordinary-text budget. Strong trained comparisons remain the objective;
 Foundation/ERC and the rational/relation branch remain closed.
 
@@ -64,10 +69,11 @@ now completes at `075eba1` with all 33 phases/4,541,709 words. Across four
 instrumented first/sixteenth-event samples, retention/preparation/writing costs
 take 83.55254% of wall time and numerical execution 13.94965%, using disjoint
 call subtrees. Canonical size guards, traversal, fragments and independent
-comparison remain prominent. The next concrete question is cheaper exact
-canonical extent calculation with the same bytes, guard decisions, field-read
-order and independent checks. The journal is terminal. These CPU fractions do
-not estimate GPU/full-unit throughput and justify no new model/cache contract.
+comparison remain prominent. The exact extent question selected by this
+diagnosis is now closed by the result above; remaining stream production and
+comparison still need attention. The journal is terminal. These CPU fractions
+do not estimate the current GPU/full-unit cost decomposition and justify no
+new model/cache contract.
 
 The native event-recomputation question now has a conditional proof and an
 [owned implementation](theory/proofs/COMPOSED_TOKEN_NATIVE_BOUNDS.md). A complete

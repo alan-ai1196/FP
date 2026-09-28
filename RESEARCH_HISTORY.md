@@ -11005,3 +11005,38 @@ equal to its uncached actual phase; no further target is revealed. The exclusive
 new journal starts only from clean committed source and cannot be replayed.
 The original outcome will determine whether this general encoding work helps
 ordinary-token affordability; Foundation/ERC and relation closure stay intact.
+
+
+## 323. Measure direct extents and qualify repaired bindings on the actual device (2026-09-28)
+
+Both original workers from 40903540d28d91dde407f6605ce77a5e7d5f2b53 pass under
+the fixed 240-second/16-GiB jobs and unchanged full-V/unit512 registration.
+Each timed prefix retains 33 phases/4,541,709 primitive words, all original
+16 records, 16 pending targets and no commit. The prior arm changes only the
+extent calculator to canonical source 075eba1; both use the repaired bindings.
+
+Ordinary time is 62.0569381 seconds for prior extents and 55.4478877 for direct
+extents, a 10.64998% observed reduction in one ordered pair. Initialization is
+9.9273950/7.8164996, first-eight times 29.8564602/26.6876995 and last-eight
+32.2004779/28.7601882. No general or full-unit throughput conclusion follows.
+Whole-job peaks are 3,465,949,184/3,464,151,040 bytes. Both paid-reference peaks
+are 272,951,974; both retain 336 images/67,102,758 bytes and 122 complete pages/
+19,680,386 actual bytes after the control. Both cumulative arena allocations
+are 37,038,864 bytes and peak live arena bytes 24,214,064. All original actual/
+lifetime device counters stay at one 1-GiB allocation/reservation.
+
+After timing, both workers replace returned embedding-image binding metadata
+with output-image metadata. The next public prediction preserves the private
+binding and its full 64-MiB frame matches 27,660,005 uncached actual-phase bytes,
+including zero padding. Learner/cursor 16 remain and no further target is
+revealed. This is actual-device qualification of the repaired snapshot boundary;
+the old writable alias is not reintroduced in a device run.
+
+FP_CANONICAL_EXTENTS_CUDA_A1.json is terminal with original identities and
+per-call evidence. This finite comparison is closed; never replay it or add
+an extent-variant sweep. The encoding law improves this trace without discarding
+checks or information, but 55.45 seconds for 16 targets remains insufficient
+to establish affordable ordinary-text learning. Remaining complete retention,
+expected-stream generation/comparison and later-prefix cost deserve the next
+attack on evidence. No semantic relaxation, new cache policy or long replay
+is justified by this pair alone. Foundation/ERC and relation closure remain.

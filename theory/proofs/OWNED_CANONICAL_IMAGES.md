@@ -1,6 +1,6 @@
 # Owned canonical images of immutable subtrees
 
-Status: **FINITE CUDA RESULT RETAINED; PUBLIC BINDING ALIAS FOUND AND CPU-REPAIRED**.
+Status: **PUBLIC BINDING ALIAS REPAIRED; EXACT/CPU AND FINITE CUDA CONTROLS PASS**.
 This is a token Runtime serialization refinement under frozen Foundation/ERC.
 It changes no G, Gamma, U, physical arithmetic, source interface or numerical
 bridge. It is not an additional semantic architecture action or a completeness
@@ -12,8 +12,10 @@ that the original snapshot shared its `Image` wrappers with the private cache.
 Changing returned binding metadata made complete retention accept another
 source's bytes. Source and byte immutability alone did not isolate their
 binding. Snapshots now return detached wrappers; the complete CPU public-port
-control passes. The original unattacked device results remain terminal, but
-they did not test this boundary and supply no corrected-device qualification.
+control passes. The original unattacked device results remain terminal. The
+subsequent `4090354` extent comparison now tests returned-metadata substitution
+on the actual RTX 3090 in both workers: the fresh retained frame matches its
+uncached actual phase. That separate finite result qualifies this repair.
 
 ## Binding rule and preservation
 

@@ -83,11 +83,16 @@ the complete value/guard/decoder relation stays fixed. Initialization takes
 unprofiled seconds in the same CPU worker. Neither those numbers nor the
 profile fractions estimate the GPU's cost decomposition or a full-unit budget.
 
-The next concrete question is whether the canonical byte grammar admits a
+The concrete question selected was whether the canonical byte grammar admits a
 cheaper exact extent calculation without changing serialized bytes, integer/
 depth/traversal allowance decisions, mutable-field observation order or the
 independent decoder comparison. This is a general trusted-encoding question,
 not a new FP cache, model special case or relaxed evidence contract. The current
-diagnostic is closed; use exact differential/complete Runtime controls before
-any new actual performance comparison. Ordinary text learning with strong
-trained baselines remains the objective.
+diagnostic is closed. The subsequent
+[direct extent law and actual comparison](../../theory/proofs/DIRECT_CANONICAL_EXTENTS.md#actual-result-and-closure)
+now close that question: exact/complete controls pass and one ordered actual
+pair reduces ordinary time from 62.05694 to 55.44789 seconds. This profile's
+fractions do not describe the subsequently changed path. Remaining complete
+stream production/comparison and later-prefix costs still constrain a
+demonstrated budget. Ordinary text learning with strong trained baselines
+remains the objective.

@@ -6,19 +6,24 @@ returned image metadata while both source and stored bytes stay immutable.
 A public CPU prediction then succeeds with a retained frame different from
 its actual checked phase. Independent decoding cannot protect a shared writable
 expected binding. Detached snapshot wrappers repair this finite boundary;
-the complete public-port and failure controls pass. No new `CERTIFIED_COMPLETE`
-class or corrected-device result follows. Original unattacked journals remain
-valid records of their original trajectories and must not be replayed.
+the complete public-port and failure controls pass. Both original RTX 3090
+workers at `4090354` now pass returned-metadata substitution with a fresh frame
+equal to its uncached actual phase. No new `CERTIFIED_COMPLETE` class or broad
+Python isolation follows. Original journals remain terminal records of their
+original trajectories and must not be replayed.
 
-**Direct canonical extents: EXACT GRAMMAR LAW; COMPLETE CPU PASS.**
+**Direct canonical extents: EXACT GRAMMAR LAW; CPU AND FINITE CUDA PASS.**
 The [law and scope](theory/proofs/DIRECT_CANONICAL_EXTENTS.md) preserve the
 existing bytes, occurrence/field/image walks and explicit guard decisions.
 An eager size cutoff has a refusal-order counterexample and is not used.
 Exact controls cover 412 values, 74,564 strings and 2,530 guard decisions;
 six paired Runtime histories preserve all 129 phase bodies/5,774,243 bytes,
 learners, reports and fresh reads. Component calls fall with the same node
-visits, but no wall-time benefit or new completeness authority follows.
-The first fixed CUDA comparison is registered with snapshot isolation in both arms.
+visits. Both original CUDA workers at `4090354` now pass 33 phases/4,541,709
+words and the snapshot isolation control. Ordinary time falls 62.05694 to
+55.44789 seconds, a 10.64998% observed reduction in one ordered pair, with
+identical paid retention and arena totals. This is no general/full-unit speedup
+or new completeness authority. The finite comparison is closed; its journal is terminal.
 
 **Remaining token cost: FINITE INSTRUMENTED CPU OBSERVATION.**
 The [current-path diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)

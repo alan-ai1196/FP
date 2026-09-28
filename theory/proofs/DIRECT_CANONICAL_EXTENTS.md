@@ -1,6 +1,6 @@
 # Exact canonical extents without reconstructing the fixed grammar
 
-Status: **EXACT GRAMMAR LAW; GUARD/OBSERVATION AND COMPLETE CPU CONTROLS PASS**.
+Status: **EXACT GRAMMAR LAW; CPU AND FINITE CUDA PASS; QUALIFICATION CLOSED**.
 This changes the implementation of the existing packed extent calculator.
 Serialized bytes, source identities, guard order, image policy and independent
 decoder checks stay fixed. There is no new cache, registration option, FP
@@ -143,3 +143,48 @@ cap or replace a failed worker. This one ordered pair qualifies the corrected
 public boundary and measures this extent change; it cannot establish general
 speedup, full-unit benefit, sustainable training or language quality. Close it
 at its original result and reassess the remaining ordinary-token constraint.
+
+## Actual result and closure
+
+Both original workers at `40903540d28d91dde407f6605ce77a5e7d5f2b53` pass under
+every registered cap on the declared RTX 3090. Each timed prefix retains all
+33 phases/4,541,709 primitive words, 16 original records, pending count 16 and
+zero commits. The prior arm uses only the original extent calculator from
+`075eba1`; both use the current corrected snapshot boundary and all checks.
+
+| Original measurement | Prior extents | Direct extents |
+| --- | ---: | ---: |
+| Initialization seconds | 9.9273950 | 7.8164996 |
+| All 32 ordinary calls, seconds | 62.0569381 | 55.4478877 |
+| First eight targets, ordinary seconds | 29.8564602 | 26.6876995 |
+| Last eight targets, ordinary seconds | 32.2004779 | 28.7601882 |
+| Peak whole-job committed bytes | 3,465,949,184 | 3,464,151,040 |
+| Peak paid reference bytes | 272,951,974 | 272,951,974 |
+
+The ordinary-time ratio is 1.1191939, a 10.64998% observed reduction in this
+single ordered pair. This is no statistical/general or full-unit speedup.
+Both workers retain 336 images/67,102,758 bytes and 122 complete archive pages/
+19,680,386 actual page bytes after the post-timing control. Cumulative buddy
+allocation is 37,038,864 bytes, peak live buddy bytes 24,214,064, and maximum
+arena extent 24,379,392 in both. All native/current allocation counters remain
+`(1,1073741824,1)` with original actual/lifetime 1-GiB tensor/reservation use.
+Whole-job peaks include the same additional control; their small difference
+is not a memory-efficiency claim.
+
+After timing, each worker replaces the returned embedding-image binding's
+buffer/guard metadata with output-image metadata. Its next public prediction
+still uses the unchanged private binding. The retained 34th phase matches
+27,660,005 uncached actual-phase bytes inside the full 67,108,864-byte frame,
+including zero padding. Learner and cursor 16 stay unchanged; no seventeenth
+target is revealed. This separately qualifies the corrected binding boundary
+on the actual device. The old alias is not reintroduced in a GPU run.
+
+`FP_CANONICAL_EXTENTS_CUDA_A1.json` is terminal, retaining original source,
+process/device evidence and per-call times. This finite comparison is closed;
+never replay it or turn it into an extent-variant sweep. General canonical
+work was a useful target in this trace, but 55.45 seconds for 16 targets still
+does not establish an affordable text experiment. Complete retention,
+independent expected-stream generation/comparison and later-prefix cost remain
+relevant. Use the existing diagnosis and source analysis to attack that larger
+constraint; no new cache policy, semantic relaxation or long replay follows
+from this result alone. Foundation/ERC and the rational/relation closure remain.
