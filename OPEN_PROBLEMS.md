@@ -9,6 +9,13 @@ failure boundary. Carry this repair into the next justified device execution;
 existing terminal measurements did not exercise it. This is an ownership
 implementation mismatch under the existing Foundation, not a new semantic action.
 
+The [direct extent law and implementation](theory/proofs/DIRECT_CANONICAL_EXTENTS.md)
+now pass exact and complete CPU controls without new state, cache policy,
+guard order or serialization bytes. The first fixed 16-target actual pair
+is registered before launch, differing only in old/direct extent calculation
+and testing corrected public binding isolation in both arms. Close this pair
+at its original outcome before selecting another cost change or a text budget.
+
 Repeated token-base validation/summation now has an
 [owned guard-preserving implementation](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 and exact/complete CPU controls. The final value alone was insufficient;

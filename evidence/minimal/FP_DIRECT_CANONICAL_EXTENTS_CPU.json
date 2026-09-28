@@ -1,0 +1,63 @@
+{
+  "status": "PASS_DIRECT_CANONICAL_EXTENTS_CPU",
+  "previous_source": "075eba1da7493582665b8801a61430ac02876be6",
+  "scope": "Exact grammar/guard and complete Runtime controls for direct extents.\n\nThe old calculator comes from committed canonical source. No corpus, CUDA,\ntiming estimate, serialization change or new certificate class is used.",
+  "grammar": {
+    "values": 412,
+    "packed_bytes_compared": 783100,
+    "string_cases": 74564
+  },
+  "guards": {
+    "decisions": 2530,
+    "eager_extent_refusal_counterexample": [
+      "ContractError",
+      "unsupported packed reference payload"
+    ]
+  },
+  "observations": {
+    "ordered_field_mapping_and_image_walks": 12
+  },
+  "calls": {
+    "previous": {
+      "size": 13588,
+      "visited_occurrences": 515,
+      "total_calls": 12894
+    },
+    "direct": {
+      "size": 13588,
+      "visited_occurrences": 515,
+      "total_calls": 4659
+    },
+    "scope": "deterministic toy call counts; no timing claim"
+  },
+  "runtime": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "complete_phase_bytes": 5774243,
+    "checked_primitive_words": 50279,
+    "identical_raw_calls": 45619,
+    "identical_raw_bytes": 856212,
+    "full_frames_learners_reports_allocations_and_retirements_equal": true
+  },
+  "owned_images": {
+    "limit_checks": 1800,
+    "uncached_bytes_compared": 142640,
+    "old_snapshots": 7,
+    "image_count": 7,
+    "image_bytes": 163662,
+    "exhausted_image_budget": 8192,
+    "mutable_wrappers_not_bound": true,
+    "capacity_misses_preserve_complete_bytes": true,
+    "both_resource_roles_own_images": true
+  },
+  "image_failures": {
+    "refusals": [
+      "wrong-image",
+      "wrong-page",
+      "unpaid-image",
+      "post-target-ResourceExceeded",
+      "post-target-MemoryError"
+    ],
+    "targets_and_prior_learners_retained": true
+  }
+}

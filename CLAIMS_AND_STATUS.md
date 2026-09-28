@@ -10,6 +10,16 @@ the complete public-port and failure controls pass. No new `CERTIFIED_COMPLETE`
 class or corrected-device result follows. Original unattacked journals remain
 valid records of their original trajectories and must not be replayed.
 
+**Direct canonical extents: EXACT GRAMMAR LAW; COMPLETE CPU PASS.**
+The [law and scope](theory/proofs/DIRECT_CANONICAL_EXTENTS.md) preserve the
+existing bytes, occurrence/field/image walks and explicit guard decisions.
+An eager size cutoff has a refusal-order counterexample and is not used.
+Exact controls cover 412 values, 74,564 strings and 2,530 guard decisions;
+six paired Runtime histories preserve all 129 phase bodies/5,774,243 bytes,
+learners, reports and fresh reads. Component calls fall with the same node
+visits, but no wall-time benefit or new completeness authority follows.
+The first fixed CUDA comparison is registered with snapshot isolation in both arms.
+
 **Remaining token cost: FINITE INSTRUMENTED CPU OBSERVATION.**
 The [current-path diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
 preserves all 33 phases/4,541,709 words at `075eba1`. Four separate profiles

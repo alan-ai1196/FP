@@ -18,6 +18,10 @@ def _invalid(message):
 
 
 def _string_size(value):
+    if type(value) is str and value.isascii() and value.isprintable():
+        # Printable ASCII has unit UTF-8 width; only quote/backslash expand.
+        # No cached fact or changed surrogate/control-character rule is used.
+        return len(value)+2+value.count('"')+value.count('\\')
     size = 2
     for char in value:
         code = ord(char)
@@ -30,37 +34,42 @@ def _hex_size(value):
     return max(1, (value.bit_length()+3)//4)+int(value < 0)+2
 
 
-def _array_size(sizes):
-    size, count = 2, 0
-    for child in sizes:
-        size += child
-        count += 1
-    return size+max(0, count-1)
-
-
 def packed_size(value, *, images=None):
     """Exact byte extent of the typed packed encoding, with no output tree."""
     known = None if images is None else images.find(value)
     if known is not None:
         return known.size
     if type(value) is F:
-        return _array_size((_string_size('rational_hex'), _hex_size(value.numerator), _hex_size(value.denominator)))
+        return 18+_hex_size(value.numerator)+_hex_size(value.denominator)
     if type(value) is int:
-        return _array_size((_string_size('integer_hex'), _hex_size(value)))
+        return 16+_hex_size(value)
     if type(value) is bytes:
-        return _array_size((_string_size('bytes_hex'), 2*len(value)+2))
-    if value is None or type(value) in (str, bool):
-        atom = 4 if value is None or value is True else 5 if value is False else _string_size(value)
-        return _array_size((_string_size(type(value).__name__), atom))
+        return 16+2*len(value)
+    if value is None:
+        return 17
+    if type(value) is bool:
+        return 13 if value else 14
+    if type(value) is str:
+        return 8+_string_size(value)
     if type(value) in (tuple, list):
-        return _array_size((_string_size(type(value).__name__), _array_size(packed_size(x, images=images) for x in value)))
+        size, count = (12 if type(value) is tuple else 11), 0
+        for child in value:
+            size += packed_size(child, images=images)
+            count += 1
+        return size+max(0, count-1)
     if isinstance(value, Mapping):
-        pairs = (_array_size((packed_size(k, images=images), packed_size(v, images=images))) for k, v in value.items())
-        return _array_size((_string_size('mapping'), _array_size(pairs)))
+        size, count = 14, 0
+        for key, child in value.items():
+            size += 3+packed_size(key, images=images)+packed_size(child, images=images)
+            count += 1
+        return size+max(0, count-1)
     if is_dataclass(value) and not isinstance(value, type):
-        entries = (_array_size((_string_size(f.name), packed_size(getattr(value, f.name), images=images))) for f in fields(value))
-        return _array_size((_string_size('dataclass'), _string_size(type(value).__module__),
-                            _string_size(type(value).__qualname__), _array_size(entries)))
+        declared = fields(value)  # Preserve original field/metadata read order.
+        size, count = 18+_string_size(type(value).__module__)+_string_size(type(value).__qualname__), 0
+        for field in declared:
+            size += 3+_string_size(field.name)+packed_size(getattr(value, field.name), images=images)
+            count += 1
+        return size+max(0, count-1)
     _invalid('unsupported packed reference payload')
 
 

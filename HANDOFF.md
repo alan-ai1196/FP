@@ -11,7 +11,17 @@ wrappers; all-field substitution and snapshot MemoryError controls pass. The
 complete repaired frame matches 26,898,492 uncached phase bytes. This is an
 ownership implementation mismatch, not a Foundation change. The original
 unattacked GPU journals stay terminal; carry this fix into the next justified
-device run. Extent optimization remains separate work in progress.
+device run. The next fixed pair described below includes that public mutation
+control after timing in both arms.
+
+[Direct canonical extents](theory/proofs/DIRECT_CANONICAL_EXTENTS.md) now have
+an exact grammar law and complete CPU controls: 2,530 guard decisions, 74,564
+string cases and 129 complete paired phase bodies agree with the old calculator,
+including reports, allocations and fresh reads. The original guard walk and
+field/image observation order remain; no cache or encoding changes. The fixed
+first 16-target CUDA pair is registered but not launched. Both arms use the
+repaired public binding boundary and differ only in old/direct extent arithmetic.
+Commit before launch; its exclusive journal must retain the original outcome.
 
 The [token workspace liveness theorem and owner lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 now separate live numerical operands from complete historical values. The

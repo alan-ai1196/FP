@@ -9,7 +9,15 @@ prediction retained a 31,723,068-byte body different from its 26,898,492-byte
 actual phase. The repaired control preserves exact uncached phase bytes and
 private bindings, including all-field replacement and snapshot MemoryError.
 This corrects complete-retention authority; it changes no numerical semantics.
-Corrected actual-device execution has not yet been qualified.
+Corrected actual-device execution has not yet been qualified; the registered
+extent comparison includes its public mutation control in both device workers.
+
+The [direct extent calculator](theory/proofs/DIRECT_CANONICAL_EXTENTS.md)
+implements closed formulas for the existing typed grammar and an exact
+printable-ASCII length calculation. Guard walks, all field/image observations,
+encoded bytes and independent checks remain. Exact controls and six complete
+paired Runtime histories/129 phase bodies pass, including combined lowerings.
+The first fixed actual pair is registered, not launched; no timing gain is claimed.
 
 The [current-path CPU diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
 completes at `075eba1` with qualified base facts/images and all existing checks.

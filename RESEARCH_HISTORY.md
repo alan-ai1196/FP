@@ -10973,3 +10973,35 @@ claimed to be contained. The original unattacked device journals remain
 terminal observations, not evidence of this missing boundary. Qualify the
 correction in the next justified device run without replay. Foundation/ERC
 need no new action; binding integrity is already an ownership obligation.
+
+
+## 322. Derive direct canonical extents while preserving every guard and field walk (2026-09-28)
+
+The existing typed grammar has an exact additive extent law: each container
+contributes fixed tags/brackets and observed separators, plus child extents.
+Closed scalar/container formulas replace repeated reconstruction of constant
+syntax. Printable ASCII length uses exact quote/backslash counts; all other
+Unicode/control rules remain. No byte format, image policy, state or cache
+changes. Actual field/mapping/image observation order and the separate original
+guard walk remain. With allowance 8, (0, object()) demonstrates why eagerly
+stopping on encoded extent would change the original typed refusal.
+
+The final exact audit compares 412 values/783,100 bytes, 74,564 string cases,
+2,530 guard outcomes and 12 observation traces with canonical source 075eba1.
+Six complete paired CPU histories preserve 129 full phase bodies/5,774,243
+bytes, 50,279 primitive words, learners/reports, allocations/retirements and
+45,619 fresh raw calls/856,212 bytes. Combined lowerings are included and no
+archive-plan metadata is excluded. Owned-image/failure and old Unicode/source
+identity controls pass. A 512-rational component keeps all 515 visited
+occurrences while calls fall 12,894 to 4,659; no timing gain follows from that.
+
+DIRECT_CANONICAL_EXTENTS.md and FP_DIRECT_CANONICAL_EXTENTS_CPU.json retain
+the law, refusal counterexample and finite controls. The first actual old/direct
+16-target pair is registered before launch with identical qualified base facts,
+images, generation reuse and all original model/numerical/resource limits.
+Both include the separately repaired snapshot binding boundary. After timing,
+returned metadata substitution must leave a fresh prediction's retained frame
+equal to its uncached actual phase; no further target is revealed. The exclusive
+new journal starts only from clean committed source and cannot be replayed.
+The original outcome will determine whether this general encoding work helps
+ordinary-token affordability; Foundation/ERC and relation closure stay intact.
