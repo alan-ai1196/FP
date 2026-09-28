@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [canonical-image public binding counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
+takes correctness priority over extent timing. A returned snapshot shared
+binding wrappers with the private cache, allowing retention of another value's
+bytes while ordinary prediction and independent byte comparison passed.
+Detached diagnostic wrappers now pass the complete CPU control and allocation
+failure boundary. Carry this repair into the next justified device execution;
+existing terminal measurements did not exercise it. This is an ownership
+implementation mismatch under the existing Foundation, not a new semantic action.
+
 Repeated token-base validation/summation now has an
 [owned guard-preserving implementation](theory/proofs/OWNED_TOKEN_BASE_FACTS.md)
 and exact/complete CPU controls. The final value alone was insufficient;

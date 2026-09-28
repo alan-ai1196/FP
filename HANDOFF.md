@@ -2,6 +2,17 @@
 
 ## Current execution state (2026-09-28)
 
+A [public canonical-image binding alias](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
+was found while auditing extent work. Changing only returned snapshot metadata
+made the public CPU prediction port retain bytes different from its actual
+checked phase. Independent decoding did not help because producer and expected
+stream both consulted the changed binding. Snapshot entries now copy their
+wrappers; all-field substitution and snapshot MemoryError controls pass. The
+complete repaired frame matches 26,898,492 uncached phase bytes. This is an
+ownership implementation mismatch, not a Foundation change. The original
+unattacked GPU journals stay terminal; carry this fix into the next justified
+device run. Extent optimization remains separate work in progress.
+
 The [token workspace liveness theorem and owner lowering](theory/proofs/TOKEN_WORKSPACE_LIVENESS.md)
 now separate live numerical operands from complete historical values. The
 default-off `archive_workspaces` path seals checked leaf/basis images before

@@ -36,8 +36,12 @@ class _CanonicalImages:
 
     def snapshot(self):
         # The source and byte identity, not a process-local id, are complete
-        # state. The strong-id lookup below is a reconstructible acceleration.
-        return tuple(self.entries)
+        # state. Detach each binding wrapper: frozen dataclasses still have
+        # writable dictionaries, and a public snapshot must not alias the
+        # private source-to-buffer authority. Eligible source values stay
+        # immutable under the closed value interface and keep their identity.
+        return tuple(Image(e.source, e.buffer, e.size, e.traversal, e.depth, e.integer_bits)
+                     for e in self.entries)
 
     def find(self, value):
         entry = self.index.get(id(value))

@@ -10937,3 +10937,39 @@ terminal. The concrete next question is cheaper canonical extent calculation
 with the same bytes, guard decisions, field observation order and independent
 decoding checks. No model/static/storage cache or new semantic action follows.
 The research remains ordinary-token affordability under frozen Foundation/ERC.
+
+
+## 321. Expose a shared writable expected binding despite independent decoding (2026-09-28)
+
+While developing exact extent work, adversarial inspection found that public
+canonical-image snapshots returned the same frozen Image wrappers as the
+private identity index. Their dictionaries remained writable. Substituting
+only returned buffer/guard metadata kept source identity and both endpoint
+byte values immutable, yet redirected the owner's expected serialization.
+
+The historical method from 075eba1 is reproduced. Two distinct 8,192-byte
+values give a 16,400-byte component witness: retention of A completes but
+decodes to C(B). The full-V CPU-substituted Runtime witness uses only returned
+embedding/output binding metadata, then calls public predict_next. It returns
+PREDICTED_REFERENCE and retains two checked phases with unchanged original
+masters, but its 31,723,068-byte frame differs from the 26,898,492-byte actual
+phase at byte 1,630,445. Independent reader and producer both depended on the
+same changed expected binding. This is false complete retention, not a new
+CERTIFIED_COMPLETE claim or a numerical prediction counterexample.
+
+Snapshots now return fresh binding wrappers. The private source-to-buffer
+index remains isolated while complete source identity, buffer names and all
+guard facts stay visible. No encoding, cache admission, numerical or source
+semantics change. Component/public-port controls preserve the actual bytes;
+all-field replacement and snapshot MemoryError controls pass. The failure is
+terminal with prior learner and private bindings retained. The same audit
+passes with the committed previous extent calculator; it is independent of
+the performance work in progress.
+
+CANONICAL_IMAGE_SNAPSHOT_BINDING.md and FP_CANONICAL_IMAGE_SNAPSHOT_CPU.json
+retain the counterexample, exact threat scope and repair. Returned diagnostic
+metadata is the attacked boundary; arbitrary Python heap reflection is not
+claimed to be contained. The original unattacked device journals remain
+terminal observations, not evidence of this missing boundary. Qualify the
+correction in the next justified device run without replay. Foundation/ERC
+need no new action; binding integrity is already an ownership obligation.

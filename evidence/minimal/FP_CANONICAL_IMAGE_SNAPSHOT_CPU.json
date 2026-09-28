@@ -1,0 +1,72 @@
+{
+  "status": "PASS_CANONICAL_IMAGE_SNAPSHOT_ISOLATION_CPU",
+  "previous_source": "075eba1da7493582665b8801a61430ac02876be6",
+  "scope": "Public snapshot substitution into a live canonical image binding.\n\nReproduce the old alias from Git, then check detached diagnostic wrappers.\nThe attack only mutates returned snapshot metadata, not Runtime internals or\nsource scalar internals. CPU physical binding supplies no CUDA authority.",
+  "component": [
+    {
+      "legacy": true,
+      "snapshot_aliases_private_binding": true,
+      "retention_completed": true,
+      "retained_actual_supplied_value": false,
+      "retained_substituted_value": true,
+      "encoded_bytes": 16400
+    },
+    {
+      "legacy": false,
+      "snapshot_aliases_private_binding": false,
+      "retention_completed": true,
+      "retained_actual_supplied_value": true,
+      "retained_substituted_value": false,
+      "encoded_bytes": 16400
+    }
+  ],
+  "public_runtime": [
+    {
+      "legacy": true,
+      "public_prediction_status": "PREDICTED_REFERENCE",
+      "checked_phases": 2,
+      "original_master_words_unchanged": true,
+      "retained_frame_matches_actual_phase": false,
+      "retained_bytes": 31723068,
+      "actual_phase_bytes": 26898492,
+      "first_differing_byte": 1630445,
+      "cursor": 0,
+      "corpus": {
+        "role": "historical-training",
+        "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+        "file_bytes": 360000000,
+        "byte_offset": 0,
+        "bytes_read": 1024,
+        "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+        "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+        "validation_or_test_read": false
+      }
+    },
+    {
+      "legacy": false,
+      "public_prediction_status": "PREDICTED_REFERENCE",
+      "checked_phases": 2,
+      "original_master_words_unchanged": true,
+      "retained_frame_matches_actual_phase": true,
+      "retained_bytes": 26898492,
+      "actual_phase_bytes": 26898492,
+      "first_differing_byte": null,
+      "cursor": 0,
+      "corpus": {
+        "role": "historical-training",
+        "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+        "file_bytes": 360000000,
+        "byte_offset": 0,
+        "bytes_read": 1024,
+        "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+        "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+        "validation_or_test_read": false
+      }
+    }
+  ],
+  "failure": {
+    "all_public_binding_fields_detached": true,
+    "snapshot_memory_failure_terminal": true,
+    "prior_learner_and_binding_preserved": true
+  }
+}

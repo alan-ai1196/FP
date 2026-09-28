@@ -1,11 +1,19 @@
 # Owned canonical images of immutable subtrees
 
-Status: **IMPLEMENTED; EXACT/CPU CONTROLS PASS; FIXED CUDA COMPARISON PASS**.
+Status: **FINITE CUDA RESULT RETAINED; PUBLIC BINDING ALIAS FOUND AND CPU-REPAIRED**.
 This is a token Runtime serialization refinement under frozen Foundation/ERC.
 It changes no G, Gamma, U, physical arithmetic, source interface or numerical
 bridge. It is not an additional semantic architecture action or a completeness
 certificate. The optional registration is
 `SharedReferenceContract(canonical_image_bytes=C)`, with default C=0.
+
+The [public binding counterexample](CANONICAL_IMAGE_SNAPSHOT_BINDING.md) found
+that the original snapshot shared its `Image` wrappers with the private cache.
+Changing returned binding metadata made complete retention accept another
+source's bytes. Source and byte immutability alone did not isolate their
+binding. Snapshots now return detached wrappers; the complete CPU public-port
+control passes. The original unattacked device results remain terminal, but
+they did not test this boundary and supply no corrected-device qualification.
 
 ## Binding rule and preservation
 
@@ -66,8 +74,10 @@ from the smaller cost of looking up a subtree.
 
 `canonical_images._CanonicalImages` is created by the owned shared-retention
 component, not accepted from a caller. Passive encoder helpers have no Runtime
-authority. `SharedReferenceSnapshot.canonical_images` exposes immutable
-binding records; it is not an issuance interface. Image byte objects appear
+authority. `SharedReferenceSnapshot.canonical_images` exposes detached
+diagnostic binding records; their wrappers have no private-cache authority.
+The original shared-wrapper implementation violated this boundary under
+returned-metadata substitution, as the counterexample above records. Image byte objects appear
 in the ordinary paid buffer/resource snapshot, with dependency leases in both
 roles. The declared cache cap is part of the Runtime manifest/provenance.
 

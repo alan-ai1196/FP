@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-09-28)
 
+The [canonical-image snapshot binding repair](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md)
+detaches every exported `Image` wrapper from the private source-to-buffer index.
+The old public snapshot permitted metadata substitution: a checked public CPU
+prediction retained a 31,723,068-byte body different from its 26,898,492-byte
+actual phase. The repaired control preserves exact uncached phase bytes and
+private bindings, including all-field replacement and snapshot MemoryError.
+This corrects complete-retention authority; it changes no numerical semantics.
+Corrected actual-device execution has not yet been qualified.
+
 The [current-path CPU diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
 completes at `075eba1` with qualified base facts/images and all existing checks.
 Four first/sixteenth-event samples attribute 83.55254% of instrumented wall

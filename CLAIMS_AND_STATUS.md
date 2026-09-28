@@ -1,5 +1,15 @@
 # FP Claims and Status
 
+**Canonical-image public binding isolation: OLD CLAIM FALSIFIED IN THE SNAPSHOT-MUTATION CLASS; CPU REPAIR PASS.**
+The [counterexample](theory/proofs/CANONICAL_IMAGE_SNAPSHOT_BINDING.md) changes
+returned image metadata while both source and stored bytes stay immutable.
+A public CPU prediction then succeeds with a retained frame different from
+its actual checked phase. Independent decoding cannot protect a shared writable
+expected binding. Detached snapshot wrappers repair this finite boundary;
+the complete public-port and failure controls pass. No new `CERTIFIED_COMPLETE`
+class or corrected-device result follows. Original unattacked journals remain
+valid records of their original trajectories and must not be replayed.
+
 **Remaining token cost: FINITE INSTRUMENTED CPU OBSERVATION.**
 The [current-path diagnostic](experiments/next_token/CURRENT_TOKEN_COST.md)
 preserves all 33 phases/4,541,709 words at `075eba1`. Four separate profiles
