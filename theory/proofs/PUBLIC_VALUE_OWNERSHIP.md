@@ -68,12 +68,19 @@ costs, not a new semantic architecture action or a free performance claim.
 
 ## Qualification and running experiment
 
-The candidate repair is being qualified in the linked canonical Git worktree
-`F:\FP_passive_boundary`, branch `compiler/passive-boundary`. It changes the
-value ownership boundary, not learning or search semantics. Its focused controls
-currently block the three witnesses and preserve constructor/getter isolation,
-immutable-source identity, internal sharing and four terminal copy failures.
-Broader continuation/reporting/installation checks remain required before merge.
+The repair and scoped qualification are committed through `0643552` in the linked
+canonical Git worktree `F:\FP_passive_boundary`, branch `compiler/passive-boundary`.
+It changes the value ownership boundary, not learning or search semantics.
+Focused controls block all three witnesses, preserve complete inward/outward
+value graphs and cover sixteen adversarial histories/112 training/reporting
+events. All sixteen complete CPU regression scripts pass at `86423cd`, including
+search/proofs, installation, paired persistence, ingress and host failures.
+Both separately registered actual CUDA jobs pass at `9d7250d`: nineteen phases,
+6,340 primitive words and 19,922,944 complete frame bytes per packed/shared case.
+Their public mutation and terminal export-failure controls preserve the actual
+completed prefix. The branch retains the complete proof, protocols and receipts;
+its scoped qualification is closed. Merge only after the original text job ends.
+No whole-release, ordinary-text score or performance claim is supplied.
 
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches

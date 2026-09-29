@@ -8,14 +8,21 @@ snapshot/forecast/proof wrappers to change causal history, live readout masters
 and an accepted reference maximum from 1/4 to 1. Frozen wrappers alias private
 state. Foundation/ERC remain intact. A transitive boundary repair is in the
 linked `F:\FP_passive_boundary` worktree on `compiler/passive-boundary`; focused
-controls pass, broader qualification is pending. Do not claim a repaired release
-or change the original running text worker's execution inputs.
+the repair and scoped qualification are committed through `0643552`. All sixteen
+complete CPU regression scripts pass at `86423cd`; both original packed/shared
+RTX3090 controls pass at `9d7250d`, each preserving nineteen complete phases and
+6,340 checked words under public mutations. The actual journal is terminal.
+This closes the scoped repair, not a whole release. Its implementation, receipts
+and updated research documents are on that canonical branch. Merge it after the
+original native text worker terminates; preserve that worker's execution inputs.
+Return to ordinary text affordability rather than another ownership/storage case.
 
 Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
 creation time 134351580322825996, tool session 44263. Its last inspected milestone
-is 512 targets/one committed unit in 725.2928251 seconds, with no halt or report.
+is 1,280 targets/two committed units in 2,438.1676713 seconds, with no halt or report.
 The exclusive journal and external `worker.json` must be observed to completion;
 never relaunch it. This is no full-horizon feasibility or text-score result.
+Its original two-hour deadline is about 2026-09-29 14:20:32 UTC / 22:20:32 local.
 
 The [native text A1 trial](experiments/next_token/NATIVE_TEXT_A1.md) is now
 preregistered for the first owned FP model result: one million original
