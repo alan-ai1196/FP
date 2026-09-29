@@ -6,6 +6,7 @@ ordinary returned/supplied metadata, as in the existing image-binding audit.
 """
 from dataclasses import fields, replace, is_dataclass
 from fractions import Fraction as F
+from itertools import product
 from pathlib import Path
 from types import ModuleType, MappingProxyType
 from unittest.mock import patch
@@ -165,9 +166,55 @@ def isolation():
     assert rt.observe(1).status == 'OBSERVED_REFERENCE'
     immutable = (b'complete bytes', (F(1, 3), 2, 'source'))
     assert detached(immutable) is immutable
+    from fp_reference.program import Program, Sum
+    candidate_root, _ = runtime_fixture()
+    supplied_program = Program((Sum('mass', ()), Sum('mass', ())), 0, (0, 1))
+    identity = supplied_program.program_id
+    assert candidate_root.construct_candidate(supplied_program).status == 'BUILT_REFERENCE'
+    expected = dict(candidate_root.snapshot().programs)[identity]
+    supplied_program.__dict__['nodes'] = ()
+    assert dict(candidate_root.snapshot().programs)[identity] == expected
+    assert candidate_root.predict_next('observation-2', encode_context((1, 0))).status == 'PREDICTED_REFERENCE'
+    assert candidate_root.observe(0).status == 'OBSERVED_REFERENCE'
     return dict(all_constructor_wrappers_detached=True, contract_getters_detached=True,
+        supplied_candidate_program_detached_and_continued=True,
         old_snapshot_mutation_cannot_change_continuation=True, internal_aliases_preserved=True,
         immutable_source_and_byte_identity_preserved=True)
+
+
+def representation():
+    from fp_reference.public_values import detached
+    from fp_reference.cuda_storage import CudaRegion
+    region = CudaRegion(0, 0, 'owner', 'operation', 0, 4, 512, (1,), 'float32', True)
+    copied = detached(region)
+    assert copied == region and copied is not region
+    object.__setattr__(copied, 'offset', 512)
+    assert region.offset == 0
+    record = setup(runtime).snapshot().candidates[0]
+    record.__dict__['extra'] = {'complete': [region]}
+    record.__dict__['__class__'] = 'metadata, not a descriptor operation'
+    graph = (record, record)
+    copied = detached(graph)
+    assert copied[0] is copied[1] and copied[0] is not record
+    assert vars(copied[0]) == vars(record)
+    assert not wrappers(graph) & wrappers(copied)
+    copied[0].extra['complete'].clear()
+    assert record.extra['complete'] == [region]
+    cycle = []
+    cycle.append(cycle)
+    class Foreign:
+        def __deepcopy__(self, memo):
+            raise AssertionError('caller copy hook executed')
+    for value in (cycle, Foreign()):
+        try:
+            detached(value)
+        except ContractError:
+            pass
+        else:
+            raise AssertionError('unsupported/cyclic value accepted')
+    return dict(slotted_record_detached=True, complete_extra_metadata_preserved=True,
+        descriptor_names_treated_as_data=True, repeated_aliases_preserved=True,
+        cyclic_and_foreign_values_refused_without_caller_hooks=True)
 
 
 def failures():
@@ -204,6 +251,52 @@ def failures():
     return dict(terminal_copy_failure_ports=checked, already_revealed_target_and_published_prefix_retained=True)
 
 
+def continuations():
+    from audit_shared_token_retention import STORAGE
+    histories = events = 0
+    for word in product((0, 1), repeat=4):
+        cc, program, online, reporting = report_registration(count=4, report_count=3)
+        roots = [runtime.ReferenceCompilerRuntime(cc, program, online=online, reporting=reporting,
+            shared_storage=STORAGE if histories % 2 else None) for _ in range(2)]
+        attacked, control = roots
+        for index, target in enumerate(word):
+            outputs = [rt.predict_next(f'train/{index}', encode_context(())) for rt in roots]
+            assert all(p.status == 'PREDICTED_REFERENCE' for p in outputs)
+            probabilities = [p.predictions[0][1] for p in outputs]
+            assert tuple(probabilities[0]) == tuple(probabilities[1])
+            probabilities[0].origin.__dict__['output'] = probabilities[0].origin.W[::-1].tobytes()
+            for rt in roots:
+                assert rt.observe(target).status == 'OBSERVED_REFERENCE'
+            left, right = (rt.snapshot() for rt in roots)
+            assert left.candidates[0].learner == right.candidates[0].learner
+            assert left.observations == right.observations
+            left.observations[-1].__dict__['target'] = 1-target
+            left.candidates[0].learner.origin.__dict__['output'] = b'changed diagnostic'
+            events += 1
+        frozen = attacked._candidates[attacked._deployed_id].learner
+        for rt in roots:
+            assert rt.begin_report().status == 'REPORTING'
+        for index, target in enumerate(tuple(1-y for y in word[:3])):
+            for rt in roots:
+                assert rt.predict_report(f'report/{index}').status == 'PREDICTED_REPORT'
+            exposed = attacked.snapshot()
+            exposed.token_report.learner.origin.__dict__['output'] = b'changed frozen diagnostic'
+            exposed.token_report.pending.record.sources.__dict__['past'] = (0, 0, 0)
+            results = [rt.observe_report(target) for rt in roots]
+            assert results[0] == results[1]
+            assert results[0].status == ('COMPLETE_REPORT' if index == 2 else 'SCORED_REPORT')
+            assert attacked._candidates[attacked._deployed_id].learner is frozen
+            events += 1
+        result = attacked.report_result()
+        assert result == control.report_result()
+        result.native_mean.__dict__['lower'] = F(0)
+        assert attacked.report_result() == control.report_result()
+        histories += 1
+    return dict(binary_training_histories=histories, training_and_reporting_events=events,
+        exact_probabilities_learners_sources_and_reports_equal_to_unattacked_control=True,
+        both_packed_and_shared_storage_checked=True, private_reporting_identity_preserved=True)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--historical-only', action='store_true')
@@ -214,7 +307,7 @@ if __name__ == '__main__':
     artifact = 'FP_PUBLIC_VALUE_BOUNDARY_COUNTEREXAMPLES.json'
     if not args.historical_only:
         result.update(status='PASS_PUBLIC_VALUE_BOUNDARY_CPU', current=attacks(runtime, legacy=False),
-            isolation=isolation(), failures=failures())
+            isolation=isolation(), representation=representation(), failures=failures(), continuations=continuations())
         artifact = 'FP_PUBLIC_VALUE_BOUNDARY_CPU.json'
     if args.write:
         (ROOT/'evidence/minimal'/artifact).write_text(json.dumps(result, indent=2)+'\n', encoding='utf-8')

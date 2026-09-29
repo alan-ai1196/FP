@@ -11413,3 +11413,27 @@ isolated in the canonical repository's linked worktree to keep the running
 text experiment's committed inputs intact. Old release evidence does not
 cover these newly exposed substitutions. Foundation/ERC and relation closure
 remain unchanged, and no incomplete text trajectory is scored.
+
+
+## 334. Detach complete caller value graphs instead of trusting frozen metadata (2026-09-29)
+
+The repair copies all mutable wrappers on both sides of Runtime's public
+boundary. It preserves complete dictionaries, inherited slots and alias sharing
+within the recipient graph, reusing only the existing immutable scalar/tuple
+algebra. No constructor or caller copy hook supplies authority. Constructor
+declarations are copied together; candidate programs are copied after their
+ordinary type/header/work admission. All public method/property results detach.
+Unsupported/cyclic graphs refuse, and copy allocation failures preserve the
+actual completed prefix while closing authority.
+
+The three actual historical witnesses now fail to change private state or
+retained issuance. Sixteen binary training histories/112 ordinary and reporting
+events agree exactly with untouched controls under repeated mutations. Separate
+tests preserve immutable identities and complete metadata, isolate candidate
+programs/getters, and cover four terminal copy failures. Existing native,
+reference-search, paired CPU, installation, reporting and retention regressions
+pass during development, including 602 identical CPU tensor phase bodies and an
+eight-unit bounded training/reporting trajectory. A fixed-source sixteen-script
+bundle is registered for the final scoped CPU qualification. This is no new
+Foundation definition, whole release or actual CUDA result. The repair stays in
+a linked canonical worktree until the original native text A1 job terminates.

@@ -11,6 +11,7 @@ from .host_resources import HostExecutionUnresolved
 from .policy import POLICY_EXTERNAL_PORTS
 from .cuda_storage import CudaStorageUnresolved
 from .token_reporting import REPORT_PORTS
+from .public_values import detached
 
 
 HOST_ALLOCATION_FAILURE = ('host-memory', 'host allocation exhausted; retained prefix has no continuation authority')
@@ -27,7 +28,7 @@ def _guard(method, *, diagnostic):
             raise ContractError('the registered run is sealed; retained evidence has no continuation authority')
         if self._token_report is not None and not diagnostic and method.__name__ not in REPORT_PORTS:
             raise ContractError('terminal reporting permanently freezes all learning and Compiler ports')
-        if (self._policy_contract is not None and not self._policy_running
+        if (not diagnostic and self._policy_contract is not None and not self._policy_running
                 and method.__name__ not in POLICY_EXTERNAL_PORTS):
             raise ContractError('the registered Runtime strategy owns all Compiler control and authority ports')
         try:
@@ -45,7 +46,13 @@ def _guard(method, *, diagnostic):
                 # target handler. No policy transition is an exogenous event.
                 self._advance_policy()
                 self._seal_run()
-            return result
+            try:
+                return detached(result)
+            except MemoryError:
+                raise
+            except Exception as error:
+                self._halt('public-value-boundary', error)
+                raise
         except MemoryError:
             # Existing keys and precreated immutable values only. In particular,
             # no exception formatting, attempted cleanup or new failure record.
@@ -88,4 +95,8 @@ def guard_host_allocations(runtime):
     for name, method in tuple(vars(runtime).items()):
         if not name.startswith('_') and type(method) is FunctionType:
             setattr(runtime, name, _guard(method, diagnostic=name == 'snapshot'))
+        elif not name.startswith('_') and type(method) is property:
+            if method.fset is not None or method.fdel is not None:
+                raise TypeError('Runtime public properties must be read-only value ports')
+            setattr(runtime, name, property(_guard(method.fget, diagnostic=True), doc=method.__doc__))
     return runtime

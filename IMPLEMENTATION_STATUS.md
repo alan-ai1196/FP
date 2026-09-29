@@ -10,6 +10,12 @@ from the original running native-text job and has focused CPU controls; it is
 not yet merged or a new CPU/CUDA release. Earlier unchanged-run evidence stays
 historical, and does not cover these caller mutations.
 
+The repair now detaches constructor declarations, paid candidate-program
+admission, every public result and read-only getters. A memo preserves complete
+metadata and internal alias topology while immutable values may share identity.
+Focused exact controls and the relevant individual CPU regressions pass; the
+fixed-source sixteen-script bundle is pending. No active text-run input changes.
+
 The [native text A1 runner](experiments/next_token/NATIVE_TEXT_A1.md) now binds
 the complete existing Runtime to the one-million-token training view and
 owned frozen report under fixed host/reference caps. It introduces no new

@@ -1,6 +1,6 @@
 # Public values must not alias live Runtime authority
 
-Status (2026-09-29): **THREE ACTUAL IMPLEMENTATION COUNTEREXAMPLES; REPAIR IN QUALIFICATION**.
+Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED CPU AUDIT; FIXED-SOURCE REGRESSION PENDING**.
 Foundation and ERC-1 are unchanged. The current caller-boundary ownership claim
 is reopened; prior successful trajectories are not retroactively fabricated or
 erased. Do not borrow the old release as evidence against these new attacks.
@@ -68,12 +68,38 @@ costs, not a new semantic architecture action or a free performance claim.
 
 ## Qualification and running experiment
 
-The candidate repair is being qualified in the linked canonical Git worktree
+The repair is being qualified in the linked canonical Git worktree
 `F:\FP_passive_boundary`, branch `compiler/passive-boundary`. It changes the
 value ownership boundary, not learning or search semantics. Its focused controls
-currently block the three witnesses and preserve constructor/getter isolation,
-immutable-source identity, internal sharing and four terminal copy failures.
-Broader continuation/reporting/installation checks remain required before merge.
+block the three witnesses and preserve constructor/getter/candidate-program
+isolation, immutable-source identity, internal sharing, complete extra metadata,
+slotted records and four terminal copy failures. Sixteen binary training histories
+and 112 training/reporting events stay exactly equal to untouched controls under
+repeated public mutations, with both packed and shared storage. The actual private
+learner remains identical during frozen reporting; public wrapper identity is
+deliberately detached. `FP_PUBLIC_VALUE_BOUNDARY_CPU.json` retains these checks.
+
+`public_values.detached` copies complete dictionary and inherited slot metadata
+without constructors or caller copying hooks. The existing public-port guard
+detaches every result and every read-only property. Constructor declarations are
+copied together; later candidate programs are copied after their existing type,
+header and construction-work admission. Invalid foreign proposals retain their
+recorded rejection behavior. Copy allocation failure follows the existing
+terminal host protocol, including when observation has already published.
+
+Existing construction, events, profiles, search proofs, paired CPU persistence,
+installation, ingress, host failures, native-token learning/reporting and shared
+retention audits pass during qualification. CPU tensor reuse also preserves
+602 complete phase bodies and the bounded eight-unit/report trajectory. Three
+audit fixture assumptions were repaired: reporting now checks private frozen
+identity separately from detached diagnostic equality; the CPU phase stub
+declares its token kind; historical constructor replay uses the historical
+declaration's own fields. These changes do not weaken numerical/ownership checks.
+
+The committed-source bundle `audit_public_value_regression.py` must now execute
+all sixteen complete relevant audit scripts without source changes, recording a
+separate receipt. This is a scoped caller-boundary regression, not reissuance of
+the old complete CPU/CUDA release or an actual device/performance claim.
 
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches
