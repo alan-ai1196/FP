@@ -12,11 +12,15 @@ now passes CPU qualification: 20 paired histories, 22 post-target failures and
 five full-V phases. The integration exposed and repaired a producer copy-resize
 accounting mismatch; it also bounds unfolded references and isolates allowance
 metadata. Original frame writing and full actual-frame comparisons remain.
-The open question is **net ordinary-token cost**. Run the one newly registered
-bounded actual pair from committed source, then close this qualification at its
-original outcome. Source bindings and structural traversal can outweigh the
-saved native expansion; correctness is not evidence of speed. No codec/cache
-menu, relation/static branch or terminal-journal replay is justified.
+The original actual pair now answers its finite cost question negatively:
+43.87193 versus104.78375 seconds for sixteen targets, with higher whole-job
+peak despite smaller pages. Both paths pass complete controls. Park this
+realization/default off and close the qualification; keep the extent repairs.
+The next research question is the **end-to-end ordinary-token obstruction**,
+not another expression-codec variant. The nonexpanding-check theorem alone
+does not solve the cost of the actual complete machine. No codec/cache menu,
+relation/static branch, terminal-journal or long-unit replay is justified by
+this result. Affordable trained comparisons remain unestablished and central.
 
 The fixed ordinary-token
 [bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)

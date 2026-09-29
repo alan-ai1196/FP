@@ -2,8 +2,19 @@
 
 ## Current execution state (2026-09-29)
 
-The [owned compositional path](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
-now passes complete CPU qualification and is default off. Twenty paired
+The [owned compositional path](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md#8-actual-result-byte-savings-did-not-make-this-realization-cheaper)
+now passes CPU and finite RTX 3090 correctness qualification, but its actual
+cost result is negative. At `c45c7e0`, ordinary sixteen-target time rises from
+43.87193 to 104.78375 seconds (2.3884 times); whole-job peak rises from
+3,584,151,552 to 3,928,686,592 bytes despite smaller retained pages. Both paths
+preserve 33 phases/4,541,709 words and pass uncached full-frame recovery plus
+corrupt-producer refusal after the seventeenth original target. The original
+journal is terminal; never replay it. This realization is **closed/default
+off**. Keep the shared extent/authority repairs. No expression-codec variant
+or long replay is justified; reassess the end-to-end ordinary-token cost
+obstruction while preserving the trained-model objective and relation closure.
+
+Twenty paired
 histories preserve 340 phase bodies/14,148,823 bytes, learners, reports,
 profiles and all fresh reads. Twenty-two post-target fault controls preserve
 the actual target, old learner, failed frames and pins. Both full-V CPU owners
@@ -18,13 +29,10 @@ now prevent producer workspace/copy resizing in both representations. Producer
 and reader limit wrappers and public contract wrappers are also detached.
 The original shared-native/frame regression audits pass; Foundation/ERC remain.
 
-The next action is the newly registered
-`python scripts/run_compositional_reference_cuda_a1.py --run` after committing
-this implementation, evidence and registration. Two original sequential
-240-second/16-GiB jobs compare the first sixteen original targets, with all
-numerical/storage limits fixed and post-target corruption refusal. Its absent
-journal must be created exclusively; once terminal, never replay it. Use this
-single result to decide net ordinary-token value, not to open a codec sweep.
+The original two 240-second/16-GiB jobs are complete and closed. Their result
+distinguishes the valid information-preservation theorem from an unsuccessful
+performance realization. Smaller expanded-byte counts alone do not establish
+affordable ordinary-token training or a whole-host advantage.
 
 [Compositional complete retention](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
 now has a conditional preservation theorem and a passive exact model. An
@@ -45,8 +53,8 @@ owned qualification above supplies the CPU implementation evidence.
 
 The passive model is closed. Its complete owner gate now passes above;
 body-only recovery still does not authorize dropping frame or fresh device
-checks. The newly registered bounded device test will decide whether the
-realization helps ordinary-token affordability. No codec/cache sweep, relation work or long replay is due;
+checks. The bounded actual pair above found no performance benefit from this
+realization. No codec/cache sweep, relation work or long replay is due;
 Foundation/ERC remain frozen and trained next-token comparisons remain the goal.
 
 [Bounded byte comparisons](theory/proofs/BOUNDED_BYTE_COMPARISONS.md) now have

@@ -1,6 +1,6 @@
 # Owned byte expressions preserve complete native records and phase frames
 
-Status: **IMPLEMENTED, DEFAULT OFF; COMPLETE CPU QUALIFICATION; FIXED CUDA PAIR REGISTERED**.
+Status: **CPU AND FINITE CUDA QUALIFIED; SLOWER IN THE FIXED PAIR; CLOSED/DEFAULT OFF**.
 The [passive preservation theorem](COMPOSITIONAL_COMPLETE_RETENTION.md) now has
 a concrete Runtime realization. Foundation, ERC-1, native learning, source
 interfaces, numerical checks and the reference-to-AMP bridge are unchanged.
@@ -217,8 +217,55 @@ target is revealed under a corrupted producer literal: independent retention
 must refuse and preserve that target, learner/cursor16, failed frame and pins.
 Complete current/lifetime device counters and whole-job peaks remain binding.
 
-This one pair will decide whether reduced native expansion outweighs structural
-traversal, frame recovery and binding metadata. It supplies no trained text
-score or later-unit law. Close this qualification at its original outcome;
-do not replay a terminal journal or use it to start a codec/cache sweep.
-Ordinary next-token affordability remains the reason for this work.
+The original pair is now complete as recorded below. It supplies no trained
+text score or later-unit law. Do not replay its terminal journal or use it to
+start a codec/cache sweep. Ordinary next-token affordability remains the goal.
+
+## 8. Actual result: byte savings did not make this realization cheaper
+
+Both original workers pass at `c45c7e00842911cec32272a22ed1ff4a80c4fb31`.
+The journal is **COMPLETE_ACTUAL_COMPOSITIONAL_REFERENCE_A1** with original
+process/job identities and per-call times. Neither worker times out.
+
+| Observed quantity | Existing archive | Expression archive |
+| --- | ---: | ---: |
+| Initialization seconds | 7.59650 | 17.74404 |
+| Ordinary sixteen-target seconds | 43.87193 | 104.78375 |
+| First eight targets seconds | 20.89593 | 51.18039 |
+| Last eight targets seconds | 22.97600 | 53.60336 |
+| Whole-job peak bytes, including controls | 3,584,151,552 | 3,928,686,592 |
+| Timed-prefix page count | 118 | 118 |
+| Timed-prefix page bytes | 19,617,234 | 14,605,033 |
+| Timed-prefix reference-payload peak | 272,952,059 | 267,924,637 |
+| Accepted source bindings | 0 | 322,937 |
+| Dictionary expression nodes | 0 | 399,123 |
+
+Ordinary time increases **138.84007%**, or about **2.3884 times** the existing
+path, in this single ordered pair. Page payload decreases 25.54999%, but
+whole-job peak increases by 344,535,040 bytes (9.61274%). Initialization is also
+slower. These are finite observations, not universal asymptotic statements or
+a measured attribution of the extra time to individual functions.
+
+Both timed prefixes preserve 33 phases/4,541,709 checked words, sixteen
+original pending records and zero optimizer commits. Both uncached controls
+recover the same 14,902,899-byte last observation body and every padding byte
+in its 64-MiB frame. After the seventeenth original target, both producer
+corruptions refuse with learner/cursor16 unchanged, that target retained,
+35 phase records, an owned failed 64-MiB frame and 317 unsealed pins. Outstanding
+page copies remain paid and extent-protected. Both owners then halt.
+
+The final paid-reference peaks including the failure control are 273,189,637
+and 268,104,820 bytes. Both paths retain 336 images/67,102,758 bytes, cumulative
+arena bytes37,561,152, peak live24,214,064 and consumed extent24,379,392. All
+current/lifetime device counters remain one 1-GiB allocation/reservation.
+
+The scoped preservation theorem survives this test; the expectation that its
+reduced native byte expansion would make this concrete Runtime faster does
+not. Structural checks, bindings and the remaining full-frame work are real
+costs, and payload savings alone did not predict their combined effect. No
+affordable ordinary-text budget follows. **Park this realization, default off,
+and close the qualification.** Keep the extent/authority repairs in the normal
+archive path. Do not tune another expression-codec variant or replay a long
+unit to defend it. Reassess the end-to-end ordinary-token obstruction before
+choosing the next research intervention; the relation/static branches remain
+closed and strong trained next-token comparisons remain the objective.

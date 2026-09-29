@@ -11212,3 +11212,38 @@ uncached frame recovery and corrupt-producer refusal after the seventeenth
 original target must pass. Its exclusive original journal cannot be replayed.
 Use that finite result to decide net ordinary-token value; do not deepen another
 codec menu or return to relation/static cases. Foundation/ERC remain frozen.
+
+
+## 328. Reject the expression archive as the next affordability improvement (2026-09-29)
+
+Both original RTX 3090 workers at c45c7e00842911cec32272a22ed1ff4a80c4fb31
+pass their fixed 240-second/16-GiB jobs, including 33 checked phases/4,541,709
+words and all sixteen original pending records. Initialization is 7.59650
+seconds for the existing archive and 17.74404 for expressions. Ordinary calls
+take 43.8719327 versus104.7837538 seconds: a 138.84007% increase, about2.3884
+times, in one ordered pair. Both first and last eight-target portions are
+slower. There is no basis for a favorable throughput claim.
+
+The expression representation reduces the118 pages from19,617,234 to14,605,033
+bytes and the timed reference peak from272,952,059 to267,924,637. Yet whole-job
+peak, including controls, rises from3,584,151,552 to3,928,686,592 bytes. The
+expression owner retains322,937 source bindings and399,123 terms. Smaller
+serialized payload did not predict the cost of the full implementation.
+
+Both independently recover the14,902,899-byte uncached final observation and
+its entire64-MiB frame/padding. After the seventeenth original target, both
+corrupted producers refuse. Learner/cursor16 stay unchanged; the target,
+failed64-MiB frame, paid page copies and317 unsealed pins remain. Both owners
+halt with35 phases. Final reference peaks are273,189,637/268,104,820. Both
+retain336 images/67,102,758 bytes, cumulative arena37,561,152, peak live24,214,064
+and consumed extent24,379,392. Current/lifetime device counters remain one
+1-GiB allocation/reservation in both workers.
+
+FP_COMPOSITIONAL_REFERENCE_CUDA_A1.json is terminal and must never be replayed.
+The scoped preservation theorem and repaired output-extent boundary remain
+valid, but the performance expectation for this concrete realization is
+falsified by its original test. Close and park the expression path/default off;
+keep the common ownership repairs. Do not tune another codec variant or run a
+long unit to defend the result. Reassess the full ordinary-token cost problem
+before choosing the next intervention. Foundation/ERC and relation closure
+remain; an affordable trained-text comparison is still not established.

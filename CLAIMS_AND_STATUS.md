@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Owned compositional retention: CPU QUALIFIED; DEFAULT OFF; ACTUAL PAIR REGISTERED.**
+**Owned compositional retention: CPU/FINITE CUDA CORRECTNESS PASS; OBSERVED COST REGRESSION; CLOSED.**
 The [realization and accounting counterexample](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
 preserve complete native values and actual full frames. Native checks avoid
 expansion; original frame writing and full frame/padding comparisons remain.
@@ -9,8 +9,14 @@ faults, changed live words and unpaid traversal controls pass. Five full-V
 CPU phases/133,079,440 bytes also agree. An accepted 208-byte page charged as
 196 refutes the old copy-extent assumption; private exports now prevent that
 resize. Independent allowance wrappers prevent producer metadata from changing
-checker caps. This is no Foundation change or new complete search class. Actual
-GPU cost, host-memory benefit and affordable training remain unestablished.
+checker caps. Both original actual workers at `c45c7e0` pass 33 phases/4,541,709
+words, uncached frame recovery and post-target corruption refusal. The new
+path takes 104.78375 versus 43.87193 seconds (138.84007% more) in one ordered
+pair. Page bytes fall 25.54999%, while whole-job peak rises 9.61274%. This
+falsifies the performance expectation for the tested realization, not the
+conditional byte-preservation theorem. The path is parked/default off; its
+journal is terminal. No Foundation change, new complete search class or
+affordable-training claim follows.
 
 **Compositional retention: CONDITIONAL THEOREM; EXACT MODEL/FULL-V CPU RECORD PASS.**
 The [proof and exact class](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)

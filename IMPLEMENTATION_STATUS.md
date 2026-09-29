@@ -11,8 +11,11 @@ five matching full-V phases. Node, binding, byte, expanded-reference and exact
 comparison caps all remain explicit. Both resource roles retain dependencies;
 copy coexistence, snapshots, failed frames and pins remain owned. Private
 buffer exports repair the reproduced 196-paid/208-actual-byte producer resize
-mismatch. A fixed 16-target actual pair is registered before launch; no CUDA
-qualification or speedup has yet been established for this path.
+mismatch. Both original 16-target RTX 3090 workers at `c45c7e0` now pass all
+33 phases/4,541,709 words and post-target corruption refusal. Ordinary time
+rises 43.87193 to 104.78375 seconds; whole-job peak also rises despite smaller
+pages. This qualification is closed/default off and its journal terminal.
+Keep the common extent repair; no codec variant or long replay follows.
 
 The earlier [compositional retention model](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
 remains passive research evidence. It

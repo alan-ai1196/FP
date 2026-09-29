@@ -1,0 +1,357 @@
+{
+  "status": "COMPLETE_ACTUAL_COMPOSITIONAL_REFERENCE_A1",
+  "source_commit": "c45c7e00842911cec32272a22ed1ff4a80c4fb31",
+  "expression_nodes": 1048576,
+  "expression_bindings": 1048576,
+  "cases": [
+    "existing-archive",
+    "expression-archive"
+  ],
+  "host_cap": 17179869184,
+  "deadline_ms": 240000,
+  "arena_bytes": 1073741824,
+  "reference_payload_cap": 2147483648,
+  "canonical_image_cap": 67108864,
+  "token_fact_cap": 4194304,
+  "ordinary_targets": 16,
+  "fault_target_index": 16,
+  "update_unit": 512,
+  "phase_evidence_bytes": 67108864,
+  "phase_output_cells": 4194304,
+  "exact_cell_cap": 4096,
+  "state_atol": "16",
+  "probability_atol": "1/1000000",
+  "reuse_regions": true,
+  "grouped_reads": false,
+  "composed_native": false,
+  "archive_workspaces": false,
+  "scope": "Fixed existing/expression archive comparison on the actual RTX 3090.\n\nBoth paths keep all native/AMP checks, original frame writing, full actual\nframe comparison, images/base facts and region reuse. Time the original first\n16 targets, then check uncached recovery and post-target producer corruption.\nNo profiler, full-unit replay, model change or language score.",
+  "results": [
+    {
+      "case": "existing-archive",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3582926848,
+        "peak_job_commit": 3584151552,
+        "user_100ns": 546875000,
+        "kernel_100ns": 17656250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 9420,
+        "process_creation_100ns": 134351530676473779
+      },
+      "launch_wall_seconds": 57.65743120000025,
+      "result": {
+        "status": "PASS_ACTUAL_COMPOSITIONAL_REFERENCE",
+        "case": "existing-archive",
+        "before": {
+          "process_id": 9420,
+          "creation_100ns": 134351530676473779,
+          "process_commit": 34119680,
+          "lifetime_process_commit_peak": 34119680,
+          "job_commit_peak": 35344384,
+          "process_user_100ns": 2187500,
+          "process_kernel_100ns": 1250000,
+          "job_user_100ns": 2187500,
+          "job_kernel_100ns": 1250000,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 7.596500899999683,
+          "predict/0": 1.2797356999999465,
+          "observe/0": 1.1847766999999294,
+          "predict/1": 1.3128538000000844,
+          "observe/1": 1.2837689000002683,
+          "predict/2": 1.3543433999998342,
+          "observe/2": 1.2870035999999345,
+          "predict/3": 1.4071592999998757,
+          "observe/3": 1.267340200000035,
+          "predict/4": 1.3701140000002852,
+          "observe/4": 1.2415667999998732,
+          "predict/5": 1.3627189000003455,
+          "observe/5": 1.250387099999898,
+          "predict/6": 1.3528288000002249,
+          "observe/6": 1.232133900000008,
+          "predict/7": 1.4295626999996784,
+          "observe/7": 1.279638800000157,
+          "predict/8": 1.3814038999998957,
+          "observe/8": 1.3220968999999059,
+          "predict/9": 1.4225400999998783,
+          "observe/9": 1.3616729000000305,
+          "predict/10": 1.4496068999997078,
+          "observe/10": 1.3837367999999515,
+          "predict/11": 1.4783854000002066,
+          "observe/11": 1.380747600000177,
+          "predict/12": 1.4789058000001205,
+          "observe/12": 1.3744702999997571,
+          "predict/13": 1.4729556000002049,
+          "observe/13": 1.4195850999999493,
+          "predict/14": 1.6069327000000158,
+          "observe/14": 1.4445750999998381,
+          "predict/15": 1.5204038000001674,
+          "observe/15": 1.4779811999997037
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_primitive_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true,
+          "paid_base_fact_bytes": 1407321,
+          "both_fact_roles_checked": true,
+          "paid_reference_peak": 272952059,
+          "archive_pages": 118,
+          "actual_page_bytes": 19617234,
+          "expression_nodes": 0,
+          "source_bindings": 0
+        },
+        "independent_frame": {
+          "uncached_actual_phase_equal": true,
+          "actual_phase_bytes": 14902899,
+          "complete_frame_bytes": 67108864,
+          "all_padding_checked": true
+        },
+        "corruption_control": {
+          "original_target_index": 16,
+          "original_target_retained": true,
+          "changed_producer_refused": true,
+          "independent_reader_mismatch": true,
+          "old_learner_and_cursor_preserved": true,
+          "terminal": true,
+          "retained_failed_frame_bytes": 67108864,
+          "unsealed_pins": 317,
+          "refusal": "RuntimeError: registered CUDA execution violated its admitted inputs"
+        },
+        "outcome": {
+          "total_phase_records": 35,
+          "paid_reference_peak": 273189637,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "cumulative_arena_bytes": 37561152,
+          "peak_live_arena_bytes": 24214064,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 24379392,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 9420,
+          "creation_100ns": 134351530676473779,
+          "process_commit": 3582926848,
+          "lifetime_process_commit_peak": 3582926848,
+          "job_commit_peak": 3584151552,
+          "process_user_100ns": 543906250,
+          "process_kernel_100ns": 16875000,
+          "job_user_100ns": 543906250,
+          "job_kernel_100ns": 16875000,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "expression-archive",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 3927461888,
+        "peak_job_commit": 3928686592,
+        "user_100ns": 1288906250,
+        "kernel_100ns": 22500000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 12860,
+        "process_creation_100ns": 134351531253059012
+      },
+      "launch_wall_seconds": 132.31192459999966,
+      "result": {
+        "status": "PASS_ACTUAL_COMPOSITIONAL_REFERENCE",
+        "case": "expression-archive",
+        "before": {
+          "process_id": 12860,
+          "creation_100ns": 134351531253059012,
+          "process_commit": 33574912,
+          "lifetime_process_commit_peak": 34353152,
+          "job_commit_peak": 35577856,
+          "process_user_100ns": 2187500,
+          "process_kernel_100ns": 1093750,
+          "job_user_100ns": 2187500,
+          "job_kernel_100ns": 1093750,
+          "total_job_processes": 2
+        },
+        "stages": {
+          "initialize": 17.744042400000126,
+          "predict/0": 3.4463276999999835,
+          "observe/0": 2.918518099999801,
+          "predict/1": 3.2889178999998876,
+          "observe/1": 2.966110999999728,
+          "predict/2": 3.414179299999887,
+          "observe/2": 3.048238799999581,
+          "predict/3": 3.4483479000000443,
+          "observe/3": 2.9194608000002518,
+          "predict/4": 3.348657000000003,
+          "observe/4": 3.0493429999996806,
+          "predict/5": 3.3524554999999054,
+          "observe/5": 3.000294400000257,
+          "predict/6": 3.351394100000107,
+          "observe/6": 3.133280900000045,
+          "predict/7": 3.43775770000002,
+          "observe/7": 3.0571109000002252,
+          "predict/8": 3.5191483000003245,
+          "observe/8": 3.0808508999998594,
+          "predict/9": 3.4529453000000103,
+          "observe/9": 3.054649800000334,
+          "predict/10": 3.4620472000001428,
+          "observe/10": 3.0728149999999914,
+          "predict/11": 3.6139289000002464,
+          "observe/11": 3.2035711000003175,
+          "predict/12": 3.5129345000000285,
+          "observe/12": 3.140351500000179,
+          "predict/13": 3.583837599999697,
+          "observe/13": 3.2124861000002056,
+          "predict/14": 3.5212249000001066,
+          "observe/14": 3.1727547000000413,
+          "predict/15": 3.7743044999997437,
+          "observe/15": 3.22550850000016
+        },
+        "corpus": {
+          "role": "historical-training",
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 1024,
+          "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+          "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+          "validation_or_test_read": false
+        },
+        "positive": {
+          "observations": 16,
+          "checked_phases": 33,
+          "checked_primitive_words": 4541709,
+          "cursor": 16,
+          "pending_count": 16,
+          "committed_units": 0,
+          "all_original_records_retained": true,
+          "paid_base_fact_bytes": 1407321,
+          "both_fact_roles_checked": true,
+          "paid_reference_peak": 267924637,
+          "archive_pages": 118,
+          "actual_page_bytes": 14605033,
+          "expression_nodes": 399123,
+          "source_bindings": 322937
+        },
+        "independent_frame": {
+          "uncached_actual_phase_equal": true,
+          "actual_phase_bytes": 14902899,
+          "complete_frame_bytes": 67108864,
+          "all_padding_checked": true
+        },
+        "corruption_control": {
+          "original_target_index": 16,
+          "original_target_retained": true,
+          "changed_producer_refused": true,
+          "independent_reader_mismatch": true,
+          "old_learner_and_cursor_preserved": true,
+          "terminal": true,
+          "retained_failed_frame_bytes": 67108864,
+          "unsealed_pins": 317,
+          "refusal": "RuntimeError: registered CUDA execution violated its admitted inputs"
+        },
+        "outcome": {
+          "total_phase_records": 35,
+          "paid_reference_peak": 268104820,
+          "image_count": 336,
+          "image_bytes": 67102758,
+          "cumulative_arena_bytes": 37561152,
+          "peak_live_arena_bytes": 24214064,
+          "arena": {
+            "native_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "current_allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "consumed_bytes": 24379392,
+            "allocation_counter": [
+              1,
+              1073741824,
+              1
+            ],
+            "actual_tensor_arena_bytes": 1073741824,
+            "actual_allocator_reserved_bytes": 1073741824,
+            "lifetime_tensor_peak_bytes": 1073741824,
+            "lifetime_allocator_reserved_peak_bytes": 1073741824
+          }
+        },
+        "device": {
+          "runtime_version": 13040,
+          "driver_api_version": 13040,
+          "driver_version": "616.92",
+          "pci_bus_id": "0000:0B:00.0",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "physical_vram_bytes": 25769803776
+        },
+        "after": {
+          "process_id": 12860,
+          "creation_100ns": 134351531253059012,
+          "process_commit": 3927445504,
+          "lifetime_process_commit_peak": 3927461888,
+          "job_commit_peak": 3928686592,
+          "process_user_100ns": 1282968750,
+          "process_kernel_100ns": 21718750,
+          "job_user_100ns": 1283125000,
+          "job_kernel_100ns": 21718750,
+          "total_job_processes": 2
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}
