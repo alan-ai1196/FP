@@ -11117,3 +11117,49 @@ half remains slower in both arms. Remaining canonical production, complete-
 state traversal and later-unit validation warrant the next attack; no new
 comparison variant, semantic relaxation, model/cache menu or long replay is
 justified by this pair alone. Foundation/ERC and relation closure remain.
+
+
+## 326. Separate complete recoverability from repeated byte expansion (2026-09-29)
+
+The current archive already stores repeated literal bytes once but independently
+expands complete records on each binding check. Further comparison constants
+do not address that repeated work. A passive construction now shows that the
+check can instead bind the owner's fixed byte expression through a separate
+page-derived literal/concatenation dictionary. Only verified immutable source
+values reuse expression roots; every mutable wrapper and the original complete
+guard remain. The producer still receives only immutable byte messages.
+
+The conditional preservation proof uses strict-prefix dependencies, exact
+literal equality, unique pair definitions and an independent expected traversal.
+It deliberately decides structural expression equality, not arbitrary equality
+of compressed strings. Equal byte strings can have different expression roots.
+Nonempty literals give at most 2D-1 unfolded node visits for D recovery bytes;
+an empty-leaf doubling witness refutes that bound if empties are admitted.
+Encoded payload is exactly 48M + sum(5+b_i) + 17C. Indices, strong source bindings,
+publication copies and original guards remain additional costs, not free state.
+
+The exact audit passes 106 typed values, 2,400 single-bit mutations, 300
+truncations, forced collisions, mutable descendants and staged allocation
+failures. The 33-record repeated-body fixture retains 69,220,376 canonical
+bytes in 9,881 model page bytes; its warm expected traversal emits only 3,744
+literal bytes. A favorable strong baseline uses the current complete archive
+owner with a prewarmed stable-body image. Its record pages occupy 11,313 bytes
+and it still compares every expanded byte. Both compress this periodic body
+well; the evidence concerns verification work, not a general compression win.
+
+The existing full-V CPU-tensor Runtime separately executes its first two original
+targets, with reuse/images/base facts and every current complete check. All five
+original 64-MiB frames including padding pass. Afterwards the passive model
+retains their 133,079,440-byte canonical bodies in 6,646,680 page bytes; a fresh
+reader reconstructs every byte. For four ordinary records, expected literal
+emission is 4,803,406 versus 82,576,870 complete bytes, but 675,747 structural
+pair lookups still run. Binding was tested with expansion disabled. No CUDA
+context, new data split, Runtime retention substitution or timing claim occurs.
+
+FP_COMPOSITIONAL_RETENTION_MODEL.json and FP_COMPOSITIONAL_FULL_V_RECORDS.json
+retain the minimal evidence. Production remains unchanged. Close the passive
+model and carry this single candidate to complete owner/resource qualification;
+the body-only theorem does not authorize removal of full-frame/padding checks,
+failure pins, target retention or fresh numerical observations. A bounded new
+device test is justified only after that gate. Ordinary next-token learning
+remains the objective; no relation/static or codec-variant branch is reopened.

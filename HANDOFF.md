@@ -1,6 +1,30 @@
 # FP Handoff
 
-## Current execution state (2026-09-28)
+## Current execution state (2026-09-29)
+
+[Compositional complete retention](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
+now has a conditional preservation theorem and a passive exact model. An
+independent reader checks the owner's fixed byte expression without expanding
+old immutable values; mutable wrappers remain freshly traversed. The exact
+decision class is structural expression equality, not arbitrary compressed-
+string equality. Complete guards and all numerical reads remain unchanged.
+
+Exact fault/collision controls pass. A strong current archive owner with a
+prewarmed body also compresses the 33-record control well; the useful distinction
+is avoiding repeated expansion, not a claimed compression or timing win.
+Five actual full-V CPU Runtime phase bodies/133,079,440 bytes recover exactly
+from model pages. For the four ordinary records, expected literal emission is
+4,803,406 bytes versus 82,576,870 complete bytes, with 675,747 pair lookups still
+required. All original frames/padding are independently checked. This model
+has no Runtime, GPU, ownership or bridge authority; production is unchanged.
+
+Close the passive model here. The next gate is one complete owned realization
+covering native retention and full frames, paid metadata/copies, both-role
+dependencies, snapshots and post-target failure retention. Body-only recovery
+does not authorize dropping actual frame padding or fresh device checks. Then
+a newly registered bounded device test can decide whether it helps ordinary-
+token affordability. No codec/cache sweep, relation work or long replay is due;
+Foundation/ERC remain frozen and trained next-token comparisons remain the goal.
 
 [Bounded byte comparisons](theory/proofs/BOUNDED_BYTE_COMPARISONS.md) now have
 a conditional preservation law and exact/complete CPU controls. Two bounded

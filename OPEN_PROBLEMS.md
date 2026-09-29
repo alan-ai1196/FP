@@ -1,5 +1,21 @@
 # FP Open Problems
 
+The [compositional retention question](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
+is closed as a scoped preservation theorem and passive model: complete records
+can be bound through an independently reconstructed byte-expression dictionary
+without re-expanding old immutable bodies. Five real full-V CPU phase bodies
+recover exactly. Large reductions in expected literal emission coexist with
+substantial mutable-wrapper/pair-lookup work; no speedup is established.
+
+The open question is now **complete owned realization and net ordinary-token
+cost**, not another compression theorem. Implement this single candidate under
+the existing complete-state/resource boundary before qualifying it on device.
+The current full-frame writer, actual padding, leases, metadata/copy charges,
+snapshots and post-target failure state cannot be bypassed by the passive model.
+Do not deepen a codec/cache menu or reopen relation/static branches. A bounded
+new device comparison, after the owner gate, should decide whether this work
+advances an affordable next-token budget. All original journals remain terminal.
+
 The fixed ordinary-token
 [bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
 is closed at its original successful result. Exact and complete CPU controls

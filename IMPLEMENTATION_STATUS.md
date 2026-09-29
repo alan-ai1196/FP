@@ -1,6 +1,18 @@
 # FP Implementation Status
 
-## Current token execution boundary (2026-09-28)
+## Current token execution boundary (2026-09-29)
+
+The [compositional retention model](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
+is confined to research/audit code; production Runtime is unchanged. It
+independently parses literal/concatenation pages and binds complete values by
+the owner's fixed structural expression. Only the existing immutable value
+algebra reuses source bindings; dataclasses and mutable descendants rewalk.
+Exact mutation, collision, allocation and snapshot controls pass. Five actual
+full-V CPU Runtime phase bodies/133,079,440 bytes fully recover from pages,
+without expansion during model binding. Original complete frames still pass.
+This supplies no paid Runtime realization, CUDA bridge or speedup claim. The
+next implementation gate is complete owned retention for this candidate,
+including full-frame padding, metadata/copy costs and post-target failures.
 
 The [bounded comparison lowering](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
 changes two exact comparison sites only. It preserves comparison credit,

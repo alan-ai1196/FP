@@ -1,5 +1,19 @@
 # FP Claims and Status
 
+**Compositional retention: CONDITIONAL THEOREM; EXACT MODEL/FULL-V CPU RECORD PASS.**
+The [proof and exact class](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
+show that complete recoverability does not itself require repeated expansion
+of verified immutable byte expressions. A separate page-derived reader checks
+the owner's structural expression; source guards and mutable wrappers still
+run. This is not arbitrary compressed-string equality or a class certificate.
+Encoded payload is exactly 48M + sum(5+b_i) + 17C for M pages, literal lengths
+b_i and C pairs; it is not whole-host residency. Exact fault/collision controls
+and five actual full-V CPU phase bodies pass. The four ordinary bodies emit
+4,803,406 expected literal bytes for 82,576,870 complete bytes, with 675,747
+pair lookups remaining. All model roots recover completely. The strong current
+archive baseline also compresses the repeated-body fixture well. No timing,
+paid Runtime integration, fresh bridge or affordable-learning claim follows.
+
 **Bounded byte comparisons: CONDITIONAL PRESERVATION LAW; CPU AND FINITE CUDA PASS.**
 The [proof and counterexamples](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
 preserve exact interning decisions, comparison credit, independent iterator

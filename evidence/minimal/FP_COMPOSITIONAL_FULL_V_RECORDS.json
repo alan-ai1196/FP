@@ -1,0 +1,80 @@
+{
+  "status": "PASS_COMPOSITIONAL_FULL_V_RECORDS",
+  "scope": "Passive expression audit of five actual full-vocabulary CPU Runtime records.\n\nThe existing complete owner still executes every original check and retention.\nThe research model consumes its finished records afterwards. No CUDA context,\nnew corpus data, substituted Runtime retention or timing/host-budget claim.",
+  "vocabulary": 50257,
+  "masters": 603092,
+  "original_targets": 2,
+  "original_runtime_phases": 5,
+  "corpus": {
+    "role": "historical-training",
+    "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+    "file_bytes": 360000000,
+    "byte_offset": 0,
+    "bytes_read": 1024,
+    "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+    "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+    "validation_or_test_read": false
+  },
+  "all_existing_frames_and_padding_checked": true,
+  "all_model_roots_fully_recovered": true,
+  "independent_page_only_rebuild": true,
+  "no_expansion_during_model_binding": true,
+  "original_frame_bytes": 335544320,
+  "complete_canonical_bytes": 133079440,
+  "retained_model_page_bytes": 6646680,
+  "literal_nodes": 14187,
+  "pair_nodes": 33265,
+  "source_binding_count": 9446,
+  "phases": [
+    {
+      "phase": "construction:initialize",
+      "expanded": 50502570,
+      "page_bytes": 6305384,
+      "new_nodes": 40420,
+      "value_visits": 64727,
+      "immutable_binding_hits": 57779,
+      "expected_literal_bytes": 47588928,
+      "expected_pair_checks": 304376
+    },
+    {
+      "phase": "ordinary:predict",
+      "expanded": 26898471,
+      "page_bytes": 119706,
+      "new_nodes": 1868,
+      "value_visits": 28398,
+      "immutable_binding_hits": 17321,
+      "expected_literal_bytes": 1151687,
+      "expected_pair_checks": 219292
+    },
+    {
+      "phase": "ordinary:observe",
+      "expanded": 14347356,
+      "page_bytes": 93753,
+      "new_nodes": 1927,
+      "value_visits": 14437,
+      "immutable_binding_hits": 8864,
+      "expected_literal_bytes": 1246453,
+      "expected_pair_checks": 117721
+    },
+    {
+      "phase": "ordinary:predict",
+      "expanded": 26946967,
+      "page_bytes": 35194,
+      "new_nodes": 907,
+      "value_visits": 28528,
+      "immutable_binding_hits": 17384,
+      "expected_literal_bytes": 1154839,
+      "expected_pair_checks": 220173
+    },
+    {
+      "phase": "ordinary:observe",
+      "expanded": 14384076,
+      "page_bytes": 92643,
+      "new_nodes": 2330,
+      "value_visits": 14557,
+      "immutable_binding_hits": 8908,
+      "expected_literal_bytes": 1250427,
+      "expected_pair_checks": 118561
+    }
+  ]
+}
