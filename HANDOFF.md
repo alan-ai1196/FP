@@ -2,17 +2,24 @@
 
 ## Current execution state (2026-09-29)
 
-The [ordinary-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md)
-is now preregistered for its original launch: 1,048,576 real training tokens,
-full vocabulary, tuned upstream order-3/5 MKN and a standard Transformer with
-two normal AdamW schedules and 16,777,216 target exposures each. Selection uses
-the first 4,096 development tokens; the 12,288-token reporting suffix preserves
-its original preceding context. Baseline training no longer waits for an FP
-budget that has not been established. This supplies a measured target for the
-FP study, not an FP result or matched-budget claim. CPU/report-boundary and
-Windows child-job controls pass. Commit inputs before launch; retain the
-exclusive original journal and never retry a terminal job. After this one
-study, return to the native model/budget decision rather than a baseline menu.
+The [ordinary-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
+is complete and closed at `71e4c2c`. On the same 12,288-token development
+suffix, the selected Transformer scores 6.260544623 nats, order-5 MKN
+6.587281632 and the unigram 7.744455628. All use the full vocabulary and
+1,048,576 unique training tokens. Each Transformer rate run receives
+16,777,216 target exposures; both finish 8,191 updates plus one scaler skip.
+All four original jobs complete in 245.33308 total launcher seconds. The
+Transformer's tuning curve still improves at the final selected checkpoint,
+so convergence/optimality is unestablished. The journal is terminal; never
+replay it. These are development baselines, not an absent FP score or a
+matched-budget FP comparison.
+
+Return now to the owned FP learner and affordable model/budget decision.
+Complete native-only training and frozen reporting already exist and can
+be assessed as a route to a first native learning result. An actual GPU-trained
+result still owes every AMP phase/relation; passive helpers cannot substitute
+for the complete Runtime. No new baseline family, static precision case or
+archive variant is due. Foundation/ERC and rational/relation closure remain.
 
 The [ordinary-token optimizer diagnosis](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
 is now closed. Existing U floors its projected grid step: reducing the rate

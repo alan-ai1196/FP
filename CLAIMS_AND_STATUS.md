@@ -1,13 +1,17 @@
 # FP Claims and Status
 
-**Ordinary-text baseline anchor A1: PREREGISTERED; CPU/OS BOUNDARY CONTROL PASS; NO MODEL OUTCOME YET.**
-The [fixed study](experiments/next_token/BASELINE_ANCHOR_A1.md) trains tuned
-upstream MKN and a normal AdamW Transformer on the same full-alphabet real-text
-view. It measures a reference point while FP affordability is unresolved.
-Original-context suffix reporting and one-/two-process OS job controls pass.
-No model quality, actual GPU execution or FP comparison follows before the
-original jobs complete. Development data remain previously exposed; no fresh
-test, independence, model-selection optimality or Compiler claim is made.
+**Ordinary-text baseline anchor A1: ACTUAL TRAINING/REPORTING COMPLETE; CLOSED.**
+The [original study](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
+at `71e4c2c` completes all four bounded jobs. Selected Transformer, order-5 MKN
+and unigram suffix NLLs are 6.260544623, 6.587281632 and 7.744455628 nats on
+the same 12,288 development targets/full alphabet. The two Transformer runs
+each receive 16,777,216 exposures and complete 8,191 updates plus one scaler
+skip. Their best checkpoints are final and still improving, so convergence
+and a strongest-baseline claim remain unproved. Total launcher wall time is
+245.33308 seconds; no matched FP cost or model comparison is inferred. The
+journal is terminal. Previously exposed development data supply no fresh
+test, independence, installation or complete-Compiler authority. Return to
+the actual native learner/budget; no further baseline catalog is due.
 
 **Token floor-grid dynamics: SCOPED THEOREM; EXACT COUNTEREXAMPLE/FULL-V DIAGNOSTIC PASS; CLOSED.**
 The [update-cell law](experiments/next_token/GRID_UPDATE_DYNAMICS.md) gives

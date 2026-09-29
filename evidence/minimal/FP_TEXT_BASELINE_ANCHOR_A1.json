@@ -1,0 +1,959 @@
+{
+  "status": "COMPLETE_TEXT_BASELINE_ANCHOR_A1",
+  "source_commit": "71e4c2ca364f410eaa3c71663de2efb35690c746",
+  "protocol": "experiments/next_token/BASELINE_ANCHOR_A1.md",
+  "artifact_directory": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1",
+  "train_tokens": 1048576,
+  "tuning_tokens": 4096,
+  "report_start": 4096,
+  "report_stop": 16384,
+  "vocabulary": 50257,
+  "host_job_cap": 17179869184,
+  "monitored_gpu_reserved_cap": 23622320128,
+  "cases": [
+    "ngram",
+    "transformer-0",
+    "transformer-1",
+    "report"
+  ],
+  "results": [
+    {
+      "case": "ngram",
+      "deadline_ms": 1800000,
+      "active_process_limit": 2,
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 1077358592,
+        "peak_job_commit": 1105125376,
+        "user_100ns": 386406250,
+        "kernel_100ns": 24375000,
+        "total_processes": 16,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3676,
+        "process_creation_100ns": 134351560057366691
+      },
+      "launch_wall_seconds": 38.717805500000395,
+      "result": {
+        "status": "COMPLETE_NGRAM_AND_UNIGRAM_REPORT",
+        "case": "ngram",
+        "before": {
+          "process_id": 3676,
+          "creation_100ns": 134351560057366691
+        },
+        "train_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "tuning_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\val.bin",
+          "file_bytes": 4000000,
+          "byte_offset": 0,
+          "bytes_read": 8192,
+          "prefix_sha256": "a2d2a3396ffd3464b26998a4f3fe6916f276f6d2ff2526e9c12d8f7b9b316b9a",
+          "role": "previously_exposed_development",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "tools": [
+          {
+            "tool": "lmplz.exe",
+            "pid": 2568,
+            "exit_code": 0,
+            "wall_seconds": 0.69802510000045
+          },
+          {
+            "tool": "build_binary.exe",
+            "pid": 6628,
+            "exit_code": 0,
+            "wall_seconds": 0.6864574000001085
+          },
+          {
+            "tool": "fp_kenlm_report.exe",
+            "pid": 24096,
+            "exit_code": 0,
+            "wall_seconds": 5.503606799999943
+          },
+          {
+            "tool": "lmplz.exe",
+            "pid": 26016,
+            "exit_code": 0,
+            "wall_seconds": 1.3699317999999039
+          },
+          {
+            "tool": "build_binary.exe",
+            "pid": 10580,
+            "exit_code": 0,
+            "wall_seconds": 2.140306999999666
+          },
+          {
+            "tool": "fp_kenlm_report.exe",
+            "pid": 26888,
+            "exit_code": 0,
+            "wall_seconds": 5.595645899999909
+          },
+          {
+            "tool": "fp_kenlm_report.exe",
+            "pid": 10752,
+            "exit_code": 0,
+            "wall_seconds": 22.370052999999643
+          }
+        ],
+        "candidates": [
+          {
+            "order": 3,
+            "tuning": {
+              "status": "COMPLETE_FROZEN_KENLM_REPORT",
+              "tokens": 4096,
+              "mean_nll_nats": 6.39606888533513,
+              "vocabulary": 50257,
+              "order": 3,
+              "context_cap": 256,
+              "seen_real_ids": 36806,
+              "unseen_real_ids": 13451,
+              "scored_model_columns": 36807,
+              "normalization": "all real labels; one UNK bucket split uniformly; no EOS target"
+            },
+            "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\ngram\\order3.trie",
+            "artifact_bytes": 11284553
+          },
+          {
+            "order": 5,
+            "tuning": {
+              "status": "COMPLETE_FROZEN_KENLM_REPORT",
+              "tokens": 4096,
+              "mean_nll_nats": 6.369526800163302,
+              "vocabulary": 50257,
+              "order": 5,
+              "context_cap": 256,
+              "seen_real_ids": 36806,
+              "unseen_real_ids": 13451,
+              "scored_model_columns": 36807,
+              "normalization": "all real labels; one UNK bucket split uniformly; no EOS target"
+            },
+            "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\ngram\\order5.trie",
+            "artifact_bytes": 34489589
+          }
+        ],
+        "estimator": "upstream unpruned interpolated modified Kneser-Ney; no discount fallback",
+        "selected": {
+          "order": 5,
+          "tuning": {
+            "status": "COMPLETE_FROZEN_KENLM_REPORT",
+            "tokens": 4096,
+            "mean_nll_nats": 6.369526800163302,
+            "vocabulary": 50257,
+            "order": 5,
+            "context_cap": 256,
+            "seen_real_ids": 36806,
+            "unseen_real_ids": 13451,
+            "scored_model_columns": 36807,
+            "normalization": "all real labels; one UNK bucket split uniformly; no EOS target"
+          },
+          "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\ngram\\order5.trie",
+          "artifact_bytes": 34489589,
+          "sha256": "4071fb418fb58899aef6cbb483c7eb391b525917c47b9f5025da43092f2b843e"
+        },
+        "reporting_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\val.bin",
+          "file_bytes": 4000000,
+          "byte_offset": 0,
+          "bytes_read": 32768,
+          "prefix_sha256": "ae337c3da2d3fe20c45bc7abc3fd87cfd38e2e79bb641aed48f55c23918228ab",
+          "role": "previously_exposed_development",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "full_prefix": {
+          "status": "COMPLETE_FROZEN_KENLM_REPORT",
+          "tokens": 16384,
+          "mean_nll_nats": 6.532842924208652,
+          "vocabulary": 50257,
+          "order": 5,
+          "context_cap": 256,
+          "seen_real_ids": 36806,
+          "unseen_real_ids": 13451,
+          "scored_model_columns": 36807,
+          "normalization": "all real labels; one UNK bucket split uniformly; no EOS target"
+        },
+        "report_tokens": 12288,
+        "report_mean_nll_nats": 6.587281632223768,
+        "context_preserved_at_tuning_report_boundary": true,
+        "unigram": {
+          "alpha": 1.0,
+          "tuning_mean_nll_nats": 7.578635652960191,
+          "report_mean_nll_nats": 7.744455628195159
+        },
+        "after": {
+          "process_id": 3676,
+          "creation_100ns": 134351560057366691
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "transformer-0",
+      "deadline_ms": 7200000,
+      "active_process_limit": 1,
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4479815680,
+        "peak_job_commit": 4481122304,
+        "user_100ns": 868750000,
+        "kernel_100ns": 136875000,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26224,
+        "process_creation_100ns": 134351560444554299
+      },
+      "launch_wall_seconds": 101.39144570000008,
+      "result": {
+        "status": "COMPLETE_TRANSFORMER_TRAINING",
+        "case": "transformer-0",
+        "before": {
+          "process_id": 26224,
+          "creation_100ns": 134351560444554299
+        },
+        "device": {
+          "name": "NVIDIA GeForce RTX 3090",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "torch_version": "2.12.0+cu132",
+          "cuda_version": "13.2",
+          "capacity_bytes": 25769279488,
+          "training_precision": "float32 parameters and AdamW states; float16 autocast with GradScaler",
+          "reporting_precision": "float16 autocast logits; full-alphabet float64 logsumexp",
+          "tf32": false,
+          "deterministic_kernel_guarantee": false
+        },
+        "model": {
+          "vocabulary": 50257,
+          "context": 256,
+          "layers": 4,
+          "heads": 4,
+          "width": 128,
+          "dropout": 0.1,
+          "bias": false
+        },
+        "parameters": 7253376,
+        "seed": 29317,
+        "maximum_learning_rate": 0.0003,
+        "train_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "tuning_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\val.bin",
+          "file_bytes": 4000000,
+          "byte_offset": 0,
+          "bytes_read": 8192,
+          "prefix_sha256": "a2d2a3396ffd3464b26998a4f3fe6916f276f6d2ff2526e9c12d8f7b9b316b9a",
+          "role": "previously_exposed_development",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "attempted_updates": 8192,
+        "skipped_updates": 1,
+        "training_targets_per_attempt": 2048,
+        "checkpoints": [
+          {
+            "attempt": 512,
+            "tuning_seconds": 1.0803622000003088,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 7.015630692281523,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 1024,
+            "tuning_seconds": 0.944621300000108,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.777961822195164,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 2048,
+            "tuning_seconds": 0.9239982999997665,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.577217066666573,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 4096,
+            "tuning_seconds": 0.9932865000000675,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.415574112773027,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 8192,
+            "tuning_seconds": 1.003085999999712,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.291149637255626,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          }
+        ],
+        "training_windows": [
+          {
+            "attempt": 256,
+            "mean_nll_nats": 9.338333811610937,
+            "learning_rate": 0.0003,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 512,
+            "mean_nll_nats": 7.304008416831493,
+            "learning_rate": 0.0002993125816801481,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 768,
+            "mean_nll_nats": 6.936408607289195,
+            "learning_rate": 0.0002972465979947678,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1024,
+            "mean_nll_nats": 6.7636407520622015,
+            "learning_rate": 0.0002938232434907327,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1280,
+            "mean_nll_nats": 6.651314737275243,
+            "learning_rate": 0.00028907765526477077,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1536,
+            "mean_nll_nats": 6.583842432126403,
+            "learning_rate": 0.0002830585417379147,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1792,
+            "mean_nll_nats": 6.5198024567216635,
+            "learning_rate": 0.00027582768271531194,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 2048,
+            "mean_nll_nats": 6.434610148891807,
+            "learning_rate": 0.00026745929528216477,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2304,
+            "mean_nll_nats": 6.3974189311265945,
+            "learning_rate": 0.00025803927204420503,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2560,
+            "mean_nll_nats": 6.362689888104796,
+            "learning_rate": 0.0002476642995313559,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2816,
+            "mean_nll_nats": 6.3195254150778055,
+            "learning_rate": 0.00023644086581323,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3072,
+            "mean_nll_nats": 6.267413856461644,
+            "learning_rate": 0.00022448416751223631,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3328,
+            "mean_nll_nats": 6.234365938231349,
+            "learning_rate": 0.000211916927432646,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3584,
+            "mean_nll_nats": 6.209952915087342,
+            "learning_rate": 0.0001988681349413971,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3840,
+            "mean_nll_nats": 6.176316294819117,
+            "learning_rate": 0.0001854717220292922,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 4096,
+            "mean_nll_nats": 6.143349781632423,
+            "learning_rate": 0.00017186518864141317,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4352,
+            "mean_nll_nats": 6.104115955531597,
+            "learning_rate": 0.0001581881913862762,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4608,
+            "mean_nll_nats": 6.065824260935187,
+            "learning_rate": 0.00014458111010912835,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4864,
+            "mean_nll_nats": 6.062816681340337,
+            "learning_rate": 0.00013118360704198693,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5120,
+            "mean_nll_nats": 6.014095863327384,
+            "learning_rate": 0.00011813319331921705,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5376,
+            "mean_nll_nats": 6.004373989999294,
+            "learning_rate": 0.00010556381757184034,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5632,
+            "mean_nll_nats": 5.997298097237945,
+            "learning_rate": 9.360449108715558e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5888,
+            "mean_nll_nats": 5.974460022523999,
+            "learning_rate": 8.237796364494703e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 6144,
+            "mean_nll_nats": 5.969806283712387,
+            "learning_rate": 7.199946362141449e-05,
+            "scaler_scale": 524288.0
+          },
+          {
+            "attempt": 6400,
+            "mean_nll_nats": 5.944597886875272,
+            "learning_rate": 6.257551529231971e-05,
+            "scaler_scale": 524288.0
+          },
+          {
+            "attempt": 6656,
+            "mean_nll_nats": 5.935589987784624,
+            "learning_rate": 5.4202845474476e-05,
+            "scaler_scale": 524288.0
+          },
+          {
+            "attempt": 6912,
+            "mean_nll_nats": 5.939879558980465,
+            "learning_rate": 4.696739072774422e-05,
+            "scaler_scale": 524288.0
+          },
+          {
+            "attempt": 7168,
+            "mean_nll_nats": 5.906323004513979,
+            "learning_rate": 4.094341530755202e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7424,
+            "mean_nll_nats": 5.906397711485624,
+            "learning_rate": 3.619274892121612e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7680,
+            "mean_nll_nats": 5.909953065216541,
+            "learning_rate": 3.276415211169007e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7936,
+            "mean_nll_nats": 5.901327760890126,
+            "learning_rate": 3.0692815782397855e-05,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 8192,
+            "mean_nll_nats": 5.88914910890162,
+            "learning_rate": 2.9999999999999997e-05,
+            "scaler_scale": 262144.0
+          }
+        ],
+        "final_report_suffix_read": false,
+        "elapsed_training_and_tuning_seconds": 98.02226059999975,
+        "gpu": {
+          "allocated": 134059008,
+          "reserved": 1772093440,
+          "peak_allocated": 1191628800,
+          "peak_reserved": 1772093440
+        },
+        "selected": {
+          "attempt": 8192,
+          "tuning_seconds": 1.003085999999712,
+          "tuning_tokens": 4096,
+          "tuning_mean_nll_nats": 6.291149637255626,
+          "report_tokens": 0,
+          "report_mean_nll_nats": null,
+          "context_preserved_at_tuning_report_boundary": true,
+          "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\transformer-0\\best.pt",
+          "sha256": "d095ac02fec5e736adc2c318135be70afdddb94ca4b671ba60c9a88a014df78b"
+        },
+        "successful_updates": 8191,
+        "training_target_exposures": 16777216,
+        "selection_rule": "lowest prefix tuning loss; ties keep earlier checkpoint",
+        "after": {
+          "process_id": 26224,
+          "creation_100ns": 134351560444554299
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "transformer-1",
+      "deadline_ms": 7200000,
+      "active_process_limit": 1,
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 4478808064,
+        "peak_job_commit": 4480139264,
+        "user_100ns": 879843750,
+        "kernel_100ns": 122968750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26424,
+        "process_creation_100ns": 134351561458478586
+      },
+      "launch_wall_seconds": 100.59478810000019,
+      "result": {
+        "status": "COMPLETE_TRANSFORMER_TRAINING",
+        "case": "transformer-1",
+        "before": {
+          "process_id": 26424,
+          "creation_100ns": 134351561458478586
+        },
+        "device": {
+          "name": "NVIDIA GeForce RTX 3090",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "torch_version": "2.12.0+cu132",
+          "cuda_version": "13.2",
+          "capacity_bytes": 25769279488,
+          "training_precision": "float32 parameters and AdamW states; float16 autocast with GradScaler",
+          "reporting_precision": "float16 autocast logits; full-alphabet float64 logsumexp",
+          "tf32": false,
+          "deterministic_kernel_guarantee": false
+        },
+        "model": {
+          "vocabulary": 50257,
+          "context": 256,
+          "layers": 4,
+          "heads": 4,
+          "width": 128,
+          "dropout": 0.1,
+          "bias": false
+        },
+        "parameters": 7253376,
+        "seed": 29317,
+        "maximum_learning_rate": 0.001,
+        "train_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "tuning_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\val.bin",
+          "file_bytes": 4000000,
+          "byte_offset": 0,
+          "bytes_read": 8192,
+          "prefix_sha256": "a2d2a3396ffd3464b26998a4f3fe6916f276f6d2ff2526e9c12d8f7b9b316b9a",
+          "role": "previously_exposed_development",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "attempted_updates": 8192,
+        "skipped_updates": 1,
+        "training_targets_per_attempt": 2048,
+        "checkpoints": [
+          {
+            "attempt": 512,
+            "tuning_seconds": 1.052139299999908,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.783211556684124,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 1024,
+            "tuning_seconds": 0.9714201000006142,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.610341811159133,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 2048,
+            "tuning_seconds": 0.9257330000000366,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.4799140937541235,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 4096,
+            "tuning_seconds": 1.013652299999194,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.280718414825843,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          },
+          {
+            "attempt": 8192,
+            "tuning_seconds": 0.926974699999846,
+            "tuning_tokens": 4096,
+            "tuning_mean_nll_nats": 6.145332759030138,
+            "report_tokens": 0,
+            "report_mean_nll_nats": null,
+            "context_preserved_at_tuning_report_boundary": true
+          }
+        ],
+        "training_windows": [
+          {
+            "attempt": 256,
+            "mean_nll_nats": 8.476615127176046,
+            "learning_rate": 0.001,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 512,
+            "mean_nll_nats": 6.9026442766189575,
+            "learning_rate": 0.0009977086056004937,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 768,
+            "mean_nll_nats": 6.632364368066192,
+            "learning_rate": 0.0009908219933158927,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1024,
+            "mean_nll_nats": 6.466581616550684,
+            "learning_rate": 0.0009794108116357757,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1280,
+            "mean_nll_nats": 6.33709385804832,
+            "learning_rate": 0.0009635921842159027,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1536,
+            "mean_nll_nats": 6.260127438232303,
+            "learning_rate": 0.0009435284724597158,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 1792,
+            "mean_nll_nats": 6.187445621937513,
+            "learning_rate": 0.0009194256090510399,
+            "scaler_scale": 65536.0
+          },
+          {
+            "attempt": 2048,
+            "mean_nll_nats": 6.084715027362108,
+            "learning_rate": 0.0008915309842738825,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2304,
+            "mean_nll_nats": 6.034090418368578,
+            "learning_rate": 0.0008601309068140169,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2560,
+            "mean_nll_nats": 5.986567812040448,
+            "learning_rate": 0.0008255476651045198,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 2816,
+            "mean_nll_nats": 5.925611449405551,
+            "learning_rate": 0.0007881362193774334,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3072,
+            "mean_nll_nats": 5.8601245153695345,
+            "learning_rate": 0.0007482805583741212,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3328,
+            "mean_nll_nats": 5.814689135178924,
+            "learning_rate": 0.00070638975810882,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3584,
+            "mean_nll_nats": 5.7783771976828575,
+            "learning_rate": 0.0006628937831379904,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 3840,
+            "mean_nll_nats": 5.739571738988161,
+            "learning_rate": 0.0006182390734309741,
+            "scaler_scale": 131072.0
+          },
+          {
+            "attempt": 4096,
+            "mean_nll_nats": 5.698165824636817,
+            "learning_rate": 0.000572883962138044,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4352,
+            "mean_nll_nats": 5.651108246296644,
+            "learning_rate": 0.0005272939712875874,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4608,
+            "mean_nll_nats": 5.612101588398218,
+            "learning_rate": 0.00048193703369709453,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 4864,
+            "mean_nll_nats": 5.611998580396175,
+            "learning_rate": 0.00043727869013995645,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5120,
+            "mean_nll_nats": 5.552745673805475,
+            "learning_rate": 0.0003937773110640569,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5376,
+            "mean_nll_nats": 5.543328361585736,
+            "learning_rate": 0.0003518793919061345,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5632,
+            "mean_nll_nats": 5.527917059138417,
+            "learning_rate": 0.0003120149702905186,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 5888,
+            "mean_nll_nats": 5.496960233896971,
+            "learning_rate": 0.0002745932121498235,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 6144,
+            "mean_nll_nats": 5.492056341841817,
+            "learning_rate": 0.00023999821207138167,
+            "scaler_scale": 524288.0
+          },
+          {
+            "attempt": 6400,
+            "mean_nll_nats": 5.4712178241461515,
+            "learning_rate": 0.00020858505097439905,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 6656,
+            "mean_nll_nats": 5.452190641313791,
+            "learning_rate": 0.00018067615158158667,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 6912,
+            "mean_nll_nats": 5.462656773626804,
+            "learning_rate": 0.00015655796909248073,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7168,
+            "mean_nll_nats": 5.424337703734636,
+            "learning_rate": 0.00013647805102517342,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7424,
+            "mean_nll_nats": 5.416341729462147,
+            "learning_rate": 0.00012064249640405376,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7680,
+            "mean_nll_nats": 5.42242943495512,
+            "learning_rate": 0.00010921384037230026,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 7936,
+            "mean_nll_nats": 5.412622360512614,
+            "learning_rate": 0.00010230938594132619,
+            "scaler_scale": 262144.0
+          },
+          {
+            "attempt": 8192,
+            "mean_nll_nats": 5.395169772207737,
+            "learning_rate": 0.0001,
+            "scaler_scale": 262144.0
+          }
+        ],
+        "final_report_suffix_read": false,
+        "elapsed_training_and_tuning_seconds": 97.38200739999957,
+        "gpu": {
+          "allocated": 134059008,
+          "reserved": 1772093440,
+          "peak_allocated": 1191628800,
+          "peak_reserved": 1772093440
+        },
+        "selected": {
+          "attempt": 8192,
+          "tuning_seconds": 0.926974699999846,
+          "tuning_tokens": 4096,
+          "tuning_mean_nll_nats": 6.145332759030138,
+          "report_tokens": 0,
+          "report_mean_nll_nats": null,
+          "context_preserved_at_tuning_report_boundary": true,
+          "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\transformer-1\\best.pt",
+          "sha256": "0becbbd8515ac04fb225939cf1e81b594632b4aefd268d0e16f3faa8d16fae9b"
+        },
+        "successful_updates": 8191,
+        "training_target_exposures": 16777216,
+        "selection_rule": "lowest prefix tuning loss; ties keep earlier checkpoint",
+        "after": {
+          "process_id": 26424,
+          "creation_100ns": 134351561458478586
+        }
+      },
+      "accepted_execution": true
+    },
+    {
+      "case": "report",
+      "deadline_ms": 900000,
+      "active_process_limit": 1,
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 2441916416,
+        "peak_job_commit": 2443210752,
+        "user_100ns": 34531250,
+        "kernel_100ns": 12031250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3912,
+        "process_creation_100ns": 134351562464443777
+      },
+      "launch_wall_seconds": 4.62904030000027,
+      "result": {
+        "status": "COMPLETE_FROZEN_TRANSFORMER_REPORT",
+        "case": "report",
+        "before": {
+          "process_id": 3912,
+          "creation_100ns": 134351562464443777
+        },
+        "device": {
+          "name": "NVIDIA GeForce RTX 3090",
+          "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+          "torch_version": "2.12.0+cu132",
+          "cuda_version": "13.2",
+          "capacity_bytes": 25769279488,
+          "training_precision": "float32 parameters and AdamW states; float16 autocast with GradScaler",
+          "reporting_precision": "float16 autocast logits; full-alphabet float64 logsumexp",
+          "tf32": false,
+          "deterministic_kernel_guarantee": false
+        },
+        "selected": {
+          "attempt": 8192,
+          "tuning_seconds": 0.926974699999846,
+          "tuning_tokens": 4096,
+          "tuning_mean_nll_nats": 6.145332759030138,
+          "report_tokens": 0,
+          "report_mean_nll_nats": null,
+          "context_preserved_at_tuning_report_boundary": true,
+          "artifact": "F:\\experiment\\FP_next_token_baselines\\text_anchor_a1\\transformer-1\\best.pt",
+          "sha256": "0becbbd8515ac04fb225939cf1e81b594632b4aefd268d0e16f3faa8d16fae9b",
+          "case": "transformer-1"
+        },
+        "reporting_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\val.bin",
+          "file_bytes": 4000000,
+          "byte_offset": 0,
+          "bytes_read": 32768,
+          "prefix_sha256": "ae337c3da2d3fe20c45bc7abc3fd87cfd38e2e79bb641aed48f55c23918228ab",
+          "role": "previously_exposed_development",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "score": {
+          "tuning_tokens": 4096,
+          "tuning_mean_nll_nats": 6.145332759030138,
+          "report_tokens": 12288,
+          "report_mean_nll_nats": 6.260544622644065,
+          "context_preserved_at_tuning_report_boundary": true
+        },
+        "reporting_seconds": 2.5466574000001856,
+        "gpu": {
+          "allocated": 37533184,
+          "reserved": 90177536,
+          "peak_allocated": 83759104,
+          "peak_reserved": 90177536
+        },
+        "after": {
+          "process_id": 3912,
+          "creation_100ns": 134351562464443777
+        }
+      },
+      "accepted_execution": true
+    }
+  ]
+}

@@ -1,6 +1,12 @@
 # Modified Kneser–Ney comparison path
 
-Status: **NATIVE WINDOWS BUILD AND SYNTHETIC CPU CONTROL PASS; NO CORPUS SCORE**.
+Status: **NATIVE BUILD/CONTROL CLOSED; ORIGINAL REAL-TEXT STUDY A1 COMPLETE**.
+The subsequent [anchor A1](../BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
+selects order 5 on its tuning prefix and reports 6.587281632 nats on the
+registered development suffix. Its explicit normalization cost is separated
+from estimator/trie-building time. The original synthetic component control
+below remains distinct from that study and supplies no FP result.
+
 The comparison uses the actual upstream KenLM estimator, not a replacement
 counting/smoothing implementation. No experiment order, tuning policy, corpus
 budget or language-quality result is selected by this component control.
@@ -117,8 +123,8 @@ Only the small aggregate evidence file
 training/report files, scores and trained models are temporary. No actual
 experiment corpus, validation/test file or GPU is opened by the audit.
 
-This closes the adapter/toolchain control. The real text preregistration must
-still choose and tune a competitive order/configuration, fix training and
-reporting views and exposure policy, and measure complete process/time/storage
-costs. Order 3 here is a synthetic control, not a selected experimental baseline.
-No further smoothing or normalization catalog is a prerequisite.
+This closes the adapter/toolchain control. The subsequent anchor A1 fixes the
+real data/tuning/reporting policy, selects order 5 and records actual process,
+time and storage costs. Order 3 above remains the original synthetic control.
+Return to the FP learner/budget decision; no further smoothing or normalization
+catalog is a prerequisite.

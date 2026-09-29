@@ -1,6 +1,12 @@
 # Standard Transformer comparison path
 
-Status: **IMPLEMENTED; CPU FLOAT64 CONTROL PASS; NO CORPUS OR DEVICE RESULT**.
+Status: **CPU FLOAT64 CONTROL CLOSED; ORIGINAL TEXT/DEVICE STUDY A1 COMPLETE**.
+The subsequent [anchor A1](../BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
+trains two registered schedules on real text and reports a selected suffix
+loss of 6.260544623 nats. Its final tuning checkpoint is still improving;
+neither convergence nor a strongest-model claim follows. The component
+control below remains its original synthetic result and supplies no FP authority.
+
 This is preparation for the ordinary-text comparison, outside FP's native
 grammar and Runtime. It selects neither a model size nor a training budget.
 It adds no prerequisite to the original live FP resource attempt.
@@ -79,7 +85,7 @@ n-gram and diagnostic controls remain part of the planned comparison. This
 standard Transformer implementation does not by itself establish that any
 chosen training run is a competitive baseline.
 
-After the actual FP feasibility/reporting results, preregister the concrete
-text run and its comparison budgets, then train and score the real models.
-Dataset identities, exposure policy, process/resource measurements and
-minimal result artifacts belong to that trial, not to a synthetic control.
+The subsequent anchor A1 now supplies the original trained text result and
+its explicit identities, exposures, tuning and resource measurements. Its
+learning curve does not establish convergence. Return to the owned FP model
+and budget decision; this completed adapter/study needs no architecture sweep.

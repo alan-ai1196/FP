@@ -68,14 +68,16 @@ trained values or all future continuations. Report UNRESOLVED when needed.
 
 ## First model-score boundary
 
-The [baseline anchor A1](BASELINE_ANCHOR_A1.md) is now a concrete independent
-step: train the qualified strong baseline families on a declared real-text
-view and measure their learning/cost while the affordable FP budget remains
-unresolved. Its fixed data, tuning, standard optimizers and reporting contexts
-are preregistered. It supersedes the earlier suggestion to wait for FP
-feasibility before any baseline training. It supplies no absent FP score or
-matched-budget comparison; after its one original outcome, return to the
-actual native learner and comparison decision.
+The [baseline anchor A1](BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
+now completes its original bounded real-text jobs. The selected Transformer
+scores 6.260544623 nats on the common development suffix versus 6.587281632
+for order-5 MKN and 7.744455628 for the unigram. Its tuning curve still improves
+at the last checkpoint, so convergence is not established. The original
+journal is terminal. This supersedes waiting for FP feasibility before any
+baseline training, but supplies no absent FP score or matched-budget comparison.
+Return to the native learner/budget, including the existing complete native-only
+Runtime path as a possible first scientific result. Actual AMP claims still
+require their full bridge. No additional baseline family or static case is due.
 
 The first text comparison may train one preregistered native G/Gamma/U from
 its own initialization as the incumbent, with no graph replacement during

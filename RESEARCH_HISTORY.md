@@ -11315,3 +11315,44 @@ is unchanged. Original jobs must launch only after this registration commit,
 with fixed caps and an exclusive terminal journal; no outcomes exist yet.
 After the one study, return to FP model/budget selection. This is neither an
 FP score nor justification for another baseline architecture/tuning branch.
+
+
+## 331. Obtain an actual trained ordinary-text reference point (2026-09-29)
+
+All four original baseline anchor A1 jobs at
+71e4c2ca364f410eaa3c71663de2efb35690c746 finish within their fixed caps. On
+the same full-alphabet, original-context 12,288-token development suffix,
+selected Transformer loss is 6.260544623 nats, order-5 MKN is 6.587281632,
+and additive unigram is 7.744455628. Selection uses only the registered
+4,096-token tuning prefix. The file was already development data; no fresh
+test or stochastic inference is claimed. FP still has no score on this trial.
+
+Both 7,253,376-parameter Transformer rate candidates receive 16,777,216
+target exposures from the common 1,048,576 unique training tokens. Each
+completes 8,191 updates plus one counted GradScaler skip. The selected 1e-3
+candidate at attempt 8,192 reproduces its tuning score exactly when the
+identified artifact is loaded in a separate frozen reporting worker. Its
+suffix mean is 0.326737010 nats below MKN on this finite view.
+
+The learning curves prevent an overclaim: both best checkpoints are the
+final ones. The selected tuning mean still improves 0.135385656 nats from
+attempts 4,096 to 8,192. This is substantial actual learning under ordinary
+optimization, not proof of convergence or a ceiling on strong baselines.
+Do not retroactively extend the terminal study or treat its finite tuning
+allowance as selection optimality.
+
+Original launcher times are 38.717806 seconds for MKN/unigram, 101.391446
+and 100.594788 for the Transformer candidates, and 4.629040 for its frozen
+report: 245.333080 seconds total. Peak job commitments are 1,105,125,376,
+4,481,122,304, 4,480,139,264 and 2,443,210,752 bytes. Each training worker
+peaks at 1,772,093,440 PyTorch-reserved GPU bytes. Most MKN elapsed time is
+the adapter's complete-label normalization; no general inference-speed or
+matched-FP-cost ranking follows.
+
+FP_TEXT_BASELINE_ANCHOR_A1.json retains 34,272 bytes of aggregate evidence;
+model artifacts remain outside Git. The journal and this study are closed.
+Return to the owned trained FP learner and affordable model/budget decision.
+The existing complete native-only Runtime is a possible route to a first
+native learning result while AMP execution cost is unresolved; it still
+requires its own registered state/resource/validation obligations and gives
+no physical AMP authority. No new static or baseline catalog is justified.

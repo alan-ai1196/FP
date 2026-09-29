@@ -1,6 +1,8 @@
 # Ordinary-text baseline anchor A1
 
-Status: **PREREGISTERED; NO OUTCOME AT REGISTRATION, 2026-09-29**.
+Status: **ORIGINAL FOUR JOBS COMPLETE AT 71e4c2c, 2026-09-29; STUDY CLOSED**.
+The registration below was committed before launch and is unchanged. Results
+are in the final section. The original journal is terminal; never replay it.
 
 The FP execution and model audits have reached clear stopping points, but
 have not established an affordable trained-text budget. Keeping the already
@@ -142,3 +144,81 @@ independent float64 traversal, unchanged frozen parameters, the complete rate
 schedules, and actual one-/two-process Windows job behavior. Its small-model
 and OS checks supply no real-text or actual GPU result. There is no additional
 synthetic-control branch to complete before this original launch.
+
+## Original result and research consequence
+
+All four original jobs at `71e4c2ca364f410eaa3c71663de2efb35690c746` finish
+successfully under their fixed caps. The terminal journal is
+[FP_TEXT_BASELINE_ANCHOR_A1.json](../../evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json),
+34,272 bytes. It contains the actual prefix/artifact identities, process
+identities, all registered tuning points, training-window aggregates and OS
+resource observations. No worker was restarted or retuned.
+
+| Selected model | Tuning mean, 4,096 tokens | Development suffix mean, 12,288 tokens |
+| --- | ---: | ---: |
+| Additive unigram, alpha=1 | 7.578635653 | 7.744455628 |
+| Unpruned MKN, order 5 | 6.369526800 | 6.587281632 |
+| Transformer, maximum rate 1e-3, attempt 8,192 | 6.145332759 | 6.260544623 |
+
+All entries are proper full-alphabet NLL in nats/token on the declared
+original-context views. Order 3 has tuning loss 6.396068885 and was not selected.
+The selected MKN trie covers 36,806 seen IDs and shares one unknown bucket
+among the remaining 13,451 IDs. Its artifact is 34,489,589 bytes.
+
+The Transformer has 7,253,376 distinct trainable parameters. Each rate run
+completes 8,192 attempts and 8,191 actual updates, with one counted GradScaler
+skip. Each receives all 16,777,216 registered target exposures. The selected
+artifact reproduces its tuning loss exactly in the separate frozen reporting
+worker. The suffix Transformer loss is 0.326737010 nats below the selected
+MKN and 1.483911006 below the unigram on this finite development view. This is
+not a population or FP advantage statement, and exposures/context differ
+between the baseline families as registered.
+
+| Attempt | Transformer tuning, rate 3e-4 | Transformer tuning, rate 1e-3 |
+| ---: | ---: | ---: |
+| 512 | 7.015630692 | 6.783211557 |
+| 1,024 | 6.777961822 | 6.610341811 |
+| 2,048 | 6.577217067 | 6.479914094 |
+| 4,096 | 6.415574113 | 6.280718415 |
+| 8,192 | 6.291149637 | 6.145332759 |
+
+**Training adequacy remains qualified.** Both curves improve to the last
+registered checkpoint. The selected curve improves another 0.135385656 nats
+between attempts 4,096 and 8,192; its final 256-attempt training mean is
+5.395169772. The original study demonstrates substantial real training and
+useful held-out-from-training structure, but does not prove convergence or
+that further legitimate training/tuning cannot improve the baseline. Do not
+use this score as an upper limit on a competitive Transformer when interpreting
+a future FP comparison. Do not extend this terminal run retrospectively.
+
+| Original job | Launcher wall seconds | OS peak job commitment, bytes |
+| --- | ---: | ---: |
+| MKN/unigram, all tuning and report | 38.717806 | 1,105,125,376 |
+| Transformer, rate 3e-4 | 101.391446 | 4,481,122,304 |
+| Transformer, rate 1e-3 | 100.594788 | 4,480,139,264 |
+| Selected Transformer frozen report | 4.629040 | 2,443,210,752 |
+
+Total launcher wall time is 245.333080 seconds, including both rate candidates
+and all original reporting. Within the Transformer workers, training plus
+tuning takes 98.022261/97.382007 seconds; the five tuning passes take
+4.945354/4.889919 seconds. Both have PyTorch peak allocation 1,191,628,800 and
+peak reservation 1,772,093,440 bytes, without resetting counters. The separate
+frozen report takes 2.546657 seconds inside its worker and peaks at 90,177,536
+reserved bytes. These are this machine's original observations, not a general
+throughput theorem or a comparison with an identically scoped FP experiment.
+
+For MKN, order-3 estimation/trie building take 0.698025/0.686457 seconds;
+order 5 takes 1.369932/2.140307 seconds. The two direct-normalization tuning
+reports take 5.503607/5.595646 seconds, and the full 16,384-token prefix report
+takes 22.370053 seconds. Most n-gram elapsed time is therefore the deliberately
+explicit normalization adapter, not upstream estimation or ordinary single-word
+query time. It supplies no general inference-speed ranking.
+
+This removes the lack of an actual trained text reference point. The central
+missing result is still an **owned trained FP learner and frozen report**.
+No new baseline family or static precision case is due. The existing Runtime
+also permits complete native-only training/reporting; assessing that route
+can separate a first native learning result from the cost of full AMP checking.
+Such a study would still owe its own registration, ownership and measured
+resources. It would supply no AMP-trained result, and passive helpers could
+not replace that complete Runtime. Foundation/ERC remain unchanged.
