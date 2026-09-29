@@ -11356,3 +11356,34 @@ The existing complete native-only Runtime is a possible route to a first
 native learning result while AMP execution cost is unresolved; it still
 requires its own registered state/resource/validation obligations and gives
 no physical AMP authority. No new static or baseline catalog is justified.
+
+
+## 332. Register the full native text attempt without lowering its data horizon (2026-09-29)
+
+The completed baseline anchor gives an actual language-learning reference
+point. The next trial now selects the existing fully specified 603,092-master
+positive token graph as one empirical hypothesis and runs it through the
+complete native ReferenceCompilerRuntime. It retains Q=65,536, rate 1/1024,
+unit 512 and the original deterministic initializer. Known mixture-capacity,
+older-order pooling and one-sided grid-step limitations remain explicit.
+No whole-FP claim is inferred from this particular learner's eventual score.
+
+The registration requires all 1,048,576 chronological training targets and
+2,048 commits before owned frozen validation reporting. The comparison suffix
+is the baseline anchor's original positions 4,096 through 16,383, with original
+past context. Exact matching accumulator endpoints give its loss interval;
+the CPU assembly control checks three suffixes, original source points,
+frozen learner identity and every current buffer/lease total. No passive
+helper can execute or score the live model in place of Runtime.
+
+The original native job is capped at two hours and 96 GiB, with 64-GiB packed
+payload, 2^26 objects and explicit work/cache/solver allowances. Graph-derived
+uint32 range bounds justify activation/normalizer caps 2^80/2^96 without
+changing U. There is no CUDA execution or borrowed AMP authority. A failure
+must remain UNRESOLVED; it cannot become a smaller-data FP model result.
+
+Source inspection shows repeated copying/scanning of the growing ledger and
+causal history. This is an implementation concern, not an information lower
+bound or permission to erase history. Use the original actual outcome to
+select the next work. The baseline study, relation branch and static precision
+audits stay closed; the full trained FP comparison remains the objective.

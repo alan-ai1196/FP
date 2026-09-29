@@ -68,6 +68,13 @@ trained values or all future continuations. Report UNRESOLVED when needed.
 
 ## First model-score boundary
 
+The [native text A1](NATIVE_TEXT_A1.md) trial now explicitly selects the
+previous resource fixture as one supplied empirical G/Gamma/U hypothesis.
+Its original full-million-token native Runtime run must finish before the
+owned frozen report. This changes the fixture's selection status for this
+specific trial, not the earlier capacity/precision conclusions or the scope
+of FP as a whole. No shortened-horizon or actual AMP score is substituted.
+
 The [baseline anchor A1](BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 now completes its original bounded real-text jobs. The selected Transformer
 scores 6.260544623 nats on the common development suffix versus 6.587281632

@@ -1,0 +1,13 @@
+{
+  "status": "PASS_OWNED_NATIVE_TEXT_REPORT_CONTROL",
+  "training_targets": 4,
+  "reporting_targets": 8,
+  "suffix_boundaries_checked": 3,
+  "exact_directed_suffix_sum_enclosed": true,
+  "endpoint_rounding_error_below": "2^-40",
+  "original_report_contexts_and_frozen_identity_preserved": true,
+  "every_current_buffer_and_lease_checked": true,
+  "full_snapshot_resource_totals_match": true,
+  "actual_corpus_opened": false,
+  "cuda_execution": false
+}

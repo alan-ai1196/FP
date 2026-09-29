@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Native FP text A1: PREREGISTERED; REPORT-ASSEMBLY CPU CONTROL PASS; NO MODEL OUTCOME YET.**
+The [fixed trial](experiments/next_token/NATIVE_TEXT_A1.md) selects one supplied
+603,092-master native learner and a full million-token training horizon under
+two-hour/96-GiB limits. Exact represented updates and complete owned frozen
+reporting are required. The helper only reduces already owned exact integer
+loss accumulators; it cannot supply forecasts, gradients or authority. No
+AMP-trained, complete-search, fresh-evidence or model-quality claim follows
+before execution. A failure will not be replaced by a shorter trained score.
+
 **Ordinary-text baseline anchor A1: ACTUAL TRAINING/REPORTING COMPLETE; CLOSED.**
 The [original study](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 at `71e4c2c` completes all four bounded jobs. Selected Transformer, order-5 MKN

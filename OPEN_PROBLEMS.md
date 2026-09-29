@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [native text A1](experiments/next_token/NATIVE_TEXT_A1.md) registration now
+makes the next empirical question concrete: can the complete native Runtime
+train the supplied full-vocabulary learner for the entire million-token
+view and produce its owned frozen report within two hours/96 GiB? The graph's
+known limitations and unmatched baseline exposure coordinates are explicit.
+Growing ledger/history traversal may prevent completion; preserve that actual
+outcome rather than silently shrinking the horizon or bypassing accounting.
+No score or affordability claim exists before the original run finishes.
+
 The [real-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 now closes with actual trained full-alphabet results: Transformer 6.260544623,
 order-5 MKN 6.587281632 and unigram 7.744455628 nats on the registered development

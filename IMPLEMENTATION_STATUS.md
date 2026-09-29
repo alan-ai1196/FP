@@ -2,6 +2,14 @@
 
 ## Current token execution boundary (2026-09-29)
 
+The [native text A1 runner](experiments/next_token/NATIVE_TEXT_A1.md) now binds
+the complete existing Runtime to the one-million-token training view and
+owned frozen report under fixed host/reference caps. It introduces no new
+production semantics or bypass. The assembly control checks original report
+contexts, exact directed suffix bounds, frozen identity and complete buffer/
+lease totals. No actual outcome exists at registration; the original bounded
+attempt must complete all training/reporting before any FP score is reported.
+
 The [baseline anchor runner](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 now completes its original KenLM/unigram, two actual RTX3090 Transformer
 training and selected frozen-reporting jobs at `71e4c2c`. Source views, tuning,

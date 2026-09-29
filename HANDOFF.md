@@ -2,6 +2,18 @@
 
 ## Current execution state (2026-09-29)
 
+The [native text A1 trial](experiments/next_token/NATIVE_TEXT_A1.md) is now
+preregistered for the first owned FP model result: one million original
+training tokens, 2,048 exact represented commits, then the same 12,288-token
+development suffix as the completed baseline anchor. It explicitly selects
+the existing 603,092-master G/Gamma/U as one empirical hypothesis, with its
+known capacity/precision limits. Native Runtime ownership and reporting remain
+complete; no CUDA/AMP score is inferred. A two-hour/96-GiB original job must
+finish the whole horizon or return UNRESOLVED without a shortened score.
+The reporting-assembly CPU control passes. Commit all inputs before launch;
+retain the exclusive original journal and do not retry it. Growing ledger
+copy/scan cost is a known concern to measure, not permission to skip checks.
+
 The [ordinary-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 is complete and closed at `71e4c2c`. On the same 12,288-token development
 suffix, the selected Transformer scores 6.260544623 nats, order-5 MKN
