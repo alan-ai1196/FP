@@ -2,6 +2,14 @@
 
 ## Current token execution boundary (2026-09-29)
 
+**Caller-boundary ownership: FAILED HISTORICAL AUDIT; REPAIR IN QUALIFICATION.**
+At `e13348e`, returned snapshot, forecast and proof metadata alias live records.
+The [public-value witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) include an
+accepted false reference likelihood claim. The private-copy repair is isolated
+from the original running native-text job and has focused CPU controls; it is
+not yet merged or a new CPU/CUDA release. Earlier unchanged-run evidence stays
+historical, and does not cover these caller mutations.
+
 The [native text A1 runner](experiments/next_token/NATIVE_TEXT_A1.md) now binds
 the complete existing Runtime to the one-million-token training view and
 owned frozen report under fixed host/reference caps. It introduces no new

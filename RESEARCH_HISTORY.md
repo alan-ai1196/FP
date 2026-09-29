@@ -11387,3 +11387,29 @@ causal history. This is an implementation concern, not an information lower
 bound or permission to erase history. Use the original actual outcome to
 select the next work. The baseline study, relation branch and static precision
 audits stay closed; the full trained FP comparison remains the objective.
+
+
+## 333. Public frozen wrappers can rewrite causal state and a retained optimum proof (2026-09-29)
+
+While the original native text job continues at `e13348e`, source analysis
+finds a general caller-boundary alias. Three small exact attacks on the actual
+Git Runtime establish the mismatch. Returned observation metadata changes the
+next accepted causal target from zero to one while its paid wire remains zero.
+A returned token forecast exposes the committed origin; a readout-row permutation
+preserves normalizer/max checks and is accepted by observation without a commit.
+Finally, mutating an exported exhausted-class proof from likelihood 1/4 to one
+also rewrites its retained issuance, and the real verifier accepts the false
+maximum. This is a false certificate in its declared empirical class, not a
+Foundation counterexample or newly granted broader authority.
+
+The common premise was false: a frozen Python record is not detached private
+state. The ownership obligation applies transitively to constructor inputs,
+candidate programs, all returned records and contract getters. A proposed
+memoized value-graph copy preserves internal sharing and immutable scalar/
+tuple identity while separating writable wrappers and retaining complete
+metadata. Focused controls block all three witnesses and preserve four terminal
+copy-failure prefixes. Broader qualification is still required; the repair is
+isolated in the canonical repository's linked worktree to keep the running
+text experiment's committed inputs intact. Old release evidence does not
+cover these newly exposed substitutions. Foundation/ERC and relation closure
+remain unchanged, and no incomplete text trajectory is scored.

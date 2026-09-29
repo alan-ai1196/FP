@@ -1,5 +1,13 @@
 # FP Claims and Status
 
+**FALSIFIED IMPLEMENTATION CLAIM: PUBLIC DIAGNOSTICS/PROOFS ARE PASSIVE BY FREEZING WRAPPERS.**
+At `e13348e`, public metadata mutation changes a subsequent causal context and
+an uncommitted live readout, and makes the actual proof verifier accept maximum
+likelihood 1 instead of the retained search's 1/4. These are
+[reproduced ownership failures](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md), not a
+Foundation counterexample. The complete boundary repair is in qualification;
+do not extend old release claims across this unresolved alias boundary.
+
 **Native FP text A1: PREREGISTERED; REPORT-ASSEMBLY CPU CONTROL PASS; NO MODEL OUTCOME YET.**
 The [fixed trial](experiments/next_token/NATIVE_TEXT_A1.md) selects one supplied
 603,092-master native learner and a full million-token training horizon under

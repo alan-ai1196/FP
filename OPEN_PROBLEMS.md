@@ -1,5 +1,13 @@
 # FP Open Problems
 
+The immediate correctness frontier is the
+[public-value ownership counterexample](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md):
+returned/supplied frozen wrappers can alias live causal records, masters and
+issuances. Qualify transitive isolation of the complete public boundary before
+claiming robust Runtime ownership. The ordinary-text A1 original job continues
+unchanged; its eventual outcome remains separate. No Foundation reopening,
+relation extension or smaller-data replacement follows from this mismatch.
+
 The [native text A1](experiments/next_token/NATIVE_TEXT_A1.md) registration now
 makes the next empirical question concrete: can the complete native Runtime
 train the supplied full-vocabulary learner for the entire million-token

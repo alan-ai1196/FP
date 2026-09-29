@@ -1,0 +1,34 @@
+{
+  "status": "REPRODUCED_PUBLIC_VALUE_AUTHORITY_ALIASES",
+  "previous_source": "e13348e18181b8e64112b749ac766023c421542b",
+  "historical": {
+    "causal_history": {
+      "prediction_status": "PREDICTED_REFERENCE",
+      "actual_original_target": 0,
+      "next_context_target": 1,
+      "original_target_wire_and_learner_target_still_zero": true
+    },
+    "returned_forecast": {
+      "observation_status": "OBSERVED_REFERENCE",
+      "cursor": 1,
+      "original_forecast": [
+        "2207918457751/5510881871662",
+        "3302963413911/5510881871662"
+      ],
+      "altered_public_forecast": [
+        "2203451786135/5510881871662",
+        "3307430085527/5510881871662"
+      ],
+      "live_readout_changed_without_update": true
+    },
+    "reference_issuance": {
+      "decision_status": "REFERENCE_CLASS_EXHAUSTED",
+      "actual_selected_likelihood": "1/4",
+      "substituted_likelihood": "1",
+      "altered_proof_accepted": true,
+      "retained_issuance_likelihood": "1"
+    }
+  },
+  "actual_corpus_opened": false,
+  "cuda_execution": false
+}

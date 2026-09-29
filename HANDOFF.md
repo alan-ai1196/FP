@@ -2,6 +2,21 @@
 
 ## Current execution state (2026-09-29)
 
+**Public-value ownership is reopened by three implementation counterexamples.**
+[The exact witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) use returned
+snapshot/forecast/proof wrappers to change causal history, live readout masters
+and an accepted reference maximum from 1/4 to 1. Frozen wrappers alias private
+state. Foundation/ERC remain intact. A transitive boundary repair is in the
+linked `F:\FP_passive_boundary` worktree on `compiler/passive-boundary`; focused
+controls pass, broader qualification is pending. Do not claim a repaired release
+or change the original running text worker's execution inputs.
+
+Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
+creation time 134351580322825996, tool session 44263. Its last inspected milestone
+is 512 targets/one committed unit in 725.2928251 seconds, with no halt or report.
+The exclusive journal and external `worker.json` must be observed to completion;
+never relaunch it. This is no full-horizon feasibility or text-score result.
+
 The [native text A1 trial](experiments/next_token/NATIVE_TEXT_A1.md) is now
 preregistered for the first owned FP model result: one million original
 training tokens, 2,048 exact represented commits, then the same 12,288-token
