@@ -1,8 +1,8 @@
 # Public values must not alias live Runtime authority
 
-Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED AND SIXTEEN-SCRIPT FIXED-SOURCE CPU AUDITS**.
-Foundation and ERC-1 are unchanged. The current caller-boundary ownership claim
-is reopened; prior successful trajectories are not retroactively fabricated or
+Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED, SIXTEEN-SCRIPT CPU AND TWO ACTUAL CUDA AUDITS; SCOPED QUALIFICATION CLOSED**.
+Foundation and ERC-1 are unchanged. The historical caller-boundary ownership claim
+is falsified; prior successful trajectories are not retroactively fabricated or
 erased. Do not borrow the old release as evidence against these new attacks.
 
 ## Counterexamples at e13348e
@@ -102,14 +102,22 @@ source changes during execution. Its separate receipt is
 `evidence/minimal/FP_PUBLIC_VALUE_REGRESSION_CPU.json`. This is a scoped
 caller-boundary regression, not reissuance of the old complete CPU/CUDA release
 or an actual device/performance claim. Actual-device qualification of the new
-public copy boundary remains separate.
+public copy boundary is supplied separately below.
 
 The [fixed actual CUDA A1 control](../../experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
-registers two small packed/shared training/reporting workers, each with a
-four-GiB/180-second host job. All nineteen complete actual phases and frame
-padding must survive public metadata mutations, followed by a terminal export
-failure. Its native harness control passes; no device outcome exists at
-registration. This adds no corpus run, model score or performance comparison.
+now completes both original packed/shared training/reporting workers at
+`9d7250d`, each under its four-GiB/180-second host job. Each preserves nineteen
+actual phases, 6,340 primitive words and all 19,922,944 retained frame bytes
+under public metadata mutations. Exact native histories/reports match untouched
+controls; private frozen identity, physical lineage and words remain unchanged.
+The final export MemoryError preserves the completed prefix and closes authority.
+The actual single 32-MiB arena/reservation remains unchanged, and source is fixed
+throughout. `FP_PUBLIC_VALUE_CUDA_A1.json` is terminal; never replay it.
+
+Close this scoped qualification and merge after the original text job ends.
+The token device controls do not reissue the whole old release, enumerate all
+registrations or supply a model score/performance comparison. No further alias,
+storage or static-feature variant is due without a new concrete counterexample.
 
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches

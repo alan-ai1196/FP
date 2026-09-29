@@ -11444,3 +11444,13 @@ CPU installation, paired persistence, native learning/reporting, ingress, host
 failure and packed/shared retention. Assertions remain enabled and source is
 unchanged throughout. `FP_PUBLIC_VALUE_REGRESSION_CPU.json` records this scoped
 qualification; actual CUDA and the whole old release are not reissued.
+
+The separately registered actual CUDA A1 then passes both original workers at
+`9d7250d`: packed and shared storage each complete four training events, two
+commits and four frozen report events, nineteen actual phases/6,340 primitive
+words and 19,922,944 full frame bytes. Public constructor/getter/forecast/history/
+learner/phase mutations leave native control equality and frozen physical state
+intact. Export MemoryError retains the completed prefix and closes authority.
+The actual single 32-MiB arena remains unchanged. This closes the scoped repair
+qualification without reissuing the whole release or an ordinary-text score.
+Keep the original journal terminal and return to the running native text trial.

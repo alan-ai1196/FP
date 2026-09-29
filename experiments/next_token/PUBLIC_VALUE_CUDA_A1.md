@@ -1,6 +1,35 @@
 # Public value boundary: actual CUDA control A1
 
-Status (2026-09-29): **PREREGISTERED; NO ACTUAL OUTCOME AT REGISTRATION**.
+Status (2026-09-29): **BOTH ORIGINAL ACTUAL WORKERS PASS AT `9d7250d`; CLOSED**.
+
+The registration below was committed before either worker launched. The
+exclusive `FP_PUBLIC_VALUE_CUDA_A1.json` is terminal; never replay it.
+
+## Original result
+
+Both original workers complete: packed in 5.51119 launcher seconds and shared
+in 6.17791 seconds, with peak job commitments 2,004,889,600 and 2,000,736,256
+bytes. These times are diagnostics, not an isolated performance comparison.
+Each completes four training events, two optimizer commits and four frozen
+report events while preserving exact native equality to the untouched control.
+Each checks nineteen actual phases, 6,340 primitive words, 731,331 complete
+phase-body bytes and all 19,922,944 frame bytes including padding. The actual
+native allocator remains one 33,554,432-byte arena/segment throughout.
+
+Caller registration, getter, forecast, causal-history, learner and physical
+phase metadata mutations do not change private values. The native reporting
+learner keeps its original identity and the actual physical lineage/words stay
+unchanged. The final injected export MemoryError retains the completed report
+and closes further authority. No source changes occur during either job.
+
+This closes the new boundary's finite token CPU/device qualification. The
+sixteen-script CPU bundle separately covers finite search/proofs, installation,
+persistence, ingress and other native paths. Neither result reissues the old
+whole release or proves arbitrary registrations/caller code safe. The repair
+waits in the linked worktree until the original native text A1 ends; ordinary
+text affordability and a complete trained FP score remain open.
+
+## Original registration
 
 The three [public-value counterexamples](../../theory/proofs/PUBLIC_VALUE_OWNERSHIP.md)
 and their transitive copy repair have passed the sixteen-script CPU bundle at
