@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-09-29)
 
+The [baseline anchor runner](experiments/next_token/BASELINE_ANCHOR_A1.md) now
+joins the existing real KenLM and nanoGPT adapters to fixed corpus views,
+normal optimizer/tuning schedules, frozen original-context reporting and
+bounded Windows jobs. CPU controls pass suffix scoring and actual child-job
+limits. FP's host contract and all complete-state/AMP checks remain unchanged;
+the external job helper's default process limit stays one. No actual anchor
+outcome exists at this registration. Its independent baseline results will
+inform, rather than stand in for, the unresolved trained FP comparison.
+
 The passive [grid-update audit](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
 now characterizes the unchanged native U and its first original full-V unit.
 All 720 exact small histories agree with the literal DAG at every observation

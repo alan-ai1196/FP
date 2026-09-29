@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The preregistered [real-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md)
+removes an unnecessary dependency: the ready baseline families can be trained
+and measured before the FP training budget is solved. Its original bounded
+jobs, full alphabet, explicit tuning and original-context development report
+are the next execution. This is partial evidence toward the trained comparison,
+not a redefinition of success as baseline-only work. Use the resulting scores,
+learning curves and costs to return to the actual FP model/budget; no further
+baseline architecture or smoothing catalog is due.
+
 The [ordinary-token update-precision question](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
 is closed at a scoped law and diagnostic. The existing floor-grid U has a
 discontinuous small-rate limit, and a reached causal learner can lose likelihood

@@ -11286,3 +11286,32 @@ the update-cell law when specifying an actual text learner; do not grow a
 rate/precision menu or return to relation cases. The central unresolved
 objective is the affordable trained ordinary-text comparison, including its
 strong baselines and complete owned reporting.
+
+
+## 330. Stop making real baseline training depend on unresolved FP affordability (2026-09-29)
+
+The scoped optimizer and execution diagnoses are closed, but an affordable
+trained FP comparison is still absent. The standard baseline adapters had
+already passed their controls. Requiring FP feasibility before any baseline
+training was an avoidable planning dependency, not a Foundation requirement.
+The ordinary-text anchor A1 now preregisters actual upstream MKN and nanoGPT
+training, preserving the final goal of a useful native learner/comparison.
+
+The fixed pilot uses 1,048,576 original training tokens and the full 50,257
+alphabet. Order-3/5 MKN is tuned without pruning or discount fallback. The
+four-layer, width-128 Transformer receives two ordinary AdamW learning-rate
+schedules, each with 16,777,216 repeated-block target exposures and five
+checkpoint choices. The first 4,096 validation tokens drive selection; the
+following 12,288 form a frozen development report with their original context.
+That file was already exposed, so the suffix is not claimed fresh evidence.
+A separately tuned unigram remains diagnostic alongside the stronger families.
+
+The runner binds source views, model artifacts, selections and bounded jobs.
+CPU float64 suffix scoring agrees with an independent traversal within
+4.440892098500626e-16 nats; deliberately resetting its context changes loss.
+The Windows control refuses child creation at the unchanged default limit one
+and completes a child at explicit limit two. FP's single-process host contract
+is unchanged. Original jobs must launch only after this registration commit,
+with fixed caps and an exclusive terminal journal; no outcomes exist yet.
+After the one study, return to FP model/budget selection. This is neither an
+FP score nor justification for another baseline architecture/tuning branch.

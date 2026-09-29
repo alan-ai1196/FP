@@ -1,0 +1,66 @@
+{
+  "status": "PASS_TEXT_BASELINE_ANCHOR_CONTROL",
+  "reporting_boundaries": [
+    1,
+    4,
+    13,
+    21
+  ],
+  "original_context_suffix_checked": true,
+  "maximum_float64_suffix_error": 4.440892098500626e-16,
+  "context_reset_changes_loss": 0.003951572828276628,
+  "frozen_parameters_unchanged": true,
+  "complete_registered_learning_rate_schedules_checked": true,
+  "jobs": [
+    {
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 268435456,
+        "peak_process_commit": 13754368,
+        "peak_job_commit": 14983168,
+        "user_100ns": 0,
+        "kernel_100ns": 781250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 15024,
+        "process_creation_100ns": 134351557875130385
+      },
+      "result": {
+        "process": {
+          "process_id": 15024,
+          "creation_100ns": 134351557875130385
+        },
+        "active_limit": 1,
+        "child": "REFUSED"
+      }
+    },
+    {
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 268435456,
+        "peak_process_commit": 13688832,
+        "peak_job_commit": 21626880,
+        "user_100ns": 1093750,
+        "kernel_100ns": 0,
+        "total_processes": 4,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 27476,
+        "process_creation_100ns": 134351557876052341
+      },
+      "result": {
+        "process": {
+          "process_id": 27476,
+          "creation_100ns": 134351557876052341
+        },
+        "active_limit": 2,
+        "child": "COMPLETED"
+      }
+    }
+  ],
+  "corpus_opened": false,
+  "cuda_initialized": false
+}

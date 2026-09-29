@@ -68,6 +68,15 @@ trained values or all future continuations. Report UNRESOLVED when needed.
 
 ## First model-score boundary
 
+The [baseline anchor A1](BASELINE_ANCHOR_A1.md) is now a concrete independent
+step: train the qualified strong baseline families on a declared real-text
+view and measure their learning/cost while the affordable FP budget remains
+unresolved. Its fixed data, tuning, standard optimizers and reporting contexts
+are preregistered. It supersedes the earlier suggestion to wait for FP
+feasibility before any baseline training. It supplies no absent FP score or
+matched-budget comparison; after its one original outcome, return to the
+actual native learner and comparison decision.
+
 The first text comparison may train one preregistered native G/Gamma/U from
 its own initialization as the incumbent, with no graph replacement during
 that run. This is an empirical test of that supplied learner, not an adaptive

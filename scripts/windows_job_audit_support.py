@@ -3,7 +3,8 @@
 SDK job commit accounting is independent evidence, not an ERC-1 manifest or
 Compiler authority. The audit launcher is outside the measured child scope.
 No breakaway, inherited handles or visible windows are requested; the job
-allows only one active process. OS counts can include denied process starts.
+defaults to one active process. A caller can explicitly fund a larger active
+process limit for external baseline tools. OS counts can include denied starts.
 """
 import ctypes as C
 from ctypes import wintypes as W
@@ -43,11 +44,13 @@ class JobRun:
     process_creation_100ns: int
 
 
-def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
+def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000, process_limit=1):
     if sys.platform != 'win32' or C.sizeof(C.c_void_p) != 8:
         raise RuntimeError('this audit requires 64-bit Windows')
     if type(commit_limit) is not int or not 0 < commit_limit < 1 << 63:
         raise ValueError('positive fixed commit cap required')
+    if type(process_limit) is not int or not 1 <= process_limit < 1 << 32:
+        raise ValueError('positive fixed active-process limit required')
     kernel = C.WinDLL('kernel32', use_last_error=True)
     def bind(name, result, args):
         fn = getattr(kernel, name)
@@ -75,7 +78,7 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
         declared = ExtendedLimit()
         # Active process cap + process/job committed memory + kill on close.
         declared.basic.flags = 0x8 | 0x100 | 0x200 | 0x2000
-        declared.basic.processes = 1
+        declared.basic.processes = process_limit
         declared.process_memory = declared.job_memory = commit_limit
         checked(set_job(job, 9, C.byref(declared), C.sizeof(declared)))
         path = Path(script).resolve()
@@ -94,7 +97,7 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
         checked(query(job, 9, C.byref(initial), C.sizeof(initial), None))
         if (initial.process_memory != commit_limit or initial.job_memory != commit_limit
                 or initial.basic.flags & declared.basic.flags != declared.basic.flags
-                or initial.basic.processes != 1):
+                or initial.basic.processes != process_limit):
             raise RuntimeError('job did not retain its preregistered allocation limits')
         if initial.peak_process > commit_limit or initial.peak_job > commit_limit:
             raise RuntimeError('initial process commitment exceeds the declared cap before resumption')
@@ -111,7 +114,8 @@ def run_in_job(script, arguments=(), *, commit_limit, timeout_ms=60000):
         checked(exit_code(process.process, C.byref(code)))
         checked(query(job, 9, C.byref(final), C.sizeof(final), None))
         checked(query(job, 1, C.byref(accounting), C.sizeof(accounting), None))
-        if final.process_memory != commit_limit or final.job_memory != commit_limit:
+        if (final.process_memory != commit_limit or final.job_memory != commit_limit
+                or final.basic.processes != process_limit):
             raise RuntimeError('job memory limits changed during execution')
         return JobRun(code.value, timed_out, commit_limit, final.peak_process, final.peak_job,
                       accounting.user_time, accounting.kernel_time, accounting.total_processes,

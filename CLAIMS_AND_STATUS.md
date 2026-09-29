@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Ordinary-text baseline anchor A1: PREREGISTERED; CPU/OS BOUNDARY CONTROL PASS; NO MODEL OUTCOME YET.**
+The [fixed study](experiments/next_token/BASELINE_ANCHOR_A1.md) trains tuned
+upstream MKN and a normal AdamW Transformer on the same full-alphabet real-text
+view. It measures a reference point while FP affordability is unresolved.
+Original-context suffix reporting and one-/two-process OS job controls pass.
+No model quality, actual GPU execution or FP comparison follows before the
+original jobs complete. Development data remain previously exposed; no fresh
+test, independence, model-selection optimality or Compiler claim is made.
+
 **Token floor-grid dynamics: SCOPED THEOREM; EXACT COUNTEREXAMPLE/FULL-V DIAGNOSTIC PASS; CLOSED.**
 The [update-cell law](experiments/next_token/GRID_UPDATE_DYNAMICS.md) gives
 m'=max(0,m-ceil(eta Q G/B)). At fixed precision, arbitrarily small positive
