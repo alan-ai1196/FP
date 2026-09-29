@@ -11163,3 +11163,52 @@ the body-only theorem does not authorize removal of full-frame/padding checks,
 failure pins, target retention or fresh numerical observations. A bounded new
 device test is justified only after that gate. Ordinary next-token learning
 remains the objective; no relation/static or codec-variant branch is reopened.
+
+
+## 327. Bind complete byte expressions to actual ownership and fixed extents (2026-09-29)
+
+The passive theorem now has a default-off Runtime realization. Native records
+are independently checked through canonical expression roots; original CUDA
+frame writing and full actual-frame byte comparison remain. Thus the physical
+implementation does not borrow the passive model's avoided-expansion claim for
+frames. All page dependencies stay in both resource roles, and mutable/immutable
+copies coexist until the existing atomic relocation and later numerical acceptance.
+
+Unique-node count alone does not bound recovery: a four-node doubling tree has
+eight literal occurrences. Derived byte and unfolded-reference counts therefore
+both obey explicit caps. Source-binding count is separately bounded. Producer,
+reader and owner allowance wrappers are detached; frozen dataclass metadata is
+not assumed immutable across a producer/checker or public-snapshot boundary.
+
+A concrete copy-boundary attack using a4089cb's original materialization methods
+then retained the correct native value in an actual 208-byte page while charging
+196 bytes, without halting. The producer had appended a valid unreferenced term
+after output allocation. Correct decoding did not imply correct ownership.
+Private buffer exports now prohibit resizing all producer-accessible workspaces
+and page copies before their extents can change. Failed copies remain paid.
+This repairs an implementation assumption under the existing Foundation.
+
+Exact and complete CPU qualification passes 63 binary words with forced
+collisions, 848 changed-page bit variants, 20 paired histories/340 phase bodies/
+14,148,823 bytes, and 22 post-target failure boundaries. Learners, reports,
+profiles, 126,797 primitive words and 114,087 raw calls/2,154,384 raw bytes agree.
+Three deliberately nonzero-padding frames preserve every byte. Changed actual
+live tensor words refuse; unpaid work cannot inspect the native body. The old
+shared-native and full-frame regression audits also pass without overwriting
+their historical evidence.
+
+Both full-V CPU owners execute the first two original targets and retain five
+identical phase bodies/133,079,440 bytes and 2,619,584 checked words. Their
+twenty pages occupy 15,414,987 existing versus 12,275,343 expression bytes;
+paid-reference peaks are 269,114,036 versus 266,611,908. Expressions also retain
+265,455 source bindings and 348,200 terms. Neither these payload counts nor the
+passive theorem establishes a time or whole-host advantage.
+
+FP_COMPOSITIONAL_REFERENCE_CPU.json and FP_COMPOSITIONAL_REFERENCE_FULL_V_CPU.json
+record the gates. A fixed actual pair is registered before launch: first sixteen
+original full-V/unit512 targets, identical numerical/storage limits, qualified
+images/base facts and reuse, two sequential 240-second/16-GiB jobs. Afterwards,
+uncached frame recovery and corrupt-producer refusal after the seventeenth
+original target must pass. Its exclusive original journal cannot be replayed.
+Use that finite result to decide net ordinary-token value; do not deepen another
+codec menu or return to relation/static cases. Foundation/ERC remain frozen.

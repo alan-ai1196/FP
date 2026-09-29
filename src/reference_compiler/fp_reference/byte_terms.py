@@ -1,8 +1,8 @@
-"""Bounded research model of compositional canonical-byte retention.
+"""Exact byte-expression pages and trusted canonical traversal.
 
-Not used by ReferenceCompilerRuntime. No resource ownership, phase, bridge,
-search, persistence or installation authority. The producer receives byte
-messages only; the owner and separate reader retain all checking authority.
+No Runtime authority. Producer state and the independent reader are disjoint.
+The producer receives byte packets and one paid private output workspace only.
+Source bindings belong to the trusted owner, never to the producer.
 """
 from collections.abc import Mapping
 from dataclasses import dataclass, is_dataclass, replace
@@ -10,11 +10,12 @@ from fractions import Fraction as F
 import struct
 import zlib
 
-from fp_reference import encoding
-from fp_reference.core import ContractError
-from fp_reference.resources import ResourceExceeded
+from . import encoding
+from .core import ContractError
+from .resources import ResourceExceeded
 
 MAGIC = b'FPDGv1\0\0'
+ENCODING_ID = 'complete-canonical-byte-expression-u64-pages-v1'
 HEADER = struct.Struct('>8s5Q')
 U32, U64 = struct.Struct('>I'), struct.Struct('>Q')
 PIECE = 8192
@@ -27,10 +28,11 @@ class Limits:
     nodes: int = 1 << 20
     page_bytes: int = 64 << 20
     comparisons: int = 1 << 30
+    references: int = 1 << 30
 
     def __post_init__(self):
         if any(type(x) is not int or not 0 < x <= U64_MAX for x in
-               (self.expanded, self.nodes, self.page_bytes, self.comparisons)):
+               (self.expanded, self.nodes, self.page_bytes, self.comparisons, self.references)):
             raise ContractError('positive uint64 term-model allowances required')
         if self.page_bytes < HEADER.size:
             raise ContractError('term page allowance omits its header')
@@ -39,6 +41,8 @@ class Limits:
 class Index:
     """Derived immutable-term index; a hash only selects literal candidates."""
     def __init__(self, limits):
+        # A frozen dataclass still has writable metadata. The producer must
+        # not share that wrapper with the independent reader or the owner.
         self.limits = replace(limits)
         self.nodes, self.literal_buckets, self.pairs = [], {}, {}
         self.compared = 0
@@ -64,7 +68,7 @@ class Index:
             raise ContractError('term dictionary contains a duplicate literal')
         self._room(len(raw))
         identity = len(self.nodes)
-        self.nodes.append((0, raw, len(raw)))
+        self.nodes.append((0, raw, len(raw), 1))
         self.literal_buckets.setdefault((len(raw), zlib.crc32(raw)), []).append(identity)
         return identity
 
@@ -74,30 +78,37 @@ class Index:
         if self.pair(left, right) is not None:
             raise ContractError('term dictionary contains a duplicate concatenation')
         size = self.nodes[left][2]+self.nodes[right][2]
-        self._room(size)
+        references = self.nodes[left][3]+self.nodes[right][3]
+        self._room(size, references)
         identity = len(self.nodes)
-        self.nodes.append((1, (left, right), size))
+        self.nodes.append((1, (left, right), size, references))
         self.pairs[left, right] = identity
         return identity
 
-    def _room(self, size):
-        if len(self.nodes) >= self.limits.nodes or size > self.limits.expanded:
-            raise ResourceExceeded('term node or expanded extent allowance exhausted')
+    def _room(self, size, references=1):
+        if (len(self.nodes) >= self.limits.nodes or size > self.limits.expanded
+                or references > self.limits.references):
+            raise ResourceExceeded('term node, reference or expanded extent allowance exhausted')
 
 
 class Producer:
-    """Byte-message producer. Never receives a source, iterator or owner."""
+    """Byte-message producer using a disjoint admitted page workspace."""
     def __init__(self, limits):
         self.index, self.pages = Index(limits), 0
         self.start, self.pending, self.finished = 0, None, False
+        self.used, self.written = 0, False
 
-    def begin(self):
+    def begin(self, workspace):
         if self.pending is not None:
             raise ContractError('term producer already has an unfinished page')
         if self.pages > U64_MAX:
             raise ResourceExceeded('term page ordinal exceeds its format')
-        self.start, self.pending, self.finished = len(self.index.nodes), bytearray(), False
+        if type(workspace) is not bytearray or len(workspace) != self.index.limits.page_bytes:
+            raise ContractError('exact admitted term page workspace required')
+        self.start, self.pending, self.finished = len(self.index.nodes), workspace, False
+        self.used, self.written = HEADER.size, False
         self.index.compared = 0
+        return self
 
     def send(self, message):
         if type(message) is not bytes or self.pending is None or self.finished:
@@ -122,9 +133,10 @@ class Producer:
         return U64.pack(identity)
 
     def _append(self, raw):
-        if HEADER.size+len(self.pending)+len(raw) > self.index.limits.page_bytes:
+        if self.used+len(raw) > len(self.pending):
             raise ResourceExceeded('term page byte allowance exhausted')
-        self.pending.extend(raw)
+        self.pending[self.used:self.used+len(raw)] = raw
+        self.used += len(raw)
 
     def finish(self, root):
         if type(root) is not bytes or len(root) != 8 or self.pending is None or self.finished:
@@ -133,11 +145,23 @@ class Producer:
         if identity >= len(self.index.nodes):
             raise ContractError('term root has no definition')
         self.finished = True
-        return HEADER.pack(MAGIC, self.pages, self.start, len(self.index.nodes)-self.start,
-                           identity, self.index.nodes[identity][2])+bytes(self.pending)
+        HEADER.pack_into(self.pending, 0, MAGIC, self.pages, self.start,
+                         len(self.index.nodes)-self.start, identity, self.index.nodes[identity][2])
+
+    @property
+    def extent(self):
+        if not self.finished:
+            raise ContractError('unfinished term page has no final extent')
+        return self.used
+
+    def write(self, output):
+        if not self.finished or self.written or type(output) is not bytearray or len(output) != self.used:
+            raise ContractError('one exact admitted term page output required')
+        output[:] = memoryview(self.pending)[:self.used]
+        self.written = True
 
     def accept(self):
-        if not self.finished:
+        if not self.finished or not self.written:
             raise ContractError('term producer has no finished page')
         self.pages += 1
         self.pending = None
@@ -146,7 +170,7 @@ class Producer:
 class Reader:
     """Separate parser/index. Rebuildable from the immutable page bytes alone."""
     def __init__(self, limits):
-        self.index, self.pages = Index(limits), []
+        self.index, self.pages, self.roots = Index(limits), [], []
 
     def add(self, raw):
         if type(raw) is not bytes or not HEADER.size <= len(raw) <= self.index.limits.page_bytes:
@@ -180,14 +204,30 @@ class Reader:
                 or self.index.nodes[root][2] != expanded):
             raise ContractError('term page lost its exact root or complete extent')
         self.pages.append(raw)
+        self.roots.append(root)
         return root
+
+    def decoded(self, ordinal, *, byte_cap, reference_cap):
+        if (type(ordinal) is not int or not 0 <= ordinal < len(self.roots)
+                or type(byte_cap) is not int or byte_cap <= 0
+                or type(reference_cap) is not int or reference_cap <= 0):
+            raise ContractError('retained term page and positive recovery allowances required')
+        root = self.roots[ordinal]
+        if self.index.nodes[root][2] > byte_cap or self.index.nodes[root][3] > reference_cap:
+            raise ResourceExceeded('term recovery exceeds its complete declared allowances')
+        # Each nonempty expanded leaf is a reference occurrence. Bound actual
+        # unfolding, not just the number of unique dictionary nodes.
+        for count, part in enumerate(self.expand(root), 1):
+            if count > reference_cap:
+                raise ResourceExceeded('term recovery exceeds its reference allowance')
+            yield part
 
     def expand(self, root):
         if type(root) is not int or not 0 <= root < len(self.index.nodes):
             raise ContractError('retained term root required')
         stack = [root]
         while stack:
-            tag, value, _ = self.index.nodes[stack.pop()]
+            tag, value, _, _ = self.index.nodes[stack.pop()]
             if tag == 0:
                 yield value
             else:
@@ -226,8 +266,9 @@ def compose(parts, pair):
 
 class Walk:
     """Trusted owner traversal; only literal bytes and opaque IDs leave it."""
-    def __init__(self, literal, pair, bindings):
+    def __init__(self, literal, pair, bindings, binding_limit=U64_MAX):
         self.literal, self.pair, self.bindings = literal, pair, bindings
+        self.binding_limit = binding_limit
         self.proposals, self.active = {}, set()
         self.visits = self.hits = self.literal_bytes = self.pair_calls = 0
 
@@ -293,63 +334,9 @@ class Walk:
                             yield self.text((child,))
                 root = self.join(sequence())
             if pure:
+                if len(self.bindings)+len(self.proposals) >= self.binding_limit:
+                    raise ResourceExceeded('complete source-binding allowance exhausted')
                 self.proposals[identity] = value, root
             return root, pure
         finally:
             self.active.remove(identity)
-
-
-class Owner:
-    """Passive model only. Its limits are not a Runtime ledger or host bound."""
-    def __init__(self, limits=Limits()):
-        self.limits = limits
-        self.producer, self.reader = Producer(limits), Reader(limits)
-        self.bindings, self.roots, self.failed = {}, (), False
-        self.diagnostic = None
-        self.statistics = ()
-
-    def retain(self, value):
-        if self.failed:
-            raise ContractError('failed term owner cannot continue')
-        try:
-            # Keep the original complete guard. This model does not claim
-            # to remove its field/occurrence work or its refusal decisions.
-            size = encoding.bounded_packed_size(value, byte_limit=self.limits.expanded)
-            self.producer.begin()
-            before = len(self.reader.index.nodes)
-            def handle(message):
-                result = self.producer.send(message)
-                if type(result) is not bytes or len(result) != 8:
-                    raise ContractError('producer returned a non-byte opaque node handle')
-                return U64.unpack(result)[0]
-            emit = Walk(lambda raw: handle(b'L'+raw),
-                lambda a, b: handle(b'C'+U64.pack(a)+U64.pack(b)), self.bindings)
-            proposed, _ = emit.value(value)
-            raw = self.producer.finish(U64.pack(proposed))
-            self.diagnostic = raw
-            root = self.reader.add(raw)
-            # Neither producer handles nor its index supply this expectation.
-            check = Walk(self.reader.literal, self.reader.pair, self.bindings)
-            expected, _ = check.value(value)
-            if root != expected or self.reader.index.nodes[root][2] != size:
-                raise ContractError('term root differs from the complete owned record')
-            updated = dict(self.bindings)
-            updated.update(check.proposals)
-            roots = self.roots+(root,)
-            row = dict(expanded=size, page_bytes=len(raw), new_nodes=len(self.reader.index.nodes)-before,
-                value_visits=check.visits, immutable_binding_hits=check.hits,
-                expected_literal_bytes=check.literal_bytes, expected_pair_checks=check.pair_calls)
-            next_state = dict(self.__dict__, bindings=updated, roots=roots,
-                              statistics=self.statistics+(row,))
-            self.producer.accept()
-            # All accepted bindings come from the independent expected walk.
-            self.__dict__ = next_state
-            return root
-        except Exception:
-            self.failed = True
-            raise
-
-    def snapshot(self):
-        # Source values here belong to the recursively immutable exact algebra.
-        # No mutable index/entry wrapper is exported to a caller.
-        return tuple(self.reader.pages), self.roots, tuple(self.bindings.values())

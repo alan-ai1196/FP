@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Owned compositional retention: CPU QUALIFIED; DEFAULT OFF; ACTUAL PAIR REGISTERED.**
+The [realization and accounting counterexample](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
+preserve complete native values and actual full frames. Native checks avoid
+expansion; original frame writing and full frame/padding comparisons remain.
+All 340 phase bodies agree across 20 paired CPU histories; 22 post-target
+faults, changed live words and unpaid traversal controls pass. Five full-V
+CPU phases/133,079,440 bytes also agree. An accepted 208-byte page charged as
+196 refutes the old copy-extent assumption; private exports now prevent that
+resize. Independent allowance wrappers prevent producer metadata from changing
+checker caps. This is no Foundation change or new complete search class. Actual
+GPU cost, host-memory benefit and affordable training remain unestablished.
+
 **Compositional retention: CONDITIONAL THEOREM; EXACT MODEL/FULL-V CPU RECORD PASS.**
 The [proof and exact class](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
 show that complete recoverability does not itself require repeated expansion

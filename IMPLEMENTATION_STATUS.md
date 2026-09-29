@@ -2,17 +2,28 @@
 
 ## Current token execution boundary (2026-09-29)
 
-The [compositional retention model](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
-is confined to research/audit code; production Runtime is unchanged. It
+The [owned compositional implementation](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
+is now available through explicit shared-storage registration, default off.
+It preserves the original full-frame writer and full actual-frame comparison;
+native binding uses the independently checked expression. Complete CPU controls
+pass 20 paired histories/340 phase bodies and 22 post-target failures, plus
+five matching full-V phases. Node, binding, byte, expanded-reference and exact
+comparison caps all remain explicit. Both resource roles retain dependencies;
+copy coexistence, snapshots, failed frames and pins remain owned. Private
+buffer exports repair the reproduced 196-paid/208-actual-byte producer resize
+mismatch. A fixed 16-target actual pair is registered before launch; no CUDA
+qualification or speedup has yet been established for this path.
+
+The earlier [compositional retention model](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
+remains passive research evidence. It
 independently parses literal/concatenation pages and binds complete values by
 the owner's fixed structural expression. Only the existing immutable value
 algebra reuses source bindings; dataclasses and mutable descendants rewalk.
 Exact mutation, collision, allocation and snapshot controls pass. Five actual
 full-V CPU Runtime phase bodies/133,079,440 bytes fully recover from pages,
 without expansion during model binding. Original complete frames still pass.
-This supplies no paid Runtime realization, CUDA bridge or speedup claim. The
-next implementation gate is complete owned retention for this candidate,
-including full-frame padding, metadata/copy costs and post-target failures.
+Its evidence supplies no CUDA bridge or speedup claim. The separate complete
+owner gate above includes full-frame padding, copy costs and post-target failures.
 
 The [bounded comparison lowering](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)
 changes two exact comparison sites only. It preserves comparison credit,

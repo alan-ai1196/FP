@@ -174,10 +174,15 @@ def faults_and_limits():
     producer = model.Producer(model.Limits())
     producer.pages = 1 << 64
     rejects(producer.begin, ResourceExceeded)
+    owner = model.Owner()
+    limits_before = replace(owner.reader.index.limits)
+    owner.producer.index.limits.__dict__.update(nodes=1 << 63, expanded=1 << 63)
+    assert owner.reader.index.limits == limits_before == owner.limits
+    assert owner.producer.index.limits is not owner.reader.index.limits
     return dict(producer_faults=list(modes), old_roots_and_bindings_preserved=True,
         node_page_and_expansion_limits_refuse=True, forced_collisions_preserve_distinctions=True,
         collision_budget_checked_before_comparison=True, cycles_refuse=True,
-        allowance_type_and_uint64_limits_refuse=True)
+        allowance_type_and_uint64_limits_refuse=True, producer_limit_metadata_isolated=True)
 
 
 def byte_mutations():

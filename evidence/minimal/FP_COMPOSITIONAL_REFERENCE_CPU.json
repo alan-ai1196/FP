@@ -1,0 +1,75 @@
+{
+  "status": "PASS_COMPOSITIONAL_REFERENCE_CPU",
+  "scope": "Complete owned expression-retention controls; actual CPU tensors, no CUDA.\n\nNo corpus, device release, wall-time comparison or model-quality claim.",
+  "components": {
+    "typed_values": 15,
+    "canonical_bytes": 28920,
+    "preserved_old_snapshots": 15,
+    "mutable_fields_rewalked": true,
+    "public_binding_and_contract_substitution_isolated": true,
+    "pages_and_workspaces_owned_by_both_roles": true,
+    "native_binding_does_not_expand": true,
+    "producer_and_reader_limit_wrappers_isolated": true
+  },
+  "grammar": {
+    "binary_words": 63,
+    "forced_collisions_exact": true,
+    "bit_variants_refused": 848,
+    "bit_variants_preserving_exact_expression": 0,
+    "unfolded_reference_limit_independent_of_unique_nodes": true,
+    "invalid_registration_and_recovery_limits_refuse": true
+  },
+  "extent_counterexample": {
+    "original_copy_source": "a4089cb",
+    "witness": {
+      "legacy_retention_accepted": true,
+      "decoded_record_equal": true,
+      "charged_page_bytes": 196,
+      "actual_page_bytes": 208
+    },
+    "repaired_copy_refuses_resize_before_extent_changes": true
+  },
+  "histories": {
+    "paired_histories": 20,
+    "complete_phase_bodies": 340,
+    "complete_phase_bytes": 14148823,
+    "checked_primitive_words": 126797,
+    "identical_raw_calls": 114087,
+    "identical_raw_bytes": 2154384,
+    "full_frames_learners_reports_profiles_and_arena_history_equal": true
+  },
+  "failures": {
+    "nonzero_padding_frames": 3,
+    "full_frame_bytes": 45056,
+    "post_target_faults": [
+      "native:literal",
+      "native:handle",
+      "native:page-copy",
+      "native:expected",
+      "native:accept",
+      "native:relocation",
+      "native:work",
+      "native:binding-cap",
+      "native:reference-cap",
+      "native:output-resize",
+      "native:workspace-resize",
+      "frame:literal",
+      "frame:handle",
+      "frame:page-copy",
+      "frame:expected",
+      "frame:accept",
+      "frame:relocation",
+      "frame:work",
+      "frame:binding-cap",
+      "frame:reference-cap",
+      "frame:output-resize",
+      "frame:workspace-resize"
+    ],
+    "actual_target_old_learner_and_failed_frame_pins_preserved": true
+  },
+  "fresh_and_funding": {
+    "body_unread_before_payment": true,
+    "changed_actual_live_tensor_refused": true,
+    "original_learner_and_cursor_preserved": true
+  }
+}

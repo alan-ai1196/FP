@@ -562,7 +562,11 @@ class ReferenceCompilerRuntime:
         self._ledger.register_owner(self._data_owner, 'compiler')
         self._reference_archive = None
         if shared_storage is not None:
-            self._reference_archive = _SharedReference(self, shared_storage)
+            if shared_storage.expression_nodes:
+                from .compositional_reference import _CompositionalReference
+                self._reference_archive = _CompositionalReference(self, shared_storage)
+            else:
+                self._reference_archive = _SharedReference(self, shared_storage)
         registered = self._machine.realize(self._manifest_object_id, 'immutable_run_manifest', self._manifest, self._chi)
         self._event_router.charge_work('information', {'work': registered.spec.residency['reference_payload_bytes']+1},
                                       'retain-immutable-run-manifest')

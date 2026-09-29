@@ -30,7 +30,8 @@
     "forced_collisions_preserve_distinctions": true,
     "collision_budget_checked_before_comparison": true,
     "cycles_refuse": true,
-    "allowance_type_and_uint64_limits_refuse": true
+    "allowance_type_and_uint64_limits_refuse": true,
+    "producer_limit_metadata_isolated": true
   },
   "mutations": {
     "single_bit_variants_refused": 2400,

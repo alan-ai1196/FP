@@ -3,8 +3,14 @@
 Status: **CONDITIONAL PRESERVATION THEOREM; EXACT MODEL AND FULL-V CPU RECORD AUDITS PASS**.
 This is a passive research model, not an installed ReferenceCompilerRuntime
 encoding, a numerical bridge, a resource certificate or a new Foundation
-action. Production remains at the qualified byte-archive implementation.
+action. The default production path remains the qualified byte archive.
 Foundation/ERC and the rational/relation branch stay closed.
+
+The subsequent [owned realization](OWNED_COMPOSITIONAL_RETENTION.md) adds a
+default-off Runtime path and complete CPU gates. It also adds an explicit
+unfolded-reference cap and isolates producer/reader limit wrappers. Its actual
+full-frame checks and host-state costs are additional to this passive model;
+the model's result alone remains insufficient for Runtime or GPU authority.
 
 ## 1. The question left by the ordinary-token experiments
 

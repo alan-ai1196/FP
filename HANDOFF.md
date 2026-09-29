@@ -2,6 +2,30 @@
 
 ## Current execution state (2026-09-29)
 
+The [owned compositional path](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
+now passes complete CPU qualification and is default off. Twenty paired
+histories preserve 340 phase bodies/14,148,823 bytes, learners, reports,
+profiles and all fresh reads. Twenty-two post-target fault controls preserve
+the actual target, old learner, failed frames and pins. Both full-V CPU owners
+preserve five phase bodies/133,079,440 bytes and every original frame/padding.
+The expression path retains 265,455 source bindings and 348,200 terms; those
+host costs remain real. Native binding avoids expansion; full-frame checks
+still expand and compare every original byte.
+
+An integration attack found accepted correct bytes with unpaid extent: the
+old copy boundary charged 196 bytes for a 208-byte page. Private buffer exports
+now prevent producer workspace/copy resizing in both representations. Producer
+and reader limit wrappers and public contract wrappers are also detached.
+The original shared-native/frame regression audits pass; Foundation/ERC remain.
+
+The next action is the newly registered
+`python scripts/run_compositional_reference_cuda_a1.py --run` after committing
+this implementation, evidence and registration. Two original sequential
+240-second/16-GiB jobs compare the first sixteen original targets, with all
+numerical/storage limits fixed and post-target corruption refusal. Its absent
+journal must be created exclusively; once terminal, never replay it. Use this
+single result to decide net ordinary-token value, not to open a codec sweep.
+
 [Compositional complete retention](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
 now has a conditional preservation theorem and a passive exact model. An
 independent reader checks the owner's fixed byte expression without expanding
@@ -15,15 +39,14 @@ is avoiding repeated expansion, not a claimed compression or timing win.
 Five actual full-V CPU Runtime phase bodies/133,079,440 bytes recover exactly
 from model pages. For the four ordinary records, expected literal emission is
 4,803,406 bytes versus 82,576,870 complete bytes, with 675,747 pair lookups still
-required. All original frames/padding are independently checked. This model
-has no Runtime, GPU, ownership or bridge authority; production is unchanged.
+required. All original frames/padding are independently checked. That passive
+model alone has no Runtime, GPU, ownership or bridge authority; the separate
+owned qualification above supplies the CPU implementation evidence.
 
-Close the passive model here. The next gate is one complete owned realization
-covering native retention and full frames, paid metadata/copies, both-role
-dependencies, snapshots and post-target failure retention. Body-only recovery
-does not authorize dropping actual frame padding or fresh device checks. Then
-a newly registered bounded device test can decide whether it helps ordinary-
-token affordability. No codec/cache sweep, relation work or long replay is due;
+The passive model is closed. Its complete owner gate now passes above;
+body-only recovery still does not authorize dropping frame or fresh device
+checks. The newly registered bounded device test will decide whether the
+realization helps ordinary-token affordability. No codec/cache sweep, relation work or long replay is due;
 Foundation/ERC remain frozen and trained next-token comparisons remain the goal.
 
 [Bounded byte comparisons](theory/proofs/BOUNDED_BYTE_COMPARISONS.md) now have

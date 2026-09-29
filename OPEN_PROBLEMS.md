@@ -7,14 +7,16 @@ without re-expanding old immutable bodies. Five real full-V CPU phase bodies
 recover exactly. Large reductions in expected literal emission coexist with
 substantial mutable-wrapper/pair-lookup work; no speedup is established.
 
-The open question is now **complete owned realization and net ordinary-token
-cost**, not another compression theorem. Implement this single candidate under
-the existing complete-state/resource boundary before qualifying it on device.
-The current full-frame writer, actual padding, leases, metadata/copy charges,
-snapshots and post-target failure state cannot be bypassed by the passive model.
-Do not deepen a codec/cache menu or reopen relation/static branches. A bounded
-new device comparison, after the owner gate, should decide whether this work
-advances an affordable next-token budget. All original journals remain terminal.
+The [complete owned realization](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
+now passes CPU qualification: 20 paired histories, 22 post-target failures and
+five full-V phases. The integration exposed and repaired a producer copy-resize
+accounting mismatch; it also bounds unfolded references and isolates allowance
+metadata. Original frame writing and full actual-frame comparisons remain.
+The open question is **net ordinary-token cost**. Run the one newly registered
+bounded actual pair from committed source, then close this qualification at its
+original outcome. Source bindings and structural traversal can outweigh the
+saved native expansion; correctness is not evidence of speed. No codec/cache
+menu, relation/static branch or terminal-journal replay is justified.
 
 The fixed ordinary-token
 [bounded byte-comparison qualification](theory/proofs/BOUNDED_BYTE_COMPARISONS.md)

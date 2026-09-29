@@ -27,6 +27,8 @@ class SharedReferenceContract:
     encoding: str = archive.ENCODING_ID
     canonical_image_bytes: int = 0
     token_invariant_bytes: int = 0
+    expression_nodes: int = 0
+    expression_bindings: int = 0
 
     def __post_init__(self):
         if type(self) is not SharedReferenceContract or set(vars(self)) != {f.name for f in fields(self)}:
@@ -34,9 +36,17 @@ class SharedReferenceContract:
         for field in fields(self):
             if field.name != 'encoding':
                 natural(getattr(self, field.name), 'shared reference '+field.name,
-                        positive=field.name not in ('canonical_image_bytes', 'token_invariant_bytes'))
-        if (self.encoding != archive.ENCODING_ID or self.literal_workspace < archive.HEADER.size
-                or archive.U64.size*self.reference_cap > archive.phase_deflate.EXPANDED_CAP):
+                        positive=field.name not in ('canonical_image_bytes', 'token_invariant_bytes',
+                                                   'expression_nodes', 'expression_bindings'))
+        from .byte_terms import ENCODING_ID as TERM_ENCODING, U64_MAX
+        terms = self.encoding == TERM_ENCODING
+        if (self.encoding not in (archive.ENCODING_ID, TERM_ENCODING)
+                or self.literal_workspace < archive.HEADER.size
+                or terms and (not self.expression_nodes or not self.expression_bindings
+                    or max(self.expanded_cap, self.expression_nodes, self.expression_bindings,
+                           self.literal_workspace, self.comparison_cap, self.reference_cap) > U64_MAX)
+                or not terms and (self.expression_nodes or self.expression_bindings
+                    or archive.U64.size*self.reference_cap > archive.phase_deflate.EXPANDED_CAP)):
             raise ContractError('registered archive format and bounded reference expansion required')
 
 
@@ -53,6 +63,8 @@ class SharedReferenceSnapshot:
     workspaces: tuple[str, ...]
     canonical_images: tuple = ()
     token_base_facts: tuple = ()
+    expression_bindings: tuple = ()
+    fixed_copy_workspaces: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -121,7 +133,7 @@ def _raw_parts(raw, start=0):
 class _SharedReference:
     def __init__(self, runtime, contract):
         contract.__post_init__()
-        self.contract = contract
+        self.contract = replace(contract)
         self.encoder, self.reader = archive.Encoder(), archive.Reader()
         self.pages = []
         prefix = runtime._runtime_id+':shared-reference'
@@ -138,6 +150,11 @@ class _SharedReference:
             runtime._buffers[identity] = bytearray(size)
         for identity in self.workspaces:
             runtime._ledger.acquire(self.deployment_owner, identity)
+        # A producer may change bytes in its private workspaces, but must not
+        # resize them beyond their admitted extents. Keep the exports private;
+        # exposing a memoryview to the producer would let it release that view.
+        self._workspace_exports = tuple(memoryview(runtime._buffers[k]) for k in self.workspaces)
+        self._copy_exports = {}
         from .canonical_images import _CanonicalImages
         self.images = (_CanonicalImages(runtime, self.deployment_owner, contract.canonical_image_bytes)
                        if contract.canonical_image_bytes else None)
@@ -146,9 +163,10 @@ class _SharedReference:
                            if contract.token_invariant_bytes else None)
 
     def snapshot(self):
-        return SharedReferenceSnapshot(self.contract, tuple(self.pages), self.workspaces,
+        return SharedReferenceSnapshot(replace(self.contract), tuple(self.pages), self.workspaces,
             () if self.images is None else self.images.snapshot(),
-            () if self.base_facts is None else self.base_facts.snapshot())
+            () if self.base_facts is None else self.base_facts.snapshot(),
+            fixed_copy_workspaces=tuple(self._copy_exports))
 
     def _charge(self, runtime, role, label):
         cfg = self.contract
@@ -183,13 +201,17 @@ class _SharedReference:
             reference_cap=cfg.reference_cap, comparison_cap=cfg.comparison_cap)
 
     def _materialize(self, runtime, builder):
+        size = builder.extent
+        if type(size) is not int or not 0 < size <= self.contract.literal_workspace+self.contract.program_workspace:
+            raise ContractError('bounded complete archive output extent required')
         page_id = runtime._runtime_id+f':shared-reference:page:{len(self.pages)}'
         scratch_id = page_id+':copy'
-        extent = {'reference_payload_bytes': builder.extent, 'physical_objects': 1}
+        extent = {'reference_payload_bytes': size, 'physical_objects': 1}
         runtime._ledger.allocate(runtime._data_owner, (
             ObjectSpec(scratch_id, 'shared_reference_copy_workspace', extent, runtime._chi),))
-        runtime._buffers[scratch_id] = bytearray(builder.extent)
+        runtime._buffers[scratch_id] = bytearray(size)
         runtime._ledger.acquire(self.deployment_owner, scratch_id)
+        self._copy_exports[scratch_id] = memoryview(runtime._buffers[scratch_id])
         builder.write(runtime._buffers[scratch_id])
         runtime._ledger.allocate(runtime._data_owner, (
             ObjectSpec(page_id, 'immutable_shared_reference_page', extent, runtime._chi),))
@@ -210,6 +232,9 @@ class _SharedReference:
         self.pages.append(page_id)
 
     def _scratch_releases(self, runtime, scratch_id):
+        # All producer calls, including acceptance, have completed. On any
+        # earlier failure the private export and every paid copy remain owned.
+        self._copy_exports.pop(scratch_id).release()
         return ((runtime._data_owner, scratch_id, 1), (self.deployment_owner, scratch_id, 1))
 
     def allocate(self, runtime, owner, planned):
@@ -281,11 +306,15 @@ class _SharedReference:
             raise ContractError('shared CUDA frame lost its full admitted extent')
         page_id, scratch_id = self._materialize(runtime, builder)
         self._read(runtime, page_id, _raw_parts(runtime._buffers[label]), size)
+        self._relocate_frame(runtime, label, extent, page_id, scratch_id, header.ordinal)
+
+    def _relocate_frame(self, runtime, label, extent, page_id, scratch_id, ordinal):
+        """Both representations preserve the same paid atomic relocation."""
         root_id = label+':shared-root-copy'
         root_extent = {'reference_payload_bytes': ROOT_BYTES, 'physical_objects': 1}
         runtime._ledger.allocate(runtime._data_owner, (
             ObjectSpec(root_id, 'shared_cuda_frame_root_copy', root_extent, runtime._chi),))
-        runtime._buffers[root_id] = ROOT_MAGIC+archive.U64.pack(header.ordinal)
+        runtime._buffers[root_id] = ROOT_MAGIC+archive.U64.pack(ordinal)
         self._accept(runtime, page_id)
         # Before publication the full original frame, mutable page, immutable
         # page and new root all coexist with live leases. Failure keeps them.
@@ -319,7 +348,11 @@ def decoded_buffer(snapshot, object_id, *, byte_cap, reference_cap):
     ordinal = archive.U64.unpack_from(raw, 8)[0]
     if ordinal >= len(config.pages):
         raise ContractError('shared reference root has no retained page')
-    reader = archive.Reader()
+    from .byte_terms import ENCODING_ID as TERM_ENCODING, Reader as TermReader, Limits
+    terms = config.contract.encoding == TERM_ENCODING
+    reader = (TermReader(Limits(expanded=config.contract.expanded_cap,
+        nodes=config.contract.expression_nodes, page_bytes=config.contract.literal_workspace,
+        comparisons=config.contract.comparison_cap, references=config.contract.reference_cap)) if terms else archive.Reader())
     for identity in config.pages[:ordinal+1]:
         reader.add(buffers[identity])
     yield from reader.decoded(ordinal, byte_cap=byte_cap, reference_cap=reference_cap)
