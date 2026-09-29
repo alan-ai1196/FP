@@ -1,0 +1,221 @@
+{
+  "status": "PASS",
+  "exact_grid_cells": {
+    "histories": 720,
+    "observations": 1200,
+    "complete_literal_gradient_and_endpoint_equality": true,
+    "parameter_decisions": 3600,
+    "positive_subquantum": 496,
+    "negative_subquantum": 508,
+    "boundary_minus_one": 12,
+    "boundary_zero": 2176,
+    "boundary_plus_one": 12,
+    "strict_projection_to_zero": 323
+  },
+  "exact_causal_collapse": {
+    "word": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "grid_bits": 0,
+    "initial": [
+      1,
+      1,
+      1,
+      1,
+      4
+    ],
+    "accumulated_gradient": [
+      "9/70",
+      "3/70",
+      "-3/35",
+      "-1/7",
+      "2/35"
+    ],
+    "cases": [
+      {
+        "learning_rate": "0",
+        "before_likelihood": "2500/117649",
+        "after_likelihood": "2500/117649",
+        "endpoint": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "4"
+        ],
+        "unrounded_same_unit_strictly_improves": false
+      },
+      {
+        "learning_rate": "1/16",
+        "before_likelihood": "2500/117649",
+        "after_likelihood": "1/48",
+        "endpoint": [
+          "0",
+          "0",
+          "1",
+          "1",
+          "3"
+        ],
+        "unrounded_same_unit_strictly_improves": true
+      },
+      {
+        "learning_rate": "1/4294967296",
+        "before_likelihood": "2500/117649",
+        "after_likelihood": "1/48",
+        "endpoint": [
+          "0",
+          "0",
+          "1",
+          "1",
+          "3"
+        ],
+        "unrounded_same_unit_strictly_improves": true
+      }
+    ],
+    "all_next_unit_continuations_checked": 128,
+    "theorem_learning_rate_interval": "0 < eta < 1",
+    "before_over_after_likelihood": "120000/117649",
+    "future_zero_context_absorption_is_conditional_theorem": true
+  },
+  "exact_absent_labels": {
+    "absent_master_trajectory": [
+      3,
+      2,
+      2,
+      1,
+      0,
+      0
+    ],
+    "feature_sequence": [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+    ],
+    "separate_observed_label_revival_master": "3",
+    "zero_parameters_retained": true
+  },
+  "existing_full_v_unit": {
+    "status": "RESOLVED_OUTWARD_FLOAT64_NATIVE_GRID_CELLS",
+    "source": {
+      "role": "historical-training",
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 1024,
+      "prefix_sha256": "2d13c51e0dc8dfef218b3825f72dce8497e70d1b9c9c31628b9df30116961230",
+      "corpus_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json",
+      "validation_or_test_read": false
+    },
+    "vocabulary": 50257,
+    "grid_bits": 16,
+    "learning_rate": "1/1024",
+    "update_unit": 512,
+    "scaled_gradient_factor": "1/8",
+    "complete_native_master_coordinates": 603092,
+    "changes": {
+      "E": {
+        "coordinates": 201032,
+        "unchanged": 200567,
+        "increased": 0,
+        "decreased": 465,
+        "newly_zero": 0,
+        "min_integer_change": -1,
+        "max_integer_change": 0
+      },
+      "C": {
+        "coordinates": 4,
+        "unchanged": 0,
+        "increased": 2,
+        "decreased": 2,
+        "newly_zero": 2,
+        "min_integer_change": -128,
+        "max_integer_change": 443
+      },
+      "W": {
+        "coordinates": 402056,
+        "unchanged": 0,
+        "increased": 1992,
+        "decreased": 400064,
+        "newly_zero": 185752,
+        "min_integer_change": -4,
+        "max_integer_change": 8064
+      }
+    },
+    "active_embedding_rows": 250,
+    "active_embedding_positive_gradients": 465,
+    "active_embedding_negative_gradients": 535,
+    "scaled_embedding_enclosure": [
+      -0.7943470729817026,
+      0.8481923488218088
+    ],
+    "core_before": [
+      128,
+      128,
+      128,
+      128
+    ],
+    "core_after": [
+      571,
+      0,
+      0,
+      439
+    ],
+    "scaled_core_lower": [
+      -443.6046294601474,
+      335.24752833711045,
+      442.2686057335052,
+      -311.9846798418206
+    ],
+    "scaled_core_upper": [
+      -443.60462946007465,
+      335.24752833718867,
+      442.2686057335955,
+      -311.9846798417344
+    ],
+    "observed_target_rows": 249,
+    "absent_target_rows": 50008,
+    "scaled_common_lower": [
+      2.7621767643442525,
+      3.040007828975657,
+      3.5121656945352306,
+      4.029595924631266,
+      1.2585879682847199,
+      1.4685857561655107,
+      1.8054297136976891,
+      1.9748723965860484
+    ],
+    "scaled_common_upper": [
+      2.7621767643442836,
+      3.040007828975692,
+      3.5121656945352693,
+      4.029595924631314,
+      1.2585879682847347,
+      1.4685857561655282,
+      1.80542971369771,
+      1.9748723965860715
+    ],
+    "absent_label_integer_decrement": [
+      3,
+      4,
+      4,
+      5,
+      2,
+      2,
+      2,
+      2
+    ],
+    "independent_full_v_rational_decoder": false,
+    "actual_amp_result": false,
+    "runtime_replay": false,
+    "corpus_loss_scored": false
+  },
+  "scope": "passive optimizer diagnosis; no changed Gamma/U, device replay, timing or text score"
+}

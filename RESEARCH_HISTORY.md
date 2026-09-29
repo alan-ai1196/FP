@@ -11247,3 +11247,42 @@ keep the common ownership repairs. Do not tune another codec variant or run a
 long unit to defend the result. Reassess the full ordinary-token cost problem
 before choosing the next intervention. Foundation/ERC and relation closure
 remain; an affordable trained-text comparison is still not established.
+
+
+## 329. Separate grid-update dynamics from execution speed (2026-09-29)
+
+After the negative expression-archive result, the next question was whether
+the chosen native update supports useful learning, rather than which byte
+representation to try next. Existing U floors the nonnegative projected step.
+Its exact scalar law is m'=max(0,m-ceil(eta Q G/B)): a small positive gradient
+removes one quantum, whereas a negative gradient smaller than one quantum
+cannot increase the master. At fixed precision this parameter map need not
+approach the eta=0 identity as the positive rate decreases.
+
+An exact reached binary-token learner makes the risk concrete. With one causal
+feature, Q=1, unit six and masters (1,1,1,1,4), word (1,0,0,1,1,1) reaches
+(0,0,1,1,3) for every 0<eta<1. Its same-context likelihood falls from
+2500/117649 to 1/48. All future ordinary contiguous predictions stay uniform:
+zero features freeze the readout, and bounded embedding adjoints cannot cross
+the activation threshold. This is a theorem about the declared learner, not
+an implementation mismatch or a whole-FP impossibility. All 720 small exact
+histories agree with the literal DAG, including 3,600 update decisions and
+the signed integer boundaries. The two positive-rate witnesses pass all 64
+next-unit continuations each; induction supplies the infinite-horizon claim.
+
+The original full-V first-unit passive audit then resolves every one of its
+603,092 native grid cells. Among 1,000 active embedding coordinates, 465
+positive gradients cause one-quantum decreases and 535 negative gradients
+cause no increase. Core masters change (128,128,128,128) to (571,0,0,439).
+All 1,992 observed-label readout coordinates increase; 400,064 absent-label
+coordinates decrease, with 185,752 newly zero. Thus global freezing is false,
+but neither useful contextual learning nor transfer of the toy trap follows.
+Only the already exposed first 1,024 train bytes were used; no corpus score,
+new Runtime/device trajectory or timing was produced.
+
+GRID_UPDATE_DYNAMICS.md and FP_TOKEN_GRID_DYNAMICS.json close this diagnostic.
+No optimizer, architecture action, Foundation or ERC change is needed. Use
+the update-cell law when specifying an actual text learner; do not grow a
+rate/precision menu or return to relation cases. The central unresolved
+objective is the affordable trained ordinary-text comparison, including its
+strong baselines and complete owned reporting.

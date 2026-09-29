@@ -2,6 +2,24 @@
 
 ## Current execution state (2026-09-29)
 
+The [ordinary-token optimizer diagnosis](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
+is now closed. Existing U floors its projected grid step: reducing the rate
+does not recover the identity at fixed precision. An exact reached six-token
+witness loses likelihood and enters an absorbing zero-context state for every
+0<eta<1 under ordinary contiguous continuations. This is a property of the
+registered U, not a Foundation or implementation mismatch. All 720 small
+literal/native histories and 3,600 coordinate decisions pass.
+
+The passive original full-V first-unit audit resolves every native grid cell:
+465 embedding coordinates decrease by one quantum, 535 active negative-gradient
+coordinates stay unchanged, two core masters reach zero, and all 1,992 observed
+target readout coordinates increase. These changes disprove global freezing;
+useful learning and inevitable collapse both remain unestablished. No new text
+score or actual device job was run. Keep this diagnosis closed and use its update-cell law in the actual
+learner registration. The next objective is an affordable trained ordinary-text
+comparison, with strong baselines and complete owned reporting; no optimizer
+variant sweep, relation case or archive variant is due. Foundation/ERC remain.
+
 The [owned compositional path](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md#8-actual-result-byte-savings-did-not-make-this-realization-cheaper)
 now passes CPU and finite RTX 3090 correctness qualification, but its actual
 cost result is negative. At `c45c7e0`, ordinary sixteen-target time rises from

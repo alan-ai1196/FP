@@ -1,5 +1,21 @@
 # FP Open Problems
 
+The [ordinary-token update-precision question](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
+is closed at a scoped law and diagnostic. The existing floor-grid U has a
+discontinuous small-rate limit, and a reached causal learner can lose likelihood
+and become trapped even with arbitrarily small positive rates. The full-V
+resource fixture is not globally frozen: its first unit has one-sided embedding
+steps but substantial core/readout movement. Neither result establishes its
+useful learning, inevitable collapse or later-unit behavior.
+
+Do not deepen this into another static precision or optimizer menu. The open
+scientific objective remains an **affordable supplied ordinary-text learner
+and trained comparison**, using the proved update cells, existing model-class
+limits and measured complete execution costs when preregistering its budget.
+Strong baselines, complete owned training and frozen reporting remain required;
+an unselected resource fixture or a passive gradient audit supplies no model
+result. Foundation/ERC and rational/relation closure remain unchanged.
+
 The [compositional retention question](theory/proofs/COMPOSITIONAL_COMPLETE_RETENTION.md)
 is closed as a scoped preservation theorem and passive model: complete records
 can be bound through an independently reconstructed byte-expression dictionary

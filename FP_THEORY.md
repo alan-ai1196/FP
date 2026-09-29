@@ -573,6 +573,13 @@ The bound concerns a fixed head, not an updating run or the entire FP grammar.
 The current resource fixture's newest-token/pooled-context restriction is
 explicit; no ordered source history is erased or useful language model selected.
 
+The [token floor-grid diagnosis](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
+derives the exact update cells of that existing U and an ordinary causal
+counterexample to a general small-learning-rate safeguard. A passive full-V
+first-unit audit resolves all native cells and separates one-sided embedding
+steps from substantial core/readout movement. These results change no Foundation
+definition, optimizer or release scope, and establish no language-model quality.
+
 The [passive native token composition](experiments/next_token/NATIVE_TOKEN_LEARNER.md)
 now joins indexed lag/token SUMs, an arbitrary positive core and that readout
 under complete existing SGD. Exact small native trajectories include every

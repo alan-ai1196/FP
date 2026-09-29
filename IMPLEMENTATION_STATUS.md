@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-09-29)
 
+The passive [grid-update audit](experiments/next_token/GRID_UPDATE_DYNAMICS.md)
+now characterizes the unchanged native U and its first original full-V unit.
+All 720 exact small histories agree with the literal DAG at every observation
+and commit; an exact causal loss/absorption counterexample and absent-label
+decay/revival controls pass. Outward float64 resolves all 603,092 full-V master
+endpoints and their blockwise movement. This is optimizer diagnosis only:
+no production code, Gamma/U, AMP schedule, resource cap or certificate changed.
+It is closed and supplies no trained-text or later-unit feasibility result.
+
 The [owned compositional implementation](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
 is now available through explicit shared-storage registration, default off.
 It preserves the original full-frame writer and full actual-frame comparison;

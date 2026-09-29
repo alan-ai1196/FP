@@ -49,6 +49,14 @@ K+1-component mixture class. Its native finite-tape CE is at least empirical
 target entropy minus log(K+1); the registered rounded readout has a proved
 small loss allowance. This is not an online-training or whole-FP bound.
 The resource fixture has not thereby been selected as a language model.
+The closed [optimizer diagnosis](GRID_UPDATE_DYNAMICS.md) also shows that its
+declared floor-grid U cannot inherit a continuous-SGD small-rate guarantee.
+An exact causal counterexample proves loss increase and an absorbing state;
+the actual original first-unit native enclosures show one-sided embedding
+steps alongside substantial core/readout updates. That diagnostic neither
+selects the fixture nor establishes failure to learn. Use the exact update
+cells in learner registration, then proceed to the trained comparison; no
+further static precision or optimizer variant sweep is due.
 If structure is supplied by initialization, say so; if a constructor proposes
 structure, expose the actual class, acquired information and search outcome.
 

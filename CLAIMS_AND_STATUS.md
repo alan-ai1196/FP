@@ -1,5 +1,18 @@
 # FP Claims and Status
 
+**Token floor-grid dynamics: SCOPED THEOREM; EXACT COUNTEREXAMPLE/FULL-V DIAGNOSTIC PASS; CLOSED.**
+The [update-cell law](experiments/next_token/GRID_UPDATE_DYNAMICS.md) gives
+m'=max(0,m-ceil(eta Q G/B)). At fixed precision, arbitrarily small positive
+rates can still remove a quantum. A reached six-token learner loses exact
+likelihood and becomes permanently uniform under every ordinary continuation
+for 0<eta<1; its eta=0 control is unchanged. This disproves a general small-rate
+safeguard, not the trainability of FP or the grid16 fixture. Exact literal/native
+checks cover 720 histories/3,600 coordinate decisions. The original full-V
+first unit has 465 one-quantum embedding decreases, no embedding increases,
+and substantial core/readout changes, all resolved by outward binary64 bounds.
+No text score, actual AMP result, new optimizer or complete search class follows.
+Close the diagnosis; use it in ordinary-model registration without a variant sweep.
+
 **Owned compositional retention: CPU/FINITE CUDA CORRECTNESS PASS; OBSERVED COST REGRESSION; CLOSED.**
 The [realization and accounting counterexample](theory/proofs/OWNED_COMPOSITIONAL_RETENTION.md)
 preserve complete native values and actual full frames. Native checks avoid
