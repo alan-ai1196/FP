@@ -104,6 +104,13 @@ caller-boundary regression, not reissuance of the old complete CPU/CUDA release
 or an actual device/performance claim. Actual-device qualification of the new
 public copy boundary remains separate.
 
+The [fixed actual CUDA A1 control](../../experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
+registers two small packed/shared training/reporting workers, each with a
+four-GiB/180-second host job. All nineteen complete actual phases and frame
+padding must survive public metadata mutations, followed by a terminal export
+failure. Its native harness control passes; no device outcome exists at
+registration. This adds no corpus run, model score or performance comparison.
+
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches
 that worker, and cannot turn an unfinished training horizon into a model score.

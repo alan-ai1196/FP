@@ -20,6 +20,12 @@ unchanged source and assertions enabled. Its separate receipt is
 claim. Actual-device qualification remains separate. Merge the repair only after the
 original native A1 worker terminates; never patch or restart that worker.
 
+The [public-value actual CUDA A1 control](experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
+is preregistered: two packed/shared toy jobs, four training plus four reporting
+events each, complete actual numerical/frame checks and adversarial public
+mutations. Its native harness control passes. Execute the committed runner
+once and retain its new exclusive journal; do not borrow or replay old trials.
+
 Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
 creation time 134351580322825996, tool session 44263. Its last inspected milestone
 is 512 targets/one committed unit in 725.2928251 seconds, with no halt or report.
