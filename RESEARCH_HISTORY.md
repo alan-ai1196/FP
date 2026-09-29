@@ -11437,3 +11437,10 @@ eight-unit bounded training/reporting trajectory. A fixed-source sixteen-script
 bundle is registered for the final scoped CPU qualification. This is no new
 Foundation definition, whole release or actual CUDA result. The repair stays in
 a linked canonical worktree until the original native text A1 job terminates.
+
+The committed-source CPU bundle subsequently passes all sixteen complete scripts
+at `86423cd`, including the new attacks, finite search/proof verification, actual
+CPU installation, paired persistence, native learning/reporting, ingress, host
+failure and packed/shared retention. Assertions remain enabled and source is
+unchanged throughout. `FP_PUBLIC_VALUE_REGRESSION_CPU.json` records this scoped
+qualification; actual CUDA and the whole old release are not reissued.

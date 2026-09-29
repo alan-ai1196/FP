@@ -2,7 +2,7 @@
 
 ## Current token execution boundary (2026-09-29)
 
-**Caller-boundary ownership: FAILED HISTORICAL AUDIT; REPAIR IN QUALIFICATION.**
+**Caller-boundary ownership: FAILED HISTORICAL AUDIT; SCOPED REPAIR CPU QUALIFICATION PASSES.**
 At `e13348e`, returned snapshot, forecast and proof metadata alias live records.
 The [public-value witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) include an
 accepted false reference likelihood claim. The private-copy repair is isolated
@@ -14,7 +14,9 @@ The repair now detaches constructor declarations, paid candidate-program
 admission, every public result and read-only getters. A memo preserves complete
 metadata and internal alias topology while immutable values may share identity.
 Focused exact controls and the relevant individual CPU regressions pass; the
-fixed-source sixteen-script bundle is pending. No active text-run input changes.
+fixed-source sixteen-script bundle passes at `86423cd`, without source changes
+and with assertions enabled. The separate receipt does not reissue a whole
+release or supply actual-device qualification. No active text-run input changes.
 
 The [native text A1 runner](experiments/next_token/NATIVE_TEXT_A1.md) now binds
 the complete existing Runtime to the one-million-token training view and

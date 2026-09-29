@@ -1,6 +1,6 @@
 # Public values must not alias live Runtime authority
 
-Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED CPU AUDIT; FIXED-SOURCE REGRESSION PENDING**.
+Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED AND SIXTEEN-SCRIPT FIXED-SOURCE CPU AUDITS**.
 Foundation and ERC-1 are unchanged. The current caller-boundary ownership claim
 is reopened; prior successful trajectories are not retroactively fabricated or
 erased. Do not borrow the old release as evidence against these new attacks.
@@ -96,10 +96,13 @@ identity separately from detached diagnostic equality; the CPU phase stub
 declares its token kind; historical constructor replay uses the historical
 declaration's own fields. These changes do not weaken numerical/ownership checks.
 
-The committed-source bundle `audit_public_value_regression.py` must now execute
-all sixteen complete relevant audit scripts without source changes, recording a
-separate receipt. This is a scoped caller-boundary regression, not reissuance of
-the old complete CPU/CUDA release or an actual device/performance claim.
+The committed-source bundle `audit_public_value_regression.py` passes all sixteen
+complete relevant audit scripts at `86423cd`, with assertions enabled and no
+source changes during execution. Its separate receipt is
+`evidence/minimal/FP_PUBLIC_VALUE_REGRESSION_CPU.json`. This is a scoped
+caller-boundary regression, not reissuance of the old complete CPU/CUDA release
+or an actual device/performance claim. Actual-device qualification of the new
+public copy boundary remains separate.
 
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches

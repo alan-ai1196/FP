@@ -8,15 +8,16 @@ snapshot/forecast/proof wrappers to change causal history, live readout masters
 and an accepted reference maximum from 1/4 to 1. Frozen wrappers alias private
 state. Foundation/ERC remain intact. A transitive boundary repair is in the
 linked `F:\FP_passive_boundary` worktree on `compiler/passive-boundary`; focused
-controls pass, broader qualification is pending. Do not claim a repaired release
+controls and the scoped CPU regression pass. Do not claim a repaired release
 or change the original running text worker's execution inputs.
 
 The linked repair worktree now implements complete inward/outward value-graph
 isolation. Its focused audit passes 16 adversarial token histories/112 events,
 three original witnesses, private reporting identity and four copy failures.
-The committed-source sixteen-script CPU regression remains to be run using
-`python -B scripts/audit_public_value_regression.py`. Keep its receipt separate
-from a new whole-release or actual CUDA claim. Merge the repair only after the
+The committed-source sixteen-script CPU regression passes at `86423cd`, with
+unchanged source and assertions enabled. Its separate receipt is
+`FP_PUBLIC_VALUE_REGRESSION_CPU.json`; this is no whole-release or actual CUDA
+claim. Actual-device qualification remains separate. Merge the repair only after the
 original native A1 worker terminates; never patch or restart that worker.
 
 Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
