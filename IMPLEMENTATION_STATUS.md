@@ -7,9 +7,12 @@ preserves the authored serializer and two consumers, with source/artifact/ABI
 binding and no production change. Its finite exact audit passes 5,870 stream
 decisions, sixteen complete paired Runtime histories and six CPU tensor-owner
 histories/129 full phase bodies, plus terminal storage/image failures. The
-[one-pair native cost registration](experiments/next_token/NATIVE_STREAM_COST_A1.md)
-is ready after its independent uncompiled oracle detects image/page corruption
-in the CPU harness. No actual cost, speedup, production or CUDA claim yet.
+[original native cost pair](experiments/next_token/NATIVE_STREAM_COST_A1.md)
+passes at `426a13d`: 15.3455167 versus 12.7106703 seconds for sixteen targets,
+17.17014% less in one ordered pair, with slightly higher job peak. Each arm
+independently checks 41 uncached images and 85 complete records/890,797,166 bytes.
+The journal is closed. Park the candidate without production/CUDA authority or
+a flag sweep; examine growing-history work before another training attempt.
 
 The [complete native cost diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md)
 passes at `b6d5569`: sixteen actual native events with the original million-target

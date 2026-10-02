@@ -1,6 +1,41 @@
 # Source-compiled canonical streams: native cost control A1
 
-Status (2026-10-02): **PREREGISTERED; NOT LAUNCHED**.
+Status (2026-10-02): **ORIGINAL PAIR COMPLETE AT `426a13d`; CLOSED**.
+
+## Original result and decision
+
+Both original jobs exit zero without timeout and pass every registered check.
+Each independently validates 41 cached images/45,954,147 uncached source bytes
+and 85 complete retained records/890,797,166 decoded bytes, including 68 live
+roots. Original sources/targets/traces and all live buffer/lease checks pass.
+Both preserve sixteen pending targets, zero commits, the million-target
+declaration, no report, no Torch/AMP and no score. Paid residency, work, object
+and ledger-event counters agree exactly in this pair. Source stays unchanged.
+
+| Measured quantity | Python | Compiled |
+| --- | ---: | ---: |
+| Initialization seconds | 12.6658910 | 11.9592090 |
+| 32 ordinary calls / sixteen targets, seconds | 15.3455167 | 12.7106703 |
+| Separate independent audit seconds | 9.7059107 | 9.8017718 |
+| Worker elapsed seconds | 38.6069067 | 35.3088501 |
+| OS peak job commitment, bytes | 551,292,928 | 553,775,104 |
+
+The ordinary-call ratio is **1.2072941**, a **17.17014%** reduction in this one
+ordered pair. The extra aliases and full post-timing oracle are disclosed below.
+This is a modest measured gain, not an affordability result. It does not settle
+commit cost, later-history scaling or full training. The original journal
+`FP_NATIVE_STREAM_COST_A1.json` is terminal and must never be replayed.
+
+Park this candidate as a qualified CPU control; do not create a flag sweep,
+production backend menu or actual GPU qualification for this gain alone. The
+next question is the growing-history work of the complete machine: distinguish
+retaining information from repeatedly copying/scanning every retained object
+on local transitions. Establish that cost from the actual call graph and exact
+operation counts before proposing a replacement. No information may be erased,
+and no smaller prefix supplies a trained score. Ordinary-text learning remains
+the objective; the relation/precision branch remains closed.
+
+## Original registration
 
 The [trace preservation argument and finite controls](../../theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 qualify a candidate, not a performance claim. Commit this protocol, its runner

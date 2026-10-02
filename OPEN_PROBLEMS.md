@@ -2,12 +2,15 @@
 
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 now has a conditional trace argument and finite exact CPU evidence. Its
-unchanged authored algorithms must still demonstrate a worthwhile reduction
-in the complete native text path. The single registered
-[cost pair](experiments/next_token/NATIVE_STREAM_COST_A1.md) retains the original
-model/declaration and all checks, then independently checks every image/page
-against an uncompiled oracle. Decide its next step from that result, without
-a compiler/codec variant sweep or a production/GPU claim from CPU substitution.
+unchanged authored algorithms reduce sixteen-target time by 17.17014% in the
+single original [cost pair](experiments/next_token/NATIVE_STREAM_COST_A1.md),
+with all independent image/page checks passing and slightly higher job peak.
+This modest gain does not establish an affordable million-target trajectory.
+The pair is closed and the candidate parked, without a flag sweep or production/
+GPU claim. The next question is growing-history transition work: determine the
+actual whole-state copy/scan law from source and exact counts. Retaining all
+information does not by itself require re-traversing it for each local update;
+any efficient replacement still owes complete state and atomic refusal duties.
 
 The measured immediate ordinary-text obstruction is
 [complete native canonical stream execution](experiments/next_token/NATIVE_TEXT_COST_A1.md):

@@ -1,0 +1,668 @@
+{
+  "status": "COMPLETE_NATIVE_STREAM_COST_A1",
+  "source_commit": "426a13def23e4947efea2a302fa2a06e634e02f8",
+  "native_build": {
+    "status": "BUILT_NATIVE_STREAM_COMPONENTS",
+    "cython": "3.1.8",
+    "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+    "abi": ".cp312-win_amd64.pyd",
+    "directives": {
+      "language_level": 3,
+      "infer_types": false,
+      "annotation_typing": false,
+      "overflowcheck": true,
+      "boundscheck": true,
+      "wraparound": true,
+      "initializedcheck": true,
+      "nonecheck": true,
+      "binding": true
+    },
+    "compiler_executable": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX86\\x64\\cl.exe",
+    "sources": {
+      "src/reference_compiler/fp_reference/encoding.py": "77b32729f4874ebe765285cd94ed9a8db4c309251f42b86d24dc5ad4294e12cc",
+      "src/reference_compiler/fp_reference/shared_reference.py": "8334e4b992cf8c51eb7b9701ef46c9ff753865cf3ebbf74e1882a4329179ece0",
+      "scripts/build_native_streams.py": "45c46463cec49b17e7434eed331b5446887e9260dd463830e4dfe99852c108f9"
+    },
+    "modules": {
+      "fp_reference._compiled_stream_encoding": {
+        "path": "build/native_streams/fp_reference/_compiled_stream_encoding.cp312-win_amd64.pyd",
+        "bytes": 164864,
+        "sha256": "4419ba7ca087b6979d5fd7d73187adc6bdb10be73a4ee57f798d10db04c761c1"
+      },
+      "fp_reference._compiled_stream_consumers": {
+        "path": "build/native_streams/fp_reference/_compiled_stream_consumers.cp312-win_amd64.pyd",
+        "bytes": 63488,
+        "sha256": "fa0fa3560ed79ff3c604506d8089e159cbaf4c2153242faa851f13150f9ff984"
+      }
+    },
+    "generated_consumers_are_exact_canonical_function_sources": true
+  },
+  "host_cap": 17179869184,
+  "deadline_ms": 180000,
+  "observed_events": 16,
+  "original_training_declaration": 1048576,
+  "order": [
+    "python",
+    "compiled"
+  ],
+  "results": [
+    {
+      "mode": "python",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 550047744,
+        "peak_job_commit": 551292928,
+        "user_100ns": 385312500,
+        "kernel_100ns": 4218750,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 3592,
+        "process_creation_100ns": 134354244011870300
+      },
+      "result": {
+        "status": "PASS_NATIVE_STREAM_COST_A1",
+        "mode": "python",
+        "before": {
+          "process_id": 3592,
+          "creation_100ns": 134354244011870300,
+          "process_commit": 27770880,
+          "lifetime_process_commit_peak": 36675584,
+          "job_commit_peak": 37920768,
+          "process_user_100ns": 2031250,
+          "process_kernel_100ns": 1250000,
+          "job_user_100ns": 2031250,
+          "job_kernel_100ns": 1250000,
+          "total_job_processes": 2
+        },
+        "operations": [
+          {
+            "operation": "predict",
+            "index": 0,
+            "seconds": 0.40169649999734247
+          },
+          {
+            "operation": "observe",
+            "index": 0,
+            "seconds": 0.5646629000038956
+          },
+          {
+            "operation": "predict",
+            "index": 1,
+            "seconds": 0.39301200000045355
+          },
+          {
+            "operation": "observe",
+            "index": 1,
+            "seconds": 0.5607696999941254
+          },
+          {
+            "operation": "predict",
+            "index": 2,
+            "seconds": 0.40526800000225194
+          },
+          {
+            "operation": "observe",
+            "index": 2,
+            "seconds": 0.5668976999950246
+          },
+          {
+            "operation": "predict",
+            "index": 3,
+            "seconds": 0.37688969999726396
+          },
+          {
+            "operation": "observe",
+            "index": 3,
+            "seconds": 0.5323602999997092
+          },
+          {
+            "operation": "predict",
+            "index": 4,
+            "seconds": 0.383277500004624
+          },
+          {
+            "operation": "observe",
+            "index": 4,
+            "seconds": 0.5317691000018385
+          },
+          {
+            "operation": "predict",
+            "index": 5,
+            "seconds": 0.39433939999435097
+          },
+          {
+            "operation": "observe",
+            "index": 5,
+            "seconds": 0.5554287000049953
+          },
+          {
+            "operation": "predict",
+            "index": 6,
+            "seconds": 0.3922876999931759
+          },
+          {
+            "operation": "observe",
+            "index": 6,
+            "seconds": 0.5575705000010203
+          },
+          {
+            "operation": "predict",
+            "index": 7,
+            "seconds": 0.3934993000002578
+          },
+          {
+            "operation": "observe",
+            "index": 7,
+            "seconds": 0.5523967999979504
+          },
+          {
+            "operation": "predict",
+            "index": 8,
+            "seconds": 0.38537299999734387
+          },
+          {
+            "operation": "observe",
+            "index": 8,
+            "seconds": 0.5614797000016551
+          },
+          {
+            "operation": "predict",
+            "index": 9,
+            "seconds": 0.4009449000004679
+          },
+          {
+            "operation": "observe",
+            "index": 9,
+            "seconds": 0.5509372999949846
+          },
+          {
+            "operation": "predict",
+            "index": 10,
+            "seconds": 0.3875227000025916
+          },
+          {
+            "operation": "observe",
+            "index": 10,
+            "seconds": 0.5514557000060449
+          },
+          {
+            "operation": "predict",
+            "index": 11,
+            "seconds": 0.4075007999999798
+          },
+          {
+            "operation": "observe",
+            "index": 11,
+            "seconds": 0.5910292000044137
+          },
+          {
+            "operation": "predict",
+            "index": 12,
+            "seconds": 0.4049474999992526
+          },
+          {
+            "operation": "observe",
+            "index": 12,
+            "seconds": 0.5702100000053179
+          },
+          {
+            "operation": "predict",
+            "index": 13,
+            "seconds": 0.4488387999954284
+          },
+          {
+            "operation": "observe",
+            "index": 13,
+            "seconds": 0.5521122999998624
+          },
+          {
+            "operation": "predict",
+            "index": 14,
+            "seconds": 0.40071610000450164
+          },
+          {
+            "operation": "observe",
+            "index": 14,
+            "seconds": 0.5877627000008943
+          },
+          {
+            "operation": "predict",
+            "index": 15,
+            "seconds": 0.40599159999692347
+          },
+          {
+            "operation": "observe",
+            "index": 15,
+            "seconds": 0.5765685999940615
+          }
+        ],
+        "training_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+        "initialization_seconds": 12.665891000004194,
+        "ordinary_seconds": 15.345516699992004,
+        "latest": {
+          "label": "terminal",
+          "elapsed_seconds": 28.899876700001187,
+          "completed_training_targets": 16,
+          "revealed_training_targets": 16,
+          "optimizer_steps": 0,
+          "pending_targets": 16,
+          "event_traces": 16,
+          "live_objects": 247,
+          "retired_objects": 144,
+          "resource_events": 1150,
+          "paid_payload_peak": 184598793,
+          "object_peak": 249,
+          "spent": {
+            "compiler": {
+              "work": 1172283837576
+            },
+            "deployment": {
+              "work": 360345137120
+            }
+          },
+          "halted": null
+        },
+        "residency": {
+          "current": {
+            "reference_payload_bytes": 166123466,
+            "physical_objects": 247
+          },
+          "role_current": {
+            "compiler": {
+              "reference_payload_bytes": 166123434,
+              "physical_objects": 245
+            },
+            "deployment": {
+              "reference_payload_bytes": 166056586,
+              "physical_objects": 134
+            }
+          },
+          "peak": {
+            "reference_payload_bytes": 184598793,
+            "physical_objects": 249
+          },
+          "role_peak": {
+            "compiler": {
+              "reference_payload_bytes": 184598793,
+              "physical_objects": 246
+            },
+            "deployment": {
+              "reference_payload_bytes": 184598777,
+              "physical_objects": 136
+            }
+          },
+          "every_current_buffer_and_lease_inspected": true
+        },
+        "original_training_declaration": 1048576,
+        "all_original_sources_targets_and_traces_retained": true,
+        "actual_amp_execution": false,
+        "model_score": null,
+        "independent_bytes": {
+          "images": 41,
+          "uncached_image_bytes": 45954147,
+          "records": 85,
+          "complete_record_bytes": 890797166,
+          "live_roots": 68,
+          "independent_uncompiled_encoder_and_comparator": true,
+          "fresh_reader": true
+        },
+        "independent_audit_seconds": 9.705910700002278,
+        "after": {
+          "process_id": 3592,
+          "creation_100ns": 134354244011870300,
+          "process_commit": 311181312,
+          "lifetime_process_commit_peak": 550047744,
+          "job_commit_peak": 551292928,
+          "process_user_100ns": 384843750,
+          "process_kernel_100ns": 4218750,
+          "job_user_100ns": 384843750,
+          "job_kernel_100ns": 4218750,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 38.606906699998945
+      },
+      "accepted_execution": true
+    },
+    {
+      "mode": "compiled",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 552517632,
+        "peak_job_commit": 553775104,
+        "user_100ns": 352656250,
+        "kernel_100ns": 3437500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 26784,
+        "process_creation_100ns": 134354244401713545
+      },
+      "result": {
+        "status": "PASS_NATIVE_STREAM_COST_A1",
+        "mode": "compiled",
+        "before": {
+          "process_id": 26784,
+          "creation_100ns": 134354244401713545,
+          "process_commit": 27500544,
+          "lifetime_process_commit_peak": 36573184,
+          "job_commit_peak": 37830656,
+          "process_user_100ns": 2656250,
+          "process_kernel_100ns": 625000,
+          "job_user_100ns": 2656250,
+          "job_kernel_100ns": 625000,
+          "total_job_processes": 2
+        },
+        "operations": [
+          {
+            "operation": "predict",
+            "index": 0,
+            "seconds": 0.3278792999990401
+          },
+          {
+            "operation": "observe",
+            "index": 0,
+            "seconds": 0.4489465000006021
+          },
+          {
+            "operation": "predict",
+            "index": 1,
+            "seconds": 0.32538400000339607
+          },
+          {
+            "operation": "observe",
+            "index": 1,
+            "seconds": 0.4486257000025944
+          },
+          {
+            "operation": "predict",
+            "index": 2,
+            "seconds": 0.3324300000022049
+          },
+          {
+            "operation": "observe",
+            "index": 2,
+            "seconds": 0.44763439999951515
+          },
+          {
+            "operation": "predict",
+            "index": 3,
+            "seconds": 0.32703789999504806
+          },
+          {
+            "operation": "observe",
+            "index": 3,
+            "seconds": 0.45140480000554817
+          },
+          {
+            "operation": "predict",
+            "index": 4,
+            "seconds": 0.3288782999952673
+          },
+          {
+            "operation": "observe",
+            "index": 4,
+            "seconds": 0.4661857999963104
+          },
+          {
+            "operation": "predict",
+            "index": 5,
+            "seconds": 0.33935899999778485
+          },
+          {
+            "operation": "observe",
+            "index": 5,
+            "seconds": 0.4541523000007146
+          },
+          {
+            "operation": "predict",
+            "index": 6,
+            "seconds": 0.3274320999989868
+          },
+          {
+            "operation": "observe",
+            "index": 6,
+            "seconds": 0.45123180000518914
+          },
+          {
+            "operation": "predict",
+            "index": 7,
+            "seconds": 0.32747289999679197
+          },
+          {
+            "operation": "observe",
+            "index": 7,
+            "seconds": 0.4561306000032346
+          },
+          {
+            "operation": "predict",
+            "index": 8,
+            "seconds": 0.3382449000055203
+          },
+          {
+            "operation": "observe",
+            "index": 8,
+            "seconds": 0.4529417000012472
+          },
+          {
+            "operation": "predict",
+            "index": 9,
+            "seconds": 0.330643000001146
+          },
+          {
+            "operation": "observe",
+            "index": 9,
+            "seconds": 0.45372320000024047
+          },
+          {
+            "operation": "predict",
+            "index": 10,
+            "seconds": 0.3324810999984038
+          },
+          {
+            "operation": "observe",
+            "index": 10,
+            "seconds": 0.4559116999953403
+          },
+          {
+            "operation": "predict",
+            "index": 11,
+            "seconds": 0.339856200000213
+          },
+          {
+            "operation": "observe",
+            "index": 11,
+            "seconds": 0.4744474999970407
+          },
+          {
+            "operation": "predict",
+            "index": 12,
+            "seconds": 0.34424910000234377
+          },
+          {
+            "operation": "observe",
+            "index": 12,
+            "seconds": 0.4807287000003271
+          },
+          {
+            "operation": "predict",
+            "index": 13,
+            "seconds": 0.342589499996393
+          },
+          {
+            "operation": "observe",
+            "index": 13,
+            "seconds": 0.4727111000029254
+          },
+          {
+            "operation": "predict",
+            "index": 14,
+            "seconds": 0.33509430000412976
+          },
+          {
+            "operation": "observe",
+            "index": 14,
+            "seconds": 0.48668609999731416
+          },
+          {
+            "operation": "predict",
+            "index": 15,
+            "seconds": 0.342432600002212
+          },
+          {
+            "operation": "observe",
+            "index": 15,
+            "seconds": 0.46774419999565
+          }
+        ],
+        "native_build": {
+          "status": "BUILT_NATIVE_STREAM_COMPONENTS",
+          "cython": "3.1.8",
+          "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+          "abi": ".cp312-win_amd64.pyd",
+          "directives": {
+            "language_level": 3,
+            "infer_types": false,
+            "annotation_typing": false,
+            "overflowcheck": true,
+            "boundscheck": true,
+            "wraparound": true,
+            "initializedcheck": true,
+            "nonecheck": true,
+            "binding": true
+          },
+          "compiler_executable": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX86\\x64\\cl.exe",
+          "sources": {
+            "src/reference_compiler/fp_reference/encoding.py": "77b32729f4874ebe765285cd94ed9a8db4c309251f42b86d24dc5ad4294e12cc",
+            "src/reference_compiler/fp_reference/shared_reference.py": "8334e4b992cf8c51eb7b9701ef46c9ff753865cf3ebbf74e1882a4329179ece0",
+            "scripts/build_native_streams.py": "45c46463cec49b17e7434eed331b5446887e9260dd463830e4dfe99852c108f9"
+          },
+          "modules": {
+            "fp_reference._compiled_stream_encoding": {
+              "path": "build/native_streams/fp_reference/_compiled_stream_encoding.cp312-win_amd64.pyd",
+              "bytes": 164864,
+              "sha256": "4419ba7ca087b6979d5fd7d73187adc6bdb10be73a4ee57f798d10db04c761c1"
+            },
+            "fp_reference._compiled_stream_consumers": {
+              "path": "build/native_streams/fp_reference/_compiled_stream_consumers.cp312-win_amd64.pyd",
+              "bytes": 63488,
+              "sha256": "fa0fa3560ed79ff3c604506d8089e159cbaf4c2153242faa851f13150f9ff984"
+            }
+          },
+          "generated_consumers_are_exact_canonical_function_sources": true
+        },
+        "training_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+        "initialization_seconds": 11.959209000000556,
+        "ordinary_seconds": 12.710670300002676,
+        "latest": {
+          "label": "terminal",
+          "elapsed_seconds": 25.505552399998123,
+          "completed_training_targets": 16,
+          "revealed_training_targets": 16,
+          "optimizer_steps": 0,
+          "pending_targets": 16,
+          "event_traces": 16,
+          "live_objects": 247,
+          "retired_objects": 144,
+          "resource_events": 1150,
+          "paid_payload_peak": 184598793,
+          "object_peak": 249,
+          "spent": {
+            "compiler": {
+              "work": 1172283837576
+            },
+            "deployment": {
+              "work": 360345137120
+            }
+          },
+          "halted": null
+        },
+        "residency": {
+          "current": {
+            "reference_payload_bytes": 166123466,
+            "physical_objects": 247
+          },
+          "role_current": {
+            "compiler": {
+              "reference_payload_bytes": 166123434,
+              "physical_objects": 245
+            },
+            "deployment": {
+              "reference_payload_bytes": 166056586,
+              "physical_objects": 134
+            }
+          },
+          "peak": {
+            "reference_payload_bytes": 184598793,
+            "physical_objects": 249
+          },
+          "role_peak": {
+            "compiler": {
+              "reference_payload_bytes": 184598793,
+              "physical_objects": 246
+            },
+            "deployment": {
+              "reference_payload_bytes": 184598777,
+              "physical_objects": 136
+            }
+          },
+          "every_current_buffer_and_lease_inspected": true
+        },
+        "original_training_declaration": 1048576,
+        "all_original_sources_targets_and_traces_retained": true,
+        "actual_amp_execution": false,
+        "model_score": null,
+        "independent_bytes": {
+          "images": 41,
+          "uncached_image_bytes": 45954147,
+          "records": 85,
+          "complete_record_bytes": 890797166,
+          "live_roots": 68,
+          "independent_uncompiled_encoder_and_comparator": true,
+          "fresh_reader": true
+        },
+        "independent_audit_seconds": 9.801771799997368,
+        "after": {
+          "process_id": 26784,
+          "creation_100ns": 134354244401713545,
+          "process_commit": 312053760,
+          "lifetime_process_commit_peak": 552517632,
+          "job_commit_peak": 553775104,
+          "process_user_100ns": 352187500,
+          "process_kernel_100ns": 3437500,
+          "job_user_100ns": 352187500,
+          "job_kernel_100ns": 3437500,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 35.30885010000202
+      },
+      "accepted_execution": true
+    }
+  ],
+  "protocol": "experiments/next_token/NATIVE_STREAM_COST_A1.md",
+  "accepted_execution": true,
+  "observed_python_over_compiled_ordinary_seconds": 1.2072940559231384,
+  "source_unchanged_during_checks": true
+}

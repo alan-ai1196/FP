@@ -11530,3 +11530,14 @@ and independently validates every cached image without reuse, then every page
 with a fresh decoder and uncompiled canonical source. The small harness detects
 deliberate image/page corruption. This measures one candidate's actual cost;
 it does not reopen relation/precision research or select a smaller trained score.
+
+Both original workers subsequently pass at `426a13d`. Each independently checks
+41 uncached images/45,954,147 bytes and 85 complete records/890,797,166 bytes.
+Sixteen-target time falls from 15.3455167 to 12.7106703 seconds (17.17014% in this
+one ordered pair); job peak rises from 551,292,928 to 553,775,104 bytes. Paid
+resource counters agree. No optimizer commit, report, AMP or model score occurs.
+The journal is closed and the candidate parked without production/device
+promotion or a flag sweep. The gain leaves affordability unresolved. Growing
+history copying/scanning is the next source/count question; retaining complete
+information is not permission to erase it, nor proof that every local update
+must traverse all of it. Foundation/ERC and relation closure remain unchanged.

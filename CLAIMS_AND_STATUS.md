@@ -7,9 +7,13 @@ not only equal final bytes. The existing algorithms are compiled without a
 second authored codec. Exact grammar/trace checks, 5,870 consumer decisions,
 sixteen paired complete Runtime histories and six CPU tensor-owner histories
 (129 bodies/50,279 words) pass, as do eleven storage/image fault controls.
-This is no general Cython-correctness theorem, equal host-allocation law,
-production/CUDA release or speedup claim. One full-V native CPU cost pair is
-registered with an independently loaded uncompiled image/record oracle.
+This is no general Cython-correctness theorem or equal host-allocation law.
+The [original full-V cost pair](experiments/next_token/NATIVE_STREAM_COST_A1.md)
+passes at `426a13d`: 15.3455167 to 12.7106703 ordinary seconds (17.17014% less),
+with slightly higher job peak and equal paid counters. Each arm independently
+checks 41 uncached images and 85 full records/890,797,166 bytes. This single pair
+confers no general speedup, full-budget, model-quality or production/CUDA claim.
+The journal is terminal; the candidate is parked without a variant sweep.
 
 **Complete native text cost A1: ORIGINAL BOUNDED DIAGNOSTIC PASS; CLOSED.**
 At `b6d5569`, sixteen complete native events retain the million-target stream

@@ -2,17 +2,20 @@
 
 ## Current execution state (2026-10-02)
 
-**Source-compiled canonical streams: finite CPU controls pass; cost pair registered.**
+**Source-compiled canonical streams: original CPU cost pair passes; modest gain; CLOSED.**
 The [candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md) compiles the unchanged
 serializer and two stream consumers. Exact fragment/observation/refusal checks,
 sixteen complete paired histories, six CPU tensor-owner histories and terminal
 storage/image failure controls pass. No production backend or CUDA authority
-is granted. The [new native CPU pair](experiments/next_token/NATIVE_STREAM_COST_A1.md)
-will compare the current Python path with this one candidate on sixteen original
-targets, preserving the full million-target declaration. An independent
-uncompiled oracle checks every image and retained record after timing. Its
-harness detects deliberately corrupted images/pages. Commit before the original
-launch; no replay, codec/flag sweep or shorter trained score is authorized.
+is granted. The [original native CPU pair](experiments/next_token/NATIVE_STREAM_COST_A1.md)
+passes at `426a13d`: sixteen-target time 15.3455167 to 12.7106703 seconds, a
+17.17014% reduction, with slightly higher job peak. Each arm independently
+checks 41 uncached images and 85 complete records/890,797,166 bytes. Paid counters
+agree; the million-target declaration remains, with no commits/report/score.
+Park this candidate; no flag sweep, production menu or GPU qualification for
+this gain alone. The journal is terminal. Investigate growing-history transition
+work from the actual call graph and exact counts, distinguishing retention from
+repeated whole-state copying. Do not erase state or reopen relation/precision.
 
 **Complete native text cost A1 is closed; canonical stream execution is the measured target.**
 The [original diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md#original-result-and-next-question)

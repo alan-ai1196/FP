@@ -1,7 +1,7 @@
 # Source-compiled canonical stream execution
 
-Status (2026-10-02): **conditional preservation argument and finite CPU controls
-pass; full-V cost and production/device qualification unestablished**.
+Status (2026-10-02): **conditional preservation and finite CPU/full-V controls
+pass; modest measured cost gain; candidate parked without production/device authority**.
 
 The closed [native cost diagnostic](../../experiments/next_token/NATIVE_TEXT_COST_A1.md)
 puts 91.36134% of four profiled early-prefix calls inside complete reference
@@ -98,11 +98,18 @@ validate cached images against an uncompiled, uncached source traversal, then
 all retained pages against the independent uncompiled expected traversal. That
 avoids using the same compiled error on both sides as the sole acceptance test.
 
-## 4. Stopping rule
+## 4. Cost result and stopping point
 
-The next evidence is one preregistered bounded native CPU pair on the original
-model, full stream declaration and sixteen original targets. No profiler runs
-inside its ordinary timed calls. This is a solver cost comparison, not a new
-trained score or optimizer experiment. Use the outcome to decide whether this
-candidate merits production qualification; do not extend it into a codec or
-compiler-flag sweep. Foundation/ERC and the relation/precision closure remain.
+The [original bounded pair](../../experiments/next_token/NATIVE_STREAM_COST_A1.md)
+at `426a13d` passes both workers. Each independently validates 41 uncached images/
+45,954,147 bytes and 85 complete records/890,797,166 bytes. Ordinary sixteen-target
+time falls from 15.3455167 to 12.7106703 seconds (17.17014%); peak job commitment
+rises from 551,292,928 to 553,775,104 bytes. Paid resource counters agree exactly.
+No profiler runs inside the ordinary calls. The journal is terminal.
+
+This modest gain does not establish an affordable trained trajectory, commit
+cost or later-history scaling. Park the candidate as a scoped CPU control,
+without a production selector, compiler-flag sweep or device qualification.
+The growing-history transition cost is the next concrete question. Foundation/
+ERC and the relation/precision closure remain; no smaller-prefix model score
+replaces the ordinary-text objective.
