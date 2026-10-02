@@ -11479,3 +11479,28 @@ The observed prefix is costly but does not prove an asymptotic law or full-
 budget infeasibility. A bounded profile of the now-qualified complete native
 path is the next diagnostic, before a solver change or another long attempt.
 An affordable complete trained ordinary-text comparison remains required.
+
+
+## 336. Native-only text still spends most early-prefix time retaining complete streams (2026-10-02)
+
+The fixed native cost diagnostic at `b6d5569` completes its original sixteen
+events under the 180-second/16-GiB host job, with 549,490,688-byte peak commitment.
+The original million-target declaration, model/Gamma/U and reference allowances
+remain. Every original source/target/trace and live buffer/lease check passes;
+there is no Torch, AMP, optimizer commit, reporting or model score.
+
+Prediction/observation at indices zero and fifteen total 8.0471538 instrumented
+seconds and 29,892,811 calls. The same complete-retention subtree takes
+7.3519879 seconds (91.36134%) across those separate samples. Canonical fragment
+generation, coalescing and independently checking the decoded stream lead the
+retained function evidence. These are not summed nested rows or an extrapolated
+training budget. Intervening unprofiled calls total 14.0022540 seconds; whole
+worker time is 35.70524 seconds. Ledger self-time is small here but excludes
+callees and does not establish later-prefix complexity.
+
+The original diagnostic is closed. Removing AMP has not removed this measured
+retention cost. The next concrete question is efficient bulk/native execution
+of the unchanged canonical grammar and full checked streams, preserving bounded
+workspace, all source/guard observations and independent verification. No codec,
+cache, ledger rewrite or static relation extension is selected. A valid lowering
+and new bounded cost evidence must precede another full trained attempt.

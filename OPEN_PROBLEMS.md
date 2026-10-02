@@ -1,6 +1,16 @@
 # FP Open Problems
 
-The immediate correctness frontier is the
+The measured immediate ordinary-text obstruction is
+[complete native canonical stream execution](experiments/next_token/NATIVE_TEXT_COST_A1.md):
+91.36134% of four instrumented early-prefix calls lies in reference retention.
+Can the identical grammar and complete checked streams be lowered efficiently
+to bulk/native execution, preserving field observations, guard/refusal order,
+independent decoding and bounded scratch? This is a solver implementation
+question, with no new architecture action, codec or persistent cache implied.
+The native profile and interrupted original trial are closed; no replay or
+shorter trained score is due. Later-prefix ledger cost remains unmeasured.
+
+The now-closed scoped correctness repair addresses the
 [public-value ownership counterexample](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md):
 returned/supplied frozen wrappers can alias live causal records, masters and
 issuances. Transitive isolation now passes the focused audit and all sixteen
@@ -20,8 +30,8 @@ outcome rather than silently shrinking the horizon or bypassing accounting.
 The original attempt is now terminal UNRESOLVED: its process is absent, its PID
 reused and the exit receipt missing. The last heartbeat proves 1,280 targets/two
 commits; no timeout, exact final cursor or final host peak is inferred. Preserve
-this evidence limit, never replay it, and diagnose the current complete native
-path before selecting the next affordable full training attempt. No model
+this evidence limit and never replay it. The complete native path diagnosis
+above precedes the next affordable full training attempt. No model
 score or affordability claim exists.
 
 The [real-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)

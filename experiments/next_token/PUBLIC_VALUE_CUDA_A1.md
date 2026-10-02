@@ -26,8 +26,8 @@ This closes the new boundary's finite token CPU/device qualification. The
 sixteen-script CPU bundle separately covers finite search/proofs, installation,
 persistence, ingress and other native paths. Neither result reissues the old
 whole release or proves arbitrary registrations/caller code safe. The repair
-waits in the linked worktree until the original native text A1 ends; ordinary
-text affordability and a complete trained FP score remain open.
+was merged at `5be0bd8` after the original native worker's absence was established
+on October 2. Ordinary-text affordability and a complete trained FP score remain open.
 
 ## Original registration
 

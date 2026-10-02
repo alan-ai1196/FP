@@ -2,6 +2,17 @@
 
 ## Current execution state (2026-10-02)
 
+**Complete native text cost A1 is closed; canonical stream execution is the measured target.**
+The [original diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md#original-result-and-next-question)
+passes at `b6d5569` with all sixteen original sources/targets/traces and live
+buffers/leases intact. Its four profiled calls take 8.0471538 seconds and
+29,892,811 calls; complete reference retention takes 7.3519879 seconds (91.36134%).
+It preserves the million-target declaration and gives no model score or
+full-horizon budget. The journal is terminal. Attack efficient bulk/native
+execution of the same canonical streams, with unchanged checks and bounded
+workspace. Do not restart the interrupted trial, rewrite the ledger on an
+unmeasured assumption, or open another codec/cache/relation variant.
+
 **Native text A1 is terminal UNRESOLVED with missing final execution evidence.**
 The [original attempt](experiments/next_token/NATIVE_TEXT_A1.md#original-attempt-and-evidence-limit)
 has no live original worker or launcher handle. PID 8460 was reused with a
@@ -19,7 +30,7 @@ state. Foundation/ERC remain intact. The qualified transitive boundary repair
 is merged into main at `5be0bd8`, after the original worker's absence was verified.
 Its focused and scoped CPU/device regressions pass. No whole release is reissued.
 
-The linked repair worktree now implements complete inward/outward value-graph
+The merged repair implements complete inward/outward value-graph
 isolation. Its focused audit passes 16 adversarial token histories/112 events,
 three original witnesses, private reporting identity and four copy failures.
 The committed-source sixteen-script CPU regression passes at `86423cd`, with
@@ -44,11 +55,10 @@ the existing 603,092-master G/Gamma/U as one empirical hypothesis, with its
 known capacity/precision limits. Native Runtime ownership and reporting remain
 complete; no CUDA/AMP score is inferred. A two-hour/96-GiB original job must
 finish the whole horizon or return UNRESOLVED without a shortened score.
-The reporting-assembly CPU control passes. The next useful step is a bounded
-cost diagnosis of the complete native path under the same full declaration,
-before a solver change or another long training attempt. Growing ledger/history
-work is a source-level concern, not an established profile share. Preserve all
-accounting, information and ownership duties; no storage variant is due.
+The reporting-assembly CPU control and bounded native diagnosis now pass. The
+profile above selects complete stream execution for the next solver question.
+Growing ledger/history work remains a later-prefix concern; preserve every
+accounting, information and ownership duty while improving execution.
 
 The [ordinary-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 is complete and closed at `71e4c2c`. On the same 12,288-token development

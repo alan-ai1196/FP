@@ -68,7 +68,7 @@ costs, not a new semantic architecture action or a free performance claim.
 
 ## Qualification and running experiment
 
-The repair is being qualified in the linked canonical Git worktree
+The repair was qualified in the linked canonical Git worktree
 `F:\FP_passive_boundary`, branch `compiler/passive-boundary`. It changes the
 value ownership boundary, not learning or search semantics. Its focused controls
 block the three witnesses and preserve constructor/getter/candidate-program

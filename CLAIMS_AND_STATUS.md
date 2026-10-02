@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+**Complete native text cost A1: ORIGINAL BOUNDED DIAGNOSTIC PASS; CLOSED.**
+At `b6d5569`, sixteen complete native events retain the million-target stream
+declaration and every original source/target/trace and live buffer/lease. The
+[four profiles](experiments/next_token/NATIVE_TEXT_COST_A1.md#original-result-and-next-question)
+total 8.0471538 seconds and 29,892,811 calls; the same complete-retention subtree
+occupies 7.3519879 seconds (91.36134%) across separate samples. No nested rows
+are added. These instrumented early-prefix measurements confer no throughput,
+optimizer-commit, later-history, full-budget or model-quality claim. They select
+efficient execution of the existing complete canonical streams as the next
+solver question, with unchanged grammar/checks and bounded workspace.
+
 **FALSIFIED IMPLEMENTATION CLAIM: PUBLIC DIAGNOSTICS/PROOFS ARE PASSIVE BY FREEZING WRAPPERS.**
 At `e13348e`, public metadata mutation changes a subsequent causal context and
 an uncommitted live readout, and makes the actual proof verifier accept maximum

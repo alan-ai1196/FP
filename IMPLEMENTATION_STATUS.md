@@ -2,6 +2,14 @@
 
 ## Current token execution boundary (2026-10-02)
 
+The [complete native cost diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md)
+passes at `b6d5569`: sixteen actual native events with the original million-target
+declaration, complete retained contexts/targets/traces and live buffer/lease
+checks, no AMP or score. Four profiled calls total 8.0471538 seconds, of which
+the complete reference retention subtree takes 7.3519879 (91.36134%). This
+selects canonical stream execution as the immediate measured solver target;
+it does not prove later-prefix cost or authorize erasing complete state.
+
 **Native text A1: original process absent; missing final receipt; UNRESOLVED.**
 The terminal journal retains the original registration and last heartbeat:
 1,280 completed targets/two commits in 2,438.1676713 worker seconds. OS creation
