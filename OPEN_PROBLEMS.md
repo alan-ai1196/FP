@@ -1,5 +1,14 @@
 # FP Open Problems
 
+The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
+now has a conditional trace argument and finite exact CPU evidence. Its
+unchanged authored algorithms must still demonstrate a worthwhile reduction
+in the complete native text path. The single registered
+[cost pair](experiments/next_token/NATIVE_STREAM_COST_A1.md) retains the original
+model/declaration and all checks, then independently checks every image/page
+against an uncompiled oracle. Decide its next step from that result, without
+a compiler/codec variant sweep or a production/GPU claim from CPU substitution.
+
 The measured immediate ordinary-text obstruction is
 [complete native canonical stream execution](experiments/next_token/NATIVE_TEXT_COST_A1.md):
 91.36134% of four instrumented early-prefix calls lies in reference retention.

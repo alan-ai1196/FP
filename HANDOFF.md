@@ -2,6 +2,18 @@
 
 ## Current execution state (2026-10-02)
 
+**Source-compiled canonical streams: finite CPU controls pass; cost pair registered.**
+The [candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md) compiles the unchanged
+serializer and two stream consumers. Exact fragment/observation/refusal checks,
+sixteen complete paired histories, six CPU tensor-owner histories and terminal
+storage/image failure controls pass. No production backend or CUDA authority
+is granted. The [new native CPU pair](experiments/next_token/NATIVE_STREAM_COST_A1.md)
+will compare the current Python path with this one candidate on sixteen original
+targets, preserving the full million-target declaration. An independent
+uncompiled oracle checks every image and retained record after timing. Its
+harness detects deliberately corrupted images/pages. Commit before the original
+launch; no replay, codec/flag sweep or shorter trained score is authorized.
+
 **Complete native text cost A1 is closed; canonical stream execution is the measured target.**
 The [original diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md#original-result-and-next-question)
 passes at `b6d5569` with all sixteen original sources/targets/traces and live

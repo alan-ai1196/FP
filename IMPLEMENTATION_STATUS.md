@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-10-02)
 
+The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
+preserves the authored serializer and two consumers, with source/artifact/ABI
+binding and no production change. Its finite exact audit passes 5,870 stream
+decisions, sixteen complete paired Runtime histories and six CPU tensor-owner
+histories/129 full phase bodies, plus terminal storage/image failures. The
+[one-pair native cost registration](experiments/next_token/NATIVE_STREAM_COST_A1.md)
+is ready after its independent uncompiled oracle detects image/page corruption
+in the CPU harness. No actual cost, speedup, production or CUDA claim yet.
+
 The [complete native cost diagnostic](experiments/next_token/NATIVE_TEXT_COST_A1.md)
 passes at `b6d5569`: sixteen actual native events with the original million-target
 declaration, complete retained contexts/targets/traces and live buffer/lease

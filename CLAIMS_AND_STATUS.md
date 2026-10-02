@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+**Source-compiled canonical streams: CONDITIONAL PRESERVATION; FINITE CPU PASS.**
+The [argument](theory/proofs/COMPILED_CANONICAL_STREAMS.md) requires equal field/
+mapping/image observations, fragment boundaries and iterator/refusal traces,
+not only equal final bytes. The existing algorithms are compiled without a
+second authored codec. Exact grammar/trace checks, 5,870 consumer decisions,
+sixteen paired complete Runtime histories and six CPU tensor-owner histories
+(129 bodies/50,279 words) pass, as do eleven storage/image fault controls.
+This is no general Cython-correctness theorem, equal host-allocation law,
+production/CUDA release or speedup claim. One full-V native CPU cost pair is
+registered with an independently loaded uncompiled image/record oracle.
+
 **Complete native text cost A1: ORIGINAL BOUNDED DIAGNOSTIC PASS; CLOSED.**
 At `b6d5569`, sixteen complete native events retain the million-target stream
 declaration and every original source/target/trace and live buffer/lease. The

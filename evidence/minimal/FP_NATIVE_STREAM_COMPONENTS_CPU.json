@@ -1,0 +1,87 @@
+{
+  "status": "PASS_NATIVE_STREAM_COMPONENTS_CPU",
+  "scope": "Exact traces and owned CPU controls for source-compiled canonical streams.\n\nNo corpus, GPU, performance estimate or production backend authority.\nThe compiled components consume the same authored canonical algorithms.",
+  "build": {
+    "status": "BUILT_NATIVE_STREAM_COMPONENTS",
+    "cython": "3.1.8",
+    "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+    "abi": ".cp312-win_amd64.pyd",
+    "directives": {
+      "language_level": 3,
+      "infer_types": false,
+      "annotation_typing": false,
+      "overflowcheck": true,
+      "boundscheck": true,
+      "wraparound": true,
+      "initializedcheck": true,
+      "nonecheck": true,
+      "binding": true
+    },
+    "compiler_executable": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX86\\x64\\cl.exe",
+    "sources": {
+      "src/reference_compiler/fp_reference/encoding.py": "77b32729f4874ebe765285cd94ed9a8db4c309251f42b86d24dc5ad4294e12cc",
+      "src/reference_compiler/fp_reference/shared_reference.py": "8334e4b992cf8c51eb7b9701ef46c9ff753865cf3ebbf74e1882a4329179ece0",
+      "scripts/build_native_streams.py": "45c46463cec49b17e7434eed331b5446887e9260dd463830e4dfe99852c108f9"
+    },
+    "modules": {
+      "fp_reference._compiled_stream_encoding": {
+        "path": "build/native_streams/fp_reference/_compiled_stream_encoding.cp312-win_amd64.pyd",
+        "bytes": 164864,
+        "sha256": "4419ba7ca087b6979d5fd7d73187adc6bdb10be73a4ee57f798d10db04c761c1"
+      },
+      "fp_reference._compiled_stream_consumers": {
+        "path": "build/native_streams/fp_reference/_compiled_stream_consumers.cp312-win_amd64.pyd",
+        "bytes": 63488,
+        "sha256": "fa0fa3560ed79ff3c604506d8089e159cbaf4c2153242faa851f13150f9ff984"
+      }
+    },
+    "generated_consumers_are_exact_canonical_function_sources": true
+  },
+  "grammar": {
+    "typed_mode_cases": 2184,
+    "exact_fragments": 15852,
+    "complete_bytes": 196506,
+    "BMP_codepoints": 65536,
+    "surrogate_pair_classes": 3072,
+    "cyclic_foreign_nonfinite_and_packed_float_enum_refusals_equal": true
+  },
+  "observations": {
+    "yield_by_yield_field_mapping_image_and_mutation_traces": 16
+  },
+  "consumers": {
+    "producer_pieces": 326,
+    "producer_bytes": 140151,
+    "partition_corruption_and_iterator_read_decisions": 5870,
+    "producer_piece_boundaries_and_independent_reader_refusals_equal": true
+  },
+  "runtime": {
+    "paired_histories": 16,
+    "decoded_records": 1120,
+    "decoded_bytes": 7168198,
+    "complete_snapshots_learners_reports_pages_ledger_and_identity_bytes_equal": true
+  },
+  "cpu_phases": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "complete_phase_bytes": 5774243,
+    "checked_primitive_words": 50279,
+    "full_frames_learners_reports_raw_reads_allocations_retirements_equal": true,
+    "actual_cuda_execution": false
+  },
+  "failures": {
+    "storage": {
+      "post_target_failures": 6,
+      "targets_and_old_learners_retained": true
+    },
+    "images": {
+      "refusals": [
+        "wrong-image",
+        "wrong-page",
+        "unpaid-image",
+        "post-target-ResourceExceeded",
+        "post-target-MemoryError"
+      ],
+      "targets_and_prior_learners_retained": true
+    }
+  }
+}

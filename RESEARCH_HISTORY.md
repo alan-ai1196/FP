@@ -11504,3 +11504,29 @@ of the unchanged canonical grammar and full checked streams, preserving bounded
 workspace, all source/guard observations and independent verification. No codec,
 cache, ledger rewrite or static relation extension is selected. A valid lowering
 and new bounded cost evidence must precede another full trained attempt.
+
+
+## 337. Compile the authored stream algorithms while retaining their observations (2026-10-02)
+
+The measured native retention bottleneck motivates source compilation of the
+existing canonical serializer and its coalescing/comparison consumers. A second
+codec is unnecessary. Final-byte equality is too weak: field/image reads and
+fragment boundaries can change later observations, producer pieces, page bytes
+and resource debits. Trace equivalence gives a conditional stepwise preservation
+argument; it is not a universal compiler-correctness or equal-host-allocation
+theorem. The build retains Python object arithmetic, enables safety checks and
+binds exact source/native artifacts without per-event hashes.
+
+The finite audit passes 2,184 typed/mode cases, all BMP code points, sixteen
+interleaved observation traces, 5,870 stream decisions, sixteen paired complete
+training/reporting histories and six CPU tensor-owner histories/129 full phase
+bodies. Eleven storage/image fault controls retain targets and prior learners.
+There is no actual CUDA or speed evidence. The source-bound substitution remains
+an explicit control before root construction, not a production backend.
+
+One native full-V Python/compiled pair is registered on sixteen original targets
+under the unchanged million-target declaration. It retains all ordinary checks
+and independently validates every cached image without reuse, then every page
+with a fresh decoder and uncompiled canonical source. The small harness detects
+deliberate image/page corruption. This measures one candidate's actual cost;
+it does not reopen relation/precision research or select a smaller trained score.
