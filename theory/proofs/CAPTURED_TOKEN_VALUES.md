@@ -1,8 +1,8 @@
 # Complete prediction values from captured immutable operands
 
-Status (2026-10-03): **lossless live-state refinement proved; focused exact CPU
-and complete CPU phase controls pass; broader committed-source regression and
-actual-device qualification remain pending**. No Foundation/ERC change, new
+Status (2026-10-03): **lossless live-state refinement proved; focused exact CPU,
+complete CPU phase controls and 25-script committed-source regression pass;
+actual-device qualification is preregistered, not yet launched**. No Foundation/ERC change, new
 architecture action, numerical approximation or certificate class is added.
 
 The [historical liveness law](NATIVE_PREDICTION_LIVENESS.md) excludes the original
@@ -169,8 +169,17 @@ across both arms. Every successful paired result and complete snapshot agrees.
 The historical 192-history liveness audit also still passes with the actual
 old methods; its original receipt is preserved as a historical result.
 
+The complete [25-script CPU bundle](../../evidence/minimal/FP_CAPTURED_VALUES_REGRESSION_CPU.json)
+passes at `e13e480` with assertions enabled and source unchanged. It includes
+owned reference construction/search/events/profiles, persistence, installation,
+reporting, public ownership, host exhaustion, both archive formats and the new
+controls. Its actual Windows refusal worker exits zero after the expected
+MemoryError, preserving the terminal prefix under its independent 64-MiB job.
+The new [device registration](../../experiments/next_token/CAPTURED_VALUES_CUDA_A1.md)
+has passed its two native harness controls; no actual worker has run yet.
+
 This removes the proved eager-input allocation obstruction. It does not prove
 the million-target trajectory fits 96 GiB, its deadline or its numerical bounds,
-nor supply a trained score. Finish the scoped committed-source CPU and actual
-AMP qualification, then assess the **complete** ordinary-text budget. Do not
+nor supply a trained score. Finish the scoped actual AMP qualification, then
+assess the **complete** ordinary-text budget. Do not
 reopen relation/precision, replay closed timing journals or add static variants.

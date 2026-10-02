@@ -11800,7 +11800,13 @@ gradient coordinates and distinguish equal-valued causal inputs. The old
 192-history liveness control still reproduces under its historical methods;
 its original receipt is preserved.
 
-Proceed to the scoped committed-source CPU and actual AMP qualification, then
-the complete ordinary-text budget decision. Do not infer a timing gain, full
+The 25-script committed-source CPU bundle now passes at `e13e480`, including
+complete persistence/install, reporting, both archive formats and a fresh
+actual Windows host-allocation refusal. Source remains unchanged throughout.
+The fixed packed/shared actual AMP control is preregistered; both native
+harness cases pass, with no device worker launched yet.
+
+Proceed to the scoped actual AMP qualification, then the complete ordinary-text
+budget decision. Do not infer a timing gain, full
 host fit, trained score or new certificate class. Relation/precision and all
 closed experiment journals remain closed; Foundation/ERC are unchanged.

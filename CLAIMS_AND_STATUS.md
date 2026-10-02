@@ -9,8 +9,9 @@ inputs remain. The full text capture/tail containers use 184 bytes per trace;
 no direct-input features retain eager input Fractions in that registration.
 98 complete history pairs, six CPU tensor pairs, full-V snapshot comparison,
 48 input-feature pairs and archive/allocation attacks pass. Expression storage
-binds the complete parent without retaining temporary decoded scalars. Broader
-committed-source CPU and actual-device qualification remain pending. This is
+binds the complete parent without retaining temporary decoded scalars. All 25
+committed-source CPU scripts pass at `e13e480`; actual-device qualification is
+preregistered and its native harness passes, with no device result yet. This is
 neither a total host bound nor a speed/model/`CERTIFIED_COMPLETE` claim.
 
 **Historical native text host feasibility: SOURCE/ABI LOWER BOUND; OLD BUDGET EXCLUDED.**

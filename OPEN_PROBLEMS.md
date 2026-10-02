@@ -6,8 +6,9 @@ removes the eager LD Fraction/tuple component with a complete immutable input
 recipe and actual node tail. Its selected text-model containers cost 184 bytes
 per prediction. Exact values, canonical bytes, public isolation, input-feature
 gradients and five new terminal failure boundaries pass focused CPU checks.
-Finish the committed-source regression and actual AMP qualification without a
-new codec/feature variant, then account for old masters, traces/windows, images,
+The 25-script committed-source CPU regression passes at `e13e480`. Finish the
+preregistered actual AMP qualification without a new codec/feature variant,
+then account for old masters, traces/windows, images,
 archives, resource metadata and transient complete diagnostics in the full
 host budget. A selected-object saving is not whole-process feasibility.
 

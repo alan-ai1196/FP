@@ -13,7 +13,10 @@ remains. This is not a complete host-size or speed claim. Exact controls cover
 48 additional direct-input-feature pairs, both archive formats and terminal
 allocation failures. Public exports remain ordinary tuples. The optional
 expression format binds the parent without retaining decoded temporaries.
-Finish the committed-source CPU regression and actual AMP qualification, then
+The 25-script committed-source CPU regression now passes at `e13e480`, including
+persistence/install/reporting and actual Windows host refusal. The fixed
+[actual AMP control](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
+preregistered with both native harness cases passing. Finish that control, then
 assess the complete ordinary-text budget. Foundation/ERC and all closed
 relation/precision/cost branches remain closed; no full-run launch is yet due.
 

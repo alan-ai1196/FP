@@ -12,8 +12,11 @@ and independent byte checks remain; optional expression bindings do not retain
 temporary decoded scalars. Focused primitive/guard/forgery controls, 98 paired
 complete histories, six CPU tensor pairs/129 bodies, full-V buffer/snapshot
 equality and 48 input-feature pairs pass, including five new terminal host
-failure sites. Committed-source CPU regression and actual AMP qualification
-are next. There is no complete host budget, timing or model-score claim.
+failure sites. All 25 complete committed-source CPU audit scripts now pass at
+`e13e480`, including persistence/install and actual Windows host refusal. The
+fixed [AMP qualification](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
+preregistered with native harness controls passing. There is no complete host
+budget, timing or model-score claim.
 
 The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
 establishes that the old million-target Python realization at `c67a0aa` cannot

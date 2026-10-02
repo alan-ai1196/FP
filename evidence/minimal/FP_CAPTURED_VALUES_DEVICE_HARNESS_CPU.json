@@ -1,0 +1,55 @@
+{
+  "status": "PASS_CAPTURED_VALUES_DEVICE_HARNESS_CPU",
+  "cases": {
+    "packed": {
+      "training_events": 4,
+      "optimizer_commits": 2,
+      "report_events": 4,
+      "exact_native_trajectory_equal_to_unattacked_control": true,
+      "supplied_registrations_and_public_wrappers_isolated": true,
+      "frozen_private_native_learner_preserved": true,
+      "frozen_private_physical_learner_preserved": null,
+      "terminal_export_failure_preserves_completed_prefix": true,
+      "checked_phases": 0,
+      "checked_primitive_words": 0,
+      "complete_phase_bytes": 0,
+      "complete_frame_bytes": 0,
+      "uncached_complete_frames_and_padding_checked": false,
+      "paid_reference_peak": 260169,
+      "captured_values": {
+        "original_training_and_report_forecasts": 8,
+        "historical_literal_value_coordinates": 96,
+        "complete_literal_prediction_bytes_compared": 61793,
+        "selected_capture_tail_container_bytes": 1344,
+        "original_immutable_embedding_and_context_references_preserved": true,
+        "actual_node_tail_and_complete_logical_values_equal": true
+      }
+    },
+    "shared": {
+      "training_events": 4,
+      "optimizer_commits": 2,
+      "report_events": 4,
+      "exact_native_trajectory_equal_to_unattacked_control": true,
+      "supplied_registrations_and_public_wrappers_isolated": true,
+      "frozen_private_native_learner_preserved": true,
+      "frozen_private_physical_learner_preserved": null,
+      "terminal_export_failure_preserves_completed_prefix": true,
+      "checked_phases": 0,
+      "checked_primitive_words": 0,
+      "complete_phase_bytes": 0,
+      "complete_frame_bytes": 0,
+      "uncached_complete_frames_and_padding_checked": false,
+      "paid_reference_peak": 2309947,
+      "captured_values": {
+        "original_training_and_report_forecasts": 8,
+        "historical_literal_value_coordinates": 96,
+        "complete_literal_prediction_bytes_compared": 61793,
+        "selected_capture_tail_container_bytes": 1344,
+        "original_immutable_embedding_and_context_references_preserved": true,
+        "actual_node_tail_and_complete_logical_values_equal": true
+      }
+    }
+  },
+  "actual_cuda_execution": false,
+  "scope": "native control for the fixed new device harness"
+}
