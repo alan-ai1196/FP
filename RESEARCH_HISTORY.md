@@ -11759,3 +11759,48 @@ is now excluded by a source/ABI proof, not by extrapolating the prefix peak.
 Proceed to a complete recoverable live representation that preserves causal
 and parameter distinctions; faster archive handling alone cannot remove these
 objects. Foundation/ERC and the closed relation/precision branches remain.
+
+## 344. Preserve complete predictions through captured immutable inputs (2026-10-03)
+
+The preceding live-object bound excludes one eager Python realization, not
+complete recoverability. Each exact input is determined by the actual immutable
+embedding bytes, width, causal token tuple and grid. Capturing those values
+and retaining the actual executed SUM/PRODUCT tail preserves every logical
+prediction coordinate without retaining LD new Fraction shells per event.
+The numerical forward computation, its order and guards are unchanged; old
+origins, parameter slots, gradients, windows, targets and traces remain.
+
+The closed tuple-backed capture has no mutable wrapper dependency or writable
+instance metadata. Encoders see the complete original tuple; public exports
+materialize builtin tuples under the existing copy memo. Canonical image
+binding retains full initial byte/metric checks. Review found a retention trap
+in the optional expression format: identity bindings for decoded temporary
+scalars would recreate the old liveness. That path now binds only the immutable
+parent while constructing the identical complete scalar terms. No new codec
+or renewed cost study is introduced.
+
+The source/ABI container law is at most T[80+40+8N] bytes, accounting for empty
+tuple sharing. For the full text N8 representation this is 184 bytes per trace,
+or 184 MiB at the million-target horizon, instead of the old selected input
+Fraction/value-tuple component of 112.1015625 GiB. This is not a whole-host
+upper bound: grid integers, actual node values, old masters/windows, archives,
+images and all other state remain, as does transient complete materialization.
+General direct-input readouts can retain their selected input Fractions; the
+text registration selects only node outputs.
+
+558 exact value vectors, 17,856 paired guard decisions and twenty malformed
+capture attacks pass. The actual old prediction methods from `c67a0aa` give
+identical results and full snapshots over 98 history pairs and six CPU tensor
+pairs/129 phase bodies. Two full-V synthetic events compare all actual buffers,
+role totals and 502,252,884 complete snapshot bytes with the original million
+declaration unchanged. Existing phase/image/expression formats recover complete
+bytes; five capture/tail/export host failures halt with the actual prefix.
+Forty-eight input-feature pairs additionally preserve 10,752 exact pending
+gradient coordinates and distinguish equal-valued causal inputs. The old
+192-history liveness control still reproduces under its historical methods;
+its original receipt is preserved.
+
+Proceed to the scoped committed-source CPU and actual AMP qualification, then
+the complete ordinary-text budget decision. Do not infer a timing gain, full
+host fit, trained score or new certificate class. Relation/precision and all
+closed experiment journals remain closed; Foundation/ERC are unchanged.

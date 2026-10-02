@@ -12,6 +12,7 @@ from fractions import Fraction
 from types import MappingProxyType, MemberDescriptorType
 
 from .core import ContractError
+from .token_values import CapturedTokenValues
 
 
 def detached(value):
@@ -39,7 +40,11 @@ def detached(value):
             return memo[identity]
         active.add(identity)
         try:
-            if kind in (tuple, list):
+            if kind is CapturedTokenValues:
+                # Export the same complete builtin tuple as the literal
+                # realization, preserving repeated bindings with this memo.
+                result = tuple(visit(child) for child in item)
+            elif kind in (tuple, list):
                 children = tuple(visit(child) for child in item)
                 result = (item if all(a is b for a, b in zip(item, children)) else children) if kind is tuple else list(children)
             elif kind in (dict, MappingProxyType):

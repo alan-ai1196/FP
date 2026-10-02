@@ -1,7 +1,17 @@
 # FP Open Problems
 
-The next ordinary-text question is **complete live prediction/trace storage**.
-The [source/ABI liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md) now
+The current ordinary-text question is **whole-state budget after lossless
+captured prediction values**. The [refinement](theory/proofs/CAPTURED_TOKEN_VALUES.md)
+removes the eager LD Fraction/tuple component with a complete immutable input
+recipe and actual node tail. Its selected text-model containers cost 184 bytes
+per prediction. Exact values, canonical bytes, public isolation, input-feature
+gradients and five new terminal failure boundaries pass focused CPU checks.
+Finish the committed-source regression and actual AMP qualification without a
+new codec/feature variant, then account for old masters, traces/windows, images,
+archives, resource metadata and transient complete diagnostics in the full
+host budget. A selected-object saving is not whole-process feasibility.
+
+The historical [source/ABI liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
 excludes the unchanged full native host budget: its per-event fresh Fractions
 and value tuples alone require 112.1015625 GiB at the million-target horizon,
 above the registered 96 GiB. This does not depend on a timing extrapolation or
@@ -10,12 +20,10 @@ the training values. Equal-zero inputs still create separate retained objects.
 actual identities and sizes; an adversarial alias control prevents double
 counting shared values. No additional full run is needed to confirm this bound.
 
-Can a complete recoverable live representation share immutable numerical
-values or reconstruct old predictions while preserving each causal source,
-parameter coordinate, original origin, event, numerical check and ownership
-obligation? Prove the representation and host-size law before promoting its
-budget. Current value equality cannot merge parameter/gradient coordinates,
-and archive compression alone leaves the proved live-object obstruction.
+The complete captured representation above resolves that selected live-object
+obstruction while preserving each causal source, parameter coordinate, original
+origin, event and numerical check. It does not reconstruct executed arithmetic
+or merge parameter/gradient coordinates. The remaining full budget is open.
 Do not repeat closed cost probes, raise an old run's cap, truncate history,
 reopen relation/precision or substitute a shorter trained score.
 

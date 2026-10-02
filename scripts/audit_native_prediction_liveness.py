@@ -171,17 +171,22 @@ def audit():
     # samples of successful trajectories. This is a historical scoped law if
     # a later representation changes its allocation/retention hypotheses.
     paths = ('src/reference_compiler/fp_reference/runtime.py',
-        'src/reference_compiler/fp_reference/token_execution.py',
         'src/reference_compiler/fp_reference/token_batch.py', 'scripts/run_native_text_a1.py')
     subprocess.run(['git', 'diff', '--exit-code', SOURCE, '--', *paths], cwd=ROOT,
         check=True, capture_output=True)
     abi = abi_and_alias_controls()
-    groups = small_complete_histories()
-    full = full_registration_control()
+    from captured_values_audit_support import literal_predictions
+    # The current Runtime can use a different live value representation.
+    # Load the actual original allocation/activation methods for this
+    # historical lower law, rather than attributing old counts to new code.
+    with literal_predictions():
+        groups = small_complete_histories()
+        full = full_registration_control()
     assert 'torch' not in sys.modules
     return dict(status='PASS_NATIVE_PREDICTION_LIVENESS_CPU', production_source=SOURCE,
         audited_head=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
-        bound_source_files=list(paths), abi=abi, groups=groups,
+        bound_source_files=list(paths), historical_literal_prediction_methods_loaded=True,
+        abi=abi, groups=groups,
         totals={key: sum(group[key] for group in groups) for key in
             ('histories', 'targets', 'commits', 'distinct_input_objects', 'selected_shallow_bytes')},
         full_registration=full, scope='source/ABI liveness lower bound and finite complete CPU controls; no timing, corpus, model score or CUDA')

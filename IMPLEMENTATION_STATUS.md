@@ -2,16 +2,29 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [captured token value refinement](theory/proofs/CAPTURED_TOKEN_VALUES.md)
+now keeps immutable exact input operands plus the actual executed node tail,
+with complete logical tuple encodings and detached builtin-tuple exports.
+The full text model's selected containers cost 184 bytes per prediction;
+the historical LD live input Fractions are removed. Every trace, causal window,
+old origin and parameter/gradient coordinate remains. Canonical image metrics
+and independent byte checks remain; optional expression bindings do not retain
+temporary decoded scalars. Focused primitive/guard/forgery controls, 98 paired
+complete histories, six CPU tensor pairs/129 bodies, full-V buffer/snapshot
+equality and 48 input-feature pairs pass, including five new terminal host
+failure sites. Committed-source CPU regression and actual AMP qualification
+are next. There is no complete host budget, timing or model-score claim.
+
 The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
-now establishes that the unchanged million-target Python realization cannot
+establishes that the old million-target Python realization at `c67a0aa` cannot
 fit its 96-GiB host contract. Every event retains 2,048 distinct input Fraction
 objects and its 2,056-value tuple. Their selected allocation alone totals
 112.1015625 GiB, before integers, archives, masters and other state. The
 source/ABI proof is checked by 192 complete histories/448 commits, an explicit
 alias-counting control and two full-V synthetic events. No production change,
 corpus score, empirical failure cursor or broader impossibility is claimed.
-The required next refinement concerns complete live trace representation;
-byte-archive compression and local resource indices do not remove these objects.
+The captured-value refinement above changes that allocation hypothesis while
+preserving the old result and its receipt as historical evidence.
 
 The [complete local-transition refinement](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
 now uses immutable ordered map versions and exact role-support augmentation for

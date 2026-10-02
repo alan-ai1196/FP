@@ -1,0 +1,42 @@
+{
+  "status": "PASS_CAPTURED_TOKEN_VALUES_CPU",
+  "literal_source": "c67a0aad7468d5e59635e02fb1501fee93c2f68e",
+  "primitive_values": {
+    "vectors": 558,
+    "paired_guard_decisions": 17856,
+    "equal_fragments": 39660,
+    "exact_tuple_values_operations_and_public_aliases": true
+  },
+  "forged_values": {
+    "forged_representations_refused": 20,
+    "writable_metadata_refusals": 2,
+    "supplying_wrapper_replacement_preserves_captured_values": true,
+    "unused_master_rows_do_not_change_logical_tuple_equality": true
+  },
+  "paired_histories": {
+    "paired_complete_histories": 98,
+    "target_events_per_arm": 512,
+    "complete_results_and_serialized_snapshots_equal": true,
+    "old_public_record_mutations_cannot_forge_the_prefix": true,
+    "original_source_family_identity_preserved": true
+  },
+  "paired_cpu_phases": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "checked_primitive_words": 50279,
+    "complete_phase_bytes": 5774243,
+    "frames_learners_reports_reads_allocations_retirements_equal": true,
+    "actual_cuda_execution": false
+  },
+  "full_vocabulary": {
+    "synthetic_targets_per_arm": 2,
+    "original_training_declaration": 1048576,
+    "full_serialized_snapshot_bytes_compared": 502252884,
+    "every_buffer_and_role_total_equal": true,
+    "input_recipe_and_tail_container_bytes_per_prediction": 184,
+    "original_selected_input_objects_and_tuple_bytes_per_prediction": 114792,
+    "existing_embedding_and_window_references_shared": true,
+    "no_retained_input_fraction_instances_in_value_representation": true,
+    "full_host_budget_or_timing_claim": false
+  }
+}

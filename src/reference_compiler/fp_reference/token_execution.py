@@ -21,6 +21,7 @@ from .token_causal import TokenSources, TokenWindow
 from .token_native import Definition
 from .token_readout import Spec
 from .token_enclosures import EnclosureUnresolved
+from .token_values import CapturedTokenValues
 
 
 def closed(value, kind):
@@ -242,7 +243,7 @@ class TokenProbabilities:
 class TokenEvaluation:
     before: TokenState
     window: TokenWindow
-    values: tuple[F, ...]
+    values: tuple[F, ...] | CapturedTokenValues
     normalizer: F
     head_upper: F
     probabilities: TokenProbabilities
@@ -385,8 +386,13 @@ class TokenReferenceMachine(ReferenceMachineModel):
         context, d = sources.context, program.definition
         context.__post_init__()
         window = TokenWindow(d.sources, context.position, context.past)
-        inputs = tuple(F(int(q), d.output.grid) for token in window.past for q in state.origin.E[token])
+        # Capture exact immutable operands, not the replaceable Origin/Window
+        # wrappers. Decode the original inputs for this numerical execution;
+        # old traces retain their complete recipe and the actual node outputs.
+        captured = CapturedTokenValues(state.origin.embedding, d.width, window.past, d.output.grid)
+        inputs = tuple(captured)
         values, z, head, features = self._forward(state.origin, inputs, bit_limit)
+        values = captured.with_tail(values[len(inputs):])
         return TokenEvaluation(state, window, values, z, head, TokenProbabilities(state.origin, features, z, bit_limit))
 
     def observe(self, program, state, spec, prediction, target, *, rules, sources, bit_limit):
@@ -425,7 +431,7 @@ class TokenReferenceMachine(ReferenceMachineModel):
 
     @staticmethod
     def activation_values(prediction):
-        return (F(1),)+prediction.values+(prediction.head_upper,)
+        return (F(1),)+tuple(prediction.values)+(prediction.head_upper,)
 
     def range_bound(self, program, rules, theta, *, bit_limit):
         from .token_batch import Origin

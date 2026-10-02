@@ -1,8 +1,9 @@
 """Owned encodings of exact immutable builtin subtrees; no device authority.
 
 Only None/bool/int/Fraction/str/bytes and recursively pure exact tuples may
-bind an image. Dataclasses (including frozen ones), mappings and lists never
-bind: a frozen wrapper does not establish immutable descendants. Every image
+bind an image, together with the closed immutable captured token-tuple decoder.
+Dataclasses (including frozen ones), mappings and lists never bind: a frozen
+wrapper does not establish immutable descendants. Every image
 has paid immutable bytes and a strong source binding; no checksum proves it.
 """
 import codecs
@@ -13,6 +14,7 @@ from fractions import Fraction as F
 from . import encoding
 from .core import ContractError
 from .resources import ObjectSpec
+from .token_values import CapturedTokenValues
 
 
 MIN_IMAGE = 8192
@@ -75,7 +77,7 @@ class _CanonicalImages:
             result = (encoding.packed_size(value),
                 1+sum(max(1, (n.bit_length()+3)//4) for n in numbers),
                 0, max(n.bit_length() for n in numbers))
-        elif kind is tuple:
+        elif kind in (tuple, CapturedTokenValues):
             size, traversal, depth, bits = 12+max(0, len(value)-1), 1, 0, 0
             for child in value:
                 part = self._metrics(child, memo)
@@ -113,7 +115,7 @@ class _CanonicalImages:
                     continue
                 if metrics[0] < MIN_IMAGE:
                     continue
-            if type(item) in (tuple, list):
+            if type(item) in (tuple, list, CapturedTokenValues):
                 stack.extend(reversed(item))
             elif isinstance(item, Mapping):
                 stack.extend(child for pair in reversed(tuple(item.items())) for child in reversed(pair))

@@ -2,7 +2,22 @@
 
 ## Current execution state (2026-10-03)
 
-**Full native host budget: unchanged live representation is provably infeasible.**
+**Captured prediction values: lossless refinement and focused CPU controls pass.**
+The [captured-value law](theory/proofs/CAPTURED_TOKEN_VALUES.md) preserves the
+complete logical input tuple from the actual immutable embedding/context
+operands and retains all executed node results. The full text representation
+uses 184 bytes of capture/tail containers per prediction, removing the eager
+input-Fraction component below; every old event, origin and parameter position
+remains. This is not a complete host-size or speed claim. Exact controls cover
+98 history pairs, six CPU tensor pairs/129 bodies, full-V complete snapshots,
+48 additional direct-input-feature pairs, both archive formats and terminal
+allocation failures. Public exports remain ordinary tuples. The optional
+expression format binds the parent without retaining decoded temporaries.
+Finish the committed-source CPU regression and actual AMP qualification, then
+assess the complete ordinary-text budget. Foundation/ERC and all closed
+relation/precision/cost branches remain closed; no full-run launch is yet due.
+
+**Historical full native host budget: old live representation is infeasible.**
 The [prediction-liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md) counts
 the actual distinct retained input Fractions and value tuples at `c67a0aa`.
 On the installed CPython ABI, these alone require 120,368,136,192 bytes
@@ -14,9 +29,9 @@ extrapolation or the inferred cause of the old missing worker receipt.
 sharing controls and the original full-V representation with two synthetic
 labels pass. No new model score, certificate class or Foundation change follows.
 Do not launch the unchanged full trajectory or repeat its cost probes. The
-next necessary research is a complete recoverable live prediction/trace
-representation with a proved ownership/host-size law; preserve causal origins,
-parameter coordinates and every old event. Relation/precision stays closed.
+captured-value refinement above removes this selected obstruction with complete
+recovery. Its remaining state and transient costs still need a full budget
+decision. Relation/precision stays closed.
 
 **Complete local transitions: exact law and scoped CPU implementation qualified.**
 The [role-support law and implementation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)

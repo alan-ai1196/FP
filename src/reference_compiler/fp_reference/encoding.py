@@ -9,6 +9,7 @@ from enum import Enum
 from fractions import Fraction as F
 import json
 from collections.abc import Mapping
+from .token_values import CapturedTokenValues
 
 
 def _invalid(message):
@@ -51,8 +52,8 @@ def packed_size(value, *, images=None):
         return 13 if value else 14
     if type(value) is str:
         return 8+_string_size(value)
-    if type(value) in (tuple, list):
-        size, count = (12 if type(value) is tuple else 11), 0
+    if type(value) in (tuple, list, CapturedTokenValues):
+        size, count = (11 if type(value) is list else 12), 0
         for child in value:
             size += packed_size(child, images=images)
             count += 1
@@ -114,7 +115,7 @@ never receives the value or the iterator used to traverse it.
                 raise ResourceExceeded('canonical phase integer allowance exhausted')
             debit(sum(max(1,(n.bit_length()+3)//4) for n in numbers))
             return
-        if type(item) in (tuple,list):
+        if type(item) in (tuple,list,CapturedTokenValues):
             children = iter(item)
         elif isinstance(item,Mapping):
             children = (child for pair in item.items() for child in pair)
@@ -245,8 +246,8 @@ def fragments(value, *, packed=False, spaced=False, images=None):
             for start in range(0, len(value), 256):
                 yield value[start:start+256].hex()
             yield '"]'
-        elif type(value) in (tuple, list):
-            yield '["'+type(value).__name__+'"'+separator+'['
+        elif type(value) in (tuple, list, CapturedTokenValues):
+            yield '["'+('list' if type(value) is list else 'tuple')+'"'+separator+'['
             push(value, _elements(value, separator))
         elif isinstance(value, Mapping):
             yield '["mapping"'+separator+'['

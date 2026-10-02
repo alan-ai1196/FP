@@ -1,6 +1,19 @@
 # FP Claims and Status
 
-**Native text host feasibility: SOURCE/ABI LOWER BOUND; UNCHANGED BUDGET EXCLUDED.**
+**Captured native prediction values: LOSSLESS REFINEMENT; FOCUSED CPU PASS.**
+The [representation proof](theory/proofs/CAPTURED_TOKEN_VALUES.md) retains actual
+immutable input operands and executed node results, preserving complete values,
+causal sources, old masters, parameter/gradient positions and every event.
+Exact public tuples, canonical bytes/guards, owned images and AMP comparison
+inputs remain. The full text capture/tail containers use 184 bytes per trace;
+no direct-input features retain eager input Fractions in that registration.
+98 complete history pairs, six CPU tensor pairs, full-V snapshot comparison,
+48 input-feature pairs and archive/allocation attacks pass. Expression storage
+binds the complete parent without retaining temporary decoded scalars. Broader
+committed-source CPU and actual-device qualification remain pending. This is
+neither a total host bound nor a speed/model/`CERTIFIED_COMPLETE` claim.
+
+**Historical native text host feasibility: SOURCE/ABI LOWER BOUND; OLD BUDGET EXCLUDED.**
 At `c67a0aa`, the [retained prediction law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
 requires T[48LD+40+8(LD+N)] selected allocation bytes on the installed Windows
 x64 CPython 3.12.9 ABI. The original million-target L512/D4/N8 registration
@@ -10,6 +23,8 @@ complete histories/448 commits, deliberate sharing and two full-V synthetic
 events. This proves an implementation/contract exclusion, not an FP semantic
 lower bound, exact failure cursor, elapsed-time estimate or trained score.
 No original journal changes and no `CERTIFIED_COMPLETE` class is introduced.
+The captured-value refinement changes the eager-allocation hypothesis; the
+historical lower bound remains valid for its original source.
 
 **Two-unit complete native resource diagnosis: ORIGINAL PASS; CLOSED.**
 At `c67a0aa`, [A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md) completes

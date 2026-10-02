@@ -12,6 +12,7 @@ from math import gcd
 from .core import ContractError
 from .resources import ResourceExceeded
 from .encoding import fragments, packed_size
+from .token_values import CapturedTokenValues
 
 ENCODING_ID = 'typed-phase-varints-interned-strings-short-sequences-v1'
 MAX_STRINGS, MAX_DEPTH, INTEGER_BITS = 4096, 64, 32768
@@ -57,7 +58,7 @@ def _guard(value, *, expanded_cap):
                 raise ResourceExceeded('phase integer exceeds its encoding bit allowance')
             debit(sum(max(1,(abs(n).bit_length()+3)//4) for n in numbers))
             return
-        if type(value) in (tuple,list):
+        if type(value) in (tuple,list,CapturedTokenValues):
             children = iter(value)
         elif isinstance(value,Mapping):
             children = (child for pair in value.items() for child in pair)
@@ -98,11 +99,11 @@ def _chunks(value, strings, depth=0):
             yield from _uint(size)
             for start in range(0,len(value),256):
                 yield value[start:start+256].encode('utf-8','surrogatepass')
-    elif type(value) in (tuple,list):
+    elif type(value) in (tuple,list,CapturedTokenValues):
         if len(value) < 16:
-            yield bytes(((0x20 if type(value) is tuple else 0x30)+len(value),))
+            yield bytes(((0x30 if type(value) is list else 0x20)+len(value),))
         else:
-            yield b'\x09' if type(value) is tuple else b'\x0a'
+            yield b'\x0a' if type(value) is list else b'\x09'
             yield from _uint(len(value))
         for child in value:
             yield from _chunks(child,strings,depth+1)

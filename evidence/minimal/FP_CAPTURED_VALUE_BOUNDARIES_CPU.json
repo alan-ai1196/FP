@@ -1,0 +1,43 @@
+{
+  "status": "PASS_CAPTURED_VALUE_BOUNDARIES_CPU",
+  "literal_source": "c67a0aad7468d5e59635e02fb1501fee93c2f68e",
+  "phase_formats": {
+    "vectors": 12,
+    "paired_cap_decisions": 108,
+    "encoded_bytes": 8734,
+    "independent_complete_decoded_bytes": 60113,
+    "existing_format_bytes_unchanged": true
+  },
+  "archives": {
+    "complete_bytes_per_archive": 27172,
+    "canonical_guard_pairs": 24,
+    "public_image_and_binding_sources_are_detached_tuples": true,
+    "wrong_image_refused_with_paid_prefix_retained": true,
+    "malformed_capture_refusals": [
+      "canonical-image",
+      "expression"
+    ],
+    "expression_new_bindings": 1,
+    "expression_retained_decoded_fraction_bindings": 0,
+    "repeated_capture_uses_original_complete_binding": true
+  },
+  "allocation_failures": {
+    "terminal_host_failure_sites": [
+      "pre-target-capture",
+      "pre-target-tail",
+      "post-target-capture",
+      "post-target-tail",
+      "diagnostic-decode"
+    ],
+    "actual_prefix_and_spent_work_retained": true,
+    "failed_operations_never_publish_a_successor_or_refund": true
+  },
+  "input_features": {
+    "paired_complete_histories": 48,
+    "targets_per_arm": 192,
+    "exact_pending_gradient_coordinates_both_arms": 10752,
+    "distinct_input_coordinates_not_merged": true,
+    "repeated_feature_identity_preserved": true,
+    "complete_results_snapshots_and_grid_masters_equal": true
+  }
+}

@@ -6,6 +6,7 @@ Source bindings belong to the trusted owner, never to the producer.
 """
 from collections.abc import Mapping
 from dataclasses import dataclass, is_dataclass, replace
+from .token_values import CapturedTokenValues
 from fractions import Fraction as F
 import struct
 import zlib
@@ -300,12 +301,12 @@ class Walk:
         self.active.add(identity)
         try:
             kind = type(value)
-            pure = value is None or kind in (bool, int, F, str, bytes, tuple)
+            pure = value is None or kind in (bool, int, F, str, bytes, tuple, CapturedTokenValues)
             if value is None or kind in (bool, int, F, str, bytes):
                 root = self.text(encoding.fragments(value, packed=True))
             else:
-                if kind in (tuple, list):
-                    prefix = ('["'+kind.__name__+'",[',)
+                if kind in (tuple, list, CapturedTokenValues):
+                    prefix = ('["'+('list' if kind is list else 'tuple')+'",[',)
                     children = encoding._elements(value, ',')
                 elif isinstance(value, Mapping):
                     prefix = ('["mapping",[',)
@@ -327,7 +328,15 @@ class Walk:
                     yield self.text(prefix)
                     for visit, child in children:
                         if visit:
-                            node, eligible = self.value(child)
+                            if kind is CapturedTokenValues:
+                                # Decoded Fractions are temporary values, not
+                                # additional source identities to keep alive.
+                                # The immutable parent binding recovers them;
+                                # build the identical scalar term without a
+                                # persistent binding for each decoded object.
+                                node, eligible = self.text(encoding.fragments(child, packed=True)), True
+                            else:
+                                node, eligible = self.value(child)
                             pure = pure and eligible
                             yield node
                         elif child:

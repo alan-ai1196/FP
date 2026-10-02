@@ -3,6 +3,11 @@
 Status (2026-10-03): **source/ABI lower bound proved; finite complete CPU
 controls PASS; unchanged 96-GiB full-training representation infeasible**.
 
+Subsequent [captured-value refinement](CAPTURED_TOKEN_VALUES.md) changes the
+eager-allocation hypothesis and removes this selected obstruction. This proof
+and its original receipt remain historical source-bound evidence; they are not
+relabelled as a lower bound for the new implementation.
+
 The [two-unit diagnosis](../../experiments/next_token/OWNED_TRANSITION_COST_A1.md)
 passes every ownership and byte duty. Its small host peak does not establish
 the million-target budget. A separate live-state obstruction settles that
@@ -39,7 +44,10 @@ free those reachable objects. The observer is not needed to keep them alive.
 This is an induction through the actual allocation/append/commit writers, not
 a claim about all possible FP realizations. The audit binds the complete
 relevant Runtime, token execution, token batch and original runner files to
-that source. Public value copies, shared archive encoding and the new resource
+that source. The maintained reproduction loads the actual old prediction and
+activation methods and checks unchanged ASTs for their remaining token-module
+dependencies; the other source files still match the original commit. Public
+value copies, shared archive encoding and the new resource
 indices leave this live object graph intact.
 
 ## 2. Exact selected-object lower bound
