@@ -158,6 +158,12 @@ or omission of historical evidence would not satisfy it. Ordinary next-token
 training/reporting remains the objective. Foundation/ERC and relation closure
 are unchanged.
 
+The subsequent [complete local-transition refinement](OWNED_LOCAL_TRANSITIONS.md)
+implements the shared object/lease invariant, preserving full information and
+order while removing those remaining ledger/buffer scans and copies. Its
+bookkeeping bound and qualification are separate; this receipt retains its
+original source/count scope through historical ledger binding.
+
 ## 4. Executed audit and its limits
 
 [`owned_admission_audit_support.py`](../../scripts/owned_admission_audit_support.py)

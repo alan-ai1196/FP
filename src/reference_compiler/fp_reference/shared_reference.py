@@ -322,11 +322,10 @@ class _SharedReference:
         ledger = runtime._ledger.prepare_transfer((), releases)
         # This trusted machine relocation preserves the same semantic label
         # via its exact decoder. The ledger itself attests only accounting.
-        ledger._objects[label] = replace(extent, kind=ROOT_KIND+extent.kind, residency=root_extent)
-        ledger._check_residency(ledger._objects, ledger._refs)
+        ledger._shrink_object(replace(extent, kind=ROOT_KIND+extent.kind, residency=root_extent))
         ledger._event('reencode_buffer', runtime._data_owner, (label,),
                       note='complete CUDA frame retained through immutable shared bytes')
-        buffers = dict(runtime._buffers)
+        buffers = runtime._buffers.copy()
         buffers[label] = buffers.pop(root_id)
         buffers.pop(scratch_id)
         next_root = dict(runtime.__dict__)

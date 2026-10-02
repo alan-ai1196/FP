@@ -11651,3 +11651,45 @@ another isolated prefix pair is not selected. The next research obligation is
 an efficient complete owned transition for those remaining growing objects,
 including sharing, retirement and failure prefixes. Ordinary next-token
 prediction remains the target; Foundation/ERC and relation closure remain.
+
+
+## 341. Role support makes complete resource admission locally decidable (2026-10-03)
+
+An object contributes its full cost once globally and once for each role with
+at least one positive lease. Neither reference multiplicity nor the number of
+same-role owners multiplies its cost. The exact after-before resource difference
+is therefore the sum over changed objects alone. This equality does not remove
+owner/identity checks or permit spending leases acquired by another move in the
+same atomic transfer. A naive scalar running total cannot express these duties.
+
+The implementation now stores each object and its full immutable lease map in
+one leaf of a complete ordered, versioned index. Every immutable node derives
+its augmentation from its own weight and children; local path reconstruction
+preserves the invariant without trusting an external total. A second index
+preserves insertion order, which sorted serialization alone would erase as an
+observable distinction. Detached maps and immutable event logs retain every old
+value/event while sharing unchanged structure. The existing CUDA frame-extent
+writer was found and moved through the same checked leaf construction. No new
+semantic action, source, cache-validity bit or certificate class is introduced.
+
+The primitive passes 14,400 insertion/deletion paths, 711 complete small-state
+decisions and 34 allocation-failure controls. The actual ledger agrees with the
+previous source on 30,720 decisions over 192 legally constructed lease states,
+including complete snapshots, ordering, peaks, events, refusal reasons and
+prepared continuations. Independent full-leaf scans recompute every aggregate.
+All 98 Runtime history pairs and six CPU tensor phase pairs agree; 35 ledger
+node failures and real host/target failures preserve the required prefixes.
+
+At 64 ordinary shared targets, all global map/event iteration is forbidden and
+execution still succeeds, retaining 781 live objects and 3,256 events while
+constructing 99,086 index nodes. Commit and CPU tensor-frame controls also pass
+the prohibition. The resulting O(T log T) bound concerns bounded local index
+work, not full learning/serialization/search or a measured wall-time gain.
+
+Nineteen complete existing CPU scripts pass. A historical storage AST gate is
+inapplicable: snapshot source had already changed before this work. Its original
+guard remains; its 33-frame byte/lease/failure controls pass separately. Old
+history/projection/admission audits retain their historical writers and receipts.
+The next decision needs actual full-vocabulary execution across optimizer units,
+then an honest complete-training budget assessment. No old trial is restarted,
+and relation/precision research stays closed.

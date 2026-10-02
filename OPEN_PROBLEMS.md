@@ -1,17 +1,16 @@
 # FP Open Problems
 
-The next ordinary-text obstruction is **complete growing-object transitions**.
-The [owned-prefix/admission proof](theory/proofs/OWNED_PREFIX_ADMISSION.md) now
-eliminates source-prefix copies/checks and discarded ingress ledger clones,
-with 4,000 exact admissions, 98 full-state pairs, failure/CPU tensor controls
-and seven full regression suites passing. Yet live-object residency scans,
-object/ref-map copies, buffer filtering and ingress identity-map publication
-still traverse growing state. The 64-target control retains 765,780 residency
-object visits. Derive an owned transition representation with complete checks,
-sharing/retirement accounting and failure prefixes; do not simply trust a cached
-total or erase history. A new isolated prefix timing pair is not selected.
-The objective remains an affordable complete ordinary next-token learning/report
-result, with no new relation, precision, codec or baseline branch.
+The next ordinary-text question is **the actual resource budget after complete
+local transitions**. The [role-support law and immutable representation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
+now remove growing whole-map scans/copies while retaining all entries/events,
+order, accounting and failure obligations. 30,720 ledger decisions, 98 complete
+history pairs, failure/CPU tensor controls and nineteen full CPU scripts pass.
+The 64-target control forbids global map/log iteration; commit/frame controls
+pass too. Its O(T log T) index-work bound does not cover numerical execution,
+canonical streams, requested diagnostics or compiler search. Obtain bounded
+full-vocabulary evidence spanning real optimizer units before another full-
+training budget decision. Do not infer a speedup from node counts, replay old
+journals, reopen relation/precision, or substitute a shorter trained score.
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 has a reachable-state proof and exact CPU/full-V correctness qualification.

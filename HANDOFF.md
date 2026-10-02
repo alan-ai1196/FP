@@ -1,6 +1,22 @@
 # FP Handoff
 
-## Current execution state (2026-10-02)
+## Current execution state (2026-10-03)
+
+**Complete local transitions: exact law and scoped CPU implementation qualified.**
+The [role-support law and implementation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
+replace repeated whole-object scans/copies with immutable ordered map versions.
+Each complete object/lease leaf determines its exact global and per-role cost;
+all historical events and insertion order remain. Allocation, sharing, release,
+transfer, ingress, buffer publication and existing frame relocation use the
+same owned invariant. 30,720 ledger decisions, 98 paired complete histories,
+node/host failures, six paired CPU tensor histories and nineteen complete CPU
+regression scripts pass. The 64-target control forbids all global map/log
+iteration while retaining 781 live objects and 3,256 events; commit/frame controls
+also pass that prohibition. For fixed bounded local updates, this bookkeeping
+has an O(T log T) index-work bound. No whole-runtime complexity, speed, actual
+CUDA or model result follows. The next evidence is a bounded complete ordinary-
+text resource diagnosis spanning actual optimizer units, then a full-budget
+decision. Do not reopen relation/precision or replay any closed journal.
 
 **Owned prefix/admission refinement: exact CPU qualification complete.**
 The [joint refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md) removes repeated
@@ -12,11 +28,9 @@ All old records, resource history, work debits and public diagnostics remain.
 prefix failures, six CPU tensor histories/129 full bodies and seven complete
 regression scripts pass. At 64 shared targets, source copies/checks and ingress
 history clones vanish; all 765,780 residency object visits remain.
-This is no timing gain, actual CUDA or whole release. Do not launch another
-isolated prefix timing pair. The next obstruction is the remaining complete
-growing-object transition: residency scans, object/ref-map copies, buffer
-filtering and ingress identity copies. Address their common owned-state
-invariant and failure obligations before a new ordinary-text budget claim.
+This is no timing gain, actual CUDA or whole release. Its remaining complete
+growing-object transition is addressed by the subsequent local-transition
+refinement above. No isolated single-projection timing pair is selected.
 Ordinary next-token training/reporting remains the objective; relation/precision
 and the closed cost journals stay closed.
 

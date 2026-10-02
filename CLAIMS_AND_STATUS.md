@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Complete local resource transitions: EXACT ROLE-SUPPORT LAW; SCOPED CPU PASS.**
+For complete owned leaves, global cost counts each object once and role cost
+counts it once per role with a positive lease. The [local-change equality and
+immutable-map invariant](theory/proofs/OWNED_LOCAL_TRANSITIONS.md) give exact cap
+decisions without rescanning unchanged objects. All entries/events and mapping
+order remain retained. 30,720 decisions, 98 complete history pairs, failure and
+CPU tensor controls agree with the prior source; nineteen full scoped regression
+scripts pass. Ordinary map/log iterations are zero in precommit, commit and CPU
+frame controls. Bounded local bookkeeping has an O(T log T) index-work upper
+bound; this is no full-runtime bound, timing gain, actual CUDA/model claim or
+arbitrary private-mutation tolerance. No new certificate class is introduced.
+
 **Owned prefix/admission: REACHABLE-STATE REFINEMENT; EXACT FINITE CPU PASS.**
 The [proof](theory/proofs/OWNED_PREFIX_ADMISSION.md) derives the complete revealed
 prefix from owned transitions and removes repeated validation without discarding
@@ -7,7 +19,8 @@ old records. Ingress preflight uses the actual allocator's checks without making
 an unused successor ledger; actual allocation remains mandatory. Exact admission
 decisions, all 98 paired complete histories and four failure pairs agree; six CPU
 tensor histories/129 bodies and seven complete regression scripts pass. This
-removes three quadratic traversals, while full object scans/copies remain.
+removed three quadratic traversals at that source; the subsequent complete
+local-transition refinement addresses its remaining object scans/copies.
 The source reader now makes exactly sum(min(i,L)) old-target reads over T events;
 all original conservative debits remain. No general private-corruption tolerance,
 equal host-failure timing, linear full Runtime, speedup, actual CUDA qualification

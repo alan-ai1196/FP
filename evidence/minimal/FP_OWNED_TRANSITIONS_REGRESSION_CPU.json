@@ -1,0 +1,166 @@
+{
+  "status": "PASS_OWNED_TRANSITIONS_REGRESSION_CPU",
+  "scope": "Complete existing scoped scripts on the candidate committed with this receipt; assertions enabled, no original evidence overwritten. This is no actual CUDA or whole release.",
+  "base_source": "a694441",
+  "production_source_unchanged_during_checks": true,
+  "checks": [
+    {
+      "script": "scripts/audit_reference_construction.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_events.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_search.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_profiles.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_paired_cpu_persistence.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_owned_token_learner.py",
+      "status": "PASS_OWNED_COMPLETE_TOKEN_REFERENCE",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_indexed_token_sources.py",
+      "status": "PASS_OWNED_INDEXED_TOKEN_SOURCES",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_context_ingress.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_run.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_public_value_boundary.py",
+      "status": "PASS_PUBLIC_VALUE_BOUNDARY_CPU",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_shared_token_retention.py",
+      "status": "PASS_EXACT_SHARED_NATIVE_TOKEN_RETENTION",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_shared_cuda_retention.py",
+      "status": "PASS_EXACT_SHARED_CUDA_FRAME_RETENTION",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_token_reporting.py",
+      "status": "PASS_EXACT_AND_CPU_CONTROL",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_native_text_reporting.py",
+      "status": "PASS_OWNED_NATIVE_TEXT_REPORT_CONTROL",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_canonical_images.py",
+      "status": "PASS_OWNED_CANONICAL_IMAGES_CPU",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_token_base_facts.py",
+      "status": "PASS_OWNED_TOKEN_BASE_FACTS_CPU",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_cpu_installation.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_host_allocation_failure.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_owned_token_workspaces.py",
+      "status": "PASS_OWNED_TOKEN_WORKSPACE_ARCHIVES_CPU",
+      "exit_code": 0,
+      "complete_script": true
+    }
+  ],
+  "failures": {},
+  "historical_source_gate": {
+    "script": "scripts/audit_cuda_frame_storage.py",
+    "observed_status": "FAILED",
+    "reason": "The legacy unchanged-snapshot/constructor premise is historical. The snapshot AST already differs from b0c409c at parent a694441; it is unchanged by this candidate. Keep the original guard and receipt intact; run the existing operational frame checks separately.",
+    "historical_source": "b0c409c",
+    "original_journal_unchanged": true
+  },
+  "current_frame_checks": {
+    "status": "EXACT_FRAME_PRESERVATION_PASS",
+    "frames": 33,
+    "full_frame_bytes_compared": 17904,
+    "all_256_byte_values_exercised": true,
+    "prior_snapshot_unchanged_after_next_frame": true,
+    "new_snapshot_reuses_every_old_immutable_frame": true,
+    "pre_copy_refusals": [
+      "copy-residency",
+      "copy-work"
+    ],
+    "both_actual_buffers_remain_owned_after_faults": [
+      "prepare-release:ResourceExceeded",
+      "prepare-release:RuntimeError",
+      "prepare-router:ResourceExceeded",
+      "prepare-router:RuntimeError"
+    ],
+    "no_model_execution_or_certificate": true
+  },
+  "historical_reproduction": [
+    {
+      "script": "scripts/audit_owned_admission.py",
+      "exit_code": 0,
+      "original_receipt_unchanged": true
+    },
+    {
+      "script": "scripts/audit_ledger_projection.py",
+      "exit_code": 0,
+      "original_receipt_unchanged": true
+    },
+    {
+      "script": "scripts/audit_native_history_work.py",
+      "exit_code": 0,
+      "original_receipt_unchanged": true
+    }
+  ]
+}

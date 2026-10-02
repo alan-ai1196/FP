@@ -301,4 +301,8 @@ def main():
 if __name__ == '__main__':
     if not __debug__:
         raise RuntimeError('assertions are required')
-    main()
+    # This historical claim compares the original full-scanning ledger ports;
+    # later immutable-map accounting has its own complete transition audit.
+    from owned_transition_audit_support import historical_ledger
+    with historical_ledger('a694441'):
+        main()

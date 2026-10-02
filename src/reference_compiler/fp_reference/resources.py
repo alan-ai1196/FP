@@ -7,9 +7,10 @@ for feasibility, construction, persistence or installation.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Mapping
+from collections.abc import Mapping
 
 from .core import ContractError, freeze_data, natural
+from .owned_maps import OwnedMap, OwnedLog
 from .program import name
 
 
@@ -70,27 +71,64 @@ class ResourceEvent:
     note: str
 
 
+@dataclass(frozen=True, slots=True)
+class _Lease:
+    spec: ObjectSpec
+    refs: Mapping[str, int]
+
+
+class _LeaseView(Mapping):
+    """Read-only field projection of one complete owned lease-map version."""
+    __slots__ = ('_data', '_field')
+
+    def __init__(self, data, field):
+        self._data, self._field = data, field
+
+    def __len__(self):
+        return len(self._data)
+
+    def __iter__(self):
+        return iter(self._data)
+
+    def __getitem__(self, key):
+        return getattr(self._data[key], self._field)
+
+    def items(self):
+        return ((key, getattr(value, self._field)) for key, value in self._data.items())
+
+    def values(self):
+        return (getattr(value, self._field) for value in self._data.values())
+
+
 class ResourceLedger:
     def __init__(self, limits: ResourceLimits):
         if type(limits) is not ResourceLimits:
             raise ContractError('immutable resource limits required')
         self._limits = limits
-        self._owners: dict[str, str] = {}
-        self._closed_owners: set[str] = set()
-        self._objects: dict[str, ObjectSpec] = {}
-        self._refs: dict[str, dict[str, int]] = {}
-        self._retired: set[str] = set()
+        self._owners = OwnedMap()
+        self._closed_owners = OwnedMap()
+        self._leases = OwnedMap(width=len(limits.global_residency)*(1+len(limits.role_residency)))
+        self._retired = OwnedMap()
         self._spent = {role: {key: 0 for key in caps} for role, caps in limits.role_cumulative.items()}
         self._peak = {key: 0 for key in limits.global_residency}
         self._role_peak = {role: {key: 0 for key in caps} for role, caps in limits.role_residency.items()}
-        self._events: list[ResourceEvent] = []
+        self._events = OwnedLog()
+
+    @property
+    def _objects(self):
+        return _LeaseView(self._leases, 'spec')
+
+    @property
+    def _refs(self):
+        return _LeaseView(self._leases, 'refs')
 
     @property
     def limits(self):
         return self._limits
 
     def _event(self, action, owner, objects=(), debit=(), note=''):
-        self._events.append(ResourceEvent(len(self._events), action, owner, tuple(objects), tuple(debit), str(note)))
+        event = ResourceEvent(len(self._events), action, owner, tuple(objects), tuple(debit), str(note))
+        self._events = self._events.appended(event)
 
     def register_owner(self, owner: str, role: str):
         name(owner, 'resource owner')
@@ -105,6 +143,18 @@ class ResourceLedger:
         return self._owners[owner]
 
     def _residency(self, objects, refs):
+        if (type(objects) is _LeaseView and type(refs) is _LeaseView
+                and objects._field == 'spec' and refs._field == 'refs'
+                and objects._data is refs._data):
+            # The same complete leaves establish global and role-support
+            # weights. Every owned mutation prepares their exact augmentation;
+            # no externally supplied summary or validity flag is accepted.
+            dimensions = tuple(self._limits.global_residency)
+            width, values = len(dimensions), objects._data.total
+            total = dict(zip(dimensions, values[:width]))
+            roles = {role: dict(zip(dimensions, values[(i+1)*width:(i+2)*width]))
+                     for i, role in enumerate(self._limits.role_residency)}
+            return total, roles
         total = {key: 0 for key in self._limits.global_residency}
         roles = {role: dict.fromkeys(total, 0) for role in self._limits.role_residency}
         for key, spec in objects.items():
@@ -116,6 +166,19 @@ class ResourceLedger:
                 for role in owner_roles:
                     roles[role][dimension] += size
         return total, roles
+
+    def _set_lease(self, proposed, spec, refs):
+        if not refs or any(n <= 0 for n in refs.values()):
+            raise ContractError('physical object without a positive live lease')
+        owner_roles = {self._owner(owner) for owner in refs}
+        dimensions = tuple(self._limits.global_residency)
+        sizes = tuple(spec.residency[key] for key in dimensions)
+        weights = sizes + tuple(size if role in owner_roles else 0
+            for role in self._limits.role_residency for size in sizes)
+        proposed.set_weighted(spec.object_id, _Lease(spec, freeze_data(refs)), weights)
+
+    def _checked(self, proposed):
+        return self._check_residency(_LeaseView(proposed, 'spec'), _LeaseView(proposed, 'refs'))
 
     def _check_residency(self, objects, refs):
         total, roles = self._residency(objects, refs)
@@ -141,36 +204,36 @@ class ResourceLedger:
         There is deliberately no implicit release of the incumbent. Prior
         charged profiling/build work is never rolled back by a failed reserve.
         """
-        proposed, refs, ids, total, roles = self._allocation_plan(owner, objects)
-        self._objects, self._refs = proposed, refs
+        proposed, ids, total, roles = self._allocation_plan(owner, objects)
+        self._leases = proposed
         self._record_peak(total, roles)
         self._event('allocate', owner, ids, note=note)
 
     def _allocation_plan(self, owner, objects):
         """The same complete admission checks for preflight and publication."""
         self._owner(owner)
-        proposed, refs = dict(self._objects), {key: dict(v) for key, v in self._refs.items()}
+        proposed = self._leases.copy()
         ids = []
         for spec in objects:
             if type(spec) is not ObjectSpec or set(spec.residency) != set(self._limits.global_residency):
                 raise ContractError('physical object has an incomplete resource shape')
             if spec.object_id in proposed or spec.object_id in self._retired:
                 raise ContractError('physical object identity cannot be overwritten or recycled')
-            proposed[spec.object_id] = spec
-            refs[spec.object_id] = {owner: 1}
+            self._set_lease(proposed, spec, {owner: 1})
             ids.append(spec.object_id)
-        total, roles = self._check_residency(proposed, refs)
-        return proposed, refs, ids, total, roles
+        total, roles = self._checked(proposed)
+        return proposed, ids, total, roles
 
     def acquire(self, owner: str, object_id: str, *, count: int = 1):
         self._owner(owner)
         natural(count, 'object reference count', positive=True)
         if object_id not in self._objects:
             raise ContractError('cannot share a nonexistent or freed physical object')
-        refs = {key: dict(v) for key, v in self._refs.items()}
-        refs[object_id][owner] = refs[object_id].get(owner, 0)+count
-        total, roles = self._check_residency(self._objects, refs)
-        self._refs = refs
+        proposed, refs = self._leases.copy(), dict(self._refs[object_id])
+        refs[owner] = refs.get(owner, 0)+count
+        self._set_lease(proposed, self._objects[object_id], refs)
+        total, roles = self._checked(proposed)
+        self._leases = proposed
         self._record_peak(total, roles)
         self._event('acquire', owner, (object_id,), (('references', count),))
 
@@ -179,15 +242,19 @@ class ResourceLedger:
         natural(count, 'object reference count', positive=True)
         if object_id not in self._refs or self._refs[object_id].get(owner, 0) < count:
             raise ContractError('release exceeds this owner\'s actual references')
-        remaining = self._refs[object_id][owner]-count
+        proposed, retired = self._leases.copy(), self._retired.copy()
+        refs = dict(self._refs[object_id])
+        remaining = refs[owner]-count
         if remaining:
-            self._refs[object_id][owner] = remaining
+            refs[owner] = remaining
         else:
-            del self._refs[object_id][owner]
-        if not self._refs[object_id]:
-            del self._refs[object_id]
-            del self._objects[object_id]
-            self._retired.add(object_id)
+            del refs[owner]
+        if refs:
+            self._set_lease(proposed, self._objects[object_id], refs)
+        else:
+            del proposed[object_id]
+            retired[object_id] = None
+        self._leases, self._retired = proposed, retired
         self._event('release', owner, (object_id,), (('references', count),))
 
     def release_owner(self, owner: str):
@@ -201,28 +268,29 @@ class ResourceLedger:
 
     def release_many(self, releases: tuple[tuple[str, str, int], ...]):
         """Prevalidate all successor-publication releases before changing leases."""
-        objects = dict(self._objects)
-        refs = {key: dict(value) for key, value in self._refs.items()}
-        retired = set(self._retired)
+        proposed, retired = self._leases.copy(), self._retired.copy()
         for owner, object_id, count in releases:
             self._owner(owner)
             natural(count, 'object reference count', positive=True)
-            if object_id not in refs or refs[object_id].get(owner, 0) < count:
+            if object_id not in proposed or proposed[object_id].refs.get(owner, 0) < count:
                 raise ContractError('release batch exceeds an actual owned reference')
-            refs[object_id][owner] -= count
-            if refs[object_id][owner] == 0:
-                del refs[object_id][owner]
-            if not refs[object_id]:
-                del refs[object_id]
-                del objects[object_id]
-                retired.add(object_id)
-        self._objects, self._refs, self._retired = objects, refs, retired
+            before = proposed[object_id]
+            refs = dict(before.refs)
+            refs[owner] -= count
+            if refs[owner] == 0:
+                del refs[owner]
+            if refs:
+                self._set_lease(proposed, before.spec, refs)
+            else:
+                del proposed[object_id]
+                retired[object_id] = None
+        self._leases, self._retired = proposed, retired
         for owner, object_id, count in releases:
             self._event('release', owner, (object_id,), (('references', count),))
 
     def close_owner(self, owner: str):
         self.release_owner(owner)
-        self._closed_owners.add(owner)
+        self._closed_owners[owner] = None
         self._event('close_owner', owner)
 
     def prepare_transfer(self, moves: tuple[tuple[str, str, str, int], ...],
@@ -255,24 +323,26 @@ There is no resource or installation authority outside the owning Runtime.
             debits[key] = debits.get(key, 0)+count
         if any(self._refs.get(obj, {}).get(owner, 0) < count for (owner, obj), count in debits.items()):
             raise ContractError('atomic transfer/release exceeds original owned references')
+        changed = {obj: dict(self._refs[obj]) for _, obj in debits}
         for (owner, obj), count in debits.items():
-            proposed._refs[obj][owner] -= count
-            if not proposed._refs[obj][owner]:
-                del proposed._refs[obj][owner]
+            changed[obj][owner] -= count
+            if not changed[obj][owner]:
+                del changed[obj][owner]
         for source, destination, obj, count in moves:
-            proposed._refs[obj][destination] = proposed._refs[obj].get(destination, 0)+count
-        for obj in tuple(proposed._refs):
-            if not proposed._refs[obj]:
-                del proposed._refs[obj]
-                del proposed._objects[obj]
-                proposed._retired.add(obj)
+            changed[obj][destination] = changed[obj].get(destination, 0)+count
+        for obj, refs in changed.items():
+            if refs:
+                proposed._set_lease(proposed._leases, self._objects[obj], refs)
+            else:
+                del proposed._leases[obj]
+                proposed._retired[obj] = None
         if len(set(close_owners)) != len(close_owners):
             raise ContractError('duplicate owner closure in atomic transfer')
         for owner in close_owners:
             self._owner(owner)
             if any(owner in refs for refs in proposed._refs.values()):
                 raise ContractError('atomic owner closure would discard a retained lease')
-            proposed._closed_owners.add(owner)
+            proposed._closed_owners[owner] = None
         total, roles = proposed._check_residency(proposed._objects, proposed._refs)
         proposed._record_peak(total, roles)
         proposed._event('atomic_transfer_begin', 'machine')
@@ -301,7 +371,7 @@ There is no resource or installation authority outside the owning Runtime.
         self._allocation_plan(owner, objects)
 
     def _require_complete(self):
-        fields = {'_limits', '_owners', '_closed_owners', '_objects', '_refs', '_retired',
+        fields = {'_limits', '_owners', '_closed_owners', '_leases', '_retired',
                   '_spent', '_peak', '_role_peak', '_events'}
         if type(self) is not ResourceLedger or set(self.__dict__) != fields:
             raise ContractError('physical preparation needs the complete registered ledger state')
@@ -310,16 +380,29 @@ There is no resource or installation authority outside the owning Runtime.
         self._require_complete()
         proposed = object.__new__(ResourceLedger)
         proposed.__dict__ = dict(self.__dict__)
-        proposed._owners = dict(self._owners)
-        proposed._closed_owners = set(self._closed_owners)
-        proposed._objects = dict(self._objects)
-        proposed._refs = {key: dict(refs) for key, refs in self._refs.items()}
-        proposed._retired = set(self._retired)
+        proposed._owners = self._owners.copy()
+        proposed._closed_owners = self._closed_owners.copy()
+        proposed._leases = self._leases.copy()
+        proposed._retired = self._retired.copy()
         proposed._spent = {key: dict(value) for key, value in self._spent.items()}
         proposed._peak = dict(self._peak)
         proposed._role_peak = {key: dict(value) for key, value in self._role_peak.items()}
-        proposed._events = list(self._events)
+        # Every old immutable event remains reachable from both roots. A later
+        # append publishes only to its own ledger's event pointer.
+        proposed._events = self._events
         return proposed
+
+    def _shrink_object(self, spec):
+        """Existing trusted frame relocation; no new object/install authority."""
+        prior = self._objects[spec.object_id]
+        if (type(spec) is not ObjectSpec or set(spec.residency) != set(prior.residency)
+                or spec.provenance != prior.provenance
+                or any(spec.residency[key] > prior.residency[key] for key in prior.residency)):
+            raise ContractError('owned relocation must preserve identity/provenance and decrease extent')
+        proposed = self._leases.copy()
+        self._set_lease(proposed, spec, self._refs[spec.object_id])
+        self._checked(proposed)
+        self._leases = proposed
 
     def charge_work(self, role: str, debit: Mapping[str, int], *, note=''):
         if role not in self._spent:

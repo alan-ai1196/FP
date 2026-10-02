@@ -148,6 +148,7 @@ if __name__ == '__main__':
     # Reproduce that exact method, including its existing public/host guard.
     from ledger_projection_audit_support import original_observe
     from owned_admission_audit_support import historical_prediction_ports
-    with historical_prediction_ports('364934d'), \
+    from owned_transition_audit_support import historical_ledger
+    with historical_ledger('a694441'), historical_prediction_ports('364934d'), \
             patch.object(ReferenceCompilerRuntime, 'observe', original_observe()):
         main()

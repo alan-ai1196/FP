@@ -1,0 +1,52 @@
+{
+  "status": "PASS_OWNED_TRANSITIONS_CPU",
+  "baseline_source": "a694441",
+  "scope": "Exact complete-ledger/Runtime transition controls; no corpus/device timing.",
+  "ledger_decisions": {
+    "reachable_lease_states": 192,
+    "exact_transition_decisions": 30720,
+    "accepted": 8149,
+    "refused": 22571,
+    "complete_snapshots_order_peaks_events_and_errors_equal": true,
+    "every_current_total_independently_scanned": true,
+    "prepared_forks_leave_predecessors_unchanged": true
+  },
+  "histories": {
+    "paired_complete_histories": 98,
+    "targets_per_arm": 512,
+    "complete_results_states_bytes_and_insertion_order_equal": true
+  },
+  "no_global_scan": {
+    "targets": 64,
+    "global_map_or_event_iterations": 0,
+    "constructed_index_nodes": 99086,
+    "retained_objects": 781,
+    "retained_events": 3256,
+    "all_physical_buffers_and_exact_leaf_sums_checked": true
+  },
+  "atomic_failures": {
+    "ledger_node_allocation_failures": 35,
+    "unchanged_complete_predecessors": true,
+    "paired_common_event_failure_equal": true,
+    "real_runtime_node_failures": 2,
+    "actual_revealed_target_and_terminal_authority_preserved": true
+  },
+  "cpu_phases": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "checked_primitive_words": 50279,
+    "complete_phase_bytes": 5774243,
+    "frames_learners_reports_reads_allocations_retirements_equal": true,
+    "actual_cuda_execution": false
+  },
+  "commits_and_frames_without_scans": {
+    "native_targets": 16,
+    "native_optimizer_commits": 8,
+    "native_representations": 2,
+    "cpu_tensor_targets": 4,
+    "cpu_tensor_phases": 11,
+    "full_cpu_tensor_frame_bytes_checked": 524789,
+    "global_map_or_event_iterations": 0,
+    "actual_cuda_execution": false
+  }
+}

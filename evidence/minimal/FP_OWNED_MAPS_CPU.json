@@ -1,0 +1,24 @@
+{
+  "status": "PASS_OWNED_MAPS_CPU",
+  "scope": "Exact ordered-version, augmentation and allocation-failure controls.",
+  "exhaustive": {
+    "all_five_key_insertion_deletion_paths": 14400,
+    "permutation_complete_state_checks": 72600,
+    "ordered_three_key_two_value_states": 79,
+    "exact_state_action_decisions": 711,
+    "both_indices_weights_and_insertion_order_checked": true
+  },
+  "versions_and_cost": {
+    "operations": 4096,
+    "retained_versions": 64,
+    "final_entries": 771,
+    "constructed_index_nodes": 82011,
+    "maximum_nodes_per_operation": 31,
+    "exact_logarithmic_height_bound_and_node_work_bound_pass": true
+  },
+  "failures": {
+    "atomic_node_and_version_failures": 34,
+    "all_predecessor_roots_unchanged": true,
+    "complete_immutable_log_versions": 1024
+  }
+}

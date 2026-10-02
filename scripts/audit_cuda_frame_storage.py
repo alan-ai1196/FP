@@ -81,7 +81,8 @@ def seal(root, label):
     root._seal_cuda_frame(label, origin='construction', candidate=root._deployed_id)
 
 
-def exact_audit():
+def frame_checks():
+    """Current byte/lease/refusal controls, without a historical source claim."""
     root = fixture()
     frames, compared, seen = [], 0, set()
     for ordinal in range(32):
@@ -154,9 +155,17 @@ def exact_audit():
     return {'status': 'EXACT_FRAME_PRESERVATION_PASS', 'frames': len(frames)+1,
             'full_frame_bytes_compared': compared+1024, 'all_256_byte_values_exercised': True,
             'prior_snapshot_unchanged_after_next_frame': True, 'new_snapshot_reuses_every_old_immutable_frame': True,
-            'unchanged_snapshot_source': source_check(), 'pre_copy_refusals': refused,
+            'pre_copy_refusals': refused,
             'both_actual_buffers_remain_owned_after_faults': failures,
             'no_model_execution_or_certificate': True}
+
+
+def exact_audit():
+    # The closed storage experiment additionally required unchanged historical
+    # constructor/snapshot source. Keep that original claim and guard intact.
+    result = frame_checks()
+    result['unchanged_snapshot_source'] = source_check()
+    return result
 
 
 def host_worker(mode):

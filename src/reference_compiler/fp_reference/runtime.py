@@ -18,6 +18,7 @@ from .public_values import detached
 from .data_usage import (DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources,
     source_mapping, indexed_source_read_work)
 from .token_sources import TokenAtomFamily, TokenContext
+from .owned_maps import OwnedMap
 from .token_execution import (TokenProgram, TokenInitializer, TokenLearner, TokenState,
     TokenRangeBound, TokenProbabilities, TokenEvaluation, TokenReferenceMachine)
 from . import token_reporting
@@ -547,13 +548,13 @@ class ReferenceCompilerRuntime:
         self._next_install = 0
         self._install_attempts: list[CpuInstallAttempt] = []
         self._install_receipts: list[CpuInstallReceipt] = []
-        self._ingress_identities: dict[str, IngressIdentity] = {}
+        self._ingress_identities = OwnedMap()
         self._active_ingress: str | None = None
         self._next_candidate = 0
         self._programs: dict[str, Program] = {}
         self._retained_programs: dict[str, str] = {}
         self._candidates: dict[str, ConstructedState] = {}
-        self._buffers: dict[str, bytes | bytearray | memoryview] = {}
+        self._buffers = OwnedMap()
         self._attempts: list[tuple[str, str, str]] = []
         self._deployed_id = ''
         self._event_phase = 'idle'
@@ -884,7 +885,11 @@ class ReferenceCompilerRuntime:
     def _release_owner(self, owner: str):
         self._ledger.close_owner(owner)
         live = self._ledger.snapshot()['objects']
-        self._buffers = {key: value for key, value in self._buffers.items() if key in live}
+        buffers = self._buffers.copy()
+        for key in self._buffers:
+            if key not in live:
+                del buffers[key]
+        self._buffers = buffers
 
     def _range(self, program: Program, theta, label: str) -> tuple[RangeBound, ...]:
         if type(self._machine) is TokenReferenceMachine:
@@ -1200,7 +1205,7 @@ class ReferenceCompilerRuntime:
         # immutable payload under the same frame label and retires the
         # temporary extent. No local retains the old mutable buffer.
         ledger = self._ledger.prepare_transfer((), ((self._data_owner, copy_id, 1),))
-        buffers = dict(self._buffers)
+        buffers = self._buffers.copy()
         buffers[label] = buffers.pop(copy_id)
         next_root = dict(self.__dict__)
         next_root.update(_ledger=ledger, _router=CostRouter(ledger, self._contract.work_roles),
@@ -1720,7 +1725,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             allocated_ids = (body.object_id, control.object_id, metadata.spec.object_id)
             self._allocate(self._data_owner, (PackedObject(body, bytes(spec.capacity)),
                 PackedObject(control, control_payload(0, 'RECEIVING', spec)), metadata))
-            identities = dict(self._ingress_identities)
+            identities = self._ingress_identities.copy()
             identities[ingress_id] = identity
             next_root = dict(self.__dict__)
             next_root.update(_ingress_identities=identities, _active_ingress=ingress_id,
@@ -2000,12 +2005,17 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                              for s in staged for object_id in self._candidates[s.candidate_id].object_ids[1:]
                              if object_id not in s.object_ids)
             self._ledger.release_many(releases)
-            # Keep snapshot's complete live-lease check. This internal use
-            # needs only membership, not a freshly frozen copy of every past
-            # resource event. All history and public diagnostics stay owned.
+            # The complete owned lease-map augmentation retains the exact
+            # global/role residency invariant. Only this release batch can
+            # remove prior buffers; all earlier successful allocation/retention
+            # phases keep their paid buffer/lease correspondence.
             self._ledger._residency(self._ledger._objects, self._ledger._refs)
             live = self._ledger._objects
-            self._buffers = {key: value for key, value in self._buffers.items() if key in live}
+            buffers = self._buffers.copy()
+            for _, key, _ in releases:
+                if key not in live:
+                    buffers.pop(key, None)
+            self._buffers = buffers
             self._candidates = candidate_successors
             if self._cuda is not None:
                 self._cuda.current = cuda_current
@@ -3259,7 +3269,10 @@ after all fallible construction, checks and physical preparation complete.
                 'prepared_cuda_install_receipt' if cuda else 'prepared_cpu_install_receipt', receipt, self._chi),))
             ledger = self._ledger.prepare_transfer(tuple(moves), tuple(releases), close)
             live = ledger.snapshot()['objects']
-            buffers = {key: value for key, value in self._buffers.items() if key in live}
+            buffers = self._buffers.copy()
+            for key in self._buffers:
+                if key not in live:
+                    del buffers[key]
             if set(buffers) != set(live):
                 raise ContractError('prepared installation has ledger objects without actual retained buffers')
             # Only role ownership changes. No learner numerical buffer is

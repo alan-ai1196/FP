@@ -1,6 +1,18 @@
 # FP Implementation Status
 
-## Current token execution boundary (2026-10-02)
+## Current token execution boundary (2026-10-03)
+
+The [complete local-transition refinement](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
+now uses immutable ordered map versions and exact role-support augmentation for
+ledger, buffer and ingress updates. All full objects/leases, insertion order,
+peaks, work and historical events remain. 30,720 ledger decisions and 98 paired
+histories agree with `a694441`; node/host failures, six CPU tensor phase pairs
+and nineteen complete scoped CPU scripts pass. Successful ordinary controls,
+including commits and CPU tensor frame relocation, perform no global map/log
+iteration. Historical frame-source identity is not reissued; its unchanged
+operational byte checks pass separately. O(T log T) covers bounded local index
+updates, not the complete learner/serializer/Compiler. No timing, actual CUDA,
+whole release or affordable full-training result is claimed.
 
 The [owned-prefix/admission refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md)
 now removes ordinary source-prefix copies/scans and unused full-ledger ingress
@@ -10,9 +22,8 @@ work charges, and reruns the shared complete checker at actual allocation.
 six CPU tensor histories/129 full phase bodies and seven complete regression
 scripts pass. Full live-object/ref-map scans/copies and buffer/ingress-map
 publication work remain; 64 shared targets still require 765,780 residency
-object visits in this implementation. No measured speed, actual CUDA, whole
-release or full training budget is claimed. The next work is that complete
-growing-state transition, not another isolated prefix timing pair.
+object visits at that source. The subsequent complete local-transition
+refinement removes those scans; neither result establishes a wall-time budget.
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 now removes internal full-diagnostic construction while retaining exactly the

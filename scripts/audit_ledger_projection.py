@@ -177,5 +177,6 @@ if __name__ == '__main__':
         raise RuntimeError('assertions are required')
     # Isolate this prior projection from later ingress/source refinements.
     from owned_admission_audit_support import historical_prediction_ports
-    with historical_prediction_ports(BASELINE):
+    from owned_transition_audit_support import historical_ledger
+    with historical_ledger('a694441'), historical_prediction_ports(BASELINE):
         main()
