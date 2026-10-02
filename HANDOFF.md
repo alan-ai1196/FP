@@ -2,6 +2,19 @@
 
 ## Current execution state (2026-10-03)
 
+**Whole graph host lower: CPU PASS; one exact context census preregistered.**
+The [disjoint allocation proof](theory/proofs/OWNED_GRAPH_HOST_BOUND.md)
+now includes both resource indices, lazy metadata, event tuples, graph
+metadata and native source objects. Every term passes 52 complete-history
+controls without duplicate allocation credit; a separate parser control
+checks 767 non-small context references. A materialization witness prevents
+counting dictionaries created only by the observer. The remaining D/R terms
+need one [passive census](experiments/next_token/OWNED_GRAPH_CONTEXT_CENSUS_A1.md)
+of the original training prefix, registered at four GiB/180 seconds after
+4,368 exhaustive independent-oracle controls. It reads no validation data and
+constructs no learner. Corpus execution is pending; 96-GiB exclusion/fit is
+not yet established. Commit inputs/evidence before the exclusive launch.
+
 **Full ordinary-text budget: exact graph schedule checked; feasibility UNRESOLVED.**
 The [complete-schedule account](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md)
 requires at least 14,754,100 total nodes for the original full declaration,

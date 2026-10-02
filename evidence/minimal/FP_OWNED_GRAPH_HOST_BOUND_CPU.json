@@ -1,0 +1,27 @@
+{
+  "status": "PASS_OWNED_GRAPH_HOST_BOUND_CPU",
+  "scope": "Disjoint host-allocation lower for the qualified ordinary native graph.\n\nConditional on the installed CPython 3.12 x64 standard pymalloc realization.\nNo corpus, device, timing, universal memory optimum or completed model claim.",
+  "abi": {
+    "version": "3.12.9",
+    "pointer_bytes": 8,
+    "small_block_quantum": 16,
+    "actual_mem_obj_allocator": "pymalloc",
+    "standard_arena_allocator_is_an_explicit_premise": true
+  },
+  "observer_materialization_control": true,
+  "all_lower_terms_checked": true,
+  "finite_controls": {
+    "histories": 52,
+    "targets": 256,
+    "distinct_contexts": 208,
+    "non_small_context_references": 0,
+    "disjoint_selected_allocation_lower": 21335280
+  },
+  "parsed_context_control": {
+    "distinct_contexts": 2,
+    "non_small_reference_allocations": 767,
+    "disjoint_selected_allocation_lower": 57546
+  },
+  "corpus_census_performed": false,
+  "whole_host_exclusion_proved": false
+}

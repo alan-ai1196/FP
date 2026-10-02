@@ -12108,3 +12108,37 @@ exclusion. Whole-host/time feasibility remains UNRESOLVED. Keep the closed
 relation/precision and graph qualification branches closed; continue the full
 ordinary-text budget/learning question without a new representation menu,
 cap-only patch, blind full launch or shortened trained score.
+
+## 353. Account for complete graph metadata without observer-created storage (2026-10-03)
+
+The full ordinary-text budget review now derives a disjoint allocation lower
+covering both live resource indices, retired identities, linked resource
+events, event tuples, parsed graph metadata, complete sources and masters.
+The source schedule is unchanged, and zero changed-master commits supplies
+a conservative monotone lower. Forced graph nodes include only explicitly
+selected initial identities/contexts; no old initialization measurement is
+borrowed after hypothetically relaxing the insufficient qualification cap.
+
+A subtle observer effect matters: `vars` materializes a managed instance's
+otherwise lazy dictionary. The audit follows CPython 3.12.9's separate
+instance/value-array/dictionary allocation and checks GC referents without
+requesting those dictionaries. A witness demonstrates the effect. Actual
+MEM/OBJ pymalloc functions and the x64 16-byte small-block quantum are bound;
+the standard arena allocator remains an explicit realization premise.
+
+52 complete histories/256 targets check every term against distinct actual
+live allocations. A separate two-context parser control checks 767 fresh
+non-small child integers, including repeated equal IDs. No corpus or device
+is accessed. The remaining data-dependent terms are D distinct causal
+contexts and their guaranteed non-small parsed child occurrences R. At most
+257 scalar label IDs can be small, so subtracting the 257 largest label
+multiplicities across distinct contexts gives a conservative allocation-order-
+independent R. Repeated contexts are never silently treated as distinct.
+
+The exact context census passes 4,368 exhaustive independent tuple/Counter
+and adversarial small-ID controls. One original training-prefix-only job is
+preregistered at four GiB/180 seconds, with source identity matched to the
+completed baseline anchor, exclusive journal and no learner/Runtime/validation
+access. Inputs and controls must be committed before that launch. Until its
+receipt supplies D/R, whole-host exclusion and fit remain unresolved. No
+production, Foundation/ERC, semantic action, model score or old journal changes.

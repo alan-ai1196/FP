@@ -1,0 +1,14 @@
+{
+  "status": "PASS_OWNED_GRAPH_CONTEXT_CENSUS_CPU",
+  "abi": {
+    "version": "3.12.9",
+    "pointer_bytes": 8,
+    "small_block_quantum": 16,
+    "actual_mem_obj_allocator": "pymalloc",
+    "standard_arena_allocator_is_an_explicit_premise": true
+  },
+  "exhaustive_cases": 4368,
+  "independent_tuple_and_counter_oracle": true,
+  "adversarial_small_id_assignment_oracle": true,
+  "corpus_accessed": false
+}
