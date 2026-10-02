@@ -2,6 +2,18 @@
 
 ## Current execution state (2026-10-02)
 
+**Growing-history obstruction: source-derived quadratic laws; exact CPU audit passes.**
+[The actual ordinary path](theory/proofs/NATIVE_HISTORY_WORK.md) copies and checks
+T(T-1)/2 old observation rows separately, even at fixed context width. At the
+million-target declaration each is 549,755,289,600 visits. Mandatory ingress
+ledger clones and internal full-ledger snapshots give additional quadratic
+lower laws. This is source/count evidence, not elapsed-time extrapolation.
+All 34 paired CPU histories have identical complete snapshots with/without the
+observer. At 64 shared events, the path clones 104,446 event slots and snapshots
+107,584 event rows. The latter snapshot is used only for live object membership.
+Prove/test that narrow projection while preserving its live-lease check and
+every retained event; do not replace history with the current lag window.
+
 **Source-compiled canonical streams: original CPU cost pair passes; modest gain; CLOSED.**
 The [candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md) compiles the unchanged
 serializer and two stream consumers. Exact fragment/observation/refusal checks,

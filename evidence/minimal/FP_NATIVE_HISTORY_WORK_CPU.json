@@ -1,0 +1,241 @@
+{
+  "status": "PASS_NATIVE_HISTORY_WORK_CPU",
+  "scope": "Count actual whole-history visits without timing, corpus or device claims.\n\nWrappers observe existing calls and delegate unchanged. Complete snapshot\nequality against uninstrumented roots checks that the observer is passive.",
+  "paired_complete_histories": 34,
+  "entire_serialized_snapshots_equal": true,
+  "growth": [
+    {
+      "storage": "packed",
+      "targets": 64,
+      "unit": 512,
+      "initial_events": 12,
+      "initial_objects": 4,
+      "counts": {
+        "_detached_calls": 64,
+        "detached_event_slots": 25150,
+        "detached_object_slots": 14368,
+        "detached_ref_maps": 14368,
+        "detached_retired_ids": 2080,
+        "_residency_calls": 449,
+        "residency_object_rows": 103081,
+        "source_history_copied_slots": 2016,
+        "source_history_checked_rows": 2016,
+        "snapshot_calls": 64,
+        "snapshot_event_rows": 25856,
+        "snapshot_object_rows": 14816,
+        "snapshot_retired_ids": 2144
+      },
+      "callers": {
+        "_detached <- prepare_allocation": 64,
+        "_residency <- _check_residency": 385,
+        "snapshot <- observe": 64,
+        "_residency <- snapshot": 64
+      },
+      "checkpoints": [
+        {
+          "targets": 8,
+          "counts": {
+            "_detached_calls": 8,
+            "detached_event_slots": 454,
+            "detached_object_slots": 228,
+            "detached_ref_maps": 228,
+            "detached_retired_ids": 36,
+            "_residency_calls": 57,
+            "residency_object_rows": 1917,
+            "source_history_copied_slots": 28,
+            "source_history_checked_rows": 28,
+            "snapshot_calls": 8,
+            "snapshot_event_rows": 544,
+            "snapshot_object_rows": 284,
+            "snapshot_retired_ids": 44
+          },
+          "resource_events": 110,
+          "live_objects": 60
+        },
+        {
+          "targets": 16,
+          "counts": {
+            "_detached_calls": 16,
+            "detached_event_slots": 1678,
+            "detached_object_slots": 904,
+            "detached_ref_maps": 904,
+            "detached_retired_ids": 136,
+            "_residency_calls": 113,
+            "residency_object_rows": 6961,
+            "source_history_copied_slots": 120,
+            "source_history_checked_rows": 120,
+            "snapshot_calls": 16,
+            "snapshot_event_rows": 1856,
+            "snapshot_object_rows": 1016,
+            "snapshot_retired_ids": 152
+          },
+          "resource_events": 206,
+          "live_objects": 116
+        },
+        {
+          "targets": 32,
+          "counts": {
+            "_detached_calls": 32,
+            "detached_event_slots": 6430,
+            "detached_object_slots": 3600,
+            "detached_ref_maps": 3600,
+            "detached_retired_ids": 528,
+            "_residency_calls": 225,
+            "residency_object_rows": 26457,
+            "source_history_copied_slots": 496,
+            "source_history_checked_rows": 496,
+            "snapshot_calls": 32,
+            "snapshot_event_rows": 6784,
+            "snapshot_object_rows": 3824,
+            "snapshot_retired_ids": 560
+          },
+          "resource_events": 398,
+          "live_objects": 228
+        },
+        {
+          "targets": 64,
+          "counts": {
+            "_detached_calls": 64,
+            "detached_event_slots": 25150,
+            "detached_object_slots": 14368,
+            "detached_ref_maps": 14368,
+            "detached_retired_ids": 2080,
+            "_residency_calls": 449,
+            "residency_object_rows": 103081,
+            "source_history_copied_slots": 2016,
+            "source_history_checked_rows": 2016,
+            "snapshot_calls": 64,
+            "snapshot_event_rows": 25856,
+            "snapshot_object_rows": 14816,
+            "snapshot_retired_ids": 2144
+          },
+          "resource_events": 782,
+          "live_objects": 452
+        }
+      ]
+    },
+    {
+      "storage": "shared",
+      "targets": 64,
+      "unit": 512,
+      "initial_events": 54,
+      "initial_objects": 13,
+      "counts": {
+        "_detached_calls": 64,
+        "detached_event_slots": 104446,
+        "detached_object_slots": 25024,
+        "detached_ref_maps": 25024,
+        "detached_retired_ids": 12480,
+        "_residency_calls": 1921,
+        "residency_object_rows": 765780,
+        "source_history_copied_slots": 2016,
+        "source_history_checked_rows": 2016,
+        "snapshot_calls": 64,
+        "snapshot_event_rows": 107584,
+        "snapshot_object_rows": 25792,
+        "snapshot_retired_ids": 12864
+      },
+      "callers": {
+        "_detached <- prepare_allocation": 64,
+        "_residency <- _check_residency": 1857,
+        "snapshot <- observe": 64,
+        "_residency <- snapshot": 64
+      },
+      "checkpoints": [
+        {
+          "targets": 8,
+          "counts": {
+            "_detached_calls": 8,
+            "detached_event_slots": 1854,
+            "detached_object_slots": 440,
+            "detached_ref_maps": 440,
+            "detached_retired_ids": 216,
+            "_residency_calls": 241,
+            "residency_object_rows": 15100,
+            "source_history_copied_slots": 28,
+            "source_history_checked_rows": 28,
+            "snapshot_calls": 8,
+            "snapshot_event_rows": 2248,
+            "snapshot_object_rows": 536,
+            "snapshot_retired_ids": 264
+          },
+          "resource_events": 456,
+          "live_objects": 109
+        },
+        {
+          "targets": 16,
+          "counts": {
+            "_detached_calls": 16,
+            "detached_event_slots": 6910,
+            "detached_object_slots": 1648,
+            "detached_ref_maps": 1648,
+            "detached_retired_ids": 816,
+            "_residency_calls": 481,
+            "residency_object_rows": 53220,
+            "source_history_copied_slots": 120,
+            "source_history_checked_rows": 120,
+            "snapshot_calls": 16,
+            "snapshot_event_rows": 7696,
+            "snapshot_object_rows": 1840,
+            "snapshot_retired_ids": 912
+          },
+          "resource_events": 856,
+          "live_objects": 205
+        },
+        {
+          "targets": 32,
+          "counts": {
+            "_detached_calls": 32,
+            "detached_event_slots": 26622,
+            "detached_object_slots": 6368,
+            "detached_ref_maps": 6368,
+            "detached_retired_ids": 3168,
+            "_residency_calls": 961,
+            "residency_object_rows": 198580,
+            "source_history_copied_slots": 496,
+            "source_history_checked_rows": 496,
+            "snapshot_calls": 32,
+            "snapshot_event_rows": 28192,
+            "snapshot_object_rows": 6752,
+            "snapshot_retired_ids": 3360
+          },
+          "resource_events": 1656,
+          "live_objects": 397
+        },
+        {
+          "targets": 64,
+          "counts": {
+            "_detached_calls": 64,
+            "detached_event_slots": 104446,
+            "detached_object_slots": 25024,
+            "detached_ref_maps": 25024,
+            "detached_retired_ids": 12480,
+            "_residency_calls": 1921,
+            "residency_object_rows": 765780,
+            "source_history_copied_slots": 2016,
+            "source_history_checked_rows": 2016,
+            "snapshot_calls": 64,
+            "snapshot_event_rows": 107584,
+            "snapshot_object_rows": 25792,
+            "snapshot_retired_ids": 12864
+          },
+          "resource_events": 3256,
+          "live_objects": 781
+        }
+      ]
+    }
+  ],
+  "full_horizon_source_law": {
+    "targets": 1048576,
+    "copied_history_slots": 549755289600,
+    "checked_history_rows": 549755289600,
+    "extra_context_work_not_included": true,
+    "source_derivation_not_full_horizon_execution": true
+  },
+  "no_timing_throughput_or_full_budget_claim": true,
+  "no_actual_cuda_or_corpus": true,
+  "control_allowances": {
+    "reference_payload_bytes": 134217728,
+    "work_per_role": 1000000000000000
+  }
+}

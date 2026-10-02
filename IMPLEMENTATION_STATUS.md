@@ -2,6 +2,14 @@
 
 ## Current token execution boundary (2026-10-02)
 
+The [history-work audit](theory/proofs/NATIVE_HISTORY_WORK.md) establishes actual
+source-derived quadratic cumulative history copy/check, ledger-clone and
+internal ledger-diagnostic terms. Thirty-four paired CPU histories agree in
+complete serialized state under passive counters. This is no timing or model
+score. The narrow next candidate removes unused ledger-diagnostic construction
+from ordinary live-buffer membership while retaining the complete lease check;
+the independent history/clone/object-scan terms remain unresolved.
+
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 preserves the authored serializer and two consumers, with source/artifact/ABI
 binding and no production change. Its finite exact audit passes 5,870 stream

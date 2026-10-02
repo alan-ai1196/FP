@@ -1,5 +1,15 @@
 # FP Claims and Status
 
+**Ordinary history work: SOURCE-DERIVED QUADRATIC LOWER LAWS; EXACT FINITE COUNTS.**
+At source `2e5f4f6`, T successful token events copy T(T-1)/2 old observation slots
+and check the same number of rows. Mandatory ingress ledger clones and ordinary
+full-ledger snapshots each also have a quadratic event-history lower bound.
+The [proof and 34 paired CPU histories](theory/proofs/NATIVE_HISTORY_WORK.md)
+retain identical complete snapshots with/without instrumentation. These are
+implementation operation counts, not an FP semantic lower bound, an elapsed
+time extrapolation or proof of deadline failure. Full history must remain;
+unneeded diagnostic materialization is a candidate for separate refinement.
+
 **Source-compiled canonical streams: CONDITIONAL PRESERVATION; FINITE CPU PASS.**
 The [argument](theory/proofs/COMPILED_CANONICAL_STREAMS.md) requires equal field/
 mapping/image observations, fragment boundaries and iterator/refusal traces,

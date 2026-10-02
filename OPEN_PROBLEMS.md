@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The [actual growing-history law](theory/proofs/NATIVE_HISTORY_WORK.md) is now
+proved at source level and checked on 34 paired complete CPU histories: source
+prefix copying/checking, ingress ledger clones and ordinary full-ledger
+diagnostics each incur quadratic cumulative work. No timing impossibility is
+claimed. Can the ordinary live-buffer membership projection omit unused full
+diagnostic construction while preserving all lease checks, published state,
+resource events and terminal failures? Address that narrow result first; the
+other quadratic terms require their own complete-state refinement. Truncating
+history or caching unverified totals is not a solution.
+
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 now has a conditional trace argument and finite exact CPU evidence. Its
 unchanged authored algorithms reduce sixteen-target time by 17.17014% in the

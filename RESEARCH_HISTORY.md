@@ -11541,3 +11541,29 @@ promotion or a flag sweep. The gain leaves affordability unresolved. Growing
 history copying/scanning is the next source/count question; retaining complete
 information is not permission to erase it, nor proof that every local update
 must traverse all of it. Foundation/ERC and relation closure remain unchanged.
+
+
+## 338. Complete retention does not require repeated full diagnostic construction (2026-10-02)
+
+Inspection of the actual ordinary path exposes several independent quadratic
+terms. Prediction copies and checks the entire old observation prefix before
+reading its fixed lag window: each loop sums to T(T-1)/2. At the million-target
+declaration this is 549,755,289,600 slots/rows each, derived from source rather
+than a full execution. Mandatory ingress preparation clones a growing ledger
+event list. Ordinary observation constructs and freezes a full ledger snapshot,
+including all old events, merely to use its live object keys for buffer cleanup.
+Both histories grow monotonically and yield additional quadratic lower laws.
+
+A passive observer counts the actual calls without replacing their work.
+Thirty-four paired CPU histories have identical complete serialized snapshots.
+At 64 shared events it counts 104,446 cloned event slots, 107,584 snapshotted
+event rows and 765,780 live-residency object visits, while preserving all 3,256
+events and 781 live objects. Finite coefficients are not extrapolated to full-V
+training, and no elapsed-time or deadline impossibility is inferred.
+
+This is an implementation representation/inspection obstruction, not a new
+Foundation theorem that complete learning must cost quadratically. The narrow
+next refinement is direct live-buffer membership with the same full lease check,
+without constructing an unused diagnostic value. Other history/clone/scan terms
+remain. Any replacement must preserve the entire information and failure state;
+retaining only the current context suffix would erase legal future information.
