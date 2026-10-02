@@ -1,6 +1,44 @@
 # Complete ordinary native execution across two optimizer units
 
-Status (2026-10-03): **registered; not launched**.
+Status (2026-10-03): **original worker COMPLETE; all duties PASS; CLOSED**.
+
+## Original result and budget boundary
+
+The sole worker at `c67a0aad7468d5e59635e02fb1501fee93c2f68e` completes all
+1,024 original targets and the exact commits at 512/1,024, with zero pending
+targets. All original contexts, targets and traces remain. Its original OS
+receipt records PID 6888, creation identity 134354338902777308, exit zero,
+no timeout, attachment before execution and unchanged source throughout.
+The [terminal journal](../../evidence/minimal/FP_OWNED_TRANSITION_COST_A1.json)
+must never be replayed or overwritten.
+
+| Measured coordinate | Original result |
+| --- | ---: |
+| Runtime initialization | 13.7943845 s |
+| Ordinary predict/observe, 1,024 targets | 1,202.2378029 s |
+| Separate independent byte audit | 428.9210008 s |
+| Full worker | 1,645.9764261 s |
+| Full launcher | 1,647.0342452 s |
+| OS process commitment peak | 1,030,193,152 B |
+| OS job commitment peak | 1,031,438,336 B |
+| Paid reference payload peak | 354,530,752 B |
+
+The independent leaf/buffer fold agrees with every global and role total,
+including 14,651 live objects and 352,429,096 current payload bytes. All 67,702
+resource events and 8,500 retired identities remain. The separate uncompiled
+oracle checks 2,343 images against 134,862,563 uncached source bytes, then a
+fresh reader checks 5,129 full records/71,664,279,373 bytes and 4,102 live roots.
+Both duties finish inside the original 1,800-second/16-GiB job.
+
+This establishes complete ordinary execution across two real optimizer units
+for the joint refinement. It supplies no matched speedup, trained text score,
+actual AMP qualification or affordable million-target budget. Timing from this
+prefix does not prove a later deadline or memory requirement. In particular,
+shared archive bytes do not by themselves bound retained Python learner/trace
+objects. Check that live representation before committing another full run;
+do not select a timing repeat, smaller trained horizon or another codec variant.
+
+## Original fixed protocol
 
 The [complete local-transition refinement](../../theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
 removes growing map/history scans with exact role-support accounting. Its

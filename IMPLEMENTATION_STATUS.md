@@ -11,8 +11,16 @@ and nineteen complete scoped CPU scripts pass. Successful ordinary controls,
 including commits and CPU tensor frame relocation, perform no global map/log
 iteration. Historical frame-source identity is not reissued; its unchanged
 operational byte checks pass separately. O(T log T) covers bounded local index
-updates, not the complete learner/serializer/Compiler. No timing, actual CUDA,
-whole release or affordable full-training result is claimed.
+updates, not the complete learner/serializer/Compiler. No matched speedup,
+actual CUDA, whole release or affordable full-training result is claimed.
+
+The [original two-unit native diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
+now passes at `c67a0aa`: all 1,024 original targets/two commits and independent
+buffer/role totals, 2,343 uncached images and 5,129 complete records/71,664,279,373
+bytes. Ordinary time is 1,202.2378029 seconds; independent audit 428.9210008;
+worker 1,645.9764261. Original exit is zero, no timeout, job peak 1,031,438,336
+bytes under the fixed 1,800-second/16-GiB limits. The journal is closed. Retained
+Python trace objects remain part of the unproved full-horizon host budget.
 
 The [owned-prefix/admission refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md)
 now removes ordinary source-prefix copies/scans and unused full-ledger ingress

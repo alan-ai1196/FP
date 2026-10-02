@@ -19,11 +19,15 @@ text resource diagnosis spanning actual optimizer units, then a full-budget
 decision. Do not reopen relation/precision or replay any closed journal.
 
 The [two-unit native diagnosis A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
-is registered for one 1,024-target worker under 1,800 seconds/16 GiB, retaining
-the full million-target declaration and exact unit512 updates. It independently
-folds actual buffers/role support and checks every image/record after timing.
-The small harness passes, including refusal of a false cached role total.
-No report, shortened score, historical timing arm or actual CUDA is planned.
+is now COMPLETE/CLOSED at `c67a0aa`: 1,024 original targets, two real commits,
+zero pending targets and all independent buffer/role/image/record checks pass.
+Ordinary execution takes 1,202.2378029 seconds; the separate byte audit takes
+428.9210008 seconds. The original worker exits zero within 1,800 seconds/16 GiB,
+with job peak 1,031,438,336 bytes. It checks 5,129 full records/71,664,279,373 bytes
+and 2,343 uncached images. The full million-target declaration is unchanged.
+No matched speedup, report, model score or actual CUDA result follows. Before
+another full-run decision, check the live Python trace/learner representation;
+shared archive payload is not whole-host state. Never replay this journal.
 
 **Owned prefix/admission refinement: exact CPU qualification complete.**
 The [joint refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md) removes repeated

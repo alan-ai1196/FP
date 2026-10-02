@@ -11700,3 +11700,26 @@ two exact unit512 commits, the unchanged million-target declaration and a
 checks every image and complete record. The small harness passes a false cached
 role-total attack. This measures the joint current path, without a historical
 timing arm or shortened trained score; no old journal is replayed.
+
+## 342. Complete native diagnosis crosses both actual optimizer units (2026-10-03)
+
+The sole A1 worker at `c67a0aa` completes the first 1,024 original targets and
+exact commits at 512/1,024, retaining the full million-target declaration.
+Ordinary predict/observe takes 1,202.2378029 seconds; the separate independent
+byte audit takes 428.9210008 seconds. Full worker time is 1,645.9764261 seconds.
+The original OS receipt records exit zero, no timeout, attachment before
+execution and job commitment peak 1,031,438,336 bytes inside the fixed
+1,800-second/16-GiB job. Source remains unchanged throughout.
+
+Every original context/target/trace remains. Independent actual-buffer and
+positive-role-support folds agree with the owned augmentation. All 2,343 images
+are checked against 134,862,563 uncached source bytes; a fresh reader checks
+5,129 complete records/71,664,279,373 bytes and 4,102 live roots. The journal is
+terminal and closed. No matched speedup, full-training budget, trained score
+or actual AMP result is inferred.
+
+The remaining full-run decision must account for live Python trace/learner
+objects as well as losslessly shared archive bytes. Read-only review during
+the fixed worker identified per-event fresh Fraction inputs retained by the
+old prediction traces. Their exact liveness/size law needs its own audit;
+no estimated host slope or another timing run is a substitute for that proof.

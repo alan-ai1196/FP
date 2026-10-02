@@ -1,7 +1,7 @@
 # FP Open Problems
 
-The next ordinary-text question is **the actual resource budget after complete
-local transitions**. The [role-support law and immutable representation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
+The next ordinary-text question is **the complete live-state budget after the
+two-unit diagnosis**. The [role-support law and immutable representation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
 now remove growing whole-map scans/copies while retaining all entries/events,
 order, accounting and failure obligations. 30,720 ledger decisions, 98 complete
 history pairs, failure/CPU tensor controls and nineteen full CPU scripts pass.
@@ -9,11 +9,14 @@ The 64-target control forbids global map/log iteration; commit/frame controls
 pass too. Its O(T log T) index-work bound does not cover numerical execution,
 canonical streams, requested diagnostics or compiler search. Obtain bounded
 full-vocabulary evidence spanning real optimizer units before another full-
-training budget decision. Do not infer a speedup from node counts, replay old
-journals, reopen relation/precision, or substitute a shorter trained score.
-The [registered two-unit diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
-fixes that next observation at 1,024 original targets under 1,800 seconds/16 GiB,
-with complete independent role/byte checks and the million-target declaration.
+training budget decision. That [original diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
+now passes: 1,024 targets/two commits, 1,202.2378029 ordinary seconds, all
+independent role/byte duties, original exit zero under 1,800 seconds/16 GiB.
+It retains the million-target declaration and supplies no score or matched
+speedup. Check retained Python learner/prediction objects separately from the
+shared archive payload: a short prefix's host peak is not a whole-horizon bound.
+Do not replay old journals, reopen relation/precision, or substitute a shorter
+trained score.
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 has a reachable-state proof and exact CPU/full-V correctness qualification.

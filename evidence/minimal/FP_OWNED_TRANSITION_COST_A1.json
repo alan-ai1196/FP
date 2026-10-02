@@ -1,0 +1,259 @@
+{
+  "status": "COMPLETE_OWNED_TRANSITION_COST_A1",
+  "source_commit": "c67a0aad7468d5e59635e02fb1501fee93c2f68e",
+  "host_cap": 17179869184,
+  "deadline_ms": 1800000,
+  "observed_events": 1024,
+  "expected_optimizer_commits": 2,
+  "original_training_declaration": 1048576,
+  "protocol": "experiments/next_token/OWNED_TRANSITION_COST_A1.md",
+  "external_heartbeat": "F:\\experiment\\FP_owned_transition_cost_a1\\worker.json",
+  "job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 17179869184,
+    "peak_process_commit": 1030193152,
+    "peak_job_commit": 1031438336,
+    "user_100ns": 16438125000,
+    "kernel_100ns": 14687500,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 6888,
+    "process_creation_100ns": 134354338902777308
+  },
+  "launcher_seconds": 1647.0342451999968,
+  "result": {
+    "status": "PASS_OWNED_TRANSITION_COST_A1",
+    "before": {
+      "process_id": 6888,
+      "creation_100ns": 134354338902777308,
+      "process_commit": 26542080,
+      "lifetime_process_commit_peak": 31145984,
+      "job_commit_peak": 32378880,
+      "process_user_100ns": 2812500,
+      "process_kernel_100ns": 781250,
+      "job_user_100ns": 2812500,
+      "job_kernel_100ns": 781250,
+      "total_job_processes": 2
+    },
+    "blocks": [
+      {
+        "first_target": 0,
+        "completed": 64,
+        "predict_seconds": 25.840954200051783,
+        "observe_seconds": 36.41390120002325
+      },
+      {
+        "first_target": 64,
+        "completed": 64,
+        "predict_seconds": 27.160184600012144,
+        "observe_seconds": 38.8997316999812
+      },
+      {
+        "first_target": 128,
+        "completed": 64,
+        "predict_seconds": 28.404778500000248,
+        "observe_seconds": 41.184962800034555
+      },
+      {
+        "first_target": 192,
+        "completed": 64,
+        "predict_seconds": 29.784911099995952,
+        "observe_seconds": 43.97471350001433
+      },
+      {
+        "first_target": 256,
+        "completed": 64,
+        "predict_seconds": 30.907480699999724,
+        "observe_seconds": 46.266158100028406
+      },
+      {
+        "first_target": 320,
+        "completed": 64,
+        "predict_seconds": 32.1258069000105,
+        "observe_seconds": 48.39662359999056
+      },
+      {
+        "first_target": 384,
+        "completed": 64,
+        "predict_seconds": 32.83829390002211,
+        "observe_seconds": 49.779043199938315
+      },
+      {
+        "first_target": 448,
+        "completed": 64,
+        "predict_seconds": 33.907402099939645,
+        "observe_seconds": 52.946581199998036
+      },
+      {
+        "first_target": 512,
+        "completed": 64,
+        "predict_seconds": 26.537715700011177,
+        "observe_seconds": 37.390601199978846
+      },
+      {
+        "first_target": 576,
+        "completed": 64,
+        "predict_seconds": 27.61260349999793,
+        "observe_seconds": 39.5611100000242
+      },
+      {
+        "first_target": 640,
+        "completed": 64,
+        "predict_seconds": 28.656406700014486,
+        "observe_seconds": 42.02562679995026
+      },
+      {
+        "first_target": 704,
+        "completed": 64,
+        "predict_seconds": 29.985287200004677,
+        "observe_seconds": 43.27924189995974
+      },
+      {
+        "first_target": 768,
+        "completed": 64,
+        "predict_seconds": 30.90646599997126,
+        "observe_seconds": 46.16009340000164
+      },
+      {
+        "first_target": 832,
+        "completed": 64,
+        "predict_seconds": 32.257944199984195,
+        "observe_seconds": 48.37274950003484
+      },
+      {
+        "first_target": 896,
+        "completed": 64,
+        "predict_seconds": 32.65911610002513,
+        "observe_seconds": 50.162832900037756
+      },
+      {
+        "first_target": 960,
+        "completed": 64,
+        "predict_seconds": 34.460782600006496,
+        "observe_seconds": 53.37769790001039
+      }
+    ],
+    "completed_targets": 1024,
+    "original_training_declaration": 1048576,
+    "actual_amp_execution": false,
+    "model_score": null,
+    "training_source": {
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 2097152,
+      "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+      "role": "training",
+      "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+    },
+    "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+    "initialization_seconds": 13.79438449999725,
+    "initialized": {
+      "label": "initialized",
+      "elapsed_seconds": 14.611236799995822,
+      "completed_training_targets": 0,
+      "revealed_training_targets": 0,
+      "optimizer_steps": 0,
+      "pending_targets": 0,
+      "event_traces": 0,
+      "live_objects": 23,
+      "retired_objects": 16,
+      "resource_events": 124,
+      "paid_payload_peak": 184598793,
+      "object_peak": 24,
+      "spent": {
+        "compiler": {
+          "work": 21108619335
+        },
+        "deployment": {
+          "work": 72251563008
+        }
+      },
+      "halted": null
+    },
+    "latest": {
+      "label": "byte-audit",
+      "elapsed_seconds": 1216.958501000001,
+      "completed_training_targets": 1024,
+      "revealed_training_targets": 1024,
+      "optimizer_steps": 2,
+      "pending_targets": 0,
+      "event_traces": 1024,
+      "live_objects": 14651,
+      "retired_objects": 8500,
+      "resource_events": 67702,
+      "paid_payload_peak": 354530752,
+      "object_peak": 14654,
+      "spent": {
+        "compiler": {
+          "work": 73782582415912
+        },
+        "deployment": {
+          "work": 18573186107712
+        }
+      },
+      "halted": null
+    },
+    "ordinary_seconds": 1202.2378029000538,
+    "residency": {
+      "current": {
+        "reference_payload_bytes": 352429096,
+        "physical_objects": 14651
+      },
+      "role_current": {
+        "compiler": {
+          "reference_payload_bytes": 352429064,
+          "physical_objects": 14649
+        },
+        "deployment": {
+          "reference_payload_bytes": 348149752,
+          "physical_objects": 7480
+        }
+      },
+      "peak": {
+        "reference_payload_bytes": 354530752,
+        "physical_objects": 14654
+      },
+      "role_peak": {
+        "compiler": {
+          "reference_payload_bytes": 354530720,
+          "physical_objects": 14650
+        },
+        "deployment": {
+          "reference_payload_bytes": 350251408,
+          "physical_objects": 7483
+        }
+      },
+      "every_current_buffer_and_lease_inspected": true,
+      "every_role_recomputed_from_complete_leaves_and_actual_buffers": true
+    },
+    "all_original_sources_targets_and_traces_retained": true,
+    "independent_bytes": {
+      "images": 2343,
+      "uncached_image_bytes": 134862563,
+      "records": 5129,
+      "complete_record_bytes": 71664279373,
+      "live_roots": 4102,
+      "independent_uncompiled_encoder_and_comparator": true,
+      "fresh_reader": true
+    },
+    "independent_audit_seconds": 428.9210008000009,
+    "after": {
+      "process_id": 6888,
+      "creation_100ns": 134354338902777308,
+      "process_commit": 869859328,
+      "lifetime_process_commit_peak": 1030193152,
+      "job_commit_peak": 1031438336,
+      "process_user_100ns": 16431562500,
+      "process_kernel_100ns": 14218750,
+      "job_user_100ns": 16431562500,
+      "job_kernel_100ns": 14218750,
+      "total_job_processes": 2
+    },
+    "worker_wall_seconds": 1645.9764260999946
+  },
+  "accepted_execution": true,
+  "source_unchanged_during_checks": true
+}

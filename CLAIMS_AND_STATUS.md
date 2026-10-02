@@ -1,5 +1,15 @@
 # FP Claims and Status
 
+**Two-unit complete native resource diagnosis: ORIGINAL PASS; CLOSED.**
+At `c67a0aa`, [A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md) completes
+1,024 original targets/two exact commits with all buffer/role/byte duties.
+The independent oracle checks 2,343 images and 5,129 complete records containing
+71,664,279,373 decoded bytes. Ordinary time is 1,202.2378029 seconds and separate
+audit time 428.9210008; the original worker exits zero within 1,800 seconds,
+with job peak 1,031,438,336 bytes below 16 GiB. This is a bounded execution
+result, not a matched speedup, full-horizon resource theorem, model score,
+actual CUDA qualification or new certificate class. No journal replay is due.
+
 **Complete local resource transitions: EXACT ROLE-SUPPORT LAW; SCOPED CPU PASS.**
 For complete owned leaves, global cost counts each object once and role cost
 counts it once per role with a positive lease. The [local-change equality and
