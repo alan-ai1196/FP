@@ -11567,3 +11567,32 @@ next refinement is direct live-buffer membership with the same full lease check,
 without constructing an unused diagnostic value. Other history/clone/scan terms
 remain. Any replacement must preserve the entire information and failure state;
 retaining only the current context suffix would erase legal future information.
+
+
+## 339. Remove an unused diagnostic without weakening live-lease validation (2026-10-02)
+
+The ordinary `observe` path now calls the same complete `_residency` check at
+the same post-release point, then filters buffers by actual ledger membership.
+It no longer builds a recursively frozen full diagnostic solely to obtain those
+keys. Reachable typed private ledger state gives the same keys and exact buffer
+identities; every historical event, counter, lease and public snapshot remains.
+The change introduces no cache, state coordinate, architecture action or public
+API. It can avoid a diagnostic allocation failure; it does not promise identical
+host failure timing or tolerate arbitrary private metadata/code corruption.
+
+The original method is extracted from Git `364934d` and retains its host/public
+guard for comparisons. Thirty-four paired complete states agree. Twelve paired
+post-release lease/resource/memory failures keep the same target/prior learner
+and terminal state. Six storage faults pass, and six paired CPU tensor histories
+preserve 129 complete phase bodies/5,774,243 bytes/50,279 words and all resources.
+The four complete native event/run/CPU install/caller-boundary regressions pass.
+At 64 shared events, 107,584 diagnostic event rows are removed while all 765,780
+live-residency visits and 104,446 ledger-clone slots remain. No broader scaling
+or actual-device result follows.
+
+One original/projection native cost pair is registered for the first 256 original
+targets, keeping the full million-target declaration, unit512 and all checks.
+Its independent uncompiled oracle validates complete images and pages after
+timing. Both jobs have fixed 900-second/16-GiB bounds; no reporting, optimizer
+commit or model score is possible. This later-prefix evidence decides the value
+of one projection; it is not a compiler, architecture or codec variant sweep.

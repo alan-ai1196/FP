@@ -1,0 +1,58 @@
+{
+  "status": "PASS_LEDGER_PROJECTION_CPU",
+  "baseline_source": "364934d",
+  "scope": "Complete-state and refusal checks for ordinary live-ledger projection.\n\nNo corpus, performance result, actual CUDA or new certificate authority.",
+  "histories": {
+    "paired_complete_histories": 34,
+    "complete_serialized_snapshots_equal": true,
+    "exact_work_comparison": [
+      {
+        "storage": "packed",
+        "targets": 64,
+        "removed_snapshot_event_rows": 25856,
+        "retained_residency_object_rows": 103081,
+        "retained_ledger_clone_slots": 25150,
+        "all_other_counted_traversals_equal": true
+      },
+      {
+        "storage": "shared",
+        "targets": 64,
+        "removed_snapshot_event_rows": 107584,
+        "retained_residency_object_rows": 765780,
+        "retained_ledger_clone_slots": 104446,
+        "all_other_counted_traversals_equal": true
+      }
+    ]
+  },
+  "barrier_failures": {
+    "paired_terminal_controls": [
+      "packed/empty-lease",
+      "packed/zero-lease",
+      "packed/unknown-owner",
+      "packed/closed-owner",
+      "packed/resource",
+      "packed/memory",
+      "shared/empty-lease",
+      "shared/zero-lease",
+      "shared/unknown-owner",
+      "shared/closed-owner",
+      "shared/resource",
+      "shared/memory"
+    ],
+    "complete_failed_snapshots_equal": true,
+    "target_and_prior_learner_retained": true,
+    "continuation_denied": true
+  },
+  "storage_failures": {
+    "post_target_failures": 6,
+    "targets_and_old_learners_retained": true
+  },
+  "cpu_phases": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "checked_primitive_words": 50279,
+    "complete_phase_bytes": 5774243,
+    "frames_learners_reports_reads_allocations_retirements_equal": true,
+    "actual_cuda_execution": false
+  }
+}

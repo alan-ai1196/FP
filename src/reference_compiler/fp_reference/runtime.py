@@ -1988,7 +1988,11 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                              for s in staged for object_id in self._candidates[s.candidate_id].object_ids[1:]
                              if object_id not in s.object_ids)
             self._ledger.release_many(releases)
-            live = self._ledger.snapshot()['objects']
+            # Keep snapshot's complete live-lease check. This internal use
+            # needs only membership, not a freshly frozen copy of every past
+            # resource event. All history and public diagnostics stay owned.
+            self._ledger._residency(self._ledger._objects, self._ledger._refs)
+            live = self._ledger._objects
             self._buffers = {key: value for key, value in self._buffers.items() if key in live}
             self._candidates = candidate_successors
             if self._cuda is not None:

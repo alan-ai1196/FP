@@ -2,6 +2,18 @@
 
 ## Current execution state (2026-10-02)
 
+**Ordinary ledger projection: implemented and CPU-qualified; later-prefix cost pair registered.**
+The [narrow refinement](theory/proofs/ORDINARY_LEDGER_PROJECTION.md) replaces the
+unused full-ledger diagnostic inside `observe` with the same complete live-lease
+check and direct object membership. All history/public diagnostics remain.
+Thirty-four paired full snapshots, twelve post-release fault pairs, six storage
+faults and six CPU tensor histories/129 phase bodies agree; all four relevant
+complete native/run/install/caller-boundary regressions pass. This is no actual
+CUDA or whole release. The [new original/projection cost pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
+uses 256 original targets and the full million-target/unit512 declarations,
+with all checks and an independent complete image/page oracle. Commit before
+launch; do not edit inputs while running or replay its original journal.
+
 **Growing-history obstruction: source-derived quadratic laws; exact CPU audit passes.**
 [The actual ordinary path](theory/proofs/NATIVE_HISTORY_WORK.md) copies and checks
 T(T-1)/2 old observation rows separately, even at fixed context width. At the
@@ -11,8 +23,8 @@ lower laws. This is source/count evidence, not elapsed-time extrapolation.
 All 34 paired CPU histories have identical complete snapshots with/without the
 observer. At 64 shared events, the path clones 104,446 event slots and snapshots
 107,584 event rows. The latter snapshot is used only for live object membership.
-Prove/test that narrow projection while preserving its live-lease check and
-every retained event; do not replace history with the current lag window.
+The narrow projection above removes that one diagnostic traversal. Source
+history, ingress clones and object scans remain; do not truncate retained history.
 
 **Source-compiled canonical streams: original CPU cost pair passes; modest gain; CLOSED.**
 The [candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md) compiles the unchanged

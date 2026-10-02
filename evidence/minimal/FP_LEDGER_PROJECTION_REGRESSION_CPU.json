@@ -1,0 +1,52 @@
+{
+  "status": "PASS_LEDGER_PROJECTION_SCOPED_REGRESSION_CPU",
+  "scope": "Four existing complete audit scripts on the candidate committed with this receipt; assertions enabled, no --write and no old evidence overwritten. This is not a whole release or actual CUDA result.",
+  "base_source": "364934d",
+  "only_production_change": "Runtime.observe replaces ledger.snapshot()['objects'] with the same full ledger._residency check followed by membership in ledger._objects; all other production source is unchanged.",
+  "checks": [
+    {
+      "script": "scripts/audit_reference_events.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "independent_exact_gradient_vectors": 960,
+      "exhaustive_three_event_context_target_streams": 64,
+      "two_lineage_recurrence_targets": 512,
+      "query_precision_cases": 246
+    },
+    {
+      "script": "scripts/audit_reference_run.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "finite_binary_streams": 28,
+      "terminal_port_denials": 899,
+      "installed_closure_cursor": 22,
+      "late_failure_prefixes_retained": true,
+      "bounded_child_exit_code": 0,
+      "bounded_child_peak_job_commit": 44838912
+    },
+    {
+      "script": "scripts/audit_cpu_installation.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "independent_complete_lease_cases": 2016,
+      "complete_native_class_sizes": [35, 774],
+      "consecutive_install_cursors": [22, 38],
+      "post_install_continuation_and_late_abort_checks_pass": true
+    },
+    {
+      "script": "scripts/audit_public_value_boundary.py",
+      "exit_code": 0,
+      "status": "PASS_PUBLIC_VALUE_BOUNDARY_CPU",
+      "historical_alias_witnesses_reproduced": 3,
+      "current_alias_witnesses_blocked": 3,
+      "training_reporting_histories": 16,
+      "training_reporting_events": 112,
+      "terminal_copy_failure_ports": 4
+    }
+  ],
+  "new_cost_harness": {
+    "command": "python -B scripts/probe_ledger_projection_cost.py --control",
+    "exit_code": 0,
+    "status": "PASS_LEDGER_PROJECTION_COST_HARNESS_CPU"
+  }
+}

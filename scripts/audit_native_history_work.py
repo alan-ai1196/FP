@@ -63,7 +63,7 @@ class Visits:
         stack.enter_context(patch.object(owner, 'read_sources', observe_read))
 
 
-def trajectory(word, shared, *, observed, unit, checkpoints=()):
+def trajectory(word, shared, *, observed, unit, checkpoints=(), expected_snapshots=True):
     with patch('fp_reference.runtime.secrets.token_hex', return_value='history-work-control'):
         definition, initial = fixture(unit, 'mixed')
         cc, program, online = registration(definition, initial, count=len(word))
@@ -90,11 +90,14 @@ def trajectory(word, shared, *, observed, unit, checkpoints=()):
             assert visits.counts['source_history_copied_slots'] == count*(count-1)//2
             assert visits.counts['source_history_checked_rows'] == count*(count-1)//2
             assert visits.callers['_detached <- prepare_allocation'] == count
-            assert visits.callers['snapshot <- observe'] == count
+            assert visits.callers['snapshot <- observe'] == (count if expected_snapshots else 0)
             # A successful prediction appends at least one information event
             # before its mandatory clone; history events are never truncated.
             assert visits.counts['detached_event_slots'] >= count*(initial_events+1)+count*(count-1)//2
-            assert visits.counts['snapshot_event_rows'] >= count*(initial_events+1)+count*(count-1)//2
+            if expected_snapshots:
+                assert visits.counts['snapshot_event_rows'] >= count*(initial_events+1)+count*(count-1)//2
+            else:
+                assert visits.counts['snapshot_event_rows'] == 0
         snapshot = rt.snapshot()  # outside the observer; no diagnostic counts
         assert (snapshot.cursor, len(snapshot.observations), len(snapshot.event_traces)) == (count, count, count)
         assert tuple(r.target for r in snapshot.observations) == word
@@ -141,4 +144,8 @@ def main():
 if __name__ == '__main__':
     if not __debug__:
         raise RuntimeError('assertions are required')
-    main()
+    # This audit's recorded law concerns the original observe diagnostic.
+    # Reproduce that exact method, including its existing public/host guard.
+    from ledger_projection_audit_support import original_observe
+    with patch.object(ReferenceCompilerRuntime, 'observe', original_observe()):
+        main()

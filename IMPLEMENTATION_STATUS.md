@@ -2,11 +2,20 @@
 
 ## Current token execution boundary (2026-10-02)
 
+The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
+now removes internal full-diagnostic construction while retaining exactly the
+same live-lease traversal and complete stored history. Thirty-four paired
+snapshots, twelve paired barrier failures, six storage failures and six CPU
+tensor histories/129 phase bodies pass. The four full native event/run/install/
+caller-boundary regressions and the cost harness pass. No actual CUDA or new
+whole release is claimed. A single 256-target native cost pair is registered;
+source-history copying, ledger cloning and object scans are unchanged.
+
 The [history-work audit](theory/proofs/NATIVE_HISTORY_WORK.md) establishes actual
 source-derived quadratic cumulative history copy/check, ledger-clone and
 internal ledger-diagnostic terms. Thirty-four paired CPU histories agree in
 complete serialized state under passive counters. This is no timing or model
-score. The narrow next candidate removes unused ledger-diagnostic construction
+score. The qualified projection removes unused ledger-diagnostic construction
 from ordinary live-buffer membership while retaining the complete lease check;
 the independent history/clone/object-scan terms remain unresolved.
 

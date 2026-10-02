@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+**Ordinary ledger projection: REACHABLE-STATE REFINEMENT; COMPLETE CPU/FAILURE CHECKS PASS.**
+The [proof](theory/proofs/ORDINARY_LEDGER_PROJECTION.md) preserves the original
+live-lease check and exact buffer membership without rebuilding unused resource
+event diagnostics. All retained information and public snapshots remain.
+Thirty-four paired full states, twelve paired post-release failures and six CPU
+tensor histories/129 bodies agree; six storage failures and four complete
+native/run/install/caller-boundary regression scripts pass. This is no claim of
+equal host-allocation failure timing, arbitrary private-code/metadata corruption
+tolerance, linear full runtime, actual CUDA qualification or model quality.
+The 256-target original/projection cost pair is preregistered, not yet measured.
+
 **Ordinary history work: SOURCE-DERIVED QUADRATIC LOWER LAWS; EXACT FINITE COUNTS.**
 At source `2e5f4f6`, T successful token events copy T(T-1)/2 old observation slots
 and check the same number of rows. Mandatory ingress ledger clones and ordinary
@@ -8,7 +19,7 @@ The [proof and 34 paired CPU histories](theory/proofs/NATIVE_HISTORY_WORK.md)
 retain identical complete snapshots with/without instrumentation. These are
 implementation operation counts, not an FP semantic lower bound, an elapsed
 time extrapolation or proof of deadline failure. Full history must remain;
-unneeded diagnostic materialization is a candidate for separate refinement.
+the separate ordinary projection removes only the diagnostic materialization term.
 
 **Source-compiled canonical streams: CONDITIONAL PRESERVATION; FINITE CPU PASS.**
 The [argument](theory/proofs/COMPILED_CANONICAL_STREAMS.md) requires equal field/

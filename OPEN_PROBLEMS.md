@@ -1,13 +1,21 @@
 # FP Open Problems
 
+The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
+has a reachable-state proof and exact CPU/terminal-failure qualification.
+The [registered 256-target native pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
+must now test whether removing unused diagnostics materially helps the complete
+text path. All declarations, sources, arithmetic, leases and byte checks remain.
+The other quadratic terms remain; no full-training budget or GPU release follows
+from this one projection. Keep the original pair terminal and do not sweep variants.
+
 The [actual growing-history law](theory/proofs/NATIVE_HISTORY_WORK.md) is now
 proved at source level and checked on 34 paired complete CPU histories: source
 prefix copying/checking, ingress ledger clones and ordinary full-ledger
 diagnostics each incur quadratic cumulative work. No timing impossibility is
-claimed. Can the ordinary live-buffer membership projection omit unused full
-diagnostic construction while preserving all lease checks, published state,
-resource events and terminal failures? Address that narrow result first; the
-other quadratic terms require their own complete-state refinement. Truncating
+claimed. The ordinary live-buffer membership projection now preserves lease
+checks, published state, resource events and terminal failures without unused
+full diagnostics, within its proved/audited scope. The other quadratic terms
+require their own complete-state refinement. Truncating
 history or caching unverified totals is not a solution.
 
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
