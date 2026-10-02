@@ -2,17 +2,21 @@
 
 ## Current execution state (2026-10-02)
 
-**Ordinary ledger projection: implemented and CPU-qualified; later-prefix cost pair registered.**
+**Ordinary ledger projection: correctness passes; original cost pair is slower; CLOSED.**
 The [narrow refinement](theory/proofs/ORDINARY_LEDGER_PROJECTION.md) replaces the
 unused full-ledger diagnostic inside `observe` with the same complete live-lease
 check and direct object membership. All history/public diagnostics remain.
 Thirty-four paired full snapshots, twelve post-release fault pairs, six storage
 faults and six CPU tensor histories/129 phase bodies agree; all four relevant
 complete native/run/install/caller-boundary regressions pass. This is no actual
-CUDA or whole release. The [new original/projection cost pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
-uses 256 original targets and the full million-target/unit512 declarations,
-with all checks and an independent complete image/page oracle. Commit before
-launch; do not edit inputs while running or replay its original journal.
+CUDA or whole release. The [original cost pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
+passes at `bb8c900`: each arm checks 521 images and 1,285 full records/15.689 GB.
+Ordinary 256-target time rises from 311.37730 to 374.39020 seconds (20.23683%).
+The unchanged prediction path also slows; this fixed-order pair does not isolate
+the cause. Keep the narrow source simplification, without a measured speed or
+full-budget claim. The journal is terminal; no retry/variant or GPU promotion.
+Attack the remaining source-prefix and discarded ingress-preflight copies
+together through owned-state invariants, preserving every old record and check.
 
 **Growing-history obstruction: source-derived quadratic laws; exact CPU audit passes.**
 [The actual ordinary path](theory/proofs/NATIVE_HISTORY_WORK.md) copies and checks

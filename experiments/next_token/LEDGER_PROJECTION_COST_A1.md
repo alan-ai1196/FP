@@ -1,6 +1,51 @@
 # Ordinary ledger projection: later-prefix native cost pair A1
 
-Status (2026-10-02): **PREREGISTERED; NOT LAUNCHED**.
+Status (2026-10-02): **ORIGINAL PAIR COMPLETE AT `bb8c900`; OBSERVED TIME REGRESSION; CLOSED**.
+
+## Original result and consequence
+
+Both original workers exit zero without timeout and pass all registered duties.
+Each retains 256 original sources/targets/traces, 256 pending targets and zero
+commits, with the full million-target declaration and no reporting/Torch/AMP/
+model score. Paid residency, work, object/history counters and complete byte
+totals agree exactly. Each independent oracle checks **521 images/64,211,039
+uncached source bytes** and **1,285 complete records/15,688,733,248 decoded bytes**,
+including 1,028 live roots. All live buffer/lease checks pass and source remains
+unchanged. The original journal is terminal and must never be replayed.
+
+| Quantity | Original | Projection |
+| --- | ---: | ---: |
+| Initialization, seconds | 12.6924549 | 13.4046241 |
+| Ordinary prediction sum, seconds | 127.9334935 | 161.5537714 |
+| Ordinary observation sum, seconds | 183.4438066 | 212.8364317 |
+| Ordinary total, seconds | 311.3773001 | 374.3902031 |
+| Separate complete byte audit, seconds | 104.6841524 | 103.9220848 |
+| Worker elapsed, seconds | 429.5854339 | 492.5701839 |
+| OS peak job commitment, bytes | 553,193,472 | 551,518,208 |
+
+The projection's ordinary time is **1.2023683 times** the original, a
+**20.23683% increase** in this pair. It does not demonstrate an end-to-end speed
+benefit. The unchanged prediction code also takes more time in the second arm;
+this fixed-order design does not isolate timing variation or indirect runtime
+effects. Neither is asserted as the cause, and neither cancels the negative
+observed result. Fewer abstract visits are not a wall-time theorem.
+
+Retain the narrow, proved deletion of unused diagnostic construction, with its
+unchanged full lease check, as a source-level simplification. Do not promote it
+as a measured acceleration, use the favorable arm to claim a training budget,
+start a variant/retry sweep, or launch another full training attempt from these
+numbers. Its correctness/count claim and negative cost observation stay separate.
+
+The next step is to attack the other proved growing-history terms together:
+derive the owned contiguous-prefix invariant, and preserve allocation admission
+without constructing an unused full successor ledger. The only append site and
+the discarded ingress-preflight return are explicit in current source. Every
+old record, lease, resource event and later query/profile input must remain;
+no unchecked cache, suffix retention or Foundation change is implied. Other
+live-object scans still require their own argument. An affordable trained
+ordinary-text comparison remains unresolved.
+
+## Original registration
 
 The [projection proof and CPU controls](../../theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 preserve complete successful state and the original live-lease check. The

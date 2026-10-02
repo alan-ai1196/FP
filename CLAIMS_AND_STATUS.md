@@ -9,7 +9,11 @@ tensor histories/129 bodies agree; six storage failures and four complete
 native/run/install/caller-boundary regression scripts pass. This is no claim of
 equal host-allocation failure timing, arbitrary private-code/metadata corruption
 tolerance, linear full runtime, actual CUDA qualification or model quality.
-The 256-target original/projection cost pair is preregistered, not yet measured.
+The original 256-target pair at `bb8c900` passes full-V correctness but takes
+311.37730 versus 374.39020 seconds (**20.23683% slower**). Each arm checks 521
+images and 1,285 records/15,688,733,248 bytes; paid counters agree. Unchanged
+prediction code also slows, so the one ordered pair does not identify a cause.
+No measured speedup or full-budget claim follows. The journal is terminal.
 
 **Ordinary history work: SOURCE-DERIVED QUADRATIC LOWER LAWS; EXACT FINITE COUNTS.**
 At source `2e5f4f6`, T successful token events copy T(T-1)/2 old observation slots

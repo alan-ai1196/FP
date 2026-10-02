@@ -8,8 +8,12 @@ same live-lease traversal and complete stored history. Thirty-four paired
 snapshots, twelve paired barrier failures, six storage failures and six CPU
 tensor histories/129 phase bodies pass. The four full native event/run/install/
 caller-boundary regressions and the cost harness pass. No actual CUDA or new
-whole release is claimed. A single 256-target native cost pair is registered;
-source-history copying, ledger cloning and object scans are unchanged.
+whole release is claimed. The original 256-target native pair at `bb8c900`
+passes every byte/ownership duty but is slower: 311.37730 to 374.39020 seconds,
+20.23683% more. The unchanged prediction path also slows; the cause is not
+isolated. All paid counters and the 15,688,733,248 checked record bytes agree.
+The source simplification remains without a measured acceleration/budget claim;
+the journal is closed. Source-history copying, clones and object scans remain.
 
 The [history-work audit](theory/proofs/NATIVE_HISTORY_WORK.md) establishes actual
 source-derived quadratic cumulative history copy/check, ledger-clone and

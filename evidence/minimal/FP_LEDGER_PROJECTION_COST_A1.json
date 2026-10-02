@@ -1,0 +1,349 @@
+{
+  "status": "COMPLETE_LEDGER_PROJECTION_COST_A1",
+  "source_commit": "bb8c900c3fb6ab02b1c1adee0f1da34061505311",
+  "original_observe_source": "364934d",
+  "baseline_method": {
+    "source_commit": "364934d",
+    "bytes": 7822,
+    "sha256": "a0772e0b1e0abc3d25f8383fe6cbb0948030addc6ea542ff6eb5fb7314cb0b1a"
+  },
+  "host_cap": 17179869184,
+  "deadline_ms": 900000,
+  "observed_events": 256,
+  "original_training_declaration": 1048576,
+  "order": [
+    "original",
+    "projection"
+  ],
+  "results": [
+    {
+      "mode": "original",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 551960576,
+        "peak_job_commit": 553193472,
+        "user_100ns": 4291250000,
+        "kernel_100ns": 4531250,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 14988,
+        "process_creation_100ns": 134354265118818062
+      },
+      "launcher_seconds": 430.06288029999996,
+      "external_heartbeat": "F:\\experiment\\FP_ledger_projection_a1\\original.json",
+      "result": {
+        "status": "PASS_LEDGER_PROJECTION_COST_A1",
+        "mode": "original",
+        "before": {
+          "process_id": 14988,
+          "creation_100ns": 134354265118818062,
+          "process_commit": 27025408,
+          "lifetime_process_commit_peak": 36503552,
+          "job_commit_peak": 37736448,
+          "process_user_100ns": 2500000,
+          "process_kernel_100ns": 625000,
+          "job_user_100ns": 2656250,
+          "job_kernel_100ns": 625000,
+          "total_job_processes": 2
+        },
+        "blocks": [
+          {
+            "first_target": 0,
+            "completed": 64,
+            "predict_seconds": 26.961306199998944,
+            "observe_seconds": 38.09403870002279
+          },
+          {
+            "first_target": 64,
+            "completed": 64,
+            "predict_seconds": 30.001034699998854,
+            "observe_seconds": 42.82493140002771
+          },
+          {
+            "first_target": 128,
+            "completed": 64,
+            "predict_seconds": 33.722060600041004,
+            "observe_seconds": 48.547667600010755
+          },
+          {
+            "first_target": 192,
+            "completed": 64,
+            "predict_seconds": 37.2490919999982,
+            "observe_seconds": 53.977168899997196
+          }
+        ],
+        "original_observe_source": "364934d",
+        "completed_targets": 256,
+        "baseline_method": {
+          "source_commit": "364934d",
+          "bytes": 7822,
+          "sha256": "a0772e0b1e0abc3d25f8383fe6cbb0948030addc6ea542ff6eb5fb7314cb0b1a"
+        },
+        "training_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+        "initialization_seconds": 12.692454900003213,
+        "latest": {
+          "label": "terminal",
+          "elapsed_seconds": 324.8953507000042,
+          "completed_training_targets": 256,
+          "revealed_training_targets": 256,
+          "optimizer_steps": 0,
+          "pending_targets": 256,
+          "event_traces": 256,
+          "live_objects": 3607,
+          "retired_objects": 2064,
+          "resource_events": 16510,
+          "paid_payload_peak": 200492081,
+          "object_peak": 3609,
+          "spent": {
+            "compiler": {
+              "work": 18442653989704
+            },
+            "deployment": {
+              "work": 4682124746560
+            }
+          },
+          "halted": null
+        },
+        "ordinary_seconds": 311.37730010009545,
+        "residency": {
+          "current": {
+            "reference_payload_bytes": 200457190,
+            "physical_objects": 3607
+          },
+          "role_current": {
+            "compiler": {
+              "reference_payload_bytes": 200457158,
+              "physical_objects": 3605
+            },
+            "deployment": {
+              "reference_payload_bytes": 199387350,
+              "physical_objects": 1814
+            }
+          },
+          "peak": {
+            "reference_payload_bytes": 200492081,
+            "physical_objects": 3609
+          },
+          "role_peak": {
+            "compiler": {
+              "reference_payload_bytes": 200492049,
+              "physical_objects": 3606
+            },
+            "deployment": {
+              "reference_payload_bytes": 199422257,
+              "physical_objects": 1816
+            }
+          },
+          "every_current_buffer_and_lease_inspected": true
+        },
+        "original_training_declaration": 1048576,
+        "all_original_sources_targets_and_traces_retained": true,
+        "actual_amp_execution": false,
+        "model_score": null,
+        "independent_bytes": {
+          "images": 521,
+          "uncached_image_bytes": 64211039,
+          "records": 1285,
+          "complete_record_bytes": 15688733248,
+          "live_roots": 1028,
+          "independent_uncompiled_encoder_and_comparator": true,
+          "fresh_reader": true
+        },
+        "independent_audit_seconds": 104.6841523999974,
+        "after": {
+          "process_id": 14988,
+          "creation_100ns": 134354265118818062,
+          "process_commit": 429760512,
+          "lifetime_process_commit_peak": 551960576,
+          "job_commit_peak": 553193472,
+          "process_user_100ns": 4289687500,
+          "process_kernel_100ns": 4531250,
+          "job_user_100ns": 4289843750,
+          "job_kernel_100ns": 4531250,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 429.58543389999977
+      },
+      "accepted_execution": true
+    },
+    {
+      "mode": "projection",
+      "job": {
+        "exit_code": 0,
+        "timed_out": false,
+        "commit_limit": 17179869184,
+        "peak_process_commit": 550285312,
+        "peak_job_commit": 551518208,
+        "user_100ns": 4907187500,
+        "kernel_100ns": 10312500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 30676,
+        "process_creation_100ns": 134354269419456899
+      },
+      "launcher_seconds": 493.0725195999985,
+      "external_heartbeat": "F:\\experiment\\FP_ledger_projection_a1\\projection.json",
+      "result": {
+        "status": "PASS_LEDGER_PROJECTION_COST_A1",
+        "mode": "projection",
+        "before": {
+          "process_id": 30676,
+          "creation_100ns": 134354269419456899,
+          "process_commit": 27123712,
+          "lifetime_process_commit_peak": 36323328,
+          "job_commit_peak": 37556224,
+          "process_user_100ns": 2343750,
+          "process_kernel_100ns": 937500,
+          "job_user_100ns": 2500000,
+          "job_kernel_100ns": 937500,
+          "total_job_processes": 2
+        },
+        "blocks": [
+          {
+            "first_target": 0,
+            "completed": 64,
+            "predict_seconds": 35.47022360000119,
+            "observe_seconds": 49.483091200010676
+          },
+          {
+            "first_target": 64,
+            "completed": 64,
+            "predict_seconds": 36.80042909998883,
+            "observe_seconds": 49.51034850002179
+          },
+          {
+            "first_target": 128,
+            "completed": 64,
+            "predict_seconds": 44.278284999963944,
+            "observe_seconds": 57.69661319999432
+          },
+          {
+            "first_target": 192,
+            "completed": 64,
+            "predict_seconds": 45.004833699968,
+            "observe_seconds": 56.146378799996455
+          }
+        ],
+        "original_observe_source": "364934d",
+        "completed_targets": 256,
+        "baseline_method": {
+          "source_commit": "364934d",
+          "bytes": 7822,
+          "sha256": "a0772e0b1e0abc3d25f8383fe6cbb0948030addc6ea542ff6eb5fb7314cb0b1a"
+        },
+        "training_source": {
+          "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+          "file_bytes": 360000000,
+          "byte_offset": 0,
+          "bytes_read": 2097152,
+          "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+          "role": "training",
+          "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+        },
+        "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+        "initialization_seconds": 13.404624100003275,
+        "latest": {
+          "label": "terminal",
+          "elapsed_seconds": 388.6389246000035,
+          "completed_training_targets": 256,
+          "revealed_training_targets": 256,
+          "optimizer_steps": 0,
+          "pending_targets": 256,
+          "event_traces": 256,
+          "live_objects": 3607,
+          "retired_objects": 2064,
+          "resource_events": 16510,
+          "paid_payload_peak": 200492081,
+          "object_peak": 3609,
+          "spent": {
+            "compiler": {
+              "work": 18442653989704
+            },
+            "deployment": {
+              "work": 4682124746560
+            }
+          },
+          "halted": null
+        },
+        "ordinary_seconds": 374.3902030999452,
+        "residency": {
+          "current": {
+            "reference_payload_bytes": 200457190,
+            "physical_objects": 3607
+          },
+          "role_current": {
+            "compiler": {
+              "reference_payload_bytes": 200457158,
+              "physical_objects": 3605
+            },
+            "deployment": {
+              "reference_payload_bytes": 199387350,
+              "physical_objects": 1814
+            }
+          },
+          "peak": {
+            "reference_payload_bytes": 200492081,
+            "physical_objects": 3609
+          },
+          "role_peak": {
+            "compiler": {
+              "reference_payload_bytes": 200492049,
+              "physical_objects": 3606
+            },
+            "deployment": {
+              "reference_payload_bytes": 199422257,
+              "physical_objects": 1816
+            }
+          },
+          "every_current_buffer_and_lease_inspected": true
+        },
+        "original_training_declaration": 1048576,
+        "all_original_sources_targets_and_traces_retained": true,
+        "actual_amp_execution": false,
+        "model_score": null,
+        "independent_bytes": {
+          "images": 521,
+          "uncached_image_bytes": 64211039,
+          "records": 1285,
+          "complete_record_bytes": 15688733248,
+          "live_roots": 1028,
+          "independent_uncompiled_encoder_and_comparator": true,
+          "fresh_reader": true
+        },
+        "independent_audit_seconds": 103.92208480000409,
+        "after": {
+          "process_id": 30676,
+          "creation_100ns": 134354269419456899,
+          "process_commit": 427372544,
+          "lifetime_process_commit_peak": 550285312,
+          "job_commit_peak": 551518208,
+          "process_user_100ns": 4905625000,
+          "process_kernel_100ns": 10312500,
+          "job_user_100ns": 4905781250,
+          "job_kernel_100ns": 10312500,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 492.57018390000303
+      },
+      "accepted_execution": true
+    }
+  ],
+  "protocol": "experiments/next_token/LEDGER_PROJECTION_COST_A1.md",
+  "accepted_execution": true,
+  "paid_counters_and_complete_byte_totals_equal": true,
+  "observed_original_over_projection_ordinary_seconds": 0.831691901983268,
+  "source_unchanged_during_checks": true
+}

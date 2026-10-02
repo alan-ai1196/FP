@@ -1,7 +1,7 @@
 # Ordinary live-buffer projection without rebuilding the resource diagnostic
 
-Status (2026-10-02): **implemented; exact complete-state/failure and CPU tensor
-controls pass; actual cost/device qualification not yet established**.
+Status (2026-10-02): **implemented; exact CPU/full-V correctness checks pass;
+original cost pair is slower; no actual CUDA or affordable-training claim**.
 
 The [history-work result](NATIVE_HISTORY_WORK.md) identifies an internal
 `snapshot()['objects']` call after every ordinary target. The caller uses only
@@ -101,3 +101,20 @@ not a reissue of the historical whole CPU/CUDA release. The next bounded native
 [cost comparison](../../experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
 keeps full declarations, 256 original text targets and all byte/ownership checks.
 No score comes from its incomplete training prefix.
+
+## 4. Actual cost result: deleted visits did not yield a measured speedup
+
+Both original 256-target workers at `bb8c900` pass the complete uncompiled
+image/record oracle: 521 images and 1,285 records/15,688,733,248 decoded bytes
+per arm. All paid counters agree. Ordinary time rises from 311.3773001 to
+374.3902031 seconds (**20.23683%**), while job peak changes from 553,193,472 to
+551,518,208 bytes. The unchanged prediction path also slows in this one ordered
+pair. The cause is not isolated; no timing-variation or runtime-interaction
+explanation is asserted. The negative observation remains evidence.
+
+Keep the source-level simplification and its exact count/failure result, but
+do not call it a measured acceleration or extrapolate a training budget. The
+journal is closed, with no retry/variant sweep or separate device qualification
+selected by this result. The source-prefix and discarded ingress-preflight
+copies are the next concrete growing-history obligations; no old information
+may be discarded to remove their execution cost.

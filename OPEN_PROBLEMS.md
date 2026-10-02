@@ -1,12 +1,15 @@
 # FP Open Problems
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
-has a reachable-state proof and exact CPU/terminal-failure qualification.
-The [registered 256-target native pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
-must now test whether removing unused diagnostics materially helps the complete
-text path. All declarations, sources, arithmetic, leases and byte checks remain.
-The other quadratic terms remain; no full-training budget or GPU release follows
-from this one projection. Keep the original pair terminal and do not sweep variants.
+has a reachable-state proof and exact CPU/full-V correctness qualification.
+The [original 256-target pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
+is slower by 20.23683%, with unchanged prediction code also slowing and no cause
+isolated by the ordered pair. All declarations, sources, arithmetic, leases and
+byte checks remain. Keep the source simplification and negative observation
+separate; no measured acceleration, full budget or GPU release follows. The
+journal is terminal. The next joint source-level target is the owned-prefix
+invariant and allocation preflight without its discarded full-ledger copy;
+all historical information and actual admission/refusal duties must remain.
 
 The [actual growing-history law](theory/proofs/NATIVE_HISTORY_WORK.md) is now
 proved at source level and checked on 34 paired complete CPU histories: source

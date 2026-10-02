@@ -11596,3 +11596,21 @@ Its independent uncompiled oracle validates complete images and pages after
 timing. Both jobs have fixed 900-second/16-GiB bounds; no reporting, optimizer
 commit or model score is possible. This later-prefix evidence decides the value
 of one projection; it is not a compiler, architecture or codec variant sweep.
+
+Both original workers subsequently pass at `bb8c900`, each independently checking
+521 images/64,211,039 uncached bytes and 1,285 records/15,688,733,248 decoded bytes.
+Paid counters agree, with 256 pending targets/zero commits and no report/score.
+Ordinary time rises from 311.3773001 to 374.3902031 seconds (20.23683%), despite
+the deleted diagnostic visits. Job peaks are 553,193,472 and 551,518,208 bytes.
+The unchanged prediction code also slows in the second arm; this one ordered
+pair does not identify timing variation or runtime interaction as the cause.
+The negative observation is retained, not retried or explained away.
+
+The narrow source simplification remains, with no measured acceleration or
+full-training claim. The pair is closed. The next source-level refinement must
+address the other proved growing-history terms: an inductive owned-prefix
+invariant and allocation admission without constructing a discarded successor
+ledger. Only ordinary observation appends the history, and only ingress calls
+the preflight whose return it discards. These facts identify proof obligations,
+not authority to erase records or bypass resource checks. No new static/relation
+branch or GPU qualification is selected by this result.
