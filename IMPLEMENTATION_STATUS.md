@@ -2,6 +2,17 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
+now establishes that the unchanged million-target Python realization cannot
+fit its 96-GiB host contract. Every event retains 2,048 distinct input Fraction
+objects and its 2,056-value tuple. Their selected allocation alone totals
+112.1015625 GiB, before integers, archives, masters and other state. The
+source/ABI proof is checked by 192 complete histories/448 commits, an explicit
+alias-counting control and two full-V synthetic events. No production change,
+corpus score, empirical failure cursor or broader impossibility is claimed.
+The required next refinement concerns complete live trace representation;
+byte-archive compression and local resource indices do not remove these objects.
+
 The [complete local-transition refinement](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
 now uses immutable ordered map versions and exact role-support augmentation for
 ledger, buffer and ingress updates. All full objects/leases, insertion order,
@@ -19,8 +30,8 @@ now passes at `c67a0aa`: all 1,024 original targets/two commits and independent
 buffer/role totals, 2,343 uncached images and 5,129 complete records/71,664,279,373
 bytes. Ordinary time is 1,202.2378029 seconds; independent audit 428.9210008;
 worker 1,645.9764261. Original exit is zero, no timeout, job peak 1,031,438,336
-bytes under the fixed 1,800-second/16-GiB limits. The journal is closed. Retained
-Python trace objects remain part of the unproved full-horizon host budget.
+bytes under the fixed 1,800-second/16-GiB limits. The journal is closed. The
+subsequent liveness proof above excludes the unchanged full-horizon host budget.
 
 The [owned-prefix/admission refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md)
 now removes ordinary source-prefix copies/scans and unused full-ledger ingress

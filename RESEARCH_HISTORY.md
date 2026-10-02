@@ -11723,3 +11723,39 @@ objects as well as losslessly shared archive bytes. Read-only review during
 the fixed worker identified per-event fresh Fraction inputs retained by the
 old prediction traces. Their exact liveness/size law needs its own audit;
 no estimated host slope or another timing run is a substitute for that proof.
+
+## 343. Live prediction objects exclude the unchanged million-token host budget (2026-10-03)
+
+The completed two-unit diagnosis prompted a full-state budget check rather
+than another timing variant. At `c67a0aa`, each native prediction creates LD
+fresh Fraction inputs, including equal/zero values, and retains them in a
+new (LD+N)-value tuple. Ordinary EventTrace records keep those same objects;
+commits replace the outer trace without replacing its prediction. Thus T
+successful events retain TLD distinct input objects and T distinct tuples.
+
+On the installed Windows x64 CPython 3.12.9 ABI, each Fraction shell and GC
+header occupies 48 bytes; a k-value tuple occupies 40+8k bytes. Distinct live
+allocations therefore require at least T[48LD+40+8(LD+N)] host bytes. Integer
+referents, node values, traces, old masters, archives, images and all other
+state are excluded. The full L512/D4/N8/T1048576 declaration requires
+120,368,136,192 selected bytes, or 112.1015625 GiB, already above its 96-GiB
+whole-host cap. These objects alone exclude 897,966 successful retained events;
+the actual failure cursor can be earlier and is not inferred. The old missing
+worker receipt keeps its unknown cause.
+
+The exact audit binds the relevant complete source files, checks the installed
+object layouts and runs all binary four-target words over three update units,
+two initializers and packed/shared retention: 192 complete histories, 768
+targets and 448 commits. All 4,608 input identities remain through observation,
+commits and explicit GC, with original causal values. The observer retains
+only addresses until inspecting Runtime's own traces. A deliberately aliased
+scalar/tuple is counted once, preventing an occurrence-count fallacy.
+
+Two synthetic events with the original full-V/million-target declaration
+retain 4,096 distinct input objects despite only eight numerical values,
+matching 229,584 selected bytes. No corpus, timing study, actual CUDA, shorter
+trained score or new certificate class is involved. The unchanged full budget
+is now excluded by a source/ABI proof, not by extrapolating the prefix peak.
+Proceed to a complete recoverable live representation that preserves causal
+and parameter distinctions; faster archive handling alone cannot remove these
+objects. Foundation/ERC and the closed relation/precision branches remain.

@@ -1,5 +1,16 @@
 # FP Claims and Status
 
+**Native text host feasibility: SOURCE/ABI LOWER BOUND; UNCHANGED BUDGET EXCLUDED.**
+At `c67a0aa`, the [retained prediction law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
+requires T[48LD+40+8(LD+N)] selected allocation bytes on the installed Windows
+x64 CPython 3.12.9 ABI. The original million-target L512/D4/N8 registration
+therefore requires at least 112.1015625 GiB against a 96-GiB host cap, before
+integer referents, archives or other state. Exact finite checks cover 192
+complete histories/448 commits, deliberate sharing and two full-V synthetic
+events. This proves an implementation/contract exclusion, not an FP semantic
+lower bound, exact failure cursor, elapsed-time estimate or trained score.
+No original journal changes and no `CERTIFIED_COMPLETE` class is introduced.
+
 **Two-unit complete native resource diagnosis: ORIGINAL PASS; CLOSED.**
 At `c67a0aa`, [A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md) completes
 1,024 original targets/two exact commits with all buffer/role/byte duties.

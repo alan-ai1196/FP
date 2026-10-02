@@ -2,6 +2,22 @@
 
 ## Current execution state (2026-10-03)
 
+**Full native host budget: unchanged live representation is provably infeasible.**
+The [prediction-liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md) counts
+the actual distinct retained input Fractions and value tuples at `c67a0aa`.
+On the installed CPython ABI, these alone require 120,368,136,192 bytes
+(112.1015625 GiB) at the million-target horizon, exceeding the original 96-GiB
+whole-host cap. Integer payloads, archives, masters and all other state are
+additional. This is a source-derived exclusion, not a short-prefix memory
+extrapolation or the inferred cause of the old missing worker receipt.
+192 complete packed/shared histories, 768 targets/448 commits, deliberate
+sharing controls and the original full-V representation with two synthetic
+labels pass. No new model score, certificate class or Foundation change follows.
+Do not launch the unchanged full trajectory or repeat its cost probes. The
+next necessary research is a complete recoverable live prediction/trace
+representation with a proved ownership/host-size law; preserve causal origins,
+parameter coordinates and every old event. Relation/precision stays closed.
+
 **Complete local transitions: exact law and scoped CPU implementation qualified.**
 The [role-support law and implementation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
 replace repeated whole-object scans/copies with immutable ordered map versions.
@@ -14,9 +30,9 @@ regression scripts pass. The 64-target control forbids all global map/log
 iteration while retaining 781 live objects and 3,256 events; commit/frame controls
 also pass that prohibition. For fixed bounded local updates, this bookkeeping
 has an O(T log T) index-work bound. No whole-runtime complexity, speed, actual
-CUDA or model result follows. The next evidence is a bounded complete ordinary-
-text resource diagnosis spanning actual optimizer units, then a full-budget
-decision. Do not reopen relation/precision or replay any closed journal.
+CUDA or model result follows. The bounded ordinary-text diagnosis below now
+passes; the subsequent host lower bound above decides the unchanged full
+budget negatively. Do not reopen relation/precision or replay any closed journal.
 
 The [two-unit native diagnosis A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
 is now COMPLETE/CLOSED at `c67a0aa`: 1,024 original targets, two real commits,
@@ -25,8 +41,8 @@ Ordinary execution takes 1,202.2378029 seconds; the separate byte audit takes
 428.9210008 seconds. The original worker exits zero within 1,800 seconds/16 GiB,
 with job peak 1,031,438,336 bytes. It checks 5,129 full records/71,664,279,373 bytes
 and 2,343 uncached images. The full million-target declaration is unchanged.
-No matched speedup, report, model score or actual CUDA result follows. Before
-another full-run decision, check the live Python trace/learner representation;
+No matched speedup, report, model score or actual CUDA result follows. The
+subsequent live-state proof above excludes the unchanged full host budget;
 shared archive payload is not whole-host state. Never replay this journal.
 
 **Owned prefix/admission refinement: exact CPU qualification complete.**

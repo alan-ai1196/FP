@@ -38,6 +38,14 @@ shared archive bytes do not by themselves bound retained Python learner/trace
 objects. Check that live representation before committing another full run;
 do not select a timing repeat, smaller trained horizon or another codec variant.
 
+The subsequent [source/ABI liveness audit](../../theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
+settles that full-run decision negatively for the unchanged representation:
+its retained input Fraction objects and value tuples alone require 112.1015625
+GiB at the original horizon, exceeding the original 96-GiB host cap. This is
+not an extrapolation of A1's measured peak and does not change this successful
+two-unit result or its terminal journal. A complete live-state representation
+refinement is necessary before another full training budget is credible.
+
 ## Original fixed protocol
 
 The [complete local-transition refinement](../../theory/proofs/OWNED_LOCAL_TRANSITIONS.md)

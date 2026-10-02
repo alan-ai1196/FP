@@ -1,0 +1,203 @@
+{
+  "status": "PASS_NATIVE_PREDICTION_LIVENESS_CPU",
+  "production_source": "c67a0aad7468d5e59635e02fb1501fee93c2f68e",
+  "audited_head": "37f992ddbfebd44850a05fdd7b51131935381fa1",
+  "bound_source_files": [
+    "src/reference_compiler/fp_reference/runtime.py",
+    "src/reference_compiler/fp_reference/token_execution.py",
+    "src/reference_compiler/fp_reference/token_batch.py",
+    "scripts/run_native_text_a1.py"
+  ],
+  "abi": {
+    "python": "3.12.9 (tags/v3.12.9:fdb8142, Feb  4 2025, 15:27:58) [MSC v.1942 64 bit (AMD64)]",
+    "pointer_bytes": 8,
+    "fraction_basicsize": 32,
+    "fraction_gc_header_bytes": 16,
+    "fraction_allocation_lower_bytes": 48,
+    "tuple_base_with_gc_bytes": 40,
+    "tuple_item_bytes": 8,
+    "fresh_scalar_controls": 128,
+    "equal_value_fresh_objects": 32,
+    "aliased_object_control": {
+      "input_occurrences": 64,
+      "distinct_input_objects": 1,
+      "distinct_input_values": 1,
+      "distinct_value_tuples": 1,
+      "fraction_shallow_bytes": 48,
+      "tuple_shallow_bytes": 296,
+      "selected_shallow_bytes": 344
+    },
+    "shared_integers_never_counted": true
+  },
+  "groups": [
+    {
+      "update_unit": 1,
+      "initializer": "mixed",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 64,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 4
+    },
+    {
+      "update_unit": 1,
+      "initializer": "mixed",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 64,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 4
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-embedding",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 64,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    },
+    {
+      "update_unit": 1,
+      "initializer": "zero-embedding",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 64,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    },
+    {
+      "update_unit": 2,
+      "initializer": "mixed",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 32,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 4
+    },
+    {
+      "update_unit": 2,
+      "initializer": "mixed",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 32,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 4
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-embedding",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 32,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    },
+    {
+      "update_unit": 2,
+      "initializer": "zero-embedding",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 32,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    },
+    {
+      "update_unit": 4,
+      "initializer": "mixed",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 16,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 3
+    },
+    {
+      "update_unit": 4,
+      "initializer": "mixed",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 16,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 3
+    },
+    {
+      "update_unit": 4,
+      "initializer": "zero-embedding",
+      "shared_storage": false,
+      "histories": 16,
+      "targets": 64,
+      "commits": 16,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    },
+    {
+      "update_unit": 4,
+      "initializer": "zero-embedding",
+      "shared_storage": true,
+      "histories": 16,
+      "targets": 64,
+      "commits": 16,
+      "distinct_input_objects": 384,
+      "selected_shallow_bytes": 27136,
+      "minimum_distinct_input_values": 1
+    }
+  ],
+  "totals": {
+    "histories": 192,
+    "targets": 768,
+    "commits": 448,
+    "distinct_input_objects": 4608,
+    "selected_shallow_bytes": 325632
+  },
+  "full_registration": {
+    "synthetic_labels": [
+      0,
+      1
+    ],
+    "complete_runtime_sample": {
+      "targets": 2,
+      "commits": 0,
+      "inputs_per_prediction": 2048,
+      "values_per_prediction": 2056,
+      "pre_target_identities_preserved_through_observe_commit_and_gc": true,
+      "input_occurrences": 4096,
+      "distinct_input_objects": 4096,
+      "distinct_input_values": 8,
+      "distinct_value_tuples": 2,
+      "fraction_shallow_bytes": 196608,
+      "tuple_shallow_bytes": 32976,
+      "selected_shallow_bytes": 229584
+    },
+    "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+    "training_declaration": 1048576,
+    "reference_host_cap_bytes": 103079215104,
+    "selected_lower_bytes_per_trace": 114792,
+    "selected_full_horizon_lower_bytes": 120368136192,
+    "selected_full_horizon_lower_gib": "14349/128",
+    "first_count_excluded_by_selected_objects_alone": 897966,
+    "predicts_actual_failure_cursor": false,
+    "actual_full_horizon_execution": false
+  },
+  "scope": "source/ABI liveness lower bound and finite complete CPU controls; no timing, corpus, model score or CUDA"
+}

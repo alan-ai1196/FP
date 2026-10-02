@@ -1,22 +1,31 @@
 # FP Open Problems
 
-The next ordinary-text question is **the complete live-state budget after the
-two-unit diagnosis**. The [role-support law and immutable representation](theory/proofs/OWNED_LOCAL_TRANSITIONS.md)
-now remove growing whole-map scans/copies while retaining all entries/events,
-order, accounting and failure obligations. 30,720 ledger decisions, 98 complete
-history pairs, failure/CPU tensor controls and nineteen full CPU scripts pass.
-The 64-target control forbids global map/log iteration; commit/frame controls
-pass too. Its O(T log T) index-work bound does not cover numerical execution,
-canonical streams, requested diagnostics or compiler search. Obtain bounded
-full-vocabulary evidence spanning real optimizer units before another full-
-training budget decision. That [original diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
-now passes: 1,024 targets/two commits, 1,202.2378029 ordinary seconds, all
-independent role/byte duties, original exit zero under 1,800 seconds/16 GiB.
-It retains the million-target declaration and supplies no score or matched
-speedup. Check retained Python learner/prediction objects separately from the
-shared archive payload: a short prefix's host peak is not a whole-horizon bound.
-Do not replay old journals, reopen relation/precision, or substitute a shorter
-trained score.
+The next ordinary-text question is **complete live prediction/trace storage**.
+The [source/ABI liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md) now
+excludes the unchanged full native host budget: its per-event fresh Fractions
+and value tuples alone require 112.1015625 GiB at the million-target horizon,
+above the registered 96 GiB. This does not depend on a timing extrapolation or
+the training values. Equal-zero inputs still create separate retained objects.
+192 complete histories/448 commits and two full-V synthetic events check the
+actual identities and sizes; an adversarial alias control prevents double
+counting shared values. No additional full run is needed to confirm this bound.
+
+Can a complete recoverable live representation share immutable numerical
+values or reconstruct old predictions while preserving each causal source,
+parameter coordinate, original origin, event, numerical check and ownership
+obligation? Prove the representation and host-size law before promoting its
+budget. Current value equality cannot merge parameter/gradient coordinates,
+and archive compression alone leaves the proved live-object obstruction.
+Do not repeat closed cost probes, raise an old run's cap, truncate history,
+reopen relation/precision or substitute a shorter trained score.
+
+The [role-support refinement](theory/proofs/OWNED_LOCAL_TRANSITIONS.md) already
+removes growing whole-map scans/copies with complete accounting. Its O(T log T)
+bound covers local index work. The [original two-unit diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
+passes all 1,024 targets/two commits and independent role/byte duties in the
+fixed 1,800-second/16-GiB job. That bounded correctness result remains valid;
+neither it nor the local index bound supplies full-horizon host feasibility,
+a matched speedup or a model score.
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 has a reachable-state proof and exact CPU/full-V correctness qualification.
