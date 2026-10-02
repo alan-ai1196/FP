@@ -2,6 +2,16 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [owned-base export refinement](theory/proofs/OWNED_BASE_EXPORT.md) keeps
+the existing immutable-source fact active while copying public returns.
+Only its exact builtin base tuple skips traversal; mutable wrappers and all
+other metadata still copy. This removes exactly 2TV ordinary base-leaf visits
+at the selected single-incumbent ports, with no numerical or resource change.
+96 complete history pairs, eight new context failure boundaries and two full-V
+synthetic targets per arm pass; every buffer/role total and 502,254,394 complete
+snapshot bytes agree. The nineteen-script CPU regression and one fact-enabled
+AMP control remain pending. No timing, full-host or trained result follows.
+
 The [captured token value refinement](theory/proofs/CAPTURED_TOKEN_VALUES.md)
 now keeps immutable exact input operands plus the actual executed node tail,
 with complete logical tuple encodings and detached builtin-tuple exports.

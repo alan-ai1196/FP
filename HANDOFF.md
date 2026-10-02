@@ -2,6 +2,19 @@
 
 ## Current execution state (2026-10-03)
 
+**Ordinary forecast export: existing owned fact removes a redundant 2TV walk.**
+The [refinement](theory/proofs/OWNED_BASE_EXPORT.md) reuses the paid immutable
+base-tuple fact through public export. All mutable wrappers still detach;
+equal foreign tuples and disabled owners still traverse. At the original
+million-target/V50,257 declaration this removes 105,396,568,064 scalar visits,
+not a measured duration. 96 complete history pairs, eight context-allocation
+failures and a full-V 502,254,394-byte snapshot comparison pass. No new cache,
+model action or Foundation/ERC change is introduced. The nineteen-script CPU
+regression and one [fact-enabled actual AMP control](experiments/next_token/OWNED_BASE_EXPORT_CUDA_A1.md)
+are the fixed remaining qualification; then close this narrow branch and
+return to the complete ordinary-text budget decision. Do not infer whole-host
+fit or keep accumulating local/static variants instead of a trained comparison.
+
 **Captured prediction values: lossless refinement; scoped CPU/RTX 3090 qualification CLOSED.**
 The [captured-value law](theory/proofs/CAPTURED_TOKEN_VALUES.md) preserves the
 complete logical input tuple from the actual immutable embedding/context

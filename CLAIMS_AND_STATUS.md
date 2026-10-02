@@ -1,5 +1,14 @@
 # FP Claims and Status
 
+**Owned-base public export: LOSSLESS IDENTITY REFINEMENT; FOCUSED CPU PASS.**
+The [proof](theory/proofs/OWNED_BASE_EXPORT.md) removes the selected 2TV
+redundant scalar visits using the existing paid exact-source immutable fact.
+At T1,048,576/V50,257 this is 105,396,568,064 visits; no measured speedup follows.
+Mutable nodes, complete metadata, aliases, refusal and actual failure prefixes
+remain. 96 complete history pairs, eight context-allocation failures and full-V
+buffer/role/502,254,394-byte snapshot equality pass. Scoped CPU/device regression
+is pending. No complete budget, new certificate class or model claim is issued.
+
 **Captured native prediction values: LOSSLESS REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [representation proof](theory/proofs/CAPTURED_TOKEN_VALUES.md) retains actual
 immutable input operands and executed node results, preserving complete values,

@@ -47,7 +47,9 @@ def _guard(method, *, diagnostic):
                 self._advance_policy()
                 self._seal_run()
             try:
-                return detached(result)
+                # Keep the existing immutable-source owner in scope through
+                # export. Wrappers still detach; no authority crosses out.
+                return run_for(self, detached, result)
             except MemoryError:
                 raise
             except Exception as error:

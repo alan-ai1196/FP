@@ -11862,3 +11862,31 @@ removed with complete recoverability; the whole ordinary-text host/execution
 budget remains the research frontier. Do not deepen the relation/precision,
 static feature or codec branches, repeat closed journals, infer a million-token
 fit from a selected component, or report a shortened trained score.
+
+## 347. A paid immutable fact was lost at the public-copy scope boundary (2026-10-03)
+
+The full-budget review found another avoidable source cost. Each convenience
+prediction exported the base tuple twice after leaving its existing owner
+scope. The copier already returned that same immutable tuple, but first
+visited every Fraction. The selected law is 2TV visits, or 105,396,568,064 at
+the original ordinary-text declaration; it is not an elapsed-time theorem.
+
+The existing paid, independently bound base artifact already proves precisely
+the immutability needed. Extending its owner scope through export lets the
+copier return the same exact source without traversing it. No cache, evidence
+coordinate or architecture action is added. Every mutable wrapper and other
+value still follows the complete original copy and failure protocol.
+
+96 complete paired histories preserve training and reporting under public
+mutations. Equal foreign tuples, other/disabled owners, full metadata and
+aliases remain distinct where required. Eight new context-allocation failures
+preserve actual paid prefixes and terminality. Under the original full text
+declaration, two synthetic targets compare all buffers/role totals and
+502,254,394 snapshot bytes; visits fall from 201,028 to zero. The actual Git
+copier is the oracle, with the same paid facts in both arms.
+
+Finish the fixed nineteen-script CPU regression and one fact-enabled actual
+AMP control, then close this narrow refinement. This source-count gain alone
+does not justify another full run, establish a 96-GiB/two-hour fit or supply a
+score. The scope decision remains ordinary text, not another relation,
+precision, codec or immutable-cache branch.

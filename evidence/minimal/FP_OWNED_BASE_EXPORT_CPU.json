@@ -1,0 +1,72 @@
+{
+  "status": "PASS_OWNED_BASE_EXPORT_CPU",
+  "literal_copier_source": "5c83725",
+  "scope": "Exact public-export refinement and source-work counts, without timing claims.\n\nThe comparison uses the actual Git copier at 5c83725. Both arms retain the\nsame already-paid base fact; no weaker ownership checker or unowned cache.\nSynthetic labels only. No corpus, device execution or complete budget claim.",
+  "binding": {
+    "exact_source_identity_only": true,
+    "equal_foreign_and_passive_values_walk": true,
+    "complete_extra_metadata_and_internal_aliases_preserved": true,
+    "all_mutable_nodes_detached": true,
+    "disabled_nested_owner_masks_export": true,
+    "cyclic_and_foreign_metadata_refused": true
+  },
+  "failures": {
+    "terminal_actual_prefix_failures": [
+      [
+        "contract",
+        "before-context"
+      ],
+      [
+        "contract",
+        "after-binding"
+      ],
+      [
+        "snapshot",
+        "before-context"
+      ],
+      [
+        "snapshot",
+        "after-binding"
+      ],
+      [
+        "predict_next",
+        "before-context"
+      ],
+      [
+        "predict_next",
+        "after-binding"
+      ],
+      [
+        "observe",
+        "before-context"
+      ],
+      [
+        "observe",
+        "after-binding"
+      ]
+    ],
+    "resource_events_and_debits_not_refunded": true,
+    "revealed_target_and_completed_cursor_retained": true,
+    "parent_context_restored_without_reset": true
+  },
+  "histories": {
+    "paired_complete_histories": 96,
+    "training_events_per_arm": 384,
+    "reporting_events_per_arm": 192,
+    "complete_serialized_results_and_states_equal": true,
+    "exact_old_forecast_base_leaf_visits": 1536,
+    "exact_new_forecast_base_leaf_visits": 1024,
+    "inactive_owners_keep_full_walk": true,
+    "public_mutation_isolated": true
+  },
+  "full_vocabulary": {
+    "synthetic_targets_per_arm": 2,
+    "original_training_declaration": 1048576,
+    "exact_old_forecast_base_leaf_visits": 201028,
+    "exact_new_forecast_base_leaf_visits": 0,
+    "full_serialized_snapshot_bytes_compared": 502254394,
+    "every_buffer_and_role_total_equal": true,
+    "historical_full_training_source_count": 105396568064,
+    "no_timing_or_full_host_budget_claim": true
+  }
+}

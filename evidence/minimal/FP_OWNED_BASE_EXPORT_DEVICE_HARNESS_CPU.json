@@ -1,0 +1,29 @@
+{
+  "status": "PASS_OWNED_BASE_EXPORT_DEVICE_HARNESS_CPU",
+  "outcome": {
+    "training_events": 4,
+    "optimizer_commits": 2,
+    "report_events": 4,
+    "exact_native_trajectory_equal_to_unattacked_control": true,
+    "supplied_registrations_and_public_wrappers_isolated": true,
+    "frozen_private_native_learner_preserved": true,
+    "frozen_private_physical_learner_preserved": null,
+    "terminal_export_failure_preserves_completed_prefix": true,
+    "checked_phases": 0,
+    "checked_primitive_words": 0,
+    "complete_phase_bytes": 0,
+    "complete_frame_bytes": 0,
+    "uncached_complete_frames_and_padding_checked": false,
+    "paid_reference_peak": 2310126,
+    "owned_base_export": {
+      "actual_immutable_source_shortcuts": 25,
+      "actual_owner_count": 1,
+      "paid_fact_bytes": 174,
+      "both_roles_hold_complete_bound_artifact": true,
+      "exact_tuple_identity_bound": true,
+      "scope_cleared_after_control": true
+    }
+  },
+  "subprocess_creation_forbidden_across_control": true,
+  "actual_cuda_execution": false
+}

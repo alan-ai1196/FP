@@ -25,6 +25,10 @@ def detached(value):
     Immutable leaves use the scalar fault model of the canonical encoder/image
     owner; mutation of trusted classes/code is outside that model.
     """
+    # This existing paid fact is bound to the actual immutable source tuple,
+    # never an equal value or a caller hint. All its children are exact scalar
+    # leaves, so the ordinary traversal below would return the same identity.
+    from .token_base_facts import positive_base_known
     memo, active = {}, set()
 
     def visit(item):
@@ -40,7 +44,9 @@ def detached(value):
             return memo[identity]
         active.add(identity)
         try:
-            if kind is CapturedTokenValues:
+            if kind is tuple and positive_base_known(item):
+                result = item
+            elif kind is CapturedTokenValues:
                 # Export the same complete builtin tuple as the literal
                 # realization, preserving repeated bindings with this memo.
                 result = tuple(visit(child) for child in item)
