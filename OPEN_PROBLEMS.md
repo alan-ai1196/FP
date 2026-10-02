@@ -1,5 +1,19 @@
 # FP Open Problems
 
+The whole ordinary-text review now identifies a **joint retention-execution
+obstacle**. The [exact schedule laws](theory/proofs/NATIVE_RETENTION_VOLUME.md)
+require at least 68.84 TB in each of three complete canonical streams on the
+current native byte path. Existing expression retention avoids that expansion
+premise, but copies whole growing publication tables and its old binding cap
+cannot hold the full manifest. Both facts are source-derived and checked;
+neither is a whole-host or wall-time impossibility theorem. How can the same
+complete values, independent binding, original quotas and failure prefixes be
+executed with a justified total cost that makes the trained comparison useful?
+The existing compositional theorem is available; another isolated cache/codec
+case without traversal, publication and index costs would not answer this.
+Foundation/ERC and static relation/precision remain closed. No new full run
+or replay is justified by a selected component saving alone.
+
 The bounded [owned-base export correction](theory/proofs/OWNED_BASE_EXPORT.md)
 now removes the 2TV repeated public-copy walk while preserving the original
 complete ownership boundary. Exact/failure/full-V checks, all nineteen complete

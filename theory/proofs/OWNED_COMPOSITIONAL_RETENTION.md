@@ -269,3 +269,11 @@ archive path. Do not tune another expression-codec variant or replay a long
 unit to defend it. Reassess the end-to-end ordinary-token obstruction before
 choosing the next research intervention; the relation/static branches remain
 closed and strong trained next-token comparisons remain the objective.
+
+The subsequent [whole native schedule account](NATIVE_RETENTION_VOLUME.md)
+identifies two additional source-level limits without replaying this pair:
+quadratic page/binding publication copies, and the inadequacy of this pair's
+2^20 binding allowance for the full million-target manifest. These are not
+measured explanations of the historical timing gap. They rule out treating
+the existing option/cap as an already affordable native-text solution. The
+preservation theorem and this original finite result retain their scopes.

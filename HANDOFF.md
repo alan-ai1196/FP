@@ -2,6 +2,23 @@
 
 ## Current execution state (2026-10-03)
 
+**Whole native retention work: full-schedule law proved; budget remains UNRESOLVED.**
+The [source-derived account](theory/proofs/NATIVE_RETENTION_VOLUME.md) finds
+8T+5 floor(T/B) repeated origins and an exact pending-window occurrence law.
+At the original million-target declaration, selected fields alone require
+68,844,511,893,504 canonical bytes in **each** of three complete streams and
+at least 8,403,871,081 decoder pieces. These are cumulative work counts, not
+resident bytes or a wall-time impossibility. 93 exact histories/158 commits,
+fifteen observer controls and the original full-V representation verify the
+law. The parked expression owner avoids this expansion theorem's premise but
+copies its entire page list on every publication: at least 13.75 trillion
+prior slots over the same schedule. Its old 2^20 binding cap cannot even hold
+the full manifest's 1,064,960 distinct observation-ID strings. No codec option
+or isolated copy saving establishes an affordable run. Next attack **joint
+complete retention execution**, including traversal, binding/index growth and
+publication, using the existing compositional theorem without changing FP
+semantics. No new full attempt, cap increase, static branch or replay is selected.
+
 **Ordinary forecast export: redundant 2TV walk removed; scoped qualification CLOSED.**
 The [refinement](theory/proofs/OWNED_BASE_EXPORT.md) reuses the paid immutable
 base-tuple fact through public export. All mutable wrappers still detach;

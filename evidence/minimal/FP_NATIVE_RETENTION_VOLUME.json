@@ -1,0 +1,89 @@
+{
+  "status": "PASS_NATIVE_RETENTION_VOLUME",
+  "scope": "Exact full-schedule expansion law for the native ordinary byte archive.\n\nCounts complete stream bytes, not resident memory or elapsed time. Read-only\nobservers run around the real producer, decoder and expected traversal.\nNo corpus, numerical substitution, new codec or experiment replay.",
+  "finite_histories": {
+    "complete_histories": 93,
+    "targets": 294,
+    "commits": 158,
+    "complete_observed_unobserved_state_pairs": 15,
+    "pages": 1774,
+    "bytes_in_each_of_three_complete_streams": 12434083,
+    "decoded_piece_occurrences": 25788,
+    "exact_formula_at_every_completed_prefix": true,
+    "identical_aliases_count_as_repeated_occurrences": true
+  },
+  "full_vocabulary": {
+    "synthetic_targets": 2,
+    "original_training_declaration": 1048576,
+    "actual_three_stream_counts": {
+      "producer_bytes": 103924417,
+      "decoder_bytes": 103924417,
+      "decoder_pieces": 19454,
+      "expected_bytes": 103924417
+    },
+    "actual_selected_census": {
+      "selected_byte_lower": 99813488,
+      "pages": 10,
+      "retained_page_bytes": 1289224,
+      "pending_windows": 10,
+      "origins": 16,
+      "master_hex_bytes": 77195776,
+      "origin_base_bytes": 22515312,
+      "pending_window_byte_lower": 102400
+    },
+    "actual_record_kinds": {
+      "context_ingress_identity": 2,
+      "revealed_context": 2,
+      "pre_target_prediction": 2,
+      "after_observation_phase": 2,
+      "ordinary_reference_state": 2
+    },
+    "complete_residency": {
+      "current": {
+        "reference_payload_bytes": 163360630,
+        "physical_objects": 51
+      },
+      "role_current": {
+        "compiler": {
+          "reference_payload_bytes": 163360598,
+          "physical_objects": 49
+        },
+        "deployment": {
+          "reference_payload_bytes": 163352256,
+          "physical_objects": 36
+        }
+      },
+      "peak": {
+        "reference_payload_bytes": 184597879,
+        "physical_objects": 53
+      },
+      "role_peak": {
+        "compiler": {
+          "reference_payload_bytes": 184597879,
+          "physical_objects": 50
+        },
+        "deployment": {
+          "reference_payload_bytes": 184597863,
+          "physical_objects": 38
+        }
+      },
+      "every_current_buffer_and_lease_inspected": true
+    },
+    "canonical_images_active": true,
+    "full_schedule": {
+      "origins": 8398848,
+      "pending_windows": 1611657216,
+      "commits": 2048,
+      "master_hex_bytes": 40522224304128,
+      "origin_base_bytes": 11818917697536,
+      "pending_window_byte_lower": 16503369891840,
+      "selected_byte_lower_in_each_stream": 68844511893504,
+      "three_stream_byte_lower": 206533535680512,
+      "minimum_decoder_piece_occurrences": 8403871081,
+      "distinct_origin_master_payload_upper": 4942942032,
+      "required_per_stream_bytes_per_second_for_7200_seconds": "717130332224/75"
+    },
+    "full_volume_is_source_derived_not_prefix_extrapolated": true,
+    "no_full_host_or_time_impossibility_claim": true
+  }
+}

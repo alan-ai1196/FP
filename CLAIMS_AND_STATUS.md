@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Full native retention work: SOURCE-DERIVED SCHEDULE BOUNDS; EXACT COUNTS PASS.**
+The [law](theory/proofs/NATIVE_RETENTION_VOLUME.md) requires at least
+68,844,511,893,504 record bytes per complete writer/decoder/expected stream
+at the original million-target horizon, independently of archive deduplication.
+93 histories/158 commits and full-V controls verify occurrence/stream counts.
+This is no resident-memory or elapsed-time lower. The existing expression
+owner has a separate quadratic page-publication copy law; its previously
+tested 2^20 binding cap is smaller than the full manifest's 1,064,960 distinct
+ID leaves. That unchanged-cap transfer is excluded, while the old experiment
+remains valid in its own scope. No new `CERTIFIED_COMPLETE`, device, speed or
+trained-model claim follows. Whole-runtime feasibility remains UNRESOLVED.
+
 **Owned-base public export: LOSSLESS IDENTITY REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [proof](theory/proofs/OWNED_BASE_EXPORT.md) removes the selected 2TV
 redundant scalar visits using the existing paid exact-source immutable fact.

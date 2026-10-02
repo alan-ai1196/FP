@@ -11898,3 +11898,41 @@ another full run, establish a 96-GiB/two-hour fit or supply a score. Existing
 cost evidence still places substantial work in complete canonical retention.
 The scope decision remains the whole ordinary-text execution/budget question,
 not another relation, precision, codec or isolated immutable-cache variant.
+
+## 348. Whole-schedule serialization, not compressed payload, is the remaining work (2026-10-03)
+
+The budget review follows actual native records rather than extrapolating a
+short-prefix heap or timing. For T ordinary targets and update unit B, the
+complete records contain exactly 8T+5 floor(T/B) origins. Pending-state window
+occurrences also have an exact unit/suffix polynomial. Their master hexadecimal
+fields, fixed base tuples and pending-window labels alone require
+68,844,511,893,504 canonical bytes at the original million-target declaration.
+Each byte passes through the producer input, independent decoder and expected
+stream; at least 8,403,871,081 bounded decoder pieces are required. Compression
+changes resident page payload, not these stream occurrences.
+
+Ninety-three exact histories/158 commits check every completed prefix, with
+fifteen complete observer-control pairs. Two synthetic full-V events preserve
+the original declaration and emit 103,924,417 bytes in each stream while their
+ten page payloads total 1,289,224 bytes. The full-horizon law comes from source,
+not multiplying these measurements. There is no new timing/model result or
+claim that cumulative bytes must reside simultaneously.
+
+The already-proved compositional alternative prevents mistaking this for an
+FP semantic lower bound, but its existing Runtime realization also has a
+whole-schedule problem. Each page publication copies the entire old page list,
+requiring at least 13,754,632,240,128 copied slots over the same native schedule.
+Eight actual native targets/four commits verify the exact triangular law and
+complete state equality. Source-binding publication copies are additional.
+Moreover the old expression experiment's 2^20 binding allowance cannot hold
+the full native manifest's 1,064,960 distinct train/report ID strings, even
+before other fields. Ten exact tuple threshold controls verify that each
+string acquires a binding before its parent. This excludes carrying that cap
+over; it does not falsify the smaller historical experiment's own success.
+
+No production change or old journal replay occurs. Whole-host and wall-time
+feasibility remain unresolved. The next meaningful intervention must address
+complete retention execution jointly: expanded fields, source traversal,
+publication and actual index/binding growth. Existing compositional semantics
+are sufficient in principle; no new architecture action, static precision
+branch, smaller trained score or unqualified cap increase is selected.

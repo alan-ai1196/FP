@@ -1,0 +1,85 @@
+{
+  "status": "PASS_COMPOSITIONAL_PUBLICATION_WORK",
+  "scope": "Exact publication-copy law of the existing default-off expression owner.\n\nNo changed codec, corpus, timing or device run. Ordinary native Runtime only;\nthe old actual AMP comparison remains terminal and is not replayed.",
+  "actual": {
+    "targets": 8,
+    "commits": 4,
+    "initial_pages": 5,
+    "total_pages": 53,
+    "binding_entries_copied": 12456,
+    "binding_publications": 53,
+    "page_slots_copied": 1378,
+    "complete_observed_unobserved_snapshot_equal": true,
+    "every_old_page_and_binding_identity_preserved_in_the_copy": true,
+    "every_revealed_observation_id_retained_as_a_source_binding": true
+  },
+  "original_full_native_schedule": {
+    "targets": 1048576,
+    "unit": 512,
+    "minimum_ordinary_pages": 5244928,
+    "minimum_old_page_slots_copied": 13754632240128,
+    "selected_reference_slot_bytes_on_64_bit_host": 110037057921024,
+    "minimum_binding_entries_copied": 549755289600
+  },
+  "source_count_not_elapsed_time_or_resident_memory": true,
+  "existing_expression_realization_remains_default_off": true,
+  "manifest_binding_lower": {
+    "exact_tuple_threshold_controls": [
+      {
+        "distinct_strings": 1,
+        "binding_cap": 1,
+        "accepted": false
+      },
+      {
+        "distinct_strings": 1,
+        "binding_cap": 2,
+        "accepted": true
+      },
+      {
+        "distinct_strings": 2,
+        "binding_cap": 2,
+        "accepted": false
+      },
+      {
+        "distinct_strings": 2,
+        "binding_cap": 3,
+        "accepted": true
+      },
+      {
+        "distinct_strings": 8,
+        "binding_cap": 8,
+        "accepted": false
+      },
+      {
+        "distinct_strings": 8,
+        "binding_cap": 9,
+        "accepted": true
+      },
+      {
+        "distinct_strings": 17,
+        "binding_cap": 17,
+        "accepted": false
+      },
+      {
+        "distinct_strings": 17,
+        "binding_cap": 18,
+        "accepted": true
+      },
+      {
+        "distinct_strings": 64,
+        "binding_cap": 64,
+        "accepted": false
+      },
+      {
+        "distinct_strings": 64,
+        "binding_cap": 65,
+        "accepted": true
+      }
+    ],
+    "full_manifest_distinct_training_and_reporting_id_strings": 1064960,
+    "previous_actual_expression_binding_cap": 1048576,
+    "unavoidable_leaf_bindings_exceed_that_cap_by": 16384,
+    "counterfactual_unchanged_cap_cannot_initialize_full_text_manifest": true,
+    "no_actual_full_constructor_or_old_experiment_replayed": true
+  }
+}

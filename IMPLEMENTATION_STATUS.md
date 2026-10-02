@@ -2,6 +2,17 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [whole-schedule retention account](theory/proofs/NATIVE_RETENTION_VOLUME.md)
+now proves at least 68.84 TB in each complete producer/decoder/expected stream
+for the original native training schedule, from actual repeated origins and
+pending windows. The source formula passes 93 finite histories/158 commits and
+the original full-V representation; it is no time or host-memory exclusion.
+The parked expression owner's publication separately copies a quadratic
+number of old page slots. Carrying over its old 2^20 binding cap also fails the
+full manifest's leaf-count lower. Production is unchanged. Whole-run budget
+remains unresolved; the next solver change must address complete retention
+cost rather than infer feasibility from selected payload or traversal savings.
+
 The [owned-base export refinement](theory/proofs/OWNED_BASE_EXPORT.md) keeps
 the existing immutable-source fact active while copying public returns.
 Only its exact builtin base tuple skips traversal; mutable wrappers and all
