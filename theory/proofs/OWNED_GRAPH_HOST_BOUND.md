@@ -1,8 +1,10 @@
-# The complete ordinary graph has a disjoint host-allocation lower
+# The complete ordinary graph exceeds its original host budget
 
-Status (2026-10-03): **CONDITIONAL SOURCE/ABI LOWER; EXACT CPU CONTROLS PASS**.
-The real training-context census is preregistered separately. Until it finishes,
-this proof does not decide the original 96-GiB host allowance.
+Status (2026-10-03): **CONDITIONAL SOURCE/ABI HOST EXCLUSION; EXACT CPU AND
+ORIGINAL TRAINING-CONTEXT CENSUS PASS**. The selected disjoint live allocations
+require at least **108,591,184,675 bytes (101.1334217 GiB)**, exceeding the
+original 96-GiB host allowance. This excludes the unchanged native graph
+realization, even with its small qualification node cap hypothetically relaxed.
 
 The subject is the native graph qualified at `9fe66f1`/`e0f8d80`, with production
 unchanged at `84c118c`. The original ordinary-text trajectory, semantic update,
@@ -207,7 +209,56 @@ cache-resident labels verify its small-ID bound. That receipt is
 `FP_OWNED_GRAPH_CONTEXT_CENSUS_CPU.json`; it contains no corpus result.
 
 One [bounded census](../../experiments/next_token/OWNED_GRAPH_CONTEXT_CENSUS_A1.md)
-is registered before accessing the original training view. Close this budget
-decision on that evidence, without another codec menu, repeated local device
-qualification or shortened model score. The full trained ordinary next-token
-comparison remains the research objective; relation/precision stays closed.
+was registered before accessing the original training view. Its result closes
+the budget decision below, without a repeated device qualification, shortened
+model score or new production variant.
+
+## 5. Original-view result and research consequence
+
+The one census at committed source `93f3f25` passes. Its source prefix exactly
+matches the completed baseline anchor. It reads no validation data and creates
+no Runtime or learner. The retained aggregates are:
+
+| Exact coordinate | Value |
+| --- | ---: |
+| Distinct causal length-512 contexts D | 1,048,576 |
+| Child occurrences across distinct contexts DL | 536,870,912 |
+| Sum of the 257 largest label multiplicities | 269,690,660 |
+| Guaranteed non-small parsed child occurrences R | 267,180,252 |
+| Forced selected graph nodes N | 15,749,119 |
+| Selected disjoint host-allocation lower H | 108,591,184,675 bytes |
+| Original 96-GiB cap | 103,079,215,104 bytes |
+| **Excess over the whole cap** | **5,511,969,571 bytes** |
+
+All twenty exact allocation terms appear in
+`FP_OWNED_GRAPH_CONTEXT_CENSUS_A1.json`. The largest selected components are
+24.07685 GiB for distinct context definitions, 20.23145 GiB for pending
+vectors, 16.31780 GiB for live lease/buffer metadata and 10.15981 GiB for
+resource-event shells/log links. Original source contexts add 4.03906 GiB;
+committed master payloads add 4.60123 GiB. These are disjoint source-derived
+lower terms, not proportional extrapolations of the census worker's peak.
+
+The disposable job exits zero without timeout, in 1.7259234 launcher seconds,
+with 1,290,907,648 peak job-commit bytes inside four GiB. Both process creation
+identities match; inputs stay unchanged and the worker is absent after exit.
+These are census diagnostics, not FP training-time or memory observations.
+The exclusive journal is terminal; no replay or full run is needed to observe
+this already proved host exclusion.
+
+This establishes **realization infeasibility**, not a Foundation information
+lower bound. All ordinary causal contexts are overlapping views of the same
+retained token prefix; pending windows are successive prefixes within update
+units. Their distinctness does not make their information independent. The
+current flat tuples and independently parsed child integers materialize those
+overlaps, while complete resource histories have their own substantial object
+cost. A later lossless refinement must justify the *joint* stored values,
+metadata, verification and execution budget, rather than remove one selected
+term and declare fit. Decoding, actual executed values, numerical/AMP evidence,
+failure prefixes and legal future information remain paid obligations.
+
+Do not launch the unchanged graph on the original full trajectory or transfer
+its tiny qualification cap. Do not infer the old interrupted A1 worker's cause
+or rule out a different fully accounted realization. Ordinary next-token model
+science remains the objective, with no trained FP score yet; Foundation/ERC,
+relation/precision, this graph's scoped qualification and all old journals stay
+closed. No new semantic action or `CERTIFIED_COMPLETE` authority follows.

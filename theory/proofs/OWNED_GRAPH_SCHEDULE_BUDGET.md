@@ -6,6 +6,12 @@ model, encoding, Foundation/ERC or old experiment input changes here. This is
 the full ordinary-text budget assessment following the closed qualification,
 not another representation candidate or a new corpus attempt.
 
+Subsequent [complete disjoint host accounting](OWNED_GRAPH_HOST_BOUND.md)
+includes metadata, source values and the original corpus's exact context
+counts. Its 101.1334217-GiB lower excludes the unchanged 96-GiB realization.
+The schedule-only conclusion below is preserved as the earlier, insufficient
+selected lower; it is not the current whole-host decision.
+
 ## 1. Scope and exact object/history counts
 
 Consider T successfully completed ordinary native events of the single token

@@ -1,6 +1,33 @@
 # Exact context census for the original native graph host bound
 
-Status (2026-10-03): **PREREGISTERED; CPU ORACLES PASS; ORIGINAL CORPUS JOB NOT YET RUN**.
+Status (2026-10-03): **ORIGINAL CENSUS COMPLETE; UNCHANGED NATIVE GRAPH HOST EXCLUDED**.
+
+## Result
+
+The one original job passes at committed source `93f3f25`. All 1,048,576
+causal contexts are distinct. Across their 536,870,912 token occurrences,
+the 257 most frequent labels occupy 269,690,660 positions. Hence at least
+267,180,252 parsed child IDs are non-small, regardless of allocation order.
+Substitution into the preregistered twenty-term lower gives **108,591,184,675
+bytes (101.1334217 GiB)**, exceeding the unchanged 96-GiB cap by 5,511,969,571
+bytes. This exclusion holds even with the small qualification node cap relaxed
+for the argument. It is conditional on the stated source/ABI/allocator
+realization, not a general impossibility for FP.
+
+The training view matches the terminal baseline anchor. No validation data,
+Runtime, learner, model run or device is accessed. The worker exits zero
+without timeout in 1.7259234 launcher seconds and peaks at 1,290,907,648 job-
+commit bytes within four GiB. Creation identities and both host samples agree;
+inputs stay unchanged, and the original PID is absent after completion. The
+complete journal is `FP_OWNED_GRAPH_CONTEXT_CENSUS_A1.json`; it is terminal.
+
+Close this budget question and this census. The unchanged native graph cannot
+complete the full horizon under the original host cap. A new full attempt
+requires a justified joint storage/execution budget; no component saving,
+shorter trajectory, model score or old-worker diagnosis follows here. The
+ordinary next-token objective remains; relation/precision stays closed.
+
+## Original preregistration
 
 This is one passive resource-proof census, not a training attempt, new model,
 predictive benchmark or experiment-contract change. Its sole question is

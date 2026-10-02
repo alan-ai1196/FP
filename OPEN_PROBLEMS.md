@@ -1,14 +1,23 @@
 # FP Open Problems
 
-The [full graph schedule](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md) now
-makes the unresolved budget concrete. It needs at least 14.75 million total
-nodes, about 12.59 million live objects and 52.45 million resource events at
-the original training horizon. Flat pending vectors already require at least
-19.2295 GiB across selected actual allocations. These source counts pass 101
-complete histories; they exclude the small qualification node cap but do not
-settle the 96-GiB host contract. The remaining whole-budget calculation must
-include all other concrete indices, metadata, sources and diagnostics without
-double counting. No new codec, node-cap-only fix or blind full attempt follows.
+The unchanged owned graph's original host-budget question is now **closed by
+exclusion**. The [disjoint proof and original-view census](theory/proofs/OWNED_GRAPH_HOST_BOUND.md)
+give a 101.1334217-GiB selected live-allocation lower above the 96-GiB cap,
+even with the small qualification node cap hypothetically relaxed. This follows
+from exact source counts and actual corpus contexts, not a short-prefix slope.
+All contexts are distinct, but they overlap in one retained token history;
+their information is not independent. Flat context definitions and pending
+vectors alone contribute 44.31 GiB, alongside substantial complete metadata.
+
+The next ordinary-text question is a **joint lossless storage/execution
+refinement** with a justified full budget. It must preserve all original
+values, independent verification, source isolation, paid failures, lineage
+and actual AMP evidence. Removing one selected allocation term cannot establish
+whole-host fit; the excluded lower omits other storage and all transient peaks.
+This is a realization obstruction, not a Foundation counterexample. Do not
+launch the unchanged graph, replay terminal jobs or substitute a shortened
+trained score. The original full ordinary next-token comparison remains absent;
+relation/precision and the current graph's scoped qualification stay closed.
 
 The selected [typed value graph now has an owned Runtime lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md).
 Source stability follows from the existing private copy/transition boundary;
@@ -16,11 +25,12 @@ bounded FIFO facts avoid all-facts growth without removing historical values.
 Focused native/tensor/full-V, failure and aggregate parser-work controls and
 all 21 complete scoped CPU scripts pass at `9fe66f1`. The one original actual
 RTX 3090 control passes at `e0f8d80`, including full frames and 1,148 actual
-memo evictions. This qualification is closed. Now answer the **whole ordinary-
-text host/execution budget**: pages, both indices, parsed child IDs, bounded memos,
-current sources, full diagnostics and Runtime metadata all matter. The wire
-formula or two-event payload alone proves no full-run fit. All full AMP frame
-and fresh numerical obligations remain. Do not reopen a codec menu, relation
+memo evictions. This qualification is closed. The subsequent account above
+excludes its unchanged full native host realization. Pages, both indices,
+parsed child IDs, bounded memos, current sources, full diagnostics and Runtime
+metadata all matter to any refinement. The wire formula or two-event payload
+alone proves no full-run fit. All full AMP frame and fresh numerical
+obligations remain. Do not reopen a codec menu, relation
 case, old journal or shortened-horizon score; the original trained comparison
 remains the objective.
 

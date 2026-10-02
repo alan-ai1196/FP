@@ -1,5 +1,19 @@
 # FP Claims and Status
 
+**Full native owned graph: CONDITIONAL HOST EXCLUSION; EXACT ORIGINAL-VIEW CENSUS PASS.**
+The [source/ABI proof](theory/proofs/OWNED_GRAPH_HOST_BOUND.md) and one
+preregistered training-only census establish a **108,591,184,675-byte
+(101.1334217-GiB) selected disjoint live-allocation lower**, above the original
+96-GiB cap even after hypothetically relaxing the small qualification node cap.
+All 1,048,576 contexts are distinct; at least 267,180,252 parsed child IDs must
+be non-small even when the 257 most frequent labels receive cached IDs. Every
+lower term passes complete-history controls with no double counting, including
+a guard against observer-created dictionary shells. The census's 4,368 exact
+oracle controls and original job at `93f3f25` pass; its journal is terminal.
+This is an unchanged-realization exclusion on the stated CPython/allocator,
+not a Foundation, universal-memory, execution-time, old-worker-cause, model-
+quality or new `CERTIFIED_COMPLETE` claim. No trained FP text score exists.
+
 **Full native graph schedule: EXACT COUNT LAWS / SELECTED HOST LOWER; CPU PASS.**
 The [source proof](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md) gives exact
 page, live-object, retired-identity and resource-event increments and at least
@@ -7,8 +21,9 @@ page, live-object, retired-identity and resource-event increments and at least
 The original full declaration needs at least 14,754,100 total nodes, excluding
 transfer of the 2^22 qualification cap. Its pending vectors have a disjoint
 19.2295-GiB live-allocation lower on the checked CPython ABI, compared with
-2.16 GB of page payload. This is no whole-host exclusion, fit, time, model or
-new certificate claim; the complete 96-GiB budget remains UNRESOLVED.
+2.16 GB of page payload. That schedule-only lower supplied no whole-host
+exclusion or fit; the subsequent disjoint account above settles exclusion for
+the unchanged graph. Neither result is a time, model or new certificate claim.
 
 **Owned typed value graph: CONDITIONAL REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [implementation proof](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) binds
@@ -23,9 +38,9 @@ full frames, 22 terminal failures and the original full-V declaration pass.
 This is default-off production, not merely the passive model below. All 21
 complete scoped CPU scripts pass at `9fe66f1`. The one original actual RTX 3090
 control passes at `e0f8d80`: nineteen phases/6,340 words/full frames and 1,148
-memo evictions under original caps. Scoped qualification is closed. Full-run
-host/execution feasibility remains open; no matched timing or trained-model
-result is inferred.
+memo evictions under original caps. Scoped qualification is closed. The
+subsequent source/ABI account above excludes the unchanged full native host
+realization; no matched timing or trained-model result is inferred.
 
 **Typed value graph: CONDITIONAL PRESERVATION/COST THEOREMS; PASSIVE CPU PASS.**
 The [proof](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md) preserves the existing

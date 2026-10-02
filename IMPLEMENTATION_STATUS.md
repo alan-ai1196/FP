@@ -2,14 +2,29 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The full native owned graph's original **96-GiB host budget is now excluded**
+by a [disjoint source/ABI lower](theory/proofs/OWNED_GRAPH_HOST_BOUND.md).
+Its selected live allocations require 108,591,184,675 bytes (101.1334217 GiB),
+even with the qualification node cap hypothetically relaxed. Both resource
+indices, events, graph metadata and native sources are counted without shared
+allocation duplication or observer-created dictionaries. 52 complete-history
+controls and a 767-reference parser control pass. The one original training-
+context census at `93f3f25`, after 4,368 exhaustive oracle cases, finds all
+1,048,576 contexts distinct and guarantees 267,180,252 non-small parsed child
+references. It completes inside four GiB/180 seconds; its journal is terminal.
+No production, model, Foundation/ERC or old worker outcome changes. The full
+trained comparison remains absent; a viable refinement needs a joint storage/
+execution budget, including overlapping sequences and complete metadata.
+
 The [full graph schedule audit](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md)
 now passes 101 complete native histories/218 commits. It derives exact page,
 live/retired-object and resource-event counts and a forced typed-node lower.
 The original horizon requires at least 14,754,100 total nodes and about
 52.45 million resource events. Pending vectors alone have a 19.2295-GiB selected
 live-allocation lower, versus 2.16-GB encoded payload. This excludes transferring
-the 2^22 qualification node cap, not the full 96-GiB host contract. Whole-host/
-time feasibility remains unresolved; production is unchanged by this audit.
+the 2^22 qualification node cap; it did not alone exclude the full 96-GiB host
+contract. The subsequent account above establishes host exclusion for the
+unchanged graph. Neither audit supplies a wall-time result.
 
 The [owned typed value graph](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) now
 implements the passive construction behind an explicit encoding selection;
@@ -27,8 +42,9 @@ CPU scripts pass at `9fe66f1`. The one actual RTX 3090 control passes at
 `e0f8d80`, preserving nineteen phases/6,340 words/full frames, 46 native
 records, 1,148 memo evictions and the single 32-MiB arena within original caps.
 This scoped qualification is closed. No full-host, matched execution-time,
-trained-score or new certificate claim follows. The whole ordinary-text
-budget is next; Foundation/ERC and relation/precision stay closed.
+trained-score or new certificate claim follows from it. The subsequent host
+account above excludes the unchanged full native realization; Foundation/ERC
+and relation/precision stay closed.
 
 The [whole-schedule retention account](theory/proofs/NATIVE_RETENTION_VOLUME.md)
 now proves at least 68.84 TB in each complete producer/decoder/expected stream

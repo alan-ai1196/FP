@@ -12142,3 +12142,41 @@ completed baseline anchor, exclusive journal and no learner/Runtime/validation
 access. Inputs and controls must be committed before that launch. Until its
 receipt supplies D/R, whole-host exclusion and fit remain unresolved. No
 production, Foundation/ERC, semantic action, model score or old journal changes.
+
+## 354. The unchanged owned graph cannot complete the original host contract (2026-10-03)
+
+The one original passive context census completes at committed source
+`93f3f25`. All 1,048,576 causal contexts of length 512 in the registered
+training prefix are distinct. Their 536,870,912 label occurrences include
+269,690,660 in the 257 most frequent labels, leaving at least 267,180,252
+references whose scalar-node IDs cannot all be small cached integers.
+The prefix identity matches the completed baseline anchor; no validation,
+Runtime, learner, GPU or predictive result is involved.
+
+Substituting those exact counts into the already committed source/ABI law
+gives **108,591,184,675 bytes = 101.1334217 GiB** in selected disjoint live
+allocations, exceeding the original 96-GiB host cap by 5,511,969,571 bytes.
+This lower grants the 257 most frequent labels small IDs, sets changed-master
+commits to zero and counts only selected initial nodes. It still excludes
+completion even after hypothetically relaxing the small qualification node
+cap. No measurement slope, digest-only context identity, nonexistent lazy
+dictionary or shared occurrence counted as a fresh allocation is used.
+
+The job exits zero without timeout in 1.7259234 launcher seconds, at a peak
+job commitment of 1,290,907,648 bytes within four GiB. Worker creation identities
+and host samples agree, source is unchanged and the original PID is absent
+after completion. These diagnostics describe only the census. The exclusive
+`FP_OWNED_GRAPH_CONTEXT_CENSUS_A1.json` journal is terminal; no replay or full
+native attempt is required to observe the proved host exclusion.
+
+Distinct contexts are overlapping views of the same retained prefix, not
+independent information. Their current flat definitions and pending vectors
+cost at least 44.31 GiB before the original context tuples; resource records
+and indices contribute substantial separate allocation. A next refinement
+must close the joint stored-value, metadata, verification and execution
+account. A single selected saving cannot certify whole-host fit, and this
+representation lower does not prove a Foundation impossibility or identify
+the old interrupted worker's cause. Keep relation/precision and scoped graph
+CPU/device qualification closed. The full ordinary next-token trained
+comparison remains the objective, with no shortened score or new semantic
+action substituted for it.

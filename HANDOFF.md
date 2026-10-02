@@ -2,20 +2,27 @@
 
 ## Current execution state (2026-10-03)
 
-**Whole graph host lower: CPU PASS; one exact context census preregistered.**
+**Full ordinary-text host budget: unchanged owned graph EXCLUDED.**
 The [disjoint allocation proof](theory/proofs/OWNED_GRAPH_HOST_BOUND.md)
-now includes both resource indices, lazy metadata, event tuples, graph
-metadata and native source objects. Every term passes 52 complete-history
-controls without duplicate allocation credit; a separate parser control
-checks 767 non-small context references. A materialization witness prevents
-counting dictionaries created only by the observer. The remaining D/R terms
-need one [passive census](experiments/next_token/OWNED_GRAPH_CONTEXT_CENSUS_A1.md)
-of the original training prefix, registered at four GiB/180 seconds after
-4,368 exhaustive independent-oracle controls. It reads no validation data and
-constructs no learner. Corpus execution is pending; 96-GiB exclusion/fit is
-not yet established. Commit inputs/evidence before the exclusive launch.
+and original [training-context census](experiments/next_token/OWNED_GRAPH_CONTEXT_CENSUS_A1.md)
+now establish at least **108,591,184,675 bytes = 101.1334217 GiB** of selected
+live storage, above the original 96-GiB cap even after hypothetically relaxing
+the insufficient qualification node cap. All 1,048,576 contexts are distinct;
+at least 267,180,252 parsed context references must have non-small IDs, even
+granting small IDs to the 257 most frequent labels. The bound includes both
+resource indices, actual lazy metadata, graph structures and native sources
+without duplicate or observer-created dictionary credit. 52 complete histories,
+a 767-reference parser control and 4,368 census-oracle cases pass. The one
+four-GiB/180-second census passes at `93f3f25`, reads only the original training
+prefix and creates no learner; its journal is terminal. This is a source/ABI
+realization exclusion, not a Foundation or time impossibility. No trained FP
+score exists. Do not launch the unchanged graph, replay old jobs or substitute
+a shorter score. The next ordinary-text refinement must account jointly for
+overlapping context/pending sequences, complete metadata and execution; another
+selected component saving does not establish fit. Foundation/ERC, relation/
+precision and scoped graph CPU/device qualification stay closed.
 
-**Full ordinary-text budget: exact graph schedule checked; feasibility UNRESOLVED.**
+**Historical schedule-only lower: exact counts, insufficient alone for host exclusion.**
 The [complete-schedule account](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md)
 requires at least 14,754,100 total nodes for the original full declaration,
 so the 2^22 qualification cap cannot simply become a full-run cap. Training
@@ -23,9 +30,10 @@ adds about 12.59 million live objects, 6.30 million retired identities and
 52.45 million resource events. Flat pending vectors have 268,959,744 stored
 child references: 2.16 GB on wire but at least 19.2295 GiB across selected
 disjoint live allocations on this ABI. 101 complete histories/218 commits
-verify the source formulas and actual identities. This lower is below 96 GiB;
-neither host exclusion nor fit follows. The next decision needs the remaining
-complete metadata/index/source/diagnostic costs, without double counting.
+verify the source formulas and actual identities. This earlier lower is below
+96 GiB; neither host exclusion nor fit followed from it alone. The complete
+metadata/index/source account above now settles the unchanged representation's
+host exclusion without double counting.
 No production variant or full-run launch is selected by this assessment.
 
 **Owned typed value graph: default off; scoped CPU/RTX 3090 qualification CLOSED.**
@@ -47,10 +55,10 @@ allocation refusal. The one [RTX 3090 control](experiments/next_token/OWNED_VALU
 passes at `e0f8d80`: nineteen phases/6,340 words/all 19,922,944 frame bytes,
 46 complete native records and 1,148 memo evictions, with original caps and
 the single 32-MiB arena. The journal is terminal. Close this lowering; it
-provides no full-host fit, matched timing or trained result. Now settle the
-whole ordinary-text budget, including both indices, parsed child IDs, current
-sources and Runtime metadata, before another full attempt. The qualification
-node/memo allowances are not full-run declarations. Foundation/ERC,
+provides no full-host fit, matched timing or trained result. The subsequent
+account above excludes the unchanged full native host realization. Any next
+refinement needs a justified total budget before another full attempt. The
+qualification node/memo allowances are not full-run declarations. Foundation/ERC,
 relation/precision and old journals stay closed; no shorter score is selected.
 
 **Whole native retention work: full-schedule law proved; budget remains UNRESOLVED.**
