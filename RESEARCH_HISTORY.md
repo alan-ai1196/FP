@@ -11983,3 +11983,51 @@ closed journals are unchanged. Next derive the source-fact permission inside
 Runtime, retain complete failure/role accounting and settle the total host/
 index/memo budget. Ordinary next-token learning remains the objective; no
 static relation extension or shortened trained score replaces it.
+
+## 350. Own typed retention and bound work on unused definitions (2026-10-03)
+
+The selected typed-value construction is now an explicit default-off Runtime
+encoding. The existing constructor/public-copy and persistent transition
+boundaries establish stable private sources; no caller ownership flag is
+accepted. A byte-only producer writes its admitted workspace and exact output.
+An independent reader checks definitions, metrics and the separately derived
+expected expression before publication. All four workspaces, pages, copies and
+roots retain complete compiler/deployment leases.
+
+Source facts now use bounded FIFO replacement. Each traversal's proposals are
+also bounded, and a full transient memo simply stops caching additional facts.
+Eviction preserves all historical definitions and pages; subsequent traversal
+recovers the same typed expression. Publication appends deltas without copying
+the old page list or whole binding map. Native graph retention creates no
+canonical images merely to serialize those same captured operands again.
+
+Review exposes a necessary distinction between per-node and per-page work.
+Five unused valid captures individually need at most 44 references and retain
+an old one-reference root, yet together require 215 semantic traversal units.
+A deliberately unmetered control accepts against allowance 128. The actual
+reader now debits aggregate operand and logical-value visits before executing
+them and refuses that page. Repeated record metadata uses already checked
+string metrics. This is a resource-bound necessity control, not a historical
+production counterexample or Foundation change.
+
+93 complete native histories/158 commits recover 2,239 records and 14,014,586
+canonical bytes, with 21,662 fact evictions. Fifteen forced-clear comparisons
+preserve identical encoded pages. Twenty paired CPU-tensor histories agree
+through 340 phases, 126,797 primitive words, profiles, commits, frozen reports
+and physical arena history; all 356,515,840 original frame bytes remain checked.
+Three nonzero-padding frames and 22 post-target faults retain the actual paid
+prefix, revealed target, old learner, failed frame and generation pins.
+
+The original full train/report/V50,257 declaration passes two synthetic events
+without corpus access: initialization retains 1,118,517 nodes/39,259,233 page
+bytes, and the events add 89 nodes/7,957 bytes. The fixed 8,192-entry memo holds
+6,257 facts; all fifteen canonical roots recover 155,227,697 bytes. Actual
+reference payload peaks at 159,008,845 bytes under complete role checks. That
+coordinate excludes Python indices, child IDs, sources and metadata; it is
+not whole-host fit, timing or a trained result.
+
+The implementation proof and two focused receipts are retained. Broad fixed-
+source CPU regression and actual-device qualification are the next scoped
+steps, followed by the full ordinary-text budget decision. Foundation/ERC,
+relation/precision and old journals remain closed. No new certificate class,
+semantic action or shortened comparison is introduced.

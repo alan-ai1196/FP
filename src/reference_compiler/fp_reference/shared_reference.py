@@ -39,8 +39,9 @@ class SharedReferenceContract:
                         positive=field.name not in ('canonical_image_bytes', 'token_invariant_bytes',
                                                    'expression_nodes', 'expression_bindings'))
         from .byte_terms import ENCODING_ID as TERM_ENCODING, U64_MAX
-        terms = self.encoding == TERM_ENCODING
-        if (self.encoding not in (archive.ENCODING_ID, TERM_ENCODING)
+        from .value_graph import ENCODING_ID as GRAPH_ENCODING
+        terms = self.encoding in (TERM_ENCODING, GRAPH_ENCODING)
+        if (self.encoding not in (archive.ENCODING_ID, TERM_ENCODING, GRAPH_ENCODING)
                 or self.literal_workspace < archive.HEADER.size
                 or terms and (not self.expression_nodes or not self.expression_bindings
                     or max(self.expanded_cap, self.expression_nodes, self.expression_bindings,
@@ -348,8 +349,15 @@ def decoded_buffer(snapshot, object_id, *, byte_cap, reference_cap):
     if ordinal >= len(config.pages):
         raise ContractError('shared reference root has no retained page')
     from .byte_terms import ENCODING_ID as TERM_ENCODING, Reader as TermReader, Limits
+    from .value_graph import ENCODING_ID as GRAPH_ENCODING, Reader as GraphReader, Limits as GraphLimits
     terms = config.contract.encoding == TERM_ENCODING
-    reader = (TermReader(Limits(expanded=config.contract.expanded_cap,
+    graphs = config.contract.encoding == GRAPH_ENCODING
+    reader = (GraphReader(GraphLimits(expanded=config.contract.expanded_cap,
+        nodes=config.contract.expression_nodes, bindings=config.contract.expression_bindings,
+        page_bytes=config.contract.literal_workspace, comparisons=config.contract.comparison_cap,
+        references=config.contract.reference_cap,
+        integer_bits=min((1 << 64)-1, 4*config.contract.literal_workspace))) if graphs else
+        TermReader(Limits(expanded=config.contract.expanded_cap,
         nodes=config.contract.expression_nodes, page_bytes=config.contract.literal_workspace,
         comparisons=config.contract.comparison_cap, references=config.contract.reference_cap)) if terms else archive.Reader())
     for identity in config.pages[:ordinal+1]:

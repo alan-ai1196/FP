@@ -1,19 +1,18 @@
 # FP Open Problems
 
-The selected joint retention construction is now the
-[typed value graph](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md), with exact
-preservation/guard/wire laws and complete passive native-record evidence.
-It retains captured operands directly and publishes only new definitions and
-facts. The original full manifest fits its passive binding allowance, but
-keeping every subsequent fact forever would exceed that allowance; clearing
-facts preserves complete values and changes work. The immediate question is
-an **owned realization with a total resource account**, including the actual
-source-stability boundary, dictionaries, memo policy, failed prefixes and
-Runtime metadata. A caller flag cannot supply that boundary, and the wire
-formula cannot supply whole-host fit. Do not reopen a codec menu, static
-relation case, old journal or shortened-horizon score. The full ordinary-text
-comparison remains the objective; actual AMP retains its complete frame and
-fresh numerical obligations.
+The selected [typed value graph now has an owned Runtime lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md).
+Source stability follows from the existing private copy/transition boundary;
+bounded FIFO facts avoid all-facts growth without removing historical values.
+Focused native/tensor/full-V, failure and aggregate parser-work controls pass.
+Complete committed-source CPU regression and a separately registered actual
+RTX 3090 control are the remaining scoped qualification steps. Close those
+without extending static variants, then answer the **whole ordinary-text
+host/execution budget**: pages, both indices, parsed child IDs, bounded memos,
+current sources, full diagnostics and Runtime metadata all matter. The wire
+formula or two-event payload alone proves no full-run fit. All full AMP frame
+and fresh numerical obligations remain. Do not reopen a codec menu, relation
+case, old journal or shortened-horizon score; the original trained comparison
+remains the objective.
 
 The whole ordinary-text review now identifies a **joint retention-execution
 obstacle**. The [exact schedule laws](theory/proofs/NATIVE_RETENTION_VOLUME.md)

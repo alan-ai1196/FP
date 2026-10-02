@@ -1,0 +1,86 @@
+{
+  "status": "PASS_OWNED_VALUE_GRAPH_RUNTIME_CPU",
+  "scope": "Owned typed-value retention: exact native and CPU-tensor Runtime controls.\n\nNo corpus, timing experiment, actual CUDA claim or trained score. Every\nretained native value and actual original frame keeps its complete oracle.",
+  "components": {
+    "typed_values": 120,
+    "canonical_bytes": 7197,
+    "memo_cap": 4,
+    "complete_old_snapshots": 3,
+    "public_sources_and_contract_isolated": true,
+    "mutable_wrappers_rechecked": true,
+    "pages_workspaces_and_live_buffers_paid": true,
+    "no_complete_expansion_during_native_binding": true
+  },
+  "grammar": {
+    "binary_words": 63,
+    "forced_crc_collisions_checked_by_full_equality": true,
+    "bit_variants_refused": 536,
+    "bit_variants_with_exact_value": 0,
+    "zero_byte_raw_graph_still_bounded_by_unfolded_references": true,
+    "unused_capture_necessity_control": {
+      "root_references": 1,
+      "maximum_node_references": 44,
+      "page_semantic_work_without_meter": 215,
+      "reference_allowance": 128,
+      "actual_parser_refuses_before_exceeding_aggregate_allowance": true
+    },
+    "malformed_registrations_refused": true
+  },
+  "native_histories": {
+    "native_records": 2239,
+    "canonical_bytes": 14014586,
+    "facts_evicted": 21662,
+    "histories": 93,
+    "targets": 294,
+    "commits": 158,
+    "memo_cap": 32,
+    "memo_eviction_page_identity_pairs": 15,
+    "all_sources_traces_targets_and_learners_equal_to_existing_archive": true,
+    "every_new_native_record_fully_recovered": true
+  },
+  "tensor_histories": {
+    "pairs": 20,
+    "phases": 340,
+    "body_bytes": 14148823,
+    "primitive_words": 126797,
+    "raw_calls": 114087,
+    "raw_bytes": 2154384,
+    "independently_recovered_body_bytes": 14148823,
+    "registered_complete_frame_bytes": 356515840,
+    "complete_frames_reports_profiles_native_learners_and_arena_histories_equal": true
+  },
+  "failure_prefixes": {
+    "nonzero_padding_frames": 3,
+    "frame_bytes": 45056,
+    "post_target_failures": [
+      "native:message",
+      "native:handle",
+      "native:page-copy",
+      "native:output-resize",
+      "native:workspace-resize",
+      "native:expected",
+      "native:accept",
+      "native:relocation",
+      "native:work",
+      "native:references",
+      "native:partial-memo",
+      "frame:message",
+      "frame:handle",
+      "frame:page-copy",
+      "frame:output-resize",
+      "frame:workspace-resize",
+      "frame:expected",
+      "frame:accept",
+      "frame:relocation",
+      "frame:work",
+      "frame:references",
+      "frame:partial-memo"
+    ],
+    "paid_actual_prefix_target_old_learner_and_frame_pins_preserved": true
+  },
+  "funding_and_freshness": {
+    "unpaid_body_not_read": true,
+    "actual_changed_tensor_refuses": true,
+    "previous_learner_and_cursor_preserved": true
+  }
+}

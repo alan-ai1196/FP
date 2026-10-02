@@ -570,7 +570,11 @@ class ReferenceCompilerRuntime:
         self._ledger.register_owner(self._data_owner, 'compiler')
         self._reference_archive = None
         if shared_storage is not None:
-            if shared_storage.expression_nodes:
+            from .value_graph import ENCODING_ID as GRAPH_ENCODING
+            if shared_storage.encoding == GRAPH_ENCODING:
+                from .value_graph_reference import _ValueGraphReference
+                self._reference_archive = _ValueGraphReference(self, shared_storage)
+            elif shared_storage.expression_nodes:
                 from .compositional_reference import _CompositionalReference
                 self._reference_archive = _CompositionalReference(self, shared_storage)
             else:

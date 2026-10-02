@@ -289,3 +289,8 @@ before a new full trial. Actual AMP frames retain all original fresh-read,
 padding and bridge obligations; this native graph model waives none of them.
 The old text attempt and every terminal cost/device journal stay closed.
 No shorter score is substituted for the original full training comparison.
+
+The subsequent [owned Runtime lowering](OWNED_VALUE_GRAPH_RUNTIME.md) supplies
+the private source boundary, bounded FIFO memo and complete frame/failure
+protocol. Its scoped CPU evidence is separate from this unchanged passive
+model; actual-device and full-run budget duties remain explicit.

@@ -1,0 +1,57 @@
+{
+  "status": "PASS_OWNED_VALUE_GRAPH_RUNTIME_CPU",
+  "scope": "Owned typed-value retention: exact native and CPU-tensor Runtime controls.\n\nNo corpus, timing experiment, actual CUDA claim or trained score. Every\nretained native value and actual original frame keeps its complete oracle.",
+  "full_native": {
+    "original_train": 1048576,
+    "original_report": 16384,
+    "vocabulary": 50257,
+    "masters": 603092,
+    "synthetic_targets": 2,
+    "memo_cap": 8192,
+    "memo_entries": 6257,
+    "initial_nodes": 1118517,
+    "initial_page_bytes": 39259233,
+    "additional_nodes": 89,
+    "additional_page_bytes": 7957,
+    "actual_native_canonical_checks": {
+      "facts_evicted": 0,
+      "native_records": 15,
+      "canonical_bytes": 155227697,
+      "memo_peak": 6257
+    },
+    "residency": {
+      "current": {
+        "reference_payload_bytes": 124635061,
+        "physical_objects": 38
+      },
+      "role_current": {
+        "compiler": {
+          "reference_payload_bytes": 124635029,
+          "physical_objects": 36
+        },
+        "deployment": {
+          "reference_payload_bytes": 124626687,
+          "physical_objects": 23
+        }
+      },
+      "peak": {
+        "reference_payload_bytes": 159008845,
+        "physical_objects": 40
+      },
+      "role_peak": {
+        "compiler": {
+          "reference_payload_bytes": 159008845,
+          "physical_objects": 37
+        },
+        "deployment": {
+          "reference_payload_bytes": 159008829,
+          "physical_objects": 25
+        }
+      },
+      "every_current_buffer_and_lease_inspected": true
+    },
+    "canonical_images_created": 0,
+    "owned_base_fact_retained": true,
+    "no_full_host_timing_or_model_result": true
+  }
+}

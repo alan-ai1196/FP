@@ -2,24 +2,25 @@
 
 ## Current execution state (2026-10-03)
 
-**Typed value retention: joint law and passive native evidence PASS; no Runtime release.**
-The [new construction](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md) retains
-typed fields and the existing captured-input operands directly. Its exact
-wire law is `40M + 9N + A + 8E`; independent source binding and prefix publication
-avoid repeated canonical expansion and whole-table copies. Reusing private
-records requires the actual ownership/transition invariant; a caller's frozen
-wrapper or boolean is insufficient, as a stale-binding witness demonstrates.
-93 native histories/158 commits, fifteen complete observer controls, guard/
-fault checks and the original full declaration pass. Two full-V synthetic
-events add 89 nodes/7,957 bytes after initialization, with every canonical
-record recovered. This is no timing or whole-host result. Source facts can
-be forgotten without changing pages/roots; 360 exact controls verify the
-result and its extra traversal cost. The current all-facts policy still cannot
-fit a full run in its small binding cap. Next make this **one joint lowering**
-owned and budgeted, deriving record stability inside Runtime and accounting
-for indices, memos, source state and failure prefixes. Production, full AMP
-frame duties and all closed journals remain unchanged. Ordinary next-token
-training stays the target; no relation extension or shorter score is selected.
+**Owned typed value graph: implemented, default off; focused CPU checks PASS.**
+The [owned lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) derives source
+stability from the existing Runtime copy/transition boundary. Its byte-only
+producer, independent reader and bounded FIFO source memo preserve complete
+values without copying old publication tables. Eviction changes work, not
+retained pages. All four workspaces, immutable pages and transient copies remain
+paid in both roles; no certificate class or numerical action is added.
+93 native histories/158 commits and twenty paired CPU-tensor histories pass,
+including profiles, frozen reports, all 356,515,840 original frame bytes,
+nonzero padding and 22 post-target failure boundaries. An aggregate parser
+meter refuses unused captures whose combined semantic work exceeds the page
+allowance; per-node bounds alone are insufficient. The original full-V
+declaration plus two synthetic events also passes: 89 new nodes/7,957 bytes,
+6,257 memo facts within 8,192, and every original canonical record recovered.
+The committed-source broad regression and actual RTX 3090 qualification are
+next. This is no timing, full-host fit or trained result. Then settle the
+whole ordinary-text budget, including both indices, parsed child IDs, current
+sources and Runtime metadata, before another full attempt. Foundation/ERC,
+relation/precision and old journals stay closed; no shorter score is selected.
 
 **Whole native retention work: full-schedule law proved; budget remains UNRESOLVED.**
 The [source-derived account](theory/proofs/NATIVE_RETENTION_VOLUME.md) finds

@@ -1,5 +1,19 @@
 # FP Claims and Status
 
+**Owned typed value graph: CONDITIONAL RUNTIME REFINEMENT; FOCUSED CPU PASS.**
+The [implementation proof](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) binds
+the source-stability premise to the private Runtime boundary and uses bounded
+FIFO memos, independent parsing and prepaid complete pages. The exact class is
+the owner's typed expression relative to its checked prefix, within every
+declared limit; this layer issues no `CERTIFIED_COMPLETE` authority. Aggregate
+semantic parsing work needs its own bound: five unused captures pass individual
+44-reference bounds yet require 215 units against allowance 128; the actual
+meter refuses. 93 native histories/158 commits, twenty paired tensor histories,
+full frames, 22 terminal failures and the original full-V declaration pass.
+This is default-off production, not merely the passive model below. Broad CPU
+regression, actual CUDA and full-run host/execution feasibility remain open;
+no timing or trained-model result is inferred.
+
 **Typed value graph: CONDITIONAL PRESERVATION/COST THEOREMS; PASSIVE CPU PASS.**
 The [proof](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md) preserves the existing
 canonical values using typed nodes and actual captured operands, with exact
