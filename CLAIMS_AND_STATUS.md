@@ -10,8 +10,10 @@ no direct-input features retain eager input Fractions in that registration.
 98 complete history pairs, six CPU tensor pairs, full-V snapshot comparison,
 48 input-feature pairs and archive/allocation attacks pass. Expression storage
 binds the complete parent without retaining temporary decoded scalars. All 25
-committed-source CPU scripts pass at `e13e480`; actual-device qualification is
-preregistered and its native harness passes, with no device result yet. This is
+committed-source CPU scripts pass at `e13e480`. Actual A1 is terminal UNRESOLVED
+at `eb8e130`: the comparator's Git subprocess violates the one-process job;
+shared never launches. No numerical disagreement or completed device
+qualification follows. The source-transport harness requires correction. This is
 neither a total host bound nor a speed/model/`CERTIFIED_COMPLETE` claim.
 
 **Historical native text host feasibility: SOURCE/ABI LOWER BOUND; OLD BUDGET EXCLUDED.**

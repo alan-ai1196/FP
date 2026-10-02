@@ -14,8 +14,11 @@ complete histories, six CPU tensor pairs/129 bodies, full-V buffer/snapshot
 equality and 48 input-feature pairs pass, including five new terminal host
 failure sites. All 25 complete committed-source CPU audit scripts now pass at
 `e13e480`, including persistence/install and actual Windows host refusal. The
-fixed [AMP qualification](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
-preregistered with native harness controls passing. There is no complete host
+first [AMP qualification](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
+terminal UNRESOLVED: its audit comparator attempts a forbidden Git subprocess
+inside the one-process job. Shared never launches; no numerical disagreement
+is observed, and no actual qualification is issued. The source-transport harness
+requires a separate corrected registration. There is no complete host
 budget, timing or model-score claim.
 
 The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)

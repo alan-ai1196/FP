@@ -11,10 +11,15 @@ SOURCE = 'c67a0aad7468d5e59635e02fb1501fee93c2f68e'
 
 
 @contextmanager
-def literal_predictions():
+def literal_predictions(source_text=None):
     from fp_reference import token_execution as module
     path = 'src/reference_compiler/fp_reference/token_execution.py'
-    text = subprocess.check_output(['git', 'show', SOURCE+':'+path], cwd=ROOT, text=True)
+    # A one-process job cannot launch Git. Its launcher can supply the exact
+    # historical file after binding that artifact's bytes to SOURCE. This is
+    # an audit-only comparator, never a Runtime authority or production mode.
+    text = (subprocess.check_output(['git', 'show', SOURCE+':'+path], cwd=ROOT, text=True)
+            if source_text is None else source_text)
+    assert type(text) is str
     original = ast.parse(text)
     current = ast.parse((ROOT/path).read_text(encoding='utf-8'))
     def unchanged(tree):

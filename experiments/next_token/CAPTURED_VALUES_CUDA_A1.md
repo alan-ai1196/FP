@@ -1,6 +1,26 @@
 # Captured native values: fixed actual AMP qualification A1
 
-Status (2026-10-03): **PREREGISTRATION; NO ACTUAL WORKER LAUNCHED**.
+Status (2026-10-03): **ORIGINAL PACKED WORKER UNRESOLVED; CLOSED**.
+
+## Original outcome
+
+At `eb8e130`, the packed worker exits 2 after 4.27321 worker seconds, without
+a timeout. Its peak job commitment is 2,004,135,936 bytes, within 4 GiB. The
+actual training/reporting fixture returns, but the later historical comparator
+calls `git show` through a subprocess. Windows rejects creation with error 1816
+inside the job's one-active-process limit. This is a harness/resource-model
+mismatch, not an observed numerical or captured-value disagreement. Because the
+worker did not publish its returned positive counts before this failure, no
+completed actual qualification is issued from the traceback or elapsed time.
+The shared worker was not launched. Source remains unchanged and the original
+packed process is absent after exit.
+
+The exclusive `FP_CAPTURED_VALUES_CUDA_A1.json` preserves this negative result.
+Never replay this registration. A separately registered A2 may move exact
+historical source extraction into its launcher and bind the delivered bytes
+inside the one-process worker, retaining the same model and resource caps.
+
+## Original registration
 
 The [captured-value refinement](../../theory/proofs/CAPTURED_TOKEN_VALUES.md)
 removes retained eager input Fractions while preserving every logical value

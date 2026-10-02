@@ -11810,3 +11810,20 @@ Proceed to the scoped actual AMP qualification, then the complete ordinary-text
 budget decision. Do not infer a timing gain, full
 host fit, trained score or new certificate class. Relation/precision and all
 closed experiment journals remain closed; Foundation/ERC are unchanged.
+
+## 345. The historical comparator violates the one-process device job (2026-10-03)
+
+The first actual captured-value control at `eb8e130` fails in its harness.
+After the packed training/reporting fixture returns, the passive literal
+comparator invokes `git show` inside the one-active-process Windows job.
+Windows refuses creation with error 1816. The worker exits 2 after 4.27321
+seconds, no timeout, peak job commitment 2,004,135,936 bytes within 4 GiB.
+The original process is absent after exit. Shared is not launched and the
+journal remains terminal UNRESOLVED, without a numerical-disagreement claim
+or promotion of unpublished positive counts into actual qualification.
+
+The source comparator must receive the actual historical file from its
+launcher, with artifact identity checked inside the worker, rather than launch
+a second process. This changes audit transport only, not model, production
+runtime, arithmetic, source semantics or resource caps. Preserve A1, qualify
+that fixed transport and preregister any corrected actual control separately.

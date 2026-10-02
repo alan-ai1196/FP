@@ -1,0 +1,68 @@
+{
+  "status": "UNRESOLVED_CAPTURED_VALUES_CUDA_A1",
+  "source_commit": "eb8e130a33902bf9a25928ce9928f52d2ef7c315",
+  "cases": [
+    "packed",
+    "shared"
+  ],
+  "host_cap": 4294967296,
+  "deadline_ms": 180000,
+  "arena_bytes": 33554432,
+  "allocator_reserved_cap": 33554432,
+  "whole_board_VRAM_upper": 25769803776,
+  "protocol": "experiments/next_token/CAPTURED_VALUES_CUDA_A1.md",
+  "scope": "Fixed actual AMP qualification of captured native prediction values.\n\nTwo packed/shared training/reporting controls. No corpus, new model, cost\ncomparison, full-V budget, installation or whole-release claim.",
+  "results": [
+    {
+      "case": "packed",
+      "job": {
+        "exit_code": 2,
+        "timed_out": false,
+        "commit_limit": 4294967296,
+        "peak_process_commit": 2002886656,
+        "peak_job_commit": 2004135936,
+        "user_100ns": 31718750,
+        "kernel_100ns": 11562500,
+        "total_processes": 2,
+        "limit_terminated_processes": 0,
+        "attached_before_resume": true,
+        "process_id": 28248,
+        "process_creation_100ns": 134354400695685890
+      },
+      "launch_wall_seconds": 4.941798899999412,
+      "result": {
+        "status": "FAILED",
+        "case": "packed",
+        "before": {
+          "process_id": 28248,
+          "creation_100ns": 134354400695685890,
+          "process_commit": 26202112,
+          "lifetime_process_commit_peak": 35737600,
+          "job_commit_peak": 36986880,
+          "process_user_100ns": 2031250,
+          "process_kernel_100ns": 1250000,
+          "job_user_100ns": 2031250,
+          "job_kernel_100ns": 1406250,
+          "total_job_processes": 2
+        },
+        "reason": "OSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002",
+        "traceback": "Traceback (most recent call last):\n  File \"F:\\FP\\scripts\\run_captured_values_cuda_a1.py\", line 76, in worker\n    checked, rt = control(case, cuda=True)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\run_captured_values_cuda_a1.py\", line 42, in control\n    with literal_predictions():\n         ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"F:\\FP\\scripts\\captured_values_audit_support.py\", line 17, in literal_predictions\n    text = subprocess.check_output(['git', 'show', SOURCE+':'+path], cwd=ROOT, text=True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 468, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 550, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1028, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"C:\\Users\\alan1\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\subprocess.py\", line 1540, in _execute_child\n    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError 1816] \u914d\u989d\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5904\u7406\u6b64\u547d\u4ee4\u3002\n",
+        "after": {
+          "process_id": 28248,
+          "creation_100ns": 134354400695685890,
+          "process_commit": 2002886656,
+          "lifetime_process_commit_peak": 2002886656,
+          "job_commit_peak": 2004135936,
+          "process_user_100ns": 28906250,
+          "process_kernel_100ns": 11093750,
+          "job_user_100ns": 28906250,
+          "job_kernel_100ns": 11250000,
+          "total_job_processes": 2
+        },
+        "worker_wall_seconds": 4.273208899998281
+      },
+      "accepted_execution": false
+    }
+  ],
+  "source_unchanged_during_checks": true
+}

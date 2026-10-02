@@ -15,8 +15,11 @@ allocation failures. Public exports remain ordinary tuples. The optional
 expression format binds the parent without retaining decoded temporaries.
 The 25-script committed-source CPU regression now passes at `e13e480`, including
 persistence/install/reporting and actual Windows host refusal. The fixed
-[actual AMP control](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
-preregistered with both native harness cases passing. Finish that control, then
+[actual AMP A1](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is terminal
+UNRESOLVED: its passive historical comparator tries to spawn Git inside the
+one-process Windows job. Packed exits 2; shared never launches. The original
+journal is closed. Correct the harness's source transport in a separately
+registered control with unchanged model/caps, then
 assess the complete ordinary-text budget. Foundation/ERC and all closed
 relation/precision/cost branches remain closed; no full-run launch is yet due.
 
