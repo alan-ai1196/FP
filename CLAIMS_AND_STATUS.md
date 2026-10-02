@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Owned typed value graph: CONDITIONAL RUNTIME REFINEMENT; SCOPED CPU PASS.**
+**Owned typed value graph: CONDITIONAL REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [implementation proof](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) binds
 the source-stability premise to the private Runtime boundary and uses bounded
 FIFO memos, independent parsing and prepaid complete pages. The exact class is
@@ -11,8 +11,10 @@ semantic parsing work needs its own bound: five unused captures pass individual
 meter refuses. 93 native histories/158 commits, twenty paired tensor histories,
 full frames, 22 terminal failures and the original full-V declaration pass.
 This is default-off production, not merely the passive model below. All 21
-complete scoped CPU scripts pass at `9fe66f1`. Actual CUDA qualification and
-full-run host/execution feasibility remain open; no timing or trained-model
+complete scoped CPU scripts pass at `9fe66f1`. The one original actual RTX 3090
+control passes at `e0f8d80`: nineteen phases/6,340 words/full frames and 1,148
+memo evictions under original caps. Scoped qualification is closed. Full-run
+host/execution feasibility remains open; no matched timing or trained-model
 result is inferred.
 
 **Typed value graph: CONDITIONAL PRESERVATION/COST THEOREMS; PASSIVE CPU PASS.**

@@ -12039,3 +12039,34 @@ remain unchanged throughout. One actual RTX 3090 control is preregistered
 with the existing four-train/four-report fixture, complete frames, four-GiB
 job, 180-second deadline and a 32-entry memo to exercise real evictions.
 Its committed native harness must pass before the original device launch.
+
+## 351. Close owned typed-value qualification on the actual RTX 3090 (2026-10-03)
+
+The native harness passes at `56e09d8` with all subprocess creation forbidden;
+its 46 complete records, 374 memo evictions, frozen report and terminal export
+failure remain checked. The one original actual-device worker then passes at
+`e0f8d80`, with production unchanged from the 21-script CPU-qualified `9fe66f1`.
+No model, numerical-policy, storage-allowance or hardware-arena variant is tried.
+
+Four training targets, two commits and four frozen reporting targets preserve
+nineteen actual AMP phases, 6,340 primitive words, 731,331 complete body bytes
+and every 19,922,944 frame byte including padding. The 32-entry source memo
+undergoes 1,148 evictions without losing any of 65 pages/244,271 encoded bytes.
+All 3,969 producer/reader node definitions and actual paid pages agree. Every
+native record independently recovers its original canonical encoding, totaling
+273,034 bytes. Caller isolation, actual fresh bridge checks, frozen native/
+physical learners, role accounting and terminal failure are unchanged.
+
+The job exits zero without timeout in 5.9839933 launcher seconds and peaks at
+2,007,019,520 committed bytes within four GiB. The actual single 32-MiB arena
+and allocator reservation stay fixed. Source is unchanged, and the original
+worker PID is absent after completion. These are job diagnostics, not a matched
+speed result. The complete original journal is now terminal; never replay it.
+
+Close this joint lowering's scoped qualification. The actual page payload and
+bounded source memo are not a whole-host bound; both exact indices, parsed
+child IDs, retained source histories, metadata and diagnostics still matter.
+The next decision is the full ordinary-text execution budget, using source
+bounds rather than extrapolating this tiny trajectory. Qualification caps are
+not a full-run declaration. Foundation/ERC and relation/precision remain
+closed; no additional local variant or shorter trained score is selected.

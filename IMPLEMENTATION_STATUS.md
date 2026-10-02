@@ -14,10 +14,12 @@ Focused CPU controls pass: 93 native histories/158 commits, twenty complete
 tensor pairs/340 phases, nonzero frame padding, 22 terminal faults, public
 mutations and memo eviction. Original full-V initialization/two synthetic
 events also pass, with zero native-only canonical images. All 21 complete scoped
-CPU scripts pass at `9fe66f1`; the one actual-device control is preregistered,
-with its native harness qualification and launch pending. No full-host,
-execution-time, trained-score or new certificate claim follows. The whole
-ordinary-text budget is next; Foundation/ERC and relation/precision stay closed.
+CPU scripts pass at `9fe66f1`. The one actual RTX 3090 control passes at
+`e0f8d80`, preserving nineteen phases/6,340 words/full frames, 46 native
+records, 1,148 memo evictions and the single 32-MiB arena within original caps.
+This scoped qualification is closed. No full-host, matched execution-time,
+trained-score or new certificate claim follows. The whole ordinary-text
+budget is next; Foundation/ERC and relation/precision stay closed.
 
 The [whole-schedule retention account](theory/proofs/NATIVE_RETENTION_VOLUME.md)
 now proves at least 68.84 TB in each complete producer/decoder/expected stream

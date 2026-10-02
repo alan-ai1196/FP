@@ -4,10 +4,10 @@ The selected [typed value graph now has an owned Runtime lowering](theory/proofs
 Source stability follows from the existing private copy/transition boundary;
 bounded FIFO facts avoid all-facts growth without removing historical values.
 Focused native/tensor/full-V, failure and aggregate parser-work controls and
-all 21 complete scoped CPU scripts pass at `9fe66f1`. The separately registered
-RTX 3090 control, after its native harness check, remains. Close that scope
-without extending static variants, then answer the **whole ordinary-text
-host/execution budget**: pages, both indices, parsed child IDs, bounded memos,
+all 21 complete scoped CPU scripts pass at `9fe66f1`. The one original actual
+RTX 3090 control passes at `e0f8d80`, including full frames and 1,148 actual
+memo evictions. This qualification is closed. Now answer the **whole ordinary-
+text host/execution budget**: pages, both indices, parsed child IDs, bounded memos,
 current sources, full diagnostics and Runtime metadata all matter. The wire
 formula or two-event payload alone proves no full-run fit. All full AMP frame
 and fresh numerical obligations remain. Do not reopen a codec menu, relation

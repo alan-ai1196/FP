@@ -1,0 +1,122 @@
+{
+  "status": "COMPLETE_OWNED_VALUE_GRAPH_CUDA_A1",
+  "source_commit": "e0f8d80096360ae1a15044eb6513ac97612509f7",
+  "host_cap": 4294967296,
+  "deadline_ms": 180000,
+  "arena_bytes": 33554432,
+  "allocator_reserved_cap": 33554432,
+  "whole_board_VRAM_upper": 25769803776,
+  "node_cap": 4194304,
+  "source_memo_cap": 32,
+  "token_base_fact_cap": 1048576,
+  "protocol": "experiments/next_token/OWNED_VALUE_GRAPH_CUDA_A1.md",
+  "scope": "One complete owned value-graph AMP control; no corpus or performance comparison.",
+  "job": {
+    "exit_code": 0,
+    "timed_out": false,
+    "commit_limit": 4294967296,
+    "peak_process_commit": 2005782528,
+    "peak_job_commit": 2007019520,
+    "user_100ns": 45312500,
+    "kernel_100ns": 8906250,
+    "total_processes": 2,
+    "limit_terminated_processes": 0,
+    "attached_before_resume": true,
+    "process_id": 28048,
+    "process_creation_100ns": 134354513873682357
+  },
+  "launch_wall_seconds": 5.983993300003931,
+  "result": {
+    "status": "PASS_ACTUAL_OWNED_VALUE_GRAPH",
+    "before": {
+      "process_id": 28048,
+      "creation_100ns": 134354513873682357,
+      "process_commit": 27996160,
+      "lifetime_process_commit_peak": 36999168,
+      "job_commit_peak": 38236160,
+      "process_user_100ns": 2343750,
+      "process_kernel_100ns": 625000,
+      "job_user_100ns": 2343750,
+      "job_kernel_100ns": 781250,
+      "total_job_processes": 2
+    },
+    "outcome": {
+      "training_events": 4,
+      "optimizer_commits": 2,
+      "report_events": 4,
+      "exact_native_trajectory_equal_to_unattacked_control": true,
+      "supplied_registrations_and_public_wrappers_isolated": true,
+      "frozen_private_native_learner_preserved": true,
+      "frozen_private_physical_learner_preserved": true,
+      "terminal_export_failure_preserves_completed_prefix": true,
+      "checked_phases": 19,
+      "checked_primitive_words": 6340,
+      "complete_phase_bytes": 731331,
+      "complete_frame_bytes": 19922944,
+      "uncached_complete_frames_and_padding_checked": true,
+      "paid_reference_peak": 3512768,
+      "arena": {
+        "native_allocation_counter": [
+          1,
+          33554432,
+          1
+        ],
+        "current_allocation_counter": [
+          1,
+          33554432,
+          1
+        ],
+        "consumed_bytes": 34376,
+        "allocation_counter": [
+          1,
+          33554432,
+          1
+        ],
+        "actual_tensor_arena_bytes": 33554432,
+        "actual_allocator_reserved_bytes": 33554432,
+        "lifetime_tensor_peak_bytes": 33554432,
+        "lifetime_allocator_reserved_peak_bytes": 33554432
+      },
+      "owned_value_graph": {
+        "encoding": "complete-owned-typed-value-graph-u64-pages-v1",
+        "node_cap": 4194304,
+        "source_memo_cap": 32,
+        "source_memo_entries": 32,
+        "retained_nodes": 3969,
+        "retained_pages": 65,
+        "retained_page_bytes": 244271,
+        "actual_native_canonical_checks": {
+          "facts_evicted": 1148,
+          "native_records": 46,
+          "canonical_bytes": 273034,
+          "memo_peak": 32
+        },
+        "separate_indices_agree_on_every_definition": true,
+        "all_reader_pages_equal_to_actual_paid_buffers": true
+      }
+    },
+    "device": {
+      "runtime_version": 13040,
+      "driver_api_version": 13040,
+      "driver_version": "616.92",
+      "pci_bus_id": "0000:0B:00.0",
+      "uuid": "GPU-229f6784-2b41-5313-3f21-e30f26b0bf5c",
+      "physical_vram_bytes": 25769803776
+    },
+    "after": {
+      "process_id": 28048,
+      "creation_100ns": 134354513873682357,
+      "process_commit": 1838903296,
+      "lifetime_process_commit_peak": 2005782528,
+      "job_commit_peak": 2007019520,
+      "process_user_100ns": 42500000,
+      "process_kernel_100ns": 8593750,
+      "job_user_100ns": 42500000,
+      "job_kernel_100ns": 8750000,
+      "total_job_processes": 2
+    },
+    "worker_wall_seconds": 5.326862299989443
+  },
+  "accepted_execution": true,
+  "source_unchanged_during_checks": true
+}

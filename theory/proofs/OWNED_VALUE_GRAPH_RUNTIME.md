@@ -1,10 +1,11 @@
 # Owned typed-value retention with bounded source facts
 
-Status (2026-10-03): **IMPLEMENTED, DEFAULT OFF; COMPLETE SCOPED CPU QUALIFICATION**.
+Status (2026-10-03): **IMPLEMENTED, DEFAULT OFF; SCOPED CPU/ACTUAL AMP QUALIFICATION CLOSED**.
 The [passive theorem](OWNED_VALUE_GRAPH_RETENTION.md) now has a private Runtime
 lowering. This changes storage/checking execution, not FP semantics or learner
 actions. Foundation/ERC remain frozen. No trained score, full-run resource
-claim, new `CERTIFIED_COMPLETE` class or actual CUDA release is inferred.
+claim or new `CERTIFIED_COMPLETE` class is inferred. The actual-device result
+below is confined to its separately registered complete control.
 
 ## 1. The actual source boundary
 
@@ -180,7 +181,15 @@ inputs unchanged throughout, including actual Windows host-allocation refusal.
 `FP_OWNED_VALUE_GRAPH_REGRESSION_CPU.json` is a scoped CPU result, not a replay
 or reissuance of the old whole release. The one separately preregistered
 [RTX 3090 control](../../experiments/next_token/OWNED_VALUE_GRAPH_CUDA_A1.md)
-and the full ordinary-text host/execution budget remain separate obligations.
+passes at `e0f8d80`, with production unchanged from `9fe66f1`. It preserves
+nineteen phases/6,340 primitive words and all 19,922,944 actual frame bytes
+through four training events, two commits and four frozen report events.
+Its 46 native records recover 273,034 canonical bytes; 1,148 memo evictions
+preserve all 65 pages and exact separate indices. Public/frozen/terminal
+boundaries and the single 32-MiB arena remain. The worker exits zero inside
+four GiB/180 seconds with source unchanged. This scoped qualification is
+closed; the original device journal is terminal and must never be replayed.
+The complete ordinary-text host/execution budget remains separate.
 
 The research target stays the trained ordinary next-token comparison. This
 joint lowering is the selected candidate; no additional relation/precision

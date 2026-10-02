@@ -2,7 +2,7 @@
 
 ## Current execution state (2026-10-03)
 
-**Owned typed value graph: default off; complete scoped CPU checks PASS.**
+**Owned typed value graph: default off; scoped CPU/RTX 3090 qualification CLOSED.**
 The [owned lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) derives source
 stability from the existing Runtime copy/transition boundary. Its byte-only
 producer, independent reader and bounded FIFO source memo preserve complete
@@ -18,10 +18,13 @@ declaration plus two synthetic events also passes: 89 new nodes/7,957 bytes,
 6,257 memo facts within 8,192, and every original canonical record recovered.
 All 21 complete scoped CPU scripts pass at `9fe66f1`, including actual Windows
 allocation refusal. The one [RTX 3090 control](experiments/next_token/OWNED_VALUE_GRAPH_CUDA_A1.md)
-is preregistered; its native harness and original device launch are next.
-This is no timing, full-host fit or trained result. Then settle the
+passes at `e0f8d80`: nineteen phases/6,340 words/all 19,922,944 frame bytes,
+46 complete native records and 1,148 memo evictions, with original caps and
+the single 32-MiB arena. The journal is terminal. Close this lowering; it
+provides no full-host fit, matched timing or trained result. Now settle the
 whole ordinary-text budget, including both indices, parsed child IDs, current
-sources and Runtime metadata, before another full attempt. Foundation/ERC,
+sources and Runtime metadata, before another full attempt. The qualification
+node/memo allowances are not full-run declarations. Foundation/ERC,
 relation/precision and old journals stay closed; no shorter score is selected.
 
 **Whole native retention work: full-schedule law proved; budget remains UNRESOLVED.**
