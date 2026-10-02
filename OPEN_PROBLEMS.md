@@ -3,8 +3,10 @@
 The immediate correctness frontier is the
 [public-value ownership counterexample](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md):
 returned/supplied frozen wrappers can alias live causal records, masters and
-issuances. Qualify transitive isolation of the complete public boundary before
-claiming robust Runtime ownership. The ordinary-text A1 original job continues
+issuances. Transitive isolation now passes the focused audit and all sixteen
+complete CPU regression scripts at `86423cd`, plus both separately registered
+actual CUDA controls at `9d7250d`. Close that scoped qualification. Merge the
+repair after the ordinary-text A1 original job, which continues
 unchanged; its eventual outcome remains separate. No Foundation reopening,
 relation extension or smaller-data replacement follows from this mismatch.
 

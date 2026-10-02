@@ -2,13 +2,24 @@
 
 ## Current token execution boundary (2026-09-29)
 
-**Caller-boundary ownership: FAILED HISTORICAL AUDIT; REPAIR IN QUALIFICATION.**
+**Caller-boundary ownership: HISTORICAL FAILURE; SCOPED REPAIR CPU/ACTUAL CUDA QUALIFICATION CLOSED.**
 At `e13348e`, returned snapshot, forecast and proof metadata alias live records.
 The [public-value witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) include an
 accepted false reference likelihood claim. The private-copy repair is isolated
 from the original running native-text job and has focused CPU controls; it is
 not yet merged or a new CPU/CUDA release. Earlier unchanged-run evidence stays
 historical, and does not cover these caller mutations.
+
+The repair now detaches constructor declarations, paid candidate-program
+admission, every public result and read-only getters. A memo preserves complete
+metadata and internal alias topology while immutable values may share identity.
+Focused exact controls and the relevant individual CPU regressions pass; the
+fixed-source sixteen-script bundle passes at `86423cd`, without source changes
+and with assertions enabled. The separate receipt does not reissue a whole
+release. Both separately registered actual CUDA workers pass at `9d7250d`,
+including public metadata attacks, nineteen complete phases/6,340 words per
+worker, full frame/padding checks and terminal export failure. This closes the
+new boundary's finite qualification, with no active text-run input changes.
 
 The [native text A1 runner](experiments/next_token/NATIVE_TEXT_A1.md) now binds
 the complete existing Runtime to the one-million-token training view and

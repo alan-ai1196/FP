@@ -119,6 +119,7 @@ def histories():
             train(rt, training)
             before = validate_residency(rt)
             state = live(before)
+            owned_state = rt._candidates[before.deployed_id].learner
             literal = state.materialize(scalar_cap=1000)
             rules, graph = tokens.materialize(p.definition)
             assert rt.begin_report().status == 'REPORTING'
@@ -137,7 +138,8 @@ def histories():
                 assert tuple(pending.prediction.probabilities) == expected_prediction.probabilities
                 assert rt.observe_report(target).status == ('COMPLETE_REPORT' if t == len(reporting)-1 else 'SCORED_REPORT')
                 snapshot = validate_residency(rt)
-                assert snapshot.candidates == before.candidates and live(snapshot) is state
+                assert snapshot.candidates == before.candidates and live(snapshot) == state
+                assert rt._candidates[before.deployed_id].learner is owned_state
                 assert snapshot.cursor == before.cursor and snapshot.observations == before.observations
                 assert snapshot.event_traces == before.event_traces and snapshot.queries == before.queries
                 assert snapshot.data_uses[-1].purpose == 'report'
@@ -326,7 +328,7 @@ def owned_phase_control():
     m = TokenReferenceMachine(cc.initializer_pattern)
     native = m.initial_state(p, cc.semantics, m.initializer(p.slot_count, cc.initializer_pattern),
                              0, spec=online.learner, bit_limit=32768)
-    owner = SimpleNamespace(contract=cfg, arena=Arena(), current={}, staged={}, predicted={}, phases={}, _values={})
+    owner = SimpleNamespace(contract=cfg, arena=Arena(), current={}, staged={}, predicted={}, phases={}, _values={}, token=True)
     def execute(kind, reference, context=None, forecast=None, target=None, origin='ordinary', observation_id=None):
         with patch.object(cuda_execution, 'CudaArrays', arrays):
             row, error = cuda_execution.execute(owner, f'cpu-phase:{len(owner.phases)}', kind, p, 'incumbent', reference,

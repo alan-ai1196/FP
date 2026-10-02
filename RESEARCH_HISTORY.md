@@ -11413,3 +11413,44 @@ isolated in the canonical repository's linked worktree to keep the running
 text experiment's committed inputs intact. Old release evidence does not
 cover these newly exposed substitutions. Foundation/ERC and relation closure
 remain unchanged, and no incomplete text trajectory is scored.
+
+
+## 334. Detach complete caller value graphs instead of trusting frozen metadata (2026-09-29)
+
+The repair copies all mutable wrappers on both sides of Runtime's public
+boundary. It preserves complete dictionaries, inherited slots and alias sharing
+within the recipient graph, reusing only the existing immutable scalar/tuple
+algebra. No constructor or caller copy hook supplies authority. Constructor
+declarations are copied together; candidate programs are copied after their
+ordinary type/header/work admission. All public method/property results detach.
+Unsupported/cyclic graphs refuse, and copy allocation failures preserve the
+actual completed prefix while closing authority.
+
+The three actual historical witnesses now fail to change private state or
+retained issuance. Sixteen binary training histories/112 ordinary and reporting
+events agree exactly with untouched controls under repeated mutations. Separate
+tests preserve immutable identities and complete metadata, isolate candidate
+programs/getters, and cover four terminal copy failures. Existing native,
+reference-search, paired CPU, installation, reporting and retention regressions
+pass during development, including 602 identical CPU tensor phase bodies and an
+eight-unit bounded training/reporting trajectory. A fixed-source sixteen-script
+bundle is registered for the final scoped CPU qualification. This is no new
+Foundation definition, whole release or actual CUDA result. The repair stays in
+a linked canonical worktree until the original native text A1 job terminates.
+
+The committed-source CPU bundle subsequently passes all sixteen complete scripts
+at `86423cd`, including the new attacks, finite search/proof verification, actual
+CPU installation, paired persistence, native learning/reporting, ingress, host
+failure and packed/shared retention. Assertions remain enabled and source is
+unchanged throughout. `FP_PUBLIC_VALUE_REGRESSION_CPU.json` records this scoped
+qualification; actual CUDA and the whole old release are not reissued.
+
+The separately registered actual CUDA A1 then passes both original workers at
+`9d7250d`: packed and shared storage each complete four training events, two
+commits and four frozen report events, nineteen actual phases/6,340 primitive
+words and 19,922,944 full frame bytes. Public constructor/getter/forecast/history/
+learner/phase mutations leave native control equality and frozen physical state
+intact. Export MemoryError retains the completed prefix and closes authority.
+The actual single 32-MiB arena remains unchanged. This closes the scoped repair
+qualification without reissuing the whole release or an ordinary-text score.
+Keep the original journal terminal and return to the running native text trial.

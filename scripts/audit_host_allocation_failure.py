@@ -35,9 +35,9 @@ HISTORICAL = 'dfa1583'
 
 def fixture(module=execution, *, prime=True):
     cfg = contract()
-    cfg = module.ConstructionContract(**{f.name: getattr(cfg, f.name) for f in fields(cfg)})
+    cfg = module.ConstructionContract(**{f.name: getattr(cfg, f.name) for f in fields(module.ConstructionContract) if f.init})
     run = online(cfg, 4, unit=1)
-    run = module.OnlineContract(**{f.name: getattr(run, f.name) for f in fields(run)})
+    run = module.OnlineContract(**{f.name: getattr(run, f.name) for f in fields(module.OnlineContract) if f.init})
     rt = module.ReferenceCompilerRuntime(cfg, zero_program(2), online=run)
     if prime:
         assert rt.predict_next('observation-0', encode_context((1, 0))).status == 'PREDICTED_REFERENCE'

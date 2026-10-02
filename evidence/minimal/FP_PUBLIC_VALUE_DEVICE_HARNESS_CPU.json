@@ -1,0 +1,39 @@
+{
+  "status": "PASS_PUBLIC_VALUE_DEVICE_HARNESS_CPU",
+  "cases": {
+    "packed": {
+      "training_events": 4,
+      "optimizer_commits": 2,
+      "report_events": 4,
+      "exact_native_trajectory_equal_to_unattacked_control": true,
+      "supplied_registrations_and_public_wrappers_isolated": true,
+      "frozen_private_native_learner_preserved": true,
+      "frozen_private_physical_learner_preserved": null,
+      "terminal_export_failure_preserves_completed_prefix": true,
+      "checked_phases": 0,
+      "checked_primitive_words": 0,
+      "complete_phase_bytes": 0,
+      "complete_frame_bytes": 0,
+      "uncached_complete_frames_and_padding_checked": false,
+      "paid_reference_peak": 260169
+    },
+    "shared": {
+      "training_events": 4,
+      "optimizer_commits": 2,
+      "report_events": 4,
+      "exact_native_trajectory_equal_to_unattacked_control": true,
+      "supplied_registrations_and_public_wrappers_isolated": true,
+      "frozen_private_native_learner_preserved": true,
+      "frozen_private_physical_learner_preserved": null,
+      "terminal_export_failure_preserves_completed_prefix": true,
+      "checked_phases": 0,
+      "checked_primitive_words": 0,
+      "complete_phase_bytes": 0,
+      "complete_frame_bytes": 0,
+      "uncached_complete_frames_and_padding_checked": false,
+      "paid_reference_peak": 2309947
+    }
+  },
+  "actual_cuda_execution": false,
+  "scope": "native controls for the new actual-device harness"
+}

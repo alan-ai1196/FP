@@ -14,6 +14,7 @@ import sys
 from typing import Mapping
 
 from .core import ContractError, IdentityUnresolved, freeze_data, natural, stable_hash
+from .public_values import detached
 from .data_usage import (DataContract, DataUsageLedger, ObservationRecord, StochasticStreamLaw, read_sources,
     source_mapping, indexed_source_read_work)
 from .token_sources import TokenAtomFamily, TokenContext
@@ -421,6 +422,12 @@ class ReferenceCompilerRuntime:
                  reporting: TokenReportingContract | None = None):
         if type(contract) is not ConstructionContract:
             raise ContractError('registered construction contract required')
+        # The caller retains its registration objects. Frozen wrappers are
+        # writable through Python metadata and must never become live authority.
+        # One graph copy preserves sharing between Gamma/U/source declarations;
+        # existing validation below still checks their complete original values.
+        contract, initial_program, online, host, policy, cuda, shared_storage, reporting = detached(
+            (contract, initial_program, online, host, policy, cuda, shared_storage, reporting))
         self._contract = contract
         self._cuda = None
         if type(contract.semantics.sources) is TokenAtomFamily and cuda is not None and type(cuda) is not TokenCudaPrefixContract:
@@ -1388,6 +1395,9 @@ class ReferenceCompilerRuntime:
                 raise ContractError('candidate header exceeds a registered native budget')
             counts = program.counts()
             self._router.charge_work('construct', {'work': self._machine.construction_work(program, self._contract.semantics)}, f'{candidate}:construct')
+            # Copy only after the existing type/header/work admission. Invalid
+            # foreign objects keep the original recorded rejection behavior.
+            program = detached(program)
             program.validate(self._contract.semantics)
             if any(counts[key] > cap for key, cap in self._contract.graph_limits.items()):
                 raise ContractError('candidate exceeds a registered P/S/edge/slot budget')

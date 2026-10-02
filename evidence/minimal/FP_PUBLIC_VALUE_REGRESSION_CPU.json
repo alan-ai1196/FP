@@ -1,0 +1,91 @@
+{
+  "status": "PASS_PUBLIC_VALUE_REGRESSION_CPU",
+  "source_commit": "86423cdbcea3977c6082e9fe84e6606881c22393",
+  "scope": "Fixed-source CPU regression of the repaired public value boundary.\n\nThis executes complete existing audit scripts plus the new attacks. It is not\na replacement for the historical release driver, an actual CUDA run, a resource\nbenchmark or an assertion that every FP registration has been enumerated.",
+  "audit_count": 16,
+  "audits": {
+    "cpu_installation": {
+      "status": "PASS",
+      "scope": "serialized CPU root/lease installation from owned exact proposal and two-path evidence",
+      "complete_script": true
+    },
+    "reference_search": {
+      "status": "PASS",
+      "scope": "owned complete ordered native constructor class plus actual deployed baseline; fixed-state exact empirical CE",
+      "complete_script": true
+    },
+    "owned_token_reuse": {
+      "status": "PASS_OWNED_TOKEN_REUSE_CPU",
+      "scope": "Actual token owner/array logic on a reused CPU tensor backing buffer.\n\nOnly physical device binding/counters are substituted. No CUDA context,\ncorpus, device certificate or measured training-throughput claim.",
+      "complete_script": true
+    },
+    "owned_token_learner": {
+      "status": "PASS_OWNED_COMPLETE_TOKEN_REFERENCE",
+      "scope": null,
+      "complete_script": true
+    },
+    "token_cuda_owner": {
+      "status": "PASS_CPU_TOKEN_OWNER_TRANSITIONS",
+      "scope": "CPU transition/predicate control; no actual device, Runtime CUDA execution or issued bridge",
+      "complete_script": true
+    },
+    "reference_events": {
+      "status": "PASS",
+      "scope": "actual public Runtime construction + exact ordinary online continuation and revealed-data queries",
+      "complete_script": true
+    },
+    "reference_profiles": {
+      "status": "PASS",
+      "scope": "public Runtime newborn construction with preregistered paid profile replay",
+      "complete_script": true
+    },
+    "paired_cpu_persistence": {
+      "status": "PASS",
+      "scope": "owned exact-reference and actual CPU binary64 stored-mass persistence",
+      "complete_script": true
+    },
+    "shared_token_retention": {
+      "status": "PASS_EXACT_SHARED_NATIVE_TOKEN_RETENTION",
+      "scope": "byte preservation and actual native event/profile ownership; no CUDA retention or install release",
+      "complete_script": true
+    },
+    "reference_construction": {
+      "status": "PASS",
+      "scope": "actual ReferenceCompilerRuntime native construction/recovery endpoint; packed reference payload machine only",
+      "complete_script": true
+    },
+    "token_reporting": {
+      "status": "PASS_EXACT_AND_CPU_CONTROL",
+      "scope": "finite frozen reporting only; no corpus, device or model-quality result",
+      "complete_script": true
+    },
+    "context_ingress": {
+      "status": "PASS",
+      "scope": "mandatory prepaid exact byte ingress in the serialized packed-payload Runtime",
+      "complete_script": true
+    },
+    "host_allocation_failure": {
+      "status": "PASS",
+      "scope": "terminal public Runtime authority on host allocation exhaustion",
+      "complete_script": true
+    },
+    "shared_cuda_retention": {
+      "status": "PASS_EXACT_SHARED_CUDA_FRAME_RETENTION",
+      "scope": "exact actual Runtime storage hook; synthetic frames, no CUDA execution or model claim",
+      "complete_script": true
+    },
+    "public_value_boundary": {
+      "status": "PASS_PUBLIC_VALUE_BOUNDARY_CPU",
+      "scope": null,
+      "complete_script": true
+    },
+    "native_text_reporting": {
+      "status": "PASS_OWNED_NATIVE_TEXT_REPORT_CONTROL",
+      "scope": null,
+      "complete_script": true
+    }
+  },
+  "failures": {},
+  "actual_cuda_execution": false,
+  "source_unchanged_during_checks": true
+}

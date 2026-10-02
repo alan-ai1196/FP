@@ -1,0 +1,88 @@
+{
+  "status": "PASS_PUBLIC_VALUE_BOUNDARY_CPU",
+  "previous_source": "e13348e18181b8e64112b749ac766023c421542b",
+  "historical": {
+    "causal_history": {
+      "prediction_status": "PREDICTED_REFERENCE",
+      "actual_original_target": 0,
+      "next_context_target": 1,
+      "original_target_wire_and_learner_target_still_zero": true
+    },
+    "returned_forecast": {
+      "observation_status": "OBSERVED_REFERENCE",
+      "cursor": 1,
+      "original_forecast": [
+        "2207918457751/5510881871662",
+        "3302963413911/5510881871662"
+      ],
+      "altered_public_forecast": [
+        "2203451786135/5510881871662",
+        "3307430085527/5510881871662"
+      ],
+      "live_readout_changed_without_update": true
+    },
+    "reference_issuance": {
+      "decision_status": "REFERENCE_CLASS_EXHAUSTED",
+      "actual_selected_likelihood": "1/4",
+      "substituted_likelihood": "1",
+      "altered_proof_accepted": true,
+      "retained_issuance_likelihood": "1"
+    }
+  },
+  "actual_corpus_opened": false,
+  "cuda_execution": false,
+  "current": {
+    "causal_history": {
+      "prediction_status": "PREDICTED_REFERENCE",
+      "actual_original_target": 0,
+      "next_context_target": 0,
+      "original_target_wire_and_learner_target_still_zero": true
+    },
+    "returned_forecast": {
+      "observation_status": "OBSERVED_REFERENCE",
+      "cursor": 1,
+      "original_forecast": [
+        "2207918457751/5510881871662",
+        "3302963413911/5510881871662"
+      ],
+      "altered_public_forecast": [
+        "2203451786135/5510881871662",
+        "3307430085527/5510881871662"
+      ],
+      "live_readout_changed_without_update": false
+    },
+    "reference_issuance": {
+      "decision_status": "REFERENCE_CLASS_EXHAUSTED",
+      "actual_selected_likelihood": "1/4",
+      "substituted_likelihood": "1",
+      "altered_proof_accepted": false,
+      "retained_issuance_likelihood": "1/4"
+    }
+  },
+  "isolation": {
+    "all_constructor_wrappers_detached": true,
+    "contract_getters_detached": true,
+    "supplied_candidate_program_detached_and_continued": true,
+    "old_snapshot_mutation_cannot_change_continuation": true,
+    "internal_aliases_preserved": true,
+    "immutable_source_and_byte_identity_preserved": true
+  },
+  "representation": {
+    "slotted_record_detached": true,
+    "complete_extra_metadata_preserved": true,
+    "descriptor_names_treated_as_data": true,
+    "repeated_aliases_preserved": true,
+    "cyclic_and_foreign_values_refused_without_caller_hooks": true
+  },
+  "failures": {
+    "terminal_copy_failure_ports": 4,
+    "already_revealed_target_and_published_prefix_retained": true
+  },
+  "continuations": {
+    "binary_training_histories": 16,
+    "training_and_reporting_events": 112,
+    "exact_probabilities_learners_sources_and_reports_equal_to_unattacked_control": true,
+    "both_packed_and_shared_storage_checked": true,
+    "private_reporting_identity_preserved": true
+  }
+}

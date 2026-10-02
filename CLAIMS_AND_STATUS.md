@@ -5,8 +5,12 @@ At `e13348e`, public metadata mutation changes a subsequent causal context and
 an uncommitted live readout, and makes the actual proof verifier accept maximum
 likelihood 1 instead of the retained search's 1/4. These are
 [reproduced ownership failures](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md), not a
-Foundation counterexample. The complete boundary repair is in qualification;
-do not extend old release claims across this unresolved alias boundary.
+Foundation counterexample. The complete boundary repair passes its focused
+controls and all sixteen complete scripts in the committed-source CPU bundle
+at `86423cd`. Both separate actual CUDA controls pass at `9d7250d`, preserving
+nineteen phases/6,340 words and complete frame bytes per worker. These results
+close the scoped repair qualification, not the whole release. The original
+running text worker is unchanged; merge only after it ends.
 
 **Native FP text A1: PREREGISTERED; REPORT-ASSEMBLY CPU CONTROL PASS; NO MODEL OUTCOME YET.**
 The [fixed trial](experiments/next_token/NATIVE_TEXT_A1.md) selects one supplied

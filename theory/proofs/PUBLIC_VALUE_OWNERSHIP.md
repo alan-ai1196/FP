@@ -1,8 +1,8 @@
 # Public values must not alias live Runtime authority
 
-Status (2026-09-29): **THREE ACTUAL IMPLEMENTATION COUNTEREXAMPLES; REPAIR IN QUALIFICATION**.
-Foundation and ERC-1 are unchanged. The current caller-boundary ownership claim
-is reopened; prior successful trajectories are not retroactively fabricated or
+Status (2026-09-29): **THREE HISTORICAL COUNTEREXAMPLES; REPAIR PASSES FOCUSED, SIXTEEN-SCRIPT CPU AND TWO ACTUAL CUDA AUDITS; SCOPED QUALIFICATION CLOSED**.
+Foundation and ERC-1 are unchanged. The historical caller-boundary ownership claim
+is falsified; prior successful trajectories are not retroactively fabricated or
 erased. Do not borrow the old release as evidence against these new attacks.
 
 ## Counterexamples at e13348e
@@ -68,19 +68,56 @@ costs, not a new semantic architecture action or a free performance claim.
 
 ## Qualification and running experiment
 
-The repair and scoped qualification are committed through `0643552` in the linked
-canonical Git worktree `F:\FP_passive_boundary`, branch `compiler/passive-boundary`.
-It changes the value ownership boundary, not learning or search semantics.
-Focused controls block all three witnesses, preserve complete inward/outward
-value graphs and cover sixteen adversarial histories/112 training/reporting
-events. All sixteen complete CPU regression scripts pass at `86423cd`, including
-search/proofs, installation, paired persistence, ingress and host failures.
-Both separately registered actual CUDA jobs pass at `9d7250d`: nineteen phases,
-6,340 primitive words and 19,922,944 complete frame bytes per packed/shared case.
-Their public mutation and terminal export-failure controls preserve the actual
-completed prefix. The branch retains the complete proof, protocols and receipts;
-its scoped qualification is closed. Merge only after the original text job ends.
-No whole-release, ordinary-text score or performance claim is supplied.
+The repair is being qualified in the linked canonical Git worktree
+`F:\FP_passive_boundary`, branch `compiler/passive-boundary`. It changes the
+value ownership boundary, not learning or search semantics. Its focused controls
+block the three witnesses and preserve constructor/getter/candidate-program
+isolation, immutable-source identity, internal sharing, complete extra metadata,
+slotted records and four terminal copy failures. Sixteen binary training histories
+and 112 training/reporting events stay exactly equal to untouched controls under
+repeated public mutations, with both packed and shared storage. The actual private
+learner remains identical during frozen reporting; public wrapper identity is
+deliberately detached. `FP_PUBLIC_VALUE_BOUNDARY_CPU.json` retains these checks.
+
+`public_values.detached` copies complete dictionary and inherited slot metadata
+without constructors or caller copying hooks. The existing public-port guard
+detaches every result and every read-only property. Constructor declarations are
+copied together; later candidate programs are copied after their existing type,
+header and construction-work admission. Invalid foreign proposals retain their
+recorded rejection behavior. Copy allocation failure follows the existing
+terminal host protocol, including when observation has already published.
+
+Existing construction, events, profiles, search proofs, paired CPU persistence,
+installation, ingress, host failures, native-token learning/reporting and shared
+retention audits pass during qualification. CPU tensor reuse also preserves
+602 complete phase bodies and the bounded eight-unit/report trajectory. Three
+audit fixture assumptions were repaired: reporting now checks private frozen
+identity separately from detached diagnostic equality; the CPU phase stub
+declares its token kind; historical constructor replay uses the historical
+declaration's own fields. These changes do not weaken numerical/ownership checks.
+
+The committed-source bundle `audit_public_value_regression.py` passes all sixteen
+complete relevant audit scripts at `86423cd`, with assertions enabled and no
+source changes during execution. Its separate receipt is
+`evidence/minimal/FP_PUBLIC_VALUE_REGRESSION_CPU.json`. This is a scoped
+caller-boundary regression, not reissuance of the old complete CPU/CUDA release
+or an actual device/performance claim. Actual-device qualification of the new
+public copy boundary is supplied separately below.
+
+The [fixed actual CUDA A1 control](../../experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
+now completes both original packed/shared training/reporting workers at
+`9d7250d`, each under its four-GiB/180-second host job. Each preserves nineteen
+actual phases, 6,340 primitive words and all 19,922,944 retained frame bytes
+under public metadata mutations. Exact native histories/reports match untouched
+controls; private frozen identity, physical lineage and words remain unchanged.
+The final export MemoryError preserves the completed prefix and closes authority.
+The actual single 32-MiB arena/reservation remains unchanged, and source is fixed
+throughout. `FP_PUBLIC_VALUE_CUDA_A1.json` is terminal; never replay it.
+
+Close this scoped qualification and merge after the original text job ends.
+The token device controls do not reissue the whole old release, enumerate all
+registrations or supply a model score/performance comparison. No further alias,
+storage or static-feature variant is due without a new concrete counterexample.
 
 The original native text A1 worker remains at its committed `e13348e` inputs.
 It does not mutate exported wrappers. This audit neither restarts nor patches

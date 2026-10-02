@@ -2,27 +2,37 @@
 
 ## Current execution state (2026-09-29)
 
-**Public-value ownership is reopened by three implementation counterexamples.**
+**Public-value repair: scoped CPU and actual CUDA qualification complete.**
 [The exact witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) use returned
 snapshot/forecast/proof wrappers to change causal history, live readout masters
 and an accepted reference maximum from 1/4 to 1. Frozen wrappers alias private
 state. Foundation/ERC remain intact. A transitive boundary repair is in the
 linked `F:\FP_passive_boundary` worktree on `compiler/passive-boundary`; focused
-the repair and scoped qualification are committed through `0643552`. All sixteen
-complete CPU regression scripts pass at `86423cd`; both original packed/shared
-RTX3090 controls pass at `9d7250d`, each preserving nineteen complete phases and
-6,340 checked words under public mutations. The actual journal is terminal.
-This closes the scoped repair, not a whole release. Its implementation, receipts
-and updated research documents are on that canonical branch. Merge it after the
-original native text worker terminates; preserve that worker's execution inputs.
-Return to ordinary text affordability rather than another ownership/storage case.
+controls and the scoped CPU/device regressions pass. Do not claim a whole release
+or change the original running text worker's execution inputs.
+
+The linked repair worktree now implements complete inward/outward value-graph
+isolation. Its focused audit passes 16 adversarial token histories/112 events,
+three original witnesses, private reporting identity and four copy failures.
+The committed-source sixteen-script CPU regression passes at `86423cd`, with
+unchanged source and assertions enabled. Its separate receipt is
+`FP_PUBLIC_VALUE_REGRESSION_CPU.json`; this is no whole-release or actual CUDA
+claim; the separate actual-device result follows. Merge the repair only after the
+original native A1 worker terminates; never patch or restart that worker.
+
+The [public-value actual CUDA A1 control](experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
+passes both original packed/shared toy jobs at `9d7250d`. Each completes four
+training/two commit/four reporting events, nineteen actual phases, 6,340 words
+and full frame/padding recovery despite public mutations. Terminal copy failure
+preserves the completed prefix. `FP_PUBLIC_VALUE_CUDA_A1.json` is closed; never
+replay it. This is the stopping point for the scoped repair. Return to the
+ordinary-text outcome rather than another ownership/storage variant.
 
 Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
 creation time 134351580322825996, tool session 44263. Its last inspected milestone
 is 1,280 targets/two committed units in 2,438.1676713 seconds, with no halt or report.
 The exclusive journal and external `worker.json` must be observed to completion;
 never relaunch it. This is no full-horizon feasibility or text-score result.
-Its original two-hour deadline is about 2026-09-29 14:20:32 UTC / 22:20:32 local.
 
 The [native text A1 trial](experiments/next_token/NATIVE_TEXT_A1.md) is now
 preregistered for the first owned FP model result: one million original
