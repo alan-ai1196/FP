@@ -1,13 +1,20 @@
 # FP Implementation Status
 
-## Current token execution boundary (2026-09-29)
+## Current token execution boundary (2026-10-02)
+
+**Native text A1: original process absent; missing final receipt; UNRESOLVED.**
+The terminal journal retains the original registration and last heartbeat:
+1,280 completed targets/two commits in 2,438.1676713 worker seconds. OS creation
+identity excludes the unrelated process now using PID 8460. No exit, timeout,
+final cursor or final host peak is inferred. No model score exists. See the
+[evidence boundary](experiments/next_token/NATIVE_TEXT_A1.md#original-attempt-and-evidence-limit).
 
 **Caller-boundary ownership: HISTORICAL FAILURE; SCOPED REPAIR CPU/ACTUAL CUDA QUALIFICATION CLOSED.**
 At `e13348e`, returned snapshot, forecast and proof metadata alias live records.
 The [public-value witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) include an
 accepted false reference likelihood claim. The private-copy repair is isolated
-from the original running native-text job and has focused CPU controls; it is
-not yet merged or a new CPU/CUDA release. Earlier unchanged-run evidence stays
+from the original native-text job and is merged at `5be0bd8` after that original
+worker's absence was verified. This is no new CPU/CUDA release. Earlier evidence stays
 historical, and does not cover these caller mutations.
 
 The repair now detaches constructor declarations, paid candidate-program

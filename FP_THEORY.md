@@ -25,6 +25,12 @@ resource, persistence, installation and finite-run boundary is fixed in
 [`CUDA_RELEASE_SCOPE.md`](theory/proofs/CUDA_RELEASE_SCOPE.md).
 The Foundation definitions and theorems below are unchanged by this release.
 
+The later [public-value ownership counterexamples](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md)
+falsify caller-isolation assumptions beyond those historical release audits.
+Their transitive value-copy repair passes separate CPU/actual CUDA controls
+and is merged at `5be0bd8`; this scoped qualification does not reissue the whole
+historical release or change any Foundation/ERC definition.
+
 The current [prospective strategy extension](theory/proofs/OWNED_PROSPECTIVE_SELECTION.md)
 chooses among actual initialized values and can install a continuously tested
 candidate while its full training-optimization class remains unresolved.

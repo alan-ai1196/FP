@@ -1,0 +1,271 @@
+{
+  "status": "UNRESOLVED_NATIVE_TEXT_A1",
+  "source_commit": "e13348e18181b8e64112b749ac766023c421542b",
+  "protocol": "experiments/next_token/NATIVE_TEXT_A1.md",
+  "host_job_cap": 103079215104,
+  "deadline_ms": 7200000,
+  "training_horizon": 1048576,
+  "report_horizon": 16384,
+  "suffix_start": 4096,
+  "artifact_directory": "F:\\experiment\\FP_next_token_native_a1",
+  "scope": "complete native Runtime training/reporting; no AMP result or shortened-horizon score",
+  "accepted_execution": false,
+  "result": {
+    "status": "RUNNING",
+    "before": {
+      "process_id": 8460,
+      "creation_100ns": 134351580322825996,
+      "process_commit": 22941696,
+      "lifetime_process_commit_peak": 24309760,
+      "job_commit_peak": 25542656,
+      "process_user_100ns": 1406250,
+      "process_kernel_100ns": 781250,
+      "job_user_100ns": 1406250,
+      "job_kernel_100ns": 937500,
+      "total_job_processes": 2
+    },
+    "checkpoints": [
+      {
+        "label": "initialized",
+        "elapsed_seconds": 13.170446099999936,
+        "completed_training_targets": 0,
+        "revealed_training_targets": 0,
+        "optimizer_steps": 0,
+        "pending_targets": 0,
+        "event_traces": 0,
+        "live_objects": 23,
+        "retired_objects": 16,
+        "resource_events": 124,
+        "paid_payload_peak": 184598799,
+        "object_peak": 24,
+        "spent": {
+          "compiler": {
+            "work": 21108619335
+          },
+          "deployment": {
+            "work": 72251563008
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/1",
+        "elapsed_seconds": 14.105923899999652,
+        "completed_training_targets": 1,
+        "revealed_training_targets": 1,
+        "optimizer_steps": 0,
+        "pending_targets": 1,
+        "event_traces": 1,
+        "live_objects": 37,
+        "retired_objects": 24,
+        "resource_events": 190,
+        "paid_payload_peak": 184598799,
+        "object_peak": 39,
+        "spent": {
+          "compiler": {
+            "work": 93055786413
+          },
+          "deployment": {
+            "work": 90257224570
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/16",
+        "elapsed_seconds": 27.62349119999999,
+        "completed_training_targets": 16,
+        "revealed_training_targets": 16,
+        "optimizer_steps": 0,
+        "pending_targets": 16,
+        "event_traces": 16,
+        "live_objects": 247,
+        "retired_objects": 144,
+        "resource_events": 1150,
+        "paid_payload_peak": 184598799,
+        "object_peak": 249,
+        "spent": {
+          "compiler": {
+            "work": 1172283837576
+          },
+          "deployment": {
+            "work": 360345137120
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/128",
+        "elapsed_seconds": 142.7124961999998,
+        "completed_training_targets": 128,
+        "revealed_training_targets": 128,
+        "optimizer_steps": 0,
+        "pending_targets": 128,
+        "event_traces": 128,
+        "live_objects": 1815,
+        "retired_objects": 1040,
+        "resource_events": 8318,
+        "paid_payload_peak": 184598799,
+        "object_peak": 1817,
+        "spent": {
+          "compiler": {
+            "work": 9231178735752
+          },
+          "deployment": {
+            "work": 2377094395520
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/256",
+        "elapsed_seconds": 303.8317595999997,
+        "completed_training_targets": 256,
+        "revealed_training_targets": 256,
+        "optimizer_steps": 0,
+        "pending_targets": 256,
+        "event_traces": 256,
+        "live_objects": 3607,
+        "retired_objects": 2064,
+        "resource_events": 16510,
+        "paid_payload_peak": 200492084,
+        "object_peak": 3609,
+        "spent": {
+          "compiler": {
+            "work": 18442653989704
+          },
+          "deployment": {
+            "work": 4682124746560
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/512",
+        "elapsed_seconds": 725.2928251000003,
+        "completed_training_targets": 512,
+        "revealed_training_targets": 512,
+        "optimizer_steps": 1,
+        "pending_targets": 0,
+        "event_traces": 512,
+        "live_objects": 7336,
+        "retired_objects": 4257,
+        "resource_events": 33907,
+        "paid_payload_peak": 254187274,
+        "object_peak": 7339,
+        "spent": {
+          "compiler": {
+            "work": 36889554365336
+          },
+          "deployment": {
+            "work": 9321175958656
+          }
+        },
+        "halted": null
+      },
+      {
+        "label": "train/1024",
+        "elapsed_seconds": 1782.5684974999995,
+        "completed_training_targets": 1024,
+        "revealed_training_targets": 1024,
+        "optimizer_steps": 2,
+        "pending_targets": 0,
+        "event_traces": 1024,
+        "live_objects": 14651,
+        "retired_objects": 8500,
+        "resource_events": 67702,
+        "paid_payload_peak": 354530755,
+        "object_peak": 14654,
+        "spent": {
+          "compiler": {
+            "work": 73782582415912
+          },
+          "deployment": {
+            "work": 18573186107712
+          }
+        },
+        "halted": null
+      }
+    ],
+    "reporting_opened": false,
+    "model_score": null,
+    "actual_amp_execution": false,
+    "training_source": {
+      "path": "F:\\experiment\\FP_Scaling_Trial_1R_RTX3090_WindowsGlobal_OneClick\\data\\train.bin",
+      "file_bytes": 360000000,
+      "byte_offset": 0,
+      "bytes_read": 2097152,
+      "prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+      "role": "training",
+      "whole_file_identity_source": "evidence/minimal/FP_NEXT_TOKEN_DATA_ENTRY.json"
+    },
+    "model": {
+      "program_id": "e7663de92579dca6fd292fcfa5eccc1975c9c7ac5beb5d298b5380bdcca974e7",
+      "native_counts": {
+        "nodes": 25784409,
+        "SUMs": 52309,
+        "PRODUCTs": 4,
+        "edges": 103332496,
+        "slots": 603092
+      },
+      "vocabulary": 50257,
+      "context": 512,
+      "width": 4,
+      "features": 8,
+      "parameters": 603092,
+      "grid_bits": 16,
+      "learning_rate": "1/1024",
+      "update_unit": 512,
+      "initializer": "unchanged deterministic text_model_fixture at the registered source",
+      "activation_cap": "1208925819614629174706176",
+      "normalizer_cap": "79228162514264337593543950336"
+    },
+    "latest": {
+      "label": "train/1280",
+      "elapsed_seconds": 2438.167671299999,
+      "completed_training_targets": 1280,
+      "revealed_training_targets": 1280,
+      "optimizer_steps": 2,
+      "pending_targets": 256,
+      "event_traces": 1280,
+      "live_objects": 18235,
+      "retired_objects": 10548,
+      "resource_events": 84086,
+      "paid_payload_peak": 397514558,
+      "object_peak": 18237,
+      "spent": {
+        "compiler": {
+          "work": 92227188630888
+        },
+        "deployment": {
+          "work": 23186141296256
+        }
+      },
+      "halted": null
+    }
+  },
+  "termination": "original worker absent; launcher exit receipt unavailable; interruption cause unknown",
+  "reconciliation": {
+    "observed_at_utc": "2026-10-02T13:31:26.986060+00:00",
+    "original_launcher_status": "RUNNING",
+    "expected_worker_identity": {
+      "process_id": 8460,
+      "creation_100ns": 134351580322825996
+    },
+    "os_process_observation": {
+      "status": "PID_PRESENT",
+      "process_id": 8460,
+      "creation_100ns": 134354096198881239
+    },
+    "original_worker_identity_absent": true,
+    "original_exit_code": null,
+    "original_timed_out": null,
+    "final_host_peak": null,
+    "exact_final_cursor": null,
+    "last_heartbeat_only": true,
+    "heartbeat_bytes": 6365,
+    "heartbeat_last_write_utc": "2026-09-29T13:01:10.687631+00:00",
+    "corpus_or_weights_opened": false,
+    "process_launched_or_signalled": false
+  }
+}

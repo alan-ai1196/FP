@@ -11454,3 +11454,28 @@ intact. Export MemoryError retains the completed prefix and closes authority.
 The actual single 32-MiB arena remains unchanged. This closes the scoped repair
 qualification without reissuing the whole release or an ordinary-text score.
 Keep the original journal terminal and return to the running native text trial.
+
+
+## 335. Preserve an interrupted native text attempt without inventing a timeout (2026-10-02)
+
+The original A1 launcher handle is missing and OS process creation identity
+shows PID 8460 now belongs to a different process. The launcher journal remained
+RUNNING and never acquired a final job receipt. Its unchanged worker heartbeat,
+last written September 29 at 13:01:10 UTC, proves 1,280 completed/revealed targets,
+two optimizer commits and 256 pending targets in 2,438.1676713 worker seconds.
+It records no halt or report. Exact final cursor, exit cause, timeout and whole-
+host peaks are unknown. A two-hour cap in the registration does not prove that
+the missing process reached that cap.
+
+The OS-identity reconciler refuses a matching extant original process and seals
+only the stale unclosed journal. It preserves the entire surviving heartbeat
+and original registration, marks unknown final quantities null and never
+launches/signals a process. The original attempt is terminal UNRESOLVED, with no
+shortened model score or retry. The separately qualified public-value repair is
+merged at `5be0bd8`; all production modules match its qualified source and the
+focused audit passes on main. Foundation/ERC and relation closure remain.
+
+The observed prefix is costly but does not prove an asymptotic law or full-
+budget infeasibility. A bounded profile of the now-qualified complete native
+path is the next diagnostic, before a solver change or another long attempt.
+An affordable complete trained ordinary-text comparison remains required.

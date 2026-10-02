@@ -114,13 +114,17 @@ The final export MemoryError preserves the completed prefix and closes authority
 The actual single 32-MiB arena/reservation remains unchanged, and source is fixed
 throughout. `FP_PUBLIC_VALUE_CUDA_A1.json` is terminal; never replay it.
 
-Close this scoped qualification and merge after the original text job ends.
+The scoped repair is merged into main at `5be0bd8` after OS identity inspection
+established the original text worker's absence on October 2. Production modules
+match the qualified source exactly and the focused audit passes on main. Close
+this qualification.
 The token device controls do not reissue the whole old release, enumerate all
 registrations or supply a model score/performance comparison. No further alias,
 storage or static-feature variant is due without a new concrete counterexample.
 
-The original native text A1 worker remains at its committed `e13348e` inputs.
-It does not mutate exported wrappers. This audit neither restarts nor patches
-that worker, and cannot turn an unfinished training horizon into a model score.
-The ongoing trial still has its original two-hour/96-GiB contract. Keep its
-outcome separate from this adversarial caller-boundary qualification.
+The original native text A1 worker used unchanged committed `e13348e` inputs
+and did not mutate exported wrappers. It is now absent with a missing final
+receipt; its surviving heartbeat establishes no completed model score or timeout.
+Its original journal is reconciled to terminal UNRESOLVED. This audit neither
+restarted nor patched that worker. Keep its interrupted attempt separate from
+this adversarial caller-boundary qualification.

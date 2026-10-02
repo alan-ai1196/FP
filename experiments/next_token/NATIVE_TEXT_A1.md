@@ -1,6 +1,38 @@
 # Native FP text trial A1
 
-Status: **PREREGISTERED; NO ACTUAL OUTCOME AT REGISTRATION, 2026-09-29**.
+Status (2026-10-02): **ORIGINAL WORKER ABSENT; INTERRUPTED/UNRESOLVED; NO MODEL SCORE; CLOSED**.
+
+## Original attempt and evidence limit
+
+The original source was `e13348e`. On October 2 the launcher tool handle is
+missing and OS inspection finds its worker PID 8460 reused with a different
+creation identity. The original process cannot be resumed. The launcher journal
+had remained RUNNING; it contains no OS exit/deadline/peak receipt. The surviving
+worker heartbeat, last written September 29 at 13:01:10 UTC, records 1,280
+completed/revealed targets, two optimizer commits, 256 pending targets and
+2,438.1676713 elapsed worker seconds. It records no halt, reporting or score.
+
+These are lower-bound prefix observations, not the exact final cursor. The
+heartbeat's paid reference peak is 397,514,558 bytes, with 18,235 live objects,
+10,548 retired objects and 84,086 resource events. No final whole-host peak or
+interruption cause is known. This is **not evidence of a timeout or of exhausting
+the declared two-hour/96-GiB budget**. It supplies no complete trained score.
+
+`reconcile_native_text_a1.py` verifies actual OS process creation identity,
+refuses if the original identity still exists, and seals only the unclosed
+launcher journal. It retains the original registration and complete surviving
+heartbeat, with unknown final quantities explicitly null. It never launches,
+signals or resumes a process and leaves the external heartbeat unchanged.
+`FP_NATIVE_TEXT_A1.json` is now terminal; never replay it or score this prefix.
+
+The qualified caller-boundary repair was merged only after this absence was
+established. The original worker used unchanged execution inputs and did not
+perform the separate audit's caller mutations. Its measured early-prefix cost
+motivates diagnosis of the complete native path, but does not prove asymptotic
+cost or infeasibility. An affordable complete trained ordinary-text comparison
+remains the objective, with no shorter score or static relation replacement.
+
+## Original registration (committed before launch)
 
 This is the first attempt to obtain an owned trained FP result on the actual
 text view used by [baseline anchor A1](BASELINE_ANCHOR_A1.md). It uses the

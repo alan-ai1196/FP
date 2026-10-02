@@ -9,17 +9,21 @@ Foundation counterexample. The complete boundary repair passes its focused
 controls and all sixteen complete scripts in the committed-source CPU bundle
 at `86423cd`. Both separate actual CUDA controls pass at `9d7250d`, preserving
 nineteen phases/6,340 words and complete frame bytes per worker. These results
-close the scoped repair qualification, not the whole release. The original
-running text worker is unchanged; merge only after it ends.
+close the scoped repair qualification, not the whole release. The repair is
+merged at `5be0bd8`, after the original text worker's absence was verified.
 
-**Native FP text A1: PREREGISTERED; REPORT-ASSEMBLY CPU CONTROL PASS; NO MODEL OUTCOME YET.**
+**Native FP text A1: INTERRUPTED/UNRESOLVED; FINAL EXIT EVIDENCE MISSING; NO MODEL SCORE.**
 The [fixed trial](experiments/next_token/NATIVE_TEXT_A1.md) selects one supplied
 603,092-master native learner and a full million-token training horizon under
 two-hour/96-GiB limits. Exact represented updates and complete owned frozen
 reporting are required. The helper only reduces already owned exact integer
 loss accumulators; it cannot supply forecasts, gradients or authority. No
 AMP-trained, complete-search, fresh-evidence or model-quality claim follows
-before execution. A failure will not be replaced by a shorter trained score.
+from the surviving prefix. The original worker is absent and its PID is reused;
+the stale RUNNING journal was reconciled with the complete last heartbeat.
+That heartbeat proves 1,280 targets/two commits, not the exact final cursor.
+Neither timeout nor budget exhaustion is established without the lost exit
+receipt. The journal is terminal and no shortened score replaces this attempt.
 
 **Ordinary-text baseline anchor A1: ACTUAL TRAINING/REPORTING COMPLETE; CLOSED.**
 The [original study](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)

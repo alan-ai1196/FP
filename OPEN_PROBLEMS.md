@@ -5,9 +5,9 @@ The immediate correctness frontier is the
 returned/supplied frozen wrappers can alias live causal records, masters and
 issuances. Transitive isolation now passes the focused audit and all sixteen
 complete CPU regression scripts at `86423cd`, plus both separately registered
-actual CUDA controls at `9d7250d`. Close that scoped qualification. Merge the
-repair after the ordinary-text A1 original job, which continues
-unchanged; its eventual outcome remains separate. No Foundation reopening,
+actual CUDA controls at `9d7250d`. That scoped qualification is closed and merged
+at `5be0bd8` after the original ordinary-text worker's absence was verified.
+Its missing final execution evidence remains separate. No Foundation reopening,
 relation extension or smaller-data replacement follows from this mismatch.
 
 The [native text A1](experiments/next_token/NATIVE_TEXT_A1.md) registration now
@@ -17,7 +17,12 @@ view and produce its owned frozen report within two hours/96 GiB? The graph's
 known limitations and unmatched baseline exposure coordinates are explicit.
 Growing ledger/history traversal may prevent completion; preserve that actual
 outcome rather than silently shrinking the horizon or bypassing accounting.
-No score or affordability claim exists before the original run finishes.
+The original attempt is now terminal UNRESOLVED: its process is absent, its PID
+reused and the exit receipt missing. The last heartbeat proves 1,280 targets/two
+commits; no timeout, exact final cursor or final host peak is inferred. Preserve
+this evidence limit, never replay it, and diagnose the current complete native
+path before selecting the next affordable full training attempt. No model
+score or affordability claim exists.
 
 The [real-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 now closes with actual trained full-alphabet results: Transformer 6.260544623,

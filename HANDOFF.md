@@ -1,15 +1,23 @@
 # FP Handoff
 
-## Current execution state (2026-09-29)
+## Current execution state (2026-10-02)
+
+**Native text A1 is terminal UNRESOLVED with missing final execution evidence.**
+The [original attempt](experiments/next_token/NATIVE_TEXT_A1.md#original-attempt-and-evidence-limit)
+has no live original worker or launcher handle. PID 8460 was reused with a
+different creation identity. Its surviving heartbeat proves 1,280 completed
+targets and two commits in 2,438.1676713 worker seconds; the final cursor, exit
+cause, timeout status and host peaks are unknown. Reporting never appears in
+the surviving evidence. The reconciler preserved the original registration and
+heartbeat in terminal `FP_NATIVE_TEXT_A1.json`; never replay or score this prefix.
 
 **Public-value repair: scoped CPU and actual CUDA qualification complete.**
 [The exact witnesses](theory/proofs/PUBLIC_VALUE_OWNERSHIP.md) use returned
 snapshot/forecast/proof wrappers to change causal history, live readout masters
 and an accepted reference maximum from 1/4 to 1. Frozen wrappers alias private
-state. Foundation/ERC remain intact. A transitive boundary repair is in the
-linked `F:\FP_passive_boundary` worktree on `compiler/passive-boundary`; focused
-controls and the scoped CPU/device regressions pass. Do not claim a whole release
-or change the original running text worker's execution inputs.
+state. Foundation/ERC remain intact. The qualified transitive boundary repair
+is merged into main at `5be0bd8`, after the original worker's absence was verified.
+Its focused and scoped CPU/device regressions pass. No whole release is reissued.
 
 The linked repair worktree now implements complete inward/outward value-graph
 isolation. Its focused audit passes 16 adversarial token histories/112 events,
@@ -17,8 +25,8 @@ three original witnesses, private reporting identity and four copy failures.
 The committed-source sixteen-script CPU regression passes at `86423cd`, with
 unchanged source and assertions enabled. Its separate receipt is
 `FP_PUBLIC_VALUE_REGRESSION_CPU.json`; this is no whole-release or actual CUDA
-claim; the separate actual-device result follows. Merge the repair only after the
-original native A1 worker terminates; never patch or restart that worker.
+claim; the separate actual-device result follows. Production modules match the
+qualified source exactly, and the focused public-value audit passes on main.
 
 The [public-value actual CUDA A1 control](experiments/next_token/PUBLIC_VALUE_CUDA_A1.md)
 passes both original packed/shared toy jobs at `9d7250d`. Each completes four
@@ -28,23 +36,19 @@ preserves the completed prefix. `FP_PUBLIC_VALUE_CUDA_A1.json` is closed; never
 replay it. This is the stopping point for the scoped repair. Return to the
 ordinary-text outcome rather than another ownership/storage variant.
 
-Native text A1 is **RUNNING**, source `e13348e`, original worker PID 8460,
-creation time 134351580322825996, tool session 44263. Its last inspected milestone
-is 1,280 targets/two committed units in 2,438.1676713 seconds, with no halt or report.
-The exclusive journal and external `worker.json` must be observed to completion;
-never relaunch it. This is no full-horizon feasibility or text-score result.
-
 The [native text A1 trial](experiments/next_token/NATIVE_TEXT_A1.md) is now
-preregistered for the first owned FP model result: one million original
+closed without the first owned FP model result. It registered one million original
 training tokens, 2,048 exact represented commits, then the same 12,288-token
 development suffix as the completed baseline anchor. It explicitly selects
 the existing 603,092-master G/Gamma/U as one empirical hypothesis, with its
 known capacity/precision limits. Native Runtime ownership and reporting remain
 complete; no CUDA/AMP score is inferred. A two-hour/96-GiB original job must
 finish the whole horizon or return UNRESOLVED without a shortened score.
-The reporting-assembly CPU control passes. Commit all inputs before launch;
-retain the exclusive original journal and do not retry it. Growing ledger
-copy/scan cost is a known concern to measure, not permission to skip checks.
+The reporting-assembly CPU control passes. The next useful step is a bounded
+cost diagnosis of the complete native path under the same full declaration,
+before a solver change or another long training attempt. Growing ledger/history
+work is a source-level concern, not an established profile share. Preserve all
+accounting, information and ownership duties; no storage variant is due.
 
 The [ordinary-text baseline anchor A1](experiments/next_token/BASELINE_ANCHOR_A1.md#original-result-and-research-consequence)
 is complete and closed at `71e4c2c`. On the same 12,288-token development
