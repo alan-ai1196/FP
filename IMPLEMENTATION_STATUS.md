@@ -17,8 +17,9 @@ failure sites. All 25 complete committed-source CPU audit scripts now pass at
 first [AMP qualification](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
 terminal UNRESOLVED: its audit comparator attempts a forbidden Git subprocess
 inside the one-process job. Shared never launches; no numerical disagreement
-is observed, and no actual qualification is issued. The source-transport harness
-requires a separate corrected registration. There is no complete host
+is observed, and no actual qualification is issued. The corrected source
+transport is preregistered as [A2](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md),
+with both native controls passing under a child-process prohibition. There is no complete host
 budget, timing or model-score claim.
 
 The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)

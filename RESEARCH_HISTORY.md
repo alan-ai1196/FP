@@ -11827,3 +11827,9 @@ launcher, with artifact identity checked inside the worker, rather than launch
 a second process. This changes audit transport only, not model, production
 runtime, arithmetic, source semantics or resource caps. Preserve A1, qualify
 that fixed transport and preregister any corrected actual control separately.
+
+The corrected A2 harness receives a launcher-extracted historical blob and
+checks its artifact identity before compiling the original methods. Both
+native cases pass with all child-process creation forbidden; altered source
+bytes refuse. A2 is separately preregistered with identical model, numerical
+checks and resource caps. No production code or device result changes yet.

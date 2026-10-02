@@ -9,8 +9,9 @@ gradients and five new terminal failure boundaries pass focused CPU checks.
 The 25-script committed-source CPU regression passes at `e13e480`. Finish the
 actual AMP qualification after repairing the A1 comparator's Git subprocess
 inside a one-process job. A1 is terminal UNRESOLVED and must not be replayed;
-the correction needs a separate source-transport registration with unchanged
-model/caps, without a new codec/feature variant. After qualification,
+the corrected [A2 registration](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
+has native harness controls passing with all subprocess creation forbidden,
+unchanged model/caps and no new codec/feature variant. After qualification,
 then account for old masters, traces/windows, images,
 archives, resource metadata and transient complete diagnostics in the full
 host budget. A selected-object saving is not whole-process feasibility.

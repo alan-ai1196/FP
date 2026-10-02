@@ -13,7 +13,8 @@ binds the complete parent without retaining temporary decoded scalars. All 25
 committed-source CPU scripts pass at `e13e480`. Actual A1 is terminal UNRESOLVED
 at `eb8e130`: the comparator's Git subprocess violates the one-process job;
 shared never launches. No numerical disagreement or completed device
-qualification follows. The source-transport harness requires correction. This is
+qualification follows. The corrected A2 source transport is preregistered; both
+native harness cases pass with subprocess creation forbidden. This is
 neither a total host bound nor a speed/model/`CERTIFIED_COMPLETE` claim.
 
 **Historical native text host feasibility: SOURCE/ABI LOWER BOUND; OLD BUDGET EXCLUDED.**

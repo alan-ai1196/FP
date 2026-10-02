@@ -181,6 +181,10 @@ tries to spawn Git inside a one-process Windows job and receives error 1816.
 The packed worker exits 2 within its host/time caps; shared is not launched.
 This is a harness mismatch, without an observed numerical disagreement. It
 does not issue a completed actual qualification, and its journal stays closed.
+The corrected [A2 transport](../../experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
+loads a launcher-extracted, integrity-bound historical source artifact without
+creating a child. Its native harness passes with `Popen` forbidden, and altered
+source bytes refuse. The separate actual registration keeps the same limits.
 
 This removes the proved eager-input allocation obstruction. It does not prove
 the million-target trajectory fits 96 GiB, its deadline or its numerical bounds,
