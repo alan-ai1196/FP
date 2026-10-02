@@ -1,6 +1,6 @@
 # Owned typed-value retention with bounded source facts
 
-Status (2026-10-03): **IMPLEMENTED, DEFAULT OFF; FOCUSED CPU QUALIFICATION**.
+Status (2026-10-03): **IMPLEMENTED, DEFAULT OFF; COMPLETE SCOPED CPU QUALIFICATION**.
 The [passive theorem](OWNED_VALUE_GRAPH_RETENTION.md) now has a private Runtime
 lowering. This changes storage/checking execution, not FP semantics or learner
 actions. Foundation/ERC remain frozen. No trained score, full-run resource
@@ -175,10 +175,12 @@ synthetic full-V events; no corpus or score is produced.
 
 Focused evidence is retained in `FP_OWNED_VALUE_GRAPH_RUNTIME_CPU.json` and
 `FP_OWNED_VALUE_GRAPH_RUNTIME_FULL_V_CPU.json`. A separate committed-source
-regression driver checks the complete relevant existing scripts. Its receipt,
-when present, is a scoped CPU result, not a replay or reissuance of the old
-whole release. Actual RTX 3090 qualification and the full ordinary-text
-host/execution budget remain separate obligations.
+regression driver passes all 21 complete relevant scripts at `9fe66f1`, with
+inputs unchanged throughout, including actual Windows host-allocation refusal.
+`FP_OWNED_VALUE_GRAPH_REGRESSION_CPU.json` is a scoped CPU result, not a replay
+or reissuance of the old whole release. The one separately preregistered
+[RTX 3090 control](../../experiments/next_token/OWNED_VALUE_GRAPH_CUDA_A1.md)
+and the full ordinary-text host/execution budget remain separate obligations.
 
 The research target stays the trained ordinary next-token comparison. This
 joint lowering is the selected candidate; no additional relation/precision

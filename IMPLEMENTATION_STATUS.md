@@ -13,8 +13,9 @@ Aggregate capture-metric work is bounded per page, including unused nodes.
 Focused CPU controls pass: 93 native histories/158 commits, twenty complete
 tensor pairs/340 phases, nonzero frame padding, 22 terminal faults, public
 mutations and memo eviction. Original full-V initialization/two synthetic
-events also pass, with zero native-only canonical images. Broad committed-source
-regression and actual-device qualification remain pending. No full-host,
+events also pass, with zero native-only canonical images. All 21 complete scoped
+CPU scripts pass at `9fe66f1`; the one actual-device control is preregistered,
+with its native harness qualification and launch pending. No full-host,
 execution-time, trained-score or new certificate claim follows. The whole
 ordinary-text budget is next; Foundation/ERC and relation/precision stay closed.
 

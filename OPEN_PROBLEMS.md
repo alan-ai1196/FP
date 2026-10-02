@@ -3,9 +3,9 @@
 The selected [typed value graph now has an owned Runtime lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md).
 Source stability follows from the existing private copy/transition boundary;
 bounded FIFO facts avoid all-facts growth without removing historical values.
-Focused native/tensor/full-V, failure and aggregate parser-work controls pass.
-Complete committed-source CPU regression and a separately registered actual
-RTX 3090 control are the remaining scoped qualification steps. Close those
+Focused native/tensor/full-V, failure and aggregate parser-work controls and
+all 21 complete scoped CPU scripts pass at `9fe66f1`. The separately registered
+RTX 3090 control, after its native harness check, remains. Close that scope
 without extending static variants, then answer the **whole ordinary-text
 host/execution budget**: pages, both indices, parsed child IDs, bounded memos,
 current sources, full diagnostics and Runtime metadata all matter. The wire

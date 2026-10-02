@@ -2,7 +2,7 @@
 
 ## Current execution state (2026-10-03)
 
-**Owned typed value graph: implemented, default off; focused CPU checks PASS.**
+**Owned typed value graph: default off; complete scoped CPU checks PASS.**
 The [owned lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) derives source
 stability from the existing Runtime copy/transition boundary. Its byte-only
 producer, independent reader and bounded FIFO source memo preserve complete
@@ -16,8 +16,10 @@ meter refuses unused captures whose combined semantic work exceeds the page
 allowance; per-node bounds alone are insufficient. The original full-V
 declaration plus two synthetic events also passes: 89 new nodes/7,957 bytes,
 6,257 memo facts within 8,192, and every original canonical record recovered.
-The committed-source broad regression and actual RTX 3090 qualification are
-next. This is no timing, full-host fit or trained result. Then settle the
+All 21 complete scoped CPU scripts pass at `9fe66f1`, including actual Windows
+allocation refusal. The one [RTX 3090 control](experiments/next_token/OWNED_VALUE_GRAPH_CUDA_A1.md)
+is preregistered; its native harness and original device launch are next.
+This is no timing, full-host fit or trained result. Then settle the
 whole ordinary-text budget, including both indices, parsed child IDs, current
 sources and Runtime metadata, before another full attempt. Foundation/ERC,
 relation/precision and old journals stay closed; no shorter score is selected.

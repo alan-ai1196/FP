@@ -12031,3 +12031,11 @@ source CPU regression and actual-device qualification are the next scoped
 steps, followed by the full ordinary-text budget decision. Foundation/ERC,
 relation/precision and old journals remain closed. No new certificate class,
 semantic action or shortened comparison is introduced.
+
+The committed-source regression subsequently passes all 21 complete scoped
+CPU scripts at `9fe66f1`, including actual Windows allocation refusal and
+existing construction/search/persistence/installation continuations. Inputs
+remain unchanged throughout. One actual RTX 3090 control is preregistered
+with the existing four-train/four-report fixture, complete frames, four-GiB
+job, 180-second deadline and a 32-entry memo to exercise real evictions.
+Its committed native harness must pass before the original device launch.
