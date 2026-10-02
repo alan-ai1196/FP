@@ -1,0 +1,204 @@
+{
+  "status": "PASS_OWNED_VALUE_GRAPH_MODEL",
+  "scope": "Exact passive typed-graph audit on complete native Runtime records.\n\nThe Runtime keeps its existing byte archive and every ordinary check. This\nobserver grants no storage, resource, certificate, CUDA or continuation port.\nNo corpus, timing experiment, shortened text score or old journal replay.",
+  "exact_values": {
+    "values": 120,
+    "exact_guard_boundary_checks": 750,
+    "independent_page_only_rebuild": true,
+    "no_old_publication_container_replaced": true,
+    "no_captured_input_iteration_or_complete_expansion_during_binding": true,
+    "graph_nodes": 146,
+    "binding_entries": 145,
+    "expanded_bytes": 7197,
+    "page_bytes": 8571,
+    "expected_walk": {
+      "source_visits": 442,
+      "node_message_bytes": 3952,
+      "root_appends": 120,
+      "binding_inserts": 145,
+      "source_child_edges": 322,
+      "source_hits": 16
+    }
+  },
+  "stability_boundary": {
+    "default_rechecks_foreign_records_and_mutable_descendants": true,
+    "caller_claiming_ownership_can_produce_stale_binding": true,
+    "ownership_premise_is_necessary_not_established_by_a_flag": true
+  },
+  "adversaries": {
+    "single_bit_pages": 1184,
+    "bit_pages_accepted_with_exact_value": 0,
+    "bit_pages_refused": 1184,
+    "producer_and_cap_refusals": [
+      "changed_scalar",
+      "forward_reference",
+      "node_cap",
+      "binding_cap",
+      "expanded_cap",
+      "integer_cap",
+      "depth_cap",
+      "page_cap",
+      "forged_capture",
+      "forged_capture",
+      "reader_capture_grid",
+      "reader_capture_tail",
+      "reader_capture_source_index",
+      "equal_bytes_wrong_structural_root"
+    ],
+    "terminal_publication_failures": [
+      "producer_accept",
+      "root_append",
+      "partial_binding_update"
+    ],
+    "all_old_roots_and_bindings_preserved": true
+  },
+  "native_histories": {
+    "records": 2239,
+    "canonical_bytes": 13976026,
+    "histories": 93,
+    "targets": 294,
+    "commits": 158,
+    "graph_page_bytes": 1583132,
+    "graph_nodes": 43270,
+    "source_child_edges": 143267,
+    "complete_observed_unobserved_snapshot_pairs": 15,
+    "every_record_and_persistent_source_recovered": true,
+    "public_origin_mutations_isolated": true,
+    "default_runtime_archive_unchanged": true
+  },
+  "full_vocabulary": {
+    "original_training_declaration": 1048576,
+    "original_reporting_declaration": 16384,
+    "vocabulary": 50257,
+    "masters": 603092,
+    "synthetic_targets": 2,
+    "initialized_graph": {
+      "nodes": 1118517,
+      "bindings": 6225,
+      "pages": 5,
+      "page_bytes": 39259286,
+      "distinct_node_payload_bytes": 30310950,
+      "distinct_child_edges": 1733615,
+      "distinct_atom_payload_bytes": 15323513,
+      "node_tags": {
+        "s": 1065137,
+        "u": 52,
+        "i": 51220,
+        "d": 2087,
+        "q": 10,
+        "m": 6,
+        "n": 1,
+        "f": 1,
+        "b": 3
+      },
+      "expected_walk": {
+        "source_visits": 1818881,
+        "node_message_bytes": 33565963,
+        "source_child_edges": 1818876,
+        "source_hits": 15,
+        "root_appends": 5,
+        "binding_inserts": 6225
+      },
+      "parser": {
+        "node_payload_bytes_parsed": 30310950
+      },
+      "raw_master_and_other_byte_leaf_payload": 2412368
+    },
+    "final_graph": {
+      "nodes": 1118606,
+      "bindings": 6257,
+      "pages": 15,
+      "page_bytes": 39267243,
+      "distinct_node_payload_bytes": 30317795,
+      "distinct_child_edges": 1734330,
+      "distinct_atom_payload_bytes": 15324549,
+      "node_tags": {
+        "s": 1065172,
+        "u": 68,
+        "i": 51221,
+        "d": 2102,
+        "q": 30,
+        "m": 6,
+        "n": 1,
+        "f": 1,
+        "b": 3,
+        "c": 2
+      },
+      "expected_walk": {
+        "source_visits": 1820189,
+        "node_message_bytes": 33584566,
+        "source_child_edges": 1820174,
+        "source_hits": 46,
+        "root_appends": 15,
+        "binding_inserts": 6257
+      },
+      "parser": {
+        "node_payload_bytes_parsed": 30317795,
+        "metric_input_words": 4096,
+        "recovery_input_words": 8192
+      },
+      "raw_master_and_other_byte_leaf_payload": 2412368
+    },
+    "record_kinds": {
+      "immutable_run_manifest": 1,
+      "native_program": 1,
+      "zero_slot_state": 1,
+      "initialized_reference_state": 1,
+      "range_evidence": 1,
+      "context_ingress_identity": 2,
+      "revealed_context": 2,
+      "pre_target_prediction": 2,
+      "after_observation_phase": 2,
+      "ordinary_reference_state": 2
+    },
+    "records": 15,
+    "canonical_bytes": 155227742,
+    "complete_residency": {
+      "current": {
+        "reference_payload_bytes": 163360630,
+        "physical_objects": 51
+      },
+      "role_current": {
+        "compiler": {
+          "reference_payload_bytes": 163360598,
+          "physical_objects": 49
+        },
+        "deployment": {
+          "reference_payload_bytes": 163352256,
+          "physical_objects": 36
+        }
+      },
+      "peak": {
+        "reference_payload_bytes": 184597879,
+        "physical_objects": 53
+      },
+      "role_peak": {
+        "compiler": {
+          "reference_payload_bytes": 184597879,
+          "physical_objects": 50
+        },
+        "deployment": {
+          "reference_payload_bytes": 184597863,
+          "physical_objects": 38
+        }
+      },
+      "every_current_buffer_and_lease_inspected": true
+    },
+    "independent_page_only_rebuild": true,
+    "binding_cap": 1048576,
+    "node_cap": 4194304,
+    "full_manifest_and_original_values_admitted_in_passive_model": true,
+    "no_runtime_archive_replacement_or_resource_authority": true
+  },
+  "binding_eviction": {
+    "retentions": 360,
+    "every_page_and_root_equal": true,
+    "entire_derived_graph_equal": true,
+    "clear_before_every_cold_retention": true,
+    "warm_binding_peak": 145,
+    "cold_binding_peak": 4,
+    "warm_source_visits": 696,
+    "cold_source_visits": 1386,
+    "no_runtime_eviction_policy_or_optimal_cache_claim": true
+  }
+}

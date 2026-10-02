@@ -11936,3 +11936,50 @@ complete retention execution jointly: expanded fields, source traversal,
 publication and actual index/binding growth. Existing compositional semantics
 are sufficient in principle; no new architecture action, static precision
 branch, smaller trained score or unqualified cap increase is selected.
+
+## 349. Preserve the typed value graph instead of re-expanding its inputs (2026-10-03)
+
+The joint retention review found that the existing byte-expression path
+undoes the already proved captured-input representation: it compiles those
+logical Fractions into byte expressions again. A typed value graph instead
+retains the actual immutable operands, explicit executed-value tails and
+ordinary record fields. Its independently checked roots still recover every
+old canonical byte. This is a representation theorem, not a new FP action.
+
+The conditional proof derives exact wire size `40M + 9N + A + 8E`, separates
+source walks, decoder metric work, indices and host storage, and publishes
+only new roots/facts. Reuse of record wrappers requires the actual private
+ownership and continuation invariant. A negative control obtains stale
+evidence by claiming that premise for a caller-held frozen wrapper and then
+changing its dictionary. The default model correctly rereads such wrappers;
+no caller flag is an ownership certificate or Runtime authority.
+
+The passive observer preserves the actual ordinary Runtime and its byte
+archive. 93 complete histories/158 commits recover 2,239 records and preserve
+fifteen complete observed/unobserved snapshots, including public-origin
+mutations. Exact guard cases, 1,184 page bit variants, malformed operands,
+resource refusals and three terminal publication failures pass. All evidence
+is in `FP_OWNED_VALUE_GRAPH_MODEL.json`; no corpus or timing experiment occurs.
+
+Under the original full train/report declaration, initialization requires
+1,118,517 nodes, 6,225 source facts and 39,259,286 encoded bytes. Two synthetic
+full-V events add 89 nodes, 32 facts and 7,957 bytes; all fifteen records recover
+155,227,742 canonical bytes. A new reader rebuilt only from immutable pages
+agrees with every derived node and metric. Actual Runtime buffer/role checks
+remain unchanged. These counts are not a full-run fit or prefix extrapolation.
+
+The same derivation shows why source facts must be distinguished from the
+retained values. Discarding facts and rewalking sources preserves every page,
+root and metric, conditional on successful work. 360 exact controls confirm
+the tradeoff: fact peaks fall from 145 to four while source visits rise from
+696 to 1,386. No Runtime cache policy is selected. Keeping all facts forever
+would exceed the passive model's small binding allowance on the full schedule;
+the encoded pages and current source values remain mandatory.
+
+This gives one coherent candidate for owned integration, with an explicit
+information boundary and joint resource account, rather than another local
+byte-codec timing pair. Production, Foundation/ERC, actual AMP frames and
+closed journals are unchanged. Next derive the source-fact permission inside
+Runtime, retain complete failure/role accounting and settle the total host/
+index/memo budget. Ordinary next-token learning remains the objective; no
+static relation extension or shortened trained score replaces it.

@@ -2,6 +2,18 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [typed value graph](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md) now supplies
+a passive, independently decoded construction addressing traversal, captured
+input expansion, dictionary growth and publication together. Exact wire size
+is `40M + 9N + A + 8E`; all old canonical values remain recoverable. Reusable
+record facts require an owner-derived stability invariant, not just frozen
+annotations. 93 native histories and the original full declaration pass with
+the actual Runtime unchanged; the two full-V events add 7,957 graph bytes.
+Memo eviction preserves pages/roots but increases traversal. This model is
+outside production and has no resource/bridge authority. A complete owned
+lowering and whole-host/index/memo budget remain required before another full
+text attempt. Foundation/ERC and relation/precision remain closed.
+
 The [whole-schedule retention account](theory/proofs/NATIVE_RETENTION_VOLUME.md)
 now proves at least 68.84 TB in each complete producer/decoder/expected stream
 for the original native training schedule, from actual repeated origins and

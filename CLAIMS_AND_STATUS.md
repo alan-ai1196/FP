@@ -1,5 +1,17 @@
 # FP Claims and Status
 
+**Typed value graph: CONDITIONAL PRESERVATION/COST THEOREMS; PASSIVE CPU PASS.**
+The [proof](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md) preserves the existing
+canonical values using typed nodes and actual captured operands, with exact
+wire size `40M + 9N + A + 8E`. Private record stability is an explicit ownership
+premise; a caller-asserted flag has a concrete stale-binding counterexample.
+93 native histories/158 commits, fifteen whole-state controls, 1,184 byte
+variants and the original full-V declaration pass. Two synthetic events add
+89 nodes/7,957 bytes. Source-fact eviction preserves pages/roots in 360 controls
+while increasing source work. These are no Runtime release, full-budget,
+timing, AMP, trained-model or new `CERTIFIED_COMPLETE` claims. The passive
+all-facts binding cap is itself insufficient for the full horizon.
+
 **Full native retention work: SOURCE-DERIVED SCHEDULE BOUNDS; EXACT COUNTS PASS.**
 The [law](theory/proofs/NATIVE_RETENTION_VOLUME.md) requires at least
 68,844,511,893,504 record bytes per complete writer/decoder/expected stream

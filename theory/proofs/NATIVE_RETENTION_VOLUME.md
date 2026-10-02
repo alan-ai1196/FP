@@ -194,3 +194,10 @@ growth and publication work, using the existing compositional theorem as an
 available principle. No new architecture action or static precision theorem
 is required. Do not launch another full attempt or reopen an old codec timing
 journal on the strength of a selected payload/count saving alone.
+
+The subsequent [typed value-graph construction](OWNED_VALUE_GRAPH_RETENTION.md)
+addresses these coordinates jointly in a passive model: complete typed fields,
+captured operands, independent source binding and prefix publication. Its exact
+wire/guard laws and original full-declaration control do not install an archive
+or establish a full-run budget. The source-stability premise and actual host/
+index/memo costs remain explicit prerequisites to an owned realization.

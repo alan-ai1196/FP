@@ -1,5 +1,20 @@
 # FP Open Problems
 
+The selected joint retention construction is now the
+[typed value graph](theory/proofs/OWNED_VALUE_GRAPH_RETENTION.md), with exact
+preservation/guard/wire laws and complete passive native-record evidence.
+It retains captured operands directly and publishes only new definitions and
+facts. The original full manifest fits its passive binding allowance, but
+keeping every subsequent fact forever would exceed that allowance; clearing
+facts preserves complete values and changes work. The immediate question is
+an **owned realization with a total resource account**, including the actual
+source-stability boundary, dictionaries, memo policy, failed prefixes and
+Runtime metadata. A caller flag cannot supply that boundary, and the wire
+formula cannot supply whole-host fit. Do not reopen a codec menu, static
+relation case, old journal or shortened-horizon score. The full ordinary-text
+comparison remains the objective; actual AMP retains its complete frame and
+fresh numerical obligations.
+
 The whole ordinary-text review now identifies a **joint retention-execution
 obstacle**. The [exact schedule laws](theory/proofs/NATIVE_RETENTION_VOLUME.md)
 require at least 68.84 TB in each of three complete canonical streams on the
