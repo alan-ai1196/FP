@@ -11614,3 +11614,40 @@ ledger. Only ordinary observation appends the history, and only ingress calls
 the preflight whose return it discards. These facts identify proof obligations,
 not authority to erase records or bypass resource checks. No new static/relation
 branch or GPU qualification is selected by this result.
+
+
+## 340. Owned induction removes repeated validation without erasing history (2026-10-02)
+
+The sole ordinary observation append establishes a complete contiguous revealed
+prefix. Successful publication advances its cursor; failed revelation cannot
+resume prediction. Public value isolation prevents returned old records from
+forging that invariant. Therefore the next token source may read its registered
+lag window directly from the full owned history, retaining all earlier records
+for later queries/profiles. No validity bit or history quotient is introduced.
+The arbitrary-history helper retains full validation and the original work
+debit remains a conservative allowance before any source read/context allocation.
+
+Ingress also discarded the complete successor produced by resource preflight.
+Its actual allocation checker now serves both preflight and publication: the
+former keeps the exact complete-frame guard, returns no reusable authority and
+mutates nothing; actual allocation reruns all checks and records its peak/event.
+The unused clone's old events, retired IDs and accounting containers need not
+be copied. Physical transfer/install preparation keeps its existing semantics.
+
+The joint refinement agrees on 4,000 exact admissions over 40 legally built
+lease states, 98 complete history pairs/512 targets per arm, and four paired
+prefix failures. Original old-record queries/profiles, six CPU tensor histories
+with 129 full bodies/5,774,243 bytes, and seven complete regression scripts pass.
+An outdated source-denial test was strengthened to watch the actual context
+constructor; nonempty unfunded history reads are also actively forbidden.
+
+At 64 shared events the new path reads exactly 186 old targets, with no full
+source copy/check or ingress ledger-history clone. All 64 observations and
+3,256 resource events remain. This removes three quadratic traversals but
+leaves every one of the 765,780 residency object visits, plus growing object/ref
+map copies, buffer filtering and ingress identity publication. No actual speed
+or affordable full horizon follows. The negative prior timing pair stays closed;
+another isolated prefix pair is not selected. The next research obligation is
+an efficient complete owned transition for those remaining growing objects,
+including sharing, retirement and failure prefixes. Ordinary next-token
+prediction remains the target; Foundation/ERC and relation closure remain.

@@ -1,0 +1,110 @@
+{
+  "status": "PASS_OWNED_ADMISSION_CPU",
+  "baseline_source": "571af68",
+  "scope": "Exact admission and complete-continuation controls; no corpus/device timing.",
+  "admission": {
+    "reachable_lease_states": 40,
+    "exact_admission_decisions": 4000,
+    "accepted": 336,
+    "refused": 3664,
+    "identical_first_error_type_and_message": true,
+    "all_predecessor_snapshots_unchanged": true,
+    "every_accepted_allocation_matches_original": true,
+    "unknown_complete_frame_coordinates_refused": true,
+    "no_history_clone_in_preflight": true
+  },
+  "histories": {
+    "paired_complete_histories": 98,
+    "target_events_per_arm": 512,
+    "complete_results_and_serialized_snapshots_equal": true,
+    "old_public_record_mutations_cannot_forge_the_prefix": true,
+    "original_source_family_identity_preserved": true
+  },
+  "no_copy": {
+    "targets": 64,
+    "actual_past_target_reads": 186,
+    "expected": 186,
+    "ordinary_full_history_copies": 0,
+    "ordinary_full_prefix_checks": 0,
+    "ingress_ledger_history_clones": 0,
+    "internal_ledger_diagnostic_event_rows": 0,
+    "retained_resource_events": 3256,
+    "retained_observations": 64,
+    "residency_object_visits_still_required": 765780
+  },
+  "continuations": {
+    "profiles": {
+      "newborn_profiles": 16,
+      "original_source_profile_events": 64,
+      "ordinary_candidate_continuations": 32
+    },
+    "source_queries": {
+      "owned_query_coordinates": 2,
+      "exact_dense_query_equality": true,
+      "malformed_context_role_reader_and_ingress_refusals": 17,
+      "information_use_retained": true
+    },
+    "source_funding": {
+      "source_decode_denied_before_history_copy_or_context_allocation": true,
+      "original_ingress_failure_retained": true,
+      "predictions_published": 0
+    },
+    "target_failures": {
+      "numerical_refusal_retains_complete_target_and_unit": true,
+      "commit_debit_precedes_solver": true,
+      "denied_commit_retains_complete_target_and_unit": true
+    },
+    "ingress_admission": {
+      "unchanged_unfunded_denials": 64,
+      "unallocatable_registered_capacity_bytes": 1000000000000,
+      "actual_immutable_initial_work": 5230,
+      "prepaid_ingress_work": 192,
+      "calibrated_work_cap": 5421,
+      "residency_preflight_precedes_window_creation": true,
+      "failed_empty_preparation_keeps_paid_work_peak_and_retired_ids": true,
+      "retry_publishes_fresh_identity_without_dangling_old_window": true
+    },
+    "ingress_failures": {
+      "invalid_chunk_prefixes_rejected_without_mutation": 6,
+      "raw_value_bypass_rejected": true,
+      "terminal_bytes_and_status_survive_post_admission_work_exhaustion": true,
+      "actual_post_admission_exhausted_work_cap": 5422,
+      "numeric_guard_witnesses": [
+        {
+          "semantic_denominator_bits": 257,
+          "received_paid_bytes": 42,
+          "prepaid_window_bytes": 1024
+        },
+        {
+          "semantic_denominator_bits": 1025,
+          "received_paid_bytes": 139,
+          "prepaid_window_bytes": 1024
+        },
+        {
+          "semantic_denominator_bits": 4097,
+          "received_paid_bytes": 523,
+          "prepaid_window_bytes": 1024
+        }
+      ],
+      "capacity_prefix_bytes_retained_without_unread_suffix": 8,
+      "invalid_domain_or_frame_retains_terminal_prefix": true,
+      "internal_contract_failure_is_execution_failed_not_invalid_input": true,
+      "unexpected_prediction_cause_preserved_without_double_halt": true
+    }
+  },
+  "prefix_failures": {
+    "paired_failures": 4,
+    "complete_failed_snapshots_equal": true,
+    "unfunded_history_reads_and_context_allocations": 0,
+    "post_reveal_failures_cannot_resume": true,
+    "generic_helper_malformed_prefix_refusals": 3
+  },
+  "cpu_phases": {
+    "paired_histories": 6,
+    "complete_phase_bodies": 129,
+    "checked_primitive_words": 50279,
+    "complete_phase_bytes": 5774243,
+    "frames_learners_reports_reads_allocations_retirements_equal": true,
+    "actual_cuda_execution": false
+  }
+}

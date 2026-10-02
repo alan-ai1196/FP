@@ -1,5 +1,18 @@
 # FP Open Problems
 
+The next ordinary-text obstruction is **complete growing-object transitions**.
+The [owned-prefix/admission proof](theory/proofs/OWNED_PREFIX_ADMISSION.md) now
+eliminates source-prefix copies/checks and discarded ingress ledger clones,
+with 4,000 exact admissions, 98 full-state pairs, failure/CPU tensor controls
+and seven full regression suites passing. Yet live-object residency scans,
+object/ref-map copies, buffer filtering and ingress identity-map publication
+still traverse growing state. The 64-target control retains 765,780 residency
+object visits. Derive an owned transition representation with complete checks,
+sharing/retirement accounting and failure prefixes; do not simply trust a cached
+total or erase history. A new isolated prefix timing pair is not selected.
+The objective remains an affordable complete ordinary next-token learning/report
+result, with no new relation, precision, codec or baseline branch.
+
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 has a reachable-state proof and exact CPU/full-V correctness qualification.
 The [original 256-target pair](experiments/next_token/LEDGER_PROJECTION_COST_A1.md)
@@ -7,9 +20,9 @@ is slower by 20.23683%, with unchanged prediction code also slowing and no cause
 isolated by the ordered pair. All declarations, sources, arithmetic, leases and
 byte checks remain. Keep the source simplification and negative observation
 separate; no measured acceleration, full budget or GPU release follows. The
-journal is terminal. The next joint source-level target is the owned-prefix
-invariant and allocation preflight without its discarded full-ledger copy;
-all historical information and actual admission/refusal duties must remain.
+journal is terminal. The subsequent owned-prefix/admission refinement addresses
+its next two source-level targets, without a measured timing claim. Remaining
+global object work is the current frontier above.
 
 The [actual growing-history law](theory/proofs/NATIVE_HISTORY_WORK.md) is now
 proved at source level and checked on 34 paired complete CPU histories: source
@@ -17,9 +30,10 @@ prefix copying/checking, ingress ledger clones and ordinary full-ledger
 diagnostics each incur quadratic cumulative work. No timing impossibility is
 claimed. The ordinary live-buffer membership projection now preserves lease
 checks, published state, resource events and terminal failures without unused
-full diagnostics, within its proved/audited scope. The other quadratic terms
-require their own complete-state refinement. Truncating
-history or caching unverified totals is not a solution.
+full diagnostics, within its proved/audited scope. The joint prefix/admission
+refinement removes two more sources of growing-history work. Remaining global
+object terms require their own complete-state argument. Truncating history or
+caching unverified totals is not a solution.
 
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 now has a conditional trace argument and finite exact CPU evidence. Its

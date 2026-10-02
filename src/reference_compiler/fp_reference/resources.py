@@ -141,6 +141,13 @@ class ResourceLedger:
         There is deliberately no implicit release of the incumbent. Prior
         charged profiling/build work is never rolled back by a failed reserve.
         """
+        proposed, refs, ids, total, roles = self._allocation_plan(owner, objects)
+        self._objects, self._refs = proposed, refs
+        self._record_peak(total, roles)
+        self._event('allocate', owner, ids, note=note)
+
+    def _allocation_plan(self, owner, objects):
+        """The same complete admission checks for preflight and publication."""
         self._owner(owner)
         proposed, refs = dict(self._objects), {key: dict(v) for key, v in self._refs.items()}
         ids = []
@@ -153,9 +160,7 @@ class ResourceLedger:
             refs[spec.object_id] = {owner: 1}
             ids.append(spec.object_id)
         total, roles = self._check_residency(proposed, refs)
-        self._objects, self._refs = proposed, refs
-        self._record_peak(total, roles)
-        self._event('allocate', owner, ids, note=note)
+        return proposed, refs, ids, total, roles
 
     def acquire(self, owner: str, object_id: str, *, count: int = 1):
         self._owner(owner)
@@ -286,11 +291,23 @@ There is no resource or installation authority outside the owning Runtime.
         proposed.allocate(owner, objects)
         return proposed
 
-    def _detached(self) -> ResourceLedger:
+    def check_allocation(self, owner: str, objects: tuple[ObjectSpec, ...]):
+        """Preflight only; no successor, ledger mutation or reusable authority.
+
+        The caller must still perform the actual checked allocation. Avoid
+        cloning history when the only requested result is admission/refusal.
+        """
+        self._require_complete()
+        self._allocation_plan(owner, objects)
+
+    def _require_complete(self):
         fields = {'_limits', '_owners', '_closed_owners', '_objects', '_refs', '_retired',
                   '_spent', '_peak', '_role_peak', '_events'}
         if type(self) is not ResourceLedger or set(self.__dict__) != fields:
             raise ContractError('physical preparation needs the complete registered ledger state')
+
+    def _detached(self) -> ResourceLedger:
+        self._require_complete()
         proposed = object.__new__(ResourceLedger)
         proposed.__dict__ = dict(self.__dict__)
         proposed._owners = dict(self._owners)

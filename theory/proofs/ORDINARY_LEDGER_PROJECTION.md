@@ -117,4 +117,6 @@ do not call it a measured acceleration or extrapolate a training budget. The
 journal is closed, with no retry/variant sweep or separate device qualification
 selected by this result. The source-prefix and discarded ingress-preflight
 copies are the next concrete growing-history obligations; no old information
-may be discarded to remove their execution cost.
+may be discarded to remove their execution cost. They are now addressed by the
+separate [owned-prefix/admission refinement](OWNED_PREFIX_ADMISSION.md), with
+global object work still unresolved and no new timing claim.

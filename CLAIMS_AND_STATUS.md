@@ -1,5 +1,18 @@
 # FP Claims and Status
 
+**Owned prefix/admission: REACHABLE-STATE REFINEMENT; EXACT FINITE CPU PASS.**
+The [proof](theory/proofs/OWNED_PREFIX_ADMISSION.md) derives the complete revealed
+prefix from owned transitions and removes repeated validation without discarding
+old records. Ingress preflight uses the actual allocator's checks without making
+an unused successor ledger; actual allocation remains mandatory. Exact admission
+decisions, all 98 paired complete histories and four failure pairs agree; six CPU
+tensor histories/129 bodies and seven complete regression scripts pass. This
+removes three quadratic traversals, while full object scans/copies remain.
+The source reader now makes exactly sum(min(i,L)) old-target reads over T events;
+all original conservative debits remain. No general private-corruption tolerance,
+equal host-failure timing, linear full Runtime, speedup, actual CUDA qualification
+or model-quality claim follows. No new `CERTIFIED_COMPLETE` class is introduced.
+
 **Ordinary ledger projection: REACHABLE-STATE REFINEMENT; COMPLETE CPU/FAILURE CHECKS PASS.**
 The [proof](theory/proofs/ORDINARY_LEDGER_PROJECTION.md) preserves the original
 live-lease check and exact buffer membership without rebuilding unused resource
@@ -23,7 +36,9 @@ The [proof and 34 paired CPU histories](theory/proofs/NATIVE_HISTORY_WORK.md)
 retain identical complete snapshots with/without instrumentation. These are
 implementation operation counts, not an FP semantic lower bound, an elapsed
 time extrapolation or proof of deadline failure. Full history must remain;
-the separate ordinary projection removes only the diagnostic materialization term.
+the separate ordinary projection removes the diagnostic materialization term,
+and the subsequent joint refinement removes the source copy/check and discarded
+ingress-clone terms. The historical law is not a current full-runtime upper bound.
 
 **Source-compiled canonical streams: CONDITIONAL PRESERVATION; FINITE CPU PASS.**
 The [argument](theory/proofs/COMPILED_CANONICAL_STREAMS.md) requires equal field/

@@ -1,0 +1,64 @@
+{
+  "status": "PASS_OWNED_ADMISSION_REGRESSION_CPU",
+  "scope": "Seven complete existing scripts on the candidate committed with this receipt; assertions enabled, no old evidence overwritten. No actual CUDA or whole release.",
+  "base_source": "571af68",
+  "production_source_unchanged_during_checks": true,
+  "checks": [
+    {
+      "script": "scripts/audit_owned_token_learner.py",
+      "exit_code": 0,
+      "status": "PASS_OWNED_COMPLETE_TOKEN_REFERENCE",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_indexed_token_sources.py",
+      "exit_code": 0,
+      "status": "PASS_OWNED_INDEXED_TOKEN_SOURCES",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_context_ingress.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_events.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_reference_run.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_cpu_installation.py",
+      "exit_code": 0,
+      "status": "PASS",
+      "complete_script": true
+    },
+    {
+      "script": "scripts/audit_public_value_boundary.py",
+      "exit_code": 0,
+      "status": "PASS_PUBLIC_VALUE_BOUNDARY_CPU",
+      "complete_script": true
+    }
+  ],
+  "historical_audit_reproduction": [
+    {
+      "script": "scripts/audit_native_history_work.py",
+      "status": "PASS_NATIVE_HISTORY_WORK_CPU",
+      "exit_code": 0,
+      "original_receipt_unchanged": true
+    },
+    {
+      "script": "scripts/audit_ledger_projection.py",
+      "status": "PASS_LEDGER_PROJECTION_CPU",
+      "exit_code": 0,
+      "original_receipt_unchanged": true
+    }
+  ]
+}

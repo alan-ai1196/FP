@@ -1716,7 +1716,7 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
                 {'reference_payload_bytes': spec.control_bytes, 'physical_objects': 1}, self._chi)
             # The capacity check precedes creation of the potentially large
             # zero window. No input byte has been offered or received yet.
-            self._ledger.prepare_allocation(self._data_owner, (body, control, metadata.spec))
+            self._ledger.check_allocation(self._data_owner, (body, control, metadata.spec))
             allocated_ids = (body.object_id, control.object_id, metadata.spec.object_id)
             self._allocate(self._data_owner, (PackedObject(body, bytes(spec.capacity)),
                 PackedObject(control, control_payload(0, 'RECEIVING', spec)), metadata))
@@ -1825,13 +1825,25 @@ stream/terminal-prefix protocol; target observation must remain prepaid.
             raise ContractError('input differs from its registered range/interface')
         compact_sources = type(rules.sources) is TokenAtomFamily
         if compact_sources:
-            # Admission precedes even the retained-history tuple copy and
-            # context allocation. Denial keeps the owned ingress and halts.
+            # Retain the original conservative work admission before context
+            # allocation. Denial keeps the owned ingress and halts.
             self._event_router.charge_work('information', {'work': indexed_source_read_work(data, self._cursor)},
                 f'{self._runtime_id}:event:{self._cursor}:indexed-source-read')
+            # Ordinary reveal is the sole append site; a failed reveal cannot
+            # return to this port. The private contiguous prefix is established
+            # by publication, not by trusting a caller's history or a cache bit.
+            # Keep the full history for later queries/profiles and read only
+            # the actual registered lag window for this prediction.
+            if len(self._observations) != self._cursor:
+                raise ContractError('causal source history is not a continuous revealed prefix')
+            family = data.source_reads.family
+            sources = TokenContext(family, self._cursor, tuple(
+                family.vocabulary if lag > self._cursor else self._observations[self._cursor-lag].target
+                for lag in range(1, family.context+1)))
+        else:
+            sources = read_sources(data, self._cursor, inputs, tuple(self._observations))
         # Inputs have already arrived through the owned canonical wire. A
         # failed domain/numeric check retains that prefix and halts ingress.
-        sources = read_sources(data, self._cursor, inputs, tuple(self._observations))
         source_map = source_mapping(sources)
         domain = self._contract.source_domain
         if type(sources) is TokenContext:

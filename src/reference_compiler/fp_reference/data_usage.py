@@ -185,10 +185,12 @@ def source_mapping(sources):
 
 
 def indexed_source_read_work(contract, cursor):
-    """Fund history-copy/check visits, lag decoding and context validation.
+    """Conservative bound for history checks, lag decoding and context validation.
 
     These are reference work charges, not processor cycles. Query/prediction
     decoder validations have their own additional charges at the call site.
+    Runtime's owned-prefix invariant removes its repeated copy/check traversal;
+    retain this historical allowance rather than change the registered budget.
     """
     if type(contract.source_reads) is not TokenSourceReads:
         raise ContractError('registered indexed source reader required')

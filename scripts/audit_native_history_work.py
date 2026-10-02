@@ -147,5 +147,7 @@ if __name__ == '__main__':
     # This audit's recorded law concerns the original observe diagnostic.
     # Reproduce that exact method, including its existing public/host guard.
     from ledger_projection_audit_support import original_observe
-    with patch.object(ReferenceCompilerRuntime, 'observe', original_observe()):
+    from owned_admission_audit_support import historical_prediction_ports
+    with historical_prediction_ports('364934d'), \
+            patch.object(ReferenceCompilerRuntime, 'observe', original_observe()):
         main()

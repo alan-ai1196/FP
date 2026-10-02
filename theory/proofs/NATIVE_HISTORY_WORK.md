@@ -117,3 +117,10 @@ state invariant, not an unchecked cached total or a retained suffix. No new
 semantic architecture action, information interface, numerical shortcut or
 certificate class is licensed. The goal remains an affordable complete ordinary
 next-token learner; relation/precision and compiler-flag branches stay closed.
+
+Subsequent implemented refinements: [ordinary ledger projection](ORDINARY_LEDGER_PROJECTION.md)
+removes the diagnostic event traversal; [owned prefix/admission](OWNED_PREFIX_ADMISSION.md)
+removes the two source-prefix traversals and discarded ingress clone. The
+remaining full-object scans/copies still give growing-state lower laws. This
+audit explicitly binds its historical prediction/observe methods when rerun;
+its original receipt remains evidence about that source, not a current count.

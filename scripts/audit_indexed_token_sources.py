@@ -162,10 +162,11 @@ def admission_before_decoding():
     data = DataContract((StreamSpec('train', 'train', ('train/0',)),), 'train', (), TokenSourceReads(family))
     online = OnlineContract(data, LearnerSpec(1, F(1, 16), 16))
     rt = ReferenceCompilerRuntime(cfg, graph, online=online)
-    with patch.object(implementation, 'read_sources', side_effect=AssertionError('unfunded source decoder ran')) as decoder:
+    with patch.object(implementation, 'read_sources', side_effect=AssertionError('unfunded source decoder ran')) as decoder, \
+            patch.object(implementation, 'TokenContext', side_effect=AssertionError('unfunded context allocated')) as context:
         result = rt.predict_next('train/0', encode_context(()))
         assert result.status == 'UNRESOLVED'
-        assert not decoder.called
+        assert not decoder.called and not context.called
     state = validate_residency(rt)
     assert state.cursor == 0 and state.halted is not None and not state.observations
     return dict(source_decode_denied_before_history_copy_or_context_allocation=True,

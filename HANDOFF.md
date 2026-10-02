@@ -2,6 +2,24 @@
 
 ## Current execution state (2026-10-02)
 
+**Owned prefix/admission refinement: exact CPU qualification complete.**
+The [joint refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md) removes repeated
+source-history copying/validation and the discarded ingress ledger clone.
+The prefix invariant follows from actual reveal/publication and value ownership;
+preflight shares the allocator's complete checks and issues no reusable authority.
+All old records, resource history, work debits and public diagnostics remain.
+4,000 exact admissions, 98 paired histories/512 targets per arm, four paired
+prefix failures, six CPU tensor histories/129 full bodies and seven complete
+regression scripts pass. At 64 shared targets, source copies/checks and ingress
+history clones vanish; all 765,780 residency object visits remain.
+This is no timing gain, actual CUDA or whole release. Do not launch another
+isolated prefix timing pair. The next obstruction is the remaining complete
+growing-object transition: residency scans, object/ref-map copies, buffer
+filtering and ingress identity copies. Address their common owned-state
+invariant and failure obligations before a new ordinary-text budget claim.
+Ordinary next-token training/reporting remains the objective; relation/precision
+and the closed cost journals stay closed.
+
 **Ordinary ledger projection: correctness passes; original cost pair is slower; CLOSED.**
 The [narrow refinement](theory/proofs/ORDINARY_LEDGER_PROJECTION.md) replaces the
 unused full-ledger diagnostic inside `observe` with the same complete live-lease
@@ -15,8 +33,8 @@ Ordinary 256-target time rises from 311.37730 to 374.39020 seconds (20.23683%).
 The unchanged prediction path also slows; this fixed-order pair does not isolate
 the cause. Keep the narrow source simplification, without a measured speed or
 full-budget claim. The journal is terminal; no retry/variant or GPU promotion.
-Attack the remaining source-prefix and discarded ingress-preflight copies
-together through owned-state invariants, preserving every old record and check.
+The joint owned-prefix/admission refinement above subsequently addresses the
+source-prefix and discarded ingress-preflight copies, retaining every old record.
 
 **Growing-history obstruction: source-derived quadratic laws; exact CPU audit passes.**
 [The actual ordinary path](theory/proofs/NATIVE_HISTORY_WORK.md) copies and checks
@@ -28,7 +46,8 @@ All 34 paired CPU histories have identical complete snapshots with/without the
 observer. At 64 shared events, the path clones 104,446 event slots and snapshots
 107,584 event rows. The latter snapshot is used only for live object membership.
 The narrow projection above removes that one diagnostic traversal. Source
-history, ingress clones and object scans remain; do not truncate retained history.
+history and ingress clones are addressed by the subsequent joint refinement;
+object scans remain. Do not truncate retained history.
 
 **Source-compiled canonical streams: original CPU cost pair passes; modest gain; CLOSED.**
 The [candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md) compiles the unchanged

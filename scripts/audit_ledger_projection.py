@@ -175,4 +175,7 @@ def main():
 if __name__ == '__main__':
     if not __debug__:
         raise RuntimeError('assertions are required')
-    main()
+    # Isolate this prior projection from later ingress/source refinements.
+    from owned_admission_audit_support import historical_prediction_ports
+    with historical_prediction_ports(BASELINE):
+        main()

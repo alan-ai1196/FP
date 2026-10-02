@@ -2,6 +2,18 @@
 
 ## Current token execution boundary (2026-10-02)
 
+The [owned-prefix/admission refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md)
+now removes ordinary source-prefix copies/scans and unused full-ledger ingress
+clones. It adds no validity cache or state coordinate, retains all history and
+work charges, and reruns the shared complete checker at actual allocation.
+4,000 exact admissions, 98 paired complete histories, four paired failures,
+six CPU tensor histories/129 full phase bodies and seven complete regression
+scripts pass. Full live-object/ref-map scans/copies and buffer/ingress-map
+publication work remain; 64 shared targets still require 765,780 residency
+object visits in this implementation. No measured speed, actual CUDA, whole
+release or full training budget is claimed. The next work is that complete
+growing-state transition, not another isolated prefix timing pair.
+
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 now removes internal full-diagnostic construction while retaining exactly the
 same live-lease traversal and complete stored history. Thirty-four paired
@@ -13,7 +25,8 @@ passes every byte/ownership duty but is slower: 311.37730 to 374.39020 seconds,
 20.23683% more. The unchanged prediction path also slows; the cause is not
 isolated. All paid counters and the 15,688,733,248 checked record bytes agree.
 The source simplification remains without a measured acceleration/budget claim;
-the journal is closed. Source-history copying, clones and object scans remain.
+the journal is closed. The subsequent joint refinement above removes source
+copy/check and discarded ingress-clone terms; global object work remains.
 
 The [history-work audit](theory/proofs/NATIVE_HISTORY_WORK.md) establishes actual
 source-derived quadratic cumulative history copy/check, ledger-clone and
@@ -21,7 +34,8 @@ internal ledger-diagnostic terms. Thirty-four paired CPU histories agree in
 complete serialized state under passive counters. This is no timing or model
 score. The qualified projection removes unused ledger-diagnostic construction
 from ordinary live-buffer membership while retaining the complete lease check;
-the independent history/clone/object-scan terms remain unresolved.
+the subsequent joint refinement removes the source-prefix and discarded
+ingress-clone terms. Global object-scan/copy terms remain unresolved.
 
 The [source-compiled stream candidate](theory/proofs/COMPILED_CANONICAL_STREAMS.md)
 preserves the authored serializer and two consumers, with source/artifact/ABI
