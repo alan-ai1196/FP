@@ -1,6 +1,7 @@
 # Reusing the owned immutable base fact at public export
 
-Status (2026-10-03): **REACHABLE-STATE REFINEMENT; FOCUSED EXACT CPU PASS**.
+Status (2026-10-03): **REACHABLE-STATE REFINEMENT; SCOPED CPU/RTX 3090
+QUALIFICATION CLOSED**.
 Foundation/ERC and the relation/precision branches remain closed. This is a
 bounded ordinary-text implementation correction, with no new model action,
 cache, certificate class, numerical shortcut or whole-runtime budget claim.
@@ -81,11 +82,27 @@ Python call observer counts visits without substituting any operand or producer.
 
 ## Stopping boundary
 
+All nineteen complete relevant CPU scripts pass at `8d73597`, including
+persistence, installation, owned facts, reporting and actual Windows host
+refusal; source remains unchanged. The fixed fact-enabled
+[actual AMP A1](../../experiments/next_token/OWNED_BASE_EXPORT_CUDA_A1.md) then
+passes at `0596e7f`, whose production matches the CPU-qualified source. Its
+four training/four reporting events preserve nineteen phases, 6,340 primitive
+words, 731,331 phase-body bytes and all 19,922,944 frame bytes. The actual fact
+is used at 25 exports and remains fully bound/paid in both roles. Public
+mutations, frozen identities and the terminal export failure pass. The original
+job exits zero within four GiB/180 seconds; its single 32-MiB arena stays fixed.
+Receipts are `FP_OWNED_BASE_EXPORT_REGRESSION_CPU.json` and
+`FP_OWNED_BASE_EXPORT_CUDA_A1.json`. Both are terminal; no replay is due.
+
 Do not extend this into a general immutable cache or another representation
-sweep. After the fixed relevant CPU regression and one actual fact-enabled AMP
-control, close this refinement and decide the complete ordinary-text budget.
+sweep. This refinement is closed. Return to the complete ordinary-text budget.
 The unchanged `_forward` still performs a full V-by-K integer sum and maximum
 for each forecast and each observation-cache recomputation. Complete retained
 records, canonical stream execution, old masters, windows, metadata and actual
 host limits remain. Removing 2TV Python visits proves neither a 96-GiB fit nor
 the two-hour horizon, and supplies no trained score or `CERTIFIED_COMPLETE`.
+The existing historical cost observation locates substantial work in complete
+canonical record retention. It does not measure this source's throughput, but
+it prevents treating the selected copy saving as a demonstrated cure. No new
+full attempt or isolated local variant is selected on this evidence alone.

@@ -9,8 +9,11 @@ other metadata still copy. This removes exactly 2TV ordinary base-leaf visits
 at the selected single-incumbent ports, with no numerical or resource change.
 96 complete history pairs, eight new context failure boundaries and two full-V
 synthetic targets per arm pass; every buffer/role total and 502,254,394 complete
-snapshot bytes agree. The nineteen-script CPU regression and one fact-enabled
-AMP control remain pending. No timing, full-host or trained result follows.
+snapshot bytes agree. All nineteen complete scoped CPU scripts pass at
+`8d73597`; the fact-enabled actual AMP A1 passes at `0596e7f` with nineteen
+phases/6,340 words/full frames, unchanged arena and original host caps. This
+refinement is closed. No timing, full-host or trained result follows; return
+to the complete ordinary-text budget instead of additional local variants.
 
 The [captured token value refinement](theory/proofs/CAPTURED_TOKEN_VALUES.md)
 now keeps immutable exact input operands plus the actual executed node tail,

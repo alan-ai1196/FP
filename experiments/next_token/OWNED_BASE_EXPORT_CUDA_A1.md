@@ -1,6 +1,29 @@
 # Owned immutable base export: fixed actual AMP control A1
 
-Status (2026-10-03): **PREREGISTERED; NOT YET LAUNCHED**.
+Status (2026-10-03): **ORIGINAL ACTUAL RTX 3090 CONTROL COMPLETE; CLOSED**.
+
+## Original result
+
+The original worker passes at `0596e7f`, with production unchanged from the
+nineteen-script CPU qualification at `8d73597`. It executes four training
+targets, two commits and four frozen reporting targets, checking nineteen
+actual AMP phases, 6,340 primitive words, 731,331 complete body bytes and all
+19,922,944 frame bytes including padding. The actual paid base fact is used
+at 25 exports, with exact source identity, complete artifact bytes, both leases
+and cleared scope. Caller mutations, native/physical frozen identity and the
+terminal export-failure prefix all pass.
+
+The original job exits zero without timeout after 5.232405 launcher seconds,
+with peak job commitment 1,867,608,064 bytes below four GiB. Source and the
+single 32-MiB arena/reservation remain unchanged; the original worker is absent
+after completion. Device identity and OS receipt are retained in
+`evidence/minimal/FP_OWNED_BASE_EXPORT_CUDA_A1.json`. Timing is a job diagnostic,
+not a matched speed result. The journal is terminal and must never be replayed.
+
+Close this scope. Return to the complete ordinary-text budget and trained
+comparison; no additional cache, precision, static or codec case is due.
+
+## Original registration (committed before launch)
 
 One shared-storage control closes the new owner-scope/public-export refinement
 in [the proof](../../theory/proofs/OWNED_BASE_EXPORT.md). Use the existing

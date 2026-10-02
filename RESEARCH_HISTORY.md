@@ -11885,8 +11885,16 @@ declaration, two synthetic targets compare all buffers/role totals and
 502,254,394 snapshot bytes; visits fall from 201,028 to zero. The actual Git
 copier is the oracle, with the same paid facts in both arms.
 
-Finish the fixed nineteen-script CPU regression and one fact-enabled actual
-AMP control, then close this narrow refinement. This source-count gain alone
-does not justify another full run, establish a 96-GiB/two-hour fit or supply a
-score. The scope decision remains ordinary text, not another relation,
-precision, codec or immutable-cache branch.
+All nineteen complete scoped CPU scripts pass at `8d73597`. The one original
+fact-enabled actual AMP control passes at `0596e7f`: nineteen phases, 6,340
+primitive words, 731,331 body bytes and every 19,922,944 frame byte remain
+checked through training and frozen reporting. The actual fact is used in
+25 exports; both leases, full binding, caller isolation and terminal export
+failure remain. The job exits zero inside four GiB/180 seconds with its
+single 32-MiB arena and source unchanged. Its journal is closed.
+
+Close this narrow refinement. This source-count gain alone does not justify
+another full run, establish a 96-GiB/two-hour fit or supply a score. Existing
+cost evidence still places substantial work in complete canonical retention.
+The scope decision remains the whole ordinary-text execution/budget question,
+not another relation, precision, codec or isolated immutable-cache variant.

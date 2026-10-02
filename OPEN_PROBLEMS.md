@@ -2,10 +2,12 @@
 
 The bounded [owned-base export correction](theory/proofs/OWNED_BASE_EXPORT.md)
 now removes the 2TV repeated public-copy walk while preserving the original
-complete ownership boundary. Focused exact/failure/full-V checks pass. Finish
-its fixed CPU regression and one fact-enabled AMP control, then close it.
-The decision target remains the full ordinary next-token run; no generalized
-cache, static refinement or further local variant is selected by this result.
+complete ownership boundary. Exact/failure/full-V checks, all nineteen complete
+CPU scripts and the one fact-enabled actual RTX 3090 AMP control pass. Its
+qualification is closed. The decision target remains the full ordinary
+next-token run; no generalized cache, static refinement or further isolated
+local variant is selected by this result. A whole-run budget assessment must
+precede treating a selected source saving as an affordable trained comparison.
 
 The current ordinary-text question is **whole-state budget after lossless
 captured prediction values**. The [refinement](theory/proofs/CAPTURED_TOKEN_VALUES.md)
