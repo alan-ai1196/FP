@@ -2,6 +2,19 @@
 
 ## Current execution state (2026-10-03)
 
+**Full ordinary-text budget: exact graph schedule checked; feasibility UNRESOLVED.**
+The [complete-schedule account](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md)
+requires at least 14,754,100 total nodes for the original full declaration,
+so the 2^22 qualification cap cannot simply become a full-run cap. Training
+adds about 12.59 million live objects, 6.30 million retired identities and
+52.45 million resource events. Flat pending vectors have 268,959,744 stored
+child references: 2.16 GB on wire but at least 19.2295 GiB across selected
+disjoint live allocations on this ABI. 101 complete histories/218 commits
+verify the source formulas and actual identities. This lower is below 96 GiB;
+neither host exclusion nor fit follows. The next decision needs the remaining
+complete metadata/index/source/diagnostic costs, without double counting.
+No production variant or full-run launch is selected by this assessment.
+
 **Owned typed value graph: default off; scoped CPU/RTX 3090 qualification CLOSED.**
 The [owned lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) derives source
 stability from the existing Runtime copy/transition boundary. Its byte-only

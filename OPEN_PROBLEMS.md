@@ -1,5 +1,15 @@
 # FP Open Problems
 
+The [full graph schedule](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md) now
+makes the unresolved budget concrete. It needs at least 14.75 million total
+nodes, about 12.59 million live objects and 52.45 million resource events at
+the original training horizon. Flat pending vectors already require at least
+19.2295 GiB across selected actual allocations. These source counts pass 101
+complete histories; they exclude the small qualification node cap but do not
+settle the 96-GiB host contract. The remaining whole-budget calculation must
+include all other concrete indices, metadata, sources and diagnostics without
+double counting. No new codec, node-cap-only fix or blind full attempt follows.
+
 The selected [typed value graph now has an owned Runtime lowering](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md).
 Source stability follows from the existing private copy/transition boundary;
 bounded FIFO facts avoid all-facts growth without removing historical values.

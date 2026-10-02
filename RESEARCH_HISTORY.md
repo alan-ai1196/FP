@@ -12070,3 +12070,41 @@ The next decision is the full ordinary-text execution budget, using source
 bounds rather than extrapolating this tiny trajectory. Qualification caps are
 not a full-run declaration. Foundation/ERC and relation/precision remain
 closed; no additional local variant or shorter trained score is selected.
+
+## 352. The complete graph schedule is larger than its encoded payload (2026-10-03)
+
+After closing the owned graph's CPU/device qualification, the ordinary-text
+budget review follows its actual object and event writers. For T targets,
+C=floor(T/B) commits and Q changed-master commits, the exact increments are
+5T+C+Q pages, 12T+2C+Q live objects, 6T+C+2Q retired identities and
+50T+9C+10Q+2 1[T>0] resource events. Source-level allocation/release/work counts
+derive these laws; short-prefix memory or timing extrapolation is unnecessary.
+
+Distinct causal records also force at least 13T+2C-1 new typed nodes, regardless
+of repeated targets or numerical collapse. Together with the original full
+manifest this gives at least 14,754,100 nodes at the million-target horizon.
+The 2^22 allowance was a qualification cap and cannot be transferred to that
+run. Increasing it without accounting for its indices would establish nothing
+about host or execution feasibility.
+
+Flat pending-window vectors retain W=C B(B+1)/2+r(r+1)/2 child references.
+Their page contribution is exactly 9T+8W bytes. On the checked CPython 3.12.9
+ABI, two separately allocated raw indices, parsed child tuples/integers and
+the two original live pending tuples give a disjoint selected lower of
+197T+76W bytes. At the original horizon this is 19.2294921875 GiB, although
+those vectors' encoded payload is only 2,161,115,136 bytes. Actual source
+identities and an alias control prevent counting shared occurrences twice.
+
+101 complete histories/422 targets/218 commits verify all count laws. They
+identify 5,824 forced new definitions and 766 actual parsed pending references,
+whose selected live allocations exactly occupy 141,350 bytes in these cases.
+No corpus, device, timing experiment, production change or old replay occurs.
+The proof and minimal `FP_OWNED_GRAPH_SCHEDULE_CPU.json` retain the evidence.
+
+At the full horizon, roughly 12.59 million live objects and 52.45 million
+resource events are additional complete-state budget coordinates. The selected
+19.23-GiB lower is below the whole 96-GiB cap, so it proves neither fit nor
+exclusion. Whole-host/time feasibility remains UNRESOLVED. Keep the closed
+relation/precision and graph qualification branches closed; continue the full
+ordinary-text budget/learning question without a new representation menu,
+cap-only patch, blind full launch or shortened trained score.

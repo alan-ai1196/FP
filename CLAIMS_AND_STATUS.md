@@ -1,5 +1,15 @@
 # FP Claims and Status
 
+**Full native graph schedule: EXACT COUNT LAWS / SELECTED HOST LOWER; CPU PASS.**
+The [source proof](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md) gives exact
+page, live-object, retired-identity and resource-event increments and at least
+13T+2 floor(T/B)-1 new typed nodes. All 101 complete histories/218 commits pass.
+The original full declaration needs at least 14,754,100 total nodes, excluding
+transfer of the 2^22 qualification cap. Its pending vectors have a disjoint
+19.2295-GiB live-allocation lower on the checked CPython ABI, compared with
+2.16 GB of page payload. This is no whole-host exclusion, fit, time, model or
+new certificate claim; the complete 96-GiB budget remains UNRESOLVED.
+
 **Owned typed value graph: CONDITIONAL REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [implementation proof](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) binds
 the source-stability premise to the private Runtime boundary and uses bounded

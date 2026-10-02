@@ -1,0 +1,50 @@
+{
+  "status": "PASS_OWNED_GRAPH_SCHEDULE_CPU",
+  "scope": "Exact native graph schedule counts and disjoint pending-vector storage.\n\nNo corpus, timing, device run, new representation or whole-host fit claim.\nOnly completed ordinary native histories with their original records count.",
+  "abi": {
+    "implementation": "cpython",
+    "version": "3.12.9",
+    "pointer_bytes": 8,
+    "tuple_header_bytes": 40,
+    "bytes_header_bytes": 33,
+    "selected_integer_bytes": 28,
+    "shared_occurrences_not_counted_as_new_objects": true
+  },
+  "exact_histories": {
+    "histories": 101,
+    "targets": 422,
+    "commits": 218,
+    "pending_references": 766,
+    "selected_live_bytes": 141350,
+    "forced_new_nodes": 5824
+  },
+  "full_native_schedule": {
+    "train": 1048576,
+    "update_unit": 512,
+    "commits": 2048,
+    "schedule_lower": {
+      "pages": 5244928,
+      "events": 52447234,
+      "live_objects": 12587008,
+      "retired_objects": 6293504,
+      "pending_references": 268959744,
+      "forced_new_nodes": 13635583
+    },
+    "schedule_upper": {
+      "pages": 5246976,
+      "events": 52467714,
+      "live_objects": 12589056,
+      "retired_objects": 6297600,
+      "pending_references": 268959744,
+      "forced_new_nodes": 13635583
+    },
+    "pending_vector_wire_bytes": 2161115136,
+    "pending_vector_selected_live_byte_lower": 20647510016,
+    "qualification_node_cap": 4194304,
+    "qualification_cap_cannot_complete": true,
+    "host_cap": 103079215104,
+    "whole_host_fit": "UNRESOLVED",
+    "whole_host_exclusion_proved": false,
+    "actual_time_or_model_result": false
+  }
+}

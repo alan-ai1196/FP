@@ -2,6 +2,15 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [full graph schedule audit](theory/proofs/OWNED_GRAPH_SCHEDULE_BUDGET.md)
+now passes 101 complete native histories/218 commits. It derives exact page,
+live/retired-object and resource-event counts and a forced typed-node lower.
+The original horizon requires at least 14,754,100 total nodes and about
+52.45 million resource events. Pending vectors alone have a 19.2295-GiB selected
+live-allocation lower, versus 2.16-GB encoded payload. This excludes transferring
+the 2^22 qualification node cap, not the full 96-GiB host contract. Whole-host/
+time feasibility remains unresolved; production is unchanged by this audit.
+
 The [owned typed value graph](theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md) now
 implements the passive construction behind an explicit encoding selection;
 the default byte archive is unchanged. Private Runtime transitions/copy

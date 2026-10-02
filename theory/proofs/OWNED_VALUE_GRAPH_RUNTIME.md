@@ -195,3 +195,9 @@ The research target stays the trained ordinary next-token comparison. This
 joint lowering is the selected candidate; no additional relation/precision
 case, representation menu or shorter model score is selected. All historical
 cost/device journals remain terminal.
+
+The subsequent [whole-schedule budget audit](OWNED_GRAPH_SCHEDULE_BUDGET.md)
+derives exact retained-object/event counts, a forced node lower and the
+disjoint flat-vector storage term. It excludes transferring the qualification
+node cap to the full text horizon but leaves the complete host/time budget
+unresolved. No further representation variant is introduced by that audit.
