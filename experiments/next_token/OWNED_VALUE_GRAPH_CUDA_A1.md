@@ -1,6 +1,11 @@
 # Owned typed value graph: actual AMP control A1
 
-Status (2026-10-03): **PREREGISTERED; NO ACTUAL DEVICE RESULT YET**.
+Status (2026-10-03): **NATIVE HARNESS PASS; ORIGINAL DEVICE LAUNCH PENDING**.
+
+The committed native harness passes at `56e09d8` with subprocess creation
+forbidden throughout. It checks all 46 native records/262,247 canonical bytes,
+374 memo evictions, frozen reporting and terminal export failure. Its receipt
+is `FP_OWNED_VALUE_GRAPH_DEVICE_HARNESS_CPU.json`; it supplies no CUDA evidence.
 
 This is the one actual-device qualification of the
 [owned typed-value lowering](../../theory/proofs/OWNED_VALUE_GRAPH_RUNTIME.md).

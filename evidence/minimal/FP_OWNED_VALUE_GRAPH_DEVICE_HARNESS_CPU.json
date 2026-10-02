@@ -1,0 +1,39 @@
+{
+  "status": "PASS_OWNED_VALUE_GRAPH_DEVICE_HARNESS_CPU",
+  "source_commit": "56e09d87c2e920feba8a137e1b31a58a18a9911f",
+  "outcome": {
+    "training_events": 4,
+    "optimizer_commits": 2,
+    "report_events": 4,
+    "exact_native_trajectory_equal_to_unattacked_control": true,
+    "supplied_registrations_and_public_wrappers_isolated": true,
+    "frozen_private_native_learner_preserved": true,
+    "frozen_private_physical_learner_preserved": null,
+    "terminal_export_failure_preserves_completed_prefix": true,
+    "checked_phases": 0,
+    "checked_primitive_words": 0,
+    "complete_phase_bytes": 0,
+    "complete_frame_bytes": 0,
+    "uncached_complete_frames_and_padding_checked": false,
+    "paid_reference_peak": 2210442,
+    "owned_value_graph": {
+      "encoding": "complete-owned-typed-value-graph-u64-pages-v1",
+      "node_cap": 4194304,
+      "source_memo_cap": 32,
+      "source_memo_entries": 32,
+      "retained_nodes": 644,
+      "retained_pages": 46,
+      "retained_page_bytes": 28770,
+      "actual_native_canonical_checks": {
+        "facts_evicted": 374,
+        "native_records": 46,
+        "canonical_bytes": 262247,
+        "memo_peak": 32
+      },
+      "separate_indices_agree_on_every_definition": true,
+      "all_reader_pages_equal_to_actual_paid_buffers": true
+    }
+  },
+  "subprocess_creation_forbidden_across_control": true,
+  "actual_cuda_execution": false
+}
