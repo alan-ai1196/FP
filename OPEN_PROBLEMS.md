@@ -11,6 +11,9 @@ canonical streams, requested diagnostics or compiler search. Obtain bounded
 full-vocabulary evidence spanning real optimizer units before another full-
 training budget decision. Do not infer a speedup from node counts, replay old
 journals, reopen relation/precision, or substitute a shorter trained score.
+The [registered two-unit diagnosis](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
+fixes that next observation at 1,024 original targets under 1,800 seconds/16 GiB,
+with complete independent role/byte checks and the million-target declaration.
 
 The [ordinary ledger projection](theory/proofs/ORDINARY_LEDGER_PROJECTION.md)
 has a reachable-state proof and exact CPU/full-V correctness qualification.

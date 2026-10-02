@@ -11693,3 +11693,10 @@ history/projection/admission audits retain their historical writers and receipts
 The next decision needs actual full-vocabulary execution across optimizer units,
 then an honest complete-training budget assessment. No old trial is restarted,
 and relation/precision research stays closed.
+
+A single two-unit native diagnosis is now registered: 1,024 original targets,
+two exact unit512 commits, the unchanged million-target declaration and a
+1,800-second/16-GiB job. It independently folds actual buffers/role supports and
+checks every image and complete record. The small harness passes a false cached
+role-total attack. This measures the joint current path, without a historical
+timing arm or shortened trained score; no old journal is replayed.

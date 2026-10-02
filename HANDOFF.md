@@ -18,6 +18,13 @@ CUDA or model result follows. The next evidence is a bounded complete ordinary-
 text resource diagnosis spanning actual optimizer units, then a full-budget
 decision. Do not reopen relation/precision or replay any closed journal.
 
+The [two-unit native diagnosis A1](experiments/next_token/OWNED_TRANSITION_COST_A1.md)
+is registered for one 1,024-target worker under 1,800 seconds/16 GiB, retaining
+the full million-target declaration and exact unit512 updates. It independently
+folds actual buffers/role support and checks every image/record after timing.
+The small harness passes, including refusal of a false cached role total.
+No report, shortened score, historical timing arm or actual CUDA is planned.
+
 **Owned prefix/admission refinement: exact CPU qualification complete.**
 The [joint refinement](theory/proofs/OWNED_PREFIX_ADMISSION.md) removes repeated
 source-history copying/validation and the discarded ingress ledger clone.

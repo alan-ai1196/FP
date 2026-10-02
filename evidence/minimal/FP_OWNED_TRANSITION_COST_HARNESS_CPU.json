@@ -1,0 +1,16 @@
+{
+  "status": "PASS_OWNED_TRANSITION_COST_HARNESS_CPU",
+  "targets": 4,
+  "optimizer_commits": 2,
+  "synthetic_image_source_bytes": 10496,
+  "independent_bytes": {
+    "images": 1,
+    "uncached_image_bytes": 21008,
+    "records": 30,
+    "complete_record_bytes": 204741,
+    "live_roots": 23,
+    "independent_uncompiled_encoder_and_comparator": true,
+    "fresh_reader": true
+  },
+  "false_role_augmentation_refused": true
+}
