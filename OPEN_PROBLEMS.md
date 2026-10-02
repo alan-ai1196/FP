@@ -6,15 +6,15 @@ removes the eager LD Fraction/tuple component with a complete immutable input
 recipe and actual node tail. Its selected text-model containers cost 184 bytes
 per prediction. Exact values, canonical bytes, public isolation, input-feature
 gradients and five new terminal failure boundaries pass focused CPU checks.
-The 25-script committed-source CPU regression passes at `e13e480`. Finish the
-actual AMP qualification after repairing the A1 comparator's Git subprocess
-inside a one-process job. A1 is terminal UNRESOLVED and must not be replayed;
-the corrected [A2 registration](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
-has native harness controls passing with all subprocess creation forbidden,
-unchanged model/caps and no new codec/feature variant. After qualification,
-then account for old masters, traces/windows, images,
-archives, resource metadata and transient complete diagnostics in the full
-host budget. A selected-object saving is not whole-process feasibility.
+All 25 committed-source CPU scripts pass at `e13e480`; both original actual
+[AMP A2 controls](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md) pass at
+`6411310`, preserving all nineteen phases per case, full frames and frozen
+reporting under unchanged caps. This scoped qualification is closed. A1's
+comparator/job failure remains separately recorded; neither journal is replayed.
+Now account for old masters, traces/windows, images, archives, resource metadata
+and transient complete diagnostics in the full host/execution budget. A
+selected-object saving is not whole-process feasibility. Do not extend static
+qualification, precision or codec variants without a new concrete mismatch.
 
 The historical [source/ABI liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
 excludes the unchanged full native host budget: its per-event fresh Fractions

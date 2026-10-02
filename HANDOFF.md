@@ -2,7 +2,7 @@
 
 ## Current execution state (2026-10-03)
 
-**Captured prediction values: lossless refinement and focused CPU controls pass.**
+**Captured prediction values: lossless refinement; scoped CPU/RTX 3090 qualification CLOSED.**
 The [captured-value law](theory/proofs/CAPTURED_TOKEN_VALUES.md) preserves the
 complete logical input tuple from the actual immutable embedding/context
 operands and retains all executed node results. The full text representation
@@ -13,17 +13,20 @@ remains. This is not a complete host-size or speed claim. Exact controls cover
 48 additional direct-input-feature pairs, both archive formats and terminal
 allocation failures. Public exports remain ordinary tuples. The optional
 expression format binds the parent without retaining decoded temporaries.
-The 25-script committed-source CPU regression now passes at `e13e480`, including
-persistence/install/reporting and actual Windows host refusal. The fixed
-[actual AMP A1](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is terminal
-UNRESOLVED: its passive historical comparator tries to spawn Git inside the
-one-process Windows job. Packed exits 2; shared never launches. The original
-journal is closed. Correct the harness's source transport in a separately
-registered control with unchanged model/caps: [A2](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
-now has both native controls passing with child-process creation forbidden and
-changed source artifacts refused. Launch its committed registration once, then
-assess the complete ordinary-text budget. Foundation/ERC and all closed
-relation/precision/cost branches remain closed; no full-run launch is yet due.
+All 25 committed-source CPU scripts pass at `e13e480`, including persistence,
+install, reporting and actual Windows host refusal. Both original actual
+[AMP A2 controls](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md) pass at
+`6411310`: packed/shared each check nineteen phases, 6,340 primitive words and
+all 19,922,944 frame bytes, with two commits and frozen reporting. The exact
+historical comparator checks every native value. Both jobs exit zero inside
+4 GiB/180 seconds; no source change occurs. A1 remains the recorded harness
+failure caused by attempting a Git subprocess inside a one-process job.
+All these journals are closed. The selected obstruction is resolved; proceed
+to the **complete ordinary-text host/execution budget**, including old masters,
+trace/window state, archives, resource metadata and transient diagnostics.
+No overall 96-GiB fit, speed gain or trained score follows. Foundation/ERC and
+the relation/precision/cost branches stay closed; no further static variant
+or repeated qualification is due without a concrete new counterexample.
 
 **Historical full native host budget: old live representation is infeasible.**
 The [prediction-liveness law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md) counts

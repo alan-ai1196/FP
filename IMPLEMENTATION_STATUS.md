@@ -13,14 +13,14 @@ temporary decoded scalars. Focused primitive/guard/forgery controls, 98 paired
 complete histories, six CPU tensor pairs/129 bodies, full-V buffer/snapshot
 equality and 48 input-feature pairs pass, including five new terminal host
 failure sites. All 25 complete committed-source CPU audit scripts now pass at
-`e13e480`, including persistence/install and actual Windows host refusal. The
-first [AMP qualification](experiments/next_token/CAPTURED_VALUES_CUDA_A1.md) is
-terminal UNRESOLVED: its audit comparator attempts a forbidden Git subprocess
-inside the one-process job. Shared never launches; no numerical disagreement
-is observed, and no actual qualification is issued. The corrected source
-transport is preregistered as [A2](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md),
-with both native controls passing under a child-process prohibition. There is no complete host
-budget, timing or model-score claim.
+`e13e480`, including persistence/install and actual Windows host refusal.
+Both actual [AMP A2 workers](experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
+pass at `6411310`: each checks nineteen phases/6,340 primitive words and every
+19,922,944 retained frame byte through two commits and frozen reporting.
+Source and the single 32-MiB arena remain unchanged; both jobs exit zero within
+4 GiB/180 seconds. A1 retains its failed comparator subprocess as historical
+evidence. This scoped representation qualification is closed. Complete ordinary
+text host/execution feasibility remains open, without a timing or model claim.
 
 The [native prediction-liveness audit](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
 establishes that the old million-target Python realization at `c67a0aa` cannot

@@ -1,8 +1,8 @@
 # Complete prediction values from captured immutable operands
 
 Status (2026-10-03): **lossless live-state refinement proved; focused exact CPU,
-complete CPU phase controls and 25-script committed-source regression pass;
-actual-device A1 is terminal UNRESOLVED from a comparator/job mismatch**. No Foundation/ERC change, new
+25-script committed-source regression and both actual RTX 3090 A2 controls
+pass; scoped qualification CLOSED**. No Foundation/ERC change, new
 architecture action, numerical approximation or certificate class is added.
 
 The [historical liveness law](NATIVE_PREDICTION_LIVENESS.md) excludes the original
@@ -181,13 +181,21 @@ tries to spawn Git inside a one-process Windows job and receives error 1816.
 The packed worker exits 2 within its host/time caps; shared is not launched.
 This is a harness mismatch, without an observed numerical disagreement. It
 does not issue a completed actual qualification, and its journal stays closed.
-The corrected [A2 transport](../../experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
+The corrected [A2 control](../../experiments/next_token/CAPTURED_VALUES_CUDA_A2.md)
 loads a launcher-extracted, integrity-bound historical source artifact without
 creating a child. Its native harness passes with `Popen` forbidden, and altered
-source bytes refuse. The separate actual registration keeps the same limits.
+source bytes refuse. Both original actual packed/shared workers now pass at
+`6411310` with unchanged production code and limits. Each preserves nineteen
+actual AMP phases, 6,340 checked primitive words, 731,331 complete phase-body
+bytes and all 19,922,944 retained frame bytes, through four training targets,
+two commits and four frozen report targets. All eight native forecasts match
+the historical comparator at all 96 values and 61,793 canonical bytes. Public
+isolation, frozen native/physical identity and terminal export failure pass.
+Both jobs exit zero within 4 GiB/180 seconds, with source and the single
+32-MiB arena unchanged. No full-V device, matched cost or whole release follows.
 
 This removes the proved eager-input allocation obstruction. It does not prove
 the million-target trajectory fits 96 GiB, its deadline or its numerical bounds,
-nor supply a trained score. Finish the scoped actual AMP qualification, then
+nor supply a trained score. Close this scoped representation qualification and
 assess the **complete** ordinary-text budget. Do not
 reopen relation/precision, replay closed timing journals or add static variants.

@@ -1,6 +1,32 @@
 # Captured native values: one-process actual AMP qualification A2
 
-Status (2026-10-03): **PREREGISTRATION; NO ACTUAL WORKER LAUNCHED**.
+Status (2026-10-03): **BOTH ORIGINAL ACTUAL WORKERS PASS AT `6411310`; CLOSED**.
+
+## Original result
+
+Both original RTX 3090/SM8.6 workers exit zero without timeout. Packed and shared
+launcher times are 4.93545 and 5.24008 seconds; job commitment peaks are
+2,006,994,944 and 2,013,708,288 bytes, below the unchanged 4-GiB cap. These are
+diagnostics, not a cost comparison. Both original processes are absent after
+completion, and source remains unchanged throughout.
+
+Each worker completes four training events, two grid commits and four frozen
+report events. All nineteen actual phases, 6,340 primitive words, 731,331
+complete phase-body bytes and 19,922,944 full frame bytes pass. The original
+single 33,554,432-byte arena and allocator reservation remain unchanged. Every
+native forecast uses the captured immutable operands; all 96 logical values
+and 61,793 canonical prediction bytes agree with the actual historical methods.
+Public mutation isolation, frozen native/physical identity and the terminal
+export-failure prefix checks also pass.
+
+The new source transport executes within the one-process job. A1 remains
+UNRESOLVED, and its receipt is unchanged. The exclusive A2 journal is terminal;
+do not replay either control. This closes the captured-value representation's
+scoped CPU/device qualification. It establishes no full-vocabulary resource
+budget, timing gain, model score or whole release. Return to the complete
+ordinary-text budget, without another static/codec qualification variant.
+
+## Original registration
 
 [A1](CAPTURED_VALUES_CUDA_A1.md) is closed UNRESOLVED. Its historical comparator
 attempted to create a Git child inside a one-active-process Windows job. A2

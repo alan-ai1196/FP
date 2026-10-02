@@ -11833,3 +11833,32 @@ checks its artifact identity before compiling the original methods. Both
 native cases pass with all child-process creation forbidden; altered source
 bytes refuse. A2 is separately preregistered with identical model, numerical
 checks and resource caps. No production code or device result changes yet.
+
+## 346. Complete captured-value qualification on the actual RTX 3090 (2026-10-03)
+
+Both original A2 workers pass at `6411310`, with the historical source delivered
+by the launcher and its identity checked inside the one-process job. Production
+is unchanged from the 25-script CPU-qualified `e13e480`. Packed/shared each
+complete four training events, two native grid commits and four frozen report
+events, preserving every native value, actual physical phase and ownership
+boundary. No new model, codec, optimizer, tolerance or resource variant is used.
+
+Each checks nineteen actual AMP phases, 6,340 primitive words, 731,331 complete
+phase-body bytes and all 19,922,944 frame bytes including padding. All eight
+captured forecasts agree with the actual historical methods on 96 values and
+61,793 canonical prediction bytes. Public mutation controls, frozen native and
+physical identities and the terminal export-failure prefix all pass. The actual
+single 32-MiB arena/reservation stays unchanged.
+
+Both jobs exit zero without timeout, with launcher times 4.93545/5.24008 seconds
+and peaks 2,006,994,944/2,013,708,288 bytes within 4 GiB. Source remains unchanged;
+both original processes are absent after completion. These times/peaks are
+diagnostics, not a matched performance result. A1 remains terminal UNRESOLVED
+from its separate harness mismatch and is not overwritten or promoted.
+
+The captured-value lossless representation and its scoped CPU/device
+qualification are now closed. The eager-input allocation obstruction is
+removed with complete recoverability; the whole ordinary-text host/execution
+budget remains the research frontier. Do not deepen the relation/precision,
+static feature or codec branches, repeat closed journals, infer a million-token
+fit from a selected component, or report a shortened trained score.

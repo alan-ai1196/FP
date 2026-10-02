@@ -1,6 +1,6 @@
 # FP Claims and Status
 
-**Captured native prediction values: LOSSLESS REFINEMENT; FOCUSED CPU PASS.**
+**Captured native prediction values: LOSSLESS REFINEMENT; SCOPED CPU/ACTUAL AMP PASS.**
 The [representation proof](theory/proofs/CAPTURED_TOKEN_VALUES.md) retains actual
 immutable input operands and executed node results, preserving complete values,
 causal sources, old masters, parameter/gradient positions and every event.
@@ -10,12 +10,12 @@ no direct-input features retain eager input Fractions in that registration.
 98 complete history pairs, six CPU tensor pairs, full-V snapshot comparison,
 48 input-feature pairs and archive/allocation attacks pass. Expression storage
 binds the complete parent without retaining temporary decoded scalars. All 25
-committed-source CPU scripts pass at `e13e480`. Actual A1 is terminal UNRESOLVED
-at `eb8e130`: the comparator's Git subprocess violates the one-process job;
-shared never launches. No numerical disagreement or completed device
-qualification follows. The corrected A2 source transport is preregistered; both
-native harness cases pass with subprocess creation forbidden. This is
-neither a total host bound nor a speed/model/`CERTIFIED_COMPLETE` claim.
+committed-source CPU scripts pass at `e13e480`. Both original actual RTX 3090
+A2 workers pass at `6411310`, each with nineteen complete phases, 6,340 primitive
+words, full frames, two commits and frozen reporting. Both exit zero inside
+4 GiB/180 seconds with source and the single 32-MiB arena unchanged. A1 remains
+UNRESOLVED from its comparator/job mismatch. Qualification is closed at this
+scope: no total host bound, speed/model result or `CERTIFIED_COMPLETE` follows.
 
 **Historical native text host feasibility: SOURCE/ABI LOWER BOUND; OLD BUDGET EXCLUDED.**
 At `c67a0aa`, the [retained prediction law](theory/proofs/NATIVE_PREDICTION_LIVENESS.md)
