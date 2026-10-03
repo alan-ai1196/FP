@@ -2,6 +2,27 @@
 
 ## Current execution state (2026-10-03)
 
+**Selected page-resident refinement: passive complete CPU controls PASS.**
+The [storage/work law](theory/proofs/PAGE_RESIDENT_GRAPH.md) keeps the existing
+wire pages and independent verification, retaining compact offsets/checked
+metrics instead of raw-node and parsed-value copies. Field projection reads
+only the requested tag or value; a naive lazy table demonstrably overspends
+reconstruction work. Index probes, comparisons and value reconstruction are
+bounded, with an explicit additional metadata prepayment. Recovery meters
+belong to individual continuations: an interleaving counterexample falsifies
+ambient reader-wide budgets, and the selected implementation refuses the
+borrowed-budget read while preserving the other recovery. 93 complete native
+histories check every value and the exact resource-debit difference; twenty
+CPU tensor pairs preserve all 356,515,840 frame bytes and 22 paid failure
+prefixes. Original full-V initialization/two synthetic targets also pass.
+The compact table capacity is exactly `104*4096*ceil(N/4096)+16*C(N)`, including
+slack, where C(N) is the power-of-two hash capacity. This remains an audit-only
+owner substitution. Next promote the same refinement through the live owner
+and public cold decoder with full funding/failure checks, then settle its total
+budget toward the original text run. No new wire format, semantic action,
+actual-device result, whole-host fit or trained score is claimed. Production
+remains subject to the exclusion below; relation/precision stays closed.
+
 **Full ordinary-text host budget: unchanged owned graph EXCLUDED.**
 The [disjoint allocation proof](theory/proofs/OWNED_GRAPH_HOST_BOUND.md)
 and original [training-context census](experiments/next_token/OWNED_GRAPH_CONTEXT_CENSUS_A1.md)

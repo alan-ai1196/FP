@@ -1,5 +1,23 @@
 # FP Claims and Status
 
+**Page-resident graph: CONDITIONAL REFINEMENT/CAPACITY LAW; PASSIVE CPU PASS.**
+The [proof](theory/proofs/PAGE_RESIDENT_GRAPH.md) retains the same immutable
+wire pages, independently derives packed locator/metric rows and reconstructs
+only requested fields. Eight tag queries need eight bytes; a naive lazy
+pair decoder instead reconstructs 8,208 bytes against allowance 2,048. Actual
+large value reads still refuse on reconstruction exhaustion. An interleaving
+counterexample lets a small recovery borrow another generator's ambient cap;
+the selected continuation-specific meter refuses it and leaves the other
+recovery/parser untouched. This bug was in the passive candidate. Exact retained
+table capacity is `104*4096*ceil(N/4096)+16*C(N)`; index growth has its explicit
+coexistence bound. 93 complete native histories check values and every extra
+work debit. Twenty CPU tensor pairs/full frames, 22 failures and the original
+full declaration/two synthetic targets pass. The exact successful decision
+class remains the owner's fixed typed expression relative to its verified
+prefix, now subject to additional metered lookup/probe duties. This is an
+audit-only owner substitution, not production, actual AMP, host-fit, trained-
+score or new `CERTIFIED_COMPLETE` authority.
+
 **Full native owned graph: CONDITIONAL HOST EXCLUSION; EXACT ORIGINAL-VIEW CENSUS PASS.**
 The [source/ABI proof](theory/proofs/OWNED_GRAPH_HOST_BOUND.md) and one
 preregistered training-only census establish a **108,591,184,675-byte

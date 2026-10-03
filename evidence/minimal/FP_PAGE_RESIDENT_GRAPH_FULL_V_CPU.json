@@ -1,0 +1,70 @@
+{
+  "status": "PASS_PAGE_RESIDENT_GRAPH_CPU",
+  "scope": "Exact page-resident graph control against the existing eager realization.\n\nNo corpus, actual device, throughput comparison or whole-host fit assertion.",
+  "full_native": {
+    "original_train": 1048576,
+    "original_report": 16384,
+    "vocabulary": 50257,
+    "masters": 603092,
+    "synthetic_targets": 2,
+    "initial_compact_storage": {
+      "nodes": 1118517,
+      "pages": 5,
+      "immutable_page_bytes": 39259233,
+      "locator_capacity_bytes": 71827456,
+      "metric_capacity_bytes": 44892160,
+      "hash_capacity_bytes": 67108864,
+      "largest_index_growth_pair": 50331648,
+      "retained_raw_node_copies": 0,
+      "retained_parsed_value_objects": 0
+    },
+    "final_compact_storage": {
+      "nodes": 1118606,
+      "pages": 15,
+      "immutable_page_bytes": 39267190,
+      "locator_capacity_bytes": 71827456,
+      "metric_capacity_bytes": 44892160,
+      "hash_capacity_bytes": 67108864,
+      "largest_index_growth_pair": 50331648,
+      "retained_raw_node_copies": 0,
+      "retained_parsed_value_objects": 0
+    },
+    "actual_native_canonical_checks": {
+      "native_records": 15,
+      "canonical_bytes": 155227697,
+      "memo_peak": 6257
+    },
+    "residency": {
+      "current": {
+        "reference_payload_bytes": 124635061,
+        "physical_objects": 38
+      },
+      "role_current": {
+        "compiler": {
+          "reference_payload_bytes": 124635029,
+          "physical_objects": 36
+        },
+        "deployment": {
+          "reference_payload_bytes": 124626687,
+          "physical_objects": 23
+        }
+      },
+      "peak": {
+        "reference_payload_bytes": 159008845,
+        "physical_objects": 40
+      },
+      "role_peak": {
+        "compiler": {
+          "reference_payload_bytes": 159008845,
+          "physical_objects": 37
+        },
+        "deployment": {
+          "reference_payload_bytes": 159008829,
+          "physical_objects": 25
+        }
+      },
+      "every_current_buffer_and_lease_inspected": true
+    },
+    "no_full_host_timing_or_model_result": true
+  }
+}

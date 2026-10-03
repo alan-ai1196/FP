@@ -12180,3 +12180,62 @@ the old interrupted worker's cause. Keep relation/precision and scoped graph
 CPU/device qualification closed. The full ordinary next-token trained
 comparison remains the objective, with no shortened score or new semantic
 action substituted for it.
+
+## 355. Retain graph pages and pay to reconstruct requested fields (2026-10-03)
+
+The complete host exclusion identifies duplicated raw definitions and parsed
+objects as information already present in immutable pages. A passive general
+storage model now replaces those retained copies with independent packed
+locator/hash indices and checked metric rows. It changes no wire tag, source
+interface, model action or retained original value. All actual page bytes,
+native histories, master/numerical values, resource events and source facts
+remain under their existing ownership boundaries.
+
+Naive lazy decoding is insufficient. Eight type queries on a 1,024-byte child
+reconstruct 8,208 bytes despite a maximum unfolded-reference count of nine.
+The initial full-manifest control likewise exhausts its reconstruction budget.
+Field-specific views answer tag requests with one byte; actual value requests
+remain separately metered. The selected control reads eight bytes and succeeds,
+while a valid unused capture needing an 8,192-byte operand still refuses its
+2,048-byte reconstruction allowance. This is an implementation work boundary,
+not a Foundation counterexample or an excuse to increase allowances.
+
+For N nodes, 4,096-row blocks and power-of-two hash capacity C(N), exact
+retained table payload is `104*4096*ceil(N/4096)+16*C(N)`. This includes every
+reserved slot. An in-progress hash growth keeps at most one extra old table;
+the peak bound explicitly includes it. There are no retained per-node raw or
+parsed value objects. The total graph has `P+O(N+M)` storage, including its
+complete P page bytes, with additional Python page/root/block metadata.
+The native source and resource-history heaps remain outside that graph law.
+
+New index/reconstruction work receives an explicit additional prepayment
+before any producer access. 93 native histories/294 targets/158 commits
+compare every value, page and complete snapshot field, checking the exact
+additional debit at every graph event and every role total. 125 typed values
+under forced CRC collisions, 600 bit corruptions, growth/block boundaries and
+partial-row failure recovery pass. Twenty CPU tensor pairs preserve 340
+phases/126,797 primitive words/all 356,515,840 original frame bytes, including
+profiles, frozen reports, nonzero padding and 22 post-target failure prefixes.
+
+The original full-V/train/report declaration now passes two synthetic events.
+Its initial 1,118,517 nodes occupy 183,828,480 bytes of compact table capacity
+plus 39,259,233 original page bytes. The events add exactly the prior 89 nodes/
+7,957 bytes, and all fifteen records recover 155,227,697 canonical bytes.
+These are representation counts, not full-host peaks or a horizon extrapolation.
+An additional adversarial review finds that a reader-wide recovery meter can
+be borrowed across suspended generators: start a small call, suspend a large
+call and then resume the small call. The ambient-meter control decodes an
+8,192-byte operand using the other call's 40,000-byte allowance. The selected
+implementation instead keeps the meter in each continuation, activates it only
+for a step and restores the caller context before yielding or unwinding. It
+refuses the first read, completes the second and preserves the parser meter.
+This falsifies the passive candidate's ambient-budget assumption, not the old
+eager production reader or Foundation. Three minimal CPU receipts and the proof
+retain the evidence; no corpus or actual device experiment occurs.
+
+Production remains unchanged and host-excluded. The selected next step is to
+promote this same page-resident construction through both live retention and
+public cold recovery, then close the whole budget and actual-device duties
+toward the original trained text run. Do not infer full fit by subtracting
+selected old objects or add another representation menu. Foundation/ERC,
+relation/precision and all historical journals remain closed.

@@ -2,6 +2,17 @@
 
 ## Current token execution boundary (2026-10-03)
 
+The [page-resident graph model](theory/proofs/PAGE_RESIDENT_GRAPH.md) now passes
+an audit-only substitution at the existing private Runtime owner boundary.
+It retains complete actual pages, independent packed indices/metrics and
+metered field reconstruction. The graph grammar is unchanged. 93 native
+histories, twenty CPU tensor pairs/340 phases/full original frames, 22 terminal
+faults and original full-V initialization/two synthetic targets pass. Every
+additional metadata work debit is checked against the eager reference. Its
+exact table-capacity law includes reserved slots and hash-growth coexistence.
+Production and the public cold decoder are not yet changed; no actual AMP,
+whole-host fit or trained-text result follows from this model.
+
 The full native owned graph's original **96-GiB host budget is now excluded**
 by a [disjoint source/ABI lower](theory/proofs/OWNED_GRAPH_HOST_BOUND.md).
 Its selected live allocations require 108,591,184,675 bytes (101.1334217 GiB),

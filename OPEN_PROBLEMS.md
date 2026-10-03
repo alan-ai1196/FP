@@ -1,5 +1,17 @@
 # FP Open Problems
 
+One [page-resident graph refinement](theory/proofs/PAGE_RESIDENT_GRAPH.md)
+now answers the duplicate parsed-storage issue at the passive CPU boundary.
+It keeps the wire grammar, pages and independent verifier, with compact tables,
+field-specific reads and explicitly prepaid bounded reconstruction/index work.
+Complete native/CPU-tensor/full-V and failure controls pass. Promote this same
+construction through both the live owner and public cold decoder, preserving
+the complete paid prefix and actual numerical/AMP duties. Its `P+O(N+M)` graph
+storage law includes a concrete table-capacity identity; native sources,
+resource metadata, temporary work and the actual host allocator still need
+the joint budget. This is the selected route toward the original full text
+run, with no production variant menu or borrowed whole-host certificate.
+
 The unchanged owned graph's original host-budget question is now **closed by
 exclusion**. The [disjoint proof and original-view census](theory/proofs/OWNED_GRAPH_HOST_BOUND.md)
 give a 101.1334217-GiB selected live-allocation lower above the 96-GiB cap,

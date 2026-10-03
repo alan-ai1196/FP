@@ -1,0 +1,91 @@
+{
+  "status": "PASS_PAGE_RESIDENT_GRAPH_CPU",
+  "scope": "Exact page-resident graph control against the existing eager realization.\n\nNo corpus, actual device, throughput comparison or whole-host fit assertion.",
+  "grammar": {
+    "values": 125,
+    "nodes": 657,
+    "pages": 125,
+    "complete_wire_identity": true,
+    "forced_crc_collisions_checked_by_full_equality": true,
+    "separate_indices_use_only_actual_immutable_pages": true
+  },
+  "histories": {
+    "extra_metadata_work": 2498972188672,
+    "histories": 93,
+    "targets": 294,
+    "commits": 158,
+    "nodes": 44203,
+    "pages": 2239,
+    "all_complete_values_and_wire_pages_equal": true,
+    "every_resource_event_and_role_total_checked_with_exact_extra_debit": true,
+    "every_other_complete_snapshot_field_equal": true,
+    "all_actual_pages_shared_without_raw_or_parsed_node_copies": true,
+    "independent_cold_eager_recovery": true,
+    "largest_selected_resident_payload": 479726
+  },
+  "storage_law": {
+    "capacity_boundaries": [
+      {
+        "nodes": 1,
+        "blocks": 1,
+        "hash_slots_per_index": 16,
+        "exact_compact_table_capacity": 426240
+      },
+      {
+        "nodes": 8,
+        "blocks": 1,
+        "hash_slots_per_index": 16,
+        "exact_compact_table_capacity": 426240
+      },
+      {
+        "nodes": 9,
+        "blocks": 1,
+        "hash_slots_per_index": 32,
+        "exact_compact_table_capacity": 426496
+      },
+      {
+        "nodes": 4096,
+        "blocks": 1,
+        "hash_slots_per_index": 8192,
+        "exact_compact_table_capacity": 557056
+      },
+      {
+        "nodes": 4097,
+        "blocks": 2,
+        "hash_slots_per_index": 16384,
+        "exact_compact_table_capacity": 1114112
+      },
+      {
+        "nodes": 8193,
+        "blocks": 3,
+        "hash_slots_per_index": 32768,
+        "exact_compact_table_capacity": 1802240
+      }
+    ],
+    "exact_capacity_law": true,
+    "separate_indices_and_shared_immutable_pages": true,
+    "partial_metric_row_failure_preserves_old_roots": true
+  },
+  "failures": {
+    "bit_variants_refused": 600,
+    "bit_variants_exact": 0,
+    "previous_page_recovery_after_every_failure": true,
+    "mutable_or_changed_acceptance_refused": true,
+    "repeated_lookup_necessity": {
+      "old_unfolded_references": 9,
+      "unmetered_reconstructed_bytes": 8208,
+      "reconstruction_allowance": 2048,
+      "unprojected_refuses_before_overspend": true,
+      "actual_projected_tag_bytes": 8,
+      "actual_large_value_refuses_before_overspend": true
+    },
+    "interleaved_recovery": {
+      "ambient_meter_borrows_another_calls_cap": true,
+      "original_small_call_allowance": 44,
+      "required_operand_bytes": 8192,
+      "actual_continuation_meter_refuses": true,
+      "independent_recovery_completes": true,
+      "parser_meter_unchanged": true
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS_PAGE_RESIDENT_GRAPH_CPU",
+  "scope": "Exact page-resident graph control against the existing eager realization.\n\nNo corpus, actual device, throughput comparison or whole-host fit assertion.",
+  "tensor": {
+    "complete_cpu_tensor": {
+      "pairs": 20,
+      "phases": 340,
+      "body_bytes": 14148823,
+      "primitive_words": 126797,
+      "raw_calls": 114087,
+      "raw_bytes": 2154384,
+      "independently_recovered_body_bytes": 14148823,
+      "registered_complete_frame_bytes": 356515840,
+      "complete_frames_reports_profiles_native_learners_and_arena_histories_equal": true
+    },
+    "failures": {
+      "nonzero_padding_frames": 3,
+      "frame_bytes": 45056,
+      "post_target_failures": [
+        "native:message",
+        "native:handle",
+        "native:page-copy",
+        "native:output-resize",
+        "native:workspace-resize",
+        "native:expected",
+        "native:accept",
+        "native:relocation",
+        "native:work",
+        "native:references",
+        "native:partial-memo",
+        "frame:message",
+        "frame:handle",
+        "frame:page-copy",
+        "frame:output-resize",
+        "frame:workspace-resize",
+        "frame:expected",
+        "frame:accept",
+        "frame:relocation",
+        "frame:work",
+        "frame:references",
+        "frame:partial-memo"
+      ],
+      "paid_actual_prefix_target_old_learner_and_frame_pins_preserved": true
+    },
+    "funding_and_freshness": {
+      "unpaid_body_not_read": true,
+      "actual_changed_tensor_refuses": true,
+      "previous_learner_and_cursor_preserved": true
+    }
+  }
+}
