@@ -1,0 +1,82 @@
+[
+  {
+    "source": "runs/rn5-final-analysis/bulk-cuda-installation-v2.txt",
+    "sha256": "dbf4d3fb3f54391757357598a13c6e8effcc7644d6129ca07e702a849b8009ce",
+    "status": "PASS",
+    "observations": {
+      "learned/peak_during_install": 116605890,
+      "recurrent/peak_during_install": 31364927
+    }
+  },
+  {
+    "source": "runs/rn5-final-analysis/bulk-cuda-installation.txt",
+    "sha256": "010d2a4e617ac127b7297f4db1d8b1f4995e0e8ab57205c4ca0c49f367e52356",
+    "status": "PASS",
+    "observations": {
+      "small/peak_before_install": 19112173,
+      "small/peak_during_install": 19152528,
+      "learned/peak_before_install": 115663532,
+      "recurrent/peak_before_install": 31173256,
+      "no-cpu/peak_before_install": 18850009
+    }
+  },
+  {
+    "source": "runs/rn5-final-analysis/bulk-likelihood-profile-install-v2.json",
+    "sha256": "16f47396c1f283849c5f601b0438bcdf6b7ab92eb982e5f4ecd550e9ec1f3577",
+    "status": "EXECUTED",
+    "observations": {
+      "completed_job/peak_process_commit": 2352381952,
+      "completed_job/peak_job_commit": 2353614848,
+      "completed_job/user_100ns": 404062500,
+      "completed_job/kernel_100ns": 21093750,
+      "result/host/lifetime_process_commit_peak": 2352381952,
+      "result/host/job_commit_peak": 2353614848,
+      "result/host/process_user_100ns": 398906250,
+      "result/host/process_kernel_100ns": 20625000,
+      "result/host/job_kernel_100ns": 20625000
+    }
+  },
+  {
+    "source": "runs/rn5-final-analysis/bulk-likelihood-profile-install.json",
+    "sha256": "8f96dcee081338077d888f92f88c0fa9ef438944b2959e08320f864f6949df3a",
+    "status": "EXECUTED",
+    "observations": {
+      "completed_job/peak_process_commit": 2355109888,
+      "completed_job/peak_job_commit": 2356338688,
+      "completed_job/user_100ns": 416406250,
+      "completed_job/kernel_100ns": 18593750,
+      "result/host/lifetime_process_commit_peak": 2355109888,
+      "result/host/job_commit_peak": 2356338688,
+      "result/host/process_user_100ns": 411093750,
+      "result/host/job_user_100ns": 411250000
+    }
+  },
+  {
+    "source": "runs/rn5-final-analysis/cuda-bulk-readout.json",
+    "sha256": "919321ee2aaa096f96a5d733ba6b3882280e2fe114521527594af49133ad7366",
+    "status": "DEVELOPMENT_CUDA_READOUT_AUDIT_PASS",
+    "observations": {
+      "workers/0/completed_job/peak_process_commit": 2086551552,
+      "workers/0/completed_job/peak_job_commit": 2087759872,
+      "workers/0/completed_job/kernel_100ns": 19375000,
+      "workers/0/result/readback_trials/0/host_elapsed_seconds": 0.2703220000039437,
+      "workers/0/result/readback_trials/1/host_elapsed_seconds": 0.023637499994947575,
+      "workers/0/result/readback_trials/2/host_elapsed_seconds": 0.024743999994825572,
+      "workers/0/result/readback_trials/3/host_elapsed_seconds": 0.2751386999952956,
+      "workers/1/completed_job/peak_process_commit": 2222874624,
+      "workers/1/completed_job/peak_job_commit": 2224095232
+    }
+  },
+  {
+    "source": "runs/rn5-final-analysis/owned-policy-exact-checker.json",
+    "sha256": "5cd4207f7d847182eed9d37bad19b4686d1f6cf4f05ba22bba1096b20cc4a1d3",
+    "status": "PASS",
+    "observations": {
+      "bounded/worker/success/host/lifetime_process_commit_peak": 36331520,
+      "bounded/worker/success/host/process_user_100ns": 166875000,
+      "bounded/job/peak_process_commit": 36331520,
+      "bounded/job/peak_job_commit": 37543936,
+      "bounded/job/user_100ns": 183593750
+    }
+  }
+]
