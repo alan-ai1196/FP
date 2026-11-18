@@ -1,0 +1,44 @@
+{
+  "synthetic_controls": {
+    "causal_tape_checks": 256,
+    "exact_simplex_pairs": 1620,
+    "analytic_optimum_likelihood": "27/256"
+  },
+  "ordinary_text": {
+    "protocol": "7355afc",
+    "training_tokens": 1048576,
+    "scored_interval": [
+      4096,
+      16384
+    ],
+    "vocabulary": 50257,
+    "lag_cells": 512,
+    "verified_original_prefix_identities": true,
+    "scored_positions": 12288,
+    "target_lag_matches": 53077,
+    "positions_without_copy": 5461,
+    "witness_grid": 16777216,
+    "em_sweeps": 128,
+    "max_column_score_upper": "1.000235012",
+    "fixed_class_infimum_nats": [
+      "7.236294824",
+      "7.236529809"
+    ],
+    "contextual_support_lower_nats": "4.284818221",
+    "base_nats": [
+      "7.744455628",
+      "7.744455629"
+    ],
+    "recorded_nats": {
+      "transformer": 6.260544622644065,
+      "mkn5": 6.587281632223768,
+      "unigram": 7.744455628195159
+    },
+    "comparisons": {
+      "transformer": "whole class above recorded NLL",
+      "mkn5": "whole class above recorded NLL",
+      "unigram": "a hindsight witness below recorded NLL"
+    },
+    "scope": "Hindsight class certificate on the previously exposed development suffix"
+  }
+}
