@@ -1,9 +1,11 @@
 """Enumerate every address, row, noise word and label in the temporal test."""
 from collections import Counter
 from fractions import Fraction as F
-from itertools import product
-from math import gcd, prod
+from itertools import combinations, product
+from math import ceil, comb, gcd, prod
+from pathlib import Path
 import json
+import sys
 
 
 def clean_word(rows, path):
@@ -96,9 +98,50 @@ def lifetime():
     assert prediction(product((0, 1), repeat=2)) == F(1, 2)
 
 
+def general_binary_law():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]/'src/reference_compiler'))
+    from fp_reference.numerics import log_enclosure
+    from audit_routing import frequencies, supported_word_likelihood
+    log2 = log_enclosure(F(2), terms=14, bit_limit=32768)
+    thresholds = []
+    for a, b in combinations(range(9), 2):
+        lower = upper = F(0)
+        for x, y in ((a, b), (8-a, 8-b)):
+            for c in (x, y):
+                if c:
+                    ratio = log_enclosure(F(2*c, x+y), terms=14, bit_limit=32768)
+                    lower += F(c, 16)*ratio.lower
+                    upper += F(c, 16)*ratio.upper
+        assert lower > 0
+        # Direct optimum over all binomial observations at each sample size.
+        for n in range(1, ceil(2*log2.upper**2/lower)+1):
+            overlap = sum(comb(n, k)*min(a**k*(8-a)**(n-k), b**k*(8-b)**(n-k))
+                          for k in range(n+1))
+            if 2*overlap <= 8**n:
+                break
+        else:
+            raise AssertionError("upper sample bound violated")
+        assert 16*n*lower >= 1 and n <= ceil(2*log2.lower**2/upper)
+        thresholds.append(n)
+    both = []
+    for sensor in ("A", "B"):
+        first, second = [], []
+        for target, world, error in product(range(2), repeat=3):
+            count = 1 if error else 3
+            observation = target ^ (error if sensor == "A" else world)
+            first.append((observation, target, count))
+            second.append(((observation, target), world, count))
+        both.append([prod(supported_word_likelihood(*v) for v in frequencies(events).values())
+                     for events in (first, second)])
+    assert both[0][0] > both[1][0] and prod(both[0]) < prod(both[1])
+    return dict(binary_pairs=len(thresholds), optimum_sample_range=[min(thresholds), max(thresholds)],
+                early_read_decision_reversed_by_future_score=True)
+
+
 if __name__ == "__main__":
     if not __debug__:
         raise RuntimeError("this audit requires assertions")
     lifetime()
     cases = [check(d, noise) for d, noise in product(range(1, 5), (F(0), F(1, 4)))]
-    print(json.dumps(dict(temporal_controls=cases, lifetime_witness=["1", "1/2"]), indent=2))
+    print(json.dumps(dict(temporal_controls=cases, lifetime_witness=["1", "1/2"],
+                          general_binary=general_binary_law()), indent=2))

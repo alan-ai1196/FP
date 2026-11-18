@@ -57,3 +57,29 @@ nats on one fresh block over the equal-prior predictor. Before the final emissio
 A predictor that updates the equal prior on the two possible worlds over successive blocks has cumulative excess log loss relative to either known world bounded above by $\log2$ on every word possible in that world, by the mixture likelihood identity. Thus insisting on a reliable structural verdict can demand exponentially many observations even when its maximum *cumulative predictive penalty while learning by mixture* is one bit. The learner in this last bound was given the two laws. It is an especially strong comparator for the lower bound, and the unrestricted learner (9) receives no such hint.
 
 This separation answers a different question from a parity circuit-size bound. There is a compact generator, and passive identification is possible at every finite $d$. The scientific obstacle is how often observable labels reveal an interaction and how much predictive work its identification could repay. Neither hidden graph size nor a rule requiring retention of every latent distinction determines those quantities.
+
+## General binary law and the role of unscored observations
+
+Let a fixed experiment produce an observable episode $O=(X_1,Y_1,\ldots,X_d,Y_d)$ with finite laws $P$ or $Q$ according to an equally likely persistent world bit $W$. All reads, coins and side observations available for identification belong in the transcript. Only the $Y_t$ are scored. Each comparison uses the Bayes-optimal *causal* forecast before the respective target. Denote by $g$ the expected cumulative log loss saved in the **first** episode by being told $W$, and by $s$ the information about $W$ revealed at the unscored observations. With $H_t=O_{<t}$,
+
+$$
+g=\sum_t I(W;Y_t\mid H_t,X_t),\qquad
+s=\sum_t I(W;X_t\mid H_t),\qquad
+g+s=I(W;O)=\operatorname{JS}(P,Q).
+$$
+
+The first equality is conditional strict propriety, the last two are the chain rule. Conditioning all predictions on the complete future input sequence could change $g$. A common input kernel given the actual prior transcript makes $s=0$. The independent fresh columns in the parity example satisfy this condition.
+
+For independent reset repetitions given $W$, let $N_*$ be the fewest episodes permitting equal-prior error at most $1/4$. If $P\ne Q$, then
+
+$$ \frac{1}{16(g+s)}\ \le\ N_*\ \le\ \left\lceil\frac{2(\log2)^2}{g+s}\right\rceil. \tag{13} $$
+
+If $P=Q$, every sample size gives error $1/2$. To prove the bounds, write $m=(P+Q)/2$ and $z=(P-Q)/(P+Q)$ on its support. Then $g+s=\mathbb E_m[d(z)]$ for $d(z)=\log2-h((1+z)/2)$, whereas $1-\rho=\mathbb E_m[1-\sqrt{1-z^2}]$. The series bounds above and $z^2/2\le1-\sqrt{1-z^2}\le z^2$ give
+
+$$ (g+s)/(2\log2)\ \le\ 1-\rho\ \le\ 2(g+s). $$
+
+An error at most $1/4$ requires $\mathrm{TV}(P^N,Q^N)\ge1/2$. Its square is at most $1-\rho^{2N}\le2N(1-\rho)$. For sufficiency the likelihood-ratio test has error at most $\exp[-N(1-\rho)]/2$. This proves (13), including disjoint supports. This is the classical testing/divergence connection specialized here to separate causal label value from side information. Pensia, Jog and Loh study substantially broader prior/error regimes. We use the elementary equal-prior fixed-error argument above. [Pensia, Jog and Loh, COLT 2024](https://proceedings.mlr.press/v247/pensia24a.html)
+
+The decomposition has consequences for structural learning. If a side channel reveals $W$ at the beginning while both worlds emit identical independent fair labels, one episode identifies the world and $g=0$. Even with $s=0$, a multiclass average predictive gain need not control every hard distinction. Give three equally likely worlds. One emits the distinct symbol 2, the others emit Bernoulli$(1/2\pm e)$ on $\{0,1\}$, $0<e<1/2$. The one-episode information is $h(1/3)+(2/3)d(2e)$, bounded away from zero. The latter pair requires order $e^{-2}$ episodes even to reduce conditional binary error to $3/8$, which is necessary for overall error at most $1/4$. The same affinity argument with $\mathrm{TV}\ge1/4$ gives this lower bound. Thus (13) cannot be transplanted from a binary claim to unrestricted structure identification.
+
+Finally, the *choice* of experiment can change $g$ and $s$. Let $T,W$ be independent fair hidden bits, $E$ independent Bernoulli$(1/4)$, and let the first target be $T$, the second $W$. Before the first target buy exactly one of $A=T\oplus E$ and $B=T\oplus W$. There are no later reads. Buying $A$ minimizes immediate loss at $h(1/4)$ and leaves the second bit fair. Buying $B$ gives immediate loss $\log2$ but learning $T$ then reveals $W$, giving total loss $\log2$ versus $\log2+h(1/4)$ for $A$. A control that prices only today's predictive gain can discard the very observation needed for tomorrow's learning. A horizon, input interface and update are indispensable.
