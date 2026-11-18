@@ -4,7 +4,7 @@ This note derives the positive case in Part IV of the [reconstruction](REPORT.md
 
 ## 1. Which operations can route values of arbitrary type?
 
-Suppose a predictor has side information $h$ before it inspects $M$ values. For every finite output alphabet $A$ it combines distributions $p_1,\ldots,p_M$ on $A$ by a map $F^h_A$. Consider the following explicit restriction: **postprocessing every value by the same stochastic channel $T:A\to B$ may be deferred until after combination**,
+Suppose a predictor has side information $h$ before it inspects $M$ values. For every finite output alphabet $A$ it combines distributions $p_1,\ldots,p_M$ on $A$ by a map $F^h_A$. Impose the requirement that **postprocessing every value by the same stochastic channel $T:A\to B$ may be deferred until after combination**,
 
 $$ F^h_B(Tp_1,\ldots,Tp_M)=T F^h_A(p_1,\ldots,p_M). \tag{1} $$
 

@@ -4,6 +4,8 @@ This repository is the canonical persistence layer for the FP research project.
 
 FP studies whether a **typed causal positive program** built from a small native algebra can allocate useful distinctions and physical graph structure under ordinary task loss and hard physical constraints, without an externally supplied architecture-action menu.
 
+On the `research/foundation-reconstruction` branch, [What can prediction teach a machine to compute?](research/reconstruction/REPORT.md) compares three alternative foundations, derives the learning and cost of routing, and tests its limits on the original text development suffix. The report recommends retaining Foundation R4 as the canonical theory.
+
 ## Start here
 
 1. [`FP_THEORY.md`](FP_THEORY.md) — **the only normative theory source**.
