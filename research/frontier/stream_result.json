@@ -19,6 +19,18 @@
       "first": 18
     }
   ],
+  "finite_grid_rigidity": {
+    "mixed_affine_forms": 5292,
+    "maximum_accepted_pairs": {
+      "2": 3,
+      "3": 7,
+      "4": 12,
+      "5": 19,
+      "6": 27,
+      "7": 37,
+      "8": 48
+    }
+  },
   "nearest_grid_checks": 400,
   "binary": {
     "seed": 2719,

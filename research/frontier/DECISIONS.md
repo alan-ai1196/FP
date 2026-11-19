@@ -21,3 +21,6 @@ Materialization now has an explicit optimizer for priced signed registers and sh
 
 
 Retain partial-orbit discovery for the fixed-basis cost observer. It bounds any remaining deployment saving and can return a valid layout before enumerating exponentially many columns. Basis discovery from passive natural inputs and repayment of total acquisition work remain separate questions. [Exact early-exit evidence](discovery_result.json)
+
+
+For finite probability registers retain the sharp affine occupancy law. For continuous, constant-preserving value maps on the complete cube, convex mixtures follow. Approximating a soft mixture by rounding can have small predictive error even where exact grid preservation forces a hard address. The semantic assumptions and horizon determine which conclusion applies. [Finite grids and the continuous limit](FOUNDATION.md#exact-finite-grids-and-the-continuous-limit)

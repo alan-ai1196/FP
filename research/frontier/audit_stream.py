@@ -78,6 +78,29 @@ def scan():
     return rows
 
 
+def affine_grids():
+    # Coefficients and offsets are represented in half units.
+    checked = 0
+    maxima = {}
+    for m in range(2, 9):
+        bound = m*m - m*m//4
+        pairs = list(product(range(m), repeat=2))
+        peak = 0
+        for a, b in product((-4, -2, -1, 1, 2, 4), repeat=2):
+            for offset in range(-2*m, 2*m+1):
+                values = [offset+a*x+b*y for x, y in pairs]
+                valid = sum(not v % 2 and 0 <= v <= 2*(m-1) for v in values)
+                assert valid <= bound
+                peak = max(peak, valid)
+                checked += 1
+        assert peak == bound
+        midpoint = sum((x+y) % 2 == 0 for x, y in pairs)
+        assert midpoint == ((m+1)//2)**2 + (m//2)**2
+        assert all(abs(F((x+y+1)//2, m-1) - F(x+y, 2*(m-1))) <= F(1, 2*(m-1)) for x, y in pairs)
+        maxima[str(m)] = peak
+    return dict(mixed_affine_forms=checked, maximum_accepted_pairs=maxima)
+
+
 def dec(v):
     return Decimal(v.numerator) / Decimal(v.denominator)
 
@@ -182,7 +205,8 @@ def main():
         parser.error("the audit requires assertions")
     binary = [[1, 3] if i in (1, 4) else [3, 1] for i in range(8)]
     ternary = [[2+i+j, 2+(i*j)%3, 8-i-j-(i*j)%3] for i, j in product(range(3), repeat=2)]
-    out = dict(smallest_binary=scan(), nearest_grid_checks=complete_grid(2)+complete_grid(3),
+    out = dict(smallest_binary=scan(), finite_grid_rigidity=affine_grids(),
+               nearest_grid_checks=complete_grid(2)+complete_grid(3),
                binary=stream_trial(binary, 3, 63, 2719, True),
                ternary=stream_trial(ternary, 2, 97, 3503, False))
     if args.check:
