@@ -12,3 +12,6 @@
 
 
 The single-stream extension retains ordinary predict-then-observe training and removes external episode/label markers. A probability grid lets the same closure execute multiclass conditional values exactly. A conventional table remains a strong alternative and won the independent ternary comparison with half-count smoothing. The dense all-context acquisition law needs $K^L$ visited contexts; the original million-token training view cannot cover every pair of 50,257 symbols. The size of an original-vocabulary acquisition path now matters more than another small grid case. [Single-stream evidence](EVIDENCE.md#self-driven-next-token-streams)
+
+
+Retain the priced successor rows as a reachable full-vocabulary value-learning control. They beat the complete fixed lag-mixture lower bound with about one megabyte of additional row payload. An ordinary interpolated bigram is the identical conventional model. Its one-step state overwrite precludes using this gain as evidence for deeper compositional discovery. [Text certificate](text_result.json)

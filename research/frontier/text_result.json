@@ -1,0 +1,54 @@
+{
+  "exhaustive_small_gates": 128,
+  "original_text": {
+    "registration": "477c05a",
+    "train_prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+    "val_prefix_sha256": "ae337c3da2d3fe20c45bc7abc3fd87cfd38e2e79bb641aed48f55c23918228ab",
+    "vocab": 50257,
+    "fit_tokens": 786432,
+    "fitted_pairs": 786431,
+    "gate_tokens": 262144,
+    "gate_distinct_pairs": 137014,
+    "exact_price_tie_fallbacks": 0,
+    "base_payload_bits": 1608224,
+    "score_positions": 12288,
+    "arms": {
+      "base": {
+        "rows": 0,
+        "distinct_entries": 0,
+        "row_payload_bits": 0,
+        "nll": [
+          "7.758622196",
+          "7.758622197"
+        ],
+        "below_fixed_simplex": false,
+        "above_mkn": true,
+        "above_transformer": true
+      },
+      "priced": {
+        "rows": 6715,
+        "distinct_entries": 157220,
+        "row_payload_bits": 7976320,
+        "nll": [
+          "7.109546182",
+          "7.109546183"
+        ],
+        "below_fixed_simplex": true,
+        "above_mkn": true,
+        "above_transformer": true
+      },
+      "all": {
+        "rows": 34215,
+        "distinct_entries": 346854,
+        "row_payload_bits": 18838752,
+        "nll": [
+          "7.039207622",
+          "7.039207623"
+        ],
+        "below_fixed_simplex": true,
+        "above_mkn": true,
+        "above_transformer": true
+      }
+    }
+  }
+}
