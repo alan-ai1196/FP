@@ -15,3 +15,6 @@ The single-stream extension retains ordinary predict-then-observe training and r
 
 
 Retain the priced successor rows as a reachable full-vocabulary value-learning control. They beat the complete fixed lag-mixture lower bound with about one megabyte of additional row payload. An ordinary interpolated bigram is the identical conventional model. Its one-step state overwrite precludes using this gain as evidence for deeper compositional discovery. [Text certificate](text_result.json)
+
+
+Materialization now has an explicit optimizer for priced signed registers and shared scratch. Changing the prediction basis reverses one fixed-basis decision. Even the best tested basis adds the fourth value when two distinct letters frequently demand it. The four-state counterexample rejects one-at-a-time feature admission. The exponential suffix orbit limits an eager implementation. [Proof and scope](FOUNDATION.md#when-does-the-learner-materialize-an-extra-value)

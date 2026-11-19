@@ -1,0 +1,97 @@
+{
+  "boundary_workloads": [
+    [
+      3,
+      2,
+      2
+    ],
+    [
+      2,
+      2,
+      3
+    ],
+    [
+      2,
+      1,
+      4
+    ]
+  ],
+  "boundary_results": [
+    {
+      "registers": 3,
+      "cost": 77,
+      "work": {
+        "vertices": 18,
+        "arcs": 31,
+        "augmentations": 4
+      }
+    },
+    {
+      "registers": 3,
+      "cost": 84,
+      "work": {
+        "vertices": 18,
+        "arcs": 31,
+        "augmentations": 4
+      }
+    },
+    {
+      "registers": 4,
+      "cost": 84,
+      "work": {
+        "vertices": 18,
+        "arcs": 31,
+        "augmentations": 4
+      }
+    }
+  ],
+  "alternative_bases": [
+    {
+      "counts": [
+        2,
+        1,
+        4
+      ],
+      "cost": 77,
+      "registers": 3,
+      "feasible_bases": 3
+    },
+    {
+      "counts": [
+        48,
+        4,
+        48
+      ],
+      "cost": 1200,
+      "registers": 4,
+      "feasible_bases": 3
+    },
+    {
+      "counts": [
+        48,
+        48,
+        4
+      ],
+      "cost": 928,
+      "registers": 3,
+      "feasible_bases": 3
+    }
+  ],
+  "complementary_layout_costs": [
+    284,
+    291,
+    308,
+    252
+  ],
+  "missing_requests_per_letter": [
+    [],
+    [
+      5
+    ],
+    [
+      4,
+      4
+    ]
+  ],
+  "small_graph_price_checks": 384
+}
