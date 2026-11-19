@@ -1,43 +1,28 @@
-# FP — Factor Programs
+# Factor Programs
 
-This repository is the canonical persistence layer for the FP research project.
+FP studies how ordinary prediction error can teach a learner which computations to perform under physical resource limits. Work on the second foundational investigation takes place on this branch.
 
-FP studies whether a **typed causal positive program** built from a small native algebra can allocate useful distinctions and physical graph structure under ordinary task loss and hard physical constraints, without an externally supplied architecture-action menu.
+## Research branches
 
-On the `research/foundation-reconstruction` branch, [What can prediction teach a machine to compute?](research/reconstruction/REPORT.md) compares three alternative foundations, derives the learning and cost of routing, and tests its limits on the original text development suffix. The report recommends retaining Foundation R4 as the canonical theory.
+| Branch | What it contains |
+|---|---|
+| `main` | The canonical Foundation R4 theory, tested implementations, release boundaries and original experiment journals. [Canonical theory](https://github.com/alan-ai1196/FP/blob/a35ef18b0576048ea93f0b87ea6f6a78760bb447/FP_THEORY.md) |
+| `frontier` | Active mathematics, falsifiers and reproducible evidence. The branch descends directly from the completed reconstruction. |
+| `archive` | Historical source trees, including divergent research, PR #1, superseded release work and the original run evidence. Each retired branch can be recovered by ancestry. [Archive index](https://github.com/alan-ai1196/FP/blob/40cf379c85f6a8a2ae86cb72f5b85696b1712c1d/research/archive/INDEX.md) |
 
-## Start here
+## Reproduce the first reconstruction
 
-1. [`FP_THEORY.md`](FP_THEORY.md) — **the only normative theory source**.
-2. [`HANDOFF.md`](HANDOFF.md) — current research state and next-model takeover guide.
-3. [`CLAIMS_AND_STATUS.md`](CLAIMS_AND_STATUS.md) — proved / numerical / empirical / conjectural / falsified claims.
-4. [`IMPLEMENTATION_STATUS.md`](IMPLEMENTATION_STATUS.md) — exact Compiler/runtime state and known migration recovery boundary.
-5. [`RESEARCH_HISTORY.md`](RESEARCH_HISTORY.md) — why the theory changed from R5 to the current foundation.
-6. [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) — only currently unresolved research questions.
-7. [`EXPERIMENT_RESOURCE_CONTRACT.md`](EXPERIMENT_RESOURCE_CONTRACT.md) — frozen ERC-1 resource accounting, scoped joint law and Runtime/AMP/RTX 3090 release order.
-8. [First registered RTX 3090 resource experiment](experiments/erc1_rtx3090/RESULTS.md) — 54 configurations, strong SUM controls, actual precision plateau and measured resource tradeoffs.
+The reconstruction shows when a learner can acquire a cheaper read. On the original 12,288-token development suffix, every fixed mixture of the 512 lag-copy distributions and the training-prefix add-one unigram has optimum loss within [7.236294824, 7.236529809] nats per token. The historical Transformer scored 6.260544623 and order-5 modified Kneser–Ney scored 6.587281632. Context-dependent mixing and learned transformations have different hypothesis classes. [Report](https://github.com/alan-ai1196/FP/blob/a674dda8985be1dd316b102da4fa00a42c837819/research/reconstruction/REPORT.md) · [Certificate](https://github.com/alan-ai1196/FP/blob/a674dda8985be1dd316b102da4fa00a42c837819/research/reconstruction/text_capacity_result.json)
 
-## Current status
+The historical checkout keeps the exact evaluator, corpus reader, baseline journals and numerical fixtures together. From a full clone with Python and NumPy, the following commands run the portable checks. The additional `--text` option on the last command uses the two original token files at the registered data location and verifies both prefix identities. The four portable checks and the full text certificate were reproduced during consolidation.
 
-- **Theory:** Foundation R4 frozen and consolidated into `FP_THEORY.md`.
-- **Experiment resources:** ERC-1 specification frozen after the scoped joint PRODUCT/SUM/range/precision law. Static case expansion remains parked; registered RTX 3090 experiments are next.
-- **Reference Compiler:** **scoped Reference/CPU release frozen** at tested source `ebe2c4c`; 21 complete fresh-clone audits pass. See [release scope](theory/proofs/REFERENCE_RELEASE_SCOPE.md) and [minimal evidence](evidence/minimal/FP_REFERENCE_RELEASE_AUDIT.json).
-- **Actual AMP:** **scoped target release frozen** at `5e55eb4`; all 21 current CPU and 10 CUDA audits pass from one fresh clone. See [target scope](theory/proofs/CUDA_RELEASE_SCOPE.md) and [integrated evidence](evidence/minimal/FP_CUDA_RELEASE_AUDIT.json).
-- **GPU/model science:** **registered experiments unheld** within the tested scope. Correctness, fresh installation and the n=32 hierarchy do not themselves establish population identification, necessary structure or a model-quality advantage.
-- **Historical R4.2 implementation:** preserved under `experiments/legacy_r4_2_v23/` because its failure produced the v24 theoretical counterexample. It is not a current implementation.
+```sh
+git worktree add --detach ../fp-reconstruction-check a674dda8985be1dd316b102da4fa00a42c837819
+python -B ../fp-reconstruction-check/research/reconstruction/audit_routing.py
+python -B ../fp-reconstruction-check/research/reconstruction/audit_address_process.py
+python -B ../fp-reconstruction-check/research/reconstruction/audit_foundation_comparison.py
+python -B ../fp-reconstruction-check/research/reconstruction/text_capacity.py
+git worktree remove ../fp-reconstruction-check
+```
 
-## Repository discipline
-
-GitHub is the source of truth. Chat memory and local workspaces are scratch context only. Any result with long-term research value must end in a coherent repository commit.
-
-Do not commit model weights, datasets, checkpoints, caches, large raw logs, virtual environments, provider credentials, or regenerated experiment bundles. Preserve the smallest evidence needed to audit a claim plus its generation code/metadata.
-
-## Numerical discipline
-
-- theorem/algorithm/numerical audits: exact arithmetic or float64 reference path;
-- physical/GPU execution: registered AMP/mixed-precision path after the reference↔AMP bridge is certified;
-- decision-critical near ties: exact encoded arithmetic or sound enclosures, never an arbitrary floating tolerance.
-
-## Scope separation
-
-FP is independent of the separate memory/provenance research project. Do not import that project's problem statements, benchmarks, mechanisms, or claims into FP merely because both use the word “provenance.”
+The canonical checkout also holds the original [claims register](https://github.com/alan-ai1196/FP/blob/a35ef18b0576048ea93f0b87ea6f6a78760bb447/CLAIMS_AND_STATUS.md), [research history](https://github.com/alan-ai1196/FP/blob/a35ef18b0576048ea93f0b87ea6f6a78760bb447/RESEARCH_HISTORY.md), [resource contract](https://github.com/alan-ai1196/FP/blob/a35ef18b0576048ea93f0b87ea6f6a78760bb447/EXPERIMENT_RESOURCE_CONTRACT.md) and [implementation status](https://github.com/alan-ai1196/FP/blob/a35ef18b0576048ea93f0b87ea6f6a78760bb447/IMPLEMENTATION_STATUS.md). Historical experiment packages and repeated Compiler status registers have a single working home there.
