@@ -1,0 +1,59 @@
+{
+  "small_workloads": 28,
+  "early_exit": {
+    "intervals": [
+      [
+        84,
+        91
+      ]
+    ],
+    "expanded": 3,
+    "discovered": 4,
+    "registers": 3,
+    "exact": false,
+    "rational_dot_terms": 117,
+    "inverse_divisions": 18,
+    "inverse_multiply_subtracts": 30,
+    "cut_arcs_constructed": 51
+  },
+  "complementary_full_orbit": 6,
+  "complementary_intervals": [
+    [
+      245,
+      284
+    ],
+    [
+      252,
+      284
+    ],
+    [
+      252,
+      252
+    ]
+  ],
+  "monoid_rank": 8,
+  "monoid_full_orbit": 128,
+  "monoid_acquisition": {
+    "raw_words": 144,
+    "ordinary_labels": 576,
+    "input_symbols": 4576,
+    "basis_divisions": 64,
+    "basis_multiply_subtracts": 136
+  },
+  "monoid_search": {
+    "intervals": [
+      [
+        2434,
+        2434
+      ]
+    ],
+    "expanded": 8,
+    "discovered": 10,
+    "registers": 8,
+    "exact": true,
+    "rational_dot_terms": 2176,
+    "inverse_divisions": 128,
+    "inverse_multiply_subtracts": 480,
+    "cut_arcs_constructed": 134
+  }
+}

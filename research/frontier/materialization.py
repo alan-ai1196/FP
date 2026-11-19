@@ -72,39 +72,29 @@ class Bank:
         return charge
 
     def choose(self, counts, rent=0):
-        if len(counts) != len(self.demand) or any(type(n) is not int or n < 0 for n in (*counts, rent)):
-            raise ValueError("nonnegative integer resource counts required")
-        c = len(self.forms)
-        source, sink = c, c + 1
-        next_node = c + 2
-        fees = [(i, sink, 3*sum(counts)+rent) for i in range(c)]
-        force = [(source, i) for i in range(self.rank)]
-        for n, row in zip(counts, self.demand, strict=True):
-            need = {}
-            for j, (i, _) in enumerate(row):
-                if i not in need:
-                    need[i] = next_node
-                    next_node += 1
-                    fees.append((need[i], i, n*(2*len(self.forms[i])+1)))
-                force.append((j, need[i]))
-        bound = 1 + sum(w for _, _, w in fees)
-        flow, kept, augmentations = cut(next_node, fees + [(i,j,bound) for i,j in force], source, sink)
-        selected = kept.intersection(range(c))
-        assert set(range(self.rank)) <= selected and flow == self.cost(selected, counts, rent)
-        return selected, flow, dict(vertices=next_node, arcs=len(fees)+len(force), augmentations=augmentations)
+        if len(counts) != len(self.demand):
+            raise ValueError("one count per symbol required")
+        queries = ((a, j, i) for a, row in enumerate(self.demand) for j, (i, _) in enumerate(row))
+        selected, flow, work = layout_cut(self.rank, self.forms, queries, counts, rent)
+        assert flow == self.cost(selected, counts, rent)
+        return selected, flow, work
 
     def lower(self, selected):
-        ids = sorted(selected)
-        assert ids[:self.rank] == list(range(self.rank))
-        plans = []
-        for row in self.demand:
-            slots = {v: i for i, v in enumerate(ids)}
-            missing = sorted({row[j][0] for j in ids} - selected)
-            for i in missing:
-                slots[i] = len(slots)
-            plans.append((tuple(self.forms[i] for i in missing),
-                          tuple((slots[row[j][0]], row[j][1]) for j in ids)))
-        return tuple(plans)
+        return lower_layout(self.rank, self.forms, self.demand, selected)
+
+
+def lower_layout(rank, forms, demands, selected):
+    ids = sorted(selected)
+    assert ids[:rank] == list(range(rank))
+    plans = []
+    for row in demands:
+        slots = {v: i for i, v in enumerate(ids)}
+        missing = sorted({row[j][0] for j in ids} - selected)
+        for i in missing:
+            slots[i] = len(slots)
+        plans.append((tuple(forms[i] for i in missing),
+                      tuple((slots[row[j][0]], row[j][1]) for j in ids)))
+    return tuple(plans)
 
 
 def execute(state, plan):
@@ -138,6 +128,28 @@ def choose_basis(bank, graph, counts, rent=0):
             winner = key, alternate, selected
     key, alternate, selected = winner
     return alternate, selected, key[0], tried
+
+
+def layout_cut(rank, forms, dependencies, counts, rent, forbidden=()):
+    if any(type(n) is not int or n < 0 for n in (*counts, rent)):
+        raise ValueError("nonnegative integer resource counts required")
+    c = len(forms)
+    source, sink = c, c + 1
+    fees = [(i, sink, 3*sum(counts)+rent) for i in range(c)]
+    force = [(source, i) for i in range(rank)] + [(j, sink) for j in forbidden]
+    needs = {}
+    for a, j, i in dependencies:
+        key = a, i
+        if key not in needs:
+            needs[key] = c + 2 + len(needs)
+            fees.append((needs[key], i, counts[a]*(2*len(forms[i])+1)))
+        force.append((j, needs[key]))
+    bound = 1 + sum(w for _, _, w in fees)
+    nodes = c + 2 + len(needs)
+    flow, kept, augmentations = cut(nodes, fees + [(i,j,bound) for i,j in force], source, sink)
+    selected = kept.intersection(range(c))
+    assert set(range(rank)) <= selected and not selected.intersection(forbidden)
+    return selected, flow, dict(vertices=nodes, arcs=len(fees)+len(force), augmentations=augmentations)
 
 
 def cut(n, arcs, source, sink):

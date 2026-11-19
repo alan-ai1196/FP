@@ -62,6 +62,17 @@ def solve(left, right, work):
     return [row[n:] for row in rows]
 
 
+def moment_blocks(table, short, alphabet, limit, work):
+    indices = basis(short, table, limit, work)
+    if indices is None:
+        return None
+    prefixes, suffixes = indices
+    left = [[table[p + s] for s in suffixes] for p in prefixes]
+    right = [[table[p + a + s] for a in alphabet for s in suffixes] for p in prefixes]
+    work.cell_lookups += (1 + len(alphabet)) * len(prefixes) ** 2
+    return suffixes, left, right
+
+
 def integer_column(values):
     scale = lcm(*(v.denominator for v in values))
     weights = [int(v * scale) for v in values]
@@ -140,15 +151,12 @@ class Learner:
             total += zeros + ones
             agreement += abs(ones - zeros)
         short = list(words(self.alphabet, self.capacity - 1))
-        indices = basis(short, table, self.capacity, work)
-        if indices is None:
+        blocks = moment_blocks(table, short, self.alphabet, self.capacity, work)
+        if blocks is None:
             return None
-        prefixes, suffixes = indices
-        left = [[table[p + s] for s in suffixes] for p in prefixes]
-        right = [[table[p + a + s] for a in self.alphabet for s in suffixes]
-                 for p in prefixes]
-        r = len(prefixes)
-        work.cell_lookups += (1 + len(self.alphabet)) * r * r + r
+        suffixes, left, right = blocks
+        r = len(suffixes)
+        work.cell_lookups += r
         solution = solve(left, right, work)
         transitions = {}
         for i, a in enumerate(self.alphabet):

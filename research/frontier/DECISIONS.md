@@ -18,3 +18,6 @@ Retain the priced successor rows as a reachable full-vocabulary value-learning c
 
 
 Materialization now has an explicit optimizer for priced signed registers and shared scratch. Changing the prediction basis reverses one fixed-basis decision. Even the best tested basis adds the fourth value when two distinct letters frequently demand it. The four-state counterexample rejects one-at-a-time feature admission. The exponential suffix orbit limits an eager implementation. [Proof and scope](FOUNDATION.md#when-does-the-learner-materialize-an-extra-value)
+
+
+Retain partial-orbit discovery for the fixed-basis cost observer. It bounds any remaining deployment saving and can return a valid layout before enumerating exponentially many columns. Basis discovery from passive natural inputs and repayment of total acquisition work remain separate questions. [Exact early-exit evidence](discovery_result.json)
