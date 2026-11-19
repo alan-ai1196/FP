@@ -1,0 +1,33 @@
+{
+  "partial_coverage": {
+    "before_dimension": 4,
+    "after_dimension": 5,
+    "even_examples": 64,
+    "added_examples": 4,
+    "query_words": 1365,
+    "posterior_checks": 2240,
+    "calibration": "1/2"
+  },
+  "ridge_factors": {
+    "examples": 16,
+    "trainable_entries": 8,
+    "dense_sweeps": 3,
+    "first_sweep_positive_score": "4/17",
+    "first_sweep_brier": "237/1156",
+    "last_score_within_1e_6_of_regularized_limit": true,
+    "last_score_integer_bits": 81,
+    "zero_seed_stationary": true,
+    "saturated_table_brier": "3/16",
+    "solve_divisions": 48,
+    "solve_multiply_subtracts": 40
+  },
+  "sharp_risk": {
+    "free_three_bit_encodings": 4960,
+    "minimum_errors": 2,
+    "cases": 24,
+    "optimal_router_amplitude": "5/12",
+    "optimal_router_brier": "119/576",
+    "transform_brier": "3/16",
+    "excess": "11/576"
+  }
+}

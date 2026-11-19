@@ -2,6 +2,8 @@
 
 FP studies how ordinary prediction error can teach a learner which computations to perform under physical resource limits. Work on the second foundational investigation takes place on this branch.
 
+The current study derives when ordinary labels create reusable sequence transformations, when signed copying suffices and what passive acquisition costs. [Foundation](research/frontier/FOUNDATION.md) · [Obstructions](research/frontier/OBSTRUCTIONS.md) · [Executable evidence](research/frontier/EVIDENCE.md) · [Decisions](research/frontier/DECISIONS.md) · [Next question](research/frontier/NEXT.md)
+
 ## Research branches
 
 | Branch | What it contains |
