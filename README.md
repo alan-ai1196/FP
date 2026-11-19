@@ -2,6 +2,8 @@
 
 This repository is the canonical persistence layer for the FP research project.
 
+This branch holds Foundation R4 and its tested implementations. Current research on learning new computational values takes place on [frontier](https://github.com/alan-ai1196/FP/tree/frontier/research/frontier). The archive records each retired branch and preserves its original commit ancestry. [Archive index](https://github.com/alan-ai1196/FP/blob/archive/research/archive/INDEX.md) · [Completed routing reconstruction](https://github.com/alan-ai1196/FP/blob/a674dda8985be1dd316b102da4fa00a42c837819/research/reconstruction/REPORT.md)
+
 FP studies whether a **typed causal positive program** built from a small native algebra can allocate useful distinctions and physical graph structure under ordinary task loss and hard physical constraints, without an externally supplied architecture-action menu.
 
 ## Start here
