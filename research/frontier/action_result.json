@@ -1,0 +1,66 @@
+{
+  "labels_per_word": 512,
+  "familiar_words": 4,
+  "familiar_labels": 2048,
+  "rare_words": 4,
+  "rare_labels": 2048,
+  "training_symbol_reads": 9728,
+  "partial_rank": 2,
+  "partial_novel_forecast": "63/128",
+  "partial_variance_proxy": "137/16384",
+  "full_rank": 4,
+  "learned_action": [
+    [
+      "-1/6",
+      "-7/12"
+    ],
+    [
+      "5/6",
+      "17/12"
+    ]
+  ],
+  "full_novel_variance_proxy": "137/16384",
+  "exact_word_checks": 511,
+  "anchor_divisions": 12,
+  "anchor_multiply_subtracts": 10,
+  "fit_divisions": 36,
+  "fit_multiply_subtracts": 108,
+  "sampled": {
+    "seed": 27031,
+    "successes": [
+      147,
+      272,
+      318,
+      353,
+      176,
+      210,
+      315,
+      334
+    ],
+    "design_rank": 4,
+    "unseen_words": 503,
+    "raw_outside_unit_interval": 427,
+    "scale": 1000000000,
+    "clipped_mean_excess_brier": [
+      187633631,
+      187633632
+    ],
+    "fitted_constant_mean_excess_brier": [
+      12616694,
+      12616695
+    ]
+  },
+  "counterexamples": {
+    "paired_word_checks": 127,
+    "isolated_b_forecasts": [
+      "1/4",
+      "3/4"
+    ],
+    "one_step_drift": "1/128",
+    "drift_after_64_scaled": [
+      317506737,
+      317506738
+    ],
+    "scale": 1000000000
+  }
+}

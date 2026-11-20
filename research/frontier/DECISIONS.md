@@ -24,3 +24,5 @@ Retain partial-orbit discovery for the fixed-basis cost observer. It bounds any 
 
 
 For finite probability registers retain the sharp affine occupancy law. For continuous, constant-preserving value maps on the complete cube, convex mixtures follow. Approximating a soft mixture by rounding can have small predictive error even where exact grid preservation forces a hard address. The semantic assumptions and horizon determine which conclusion applies. [Finite grids and the continuous limit](FOUNDATION.md#exact-finite-grids-and-the-continuous-limit)
+
+Sparse scalar observations can identify a new operator in an accurately learned basis without a complete rectangular probe table. Retain the observed-span criterion and its uncertainty calculation. Full rank by itself is too weak for deploying repeated compositions after sampled fitting. An equally trained constant wins decisively on the seeded counterexample. [Acquisition evidence](EVIDENCE.md#learning-a-rare-action)
