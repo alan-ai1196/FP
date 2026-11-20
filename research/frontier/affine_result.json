@@ -1,0 +1,110 @@
+{
+  "controls": {
+    "box_optimality_checks": 625,
+    "exact_endpoints": {
+      "q": [
+        "3/8",
+        "7/8"
+      ],
+      "v": [
+        "5/16",
+        "9/16"
+      ]
+    }
+  },
+  "scale": 1000000000,
+  "score_order": [
+    "bounded",
+    "unconstrained_clipped",
+    "fitted_constant"
+  ],
+  "words": [
+    "",
+    "q",
+    "qq",
+    "qqq",
+    "v",
+    "qv",
+    "qqvq",
+    "qqqvqq"
+  ],
+  "adjacent_prefix_probes": 5,
+  "word_prefix_lookups": 7,
+  "seed_27031": {
+    "seed": 27031,
+    "n": 512,
+    "mean_excess_brier": [
+      [
+        1107307,
+        1107308
+      ],
+      [
+        187633631,
+        187633632
+      ],
+      [
+        12616694,
+        12616695
+      ]
+    ],
+    "maximum_interval_width": [
+      985773139,
+      985773140
+    ],
+    "violated_intervals": 0,
+    "width_below_one_quarter": false,
+    "compatible": true
+  },
+  "prospective": {
+    "seeds": [
+      0,
+      31
+    ],
+    "trials": 32,
+    "mean_excess_brier": [
+      [
+        1075016,
+        1075017
+      ],
+      [
+        139911350,
+        139911351
+      ],
+      [
+        12538661,
+        12538662
+      ]
+    ],
+    "bounded_beats_unconstrained": 32,
+    "bounded_beats_constant": 32,
+    "unconstrained_beats_constant": 1,
+    "trials_width_below_one_quarter": 0,
+    "trials_with_interval_miss": 0,
+    "incompatible_trials": 0
+  },
+  "larger_sample": {
+    "seed": 0,
+    "n": 8192,
+    "mean_excess_brier": [
+      [
+        37448,
+        37449
+      ],
+      [
+        62579586,
+        62579587
+      ],
+      [
+        12352880,
+        12352881
+      ]
+    ],
+    "maximum_interval_width": [
+      188069419,
+      188069420
+    ],
+    "violated_intervals": 0,
+    "width_below_one_quarter": true,
+    "compatible": true
+  }
+}

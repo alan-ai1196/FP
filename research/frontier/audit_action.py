@@ -69,19 +69,29 @@ def enclosure(value, scale=10**9):
     return [scaled.numerator // scaled.denominator, -(-scaled.numerator // scaled.denominator)]
 
 
-def sampled_check(oracle, familiar, probes, n):
-    seed = 27031
+def sample_counts(oracle, words, n, seed):
     random = Random(seed)
-    words = familiar + ["q"*i + "v" + "q"*j for i, j in probes]
     counts = {}
     for word in words:
         probability = oracle(word)
         counts[word] = sum(random.randrange(probability.denominator) < probability.numerator for _ in range(n))
+    return counts
+
+
+def sampled_model(familiar, probes, counts, n):
     start, anchor, head, _ = fit_anchors(familiar, counts, n)
-    entries = [(design(i, j, start, anchor, head), n, counts[w])
-               for (i, j), w in zip(probes, words[len(familiar):], strict=True)]
-    fitted, _, rank, _ = update(entries, 4)
-    transitions = {"q": anchor, "v": [fitted[:2], fitted[2:]]}
+    width = len(start)
+    entries = [(design(i, j, start, anchor, head), n, counts["q"*i + "v" + "q"*j]) for i, j in probes]
+    fitted, _, rank, _ = update(entries, width**2)
+    transitions = {"q": anchor, "v": [fitted[i:i+width] for i in range(0, len(fitted), width)]}
+    return start, transitions, head, rank
+
+
+def sampled_check(oracle, familiar, probes, n):
+    seed = 27031
+    words = familiar + ["q"*i + "v" + "q"*j for i, j in probes]
+    counts = sample_counts(oracle, words, n, seed)
+    start, transitions, head, rank = sampled_model(familiar, probes, counts, n)
     constant = F(sum(counts.values()), n*len(words))
     clipped_count = tested = 0
     squared = constant_squared = F(0)
