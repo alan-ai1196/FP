@@ -145,8 +145,7 @@ def tape(source, directory):
     return values
 
 
-def original(directory):
-    historical = git_json("research/reconstruction/text_capacity_result.json")["ordinary_text"]
+def load_prefixes(directory):
     j = git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")
     assert j["vocabulary"] == VOCAB and j["status"] == "COMPLETE_TEXT_BASELINE_ANCHOR_A1"
     first = next(entry for entry in j["results"] if entry["case"] == "ngram")
@@ -155,6 +154,12 @@ def original(directory):
     train = tape(ref["train_source"], directory)
     val = tape(ref["reporting_source"], directory)
     assert (len(train), len(val)) == (1048576, 16384)
+    return train, val, ref
+
+
+def original(directory):
+    historical = git_json("research/reconstruction/text_capacity_result.json")["ordinary_text"]
+    train, val, ref = load_prefixes(directory)
     rows = Rows(train[:FIT], VOCAB, TAU)
     observations = Counter(zip(train[FIT-1:-1], train[FIT:]))
     chosen, fallbacks = gate(rows, observations)

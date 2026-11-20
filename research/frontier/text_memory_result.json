@@ -1,0 +1,72 @@
+{
+  "independent_policy_checks": 400,
+  "original_text": {
+    "registration": "2a89cc5",
+    "fit_tokens": 786432,
+    "calibration_targets": 131072,
+    "gate_targets": 131072,
+    "train_prefix_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+    "val_prefix_sha256": "ae337c3da2d3fe20c45bc7abc3fd87cfd38e2e79bb641aed48f55c23918228ab",
+    "scored_targets": 12288,
+    "group_types": 244,
+    "global_mass_grid_index": 1927,
+    "denominator": 4096,
+    "fit_pair_entries": 346854,
+    "candidate_sweeps": 50,
+    "gate_transition_evaluations": 6553600,
+    "recurrent_quarter_slopes": [
+      0,
+      0
+    ],
+    "overwrite_quarter_slopes": [
+      0,
+      0
+    ],
+    "recurrent_fee_bits": 0,
+    "overwrite_fee_bits": 0,
+    "exact_gate_comparisons": 0,
+    "minimum_nonzero_unpriced_gate_excess_nanonats": {
+      "recurrent": [
+        3107498,
+        3107499
+      ],
+      "overwrite": [
+        3390662,
+        3390663
+      ]
+    },
+    "distinct_last_tokens": 3491,
+    "last_tokens_with_different_states": 0,
+    "nll_nats": {
+      "original_full_bank": [
+        "7.039207622",
+        "7.039207623"
+      ],
+      "correct_group_revealed": [
+        "6.436692824",
+        "6.436692825"
+      ],
+      "hindsight_overwrite": [
+        "6.805902354",
+        "6.805902355"
+      ],
+      "calibrated_row": [
+        "7.034802531",
+        "7.034802532"
+      ],
+      "selected_overwrite": [
+        "7.034802531",
+        "7.034802532"
+      ],
+      "selected_recurrent": [
+        "7.034802531",
+        "7.034802532"
+      ]
+    },
+    "historical_below_oracle_floor": {
+      "mkn5": false,
+      "transformer": true
+    },
+    "registered_success": false
+  }
+}
