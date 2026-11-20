@@ -87,7 +87,7 @@ def net_positive(bounds, bits, factors):
     return odds**256 > 2**bits
 
 
-def price(gate, base, conditional):
+def price(gate, base, conditional, shared_bits=1):
     by_token = defaultdict(list)
     for (x,b),bins in gate.items():
         p = conditional.get((x,b), base[x])
@@ -105,7 +105,7 @@ def price(gate, base, conditional):
             lo += bounds[0]
             hi += bounds[1]
     factors = (v for x in selected for v in by_token[x])
-    return selected if selected and net_positive((lo,hi),40*len(selected)+1,factors) else set()
+    return selected if selected and net_positive((lo,hi),40*len(selected)+shared_bits,factors) else set()
 
 
 def permutation_gain(report, selected, base, trained):
@@ -179,13 +179,12 @@ def attributions(mask, rows, numerator, pairs):
     return inside,(inside[0]+lo,inside[1]+hi)
 
 
-def sparse_trigram(train, val, output, base, within, bit_budget):
-    """A full pair of token IDs can buy a distinct group rate under the same extra payload."""
+def fit_sparse_trigram(train, output, base, bit_budget):
+    """Buy a group rate for full pairs of token IDs under the given extra payload."""
     raw_id = range(len(output))
     boundary = FIT+CAL
     cal = grouped_counts(train,FIT,boundary,raw_id,output)
     gate = grouped_counts(train,boundary,len(train),raw_id,output)
-    report = grouped_counts(val,4096,len(val),raw_id,output)
     candidates = {}
     fitted = {}
     for key,(zeros,ones) in cal.items():
@@ -216,17 +215,24 @@ def sparse_trigram(train, val, output, base, within, bit_budget):
     bounds = tuple(sum(candidates[k][0][i] for k in chosen) for i in range(2))
     if not net_positive(bounds,44*len(chosen)+16,(v for k in chosen for v in candidates[k][1])):
         chosen.clear()
+    installed = {k:fitted[k] for k in chosen}
+    work = dict(available_bits=bit_budget, cells=len(chosen), installed_bits=44*len(chosen)+16*bool(chosen),
+                calibration_cells=len(cal), gate_cells=len(gate))
+    return installed, work
+
+
+def sparse_trigram(train, val, output, base, within, bit_budget):
+    installed, work = fit_sparse_trigram(train,output,base,bit_budget)
+    report = grouped_counts(val,4096,len(val),range(len(output)),output)
     lo,hi = within
     for key,(zeros,ones) in report.items():
-        p = fitted[key] if key in chosen else base[key[0]]
+        p = installed.get(key,base[key[0]])
         for num,n in ((GRID-p,zeros),(p,ones)):
             if n:
                 l,h = ratio_log(GRID,num)
                 lo += n*l
                 hi += n*h
-    return dict(available_bits=bit_budget, cells=len(chosen), installed_bits=44*len(chosen)+16*bool(chosen),
-                calibration_cells=len(cal), gate_cells=len(gate),
-                nll=outward((lo,hi),sum(sum(v) for v in report.values())))
+    return dict(**work,nll=outward((lo,hi),sum(sum(v) for v in report.values())))
 
 
 def greedy_cut(vocab, edges):
@@ -243,7 +249,7 @@ def greedy_cut(vocab, edges):
     return side
 
 
-def two_successors(tokens, past, rows):
+def two_successor_cut(tokens, past, rows):
     contexts = defaultdict(lambda: defaultdict(lambda: [0,0]))
     for t in range(2,len(tokens)):
         x = tokens[t-1]
@@ -253,10 +259,12 @@ def two_successors(tokens, past, rows):
             cell[1] += past[tokens[t-2]]
     edges = defaultdict(lambda: [0,0])
     used = events = 0
-    for cells in contexts.values():
+    eligible = {}
+    for x,cells in contexts.items():
         if len(cells) != 2:
             continue
         a,b = sorted(cells)
+        eligible[x] = (a,b)
         n,h = cells[a]
         m,k = cells[b]
         before = entropy(n+m,h+k)
@@ -270,8 +278,13 @@ def two_successors(tokens, past, rows):
     total = [sum(v[i] for v in edges.values()) for i in range(2)]
     cut = [sum(v[i] for (a,b),v in edges.items() if side[a]!=side[b]) for i in range(2)]
     assert 2*cut[0] >= total[0]
-    return dict(contexts=used, observations=events, token_pairs=len(edges),
-                total_distinguishable_nats=outward(total,1), greedy_retained_nats=outward(cut,1))
+    stats = dict(contexts=used, observations=events, token_pairs=len(edges),
+                 total_distinguishable_nats=outward(total,1), greedy_retained_nats=outward(cut,1))
+    return side, eligible, stats
+
+
+def two_successors(tokens, past, rows):
+    return two_successor_cut(tokens,past,rows)[2]
 
 
 def small_checks():

@@ -1,0 +1,200 @@
+{
+  "controls": {
+    "exchange_trajectories": 128,
+    "fitting_word": "1001",
+    "true_two_step_gain_product": "8/9",
+    "null_crossing_horizon": 128,
+    "null_crossing_probability": "101231166510188779915583858430728903/85070591730234615865843651857942052864"
+  },
+  "original_text": {
+    "registration": "8b20275",
+    "prefix_sha256": "85c0816d0b46861c606e88361461c13c4782a8da5e5aeb58989d4b895779b59e",
+    "scored_indices": [
+      1048576,
+      1179648
+    ],
+    "exact_old_graph": {
+      "contexts": 6082,
+      "observations": 16929,
+      "token_pairs": 4868,
+      "total_distinguishable_nats": [
+        "3120.787384834",
+        "3120.787384835"
+      ],
+      "greedy_retained_nats": [
+        "2721.572477544",
+        "2721.572477545"
+      ]
+    },
+    "exchange_search": {
+      "occupied_past_ids": 34215,
+      "context_records_scanned": 693706,
+      "entropy_terms": 2662572,
+      "exact_sign_comparisons": 1142,
+      "accepted_flips": [
+        13815,
+        1412
+      ]
+    },
+    "fit_targets": 786430,
+    "positive_input_ids": 14073,
+    "fit_resources": {
+      "exchange": {
+        "rows": 1164,
+        "bits": 96818,
+        "cal_cells": 21066,
+        "gate_cells": 20727,
+        "setup_bits": 50258
+      },
+      "raw_frequency": {
+        "available_bits": 96818,
+        "cells": 668,
+        "installed_bits": 29408,
+        "calibration_cells": 75931,
+        "gate_cells": 74113
+      },
+      "frequency": {
+        "rows": 1106,
+        "bits": 44241,
+        "cal_cells": 20512,
+        "gate_cells": 20270,
+        "setup_bits": 1
+      },
+      "forward": {
+        "rows": 733,
+        "bits": 79578,
+        "cal_cells": 20512,
+        "gate_cells": 20270,
+        "setup_bits": 50258
+      },
+      "raw_forward": {
+        "available_bits": 79578,
+        "cells": 563,
+        "installed_bits": 24788,
+        "calibration_cells": 75931,
+        "gate_cells": 74113
+      }
+    },
+    "continuation": {
+      "targets": 131072,
+      "scores": {
+        "frequency_overwrite": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "exchange": [
+          "7.156047729",
+          "7.156047730"
+        ],
+        "raw_frequency": [
+          "7.156457556",
+          "7.156457557"
+        ],
+        "frequency": [
+          "7.156688533",
+          "7.156688534"
+        ],
+        "forward_overwrite": [
+          "7.160098866",
+          "7.160098867"
+        ],
+        "forward": [
+          "7.159116135",
+          "7.159116136"
+        ],
+        "raw_forward": [
+          "7.158662435",
+          "7.158662436"
+        ],
+        "full_successor": [
+          "7.161075682",
+          "7.161075683"
+        ]
+      },
+      "certificates": {
+        "exchange_vs_frequency_overwrite": {
+          "eligible_targets": 131072,
+          "incremental_bits": 96818,
+          "raw_gain_per_target": [
+            "0.002690766",
+            "0.002690767"
+          ],
+          "width_squared_sum_upper": "3279.663876",
+          "best_lambda": "1/8",
+          "net_conditional_lower_per_target": "-0.000077026",
+          "net_conditional_lower_total_nats": "-10.095876",
+          "positive": false
+        },
+        "exchange_vs_raw_frequency": {
+          "eligible_targets": 131072,
+          "incremental_bits": 67410,
+          "raw_gain_per_target": [
+            "0.000409826",
+            "0.000409827"
+          ],
+          "width_squared_sum_upper": "3387.953219",
+          "best_lambda": "1/8",
+          "net_conditional_lower_per_target": "-0.001763383",
+          "net_conditional_lower_total_nats": "-231.130038",
+          "positive": false
+        },
+        "exchange_vs_frequency": {
+          "eligible_targets": 131072,
+          "incremental_bits": 52577,
+          "raw_gain_per_target": [
+            "0.000640803",
+            "0.000640804"
+          ],
+          "width_squared_sum_upper": "3684.356378",
+          "best_lambda": "1/8",
+          "net_conditional_lower_per_target": "-0.001261329",
+          "net_conditional_lower_total_nats": "-165.324803",
+          "positive": false
+        },
+        "forward_vs_forward_overwrite": {
+          "eligible_targets": 131072,
+          "incremental_bits": 79578,
+          "raw_gain_per_target": [
+            "0.000982731",
+            "0.000982732"
+          ],
+          "width_squared_sum_upper": "1021.479910",
+          "best_lambda": "1/8",
+          "net_conditional_lower_per_target": "-0.001159731",
+          "net_conditional_lower_total_nats": "-152.008239",
+          "positive": false
+        },
+        "forward_vs_raw_forward": {
+          "eligible_targets": 131072,
+          "incremental_bits": 54790,
+          "raw_gain_per_target": [
+            "-0.000453700",
+            "-0.000453699"
+          ],
+          "width_squared_sum_upper": "1379.569577",
+          "best_lambda": "1/8",
+          "net_conditional_lower_per_target": "-0.002126794",
+          "net_conditional_lower_total_nats": "-278.763078",
+          "positive": false
+        },
+        "forward_vs_forward_overwrite_eligible": {
+          "eligible_targets": 3131,
+          "incremental_bits": 0,
+          "raw_gain_per_target": [
+            "0.000008938",
+            "0.000008939"
+          ],
+          "width_squared_sum_upper": "1.691179",
+          "best_lambda": "2",
+          "net_conditional_lower_per_target": "-0.000017839",
+          "net_conditional_lower_total_nats": "-2.338134",
+          "positive": false
+        }
+      },
+      "forward_eligible_targets": 3131,
+      "forward_eligible_types": 1555,
+      "forward_unseen_successors": 2459,
+      "registered_success": false
+    }
+  }
+}
