@@ -1,0 +1,169 @@
+{
+  "controls": {
+    "exhaustive_count_tables": 256,
+    "partitions_per_table": 16,
+    "shared_rent_cases": 16,
+    "weighted_graphs": 729
+  },
+  "original_text": {
+    "registration": "d737b5d",
+    "train_sha256": "abb3b3294b4c31c6a30968e6320b664f1fbcc2e2a1afa5b907a498c639e2057a",
+    "val_sha256": "ae337c3da2d3fe20c45bc7abc3fd87cfd38e2e79bb641aed48f55c23918228ab",
+    "fit_pairs": 786430,
+    "observed_target_types": 34215,
+    "calibration_targets": 131072,
+    "gate_targets": 131072,
+    "report_targets": 12288,
+    "frequency_group_types": 244,
+    "learned_group_types": 35964,
+    "two_successor_fit_diagnostic": {
+      "contexts": 6082,
+      "observations": 16929,
+      "token_pairs": 4868,
+      "total_distinguishable_nats": [
+        "3120.787384834",
+        "3120.787384835"
+      ],
+      "greedy_retained_nats": [
+        "2721.572477544",
+        "2721.572477545"
+      ]
+    },
+    "partition_search": {
+      "posterior_values": 1639,
+      "boundaries": 1638,
+      "exact_ties": 0,
+      "threshold": "16/35",
+      "unseen_group": 1
+    },
+    "floors": {
+      "frequency": {
+        "oracle": [
+          "6.436692824",
+          "6.436692825"
+        ],
+        "hindsight_overwrite": [
+          "6.805902354",
+          "6.805902355"
+        ]
+      },
+      "learned": {
+        "oracle": [
+          "6.479076927",
+          "6.479076928"
+        ],
+        "hindsight_overwrite": [
+          "6.836068747",
+          "6.836068748"
+        ]
+      }
+    },
+    "arms": {
+      "frequency/frequency": {
+        "calibration_cells": 20512,
+        "gate_cells": 20270,
+        "installed_rows": 1106,
+        "extra_payload_bits": 44241,
+        "varying_last_tokens": 193,
+        "shuffled_minus_observed_nanonats": [
+          2211219,
+          2211220
+        ],
+        "overwrite": [
+          "7.034802531",
+          "7.034802532"
+        ],
+        "conditional": [
+          "7.031797246",
+          "7.031797247"
+        ]
+      },
+      "learned/frequency": {
+        "calibration_cells": 21234,
+        "gate_cells": 20978,
+        "installed_rows": 1109,
+        "extra_payload_bits": 44361,
+        "varying_last_tokens": 211,
+        "shuffled_minus_observed_nanonats": [
+          947948,
+          947949
+        ],
+        "overwrite": [
+          "7.034802531",
+          "7.034802532"
+        ],
+        "conditional": [
+          "7.033218356",
+          "7.033218357"
+        ]
+      },
+      "frequency/learned": {
+        "calibration_cells": 20512,
+        "gate_cells": 20270,
+        "installed_rows": 605,
+        "extra_payload_bits": 24201,
+        "varying_last_tokens": 143,
+        "shuffled_minus_observed_nanonats": [
+          1695344,
+          1695345
+        ],
+        "overwrite": [
+          "7.036673258",
+          "7.036673259"
+        ],
+        "conditional": [
+          "7.035382901",
+          "7.035382902"
+        ]
+      },
+      "learned/learned": {
+        "calibration_cells": 21234,
+        "gate_cells": 20978,
+        "installed_rows": 581,
+        "extra_payload_bits": 23241,
+        "varying_last_tokens": 147,
+        "shuffled_minus_observed_nanonats": [
+          397516,
+          397517
+        ],
+        "overwrite": [
+          "7.036673258",
+          "7.036673259"
+        ],
+        "conditional": [
+          "7.036517819",
+          "7.036517820"
+        ]
+      }
+    },
+    "matched_sparse_trigram": {
+      "frequency": {
+        "available_bits": 44241,
+        "cells": 668,
+        "installed_bits": 29408,
+        "calibration_cells": 75931,
+        "gate_cells": 74113,
+        "nll": [
+          "7.032305681",
+          "7.032305682"
+        ]
+      },
+      "learned": {
+        "available_bits": 23241,
+        "cells": 478,
+        "installed_bits": 21048,
+        "calibration_cells": 75931,
+        "gate_cells": 74113,
+        "nll": [
+          "7.034337988",
+          "7.034337989"
+        ]
+      }
+    },
+    "original_full_bank": [
+      "7.039207622",
+      "7.039207623"
+    ],
+    "registered_success": false
+  }
+}

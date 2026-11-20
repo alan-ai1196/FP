@@ -78,7 +78,7 @@ def select(events, recurrent, initial):
     return best, exact, raw_excess
 
 
-def fitted_masses(rows, calibrate, previous):
+def frequency_mask(rows):
     order = sorted(rows.base, key=lambda x: (-rows.base[x], x))
     member = bytearray(rows.vocab)
     cumulative = 0
@@ -87,7 +87,12 @@ def fitted_masses(rows, calibrate, previous):
         cumulative += rows.base[x]
         if 2*cumulative >= rows.den-rows.vocab:
             break
-    base_group = cumulative + sum(member)
+    return member
+
+
+def fitted_masses(rows, calibrate, previous, member=None):
+    member = frequency_mask(rows) if member is None else member
+    base_group = sum(rows.base[y]+1 for y,flag in enumerate(member) if flag)
     positive = Counter()
     for (x,y), count in rows.pairs.items():
         if member[y]:
