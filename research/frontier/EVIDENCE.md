@@ -303,3 +303,26 @@ Fitting and choosing the 16 gates executed 18,874,352 binary state updates, visi
 ~~~powershell
 python -B research/frontier/text_operation.py --check research/frontier/text_operation_result.json
 ~~~
+
+## Learning which token identities can share an action
+
+**EMPIRICALLY OBSERVED.** A likelihood learner saw 262,144 independent stationary three-token episodes from a six-token source. Four raw tokens always had the same immediate probabilities. Two preserve a hidden bit and two flip it. Selecting the internal alphabet from adjacent pairs merged all four. Selecting it from triples recovered both true alias pairs and kept the two informative tokens separate. The learner received raw token IDs and episode boundaries. Hidden states and candidate assignments from the teacher were absent from both selection routines. [Prospective registration](https://github.com/alan-ai1196/FP/blob/4c5aa39/research/frontier/NEXT.md) · [Implementation](symbol_refinement.py) · [Exact loss intervals](symbol_refinement_result.json)
+
+| Three-token predictor after freezing its partition | Held-out nats/token | Third-position nats | Expected nats/token under the source | Packed bytes |
+|---|---:|---:|---:|---:|
+| Partition learned from pairs | 1.727703 | 1.723825 | 1.726804 | 131 |
+| Partition learned from triples | 1.726488 | 1.720186 | 1.725503 | 279 |
+| Unrestricted raw triple | 1.726582 | 1.720396 | 1.725612 | 871 |
+| Given true partition, same fitted count tables | 1.726488 | 1.720186 | 1.725503 | 279 |
+| Known source probabilities | 1.726470 | 1.720103 | 1.725461 | — |
+
+All fitted alternatives received the same raw triples for their final probability tables, including the pair-selected partition. The reporting set had 65,536 fresh episodes and 196,608 causal predictions. The registered triple learner met both conditions. Its gain over the pair-selected alternative was 0.00121448 nats per token. The expected-loss column is a post-fit calculation using exact probabilities of all 216 possible episodes of this synthetic source. It checks the sign of the small observed advantage over the unrestricted raw triple for these particular trained models. The given-partition reference measures the fit that receives the correct internal alphabet for free. This experiment learned a partition and a normalized three-position predictor. Learning and executing its underlying unlimited-horizon state update is a stronger claim.
+
+The code examined 203 partitions in each acquisition view. After counting training windows, partition evaluation scanned 51,156 raw count cells across both searches. It used the registered parameter penalty and bounded logarithms, with a canceled integer-product comparison for ambiguous intervals. The objective margins over the next candidate were 32.31 total nats for the pair learner and 343.94 for the triple learner. The executable count layout uses one byte for the group count, six group IDs, one unsigned 32-bit count per coarse triple, and a 32-bit refinement count for each token in a nonsingleton cell. The four-cell predictor has 65 independent probability parameters in this family. Causal inference uses at most two prior cell IDs and can cache the 21 shorter coarse-prefix masses. A specialized raw layout could omit the seven-byte generic header. Both normalized prefix readouts and joint factorization were checked exactly on all 216 raw words. Complete Python CPU replays took approximately 0.45 seconds with a peak process working set near 45 MB.
+
+**NUMERICALLY VERIFIED.** Exact population enumeration found 15 lossless partitions on pairs and four on triples. It recovered the same coarsest partitions as the training experiment. A separate integer-matrix construction verified the finite-rank obstruction at ranks two through five. It compared 11,068 word probabilities and the first separating words at lengths 3, 5, 7 and 9. The general result has a mathematical proof. The long-stream 0.053465-nat penalty in that proof concerns a population optimum under a forced merge. [Derivation](FOUNDATION.md#when-two-raw-tokens-can-share-one-internal-symbol) · [Sharp horizon and long-stream loss](OBSTRUCTIONS.md#the-sharp-window-length-for-distinguishing-token-actions) · [Exact audit](audit_symbol_depth.py)
+
+~~~powershell
+python -B research/frontier/symbol_refinement.py --check research/frontier/symbol_refinement_result.json
+python -B research/frontier/audit_symbol_depth.py
+~~~

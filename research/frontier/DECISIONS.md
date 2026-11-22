@@ -34,3 +34,7 @@ The latest predictor learned the binary operation itself from ordinary label lik
 ## Did ordinary text pay for a learned operation on the frequency bit?
 
 The winning truth table complemented the previous bit and reversed its decoder rows. It improved on a calibrated bigram, tied the original lag, and lost to a similarly priced raw trigram. Close this one-bit operation search. The subsequent question is which raw tokens can share a computational action, since changing the recurrence over a fixed partition can discard a distinction before learning begins. [Prospective test](EVIDENCE.md#selecting-a-binary-memory-update-on-ordinary-text)
+
+## Which raw tokens may execute the same action?
+
+Retain normalized two-sided context probabilities as an exact criterion for lossless internal symbols with a fixed within-cell refinement. The sharp observation horizon is $2d-1$ for a known finite predictive rank $d$. Ordinary three-token likelihood learned the two genuine alias pairs on the six-token source; pair likelihood erased a distinction that costs 0.053465 nats per token on an unlimited stationary stream. A raw-context-dependent within-cell decoder changes the mathematical question. The exact criterion and data leave acquisition of a physically affordable general causal update open. [Theorem](FOUNDATION.md#when-two-raw-tokens-can-share-one-internal-symbol) · [Measured learning](EVIDENCE.md#learning-which-token-identities-can-share-an-action)
