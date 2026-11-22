@@ -1,6 +1,10 @@
-# FP mathematics library
+# Literature archive
 
 The [primary index](index.csv) has one row per indexed edition. Paths start at the FP repository root. The first 722 records, OAI-1006-001 through OAI-1006-722, follow the original catalog order. The version and review fields distinguish later editions and withdrawals. Reading status is independent of both. [Section-level progress](READING_PROGRESS.md) · [Mathematical instruments](mathematical_instruments.md) · [Cross-paper results](research_connections.md) · [Daily discoveries](DAILY_DISCOVERIES.md) · [Work division and requests](COORDINATION.md)
+
+## Reading principles
+
+Each paper is an independent knowledge asset. Study its own problem, argument, evidence and limitations in full. FP relevance is optional. A transfer proposal requires the source theorem, concrete target objects, a justified mapping with extra assumptions, a new deduction or falsifiable prediction, and failure conditions. Keep author claims, independent deductions, conjectures, analogies and verified results distinct. Existing cross-paper connections are retained and reassessed in [CONNECTION_REVIEW.md](CONNECTION_REVIEW.md). Routine readings do not directly modify core FP theory.
 
 ## OpenAI collection
 

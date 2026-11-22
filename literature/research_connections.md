@@ -1,5 +1,7 @@
 # Connections between proofs and computation
 
+> Review status, November 23, 2026: these historical records are preserved. Reassessment under the user’s five-part transfer standard is tracked in [CONNECTION_REVIEW.md](CONNECTION_REVIEW.md). A recorded analogy is not an established FP mechanism.
+
 ## How much state must exist before a future query is known?
 
 **PROVED for the following access model.** Seven fair input bits arrive before a uniformly chosen seven-bit query. The desired next token is their binary inner product, independently flipped with probability $\eta\in[0,1/2)$. At prediction the reader can consult a previously computed synopsis and inspect one raw bit. With four synopsis bits it matches the loss of reading all seven. With three bits the best possible learner, including nonlinear encoders and adaptive readers, loses an additional $(\log 2-h(\eta))/2$ nats on average. Here $h$ is binary entropy in nats.
