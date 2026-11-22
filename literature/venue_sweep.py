@@ -35,6 +35,12 @@ TITLE_PATTERNS = {
     "computation and learning": r"learning|regret|complexity|algorithm(?:ic|s)?|lower bounds?|theorem prov(?:ers?|ing)|formal verification|computability|communication costs?",
     "optimization and structure": r"tensors?|matri(?:x|ces)|polynomials?|optimi[sz]ation|approximation|dynamical systems?|entropy|information theor(?:y|etic)|representations?|factorizations?|spectral|stochastic control",
     "physical computation": r"(?:photonic|polaritonic|optical|quantum|boolean|arithmetic|neuromorphic) circuits?|memory bandwidth|reversible comput(?:ing|ation)",
+    "predictive state and identification": r"predictive states?|causal states?|state identification|system identification|hidden markov|observable operators?|weighted automata|finite automata|sufficient statistics?|filtering",
+    "sequence and world models": r"sequence model(?:s|ing)?|world models?|state[ -]space|recurrent|language models?|transformers?|attention|autoregressive|dynamics models?",
+    "representation and learning dynamics": r"feature learning|representation learning|learning dynamics|implicit bias|symmetry breaking|compositional|in[ -]context learning|test[ -]time|continual learning|meta[ -]learning|superposition",
+    "information and memory": r"information bottleneck|minimum description length|predictive information|rate[ -]distortion|compress(?:ion|ive)|working memory|associative memory|memory[ -]augmented|neural algorithms?|algorithm discovery",
+    "observation and latent interfaces": r"tokeni[sz](?:ation|er|ers)|byte[ -]level|token[ -]free|latent prediction|continuous representations?|multimodal|patch(?:es|ing)?|sensorimotor",
+    "interaction and decision": r"reinforcement learning|partial(?:ly)? observab(?:ility|le)|adaptive control|planning|exploration|decision processes?|causal inference|interventions?",
 }
 HEADERS = {"User-Agent": "FP-mathematics-literature/1.0 (+https://github.com/alan-ai1196/FP)"}
 CROSSREF = "https://api.crossref.org"
@@ -103,18 +109,19 @@ def publication_in_window(work, start, end):
     return None
 
 
-def record(source, identifier, title, authors, released, url, pdfs, coverage_date, basis):
+def record(source, identifier, title, authors, released, url, pdfs, coverage_date, basis, abstract=""):
     return {"id": identifier, "title": title, "authors": authors, "publication_date": released,
             "source": source, "doi_or_arxiv": identifier.removeprefix("doi:") if identifier.startswith("doi:") else "",
             "original_url": url, "date_in_scope": coverage_date, "date_basis": basis,
-            "title_matches": matches(title), "pdf_candidates": list(dict.fromkeys(pdfs)),
+            "title_matches": matches(title + " " + abstract), "abstract": abstract,
+            "pdf_candidates": list(dict.fromkeys(pdfs)),
             "open_pdf_url": "", "local_file_path": "", "reading_status": "unread",
-            "publication_review_status": "Publisher or venue record; review status unassessed",
+            "publication_review_status": "Publisher or venue record. Review status unassessed",
             "formal_verification_status": "unassessed", "ai_involvement": "unassessed"}
 
 
 def crossref_source(name, base, filters, start, end, stats):
-    fields = "DOI,title,author,published,published-online,published-print,issued,link,URL"
+    fields = "DOI,title,abstract,author,published,published-online,published-print,issued,link,URL"
     common = {"filter": ",".join([*filters, f"from-pub-date:{start}", f"until-pub-date:{end}"]),
               "select": fields, "rows": 250}
     stats["queries"].append(base + "?" + urlencode(common))
@@ -132,8 +139,13 @@ def crossref_source(name, base, filters, start, end, stats):
             seen.add(work["DOI"])
             stats["scanned"] += 1
             title = cleaned(" ".join(work.get("title", [])))
+            abstract = cleaned(work.get("abstract", ""))
             when = publication_in_window(work, start, end)
-            if not when or not matches(title):
+            if not when:
+                continue
+            # Specialist venues are retained in full. Missing abstracts in broad
+            # journals are unresolved leads, not evidence of irrelevance.
+            if name in ("Nature", "Science") and abstract and not matches(title + " " + abstract):
                 continue
             doi = work["DOI"].lower()
             pdfs = [x["URL"] for x in work.get("link", []) if "pdf" in x.get("content-type", "").lower()
@@ -141,7 +153,9 @@ def crossref_source(name, base, filters, start, end, stats):
             authors = [a.get("name") or " ".join(filter(None, (a.get("given"), a.get("family"))))
                        for a in work.get("author", [])]
             item = record(name, "doi:" + doi, title, authors, when[0], "https://doi.org/" + doi,
-                          pdfs, when[0], "Crossref publisher deposit: " + when[1])
+                          pdfs, when[0], "Crossref publisher deposit: " + when[1], abstract)
+            if not matches(title + " " + abstract):
+                item["relevance_pending"] = "Retained by specialist venue" if name not in ("Nature", "Science") else "Abstract unavailable. Inspect primary page"
             item["version"] = "Publisher-registered journal or proceedings record"
             yield item
         if stats["scanned"] >= stats["reported_total"]:
@@ -178,8 +192,6 @@ def pmlr_source(name, start, end, stats):
         for entry in entries:
             stats["scanned"] += 1
             title = cleaned(re.search(r'<p class="title">(.*?)</p>', entry, re.S)[1])
-            if not matches(title):
-                continue
             authors = cleaned(re.search(r'<span class="authors">(.*?)</span>', entry, re.S)[1]).split(",")
             links = {cleaned(text): urljoin(url, html.unescape(link))
                      for link, text in re.findall(r'<a href="([^"]+)"[^>]*>(.*?)</a>', entry, re.S)}
@@ -213,14 +225,15 @@ def openreview_source(name, start, end, stats):
                     break
                 fields = {key: obj.get("value") for key, obj in note["content"].items()}
                 title = cleaned(fields.get("title") or "")
-                if changed > end or fields.get("venueid") != venue or not matches(title):
+                if changed > end or fields.get("venueid") != venue:
                     continue
                 forum = note["forum"]
                 published = datetime.fromtimestamp(note["pdate"] / 1000, timezone.utc).date() if note.get("pdate") else ""
                 pdfs = ["https://openreview.net/pdf?id=" + note["id"]] if fields.get("pdf") else []
                 yield record(name, "openreview:" + forum, title, fields.get("authors") or [], str(published),
                              "https://openreview.net/forum?id=" + forum, pdfs, str(changed),
-                             "Accepted OpenReview note modification in UTC; content change unverified")
+                             "Accepted OpenReview note modification in UTC. Content change unverified",
+                             cleaned(fields.get("abstract") or ""))
             if len(notes) < base["limit"] or previous is not None and previous < start:
                 break
             offset += len(notes)
@@ -240,7 +253,7 @@ def program_source(name, start, end, stats):
                     continue
                 stamp = datetime.fromisoformat(event["starttime"]).astimezone(timezone.utc).date()
                 title = cleaned(event["name"])
-                if not start <= stamp <= end or not matches(title):
+                if not start <= stamp <= end:
                     continue
                 primary = event.get("paper_url") or urljoin(domain, event["virtualsite_url"])
                 parsed = urlparse(primary)
@@ -248,7 +261,8 @@ def program_source(name, start, end, stats):
                 key = "openreview:" + forum if forum else f"{name.lower()}:{year}:{event['id']}"
                 pdf = event.get("paper_pdf_url") or ("https://openreview.net/pdf?id=" + forum if forum else "")
                 yield record(name, key, title, [a["fullname"] for a in event["authors"]], "", primary,
-                             [urljoin(domain, pdf)] if pdf else [], str(stamp), "Official conference presentation (UTC)")
+                             [urljoin(domain, pdf)] if pdf else [], str(stamp), "Official conference presentation (UTC)",
+                             cleaned(event.get("abstract") or ""))
             url = program.get("next")
 
 
@@ -359,7 +373,7 @@ def sweep_venues(as_of, days=7, pdf_dir=None, curation=None):
         if pdf_dir is not None:
             save_pdf(item, Path(pdf_dir))
     return {"as_of": str(end), "from": str(start), "days": days, "title_patterns": TITLE_PATTERNS,
-            "scope": "Publisher-registered publication dates for 12 journal ISSNs and exact annual ACM/IEEE proceedings titles. PMLR release dates for current/prior year ICML and COLT volumes. ICLR/NeurIPS official orals/posters by presentation date, plus accepted OpenReview note modifications, including metadata edits. Inclusive UTC dates. Title filter only. Partial-date Crossref records qualify when their date range overlaps the window.",
+            "scope": "Publisher-registered publication dates for the declared journal ISSNs and exact annual ACM/IEEE proceedings titles. All in-window specialist math and ML venue records are retained. Nature and Science use title plus deposited abstract, retaining records with missing abstracts for inspection. PMLR release dates, ICLR/NeurIPS official presentation dates and accepted OpenReview note modifications are distinct discovery channels. Inclusive UTC dates. Partial publication dates qualify when their ranges overlap the window. Metadata intake is not full reading.",
             "sources": sources, "items": result}
 
 

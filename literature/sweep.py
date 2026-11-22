@@ -4,11 +4,13 @@ import argparse
 import hashlib
 import json
 import re
+import time
 import xml.etree.ElementTree as ET
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit
+from zoneinfo import ZoneInfo
 
 import requests
 from bs4 import BeautifulSoup
@@ -18,16 +20,31 @@ import library
 import venue_sweep
 
 AGENT = {'User-Agent': 'FP-mathematics-library/1.0 (https://github.com/alan-ai1196/FP)'}
-CATEGORIES = ('math.CO', 'math.PR', 'math.MG', 'cs.CC', 'cs.LG', 'stat.ML')
-PHRASES = ('representation theorem', 'predictive state', 'communication complexity', 'tensor rank',
-           'regret bound', 'convex geometry', 'formal proof', 'symmetry breaking')
-INSTITUTION = re.compile(r'mathematic|theorem|formal proof|formaliz|riemann|scientific discovery|alphaproof', re.I)
+CATEGORIES = ('cs.LG', 'cs.AI', 'cs.CL', 'cs.CV', 'cs.NE', 'cs.IT', 'cs.DS', 'cs.CC', 'cs.LO',
+              'stat.ML', 'stat.TH', 'math.PR', 'math.ST', 'math.OC', 'math.DS', 'math.CO',
+              'math.MG', 'math.FA', 'math.NA')
+PHRASES = ('predictive state', 'causal state', 'state identification', 'system identification',
+           'observable operator', 'hidden Markov', 'weighted automata', 'finite automata',
+           'sequence model', 'world model', 'state space model', 'recurrent',
+           'representation learning', 'feature learning', 'representation theorem',
+           'learning dynamics', 'implicit bias', 'symmetry breaking', 'compositional',
+           'in-context learning', 'test-time learning', 'continual learning',
+           'information bottleneck', 'minimum description length', 'predictive information',
+           'rate distortion', 'sufficient statistic', 'neural compression',
+           'working memory', 'associative memory', 'memory augmented', 'algorithm discovery',
+           'algorithmic reasoning', 'neural algorithm', 'language model', 'tokenization',
+           'byte level', 'byte-level', 'token free', 'token-free', 'latent prediction',
+           'continuous representation', 'multimodal representation', 'patch representation',
+           'reinforcement learning', 'partial observability', 'adaptive control', 'regret bound',
+           'communication complexity', 'tensor rank', 'convex geometry', 'formal proof')
+ARXIV_PAGE_SIZE = 200
+ARXIV_REQUEST_INTERVAL = 3.1
 ARXIV_ID = re.compile(r'^\d{4}\.\d{4,5}v\d+$')
 GIT_REPOS = ('openai/math', 'leanprover-community/mathlib4', 'leanprover/lean4')
 FEEDS = {
     'OpenAI research/news feed': 'https://openai.com/news/rss.xml',
-    'Google DeepMind feed': 'https://deepmind.google/blog/rss.xml',
     'Anthropic research index': 'https://www.anthropic.com/research',
+    'Google DeepMind feed': 'https://deepmind.google/blog/rss.xml',
 }
 
 
@@ -52,34 +69,81 @@ def archive(url, path, kind):
     temp.replace(path)
 
 
-def arxiv(start, end):
+def arxiv(start, end, download=True):
+    """Page the declared title/abstract search until its revision window is covered."""
     query = '(' + ' OR '.join('cat:' + cat for cat in CATEGORIES) + ') AND ('
-    query += ' OR '.join(f'ti:"{phrase}"' for phrase in PHRASES) + ')'
+    query += ' OR '.join(f'(ti:"{phrase}" OR abs:"{phrase}")' for phrase in PHRASES) + ')'
     url = 'https://export.arxiv.org/api/query'
-    limit = 50
-    data = ET.fromstring(get(url, params=dict(search_query=query, start=0, max_results=limit,
-        sortBy='lastUpdatedDate', sortOrder='descending')).content)
-    entries = data.findall('{*}entry')
     rows, problems = [], []
-    dates = []
-    for entry in entries:
-        updated = date.fromisoformat(entry.findtext('{*}updated')[:10])
-        dates.append(updated)
-        if not start <= updated <= end:
-            continue
-        paper = entry.findtext('{*}id').rsplit('/', 1)[-1]
-        if not ARXIV_ID.fullmatch(paper):
-            raise ValueError(f'Unexpected versioned arXiv ID {paper}')
+    selected, seen = [], set()
+    offset, pages, examined = 0, 0, 0
+    previous = None
+    covered = False
+    while True:
+        if pages:
+            time.sleep(ARXIV_REQUEST_INTERVAL)
+        try:
+            data = ET.fromstring(get(url, params=dict(search_query=query, start=offset,
+                max_results=ARXIV_PAGE_SIZE, sortBy='lastUpdatedDate', sortOrder='descending')).content)
+            entries = data.findall('{*}entry')
+            reported_total = data.findtext('{http://a9.com/-/spec/opensearch/1.1/}totalResults')
+            pages += 1
+            if not entries:
+                covered = reported_total is not None and offset >= int(reported_total)
+                if not covered:
+                    problems.append(f'Empty page at offset {offset} before confirmed exhaustion')
+                break
+            page_new = 0
+            for entry in entries:
+                paper = entry.findtext('{*}id', '').rsplit('/', 1)[-1]
+                if not ARXIV_ID.fullmatch(paper):
+                    raise ValueError(f'Unexpected versioned arXiv ID {paper}')
+                updated = date.fromisoformat(entry.findtext('{*}updated')[:10])
+                if previous is not None and updated > previous:
+                    raise ValueError('arXiv returned unsorted revision dates')
+                previous = updated
+                examined += 1
+                if paper in seen:
+                    continue
+                seen.add(paper)
+                page_new += 1
+                if updated < start:
+                    covered = True
+                    break
+                if updated <= end:
+                    selected.append((paper, updated, entry))
+            if covered:
+                break
+            offset += len(entries)
+            if reported_total is not None and offset >= int(reported_total):
+                covered = True
+                break
+            if not page_new:
+                raise ValueError('arXiv pagination repeated records before covering the window')
+        except (requests.RequestException, ValueError, TypeError, ET.ParseError) as exc:
+            problems.append(f'Discovery page at offset {offset}: {exc}')
+            break
+    # Keep discoveries even if a later page or document cannot be retrieved.
+    for paper, updated, entry in selected:
         title = ' '.join(entry.findtext('{*}title').split())
         base = library.CORPUS / 'arxiv_frontier' / paper
         pdf = base / 'paper.pdf'
+        base.mkdir(parents=True, exist_ok=True)
+        save_json(base / 'metadata.json', dict(id=paper, title=title,
+            abstract=' '.join(entry.findtext('{*}summary', '').split()), updated=str(updated),
+            original_url='https://arxiv.org/abs/' + paper))
         for dest, link, kind in ((pdf, f'https://arxiv.org/pdf/{paper}', 'pdf'),
                                   (base/'source.tar.gz', f'https://arxiv.org/src/{paper}', 'source')):
+            if not download:
+                continue
             try:
+                if not dest.exists():
+                    time.sleep(ARXIV_REQUEST_INTERVAL)
                 archive(link, dest, kind)
-            except (requests.RequestException, ValueError) as exc:
+            except (requests.RequestException, ValueError, OSError) as exc:
                 problems.append(f'{paper} {kind}: {exc}')
         original = 'https://arxiv.org/abs/' + paper
+        topics = venue_sweep.matches(title + ' ' + entry.findtext('{*}summary', ''))
         rows.append(dict(id='arXiv-' + paper, title=title,
             authors=', '.join(a.findtext('{*}name') for a in entry.findall('{*}author')),
             publication_date=entry.findtext('{*}published')[:10], source='P3 arXiv',
@@ -87,15 +151,29 @@ def arxiv(start, end):
             local_file_path=pdf.relative_to(library.PROJECT).as_posix() if pdf.exists() else '',
             publication_review_status='arXiv author version. Journal status requires source check.',
             ai_involvement='Undetermined', formal_verification_status='Unassessed',
-            reading_status='unread', mathematical_topics=', '.join(c.get('term') for c in entry.findall('{*}category')),
-            follow_up_status='Read methods, proofs and appendices.'))
-    return rows, dict(endpoint=url, query=query, records_examined=len(entries), matched=len(rows),
-        limit=limit, date_window_covered=(len(entries) < limit or bool(dates and min(dates) < start)),
+            reading_status='unread', mathematical_topics=', '.join(topics)
+                or ', '.join(c.get('term') for c in entry.findall('{*}category')),
+            follow_up_status='Read methods, proofs and appendices.' if pdf.exists()
+                else 'Full text queued for download. Metadata is not a completed reading.'))
+    return rows, dict(endpoint=url, query=query, records_examined=examined, matched=len(rows),
+        pages=pages, page_size=ARXIV_PAGE_SIZE, date_window_covered=covered,
+        scope='Declared categories intersected with title OR abstract phrases, by revision date. '
+              'Metadata discovery is not full reading and is not a census of all relevant literature.',
         retrieval_issues=problems)
 
 
-def publication_files(url, label):
-    soup = BeautifulSoup(get(url).content, 'html.parser')
+def publication_files(url, label, download=True):
+    response = get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    article = soup.find('article') or soup.find('main') or soup
+    article_text = article.get_text(' ', strip=True)
+    topics = venue_sweep.matches(article_text)
+    # Institution research pages remain leads even when terminology is unfamiliar.
+    folder_name = label.split()[0].lower()
+    slug = re.sub(r'[^A-Za-z0-9_.-]', '_', urlsplit(url).path.strip('/')) or 'index'
+    article_path = library.CORPUS / 'institutional' / folder_name / (slug + '.html')
+    article_path.parent.mkdir(parents=True, exist_ok=True)
+    article_path.write_bytes(response.content)
     date_meta = soup.select_one('meta[property="article:published_time"], meta[name="citation_date"]')
     date_text = date_meta.get('content', '')[:10] if date_meta else ''
     files = {}
@@ -118,17 +196,19 @@ def publication_files(url, label):
         ident = hashlib.sha256(dest.encode()).hexdigest()[:20]
         local = library.CORPUS/folder/(ident + '.pdf')
         info = dict(kind=kind, url=dest, id='PDF-'+ident)
-        try:
-            archive(dest, local, 'pdf')
+        if download:
+            try:
+                archive(dest, local, 'pdf')
+            except (requests.RequestException, ValueError) as exc:
+                info['retrieval_issue'] = str(exc)
+        if local.exists():
             info['local_file_path'] = local.relative_to(library.PROJECT).as_posix()
-        except (requests.RequestException, ValueError) as exc:
-            info['retrieval_issue'] = str(exc)
         results.append(info)
     authors = [tag.get('content', '').strip() for tag in soup.select('meta[name="citation_author"]')]
-    return date_text, ', '.join(author for author in authors if author), results
+    return date_text, ', '.join(author for author in authors if author), results, article_path.relative_to(library.PROJECT).as_posix(), topics
 
 
-def institution(label, url, start, end):
+def institution(label, url, start, end, download=True):
     response = get(url)
     announcements = {}
     if label.startswith('Anthropic'):
@@ -136,25 +216,28 @@ def institution(label, url, start, end):
         for a in soup.select('a[href]'):
             src = urljoin(url, a['href'])
             title = a.get_text(' ', strip=True)
-            if '/research/' in src and INSTITUTION.search(title):
+            if '/research/' in src and urlsplit(src).hostname == urlsplit(url).hostname:
                 announcements.setdefault(src, (title, ''))
     else:
         root = ET.fromstring(response.content)
         for item in root.findall('.//item'):
             title, src = item.findtext('title'), item.findtext('link')
             stamp = parsedate_to_datetime(item.findtext('pubDate')).date()
-            if start <= stamp <= end and INSTITUTION.search(title):
+            if start <= stamp <= end:
                 announcements[src] = (title, str(stamp))
     matches = []
     for src, (title, stamp) in announcements.items():
         item = dict(title=title, url=src, date=stamp)
         try:
-            pub_date, item['authors'], item['publisher_files'] = publication_files(src, label)
+            pub_date, item['authors'], item['publisher_files'], item['local_article'], item['topics'] = publication_files(src, label, download)
             item['date'] = pub_date or stamp
+            item['relevance'] = 'topic match' if item['topics'] else 'pending primary-page inspection'
         except requests.RequestException as exc:
             item['retrieval_issue'] = str(exc)
         matches.append(item)
-    return dict(endpoint=url, matched=len(matches), items=matches)
+    return dict(endpoint=url, matched=len(matches), items=matches,
+        scope='All recent feed items and all visible Anthropic research links. No mathematics-title filter. '
+              'Research pages and uncertain leads are retained. Landing-page coverage is not the complete institutional archive.')
 
 
 def github(repo):
@@ -177,7 +260,7 @@ def save_json(path, value):
     temporary.replace(path)
 
 
-def venues(end, days, imported):
+def venues(end, days, imported, download=True):
     directory = library.CORPUS/'peer_reviewed'
     saved = directory/f'venues-{end}.json'
     if imported is None:
@@ -185,7 +268,7 @@ def venues(end, days, imported):
         for snapshot in sorted(directory.glob('venues-????-??-??.json')):
             prior = json.loads(snapshot.read_text(encoding='utf-8'))
             curation.update({i['id']:i['curation'] for i in prior['items'] if i.get('curation')})
-        report = venue_sweep.sweep_venues(end, days, directory/'venue_docs', curation)
+        report = venue_sweep.sweep_venues(end, days, directory/'venue_docs' if download else None, curation)
     else:
         report = json.loads(imported.read_text(encoding='utf-8-sig'))
         if report['as_of'] != str(end) or report['days'] != days:
@@ -198,7 +281,7 @@ def venues(end, days, imported):
         companions = [manuscript.get('primary_url'), manuscript.get('source_url'),
                       curated.get('supplement_url'), curated.get('author_code')]
         collected = item['local_file_path']
-        if collected:
+        if collected and download:
             target = library.PROJECT/collected
             if not target.is_file():
                 raise FileNotFoundError(target)
@@ -233,7 +316,7 @@ def daily_entry(end, new_ids):
         path.write_text(log, encoding='utf-8')
 
 
-def sweep(end, days, venue_snapshot=None):
+def sweep(end, days, venue_snapshot=None, download=True):
     start = end - timedelta(days=days-1)
     index = library.ROOT/'index.csv'
     if not index.exists():
@@ -256,10 +339,18 @@ def sweep(end, days, venue_snapshot=None):
             library.git('fetch', 'origin', tip)
             observations['openai/math']['follow_up'] = 'New upstream revision fetched locally. Compare primary catalogs before assigning editions.'
     for name, url in FEEDS.items():
-        value = check(name, lambda: institution(name, url, start, end))
+        value = check(name, lambda: institution(name, url, start, end, download))
         if value:
             observations[name] = value
             for item in value['items']:
+                if item.get('local_article'):
+                    rows.append(dict(id='web:' + item['url'], title=item['title'], authors=item.get('authors', ''),
+                        publication_date=item['date'], source=name, original_url=item['url'],
+                        local_file_path=item['local_article'], version='Publisher web article captured ' + str(end),
+                        publication_review_status='Institutional web article. Research relevance requires reading.',
+                        reading_status='unread', formal_verification_status='Unassessed', ai_involvement='Unassessed',
+                        mathematical_topics=', '.join(item.get('topics', {})),
+                        follow_up_status='Inspect the complete article, linked paper and supplements.'))
                 for doc in item.get('publisher_files', []):
                     if doc['kind'] == 'paper':
                         companions = [p['url'] for p in item['publisher_files'] if p['kind'] == 'appendix']
@@ -270,11 +361,11 @@ def sweep(end, days, venue_snapshot=None):
                             fulltext_url=doc['url'], companion_urls=' '.join(companions + [item['url']]),
                             formal_verification_status='Unassessed', ai_involvement='Unassessed',
                             follow_up_status='Confirm author list and inspect linked supplementary files.'))
-    result = check('arXiv', lambda: arxiv(start, end))
+    result = check('arXiv', lambda: arxiv(start, end, download))
     if result:
         arxiv_rows, observations['arXiv'] = result
         rows.extend(arxiv_rows)
-    result = check('Journals and conferences', lambda: venues(end, days, venue_snapshot))
+    result = check('Journals and conferences', lambda: venues(end, days, venue_snapshot, download))
     if result:
         venue_rows, observations['Journals and conferences'] = result
         rows.extend(venue_rows)
@@ -288,6 +379,7 @@ def sweep(end, days, venue_snapshot=None):
     prior = json.loads(snapshot.read_text(encoding='utf-8')) if snapshot.exists() else {}
     seen_today = sorted(set(prior.get('newly_indexed',prior.get('new_arxiv_ids',[]))) | set(new_ids))
     save_json(snapshot, dict(date=str(end), window_start=str(start), window_end=str(end), newly_indexed=seen_today,
+        document_downloads_requested=download,
         sources=observations))
     daily_entry(end, seen_today)
     print(f'{end} within {start} to {end}: {len(rows)} identified editions, {len(new_ids)} first indexed.')
@@ -298,12 +390,13 @@ def sweep(end, days, venue_snapshot=None):
 
 if __name__ == '__main__':
     cli = argparse.ArgumentParser(description=__doc__)
-    cli.add_argument('--date', type=date.fromisoformat, default=date.today())
+    cli.add_argument('--date', type=date.fromisoformat, default=datetime.now(ZoneInfo('Asia/Shanghai')).date())
     cli.add_argument('--days', type=int, default=7)
     cli.add_argument('--venue-snapshot', type=Path, help="Use a completed venue pass for exactly this window")
+    cli.add_argument('--metadata-only', action='store_true', help='Save the complete discovery queue first. Full texts stay pending until downloaded.')
     options = cli.parse_args()
     if options.days < 1:
         cli.error('--days must be positive')
     library.CORPUS.mkdir(parents=True, exist_ok=True)
     with FileLock(str(library.CORPUS/'.sweep.lock'), timeout=0):
-        sweep(options.date, options.days, options.venue_snapshot)
+        sweep(options.date, options.days, options.venue_snapshot, download=not options.metadata_only)
