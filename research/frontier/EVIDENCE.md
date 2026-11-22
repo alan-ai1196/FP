@@ -375,3 +375,32 @@ Each finite layout requires a transient/cycle boundary, its $K$ mark rates, one 
 ~~~powershell
 python -B research/frontier/probability_clock.py --check research/frontier/probability_clock_result.json
 ~~~
+
+## When prediction pays for compressing a delay
+
+**EMPIRICALLY OBSERVED.** A learner searched 131,072 possible lags in 256 independent raw training windows. The true lag of 258,048 received 223 matching labels and the runner-up received 160. Fitting read 67,109,120 training tokens and made 33,554,432 candidate matches. Three new streams each supplied one warm-up block. Their next 2,064,384, 1,032,192 and 4,128,768 targets fitted the two error probabilities, selected a representation at each price and measured frozen performance, respectively. No deployment kernel could reread an older raw observation after it had been encoded. [Registration](https://github.com/alan-ai1196/FP/blob/be51cdd/research/frontier/NEXT.md) · [Statistical replay](causal_state.py) · [Packed C implementation](delayed_state.c) · [Observed and population intervals](causal_state_result.json)
+
+| Installed predictor | Charged bytes | Raw reporting NLL | Reporting score at $\lambda=0.30$ | Expected score at $\lambda=0.30$ given these fitted rates |
+|---|---:|---:|---:|---:|
+| Fair forecast | 0 | 0.693147 | 0.693147 | 0.693147 |
+| Raw delay ring | 32,274 | 0.376103 | 0.676270 | 0.676938 |
+| Hamming-coded ring | 29,312 | 0.398425 | 0.671044 | 0.671581 |
+
+The same selection rule chose raw storage at zero price, coded storage at 0.30, and the fair predictor at 0.40. The coded predictor made 563,275 reporting errors and the raw one 514,679. At the middle price the coded predictor gave up 0.022322 nats in unpriced loss and gained 0.027548 nats from reduced memory, an observed net gain of 0.005226 nats per token. The population column uses the actual frozen calibration probabilities and the analytically known source law. Its coded score beats the 0.676770 lower bound even for binary-linear boundary summaries with arbitrary readouts, ideal calibration and zero control overhead. This is a finite operating point on the general [online memory frontier](FOUNDATION.md#a-sharp-memory-and-prediction-tradeoff-for-a-delayed-stream).
+
+The coded ring keeps 4,096 successive 57-bit indices, or 29,184 payload bytes. The raw ring keeps 32,256 payload bytes. The price includes respectively 128 and 18 additional bytes as registered. The C encoder calculates the six syndrome bits, conditionally corrects a bit, and writes the systematic part to the slot. Its decoder reconstructs one prototype for 63 forecasts. The evaluator counts mismatches under a frozen normalized Bernoulli readout, so the timed kernel measures retrieval, update and scoring comparisons. It avoids materializing probability vectors or logarithms for each token. A separate reference recalculated predictions from raw microblocks. Both native models reproduced every aggregate count on all three full streams and nine short inputs with unaligned bit offsets, partial final groups and raw remainders.
+
+**MEASURED ON CPU.** MSVC x64 14.52, optimization /O2, Ryzen 7 5800X. On the complete reporting tape including warm-up, six replay timings were 0.454–0.580 ms with raw storage and 3.134–3.959 ms with coded storage. Encoding slowed the kernel by about sevenfold in the typical replay. The portable Python data-generation, fitting and verification run took about 0.33 seconds with an observed peak process working set of 48 MB. Kernel timers exclude data generation, compiling, ring allocation and probability calibration.
+
+There is a consequential physical reversal. The native library grew from 103,936 to 105,472 bytes on disk when the coded kernel was added. Executable-section size grew by 1,264 bytes and read-only data by 88 bytes. If all 1,536 additional file bytes are charged to one stream at the same exchange rate, the coded score gains a further **0.014286** nats of cost and loses to the raw ring. Sharing those extra bytes equally across three simultaneous streams reduces the increment below the measured memory advantage. The extra CPU time persists. The result specifies the storage price, the chosen deployment convention and the measurements needed to use another convention. Binary size and timings can change with compiler options and hardware.
+
+**NUMERICALLY VERIFIED.** Independent exact checks covered all 374 binary-linear subspaces in five dimensions, computing joint noise-cell probabilities and the entropy bound. Enumeration of every short binary window for 55 pairs of candidate lags verified the uniform forest-edge law used in the identification proof. Lean 4.34.1 checked that translation-invariant cells of Boolean histories are cosets of an addition-closed kernel; both axiom reports list propext and Quot.sound. The MGL inequality, online construction and physical price comparisons are separate arguments. [Independent exact checks](audit_causal_state.py) · [Lean source](CausalState.lean)
+
+~~~powershell
+python -B research/frontier/causal_state.py --check research/frontier/causal_state_result.json
+python -B research/frontier/causal_state.py --native --check research/frontier/causal_state_result.json
+python -B research/frontier/audit_causal_state.py
+& "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/CausalState.lean
+~~~
+
+The optional native replay builds raw-only and combined libraries in a temporary directory. It uses the available Visual Studio x64 C toolchain on Windows, or a C11 compiler on POSIX. It reports fresh kernel timings and library sizes outside the deterministic statistical receipt.
