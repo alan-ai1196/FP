@@ -1,0 +1,268 @@
+{
+  "controls": {
+    "tables": 256,
+    "minimal_state_histogram": {
+      "1": 2,
+      "2": 2,
+      "3": 8,
+      "4": 52,
+      "5": 48,
+      "6": 64,
+      "7": 64,
+      "8": 16
+    }
+  },
+  "text": {
+    "registration": "0680d73",
+    "vocabulary": 50257,
+    "prefix_hashes": {
+      "1310720": "56bdacca110726fcc7e22527b6b1db3faaee9d0ba1d7d956ed4598fb4888d4cc",
+      "1441792": "319adf9f6910bf06e4e7c1f5f49852334b5897e940ef95e3100bb17b7819b146",
+      "1572864": "f450babb24e2576c647833d1819073dfd3d7461d1ceb605136d4a13acea8730a"
+    },
+    "split_points": [
+      0,
+      786432,
+      917504,
+      1048576,
+      1310720,
+      1441792,
+      1572864
+    ],
+    "selected_mask": 170,
+    "selected_truth_values_in_history_order": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "selected_history_bits_from_newest": [
+      0
+    ],
+    "selected_copy_mask": 170,
+    "minimal_automaton": {
+      "history_to_state": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "outputs": [
+        0,
+        1
+      ],
+      "transitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    "active_rows": 723,
+    "selected_payload_bytes_including_live_byte": 3617,
+    "selected_packed_rows_sha256": "03398aa6fd64daf8b0055164e619e90bbf9077c2dae0dacf06c97d881d14d7d3",
+    "selection": {
+      "table": {
+        "extra_bits": 28936,
+        "nll": [
+          "7.066025599",
+          "7.066025600"
+        ],
+        "priced_nll": [
+          "7.066623342",
+          "7.066623343"
+        ]
+      },
+      "copy": {
+        "extra_bits": 28928,
+        "nll": [
+          "7.066025599",
+          "7.066025600"
+        ],
+        "priced_nll": [
+          "7.066623177",
+          "7.066623178"
+        ]
+      },
+      "full_history": {
+        "extra_bits": 28936,
+        "nll": [
+          "7.066844707",
+          "7.066844708"
+        ],
+        "priced_nll": [
+          "7.067442449",
+          "7.067442450"
+        ]
+      },
+      "raw_trigram": {
+        "extra_bits": 28924,
+        "nll": [
+          "7.065686012",
+          "7.065686013"
+        ],
+        "priced_nll": [
+          "7.066283506",
+          "7.066283507"
+        ]
+      }
+    },
+    "reporting": {
+      "table": {
+        "extra_bits": 28936,
+        "nll": [
+          "7.150432816",
+          "7.150432817"
+        ],
+        "priced_nll": [
+          "7.151030559",
+          "7.151030560"
+        ]
+      },
+      "copy": {
+        "extra_bits": 28928,
+        "nll": [
+          "7.150432816",
+          "7.150432817"
+        ],
+        "priced_nll": [
+          "7.151030393",
+          "7.151030394"
+        ]
+      },
+      "full_history": {
+        "extra_bits": 28936,
+        "nll": [
+          "7.150986958",
+          "7.150986959"
+        ],
+        "priced_nll": [
+          "7.151584700",
+          "7.151584701"
+        ]
+      },
+      "raw_trigram": {
+        "extra_bits": 28924,
+        "nll": [
+          "7.150287117",
+          "7.150287118"
+        ],
+        "priced_nll": [
+          "7.150884611",
+          "7.150884612"
+        ]
+      },
+      "calibrated": {
+        "extra_bits": 0,
+        "nll": [
+          "7.152637450",
+          "7.152637451"
+        ],
+        "priced_nll": [
+          "7.152637450",
+          "7.152637451"
+        ]
+      },
+      "smoothed_successor": {
+        "nll": [
+          "7.156115143",
+          "7.156115144"
+        ]
+      }
+    },
+    "acquisition": {
+      "candidate_tables": 128,
+      "fit_block_target_count": 131072,
+      "row_purchase_target_count": 131072,
+      "selection_target_count_per_table": 131072,
+      "smoothed_pairs": 346854,
+      "frequency_group_types": 244,
+      "full_history_exceptions": {
+        "available_bits": 28936,
+        "cells": 904,
+        "installed_bits": 28936,
+        "calibration_cells": 36068,
+        "gate_cells": 35277
+      },
+      "raw_trigram": {
+        "available_bits": 28936,
+        "cells": 657,
+        "installed_bits": 28924,
+        "calibration_cells": 75931,
+        "gate_cells": 74113
+      }
+    },
+    "posthoc_calibration_geometry": {
+      "sample": [
+        786432,
+        917504
+      ],
+      "occupied_joint_coordinates": 20331,
+      "endpoint_history_indices": [
+        5,
+        6
+      ],
+      "positions": [
+        "1",
+        "0",
+        "5598189471/6343739614",
+        "39627/148714",
+        "1",
+        "0",
+        "1",
+        "10998739983/44185038368"
+      ],
+      "max_total_variation": "660655538/1253882091",
+      "distinct_threshold_tables": 5,
+      "threshold_optimum": {
+        "mask": 170,
+        "empirical_conditional_nll": [
+          "0.448909716",
+          "0.448909717"
+        ]
+      },
+      "unrestricted_optimum": {
+        "mask": 204,
+        "empirical_conditional_nll": [
+          "0.446220117",
+          "0.446220118"
+        ]
+      }
+    },
+    "priced_score_beats": {
+      "copy": false,
+      "full_history": true,
+      "raw_trigram": false
+    },
+    "preregistered_success": false,
+    "posthoc_frozen_multibit_tables": {
+      "count": 124,
+      "best_mask": 42,
+      "best_score": {
+        "extra_bits": 30976,
+        "nll": [
+          "7.150834549",
+          "7.150834550"
+        ],
+        "priced_nll": [
+          "7.151474432",
+          "7.151474433"
+        ]
+      },
+      "beat_selected_copy": 0,
+      "beat_raw_trigram": 0
+    }
+  }
+}

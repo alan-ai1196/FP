@@ -185,6 +185,11 @@ def fit_sparse_trigram(train, output, base, bit_budget):
     boundary = FIT+CAL
     cal = grouped_counts(train,FIT,boundary,raw_id,output)
     gate = grouped_counts(train,boundary,len(train),raw_id,output)
+    return fit_sparse_cells(cal, gate, base, bit_budget, record_bits=44, live_bits=16)
+
+
+def fit_sparse_cells(cal, gate, base, bit_budget, record_bits, live_bits):
+    """Buy the highest-gain individual context exceptions at one fixed record size."""
     candidates = {}
     fitted = {}
     for key,(zeros,ones) in cal.items():
@@ -195,7 +200,7 @@ def fit_sparse_trigram(train, output, base, bit_budget):
         factors = [(num,den,n) for num,den,n in
                    ((GRID-p,GRID-base[x],gate[key][0]),(p,base[x],gate[key][1])) if n]
         bounds = gain(factors)
-        if net_positive(bounds,44,factors):
+        if net_positive(bounds, record_bits, factors):
             candidates[key] = (bounds,factors)
             fitted[key] = p
     def compare(a,b):
@@ -210,13 +215,13 @@ def fit_sparse_trigram(train, output, base, bit_budget):
         if odds_a != odds_b:
             return -1 if odds_a > odds_b else 1
         return (a > b)-(a < b)
-    maximum = max(0,(bit_budget-16)//44)
+    maximum = max(0, (bit_budget - live_bits) // record_bits)
     chosen = set(sorted(candidates,key=cmp_to_key(compare))[:maximum])
     bounds = tuple(sum(candidates[k][0][i] for k in chosen) for i in range(2))
-    if not net_positive(bounds,44*len(chosen)+16,(v for k in chosen for v in candidates[k][1])):
+    if not net_positive(bounds, record_bits * len(chosen) + live_bits, (v for k in chosen for v in candidates[k][1])):
         chosen.clear()
     installed = {k:fitted[k] for k in chosen}
-    work = dict(available_bits=bit_budget, cells=len(chosen), installed_bits=44*len(chosen)+16*bool(chosen),
+    work = dict(available_bits=bit_budget, cells=len(chosen), installed_bits=record_bits*len(chosen)+live_bits*bool(chosen),
                 calibration_cells=len(cal), gate_cells=len(gate))
     return installed, work
 

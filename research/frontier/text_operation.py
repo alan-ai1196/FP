@@ -59,7 +59,7 @@ def unpack(payload):
     }
 
 
-def fit_gate(gate, cal, buy, base):
+def fit_gate(gate, cal, buy, base, shared_bits=5):
     eligible = np.flatnonzero(
         (cal.sum(axis=2) > 0).all(axis=1) & (buy.sum(axis=2) > 0).all(axis=1)
     )
@@ -72,7 +72,7 @@ def fit_gate(gate, cal, buy, base):
                 ones * GRID + TAU * int(base[x]), (zeros + ones + TAU) * GRID
             )
             observations[x, z] = tuple(map(int, buy[x, z]))
-    selected = price(observations, base.tolist(), rates, shared_bits=5)
+    selected = price(observations, base.tolist(), rates, shared_bits=shared_bits)
     return pack(gate, selected, rates), len(eligible)
 
 

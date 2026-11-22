@@ -434,3 +434,32 @@ python -B research/frontier/learned_code.py --audit
 python -B research/frontier/learned_code.py --check research/frontier/learned_code_result.json
 python -B research/frontier/learned_code.py --native --check research/frontier/learned_code_result.json
 ~~~
+
+## Learning a shared bit of three text tokens
+
+**EMPIRICALLY OBSERVED.** On the registered FineWeb-Edu training stream, 128 candidate Boolean functions covered every way to split three binary history observations, up to exchanging the output names. The learner chose table 170, which simply returns the newest of the three frequency bits. On the 131,072 subsequent reporting targets it made exactly the same full-vocabulary forecasts as the independently selected direct copy. An extra installed table byte slightly increased its price. The sparse raw-token trigram won by 0.000146 nats per token with 12 fewer bits than the learned table. The registered criterion failed. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/0680d73/research/frontier/NEXT.md) · [Execution](text_statistic.py) · [Scores, sample identity and automaton](text_statistic_result.json)
+
+| Frozen predictor | Extra bits | Reporting nats/token | Reporting nats/token with price |
+|---|---:|---:|---:|
+| Smoothed successor | — | 7.156115 | — |
+| Calibrated successor | 0 | 7.152637 | 7.152637 |
+| Learned history table | 28,936 | 7.150433 | 7.151031 |
+| Selected direct copy | 28,928 | 7.150433 | 7.151030 |
+| Sparse complete three-bit history | 28,936 | 7.150987 | 7.151585 |
+| Raw-token trigram | 28,924 | 7.150287 | 7.150885 |
+
+The common model scored all 50,257 possible tokens through a normalized conditional distribution. Its successor table used 346,854 observed pairs and a 244-type frequency group. The three candidate input bits were the group memberships two, three and four token positions before the target. The most recent raw token addressed the readout. Calibration and row purchase each used 131,072 early targets. Selection scored each table on targets 1,310,720–1,441,791, for 16,777,216 candidate-target evaluations. Reporting used targets 1,441,792–1,572,863 after all tables, readouts and comparator budgets were frozen. The selected table used 723 five-byte rows, one table byte and one live byte. Its minimal online automaton has two states. The complete-history comparator bought 904 exception cells and the raw trigram bought 657. All three used the same calibration and purchase data. The acquisition comparison is CPU-only and uses a later continuation of the training file.
+
+**POST HOC.** All 124 previously fitted maps depending on at least two inputs also lost to both the copy and the raw trigram on the reporting block. The best such map by hindsight was table 42, at 7.151474 including its 30,976-bit price. Thus selecting the wrong finalist cannot explain this particular result among those frozen fits. This conclusion concerns the three frequency bits and their trained conditional readouts.
+
+A separate calibration-only check compared the eight empirical joint distributions of current raw token and binary target. A line segment between histories 5 and 6 achieved a maximum total-variation residual of 0.526888 across 20,331 occupied joint coordinates. Floating-point weighted medians located candidate projections and integer counts verified the eight resulting distances exactly. The residual gives no informative near-line guarantee for binary-target loss here. The five distinct threshold partitions in the resulting order included table 170. Their best unpriced, unconstrained empirical conditional entropy was 0.448910 nats per *binary* target. The best of all 128 empirical partitions was table 204 at 0.446220. These retrospective quantities describe binary group prediction with empirical cell readouts on calibration data. The registered score evaluates full raw-token probabilities on held-out data. Sampling noise and current-token frequency can both contribute to the measured residual. [Conditional geometry and its assumptions](FOUNDATION.md#when-one-predictive-bit-can-be-learned-by-sorting)
+
+**VERIFIED.** A scalar execution initialized from the reporting prefix, took the minimal automaton transitions, and rebuilt the selected raw-token probability at all 131,072 positions. It matched the vectorized histogram and outward-rounded NLL. Exhaustion of all 256 named Boolean maps, eight starting histories and all two-step-or-shorter continuations checked every quotient. Exactly 16 maps needed all eight online states. A statistical rerun with the hindsight comparison took 8.25 seconds and peaked at 187.6 MB process working set on the Ryzen 7 5800X. Adding the calibration geometry check took the total to 9.39 seconds and 188.4 MB.
+
+The separate complexity audit generated 86 graph channels including every labeled graph on two and four vertices. It independently computed optimized log loss for 2,116 binary partitions using categorical counts, positive smoothed counts and the queried binary target. Outward log intervals checked the private-token/edge entropy identity and the separation from every wrong cut. Another 3,072 partitions with unequal history weights checked the affine-line threshold result against full search. These are finite checks of the [general reduction](OBSTRUCTIONS.md#acquiring-one-predictive-bit-can-encode-minimum-bisection). [Audit](audit_predictive_split.py)
+
+~~~powershell
+python -B research/frontier/text_statistic.py --audit
+python -B research/frontier/text_statistic.py --check research/frontier/text_statistic_result.json
+python -B research/frontier/audit_predictive_split.py
+~~~
