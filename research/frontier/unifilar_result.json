@@ -1,0 +1,141 @@
+{
+  "registered_at": "f8bae86",
+  "exact": {
+    "balanced_raw_tokens": 514,
+    "stationary": [
+      "3/4",
+      "1/4"
+    ],
+    "pivot": [
+      1,
+      3
+    ],
+    "symbol_determinants": [
+      "0",
+      "0",
+      "5/64",
+      "-5/64"
+    ],
+    "recovered_actions": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "balanced_emissions": [
+      [
+        "1/8",
+        "1/8",
+        "5/8",
+        "1/8"
+      ],
+      [
+        "1/8",
+        "1/8",
+        "1/8",
+        "5/8"
+      ]
+    ],
+    "stationary_one_step_excess_multiclass_brier": "45/1024",
+    "recovered_topologies": 210,
+    "counterexample_next_means": [
+      "3/8",
+      "5/12",
+      "9/20"
+    ],
+    "counterexample_verdict": "third distinct post-reset forecast",
+    "same_triples_different_law": {
+      "matched_triples": 64,
+      "reset_then_two_retains": [
+        "5/8",
+        "1/8"
+      ],
+      "order_two_next_forecast": "47/76"
+    }
+  },
+  "sampled": {
+    "seed": 120311,
+    "training_tokens": 65536,
+    "report_tokens": 16384,
+    "pivot": [
+      1,
+      3
+    ],
+    "recovered_topology": true,
+    "actions": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "training_emissions": [
+      [
+        6035,
+        6220,
+        30622,
+        6148
+      ],
+      [
+        2045,
+        2039,
+        2102,
+        10324
+      ]
+    ],
+    "skipped_before_sync": 1,
+    "successful_fit_visits": 262138,
+    "stored_action_bits": 8,
+    "nll": {
+      "learned": [
+        "1.060317232",
+        "1.060317233"
+      ],
+      "successor": [
+        "1.127950064",
+        "1.127950065"
+      ],
+      "exhaustive": [
+        "1.060318152",
+        "1.060318153"
+      ]
+    },
+    "exhaustive_correct": true,
+    "exhaustive_table_visits": 16777216
+  },
+  "r4": {
+    "letters": 4,
+    "nodes": 21,
+    "sources": 5,
+    "delayed_cells": 2,
+    "products": 8,
+    "sums": 6,
+    "sum_terms": 17,
+    "parameter_slots": 9,
+    "complete_joint_states": 2,
+    "exact_evaluations": 9
+  }
+}
