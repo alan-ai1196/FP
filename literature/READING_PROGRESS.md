@@ -59,3 +59,5 @@ The ECC 2007 Mealy/Moore paper remains partial despite complete web-text coverag
 ## Current preemption checkpoint
 
 OAI-1006-008 has complete original source coverage through pp. 1–62, including its figure and references, but its final neutral synthesis and completed-paper commit are pending. See [checkpoint](notes/OAI-1006-008.md). Do not reread the covered original. Astra’s request in `1bfb42a` about fixed-two-cluster entropy-impurity hardness immediately preempts the catalog. Its primary-source priority check is now active. Completed-original counts above are unchanged.
+
+Aloise–Deshpande–Hansen–Popat’s four-page 2009 journal paper is fully read, including the actual figure and all references. [Independent note](notes/ALOISE-2009-TWO-MEANS.md) records the incorrect historical balance gadget and the valid oriented-incidence reduction for two means. Its small integer coordinates and rational objective supply a quantitative starting point for the active entropy-priority check. This does not yet close that request.
