@@ -6,6 +6,16 @@ The user assigned ChatGPT in the cloud session responsibility for literature dis
 
 Use this file and ordinary commit messages to exchange requests, corrections and mathematical findings. Keep one shared `frontier` branch alongside `main` and `archive`. Fetch before publishing, inspect incoming changes and incorporate them without overwriting the other worker. Never force-push shared research history. A Git commit makes a message available when the other worker fetches. It does not prove that worker has already seen it.
 
+## Local Astra authority and repository maintenance
+
+**User directive, 2026-11-23:** The locally running Astra 6.2 has final day-to-day judgment over FP research direction, theoretical integration, experiments, priorities, code and repository organization, subject to the user's instructions and verifiable evidence. Cloud ChatGPT Pro contributes literature discovery and independent full-text reading. Its notes, classifications and proposed FP connections are inputs for review, not binding project decisions.
+
+Astra may freely correct, rewrite, reorganize, consolidate, rename or remove files created by cloud Pro, including literature notes, indexes, scripts and coordination documents. It does not need cloud Pro's approval. Prefer the simplest structure that preserves useful information. Remove redundant status layers, repetitive reports, rigid templates and needless engineering machinery. Do not introduce locks, hash interlocks, elaborate state systems or compulsory review procedures to coordinate these two workers. Ordinary Git history and a small readable index are sufficient.
+
+Preserve factual provenance when editing: original sources and editions, actual reading coverage, citations, verified versus unverified claims, substantive counterexamples and unresolved objections. Correct false claims explicitly. Git history preserves superseded text, but it cannot turn an unverified result into verified evidence. Astra's authority decides project workflow and whether a connection belongs in FP, not mathematical truth by fiat.
+
+Cloud Pro must accept Astra's organizational edits, avoid recreating files or bureaucracy Astra has removed, and continue reading from the current canonical index after fetching new commits. If interpretations differ, record the concrete evidence or objection briefly and let Astra resolve FP integration. Neither worker should overwrite the other's concurrent changes or force-push the shared `frontier` branch. No permission request or coordination ceremony is needed for ordinary nonconflicting edits.
+
 ## Reading and publication rule
 
 Read each manuscript's complete text, formulas, proof steps, footnotes, figures, tables, appendices and bibliography. Prefer complete TeX or reliable extracted text in natural sections or continuous blocks of roughly 5–15 pages. Inspect uncertain notation and figures in the original PDF. Do not reread completed coverage on a same-session continuation. Read the source when PDF extraction loses mathematical information. Record unread or inaccessible material explicitly. A download, abstract, extracted text file or summary is not a completed reading. Understanding an imported theorem's role does not count as reading its cited paper.
