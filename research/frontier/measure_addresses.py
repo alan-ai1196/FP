@@ -96,15 +96,35 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--gpu", action="store_true")
-    parser.add_argument(
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
         "--precision",
         action="store_true",
         help="replay the four subsequent blocks with learned fractions",
     )
+    group.add_argument(
+        "--correction",
+        action="store_true",
+        help="replay the learned output correction and its matched raw rows",
+    )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
-    if args.precision:
+    if args.correction:
+        from mixture_addresses import FRESH_END
+        from output_correction import (
+            END,
+            base_backoff,
+            current_only_control,
+            fixed_output_probability,
+            train_study,
+        )
+        from output_correction import load_data as correction_data
+
+        data = correction_data(args.data_dir)
+        fitted, fraction, models, matched, _, _ = train_study(data[:SELECT_END])
+        start, stop = FRESH_END, END
+    elif args.precision:
         from mixture_addresses import FRESH_END, replication_data, train
 
         data = replication_data(args.data_dir)
@@ -142,6 +162,37 @@ if __name__ == "__main__":
         common.rows.den,
     )
     arms = {"bigram": (np.zeros(1, dtype=np.uint8), 0, -np.log(obs.base))}
+    if args.correction:
+        from dataclasses import replace
+
+        backoff = base_backoff(common, constant[0])
+        chosen = fixed_output_probability(
+            common, backoff, obs, models["selected"].token
+        )
+        for key in ("selected", "constant"):
+            model = models[key]
+            arms["output_" + key] = (
+                np.frombuffer(model.payload, dtype=np.uint8),
+                1 if model.mode == "pooled" else 4,
+                -np.log(obs.readout(constant[0]))
+                - model.adjustment(common, obs, chosen),
+            )
+        arms["matched_output_trigram"] = (
+            np.frombuffer(matched.payload, dtype=np.uint8),
+            3 if len(matched.active) else 1,
+            matched.losses(tri, obs),
+        )
+        current, _ = current_only_control(
+            fitted, ids[:SELECT_END], models["selected"].token
+        )
+        current_obs = replace(obs, history=obs.query)
+        current_prob = fixed_output_probability(common, backoff, obs, current.token)
+        arms["current_only"] = (
+            np.frombuffer(current.payload, dtype=np.uint8),
+            1 if current.mode == "pooled" else 4,
+            -np.log(obs.readout(constant[0]))
+            - current.adjustment(common, current_obs, current_prob),
+        )
     if args.precision:
         forecasts = tuple(obs.readout(m) for m in pair)
         for name, model in (

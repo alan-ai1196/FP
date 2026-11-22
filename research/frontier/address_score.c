@@ -68,6 +68,34 @@ FN u32 base_count(u32 q, u32 y, const u32 *offset, const u16 *successor,
   return lo < end && successor[lo] == y ? freq[lo] : 0;
 }
 
+FN u32 output_response(const u8 *p, u32 token) {
+  u32 named = val16(p);
+  const u8 *entries = p + 24, *correction = entries + 5 * named;
+  u32 fallback = correction[2], mode = correction[3] & 127u;
+  if (!mode)
+    return fallback;
+  u32 group = lower_id(entries, named, 5, token);
+  if (group == named || val16(entries + 5 * group) != token)
+    group = named;
+  const u8 *table = correction + 8;
+  if (mode == 2)
+    return table[group];
+  u32 count = val16(correction + 4);
+  u32 i = lower_id(table, count, 3, group);
+  return i < count && val16(table + 3 * i) == group ? table[3 * i + 2]
+                                                    : fallback;
+}
+
+FN u32 history_state(u32 kind, const u8 *model, const u32 *unigram, u32 token) {
+  if (kind == 1)
+    return address(model, unigram, token);
+  if (kind == 4) {
+    const u8 *correction = model + 24 + 5 * val16(model);
+    return (correction[3] & 128u) ? 0 : output_response(model, token);
+  }
+  return token;
+}
+
 FN double backoff(const u8 *p, u32 state, u32 y, const u32 *unigram) {
   u32 n = val16(p), stride = p[2] ? 8u : 5u;
   const u8 *table = p + 24;
@@ -116,15 +144,28 @@ FN double score_one(u32 kind, const u8 *model, u32 state, u32 query, u32 target,
                     const u32 *unigram, const u32 *outgoing, const u32 *offset,
                     const u16 *successor, const u32 *freq, u32 denominator) {
   u32 observed = base_count(query, target, offset, successor, freq);
-  double prior = kind == 1 || kind == 3
+  double prior = kind == 1 || kind == 3 || kind == 4
                      ? backoff(model, kind == 1 ? state : 0, target, unigram)
                      : (unigram[target] + 1.0) / denominator;
   double prob = (observed + 64.0 * prior) / (outgoing[query] + 64.0);
+  if (kind == 4 && ((model + 24 + 5 * val16(model))[3] & 128u))
+    state = output_response(model, query);
   if (kind == 2)
     prob = higher_order(model, state, query, target, prob);
   if (kind == 3)
     prob =
         higher_order(model + 24 + 5 * val16(model), state, query, target, prob);
+  if (kind == 4 && state != 4) {
+    u32 chosen = val16(model + 24 + 5 * val16(model));
+    double chosen_prob = prob;
+    if (chosen != target) {
+      u32 count = base_count(query, chosen, offset, successor, freq);
+      chosen_prob = (count + 64.0 * backoff(model, 0, chosen, unigram)) /
+                    (outgoing[query] + 64.0);
+    }
+    prob *= (chosen == target ? (double)state : 4.0) /
+            (4.0 + ((double)state - 4.0) * chosen_prob);
+  }
   return -log(prob);
 }
 
@@ -138,7 +179,7 @@ extern "C" __global__ void score_batch(const u16 *tokens, u32 n,
   if (i >= n)
     return;
   u32 old = tokens[i];
-  u32 state = kind == 1 ? address(model, unigram, old) : old;
+  u32 state = history_state(kind, model, unigram, old);
   out[i] = score_one(kind, model, state, tokens[i + 1], tokens[i + 2], unigram,
                      outgoing, offset, successor, freq, denominator);
 }
@@ -147,13 +188,13 @@ API void score_stream(const u16 *tokens, u32 n, const u32 *unigram,
                       const u32 *outgoing, const u32 *offset,
                       const u16 *successor, const u32 *freq, u32 denominator,
                       const u8 *model, u32 kind, double *out) {
-  u32 state = kind == 1 ? address(model, unigram, tokens[0]) : tokens[0];
+  u32 state = history_state(kind, model, unigram, tokens[0]);
   u32 query = tokens[1];
   for (u32 i = 0; i < n; ++i) {
     u32 target = tokens[i + 2];
     out[i] = score_one(kind, model, state, query, target, unigram, outgoing,
                        offset, successor, freq, denominator);
-    state = kind == 1 ? address(model, unigram, query) : query;
+    state = history_state(kind, model, unigram, query);
     query = target;
   }
 }

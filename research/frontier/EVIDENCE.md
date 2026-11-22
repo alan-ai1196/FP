@@ -536,3 +536,32 @@ python -B research/frontier/address_anchors.py --check research/frontier/address
 python -B research/frontier/measure_addresses.py --precision --gpu
 & "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/PredictiveMixture.lean
 ~~~
+
+## Learning which output probability to change
+
+**EMPIRICALLY OBSERVED.** We allowed the learner to change the odds of one raw output of the pooled bigram. It searched all 50,257 output IDs using ordinary full-vocabulary prediction errors and 513 supplied earlier-history classes (the 512 shared named token IDs and the rest). Within each class it subtracted the base forecast's expected count of the candidate from the observed count. The criterion was the between-history variance of these residual means after subtracting the global mean. It selected GPT-2 token **286, “ of”**, with score 0.0006168403, ahead of token 11, the comma, at 0.0002755152. The selected identity came from the data. The mechanism for a single multiplicative correction, the input classes and the allowed multipliers were supplied. [Prospective registration](https://github.com/alan-ai1196/FP/blob/218c31e/research/frontier/NEXT.md) · [Implementation](output_correction.py)
+
+Acquisition used the original 524,288 purchase targets. The 513-by-50,257 candidate calculation accumulated observed and expected counts using sparse history/query and query/successor tables, processing 512 output columns at a time. There were 122,592 occupied history/query pairs and 152,729 occupied history/target pairs. Separate direct per-observation sums checked both leading column scores. The best fitted global multiplier for “ of” was 1.5. Validation selected a dense table of one-byte responses, with 307 history classes assigned a different multiplier. It used all nine possible values from $1/4$ to $4$. The stored correction takes eight header bytes and 513 response bytes, plus one live byte above the 2,584-byte pooled readout. The default and conditional models each normalize the entire categorical forecast.
+
+| Frozen forecast | Extra bytes above the raw bigram | Mean NLL | With storage price |
+| --- | ---: | ---: | ---: |
+| Pooled calibrated bigram | 2,584 | 7.172206 | 7.172633 |
+| Global multiplier for “ of” | 2,592 | 7.170181 | 7.170609 |
+| Learned history-dependent multiplier | 3,106 | **7.166181** | **7.166694** |
+| Calibrated trigram at the same cap | 3,105 | 7.167733 | 7.168246 |
+| Earlier learned five-level address | 6,158 | 7.168160 | 7.169178 |
+| Earlier calibrated trigram at the larger cap | 6,159 | **7.160583** | **7.161601** |
+
+**Two new blocks.** Frozen models scored targets $[2359296,2621440)$. The conditional correction beat its global multiplier and the matched raw trigram in each block. The matched trigram bought 19 contexts and 47 successors. The mean priced advantage over that model was 0.001552 nats/token. The earlier calibrated trigram with 118 context rows scored 0.005093 lower than the correction at its larger allowance. A total of 216,569 positions used a response different from the learned global multiplier. At 101,716 of 262,144 targets, the issued probability was more than $10^{-12}$ outside the interval spanned by the earlier two conditional forecasts **and** the pooled base on that outcome. A mixture of those three forecasts cannot reproduce these values. The two larger conventional quality anchors were measured on the preceding study's prespecified subpanels. [All model choices and block scores](output_correction_result.json)
+
+**Post hoc current-token control.** To check how much of the gain needed the earlier token, we trained an equally sized correction that can read only the current query. Its own residual search selected token 13. The original validation data chose token 286 when it could also use the earlier learner's candidate. It required no extra live byte and scored 7.170379 priced nats/token on the two reporting blocks, above the earlier-history model's 7.166694. The native scorer verified both data accesses separately.
+
+**Execution cost.** Each modified forecast can look up the selected token's base probability and the observed token's base probability in the original bigram. They coincide when the selected token is observed. A response of one skips the extra lookup in the native scorer. The installed table uses the named token list already stored for the calibrated output. An independent scalar decoder rebuilt the integer denominators at every reporting position. It also checked all 50,257 output masses for three query rows and all nine multipliers. A complete rerun including acquisition, both raw competitors, the later current-only control and scalar verification took 6.39 seconds and reached 266.8 MB process working set.
+
+Five warm sequential MSVC CPU passes on 262,144 targets took 31.67–31.85 ms with the selected correction and 21.01–22.43 ms with the matched trigram. Teacher-forced RTX 3090 device passes took 0.1163–0.1177 ms and 0.0856–0.0869 ms respectively. C, CUDA and the vectorized reference agreed within $10^{-11}$ per target. These are resident-data observed-token timings. The 0.001552-nat gain pays the stated byte rent. Execution time is a separate tradeoff. The independent mathematical audit verified the sign-sweep construction and a quantized finite-step loss certificate on 128 positive probability tables, and the strongest-direction reduction on 70 graph channels. [General learning law](FOUNDATION.md#learning-a-new-output-direction-from-prediction-error) · [Exact small controls](audit_output_correction.py)
+
+~~~powershell
+python -B research/frontier/audit_output_correction.py
+python -B research/frontier/output_correction.py --check research/frontier/output_correction_result.json
+python -B research/frontier/measure_addresses.py --correction --gpu
+~~~

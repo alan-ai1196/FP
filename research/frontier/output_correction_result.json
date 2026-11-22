@@ -1,0 +1,265 @@
+{
+  "registration": "218c31e",
+  "reporting_prefix_sha256": "7d33b1c095c6bb94dfb9cc3bfae24abfb08b2b2fdce5b4532bc625cd0e9f5983",
+  "first_targets": [
+    2359296,
+    2490368
+  ],
+  "acquisition": {
+    "total_raw_output_candidates": 50257,
+    "occupied_history_types": 513,
+    "top_two_ids": [
+      286,
+      11
+    ],
+    "top_two_centered_squared_residuals": [
+      0.00061684033932,
+      0.00027551519037
+    ],
+    "occupied_history_query_pairs": 122592,
+    "occupied_history_target_pairs": 152729,
+    "selection": {
+      "pooled": 6.9917644775,
+      "constant": 6.9899590324,
+      "conditional": 6.9859173026,
+      "selected": 6.9859173026
+    },
+    "global_purchase_multiplier": 1.5
+  },
+  "models": {
+    "pooled": {
+      "token": 286,
+      "mode": "pooled",
+      "default_numerator": 4,
+      "training_rule": "pooled",
+      "beta": 0,
+      "changed_types": 0,
+      "bytes_with_live": 2584,
+      "code_counts": {
+        "4": 513
+      },
+      "sha256": "0be62f2b7a9234e08ed5f723e3147ee42b65914c56643bc7fe2e4a8e2d6177b7"
+    },
+    "constant": {
+      "token": 286,
+      "mode": "constant",
+      "default_numerator": 6,
+      "training_rule": "constant",
+      "beta": 0,
+      "changed_types": 0,
+      "bytes_with_live": 2592,
+      "code_counts": {
+        "6": 513
+      },
+      "sha256": "f0bfc5bcfd297d51117be9026688b30da2d80a93516807d3b13a85a04afa45a8"
+    },
+    "conditional": {
+      "token": 286,
+      "mode": "dense",
+      "default_numerator": 6,
+      "training_rule": "dense",
+      "beta": 1,
+      "changed_types": 307,
+      "bytes_with_live": 3106,
+      "code_counts": {
+        "1": 119,
+        "2": 25,
+        "3": 32,
+        "4": 43,
+        "5": 48,
+        "6": 206,
+        "8": 12,
+        "12": 19,
+        "16": 9
+      },
+      "sha256": "568d80673baf3fab953d310dc5f923d7894f72aedb49114412ff534efc1f43cd"
+    },
+    "selected": {
+      "token": 286,
+      "mode": "dense",
+      "default_numerator": 6,
+      "training_rule": "dense",
+      "beta": 1,
+      "changed_types": 307,
+      "bytes_with_live": 3106,
+      "code_counts": {
+        "1": 119,
+        "2": 25,
+        "3": 32,
+        "4": 43,
+        "5": 48,
+        "6": 206,
+        "8": 12,
+        "12": 19,
+        "16": 9
+      },
+      "sha256": "568d80673baf3fab953d310dc5f923d7894f72aedb49114412ff534efc1f43cd"
+    }
+  },
+  "matched_raw": {
+    "tau": 64,
+    "rows": 19,
+    "entries": 47,
+    "bytes": 3105
+  },
+  "changed_from_fitted_default_occurrences": [
+    107850,
+    108719
+  ],
+  "outside_old_pair_and_pooled_by_more_than_1e-12": [
+    51930,
+    49786
+  ],
+  "blocks": [
+    {
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 7.1043628975,
+        "priced_nll": 7.1047899272
+      },
+      "constant": {
+        "extra_bits": 20736,
+        "nll": 7.1024883003,
+        "priced_nll": 7.102916652
+      },
+      "conditional": {
+        "extra_bits": 24848,
+        "nll": 7.0980000291,
+        "priced_nll": 7.0985133241
+      },
+      "selected": {
+        "extra_bits": 24848,
+        "nll": 7.0980000291,
+        "priced_nll": 7.0985133241
+      },
+      "matched_raw": {
+        "extra_bits": 24840,
+        "nll": 7.1006008642,
+        "priced_nll": 7.1011139939
+      },
+      "earlier_raw": {
+        "extra_bits": 49272,
+        "nll": 7.0949155,
+        "priced_nll": 7.0959333312
+      },
+      "earlier_fraction": {
+        "extra_bits": 49264,
+        "nll": 7.1015149986,
+        "priced_nll": 7.1025326645
+      }
+    },
+    {
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 7.2400489538,
+        "priced_nll": 7.2404759835
+      },
+      "constant": {
+        "extra_bits": 20736,
+        "nll": 7.2378738188,
+        "priced_nll": 7.2383021706
+      },
+      "conditional": {
+        "extra_bits": 24848,
+        "nll": 7.2343612795,
+        "priced_nll": 7.2348745745
+      },
+      "selected": {
+        "extra_bits": 24848,
+        "nll": 7.2343612795,
+        "priced_nll": 7.2348745745
+      },
+      "matched_raw": {
+        "extra_bits": 24840,
+        "nll": 7.2348656433,
+        "priced_nll": 7.235378773
+      },
+      "earlier_raw": {
+        "extra_bits": 49272,
+        "nll": 7.2262506157,
+        "priced_nll": 7.2272684469
+      },
+      "earlier_fraction": {
+        "extra_bits": 49264,
+        "nll": 7.2348058577,
+        "priced_nll": 7.2358235237
+      }
+    }
+  ],
+  "posthoc_current_only": {
+    "fit": {
+      "acquired_output": 13,
+      "top_two_scores": [
+        0.00035578949127,
+        0.00021186815958
+      ],
+      "candidate_validation": {
+        "13": 6.9895744908,
+        "286": 6.9895441924
+      }
+    },
+    "model": {
+      "token": 286,
+      "mode": "dense",
+      "default_numerator": 6,
+      "training_rule": "dense",
+      "beta": 2,
+      "changed_types": 298,
+      "bytes_with_live": 3105,
+      "code_counts": {
+        "1": 262,
+        "2": 2,
+        "3": 5,
+        "4": 9,
+        "5": 16,
+        "6": 215,
+        "8": 1,
+        "16": 3
+      },
+      "sha256": "7bf9f792f1743f29ec177d0fa29b73726448804cb4d9d83eac48b1b1ea92cc74"
+    },
+    "blocks": [
+      {
+        "extra_bits": 24840,
+        "nll": 7.1021949796,
+        "priced_nll": 7.1027081093
+      },
+      {
+        "extra_bits": 24840,
+        "nll": 7.2375370432,
+        "priced_nll": 7.2380501729
+      }
+    ],
+    "mean_priced_nll": 7.1703791411
+  },
+  "mean": {
+    "pooled": {
+      "nll": 7.1722059256,
+      "priced_nll": 7.1726329554
+    },
+    "constant": {
+      "nll": 7.1701810595,
+      "priced_nll": 7.1706094113
+    },
+    "conditional": {
+      "nll": 7.1661806543,
+      "priced_nll": 7.1666939493
+    },
+    "selected": {
+      "nll": 7.1661806543,
+      "priced_nll": 7.1666939493
+    },
+    "matched_raw": {
+      "nll": 7.1677332537,
+      "priced_nll": 7.1682463835
+    },
+    "earlier_raw": {
+      "nll": 7.1605830578,
+      "priced_nll": 7.161600889
+    },
+    "earlier_fraction": {
+      "nll": 7.1681604281,
+      "priced_nll": 7.1691780941
+    }
+  }
+}
