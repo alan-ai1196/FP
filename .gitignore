@@ -63,3 +63,6 @@ CMakeFiles/
 Thumbs.db
 .vscode/
 .idea/
+
+# Local primary sources and upstream revision objects
+/literature/corpus/
