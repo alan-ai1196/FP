@@ -1,0 +1,351 @@
+{
+  "registration": "ed60c61",
+  "prefix_sha256": "43173bd2089d81a40bf5fb46dae4ba3347f774e9dba7883d7c92862fbb62c954",
+  "first_targets": [
+    1835008,
+    1966080,
+    2097152,
+    2228224
+  ],
+  "targets_per_block": 131072,
+  "training": {
+    "cap_bytes": 6159,
+    "maximum_three_byte_entries": 679,
+    "validation_priced_nll": 6.9892002401,
+    "validation_constant_priced_nll": 6.9917417047,
+    "candidate_rules": 18,
+    "single_row_constants": 5
+  },
+  "fraction": {
+    "default": "seed",
+    "beta": 1,
+    "level_type_counts": [
+      49464,
+      31,
+      39,
+      56,
+      667
+    ],
+    "changed_types": 679,
+    "payload_bytes": 6157,
+    "bytes_including_live": 6158,
+    "sha256": "24f7cb618301d78e9f71c1348890e03ac9e5f144ff0e77ad7d07a0c46ef413f9"
+  },
+  "constant_fraction": {
+    "default": 2,
+    "beta": 0,
+    "level_type_counts": [
+      0,
+      0,
+      50257,
+      0,
+      0
+    ],
+    "changed_types": 0,
+    "payload_bytes": 2584,
+    "bytes_including_live": 2584,
+    "sha256": "6eab4d55fa14c32d5cda5f79891e806964528daf356c0bc8efad634b5ad21c01"
+  },
+  "full_vocabulary_ratio_bound": 17.47794117647059,
+  "reporting_level_occurrences": [
+    247348,
+    30255,
+    39592,
+    79589,
+    127504
+  ],
+  "block_results": [
+    {
+      "conditional": {
+        "extra_bits": 49272,
+        "nll": 7.0109622312,
+        "priced_nll": 7.0119800624
+      },
+      "marginal": {
+        "extra_bits": 49624,
+        "nll": 7.0111465044,
+        "priced_nll": 7.012171607
+      },
+      "seed": {
+        "extra_bits": 32968,
+        "nll": 7.0126295756,
+        "priced_nll": 7.0133106087
+      },
+      "bigram": {
+        "extra_bits": 0,
+        "nll": 7.0466190019,
+        "priced_nll": 7.0466190019
+      },
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 7.0135848675,
+        "priced_nll": 7.0140118971
+      },
+      "calibrated_trigram": {
+        "extra_bits": 49272,
+        "nll": 7.0079650678,
+        "priced_nll": 7.008982899
+      },
+      "raw_trigram": {
+        "extra_bits": 49240,
+        "nll": 7.0382035633,
+        "priced_nll": 7.0392207334
+      },
+      "fraction": {
+        "extra_bits": 49264,
+        "nll": 7.0107281675,
+        "priced_nll": 7.0117458334
+      },
+      "constant_fraction": {
+        "extra_bits": 20672,
+        "nll": 7.0133903691,
+        "priced_nll": 7.0138173988
+      }
+    },
+    {
+      "conditional": {
+        "extra_bits": 49272,
+        "nll": 7.0021648523,
+        "priced_nll": 7.0031826835
+      },
+      "marginal": {
+        "extra_bits": 49624,
+        "nll": 7.002104417,
+        "priced_nll": 7.0031295196
+      },
+      "seed": {
+        "extra_bits": 32968,
+        "nll": 7.0039674031,
+        "priced_nll": 7.0046484362
+      },
+      "bigram": {
+        "extra_bits": 0,
+        "nll": 7.0372412644,
+        "priced_nll": 7.0372412644
+      },
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 7.0046064635,
+        "priced_nll": 7.0050334932
+      },
+      "calibrated_trigram": {
+        "extra_bits": 49272,
+        "nll": 6.9986083428,
+        "priced_nll": 6.999626174
+      },
+      "raw_trigram": {
+        "extra_bits": 49240,
+        "nll": 7.0283073809,
+        "priced_nll": 7.029324551
+      },
+      "fraction": {
+        "extra_bits": 49264,
+        "nll": 7.0017635479,
+        "priced_nll": 7.0027812138
+      },
+      "constant_fraction": {
+        "extra_bits": 20672,
+        "nll": 7.0043545079,
+        "priced_nll": 7.0047815376
+      }
+    },
+    {
+      "conditional": {
+        "extra_bits": 49272,
+        "nll": 6.9628484685,
+        "priced_nll": 6.9638662997
+      },
+      "marginal": {
+        "extra_bits": 49624,
+        "nll": 6.9624282409,
+        "priced_nll": 6.9634533435
+      },
+      "seed": {
+        "extra_bits": 32968,
+        "nll": 6.9644132771,
+        "priced_nll": 6.9650943101
+      },
+      "bigram": {
+        "extra_bits": 0,
+        "nll": 7.0010959186,
+        "priced_nll": 7.0010959186
+      },
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 6.9644815155,
+        "priced_nll": 6.9649085452
+      },
+      "calibrated_trigram": {
+        "extra_bits": 49272,
+        "nll": 6.9562360193,
+        "priced_nll": 6.9572538505
+      },
+      "raw_trigram": {
+        "extra_bits": 49240,
+        "nll": 6.99043432,
+        "priced_nll": 6.9914514902
+      },
+      "fraction": {
+        "extra_bits": 49264,
+        "nll": 6.9619414889,
+        "priced_nll": 6.9629591548
+      },
+      "constant_fraction": {
+        "extra_bits": 20672,
+        "nll": 6.9643605239,
+        "priced_nll": 6.9647875536
+      }
+    },
+    {
+      "conditional": {
+        "extra_bits": 49272,
+        "nll": 7.0978873296,
+        "priced_nll": 7.0989051608
+      },
+      "marginal": {
+        "extra_bits": 49624,
+        "nll": 7.0974715477,
+        "priced_nll": 7.0984966503
+      },
+      "seed": {
+        "extra_bits": 32968,
+        "nll": 7.0990727486,
+        "priced_nll": 7.0997537816
+      },
+      "bigram": {
+        "extra_bits": 0,
+        "nll": 7.1387038634,
+        "priced_nll": 7.1387038634
+      },
+      "pooled": {
+        "extra_bits": 20672,
+        "nll": 7.0995962865,
+        "priced_nll": 7.1000233162
+      },
+      "calibrated_trigram": {
+        "extra_bits": 49272,
+        "nll": 7.0922191259,
+        "priced_nll": 7.0932369571
+      },
+      "raw_trigram": {
+        "extra_bits": 49240,
+        "nll": 7.1286850524,
+        "priced_nll": 7.1297022226
+      },
+      "fraction": {
+        "extra_bits": 49264,
+        "nll": 7.0969305651,
+        "priced_nll": 7.0979482311
+      },
+      "constant_fraction": {
+        "extra_bits": 20672,
+        "nll": 7.0994587645,
+        "priced_nll": 7.0998857941
+      }
+    }
+  ],
+  "mean": {
+    "conditional": {
+      "nll": 7.0184657204,
+      "priced_nll": 7.0194835516
+    },
+    "marginal": {
+      "nll": 7.0182876775,
+      "priced_nll": 7.0193127801
+    },
+    "seed": {
+      "nll": 7.0200207511,
+      "priced_nll": 7.0207017841
+    },
+    "bigram": {
+      "nll": 7.0559150121,
+      "priced_nll": 7.0559150121
+    },
+    "pooled": {
+      "nll": 7.0205672833,
+      "priced_nll": 7.0209943129
+    },
+    "calibrated_trigram": {
+      "nll": 7.0137571389,
+      "priced_nll": 7.0147749702
+    },
+    "raw_trigram": {
+      "nll": 7.0464075792,
+      "priced_nll": 7.0474247493
+    },
+    "fraction": {
+      "nll": 7.0178409424,
+      "priced_nll": 7.0188586083
+    },
+    "constant_fraction": {
+      "nll": 7.0203910413,
+      "priced_nll": 7.020818071
+    }
+  },
+  "priced_block_wins": {
+    "conditional_over_seed": 4,
+    "calibrated_trigram_over_conditional": 4,
+    "marginal_over_conditional": 3,
+    "fraction_over_conditional": 4,
+    "fraction_over_calibrated_trigram": 0,
+    "fraction_over_constant_fraction": 4
+  },
+  "subpanel_positions_per_block": 4096,
+  "subpanel_nll": [
+    {
+      "conditional": 6.964447373,
+      "marginal": 6.963706872,
+      "seed": 6.96452719,
+      "bigram": 6.966497085,
+      "pooled": 6.963146482,
+      "calibrated_trigram": 6.955104355,
+      "raw_trigram": 6.954460459,
+      "fraction": 6.963054934,
+      "constant_fraction": 6.962036017
+    },
+    {
+      "conditional": 7.702618006,
+      "marginal": 7.704204837,
+      "seed": 7.706728204,
+      "bigram": 7.782884419,
+      "pooled": 7.705420802,
+      "calibrated_trigram": 7.690906929,
+      "raw_trigram": 7.761874854,
+      "fraction": 7.699085243,
+      "constant_fraction": 7.705139233
+    },
+    {
+      "conditional": 6.690301544,
+      "marginal": 6.68964101,
+      "seed": 6.69052157,
+      "bigram": 6.712263476,
+      "pooled": 6.691352782,
+      "calibrated_trigram": 6.680457826,
+      "raw_trigram": 6.696905508,
+      "fraction": 6.689048635,
+      "constant_fraction": 6.6906169
+    },
+    {
+      "conditional": 6.846185987,
+      "marginal": 6.845272091,
+      "seed": 6.846730825,
+      "bigram": 6.872057604,
+      "pooled": 6.845936559,
+      "calibrated_trigram": 6.835066402,
+      "raw_trigram": 6.857320607,
+      "fraction": 6.845199942,
+      "constant_fraction": 6.845670952
+    }
+  ],
+  "mean_subpanel_nll": {
+    "conditional": 7.050888227,
+    "marginal": 7.050706202,
+    "seed": 7.052126947,
+    "bigram": 7.083425646,
+    "pooled": 7.051464156,
+    "calibrated_trigram": 7.040383878,
+    "raw_trigram": 7.067640357,
+    "fraction": 7.049097188,
+    "constant_fraction": 7.050865776
+  }
+}

@@ -313,6 +313,19 @@ def fit_calibrated_trigram(common, tables, trigram, purchase, validation, cap):
     return model, details
 
 
+@dataclass
+class Fitted:
+    common: Common
+    pair: np.ndarray
+    constant: np.ndarray
+    routes: dict
+    trigram: Trigram
+    active: np.ndarray
+    info: dict
+    hybrid: CalibratedTrigram
+    hybrid_info: dict
+
+
 def fit(prefix):
     assert len(prefix) == SELECT_END
     common = Common(prefix[:FIT], VOCAB, 512)
@@ -383,7 +396,7 @@ def fit(prefix):
     hybrid, hybrid_info = fit_calibrated_trigram(
         common, tables, trigram, purchase, validation, cap
     )
-    return (
+    return Fitted(
         common,
         pair,
         constant,
@@ -420,7 +433,14 @@ def replay(payload, common, data, lo, hi):
 
 
 def score(prefix, trained):
-    common, pair, constant, routes, trigram, active, info, hybrid, hybrid_info = trained
+    common, pair, constant, routes = (
+        trained.common,
+        trained.pair,
+        trained.constant,
+        trained.routes,
+    )
+    trigram, active, info = trained.trigram, trained.active, trained.info
+    hybrid, hybrid_info = trained.hybrid, trained.hybrid_info
     obs = common.observe(np.frombuffer(prefix, dtype=np.uint16), SELECT_END, REPORT_END)
     log_zero, gain = routed_scores(obs, pair)
     report, descriptions = {}, {}

@@ -39,14 +39,20 @@ FN u32 address(const u8 *p, const u32 *unigram, u32 token) {
   if (mode == 2)
     return (table[token / 8] >> (token % 8)) & 1u;
   u32 n = val16(p + 4);
-  u32 index = lower_id(table, n, 2, token);
+  u32 stride = mode == 3 ? 3 : 2;
+  u32 index = lower_id(table, n, stride, token);
+  u32 changed = index < n && val16(table + stride * index) == token;
   u32 bit = p[3];
-  if (bit == 2) {
+  if (mode == 3 && changed)
+    return table[stride * index + 2];
+  if ((mode == 3 && bit == 5) || (mode != 3 && bit == 2)) {
     u32 cutoff = val32(p + 8);
     bit = (unigram[token] > cutoff ||
            (unigram[token] == cutoff && token <= val16(p + 6)));
+    if (mode == 3)
+      bit *= 4;
   }
-  return bit ^ (index < n && val16(table + 2 * index) == token);
+  return bit ^ changed;
 }
 
 FN u32 base_count(u32 q, u32 y, const u32 *offset, const u16 *successor,
@@ -62,14 +68,21 @@ FN u32 base_count(u32 q, u32 y, const u32 *offset, const u16 *successor,
   return lo < end && successor[lo] == y ? freq[lo] : 0;
 }
 
-FN double backoff(const u8 *p, u32 bit, u32 y, const u32 *unigram) {
+FN double backoff(const u8 *p, u32 state, u32 y, const u32 *unigram) {
   u32 n = val16(p), stride = p[2] ? 8u : 5u;
   const u8 *table = p + 24;
   u32 i = lower_id(table, n, stride, y);
-  if (i < n && val16(table + i * stride) == y)
-    return val24(table + i * stride + 2 + 3 * bit) / 16777216.0;
-  return (val32(p + 16 + 4 * bit) / 16777216.0) *
-         ((unigram[y] + 1.0) / val32(p + 12));
+  if (i < n && val16(table + i * stride) == y) {
+    const u8 *mass = table + i * stride + 2;
+    if (p[2] != 3)
+      return val24(mass + 3 * state) / 16777216.0;
+    return ((4 - state) * val24(mass) + state * val24(mass + 3)) / 67108864.0;
+  }
+  double bucket =
+      p[2] == 3
+          ? ((4 - state) * val32(p + 16) + state * val32(p + 20)) / 67108864.0
+          : val32(p + 16 + 4 * state) / 16777216.0;
+  return bucket * ((unigram[y] + 1.0) / val32(p + 12));
 }
 
 FN double higher_order(const u8 *p, u32 older, u32 q, u32 y, double base) {

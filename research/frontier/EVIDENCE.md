@@ -491,3 +491,48 @@ For 131,072 targets, five warm sequential MSVC x64 CPU replays took 10.82–11.0
 python -B research/frontier/text_addresses.py --check research/frontier/text_addresses_result.json
 python -B research/frontier/measure_addresses.py --gpu
 ~~~
+
+## How much extra prediction did fractional addresses buy?
+
+**EMPIRICALLY OBSERVED.** Before examining any target beyond position 1,835,007 we froze the preceding predictors and registered a five-level mixture, a calibrated raw-count competitor and two conventional quality references. Every compact arm used the original acquisition and validation data. The reporting stream comprised four consecutive blocks of 131,072 later FineWeb-Edu targets. The price in the table is charged for a separate deployment on each block. The pooled bigram and all history-based models share 2,684,212 bytes of base lookup arrays. [Registration](https://github.com/alan-ai1196/FP/blob/ed60c61/research/frontier/NEXT.md) · [All four block scores](mixture_addresses_result.json)
+
+| Frozen model | Extra bytes including live state | Mean nats/token | With storage price |
+| --- | ---: | ---: | ---: |
+| Raw bigram | 0 | 7.055915 | 7.055915 |
+| Pooled fitted bigram | 2,584 | 7.020567 | 7.020994 |
+| Best constant fraction | 2,584 | 7.020391 | 7.020818 |
+| Supplied frequency address | 4,121 | 7.020021 | 7.020702 |
+| Conditional learned bit | 6,159 | 7.018466 | 7.019484 |
+| Backoff-only learned bit | 6,203 | 7.018288 | 7.019313 |
+| Five-level learned fraction | 6,158 | 7.017841 | 7.018859 |
+| Budgeted raw trigram | 6,155 | 7.046408 | 7.047425 |
+| Calibrated raw trigram | 6,159 | **7.013757** | **7.014775** |
+
+The conditional bit beat its seed on all four blocks. The fraction map beat the conditional bit on all four, saving another 0.000625 priced nats/token. The calibrated trigram beat the fraction on all four by a mean of 0.004084. Selection chose the original frequency default and 679 three-byte exceptions, the maximum at this cap. The per-type regularizer was one root sum of squared improvements. The assigned intermediate weights $1/4,1/2,3/4$ went to 31, 39 and 56 raw token types respectively, accounting for **149,436 of the 524,288** subsequent predictions. Both pure endpoints and intermediate values shared the same learned output rows. The calibrated trigram retained its original 118 contexts and 358 successor counts with no refitting.
+
+**NUMERICALLY VERIFIED, retrospective endpoint comparison.** Freeze the 126 types assigned an intermediate fraction and freeze all other predictions. Give a hard competitor the option of selecting its better endpoint separately for each of these 126 types *after* observing all four reporting blocks. The fitted fractions still saved between 89.221017010 and 89.221017011 total nats over that competitor. Only 37 of the 126 types individually beat both endpoints. This proves a gain from interpolation on these positions even after giving the endpoint selector hindsight. A competitor allowed to change assignments outside those 126 types is a different comparison. The numbers above compare models fitted entirely before deployment. [Outward-rounded audit](address_precision_bounds.json)
+
+**Conventional quality references.** For the first 4,096 targets of each block, every predictor was scored on the same 16,384 positions. The five-gram received the previous four actual tokens and the Transformer its last 256. Both checkpoints were fitted on the first 1,048,576 training positions and selected on the earlier validation file. The selected Transformer training run made 16,777,216 target presentations. Its 7,253,376 FP32 parameters occupy 29,013,504 loaded bytes and its saved checkpoint occupies 54,753,065 bytes. The KenLM model file occupies 34,489,589 bytes. The Transformer used FP16 autocast and a full-vocabulary FP64 log-sum-exp. KenLM used the original complete-real-alphabet normalization with its unknown mass divided across unseen IDs. The comparison below uses unpriced NLL. These models have different training and memory budgets. [Frozen checkpoint identities and scores](address_anchors_result.json) · [Reproduction](address_anchors.py)
+
+| Same 16,384 targets | Mean nats/token |
+| --- | ---: |
+| Conditional learned bit | 7.050888 |
+| Five-level learned fraction | 7.049097 |
+| Calibrated raw trigram | 7.040384 |
+| Optimistic bound for any mixture of the two conditional forecasts | 7.016097 |
+| Modified Kneser–Ney five-gram | 6.603733 |
+| Transformer | 6.231090 |
+
+**PROVED for this readout family and these targets.** Even access to the correct next token when picking the mixture cannot give more mass than the larger of the two forecasts on that token. Summing outward-rounded logs of the exact integer probabilities bounds the mean of this hindsight envelope in $[7.016096671,7.016096672]$. Hence these fixed conditional readouts cannot reach either larger baseline on the panel, regardless of the encoder's history length, number of states, learned assignments or fraction precision. The optimistic envelope can choose different endpoint forecasts for different possible outcomes of the same history and so supplies a lower bound on achievable NLL. [Arithmetic proof](PredictiveMixture.lean) · [Full-alphabet audit](audit_address_precision.py)
+
+**Physical and mathematical checks.** All four blocks were replayed from packed three-byte exceptions and one live byte. A scalar integer-mass reference and separate native CPU and GPU scorers agreed with the vectorized per-token losses to $10^{-11}$. Native sequential CPU replays of all 524,288 positions took 48.39–55.74 ms for fractions, 46.60–48.31 ms for the learned bit and 43.25–45.29 ms for calibrated trigram counts. Warm teacher-forced RTX 3090 device batches took 0.1567–0.1669, 0.1564–0.1574 and 0.1579–0.1959 ms respectively. Each device thread used the two actual preceding tokens. The mixture kernel looks up the 512-entry output table once and blends integer masses before scoring. The benchmark returns the observed log loss per target. A full acquisition and four-block statistical rerun took 3.81 seconds and peaked at 216.7 MB process working set.
+
+The separate precision audit checked 2,288 normalized binary examples using exact rational probabilities and outward log intervals, including 572 exact equalities for the worst-case pair. It checked sparse grid purchase against 108 exhaustive searches and verified full-vocabulary mass exactly for all five grid settings at three text query rows. Lean 4.34.1 checked the per-row integer-mass envelope and its product over arbitrary finite sequences. The real-variable precision theorem has a separate analytic proof. [Sharp precision theorem](FOUNDATION.md#how-much-precision-can-a-history-distinction-use)
+
+~~~powershell
+python -B research/frontier/mixture_addresses.py --check research/frontier/mixture_addresses_result.json
+python -B research/frontier/audit_address_precision.py --text --check research/frontier/address_precision_bounds.json
+python -B research/frontier/address_anchors.py --check research/frontier/address_anchors_result.json
+python -B research/frontier/measure_addresses.py --precision --gpu
+& "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/PredictiveMixture.lean
+~~~

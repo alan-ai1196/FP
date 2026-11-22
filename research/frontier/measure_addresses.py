@@ -96,16 +96,39 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path)
     parser.add_argument("--gpu", action="store_true")
+    parser.add_argument(
+        "--precision",
+        action="store_true",
+        help="replay the four subsequent blocks with learned fractions",
+    )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
-    data = load_data(args.data_dir)
-    common, pair, constant, routes, tri, active, info, hybrid, _ = fit(
-        data[:SELECT_END]
+    if args.precision:
+        from mixture_addresses import FRESH_END, replication_data, train
+
+        data = replication_data(args.data_dir)
+        fitted, fraction, constant_fraction, _ = train(data)
+        start, stop = REPORT_END, FRESH_END
+    else:
+        data = load_data(args.data_dir)
+        fitted = fit(data[:SELECT_END])
+        start, stop = SELECT_END, REPORT_END
+    common, pair, constant, routes = (
+        fitted.common,
+        fitted.pair,
+        fitted.constant,
+        fitted.routes,
+    )
+    tri, active, info, hybrid = (
+        fitted.trigram,
+        fitted.active,
+        fitted.info,
+        fitted.hybrid,
     )
     ids = np.frombuffer(data, dtype=np.uint16)
-    obs = common.observe(ids, SELECT_END, REPORT_END)
-    tape = ids[SELECT_END - 2 : REPORT_END]
+    obs = common.observe(ids, start, stop)
+    tape = ids[start - 2 : stop]
     degrees = np.bincount((common.keys >> 16).astype(np.intp), minlength=common.vocab)
     offset = np.concatenate(([0], np.cumsum(degrees))).astype(np.uint32)
     shared = (
@@ -119,6 +142,17 @@ if __name__ == "__main__":
         common.rows.den,
     )
     arms = {"bigram": (np.zeros(1, dtype=np.uint8), 0, -np.log(obs.base))}
+    if args.precision:
+        forecasts = tuple(obs.readout(m) for m in pair)
+        for name, model in (
+            ("fraction", fraction),
+            ("constant_fraction", constant_fraction),
+        ):
+            arms[name] = (
+                np.frombuffer(model.payload, dtype=np.uint8),
+                1,
+                model.losses(obs, forecasts),
+            )
     for name in ("conditional", "marginal", "seed"):
         a = routes[name]
         expected = np.where(

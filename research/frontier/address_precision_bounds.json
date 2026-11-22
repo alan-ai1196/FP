@@ -1,0 +1,39 @@
+{
+  "normalized_precision_examples": 2288,
+  "extremal_equalities": 572,
+  "exact_small_purchases": 108,
+  "text": {
+    "exact_backoff_ratio_bound": "2377/136",
+    "five_level_worst_case_radius_from_bound": 0.052605499961,
+    "full_alphabet_exact_normalizations": 15,
+    "subpanel_pair_envelope_block_nll": [
+      [
+        "6.926172023",
+        "6.926172024"
+      ],
+      [
+        "7.663680369",
+        "7.663680370"
+      ],
+      [
+        "6.659833890",
+        "6.659833891"
+      ],
+      [
+        "6.814700401",
+        "6.814700402"
+      ]
+    ],
+    "subpanel_pair_envelope_mean_nll": [
+      "7.016096671",
+      "7.016096672"
+    ],
+    "interior_types": 126,
+    "interior_targets": 149436,
+    "interior_beats_both_pure_types": 37,
+    "hindsight_hard_excess_on_fixed_interior_types_total_nats": [
+      "89.221017010",
+      "89.221017011"
+    ]
+  }
+}
