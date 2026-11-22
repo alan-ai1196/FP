@@ -1,0 +1,213 @@
+{
+  "controls": {
+    "packed_boolean_maps": 128,
+    "small_knapsacks": 891
+  },
+  "text": {
+    "registration": "afc26fc",
+    "vocabulary": 50257,
+    "named_outputs": 512,
+    "data_block_ends": [
+      786432,
+      1048576,
+      1572864,
+      1703936,
+      1835008
+    ],
+    "prefix_sha256": {
+      "address": "f450babb24e2576c647833d1819073dfd3d7461d1ceb605136d4a13acea8730a",
+      "selection": "786fa17c12238c81d60a7ad450122b689eb774b6a03928aced91173913ceee90",
+      "reporting": "582ad8f02059dab29ec766794dd72cf8f686255dea64904cb42acbff5fed7fbc"
+    },
+    "acquisition": {
+      "em_penalized_nll_before_after": {
+        "pair": [
+          1880605.819951,
+          1867409.944945
+        ],
+        "pooled": [
+          1873859.885597,
+          1861499.154722
+        ]
+      },
+      "distinct_candidate_maps": {
+        "conditional": 17,
+        "marginal": 16
+      },
+      "chosen_constant": "pooled",
+      "raw_purchase": {
+        "4": {
+          "eligible_rows": 7845,
+          "dp_capacity_units": 1024,
+          "dp_cells_visited": 8006577,
+          "active_rows": 242,
+          "active_entries": 540
+        },
+        "16": {
+          "eligible_rows": 5432,
+          "dp_capacity_units": 1024,
+          "dp_cells_visited": 5539887,
+          "active_rows": 223,
+          "active_entries": 578
+        },
+        "64": {
+          "eligible_rows": 3149,
+          "dp_capacity_units": 1024,
+          "dp_cells_visited": 3207890,
+          "active_rows": 212,
+          "active_entries": 600
+        }
+      },
+      "raw_tau": 16,
+      "full_tau": 64,
+      "training_bigram_pairs": 346854,
+      "training_trigram_pairs": 433280,
+      "training_trigram_triples": 815595,
+      "conditional_cap_bytes": 6159,
+      "selection": {
+        "conditional": {
+          "extra_bits": 49272,
+          "nll": 6.9886655244,
+          "priced_nll": 6.9896833556
+        },
+        "marginal": {
+          "extra_bits": 49624,
+          "nll": 6.9888305361,
+          "priced_nll": 6.9898556387
+        },
+        "seed": {
+          "extra_bits": 32968,
+          "nll": 6.9907008422,
+          "priced_nll": 6.9913818752
+        },
+        "constant": {
+          "extra_bits": 20672,
+          "nll": 6.9913374478,
+          "priced_nll": 6.9917644775
+        },
+        "bigram": {
+          "extra_bits": 0,
+          "nll": 7.0286539699,
+          "priced_nll": 7.0286539699
+        },
+        "matched_trigram": {
+          "extra_bits": 49240,
+          "nll": 7.0162324366,
+          "priced_nll": 7.0172496067
+        },
+        "unpruned_trigram": {
+          "extra_bits": 80743528,
+          "nll": 7.0472390935,
+          "priced_nll": 8.7151901046
+        }
+      }
+    },
+    "routes": {
+      "conditional": {
+        "fit_parameters": [
+          1,
+          "sparse",
+          2
+        ],
+        "selected_types": 1133,
+        "changed_seed_types": 1019,
+        "changed_reporting_targets": 17373,
+        "encoding": "sparse",
+        "payload_bytes": 6158,
+        "sha256": "d19323d0f1a71d6a3fa076bb450f5fbf3b618dba242c5a1bf0ab3914b0bdebc8"
+      },
+      "marginal": {
+        "fit_parameters": [
+          2,
+          "sparse",
+          0
+        ],
+        "selected_types": 1095,
+        "changed_seed_types": 1041,
+        "changed_reporting_targets": 19473,
+        "encoding": "sparse",
+        "payload_bytes": 6202,
+        "sha256": "c5ed27ff115c4075ea1acf98c0d42447093c45dbee5bbdf1099f04b0e7ad5fef"
+      },
+      "seed": {
+        "fit_parameters": [],
+        "selected_types": 244,
+        "changed_seed_types": 0,
+        "changed_reporting_targets": 0,
+        "encoding": "sparse",
+        "payload_bytes": 4120,
+        "sha256": "459a9e074bf49cba2f970307f6d87def13919d9c2a0e2bef2f8400327bcf9e7c"
+      }
+    },
+    "reporting": {
+      "conditional": {
+        "extra_bits": 49272,
+        "nll": 7.0733691774,
+        "priced_nll": 7.0743870086
+      },
+      "marginal": {
+        "extra_bits": 49624,
+        "nll": 7.0732235354,
+        "priced_nll": 7.074248638
+      },
+      "seed": {
+        "extra_bits": 32968,
+        "nll": 7.0746036003,
+        "priced_nll": 7.0752846333
+      },
+      "constant": {
+        "extra_bits": 20672,
+        "nll": 7.0762318814,
+        "priced_nll": 7.0766589111
+      },
+      "bigram": {
+        "extra_bits": 0,
+        "nll": 7.1183185979,
+        "priced_nll": 7.1183185979
+      },
+      "matched_trigram": {
+        "extra_bits": 49240,
+        "nll": 7.1102407091,
+        "priced_nll": 7.1112578793
+      },
+      "unpruned_trigram": {
+        "extra_bits": 80743528,
+        "nll": 7.1524139024,
+        "priced_nll": 8.8203649135
+      }
+    },
+    "matched_trigram": {
+      "entries": 578,
+      "rows": 223,
+      "packed_bytes": 6153,
+      "sha256": "fccdd9139b959410d443fd4fc1e68fcc68afe9c02fbe132fd7f378c53c3b505b"
+    },
+    "conditional_priced_wins": {
+      "marginal": false,
+      "seed": true,
+      "constant": true,
+      "bigram": true,
+      "matched_trigram": true,
+      "unpruned_trigram": true
+    },
+    "posthoc_calibrated_trigram": {
+      "base": "pooled",
+      "tau": 64,
+      "rows": 118,
+      "successors": 358,
+      "bytes_including_live_state": 6159,
+      "sha256": "255d4b5a423e43445796728aaaa54f5a7fdcc2d9956c2c22577847139448102a",
+      "selection": {
+        "extra_bits": 49272,
+        "nll": 6.9825977067,
+        "priced_nll": 6.9836155379
+      },
+      "reporting": {
+        "extra_bits": 49272,
+        "nll": 7.0710037654,
+        "priced_nll": 7.0720215966
+      }
+    },
+    "registered_formation": true
+  }
+}

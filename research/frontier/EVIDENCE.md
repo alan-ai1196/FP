@@ -463,3 +463,31 @@ python -B research/frontier/text_statistic.py --audit
 python -B research/frontier/text_statistic.py --check research/frontier/text_statistic_result.json
 python -B research/frontier/audit_predictive_split.py
 ~~~
+
+## Learning a raw token address from full-vocabulary loss
+
+**EMPIRICALLY OBSERVED.** On the pinned FineWeb-Edu training file, the location $x_{t-2}$ supplied an earlier raw token. The run learned which of two fitted full-vocabulary forecasts to use after seeing $x_{t-1}$. The initial address was a frequency split with 244 types on one side. The two forecasts each learned masses for 512 common output types plus a pooled tail on 262,144 raw targets. After freezing them, the learner saw 524,288 more ordinary targets to buy address changes and used a later 131,072 targets to select its format and regularization. The following 131,072 targets were held out. The shared bigram, trained on the first 786,432 tokens, and its counts are common costs. Each additional installed or live bit costs $(\ln 2)/256$ nats per reporting block. [Prospective registration](https://github.com/alan-ai1196/FP/blob/afc26fc/research/frontier/NEXT.md) · [Reproducible receipt](text_addresses_result.json)
+
+| Frozen predictor | Extra installed and live bytes | Held-out nats/token | With storage price |
+| --- | ---: | ---: | ---: |
+| Raw bigram | 0 | 7.118319 | 7.118319 |
+| Pooled fitted output probabilities | 2,584 | 7.076232 | 7.076659 |
+| Supplied frequency address, two fitted readouts | 4,121 | 7.074604 | 7.075285 |
+| Address learned from conditional forecasts | 6,159 | 7.073369 | 7.074387 |
+| Address learned from backoff probabilities alone | 6,203 | 7.073224 | 7.074249 |
+| Raw trigram, selected whole context rows | 6,155 | 7.110241 | 7.111258 |
+| Raw trigram, all rows | 10,092,941 | 7.152414 | 8.820365 |
+| Raw trigram with fitted pooled backoff, later comparison | 6,159 | **7.071004** | **7.072022** |
+
+The conditional learner changed **1,019 token addresses**, affecting 17,373 reporting positions. Its selected regularization was one root sum of squared observed log ratios. The installed map used two-byte exceptions to the frequency split and one live byte. It improved priced NLL by 0.000898 over the seed, meeting the registered formation criterion. The query-ignoring assignment won the separate comparison on this block by 0.000138. Both deployed forecasts still condition on the current raw token. Selection had favored the query-aware assignment. Most of the large gain over the raw bigram came from fitting the pooled output probabilities, which alone saved 0.042087 unpriced nats/token.
+
+**Post hoc comparison.** The registered raw trigram inherited the original unigram backoff. After observing its score, we gave the same conventional raw-context learner access to the fitted output probabilities and charged for them. All nine choices of constant backoff and trigram smoothing used the original acquisition and selection targets. The winning model combines pooled calibration with 118 context rows and 358 successor counts at smoothing mass 64. The same 6,159-byte allowance includes its two-byte live raw-history register. It beat the conditional address by 0.002365 nats/token at equal storage. The unchanged model goes forward to a later block for a prospective comparison. The primary formation result identifies a useful learned distinction within the two-readout family. The stronger conventional comparison changes which implementation one would select.
+
+**Execution and acquisition.** A scalar reference advanced the saved address sequentially and rebuilt every observed probability from integer masses. Separately compiled C and CUDA kernels scored the packed models and matched all per-token FP64 losses within $10^{-11}$ for all eight arms. An exhaustive seven-type check covered all 128 binary maps, their serialized readouts and normalization. Independent brute force checked 891 small integer knapsacks. Training visited 16.75 million DP cells across the three originally registered raw-trigram smoothings. A complete rerun including the calibrated comparator, scalar checks and selection took 3.07 seconds and reached 195.6 MB process working set on the Ryzen 7 5800X.
+
+For 131,072 targets, five warm sequential MSVC x64 CPU replays took 10.82–11.02 ms for the learned conditional address, 8.17–8.24 ms for the supplied seed and 10.62–10.82 ms for the calibrated trigram. The same data and model bytes resident on an RTX 3090 took 0.0523–0.0537, 0.0501–0.0603 and 0.0490–0.0501 ms per teacher-forced batch respectively. Each GPU sample averaged ten identical launches with one thread per target. The shared lookup arrays occupy 2,684,212 bytes, the token input occupies 262,148 bytes and the FP64 loss output occupies 1,048,576 bytes. These timings cover observed-token scoring with hot resident data. Sequential generation, host transfer, materializing 50,257 probabilities per position and one-time acquisition require different work. All arms used the same compiled benchmarking binary. [Learning and scalar reference](text_addresses.py) · [Conventional row purchase](packed_trigram.py) · [Native kernel](address_score.c)
+
+~~~powershell
+python -B research/frontier/text_addresses.py --check research/frontier/text_addresses_result.json
+python -B research/frontier/measure_addresses.py --gpu
+~~~

@@ -115,8 +115,12 @@ def compare(counts, n, params, bits, lag, price):
     return chosen, {k: printed(v) for k, v in intervals.items()}
 
 
-def compile_libraries(directory, modes=("raw", "both")):
-    source = Path(__file__).with_name("delayed_state.c").resolve()
+def compile_libraries(directory, modes=("raw", "both"), source=None):
+    source = (
+        Path(__file__).with_name("delayed_state.c").resolve()
+        if source is None
+        else Path(source).resolve()
+    )
     if os.name == "nt":
         from locale import getpreferredencoding
 
@@ -161,7 +165,12 @@ def compile_libraries(directory, modes=("raw", "both")):
             "a native C compiler is needed for the optional packed-kernel check"
         )
     libraries = []
-    defines = {"raw": ["-DFP_RAW_ONLY"], "both": [], "matrix": ["-DFP_MATRIX"]}
+    defines = {
+        "raw": ["-DFP_RAW_ONLY"],
+        "both": [],
+        "matrix": ["-DFP_MATRIX"],
+        "address": [],
+    }
     for name in modes:
         lib = directory / (name + suffix)
         flags = defines[name]
