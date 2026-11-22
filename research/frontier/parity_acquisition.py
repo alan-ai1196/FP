@@ -9,8 +9,7 @@ from math import exp, isclose, log
 from pathlib import Path
 
 import numpy as np
-
-from parity_packing import BALL, ERRORS, M, SIZE, extend
+from parity_packing import BALL, ERRORS, SIZE, M, extend
 
 
 @dataclass(frozen=True)
@@ -46,19 +45,25 @@ def episodes(seed, n, teacher):
     return x, parity[x & teacher[:, None]] ^ noise
 
 
-def fit_options(x, y):
+def signed_correlations(x, y):
     # The row index is an opaque task ID. No operation on its constituent bits
     # enters fitting. H[task,word] is an observed signed label count.
-    count = np.zeros((SIZE, SIZE), dtype=np.int64)
-    np.add.at(count, (np.arange(SIZE)[:, None], x), 1 - 2 * y.astype(np.int64))
+    tasks = len(x)
+    count = np.zeros((tasks, SIZE), dtype=np.int64)
+    np.add.at(count, (np.arange(tasks)[:, None], x), 1 - 2 * y.astype(np.int64))
     half = 1
     while half < SIZE:
-        blocks = count.reshape(SIZE, -1, 2 * half)
+        blocks = count.reshape(tasks, -1, 2 * half)
         left = blocks[:, :, :half].copy()
         right = blocks[:, :, half:]
         blocks[:, :, :half] = left + right
         right[:] = left - right
         half *= 2
+    return count
+
+
+def fit_options(x, y):
+    count = signed_correlations(x, y)
     n = x.shape[1]
     candidates = []
     for row in count:
@@ -237,31 +242,31 @@ def evaluate(name, fit, x, y, teacher, layouts, tests, unrestricted=False):
     total = int(y.size)
     fair = total - scored
     nll = (good * log(8 / 7) + (scored - good) * log(8) + fair * log(2)) / total
-    return dict(
-        learner=name,
-        layouts_scored=layouts,
-        training_readout_membership_checks=tests,
-        stored_basis=basis,
-        derived_state_bits=len(basis),
-        logical_precompute_xors=sum(w.bit_count() - 1 for w in basis),
-        logical_precompute_input_taps=sum(w.bit_count() for w in basis),
-        encoded_route_table_bits=SIZE * 9,
-        encoded_basis_bits=7 * len(basis),
-        packed_model_bytes=len(installed),
-        raw_episode_storage_bits=M,
-        derived_episode_storage_bits=len(basis),
-        correctly_identified_keys=correct_keys,
-        heldout_targets=total,
-        heldout_fair_targets=fair,
-        heldout_correct_confident=good,
-        heldout_incorrect_confident=scored - good,
-        heldout_nll=nll,
-        heldout_raw_query_bit_reads=raw_reads,
-        heldout_synopsis_bit_reads=synopsis_reads,
-        heldout_query_xor_reductions=query_xors,
-        train_confident_targets=value.targets,
-        train_correct_confident=value.correct,
-    )
+    return {
+        "learner": name,
+        "layouts_scored": layouts,
+        "training_readout_membership_checks": tests,
+        "stored_basis": basis,
+        "derived_state_bits": len(basis),
+        "logical_precompute_xors": sum(w.bit_count() - 1 for w in basis),
+        "logical_precompute_input_taps": sum(w.bit_count() for w in basis),
+        "encoded_route_table_bits": SIZE * 9,
+        "encoded_basis_bits": 7 * len(basis),
+        "packed_model_bytes": len(installed),
+        "raw_episode_storage_bits": M,
+        "derived_episode_storage_bits": len(basis),
+        "correctly_identified_keys": correct_keys,
+        "heldout_targets": total,
+        "heldout_fair_targets": fair,
+        "heldout_correct_confident": good,
+        "heldout_incorrect_confident": scored - good,
+        "heldout_nll": nll,
+        "heldout_raw_query_bit_reads": raw_reads,
+        "heldout_synopsis_bit_reads": synopsis_reads,
+        "heldout_query_xor_reductions": query_xors,
+        "train_confident_targets": value.targets,
+        "train_correct_confident": value.correct,
+    }
 
 
 def unseen_pairs(xtrain, ytrain, testx, testy, rules):
@@ -290,14 +295,16 @@ def unseen_pairs(xtrain, ytrain, testx, testy, rules):
             total_loss += hits * log(8 / 7) + (int(take.sum()) - hits) * log(8)
     unseen_ids, unseen_positions = np.nonzero(unseen)
     distinct_unseen = set(zip(unseen_ids, testx[unseen_ids, unseen_positions]))
-    return dict(
-        unique_training_pairs=int(np.count_nonzero(present)),
-        unseen_heldout_draws=int(unseen.sum()),
-        distinct_unseen_heldout_pairs=len(distinct_unseen),
-        table_nll=float(losses.mean()),
-        table_nll_unseen=log(2),
-        exhaustive_nll_unseen=total_loss / int(unseen.sum()) if unseen.any() else None,
-    )
+    return {
+        "unique_training_pairs": int(np.count_nonzero(present)),
+        "unseen_heldout_draws": int(unseen.sum()),
+        "distinct_unseen_heldout_pairs": len(distinct_unseen),
+        "table_nll": float(losses.mean()),
+        "table_nll_unseen": log(2),
+        "exhaustive_nll_unseen": total_loss / int(unseen.sum())
+        if unseen.any()
+        else None,
+    }
 
 
 def experiment():
@@ -347,24 +354,24 @@ def experiment():
     bad = SIZE * exp(-2 * 256 * (7 / 8 - threshold) ** 2) + 2 * SIZE * (SIZE - 1) * exp(
         -2 * 256 * (threshold - 1 / 2) ** 2
     )
-    return dict(
-        seeds=[23112601, 23112602, 23112603],
-        train_targets=int(ytrain.size),
-        heldout_targets=int(testy.size),
-        per_key_training_inputs=256,
-        per_key_heldout_inputs=128,
-        flip_rate="1/8",
-        candidate_parities=SIZE,
-        histogram_bytes=SIZE * SIZE * 8,
-        walsh_additions_or_subtractions=SIZE * SIZE * M,
-        profitable_key_mask_pairs=sum(map(len, options)),
-        empirical_optimal_layouts=optimal_layouts,
-        upper_probability_of_bad_correlation_event=bad,
-        results=outcomes,
-        posthoc_pair_retrieval=unseen_pairs(
+    return {
+        "seeds": [23112601, 23112602, 23112603],
+        "train_targets": int(ytrain.size),
+        "heldout_targets": int(testy.size),
+        "per_key_training_inputs": 256,
+        "per_key_heldout_inputs": 128,
+        "flip_rate": "1/8",
+        "candidate_parities": SIZE,
+        "histogram_bytes": SIZE * SIZE * 8,
+        "walsh_additions_or_subtractions": SIZE * SIZE * M,
+        "profitable_key_mask_pairs": sum(map(len, options)),
+        "empirical_optimal_layouts": optimal_layouts,
+        "upper_probability_of_bad_correlation_event": bad,
+        "results": outcomes,
+        "posthoc_pair_retrieval": unseen_pairs(
             xtrain, ytrain, testx, testy, exhaustive[2]
         ),
-    )
+    }
 
 
 def verify_result(actual, expected):
