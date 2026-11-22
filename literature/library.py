@@ -232,6 +232,9 @@ def merge(rows, incoming):
         delta = READ_STAGE[fresh['reading_status']] - READ_STAGE[previous.get('reading_status', 'unread')]
         if delta < 0:
             fresh['reading_status'] = previous['reading_status']
+        for field in ('authors', 'local_file_path'):
+            if previous.get(field) and not fresh.get(field):
+                fresh[field] = previous[field]
         for field in ('reading_progress', 'extracted_instruments', 'fp_relevance', 'fulltext_url', 'companion_urls'):
             if previous.get(field) and (delta < 0 or not fresh.get(field)):
                 fresh[field] = previous[field]

@@ -199,3 +199,29 @@ python -B research/frontier/audit_literature.py
 ~~~
 
 The finite-state and parity results refer to different tasks. The physical charge for the parity construction includes seven raw bits, four extra stored bits, nine separate precomputation XORs, query decoding and all synopsis accesses. There is no measured GPU speedup for this construction.
+
+## Learning a four-bit synopsis from noisy tokens
+
+**EMPIRICALLY OBSERVED.** The task map, training and test seeds, sample sizes, hypothesis classes, tie rules and comparators were committed before generating the tapes. The fit saw raw words, opaque task IDs and noisy labels. The 32,768 training examples and 16,384 fresh test examples used independent random streams and an independent label-flip rate of $1/8$. Loss is mean natural-log loss per held-out binary target. Every ID had 256 training and 128 test examples. [Dated registration](https://github.com/alan-ai1196/FP/blob/1e6c46d/research/frontier/NEXT.md) · [Executable experiment](parity_acquisition.py) · [Complete receipt](parity_acquisition_result.json)
+
+| Fitted learner | Layouts scored | Correct task rules out of 128 | Fair test predictions | Test loss | Query-time raw bits read over all test targets |
+|---|---:|---:|---:|---:|---:|
+| Exhaustive four-parity synopsis | 11,811 | 128 | 0 | 0.381640 | 14,336 |
+| Greedy four-parity synopsis | 236 | 112 | 2,048 | 0.419880 | 12,288 |
+| Four cached raw coordinates | 35 | 64 | 8,192 | 0.536859 | 6,144 |
+| Unrestricted raw-parity reader | 1 | 128 | 0 | 0.381640 | 57,344 |
+
+The observed labels gave each ID exactly one profitable rule. All 30 four-dimensional radius-one covering subspaces attained the same empirical optimum. The declared tie rule chose masks 7, 25, 42 and 75. The compiled readout gave 14,295 correct confident and 2,089 incorrect confident test predictions, exactly matching the unrestricted fitted reader. Greedy fitting selected 11, 22, 39 and 67. Each fit estimated its per-task decoder as well as the layout. An independent implementation scored raw predictions directly, enumerated all 11,811 layouts by a different construction, and checked 38,912 compiled task/input routes across the three constrained fits.
+
+Acquisition accumulated 32,768 signed observations into a 131,072-byte integer histogram, then made 114,688 scalar Walsh additions or subtractions plus temporary array traffic. Each of the 16,384 key/mask pairs was tested for profitable likelihood. Candidate generation, basis extension, radius-one set construction, likelihood comparisons and route compilation are extra work. Filtering left 128 profitable key/mask pairs. The exhaustive search checked 1,511,808 readout memberships, greedy checked 30,208, the raw-cache search checked 4,480, and direct fitting checked 128. The potential mask family and legal operations are supplied to all fits, with the generator and scoring work charged. A small histogram is a sufficient statistic for this specific loss family.
+
+Each constrained model actually serialized four seven-bit masks and 128 nine-bit route entries into 148 bytes including padding. The unrestricted model used 144 bytes. Each episode kept the seven raw input bits, and a constrained model added four bits of state before seeing the task. The full four-parity fit took 13 input taps, nine binary XORs and four writes per new raw word when the parities were reduced separately. Each later uniform query averaged two synopsis taps, $7/8$ of a raw tap, and $241/128$ binary XORs; direct evaluation averaged $7/2$ raw taps and $321/128$ XORs. For repeated independent uniform tasks on one retained input, this schedule uses fewer XORs in expectation at 15 queries. Counting all input and synopsis bit taps at equal cost crosses at 21 queries, or 28 if each of the four preprocessing writes also costs one tap. These thresholds omit routing/address logic shared or specific to each reader. Actual packed-word bit extraction and population count have machine-dependent costs.
+
+Three complete receipt replays on the available Ryzen 7 5800X under Windows 11, Python 3.12.9 and NumPy 2.5.1 took 1.769, 1.765 and 1.743 seconds, including process startup, data generation, all fits and checks. The Windows peak working-set counters observed during those runs were 36,810,752, 36,704,256 and 36,864,000 bytes. These are whole CPU process measurements. Each logical raw-bit query in the Python replay extracts from a packed word already in host memory.
+
+A **post hoc memorization check** used a separate clean bit for each (ID, input) pair, a uniform prior and the true label noise. Training visited 14,171 distinct pairs. The test included 2,265 occurrences of 1,399 distinct pairs absent from training. Their pair-table loss was $\log 2$ and the four-parity fit obtained 0.380958. Across all test targets the pair-table loss was 0.503990. This shows generalization to new combinations of an input and a trained task. Every test ID occurred in training. [Learning guarantee](FOUNDATION.md#which-shared-computations-does-prediction-error-select)
+
+~~~powershell
+python -B research/frontier/parity_acquisition.py --check research/frontier/parity_acquisition_result.json
+python -B research/frontier/parity_packing.py
+~~~

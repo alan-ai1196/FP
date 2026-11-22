@@ -18,3 +18,7 @@ Foundation R4 remains canonical on `main`. Its positive evaluator and a conventi
 ## Objective and literature-driven comparisons
 
 Use separate predictive, emergence and interactive claims, each with a budget and a specified observer. Retain the finite-state learner and the order-two counterexample as controls. A bound on conditional loss under a logging policy transfers to decisions only with action coverage. A later task can also change what state was worth constructing before it was known. The seven-bit parity theorem supplies an exact optimum against arbitrary finite encoders. Its Hamming construction is a comparison target for learning. [Research objective](INTELLIGENCE_OBJECTIVE.md) · [Cross-paper proof](../../literature/research_connections.md)
+
+## What ordinary labels identified in the seven-bit test
+
+Empirical likelihood recovered an optimal stored computation and all 128 decoders from ordinary noisy examples. The permitted operations were XORs; the objective chose their shared masks from all four-dimensional layouts. Exact prediction required a joint choice. The greedy learner learned 112 of the task rules even though each step optimized immediate likelihood within its available choices. Keep exhaustive search as a check on efficacy and the unrestricted raw-parity reader as a check on total cost. A single-use query favors the latter in the simple XOR/tap schedule. [Registered results and amortization thresholds](EVIDENCE.md#learning-a-four-bit-synopsis-from-noisy-tokens)

@@ -124,7 +124,8 @@ def publication_files(url, label):
         except (requests.RequestException, ValueError) as exc:
             info['retrieval_issue'] = str(exc)
         results.append(info)
-    return date_text, results
+    authors = [tag.get('content', '').strip() for tag in soup.select('meta[name="citation_author"]')]
+    return date_text, ', '.join(author for author in authors if author), results
 
 
 def institution(label, url, start, end):
@@ -148,7 +149,7 @@ def institution(label, url, start, end):
     for src, (title, stamp) in announcements.items():
         item = dict(title=title, url=src, date=stamp)
         try:
-            pub_date, item['publisher_files'] = publication_files(src, label)
+            pub_date, item['authors'], item['publisher_files'] = publication_files(src, label)
             item['date'] = pub_date or stamp
         except requests.RequestException as exc:
             item['retrieval_issue'] = str(exc)
@@ -179,11 +180,11 @@ def save_json(path, value):
 def venues(end, days, imported):
     directory = library.CORPUS/'peer_reviewed'
     saved = directory/f'venues-{end}.json'
-    prior = {}
-    if saved.is_file():
-        prior = json.loads(saved.read_text(encoding='utf-8'))
     if imported is None:
-        curation = {i['id']:i['curation'] for i in prior.get('items', []) if i.get('curation')}
+        curation = {}
+        for snapshot in sorted(directory.glob('venues-????-??-??.json')):
+            prior = json.loads(snapshot.read_text(encoding='utf-8'))
+            curation.update({i['id']:i['curation'] for i in prior['items'] if i.get('curation')})
         report = venue_sweep.sweep_venues(end, days, directory/'venue_docs', curation)
     else:
         report = json.loads(imported.read_text(encoding='utf-8-sig'))
@@ -193,6 +194,9 @@ def venues(end, days, imported):
     rows = []
     for item in report['items']:
         curated = item.get('curation', {})
+        manuscript = curated.get('author_manuscript', {})
+        companions = [manuscript.get('primary_url'), manuscript.get('source_url'),
+                      curated.get('supplement_url'), curated.get('author_code')]
         collected = item['local_file_path']
         if collected:
             target = library.PROJECT/collected
@@ -204,6 +208,8 @@ def venues(end, days, imported):
             publication_review_status=curated.get('publication_review_status',item.get('publication_review_status','Unassessed')),
             reading_progress=curated.get('reading_progress',''), reading_status=curated.get('reading_status',item['reading_status']),
             mathematical_topics=', '.join(item['title_matches']), fulltext_url=item.get('open_pdf_url',''),
+            companion_urls=' '.join(url for url in companions if url),
+            extracted_instruments=' / '.join(curated.get('instruments', [])),
             version=item.get('local_version',item.get('version','Publisher record')),
             fp_relevance=curated.get('discovery_relevance',''), follow_up_status='Inspect primary argument and supplementary materials.'))
     summary = [{k:s.get(k) for k in ('source','channel','scanned','matches','failures')} for s in report['sources']]
@@ -211,7 +217,7 @@ def venues(end, days, imported):
                       local_report=saved.relative_to(library.PROJECT).as_posix())
 
 
-def daily_entry(end, new_ids, observations):
+def daily_entry(end, new_ids):
     path = library.ROOT/'DAILY_DISCOVERIES.md'
     log = path.read_text(encoding='utf-8') if path.exists() else '# Daily discoveries\n'
     marker = f'<!-- sweep {end} -->'
@@ -256,10 +262,12 @@ def sweep(end, days, venue_snapshot=None):
             for item in value['items']:
                 for doc in item.get('publisher_files', []):
                     if doc['kind'] == 'paper':
-                        rows.append(dict(id=doc['id'], title=item['title'], authors=name.split()[0],
+                        companions = [p['url'] for p in item['publisher_files'] if p['kind'] == 'appendix']
+                        rows.append(dict(id=doc['id'], title=item['title'], authors=item.get('authors', ''),
                             publication_date=item['date'], source=name, original_url=doc['url'],
                             local_file_path=doc.get('local_file_path',''), version='Publisher PDF at linked URL',
                             publication_review_status='Institutional technical report', reading_status='unread',
+                            fulltext_url=doc['url'], companion_urls=' '.join(companions + [item['url']]),
                             formal_verification_status='Unassessed', ai_involvement='Unassessed',
                             follow_up_status='Confirm author list and inspect linked supplementary files.'))
     result = check('arXiv', lambda: arxiv(start, end))
@@ -281,7 +289,7 @@ def sweep(end, days, venue_snapshot=None):
     seen_today = sorted(set(prior.get('newly_indexed',prior.get('new_arxiv_ids',[]))) | set(new_ids))
     save_json(snapshot, dict(date=str(end), window_start=str(start), window_end=str(end), newly_indexed=seen_today,
         sources=observations))
-    daily_entry(end, seen_today, observations)
+    daily_entry(end, seen_today)
     print(f'{end} within {start} to {end}: {len(rows)} identified editions, {len(new_ids)} first indexed.')
     for name, item in observations.items():
         print(name, item.get('error', item.get('revision', item.get('matched'))))
