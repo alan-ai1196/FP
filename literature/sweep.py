@@ -49,7 +49,7 @@ FEEDS = {
 
 
 def get(url, **opts):
-    result = requests.get(url, headers=AGENT, timeout=(6, 25), **opts)
+    result = requests.get(url, headers=AGENT, timeout=opts.pop('timeout', (6, 25)), **opts)
     result.raise_for_status()
     return result
 
@@ -83,8 +83,17 @@ def arxiv(start, end, download=True):
         if pages:
             time.sleep(ARXIV_REQUEST_INTERVAL)
         try:
-            data = ET.fromstring(get(url, params=dict(search_query=query, start=offset,
-                max_results=ARXIV_PAGE_SIZE, sortBy='lastUpdatedDate', sortOrder='descending')).content)
+            for attempt in range(3):
+                try:
+                    response = get(url, timeout=(10, 35), params=dict(search_query=query,
+                        start=offset, max_results=ARXIV_PAGE_SIZE,
+                        sortBy='lastUpdatedDate', sortOrder='descending'))
+                    break
+                except requests.RequestException:
+                    if attempt == 2:
+                        raise
+                    time.sleep(ARXIV_REQUEST_INTERVAL)
+            data = ET.fromstring(response.content)
             entries = data.findall('{*}entry')
             reported_total = data.findtext('{http://a9.com/-/spec/opensearch/1.1/}totalResults')
             pages += 1

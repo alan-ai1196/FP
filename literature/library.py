@@ -235,7 +235,8 @@ def merge(rows, incoming):
         for field in ('authors', 'local_file_path'):
             if previous.get(field) and not fresh.get(field):
                 fresh[field] = previous[field]
-        for field in ('reading_progress', 'extracted_instruments', 'fp_relevance', 'fulltext_url', 'companion_urls'):
+        for field in ('reading_progress', 'extracted_instruments', 'fp_relevance', 'fulltext_url', 'companion_urls',
+                      'version', 'publication_review_status', 'ai_involvement', 'formal_verification_status'):
             if previous.get(field) and (delta < 0 or not fresh.get(field)):
                 fresh[field] = previous[field]
         if previous.get('follow_up_status') and previous.get('publication_review_status') == fresh.get('publication_review_status'):

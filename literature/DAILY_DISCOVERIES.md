@@ -2,7 +2,9 @@
 
 ## 2026-11-23
 
-<!-- sweep 2026-11-23 --> The dated sweep recorded 9 newly indexed editions. [Source counts and retrieval exceptions](snapshots/discovery-2026-11-23.json)
+<!-- sweep 2026-11-23 --> The dated sweep recorded 1425 newly indexed editions. [Source counts and retrieval exceptions](snapshots/discovery-2026-11-23.json)
+
+The expanded ChatGPT pass added 1,416 records to the 793-record queue inherited from local Astra, bringing the current index to 2,209. These additions are discovery leads, including revisions, institutional articles and relevance-pending items. They are not completed readings or 1,416 established research results. The expanded arXiv title-and-abstract query covered its November 17–23 revision window over seven pages, retaining 1,272 records after a timed-out first attempt was retried. The OpenAI, Anthropic and DeepMind channels retained 51 visible items, and the venue pass retained 99. OpenReview’s two modification channels still returned HTTP 403. Institutional landing pages are not an exhaustive historical archive. This pass saved metadata and institutional HTML. PDF and source transfers remain pending where the index has no local full-text path. Source priorities and the original 722-paper reading obligation are unchanged.
 
 The initial local library contains the original 722-manuscript release and 29 later manuscript editions. The dated sweep found three arXiv revisions, five journal papers and a separately indexed institutional report with its appendix. One arXiv revision studies when random witnesses identify a predictive state. The journal pass included a group-representation tensor paper whose authors report AI-assisted example selection. Two OpenReview modification channels returned HTTP 403. The official ICLR and NeurIPS programs were available. [Dated source record](snapshots/discovery-2026-11-23.json)
 
