@@ -74,6 +74,31 @@ static unsigned syndrome(uint64_t word, const uint64_t masks[6]) {
     return s;
 }
 
+#ifdef FP_MATRIX
+static uint64_t encode_matrix(uint64_t word, const uint64_t masks[6],
+                              const uint8_t *columns, const uint8_t *parent) {
+    unsigned s = syndrome(word, masks);
+    while (s) {
+        unsigned coordinate = parent[s];
+        word ^= UINT64_C(1) << coordinate;
+        s ^= columns[coordinate];
+    }
+    return word >> 6;
+}
+
+static uint64_t decode(uint64_t code, const uint64_t masks[6]) {
+    uint64_t data = code << 6;
+    return data | syndrome(data, masks);
+}
+
+EXPORT uint64_t matrix_errors(const uint8_t *input, size_t count, uint32_t lag,
+                              uint8_t *ring, const uint8_t *columns, const uint8_t *parent) {
+    uint64_t masks[6] = {0};
+    for (unsigned p = 0; p < 63; ++p)
+        for (unsigned i = 0; i < 6; ++i)
+            if ((columns[p] >> i) & 1) masks[i] |= UINT64_C(1) << p;
+#define ENCODE_WORD(w) encode_matrix(w, masks, columns, parent)
+#else
 static uint64_t encode(uint64_t word, const uint64_t masks[6]) {
     unsigned error = syndrome(word, masks);
     if (error) word ^= UINT64_C(1) << (error - 1);
@@ -104,6 +129,8 @@ EXPORT uint64_t coded_errors(const uint8_t *input, size_t count, uint32_t lag,
     for (unsigned p = 1; p <= 63; ++p)
         for (unsigned i = 0; i < 6; ++i)
             if ((p >> i) & 1) masks[i] |= UINT64_C(1) << (p - 1);
+#define ENCODE_WORD(w) encode(w, masks)
+#endif
     uint64_t errors = 0;
     size_t slot = 0, age = 0, pos = 0;
     while (pos < count) {
@@ -115,7 +142,7 @@ EXPORT uint64_t coded_errors(const uint8_t *input, size_t count, uint32_t lag,
         uint64_t input_word = read_bits(input, pos, observed);
         if (pos >= lag) errors += POP((prediction ^ input_word) & low(observed));
         if (observed == width)
-            write_bits(ring, slot, stored, width == 63 ? encode(input_word, masks) : input_word);
+            write_bits(ring, slot, stored, width == 63 ? ENCODE_WORD(input_word) : input_word);
         pos += observed;
         age += observed;
         slot += stored;

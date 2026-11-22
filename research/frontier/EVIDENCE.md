@@ -404,3 +404,33 @@ python -B research/frontier/audit_causal_state.py
 ~~~
 
 The optional native replay builds raw-only and combined libraries in a temporary directory. It uses the available Visual Studio x64 C toolchain on Windows, or a C11 compiler on POSIX. It reports fresh kernel timings and library sizes outside the deterministic statistical receipt.
+
+## Learning the packed update from next-bit errors
+
+**EMPIRICALLY OBSERVED.** The 57 free columns of a $6\times63$ systematic check matrix all started at zero. Training on 262,144 history/target group pairs made every column distinct and nonzero, producing a perfect code with different coordinate assignments from the conventional designer. Each group pair supplied 63 ordinary binary prediction targets. No ideal column, correction label or clean future was exposed to selection. Training received the six fixed pivots, nearest-kernel encoding, and the previously fitted lag 258,048. The conventional designer maximized the uniform-source geometric objective and reached the same covering radius of one. [Prospective registration](https://github.com/alan-ai1196/FP/blob/491388e/research/frontier/NEXT.md) · [Implementation](learned_code.py) · [Columns, training path, predictions and prices](learned_code_result.json)
+
+The training data comprise 64 independently restarted two-block episodes, or 33,030,144 observed tokens beyond the earlier lag-identification run. Each greedy designer tried 3,648 column assignments. The empirical search accumulated 941,359,104 signed per-coordinate observations across the 57 steps. Sums grouped by current syndrome and the proposed column's input bit give exact error counts for each candidate. The final grouped count of 2,257,968 training errors matched a separate reconstruction on the original arrays. Fresh conditional-rate calibration, model selection and reporting used respectively 2,064,384, 1,032,192 and 4,128,768 targets. Every stream had its own unscored warm-up block.
+
+| Frozen predictor | Distinct nonzero columns | Charged bytes | Reporting nats/token | Reporting score at price 0.30 | Exact population mismatch |
+|---|---:|---:|---:|---:|---:|
+| Fair | — | 0 | 0.693147 | 0.693147 | 1/2 |
+| Raw ring | — | 32,274 | 0.376533 | 0.676701 | 1/8 |
+| Six pivots and zero free columns | 6 | 29,440 | 0.440468 | 0.714278 | 9/56 |
+| Random columns | 38 | 29,440 | 0.407213 | 0.681022 | 95/672 |
+| Empirically learned columns | 63 | 29,440 | 0.398592 | 0.672401 | 35/256 |
+| Conventional geometric designer | 63 | 29,440 | 0.398616 | 0.672426 | 35/256 |
+| Supplied Hamming routine | 63 | 29,312 | 0.398927 | 0.671546 | 35/256 |
+
+Training improved held-out loss by **0.041877 nats per token** relative to its initialization at the same storage. The learned array made 563,647 reporting errors, compared with 662,592 for its initialization and 563,704 for the geometric designer. Their small observed difference is compatible with identical theoretical mismatch. Learning paid for the nonlinear correction relative to raw storage at price 0.30, with a frozen population score of 0.672772. When the smaller supplied implementation also competed, selection chose raw at price zero, supplied Hamming at 0.30 and fair at 0.40. On this symmetric source the final population objective cannot select a uniquely named useful assignment. The counting theorem establishes optimality among arbitrary encoders and causal decoders only for the common-confidence observer. [Theorem and equality conditions](FOUNDATION.md#when-ordinary-prediction-constructs-a-perfect-code)
+
+**MEASURED ON CPU.** The general C implementation takes the literal 63 installed columns and 64 one-byte predecessor entries. It builds six 64-bit masks and uses a packed ring of 29,184 bytes. The 256-byte overhead allowance includes those tables, masks and fixed-width controls. It predicts each group before reading its new bits. A separate NumPy implementation retained the raw groups for verification. The packed kernels matched every error total on all three full streams plus nine short and partial cases. On an AMD Ryzen 7 5800X, MSVC x64 14.52 /O2, five reporting-tape replays took 0.413–0.439 ms raw, 2.574–2.593 ms with the learned matrix, 2.586–2.599 ms with geometric columns, and 3.100–3.126 ms for the supplied routine. The timings cover packed prediction, observation and mismatch counting. A full statistical rerun with both designers took 4.76 s and reached 138.1 MB process working set.
+
+The general library occupied 105,472 file bytes against 103,936 raw-only. Its executable section grew by 1,392 bytes. At the same per-bit exchange rate, charging the 1,536 incremental file bytes to a single stream adds 0.014286 nats per token. That exceeds the learned model's 0.004299 advantage over raw under the table-and-ring charge. Sharing just those extra executable bytes over four streams would bring them below this margin. CPU time and one-time acquisition remain separate. A conventional implementation can obtain the exact same population mismatch by assigning all nonzero columns directly.
+
+**NUMERICALLY VERIFIED.** Independent nearest-center enumeration on every one of the 4,096 systematic seven-bit matrices checked the error corrections, the optimum and the strict missing-column preference on all 41 distinct reachable prefixes. All 1,024 choices of a three-step adaptive binary forecast tree and a fixed noise trajectory gave exactly the binomial histogram of clean mistakes. Three-input truth-table enumeration checked the coordinate-descent obstruction. Lean 4.34.1 verified the two inverse identities and length preservation underlying the causal count, each with axiom report propext. [Formal source](CausalState.lean) · [Native implementation](delayed_state.c) · [Local-training obstruction](OBSTRUCTIONS.md#a-strict-local-training-move-can-be-unable-to-create-the-correction)
+
+~~~powershell
+python -B research/frontier/learned_code.py --audit
+python -B research/frontier/learned_code.py --check research/frontier/learned_code_result.json
+python -B research/frontier/learned_code.py --native --check research/frontier/learned_code_result.json
+~~~

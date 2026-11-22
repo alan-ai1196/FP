@@ -30,4 +30,37 @@ theorem kernel_closed (f : Word I → A) (h : Invariant f) (u v : Word I)
 #print axioms cell_is_coset
 #print axioms kernel_closed
 
+/-- The successor may incorporate a fixed noise trajectory and the entire prefix. -/
+def mistakes (guess : σ → Bool) (next : σ → Bool → σ) (s : σ) : List Bool → List Bool
+  | [] => []
+  | b :: bs => (b ^^ guess s) :: mistakes guess next (next s b) bs
+
+def reconstruct (guess : σ → Bool) (next : σ → Bool → σ) (s : σ) : List Bool → List Bool
+  | [] => []
+  | e :: es =>
+    let b := e ^^ guess s
+    b :: reconstruct guess next (next s b) es
+
+theorem reconstruct_mistakes (guess : σ → Bool) (next : σ → Bool → σ)
+    (s : σ) (bits : List Bool) : reconstruct guess next s (mistakes guess next s bits) = bits := by
+  induction bits generalizing s with
+  | nil => rfl
+  | cons b bs ih => simp [mistakes, reconstruct, ih]
+
+theorem mistakes_reconstruct (guess : σ → Bool) (next : σ → Bool → σ)
+    (s : σ) (errors : List Bool) : mistakes guess next s (reconstruct guess next s errors) = errors := by
+  induction errors generalizing s with
+  | nil => rfl
+  | cons e es ih => simp [mistakes, reconstruct, ih]
+
+theorem mistakes_length (guess : σ → Bool) (next : σ → Bool → σ)
+    (s : σ) (bits : List Bool) : (mistakes guess next s bits).length = bits.length := by
+  induction bits generalizing s with
+  | nil => rfl
+  | cons b bs ih => simp [mistakes, ih]
+
+#print axioms reconstruct_mistakes
+#print axioms mistakes_reconstruct
+#print axioms mistakes_length
+
 end CausalState
