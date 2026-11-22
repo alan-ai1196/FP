@@ -1,0 +1,363 @@
+{
+  "controls": {
+    "gate_history_pairs": 4096,
+    "normalized_full_distributions": 8
+  },
+  "text": {
+    "registration": "00cd1ce",
+    "train_prefix_sha256": "56bdacca110726fcc7e22527b6b1db3faaee9d0ba1d7d956ed4598fb4888d4cc",
+    "vocab": 50257,
+    "blocks": [
+      0,
+      786432,
+      917504,
+      1048576,
+      1179648,
+      1310720
+    ],
+    "charged_target_count": 131072,
+    "chosen_gate": 5,
+    "other_gate_hindsight": 10,
+    "acquisition": {
+      "available_bits": 28925,
+      "cells": 657,
+      "installed_bits": 28924,
+      "calibration_cells": 75931,
+      "gate_cells": 74113,
+      "smoothed_pair_entries": 346854,
+      "frequent_types": 244,
+      "observed_token_types": 34215,
+      "smoothed_contexts": 34215,
+      "gate_training_transitions": 18874352,
+      "gate_fit_target_visits": 4194304,
+      "gate_selection_target_visits": 2097152
+    },
+    "common_logical_bits": {
+      "unigram_counts_bits": 1608224,
+      "observed_successor_rows_bits": 18838752,
+      "group_membership_bits": 50257,
+      "calibrated_rates_bits": 603084,
+      "cached_group_numerators_uint64_bits": 3216448,
+      "shared_last_token_bits": 16
+    },
+    "selection": {
+      "base": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ]
+      },
+      "0": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "1": {
+        "extra_bits": 29485,
+        "nll": [
+          "7.158019810",
+          "7.158019811"
+        ],
+        "priced_nll": [
+          "7.158628893",
+          "7.158628894"
+        ],
+        "eligible_rows": 2645,
+        "installed_rows": 737,
+        "packed_bytes": 3686,
+        "sha256": "9c66408a7c173ffeb8e69bffa76a919ff0d6076333459e2386cff040f87e3070"
+      },
+      "2": {
+        "extra_bits": 30805,
+        "nll": [
+          "7.157712889",
+          "7.157712890"
+        ],
+        "priced_nll": [
+          "7.158349240",
+          "7.158349241"
+        ],
+        "eligible_rows": 2883,
+        "installed_rows": 770,
+        "packed_bytes": 3851,
+        "sha256": "c834776bc811d109b0c96c8c9d60433a47e5e9c2d88ad1f8143ad6fe82c62a33"
+      },
+      "3": {
+        "extra_bits": 33165,
+        "nll": [
+          "7.158527321",
+          "7.158527322"
+        ],
+        "priced_nll": [
+          "7.159212424",
+          "7.159212425"
+        ],
+        "eligible_rows": 3620,
+        "installed_rows": 829,
+        "packed_bytes": 4146,
+        "sha256": "20e399d752ec9bcb48491452fd9951e2ce017b2a5ab431bcb5e3c7babc263d12"
+      },
+      "4": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "5": {
+        "extra_bits": 28925,
+        "nll": [
+          "7.156891414",
+          "7.156891415"
+        ],
+        "priced_nll": [
+          "7.157488929",
+          "7.157488930"
+        ],
+        "eligible_rows": 2515,
+        "installed_rows": 723,
+        "packed_bytes": 3616,
+        "sha256": "42c420982d4f7e1b5dbdcb29aedbe0b2b5be34ac859b0877886a1037e34eb10c"
+      },
+      "6": {
+        "extra_bits": 34205,
+        "nll": [
+          "7.158483370",
+          "7.158483371"
+        ],
+        "priced_nll": [
+          "7.159189957",
+          "7.159189958"
+        ],
+        "eligible_rows": 3698,
+        "installed_rows": 855,
+        "packed_bytes": 4276,
+        "sha256": "d1bab8b5e9c7c6d70c98260bf372862269d158b0c101fedeeaa224cc3a66e4d2"
+      },
+      "7": {
+        "extra_bits": 30805,
+        "nll": [
+          "7.157712889",
+          "7.157712890"
+        ],
+        "priced_nll": [
+          "7.158349240",
+          "7.158349241"
+        ],
+        "eligible_rows": 2883,
+        "installed_rows": 770,
+        "packed_bytes": 3851,
+        "sha256": "e1852231400f76ba57a674a2324fe9583a3d7e3b9caad066bb9e99b848f804f0"
+      },
+      "8": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "9": {
+        "extra_bits": 33485,
+        "nll": [
+          "7.158578505",
+          "7.158578506"
+        ],
+        "priced_nll": [
+          "7.159270217",
+          "7.159270218"
+        ],
+        "eligible_rows": 3647,
+        "installed_rows": 837,
+        "packed_bytes": 4186,
+        "sha256": "c5d1fdb67291e4a4a2771fdb1e4e3c815a42f5d32ee236aefc863041aa5ffed3"
+      },
+      "10": {
+        "extra_bits": 28925,
+        "nll": [
+          "7.156891414",
+          "7.156891415"
+        ],
+        "priced_nll": [
+          "7.157488929",
+          "7.157488930"
+        ],
+        "eligible_rows": 2515,
+        "installed_rows": 723,
+        "packed_bytes": 3616,
+        "sha256": "819b3934885b3f2d7b64a47c01ece96dc4df41d4a85cafb5f27ffe8fe31c8d5d"
+      },
+      "11": {
+        "extra_bits": 29485,
+        "nll": [
+          "7.158019810",
+          "7.158019811"
+        ],
+        "priced_nll": [
+          "7.158628893",
+          "7.158628894"
+        ],
+        "eligible_rows": 2645,
+        "installed_rows": 737,
+        "packed_bytes": 3686,
+        "sha256": "791dba5b6c3f439adfbc409f8c4498289ed4cbdf2417ba01f880af8a079c141d"
+      },
+      "12": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "13": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "14": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "15": {
+        "extra_bits": 0,
+        "nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "priced_nll": [
+          "7.158738496",
+          "7.158738497"
+        ],
+        "eligible_rows": 0,
+        "installed_rows": 0,
+        "packed_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "reporting": {
+      "selected": {
+        "extra_bits": 28925,
+        "nll": [
+          "7.106576010",
+          "7.106576011"
+        ],
+        "priced_nll": [
+          "7.107173525",
+          "7.107173526"
+        ]
+      },
+      "lagged_gate_10": {
+        "extra_bits": 28925,
+        "nll": [
+          "7.106576010",
+          "7.106576011"
+        ],
+        "priced_nll": [
+          "7.107173525",
+          "7.107173526"
+        ]
+      },
+      "calibrated_base": {
+        "extra_bits": 0,
+        "nll": [
+          "7.108584153",
+          "7.108584154"
+        ],
+        "priced_nll": [
+          "7.108584153",
+          "7.108584154"
+        ]
+      },
+      "raw_trigram": {
+        "extra_bits": 28924,
+        "nll": [
+          "7.105865511",
+          "7.105865512"
+        ],
+        "priced_nll": [
+          "7.106463006",
+          "7.106463007"
+        ]
+      },
+      "best_other_gate_hindsight": {
+        "extra_bits": 28925,
+        "nll": [
+          "7.106576010",
+          "7.106576011"
+        ],
+        "priced_nll": [
+          "7.107173525",
+          "7.107173526"
+        ]
+      },
+      "smoothed_successor": {
+        "nll": [
+          "7.111885677",
+          "7.111885678"
+        ]
+      }
+    },
+    "selected_beats_lagged": false,
+    "selected_beats_trigram": false,
+    "registered_success": false
+  }
+}

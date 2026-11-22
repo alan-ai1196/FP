@@ -281,3 +281,25 @@ python -B research/frontier/response_operation.py --check research/frontier/resp
 python -B research/frontier/audit_response_probes.py
 & "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/ResponseOperation.lean
 ~~~
+
+## Selecting a binary memory update on ordinary text
+
+**EMPIRICALLY OBSERVED.** On the registered FineWeb-Edu training file, the best of all 16 binary updates was gate 5. It stores the complement of the preceding frequency bit. Swapping the two entries of each installed decoder row gives exactly the direct lagged-bit predictor, gate 10. The two gates tied on the operation-selection block and made identical full-vocabulary predictions on all 131,072 later targets. The smaller gate index broke the tie as registered. A raw-token trigram scored better using one fewer logical bit. The registered positive criterion failed. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/00cd1ce/research/frontier/NEXT.md) · [Code](text_operation.py) · [All 16 selection scores, payloads and held-out intervals](text_operation_result.json)
+
+| Frozen predictor | Extra bits | Nats per token | Nats per token including price |
+|---|---:|---:|---:|
+| Smoothed successor | — | 7.111886 | — |
+| Calibrated successor | 0 | 7.108584 | 7.108584 |
+| Selected gate 5 | 28,925 | 7.106576 | 7.107174 |
+| Lagged frequency bit, gate 10 | 28,925 | 7.106576 | 7.107174 |
+| Raw-token trigram | 28,924 | 7.105866 | 7.106463 |
+
+The score is the causal probability assigned to the observed token in a normalized distribution over all 50,257 tokens. Tokens 0–786,431 fitted the common successor law and a 244-token frequency group. Three successive blocks of 131,072 targets calibrated rates, priced rows and selected the operation. The next block, at zero-based targets 1,179,648–1,310,719, supplied the reported score. Memory persisted across the boundaries. The test used a continuation of the training file. Historical Transformer and Kneser–Ney losses were measured on different targets. The hindsight best remaining operation on this block was gate 10. No operation with a more distant history beat the lagged readout here.
+
+The 723 selected rows occupy 3,616 packed bytes including the operation header and padding. An installed record has one 16-bit address and two 12-bit rates. Gate 5 and gate 10 buy exactly the same rows with reversed rates. The price is $(\log 2)/256$ nats for each extra logical bit over the full scoring block. The trigram bought 657 observed raw-token pairs and needs a previous 16-bit token. Both priced predictors use the shared smoothed successor rows, frequency membership, calibrated masses and the last token. The receipt counts their shared arrays and the optional cached 64-bit group numerators. Scoring looked up the observed token. Materializing all probabilities on every step would involve additional output traffic.
+
+Fitting and choosing the 16 gates executed 18,874,352 binary state updates, visited 4,194,304 calibration or row-pricing targets and scored 2,097,152 operation-selection targets. The raw trigram inspected 75,931 distinct calibration pairs and 74,113 row-pricing pairs. The Python/NumPy reference expanded packed rows into temporary dense tables. Complete replays on the Ryzen 7 5800X took 3.45–3.61 seconds with observed peak working sets of 148–150 MB. An independent scalar execution calculated full token probabilities directly on every reporting target. It reproduced all five NLLs within their outward-rounded intervals and checked both lagged readouts on all 723 rows. Exact small controls matched counts and decoder histograms for all 4,096 pairs of a gate and a four-token history. The measurement covers CPU acquisition and evaluation.
+
+~~~powershell
+python -B research/frontier/text_operation.py --check research/frontier/text_operation_result.json
+~~~
