@@ -1,0 +1,232 @@
+{
+  "date": "2026-11-23",
+  "window_start": "2026-11-17",
+  "window_end": "2026-11-23",
+  "newly_indexed": [
+    "PDF-9ea3ac35387ac773f57b",
+    "arXiv-2605.10313v2",
+    "arXiv-2609.16726v3",
+    "arXiv-2609.38524v4",
+    "doi:10.1038/s41586-026-11299-5",
+    "doi:10.1137/24m1707730",
+    "doi:10.1137/25m1766930",
+    "doi:10.1137/25m1791652",
+    "doi:10.1137/26m1854148"
+  ],
+  "sources": {
+    "openai/math": {
+      "endpoint": "https://api.github.com/repos/openai/math/commits",
+      "revision": "4eaee87548250b2682affda7d05d947c05554bae",
+      "date": "2026-10-30T00:35:35Z",
+      "url": "https://github.com/openai/math/commit/4eaee87548250b2682affda7d05d947c05554bae",
+      "index_current": true
+    },
+    "leanprover-community/mathlib4": {
+      "endpoint": "https://api.github.com/repos/leanprover-community/mathlib4/commits",
+      "revision": "6ebcce37335bcb6bca64596e5d57bb3035648030",
+      "date": "2026-11-22T12:53:55Z",
+      "url": "https://github.com/leanprover-community/mathlib4/commit/6ebcce37335bcb6bca64596e5d57bb3035648030"
+    },
+    "leanprover/lean4": {
+      "endpoint": "https://api.github.com/repos/leanprover/lean4/releases/latest",
+      "revision": "v4.36.0",
+      "date": "2026-11-16T15:45:27Z",
+      "url": "https://github.com/leanprover/lean4/releases/tag/v4.36.0"
+    },
+    "OpenAI research/news feed": {
+      "endpoint": "https://openai.com/news/rss.xml",
+      "matched": 0,
+      "items": []
+    },
+    "Google DeepMind feed": {
+      "endpoint": "https://deepmind.google/blog/rss.xml",
+      "matched": 0,
+      "items": []
+    },
+    "Anthropic research index": {
+      "endpoint": "https://www.anthropic.com/research",
+      "matched": 1,
+      "items": [
+        {
+          "title": "AI for scientific discovery: How researchers use Claude",
+          "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+          "date": "2026-11-05",
+          "publisher_files": [
+            {
+              "kind": "paper",
+              "url": "https://assets.claude.com/6e7c6446c0d8405dba73b91dabd36aac069dea2e.pdf",
+              "id": "PDF-9ea3ac35387ac773f57b",
+              "local_file_path": "literature/corpus/anthropic_math/9ea3ac35387ac773f57b.pdf"
+            },
+            {
+              "kind": "appendix",
+              "url": "https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf",
+              "id": "PDF-b02565029b93efabff67",
+              "local_file_path": "literature/corpus/anthropic_math/b02565029b93efabff67.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "arXiv": {
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "(cat:math.CO OR cat:math.PR OR cat:math.MG OR cat:cs.CC OR cat:cs.LG OR cat:stat.ML) AND (ti:\"representation theorem\" OR ti:\"predictive state\" OR ti:\"communication complexity\" OR ti:\"tensor rank\" OR ti:\"regret bound\" OR ti:\"convex geometry\" OR ti:\"formal proof\" OR ti:\"symmetry breaking\")",
+      "records_examined": 50,
+      "matched": 3,
+      "limit": 50,
+      "date_window_covered": true,
+      "retrieval_issues": []
+    },
+    "Journals and conferences": {
+      "scope": "Publisher-registered publication dates for 12 journal ISSNs and exact annual ACM/IEEE proceedings titles. PMLR release dates for current/prior year ICML and COLT volumes. ICLR/NeurIPS official orals/posters by presentation date, plus accepted OpenReview note modifications, including metadata edits. Inclusive UTC dates. Title filter only. Partial-date Crossref records qualify when their date range overlaps the window.",
+      "matched": 5,
+      "sources": [
+        {
+          "source": "Annals of Mathematics",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "Inventiones Mathematicae",
+          "channel": "crossref",
+          "scanned": 2,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "Journal of the American Mathematical Society",
+          "channel": "crossref",
+          "scanned": 1,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "Acta Mathematica",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "Nature",
+          "channel": "crossref",
+          "scanned": 89,
+          "matches": 1,
+          "failures": []
+        },
+        {
+          "source": "Science",
+          "channel": "crossref",
+          "scanned": 38,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Computing",
+          "channel": "crossref",
+          "scanned": 1,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Optimization",
+          "channel": "crossref",
+          "scanned": 1,
+          "matches": 1,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Applied Dynamical Systems",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Mathematics of Data Science",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Applied Algebra and Geometry",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "SIAM Journal on Matrix Analysis and Applications",
+          "channel": "crossref",
+          "scanned": 3,
+          "matches": 3,
+          "failures": []
+        },
+        {
+          "source": "STOC",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "FOCS",
+          "channel": "crossref",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "ICML",
+          "channel": "pmlr",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "COLT",
+          "channel": "pmlr",
+          "scanned": 0,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "ICLR",
+          "channel": "program",
+          "scanned": 5691,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "ICLR",
+          "channel": "openreview",
+          "scanned": 0,
+          "matches": 0,
+          "failures": [
+            "HTTPError: HTTP Error 403: Forbidden"
+          ]
+        },
+        {
+          "source": "NeurIPS",
+          "channel": "program",
+          "scanned": 9275,
+          "matches": 0,
+          "failures": []
+        },
+        {
+          "source": "NeurIPS",
+          "channel": "openreview",
+          "scanned": 0,
+          "matches": 0,
+          "failures": [
+            "HTTPError: HTTP Error 403: Forbidden"
+          ]
+        }
+      ],
+      "local_report": "literature/corpus/peer_reviewed/venues-2026-11-23.json"
+    }
+  }
+}

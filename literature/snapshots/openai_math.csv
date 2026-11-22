@@ -1,0 +1,5 @@
+date,commit,manuscripts,families,new_pdf_editions,removed_catalog_paths,changed_manuscript_directories,local_catalog
+2026-10-06,adc7f1241b42e322a6451854ab7e4b4c146bf78a,722,372,722,0,722,literature/corpus/openai_math_2026/initial/CONTENTS.md
+2026-10-07,fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb,719,372,27,30,30,literature/corpus/openai_math_2026/releases/2026-10-07/CONTENTS.md
+2026-10-26,7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a,721,373,2,0,3,literature/corpus/openai_math_2026/releases/2026-10-26/CONTENTS.md
+2026-10-29,4eaee87548250b2682affda7d05d947c05554bae,721,373,0,0,0,literature/corpus/openai_math_2026/releases/2026-10-29/CONTENTS.md
