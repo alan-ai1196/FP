@@ -224,3 +224,7 @@ The bibliography provides a useful primary-source trail: Blackwell–Koopmans (1
 This paper gives an explicit primary source for the classical upper bound and for the difference between generic and worst-case identification. Its rank-d model includes general linear process realizations, but its d-state hidden Markov model has the narrower state-emitting factorization T_a=O_aM.
 
 It does not by itself settle whether an earlier theorem already implies the requested **three-letter, strictly positive, stationary, rank-exact lower construction for equality of normalized output operators**. That question remains open in this reading record pending a targeted check of the older sharp examples. No FP mechanism or architectural consequence is inferred from the paper's terminology or algebraic resemblance.
+
+## Subsequent request status
+
+The bounded prior-art request was subsequently completed. See [the source-grounded reply](REQUEST-2026-11-23-OUTPUT-OPERATOR-PRIOR-ART.md) for the limited negative result, remaining access gaps and separate Moore-subclass deduction. The earlier description of an open request records the status at this paper’s reading boundary.

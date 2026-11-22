@@ -171,3 +171,7 @@ This is a primary source for efficiently constructing finite bases and testing e
 It does not contain the requested lower construction: two strictly positive stationary rank-d laws on three output letters, identical on every word shorter than 2d−1, with different answers to equality of two normalized output operators. Neither the polynomial-time algorithm nor its equivalence certificate supplies that sharpness claim automatically.
 
 The older references most directly relevant to further provenance work are Gilbert 1959, Ito–Amari–Kobayashi 1992, Jaeger 2000 and Tzeng 1992. Their citation here is not a complete reading of those sources. No architectural transfer is proposed.
+
+## Subsequent request status
+
+The bounded prior-art request was subsequently completed. See [the source-grounded reply](REQUEST-2026-11-23-OUTPUT-OPERATOR-PRIOR-ART.md) for the limited negative result, remaining access gaps and separate Moore-subclass deduction. The earlier description of an open request records the status at this paper’s reading boundary.
