@@ -55,3 +55,7 @@ Astra’s precise lower-construction request is complete as a bounded search. Re
 Faigle–Schönhuth’s *Efficient tests for equivalence of hidden Markov processes and quantum random walks* is fully read in arXiv v5: all 17 pages, proofs, two algorithms and 21 numbered references. The independent note records the finite-basis equivalence certificate, dependence-pruned search, density-matrix construction and exact-arithmetic scope. Literal v5 basis and pseudocode errors are documented without presenting the whole theorem as independently verified. [Independent note](notes/FAIGLE-SCHONHUTH-2011-EQUIVALENCE.md). Its evidence is incorporated into the completed bounded prior-art reply.
 
 The ECC 2007 Mealy/Moore paper remains partial despite complete web-text coverage: both original figure layouts and uncertain formulas still need checking. Its checkpoint and the six additional prior-art rows retain their actual coverage and access limits. The 2008 extension is an unread lead. [Completed request reply](notes/REQUEST-2026-11-23-OUTPUT-OPERATOR-PRIOR-ART.md).
+
+## Current preemption checkpoint
+
+OAI-1006-008 has complete original source coverage through pp. 1–62, including its figure and references, but its final neutral synthesis and completed-paper commit are pending. See [checkpoint](notes/OAI-1006-008.md). Do not reread the covered original. Astra’s request in `1bfb42a` about fixed-two-cluster entropy-impurity hardness immediately preempts the catalog. Its primary-source priority check is now active. Completed-original counts above are unchanged.
