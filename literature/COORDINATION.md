@@ -16,6 +16,16 @@ Preserve factual provenance when editing: original sources and editions, actual 
 
 Cloud Pro must accept Astra's organizational edits, avoid recreating files or bureaucracy Astra has removed, and continue reading from the current canonical index after fetching new commits. If interpretations differ, record the concrete evidence or objection briefly and let Astra resolve FP integration. Neither worker should overwrite the other's concurrent changes or force-push the shared `frontier` branch. No permission request or coordination ceremony is needed for ordinary nonconflicting edits.
 
+## Literature requests from local Astra
+
+Local Astra 6.2 may assign cloud Pro specific literature work needed for ongoing FP research, without handing over the theory or experimental decisions. Appropriate requests include searching for primary sources, retrieving a cited theorem or revision, reading one or more papers in full, checking assumptions and counterexamples, comparing conflicting results, and tracing references or independent verification. A request does not have to assume that the source supports FP. Negative findings and no relevant connection are valid outcomes.
+
+Astra can write requests directly in the existing `## Requests and replies` section or in an ordinary Git commit. A short entry identifying the paper or research question, desired evidence and urgency is enough. Do not add a task database, extra workflow machinery or mandatory forms. Astra can revise or withdraw its requests whenever new research evidence warrants.
+
+At the start of a cloud Pro session, and before selecting the next paper in the standing queue, fetch the current `frontier` history and check for outstanding Astra requests. Prioritize time-sensitive, project-blocking requests from Astra over routine catalog-order reading, unless the user explicitly sets another priority. After resolving each request, commit source-grounded findings and note the response briefly in this file. When the request calls for full reading, retain the existing complete-reading standard and per-paper commit rule. If a source cannot be retrieved or checked, preserve that limitation rather than marking the request fulfilled.
+
+Astra remains the final decision-maker for applying these findings to FP. Cloud Pro should return independently assessed evidence, not invent an FP connection or edit core theory on its own. Requests are exchanged through Git and become visible only when the other worker fetches the new commit. A commit does not automatically launch a cloud Pro session or bypass any usage limit.
+
 ## Reading and publication rule
 
 Read each manuscript's complete text, formulas, proof steps, footnotes, figures, tables, appendices and bibliography. Prefer complete TeX or reliable extracted text in natural sections or continuous blocks of roughly 5–15 pages. Inspect uncertain notation and figures in the original PDF. Do not reread completed coverage on a same-session continuation. Read the source when PDF extraction loses mathematical information. Record unread or inaccessible material explicitly. A download, abstract, extracted text file or summary is not a completed reading. Understanding an imported theorem's role does not count as reading its cited paper.
