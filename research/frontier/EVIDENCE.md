@@ -326,3 +326,29 @@ The code examined 203 partitions in each acquisition view. After counting traini
 python -B research/frontier/symbol_refinement.py --check research/frontier/symbol_refinement_result.json
 python -B research/frontier/audit_symbol_depth.py
 ~~~
+
+## Training on three tokens and forecasting sixty-four
+
+**EMPIRICALLY OBSERVED.** The learner recovered all six token actions from 262,144 new independent three-token episodes without hidden-state labels or a supplied reset symbol. It then predicted 262,144 tokens in 4,096 fresh episodes of length 64. The previous experiment selected an internal alphabet and fitted a finite-window table. This one fitted and executed a continuing state update. [Frozen registration](https://github.com/alan-ai1196/FP/blob/63f6f8f/research/frontier/NEXT.md) · [Learner and independent computations](permutation_filter.py) · [Receipt and learned probabilities](permutation_filter_result.json)
+
+| Frozen predictor | All 64 positions | Positions 1–3 | Positions 4–16 | Positions 17–64 |
+|---|---:|---:|---:|---:|
+| Learned scalar posterior | 1.677701 | 1.721194 | 1.696677 | 1.669844 |
+| Same fitted probabilities, categorical Bayesian filter | 1.677701 | 1.721194 | 1.696677 | 1.669844 |
+| Unrestricted raw order-two Markov model | 1.718568 | 1.721298 | 1.720014 | 1.718006 |
+| Fitted unigram | 1.732448 | 1.728010 | 1.734254 | 1.732236 |
+| Known source, same observed history | 1.677671 | 1.721192 | 1.696686 | 1.669802 |
+
+Numbers are nats per token. The learner inferred that IDs 2 and 5 flip the state. Exact empirical determinant signs fixed the six actions. The selected prefix/suffix block used IDs 3 and 0. Raw ID 3 supplied a separating eigenbasis with estimated eigenvalue gap 0.250851 and condition number 8.31. No fitted rate hit the probability floor of $1/(2n)$. Twenty-five expectation-maximization iterations on observed token triples then reduced the half-count penalized training NLL by 65.03 nats. Each step conditions on either possible initial state. Both forecasts and the fit use ordinary emitted-token likelihood. The known generator enters only data generation, oracle scoring and post-fit comparison.
+
+The packed filter uses 105 bytes. It stores a bit mask, one binary64 initial probability, and two rows of six binary64 probabilities. Its live log odds use eight bytes per stream. Six precomputed log emission ratios cost another 48 bytes. The independent categorical readout used two probabilities. The raw competitor's 216 uint32 triple counts occupy 864 bytes and can address a prediction with two previous tokens. The fitted model has 11 independent continuous parameters and six action flags before exploiting any additional equalities. The registered acquisition counted 786,432 training tokens, used 216 triple counts, examined 36 possible prefix/suffix pairs, solved six two-dimensional systems and evaluated 216 word types from two candidate starts per EM step. All inference probabilities were computed in binary64. Whole CPU runs took about 0.22–0.25 seconds with an observed peak working set around 54 MB. These are batched reference-code measurements.
+
+For this generator, the exactly renormalized installed binary64 probabilities yield a proved upper bound of 0.000020578 nats per token on the *expected* excess over 64 positions. The largest row normalization correction was below $1.81\cdot10^{-16}$. A realized held-out difference need not fall below its expectation bound. The mean fitted emission KL contribution was at most 0.000020533 nats and the initial-state KL at most 0.000002849 nats per episode. A separate all-swapping example required a product of two distinct letters to identify the hidden axes. Both emission matrices were reconstructed with rational arithmetic. A separate linear-count reconstruction recovered actions, emissions and initial proportions up to state naming in 480 positive rational examples over alphabets of two to five tokens, covering each stay/swap pattern. [General reconstruction and loss proof](FOUNDATION.md#recovering-a-continuing-update-from-three-token-windows)
+
+**FORMALLY VERIFIED.** Lean 4.34.1 checked that substitution invariance in arbitrary left and right contexts is equivalent to a word weight being constant on each encoding fiber. It also checked that quotienting by contextual equivalence preserves every word and gives the coarsest preserving encoding. Instantiating the weight with $P(w)/\prod_iP(w_i)$ supplies the combinatorial step in the fixed-refinement theorem. Its printed axiom reports are propext and, for the quotient construction, Quot.sound. The rank, entropy and statistical arguments have mathematical proofs and separate numerical checks. [Lean source](SymbolContexts.lean)
+
+~~~powershell
+python -B research/frontier/permutation_filter.py --check research/frontier/permutation_filter_result.json
+python -B research/frontier/permutation_filter.py --moment-audit
+& "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/SymbolContexts.lean
+~~~

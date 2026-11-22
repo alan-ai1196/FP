@@ -1,0 +1,115 @@
+{
+  "registration": "63f6f8f",
+  "training_windows": 262144,
+  "training_tokens": 786432,
+  "report_episodes": 4096,
+  "report_tokens": 262144,
+  "statistics": {
+    "fallback": false,
+    "prefix_suffix": [
+      3,
+      0
+    ],
+    "spectral_word": [
+      3
+    ],
+    "eigenvalue_gap": 0.250851145202,
+    "basis_condition": 8.310277799,
+    "positive_floor": 1.9073486328125e-06,
+    "floor_hits": 0,
+    "determinant_signs": [
+      1,
+      1,
+      -1,
+      1,
+      1,
+      -1
+    ]
+  },
+  "em_steps": 25,
+  "penalized_training_nll": [
+    1357221.6199822,
+    1357156.59444629
+  ],
+  "flip": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1
+  ],
+  "emissions": [
+    [
+      0.125275885347,
+      0.12490811776,
+      0.125690719938,
+      0.375424099232,
+      0.124313824067,
+      0.124387353655
+    ],
+    [
+      0.375325026305,
+      0.124085690268,
+      0.125453653751,
+      0.122785204305,
+      0.126111449097,
+      0.126238976274
+    ]
+  ],
+  "initial": [
+    0.501193416594,
+    0.498806583406
+  ],
+  "expected_loss_certificate": {
+    "initial_kl_upper": 2.848495e-06,
+    "stationary_emission_kl_upper": 2.0532952e-05,
+    "per_token_at_64_upper": 2.057746e-05,
+    "maximum_row_normalization_error": 1.8041124150158794e-16
+  },
+  "packed_bytes": 105,
+  "scalar_state_bytes": 8,
+  "raw_order_two_count_bytes": 864,
+  "max_observed_probability_difference_below_1e_12": true,
+  "nll": {
+    "learned": {
+      "all": 1.677701203,
+      "1-3": 1.721194046,
+      "4-16": 1.696676603,
+      "17-64": 1.669843729
+    },
+    "categorical": {
+      "all": 1.677701203,
+      "1-3": 1.721194046,
+      "4-16": 1.696676603,
+      "17-64": 1.669843729
+    },
+    "raw_order_two": {
+      "all": 1.718568223,
+      "1-3": 1.721298341,
+      "4-16": 1.720013706,
+      "17-64": 1.718006106
+    },
+    "unigram": {
+      "all": 1.732447812,
+      "1-3": 1.728009775,
+      "4-16": 1.734254157,
+      "17-64": 1.73223597
+    },
+    "known_source": {
+      "all": 1.677671426,
+      "1-3": 1.721192388,
+      "4-16": 1.696685946,
+      "17-64": 1.6698016
+    }
+  },
+  "exact_all_swapping": {
+    "separating_word": [
+      0,
+      1
+    ],
+    "eigenvalue_gap": "1/2",
+    "reconstructed_exactly": true
+  },
+  "registered_success": true
+}

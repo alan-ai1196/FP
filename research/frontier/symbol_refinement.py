@@ -18,18 +18,23 @@ TRUE = (0, 1, 2, 3, 1, 2)
 WORDS = list(product(range(V), repeat=3))
 
 
-def draw(n, seed):
+def sample_columns(n, length, seed):
     rng = np.random.Generator(np.random.PCG64(seed))
     state = rng.integers(2, size=n, dtype=np.uint8)
-    code = np.zeros(n, dtype=np.int32)
     neutral = np.array([1, 4, 2, 5, 0, 0, 0, 0], dtype=np.uint8)
-    for _ in range(3):
+    for _ in range(length):
         event = rng.integers(8, size=n, dtype=np.uint8)
         symbol = np.where(
             event < 4, neutral[event], np.where(event < 7 - 2 * state, 0, 3)
         )
-        code = V * code + symbol
         state ^= (event == 2) | (event == 3)
+        yield symbol
+
+
+def draw(n, seed):
+    code = np.zeros(n, dtype=np.int32)
+    for symbol in sample_columns(n, 3, seed):
+        code = V * code + symbol
     return np.bincount(code, minlength=V**3).reshape((V,) * 3)
 
 
