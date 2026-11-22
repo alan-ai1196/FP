@@ -352,3 +352,26 @@ python -B research/frontier/permutation_filter.py --check research/frontier/perm
 python -B research/frontier/permutation_filter.py --moment-audit
 & "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/SymbolContexts.lean
 ~~~
+
+## How much of a probability clock does learning retain?
+
+**EMPIRICALLY OBSERVED.** Fit and test each used 65,536 independent complete runs, giving 195,859 and 196,290 ordinary tokens respectively. The learner received the public advance/reset interface and raw marks. It chose among all deterministic shared-reset machines at each state budget by fitted likelihood. All 63 competing cycle lengths were evaluated. The comparator with a supplied cosine recurrence estimated all three of its parameters from the same training tape. [Registration](https://github.com/alan-ai1196/FP/blob/e98ce50/research/frontier/NEXT.md) · [Code](probability_clock.py) · [Results and probability intervals](probability_clock_result.json)
+
+| States | Learned cycle | Population-optimal cycle | Held-out learned NLL | Held-out saturated-counter NLL | Best population NLL in this deterministic class |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 1 | 1 | 0.864230 | 0.864230 | 0.863534 |
+| 2 | 1 | 1 | 0.853513 | 0.853513 | 0.852996 |
+| 4 | 2 | 2 | 0.847407 | 0.847523 | 0.847185 |
+| 8 | 7 | 7 | 0.841700 | 0.842867 | 0.841271 |
+| 16 | 7 | 7 | 0.841655 | 0.841680 | 0.841222 |
+| 32 | 1 | 27 | 0.841662 | 0.841662 | 0.841220 |
+
+The known-source NLL was 0.841638 on the reporting tape and 0.841220 in the population. The learned rotation scored 0.841671 and 0.841258 respectively. With eight states, likelihood bought a seven-step cycle after one transient state. It improved held-out NLL by 0.001167 over saturation at the same state count. With 32 states the longest observed training run contained only 24 advance tokens. Unvisited ages left exact likelihood ties and the registered tie rule selected saturation; the population optima can still be distinguished by bounded logarithms. The small held-out advantage of the fitted 16-state model over the fitted rotation held for these two fits and this tape. The receipt includes the population loss of each fitted model as well.
+
+Each finite layout requires a transient/cycle boundary, its $K$ mark rates, one shared advance rate and a current state in $\lceil\log_2K\rceil$ bits. For these counts a simple reproducible payload can store two layout bytes and $2K+2$ uint32 counts, or $10+8K$ bytes. This formula describes a possible packing. The measured Python reference uses exact integer counts, rational numbers and temporary arrays. It inferred the rotation from 21,845 age-zero and 14,679 age-one marks. Its empirical advance probability, amplitude and cosine are in the receipt. Their unrestricted rational execution has growing denominator length. Model selection and NLL bounds worked on histograms, with a separate actual streaming state update on each reporting tape checking all finite layouts. Whole CPU replays took about one second with an observed working set near 38 MB. No language-text or GPU result is inferred from this three-token source.
+
+**NUMERICALLY VERIFIED.** Integer/rational calculations checked 542 exact stationary word-probability equalities at budgets one through five and distinct probabilities on the first separating example for every tested budget. The exact two-state lower-bound minor and the 104-term stationary cross-entropy calculation with a geometric remainder are reproduced by the same script. **PROVED.** The unrestricted positive-model optimum reduces to marked-run KL over a finite phase-type family. Its global numerical value remains open for $K>1$ in this investigation. The smaller deterministic class has the exact optima reported above. [Loss and acquisition](FOUNDATION.md#exact-and-attainable-prediction-on-a-probability-clock) · [Finite witnesses](OBSTRUCTIONS.md#finite-prediction-windows-can-conceal-an-infinite-positive-state-requirement)
+
+~~~powershell
+python -B research/frontier/probability_clock.py --check research/frontier/probability_clock_result.json
+~~~
