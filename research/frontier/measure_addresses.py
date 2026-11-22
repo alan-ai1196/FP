@@ -13,12 +13,12 @@ from causal_state import binary_sizes, compile_libraries
 from text_addresses import REPORT_END, SELECT_END, fit, load_data, serialize
 
 
-def measure_cpu(path, common_arrays, arms):
+def measure_cpu(path, common_arrays, arms, symbol="score_stream"):
     import _ctypes
 
     lib = ctypes.CDLL(str(path))
     try:
-        fn = lib.score_stream
+        fn = getattr(lib, symbol)
         fn.restype = None
 
         def ptr(dtype):
@@ -54,13 +54,13 @@ def measure_cpu(path, common_arrays, arms):
         (_ctypes.FreeLibrary if os.name == "nt" else _ctypes.dlclose)(lib._handle)
 
 
-def measure_gpu(source, common_arrays, arms):
+def measure_gpu(source, common_arrays, arms, symbol="score_batch"):
     import cupy as cp
 
     module = cp.RawModule(
         code=source.read_text(encoding="utf8"), options=("--std=c++14",)
     )
-    kernel = module.get_function("score_batch")
+    kernel = module.get_function(symbol)
     base = tuple(
         cp.asarray(a) if isinstance(a, np.ndarray) else np.uint32(a)
         for a in common_arrays

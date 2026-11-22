@@ -23,7 +23,7 @@ def selected_model(selection, models_root):
     return path
 
 
-def score_fivegram(tokens, record, models_root, scorer, directory):
+def score_fivegram(tokens, record, models_root, scorer, directory, panels=None):
     selected = record["selected"]
     model = selected_model(selected, models_root)
     if scorer is None:
@@ -45,7 +45,7 @@ def score_fivegram(tokens, record, models_root, scorer, directory):
         return count * result["mean_nll_nats"]
 
     losses = []
-    for start in starts():
+    for start in (starts() if panels is None else panels):
         tokens[start - 4 : start + SUBPANEL].astype("<u2").tofile(source)
         losses.append((total(4 + SUBPANEL) - total(4)) / SUBPANEL)
     return {
@@ -57,7 +57,7 @@ def score_fivegram(tokens, record, models_root, scorer, directory):
     }
 
 
-def score_transformer(tokens, selected, training, models_root, directory):
+def score_transformer(tokens, selected, training, models_root, directory, panels=None):
     import torch
 
     # Load the exact two model modules used to train the checkpoint from their retained revision.
@@ -97,7 +97,7 @@ def score_transformer(tokens, selected, training, models_root, directory):
         torch.inference_mode(),
         torch.autocast(device_type="cuda", dtype=torch.float16),
     ):
-        for start in starts():
+        for start in (starts() if panels is None else panels):
             terms = []
             for first in range(start, start + SUBPANEL, 32):
                 for positions, inputs in reporting_inputs(
@@ -131,25 +131,45 @@ if __name__ == "__main__":
     parser.add_argument("--kenlm-reporter", type=Path)
     parser.add_argument("--write", type=Path)
     parser.add_argument("--check", type=Path)
+    parser.add_argument(
+        "--shared",
+        action="store_true",
+        help="score the later frozen history-transfer panels",
+    )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
     ledger = git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")
     records = {entry["case"]: entry["result"] for entry in ledger["results"]}
-    tokens = np.frombuffer(replication_data(args.data_dir), dtype=np.uint16)
+    if args.shared:
+        from text_shared_state import REGISTRATION, load_data, report_starts
+
+        data, panels, registration = (
+            load_data(args.data_dir),
+            report_starts(),
+            REGISTRATION,
+        )
+    else:
+        data, panels, registration = (
+            replication_data(args.data_dir),
+            starts(),
+            "ed60c61",
+        )
+    tokens = np.frombuffer(data, dtype=np.uint16)
     selection = records["report"]["selected"]
     with tempfile.TemporaryDirectory() as folder:
         directory = Path(folder)
         result = {
-            "registration": "ed60c61",
+            "registration": registration,
             "targets_per_block": SUBPANEL,
-            "first_targets": list(starts()),
+            "first_targets": list(panels),
             "mkn5": score_fivegram(
                 tokens,
                 records["ngram"],
                 args.models_root,
                 args.kenlm_reporter,
                 directory,
+                panels,
             ),
             "transformer": score_transformer(
                 tokens,
@@ -157,6 +177,7 @@ if __name__ == "__main__":
                 records[selection["case"]],
                 args.models_root,
                 directory,
+                panels,
             ),
         }
     if args.check:

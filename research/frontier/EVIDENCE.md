@@ -565,3 +565,33 @@ python -B research/frontier/audit_output_correction.py
 python -B research/frontier/output_correction.py --check research/frontier/output_correction_result.json
 python -B research/frontier/measure_addresses.py --correction --gpu
 ~~~
+
+## Can a state learned from one word predict other words?
+
+**EMPIRICALLY OBSERVED.** A history map learned from the single feedback bit “was the next token ‘ of’?” improved predictions of which word occurred within two disjoint groups on new natural text. This held at the larger adaptation budget. At the smaller budget a global correction was better in both groups. A conventional rank-one model trained on the destination groups beat reuse at the larger budget. [Frozen registration](https://github.com/alan-ai1196/FP/blob/45f3338/research/frontier/NEXT.md) · [Acquisition and scoring](text_shared_state.py) · [Block scores and installations](text_shared_state_result.json)
+
+The earlier study supplied GPT-2 token 286 as the source question. The new learner received 262,144 disjoint triples through a censored interface, then 65,536 separate selection examples. Its inputs were the earlier raw token, the pooled bigram's current probability of token 286 and a bit. Even the next source training context could not reveal the preceding example's hidden target because the triples did not overlap. There were 6,752 and 1,565 source hits. Of 50,257 raw types, the frozen encoder assigned 49,684 the default multiplier 1.5 and stored 573 exceptions in 1,437 bytes. The nine multipliers and the lookup operation were supplied. The assignments were fitted. On the 524,288 reporting positions, the source alone scored 7.065680 nats/token, the constant source correction 7.069252 and the pooled base 7.070404. Mean source binary NLL was 0.072982 with the learned map and 0.076554 with its fitted constant.
+
+The destinations were interleaved frequency ranks among the eight most common other outputs in the prior fit. Group 1 comprised comma, period, newline and “ a”. Group 2 comprised “ the”, “ and”, “ to” and “ in”. Each head redistributed probability within its four-word group, preserving group mass. The two destination fitting budgets supplied 1,424 and 1,202 eligible fit labels at 16,384 raw adaptation targets, and 22,088 and 18,777 at 262,144 raw targets. Each budget reserved its last quarter for selection. All compact models scored the same four consecutive blocks $[3866624,4390912)$, with 60,301 and 48,492 group events. The following joint scores include the same independently learned source correction. The original rent is $(\ln2)/256$ nats per installed or live bit over a 131,072-target deployment.
+
+| Destination readout | Joint priced NLL at 16,384 | Joint priced NLL at 262,144 | Within group 1 at 262,144 | Within group 2 at 262,144 | Destination / joint bytes at 262,144 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Global calibration | **7.067496** | 7.066228 | 0.788569 | 0.785560 | 2,628 / 4,066 |
+| Reuse the frozen source map | 7.068203 | 7.065398 | 0.786615 | 0.778848 | 4,162 / 4,162 |
+| Fixed token-frequency code | 7.069096 | 7.065730 | 0.787646 | 0.781065 | 2,777 / 4,214 |
+| Jointly fitted rank-one correction | 7.069085 | **7.064644** | **0.784287** | 0.773607 | 2,713 / 4,150 |
+| Separately fitted codes | 7.067687 | 7.064898 | 0.786942 | **0.772905** | 2,796 / 4,234 |
+| Raw context counts | **7.067496** | 7.066035 | 0.786753 | 0.783009 | 4,151 / 5,588 |
+
+At the larger budget, reuse beat global calibration on both groups in each block, beat its frequency control in three of four blocks on joint priced NLL, and lost to both directly fitted alternatives in all four on that measure. Reuse saved 0.000830 priced nats per raw token against global calibration. It lost 0.000754 to the rank-one model, which used 12 fewer joint bytes. Against global calibration at the smaller budget, reuse lost 0.000707. The raw competitor could use an additional 1,048,576 historical fully labeled tokens. It bought 117 group/context rows at the larger budget and zero at the smaller one. The larger anchors scored the first 4,096 targets of each reporting block. On these 16,384 positions the joint reuse model scored 7.052090, rank-one 7.051498, the modified Kneser–Ney five-gram 6.668466 and the Transformer 6.325342. The two anchors used their historical checkpoints and full-alphabet conventions. [Checkpoint identities and scores](shared_anchors_result.json)
+
+**Physical and independent checks.** The common CSR bigram takes 2,684,212 bytes. The joint reuse model adds the 2,584-byte pooled readout, a 12-byte header, the 1,437-byte map, two 64-byte heads and one byte to persist the distinct history states. Native arithmetic uses machine registers and the GPU batch reconstructs each state from its input token. The source-only installation costs 4,034 bytes. All 27 budget/readout configurations were decoded from packed bytes in separate native CPU and GPU scorers. Each agreed with the Python reference within $10^{-11}$ at every reporting target. Five warm sequential CPU passes took 83.10–85.49 ms for joint reuse, 90.43–91.67 ms for rank-one and 84.63–88.83 ms for raw counts at the larger budget. Teacher-forced RTX 3090 device batches took 0.5547–0.6079, 0.8317–0.8605 and 0.5331–0.5419 ms respectively. Those timings produce the observed log score with resident data. Repeating the statistical experiment, including both acquisitions, held-out scoring and receipt comparison, took 7.04 seconds and reached 252.1 MB working set. [Initialization, optimization and packet format](shared_readout.py) · [Native scorer](shared_state_score.c) · [Timing samples](shared_state_timing.json)
+
+The rational audit checked commuting corrections, exact normalization and the per-target product identity on 576 finite examples. It enumerated all 50,257 output base masses at four real contexts, including two purchased raw rows, and checked the simultaneous predictions of six readouts at each. It decoded ten different maps across the whole input vocabulary, checked consistent relabeling of the acquired state and verified invariance of source inputs after rewriting concealed labels. Exact rational checks of the conventional rank-one decoder use its realized binary64 weights. [Exact audit](audit_shared_state.py) · [Transfer criterion and scope](FOUNDATION.md#when-does-a-history-statistic-transfer-to-a-new-prediction)
+
+~~~powershell
+python -B research/frontier/text_shared_state.py --check research/frontier/text_shared_state_result.json
+python -B research/frontier/audit_shared_state.py --text
+python -B research/frontier/address_anchors.py --shared --check research/frontier/shared_anchors_result.json
+python -B research/frontier/measure_shared_state.py --gpu
+~~~

@@ -1,0 +1,920 @@
+{
+  "registration": "45f3338",
+  "prefix_sha256": "cfe4d44db84b293759bce050f541c976de1a9f19556bf1359fd63a6b5b2593fa",
+  "first_targets": [
+    3866624,
+    3997696,
+    4128768,
+    4259840
+  ],
+  "source_token": 286,
+  "destination_tokens": [
+    [
+      11,
+      13,
+      198,
+      257
+    ],
+    [
+      262,
+      290,
+      284,
+      287
+    ]
+  ],
+  "common_pooled_bytes": 2584,
+  "acquisition": {
+    "source": {
+      "default_multiplier": 1.5,
+      "beta": 2,
+      "rule": "sparse",
+      "training_examples": 262144,
+      "training_source_hits": 6752,
+      "selection_examples": 65536,
+      "selection_hits": 1565,
+      "selection_binary_priced_nll": 0.0753225004,
+      "constant_selection_binary_priced_nll": 0.0782879315,
+      "type_counts": [
+        524,
+        7,
+        8,
+        8,
+        12,
+        49684,
+        3,
+        6,
+        5
+      ],
+      "map_bytes": 1437,
+      "sha256": "987043a05280035af8f97e1309d6148c415fb8eb59970768e7853b91afb8ab2d"
+    },
+    "destination": {
+      "16384": {
+        "fit_and_validation_raw": [
+          12288,
+          4096
+        ],
+        "fit_group_events": [
+          1424,
+          1202
+        ],
+        "validation_group_events": [
+          449,
+          416
+        ],
+        "rank_one_selection": {
+          "penalty": 2.0,
+          "initial_group": 1
+        },
+        "separate_penalties": [
+          6.0,
+          2.0
+        ],
+        "raw_rows": 0,
+        "raw_tau": null,
+        "raw_standalone_cap": 4162
+      },
+      "262144": {
+        "fit_and_validation_raw": [
+          196608,
+          65536
+        ],
+        "fit_group_events": [
+          22088,
+          18777
+        ],
+        "validation_group_events": [
+          7373,
+          6059
+        ],
+        "rank_one_selection": {
+          "penalty": 6.0,
+          "initial_group": 1
+        },
+        "separate_penalties": [
+          6.0,
+          6.0
+        ],
+        "raw_rows": 117,
+        "raw_tau": 8,
+        "raw_standalone_cap": 4162
+      }
+    }
+  },
+  "source_blocks": [
+    {
+      "pooled_nll": 7.0261992868,
+      "source_only_nll": 7.0222448039,
+      "source_binary_nll": 0.0674310934,
+      "constant_source_binary_nll": 0.0707683449,
+      "base_binary_nll": 0.0713855763,
+      "source_subpanel": 7.1028937434,
+      "group_events": [
+        14733,
+        12080
+      ]
+    },
+    {
+      "pooled_nll": 7.1067673727,
+      "source_only_nll": 7.1020215431,
+      "source_binary_nll": 0.0749883087,
+      "constant_source_binary_nll": 0.0785834164,
+      "base_binary_nll": 0.0797341384,
+      "source_subpanel": 6.8709169952,
+      "group_events": [
+        14931,
+        12232
+      ]
+    },
+    {
+      "pooled_nll": 7.0479301986,
+      "source_only_nll": 7.0422859752,
+      "source_binary_nll": 0.0767605072,
+      "constant_source_binary_nll": 0.0807548899,
+      "base_binary_nll": 0.0824047306,
+      "source_subpanel": 6.9842106415,
+      "group_events": [
+        15283,
+        12505
+      ]
+    },
+    {
+      "pooled_nll": 7.1007181936,
+      "source_only_nll": 7.0961689862,
+      "source_binary_nll": 0.0727492241,
+      "constant_source_binary_nll": 0.0761076141,
+      "base_binary_nll": 0.0772984315,
+      "source_subpanel": 7.2536541084,
+      "group_events": [
+        15354,
+        11675
+      ]
+    }
+  ],
+  "adaptation": {
+    "16384": {
+      "installations": {
+        "global": {
+          "destination_bytes": 2628,
+          "joint_bytes": 4066,
+          "joint_live_bytes": 1,
+          "joint_sha256": "50aaf856a842d86f49ca79e05c3c2023794d71c3cb6dba0b40dda6236fa8d497"
+        },
+        "reuse": {
+          "destination_bytes": 4162,
+          "joint_bytes": 4162,
+          "joint_live_bytes": 1,
+          "joint_sha256": "5e1ecc611c7eeba58eef869ef72d1b6b5eee03a35703753372467a510351839a"
+        },
+        "frequency": {
+          "destination_bytes": 2777,
+          "joint_bytes": 4214,
+          "joint_live_bytes": 1,
+          "joint_sha256": "43c67735c7fd8be66e670442b9a0cd7f6641d53c6d779b46f12823d5aef2ec34"
+        },
+        "rank_one": {
+          "destination_bytes": 2698,
+          "joint_bytes": 4135,
+          "joint_live_bytes": 1,
+          "joint_sha256": "6cc1942d8e211498fb8c39ef8f15b8c25baefb8851be744c4605acb48ba09d74"
+        },
+        "separate": {
+          "destination_bytes": 2753,
+          "joint_bytes": 4190,
+          "joint_live_bytes": 1,
+          "joint_sha256": "353dda39b8fb5909c030b60708c4ceaa9152b8030b42ca0d044b9c7e85bb5318"
+        },
+        "raw": {
+          "destination_bytes": 2628,
+          "joint_bytes": 4066,
+          "joint_live_bytes": 1,
+          "joint_sha256": "50aaf856a842d86f49ca79e05c3c2023794d71c3cb6dba0b40dda6236fa8d497"
+        }
+      },
+      "blocks": [
+        {
+          "global": {
+            "within_group_nll": [
+              0.8173099098,
+              0.7813482717
+            ],
+            "destination_nll": 7.0270915395,
+            "destination_priced": 7.0275258406,
+            "joint_nll": 7.0231370566,
+            "joint_priced": 7.0238090003,
+            "joint_subpanel_nll": 7.1039303469
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.8233869347,
+              0.7825658743
+            ],
+            "destination_nll": 7.0278868386,
+            "destination_priced": 7.0285746472,
+            "joint_nll": 7.0239323557,
+            "joint_priced": 7.0246201643,
+            "joint_subpanel_nll": 7.1054365575
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.8279898619,
+              0.7845778093
+            ],
+            "destination_nll": 7.0285896516,
+            "destination_priced": 7.0290485763,
+            "joint_nll": 7.0246351687,
+            "joint_priced": 7.0253315708,
+            "joint_subpanel_nll": 7.1073361257
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.8237415843,
+              0.7932927315
+            ],
+            "destination_nll": 7.0289153228,
+            "destination_priced": 7.0293611921,
+            "joint_nll": 7.0249608399,
+            "joint_priced": 7.0256441866,
+            "joint_subpanel_nll": 7.1050923212
+          },
+          "separate": {
+            "within_group_nll": [
+              0.8174263097,
+              0.7809034692
+            ],
+            "destination_nll": 7.0270636289,
+            "destination_priced": 7.0275185874,
+            "joint_nll": 7.023109146,
+            "joint_priced": 7.0238015819,
+            "joint_subpanel_nll": 7.10423922
+          },
+          "raw": {
+            "within_group_nll": [
+              0.8173099098,
+              0.7813482717
+            ],
+            "destination_nll": 7.0270915395,
+            "destination_priced": 7.0275258406,
+            "joint_nll": 7.0231370566,
+            "joint_priced": 7.0238090003,
+            "joint_subpanel_nll": 7.1039303469
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.8038313084,
+              0.7805523126
+            ],
+            "destination_nll": 7.1085798549,
+            "destination_priced": 7.109014156,
+            "joint_nll": 7.1038340252,
+            "joint_priced": 7.104505969,
+            "joint_subpanel_nll": 6.8723786921
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.8083526801,
+              0.7824003819
+            ],
+            "destination_nll": 7.1092673715,
+            "destination_priced": 7.1099551802,
+            "joint_nll": 7.1045215419,
+            "joint_priced": 7.1052093505,
+            "joint_subpanel_nll": 6.8732823812
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.8169162946,
+              0.7834164961
+            ],
+            "destination_nll": 7.1103377179,
+            "destination_priced": 7.1107966426,
+            "joint_nll": 7.1055918883,
+            "joint_priced": 7.1062882904,
+            "joint_subpanel_nll": 6.8754711835
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.8097978375,
+              0.7889699652
+            ],
+            "destination_nll": 7.1100450875,
+            "destination_priced": 7.1104909567,
+            "joint_nll": 7.1052992579,
+            "joint_priced": 7.1059826045,
+            "joint_subpanel_nll": 6.8748991591
+          },
+          "separate": {
+            "within_group_nll": [
+              0.8039822477,
+              0.7835652752
+            ],
+            "destination_nll": 7.108878227,
+            "destination_priced": 7.1093331855,
+            "joint_nll": 7.1041323974,
+            "joint_priced": 7.1048248333,
+            "joint_subpanel_nll": 6.8741108592
+          },
+          "raw": {
+            "within_group_nll": [
+              0.8038313084,
+              0.7805523126
+            ],
+            "destination_nll": 7.1085798549,
+            "destination_priced": 7.109014156,
+            "joint_nll": 7.1038340252,
+            "joint_priced": 7.104505969,
+            "joint_subpanel_nll": 6.8723786921
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.7682686586,
+              0.7977473111
+            ],
+            "destination_nll": 7.0488970481,
+            "destination_priced": 7.0493313492,
+            "joint_nll": 7.0432528247,
+            "joint_priced": 7.0439247685,
+            "joint_subpanel_nll": 6.987251323
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.771105953,
+              0.7997645614
+            ],
+            "destination_nll": 7.0494203337,
+            "destination_priced": 7.0501081423,
+            "joint_nll": 7.0437761103,
+            "joint_priced": 7.0444639189,
+            "joint_subpanel_nll": 6.9861029483
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.7805066369,
+              0.8011075722
+            ],
+            "destination_nll": 7.0506445845,
+            "destination_priced": 7.0511035092,
+            "joint_nll": 7.0450003611,
+            "joint_priced": 7.0456967632,
+            "joint_subpanel_nll": 6.9866359036
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.7723495227,
+              0.8079018144
+            ],
+            "destination_nll": 7.0503416733,
+            "destination_priced": 7.0507875425,
+            "joint_nll": 7.0446974499,
+            "joint_priced": 7.0453807965,
+            "joint_subpanel_nll": 6.9888327949
+          },
+          "separate": {
+            "within_group_nll": [
+              0.7684484297,
+              0.8015237281
+            ],
+            "destination_nll": 7.0492783007,
+            "destination_priced": 7.0497332592,
+            "joint_nll": 7.0436340773,
+            "joint_priced": 7.0443265132,
+            "joint_subpanel_nll": 6.9874356891
+          },
+          "raw": {
+            "within_group_nll": [
+              0.7682686586,
+              0.7977473111
+            ],
+            "destination_nll": 7.0488970481,
+            "destination_priced": 7.0493313492,
+            "joint_nll": 7.0432528247,
+            "joint_priced": 7.0439247685,
+            "joint_subpanel_nll": 6.987251323
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.8075022966,
+              0.7849551816
+            ],
+            "destination_nll": 7.1016228462,
+            "destination_priced": 7.1020571472,
+            "joint_nll": 7.0970736387,
+            "joint_priced": 7.0977455825,
+            "joint_subpanel_nll": 7.2466762574
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.811635744,
+              0.7880139837
+            ],
+            "destination_nll": 7.1023795025,
+            "destination_priced": 7.1030673112,
+            "joint_nll": 7.0978302951,
+            "joint_priced": 7.0985181038,
+            "joint_subpanel_nll": 7.2466655345
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.8182217974,
+              0.7854354829
+            ],
+            "destination_nll": 7.1029213289,
+            "destination_priced": 7.1033802536,
+            "joint_nll": 7.0983721215,
+            "joint_priced": 7.0990685236,
+            "joint_subpanel_nll": 7.246570407
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.8145695788,
+              0.7933373747
+            ],
+            "destination_nll": 7.1031973484,
+            "destination_priced": 7.1036432176,
+            "joint_nll": 7.098648141,
+            "joint_priced": 7.0993314876,
+            "joint_subpanel_nll": 7.2463016206
+          },
+          "separate": {
+            "within_group_nll": [
+              0.8075852704,
+              0.7851566985
+            ],
+            "destination_nll": 7.1016505156,
+            "destination_priced": 7.1021054741,
+            "joint_nll": 7.0971013082,
+            "joint_priced": 7.0977937441,
+            "joint_subpanel_nll": 7.245852186
+          },
+          "raw": {
+            "within_group_nll": [
+              0.8075022966,
+              0.7849551816
+            ],
+            "destination_nll": 7.1016228462,
+            "destination_priced": 7.1020571472,
+            "joint_nll": 7.0970736387,
+            "joint_priced": 7.0977455825,
+            "joint_subpanel_nll": 7.2466762574
+          }
+        }
+      ],
+      "mean": {
+        "global": {
+          "destination_nll": 7.0715478222,
+          "destination_priced": 7.0719821232,
+          "joint_nll": 7.0668243863,
+          "joint_priced": 7.0674963301,
+          "joint_subpanel_nll": 7.0525591548,
+          "within_group_nll": [
+            0.7990459916,
+            0.786244842
+          ]
+        },
+        "reuse": {
+          "destination_nll": 7.0722385116,
+          "destination_priced": 7.0729263202,
+          "joint_nll": 7.0675150757,
+          "joint_priced": 7.0682028844,
+          "joint_subpanel_nll": 7.0528718554,
+          "within_group_nll": [
+            0.8034218515,
+            0.7882709794
+          ]
+        },
+        "frequency": {
+          "destination_nll": 7.0731233207,
+          "destination_priced": 7.0735822454,
+          "joint_nll": 7.0683998849,
+          "joint_priced": 7.069096287,
+          "joint_subpanel_nll": 7.054003405,
+          "within_group_nll": [
+            0.8107263932,
+            0.7887540207
+          ]
+        },
+        "rank_one": {
+          "destination_nll": 7.073124858,
+          "destination_priced": 7.0735707272,
+          "joint_nll": 7.0684014222,
+          "joint_priced": 7.0690847688,
+          "joint_subpanel_nll": 7.0537814739,
+          "within_group_nll": [
+            0.8049285309,
+            0.7959804267
+          ]
+        },
+        "separate": {
+          "destination_nll": 7.071717668,
+          "destination_priced": 7.0721726265,
+          "joint_nll": 7.0669942322,
+          "joint_priced": 7.0676866681,
+          "joint_subpanel_nll": 7.0529094886,
+          "within_group_nll": [
+            0.7991784938,
+            0.7879164198
+          ]
+        },
+        "raw": {
+          "destination_nll": 7.0715478222,
+          "destination_priced": 7.0719821232,
+          "joint_nll": 7.0668243863,
+          "joint_priced": 7.0674963301,
+          "joint_subpanel_nll": 7.0525591548,
+          "within_group_nll": [
+            0.7990459916,
+            0.786244842
+          ]
+        }
+      }
+    },
+    "262144": {
+      "installations": {
+        "global": {
+          "destination_bytes": 2628,
+          "joint_bytes": 4066,
+          "joint_live_bytes": 1,
+          "joint_sha256": "52e4e0a3184680531861e55ce01c8a8a5b728fdda54e4542bc2384bef436995d"
+        },
+        "reuse": {
+          "destination_bytes": 4162,
+          "joint_bytes": 4162,
+          "joint_live_bytes": 1,
+          "joint_sha256": "20d8a5907c06bfd869721773b576f8ebb0498ca66b21d8df6f800ca022433b98"
+        },
+        "frequency": {
+          "destination_bytes": 2777,
+          "joint_bytes": 4214,
+          "joint_live_bytes": 1,
+          "joint_sha256": "cb9b49c5ddcd2868da1a35bf1ef204a3947596a94adcef3cf02f6372a1ceef50"
+        },
+        "rank_one": {
+          "destination_bytes": 2713,
+          "joint_bytes": 4150,
+          "joint_live_bytes": 1,
+          "joint_sha256": "5799a7ad6ebfe81f73d38e1e0ae6a093aca05408500dbce32411eedfc927f3d1"
+        },
+        "separate": {
+          "destination_bytes": 2796,
+          "joint_bytes": 4234,
+          "joint_live_bytes": 2,
+          "joint_sha256": "d120639e6c3e5146da1294a32989dd6c8c980ac5084b8053f36b1fecb35d80ea"
+        },
+        "raw": {
+          "destination_bytes": 4151,
+          "joint_bytes": 5588,
+          "joint_live_bytes": 2,
+          "joint_sha256": "24cb620a19f0c21380207763c726074dd0ce0bfdb9dd3e5f280b2936e2215d4e"
+        }
+      },
+      "blocks": [
+        {
+          "global": {
+            "within_group_nll": [
+              0.8085151371,
+              0.7809589908
+            ],
+            "destination_nll": 7.0260670956,
+            "destination_priced": 7.0265013967,
+            "joint_nll": 7.0221126127,
+            "joint_priced": 7.0227845565,
+            "joint_subpanel_nll": 7.1021076546
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.805583356,
+              0.7746108604
+            ],
+            "destination_nll": 7.0251524888,
+            "destination_priced": 7.0258402975,
+            "joint_nll": 7.0211980059,
+            "joint_priced": 7.0218858146,
+            "joint_subpanel_nll": 7.1015468437
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.807394483,
+              0.7769166092
+            ],
+            "destination_nll": 7.0255685714,
+            "destination_priced": 7.0260274961,
+            "joint_nll": 7.0216140885,
+            "joint_priced": 7.0223104907,
+            "joint_subpanel_nll": 7.1025684307
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.8039762573,
+              0.7696501136
+            ],
+            "destination_nll": 7.024514647,
+            "destination_priced": 7.0249629951,
+            "joint_nll": 7.0205601641,
+            "joint_priced": 7.0212459896,
+            "joint_subpanel_nll": 7.101039047
+          },
+          "separate": {
+            "within_group_nll": [
+              0.8065430344,
+              0.7682480086
+            ],
+            "destination_nll": 7.0246739403,
+            "destination_priced": 7.025136005,
+            "joint_nll": 7.0207194574,
+            "joint_priced": 7.0214191647,
+            "joint_subpanel_nll": 7.1017922994
+          },
+          "raw": {
+            "within_group_nll": [
+              0.8067904966,
+              0.7787204529
+            ],
+            "destination_nll": 7.0256669288,
+            "destination_priced": 7.0263529196,
+            "joint_nll": 7.0217124459,
+            "joint_priced": 7.0226359141,
+            "joint_subpanel_nll": 7.1019536842
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.7874237558,
+              0.7771263957
+            ],
+            "destination_nll": 7.1063910809,
+            "destination_priced": 7.106825382,
+            "joint_nll": 7.1016452513,
+            "joint_priced": 7.102317195,
+            "joint_subpanel_nll": 6.8704293407
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.7849116066,
+              0.7691515521
+            ],
+            "destination_nll": 7.1053606763,
+            "destination_priced": 7.106048485,
+            "joint_nll": 7.1006148467,
+            "joint_priced": 7.1013026553,
+            "joint_subpanel_nll": 6.8699812042
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.7864065394,
+              0.7737322421
+            ],
+            "destination_nll": 7.1059584534,
+            "destination_priced": 7.1064173781,
+            "joint_nll": 7.1012126238,
+            "joint_priced": 7.1019090259,
+            "joint_subpanel_nll": 6.870992562
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.7819607786,
+              0.7630116466
+            ],
+            "destination_nll": 7.1044515414,
+            "destination_priced": 7.1048998895,
+            "joint_nll": 7.0997057117,
+            "joint_priced": 7.1003915373,
+            "joint_subpanel_nll": 6.8700041637
+          },
+          "separate": {
+            "within_group_nll": [
+              0.7839267336,
+              0.7648522421
+            ],
+            "destination_nll": 7.1048472616,
+            "destination_priced": 7.1053093262,
+            "joint_nll": 7.1001014319,
+            "joint_priced": 7.1008011393,
+            "joint_subpanel_nll": 6.8700360485
+          },
+          "raw": {
+            "within_group_nll": [
+              0.7849259684,
+              0.7745224922
+            ],
+            "destination_nll": 7.1058635433,
+            "destination_priced": 7.1065495341,
+            "joint_nll": 7.1011177136,
+            "joint_priced": 7.1020411819,
+            "joint_subpanel_nll": 6.8706735914
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.758609725,
+              0.798144702
+            ],
+            "destination_nll": 7.0478087294,
+            "destination_priced": 7.0482430305,
+            "joint_nll": 7.042164506,
+            "joint_priced": 7.0428364498,
+            "joint_subpanel_nll": 6.9834686127
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.7565190705,
+              0.7915099525
+            ],
+            "destination_nll": 7.0469319669,
+            "destination_priced": 7.0476197756,
+            "joint_nll": 7.0412877435,
+            "joint_priced": 7.0419755521,
+            "joint_subpanel_nll": 6.9818665615
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.7576135065,
+              0.7932148706
+            ],
+            "destination_nll": 7.0472222369,
+            "destination_priced": 7.0476811616,
+            "joint_nll": 7.0415780135,
+            "joint_priced": 7.0422744156,
+            "joint_subpanel_nll": 6.9813060903
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.7541095032,
+              0.7872144909
+            ],
+            "destination_nll": 7.0462412003,
+            "destination_priced": 7.0466895484,
+            "joint_nll": 7.0405969769,
+            "joint_priced": 7.0412828024,
+            "joint_subpanel_nll": 6.9795080968
+          },
+          "separate": {
+            "within_group_nll": [
+              0.7567177846,
+              0.7844196884
+            ],
+            "destination_nll": 7.0462786863,
+            "destination_priced": 7.0467407509,
+            "joint_nll": 7.0406344628,
+            "joint_priced": 7.0413341701,
+            "joint_subpanel_nll": 6.9800627766
+          },
+          "raw": {
+            "within_group_nll": [
+              0.7578324184,
+              0.795018721
+            ],
+            "destination_nll": 7.0474198594,
+            "destination_priced": 7.0481058502,
+            "joint_nll": 7.041775636,
+            "joint_priced": 7.0426991042,
+            "joint_subpanel_nll": 6.9831527554
+          }
+        },
+        {
+          "global": {
+            "within_group_nll": [
+              0.800362457,
+              0.785678002
+            ],
+            "destination_nll": 7.100850857,
+            "destination_priced": 7.101285158,
+            "joint_nll": 7.0963016495,
+            "joint_priced": 7.0969735933,
+            "joint_subpanel_nll": 7.2552455323
+          },
+          "reuse": {
+            "within_group_nll": [
+              0.8000258339,
+              0.7798284872
+            ],
+            "destination_nll": 7.1002903895,
+            "destination_priced": 7.1009781981,
+            "joint_nll": 7.095741182,
+            "joint_priced": 7.0964289907,
+            "joint_subpanel_nll": 7.254965103
+          },
+          "frequency": {
+            "within_group_nll": [
+              0.799794389,
+              0.7800250419
+            ],
+            "destination_nll": 7.1002807854,
+            "destination_priced": 7.1007397101,
+            "joint_nll": 7.0957315779,
+            "joint_priced": 7.0964279801,
+            "joint_subpanel_nll": 7.2556876916
+          },
+          "rank_one": {
+            "within_group_nll": [
+              0.7976960097,
+              0.7742271544
+            ],
+            "destination_nll": 7.0995185413,
+            "destination_priced": 7.0999668894,
+            "joint_nll": 7.0949693339,
+            "joint_priced": 7.0956551594,
+            "joint_subpanel_nll": 7.2554401504
+          },
+          "separate": {
+            "within_group_nll": [
+              0.801149698,
+              0.7738256691
+            ],
+            "destination_nll": 7.0998873507,
+            "destination_priced": 7.1003494154,
+            "joint_nll": 7.0953381433,
+            "joint_priced": 7.0960378506,
+            "joint_subpanel_nll": 7.2520747885
+          },
+          "raw": {
+            "within_group_nll": [
+              0.7980891308,
+              0.7834737738
+            ],
+            "destination_nll": 7.100388218,
+            "destination_priced": 7.1010742088,
+            "joint_nll": 7.0958390106,
+            "joint_priced": 7.0967624788,
+            "joint_subpanel_nll": 7.2541084808
+          }
+        }
+      ],
+      "mean": {
+        "global": {
+          "destination_nll": 7.0702794407,
+          "destination_priced": 7.0707137418,
+          "joint_nll": 7.0655560049,
+          "joint_priced": 7.0662279486,
+          "joint_subpanel_nll": 7.0528127851,
+          "within_group_nll": [
+            0.7885686009,
+            0.7855601925
+          ]
+        },
+        "reuse": {
+          "destination_nll": 7.0694338804,
+          "destination_priced": 7.070121689,
+          "joint_nll": 7.0647104445,
+          "joint_priced": 7.0653982532,
+          "joint_subpanel_nll": 7.0520899281,
+          "within_group_nll": [
+            0.7866146895,
+            0.778847862
+          ]
+        },
+        "frequency": {
+          "destination_nll": 7.0697575118,
+          "destination_priced": 7.0702164365,
+          "joint_nll": 7.0650340759,
+          "joint_priced": 7.0657304781,
+          "joint_subpanel_nll": 7.0526386936,
+          "within_group_nll": [
+            0.7876457974,
+            0.7810647065
+          ]
+        },
+        "rank_one": {
+          "destination_nll": 7.0686814825,
+          "destination_priced": 7.0691298306,
+          "joint_nll": 7.0639580466,
+          "joint_priced": 7.0646438722,
+          "joint_subpanel_nll": 7.0514978645,
+          "within_group_nll": [
+            0.7842874688,
+            0.7736070088
+          ]
+        },
+        "separate": {
+          "destination_nll": 7.0689218097,
+          "destination_priced": 7.0693838744,
+          "joint_nll": 7.0641983739,
+          "joint_priced": 7.0648980812,
+          "joint_subpanel_nll": 7.0509914783,
+          "within_group_nll": [
+            0.7869418244,
+            0.7729046329
+          ]
+        },
+        "raw": {
+          "destination_nll": 7.0698346374,
+          "destination_priced": 7.0705206282,
+          "joint_nll": 7.0651112015,
+          "joint_priced": 7.0660346697,
+          "joint_subpanel_nll": 7.0524721279,
+          "within_group_nll": [
+            0.7867529126,
+            0.7830089007
+          ]
+        }
+      }
+    }
+  }
+}
