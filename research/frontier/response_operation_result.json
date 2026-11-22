@@ -1,0 +1,215 @@
+{
+  "signature_targets": 58240,
+  "operation_anchor_targets": 3640,
+  "operation_fit_targets": 17408,
+  "test_episodes": 2048,
+  "adaptation_targets_per_episode": 21,
+  "scored_targets": 245760,
+  "xor_world": {
+    "winner": 6,
+    "pilot_only_erm": [
+      6,
+      14
+    ],
+    "full_erm": [
+      6
+    ],
+    "training_matches": [
+      8799,
+      8427,
+      10317,
+      8821,
+      11153,
+      7916,
+      15244,
+      8187,
+      8790,
+      8766,
+      10308,
+      9160,
+      10733,
+      9154,
+      14824,
+      9425
+    ],
+    "unique_fitted_signatures": 128,
+    "correct_task_signatures": 128,
+    "stored_model_bytes": 119,
+    "stored_model_bits": 949,
+    "novel_input_episodes": 1919,
+    "novel_input_targets": 230280,
+    "oracle_label_distances_by_gate": [
+      503,
+      535,
+      383,
+      503,
+      321,
+      576,
+      0,
+      555,
+      504,
+      504,
+      384,
+      472,
+      353,
+      478,
+      32,
+      457
+    ],
+    "pilot_closure": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "full_closure": [
+      0,
+      6,
+      10,
+      12
+    ],
+    "failure_probability_bound_on_this_design": 1.0944374640057147e-05,
+    "scores": {
+      "learned": {
+        "all_nll": 0.5344158674656712,
+        "novel_input_nll": 0.5357183766386329
+      },
+      "fixed_xor": {
+        "all_nll": 0.5344158674656712,
+        "novel_input_nll": 0.5357183766386329
+      },
+      "fixed_or": {
+        "all_nll": 0.9790346276807739,
+        "novel_input_nll": 1.0099387539224742
+      },
+      "bayesian_gate_mixture": {
+        "all_nll": 0.5344158674656712,
+        "novel_input_nll": 0.5357183766386329
+      },
+      "prototype_lookup": {
+        "all_nll": 0.8907104100178995,
+        "novel_input_nll": 0.9218733401956647
+      },
+      "same_observations_oracle": {
+        "all_nll": 0.5344158674656712,
+        "novel_input_nll": 0.5357183766386329
+      }
+    }
+  },
+  "or_world": {
+    "winner": 14,
+    "pilot_only_erm": [
+      6,
+      14
+    ],
+    "full_erm": [
+      14
+    ],
+    "training_matches": [
+      8379,
+      8419,
+      9897,
+      8813,
+      10733,
+      8318,
+      14824,
+      8589,
+      8388,
+      8774,
+      9906,
+      9168,
+      11153,
+      9574,
+      15244,
+      9845
+    ],
+    "unique_fitted_signatures": 128,
+    "correct_task_signatures": 128,
+    "stored_model_bytes": 119,
+    "stored_model_bits": 949,
+    "novel_input_episodes": 1919,
+    "novel_input_targets": 230280,
+    "oracle_label_distances_by_gate": [
+      535,
+      535,
+      415,
+      503,
+      353,
+      546,
+      32,
+      525,
+      534,
+      504,
+      414,
+      472,
+      321,
+      446,
+      0,
+      425
+    ],
+    "pilot_closure": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "full_closure": [
+      0,
+      10,
+      12,
+      14,
+      15
+    ],
+    "failure_probability_bound_on_this_design": 1.0944374640057147e-05,
+    "scores": {
+      "fixed_xor": {
+        "all_nll": 0.8104853227017049,
+        "novel_input_nll": 0.8287273137248226
+      },
+      "learned": {
+        "all_nll": 0.40989975728241357,
+        "novel_input_nll": 0.4060477823162411
+      },
+      "fixed_or": {
+        "all_nll": 0.40989975728241357,
+        "novel_input_nll": 0.4060477823162411
+      },
+      "bayesian_gate_mixture": {
+        "all_nll": 0.40989975728241357,
+        "novel_input_nll": 0.4060477823162411
+      },
+      "prototype_lookup": {
+        "all_nll": 0.6843441139183689,
+        "novel_input_nll": 0.7017494738391464
+      },
+      "same_observations_oracle": {
+        "all_nll": 0.40989975728241357,
+        "novel_input_nll": 0.40604778231624117
+      }
+    }
+  }
+}

@@ -254,3 +254,30 @@ Three complete CPU replays with the subsequent compact-law check took 0.195, 0.1
 python -B research/frontier/parity_r4.py
 python -B research/frontier/task_composition.py --check research/frontier/task_composition_result.json
 ~~~
+
+## Learning the response operation from opaque task names
+
+**EMPIRICALLY OBSERVED.** Each of 128 opaque names denoted an unknown subset of seven hidden features. In paired worlds the observable binary response combined the selected features by XOR or inclusive OR. The learner considered all 16 two-input truth tables. It learned the task dictionary from 58,240 noisy labels across seven pilot inputs, learned the eight training inputs' anchor answers from 3,640 separate labels, and selected its operation using 17,408 further labeled predictions. A researcher chose the pilot conditions. The learner received their noisy outcomes with no raw input-feature values or target operation. [Prospective registration](https://github.com/alan-ai1196/FP/blob/9f5fc05/research/frontier/NEXT.md) · [Learner](response_operation.py) · [Complete receipt](response_operation_result.json)
+
+Seven pilot inputs distinguished all 128 names and left precisely XOR and OR tied at 13,332 correct fitting tokens in both worlds. One extra input condition gave the correct gate 15,244 matches out of 17,408 and the other candidate 14,824. The learner installed the selected four-bit truth table. It then used that table to produce predictive probabilities on 2,048 fresh episodes with 21 noisy anchor answers per episode, three from each learned anchor. Each episode scored a fixed panel of the other 120 nonempty tasks, for 245,760 next-token targets. No further panel outcomes were exposed before those forecasts.
+
+| Predictor | XOR world, nats/token | OR world, nats/token |
+|---|---:|---:|
+| Learned binary operation | 0.534416 | 0.409900 |
+| Fixed XOR | 0.534416 | 0.810485 |
+| Fixed OR | 0.979035 | 0.409900 |
+| Bayesian average over all 16 gates | 0.534416 | 0.409900 |
+| Lookup over the eight fitted training inputs | 0.890710 | 0.684344 |
+| Known dictionary and operation, same 21 observations | 0.534416 | 0.409900 |
+
+A separate oracle summed over all 128 latent inputs given the same observed anchor outcomes. The deployed learner instead propagated the probabilities of its seven calibrated bits through the learned operation. Of the 2,048 episodes, 1,919 used a latent input pattern absent from training. Their losses were 0.535718 and 0.406048 for the respective learned operations, compared with 0.921873 and 0.701749 for prototype lookup. The oracle and conventional Bayesian gate learner matched the fitted gate to the reported precision. These 120 predictions share the same adaptation observations in each episode. Treating them as independent uncertainty estimates would understate sampling variation. Independent raw truth-table enumeration and separate closed-form posterior forecasts reproduced these scores.
+
+The executable packed model contains 896 bits for name signatures, 49 for the seven anchor addresses, and four for the operation, or 119 bytes with padding. Pilot order fixes the coordinate convention. Replaying every name's response on the ordered pilots requires at least $\lceil\log_2(128!)\rceil=717$ bits for an arbitrary named permutation. Training compared 16 truth tables on 1,024 aggregated labeled cells. For one fresh panel the subset recurrence reuses 120 binary combines across all outputs after initializing the seven singleton probabilities. The batched implementation uses binary64 and materializes intermediate arrays. All 43,008 adaptation labels in the test are charged. Three complete Windows CPU replays on the Ryzen 7 5800X took 0.726, 0.735 and 0.735 seconds with peak working sets of 55,533,568, 55,369,728 and 55,672,832 bytes. This measures the complete script, including both worlds, controls, oracle calculations and post-fit checks.
+
+**FORMALLY VERIFIED.** Lean 4.34.1 checked for any dimension and any pair of distinct coordinates that the augmented Boolean row family has exactly one closed operation depending on both arguments, for each of the specified XOR and OR columns. The definitions enumerate all 16 binary truth tables and quantify over arbitrary pilot rows. The identification of table indices 6 and 14 with XOR and OR is also proved. Each printed axiom report lists only propext. The finite-sample learning result has a separate probabilistic proof. [Lean source](ResponseOperation.lean) · [Information and acquisition bounds](FOUNDATION.md#identifying-a-binary-operation-from-noisy-task-responses)
+
+~~~powershell
+python -B research/frontier/response_operation.py --check research/frontier/response_operation_result.json
+python -B research/frontier/audit_response_probes.py
+& "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/ResponseOperation.lean
+~~~
