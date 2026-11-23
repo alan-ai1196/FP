@@ -45,8 +45,9 @@ The relevance-first policy in ea2fc2a governs selection and depth. Completed Ope
 | Source | Actual coverage | Finding and limits |
 |---|---|---|
 | Della Pietra, Della Pietra and Lafferty 1997 | Complete thirteen-page journal-formatted author manuscript, visually read throughout, six sections, both mathematical appendices, one figure, four tables and 22 references. | [Independent note](notes/DELLAPIETRA-1997-FEATURE-INDUCTION.md). Exact frozen-weight feature gain, full refitting, IIS convergence and boundary closure. A fixed gated output-set multiplier is a conditional exponential feature, with separate context normalizers. The paper's morphology demonstration supplies character classes and does not test FP's free raw-type sets or storage prices. The fourteen-page journal typesetting and 1995 report remain separate unread editions. |
+| Berger, Della Pietra and Della Pietra 1996 | All 33 journal pages 39–71, full appendix, four algorithms, twelve figures, nine tables, footnotes and 23 references. Blank scan tail also checked. | [Independent note](notes/BERGER-1996-MAXENT.md). Exact conditional frozen-weight gain with all normalizers, shared-pass candidate evaluation and held-out evidence. Independently records the dual-sign inconsistency, reversed Newton branch and a reported gain discrepancy. Fixed-class odds corrections have an exact conditional log-linear mapping. No experiment replication or full proof certification. |
 
-Next selected full reading: Berger et al. (1996), conditional maximum entropy, after the incoming-request check. McCallum (2003) and information-theoretic co-clustering are relevant subsequent leads.
+Next selected full reading: McCallum (2003), conditional random-field feature induction, after the incoming-request check. Information-theoretic co-clustering and class-based n-grams remain subsequent leads.
 
 ## Anthropic and independent checks
 
