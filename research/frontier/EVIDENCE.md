@@ -595,3 +595,39 @@ python -B research/frontier/audit_shared_state.py --text
 python -B research/frontier/address_anchors.py --shared --check research/frontier/shared_anchors_result.json
 python -B research/frontier/measure_shared_state.py --gpu
 ~~~
+
+## Learning unfamiliar action meanings from purchases
+
+**EMPIRICALLY OBSERVED.** In eight unfamiliar simulated environments, each word group had its own hidden mapping from four ticket names to four words. A purchase revealed one match bit and paid that bit minus the price. Passing gave no outcome feedback. After 512 opportunities per group, each of seven word-informed priors had recovered every one of the 16 mappings by maximum posterior weight. At eight opportunities, the same transferred state that earned more ticket reward than global calibration chose the single winning ticket less accurately. [Prospective registration](https://github.com/alan-ai1196/FP/blob/f912975/research/frontier/NEXT.md) · [Environment and blinded learning interface](text_ticket_actions.py) · [All budgets, menus, environments and block differences](text_ticket_actions_result.json)
+
+On the pinned text tape, 32,768 nonoverlapping triples starting at 4,390,912 provided 3,922 and 3,001 eligible group opportunities. The learner used only the first 0, 8, 64 or 512 per group. Every subsequent evaluation used the next four blocks of 65,536 disjoint triples, giving 55,677 eligible decisions in each environment. The environment announced the group and exposed the two earlier tokens and one priced ticket. Offers used independent pseudorandom streams for acquisition and evaluation. The learner knew the possible permutations and the pretrained word forecast. A separate ridge competitor learned reward directly from the same purchased bits and current-token features. The text, eligibility and word identities were shared across the eight replications. The replications varied hidden names and menus.
+
+During primary acquisition one quarter of offers had the floor price $1/32$. Remaining prices and all reporting prices were log-uniform on $[1/32,29/32]$. Rewards below are per eligible held-out opportunity, averaged over the eight environments. “Integrated” averages over possible deployment menus conditional on the actual word. Single-choice accuracy uses the same acquired probabilities to choose one name with no price offer. Equal probabilities choose the lowest name.
+
+| Word prior or reward learner | Opportunities per group | Realized reward | Integrated reward | Single-choice accuracy | Correct MAPs / 16 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| All posterior means before feedback | 0 | 0.089763 | 0.089422 | 0.190541 | 0 |
+| Global conditional heads | 8 | 0.108380 | 0.108245 | 0.452348 | 3 |
+| Reused source state | 8 | 0.108885 | 0.108803 | 0.429500 | 3 |
+| Directly fitted rank-one prior | 8 | 0.109143 | 0.108997 | 0.455291 | 2 |
+| Direct reward ridge | 8 | 0.090841 | 0.090417 | 0.333506 | — |
+| Reused source state | 64 | 0.129922 | 0.129750 | 0.623783 | 12 |
+| Global conditional heads | 512 | 0.132598 | 0.132370 | 0.653663 | 16 |
+| Reused source state | 512 | 0.132822 | 0.132679 | 0.655872 | 16 |
+| Directly fitted rank-one prior | 512 | 0.133212 | 0.132954 | 0.656555 | 16 |
+| Separately fitted codes | 512 | 0.133217 | **0.133013** | **0.659159** | 16 |
+| Direct reward ridge | 512 | 0.130180 | 0.129994 | 0.639472 | — |
+
+With eight opportunities per group, reuse gained 0.000505 actual reward over global calibration while losing 2.285 percentage points of single-choice accuracy. At 512 it gained 0.000223 actual reward, 0.000309 integrated reward and 0.221 percentage points of accuracy. Its actual reward advantage was positive in seven of eight environments and all four text blocks. The rank-one prior then beat reuse by 0.000390 actual and 0.000275 integrated reward. Separately fitted codes had the highest integrated reward. The transferred policy bought 613.5 of 1,024 acquisition offers on average, with 222 hits. Its integrated reward was within 0.0000002 of its counterpart given the true mapping. At eight opportunities that gap had been 0.023876. No full target label was returned by a purchase. A correct bit can implicitly identify the word once the mapping is known.
+
+The coverage intervention changed acquisition. At eight opportunities, rank-one with no guaranteed purchases averaged 9.75 buys across both groups, recovered 2/16 mappings and earned 0.107504 integrated reward. Guaranteeing all purchases gave 16 buys, 5/16 mappings and 0.114973 reward on the common deployment menu. At 64 opportunities the recovery counts for exploration fractions 0, 1/4 and 1 were 12, 10 and 11. A stronger coverage guarantee alone gave no monotone finite-sample recovery ordering in these eight environments. Unknown mappings, repeated observations and partial feedback were real parts of this task. The environment supplied the groups and the mapping family. Its token stream was independent of the learner's actions.
+
+**Resources and verification.** The reference learner carries 24 FP64 log weights per group, 384 persistent bytes across the two groups, and shares the 96-byte table of permutations. Its compiled posterior-mean readout takes 256 bytes and evaluates one four-term dot product per offer once the frozen word forecast is available. A two-byte MAP readout selects one permutation per group in the same table. At eight opportunities reuse's integrated reward fell from 0.108803 to 0.086282 with MAP. At 512 its MAP and informed readouts coincide. Direct ridge carries eight four-dimensional regression problems across both groups. Its implementation stores a Gram matrix, target vector and fitted coefficients per problem, totaling 1,536 FP64-data bytes. Its deployed coefficients take 256 bytes. The frozen word priors have the destination-only costs in the preceding text study. The full experiment including prior reconstruction, three acquisition menus and all reporting replays took 15.45 seconds and reached 253.8 MB process working set. [Policy and compiled readouts](ticket_policy.py)
+
+The independent audit integrated 19,281 outcome/report cases using exact symbolic log factors and rational price terms. It bounded 17,980 FP64 production payoff calculations against outward log intervals, checked 44 discrete menus, enumerated 1,305 binary-tree cases and confirmed the purchase-only indistinguishability and no-update controls. Lean 4.34.1 checked the integer-scaled aggregation of the pairwise lower requirements and the total single-offer budget, using propext and Quot.sound. The integral, the passage to real coefficients and the tree theorem have separate mathematical proofs. [Decision theorem](INTELLIGENCE_OBJECTIVE.md#how-much-log-loss-can-a-single-action-measure) · [Exact audit](audit_tickets.py) · [Lean arithmetic proof](TicketBudget.lean)
+
+~~~powershell
+python -B research/frontier/text_ticket_actions.py --check research/frontier/text_ticket_actions_result.json
+python -B research/frontier/audit_tickets.py
+& "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/TicketBudget.lean
+~~~
