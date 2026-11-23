@@ -749,3 +749,25 @@ python -B research/frontier/audit_nested_class.py --text
 python -B research/frontier/measure_nested_class.py --gpu
 lean research/frontier/Checkerboard.lean
 ~~~
+
+## How expensive is it to test a proposed state across decisions?
+
+A finite test now reports both a reconstruction error and a bounded decision that attains it. A raw local component acts on its observed ID and an encoded component acts on a specified function of that ID. The outcome used to score decisions is hidden from both. The dense reference builds a column for every shared choice of all local reconstruction maps, minimizes half the $\ell_1$ error over their mixtures, and independently solves for the worst bounded loss. Its tests also enumerate all deterministic raw reporting policies to verify that the returned loss witnesses the gap. These are small modeled populations with supplied observation laws. [Mathematical target before calculation](https://github.com/alan-ai1196/FP/blob/62ddbdd/research/frontier/NEXT.md) · [Definition, proof and estimation guarantee](INTELLIGENCE_OBJECTIVE.md#what-can-an-unknown-decision-lose-when-a-state-discards-information)
+
+The noisy four-context parity example gave the analytic value $(1/4-\epsilon/2)_+$ at seven noise levels from zero to one. On a single four-ID input, keeping only its upper bit incurred zero loss across tasks when the hidden outcome was that bit, and a worst bounded loss of $1/2$ when the outcome was the lower bit. Six strictly positive binary laws also checked the stability example approaching the sharp Lipschitz constant of two. The numerical primal, dual and reporting-policy objectives agreed within $10^{-9}$. Exact rational and exhaustive assignment checks certified the bipartite hardness reduction on all 63 nonempty labeled four-vertex graphs. [Dense solver and exact controls](quotient_value.py)
+
+A second solver uses the graph of the coarse codes actually seen together. In one hidden-bit prediction, each of two components had $h$ coarse codes and $2h$ raw IDs. Occupied code pairs formed an alternating path with $2h-1$ edges. Each occupied pair was equiprobable. Write an ID as a coarse code and a bit, with row code $s$ and column code $t$. The row bit $b$ was fair and was the hidden target. The column bit was $b\oplus(s\bmod2)\oplus(t\bmod2)$. The raw row bit predicts the target exactly and the entire pair of coarse codes is independent of it. To attain a matching upper bound, a shared fair coin selects a row bit equal to the coin XOR row-code parity and a column bit equal to the same coin XOR column-code parity. The two reconstructed IDs have the right conditional relationship and match the hidden bit half the time. Thus the largest bounded decision loss is **exactly $1/2$** for every $h$. The sparse LP recovered this value at all four sizes.
+
+| Coarse codes per component | Complete decoder columns | Bag probability variables | Absolute-deviation variables | Sparse constraint storage |
+|---:|---:|---:|---:|---:|
+| 2 | 256 | 48 | 32 | 2,668 bytes |
+| 4 | 16,777,216 | 448 | 128 | 22,988 bytes |
+| 8 | $2^{64}$ | 3,840 | 512 | 190,348 bytes |
+| 12 | $24^{24}\approx1.33\times10^{33}$ | 13,248 | 1,152 | 649,548 bytes |
+
+At 12 codes the solver had 529 equality rows and a total of 53,568 nonzero coefficients in its two sparse constraint matrices. The reported storage counts their CSR arrays. Python, the input law, the objective and the LP solver's working memory require additional bytes. A run of the four path sizes including process startup used 103.5 MB peak working set and 0.78 seconds on the local CPU. The two solvers agreed on the smallest path and on a separate instance with a multi-variable separator and a disconnected context. This demonstrates a computational advantage when candidate decoder entries have sparse co-occurrences. The joint-ID distributions on this benchmark were generated with known structure. [Sparse solver](quotient_tree.py) · [Proof of the representation and its limitations](OBSTRUCTIONS.md#even-checking-the-value-of-a-fixed-compression-can-be-hard)
+
+~~~powershell
+python -B research/frontier/quotient_value.py
+python -B research/frontier/quotient_tree.py
+~~~
