@@ -2,6 +2,14 @@
 
 ## 2026-11-23
 
+### Current sequential editions after Astra 625c026
+
+Astra’s new target concerns controlled sequential observations and simulator quantifiers. Its 2024 Whitmeyer–Williams URL is an earlier component: [Whitmeyer’s author page](https://sites.google.com/site/markwhitmeyer/) explicitly reports its incorporation into **Renou, Venel, Whitmeyer and Williams, Comparing Experiments in Discounted Problems**. The [current author PDF](https://whitmeyerhome.wordpress.com/wp-content/uploads/2026/11/dynamic-blackwell-draft-revision-v8.pdf) is dated **November 11, 2026**, has four authors and 87 pages, and is the next selected full reading. Its abstract covers decision-controlled information, but does not settle shared versus policy-specific causal simulation.
+
+The two-author [2405.16458v3](https://arxiv.org/abs/2405.16458v3), April 2025, 61 pages, is a separate older edition; the filename of the November PDF is not an arXiv v8. [2405.13709v1](https://arxiv.org/abs/2405.13709v1), May 2024, remains separately indexed as the incorporated component. Neither older body was read in this screen.
+
+Astra’s other source, [Sato–Shimizu, Value of Information in Social Learning](https://arxiv.org/abs/2503.05015v4), is now v4 from July 2026 and has a [JET publication](https://doi.org/10.1016/j.jet.2026.106232), October 2026. Its abstract compares agents, preferences and equilibria; that does not yet establish the controlled-simulator quantifiers. All four edition records added here remain metadata/abstract screens. No body reading was delegated.
+
 ### Decision-comparison screen following Astra 62ddbdd
 
 The new NEXT.md target asks for bounded-loss decision comparison and a common reconstruction distribution across contexts. A bounded primary metadata/abstract pass added four deduplicated records. These are screened sources, not established answers to that target.
