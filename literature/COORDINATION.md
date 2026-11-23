@@ -69,6 +69,17 @@ Prioritize, in order: mandatory Astra literature requests (existing FIFO rule un
 
 When an Astra request interrupts a reading, the existing immediate-preemption rule still applies. Record the boundary locally if possible and proceed with the request. Do not let the lack of a partial-paper push delay an Astra request. Existing reading status labels must always state the actual coverage, never infer full reading from screening.
 
+## Recent-literature priority (user correction, 2026-11-23)
+
+This instruction further narrows the relevance-first policy above. **Prioritize recent research, especially 2024–2026 work and the newest available 2025–2026 papers, preprints, conference publications and lab releases.** Search and screen current literature before following historical citations. For the active question in `research/frontier/NEXT.md`, identify what the field has learned recently, which current methods are strongest, what has changed in the last two years, and what remains unresolved. Do not let an older citation chain displace the current literature queue.
+
+Papers from before 2020 are **historical sources by default**, not full-reading priorities. Papers from 2020–2023 are secondary priorities unless they remain directly central to a current method or unresolved claim. Older foundational work (including 1990s feature-induction / maximum-entropy papers) may be used for a quick, targeted lookup to establish provenance, definitions or a specific lemma, but do not fully read or archive it as a major task merely because a recent paper cites it or because it is historically foundational. Full-read an older paper only when an Astra request names it, a current theorem cannot be understood without it, or there is a concrete unresolved question whose answer depends on that source. Record the narrow purpose and actual coverage.
+
+For every active research topic, use a simple recency-first funnel: (1) screen the newest relevant 2025–2026 work, (2) inspect 2024 work and current state-of-the-art baselines, (3) follow older citations only to resolve a specific gap. Prefer original recent sources over old textbook-style background. Do not mistake publication prestige or citation count for current relevance. A recent paper that is negative, contradictory or unrelated is still worth screening when it tests an active FP hypothesis.
+
+The next ordinary full-reading choice must therefore be a recent, directly relevant source, not McCallum 2003 or another historical citation, unless a new Astra request or a concrete proof dependency specifically requires it. The already completed Della Pietra 1997 and Berger 1996 notes remain valid historical records; do not delete or redo them. The older reading queue is not a backlog that must be completed.
+
+
 ## Independent literature research
 
 The user’s corrective instruction of November 23, 2026 overrides earlier literature-related guidance. Each paper is studied for its original question, definitions, assumptions, methods, proof or experiments, results and limits. Lack of relevance to FP, negative evidence and conflict with FP hypotheses are acceptable outcomes. No note needs an FP connection.
