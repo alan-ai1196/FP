@@ -771,3 +771,47 @@ At 12 codes the solver had 529 equality rows and a total of 53,568 nonzero coeff
 python -B research/frontier/quotient_value.py
 python -B research/frontier/quotient_tree.py
 ~~~
+
+## Learning to buy an observation from later target errors
+
+Each episode supplies two opaque names, a delayed task index, the logging action, the emitted bit or a blank, and the eventual fair binary target. The 16 withheld name pairs never supply a training target. We gave the two learners identical logged episodes from the other 48 pairs. One estimated 384 independent target/response agreement rates with Jeffreys smoothing. The conventional model knew that each task's routing bit factored as an XOR of row and column memberships and that a wrong sensor was fair. It fitted the signs and selected the correct-sensor agreement rate from four values by conditional target likelihood. The controller optimizer saw each fitted forecast, the uniform distribution of raw pairs and the posted prices. No route label, matched-sensor indicator or unqueried outcome entered training. Logged passes contribute a constant target likelihood to both learners. With zero purchases and the registered tie choices both learners passed on all tasks. [Prospective registration](https://github.com/alan-ai1196/FP/blob/54506ee/research/frontier/NEXT.md) · [Learners and exact controller optimizer](controlled_sensing.py) · [Complete results and packets](controlled_sensing_result.json)
+
+At 384 episodes, the factor fits made 80, 70, 30 and 58 mistakes among 192 true task/pair routes on the four seeds. At 3,072 and at 24,576 episodes each fit recovered every route, including all 48 withheld task/pair routes, and the exact agreement rate $7/8$ for each task. The larger training streams contained 16,198 to 16,364 purchases apiece. A raw-pair policy driven by the factor fit had population payoff 0.477539 at the expensive price after 384 episodes, below the 0.5 from passing. The table gives mean payoff at 24,576 episodes. Every column is an exact expectation over a specified finite population once a learner is fitted. All pairs includes the withheld 16. Withheld is conditional on just those 16. [Acquisition guarantee for the supplied factor family](OBSTRUCTIONS.md#what-passive-predictions-cannot-identify-about-a-sensor)
+
+| Fitted probabilities | Bits after first and second name | Cheap, all | Cheap, withheld | Expensive, all | Expensive, withheld |
+|---|---|---:|---:|---:|---:|
+| Separate cell rates | 1 then 1 | 0.618490 | 0.572266 | 0.508545 | 0.501953 |
+| Separate cell rates | 3 then 1 | 0.631836 | 0.546875 | 0.513062 | 0.500000 |
+| Separate cell rates | 3 then 6, raw pair | 0.687500 | 0.500000 | 0.568359 | 0.500000 |
+| Factor likelihood | 1 then 1 | 0.625000 | 0.621094 | 0.531250 | 0.531250 |
+| Factor likelihood | 3 then 1 | 0.656250 | 0.648438 | 0.531250 | 0.531250 |
+| Factor likelihood | 3 then 3, factored | 0.750000 | 0.750000 | 0.593750 | 0.593750 |
+| Factor likelihood | 3 then 6, raw pair | 0.750000 | 0.750000 | 0.593750 | 0.593750 |
+
+At the cheap price $1/8$, the wide first update learned from separate cell forecasts exceeded the population upper bound $0.625$ for **every** one-bit first update. Yet giving it a wider first state reduced its mean withheld payoff, from 0.572266 to 0.546875. At the expensive price $9/32$, the exact factor forecasts made both one-bit final policies buy on just one task in three. They achieved the same payoff. At the cheap price the factor-driven narrow and wide policies bought on every task.
+
+On-policy target log losses in nats at the cheap price were 0.539648 (narrow), 0.525321 (wide) and 0.376770 (factored) using fitted factor forecasts. Forcing the sensor uniformly at test time and reading both fitted conditional forecasts instead gave 0.592377, 0.600393 and 0.534959. A difference in which observations are purchased changes the intrinsic difficulty of the subsequent prediction. The forced-sensor comparison charges neither a favorable observation distribution nor a purchase reward to a policy. At the expensive price on-policy losses were 0.587688 for both one-bit final states and 0.376770 for the factored state. Target loss here is binary. On the project's ordinary full-vocabulary text, the earlier registered experiment still favored the conventional language models. [Full-vocabulary text comparison](#does-the-earlier-token-help-after-calibrating-the-learned-word-class)
+
+**Acquisition and execution costs.** Per fitted task the factor learner tests 128 gauge-fixed row sign vectors and four noise rates. For each candidate it optimizes eight column signs independently. The tabular learner fits two rates per task and raw pair, including the unsampled cells which receive the prior. For each price the two-bit-state controller search checks all 378 unordered pairs of three-task action plans, the wide learner assigns each of 64 raw pairs, and the narrow learner evaluates 128 first-name partitions plus the optimal second map. One complete Python replay of four seeds, four budgets including zero, both forecasters, both prices, compilation and all population metrics took 0.614 seconds process wall time, with sampled process peak working set 39,653,376 bytes. This includes startup, receipt verification and the reference optimizer.
+
+| Controller | Action packet bytes | Packet with selected Q16 forecast | First / final bits | Warm milliseconds per 1,048,576 decisions |
+|---|---:|---:|---:|---:|
+| Constant | 5 | 11 | 0 / 0 | 1.783 |
+| One bit at each arrival | 9 | 21 | 1 / 1 | 2.556 |
+| Full first name, one final bit | 14 | 26 | 3 / 1 | 2.591 |
+| Raw pair | 52 | 436 | 3 / 6 | 1.840 |
+| Factored route | 16 | 64 | 3 / 3 | 6.902 |
+
+Packets include a four-byte header. The predictive packet carries two bytes per final state and task for its chosen action. Persisting that confidence to a later target costs another 16 live bits. The packed C routine consumes first name, second name and task in causal order within each independent decision, then returns one action byte and two confidence bytes. The local MSVC optimized CPU run used nine warm samples per arm, 3,145,728 bytes each of batch input and output and a shared 103,936-byte binary including 53,680 text bytes. All 13,824 large-budget installation/context choices and Q16 forecasts matched the independent Python reference. A million additional byte-level choices and forecasts per timed arm also matched. The measurement covers decision and confidence lookup. Actual external sensor latency, future environment work, and GPU throughput were outside the benchmark. [C routine](sensing_score.c) · [Timing and verification](measure_sensing.py) · [Individual samples and binary sizes](sensing_timing.json)
+
+**Foundation R4 comparison.** The pinned exact R4 evaluator executed the same fitted one-bit final controllers on 6,144 complete contexts across 32 installations, using three consecutive events with one-hot first name, second name and task. Every intermediate state, terminal action indicator and normalized selected Q16 probability matched. The narrower program had 54 nodes, four one-hot delayed cells, and 4 to 13 distinct parameter slots across fits. The wider had 114 nodes, ten delayed cells and 3 to 13 slots. Both used 19 external indicator channels, two positive output bases and native normalization. This is derived execution after paying for the same acquisition. A host dispatches the asserted action indicator. The packed timings above measure the direct controllers. Independent acquisition by the R4 compiler and its optimized device runtime remain open comparisons. [Pinned R4 replay](sensing_r4.py) · [Exact evaluator revision](https://github.com/alan-ai1196/FP/blob/a674dda8985be1dd316b102da4fa00a42c837819/src/reference_compiler/fp_reference/semantics.py)
+
+The separate rational audit checked 256 possible binary final statistics, 520 posterior/price/terminal-policy combinations and 1,679,616 first/second-update spectral bounds. Lean 4.34.1 kernel-checked the price endpoints for every statistic. The printed axiom dependency for the finite bound was propositional extensionality. Interpolation in price, the general-dimensional proofs and the controlled simulator argument are written mathematical deductions. [Price and memory proofs](FOUNDATION.md#learning-what-to-sense-from-a-delayed-prediction) · [Causal simulator comparison](INTELLIGENCE_OBJECTIVE.md#which-causal-simulator-does-a-finite-horizon-decision-test)
+
+~~~powershell
+python -B research/frontier/controlled_sensing.py --check research/frontier/controlled_sensing_result.json
+python -B research/frontier/audit_sensing.py
+python -B research/frontier/sensing_r4.py
+python -B research/frontier/measure_sensing.py
+lean research/frontier/SensorPrice.lean
+~~~

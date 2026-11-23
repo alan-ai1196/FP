@@ -1,0 +1,161 @@
+"""Replay a learned sensor choice in the exact Foundation R4 evaluator."""
+
+import json
+import subprocess
+import sys
+from fractions import Fraction
+from io import BytesIO
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from zipfile import ZipFile
+
+from controlled_sensing import COSTS, SEEDS, UNIT
+from positive_comparison import SOURCE
+
+
+def field(buf, i, width):
+    return (int.from_bytes(buf, "little") >> (width * i)) & ((1 << width) - 1)
+
+
+def check(info):
+    from fp_reference.program import (
+        Binding,
+        DelayedStateSpec,
+        Product,
+        Program,
+        SemanticRules,
+        Source,
+        SourceSpec,
+        State,
+        Sum,
+        Term,
+    )
+    from fp_reference.semantics import evaluate, reset_delayed
+
+    packet = bytes.fromhex(info["action_hex"])
+    narrow = packet[0] == 1
+    assert packet[:4] == bytes((1 if narrow else 2, 2, 3, 1))
+    first = [field(packet[4:5], u, 1) if narrow else u for u in range(8)]
+    width = 2 if narrow else 8
+    second = packet[5:7] if narrow else packet[4:12]
+    policy = packet[7:] if narrow else packet[12:]
+    probs = bytes.fromhex(info["q16_hex"])
+
+    names = [
+        *(f"u{i}" for i in range(8)),
+        *(f"v{i}" for i in range(8)),
+        "j0",
+        "j1",
+        "j2",
+    ]
+    states = [*(f"p{i}" for i in range(width)), "s0", "s1"]
+    specs = tuple(DelayedStateSpec(s, "bit", 1, 1) for s in states)
+    nodes = [*(Source(a) for a in names), *(State(s) for s in states)]
+    slots = [1]
+
+    def insert(node):
+        nodes.append(node)
+        return len(nodes) - 1
+
+    def add(parents):
+        return insert(Sum("bit", tuple(Term(p, 0) for p in parents)))
+
+    first_bodies = [add(u for u in range(8) if first[u] == i) for i in range(width)]
+    pairs = [
+        insert(Product("bit", len(names) + i, 8 + v))
+        for i in range(width)
+        for v in range(8)
+    ]
+    second_bodies = [
+        add(p for k, p in enumerate(pairs) if field(second, k, 1) == s)
+        for s in range(2)
+    ]
+    queries = [
+        insert(Product("bit", len(names) + width + s, 16 + j))
+        for s in range(2)
+        for j in range(3)
+    ]
+    actions = [
+        add(q for k, q in enumerate(queries) if field(policy, k, 2) == a)
+        for a in range(3)
+    ]
+    heads = []
+    for agree in (False, True):
+        terms = []
+        for k, q in enumerate(queries):
+            n = field(probs, k, 16)
+            excess = (n if agree else UNIT - n) - 1
+            if excess not in slots:
+                slots.append(excess)
+            terms.append(Term(q, slots.index(excess)))
+        heads.append(insert(Sum("bit", tuple(terms))))
+    rules = SemanticRules(
+        tuple(SourceSpec(a, "bit", 0, 1) for a in names),
+        ("bit",),
+        (("bit", "bit", "bit"),),
+        "bit",
+        (1, 1),
+        specs,
+    )
+    bindings = tuple(
+        Binding(s, b) for s, b in zip(states, first_bodies + second_bodies, strict=True)
+    )
+    prog = Program(tuple(nodes), len(slots), tuple(heads), bindings)
+
+    def step(name, history):
+        return evaluate(prog, rules, slots, {a: int(a == name) for a in names}, history)
+
+    for u in range(8):
+        pre = step(names[u], reset_delayed(rules))
+        assert [h[0] for _, h in pre.delayed] == [
+            int(i == first[u]) for i in range(width)
+        ] + [0, 0]
+        for v in range(8):
+            post = step(names[8 + v], pre.delayed)
+            s = field(second, 8 * first[u] + v, 1)
+            assert [h[0] for _, h in post.delayed] == [0] * width + [1 - s, s]
+            for j in range(3):
+                last = step(names[16 + j], post.delayed)
+                k = 3 * s + j
+                assert [last.values[p] for p in actions] == [
+                    int(a == field(policy, k, 2)) for a in range(3)
+                ]
+                assert last.probabilities[1] == Fraction(field(probs, k, 16), UNIT)
+    return len(nodes), len(specs), len(slots)
+
+
+def run():
+    folder = "src/reference_compiler"
+    here = Path(__file__).resolve().parent
+    archive = subprocess.check_output(
+        ["git", "-C", str(here.parents[1]), "archive", "--format=zip", SOURCE, folder]
+    )
+    models = json.loads((here / "controlled_sensing_result.json").read_text())[
+        "largest_budget_installations"
+    ]
+    with TemporaryDirectory(prefix="fp-sensor-reference-") as tmp:
+        with ZipFile(BytesIO(archive)) as pinned:
+            pinned.extractall(tmp)
+        sys.path.insert(0, str(Path(tmp) / folder))
+        for arm in ("one_then_one", "three_then_one"):
+            sizes = [
+                check(models[f"{seed}/{name}/{c}/{arm}"])
+                for seed in SEEDS
+                for name in ("tabular", "rank_one")
+                for c in COSTS
+            ]
+            print(
+                arm,
+                "installations",
+                len(sizes),
+                "complete context checks",
+                192 * len(sizes),
+                "nodes, delayed cells, slots",
+                sorted(set(sizes)),
+            )
+
+
+if __name__ == "__main__":
+    if not __debug__:
+        raise RuntimeError("the comparison requires assertions")
+    run()

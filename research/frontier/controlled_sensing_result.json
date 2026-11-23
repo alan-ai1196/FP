@@ -1,0 +1,1737 @@
+{
+  "registration": "54506ee",
+  "seeds": [
+    257,
+    509,
+    1021,
+    2039
+  ],
+  "budgets": [
+    384,
+    3072,
+    24576
+  ],
+  "costs": [
+    0.125,
+    0.28125
+  ],
+  "eligible_pairs": 48,
+  "purchased_episodes": {
+    "257/0": 0,
+    "257/384": 260,
+    "257/3072": 2064,
+    "257/24576": 16295,
+    "509/0": 0,
+    "509/384": 255,
+    "509/3072": 2034,
+    "509/24576": 16250,
+    "1021/0": 0,
+    "1021/384": 258,
+    "1021/3072": 2039,
+    "1021/24576": 16198,
+    "2039/0": 0,
+    "2039/384": 255,
+    "2039/3072": 2025,
+    "2039/24576": 16364
+  },
+  "fitted_factor_recovery": {
+    "257/0": {
+      "route_errors_of_192": 96,
+      "withheld_errors_of_48": 20,
+      "agreement_by_task": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    },
+    "257/384": {
+      "route_errors_of_192": 80,
+      "withheld_errors_of_48": 22,
+      "agreement_by_task": [
+        0.9375,
+        0.875,
+        0.875
+      ]
+    },
+    "257/3072": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "257/24576": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "509/0": {
+      "route_errors_of_192": 96,
+      "withheld_errors_of_48": 22,
+      "agreement_by_task": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    },
+    "509/384": {
+      "route_errors_of_192": 70,
+      "withheld_errors_of_48": 20,
+      "agreement_by_task": [
+        0.9375,
+        0.875,
+        0.9375
+      ]
+    },
+    "509/3072": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "509/24576": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "1021/0": {
+      "route_errors_of_192": 96,
+      "withheld_errors_of_48": 26,
+      "agreement_by_task": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    },
+    "1021/384": {
+      "route_errors_of_192": 30,
+      "withheld_errors_of_48": 8,
+      "agreement_by_task": [
+        0.875,
+        0.9375,
+        0.875
+      ]
+    },
+    "1021/3072": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "1021/24576": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "2039/0": {
+      "route_errors_of_192": 96,
+      "withheld_errors_of_48": 24,
+      "agreement_by_task": [
+        0.625,
+        0.625,
+        0.625
+      ]
+    },
+    "2039/384": {
+      "route_errors_of_192": 58,
+      "withheld_errors_of_48": 18,
+      "agreement_by_task": [
+        0.9375,
+        0.9375,
+        0.875
+      ]
+    },
+    "2039/3072": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    },
+    "2039/24576": {
+      "route_errors_of_192": 0,
+      "withheld_errors_of_48": 0,
+      "agreement_by_task": [
+        0.875,
+        0.875,
+        0.875
+      ]
+    }
+  },
+  "mean": {
+    "0/tabular/0.125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.125/one_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.125/three_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.125/raw_pair": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.28125/one_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.28125/three_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/tabular/0.28125/raw_pair": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.693147181,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "0/rank_one/0.125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.125/one_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.125/three_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.125/raw_pair": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.125/factored": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.28125/one_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.28125/three_then_one": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.28125/raw_pair": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "0/rank_one/0.28125/factored": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661391909,
+      "common_probe_nll_unseen": 0.659396496
+    },
+    "384/tabular/0.125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.659253873,
+      "common_probe_nll_unseen": 0.65952093
+    },
+    "384/tabular/0.125/one_then_one": {
+      "payoff_all": 0.509928385,
+      "payoff_unseen": 0.499348958,
+      "buy_all": 0.123697917,
+      "buy_unseen": 0.067708333,
+      "nll_all": 0.682797034,
+      "nll_unseen": 0.69189901,
+      "common_probe_nll_all": 0.66206448,
+      "common_probe_nll_unseen": 0.668381214
+    },
+    "384/tabular/0.125/three_then_one": {
+      "payoff_all": 0.523925781,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.23828125,
+      "buy_unseen": 0.0,
+      "nll_all": 0.669235535,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.66364887,
+      "common_probe_nll_unseen": 0.675445703
+    },
+    "384/tabular/0.125/raw_pair": {
+      "payoff_all": 0.563964844,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.45703125,
+      "buy_unseen": 0.0,
+      "nll_all": 0.627168764,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.678537026,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "384/tabular/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.659253873,
+      "common_probe_nll_unseen": 0.65952093
+    },
+    "384/tabular/0.28125/one_then_one": {
+      "payoff_all": 0.49987793,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.014322917,
+      "buy_unseen": 0.0,
+      "nll_all": 0.691307809,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.659735947,
+      "common_probe_nll_unseen": 0.661163299
+    },
+    "384/tabular/0.28125/three_then_one": {
+      "payoff_all": 0.499267578,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0390625,
+      "buy_unseen": 0.0,
+      "nll_all": 0.688703348,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.661303481,
+      "common_probe_nll_unseen": 0.665277194
+    },
+    "384/tabular/0.28125/raw_pair": {
+      "payoff_all": 0.501953125,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.151041667,
+      "buy_unseen": 0.0,
+      "nll_all": 0.667301679,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.678537026,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "384/rank_one/0.125/constant": {
+      "payoff_all": 0.5625,
+      "payoff_unseen": 0.546875,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.624877233,
+      "nll_unseen": 0.636097213,
+      "common_probe_nll_all": 0.623890882,
+      "common_probe_nll_unseen": 0.621748895
+    },
+    "384/rank_one/0.125/one_then_one": {
+      "payoff_all": 0.591796875,
+      "payoff_unseen": 0.59375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.639918225,
+      "nll_unseen": 0.642885933,
+      "common_probe_nll_all": 0.643738242,
+      "common_probe_nll_unseen": 0.646835931
+    },
+    "384/rank_one/0.125/three_then_one": {
+      "payoff_all": 0.604980469,
+      "payoff_unseen": 0.587890625,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.60733234,
+      "nll_unseen": 0.630030538,
+      "common_probe_nll_all": 0.632259613,
+      "common_probe_nll_unseen": 0.640381071
+    },
+    "384/rank_one/0.125/raw_pair": {
+      "payoff_all": 0.633789062,
+      "payoff_unseen": 0.6171875,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.658467333,
+      "nll_unseen": 0.695982424,
+      "common_probe_nll_all": 0.675807257,
+      "common_probe_nll_unseen": 0.694564802
+    },
+    "384/rank_one/0.125/factored": {
+      "payoff_all": 0.633789062,
+      "payoff_unseen": 0.6171875,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.658467333,
+      "nll_unseen": 0.695982424,
+      "common_probe_nll_all": 0.675807257,
+      "common_probe_nll_unseen": 0.694564802
+    },
+    "384/rank_one/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.623890882,
+      "common_probe_nll_unseen": 0.621748895
+    },
+    "384/rank_one/0.28125/one_then_one": {
+      "payoff_all": 0.495361328,
+      "payoff_unseen": 0.495117188,
+      "buy_all": 0.377604167,
+      "buy_unseen": 0.385416667,
+      "nll_all": 0.681675011,
+      "nll_unseen": 0.68444259,
+      "common_probe_nll_all": 0.64268561,
+      "common_probe_nll_unseen": 0.644328592
+    },
+    "384/rank_one/0.28125/three_then_one": {
+      "payoff_all": 0.495361328,
+      "payoff_unseen": 0.495117188,
+      "buy_all": 0.377604167,
+      "buy_unseen": 0.385416667,
+      "nll_all": 0.681675011,
+      "nll_unseen": 0.68444259,
+      "common_probe_nll_all": 0.64268561,
+      "common_probe_nll_unseen": 0.644328592
+    },
+    "384/rank_one/0.28125/raw_pair": {
+      "payoff_all": 0.477539062,
+      "payoff_unseen": 0.4609375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.658467333,
+      "nll_unseen": 0.695982424,
+      "common_probe_nll_all": 0.675807257,
+      "common_probe_nll_unseen": 0.694564802
+    },
+    "384/rank_one/0.28125/factored": {
+      "payoff_all": 0.477539062,
+      "payoff_unseen": 0.4609375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.658467333,
+      "nll_unseen": 0.695982424,
+      "common_probe_nll_all": 0.675807257,
+      "common_probe_nll_unseen": 0.694564802
+    },
+    "3072/tabular/0.125/constant": {
+      "payoff_all": 0.541666667,
+      "payoff_unseen": 0.514322917,
+      "buy_all": 0.666666667,
+      "buy_unseen": 0.666666667,
+      "nll_all": 0.648255464,
+      "nll_unseen": 0.665509705,
+      "common_probe_nll_all": 0.631121275,
+      "common_probe_nll_unseen": 0.634540996
+    },
+    "3072/tabular/0.125/one_then_one": {
+      "payoff_all": 0.608398438,
+      "payoff_unseen": 0.570963542,
+      "buy_all": 0.828125,
+      "buy_unseen": 0.791666667,
+      "nll_all": 0.578223804,
+      "nll_unseen": 0.607931664,
+      "common_probe_nll_all": 0.613274671,
+      "common_probe_nll_unseen": 0.622344845
+    },
+    "3072/tabular/0.125/three_then_one": {
+      "payoff_all": 0.599446615,
+      "payoff_unseen": 0.546875,
+      "buy_all": 0.712239583,
+      "buy_unseen": 0.5,
+      "nll_all": 0.594323735,
+      "nll_unseen": 0.64728861,
+      "common_probe_nll_all": 0.625071812,
+      "common_probe_nll_unseen": 0.645932112
+    },
+    "3072/tabular/0.125/raw_pair": {
+      "payoff_all": 0.654622396,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.692708333,
+      "buy_unseen": 0.0,
+      "nll_all": 0.524506181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.62301443,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "3072/tabular/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.631121275,
+      "common_probe_nll_unseen": 0.634540996
+    },
+    "3072/tabular/0.28125/one_then_one": {
+      "payoff_all": 0.502197266,
+      "payoff_unseen": 0.500488281,
+      "buy_all": 0.059895833,
+      "buy_unseen": 0.005208333,
+      "nll_all": 0.680964078,
+      "nll_unseen": 0.691501269,
+      "common_probe_nll_all": 0.630057689,
+      "common_probe_nll_unseen": 0.635462237
+    },
+    "3072/tabular/0.28125/three_then_one": {
+      "payoff_all": 0.504638672,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.1640625,
+      "buy_unseen": 0.0,
+      "nll_all": 0.66111976,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.628241199,
+      "common_probe_nll_unseen": 0.638085261
+    },
+    "3072/tabular/0.28125/raw_pair": {
+      "payoff_all": 0.538085938,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.515625,
+      "buy_unseen": 0.0,
+      "nll_all": 0.560460993,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.62301443,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "3072/rank_one/0.125/constant": {
+      "payoff_all": 0.5625,
+      "payoff_unseen": 0.5703125,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.621086375,
+      "nll_unseen": 0.614926551,
+      "common_probe_nll_all": 0.621086375,
+      "common_probe_nll_unseen": 0.621086375
+    },
+    "3072/rank_one/0.125/one_then_one": {
+      "payoff_all": 0.625,
+      "payoff_unseen": 0.62109375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.539647637,
+      "nll_unseen": 0.542727548,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "3072/rank_one/0.125/three_then_one": {
+      "payoff_all": 0.65625,
+      "payoff_unseen": 0.6484375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.52532132,
+      "nll_unseen": 0.535266364,
+      "common_probe_nll_all": 0.600392951,
+      "common_probe_nll_unseen": 0.603883092
+    },
+    "3072/rank_one/0.125/raw_pair": {
+      "payoff_all": 0.75,
+      "payoff_unseen": 0.75,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "3072/rank_one/0.125/factored": {
+      "payoff_all": 0.75,
+      "payoff_unseen": 0.75,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "3072/rank_one/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.621086375,
+      "common_probe_nll_unseen": 0.621086375
+    },
+    "3072/rank_one/0.28125/one_then_one": {
+      "payoff_all": 0.53125,
+      "payoff_unseen": 0.53125,
+      "buy_all": 0.333333333,
+      "buy_unseen": 0.333333333,
+      "nll_all": 0.587688174,
+      "nll_unseen": 0.587688174,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "3072/rank_one/0.28125/three_then_one": {
+      "payoff_all": 0.53125,
+      "payoff_unseen": 0.53125,
+      "buy_all": 0.333333333,
+      "buy_unseen": 0.333333333,
+      "nll_all": 0.587688174,
+      "nll_unseen": 0.587688174,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "3072/rank_one/0.28125/raw_pair": {
+      "payoff_all": 0.59375,
+      "payoff_unseen": 0.59375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "3072/rank_one/0.28125/factored": {
+      "payoff_all": 0.59375,
+      "payoff_unseen": 0.59375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "24576/tabular/0.125/constant": {
+      "payoff_all": 0.5625,
+      "payoff_unseen": 0.5234375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.624470397,
+      "nll_unseen": 0.649625819,
+      "common_probe_nll_all": 0.626965494,
+      "common_probe_nll_unseen": 0.630111478
+    },
+    "24576/tabular/0.125/one_then_one": {
+      "payoff_all": 0.618489583,
+      "payoff_unseen": 0.572265625,
+      "buy_all": 0.958333333,
+      "buy_unseen": 0.9375,
+      "nll_all": 0.560145864,
+      "nll_unseen": 0.595039026,
+      "common_probe_nll_all": 0.604848399,
+      "common_probe_nll_unseen": 0.61271298
+    },
+    "24576/tabular/0.125/three_then_one": {
+      "payoff_all": 0.631835938,
+      "payoff_unseen": 0.546875,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.560977799,
+      "nll_unseen": 0.635000882,
+      "common_probe_nll_all": 0.616850108,
+      "common_probe_nll_unseen": 0.646397843
+    },
+    "24576/tabular/0.125/raw_pair": {
+      "payoff_all": 0.6875,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.75,
+      "buy_unseen": 0.0,
+      "nll_all": 0.462872547,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.581209792,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "24576/tabular/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.626965494,
+      "common_probe_nll_unseen": 0.630111478
+    },
+    "24576/tabular/0.28125/one_then_one": {
+      "payoff_all": 0.508544922,
+      "payoff_unseen": 0.501953125,
+      "buy_all": 0.096354167,
+      "buy_unseen": 0.020833333,
+      "nll_all": 0.663744361,
+      "nll_unseen": 0.686602837,
+      "common_probe_nll_all": 0.617741626,
+      "common_probe_nll_unseen": 0.62690319
+    },
+    "24576/tabular/0.28125/three_then_one": {
+      "payoff_all": 0.513061523,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.139322917,
+      "buy_unseen": 0.0,
+      "nll_all": 0.649092916,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.613186051,
+      "common_probe_nll_unseen": 0.633021748
+    },
+    "24576/tabular/0.28125/raw_pair": {
+      "payoff_all": 0.568359375,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.729166667,
+      "buy_unseen": 0.0,
+      "nll_all": 0.46862754,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.581209792,
+      "common_probe_nll_unseen": 0.693147181
+    },
+    "24576/rank_one/0.125/constant": {
+      "payoff_all": 0.5625,
+      "payoff_unseen": 0.5703125,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.621086375,
+      "nll_unseen": 0.614926551,
+      "common_probe_nll_all": 0.621086375,
+      "common_probe_nll_unseen": 0.621086375
+    },
+    "24576/rank_one/0.125/one_then_one": {
+      "payoff_all": 0.625,
+      "payoff_unseen": 0.62109375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.539647637,
+      "nll_unseen": 0.542727548,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "24576/rank_one/0.125/three_then_one": {
+      "payoff_all": 0.65625,
+      "payoff_unseen": 0.6484375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.52532132,
+      "nll_unseen": 0.535266364,
+      "common_probe_nll_all": 0.600392951,
+      "common_probe_nll_unseen": 0.603883092
+    },
+    "24576/rank_one/0.125/raw_pair": {
+      "payoff_all": 0.75,
+      "payoff_unseen": 0.75,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "24576/rank_one/0.125/factored": {
+      "payoff_all": 0.75,
+      "payoff_unseen": 0.75,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "24576/rank_one/0.28125/constant": {
+      "payoff_all": 0.5,
+      "payoff_unseen": 0.5,
+      "buy_all": 0.0,
+      "buy_unseen": 0.0,
+      "nll_all": 0.693147181,
+      "nll_unseen": 0.693147181,
+      "common_probe_nll_all": 0.621086375,
+      "common_probe_nll_unseen": 0.621086375
+    },
+    "24576/rank_one/0.28125/one_then_one": {
+      "payoff_all": 0.53125,
+      "payoff_unseen": 0.53125,
+      "buy_all": 0.333333333,
+      "buy_unseen": 0.333333333,
+      "nll_all": 0.587688174,
+      "nll_unseen": 0.587688174,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "24576/rank_one/0.28125/three_then_one": {
+      "payoff_all": 0.53125,
+      "payoff_unseen": 0.53125,
+      "buy_all": 0.333333333,
+      "buy_unseen": 0.333333333,
+      "nll_all": 0.587688174,
+      "nll_unseen": 0.587688174,
+      "common_probe_nll_all": 0.59237714,
+      "common_probe_nll_unseen": 0.59237714
+    },
+    "24576/rank_one/0.28125/raw_pair": {
+      "payoff_all": 0.59375,
+      "payoff_unseen": 0.59375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    },
+    "24576/rank_one/0.28125/factored": {
+      "payoff_all": 0.59375,
+      "payoff_unseen": 0.59375,
+      "buy_all": 1.0,
+      "buy_unseen": 1.0,
+      "nll_all": 0.376770161,
+      "nll_unseen": 0.376770161,
+      "common_probe_nll_all": 0.534958671,
+      "common_probe_nll_unseen": 0.534958671
+    }
+  },
+  "largest_budget_unseen_payoff_by_seed": {
+    "24576/tabular/0.125/constant": [
+      0.53125,
+      0.546875,
+      0.484375,
+      0.53125
+    ],
+    "24576/tabular/0.125/one_then_one": [
+      0.546875,
+      0.609375,
+      0.5703125,
+      0.5625
+    ],
+    "24576/tabular/0.125/three_then_one": [
+      0.53125,
+      0.546875,
+      0.546875,
+      0.5625
+    ],
+    "24576/tabular/0.125/raw_pair": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "24576/tabular/0.28125/constant": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "24576/tabular/0.28125/one_then_one": [
+      0.501953125,
+      0.5,
+      0.50390625,
+      0.501953125
+    ],
+    "24576/tabular/0.28125/three_then_one": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "24576/tabular/0.28125/raw_pair": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "24576/rank_one/0.125/constant": [
+      0.59375,
+      0.578125,
+      0.546875,
+      0.5625
+    ],
+    "24576/rank_one/0.125/one_then_one": [
+      0.625,
+      0.625,
+      0.625,
+      0.609375
+    ],
+    "24576/rank_one/0.125/three_then_one": [
+      0.65625,
+      0.6484375,
+      0.640625,
+      0.6484375
+    ],
+    "24576/rank_one/0.125/raw_pair": [
+      0.75,
+      0.75,
+      0.75,
+      0.75
+    ],
+    "24576/rank_one/0.125/factored": [
+      0.75,
+      0.75,
+      0.75,
+      0.75
+    ],
+    "24576/rank_one/0.28125/constant": [
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "24576/rank_one/0.28125/one_then_one": [
+      0.53125,
+      0.53125,
+      0.53125,
+      0.53125
+    ],
+    "24576/rank_one/0.28125/three_then_one": [
+      0.53125,
+      0.53125,
+      0.53125,
+      0.53125
+    ],
+    "24576/rank_one/0.28125/raw_pair": [
+      0.59375,
+      0.59375,
+      0.59375,
+      0.59375
+    ],
+    "24576/rank_one/0.28125/factored": [
+      0.59375,
+      0.59375,
+      0.59375,
+      0.59375
+    ]
+  },
+  "largest_budget_installations": {
+    "257/tabular/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030126",
+      "q16_hex": "35a59aa34ca9",
+      "prediction_sha256": "9e53ed8848013be1626346297f4a3f5c944e62abab792023e7d5bfc538a818fa"
+    },
+    "257/tabular/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301a6a255a50a",
+      "q16_hex": "44a6cfbeb5a651b060cba1ac",
+      "prediction_sha256": "d6c111bbb7b6d865f0e3a80f1137fad66b525e7b06fac346b40ccf936e330623"
+    },
+    "257/tabular/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301624c51862846a111a506",
+      "q16_hex": "47ab0fab3baecbcf8ccc67c0",
+      "prediction_sha256": "f55c8935ec694eaf12c0b0638810599f10a30d22530a8b0ddb9c986c02f883c7"
+    },
+    "257/tabular/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003018066026566a529a05940a9565a05942a9099a56a01550a64665a65805a0280a59a29a0951650a6a606a86a09549a9902",
+      "q16_hex": "008000800080ece47de872dc66d949e275eb00800080008000c000ea14dbe4c639ce08e14dd925d9ece48afdfcea5ccfc8d300d2b4d700800080008075df73f351def0f29ad900d000800080008006db75df6eeb75df71d2d9e46fe5b7eda3cb08e1abeab6ef00e000d6c2d400800080008000d2cce3c6db64e4d7e345d100800080008008e192d4b9e489e876e24ce7fcea44ea48cd68ef55d586e0a3cb4ce792d4008000800080abeaa5d4d9e91dd231e266e6008000800080c7e1b6ef00e0c6d835cd00e066e600cea8d155d55fdff7d266e6c6d82fe100800080008066e698d358e3f2d6f0f200c00080008000800080008000802fe10ade77d777d770d8ece4bcdbb7dd55cd1edb2de4caeb00800080008086e166e600c66bed96e523df33f3efd300d2008000800080b5d465cda8d189e83ecd72dc0fd4f5e617ecc8d300eeabe2008000800080d3d96eee51de72dc58e386e027d68bef89e800800080008071d26ac4eae0c8d600daf1d51ded66e646c676dd3cdcd9e9008000800080",
+      "prediction_sha256": "ad4bb350b9d30d5bf5260a6af1354f0fdb66890870995cc595279c7382f93e59"
+    },
+    "257/tabular/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "257/tabular/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203019a94210008",
+      "q16_hex": "008000800080008000805ed9",
+      "prediction_sha256": "8421933d77a97d11bf0cea84c1f999fc97308468a0ccc65d6132778a80dcdf59"
+    },
+    "257/tabular/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301024411022044a0118002",
+      "q16_hex": "00800080008074df57e20080",
+      "prediction_sha256": "f5af57c81ae4d464a710a97639c8ef41bbe741b8244b6ae6bf0fc8b4f95a061b"
+    },
+    "257/tabular/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003018066022466a529a05940a9565a05942a9099a56a01550a64665a65805a0080a59a29a0941650a6a606a86a09449a9102",
+      "q16_hex": "008000800080ece47de872dc66d949e275eb008000800080008000ea14db008039ce08e14dd925d9ece48afdfcea5ccfc8d300d2b4d700800080008075df73f351def0f29ad900d000800080008006db75df6eeb75df71d2d9e46fe5b7eda3cb08e1abeab6ef00e000d6c2d400800080008000d2cce3c6db64e4d7e345d100800080008008e192d4b9e489e876e24ce7fcea44ea48cd68ef55d586e0a3cb4ce792d4008000800080abeaa5d4d9e91dd231e266e6008000800080c7e1b6ef00e0c6d835cd00e066e600cea8d155d55fdff7d266e6c6d82fe100800080008066e698d358e3f2d6f0f200800080008000800080008000802fe10ade77d777d770d8ece4bcdbb7dd55cd1edb2de4caeb00800080008086e166e600806bed96e523df33f3efd300d2008000800080b5d465cda8d189e83ecd72dc0fd4f5e617ecc8d300eeabe2008000800080d3d96eee51de72dc58e386e027d68bef89e800800080008071d20080eae0c8d600daf1d51ded66e6008076dd3cdcd9e9008000800080",
+      "prediction_sha256": "81c143d4f3e9b50aad2049b804520d2ca6796f268699aad6e30ad5f34fb4cc09"
+    },
+    "257/rank_one/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030115",
+      "q16_hex": "00b000b000b0",
+      "prediction_sha256": "7b48119af51da45e2e415bd9832ff8b60d63a7814312b02f3b441439e14fc76d"
+    },
+    "257/rank_one/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203019a9c635509",
+      "q16_hex": "00b000b000e000b000b000e0",
+      "prediction_sha256": "4ac70f87a0886686fdc90ec1139028b631147b45f16d6f6551484089a8893768"
+    },
+    "257/rank_one/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "020203018e47956aa35cb871950a",
+      "q16_hex": "00c800c800c800c800c800c8",
+      "prediction_sha256": "504605866ca6fd88c7935b0afb2cd84a7d02a99313ae9b878b75b65532f1d22c"
+    },
+    "257/rank_one/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003019566aa6566a5a9a95959a9565a9596aa9599a56a69556a66665a65965a6a99a59a69a5955656a6a656a96a99559a995a",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "9c9002ab68832a4e7d0351486d1f196a37e1283a97c09b72bd80761287d82cc8"
+    },
+    "257/rank_one/0.125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "04080301f058e5584fc5959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "cb0f64b54039041222e71d1a08421a383b7065d8f58c52aa9d583d88d48acbab"
+    },
+    "257/rank_one/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "257/rank_one/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203019a9c631008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "70a4a8a8660c18064a9da7dee5554e25b9375b95aa7d53631f94d221c493e2c1"
+    },
+    "257/rank_one/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "020203019c639c63639c9c631008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "8093a6d46cf97f20207729f1fb65d7aac5d673f5432b327885c8ade40423fc02"
+    },
+    "257/rank_one/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003019566aa6566a5a9a95959a9565a9596aa9599a56a69556a66665a65965a6a99a59a69a5955656a6a656a96a99559a995a",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "9c9002ab68832a4e7d0351486d1f196a37e1283a97c09b72bd80761287d82cc8"
+    },
+    "257/rank_one/0.28125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "04080301f058e5584fc5959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "cb0f64b54039041222e71d1a08421a383b7065d8f58c52aa9d583d88d48acbab"
+    },
+    "509/tabular/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030125",
+      "q16_hex": "44a578a518a8",
+      "prediction_sha256": "1cda5e154835045bec8030205c2c668f7009e6a9b103662c5ae3f96d1e25b628"
+    },
+    "509/tabular/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301f0a956650a",
+      "q16_hex": "71a539c920a516a51cc510ab",
+      "prediction_sha256": "bdf4e064cdfaf0033d881dabff5f9e7e1020db3355be091a0b54d1bd5cdf69eb"
+    },
+    "509/tabular/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301524c9234218c290ba905",
+      "q16_hex": "2faadbaa43afe0c440cb56c4",
+      "prediction_sha256": "20cf98ca21a303ad1d167947cc5107d491561c595aafc2c21e0beb98295de9ec"
+    },
+    "509/tabular/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301805502665aa919606a806aa5aa09a416506a696901950664a69a9540950240aa9919a05615a05aa909949606546a9901",
+      "q16_hex": "00800080008077d744e46eeb0fd400e246d7008000800080cfe2e3eb5fdf8df0f1d517dd14dbebe870d8abea9be024da98d372dc66d9008000800080fceae6de9be017ddebe850d000800080008051deb7ddcce300f26fe592d458e371d266e6bcdb21cf14ee55d566e68df00080008000800be289e8abe275dfd4c855d5008000800080d7e36bedb5d27bd417ddb4d1c8d3bcdb00e200e21edb41df66e6c8d3dbe6008000800080bcdb92e455cdc6d85ecef1d5008000800080a7e966e617ddb5d4f2d66cc5d0f0a5d426d7d4c8e7dc1ded66e6c8d644e400800080008064e114ee5df4b6ef1edb79ca008000800080008000800080efceb7dd4fe3c5ee75dfb4d722d869e95ada2fe1b9e421cf008000800080f6e8c8d300e050d0d0f05adae6de25d935cd008000800080a7e977d7a7e962f2a9dd00de51de77d7cfe264e1b9e76fe5008000800080bee355e527f600de75df08e162c7f5e6b7ed00800080008092e49be000e84fcc7cda5ada41c1b7dd6eebd8d075df2fda008000800080",
+      "prediction_sha256": "920857ccb44fdea95fde7932dc4f6fccad8ff4993ae8fc4aa8a5d3534ad2870c"
+    },
+    "509/tabular/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "509/tabular/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301bca4020008",
+      "q16_hex": "00800080008000800080bfdc",
+      "prediction_sha256": "5f999c2310d791cb7d8f23d9b93be1569df5ff64bd31a4141b1b4aa7d1d73b0b"
+    },
+    "509/tabular/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301b4a44b034a4ab4300008",
+      "q16_hex": "0080008000800080008041e1",
+      "prediction_sha256": "42a08da6ecfdb2d3838e67811ffe8f02aa9e0fe60d48d31cf671a72e5e7499d6"
+    },
+    "509/tabular/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301805502665aa919606a806aa5aa09a416506a696901950664869a9540950240aa9919a05615a05aa909941606542a9901",
+      "q16_hex": "00800080008077d744e46eeb0fd400e246d7008000800080cfe2e3eb5fdf8df0f1d517dd14dbebe870d8abea9be024da98d372dc66d9008000800080fceae6de9be017ddebe850d000800080008051deb7ddcce300f26fe592d458e371d266e6bcdb21cf14ee55d566e68df00080008000800be289e8abe275dfd4c855d5008000800080d7e36bedb5d27bd417ddb4d1c8d3bcdb00e200e21edb41df66e6c8d3dbe6008000800080bcdb92e455cdc6d85ecef1d5008000800080a7e966e617ddb5d4f2d60080d0f0a5d426d7d4c8e7dc1ded66e6c8d644e400800080008064e114ee5df4b6ef1edb79ca008000800080008000800080efceb7dd4fe3c5ee75dfb4d722d869e95ada2fe1b9e421cf008000800080f6e8c8d300e050d0d0f05adae6de25d935cd008000800080a7e977d7a7e962f2a9dd00de51de77d7cfe264e1b9e76fe5008000800080bee355e527f600de75df08e10080f5e6b7ed00800080008092e49be000e84fcc7cda5ada0080b7dd6eebd8d075df2fda008000800080",
+      "prediction_sha256": "ac018fb213637e98977f376f9ac699190bc0c7669fe2674c474898f07a1837f1"
+    },
+    "509/rank_one/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030115",
+      "q16_hex": "00b000b000b0",
+      "prediction_sha256": "7b48119af51da45e2e415bd9832ff8b60d63a7814312b02f3b441439e14fc76d"
+    },
+    "509/rank_one/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203013cb44b5509",
+      "q16_hex": "00b000b000e000b000b000e0",
+      "prediction_sha256": "ec264a028339e57e186ed14c7bbf81a72efe401fa0e4d946e62d0e474a78e181"
+    },
+    "509/rank_one/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301b1ac8b69534e7496950a",
+      "q16_hex": "00c800c800c800c800c800c8",
+      "prediction_sha256": "d9a7333c7487f996d03e760ff3c83a612a0abea224be35789217670214b09431"
+    },
+    "509/rank_one/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003019a5566665aa959656aa56aa5aa59a556566a6969a9956666a69a955a955a65aa9999a55655a65aa9a9959696566a9999",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "8acd571e21c2dae7e46174be3553e36c454b061989387385122e84d1d435d8c5"
+    },
+    "509/rank_one/0.125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "0408030108eb4f0b55e3959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "1cb291a544198feab1f13c7408f07e51a20928f23d0b4c0128e3fb876d510ab9"
+    },
+    "509/rank_one/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "509/rank_one/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203013cb44b1008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "04f3432e9b14e84588877236fe090be5a9515688da35f9c7b01f4dbfae218e88"
+    },
+    "509/rank_one/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301b4b44b4b4b4bb4b41008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "600ae40fa20c919cc9533f57cd4445ed8431a7d6f7ab6cafa0b89cdeb2cd104c"
+    },
+    "509/rank_one/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "034003019a5566665aa959656aa56aa5aa59a556566a6969a9956666a69a955a955a65aa9999a55655a65aa9a9959696566a9999",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "8acd571e21c2dae7e46174be3553e36c454b061989387385122e84d1d435d8c5"
+    },
+    "509/rank_one/0.28125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "0408030108eb4f0b55e3959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "1cb291a544198feab1f13c7408f07e51a20928f23d0b4c0128e3fb876d510ab9"
+    },
+    "1021/tabular/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030116",
+      "q16_hex": "8ea9afa79fa5",
+      "prediction_sha256": "9ac4cc822329e24a962e300ea61b724eebbad1f70a4b6c198a61d22d37555e5c"
+    },
+    "1021/tabular/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301acd22d9602",
+      "q16_hex": "01ac9bd3f3ac1aa770bc0080",
+      "prediction_sha256": "84144228fab16df8fe7a1856f16099de587f0eaca205f20108fae58bcb90430d"
+    },
+    "1021/tabular/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "0202030152810b1562849468950a",
+      "q16_hex": "caa503af91ac46d511c3dec3",
+      "prediction_sha256": "5fa0d2891cc4bdbb9d961b20223c073e8594ca2330a1f114fa4ee8b5fa796b66"
+    },
+    "1021/tabular/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301805a01a9a565266095409569a909a82560556aa90166065895565a80a90240a56616509a1660565a09a8990568956a02",
+      "q16_hex": "008000800080d0f08befcae60ade3ecd77e0008000800080c8d6a7e9ece469e9d7e3abda76e212d6a5d6a3cb00e0c2c74ce7ece4d3d90080008000809af944e35fdf77d74fe370d800800080008075df00e092d489e85ada55edd4c871d29ad9b9e4e6de7bd448cd00eac8c2008000800080cce3b6e062c717ddc6db33d3008000800080addbf2d625d989e8cae655ddbfe100caabda71d2b6efbac8cdec06db23ec00800080008042c8afde1dd2cfe226f4e7dc0080008000801ace64f055d576e271d22de4abe266d966e6b4d7f2d6cddc44ea66d954dc008000800080cce344e466e69be01ded1cd700800080008000800080008000e04ae955d5abea4beb5fdf23ecf6e854dc7de8c8d3f0ec00800080008092d433f3abe2c6db7cda14db4fe3b8cb64ea00800080008099dc72dcbfe13cbcf7d26eeebdcf75dfb4d1efd327dbbcdb00800080008044ea71d2ede50be292d400d25ada66e6a8d100800080008042c868ef54dcb9e400d870d85fdf89e871d2bcdb00eed1e5008000800080",
+      "prediction_sha256": "1976a73df0fa0cdb47364a3dbf53e18b4284984c484aceb59db5faf49d2b2bb1"
+    },
+    "1021/tabular/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "1021/tabular/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301ac24d20001",
+      "q16_hex": "00800080008000805cd90080",
+      "prediction_sha256": "14084843d61c009e9c6c2397de7776827968517227251a707cf91497801ba3e8"
+    },
+    "1021/tabular/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "0202030120054290289005428001",
+      "q16_hex": "00800080008010df4de00080",
+      "prediction_sha256": "737d7334164873df9cf2cf911186ccdc414690d136b8b0ede24c12ef259cc7d7"
+    },
+    "1021/tabular/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301805a01a9a525266095409569a901282560556aa90166065895565a80a90240a56616509a1660525a09a8990568956a02",
+      "q16_hex": "008000800080d0f08befcae60ade3ecd77e0008000800080c8d6a7e9ece469e9d7e3abda76e212d6a5d6a3cb00e000804ce7ece4d3d90080008000809af944e35fdf77d74fe370d800800080008075df00e092d489e85ada55edd4c871d29ad9b9e4e6de7bd448cd00ea0080008000800080cce3b6e0008017ddc6db33d3008000800080addbf2d625d989e8cae655ddbfe100caabda71d2b6efbac8cdec06db23ec00800080008042c8afde1dd2cfe226f4e7dc0080008000801ace64f055d576e271d22de4abe266d966e6b4d7f2d6cddc44ea66d954dc008000800080cce344e466e69be01ded1cd700800080008000800080008000e04ae955d5abea4beb5fdf23ecf6e854dc7de8c8d3f0ec00800080008092d433f3abe2c6db7cda14db4fe3b8cb64ea00800080008099dc72dcbfe10080f7d26eeebdcf75dfb4d1efd327dbbcdb00800080008044ea71d2ede50be292d400d25ada66e6a8d100800080008042c868ef54dcb9e400d870d85fdf89e871d2bcdb00eed1e5008000800080",
+      "prediction_sha256": "d7d9ae4db8f698663d8cbdeae57e068b979313ebbb700ee74540b52863bdeb38"
+    },
+    "1021/rank_one/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030115",
+      "q16_hex": "00b000b000b0",
+      "prediction_sha256": "7b48119af51da45e2e415bd9832ff8b60d63a7814312b02f3b441439e14fc76d"
+    },
+    "1021/rank_one/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301f01be45509",
+      "q16_hex": "00b000b000e000b000b000e0",
+      "prediction_sha256": "e8288bd52fc09ae5fc3d47a2fd1ba6277ae9e9d2db4e713389cde6d001f3b385"
+    },
+    "1021/rank_one/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "020203015a932b1de2a5d46c950a",
+      "q16_hex": "00c800c800c800c800c800c8",
+      "prediction_sha256": "d3041ea463ed8ecf5362e14e33934954fa485fd7662b4c1ea032e79cfd455ab2"
+    },
+    "1021/rank_one/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301a55a99a9a565666a956a9569a999a9a566556aa9a566565995565a99a9a65aa566565a9a5666565a99aa99956a956a96",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "0e6c615f621a17b4f125d579d512e0af49c3fd3ccecdfa09f89501146319ef0d"
+    },
+    "1021/rank_one/0.125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "0408030188c6d73cea4c959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "59612e823f9aa0acbe33d5e80ae64e9ac29441b0dd4ce0d4a6fbc46f83859d1d"
+    },
+    "1021/rank_one/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "1021/rank_one/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301f01be41008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "79fab91169bed026dd620aef7cc9f3061a58dd6bfb88dbf2d42aa2b6d546b7c1"
+    },
+    "1021/rank_one/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "020203011b1b1b1be4e4e4e41008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "e3bb67f95417f3a26c6da05c19a8038af8301d5aa358cbec1bbcdf331b34861f"
+    },
+    "1021/rank_one/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "03400301a55a99a9a565666a956a9569a999a9a566556aa9a566565995565a99a9a65aa566565a9a5666565a99aa99956a956a96",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "0e6c615f621a17b4f125d579d512e0af49c3fd3ccecdfa09f89501146319ef0d"
+    },
+    "1021/rank_one/0.28125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "0408030188c6d73cea4c959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "59612e823f9aa0acbe33d5e80ae64e9ac29441b0dd4ce0d4a6fbc46f83859d1d"
+    },
+    "2039/tabular/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030125",
+      "q16_hex": "3ca35ba544a6",
+      "prediction_sha256": "059505a63e9cfb0bf2920f9f2aca673fe16fb32097eb49696aa4224afa65ffcc"
+    },
+    "2039/tabular/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301968d769509",
+      "q16_hex": "99cbeea5cba8bcbde8a4b0ab",
+      "prediction_sha256": "a29f10080aeb4015b3e04f97f7b250ec81ce2c21bae7483023291933dcc830bd"
+    },
+    "2039/tabular/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301a4e0581526868953950a",
+      "q16_hex": "a0a91bacf5ab50c175bdefcf",
+      "prediction_sha256": "646846e3417c8076af0f92356eb8d3354e0b50da60aa0323d63c5849520340cf"
+    },
+    "2039/tabular/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "0340030140a902595a9919505680a9a5a505a42a605666a501690658959966806a01406a5a1590a92a6099650568a90694a6a502",
+      "q16_hex": "00800080008025d954dc76c21edb26d770d800800080008086ece7dc43f900d686e023ec96da72dc75df06db7cdaabea21cf00e2a5d4008000800080e1d796e572dc6fe500ee62f2008000800080e6de2fe169e914db8acb08dfc8d666d97cda44e392d451de0adefde2b6ef00800080008058e3f7d200d0b1d3d2e05fdf00800080008000d6cce386e0c1dc08df00e21edb77d7a0f21ded84d086dfefce23e876e200800080008044e32fe100de92e469e996e500800080008000e0c8d6b9e40bd9dbe6ece45fdfefcecce3efd3d3d900d018ef79ca74c80080008000806bed00d808df22d866e655d500800080008000800080008069e95ccf27dbb4d7d7f533d35ada27db49e254dc64e1b6ef00800080008000ce00e6c8d684cf7de771fdbdcf2dcd2ae7008000800080c4e30be2cfe200e244ea55d523e8abea86e1cfe266d97de8008000800080d1d855d575df14dba1cedbe698eb8cce8cce008000800080ebe811f19ab963ccd8d000d6b8de22d8cfc666e6f2d606db008000800080",
+      "prediction_sha256": "a114c203e97eb205c5196e6fcd72651ff0d82933e12730054c83a0fddd8d1b7f"
+    },
+    "2039/tabular/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "2039/tabular/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "010203019612094000",
+      "q16_hex": "008000800080b4dc00800080",
+      "prediction_sha256": "fde8354fee883fdce10da5399b467268340ef532b44bb9e2f911811a7e78e4a0"
+    },
+    "2039/tabular/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "0202030140088282411824200005",
+      "q16_hex": "0080008000800080dbdeefe2",
+      "prediction_sha256": "dcc1b0600b02eca2255df4b00ea246b4aa095bac94ae9b62c87f66a0ecbfa9ed"
+    },
+    "2039/tabular/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "0340030140a102595a9919505680a9a5a505a42a605666a501690658959966806a01406a5a1590a92a6099650568a90614a6a102",
+      "q16_hex": "00800080008025d954dc00801edb26d770d800800080008086ece7dc43f900d686e023ec96da72dc75df06db7cdaabea21cf00e2a5d4008000800080e1d796e572dc6fe500ee62f2008000800080e6de2fe169e914db8acb08dfc8d666d97cda44e392d451de0adefde2b6ef00800080008058e3f7d200d0b1d3d2e05fdf00800080008000d6cce386e0c1dc08df00e21edb77d7a0f21ded84d086dfefce23e876e200800080008044e32fe100de92e469e996e500800080008000e0c8d6b9e40bd9dbe6ece45fdfefcecce3efd3d3d900d018ef79ca74c80080008000806bed00d808df22d866e655d500800080008000800080008069e95ccf27dbb4d7d7f533d35ada27db49e254dc64e1b6ef00800080008000ce00e6c8d684cf7de771fdbdcf2dcd2ae7008000800080c4e30be2cfe200e244ea55d523e8abea86e1cfe266d97de8008000800080d1d855d575df14dba1cedbe698eb8cce8cce008000800080ebe811f1008063ccd8d000d6b8de22d8008066e6f2d606db008000800080",
+      "prediction_sha256": "35ae1c830ac0e3f6b25ffd8f371a40a6d14e328173ed82cf711cde8b48e6e13a"
+    },
+    "2039/rank_one/0.125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030115",
+      "q16_hex": "00b000b000b0",
+      "prediction_sha256": "7b48119af51da45e2e415bd9832ff8b60d63a7814312b02f3b441439e14fc76d"
+    },
+    "2039/rank_one/0.125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301cca6595509",
+      "q16_hex": "00b000b000e000b000b000e0",
+      "prediction_sha256": "ee2cde944090ee47d1d567ad0251a8f294b00680dfc5ddb527cb28833c5778a7"
+    },
+    "2039/rank_one/0.125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301ace2781d3687c953950a",
+      "q16_hex": "00c800c800c800c800c800c8",
+      "prediction_sha256": "6eca577d035515ef2a92cefd1b2aec4f3e6fcb88ebd4196a79e17553b7b07521"
+    },
+    "2039/rank_one/0.125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "0340030156a96a595a99995a5696a9a5a595a5aa665666a5a969565a9599669a6a955a6a5a5599a96a669965956aa95695a6a566",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "ee25266b705e89b2d32be914e1b756d2f38d61e3d068fa72ecec77ca1803e94c"
+    },
+    "2039/rank_one/0.125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "040803015819f9e127a3959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "e6ea39b19b9632a620e83c0bc96225a49b0e5969a5a0e64a9213da972e5e889e"
+    },
+    "2039/rank_one/0.28125/constant": {
+      "action_bytes": 5,
+      "prediction_bytes": 11,
+      "first_bits": 0,
+      "peak_bits": 0,
+      "final_bits": 0,
+      "action_hex": "0001030100",
+      "q16_hex": "008000800080",
+      "prediction_sha256": "05559aaba38cf6e70ded5fed894b558c5503b96d27a95787696c01c46f5d8234"
+    },
+    "2039/rank_one/0.28125/one_then_one": {
+      "action_bytes": 9,
+      "prediction_bytes": 21,
+      "first_bits": 1,
+      "peak_bits": 1,
+      "final_bits": 1,
+      "action_hex": "01020301cca6591008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "4460e24ca826e5b77789fb3d9ab2214170257d420dcedbe79e155ad92f24d933"
+    },
+    "2039/rank_one/0.28125/three_then_one": {
+      "action_bytes": 14,
+      "prediction_bytes": 26,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 1,
+      "action_hex": "02020301a6a65959a6a659591008",
+      "q16_hex": "0080008000e00080008000e0",
+      "prediction_sha256": "39744de2597e7a0f123a2807d68cf6a1cb6d22e29d516cb0d9ef4f7386eeb48f"
+    },
+    "2039/rank_one/0.28125/raw_pair": {
+      "action_bytes": 52,
+      "prediction_bytes": 436,
+      "first_bits": 3,
+      "peak_bits": 6,
+      "final_bits": 6,
+      "action_hex": "0340030156a96a595a99995a5696a9a5a595a5aa665666a5a969565a9599669a6a955a6a5a5599a96a669965956aa95695a6a566",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "ee25266b705e89b2d32be914e1b756d2f38d61e3d068fa72ecec77ca1803e94c"
+    },
+    "2039/rank_one/0.28125/factored": {
+      "action_bytes": 16,
+      "prediction_bytes": 64,
+      "first_bits": 3,
+      "peak_bits": 3,
+      "final_bits": 3,
+      "action_hex": "040803015819f9e127a3959569a599aa",
+      "q16_hex": "00e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e000e0",
+      "prediction_sha256": "e6ea39b19b9632a620e83c0bc96225a49b0e5969a5a0e64a9213da972e5e889e"
+    }
+  }
+}
