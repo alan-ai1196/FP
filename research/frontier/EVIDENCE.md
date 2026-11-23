@@ -881,3 +881,41 @@ python -B research/frontier/text_response_classes.py --check research/frontier/t
 python -B research/frontier/address_anchors.py --response-classes --check research/frontier/response_text_anchors.json
 python -B research/frontier/measure_nested_class.py --response-classes --gpu
 ~~~
+
+## Did posterior averaging improve next-token prediction?
+
+**The average retained eight distinct earlier-word response profiles. The one-class comparator still achieved lower priced loss on both new reporting blocks.** The one-class partition had 28.33% posterior probability. The remaining mass was 24.61% on two classes, 23.75% on three and 23.31% on four. Averaging all 2,795 fitted structures therefore kept distinctions that disappeared when selecting the single most probable partition. All eight posterior-mean row profiles survived Q16 quantization. Installed with the frozen bigram and word-class correction, they occupied the same 3,260 charged bytes as a separate estimate for every raw pair. The one-class predictor occupied 3,148 bytes. [Prospective registration](https://github.com/alan-ai1196/FP/blob/8793590/research/frontier/NEXT.md) · [Causal study](text_partition_posterior.py) · [Complete results and resource accounting](text_partition_posterior_result.json)
+
+The models reused the 7,318 admitted training labels and fixed concentration 512. The two fresh blocks started at 7,700,480 and 7,831,552 and contained 262,144 target tokens in total. Of 8,081 eligible contexts, 135 had a rank pair withheld in the original fit. All forecasts were released before that position's update. Each admitted update used the ordinary next token's membership in the frozen output class. The readout remained a normalized law over all 50,257 tokens. The horizon before the two report blocks contributed no intervening updates.
+
+| Model and update policy | Full-stream NLL | Priced with serialized state | NLL on 135 originally withheld occurrences |
+|---|---:|---:|---:|
+| Frozen global | 6.94053445 | 6.94104874 | 9.102693 |
+| Frozen one class | **6.94046114** | **6.94098138** | **9.101796** |
+| Frozen posterior average | 6.94046192 | 6.94100067 | 9.102016 |
+| Frozen independent pairs | 6.94046562 | 6.94100436 | 9.102693 |
+| One class, train only on permitted pairs | 6.94044180 | 6.94098071 | 9.102685 |
+| Posterior average, train only on permitted pairs | 6.94044239 | 6.94105534 | 9.101799 |
+| Independent pairs, train only on permitted pairs | 6.94044896 | 6.94106191 | 9.102693 |
+| One class, train on all eligible pairs | 6.94044168 | 6.94098059 | 9.102915 |
+| Posterior average, train on all eligible pairs | 6.94044286 | 6.94105581 | 9.102523 |
+| Independent pairs, train on all eligible pairs | 6.94044920 | 6.94106215 | 9.103155 |
+
+On the 135 withheld occurrences the frozen mixture improved on independent pairs and the global baseline. The frozen one-class fit scored slightly better. Permitting every observed eligible target made 8,081 updates, including those 135. Restricting updates to the 48 original pair types made 7,946 updates. With that restriction, the adaptive mixture had better withheld NLL than the adaptive one-class comparator. It still had worse full-stream NLL and paid for a larger update state. On the 8,192 matched conventional-anchor positions the frozen mixture scored 6.914817, the modified Kneser–Ney five-gram 6.626326 and the Transformer 6.207023. [Conventional checkpoint identities and individual block losses](partition_posterior_anchors.json)
+
+**A measured statistical price for carrying alternatives.** Before the updates, the one-class component had posterior mass 0.28332638490. For the unrounded predictors the cumulative log-loss excess of the mixture over this component on admitted updates could therefore never exceed $-\ln(0.28332638490)=1.261156$ nats, at any horizon on any continuation of these context-dependent observations. Measured excess was **0.274636 total nats** for the training mask and **0.313288 total nats** for all eligible inputs. In both cases this equaled the log change of the component's posterior weight within $10^{-8}$. With Q16 releases the all-update excess was 0.310758 nats. The check used both a direct sum of sequential losses and a fresh posterior reconstructed solely from final integer counts. The independent-pair model lies outside the mixture's at-most-four-class support. [Identity and assumptions](FOUNDATION.md#keeping-uncertainty-about-a-learned-computation)
+
+**The memory price was much larger on this workload.** The mixture could resume from a 596-byte packet containing typed counts, shared IDs, the concentration and eight binary64 prior centers. The one-class packet took 148 bytes. With the frozen global model and one live byte their totals were 3,709 and 3,261 bytes. For fast sequential updates, the mixture materialized 38,808 bytes of counts, weights and prior parameters, plus 23,384 bytes of shared row/block indices. Including the dictionary, header, carry and global model gave 65,325 bytes. Applying the same rent to these active arrays raised its all-update priced score to 6.95123842. The one-class active footprint was 3,261 bytes and its score 6.94098059. These array totals exclude Python, full-stream inputs, emitted forecasts, diagnostic comparison counts, allocator overhead and temporary vectors. In particular the per-query mixture likelihood vector has 2,795 binary64 entries. A full verified Python run including the frozen baseline fitting took 3.734 seconds and a sampled 262,422,528-byte peak working set.
+
+For the eight-name data the sequential mixture predicted and updated on the eligible positions in about 0.21 seconds, versus 0.017 seconds for the one-class and independent-pair controls. Rebuilding all weights once from final raw counts took about 0.28–0.33 ms on this CPU. Per admitted label the cached method reweights 2,795 partitions and updates 128 subsets containing the observed row. The frozen forecast needs no posterior update. Every observed-token full-vocabulary loss from its CPU and RTX 3090 deployment matched the independent reference within $10^{-11}$. Warm medians for 262,144 frozen mixture scores were 576.5 ms CPU and 1.924 ms GPU, versus 572.7 ms and 1.890 ms for one class. The native GPU benchmark measures frozen, teacher-forced scores. The continuing updates were measured on the CPU. [Packed scoring kernel](nested_class_score.c) · [Individual native timing samples](text_partition_posterior_timing.json)
+
+The log-domain subset recursion and full partition enumeration agreed on every block marginal to $3\times10^{-11}$ absolute tolerance. In the independent four-row example, all current forecasts were $1/2$ but the same new label led to next forecasts $13/22$ and $7/12$. Fraction arithmetic checked the two posteriors, and Lean 4.34.1 checked the finite integer identities with propositional extensionality as the listed axiom. A 26-node, seven-slot positive program in the pinned R4 evaluator reproduced both normalized forecasts. It received the calibration-history layout and the finite integrated likelihood factors. This checks arithmetic expressibility after specifying the hypothesis family. It leaves native acquisition and the full language update costs to the measured learner. [Exact reconstruction](partition_posterior.py) · [Lean certificate](PartitionUpdate.lean) · [Pinned R4 execution](sensing_r4.py)
+
+~~~powershell
+python -B research/frontier/text_partition_posterior.py --check research/frontier/text_partition_posterior_result.json
+python -B research/frontier/partition_posterior.py
+python -B research/frontier/sensing_r4.py --partition-posterior
+python -B research/frontier/address_anchors.py --partition-posterior --check research/frontier/partition_posterior_anchors.json
+python -B research/frontier/measure_nested_class.py --partition-posterior --gpu
+lean research/frontier/PartitionUpdate.lean
+~~~

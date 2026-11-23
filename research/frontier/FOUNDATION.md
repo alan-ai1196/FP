@@ -644,3 +644,33 @@ $$
 \Pr(E)\, I(B;g(U)\mid V,E=1)
 $$
 in nats per original target, where $E$ denotes eligibility. The same identity for empirical histograms holds at maximum likelihood using the actual exposed-pair distribution. If $g$ is optimized, its training gain can be positive by selection alone. With cell-wise conjugate priors let $L(C)$ be the integrated conditional likelihood of observations from rows in a proposed block $C$, pooling columns separately. The Bayes factor for splitting $C=C_1\sqcup C_2$ while keeping every other block fixed is $L(C_1)L(C_2)/L(C)$. If the size prior is uniform, moving from a particular $k$-partition to a particular $(k+1)$-partition adds the prior log ratio $\ln\mathcal S(m,k)-\ln\mathcal S(m,k+1)$. For eight rows a two-block alternative must pay $\ln127$ against the one-block alternative. A model's combined probability of *some* split involves summing over alternatives. These are distinct uses of the same ordinary target likelihood. [Real text result](EVIDENCE.md#do-learned-response-classes-transfer-to-missing-word-pairs-on-ordinary-text)
+
+## Keeping uncertainty about a learned computation
+
+For a finite set of early names $U$, let a partition $\pi$ have posterior probability proportional to $\lambda_{|\pi|}\prod_{A\in\pi}L(A)$. Here $L(A)>0$ is the ordinary integrated likelihood of responses in a block $A$, and $\lambda_k$ is the fixed prior weight per partition of size $k$. Write $p_{Av}(y)$ for the block's posterior predictive conditional law at a later context $v$. Define $m(A)=\Pr(A\in\pi\mid\text{data})$. Then one-step prediction is exactly
+$$
+q(y\mid u,v)=\sum_{A\ni u}m(A)p_{Av}(y).
+$$
+The coefficients for each row sum to one because a partition contains precisely one block covering that row. Even a modal one-block partition can yield distinct averaged predictions for all earlier names. The resulting continuous-valued table can be installed discretely at a chosen precision. Its predictive advantage and continuing learning cost require separate tests.
+
+A subset recursion computes these coefficients. Set $Z_0(\varnothing)=1$ and all incompatible entries to zero. For $S\ne\varnothing$ choose its lowest indexed name $i$. Then
+$$
+Z_k(S)=\sum_{i\in B\subseteq S} L(B)Z_{k-1}(S\setminus B),\qquad
+m(A)=\frac{L(A)\sum_{k\ge1}\lambda_k Z_{k-1}(U\setminus A)}
+{\sum_{k\ge1}\lambda_k Z_k(U)}.
+$$
+The distinguished name counts each unordered partition once. Removing a required block proves the second formula. The direct subset version takes $O(K3^{|U|})$ arithmetic and $O(K2^{|U|})$ table entries for a cap $K$. This is an application of existing exact Bayesian clustering and cluster marginal algorithms. Eight names already allow the direct sum and the subset calculation to check one another. [Kohonen and Corander, exact clustering posteriors](https://arxiv.org/abs/1310.1034) · [Greenberg et al., §3.2, cluster marginals](https://proceedings.neurips.cc/paper_files/paper/2018/file/29c4a0e4ef7d1969a94a5f4aadd20690-Paper.pdf) · [Implementation and exact update example](partition_posterior.py)
+
+There is a useful restriction on counterexamples to storing these marginals. For two strictly positive block weight systems $L,M$ with the same prior and support, subtract their log partition probabilities and take expectations under both laws. Constants from the normalizers cancel and the shared size prior cancels pointwise, giving
+$$
+\mathrm{KL}(P_L\Vert P_M)+\mathrm{KL}(P_M\Vert P_L)
+=\sum_A\big[m_L(A)-m_M(A)\big]\ln\frac{L(A)}{M(A)}.
+$$
+Consequently equal block marginals determine the entire law of the partition within this fixed exponential family. This is an identifiability property. Computing a joint marginal or recovering natural parameters can still require work, and counts controlling the next *emission* update must also be available. For example even a single Bernoulli model with symmetric beta prior has the same current mean after different amounts of balanced evidence but changes by different amounts after one more success.
+
+The standard sequential Bayes mixture identity gives an independent measurement of how much uncertainty can cost. Fix any admitted partition $P$ and condition on the training log. Score every further observation *before* assimilating it, with the same context, mask and per-block update law for the mixture and each component. For the observations actually assimilated, write $\ell_{\rm mix},\ell_P$ for cumulative unrounded log losses. Repeated Bayes updates telescope to
+$$
+\ell_{\rm mix}-\ell_P=\ln\frac{w_{\rm end}(P)}{w_{\rm start}(P)}
+\ \le\ -\ln w_{\rm start}(P).
+$$
+This bound is pathwise, including when the next context is chosen from past observations. It covers every horizon. A skipped label can still be scored, but the identity for a selected-update run applies to the admitted subsequence. Finite-precision release adds its actual score error and stored posterior weights and updates have physical costs. The natural-text test measured the score error and deployment costs. [Chronological forecasts and costs](EVIDENCE.md#did-posterior-averaging-improve-next-token-prediction) · [Reachable example separating prediction and future updating](OBSTRUCTIONS.md#two-reachable-partition-posteriors-can-give-every-current-forecast-the-same-value)

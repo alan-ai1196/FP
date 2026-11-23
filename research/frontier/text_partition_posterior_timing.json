@@ -1,0 +1,82 @@
+{
+  "positions": 262144,
+  "raw_lookup_bytes": 2684212,
+  "output_bytes": 2097152,
+  "normalizer_work": {
+    "previous": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7132219,
+      "normalizer_count_probes": 28035584
+    }
+  },
+  "binary": {
+    "file_bytes": 120320,
+    ".text": 63088,
+    ".rdata": 44596
+  },
+  "cpu_ms": {
+    "global": [
+      573.5869,
+      572.2993,
+      572.5665,
+      571.917,
+      571.6662
+    ],
+    "mixture/frozen": [
+      576.481,
+      575.1531,
+      577.0053,
+      576.8265,
+      574.9217
+    ],
+    "current/frozen": [
+      565.9448,
+      572.6765,
+      570.1549,
+      580.8938,
+      575.1935
+    ],
+    "independent/frozen": [
+      576.7763,
+      575.242,
+      575.3273,
+      575.2594,
+      578.2176
+    ]
+  },
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 3090",
+    "cupy": "14.2.0",
+    "cuda_runtime": 13020,
+    "milliseconds": {
+      "global": [
+        1.8943,
+        1.8745,
+        1.9117,
+        1.9437,
+        1.9007
+      ],
+      "mixture/frozen": [
+        1.9116,
+        1.9243,
+        1.9292,
+        1.9283,
+        1.8955
+      ],
+      "current/frozen": [
+        1.9384,
+        1.89,
+        1.8971,
+        1.7375,
+        1.6186
+      ],
+      "independent/frozen": [
+        1.589,
+        1.6106,
+        1.6095,
+        1.5784,
+        1.5803
+      ]
+    }
+  }
+}

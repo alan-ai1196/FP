@@ -156,7 +156,7 @@ def response_class_check():
     )
 
 
-def run(response_classes=False):
+def run(response_classes=False, posterior=False):
     folder = "src/reference_compiler"
     here = Path(__file__).resolve().parent
     archive = subprocess.check_output(
@@ -169,6 +169,11 @@ def run(response_classes=False):
         with ZipFile(BytesIO(archive)) as pinned:
             pinned.extractall(tmp)
         sys.path.insert(0, str(Path(tmp) / folder))
+        if posterior:
+            from partition_posterior import r4_example
+
+            r4_example()
+            return
         if response_classes:
             response_class_check()
             return
@@ -194,5 +199,8 @@ if __name__ == "__main__":
     if not __debug__:
         raise RuntimeError("the comparison requires assertions")
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--response-classes", action="store_true")
-    run(parser.parse_args().response_classes)
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("--response-classes", action="store_true")
+    group.add_argument("--partition-posterior", action="store_true")
+    args = parser.parse_args()
+    run(args.response_classes, args.partition_posterior)

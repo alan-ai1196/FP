@@ -20,9 +20,12 @@ from text_nested_class import (
 from threadpoolctl import threadpool_limits
 
 
-def workload(data, receipt, response_classes=False):
+def workload(data, receipt, response_classes=False, posterior=False):
     rows, outputs, _, _, _, raw = frozen(data[:SELECTION_END])
-    if response_classes:
+    if posterior:
+        from text_partition_posterior import END as upper
+        from text_partition_posterior import START as lower
+    elif response_classes:
         from text_response_classes import END as upper
         from text_response_classes import REPORT_START as lower
     else:
@@ -46,6 +49,8 @@ def workload(data, receipt, response_classes=False):
         else receipt
     )
     for name, info in old["installations"].items():
+        if posterior and name != "previous":
+            continue
         if response_classes and name not in ("previous", "joint"):
             continue
         model = restore(info)
@@ -67,7 +72,7 @@ def workload(data, receipt, response_classes=False):
             ),
         }
     for name, (tri, m, _) in raw.items():
-        if response_classes and name != "raw_cap":
+        if posterior or (response_classes and name != "raw_cap"):
             continue
         arms[name] = (
             np.frombuffer(m.payload, dtype=np.uint8),
@@ -87,8 +92,17 @@ def workload(data, receipt, response_classes=False):
         ru = ranks(np.array(receipt["early_ids"]), obs.history)
         rv = ranks(np.array(receipt["current_ids"]), obs.query)
         mask = (ru < 8) & (rv < 8)
-        for name in receipt["alpha_selection"].values():
-            info = receipt["installations"][name]
+        if posterior:
+            installations = {
+                f"{k}/frozen": info
+                for k, info in receipt["frozen_installations"].items()
+            }
+        else:
+            installations = {
+                k: receipt["installations"][k]
+                for k in receipt["alpha_selection"].values()
+            }
+        for name, info in installations.items():
             packet = bytes.fromhex(info["packet_hex"])
             labels = np.array(info["labels"])
             k = 1 + int(max(labels))
@@ -106,7 +120,12 @@ def workload(data, receipt, response_classes=False):
                 loss,
             )
     for name, (_, _, loss) in arms.items():
-        assert abs(loss.mean() - receipt["mean"][name]["nll"]) < 2e-10
+        mean = (
+            receipt["scores"][name]["all"]["nll"]
+            if posterior
+            else receipt["mean"][name]["nll"]
+        )
+        assert abs(loss.mean() - mean) < 2e-10
     shared = (
         ids[lower - 2 : upper],
         len(obs.target),
@@ -121,9 +140,11 @@ def workload(data, receipt, response_classes=False):
     return shared, arms, probes
 
 
-def run(data, receipt, gpu, response_classes=False):
+def run(data, receipt, gpu, response_classes=False, posterior=False):
     with threadpool_limits(limits=1):
-        shared, arms, probes = workload(data, receipt, response_classes)
+        shared, arms, probes = workload(
+            data, receipt, response_classes or posterior, posterior
+        )
     root = Path(__file__).resolve().parent
     with tempfile.TemporaryDirectory() as temp:
         path = Path(temp)
@@ -158,13 +179,19 @@ if __name__ == "__main__":
         type=Path,
         default=None,
     )
-    parser.add_argument("--response-classes", action="store_true")
+    study = parser.add_mutually_exclusive_group()
+    study.add_argument("--response-classes", action="store_true")
+    study.add_argument("--partition-posterior", action="store_true")
     parser.add_argument("--gpu", action="store_true")
     parser.add_argument("--write", type=Path)
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
-    if args.response_classes:
+    if args.partition_posterior:
+        from text_partition_posterior import load_data as read
+
+        default = "text_partition_posterior_result.json"
+    elif args.response_classes:
         from text_response_classes import load_data as read
 
         default = "text_response_classes_result.json"
@@ -178,6 +205,7 @@ if __name__ == "__main__":
         json.loads(receipt.read_text(encoding="utf8")),
         args.gpu,
         args.response_classes,
+        args.partition_posterior,
     )
     output = json.dumps(result, indent=2) + "\n"
     if args.write:

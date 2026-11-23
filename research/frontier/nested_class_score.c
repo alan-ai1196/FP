@@ -56,7 +56,9 @@ FN u32 profile_rank(const u8 *ids, u32 token) {
   return 8;
 }
 
-FN u32 profile_width(u32 k) { return k == 2 ? 1u : k == 3 || k == 4 ? 2u : 0u; }
+FN u32 profile_width(u32 k) {
+  return (k == 1 || k == 8) ? 0u : k == 2 ? 1u : k <= 4 ? 2u : 3u;
+}
 
 FN u32 profile_state(const u8 *p, u32 token) {
   u32 row = profile_rank(p + 3, token), k = p[1];
@@ -65,8 +67,11 @@ FN u32 profile_state(const u8 *p, u32 token) {
   if (k == 1)
     return 0;
   const u8 *labels = p + 3 + (p[2] ? 16 : 32);
-  u32 w = profile_width(k);
-  return (labels[(w * row) / 8] >> ((w * row) % 8)) & ((1u << w) - 1u);
+  u32 w = profile_width(k), loc = w * row, shift = loc % 8;
+  u32 word = labels[loc / 8];
+  if (shift + w > 8)
+    word |= (u32)labels[loc / 8 + 1] << 8;
+  return (word >> shift) & ((1u << w) - 1u);
 }
 
 FN u32 nested_state(u32 kind, const u8 *model, const u32 *uni, u32 token) {

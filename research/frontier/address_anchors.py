@@ -152,12 +152,25 @@ if __name__ == "__main__":
         action="store_true",
         help="score the chronological missing word-pair panels",
     )
+    panels_group.add_argument(
+        "--partition-posterior",
+        action="store_true",
+        help="score the continuing posterior-prediction panels",
+    )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
     ledger = git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")
     records = {entry["case"]: entry["result"] for entry in ledger["results"]}
-    if args.response_classes:
+    if args.partition_posterior:
+        from text_partition_posterior import REGISTRATION, load_data, report_starts
+
+        data, panels, registration = (
+            load_data(args.data_dir),
+            report_starts(),
+            REGISTRATION,
+        )
+    elif args.response_classes:
         from text_response_classes import REGISTRATION, load_data, report_starts
 
         data, panels, registration = (

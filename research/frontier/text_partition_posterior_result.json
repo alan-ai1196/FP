@@ -1,0 +1,497 @@
+{
+  "registration": "8793590",
+  "early_ids": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    284,
+    198,
+    257
+  ],
+  "current_ids": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    284,
+    198,
+    257
+  ],
+  "prefix": "ff12f6daaa6314f30b3a182d1ab3cac4426f01a0765c2170003b2fc6624ccf2f",
+  "starts": [
+    7700480,
+    7831552
+  ],
+  "alpha": 512,
+  "prior_fit_eligible_targets": 7318,
+  "posterior_mass_by_size": [
+    0.2833263849,
+    0.24609510651,
+    0.23745691301,
+    0.23312159558
+  ],
+  "frozen_installations": {
+    "mixture": {
+      "exact_q16_row_profiles": 8,
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_hex": "0108010b0006010d001e0122011c01c6000101e753a209b1139c15582c4b11ff0a6308f053d808ac13a915dd295411c00a3a09f353c408ac139f159b295611680945091c54b708ab13ae15c0295611e30a3b0920546e08ac1305167f292b11c30a5809f553d908d613aa15682a5511e00ad5089453d9083113a915df295811e80a3b09f053d408ac13a915dc295811e00a3b09",
+      "charged_frozen_bytes": 3260
+    },
+    "current": {
+      "exact_q16_row_profiles": 1,
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c6000101ea53f3085513f7155d2c151161096808",
+      "charged_frozen_bytes": 3148
+    },
+    "independent": {
+      "exact_q16_row_profiles": 8,
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_hex": "0108010b0006010d001e0122011c01c6000101f753a30a0b1453154a2c7811c10c7008f75392080b1453150a279f11820c760af75379080b143315b526a7117109760a4e547f08011453150a27a711c70c300a5754ad070b1417160a273d118f0c760af753770862145315bb27a711b40c9209335392080a1353150a27a711c70c760af75386080b1453150a27a711bb0c760a",
+      "charged_frozen_bytes": 3260
+    }
+  },
+  "online_resources": {
+    "mixture/permitted": {
+      "counts_weights_prior_bytes": 38808,
+      "shared_update_indices_bytes": 23384,
+      "charged_active_arrays_dictionary_global_carry": 65325,
+      "serialized_counts_model_bytes": 596,
+      "charged_with_global_and_carry": 3709,
+      "sha256_initial_count_packet": "a30637c20eab9179785fed3afa33d7b241390405714dfba4a3937cef3a4cac3c"
+    },
+    "mixture/all": {
+      "counts_weights_prior_bytes": 38808,
+      "shared_update_indices_bytes": 23384,
+      "charged_active_arrays_dictionary_global_carry": 65325,
+      "serialized_counts_model_bytes": 596,
+      "charged_with_global_and_carry": 3709,
+      "sha256_initial_count_packet": "a30637c20eab9179785fed3afa33d7b241390405714dfba4a3937cef3a4cac3c"
+    },
+    "current/permitted": {
+      "counts_weights_prior_bytes": 128,
+      "shared_update_indices_bytes": 0,
+      "charged_active_arrays_dictionary_global_carry": 3261,
+      "serialized_counts_model_bytes": 148,
+      "charged_with_global_and_carry": 3261,
+      "sha256_initial_count_packet": "712950af869c4f80c86f396dbb29f3fa197681f27a080c731ab35755c6478de1"
+    },
+    "current/all": {
+      "counts_weights_prior_bytes": 128,
+      "shared_update_indices_bytes": 0,
+      "charged_active_arrays_dictionary_global_carry": 3261,
+      "serialized_counts_model_bytes": 148,
+      "charged_with_global_and_carry": 3261,
+      "sha256_initial_count_packet": "712950af869c4f80c86f396dbb29f3fa197681f27a080c731ab35755c6478de1"
+    },
+    "independent/permitted": {
+      "counts_weights_prior_bytes": 576,
+      "shared_update_indices_bytes": 0,
+      "charged_active_arrays_dictionary_global_carry": 3709,
+      "serialized_counts_model_bytes": 596,
+      "charged_with_global_and_carry": 3709,
+      "sha256_initial_count_packet": "111301b7c10d69da076a4c159cba091c668fca2815fcc1146b529e2fe955aef8"
+    },
+    "independent/all": {
+      "counts_weights_prior_bytes": 576,
+      "shared_update_indices_bytes": 0,
+      "charged_active_arrays_dictionary_global_carry": 3709,
+      "serialized_counts_model_bytes": 596,
+      "charged_with_global_and_carry": 3709,
+      "sha256_initial_count_packet": "111301b7c10d69da076a4c159cba091c668fca2815fcc1146b529e2fe955aef8"
+    }
+  },
+  "replay": {
+    "mixture/permitted": {
+      "updates": 7946,
+      "withheld_updates": 0,
+      "final_counts_sum": 15264,
+      "min_partition_weight": 2.6819e-06
+    },
+    "mixture/all": {
+      "updates": 8081,
+      "withheld_updates": 135,
+      "final_counts_sum": 15399,
+      "min_partition_weight": 2.40349e-06
+    },
+    "current/permitted": {
+      "updates": 7946,
+      "withheld_updates": 0,
+      "final_counts_sum": 15264,
+      "min_partition_weight": null
+    },
+    "current/all": {
+      "updates": 8081,
+      "withheld_updates": 135,
+      "final_counts_sum": 15399,
+      "min_partition_weight": null
+    },
+    "independent/permitted": {
+      "updates": 7946,
+      "withheld_updates": 0,
+      "final_counts_sum": 15264,
+      "min_partition_weight": null
+    },
+    "independent/all": {
+      "updates": 8081,
+      "withheld_updates": 135,
+      "final_counts_sum": 15399,
+      "min_partition_weight": null
+    }
+  },
+  "coding_identity": {
+    "mixture/permitted": {
+      "unrounded_nll_on_updates": 1328.76441722486,
+      "q16_nll_on_updates": 1328.7638051592,
+      "posterior_log_ratio_for_one_class": 0.27463586885
+    },
+    "mixture/all": {
+      "unrounded_nll_on_updates": 1352.34263718728,
+      "q16_nll_on_updates": 1352.34044244584,
+      "posterior_log_ratio_for_one_class": 0.31328755196
+    },
+    "current/permitted": {
+      "unrounded_nll_on_updates": 1328.489781356,
+      "q16_nll_on_updates": 1328.48904507445
+    },
+    "current/all": {
+      "unrounded_nll_on_updates": 1352.02934963532,
+      "q16_nll_on_updates": 1352.02968428569
+    },
+    "independent/permitted": {
+      "unrounded_nll_on_updates": 1330.36405896139,
+      "q16_nll_on_updates": 1330.36490020966
+    },
+    "independent/all": {
+      "unrounded_nll_on_updates": 1354.00135599413,
+      "q16_nll_on_updates": 1354.00200608261
+    }
+  },
+  "scores": {
+    "global": {
+      "blocks": [
+        {
+          "nll": 6.94409705344,
+          "priced": 6.94461133996,
+          "eligible_nll": 8.24571781522,
+          "withheld_nll": 8.86419038136,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93697184678,
+          "priced": 6.9374861333,
+          "eligible_nll": 8.39790210908,
+          "withheld_nll": 9.29349475934,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94053445011,
+        "priced": 6.94104873663,
+        "eligible_nll": 8.32033162196,
+        "withheld_nll": 9.10269281357,
+        "eligible": 8081,
+        "withheld": 135
+      },
+      "first4096_mean": 6.91485853788
+    },
+    "mixture/frozen": {
+      "blocks": [
+        {
+          "nll": 6.9439787483,
+          "priced": 6.94451749318,
+          "eligible_nll": 8.2419531899,
+          "withheld_nll": 8.86067099971,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93694510178,
+          "priced": 6.93748384666,
+          "eligible_nll": 8.39701732345,
+          "withheld_nll": 9.29509217997,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94046192504,
+        "priced": 6.94100066992,
+        "eligible_nll": 8.31797894131,
+        "withheld_nll": 9.10201609985,
+        "eligible": 8081,
+        "withheld": 135
+      },
+      "first4096_mean": 6.91481676522
+    },
+    "mixture/permitted": {
+      "blocks": [
+        {
+          "nll": 6.94395601765,
+          "priced": 6.94456896389,
+          "eligible_nll": 8.24122987075,
+          "withheld_nll": 8.85939189294,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93692876913,
+          "priced": 6.93754171538,
+          "eligible_nll": 8.39647700211,
+          "withheld_nll": 9.29572517864,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044239339,
+        "priced": 6.94105533964,
+        "eligible_nll": 8.31734534339,
+        "withheld_nll": 9.10179927388,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.9512379484
+      },
+      "first4096_mean": 6.9148406588
+    },
+    "mixture/all": {
+      "blocks": [
+        {
+          "nll": 6.94395495393,
+          "priced": 6.94456790018,
+          "eligible_nll": 8.24119602199,
+          "withheld_nll": 8.85871898795,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93693076771,
+          "priced": 6.93754371396,
+          "eligible_nll": 8.39654311975,
+          "withheld_nll": 9.29756682874,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044286082,
+        "priced": 6.94105580707,
+        "eligible_nll": 8.31736050675,
+        "withheld_nll": 9.10252334395,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.95123841584
+      },
+      "first4096_mean": 6.91484927869
+    },
+    "current/frozen": {
+      "blocks": [
+        {
+          "nll": 6.94398021529,
+          "priced": 6.94450045115,
+          "eligible_nll": 8.24199987164,
+          "withheld_nll": 8.8577611951,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93694207041,
+          "priced": 6.93746230626,
+          "eligible_nll": 8.39691703882,
+          "withheld_nll": 9.29702375292,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94046114285,
+        "priced": 6.94098137871,
+        "eligible_nll": 8.31795356751,
+        "withheld_nll": 9.10179594945,
+        "eligible": 8081,
+        "withheld": 135
+      },
+      "first4096_mean": 6.91483830939
+    },
+    "current/permitted": {
+      "blocks": [
+        {
+          "nll": 6.94395690995,
+          "priced": 6.94449582009,
+          "eligible_nll": 8.2412582649,
+          "withheld_nll": 8.85498147976,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93692669238,
+          "priced": 6.93746560252,
+          "eligible_nll": 8.39640829847,
+          "withheld_nll": 9.30084699934,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044180116,
+        "priced": 6.9409807113,
+        "eligible_nll": 8.31732613187,
+        "withheld_nll": 9.10268454619,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.9409807113
+      },
+      "first4096_mean": 6.91487207522
+    },
+    "current/all": {
+      "blocks": [
+        {
+          "nll": 6.94395583215,
+          "priced": 6.94449474229,
+          "eligible_nll": 8.24122396783,
+          "withheld_nll": 8.85490230649,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.9369275186,
+          "priced": 6.93746642874,
+          "eligible_nll": 8.39643563185,
+          "withheld_nll": 9.3013245169,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044167537,
+        "priced": 6.94098058551,
+        "eligible_nll": 8.31732205134,
+        "withheld_nll": 9.1029146456,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.94098058551
+      },
+      "first4096_mean": 6.91487456192
+    },
+    "independent/frozen": {
+      "blocks": [
+        {
+          "nll": 6.94397918895,
+          "priced": 6.94451793383,
+          "eligible_nll": 8.24196721197,
+          "withheld_nll": 8.86418645614,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93695205037,
+          "priced": 6.93749079525,
+          "eligible_nll": 8.39724719849,
+          "withheld_nll": 9.29349749411,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94046561966,
+        "priced": 6.94100436454,
+        "eligible_nll": 8.31809879304,
+        "withheld_nll": 9.10269258834,
+        "eligible": 8081,
+        "withheld": 135
+      },
+      "first4096_mean": 6.91479180389
+    },
+    "independent/permitted": {
+      "blocks": [
+        {
+          "nll": 6.9439574229,
+          "priced": 6.94457036914,
+          "eligible_nll": 8.24127458761,
+          "withheld_nll": 8.86418645614,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93694049935,
+          "priced": 6.9375534456,
+          "eligible_nll": 8.39686506465,
+          "withheld_nll": 9.29349749411,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044896112,
+        "priced": 6.94106190737,
+        "eligible_nll": 8.31755839778,
+        "withheld_nll": 9.10269258834,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.94106190737
+      },
+      "first4096_mean": 6.91480670993
+    },
+    "independent/all": {
+      "blocks": [
+        {
+          "nll": 6.9439570782,
+          "priced": 6.94457002444,
+          "eligible_nll": 8.24126361886,
+          "withheld_nll": 8.86343345139,
+          "eligible": 4119,
+          "withheld": 60
+        },
+        {
+          "nll": 6.93694132017,
+          "priced": 6.93755426642,
+          "eligible_nll": 8.39689221923,
+          "withheld_nll": 9.29493198052,
+          "eligible": 3962,
+          "withheld": 75
+        }
+      ],
+      "all": {
+        "nll": 6.94044919919,
+        "priced": 6.94106214543,
+        "eligible_nll": 8.31756612037,
+        "withheld_nll": 9.10315485646,
+        "eligible": 8081,
+        "withheld": 135,
+        "priced_active_arrays": 6.94106214543
+      },
+      "first4096_mean": 6.91481515469
+    }
+  }
+}
