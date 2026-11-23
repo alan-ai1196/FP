@@ -673,3 +673,44 @@ python -B research/frontier/text_update_subspace.py --check research/frontier/te
 python -B research/frontier/audit_update_subspace.py --text
 python -B research/frontier/measure_update_subspace.py
 ~~~
+
+## Does ordinary text teach both sides of a predictive correction?
+
+**EMPIRICALLY OBSERVED.** From raw next-token errors the learner selected 256 earlier GPT-2 types, 256 output types and a common odds multiplier of 1.5. Applying that multiplier when the earlier token belonged to the learned input set reduced priced full-vocabulary loss by 0.006611 nats/token against a matched calibrated trigram. A simpler model learned its own 256-word output set and applied it on every history. It won on all four reporting blocks, using 513 fewer bytes than the history-dependent correction. [Prospective registration](https://github.com/alan-ai1196/FP/blob/0f45141/research/frontier/NEXT.md) · [All selected raw IDs, validation choices and block scores](text_word_classes_result.json)
+
+The positive pooled bigram was inherited from the historical prefix. The new learner used 262,144 raw targets from position 5,865,472, followed by an independent 131,072-target selection block. It alternated an exact input-gate fit with a tangent update across 50,257 output candidates. Starting conditions used raw token frequency, fixed random partitions or every history. Validation considered 303 distinct installations. The reference symbol identities, part-of-speech tags, previous learned word groups and label-specific forecasts from the ticket studies were absent from the acquisition interface. A conventional competitor fitted individual log odds for named words at active histories, using the same available installation cap. [Sparse operators, optimizer and packet format](word_classes.py) · [Acquisition and scoring](text_word_classes.py)
+
+| Forecast on 524,288 later raw tokens | Bytes above common bigram | Full-vocabulary NLL | NLL with storage price |
+| --- | ---: | ---: | ---: |
+| Pooled calibrated bigram | 2,584 | 6.935871 | 6.936298 |
+| Learned earlier set, one output | 3,115 | 6.931831 | 6.932346 |
+| Learned earlier set and output set | 3,625 | 6.925516 | 6.926115 |
+| Global learned output set | 3,112 | **6.921533** | **6.922047** |
+| Learned current-token gate and output set | 2,792 | 6.935369 | 6.935830 |
+| Earlier gate and individual word odds | 3,241 | 6.926010 | 6.926546 |
+| Matched calibrated trigram | 3,621 | 6.932128 | 6.932726 |
+| Calibrated trigram at 4,096-byte cap | 4,095 | 6.931728 | 6.932405 |
+
+On targets $[6258688,6782976)$ the earlier gate was active 235,570 times. Its learned output set contained the actual target on 88,323 of those occasions. It beat the singleton, current-token gate and both raw count competitors in all four blocks. Its advantage over individual fitted odds was 0.000430 on average and positive in three blocks. The matched raw model purchased 52 rows with 67 named successors. The full-cap raw model purchased 76 rows with 98 successors. Both selected counts from the fresh fit. The global and earlier-gated output sets overlapped on 171 of their 256 IDs. Both used a multiplier of 1.5. Their 0.004068 priced gap in favor of the global class shows why the gate needs a comparison against learned unconditional recalibration. A sparse active list with a neutral default cannot cheaply turn itself on everywhere. The previous two-group transfer experiment held group masses fixed and answered a different question.
+
+On the identical 16,384 anchor positions the global class scored 6.818548, the earlier-gated class 6.818817, the matched trigram 6.825433, the modified Kneser–Ney five-gram 6.418318 and the Transformer 6.075578 nats/token. The last two had their original training histories, checkpoint sizes and context limits. [Frozen anchors and per-block scores](word_class_anchors_result.json)
+
+**Physical cost.** The earlier-gated model stored 2,584 base bytes, a 16-byte header including an integer backoff-mass correction, two sorted lists of 512 bytes each, and one carried bit rounded up to a byte. On active queries, the uncached scorer chose the smaller of the sparse successor row and the output list for traversal. It performed 7,628,599 successor membership probes and 20,630,528 named bigram probes for normalization. The matched raw trigram directly scored one retained row or its calibrated backoff. The training and scoring rerun took 21.26 seconds and reached 259.6 MB working set. Five sequential native CPU passes and warm teacher-forced RTX 3090 batches gave the following median times on all 524,288 targets. Every native observed loss agreed with the vectorized reference to $10^{-11}$ per position. [Packed C and CUDA scorer](word_class_score.c) · [All timing samples, byte costs and probe counts](word_class_timing.json)
+
+| Resident-data observed-token scorer | CPU ms | RTX 3090 ms |
+| --- | ---: | ---: |
+| Earlier-gated class, 3,625 bytes | 502.13 | 2.9434 |
+| Earlier-gated class, 78 cached rows, 4,095 bytes | 174.38 | 1.3227 |
+| Global class, 3,112 bytes | 1,218.30 | 2.9146 |
+| Global class, 163 cached rows, 4,092 bytes | 216.11 | 0.8885 |
+| Individual word odds, 3,241 bytes | 92.54 | 0.6178 |
+| Matched trigram, 3,621 bytes | 44.56 | 0.1335 |
+
+The cache study was added after observing the cost of normalization. It ranked current tokens by training context frequency while active times the number of probes avoided. Each stored query ID and summed count correction costs six bytes plus a two-byte table header. The largest earlier-gated cache avoided 20,767,992 probes and produced the same probabilities. This reduced its scoring time substantially and still left it slower than raw rows. The exact audit checked 4,096 submodularity inequalities, all 63 nonempty four-vertex graph reductions, the singleton initialization failure, and full 50,257-outcome normalization for each nonempty learned readout at three query rows. The type-specific current or earlier gate only selects whether to use the resulting normalized correction. [Exact controls](audit_word_classes.py) · [The mathematical comparison with class triggers](FOUNDATION.md#learning-the-input-and-output-sets-of-one-raw-token-prediction)
+
+~~~powershell
+python -B research/frontier/text_word_classes.py --check research/frontier/text_word_classes_result.json
+python -B research/frontier/audit_word_classes.py --text
+python -B research/frontier/address_anchors.py --word-classes --check research/frontier/word_class_anchors_result.json
+python -B research/frontier/measure_word_classes.py --gpu --cache
+~~~

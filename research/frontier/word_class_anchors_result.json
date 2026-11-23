@@ -1,0 +1,37 @@
+{
+  "registration": "0f45141",
+  "targets_per_block": 4096,
+  "first_targets": [
+    6258688,
+    6389760,
+    6520832,
+    6651904
+  ],
+  "mkn5": {
+    "file_bytes": 34489589,
+    "sha256": "4071fb418fb58899aef6cbb483c7eb391b525917c47b9f5025da43092f2b843e",
+    "distinct_training_positions": 1048576,
+    "block_nll": [
+      6.563106338,
+      6.269496181,
+      6.637340829,
+      6.203328302
+    ],
+    "mean_nll": 6.418317913
+  },
+  "transformer": {
+    "file_bytes": 54753065,
+    "sha256": "0becbbd8515ac04fb225939cf1e81b594632b4aefd268d0e16f3faa8d16fae9b",
+    "parameter_count": 7253376,
+    "loaded_parameter_bytes": 29013504,
+    "distinct_training_positions": 1048576,
+    "training_target_exposures": 16777216,
+    "block_nll": [
+      6.292561369,
+      5.975775035,
+      6.157446432,
+      5.876528267
+    ],
+    "mean_nll": 6.075577776
+  }
+}

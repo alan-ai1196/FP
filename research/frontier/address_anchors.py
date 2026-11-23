@@ -45,7 +45,7 @@ def score_fivegram(tokens, record, models_root, scorer, directory, panels=None):
         return count * result["mean_nll_nats"]
 
     losses = []
-    for start in (starts() if panels is None else panels):
+    for start in starts() if panels is None else panels:
         tokens[start - 4 : start + SUBPANEL].astype("<u2").tofile(source)
         losses.append((total(4 + SUBPANEL) - total(4)) / SUBPANEL)
     return {
@@ -97,7 +97,7 @@ def score_transformer(tokens, selected, training, models_root, directory, panels
         torch.inference_mode(),
         torch.autocast(device_type="cuda", dtype=torch.float16),
     ):
-        for start in (starts() if panels is None else panels):
+        for start in starts() if panels is None else panels:
             terms = []
             for first in range(start, start + SUBPANEL, 32):
                 for positions, inputs in reporting_inputs(
@@ -131,17 +131,31 @@ if __name__ == "__main__":
     parser.add_argument("--kenlm-reporter", type=Path)
     parser.add_argument("--write", type=Path)
     parser.add_argument("--check", type=Path)
-    parser.add_argument(
+    panels_group = parser.add_mutually_exclusive_group()
+    panels_group.add_argument(
         "--shared",
         action="store_true",
         help="score the later frozen history-transfer panels",
+    )
+    panels_group.add_argument(
+        "--word-classes",
+        action="store_true",
+        help="score the raw word-class reporting panels",
     )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
     ledger = git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")
     records = {entry["case"]: entry["result"] for entry in ledger["results"]}
-    if args.shared:
+    if args.word_classes:
+        from text_word_classes import REGISTRATION, load_data, report_starts
+
+        data, panels, registration = (
+            load_data(args.data_dir),
+            report_starts(),
+            REGISTRATION,
+        )
+    elif args.shared:
         from text_shared_state import REGISTRATION, load_data, report_starts
 
         data, panels, registration = (

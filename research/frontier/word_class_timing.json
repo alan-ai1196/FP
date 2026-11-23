@@ -1,0 +1,277 @@
+{
+  "positions": 524288,
+  "raw_lookup_bytes": 2684212,
+  "normalizer_work": {
+    "multiword": {
+      "active": 235570,
+      "raw_successor_membership_probes": 7628599,
+      "named_output_bigram_probes": 20630528
+    },
+    "multiword_cache_16": {
+      "cache_rows": 16,
+      "bytes_including_live": 3723,
+      "cache_hits": 48921,
+      "normalizer_probes_avoided": 12523776
+    },
+    "multiword_cache_64": {
+      "cache_rows": 64,
+      "bytes_including_live": 4011,
+      "cache_hits": 77782,
+      "normalizer_probes_avoided": 19736410
+    },
+    "multiword_cache_78": {
+      "cache_rows": 78,
+      "bytes_including_live": 4095,
+      "cache_hits": 82173,
+      "normalizer_probes_avoided": 20767992
+    },
+    "singleton": {
+      "active": 64792,
+      "raw_successor_membership_probes": 2282,
+      "named_output_bigram_probes": 60669
+    },
+    "global": {
+      "active": 524288,
+      "raw_successor_membership_probes": 14369405,
+      "named_output_bigram_probes": 56779008
+    },
+    "global_cache_16": {
+      "cache_rows": 16,
+      "bytes_including_live": 3210,
+      "cache_hits": 147109,
+      "normalizer_probes_avoided": 37659904
+    },
+    "global_cache_64": {
+      "cache_rows": 64,
+      "bytes_including_live": 3498,
+      "cache_hits": 209885,
+      "normalizer_probes_avoided": 53541507
+    },
+    "global_cache_163": {
+      "cache_rows": 163,
+      "bytes_including_live": 4092,
+      "cache_hits": 248243,
+      "normalizer_probes_avoided": 61666749
+    },
+    "current": {
+      "active": 154699,
+      "raw_successor_membership_probes": 6475,
+      "named_output_bigram_probes": 4942944
+    },
+    "free": {
+      "active": 147437,
+      "raw_successor_membership_probes": 655225,
+      "named_output_bigram_probes": 2905792
+    }
+  },
+  "binary": {
+    "file_bytes": 118784,
+    ".text": 62048,
+    ".rdata": 44372
+  },
+  "cpu_ms": {
+    "pooled": [
+      34.1681,
+      34.2655,
+      33.8026,
+      33.7703,
+      33.7725
+    ],
+    "multiword": [
+      500.707,
+      500.7984,
+      503.2292,
+      507.9003,
+      502.125
+    ],
+    "multiword_cache_16": [
+      290.2806,
+      289.3577,
+      288.5383,
+      288.6656,
+      286.7425
+    ],
+    "multiword_cache_64": [
+      188.8821,
+      189.0563,
+      189.3478,
+      189.1554,
+      188.0948
+    ],
+    "multiword_cache_78": [
+      174.377,
+      174.259,
+      174.5255,
+      173.9655,
+      175.3941
+    ],
+    "singleton": [
+      44.9324,
+      44.7335,
+      44.6438,
+      44.6737,
+      44.7639
+    ],
+    "global": [
+      1222.6501,
+      1218.3011,
+      1220.0682,
+      1207.4675,
+      1208.8956
+    ],
+    "global_cache_16": [
+      527.0551,
+      526.4856,
+      540.4136,
+      530.6562,
+      532.0664
+    ],
+    "global_cache_64": [
+      321.1523,
+      321.3284,
+      320.7708,
+      321.6823,
+      328.0932
+    ],
+    "global_cache_163": [
+      216.3352,
+      214.4522,
+      217.286,
+      215.4366,
+      216.1099
+    ],
+    "current": [
+      117.7206,
+      116.3933,
+      116.3316,
+      116.5687,
+      116.626
+    ],
+    "free": [
+      92.4711,
+      92.5642,
+      92.9603,
+      92.5449,
+      92.3922
+    ],
+    "raw_matched": [
+      44.8489,
+      44.555,
+      44.5596,
+      44.4261,
+      44.7985
+    ],
+    "raw_cap": [
+      45.9992,
+      45.4864,
+      46.1492,
+      46.064,
+      45.8969
+    ]
+  },
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 3090",
+    "cupy": "14.2.0",
+    "cuda_runtime": 13020,
+    "milliseconds": {
+      "pooled": [
+        0.1624,
+        0.1517,
+        0.1514,
+        0.1513,
+        0.1513
+      ],
+      "multiword": [
+        2.9978,
+        2.9767,
+        2.9434,
+        2.8801,
+        2.9136
+      ],
+      "multiword_cache_16": [
+        2.4118,
+        2.3848,
+        2.4004,
+        2.4223,
+        2.4055
+      ],
+      "multiword_cache_64": [
+        1.5091,
+        1.4834,
+        1.4822,
+        1.5034,
+        1.4782
+      ],
+      "multiword_cache_78": [
+        1.3266,
+        1.2993,
+        1.3227,
+        1.3033,
+        1.328
+      ],
+      "singleton": [
+        0.2642,
+        0.2549,
+        0.2553,
+        0.2547,
+        0.2548
+      ],
+      "global": [
+        2.9116,
+        2.9146,
+        2.9142,
+        2.9202,
+        2.9525
+      ],
+      "global_cache_16": [
+        2.3653,
+        2.3899,
+        2.3727,
+        2.386,
+        2.3598
+      ],
+      "global_cache_64": [
+        1.9386,
+        1.8967,
+        1.9383,
+        1.9348,
+        1.9017
+      ],
+      "global_cache_163": [
+        0.9065,
+        0.8807,
+        0.8879,
+        0.8885,
+        0.9399
+      ],
+      "current": [
+        0.4198,
+        0.4181,
+        0.4183,
+        0.4191,
+        0.4171
+      ],
+      "free": [
+        0.6285,
+        0.6178,
+        0.6173,
+        0.6206,
+        0.6174
+      ],
+      "raw_matched": [
+        0.1671,
+        0.1342,
+        0.1331,
+        0.133,
+        0.1335
+      ],
+      "raw_cap": [
+        0.137,
+        0.1342,
+        0.1338,
+        0.1339,
+        0.1337
+      ]
+    }
+  }
+}
