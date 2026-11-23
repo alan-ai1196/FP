@@ -2,6 +2,24 @@
 
 ## 2026-11-23
 
+### Targeted recency-first screen after Astra policy 7a6ce60
+
+A bounded follow-up searched 2025–2026 test-time learning, learned memory and conditional calibration, while checking current official OpenAI/Anthropic material first. It adds eight deduplicated edition records and updates one existing Anthropic article. This is a selection pass, not an exhaustive survey or a claim that every candidate has been read. Earlier statements here about a sequential 722-paper obligation are superseded by the current relevance/recency policy in COORDINATION.md.
+
+| Candidate and primary source | Inspected evidence and selection |
+|---|---|
+| [Prediction Is Not a Sufficient Memory State](https://arxiv.org/abs/2610.13881v1), October 2026 | Abstract/metadata only. The claimed difference between current prediction and exact continuation state is a direct negative-result candidate. **Next full reading**; continuity, unrestricted observations and approximation limits must be checked. |
+| [TNT](https://proceedings.iclr.cc/paper_files/paper/2026/hash/bdb30687f1c2255c29b11b0b45204ebe-Abstract-Conference.html), ICLR 2026 | Official abstract only; chunk-size quality/speed tradeoff. The advertised 17× comparison is not yet a verified matched-resource result. |
+| [MIRAS](https://proceedings.iclr.cc/paper_files/paper/2026/hash/d55f39791f04745b2e0c8abebf3dd5d7-Abstract-Conference.html), ICLR 2026 | Official abstract only; separates memory architecture, internal objective, retention and online optimizer. Relevant candidate for exact update-object comparison. |
+| [Titans](https://proceedings.neurips.cc/paper_files/paper/2025/hash/a4ca07aa108036f80cbb5b82285fd4b1-Abstract-Conference.html), NeurIPS 2025 | Official abstract and arXiv metadata; conference wording is more conservative than the initial preprint. Prefer the conference edition if selected. |
+| [Nested Learning](https://proceedings.neurips.cc/paper_files/paper/2025/hash/4309616aaed8e848009bc4a7ef73b493-Abstract-Conference.html), NeurIPS 2025 | Official abstract/metadata; nested optimization and memory timescales. No claim yet about FP history/output-set induction. |
+| [TTT layers](https://proceedings.mlr.press/v267/sun25h.html), ICML 2025, initially 2024 | Official abstract/metadata; remains a current baseline used by later work. Candidate dependency, not a mandatory chronological reading task. |
+| [End-to-End Test-Time Training](https://arxiv.org/abs/2512.23675v2), December 2025, NVIDIA author post January 2026 | Abstract, opening PDF text and author post screened. Inner next-token updates and outer meta-learning are directly relevant; full reading follows the newer negative result, subject to requests. The post itself discloses extra meta-training cost. |
+| [Temperature Scaling in Discrete Sequence Models](https://proceedings.mlr.press/v306/scheufele26a.html), ICML 2026 | Official abstract only; tokenwise and sequence-level normalization differ. Scoped calibration lead, lower priority than direct adaptive-state work. |
+| [Anthropic: The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory), November 2026 | Text inspected through the memory-representations examples; graphical assets and remaining article not covered. The article explicitly studies external notes retained between sessions, excluding weight updates. Do not equate its use of “memory” with numerical state induction. |
+
+The source assistant handled the six-candidate metadata/abstract screen and retrieval only. Main-assistant body reading remains separate. No new directly relevant OpenAI primary paper was established by these bounded queries; that is a search limit, not an absence claim. Historical Dhillon/Brown leads are retained only for specific lookups. No additional historical full reading is queued.
+
 <!-- sweep 2026-11-23 --> The dated sweep recorded 1425 newly indexed editions. [Source counts and retrieval exceptions](snapshots/discovery-2026-11-23.json)
 
 The expanded ChatGPT pass added 1,416 records to the 793-record queue inherited from local Astra, bringing the current index to 2,209. These additions are discovery leads, including revisions, institutional articles and relevance-pending items. They are not completed readings or 1,416 established research results. The expanded arXiv title-and-abstract query covered its November 17–23 revision window over seven pages, retaining 1,272 records after a timed-out first attempt was retried. The OpenAI, Anthropic and DeepMind channels retained 51 visible items, and the venue pass retained 99. OpenReview’s two modification channels still returned HTTP 403. Institutional landing pages are not an exhaustive historical archive. This pass saved metadata and institutional HTML. PDF and source transfers remain pending where the index has no local full-text path. Source priorities and the original 722-paper reading obligation are unchanged.
