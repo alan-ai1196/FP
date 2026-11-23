@@ -182,7 +182,11 @@ def publication_files(url, label, download=True):
     slug = re.sub(r'[^A-Za-z0-9_.-]', '_', urlsplit(url).path.strip('/')) or 'index'
     article_path = library.CORPUS / 'institutional' / folder_name / (slug + '.html')
     article_path.parent.mkdir(parents=True, exist_ok=True)
-    article_path.write_bytes(response.content)
+    if article_path.is_file() and article_path.read_bytes() != response.content:
+        revision = hashlib.sha256(response.content).hexdigest()
+        article_path = article_path.with_name(f'{slug}-{revision}.html')
+    if not article_path.exists():
+        article_path.write_bytes(response.content)
     date_meta = soup.select_one('meta[property="article:published_time"], meta[name="citation_date"]')
     date_text = date_meta.get('content', '')[:10] if date_meta else ''
     files = {}

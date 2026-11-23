@@ -32,7 +32,7 @@ FIELDS = ('id title authors publication_date source doi_or_arxiv original_url lo
           'version publication_review_status ai_involvement formal_verification_status reading_status '
           'reading_progress mathematical_topics extracted_instruments fp_relevance follow_up_status '
           'fulltext_url companion_urls').split()
-READ_STAGE = {'unread': 0, 'partially read': 1, 'fully read': 2}
+READ_STAGE = {'unread': 0, 'screened': 1, 'scoped reading': 2, 'partially read': 2, 'fully read': 3}
 WITHDRAWN = {
     'algebraicity of weil classes on split abelian eightfolds',
     'algebraicity of kuga–satake correspondences for k3 surfaces',

@@ -64,3 +64,13 @@ A source assistant ran 16 bounded queries on controlled/sequential experiment co
 - [Analytical Approach to Continuous-Time Causal Optimal Transport, arXiv:2605.19978v1](https://arxiv.org/abs/2605.19978v1), May 2026: primary metadata/abstract checked by source assistant, root exact-version web retrieval failed. Restricted finite-state Markov/diffusion transport and control formulation; low-priority technical lead, no body reading.
 
 No historical full-reading queue or author-contact task was created.
+
+## 2026-11-24
+
+<!-- sweep 2026-11-24 --> The dated sweep recorded 6 newly indexed editions. [Source counts and retrieval exceptions](snapshots/discovery-2026-11-24.json)
+
+### Overnight source check and a result on missing responses
+
+The November 23–24 UTC-date window overlapped the prior sweep. Forty records matched the declared source filters. Six journal records were new to the index, including five Nature news, advice or commentary records. The SIAM research article by Pan, Leplat, Ng and Gillis appeared online November 23. Its peer-reviewed edition and its July 3 author manuscript v2 now have separate records. The local library contains the 2,757,877-byte author PDF and the 2,049,714-byte source archive. The publisher supplies a three-page hyperspectral supplement. Direct local downloads of the publisher PDF and supplement returned HTTP 403. No full reading of this work is claimed. Its recovery assumptions about repeated near-basis observations merit comparison with the evidence needed to identify predictive response classes. [Publisher record](https://epubs.siam.org/doi/10.1137/25M1820680) · [Author manuscript](https://arxiv.org/abs/2511.07109v2) · [Publisher supplement](https://epubs.siam.org/doi/suppl/10.1137/25M1820680/suppl_file/Supp_Materials.pdf)
+
+The arXiv query returned no matching revision in this window. OpenReview requests for the two conference sources returned HTTP 403; the separate official program channels are recorded in the snapshot. Existing reading records marked screened or scoped now survive a lower-coverage metadata refresh, and future changes to previously saved institutional HTML receive separate files. The day's FP question is whether learning a shared history class yields accurate unseen predictions when the observation pattern also admits an incompatible completion. [Source-by-source scope](snapshots/discovery-2026-11-24.json) · [Exact identification criterion](../research/frontier/OBSTRUCTIONS.md#when-a-spare-response-class-can-reverse-a-prediction)
