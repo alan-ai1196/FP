@@ -714,3 +714,38 @@ python -B research/frontier/audit_word_classes.py --text
 python -B research/frontier/address_anchors.py --word-classes --check research/frontier/word_class_anchors_result.json
 python -B research/frontier/measure_word_classes.py --gpu --cache
 ~~~
+
+## Does the earlier token help after calibrating the learned word class?
+
+Yes on these two subsequent blocks, with a small advantage over the strongest simple reference. The selected 4,096-byte predictor used 292 current-token and 98 earlier-token exceptions. It gained **0.002319 priced nats/token** over the same-size current-only fit, and **0.000343** over the 3,112-byte global predictor inherited from the preceding experiment. The latter had the best score on selection, including the joint candidates. The first reporting block gave the joint model only 0.0000074 priced nats/token over that reference. The model comparison alone cannot identify the population conditional mutual information of the earlier token. [Prospective specification](https://github.com/alan-ai1196/FP/blob/ae87e2f/research/frontier/NEXT.md) · [Scores, per-block coverage and all installations](text_nested_class_result.json)
+
+All models retained the same 256 output IDs acquired from raw loss in the prior experiment. Training and validation used the original 262,144 and 131,072 targets. The two new consecutive blocks had 131,072 targets each, starting at 6,782,976 and 6,914,048. A single odds multiplier rescaled the learned word class at every query while preserving both within-group distributions. Fitting the multiplier on the same sample that produced the class gave $1933/1024\approx1.888$, which transferred worse than the original factor $1.5$ on selection and both reporting blocks. The following are means over the complete 50,257-token output law evaluated on the realized targets. The price adds $(\ln 2/256)\cdot8\,\mathrm{bytes}/131072$ nats/token to observed NLL. The two inherited raw trigram payloads were checked against their original hashes.
+
+| Predictor | Bytes above raw bigram including carry | Block 1 priced | Block 2 priced | Mean NLL | Mean priced |
+|---|---:|---:|---:|---:|---:|
+| Pooled base | 2,584 | 6.970570 | 7.003798 | 6.986757 | 6.987184 |
+| Previous global, odds 1.5 | 3,112 | 6.957563 | 6.989040 | 6.972787 | 6.973301 |
+| Refitted global | 3,112 | 6.962563 | 6.992926 | 6.977231 | 6.977745 |
+| Earlier-token exceptions | 3,605 | 6.959830 | 6.989619 | 6.974129 | 6.974725 |
+| Current-token exceptions | 4,096 | 6.959586 | 6.990969 | 6.974601 | 6.975277 |
+| Raw-pair exceptions | 4,095 | 6.960494 | 6.991119 | 6.975130 | 6.975807 |
+| Earlier and current exceptions | 4,096 | 6.957556 | 6.988362 | 6.972282 | 6.972959 |
+| Two current tables allowed | 4,096 | 6.959586 | 6.990969 | 6.974601 | 6.975277 |
+| Previous matched raw trigram | 3,621 | 6.966133 | 7.001465 | 6.983201 | 6.983799 |
+| Previous full-cap raw trigram | 4,095 | 6.965835 | 7.001055 | 6.982768 | 6.983445 |
+
+The two-current family selected exactly the single 392-entry current table. The two-factor winner used 4,095 installed bytes and one byte of causal carry for the earlier response code. Its current table fired on 62,180 of 262,144 predictions, its earlier table on 57,321, and both on 9,156. Against the refitted global law it gained 0.004949 pure and 0.004786 priced nats/token. Against the previous global it gained 0.000505 pure. On selection the joint model scored 7.040690 priced against 7.039251 for the previous global. The reporting advantage therefore describes the two registered arms. A learner selecting one deployment across all arms on validation would have chosen the previous global. [Fitting and serialization](nested_class.py) · [Study driver](text_nested_class.py)
+
+On the same first 4,096 targets in each block the joint model scored **7.062070**, previous global **7.062099**, full-cap trigram **7.064072**, modified Kneser–Ney five-gram **6.602393**, and Transformer **6.221273** nats/token. The frozen five-gram occupies 34,489,589 file bytes. The Transformer's 7,253,376 parameters occupy 29,013,504 loaded bytes and received 16,777,216 training target exposures. Both anchors used 1,048,576 distinct training positions. These are predictive comparisons at different training and deployment budgets. [Anchor hashes, budgets and scores](nested_class_anchors.json)
+
+The normalized class predictors used a shared 2,684,212-byte raw lookup and recomputed the class count in each query row. Across the full replay there were 7,052,640 successor membership probes and 28,181,760 named bigram count probes per class model. Each lookup used the shorter traversal. Five warm sequential CPU timings and five ten-launch teacher-forced RTX 3090 samples gave the joint predictor medians of **584.69 ms** and **1.5461 ms**, compared with **22.42 ms** and **0.0725 ms** for the full-cap trigram. These are observed-target scoring times. Every native CPU and GPU loss agreed with the vectorized reference within $10^{-11}$ at every position. The statistical replay including acquisition took 14.44 s with a 259.7 MB peak working set. The timing driver, measurement samples and integer probability normalizations are available below. [Native scorer](nested_class_score.c) · [Timing samples and byte accounting](nested_class_timing.json) · [Independent normalizations and exact graph audits](audit_nested_class.py)
+
+The mathematical checks covered all 265 three-by-three supports with every vertex present, all 190 single-chord perturbations of their spanning forests, and 201 full-alphabet query and odds combinations across the learned readouts. Every loss for the carried-over global model also matched its original independent implementation within $10^{-12}$. For a hidden checkerboard interaction the audit rejected all 697 possible sets of at most three raw pair exceptions on four-by-four inputs, verified constructions through fourteen-by-fourteen, tested 26,244 rational quantitative loss bounds and compared exact population objectives under four tariff schedules with unequal replica counts. The real-parameter population proofs and the finite-precision deployment address different questions. [Information, graph structure and replication](FOUNDATION.md#which-earlier-distinctions-survive-current-token-calibration) · [Sparse repairs and loss bound](OBSTRUCTIONS.md#the-cost-of-repairing-an-interaction-one-cell-at-a-time)
+
+~~~powershell
+python -B research/frontier/text_nested_class.py --check research/frontier/text_nested_class_result.json
+python -B research/frontier/address_anchors.py --nested --check research/frontier/nested_class_anchors.json
+python -B research/frontier/audit_nested_class.py --text
+python -B research/frontier/measure_nested_class.py --gpu
+lean research/frontier/Checkerboard.lean
+~~~

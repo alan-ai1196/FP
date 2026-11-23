@@ -142,12 +142,25 @@ if __name__ == "__main__":
         action="store_true",
         help="score the raw word-class reporting panels",
     )
+    panels_group.add_argument(
+        "--nested",
+        action="store_true",
+        help="score the nested word-class calibration panels",
+    )
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
     ledger = git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")
     records = {entry["case"]: entry["result"] for entry in ledger["results"]}
-    if args.word_classes:
+    if args.nested:
+        from text_nested_class import REGISTRATION, load_data, report_starts
+
+        data, panels, registration = (
+            load_data(args.data_dir),
+            report_starts(),
+            REGISTRATION,
+        )
+    elif args.word_classes:
         from text_word_classes import REGISTRATION, load_data, report_starts
 
         data, panels, registration = (

@@ -1,0 +1,196 @@
+{
+  "positions": 262144,
+  "raw_lookup_bytes": 2684212,
+  "output_bytes": 2097152,
+  "normalizer_work": {
+    "global": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "earlier": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "current": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "pair": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "joint": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "twice_current": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    },
+    "previous": {
+      "nonneutral_odds": 262144,
+      "normalizer_membership_probes": 7052640,
+      "normalizer_count_probes": 28181760
+    }
+  },
+  "binary": {
+    "file_bytes": 119296,
+    ".text": 62528,
+    ".rdata": 44356
+  },
+  "cpu_ms": {
+    "pooled": [
+      16.7477,
+      16.7432,
+      16.723,
+      18.1583,
+      17.1232
+    ],
+    "global": [
+      571.8499,
+      586.8658,
+      578.3092,
+      575.4133,
+      567.7711
+    ],
+    "earlier": [
+      573.8537,
+      585.5994,
+      583.7506,
+      571.4459,
+      564.5897
+    ],
+    "current": [
+      568.4858,
+      575.4722,
+      578.3141,
+      569.9001,
+      569.095
+    ],
+    "pair": [
+      572.5775,
+      570.1256,
+      570.6526,
+      574.7638,
+      582.3631
+    ],
+    "joint": [
+      583.5537,
+      586.9008,
+      582.1866,
+      585.824,
+      584.6881
+    ],
+    "twice_current": [
+      576.3655,
+      576.5474,
+      572.6493,
+      564.2661,
+      568.6014
+    ],
+    "previous": [
+      562.9105,
+      562.8427,
+      575.3562,
+      575.3148,
+      570.1365
+    ],
+    "raw_matched": [
+      21.5874,
+      21.5343,
+      21.5573,
+      21.7851,
+      21.9072
+    ],
+    "raw_cap": [
+      22.4186,
+      22.4118,
+      22.4379,
+      22.5149,
+      22.4069
+    ]
+  },
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 3090",
+    "cupy": "14.2.0",
+    "cuda_runtime": 13020,
+    "milliseconds": {
+      "pooled": [
+        0.0848,
+        0.0828,
+        0.0847,
+        0.0834,
+        0.0839
+      ],
+      "global": [
+        1.8579,
+        1.8082,
+        1.8486,
+        1.8567,
+        1.8445
+      ],
+      "earlier": [
+        1.8549,
+        1.829,
+        1.8595,
+        1.8161,
+        1.8583
+      ],
+      "current": [
+        1.7794,
+        1.5687,
+        1.5359,
+        1.5664,
+        1.5421
+      ],
+      "pair": [
+        1.5827,
+        1.5386,
+        1.5792,
+        1.5524,
+        1.5678
+      ],
+      "joint": [
+        1.5447,
+        1.5584,
+        1.5453,
+        1.5575,
+        1.5461
+      ],
+      "twice_current": [
+        1.598,
+        1.5629,
+        1.5955,
+        1.5621,
+        1.5824
+      ],
+      "previous": [
+        1.5583,
+        1.6003,
+        1.5586,
+        1.5584,
+        1.5899
+      ],
+      "raw_matched": [
+        0.0733,
+        0.0738,
+        0.0737,
+        0.0724,
+        0.0722
+      ],
+      "raw_cap": [
+        0.0731,
+        0.0724,
+        0.0725,
+        0.0725,
+        0.0737
+      ]
+    }
+  }
+}
