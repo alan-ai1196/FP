@@ -1,0 +1,69 @@
+{
+  "N": 16384,
+  "T": 16384,
+  "streams": 2,
+  "seed": 31717,
+  "true_amplitude": 0.76,
+  "matches": 10364,
+  "packet_bits": 7,
+  "packet_code": 67,
+  "snapped_amplitude": 0.7568359375,
+  "limit": 19,
+  "expanded_Q12_bytes": 12,
+  "bayes_table_bytes": 65536,
+  "live_bytes_per_stream": {
+    "counter": 1,
+    "bayes": 8,
+    "cached_bayes": 16392
+  },
+  "reversed_prefix_draws": 4096,
+  "reversed_prefix_cache_difference": 6.106226635438361e-15,
+  "threshold_count_checks": 4060,
+  "training_input_bytes": 32768,
+  "report_input_bytes": 32768,
+  "output_bytes_per_predictor": 262144,
+  "acquisition_cpu_ms": [
+    0.0287,
+    0.012,
+    0.0091,
+    0.0081,
+    0.0084,
+    0.0082,
+    0.0081,
+    0.0078,
+    0.008
+  ],
+  "warm_cpu_ms": {
+    "counter": [
+      0.034,
+      0.0343,
+      0.0329,
+      0.0328,
+      0.0328
+    ],
+    "bayes": [
+      599.0758,
+      599.7366,
+      599.7693,
+      598.3349,
+      604.8741
+    ],
+    "cached_bayes": [
+      66.0085,
+      66.0161,
+      65.7827,
+      65.7645,
+      65.7027
+    ]
+  },
+  "max_probability_difference": {
+    "counter": 0.0,
+    "bayes": 1.4049872376631356e-12,
+    "cached_bayes": 1.4050982599655981e-12
+  },
+  "binary": {
+    "file_bytes": 114176,
+    ".text": 60720,
+    ".rdata": 41620
+  }
+}

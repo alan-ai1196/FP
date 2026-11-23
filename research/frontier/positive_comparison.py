@@ -15,6 +15,11 @@ def categorical_evaluator(root, alphabet, table, readouts, theta):
     subprocess.run(["git", "-C", str(root), "diff", "--quiet", "HEAD", "--", "src/reference_compiler"],
                    check=True)
     sys.path.insert(0, str(root / "src/reference_compiler"))
+    return categorical_program(alphabet, table, readouts, theta)
+
+
+def categorical_program(alphabet, table, readouts, theta):
+    """Construct the program after the caller loads the pinned R4 evaluator."""
     from fp_reference.program import (Binding, DelayedStateSpec, Product, Program, SemanticRules,
                                       Source, SourceSpec, State, Sum, Term)
     from fp_reference.semantics import evaluate, reset_delayed
