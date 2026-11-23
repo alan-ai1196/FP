@@ -44,7 +44,34 @@ FN double exception_odds(u32 code) {
   return (double)(code - 4);
 }
 
+FN const u8 *profile_packet(const u8 *model) {
+  const u8 *h = model + 24 + 5 * val16(model);
+  return h + 16 + 2 * val16(h);
+}
+
+FN u32 profile_rank(const u8 *ids, u32 token) {
+  for (u32 i = 0; i < 8; i++)
+    if (val16(ids + 2 * i) == token)
+      return i;
+  return 8;
+}
+
+FN u32 profile_width(u32 k) { return k == 2 ? 1u : k == 3 || k == 4 ? 2u : 0u; }
+
+FN u32 profile_state(const u8 *p, u32 token) {
+  u32 row = profile_rank(p + 3, token), k = p[1];
+  if (row == 8 || k == 8)
+    return row;
+  if (k == 1)
+    return 0;
+  const u8 *labels = p + 3 + (p[2] ? 16 : 32);
+  u32 w = profile_width(k);
+  return (labels[(w * row) / 8] >> ((w * row) % 8)) & ((1u << w) - 1u);
+}
+
 FN u32 nested_state(u32 kind, const u8 *model, const u32 *uni, u32 token) {
+  if (kind == 8)
+    return profile_state(profile_packet(model), token);
   if (kind != 7)
     return history_state(kind, model, uni, token);
   const u8 *h = model + 24 + 5 * val16(model);
@@ -61,7 +88,7 @@ FN u32 nested_state(u32 kind, const u8 *model, const u32 *uni, u32 token) {
 FN double nested_loss(u32 kind, const u8 *model, u32 state, u32 q, u32 y,
                       const u32 *uni, const u32 *outgoing, const u32 *offset,
                       const u16 *succ, const u32 *freq, u32 denominator) {
-  if (kind != 7)
+  if (kind != 7 && kind != 8)
     return score_one(kind, model, state, q, y, uni, outgoing, offset, succ,
                      freq, denominator);
   const u8 *h = model + 24 + 5 * val16(model), *ids = h + 16;
@@ -79,7 +106,7 @@ FN double nested_loss(u32 kind, const u8 *model, u32 state, u32 q, u32 y,
   double base =
       (base_count(q, y, offset, succ, freq) + 64. * backoff(model, 0, y, uni)) /
       denom;
-  if (r == 1.)
+  if (r == 1. && kind != 8)
     return -log(base);
   double back_mass = (val32(h + 4) + 4294967296. * val32(h + 8)) /
                      (16777216. * val32(model + 12));
@@ -93,8 +120,18 @@ FN double nested_loss(u32 kind, const u8 *model, u32 state, u32 q, u32 y,
       total += base_count(q, val16(ids + 2 * i), offset, succ, freq);
   }
   double mass = (total + 64. * back_mass) / denom;
-  return -log(base * (nested_member(ids, n, y) ? r : 1.) /
-              (1. + (r - 1.) * mass));
+  u32 member = nested_member(ids, n, y);
+  if (kind == 8 && state < 8) {
+    const u8 *p = profile_packet(model);
+    u32 col = profile_rank(p + 3 + (p[2] ? 0 : 16), q);
+    if (col < 8) {
+      const u8 *rates = p + 3 + (p[2] ? 16 : 32) + profile_width(p[1]);
+      double target = val16(rates + 2 * (8 * state + col)) / 65536.;
+      return -log(base *
+                  (member ? target / mass : (1. - target) / (1. - mass)));
+    }
+  }
+  return -log(base * (member ? r : 1.) / (1. + (r - 1.) * mass));
 }
 
 #ifdef __CUDACC__

@@ -20,12 +20,17 @@ from text_nested_class import (
 from threadpoolctl import threadpool_limits
 
 
-def workload(data, receipt):
+def workload(data, receipt, response_classes=False):
     rows, outputs, _, _, _, raw = frozen(data[:SELECTION_END])
-    np.testing.assert_array_equal(outputs, receipt["output_ids"])
+    if response_classes:
+        from text_response_classes import END as upper
+        from text_response_classes import REPORT_START as lower
+    else:
+        lower, upper = REPORT_START, END
+        np.testing.assert_array_equal(outputs, receipt["output_ids"])
     ids = np.frombuffer(data, dtype=np.uint16)
     c = rows.common
-    obs = c.observe(ids, REPORT_START, END)
+    obs = c.observe(ids, lower, upper)
     base = -np.log(obs.readout(rows.tables[0]))
     belongs = np.zeros(c.vocab, dtype=bool)
     belongs[outputs] = True
@@ -33,7 +38,16 @@ def workload(data, receipt):
     hit = belongs[obs.target]
     arms = {"pooled": (np.frombuffer(rows.base, dtype=np.uint8), 1, base)}
     probes = {}
-    for name, info in receipt["installations"].items():
+    old = (
+        json.loads(
+            Path(__file__).with_name("text_nested_class_result.json").read_text()
+        )
+        if response_classes
+        else receipt
+    )
+    for name, info in old["installations"].items():
+        if response_classes and name not in ("previous", "joint"):
+            continue
         model = restore(info)
         packet = model.pack(rows, outputs)
         assert len(packet) + model.live() == info["bytes"]
@@ -53,15 +67,48 @@ def workload(data, receipt):
             ),
         }
     for name, (tri, m, _) in raw.items():
+        if response_classes and name != "raw_cap":
+            continue
         arms[name] = (
             np.frombuffer(m.payload, dtype=np.uint8),
             3 if len(m.active) else 1,
             m.losses(tri, obs),
         )
+    if response_classes:
+        from text_response_classes import UNIT, ranks
+
+        del arms["pooled"]
+        arms["global"] = arms.pop("previous")
+        glob_packet, _, glob_loss = arms["global"]
+        # Recover the multiplier from the installed global comparator.
+        previous = restore(old["installations"]["previous"])
+        odds = previous.scalar / 1024
+        p = odds * mass / (1 + (odds - 1) * mass)
+        ru = ranks(np.array(receipt["early_ids"]), obs.history)
+        rv = ranks(np.array(receipt["current_ids"]), obs.query)
+        mask = (ru < 8) & (rv < 8)
+        for name in receipt["alpha_selection"].values():
+            info = receipt["installations"][name]
+            packet = bytes.fromhex(info["packet_hex"])
+            labels = np.array(info["labels"])
+            k = 1 + int(max(labels))
+            rates = np.frombuffer(packet[-16 * k :], dtype="<u2").reshape(k, 8)
+            prediction = rates[labels[ru[mask]], rv[mask]].astype(float) / UNIT
+            loss = glob_loss.copy()
+            loss[mask] -= np.where(
+                hit[mask],
+                np.log(prediction / p[mask]),
+                np.log((1 - prediction) / (1 - p[mask])),
+            )
+            arms[name] = (
+                np.frombuffer(glob_packet.tobytes() + packet, dtype=np.uint8),
+                8,
+                loss,
+            )
     for name, (_, _, loss) in arms.items():
         assert abs(loss.mean() - receipt["mean"][name]["nll"]) < 2e-10
     shared = (
-        ids[REPORT_START - 2 : END],
+        ids[lower - 2 : upper],
         len(obs.target),
         c.counts.astype(np.uint32),
         c.outgoing.astype(np.uint32),
@@ -74,9 +121,9 @@ def workload(data, receipt):
     return shared, arms, probes
 
 
-def run(data, receipt, gpu):
+def run(data, receipt, gpu, response_classes=False):
     with threadpool_limits(limits=1):
-        shared, arms, probes = workload(data, receipt)
+        shared, arms, probes = workload(data, receipt, response_classes)
     root = Path(__file__).resolve().parent
     with tempfile.TemporaryDirectory() as temp:
         path = Path(temp)
@@ -109,17 +156,28 @@ if __name__ == "__main__":
     parser.add_argument(
         "--receipt",
         type=Path,
-        default=Path(__file__).with_name("text_nested_class_result.json"),
+        default=None,
     )
+    parser.add_argument("--response-classes", action="store_true")
     parser.add_argument("--gpu", action="store_true")
     parser.add_argument("--write", type=Path)
     args = parser.parse_args()
     if not __debug__:
         parser.error("the audit requires assertions")
+    if args.response_classes:
+        from text_response_classes import load_data as read
+
+        default = "text_response_classes_result.json"
+    else:
+        read, default = load_data, "text_nested_class_result.json"
+    receipt = (
+        args.receipt if args.receipt is not None else Path(__file__).with_name(default)
+    )
     result = run(
-        load_data(args.data_dir),
-        json.loads(args.receipt.read_text(encoding="utf8")),
+        read(args.data_dir),
+        json.loads(receipt.read_text(encoding="utf8")),
         args.gpu,
+        args.response_classes,
     )
     output = json.dumps(result, indent=2) + "\n"
     if args.write:

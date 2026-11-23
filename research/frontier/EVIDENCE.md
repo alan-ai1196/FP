@@ -852,3 +852,32 @@ python -B research/frontier/measure_sensing.py --response-classes
 python -B research/frontier/sensing_r4.py --response-classes
 lean research/frontier/ResponseProfiles.lean
 ~~~
+
+## Do learned response classes transfer to missing word pairs on ordinary text?
+
+**The registered hypothesis failed.** At each of three prior concentrations, integrated next-token likelihood selected a single class for the eight eligible earlier word IDs. The fitted table therefore made exactly the same predictions as the current-token-only comparison within this eligibility gate. Chronological selection favored the previously frozen global predictor. On the two subsequent reporting blocks, the one-class fit gained 0.0000511 priced nats/token over that predictor, but its 150 withheld-pair occurrences scored 0.0049144 nats/token worse. [Registration before reading this continuation](https://github.com/alan-ai1196/FP/blob/3b17ced/research/frontier/NEXT.md) · [Training, evidence gaps and normalization checks](text_response_classes.py) · [Complete scores and packets](text_response_classes_result.json)
+
+The 262,144-target fitting block started at 7,045,120. The next 131,072 targets selected the concentration separately for each family, then the two 131,072-target reporting blocks began at 7,438,336 and 7,569,408. The learner retained the previous 256-word class, raw-bigram model and global class-odds multiplier of 1.5. Those ingredients determined a normalized law over all 50,257 tokens. The learnt scalar for any eligible pair changed the probability of the entire class and preserved probabilities conditional on membership and nonmembership. The same eight token IDs ranked highest at both history positions. Of 7,476 fitting observations with both names among the eight, 158 were excluded by the registered rank-pair mask. Only 29 of the 48 permitted pair types appeared. The remaining 7,318 observations supplied 409 positive next-word class memberships. Different row IDs supplied between 5 and 2,452 training observations each. The receipt and pinned source provide the frozen corpus identity, every training pair count and the hash of the extended tape prefix.
+
+| Predictor | Charged bytes above raw bigram | Mean NLL | Mean priced NLL | Withheld NLL |
+|---|---:|---:|---:|---:|
+| Global, chosen on selection | 3,112 | 6.9954063 | 6.9959206 | 9.0007838 |
+| Current token within eligible pairs | 3,148 | 6.9953492 | 6.9958694 | 9.0056982 |
+| Learned earlier classes | 3,148 | 6.9953492 | 6.9958694 | 9.0056982 |
+| Independent raw pairs | 3,260 | 6.9953494 | 6.9958881 | 9.0007855 |
+| Previous joint exception model | 4,096 | 6.9961122 | 6.9967891 | 9.0117038 |
+| Previous full-budget raw trigram | 4,095 | 7.0026667 | 7.0033435 | 8.9985256 |
+
+The two reporting blocks had 3,961 and 4,176 eligible occurrences and respectively 60 and 90 withheld occurrences. Reported conditional NLLs pool positions across both blocks. All three families chose concentration 512. The selected one-class packet spent 35 new bytes and one live byte in addition to the frozen predictor. It encoded both ranks with the same 16-byte ID table. It still must remember whether the previous token was eligible; all eight eligible IDs have the same response. The independent-pair packet stored 64 Q16 probabilities. Its withheld cells retained the original class prior up to quantization.
+
+The completely separate raw-pair maximum likelihood could gain at most **9.6002 total training nats** over the fitted one-class maximum likelihood on exposed cells. The best two-class maximum-likelihood gain was 7.7453. After integrating the probabilities at concentrations 8, 64 and 512, the best two-class log evidence gains were 1.0360, 0.5154 and 0.4607. Each individual two-class partition paid $\ln127=4.8442$ nats relative to the one-class alternative under the stated prior. The best net gains over all nontrivial candidates were therefore negative at each concentration. This identifies which part of the learning rule rejected the split. It leaves open how much mass all nontrivial alternatives carry collectively. [Exact partition learning criterion](FOUNDATION.md#what-log-loss-can-pay-for-a-history-split)
+
+Across the first 4,096 positions of each report block the one-class fit scored 6.921247, the frozen global 6.921334, the five-gram 6.585320 and the Transformer 6.233208 nats/token. The five-gram checkpoint occupied 34,489,589 file bytes. The Transformer used 7,253,376 parameters, 29,013,504 loaded bytes and 16,777,216 training target exposures. Both comparison checkpoints had seen 1,048,576 distinct training positions. These are identical reporting positions with different learning and deployment budgets. [Checkpoint hashes and block scores](response_text_anchors.json)
+
+One complete statistical replay including reacquisition of the frozen comparisons took 3.048 seconds with a sampled peak process working set of 261,566,464 bytes. All 240 block/column Q16 normalization cases matched exact rational group sums from the raw successor counts. The native CPU stream carried only its earlier membership or class across tokens. The GPU used parallel raw contexts for teacher-forced scoring. Their complete full-vocabulary observed-token losses for the six installed models matched the independent reference at every one of 262,144 report positions within $10^{-11}$. For the learned arm the warm medians were 575.7 ms on the CPU and 1.634 ms per batch on the local RTX 3090. For the identical current-only installation they were 570.8 and 1.605 ms. The shared count and index arrays occupied 2,684,212 bytes and the batch loss output 2,097,152 bytes. The timing includes normalization under the inherited 256-word class. The batch uses resident arrays and evaluates the probability assigned to each observed target. [C and CUDA kernel](nested_class_score.c) · [Timing samples and device](text_response_classes_timing.json)
+
+~~~powershell
+python -B research/frontier/text_response_classes.py --check research/frontier/text_response_classes_result.json
+python -B research/frontier/address_anchors.py --response-classes --check research/frontier/response_text_anchors.json
+python -B research/frontier/measure_nested_class.py --response-classes --gpu
+~~~

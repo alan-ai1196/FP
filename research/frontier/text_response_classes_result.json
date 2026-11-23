@@ -1,0 +1,686 @@
+{
+  "registration": "3b17ced",
+  "prefix_sha256": "2a1fa217f39637032606f5163cf841710d34054b5a604a5017e795c0ff044d1e",
+  "starts": [
+    7045120,
+    7307264,
+    7438336,
+    7569408,
+    7700480
+  ],
+  "training_eligible": 7476,
+  "training_withheld_excluded": 158,
+  "training_evidence": {
+    "occupied_training_pairs": 29,
+    "saturated_empirical_gain": 9.600152249083976,
+    "best_two_class_empirical_gain": 7.745284133007772,
+    "split_comparisons": {
+      "8": {
+        "best_two_integrated_gain": 1.036019041474674,
+        "best_nontrivial_net_gain": -3.8081680449838586
+      },
+      "64": {
+        "best_two_integrated_gain": 0.5153648250816332,
+        "best_nontrivial_net_gain": -4.328822261376899
+      },
+      "512": {
+        "best_two_integrated_gain": 0.46073610860844383,
+        "best_nontrivial_net_gain": -4.383450977850089
+      }
+    }
+  },
+  "training_counts": [
+    [
+      0,
+      695,
+      0,
+      0,
+      945,
+      64,
+      21,
+      214
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      11,
+      0
+    ],
+    [
+      0,
+      6,
+      0,
+      3,
+      11,
+      0,
+      2432,
+      0
+    ],
+    [
+      4,
+      1481,
+      1,
+      0,
+      0,
+      0,
+      0,
+      240
+    ],
+    [
+      22,
+      360,
+      0,
+      17,
+      0,
+      42,
+      9,
+      0
+    ],
+    [
+      0,
+      551,
+      4,
+      0,
+      4,
+      0,
+      3,
+      128
+    ],
+    [
+      17,
+      0,
+      27,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0
+    ]
+  ],
+  "training_hits": [
+    [
+      0,
+      33,
+      0,
+      0,
+      174,
+      4,
+      1,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      83,
+      0
+    ],
+    [
+      2,
+      49,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9
+    ],
+    [
+      8,
+      9,
+      0,
+      3,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      18,
+      1,
+      0,
+      2,
+      0,
+      0,
+      3
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "early_ids": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    284,
+    198,
+    257
+  ],
+  "current_ids": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    284,
+    198,
+    257
+  ],
+  "base_class_mass_by_column": [
+    0.3279808273362809,
+    0.03348378303955715,
+    0.07829004503055784,
+    0.08329045870041048,
+    0.15249605932401233,
+    0.06895989006157514,
+    0.04991500265485962,
+    0.04086741508184539
+  ],
+  "exact_normalizations": 240,
+  "global_bytes": 3112,
+  "charged_bytes": {
+    "global": 3112,
+    "joint": 4096,
+    "raw_cap": 4095,
+    "current/8": 3148,
+    "learned/8": 3148,
+    "independent/8": 3260,
+    "current/64": 3148,
+    "learned/64": 3148,
+    "independent/64": 3260,
+    "current/512": 3148,
+    "learned/512": 3148,
+    "independent/512": 3260
+  },
+  "alpha_selection": {
+    "current": "current/512",
+    "learned": "learned/512",
+    "independent": "independent/512"
+  },
+  "overall_selection": "global",
+  "installations": {
+    "current/8": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c600010172530309690a8521222f960eb108a606"
+    },
+    "learned/8": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c600010172530309690a8521222f960eb108a606"
+    },
+    "independent/8": {
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_hex": "0108010b0006010d001e0122011c01c6000101f7531d0c0b145315122f2f105a0cd603f75392080b1453150a27b10f6105760af753e6040b14820fe91da711c008760aa4627808d11153150a27a711c70ca109a85a72060b148b250a27110d0306760af7535e08b2225315b144a7114b094306d4439208950453150a27a711c70c760af7533c060b1453150a27a711390a760a"
+    },
+    "current/64": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c6000101b753010907106319b12e970fc808fb06"
+    },
+    "learned/64": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c6000101b753010907106319b12e970fc808fb06"
+    },
+    "independent/64": {
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_hex": "0108010b0006010d001e0122011c01c6000101f753da0b0b1453159f2ed410a20c2c05f75392080b1453150a276211e70a760af753d6070b145e14ba24a711d708760a8e567908bc1353150a27a711c70cc8094c56ba060b14541a0a277d0f340b760af7536208a1165315462ca711350c7d07fc4e9208180e53150a27a711c70c760af75330080b1453150a27a711640c760a"
+    },
+    "current/512": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c6000101ea53f3085513f7155d2c151161096808"
+    },
+    "learned/512": {
+      "labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "packet_hex": "0101010b0006010d001e0122011c01c6000101ea53f3085513f7155d2c151161096808"
+    },
+    "independent/512": {
+      "labels": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "packet_hex": "0108010b0006010d001e0122011c01c6000101f753a30a0b1453154a2c7811c10c7008f75392080b1453150a279f11820c760af75379080b143315b526a7117109760a4e547f08011453150a27a711c70c300a5754ad070b1417160a273d118f0c760af753770862145315bb27a711b40c9209335392080a1353150a27a711c70c760af75386080b1453150a27a711bb0c760a"
+    }
+  },
+  "selection": {
+    "first_target": 7307264,
+    "eligible": 4061,
+    "withheld": 86,
+    "models": {
+      "global": {
+        "nll": 6.9324122961,
+        "priced": 6.9329265827,
+        "eligible_nll": 8.2543634385,
+        "withheld_nll": 8.5453390712,
+        "first4096_nll": 7.5566435663
+      },
+      "joint": {
+        "nll": 6.9316029081,
+        "priced": 6.9322798096,
+        "eligible_nll": 8.261739789,
+        "withheld_nll": 8.5574894163,
+        "first4096_nll": 7.5612605899
+      },
+      "raw_cap": {
+        "nll": 6.9404639907,
+        "priced": 6.941140727,
+        "eligible_nll": 8.2586850162,
+        "withheld_nll": 8.5712001485,
+        "first4096_nll": 7.5553216256
+      },
+      "current/8": {
+        "nll": 6.9324473705,
+        "priced": 6.9329676063,
+        "eligible_nll": 8.2554954913,
+        "withheld_nll": 8.5620744488,
+        "first4096_nll": 7.556839813
+      },
+      "learned/8": {
+        "nll": 6.9324473705,
+        "priced": 6.9329676063,
+        "eligible_nll": 8.2554954913,
+        "withheld_nll": 8.5620744488,
+        "first4096_nll": 7.556839813
+      },
+      "independent/8": {
+        "nll": 6.932453449,
+        "priced": 6.9329921939,
+        "eligible_nll": 8.2556916806,
+        "withheld_nll": 8.5453405868,
+        "first4096_nll": 7.5567338533
+      },
+      "current/64": {
+        "nll": 6.9324399386,
+        "priced": 6.9329601744,
+        "eligible_nll": 8.2552556208,
+        "withheld_nll": 8.5597851118,
+        "first4096_nll": 7.556829096
+      },
+      "learned/64": {
+        "nll": 6.9324399386,
+        "priced": 6.9329601744,
+        "eligible_nll": 8.2552556208,
+        "withheld_nll": 8.5597851118,
+        "first4096_nll": 7.556829096
+      },
+      "independent/64": {
+        "nll": 6.9324273257,
+        "priced": 6.9329660705,
+        "eligible_nll": 8.2548485283,
+        "withheld_nll": 8.5453405868,
+        "first4096_nll": 7.5566850871
+      },
+      "current/512": {
+        "nll": 6.9324212921,
+        "priced": 6.9329415279,
+        "eligible_nll": 8.2546537902,
+        "withheld_nll": 8.5560346133,
+        "first4096_nll": 7.5567760872
+      },
+      "learned/512": {
+        "nll": 6.9324212921,
+        "priced": 6.9329415279,
+        "eligible_nll": 8.2546537902,
+        "withheld_nll": 8.5560346133,
+        "first4096_nll": 7.5567760872
+      },
+      "independent/512": {
+        "nll": 6.9324022366,
+        "priced": 6.9329409814,
+        "eligible_nll": 8.2540387576,
+        "withheld_nll": 8.5453405868,
+        "first4096_nll": 7.5566702675
+      }
+    }
+  },
+  "blocks": [
+    {
+      "first_target": 7438336,
+      "eligible": 3961,
+      "withheld": 60,
+      "models": {
+        "global": {
+          "nll": 6.9979321344,
+          "priced": 6.998446421,
+          "eligible_nll": 8.3177963438,
+          "withheld_nll": 8.659999507,
+          "first4096_nll": 6.8987658546
+        },
+        "joint": {
+          "nll": 6.9994495968,
+          "priced": 7.0001264984,
+          "eligible_nll": 8.3301443557,
+          "withheld_nll": 8.6759198957,
+          "first4096_nll": 6.8998310804
+        },
+        "raw_cap": {
+          "nll": 7.0031341279,
+          "priced": 7.0038108641,
+          "eligible_nll": 8.3164557779,
+          "withheld_nll": 8.6438210878,
+          "first4096_nll": 6.9027873111
+        },
+        "current/8": {
+          "nll": 6.997862341,
+          "priced": 6.9983825768,
+          "eligible_nll": 8.3154868342,
+          "withheld_nll": 8.6535107771,
+          "first4096_nll": 6.8987793046
+        },
+        "learned/8": {
+          "nll": 6.997862341,
+          "priced": 6.9983825768,
+          "eligible_nll": 8.3154868342,
+          "withheld_nll": 8.6535107771,
+          "first4096_nll": 6.8987793046
+        },
+        "independent/8": {
+          "nll": 6.9978713751,
+          "priced": 6.99841012,
+          "eligible_nll": 8.3157857782,
+          "withheld_nll": 8.659997145,
+          "first4096_nll": 6.898637487
+        },
+        "current/64": {
+          "nll": 6.9978619774,
+          "priced": 6.9983822133,
+          "eligible_nll": 8.3154748035,
+          "withheld_nll": 8.6514489723,
+          "first4096_nll": 6.8987697284
+        },
+        "learned/64": {
+          "nll": 6.9978619774,
+          "priced": 6.9983822133,
+          "eligible_nll": 8.3154748035,
+          "withheld_nll": 8.6514489723,
+          "first4096_nll": 6.8987697284
+        },
+        "independent/64": {
+          "nll": 6.9978743298,
+          "priced": 6.9984130747,
+          "eligible_nll": 8.3158835524,
+          "withheld_nll": 8.659997145,
+          "first4096_nll": 6.8986532786
+        },
+        "current/512": {
+          "nll": 6.9978694957,
+          "priced": 6.9983897316,
+          "eligible_nll": 8.3157235894,
+          "withheld_nll": 8.6543441615,
+          "first4096_nll": 6.898757539
+        },
+        "learned/512": {
+          "nll": 6.9978694957,
+          "priced": 6.9983897316,
+          "eligible_nll": 8.3157235894,
+          "withheld_nll": 8.6543441615,
+          "first4096_nll": 6.898757539
+        },
+        "independent/512": {
+          "nll": 6.997879179,
+          "priced": 6.9984179238,
+          "eligible_nll": 8.3160440133,
+          "withheld_nll": 8.659997145,
+          "first4096_nll": 6.8986897288
+        }
+      }
+    },
+    {
+      "first_target": 7569408,
+      "eligible": 4176,
+      "withheld": 90,
+      "models": {
+        "global": {
+          "nll": 6.9928804131,
+          "priced": 6.9933946996,
+          "eligible_nll": 8.5208689213,
+          "withheld_nll": 9.2279732516,
+          "first4096_nll": 6.9439016732
+        },
+        "joint": {
+          "nll": 6.9927748424,
+          "priced": 6.993451744,
+          "eligible_nll": 8.5259917611,
+          "withheld_nll": 9.2355596712,
+          "first4096_nll": 6.9436692313
+        },
+        "raw_cap": {
+          "nll": 7.0021993684,
+          "priced": 7.0028761046,
+          "eligible_nll": 8.5260739622,
+          "withheld_nll": 9.2349951955,
+          "first4096_nll": 6.9483545024
+        },
+        "current/8": {
+          "nll": 6.9928310821,
+          "priced": 6.993351318,
+          "eligible_nll": 8.5193205722,
+          "withheld_nll": 9.25520542,
+          "first4096_nll": 6.9436897179
+        },
+        "learned/8": {
+          "nll": 6.9928310821,
+          "priced": 6.993351318,
+          "eligible_nll": 8.5193205722,
+          "withheld_nll": 9.25520542,
+          "first4096_nll": 6.9436897179
+        },
+        "independent/8": {
+          "nll": 6.9928038515,
+          "priced": 6.9933425963,
+          "eligible_nll": 8.5184658843,
+          "withheld_nll": 9.2279778096,
+          "first4096_nll": 6.9435573382
+        },
+        "current/64": {
+          "nll": 6.9928259545,
+          "priced": 6.9933461903,
+          "eligible_nll": 8.5191596314,
+          "withheld_nll": 9.2475654377,
+          "first4096_nll": 6.943689958
+        },
+        "learned/64": {
+          "nll": 6.9928259545,
+          "priced": 6.9933461903,
+          "eligible_nll": 8.5191596314,
+          "withheld_nll": 9.2475654377,
+          "first4096_nll": 6.943689958
+        },
+        "independent/64": {
+          "nll": 6.9928071214,
+          "priced": 6.9933458663,
+          "eligible_nll": 8.5185685177,
+          "withheld_nll": 9.2279778096,
+          "first4096_nll": 6.9436069335
+        },
+        "current/512": {
+          "nll": 6.9928289312,
+          "priced": 6.993349167,
+          "eligible_nll": 8.5192530602,
+          "withheld_nll": 9.2399341581,
+          "first4096_nll": 6.9437356899
+        },
+        "learned/512": {
+          "nll": 6.9928289312,
+          "priced": 6.993349167,
+          "eligible_nll": 8.5192530602,
+          "withheld_nll": 9.2399341581,
+          "first4096_nll": 6.9437356899
+        },
+        "independent/512": {
+          "nll": 6.9928195699,
+          "priced": 6.9933583147,
+          "eligible_nll": 8.5189592371,
+          "withheld_nll": 9.2279778096,
+          "first4096_nll": 6.9436951328
+        }
+      }
+    }
+  ],
+  "mean": {
+    "global": {
+      "nll": 6.9954062737,
+      "priced": 6.9959205603,
+      "eligible_nll": 8.4220154766,
+      "withheld_nll": 9.0007837538,
+      "first4096_nll": 6.9213337639
+    },
+    "joint": {
+      "nll": 6.9961122196,
+      "priced": 6.9967891212,
+      "eligible_nll": 8.4306554488,
+      "withheld_nll": 9.011703761,
+      "first4096_nll": 6.9217501559
+    },
+    "raw_cap": {
+      "nll": 7.0026667481,
+      "priced": 7.0033434844,
+      "eligible_nll": 8.4240341898,
+      "withheld_nll": 8.9985255524,
+      "first4096_nll": 6.9255709068
+    },
+    "current/512": {
+      "nll": 6.9953492134,
+      "priced": 6.9958694493,
+      "eligible_nll": 8.420177205,
+      "withheld_nll": 9.0056981595,
+      "first4096_nll": 6.9212466145
+    },
+    "learned/512": {
+      "nll": 6.9953492134,
+      "priced": 6.9958694493,
+      "eligible_nll": 8.420177205,
+      "withheld_nll": 9.0056981595,
+      "first4096_nll": 6.9212466145
+    },
+    "independent/512": {
+      "nll": 6.9953493744,
+      "priced": 6.9958881193,
+      "eligible_nll": 8.4201823904,
+      "withheld_nll": 9.0007855438,
+      "first4096_nll": 6.9211924308
+    }
+  }
+}
