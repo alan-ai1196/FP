@@ -54,6 +54,21 @@ Publish one completed-paper commit at a time, with a note under `literature/note
 
 Maintain the original OpenAI corpus queue and its separately indexed revisions. OpenAI and Anthropic have discovery priority, followed by reliable reviewed work, independently supported AI proofs and frontier preprints. Publication priority does not establish correctness. Add direct PISF foundations and current work without restricting discovery to mathematics headlines or title keywords.
 
+## Relevance-first reading and commit granularity (user correction, 2026-11-23)
+
+This newer user instruction **overrides the blanket requirement to fully read every indexed paper in catalog order** in this file, `literature/INDEX.md`, previous prompts and existing continuation guidance. The OpenAI 722-manuscript corpus and the wider indexed library are a discovery pool, **not a sequential full-reading obligation**. The aim is valuable, source-grounded literature knowledge for Prediction-Induced State Formation, including strong negative and unrelated findings, not maximizing page counts or full-read badges. Do not force an FP connection to justify a paper's selection or conclusions.
+
+Choose reading depth deliberately:
+- **Screened:** metadata, abstract and, as useful, introduction, conclusions and principal results. Record what was inspected. Do not claim a full read. Low-signal papers can stay indexed at this level.
+- **Scoped reading:** inspect the specific theorem, method, experiment, proof dependency or related section required by an Astra request or emerging research question. Record the exact coverage and limitations. Do not upgrade to fully read.
+- **Full reading:** reserve complete body, formulas, proofs, figures, appendices and bibliography for especially promising, foundational, contradictory or explicitly requested papers. Keep notes proportional to the research value and mathematical complexity, not to a rigid length target. Faithful source analysis comes before any optional FP transfer claim.
+
+Prioritize, in order: mandatory Astra literature requests (existing FIFO rule unchanged), directly relevant work and plausible falsifiers for active research questions in `research/frontier/NEXT.md`, foundational references that sharpen these questions, then broader exploratory discovery. Institution or publisher prestige is a discovery signal, not a reason to spend hours fully reading an unrelated manuscript. There is no requirement to finish OAI-1006-024 before selecting a better paper, unless it has already been promised as a full-read request. Review selection periodically as the research changes. Preserve all completed notes, old records, editions and source provenance.
+
+**Git rule:** One completed selected full paper = one literature note/index/status commit, immediately pushed. Do not make routine mid-paper, per-section or repeated checkpoint commits, and do not repeatedly update `COORDINATION.md`, `READING_PROGRESS.md` and `index.csv` while a paper remains unfinished. Keep interim notes local/uncommitted where possible. A genuinely interrupted paper stays partial and must not be counted as completed. If an execution environment cannot preserve uncommitted progress across sessions, accept that tradeoff or finish a shorter unit rather than silently creating more checkpoint commits. Completed Astra-request responses and consolidated discovery updates may still have their own result commits, but should not create separate partial-paper commits.
+
+When an Astra request interrupts a reading, the existing immediate-preemption rule still applies. Record the boundary locally if possible and proceed with the request. Do not let the lack of a partial-paper push delay an Astra request. Existing reading status labels must always state the actual coverage, never infer full reading from screening.
+
 ## Independent literature research
 
 The user’s corrective instruction of November 23, 2026 overrides earlier literature-related guidance. Each paper is studied for its original question, definitions, assumptions, methods, proof or experiments, results and limits. Lack of relevance to FP, negative evidence and conflict with FP hypotheses are acceptable outcomes. No note needs an FP connection.
