@@ -815,3 +815,40 @@ python -B research/frontier/sensing_r4.py
 python -B research/frontier/measure_sensing.py
 lean research/frontier/SensorPrice.lean
 ~~~
+
+## Can the learner discover a sensor's response classes?
+
+The registered learner received neither the XOR operation nor the number of row classes. For each delayed task it selected among 2,795 partitions of the eight early names into at most four classes. It fitted arbitrary target probabilities after either emitted bit by integrating conditional Bernoulli likelihood. A second learner shared a parameter for agreement on zero and one. Both saw only the sensor selected in the log and its eventual target. Four fresh seeds supplied permuted names. Across the three environments the same seed fixed the inputs, random logging actions, targets and noise draws. The three laws respectively used XOR, sometimes ignored the early name, or used the column to choose between two different bits of the early name. In each case we withheld the same 16 of the 64 pairs. [Registration before data](https://github.com/alan-ai1196/FP/blob/28e5a3d/research/frontier/NEXT.md) · [Implementation](response_classes.py) · [Per-seed fits, scores, ambiguity witnesses and all budgets](response_classes_result.json)
+
+**Empirical result.** At 24,576 episodes the general learner and the symmetric learner each recovered the actual row partition in all 36 task/environment fits. There were two classes per task for XOR and the switch, and four for the address. Forcing an equal choice of sensors tests predictions on the same distribution of observations. Full-history raw-pair readout gave the following mean target NLL in nats on the 16 withheld pairs and the indicated payoffs there. The remaining variation in NLL measures actual probability calibration after route decisions have saturated.
+
+| Response law | Fitted model | Forced-sensor NLL | Cheap payoff | Expensive payoff |
+|---|---|---:|---:|---:|
+| XOR | Separate response to each emitted bit | 0.542231 | 0.750000 | 0.593750 |
+| XOR | Shared agreement parameter | 0.538453 | 0.750000 | 0.593750 |
+| XOR | Supplied XOR family | **0.534959** | 0.750000 | 0.593750 |
+| Column switch | Separate response to each emitted bit | 0.541824 | 0.750000 | 0.593750 |
+| Column switch | Shared agreement parameter | **0.538133** | 0.750000 | 0.593750 |
+| Column switch | Supplied XOR family | 0.640616 | 0.601562 | 0.500000 |
+| Column address | Separate response to each emitted bit | 0.573503 | 0.710938 | 0.577637 |
+| Column address | Shared agreement parameter | **0.566582** | 0.710938 | 0.578125 |
+| Column address | Supplied XOR family | 0.652417 | 0.580078 | 0.500000 |
+| Each law | Independent raw cells | 0.693147 | 0.500000 | 0.500000 |
+
+At 384 episodes the free and symmetric learners recovered zero of 36 partitions each. At 3,072 episodes the counts were 19 of 36 and 25 of 36. On the four-class address at that budget the general learner scored 0.689065 withheld NLL, the symmetric learner 0.658111 and the supplied XOR learner 0.658416. Giving the true row partition as a diagnostic improved the general learner to 0.636481. At the largest budget the free learner matched that diagnostic in all three laws. Each final log contained 16,327 to 16,386 actual purchases. The pass-only control had payoff $1/2$ everywhere. The fitted models still received the family of blockwise-constant response functions and the uniform logging design.
+
+**What the data determined.** Population enumeration gives different answers to recovering the fit and proving its extrapolation. Across four seeds and three tasks per law there are 192 withheld task/pair cells. Under the registered upper bound of four classes, **zero of 192** are identified for XOR and zero for the column switch. Every completion can be changed at any one such cell by spending a spare state. Nevertheless the unique compatible minimum-occupied-dimension partition in each instance fully determines all 192 answers. With the stronger true upper bound of two, agreement on every exposed cell also determines all of them. For the column address, the four-class partition was unique in all 12 task fits, yet **only 162 of 192** missing answers were forced. The other 30 occurred at class/column combinations with no exposed member. At the cheap price the 30 passes account exactly for the shortfall from oracle withheld payoff, $(30/192)(0.75-0.5)=0.0390625$. This is a finite example where class identities are recovered perfectly and some of their responses are unlearnable from that log. [Proofs, uncertainty and active acquisition lower bound](OBSTRUCTIONS.md#when-a-spare-response-class-can-reverse-a-prediction)
+
+**Carried state, stored tables and execution.** At cheap price, using separate emitted-bit readouts and one bit at each arrival gave full-population payoffs 0.625000, 0.640625 and 0.609375 on XOR, switch and address. Retaining the three-bit first name before making the one-bit final state gave 0.656250, 0.656250 and 0.654785. The corresponding predictive packets were 33 and 38 bytes. A raw-pair controller needs 3 then 6 carried bits, 52 bytes for its policy and 820 with both emitted-bit forecasts. For a matched post-fit realization, the same raw pair can dispatch through the learned task's row class and later column. Three task offsets and the 24 packed two-bit row memberships cost nine bytes. For two classes per task this gave 25 policy bytes and 217 with forecasts. For four classes it gave 37 and 421. It uses the same carried state and produces the identical finite-precision outputs. The corresponding single-agreement packets with forecasts occupy 121 and 229 bytes. Persisting independent returned Q16 values across a later random emission takes 32 bits, or the controller can retain the query index and fetch the chosen value after the emission.
+
+The complete Python statistical replay, including scoring, compaction and population identification, took 4.068 seconds, with sampled process peak working set 65,900,544 bytes. Each of the three independent per-task searches computes subset sufficient statistics and scores 2,795 partitions. The common native C deployment verified 110,592 decisions and 156,672 Q16 predictions against the fitted high-level models across the large-budget installations. Warm CPU medians for 1,048,576 two-forecast decisions were 3.330 ms for the raw-pair packet, 4.050 ms for the two-class packet and 4.061 ms for the four-class packet. Each case read 3,145,728 input bytes and wrote 5,242,880 output bytes. The smaller tables saved persistent storage and added a dependent lookup on this CPU. These are nine-sample batch measurements. [Native checks and timing driver](measure_sensing.py) · [Individual times](response_classes_timing.json) · [Packed kernel](sensing_score.c)
+
+On seed 3011 the pinned R4 arithmetic replayed both separate conditional heads for each small controller, all laws and both prices, in 24 scalar branch circuits and 4,608 context/observed-bit cases. The host chooses the relevant branch after seeing the purchased bit. This verifies the derived positive graph after shared acquisition. The general spare-state construction was checked in Lean 4.34.1 with propositional extensionality as its printed dependency. A separate reference exhaustively compares 19,683 partial binary matrices and 118,098 candidate missing laws with all binary completions of three rows and three columns. These results concern finite controlled prediction. The project's natural-text scores remain a separate test. [R4 replay](sensing_r4.py) · [Lean proof](ResponseProfiles.lean) · [Independent enumeration](audit_response_classes.py)
+
+~~~powershell
+python -B research/frontier/response_classes.py --check research/frontier/response_classes_result.json
+python -B research/frontier/audit_response_classes.py
+python -B research/frontier/measure_sensing.py --response-classes
+python -B research/frontier/sensing_r4.py --response-classes
+lean research/frontier/ResponseProfiles.lean
+~~~

@@ -1,5 +1,6 @@
 """Replay a learned sensor choice in the exact Foundation R4 evaluator."""
 
+import argparse
 import json
 import subprocess
 import sys
@@ -124,7 +125,38 @@ def check(info):
     return len(nodes), len(specs), len(slots)
 
 
-def run():
+def response_class_check():
+    import controlled_sensing as cs
+    import response_classes as rc
+
+    programs = contexts = 0
+    for family in rc.LAWS:
+        seed = rc.SEEDS[0]
+        truth = rc.environment(seed, family)
+        count, hits = rc.observations(cs.episodes(seed, truth), cs.BUDGETS[-1])
+        pred, _ = rc.fit(count, hits)
+        for cost in cs.COSTS:
+            arms = cs.control_tables(pred.mean(axis=4), cost)
+            for arm in ("one_then_one", "three_then_one"):
+                m = arms[arm]
+                _, selected, _ = rc.installation(pred, m)
+                for z in range(2):
+                    info = {
+                        "action_hex": m.packet.hex(),
+                        "q16_hex": selected[:, :, z].tobytes().hex(),
+                    }
+                    check(info)
+                    programs += 1
+                    contexts += 192
+    print(
+        "scalar R4 response branches",
+        programs,
+        "context and observed-bit checks",
+        contexts,
+    )
+
+
+def run(response_classes=False):
     folder = "src/reference_compiler"
     here = Path(__file__).resolve().parent
     archive = subprocess.check_output(
@@ -137,6 +169,9 @@ def run():
         with ZipFile(BytesIO(archive)) as pinned:
             pinned.extractall(tmp)
         sys.path.insert(0, str(Path(tmp) / folder))
+        if response_classes:
+            response_class_check()
+            return
         for arm in ("one_then_one", "three_then_one"):
             sizes = [
                 check(models[f"{seed}/{name}/{c}/{arm}"])
@@ -158,4 +193,6 @@ def run():
 if __name__ == "__main__":
     if not __debug__:
         raise RuntimeError("the comparison requires assertions")
-    run()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--response-classes", action="store_true")
+    run(parser.parse_args().response_classes)
