@@ -919,3 +919,28 @@ python -B research/frontier/address_anchors.py --partition-posterior --check res
 python -B research/frontier/measure_nested_class.py --partition-posterior --gpu
 lean research/frontier/PartitionUpdate.lean
 ~~~
+
+## Checking the memory needed for future predictions
+
+**On the same fair mixture of quarter- and three-quarter-bias coins, the best four-state homogeneous predictor spent 2,812.091 nats at horizon 65,536. A 25-state stopped counter spent 0.083874 nats with five dyadic outputs.** The relevant excess is the expected *sum* of next-bit losses relative to the unrestricted Bayesian predictor, in nats per complete stream. A shared half-count predictor with no knowledge of either bias spent 4.577821 nats. The finite experiments use known laws to integrate each predictor's performance. Training-data acquisition is a separate comparison. [Question fixed before the calculation](https://github.com/alan-ai1196/FP/blob/02832d5/research/frontier/NEXT.md) · [Proof and hardware assumptions](FOUNDATION.md#how-much-memory-does-continued-prediction-require-for-two-noisy-coins) · [Full calculations](coin_memory_result.json)
+
+| Predictor | 16 draws | 64 draws | 1,024 draws | 65,536 draws |
+|---|---:|---:|---:|---:|
+| Best 1-state | 1.442009 | 7.678849 | 133.258378 | 8,572.204440 |
+| Best 2-state | 0.996617 | 5.720306 | 100.980209 | 6,502.383043 |
+| Best 3-state | 0.560305 | 3.760325 | 68.577504 | 4,424.267394 |
+| Best 4-state | 0.318132 | 2.356580 | 43.563480 | 2,812.090994 |
+| Half-count per observed arm | 0.455215 | 1.111103 | 2.498325 | 4.577821 |
+| 25-state counter, exact interior releases | <0.000001 | 0.000016 | 0.001007 | 0.067687 |
+| 25-state counter, five dyadic releases | 0.014580 | 0.016202 | 0.017194 | 0.083874 |
+
+The finite search covers every labeled deterministic binary update graph rooted at state zero for $S=1,2,3,4$, respectively 1, 16, 729 and 65,536 graphs. For each source row form its transition matrix $M_z$. The initial row of $\sum_{t=0}^{T-1}M_z^t$ gives its expected state visits. For each graph the optimal state readout is the source bias averaged under those visits and the prior. Subtract the full learner's mutual information to obtain expected transcript KL. Every searched graph obeyed the finite-horizon lower bound at all four horizons. The summations and optimization over outputs used binary64 arithmetic. Exhaustive graph coverage and exact rational arithmetic are distinct checks. Direct rational path likelihoods for all 1,022 paths of lengths 1–9 independently reproduced the passive and stopped-counter KLs within $10^{-12}$. No table was fitted to sampled outcomes in this comparison.
+
+For the passive mixture, replacing both coins by their common prior forecast gives first-draw KL zero and second-draw KL 0.031584 nats. With prior weight 0.001 on the three-quarter coin, its second-draw price drops to $8.84\,10^{-7}$ and its price at 1,024 draws is still 0.553900. With equal means or a zero-weight second row the price is exactly zero. For the controlled two-arm case an independent dynamic program and exact path likelihoods agreed on the best three-decision value over all 128 deterministic policies for each proposed replacement. Fraction arithmetic also verified the exact worst half-count likelihood ratio for all 2,145 success totals through length 64 and the worst allocation of trials among three arms through total length 32. [Controlled price and sharp rates](INTELLIGENCE_OBJECTIVE.md#how-much-can-an-adaptive-experiment-expose-a-forgotten-hypothesis) · [Half-count residual bound](FOUNDATION.md#a-shared-residual-for-discarded-bernoulli-hypotheses) · [Reproducible audit](coin_memory.py)
+
+**Physical replay.** The native CPU counter stored one signed byte per stream and a threshold of 12. It used Q3 probabilities represented exactly in the common binary64 output array. The population-selected four-state predictor used eight transition bytes, four binary64 probabilities and one live byte per stream. The generic half-count rule used two unsigned 32-bit counts per stream and a binary64 division. Each processed 1,024 fresh streams of 1,024 bits, with equal numbers from the two source biases. All 3,145,728 issued probabilities agreed with independent reference calculations. Splitting after draw 37 and resuming from the stored state also reproduced every probability and each final state. On the local CPU their nine warm median times were 0.919 ms for the counter, 1.343 ms for the graph and 0.992 ms for half-count. Each benchmark read 1,048,576 input bytes and wrote 8,388,608 output bytes. Timings include the compiled forward pass, while data generation, allocation, state reset and reference checking are outside the timed region. The C half-count readout uses floating-point division and its exact rational coding theorem presumes counters have not overflowed. [C kernels](coin_predict.c) · [Reference and restart verification](measure_coin_memory.py) · [Individual timings and binary footprint](coin_memory_timing.json)
+
+~~~powershell
+python -B research/frontier/coin_memory.py --check research/frontier/coin_memory_result.json
+python -B research/frontier/measure_coin_memory.py
+~~~

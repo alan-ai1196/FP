@@ -1,0 +1,56 @@
+{
+  "streams": 1024,
+  "steps": 1024,
+  "restart_after": 37,
+  "seed": 12427,
+  "input_bytes": 1048576,
+  "output_bytes_per_arm": 8388608,
+  "counter_limit": 12,
+  "counter_release": "Q3 exactly represented in binary64",
+  "installed_graph_bytes": 40,
+  "live_bytes_per_stream": {
+    "counter": 1,
+    "graph": 1,
+    "half_count": 8
+  },
+  "binary": {
+    "file_bytes": 105472,
+    ".text": 54288,
+    ".rdata": 39100
+  },
+  "warm_cpu_ms": {
+    "counter": [
+      0.9203,
+      0.9137,
+      0.954,
+      0.9172,
+      0.9202,
+      0.9174,
+      0.9185,
+      0.9127,
+      0.9524
+    ],
+    "graph": [
+      1.3691,
+      1.3484,
+      1.3553,
+      1.3473,
+      1.3431,
+      1.3381,
+      1.3347,
+      1.3369,
+      1.3299
+    ],
+    "half_count": [
+      0.9919,
+      0.9875,
+      1.0081,
+      1.0153,
+      0.9958,
+      0.9871,
+      0.9823,
+      0.9841,
+      1.0175
+    ]
+  }
+}
