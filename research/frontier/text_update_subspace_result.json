@@ -1,0 +1,535 @@
+{
+  "registration": "46fdab6",
+  "prefix_sha256": "56fbe061c9c4de29f4cc3da2bd57b012ca3d5e5cf947195c911b3d988a293168",
+  "first_transfer_triple": 5472256,
+  "discovery_group_opportunities": [
+    7921,
+    5954
+  ],
+  "transfer_group_opportunities": [
+    [
+      3641,
+      3347
+    ],
+    [
+      3459,
+      3328
+    ],
+    [
+      3681,
+      3292
+    ],
+    [
+      3670,
+      3119
+    ]
+  ],
+  "basis_additions_opportunity_and_group": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      6,
+      1
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      11,
+      0
+    ],
+    [
+      13,
+      0
+    ]
+  ],
+  "basis": {
+    "8": {
+      "rank": 7,
+      "purchases_by_group": [
+        5,
+        6
+      ],
+      "shared_payload_bytes": 1290,
+      "packet_sha256": "5b5ba3292e5cb5fda2e1b3b674653b18c914f77fb37fc0c0d99dd1d4f3b5e7b7",
+      "maximum_orthogonality_error": 2.220446049250313e-16
+    },
+    "64": {
+      "rank": 9,
+      "purchases_by_group": [
+        43,
+        36
+      ],
+      "shared_payload_bytes": 1658,
+      "packet_sha256": "4428a1a72aa0ad69d4d5b5ada7458dc7b76cf827f8510a4bf9222890113f85d8",
+      "maximum_orthogonality_error": 4.440892098500626e-16
+    },
+    "512": {
+      "rank": 9,
+      "purchases_by_group": [
+        304,
+        320
+      ],
+      "shared_payload_bytes": 1658,
+      "packet_sha256": "4428a1a72aa0ad69d4d5b5ada7458dc7b76cf827f8510a4bf9222890113f85d8",
+      "maximum_orthogonality_error": 4.440892098500626e-16
+    }
+  },
+  "persistent_bytes_at_simultaneous_group_beliefs": {
+    "1": {
+      "posterior": 192,
+      "ratios": 184,
+      "semantic": 72,
+      "learned": 1730
+    },
+    "8": {
+      "posterior": 1536,
+      "ratios": 1472,
+      "semantic": 576,
+      "learned": 2234
+    },
+    "16": {
+      "posterior": 3072,
+      "ratios": 2944,
+      "semantic": 1152,
+      "learned": 2810
+    },
+    "64": {
+      "posterior": 12288,
+      "ratios": 11776,
+      "semantic": 4608,
+      "learned": 6266
+    }
+  },
+  "aggregate": {
+    "posterior": {
+      "opportunities": 16384,
+      "purchases": 9963,
+      "buy_and_feedback_differences": 0,
+      "first_stream_with_different_decision": null,
+      "max_probability_error": 0.0,
+      "max_error_through_first_different_decision": 0.0,
+      "maximum_discarded_increment_norm": 0.0,
+      "mean_realized_reward": 0.1495190157
+    },
+    "ratios": {
+      "opportunities": 16384,
+      "purchases": 9963,
+      "buy_and_feedback_differences": 0,
+      "first_stream_with_different_decision": null,
+      "max_probability_error": 2.053913e-15,
+      "max_error_through_first_different_decision": 2.053913e-15,
+      "maximum_discarded_increment_norm": 0.0,
+      "mean_realized_reward": 0.1495190157
+    },
+    "semantic": {
+      "opportunities": 16384,
+      "purchases": 9963,
+      "buy_and_feedback_differences": 0,
+      "first_stream_with_different_decision": null,
+      "max_probability_error": 2.164935e-15,
+      "max_error_through_first_different_decision": 2.164935e-15,
+      "maximum_discarded_increment_norm": 0.0,
+      "mean_realized_reward": 0.1495190157
+    },
+    "learned_8": {
+      "opportunities": 16384,
+      "purchases": 10167,
+      "buy_and_feedback_differences": 490,
+      "first_stream_with_different_decision": [
+        0,
+        0,
+        "pooled",
+        25
+      ],
+      "max_probability_error": 0.8567392,
+      "max_error_through_first_different_decision": 0.6217713,
+      "maximum_discarded_increment_norm": 5.784482,
+      "mean_realized_reward": 0.1453097468
+    },
+    "learned_64": {
+      "opportunities": 16384,
+      "purchases": 9963,
+      "buy_and_feedback_differences": 0,
+      "first_stream_with_different_decision": null,
+      "max_probability_error": 2.220446e-15,
+      "max_error_through_first_different_decision": 2.220446e-15,
+      "maximum_discarded_increment_norm": 5.823292e-15,
+      "mean_realized_reward": 0.1495190157
+    },
+    "learned_512": {
+      "opportunities": 16384,
+      "purchases": 9963,
+      "buy_and_feedback_differences": 0,
+      "first_stream_with_different_decision": null,
+      "max_probability_error": 2.220446e-15,
+      "max_error_through_first_different_decision": 2.220446e-15,
+      "maximum_discarded_increment_norm": 5.823292e-15,
+      "mean_realized_reward": 0.1495190157
+    },
+    "first_four": {
+      "opportunities": 16384,
+      "purchases": 10540,
+      "buy_and_feedback_differences": 1545,
+      "first_stream_with_different_decision": [
+        0,
+        0,
+        "pooled",
+        11
+      ],
+      "max_probability_error": 0.8251621,
+      "max_error_through_first_different_decision": 0.5850216,
+      "maximum_discarded_increment_norm": 7.532688,
+      "mean_realized_reward": 0.1369481831
+    }
+  },
+  "by_word_prior": {
+    "pooled": {
+      "posterior": {
+        "opportunities": 4096,
+        "purchases": 2488,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 0.0,
+        "max_error_through_first_different_decision": 0.0,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1493933941
+      },
+      "ratios": {
+        "opportunities": 4096,
+        "purchases": 2488,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.665335e-15,
+        "max_error_through_first_different_decision": 1.665335e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1493933941
+      },
+      "semantic": {
+        "opportunities": 4096,
+        "purchases": 2488,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.054712e-15,
+        "max_error_through_first_different_decision": 1.054712e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1493933941
+      },
+      "learned_8": {
+        "opportunities": 4096,
+        "purchases": 2542,
+        "buy_and_feedback_differences": 116,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "pooled",
+          25
+        ],
+        "max_probability_error": 0.8567392,
+        "max_error_through_first_different_decision": 0.6214845,
+        "maximum_discarded_increment_norm": 5.778,
+        "mean_realized_reward": 0.1452596346
+      },
+      "learned_64": {
+        "opportunities": 4096,
+        "purchases": 2488,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.887379e-15,
+        "max_error_through_first_different_decision": 1.887379e-15,
+        "maximum_discarded_increment_norm": 5.823292e-15,
+        "mean_realized_reward": 0.1493933941
+      },
+      "learned_512": {
+        "opportunities": 4096,
+        "purchases": 2488,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.887379e-15,
+        "max_error_through_first_different_decision": 1.887379e-15,
+        "maximum_discarded_increment_norm": 5.823292e-15,
+        "mean_realized_reward": 0.1493933941
+      },
+      "first_four": {
+        "opportunities": 4096,
+        "purchases": 2634,
+        "buy_and_feedback_differences": 386,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "pooled",
+          11
+        ],
+        "max_probability_error": 0.8251621,
+        "max_error_through_first_different_decision": 0.5815574,
+        "maximum_discarded_increment_norm": 7.383793,
+        "mean_realized_reward": 0.1367512449
+      }
+    },
+    "global": {
+      "posterior": {
+        "opportunities": 4096,
+        "purchases": 2501,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 0.0,
+        "max_error_through_first_different_decision": 0.0,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1489726286
+      },
+      "ratios": {
+        "opportunities": 4096,
+        "purchases": 2501,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 8.881784e-16,
+        "max_error_through_first_different_decision": 8.881784e-16,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1489726286
+      },
+      "semantic": {
+        "opportunities": 4096,
+        "purchases": 2501,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 7.771561e-16,
+        "max_error_through_first_different_decision": 7.771561e-16,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1489726286
+      },
+      "learned_8": {
+        "opportunities": 4096,
+        "purchases": 2548,
+        "buy_and_feedback_differences": 115,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "global",
+          25
+        ],
+        "max_probability_error": 0.8559795,
+        "max_error_through_first_different_decision": 0.6169636,
+        "maximum_discarded_increment_norm": 5.784482,
+        "mean_realized_reward": 0.1455477906
+      },
+      "learned_64": {
+        "opportunities": 4096,
+        "purchases": 2501,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.887379e-15,
+        "max_error_through_first_different_decision": 1.887379e-15,
+        "maximum_discarded_increment_norm": 5.654744e-15,
+        "mean_realized_reward": 0.1489726286
+      },
+      "learned_512": {
+        "opportunities": 4096,
+        "purchases": 2501,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.887379e-15,
+        "max_error_through_first_different_decision": 1.887379e-15,
+        "maximum_discarded_increment_norm": 5.654744e-15,
+        "mean_realized_reward": 0.1489726286
+      },
+      "first_four": {
+        "opportunities": 4096,
+        "purchases": 2640,
+        "buy_and_feedback_differences": 377,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "global",
+          11
+        ],
+        "max_probability_error": 0.8244416,
+        "max_error_through_first_different_decision": 0.5766815,
+        "maximum_discarded_increment_norm": 7.532688,
+        "mean_realized_reward": 0.1366577554
+      }
+    },
+    "rank_one": {
+      "posterior": {
+        "opportunities": 4096,
+        "purchases": 2480,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 0.0,
+        "max_error_through_first_different_decision": 0.0,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1497940317
+      },
+      "ratios": {
+        "opportunities": 4096,
+        "purchases": 2480,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.498801e-15,
+        "max_error_through_first_different_decision": 1.498801e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1497940317
+      },
+      "semantic": {
+        "opportunities": 4096,
+        "purchases": 2480,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 1.720846e-15,
+        "max_error_through_first_different_decision": 1.720846e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1497940317
+      },
+      "learned_8": {
+        "opportunities": 4096,
+        "purchases": 2536,
+        "buy_and_feedback_differences": 124,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "rank_one",
+          25
+        ],
+        "max_probability_error": 0.8545763,
+        "max_error_through_first_different_decision": 0.6217713,
+        "maximum_discarded_increment_norm": 5.779946,
+        "mean_realized_reward": 0.1455141641
+      },
+      "learned_64": {
+        "opportunities": 4096,
+        "purchases": 2480,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.053913e-15,
+        "max_error_through_first_different_decision": 2.053913e-15,
+        "maximum_discarded_increment_norm": 5.58828e-15,
+        "mean_realized_reward": 0.1497940317
+      },
+      "learned_512": {
+        "opportunities": 4096,
+        "purchases": 2480,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.053913e-15,
+        "max_error_through_first_different_decision": 2.053913e-15,
+        "maximum_discarded_increment_norm": 5.58828e-15,
+        "mean_realized_reward": 0.1497940317
+      },
+      "first_four": {
+        "opportunities": 4096,
+        "purchases": 2632,
+        "buy_and_feedback_differences": 390,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "rank_one",
+          11
+        ],
+        "max_probability_error": 0.8240353,
+        "max_error_through_first_different_decision": 0.5779063,
+        "maximum_discarded_increment_norm": 7.452312,
+        "mean_realized_reward": 0.1376815401
+      }
+    },
+    "separate": {
+      "posterior": {
+        "opportunities": 4096,
+        "purchases": 2494,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 0.0,
+        "max_error_through_first_different_decision": 0.0,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1499160086
+      },
+      "ratios": {
+        "opportunities": 4096,
+        "purchases": 2494,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.053913e-15,
+        "max_error_through_first_different_decision": 2.053913e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1499160086
+      },
+      "semantic": {
+        "opportunities": 4096,
+        "purchases": 2494,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.164935e-15,
+        "max_error_through_first_different_decision": 2.164935e-15,
+        "maximum_discarded_increment_norm": 0.0,
+        "mean_realized_reward": 0.1499160086
+      },
+      "learned_8": {
+        "opportunities": 4096,
+        "purchases": 2541,
+        "buy_and_feedback_differences": 135,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "separate",
+          10
+        ],
+        "max_probability_error": 0.8551432,
+        "max_error_through_first_different_decision": 0.6162829,
+        "maximum_discarded_increment_norm": 5.781658,
+        "mean_realized_reward": 0.1449173979
+      },
+      "learned_64": {
+        "opportunities": 4096,
+        "purchases": 2494,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.220446e-15,
+        "max_error_through_first_different_decision": 2.220446e-15,
+        "maximum_discarded_increment_norm": 5.50794e-15,
+        "mean_realized_reward": 0.1499160086
+      },
+      "learned_512": {
+        "opportunities": 4096,
+        "purchases": 2494,
+        "buy_and_feedback_differences": 0,
+        "first_stream_with_different_decision": null,
+        "max_probability_error": 2.220446e-15,
+        "max_error_through_first_different_decision": 2.220446e-15,
+        "maximum_discarded_increment_norm": 5.50794e-15,
+        "mean_realized_reward": 0.1499160086
+      },
+      "first_four": {
+        "opportunities": 4096,
+        "purchases": 2634,
+        "buy_and_feedback_differences": 392,
+        "first_stream_with_different_decision": [
+          0,
+          0,
+          "separate",
+          10
+        ],
+        "max_probability_error": 0.8250721,
+        "max_error_through_first_different_decision": 0.5850216,
+        "maximum_discarded_increment_norm": 7.530872,
+        "mean_realized_reward": 0.136702192
+      }
+    }
+  }
+}

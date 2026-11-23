@@ -1,7 +1,7 @@
 """Exact checks of the bounded-ticket law, the one-offer budget and feedback isolation."""
 
 from fractions import Fraction as F
-from functools import lru_cache
+from functools import cache
 from itertools import combinations, pairwise, permutations, product
 from math import prod
 
@@ -85,7 +85,7 @@ def check_menus():
             )
             assert sum(delta) <= 1 - coverage
 
-            def utility(p, q):
+            def utility(p, q, offers=offers):
                 return sum(m * s * (p[j] - c) for j, c, s, m in offers if c <= q[j])
 
             for j, l in combinations(range(k), 2):
@@ -96,7 +96,7 @@ def check_menus():
     return sets
 
 
-@lru_cache(maxsize=None)
+@cache
 def tree_products(leaves, ratio):
     """exp(maximum path cost) for every ordered full binary tree."""
     if leaves == 1:
@@ -129,7 +129,7 @@ def blind_worlds():
     # Every price strictly above a and at most b gives exactly the same observable kernel.
     for price in (F(1, 4), F(1, 2), b):
 
-        def observation(truth):
+        def observation(truth, price=price):
             return tuple(
                 (j, truth[j], 1 - truth[j]) if c >= price else (j, None, None)
                 for j, c in enumerate(r)
@@ -164,7 +164,7 @@ def feedback_isolation():
         for truth in (world, changed):
             used = []
 
-            def supply(i, j):
+            def supply(i, j, used=used, truth=truth):
                 used.append(i)
                 return js[i] == truth[i]
 

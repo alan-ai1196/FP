@@ -631,3 +631,45 @@ python -B research/frontier/text_ticket_actions.py --check research/frontier/tex
 python -B research/frontier/audit_tickets.py
 & "$env:USERPROFILE\.elan\toolchains\leanprover--lean4---v4.34.1\bin\lean.exe" research/frontier/TicketBudget.lean
 ~~~
+
+## Can feedback teach a smaller state for future updates?
+
+**EMPIRICALLY OBSERVED.** An initially empty learner acquired nine directions in the log likelihoods of a supplied bank of 24 anonymous hypotheses. A different basis learned from hypothetical hits, with no purchased outcomes, recovered the same space. The geometric structure was already available in the forecasts. Actual purchased bits determined the changing belief within this space. On 32 fresh group-belief streams, nine retained numbers reproduced all later predictions to $2.3\times10^{-15}$ and all 16,384 purchase decisions. Four retained directions changed 1,545 purchases. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/46fdab6/research/frontier/NEXT.md) · [Causal acquisition and replay](text_update_subspace.py) · [Per-prior scores and packet identities](text_update_subspace_result.json)
+
+The discovery slab comprised 65,536 disjoint triples beginning at raw position 5,275,648. Group membership and the two preceding tokens were public. Discovery used the first 512 eligible opportunities in each group and the previously fitted reuse word prior. A purchase supplied one realized log-likelihood vector in fixed anonymous column order. Subtracting its first entry gave 23 log ratios. The learner twice removed directions it had already retained and installed a normalized residual above the declared tolerance. It received neither the name-to-word incidence matrix nor a target rank. After eight opportunities per group it had seven directions from eleven purchases. Direction nine appeared on opportunity 13 of the first group. There were 79 purchases by the 64-opportunity checkpoint and 624 by the 512-opportunity checkpoint. The last two snapshots had identical packets.
+
+Four subsequent slabs, each 32,768 triples, supplied new hidden mappings, offers and previously unobserved text. In each slab, two groups and four frozen word priors, pooled, global, rank-one and separate, gave eight learning streams. Each started with a uniform belief. Every method chose its own purchases and saw only their bits. The reporting interval ended at raw index 5,865,472. The reference made 9,963 purchases in 16,384 opportunities. The table's reward is per actual opportunity under the acquisition menu, including its quarter of floor-priced offers.
+
+| Frozen update representation | Real numbers per group | Purchases | Different decisions from reference | Largest difference in any forecast | Mean realized reward |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Full posterior log weights | 24 | 9,963 | 0 | 0 | 0.149519 |
+| Centered log ratios | 23 | 9,963 | 0 | $2.06\times10^{-15}$ | 0.149519 |
+| Known assignment log coordinates | 9 | 9,963 | 0 | $2.17\times10^{-15}$ | 0.149519 |
+| Learned after 8 opportunities/group | 7 | 10,167 | 490 | 0.856740 | 0.145310 |
+| Learned after 64 or 512/group | 9 | 9,963 | 0 | $2.23\times10^{-15}$ | 0.149519 |
+| First four learned directions | 4 | 10,540 | 1,545 | 0.825163 | 0.136948 |
+
+The seven-direction learner first diverged on the 25th opportunity of the first pooled stream. The four-direction control diverged on its 11th. The full learned basis discarded at most $5.83\times10^{-15}$ in vector norm per purchased update. Acquisition, reconstruction of the original word priors and the complete registered replay took 9.15 s and reached 252.7 MB process working set. This test reuses text contexts across the four priors within an environment.
+
+**Post hoc checks of the supplied structure.** We gave an outcome-blind control the first 304 and 320 offered names and word forecasts from the two discovery groups, matching the number of purchased vectors. It treated each as a hypothetical hit, independently of the actual price, purchase or word. After 64 and 512 opportunities' matched counts its fitted subspace projector differed from the actual-feedback projector by $7.15\times10^{-15}$ in operator norm. Its 512-checkpoint transfer produced zero different purchases, with maximum forecast discrepancy $8.78\times10^{-15}$. The source of the nine directions can therefore be distinguished from the information learned about any particular hidden mapping. [Independent control](audit_update_subspace.py)
+
+Two further decoders exploited structure the initial numeric representation left unused. Pivoted QR selected nine directly readable likelihood ratios and learned a linear reconstruction for the other fourteen. The retained submatrix's condition number was 3.396. A rule given the public ticket names split the anonymous hypotheses by equality of the likelihoods observed for each name. At the eight-opportunity checkpoint its four names had 4, 4, 1 and 4 classes. At 64 all had four. Matching the unique disjoint class for each other name recovered all 24 assignments up to a common word relabeling. Its implementation checked the complete permutation pattern before using the specialized decoder. Both post hoc methods made all the reference purchases, with maximum forecast differences of $5.06\times10^{-15}$ and $2.17\times10^{-15}$. These methods exploit different declared interfaces and structural assumptions. [Derivation](FOUNDATION.md#when-does-current-predictive-state-suffice-for-continued-learning) · [Packet encoders and learning updates](update_subspace.py)
+
+| Representation | Shared decoder bytes above the common likelihood bank | Persistent bytes for one group | Shared + 16 groups | Median native ms for 32 streams |
+| --- | ---: | ---: | ---: | ---: |
+| Full log weights | 0 | 192 | 3,072 | 2.795 |
+| Centered log ratios | 0 | 184 | 2,944 | 3.068 |
+| Learned orthonormal basis | 1,658 | 72 | 2,810 | 4.701 |
+| Nine selected log ratios | 1,013 | 72 | 2,165 | 3.869 |
+| Known assignment coordinates | 0 | 72 | 1,152 | 3.537 |
+| Discovered assignment incidence | 26 | 72 | 1,178 | 3.663 |
+
+The dense learned decoder costs 2,234 bytes for eight groups against 1,472 for direct ratios. At 64 groups it costs 6,266 against 11,776. Its crossover is 15 simultaneously retained group beliefs. The pivoted decoder crosses at ten. The 26-byte recognized incidence packet is cheaper than direct ratios even with one group. These storage comparisons count serialized numeric decoding tables and physically allocated FP64 working state per retained group. The native executable and the common word priors and likelihood evaluator remain separate. For this workload the common evaluator uses 96 bytes of word indices for the anonymous hypotheses. Every native arm performs the same four action readouts, commits its buy/pass decision, then reads the environment bit only on a purchase. The stable normalization uses 24 scratch weights per active stream execution. The cheapest persistent state did not yield the fastest native pass. The complete binary and seven resident-data samples per method are recorded. [Native CPU implementation](update_replay.c) · [Timing and control outcomes](update_subspace_timing.json)
+
+The independent audit found exact assignment dimensions 1, 4, 9 and 16 at $K=2,3,4,5$, checked 48 updates from nonuniform positive priors, 60 even/odd response words and all 528 Boolean $2\times2$ and $3\times3$ permanent reductions. Subset dynamic programming agreed with enumeration through $K=8$ to $8.29\times10^{-14}$ on log normalizers and marginal entries. Exact rational enumeration confirmed the binary64 marginal collision on the four-ticket family and its $7/104$ next-forecast separation after a common suffix. The analytic proofs and the executed finite cases have distinct scopes. [Counterexamples and precision](OBSTRUCTIONS.md#equal-assignment-marginals-can-conceal-the-next-learning-update)
+
+~~~powershell
+python -B research/frontier/text_update_subspace.py --check research/frontier/text_update_subspace_result.json
+python -B research/frontier/audit_update_subspace.py --text
+python -B research/frontier/measure_update_subspace.py
+~~~
