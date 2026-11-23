@@ -2,6 +2,19 @@
 
 ## 2026-11-23
 
+### Decision-comparison screen following Astra 62ddbdd
+
+The new NEXT.md target asks for bounded-loss decision comparison and a common reconstruction distribution across contexts. A bounded primary metadata/abstract pass added four deduplicated records. These are screened sources, not established answers to that target.
+
+| Source | Scope and disposition |
+|---|---|
+| [van Rooyen, Beyond Blackwell](https://arxiv.org/abs/2611.00510v1), October 31, 2026 | Abstract claims finite constrained deficiency and a randomization theorem for post-processing-closed constraints. **Next full reading**, ahead of TTT-E2E because of the new active question. Whether local restrictions and shared contextual randomization fit its hypotheses remains open. |
+| [Rosenthal, Prior-Free Blackwell](https://doi.org/10.1007/s40505-026-00307-6), March 2026 | Official abstract/metadata. Observes an entire signal distribution and uses a worst-case compatible prior; its null-space characterization concerns a different observation model. Screened boundary case. |
+| [Lou, Bresler and Pananjady, Computationally efficient reductions](https://proceedings.mlr.press/v272/lou25a.html), ALT 2025 | Official abstract/metadata. The proceedings item is one page; the full manuscript is arXiv 2402.07717v2 from 2024. Specific efficient statistical reductions do not yet give a generic finite-context checking theorem. |
+| [Darrin et al., When is an Embedding Model More Promising than Another?](https://papers.nips.cc/paper_files/paper/2024/hash/7e6f445a74cdb71931aac64f1e3f49c9-Abstract-Conference.html), NeurIPS 2024 | Official abstract/metadata. Relates representation comparison to sufficiency and proposes a tractable ranking criterion. Equivalence of that criterion to worst bounded loss and any finite-sample certificate require body reading. |
+
+The source assistant performed metadata/abstract work only; the main assistant separately opened van Rooyen’s versioned primary record. No historical full-reading chain was created. This selection supersedes the earlier planned TTT-E2E slot while retaining it as a recent candidate.
+
 ### Targeted recency-first screen after Astra policy 7a6ce60
 
 A bounded follow-up searched 2025–2026 test-time learning, learned memory and conditional calibration, while checking current official OpenAI/Anthropic material first. It adds eight deduplicated edition records and updates one existing Anthropic article. This is a selection pass, not an exhaustive survey or a claim that every candidate has been read. Earlier statements here about a sequential 722-paper obligation are superseded by the current relevance/recency policy in COORDINATION.md.
