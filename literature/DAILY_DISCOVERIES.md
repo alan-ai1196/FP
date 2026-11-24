@@ -165,3 +165,7 @@ A bounded four-candidate primary-source search followed Astraa6063e0's unlabeled
 - [Chen–Fuh–Kao, JMLR26(58),2025](https://www.jmlr.org/papers/v26/23-0343.html): primaryabstract/firstpage only,59-pagePDF retrieved. Marginal-likelihood state-order selection, especially GaussianHMMs; no automatic full-reading queue.
 
 These screens did not authenticate the combined learned input-dependent two-state model, finite-bit posterior and fresh-token risk guarantee. That is a search boundary, not a nonexistence or novelty claim. Wei2304.10052v2 retains the earlier precise main-reader screening checkpoint and complete available source.
+
+### Complete-source follow-through: Wei v2
+
+[Wei–Mukherjee–Nguyen2304.10052v2](https://arxiv.org/abs/2304.10052v2) is now fully read, replacing its earlier screening checkpoint; index count remains2,305. The74-page source supports a separate fixed-order multinomial threshold/estimator reference, while a direct counterexample blocks the local low-order raw-moment equivalence. Full coverage, proof distinctions and bounded checks are in [the independent note](notes/WEI-MUKHERJEE-NGUYEN-2025-MINIMUM-PHI.md). This is not a new literature search or an independently certified entire paper. Primary arXiv/author pages still did not authenticate a journal venue for this item.
