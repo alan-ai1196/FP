@@ -244,3 +244,9 @@ Combined index:3,702 records. Paes Leme–Schneider2606.29595v1 is corrected fro
 ### CAPAL source follow-through, incomplete visual coverage
 
 The official24page [CAPAL PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/df01766dc88e5f1d475df4f7f3097d73-Paper-Conference.pdf) was read through all extracted text and appendices. It remains partially read because all18actualfigures are unavailable to the reader. The [scoped note](notes/CHEN-TRIVEDI-VELASQUEZ-2026-CAPAL.md) includes a bounded comparison with [author code at57d877f6](https://github.com/lkwargs/CAPAL/tree/57d877f6a083d58852660fac388ff49c052dc2d2), the exact image recovery boundary and proof obligations around cached noise and suffix separation. No new record, complete-reading upgrade, benchmark replay or additional daily scan is claimed. The index remains3,702.
+
+### Original OpenAI automata source continuation
+
+The relevance-first ordinary queue resumed with existing record OAI-1006-250. Its complete pinned source,60481TeX characters and3979bibliography characters, has now been read by the main assistant. The [note](notes/OAI-1006-250.md) records the exact growing-alphabet result and proof structure. Current publisher files are unchanged. It remains partial pending original PDF formula and figure verification, with no independent theorem audit or completed-count increase.
+
+The companion OAI251 has a complete source inventory and unchanged publisher version but remains body-unread. These are existing catalog entries, so the index stays3,702. No additional discovery batch or fresh daily scan was conducted. The outstanding blocker is actual PDF rendering, with local execution unavailable and web screenshot output lacking image content.
