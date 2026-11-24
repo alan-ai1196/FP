@@ -1,0 +1,490 @@
+{
+  "registration": "789f8ec",
+  "train_arrays": "e9397dde8bd696b9ae7d9d6129341fd08a5370043ccd64e525a966c54fe2bd0e",
+  "validation_arrays": "b3ab15e83cce87d4714aeeb30ae399d3706493333169fff0d99455d68346ba11",
+  "names": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    198,
+    284,
+    257,
+    287,
+    12,
+    318,
+    326,
+    329,
+    357,
+    389,
+    355,
+    351,
+    319,
+    447,
+    393,
+    416,
+    307,
+    340,
+    373,
+    383,
+    422,
+    25,
+    379,
+    423,
+    82,
+    281,
+    247
+  ],
+  "exact_read": {
+    "index": 32,
+    "slope_Q8": 740,
+    "training_surrogate_gain": 19.20980285203271,
+    "test_delta": [
+      -7.239028813251894,
+      -13.726489381141501
+    ]
+  },
+  "fits": [
+    {
+      "index": 32,
+      "slope_Q8": 629,
+      "training_surrogate_gain": 19.081088709875797,
+      "maximum_abs_estimated_gradient": 15.542165237483186,
+      "simultaneous_boundary": 686.2226486010777,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 211,
+      "samples_per_update": 1,
+      "paid_base_draws": 32768,
+      "raw_id": null,
+      "test_delta": [
+        -6.956721652723433,
+        -12.608751054731894
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 534,
+      "training_surrogate_gain": 11.650902574474134,
+      "maximum_abs_estimated_gradient": 11.168032699397372,
+      "simultaneous_boundary": 686.2226486010777,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 401,
+      "samples_per_update": 1,
+      "paid_base_draws": 32768,
+      "raw_id": null,
+      "test_delta": [
+        -6.489598082742601,
+        -11.38768289168651
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 677,
+      "training_surrogate_gain": 25.293705121159565,
+      "maximum_abs_estimated_gradient": 19.13514102880055,
+      "simultaneous_boundary": 686.2226486010777,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 587,
+      "samples_per_update": 1,
+      "paid_base_draws": 32768,
+      "raw_id": null,
+      "test_delta": [
+        -7.113657241875082,
+        -13.132984771378647
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 615,
+      "training_surrogate_gain": 17.33676137956496,
+      "maximum_abs_estimated_gradient": 14.423924147183786,
+      "simultaneous_boundary": 686.2226486010777,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 821,
+      "samples_per_update": 1,
+      "paid_base_draws": 32768,
+      "raw_id": null,
+      "test_delta": [
+        -6.900946210768331,
+        -12.444119531227937
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 693,
+      "training_surrogate_gain": 17.573023378291794,
+      "maximum_abs_estimated_gradient": 12.97733660950893,
+      "simultaneous_boundary": 343.11132430053885,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 211,
+      "samples_per_update": 4,
+      "paid_base_draws": 131072,
+      "raw_id": null,
+      "test_delta": [
+        -7.154166895885896,
+        -13.29388659903028
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 691,
+      "training_surrogate_gain": 17.817698107628047,
+      "maximum_abs_estimated_gradient": 13.20031362732806,
+      "simultaneous_boundary": 343.11132430053885,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 401,
+      "samples_per_update": 4,
+      "paid_base_draws": 131072,
+      "raw_id": null,
+      "test_delta": [
+        -7.149425947804245,
+        -13.274152481823794
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 653,
+      "training_surrogate_gain": 14.226399985844946,
+      "maximum_abs_estimated_gradient": 11.149245792344141,
+      "simultaneous_boundary": 343.11132430053885,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 587,
+      "samples_per_update": 4,
+      "paid_base_draws": 131072,
+      "raw_id": null,
+      "test_delta": [
+        -7.041827629553585,
+        -12.878653144049887
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 740,
+      "training_surrogate_gain": 22.691341693635522,
+      "maximum_abs_estimated_gradient": 15.699203688677333,
+      "simultaneous_boundary": 343.11132430053885,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 821,
+      "samples_per_update": 4,
+      "paid_base_draws": 131072,
+      "raw_id": null,
+      "test_delta": [
+        -7.239028813251894,
+        -13.726489381141501
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 722,
+      "training_surrogate_gain": 17.942410914576445,
+      "maximum_abs_estimated_gradient": 12.730452236087322,
+      "simultaneous_boundary": 171.55566215026943,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 211,
+      "samples_per_update": 16,
+      "paid_base_draws": 524288,
+      "raw_id": null,
+      "test_delta": [
+        -7.2125468168118285,
+        -13.567872885123265
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 730,
+      "training_surrogate_gain": 18.872058031728848,
+      "maximum_abs_estimated_gradient": 13.240482274928004,
+      "simultaneous_boundary": 171.55566215026943,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 401,
+      "samples_per_update": 16,
+      "paid_base_draws": 524288,
+      "raw_id": null,
+      "test_delta": [
+        -7.225239009588036,
+        -13.639451442908468
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 752,
+      "training_surrogate_gain": 21.911453321792177,
+      "maximum_abs_estimated_gradient": 14.923593489265828,
+      "simultaneous_boundary": 171.55566215026943,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 587,
+      "samples_per_update": 16,
+      "paid_base_draws": 524288,
+      "raw_id": null,
+      "test_delta": [
+        -7.252532417445509,
+        -13.82736275006473
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 715,
+      "training_surrogate_gain": 17.744216746401207,
+      "maximum_abs_estimated_gradient": 12.700488277108706,
+      "simultaneous_boundary": 171.55566215026943,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 821,
+      "samples_per_update": 16,
+      "paid_base_draws": 524288,
+      "raw_id": null,
+      "test_delta": [
+        -7.200230538147891,
+        -13.503821226707814
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 740,
+      "training_surrogate_gain": 19.670348194221194,
+      "maximum_abs_estimated_gradient": 13.616712377076158,
+      "simultaneous_boundary": 85.77783107513471,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 211,
+      "samples_per_update": 64,
+      "paid_base_draws": 2097152,
+      "raw_id": null,
+      "test_delta": [
+        -7.239028813251894,
+        -13.726489381141501
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 739,
+      "training_surrogate_gain": 19.32074962823589,
+      "maximum_abs_estimated_gradient": 13.381646732088543,
+      "simultaneous_boundary": 85.77783107513471,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 401,
+      "samples_per_update": 64,
+      "paid_base_draws": 2097152,
+      "raw_id": null,
+      "test_delta": [
+        -7.237753608340236,
+        -13.717907358847217
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 737,
+      "training_surrogate_gain": 19.216649127523187,
+      "maximum_abs_estimated_gradient": 13.352780589187214,
+      "simultaneous_boundary": 85.77783107513471,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 587,
+      "samples_per_update": 64,
+      "paid_base_draws": 2097152,
+      "raw_id": null,
+      "test_delta": [
+        -7.235134013897051,
+        -13.700662130886315
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 737,
+      "training_surrogate_gain": 19.041090517858624,
+      "maximum_abs_estimated_gradient": 13.225203557426935,
+      "simultaneous_boundary": 85.77783107513471,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 821,
+      "samples_per_update": 64,
+      "paid_base_draws": 2097152,
+      "raw_id": null,
+      "test_delta": [
+        -7.235134013897051,
+        -13.700662130886315
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 740,
+      "training_surrogate_gain": 19.310391977448802,
+      "maximum_abs_estimated_gradient": 13.357596125474453,
+      "simultaneous_boundary": 21.44445776878368,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 211,
+      "samples_per_update": 1024,
+      "paid_base_draws": 33554432,
+      "raw_id": null,
+      "test_delta": [
+        -7.239028813251894,
+        -13.726489381141501
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 740,
+      "training_surrogate_gain": 19.234239002253236,
+      "maximum_abs_estimated_gradient": 13.312257050454408,
+      "simultaneous_boundary": 21.44445776878368,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 401,
+      "samples_per_update": 1024,
+      "paid_base_draws": 33554432,
+      "raw_id": null,
+      "test_delta": [
+        -7.239028813251894,
+        -13.726489381141501
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 738,
+      "training_surrogate_gain": 19.086439637434253,
+      "maximum_abs_estimated_gradient": 13.235081229026394,
+      "simultaneous_boundary": 21.44445776878368,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 587,
+      "samples_per_update": 1024,
+      "paid_base_draws": 33554432,
+      "raw_id": null,
+      "test_delta": [
+        -7.236455341841841,
+        -13.70929827531683
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 32,
+      "slope_Q8": 740,
+      "training_surrogate_gain": 19.29592973115628,
+      "maximum_abs_estimated_gradient": 13.345901717472723,
+      "simultaneous_boundary": 21.44445776878368,
+      "certified_coordinate": null,
+      "conservative_gain": 0.0,
+      "certified_total_nats": 0.0,
+      "seed": 821,
+      "samples_per_update": 1024,
+      "paid_base_draws": 33554432,
+      "raw_id": null,
+      "test_delta": [
+        -7.239028813251894,
+        -13.726489381141501
+      ],
+      "conservative_test_delta": [
+        0.0,
+        0.0
+      ]
+    }
+  ]
+}
