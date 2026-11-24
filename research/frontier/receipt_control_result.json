@@ -1,0 +1,118 @@
+{
+  "small_exact_receipts": {
+    "enumerated_count_tapes": 81,
+    "mean_score": "-1331/5103",
+    "score_variance": "6942241/217005075"
+  },
+  "four_symbols": {
+    "registration": "dd990a1",
+    "training_and_report_lengths": [
+      32768,
+      32768
+    ],
+    "draws_per_word": 16,
+    "analytic": {
+      "indicator_words_checked": 256,
+      "population_own_channel_best_gain": 0.0,
+      "one_bit_population_gain_per_word": 0.020752685366905166,
+      "distinct_optimal_conditional_laws": 3
+    },
+    "models": {
+      "directed": {
+        "32": {
+          "packet": "010203000002000500010000ffff0500fe000001000200",
+          "certified_nats": 57.06714933462756,
+          "after_installation_price": 56.568949798600094,
+          "edges": [
+            [
+              0,
+              2,
+              5,
+              256
+            ],
+            [
+              0,
+              65535,
+              5,
+              -512
+            ]
+          ],
+          "report_gain": 101.2604128158384,
+          "bytes": 23,
+          "live_bytes": 2
+        },
+        "96": {
+          "packet": "010203000002000500010000ffff0500fe000001000200",
+          "certified_nats": 57.06714933462756,
+          "after_installation_price": 56.568949798600094,
+          "edges": [
+            [
+              0,
+              2,
+              5,
+              256
+            ],
+            [
+              0,
+              65535,
+              5,
+              -512
+            ]
+          ],
+          "report_gain": 101.2604128158384,
+          "bytes": 23,
+          "live_bytes": 2
+        }
+      },
+      "own_only": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "edges": [],
+          "report_gain": -0.0,
+          "bytes": 0,
+          "live_bytes": 0
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "edges": [],
+          "report_gain": -0.0,
+          "bytes": 0,
+          "live_bytes": 0
+        }
+      }
+    },
+    "base_gain": 0.0,
+    "add_one_table_gain": 2656.007961348105,
+    "known_source_gain": 2667.9945713850598,
+    "table_uint32_counts": [
+      [
+        2023,
+        2069,
+        3567,
+        538
+      ],
+      [
+        1998,
+        2039,
+        524,
+        3669
+      ],
+      [
+        2044,
+        2093,
+        1927,
+        1993
+      ],
+      [
+        2132,
+        2029,
+        2039,
+        2099
+      ]
+    ]
+  }
+}

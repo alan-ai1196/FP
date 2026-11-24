@@ -1,0 +1,1222 @@
+{
+  "registration": "91849de",
+  "exact_check": {
+    "exact_grid_encoders": 3875,
+    "positive_oriented_encoders": 16
+  },
+  "posthoc_unary_clock_check": {
+    "2": {
+      "first_feasible_up_to_four": 2,
+      "proved_minimum": 2,
+      "maps_and_resets": 1114
+    },
+    "3": {
+      "first_feasible_up_to_four": 3,
+      "proved_minimum": 3,
+      "maps_and_resets": 1114
+    },
+    "4": {
+      "first_feasible_up_to_four": 2,
+      "proved_minimum": 2,
+      "maps_and_resets": 1114
+    },
+    "5": {
+      "first_feasible_up_to_four": null,
+      "proved_minimum": 5,
+      "maps_and_resets": 1114
+    },
+    "6": {
+      "first_feasible_up_to_four": 2,
+      "proved_minimum": 2,
+      "maps_and_resets": 1114
+    },
+    "7": {
+      "first_feasible_up_to_four": null,
+      "proved_minimum": 7,
+      "maps_and_resets": 1114
+    },
+    "8": {
+      "first_feasible_up_to_four": 2,
+      "proved_minimum": 2,
+      "maps_and_resets": 1114
+    },
+    "9": {
+      "first_feasible_up_to_four": 3,
+      "proved_minimum": 3,
+      "maps_and_resets": 1114
+    }
+  },
+  "posthoc_precision_and_window_checks": {
+    "strict_grid_encoders": 22061,
+    "two_state_odd_windows": [
+      {
+        "last_length": 3,
+        "proved_lower": 0.00046923398108602345,
+        "transient_gain": 0.0009424876593061293,
+        "proved_upper": 0.030416666666666668,
+        "largest_last_environment_grid_oracle": 0.0016502122916709863
+      },
+      {
+        "last_length": 9,
+        "proved_lower": 6.369103898397547e-05,
+        "transient_gain": 0.000127455663656007,
+        "proved_upper": 0.005521120293847567,
+        "largest_last_environment_grid_oracle": 0.00021808582869832846
+      },
+      {
+        "last_length": 21,
+        "proved_lower": 1.2435081164529554e-05,
+        "transient_gain": 2.4872965083457243e-05,
+        "proved_upper": 0.0012157423546837536,
+        "largest_last_environment_grid_oracle": 3.3444713182196676e-05
+      },
+      {
+        "last_length": 45,
+        "proved_lower": 2.776532432461677e-06,
+        "transient_gain": 5.553204574959541e-06,
+        "proved_upper": 0.00028673323667123736,
+        "largest_last_environment_grid_oracle": 1.2827524434881402e-06
+      },
+      {
+        "last_length": 189,
+        "proved_lower": 1.600689571446533e-07,
+        "transient_gain": 3.201383786104949e-07,
+        "proved_upper": 1.7186689178165634e-05,
+        "largest_last_environment_grid_oracle": 5.705876299274154e-15
+      }
+    ]
+  },
+  "fits": [
+    {
+      "m": 2,
+      "pairs_per_source": 4096,
+      "seed": 117,
+      "packet_hex": "0103438e000184000000",
+      "empirical_rounded_margin": 0.0889739990234375,
+      "margin_radius": 0.033263562387979825,
+      "certified_worst_source_gain": 0.006220213253229974,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.011818614953683304,
+        0.012984075476798924
+      ],
+      "pooled_deterministic_source_gains": [
+        0.05039638923157835,
+        -0.0194314871325945
+      ],
+      "held_cue_source_gains": [
+        0.013901019190637914,
+        0.015061645523958818
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.515625,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.65625,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 4096,
+      "seed": 503,
+      "packet_hex": "0103498b000181000000",
+      "empirical_rounded_margin": 0.07735252380371094,
+      "margin_radius": 0.033263562387979825,
+      "certified_worst_source_gain": 0.003892726691941524,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.010715625666591615,
+        0.010945820443309391
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.01408376940605914,
+        0.04542839387200634
+      ],
+      "held_cue_source_gains": [
+        0.012016426303698265,
+        0.012246023431682592
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.50390625,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.6640625,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 4096,
+      "seed": 991,
+      "packet_hex": "0103ec8b000180000000",
+      "empirical_rounded_margin": 0.079833984375,
+      "margin_radius": 0.033263562387979825,
+      "certified_worst_source_gain": 0.004343901887686262,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.01121197748927067,
+        0.01121197748927067
+      ],
+      "pooled_deterministic_source_gains": [
+        0.046052081258616706,
+        -0.014619377580393387
+      ],
+      "held_cue_source_gains": [
+        0.01266411764126394,
+        0.01266411764126394
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.3333333333333333,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 65536,
+      "seed": 117,
+      "packet_hex": "0103e59200017e000000",
+      "empirical_rounded_margin": 0.08213555812835693,
+      "margin_radius": 0.008315890596994956,
+      "certified_worst_source_gain": 0.010938629381364709,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.014155231413043659,
+        0.013380752670421228
+      ],
+      "pooled_deterministic_source_gains": [
+        0.047710500350553374,
+        -0.016216182639876776
+      ],
+      "held_cue_source_gains": [
+        0.017823292223485814,
+        0.01705447041542421
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.4921875,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.6614583333333334,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 65536,
+      "seed": 503,
+      "packet_hex": "0103299300017f000000",
+      "empirical_rounded_margin": 0.08316141366958618,
+      "margin_radius": 0.008315890596994956,
+      "certified_worst_source_gain": 0.011245925229352596,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.01400260520520935,
+        0.0136098395623903
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.016156466699597433,
+        0.04761743730663956
+      ],
+      "held_cue_source_gains": [
+        0.017777827980244933,
+        0.01738801342571071
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.49609375,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.6640625,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 65536,
+      "seed": 991,
+      "packet_hex": "01030893000180000000",
+      "empirical_rounded_margin": 0.0826568603515625,
+      "margin_radius": 0.008315890596994956,
+      "certified_worst_source_gain": 0.011094248108439647,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.01378821640687429,
+        0.01378821640687429
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.016009817114656162,
+        0.04750465422536874
+      ],
+      "held_cue_source_gains": [
+        0.017513922197466985,
+        0.017513922197466985
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.3333333333333333,
+      "carried_bits": 1
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 1048576,
+      "seed": 117,
+      "packet_hex": "0103ae94000180000000",
+      "empirical_rounded_margin": 0.08287239074707031,
+      "margin_radius": 0.002078972649248739,
+      "certified_worst_source_gain": 0.013112566578021331,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.013940518764533782,
+        0.013940518764533782
+      ],
+      "pooled_deterministic_source_gains": [
+        0.04744102609526307,
+        -0.015941603047671612
+      ],
+      "held_cue_source_gains": [
+        0.018348576570573136,
+        0.018348576570573136
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.3333333333333333,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.014361651077424015,
+        0.013018670079624456
+      ]
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 1048576,
+      "seed": 503,
+      "packet_hex": "0103cd94000180000000",
+      "empirical_rounded_margin": 0.08334112167358398,
+      "margin_radius": 0.002078972649248739,
+      "certified_worst_source_gain": 0.013265838973198829,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.01394502051372322,
+        0.01394502051372322
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.016157453994067757,
+        0.0476566805774066
+      ],
+      "held_cue_source_gains": [
+        0.01840555289500812,
+        0.01840555289500812
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.3333333333333333,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.015499488754498525,
+        0.015129218422468352
+      ]
+    },
+    {
+      "m": 2,
+      "pairs_per_source": 1048576,
+      "seed": 991,
+      "packet_hex": "0103c894000180000000",
+      "empirical_rounded_margin": 0.08326578140258789,
+      "margin_radius": 0.002078972649248739,
+      "certified_worst_source_gain": 0.013241142242519849,
+      "optimal_private_bit_gain": 0.013953914568419601,
+      "source_gains": [
+        0.013944356501812971,
+        0.013944356501812971
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.01613539483253772,
+        0.04763481113228571
+      ],
+      "held_cue_source_gains": [
+        0.01839640339943278,
+        0.01839640339943278
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.5,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.3333333333333333,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.012657980535364766,
+        0.013827716193974396
+      ]
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 4096,
+      "seed": 117,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.02920246124267578,
+      "margin_radius": 0.03688228113277926,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.002832425399010613,
+        0.01587107555223288,
+        -0.002832425399010613,
+        -0.002832425399010613
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 4096,
+      "seed": 503,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.028441429138183594,
+      "margin_radius": 0.03688228113277926,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.002944122491007284,
+        -0.002944122491007284,
+        -0.002944122491007284,
+        0.015894440378828884
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 4096,
+      "seed": 991,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.019309043884277344,
+      "margin_radius": 0.03688228113277926,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0015656441446209473,
+        0.012431111341617599,
+        -0.0015656441446209475,
+        -0.0015656441446209473
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 65536,
+      "seed": 117,
+      "packet_hex": "0105da83b8007a00000040000001",
+      "empirical_rounded_margin": 0.024277925491333008,
+      "margin_radius": 0.009220570283194816,
+      "certified_worst_source_gain": 0.00045351615751093415,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0010050214694973473,
+        0.0012401731766217526,
+        0.0009109607866475914,
+        0.001052051810922234
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0020056900906394197,
+        0.013845213167960519,
+        -0.0020056900906394197,
+        -0.0020056900906394197
+      ],
+      "held_cue_source_gains": [
+        0.0012362397900229382,
+        0.0014720769496073725,
+        0.0011422447930994361,
+        0.0012839748966636433
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.25,
+        0.4765625,
+        0.71875,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.084375,
+      "carried_bits": 1
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 65536,
+      "seed": 503,
+      "packet_hex": "01051184bc007d0000003f000001",
+      "empirical_rounded_margin": 0.025109827518463135,
+      "margin_radius": 0.009220570283194816,
+      "certified_worst_source_gain": 0.0005050219652032242,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0010592638068709932,
+        0.0011834024511202194,
+        0.0010344360780211448,
+        0.0010592638068709932
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.002028165757567052,
+        -0.002028165757567052,
+        -0.002028165757567052,
+        0.013886208553961572
+      ],
+      "held_cue_source_gains": [
+        0.0013135140397705363,
+        0.0014384601188513397,
+        0.0012887245221760153,
+        0.0013143333644192341
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.24609375,
+        0.48828125,
+        0.734375,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.190625,
+      "carried_bits": 1
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 65536,
+      "seed": 991,
+      "packet_hex": "0105e383c5008300000042000001",
+      "empirical_rounded_margin": 0.024406015872955322,
+      "margin_radius": 0.009220570283194816,
+      "certified_worst_source_gain": 0.00046126642469912493,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0011049472998395597,
+        0.0009388376941109732,
+        0.0010812173561640503,
+        0.0011049472998395597
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0019170540261620374,
+        -0.0019170540261620379,
+        -0.0019170540261620374,
+        0.01354653039039241
+      ],
+      "held_cue_source_gains": [
+        0.001332866990493059,
+        0.0011674498036080346,
+        0.001309104224856653,
+        0.0013335484849985382
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.2578125,
+        0.51171875,
+        0.76953125,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.19375,
+      "carried_bits": 1
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 1048576,
+      "seed": 117,
+      "packet_hex": "0105bd85c2008200000040000001",
+      "empirical_rounded_margin": 0.02472187578678131,
+      "margin_radius": 0.002305142570798704,
+      "certified_worst_source_gain": 0.0010053568104985838,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0012371295276599192,
+        0.0011670351663641346,
+        0.00130722388895569,
+        0.0012371295276599192
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0019613992800249697,
+        -0.0019613992800249697,
+        -0.0019613992800249697,
+        0.01371296934630265
+      ],
+      "held_cue_source_gains": [
+        0.0017358187587636627,
+        0.0016679545948361054,
+        0.0018058298355306454,
+        0.0017380382980623367
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.25,
+        0.5078125,
+        0.7578125,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.09375,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.001192772939652434,
+        0.0012283677324979453,
+        0.0016911000394895792,
+        0.0011763445737237345
+      ]
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 1048576,
+      "seed": 503,
+      "packet_hex": "0105c485bf008100000040000001",
+      "empirical_rounded_margin": 0.02483876422047615,
+      "margin_radius": 0.002305142570798704,
+      "certified_worst_source_gain": 0.0010158719827869193,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0011677844382281498,
+        0.0012734276722797984,
+        0.0012734276722797984,
+        0.0012382132609292523
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.001981051380023907,
+        0.013771245738684754,
+        -0.001981051380023907,
+        -0.001981051380023907
+      ],
+      "held_cue_source_gains": [
+        0.0016760633615028931,
+        0.0017839585603653836,
+        0.0017816526926047508,
+        0.001748750396719588
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.25,
+        0.50390625,
+        0.74609375,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.096875,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.0013064411829209407,
+        0.001262423168732752,
+        0.0012349119098651364,
+        0.0009653015729624952
+      ]
+    },
+    {
+      "m": 4,
+      "pairs_per_source": 1048576,
+      "seed": 991,
+      "packet_hex": "0105c685c1008000000041000001",
+      "empirical_rounded_margin": 0.024870403110980988,
+      "margin_radius": 0.002305142570798704,
+      "certified_worst_source_gain": 0.0010187276222278288,
+      "optimal_private_bit_gain": 0.0012505213548652978,
+      "source_gains": [
+        0.0012737766960351782,
+        0.0012032523117492533,
+        0.0012032523117492533,
+        0.0012737766960351782
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0019863275095127987,
+        0.013787571340351166,
+        -0.001986327509512799,
+        -0.0019863275095127987
+      ],
+      "held_cue_source_gains": [
+        0.0017818079400192036,
+        0.0017135925927388648,
+        0.0017112955414616473,
+        0.0017841049912964211
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.25390625,
+        0.5,
+        0.75390625,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.996875,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.0013757064701984331,
+        0.0009872713848735927,
+        0.0009046256220385206,
+        0.0010285942662911288
+      ]
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 4096,
+      "seed": 117,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.00778961181640625,
+      "margin_radius": 0.04222991979929156,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0003245867210476754,
+        -0.0003245867210476754,
+        -0.0003245867210476754,
+        0.004138688142125575,
+        -0.0003245867210476754,
+        -0.0003245867210476754,
+        -0.0003245867210476754,
+        -0.0003245867210476754
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 4096,
+      "seed": 503,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.0030851364135742188,
+      "margin_radius": 0.04222991979929156,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        0.00247879923018641,
+        -0.0029101056533238044,
+        -0.00021565321156869646,
+        0.00247879923018641,
+        -0.00021565321156869646,
+        -0.00021565321156869646,
+        -0.00021565321156869646,
+        -0.00021565321156869646
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 4096,
+      "seed": 991,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.004677772521972656,
+      "margin_radius": 0.04222991979929156,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        0.002155386279892845,
+        -0.0026109623040762786,
+        -0.00022778801209171688,
+        0.002155386279892845,
+        -0.0026109623040762786,
+        0.002155386279892845,
+        0.002155386279892845,
+        -0.0026109623040762786
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 65536,
+      "seed": 117,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.007263779640197754,
+      "margin_radius": 0.01055747994982289,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        0.0038948915301586446,
+        -0.0002803557169232005,
+        -0.0002803557169232005,
+        -0.0002803557169232005,
+        -0.0002803557169232005,
+        -0.0002803557169232005,
+        -0.0002803557169232005,
+        -0.0002803557169232005
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 65536,
+      "seed": 503,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.007016003131866455,
+      "margin_radius": 0.01055747994982289,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        0.003914235309506254,
+        -0.00028149199116073626,
+        -0.00028149199116073626,
+        -0.00028149199116073626,
+        -0.00028149199116073626,
+        -0.00028149199116073626,
+        -0.00028149199116073626,
+        -0.00028149199116073626
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 65536,
+      "seed": 991,
+      "packet_hex": "",
+      "empirical_rounded_margin": 0.006219089031219482,
+      "margin_radius": 0.01055747994982289,
+      "certified_worst_source_gain": 0.0,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0002446349207681771,
+        -0.0002446349207681771,
+        -0.0002446349207681771,
+        0.003662058310546198,
+        -0.0002446349207681771,
+        -0.0002446349207681771,
+        -0.0002446349207681771,
+        -0.0002446349207681771
+      ],
+      "held_cue_source_gains": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mean_exact_sampler_coin_bits": 0.0,
+      "carried_bits": 0
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 1048576,
+      "seed": 117,
+      "packet_hex": "01090c81e000bf003f00000000017f009e001f005e00",
+      "empirical_rounded_margin": 0.006731897592544556,
+      "margin_radius": 0.0026393699874557226,
+      "certified_worst_source_gain": 3.3497918309547715e-05,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        7.659909851866382e-05,
+        8.014896540511733e-05,
+        7.659909851866382e-05,
+        8.014896540511733e-05,
+        8.369883229157257e-05,
+        7.659909851866382e-05,
+        8.369883229157257e-05,
+        8.369883229157257e-05
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.0002437103750981173,
+        -0.0002437103750981173,
+        -0.0002437103750981173,
+        0.00366022563605617,
+        -0.0002437103750981173,
+        -0.0002437103750981173,
+        -0.0002437103750981173,
+        -0.0002437103750981173
+      ],
+      "held_cue_source_gains": [
+        9.606683574001486e-05,
+        9.961398348528512e-05,
+        9.606124373799115e-05,
+        9.961675844017869e-05,
+        0.0001031608786349444,
+        9.60622501306142e-05,
+        0.00010316176630060055,
+        0.0001031637549883299
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.12109375,
+        0.24609375,
+        0.3671875,
+        0.49609375,
+        0.6171875,
+        0.74609375,
+        0.875,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.5208333333333333,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.00011781083440358733,
+        0.00012080603458903237,
+        9.734363313637726e-05,
+        5.6908430632865784e-05,
+        3.9935629582008546e-05,
+        1.9468428314799342e-05,
+        6.639323122010956e-05,
+        8.087003211642869e-05
+      ]
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 1048576,
+      "seed": 503,
+      "packet_hex": "01090881de00c1003f00000000017f00a00021005f00",
+      "empirical_rounded_margin": 0.006672542542219162,
+      "margin_radius": 0.0026393699874557226,
+      "certified_worst_source_gain": 3.2533267428472984e-05,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        8.294130668066307e-05,
+        7.245066221558093e-05,
+        8.294130668066307e-05,
+        8.643818816902234e-05,
+        7.944442519230207e-05,
+        7.944442519230207e-05,
+        8.294130668066307e-05,
+        6.895378072722166e-05
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.00024244143383859225,
+        -0.00024244143383859225,
+        -0.00024244143383859225,
+        0.0036505294371412794,
+        -0.00024244143383859225,
+        -0.00024244143383859225,
+        -0.00024244143383859225,
+        -0.00024244143383859225
+      ],
+      "held_cue_source_gains": [
+        0.00010193155784326688,
+        9.143810610121116e-05,
+        0.0001019259837889434,
+        0.00010542848739085496,
+        9.842919258686169e-05,
+        9.843012887379645e-05,
+        0.00010192694933459622,
+        8.794117655362302e-05
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.12890625,
+        0.24609375,
+        0.37109375,
+        0.49609375,
+        0.625,
+        0.75390625,
+        0.8671875,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.5217013888888888,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        6.04847708725988e-05,
+        9.687419386084691e-05,
+        9.589069594224606e-05,
+        8.064647820392543e-05,
+        9.539894698294433e-05,
+        8.310522300042887e-05,
+        5.261678752378849e-05,
+        3.5405573948266156e-05
+      ]
+    },
+    {
+      "m": 8,
+      "pairs_per_source": 1048576,
+      "seed": 991,
+      "packet_hex": "01091a81e200c1004000000000018200a30021006100",
+      "empirical_rounded_margin": 0.006943743675947189,
+      "margin_radius": 0.0026393699874557226,
+      "certified_worst_source_gain": 3.705571951819267e-05,
+      "optimal_private_bit_gain": 9.645371843043388e-05,
+      "source_gains": [
+        8.623282897830993e-05,
+        7.876219573156856e-05,
+        8.623282897830993e-05,
+        7.502687910819657e-05,
+        8.623282897830993e-05,
+        8.623282897830993e-05,
+        7.502687910819657e-05,
+        8.623282897830993e-05
+      ],
+      "pooled_deterministic_source_gains": [
+        -0.000250555752945642,
+        -0.000250555752945642,
+        -0.000250555752945642,
+        0.003707860216180371,
+        -0.000250555752945642,
+        -0.000250555752945642,
+        -0.000250555752945642,
+        -0.000250555752945642
+      ],
+      "held_cue_source_gains": [
+        0.0001077217416390106,
+        0.00010024766485251789,
+        0.00010771500471738014,
+        9.651559665782805e-05,
+        0.0001077149311669646,
+        0.00010771607120826927,
+        9.651039459761393e-05,
+        0.00010771851518019034
+      ],
+      "ordered_write_probabilities": [
+        0.0,
+        0.12890625,
+        0.25,
+        0.37890625,
+        0.5078125,
+        0.63671875,
+        0.75390625,
+        0.8828125,
+        1.0
+      ],
+      "mean_exact_sampler_coin_bits": 1.4930555555555556,
+      "carried_bits": 1,
+      "fresh_32768_sample_gain_per_word": [
+        0.00010899491465197336,
+        3.177891632823605e-05,
+        0.00011267186695310301,
+        8.588264304486802e-05,
+        -3.6507340692755984e-05,
+        8.115513294341525e-05,
+        -9.901552981197125e-05,
+        6.329565033792468e-05
+      ]
+    }
+  ]
+}

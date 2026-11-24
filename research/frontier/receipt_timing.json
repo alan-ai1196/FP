@@ -1,0 +1,42 @@
+{
+  "next_training": {
+    "extraction_seconds": 6.77526509999916,
+    "gpu_peak_allocated_bytes": 84035072,
+    "all_sampled_evaluator_seconds": 3.587103300000308,
+    "timed_packet": "0103000d000d00090010c600c6000900100d007b01090020",
+    "native_report_ms": [
+      2.9803999996147468,
+      2.9579000001831446,
+      2.9639999993378296,
+      2.9604000001199893,
+      2.959999999802676,
+      2.990900000440888,
+      2.968900000269059
+    ],
+    "compiled_library": {
+      "file_bytes": 119296,
+      ".text": 61440,
+      ".rdata": 46108
+    }
+  },
+  "separate_validation": {
+    "extraction_seconds": 6.794438500000069,
+    "gpu_peak_allocated_bytes": 84035072,
+    "all_sampled_evaluator_seconds": 3.6373789999997825,
+    "timed_packet": "0103000d000d00090010c600c6000900100d007b01090020",
+    "native_report_ms": [
+      3.000100000463135,
+      2.956600000288745,
+      2.9557000007116585,
+      2.9518999999709195,
+      2.9564999995272956,
+      2.9748000006293296,
+      2.9560999992099823
+    ],
+    "compiled_library": {
+      "file_bytes": 119296,
+      ".text": 61440,
+      ".rdata": 46108
+    }
+  }
+}

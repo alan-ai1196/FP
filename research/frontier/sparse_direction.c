@@ -62,3 +62,42 @@ API uint32_t subset_stream(uint32_t n, uint32_t d, const double *q,
   }
   return repairs;
 }
+
+/* Each rule reads one shared Q15 state and shifts a distinct output.
+   Only the evaluator reads q. The update receives the class frequencies
+   from the purchased base draws and the observed next symbol. */
+API uint32_t directed_stream(uint32_t n, uint32_t d, const double *q,
+                            const double *frequency, const uint8_t *y,
+                            uint32_t states, const uint8_t *src, const double *rate,
+                            uint32_t rules, const uint8_t *dst, const uint8_t *owner,
+                            const double *gain, int16_t *carry,
+                            double *delta, double *proposals) {
+  uint32_t repairs=0;
+  for (uint32_t t=0; t<n; ++t,q+=d,frequency+=d) {
+    double shift[3], change=0.0, applied=0.0, maximum=0.0;
+    for (uint32_t j=0; j<rules; ++j) {
+      shift[j]=gain[j]*(carry[owner[j]]/32767.0);
+      change+=q[dst[j]]*expm1(shift[j]);
+      if (dst[j]==y[t]) applied=shift[j];
+      if (shift[j]>maximum) maximum=shift[j];
+    }
+    double log_z;
+    if (change < -0.5) {
+      double total=0.0;
+      for (uint32_t i=0; i<d; ++i) {
+        double z=0.0;
+        for (uint32_t j=0; j<rules; ++j) if (dst[j]==i) z=shift[j];
+        total+=q[i]*exp(z);
+      }
+      log_z=log(total);
+      ++repairs;
+    } else log_z=log1p(change);
+    delta[t]=log_z-applied;
+    proposals[t]=exp(maximum-log_z);
+    for (uint32_t i=0; i<states; ++i) {
+      double s=carry[i]/32767.0;
+      carry[i]=q15(s+rate[i]*((src[i]==y[t] ? 1.0 : 0.0)-frequency[src[i]]-s));
+    }
+  }
+  return repairs;
+}
