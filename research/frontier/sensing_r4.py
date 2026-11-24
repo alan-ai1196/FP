@@ -156,7 +156,7 @@ def response_class_check():
     )
 
 
-def run(response_classes=False, posterior=False, calibration=False):
+def run(response_classes=False, posterior=False, calibration=False, grouped=False):
     folder = "src/reference_compiler"
     here = Path(__file__).resolve().parent
     archive = subprocess.check_output(
@@ -169,6 +169,11 @@ def run(response_classes=False, posterior=False, calibration=False):
         with ZipFile(BytesIO(archive)) as pinned:
             pinned.extractall(tmp)
         sys.path.insert(0, str(Path(tmp) / folder))
+        if grouped:
+            from grouped_r4 import run_prefix
+
+            print(run_prefix())
+            return
         if calibration:
             from coin_calibration import r4_fitted_counter
 
@@ -209,5 +214,11 @@ if __name__ == "__main__":
     group.add_argument("--response-classes", action="store_true")
     group.add_argument("--partition-posterior", action="store_true")
     group.add_argument("--coin-calibration", action="store_true")
+    group.add_argument("--grouped-reset", action="store_true")
     args = parser.parse_args()
-    run(args.response_classes, args.partition_posterior, args.coin_calibration)
+    run(
+        args.response_classes,
+        args.partition_posterior,
+        args.coin_calibration,
+        args.grouped_reset,
+    )

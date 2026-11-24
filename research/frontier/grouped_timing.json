@@ -1,0 +1,151 @@
+{
+  "platform": "nt",
+  "acquisition": {
+    "ordinary_training_and_selection_bits": 1179648,
+    "action_receipts": 65536,
+    "numpy_histogram_bytes": 2176,
+    "warm_fit_and_decision_ms": {
+      "histograms": [
+        0.2361,
+        0.1476,
+        0.15
+      ],
+      "harmonic": [
+        3.1807,
+        1.854,
+        1.8338
+      ],
+      "grid": [
+        163.6353,
+        158.3139,
+        157.0281
+      ],
+      "histogram": [
+        0.0281,
+        0.027,
+        0.028
+      ],
+      "half": [
+        0.0343,
+        0.0341,
+        0.0339
+      ]
+    }
+  },
+  "family": "bright",
+  "training_seed": 401,
+  "m": 16,
+  "N": 65536,
+  "streams": 2048,
+  "steps": 128,
+  "seed": 46211,
+  "history_counts": [
+    295,
+    150,
+    195,
+    233,
+    142,
+    461,
+    216,
+    356
+  ],
+  "purchases_for_all_four_words": [
+    0,
+    873,
+    1175,
+    2048
+  ],
+  "harmonic_degree": 8,
+  "grid_atoms_across_rows": 57,
+  "grid_max_row_atoms": 8,
+  "packed_model_bytes_including_policy": {
+    "harmonic": 130,
+    "grid": 540,
+    "histogram": 546,
+    "half": 1
+  },
+  "expanded_model_bytes_including_policy": {
+    "harmonic": 130,
+    "grid": 1851,
+    "histogram": 8706,
+    "half": 1
+  },
+  "report_live_bytes_per_stream": {
+    "harmonic": 8,
+    "grid_two_counts": 8,
+    "grid_cached": 80,
+    "histogram": 8,
+    "half": 8
+  },
+  "shared_serial_scratch_bytes": {
+    "harmonic": 0,
+    "grid_two_counts": 72,
+    "grid_cached": 0,
+    "histogram": 0,
+    "half": 0
+  },
+  "history_selector_bytes_per_stream": 1,
+  "draw_input_bytes": 262144,
+  "forecast_output_bytes_per_method": 2097152,
+  "warm_forward_ms": {
+    "harmonic": [
+      11.5821,
+      10.586,
+      11.6429,
+      11.5009,
+      10.489,
+      10.375,
+      10.3991
+    ],
+    "grid_two_counts": [
+      55.7134,
+      56.0478,
+      56.1335,
+      62.7993,
+      55.6001,
+      55.6172,
+      55.8921
+    ],
+    "grid_cached": [
+      5.0761,
+      5.1657,
+      5.0543,
+      5.0429,
+      5.073,
+      5.0571,
+      5.0685
+    ],
+    "histogram": [
+      0.2561,
+      0.2505,
+      0.2515,
+      0.2497,
+      0.2498,
+      0.2514,
+      0.251
+    ],
+    "half": [
+      0.2647,
+      0.2642,
+      0.2637,
+      0.2635,
+      0.2645,
+      0.2664,
+      0.2636
+    ]
+  },
+  "max_probability_error": {
+    "harmonic": 3.4416913763379853e-15,
+    "grid_two_counts": 1.021405182655144e-14,
+    "grid_cached": 1.0325074129013956e-14,
+    "histogram": 1.8196555373606316e-13,
+    "half": 1.8196555373606316e-13
+  },
+  "reversed_draws": 4096,
+  "reversed_grid_difference": 5.517808432387028e-14,
+  "binary": {
+    "file_bytes": 143360,
+    ".text": 77616,
+    ".rdata": 53068
+  }
+}
