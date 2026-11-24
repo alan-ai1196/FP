@@ -57,7 +57,7 @@ def score_fivegram(tokens, record, models_root, scorer, directory, panels=None):
     }
 
 
-def score_transformer(tokens, selected, training, models_root, directory, panels=None):
+def load_archived_transformer(selected, training, models_root, directory):
     import torch
 
     # Load the exact two model modules used to train the checkpoint from their retained revision.
@@ -77,12 +77,7 @@ def score_transformer(tokens, selected, training, models_root, directory, panels
             )
         )
     sys.path.insert(0, str(directory))
-    from baselines.transformer import (
-        Spec,
-        Transformer,
-        normalized_nll,
-        reporting_inputs,
-    )
+    from baselines.transformer import Spec, Transformer
 
     spec = Spec(**training["model"])
     weights = selected_model(selected, models_root)
@@ -92,6 +87,17 @@ def score_transformer(tokens, selected, training, models_root, directory, panels
     model = Transformer(spec, seed=training["seed"]).cuda().eval()
     model.load_state_dict(torch.load(weights, map_location="cuda", weights_only=True))
     model.requires_grad_(False)
+    return model, spec, weights
+
+
+def score_transformer(tokens, selected, training, models_root, directory, panels=None):
+    import torch
+
+    model, spec, weights = load_archived_transformer(
+        selected, training, models_root, directory
+    )
+    from baselines.transformer import normalized_nll, reporting_inputs
+
     losses = []
     with (
         torch.inference_mode(),

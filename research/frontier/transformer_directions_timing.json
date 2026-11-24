@@ -1,0 +1,75 @@
+{
+  "source": {
+    "arrays_sha256": "e9397dde8bd696b9ae7d9d6129341fd08a5370043ccd64e525a966c54fe2bd0e",
+    "prefix_sha256": "465c041d897528e706cca4ba39aa3126496cebb07a3aa7886ec5019899d2083a",
+    "checkpoint_sha256": "0becbbd8515ac04fb225939cf1e81b594632b4aefd268d0e16f3faa8d16fae9b"
+  },
+  "feature_extraction_seconds": 7.668258200000309,
+  "gpu_peak_allocated_bytes": 84035072,
+  "all_named_fits_ms": 4352.567299999919,
+  "older_class_fit_ms": 38.278600000012375,
+  "cpu_replay_ms": {
+    "static": [
+      6.836,
+      6.8587,
+      8.0504,
+      7.2054,
+      7.265,
+      6.77,
+      6.8092
+    ],
+    "scalar/0.0078125": [
+      4.5552,
+      4.627,
+      4.1648,
+      4.1346,
+      4.1508,
+      4.3691,
+      4.1939
+    ],
+    "scalar_i16/0.0078125": [
+      4.6026,
+      4.5817,
+      4.5779,
+      4.5931,
+      4.5758,
+      4.569,
+      4.5627
+    ],
+    "common/0.0078125": [
+      4.4735,
+      4.4517,
+      4.4548,
+      4.4519,
+      4.455,
+      4.447,
+      4.4521
+    ],
+    "diagonal/0.00195312": [
+      4.4547,
+      4.4495,
+      4.4527,
+      4.4357,
+      4.4581,
+      4.8298,
+      4.4552
+    ],
+    "older_class": [
+      0.1865,
+      0.1835,
+      0.1834,
+      0.1823,
+      0.1849,
+      0.1825,
+      0.1821
+    ]
+  },
+  "report_predictive_category_bytes": 8650752,
+  "report_class_input_bytes": 32768,
+  "report_correction_output_bytes": 262144,
+  "compiled_binary": {
+    "file_bytes": 116224,
+    ".text": 58832,
+    ".rdata": 45852
+  }
+}
