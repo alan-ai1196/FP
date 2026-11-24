@@ -172,6 +172,8 @@ These screens did not authenticate the combined learned input-dependent two-stat
 
 ## 2026-11-25
 
+<!-- sweep 2026-11-25 --> The dated sweep recorded 1375 newly indexed editions. [Source counts and retrieval exceptions](snapshots/discovery-2026-11-25.json)
+
 ### New-day official scan and sampled-feedback sources
 
 The Shanghai date rolled over during the continuing session. A bounded official-first search checked current OpenAI/Anthropic pages and then recent primary work on sampling-only ratio estimation, Bernoulli factories and conditional-variance certificates. The queries included recency filters, but the search engine also returned older publications; discovery today does not imply publication today.
@@ -190,3 +192,11 @@ Against Astra's e280ac5/8bc761f/dd990a1 sampled-feedback acquisition work, four 
 The four IDs/titles and Mendo DOI had no existing index match. An additional scoped dependency check identifies [Mendo's earlier odds paper](https://doi.org/10.1007/s00362-024-01639-w) and its [September25,2026 correction](https://doi.org/10.1007/s00362-026-01906-y). The original publisher says Eq61 was updated. The public arXivv4 is from December2024; the exact correction text is subscription-blocked. The predecessor remains partially read and the correction metadata-only. The distinct2503.04876v4 controlled-sample-ratio predecessor was disambiguated, not added as another full-reading commitment.
 
 Seven edition/web records were added, bringing the index to2,312. Search scope was bounded and is not a novelty or exhaustive-absence claim. Full-paper reading remained with the main assistant. The execution container became unavailable after the Mendo reading; the note and index were prepared through the remaining GitHub interface, preserving concurrent Astra changes.
+
+### Shared discovery and directed mathematical reading
+
+The November 19–25 pass identified 1,834 editions. It added 1,375 IDs to the shared index. The arXiv revision query examined 1,713 records on nine pages and covered its declared date interval. The OpenAI feed returned 12 entries, the Anthropic index 29 links, and the DeepMind feed one entry. The journal and conference pass retained 74 records. Two conference channels returned HTTP 403. The snapshot records the affected channels and all primary endpoints. The full-document pass saved 117 arXiv PDFs before switching to metadata-first discovery for the full window. Of the 1,375 newly indexed records, 125 already had a local file path at that point. Remaining documents are pending. The separate cloud reading and its seven records above were preserved. [Dated scope and exceptions](snapshots/discovery-2026-11-25.json)
+
+Two directed editions bring the combined index to 3,689. The November 23 revision of Howard et al. provides the normal-mixture boundary used to certify sample-only recurrent fits. Gruska, Qiu and Zheng's Theorem 2 gives the exact deterministic automaton threshold on the same unary residue promise used in the noisy-clock proof. Local Astra read the relevant statements, normalization and proof or hypotheses indicated in the index. Both versioned PDFs and source archives were saved. This was scoped reading. [Howard et al., Eq. 14 and Proposition 5](https://arxiv.org/pdf/1810.08240v10) · [Gruska et al., Theorem 2](https://arxiv.org/pdf/1404.1689v4)
+
+A same-source training certificate failed to establish transfer of a newly learned period-to-word connection. Its removal improved both fresh text totals. The controlled experiments instead identify when all sources require a common distinction, how many physical states can make it, and what changes when cues must be processed sequentially. A remaining mathematical question is how ordinary noisy episodes can identify a recurrent transition that continues to give a gain as report lengths increase. [Evidence](../research/frontier/EVIDENCE.md#learning-one-private-bit-that-helps-every-source) · [Streaming lower bound](../research/frontier/FOUNDATION.md#a-streaming-writer-can-need-arbitrarily-many-states-to-transmit-one-useful-bit)
