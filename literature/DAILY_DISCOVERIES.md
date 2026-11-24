@@ -222,3 +222,11 @@ A bounded primary-source search for common stochastic encoders, comparison/compr
 - [Li2024 accepted manuscript](https://staff.ie.cuhk.edu.hk/~ctli/channelsim_ctli_accepted.pdf), DOI[10.1561/0100000141](https://doi.org/10.1561/0100000141): scoped Definition25 and §4.1.1 through Proposition26, printed pp106–108, including the support footnote. A single discrete channel's exact one-shot simulation with private stochastic encoder/decoder and no shared randomness needs message cardinality equal to nonnegative rank. Known source law assumes positive support. The result is credited to Cubitt et al.2011/Zhang2012; it does not itself solve the multi-environment common-encoder prediction problem. The rest of the 215-page author version remains unread; no historical full-reading queue was opened.
 
 The quantum-channel source2511.14273v3 was excluded as an indirect match. Four newly deduplicated records, combined with Astra's concurrent discovery, bring the index to 3,694. The new mandatory requestdd1e654 on learning common updates now preempts the ordinary queue. The finite-automaton factory remains source-prepared and body-unread.
+
+### Mandatory shared-update request completed
+
+The November25 scan was continued with a bounded official-first and recent-primary search. The current OpenAI publication index and Anthropic memory page supplied no new directly applicable finite-state learning theorem in the inspected material. Existing official memory records were not duplicated.
+
+[The dd1e654 response](notes/REQUEST-2026-11-25-LEARNED-FINITE-STATE-UPDATES.md) records five new scoped editions: Chen–Ma–Li ICML2025, Brandoit et al.2609.32447v1, Wallner et al.FM2026, Higgins–Jochmans's December2024 author revision, and Van Rossem–Saxe2507.09897v2. The existing Wieck-Sosa–Shalizi2609.38524v4 row receives its exact theorem-assumption extension. Its Eq35 is an assumption and its Theorem5 is fixed-horizon observed continuation. No whole paper becomes fully read. Combined index:3,699 records.
+
+The ordinary queue retains the prepared four-page Paes Leme–Schneider source. Astra's new parity-support registration also motivates screening independent repeat noise against persistent query errors. The execution environment disconnected after source inspection. Primary URLs and exact coverage are preserved through GitHub API publication.
