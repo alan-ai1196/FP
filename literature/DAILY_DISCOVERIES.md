@@ -169,3 +169,24 @@ These screens did not authenticate the combined learned input-dependent two-stat
 ### Complete-source follow-through: Wei v2
 
 [Wei–Mukherjee–Nguyen2304.10052v2](https://arxiv.org/abs/2304.10052v2) is now fully read, replacing its earlier screening checkpoint; index count remains2,305. The74-page source supports a separate fixed-order multinomial threshold/estimator reference, while a direct counterexample blocks the local low-order raw-moment equivalence. Full coverage, proof distinctions and bounded checks are in [the independent note](notes/WEI-MUKHERJEE-NGUYEN-2025-MINIMUM-PHI.md). This is not a new literature search or an independently certified entire paper. Primary arXiv/author pages still did not authenticate a journal venue for this item.
+
+## 2026-11-25
+
+### New-day official scan and sampled-feedback sources
+
+The Shanghai date rolled over during the continuing session. A bounded official-first search checked current OpenAI/Anthropic pages and then recent primary work on sampling-only ratio estimation, Bernoulli factories and conditional-variance certificates. The queries included recency filters, but the search engine also returned older publications; discovery today does not imply publication today.
+
+[OpenAI's Dreaming article](https://openai.com/index/chatgpt-memory-dreaming/) is a June4,2026 research/product release about background context-memory synthesis. Its opening and evaluation setup were inspected, with the rest and visual evaluations unread; it is retained as an official scoped source. [Anthropic's components-of-agent-memory article](https://www.anthropic.com/research/components-of-agent-memory), November6,2026, was already indexed and remains at its earlier scoped-reading boundary. This screen does not promote either to a numerical recurrent-state theorem. The current official index also surfaced research-acceleration and domain-benchmark material with lower direct relevance. A November9 Springer memory review is a potential citation route, not a replacement for primary mechanism papers.
+
+Against Astra's e280ac5/8bc761f/dd990a1 sampled-feedback acquisition work, four deduplicated primary candidates were retained:
+
+| Source | Actual evidence and disposition |
+|---|---|
+| [Mendo2604.04278v2](https://arxiv.org/abs/2604.04278v2), September29,2026; [JSTA25,37](https://doi.org/10.1007/s44199-026-00191-w), September30 | Complete28-page v2/source retrieved and subsequently personally fully read. Independent note records prescribed MSE at variable unbounded query cost. Eq102's half-axis equality fails, while a direct inequality preserves the global efficiency bound. Official31-page journalPDF is retrieved, but full equivalence is not certified. |
+| [Koskela et al.2510.01941v2](https://arxiv.org/abs/2510.01941v2), September1,2026 | Metadata/abstract only;10pages stated. Bounded unbiased probability transformation with random sample count independent of outcomes. Finite expected cost and complete appendices not yet checked. |
+| [Paes Leme–Schneider2606.29595v1](https://arxiv.org/abs/2606.29595v1), June28,2026 | Metadata/abstract only. Three-variable rational-function counterexample separating general from finite-automaton factories; actual resource definitions and proof unread. No primary November revision was found in its version history. |
+| [Chugg–Ramdas2512.21300v1](https://arxiv.org/abs/2512.21300v1), December24,2025 | Metadata/abstract only;36pages/sixfigures stated. Closed-form empirical-Bernstein confidence sequences for average conditional means. Preferred next full paper if complete figure/source access is available; no automatic guarantee for selected feedback rules. |
+
+The four IDs/titles and Mendo DOI had no existing index match. An additional scoped dependency check identifies [Mendo's earlier odds paper](https://doi.org/10.1007/s00362-024-01639-w) and its [September25,2026 correction](https://doi.org/10.1007/s00362-026-01906-y). The original publisher says Eq61 was updated. The public arXivv4 is from December2024; the exact correction text is subscription-blocked. The predecessor remains partially read and the correction metadata-only. The distinct2503.04876v4 controlled-sample-ratio predecessor was disambiguated, not added as another full-reading commitment.
+
+Seven edition/web records were added, bringing the index to2,312. Search scope was bounded and is not a novelty or exhaustive-absence claim. Full-paper reading remained with the main assistant. The execution container became unavailable after the Mendo reading; the note and index were prepared through the remaining GitHub interface, preserving concurrent Astra changes.
