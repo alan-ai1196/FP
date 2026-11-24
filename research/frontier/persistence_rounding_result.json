@@ -1,0 +1,66 @@
+[
+  {
+    "refresh": 0.03,
+    "levels": 4,
+    "randomized": false,
+    "horizon": 12,
+    "operational_kl": 0.3956602616279409,
+    "bound": 98.88158621986692
+  },
+  {
+    "refresh": 0.03,
+    "levels": 4,
+    "randomized": true,
+    "horizon": 12,
+    "operational_kl": 0.40570305768242665,
+    "bound": 3.0553585195138613
+  },
+  {
+    "refresh": 0.03,
+    "levels": 16,
+    "randomized": false,
+    "horizon": 12,
+    "operational_kl": 0.004435327301507691,
+    "bound": 3.9552634487946774
+  },
+  {
+    "refresh": 0.03,
+    "levels": 16,
+    "randomized": true,
+    "horizon": 12,
+    "operational_kl": 0.019565602824365785,
+    "bound": 0.12221434078055447
+  },
+  {
+    "refresh": 0.32,
+    "levels": 4,
+    "randomized": false,
+    "horizon": 12,
+    "operational_kl": 0.026085123334388827,
+    "bound": 1.2508984797010303
+  },
+  {
+    "refresh": 0.32,
+    "levels": 4,
+    "randomized": true,
+    "horizon": 12,
+    "operational_kl": 0.05486747538973815,
+    "bound": 0.5116149201231209
+  },
+  {
+    "refresh": 0.32,
+    "levels": 16,
+    "randomized": false,
+    "horizon": 12,
+    "operational_kl": 0.000784348396175413,
+    "bound": 0.05003593918804122
+  },
+  {
+    "refresh": 0.32,
+    "levels": 16,
+    "randomized": true,
+    "horizon": 12,
+    "operational_kl": 0.002135394810027211,
+    "bound": 0.02046459680492484
+  }
+]
