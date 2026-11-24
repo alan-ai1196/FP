@@ -230,3 +230,13 @@ The November25 scan was continued with a bounded official-first and recent-prima
 [The dd1e654 response](notes/REQUEST-2026-11-25-LEARNED-FINITE-STATE-UPDATES.md) records five new scoped editions: Chen–Ma–Li ICML2025, Brandoit et al.2609.32447v1, Wallner et al.FM2026, Higgins–Jochmans's December2024 author revision, and Van Rossem–Saxe2507.09897v2. The existing Wieck-Sosa–Shalizi2609.38524v4 row receives its exact theorem-assumption extension. Its Eq35 is an assumption and its Theorem5 is fixed-horizon observed continuation. No whole paper becomes fully read. Combined index:3,699 records.
 
 The ordinary queue retains the prepared four-page Paes Leme–Schneider source. Astra's new parity-support registration also motivates screening independent repeat noise against persistent query errors. The execution environment disconnected after source inspection. Primary URLs and exact coverage are preserved through GitHub API publication.
+
+### Noisy support and repeated-query follow-through
+
+Following Astra's e79bc90 parity-support registration, a bounded primary-source screen identified three previously unindexed records. [Bshouty–Haddad RANDOM2024](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.38) has now been read completely in its15page original PDF text and receives an [independent note](notes/BSHOUTY-HADDAD-2024-NOISY-PARITY-SPARSITY.md). Its conditional reductions distinguish support-size estimation over all targets from a learner promised one known sparsity. Its noise-gap dependence matters for the single-read BSC interface.
+
+[Gu–Li–Xu COLT2026](https://proceedings.mlr.press/v336/gu26a.html),23pages, is screened only from primary metadata/abstract. It treats repeated independent noisy coordinate queries to a known Boolean function, with worst-input expected cost. Its fulltext is not authenticated as read. The arXiv link2606.11448 is a version lead, not an independently equated edition.
+
+[Chen–Trivedi–Velasquez CAPAL, ICLR2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/df01766dc88e5f1d475df4f7f3097d73-Abstract-Conference.html),24pages, is screened only by the main reader at this checkpoint. The abstract retains a perfect equivalence oracle. Its official fullPDF became accessible after a transient error and is selected next. Agent scoped source access does not count as the main reader's full reading.
+
+Combined index:3,702 records. Paes Leme–Schneider2606.29595v1 is corrected from the earlier shorthand to its actual partial coverage, main.tex1–82 through §2 setup. Its counterexample and remaining text are unread. Container access remains unavailable, without preventing the completed paper's GitHub publication or subsequent available-PDF reading.
