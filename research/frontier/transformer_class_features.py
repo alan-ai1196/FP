@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+from dataclasses import dataclass
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from time import perf_counter
@@ -21,33 +22,72 @@ SHA = "465c041d897528e706cca4ba39aa3126496cebb07a3aa7886ec5019899d2083a"
 CHECKPOINT = "0becbbd8515ac04fb225939cf1e81b594632b4aefd268d0e16f3faa8d16fae9b"
 
 
-def extract(path, data_dir=None, models_root=None):
+@dataclass(frozen=True)
+class Window:
+    registration: str
+    source: str
+    first: int
+    middle: int
+    stop: int
+    check_at: int
+    previous: str
+    sha: str
+    panels: tuple
+
+
+ORIGINAL = Window(
+    REGISTRATION,
+    "train_source",
+    START,
+    START + FIT_SIZE,
+    END,
+    START,
+    PREVIOUS_SHA,
+    SHA,
+    (START + FIT_SIZE + BLOCK, START + FIT_SIZE + 2 * BLOCK),
+)
+
+
+def extract(path, data_dir=None, models_root=None, window=ORIGINAL, fixed_ids=None):
     ledger = {
         e["case"]: e["result"]
         for e in git_json("evidence/minimal/FP_TEXT_BASELINE_ANCHOR_A1.json")["results"]
     }
-    src = ledger["ngram"]["train_source"]
-    raw = tape(dict(src, bytes_read=2 * END, prefix_sha256=SHA), data_dir)
+    src = ledger["ngram"][window.source]
+    raw = tape(
+        dict(src, bytes_read=2 * window.stop, prefix_sha256=window.sha), data_dir
+    )
     tokens = np.frombuffer(raw, dtype=np.uint16)
     assert (
-        hashlib.sha256(tokens[:START].astype("<u2").tobytes()).hexdigest()
-        == PREVIOUS_SHA
+        hashlib.sha256(tokens[: window.check_at].astype("<u2").tobytes()).hexdigest()
+        == window.previous
     )
-    freq = np.bincount(tokens[:FIT], minlength=VOCAB)
-    ids = np.lexsort((np.arange(VOCAB), -freq))[:32].astype(np.uint16)
+    if fixed_ids is None:
+        assert window.source == "train_source"
+        freq = np.bincount(tokens[:FIT], minlength=VOCAB)
+        ids = np.lexsort((np.arange(VOCAB), -freq))[:32].astype(np.uint16)
+    else:
+        ids = np.asarray(fixed_ids, dtype=np.uint16)
+        assert len(np.unique(ids)) == 32
     parent = json.loads(
         Path(__file__).with_name("text_word_classes_result.json").read_text()
     )
     old = np.asarray(parent["installations"]["global"]["output_ids"], dtype=np.uint16)
     mapping = np.full(VOCAB, len(ids), np.uint8)
     mapping[ids] = np.arange(len(ids))
-    target = mapping[tokens[START:END]]
-    old_hits = np.isin(tokens[START:END], old).astype(np.uint8)
-    mass = np.empty((END - START, len(ids) + 1))
+    target = mapping[tokens[window.first : window.stop]]
+    old_hits = np.isin(tokens[window.first : window.stop], old).astype(np.uint8)
+    mass = np.empty((window.stop - window.first, len(ids) + 1))
     old_mass = np.empty(len(target))
     nll = np.empty(len(target))
     dense_indices = np.array(
-        [0, 31, FIT_SIZE, FIT_SIZE + BLOCK, FIT_SIZE + 2 * BLOCK, len(target) - 1]
+        [
+            0,
+            31,
+            window.middle - window.first,
+            *(p - window.first for p in window.panels),
+            len(target) - 1,
+        ]
     )
     dense = np.empty((len(dense_indices), VOCAB))
     selection = ledger["report"]["selected"]
@@ -68,15 +108,17 @@ def extract(path, data_dir=None, models_root=None):
             torch.inference_mode(),
             torch.autocast(device_type="cuda", dtype=torch.float16),
         ):
-            for first in range(START, END, 32):
+            for first in range(window.first, window.stop, 32):
                 for pos, inputs in reporting_inputs(
                     tokens, range(first, first + 32), spec, device="cuda"
                 ):
-                    ix = np.asarray(list(pos)) - START
-                    assert np.array_equal(ix + START, np.arange(first, first + 32))
+                    ix = np.asarray(list(pos)) - window.first
+                    assert np.array_equal(
+                        ix + window.first, np.arange(first, first + 32)
+                    )
                     logits = model(inputs, last_only=True)
                     y = torch.as_tensor(
-                        tokens[ix + START].astype(np.int64), device="cuda"
+                        tokens[ix + window.first].astype(np.int64), device="cuda"
                     )
                     z = torch.logsumexp(logits.double(), dim=1)
                     named = torch.exp(logits[:, cols].double() - z[:, None])
@@ -105,7 +147,7 @@ def extract(path, data_dir=None, models_root=None):
                         dense[verify] = (
                             torch.softmax(logits[take].double(), dim=1).cpu().numpy()
                         )
-                    if first in (START, START + FIT_SIZE, END - 32):
+                    if first in (window.first, window.middle, window.stop - 32):
                         direct = torch.softmax(logits.double(), dim=1)
                         high = max(
                             high,
@@ -125,7 +167,7 @@ def extract(path, data_dir=None, models_root=None):
             models_root,
             None,
             directory,
-            (START + FIT_SIZE + BLOCK, START + FIT_SIZE + 2 * BLOCK),
+            window.panels,
         )
     assert high < 2e-12 and np.all((mass > 0) & (mass < 1))
     np.testing.assert_allclose(mass.sum(axis=1), 1, rtol=0, atol=4e-15)
@@ -143,15 +185,15 @@ def extract(path, data_dir=None, models_root=None):
         signature.update(name.encode())
         signature.update(data.tobytes())
     meta = {
-        "registration": REGISTRATION,
-        "prefix_sha256": SHA,
+        "registration": window.registration,
+        "prefix_sha256": window.sha,
         "checkpoint_sha256": CHECKPOINT,
         "checkpoint_file_bytes": weights.stat().st_size,
         "parameters": sum(p.numel() for p in model.parameters()),
         "vocabulary": VOCAB,
         "rolling_context": spec.context,
         "targets": len(target),
-        "first_target": START,
+        "first_target": window.first,
         "bytes_arrays": sum(a.nbytes for a in arrays.values()),
         "arrays_sha256": signature.hexdigest(),
         "normalization_error": high,
@@ -166,7 +208,7 @@ def extract(path, data_dir=None, models_root=None):
         **arrays,
         dense=dense,
         dense_indices=dense_indices,
-        dense_targets=tokens[START + dense_indices],
+        dense_targets=tokens[window.first + dense_indices],
         metadata=np.array(json.dumps(meta)),
     )
     return meta

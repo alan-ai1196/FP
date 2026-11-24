@@ -1,6 +1,6 @@
 # Research decisions
 
-Foundation R4 remains canonical on `main`. Its positive evaluator and a conventional indexed state machine both realize the learned six-state law. The current text results favor the historical Transformer and modified Kneser–Ney. Replacing R4 would require a stronger matched language and physical result. [Comparison](EVIDENCE.md) · [Next question](NEXT.md)
+Foundation R4 remains canonical on `main`. Its positive evaluator and a conventional indexed state machine both realize the learned six-state law. The strongest current matched text result adds learned error averages to the historical Transformer. The four-byte version improved every block in a frozen two-file test. Replacing R4 as a general native language still requires a matched, independently learned mechanism across task families. [Comparison](EVIDENCE.md) · [Next question](NEXT.md)
 
 | Question | Decision and scope |
 |---|---|
