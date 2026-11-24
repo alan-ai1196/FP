@@ -1,0 +1,622 @@
+{
+  "registration": "8bc761f",
+  "fit_array_hash": "e9397dde8bd696b9ae7d9d6129341fd08a5370043ccd64e525a966c54fe2bd0e",
+  "ids": [
+    11,
+    262,
+    13,
+    286,
+    290,
+    198,
+    284,
+    257,
+    287,
+    12,
+    318,
+    326,
+    329,
+    357,
+    389,
+    355,
+    351,
+    319,
+    447,
+    393,
+    416,
+    307,
+    340,
+    373,
+    383,
+    422,
+    25,
+    379,
+    423,
+    82,
+    281,
+    247
+  ],
+  "fit_targets": 32768,
+  "candidate_rules": 52272,
+  "fits": [
+    {
+      "budget": 1,
+      "seed": 211,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.4846974638708788,
+        "radius": 55.69673834222662,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.03357662365840056,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 1,
+      "seed": 401,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.0470439498427933,
+        "radius": 55.22403231612931,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.032078921122836265,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 1,
+      "seed": 587,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.590774568087642,
+        "radius": 55.62028661701255,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.08521591654875216,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 1,
+      "seed": 821,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.0710503662121686,
+        "radius": 55.072955279968184,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.016774731319841668,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 4,
+      "seed": 211,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.4663584357200452,
+        "radius": 15.05643957199546,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.03283758627352262,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 4,
+      "seed": 401,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.4361735073570643,
+        "radius": 14.958471097246024,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.023585925700358806,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 4,
+      "seed": 587,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.2904843139116378,
+        "radius": 14.922916065428632,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.107292232595871,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 4,
+      "seed": 821,
+      "programs": {
+        "32": {
+          "packet": "",
+          "certified_nats": 0.0,
+          "after_installation_price": 0.0,
+          "checked_training_gain": 1.9065034517458737e-14
+        },
+        "96": {
+          "packet": "010120ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 2.609734427912973,
+          "after_installation_price": 1.0068315728680997,
+          "checked_training_gain": 11.046648158899867
+        }
+      },
+      "ideal_diagonal": {
+        "index": null,
+        "slope_Q8": 0,
+        "certified_nats": 0.0,
+        "estimated_score": 1.4864664307382185,
+        "radius": 15.200827080997726,
+        "true_score": null,
+        "true_score_variance": null,
+        "maximum_error_over_radius": 0.11438390567228983,
+        "checked_training_gain": 0.0
+      }
+    },
+    {
+      "budget": 16,
+      "seed": 211,
+      "programs": {
+        "32": {
+          "packet": "0101000d000d00090004",
+          "certified_nats": 2.0920350619903783,
+          "after_installation_price": 1.8754265680653954,
+          "checked_training_gain": 10.894740688690314
+        },
+        "96": {
+          "packet": "0102200d000d00090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 6.748208501833481,
+          "after_installation_price": 4.9936797010411205,
+          "checked_training_gain": 21.39335614565133
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 79,
+        "certified_nats": 0.8703802555249444,
+        "estimated_score": 12.730452236087322,
+        "radius": 7.124012749999446,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.475919641554021,
+        "maximum_error_over_radius": 0.07957440090059695,
+        "checked_training_gain": 3.9729927032778423
+      }
+    },
+    {
+      "budget": 16,
+      "seed": 401,
+      "programs": {
+        "32": {
+          "packet": "0101000d000d00090004",
+          "certified_nats": 1.6678391540589228,
+          "after_installation_price": 1.45123066013394,
+          "checked_training_gain": 10.704634579570428
+        },
+        "96": {
+          "packet": "0102200d000d00090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 6.010419433445604,
+          "after_installation_price": 4.255890632653243,
+          "checked_training_gain": 20.744124774309146
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 84,
+        "certified_nats": 0.9811161693717182,
+        "estimated_score": 13.240482274928004,
+        "radius": 7.250988793444692,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.475919641554021,
+        "maximum_error_over_radius": 0.042665296192600365,
+        "checked_training_gain": 4.215662796029214
+      }
+    },
+    {
+      "budget": 16,
+      "seed": 587,
+      "programs": {
+        "32": {
+          "packet": "0101000d000d00090004",
+          "certified_nats": 2.2297857477803493,
+          "after_installation_price": 2.0131772538553663,
+          "checked_training_gain": 11.237623908650164
+        },
+        "96": {
+          "packet": "0102200d000d00090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 7.0859109904969815,
+          "after_installation_price": 5.33138218970462,
+          "checked_training_gain": 21.509291084839447
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 99,
+        "certified_nats": 1.44157199658628,
+        "estimated_score": 14.923593489265828,
+        "radius": 7.499683334653491,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.475919641554021,
+        "maximum_error_over_radius": 0.2168427830912176,
+        "checked_training_gain": 4.93739464210158
+      }
+    },
+    {
+      "budget": 16,
+      "seed": 821,
+      "programs": {
+        "32": {
+          "packet": "0101000d000d00090004",
+          "certified_nats": 1.7836068923960315,
+          "after_installation_price": 1.5669983984710487,
+          "checked_training_gain": 10.83585039852267
+        },
+        "96": {
+          "packet": "0102200d000d00090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 6.260283823620555,
+          "after_installation_price": 4.505755022828193,
+          "checked_training_gain": 21.096635585881533
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 79,
+        "certified_nats": 0.8536070990638179,
+        "estimated_score": 12.700488277108706,
+        "radius": 7.140039906004316,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.475919641554021,
+        "maximum_error_over_radius": 0.08359239071844976,
+        "checked_training_gain": 3.9729927032778423
+      }
+    },
+    {
+      "budget": 64,
+      "seed": 211,
+      "programs": {
+        "32": {
+          "packet": "0103000b000b000900040d000d00090008c600c600090004",
+          "certified_nats": 12.22154574205833,
+          "after_installation_price": 11.701685356638372,
+          "checked_training_gain": 29.86848693256446
+        },
+        "96": {
+          "packet": "0103200d000d00090008c600c600090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 17.673245606323054,
+          "after_installation_price": 15.767090859783204,
+          "checked_training_gain": 35.38078965456945
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 270,
+        "certified_nats": 5.62413817401173,
+        "estimated_score": 13.616712377076158,
+        "radius": 2.940037054296799,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.11843276100953674,
+        "maximum_error_over_radius": 0.1086282548489186,
+        "checked_training_gain": 12.498833387970592
+      }
+    },
+    {
+      "budget": 64,
+      "seed": 401,
+      "programs": {
+        "32": {
+          "packet": "0103000b000b000900040d000d00090010c600c600090008",
+          "certified_nats": 13.28774927059128,
+          "after_installation_price": 12.767888885171322,
+          "checked_training_gain": 46.532915864364796
+        },
+        "96": {
+          "packet": "0103200d000d00090010c600c600090008ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 18.770879522431215,
+          "after_installation_price": 16.864724775891364,
+          "checked_training_gain": 51.795635652980884
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 267,
+        "certified_nats": 5.465239733370592,
+        "estimated_score": 13.381646732088543,
+        "radius": 2.9189035168853517,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.11843276100953674,
+        "maximum_error_over_radius": 0.04407518555678896,
+        "checked_training_gain": 12.376744790722949
+      }
+    },
+    {
+      "budget": 64,
+      "seed": 587,
+      "programs": {
+        "32": {
+          "packet": "0103000b000b000900040d000d00090008c600c600090004",
+          "certified_nats": 12.041756842638044,
+          "after_installation_price": 11.521896457218086,
+          "checked_training_gain": 29.648239670570113
+        },
+        "96": {
+          "packet": "0103200d000d00090008c600c600090004ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 17.367722466064876,
+          "after_installation_price": 15.461567719525027,
+          "checked_training_gain": 35.25775531848531
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 266,
+        "certified_nats": 5.422059710716995,
+        "estimated_score": 13.352780589187214,
+        "radius": 2.92334697433641,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.11843276100953674,
+        "maximum_error_over_radius": 0.03796088061586697,
+        "checked_training_gain": 12.335964646235414
+      }
+    },
+    {
+      "budget": 64,
+      "seed": 821,
+      "programs": {
+        "32": {
+          "packet": "0103000b000b000900040d000d00090010c600c600090008",
+          "certified_nats": 13.255802237770371,
+          "after_installation_price": 12.735941852350413,
+          "checked_training_gain": 47.697266641844756
+        },
+        "96": {
+          "packet": "0103200d000d00090010c600c600090008ffffffff0780000b000c000d0019005200c600f7000101060119011c011e011f01220133013e013f014601490154015f016301650175017b017f0185018901a001a601a701bf01",
+          "certified_nats": 18.257250166966582,
+          "after_installation_price": 16.35109542042673,
+          "checked_training_gain": 52.62969739574558
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 264,
+        "certified_nats": 5.326100330994891,
+        "estimated_score": 13.225203557426935,
+        "radius": 2.9125931354580996,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.11843276100953674,
+        "maximum_error_over_radius": 0.03674935717541895,
+        "checked_training_gain": 12.254278442898457
+      }
+    },
+    {
+      "budget": 1024,
+      "seed": 211,
+      "programs": {
+        "32": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.86132606452206,
+          "after_installation_price": 39.3414656791021,
+          "checked_training_gain": 66.88371878695051
+        },
+        "96": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.86132606452206,
+          "after_installation_price": 39.3414656791021,
+          "checked_training_gain": 66.88371878695051
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 572,
+        "certified_nats": 14.245765707876933,
+        "estimated_score": 13.357596125474453,
+        "radius": 0.6114753943080617,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.007391361051788154,
+        "maximum_error_over_radius": 0.09854009394097511,
+        "checked_training_gain": 22.853189154407403
+      }
+    },
+    {
+      "budget": 1024,
+      "seed": 401,
+      "programs": {
+        "32": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.49191917975777,
+          "after_installation_price": 38.97205879433781,
+          "checked_training_gain": 66.85018036253729
+        },
+        "96": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.49191917975777,
+          "after_installation_price": 38.97205879433781,
+          "checked_training_gain": 66.85018036253729
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 571,
+        "certified_nats": 14.17732044373154,
+        "estimated_score": 13.312257050454408,
+        "radius": 0.6105290846909199,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.007391361051788154,
+        "maximum_error_over_radius": 0.06656125234617143,
+        "checked_training_gain": 22.82523833564507
+      }
+    },
+    {
+      "budget": 1024,
+      "seed": 587,
+      "programs": {
+        "32": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.8018672962675,
+          "after_installation_price": 39.28200691084754,
+          "checked_training_gain": 66.7504031043854
+        },
+        "96": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.8018672962675,
+          "after_installation_price": 39.28200691084754,
+          "checked_training_gain": 66.7504031043854
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 570,
+        "certified_nats": 14.060706799166027,
+        "estimated_score": 13.235081229026394,
+        "radius": 0.6089155471124447,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.007391361051788154,
+        "maximum_error_over_radius": 0.102247436357297,
+        "checked_training_gain": 22.797245366255915
+      }
+    },
+    {
+      "budget": 1024,
+      "seed": 821,
+      "programs": {
+        "32": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.22170718652419,
+          "after_installation_price": 38.70184680110423,
+          "checked_training_gain": 66.56964109422387
+        },
+        "96": {
+          "packet": "0103000d000d00090010c600c6000900100d007b01090020",
+          "certified_nats": 39.22170718652419,
+          "after_installation_price": 38.70184680110423,
+          "checked_training_gain": 66.56964109422387
+        }
+      },
+      "ideal_diagonal": {
+        "index": 32,
+        "slope_Q8": 572,
+        "certified_nats": 14.227558600303977,
+        "estimated_score": 13.345901717472723,
+        "radius": 0.6111966239781101,
+        "true_score": 13.297341282676742,
+        "true_score_variance": 0.007391361051788154,
+        "maximum_error_over_radius": 0.14193645715222622,
+        "checked_training_gain": 22.853189154407403
+      }
+    }
+  ]
+}

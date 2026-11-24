@@ -59,15 +59,15 @@ class Native:
         (_ctypes.FreeLibrary if os.name == "nt" else _ctypes.dlclose)(self.lib._handle)
         self.tmp.cleanup()
 
-    def histories(self, q, y, packed):
+    def histories(self, q, y, packed, rate=RATE):
         d = q.shape[1]
         if packed:
             out = np.empty(q.shape)
-            self.lib.error_grid(len(q), d, q, y, RATE, np.zeros(d, np.int16), out)
+            self.lib.error_grid(len(q), d, q, y, rate, np.zeros(d, np.int16), out)
             return out
         errors = -q.copy()
         errors[np.arange(len(y)), y] += 1
-        return lfilter([0.0, RATE], [1.0, RATE - 1.0], errors, axis=0)
+        return lfilter([0.0, rate], [1.0, rate - 1.0], errors, axis=0)
 
     def stream(self, q, y, col, gamma, carry):
         out = np.empty(len(y))
