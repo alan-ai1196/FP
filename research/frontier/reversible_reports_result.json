@@ -1,0 +1,765 @@
+{
+  "registration": "3d4b9a2",
+  "fresh_episodes_per_length": 128,
+  "fits": [
+    {
+      "seed": 173,
+      "words": [
+        [],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "rounds": [
+        {
+          "classes": 2,
+          "tests": 4,
+          "added": [
+            1
+          ]
+        },
+        {
+          "classes": 4,
+          "tests": 7,
+          "added": [
+            2
+          ]
+        },
+        {
+          "classes": 6,
+          "tests": 10,
+          "added": [
+            1,
+            2
+          ]
+        },
+        {
+          "classes": 8,
+          "tests": 13,
+          "added": null
+        }
+      ],
+      "classes": 8,
+      "build_cost": {
+        "resets": 400,
+        "reports": 765000,
+        "advances": 10200
+      },
+      "calibration_cost": {
+        "resets": 1024,
+        "reports": 923648,
+        "advances": 8192
+      },
+      "packet_hex": "080388c6de50eaf16311dde0880300040d00760014007600700016000f0062008200880087007f007a008d007a006f00",
+      "bytes": 48,
+      "f_correct": 904,
+      "calibration_by_class": [
+        130,
+        136,
+        135,
+        127,
+        122,
+        141,
+        122,
+        111
+      ],
+      "new_positive": [
+        13,
+        118,
+        20,
+        118,
+        112,
+        22,
+        15,
+        98
+      ],
+      "marginals": [
+        0.384765625,
+        0.50390625
+      ],
+      "lengths": [
+        {
+          "length": 16,
+          "conventional_max_difference": 8.881784197001252e-16,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.5032616856877865
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.2937320160347732
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.00027858446116972525,
+                "realized_nll": 0.5042040396616134
+              },
+              "terminal": {
+                "excess_nats": 0.003436548746474713,
+                "realized_nll": 0.28884557978653125
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.00027858446116972596,
+                "realized_nll": 0.5042040396616134
+              },
+              "terminal": {
+                "excess_nats": 0.0034365487464747195,
+                "realized_nll": 0.2888455797865313
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.1682784793566264,
+                "realized_nll": 0.6584648506562554
+              },
+              "terminal": {
+                "excess_nats": 0.2752332922851554,
+                "realized_nll": 0.6639709298893954
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.19171947010032087,
+                "realized_nll": 0.6811785636676458
+              },
+              "terminal": {
+                "excess_nats": 0.28003992947013356,
+                "realized_nll": 0.693055626273313
+              }
+            }
+          }
+        },
+        {
+          "length": 128,
+          "conventional_max_difference": 1.3322676295501878e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.3947754349797837
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.49838954557239395
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.00028966018495687595,
+                "realized_nll": 0.39513607177971427
+              },
+              "terminal": {
+                "excess_nats": 0.003510935629274358,
+                "realized_nll": 0.5134790899775923
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.0002896601849568762,
+                "realized_nll": 0.39513607177971427
+              },
+              "terminal": {
+                "excess_nats": 0.003510935629274358,
+                "realized_nll": 0.5134790899775923
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.2568908480257631,
+                "realized_nll": 0.6492260786484008
+              },
+              "terminal": {
+                "excess_nats": 0.3142241419548544,
+                "realized_nll": 0.7101316345125726
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.28483315648294616,
+                "realized_nll": 0.6767173652090781
+              },
+              "terminal": {
+                "excess_nats": 0.3171399745897009,
+                "realized_nll": 0.6941542814383734
+              }
+            }
+          }
+        },
+        {
+          "length": 1024,
+          "conventional_max_difference": 4.718447854656915e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.37884337960843517
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.3311628921379529
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.0002894453662214766,
+                "realized_nll": 0.37913454474229186
+              },
+              "terminal": {
+                "excess_nats": 0.0035452725361133307,
+                "realized_nll": 0.3337559689009218
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.00028944536622147664,
+                "realized_nll": 0.37913454474229186
+              },
+              "terminal": {
+                "excess_nats": 0.0035452725361133307,
+                "realized_nll": 0.3337559689009218
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.27710986557170136,
+                "realized_nll": 0.6562679371435209
+              },
+              "terminal": {
+                "excess_nats": 0.2937946285669132,
+                "realized_nll": 0.6667486116494858
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.2977444781304884,
+                "realized_nll": 0.6765368536381431
+              },
+              "terminal": {
+                "excess_nats": 0.31631598321590565,
+                "realized_nll": 0.6931776990694308
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 419,
+      "words": [
+        [],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "rounds": [
+        {
+          "classes": 2,
+          "tests": 4,
+          "added": [
+            1
+          ]
+        },
+        {
+          "classes": 4,
+          "tests": 7,
+          "added": [
+            2
+          ]
+        },
+        {
+          "classes": 6,
+          "tests": 10,
+          "added": [
+            1,
+            2
+          ]
+        },
+        {
+          "classes": 8,
+          "tests": 13,
+          "added": null
+        }
+      ],
+      "classes": 8,
+      "build_cost": {
+        "resets": 400,
+        "reports": 765000,
+        "advances": 10200
+      },
+      "calibration_cost": {
+        "resets": 1024,
+        "reports": 923648,
+        "advances": 8192
+      },
+      "packet_hex": "080388c6de50eaf16311dde0830300040f006f000e0074006b000f001400690084007f00760085007e008d007f007800",
+      "bytes": 48,
+      "f_correct": 899,
+      "calibration_by_class": [
+        132,
+        127,
+        118,
+        133,
+        126,
+        141,
+        127,
+        120
+      ],
+      "new_positive": [
+        15,
+        111,
+        14,
+        116,
+        107,
+        15,
+        20,
+        105
+      ],
+      "marginals": [
+        0.4111328125,
+        0.4912109375
+      ],
+      "lengths": [
+        {
+          "length": 16,
+          "conventional_max_difference": 1.4988010832439613e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.47578997727960665
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.44583532798056924
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 3.7757784854915906e-05,
+                "realized_nll": 0.4757022025615567
+              },
+              "terminal": {
+                "excess_nats": 0.0012009276918178201,
+                "realized_nll": 0.4489048535208827
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 3.7757784854916814e-05,
+                "realized_nll": 0.4757022025615567
+              },
+              "terminal": {
+                "excess_nats": 0.0012009276918178205,
+                "realized_nll": 0.4489048535208827
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.1601120634958417,
+                "realized_nll": 0.6552738710301053
+              },
+              "terminal": {
+                "excess_nats": 0.24879553451315997,
+                "realized_nll": 0.6382911716883023
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.18311299104577272,
+                "realized_nll": 0.6705605123834179
+              },
+              "terminal": {
+                "excess_nats": 0.27446119505613953,
+                "realized_nll": 0.6954991916512517
+              }
+            }
+          }
+        },
+        {
+          "length": 128,
+          "conventional_max_difference": 1.9984014443252818e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.40184632941675796
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.43757985341441397
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 3.973125062302872e-05,
+                "realized_nll": 0.40201064693193667
+              },
+              "terminal": {
+                "excess_nats": 0.0011855360293523526,
+                "realized_nll": 0.43415847465369695
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 3.973125062302837e-05,
+                "realized_nll": 0.40201064693193667
+              },
+              "terminal": {
+                "excess_nats": 0.0011855360293523518,
+                "realized_nll": 0.43415847465369695
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.25378897082073426,
+                "realized_nll": 0.6491447298338865
+              },
+              "terminal": {
+                "excess_nats": 0.272593439257294,
+                "realized_nll": 0.6714636890809309
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.28206776098029984,
+                "realized_nll": 0.6778856107422063
+              },
+              "terminal": {
+                "excess_nats": 0.3169435681624039,
+                "realized_nll": 0.6933016996729
+              }
+            }
+          }
+        },
+        {
+          "length": 1024,
+          "conventional_max_difference": 2.1094237467877974e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.37786449188101406
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.4375798534144154
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 3.9773833691185545e-05,
+                "realized_nll": 0.377891270557636
+              },
+              "terminal": {
+                "excess_nats": 0.0013013069375168032,
+                "realized_nll": 0.43296358081998243
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 3.977383369118553e-05,
+                "realized_nll": 0.37789127055763605
+              },
+              "terminal": {
+                "excess_nats": 0.0013013069375168032,
+                "realized_nll": 0.43296358081998243
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.27593289280429634,
+                "realized_nll": 0.6551996750158979
+              },
+              "terminal": {
+                "excess_nats": 0.27905231088498417,
+                "realized_nll": 0.6844180026497857
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.2963368159919457,
+                "realized_nll": 0.6753413591422083
+              },
+              "terminal": {
+                "excess_nats": 0.3179736425272566,
+                "realized_nll": 0.6952245051539578
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "seed": 773,
+      "words": [
+        [],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "rounds": [
+        {
+          "classes": 2,
+          "tests": 4,
+          "added": [
+            1
+          ]
+        },
+        {
+          "classes": 4,
+          "tests": 7,
+          "added": [
+            2
+          ]
+        },
+        {
+          "classes": 6,
+          "tests": 10,
+          "added": [
+            1,
+            2
+          ]
+        },
+        {
+          "classes": 8,
+          "tests": 13,
+          "added": null
+        }
+      ],
+      "classes": 8,
+      "build_cost": {
+        "resets": 400,
+        "reports": 765000,
+        "advances": 10200
+      },
+      "calibration_cost": {
+        "resets": 1024,
+        "reports": 923648,
+        "advances": 8192
+      },
+      "packet_hex": "080388c6de50eaf16311dde086030004140079000e006f0086000c000e007800930087007b00790098005e0072008a00",
+      "bytes": 48,
+      "f_correct": 902,
+      "calibration_by_class": [
+        147,
+        135,
+        123,
+        121,
+        152,
+        94,
+        114,
+        138
+      ],
+      "new_positive": [
+        20,
+        121,
+        14,
+        111,
+        134,
+        12,
+        14,
+        120
+      ],
+      "marginals": [
+        0.40234375,
+        0.533203125
+      ],
+      "lengths": [
+        {
+          "length": 16,
+          "conventional_max_difference": 6.661338147750939e-16,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.4853303881521087
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.4557149176959117
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.0001538401629022458,
+                "realized_nll": 0.48560167765341
+              },
+              "terminal": {
+                "excess_nats": 0.0009664457740081239,
+                "realized_nll": 0.4582701570529255
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.0001538401629022439,
+                "realized_nll": 0.48560167765341
+              },
+              "terminal": {
+                "excess_nats": 0.0009664457740081345,
+                "realized_nll": 0.4582701570529255
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.15015857887295814,
+                "realized_nll": 0.6360767104966853
+              },
+              "terminal": {
+                "excess_nats": 0.20937636459813952,
+                "realized_nll": 0.6354692420911957
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.18323852815453018,
+                "realized_nll": 0.6689496220402769
+              },
+              "terminal": {
+                "excess_nats": 0.261064148448946,
+                "realized_nll": 0.7057482204854484
+              }
+            }
+          }
+        },
+        {
+          "length": 128,
+          "conventional_max_difference": 1.2212453270876722e-15,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.3999607575668675
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.33116289214133954
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.0001615385433669078,
+                "realized_nll": 0.4003207702106616
+              },
+              "terminal": {
+                "excess_nats": 0.0012049786111548123,
+                "realized_nll": 0.32801994945005236
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.0001615385433669068,
+                "realized_nll": 0.4003207702106616
+              },
+              "terminal": {
+                "excess_nats": 0.0012049786111548119,
+                "realized_nll": 0.32801994945005236
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.2639768718111329,
+                "realized_nll": 0.6582825013993789
+              },
+              "terminal": {
+                "excess_nats": 0.28073797424177754,
+                "realized_nll": 0.6514004195783148
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.28532435872543904,
+                "realized_nll": 0.6795942803077482
+              },
+              "terminal": {
+                "excess_nats": 0.31235202881616997,
+                "realized_nll": 0.6860048093775145
+              }
+            }
+          }
+        },
+        {
+          "length": 1024,
+          "conventional_max_difference": 7.216449660063518e-16,
+          "scores": {
+            "oracle": {
+              "ordinary": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.37648515008328426
+              },
+              "terminal": {
+                "excess_nats": 0.0,
+                "realized_nll": 0.3311628921379529
+              }
+            },
+            "quotient": {
+              "ordinary": {
+                "excess_nats": 0.0001612804735416512,
+                "realized_nll": 0.3765814389711682
+              },
+              "terminal": {
+                "excess_nats": 0.0014272624079969829,
+                "realized_nll": 0.33994051670000935
+              }
+            },
+            "conventional": {
+              "ordinary": {
+                "excess_nats": 0.0001612804735416511,
+                "realized_nll": 0.3765814389711682
+              },
+              "terminal": {
+                "excess_nats": 0.0014272624079969829,
+                "realized_nll": 0.33994051670000935
+              }
+            },
+            "first_report": {
+              "ordinary": {
+                "excess_nats": 0.2763911516077592,
+                "realized_nll": 0.654769585020422
+              },
+              "terminal": {
+                "excess_nats": 0.311536785834412,
+                "realized_nll": 0.6765801266063977
+              }
+            },
+            "marginal": {
+              "ordinary": {
+                "excess_nats": 0.3002917736128457,
+                "realized_nll": 0.6787445890825048
+              },
+              "terminal": {
+                "excess_nats": 0.3248215516273413,
+                "realized_nll": 0.7109438549875362
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

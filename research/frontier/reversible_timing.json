@@ -1,0 +1,57 @@
+{
+  "binary": {
+    "file_bytes": 104960,
+    ".text": 53904,
+    ".rdata": 39148
+  },
+  "pair_prediction": {
+    "steps": 1048576,
+    "resumed_after": 37,
+    "output_bytes": 1048576,
+    "implementations": {
+      "rec": {
+        "installed_shape_bytes": 34,
+        "carry_bytes": 17,
+        "median_ms": 15.2438
+      },
+      "table": {
+        "installed_shape_bytes": 423,
+        "carry_bytes": 2,
+        "median_ms": 0.6909
+      },
+      "divisors": {
+        "installed_shape_bytes": 17,
+        "carry_bytes": 2,
+        "median_ms": 5.217
+      }
+    },
+    "shared_readout_bytes": 16,
+    "divisor_base": 3,
+    "divisors": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "weights": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "absolute_accumulator_bound": 2071
+  },
+  "all_reports": {
+    "events": 131200,
+    "streams": 128,
+    "resumed_after": 37,
+    "median_ms": 2.5691,
+    "prediction_bytes": 1049600,
+    "input_bytes": 262400,
+    "installed_bytes": 48,
+    "decoded_bytes_including_identity": 160,
+    "carry_bytes": 64,
+    "max_f_error": 4.440892098500626e-16,
+    "max_g_error": 0.0
+  }
+}
