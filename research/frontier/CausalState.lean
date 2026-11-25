@@ -27,8 +27,40 @@ theorem kernel_closed (f : Word I → A) (h : Invariant f) (u v : Word I)
     (hu : f zero = f u) (hv : f zero = f v) : f zero = f (add u v) :=
   (cell_is_coset f h u v).mp (hu.symm.trans hv)
 
+theorem undo_shift (u t : Word I) : add (add u t) t = u := by
+  funext i
+  simp [add]
+
+/-- A homogeneous state update on every reachable translation forces its cells to be cosets. -/
+theorem cosets_of_updates (j : Word I → A) (push : Word I → A → A)
+    (commutes : ∀ u t, j (add u t) = push t (j u)) (u v : Word I) :
+    j u = j v ↔ j zero = j (add u v) := by
+  apply cell_is_coset
+  intro x y t
+  constructor
+  · intro h
+    rw [commutes, commutes, h]
+  · intro h
+    have h' := congrArg (push t) h
+    simpa only [← commutes, undo_shift] using h'
+
+/-- Seeing whether every future translation hits one target separates all syndrome states. -/
+theorem agreement_on_future_hits (u v a : Word I) :
+    (∀ t, add u t = a ↔ add v t = a) ↔ u = v := by
+  constructor
+  · intro agree
+    have hit : add u (add a u) = a := by
+      rw [add_comm u, undo_shift]
+    have eq := hit.trans ((agree (add a u)).mp hit).symm
+    have back := congrArg (fun x => add x (add a u)) eq
+    simpa only [undo_shift] using back
+  · rintro rfl
+    exact fun _ => Iff.rfl
+
 #print axioms cell_is_coset
 #print axioms kernel_closed
+#print axioms cosets_of_updates
+#print axioms agreement_on_future_hits
 
 /-- The successor may incorporate a fixed noise trajectory and the entire prefix. -/
 def mistakes (guess : σ → Bool) (next : σ → Bool → σ) (s : σ) : List Bool → List Bool

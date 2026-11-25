@@ -1429,3 +1429,42 @@ Each party processed all $N$ entries for the bucket message. At 256 buckets the 
 python research/frontier/bucket_rule.py --check
 python research/frontier/bucket_rule.py --output research/frontier/bucket_rule_result.json
 ~~~
+
+## Learning a state update from a rare ordinary token
+
+**EMPIRICALLY OBSERVED.** An unknown subset of reachable binary vectors determined the probability of one ordinary target token. When that subset was an affine flat the minimal predictive state tracked a learned syndrome through subsequent toggles. The learner saw answer tokens, with no supplied codimension, latent group labels, basis or token-update table. The toggle action on the raw inputs was supplied to all learners. [Prospective settings](https://github.com/alan-ai1196/FP/blob/e80c919/research/frontier/NEXT.md) · [All 128 clean fits and 320 noisy checkpoints](rare_flat_result.json)
+
+With 12 input coordinates and clean outcomes, the learner stored the affine hull of its positive examples. It stopped after eight additional positive observations inside the current hull without a dimension increase. The stopping rule succeeded on 127 of 128 sources. The one premature stop inferred codimension five for a codimension-four source. The sample bill included every negative outcome.
+
+| True number of required bits | Exact learned states | Mean ordinary labels consumed | Mean positive labels |
+|---:|---:|---:|---:|
+| 2 | 32/32 | 85.16 | 20.50 |
+| 4 | 31/32 | 316.19 | 18.56 |
+| 8 | 32/32 | 3,221.25 | 14.44 |
+| 12 | 32/32 | 39,776.84 | 9.00 |
+
+The separate noisy experiment used nine raw symbols. Each episode contained six fair setup bits, a geometric number of named toggles, a query, and a binary answer corrupted with probability $1/8$. Sixty-four independent source tapes supplied 294,938 raw tokens and 32,768 answers across their longest prefixes. The predictive mixtures fit all affine flats and all subsets of each eligible cardinality, respectively. Both had the same prior on cardinalities. A third learner weighted these two families by their ordinary answer likelihood, and a fourth installed the individual flat with greatest posterior probability. All forecasts were normalized on the full vocabulary with a positive Q16 floor.
+
+| True source and codimension-equivalent size | Ordinary answers per tape | Exact individual flat fits | Query gain, flat Bayes | Query gain, subset Bayes | Query gain, family mixture | Whole-stream gain, family mixture |
+|---|---:|---:|---:|---:|---:|---:|
+| Flat, $r=2$ | 128 | 16/16 | .24432 | .14776 | .24432 | .02715 |
+| Flat, $r=3$ | 128 | 15/16 | .14300 | .08658 | .14118 | .01569 |
+| Flat, $r=3$ | 256 | 16/16 | .14855 | .12609 | .14855 | .01651 |
+| Random subset, size 16 | 256 | 0/16 | .01879 | .20490 | .20490 | .02277 |
+| Random subset, size 8 | 256 | 0/16 | .04429 | .11852 | .11846 | .01316 |
+
+Gains are nats relative to the true common marginal, which gives the comparison an oracle marginal while withholding every input association. The expected episode length is nine tokens. All heads share the six setup forecasts and the expected two toggle/query forecasts, hence whole-stream gain is exactly one ninth of query gain. At 32 answers forcing one most-probable flat harmed both actual flat groups, by .06351 and .03244 nats per query. The corresponding flat mixtures gained .07854 and .02404. At 512 answers on random sets the mean posterior weight on the flat family was below .0001 in both groups, and the mixture retained the lookup gains of .23608 and .14681 nats. Weight on a generating *family* depends on the specified priors because a flat is also a subset. The target control preserves prevalence and changes continuation structure.
+
+A deployed learned flat uses $r$ live syndrome bits, a protocol phase and its learned XOR masks. In one direct packing of six $r$-bit columns and the $r$-bit target, one rank byte plus the packed parameters takes three bytes for $r=2$ and four for $r=3$. The full membership bitmap takes eight bytes, and a direct chronological evaluator tracks the six-bit input rather than its quotient. At a singleton a direct exceptional address is another cheap representation. The noisy flat implementation considered 26,388 candidates including the empty set. Its dense 26,388-by-64 binary membership matrix occupied 13,510,656 bytes as float64, and each posterior pass multiplied by this matrix in both directions. The subset comparator integrated over its much larger implicit family with prefix/suffix elementary-symmetric polynomials; its two 65-by-65 float64 tables took 67,600 bytes. These are learning costs. An averaged deployment can instead store a probability for every one of the 64 inputs. [Fitted programs, comparators and replay](rare_flat.py)
+
+**NUMERICALLY VERIFIED.** All 175 distinct installed flat programs agreed with direct membership at every reachable input and respected every named update there, an inductive check of 67,200 input/toggle pairs. Exhaustive short tests on three input bits covered 16,640 continuations across 52 candidate sets including the empty set; direct enumeration checked the general-subset posterior over 108 possible sets. A historical R4 encoding of a learned two-bit example used masks 53 and 38 and target syndrome two. Its 25 reachable phase/syndrome states, 294 nodes and 25 delayed cells matched the complete positive nine-symbol laws on all 226 reset and outgoing-token evaluations. The native bit count and this categorical R4 construction price different implementations.
+
+**PROVED and independently attacked.** For two fully independent uniform toggle segments the exact memory curve has strictly increasing gain per additional bit. At fixed noise $1/8$ and eight required bits the best single bit earns .00003847 nats per query. The complete state earns .00566193, or .00070774 per bit. A price of .0003 per live bit therefore rejects every first-bit step but rewards constructing all eight together. This gate concerns optimal fixed-width memory with the true source known. The separate passive learning experiment addresses acquisition, including its failure probability. Decimal calculations at 60-digit precision checked the balanced-cell result over 12,471 partition/noise combinations for up to eight latent values. The entropy proof is analytic. Lean 4.36.0 checked the translation-consistency and future-hit arguments using only the reported foundational axioms. [Loss frontier, rigidity and message price](FOUNDATION.md#an-exact-price-for-constructing-several-predictive-bits-together) · [Formalized algebraic steps](CausalState.lean)
+
+~~~powershell
+$env:OPENBLAS_NUM_THREADS = '1'
+python research/frontier/rare_flat.py --output research/frontier/rare_flat_result.json
+python research/frontier/rare_flat.py --check
+python research/frontier/rare_flat.py --r4
+lean research/frontier/CausalState.lean
+~~~
