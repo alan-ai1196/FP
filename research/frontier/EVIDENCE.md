@@ -1305,3 +1305,32 @@ python research/frontier/aggregate_bits.py --output research/frontier/aggregate_
 python research/frontier/aggregate_bits.py --check
 python research/frontier/aggregate_bits.py --r4
 ~~~
+
+## Learning an ordinary next-word table from two unpaired panels
+
+**EMPIRICALLY OBSERVED on the original GPT-2-tokenized text files.** A learner fitted a 17-by-17 conditional table from two disjoint panels drawn without replacement from 1,048,576 training positions. One described the old tag and previous word class; the other described the old tag and next word class. For randomized tags, the learner saw neither which positions copied the previous class nor the names paired with training targets. The 16 singleton classes were selected by frequency on an earlier million-word prefix. All other words shared a class and retained their own lexical probability within it. The learner predicted over all 50,257 raw tokens before observing each target. All fitted bytes were published before scoring the two reporting ranges. [Registration](https://github.com/alan-ai1196/FP/blob/7b8ff15/research/frontier/NEXT.md) · [Mechanism-aware control](https://github.com/alan-ai1196/FP/blob/48ec968/research/frontier/NEXT.md) · [Frozen packets and chronological control](https://github.com/alan-ai1196/FP/blob/6a8fe50/research/frontier/text_aggregate_fits.json)
+
+At the largest budget of 524,288 positions per panel, gains over the fitted target marginal were as follows. Both columns use 65,536 subsequent ordinary targets. A positive number is a reduction in nats per word. The common within-class lexical law makes this gain exactly the gain in the class probabilities.
+
+| Acquisition and fitted head | Later training-file block | Separate validation-file block |
+|---|---:|---:|
+| Random uniform tag, aggregate likelihood | −.00077 | −.00067 |
+| 1/8-copy tag, aggregate likelihood | .08743 | .09318 |
+| 1/8-copy tag, fitted noise correction | .07736 | .08448 |
+| Half-copy tag, aggregate likelihood | .10476 | .11163 |
+| Half-copy tag, fitted noise correction | .10685 | .11431 |
+| Natural earlier word, aggregate likelihood | −.01529 | −.01029 |
+| Natural earlier word, directly use its shifted bigrams | .11246 | .12004 |
+| Directly paired context and next word | .11241 | .11994 |
+
+The half-copy likelihood learner retained 93.20% and 93.07% of the paired bigram gain on the respective blocks. The comparator informed of the uniform-copy mechanism estimated a copy rate of .499637 from ordinary matches and retained 95.06% and 95.30%. At the smallest budget of 8,192 per panel, the one-eighth-copy correction *lost* .06365 and .06712 nats per word while the aggregate likelihood gained .01788 and .01839. The pure-noise corrected control selected the marginal at all budgets. Raw NLLs at the largest budget on validation were 7.67309 for the marginal, 7.56146 for the half-copy likelihood, 7.55878 for half-copy correction and 7.55315 for the directly paired head. These values concern a restricted class-bigram predictor on two frozen blocks; the archived Transformer was not run on these targets. [Full word losses, eight chronological subblocks and normalization checks](text_aggregate_result.json) · [Estimator and replay](text_aggregate.py)
+
+**Failure on a natural history feature.** At 8,192 positions per panel the natural-tag aggregate learner gained .02156 and .02308 nats per word. At 524,288 it lost on both files, including all eight later training-file subblocks. Its aggregate training gain meanwhile rose from .00592 to .01071 nats per tag-conditioned target. The held-out weighted TV discrepancy from the factorization was .03556 and .03915 for the natural tag, versus .01235 and .01218 for half-copy tags; these are empirical discrepancies on finite tapes. In the full training window, direct enumeration gave TV $1/1{,}048{,}576$ between $TD$ and $DY$ bigram frequencies. The shift control was added after the first fit and before either report was scored. Every pre-existing packet had identical bytes after the addition. The stationary counterexample explains how the aggregate optimization can select the wrong predictions even at the population level. [Identification conditions, sharp noise prices and chronological counterexample](FOUNDATION.md#when-a-fitted-aggregate-conditional-predicts-the-next-word)
+
+**Acquisition and execution.** All 12 EM fits attained a simplex first-order suboptimality bound below $10^{-7}$ nats per effective training observation. They required 31 to 6,746 iterations using two $17\times17$ raw-count tables, plus working arrays; the natural-tag fit needed the most iterations at the largest budget. A regularized EM step allocates target counts to possible input classes and normalizes with 64 marginal pseudocounts per row. The installed class table occupies 544 bytes with an implicit final mass. Its 16 raw input names take 32 more bytes and the previous observed class fits one live byte. A common dense uint32 lexical mass array takes 201,028 bytes plus its complement denominator; the evaluator used an additional direct-address class lookup. Full-vocabulary normalization errors were at most $4.5\times10^{-16}$ on all audited rows. Pinned R4 reproduced both largest-budget half-copy and natural-tag class machines on both resets and all 578 transitions, using 358 scalar nodes and 17 delayed cells per machine. Lexical expansion was checked separately over every raw word. [All fitting diagnostics and installed bytes](text_aggregate_fits.json)
+
+~~~powershell
+python research/frontier/text_aggregate.py fit --output research/frontier/text_aggregate_fits.json
+python research/frontier/text_aggregate.py score --output research/frontier/text_aggregate_result.json
+python research/frontier/text_aggregate.py r4
+~~~
