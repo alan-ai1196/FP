@@ -1,0 +1,2004 @@
+{
+  "registration": "1f9a9cf",
+  "training_and_validation_state_steps": 679477248,
+  "records": [
+    {
+      "source": "four_actions",
+      "repeat": 0,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3849641768720538,
+        1.3440488675540427,
+        1.3288014655746072
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3074844224529187
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3074844224529187
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 0,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3847318231713348,
+        1.343458655258723,
+        1.32451573883693
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.307017887842031
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.307017887842031
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 0,
+      "words": 131072,
+      "moment_candidates": 4,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3847734244232122,
+        1.343384696832588,
+        1.3242349281319392
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3069121785370807
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3069121785370807
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 1,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "markov_nll": [
+        1.3842989879952547,
+        1.3427813053877187,
+        1.330950883158227
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3062212191467493
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3062212191467493
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 1,
+      "words": 32768,
+      "moment_candidates": 4,
+      "truth": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "markov_nll": [
+        1.3840114182123324,
+        1.3420761658687161,
+        1.3242934138584295
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3057001183178945
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3057001183178945
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 1,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "markov_nll": [
+        1.3840050229785967,
+        1.3419804574236878,
+        1.3241066188478885
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.305670164169529
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.305670164169529
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 2,
+      "words": 4096,
+      "moment_candidates": 15,
+      "truth": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.386233952376237,
+        1.3432938094955775,
+        1.3299185375460174
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.306486779987284
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.306486779987284
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 2,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.3846933468735627,
+        1.341344822407008,
+        1.323948970771299
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3053112670198197
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3053112670198197
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 2,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.384511465211801,
+        1.3411630381770545,
+        1.32310668277392
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3051505839843807
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3051505839843807
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 3,
+      "words": 4096,
+      "moment_candidates": 14,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3849353666709168,
+        1.3431046782524743,
+        1.3264242220898868
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.304245225179268
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.304245225179268
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 3,
+      "words": 32768,
+      "moment_candidates": 4,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3840538853841995,
+        1.3418597070589322,
+        1.3232290308901387
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3037231946911674
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3037231946911674
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 3,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3840610381901783,
+        1.3418662889145718,
+        1.322608528462931
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.303716712034841
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.303716712034841
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 4,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3850176441372355,
+        1.3417197645675523,
+        1.3256244649541953
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3061009875139724
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3061009875139724
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 4,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3847016440587943,
+        1.3412291148737503,
+        1.3201831705601854
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.305371783461638
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.305371783461638
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 4,
+      "words": 131072,
+      "moment_candidates": 5,
+      "truth": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3845958420217217,
+        1.3411795083890976,
+        1.3197847170921762
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3053045562483319
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3053045562483319
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 5,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3853391864864772,
+        1.340940187627797,
+        1.3279450449069825
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3048028578270536
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3048028578270536
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 5,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3844095432733994,
+        1.3393621338126207,
+        1.3215911237169942
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3038500646978668
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3038500646978668
+      }
+    },
+    {
+      "source": "four_actions",
+      "repeat": 5,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "markov_nll": [
+        1.3844766521610818,
+        1.3393643159202397,
+        1.3209629961303733
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.303999126291258
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.303999126291258
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 0,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.358862584016732,
+        1.335277287897032,
+        1.3325056842338017
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          0,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3131323167825075
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          0,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3131323167825075
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 0,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.3586160947920463,
+        1.3346185791716183,
+        1.3251312091764047
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3126861221745738
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3126861221745738
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 0,
+      "words": 131072,
+      "moment_candidates": 4,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.3586751776921875,
+        1.3345631922335197,
+        1.324861772371486
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3127641594361381
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3127641594361381
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 1,
+      "words": 4096,
+      "moment_candidates": 19,
+      "truth": [
+        2,
+        0,
+        3,
+        0
+      ],
+      "markov_nll": [
+        1.3578773418603136,
+        1.3347170546105709,
+        1.3251172007834409
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3096218323211923
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3096218323211923
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 1,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        0,
+        3,
+        0
+      ],
+      "markov_nll": [
+        1.3576503695309141,
+        1.3337845748147628,
+        1.3214808855239006
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          3,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3090359079675011
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          3,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3090359079675011
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 1,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        2,
+        0,
+        3,
+        0
+      ],
+      "markov_nll": [
+        1.3574923255028506,
+        1.3333105958758347,
+        1.3203497494387095
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3088176125557878
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          3,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.3088176125557878
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 2,
+      "words": 4096,
+      "moment_candidates": 19,
+      "truth": [
+        3,
+        0,
+        0,
+        2
+      ],
+      "markov_nll": [
+        1.356260627672742,
+        1.3328991147331901,
+        1.32479165196482
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3085682564392251
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3085682564392251
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 2,
+      "words": 32768,
+      "moment_candidates": 4,
+      "truth": [
+        3,
+        0,
+        0,
+        2
+      ],
+      "markov_nll": [
+        1.3557915639446658,
+        1.331641137396446,
+        1.3191234232570475
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3081352618419788
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3081352618419788
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 2,
+      "words": 131072,
+      "moment_candidates": 4,
+      "truth": [
+        3,
+        0,
+        0,
+        2
+      ],
+      "markov_nll": [
+        1.3558146149345454,
+        1.3311223388198385,
+        1.318269876561878
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3078882714480813
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          1,
+          1,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3078882714480813
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 3,
+      "words": 4096,
+      "moment_candidates": 15,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.3550514164652292,
+        1.3303782025127735,
+        1.3220025580811443
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303933575171805
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303933575171805
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 3,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.355035692428847,
+        1.3297722130139025,
+        1.3174650858606467
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303868102673964
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303868102673964
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 3,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        3,
+        2,
+        0,
+        0
+      ],
+      "markov_nll": [
+        1.3550546982357279,
+        1.329722272312125,
+        1.316893259311826
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303847480222617
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          1,
+          1
+        ],
+        "recovered": true,
+        "report_nll": 1.303847480222617
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 4,
+      "words": 4096,
+      "moment_candidates": 14,
+      "truth": [
+        0,
+        3,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3539535378732603,
+        1.3300242229776356,
+        1.32202704704249
+      ],
+      "moments": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3054335642233423
+      },
+      "exhaustive": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3054335642233423
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 4,
+      "words": 32768,
+      "moment_candidates": 6,
+      "truth": [
+        0,
+        3,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3538799238848935,
+        1.3292174429494943,
+        1.3174778728089607
+      ],
+      "moments": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.305339547162279
+      },
+      "exhaustive": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.305339547162279
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 4,
+      "words": 131072,
+      "moment_candidates": 6,
+      "truth": [
+        0,
+        3,
+        2,
+        0
+      ],
+      "markov_nll": [
+        1.3537924494768558,
+        1.329033586631059,
+        1.3170464547115093
+      ],
+      "moments": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3052264787129568
+      },
+      "exhaustive": {
+        "table": [
+          0,
+          3,
+          2,
+          0
+        ],
+        "recovered": true,
+        "report_nll": 1.3052264787129568
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 5,
+      "words": 4096,
+      "moment_candidates": 20,
+      "truth": [
+        2,
+        0,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.3551364266926949,
+        1.3289673337043144,
+        1.3203882814460057
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.306106490316306
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.306106490316306
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 5,
+      "words": 32768,
+      "moment_candidates": 5,
+      "truth": [
+        2,
+        0,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.3550909612080133,
+        1.3277628839111622,
+        1.3160168118220201
+      ],
+      "moments": {
+        "table": [
+          2,
+          0,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.305676299650454
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          0,
+          0,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.305676299650454
+      }
+    },
+    {
+      "source": "one_reset_destination",
+      "repeat": 5,
+      "words": 131072,
+      "moment_candidates": 4,
+      "truth": [
+        2,
+        0,
+        0,
+        3
+      ],
+      "markov_nll": [
+        1.3550355939203762,
+        1.327483464953644,
+        1.3148188065026367
+      ],
+      "moments": {
+        "table": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3055938084648597
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          1,
+          1,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3055938084648597
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 0,
+      "words": 4096,
+      "moment_candidates": 16,
+      "truth": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "markov_nll": [
+        1.3866137726454846,
+        1.3795991101925666,
+        1.37895772311622
+      ],
+      "moments": {
+        "table": [
+          0,
+          2,
+          3,
+          3
+        ],
+        "recovered": false,
+        "report_nll": 1.3716906318960242
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3246336849872429
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 0,
+      "words": 32768,
+      "moment_candidates": 7,
+      "truth": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "markov_nll": [
+        1.38655238058324,
+        1.3790738332848576,
+        1.3732262286407226
+      ],
+      "moments": {
+        "table": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3247721660142775
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3247721660142775
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 0,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "markov_nll": [
+        1.3863417387109134,
+        1.378811139821414,
+        1.3727250935411073
+      ],
+      "moments": {
+        "table": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.324455136965672
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.324455136965672
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 1,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3864427286452383,
+        1.3773741527658516,
+        1.37370559769141
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.31851640726867
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.31851640726867
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 1,
+      "words": 32768,
+      "moment_candidates": 7,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3862906927638412,
+        1.3772246838408355,
+        1.3707621199870943
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.318452237760722
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.318452237760722
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 1,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3863830839932207,
+        1.3772930640574288,
+        1.3705534813691236
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3186078387647617
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3186078387647617
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 2,
+      "words": 4096,
+      "moment_candidates": 16,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3869327020721645,
+        1.3802591858199202,
+        1.3820563151551992
+      ],
+      "moments": {
+        "table": [
+          1,
+          3,
+          2,
+          3
+        ],
+        "recovered": false,
+        "report_nll": 1.3783718601866977
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.321666144339615
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 2,
+      "words": 32768,
+      "moment_candidates": 9,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.386267456030443,
+        1.378276807811706,
+        1.375030828634404
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.320997578235362
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.320997578235362
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 2,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3863099880089544,
+        1.3783493768242632,
+        1.3748034901167654
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.321029783697703
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.321029783697703
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 3,
+      "words": 4096,
+      "moment_candidates": 17,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3865930525881307,
+        1.378597564067599,
+        1.3775670415022152
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3218378930593762
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3218378930593762
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 3,
+      "words": 32768,
+      "moment_candidates": 11,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3864468597922603,
+        1.3776250720266796,
+        1.3731224500676729
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.321613935571121
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.321613935571121
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 3,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        3,
+        2,
+        3,
+        2
+      ],
+      "markov_nll": [
+        1.3863397358310938,
+        1.3775106772556494,
+        1.372612348840119
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3215228635493967
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "recovered": true,
+        "report_nll": 1.3215228635493967
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 4,
+      "words": 4096,
+      "moment_candidates": 14,
+      "truth": [
+        3,
+        2,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3872309380078458,
+        1.3803039580084193,
+        1.3777391380726733
+      ],
+      "moments": {
+        "table": [
+          3,
+          1,
+          2,
+          3
+        ],
+        "recovered": false,
+        "report_nll": 1.374298388662471
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.321557677922426
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 4,
+      "words": 32768,
+      "moment_candidates": 9,
+      "truth": [
+        3,
+        2,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.386533459071304,
+        1.3784985901809326,
+        1.3719069177809196
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3200352699806737
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3200352699806737
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 4,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        3,
+        2,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3863314877827424,
+        1.3783194293739605,
+        1.371110400992502
+      ],
+      "moments": {
+        "table": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3197519837919973
+      },
+      "exhaustive": {
+        "table": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3197519837919973
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 5,
+      "words": 4096,
+      "moment_candidates": 13,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3868841594795984,
+        1.3819453971165614,
+        1.3809011257273687
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3239720783803584
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3239720783803584
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 5,
+      "words": 32768,
+      "moment_candidates": 7,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3862621690221246,
+        1.3802432244529141,
+        1.3746181910150645
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3233137309510075
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3233137309510075
+      }
+    },
+    {
+      "source": "permutations",
+      "repeat": 5,
+      "words": 131072,
+      "moment_candidates": 1,
+      "truth": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "markov_nll": [
+        1.3862739411910716,
+        1.3802217256543166,
+        1.3741532931658809
+      ],
+      "moments": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3233407265043775
+      },
+      "exhaustive": {
+        "table": [
+          2,
+          3,
+          2,
+          3
+        ],
+        "recovered": true,
+        "report_nll": 1.3233407265043775
+      }
+    }
+  ]
+}

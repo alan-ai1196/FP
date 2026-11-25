@@ -1552,3 +1552,25 @@ python research/frontier/raw_word_action.py audit
 ~~~
 
 **Exact graph and search audits.** Rational profiled likelihoods selected maximum agreement on all 63 nonempty labeled four-vertex simple graphs using $128m^2$ public calibration labels per state, and on $K_4,K_{3,3}$ and the triangular prism at $64m$ calibration labels per state. Every one of the 4,096 complete tables on the autonomous six-token $K_4$ alphabet was compared including its fitted readouts. All 12 maximizers learned distinct constant actions for the two outcome tokens and a size-four cut on the graph. Every calibration-action pair was checked from both starting states. For known heads, both the sum-product and max-product tape algorithms matched exhaustive arithmetic in 384 comparisons. The asymptotic reduction and the exact short-tape search are proved separately. [Proof](FOUNDATION.md#learning-a-one-bit-update-can-encode-a-maximum-cut-on-one-token-stream) · [Run the exact audits](action_cut.py)
+
+## Learning a hidden bit from ordinary token triples
+
+**Numerically verified with rational arithmetic.** Raw single, pair and triple probabilities recovered the entire action table, both emission rows and the stationary masses in 60 two- and three-symbol models, including pure permutations and single-destination resets. For these models, 4,210 length-four word masses matched the observable scalar filtering recursion exactly. On a separate rational-square binary family, direct expansion at 80 model/horizon combinations matched the observable posterior-overlap factor to the corresponding power. Three positive binary sources gave exactly the same adjacent-pair table while assigning hold, flip and reset respectively to raw symbol zero. [Derivation and margin bounds](FOUNDATION.md#three-consecutive-tokens-identify-a-positive-two-state-source-and-its-synchronization-rate) · [Exact check](action_moments.py)
+
+**Empirically observed.** The registered learner counted ordinary token triples, selected its prefix and outcome witness from the raw data, and proposed action tables by the direction and magnitude of the observed conditional response. It fitted positive Q16 emission rows and selected a table by validation log loss, integrating over the two possible starting bits of each fresh path. The simulation randomly renamed all four observed letters in each of 18 runs across three source families. The learner received only training and validation words. Each report used a further 16,384 words on an independent path. The exhaustive control fitted and selected among all 256 tables using the same head fitter, smoothing and validation law. [Registration](https://github.com/alan-ai1196/FP/blob/1f9a9cf/research/frontier/NEXT.md) · [Per-run tables, counts and losses](action_moments_result.json)
+
+| Training words | Moment table recovered | Exhaustive table recovered | Mean proposed tables | Moment NLL | Exhaustive NLL | Direct trigram NLL |
+|---:|---:|---:|---:|---:|---:|---:|
+| 4,096 | 15/18 | 18/18 | 15.00 | 1.320601 | 1.311907 | 1.343746 |
+| 32,768 | 18/18 | 18/18 | 6.39 | 1.311383 | 1.311383 | 1.338507 |
+| 131,072 | 18/18 | 18/18 | 3.83 | 1.311311 | 1.311311 | 1.337945 |
+
+All three misses at 4,096 words occurred in the purely permuting family. At the largest size the fitted moment learner's mean NLLs for the four-action, one-reset-destination and pure-permutation families were 1.305126, 1.307356 and 1.321451. Direct trigrams obtained 1.322467, 1.318707 and 1.372660 on those same families. At 131,072 words the overall direct bigram and constant losses were 1.350260 and 1.375570. A finite-sample global optimizer can recover the right structure earlier than the cheaper identification rule on these small alphabets.
+
+Running the restricted learner separately reproduced all 54 selections and report losses. It used 17,068,032 training and validation state updates over the nested prefixes versus 679,477,248 in the exhaustive run. The comparison counts table replay only. Collecting triples, comparing thresholds, fitting and scoring heads, mixture arithmetic and reporting also consume work. The four-symbol count tensor uses 64 integer cells. A compact deployed action table here requires eight bits, and its two four-category Q16 rows require 12 bytes when their fourth masses are inferred. Full Bayesian filtering of the starting-state ambiguity incurs additional probability work. The scientific comparison concerns a realizable positive two-state family. The natural-language head comparison and its agnostic hardness obstruction remain separate.
+
+~~~powershell
+python research/frontier/action_moments.py check
+python research/frontier/action_moments.py sample --output research/frontier/action_moments_result.json
+python research/frontier/action_moments.py sample --moments-only
+~~~
