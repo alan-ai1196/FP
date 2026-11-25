@@ -1468,3 +1468,25 @@ python research/frontier/rare_flat.py --check
 python research/frontier/rare_flat.py --r4
 lean research/frontier/CausalState.lean
 ~~~
+
+## Learning token actions without supplying a toggle law
+
+**EMPIRICALLY OBSERVED.** Forty-eight independently noised tapes used the same two uninterpreted raw input letters and one binary answer after a query. The general learner could install any accessible, minimal deterministic predictor with one to four states. It received no state names, transition table, true state count, commutation label or period. Training covered every one of the 255 words through length seven once at the first checkpoint, using 2,048 ordinary raw tokens. Later checkpoints repeated the curriculum 3, 9 and 33 times. The other learner assumed both letters toggle count parities, and fit any of the 16 output laws on that representation. A third learner averaged the two predictive families by their observed likelihood. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/720cb90/research/frontier/NEXT.md) · [192 fitted checkpoints and programs](token_action_result.json)
+
+| Generating action | Independent first-checkpoint fits | Correct general installations on every future word | General Bayes gain per answer | Toggle Bayes gain per answer | Family mixture gain per raw token |
+|---|---:|---:|---:|---:|---:|
+| Two independent toggles | 16 | 16 | .23873 | .23873 | .00901 |
+| Four-cycle and its inverse | 16 | 16 | .24277 | −.48693 | .00916 |
+| Four-cycle and a transposition | 16 | 16 | .24953 | −.13258 | .00942 |
+
+Each gain is relative to the true marginal over the held-out inputs, with the same positive five-symbol Q16 protocol for all learners. Held-out words have 24 or 25 input letters and a query and answer, hence an average of 26.5 raw tokens. Conditional expected answer loss was computed on a separate panel of 256 words. Product-state traversal established exact installed behavior on all lengths. All 48 fits remained exact at all later checkpoints. Across these 48 tapes there were four distinct installed toggle languages, four cycle languages and seven order-sensitive languages; repeated languages still had independent answer noise. Balanced short-word exposure was deliberately extensive and every family had a hard state ceiling.
+
+The general learner enumerated 5,477 canonical reachable transition tables and 57,068 distinct minimal rooted machines with binary readout. Its training prediction table used 14,552,340 one-byte entries; scoring formed a float32 copy for exact integer signed counts and float64 posterior weights. With two letters and four states the installed transition table and readout, including its size header, round-tripped through a three-byte packet. One live state uses two bits in addition to the common input protocol. The restricted toggle model represents its entire four-value readout in four logical bits and uses two live parity bits. A uniform size prior over a larger class assigned the structured family substantial dilution: on actual toggle sources the posterior on the general family was about .000071, even though its own best predictor exactly agreed with the true law. These are concrete training and deployment prices.
+
+**NUMERICALLY VERIFIED.** Catalogue sizes at one through four states were 2, 24, 1,028 and 56,014. Exactly 16 machines satisfied both identities, 376 commuted without both squaring to identity, 66 had two involutions that failed to commute, and 56,610 satisfied neither combined property. For four-state predictors, the longest *shortest* witness for noncommutation was six letters and for failure of an individual square law was seven. Testing the candidate defined by both count parities already detected all joint failures in this catalogue through length four. The proof supplies a general binary-letter upper bound of $q+1$. Independently reconstructing future-response rows from the noiseless short words recovered all 48 source laws. Removing redundancy from all labelled two-state machines gave the same 26 distinct one- or two-state behaviors. Checking 126 one-word defects against 43,554 word queries confirmed the constructions and minimal sizes. [Code and complete checks](token_action.py) · [Observation theorem and sharp testing price](FOUNDATION.md#inferring-a-token-action-from-ordinary-continuation-responses)
+
+~~~powershell
+$env:OPENBLAS_NUM_THREADS = '2'
+python research/frontier/token_action.py --output research/frontier/token_action_result.json
+python research/frontier/token_action.py --check
+~~~
