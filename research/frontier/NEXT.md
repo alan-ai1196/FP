@@ -8,6 +8,14 @@ Training sometimes pairs an old view with the desired output and sometimes pairs
 
 ## Frozen registrations
 
+### Transferring a categorical prediction without joint labels, 2026-11-25
+
+Exact checks will compare all physically attainable new-view/target couplings with a nonnegative positive-semidefinite Gram relaxation in the three fair binary view example. All self twins agree and both old-to-other correlations are $-1/2$. Compute the minimax conditional log-regret forecast from each admissible interval and the naive projected forecast, and score their physical worst cases.
+
+In the noisy calibration test each reset draws a fair hidden sign. An old report $T$, a new report $D$ and a target $Y$ are independent conditional on that sign, with mean amplitudes $\alpha,\beta,\gamma$. Only the simulator receives $\alpha=1/2,1/8,1/32$, $\beta=3/4$ and $|\gamma|=2/3$ (positive for seed 419, negative for 173 and 773). The binary rank-one learner knows symmetry and the independent fresh noise law, with unknown amplitudes. At each budget $L=256,4096,65536,1048576,16777216,67108864$ it receives $L$ fresh pairs each of $(T,D)$ and $(T,Y)$. Compare spending the remaining $2L$ old reports on $L$ independent twin pairs against one persistent old-only reset. Cross panels use separate resets and are shared between arms. Only old reports can be repeated. Every arm pays $6L$ reports. Use NumPy seed [seed, amplitude index in listed order, L, 2811], drawing the two crossed tables, the old twin table, a persistent hidden sign and its noisy count in order. Simulate aggregate categorical counts and charge all episodes and observations.
+
+Build simultaneous 95% Hoeffding rectangles across all four measured means and all 54 fits. Intersect each with the structural scalar restrictions and take the worst-case conditional-KL center of its feasible new-to-target correlation interval. Compare against a data-fitted profile likelihood over the same observations, a fair marginal, the conditional-independence projection through a single uncorrected old observation, and the known-channel diagnostic. Score the population next-sign excess without access to a training $(D,Y)$ pair. Clip point predictions to conditional probabilities in $[.01,.99]$. Report interval coverage, accuracy, number of resets, paid signs, and the installed and live information required at prediction.
+
 - [Discovering an unknown input parity through noisy coordinates](https://github.com/alan-ai1196/FP/blob/e79bc90/research/frontier/NEXT.md)
 
 - [Learning a reversible update from short observations](https://github.com/alan-ai1196/FP/blob/3d4b9a2/research/frontier/NEXT.md)
