@@ -55,6 +55,12 @@ def minimal(trans, mask):
     return True
 
 
+def transition_tables(q):
+    for raw in product(range(q), repeat=2 * q):
+        if canonical(raw, q):
+            yield tuple((raw[2 * j], raw[2 * j + 1]) for j in range(q))
+
+
 def laws(trans):
     commuting = all(trans[a][1] == trans[b][0] for a, b in trans)
     involutive = all(
@@ -117,10 +123,7 @@ def catalogue():
     train_blocks, held_blocks = [], []
     for q in range(1, 5):
         base, machine_ids, outputs = [], [], []
-        for raw in product(range(q), repeat=2 * q):
-            if not canonical(raw, q):
-                continue
-            table = tuple((raw[2 * j], raw[2 * j + 1]) for j in range(q))
+        for table in transition_tables(q):
             base.append(table)
             for mask in range(1 << q):
                 if minimal(table, mask):
