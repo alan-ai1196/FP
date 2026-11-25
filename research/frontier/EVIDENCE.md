@@ -1232,3 +1232,26 @@ python research/frontier/audit_affine_reports.py
 python research/frontier/audit_affine_reports.py --r4
 python research/frontier/measure_affine_reports.py
 ~~~
+
+## Transferring a prediction without joint labels
+
+**NUMERICALLY VERIFIED, exact arithmetic.** Training provides the two old-to-other joint tables and three independent same-view twin tables. No new-view/target pair is observed. In the registered fair deterministic example, enumeration of the six moment constraints on eight hidden sign triples found nine feasible basic supports and attainable new-view/target correlation endpoints 0 and 1. The lifted nonnegative PSD Gram accepted $-1/2$. Fixing the missing moment at $0,1/4,1/2,3/4,1$ required respectively $6,7,5,6,4$ positive atoms by a second rational support enumeration. The physical minimax agreement forecast was .8 with worst conditional KL .223144 nats. The PSD interval gave .679131 and .386942 nats. The old-view projection gave .625 and .470004 nats. [Population proof](FOUNDATION.md#what-ordinary-paired-observations-identify-across-an-unfamiliar-view) · [Frozen design](https://github.com/alan-ai1196/FP/blob/71df582/research/frontier/NEXT.md)
+
+**EMPIRICALLY OBSERVED, calibration at equal raw-report budgets.** Each learner saw two unlabelled crossed pair panels of $L$ fresh resets apiece, and spent $2L$ more old signs on either $L$ fresh twin panels or one persistent reset. The target was the next ordinary sign after a new-view sign. All 108 fitted uncertainty intervals were consistent and contained the true deployment correlation. The table reports the three-seed means of population conditional KL in nats per target. Each comparison shared its two crossed panels. [Learners, exact checks and replay](view_transfer.py) · [All data, fits, probabilities, intervals and packet bytes](view_transfer_result.json)
+
+| Old amplitude | Pairs per crossed panel | Fresh twin center | Persistent center | Fresh twin profile | Persistent profile | Known amplitude | Single-old projection |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1/2 | 16,777,216 | .000000028 | .000000220 | .000000033 | .000000217 | .000000153 | .075866 |
+| 1/8 | 1,048,576 | .012467 | .00004391 | .0013814 | .00002669 | .00007211 | .126899 |
+| 1/32 | 256 | .130812 | .130812 | 1.068995 | .871434 | 1.038596 | .131467 |
+| 1/32 | 16,777,216 | .017280 | .00006826 | .007554 | .00001954 | .00000777 | .130566 |
+| 1/32 | 67,108,864 | .017962 | .00001791 | .007192 | .00001850 | .00000807 | .130569 |
+
+A fair prediction cost .130812 nats throughout. At amplitude $1/32$ and $L=16,777,216$ each fit paid 100,663,296 modeled reports. The two arms required 50,331,648 and 33,554,433 reset episodes respectively. Their mean correlation interval widths were .77703 and .14247. Both centers returned a fair prediction at the two smallest budgets for this amplitude. At fixed high amplitude and large budget either arm can win on the sampled counts. The family-level lower and upper read orders are $a^{-4}$ for fresh old twins and $a^{-2}$ for persistent old reads at fixed accuracy and confidence. Those population statements use the two-world testing argument. The finite table comes from multinomial and binomial sufficient-statistic simulation. Its counts price every ordinary report, while wall-clock generation uses aggregate draws. The conventional likelihood fit profiles the other two amplitudes analytically and uses a grid with local one-dimensional refinement for the old amplitude. [Identification and cost proof](FOUNDATION.md#how-much-ordinary-calibration-buys-a-transferable-prediction)
+
+**NUMERICALLY VERIFIED, causal execution.** Two signed Q15 bytes install a fitted correlation. One byte holds the live phase and previous sign across event calls. A fair pre-$D$ forecast alternates with the learned pre-$Y$ forecast after either observed $D$. With a nonzero packet these three histories have distinct next-sign probabilities, so any deterministic raw-event predictor matching them needs three live states when no phase label is supplied. Q16 conditional probability error versus the clipped floating forecast was at most $1/65536$. Pinned Foundation R4 reproduced reset and every outgoing transition on 182 distinct installed packets, including the robust categorical example, in 1,274 state and output checks. Its canonical implementation used three delayed cells and 17 scalar nodes. The comparison covers all future sign continuations by closure. [Pinned program generator](positive_comparison.py)
+
+~~~powershell
+python research/frontier/view_transfer.py --output research/frontier/view_transfer_result.json
+python research/frontier/view_transfer.py --r4
+~~~
