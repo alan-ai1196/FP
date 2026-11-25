@@ -1,0 +1,975 @@
+{
+  "registration": "e79bc90",
+  "terminal_scores": [
+    "conditional_KL_nats",
+    "realized_NLL_nats"
+  ],
+  "panels": [
+    {
+      "d": 12,
+      "support_size_including_target": 6,
+      "seed": 173,
+      "hidden_mask_and_offset": [
+        "0x1ac",
+        1
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.693055625342
+        ],
+        "17": [
+          0.0,
+          0.57722478032
+        ]
+      },
+      "fair": {
+        "1": [
+          0.000122075280039,
+          0.69314718056
+        ],
+        "17": [
+          0.106196031284,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 1,
+          "reset_rows": 776,
+          "total_reads": 9312,
+          "advances": 8536,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 15,
+              "row_xors": 59,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 4.193529056,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 97,
+          "reset_rows": 8,
+          "total_reads": 9312,
+          "advances": 88,
+          "fits": {
+            "elimination": {
+              "status": "rank deficient",
+              "rank": 8,
+              "inspected": 8,
+              "row_xors": 16,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 5.545177444,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 1,
+          "reset_rows": 2328,
+          "total_reads": 27936,
+          "advances": 25608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 10,
+              "inspected": 11,
+              "row_xors": 27,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 5.582435769,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 97,
+          "reset_rows": 24,
+          "total_reads": 27936,
+          "advances": 264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 24,
+              "row_xors": 108,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 16.635532333,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 1,
+          "reset_rows": 12416,
+          "total_reads": 148992,
+          "advances": 136576,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 15,
+              "row_xors": 57,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 4.328415592,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 97,
+          "reset_rows": 128,
+          "total_reads": 148992,
+          "advances": 1408,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 128,
+              "row_xors": 784,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 88.722839112,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 1,
+          "reset_rows": 99328,
+          "total_reads": 1191936,
+          "advances": 1092608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 10,
+              "inspected": 11,
+              "row_xors": 25,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 8.812723804,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 97,
+          "reset_rows": 1024,
+          "total_reads": 1191936,
+          "advances": 11264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 1024,
+              "row_xors": 6578,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 709.78270717,
+              "model": [
+                "0x1ac",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "d": 12,
+      "support_size_including_target": 6,
+      "seed": 419,
+      "hidden_mask_and_offset": [
+        "0x166",
+        0
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.6933303059
+        ],
+        "17": [
+          0.0,
+          0.593948336885
+        ]
+      },
+      "fair": {
+        "1": [
+          0.000122075280039,
+          0.69314718056
+        ],
+        "17": [
+          0.107387628216,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 1,
+          "reset_rows": 776,
+          "total_reads": 9312,
+          "advances": 8536,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 14,
+              "row_xors": 45,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 4.113748496,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 97,
+          "reset_rows": 8,
+          "total_reads": 9312,
+          "advances": 88,
+          "fits": {
+            "elimination": {
+              "status": "rank deficient",
+              "rank": 8,
+              "inspected": 8,
+              "row_xors": 17,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 5.545177444,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 1,
+          "reset_rows": 2328,
+          "total_reads": 27936,
+          "advances": 25608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 11,
+              "inspected": 13,
+              "row_xors": 39,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 7.209556628,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 97,
+          "reset_rows": 24,
+          "total_reads": 27936,
+          "advances": 264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 24,
+              "row_xors": 112,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 16.635532333,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 1,
+          "reset_rows": 12416,
+          "total_reads": 148992,
+          "advances": 136576,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 15,
+              "row_xors": 56,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 3.984637614,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 97,
+          "reset_rows": 128,
+          "total_reads": 148992,
+          "advances": 1408,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 128,
+              "row_xors": 769,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 88.722839111,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 1,
+          "reset_rows": 99328,
+          "total_reads": 1191936,
+          "advances": 1092608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 15,
+              "row_xors": 47,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 9.969067914,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 97,
+          "reset_rows": 1024,
+          "total_reads": 1191936,
+          "advances": 11264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 1024,
+              "row_xors": 6648,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 709.782712882,
+              "model": [
+                "0x166",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "d": 12,
+      "support_size_including_target": 6,
+      "seed": 773,
+      "hidden_mask_and_offset": [
+        "0x37",
+        0
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.692780944784
+        ],
+        "17": [
+          0.0,
+          0.586338181308
+        ]
+      },
+      "fair": {
+        "1": [
+          0.000122075280039,
+          0.69314718056
+        ],
+        "17": [
+          0.106256398054,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 1,
+          "reset_rows": 776,
+          "total_reads": 9312,
+          "advances": 8536,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 10,
+              "inspected": 11,
+              "row_xors": 33,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 4.444843484,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 8,
+          "reads_per_coordinate": 97,
+          "reset_rows": 8,
+          "total_reads": 9312,
+          "advances": 88,
+          "fits": {
+            "elimination": {
+              "status": "rank deficient",
+              "rank": 8,
+              "inspected": 8,
+              "row_xors": 16,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 5.545177444,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 1,
+          "reset_rows": 2328,
+          "total_reads": 27936,
+          "advances": 25608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 9,
+              "inspected": 10,
+              "row_xors": 23,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 5.582435769,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 24,
+          "reads_per_coordinate": 97,
+          "reset_rows": 24,
+          "total_reads": 27936,
+          "advances": 264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 24,
+              "row_xors": 117,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 16.635532333,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 1,
+          "reset_rows": 12416,
+          "total_reads": 148992,
+          "advances": 136576,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 9,
+              "inspected": 10,
+              "row_xors": 20,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "rent",
+              "peak_log_gain": 4.547183397,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 128,
+          "reads_per_coordinate": 97,
+          "reset_rows": 128,
+          "total_reads": 148992,
+          "advances": 1408,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 128,
+              "row_xors": 800,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 88.722839103,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 1,
+          "reset_rows": 99328,
+          "total_reads": 1191936,
+          "advances": 1092608,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 12,
+              "inspected": 13,
+              "row_xors": 39,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 25.564087122,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        },
+        {
+          "budget_index": 1024,
+          "reads_per_coordinate": 97,
+          "reset_rows": 1024,
+          "total_reads": 1191936,
+          "advances": 11264,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 12,
+              "inspected": 1024,
+              "row_xors": 6547,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            },
+            "likelihood": {
+              "status": "installed",
+              "peak_log_gain": 709.782712195,
+              "model": [
+                "0x37",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "d": 64,
+      "support_size_including_target": 32,
+      "seed": 173,
+      "hidden_mask_and_offset": [
+        "0x7e0a34e5c6ed3882",
+        1
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.693147180555
+        ],
+        "17": [
+          0.0,
+          0.660308890177
+        ]
+      },
+      "fair": {
+        "1": [
+          2.71050543121e-20,
+          0.69314718056
+        ],
+        "17": [
+          0.0360174350103,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 1,
+          "reset_rows": 9312,
+          "total_reads": 595968,
+          "advances": 586656,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 63,
+              "inspected": 64,
+              "row_xors": 1013,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 97,
+          "reset_rows": 96,
+          "total_reads": 595968,
+          "advances": 6048,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 64,
+              "inspected": 96,
+              "row_xors": 2048,
+              "model": [
+                "0x7e0a34e5c6ed3882",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "d": 64,
+      "support_size_including_target": 32,
+      "seed": 419,
+      "hidden_mask_and_offset": [
+        "0x56af343b1d4252b2",
+        0
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.693147180565
+        ],
+        "17": [
+          0.0,
+          0.663718930892
+        ]
+      },
+      "fair": {
+        "1": [
+          2.71050543121e-20,
+          0.69314718056
+        ],
+        "17": [
+          0.0360678598358,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 1,
+          "reset_rows": 9312,
+          "total_reads": 595968,
+          "advances": 586656,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 64,
+              "inspected": 68,
+              "row_xors": 1162,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 97,
+          "reset_rows": 96,
+          "total_reads": 595968,
+          "advances": 6048,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 64,
+              "inspected": 96,
+              "row_xors": 2067,
+              "model": [
+                "0x56af343b1d4252b2",
+                0
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "d": 64,
+      "support_size_including_target": 32,
+      "seed": 773,
+      "hidden_mask_and_offset": [
+        "0x292c04d8d6afb90f",
+        1
+      ],
+      "oracle": {
+        "1": [
+          0.0,
+          0.693147180564
+        ],
+        "17": [
+          0.0,
+          0.659080047236
+        ]
+      },
+      "fair": {
+        "1": [
+          2.71050543121e-20,
+          0.69314718056
+        ],
+        "17": [
+          0.0366898174399,
+          0.69314718056
+        ]
+      },
+      "acquisition": [
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 1,
+          "reset_rows": 9312,
+          "total_reads": 595968,
+          "advances": 586656,
+          "fits": {
+            "elimination": {
+              "status": "inconsistent",
+              "rank": 64,
+              "inspected": 65,
+              "row_xors": 1032,
+              "model": null,
+              "correct": false,
+              "terminal_scores": "fair"
+            }
+          }
+        },
+        {
+          "budget_index": 96,
+          "reads_per_coordinate": 97,
+          "reset_rows": 96,
+          "total_reads": 595968,
+          "advances": 6048,
+          "fits": {
+            "elimination": {
+              "status": "installed",
+              "rank": 64,
+              "inspected": 96,
+              "row_xors": 2038,
+              "model": [
+                "0x292c04d8d6afb90f",
+                1
+              ],
+              "correct": true,
+              "terminal_scores": "oracle"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
