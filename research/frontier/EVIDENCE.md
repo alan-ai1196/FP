@@ -1279,3 +1279,29 @@ python research/frontier/categorical_assignment.py --check
 python research/frontier/categorical_assignment.py --r4
 lean research/frontier/CategoricalMasses.lean
 ~~~
+
+## How many named labels can aggregate ordinary reports teach?
+
+**EMPIRICALLY OBSERVED.** In 256 sources a future uniform name selected one of 12 unfamiliar binary labels. During fitting a context returned either a name or a target from an independently reset source. No label was paired with its name. Within each of $m$ available groups, independent name counts calibrated an unknown ordering of the reset weights. Each fit paid $B$ target reports and $B$ separate name reports and resets of each type, with counts simulated in aggregate. The oracle-channel comparison received the true order. The empirical-weight fit knew the group names and the fixed binary response model, but received no geometric weight pattern. [Frozen design](https://github.com/alan-ai1196/FP/blob/f7aa7dd/research/frontier/NEXT.md) · [All 15 conditions, Monte Carlo errors, full-token losses and source-0 packets](aggregate_bits_result.json)
+
+| Contexts | Total target reads $B$ | Fitted empirical weights, exhaustive | Fitted rank, exhaustive | Fitted rank, round and soften | Known rank, exhaustive |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 192 | .10628 | .12920 | .00000 | .13510 |
+| 1 | 49,152 | .32325 | .35347 | .18252 | .35347 |
+| 1 | 12,582,912 | .55259 | .59862 | .43278 | .59862 |
+| 3 | 192 | .24776 | .29815 | .00000 | .32813 |
+| 3 | 49,152 | .69313 | .69313 | .61268 | .69313 |
+| 6 | 192 | .62082 | .56663 | .00000 | .65147 |
+| 6 | 49,152 | .69313 | .69313 | .68208 | .69313 |
+
+Values are means of installed log gain over a fair binary prediction in nats per uniform deployment name. The attainable floor-limited maximum is .693132. The full token head assigns one Q16 unit to each of the ten impossible target letters and prices this mass in the separate all-token score. At $B=49,152$ the general population upper bound was .50787 for one context. At three and six the binary entropy cap was already the tighter upper bound. The confidence-softened decoder returned fair on all three smallest-budget conditions. Its single-context standard error at $B=49,152$ was .00388 across sources. An informative calibrated order improves decoding, but the empirical-weight estimator won over the fitted-order estimator at six contexts and 192 targets. [Upper bound, construction and limits](FOUNDATION.md#how-much-a-finite-number-of-sampling-contexts-can-teach)
+
+**NUMERICALLY VERIFIED.** Exact integer binomial enumeration checked 90 average bit-error inequalities for one to five labels and six sample sizes. Sixty-five half-count regret bounds were checked by rational arithmetic. For the deliberately complementary 4-, 8- and 12-label sources the best equal-prior testing errors after $(2^q-1)^2$ aggregate targets were .158117, .158653 and .158655. On the 12-label pair, 16,769,025 target reads still leave at least 2.6393 nats of summed Bayes next-label loss. This comparison uses a two-source prior which makes all twelve label uncertainties depend on one unknown choice. [Exact checks, decoder and simulator](aggregate_bits.py)
+
+**Physical execution.** Each exhaustive variant evaluates $m2^{12/m}$ assignments per fit, or 4,096, 48 and 24 at the three context counts. Its likelihood accumulates one sufficient count pair per group; the implementation also materializes the binary assignment matrix. The cheap decoder sorts 12 name counts across the groups and rounds one target mean per group. Every method installs 24 bytes for twelve uint16 target masses. A live byte can hold the reset or the last of the twelve input names. On the source-0 rounding packet at the registered middle budget in each condition, pinned R4 matched every full-vocabulary output and destination over 471 resets and edges. It used 207 scalar nodes and 13 delayed cells. A learned value can be looked up after fitting without retaining the enumeration used to acquire it.
+
+~~~powershell
+python research/frontier/aggregate_bits.py --output research/frontier/aggregate_bits_result.json
+python research/frontier/aggregate_bits.py --check
+python research/frontier/aggregate_bits.py --r4
+~~~

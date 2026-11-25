@@ -1,0 +1,671 @@
+{
+  "registration": "f7aa7dd",
+  "independent_sources": 256,
+  "complementary": [
+    {
+      "q": 4,
+      "complementary_indices": [
+        7,
+        8
+      ],
+      "target_reports": 225,
+      "one_report_KL": 0.008902092841634839,
+      "optimal_two_world_error": 0.158116944194698,
+      "sum_of_bit_log_losses_lower": 0.876786512538473
+    },
+    {
+      "q": 8,
+      "complementary_indices": [
+        127,
+        128
+      ],
+      "target_reports": 65025,
+      "one_report_KL": 3.075755867068972e-05,
+      "optimal_two_world_error": 0.15865339332665315,
+      "sum_of_bit_log_losses_lower": 1.7595224363302027
+    },
+    {
+      "q": 12,
+      "complementary_indices": [
+        2047,
+        2048
+      ],
+      "target_reports": 16769025,
+      "one_report_KL": 1.192675209057013e-07,
+      "optimal_two_world_error": 0.15865524671666162,
+      "sum_of_bit_log_losses_lower": 2.6393144866247162
+    }
+  ],
+  "conditions": [
+    {
+      "contexts": 1,
+      "target_reports": 192,
+      "paid_reports_and_resets": 384,
+      "enumerated_rows_per_exhaustive_fit": 4096,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.2768787903960685,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.10627517536583547,
+          "source_standard_error": 0.007945071324287852,
+          "mean_installed_nll_per_raw_token": 1.5359656291202952
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.12920002704971012,
+          "source_standard_error": 0.006699817719219534,
+          "mean_installed_nll_per_raw_token": 1.5245032032783579
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.13509749759271034,
+          "source_standard_error": 0.006180439375305179,
+          "mean_installed_nll_per_raw_token": 1.5215544680068578
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "ea7fea7ff5ffea7ff5ffbf7fbf7f7f80bf7fb16bea7fd78e",
+        "fitted_order_Bayes": "fb7ffb7ff5fffb7ff5fffb7ffb7f8b73ff7fa6a0fb7fde5e",
+        "fitted_order_round": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "known_order_Bayes": "fb7ffb7ff5fffb7ff5fffb7fff7f8b73fb7fa6a0fb7fde5e"
+      }
+    },
+    {
+      "contexts": 1,
+      "target_reports": 3072,
+      "paid_reports_and_resets": 6144,
+      "enumerated_rows_per_exhaustive_fit": 4096,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.39235249301185815,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.19527099701756634,
+          "source_standard_error": 0.010696683571272365,
+          "mean_installed_nll_per_raw_token": 1.4914677182944298
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.2383727510478471,
+          "source_standard_error": 0.007552541138876625,
+          "mean_installed_nll_per_raw_token": 1.4699168412792893
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.07946766057441193,
+          "source_standard_error": 0.0004707021515401801,
+          "mean_installed_nll_per_raw_token": 1.5493693865160068
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.23858307341870819,
+          "source_standard_error": 0.007556357533842808,
+          "mean_installed_nll_per_raw_token": 1.469811680093859
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "927cf97ef5ffc47df5ff927ece3c99fa7b7b9800c77f5eff",
+        "fitted_order_Bayes": "fb7ffb7ff5fffb7ff5fffb7f8a8bbdfce07cca01fb7f2cfe",
+        "fitted_order_round": "fb7ffb7f7ce3fb7f59bcfb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "known_order_Bayes": "fb7ffb7ff5fffb7ff5fffb7f8a8bbdfce07cca01fb7f2cfe"
+      }
+    },
+    {
+      "contexts": 1,
+      "target_reports": 49152,
+      "paid_reports_and_resets": 98304,
+      "enumerated_rows_per_exhaustive_fit": 4096,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.5078738443282216,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.3232465875644278,
+          "source_standard_error": 0.010119772589344786,
+          "mean_installed_nll_per_raw_token": 1.4274799230209991
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.3534726584457214,
+          "source_standard_error": 0.007955593856760852,
+          "mean_installed_nll_per_raw_token": 1.4123668875803523
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.18251526144965194,
+          "source_standard_error": 0.0038794651933876942,
+          "mean_installed_nll_per_raw_token": 1.4978455860783872
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.3534726584457214,
+          "source_standard_error": 0.007955593856760852,
+          "mean_installed_nll_per_raw_token": 1.4123668875803523
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "1ce64989f5ffab91f5ff7aa9ceffceffbcff28002e85ceff",
+        "fitted_order_Bayes": "1ecdfb7ff5fffb7ff5ffec7ce4ede4eddded1212fb7fe4ed",
+        "fitted_order_round": "fb7ffb7fd7f9fb7f0ef3fb7ffb7ffb7ffb7f7a1cfb7f59bc",
+        "known_order_Bayes": "1ecdfb7ff5fffb7ff5ffec7ce4ede4eddded1212fb7fe4ed"
+      }
+    },
+    {
+      "contexts": 1,
+      "target_reports": 786432,
+      "paid_reports_and_resets": 1572864,
+      "enumerated_rows_per_exhaustive_fit": 4096,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6233981757399335,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.4258400113203811,
+          "source_standard_error": 0.011443556704107728,
+          "mean_installed_nll_per_raw_token": 1.3761832111430228
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.46438042420025083,
+          "source_standard_error": 0.007858744286936673,
+          "mean_installed_nll_per_raw_token": 1.3569130047030877
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.30054914549071676,
+          "source_standard_error": 0.0022443880807818143,
+          "mean_installed_nll_per_raw_token": 1.438828644057855
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.46438042420025083,
+          "source_standard_error": 0.007858744286936673,
+          "mean_installed_nll_per_raw_token": 1.3569130047030877
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "0100a689f5ff1faaf5ff0152f5fff5fff5ff0100d580f5ff",
+        "fitted_order_Bayes": "01001577f5ffe841f5ffcac5f5fff5fff5ff0100fb7ff5ff",
+        "fitted_order_round": "fb7ffb7f83fefb7f06fdfb7ff6bccbe3fb7f0b06fb7f35f3",
+        "known_order_Bayes": "01001577f5ffe841f5ffcac5f5fff5fff5ff0100fb7ff5ff"
+      }
+    },
+    {
+      "contexts": 1,
+      "target_reports": 12582912,
+      "paid_reports_and_resets": 25165824,
+      "enumerated_rows_per_exhaustive_fit": 4096,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.5525886975197409,
+          "source_standard_error": 0.01584290562712345,
+          "mean_installed_nll_per_raw_token": 1.3128088680433425
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.598616728099604,
+          "source_standard_error": 0.008732358963088008,
+          "mean_installed_nll_per_raw_token": 1.289794852753411
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.43277966407726715,
+          "source_standard_error": 0.0016954614305247167,
+          "mean_installed_nll_per_raw_token": 1.372713384764579
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.598616728099604,
+          "source_standard_error": 0.008732358963088008,
+          "mean_installed_nll_per_raw_token": 1.289794852753411
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01007800f5ff5800f5ff9efff5fff5fff5ff0100fa68f5ff",
+        "fitted_order_Bayes": "01007601f5ff0300f5fff3fff5fff5fff5ff0100d2d4f5ff",
+        "fitted_order_round": "752cfb7fc7fffb7f98fffb7fd8f8bcfc10efbe00fb7f6ffe",
+        "known_order_Bayes": "01007601f5ff0300f5fff3fff5fff5fff5ff0100d2d4f5ff"
+      }
+    },
+    {
+      "contexts": 3,
+      "target_reports": 192,
+      "paid_reports_and_resets": 384,
+      "enumerated_rows_per_exhaustive_fit": 48,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.24775563250108587,
+          "source_standard_error": 0.015997785645170667,
+          "mean_installed_nll_per_raw_token": 1.46522540055267
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.29815099711984405,
+          "source_standard_error": 0.012479370246180664,
+          "mean_installed_nll_per_raw_token": 1.4400277182432912
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.32813487453166673,
+          "source_standard_error": 0.010781256469408541,
+          "mean_installed_nll_per_raw_token": 1.4250357795373798
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "020001006a8e6a8ef5ff06ecf5fff5fff2ffafc1fc64bd3e",
+        "fitted_order_Bayes": "750001006c8e807df5ffe7fceffff5fff5ff7c934f725a6b",
+        "fitted_order_round": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "known_order_Bayes": "750001006c8e807df5ffe7fceffff5fff5ff7c934f725a6b"
+      }
+    },
+    {
+      "contexts": 3,
+      "target_reports": 3072,
+      "paid_reports_and_resets": 6144,
+      "enumerated_rows_per_exhaustive_fit": 48,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6441497595736148,
+          "source_standard_error": 0.008533146425562996,
+          "mean_installed_nll_per_raw_token": 1.2670283370164057
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6771396254511304,
+          "source_standard_error": 0.004074608981354635,
+          "mean_installed_nll_per_raw_token": 1.2505334040776477
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.24363588351768067,
+          "source_standard_error": 0.0016336685080490184,
+          "mean_installed_nll_per_raw_token": 1.4672852750443726
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6771396254511304,
+          "source_standard_error": 0.004074608981354635,
+          "mean_installed_nll_per_raw_token": 1.2505334040776477
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff1200e4ffe4ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff1000e6ffe6ff",
+        "fitted_order_round": "6445a214fb7ffb7f92bafb7ffb7f54eb54eb6445fb7ffb7f",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff1000e6ffe6ff"
+      }
+    },
+    {
+      "contexts": 3,
+      "target_reports": 49152,
+      "paid_reports_and_resets": 98304,
+      "enumerated_rows_per_exhaustive_fit": 48,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.6126783503745463,
+          "source_standard_error": 6.952486265422992e-18,
+          "mean_installed_nll_per_raw_token": 1.2827640416159398
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "8403e100b8c70f0e72fcb8c7e7f115ff15ff8403b8c7e7f1",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 3,
+      "target_reports": 786432,
+      "paid_reports_and_resets": 1572864,
+      "enumerated_rows_per_exhaustive_fit": 48,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.6885625478958951,
+          "source_standard_error": 6.952486265422992e-18,
+          "mean_installed_nll_per_raw_token": 1.2448219428552654
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "38000e0072fce100beff72fc15ffe8ffe8ff380072fc15ff",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 3,
+      "target_reports": 12582912,
+      "paid_reports_and_resets": 25165824,
+      "enumerated_rows_per_exhaustive_fit": 48,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.6928609370512534,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.242672748277586
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "04000100beff0e00f2ffbeffe8fff5fff5ff0400beffe8ff",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 6,
+      "target_reports": 192,
+      "paid_reports_and_resets": 384,
+      "enumerated_rows_per_exhaustive_fit": 24,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.620817001142665,
+          "source_standard_error": 0.010188618449572523,
+          "mean_installed_nll_per_raw_token": 1.2786947162318807
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.5666310461747773,
+          "source_standard_error": 0.021147967065976603,
+          "mean_installed_nll_per_raw_token": 1.3057876937158244
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6514656413624141,
+          "source_standard_error": 0.007534656950218881,
+          "mean_installed_nll_per_raw_token": 1.263370396122006
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "0100010063ff9300f5fff5fff5fff5ff4ef9a806f1fff5ff",
+        "fitted_order_Bayes": "01000100f7feff00f5fff5fff5fff5ffe8f00e0ff5fff5ff",
+        "fitted_order_round": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "known_order_Bayes": "01000100f7feff00f5fff5fff5fff5ffe8f00e0ff5fff5ff"
+      }
+    },
+    {
+      "contexts": 6,
+      "target_reports": 3072,
+      "paid_reports_and_resets": 6144,
+      "enumerated_rows_per_exhaustive_fit": 24,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.49157737894033454,
+          "source_standard_error": 7.917520541381145e-18,
+          "mean_installed_nll_per_raw_token": 1.3433145273330458
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "ff11fd47f7edfd47f9b7f7edf7edf9b7f9b7ff11f9b7f7ed",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 6,
+      "target_reports": 49152,
+      "paid_reports_and_resets": 98304,
+      "enumerated_rows_per_exhaustive_fit": 24,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.682076143179465,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2480651452134806
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "20018004d6fe800476fbd6fed6fe76fb76fb200176fbd6fe",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 6,
+      "target_reports": 786432,
+      "paid_reports_and_resets": 1572864,
+      "enumerated_rows_per_exhaustive_fit": 24,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.6924601093319467,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.2428731621372398
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "12004800e4ff4800aeffe4ffe4ffaeffaeff1200aeffe4ff",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    },
+    {
+      "contexts": 6,
+      "target_reports": 12582912,
+      "paid_reports_and_resets": 25165824,
+      "enumerated_rows_per_exhaustive_fit": 24,
+      "names_ranked_per_fit": 12,
+      "population_gain_upper": 0.6931471805599453,
+      "models": {
+        "fair": {
+          "mean_binary_gain": 0.0,
+          "source_standard_error": 0.0,
+          "mean_installed_nll_per_raw_token": 1.589103216803213
+        },
+        "empirical_weights": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        },
+        "fitted_order_round": {
+          "mean_binary_gain": 0.6931090267757637,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425487034153309
+        },
+        "known_order_Bayes": {
+          "mean_binary_gain": 0.6931319193257688,
+          "source_standard_error": 1.3904972530845984e-17,
+          "mean_installed_nll_per_raw_token": 1.2425372571403286
+        }
+      },
+      "source_0_packets": {
+        "fair": "fb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7ffb7f",
+        "empirical_weights": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff",
+        "fitted_order_round": "01000400f5ff0400f2fff5fff5fff2fff2ff0100f2fff5ff",
+        "known_order_Bayes": "01000100f5ff0100f5fff5fff5fff5fff5ff0100f5fff5ff"
+      }
+    }
+  ]
+}
