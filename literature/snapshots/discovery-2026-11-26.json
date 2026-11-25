@@ -3,11 +3,17 @@
   "window_start": "2026-11-20",
   "window_end": "2026-11-26",
   "newly_indexed": [
+    "DOI-10.1093-jssam-smaf004",
+    "PMLR-v267-chen25bv",
+    "PMLR-v306-applebaum26a",
+    "arXiv-1009.3460v3",
     "arXiv-1811.02417v3",
     "arXiv-2305.16056v6",
     "arXiv-2308.14304v3",
+    "arXiv-2402.01549v4",
     "arXiv-2406.05888v3",
     "arXiv-2410.15539v4",
+    "arXiv-2502.05319v1",
     "arXiv-2503.05920v2",
     "arXiv-2503.07425v3",
     "arXiv-2503.20258v3",
@@ -118,6 +124,8 @@
     "arXiv-2609.23490v3",
     "arXiv-2609.24141v4",
     "arXiv-2609.24352v2",
+    "arXiv-2609.24931v2",
+    "arXiv-2609.26444v2",
     "arXiv-2609.33412v2",
     "arXiv-2609.34651v4",
     "arXiv-2609.36826v2",
@@ -161,6 +169,7 @@
     "arXiv-2611.08671v3",
     "arXiv-2611.09537v2",
     "arXiv-2611.10382v4",
+    "arXiv-2611.11409v1",
     "arXiv-2611.12016v2",
     "arXiv-2611.13960v2",
     "arXiv-2611.14116v2",
@@ -556,6 +565,7 @@
     "doi:10.1038/d41586-026-03472-7",
     "doi:10.1038/d41586-026-03473-6",
     "doi:10.1038/d41586-026-03474-5",
+    "doi:10.1038/d41586-026-03475-4",
     "doi:10.1038/d41586-026-03491-4",
     "doi:10.1038/d41586-026-03492-3",
     "doi:10.1038/d41586-026-03494-1",
@@ -1357,6 +1367,37 @@
         }
       ],
       "local_report": "literature/corpus/peer_reviewed/venues-2026-11-26.json"
+    },
+    "Consolidated directed primary-source follow-through": {
+      "matched": 10,
+      "ids": [
+        "arXiv-2502.05319v1",
+        "DOI-10.1093-jssam-smaf004",
+        "PMLR-v267-chen25bv",
+        "PMLR-v306-applebaum26a",
+        "arXiv-2402.01549v4",
+        "arXiv-2611.11409v1",
+        "arXiv-1009.3460v3",
+        "arXiv-2609.24931v2",
+        "arXiv-2609.26444v2",
+        "doi:10.1038/d41586-026-03475-4"
+      ],
+      "scope": "Nine directed records outside the dated automatic-window restriction: six source-agent model screens, two root primary-abstract/version checks and one completed scoped historical dependency. One further venue metadata record from a concurrent two-day cloud retry was absent from the broader Astra snapshot. No new full-paper credit.",
+      "cloud_retry_window": [
+        "2026-11-25",
+        "2026-11-26"
+      ],
+      "cloud_retry_identified": 57,
+      "cloud_retry_new_against_old_base": 24,
+      "already_in_Astra_snapshot": 23,
+      "official_git_fallback": {
+        "openai/math": "3344da59991ed94f9ba711217b29c1d760badfa6",
+        "leanprover-community/mathlib4": "49ca12e73386b356e3053ba41ba213e3bf7c1469"
+      },
+      "retrieval_issues": [
+        "Cloud GitHub REST calls returned403. Direct Git reads succeeded for OpenAI and mathlib. Broader incoming Astra snapshot retained."
+      ],
+      "narrow_48h_screen": "State-learning and official-source queries ending2026-11-25T16:09:38Z authenticated no directly matching new source/version within that bounded screen. This is not a census."
     }
   }
 }
