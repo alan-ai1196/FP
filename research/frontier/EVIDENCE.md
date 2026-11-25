@@ -1255,3 +1255,27 @@ A fair prediction cost .130812 nats throughout. At amplitude $1/32$ and $L=16,77
 python research/frontier/view_transfer.py --output research/frontier/view_transfer_result.json
 python research/frontier/view_transfer.py --r4
 ~~~
+
+## Learning a categorical assignment from two crossed pair tables
+
+**EMPIRICALLY OBSERVED.** Three independent sources each had an unfamiliar 12-entry mapping from three old labels and four new labels to three possible targets. The learner received independent self-twin and crossed tables, a 12-atom ceiling and 55 raw count cells. The prior weights, target map, emission probabilities and the deployment $DY$ table were hidden from fitting. Enumerating the 81 possible assignments in each old-label row both evaluated an ordinary conditional log-loss objective and tested the simultaneous coverage certificate. The source generation and scoring rules were frozen before fitting. [Registration](https://github.com/alan-ai1196/FP/blob/2532ab0/research/frontier/NEXT.md) · [Learners and raw-event interpreter](categorical_assignment.py) · [All counts, maps, scores and installed packets](categorical_assignment_result.json)
+
+| Pairs in each of five panels | Exact map by crossed log loss | Full maps certified | Conditional KL, certificate | Crossed log loss | Schur projection | Fitted marginal |
+|---:|---:|---:|---:|---:|---:|---:|
+| 4,096 | 2/3 | 0/3 | .437079 | .067592 | .404082 | .437079 |
+| 65,536 | 3/3 | 0/3 | .433567 | .015649 | .399644 | .433567 |
+| 1,048,576 | 3/3 | 3/3 | .003619 | .003619 | .399019 | .434512 |
+| 16,777,216 | 3/3 | 3/3 | .000848 | .000848 | .399579 | .434895 |
+
+Entries are three-source means in nats per ordinary target. At 65,536 pairs per panel all latent input cells passed the positivity test, but one row per source retained three different assignments. At 1,048,576 all nine rows had a unique assignment. Each fit then represented 5,242,880 fresh resets and 10,485,760 ordinary reports, drawn in aggregate using multinomial counts. The observable upper bounds on population conditional KL were .05008–.05027 at that budget and .01631–.01641 at the largest budget. On 4,096 fresh evaluation pairs per source the mean excesses of the certified predictor were .003194 and .000582 at those two budgets. The point fit and the certificate matched once the data resolved the assignments. Uniform smoothing of the fitted joint law pulls rare input rows further toward uniform, including in the abstaining marginal model. The three-source average does not give a distribution-free guarantee. The simultaneous certificate has its own stated sampling and capacity assumptions. [Proof and rare-context lower bound](FOUNDATION.md#learning-a-categorical-assignment-from-disjoint-pairs)
+
+**NUMERICALLY VERIFIED, installed prediction.** The interpreter emits four probabilities before every token in the alternating raw $D,Y$ stream. Thirty installed bytes store three uint16 masses per row for one reset and four post-$D$ states. The remaining mass follows by subtraction. One live byte selects a row. All five chronological states were reachable. Of the 36 distinct packets, 34 produced five different forecast rows and two produced three. Their complete R4 replay covered 756 resets and transitions on all four raw inputs, using 39 nodes and five delayed cells. Every fitted output differed by at most $4/65536$ from the corresponding floating-point probability. At the largest budget the installed certified model had mean conditional KL .000874 and consumed .937616 nats per raw test token, versus 1.134862 for the projected model. Oracle mean next-target entropy varied from .49133 to .65036 between sources. This measures the installed head supplied by each acquisition rule.
+
+**FORMALLY CHECKED AND EXACTLY ENUMERATED.** A Lean proof over arbitrary finite lists and decidable label equality checks that one row of powers-of-two label masses uniquely determines its entire target assignment. This is the population combinatorial property of the simulator weights. The finite-data confidence theorem has a separate mathematical proof. Exact enumeration recovered 81 distinct row signatures from the 81 four-input, three-output assignments. A two- versus three-atom rational source check agreed on all five available tables and gave conditional probabilities one and zero on the same deployment input. [Lean theorem](CategoricalMasses.lean) · [Capacity and stability proofs](FOUNDATION.md#learning-a-categorical-assignment-from-disjoint-pairs)
+
+~~~powershell
+python research/frontier/categorical_assignment.py --output research/frontier/categorical_assignment_result.json
+python research/frontier/categorical_assignment.py --check
+python research/frontier/categorical_assignment.py --r4
+lean research/frontier/CategoricalMasses.lean
+~~~
