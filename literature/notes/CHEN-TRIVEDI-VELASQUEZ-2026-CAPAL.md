@@ -1,14 +1,16 @@
-# Chen–Trivedi–Velasquez 2026 — CAPAL, scoped proof and code reading
+# Chen–Trivedi–Velasquez 2026 — CAPAL and its observation-access premises
 
-## Source and incomplete-reading boundary
+## Source and complete reading coverage
 
 Lekai Chen, Ashutosh Trivedi and Alvaro Velasquez, *Towards Persistent Noise-Tolerant Active Learning of Regular Languages with Class Query*. Official ICLR 2026 proceedings, 24-page conference PDF.
 
 [Official record](https://proceedings.iclr.cc/paper_files/paper/2026/hash/df01766dc88e5f1d475df4f7f3097d73-Abstract-Conference.html) · [Official PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/df01766dc88e5f1d475df4f7f3097d73-Paper-Conference.pdf) · [Author code at 57d877f6](https://github.com/lkwargs/CAPAL/tree/57d877f6a083d58852660fac388ff49c052dc2d2)
 
-Read November 25, 2026, Shanghai. **Status remains partially read.** The main assistant covered all available extracted text on pp. 1–24, §§1–6, Appendix A.1–A.6, all four theorem statements and their arguments, Lemma 1, two algorithms, two tables, three footnotes, all 32 references and all figure captions. The actual 18 figures did not reach the reader. Screenshot calls returned text placeholders and local execution was unavailable. Several figures contain full prompts, graph structure and numerical curves absent from the extracted text.
+Read November 25, 2026, Shanghai. **Fully read in the official 24-page conference edition.** The main assistant covered pp. 1–24, §§1–6, Appendix A.1–A.6, all four theorem statements and their arguments, Lemma 1, two algorithms, two tables, three footnotes, all 32 references and all 18 actual figures. The earlier session completed the extracted text. This continuation restored local PDF rendering and completed the outstanding visual coverage without repeating that reading.
 
-The precise remaining visual pages are p.3 Fig1, p.5 Fig2, p.8 Fig3, p.10 Fig4, p.14 Figs5–6, p.19 Fig7, p.20 Fig8, p.21 Figs9–10, p.22 Figs11–13, p.23 Figs14–17 and p.24 Fig18. Resume by inspecting these figures and the original formula layouts on pp.6–7 and15–18. Do not repeat the already covered prose or mark this paper fully read before resolving that boundary.
+Actual figures were inspected on p.3 Fig1, p.5 Fig2, p.8 Fig3, p.10 Fig4, p.14 Figs5–6, p.19 Fig7, p.20 Fig8, p.21 Figs9–10, p.22 Figs11–13, p.23 Figs14–17 and p.24 Fig18. Original formula layouts on pp.6–7 and15–18 confirm the previously extracted structural test, tolerance cap and complexity statements. Figure7's complete prompt examples were enlarged and read. No paper section, appendix or figure remains unread.
+
+The [official supplemental archive](https://proceedings.iclr.cc/paper_files/paper/2026/file/df01766dc88e5f1d475df4f7f3097d73-Supplemental-Conference.zip) contains 28 target `.taf` files and no additional manuscript or proof appendix. Its complete file inventory and the Simple01, Normal01 and Difficult12 definitions were inspected. This is a scoped data inspection, not a benchmark replay or a reading of every target file. The PDF and archive are retained under `literature/corpus/peer_reviewed/capal2026/` in this checkout.
 
 A narrow static comparison covered README and the following parts of capal.py at the pinned June18,2026 commit: PersistentNoisyMQ, PerfectEQ, SameStateOracle initialization and label cache, probe construction and same_state, the learner's noise initialization, counterexample handling and fit. This is not a full code audit or an execution replay. No later paper revision was authenticated.
 
@@ -114,7 +116,7 @@ The implementation includes the same capped square-root tolerance in same_state.
 
 The inspected initialization obtains a noise parameter from the oracle or configuration, with a numerical lower floor and upper clamp. This is not an independently verified data-only bootstrap confidence bound. It should not be described as acquiring an unknown safe noise bound from ordinary unlabeled interactions on the strength of the inspected code.
 
-There is no execution replay, no verification of all call paths and no claim that the June18 implementation exactly generated the published tables. The public tree has28 target .taf files. The paper's §5 describes200 human-interpretable DFAs. The mapping from the stated experimental cohort to the public files was not established by this bounded check.
+There is no execution replay, no verification of all call paths and no claim that the June18 implementation exactly generated the published tables. Both the public tree and the official supplemental archive have 28 target .taf files. The paper's §5 describes 200 human-interpretable DFAs. The mapping from the stated experimental cohort to the public files was not established by this bounded check.
 
 ## Experiments actually read
 
@@ -132,14 +134,23 @@ The two tables were read in full. Selected entries illustrate both reported impr
 
 Table1 also reports standard deviations. Model-call counts exclude the cost of later deterministic checker executions in the one-call synthesis mode. They are not a matched total-computation comparison. Contrary to §5.2's blanket wording, CAPAL is below LA on the verification-plus-reasoning row.
 
-The injected-noise experiment describes eta up to0.2 and counterexamples up to length10. AppendixA.2 considers independently missed counterexamples with probability p. Four independent retries make the chance of accepting one incorrect fixed hypothesis p^4. That per-call calculation does not establish a uniform guarantee for a correlated or adversarial practical verifier. The corresponding curves and all learning diagrams remain visually unread.
+The injected-noise experiment describes eta up to0.2 and counterexamples up to length10. AppendixA.2 considers independently missed counterexamples with probability p. Four independent retries make the chance of accepting one incorrect fixed hypothesis p^4. That per-call calculation does not establish a uniform guarantee for a correlated or adversarial practical verifier.
 
-The appendix also explains direct prompts, reasoning, a second model acting as verifier, discrimination-tree-guided examples, and synthesized code. Complete prompt examples are embedded in figures and remain part of the outstanding reading boundary.
+The completed visual reading adds the following qualifications.
+
+- Figures1 and3 show the separate target-aware equivalence oracle and the two-iteration even-parity example. Its first hypothesis already has the intended transition graph and corrects acceptance using a trusted counterexample. This example does not demonstrate arbitrary transition acquisition from passive traces.
+- Figure2 plots empirical correct/incorrect fractions and per-word heterogeneity. The left plot does not itself plot the probability that a majority classifier is wrong. Its sample proportions and the majority-limit argument are distinct quantities.
+- Figure4 shows CAPAL's lower membership-query counts than LearnAnyWay over much of the injected-noise range. At the highest plotted noise, its success is below one. The passive RPNI-EDSM comparator has zero membership calls and approximately unit success on this plot, so a comparison based only on membership calls omits its supplied-data cost.
+- Figure5 uses LearnAnyWay/TTT on one threshold-count language. Longer supplied counterexamples generally increase calls and observed errors, with nonmonotone local fluctuations. Figure6 reports means and standard deviations for independently missed counterexamples. Four retries improve accuracy, especially for the zero-MQ-noise curve. The nonzero-MQ-noise retry curve remains visibly below one at some points. The plot therefore does not support a literal universal near-perfect empirical outcome.
+- Figures7–9 display the actual prompt formats, a discrimination-tree example and a synthesized suffix checker. The verification prompt checks a previous answer's reasoning against the specification and input. It is a fallible language-model check, distinct from the perfect equivalence oracle used in the learning theorem.
+- Figures10–18 display transition graphs for parity, suffix, substring, count, prefix and divisibility languages. Their original renderings omit visible initial-state arrows and accepting-state markers. The inspected supplemental definitions supply those fields. The graph drawings alone are not complete labeled DFA specifications.
+
+These are readings of the published plots and artifacts. No numerical curve values were reconstructed as exact data and no experiments were rerun.
 
 ## Relevance boundary and next reading
 
 This source gives a concrete example of active transition discovery with exact external counterexamples, persistent cached labels and carefully selected suffix probes. It does not authenticate learning a common finite-state update from ordinary noisy observations alone. Its perfect equivalence oracle can rule out disagreements at arbitrary unseen lengths. Such access must be supplied when citing its exact-language conclusion.
 
-No new FP theorem, architecture recommendation or experimental change is proposed. The completed dd1e654 response remains separate. The current note preserves the source's claims, the actual textual coverage, the independent local checks and the code distinction while image access is blocked.
+No new FP theorem, architecture recommendation or experimental change is proposed. The completed dd1e654 response remains separate. The note preserves author claims, full-paper reading, bounded independent checks and scoped code/data inspection as separate evidence levels.
 
-The next recovery task for this paper is the listed figures and original mathematical layouts. Its complete-reading count remains zero. Ordinary reading may proceed to an accessible original OpenAI text while this concrete visual blocker persists.
+The full-paper reading is complete. Remaining research questions concern a justified suffix-separation margin, confidence under reused cached labels, an actual safe-noise estimator, and the experimental cohort mapping. None requires relabeling the paper as unread, and no full-algorithm correctness certification is claimed.

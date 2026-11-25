@@ -130,11 +130,11 @@ Bshouty–Haddad's *Approximating the Number of Relevant Variables in a Parity I
 
 The note retains the all-sparsity quantifier, proper-identification goal, uniform-example interface and inverse-noise-gap dependency. Two bounded checks establish the finite-candidate agreement gap and repair the extracted padding probability without changing its11/12 bound. A separately labeled derivation maps Astra's single-report noisy-coordinate model to affine LPN with bias rho^s. Fixed-s promises, support-dependent noise and repeated reports require distinct treatment. This is no unconditional hardness theorem or whole-paper proof certificate. The original OpenAI totals do not change. The next complete-source selection is CAPAL ICLR2026.
 
-## CAPAL text checkpoint with visual material outstanding
+## CAPAL full conference reading
 
-Chen–Trivedi–Velasquez, ICLR2026, remains **partially read**. The main assistant has read all available extracted text on all24pages, §§1–6, AppendixA.1–A.6, all proof arguments, twoalgorithms, twotables, threefootnotes,32references and18figurecaptions. The actual figures contain plots, full prompt examples and DFA graphs that were not delivered by the image endpoint. [Scoped note and exact visual page list](notes/CHEN-TRIVEDI-VELASQUEZ-2026-CAPAL.md).
+Chen–Trivedi–Velasquez, ICLR2026, is **fully read**, all 24 pages, §§1–6, Appendix A.1–A.6, all proof arguments, two algorithms, two tables, three footnotes, 32 references and all 18 actual figures. Restored local rendering completed the precise visual boundary from the prior session. Original mathematical layouts pp.6–7 and15–18 confirm the previously recorded formula issues. [Independent note](notes/CHEN-TRIVEDI-VELASQUEZ-2026-CAPAL.md).
 
-The note separates the literal RS identity from the different table-class comparison in pinned author code. It records local confidence and suffix-gap checks, without certifying or refuting the full learner. Resume with actual Figs1–18 on pp3,5,8,10,14,19–24 and mathematical layouts pp6–7,15–18. No completed-paper total increases. OpenAI250's complete TeX sources are selected next while the visual blocker persists.
+The note separates the literal RS identity from the different table-class comparison in pinned author code, records the actual plot limitations and retains the suffix-gap and confidence premises. The official supplement contains 28 target TAF files with no additional paper appendix. Its inventory and three definitions were inspected without an experiment replay. Full reading is distinct from full-algorithm certification. Next recovery is OAI250's three figures and dense original layouts, whose PDFs are now available.
 
 ## Original OpenAI250 complete-source checkpoint
 
