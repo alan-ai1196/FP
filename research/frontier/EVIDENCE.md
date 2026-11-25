@@ -1334,3 +1334,30 @@ python research/frontier/text_aggregate.py fit --output research/frontier/text_a
 python research/frontier/text_aggregate.py score --output research/frontier/text_aggregate_result.json
 python research/frontier/text_aggregate.py r4
 ~~~
+
+## Learning next-word predictions from matched bag histograms
+
+**EMPIRICALLY OBSERVED.** The learner received only a bag's unordered previous-word and next-word class counts. It fitted a full next-word head by centered cross-covariance or centered ridge regression. All experiments used the same 1,048,576 paired collection positions, 17 classes and 50,257-token lexical law. We froze 107 distinct installed heads before scoring the next 65,536 ordinary words on each file. The three random partitions were independent and nested across bag sizes. [Registration](https://github.com/alan-ai1196/FP/blob/fff0f7a/research/frontier/NEXT.md) · [Frozen packets](https://github.com/alan-ai1196/FP/blob/fe8c98d/research/frontier/matched_word_bags_fits.json) · [Both fresh files and eight subblocks](matched_word_bags_result.json)
+
+| Positions per bag | Bags | Bits for both enumeratively coded histograms across all bags | Matched covariance gain, later train / validation | Matched regression gain, later train / validation | Contiguous covariance gain, later train / validation |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 1,048,576 | 10,485,760 | .11010 / .10757 | .11013 / .10751 | .11010 / .10757 |
+| 4 | 262,144 | 6,815,744 | .10820 / .10584 | .10776 / .10478 | −.27103 / −.26172 |
+| 16 | 65,536 | 3,932,160 | .10396 / .10187 | .10335 / .10055 | −.81328 / −.77520 |
+| 64 | 16,384 | 1,802,240 | .09312 / .09128 | .09547 / .09228 | −1.04137 / −.98519 |
+| 256 | 4,096 | 696,320 | .07273 / .06989 | .08279 / .07672 | −.74454 / −.69644 |
+| 1,024 | 1,024 | 237,568 | .04338 / .03975 | .06386 / .05939 | −.41430 / −.38308 |
+| 4,096 | 256 | 75,776 | .01534 / .01268 | .03179 / .02747 | −.16050 / −.13841 |
+| 16,384 | 64 | 23,040 | .00364 / .00110 | .01151 / .00970 | −.04937 / −.04095 |
+
+Gains are nats saved per ordinary token against a fitted marginal. Each random entry averages three partitions. Directly paired training saved .11010 and .10757. Random size-16 bags preserved 94.4% and 94.7% of those gains under the covariance estimator. Size-1,024 bags preserved 58.0% and 55.2% under the ridge estimator. Shuffling output histograms among bags erased the benefit: at size 16 its mean covariance gains were −.00105 and −.00086. At size 16 the contiguous ridge learner lost 1.02064 and 1.00109 nats per word. These fixed-tape results reflect the actual relationship between preceding and current word histograms. The theoretical iid weak-correlation bound and the fixed-tape randomization variance have separate sampling assumptions. [Bag information and sample cost](FOUNDATION.md#how-much-of-a-joint-law-survives-two-matched-histograms) · [Design-unbiased finite-tape estimates](FOUNDATION.md#what-a-random-partition-of-one-fixed-tape-can-identify)
+
+**NUMERICALLY VERIFIED.** Exact rational enumeration checked the sign-count chi-square formula, first moment and variance at 32 bag size/correlation combinations. On 24 finite-tape problems, 513 complete equal-bag partitions reproduced both the covariance and the exact variance, including singleton bags. All 107 frozen heads normalized over the full vocabulary to within $3.4\times10^{-16}$ on both files. The installed class and lexical representation is the same one audited in pinned R4 in the previous experiment. [Learners, finite enumeration and scoring](matched_word_bags.py)
+
+The bit column is a fixed-length representation bound $2(N/b)\lceil\log_2\binom{b+16}{16}\rceil$. It excludes shared grouping and class definitions. The experiment used arrays of integer counts, without running an enumerative entropy coder. The collector still processed all $2N$ class observations. If a single collector may directly form the joint count table, 288 independent counts of at most 21 bits plus a known total suffice for the entire 17-by-17 joint. If input and target owners can agree on sample positions, they can also send a subset of literal aligned pairs. These alternatives have different resource access and the histogram bound alone establishes no communication advantage over them.
+
+~~~powershell
+python research/frontier/matched_word_bags.py fit --output research/frontier/matched_word_bags_fits.json
+python research/frontier/matched_word_bags.py score --output research/frontier/matched_word_bags_result.json
+python research/frontier/matched_word_bags.py check
+~~~
