@@ -176,19 +176,20 @@ def fit_all(directory):
 
 def score_all(directory):
     receipt = json.loads(FROZEN.read_text())
+    return evaluate(directory, receipt["class_names"], receipt["packets"], REPORTS)
+
+
+def evaluate(directory, class_names, packets, report_ranges):
     train = tokens("train_source", FIT_END, FIT_SHA, directory)
     names, classes, lexical = vocabulary(train[:HISTORY])
-    assert names.tolist() == receipt["class_names"]
+    assert names.tolist() == class_names
     within = lexical / np.bincount(classes, weights=lexical, minlength=K)[classes]
     out = []
-    for role, start, digest in REPORTS:
+    for role, start, digest in report_ranges:
         words = tokens(role, start + 65536, digest, directory)[start - 1 :]
         d, y = classes[words[:-1]], classes[words[1:]]
         lexical_log = np.log(within[words[1:]])
-        scores = [
-            flat_score(p, d, y, lexical_log, classes, within)
-            for p in receipt["packets"]
-        ]
+        scores = [flat_score(p, d, y, lexical_log, classes, within) for p in packets]
         out.append(
             {
                 "file": role,
