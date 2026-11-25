@@ -1361,3 +1361,22 @@ python research/frontier/matched_word_bags.py fit --output research/frontier/mat
 python research/frontier/matched_word_bags.py score --output research/frontier/matched_word_bags_result.json
 python research/frontier/matched_word_bags.py check
 ~~~
+
+## Shared-position sampling at the same communication budget
+
+**EMPIRICALLY OBSERVED.** Two collectors sent the raw five-bit word classes at an agreed random subset of training positions. The receiver learned its own target marginal from just those positions. Both five-bit streams were actually packed into bytes and decoded before fitting. We froze 43 distinct new class packets before scoring the next 65,536 ordinary words on each of the training and validation files. Both the old bag fits and new paired fits used the same lexical probabilities and 17-class representation. [Registration](https://github.com/alan-ai1196/FP/blob/2852526/research/frontier/NEXT.md) · [Frozen sampled packets and wire lengths](https://github.com/alan-ai1196/FP/blob/5732908/research/frontier/word_pair_sample_fits.json) · [Full fresh word scores](word_pair_sample_result.json)
+
+| Positions per bag | Matched covariance gain | Matched regression gain | Sampled pairs, one per bag in count | Sampled pairs, same bit budget |
+|---:|---:|---:|---:|---:|
+| 1 | .10111 / .11015 | .10114 / .11007 | .10111 / .11015 | .10111 / .11015 |
+| 4 | .09950 / .10806 | .09859 / .10712 | .10081 / .10967 | .10107 / .11003 |
+| 16 | .09653 / .10415 | .09556 / .10352 | .09912 / .10784 | .10093 / .10988 |
+| 64 | .08677 / .09304 | .08898 / .09500 | .09261 / .10006 | .10063 / .10936 |
+| 256 | .06750 / .07295 | .07813 / .08347 | .07374 / .07895 | .09921 / .10797 |
+| 1,024 | .03941 / .04357 | .06128 / .06430 | .03561 / .04072 | .09507 / .10302 |
+| 4,096 | .01350 / .01668 | .02991 / .03272 | −.02252 / −.01821 | .08429 / .09015 |
+| 16,384 | .00285 / .00311 | .01043 / .01219 | −.05517 / −.05158 | .06184 / .06697 |
+
+Entries are gains over the same full-training marginal, in nats per word on the later training-file / validation-file block, averaged over three independent sampling seeds. At 1,024 positions per bag the 29,696-byte budget permitted 23,756 aligned pairs. These retained 94.02% and 93.52% of the full paired gains. The ridge bag estimator retained 60.61% and 58.37%. At the smallest nontrivial bag size and every larger size tested, synchronized samples at the same bit budget beat both bag estimators on the three-seed mean on both blocks. With only as many **sampled pairs as bags**, the result changed: 1,024 sampled pairs produced .03561 / .04072 while using all the positions inside 1,024 matched bags produced .06128 / .06430 with ridge. A group count and a message bit budget measure different physical resources.
+
+At the 1,024-size budget, sampling requires 47,512 selected class reads with direct addressing; the bag collector reads 2,097,152 classes. The Python evaluator loaded the same training prefix and generated a shared permutation in memory. A streaming implementation with a predetermined sampling schedule can still require scanning the tape. Address lists need not be transmitted when the sites share the permutation seed and the same position convention. Separate encoded streams fit the stated budgets including final byte padding. A colocated collector, or an observer of one full shifted word tape, has the cheaper direct-count option described in the theorem. No competitive Transformer claim follows from this fixed class model. [Packed-sample and replay code](word_pair_sample.py) · [Two-party lower bound, attainable protocol and chronological exception](FOUNDATION.md#what-two-separated-observers-must-communicate-to-learn-a-conditional)
