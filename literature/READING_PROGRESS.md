@@ -4,7 +4,7 @@ A row becomes fully read after personally covering the complete body, proofs, fo
 
 ## Original OpenAI release
 
-The first pass began November 23, 2026 in Shanghai. Twenty-eight of the original 722 manuscripts have a complete reading record, totaling 1,557 pages across fifteen result families. The 94-page second, 82-page third and 164-page fourth manuscripts are complete. The original collection records PDFs and TeX for all 722. This cloud checkout retrieves ignored corpus files as needed. The additional 29 editions across subsequent catalog revisions have separate rows. Superseded and withdrawn originals remain in the queue.
+The first pass began November 23, 2026 in Shanghai. Twenty-eight of the original 722 manuscripts have a complete reading record, totaling 1,557 pages across fifteen result families. The 94-page second, 82-page third and 164-page fourth manuscripts are complete. The original collection records PDFs and TeX for all 722. This cloud checkout retrieves ignored corpus files as needed. The additional39editions across subsequent catalog revisions have separate rows, including the ten November23/24entries. Superseded and withdrawn originals remain in the queue.
 
 | Original catalog ordinal | Coverage | What required following the proof |
 |---|---|---|
@@ -148,3 +148,12 @@ The original PDF, complete build tree and README are unchanged at publisher3344d
 Paes Leme–Schneider2606.29595v1 is fully read, all4pages, activeTeX, §§1–3, every proof/formula, tool disclosure and5references. [Independent note](notes/PAES-LEME-SCHNEIDER-2026-FINITE-AUTOMATA-FACTORIES.md). The rational counterexample passes bounded algebraic/model checks. A finite-state elimination argument supplies necessary nonnegative coefficients, and common-degree homogenization justifies the ambient UFD step. Morina's product criterion gives general existence with an explicit fifth power. Neither dependency is marked fully read. Two scoped records bring the index to3,704.
 
 The priority request c82b2fb arrived after this full reading and before publication. It is accepted at this completed-paper boundary. Next main reading is the November24 OpenAI Fourier paper, then the requested Euclidean tensor spectrum, Valiant hierarchy and strongly polynomial LP papers. The ordinary Gu–Li–Xu/OAI251 sources remain prepared and unread. Original OpenAI full-read totals stay28/1557/15.
+
+## November24 OpenAI priority request c82b2fb
+
+1. **Fourier exponent, OAI-1124-725: complete.** All41pages,8sections/3parts,16activeTeXfiles,6actualfigures,51printedreferences/55sourcebibrecords. [Note](notes/OAI-1124-725.md). Uniform batched circuit lower bound, known-exception spectral repair, shared endpoint transforms, restored workspace and field descent. Scalar feedback variables and Zariski border errors are distinct from finite physical memory and observational noise. Official-source premise, no audit or Lean replay.
+2. **Euclidean tensor geometry, OAI-1124-722: next.**86page pinned PDF,24activeTeXfiles and sevenfigures prepared. Body unread. Exact next start: build/main.tex/style definitions, then intro.tex, PDFp1.
+3. **Paths/trees/grids, OAI-1124-723:**21page source and threefigures prepared, body unread.
+4. **Strongly polynomial LP, OAI-1124-729:**58page source,19activeTeXfiles and fivefigures prepared, body unread.
+
+Ten deduplicated November publisher editions are now indexed. The current catalog has730manuscripts/375families. The November23 VP/VNP paper is superseded, not withdrawn. The index has3,714records. Original October6 full-read totals remain28/1557/15 because the newly completed Fourier paper is a later release. Incoming Astra169bafc core work and its new unknown-channel transfer question are preserved. No newer mandatory request was found.

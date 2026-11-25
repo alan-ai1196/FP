@@ -27,6 +27,8 @@ EDITIONS = (
     ('2026-10-07', 'fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb', 719, 372),
     ('2026-10-26', '7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a', 721, 373),
     ('2026-10-29', '4eaee87548250b2682affda7d05d947c05554bae', 721, 373),
+    ('2026-11-23', 'f5702854040e97fa7675c21ba37a9608f5f92dd3', 722, 374),
+    ('2026-11-24', '3344da59991ed94f9ba711217b29c1d760badfa6', 730, 375),
 )
 FIELDS = ('id title authors publication_date source doi_or_arxiv original_url local_file_path '
           'version publication_review_status ai_involvement formal_verification_status reading_status '
@@ -39,7 +41,7 @@ WITHDRAWN = {
     'the rational hodge conjecture for products of k3 surfaces',
 }
 TOP = ['CONTENTS.md', 'README.md', 'overview.pdf', 'overview.tex', 'history.md', 'lean/formalization.yaml']
-FAMILY = re.compile(r'^\*\*(\d{3})\. (.*?)\*\*')
+FAMILY = re.compile(r'^(?:<a\b[^>]*>\s*</a>\s*)?\*\*(\d{3})\. (.*?)\*\*')
 PAPER = re.compile(r'&emsp;\[(.+)\]\((preprints/.+?\.pdf)\)')
 
 
@@ -152,7 +154,7 @@ def metadata(folder):
         return match[1].strip() if match else ''
     date = value('Date')
     if not date:
-        match = re.search(r'\b(?:September|October) \d{1,2}, 2026\b', readme.split('## Citation')[0])
+        match = re.search(r'\b(?:September|October|November) \d{1,2}, 2026\b', readme.split('## Citation')[0])
         date = match[0] if match else ''
     if date:
         try:
