@@ -209,6 +209,47 @@ def fit(directory):
     }
 
 
+def entropy(*columns):
+    # All columns use small nonnegative integer labels.
+    code = np.zeros(len(columns[0]), dtype=np.int64)
+    for col in columns:
+        code = code * (int(np.max(col)) + 1) + col
+    count = np.bincount(code)
+    p = count[count > 0] / len(code)
+    return float(-p @ np.log(p))
+
+
+def information(previous, current, bits, outcomes, k):
+    length = len(bits) - k + 1
+    a, s, y = previous[:length], current[k - 1 :], outcomes[k - 1 :]
+    window = np.zeros(length, dtype=int)
+    single_loss = 0.0
+    for j in range(k):
+        part = slice(j, j + length)
+        x, old, new = bits[part], previous[part], current[part]
+        window = 2 * window + x
+        single_loss += entropy(old, new, x) - entropy(new, x)
+    erased = entropy(a, s, window) - entropy(s, window)
+    delta = entropy(s) - entropy(a)
+    inherited = entropy(a) + entropy(window) - entropy(a, window)
+    window_info = entropy(s) + entropy(window) - entropy(s, window)
+    external = entropy(a) + entropy(window, y) - entropy(a, window, y)
+    answer_info = entropy(s) + entropy(y) - entropy(s, y)
+    assert abs(window_info - (delta + inherited + erased)) < 1e-10
+    assert erased <= single_loss + 1e-10
+    assert answer_info <= delta + external + erased + 1e-10
+    return {
+        "k": k,
+        "window_information": window_info,
+        "state_entropy_change": delta,
+        "inherited_window_information": inherited,
+        "window_erasure": erased,
+        "sum_single_step_erasure": single_loss,
+        "earlier_state_window_and_answer_information": external,
+        "retrospective_answer_information": answer_info,
+    }
+
+
 def score(directory):
     receipt = json.loads(FROZEN.read_text())
     _, names, classes, within = base_words(directory)
@@ -221,12 +262,18 @@ def score(directory):
         d, y = classes[words[:-1]], classes[words[1:]]
         lexical = -np.log(within[words[1:]])
         losses = {}
+        measured = {}
         for name, model in receipt["models"].items():
             rows = read_head(model["rows"])
             norm = np.abs((rows / Q16) @ class_total - 1).max()
             assert norm < 1e-12
             t = from_header(model["header"]) if model["mode"] == "learned" else ()
             a = context_sequence(d, model["mode"], model.get("order", 0), t)
+            if model["mode"] == "learned":
+                before = np.r_[0, a[:-1]]
+                measured[name] = [
+                    information(before, a, (d < 8).astype(int), y, k) for k in (1, 2, 4)
+                ]
             loss = -np.log(rows[a, y] / Q16) + lexical
             losses[name] = {
                 "word_nll": float(loss.mean()),
@@ -243,9 +290,88 @@ def score(directory):
                 "words": SCORED,
                 "prefix_sha256": digest,
                 "losses": losses,
+                "descriptive_state_information": measured,
             }
         )
     return {"registration": receipt["registration"], "reports": out}
+
+
+def stationary_audit():
+    machines = checked_images = ages = two_state = 0
+    rank_counts = {}
+    for q in range(1, 4):
+        for table in transition_tables(q):
+            # Count labelled directed trees pointing to each root. Verify the
+            # resulting integer masses against the stationarity equations.
+            mass = []
+            for root in range(q):
+                rest = [j for j in range(q) if j != root]
+                total = 0
+                for choices in product((0, 1), repeat=len(rest)):
+                    successors = {
+                        j: table[j][a] for j, a in zip(rest, choices, strict=True)
+                    }
+                    reaches = True
+                    for j in rest:
+                        for _ in range(q):
+                            if j == root:
+                                break
+                            j = successors[j]
+                        reaches &= j == root
+                    total += reaches
+                mass.append(total)
+            if min(mass) == 0:
+                continue
+            machines += 1
+            assert all(
+                sum(mass[j] * table[j].count(v) for j in range(q)) == 2 * mass[v]
+                for v in range(q)
+            )
+            initial = tuple(range(q))
+            maps = [initial]
+            seen = {initial}
+            for f in maps:
+                for a in (0, 1):
+                    g = tuple(table[j][a] for j in f)
+                    if g not in seen:
+                        maps.append(g)
+                        seen.add(g)
+            rank = min(len(set(f)) for f in maps)
+            rank_counts[rank] = rank_counts.get(rank, 0) + 1
+            entropies = {}
+            for f in maps:
+                fibers = [
+                    sum(v for j, v in enumerate(mass) if f[j] == s) for s in set(f)
+                ]
+                if len(fibers) == rank:
+                    assert all(x * rank == sum(mass) for x in fibers)
+                    checked_images += 1
+                probs = np.array(fibers) / sum(mass)
+                entropies[f] = float(-probs @ np.log(probs))
+                assert entropies[f] >= log(rank) - 1e-12
+            full = entropies[initial]
+            prev, increment = 0.0, float("inf")
+            current = [initial]
+            for k in range(1, 7):
+                current = [
+                    tuple(table[j][a] for j in f) for f in current for a in (0, 1)
+                ]
+                gain = full - sum(entropies[f] for f in current) / len(current)
+                diff = gain - prev
+                assert -1e-12 <= diff <= increment + 1e-12
+                prev, increment = gain, diff
+                ages += 1
+                if q == 2:
+                    keep = sum(table[0][a] != table[1][a] for a in (0, 1)) / 2
+                    assert abs(gain - full * (1 - keep**k)) < 1e-12
+                    two_state += 1
+    return {
+        "irreducible_machines": machines,
+        "minimum_rank_histogram": rank_counts,
+        "exact_minimum_image_fiber_mass_checks": checked_images,
+        "stationary_age_increments": ages,
+        "binary_window_formula_checks": two_state,
+    }
 
 
 def audit():
@@ -260,9 +386,33 @@ def audit():
             ref = fixed_counts(a[sl], y[sl], len(t))
             assert np.array_equal(z[i, : len(t)], ref)
         assert from_header(transition_header(t)) == t
+    # Enumerate all fair streams; time is fixed for each entropy calculation.
+    streams = np.array(list(product(range(2), repeat=8)))
+    cumulative = 0
+    for cells in product(range(2), repeat=4):
+        t = np.array(cells).reshape(2, 2)
+        trajectory = [np.zeros(len(streams), dtype=int)]
+        erasures = []
+        for bit in streams.T:
+            prev = trajectory[-1]
+            nxt = t[prev, bit]
+            trajectory.append(nxt)
+            erasures.append(entropy(prev, nxt, bit) - entropy(nxt, bit))
+        for k in (1, 2, 3):
+            total = 0
+            for end in range(k, 9):
+                w = streams[:, end - k : end] @ (1 << np.arange(k))
+                s = trajectory[end]
+                total += entropy(w) + entropy(s) - entropy(w, s)
+            assert total <= k * (log(2) + sum(erasures)) + 1e-10
+            if all(len(set(t[:, bit])) == 2 for bit in (0, 1)):
+                assert abs(sum(erasures)) < 1e-10 and total <= k * log(2) + 1e-10
+            cumulative += 1
     return {
         "directly_recomputed_tapes": len(catalog),
         "chronological_partition_counts": 2 * len(catalog),
+        "cumulative_information_checks_on_all_256_paths": cumulative,
+        "stationary": stationary_audit(),
     }
 
 

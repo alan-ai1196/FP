@@ -1490,3 +1490,33 @@ $env:OPENBLAS_NUM_THREADS = '2'
 python research/frontier/token_action.py --output research/frontier/token_action_result.json
 python research/frontier/token_action.py --check
 ~~~
+
+## Which update did ordinary text select?
+
+**EMPIRICALLY OBSERVED.** The learner searched every one-to-four-state transition table on two input letters and fitted its 17-way readouts on 65,536 ordinary word targets. The current word supplied a one-bit input, membership among the eight most frequent tokens in a separate lexical prefix. Its readout distributed mass across all 50,257 words using the same within-class probabilities for all models. After validation on 16,384 subsequent words, model selection and every probability packet were frozen before scoring the next unused 65,536-word block from each file. [Prospective comparison](https://github.com/alan-ai1196/FP/blob/27b9ef9/research/frontier/NEXT.md) · [Frozen heads](https://github.com/alan-ai1196/FP/blob/b98f36d/research/frontier/word_token_action_fits.json) · [All word losses and eight-block breakdowns](word_token_action_result.json)
+
+| Fitted rule | States | Packet bytes | Later training-file gain | Separate-file gain |
+|---|---:|---:|---:|---:|
+| Unrestricted, validation loss | 4 | 131 | .045767 | .040642 |
+| Literal last two binary inputs | 4 | 128 | .045767 | .040642 |
+| Unrestricted, validation plus storage | 2 | 65 | .040381 | .034811 |
+| Literal last binary input | 2 | 64 | .040381 | .034811 |
+| Best restricted toggles | 2 | 65 | −.000081 | −.000051 |
+| Storage-priced toggles | 1 | 33 | .000000 | .000000 |
+| Literal last three binary inputs | 8 | 256 | .046466 | .041696 |
+| Direct 17-class bigram | 17 | 544 | .109041 | .101231 |
+| Direct 17-class trigram | 289 | 9,248 | .122334 | .117631 |
+
+Entries are nats per original next word against a fitted constant with full-vocabulary losses of 7.650928 and 7.804819 nats. The learned four-state transitions implement $s'=(2s+b)\bmod4$: they reproduce the ordinary two-bit shift register for every history. Every trained Q16 head byte also matches the literal last-two control. With the priced criterion, the selected two-state update overwrites the old bit with the newest input and its rows exactly match the literal last-one control. Both fitted unrestricted programs improved on the constant in all 16 chronological blocks. A third literal bit improved the average on both files; every one of the 16 blocks favored the higher-resolution class trigram over the learned four-state program. The broader learner discovered an order-sensitive conventional computation. It obtained no predictive gain over explicitly implementing the same suffix. It used three extra program bytes for the four-state transition table. The input coarsening, lexical backbone, readout precision and validation-based program selection are part of this result.
+
+Training and validation took 448,675,840 machine transitions across 5,477 candidates; five reachable canonical tables satisfied both commutation and square cancellation. The frozen runtime executes one table update per raw token and can retain the four-state index in two bits. Its packet stores positive Q16 masses for 16 of 17 classes per state; normalization fixes the final mass. The fixed suffix and class n-gram controls use their known transition law and pay for their learned readouts. The raw lexical weights and class map are shared. Full-vocabulary normalization was checked on every fitted state. The two report passes reproduced all 160 block-level scores.
+
+**Descriptive entropy check added after scoring.** On the two scored blocks the four-state shift register lost .52059 and .51091 nats of information about its previous state per token conditional on its new state and incoming binary input. The fitted two-state toggle lost zero on both. These are plug-in entropies of uniformly selected observed positions and do not measure physical heat. The window identity held at lengths one, two and four for every selected learner; on natural text some window information was inherited from earlier states. Over fair independent inputs, 48 separate cumulative inequalities were checked by enumerating all 256 eight-bit paths for every two-state transition table at three window lengths. Direct serial computations also matched the batched training and validation counts for every one-to-three-state table in 458 comparisons. Adding the entropy checks preserved every originally scored probability and loss. [Erasure identity, sharp examples and correlated-input obstruction](FOUNDATION.md#what-a-predictive-state-must-forget-to-keep-learning-from-recent-inputs) · [Reproduction code](word_token_action.py)
+
+~~~powershell
+python research/frontier/word_token_action.py check
+python research/frontier/word_token_action.py fit --output research/frontier/word_token_action_fits.json
+python research/frontier/word_token_action.py score --output research/frontier/word_token_action_result.json
+~~~
+
+The stationary extension was checked for all 158 irreducible one-to-three-state canonical tables under iid fair letters. Exact integer stationary masses and 505 minimum-image maps had the predicted equal fiber masses. Six window lengths per machine supplied 948 nonincreasing age-increment checks; the two-state geometric window formula passed all 54 applicable cases. These finite checks accompany the analytic stationary proof and Yano's related minimum-rank uniformity theorem. [Derivation and primary source](FOUNDATION.md#what-a-predictive-state-must-forget-to-keep-learning-from-recent-inputs)
