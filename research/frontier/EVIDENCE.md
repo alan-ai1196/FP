@@ -1405,3 +1405,27 @@ python research/frontier/outcome_sketch.py --r4
 ~~~
 
 The comparator's complete 64-name predictive marginals were also checked for all 32 possible observed strings on a five-position tape fragment, independently enumerating both generating classes, observed lookup assignments and possible error locations. For the preceding real-word work, the primary LLP reading identifies exactly where the published event uses the same realized bag, and how reversing feature and class roles yields a population mixture identity under the stated conditional independence. Its iid binary guarantees do not establish the finite-tape word results here. [Full source and proof audit](../../literature/notes/BUSA-FEKETE-2025-NEARLY-OPTIMAL-LLP.md)
+
+The 17–86 bit column above reports forward bits read at the selected threshold. Early stopping needs an on-demand stream or at most three one-bit receiver replies at intermediate checkpoints. A fixed, strictly one-way sender emits 86 bits on all these tapes unless both parties agree on a smaller cap before acquisition. The measured raw processing and pseudorandom generation already used the full cap.
+
+## Recovering a lookup without transmitting its raw error positions
+
+**EMPIRICALLY OBSERVED.** Two observers held separate tapes. The receiver used only its own input names and the public buckets to check whether the complete 32-name lookup would be recoverable for *every* error pattern of the promised size. Only then did it decode the sender's parity message. All 512 fixed one-way messages were generated, sent as packed bytes, scored and reproduced from the registered seeds. Every certified decoding recovered all 32 clean bits. An uncertified design released a fair forecast. [Frozen settings](https://github.com/alan-ai1196/FP/blob/5ec91ee/research/frontier/NEXT.md) · [Per-run results](bucket_rule_result.json)
+
+| Raw rows | Allowed raw errors | Maps certified at 32 / 64 / 128 / 256 bits, each out of 32 | 256-bit mean gain | Same-bit sampled Bayes gain | Distinct sampled names at 256 bits |
+|---:|---:|---|---:|---:|---:|
+| 1,024 | 1 | 0 / 1 / 10 / 24 | .51985 | .46136 | 21.34 |
+| 1,024 | 2 | 0 / 1 / 10 / 16 | .34657 | .56392 | 26.06 |
+| 65,536 | 1 | 0 / 2 / 14 / 19 | .41155 | .17734 | 8.19 |
+| 65,536 | 2 | 0 / 0 / 3 / 17 | .36823 | .18479 | 8.53 |
+
+Gain is in nats per uniformly chosen future clean name, relative to a fair forecast under the common Q16 head. All successful installations attained .69313. The aligned sample comparator had the exact Bayesian predictive probabilities under the actual uniform random lookup and known count of uniformly placed raw flips. Its comparable clean-label gains at 256 bits were .46231, .56452, .17734 and .18479 in the same row order. On the short two-error tape, the sample clearly beat the all-or-abstain certificate. The long tapes concentrated most new rows on eight common names, so samples usually missed nearly all 24 rare names. A source promising only average accuracy could keep additional uncertain forecasts from failed designs; this experiment required uniform certification before releasing a rule.
+
+Each party processed all $N$ entries for the bucket message. At 256 buckets the ideal independent hash addresses use $8N$ public random bits. The implementation materialized the indices with two bytes per row; the sender buffers 256 parity entries in bytes before packing them into a 32-byte output. The receiver used a byte per cell in a 32 by 256 construction array, plus binary elimination and a syndrome dictionary. Fully checking two errors at this width requires 32,897 syndrome entries including the zero vector. The two-error, 65,536-row runs tested 20,837 on average across passing and early-failing maps. The sampled comparator accesses 256 labels at predefined positions when the data permit direct addressing. The computation released by the bucket receiver is a four-byte table in an agreed name order and a two-way Q16 tilt, with no list of corrupt positions. Large dictionaries and full scans make the message price a partial measure of the physical cost. [Proof, sharp collision lower bound and feedback option](FOUNDATION.md#recovering-a-clean-lookup-without-locating-the-raw-errors)
+
+**NUMERICALLY VERIFIED.** An independent exhaustive decoder checked all 868 rule/error instances on ten certified small designs and the exact distance criterion on another 26 rejected designs. Enumerating clean tables and uniform raw errors checked 56 sampled predictive posteriors. Exact integer hypercube-walk counts checked 528 two-step ball mass comparisons, together with the coordinate-weight monotonicity used in the proof. [Implementation and exact checks](bucket_rule.py)
+
+~~~powershell
+python research/frontier/bucket_rule.py --check
+python research/frontier/bucket_rule.py --output research/frontier/bucket_rule_result.json
+~~~
