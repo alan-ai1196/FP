@@ -10,6 +10,7 @@ import struct
 import zlib
 from contextlib import contextmanager
 from functools import partial
+from itertools import pairwise
 from math import log
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -529,20 +530,87 @@ def reference(lib):
     return {"brute_sequential_coordinates": checked, "sweeps": 54}
 
 
+def audit_reports(directory, frozen, result_path):
+    """Replay each deployed state in scalar Python independently of the C and vector scorers."""
+    manifest = json.loads(frozen.read_text())
+    expected = json.loads(result_path.read_text())
+    clip, targets, _, classes, within, alpha = fit_sequence(directory)
+    programs = {}
+    for key, item in manifest["programs"].items():
+        encoded = item["zlib_b85"]
+        b = (
+            zlib.decompress(base64.b85decode(encoded))
+            if encoded is not None
+            else direct(6, clip[:N], targets[:N], classes, alpha / TAU)
+        )
+        assert sha(b) == key
+        programs[key] = decode(b)
+    mix = manifest["mixture"]
+    weights = np.exp(
+        np.array(mix["relative_log_weights"]) - max(mix["relative_log_weights"])
+    )
+    checked = 0
+    for (role, start, digest), source in zip(RANGES, expected["sources"], strict=True):
+        assert (role, start, digest) == (
+            source["role"],
+            source["start"],
+            source["prefix_sha256"],
+        )
+        words = tokens(role, start + R, digest, directory)[start - 1 :]
+        probabilities = {}
+        for key, (mode, a, rows) in programs.items():
+            state = K - 1 if mode == 5 else 0
+            mass = np.empty(R)
+            for t, (word, target) in enumerate(pairwise(words)):
+                if mode <= 2:
+                    op = int(a[word])
+                    if mode == 2:
+                        state = 2 * (state % 2) + op
+                    elif op <= 1:
+                        state = op
+                    elif op == 3:
+                        state = 1 - state
+                elif mode == 4:
+                    state = int(classes[word])
+                elif mode == 5:
+                    state = K * (state % K) + int(classes[word])
+                elif mode == 6:
+                    state = int(a[word])
+                mass[t] = rows[state, classes[target]] * within[target] / Q16
+            probabilities[key] = mass
+        models = {name: probabilities[h] for name, h in manifest["selected"].items()}
+        models["mixture"] = sum(
+            w * probabilities[h] for h, w in zip(mix["members"], weights, strict=True)
+        ) / sum(weights)
+        for name, mass in models.items():
+            blocks = -np.log(mass).reshape(8, -1).mean(axis=1)
+            np.testing.assert_allclose(
+                blocks, source["losses"][name]["blocks"], rtol=0, atol=3e-13
+            )
+            checked += len(blocks)
+    return {"independent_scalar_block_scores": checked}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("check", "fit", "score"))
+    parser.add_argument("command", choices=("check", "fit", "score", "audit"))
     parser.add_argument("--directory", type=Path)
     parser.add_argument("--frozen", type=Path, default=FROZEN)
+    parser.add_argument(
+        "--result", type=Path, default=HERE / "raw_word_action_result.json"
+    )
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
-    with native() as lib:
-        if args.command == "check":
-            result = reference(lib)
-        elif args.command == "fit":
-            result = fit(lib, args.directory)
-        else:
-            result = score(lib, args.directory, args.frozen)
+    if args.command == "audit":
+        result = audit_reports(args.directory, args.frozen, args.result)
+    else:
+        with native() as lib:
+            if args.command == "check":
+                result = reference(lib)
+            elif args.command == "fit":
+                result = fit(lib, args.directory)
+            else:
+                result = score(lib, args.directory, args.frozen)
     s = json.dumps(result, indent=2, allow_nan=False) + "\n"
     if args.output:
         args.output.write_bytes(s.encode("utf-8"))

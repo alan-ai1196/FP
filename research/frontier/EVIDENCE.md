@@ -1520,3 +1520,35 @@ python research/frontier/word_token_action.py score --output research/frontier/w
 ~~~
 
 The stationary extension was checked for all 158 irreducible one-to-three-state canonical tables under iid fair letters. Exact integer stationary masses and 505 minimum-image maps had the predicted equal fiber masses. Six window lengths per machine supplied 948 nonincreasing age-increment checks; the two-state geometric window formula passed all 54 applicable cases. These finite checks accompany the analytic stationary proof and Yano's related minimum-rank uniformity theorem. [Derivation and primary source](FOUNDATION.md#what-a-predictive-state-must-forget-to-keep-learning-from-recent-inputs)
+
+## Learning which raw words preserve or erase a bit
+
+**Empirically observed.** Each of 22,562 raw names observed in 262,144 training inputs could freely select one of four actions. The general one-bit fit learned 154 hold words and 59 flip words. The other 50,044 vocabulary entries overwrite the bit. On each of two new 65,536-word blocks, 17 distinct pairs of consecutive raw IDs ended in both states on different occurrences. Thus this fitted state actually sometimes depends on history preceding the last two raw words. Replacing feedback words by fixed writes, followed by fitting new Q16 readouts, lost .000908 and .003334 nats per word on average. Six of eight and five of eight sub-blocks favored keeping feedback. [Preregistered comparison](https://github.com/alan-ai1196/FP/blob/a4c1f9f/research/frontier/NEXT.md) · [Programs frozen before reporting](https://github.com/alan-ai1196/FP/blob/4e12a07/research/frontier/raw_word_action_fits.json)
+
+| Predictor | Deployed packet bytes | Later training-file gain | Separate-file gain |
+|---|---:|---:|---:|
+| Learned word-specific updates, one bit | 3,029 | .089082 | .098239 |
+| Same fit with feedback collapsed and heads refitted | 2,588 | .088174 | .094905 |
+| Learned raw-word partition, last bit | 2,490 | .085210 | .099846 |
+| Learned raw-word partition, last two bits | 2,774 | .098231 | .108245 |
+| Storage-selected general update and last-bit partition, identical | 536 | .079723 | .092341 |
+| Storage-selected learned two-bit suffix | 610 | .091187 | .103893 |
+| Posterior over 15 fitted one-bit programs | 78,728 | .089082 | .098239 |
+| Direct 17-class bigram | 545 | .098982 | .113495 |
+| Direct 17-class trigram | 9,249 | .114981 | .134932 |
+| Direct raw-word bigram | 767,143 | .218468 | .255354 |
+
+Gains are nats per original word against constant full-vocabulary losses of 7.701145 and 7.643636. All models shared the vocabulary and within-class lexical law. The word-specific update beat the unpriced one-bit partition on the later training file and lost on the second file. The separately fitted two-bit suffix won on both averages and in 15 of 16 sub-blocks. The 17-class trigram and raw-word bigram each beat the one-bit update in all 16. Pricing model bytes in validation at $8\ln2/65{,}536$ per byte selected the identical pure overwrite packet in both one-bit families. The validation posterior put more than $1-4\times10^{-16}$ weight on one fitted table. Its reported block scores match to floating-point precision. The prior covers the registered bank of learned tables; exhaustive marginalization over all raw-name actions has a different cost.
+
+Training integrated independent Dirichlet readouts with $64$ pseudocounts, computed exact single-name score changes up to binary64 evaluation, then installed positive Q16 class probabilities. Across 21 initialized and priced fits, 5,347,194 proposed coordinate alternatives plus accepted-update replays visited 72,963,483 influence positions; 77,672 moves were accepted. Four runs still moved on the eighth sweep. The validation-selected general table had a stationary fourth sweep. Its 1,316 nondefault entries encode the 1,103 write-one, 154 hold and 59 flip names. The first reporting file contained 3,725 holds and 1,383 flips. The second contained 3,952 holds and 1,133 flips. The implemented C training kernel allocates 6,955,804 bytes of principal working arrays at the stated dimensions in addition to inputs, Python, outputs and fixed-size buffers. The deployed two-state update needs one logical live bit, a lookup and one action. The measured replay expands a table to 50,257 one-byte entries and retains the state path for scoring. A sorted packed table trades expansion for a search. The shared 50,257 lexical weights can be stored as 201,028 raw uint32 bytes plus the top-16 IDs and class totals; their acquisition prefix contains 1,048,576 earlier words.
+
+A separate scalar interpreter replayed all 192 stored block scores within $3\times10^{-13}$ nats. A fresh fit and score regenerated both JSON records. Full replays checked 270 single-name coordinate decisions against the influence-interval implementation, including repeated names and all-hold starts. These observations concern two fixed blocks and a fixed 17-class output head. They do not estimate a population effect. [Code](raw_word_action.py) · [C kernel](raw_word_action.c) · [Measured block losses](raw_word_action_result.json)
+
+~~~powershell
+python research/frontier/raw_word_action.py check
+python research/frontier/raw_word_action.py fit --output research/frontier/raw_word_action_fits.json
+python research/frontier/raw_word_action.py score --output research/frontier/raw_word_action_result.json
+python research/frontier/raw_word_action.py audit
+~~~
+
+**Exact graph and search audits.** Rational profiled likelihoods selected maximum agreement on all 63 nonempty labeled four-vertex simple graphs using $128m^2$ public calibration labels per state, and on $K_4,K_{3,3}$ and the triangular prism at $64m$ calibration labels per state. Every one of the 4,096 complete tables on the autonomous six-token $K_4$ alphabet was compared including its fitted readouts. All 12 maximizers learned distinct constant actions for the two outcome tokens and a size-four cut on the graph. Every calibration-action pair was checked from both starting states. For known heads, both the sum-product and max-product tape algorithms matched exhaustive arithmetic in 384 comparisons. The asymptotic reduction and the exact short-tape search are proved separately. [Proof](FOUNDATION.md#learning-a-one-bit-update-can-encode-a-maximum-cut-on-one-token-stream) · [Run the exact audits](action_cut.py)
