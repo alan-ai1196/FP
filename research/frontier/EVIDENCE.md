@@ -19,6 +19,29 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## A rolling learned rule on two full-vocabulary text windows
+
+**EMPIRICALLY OBSERVED.** A free eight-entry rule on three binary word classes reduced to the opposite class of the last word. A separately fitted two-state rolling machine chose that same operation with a different word partition and strength. It saved 147.40 and 128.70 nats on the two 65,536-token reporting windows, gaining in all 16 consecutive blocks over the registered pooled lexical base. The independently fitted last-two-class model made exactly the same forecasts as the two-state model. Training at fixed strength sometimes favored a more complex table, but chronological validation selected the simpler operation. The frozen product selected zero strength. [Registration and corpus identities](https://github.com/alan-ai1196/FP/blob/52c2310/research/frontier/NEXT.md) · [Executable](rolling_word_rule.py) · [Model parameters, selection scores and every block](rolling_word_rule_result.json)
+
+| Forecast | Training-file mean NLL | Reporting-file mean NLL | Gain over pooled, training file | Gain over pooled, reporting file |
+|---|---:|---:|---:|---:|
+| Raw smoothed trigram | 7.714061 | 7.522477 | −37,050.60 | −35,330.90 |
+| Pooled lexical base | 7.148714 | 6.983370 | 0 | 0 |
+| Free three-sign table | 7.147542 | 6.982258 | 76.83 | 72.88 |
+| Rolling two-state read, also the last-two fit | 7.146465 | 6.981406 | 147.40 | 128.70 |
+| Eight independently chosen lexical tilts | 7.146685 | 6.981511 | 132.99 | 121.82 |
+| Shifted training histories | 7.148562 | 6.983313 | 9.93 | 3.71 |
+| Prior static average of two lexical rows, supplemental | 7.134447 | 6.969558 | 934.99 | 905.21 |
+| Stronger smoothing of one lexical row, supplemental | 6.992770 | 6.830077 | 10,219.92 | 10,046.24 |
+
+The eight full-vocabulary conditional lexical rows selected the pooled fallback. On validation even the strongest registered row smoothing, 8,192 counts toward the fitted pooled row, cost 1,270.64 nats. The two static controls were added after the primary results. The first reconstituted the exact previously fitted two lexical rows, verified their stored digest, then averaged them at every history. Adding the frozen rolling bit to that base still gained 139.45 and 122.89 nats. The second control regularized the single lexical row toward the background unigram at each mixture EM update. Chronological validation chose 65,536 pseudocounts, the top of the supplemental grid. On this base the same frozen bit **cost 1,128.26 and 1,086.12 nats**, losing in every block on both sources. Reusing a bit learned on a different base gives no evidence that the best bit fitted on the stronger base must lose. That requires another fit and an independent reporting window.
+
+The vocabulary had 50,257 output IDs. The background used 524,288 tokens, the rule 262,144 and validation 65,536. The two reporting starts were training-file index 17,000,000 and reporting-file index 1,179,648. Every forecast was made with rolling causal histories. Its class groups were the eleven most frequent raw IDs in the background and a shared remainder. For each balanced partition and strength the fitting program summed both possible normalized log gains within all eight histories, giving the exact best Boolean table available at that strength. It evaluated 726,663,168 per-token nonzero log tilts for 462 partitions and three strengths. Scores for the four nested or fixed table classes reuse these sums. Encoding the partition needs nine bits with the eleven IDs known, the literal free table eight bits, and the four strength choices two bits. Writing the IDs themselves at 16 bits each costs 176 bits before the shared background. The compiled last-word rule needs a single transient sign and can read two precomputed lexical normalizers. The larger conventional head has 402,056 lexical cells. Direct construction of the complete vocabulary distribution at six selected report positions agreed with the scored probabilities and normalization to $6.2\times10^{-16}$. Training log totals also agreed with a separate direct token pass for every selected candidate. These comparisons establish a small history-dependent gain on particular backgrounds. They leave open its value after stronger baseline fitting.
+
+~~~sh
+python -B research/frontier/rolling_word_rule.py
+~~~
+
 ## Jointly learning a word dictionary and its prediction rule
 
 **EMPIRICALLY OBSERVED.** The fit received three history names and one outcome name, an assumed two-class dictionary on 12 names and known contrast $1/4$. All 256 rules on three class signs were available to the free-table fit. In the random-table condition a fresh unknown rule was drawn for each independent training and test population. Scores are exact fresh-word expectations averaged over 128 fits per cell, measured in nats above uniform. The known-law gain is .031584. [Frozen comparison](https://github.com/alan-ai1196/FP/blob/f12abe0/research/frontier/NEXT.md) · [Implementation](learned_word_rule.py) · [All reporting cells, counts and standard errors](learned_word_rule_result.json)

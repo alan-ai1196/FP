@@ -52,7 +52,7 @@ def clock_width(table):
 
 def rolling_width(table):
     # Minimize the full shift register as a deterministic Moore machine.
-    groups = (table < 0).astype(np.int64)
+    _, groups = np.unique(table, return_inverse=True)
     successors = (np.arange(8)[:, None] * 2 + np.arange(2)) % 8
     while True:
         keys = np.column_stack((groups, groups[successors]))
