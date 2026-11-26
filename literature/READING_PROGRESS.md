@@ -661,3 +661,12 @@ Merged index 4473 records,138 fully read editions. OriginalOpenAI32/1700/17 unch
 The constructive core is a finite table of frozen-neighbor local limits, a compiler to positive up-set equations and a reverse Boolean-register/latch compiler. A direct independent corollary turns full contraction plus finite vocabulary separation into a graph-size-independent exact game stopping budget and bounded modal depth. The note distinguishes symbolic game termination from asymptotic neural convergence, exact logic scope, complete integer-preservation conditions and actual extraction costs. The reported 9,960 vertex checks establish sampled compiler round-trip agreement, not data-driven learning. No code, experiment or formal replay.
 
 Merged index 4473, fully read 139, original OpenAI32/1700/17 unchanged. Preserve Astra5be147a and concurrent Pro-E23f5695/Pro-Da29638e. Request2e7a6c9 was completed by Pro-A at e0296c3. Preserve Pro-C6db3eab. Wittig2602.13106v2 remains screened and prepared next, subject to fresh request and owner checks. No FP core modification.
+
+
+## Pro-D: learned stationary bias and readout selection completed, November27
+
+[Wei-Damian-Lee ICLR2026 final](notes/WEI-2026-LANGEVIN-AVERAGING.md) is fully read through all34pages,main1–5,AppendicesA–H,allproofs/formulas,1algorithm,2two-panel figures,2scientificfootnotes and33references. The reading crossed Shanghai midnight. OriginalPDFpp4,8,9,19 were visually inspected. The42pagearXivv1 has only metadata and selected statement comparison.
+
+The source mechanism acquires a direction by averaging a weak bias while individual iterates remain noisy. Independent exact harmonic response and Brownian variance identities explain which observable carries the signal and its averaging cost. A four-candidate held-out selector removes parity knowledge from readout selection with an explicit predictive-risk bound. It does not tune the unknown exponent,temperature orhorizon. The source even-horizon discrepancy,Gaussian-label tail step and conjectural minibatch bridge remain explicit. Polynomial experiments are not a proved discretization. No empirical replay orformal certification.
+
+Merged index4475,fullyread140,originalOpenAI32/1700/17 unchanged. Request2e7a6c9 is complete byPro-A ate0296c3. ExistingNovember27 discoveries and currentowners checked. No global rescan orFPcorechange.
