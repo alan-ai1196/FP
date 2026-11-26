@@ -1,0 +1,387 @@
+{
+  "registration": "beccdb0",
+  "grids": {
+    "1": {
+      "levels": 2,
+      "optimal_real_grid_drift_nats": 0.2876820724517808,
+      "rational_exact_gamma": "25/16",
+      "rational_limited_gamma": "115/64"
+    },
+    "2": {
+      "levels": 4,
+      "optimal_real_grid_drift_nats": 0.10036357984323707,
+      "rational_exact_gamma": "169/144",
+      "rational_limited_gamma": "923/768"
+    },
+    "3": {
+      "levels": 8,
+      "optimal_real_grid_drift_nats": 0.030617662931971608,
+      "rational_exact_gamma": "1681/1600",
+      "rational_limited_gamma": "107953/102400"
+    },
+    "4": {
+      "levels": 16,
+      "optimal_real_grid_drift_nats": 0.008549896578795577,
+      "rational_exact_gamma": "21025/20736",
+      "rational_limited_gamma": "1794955/1769472"
+    }
+  },
+  "tapes": {
+    "alternating": [
+      {
+        "bits": 1,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 77.64503448337554,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 134.3115707534334,
+        "expected_excess_nats": 21.595145799604232,
+        "allowance_nats": 114.2494982728754,
+        "expected_nontrivial_roundings": 6.971412002834108
+      },
+      {
+        "bits": 1,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 78.14818001988418,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 134.3115707534334,
+        "expected_excess_nats": 18.96655618809185,
+        "allowance_nats": 114.2494982728754,
+        "expected_nontrivial_roundings": 8.02492925267751
+      },
+      {
+        "bits": 1,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 77.80321726497297,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 134.3115707534334,
+        "expected_excess_nats": 21.753328581201664,
+        "allowance_nats": 150.02855552091603,
+        "expected_nontrivial_roundings": 3.9999999999999987
+      },
+      {
+        "bits": 1,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 78.34364294466508,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 134.3115707534334,
+        "expected_excess_nats": 19.16201911287275,
+        "allowance_nats": 150.02855552091603,
+        "expected_nontrivial_roundings": 3.9999999999999987
+      },
+      {
+        "bits": 2,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 62.700680927922754,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 99.64243454463124,
+        "expected_excess_nats": 6.650792244151447,
+        "allowance_nats": 40.981866328850664,
+        "expected_nontrivial_roundings": 12.545066622089912
+      },
+      {
+        "bits": 2,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 63.889946746564924,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 99.76041352424828,
+        "expected_excess_nats": 4.7083229147725945,
+        "allowance_nats": 40.981866328850664,
+        "expected_nontrivial_roundings": 14.183922022616743
+      },
+      {
+        "bits": 2,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 62.70010337726947,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 99.64243454463124,
+        "expected_excess_nats": 6.650214693498164,
+        "allowance_nats": 47.06291234692609,
+        "expected_nontrivial_roundings": 12.584082897107791
+      },
+      {
+        "bits": 2,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 63.8886378286041,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 99.76041352424828,
+        "expected_excess_nats": 4.707013996811767,
+        "allowance_nats": 47.06291234692609,
+        "expected_nontrivial_roundings": 14.199459509484697
+      },
+      {
+        "bits": 3,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 57.87160282592413,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 78.95959784717377,
+        "expected_excess_nats": 1.8217141421528211,
+        "allowance_nats": 12.642617646270189,
+        "expected_nontrivial_roundings": 15.329201549478865
+      },
+      {
+        "bits": 3,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 60.120165732359446,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 79.37059609102921,
+        "expected_excess_nats": 0.9385419005671167,
+        "allowance_nats": 12.642617646270189,
+        "expected_nontrivial_roundings": 19.769677996566358
+      },
+      {
+        "bits": 3,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 57.873179740595376,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 78.95959784717377,
+        "expected_excess_nats": 1.8232910568240683,
+        "allowance_nats": 13.519164060946617,
+        "expected_nontrivial_roundings": 15.316444186874635
+      },
+      {
+        "bits": 3,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 60.12456741960851,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 79.37059609102921,
+        "expected_excess_nats": 0.9429435878161812,
+        "allowance_nats": 13.519164060946617,
+        "expected_nontrivial_roundings": 18.777933284710006
+      },
+      {
+        "bits": 4,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 56.50172286060222,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 67.97129932658584,
+        "expected_excess_nats": 0.4518341768309142,
+        "allowance_nats": 3.5432667364217734,
+        "expected_nontrivial_roundings": 17.274838722673035
+      },
+      {
+        "bits": 4,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 59.17579325374553,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 68.77916174198705,
+        "expected_excess_nats": -0.005830578046797541,
+        "allowance_nats": 3.5432667364217734,
+        "expected_nontrivial_roundings": 22.45601810611183
+      },
+      {
+        "bits": 4,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 56.501652958935175,
+        "exact_mixture_nats": 56.04988868377131,
+        "deterministic_gate_nats": 67.97129932658584,
+        "expected_excess_nats": 0.4517642751638675,
+        "allowance_nats": 3.6604812771662547,
+        "expected_nontrivial_roundings": 17.265531331864842
+      },
+      {
+        "bits": 4,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 59.175287093516445,
+        "exact_mixture_nats": 59.18162383179233,
+        "deterministic_gate_nats": 68.77916174198705,
+        "expected_excess_nats": -0.006336738275884102,
+        "allowance_nats": 3.6604812771662547,
+        "expected_nontrivial_roundings": 22.23943376951833
+      }
+    ],
+    "fair_iid": [
+      {
+        "bits": 1,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 183.76251435524358,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 182.65934801899175,
+        "expected_excess_nats": -0.3980397932465678,
+        "allowance_nats": 114.2494982728754,
+        "expected_nontrivial_roundings": 124.09551561435661
+      },
+      {
+        "bits": 1,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 183.66159808579846,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 182.65934801899175,
+        "expected_excess_nats": -0.11335195830781686,
+        "allowance_nats": 114.2494982728754,
+        "expected_nontrivial_roundings": 122.89624141310144
+      },
+      {
+        "bits": 1,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.19203737579159,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 182.65934801899175,
+        "expected_excess_nats": -0.968516772698564,
+        "allowance_nats": 150.02855552091603,
+        "expected_nontrivial_roundings": 3.8019550257777155
+      },
+      {
+        "bits": 1,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.05982176268748,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 182.65934801899175,
+        "expected_excess_nats": -0.7151282814187994,
+        "allowance_nats": 150.02855552091603,
+        "expected_nontrivial_roundings": 1.822021484375
+      },
+      {
+        "bits": 2,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 183.7619592870195,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 182.93769160707745,
+        "expected_excess_nats": -0.3985948614706558,
+        "allowance_nats": 40.981866328850664,
+        "expected_nontrivial_roundings": 218.13366788085773
+      },
+      {
+        "bits": 2,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 183.58348416596056,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 182.87554107701337,
+        "expected_excess_nats": -0.19146587814572058,
+        "allowance_nats": 40.981866328850664,
+        "expected_nontrivial_roundings": 209.35814773416453
+      },
+      {
+        "bits": 2,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.79572385482788,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 182.93769160707745,
+        "expected_excess_nats": -0.3648302936622656,
+        "allowance_nats": 47.06291234692609,
+        "expected_nontrivial_roundings": 178.54417146539245
+      },
+      {
+        "bits": 2,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.61650536262528,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 182.87554107701337,
+        "expected_excess_nats": -0.15844468148100077,
+        "allowance_nats": 47.06291234692609,
+        "expected_nontrivial_roundings": 172.5431639543988
+      },
+      {
+        "bits": 3,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 183.8822643640727,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 183.48292482138282,
+        "expected_excess_nats": -0.27828978441743857,
+        "allowance_nats": 12.642617646270189,
+        "expected_nontrivial_roundings": 241.13889029781214
+      },
+      {
+        "bits": 3,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 183.60713756192217,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 183.32101371376743,
+        "expected_excess_nats": -0.16781248218410383,
+        "allowance_nats": 12.642617646270189,
+        "expected_nontrivial_roundings": 231.73776424381654
+      },
+      {
+        "bits": 3,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.87655705220126,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 183.48292482138282,
+        "expected_excess_nats": -0.2839970962888856,
+        "allowance_nats": 13.519164060946617,
+        "expected_nontrivial_roundings": 239.7708034882601
+      },
+      {
+        "bits": 3,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.60310662076606,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 183.32101371376743,
+        "expected_excess_nats": -0.17184342334022062,
+        "allowance_nats": 13.519164060946617,
+        "expected_nontrivial_roundings": 229.39745206029204
+      },
+      {
+        "bits": 4,
+        "beta": "1/4",
+        "coin": "exact",
+        "expected_issued_nats": 184.12677243029225,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 183.71624103728792,
+        "expected_excess_nats": -0.033781718197900545,
+        "allowance_nats": 3.5432667364217734,
+        "expected_nontrivial_roundings": 245.37807256833952
+      },
+      {
+        "bits": 4,
+        "beta": "1/128",
+        "coin": "exact",
+        "expected_issued_nats": 183.8445909426954,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 183.54698370974708,
+        "expected_excess_nats": 0.06964089858911393,
+        "allowance_nats": 3.5432667364217734,
+        "expected_nontrivial_roundings": 242.18912807326262
+      },
+      {
+        "bits": 4,
+        "beta": "1/4",
+        "coin": "dyadic",
+        "expected_issued_nats": 184.12739910435312,
+        "exact_mixture_nats": 184.16055414849015,
+        "deterministic_gate_nats": 183.71624103728792,
+        "expected_excess_nats": -0.03315504413703252,
+        "allowance_nats": 3.6604812771662547,
+        "expected_nontrivial_roundings": 245.0577213280366
+      },
+      {
+        "bits": 4,
+        "beta": "1/128",
+        "coin": "dyadic",
+        "expected_issued_nats": 183.84520713221778,
+        "exact_mixture_nats": 183.77495004410628,
+        "deterministic_gate_nats": 183.54698370974708,
+        "expected_excess_nats": 0.07025708811150366,
+        "allowance_nats": 3.6604812771662547,
+        "expected_nontrivial_roundings": 241.84377221357823
+      }
+    ]
+  }
+}

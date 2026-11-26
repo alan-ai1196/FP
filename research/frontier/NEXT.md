@@ -1,14 +1,18 @@
 # Next mathematical attack
 
-## Can private randomness reduce the physical price of remembering uncertainty?
+## Which uncertainty about a latent computation can future ordinary observations actually use?
 
-For two causal predictors, a deterministic $s$-bit gate can track their ideal mixture with worst-tape overhead $N\ln(1+2^{-s})$. A new token may make either component valuable. Investigate whether refitting a distribution over nearby finite gate values on each step buys a second-order rate, and exactly which guarantees survive when outcomes can react to the reported prediction. Separate stored bits, arithmetic, random decisions, readout precision and the price of retaining both components. [Deterministic baseline](INTELLIGENCE_OBJECTIVE.md#how-many-bits-must-control-the-mixture-of-two-changing-predictors)
+A physical learner can protect all $m$ component probabilities, but this charges $m-1$ dimensions even when the future forecast sees only a smaller part of the posterior. Determine which distributions of hidden states are equivalent for a stated observation interface and how much precision is needed on the surviving coordinates. [Finite posterior geometry](FOUNDATION.md#the-precision-of-a-randomized-learner-is-a-covering-problem-for-its-live-hypotheses) · [Acquisition interfaces](INTELLIGENCE_OBJECTIVE.md#what-is-a-hidden-distinction-worth-under-a-different-observation-interface)
 
-### Registered finite comparison
+### Registered raw-word comparison
 
-Keep the same binary prefix 010, the two 256-token continuations, cut weights, two-token block expert and retained row as the fully capped comparison. Reset both experts after 16 complete blocks. Compare 1, 2, 3 and 4 gate bits. For a gate with $H=2^s$ levels, try $q_j=j^2/[j^2+(H+1-j)^2]$, $1\le j\le H$. Randomize between the neighboring levels to balance the expected inverse retained and fallback weight ratios. Compare exact conditional coin probabilities with a coin using $2s$ independent bits per nontrivial decision. Propagate the distribution over gate states on each fixed tape, so the expected reported log loss has no Monte Carlo sampling error. Check the worst local ratio by independent enumeration, verify any claimed optimal grid and upper bound, and compare to a deterministic gate and to exact weights. A one-step guarantee must specify the order in which the latent draw, forecast and raw observation occur. Explore the dependence on the number of simultaneously live hypotheses.
+Use a $k$-cycle with unknown initial-phase distribution, a tick of state-independent probability $1/2$, and two colored reads. Conditional red probability at phase $j$ is $(1+\tfrac12\cos(2\pi j/k))/2$. A tick advances one position. In one source any read resets to phase zero. In the other any read preserves the phase. Only ticks and ordinary colored outcomes are visible. For $k=3,4,5,8$ compute the dimension of the span of future word likelihoods with at most $L=0,1,2,3,4$ colored reads and arbitrary intervening ticks. Derive finite spanning schedules and the conditioning update on any surviving coordinates. Compare a rank computed by exact linear closure to an independent calculation and exhibit a minimal ordinary word separating priors that agree on all single-read forecasts.
+
+At $k=4$ compare the uniform priors on phases $\{0,2\}$ and $\{1,3\}$. They have identical first Fourier moments. Measure the information lost by treating them as identical over passive prefixes of length one through eight, for both read interfaces. Keep the raw tick probability in all log losses. Establish whether finite-memory distortion follows the dimension of the full simplex or the dimension of the observable continuation laws. A known cycle and a supplied prior at a cut test representational necessity. Learning an unknown transformation from finite raw data is a separate acquisition problem.
 
 ## Frozen registrations
+
+- [Storing uncertainty with private randomized weights](https://github.com/alan-ai1196/FP/blob/beccdb0/research/frontier/NEXT.md)
 
 - [Forecasting after discarding a state hypothesis](https://github.com/alan-ai1196/FP/blob/45217a9/research/frontier/NEXT.md)
 

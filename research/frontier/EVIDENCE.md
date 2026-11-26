@@ -19,6 +19,30 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Randomizing four bits of predictive uncertainty
+
+**EMPIRICALLY OBSERVED.** The registration fixed the two ordinary continuations, all four index sizes, the rational grid, and both coin interfaces. The retained row and two-token block expert both reset their counts every 32 raw outputs as in the previous capped comparison. On each fixed tape, a forward sum over possible gate indices gives the expected sum of the log losses **actually issued**. The conditional coins are rational. The occupancy recursion and logarithms use binary64. Exhaustively expanding every rounding path for the first eight tokens of all 32 cases reproduced the forward sum within $4\times10^{-13}$ nats. An independent 65-digit occupancy calculation reproduced all eight four-bit expected losses within $1.5\times10^{-13}$ nats. [Frozen registration](https://github.com/alan-ai1196/FP/blob/beccdb0/research/frontier/NEXT.md) · [Full reproduction data](random_gate_result.json)
+
+The entries are 256-token excess nats relative to exact Bayesian weights on the same two capped predictors. Each pair gives $\beta=1/4$ and $\beta=1/128$, respectively. The public prediction uses one weight grid point. A new gate draw is private until the predictor issues its next forecast.
+
+| Gate bits | Randomized alternating, bounded coin | Randomized fair coin, bounded coin | Worst fixed-tape expected allowance, bounded coin | Allowance with exact rational coin |
+|---:|---:|---:|---:|---:|
+| 1 | 21.753 / 19.162 | −0.969 / −0.715 | 150.029 | 114.250 |
+| 2 | 6.650 / 4.707 | −0.365 / −0.158 | 47.063 | 40.982 |
+| 3 | 1.823 / 0.943 | −0.284 / −0.172 | 13.519 | 12.643 |
+| 4 | 0.452 / −0.006 | −0.033 / 0.070 | 3.661 | 3.543 |
+
+With $\beta=1/128$ on alternation, the four-bit deterministic gate scored 68.779 nats, the bounded-coin randomized gate 59.175 in expectation, and exact weights 59.182. At $\beta=1/4$ the corresponding losses were 67.971, 56.502 and 56.050. On the fair-coin tape the four-bit deterministic gate had slightly lower loss than randomized rounding for both priors. An individual tape can favor a perturbation of the Bayesian weights. The random implementation pays for private draws. At four bits it used an expected 17.3 or 22.2 nontrivial decisions across the alternating tape and 245.1 or 241.8 on the fair-coin tape. Each bounded decision uses eight independent fair bits. The actual packed persistent-state upper bound is 53 bits with these experts, plus a source of fresh randomness, probability and arithmetic scratch, and program. The forward integrator is an offline evaluation of that physical policy.
+
+**NUMERICALLY VERIFIED on finite cases.** Exact rational comparisons minimized the local binary game over every single representative and every bracketing pair on 387 target/grid cases. All matched the neighboring-level rule. All 774 local ratio and finite-coin bounds passed. For the dyadic law, checking both one-sided limits at every rounding threshold gives its rigorous supremum because each component's inverse cost is affine inside each cell. At four bits the rational ideal-coin factor is $21025/20736$ and the bounded-coin factor is $1794955/1769472$. Exact recursion allowed an adversary to see the reported gate before choosing each next bit. All 12 horizon/grid/coin comparisons through three observations satisfied the expected-ratio bound.
+
+Three-coordinate grids containing the permutations of $(2/3,1/6,1/6)$ give a separate check of the general minimax identity. If the largest coordinate of the report is $i$ with probability $u_i$, its expected inverse cost at power $t$ is $z_i^t[B-(B-A)u_i]$, $A=(3/2)^t$, $B=6^t$. Feasibility of a target cost reduces to lower bounds on the $u_i$ summing to at most one. The independent covering problem uses the largest coordinate of $p$ for the selected representative. On the ordered simplex its objective is convex, so its maximum is at a vector uniform on its top one, two or three coordinates. The maximum over 231 mesh targets per power and the barycenter matched the resulting worst factors $15/8$, $153/32$ and $1755/128$ at $t=1,2,3$. All 243 two-state transition-kernel/horizon combinations respected the discounted and fixed-horizon coin-error inequalities. [Precision law and proof](FOUNDATION.md#the-precision-of-a-randomized-learner-is-a-covering-problem-for-its-live-hypotheses) · [Executable](random_gate.py)
+
+~~~powershell
+python research/frontier/random_gate.py check
+python research/frontier/random_gate.py sample --output research/frontier/random_gate_result.json
+~~~
+
 ## Rescuing predictions after a state has been dropped
 
 **EMPIRICALLY OBSERVED.** After the ordinary prefix 010, keep only the history with both root self-loops exposed. The two cut priors give discarded masses $35/99$ and $1027/66563$ for $\beta=1/4$ and $1/128$. The fallback starts empty. The following are **total nats over 256 subsequently observed tokens**, scoring before updating on each token. Both predictors receive the same raw observations. The static-prior mixture updates its relative weights after each outcome. [Frozen registration](https://github.com/alan-ai1196/FP/blob/45217a9/research/frontier/NEXT.md) · [All 24 fits, forecast counts and memory](block_rescue_result.json)
