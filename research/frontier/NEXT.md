@@ -1,14 +1,18 @@
 # Next mathematical attack
 
-## How much structure can a learner justify at the precision its observations permit?
+## When do ordinary errors justify creating a new state before the state count is known?
 
-Under a finite positive deterministic source promise, exact word probabilities through length $2n-1$ recover every physical state from the linear rank $n$, even when the state count exceeds $n$. A three-symbol clock has rank three at every integer period $k\ge3$. Its improvement over the best iid predictor is of order $k^{-4}$ per word, while distinguishing specified adjacent periods from a passive tape costs order $k^6$ words at constant confidence. [General reconstruction and precision lower bound](FOUNDATION.md#recovering-a-finite-hidden-machine-when-predictive-dimension-is-smaller-than-state-count) · [Exact and numerical evidence](EVIDENCE.md#recovering-more-hidden-states-than-predictive-coordinates)
+Short exact word laws can identify a complete positive deterministic source when its predictive rank is supplied. Adjacent clock periods show why exact recovery can be unaffordable. Paying to retain a useful phase changes the acquisition rate, and carrying a posterior into deployment can cap cumulative loss at a small cost. The next learner must therefore make and price new state addresses on ordinary data, without knowing the rank, number of states or clock family. [Finite reconstruction](FOUNDATION.md#recovering-a-finite-hidden-machine-when-predictive-dimension-is-smaller-than-state-count) · [Observation value](INTELLIGENCE_OBJECTIVE.md#what-is-a-hidden-distinction-worth-under-a-different-observation-interface)
 
-Price what the observer can do. Compare the same two period hypotheses when a learner can intentionally advance one tick at unit cost and sample a color. First require sampling to erase the phase and return to zero. Then permit sampling without erasure. Derive matching lower bounds against adaptive acquisition and achievable tests without exposing any hidden state, continuous angle or future outcomes. Compare the cost of finding the exact period with the price of merely matching a deployable predictor's expected loss.
+### Registered small comparison with an unbounded address prior
 
-The broader unresolved task is to learn a worthwhile approximation from an ordinary noisy stream without receiving the true observable rank or a clock grammar. An operational comparison should charge raw measurements, parameter and register bits, search and deployment. Use an equally informed direct context predictor and a learner that retains uncertainty about the update. A choice to retain a small state needs a measured predictive or interaction advantage on the declared future workload.
+Use one globally shared random distribution of latent state names. Draw the initial state from it. On the first use of each state/letter pair, choose an existing destination with weight equal to its number of previously assigned incoming edges, including the initial state as one draw, or create a new destination at weight $\beta$. Reuse that assignment on later visits. Each state predicts ordinary binary outcomes with an independent Dirichlet(1,1) row. Average over all reachable assignments, using $\beta=1$ and $1/4$, with no maximum state count. The address numbers used in the computation are first-visit names. Distinguish the established Bayesian automata family from any new regret, split or physical-work statement. [Pfau, Bartlett and Wood](https://proceedings.neurips.cc/paper/2010/hash/dabd8d2ce74e782c65a973ef76fd540b-Abstract.html)
+
+Use three tapes: repetitions of 0011 and 011, and a fair iid binary sequence from NumPy PCG64 seed 261126. Score the first 12 tokens prequentially, followed by four further ordinary outcomes while updating. Compare a fair mixture of literal suffix orders zero through three and a uniform mixture of the 16 possible two-state binary update tables, both with the same row prior. Record loss, posterior visited-state counts, maximum live candidate count, and the effect of retaining only the most probable 32 branches. For short binary words verify normalization and the pathwise log-loss bound against exhaustive assignments. A regular tape helping one family gives no universal ranking.
 
 ## Frozen registrations
+
+- [Pricing passive and active access to a hidden clock phase](https://github.com/alan-ai1196/FP/blob/3f8e6cb/research/frontier/NEXT.md)
 
 - [Passive learning of a raw update from ordinary triples](https://github.com/alan-ai1196/FP/blob/1f9a9cf/research/frontier/NEXT.md)
 

@@ -19,6 +19,27 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Paying for an observation that preserves its subject
+
+The passive clock emits its own ticks and resets. An active destructive read must pay again to reach an informative phase. A nondestructive read permits repeated independent observations there. The true period is hidden in all three cases. The active calculation supplies the learner with the two candidate laws, a reset origin and explicit unit-price controls. It measures acquisition of a decision-relevant distinction once these hypotheses are available. [Work bounds, finite-budget recurrence and downstream value](INTELLIGENCE_OBJECTIVE.md#what-is-a-hidden-distinction-worth-under-a-different-observation-interface)
+
+**Numerical checks.** For each of periods 4 and 7 against its successor, and for each active interface, all 33,673 adaptive policy trees with at most four payments were enumerated. A tree can stop, tick, or take a read and choose a different subtree after each color. The smallest transcript affinity matched the independent budget formula within $2\times10^{-14}$ in all 16 period/interface/budget comparisons through four payments. At mark amplitude $1/2$ the squared differences of the two red probabilities summed to $k(k+1)/16$ over their full joint period in six checks. This also follows from discrete cosine orthogonality.
+
+| Smaller period $k$ | Best repeatable age with destructive reads | $k^2$ times best affinity exponent per payment | Nondestructive payments for affinity at most $e^{-1}$ |
+|---:|---:|---:|---:|
+| 16 | 103 | .298528 | 77 |
+| 32 | 398 | .309691 | 185 |
+| 64 | 1,596 | .315191 | 458 |
+| 128 | 6,457 | .318165 | 1,146 |
+| 256 | 25,714 | .319441 | 2,876 |
+| 512 | 102,628 | .320074 | 7,231 |
+
+The last column is the finite optimum for the affinity criterion and counts ticks plus color reads. For $k=512$ it is $1.7654\,k^{4/3}$. The general testing statements use a separate information-theoretic lower bound against adaptive policies. A learner carrying both hypotheses into a sequence of deployment queries can instead update a posterior after their outcomes, with cumulative log-loss overhead bounded by $\ln2$. [Enumeration and numerical reproduction](clock_acquisition.py)
+
+~~~powershell
+python research/frontier/clock_acquisition.py
+~~~
+
 ## Recovering more hidden states than predictive coordinates
 
 **Exact rational reconstruction.** The learner received an alphabet, a certified linear Hankel rank, and a function returning stationary raw word probabilities at lengths at most $2n-1$. It selected prefix/suffix bases from these probabilities and inferred the physical state rows, actions, emissions and stationary masses. Only the audit compared the result with the known generating machine. Seven fixtures covered resets, noncommuting permutations, a common rotation, partially merging updates, and linearly dependent physical states. [Proof and resource assumptions](FOUNDATION.md#recovering-a-finite-hidden-machine-when-predictive-dimension-is-smaller-than-state-count) · [Reconstruction and reproduction code](finite_realization.py)
