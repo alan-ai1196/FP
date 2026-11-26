@@ -524,3 +524,12 @@ Merged index4412,fullyread124,originalOpenAI32/1700/17 unchanged. Preserve Astra
 The note preserves the rational full-coefficient input, unary order and exact-real witness model. Delay zeros force a chain, interval cycles reduce the order-m problem to polynomial products, and a stable larger companion supplies the positive-existence promise independently of source feasibility. No defect was found in the scoped mathematical checks. AAM1704.06969v4 Definition5/Theorem7 is a statement-only historical dependency. No formal verification, approximation gap or FP transfer is claimed.
 
 Merged index4414,fullyread125,originalOpenAI32/1700/17 unchanged. Preserve Astra da74cc3 and Pro-E request59b8251. Continue with fresh request/owner check.
+
+
+## Pro-B: exact kernel memory and update state completed, November26
+
+[Chen etal Kernel Ridge Attention2611.23896v1](notes/CHEN-2026-KERNEL-RIDGE-ATTENTION.md) is fully read through all15physicalpages,main1–6,AppendicesA–E,bothpropositions,allformulas,Algorithm1,3figures,6tables,correspondencefootnote and18references. Complete active scientificTeX was read. Allthreeoriginalfigureassets andPDFpp4,5,11,12 were visually inspected. Ancillary numerical evidence and complete formula-check source were inspected. ICLR2027 style is not acceptance.
+
+The exact fixed-path OU/product-kernel ridge identity and checked block maps/adjoints are supported. Independent derivations distinguish full temporal Gram rank, dynamic state dimension, current readouts and next-update requirements. A signed-read example precludes stochastic-weight interpretation. The nonnormal inverse qualification does not refute actual optimized-kernel measurements. The author60casefloat64script rerun and a separate small directional check are bounded algebraic evidence, not training reproduction. Shared-development evaluation,one trainingseed,near-chance distantcopy,recurrence-onlycontrols and incomplete implementation release remain explicit. No FP transfer or core edits.
+
+Merged index 4415 records, 126 fully read editions. OriginalOpenAI32/1700/17 unchanged. Preserved Astra9e7d752, Pro-A401c872, Pro-Dbd4010b and Pro-E ownership of59b8251 at40c0d2a. Newly authenticated exact Anthropic interference URL has metadata/introduction screening only, without inheriting an unidentified old page. ColdAttention2611.11937v3 andRecall2611.32969v1 remain scientific-body unread. Next ordinary paper follows fresh request/owner check.

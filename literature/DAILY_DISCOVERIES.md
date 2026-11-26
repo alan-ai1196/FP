@@ -449,3 +449,10 @@ A directed identifiability search found the newer [Nielsen etal ICML2026 final](
 ### November26 Pro-A targeted positive-realization complexity follow-through
 
 The existing daily scan was retained. A bounded information-theory and realization-complexity search found [Liu2610.27962v1](https://arxiv.org/abs/2610.27962v1), now fully read in its15pageedition. The selected theorem directly concerns exact nonnegative dimension and preserves positive realizability as a promise. Its rational encoding and unary-order requirements, the source arithmetic reduction and the absence of an approximation gap are archived in the [note](notes/LIU-2026-POSITIVE-REALIZATION-COMPLEXITY.md). AAM1704.06969v4 was queried only for the named ETR-INV definition and completeness statement. No global scan was repeated and no historical full-read queue was created.
+
+
+### November26 Pro-B bounded architecture follow-through
+
+Reused the existing daily global scan. A directed primary-source screen authenticated [KRA2611.23896v1](https://arxiv.org/abs/2611.23896v1), [Attention at Absolute Zero2611.11937v3](https://arxiv.org/abs/2611.11937v3) and [Eliciting the Recall Capacity of Linear Attention2611.32969v1](https://arxiv.org/abs/2611.32969v1). KRA was selected and is now fully read in its [independent note](notes/CHEN-2026-KERNEL-RIDGE-ATTENTION.md). The other two have primary metadata/abstract/history coverage only, with all scientific bodies unread. V3 cold attention explicitly corrects a shared-block table, without implying a new independent study.
+
+The official [Anthropic interference article](https://transformer-circuits.pub/2026/interference_effectiveness_helpfulness/index.html), published August21,2026, was newly authenticated at metadata/introduction depth. It matches the description of an older ambiguous recovery item, but the previous checkpoint did not preserve an exact URL, so no past full-text coverage is inherited. Remaining body,appendices and figures are unread. No new global institutional scan or historical full reading was performed. Request59b8251 remains Pro-E.
