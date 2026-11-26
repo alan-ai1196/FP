@@ -10,6 +10,27 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Choosing history positions and product arity from ordinary words
+
+**EMPIRICALLY OBSERVED.** Starting from the same frozen positive raw-word predictor, with fresh pooled offsets and no previous input signs, selection on 32,768 words gave the largest gross product gain to a two-input correction. It used the two preceding words, 64 named input types and a learned output group. Its two input tables differ from their pooled remainder signs on 58 and 18 names. The output table differs on 10 of 12 named classes. Alternating signed contractions selected its factors. On validation it gained 216.02 nats against the original base. The most accurate single-input product gained 213.31. Charging $\ln 2$ per shared-rank bit selected the one-input rule. Charging the full ordered 16-bit name IDs selected the original base overall. [Prospective registration](https://github.com/alan-ai1196/FP/blob/4ba2bd4/research/frontier/NEXT.md)
+
+| Model selected on validation | Input names and lags | Incremental bits, shared ranks / standalone | Gross gain at 53M / 55M / 57M, nats |
+|---|---|---:|---:|
+| Pooled class offsets | None | 172 / 364 | 61.69 / −26.98 / −33.24 |
+| One-input product | 64, lag 1 | 275 / 1,299 | 272.14 / 173.87 / 151.95 |
+| Two-input product | 64, lags 1,2 | 341 / 1,365 | 268.94 / 189.41 / 167.02 |
+| Three-input product, gross | 64, lags 1,2,4 | 407 / 1,431 | 266.46 / 195.66 / 153.28 |
+| Three-input product, shared price | 16, lags 1,2,3 | 263 / 519 | 176.69 / 74.22 / 66.34 |
+| Four-input product, gross | 64, lags 1,2,3,4 | 473 / 1,497 | 198.62 / 65.71 / 116.02 |
+| Independent unary signed heads, joint coefficients | 64, lags 1,2 | 379 / 1,403 | 306.60 / 238.22 / 162.11 |
+| Regularized additive multinomial, matched to two-input product | 64, lags 1,2 | 22,020 / 23,044 | 498.04 / 419.60 / 389.40 |
+| Direct smoothed histories, matched to two-input product | 64, lags 1,2 | 224,090 / 225,114 | 580.20 / 502.29 / 528.62 |
+| Regularized additive multinomial, overall gross winner | 64, lags 1,2,3,4 | 43,860 / 44,884 | 731.10 / 694.34 / 655.77 |
+
+The two-input product exceeded the matched compact additive model only on the third report. The priced three-input 16-name product exceeded its matched compact additive on all three, by 18.43, 33.36 and 0.94 nats, with 69 fewer bits. The unrestricted additive multinomial was stronger on all three at the same access. These are chronological blocks of the same source. The original base NLLs were 6.692515, 6.944185 and 6.537403 nats per word. Every row preserves the original conditional raw probabilities within each of its 13 output classes.
+
+**Acquisition and forecast.** Fit 131,072 words at offset 51M. Visit each of 15 nonempty lag subsets at 16 and 64 names plus a remainder class. The 340 candidate fits include forward and reverse sparse fiber signing, leading mode signs, alternating signs from six initializations, exact singleton directions, direct per-history corrections with three smoothing strengths, and jointly fitted additive multinomials with three ridge strengths. The compact independent control fits its own optimal singleton directions and jointly calibrates their coefficients. Panels occupied 17–13,885 cells and 41,678–85,773 distinct cell/base-context pairs. Fiber signing visited 141,798 rows and alternating signing took 568 sweeps. The dense fits took 2,192 objective evaluations across 145.38 million compressed pairs. One CPU thread completed fitting and validation in 31.0 seconds in the recorded run. A deployed product needs one membership lookup per active input, their sign product, and its signed output mass under the calibrated base. The declared packed storage prices include all pooled coefficients, shapes, sign dictionaries, references and amplitudes. Raw names cost another 16 bits each when obtained separately. Full enumeration of 50,257 probabilities at nine report positions agreed to within $8.6\times10^{-13}$ across the selected models. The receipt gives every validation choice, its matched controls, and eight blockwise gains per report. [Implementation](word_product.py) · [Selection, models and measurements](word_product_result.json)
+
 ## Physical execution of the 444-bit word program
 
 **EMPIRICALLY OBSERVED.** A fused CUDA scorer decoded the complete learned program from a 184-byte packet containing its own word IDs. From that packet and the original 7,713,492-byte positive trigram/lexical tables, it recomputed the normalizers and reproduced all 98,304 realized binary64 token scores within $3.37\times10^{-6}$ nats. A second implementation spent 2.10 MB on normalizers, plus 96 bytes of scales, to reduce the time per 32,768-token reporting batch from 154–176 to 13–15 microseconds on an RTX 3090. Both reproduced all 16 generated reference tokens under fixed uniforms. The original fit and all three later readouts were frozen. [Registration](https://github.com/alan-ai1196/FP/blob/e6c4af2/research/frontier/NEXT.md)
