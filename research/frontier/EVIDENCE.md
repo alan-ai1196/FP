@@ -19,6 +19,36 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Does learning a switch for each word improve ordinary text prediction?
+
+**EMPIRICALLY OBSERVED.** On both 65,536-token reporting windows a single learned lexical row beat the two-row word-dependent state model in all eight contiguous 8,192-token blocks. Using the actual word to choose its switch improved total loss over a separately refitted common switch by only 0.08 and 17.12 nats. Keeping the two word-specific model rows fixed and replacing every switch by its training-frequency-weighted mean *improved* loss by 40.91 and 40.89 nats, across 15 of 16 blocks. Thus the separately trained rows and the switch table have different observable contributions. Each report scored all 50,257 outputs through normalized rows before observing the next token. Report A is the training file at offset 11,262,144. Report B is the separate reporting file at offset 524,288. Both windows had been used by previous studies. [Frozen registration](https://github.com/alan-ai1196/FP/blob/319888a/research/frontier/NEXT.md) · [All selection and block scores](lexical_switch_result.json)
+
+| Mean nats per next token | Report A | Report B |
+|---|---:|---:|
+| Add-half unigram | 7.708010 | 7.671019 |
+| Smoothed bigram | 7.491008 | 7.343071 |
+| Smoothed trigram | 7.712282 | 7.517781 |
+| Trigram plus one learned pooled lexical row | 7.116952 | 6.963727 |
+| Two lexical rows, one fitted switch | 7.130334 | 6.979018 |
+| Two lexical rows, 257 fitted switch bins | 7.130333 | 6.978757 |
+| Same two rows, switches set to their fitted mean | 7.129709 | 6.978133 |
+| Same fitted word model, deterministic four-bit state | 7.114864 | 6.963846 |
+| Same fitted word model, randomized four-bit state, expected issued loss | 7.127424 | 6.975961 |
+| Same two rows averaged at every word, supplemental | **7.101837** | **6.952005** |
+
+The last row was introduced after the registered comparisons. Discarding the recurrent state while preserving both fitted lexical distributions saved 1,867.53 and 1,753.22 nats over the full word-dependent filter. It also beat the separately fitted pooled row on every block. The average can itself be stored as one normalized lexical row. Two differently trained sets of lexical parameters can therefore differ even when deployed as single distributions. A second supplemental control evaluated the directional derivative from the weighted-mean switch toward the learned word-specific rates, holding the emission rows fixed. Mean NLL increased locally in both reports, with slopes $0.00033133$ and $0.00031937$ nats/word per unit interpolation. Central differences agreed within $2\times10^{-9}$. Neither control uses reporting outcomes to refit the scored rows.
+
+A 524,288-token background fit began at token 9,000,000. The next 262,144 targets fitted the lexical and switch parameters and the next 65,536 selected each family's setting. All three selected mixture weight $1/4$. The two stateful fits both selected the alternating 128-token-block initialization. The two lexical rows for the word model had TV distance 0.54751. Its raw switch probabilities ranged from 0.002501 to 0.104365. Their fit-frequency mean was 0.011302, the tail's rate was 0.007542, and the common-switch fit gave 0.010750. The selected arrays were made read-only and hashed before either reporting window was scored. The tables measure this particular EM learner and its chronological transfer. [Training code](lexical_switch.py) · [Forward, smoothing and finite-state kernels](lexical_switch.c)
+
+The sparse background count/probability arrays used 15,630,528 bytes. The two full-vocabulary binary64 lexical rows and 257 rates used 806,168 bytes. The implementation also used a 402,056-byte token-to-bin lookup, which could be represented by the 256 exceptional names plus a default. These are array payloads. They exclude training scratch, binary code and full-distribution output. Exact filtering carries one binary64 value across words. The finite versions carry one of 16 indices. The randomized version uses eight fair bits at a nontrivial update and 16-level forward occupancy to evaluate its *expected issued log loss* on the fixed tape. At deployment one samples one index. The eight two-state candidates each made 12 forward and backward passes, totaling 25,165,824 positions in each direction. The two pooled candidates used 6,291,456 single-row responsibilities, and the ten validations scored another 655,360 positions. A realized-token score needs sparse background lookups, two lexical reads and a scalar state update. Materializing all 50,257 output probabilities uses additional work.
+
+**NUMERICALLY VERIFIED.** Independent exact summation over 64 hidden paths checked cumulative likelihood and the 12 smoothed state/switch values. Rational execution checked both finite gates at six positions including a rounding boundary. Nine dense background laws sum to one, and an independent signed-state recursion agreed with the first 257 actual word scores on each source to $5.4\times10^{-15}$. A four-name model with context-dependent background checked 16 pairs, 64 triples and recovery of a hold for a name with identical emissions. A second model matched its pooled law on all 256 four-word tapes. Five even grid sizes reproduced the adaptive adversary's exact per-word penalty. [Identification proof](FOUNDATION.md#when-can-an-ordinary-word-teach-a-hidden-state-to-persist) · [Forecast-reactive counterexample](OBSTRUCTIONS.md#when-can-a-public-forecast-expose-its-rounding-error)
+
+~~~sh
+python research/frontier/lexical_switch.py check
+python research/frontier/lexical_switch.py sample
+~~~
+
 ## Raw-word tests of which phase information survives a read
 
 **NUMERICALLY VERIFIED.** The preregistered cycle periods were 3, 4, 5 and 8, with tick probability $1/2$ and mark contrast $1/2$. One elimination expanded future word columns in the exact real cyclotomic subfield. A second evaluation multiplied individual raw word likelihoods directly modulo 241, where all four periods have a primitive root. At each mark count it tried every tick-residue schedule followed by red marks. The smaller set with ticks only before the first red achieved the same ranks in every case. Both calculations matched the proof in all 40 period/interface/mark-budget combinations. The table includes the constant dimension. [Frozen registration](https://github.com/alan-ai1196/FP/blob/53c10ef/research/frontier/NEXT.md) · [Numerical record](phase_memory_result.json)
