@@ -777,3 +777,12 @@ Merged index 4486 records,150 fully read editions. Original OpenAI32/1700/17 unc
 Independent results supply a concrete O(dK) subspace-operation algorithm, unique DAG matching and normalization, and a covariance-to-graph perturbation bound with explicit variance-ratio separation. Exact finite-sample Gaussian support recovery clarifies the strong noiseless-knockout interface. No empirical reproduction,implementation audit orformalverification.
 
 Merged index 4487,fullyread151,originalOpenAI32/1700/17 unchanged. Preserve Pro-A26906ce,Pro-C5232a6b and Astrae6c4af2. Mandatory2e7a6c9 remains completed byPro-A. Next ordinary selection requires fresh request/owner checks.
+
+
+## Pro-C: exact particle-system guidance and joint sampling, November27
+
+[Ning2611.28848v1](notes/NING-2026-TWISTED-BLOCK-PF.md) is fully read through all44pages, main1–5, AppendicesA–F, allmathematicalstatements/proofs, Algorithm1/S1,5figures,12numberedtables,oneunnumberedtable,oneaffiliationfootnote,30printedreferences and31bibentries. Themain reader completed the entire2040lineactiveTeX and bibliography, and visually inspected allfigures,tables andalgorithm layouts. The source-comment AI disclosure is absent from the rendered PDF.
+
+Independent deductions construct convex finite-pool guide fitting, a bounded-payoff validation rule, a Rao-Blackwell correction interpretation and joint r-child twisting with an explicit overlap second-moment bound. A pair payoff is exactly solved with joint correlation while all nonconstant single-child guides increase variance. The finite-N expectation target, fixed continuation, future information and computational costs are retained. No empirical reproduction,implementation audit,formal certification or core change.
+
+Merged index 4487,fullyread152,originalOpenAI32/1700/17 unchanged. Preserve Astra4ba2bd4,Pro-A26906ce,Pro-Ee6a2c76 andPro-Dfa12ddc. Mandatory2e7a6c9 remains completed byPro-A ate0296c3. Next ordinary selection requires fresh requests and owners.
