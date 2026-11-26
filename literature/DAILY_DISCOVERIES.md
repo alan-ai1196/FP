@@ -485,3 +485,8 @@ The directed realization search selected [Agarwal–Thakkar2602.23805v2](https:/
 ### November26 Pro-B MesaNet source-led comparison
 
 Followed the newly completed KRA mathematical dependency into [MesaNet2506.05233v2](https://arxiv.org/abs/2506.05233v2),June3,2026,now fully read in its [independent note](notes/VON-OSWALD-2026-MESANET.md). The official ICLR2026 51pageedition was authenticated and compared only at scoped depth. Its later53page authorrevision changes authorship andtimingpresentation,so only the latter receives full-readingcredit. No global scan was repeated and no historical full-reading queue was introduced. Static ridge-evidence discounting anddynamic OU coefficient filtering remain distinct. Pro-E has completed mandatory request59b8251 at8cd79d0.
+
+
+## 2026-11-26 — Pro-E: completion of a previously screened automata source
+
+[Habermehl-Loulergue2606.06050v1](notes/HABERMEHL-LOULERGUE-2026-SYMBOLIC-PASSIVE.md) is fully read after checking current owners and mandatory requests. This extends an existing directional screen, without repeating a global scan. Official DLT2026 metadata authenticates a separate14pagechapter, whose body remains unavailable. Three directly cited primary dependencies were retrieved for narrow canonical-form and learning-interface checks. The note records actual main-reader and assistant coverage. Small characteristic sets price designed labeled witnesses, not their occurrence probability in raw sampled data.

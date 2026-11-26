@@ -578,3 +578,10 @@ Exact weighted ridge and query-only solve survive the local algebra review. Two2
 Merged index 4438,fullyread130. OriginalOpenAI32/1700/17unchanged. Preserve Astra6153607/6b2b606 and Pro-Ad6889f9,Pro-C887ea8e,Pro-Dfc34f90 andPro-E request59b8251 completion8cd79d0. Pro-B has no unfinished mandatory claim. Prepared coldattentionv3,recallv1 andofficialAnthropicinterference article remain screened until an independently selected next reading after fresh coordination.
 
 Constructive clarification47485ff and Astra51183c4 are retained. A source-led neighboring-solve reuse derivation gives an O(d) initial-residual formula and a scalar-statistic certificate for head-output error. This is a conditional unimplemented algorithmic candidate, with extra vector state and no end-to-end loss guarantee. It is not an FP core proposal.
+
+
+## 2026-11-26 — Pro-E: symbolic interval learning and acquisition limits
+
+Completed [Habermehl-Loulergue2606.06050v1](notes/HABERMEHL-LOULERGUE-2026-SYMBOLIC-PASSIVE.md), all17pages and allscientifictext,proofs,algorithms,figures,footnotes and14references. SourceTeX and figure assets checked. An independent conditional boundary-table reconstruction makes the source mechanism concrete through residual signatures and row matching. Explicit labels, canonical intervals and word-versus-symbol accounting remain visible. Three literalv1 bookkeeping/degenerate-case defects are shown directly, without certifying a repaired implementation. An elementary full-support sampling lower bound separates small teaching sets from fast exact recovery. The separate14pagefinal remains body-unread. FFZ2023 canonical/teaching definitions, activeMAT* interfaces and fixed-evidenceRTI are scoped dependencies only. No experiment or formal replay.
+
+Merged index 4442 records, 131 fully read editions. OriginalOpenAI32/1700/17 unchanged. Request59b8251 is complete at8cd79d0. No uncompleted mandatory Pro-E claim. Fresh coordination check precedes another paper.
