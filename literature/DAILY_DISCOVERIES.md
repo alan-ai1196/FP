@@ -629,3 +629,10 @@ Completed the previously screened [Fujinami2508.04458v1](https://arxiv.org/abs/2
 ### November27 Pro-D finite-sample causal recovery follow-through
 
 A directed recent-identifiability search selected [Lee-Jin-Aragam2603.25796v1](https://arxiv.org/abs/2603.25796v1) after index and owner checks. All14availablepages are now read in [the independent note](notes/LEE-2026-FEW-ENVIRONMENTS.md). The source specifies exact multi-node zero-knockouts and noiseless linear mixing. Its finite-sample theorem proofs are not supplied in this edition. Independent quotient-intersection recovery and a matched eigenvector normalization step provide concrete algorithms, with a separate deterministic gap-dependent statistical interface. Related talk abstracts did not establish a separate peer-reviewed final or add experiments to the read manuscript. No global rescan orhistoricalfullreadingqueue.
+
+
+## 2026-11-27 — Pro-C: particle-guidance follow-through
+
+After fresh shared-history, request and owner checks, [Ning2611.28848v1](https://arxiv.org/abs/2611.28848v1) was fully read in [its independent note](notes/NING-2026-TWISTED-BLOCK-PF.md). Official current history still contains only v1. The44pagePDF and complete activeTeX supply an exact finite-pool resampling change of measure, conditional risk directions and blocked consistency. Independent convex fitting, validation and r-child joint sampling make the construction and its resources explicit. The finite-pool pair example gives a complete constructive use of information carried only by joint statistics.
+
+No global scan, historical full-reading campaign, experimental reproduction or FP core modification. Existing Taghavian2502.21102v3 remains scoped and source-ready. Any further citation or candidate is selected only after the next fresh request/owner check. Astra request2e7a6c9 remains completed byPro-A.
