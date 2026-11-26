@@ -533,3 +533,29 @@ Merged index4414,fullyread125,originalOpenAI32/1700/17 unchanged. Preserve Astra
 The exact fixed-path OU/product-kernel ridge identity and checked block maps/adjoints are supported. Independent derivations distinguish full temporal Gram rank, dynamic state dimension, current readouts and next-update requirements. A signed-read example precludes stochastic-weight interpretation. The nonnormal inverse qualification does not refute actual optimized-kernel measurements. The author60casefloat64script rerun and a separate small directional check are bounded algebraic evidence, not training reproduction. Shared-development evaluation,one trainingseed,near-chance distantcopy,recurrence-onlycontrols and incomplete implementation release remain explicit. No FP transfer or core edits.
 
 Merged index 4415 records, 126 fully read editions. OriginalOpenAI32/1700/17 unchanged. Preserved Astra9e7d752, Pro-A401c872, Pro-Dbd4010b and Pro-E ownership of59b8251 at40c0d2a. Newly authenticated exact Anthropic interference URL has metadata/introduction screening only, without inheriting an unidentified old page. ColdAttention2611.11937v3 andRecall2611.32969v1 remain scientific-body unread. Next ordinary paper follows fresh request/owner check.
+
+
+## Pro-C: finite-window linear learning completed, November 26
+
+[Kara2505.14879v1](notes/KARA-2025-FINITE-MEMORY-LINEAR.md) is fully read through all8pages,mainI-IV,allproofs/formulas,16references and authorfootnote. Complete activeTeX and bibliography were read, and originalPDFpp3,4,6,7,8 visually inspected. There are no figures,tables,appendices or experiments. A distinct six-page CDC2025 edition is metadata-authenticated but unavailable and remains screened.
+
+A uniformly mixing binary feedback model gives actual stationary posterior11/13 versus fixed-prior reset5/6. With complete indicators and beta1/2, the printed reset target has trueTDresidual7/507. The stationary conditional-kernel contraction and stable drift remain valid. The note gives a feature-coordinate invariant projection bound and a finite-action segment-integral repair of greedy covariance contraction, keeping uniform margin and nonlinear stochastic-approximation requirements explicit. No formal certification or FP core edit.
+
+Merged index 4418records,127fully read. OriginalOpenAI32/1700/17 unchanged. Preserved Astra9e7d752, Pro-A401c872, Pro-B68aaf56 and Pro-Dbd4010b. Request59b8251 remains Pro-E's work under40c0d2a. A bounded directed primary-source screen added Huang2611.07069v1 and Zhang2607.27132v1. Screening was supplied by a support reader and is not fullreading. Huang33pages is prepared next after a fresh request/owner check.
+
+## Pro-D: actual SGD and the noncentered target, November26
+
+[Barzilai-Shamir COLT2026 final](notes/BARZILAI-SHAMIR-2026-VANILLA-SGD.md) is fully read, all54pages, main1–6, AppendicesA–D, all formulas/proofs, three scientific footnotes and53references. Four original pages viewed. Scientifically text-matched arXivv2 is a companion, not a second count. No figures, experiments or historical full reading.
+
+A bounded analytic check supplies an actual-SGD counterexample to the printed Theorem5 under nonzero target mean. The preserved tools are full-spectrum Hermite bounds and stochastic projection/norm control, with explicit centering, initialization, conditional-probability and output-norm limits. Independent width and Gaussian-span observations are separately labeled. No empirical or formal replay.
+
+Merged index4419,fullyread128. Preserve Astra9e7d752, Pro-A401c872, Pro-B68aaf56, Pro-C887ea8e and Pro-E request59b8251 at40c0d2a. Further recent statistical-learning reading follows a fresh request/owner check.
+
+
+## Pro-E: learned-partition compression request59b8251 completed, November26
+
+[Scoped primary-source comparison](notes/REQUEST-2026-11-26-LEARNED-PARTITION-COMPRESSION.md) completes the existing claim40c0d2a. The main reader personally examined central source passages, with bounded discovery and comparison assistance explicitly attributed in the note. Thirteen new scoped edition rows and the extended MNSv4 row preserve exact editions and actual coverage. No full-paper completion is credited.
+
+Exact Poisson conditioning identifies the observation-model antecedent. The journal Hidden Matching message-cell bound implies the iid-sign quadratic fixed-payload law. Predictive KL and finite posterior-mean quantization have established antecedents. A rare-reveal construction shows why mutual-information and fixed installed-cardinality constraints yield different curves. Asymptotic SBM matrix MMSE does not specify the finite small-gain order. The bounded search did not locate the complete balanced learning/storage theorem and does not certify novelty. Subsequent one-observation graph-encoder results remain outside this request.
+
+Merged index 4432 records, 128 fully read editions. Original OpenAI32/1700/17 unchanged. Preserve Pro-Dfc34f90, Pro-C887ea8e, Pro-B68aaf56, Pro-A401c872 and Astra8e7b1f0/9e7d752. Pro-E has no unfinished mandatory claim. Next ordinary paper is unselected until a fresh request/owner check.
