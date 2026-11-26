@@ -10,6 +10,25 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Training through a nearly pooled four-state update
+
+**NUMERICALLY VERIFIED using all 64 raw histories and directed rational log-gain intervals.** The source had $u=W/4$ and $\beta=1/2$. A step took the informative transition with probability $\epsilon$ and otherwise redrew the current state. For every kernel and all four values of $\epsilon$, the vector of ordinary outcome correlations equaled $\epsilon^6$ times the unpooled vector. Conditioning on one or more redraws gave exactly zero state–outcome correlation. At $\epsilon=1/16$ all four optimal sampled positive-outcome probabilities for both interior kernels rounded to exactly one half when issued in IEEE binary32. The stable scoring calculation used signed means and rational bounds. [Preregistration](https://github.com/alan-ai1196/FP/blob/8e162c2/research/frontier/NEXT.md) · [Source](pooled_state_signal.py) · [Results](pooled_state_signal_result.json)
+
+| $\epsilon$ | Optimal sampled gain | With survival flag | Bounded exact-mixture gain, lower bound | Unrestricted legal affine gain |
+|---:|---:|---:|---:|---:|
+| 1/2 | $4.7684\,10^{-7}$ | $3.0598\,10^{-5}$ | $8.5456\,10^{-4}$ | 0.00195824 |
+| 1/4 | $1.1642\,10^{-10}$ | $4.7809\,10^{-7}$ | $1.5229\,10^{-5}$ | 0.00195824 |
+| 1/8 | $2.8422\,10^{-14}$ | $7.4701\,10^{-9}$ | $2.3841\,10^{-7}$ | 0.00195824 |
+| 1/16 | $6.9389\,10^{-18}$ | $1.1672\,10^{-10}$ | $3.7253\,10^{-9}$ | 0.00195824 |
+
+These are four interfaces to the same permutation update and ordinary label. At the last setting distinct conditional belief entries differed by $2^{-24}$. Reporting the unrestricted gain by an uncentered affine form used a coefficient above one million. A structured implementation could keep just the clean endpoint address for that readout. In the stationary example the sampled gain divided by $\epsilon^{12}$ approached $0.00166539$. Rescaling the achieved scalar belief gain by $\epsilon^8$ gave $0.004679,0.005583,0.005826,0.005887$. The proof supplies the matching upper order. With a boundary redraw, all perturbed transitions were positive and the sampled gain had order $\epsilon^{11}$.
+
+**EMPIRICALLY OBSERVED.** In 64 fresh repetitions, each with 4,096 ordinary training records, paired first-input replay fitted a head attaining positive gain in all 64 repetitions at every $\epsilon$. Its mean gain was 88.3% of the physically sampled optimum. The ordinary Jeffreys fit from sampled endpoints alone had positive gain in 0/64 at every setting. Raw training words were shared across the four settings. The paired learner knew the candidate kernels and first-input antisymmetry. An independent all-mask Walsh fit receiving only the raw records recovered the full signed support in 63/64 repetitions and earned 0.048195 nats per outcome. The large fractions of tiny sampled gains should be read alongside their absolute values in the table. [Derivation and access costs](FOUNDATION.md#how-pooling-a-recurrent-update-changes-its-training-signal)
+
+~~~powershell
+python research/frontier/pooled_state_signal.py
+~~~
+
 ## Learning a four-state update when smaller updates cannot help
 
 **EMPIRICALLY OBSERVED on three predeclared synthetic sources, 32 independent repetitions each.** Each training and validation split contained the indicated number of iid seven-sign records, with nested sample sizes within a repetition. Every learner saw the same training counts. Deterministic updates additionally used a disjoint validation split to select width at $1/1024$ nat per live address bit. The threshold on all 64 Walsh coefficients was fixed in advance. Test log gains below are means per outcome under the exact fresh law. Uniform has gain zero. [Prospective comparison](https://github.com/alan-ai1196/FP/blob/e164129/research/frontier/NEXT.md) · [Code](learn_state_width.py) · [Results](learn_state_width_result.json)
