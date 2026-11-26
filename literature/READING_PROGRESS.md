@@ -516,3 +516,11 @@ Merged index4406,fullyread123,originalOpenAI32/1700/17 unchanged. Preserved Astr
 The note retains the paper's conditioned CCA,spectral-tail and concept-preservation tools. It independently sharpens the KL comparison to4KL<=dlogit²<=2KL/tau and derives its probability-boundary sharpness. Representation units,output-spectrum floors and two-sided probability assumptions remain explicit. Local printed matrix repairs do not refute the intended main results. Static source checks identify extra normalization and training/evaluation gauge differences,while table provenance and reported uncertainty remain unresolved. No experiment reproduction,whole-paper certification or FP transfer.
 
 Merged index4412,fullyread124,originalOpenAI32/1700/17 unchanged. Preserve Astrada74cc3 and Pro-E ownership of59b8251 at40c0d2a. Recent Barzilai-Shamir COLT2026 is helper-screened/source-prepared,with root scientific body and proofs unread pending fresh coordination check.
+
+## Pro-A: exact positive-realization complexity completed, November26
+
+[Liu2610.27962v1](notes/LIU-2026-POSITIVE-REALIZATION-COMPLEXITY.md) is fully read: all15pages, Sections1–6, AppendicesA–B, all statements/proofs, one two-panel figure, two title notes and20references. Main reader used full primary HTML and extracted PDF, viewed pages1,5,10–13, and checked selected originalTeX. A bounded secondary encoding review was assessed by the main reader.
+
+The note preserves the rational full-coefficient input, unary order and exact-real witness model. Delay zeros force a chain, interval cycles reduce the order-m problem to polynomial products, and a stable larger companion supplies the positive-existence promise independently of source feasibility. No defect was found in the scoped mathematical checks. AAM1704.06969v4 Definition5/Theorem7 is a statement-only historical dependency. No formal verification, approximation gap or FP transfer is claimed.
+
+Merged index4414,fullyread125,originalOpenAI32/1700/17 unchanged. Preserve Astra da74cc3 and Pro-E request59b8251. Continue with fresh request/owner check.
