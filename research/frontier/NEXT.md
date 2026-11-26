@@ -1,16 +1,16 @@
 # Next mathematical attack
 
-## How much predictive capability survives a fixed memory budget after a state hypothesis is dropped?
+## Can private randomness reduce the physical price of remembering uncertainty?
 
-The shared urn proves that ordinary emissions can pay for a fresh address. Exact integration soon becomes expensive, and even an arbitrarily small discarded posterior can later dominate the forecast. The next question is whether its mass can finance a computationally cheaper predictor with a guarantee across future observations. [Formation](FOUNDATION.md#when-ordinary-prediction-can-create-a-previously-unused-state-address) · [Failure of irreversible pruning](OBSTRUCTIONS.md#a-small-discarded-posterior-can-eventually-control-nearly-every-prediction)
+For two causal predictors, a deterministic $s$-bit gate can track their ideal mixture with worst-tape overhead $N\ln(1+2^{-s})$. A new token may make either component valuable. Investigate whether refitting a distribution over nearby finite gate values on each step buys a second-order rate, and exactly which guarantees survive when outcomes can react to the reported prediction. Separate stored bits, arithmetic, random decisions, readout precision and the price of retaining both components. [Deterministic baseline](INTELLIGENCE_OBJECTIVE.md#how-many-bits-must-control-the-mixture-of-two-changing-predictors)
 
-### Registered comparison of a retained graph and a literal-block fallback
+### Registered finite comparison
 
-At a cut, assign the discarded posterior weight to a causal categorical model on nonoverlapping raw blocks of length $b$, with a unit Dirichlet count per complete block type. Learn its counts only on subsequent raw tokens. Compare its predictive cost with a fixed deterministic generator whose possible initial states assign different distributions to one block. Derive the exact price of erasing the block-start state, including shared support, an unfinished final block, a fixed count memory and a deployment horizon unknown to the predictor. Check whether controlling Bayes expected loss also controls individual continuations.
-
-Use the binary prefix 010, concentrations $1/4$ and $1/128$, and keep histories whose two root self-loops are exposed. Use two length-256 continuations, the alternating continuation and a fair-coin tape from NumPy PCG64 seed 261127. Score the retained posterior, the fallback alone, and their predictively updated mixture with the exact cut weight. Test $b=1,2,4$ and both unbounded counts and a reset after 16 completed blocks. Count memory, state updates and emitted forecasts. Against the matching known/two-phase comparator, distinguish observed loss from the worst-case bound. Check continuous-prefix and terminal-block guarantees against exhaustive finite strings. An output gain alone cannot show that the learner recovered a particular graph.
+Keep the same binary prefix 010, the two 256-token continuations, cut weights, two-token block expert and retained row as the fully capped comparison. Reset both experts after 16 complete blocks. Compare 1, 2, 3 and 4 gate bits. For a gate with $H=2^s$ levels, try $q_j=j^2/[j^2+(H+1-j)^2]$, $1\le j\le H$. Randomize between the neighboring levels to balance the expected inverse retained and fallback weight ratios. Compare exact conditional coin probabilities with a coin using $2s$ independent bits per nontrivial decision. Propagate the distribution over gate states on each fixed tape, so the expected reported log loss has no Monte Carlo sampling error. Check the worst local ratio by independent enumeration, verify any claimed optimal grid and upper bound, and compare to a deterministic gate and to exact weights. A one-step guarantee must specify the order in which the latent draw, forecast and raw observation occur. Explore the dependence on the number of simultaneously live hypotheses.
 
 ## Frozen registrations
+
+- [Forecasting after discarding a state hypothesis](https://github.com/alan-ai1196/FP/blob/45217a9/research/frontier/NEXT.md)
 
 - [Creation of a state without a supplied state count](https://github.com/alan-ai1196/FP/blob/f9a6c19/research/frontier/NEXT.md)
 

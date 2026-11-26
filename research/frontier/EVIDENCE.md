@@ -19,6 +19,32 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Rescuing predictions after a state has been dropped
+
+**EMPIRICALLY OBSERVED.** After the ordinary prefix 010, keep only the history with both root self-loops exposed. The two cut priors give discarded masses $35/99$ and $1027/66563$ for $\beta=1/4$ and $1/128$. The fallback starts empty. The following are **total nats over 256 subsequently observed tokens**, scoring before updating on each token. Both predictors receive the same raw observations. The static-prior mixture updates its relative weights after each outcome. [Frozen registration](https://github.com/alan-ai1196/FP/blob/45217a9/research/frontier/NEXT.md) · [All 24 fits, forecast counts and memory](block_rescue_result.json)
+
+| Fallback length and reset | Alternating fallback | Alternating mixture, $\beta=1/4$ / $1/128$ | Fair-coin fallback | Fair-coin mixture, $\beta=1/4$ / $1/128$ |
+|---|---:|---:|---:|---:|
+| 1, cumulative | 180.00 | 179.72 / 179.60 | 179.87 | 179.57 / 179.45 |
+| 2, cumulative | 12.81 | 13.85 / 16.98 | 181.65 | 179.82 / 179.45 |
+| 4, cumulative | 36.22 | 37.26 / 40.40 | 186.67 | 179.88 / 179.46 |
+| 1, reset at 16 blocks | 196.73 | 180.03 / 179.61 | 192.92 | 179.88 / 179.46 |
+| 2, reset at 16 blocks | 55.01 | 56.05 / 59.18 | 186.46 | 179.88 / 179.46 |
+| 4, reset at 16 blocks | 78.08 | 79.12 / 82.26 | 175.12 | 176.14 / 178.68 |
+
+The retained one-state row alone incurred 179.59 nats on alternation and 179.44 on the seeded fair-coin realization. A supplied toggling phase with learned emission rows scored 7.95 and 180.60 respectively. The known generating laws scored zero and 177.45. When the raw pairs repeat, the two-token cumulative fallback attains its exact common-block type penalty, $\ln\binom{131}{3}=12.81$. The small initial mass adds 4.17 nats to recover that forecast on this continuation. The general two-state upper allowance including that cut price is 105.71 nats. In contrast, all observed block starts for this even-length alternator have the same phase. The sharper empirical state-information allowance gives 16.98 nats. The favorable 175.12 nats of one reset model on one iid draw can occur by chance.
+
+A binary trie of lengths 1, 2 and 4 allocated 3, 7 and 31 counters. At the registered 16-block cap these require 15, 35 and 155 packed counter bits. Their 256 causal forecasts took 512, 384 and 320 histogram increments plus 48, 56 and 124 clear writes. The gate and the continuing retained counts are separate. In the exact registered runs the largest stored fraction for a gate before a forecast required as many as 519 bits summed over numerator and denominator.
+
+**Supplemental finite-precision comparison.** After the registration, the finite-gate proof motivated a fully capped two-token variant. It resets the retained counts as well as the block histogram every 32 raw tokens and spends 0, 2, 4 or 8 bits on the gate index. On the alternating stream with $\beta=1/128$ the exact mixture of these capped experts scored 59.18 nats. The four finite gates scored 111.90, 99.76, 68.78 and 59.81 respectively. The eight-bit excess was 0.624 nats. On the fair-coin stream the eight-bit excess was 0.148 nats. At $\beta=1/4$ the corresponding excesses were 0.752 and 0.031. Every 256-token tape has the same eight-bit allowance of $256\ln(257/256)=0.9981$ nats against the exact mixture of the *same* components. These are bit counts for a possible packed implementation. Python uses larger objects.
+
+**NUMERICALLY VERIFIED.** Fraction arithmetic on all 1,524 binary length/configuration cases through seven tokens matched every online probability to an independent integrated histogram, including incomplete and reset blocks. All 3,048 comparisons with the two positive generator starts and all independently chosen per-block maximizing starts respected the bounds. Four small histogram families had exactly 85 distinguishable boundary laws in total. Constant sources attained the partial-block bound. All 768 eight-token tape/gate cases respected the finite-weight bound. The returned losses are logarithms of exact rational tape probabilities. [Proof of block bounds](FOUNDATION.md#recovering-forecasts-after-pruning-with-a-finite-table-of-raw-blocks) · [Weight precision](INTELLIGENCE_OBJECTIVE.md#how-many-bits-must-control-the-mixture-of-two-changing-predictors) · [Reproduction code](block_rescue.py)
+
+~~~powershell
+python research/frontier/block_rescue.py check
+python research/frontier/block_rescue.py sample --output research/frontier/block_rescue_result.json
+~~~
+
 ## Learning the number of visited states from sixteen ordinary tokens
 
 **EMPIRICALLY OBSERVED.** The registration fixed the shared destination urn, its two concentrations, all three tapes, two conventional alternatives and beam width before the outcomes were scored. Each entry below gives mean causal log loss in nats per raw token on positions 1–12 and then 13–16. Every predictor kept learning during those four continuation positions. The suffix mixture weights orders 0 through 3 equally at time zero, with zero-padded initial context. The two-state mixture puts equal weight on all 16 binary deterministic tables with initial address zero. All heads have the same Dirichlet$(1,1)$ initialization. [Frozen registration](https://github.com/alan-ai1196/FP/blob/f9a6c19/research/frontier/NEXT.md) · [Scores and full posterior histograms](state_birth_result.json)

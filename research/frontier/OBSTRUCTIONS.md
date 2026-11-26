@@ -345,3 +345,7 @@ All next-token rows assign at least $1/(n+d)$ and at most $(n+1)/(n+d)$, includi
  \le \ln\!\left(1+\frac{nR_n}{L_n+R_n}\right).
 \]
 Summing these allowances bounds causal excess. They can be loose enough to provide little practical saving. The check uses absolute mass of retained paths, which differs from the product of their renormalized forecasts once pruning starts. [Model and finite-reach proof](FOUNDATION.md#when-ordinary-prediction-can-create-a-previously-unused-state-address) · [Measured certificate slack](EVIDENCE.md#learning-the-number-of-visited-states-from-sixteen-ordinary-tokens)
+
+## An exact small predictor can require a large learner and a large probability register
+
+At a boundary of $n$ length-$b$ blocks over $d$ tokens, the common Dirichlet block law needs $\lceil\log_2\binom{n+d^b-1}{d^b-1}\rceil$ persistent bits for an exact reporter. Each histogram gives a distinguishable future block distribution. A bounded fallback therefore pays for resets, quantization or another model of its counts. Its exact Bayesian allocation alongside one retained predictor can also grow in bit length. An $s$-bit deterministic approximation to that allocation adds at most $\ln(1+2^{-s})$ nats per forecast, with a tight local componentwise guarantee. These costs sit alongside the number of addresses in the deployed generator. [Block memory lower bound](FOUNDATION.md#recovering-forecasts-after-pruning-with-a-finite-table-of-raw-blocks) · [Finite gate precision](INTELLIGENCE_OBJECTIVE.md#how-many-bits-must-control-the-mixture-of-two-changing-predictors)
