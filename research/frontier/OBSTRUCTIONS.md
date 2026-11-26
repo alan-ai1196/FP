@@ -1,5 +1,9 @@
 # Where learning or representation fails
 
+## Exact stochastic width has a measurable approximation cost
+
+For a binary lag-$L$ stream just above the strength $A_L$ attainable by $L+1$ mixture components, every such homogeneous predictor pays at least a constant times $(a-A_L)^2$ per token in long-run average KL. The proof allows approximate predictions with unlimited dependence on earlier inputs through the component probabilities. The constant is explicit and small. Uniformly clipping every context is suboptimal at lag two. [Finite-horizon proof](FOUNDATION.md#the-ordinary-prediction-cost-just-beyond-a-state-threshold) · [Rational counterexample and measured losses](EVIDENCE.md#predictive-loss-and-acquisition-at-a-width-threshold)
+
 ## An exact predictive price for copying
 
 Let a raw prefix be drawn from a law $\mu$, followed by one of $m$ equiprobable fixed suffixes. For their clean sign functions define projective distance $d(g,h)=\min_{\sigma=\pm1}P_\mu(g\ne\sigma h)$. Suppose every pair is separated by at least $\delta$. A width-$k$ signed-copy learner, $k<m$, has at most $k$ choices of prefix bit up to sign for all these suffixes, regardless of its training or prefix encoding.

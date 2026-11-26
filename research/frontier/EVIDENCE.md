@@ -10,6 +10,27 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Predictive loss and acquisition at a width threshold
+
+**PROVED AND NUMERICALLY VERIFIED.** For lag $L\ge2$, the smallest excess log loss among homogeneous mixtures with at most $L+1$ components is $\Theta_L(\delta^2)$ a distance $\delta$ above its exact strength limit. This includes approximate predictors that retain older history. At lag two the best three-component forecast depending on only the last two signs cuts radial clipping's excess exactly in half up to strength $1/3$. All four two-word products from every pure initial address were checked in rational arithmetic at each registered margin. One further component suffices for exact prediction immediately above each threshold. The explicit five-, six-, seven- and eight-component constructions attain $1/6,1/9,27/320,128/1875$ at lags three through six. The audit checks 1,912 word/refresh cases from their calibrated initial rows. Independent derivations agreed on the approximate-simplex obstruction and the half-loss construction. [Proofs and attainable width](FOUNDATION.md#the-ordinary-prediction-cost-just-beyond-a-state-threshold) · [Registration](https://github.com/alan-ai1196/FP/blob/da74cc3/research/frontier/NEXT.md)
+
+| Lag | Margin | Clipped oracle excess | Optimal width-decision error at 256 / 4,096 / 65,536 responses | Correct decisions out of 128 at those sizes |
+|---:|---:|---:|---|---|
+| 2 | 1/64 | 0.00013058 | 0.39822 / 0.15084 / 0.00001802 | 79 / 105 / 128 |
+| 2 | 1/32 | 0.00052384 | 0.30289 / 0.01940 / $6.99\times10^{-17}$ | 90 / 124 / 128 |
+| 2 | 1/16 | 0.00210838 | 0.15065 / 0.00001764 / $8.76\times10^{-62}$ | 111 / 128 / 128 |
+| 3 | 1/64 | 0.00012501 | 0.40028 / 0.15594 / 0.00002617 | 71 / 106 / 128 |
+| 3 | 1/32 | 0.00050091 | 0.30668 / 0.02154 / $2.95\times10^{-16}$ | 89 / 126 / 128 |
+| 3 | 1/16 | 0.00201104 | 0.15597 / 0.00002572 / $2.71\times10^{-59}$ | 111 / 128 / 128 |
+
+Excess is in nats per new token relative to the true conditional law. Error assumes equal prior odds for the two bracketed magnitudes and a fair unknown orientation. At each lag and margin we generated 64 raw training paths per side, half in each orientation, with independent uniform starting words. The three prefixes are nested within a path. Only the lag and the declared family were supplied to the empirical fit. The likelihood decision additionally uses the two bracket values. Counts are computed by comparing actual raw symbols $L$ positions apart. Population loss integrates the prediction on a fresh stationary path exactly conditional on the fit. The binomial tail formulas were evaluated at 75 decimal digits, with a relative truncation bound below $10^{-58}$ on each direct tail, and cross-checked against SciPy.
+
+**EMPIRICALLY OBSERVED.** All 768 longest-prefix fits selected the correct side. At lag two, margin $1/64$ above the limit and 65,536 responses, unrestricted signed-strength fitting with a shift register cost 0.00000951 excess nats, fitting within the clipped model cost 0.00013058, and fitting the adaptive triangle cost 0.00007004. At 256 responses the same quantities were 0.00182248, 0.00132215 and 0.00151278. A model with a smaller estimation variance can win before its population approximation cost dominates. At this lag and margin the smallest-width classifier fails on about 40% of 256-response paths even when given both possible magnitudes. With a known lag, a streaming estimator spends $n+L$ raw tokens, $n$ comparisons and at most $n$ count increments, storing $L$ history bits and one count. The vectorized experimental implementation materializes the raw paths. The four-address lag-two shift uses two live bits and a calibrated scalar. A dense three-component implementation updates its probability vector. The narrower component count alone establishes no physical advantage. [Reproducible audit](delay_threshold_loss.py) · [Exact tails, kernels and measured losses](delay_threshold_loss_result.json)
+
+~~~powershell
+python research/frontier/delay_threshold_loss.py --output research/frontier/delay_threshold_loss_result.json
+~~~
+
 ## Finite-memory mixture realizations and a sharp delay threshold
 
 Two independent proof attempts reached the simplex bound by projecting its parallel chords. An independent construction supplied rational countdown kernels at equality. Full-word rational replay and the separate Lean calculation below check different parts of the argument.
