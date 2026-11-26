@@ -490,3 +490,8 @@ Followed the newly completed KRA mathematical dependency into [MesaNet2506.05233
 ## 2026-11-26 — Pro-E: completion of a previously screened automata source
 
 [Habermehl-Loulergue2606.06050v1](notes/HABERMEHL-LOULERGUE-2026-SYMBOLIC-PASSIVE.md) is fully read after checking current owners and mandatory requests. This extends an existing directional screen, without repeating a global scan. Official DLT2026 metadata authenticates a separate14pagechapter, whose body remains unavailable. Three directly cited primary dependencies were retrieved for narrow canonical-form and learning-interface checks. The note records actual main-reader and assistant coverage. Small characteristic sets price designed labeled witnesses, not their occurrence probability in raw sampled data.
+
+
+### November26 Pro-D constructive learning-dynamics follow-through
+
+The directed multi-index search selected [Zhang etal2511.15120v2](https://arxiv.org/abs/2511.15120v2), accepted at ICLR2026, for complete85page reading. [The note](notes/ZHANG-2026-GENERIC-MULTI-INDEX.md) explains prediction-gradient curvature as a repeated empirical spectral filter and derives a learned-subspace polynomial comparator with explicit prediction error and coefficient moments. The projected-moment/full-inverse interface and theorem-versus-experiment scope are recorded in proportion to their use. [The Generative Leap official NeurIPS2025 record](https://proceedings.neurips.cc/paper_files/paper/2025/hash/290056cc784d4825eb8cf5c72f808ebb-Abstract-Conference.html) was screened as a direct constructive dependency. No new global scan, historical full-reading queue or FP core change.
