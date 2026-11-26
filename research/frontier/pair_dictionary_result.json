@@ -1,0 +1,220 @@
+{
+  "registration": "0566b90",
+  "contrast": 0.5,
+  "finite": {
+    "4": {
+      "distinct_unlabelled_assignments": 3,
+      "direct_second_moments": [
+        "13/12",
+        "19/16"
+      ],
+      "two_pair_second_moment_relative_to_equality": "51/50",
+      "relative_sign_code_gains": [
+        0.038098442544340014,
+        0.08720802396075798,
+        0.13081203594113697,
+        0.13081203594113697
+      ],
+      "bayes_gain_after_zero_one_two_pairs": [
+        0.03809844254434003,
+        0.04767659383424913,
+        0.05566588010381948
+      ],
+      "optimal_two_message": {
+        "gain": 0.08720802396075798,
+        "cell_sizes": [
+          1,
+          2
+        ],
+        "cell_mask": 1,
+        "exactly_tied_best_encoders": 3,
+        "encoders_compared": 3
+      }
+    },
+    "6": {
+      "distinct_unlabelled_assignments": 10,
+      "direct_second_moments": [
+        "21/20",
+        "797/720"
+      ],
+      "two_pair_second_moment_relative_to_equality": "733/729",
+      "relative_sign_code_gains": [
+        0.022345890283671357,
+        0.03458479182875093,
+        0.05866916217060295,
+        0.0959288263568338,
+        0.130812035941137,
+        0.130812035941137
+      ],
+      "bayes_gain_after_zero_one_two_pairs": [
+        0.022345890283671375,
+        0.024964002677826263,
+        0.028032411392201764
+      ],
+      "optimal_two_message": {
+        "gain": 0.03547176472357152,
+        "cell_sizes": [
+          4,
+          6
+        ],
+        "cell_mask": 54,
+        "exactly_tied_best_encoders": 15,
+        "encoders_compared": 511
+      }
+    },
+    "8": {
+      "distinct_unlabelled_assignments": 35,
+      "direct_second_moments": [
+        "29/28",
+        "43/40"
+      ],
+      "two_pair_second_moment_relative_to_equality": "3389/3380",
+      "relative_sign_code_gains": [
+        0.0158119803953818,
+        0.021580362136948014,
+        0.033098463060856315,
+        0.05037229067217708,
+        0.07338329834344988,
+        0.10278088538232191,
+        0.13081203594113694,
+        0.13081203594113694
+      ]
+    },
+    "12": {
+      "distinct_unlabelled_assignments": 462,
+      "direct_second_moments": [
+        "45/44",
+        "4975/4752"
+      ],
+      "two_pair_second_moment_relative_to_equality": "23839/23814",
+      "relative_sign_code_gains": [
+        0.0099781248329893,
+        0.01221106444947943,
+        0.0166770851268266,
+        0.02337672119315308,
+        0.032311222270200335,
+        0.043483273759419065,
+        0.05689839330940656,
+        0.07256889986940354,
+        0.09051313071250544,
+        0.11099203049551044,
+        0.13081203594113777,
+        0.13081203594113777
+      ]
+    }
+  },
+  "simulation": [
+    {
+      "vocabulary": 12,
+      "training_pairs": 12,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0099781248329893,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": -0.08900578744254295,
+      "learned_gain_standard_error": 0.0051597683490878605,
+      "mean_absolute_overlap": 0.36458333333333337,
+      "max_balanced_swaps": 1,
+      "exhaustive_fit_mean_gain": -0.08471433318993316,
+      "supplemental_full_posterior_mean_gain": 0.015822630920934753
+    },
+    {
+      "vocabulary": 12,
+      "training_pairs": 48,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0099781248329893,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.04474453676379592,
+      "learned_gain_standard_error": 0.009104360383652728,
+      "mean_absolute_overlap": 0.7786458333333333,
+      "max_balanced_swaps": 2,
+      "exhaustive_fit_mean_gain": 0.04259880963749102,
+      "supplemental_full_posterior_mean_gain": 0.07329860691951463
+    },
+    {
+      "vocabulary": 12,
+      "training_pairs": 192,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0099781248329893,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.13081203594113694,
+      "learned_gain_standard_error": 4.925818139023895e-18,
+      "mean_absolute_overlap": 1.0,
+      "max_balanced_swaps": 0,
+      "exhaustive_fit_mean_gain": 0.13081203594113694,
+      "supplemental_full_posterior_mean_gain": 0.13079704391295377
+    },
+    {
+      "vocabulary": 12,
+      "training_pairs": 768,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0099781248329893,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.13081203594113694,
+      "learned_gain_standard_error": 4.925818139023895e-18,
+      "mean_absolute_overlap": 1.0,
+      "max_balanced_swaps": 0,
+      "exhaustive_fit_mean_gain": 0.13081203594113694,
+      "supplemental_full_posterior_mean_gain": 0.1308120359411369
+    },
+    {
+      "vocabulary": 24,
+      "training_pairs": 24,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0047363442079084855,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": -0.10623120798426842,
+      "learned_gain_standard_error": 0.0035563789918363906,
+      "mean_absolute_overlap": 0.30859375,
+      "max_balanced_swaps": 2,
+      "exhaustive_fit_mean_gain": null,
+      "supplemental_full_posterior_mean_gain": null
+    },
+    {
+      "vocabulary": 24,
+      "training_pairs": 96,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0047363442079084855,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.014525546401668558,
+      "learned_gain_standard_error": 0.007468816062980853,
+      "mean_absolute_overlap": 0.7200520833333334,
+      "max_balanced_swaps": 3,
+      "exhaustive_fit_mean_gain": null,
+      "supplemental_full_posterior_mean_gain": null
+    },
+    {
+      "vocabulary": 24,
+      "training_pairs": 384,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0047363442079084855,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.13015639709698823,
+      "learned_gain_standard_error": 0.0006556388441487198,
+      "mean_absolute_overlap": 0.9986979166666667,
+      "max_balanced_swaps": 1,
+      "exhaustive_fit_mean_gain": null,
+      "supplemental_full_posterior_mean_gain": null
+    },
+    {
+      "vocabulary": 24,
+      "training_pairs": 1536,
+      "fits": 128,
+      "uniform_gain": 0.0,
+      "equality_gain": 0.0047363442079084855,
+      "supplied_gain": 0.13081203594113697,
+      "learned_mean_gain": 0.13081203594113694,
+      "learned_gain_standard_error": 4.925818139023895e-18,
+      "mean_absolute_overlap": 1.0,
+      "max_balanced_swaps": 0,
+      "exhaustive_fit_mean_gain": null,
+      "supplemental_full_posterior_mean_gain": null
+    }
+  ]
+}

@@ -19,6 +19,29 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Learning an unknown dictionary from pairs of ordinary words
+
+**EMPIRICALLY OBSERVED on the registered synthetic pair source.** A balanced partition was freshly sampled for each fit. The only training observations were ordered word pairs. We counted them, symmetrized the graph, centered its operator on the subspace perpendicular to the all-ones vector, split its leading eigenvector into equal halves, then greedily swapped oppositely assigned names while a swap strictly increased the ordinary training likelihood. This is a polynomial heuristic. At $D=12$ we also fit every one of the 462 partitions up to a global sign flip. At $D=24$ the family contains 1,352,078 partitions and the exhaustive fit was omitted. All predictors in the table were scored by exact expected fresh-pair log loss given the generating assignment, across 128 independent fits per cell at $\kappa=1/2$. The sign assignment was used only to generate samples and evaluate forecasts. The uniform predictor's gain is zero, and the supplied oracle's gain is 0.130812 nats per second word. [Registration](https://github.com/alan-ai1196/FP/blob/0566b90/research/frontier/NEXT.md) · [All dimensions, standard errors and cases](pair_dictionary_result.json)
+
+| Names | Training pairs | Equality only | Learned spectral partition | Exhaustive fitted partition | Full posterior, supplemental |
+|---:|---:|---:|---:|---:|---:|
+| 12 | 12 | 0.00998 | −0.08901 | −0.08471 | 0.01582 |
+| 12 | 48 | 0.00998 | 0.04474 | 0.04260 | 0.07330 |
+| 12 | 192 | 0.00998 | 0.13081 | 0.13081 | 0.13080 |
+| 12 | 768 | 0.00998 | 0.13081 | 0.13081 | 0.13081 |
+| 24 | 24 | 0.00474 | −0.10623 | | |
+| 24 | 96 | 0.00474 | 0.01453 | | |
+| 24 | 384 | 0.00474 | 0.13016 | | |
+| 24 | 1,536 | 0.00474 | 0.13081 | | |
+
+All fits used the supplied contrast. With one training pair per name, selecting and deploying a single full-strength partition lost to uniform at both sizes. At 16 pairs per name the learned dictionaries earned the full oracle gain at 12 names and 99.5% of it at 24. The supplemental Bayesian predictor retained posterior weights on all 462 candidates at $D=12$. Its earlier advantage shows the cost of committing to one uncertain dictionary. The $24\times24$ int64 count table uses 4,608 bytes, and the analogous $12\times12$ table uses 1,152. The polynomial fit also uses dense arrays of the same order for centered counts, eigensolver workspace and swap scores, with one dense eigensolve and at most three accepted swaps observed across the 1,024 fits. Storing all 462 length-12 candidates as int64 takes 44,352 bytes before scores and posterior weights. After fitting one assignment, a literal dictionary can use one bit per name, with a single transient sign between words. Generating and scoring every possible output still costs $O(D)$ without a specialized sampler. [Executable fits](pair_dictionary.py)
+
+**NUMERICALLY VERIFIED.** Exact integer likelihood sums for all one- and two-pair tapes at $D=4,6,8,12$ matched an independent hypergeometric overlap computation, both against uniform and, at two pairs, against the equality predictor. Direct summation of all histories through three pairs at $D=4,6$ checked the gain before training and after one and two ordinary pairs. At $D=6$ these gains were 0.022346, 0.024964 and 0.028032 nats. Exact rational comparison of all 511 nontrivial two-message encoders up to message exchange found 15 tied best encoders when the *entire* six-name dictionary was known at the cut. They achieved 0.035472 nats. Storing only one fixed relative sign earned 0.034585. At $D=4$ all three one-bit encoders tied. Thus literal relative-sign storage attains the asymptotic rate and can have a worse finite constant than a message summarizing the whole dictionary. [Storage proof](FOUNDATION.md#how-many-bits-of-a-learned-dictionary-can-predict-a-fresh-pair) · [Acquisition proof](INTELLIGENCE_OBJECTIVE.md#finding-an-unknown-raw-word-distinction-before-it-can-be-stored)
+
+~~~sh
+python research/frontier/pair_dictionary.py
+~~~
+
 ## Can the curvature of ordinary text likelihood choose a useful word distinction?
 
 **EMPIRICALLY OBSERVED.** Starting from the previously fitted pooled distribution, the largest training-likelihood curvature chose a lexical split that lowered loss in all 16 contiguous reporting blocks. The absolute gains were just **1.55 and 0.89 nats per 65,536 tokens**. The linear accumulator on the same learned word direction did slightly better. Shuffling the training order produced a weaker split on report A and a stronger one on report B. The static average of the earlier EM rows saved 990.58 and 768.24 nats. These same-source controls considerably limit what can be attributed to the learned recurrence. [Prospective protocol](https://github.com/alan-ai1196/FP/blob/4cfe00c/research/frontier/NEXT.md) · [All 80 validation scores, eigenvalues and blocks](lexical_curvature_result.json)
