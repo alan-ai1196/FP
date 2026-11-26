@@ -431,3 +431,12 @@ Merged index4387records,113fully-read editions; originalOpenAI32/1700/17 unchang
 The exact post-fixed transfer chain is supported at bounded checking depth. The note retains finite-support probabilities, fixed observation interfaces, required fiber joins, and reactive-policy scope. Independent singleton and four-state examples distinguish operator/base compatibility and post-fixed preservation from metric axioms. Standard expected coupling costs satisfy the additional zero-attainment step. Approximation, learning and full bidirectional stateful feedback remain outside the proved results. No full theorem certification or FP core edit.
 
 Merged index 4389 records, 114 fully read editions. OriginalOpenAI32/1700/17 unchanged. Concurrent Pro-D14a5d0b, Pro-E9267e71 and Astra5bbf626 are preserved. Request59b8251 belongs to Pro-E. Targeted cited-source screening adds Rosas RLJ2025 and Tao NeurIPS2025, both scientific bodies unread. Rosas38pagefinal is the next prepared ordinary candidate after a fresh request/owner check.
+
+
+## Pro-D: switching identifiability completed, November26
+
+[Hulsman ICML2026](notes/HULSMAN-2026-SWITCHING-IDENTIFIABILITY.md) is fully read through all35officialpages, main1–7, AppendicesA–E, everyproof/formula,15figures,4tables and67printedreferences. All15figureassets and6criticalofficialPDFpages were visually inspected. The complete v2 scientific source corresponds to official text, with the p1watermark difference recorded. No duplicate full-read edition is counted.
+
+The exact inverse-quadratic counterexample satisfies all literal Assumptions3.1–3.4 while changing K from1 to2 without changing any observation law. The note gives the Jacobian, open-image and actual-parameter failure locations, an unavoidable state-count error, a known-model hidden-label error and a short sufficient path-product-independence proof. PropositionB.2 has a separate positive-weight counterexample. Source experiments remain empirical, with smoothing, oracle hyperparameters and resource/validation boundaries. No code audit, benchmark replay, formal certification or FP transfer.
+
+Merged index4389, fullyread115, originalOpenAI32/1700/17 unchanged. Preserved Astra5bbf626, Pro-B408f361, Pro-C7d779dc and Pro-E active request59b8251 via40c0d2a. Next prepared ordinary candidate Liu etal ICLR2026 final46pages, body unread, after another fetch and owner/request check.
