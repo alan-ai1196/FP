@@ -440,3 +440,12 @@ Merged index 4389 records, 114 fully read editions. OriginalOpenAI32/1700/17 unc
 The exact inverse-quadratic counterexample satisfies all literal Assumptions3.1–3.4 while changing K from1 to2 without changing any observation law. The note gives the Jacobian, open-image and actual-parameter failure locations, an unavoidable state-count error, a known-model hidden-label error and a short sufficient path-product-independence proof. PropositionB.2 has a separate positive-weight counterexample. Source experiments remain empirical, with smoothing, oracle hyperparameters and resource/validation boundaries. No code audit, benchmark replay, formal certification or FP transfer.
 
 Merged index4389, fullyread115, originalOpenAI32/1700/17 unchanged. Preserved Astra5bbf626, Pro-B408f361, Pro-C7d779dc and Pro-E active request59b8251 via40c0d2a. Next prepared ordinary candidate Liu etal ICLR2026 final46pages, body unread, after another fetch and owner/request check.
+
+
+## Pro-D: prediction and concept identifiability completed, November26
+
+[Liu etal ICLR2026](notes/LIU-2026-PREDICTION-CONCEPT-IDENTIFIABILITY.md) is fully read through all46officialpages,main1–8,AppendicesA–R,everyactiveproof/formula,2scientificfootnotes,24figures/67assets,6tables and96printedreferences. All16figure-bearingPDFpages and8criticalproofpages were visually inspected. Complete active scientificTeX was read. Text-matched arXivv4 is a companion, not a second full-read edition.
+
+The note retains the exact positive-log Bayes identity and proves the corrected TV-times-log-oscillation bound. A strictly positive three-state model refutes deletion of the correction under all printed asymptotic premises. A separate two-bit model meets the approximation but loses a generating concept irrelevant to the next token. Universal null-vector algebra rules out the claimed complete left inverse, while a conditional centered-log readout remains valid. KL factorization does not control unweighted log tails. Empirical held-out/null controls, SAE resource/target limits, posterior-proxy mismatch and a locked three-script reproduction boundary are documented without training replay or full certification.
+
+Merged index4393,fullyread116,originalOpenAI32/1700/17unchanged. Preserved Astraf12abe0 and Pro-E's active request59b8251 at40c0d2a. Next ordinary selection follows another fetch and owner/request check.

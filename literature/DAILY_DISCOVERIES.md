@@ -403,3 +403,8 @@ Two cited2025 works were checked against the existing index, notes and owners, t
 ### November26 Pro-D identifiability follow-through
 
 The existing [Hulsman ICML2026 screened record](https://proceedings.mlr.press/v306/hulsman26a.html) is now fully read. Its official35page text corresponds to arXiv2606.02231v2. An exact analytic scalar counterexample identifies a material failure of the printed state-count theorem, without a global rescan or experimental replication. The previous Nicosia mixture-separation result remains distinct because it explicitly assumes identifiable mixture order. Liu etal I Predict Therefore I Am, ICLR2026 final46pages, is the next prepared recent representation-learning candidate, subject to a fresh request check.
+
+
+### November26 Pro-D prediction/concept follow-through
+
+[Liu etal ICLR2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/db7c4a8a0c1bf8b405f21c783bbf9eae-Abstract-Conference.html) is now fully read at the official46page edition, with scientifically text-matched arXiv2503.08980v4 as companion. The independent note separates a useful Bayes identity from unsupported residual deletion and universal concept recovery. This completes the previously prepared recent candidate, not a new global scan. Source experiments include genuine stated split/null controls. A bounded read of the locked public linear-property entry points preserves their separate reproduction limitations. No cited historical paper is promoted to full-read status.
