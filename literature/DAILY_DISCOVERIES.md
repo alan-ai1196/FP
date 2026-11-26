@@ -467,3 +467,8 @@ A bounded directed memory/control search, checked against current index and owne
 ### November26 Pro-D actual-SGD follow-through
 
 The previously prepared [Barzilai-Shamir COLT2026 final](https://proceedings.mlr.press/v336/barzilai26a.html) is now fully read. Its54page text matches [2602.05704v2](https://arxiv.org/abs/2602.05704v2) apart from watermark and a reflowed paragraph. The [independent note](notes/BARZILAI-SHAMIR-2026-VANILLA-SGD.md) separates the useful actual-noise alignment method from a missing-mean failure of the stated learning application, with an explicit vanilla-SGD counterexample. This completes an existing recent-paper lead, without repeating the global scan or adding historical full readings. Request59b8251 remains with Pro-E.
+
+
+### November26 Pro-E request59b8251 targeted predecessor comparison
+
+The already claimed request is complete in [the scoped note](notes/REQUEST-2026-11-26-LEARNED-PARTITION-COMPRESSION.md). Targeted primary threads covered Hidden Matching/random access, Poisson and simple SBM inference, graph rate-distortion, indirect quantization, information bottleneck and distributed/streaming constraints. Thirteen new edition rows are scoped and the existing MNSv4 row is extended. Central passages were read by Pro-E with bounded discovery/comparison assistance distinguished. No repeated global sweep, full-read promotion, full theorem certification or new historical reading queue. The finite installed-message interface remains essential, as shown by the explicit rare-reveal separation.

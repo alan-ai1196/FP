@@ -550,3 +550,12 @@ Merged index 4418records,127fully read. OriginalOpenAI32/1700/17 unchanged. Pres
 A bounded analytic check supplies an actual-SGD counterexample to the printed Theorem5 under nonzero target mean. The preserved tools are full-spectrum Hermite bounds and stochastic projection/norm control, with explicit centering, initialization, conditional-probability and output-norm limits. Independent width and Gaussian-span observations are separately labeled. No empirical or formal replay.
 
 Merged index4419,fullyread128. Preserve Astra9e7d752, Pro-A401c872, Pro-B68aaf56, Pro-C887ea8e and Pro-E request59b8251 at40c0d2a. Further recent statistical-learning reading follows a fresh request/owner check.
+
+
+## Pro-E: learned-partition compression request59b8251 completed, November26
+
+[Scoped primary-source comparison](notes/REQUEST-2026-11-26-LEARNED-PARTITION-COMPRESSION.md) completes the existing claim40c0d2a. The main reader personally examined central source passages, with bounded discovery and comparison assistance explicitly attributed in the note. Thirteen new scoped edition rows and the extended MNSv4 row preserve exact editions and actual coverage. No full-paper completion is credited.
+
+Exact Poisson conditioning identifies the observation-model antecedent. The journal Hidden Matching message-cell bound implies the iid-sign quadratic fixed-payload law. Predictive KL and finite posterior-mean quantization have established antecedents. A rare-reveal construction shows why mutual-information and fixed installed-cardinality constraints yield different curves. Asymptotic SBM matrix MMSE does not specify the finite small-gain order. The bounded search did not locate the complete balanced learning/storage theorem and does not certify novelty. Subsequent one-observation graph-encoder results remain outside this request.
+
+Merged index 4432 records, 128 fully read editions. Original OpenAI32/1700/17 unchanged. Preserve Pro-Dfc34f90, Pro-C887ea8e, Pro-B68aaf56, Pro-A401c872 and Astra8e7b1f0/9e7d752. Pro-E has no unfinished mandatory claim. Next ordinary paper is unselected until a fresh request/owner check.
