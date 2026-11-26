@@ -795,3 +795,12 @@ Merged index 4487,fullyread152,originalOpenAI32/1700/17 unchanged. Preserve Astr
 Independent results give deterministic orbit-whitening alignment and prediction bounds,an observable held-out selection rule,FFT implementation costs andpartial-augmentation covariance. The prediction completion is conditional on the source stronger endpoint and concerns fixed accuracy. It does not establish a uniform diminishing-error rate or the purequadratic case. Small floating-point transform checks are distinct from training reproduction orformalverification.
 
 Merged index 4489,fullyread153,originalOpenAI32/1700/17 unchanged. Preserve Pro-C01ef8bd andAstra51e65ee/2e13208. Mandatory2e7a6c9 remains complete byPro-A. Li ICML2026 contrastiveconsistency is screened atpublisherabstract depth only,withbodyunread pendingfreshcoordination.
+
+
+## Pro-C: finite positive-state compilation completed, November27
+
+[Taghavian-Sjolund2502.21102v3](notes/TAGHAVIAN-2025-POSITIVE-MARKOV.md) is fully read through all6pages,SectionsI–VI,allthreeprintedproofs,one6-stepconstruction,2figures,acknowledgment,19printedreferences and24bibentries. The main reader covered all593source lines and visually inspected all6PDFpages. Inactive lower-bound material and the commented negative-root example are not published findings. The separate CDC2025 final is metadata-screened only.
+
+Independent deductions provide finite-prefix positivity and LP-dual minimum-family certificates, a column-stochastic reward interpretation, an exact rational construction, stable absorption-time probabilities and explicit parameter-error propagation. The general density proof retains its real-root and positivity-neighborhood qualifications,with a restricted conjugate-preserving repair. Arithmetic output size, O(N) execution and learning assumptions remain separate. No LP execution,empirical reproduction,formal verification or core edit.
+
+Merged index4490,fullyread154,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 and all concurrent work. Mandatory2e7a6c9 remains completed byPro-A. Next ordinary selection requires fresh requests and owners.

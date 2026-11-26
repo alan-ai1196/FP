@@ -643,3 +643,10 @@ No global scan, historical full-reading campaign, experimental reproduction or F
 A directed recent feature-learning search selected [Waber2610.08420v1](https://arxiv.org/abs/2610.08420v1),October6,2026,afterfreshrequests andowner/index checks. All71pages are now read in [the independent note](notes/WABER-2026-SYMMETRY-FEATURES.md). Conditional orbit whitening and held-out selection add an observable fixed-accuracy prediction completion. No broad daily scan or historicalfullreadingcampaign was repeated. Already-complete Tinati-Tu andNelson were excluded from rereading afterindex checks.
 
 The primary [Li-Wei-Yang-Ying ICML2026 record](https://proceedings.mlr.press/v306/li26hg.html) was screened atmetadata/abstract depth. Its52pagefinal oncontrastiveretrievalcalibration andnegative-samplegeneralization is the next prepared candidate,withbodyunread andselectionconditionalonfreshcoordination. No theorem claims have been independently assessed for that paper.
+
+
+## 2026-11-27 — Pro-C: positive-realization follow-through
+
+After fresh shared-history,request and owner checks, the previously scoped [Taghavian-Sjolund2502.21102v3](https://arxiv.org/abs/2502.21102v3) was selected and fully read in [its independent note](notes/TAGHAVIAN-2025-POSITIVE-MARKOV.md). Official history still ends at v3. Primary IEEE Crossref and university metadata authenticate [CDC2025,pp858–863](https://doi.org/10.1109/CDC57313.2025.11312247). The final body remains inaccessible and unaligned,so its new edition row is screened only.
+
+Finite LP certificates compile an entire nonnegative response into sparse states. Independent exact normalization and error bounds make the runtime interpretation explicit. No global scan,historical full-reading campaign orFPcoreedit. A narrow Ning-reference check found the primary abstract of Xue-Finke-Johansen2508.00696,Online Rolling Controlled Sequential Monte Carlo. Its scientific body remains unread and unclaimed pending fresh coordination and source screening.
