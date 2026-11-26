@@ -10,6 +10,23 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## New word identities read an already constructed value
+
+**EMPIRICALLY OBSERVED.** The frozen ordinary-word program had learned $a$ on one training slice and $c=a\,b$ on the next. Every earlier correction treated the complement of the first 12 word types as one output. On a third disjoint training slice, two new readers distinguished ranks 13–24 inside that complement, then ranks 25–36 inside the remaining complement. At a one-window installation price, validation chose a 35-bit read of $c$ for the first task and a separate 35-bit read of $a$ for the second. Each is a newly fitted output mask and scalar tilt. The pre-existing 374-bit predictor remained active. Its old class probabilities were preserved exactly by construction. [Registration](https://github.com/alan-ai1196/FP/blob/51aa0d9/research/frontier/NEXT.md)
+
+| Validated joint installation | Added bits | Gross validation nats | 45M gain | 47M gain | 49M gain |
+|---|---:|---:|---:|---:|---:|
+| Priced choice with product available | 70 | 86.23 | 143.65 | 112.62 | 198.96 |
+| Priced choice using constituents only | 70 | 77.65 | 175.19 | 133.32 | 185.17 |
+| Priced freshly learned raw-name heads, including base | 0 | 0 | 0 | 0 | 0 |
+| Unpriced choice with product available | 1,190 | 112.37 | 200.50 | 190.43 | 211.10 |
+| Unpriced choice using constituents only | 854 | 109.09 | 211.96 | 183.56 | 202.52 |
+| Unpriced freshly learned raw-name heads, including direct rows | 11,167 | 81.42 | 171.36 | 151.56 | 178.99 |
+
+Gains are nats over the frozen model on 32,768 full raw-token positions per window. On the first new conditional task the priced product head gained 80.6, 87.9 and 106.7 nats. The same-price $a$ head gained 112.2, 108.6 and 92.9. The second product-available installation used $a$ in both comparative procedures and gained 63.0, 24.7 and 92.2 on that task. Thus the product transferred to previously unmodeled within-class distinctions, with mixed comparative advantage over its constituent. The joint 70-bit purchase paid its 48.52-nat price on each reporting tape. Including the upstream program yields 444 total bits under rank reuse and 1,468 with all 64 ordered raw word names transmitted. The earlier within-class law came from an already trained lexical/trigram base and the raw history contains word identities. This comparison concerns transfer of a learned value to a new normalized output objective.
+
+Training used 131,072 words, of which 96,449 and 89,235 visited the two parents. Each had 70 candidates including a neutral option. Coarsening preserved full-vocabulary normalization and parent masses to below $1.1\times10^{-15}$ at the explicitly enumerated reporting positions. An independent exact audit checked 256 nested rational programs on six raw outcomes. All selected installed heads decoded exactly from their stored parameters. The two fresh-name fits examined 16,384 output masks, and the real-direction and direct fits used 1,117 and 109 optimizer evaluations across both tasks. Existing $a,b,c$ require no new lexical table to read. A compact reader adds one output sign mask on its 13 child classes and a scalar. The two actual readers and the frozen roots can publish the whole next-token law from 37 aggregated base masses. [Learner and normalization audit](word_value_readers.py) · [Full token and node-specific results](word_value_readers_result.json)
+
 ## Reusing an already learned bit inside a second word prediction
 
 **EMPIRICALLY OBSERVED.** A new learner took the input bit of the frozen 266-bit rule and used it again inside a product with a learned sign of the token two positions back. The first output path still used the original bit. Chronological learning on 131,072 fresh tokens selected the new word signs, output signs and amplitudes. Across all registered families at a one-window storage price, validation selected a constant-context correction followed by this product, adding 108 bits. Its gains were positive on all three previously unscored 32,768-token training-source windows and exceeded the selected additive growth baseline on 20 of 24 consecutive reporting blocks. The third window alone did not repay the entire addition. [Registration](https://github.com/alan-ai1196/FP/blob/5ce71e8/research/frontier/NEXT.md)

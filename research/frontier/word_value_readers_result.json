@@ -1,0 +1,4157 @@
+{
+  "registration": "51aa0d9",
+  "training_offset": 43000000,
+  "training_words": 131072,
+  "validation_words": 32768,
+  "fit_validation_sha256": "ec403e94b15004f56e139205994adb1f5e9c602e10f27c65355327585c59d1a6",
+  "frozen_program": "either-8",
+  "frozen_bits_shared": 374,
+  "frozen_bits_standalone": 1398,
+  "rational_normalized_trees": 256,
+  "training_parent_occurrences": [
+    96449,
+    89235
+  ],
+  "validation_parent_occurrences": [
+    24417,
+    22793
+  ],
+  "work": {
+    "12": {
+      "compact_steps": 24,
+      "real_objectives": 578,
+      "direct_objectives": 52,
+      "fresh_sign_masks": 8192,
+      "scalar_objectives": 45
+    },
+    "24": {
+      "compact_steps": 24,
+      "real_objectives": 539,
+      "direct_objectives": 57,
+      "fresh_sign_masks": 8192,
+      "scalar_objectives": 30
+    }
+  },
+  "candidates": {
+    "12": {
+      "unchanged": 1,
+      "static": 7,
+      "a": 10,
+      "b": 10,
+      "c": 10,
+      "additive": 10,
+      "all_bits": 10,
+      "fresh": 6,
+      "direct": 6
+    },
+    "24": {
+      "unchanged": 1,
+      "static": 7,
+      "a": 10,
+      "b": 10,
+      "c": 10,
+      "additive": 10,
+      "all_bits": 10,
+      "fresh": 6,
+      "direct": 6
+    }
+  },
+  "models": {
+    "12": {
+      "unchanged-1": {
+        "method": "none",
+        "family": "unchanged",
+        "bits": 0,
+        "validation_gain": 2.574607194105738e-13
+      },
+      "additive-2": {
+        "method": "real",
+        "features": [
+          "one",
+          "a",
+          "b"
+        ],
+        "q12": [
+          [
+            -351,
+            -1964,
+            -37,
+            -1007,
+            -1162,
+            -1829,
+            -3019,
+            -315,
+            -3080,
+            -1347,
+            198,
+            -349
+          ],
+          [
+            -1370,
+            -2347,
+            -1133,
+            -2387,
+            -1479,
+            -2527,
+            3284,
+            -1622,
+            -2041,
+            -1353,
+            -1457,
+            -420
+          ],
+          [
+            1024,
+            1146,
+            909,
+            719,
+            1131,
+            1057,
+            109,
+            -58,
+            1183,
+            934,
+            -380,
+            1317
+          ]
+        ],
+        "ridge": 4,
+        "family": "additive",
+        "bits": 511,
+        "validation_gain": 68.56177109648095
+      },
+      "a-3": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "------+-----+",
+            "beta_q12": 646
+          }
+        ],
+        "family": "a",
+        "bits": 35,
+        "validation_gain": 38.421821180870616
+      },
+      "all_bits-4": {
+        "method": "real",
+        "features": [
+          "one",
+          "a",
+          "b",
+          "c"
+        ],
+        "q12": [
+          [
+            -229,
+            -1630,
+            54,
+            -1132,
+            -823,
+            -1250,
+            -2867,
+            -225,
+            -2712,
+            -1160,
+            -917,
+            -356
+          ],
+          [
+            -915,
+            -1933,
+            -889,
+            -2558,
+            -904,
+            -1815,
+            2973,
+            -1489,
+            -1612,
+            -815,
+            -1527,
+            -483
+          ],
+          [
+            820,
+            742,
+            769,
+            891,
+            722,
+            350,
+            -657,
+            -187,
+            732,
+            508,
+            -412,
+            1321
+          ],
+          [
+            -693,
+            -510,
+            -365,
+            228,
+            -712,
+            -888,
+            954,
+            -193,
+            -542,
+            -1024,
+            -1542,
+            67
+          ]
+        ],
+        "ridge": 4,
+        "family": "all_bits",
+        "bits": 679,
+        "validation_gain": 69.64553255883563
+      },
+      "c-5": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "c",
+            "s": "------+-----+",
+            "beta_q12": 642
+          }
+        ],
+        "family": "c",
+        "bits": 35,
+        "validation_gain": 46.99499004954025
+      },
+      "direct-6": {
+        "method": "rows",
+        "lag": 1,
+        "q12_zlib_base64": "eJwVk/tTVfcVxc853IuKNT7G+srExziJCU3taBKd2iE2cWIaY1ufpKJVA1prsJqAXEkdW8EoVmJM0IhV22E0gUBIQAuOCmWqMYiBiViCIL6C/BAlkVZy4Z7zPXuv1dM/YO/Z6/NZ+ytnmjtaJ/SN4nD/HWn2VkRnuLXeOKte98VWxXriZse2xTqkNnYqVuP+FF3+8Gj39y/0tfRaffOj1XKtf1G0sO++95aMjf3LS3Qr3f39K2K3dFes2pxz2/xGGdNn9c/F1N5T/pvSpZX9A/querdNWmiau6W/zR9oyrx17ki85D9tNssqabRS/Zvud6bUqzevmRQcMVlmtb9FvtA5boc70Wvwut1kNxf57n1T7B2QP2mv+01ssUnXseaz/v2IWGvQaCbrDb3tDo2VeXe8iNfltmKkV+8+ZhbpA20wT4Z3+Ikm3V1oHmCxNWhQq9+sa3Ay9gMn2SnWZH3NJHKy0h1lxqAYhItn+QJ/xp9zZNyv+SpT+DrXs9YvMEtlkn/H1PtL2e+f8AvlN7iJ8dyn26XCpIgj67nRPo3Lkok+rB1sTIc0+TWyVnKZK8tlko7wx7FSHlBkNa/JA7zJEeHpuBp3Bnec3ZLt1wn9RGufbONV/zCf10/wMNt0mNOCmzoIZ3GYI+N7cMtqRS6PShVP6k3Zo0OkgGlaJN3qYx6vaKVU2xE7AZ16itGATDJmcRsztcg0aVgTnDlSwvSBA0M2hgfpTpvvnAUJS0zUPy5lnC1p3lOqSKHn/91sDRKGJORnMUejvCRb/k/H/9RkySx/kXzrH2SCtPvnZBfGcqI+KTn6RmB0vJbwXeuQ1GgflvKKydbRuGv32GV+fpB8tG6UyZwbv8dP8+aGEmWCvRm7Ocms83P9V/A1NuluadD/yjA7Q0u5ROtEdRhTuUwjUqWdclSXaTnnJizQbk0I7k/FdS3CYb8AG1DLrSh0PsPvuJ8d9mCWelPdH3FwQhMLhuRgl5PNSFy2s1c3YKW9AtNwgkMxDgfwKz4RatdhOgWpGpXbWsGkUJcswTOMsEIPgvqcDmKi1PIDLZc33Kl82qm2b8lHdqUmO69b59mjLzrEn/k2z2iS9zCK/dMQOc0v9ZK+hBlcjxm6Rsq0VAp0np7lak3Sr3UoNzAdX+rF/sdQiE1o4GLMQq+1iXsCc+m6HLU6D6NxkY/jvu7AK85+TsaNoPMX1FgbtZkFdqPk47c8ygLu5SesYDk/ZVHQjRqe4QWe44fodKpCH0fzvAxe4jdWOaKaw2wW6efyH52k7XpQG1mqf9HxmMadnD3gCfjhJFxCCZpYhffwPXKYGfcLtEgqsuxX8YE08RbHaVnAeSdPok6S+IdwAyrRzRSM4gJ+zJV8Hz/EF0gO6O7AZc533sddDNYy7kOefR7Powr5uMFDeAvNmB9XxeNxYyXMVfYpB3qdf3N26Kqg7/8M9szAbWRip3MCV1iMCgjyaDnXcFFvBP+aEepkO7NMB5rsQ7yGNDTpUYzAXkxHCzdhOeqQwRKOcO5pof4YediCZuZpBi4jwofsDWjV4xgT3Pl7tAdtWo0LyJZy/kM75K4+pfe0RP/Ns/rXYHYW3wnMzUQnMtCKk7jKOhxCjp3PKsbjEa2zj2mu7ZlGXtc46zlZyOrwTHRjEdfhZc7kHT7LR3nCCnrBz7EQvcjCEanHdV7BeQzhAZ7l1tAyTBwwB9+iEa1sCzwMD9w+5ExBRF/EOV2CCWjjTwK6b+MRHOMzrNHFHMLHOYX3uF2ncw1r2cp4I1YEpQp7pfMVfxmO6RGs5TFuj78cSo9fOmBzqDDceb8n1IIuOzP8x9D/AADLPa8=",
+        "ridge": 4,
+        "family": "direct",
+        "bits": 10927,
+        "validation_gain": 50.05470352368534
+      },
+      "static-7": {
+        "method": "real",
+        "features": [
+          "one"
+        ],
+        "q12": [
+          [
+            416,
+            305,
+            625,
+            562,
+            188,
+            295,
+            -21,
+            374,
+            -569,
+            -256,
+            -7,
+            483
+          ]
+        ],
+        "ridge": 256,
+        "family": "static",
+        "bits": 175,
+        "validation_gain": 1.1190688862670841
+      },
+      "static-8": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "one",
+            "s": "------+-+++-+",
+            "beta_q12": -301
+          }
+        ],
+        "family": "static",
+        "bits": 35,
+        "validation_gain": -7.832961803305839
+      },
+      "a-9": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "------+-----+",
+            "beta_q12": 646
+          },
+          {
+            "feature": "one",
+            "s": "+-++------+++",
+            "beta_q12": 260
+          },
+          {
+            "feature": "a",
+            "s": "------+-+++++",
+            "beta_q12": 228
+          },
+          {
+            "feature": "a",
+            "s": "-+-+-+-+----+",
+            "beta_q12": -218
+          }
+        ],
+        "family": "a",
+        "bits": 119,
+        "validation_gain": 53.62731352392555
+      },
+      "b-10": {
+        "method": "real",
+        "features": [
+          "one",
+          "b"
+        ],
+        "q12": [
+          [
+            -38,
+            -347,
+            353,
+            269,
+            -456,
+            -142,
+            -486,
+            656,
+            -1611,
+            -857,
+            22,
+            -362
+          ],
+          [
+            978,
+            1016,
+            865,
+            764,
+            994,
+            812,
+            532,
+            -108,
+            990,
+            884,
+            499,
+            1252
+          ]
+        ],
+        "ridge": 4,
+        "family": "b",
+        "bits": 343,
+        "validation_gain": 11.47857838710728
+      },
+      "b-11": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "b",
+            "s": "--------+---+",
+            "beta_q12": -378
+          }
+        ],
+        "family": "b",
+        "bits": 35,
+        "validation_gain": 3.9827546111774668
+      },
+      "c-12": {
+        "method": "real",
+        "features": [
+          "one",
+          "c"
+        ],
+        "q12": [
+          [
+            361,
+            -369,
+            666,
+            257,
+            -91,
+            -253,
+            -565,
+            257,
+            -1351,
+            -627,
+            -682,
+            750
+          ],
+          [
+            -1274,
+            -1735,
+            -992,
+            -1437,
+            -1374,
+            -1851,
+            835,
+            -843,
+            -1381,
+            -1391,
+            -1166,
+            -307
+          ]
+        ],
+        "ridge": 32,
+        "family": "c",
+        "bits": 343,
+        "validation_gain": 50.55204728086134
+      },
+      "additive-13": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "------+-----+",
+            "beta_q12": 646
+          }
+        ],
+        "family": "additive",
+        "bits": 35,
+        "validation_gain": 38.421821180870616
+      },
+      "all_bits-14": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "------+-----+",
+            "beta_q12": 646
+          }
+        ],
+        "family": "all_bits",
+        "bits": 35,
+        "validation_gain": 38.421821180870616
+      },
+      "fresh-15": {
+        "method": "fresh_real",
+        "lag": 1,
+        "z": "++++++++++++-+++++++++++++++++++-++-++++++++-++++-++++++++++-+++-",
+        "q12": [
+          -1155,
+          -1085,
+          -1158,
+          -1396,
+          -834,
+          -1151,
+          -211,
+          -880,
+          -207,
+          -573,
+          -573,
+          -391
+        ],
+        "ridge": 256,
+        "family": "fresh",
+        "bits": 240,
+        "validation_gain": 49.205643831885624
+      },
+      "fresh-16": {
+        "method": "fresh_sign",
+        "lag": 1,
+        "z": "++++++++++++-++++++++++++++++++--++-++++++++-+++++-+++++++++-+++-",
+        "s": "------------+",
+        "q12": 673,
+        "family": "fresh",
+        "bits": 98,
+        "validation_gain": 36.62059343468178
+      }
+    },
+    "24": {
+      "unchanged-1": {
+        "method": "none",
+        "family": "unchanged",
+        "bits": 0,
+        "validation_gain": 4.142242104876459e-13
+      },
+      "a-2": {
+        "method": "real",
+        "features": [
+          "one",
+          "a"
+        ],
+        "q12": [
+          [
+            -392,
+            -1903,
+            691,
+            238,
+            -1327,
+            665,
+            -393,
+            -2603,
+            848,
+            674,
+            -300,
+            -362
+          ],
+          [
+            1074,
+            -3005,
+            -36,
+            -2276,
+            -2563,
+            -503,
+            -1869,
+            -3068,
+            -1656,
+            -499,
+            -703,
+            -399
+          ]
+        ],
+        "ridge": 4,
+        "family": "a",
+        "bits": 343,
+        "validation_gain": 40.531790548695426
+      },
+      "a-3": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "+-+---------+",
+            "beta_q12": 651
+          }
+        ],
+        "family": "a",
+        "bits": 35,
+        "validation_gain": 39.23329901975414
+      },
+      "all_bits-4": {
+        "method": "real",
+        "features": [
+          "a",
+          "b",
+          "c"
+        ],
+        "q12": [
+          [
+            1052,
+            -619,
+            -42,
+            -1470,
+            -754,
+            -306,
+            -658,
+            -428,
+            -990,
+            -285,
+            -272,
+            -90
+          ],
+          [
+            -592,
+            -77,
+            250,
+            -1,
+            -30,
+            192,
+            205,
+            -265,
+            353,
+            397,
+            -326,
+            -12
+          ],
+          [
+            -629,
+            -787,
+            2,
+            -286,
+            -480,
+            157,
+            -562,
+            -552,
+            -363,
+            -128,
+            -179,
+            -187
+          ]
+        ],
+        "ridge": 256,
+        "family": "all_bits",
+        "bits": 511,
+        "validation_gain": 42.72826088825222
+      },
+      "fresh-5": {
+        "method": "fresh_real",
+        "lag": 1,
+        "z": "+++++++++-++++++++-+++++++-++++-++++-+++++++-+++-++-++++---+++-+-",
+        "q12": [
+          -253,
+          -920,
+          -45,
+          -1649,
+          -895,
+          -192,
+          -880,
+          -525,
+          -1304,
+          -512,
+          -332,
+          -139
+        ],
+        "ridge": 256,
+        "family": "fresh",
+        "bits": 240,
+        "validation_gain": 31.369882733501505
+      },
+      "static-6": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "one",
+            "s": "-------+--+++",
+            "beta_q12": -335
+          }
+        ],
+        "family": "static",
+        "bits": 35,
+        "validation_gain": 4.211954256320812
+      },
+      "b-7": {
+        "method": "real",
+        "features": [
+          "b"
+        ],
+        "q12": [
+          [
+            -746,
+            559,
+            365,
+            392,
+            506,
+            252,
+            724,
+            -44,
+            718,
+            665,
+            -628,
+            22
+          ]
+        ],
+        "ridge": 32,
+        "family": "b",
+        "bits": 175,
+        "validation_gain": 6.438323105390386
+      },
+      "b-8": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "one",
+            "s": "-------+--+++",
+            "beta_q12": -335
+          }
+        ],
+        "family": "b",
+        "bits": 35,
+        "validation_gain": 4.211954256320812
+      },
+      "c-9": {
+        "method": "real",
+        "features": [
+          "c"
+        ],
+        "q12": [
+          [
+            -590,
+            -1682,
+            -46,
+            -1534,
+            -1334,
+            86,
+            -1582,
+            -1079,
+            -1183,
+            -506,
+            -516,
+            -401
+          ]
+        ],
+        "ridge": 4,
+        "family": "c",
+        "bits": 175,
+        "validation_gain": 34.538522804213656
+      },
+      "c-10": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "c",
+            "s": "--+--+------+",
+            "beta_q12": 545
+          }
+        ],
+        "family": "c",
+        "bits": 35,
+        "validation_gain": 23.217305408982313
+      },
+      "additive-11": {
+        "method": "real",
+        "features": [
+          "one",
+          "a",
+          "b"
+        ],
+        "q12": [
+          [
+            1148,
+            -1747,
+            675,
+            582,
+            -1140,
+            671,
+            -719,
+            -1575,
+            722,
+            404,
+            -35,
+            -455
+          ],
+          [
+            1221,
+            -2221,
+            -24,
+            -2091,
+            -2020,
+            -443,
+            -1623,
+            -1935,
+            -1544,
+            -477,
+            -519,
+            -393
+          ],
+          [
+            -2220,
+            811,
+            -30,
+            -402,
+            445,
+            -87,
+            759,
+            182,
+            246,
+            371,
+            -469,
+            261
+          ]
+        ],
+        "ridge": 32,
+        "family": "additive",
+        "bits": 511,
+        "validation_gain": 39.92202300232146
+      },
+      "additive-12": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "+-+---------+",
+            "beta_q12": 651
+          }
+        ],
+        "family": "additive",
+        "bits": 35,
+        "validation_gain": 39.23329901975414
+      },
+      "all_bits-13": {
+        "method": "sign",
+        "atoms": [
+          {
+            "feature": "a",
+            "s": "+-+---------+",
+            "beta_q12": 651
+          }
+        ],
+        "family": "all_bits",
+        "bits": 35,
+        "validation_gain": 39.23329901975414
+      },
+      "fresh-14": {
+        "method": "fresh_sign",
+        "lag": 1,
+        "z": "+++++++++-++++++-+-++-+++++++++-+-++-+++++++-+--+++-+-++-+---+-+-",
+        "s": "------------+",
+        "q12": 584,
+        "family": "fresh",
+        "bits": 98,
+        "validation_gain": 30.65017761558918
+      },
+      "direct-15": {
+        "method": "rows",
+        "lag": 1,
+        "q12_zlib_base64": "eJwdlHtQlkUYxd993+/7yBt5AW9jNerkKKlYWKaWaIqWaUrJmGOpkVk6oZAm2nhJDZPEa2KaQmWaXUQnzMywCCXGNJwEhZSsxgvjJdEsPt7LPue00zyz+8/O7p7nd87uRn/PrYXhi/KBHqZaWAei8DyswnvqoLW3qVq3c99xVwcH3AKvxE9Bvn8ySJM+jWVN5f9mNWb5q6M7opcb79UnvLv8S2p60zldrEe6syPFbn8v158ZXHX3Wf38o7fzYmY2Tr7du7HIHdB0XR0Pb1MfNh7Vh/y54RR3lPek3sQEPwMdVEccDGyxg5G61O8apMrPQWVwQPeUSbJYfpA5rufvdBO8l9johf3ngo56mt6qu9nD/RvRKrfKy3U3Wo4/SJ/UX8o4P6HLLi/HKK/wPtBv+mv92iBXK308uKGOBJPQN3jZPu+ciA7Rd8sm2eLVyw9orWqxLejAr4KlzNUt5Se7Dybaq7mCK83I5W5Tn/MzU3u4l3ukY9Dg+UjVSTHX3VrdVrXCVp3mlSKT70o/fdirCH8KWyokKoORaPVlha6RNfqsXoEUGSs2pmE5CvGEPGQdjdzUXSUvqGah3IkpyGn2EPvwU73HaQoCXYb75FUpVJmow3a+w5aMd/6JieNSJnNg81bOQi7nKsY6l/SMmJ+t/dLgXpRYrMMpJKtCu9pthUREpZIqMgjpGI12zFcj7CSnQOajQMZweDje7onduILx4bZ8jMlWdzkW0JrKR8WTeOszdREu4pmu10t3na3nq9NOVK+VBKQiE305WufJHXqqTsVpfV73VD3wFObAtV+Rwca7BfKNXSq1koFvkaX/wnQu0aXojgrLQ8vQ4/jYbsdsncRlqsRO0dsC1zsdrOMKfVmmeJ0Q+En2TnmEUatc1qk4dEYB8u16VKhMfixzsVgXyx9yTppjI37FbUQ4Rt5HUjBDr8e6mF/xG3pxvPGqh3PC8uwedjtnDI+o+sBFQ+hakM4MwzMLZ5GARUjkPinBnbxoP0HPW85uyGhBabByQkNxP/6ERjf5yFrJAToHZdJb4tkeHbAoEMQxwk/4GwbxRb1SPco2jOMxd4Q1xeRmFTer1zBLTdI1+nddp2rQEHPVhr2Qa2UWpkqBNOCmNMrbqMJfsDmX2/AlJ2AnYp2uqg7aOiLDKGo7x6IevfEsHuMmbIGgn/FqPHfxlq7DA8h2imSroWPzQY7i2yjn9yz7f1TxFKv/rzOm8tRQlR2p0ml6ARMlEZsjr3K1LOcGnjLkPpHfpTUt9EExoohlV37NKxjFatzCW+zELhwXGnLHW1xj+s02dz0sy5DGWq0iHTiCaUznuy1m4Izqoo+jpfHpKZPSHcwNdUYxf8QMuwiV2N38GIAUzuR8vsnDPGjIF4VK8Tpv4G8k82XOM7uOskhN5jT5Sr3ONaFEfh3MMxoXO/t5DsPD5biAJWxFF0/zsF7C2TzCgZEfnSZDwpU58jAvxOboNmqCvZdr0ZaT8R5e4AmcxL1M5TTj+z7uxD1sERRhqFMOZQV2bSjPtkL7uQHtOQ/vm6RWmjfUkxP4IjO5iOdlF/bLNUls/gAGoMT00J69WMI648j0mAtYZpS1ZpxVL8tMqgoJ2WB3QjMMDGpULm6Ft9uP8EnW8HluNhrSeYhvmFNHtJ4XOWR82utUo8j+znCeyI4M8zmzlh/KMiseJvAyLMO8h7lvPU45a5hvfqKxJi/3YSIe50ZsBtGfI40DZzmW1w3FNg5jd4dmcwuLuJjfmnmWUTwav6hn+AWycAnD+LQhkeeNC1Xa55tVhxaEysLVKrlZeihD9bP+A3oiAXY=",
+        "ridge": 4,
+        "family": "direct",
+        "bits": 10927,
+        "validation_gain": 22.963622269420497
+      }
+    }
+  },
+  "selected": {
+    "12": {
+      "unchanged_gross": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 2.574607194105738e-13
+      },
+      "unchanged_priced": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 2.574607194105738e-13
+      },
+      "constituents_gross": {
+        "model": "additive-2",
+        "validation_score_after_price": 68.56177109648095
+      },
+      "constituents_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.161669861272532
+      },
+      "product_available_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 69.64553255883563
+      },
+      "product_available_priced": {
+        "model": "c-5",
+        "validation_score_after_price": 22.734838729942165
+      },
+      "fresh_names_gross": {
+        "model": "direct-6",
+        "validation_score_after_price": 50.05470352368534
+      },
+      "fresh_names_priced": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 2.574607194105738e-13
+      },
+      "all_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 69.64553255883563
+      },
+      "all_priced": {
+        "model": "c-5",
+        "validation_score_after_price": 22.734838729942165
+      },
+      "static_gross": {
+        "model": "static-7",
+        "validation_score_after_price": 1.1190688862670841
+      },
+      "static_priced": {
+        "model": "static-8",
+        "validation_score_after_price": -32.09311312290392
+      },
+      "a_gross": {
+        "model": "a-9",
+        "validation_score_after_price": 53.62731352392555
+      },
+      "a_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.161669861272532
+      },
+      "b_gross": {
+        "model": "b-10",
+        "validation_score_after_price": 11.47857838710728
+      },
+      "b_priced": {
+        "model": "b-11",
+        "validation_score_after_price": -20.277396708420618
+      },
+      "c_gross": {
+        "model": "c-12",
+        "validation_score_after_price": 50.55204728086134
+      },
+      "c_priced": {
+        "model": "c-5",
+        "validation_score_after_price": 22.734838729942165
+      },
+      "additive_gross": {
+        "model": "additive-2",
+        "validation_score_after_price": 68.56177109648095
+      },
+      "additive_priced": {
+        "model": "additive-13",
+        "validation_score_after_price": 14.161669861272532
+      },
+      "all_bits_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 69.64553255883563
+      },
+      "all_bits_priced": {
+        "model": "all_bits-14",
+        "validation_score_after_price": 14.161669861272532
+      },
+      "fresh_gross": {
+        "model": "fresh-15",
+        "validation_score_after_price": 49.205643831885624
+      },
+      "fresh_priced": {
+        "model": "fresh-16",
+        "validation_score_after_price": -31.30783026019286
+      },
+      "direct_gross": {
+        "model": "direct-6",
+        "validation_score_after_price": 50.05470352368534
+      },
+      "direct_priced": {
+        "model": "direct-6",
+        "validation_score_after_price": -7523.964538454838
+      }
+    },
+    "24": {
+      "unchanged_gross": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 4.142242104876459e-13
+      },
+      "unchanged_priced": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 4.142242104876459e-13
+      },
+      "constituents_gross": {
+        "model": "a-2",
+        "validation_score_after_price": 40.531790548695426
+      },
+      "constituents_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "product_available_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 42.72826088825222
+      },
+      "product_available_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "fresh_names_gross": {
+        "model": "fresh-5",
+        "validation_score_after_price": 31.369882733501505
+      },
+      "fresh_names_priced": {
+        "model": "unchanged-1",
+        "validation_score_after_price": 4.142242104876459e-13
+      },
+      "all_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 42.72826088825222
+      },
+      "all_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "static_gross": {
+        "model": "static-6",
+        "validation_score_after_price": 4.211954256320812
+      },
+      "static_priced": {
+        "model": "static-6",
+        "validation_score_after_price": -20.04819706327727
+      },
+      "a_gross": {
+        "model": "a-2",
+        "validation_score_after_price": 40.531790548695426
+      },
+      "a_priced": {
+        "model": "a-3",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "b_gross": {
+        "model": "b-7",
+        "validation_score_after_price": 6.438323105390386
+      },
+      "b_priced": {
+        "model": "b-8",
+        "validation_score_after_price": -20.04819706327727
+      },
+      "c_gross": {
+        "model": "c-9",
+        "validation_score_after_price": 34.538522804213656
+      },
+      "c_priced": {
+        "model": "c-10",
+        "validation_score_after_price": -1.042845910615771
+      },
+      "additive_gross": {
+        "model": "additive-11",
+        "validation_score_after_price": 39.92202300232146
+      },
+      "additive_priced": {
+        "model": "additive-12",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "all_bits_gross": {
+        "model": "all_bits-4",
+        "validation_score_after_price": 42.72826088825222
+      },
+      "all_bits_priced": {
+        "model": "all_bits-13",
+        "validation_score_after_price": 14.973147700156058
+      },
+      "fresh_gross": {
+        "model": "fresh-5",
+        "validation_score_after_price": 31.369882733501505
+      },
+      "fresh_priced": {
+        "model": "fresh-14",
+        "validation_score_after_price": -37.27824607928546
+      },
+      "direct_gross": {
+        "model": "direct-15",
+        "validation_score_after_price": 22.963622269420497
+      },
+      "direct_priced": {
+        "model": "direct-15",
+        "validation_score_after_price": -7551.055619709102
+      }
+    }
+  },
+  "reports": [
+    {
+      "offset": 45000000,
+      "sha256": "61b7899014dcf0163c211f07cadb3a8b338d7d13bc95e380ada14e469fa1df0d",
+      "parent_occurrences": [
+        24613,
+        22497
+      ],
+      "frozen_nll": 6.7202549979458555,
+      "full_row_and_parent_error": 1.096345236817342e-15,
+      "methods": {
+        "unchanged_gross": {
+          "node_gains": [
+            2.7622348852673895e-13,
+            4.1466829969749597e-13
+          ],
+          "joint_gain": 6.908917882242349e-13,
+          "nll_per_word": 6.7202549979458555,
+          "gain_by_4096_words": [
+            9.692247004977617e-14,
+            1.0225154056797692e-13,
+            8.260059303211165e-14,
+            8.626432901337466e-14,
+            7.827072323607354e-14,
+            8.670841822322473e-14,
+            7.938094626069869e-14,
+            7.849276784099857e-14
+          ],
+          "node_block_gains": [
+            [
+              4.18554080283684e-14,
+              4.39648317751562e-14,
+              3.5638159090467525e-14,
+              3.452793606584237e-14,
+              3.108624468950438e-14,
+              3.141931159689193e-14,
+              3.0309088572266774e-14,
+              2.7422508708241367e-14
+            ],
+            [
+              5.5067062021407764e-14,
+              5.828670879282072e-14,
+              4.696243394164412e-14,
+              5.1736392947532295e-14,
+              4.718447854656915e-14,
+              5.5289106626332796e-14,
+              4.907185768843192e-14,
+              5.10702591327572e-14
+            ]
+          ]
+        },
+        "unchanged_priced": {
+          "node_gains": [
+            2.7622348852673895e-13,
+            4.1466829969749597e-13
+          ],
+          "joint_gain": 6.908917882242349e-13,
+          "nll_per_word": 6.7202549979458555,
+          "gain_by_4096_words": [
+            9.692247004977617e-14,
+            1.0225154056797692e-13,
+            8.260059303211165e-14,
+            8.626432901337466e-14,
+            7.827072323607354e-14,
+            8.670841822322473e-14,
+            7.938094626069869e-14,
+            7.849276784099857e-14
+          ],
+          "node_block_gains": [
+            [
+              4.18554080283684e-14,
+              4.39648317751562e-14,
+              3.5638159090467525e-14,
+              3.452793606584237e-14,
+              3.108624468950438e-14,
+              3.141931159689193e-14,
+              3.0309088572266774e-14,
+              2.7422508708241367e-14
+            ],
+            [
+              5.5067062021407764e-14,
+              5.828670879282072e-14,
+              4.696243394164412e-14,
+              5.1736392947532295e-14,
+              4.718447854656915e-14,
+              5.5289106626332796e-14,
+              4.907185768843192e-14,
+              5.10702591327572e-14
+            ]
+          ]
+        },
+        "constituents_gross": {
+          "node_gains": [
+            150.00005515893253,
+            61.95784690076427
+          ],
+          "joint_gain": 211.95790205969678,
+          "nll_per_word": 6.713786556110538,
+          "gain_by_4096_words": [
+            36.42425557802635,
+            43.160315747549554,
+            26.92290715767317,
+            26.43684714498594,
+            16.98776297102735,
+            30.917553244300983,
+            26.1128302425134,
+            4.995429973620049
+          ],
+          "node_block_gains": [
+            [
+              41.6785420458927,
+              40.21117964908862,
+              7.05039348192039,
+              14.210454369881722,
+              7.798021800747605,
+              20.6793749696524,
+              21.643890144942095,
+              -3.271801303193004
+            ],
+            [
+              -5.254286467866351,
+              2.9491360984609316,
+              19.872513675752778,
+              12.22639277510422,
+              9.189741170279744,
+              10.238178274648583,
+              4.468940097571307,
+              8.267231276813053
+            ]
+          ]
+        },
+        "constituents_priced": {
+          "node_gains": [
+            112.18681207951686,
+            62.999005766496765
+          ],
+          "joint_gain": 175.18581784601363,
+          "nll_per_word": 6.714908751063348,
+          "gain_by_4096_words": [
+            43.95353358355197,
+            33.61870325597893,
+            21.42414391084171,
+            16.093932311870354,
+            12.705988962555033,
+            13.79498330988336,
+            26.98269619283213,
+            6.611836318500148
+          ],
+          "node_block_gains": [
+            [
+              38.06684266978655,
+              30.528462764480484,
+              11.551602904197242,
+              5.439366595294887,
+              1.0587439958506983,
+              4.009476602049485,
+              19.966237054209106,
+              1.5660794936483997
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "product_available_gross": {
+          "node_gains": [
+            152.67710743229736,
+            47.817434438485854
+          ],
+          "joint_gain": 200.49454187078325,
+          "nll_per_word": 6.714136390100677,
+          "gain_by_4096_words": [
+            42.32548516509453,
+            46.43479538422518,
+            13.457311304936033,
+            22.47658497777346,
+            10.032330649615414,
+            29.440818919803057,
+            29.122142326813947,
+            7.205073142521635
+          ],
+          "node_block_gains": [
+            [
+              41.77403536145307,
+              40.258924336554124,
+              3.3894223476287797,
+              15.240647663188305,
+              5.683294765828123,
+              21.71256921818452,
+              23.368117204233133,
+              1.2500965352273212
+            ],
+            [
+              0.5514498036414459,
+              6.1758710476710545,
+              10.067888957307254,
+              7.235937314585151,
+              4.349035883787293,
+              7.728249701618535,
+              5.75402512258081,
+              5.954976607294312
+            ]
+          ]
+        },
+        "product_available_priced": {
+          "node_gains": [
+            80.64650324733245,
+            62.999005766496765
+          ],
+          "joint_gain": 143.64550901382924,
+          "nll_per_word": 6.715871284902221,
+          "gain_by_4096_words": [
+            18.50665307561026,
+            25.17871070826764,
+            14.875454989363503,
+            18.09541733318232,
+            10.824756428233057,
+            18.812429556056564,
+            30.125639576308078,
+            7.226447346807805
+          ],
+          "node_block_gains": [
+            [
+              12.61996216184483,
+              22.088470216769203,
+              5.002913982719033,
+              7.440851616606854,
+              -0.8224885384712781,
+              9.026922848222693,
+              23.109180437685055,
+              2.1806905219560564
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "fresh_names_gross": {
+          "node_gains": [
+            135.50404184859656,
+            35.85996407388346
+          ],
+          "joint_gain": 171.36400592248003,
+          "nll_per_word": 6.715025383507303,
+          "gain_by_4096_words": [
+            52.54095489333382,
+            38.139149124732995,
+            15.762590184441075,
+            12.819893361584569,
+            11.847828586766596,
+            16.64732332364523,
+            19.828121185998754,
+            3.778145261976981
+          ],
+          "node_block_gains": [
+            [
+              49.71493222770887,
+              36.08974300292479,
+              8.22977966294935,
+              7.812211906971578,
+              4.88316856518634,
+              11.439191450422781,
+              15.657609609135026,
+              1.6774054232978273
+            ],
+            [
+              2.8260226656249436,
+              2.049406121808209,
+              7.532810521491724,
+              5.007681454612989,
+              6.964660021580256,
+              5.2081318732224515,
+              4.170511576863728,
+              2.1007398386791514
+            ]
+          ]
+        },
+        "fresh_names_priced": {
+          "node_gains": [
+            2.7622348852673895e-13,
+            4.1466829969749597e-13
+          ],
+          "joint_gain": 6.908917882242349e-13,
+          "nll_per_word": 6.7202549979458555,
+          "gain_by_4096_words": [
+            9.692247004977617e-14,
+            1.0225154056797692e-13,
+            8.260059303211165e-14,
+            8.626432901337466e-14,
+            7.827072323607354e-14,
+            8.670841822322473e-14,
+            7.938094626069869e-14,
+            7.849276784099857e-14
+          ],
+          "node_block_gains": [
+            [
+              4.18554080283684e-14,
+              4.39648317751562e-14,
+              3.5638159090467525e-14,
+              3.452793606584237e-14,
+              3.108624468950438e-14,
+              3.141931159689193e-14,
+              3.0309088572266774e-14,
+              2.7422508708241367e-14
+            ],
+            [
+              5.5067062021407764e-14,
+              5.828670879282072e-14,
+              4.696243394164412e-14,
+              5.1736392947532295e-14,
+              4.718447854656915e-14,
+              5.5289106626332796e-14,
+              4.907185768843192e-14,
+              5.10702591327572e-14
+            ]
+          ]
+        },
+        "all_gross": {
+          "node_gains": [
+            152.67710743229736,
+            47.817434438485854
+          ],
+          "joint_gain": 200.49454187078325,
+          "nll_per_word": 6.714136390100677,
+          "gain_by_4096_words": [
+            42.32548516509453,
+            46.43479538422518,
+            13.457311304936033,
+            22.47658497777346,
+            10.032330649615414,
+            29.440818919803057,
+            29.122142326813947,
+            7.205073142521635
+          ],
+          "node_block_gains": [
+            [
+              41.77403536145307,
+              40.258924336554124,
+              3.3894223476287797,
+              15.240647663188305,
+              5.683294765828123,
+              21.71256921818452,
+              23.368117204233133,
+              1.2500965352273212
+            ],
+            [
+              0.5514498036414459,
+              6.1758710476710545,
+              10.067888957307254,
+              7.235937314585151,
+              4.349035883787293,
+              7.728249701618535,
+              5.75402512258081,
+              5.954976607294312
+            ]
+          ]
+        },
+        "all_priced": {
+          "node_gains": [
+            80.64650324733245,
+            62.999005766496765
+          ],
+          "joint_gain": 143.64550901382924,
+          "nll_per_word": 6.715871284902221,
+          "gain_by_4096_words": [
+            18.50665307561026,
+            25.17871070826764,
+            14.875454989363503,
+            18.09541733318232,
+            10.824756428233057,
+            18.812429556056564,
+            30.125639576308078,
+            7.226447346807805
+          ],
+          "node_block_gains": [
+            [
+              12.61996216184483,
+              22.088470216769203,
+              5.002913982719033,
+              7.440851616606854,
+              -0.8224885384712781,
+              9.026922848222693,
+              23.109180437685055,
+              2.1806905219560564
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "static_gross": {
+          "node_gains": [
+            19.994296652475192,
+            2.167174728611552
+          ],
+          "joint_gain": 22.16147138108674,
+          "nll_per_word": 6.719578683511617,
+          "gain_by_4096_words": [
+            4.855269625078373,
+            2.0164606299357732,
+            5.705569592413827,
+            3.765437423026124,
+            -0.1494680338409864,
+            6.932129249907998,
+            -3.019872200176934,
+            2.0559450947425684
+          ],
+          "node_block_gains": [
+            [
+              10.168350352617136,
+              6.546065823777067,
+              -2.090763879046138,
+              0.9904788761223532,
+              -0.33897729150927636,
+              3.0246188674578116,
+              0.364042185571646,
+              1.3304817174845944
+            ],
+            [
+              -5.313080727538761,
+              -4.529605193841293,
+              7.796333471459965,
+              2.774958546903772,
+              0.18950925766828997,
+              3.9075103824501864,
+              -3.3839143857485805,
+              0.7254633772579752
+            ]
+          ]
+        },
+        "static_priced": {
+          "node_gains": [
+            26.276133743293258,
+            2.167174728611552
+          ],
+          "joint_gain": 28.443308471904807,
+          "nll_per_word": 6.719386977057431,
+          "gain_by_4096_words": [
+            6.370268534273549,
+            1.9777912675607014,
+            9.112442174249317,
+            3.502073761033086,
+            -1.6303714987529254,
+            5.045397770599188,
+            0.3355717573933239,
+            3.7301347055485703
+          ],
+          "node_block_gains": [
+            [
+              11.68334926181231,
+              6.507396461401995,
+              1.3161087027893534,
+              0.7271152141293158,
+              -1.819880756421214,
+              1.1378873881490008,
+              3.7194861431419044,
+              3.004671328290596
+            ],
+            [
+              -5.313080727538761,
+              -4.529605193841293,
+              7.796333471459965,
+              2.774958546903772,
+              0.18950925766828997,
+              3.9075103824501864,
+              -3.3839143857485805,
+              0.7254633772579752
+            ]
+          ]
+        },
+        "a_gross": {
+          "node_gains": [
+            123.28167906169716,
+            61.95784690076427
+          ],
+          "joint_gain": 185.23952596246147,
+          "nll_per_word": 6.714601936240458,
+          "gain_by_4096_words": [
+            35.29563580651231,
+            37.53730011682819,
+            27.86409866310448,
+            19.706988488995528,
+            13.9422935525099,
+            20.111885948823165,
+            22.56586056756697,
+            8.215462818120916
+          ],
+          "node_block_gains": [
+            [
+              40.54992227437866,
+              34.58816401836725,
+              7.991584987351701,
+              7.480595713891306,
+              4.752552382230153,
+              9.873707674174579,
+              18.09692046999566,
+              -0.05176845869213764
+            ],
+            [
+              -5.254286467866351,
+              2.9491360984609316,
+              19.872513675752778,
+              12.22639277510422,
+              9.189741170279744,
+              10.238178274648583,
+              4.468940097571307,
+              8.267231276813053
+            ]
+          ]
+        },
+        "a_priced": {
+          "node_gains": [
+            112.18681207951686,
+            62.999005766496765
+          ],
+          "joint_gain": 175.18581784601363,
+          "nll_per_word": 6.714908751063348,
+          "gain_by_4096_words": [
+            43.95353358355197,
+            33.61870325597893,
+            21.42414391084171,
+            16.093932311870354,
+            12.705988962555033,
+            13.79498330988336,
+            26.98269619283213,
+            6.611836318500148
+          ],
+          "node_block_gains": [
+            [
+              38.06684266978655,
+              30.528462764480484,
+              11.551602904197242,
+              5.439366595294887,
+              1.0587439958506983,
+              4.009476602049485,
+              19.966237054209106,
+              1.5660794936483997
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "b_gross": {
+          "node_gains": [
+            27.055000924112647,
+            1.7765433755856188
+          ],
+          "joint_gain": 28.83154429969826,
+          "nll_per_word": 6.719375129040225,
+          "gain_by_4096_words": [
+            1.205298644818038,
+            8.423622857302183,
+            -3.819485918431898,
+            5.034809122296302,
+            3.7208920901645044,
+            10.495846618267658,
+            2.1078954858723176,
+            1.662665399409153
+          ],
+          "node_block_gains": [
+            [
+              5.455244302858186,
+              9.460344529189646,
+              -4.635706251633946,
+              2.267785527223582,
+              3.934776709034808,
+              8.693905269212415,
+              4.088148563855259,
+              -2.2094977256273047
+            ],
+            [
+              -4.249945658040147,
+              -1.0367216718874637,
+              0.8162203332020479,
+              2.7670235950727213,
+              -0.21388461887030413,
+              1.801941349055243,
+              -1.9802530779829397,
+              3.872163125036458
+            ]
+          ]
+        },
+        "b_priced": {
+          "node_gains": [
+            38.73492161922906,
+            2.167174728611552
+          ],
+          "joint_gain": 40.90209634784062,
+          "nll_per_word": 6.7190067650250835,
+          "gain_by_4096_words": [
+            6.539193464722362,
+            3.574563325799388,
+            10.088697592028236,
+            4.530358677212874,
+            1.672796431715049,
+            8.667396791651063,
+            2.5952061721900503,
+            3.233883892521593
+          ],
+          "node_block_gains": [
+            [
+              11.852274192261126,
+              8.10416851964068,
+              2.292364120568271,
+              1.7554001303091016,
+              1.4832871740467586,
+              4.7598864092008775,
+              5.97912055793863,
+              2.508420515263619
+            ],
+            [
+              -5.313080727538761,
+              -4.529605193841293,
+              7.796333471459965,
+              2.774958546903772,
+              0.18950925766828997,
+              3.9075103824501864,
+              -3.3839143857485805,
+              0.7254633772579752
+            ]
+          ]
+        },
+        "c_gross": {
+          "node_gains": [
+            119.16093547875273,
+            35.376770346316434
+          ],
+          "joint_gain": 154.53770582506917,
+          "nll_per_word": 6.71553888143508,
+          "gain_by_4096_words": [
+            37.31290504465545,
+            43.62576264926048,
+            4.7004258849972915,
+            14.576575838136218,
+            1.0843659998411663,
+            23.707061393713953,
+            23.484914880152278,
+            6.045694134312317
+          ],
+          "node_block_gains": [
+            [
+              36.659787661719626,
+              32.044021123353886,
+              0.9823940170304861,
+              11.40991846128138,
+              1.086896660908079,
+              16.257112451492315,
+              18.50959694793362,
+              2.211208155033341
+            ],
+            [
+              0.6531173829358285,
+              11.581741525906596,
+              3.718031867966804,
+              3.166657376854838,
+              -0.002530661066910689,
+              7.44994894222164,
+              4.975317932218657,
+              3.8344859792789765
+            ]
+          ]
+        },
+        "c_priced": {
+          "node_gains": [
+            80.64650324733245,
+            30.51594668415176
+          ],
+          "joint_gain": 111.1624499314842,
+          "nll_per_word": 6.716862589195506,
+          "gain_by_4096_words": [
+            13.880445473763057,
+            30.861229725249444,
+            5.065064743835899,
+            9.777950749180011,
+            -0.25367828677771564,
+            16.810492375904957,
+            27.867876057615092,
+            7.153069092713455
+          ],
+          "node_block_gains": [
+            [
+              12.61996216184483,
+              22.088470216769203,
+              5.002913982719033,
+              7.440851616606854,
+              -0.8224885384712781,
+              9.026922848222693,
+              23.109180437685055,
+              2.1806905219560564
+            ],
+            [
+              1.2604833119182273,
+              8.772759508480245,
+              0.062150761116868125,
+              2.3370991325731576,
+              0.5688102516935607,
+              7.783569527682265,
+              4.75869561993004,
+              4.972378570757399
+            ]
+          ]
+        },
+        "additive_gross": {
+          "node_gains": [
+            150.00005515893253,
+            56.823314085523236
+          ],
+          "joint_gain": 206.82336924445576,
+          "nll_per_word": 6.713943249616862,
+          "gain_by_4096_words": [
+            36.40522393093909,
+            42.398480768984285,
+            24.949504635218695,
+            25.58375781350179,
+            14.980923412780822,
+            31.314782228980302,
+            25.29868408137721,
+            5.892012372673571
+          ],
+          "node_block_gains": [
+            [
+              41.6785420458927,
+              40.21117964908862,
+              7.05039348192039,
+              14.210454369881722,
+              7.798021800747605,
+              20.6793749696524,
+              21.643890144942095,
+              -3.271801303193004
+            ],
+            [
+              -5.273318114953615,
+              2.187301119895664,
+              17.899111153298303,
+              11.373303443620074,
+              7.18290161203322,
+              10.635407259327902,
+              3.654793936435112,
+              9.163813675866578
+            ]
+          ]
+        },
+        "additive_priced": {
+          "node_gains": [
+            112.18681207951686,
+            62.999005766496765
+          ],
+          "joint_gain": 175.18581784601363,
+          "nll_per_word": 6.714908751063348,
+          "gain_by_4096_words": [
+            43.95353358355197,
+            33.61870325597893,
+            21.42414391084171,
+            16.093932311870354,
+            12.705988962555033,
+            13.79498330988336,
+            26.98269619283213,
+            6.611836318500148
+          ],
+          "node_block_gains": [
+            [
+              38.06684266978655,
+              30.528462764480484,
+              11.551602904197242,
+              5.439366595294887,
+              1.0587439958506983,
+              4.009476602049485,
+              19.966237054209106,
+              1.5660794936483997
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "all_bits_gross": {
+          "node_gains": [
+            152.67710743229736,
+            47.817434438485854
+          ],
+          "joint_gain": 200.49454187078325,
+          "nll_per_word": 6.714136390100677,
+          "gain_by_4096_words": [
+            42.32548516509453,
+            46.43479538422518,
+            13.457311304936033,
+            22.47658497777346,
+            10.032330649615414,
+            29.440818919803057,
+            29.122142326813947,
+            7.205073142521635
+          ],
+          "node_block_gains": [
+            [
+              41.77403536145307,
+              40.258924336554124,
+              3.3894223476287797,
+              15.240647663188305,
+              5.683294765828123,
+              21.71256921818452,
+              23.368117204233133,
+              1.2500965352273212
+            ],
+            [
+              0.5514498036414459,
+              6.1758710476710545,
+              10.067888957307254,
+              7.235937314585151,
+              4.349035883787293,
+              7.728249701618535,
+              5.75402512258081,
+              5.954976607294312
+            ]
+          ]
+        },
+        "all_bits_priced": {
+          "node_gains": [
+            112.18681207951686,
+            62.999005766496765
+          ],
+          "joint_gain": 175.18581784601363,
+          "nll_per_word": 6.714908751063348,
+          "gain_by_4096_words": [
+            43.95353358355197,
+            33.61870325597893,
+            21.42414391084171,
+            16.093932311870354,
+            12.705988962555033,
+            13.79498330988336,
+            26.98269619283213,
+            6.611836318500148
+          ],
+          "node_block_gains": [
+            [
+              38.06684266978655,
+              30.528462764480484,
+              11.551602904197242,
+              5.439366595294887,
+              1.0587439958506983,
+              4.009476602049485,
+              19.966237054209106,
+              1.5660794936483997
+            ],
+            [
+              5.886690913765425,
+              3.090240491498438,
+              9.872541006644468,
+              10.654565716575462,
+              11.647244966704331,
+              9.785506707833875,
+              7.0164591386230235,
+              5.0457568248517495
+            ]
+          ]
+        },
+        "fresh_gross": {
+          "node_gains": [
+            101.86272556786366,
+            35.85996407388346
+          ],
+          "joint_gain": 137.7226896417471,
+          "nll_per_word": 6.716052035005129,
+          "gain_by_4096_words": [
+            35.34403809436917,
+            31.80128710521502,
+            18.20073885136813,
+            9.822773467735452,
+            8.711992027932009,
+            13.411578931201252,
+            18.865261877135765,
+            1.5650192867902968
+          ],
+          "node_block_gains": [
+            [
+              32.51801542874422,
+              29.751880983406814,
+              10.667928329876405,
+              4.815092013122463,
+              1.7473320063517548,
+              8.203447057978801,
+              14.69475030027204,
+              -0.5357205518888537
+            ],
+            [
+              2.8260226656249436,
+              2.049406121808209,
+              7.532810521491724,
+              5.007681454612989,
+              6.964660021580256,
+              5.2081318732224515,
+              4.170511576863728,
+              2.1007398386791514
+            ]
+          ]
+        },
+        "fresh_priced": {
+          "node_gains": [
+            128.62159300271932,
+            45.840849626731526
+          ],
+          "joint_gain": 174.46244262945083,
+          "nll_per_word": 6.714930826723032,
+          "gain_by_4096_words": [
+            52.41127515904185,
+            34.204787654871154,
+            21.71806119161199,
+            18.835520529707605,
+            6.169867046626694,
+            11.198997885099391,
+            22.42229901951435,
+            7.501634142977792
+          ],
+          "node_block_gains": [
+            [
+              48.671316176658976,
+              34.678481804045255,
+              16.2975932410168,
+              4.8361684616094465,
+              -2.0006490319964203,
+              5.881773265936158,
+              20.214366277094765,
+              0.04254280835433555
+            ],
+            [
+              3.739958982382876,
+              -0.4736941491741036,
+              5.4204679505951905,
+              13.999352068098164,
+              8.170516078623116,
+              5.317224619163232,
+              2.207932742419589,
+              7.459091334623457
+            ]
+          ]
+        },
+        "direct_gross": {
+          "node_gains": [
+            135.50404184859656,
+            38.35830930580111
+          ],
+          "joint_gain": 173.86235115439766,
+          "nll_per_word": 6.7149491400615045,
+          "gain_by_4096_words": [
+            45.01127376102961,
+            29.16181039217482,
+            21.787906595207744,
+            21.146321802861657,
+            8.29069464479332,
+            23.590732796027595,
+            19.90738790951847,
+            4.966223252784445
+          ],
+          "node_block_gains": [
+            [
+              49.71493222770887,
+              36.08974300292479,
+              8.22977966294935,
+              7.812211906971578,
+              4.88316856518634,
+              11.439191450422781,
+              15.657609609135026,
+              1.6774054232978273
+            ],
+            [
+              -4.70365846667926,
+              -6.927932610749966,
+              13.558126932258396,
+              13.334109895890077,
+              3.4075260796069786,
+              12.151541345604816,
+              4.24977830038345,
+              3.288817829486618
+            ]
+          ]
+        },
+        "direct_priced": {
+          "node_gains": [
+            135.50404184859656,
+            38.35830930580111
+          ],
+          "joint_gain": 173.86235115439766,
+          "nll_per_word": 6.7149491400615045,
+          "gain_by_4096_words": [
+            45.01127376102961,
+            29.16181039217482,
+            21.787906595207744,
+            21.146321802861657,
+            8.29069464479332,
+            23.590732796027595,
+            19.90738790951847,
+            4.966223252784445
+          ],
+          "node_block_gains": [
+            [
+              49.71493222770887,
+              36.08974300292479,
+              8.22977966294935,
+              7.812211906971578,
+              4.88316856518634,
+              11.439191450422781,
+              15.657609609135026,
+              1.6774054232978273
+            ],
+            [
+              -4.70365846667926,
+              -6.927932610749966,
+              13.558126932258396,
+              13.334109895890077,
+              3.4075260796069786,
+              12.151541345604816,
+              4.24977830038345,
+              3.288817829486618
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "offset": 47000000,
+      "sha256": "8fdc4dd370394fabbcfe9ab39064fe3fcd6ecc10aefbbb1a6fd40d8ab2214b35",
+      "parent_occurrences": [
+        23970,
+        21959
+      ],
+      "frozen_nll": 6.597565958637297,
+      "full_row_and_parent_error": 4.440892098500626e-16,
+      "methods": {
+        "unchanged_gross": {
+          "node_gains": [
+            2.667865928174251e-13,
+            4.0323300254385686e-13
+          ],
+          "joint_gain": 6.70019595361282e-13,
+          "nll_per_word": 6.597565958637297,
+          "gain_by_4096_words": [
+            8.038014698286133e-14,
+            8.903988657493755e-14,
+            9.758860386455126e-14,
+            7.649436639667329e-14,
+            7.971401316808624e-14,
+            8.22675261247241e-14,
+            8.237854842718662e-14,
+            8.215650382226158e-14
+          ],
+          "node_block_gains": [
+            [
+              2.7533531010703882e-14,
+              3.47499806707674e-14,
+              4.163336342344337e-14,
+              2.4424906541753444e-14,
+              3.6193270602780103e-14,
+              3.697042672001771e-14,
+              2.853273173286652e-14,
+              3.674838211509268e-14
+            ],
+            [
+              5.284661597215745e-14,
+              5.4289905904170155e-14,
+              5.595524044110789e-14,
+              5.206945985491984e-14,
+              4.3520742565306136e-14,
+              4.529709940470639e-14,
+              5.384581669432009e-14,
+              4.54081217071689e-14
+            ]
+          ]
+        },
+        "unchanged_priced": {
+          "node_gains": [
+            2.667865928174251e-13,
+            4.0323300254385686e-13
+          ],
+          "joint_gain": 6.70019595361282e-13,
+          "nll_per_word": 6.597565958637297,
+          "gain_by_4096_words": [
+            8.038014698286133e-14,
+            8.903988657493755e-14,
+            9.758860386455126e-14,
+            7.649436639667329e-14,
+            7.971401316808624e-14,
+            8.22675261247241e-14,
+            8.237854842718662e-14,
+            8.215650382226158e-14
+          ],
+          "node_block_gains": [
+            [
+              2.7533531010703882e-14,
+              3.47499806707674e-14,
+              4.163336342344337e-14,
+              2.4424906541753444e-14,
+              3.6193270602780103e-14,
+              3.697042672001771e-14,
+              2.853273173286652e-14,
+              3.674838211509268e-14
+            ],
+            [
+              5.284661597215745e-14,
+              5.4289905904170155e-14,
+              5.595524044110789e-14,
+              5.206945985491984e-14,
+              4.3520742565306136e-14,
+              4.529709940470639e-14,
+              5.384581669432009e-14,
+              4.54081217071689e-14
+            ]
+          ]
+        },
+        "constituents_gross": {
+          "node_gains": [
+            156.50637999487614,
+            27.05581577351049
+          ],
+          "joint_gain": 183.56219576838663,
+          "nll_per_word": 6.591964084987138,
+          "gain_by_4096_words": [
+            20.49635956490618,
+            29.089169874358582,
+            34.22632201733126,
+            18.64772266113122,
+            28.15060901736438,
+            26.20291872375556,
+            11.041065902873726,
+            15.708028006665728
+          ],
+          "node_block_gains": [
+            [
+              22.042979918376464,
+              25.238729874046797,
+              28.181788477601888,
+              19.960961609750207,
+              19.477662193031062,
+              21.12140782641106,
+              9.87330603531584,
+              10.609544060342829
+            ],
+            [
+              -1.5466203534702787,
+              3.8504400003117834,
+              6.044533539729371,
+              -1.3132389486189884,
+              8.672946824333321,
+              5.081510897344496,
+              1.1677598675578853,
+              5.098483946322901
+            ]
+          ]
+        },
+        "constituents_priced": {
+          "node_gains": [
+            108.60364484322355,
+            24.714133780132563
+          ],
+          "joint_gain": 133.31777862335613,
+          "nll_per_word": 6.593497422912707,
+          "gain_by_4096_words": [
+            16.45161599876886,
+            22.20329921073571,
+            32.67352497745124,
+            22.14833284704983,
+            7.968924067084986,
+            9.916908419538512,
+            11.071816198472076,
+            10.883356904254907
+          ],
+          "node_block_gains": [
+            [
+              17.743419035363264,
+              19.334155446731245,
+              24.36154984088052,
+              20.28744094235001,
+              6.126814862971296,
+              7.859280659584989,
+              5.836515867413353,
+              7.0544681879288795
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "product_available_gross": {
+          "node_gains": [
+            159.33015858003483,
+            31.10138891801191
+          ],
+          "joint_gain": 190.4315474980467,
+          "nll_per_word": 6.591754449009061,
+          "gain_by_4096_words": [
+            26.16495802117772,
+            32.528517001565895,
+            32.58453430303598,
+            19.913805094263378,
+            25.231627781937505,
+            27.69342379091727,
+            12.540242700739963,
+            13.774438804409025
+          ],
+          "node_block_gains": [
+            [
+              24.95667750731397,
+              27.78981718429187,
+              27.31599834664699,
+              19.965693958225106,
+              18.38655013772305,
+              22.529019941813324,
+              8.62344458557728,
+              9.762956918443253
+            ],
+            [
+              1.2082805138637576,
+              4.738699817274028,
+              5.268535956388996,
+              -0.05188886396173176,
+              6.845077644214458,
+              5.164403849103945,
+              3.9167981151626856,
+              4.0114818859657735
+            ]
+          ]
+        },
+        "product_available_priced": {
+          "node_gains": [
+            87.90269843526461,
+            24.714133780132563
+          ],
+          "joint_gain": 112.61683221539717,
+          "nll_per_word": 6.594129165661974,
+          "gain_by_4096_words": [
+            11.679197710588765,
+            19.230062630484564,
+            24.210007751949448,
+            18.89739708488931,
+            8.151827857011945,
+            7.00786195706625,
+            14.621663109939943,
+            8.818814113466953
+          ],
+          "node_block_gains": [
+            [
+              12.971000747183169,
+              16.3609188664801,
+              15.898032615378735,
+              17.036505180189486,
+              6.309718652898253,
+              4.950234197112731,
+              9.386362778881221,
+              4.989925397140924
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "fresh_names_gross": {
+          "node_gains": [
+            125.8207861460009,
+            25.736410876185197
+          ],
+          "joint_gain": 151.5571970221861,
+          "nll_per_word": 6.592940800036766,
+          "gain_by_4096_words": [
+            24.508128630598506,
+            23.349424788174893,
+            24.674201402657875,
+            16.853188787583775,
+            18.101228811428292,
+            18.876648267593268,
+            10.161000527086673,
+            15.033375807062821
+          ],
+          "node_block_gains": [
+            [
+              25.29518617452697,
+              21.31563986867479,
+              21.036136187706212,
+              16.138622416013874,
+              11.79584143655942,
+              13.026924106740891,
+              5.07246348289824,
+              12.139972472880508
+            ],
+            [
+              -0.7870575439284638,
+              2.0337849195001034,
+              3.638065214951666,
+              0.7145663715699015,
+              6.305387374868869,
+              5.849724160852377,
+              5.08853704418843,
+              2.893403334182314
+            ]
+          ]
+        },
+        "fresh_names_priced": {
+          "node_gains": [
+            2.667865928174251e-13,
+            4.0323300254385686e-13
+          ],
+          "joint_gain": 6.70019595361282e-13,
+          "nll_per_word": 6.597565958637297,
+          "gain_by_4096_words": [
+            8.038014698286133e-14,
+            8.903988657493755e-14,
+            9.758860386455126e-14,
+            7.649436639667329e-14,
+            7.971401316808624e-14,
+            8.22675261247241e-14,
+            8.237854842718662e-14,
+            8.215650382226158e-14
+          ],
+          "node_block_gains": [
+            [
+              2.7533531010703882e-14,
+              3.47499806707674e-14,
+              4.163336342344337e-14,
+              2.4424906541753444e-14,
+              3.6193270602780103e-14,
+              3.697042672001771e-14,
+              2.853273173286652e-14,
+              3.674838211509268e-14
+            ],
+            [
+              5.284661597215745e-14,
+              5.4289905904170155e-14,
+              5.595524044110789e-14,
+              5.206945985491984e-14,
+              4.3520742565306136e-14,
+              4.529709940470639e-14,
+              5.384581669432009e-14,
+              4.54081217071689e-14
+            ]
+          ]
+        },
+        "all_gross": {
+          "node_gains": [
+            159.33015858003483,
+            31.10138891801191
+          ],
+          "joint_gain": 190.4315474980467,
+          "nll_per_word": 6.591754449009061,
+          "gain_by_4096_words": [
+            26.16495802117772,
+            32.528517001565895,
+            32.58453430303598,
+            19.913805094263378,
+            25.231627781937505,
+            27.69342379091727,
+            12.540242700739963,
+            13.774438804409025
+          ],
+          "node_block_gains": [
+            [
+              24.95667750731397,
+              27.78981718429187,
+              27.31599834664699,
+              19.965693958225106,
+              18.38655013772305,
+              22.529019941813324,
+              8.62344458557728,
+              9.762956918443253
+            ],
+            [
+              1.2082805138637576,
+              4.738699817274028,
+              5.268535956388996,
+              -0.05188886396173176,
+              6.845077644214458,
+              5.164403849103945,
+              3.9167981151626856,
+              4.0114818859657735
+            ]
+          ]
+        },
+        "all_priced": {
+          "node_gains": [
+            87.90269843526461,
+            24.714133780132563
+          ],
+          "joint_gain": 112.61683221539717,
+          "nll_per_word": 6.594129165661974,
+          "gain_by_4096_words": [
+            11.679197710588765,
+            19.230062630484564,
+            24.210007751949448,
+            18.89739708488931,
+            8.151827857011945,
+            7.00786195706625,
+            14.621663109939943,
+            8.818814113466953
+          ],
+          "node_block_gains": [
+            [
+              12.971000747183169,
+              16.3609188664801,
+              15.898032615378735,
+              17.036505180189486,
+              6.309718652898253,
+              4.950234197112731,
+              9.386362778881221,
+              4.989925397140924
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "static_gross": {
+          "node_gains": [
+            17.142419114677452,
+            5.052779258964863
+          ],
+          "joint_gain": 22.195198373642317,
+          "nll_per_word": 6.596888614936929,
+          "gain_by_4096_words": [
+            5.807896785709233,
+            3.5687534398170935,
+            0.1828409093115979,
+            -0.21408082944998874,
+            5.538944980390392,
+            6.6656772828242055,
+            -1.298093253016937,
+            1.943259058056721
+          ],
+          "node_block_gains": [
+            [
+              5.24279962103756,
+              2.106570491651788,
+              0.05293828937032585,
+              2.516449918879858,
+              2.1887722804483567,
+              2.533781268507447,
+              -0.1983786483473735,
+              2.699485893129493
+            ],
+            [
+              0.5650971646716736,
+              1.462182948165307,
+              0.12990261994127295,
+              -2.7305307483298464,
+              3.3501726999420365,
+              4.131896014316758,
+              -1.0997146046695638,
+              -0.7562268350727721
+            ]
+          ]
+        },
+        "static_priced": {
+          "node_gains": [
+            20.698279258770775,
+            5.052779258964863
+          ],
+          "joint_gain": 25.751058517735643,
+          "nll_per_word": 6.59678009869718,
+          "gain_by_4096_words": [
+            7.7734168111137105,
+            5.368300305568324,
+            6.60537806261336,
+            0.9504478792511121,
+            3.1285591874665992,
+            4.481107994485004,
+            -3.446670077689645,
+            0.8905183549271747
+          ],
+          "node_block_gains": [
+            [
+              7.208319646442037,
+              3.906117357403018,
+              6.4754754426720895,
+              3.6809786275809584,
+              -0.22161351247543637,
+              0.34921198016824717,
+              -2.3469554730200803,
+              1.6467451899999466
+            ],
+            [
+              0.5650971646716736,
+              1.462182948165307,
+              0.12990261994127295,
+              -2.7305307483298464,
+              3.3501726999420365,
+              4.131896014316758,
+              -1.0997146046695638,
+              -0.7562268350727721
+            ]
+          ]
+        },
+        "a_gross": {
+          "node_gains": [
+            119.7999464946617,
+            27.05581577351049
+          ],
+          "joint_gain": 146.85576226817219,
+          "nll_per_word": 6.593084276439171,
+          "gain_by_4096_words": [
+            15.510448556384182,
+            24.308072732585472,
+            24.27210182397164,
+            19.038979301904114,
+            21.621437400086158,
+            17.939472119198204,
+            10.421953104711617,
+            13.743297229330798
+          ],
+          "node_block_gains": [
+            [
+              17.057068909854458,
+              20.457632732273687,
+              18.227568284242267,
+              20.3522182505231,
+              12.948490575752835,
+              12.857961221853703,
+              9.254193237153729,
+              8.644813283007897
+            ],
+            [
+              -1.5466203534702787,
+              3.8504400003117834,
+              6.044533539729371,
+              -1.3132389486189884,
+              8.672946824333321,
+              5.081510897344496,
+              1.1677598675578853,
+              5.098483946322901
+            ]
+          ]
+        },
+        "a_priced": {
+          "node_gains": [
+            108.60364484322355,
+            24.714133780132563
+          ],
+          "joint_gain": 133.31777862335613,
+          "nll_per_word": 6.593497422912707,
+          "gain_by_4096_words": [
+            16.45161599876886,
+            22.20329921073571,
+            32.67352497745124,
+            22.14833284704983,
+            7.968924067084986,
+            9.916908419538512,
+            11.071816198472076,
+            10.883356904254907
+          ],
+          "node_block_gains": [
+            [
+              17.743419035363264,
+              19.334155446731245,
+              24.36154984088052,
+              20.28744094235001,
+              6.126814862971296,
+              7.859280659584989,
+              5.836515867413353,
+              7.0544681879288795
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "b_gross": {
+          "node_gains": [
+            36.80838439159436,
+            0.9533066999857835
+          ],
+          "joint_gain": 37.76169109158015,
+          "nll_per_word": 6.5964135632792775,
+          "gain_by_4096_words": [
+            9.424723628277548,
+            4.8086414375918345,
+            6.283690224565471,
+            -1.33791056898818,
+            5.048086481025637,
+            10.193681119461456,
+            2.1592639877876687,
+            1.1815147818587106
+          ],
+          "node_block_gains": [
+            [
+              8.569242128641198,
+              3.371645237485273,
+              7.399298223363304,
+              2.755023413840159,
+              3.6616766171006936,
+              7.261849219115332,
+              2.057285685677562,
+              1.7323638663708407
+            ],
+            [
+              0.85548149963635,
+              1.436996200106563,
+              -1.1156079987978313,
+              -4.09293398282834,
+              1.3864098639249431,
+              2.9318319003461246,
+              0.10197830211010595,
+              -0.5508490845121301
+            ]
+          ]
+        },
+        "b_priced": {
+          "node_gains": [
+            34.727405386673276,
+            5.052779258964863
+          ],
+          "joint_gain": 39.780184645638144,
+          "nll_per_word": 6.596351963744546,
+          "gain_by_4096_words": [
+            8.812032290884448,
+            5.831724410803281,
+            12.141175637390095,
+            2.9309891511496144,
+            3.2698939212360205,
+            7.158196234414508,
+            -0.48911504544039763,
+            0.12528804520057568
+          ],
+          "node_block_gains": [
+            [
+              8.246935126212772,
+              4.369541462637974,
+              12.011273017448827,
+              5.66151989947946,
+              -0.0802787787060163,
+              3.026300220097748,
+              0.6105995592291662,
+              0.8815148802733463
+            ],
+            [
+              0.5650971646716736,
+              1.462182948165307,
+              0.12990261994127295,
+              -2.7305307483298464,
+              3.3501726999420365,
+              4.131896014316758,
+              -1.0997146046695638,
+              -0.7562268350727721
+            ]
+          ]
+        },
+        "c_gross": {
+          "node_gains": [
+            107.33868313418044,
+            24.552523611740554
+          ],
+          "joint_gain": 131.89120674592098,
+          "nll_per_word": 6.5935409584314275,
+          "gain_by_4096_words": [
+            17.948134380525197,
+            23.658074061465577,
+            18.323124590489833,
+            15.538641780657361,
+            15.14535648672342,
+            15.63842826228105,
+            13.262731338942201,
+            12.376715844836351
+          ],
+          "node_block_gains": [
+            [
+              17.104584130123744,
+              18.536578597138007,
+              12.30972794047301,
+              16.514708680041448,
+              10.98086440468153,
+              13.455916660792134,
+              9.797032984681085,
+              8.639269736249481
+            ],
+            [
+              0.8435502504014567,
+              5.121495464327571,
+              6.013396650016823,
+              -0.9760668993840903,
+              4.164492082041894,
+              2.1825116014889145,
+              3.465698354261116,
+              3.7374461085868673
+            ]
+          ]
+        },
+        "c_priced": {
+          "node_gains": [
+            87.90269843526461,
+            7.9460457632928065
+          ],
+          "joint_gain": 95.84874419855741,
+          "nll_per_word": 6.594640887098034,
+          "gain_by_4096_words": [
+            10.309307913830422,
+            19.98781306806271,
+            20.49816156132207,
+            13.793323831783255,
+            8.594104985291086,
+            4.299866039228544,
+            11.280322588055062,
+            7.085844210984272
+          ],
+          "node_block_gains": [
+            [
+              12.971000747183169,
+              16.3609188664801,
+              15.898032615378735,
+              17.036505180189486,
+              6.309718652898253,
+              4.950234197112731,
+              9.386362778881221,
+              4.989925397140924
+            ],
+            [
+              -2.661692833352747,
+              3.626894201582611,
+              4.600128945943336,
+              -3.243181348406233,
+              2.2843863323928346,
+              -0.6503681578841878,
+              1.8939598091738437,
+              2.0959188138433484
+            ]
+          ]
+        },
+        "additive_gross": {
+          "node_gains": [
+            156.50637999487614,
+            21.770328212105788
+          ],
+          "joint_gain": 178.27670820698194,
+          "nll_per_word": 6.592125385266722,
+          "gain_by_4096_words": [
+            19.706227188892242,
+            28.79001066161853,
+            32.33889602539581,
+            18.148982981658662,
+            27.77384832077887,
+            25.989547681108572,
+            12.444868745180674,
+            13.084326602348565
+          ],
+          "node_block_gains": [
+            [
+              22.042979918376464,
+              25.238729874046797,
+              28.181788477601888,
+              19.960961609750207,
+              19.477662193031062,
+              21.12140782641106,
+              9.87330603531584,
+              10.609544060342829
+            ],
+            [
+              -2.3367527294842185,
+              3.551280787571737,
+              4.157107547793927,
+              -1.811978628091544,
+              8.296186127747804,
+              4.8681398546975085,
+              2.5715627098648346,
+              2.474782542005737
+            ]
+          ]
+        },
+        "additive_priced": {
+          "node_gains": [
+            108.60364484322355,
+            24.714133780132563
+          ],
+          "joint_gain": 133.31777862335613,
+          "nll_per_word": 6.593497422912707,
+          "gain_by_4096_words": [
+            16.45161599876886,
+            22.20329921073571,
+            32.67352497745124,
+            22.14833284704983,
+            7.968924067084986,
+            9.916908419538512,
+            11.071816198472076,
+            10.883356904254907
+          ],
+          "node_block_gains": [
+            [
+              17.743419035363264,
+              19.334155446731245,
+              24.36154984088052,
+              20.28744094235001,
+              6.126814862971296,
+              7.859280659584989,
+              5.836515867413353,
+              7.0544681879288795
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "all_bits_gross": {
+          "node_gains": [
+            159.33015858003483,
+            31.10138891801191
+          ],
+          "joint_gain": 190.4315474980467,
+          "nll_per_word": 6.591754449009061,
+          "gain_by_4096_words": [
+            26.16495802117772,
+            32.528517001565895,
+            32.58453430303598,
+            19.913805094263378,
+            25.231627781937505,
+            27.69342379091727,
+            12.540242700739963,
+            13.774438804409025
+          ],
+          "node_block_gains": [
+            [
+              24.95667750731397,
+              27.78981718429187,
+              27.31599834664699,
+              19.965693958225106,
+              18.38655013772305,
+              22.529019941813324,
+              8.62344458557728,
+              9.762956918443253
+            ],
+            [
+              1.2082805138637576,
+              4.738699817274028,
+              5.268535956388996,
+              -0.05188886396173176,
+              6.845077644214458,
+              5.164403849103945,
+              3.9167981151626856,
+              4.0114818859657735
+            ]
+          ]
+        },
+        "all_bits_priced": {
+          "node_gains": [
+            108.60364484322355,
+            24.714133780132563
+          ],
+          "joint_gain": 133.31777862335613,
+          "nll_per_word": 6.593497422912707,
+          "gain_by_4096_words": [
+            16.45161599876886,
+            22.20329921073571,
+            32.67352497745124,
+            22.14833284704983,
+            7.968924067084986,
+            9.916908419538512,
+            11.071816198472076,
+            10.883356904254907
+          ],
+          "node_block_gains": [
+            [
+              17.743419035363264,
+              19.334155446731245,
+              24.36154984088052,
+              20.28744094235001,
+              6.126814862971296,
+              7.859280659584989,
+              5.836515867413353,
+              7.0544681879288795
+            ],
+            [
+              -1.2918030365943984,
+              2.8691437640044675,
+              8.31197513657071,
+              1.86089190469982,
+              1.8421092041136917,
+              2.0576277599535198,
+              5.235300331058721,
+              3.828888716326029
+            ]
+          ]
+        },
+        "fresh_gross": {
+          "node_gains": [
+            102.8352582856642,
+            25.736410876185197
+          ],
+          "joint_gain": 128.57166916184937,
+          "nll_per_word": 6.593642262678988,
+          "gain_by_4096_words": [
+            16.909870136419283,
+            19.423098957691032,
+            20.266519467249935,
+            17.083479749138966,
+            16.34201174828902,
+            15.21148544265234,
+            12.97428215728212,
+            10.360921503126692
+          ],
+          "node_block_gains": [
+            [
+              17.69692768034775,
+              17.389314038190932,
+              16.628454252298273,
+              16.368913377569065,
+              10.036624373420151,
+              9.361761281799964,
+              7.885745113093692,
+              7.46751816894438
+            ],
+            [
+              -0.7870575439284638,
+              2.0337849195001034,
+              3.638065214951666,
+              0.7145663715699015,
+              6.305387374868869,
+              5.849724160852377,
+              5.08853704418843,
+              2.893403334182314
+            ]
+          ]
+        },
+        "fresh_priced": {
+          "node_gains": [
+            110.43000222948133,
+            14.935485582105123
+          ],
+          "joint_gain": 125.36548781158646,
+          "nll_per_word": 6.593740107568827,
+          "gain_by_4096_words": [
+            19.982468016490103,
+            23.224112009362955,
+            26.100960608128638,
+            15.80085990101041,
+            8.046362794930173,
+            14.53203985266093,
+            9.394405422018746,
+            8.284279206984491
+          ],
+          "node_block_gains": [
+            [
+              20.40412012234031,
+              19.72357090867849,
+              21.8278321310396,
+              19.808537877412416,
+              7.051823156191395,
+              7.427465978814435,
+              7.1435834176522475,
+              7.043068637352438
+            ],
+            [
+              -0.4216521058502057,
+              3.500541100684463,
+              4.273128477089036,
+              -4.007677976402002,
+              0.9945396387387824,
+              7.1045738738464985,
+              2.2508220043664986,
+              1.2412105696320546
+            ]
+          ]
+        },
+        "direct_gross": {
+          "node_gains": [
+            125.8207861460009,
+            27.884564988829307
+          ],
+          "joint_gain": 153.7053511348302,
+          "nll_per_word": 6.592875243575809,
+          "gain_by_4096_words": [
+            26.447136276956634,
+            24.266825096095065,
+            19.02860352982499,
+            12.963145154082117,
+            26.454560072277708,
+            24.39273281193506,
+            6.9381963173806085,
+            13.214151876278022
+          ],
+          "node_block_gains": [
+            [
+              25.29518617452697,
+              21.31563986867479,
+              21.036136187706212,
+              16.138622416013874,
+              11.79584143655942,
+              13.026924106740891,
+              5.07246348289824,
+              12.139972472880508
+            ],
+            [
+              1.151950102429663,
+              2.9511852274202752,
+              -2.007532657881219,
+              -3.1754772619317557,
+              14.658718635718289,
+              11.36580870519417,
+              1.8657328344823663,
+              1.0741794033975145
+            ]
+          ]
+        },
+        "direct_priced": {
+          "node_gains": [
+            125.8207861460009,
+            27.884564988829307
+          ],
+          "joint_gain": 153.7053511348302,
+          "nll_per_word": 6.592875243575809,
+          "gain_by_4096_words": [
+            26.447136276956634,
+            24.266825096095065,
+            19.02860352982499,
+            12.963145154082117,
+            26.454560072277708,
+            24.39273281193506,
+            6.9381963173806085,
+            13.214151876278022
+          ],
+          "node_block_gains": [
+            [
+              25.29518617452697,
+              21.31563986867479,
+              21.036136187706212,
+              16.138622416013874,
+              11.79584143655942,
+              13.026924106740891,
+              5.07246348289824,
+              12.139972472880508
+            ],
+            [
+              1.151950102429663,
+              2.9511852274202752,
+              -2.007532657881219,
+              -3.1754772619317557,
+              14.658718635718289,
+              11.36580870519417,
+              1.8657328344823663,
+              1.0741794033975145
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "offset": 49000000,
+      "sha256": "e88ddff9c6bce8c7cfb63969017ffd6c7761011205862080ff823b92688a8dae",
+      "parent_occurrences": [
+        24668,
+        22703
+      ],
+      "frozen_nll": 6.7192928811140025,
+      "full_row_and_parent_error": 4.440892098500626e-16,
+      "methods": {
+        "unchanged_gross": {
+          "node_gains": [
+            2.6489921367556235e-13,
+            4.198863479132342e-13
+          ],
+          "joint_gain": 6.847855615887966e-13,
+          "nll_per_word": 6.7192928811140025,
+          "gain_by_4096_words": [
+            7.438494264988549e-14,
+            9.29256671611256e-14,
+            8.970602038971265e-14,
+            7.616129948928574e-14,
+            9.181544413650045e-14,
+            9.092726571680032e-14,
+            9.00390872971002e-14,
+            7.882583474838611e-14
+          ],
+          "node_block_gains": [
+            [
+              3.175237850427948e-14,
+              3.186340080674199e-14,
+              3.930189507173054e-14,
+              2.275957200481571e-14,
+              3.9968028886505635e-14,
+              3.852473895449293e-14,
+              3.452793606584237e-14,
+              2.6201263381153694e-14
+            ],
+            [
+              4.263256414560601e-14,
+              6.106226635438361e-14,
+              5.040412531798211e-14,
+              5.340172748447003e-14,
+              5.184741524999481e-14,
+              5.240252676230739e-14,
+              5.551115123125783e-14,
+              5.262457136723242e-14
+            ]
+          ]
+        },
+        "unchanged_priced": {
+          "node_gains": [
+            2.6489921367556235e-13,
+            4.198863479132342e-13
+          ],
+          "joint_gain": 6.847855615887966e-13,
+          "nll_per_word": 6.7192928811140025,
+          "gain_by_4096_words": [
+            7.438494264988549e-14,
+            9.29256671611256e-14,
+            8.970602038971265e-14,
+            7.616129948928574e-14,
+            9.181544413650045e-14,
+            9.092726571680032e-14,
+            9.00390872971002e-14,
+            7.882583474838611e-14
+          ],
+          "node_block_gains": [
+            [
+              3.175237850427948e-14,
+              3.186340080674199e-14,
+              3.930189507173054e-14,
+              2.275957200481571e-14,
+              3.9968028886505635e-14,
+              3.852473895449293e-14,
+              3.452793606584237e-14,
+              2.6201263381153694e-14
+            ],
+            [
+              4.263256414560601e-14,
+              6.106226635438361e-14,
+              5.040412531798211e-14,
+              5.340172748447003e-14,
+              5.184741524999481e-14,
+              5.240252676230739e-14,
+              5.551115123125783e-14,
+              5.262457136723242e-14
+            ]
+          ]
+        },
+        "constituents_gross": {
+          "node_gains": [
+            131.6866852271817,
+            70.83404042120011
+          ],
+          "joint_gain": 202.5207256483818,
+          "nll_per_word": 6.713112439047095,
+          "gain_by_4096_words": [
+            25.693865042415222,
+            53.37415166589358,
+            17.25986897540413,
+            15.88249151203614,
+            33.85725180052343,
+            26.832608868860174,
+            24.81942415208153,
+            4.801063631167587
+          ],
+          "node_block_gains": [
+            [
+              19.150353568787818,
+              38.759556654857654,
+              12.719400826717647,
+              9.374748047054151,
+              25.48513212187978,
+              16.552046000055682,
+              11.14777843330937,
+              -1.5023304254804017
+            ],
+            [
+              6.543511473627407,
+              14.61459501103593,
+              4.540468148686489,
+              6.507743464981988,
+              8.37211967864365,
+              10.280562868804491,
+              13.671645718772163,
+              6.3033940566479885
+            ]
+          ]
+        },
+        "constituents_priced": {
+          "node_gains": [
+            92.93233712669404,
+            92.23920381394024
+          ],
+          "joint_gain": 185.17154094063426,
+          "nll_per_word": 6.71364189414682,
+          "gain_by_4096_words": [
+            28.95098413091632,
+            38.32685861323622,
+            5.974853691584229,
+            14.936665863491893,
+            32.79068180891576,
+            38.01255515551634,
+            16.218071171203917,
+            9.960870505769591
+          ],
+          "node_block_gains": [
+            [
+              17.584887641420206,
+              16.597360746505835,
+              6.109570894875557,
+              8.412411294876048,
+              20.902975932741708,
+              15.529615758327795,
+              8.194639370620443,
+              -0.39912451267355253
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "product_available_gross": {
+          "node_gains": [
+            139.0293886036842,
+            72.06795616743166
+          ],
+          "joint_gain": 211.09734477111584,
+          "nll_per_word": 6.71285070140297,
+          "gain_by_4096_words": [
+            31.27240760858166,
+            49.43714135793311,
+            16.239545942988663,
+            16.45882952469771,
+            35.221175170292966,
+            30.90732662584397,
+            25.873803208244066,
+            5.687115332533709
+          ],
+          "node_block_gains": [
+            [
+              20.198999181827112,
+              37.31900285518816,
+              14.799327144424224,
+              8.444325964546621,
+              26.172335762878546,
+              17.687579921852546,
+              13.708455226852017,
+              0.6993625461149777
+            ],
+            [
+              11.073408426754554,
+              12.118138502744955,
+              1.440218798564438,
+              8.014503560151088,
+              9.048839407414416,
+              13.219746703991428,
+              12.165347981392047,
+              4.9877527864187305
+            ]
+          ]
+        },
+        "product_available_priced": {
+          "node_gains": [
+            106.7216257410754,
+            92.23920381394024
+          ],
+          "joint_gain": 198.96082955501564,
+          "nll_per_word": 6.713221078454242,
+          "gain_by_4096_words": [
+            25.985539499524236,
+            41.33464030580364,
+            7.561508544261628,
+            13.313579569526231,
+            36.80707459995374,
+            38.55968922850232,
+            21.48101833090942,
+            13.917779476534427
+          ],
+          "node_block_gains": [
+            [
+              14.619443010028117,
+              19.605142439073248,
+              7.696225747552953,
+              6.78932500091039,
+              24.919368723779684,
+              16.076749831313776,
+              13.457586530325948,
+              3.5577844580912825
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "fresh_names_gross": {
+          "node_gains": [
+            123.47599283659358,
+            55.5147209354911
+          ],
+          "joint_gain": 178.9907137720847,
+          "nll_per_word": 6.713830518022813,
+          "gain_by_4096_words": [
+            22.505090603882863,
+            37.89630580172863,
+            17.00573121672446,
+            10.880246979676386,
+            37.65344778161361,
+            24.610570308017095,
+            16.934320396948475,
+            11.505000683493162
+          ],
+          "node_block_gains": [
+            [
+              14.259979720940386,
+              29.77571415186563,
+              14.709252523014255,
+              7.443076175596193,
+              30.8683761895747,
+              13.928080757295296,
+              7.049125058020811,
+              5.442388260286305
+            ],
+            [
+              8.245110882942477,
+              8.120591649863,
+              2.2964786937102044,
+              3.437170804080191,
+              6.785071592038912,
+              10.682489550721797,
+              9.885195338927666,
+              6.062612423206855
+            ]
+          ]
+        },
+        "fresh_names_priced": {
+          "node_gains": [
+            2.6489921367556235e-13,
+            4.198863479132342e-13
+          ],
+          "joint_gain": 6.847855615887966e-13,
+          "nll_per_word": 6.7192928811140025,
+          "gain_by_4096_words": [
+            7.438494264988549e-14,
+            9.29256671611256e-14,
+            8.970602038971265e-14,
+            7.616129948928574e-14,
+            9.181544413650045e-14,
+            9.092726571680032e-14,
+            9.00390872971002e-14,
+            7.882583474838611e-14
+          ],
+          "node_block_gains": [
+            [
+              3.175237850427948e-14,
+              3.186340080674199e-14,
+              3.930189507173054e-14,
+              2.275957200481571e-14,
+              3.9968028886505635e-14,
+              3.852473895449293e-14,
+              3.452793606584237e-14,
+              2.6201263381153694e-14
+            ],
+            [
+              4.263256414560601e-14,
+              6.106226635438361e-14,
+              5.040412531798211e-14,
+              5.340172748447003e-14,
+              5.184741524999481e-14,
+              5.240252676230739e-14,
+              5.551115123125783e-14,
+              5.262457136723242e-14
+            ]
+          ]
+        },
+        "all_gross": {
+          "node_gains": [
+            139.0293886036842,
+            72.06795616743166
+          ],
+          "joint_gain": 211.09734477111584,
+          "nll_per_word": 6.71285070140297,
+          "gain_by_4096_words": [
+            31.27240760858166,
+            49.43714135793311,
+            16.239545942988663,
+            16.45882952469771,
+            35.221175170292966,
+            30.90732662584397,
+            25.873803208244066,
+            5.687115332533709
+          ],
+          "node_block_gains": [
+            [
+              20.198999181827112,
+              37.31900285518816,
+              14.799327144424224,
+              8.444325964546621,
+              26.172335762878546,
+              17.687579921852546,
+              13.708455226852017,
+              0.6993625461149777
+            ],
+            [
+              11.073408426754554,
+              12.118138502744955,
+              1.440218798564438,
+              8.014503560151088,
+              9.048839407414416,
+              13.219746703991428,
+              12.165347981392047,
+              4.9877527864187305
+            ]
+          ]
+        },
+        "all_priced": {
+          "node_gains": [
+            106.7216257410754,
+            92.23920381394024
+          ],
+          "joint_gain": 198.96082955501564,
+          "nll_per_word": 6.713221078454242,
+          "gain_by_4096_words": [
+            25.985539499524236,
+            41.33464030580364,
+            7.561508544261628,
+            13.313579569526231,
+            36.80707459995374,
+            38.55968922850232,
+            21.48101833090942,
+            13.917779476534427
+          ],
+          "node_block_gains": [
+            [
+              14.619443010028117,
+              19.605142439073248,
+              7.696225747552953,
+              6.78932500091039,
+              24.919368723779684,
+              16.076749831313776,
+              13.457586530325948,
+              3.5577844580912825
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "static_gross": {
+          "node_gains": [
+            12.151230796732944,
+            2.6278711886825867
+          ],
+          "joint_gain": 14.77910198541553,
+          "nll_per_word": 6.718841858714545,
+          "gain_by_4096_words": [
+            -0.3377567731137403,
+            3.491657630865439,
+            -0.3809972537913533,
+            0.30815115478618926,
+            8.26704384272931,
+            2.3957916593613997,
+            2.0812401904884803,
+            -1.0460284659101942
+          ],
+          "node_block_gains": [
+            [
+              1.9710154066351175,
+              7.762760108352249,
+              2.5374963837544326,
+              -0.6860333113871451,
+              6.519651391295125,
+              -0.6199907775061134,
+              -4.060093893192672,
+              -1.2735745112180505
+            ],
+            [
+              -2.308772179748858,
+              -4.27110247748681,
+              -2.918493637545785,
+              0.9941844661733329,
+              1.7473924514341843,
+              3.0157824368675135,
+              6.141334083681152,
+              0.22754604530785694
+            ]
+          ]
+        },
+        "static_priced": {
+          "node_gains": [
+            15.920799762437229,
+            2.6278711886825867
+          ],
+          "joint_gain": 18.548670951119814,
+          "nll_per_word": 6.718726820599136,
+          "gain_by_4096_words": [
+            0.3813488084360128,
+            1.8936188436084596,
+            -1.4512459339139117,
+            -0.13063620216698268,
+            11.173903973741456,
+            3.4584785519566714,
+            3.5467102632427476,
+            -0.32350735378463913
+          ],
+          "node_block_gains": [
+            [
+              2.6901209881848716,
+              6.164721321095269,
+              1.4672477036318732,
+              -1.1248206683403155,
+              9.426511522307274,
+              0.4426961150891588,
+              -2.5946238204384042,
+              -0.5510533990924955
+            ],
+            [
+              -2.308772179748858,
+              -4.27110247748681,
+              -2.918493637545785,
+              0.9941844661733329,
+              1.7473924514341843,
+              3.0157824368675135,
+              6.141334083681152,
+              0.22754604530785694
+            ]
+          ]
+        },
+        "a_gross": {
+          "node_gains": [
+            106.60482581294966,
+            70.83404042120011
+          ],
+          "joint_gain": 177.43886623414977,
+          "nll_per_word": 6.713877876651289,
+          "gain_by_4096_words": [
+            22.971371479980363,
+            42.44506259518132,
+            13.731071774356819,
+            15.738821867222246,
+            29.750347247158164,
+            25.44453835281065,
+            18.133064508593662,
+            9.224588408846547
+          ],
+          "node_block_gains": [
+            [
+              16.427860006352955,
+              27.83046758414539,
+              9.190603625670331,
+              9.231078402240259,
+              21.37822756851451,
+              15.163975484006162,
+              4.461418789821499,
+              2.921194352198561
+            ],
+            [
+              6.543511473627407,
+              14.61459501103593,
+              4.540468148686489,
+              6.507743464981988,
+              8.37211967864365,
+              10.280562868804491,
+              13.671645718772163,
+              6.3033940566479885
+            ]
+          ]
+        },
+        "a_priced": {
+          "node_gains": [
+            92.93233712669404,
+            92.23920381394024
+          ],
+          "joint_gain": 185.17154094063426,
+          "nll_per_word": 6.71364189414682,
+          "gain_by_4096_words": [
+            28.95098413091632,
+            38.32685861323622,
+            5.974853691584229,
+            14.936665863491893,
+            32.79068180891576,
+            38.01255515551634,
+            16.218071171203917,
+            9.960870505769591
+          ],
+          "node_block_gains": [
+            [
+              17.584887641420206,
+              16.597360746505835,
+              6.109570894875557,
+              8.412411294876048,
+              20.902975932741708,
+              15.529615758327795,
+              8.194639370620443,
+              -0.39912451267355253
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "b_gross": {
+          "node_gains": [
+            29.48980362927505,
+            1.9786795969932738
+          ],
+          "joint_gain": 31.468483226268322,
+          "nll_per_word": 6.718332539218669,
+          "gain_by_4096_words": [
+            3.2048022330517187,
+            17.7241277842479,
+            4.927383215625113,
+            0.11280389642884892,
+            11.124916821169494,
+            1.439806021271583,
+            0.04490100452350876,
+            -7.110257750049849
+          ],
+          "node_block_gains": [
+            [
+              2.6590041448269837,
+              16.709543549066705,
+              5.693679982357411,
+              -0.5074415584908016,
+              10.7013149808236,
+              -0.6902930933313205,
+              -0.6625926665442585,
+              -4.413411709433268
+            ],
+            [
+              0.5457980882247346,
+              1.0145842351811982,
+              -0.7662967667322979,
+              0.6202454549196514,
+              0.42360184034589654,
+              2.1300991146029045,
+              0.7074936710677675,
+              -2.6968460406165806
+            ]
+          ]
+        },
+        "b_priced": {
+          "node_gains": [
+            42.82958777403094,
+            2.6278711886825867
+          ],
+          "joint_gain": 45.45745896271353,
+          "nll_per_word": 6.717905629558743,
+          "gain_by_4096_words": [
+            2.04051920579229,
+            5.7846190084671605,
+            -2.7098566170621896,
+            2.5044833104599125,
+            18.57821074243456,
+            9.118910006030099,
+            12.458677034048495,
+            -2.3181037274567946
+          ],
+          "node_block_gains": [
+            [
+              4.34929138554115,
+              10.05572148595397,
+              0.20863702048359611,
+              1.5102988442865792,
+              16.830818291000377,
+              6.103127569162586,
+              6.317342950367342,
+              -2.5456497727646505
+            ],
+            [
+              -2.308772179748858,
+              -4.27110247748681,
+              -2.918493637545785,
+              0.9941844661733329,
+              1.7473924514341843,
+              3.0157824368675135,
+              6.141334083681152,
+              0.22754604530785694
+            ]
+          ]
+        },
+        "c_gross": {
+          "node_gains": [
+            111.90113463929345,
+            47.46611228492981
+          ],
+          "joint_gain": 159.36724692422325,
+          "nll_per_word": 6.714429378705426,
+          "gain_by_4096_words": [
+            24.81073384130359,
+            27.491078556559355,
+            11.339444858304912,
+            14.468311780570268,
+            30.471868156528757,
+            24.7120403031657,
+            20.026476169269223,
+            6.04729325852146
+          ],
+          "node_block_gains": [
+            [
+              14.790998748810786,
+              27.804636446579067,
+              12.248461289089924,
+              4.573823524667766,
+              25.267666763152135,
+              14.49502772413421,
+              9.829674796228002,
+              2.890845346631563
+            ],
+            [
+              10.019735092492805,
+              -0.3135578900197111,
+              -0.9090164307850128,
+              9.894488255902502,
+              5.204201393376621,
+              10.217012579031492,
+              10.196801373041225,
+              3.156447911889896
+            ]
+          ]
+        },
+        "c_priced": {
+          "node_gains": [
+            106.7216257410754,
+            29.008353260700584
+          ],
+          "joint_gain": 135.72997900177597,
+          "nll_per_word": 6.71515073087591,
+          "gain_by_4096_words": [
+            23.36082327320217,
+            19.518107933127645,
+            5.953126713582523,
+            13.863545328598669,
+            27.232704418422223,
+            23.458636864879974,
+            16.91052487483713,
+            5.432509595125644
+          ],
+          "node_block_gains": [
+            [
+              14.619443010028117,
+              19.605142439073248,
+              7.696225747552953,
+              6.78932500091039,
+              24.919368723779684,
+              16.076749831313776,
+              13.457586530325948,
+              3.5577844580912825
+            ],
+            [
+              8.741380263174051,
+              -0.08703450594560191,
+              -1.7430990339704322,
+              7.074220327688282,
+              2.3133356946425376,
+              7.381887033566199,
+              3.4529383445111823,
+              1.8747251370343614
+            ]
+          ]
+        },
+        "additive_gross": {
+          "node_gains": [
+            131.6866852271817,
+            69.01078463015548
+          ],
+          "joint_gain": 200.69746985733718,
+          "nll_per_word": 6.713168080398141,
+          "gain_by_4096_words": [
+            28.742157513678013,
+            52.17524546287291,
+            16.134845819211257,
+            15.894582830732398,
+            32.99504976906365,
+            29.429283374461193,
+            23.470625314637115,
+            1.8556797726806442
+          ],
+          "node_block_gains": [
+            [
+              19.150353568787818,
+              38.759556654857654,
+              12.719400826717647,
+              9.374748047054151,
+              25.48513212187978,
+              16.552046000055682,
+              11.14777843330937,
+              -1.5023304254804017
+            ],
+            [
+              9.591803944890195,
+              13.415688808015261,
+              3.41544499249361,
+              6.519834783678247,
+              7.509917647183872,
+              12.87723737440551,
+              12.322846881327747,
+              3.3580101981610446
+            ]
+          ]
+        },
+        "additive_priced": {
+          "node_gains": [
+            92.93233712669404,
+            92.23920381394024
+          ],
+          "joint_gain": 185.17154094063426,
+          "nll_per_word": 6.71364189414682,
+          "gain_by_4096_words": [
+            28.95098413091632,
+            38.32685861323622,
+            5.974853691584229,
+            14.936665863491893,
+            32.79068180891576,
+            38.01255515551634,
+            16.218071171203917,
+            9.960870505769591
+          ],
+          "node_block_gains": [
+            [
+              17.584887641420206,
+              16.597360746505835,
+              6.109570894875557,
+              8.412411294876048,
+              20.902975932741708,
+              15.529615758327795,
+              8.194639370620443,
+              -0.39912451267355253
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "all_bits_gross": {
+          "node_gains": [
+            139.0293886036842,
+            72.06795616743166
+          ],
+          "joint_gain": 211.09734477111584,
+          "nll_per_word": 6.71285070140297,
+          "gain_by_4096_words": [
+            31.27240760858166,
+            49.43714135793311,
+            16.239545942988663,
+            16.45882952469771,
+            35.221175170292966,
+            30.90732662584397,
+            25.873803208244066,
+            5.687115332533709
+          ],
+          "node_block_gains": [
+            [
+              20.198999181827112,
+              37.31900285518816,
+              14.799327144424224,
+              8.444325964546621,
+              26.172335762878546,
+              17.687579921852546,
+              13.708455226852017,
+              0.6993625461149777
+            ],
+            [
+              11.073408426754554,
+              12.118138502744955,
+              1.440218798564438,
+              8.014503560151088,
+              9.048839407414416,
+              13.219746703991428,
+              12.165347981392047,
+              4.9877527864187305
+            ]
+          ]
+        },
+        "all_bits_priced": {
+          "node_gains": [
+            92.93233712669404,
+            92.23920381394024
+          ],
+          "joint_gain": 185.17154094063426,
+          "nll_per_word": 6.71364189414682,
+          "gain_by_4096_words": [
+            28.95098413091632,
+            38.32685861323622,
+            5.974853691584229,
+            14.936665863491893,
+            32.79068180891576,
+            38.01255515551634,
+            16.218071171203917,
+            9.960870505769591
+          ],
+          "node_block_gains": [
+            [
+              17.584887641420206,
+              16.597360746505835,
+              6.109570894875557,
+              8.412411294876048,
+              20.902975932741708,
+              15.529615758327795,
+              8.194639370620443,
+              -0.39912451267355253
+            ],
+            [
+              11.366096489496115,
+              21.729497866730384,
+              -0.13471720329132664,
+              6.524254568615846,
+              11.88770587617405,
+              22.48293939718855,
+              8.023431800583475,
+              10.359995018443144
+            ]
+          ]
+        },
+        "fresh_gross": {
+          "node_gains": [
+            95.42234683366588,
+            55.5147209354911
+          ],
+          "joint_gain": 150.937067769157,
+          "nll_per_word": 6.714686647356398,
+          "gain_by_4096_words": [
+            21.1230377596016,
+            29.76039477690619,
+            8.472833920176608,
+            12.024311093421318,
+            29.13718948072616,
+            25.162687603290458,
+            16.71459032968466,
+            8.54202280535
+          ],
+          "node_block_gains": [
+            [
+              12.877926876659128,
+              21.639803127043187,
+              6.176355226466403,
+              8.587140289341129,
+              22.352117888687246,
+              14.480198052568662,
+              6.829394990756995,
+              2.4794103821431444
+            ],
+            [
+              8.245110882942477,
+              8.120591649863,
+              2.2964786937102044,
+              3.437170804080191,
+              6.785071592038912,
+              10.682489550721797,
+              9.885195338927666,
+              6.062612423206855
+            ]
+          ]
+        },
+        "fresh_priced": {
+          "node_gains": [
+            83.20780548163938,
+            63.49592987763511
+          ],
+          "joint_gain": 146.70373535927448,
+          "nll_per_word": 6.7148158384089465,
+          "gain_by_4096_words": [
+            24.320333782338203,
+            25.59663745284044,
+            5.736013013072029,
+            10.593010607888882,
+            33.033998569884744,
+            25.69141743321372,
+            14.089276082950159,
+            7.643048417086299
+          ],
+          "node_block_gains": [
+            [
+              14.614620058377694,
+              15.076257363053323,
+              6.441606533973809,
+              5.912520490311918,
+              22.559821460077494,
+              12.308885059295848,
+              7.362859417100859,
+              -1.0687649005515674
+            ],
+            [
+              9.70571372396051,
+              10.52038008978712,
+              -0.7055935209017794,
+              4.680490117576963,
+              10.474177109807261,
+              13.382532373917869,
+              6.7264166658493,
+              8.71181331763787
+            ]
+          ]
+        },
+        "direct_gross": {
+          "node_gains": [
+            123.47599283659358,
+            62.33630277956896
+          ],
+          "joint_gain": 185.81229561616252,
+          "nll_per_word": 6.71362233986595,
+          "gain_by_4096_words": [
+            21.65223738563076,
+            40.44017676125023,
+            18.23596477357486,
+            10.658769786089486,
+            38.988402627525,
+            24.04060270970798,
+            22.8582993529539,
+            8.93784221943032
+          ],
+          "node_block_gains": [
+            [
+              14.259979720940386,
+              29.77571415186563,
+              14.709252523014255,
+              7.443076175596193,
+              30.8683761895747,
+              13.928080757295296,
+              7.049125058020811,
+              5.442388260286305
+            ],
+            [
+              7.392257664690372,
+              10.6644626093846,
+              3.526712250560605,
+              3.215693610493292,
+              8.120026437950305,
+              10.112521952412681,
+              15.809174294933088,
+              3.4954539591440166
+            ]
+          ]
+        },
+        "direct_priced": {
+          "node_gains": [
+            123.47599283659358,
+            62.33630277956896
+          ],
+          "joint_gain": 185.81229561616252,
+          "nll_per_word": 6.71362233986595,
+          "gain_by_4096_words": [
+            21.65223738563076,
+            40.44017676125023,
+            18.23596477357486,
+            10.658769786089486,
+            38.988402627525,
+            24.04060270970798,
+            22.8582993529539,
+            8.93784221943032
+          ],
+          "node_block_gains": [
+            [
+              14.259979720940386,
+              29.77571415186563,
+              14.709252523014255,
+              7.443076175596193,
+              30.8683761895747,
+              13.928080757295296,
+              7.049125058020811,
+              5.442388260286305
+            ],
+            [
+              7.392257664690372,
+              10.6644626093846,
+              3.526712250560605,
+              3.215693610493292,
+              8.120026437950305,
+              10.112521952412681,
+              15.809174294933088,
+              3.4954539591440166
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}
