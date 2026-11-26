@@ -499,3 +499,12 @@ Merged index4401,fullyread121,originalOpenAI32/1700/17unchanged. Preserve Astra9
 The note retains the expected posterior-distance lemma and common-pushforward coverage contraction. It separates that exact law from arbitrary fiber-averaged model occupancy. Explicit bounded examples delimit the shared-reward/coarsened double-sampling identity, the missing policy factor and optional raw-mean O1/n rate. These do not establish failure of every repaired final OPE guarantee. FDVF remains an offline bridge method with known propensities and substantive forgetting, support, function-class and coverage premises. No numerical experiments, formal replay or FP transfer.
 
 Merged index4405,fullyread122,originalOpenAI32/1700/17 unchanged. Astra9700cc6/e164129, Pro-Daf7c025 and Pro-E request59b8251 ownership are preserved. Kara2025 remains screened. Next ordinary reading follows fresh request/owner check.
+
+
+## Pro-D: statistical and structural identifiability completed, November26
+
+[Nelson etal ICLR2026 final](notes/NELSON-2026-STATISTICAL-STRUCTURAL-IDENTIFIABILITY.md) is fully read,all36pages,main1–5,AppendicesA.1–A.7,everyproof/formula,6figures including10digitpanels,7numberedtables,1unnumberedtable and71references. Sixteen originalPDFpages viewed. Complete PDF reading plus notation and targetedTeX checks. V1 scientific text and embeddedimagepixels match after enumerated metadata normalization, without a second completion count.
+
+The exact-output rigidity mechanism and conditioned whitening survive with explicit assumptions. An exact scale-family counterexample invalidates the printed GPT/supervised intermediate-layer application. A named historical dependency supplies the missing near-isometry range. Independent local calculations delimit dynamical isometry and binary-image geometry, and conditional repairs preserve useful tools. ICA stable-branch and covariance assumptions, missing linear perturbation term, in-sample alignment, label-based selection, rank-deficient ICA and conflicting final-source experimental descriptions are retained. No whole-paper certification, empirical reproduction or FP transfer.
+
+Merged index4406,fullyread123,originalOpenAI32/1700/17 unchanged. Preserved Astrae164129, Pro-Caefd87c and Pro-E ownership of59b8251 at40c0d2a. Continue with fresh request/owner check and targeted recent Pro-D discovery.
