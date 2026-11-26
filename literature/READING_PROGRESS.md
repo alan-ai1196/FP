@@ -706,3 +706,12 @@ Merged index 4478,fullyread142,originalOpenAI32/1700/17 unchanged. Preserve Astr
 The construction learns token-conditioned transitions from held-out I/O prediction. Independent kernel composition, reachable-state metric-error propagation and a fixed-noise hardening condition provide precise reuse tools. Final source predictions remain soft and search cost remains explicit. The main and appendix regularizers count different occupancy objects. Empirical evidence supports bounded task generalization with substantial adaptation, not unbounded symbolic program recovery. No implementation audit,training replay orformal verification.
 
 Merged index 4478 records, 143 fully read editions. Original OpenAI32/1700/17 unchanged. Hope remains scoped only because its supplementary proofs/operators are unread. Prepared Meng2509.24347v2 requires fresh request/owner check before root reading.
+
+
+## Pro-D: failure-triggered representation acquisition completed, November27
+
+[Wang-Zhang-Vinayak ALT2026 final](notes/WANG-2026-LIFELONG-REPRESENTATION.md) is fully read through all44pages,Sections1-8,AppendicesA-D,allproofs,2algorithms,4figures,1table,footnotes and references. Nine originalPDFpages were visually checked. The earlier36pagearXivv1 received scoped definition and example comparison, with real normalization differences and no full-reading credit.
+
+The main construction stores tasks that falsify the current frozen representation, then learns jointly from those witnesses. Independent error-budget calculations extend the witness mechanism to approximate ERM and calibrated noise information. A concrete regularized residual bound exposes the conditioning behind finite update counts. The objective concerns each emitted task predictor and does not guarantee final-model retention. Known tasks, iid sample requests, Bayes-risk information and optimizer cost remain explicit. No empirical reproduction or formal certification.
+
+Merged index 4480,fullyread144,originalOpenAI32/1700/17 unchanged. Preserve Pro-Af6ba439, Pro-C72350d9, Astra51aa0d9, Pro-E6797f92 and all concurrent worker records. Request2e7a6c9 is complete byPro-A ate0296c3. No global rescan orFPcorechange. Next ordinary selection requires fresh coordination.
