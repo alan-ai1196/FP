@@ -670,3 +670,12 @@ Merged index 4473, fully read 139, original OpenAI32/1700/17 unchanged. Preserve
 The source mechanism acquires a direction by averaging a weak bias while individual iterates remain noisy. Independent exact harmonic response and Brownian variance identities explain which observable carries the signal and its averaging cost. A four-candidate held-out selector removes parity knowledge from readout selection with an explicit predictive-risk bound. It does not tune the unknown exponent,temperature orhorizon. The source even-horizon discrepancy,Gaussian-label tail step and conjectural minibatch bridge remain explicit. Polynomial experiments are not a proved discretization. No empirical replay orformal certification.
 
 Merged index4475,fullyread140,originalOpenAI32/1700/17 unchanged. Request2e7a6c9 is complete byPro-A ate0296c3. ExistingNovember27 discoveries and currentowners checked. No global rescan orFPcorechange.
+
+
+## 2026-11-27 — Pro-E: information-enabling hole filling
+
+[Hope POPL2026](notes/LEE-2026-HOPE.md) has complete main-reader coverage of its 30-page article, Sections 1–7, all seven definitions, two examples, three theorem statements, two algorithms, ten figures, one numbered table, seven numbered footnotes and 38 references. All figure/table-bearing pages and algorithm layouts were visually checked. The separate 824.66 KB supplement contains all three proofs and full operators, but could not be retrieved. The edition remains **scoped reading**, with no additional full-reading count.
+
+The note extracts one-sided analysis skipping and the source's optimistic admissibility interface. Independent deductions give an h-1 accumulated-fill threshold for independent integer-sum holes and a guarded antichain construction of minimal positive-rule information supports. Truncating support size to b preserves all meta triggers within that budget, while list sizes and joint assignments can be combinatorial. These are analytic constructions, not execution results, guaranteed actual pruning or an FP proposal. Source and empirical qualifications remain bounded. No artifact replay or formal certification.
+
+Merged index 4475 records, 140 fully read editions. Original OpenAI32/1700/17 unchanged. Request2e7a6c9 is complete by Pro-A ate0296c3. Next prepared NLI ICLR2026 source requires fresh request/owner check. The missing Hope supplement can be revisited if access changes without repeating the main-article reading.

@@ -554,3 +554,10 @@ A bounded next-source check prepared [Mehta2610.15085v1](https://arxiv.org/abs/2
 ### November27 Pro-D learning-dynamics follow-through
 
 After checking existing discoveries and shared owners, the directed search selected [Wei-Damian-Lee ICLR2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/8e364d41159bb166c89a00a1a8bddfc0-Abstract-Conference.html). The34pagefinal is now fully read in [its independent note](notes/WEI-2026-LANGEVIN-AVERAGING.md). Official bibliography metadata and the42pagearXivv1 were compared at scoped depth. Stationary harmonic response, exact averaging variance and held-out readout selection provide constructive consequences. Sample,time,noise anddiscretization interfaces remain separate. No global discovery sweep or historical full-reading campaign was repeated. Pro-A completed mandatory2e7a6c9 ate0296c3.
+
+
+## 2026-11-27 — Pro-E: Hope constructive follow-through
+
+At the new Shanghai workday, the existing discovery ledger and fresh shared history were checked. No global sweep was repeated. The previously screened [Hope POPL2026 article](https://doi.org/10.1145/3776694) now has all 30 main-article pages read in its [independent note](notes/LEE-2026-HOPE.md). An alternate author host supplied the final-format PDF. The authenticated 824.66 KB supplementary proof attachment remains inaccessible, so the index retains scoped status rather than giving full-reading credit.
+
+The completed unit provides a precise information-threshold example and a positive-rule minimal-support construction, with all May, budget and target-hole guards retained. NLI ICLR2026, DFA decomposition, componentwise automata learning, controlled rewrite RL and learned harnesses remain at the earlier explicitly limited screening depths. Pro-A completed request2e7a6c9 in e0296c3. Ordinary selection continues only after another fresh request/owner check.
