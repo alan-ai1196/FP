@@ -742,3 +742,12 @@ Mergedindex 4482 records,146fullyreadeditions. OriginalOpenAI32/1700/17unchanged
 The source identifies affine coordinates only when first-order canonical modes dominate all higher modes. An independent population construction instead removes the complete function space of the acquired tuple before choosing the next scalar mode. Its exact conditional-expectation and optimization oracles, known dimension and unproved finite-sample stability remain explicit. Further independent results give quantitative orbit/predictive error, a finite spectral budget and exact coefficients for the actual Gamma,NBandPoisson constructions. No code audit,training reproduction orformalverification.
 
 Merged index 4484,fullyread147,originalOpenAI32/1700/17 unchanged. Preserve Pro-Acf25297, Pro-E7780559 and Astra04a8519 with all concurrent worker records. Mandatory2e7a6c9 remains complete byPro-A. Next ordinary selection requires fresh request/owner checks.
+
+
+## Pro-C: exact partition filtering and certified forecast compression, November27
+
+[DallaPria2512.22098v4](notes/DALLAPRIA-2026-PD-FILTER.md) is fully read through all44physicalpages,main1-5,SupplementA-D,allprintedproofs,8algorithms,13figures,2bodyfootnotes,42printedreferences and43bibentries. The main reader completed the activeTeX and bibliography,and visually checked allfigures plus algorithm pages. The separate JASA typeset edition remains unaligned.
+
+Independent constructions give exact partial-matching/multiplicity-table coag coefficients,a positive-time size-tail cutoff with TV control,and O(sum block-count) diversity mean/variance readouts. One-step Bayes responsibility explains when a discarded mixture can be safely updated. The certified bound controls approximate forecast representation size,not total computation or perpetual filtering error. Strict parameter domain,merged baseline,source indexing/normalization and latent truncation corrections remain explicit. No empirical replay,code audit,formal verification or core edit.
+
+Merged index 4484,fullyread148,originalOpenAI32/1700/17 unchanged. Preserve Astra04a8519,Pro-Acf25297,Pro-Dee4d26d andPro-E7780559. Mandatory2e7a6c9 completed byPro-A ate0296c3. Prepared source-ready Taghavian2502.21102v3 has earlier scoped coverage,and Ning2611.28848v1 remains screened. Fresh request/owner checks precede either selection.

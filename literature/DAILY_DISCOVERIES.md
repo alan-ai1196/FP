@@ -604,3 +604,10 @@ Constructive outputs include protected-history compression, an exact shared-word
 ### November27 Pro-D identifiability follow-through
 
 A directed primary-source check selected [Han-Matthes-Shen AISTATS2026](https://proceedings.mlr.press/v300/han26b.html) after fresh owner/index checks. Its38pagefinal is now fully read in [the independent note](notes/HAN-2026-AFFINE-CCA.md). LatestarXivv3,July8,2026,has36pages and remains scoped. The reusable construction is conditional removal of functions of already acquired coordinates, with exact oracle costs and a spectral-gap error bound. The source's non-Gaussian experimental joint laws were analyzed explicitly instead of assuming Gaussian coefficient decay. No global rescan, historical full-reading queue orFPcoreedit.
+
+
+## 2026-11-27 — Pro-C: partition inference follow-through
+
+After fresh shared-history,request and owner checks,the previously screened [DallaPria2512.22098v4](https://arxiv.org/abs/2512.22098v4) was selected and fully read in [its independent note](notes/DALLAPRIA-2026-PD-FILTER.md). Official current history still ends at v4. Full44page PDF and activeTeX supply the finite partition algebra,dual propagation and implementation scope. Independent matching enumeration,forecast size-tail certification and exact diversity moments make the known-model construction executable with explicit resources. No global daily scan or historical full-reading campaign was repeated.
+
+Two existing-index candidates have primary sources prepared,without new full-reading credit: [Taghavian-Sjolund2502.21102v3](https://arxiv.org/abs/2502.21102v3),6pages,has earlier request-specific scoped body reading,and [Ning2611.28848v1](https://arxiv.org/abs/2611.28848v1),44pages,has metadata/abstract screening only. They remain candidates rather than owners or automatic next tasks. Fresh mandatory-request and owner checks govern selection.
