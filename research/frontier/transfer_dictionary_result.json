@@ -1,0 +1,345 @@
+{
+  "registration": "5bbf626",
+  "contrast": 0.5,
+  "oracle_gain": 0.03158394240196326,
+  "exact_checks": {
+    "4": {
+      "assignments": 3,
+      "raw_words_per_assignment": 256,
+      "relative_label_gains": [
+        0.009912038105320091,
+        0.02105596160130884,
+        0.03158394240196326,
+        0.03158394240196326
+      ],
+      "second_moment_two_tasks_over_prior": "969/968"
+    },
+    "6": {
+      "assignments": 10,
+      "raw_words_per_assignment": 1296,
+      "relative_label_gains": [
+        0.0033085334046953283,
+        0.006459843563631889,
+        0.012740391309736204,
+        0.022225737245826,
+        0.031583942401963265,
+        0.031583942401963265
+      ],
+      "second_moment_two_tasks_over_prior": "12899905/12895281"
+    }
+  },
+  "reports": [
+    {
+      "vocabulary": 6,
+      "tasks": 6,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.003308533404695322,
+          "standard_error": 9.828939388440384e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 7.382310596636372e-19
+        },
+        "partition": {
+          "mean_gain": -0.02064167113892699,
+          "standard_error": 0.002111252116862823
+        },
+        "posterior": {
+          "mean_gain": 0.004210641756884537,
+          "standard_error": 0.0003573100015880555
+        },
+        "shifted_partition": {
+          "mean_gain": -0.023105143475761432,
+          "standard_error": 0.0018991609640045416
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.000867130903700399,
+          "standard_error": 2.6015292359159045e-05
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.019593369258636983,
+          "standard_error": 0.00044405210643629154
+        }
+      }
+    },
+    {
+      "vocabulary": 6,
+      "tasks": 96,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.003308533404695322,
+          "standard_error": 1.0428632082091919e-19
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 7.619236207177647e-19
+        },
+        "partition": {
+          "mean_gain": 0.019266580717791037,
+          "standard_error": 0.002218525585608431
+        },
+        "posterior": {
+          "mean_gain": 0.02255750345721983,
+          "standard_error": 0.0013138871291854474
+        },
+        "shifted_partition": {
+          "mean_gain": -0.025568615812595882,
+          "standard_error": 0.0016311557921947425
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.012922079456725587,
+          "standard_error": 0.00011029394486713493
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.022692964356690395,
+          "standard_error": 0.0005856362142880499
+        }
+      }
+    },
+    {
+      "vocabulary": 6,
+      "tasks": 384,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.003308533404695322,
+          "standard_error": 9.101645797292153e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 6.709732338207732e-19
+        },
+        "partition": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 6.709732338207732e-19
+        },
+        "posterior": {
+          "mean_gain": 0.03154586955113595,
+          "standard_error": 3.4850956074108236e-05
+        },
+        "shifted_partition": {
+          "mean_gain": -0.024583226877862102,
+          "standard_error": 0.0017465952249245478
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.04167494790557158,
+          "standard_error": 0.0002392768339603072
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.007668995668922366,
+          "standard_error": 0.0012213032404353463
+        }
+      }
+    },
+    {
+      "vocabulary": 6,
+      "tasks": 1536,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.003308533404695322,
+          "standard_error": 9.674703854219694e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 6.79744498044986e-19
+        },
+        "partition": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 6.79744498044986e-19
+        },
+        "posterior": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 6.79744498044986e-19
+        },
+        "shifted_partition": {
+          "mean_gain": -0.02556861581259588,
+          "standard_error": 0.0016311557921947423
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.0756430077278448,
+          "standard_error": 0.0003374630035683562
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": 0.0301651465450076,
+          "standard_error": 0.00039168439508901944
+        }
+      }
+    },
+    {
+      "vocabulary": 12,
+      "tasks": 12,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.0006916377393261842,
+          "standard_error": 6.241905960807445e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 7.998531830281652e-19
+        },
+        "partition": {
+          "mean_gain": -0.028327704829850458,
+          "standard_error": 0.0009154003997023637
+        },
+        "posterior": {
+          "mean_gain": 0.0008534868617587214,
+          "standard_error": 3.7231010844529034e-05
+        },
+        "shifted_partition": {
+          "mean_gain": -0.030889716060158282,
+          "standard_error": 0.0005358813125678797
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.00012837236552196393,
+          "standard_error": 2.366028970120424e-06
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.015649942509516346,
+          "standard_error": 0.00032346629339402496
+        }
+      }
+    },
+    {
+      "vocabulary": 12,
+      "tasks": 192,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.0006916377393261844,
+          "standard_error": 6.687105397827593e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.074146776625376e-19
+        },
+        "partition": {
+          "mean_gain": 0.012196415111076175,
+          "standard_error": 0.00247968854988973
+        },
+        "posterior": {
+          "mean_gain": 0.01767613446274686,
+          "standard_error": 0.0013894366695051772
+        },
+        "shifted_partition": {
+          "mean_gain": -0.030107563593213343,
+          "standard_error": 0.0005861843851377906
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.002052189608250575,
+          "standard_error": 9.815399828913857e-06
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.028911914851442247,
+          "standard_error": 0.00013254345183801828
+        }
+      }
+    },
+    {
+      "vocabulary": 12,
+      "tasks": 768,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.0006916377393261844,
+          "standard_error": 7.073860239922792e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.705031779559743e-19
+        },
+        "partition": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.705031779559743e-19
+        },
+        "posterior": {
+          "mean_gain": 0.03158394104118488,
+          "standard_error": 1.011478727916266e-09
+        },
+        "shifted_partition": {
+          "mean_gain": -0.03101904835784209,
+          "standard_error": 0.0002793303615145428
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.00797804556076302,
+          "standard_error": 2.0615780215573445e-05
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": -0.027184134284495415,
+          "standard_error": 0.00030027854546405854
+        }
+      }
+    },
+    {
+      "vocabulary": 12,
+      "tasks": 3072,
+      "fits": 128,
+      "scores": {
+        "uniform": {
+          "mean_gain": 0.0,
+          "standard_error": 0.0
+        },
+        "prior": {
+          "mean_gain": 0.0006916377393261844,
+          "standard_error": 7.527978173789648e-20
+        },
+        "oracle": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.171546491269576e-19
+        },
+        "partition": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.171546491269576e-19
+        },
+        "posterior": {
+          "mean_gain": 0.03158394240196327,
+          "standard_error": 9.171546491269576e-19
+        },
+        "shifted_partition": {
+          "mean_gain": -0.030631051464790664,
+          "standard_error": 0.00032910226891849875
+        },
+        "literal_three_token_context": {
+          "mean_gain": -0.028170937905455704,
+          "standard_error": 4.0198640576172174e-05
+        },
+        "supplemental_unfactorized_pair_spectral": {
+          "mean_gain": 0.012252134022160802,
+          "standard_error": 0.0006603690853032717
+        }
+      }
+    }
+  ]
+}

@@ -19,6 +19,31 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Transfer to a fresh task with an unobserved orientation
+
+**EMPIRICALLY OBSERVED.** Fitting on linked pairs in the registered sign-switching experiment recovered a word distinction usable on new tasks. Each training record contained four raw names. The task orientation and dictionary labels were never shown. For each sample size, the table gives the average gain in nats above uniform over 128 independent fits. All possible fresh fourth-word forecasts were integrated exactly for each fitted model. [Frozen registration](https://github.com/alan-ai1196/FP/blob/5bbf626/research/frontier/NEXT.md) · [Code](transfer_dictionary.py) · [Scores with standard errors and exact checks](transfer_dictionary_result.json)
+
+| Names | Tasks | Shared maximum likelihood | Full posterior | Shifted pairings | Literal three-word table | Pair spectral fit |
+|---:|---:|---:|---:|---:|---:|---:|
+| 6 | 6 | −.020642 | .004211 | −.023105 | −.000867 | −.019593 |
+| 6 | 96 | .019267 | .022558 | −.025569 | −.012922 | −.022693 |
+| 6 | 384 | .031584 | .031546 | −.024583 | −.041675 | −.007669 |
+| 6 | 1,536 | .031584 | .031584 | −.025569 | −.075643 | .030165 |
+| 12 | 12 | −.028328 | .000853 | −.030890 | −.000128 | −.015650 |
+| 12 | 192 | .012196 | .017676 | −.030108 | −.002052 | −.028912 |
+| 12 | 768 | .031584 | .031584 | −.031019 | −.007978 | −.027184 |
+| 12 | 3,072 | .031584 | .031584 | −.030631 | −.028171 | .012252 |
+
+The known-dictionary gain was .03158394 nats at both sizes. The balanced prior with no examples earned .003309 and .000692 respectively. At 12 names and 768 tasks, all 128 maximum-likelihood fits recovered the true partition up to sign. Disrupting the within-task link preserved every ordered pair in training but removed the advantage for the fitted objective. The cyclic shift is invertible for an observer who knows and can undo it. The extra spectral comparison, added after registration, treats each of the $D^2$ ordered pairs as a separate name. It fits a balanced partition by an eigendecomposition followed by improving exchanges. Its fresh fourth-word conditional explicitly divides by the predicted third-word marginal. It scored below uniform at 768 tasks and above uniform at 3,072 on 12 names. The experiment gives it the linking information used by the shared fit. The dense literal predictor estimates a separate add-one row for every context and remains data-poor at the reported sample sizes. These are finite-sample comparisons.
+
+**NUMERICALLY VERIFIED.** The four-name joint law, all prefix marginals through length three, parity-type multiplicities, and the integer training score were independently checked on all 3 partitions at $D=4$ and all 10 at $D=6$. The two-task likelihood second moments relative to the no-training forecast were exactly $969/968$ and $12899905/12895281$ by the raw-type cross products and overlap calculation. Known relative signs of the first $b+1$ names gave gains .003309, .006460, .012740, .022226 and .031584 nats as $b$ increased from zero to four at $D=6$.
+
+The shared fit counts one subset mask per task and computes all partition scores with a length-$2^D$ Walsh transform. Each transform uses $D2^D$ additions or subtractions and $O(2^D)$ words of workspace. At 12 names the transform uses 49,152 such operations for 462 candidate partitions. Maximum likelihood needs integer counts, the posterior also needs floating probabilities and a second transform, and directly emitting all probabilities costs $D$ entries. Streaming one score per candidate is another exact tradeoff. The literal fit has $D^4$ count cells. The supplemental pair method has $D^2$ sign parameters and uses a dense $D^2$-dimensional eigenproblem plus local exchanges. The implemented audit also materializes all $D^4$ test tuples for exact evaluation. These runs used CPU arithmetic, integer checks and double-precision scoring. Reproduce with one BLAS thread and the command below. [Acquisition and retention theorem](FOUNDATION.md#learning-a-shared-word-distinction-when-each-task-conceals-its-sign)
+
+~~~sh
+python -B research/frontier/transfer_dictionary.py
+~~~
+
 ## One observation, one bit, and the choice between a matching and a cycle
 
 **NUMERICALLY VERIFIED.** After one training pair, the unknown balanced sign dictionary induces posterior shifts on unordered distinct pairs. Direct integer averaging of all dictionary assignments matched the incidence-projection covariance, its squared-matrix identity, its independently eliminated rank, and every posterior column. Equal raw names have zero shift. The 4-, 6-, 8- and 12-name cases had dimensions 2, 9, 20 and 54. Their single positive covariance eigenvalues were $8/3,\ 8/5,\ 48/35,\ 40/33$. These are variances in the unordered edge coordinates before any message compression. [Registration](https://github.com/alan-ai1196/FP/blob/59b8251/research/frontier/NEXT.md) · [Entire numerical record](pair_memory_result.json)
