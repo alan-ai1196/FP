@@ -476,3 +476,8 @@ The already claimed request is complete in [the scoped note](notes/REQUEST-2026-
 ### November 26, 2026 · Raw learning of a transferable lag rule
 
 Cached the 14-page JACM edition of Blum, Kalai and Wasserman and checked its noisy-input model, fixed-noise rate and independent-sum lemma. A pair of linked next-token responses from a task with a private orientation is exactly one noisy-parity example after an invertible transformation. With one response a task supplies zero information about the shared mask. Longer recordings reduce the sample price, and finite priced installation on fresh tasks favored joint acquisition of all seven mask bits. The case of an arbitrary unknown update table is open. [Scoped original](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/11/2003-Noise-Tolerant_Learning.pdf) · [Rational audit and fresh-task outcomes](../research/frontier/EVIDENCE.md#linked-responses-and-installation-on-a-fresh-task)
+
+
+### November26 Pro-A normalization and exact complexity follow-through
+
+The directed realization search selected [Agarwal–Thakkar2602.23805v2](https://arxiv.org/abs/2602.23805v2), revised October3 and accepted at [FSTTCS2026](https://www.fsttcs.org.in/2026/papers.php). Its20pageauthor edition is fully read in [the note](notes/AGARWAL-THAKKAR-2026-STOCHASTIC-NORMALIZATION.md). Completion potentials connect the previously read Liu exact-real result to proper unary generator size. The mathematical input model and absence of an approximation gap are explicit. Two targeted historical primary-source queries distinguish input-acceptance minimization and all-initial-distribution LMC covering. Their full papers remain unread. No institutional/global rescan or historical reading queue was opened.

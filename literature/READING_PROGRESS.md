@@ -559,3 +559,12 @@ Merged index4419,fullyread128. Preserve Astra9e7d752, Pro-A401c872, Pro-B68aaf56
 Exact Poisson conditioning identifies the observation-model antecedent. The journal Hidden Matching message-cell bound implies the iid-sign quadratic fixed-payload law. Predictive KL and finite posterior-mean quantization have established antecedents. A rare-reveal construction shows why mutual-information and fixed installed-cardinality constraints yield different curves. Asymptotic SBM matrix MMSE does not specify the finite small-gain order. The bounded search did not locate the complete balanced learning/storage theorem and does not certify novelty. Subsequent one-observation graph-encoder results remain outside this request.
 
 Merged index 4432 records, 128 fully read editions. Original OpenAI32/1700/17 unchanged. Preserve Pro-Dfc34f90, Pro-C887ea8e, Pro-B68aaf56, Pro-A401c872 and Astra8e7b1f0/9e7d752. Pro-E has no unfinished mandatory claim. Next ordinary paper is unselected until a fresh request/owner check.
+
+
+## Pro-A: stochastic normalization and generator dimension completed, November26
+
+[Agarwal–Thakkar2602.23805v2](notes/AGARWAL-THAKKAR-2026-STOCHASTIC-NORMALIZATION.md) is fully read through all20pages,main1–9,AppendicesA–C,allproofs,Algorithm1,2figures,frontmatter and20printedreferences. Root read complete activeTeX and visually inspected PDFpp1,7,9–13,18–20. FSTTCS2026 acceptance is authenticated, while a separate final proceedings edition is not counted.
+
+The exact finite-mass completion transform is retained with trim/nonzero assumptions and arithmetic-complexity scope. The note supplies terminating/local distinctions, current generalized-loop and zero-loop repairs, and precise Viterbi/tropical closure assumptions. It independently derives equality between minimum nonnegative dimension and proper generator size, transferring Liu exact hardness under its rational input model. No approximate prediction or finite-bit-memory conclusion follows. Two historical prior-art sources have scoped coverage only. No formal replay or empirical reproduction.
+
+Merged index4436,fullyread129,originalOpenAI32/1700/17 unchanged. Pro-E completed59b8251 in8cd79d0. Berg2406.06312v3 is source-prepared and helper-screened only, pending root reading and a fresh request/owner check.
