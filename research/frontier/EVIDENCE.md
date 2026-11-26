@@ -19,6 +19,40 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Jointly learning a word dictionary and its prediction rule
+
+**EMPIRICALLY OBSERVED.** The fit received three history names and one outcome name, an assumed two-class dictionary on 12 names and known contrast $1/4$. All 256 rules on three class signs were available to the free-table fit. In the random-table condition a fresh unknown rule was drawn for each independent training and test population. Scores are exact fresh-word expectations averaged over 128 fits per cell, measured in nats above uniform. The known-law gain is .031584. [Frozen comparison](https://github.com/alan-ai1196/FP/blob/f12abe0/research/frontier/NEXT.md) · [Implementation](learned_word_rule.py) · [All reporting cells, counts and standard errors](learned_word_rule_result.json)
+
+| Source | Training records | Free rule | Two reset states | Two clocked states | Supplied product | Full posterior | Spectral candidate |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Product | 192 | −.017327 | −.009551 | −.014052 | .008076 | .003367 | −.031687 |
+| Product | 768 | .030086 | .031085 | .031084 | .031584 | .030655 | −.031954 |
+| Product | 3,072 | .031584 | .031584 | .031584 | .031584 | .031584 | −.029607 |
+| Selector | 192 | −.016301 | −.030302 | −.025216 | −.032269 | .003676 | −.025077 |
+| Selector | 768 | .030836 | −.018911 | .012628 | −.032269 | .030991 | .005015 |
+| Selector | 3,072 | .031584 | −.000343 | .015621 | −.032269 | .031584 | .031584 |
+| Uniform random rule | 192 | −.016803 | −.027015 | −.019776 | −.030971 | .003880 | −.022993 |
+| Uniform random rule | 768 | .030174 | −.003527 | .016216 | −.027870 | .030475 | .006465 |
+| Uniform random rule | 3,072 | .031584 | .006406 | .018988 | −.024944 | .031584 | .030716 |
+
+At 768 records the unrestricted learner recovered the complete true law in 119/128 product, 122/128 selector and 121/128 random-table fits. At 3,072 it recovered all 384. At 12 records it recovered none across the three conditions and had mean losses above uniform. All five registered shape fits used their supplied strength even when little had been learned. The integrated posterior starts with a uniform word forecast and averages the same 118,272 possible laws without requiring a hard choice. In the selector condition at 3,072, both two-state fits recovered the correct dictionary 128/128 times and the correct law zero times.
+
+Three supplemental controls address different costs. Fitting the shared strength on training by clipped maximum likelihood raised the selector gains at 3,072 from −.000343 to .007660 for homogeneous two-state reads and from .015621 to .017527 with a position clock. The posterior integrates uncertain tables as well as dictionaries. The polynomial spectral comparison rounds the outcome frequencies and three leading absolute-eigenvalue directions of centered position–outcome counts, then fits the eight row signs and chooses the highest training likelihood. It recovered the complete law at 3,072 records in 3 product, 128 selector and 126 random-table runs. Its results do not estimate the performance of the distinct semidefinite algorithm in the theorem. The raw uniform-history sampling protocol was used throughout.
+
+**NUMERICALLY VERIFIED.** For each possible three-bit rule the minimum deterministic execution width under three observation interfaces is counted below. The homogeneous experiment enumerated transition maps for one through four states with a fixed reset, the clocked experiment minimized independent continuation rows by depth, and the rolling experiment refined all eight states of the three-word shift register. Independent enumeration of the position-specific binary maps gave exactly the same 88 clocked rules of width at most two.
+
+| Minimum states | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Homogeneous, reset | 2 | 16 | 178 | 60 | 0 | 0 | 0 | 0 |
+| Public position clock, reset | 2 | 86 | 144 | 24 | 0 | 0 | 0 | 0 |
+| Rolling prediction | 2 | 2 | 8 | 52 | 48 | 64 | 64 | 16 |
+
+The selector needs 3, 3 and 6 states in the three rows respectively, the product 2, 2 and 8. At $D=4,6$ direct raw sums checked training counts, maximum-likelihood choices, normalization and held-out correlations. A direct posterior over every table and partition also agreed with the accelerated predictor. The fitted eight decisions and 12 named labels occupy 20 literal bits, or 17 bits using an enumerated joint code. The prior, exact candidate search, counters, precision and runtime state cost more. The exact search uses eight length-4,096 Walsh transforms at $D=12$, then eight counts per candidate, or 3,696 signed integers. Training the supplemental spectral method uses three $12\times12$ eigenproblems and four scans to score its candidates. The test posterior integrates each raw $12^4$-word grid. No GPU measurements or natural-language scores enter this table. [Proof and finite-resource comparison](FOUNDATION.md#learning-the-dictionary-and-its-prediction-rule-together)
+
+~~~sh
+python -B research/frontier/learned_word_rule.py
+~~~
+
 ## Transfer to a fresh task with an unobserved orientation
 
 **EMPIRICALLY OBSERVED.** Fitting on linked pairs in the registered sign-switching experiment recovered a word distinction usable on new tasks. Each training record contained four raw names. The task orientation and dictionary labels were never shown. For each sample size, the table gives the average gain in nats above uniform over 128 independent fits. All possible fresh fourth-word forecasts were integrated exactly for each fitted model. [Frozen registration](https://github.com/alan-ai1196/FP/blob/5bbf626/research/frontier/NEXT.md) · [Code](transfer_dictionary.py) · [Scores with standard errors and exact checks](transfer_dictionary_result.json)

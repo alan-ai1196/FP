@@ -1,0 +1,1035 @@
+{
+  "registration": "f12abe0",
+  "seed": 20261127,
+  "vocabulary": 12,
+  "contrast": 0.25,
+  "uniform_gain": 0.0,
+  "oracle_gain": 0.03158394240196325,
+  "rules_by_minimum_states": {
+    "reset": {
+      "1": 2,
+      "2": 16,
+      "3": 178,
+      "4": 60
+    },
+    "public_clock": {
+      "1": 2,
+      "2": 86,
+      "3": 144,
+      "4": 24
+    },
+    "rolling": {
+      "1": 2,
+      "2": 2,
+      "3": 8,
+      "4": 52,
+      "5": 48,
+      "6": 64,
+      "7": 64,
+      "8": 16
+    }
+  },
+  "selector_states": {
+    "reset": 3,
+    "public_clock": 3,
+    "rolling": 6
+  },
+  "product_states": {
+    "reset": 2,
+    "public_clock": 2,
+    "rolling": 8
+  },
+  "checks": {
+    "4": {
+      "raw_tuples": 256,
+      "candidate_partitions": 3,
+      "direct_score_records": 91
+    },
+    "6": {
+      "raw_tuples": 1296,
+      "candidate_partitions": 10,
+      "direct_score_records": 394
+    }
+  },
+  "selector_and_fourier_checks": {
+    "rational_overlaps": 17,
+    "truth_tables": 256,
+    "nonzero_mean": 186,
+    "balanced_with_first_order_signal": 62,
+    "pure_higher_order": 8
+  },
+  "reports": [
+    {
+      "source": "product",
+      "tasks": 12,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.03193053312247085,
+          "gain_standard_error": 0.00015853900244532662,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03193053312247085,
+          "mean_minimum_states": {
+            "reset": 3.21875,
+            "public_clock": 2.8359375,
+            "rolling": 5.7578125
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.03214916629236491,
+          "gain_standard_error": 0.00011249262176235359,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03214916629236491,
+          "mean_minimum_states": {
+            "reset": 1.9453125,
+            "public_clock": 1.9453125,
+            "rolling": 4.15625
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.03206602410099675,
+          "gain_standard_error": 0.00014164965936798056,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03206602410099675,
+          "mean_minimum_states": {
+            "reset": 2.9296875,
+            "public_clock": 1.9921875,
+            "rolling": 5.109375
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.028838875339743622,
+          "gain_standard_error": 0.0009047558575782607,
+          "exact_partition": 3,
+          "exact_law": 3,
+          "supplemental_gain_with_fitted_strength": -0.028838875339743622,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03226926056878559,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.03235548210057479,
+          "gain_standard_error": 5.593499233052173e-05,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03235548210057479,
+          "mean_minimum_states": {
+            "reset": 2.640625,
+            "public_clock": 2.2109375,
+            "rolling": 4.375
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": -3.835066252812394e-05,
+      "posterior_gain_standard_error": 4.285061987771645e-06
+    },
+    {
+      "source": "product",
+      "tasks": 192,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.017326761175674152,
+          "gain_standard_error": 0.002229435695654468,
+          "exact_partition": 34,
+          "exact_law": 21,
+          "supplemental_gain_with_fitted_strength": -0.017326761175674152,
+          "mean_minimum_states": {
+            "reset": 2.9140625,
+            "public_clock": 2.640625,
+            "rolling": 6.203125
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.009551426612540433,
+          "gain_standard_error": 0.0026917352451125563,
+          "exact_partition": 45,
+          "exact_law": 45,
+          "supplemental_gain_with_fitted_strength": -0.009015511276392997,
+          "mean_minimum_states": {
+            "reset": 1.9921875,
+            "public_clock": 1.9921875,
+            "rolling": 5.71875
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.014051882637894862,
+          "gain_standard_error": 0.002487377869632081,
+          "exact_partition": 38,
+          "exact_law": 34,
+          "supplemental_gain_with_fitted_strength": -0.014051882637894862,
+          "mean_minimum_states": {
+            "reset": 2.5859375,
+            "public_clock": 2.0,
+            "rolling": 5.9375
+          }
+        },
+        "fixed_product": {
+          "mean_gain": 0.00807625762772055,
+          "gain_standard_error": 0.00266016837806867,
+          "exact_partition": 79,
+          "exact_law": 79,
+          "supplemental_gain_with_fitted_strength": 0.009623424711739912,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.0190564345931281,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.03168726522920845,
+          "gain_standard_error": 0.00038205158287500055,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.030374605525479586,
+          "mean_minimum_states": {
+            "reset": 2.90625,
+            "public_clock": 2.46875,
+            "rolling": 4.90625
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.0033666293989250188,
+      "posterior_gain_standard_error": 0.0008247597618790947
+    },
+    {
+      "source": "product",
+      "tasks": 768,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.03008584328712581,
+          "gain_standard_error": 0.0006000832305370674,
+          "exact_partition": 127,
+          "exact_law": 119,
+          "supplemental_gain_with_fitted_strength": 0.029988409877267464,
+          "mean_minimum_states": {
+            "reset": 2.0703125,
+            "public_clock": 2.0625,
+            "rolling": 7.90625
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": 0.031085089253754285,
+          "gain_standard_error": 0.0004988531482089752,
+          "exact_partition": 127,
+          "exact_law": 127,
+          "supplemental_gain_with_fitted_strength": 0.030932868752668694,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 7.953125
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.03108354958354376,
+          "gain_standard_error": 0.0005003928184194967,
+          "exact_partition": 127,
+          "exact_law": 127,
+          "supplemental_gain_with_fitted_strength": 0.030921649999467494,
+          "mean_minimum_states": {
+            "reset": 2.0078125,
+            "public_clock": 2.0,
+            "rolling": 7.96875
+          }
+        },
+        "fixed_product": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.031243852090542257,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.004613650575226265,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.031953628175628676,
+          "gain_standard_error": 9.546844963987054e-05,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.008933124701106722,
+          "mean_minimum_states": {
+            "reset": 2.9453125,
+            "public_clock": 2.453125,
+            "rolling": 4.8671875
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.030655026184545228,
+      "posterior_gain_standard_error": 0.00030601101303860033
+    },
+    {
+      "source": "product",
+      "tasks": 3072,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150523120600814,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150523120600814,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150523120600814,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "fixed_product": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150523120600814,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 2,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.001175696987647227,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.02960717077479387,
+          "gain_standard_error": 0.0008821309065012758,
+          "exact_partition": 3,
+          "exact_law": 3,
+          "supplemental_gain_with_fitted_strength": -0.0012239634085343112,
+          "mean_minimum_states": {
+            "reset": 3.015625,
+            "public_clock": 2.5390625,
+            "rolling": 5.5546875
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.031583942401955195,
+      "posterior_gain_standard_error": 8.11924232021259e-15
+    },
+    {
+      "source": "selector",
+      "tasks": 12,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.03188588268636573,
+          "gain_standard_error": 0.0003011363202535332,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03188588268636573,
+          "mean_minimum_states": {
+            "reset": 3.1640625,
+            "public_clock": 2.7421875,
+            "rolling": 5.71875
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.03213069024983865,
+          "gain_standard_error": 0.00019536530596700927,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03213069024983865,
+          "mean_minimum_states": {
+            "reset": 1.9375,
+            "public_clock": 1.9375,
+            "rolling": 4.5625
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.03159950402720872,
+          "gain_standard_error": 0.00031130309857618435,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03159950402720872,
+          "mean_minimum_states": {
+            "reset": 2.8828125,
+            "public_clock": 1.9921875,
+            "rolling": 5.046875
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03226926056878559,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03226926056878559,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.032227689473101506,
+          "gain_standard_error": 0.00024007626869060827,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.032227689473101506,
+          "mean_minimum_states": {
+            "reset": 2.640625,
+            "public_clock": 2.109375,
+            "rolling": 4.3359375
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 2.1042458448995952e-05,
+      "posterior_gain_standard_error": 1.3475974288829729e-05
+    },
+    {
+      "source": "selector",
+      "tasks": 192,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.016301340815466817,
+          "gain_standard_error": 0.0022443039902933673,
+          "exact_partition": 31,
+          "exact_law": 23,
+          "supplemental_gain_with_fitted_strength": -0.016301340815466817,
+          "mean_minimum_states": {
+            "reset": 3.1484375,
+            "public_clock": 2.78125,
+            "rolling": 5.7421875
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.030301562039739077,
+          "gain_standard_error": 0.0005850217813529917,
+          "exact_partition": 5,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.029685728424430857,
+          "mean_minimum_states": {
+            "reset": 1.9609375,
+            "public_clock": 1.9609375,
+            "rolling": 3.984375
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.02521603133438647,
+          "gain_standard_error": 0.0013015506894179585,
+          "exact_partition": 14,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.02521603133438647,
+          "mean_minimum_states": {
+            "reset": 2.875,
+            "public_clock": 2.0,
+            "rolling": 4.90625
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.02424771247857193,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.018753827668200072,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.025077461015439527,
+          "gain_standard_error": 0.0014662195212199042,
+          "exact_partition": 11,
+          "exact_law": 7,
+          "supplemental_gain_with_fitted_strength": -0.024242693051511104,
+          "mean_minimum_states": {
+            "reset": 2.9453125,
+            "public_clock": 2.5,
+            "rolling": 4.8671875
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.0036764881762103947,
+      "posterior_gain_standard_error": 0.0007171495638855037
+    },
+    {
+      "source": "selector",
+      "tasks": 768,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.030835662679649798,
+          "gain_standard_error": 0.00029941007226046005,
+          "exact_partition": 128,
+          "exact_law": 122,
+          "supplemental_gain_with_fitted_strength": 0.03061231642270766,
+          "mean_minimum_states": {
+            "reset": 3.0078125,
+            "public_clock": 2.984375,
+            "rolling": 5.953125
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.018911081822300807,
+          "gain_standard_error": 0.0012272003378328035,
+          "exact_partition": 44,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.0027279649334350786,
+          "mean_minimum_states": {
+            "reset": 1.9921875,
+            "public_clock": 1.9921875,
+            "rolling": 3.0703125
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.01262752277002219,
+          "gain_standard_error": 0.0006583379250292603,
+          "exact_partition": 124,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": 0.015069865475204416,
+          "mean_minimum_states": {
+            "reset": 3.0703125,
+            "public_clock": 2.0,
+            "rolling": 4.34375
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.005603863960986234,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.004223243879172963,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": 0.00501539324920375,
+          "gain_standard_error": 0.0025312077380030334,
+          "exact_partition": 68,
+          "exact_law": 66,
+          "supplemental_gain_with_fitted_strength": 0.013600321751148765,
+          "mean_minimum_states": {
+            "reset": 3.0234375,
+            "public_clock": 2.7734375,
+            "rolling": 5.4453125
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.03099075151254531,
+      "posterior_gain_standard_error": 0.00016923515195396807
+    },
+    {
+      "source": "selector",
+      "tasks": 3072,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150571863362316,
+          "mean_minimum_states": {
+            "reset": 3.0,
+            "public_clock": 3.0,
+            "rolling": 6.0
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.00034265908341116896,
+          "gain_standard_error": 0.0,
+          "exact_partition": 128,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": 0.007660457018930188,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 2.0
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.015620641659276041,
+          "gain_standard_error": 0.0,
+          "exact_partition": 128,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": 0.017526940579884458,
+          "mean_minimum_states": {
+            "reset": 3.0,
+            "public_clock": 2.0,
+            "rolling": 4.0
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.0014701972060511504,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03226926056878559,
+          "gain_standard_error": 0.0,
+          "exact_partition": 2,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.0011244551216021974,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03150571863362316,
+          "mean_minimum_states": {
+            "reset": 3.0,
+            "public_clock": 3.0,
+            "rolling": 6.0
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.03158394240196329,
+      "posterior_gain_standard_error": 1.7991758575341313e-17
+    },
+    {
+      "source": "uniform_table",
+      "tasks": 12,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.03209681750520718,
+          "gain_standard_error": 0.0002631108796905301,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03209681750520718,
+          "mean_minimum_states": {
+            "reset": 3.1640625,
+            "public_clock": 2.6171875,
+            "rolling": 5.546875
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.03183430373431326,
+          "gain_standard_error": 0.00028368390112690114,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03183430373431326,
+          "mean_minimum_states": {
+            "reset": 1.921875,
+            "public_clock": 1.921875,
+            "rolling": 3.9375
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.03237164863778527,
+          "gain_standard_error": 0.0002895934451316378,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03237164863778527,
+          "mean_minimum_states": {
+            "reset": 2.90625,
+            "public_clock": 1.984375,
+            "rolling": 5.1328125
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.03224462584541725,
+          "gain_standard_error": 9.371704424049722e-05,
+          "exact_partition": 0,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03224462584541725,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.03039856126300193,
+          "gain_standard_error": 0.0006973270368362688,
+          "exact_partition": 2,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03039856126300193,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.03160335320273503,
+          "gain_standard_error": 0.0004789808821922929,
+          "exact_partition": 1,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.03160335320273503,
+          "mean_minimum_states": {
+            "reset": 2.53125,
+            "public_clock": 2.0390625,
+            "rolling": 4.0703125
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 4.1384011539150476e-05,
+      "posterior_gain_standard_error": 2.456359379535228e-05
+    },
+    {
+      "source": "uniform_table",
+      "tasks": 192,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": -0.01680250346899157,
+          "gain_standard_error": 0.002048771973886657,
+          "exact_partition": 31,
+          "exact_law": 16,
+          "supplemental_gain_with_fitted_strength": -0.01680250346899157,
+          "mean_minimum_states": {
+            "reset": 3.2109375,
+            "public_clock": 2.8125,
+            "rolling": 5.671875
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.027015135975380872,
+          "gain_standard_error": 0.000994654277814768,
+          "exact_partition": 7,
+          "exact_law": 1,
+          "supplemental_gain_with_fitted_strength": -0.026310258288931014,
+          "mean_minimum_states": {
+            "reset": 1.96875,
+            "public_clock": 1.96875,
+            "rolling": 4.078125
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": -0.019776376480613905,
+          "gain_standard_error": 0.001800676893485848,
+          "exact_partition": 25,
+          "exact_law": 8,
+          "supplemental_gain_with_fitted_strength": -0.019776376480613905,
+          "mean_minimum_states": {
+            "reset": 2.875,
+            "public_clock": 2.0,
+            "rolling": 4.8515625
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.030971318581315944,
+          "gain_standard_error": 0.0005746484267287629,
+          "exact_partition": 5,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.02201412219829538,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.02678187593848686,
+          "gain_standard_error": 0.0008219407076151333,
+          "exact_partition": 2,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.014856439951305315,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": -0.022992747550393378,
+          "gain_standard_error": 0.0015110853021525305,
+          "exact_partition": 12,
+          "exact_law": 6,
+          "supplemental_gain_with_fitted_strength": -0.022324130683315003,
+          "mean_minimum_states": {
+            "reset": 3.015625,
+            "public_clock": 2.453125,
+            "rolling": 4.9609375
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.003880043290018291,
+      "posterior_gain_standard_error": 0.0006874636080718457
+    },
+    {
+      "source": "uniform_table",
+      "tasks": 768,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.0301743743242308,
+          "gain_standard_error": 0.0006282705972615613,
+          "exact_partition": 126,
+          "exact_law": 121,
+          "supplemental_gain_with_fitted_strength": 0.030075305646052534,
+          "mean_minimum_states": {
+            "reset": 3.1953125,
+            "public_clock": 2.8359375,
+            "rolling": 5.6015625
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": -0.0035266970787696905,
+          "gain_standard_error": 0.0018241990650420302,
+          "exact_partition": 84,
+          "exact_law": 7,
+          "supplemental_gain_with_fitted_strength": 0.0062171505605016514,
+          "mean_minimum_states": {
+            "reset": 1.9140625,
+            "public_clock": 1.9140625,
+            "rolling": 3.859375
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.01621649403074787,
+          "gain_standard_error": 0.001231888360567614,
+          "exact_partition": 120,
+          "exact_law": 40,
+          "supplemental_gain_with_fitted_strength": 0.018552898064999428,
+          "mean_minimum_states": {
+            "reset": 2.9765625,
+            "public_clock": 2.0,
+            "rolling": 4.9453125
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.027870422777325585,
+          "gain_standard_error": 0.001008479989942155,
+          "exact_partition": 17,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.003970588455903138,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.02150234678660854,
+          "gain_standard_error": 0.0012623752043769737,
+          "exact_partition": 17,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": -0.0009784789816397726,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": 0.00646499275240977,
+          "gain_standard_error": 0.002415997975337606,
+          "exact_partition": 67,
+          "exact_law": 67,
+          "supplemental_gain_with_fitted_strength": 0.01407081869066739,
+          "mean_minimum_states": {
+            "reset": 3.03125,
+            "public_clock": 2.53125,
+            "rolling": 5.0625
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.03047476759038948,
+      "posterior_gain_standard_error": 0.0004384218437853118
+    },
+    {
+      "source": "uniform_table",
+      "tasks": 3072,
+      "fits": 128,
+      "methods": {
+        "free_table": {
+          "mean_gain": 0.03158394240196326,
+          "gain_standard_error": 6.157272673779869e-19,
+          "exact_partition": 128,
+          "exact_law": 128,
+          "supplemental_gain_with_fitted_strength": 0.03151969879543093,
+          "mean_minimum_states": {
+            "reset": 3.1953125,
+            "public_clock": 2.78125,
+            "rolling": 5.5
+          }
+        },
+        "homogeneous_two_states": {
+          "mean_gain": 0.006405715449304693,
+          "gain_standard_error": 0.0009227954882431601,
+          "exact_partition": 126,
+          "exact_law": 3,
+          "supplemental_gain_with_fitted_strength": 0.01219705024144542,
+          "mean_minimum_states": {
+            "reset": 1.8984375,
+            "public_clock": 1.8984375,
+            "rolling": 3.8125
+          }
+        },
+        "clocked_two_states": {
+          "mean_gain": 0.01898790040968662,
+          "gain_standard_error": 0.0007849428253408389,
+          "exact_partition": 128,
+          "exact_law": 36,
+          "supplemental_gain_with_fitted_strength": 0.020757197092381,
+          "mean_minimum_states": {
+            "reset": 2.90625,
+            "public_clock": 1.9921875,
+            "rolling": 4.9375
+          }
+        },
+        "fixed_product": {
+          "mean_gain": -0.02494350970712416,
+          "gain_standard_error": 0.001134415514713642,
+          "exact_partition": 38,
+          "exact_law": 0,
+          "supplemental_gain_with_fitted_strength": 0.0005979501483995542,
+          "mean_minimum_states": {
+            "reset": 2.0,
+            "public_clock": 2.0,
+            "rolling": 8.0
+          }
+        },
+        "output_only": {
+          "mean_gain": -0.01638910201746654,
+          "gain_standard_error": 0.0012561780616410672,
+          "exact_partition": 55,
+          "exact_law": 1,
+          "supplemental_gain_with_fitted_strength": 0.0029908127981274012,
+          "mean_minimum_states": {
+            "reset": 1.0,
+            "public_clock": 1.0,
+            "rolling": 1.0
+          }
+        },
+        "supplemental_spectral": {
+          "mean_gain": 0.030715568403229115,
+          "gain_standard_error": 0.0006184635666264742,
+          "exact_partition": 126,
+          "exact_law": 126,
+          "supplemental_gain_with_fitted_strength": 0.031028950004721043,
+          "mean_minimum_states": {
+            "reset": 3.1875,
+            "public_clock": 2.7890625,
+            "rolling": 5.484375
+          }
+        }
+      },
+      "supplemental_full_posterior_gain": 0.03158394240196309,
+      "posterior_gain_standard_error": 3.097784593014375e-17
+    }
+  ]
+}
