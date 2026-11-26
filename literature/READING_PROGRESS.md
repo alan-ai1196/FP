@@ -508,3 +508,11 @@ Merged index4405,fullyread122,originalOpenAI32/1700/17 unchanged. Astra9700cc6/e
 The exact-output rigidity mechanism and conditioned whitening survive with explicit assumptions. An exact scale-family counterexample invalidates the printed GPT/supervised intermediate-layer application. A named historical dependency supplies the missing near-isometry range. Independent local calculations delimit dynamical isometry and binary-image geometry, and conditional repairs preserve useful tools. ICA stable-branch and covariance assumptions, missing linear perturbation term, in-sample alignment, label-based selection, rank-deficient ICA and conflicting final-source experimental descriptions are retained. No whole-paper certification, empirical reproduction or FP transfer.
 
 Merged index4406,fullyread123,originalOpenAI32/1700/17 unchanged. Preserved Astrae164129, Pro-Caefd87c and Pro-E ownership of59b8251 at40c0d2a. Continue with fresh request/owner check and targeted recent Pro-D discovery.
+
+## Pro-D: conditioned logit geometry completed, November26
+
+[Nielsen etal ICML2026 final](notes/NIELSEN-2026-LOGIT-DISTANCE.md) is fully read,all47pages,main1–6,AppendicesA–L,everyproof/formula,8figures,4tables,7scientificfootnotes and78references. Twelve originalPDFpages viewed. Complete officialPDF reading plus targetedTeX checks. Scientifically correspondingv3 is a companion,not another full count. The NeurIPS2025predecessor remains partially read throughp5 and the beginningp6 only.
+
+The note retains the paper's conditioned CCA,spectral-tail and concept-preservation tools. It independently sharpens the KL comparison to4KL<=dlogit²<=2KL/tau and derives its probability-boundary sharpness. Representation units,output-spectrum floors and two-sided probability assumptions remain explicit. Local printed matrix repairs do not refute the intended main results. Static source checks identify extra normalization and training/evaluation gauge differences,while table provenance and reported uncertainty remain unresolved. No experiment reproduction,whole-paper certification or FP transfer.
+
+Merged index4412,fullyread124,originalOpenAI32/1700/17 unchanged. Preserve Astrada74cc3 and Pro-E ownership of59b8251 at40c0d2a. Recent Barzilai-Shamir COLT2026 is helper-screened/source-prepared,with root scientific body and proofs unread pending fresh coordination check.
