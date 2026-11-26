@@ -19,6 +19,42 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Can the curvature of ordinary text likelihood choose a useful word distinction?
+
+**EMPIRICALLY OBSERVED.** Starting from the previously fitted pooled distribution, the largest training-likelihood curvature chose a lexical split that lowered loss in all 16 contiguous reporting blocks. The absolute gains were just **1.55 and 0.89 nats per 65,536 tokens**. The linear accumulator on the same learned word direction did slightly better. Shuffling the training order produced a weaker split on report A and a stronger one on report B. The static average of the earlier EM rows saved 990.58 and 768.24 nats. These same-source controls considerably limit what can be attributed to the learned recurrence. [Prospective protocol](https://github.com/alan-ai1196/FP/blob/4cfe00c/research/frontier/NEXT.md) · [All 80 validation scores, eigenvalues and blocks](lexical_curvature_result.json)
+
+| Nats saved against the pooled row | Report A | Report B |
+|---|---:|---:|
+| Chronological direction, exact filter | 1.553 | 0.889 |
+| Chronological direction, linear state | 1.562 | 0.896 |
+| Permuted direction, exact filter | 0.589 | 3.402 |
+| Permuted direction, linear state | 0.615 | 3.572 |
+| Static average of previous EM lexical rows | 990.583 | 768.237 |
+| Smoothed bigram | −24,514.165 | −24,860.706 |
+| Smoothed trigram | −39,015.533 | −36,310.485 |
+
+All four families selected the longest hold, $127/128$, and the largest tested strength, one, on the validation window. With the same per-word probability normalization and training-derived raw names, the chronological matrix had largest and smallest constrained eigenvalues 413,087.03 and −12,731.30, compared with 23,482.33 and −14,233.65 after permutation. The direction was rescaled to keep all lexical entries valid. Its resulting mass-weighted second moment was 0.00062519. The direct quadratic coefficient in that normalization was 258.26 and the actual gain at strength one on the fit tape was 43.78 nats. A positive local coefficient does not extrapolate linearly to a full split. Raw names 4 and 50 had the largest absolute fitted coefficients. The permuted direction emphasized names 976 and 337. Each score was frozen using the separate validation window and measured on the same two previously used files as the word-switch experiment. [Learner and checks](lexical_curvature.py) · [Native streaming kernels](lexical_switch.c)
+
+The additional deployed direction is 257 binary64 coefficients (2,056 bytes), one hold, one strength, and one streaming scalar. Each issued token score needs two background/lexical contributions, its bin loading and a scalar update. The eight training matrices together involved 538,968,064 coordinate visits. One $257\times257$ binary64 table occupies 528,392 bytes. The implementation also forms dense arrays for the constrained basis, projected operator and eigensolve, plus linear tape buffers. Four holds times two training orders give eight symmetric eigensolves of dimension 256. Validation evaluates both update rules at five strengths for each direction, totaling 5,242,880 scalar rule-positions. Stored directions are reconstructible from the fit code and recorded hashes.
+
+**NUMERICALLY VERIFIED.** A direct scalar lag recursion independently recovered the constrained quadratic of each selected eigenvector. Explicit lag pairs checked 36 small matrix entries including negative and zero holds. An independent sum over all 16 hidden paths checked 192 four-token likelihoods. Another scalar update checked 768 linear token scores. Exact-polynomial reduction confirmed the $++--$ fourth-order witness. The three-token raw-law difference was checked at 96 cells each for common and refitted linear parameters. Independent enumerations also checked four exact null score variances and ten two-block nuisance-mean identities. [Mathematical mechanism](FOUNDATION.md#which-split-of-a-pooled-state-can-the-likelihood-discover) · [Exact computation](split_detection.py)
+
+At hold $1/2$, the table gives **sufficient** numbers of independent three-token panels for each of two simple-model error probabilities to be at most 0.05, calculated by a 70-decimal Bhattacharyya bound. Each panel needs a fresh start. These are calculated sample bounds. No corpus or Monte Carlo experiment of those sizes was run. The final column uses the explicit linear competitor matching moments 12 and 13.
+
+| Emission contrast | Exact split versus fair | Exact versus same-parameter linear | Exact versus two-moment-matched linear |
+|---|---:|---:|---:|
+| $1/4$ | 11,122 | 20,559,553 | 114,126,500 |
+| $1/8$ | 175,410 | 5,178,039,289 | 26,552,937,279 |
+| $1/16$ | 2,795,848 | 1,319,583,530,486 | 6,639,397,500,496 |
+
+The finite-sample proof separately covers optimal observation counts, an unknown iid bias, priced restarts and the difference between prescribed and fitted computation. [Detection bounds](INTELLIGENCE_OBJECTIVE.md#the-cost-of-detecting-a-weak-distinction-when-restarting-has-a-price) · [Numerical record](split_detection_result.json)
+
+~~~sh
+python research/frontier/lexical_curvature.py check
+python research/frontier/lexical_curvature.py sample
+python research/frontier/split_detection.py
+~~~
+
 ## Does learning a switch for each word improve ordinary text prediction?
 
 **EMPIRICALLY OBSERVED.** On both 65,536-token reporting windows a single learned lexical row beat the two-row word-dependent state model in all eight contiguous 8,192-token blocks. Using the actual word to choose its switch improved total loss over a separately refitted common switch by only 0.08 and 17.12 nats. Keeping the two word-specific model rows fixed and replacing every switch by its training-frequency-weighted mean *improved* loss by 40.91 and 40.89 nats, across 15 of 16 blocks. Thus the separately trained rows and the switch table have different observable contributions. Each report scored all 50,257 outputs through normalized rows before observing the next token. Report A is the training file at offset 11,262,144. Report B is the separate reporting file at offset 524,288. Both windows had been used by previous studies. [Frozen registration](https://github.com/alan-ai1196/FP/blob/319888a/research/frontier/NEXT.md) · [All selection and block scores](lexical_switch_result.json)

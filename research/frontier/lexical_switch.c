@@ -2,6 +2,7 @@
    before its word-dependent transition is applied. */
 #include <math.h>
 #include <stddef.h>
+#include <stdint.h>
 
 #ifdef _WIN32
 #define API __declspec(dllexport)
@@ -92,5 +93,36 @@ API void finite_gate_scores(int n, const double *e0, const double *e1,
       sum += following[i];
     for (int i = 0; i < LEVELS; ++i)
       live[i] = following[i] / sum;
+  }
+}
+
+/* Accumulate the ordered lag products of the lexical responsibilities. The
+   caller supplies a zero history and a zero square matrix with groups rows. */
+API void lag_matrix(int n, int groups, double hold, const int32_t *bins,
+                    const double *responsibility, double *past,
+                    double *matrix) {
+  for (int t = 0; t < n; ++t) {
+    int g = bins[t];
+    double x = responsibility[t];
+    double *row = matrix + (size_t)g * groups;
+    for (int j = 0; j < groups; ++j) {
+      row[j] += x * past[j];
+      past[j] *= hold;
+    }
+    past[g] += hold * x;
+  }
+}
+
+/* Both models issue the pooled law times (1 + state * contrast). Storing the
+   log likelihood relative to the pool preserves small improvements. */
+API void split_gains(int n, double hold, double strength, const double *feature,
+                     double *exact, double *linear) {
+  double m = 0.0, u = 0.0;
+  for (int t = 0; t < n; ++t) {
+    double d = strength * feature[t];
+    exact[t] = log1p(m * d);
+    linear[t] = log1p(u * d);
+    m = hold * (m + d) / (1.0 + m * d);
+    u = fmax(-1.0, fmin(1.0, hold * (u + d)));
   }
 }
