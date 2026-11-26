@@ -19,6 +19,28 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Raw-word tests of which phase information survives a read
+
+**NUMERICALLY VERIFIED.** The preregistered cycle periods were 3, 4, 5 and 8, with tick probability $1/2$ and mark contrast $1/2$. One elimination expanded future word columns in the exact real cyclotomic subfield. A second evaluation multiplied individual raw word likelihoods directly modulo 241, where all four periods have a primitive root. At each mark count it tried every tick-residue schedule followed by red marks. The smaller set with ticks only before the first red achieved the same ranks in every case. Both calculations matched the proof in all 40 period/interface/mark-budget combinations. The table includes the constant dimension. [Frozen registration](https://github.com/alan-ai1196/FP/blob/53c10ef/research/frontier/NEXT.md) · [Numerical record](phase_memory_result.json)
+
+| Cycle and interface | 0 marks | 1 mark | 2 marks | 3 marks | 4 marks |
+|---|---:|---:|---:|---:|---:|
+| Any tested cycle, destructive | 1 | 3 | 3 | 3 | 3 |
+| 3 phases, preserving | 1 | 3 | 3 | 3 | 3 |
+| 4 phases, preserving | 1 | 3 | 4 | 4 | 4 |
+| 5 phases, preserving | 1 | 3 | 5 | 5 | 5 |
+| 8 phases, preserving | 1 | 3 | 5 | 7 | 8 |
+
+For the four-phase equal mixtures over even versus odd starting phases, the evaluator enumerated all 9,840 nonempty raw words of lengths up to eight under each interface. Destructive reads gave exactly identical probabilities for all of them. Under preserving reads, raw length two already gives total variation $1/32$ and equal-prior pooling loss 0.001990 nats per transcript. At length eight these become $1451013/8388608$ and 0.024977 nats. Stopping at the second mark takes four raw tokens on average and gives 0.005306 nats of pooling loss. Each waiting residue has its actual passive geometric weight. Numerators and total variations in the raw-word test are exact integers or fractions. The logs are numerical. [Moment and distortion theorem](FOUNDATION.md#which-coordinates-of-a-phase-distribution-can-ordinary-future-words-see)
+
+**Supplemental acquisition checks.** For cycles of sizes 4, 6 and 8, respectively, enumerating all residue/color transcripts through the first informative mark count gave $I_m$ equal to $2/189$, 0.000574802 and 0.000034145. There were 64, 1,728 and 65,536 transcripts in the three finite reductions. Direct summation over starting phases agreed with the highest-harmonic signed probability formula within $9\times10^{-17}$. A further 114 signed conditional likelihood cases included interior and aliased boundary harmonics. These finite checks support the formulas. The large-$m$ exponent comes from the analytic bounds.
+
+**EMPIRICALLY OBSERVED** for the longer-panel estimator, added after deriving the acquisition bound. The diagnostic used 512 independent uniform starts at each period, $8k^2$ tick intervals per start and PCG64 seed 261128. It sampled the sufficient first-symbol counts of complete turns and the additional raw waiting time. Its unique nearest-phase estimates were correct on 490, 497, 497 and 498 of 512 panels at $k=4,8,16,32$. Five four-phase estimates tied and count as failures here. The corresponding raw token totals were 130,818, 523,161, 2,096,640 and 8,385,633. The estimator does not receive phase labels. They are used to score recovery. The polynomial lower bound permits adaptive strategies and follows from testing two neighboring phase starts even with their containing pair revealed. [Acquisition proof](INTELLIGENCE_OBJECTIVE.md#the-cost-of-learning-the-last-observable-coordinate) · [Exact and numerical evaluator](phase_memory.py)
+
+~~~powershell
+python research/frontier/phase_memory.py --output research/frontier/phase_memory_result.json
+~~~
+
 ## Randomizing four bits of predictive uncertainty
 
 **EMPIRICALLY OBSERVED.** The registration fixed the two ordinary continuations, all four index sizes, the rational grid, and both coin interfaces. The retained row and two-token block expert both reset their counts every 32 raw outputs as in the previous capped comparison. On each fixed tape, a forward sum over possible gate indices gives the expected sum of the log losses **actually issued**. The conditional coins are rational. The occupancy recursion and logarithms use binary64. Exhaustively expanding every rounding path for the first eight tokens of all 32 cases reproduced the forward sum within $4\times10^{-13}$ nats. An independent 65-digit occupancy calculation reproduced all eight four-bit expected losses within $1.5\times10^{-13}$ nats. [Frozen registration](https://github.com/alan-ai1196/FP/blob/beccdb0/research/frontier/NEXT.md) · [Full reproduction data](random_gate_result.json)
