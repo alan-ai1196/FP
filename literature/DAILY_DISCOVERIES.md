@@ -304,3 +304,7 @@ A bounded official-first follow-through ending November26,18:48Shanghai, added s
 | [Miyamoto–Yang2501.12971v2](https://arxiv.org/abs/2501.12971v2) | Abstract/history only, latestv2 July23,2025. Universal decoding for unifilar additive noise, with codeword-validity access. No hidden-update learning guarantee authenticated. |
 
 Five additional dependency records retain scoped status: Renegar PartI, its original PartII report, Koiran's1997report, Dörfler et al.2024 and Tune–Nguyen–Roughan2013v1. The checks resolve real-complexity encoding and the particular rank-criterion objection, not a historical full-reading backlog. With Astra's concurrent two additions from3f8e6cb, current combined index4,324, fully-read editions88. The ordinary OpenAI queue remains active with31completed originals.
+
+### Direct finite-summary source for request3f8e6cb
+
+[Wieczyński2609.06735v1](https://arxiv.org/abs/2609.06735v1), submitted September6,2026, was retrieved in the bounded constructive-unifilar search and selected for full reading. All19pages are complete in [its independent note](notes/WIECZYNSKI-2026-FINITE-SUMMARIES.md). The structural synchronization horizon is an identifiability statement with finite exact synchronization; the source explicitly separates it from recognizing pure-state rows. Classical rank-based finite law identification is already included. This is a recent relevant source, not a claim of a new publication today. Broader scoped-source results will accompany the request response. Index4,325, fully-read editions89.
