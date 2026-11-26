@@ -19,6 +19,29 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## One sampled state, an exact state probability and finite replicas
+
+**PROVED WITH EXACT RATIONAL CERTIFICATES.** In the three-sign selector experiment, the best predictor that retains one actual binary Markov state gains $H(\beta/2)$ nats. The optimum permits all homogeneous transition probabilities, independent randomized resets and separate terminal probabilities for the two states. Counting the states of the latent model alone misses the additional information in an exact mixture forecast. [Source proof](FOUNDATION.md#a-sampled-state-and-a-reported-state-probability-have-different-predictive-capacity) · [Prospective audit of a previously derived inequality](https://github.com/alan-ai1196/FP/blob/9ba8046/research/frontier/NEXT.md) · [Verifier](sampled_selector.py) · [Rational checks and numerical intervals](sampled_selector_result.json)
+
+| Predictor | Gain at $\beta=1/4$ | Gain at $\beta=1/2$ |
+|---|---:|---:|
+| Optimal single physically sampled bit | .0078329733 | .0315839424 |
+| One half-overwrite replica | .0044009913 | .0176825981 |
+| Two replicas, count stored | .0066398067 | .0268340284 |
+| Three replicas, count stored | .0079956369 | .0324325021 |
+| Four replicas, count stored | .0089049796 | .0362148495 |
+| Five replicas, count stored | .0095572821 | .0389429680 |
+| Exact conditional probability of the half-overwrite model | .0135240487 | .0558389094 |
+| Exact deterministic three-state selector | .0315839424 | .1308120359 |
+
+Every half-overwrite row uses the same stochastic update. Its scalar terminal confidence was fitted separately by the population log score. At three replicas it was .16982778 and .33975675 respectively. Conditional outcome and count probabilities were formed from binomial sums on all eight input histories. Forty rational bisections located the maximizer. The verifier bounded the log at the bracket midpoint by a signed series and bounded any remaining gain by a tangent on the bracket. Each gain interval has width below $10^{-15}$ nats. The exact conditional probability row reports one concrete two-state stochastic model; its entry is an attainable gain for the unrestricted marginalized class.
+
+The channel check compared closed moments to direct state propagation for 625 kernels at three reset probabilities, for 1,875 rational checks in total. For the uniform four-transition-parameter upper bound, the polynomial verifier computed and checked 117 rational Bernstein coefficients for each of eight boxes. The three-state machine and the three-replica count both use two fixed-length bits at the reset interface. The three-state machine achieves the full selector law with those bits. No time or numerical precision saving follows merely from naming two mixture components.
+
+~~~sh
+python -B research/frontier/sampled_selector.py
+~~~
+
 ## Refitting the rule on a stronger word predictor
 
 **EMPIRICALLY OBSERVED.** After tuning the static base, the free three-word rule installed **one constant correction**. The fits restricted to one or two history signs and the fit trained on shifted histories learned exactly the same partition, correction and full-vocabulary forecasts. They gained 46.27 and 52.26 nats over the selected static base in the two new 65,536-token windows. All of that gain is achievable without maintaining history for the correction. The base trigram still uses its ordinary two-word history. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/6c623ca/research/frontier/NEXT.md) · [Code](calibrated_word_rule.py) · [All choices and per-block measurements](calibrated_word_rule_result.json)

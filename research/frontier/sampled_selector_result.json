@@ -1,0 +1,198 @@
+{
+  "registration": "9ba8046",
+  "rational_kernel_checks": 1875,
+  "bernstein_boxes": [
+    {
+      "quadrant": [
+        0,
+        0
+      ],
+      "contrast_sign": -1,
+      "coefficients": 117,
+      "zeros": 9,
+      "least_positive": "1/6"
+    },
+    {
+      "quadrant": [
+        0,
+        0
+      ],
+      "contrast_sign": 1,
+      "coefficients": 117,
+      "zeros": 11,
+      "least_positive": "7/264"
+    },
+    {
+      "quadrant": [
+        0,
+        1
+      ],
+      "contrast_sign": -1,
+      "coefficients": 117,
+      "zeros": 9,
+      "least_positive": "9/128"
+    },
+    {
+      "quadrant": [
+        0,
+        1
+      ],
+      "contrast_sign": 1,
+      "coefficients": 117,
+      "zeros": 12,
+      "least_positive": "5/192"
+    },
+    {
+      "quadrant": [
+        1,
+        0
+      ],
+      "contrast_sign": -1,
+      "coefficients": 117,
+      "zeros": 1,
+      "least_positive": "1/4"
+    },
+    {
+      "quadrant": [
+        1,
+        0
+      ],
+      "contrast_sign": 1,
+      "coefficients": 117,
+      "zeros": 2,
+      "least_positive": "1/4"
+    },
+    {
+      "quadrant": [
+        1,
+        1
+      ],
+      "contrast_sign": -1,
+      "coefficients": 117,
+      "zeros": 3,
+      "least_positive": "1/440"
+    },
+    {
+      "quadrant": [
+        1,
+        1
+      ],
+      "contrast_sign": 1,
+      "coefficients": 117,
+      "zeros": 5,
+      "least_positive": "1/440"
+    }
+  ],
+  "replica_comparisons": [
+    {
+      "contrast": "1/4",
+      "best_sampled_bit": 0.007832973283487045,
+      "full_three_state_gain": 0.03158394240196325,
+      "readouts": [
+        {
+          "replicas": 1,
+          "strength_midpoint": 0.09374999999954525,
+          "gain_midpoint": 0.004400991289917603,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "below",
+          "weak_signal_oracle_fraction": "9/64"
+        },
+        {
+          "replicas": 2,
+          "strength_midpoint": 0.14117647058856164,
+          "gain_midpoint": 0.006639806700417535,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "below",
+          "weak_signal_oracle_fraction": "18/85"
+        },
+        {
+          "replicas": 3,
+          "strength_midpoint": 0.16982778016108568,
+          "gain_midpoint": 0.007995636912490554,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "27/106"
+        },
+        {
+          "replicas": 4,
+          "strength_midpoint": 0.18902189170376005,
+          "gain_midpoint": 0.008904979636423772,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "36/127"
+        },
+        {
+          "replicas": 5,
+          "strength_midpoint": 0.20278251612535314,
+          "gain_midpoint": 0.00955728209543079,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "45/148"
+        },
+        {
+          "replicas": null,
+          "strength_midpoint": 0.28644227534141464,
+          "gain_midpoint": 0.013524048698316376,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "3/7"
+        }
+      ]
+    },
+    {
+      "contrast": "1/2",
+      "best_sampled_bit": 0.03158394240196325,
+      "full_three_state_gain": 0.13081203594113697,
+      "readouts": [
+        {
+          "replicas": 1,
+          "strength_midpoint": 0.18749999999954525,
+          "gain_midpoint": 0.017682598109042085,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "below",
+          "weak_signal_oracle_fraction": "9/64"
+        },
+        {
+          "replicas": 2,
+          "strength_midpoint": 0.28235294117666854,
+          "gain_midpoint": 0.02683402841482364,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "below",
+          "weak_signal_oracle_fraction": "18/85"
+        },
+        {
+          "replicas": 3,
+          "strength_midpoint": 0.33975674598286787,
+          "gain_midpoint": 0.03243250214216343,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "27/106"
+        },
+        {
+          "replicas": 4,
+          "strength_midpoint": 0.3783341822440889,
+          "gain_midpoint": 0.036214849529685914,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "36/127"
+        },
+        {
+          "replicas": 5,
+          "strength_midpoint": 0.4060784594280449,
+          "gain_midpoint": 0.038942967957068794,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "45/148"
+        },
+        {
+          "replicas": null,
+          "strength_midpoint": 0.5771353078121138,
+          "gain_midpoint": 0.05583890941084864,
+          "width_of_gain_interval_less_than": "1e-15",
+          "compared_to_best_sampled_bit": "above",
+          "weak_signal_oracle_fraction": "3/7"
+        }
+      ]
+    }
+  ]
+}
