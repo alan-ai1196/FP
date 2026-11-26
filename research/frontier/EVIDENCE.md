@@ -19,6 +19,30 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Refitting the rule on a stronger word predictor
+
+**EMPIRICALLY OBSERVED.** After tuning the static base, the free three-word rule installed **one constant correction**. The fits restricted to one or two history signs and the fit trained on shifted histories learned exactly the same partition, correction and full-vocabulary forecasts. They gained 46.27 and 52.26 nats over the selected static base in the two new 65,536-token windows. All of that gain is achievable without maintaining history for the correction. The base trigram still uses its ordinary two-word history. [Frozen protocol](https://github.com/alan-ai1196/FP/blob/6c623ca/research/frontier/NEXT.md) · [Code](calibrated_word_rule.py) · [All choices and per-block measurements](calibrated_word_rule_result.json)
+
+| Forecast | Training-file NLL per word | Reporting-file NLL per word | Gain versus selected static, training file | Gain versus selected static, reporting file |
+|---|---:|---:|---:|---:|
+| Earlier pooled lexical base | 7.221775 | 6.870628 | −21,775.71 | −18,164.70 |
+| Best pure trigram | 6.903009 | 6.601562 | −885.12 | −531.19 |
+| Selected static base | 6.889504 | 6.593456 | 0 | 0 |
+| Free learned rule, also both shorter rules and the shifted fit | 6.888798 | 6.592659 | 46.27 | 52.26 |
+| Eight discrete tilts | 6.888888 | 6.592768 | 40.32 | 45.11 |
+| Eight continuously optimized tilts | 6.888966 | 6.592863 | 35.26 | 38.92 |
+| Earlier frozen alternating bit on the new base | 6.888634 | 6.593503 | 57.01 | −3.07 |
+
+The best of 216 static choices on the first chronological validation half used a Kneser–Ney trigram with fixed discount .9, lexical mixture weight $1/16$ and 65,536 pseudocounts toward the raw background unigram. Every raw group saw the same static lexical row. The lexical fit and trigrams used their original 262,144 and 524,288 past tokens. A separate 32,768-token validation half selected the history-rule strengths. The fitted constant tilt was $-1/2$ with the six highest-frequency named groups on the positive side. The fixed product selected zero. In the two more flexible fits, seven of eight history rows had the exact same learned value. The sole exception had class history $(+,+,-)$. A supplemental ablation replacing that row by the common value changed the advantage attributable to the exception to **−.027 and +.278 nats** for the discrete fit, and **−.017 and +.101 nats** for the continuous fit, over the two entire windows. These signs give no consistent gain for maintaining that three-sign history.
+
+The raw training-file reporting start was 23,000,000 and the other reporting start was 1,710,000. An explicit 50,257-way distribution checked normalization and realized probabilities at three positions in each report to less than $1.9\times10^{-15}$. The earlier weak base and the fresh static base were both scored on these same positions and throughout all reporting blocks. The Kneser–Ney comparator uses one discount at both conditional orders and a half-count floor in the continuation unigram. Historical order-five modified Kneser–Ney and Transformer scores concern different windows. [Chen and Goodman on the underlying smoothing methods](https://dash.harvard.edu/entities/publication/73120378-fb0f-6bd4-e053-0100007fdf3b)
+
+The count-based Boolean search still evaluated 726,663,168 nonzero per-token log tilts. The continuous comparison used 26 parallel row-bisection sweeps per partition, equivalent to 3,148,873,728 per-token derivative terms over the full search, plus four terminal objective passes per partition. It paid this added acquisition cost to retain eight real coefficients. The winning Boolean correction stores a partition and a single tilt, which can be folded into its static lexical output row at installation. There is no additional runtime state for that compiled correction. The experiment does not establish competitiveness with large trained language models.
+
+~~~sh
+python -B research/frontier/calibrated_word_rule.py
+~~~
+
 ## A rolling learned rule on two full-vocabulary text windows
 
 **EMPIRICALLY OBSERVED.** A free eight-entry rule on three binary word classes reduced to the opposite class of the last word. A separately fitted two-state rolling machine chose that same operation with a different word partition and strength. It saved 147.40 and 128.70 nats on the two 65,536-token reporting windows, gaining in all 16 consecutive blocks over the registered pooled lexical base. The independently fitted last-two-class model made exactly the same forecasts as the two-state model. Training at fixed strength sometimes favored a more complex table, but chronological validation selected the simpler operation. The frozen product selected zero strength. [Registration and corpus identities](https://github.com/alan-ai1196/FP/blob/52c2310/research/frontier/NEXT.md) · [Executable](rolling_word_rule.py) · [Model parameters, selection scores and every block](rolling_word_rule_result.json)
