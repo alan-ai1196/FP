@@ -350,3 +350,7 @@ The existing daily global scan was retained. A bounded Pro-E search in program i
 ### November26 Pro-D directed conference follow-through
 
 [On the Sample Complexity of Next-Token Prediction](https://proceedings.mlr.press/v258/yuksel25a.html), AISTATS2025, was selected through the current statistical-learning intake rather than another global scan. The official28pagePDF is fully read and newly indexed. The PMLR record authenticates conference publication. A separate OpenReview revision or TeX source was not recovered. The independent note separates source theorem statements from exact attention/entropy counterexamples and the coupling-transfer proof gap. This is a 2025 conference source studied on November26, not a claim of a new publication today.
+
+### November26 Pro-D compression-to-prediction follow-through
+
+The bounded follow-through completed the12page [Han–Wu author tutorial](https://yanjunhan2021.github.io/paper/BITS.pdf), listed as an invited February2026 paper. A separate IEEE BITS [DOI](https://doi.org/10.1109/MBITS.2026.3742325) is authenticated by publisher metadata, but its full text is unavailable and remains a distinct screened record. The original [COLT2024 dependency](https://proceedings.mlr.press/v247/han24a.html) is newly scoped at officialPDFpp3,8,20 and selected for full reading. Its38page final and37page arXivv1 are distinct. This is targeted source and theorem-range verification, not another global discovery scan.

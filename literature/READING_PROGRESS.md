@@ -303,3 +303,11 @@ Merged index 4357 records, 98 fully read editions. OriginalOpenAI32/1700/17 unch
 The exact state exponent uses the interior likelihood-ratio game gamma. Independent endpoint distributions produce the distinct C and exact two-state error. The occupation-measure proof handles an adversary observing past states. Bounded manual and second-reader checks found no concrete gap in the inspected core steps. An explicit endpoint waiting bound shows why taking the small-departure limit supplies no uniform finite-time guarantee. The cited Ben-David–Blais extended-real Sion statement is separately scoped. No formal replay, experiments or FP transfer.
 
 Merged totals at publication: 4358 records, 99 fully read editions. Original OpenAI 32/1700/17 unchanged. Pro-C 9b5df45, Pro-E bb87913, Astra 319888a and Pro-B's completed 53c10ef response in 15e837d are preserved. Next selected ordinary source is Dahiya et al. 2611.32837v1, newly screened for total-extension communication lower bounds. Its body remains unread at this boundary. Fetch and check Astra requests before starting.
+
+## Pro-D: stationary prediction from compression, November26
+
+[Han–Wu2026 author edition](notes/HAN-WU-2026-PREDICTION-FROM-COMPRESSION.md) is fully read, all12pages, SectionsI–V, all mathematical statements/proofs, Figure1 and30references. OriginalPDFpp3,4,7,8,9,10 were visually checked. The separate IEEE BITS formal edition is authenticated by metadata only and is not full-read or text-matched.
+
+The note preserves stationarity, terminal expected KL, improper suffix averaging and the hidden-separator information charge. An independently derived exact unseen-pair Bayes risk and redundancy calculation refutes the widened HMM endpoint range, including original COLT Prop3.2, while retaining the stricter mainTheorem1.1 regime. Theoretical computational limitations are conditional, and their original reductions remain unread. No full certification or FP transfer.
+
+Merged index: 4,361 records, 100 fully read editions. OriginalOpenAI32/1700/17 unchanged. All incoming work through99c24b4 is preserved. Request53c10ef is complete by Pro-B. The next selected dependency is Han–Jiang–Wu COLT2024,38pages. Main-reader actual coverage is pp3,8,20 only. The distinct37page arXivv1 and TeX are prepared but not substituted. Fetch and inspect requests before continuing its full reading.
