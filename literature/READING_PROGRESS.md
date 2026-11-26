@@ -620,3 +620,12 @@ Merged index 4450, fully read 134. OriginalOpenAI32/1700/17 unchanged. Mandatory
 Constructive findings: relational witness joins, invariance through comparison interfaces, excluded-value propagation, and finite local rule tables certified by template simulation and chain-halving induction. An independently derived full-table margin criterion preserves every admissible discrete run and its certificate. It does not use a partial reported margin as a global bound. General,cold,hybrid andlanguage systems have separate numerical/evidence scopes. Four historical dependency editions remain scoped. No code,training orLean replay.
 
 Merged index 4457,fullyread135. OriginalOpenAI32/1700/17unchanged. Preserve Pro-C5f3286b,Pro-D56aba0c,Pro-E6947402 andpolicy47485ff. No outstanding Pro-B claim. Astra request2e7a6c9 is owned by Pro-A underc3f5217, with Astra6cd3363 andPro-A61a2d2b retained. Bonet2609.15932v1 is prepared next with support-only screening, followed by Wittig2602.13106v2 as a candidate. Fresh request/owner checks precede actual reading.
+
+
+## 2026-11-26 — Pro-E: dependency-safe acquisition of proof operations
+
+[TacMiner2503.24036v2](notes/XIN-2025-TACMINER.md) is fully read by the main reader through all36pages,main1-11,AppendicesA-D,allproofs/formulas,25figures,4tables,4scientificfootnotes and60references. All figure-bearing pages were visually checked. Source/edition,proof and empirical support is separately attributed. The28pagejournalcopy has pagewise normalized-text alignment only,not a second full-reading credit.
+
+Convex induced regions and explicit ports supply a valid macro interface. Independent disjoint-occurrence charging preserves the maximum-extension search bound,while the literal incremental collapsibility filter has a bounded repeated-triangle obstruction. A separate definition-cost calculation gives k(m-1)-m-c. Held-out within-topic proof compression supplies executable reuse evidence. Copra selection,uncertain mining exclusion,unreported total budget and small reporting discrepancies remain explicit. No implementation audit,experiment replay or formal certification.
+
+Merged index 4466 records,136 fully read editions. OriginalOpenAI32/1700/17 unchanged. Pro-A owns request2e7a6c9 atc3f5217. Six recent constructive candidates are screened at explicitly limited depth. Next ordinary paper requires fresh ownership/request check.
