@@ -1,0 +1,347 @@
+{
+  "registration": "e164129",
+  "raw_tables": 66282,
+  "prefix_transition_lookups": 8351532,
+  "partitions_at_minimum_widths": [
+    1,
+    8,
+    174,
+    4497
+  ],
+  "dense_search_membership_bytes_as_executed": 9584640,
+  "maximum_count_bits_per_stored_integer": 16,
+  "repetitions_per_source": 32,
+  "price_nats_per_live_bit": 0.0009765625,
+  "sources": {
+    "first_identity": {
+      "population": {
+        "optimal_population_gain": 0.007896659528852195,
+        "critical_price_per_live_bit": 0.0039483297644260975,
+        "exp_256_times_optimal_gain": "3872560960934546677990836570872863099600570934244158543480602303750094147411811169886441156407251480269435092746208963231326891219090077981477219287199942332478030948550440371036529541015625/512923378717882779955614337954884577045414753519905097092121383926602185456748093443498780653142065751546286378709366704357113257800792220302939502620135095057394638901492980683073424195584",
+        "occupied_raw_histories_and_signed_unit_sums": [
+          [
+            18,
+            2
+          ],
+          [
+            19,
+            -7
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            18,
+            2
+          ]
+        ],
+        "second_distinct_gain": 0.006840387613320758,
+        "tied_optimal_terminal_partitions": 2,
+        "representative": {
+          "destinations_plus_minus": [
+            1,
+            2,
+            1,
+            0,
+            3,
+            3,
+            0,
+            3
+          ],
+          "signed_head": [
+            "-7/38",
+            "1/18",
+            "1/6",
+            "1/18"
+          ]
+        },
+        "full_law_gain": 0.04905451347792636
+      },
+      "learning": [
+        {
+          "per_split": 512,
+          "joint_width_histogram": [
+            18,
+            9,
+            0,
+            5
+          ],
+          "greedy_width_histogram": [
+            22,
+            10,
+            0,
+            0
+          ],
+          "joint_positive_gain": 1,
+          "joint_optimal_partition": 0,
+          "joint_gain": -0.0023470265978946868,
+          "greedy_gain": -0.0019888617778074987,
+          "always_four_gain": -0.00852296176710296,
+          "direct_word_gain": -0.014797175212050975,
+          "walsh_gain": 0.003019073470850446,
+          "walsh_exact_signed_support": 0
+        },
+        {
+          "per_split": 4096,
+          "joint_width_histogram": [
+            2,
+            0,
+            0,
+            30
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 30,
+          "joint_optimal_partition": 9,
+          "joint_gain": 0.005426408290543633,
+          "greedy_gain": -0.00017352699310708243,
+          "always_four_gain": 0.005702441654668047,
+          "direct_word_gain": 0.04170034105026278,
+          "walsh_gain": 0.04819089864854571,
+          "walsh_exact_signed_support": 32
+        },
+        {
+          "per_split": 32768,
+          "joint_width_histogram": [
+            0,
+            0,
+            0,
+            32
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 32,
+          "joint_optimal_partition": 31,
+          "joint_gain": 0.0077594551785077626,
+          "greedy_gain": -1.9198925636064564e-05,
+          "always_four_gain": 0.0077594551785077626,
+          "direct_word_gain": 0.04806456370728027,
+          "walsh_gain": 0.048950214990893415,
+          "walsh_exact_signed_support": 32
+        }
+      ]
+    },
+    "second_identity": {
+      "population": {
+        "optimal_population_gain": 0.015791971200981626,
+        "critical_price_per_live_bit": 0.007895985600490813,
+        "exp_256_times_optimal_gain": "6598125524550361630231636751389920889955542637750340873026289045810699462890625/115792089237316195423570985008687907853269984665640564039457584007913129639936",
+        "occupied_raw_histories_and_signed_unit_sums": [
+          [
+            16,
+            0
+          ],
+          [
+            16,
+            8
+          ],
+          [
+            16,
+            -8
+          ],
+          [
+            16,
+            0
+          ]
+        ],
+        "second_distinct_gain": 0.009095400510806382,
+        "tied_optimal_terminal_partitions": 1,
+        "representative": {
+          "destinations_plus_minus": [
+            0,
+            1,
+            2,
+            3,
+            3,
+            2,
+            1,
+            0
+          ],
+          "signed_head": [
+            "0",
+            "1/4",
+            "-1/4",
+            "0"
+          ]
+        },
+        "full_law_gain": 0.04905451347792636
+      },
+      "learning": [
+        {
+          "per_split": 512,
+          "joint_width_histogram": [
+            17,
+            2,
+            0,
+            13
+          ],
+          "greedy_width_histogram": [
+            29,
+            3,
+            0,
+            0
+          ],
+          "joint_positive_gain": 8,
+          "joint_optimal_partition": 5,
+          "joint_gain": 0.0005357692141519198,
+          "greedy_gain": -0.0011149281964687354,
+          "always_four_gain": -0.0027785005626559727,
+          "direct_word_gain": -0.016341814666673983,
+          "walsh_gain": 0.0038230583013163393,
+          "walsh_exact_signed_support": 0
+        },
+        {
+          "per_split": 4096,
+          "joint_width_histogram": [
+            0,
+            0,
+            0,
+            32
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 32,
+          "joint_optimal_partition": 31,
+          "joint_gain": 0.015039138904419587,
+          "greedy_gain": -0.00013464027992852578,
+          "always_four_gain": 0.015039138904419587,
+          "direct_word_gain": 0.041213064304094923,
+          "walsh_gain": 0.048369769504089166,
+          "walsh_exact_signed_support": 32
+        },
+        {
+          "per_split": 32768,
+          "joint_width_histogram": [
+            0,
+            0,
+            0,
+            32
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 32,
+          "joint_optimal_partition": 32,
+          "joint_gain": 0.01574260941349993,
+          "greedy_gain": -1.2054605505030805e-05,
+          "always_four_gain": 0.01574260941349993,
+          "direct_word_gain": 0.04805110440046586,
+          "walsh_gain": 0.048955022608352536,
+          "walsh_exact_signed_support": 32
+        }
+      ]
+    },
+    "fair": {
+      "population": {
+        "optimal_population_gain": 0.0,
+        "critical_price_per_live_bit": 0.0,
+        "exp_256_times_optimal_gain": "1",
+        "occupied_raw_histories_and_signed_unit_sums": [
+          [
+            64,
+            0
+          ]
+        ],
+        "second_distinct_gain": null,
+        "tied_optimal_terminal_partitions": 4680,
+        "representative": {
+          "destinations_plus_minus": [
+            0,
+            0
+          ],
+          "signed_head": [
+            "0"
+          ]
+        },
+        "full_law_gain": 0.0
+      },
+      "learning": [
+        {
+          "per_split": 512,
+          "joint_width_histogram": [
+            24,
+            5,
+            3,
+            0
+          ],
+          "greedy_width_histogram": [
+            27,
+            5,
+            0,
+            0
+          ],
+          "joint_positive_gain": 0,
+          "joint_optimal_partition": 32,
+          "joint_gain": -0.00167389651901094,
+          "greedy_gain": -0.0011609553670435,
+          "always_four_gain": -0.015524965131935256,
+          "direct_word_gain": -0.06678364017161467,
+          "walsh_gain": 0.0,
+          "walsh_exact_signed_support": 32
+        },
+        {
+          "per_split": 4096,
+          "joint_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 0,
+          "joint_optimal_partition": 32,
+          "joint_gain": -0.00011298204907380724,
+          "greedy_gain": -0.00011298204907380724,
+          "always_four_gain": -0.001228836035068637,
+          "direct_word_gain": -0.007953512648053562,
+          "walsh_gain": 0.0,
+          "walsh_exact_signed_support": 32
+        },
+        {
+          "per_split": 32768,
+          "joint_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "greedy_width_histogram": [
+            32,
+            0,
+            0,
+            0
+          ],
+          "joint_positive_gain": 0,
+          "joint_optimal_partition": 32,
+          "joint_gain": -1.4331657165619135e-05,
+          "greedy_gain": -1.4331657165619135e-05,
+          "always_four_gain": -0.00010842128520174464,
+          "direct_word_gain": -0.0009927612812733217,
+          "walsh_gain": 0.0,
+          "walsh_exact_signed_support": 32
+        }
+      ]
+    }
+  }
+}

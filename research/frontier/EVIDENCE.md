@@ -10,6 +10,28 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Learning a four-state update when smaller updates cannot help
+
+**EMPIRICALLY OBSERVED on three predeclared synthetic sources, 32 independent repetitions each.** Each training and validation split contained the indicated number of iid seven-sign records, with nested sample sizes within a repetition. Every learner saw the same training counts. Deterministic updates additionally used a disjoint validation split to select width at $1/1024$ nat per live address bit. The threshold on all 64 Walsh coefficients was fixed in advance. Test log gains below are means per outcome under the exact fresh law. Uniform has gain zero. [Prospective comparison](https://github.com/alan-ai1196/FP/blob/e164129/research/frontier/NEXT.md) · [Code](learn_state_width.py) · [Results](learn_state_width_result.json)
+
+| Source | Records per split | Joint choice of 4 | Joint gain | Greedy gain | 64-word smoothed table | All-mask Walsh fit |
+|---|---:|---:|---:|---:|---:|---:|
+| First contrast | 512 | 5/32 | −0.002347 | −0.001989 | −0.014797 | 0.003019 |
+| First contrast | 4,096 | 30/32 | 0.005426 | −0.000174 | 0.041700 | 0.048191 |
+| First contrast | 32,768 | 32/32 | 0.007759 | −0.000019 | 0.048065 | 0.048950 |
+| Second contrast | 512 | 13/32 | 0.000536 | −0.001115 | −0.016342 | 0.003823 |
+| Second contrast | 4,096 | 32/32 | 0.015039 | −0.000135 | 0.041213 | 0.048370 |
+| Second contrast | 32,768 | 32/32 | 0.015743 | −0.000012 | 0.048051 | 0.048955 |
+| Fair | 32,768 | 0/32 | −0.000014 | −0.000014 | −0.000993 | 0.000000 |
+
+At both larger sizes, greedy selection stayed at one state on both signals. The joint search found an exactly optimal terminal partition in 31/32 and 32/32 large runs respectively. It chose one state on all large null runs. On both signals the Walsh fit recovered all six coefficients' signs and support in every run at 4,096 and 32,768 records, with unrestricted population gain $0.049055$. All gains concern the seventh sign. With a supplied block clock and fair forecasts on the six inputs, gains per token equal the reported gains divided by seven.
+
+**NUMERICALLY VERIFIED.** Direct enumeration of 66,282 tables consumed 8,351,532 prefix transition lookups before deduplication. The numbers of new terminal partitions at widths one through four were $1,8,174,4497$. A separate scalar traversal reproduced the complete partition sets at all widths. The maximum-gain comparisons use rational products. Once built, the search uses 128 raw counters, a dense 9,584,640-byte float64 membership matrix in this implementation, and two group aggregations over $4680\times4\times64$ count memberships per fit. Each training split of size $n$ and its validation split require $14n$ raw signs combined. A deployed four-state table uses two live address bits, eight two-bit destinations and up to four pairs of 16-bit counts at the largest size. A record costs six indexed transitions and one head lookup. The smoothed table can retain the six input bits and 64 pairs of counts. A sparse Walsh fit can keep those six live bits, a six-bit mask and a signed coefficient per retained term, and evaluate one parity per term. Two length-64 fast Walsh transforms take 768 additions or subtractions per fit including rebuilding all forecasts. Initial widths and the two-letter alphabet were supplied. Each learner had to infer which computations were useful.
+
+~~~powershell
+python research/frontier/learn_state_width.py
+~~~
+
 ## Six ordinary signs distinguish three and four homogeneous states
 
 **NUMERICALLY VERIFIED in exact arithmetic.** Independent evaluations of every matrix word on 24 pairs of integer matrices gave ranks $1,2,4,8,16,30$ modulo 1009 at suffix lengths zero through five. A nonzero minor modulo 1009 certifies at least that rank over the reals. Word counts and the two proved Cayley–Hamilton identities give the reverse inequalities. At length six the complete ordinary-forecast span for three states therefore has dimension 62 of 64. The classical unconstrained rank 30 at suffix length five also appears in the primary matrix-product literature. [Frozen registration](https://github.com/alan-ai1196/FP/blob/9700cc6/research/frontier/NEXT.md) · [Proof and interpretation](FOUNDATION.md#which-ordinary-predictions-can-certify-that-a-stochastic-update-needs-another-state) · [Navascués and Vértesi, Table 1](https://arxiv.org/pdf/1509.04507v6)
