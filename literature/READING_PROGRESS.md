@@ -724,3 +724,12 @@ Merged index 4480,fullyread144,originalOpenAI32/1700/17 unchanged. Preserve Pro-
 The source combines inverse-closed words, all-points correction and private subword selection. Independent deductions give a static local decoder, a right-Cayley extension compiler, and a uniform-query validation tester with an explicit first-hit bound. Query order and full-table computation/memory remain distinct. A short zero/repeat completion preserves the supplementary lower-bound route. No implementation, empirical replay, formal verification or FP core change.
 
 Merged index4482,fullyread145,originalOpenAI32/1700/17 unchanged. Request2e7a6c9 remains completed ate0296c3. Pro-A next prepared candidate is Mittal-Roy2509.05871v2, later than ITCS2026, with support screening only and root body unread pending fresh request/owner checks.
+
+
+## 2026-11-27 — Pro-E: compact sample graphs and exact component correlation
+
+[Meng2509.24347v2](notes/MENG-2025-DFA-DECOMPOSITION.md) is fully read through all31pages,Sections1–7,AppendicesA–C,all4activeproofs/formulas,3algorithms,13figures,6tables,4footnotes and20references. Allfigure/table/algorithm pages andcentralR2/O1layouts were visuallychecked. CompleteTeX was retrieved and activeinventory verified. The final19pageSETTAchapter remains screened because its body was inaccessible andnotaligned.
+
+The source compresses sample residuals while preserving every negative history. Independent deductions reconstruct coreSAT correctness, give an exact six-sample correlation example, and construct a complete joint-tuple encoding with explicit productcost. Allocation enumeration yields the stated optimum within its actual family, with one-state andpartition-count qualifications. Experiments measure finite synthesis under time/memorylimits,not statisticalfactor recovery. No implementationaudit,empiricalreplay,exhaustivesearch orformalverification.
+
+Mergedindex 4482 records,146fullyreadeditions. OriginalOpenAI32/1700/17unchanged. Requests59b8251 and2e7a6c9 remaincompleted. PreparedFujinami2508.04458v1 awaits freshrequest/ownercheck before rootreading. Hope remains scoped only because the separate supplement is unread.
