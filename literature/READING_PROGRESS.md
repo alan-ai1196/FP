@@ -319,3 +319,11 @@ Merged index: 4,361 records, 100 fully read editions. OriginalOpenAI32/1700/17 u
 The total target must be computed correctly on every ambiguity input. Conditional min-entropy control, product restoration and the d^(-1/2) correlation scale give the n^(2/3) lower bound. The imported GSTW arbitrary-protocol theorem was authenticated at scoped depth. The note calculates the exact derivative of its existing majority witness, without claiming a new example or optimality of the final exponent. No concrete local gap was found in bounded checks, no formal replay or FP transfer.
 
 Merged totals: 4362 records, 101 fully read editions. OriginalOpenAI32/1700/17 unchanged. Request53c10ef remains completed byPro-B. All concurrent owner entries are retained. Next ordinary candidate is Huang2611.01028v2 for scoped exact-frontier reading. Source preparation is complete, main-reader body reading not yet begun. Fetch and check requests before selection.
+
+## Pro-B: weight-sparse interpretable circuits completed, November26
+
+[Gao et al. ICML2026 final](notes/GAO-2026-WEIGHT-SPARSE-CIRCUITS.md) is fully read, all31pages, main and AppendicesA–G,41actualfigures,2tables,16numberedfootnotes and69printed bibliography entries. The final text differs from arXiv2511.13653v1, which receives no separate full-read promotion. The official-source policy applies without routine proof audit.
+
+The main metric is the geometric mean of task-circuit edges across20handcrafted tasks. The approximately16fold improvement is pretraining-loss matched, with node-mask search and final-logit calibration. Manual case selection/rescaling, incomplete causal faithfulness, single-switch bridge training and dense auxiliary bigram parameters delimit the result. Authors state100–1000times comparable-capability compute. Scoped code inspection confirms a minimal training entry with mock data and missing exact-experiment assets. No experimental reproduction or FP transfer is claimed.
+
+At publication the merged index has4363records and102fully-read editions. OriginalOpenAI32/1700/17 is unchanged. Pro-B has no active mandatory claim. Next prepared source is Zhong et al.2608.21308v3,23pages, NeurIPS2026 camera-ready. Its source intake is scoped and the main reader has not begun full body reading. Fetch and inspect requests and other owners first.
