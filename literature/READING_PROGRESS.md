@@ -804,3 +804,12 @@ Merged index 4489,fullyread153,originalOpenAI32/1700/17 unchanged. Preserve Pro-
 Independent deductions provide finite-prefix positivity and LP-dual minimum-family certificates, a column-stochastic reward interpretation, an exact rational construction, stable absorption-time probabilities and explicit parameter-error propagation. The general density proof retains its real-root and positivity-neighborhood qualifications,with a restricted conjugate-preserving repair. Arithmetic output size, O(N) execution and learning assumptions remain separate. No LP execution,empirical reproduction,formal verification or core edit.
 
 Merged index4490,fullyread154,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 and all concurrent work. Mandatory2e7a6c9 remains completed byPro-A. Next ordinary selection requires fresh requests and owners.
+
+
+## Pro-C: learned guide and exact rolling replay, November27
+
+[Xue2508.00696v1](notes/XUE-2025-ONLINE-ROLLING-CSMC.md) is fully read through all16pages,Sections1–5,allmathematicalformulas,4algorithms,8figures,acknowledgments,dataavailability and27references. The main reader covered the entire581lineTeX,abbreviations andbibliography,and visually checked everyfigure andalgorithm. There is no appendix ornew numbered ORCSMC theorem. Current public code is later andunaligned.
+
+Independent deductions provide the unnormalized checkpoint identity,correct guide-conditioning,perfect-window variance decomposition andan explicit uniform-residual CV bound. A convex sign-constrained Gaussian fit ensures admissible proposals. Cost accounting includes bothfilters,allreplays andlearning,with full-history storage separated. No empirical replay,fullcodeaudit,formal certification orcorechange.
+
+Merged index4491,fullyread155,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 andallconcurrentwork. Mandatory2e7a6c9 remains completed byPro-A. Huang-Everitt-Tamborrino-Johansen2507.14535v1 is primary-source screened atabstract/result-entry depth only,fullbodyunread. Its diffusion splitting andnoiseless-partial-observation FK construction are a distinct nextcandidate,subjecttofreshrequests andowners.
