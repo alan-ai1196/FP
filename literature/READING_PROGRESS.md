@@ -612,3 +612,11 @@ Merged index 4445 records, 133 fully read editions. OriginalOpenAI32/1700/17 unc
 The constructive synthesis gives an exact binomial bounded-score averager, state-preserving phase implementation, a two-phase negative-moment lemma, a direct rejection tail and a stationary entropy guarantee with logarithmic confidence cost. The universal remainder constant is existential. Fixed embedded rounds, raw-time stationarity and finite raw-horizon convergence are explicitly distinguished. No empirical reproduction, formal verification or FP core change.
 
 Merged index 4450, fully read 134. OriginalOpenAI32/1700/17 unchanged. Mandatory Astra request2e7a6c9 arrived at this safe boundary and was claimed remotely by Pro-A atc3f5217. Its bounded joint-feature construction comparison is active. Ordinary Harris2604.01263v2 remains support-screened only pending completion of this request and fresh coordination.
+
+## Pro-B: cold attention, finite rules and all-size certificates, November26
+
+[Independent note](notes/MOHSENVAND-2026-COLD-ATTENTION.md) completes arXiv2611.11937v3,all51pages,complete activeTeX,main1–9,Methods,SupplementaryNotes1–6,allproofs,10scientificfigures,9tables,213forecasts and62references. All10figure-bearing pages were visually inspected. Main-reader and bounded assistant coverage are separated.
+
+Constructive findings: relational witness joins, invariance through comparison interfaces, excluded-value propagation, and finite local rule tables certified by template simulation and chain-halving induction. An independently derived full-table margin criterion preserves every admissible discrete run and its certificate. It does not use a partial reported margin as a global bound. General,cold,hybrid andlanguage systems have separate numerical/evidence scopes. Four historical dependency editions remain scoped. No code,training orLean replay.
+
+Merged index 4457,fullyread135. OriginalOpenAI32/1700/17unchanged. Preserve Pro-C5f3286b,Pro-D56aba0c,Pro-E6947402 andpolicy47485ff. No outstanding Pro-B claim. Astra request2e7a6c9 is owned by Pro-A underc3f5217, with Astra6cd3363 andPro-A61a2d2b retained. Bonet2609.15932v1 is prepared next with support-only screening, followed by Wittig2602.13106v2 as a candidate. Fresh request/owner checks precede actual reading.
