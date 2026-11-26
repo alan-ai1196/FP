@@ -1,0 +1,1255 @@
+{
+  "registration": "5ce71e8",
+  "frozen_model": "joint_sign-619fbc32b3d6",
+  "frozen_bits_rank_reuse": 266,
+  "frozen_bits_standalone": 1290,
+  "train_offset": 35000000,
+  "train_size": 131072,
+  "validation_size": 32768,
+  "fit_validation_sha256": "ed3db66445a7ca1475fa6c46c0ceec2e292fc05e66eed2df4b19b7b8a44f7f72",
+  "audits": {
+    "balanced_integer_sources_recovered": 36,
+    "bounded_radius": 1.0,
+    "conditional_gradient_path": [
+      {
+        "steps": 0,
+        "excess_nats": 0.14891714732277775,
+        "gradient_gap": 0.395514502602736
+      },
+      {
+        "steps": 1,
+        "excess_nats": 0.18718347520306894,
+        "gradient_gap": 0.7321593067060577
+      },
+      {
+        "steps": 2,
+        "excess_nats": 0.3353115544824831,
+        "gradient_gap": 0.9560363201791603
+      },
+      {
+        "steps": 4,
+        "excess_nats": 0.04826901168332713,
+        "gradient_gap": 0.20656626589864238
+      },
+      {
+        "steps": 8,
+        "excess_nats": 0.0034031899542950788,
+        "gradient_gap": 0.07540740411133673
+      },
+      {
+        "steps": 16,
+        "excess_nats": 0.0056071264993807985,
+        "gradient_gap": 0.06338922130900333
+      },
+      {
+        "steps": 32,
+        "excess_nats": 0.001999572648954205,
+        "gradient_gap": 0.030388985940748812
+      },
+      {
+        "steps": 64,
+        "excess_nats": 0.00022160162089815698,
+        "gradient_gap": 0.006622034176998529
+      }
+    ]
+  },
+  "work": {
+    "residual_tables": 162,
+    "output_masks": 860160,
+    "compressed_observations_per_residual_pass": 9675882,
+    "dense_objectives": 625,
+    "largest_compressed_panel": 72823
+  },
+  "candidates": {
+    "installed": 1,
+    "main": 24,
+    "matched_additive_two": 1,
+    "product": 24,
+    "either": 24,
+    "dense_add": 18,
+    "dense_add_product": 18,
+    "dense_full": 18
+  },
+  "models": {
+    "installed-1": {
+      "inputs": 16,
+      "lag": 2,
+      "family": "installed",
+      "bits": 0,
+      "validation_gain": 5.482281295599023e-13
+    },
+    "main-2": {
+      "inputs": 64,
+      "lag": 2,
+      "family": "main",
+      "atoms": [
+        {
+          "op": "main",
+          "w": "+++++++++++++++++++++-+-+++++++++++---++-+++++-+++++--+-+++++++++",
+          "s": "-------+--+++",
+          "q12": 325,
+          "contrast": 6268.542872481725
+        },
+        {
+          "op": "main",
+          "w": "----------+-+++------+++-+-++--++-+---+-+---+---+-+++--+-++-----+",
+          "s": "---+-----+--+",
+          "q12": -248,
+          "contrast": 4755.053570936219
+        },
+        {
+          "op": "bit",
+          "w": null,
+          "s": "------++----+",
+          "q12": 183,
+          "contrast": 3412.115095791032
+        },
+        {
+          "op": "main",
+          "w": "++-+-++++++++++++++++-+++++-+--+++++-++++++++++++-+++++++++++++-+",
+          "s": "--+-+----+--+",
+          "q12": 270,
+          "contrast": 4349.429601219928
+        },
+        {
+          "op": "main",
+          "w": "+--+-+--+---+-------------+-------+-----------+----+-----+++----+",
+          "s": "-+-+-+---+--+",
+          "q12": -180,
+          "contrast": 2865.669550266447
+        },
+        {
+          "op": "main",
+          "w": "+++---++-+++--+++++-+++++--++++++++++-++++++--+++++++-+++++++++++",
+          "s": "---+-+-+-++++",
+          "q12": 187,
+          "contrast": 2981.013426481386
+        },
+        {
+          "op": "bit",
+          "w": null,
+          "s": "--+---++-++-+",
+          "q12": 190,
+          "contrast": 2622.3104949680423
+        },
+        {
+          "op": "main",
+          "w": "-+-++++-++-+-+-+++++-----+++-++-++-+++++-++----+--+++-+++-+--++++",
+          "s": "-++---++-+--+",
+          "q12": 204,
+          "contrast": 2518.8653936450246
+        }
+      ],
+      "bits": 692,
+      "validation_gain": 194.58183621073863
+    },
+    "main-3": {
+      "inputs": 16,
+      "lag": 2,
+      "family": "main",
+      "atoms": [
+        {
+          "op": "constant",
+          "w": null,
+          "s": "-------+--+++",
+          "q12": 317,
+          "contrast": 6101.95981825661
+        }
+      ],
+      "bits": 56,
+      "validation_gain": 91.34940916971453
+    },
+    "matched_additive_two-4": {
+      "inputs": 16,
+      "lag": 2,
+      "family": "matched_additive_two",
+      "atoms": [
+        {
+          "op": "constant",
+          "w": null,
+          "s": "-------+--+++",
+          "q12": 317,
+          "contrast": 6101.95981825661
+        },
+        {
+          "op": "bit",
+          "w": null,
+          "s": "------++----+",
+          "q12": 196,
+          "contrast": 3594.8103853293205
+        }
+      ],
+      "bits": 92,
+      "validation_gain": 100.72955947072538
+    },
+    "product-5": {
+      "inputs": 64,
+      "lag": 2,
+      "family": "product",
+      "atoms": [
+        {
+          "op": "product",
+          "w": "---+----+-+-+++---++-+++-+-++-++--+++++-+++-+++-++++++--+++-----+",
+          "s": "---+---+-+--+",
+          "q12": 254,
+          "contrast": 4843.222920633998
+        },
+        {
+          "op": "product",
+          "w": "-+++--++-+--+-+++--++-+-+--+-+---++--+-+--++-++++--+-++---++++-++",
+          "s": "---+------+++",
+          "q12": -205,
+          "contrast": 4014.705602758455
+        },
+        {
+          "op": "product",
+          "w": "--+-------+---+-++++-+++---++-+---+-++--+++--++------+-+---+---++",
+          "s": "--+---++-+--+",
+          "q12": 198,
+          "contrast": 3037.246663229528
+        },
+        {
+          "op": "product",
+          "w": "+--+-+++++++--+++-++++-+----+---++++++-++---++++++++-----+-+-++-+",
+          "s": "+-+-++--+---+",
+          "q12": -219,
+          "contrast": 2728.0742266236734
+        },
+        {
+          "op": "product",
+          "w": "++-+++--++-++-----+------+++-+---+--++---+--+--+-+-++----++-+--++",
+          "s": "---+++-++-+-+",
+          "q12": 154,
+          "contrast": 2380.7858086302226
+        },
+        {
+          "op": "product",
+          "w": "-++-+-+++++-+-++-+----++++-++++-+----+-++--+---+-+-+++++++---++++",
+          "s": "-+-+-+---++++",
+          "q12": -163,
+          "contrast": 2490.476586543643
+        },
+        {
+          "op": "product",
+          "w": "+-++---+-++-+---+--++---+----+----+--------+--+-+----+----+-----+",
+          "s": "-++--+------+",
+          "q12": 134,
+          "contrast": 2111.1449755243475
+        },
+        {
+          "op": "product",
+          "w": "+-+--+---+-++--+--++--+-++++--+--+-+-+++-+++--++-+++--+-+--++++-+",
+          "s": "--+++-------+",
+          "q12": -123,
+          "contrast": 2000.2532247578251
+        }
+      ],
+      "bits": 820,
+      "validation_gain": 89.97984477587508
+    },
+    "product-6": {
+      "inputs": 16,
+      "lag": 2,
+      "family": "product",
+      "atoms": [
+        {
+          "op": "product",
+          "w": "+--+----+-+--++-+",
+          "s": "---+--++-+--+",
+          "q12": 219,
+          "contrast": 3859.6981454193274
+        }
+      ],
+      "bits": 72,
+      "validation_gain": 37.3548422431756
+    },
+    "either-7": {
+      "inputs": 64,
+      "lag": 2,
+      "family": "either",
+      "atoms": [
+        {
+          "op": "main",
+          "w": "+++++++++++++++++++++-+-+++++++++++---++-+++++-+++++--+-+++++++++",
+          "s": "-------+--+++",
+          "q12": 325,
+          "contrast": 6268.542872481725
+        },
+        {
+          "op": "product",
+          "w": "--+++---+-+--++--+++-+++-+-++-++--+-+---+++-+++-++-+-+-+--+----++",
+          "s": "--+---++-+--+",
+          "q12": 373,
+          "contrast": 5479.666000703044
+        },
+        {
+          "op": "main",
+          "w": "-----+----+-+++------++--+--+-+++--+--+-+---------+-----++++----+",
+          "s": "+--+-----++-+",
+          "q12": -207,
+          "contrast": 3373.1016235328752
+        },
+        {
+          "op": "main",
+          "w": "-++++++-+++++++++++++++++++-+-++++-++-+++++++++++-+--++++-+--++++",
+          "s": "--+------+--+",
+          "q12": 242,
+          "contrast": 4179.66784384805
+        },
+        {
+          "op": "product",
+          "w": "++-++++-++++-++-++++++++-++-+-+++++++++-++--++-++++-++--++----+-+",
+          "s": "---+--++-++++",
+          "q12": 210,
+          "contrast": 3263.214288533114
+        },
+        {
+          "op": "product",
+          "w": "+-+---++-+--+--+--+++---+--+-+---+-----++--+---+-+-+-++------+--+",
+          "s": "+--+-----+-++",
+          "q12": -216,
+          "contrast": 3500.906422643665
+        },
+        {
+          "op": "main",
+          "w": "--+----+-+-+--+-----++--+-+-++-+++----+----+--+---++--++-++---+++",
+          "s": "++----------+",
+          "q12": -174,
+          "contrast": 2836.7746379167756
+        },
+        {
+          "op": "main",
+          "w": "++-+-++++-++++++++++++++++--+-++++++-+++-+++-+++++++++-++--++++-+",
+          "s": "----+--+--+-+",
+          "q12": 185,
+          "contrast": 3303.9203374923163
+        }
+      ],
+      "bits": 820,
+      "validation_gain": 224.17846405087596
+    },
+    "either-8": {
+      "inputs": 16,
+      "lag": 2,
+      "family": "either",
+      "atoms": [
+        {
+          "op": "constant",
+          "w": null,
+          "s": "-------+--+++",
+          "q12": 317,
+          "contrast": 6101.95981825661
+        },
+        {
+          "op": "product",
+          "w": "--+++---+-+--++-+",
+          "s": "--+---++-+--+",
+          "q12": 335,
+          "contrast": 4932.226174123276
+        }
+      ],
+      "bits": 108,
+      "validation_gain": 133.55802853990724
+    },
+    "dense_add-9": {
+      "inputs": 64,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_add",
+      "q12_zlib_base64": "eJwNz4tTlWUeAOD3/b7vnIMIRkSuCCl5rWw6JZMYmqUlXrayyWxMFFm3nOQiG43IZmpWOLtlq1uYwqwBphImKBCm6+QqbezQcEDTVHJMFBLbOMA53+W9v7/6D54nGS2/vZXP88YZO8jPJF9upucgiP7BMuyHyBJ+I1o51GWfd4uMceHdqk7tZkec7+yi/7+GZ+j1/Jj3yMAcL8fIttIsIKXEZ9u/OKgycojMEvfrUnQBbPQhzVSZcEE0Dh7gWyBbDLjXzSkiBWXa6e5jZl14NMqNbPW6YCy/7p0Ymq+ORj4NP4Jbo3vCJ1hF3+sodigV/+BtINsjh4b/MLBOdNEC0UaqnK+ERo2kINAvCuUA2eI0qqlythtSU9yd7HumST/tiWZAjneMzaBxtMo9Y2+I2c1SvDiRLI7QHC+sN/tGkNHwtP7J+zh6ELnhoaF8s8z9b6SDBvlIsZBfhHn+z5yQ+XIgXn+kywOx/kuiwQiIJJmPdsIcukGfUNnuz5CIOmkFXuNfb7bwZrhpHyFvs3WEIyOWsZPyXVOyrd5q4+1o+tBPZJMdcJOj9fbfSKqLsHDjvBU06DCYR58jf6Hn3DQzU97PXhcX6X7ncWGKU/qQvEd/w5soeDvNOeqPvJp2u6NJtVvqFbsJosAc681mKawTCth18qiuxInwBT0DtfRP7CoZpu1w2qsZ3KJeIkl6md7mfG+uVX82s31xIt49I97w9qFmmGw18TZcmlAqIjzL6HauwVznGRjvuxe/wzJRH9uBepFlJLEP4FGeJnqM5f4q4O4mc55sUb3ytV9v9aaRZ2NesWuj+W4Na7Wnq1DSLD6RGciELG+MGXVP0FZzunKsqTykx4kOehTlcsI3ydViUFE9zMuNxbJcR/BSuUhNdq6xHDHFvMj62arAJnRHtFP9qKppsXHvnTnysEqiz+NWQXiIZLMHyVZojCSoCV6VeBhujrokV/i6vUL0MVzRb/CvcY8shLHic54Hp1WrmyB3wkbYTovxeeo3+mGNFnow8KSzmE02Vjs1vF1fRvt8x9VGOG28L5Y7n0UrfvdnwlLNZanSbq4qkRnqiOyiKzzqFuErmutBrXCP+HtcLvSIBJWIKsl2o9ufphpQkrgl8sR6Mh/l6LMG6P081b9EFIoAnyky8CV0QTarFMVJKz6Jl/F4FcMpUHSVHRjETnug1lkC+f5asQg1sLnGm8a3aGY0c7hJ73W6nCLi0gK9iuaheh7lV9h9ahqE6W4oiGnTy3iDOQJ1Sm28Su6hI0Qvj+fDAkS9+pd4SWWpNtUXLaKpLOSbRtpZPm0nrbLamuz7Cu4Ml/yyjhwY+T8yiZxnT0hCPW8lbjEvG1tkUFOers4acbKMT+SePA6ntEdD8rBzzS2zouoglNPHkNR1KEsuIiEnA/I0HlVGtfoQjVH++BA+Jk+SBd5b0EAXe7dFrRivJjFH5cLnUCf7aQnfw3rRAmsujFED+hYOWGv5VcBslXgGz6R3jTzJvd9PLeqyMV99N4TZcd8NcpCNt57DIYuqZNmod6kO2UNnACaX+cP0Cznef3dMplrtz0B5ug938812J58J69BI9JT3QuBgTA5PhoVqGF7BpagH78cpukUeloWqQC61nx8OBx6wFrAobeYr0Se0PtaRr0qTJco55rv8a1RmnSc/wApcYQX9HUaqXYB98BAPigfQOXUD7oN0/Z5vNp/gbbTPxaxxhsXUuPdYpW+X+Kf+VO6Lb2I/krW+XDaC5Yo3oc2YBB3+iSg+dhrNYhfdbWqPLx6KNMUHYJbYq5LRWXHYWyS6aT1NRHGwA/eLajlKPWWlk6cjiWK6+Df5VTbzbUrKVH9YELnPnU9vmnfwlawGl6jb1ilaYn6r3uEbyF/VaC8Z9bnFehcuNyrA89fAXVaQ9VMOVXwhfCNfVEdRnVqog3g5Wsu+ZE26WL6s6yTgVOM/6i20CoL6N7ED1sw=",
+      "bits": 11095,
+      "validation_gain": 316.97974301756284
+    },
+    "dense_add-10": {
+      "inputs": 16,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_add",
+      "q12_zlib_base64": "eJwBsAFP/rf+8OZ5+kb1FAJj9wz4YPw3+OH/NgB0+cPxxvVm+svxi++a8/r1iQLA7In9d/1p+RvzRPKD6g4AH/4n+ub2ROy29W0CKQTjA5L2GfYI8/ro6ABn8cT3Tfu8/YsAuf/KABb3z/tC/6n6o+5p+qz/YfuE9e0DD/vs/9bx2/NOA7DsBgAo8Zz24P+v+ez2nO8Q/VPwP+xGAbLxiu2F+b7kiQC37iwBqvZT9wXwM+8n7B36u/gs+/X3r/Q4+xABivc1B4z6J/vv943zrv0A/EL10/3d9KH5w/no9233ePFK/0b1nvkB+Dz4rvVf84gIdfn69dn55Pmv+Bv26f5RBRL3GP/y/ev2ifKGAOjs2O5zA7r0wvGo+DH6Evv++eH/QgaS9AAFlgj4/UL/oQczBpH7nwJN+xD8ggCj/xn3b/3B/bT05//w/9z4pgEZBn8Dr/qj/7/yjPaI+ZL29ADVCQz6wPwgAwn6dPZGAijx5e3z95/y+fT08dHzmPfC9BEB5PX09fP2EveS/1T5i/44/ZX8VQCm/Kz+ZwGn/8n3I/jK/g/7Pf5b/D4COgIq/YwAJf/p/QkUF3U=",
+      "bits": 3031,
+      "validation_gain": 286.9252843864127
+    },
+    "dense_add_product-11": {
+      "inputs": 64,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_add_product",
+      "q12_zlib_base64": "eJwNz4tTlWUeAOD3/b7vnIMIRkSuCCl5rWw6JZMYmqUlXrayyWxMFFm3nOQiG43IZmpWOLtlq1uYwqwBphImKBCm6+QqbezQcEDTVHJMFBLbOMA53+W9v7/6D54nGS2/vZXP88YZO8jPJF9upucgiP7BMuyHyBJ+I1o51GWfd4uMceHdqk7tZkec7+yi/7+GZ+j1/Jj3yMAcL8fIttIsIKXEZ9u/OKgycojMEvfrUnQBbPQhzVSZcEE0Dh7gWyBbDLjXzSkiBWXa6e5jZl14NMqNbPW6YCy/7p0Ymq+ORj4NP4Jbo3vCJ1hF3+sodigV/+BtINsjh4b/MLBOdNEC0UaqnK+ERo2kINAvCuUA2eI0qqlythtSU9yd7HumST/tiWZAjneMzaBxtMo9Y2+I2c1SvDiRLI7QHC+sN/tGkNHwtP7J+zh6ELnhoaF8s8z9b6SDBvlIsZBfhHn+z5yQ+XIgXn+kywOx/kuiwQiIJJmPdsIcukGfUNnuz5CIOmkFXuNfb7bwZrhpHyFvs3WEIyOWsZPyXVOyrd5q4+1o+tBPZJMdcJOj9fbfSKqLsHDjvBU06DCYR58jf6Hn3DQzU97PXhcX6X7ncWGKU/qQvEd/w5soeDvNOeqPvJp2u6NJtVvqFbsJosAc681mKawTCth18qiuxInwBT0DtfRP7CoZpu1w2qsZ3KJeIkl6md7mfG+uVX82s31xIt49I97w9qFmmGw18TZcmlAqIjzL6HauwVznGRjvuxe/wzJRH9uBepFlJLEP4FGeJnqM5f4q4O4mc55sUb3ytV9v9aaRZ2NesWuj+W4Na7Wnq1DSLD6RGciELG+MGXVP0FZzunKsqTykx4kOehTlcsI3ydViUFE9zMuNxbJcR/BSuUhNdq6xHDHFvMj62arAJnRHtFP9qKppsXHvnTnysEqiz+NWQXiIZLMHyVZojCSoCV6VeBhujrokV/i6vUL0MVzRb/CvcY8shLHic54Hp1WrmyB3wkbYTovxeeo3+mGNFnow8KSzmE02Vjs1vF1fRvt8x9VGOG28L5Y7n0UrfvdnwlLNZanSbq4qkRnqiOyiKzzqFuErmutBrXCP+HtcLvSIBJWIKsl2o9ufphpQkrgl8sR6Mh/l6LMG6P081b9EFIoAnyky8CV0QTarFMVJKz6Jl/F4FcMpUHSVHRjETnug1lkC+f5asQg1sLnGm8a3aGY0c7hJ73W6nCLi0gK9iuaheh7lV9h9ahqE6W4oiGnTy3iDOQJ1Sm28Su6hI0Qvj+fDAkS9+pd4SWWpNtUXLaKpLOSbRtpZPm0nrbLamuz7Cu4Ml/yyjhwY+T8yiZxnT0hCPW8lbjEvG1tkUFOers4acbKMT+SePA6ntEdD8rBzzS2zouoglNPHkNR1KEsuIiEnA/I0HlVGtfoQjVH++BA+Jk+SBd5b0EAXe7dFrRivJjFH5cLnUCf7aQnfw3rRAmsujFED+hYOWGv5VcBslXgGz6R3jTzJvd9PLeqyMV99N4TZcd8NcpCNt57DIYuqZNmod6kO2UNnACaX+cP0Cznef3dMplrtz0B5ug938812J58J69BI9JT3QuBgTA5PhoVqGF7BpagH78cpukUeloWqQC61nx8OBx6wFrAobeYr0Se0PtaRr0qTJco55rv8a1RmnSc/wApcYQX9HUaqXYB98BAPigfQOXUD7oN0/Z5vNp/gbbTPxaxxhsXUuPdYpW+X+Kf+VO6Lb2I/krW+XDaC5Yo3oc2YBB3+iSg+dhrNYhfdbWqPLx6KNMUHYJbYq5LRWXHYWyS6aT1NRHGwA/eLajlKPWWlk6cjiWK6+Df5VTbzbUrKVH9YELnPnU9vmnfwlawGl6jb1ilaYn6r3uEbyF/VaC8Z9bnFehcuNyrA89fAXVaQ9VMOVXwhfCNfVEdRnVqog3g5Wsu+ZE26WL6s6yTgVOM/6i20CoL6N7ED1sw=",
+      "atoms": [
+        {
+          "op": "product",
+          "w": "-+-+----+-+--+---+++-+-+----+-+---------+++--++------+----------+",
+          "s": "--+----+-+--+",
+          "q12": 121,
+          "contrast": 1903.7208953651068
+        }
+      ],
+      "bits": 11215,
+      "validation_gain": 313.306628806257
+    },
+    "dense_add_product-12": {
+      "inputs": 16,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_add_product",
+      "q12_zlib_base64": "eJwBsAFP/rf+8OZ5+kb1FAJj9wz4YPw3+OH/NgB0+cPxxvVm+svxi++a8/r1iQLA7In9d/1p+RvzRPKD6g4AH/4n+ub2ROy29W0CKQTjA5L2GfYI8/ro6ABn8cT3Tfu8/YsAuf/KABb3z/tC/6n6o+5p+qz/YfuE9e0DD/vs/9bx2/NOA7DsBgAo8Zz24P+v+ez2nO8Q/VPwP+xGAbLxiu2F+b7kiQC37iwBqvZT9wXwM+8n7B36u/gs+/X3r/Q4+xABivc1B4z6J/vv943zrv0A/EL10/3d9KH5w/no9233ePFK/0b1nvkB+Dz4rvVf84gIdfn69dn55Pmv+Bv26f5RBRL3GP/y/ev2ifKGAOjs2O5zA7r0wvGo+DH6Evv++eH/QgaS9AAFlgj4/UL/oQczBpH7nwJN+xD8ggCj/xn3b/3B/bT05//w/9z4pgEZBn8Dr/qj/7/yjPaI+ZL29ADVCQz6wPwgAwn6dPZGAijx5e3z95/y+fT08dHzmPfC9BEB5PX09fP2EveS/1T5i/44/ZX8VQCm/Kz+ZwGn/8n3I/jK/g/7Pf5b/D4COgIq/YwAJf/p/QkUF3U=",
+      "atoms": [
+        {
+          "op": "product",
+          "w": "-+-+------+--+--+",
+          "s": "--+-+--+-+--+",
+          "q12": 67,
+          "contrast": 941.1491583742186
+        }
+      ],
+      "bits": 3103,
+      "validation_gain": 282.90031489113903
+    },
+    "dense_full-13": {
+      "inputs": 64,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_full",
+      "q12_zlib_base64": "eJxVVml4FUUWrarufnlJEAybGVHIjEuGRRlgNBojjKMiiwzKJptbEDBRNsmIQWQEYQA/EMQgS5BhERRhEJAgS8ImKgIJELYQCBJC2BLI9l5313LvndZ/U+err/91nbr3nHtqT2j17enQXD7kxCvtrjJ1/g+83O/tPaxqYICJ92bU7/eGuKXMrj2Pg7CN6aLj1cqqeruMNsI90aZVo/zGoomDTjKlYthNqx5ovRtNk8l6Mf+CtxbSqsd3rCrxEFbUdoA5JGCE95UN6iU+Qw5QYbu4ppX4MZLlXsNMs91LqDuOr/mXGuaKj9y/1U6GxCvP08q6COf+LLnTm+aKW/uxvxqBc91NDd/BctbW98M1olpMUTHuKvYyc91Eo9zV6rBpq5Jog9+dD5Up+pj62RXRcdFW4TaqvTeNn+RV7gn/R7Eq/K1bLA4L31sf2cvn1J+Mdg4f9Do2pOoc1Qtawnwqd752t9Baukbn6DhVBN8GukQ1dJvqaRHsto6zBJnHnrISTVMrPbbabmoy+CPyLijRR/wmvLjRZd/3LaelSvaKLcsfE9nrr4ve4x5qWFm/yJ3sfsq6unluFDy5Afb5x2Se/sBHO46krIB0NVHNZq5pLE5BOt+D2bKbzLT7UK6eIbrpHZSvTshyydRZq8AbbJ4wL7CD1BmPmKedpeIL3R9iVJzJkpl6JzYxoYZfzTrp0n7WK3rRforudY7yc7pUFrP/6h3sbW7HHJO3KK/pJp2v+/LLsp3zjUoV3a1W9h5vuc6XabSa97TGYxunp2wF26wesbfZBP+KfcFMw2wzoFZdu+yNis+IjI+sisRJEb1surbQqhsa52lrltfJaeXvVtmsO7UJPaINdTWDdXnMI5Lkl6Zf5Klwc1xrMi2FC62U8DA1CedGN6vzfqXKlfXyUvh+6uzd4NuxQJfZd7fYC8PxuHTEcxDVe0xzZL4lMuufoCHRZ/U49lNjzySFUvQroQPWO+IZM97O1pXEIEkv44fwE7mG73SOiHmqmNvqZnwLvkwOMYfivvOvmJfEFPewWcnzzVbLgRfZGesHE5ItPCE2+yeoGfUzz+vN3m2YD1MxwsPY29/mXRR92Xw4STssraFRPJSzZ1kru0DeH7o/1EhNFsv9PqaDGebvcJ4VrcPXKdGcDn+pV+BlvUe3EX8TUV4gMuG0XCdyrO/kBnNT5VJjnqKy6m1/d6OI+yl/ODzNJIQuaZt1ca6Jdu7ZhpmU4G6KrvNLfQMj5BOshX5HV0FXPt9MCtRCcaAnq8cdxuLga8vXXc1M/AVegedxGnak+xCwBv9IZ9wc8xGEYvf5jvnM/FdXYD/KcO7jT9YVVf/kpTf+1M/xO8hDukJucafzDLvcHkiF4oT5GXc5N8wy096MgWy2jE7Cl/xm9EPvxdAgJsT7spS/Tz35AzDKLPYXwxfsbJNKKXQaTcZMvjO0GU/rkD9YnFWfevdgrHnZ5KgBWGsWsBR+xhSodnoq3+tMoX3mK8rl8XaeYnZfw0xn6zG1NzYb+sMhENgdTsKIhjz9TtxB70F9zplAn8f0Zh+bq9Sf6uCUyRDb5RwzSi+CTXDRugGLwhl8rFUZaqIbRWfr9nwF/ZuuuXWh78Pb1FprAU/SW62jLGI9jz0ZQLUh6gj73QcaZoS1c0FekH9Wt+lx2SeuDWwxZWYVO+vtNOvYsZDyJvIt4k27NjTXKoi2dDyRotuazjwJh4hM3IY8dE4dlT+7OfH/aWgN/I4kc799yWzGqPnoji26mTah6+pZ9TieYQP4TLYwZil7Nd6TY2GdN5wKnRr2I+4QzXlvnY9vQDOz1bsJn6kS2ZqyaKIYA1kwB4Y5v6riyFbd36T4Z+CifBSWwGrHNo9Bon9CPRCTrLXsY82AMc4a+bFloFZV60o+1GspctytFMHJ1hS2OpRPK+1kNpdWsDKMsgEs1kTNYGZDS7FEjJVrb3fxp8ia+hmyWn0AiWZY9LT1Lruz9qXaQdGSSLPIV27YPcXWuEVwFJeol/XL/ghIhztxBF5FTovxCxyDV6FPbdf6uEitN0KGvW5uvX7XTZTr1EC1Sh6Q0j9rdXD7sjlytj/NpJon8S+8l7sNhtuXZZb6wLf0VFyv9qmlqgPVNKyOLKLO/j/cHOmoXOwmK3WVzDRleBxzMInKcBSVYw5No7/Sbiqk0ZEy73F/HCV6n/kF/ikWbyboAfJ9MxsOww/6c5yKHj5Il/AM/pOG0lhqJ1938/VWL81rKqSZLdMi6cbSPjvm73LL9FtmofLNPTBBvqk6snbO382vOFKMgNPm36EH7Yswy+LqSZPKHHrRJEAznSGRZUKevGWWmEbQBAbiQn1dNciR7F5rF99IBaKGRfAbPI9r6JsgXUrpl9/zJUqXg2ypC3ImSxf6R3lzdkO11cdVJWzS/UDpk7BMujrb7DOHcIppLy9Apnkaq8wknFS3NJofqfK2+BV+DL1gbde/6PV6DuX4GV5vVmYSVG8zTLSFBHPd1Ol1PNZE9B3sKswEB2eZThjCt0VF6CE6YO6Cfm4z6yak4UEaKYrZo3QKPXHdNIOdkUkwP9wB9sMyuwdfzT9BF/PNvXAAO5FmC7AY3lBHeTJex1gxnkZTJ5pHC+k7KgpS8xe6SUfpFi3AOD3c30gPwkU4oI/Ye+A29Ar+8zQbAu+ZzSwfs1g6L5fb2AL4kc7rSVjvb2JDWTNoyZLF4rjhXGIn3C0cLWk+XtQFZgU8DLNwOeTiQSjDErpAk7CaKoOcrqW84MRM7pFLc80+9bD+o0mFK3CJpQeT8QSOB075Zq26oVeYIcYRr8EbZhj9mR8Rd1OJ7kmn+Csw0mTAYnuT3VGMwyJcixX6XlOjk4HosHWCPuTb4WucgPX4Fs0w02UP3gP7slL2PU3ENtSXSq2R5gf6VlbCC7osppfoQLVWl0Cnreim2cVaq2PsDtxJDcjkk8F8bkoSi6k40EF5gJsBfy94a0iKkKIlOsl8yFpBT3id/wsL1SXzvaiABqgMvPY6pVMCfUB/CiqdTQdpFR2gLYEvUqwifIE8PCBewVTaHmAtpckEVapTzXrdGJ6DyVhqumASvouDzXpT5G8HTw+F3mqNyoa7QrtYLtYFeoySHzBRAeD3/RvyrU40Wj6AFp6HBViiH4WnqE3gpGewB/aSYToYaDsRErRFqTSYBlKingazeT5+jCtxrhjIl+C8O+fpefB3OMSO6Q/hHHwVOHIDbsJn6IjIDKpwInDFRfqVrlNyUIlbAQc3qMVWABiqv8GZ5idnscmzyvA96hYaRBNMGc1Ww7iEEib5Uqwzz9ByfBSX8pf0DQN6dEB9Nd4X95eYJhQrChEJg1v8/2LBmgrjIcrHYXM2FtdbGbAMJ9B181zA50zQlxt05Xdd+QEfN4BPRTwV/9qoFm/xn4L3cRE0opXUOtB9FWzEBJ1CWxEog0ZDLn8t6Es61UMq9oVx4k20nLZmpLUHPwlSaajVgrfH9iSoE842V6CQX8XuNJ3eotZWick2r2IfvjdQWRl+jq1pDqZZhdZB9r2aiInY1uY0OPBEIb5Kk4PJV0wvBqqpCHhGgt7dDjrmBt3T+AfaaHoFrvyYcmkDzgp08hu+pSAF4BQNokCnogi3U3Uwg0rozVt06xpOqdkF030fs6wZElgdxcD/AHIK3fI=",
+      "bits": 21847,
+      "validation_gain": 319.2975698846574
+    },
+    "dense_full-14": {
+      "inputs": 16,
+      "lag": 2,
+      "ridge": 4,
+      "family": "dense_full",
+      "q12_zlib_base64": "eJwd0e1PlWUcAOD7vp9z7BQuBB2eTUo+yVTMprYmoZYf+mCpc4Iui604wxKnzmZsmbqdYgmbW5MgbWkDnC+Yq6Xhlq+ZuoosEXy3U4BvbQc4h+c8z/1+/36xPl1/wHVuXMfIx26SmhXN04a321F5kQ7I18RzOuMqbZ5o8C+IN/hdEsneg1Uw1c41ebot7UdSeMwVh4XptfJplh+FaCmWQ4xXDFV59WGFKjV76H76LFOeD+97aTYL7mfLXBMylxCHI06vpg2qUscivZkp7HKwhT+GOntSFIz2wNuyP7eLfcJfzm518QevY9toQKncqX4USc6GL8BKnYBd/NvcCbePTJcylmFDbJt+greTasJ53GreobvtdF2C38hX6Rr1ormqf+Es3BROiU3VM0WS9tE0vyYvs/bYd7yXdTMpOoPztMnvC+fELonZuXLTope4IvcZDkSP8O/xID7GO9iD98fMYT9mcAR9bHWnvR5SoLrIK17cFno1Tw5FCu06+oKa7G6b32U+7R0/KKX0okW6VPR6ntwQnJeHwmL+a67Nb+Vb+W6ykHfxxZiPSdIG8wiSWt3svsaku8RCulEdHJkrt6mM36CG9HYXt2+GN7x6MiG7OrsqvB1MDA7zGL9ODvA/3RXYq6tNtUy4GjcBEvAIKO6B/bABHrml2YX+U0FWJFRMLOK+qedxdUhX6Xb1s1LyllfGl5Mm1SiTttwugOfpEv6DeysyqLbo7dIzO6BT/6S/1GWYyXUErThHLuMtKqq/gkXqoUmrOpuCHmiBEkzBWhyAFkziPDyNf+C7QUrMl5swLj6XZ+V1kmc3m0r1kW103e6i+QJ2gIBp2A834QNcgxtxhnqHnzHHRYUoZMo2qoqgxnpGkqvyFE+Z9bZZS1vsNqv39GwyI7rY/gO1LOFu2E/HTYv87XZ6VC+w5SSKK2yBm2jWKSB1rksN2712vMt3VdBs/tU5VUue8U7RY3iWZUgAR+EeHMCjY7t38bf/f0McHLsdHXvePdww/CGEmRL3l7wCfewlNUCKsNP+B6ONFDY=",
+      "bits": 5719,
+      "validation_gain": 291.5965362022288
+    }
+  },
+  "selected": {
+    "installed_gross": {
+      "model": "installed-1",
+      "validation_score_after_price": 5.482281295599023e-13,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "installed_priced": {
+      "model": "installed-1",
+      "validation_score_after_price": 5.482281295599023e-13,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "main_gross": {
+      "model": "main-2",
+      "validation_score_after_price": 194.58183621073863,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "main_priced": {
+      "model": "main-3",
+      "validation_score_after_price": 52.5331670583576,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "matched_additive_two_gross": {
+      "model": "matched_additive_two-4",
+      "validation_score_after_price": 100.72955947072538,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "matched_additive_two_priced": {
+      "model": "matched_additive_two-4",
+      "validation_score_after_price": 36.96001885921041,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "product_gross": {
+      "model": "product-5",
+      "validation_score_after_price": 89.97984477587508,
+      "maximum_interaction_log_odds_contrast": 2.591796875
+    },
+    "product_priced": {
+      "model": "product-6",
+      "validation_score_after_price": -12.551754757140465,
+      "maximum_interaction_log_odds_contrast": 0.427734375
+    },
+    "either_gross": {
+      "model": "either-7",
+      "validation_score_after_price": 224.17846405087596,
+      "maximum_interaction_log_odds_contrast": 1.560546875
+    },
+    "either_priced": {
+      "model": "either-8",
+      "validation_score_after_price": 58.698133039433145,
+      "maximum_interaction_log_odds_contrast": 0.654296875
+    },
+    "dense_add_gross": {
+      "model": "dense_add-9",
+      "validation_score_after_price": 316.97974301756284,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "dense_add_priced": {
+      "model": "dense_add-10",
+      "validation_score_after_price": -1814.0038198907814,
+      "maximum_interaction_log_odds_contrast": 0.0
+    },
+    "dense_add_product_gross": {
+      "model": "dense_add_product-11",
+      "validation_score_after_price": 313.306628806257,
+      "maximum_interaction_log_odds_contrast": 0.236328125
+    },
+    "dense_add_product_priced": {
+      "model": "dense_add_product-12",
+      "validation_score_after_price": -1867.935386386371,
+      "maximum_interaction_log_odds_contrast": 0.130859375
+    },
+    "dense_full_gross": {
+      "model": "dense_full-13",
+      "validation_score_after_price": 319.2975698846574,
+      "maximum_interaction_log_odds_contrast": 3.916748046875
+    },
+    "dense_full_priced": {
+      "model": "dense_full-14",
+      "validation_score_after_price": -3672.5121894200984,
+      "maximum_interaction_log_odds_contrast": 2.7919921875
+    }
+  },
+  "reports": [
+    {
+      "start": 37000000,
+      "prefix_sha256": "162bfcc0c18dc9fdfd9a84f34c17b3f3b8399d4f3ccf2b2e4189d9c540e4c8e7",
+      "original_rule_gain": 142.8521579777538,
+      "full_row_max_error": 3.5388358909926865e-16,
+      "methods": {
+        "installed_gross": {
+          "gain_over_installed": 6.45039577307216e-13,
+          "gain_over_original_base": 142.85215797775444,
+          "nll_per_word": 6.849499843602876,
+          "gain_by_4096_words": [
+            9.9253938401489e-14,
+            8.626432901337466e-14,
+            8.126832540256146e-14,
+            7.205347429817266e-14,
+            7.849276784099857e-14,
+            8.004708007547379e-14,
+            7.671641100159832e-14,
+            7.09432512735475e-14
+          ]
+        },
+        "installed_priced": {
+          "gain_over_installed": 6.45039577307216e-13,
+          "gain_over_original_base": 142.85215797775444,
+          "nll_per_word": 6.849499843602876,
+          "gain_by_4096_words": [
+            9.9253938401489e-14,
+            8.626432901337466e-14,
+            8.126832540256146e-14,
+            7.205347429817266e-14,
+            7.849276784099857e-14,
+            8.004708007547379e-14,
+            7.671641100159832e-14,
+            7.09432512735475e-14
+          ]
+        },
+        "main_gross": {
+          "gain_over_installed": 191.45531051883373,
+          "gain_over_original_base": 334.3074684965875,
+          "nll_per_word": 6.843657091206673,
+          "gain_by_4096_words": [
+            -0.8859935953559068,
+            29.963472316780326,
+            26.769307665432635,
+            31.239815559284146,
+            21.969808733500905,
+            31.315732310507933,
+            23.66811438585041,
+            27.41505314283328
+          ]
+        },
+        "main_priced": {
+          "gain_over_installed": 56.447684913131155,
+          "gain_over_original_base": 199.29984289088492,
+          "nll_per_word": 6.847777196968565,
+          "gain_by_4096_words": [
+            -0.15948027846688395,
+            10.413606634734885,
+            1.9065774578984531,
+            12.216175234576195,
+            7.842587878339494,
+            3.8268594267639906,
+            8.335299849924539,
+            12.06605870936048
+          ]
+        },
+        "matched_additive_two_gross": {
+          "gain_over_installed": 78.03484103471142,
+          "gain_over_original_base": 220.8869990124652,
+          "nll_per_word": 6.8471184092451285,
+          "gain_by_4096_words": [
+            1.9445789891359262,
+            11.958663825307914,
+            11.385736588549705,
+            4.217391319503608,
+            7.254008990539577,
+            11.455268110879079,
+            14.086050936325844,
+            15.73314227446977
+          ]
+        },
+        "matched_additive_two_priced": {
+          "gain_over_installed": 78.03484103471142,
+          "gain_over_original_base": 220.8869990124652,
+          "nll_per_word": 6.8471184092451285,
+          "gain_by_4096_words": [
+            1.9445789891359262,
+            11.958663825307914,
+            11.385736588549705,
+            4.217391319503608,
+            7.254008990539577,
+            11.455268110879079,
+            14.086050936325844,
+            15.73314227446977
+          ]
+        },
+        "product_gross": {
+          "gain_over_installed": 127.78657493237013,
+          "gain_over_original_base": 270.63873291012396,
+          "nll_per_word": 6.845600106819052,
+          "gain_by_4096_words": [
+            9.085264004395057,
+            13.09756551266483,
+            16.028631643490705,
+            29.295646472366226,
+            12.202799742772363,
+            15.348883236995825,
+            17.462836383579564,
+            15.26494793610556
+          ]
+        },
+        "product_priced": {
+          "gain_over_installed": 36.662633398672945,
+          "gain_over_original_base": 179.51479137642676,
+          "nll_per_word": 6.848380988823864,
+          "gain_by_4096_words": [
+            -2.710993563878864,
+            1.0801632551739009,
+            8.185146326613609,
+            4.668483640734419,
+            2.6620181237928953,
+            10.982490202247508,
+            7.429204246004872,
+            4.366121167984607
+          ]
+        },
+        "either_gross": {
+          "gain_over_installed": 196.59010436573232,
+          "gain_over_original_base": 339.4422623434861,
+          "nll_per_word": 6.843500389734293,
+          "gain_by_4096_words": [
+            -9.886553693382954,
+            27.736442783312427,
+            26.873156527089396,
+            45.47936935154205,
+            18.93199165811718,
+            30.293685833391898,
+            28.503887664150476,
+            28.658124241511835
+          ]
+        },
+        "either_priced": {
+          "gain_over_installed": 103.96534528134688,
+          "gain_over_original_base": 246.8175032591007,
+          "nll_per_word": 6.84632707305596,
+          "gain_by_4096_words": [
+            1.759820399505283,
+            17.15239520490857,
+            16.33959572999059,
+            13.349592055173916,
+            5.940970892199422,
+            19.288179233338862,
+            17.51848252635819,
+            12.61630923987206
+          ]
+        },
+        "dense_add_gross": {
+          "gain_over_installed": 358.47032753532187,
+          "gain_over_original_base": 501.32248551307566,
+          "nll_per_word": 6.8385601973768235,
+          "gain_by_4096_words": [
+            31.312722735221094,
+            47.862209290721125,
+            48.81559276563886,
+            71.86355757016943,
+            29.737661229245287,
+            46.013759551340165,
+            33.22314393768579,
+            49.64168045530016
+          ]
+        },
+        "dense_add_priced": {
+          "gain_over_installed": 316.94166049046225,
+          "gain_over_original_base": 459.79381846821605,
+          "nll_per_word": 6.839827551717791,
+          "gain_by_4096_words": [
+            24.15369728306932,
+            38.70632245906257,
+            36.48880356486657,
+            59.67254401535189,
+            30.40496736890878,
+            44.67327913647479,
+            29.576212028354803,
+            53.26583463437355
+          ]
+        },
+        "dense_add_product_gross": {
+          "gain_over_installed": 374.8656664947906,
+          "gain_over_original_base": 517.7178244725444,
+          "nll_per_word": 6.838059851339242,
+          "gain_by_4096_words": [
+            36.50012946455112,
+            48.72735558478102,
+            51.68524734295462,
+            71.14958780813647,
+            31.674548138109543,
+            50.51342455904898,
+            35.107493211552764,
+            49.50788038565611
+          ]
+        },
+        "dense_add_product_priced": {
+          "gain_over_installed": 325.00537763806386,
+          "gain_over_original_base": 467.85753561581765,
+          "nll_per_word": 6.839581466599762,
+          "gain_by_4096_words": [
+            27.084105452214374,
+            39.08536576968395,
+            37.708690623362585,
+            58.624925375868294,
+            31.076803511365963,
+            46.494130468572195,
+            30.778569041474356,
+            54.152787395522125
+          ]
+        },
+        "dense_full_gross": {
+          "gain_over_installed": 382.2568819473127,
+          "gain_over_original_base": 525.1090399250666,
+          "nll_per_word": 6.837834289344231,
+          "gain_by_4096_words": [
+            35.44628978939936,
+            49.34556228640524,
+            46.53055147808686,
+            79.29924679340677,
+            38.11692577837643,
+            44.76607143926799,
+            38.63100473793546,
+            50.12122964443461
+          ]
+        },
+        "dense_full_priced": {
+          "gain_over_installed": 319.9741247989865,
+          "gain_over_original_base": 462.8262827767403,
+          "nll_per_word": 6.8397350082513455,
+          "gain_by_4096_words": [
+            25.24340058986727,
+            37.468153442452206,
+            31.12695227434706,
+            63.87268092788487,
+            36.00228181422955,
+            41.51166122141117,
+            30.567539779653107,
+            54.18145474914125
+          ]
+        }
+      }
+    },
+    {
+      "start": 39000000,
+      "prefix_sha256": "ee4f1d70b8239101d6a25609abdc47517ec3bf34d34323028f51ace55e804a8f",
+      "original_rule_gain": 153.75815567633393,
+      "full_row_max_error": 4.649058915617843e-16,
+      "methods": {
+        "installed_gross": {
+          "gain_over_installed": 6.016298570443723e-13,
+          "gain_over_original_base": 153.75815567633452,
+          "nll_per_word": 6.623292336173655,
+          "gain_by_4096_words": [
+            7.560618797697316e-14,
+            7.427392034742297e-14,
+            6.061817714453355e-14,
+            8.004708007547379e-14,
+            8.115730310009894e-14,
+            8.404388296412435e-14,
+            6.350475700855895e-14,
+            8.237854842718662e-14
+          ]
+        },
+        "installed_priced": {
+          "gain_over_installed": 6.016298570443723e-13,
+          "gain_over_original_base": 153.75815567633452,
+          "nll_per_word": 6.623292336173655,
+          "gain_by_4096_words": [
+            7.560618797697316e-14,
+            7.427392034742297e-14,
+            6.061817714453355e-14,
+            8.004708007547379e-14,
+            8.115730310009894e-14,
+            8.404388296412435e-14,
+            6.350475700855895e-14,
+            8.237854842718662e-14
+          ]
+        },
+        "main_gross": {
+          "gain_over_installed": 211.79591818924078,
+          "gain_over_original_base": 365.5540738655747,
+          "nll_per_word": 6.61682883769376,
+          "gain_by_4096_words": [
+            34.580604355086685,
+            24.55372915979437,
+            31.794635104062205,
+            22.482217893082073,
+            25.580814776928545,
+            19.955463221663123,
+            23.33847594316314,
+            29.509977735460648
+          ]
+        },
+        "main_priced": {
+          "gain_over_installed": 53.48057507111007,
+          "gain_over_original_base": 207.238730747444,
+          "nll_per_word": 6.621660238545752,
+          "gain_by_4096_words": [
+            17.209083056341058,
+            8.189652163126821,
+            13.868677412006427,
+            12.040407430237977,
+            5.5569511558930955,
+            -12.728611032139458,
+            -0.046904696546945956,
+            9.391319582191091
+          ]
+        },
+        "matched_additive_two_gross": {
+          "gain_over_installed": 85.7867903147025,
+          "gain_over_original_base": 239.54494599103646,
+          "nll_per_word": 6.620674331098133,
+          "gain_by_4096_words": [
+            20.592503456745575,
+            6.759139877176382,
+            19.56254938886658,
+            10.210124447110104,
+            14.4354349293096,
+            1.0885541068349922,
+            6.84465992428347,
+            6.293824184375792
+          ]
+        },
+        "matched_additive_two_priced": {
+          "gain_over_installed": 85.7867903147025,
+          "gain_over_original_base": 239.54494599103646,
+          "nll_per_word": 6.620674331098133,
+          "gain_by_4096_words": [
+            20.592503456745575,
+            6.759139877176382,
+            19.56254938886658,
+            10.210124447110104,
+            14.4354349293096,
+            1.0885541068349922,
+            6.84465992428347,
+            6.293824184375792
+          ]
+        },
+        "product_gross": {
+          "gain_over_installed": 111.74490812838785,
+          "gain_over_original_base": 265.50306380472176,
+          "nll_per_word": 6.619882152209776,
+          "gain_by_4096_words": [
+            6.422632233093047,
+            18.366902879513326,
+            13.662949232839116,
+            1.0300615211253257,
+            20.220079246925117,
+            15.23270346688078,
+            20.400151448907533,
+            16.409428099103593
+          ]
+        },
+        "product_priced": {
+          "gain_over_installed": 51.56198852936028,
+          "gain_over_original_base": 205.32014420569425,
+          "nll_per_word": 6.62171878916043,
+          "gain_by_4096_words": [
+            7.167130068395947,
+            4.569716243642436,
+            7.220270621212748,
+            -2.660596078416177,
+            10.908471069493974,
+            10.023520863218927,
+            11.64091567305736,
+            2.6925600687550646
+          ]
+        },
+        "either_gross": {
+          "gain_over_installed": 217.90767667248647,
+          "gain_over_original_base": 371.6658323488204,
+          "nll_per_word": 6.616642321626766,
+          "gain_by_4096_words": [
+            23.7725853359236,
+            30.610526896585604,
+            32.41643608339086,
+            23.24074767729604,
+            33.24974362301974,
+            18.957452964673745,
+            19.361516160251938,
+            36.29866793134493
+          ]
+        },
+        "either_priced": {
+          "gain_over_installed": 110.73121504435822,
+          "gain_over_original_base": 264.48937072069214,
+          "nll_per_word": 6.619913087667664,
+          "gain_by_4096_words": [
+            13.585761145772926,
+            13.739930072932715,
+            18.856305178563318,
+            11.56127387200347,
+            23.975989091633036,
+            5.816530889762622,
+            6.321627872320042,
+            16.873796921370097
+          ]
+        },
+        "dense_add_gross": {
+          "gain_over_installed": 379.3727809278054,
+          "gain_over_original_base": 533.1309366041394,
+          "nll_per_word": 6.6117147976931925,
+          "gain_by_4096_words": [
+            42.2876299895553,
+            53.64037067911671,
+            38.726492738850204,
+            40.8322887933724,
+            43.33713342369844,
+            44.994794648254555,
+            48.21097644621213,
+            67.34309420874567
+          ]
+        },
+        "dense_add_priced": {
+          "gain_over_installed": 340.949859917412,
+          "gain_over_original_base": 494.70801559374604,
+          "nll_per_word": 6.612887372186918,
+          "gain_by_4096_words": [
+            45.799217293888894,
+            54.99588601736472,
+            41.61041879412274,
+            31.939750266547456,
+            38.29223759788319,
+            37.87749740071118,
+            43.24409664807634,
+            47.190755898817535
+          ]
+        },
+        "dense_add_product_gross": {
+          "gain_over_installed": 384.5089443975984,
+          "gain_over_original_base": 538.2671000739324,
+          "nll_per_word": 6.611558054423241,
+          "gain_by_4096_words": [
+            42.815076417120444,
+            53.79016992356607,
+            40.61641375631428,
+            39.232290209259205,
+            47.64782882868308,
+            44.40726821836112,
+            48.57411742346389,
+            67.42577962083033
+          ]
+        },
+        "dense_add_product_priced": {
+          "gain_over_installed": 340.587654305858,
+          "gain_over_original_base": 494.3458099821919,
+          "nll_per_word": 6.612898425824966,
+          "gain_by_4096_words": [
+            45.253887538857086,
+            53.913785278349444,
+            41.87846979202067,
+            31.101626800204063,
+            40.004085152351976,
+            38.52680181957812,
+            42.29289185499027,
+            47.61610606950636
+          ]
+        },
+        "dense_full_gross": {
+          "gain_over_installed": 396.03592861134854,
+          "gain_over_original_base": 549.7940842876825,
+          "nll_per_word": 6.611206278781951,
+          "gain_by_4096_words": [
+            45.54511373950996,
+            56.41831031301197,
+            36.82661781833295,
+            37.74628704368159,
+            43.378495207551005,
+            46.79463835531858,
+            56.534485624463485,
+            72.791980509479
+          ]
+        },
+        "dense_full_priced": {
+          "gain_over_installed": 341.2859930225029,
+          "gain_over_original_base": 495.0441486988368,
+          "nll_per_word": 6.612877114218623,
+          "gain_by_4096_words": [
+            45.76923813545408,
+            55.25156319008134,
+            42.409340277596876,
+            26.49449955716186,
+            37.221385707538026,
+            38.92416051839108,
+            45.29611260808166,
+            49.91969302819795
+          ]
+        }
+      }
+    },
+    {
+      "start": 41000000,
+      "prefix_sha256": "327643717c2768cc872145219e731316625ad8de4393e7a2ad6a3f83da3e2306",
+      "original_rule_gain": 266.6477403720205,
+      "full_row_max_error": 2.220446049250313e-16,
+      "methods": {
+        "installed_gross": {
+          "gain_over_installed": 5.92303983637521e-13,
+          "gain_over_original_base": 266.6477403720211,
+          "nll_per_word": 6.805438609868249,
+          "gain_by_4096_words": [
+            9.403589018575076e-14,
+            7.16093850883226e-14,
+            6.683542608243442e-14,
+            6.294964549624638e-14,
+            6.94999613415348e-14,
+            7.294165271787278e-14,
+            7.80486786311485e-14,
+            7.638334409421077e-14
+          ]
+        },
+        "installed_priced": {
+          "gain_over_installed": 5.92303983637521e-13,
+          "gain_over_original_base": 266.6477403720211,
+          "nll_per_word": 6.805438609868249,
+          "gain_by_4096_words": [
+            9.403589018575076e-14,
+            7.16093850883226e-14,
+            6.683542608243442e-14,
+            6.294964549624638e-14,
+            6.94999613415348e-14,
+            7.294165271787278e-14,
+            7.80486786311485e-14,
+            7.638334409421077e-14
+          ]
+        },
+        "main_gross": {
+          "gain_over_installed": 119.3042514593871,
+          "gain_over_original_base": 385.95199183140767,
+          "nll_per_word": 6.801797733053691,
+          "gain_by_4096_words": [
+            20.75593476799166,
+            -0.36469690107092134,
+            8.88482014211548,
+            27.38610069912685,
+            16.751487665155146,
+            38.072521933099466,
+            16.127441148551352,
+            -8.30935799558192
+          ]
+        },
+        "main_priced": {
+          "gain_over_installed": -21.08620374328282,
+          "gain_over_original_base": 245.5615366287377,
+          "nll_per_word": 6.806082109738344,
+          "gain_by_4096_words": [
+            11.823025039144053,
+            -11.316248446382154,
+            -14.470281189924302,
+            2.9139155540184487,
+            4.295134928956388,
+            9.740841005099195,
+            3.533883392159579,
+            -27.60647402635403
+          ]
+        },
+        "matched_additive_two_gross": {
+          "gain_over_installed": 23.664289758453577,
+          "gain_over_original_base": 290.3120301304741,
+          "nll_per_word": 6.804716433056772,
+          "gain_by_4096_words": [
+            4.873980463535451,
+            8.896733498100023,
+            -1.2154978180120182,
+            3.2299085324305197,
+            6.305703130732917,
+            18.12808401973992,
+            4.392232732095733,
+            -20.94685480016897
+          ]
+        },
+        "matched_additive_two_priced": {
+          "gain_over_installed": 23.664289758453577,
+          "gain_over_original_base": 290.3120301304741,
+          "nll_per_word": 6.804716433056772,
+          "gain_by_4096_words": [
+            4.873980463535451,
+            8.896733498100023,
+            -1.2154978180120182,
+            3.2299085324305197,
+            6.305703130732917,
+            18.12808401973992,
+            4.392232732095733,
+            -20.94685480016897
+          ]
+        },
+        "product_gross": {
+          "gain_over_installed": 77.43805430049065,
+          "gain_over_original_base": 344.08579467251116,
+          "nll_per_word": 6.8030753879962855,
+          "gain_by_4096_words": [
+            -11.34440446266116,
+            1.803542861282084,
+            15.658505622042835,
+            15.686187178123411,
+            19.151189311744805,
+            15.767622840133338,
+            11.343296133471007,
+            9.372114816354317
+          ]
+        },
+        "product_priced": {
+          "gain_over_installed": 34.68913563662534,
+          "gain_over_original_base": 301.33687600864585,
+          "nll_per_word": 6.804379981461369,
+          "gain_by_4096_words": [
+            -5.563329312212168,
+            7.8075410171317685,
+            4.614806620390621,
+            1.4277856315190154,
+            7.30649922205165,
+            13.314097657975825,
+            3.633212334211894,
+            2.1485224655567308
+          ]
+        },
+        "either_gross": {
+          "gain_over_installed": 86.3458787240364,
+          "gain_over_original_base": 352.99361909605693,
+          "nll_per_word": 6.802803542768515,
+          "gain_by_4096_words": [
+            21.509012417065957,
+            -25.350898586568405,
+            2.8249470499026756,
+            29.079876164864185,
+            19.63413247185901,
+            27.6668188557811,
+            18.545425272311775,
+            -7.563434921179908
+          ]
+        },
+        "either_priced": {
+          "gain_over_installed": 31.13417397301416,
+          "gain_over_original_base": 297.7819143450347,
+          "nll_per_word": 6.80448847028167,
+          "gain_by_4096_words": [
+            -0.37401113628466054,
+            -8.733450149292725,
+            1.3487954812874583,
+            9.02676807280398,
+            12.364876783306752,
+            25.405183979711552,
+            4.455710507964034,
+            -12.359699566482234
+          ]
+        },
+        "dense_add_gross": {
+          "gain_over_installed": 205.3923294843658,
+          "gain_over_original_base": 472.04006985638637,
+          "nll_per_word": 6.799170533406933,
+          "gain_by_4096_words": [
+            27.395255041043107,
+            -16.040227369086764,
+            16.43409396835198,
+            41.43972224521346,
+            44.223544441163384,
+            47.75798989104818,
+            29.79106873913159,
+            14.390882527500855
+          ]
+        },
+        "dense_add_priced": {
+          "gain_over_installed": 177.29658304772803,
+          "gain_over_original_base": 443.9443234197485,
+          "nll_per_word": 6.800027947543795,
+          "gain_by_4096_words": [
+            23.77332497257985,
+            -15.719819913427553,
+            14.918933882080967,
+            37.37153041192008,
+            36.00463299896889,
+            43.95693484872897,
+            24.785030332521043,
+            12.206015514355784
+          ]
+        },
+        "dense_add_product_gross": {
+          "gain_over_installed": 222.19089940710472,
+          "gain_over_original_base": 488.83863977912523,
+          "nll_per_word": 6.798657881736927,
+          "gain_by_4096_words": [
+            22.8251591227265,
+            -5.945472015694779,
+            25.50674831458379,
+            41.86299428097744,
+            45.45100599712712,
+            50.79692834955642,
+            28.88092386765667,
+            12.812611490171573
+          ]
+        },
+        "dense_add_product_priced": {
+          "gain_over_installed": 192.53060955888762,
+          "gain_over_original_base": 459.17834993090815,
+          "nll_per_word": 6.799563041949581,
+          "gain_by_4096_words": [
+            22.59803527218126,
+            -9.058205779389175,
+            20.09720083679706,
+            37.98283522548804,
+            36.81188710614035,
+            45.287324923972065,
+            25.241690989134526,
+            13.569840984563502
+          ]
+        },
+        "dense_full_gross": {
+          "gain_over_installed": 229.60954813062355,
+          "gain_over_original_base": 496.2572885026441,
+          "nll_per_word": 6.798431482544926,
+          "gain_by_4096_words": [
+            23.32406507690989,
+            -9.670224764315662,
+            22.451175327409302,
+            43.396765991208895,
+            47.90101928394148,
+            47.741437933301135,
+            34.19482751417424,
+            20.27048176799428
+          ]
+        },
+        "dense_full_priced": {
+          "gain_over_installed": 194.58174179360094,
+          "gain_over_original_base": 461.2294821656215,
+          "nll_per_word": 6.799500446361364,
+          "gain_by_4096_words": [
+            17.261821931360387,
+            -11.632582113400439,
+            18.029779181739578,
+            36.73605021960958,
+            40.54963567545037,
+            46.02572658562946,
+            29.6181413049096,
+            17.993169008302402
+          ]
+        }
+      }
+    }
+  ]
+}

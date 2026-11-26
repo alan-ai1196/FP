@@ -10,6 +10,29 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Reusing an already learned bit inside a second word prediction
+
+**EMPIRICALLY OBSERVED.** A new learner took the input bit of the frozen 266-bit rule and used it again inside a product with a learned sign of the token two positions back. The first output path still used the original bit. Chronological learning on 131,072 fresh tokens selected the new word signs, output signs and amplitudes. Across all registered families at a one-window storage price, validation selected a constant-context correction followed by this product, adding 108 bits. Its gains were positive on all three previously unscored 32,768-token training-source windows and exceeded the selected additive growth baseline on 20 of 24 consecutive reporting blocks. The third window alone did not repay the entire addition. [Registration](https://github.com/alan-ai1196/FP/blob/5ce71e8/research/frontier/NEXT.md)
+
+| Validation-selected additional computation | Added bits | Validation gain (gross) | 37M gain | 39M gain | 41M gain |
+|---|---:|---:|---:|---:|---:|
+| Priced additive growth, one constant correction | 56 | 91.35 | 56.45 | 53.48 | −21.09 |
+| Additive growth at the same two steps, lag and name count | 92 | 100.73 | 78.03 | 85.79 | 23.66 |
+| Priced product-only growth, one operation | 72 | 37.35 | 36.66 | 51.56 | 34.69 |
+| Priced choice of additive or product, two operations | 108 | 133.56 | 103.97 | 110.73 | 31.13 |
+| Unpriced additive growth, eight operations | 692 | 194.58 | 191.46 | 211.80 | 119.30 |
+| Unpriced product-only growth, eight operations | 820 | 89.98 | 127.79 | 111.74 | 77.44 |
+| Unpriced choice of additive or product, eight operations | 820 | 224.18 | 196.59 | 217.91 | 86.35 |
+| Unpriced jointly fitted additive logits | 11,095 | 316.98 | 358.47 | 379.37 | 205.39 |
+| Same dense additive family with one learned product | 11,215 | 313.31 | 374.87 | 384.51 | 222.19 |
+| Unpriced saturated logits on both inputs | 21,847 | 319.30 | 382.26 | 396.04 | 229.61 |
+
+All gains are nats above the same already installed predictor. Its losses on the three reporting windows were 6.849500, 6.623292 and 6.805439 nats/token. At 16 input names and lag two, both growth paths selected exactly the same first constant correction. The next additive choice read the original bit and the next compositional choice multiplied it by a learned sign of the older token. The latter beat its matched two-step alternative on all three files and 16/24 blocks. Its extra 16 bits cost 11.09 nats once. The three gross differences were 25.93, 24.94 and 7.47. The two-step comparison was extracted after selection from the same preregistered candidate grid. Adding one product to the larger regularized additive fit also improved all three reports, although its validation score went down. Dense saturated rows won all 24 reporting blocks over the unpriced eight-operation mixed path.
+
+The selected sparse addition costs 108 bits beyond 266 resident predictor bits, or 374 bits with shared base ranks. Sending all 64 pre-existing ordered raw name IDs makes the complete description 1,398 bits. The earlier input bit serves both paths. Executing the extension requires a second sign read, a sign multiplication, two additional output shifts and normalization. The older token's sign can be retained for one extra position in the lag-two case. The 13 class masses can serve every correction. The evidence includes 162 grouped residual tables, 860,160 output masks, 9,675,882 compressed observation visits for residual formation, 625 dense optimizer evaluations and eight-block results for each fit. Explicit full-vocabulary checks at one position per model and window agreed within $5\times10^{-16}$. The serialized winning specifications reconstructed every installed logit array exactly.
+
+**NUMERICALLY VERIFIED.** All 36 balanced integer two-input sources in the small audit had exactly zero residual in either input alone. The joint product recovered the full interaction in every case. On the separate population mixture with radius one, 64 conditional-gradient steps reduced excess loss from 0.148917 to 0.000222 nats and certified a remaining optimization gap of at most 0.006622. Early full steps can increase loss. The conditional-gradient rate concerns empirical or specified population optimization and does not guarantee monotonicity or future-text performance. [Learner and exact fixture](reuse_word_value.py) · [Installed computations, audits and reports](reuse_word_value_result.json)
+
 ## Learning both sides of a normalized word correction
 
 **EMPIRICALLY OBSERVED.** A pair of learned sign tables built from raw next-word residuals earned a reusable prediction on all three registered reporting windows. Under an incremental storage price, the fitted input sign separated 62 of the 64 leading word IDs from IDs 26 and 314 and from all lower-ranked words. The fitted output sign grouped raw ID 262 with the complement of the first 12, separating it from the other 11 frequent outputs. These decisions came from 131,072 ordinary training tokens. The lag, table sizes and model family were selected on the following 32,768. The reporting positions were two disjoint windows of the training source and a third window on the previously exposed development source. [Prospective registration](https://github.com/alan-ai1196/FP/blob/5be147a/research/frontier/NEXT.md)
