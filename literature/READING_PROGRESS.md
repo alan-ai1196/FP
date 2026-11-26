@@ -542,3 +542,11 @@ Merged index 4415 records, 126 fully read editions. OriginalOpenAI32/1700/17 unc
 A uniformly mixing binary feedback model gives actual stationary posterior11/13 versus fixed-prior reset5/6. With complete indicators and beta1/2, the printed reset target has trueTDresidual7/507. The stationary conditional-kernel contraction and stable drift remain valid. The note gives a feature-coordinate invariant projection bound and a finite-action segment-integral repair of greedy covariance contraction, keeping uniform margin and nonlinear stochastic-approximation requirements explicit. No formal certification or FP core edit.
 
 Merged index 4418records,127fully read. OriginalOpenAI32/1700/17 unchanged. Preserved Astra9e7d752, Pro-A401c872, Pro-B68aaf56 and Pro-Dbd4010b. Request59b8251 remains Pro-E's work under40c0d2a. A bounded directed primary-source screen added Huang2611.07069v1 and Zhang2607.27132v1. Screening was supplied by a support reader and is not fullreading. Huang33pages is prepared next after a fresh request/owner check.
+
+## Pro-D: actual SGD and the noncentered target, November26
+
+[Barzilai-Shamir COLT2026 final](notes/BARZILAI-SHAMIR-2026-VANILLA-SGD.md) is fully read, all54pages, main1–6, AppendicesA–D, all formulas/proofs, three scientific footnotes and53references. Four original pages viewed. Scientifically text-matched arXivv2 is a companion, not a second count. No figures, experiments or historical full reading.
+
+A bounded analytic check supplies an actual-SGD counterexample to the printed Theorem5 under nonzero target mean. The preserved tools are full-spectrum Hermite bounds and stochastic projection/norm control, with explicit centering, initialization, conditional-probability and output-norm limits. Independent width and Gaussian-span observations are separately labeled. No empirical or formal replay.
+
+Merged index4419,fullyread128. Preserve Astra9e7d752, Pro-A401c872, Pro-B68aaf56, Pro-C887ea8e and Pro-E request59b8251 at40c0d2a. Further recent statistical-learning reading follows a fresh request/owner check.
