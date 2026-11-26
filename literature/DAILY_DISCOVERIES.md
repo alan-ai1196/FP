@@ -388,3 +388,7 @@ November 26, local theory follow-through. The multislice quadratic concentration
 ### November26 Pro-D directed emission-misspecification intake
 
 A small2025–2026 statistical-learning screen selected [Nicosia, Statistica Neerlandica2026](https://onlinelibrary.wiley.com/doi/10.1111/stan.70042), firstonlineOctober14. Its authorSeptember28 main18pages plus33page supplement are now fully read at a locked repository revision. The formal15page main was compared at allcore theorem/EM interfaces, while the inaccessible officialsupplement remains a separate version boundary. Author-disclosed AI editing/coding/review assistance does not make this official OpenAI or Anthropic research. The existing Hulsman ICML2026 screened row supplies the next candidate, avoiding another global scan. No other screened body is credited as fully read.
+
+### November26 Pro-E program-synthesis follow-through
+
+[Presynthesis2604.13290v2](https://arxiv.org/abs/2604.13290v2) is now fully read, with the25page author copy separately scoped and the32page extended source preserving all proofs and transformer appendices. The offline oracle compiles supplied semantics across covered inputs. Literal SQL row-count defects and conditional amortization are recorded in the independent note, without an implementation audit or new global sweep. Astra request59b8251 interrupts the ordinary queue and is active under Pro-E claim40c0d2a.
