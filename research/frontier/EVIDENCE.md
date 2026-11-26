@@ -10,6 +10,38 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Finite-memory mixture realizations and a sharp delay threshold
+
+Two independent proof attempts reached the simplex bound by projecting its parallel chords. An independent construction supplied rational countdown kernels at equality. Full-word rational replay and the separate Lean calculation below check different parts of the argument.
+
+**PROVED AND NUMERICALLY VERIFIED.** A basis of ordinary continuation responses gave affine dimension 12 for each six-sign rule. Rational strictly positive 13-component stochastic kernels reproduce every forecast of each rule at the certified weak strengths $1/19808265344$ and $1/20632117248$. Each still has 36 distinct reachable probability vectors. The conservative strengths arise from one explicit coordinate scaling. The largest strengths for these two specific rules at width 13 were not determined. For each result, every one-step successor and the full product from every pure starting state after all 64 words were checked exactly. Unrestricted short tables of lengths one through six had dimensions $1,2,4,6,10,14$. Explicit odd-in-first Boolean tables attained the proved maximum at each length. The general constructive parameters for the last unrestricted table had denominators as large as 318 bits. A 13-component dense belief update can require 169 probability products per token and 12 independent live coordinates, while a 36-address table uses six live bits and one indexed transition. [Prospective audit](https://github.com/alan-ai1196/FP/blob/769f929/research/frontier/NEXT.md) · [Construction](finite_memory_mixture.py) · [Exact results](finite_memory_mixture_result.json)
+
+| Lag $L$ | Minimum weak mixture components | Exact critical strength at that width | Exact generator states | Exact deterministic history bits |
+|---:|---:|---:|---:|---:|
+| 1 | 2 | 1 | 2 | 1 |
+| 2 | 3 | 1/4 | 4 | 2 |
+| 3 | 4 | 4/27 | 8 | 3 |
+| 4 | 5 | 27/256 | 16 | 4 |
+| 5 | 6 | 256/3125 | 32 | 5 |
+| 6 | 7 | 3125/46656 | 64 | 6 |
+
+The audit evaluates the rational countdown from every initial address and input word at the sharp amplitude and, at lags two through six, after adding common refresh mass $1/8$. In the last case the unsmoothed kernel denominators used up to 82 bits. Independent modular ranks verified the full next-block matrices at strength $1/4$. Lean 4.36.0 verified that the rational binary product channel sends each point mass to the stated product probabilities and has a left inverse at every nonzero rational strength and every horizon. Its axiom report listed only standard propositional extensionality, classical choice and quotient soundness. The volume bound, general realization and rank-to-generator argument have mathematical proofs in the foundation. [Lean source](DelayChannel.lean) · [Sharp threshold and exact generator argument](FOUNDATION.md#the-exact-strength-of-a-delayed-sign-at-the-minimum-number-of-components)
+
+**EMPIRICALLY OBSERVED at the same training and deployment strength.** On a continuous lag-two stream at $a=1/8$, the learner knew a two-sign horizon and three possible output levels $-1/8,0,1/8$. The four conditional values, which relations between histories applied, transition tables, and latent state labels were withheld. It quantized the four smoothed signed means, formed the exact continuation coordinates, then searched a fixed grid of triangles with flat horizontal or vertical sides. Each returned triangle was checked in rational arithmetic on every input and starting address. The recovered delay used three positive stochastic states with smallest transition $1/28$. A direct four-address shift register issues the identical true predictions. The direct smoothed and context-tree forecasts estimate their probabilities without the supplied levels.
+
+| Training tokens | Correct delay table | Learned gain | Smoothed four-row gain | Depth-six tree gain | Correct fair-null table |
+|---:|---:|---:|---:|---:|---:|
+| 512 | 8/32 | 0.005261 | 0.003566 | −0.000580 | 3/32 |
+| 4,096 | 28/32 | 0.007588 | 0.007218 | 0.007136 | 27/32 |
+| 32,768 | 32/32 | 0.007833 | 0.007760 | 0.007759 | 32/32 |
+
+All gains are nats per raw token under the exact fresh stationary law. The population oracle is 0.007833. On the null the learned and direct gains at 32,768 tokens were zero and −0.0000594. The recovered table determines both its minimal affine dimension and the proposed stochastic transitions. This evidence uses a supplied horizon, separated levels and a finite geometric search. A weak theoretical embedding at a strength near $10^{-11}$ has a very different acquisition cost.
+
+~~~powershell
+python research/frontier/finite_memory_mixture.py
+lean research/frontier/DelayChannel.lean
+~~~
+
 ## Recurrent writers on one autonomous next-token stream
 
 **NUMERICALLY VERIFIED.** The source emits one binary token at a time using its last six signs, with the predictor consuming every token it predicts. Both stationary six-word distributions are exactly uniform. An exact resolvent of the 64-word transition matrix checked the lag-seven correlations $\pm\beta^2/8$ and the two-state stochastic delay forecasts. Symbolic solution over the rationals of 21 conditional-mass equations matched all 192 stationarity equations for the three-state deterministic writer. The positive four-state conditional fixed point was rounded to a rational table and checked against its exact stationarity residual. A common refresh probability of $1/8$ bounds its worst row error by eight times that residual. No reported four-state gain has more than $10^{-10}$ nat of numerical uncertainty. [Registration](https://github.com/alan-ai1196/FP/blob/a92bc31/research/frontier/NEXT.md) · [Stationary calculations](autonomous_state_width.py) · [Exact results](autonomous_state_width_result.json)
