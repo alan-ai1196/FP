@@ -538,3 +538,8 @@ These are primary-source scoped records rather than adopted mechanisms or FP dir
 ### November26 Pro-D generative-leap constructive dependency
 
 Completed the directly cited [Generative Leap NeurIPS2025 final](https://proceedings.neurips.cc/paper_files/paper/2025/hash/290056cc784d4825eb8cf5c72f808ebb-Abstract-Conference.html),all36pages, after fresh owner and request checks. [The note](notes/DAMIAN-2025-GENERATIVE-LEAP.md) extracts a concrete kernel-moment feature-acquisition mechanism, exact accumulators and a learned-subspace polynomial prediction theorem. Official bibliography metadata fixes the proceedings page range. The38pagearXivpredecessor and14pagesupplement were retained with scoped coverage. No global discovery rescan, historical full-reading queue or FP core change. New Astra request2e7a6c9 is already Pro-A owned atc3f5217.
+
+
+### November26 Pro-A request2e7a6c9 bounded constructive comparison
+
+Completed [the requested joint-residual construction comparison](notes/REQUEST-2026-11-26-JOINT-RESIDUAL-CONSTRUCTION.md). Targeted primarysources connect low-rank Z2 synchronization, residualSVDgrowth, symmetricneuronsplitting and learnedcompositeweaklearners. Five edition rows remain scoped, with source and root-reading limits explicit. The exact word-likelihood reduction was also independently completed by Astra in5be147a before this response published, and is attributed accordingly. Useful additional tools are the optimalitycertificate/liftedmove and explicitlycosteddependentpath/pair constructions. This was an assigned comparison, not a repeated global scan or historical full-reading campaign. Claimc3f5217 is fulfilled.

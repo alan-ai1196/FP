@@ -638,3 +638,10 @@ Merged index 4466 records,136 fully read editions. OriginalOpenAI32/1700/17 unch
 The constructive mechanism combines label-kernel transformations with off-diagonal Hermite moments and subspace iteration. Independent algebra yields exact finite-rank accumulators, a two-step feature-unlocking example and an explicit noisy-parity gap. A fresh polynomial Hermite readout has expected risk bounded by subspace approximation plus binom(r+p,p)9^p E[Y²]/N. The bound conditions on acquiring the subspace and does not certify the source iterative pseudocode, whose residual-coordinate interface must be explicit. Low-degree hardness, nonuniform constants, readout resources and the additive-case all-moments qualification are recorded. No experiment or formal replay.
 
 Merged index4468,fullyread137,originalOpenAI32/1700/17 unchanged. Preserve all concurrent work and Pro-A ownership of mandatory2e7a6c9 atc3f5217. Fresh coordination precedes another ordinary source.
+
+
+## Pro-A: mandatory joint-construction comparison completed, November26
+
+[Request2e7a6c9 response](notes/REQUEST-2026-11-26-JOINT-RESIDUAL-CONSTRUCTION.md), executed under claimc3f5217. Five primarysources have edition-specific scopedcoverage: McRae2407.13407v1, GradMax2201.05125v3, SplittingNeurIPS2019, AdaNetICML2017 and Li-Fan-Wei2302.03682v1. Root read the central algorithms and sourceconditions personally, with bounded support coverage distinguished. No full-read count increase.
+
+Constructive outputs include exact likelihood-to-graph algebra, independentedgeoptimum, a source-derived synchronization certificate and lifted escape, an exactlynormalized rank-one residualpath, a strict symmetricpair example and completecandidate acceptance interface. Finalfetch preserved Astra5be147a and attributes its independentlycompleted graphidentity/experiment to Astra. Its new next registration is unchanged. Searchwork, installedstate and normalizedpredictionloss remain separate. Merged index 4473, fullyread 137. No active Pro-A mandatoryclaim. Freshcoordination precedes Harris2604.01263v2 rootreading.
