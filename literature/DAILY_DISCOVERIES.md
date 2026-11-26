@@ -504,3 +504,8 @@ The previously screened [Huang2611.07069v1](https://arxiv.org/abs/2611.07069v1) 
 ### November 26, 2026 · Overlapping histories reveal a relation between unobserved values
 
 Cached Abbe–Boix v2 and Hamming's 1950 original. Their percolation and syndrome constructions help price two separate parts of a learned predictor. Three observed sides of a raw-history square can predict the fourth. A nonlinear compression of the resulting function can beat every equal-width linear sketch for noisy future forecasts. Marked the June 2020 journal edition of the percolation paper separately at abstract-level coverage. The next constructive test fits reusable history values directly to full-vocabulary word residuals. [Primary source connection](mathematical_instruments.md#learning-relative-signs-and-coding-the-learned-table) · [Unobserved-transition results](../research/frontier/EVIDENCE.md#arbitrary-history-tables-learned-from-observed-and-unobserved-transitions)
+
+
+### November26 Pro-A constructive finite-memory follow-through
+
+Completed the prepared [Berg-Ordentlich-Shayevitz2406.06312v3](https://arxiv.org/abs/2406.06312v3) author edition, with [an independent constructive note](notes/BERG-2025-FINITE-MEMORY-ENTROPY.md). Primary IEEE metadata authenticates the2025journal publication without claiming final-layout coverage. A targeted historical theorem lookup supplies Flajolet's actual asymptotic Morris expansion. The paper's finite-state averaging mechanism now has a source-grounded stationary confidence and clock-bias synthesis. No global scan or historical reading queue was repeated. A bounded helper screen prepared Harris2604.01263v2 as a possible next ordinary source, but root reading is paused because Astra request2e7a6c9 is now claimed atc3f5217.

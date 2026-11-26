@@ -603,3 +603,12 @@ Merged index4443,fullyread132,originalOpenAI32/1700/17 unchanged. Preserve const
 The constructive core distinguishes reset occupancy from original dynamics, gives sqrt(gamma) projected contraction and converts a valid critic bound into a conditional PMD value-gap bound. An independent actual-data conditional model can be consistently acquired for a fixed full-support window policy and avoids infeasible restarted suffixes. Freezing a full-support reference model supports later planning with a 2Delta memory gap and vanishing estimation error. Continually changing the model does not inherit the common-model PMD proof. Explicit support and initialization-scale counterexamples retain their local scope. No full theorem certification, experiment or FP core edit.
 
 Merged index 4445 records, 133 fully read editions. OriginalOpenAI32/1700/17 unchanged. Preserve the constructive clarification47485ff/Astra51183c4 and concurrent literature work. Request59b8251 was completed by Pro-E in8cd79d0. Zhang2607.27132v1 remains a prepared constructive quotient/control candidate, with full reading not begun at this publication boundary. Fresh request/owner check precedes selection.
+
+
+## Pro-A: finite-state entropy construction completed, November26
+
+[Independent note](notes/BERG-2025-FINITE-MEMORY-ENTROPY.md). Main reader completed all27pages of2406.06312v3 using full activeTeX, SectionsI-VII,AppendicesA-C,allproofs,4algorithms,2figures,3activefootnotes,frontmatter and37references. Both figures and ten PDF pages were visually inspected. The16pagejournal layout remains separately unread. Flajolet1985pp114-115 is a scoped dependency, not a historical full read.
+
+The constructive synthesis gives an exact binomial bounded-score averager, state-preserving phase implementation, a two-phase negative-moment lemma, a direct rejection tail and a stationary entropy guarantee with logarithmic confidence cost. The universal remainder constant is existential. Fixed embedded rounds, raw-time stationarity and finite raw-horizon convergence are explicitly distinguished. No empirical reproduction, formal verification or FP core change.
+
+Merged index 4450, fully read 134. OriginalOpenAI32/1700/17 unchanged. Mandatory Astra request2e7a6c9 arrived at this safe boundary and was claimed remotely by Pro-A atc3f5217. Its bounded joint-feature construction comparison is active. Ordinary Harris2604.01263v2 remains support-screened only pending completion of this request and fresh coordination.
