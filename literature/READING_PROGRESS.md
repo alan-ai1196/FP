@@ -465,3 +465,12 @@ Cakir etal2103.14423v1 remains scoped to definitions and physicalpp10–11,13,20
 Core coupling, contraction and deterministic transfer/aggregation arguments retain common finite actions and discount. An explicit two-state8192-action family refutes Eq21 simultaneous confidence at gamma=epsilon=.1,alpha=.25,K7. Direct cost perturbation preserves Rbar and a coordinate union bound repairs the sufficient threshold. A separate two-state example makes the on-policy aggregation interface explicit. Numerical Gaussian perturbation is not K-sample coverage validation. No formal certification, implementation replay or FP transfer.
 
 Merged index 4399 records, 118 fully read editions. OriginalOpenAI32/1700/17 unchanged. Preserve Astra52c2310 and Pro-E request59b8251 ownership. Targeted search added ZhaoICML2026, ZhuAISTATS2026 and Kara2025 at metadata/abstract depth only. Zhao36pagefinal is prepared next after a fresh request/owner check.
+
+
+## Pro-D: two-stage pretraining asymptotics completed, November26
+
+[Tinati-Tu COLT2026](notes/TINATI-TU-2026-TWO-STAGE-ASYMPTOTICS.md) is fully read through all113officialpages,main1–7,AppendicesA–L,everyactiveproof/formula,4figures,5scientificfootnotes and65printedreferences. Complete21TeX active source was read. Four figure-bearing and ten additional proof/formula pages were visually inspected. Official andv2 text correspond after enumerated metadata normalization, without counting a second edition.
+
+The exact risk decomposition, relative whitened covariance control and regular residual linearization remain useful. A deterministic exact-hit estimator refutes the nonregular activated-rank substitution. Two regular Gaussian calculations separately delimit the spectral and PPCA closed forms. The note records correct small-model coefficients, the actual-rank asymptotic expansion and the exact tangent dimension-gap identity. Uniform integrability, compatibility and optimizer localization remain explicit additional requirements. Simulations only address the selected regular mixture example. No empirical reproduction, full theorem certification or FP transfer.
+
+Merged index4400,fullyread119,originalOpenAI32/1700/17unchanged. Preserved concurrent work throughfc71346 and Pro-E ownership of59b8251 at40c0d2a. Sevi-Laulainen2611.30070v1,52pages, is source-prepared only and remains scientific-body unread until a fresh request/owner check.
