@@ -19,6 +19,29 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Recovering more hidden states than predictive coordinates
+
+**Exact rational reconstruction.** The learner received an alphabet, a certified linear Hankel rank, and a function returning stationary raw word probabilities at lengths at most $2n-1$. It selected prefix/suffix bases from these probabilities and inferred the physical state rows, actions, emissions and stationary masses. Only the audit compared the result with the known generating machine. Seven fixtures covered resets, noncommuting permutations, a common rotation, partially merging updates, and linearly dependent physical states. [Proof and resource assumptions](FOUNDATION.md#recovering-a-finite-hidden-machine-when-predictive-dimension-is-smaller-than-state-count) · [Reconstruction and reproduction code](finite_realization.py)
+
+| Source | Raw alphabet | Supplied rank | Recovered states | Minimum image | Actual maximum observed word length |
+|---|---:|---:|---:|---:|---:|
+| Three distinct resets | 3 | 3 | 3 | 1 | 3 |
+| Noncommuting permutations | 2 | 3 | 3 | 3 | 5 |
+| Common four-cycle | 4 | 4 | 4 | 4 | 4 |
+| Two different minimum images | 3 | 4 | 4 | 2 | 6 |
+| Dependent post-reset rows | 3 | 2 | 3 | 1 | 3 |
+| Six-phase marked clock | 3 | 3 | 6 | 1 | 5 |
+| Two phases crossed with three dependent reset rows | 6 | 4 | 6 | 2 | 4 |
+
+Every recovered parameter matched exactly up to state renaming. In the final case the learner found three different minimum images of size two. The future-law rows occupy four linear dimensions and represent six physical states. The subspace and eigenline algorithms used 1,123 distinct cylinder probabilities on that case. Independent reconstruction of the diagonal matrix algebra agreed with the pointwise-return search on all three audited rank-two or rank-three minimum spaces. Their conjugation algebras had dimensions 41, 6 and 6. The first needed a basis word of length six in the derived generators, while its longest observed raw word had length five. All 296 strongly connected labeled three-state machines on two raw letters were also reconstructed at strictly positive emission rows $(1,4)/5,(2,3)/5,(4,1)/5$. The counts by minimum image size one, two and three were 240, 30 and 26. Each had Hankel rank three for these emissions. This finite check gives no finite-precision stability guarantee.
+
+**Period resolution.** At tick probability and mark amplitude $1/2$, direct 85-decimal computations of the stationary color KL sum agreed with the analytic $k^{-6}$ neighboring-period rate and $k^{-4}$ best-iid excess. At $k=64,256,1024,4096$, the adjacent rates multiplied by $k^6$ were 6876.03, 9396.30, 9697.26 and 9732.83, approaching $100\pi^4$. The analogous iid rates multiplied by $k^4$ were 1828.72, 2118.80, 2141.46 and 2142.90, approaching $22\pi^4$. The omitted geometric tail was below $2.64\times10^{-94}$ before scaling. These are numerical evaluations of population rates. The matching finite-tape hypothesis-testing lower and upper bounds are analytic. [Original marked-run comparison](#how-much-of-a-probability-clock-does-learning-retain) · [Neighboring-period derivation](FOUNDATION.md#recovering-a-finite-hidden-machine-when-predictive-dimension-is-smaller-than-state-count)
+
+~~~powershell
+python research/frontier/finite_realization.py
+python research/frontier/finite_realization.py --catalog
+~~~
+
 [General learner](learner.py) · [Independent oracles and generators](audit.py) · [Primary receipt](result.json) · [Competing learners and exact covering search](alternatives.py) · [Comparison receipt](alternatives_result.json)
 
 **NUMERICALLY VERIFIED.** For the balanced design each short word supplies four ordinary labels with one flip. The learner predicts before updating counts. The validation block includes every word of length $2R$ with the same conditional frequencies, disjoint from the training words. This is an exact design, not random sampling. At unit tap price the fair forecast is selected and at zero price the learned model is selected. An independent categorical learner merges equal vectors of short-suffix majorities from exactly the same counts. A breadth-first check closes the product of the trained machine and each independent source, covering every reachable transition and hence every word. All 128 binary-output machines with two declared states, binary alphabet and either start state also pass. The cube audit checks 736 coefficient vectors and finds 40 equality cases.
