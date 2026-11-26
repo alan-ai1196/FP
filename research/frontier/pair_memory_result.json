@@ -1,0 +1,162 @@
+{
+  "registration": "59b8251",
+  "contrast": 0.5,
+  "dimensions": {
+    "4": {
+      "unordered_edges": 6,
+      "rank": 2,
+      "nonzero_eigenvalue": "8/3",
+      "posterior_columns_checked": 7,
+      "horizons": [
+        {
+          "training_pairs": 1,
+          "training_types": 7,
+          "full_incremental_gain": 0.009578151289909131,
+          "one_specified_edge_gain": 0.0017913930302766987,
+          "one_specified_edge_variance_fraction": 0.186046511627907,
+          "best_one_bit": {
+            "incremental_gain": 0.004083034012336777,
+            "variance_fraction": 0.42105263157894735,
+            "history_mask": 24,
+            "optimal_encoders": 3,
+            "encoders": 63,
+            "distinct_count_profiles": 9
+          }
+        },
+        {
+          "training_pairs": 2,
+          "training_types": 10,
+          "full_incremental_gain": 0.017567437559479534,
+          "best_one_bit": {
+            "incremental_gain": 0.0066939837543249555,
+            "variance_fraction": 0.3693197786179735,
+            "history_mask": 114,
+            "optimal_encoders": 3,
+            "encoders": 511,
+            "distinct_count_profiles": 115
+          }
+        }
+      ]
+    },
+    "6": {
+      "unordered_edges": 15,
+      "rank": 9,
+      "nonzero_eigenvalue": "8/5",
+      "posterior_columns_checked": 16,
+      "horizons": [
+        {
+          "training_pairs": 1,
+          "training_types": 16,
+          "full_incremental_gain": 0.002618112394154777,
+          "one_specified_edge_gain": 0.0001841944358940102,
+          "one_specified_edge_variance_fraction": 0.07017543859649122,
+          "best_one_bit": {
+            "incremental_gain": 0.0002796569166085018,
+            "variance_fraction": 0.10457516339869287,
+            "history_mask": 1312,
+            "optimal_encoders": 15,
+            "encoders": 32767,
+            "distinct_count_profiles": 115
+          }
+        },
+        {
+          "training_pairs": 2,
+          "training_types": 136,
+          "full_incremental_gain": 0.005686521108530385,
+          "specified_edge_increase_bit": {
+            "incremental_gain": 0.0003698951763103029,
+            "variance_fraction": 0.06283925492640192
+          }
+        }
+      ]
+    },
+    "8": {
+      "unordered_edges": 28,
+      "rank": 20,
+      "nonzero_eigenvalue": "48/35",
+      "posterior_columns_checked": 29
+    },
+    "12": {
+      "unordered_edges": 66,
+      "rank": 54,
+      "nonzero_eigenvalue": "40/33",
+      "posterior_columns_checked": 67
+    }
+  },
+  "supplemental_regular_graph_comparison": [
+    {
+      "vocabulary": 4,
+      "matching_gain": 0.004083034012336844,
+      "cycle_gain": 0.0028865690651599532,
+      "maximum_rational_enclosure_width": 9.049755309926551e-17
+    },
+    {
+      "vocabulary": 6,
+      "matching_gain": 0.00027965691660847286,
+      "cycle_gain": 0.0002605263721218004,
+      "maximum_rational_enclosure_width": 8.413519385743045e-27
+    },
+    {
+      "vocabulary": 8,
+      "matching_gain": 6.328035563556842e-05,
+      "cycle_gain": 6.162465875191773e-05,
+      "maximum_rational_enclosure_width": 8.972248770720613e-32
+    },
+    {
+      "vocabulary": 10,
+      "matching_gain": 2.182623716832917e-05,
+      "cycle_gain": 2.1560843232444407e-05,
+      "maximum_rational_enclosure_width": 3.4038500373747987e-35
+    },
+    {
+      "vocabulary": 12,
+      "matching_gain": 9.471107346626198e-06,
+      "cycle_gain": 9.413159888333951e-06,
+      "maximum_rational_enclosure_width": 8.04057044795357e-38
+    },
+    {
+      "vocabulary": 14,
+      "matching_gain": 4.758594884663161e-06,
+      "cycle_gain": 4.743898841618081e-06,
+      "maximum_rational_enclosure_width": 5.86321292170067e-40
+    },
+    {
+      "vocabulary": 16,
+      "matching_gain": 2.6482088598169798e-06,
+      "cycle_gain": 2.6444608359804137e-06,
+      "maximum_rational_enclosure_width": 9.219720894291927e-42
+    },
+    {
+      "vocabulary": 18,
+      "matching_gain": 1.5893925202954505e-06,
+      "cycle_gain": 1.5887092036638718e-06,
+      "maximum_rational_enclosure_width": 2.535155748536415e-43
+    },
+    {
+      "vocabulary": 20,
+      "matching_gain": 1.0110461958690134e-06,
+      "cycle_gain": 1.0112248169846986e-06,
+      "maximum_rational_enclosure_width": 1.0665585448281755e-44
+    },
+    {
+      "vocabulary": 22,
+      "matching_gain": 6.735587091993678e-07,
+      "cycle_gain": 6.739367209917228e-07,
+      "maximum_rational_enclosure_width": 6.270988208628711e-46
+    },
+    {
+      "vocabulary": 24,
+      "matching_gain": 4.659175580798686e-07,
+      "cycle_gain": 4.6629459888808004e-07,
+      "maximum_rational_enclosure_width": 4.832163667735007e-47
+    }
+  ],
+  "supplemental_global_twenty_name_certificate": {
+    "edge_counts": 190,
+    "certified_degree": 2,
+    "winning_normalized_gain_lower": 0.9878567847324522,
+    "other_integer_degree_upper": 0.9876822913081785,
+    "noninteger_degree_upper": 0.9863332769471345,
+    "relative_curvature_difference_lower": 0.1744546003683714
+  }
+}
