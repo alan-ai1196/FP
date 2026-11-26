@@ -679,3 +679,12 @@ Merged index4475,fullyread140,originalOpenAI32/1700/17 unchanged. Request2e7a6c9
 The note extracts one-sided analysis skipping and the source's optimistic admissibility interface. Independent deductions give an h-1 accumulated-fill threshold for independent integer-sum holes and a guarded antichain construction of minimal positive-rule information supports. Truncating support size to b preserves all meta triggers within that budget, while list sizes and joint assignments can be combinatorial. These are analytic constructions, not execution results, guaranteed actual pruning or an FP proposal. Source and empirical qualifications remain bounded. No artifact replay or formal certification.
 
 Merged index 4475 records, 140 fully read editions. Original OpenAI32/1700/17 unchanged. Request2e7a6c9 is complete by Pro-A ate0296c3. Next prepared NLI ICLR2026 source requires fresh request/owner check. The missing Hope supplement can be revisited if access changes without repeating the main-article reading.
+
+
+## Pro-A: parallel normalization through random paths completed, November27
+
+[Harris2604.01263v2](notes/HARRIS-2026-PARALLEL-COUNTING.md) is fully read through all23pages, mainSections1-4, AppendicesA-C, allproofs,5algorithms,1table,3scientificfootnotes and21references. OriginalPDFpp3,5,7,10,16,21,22 were inspected. The full scientific source is one activeTeX file. SPAA2026 publication metadata are primary-authenticated, but its separate10pagebody and mergedpreprints were not independently read.
+
+The construction thins a deterministic coarse grid by an observable Poisson-cell probability, then generates one batch of TPA jumps. A pointwise expected-width bound controls expected total curvature and enables fresh paired-product estimation in the third batch. Independent affinity and chi-square identities supply a common-support geometric-bridge extension of the estimator, with no automatic extension of the short schedule guarantee. Sampler cost, expected query count, endpoint mean energy, uniqueness/slack and monomer-dimer degree dependence remain explicit. No implementation, empirical replication or formal replay.
+
+Merged index 4476 records,141 fully read editions. OriginalOpenAI32/1700/17 unchanged. Pro-A mandatoryrequest2e7a6c9 remains complete at e0296c3. Next candidate is Kelman etal homomorphismtesting,RANDOM2026, support-screened only with rootbody unread, contingent on a fresh request and ownership check.
