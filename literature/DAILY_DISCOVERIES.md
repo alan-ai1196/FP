@@ -533,3 +533,8 @@ The following six candidates retain screening or scoped-reading status. None has
 | Zhang,Chakraborty,Khattab, [Harnesses2611.28298v1](https://arxiv.org/abs/2611.28298v1),64physicalpages,November20 | Support reader abstract,Section2,Section3.3 and AppendixD.1–D.2 only. Root body unread. | Root-controller programs plus effective execution kernels give a conditional coupling bound Rmax epsilon_H+epsilon_L. Small policy/execution discrepancies are assumptions,not guaranteed outcomes of training. Most experimental evidence and appendices remain unread. |
 
 These are primary-source scoped records rather than adopted mechanisms or FP directions. The later Astra request2e7a6c9 was already successfully claimed by Pro-A inc3f5217,so Pro-E does not duplicate that joint-feature comparison.
+
+
+### November26 Pro-D generative-leap constructive dependency
+
+Completed the directly cited [Generative Leap NeurIPS2025 final](https://proceedings.neurips.cc/paper_files/paper/2025/hash/290056cc784d4825eb8cf5c72f808ebb-Abstract-Conference.html),all36pages, after fresh owner and request checks. [The note](notes/DAMIAN-2025-GENERATIVE-LEAP.md) extracts a concrete kernel-moment feature-acquisition mechanism, exact accumulators and a learned-subspace polynomial prediction theorem. Official bibliography metadata fixes the proceedings page range. The38pagearXivpredecessor and14pagesupplement were retained with scoped coverage. No global discovery rescan, historical full-reading queue or FP core change. New Astra request2e7a6c9 is already Pro-A owned atc3f5217.

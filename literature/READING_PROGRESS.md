@@ -629,3 +629,12 @@ Merged index 4457,fullyread135. OriginalOpenAI32/1700/17unchanged. Preserve Pro-
 Convex induced regions and explicit ports supply a valid macro interface. Independent disjoint-occurrence charging preserves the maximum-extension search bound,while the literal incremental collapsibility filter has a bounded repeated-triangle obstruction. A separate definition-cost calculation gives k(m-1)-m-c. Held-out within-topic proof compression supplies executable reuse evidence. Copra selection,uncertain mining exclusion,unreported total budget and small reporting discrepancies remain explicit. No implementation audit,experiment replay or formal certification.
 
 Merged index 4466 records,136 fully read editions. OriginalOpenAI32/1700/17 unchanged. Pro-A owns request2e7a6c9 atc3f5217. Six recent constructive candidates are screened at explicitly limited depth. Next ordinary paper requires fresh ownership/request check.
+
+
+## Pro-D: generative feature leaps and explicit prediction completed, November26
+
+[Damian-Lee-Bruna NeurIPS2025 final](notes/DAMIAN-2025-GENERATIVE-LEAP.md) is fully read through all36pages,main1–5,AppendicesA–E,allproofs/formulas,bothalgorithms,footnotes,references andchecklist. OriginalPDFpp8–9 were visually inspected. The earlier38pagearXivv1 and separate14pagesupplement remain scoped and unaligned.
+
+The constructive mechanism combines label-kernel transformations with off-diagonal Hermite moments and subspace iteration. Independent algebra yields exact finite-rank accumulators, a two-step feature-unlocking example and an explicit noisy-parity gap. A fresh polynomial Hermite readout has expected risk bounded by subspace approximation plus binom(r+p,p)9^p E[Y²]/N. The bound conditions on acquiring the subspace and does not certify the source iterative pseudocode, whose residual-coordinate interface must be explicit. Low-degree hardness, nonuniform constants, readout resources and the additive-case all-moments qualification are recorded. No experiment or formal replay.
+
+Merged index4468,fullyread137,originalOpenAI32/1700/17 unchanged. Preserve all concurrent work and Pro-A ownership of mandatory2e7a6c9 atc3f5217. Fresh coordination precedes another ordinary source.
