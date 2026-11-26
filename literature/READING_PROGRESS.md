@@ -733,3 +733,12 @@ Merged index4482,fullyread145,originalOpenAI32/1700/17 unchanged. Request2e7a6c9
 The source compresses sample residuals while preserving every negative history. Independent deductions reconstruct coreSAT correctness, give an exact six-sample correlation example, and construct a complete joint-tuple encoding with explicit productcost. Allocation enumeration yields the stated optimum within its actual family, with one-state andpartition-count qualifications. Experiments measure finite synthesis under time/memorylimits,not statisticalfactor recovery. No implementationaudit,empiricalreplay,exhaustivesearch orformalverification.
 
 Mergedindex 4482 records,146fullyreadeditions. OriginalOpenAI32/1700/17unchanged. Requests59b8251 and2e7a6c9 remaincompleted. PreparedFujinami2508.04458v1 awaits freshrequest/ownercheck before rootreading. Hope remains scoped only because the separate supplement is unread.
+
+
+## Pro-D: spectral feature acquisition and conditional removal completed, November27
+
+[Han-Matthes-Shen AISTATS2026 final](notes/HAN-2026-AFFINE-CCA.md) is fully read through all38physicalpages,Sections1-5,AppendicesA-H,allproofs,6figures,5tables,references andchecklist. OriginalPDFpages7-9,38 were visually checked. The36pagearXivv3 has selected consistency-assumption and proof-step comparison only, with no secondfullreadingcredit.
+
+The source identifies affine coordinates only when first-order canonical modes dominate all higher modes. An independent population construction instead removes the complete function space of the acquired tuple before choosing the next scalar mode. Its exact conditional-expectation and optimization oracles, known dimension and unproved finite-sample stability remain explicit. Further independent results give quantitative orbit/predictive error, a finite spectral budget and exact coefficients for the actual Gamma,NBandPoisson constructions. No code audit,training reproduction orformalverification.
+
+Merged index 4484,fullyread147,originalOpenAI32/1700/17 unchanged. Preserve Pro-Acf25297, Pro-E7780559 and Astra04a8519 with all concurrent worker records. Mandatory2e7a6c9 remains complete byPro-A. Next ordinary selection requires fresh request/owner checks.
