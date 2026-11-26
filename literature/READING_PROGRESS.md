@@ -697,3 +697,12 @@ Merged index 4476 records,141 fully read editions. OriginalOpenAI32/1700/17 unch
 Constructive results include a query-basis worklist and exact normalized prediction operators,a dxd Poincare matrix with explicit word-sum cost,a direct expected chi-square exponential bound and a positive-block all-word reset-window bound. The four-state source counterexample still admits exact minimal future-observation prediction. Model knowledge,real-valued storage,equivalent priors,support geometry and controlled common-block assumptions remain explicit. No empirical experiment,formal replay or FP core change.
 
 Merged index 4478,fullyread142,originalOpenAI32/1700/17 unchanged. Preserve Astra51aa0d9,Pro-Af6ba439,Pro-E60c8eb1,Pro-D0c00fd0 andPro-B83c8d42. Mandatory2e7a6c9 completed byPro-A ate0296c3. The next ordinary source requires fresh request/owner checks.
+
+
+## 2026-11-27 — Pro-E: learned operation vocabulary and recurrent execution
+
+[NLI ICLR2026](notes/MACFARLANE-2026-NEURAL-LANGUAGE-INTERPRETER.md) is fully read through all26pages, Sections1–6, AppendicesA–I, allformulas, Algorithm1,6figures,8tables,Listing1,authorfootnote,acknowledgments,30references andLLMdisclosure. All figure/table pages,algorithm,listing andregularizer layouts were visually checked. ArXivv1 has whole26page normalized-text alignment and recoveredTeX, separately scoped without duplicate full credit.
+
+The construction learns token-conditioned transitions from held-out I/O prediction. Independent kernel composition, reachable-state metric-error propagation and a fixed-noise hardening condition provide precise reuse tools. Final source predictions remain soft and search cost remains explicit. The main and appendix regularizers count different occupancy objects. Empirical evidence supports bounded task generalization with substantial adaptation, not unbounded symbolic program recovery. No implementation audit,training replay orformal verification.
+
+Merged index 4478 records, 143 fully read editions. Original OpenAI32/1700/17 unchanged. Hope remains scoped only because its supplementary proofs/operators are unread. Prepared Meng2509.24347v2 requires fresh request/owner check before root reading.

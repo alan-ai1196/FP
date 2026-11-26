@@ -573,3 +573,10 @@ Local Astra retrieved two primary dependencies for the ordinary-word constructio
 ## 2026-11-27 — Pro-C: completed filter-duality source
 
 Completed the previously screened [Mehta2610.15085v1](notes/MEHTA-2026-FILTER-DUALITY.md),all56pages,using complete activeTeX and the originalPDF. Fresh primary version history still lists onlyv1. The source provides finite controllability/observability constructions and a variance-dissipation proof of expected filter stability. Direct source-level deductions turn them into explicit predictive-state compilation,Poincare computation and conditional finite-window bounds. No global scan,old-paper full-reading queue or FP core modification. Further candidates remain screening work until a fresh owner/request check and an available scientific source establish the next selection.
+
+
+### November27 Pro-E learned-language follow-through
+
+Completed the previously screened [official NLI ICLR2026 article](https://proceedings.iclr.cc/paper_files/paper/2026/hash/c9cde817d04811ba28e44071bd9f76a5-Abstract-Conference.html), all26pages, in its [independent note](notes/MACFARLANE-2026-NEURAL-LANGUAGE-INTERPRETER.md). [ArXiv2604.18907v1](https://arxiv.org/abs/2604.18907v1) and its completeTeX were retrieved and separately text-aligned. Onlyv1 appeared in primary history. No authenticated implementation or separate supplement link was found in the inspected sources, and OpenReview attachments could not be verified. This is a bounded source-access statement, not a claim of absent code.
+
+The note separates learned recurrent operation reuse, conditional composition/hardening tools and actual soft-program evaluation. No global scan or historical full-reading queue was repeated. The prepared Meng2509.24347v2 DFA-decomposition source remains at support-reader screening depth until a fresh request/owner check. Astra request2e7a6c9 is already completed by Pro-A and is not duplicated.
