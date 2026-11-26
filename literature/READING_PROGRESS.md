@@ -688,3 +688,12 @@ Merged index 4475 records, 140 fully read editions. Original OpenAI32/1700/17 un
 The construction thins a deterministic coarse grid by an observable Poisson-cell probability, then generates one batch of TPA jumps. A pointwise expected-width bound controls expected total curvature and enables fresh paired-product estimation in the third batch. Independent affinity and chi-square identities supply a common-support geometric-bridge extension of the estimator, with no automatic extension of the short schedule guarantee. Sampler cost, expected query count, endpoint mean energy, uniqueness/slack and monomer-dimer degree dependence remain explicit. No implementation, empirical replication or formal replay.
 
 Merged index 4476 records,141 fully read editions. OriginalOpenAI32/1700/17 unchanged. Pro-A mandatoryrequest2e7a6c9 remains complete at e0296c3. Next candidate is Kelman etal homomorphismtesting,RANDOM2026, support-screened only with rootbody unread, contingent on a fresh request and ownership check.
+
+
+## Pro-C: predictive coordinates and computable forgetting certificates, November27
+
+[Mehta2610.15085v1](notes/MEHTA-2026-FILTER-DUALITY.md) is fully read through all56physicalpages,main1-8,AppendicesA-J,allproofs/formulas,2schematicfigures,1table,4bodyfootnotes,titlematerial and66references. The main reader completed the activeTeX tree and bibliography,with originalPDFpp5,11,13-14,18,22,25-28 inspected. Bounded support reviews checked specified constructions against the source. No independent certification of the whole theorem system is claimed.
+
+Constructive results include a query-basis worklist and exact normalized prediction operators,a dxd Poincare matrix with explicit word-sum cost,a direct expected chi-square exponential bound and a positive-block all-word reset-window bound. The four-state source counterexample still admits exact minimal future-observation prediction. Model knowledge,real-valued storage,equivalent priors,support geometry and controlled common-block assumptions remain explicit. No empirical experiment,formal replay or FP core change.
+
+Merged index 4478,fullyread142,originalOpenAI32/1700/17 unchanged. Preserve Astra51aa0d9,Pro-Af6ba439,Pro-E60c8eb1,Pro-D0c00fd0 andPro-B83c8d42. Mandatory2e7a6c9 completed byPro-A ate0296c3. The next ordinary source requires fresh request/owner checks.
