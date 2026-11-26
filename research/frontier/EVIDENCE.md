@@ -10,6 +10,23 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Six ordinary signs distinguish three and four homogeneous states
+
+**NUMERICALLY VERIFIED in exact arithmetic.** Independent evaluations of every matrix word on 24 pairs of integer matrices gave ranks $1,2,4,8,16,30$ modulo 1009 at suffix lengths zero through five. A nonzero minor modulo 1009 certifies at least that rank over the reals. Word counts and the two proved Cayley–Hamilton identities give the reverse inequalities. At length six the complete ordinary-forecast span for three states therefore has dimension 62 of 64. The classical unconstrained rank 30 at suffix length five also appears in the primary matrix-product literature. [Frozen registration](https://github.com/alan-ai1196/FP/blob/9700cc6/research/frontier/NEXT.md) · [Proof and interpretation](FOUNDATION.md#which-ordinary-predictions-can-certify-that-a-stochastic-update-needs-another-state) · [Navascués and Vértesi, Table 1](https://arxiv.org/pdf/1509.04507v6)
+
+Two four-state sources used strictly positive transitions, reset probabilities and binary outcome probabilities. Direct enumeration of all 128 raw records per source matched all 64 Fourier coefficients from the matrix computation. The following excess losses apply to every homogeneous three-state mixture predictor on these two sources. They are per outcome, with independent fair inputs.
+
+| Four-state source | Smallest transition | First contrast | Second contrast | Excess NLL floor, nats |
+|---|---:|---:|---:|---:|
+| Averaged transition at stationary reset | 1/56 | 554631/4194304 | −50421/4194304 | 0.001469 |
+| Two permutations with positive refresh and reset | 1/32 | 2470629/16777216 | 0 | 0.001807 |
+
+The two score vectors are orthogonal and have mean square six each. The separate designed source of signed mean $\beta W/4$ gives exactly zero gain at every smaller state width. The strictly positive four-state sources in the table instead have distinct full conditional laws that an excluded machine must approximate. The ordinary six-sign contrast costs a handful of comparisons. For the general alternating identity, dimensions one to five gave adjacent-dimension Vandermonde entries $1,2,12,288,34560$ and subset recursions of $4,12,32,80,192$ transitions, respectively. Integer matrix evaluations and direct permutation expansion checked the recursion independently. [Audit source](stochastic_identities.py) · [Machine-readable results](stochastic_identities_result.json)
+
+~~~powershell
+python research/frontier/stochastic_identities.py
+~~~
+
 ## Executed controls
 
 From the root of `frontier` run the following with plain Python 3.10 or later and assertions enabled.

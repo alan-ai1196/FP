@@ -1,0 +1,156 @@
+{
+  "registration": "9700cc6",
+  "integer_matrix_pairs": 24,
+  "rank_modulus": 1009,
+  "ranks_by_suffix_length": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    30
+  ],
+  "full_six_sign_span_dimension": 62,
+  "commutator_coefficients": [
+    {
+      "MMCMC": -1,
+      "MCCMM": -1,
+      "MMCCM": 1,
+      "CMMCM": -1,
+      "MCMMC": 1,
+      "CMCMM": 1
+    },
+    {
+      "MCMCC": 1,
+      "MCCMC": -1,
+      "CMCCM": 1,
+      "CMMCC": -1,
+      "CCMMC": 1,
+      "CCMCM": -1
+    }
+  ],
+  "contrast_frequencies": {
+    "-4": 12,
+    "0": 40,
+    "4": 12
+  },
+  "positive_stationary": {
+    "minus": [
+      2,
+      1,
+      1,
+      0
+    ],
+    "plus": [
+      3,
+      0,
+      1,
+      3
+    ],
+    "reset": [
+      "2/7",
+      "2/7",
+      "1/7",
+      "2/7"
+    ],
+    "refresh_distribution": [
+      "2/7",
+      "2/7",
+      "1/7",
+      "2/7"
+    ],
+    "refresh_probability": "1/8",
+    "terminal_means": [
+      "-3/4",
+      "3/4",
+      "3/4",
+      "3/4"
+    ],
+    "minimum_transition": "1/56",
+    "minimum_raw_record_probability": "157/57344",
+    "matches_64_raw_fourier_coefficients": true,
+    "observable_gaps": [
+      "554631/4194304",
+      "-50421/4194304"
+    ],
+    "three_state_excess_nll_floor": "51692970567/35184372088832"
+  },
+  "positive_permutations_with_refresh": {
+    "minus": [
+      1,
+      2,
+      3,
+      0
+    ],
+    "plus": [
+      3,
+      1,
+      0,
+      2
+    ],
+    "reset": [
+      "29/32",
+      "1/32",
+      "1/32",
+      "1/32"
+    ],
+    "refresh_distribution": [
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "refresh_probability": "1/8",
+    "terminal_means": [
+      "-3/4",
+      "3/4",
+      "-3/4",
+      "3/4"
+    ],
+    "minimum_transition": "1/32",
+    "minimum_raw_record_probability": "5917979/1073741824",
+    "matches_64_raw_fourier_coefficients": true,
+    "observable_gaps": [
+      "2470629/16777216",
+      "0"
+    ],
+    "three_state_excess_nll_floor": "2034669218547/1125899906842624"
+  },
+  "alternating_checks": [
+    {
+      "restricted_dimension": 1,
+      "suffix_reads": 2,
+      "terms": 2,
+      "subset_transitions": 4,
+      "adjacent_nonzero_entry": 1
+    },
+    {
+      "restricted_dimension": 2,
+      "suffix_reads": 5,
+      "terms": 6,
+      "subset_transitions": 12,
+      "adjacent_nonzero_entry": 2
+    },
+    {
+      "restricted_dimension": 3,
+      "suffix_reads": 9,
+      "terms": 24,
+      "subset_transitions": 32,
+      "adjacent_nonzero_entry": 12
+    },
+    {
+      "restricted_dimension": 4,
+      "suffix_reads": 14,
+      "terms": 120,
+      "subset_transitions": 80,
+      "adjacent_nonzero_entry": 288
+    },
+    {
+      "restricted_dimension": 5,
+      "suffix_reads": 20,
+      "terms": 720,
+      "subset_transitions": 192,
+      "adjacent_nonzero_entry": 34560
+    }
+  ]
+}
