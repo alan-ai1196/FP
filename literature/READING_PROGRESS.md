@@ -585,3 +585,21 @@ Constructive clarification47485ff and Astra51183c4 are retained. A source-led ne
 Completed [Habermehl-Loulergue2606.06050v1](notes/HABERMEHL-LOULERGUE-2026-SYMBOLIC-PASSIVE.md), all17pages and allscientifictext,proofs,algorithms,figures,footnotes and14references. SourceTeX and figure assets checked. An independent conditional boundary-table reconstruction makes the source mechanism concrete through residual signatures and row matching. Explicit labels, canonical intervals and word-versus-symbol accounting remain visible. Three literalv1 bookkeeping/degenerate-case defects are shown directly, without certifying a repaired implementation. An elementary full-support sampling lower bound separates small teaching sets from fast exact recovery. The separate14pagefinal remains body-unread. FFZ2023 canonical/teaching definitions, activeMAT* interfaces and fixed-evidenceRTI are scoped dependencies only. No experiment or formal replay.
 
 Merged index 4442 records, 131 fully read editions. OriginalOpenAI32/1700/17 unchanged. Request59b8251 is complete at8cd79d0. No uncompleted mandatory Pro-E claim. Fresh coordination check precedes another paper.
+
+
+## Pro-D: empirical spectral filtering and constructive comparator completed, November26
+
+[Zhang etal2511.15120v2](notes/ZHANG-2026-GENERIC-MULTI-INDEX.md) is fully read through all85pages,main1–7,AppendicesA–C,allproofs/formulas,bothfigures,footnotes,acknowledgements and references. Targeted TeX and original PDFpp16,17,40,58,70 were inspected. ICLR2026 acceptance is authenticated, while a separate OpenReview final was inaccessible and not compared.
+
+The primary mechanism is predictive-curvature spectral filtering through fixed-data gradient passes. The note derives centered Hermite statistics, an explicit quartic feature-recovery example, Gaussian-chaos subspace approximation, and an exact polynomial dual on the empirical eigenspace. These constructive propositions separate controlled predictive error from exact population-coordinate reconstruction and address the material projected-moment/full-inverse gap. They do not certify the complete activation, finite-width or optimization theorem. Numerical studies retain their actual algorithms and maximum-alignment coverage. No full empirical replication or formal replay.
+
+Merged index4443,fullyread132,originalOpenAI32/1700/17 unchanged. Preserve constructive policy47485ff and concurrent Astra/Pro changes. Request59b8251 is complete by Pro-E in8cd79d0. The Generative Leap official NeurIPS2025 abstract and arXiv metadata were screened only. Its constructive proof is the next dependency candidate after a fresh request/owner check.
+
+
+## Pro-C: reset sampling, conditional evaluation and neural POMDP learning, November 26
+
+[Huang2611.07069v1](notes/HUANG-2026-NEURAL-POMDP.md) is fully read through all33physicalpages, main1-6, AppendicesA-F, allformulas/proofs, twoalgorithms, fivefigures, onetable, titlematerial and51references. Main reader read the complete activeTeX tree and bibliography and viewed originalPDFpp3-9,13,18-19,32. Bounded support reviews were assessed against primary passages. Cai arXiv1905.10027v2 AppendixF pp47-49 and Shen's unversioned32pageauthor manuscript pp1-3 are scoped only.
+
+The constructive core distinguishes reset occupancy from original dynamics, gives sqrt(gamma) projected contraction and converts a valid critic bound into a conditional PMD value-gap bound. An independent actual-data conditional model can be consistently acquired for a fixed full-support window policy and avoids infeasible restarted suffixes. Freezing a full-support reference model supports later planning with a 2Delta memory gap and vanishing estimation error. Continually changing the model does not inherit the common-model PMD proof. Explicit support and initialization-scale counterexamples retain their local scope. No full theorem certification, experiment or FP core edit.
+
+Merged index 4445 records, 133 fully read editions. OriginalOpenAI32/1700/17 unchanged. Preserve the constructive clarification47485ff/Astra51183c4 and concurrent literature work. Request59b8251 was completed by Pro-E in8cd79d0. Zhang2607.27132v1 remains a prepared constructive quotient/control candidate, with full reading not begun at this publication boundary. Fresh request/owner check precedes selection.

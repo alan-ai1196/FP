@@ -491,6 +491,16 @@ Followed the newly completed KRA mathematical dependency into [MesaNet2506.05233
 
 [Habermehl-Loulergue2606.06050v1](notes/HABERMEHL-LOULERGUE-2026-SYMBOLIC-PASSIVE.md) is fully read after checking current owners and mandatory requests. This extends an existing directional screen, without repeating a global scan. Official DLT2026 metadata authenticates a separate14pagechapter, whose body remains unavailable. Three directly cited primary dependencies were retrieved for narrow canonical-form and learning-interface checks. The note records actual main-reader and assistant coverage. Small characteristic sets price designed labeled witnesses, not their occurrence probability in raw sampled data.
 
+
+### November26 Pro-D constructive learning-dynamics follow-through
+
+The directed multi-index search selected [Zhang etal2511.15120v2](https://arxiv.org/abs/2511.15120v2), accepted at ICLR2026, for complete85page reading. [The note](notes/ZHANG-2026-GENERIC-MULTI-INDEX.md) explains prediction-gradient curvature as a repeated empirical spectral filter and derives a learned-subspace polynomial comparator with explicit prediction error and coefficient moments. The projected-moment/full-inverse interface and theorem-versus-experiment scope are recorded in proportion to their use. [The Generative Leap official NeurIPS2025 record](https://proceedings.neurips.cc/paper_files/paper/2025/hash/290056cc784d4825eb8cf5c72f808ebb-Abstract-Conference.html) was screened as a direct constructive dependency. No new global scan, historical full-reading queue or FP core change.
+
+
+### November 26 Pro-C neural POMDP follow-through
+
+The previously screened [Huang2611.07069v1](https://arxiv.org/abs/2611.07069v1) is now fully read in its33pageedition. [The note](notes/HUANG-2026-NEURAL-POMDP.md) preserves the full-reset occupancy construction, conditional policy-evaluation tools and precise neural approximation limits. A source-grounded actual-data conditional model supplies a constructive alternative to infeasible suffix restarts, with subsequent planning possible after freezing a learned reference model. Two necessary approximation dependencies were scoped, without starting a historical full-reading queue. No global scan was repeated. The new constructive emphasis47485ff is retained for subsequent selection. Zhang2607.27132v1 remains prepared, with root body/proofs unread until a fresh request/owner check.
+
 ### November 26, 2026 · Overlapping histories reveal a relation between unobserved values
 
 Cached Abbe–Boix v2 and Hamming's 1950 original. Their percolation and syndrome constructions help price two separate parts of a learned predictor. Three observed sides of a raw-history square can predict the fourth. A nonlinear compression of the resulting function can beat every equal-width linear sketch for noisy future forecasts. Marked the June 2020 journal edition of the percolation paper separately at abstract-level coverage. The next constructive test fits reusable history values directly to full-vocabulary word residuals. [Primary source connection](mathematical_instruments.md#learning-relative-signs-and-coding-the-learned-table) · [Unobserved-transition results](../research/frontier/EVIDENCE.md#arbitrary-history-tables-learned-from-observed-and-unobserved-transitions)
