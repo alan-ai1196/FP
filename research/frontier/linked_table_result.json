@@ -1,0 +1,1508 @@
+{
+  "registration": "6b2b606",
+  "repetitions": 32,
+  "rational_checks": {
+    "raw_densities": 4096,
+    "complete_table_posterior_checks": 31
+  },
+  "memory_codes": [
+    {
+      "M": 5,
+      "retained_bits": 26,
+      "reliability": "0.25",
+      "hamming_exact_average_excess": 0.007117778484860583,
+      "all_linear_packets_proved_excess_floor": 0.002467495500153379,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 5,
+      "retained_bits": 26,
+      "reliability": "0.5625",
+      "hamming_exact_average_excess": 0.03935721569189076,
+      "all_linear_packets_proved_excess_floor": 0.013111395394089873,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 7,
+      "retained_bits": 120,
+      "reliability": "0.25",
+      "hamming_exact_average_excess": 0.0019399659264709799,
+      "all_linear_packets_proved_excess_floor": 0.0008636234250536826,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 7,
+      "retained_bits": 120,
+      "reliability": "0.5625",
+      "hamming_exact_average_excess": 0.010836249583832608,
+      "all_linear_packets_proved_excess_floor": 0.004588988387931456,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 16,
+      "retained_bits": 65519,
+      "reliability": "0.25",
+      "hamming_exact_average_excess": 3.897076845797955e-06,
+      "all_linear_packets_proved_excess_floor": 3.855461718989655e-06,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 16,
+      "retained_bits": 65519,
+      "reliability": "0.5625",
+      "hamming_exact_average_excess": 2.1850541822664025e-05,
+      "all_linear_packets_proved_excess_floor": 2.0486555303265427e-05,
+      "hamming_beats_every_linear_packet_certified": false
+    },
+    {
+      "M": 24,
+      "retained_bits": 16777191,
+      "reliability": "0.25",
+      "hamming_exact_average_excess": 1.522378666747631e-08,
+      "all_linear_packets_proved_excess_floor": 2.2590596009705006e-08,
+      "hamming_beats_every_linear_packet_certified": true
+    },
+    {
+      "M": 24,
+      "retained_bits": 16777191,
+      "reliability": "0.5625",
+      "hamming_exact_average_excess": 8.535897949597553e-08,
+      "all_linear_packets_proved_excess_floor": 1.2003840998007086e-07,
+      "hamming_beats_every_linear_packet_certified": true
+    },
+    {
+      "M": 32,
+      "retained_bits": 4294967263,
+      "reliability": "0.25",
+      "hamming_exact_average_excess": 5.946792933848153e-11,
+      "all_linear_packets_proved_excess_floor": 1.1765935421721358e-10,
+      "hamming_beats_every_linear_packet_certified": true
+    },
+    {
+      "M": 32,
+      "retained_bits": 4294967263,
+      "reliability": "0.5625",
+      "hamming_exact_average_excess": 3.334335945377148e-10,
+      "all_linear_packets_proved_excess_floor": 6.252000519795357e-10,
+      "hamming_beats_every_linear_packet_certified": true
+    }
+  ],
+  "results": [
+    {
+      "memory": 5,
+      "response_strength": 0.5,
+      "source_has_structure": true,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 62.5625,
+          "mean_forest_edges": 30.90625,
+          "mean_spectral_coordinate_checks": 204.0,
+          "mean_spectral_correct_entries_up_to_flip": 21.28125,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 19,
+          "full_mean_gain": {
+            "direct_KT": -0.0695448249086191,
+            "direct_known_strength": 0.005367066223655381,
+            "square": 0.0063123566220515594,
+            "forest": 0.005393716953842431,
+            "spectral_refined": -0.010943288482851898,
+            "forest_if_detected": 0.003113691314499444
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.06492942896426654,
+            "direct_known_strength": 0.0058028753360880835,
+            "square": 0.005975528765111546,
+            "forest": 0.004648267168490894,
+            "spectral_refined": -0.014595606175096183,
+            "forest_if_detected": 0.00302511540952929
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 205.0,
+          "mean_spectral_correct_entries_up_to_flip": 31.6875,
+          "exact_spectral_table_runs": 26,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.014365213154688873,
+            "direct_known_strength": 0.023111955936042074,
+            "square": 0.025758181286730658,
+            "forest": 0.026248810011247174,
+            "spectral_refined": 0.029837956383231837,
+            "forest_if_detected": 0.026248810011247174
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.01572219818553084,
+            "direct_known_strength": 0.024511796424848818,
+            "square": 0.026692911587127274,
+            "forest": 0.026774887081786162,
+            "spectral_refined": 0.029303470867293655,
+            "forest_if_detected": 0.026774887081786162
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 179.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.02958478882498066,
+            "direct_known_strength": 0.03158394207344972,
+            "square": 0.031583942401963244,
+            "forest": 0.031583942401963244,
+            "spectral_refined": 0.03158394240196325,
+            "forest_if_detected": 0.031583942401963244
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.029457561102443554,
+            "direct_known_strength": 0.031583942401946244,
+            "square": 0.03158394240196326,
+            "forest": 0.03158394240196326,
+            "spectral_refined": 0.03158394240196326,
+            "forest_if_detected": 0.03158394240196326
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.5,
+      "source_has_structure": true,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 200.5,
+          "mean_visible_distinct_arcs": 48.90625,
+          "mean_forest_edges": 30.5625,
+          "mean_spectral_coordinate_checks": 183.0,
+          "mean_spectral_correct_entries_up_to_flip": 20.34375,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 18,
+          "full_mean_gain": {
+            "direct_KT": -0.0553415123226858,
+            "direct_known_strength": 0.004097687243886113,
+            "square": 0.005064047975213488,
+            "forest": 0.004854984145870395,
+            "spectral_refined": -0.013063414362740045,
+            "forest_if_detected": 0.002704186246217653
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.00026179529021644413,
+            "forest": 0.00027900575316482546,
+            "spectral_refined": -0.02542784596477679,
+            "forest_if_detected": 0.00010743671395321413
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 1600.15625,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 196.0,
+          "mean_spectral_correct_entries_up_to_flip": 29.90625,
+          "exact_spectral_table_runs": 15,
+          "collision_declares_signal_runs": 31,
+          "full_mean_gain": {
+            "direct_KT": 0.010925982301604003,
+            "direct_known_strength": 0.017750000468106396,
+            "square": 0.02041099716798943,
+            "forest": 0.023634734360688824,
+            "spectral_refined": 0.024350571752933106,
+            "forest_if_detected": 0.023033218902489213
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.010816273341331685,
+            "forest": 0.01690666698714041,
+            "spectral_refined": 0.018471231077613046,
+            "forest_if_detected": 0.016647212275168237
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 12791.65625,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 176.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.023140947333821132,
+            "direct_known_strength": 0.024674954673023986,
+            "square": 0.031583941744943826,
+            "forest": 0.031583942401963244,
+            "spectral_refined": 0.03158394240196325,
+            "forest_if_detected": 0.031583942401963244
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.0315839409002045,
+            "forest": 0.03158394240196326,
+            "spectral_refined": 0.03158394240196326,
+            "forest_if_detected": 0.03158394240196326
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.5,
+      "source_has_structure": false,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 63.21875,
+          "mean_forest_edges": 30.875,
+          "mean_spectral_coordinate_checks": 203.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 5,
+          "full_mean_gain": {
+            "direct_KT": -0.10611912285693509,
+            "direct_known_strength": -0.0054733759201230515,
+            "square": -0.006457141927886906,
+            "forest": -0.005973435812198379,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.001111158007857897
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.10882175394722182,
+            "direct_known_strength": -0.005745064795736091,
+            "square": -0.005867927280368239,
+            "forest": -0.0052952767607071,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.001133724977759833
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 30.9375,
+          "mean_spectral_coordinate_checks": 209.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.015597288880136256,
+            "direct_known_strength": -0.016649198613835126,
+            "square": -0.01784623627822935,
+            "forest": -0.01876051285285984,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.016572164383660208,
+            "direct_known_strength": -0.01683715453606492,
+            "square": -0.01777518620571979,
+            "forest": -0.01825415991820256,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 30.96875,
+          "mean_spectral_coordinate_checks": 220.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.0019008877731986795,
+            "direct_known_strength": -0.025903482628472946,
+            "square": -0.026205489743793255,
+            "forest": -0.03109666808130384,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.0018384797927557812,
+            "direct_known_strength": -0.026229355256093725,
+            "square": -0.026322764784340758,
+            "forest": -0.031079595057380265,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.5,
+      "source_has_structure": false,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 198.125,
+          "mean_visible_distinct_arcs": 49.34375,
+          "mean_forest_edges": 30.0625,
+          "mean_spectral_coordinate_checks": 185.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 6,
+          "full_mean_gain": {
+            "direct_KT": -0.08231436418098032,
+            "direct_known_strength": -0.004216642996055782,
+            "square": -0.0051174965287223515,
+            "forest": -0.005086684888726932,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.0011297702368525352
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.00016350966821045398,
+            "forest": -0.000243266702406045,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -8.978281755745815e-05
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 1601.03125,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 30.6875,
+          "mean_spectral_coordinate_checks": 198.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.011972127921210584,
+            "direct_known_strength": -0.012966071059070923,
+            "square": -0.01441671242002028,
+            "forest": -0.014936595914896997,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.004363176711456695,
+            "forest": -0.0057534156845154664,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 12826.78125,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 30.9375,
+          "mean_spectral_coordinate_checks": 199.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.0014987203185333527,
+            "direct_known_strength": -0.020165811166202446,
+            "square": -0.024047225881584415,
+            "forest": -0.028431080582635892,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.016654791572271017,
+            "forest": -0.025505042123888544,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.75,
+      "source_has_structure": true,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 63.0625,
+          "mean_forest_edges": 30.96875,
+          "mean_spectral_coordinate_checks": 177.0,
+          "mean_spectral_correct_entries_up_to_flip": 31.5,
+          "exact_spectral_table_runs": 22,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.0853100473092792,
+            "direct_known_strength": 0.11079393187939526,
+            "square": 0.12469588917510968,
+            "forest": 0.1378043391476355,
+            "spectral_refined": 0.14894581592578768,
+            "forest_if_detected": 0.1378043391476355
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.08904007893872148,
+            "direct_known_strength": 0.11467088878056904,
+            "square": 0.12674754569953,
+            "forest": 0.1414926072921612,
+            "spectral_refined": 0.15663768615927623,
+            "forest_if_detected": 0.1414926072921612
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 192.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.15265406981856494,
+            "direct_known_strength": 0.16745042553999645,
+            "square": 0.1678258597108746,
+            "forest": 0.1678258610443501,
+            "spectral_refined": 0.1678258610443504,
+            "forest_if_detected": 0.1678258610443501
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.1531865234299652,
+            "direct_known_strength": 0.16782577685460337,
+            "square": 0.16782586104435027,
+            "forest": 0.16782586104435004,
+            "spectral_refined": 0.16782586104435043,
+            "forest_if_detected": 0.16782586104435004
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 183.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.16584727064960142,
+            "direct_known_strength": 0.1678258610443504,
+            "square": 0.1678258610443504,
+            "forest": 0.1678258610443504,
+            "spectral_refined": 0.1678258610443504,
+            "forest_if_detected": 0.1678258610443504
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.16598423135149942,
+            "direct_known_strength": 0.16782586104435043,
+            "square": 0.16782586104435043,
+            "forest": 0.16782586104435043,
+            "spectral_refined": 0.16782586104435043,
+            "forest_if_detected": 0.16782586104435043
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.75,
+      "source_has_structure": true,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 198.53125,
+          "mean_visible_distinct_arcs": 49.28125,
+          "mean_forest_edges": 30.875,
+          "mean_spectral_coordinate_checks": 180.0,
+          "mean_spectral_correct_entries_up_to_flip": 29.15625,
+          "exact_spectral_table_runs": 8,
+          "collision_declares_signal_runs": 30,
+          "full_mean_gain": {
+            "direct_KT": 0.06583253004143388,
+            "direct_known_strength": 0.0857096749586458,
+            "square": 0.09753519643715763,
+            "forest": 0.10833307745157586,
+            "spectral_refined": 0.10069681173390516,
+            "forest_if_detected": 0.1010182121278935
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.04536507062641481,
+            "forest": 0.06579283800903091,
+            "spectral_refined": 0.04955086940213737,
+            "forest_if_detected": 0.06162490701384247
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 1601.53125,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 165.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.11914451781826008,
+            "direct_known_strength": 0.13073853685305198,
+            "square": 0.16707502797956592,
+            "forest": 0.16782586062233473,
+            "spectral_refined": 0.1678258610443504,
+            "forest_if_detected": 0.16782586062233473
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.16610967368332885,
+            "forest": 0.167825860079994,
+            "spectral_refined": 0.16782586104435043,
+            "forest_if_detected": 0.167825860079994
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 12801.0,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 176.0,
+          "mean_spectral_correct_entries_up_to_flip": 32.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.12953822004146093,
+            "direct_known_strength": 0.13111395394089875,
+            "square": 0.1678258610443504,
+            "forest": 0.1678258610443504,
+            "spectral_refined": 0.1678258610443504,
+            "forest_if_detected": 0.1678258610443504
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.16782586104435043,
+            "forest": 0.16782586104435043,
+            "spectral_refined": 0.16782586104435043,
+            "forest_if_detected": 0.16782586104435043
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.75,
+      "source_has_structure": false,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 62.90625,
+          "mean_forest_edges": 30.5625,
+          "mean_spectral_coordinate_checks": 200.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.11443017276507561,
+            "direct_known_strength": -0.08614173438715127,
+            "square": -0.09282389446669352,
+            "forest": -0.09371933743136646,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.11951057911934582,
+            "direct_known_strength": -0.08665517979399918,
+            "square": -0.08952011190844822,
+            "forest": -0.08958633427141158,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 223.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.01555142421798298,
+            "direct_known_strength": -0.14671010624508365,
+            "square": -0.15317777644077368,
+            "forest": -0.18003487304293822,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.0155670952839553,
+            "direct_known_strength": -0.14624364367065876,
+            "square": -0.15476278415144973,
+            "forest": -0.17939205412521358,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 64.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 215.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.0020682601688002365,
+            "direct_known_strength": -0.17439669888029757,
+            "square": -0.17815852231104762,
+            "forest": -0.18982437492907808,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.0021156490079359633,
+            "direct_known_strength": -0.1784553340710546,
+            "square": -0.17797454151295167,
+            "forest": -0.19007894246249984,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 5,
+      "response_strength": 0.75,
+      "source_has_structure": false,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 14,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 1792,
+          "mean_available_pairs": 198.875,
+          "mean_visible_distinct_arcs": 49.125,
+          "mean_forest_edges": 29.90625,
+          "mean_spectral_coordinate_checks": 181.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.0882872335827187,
+            "direct_known_strength": -0.06718591380721395,
+            "square": -0.07418168997083571,
+            "forest": -0.07563181214848072,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.017210925526272437,
+            "forest": -0.023405814951264977,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 14336,
+          "mean_available_pairs": 1599.8125,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 30.875,
+          "mean_spectral_coordinate_checks": 205.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.01214612212461776,
+            "direct_known_strength": -0.11471930919212706,
+            "square": -0.13524532782245197,
+            "forest": -0.16218107740661408,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.08712140433441479,
+            "forest": -0.14033133991211905,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 114688,
+          "mean_available_pairs": 12797.8125,
+          "mean_visible_distinct_arcs": 50.0,
+          "mean_forest_edges": 31.0,
+          "mean_spectral_coordinate_checks": 196.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.0016054619483142445,
+            "direct_known_strength": -0.13535959455225438,
+            "square": -0.1670905805867606,
+            "forest": -0.18817689323264508,
+            "spectral_refined": -0.1901957352780242,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.14335784196839071,
+            "forest": -0.1865294585397575,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.5,
+      "source_has_structure": true,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 161.3125,
+          "mean_forest_edges": 119.375,
+          "mean_spectral_coordinate_checks": 840.0,
+          "mean_spectral_correct_entries_up_to_flip": 70.65625,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 20,
+          "full_mean_gain": {
+            "direct_KT": -0.06614259670815925,
+            "direct_known_strength": 0.0019279619554391514,
+            "square": 0.002136338765108828,
+            "forest": 0.0019527966551963658,
+            "spectral_refined": -0.021481561238766503,
+            "forest_if_detected": 0.0013514609023677485
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.06906576074316476,
+            "direct_known_strength": 0.002145850231281607,
+            "square": 0.002154629517168949,
+            "forest": 0.002022453104948993,
+            "spectral_refined": -0.021133570937798142,
+            "forest_if_detected": 0.0013437018281894728
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 255.96875,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 1044.0,
+          "mean_spectral_correct_entries_up_to_flip": 78.75,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 31,
+          "full_mean_gain": {
+            "direct_KT": -0.031780827524332575,
+            "direct_known_strength": 0.011552504682904792,
+            "square": 0.012590774814687724,
+            "forest": 0.010290328138647767,
+            "spectral_refined": -0.0031798863638497184,
+            "forest_if_detected": 0.010079409755981702
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.03335690681490189,
+            "direct_known_strength": 0.012163049830591396,
+            "square": 0.013165186327317665,
+            "forest": 0.010757700675018796,
+            "spectral_refined": -0.003947275380146993,
+            "forest_if_detected": 0.010402011280258406
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 256.0,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 916.0,
+          "mean_spectral_correct_entries_up_to_flip": 128.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.023571646190236335,
+            "direct_known_strength": 0.029437849361748612,
+            "square": 0.031062107501438396,
+            "forest": 0.031460217281498254,
+            "spectral_refined": 0.03158394240196326,
+            "forest_if_detected": 0.031460217281498254
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.02368995898780636,
+            "direct_known_strength": 0.029667332250873105,
+            "square": 0.0313308226317173,
+            "forest": 0.031520321008707754,
+            "spectral_refined": 0.03158394240196325,
+            "forest_if_detected": 0.031520321008707754
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.5,
+      "source_has_structure": true,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 192.125,
+          "mean_visible_distinct_arcs": 121.09375,
+          "mean_forest_edges": 100.59375,
+          "mean_spectral_coordinate_checks": 808.0,
+          "mean_spectral_correct_entries_up_to_flip": 68.5,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 16,
+          "full_mean_gain": {
+            "direct_KT": -0.04941573277817403,
+            "direct_known_strength": 0.0014082638525506372,
+            "square": 0.0016168570277921904,
+            "forest": 0.0015995343949249383,
+            "spectral_refined": -0.024505858449783417,
+            "forest_if_detected": 0.0008989183185517302
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 1.9708873538738145e-05,
+            "forest": 3.558659289321062e-05,
+            "spectral_refined": -0.032848573902189565,
+            "forest_if_detected": 2.163497008802576e-05
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 1551.78125,
+          "mean_visible_distinct_arcs": 193.96875,
+          "mean_forest_edges": 126.25,
+          "mean_spectral_coordinate_checks": 952.0,
+          "mean_spectral_correct_entries_up_to_flip": 74.8125,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 31,
+          "full_mean_gain": {
+            "direct_KT": -0.023702201655098523,
+            "direct_known_strength": 0.008606766052058436,
+            "square": 0.009167835922572094,
+            "forest": 0.008695439252903139,
+            "spectral_refined": -0.0070459982624692784,
+            "forest_if_detected": 0.00853777571828673
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.0016804284674089218,
+            "forest": 0.0016489472267036923,
+            "spectral_refined": -0.02300024723432205,
+            "forest_if_detected": 0.0016338383656613552
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 12420.8125,
+          "mean_visible_distinct_arcs": 194.0,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 876.0,
+          "mean_spectral_correct_entries_up_to_flip": 127.78125,
+          "exact_spectral_table_runs": 27,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.01783423424787698,
+            "direct_known_strength": 0.02225279233224028,
+            "square": 0.028453791655464876,
+            "forest": 0.03106765651222523,
+            "spectral_refined": 0.031240980862569587,
+            "forest_if_detected": 0.03106765651222523
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.025529082959039384,
+            "forest": 0.03077310182930012,
+            "spectral_refined": 0.031004629068559282,
+            "forest_if_detected": 0.03077310182930012
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.5,
+      "source_has_structure": false,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 161.625,
+          "mean_forest_edges": 117.5,
+          "mean_spectral_coordinate_checks": 832.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 10,
+          "full_mean_gain": {
+            "direct_KT": -0.08866190297542015,
+            "direct_known_strength": -0.0017412558485779136,
+            "square": -0.0019864703612581013,
+            "forest": -0.0018674980460654275,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.0006180778482739895
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.08692139263961074,
+            "direct_known_strength": -0.0017247933901037883,
+            "square": -0.0017304290959610186,
+            "forest": -0.0016921651520594456,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.0006314468665264354
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 255.84375,
+          "mean_forest_edges": 126.875,
+          "mean_spectral_coordinate_checks": 1032.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.06627676569653984,
+            "direct_known_strength": -0.00892235420412554,
+            "square": -0.009403860632924229,
+            "forest": -0.008265487291784699,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.06495058997926559,
+            "direct_known_strength": -0.009015715588816886,
+            "square": -0.009301547822330083,
+            "forest": -0.008335501121842618,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 256.0,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 1136.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.00799145866663087,
+            "direct_known_strength": -0.02067746258948331,
+            "square": -0.021439334441423624,
+            "forest": -0.022976374425980335,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.007679522459173305,
+            "direct_known_strength": -0.020622446083019094,
+            "square": -0.021403884728620568,
+            "forest": -0.02292890316682218,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.5,
+      "source_has_structure": false,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 193.6875,
+          "mean_visible_distinct_arcs": 122.6875,
+          "mean_forest_edges": 100.8125,
+          "mean_spectral_coordinate_checks": 840.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 8,
+          "full_mean_gain": {
+            "direct_KT": -0.06761062819551443,
+            "direct_known_strength": -0.0013235324494121521,
+            "square": -0.001564850375008784,
+            "forest": -0.001564549341432558,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -0.00041767602819430785
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -5.145077506628673e-06,
+            "forest": -7.105181033602071e-06,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": -3.273457263525096e-06
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 1549.6875,
+          "mean_visible_distinct_arcs": 193.90625,
+          "mean_forest_edges": 125.90625,
+          "mean_spectral_coordinate_checks": 944.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.050546544685936466,
+            "direct_known_strength": -0.006738860584958949,
+            "square": -0.0070945666526300005,
+            "forest": -0.006786444394053176,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.0006871385011789642,
+            "forest": -0.0006316902498561539,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 12398.5625,
+          "mean_visible_distinct_arcs": 194.0,
+          "mean_forest_edges": 126.9375,
+          "mean_spectral_coordinate_checks": 1012.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.006131574321049835,
+            "direct_known_strength": -0.015682963928752125,
+            "square": -0.017847203760199576,
+            "forest": -0.018150436104238086,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.00856078757743316,
+            "forest": -0.010116307470129988,
+            "spectral_refined": -0.03226926056878559,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.75,
+      "source_has_structure": true,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 162.34375,
+          "mean_forest_edges": 120.09375,
+          "mean_spectral_coordinate_checks": 816.0,
+          "mean_spectral_correct_entries_up_to_flip": 79.03125,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 25,
+          "full_mean_gain": {
+            "direct_KT": 0.029107976429909373,
+            "direct_known_strength": 0.0413519356714528,
+            "square": 0.04350481516257697,
+            "forest": 0.04020044344443609,
+            "spectral_refined": -0.06153172409967085,
+            "forest_if_detected": 0.03226845641165779
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0299149150511198,
+            "direct_known_strength": 0.04215254240741423,
+            "square": 0.04359513057410873,
+            "forest": 0.04171216187112597,
+            "spectral_refined": -0.0581030898606965,
+            "forest_if_detected": 0.03403944555708666
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 255.90625,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 932.0,
+          "mean_spectral_correct_entries_up_to_flip": 127.9375,
+          "exact_spectral_table_runs": 30,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.11266615980453991,
+            "direct_known_strength": 0.14531174860532559,
+            "square": 0.15768442380010442,
+            "forest": 0.16548310096690572,
+            "spectral_refined": 0.16747623057919186,
+            "forest_if_detected": 0.16548310096690572
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.11018091749431286,
+            "direct_known_strength": 0.14307842030787055,
+            "square": 0.15630489152889818,
+            "forest": 0.16525712490303468,
+            "spectral_refined": 0.16782586104435046,
+            "forest_if_detected": 0.16525712490303468
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 256.0,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 868.0,
+          "mean_spectral_correct_entries_up_to_flip": 128.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.15971253208546457,
+            "direct_known_strength": 0.16782585685436785,
+            "square": 0.16782586104229402,
+            "forest": 0.16782586104435043,
+            "spectral_refined": 0.16782586104435046,
+            "forest_if_detected": 0.16782586104435043
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.15961471889103063,
+            "direct_known_strength": 0.16782586104434605,
+            "square": 0.16782586104435046,
+            "forest": 0.16782586104435046,
+            "spectral_refined": 0.16782586104435046,
+            "forest_if_detected": 0.16782586104435046
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.75,
+      "source_has_structure": true,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 194.96875,
+          "mean_visible_distinct_arcs": 123.375,
+          "mean_forest_edges": 105.5,
+          "mean_spectral_coordinate_checks": 812.0,
+          "mean_spectral_correct_entries_up_to_flip": 72.78125,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 26,
+          "full_mean_gain": {
+            "direct_KT": 0.021862957940966293,
+            "direct_known_strength": 0.03114311680715717,
+            "square": 0.03264795142663031,
+            "forest": 0.03299193586770899,
+            "spectral_refined": -0.08408288910239856,
+            "forest_if_detected": 0.02641603431802601
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.0023589504900229053,
+            "forest": 0.002404518146214966,
+            "spectral_refined": -0.1735939273840431,
+            "forest_if_detected": 0.0012860142563779094
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 1558.875,
+          "mean_visible_distinct_arcs": 193.90625,
+          "mean_forest_edges": 126.90625,
+          "mean_spectral_coordinate_checks": 808.0,
+          "mean_spectral_correct_entries_up_to_flip": 126.53125,
+          "exact_spectral_table_runs": 17,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.08598171884888602,
+            "direct_known_strength": 0.11065994368701318,
+            "square": 0.13713998564331975,
+            "forest": 0.1568138601128879,
+            "spectral_refined": 0.15768657755475196,
+            "forest_if_detected": 0.1568138601128879
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.108978016068844,
+            "forest": 0.14878913359695264,
+            "spectral_refined": 0.1483367822122857,
+            "forest_if_detected": 0.14878913359695264
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 12409.96875,
+          "mean_visible_distinct_arcs": 194.0,
+          "mean_forest_edges": 127.0,
+          "mean_spectral_coordinate_checks": 784.0,
+          "mean_spectral_correct_entries_up_to_flip": 128.0,
+          "exact_spectral_table_runs": 32,
+          "collision_declares_signal_runs": 32,
+          "full_mean_gain": {
+            "direct_KT": 0.1210558423540431,
+            "direct_known_strength": 0.12718053113269032,
+            "square": 0.16782585266644384,
+            "forest": 0.16782586104435043,
+            "spectral_refined": 0.16782586104435046,
+            "forest_if_detected": 0.16782586104435043
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": 0.1678258437522727,
+            "forest": 0.16782586104435046,
+            "spectral_refined": 0.16782586104435046,
+            "forest_if_detected": 0.16782586104435046
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.75,
+      "source_has_structure": false,
+      "hide_designated_outcomes": false,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 256.0,
+          "mean_visible_distinct_arcs": 162.5625,
+          "mean_forest_edges": 118.1875,
+          "mean_spectral_coordinate_checks": 836.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.08981424164471599,
+            "direct_known_strength": -0.0381632141029766,
+            "square": -0.04013622873610561,
+            "forest": -0.037198716443600344,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.08820612187774513,
+            "direct_known_strength": -0.03715743918824514,
+            "square": -0.03805175723968412,
+            "forest": -0.036902154870666226,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 2048.0,
+          "mean_visible_distinct_arcs": 255.90625,
+          "mean_forest_edges": 126.90625,
+          "mean_spectral_coordinate_checks": 1060.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.06590617270961141,
+            "direct_known_strength": -0.10942760235876575,
+            "square": -0.11325806613333131,
+            "forest": -0.11307899579905695,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.0696973770136682,
+            "direct_known_strength": -0.11122453995088527,
+            "square": -0.11471499364696064,
+            "forest": -0.11506496705433987,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 16384.0,
+          "mean_visible_distinct_arcs": 256.0,
+          "mean_forest_edges": 126.96875,
+          "mean_spectral_coordinate_checks": 1116.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.00774638698288136,
+            "direct_known_strength": -0.15932698381790697,
+            "square": -0.16288793636042823,
+            "forest": -0.18784884555033937,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": -0.007811942429331271,
+            "direct_known_strength": -0.16074363024302718,
+            "square": -0.16307466496534606,
+            "forest": -0.18794598079658353,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "memory": 7,
+      "response_strength": 0.75,
+      "source_has_structure": false,
+      "hide_designated_outcomes": true,
+      "designated_directed_edges": 62,
+      "training": [
+        {
+          "subjects": 256,
+          "underlying_raw_tokens": 2304,
+          "mean_available_pairs": 196.4375,
+          "mean_visible_distinct_arcs": 124.21875,
+          "mean_forest_edges": 101.0,
+          "mean_spectral_coordinate_checks": 824.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 1,
+          "full_mean_gain": {
+            "direct_KT": -0.0684518215024496,
+            "direct_known_strength": -0.029164146799573486,
+            "square": -0.030734277508737133,
+            "forest": -0.030836958338357527,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": -0.000975444671571374
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.0016886142780002831,
+            "forest": -0.0018172921167993402,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": -3.614061042089044e-05
+          }
+        },
+        {
+          "subjects": 2048,
+          "underlying_raw_tokens": 18432,
+          "mean_available_pairs": 1547.9375,
+          "mean_visible_distinct_arcs": 193.90625,
+          "mean_forest_edges": 125.78125,
+          "mean_spectral_coordinate_checks": 944.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.04902633921411364,
+            "direct_known_strength": -0.08249040908941073,
+            "square": -0.09213849359341257,
+            "forest": -0.08951804149109742,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.03710980933677394,
+            "forest": -0.037833176260369354,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        },
+        {
+          "subjects": 16384,
+          "underlying_raw_tokens": 147456,
+          "mean_available_pairs": 12401.40625,
+          "mean_visible_distinct_arcs": 194.0,
+          "mean_forest_edges": 126.84375,
+          "mean_spectral_coordinate_checks": 1040.0,
+          "exact_spectral_table_runs": 0,
+          "collision_declares_signal_runs": 0,
+          "full_mean_gain": {
+            "direct_KT": -0.005854432175777693,
+            "direct_known_strength": -0.12039688586842383,
+            "square": -0.1472829250403347,
+            "forest": -0.17682004460878037,
+            "spectral_refined": -0.19019573527802425,
+            "forest_if_detected": 0.0
+          },
+          "designated_mean_gain": {
+            "direct_KT": 0.0,
+            "direct_known_strength": 0.0,
+            "square": -0.1100644711882973,
+            "forest": -0.16747486445274057,
+            "spectral_refined": -0.19019573527802422,
+            "forest_if_detected": 0.0
+          }
+        }
+      ]
+    }
+  ]
+}
