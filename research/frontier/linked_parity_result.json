@@ -1,0 +1,2238 @@
+{
+  "registration": "9e7d752",
+  "memory": 8,
+  "repetitions": 32,
+  "nats_per_installed_bit": 0.002,
+  "exact_audit": {
+    "exact_source_word_densities": 5040,
+    "exact_pair_statistic_expectations": 336,
+    "exact_affine_packet_cells": 25,
+    "vector_likelihoods_against_independent_rational_evaluation": 896
+  },
+  "results": [
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": true,
+      "responses_per_task": 1,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 1152,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            -0.0006342745316178181,
+            -0.003534804422889222,
+            -0.030273847975949668
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 9216,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            -0.0006342745316178181,
+            -0.003534804422889222,
+            -0.030273847975949668
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 73728,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            -0.0006342745316178181,
+            -0.003534804422889222,
+            -0.030273847975949668
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": true,
+      "responses_per_task": 2,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 640,
+          "adjacent_pairs": 64,
+          "mask_installed": 5,
+          "correct_installed_mask": 2,
+          "mask_gain": -0.001051246778200946,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.012900654012423221,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            -7.306473988272111e-05,
+            -0.0010405386818443472,
+            -0.014310547233262479
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            7,
+            1,
+            2,
+            1,
+            2,
+            6,
+            2,
+            1,
+            10
+          ],
+          "joint_gain": -0.006854634477640091,
+          "joint_priced_gain": -0.01435463447764009,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            3,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 5.397646406585517e-05,
+          "greedy_priced_gain": -7.102353593414484e-05
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 5120,
+          "adjacent_pairs": 512,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 30,
+          "correct_walsh_direction": 30,
+          "walsh_gain": 0.028855214277206106,
+          "conditional_table_gain": -0.06688916718931286,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            5,
+            2,
+            1,
+            0,
+            1,
+            0,
+            0,
+            2,
+            21
+          ],
+          "joint_gain": 0.02180649148260549,
+          "joint_priced_gain": 0.011618991482605492,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            16,
+            13,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0001619293921975655,
+          "greedy_priced_gain": -8.80706078024345e-05
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 40960,
+          "adjacent_pairs": 4096,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.0314207348490338,
+          "conditional_table_gain": -0.034665647256686034,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            30
+          ],
+          "joint_gain": 0.029625367848716513,
+          "joint_priced_gain": 0.016500367848716516,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            13,
+            19,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.00014650754532160687,
+          "greedy_priced_gain": 0.00014650754532160687
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": true,
+      "responses_per_task": 4,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 384,
+          "adjacent_pairs": 96,
+          "mask_installed": 20,
+          "correct_installed_mask": 15,
+          "mask_gain": 0.00976290103704753,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.019365931440456546,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.0004257884083262544,
+            0.0009548739109915539,
+            0.0076389912879324395
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            4,
+            0,
+            1,
+            2,
+            3,
+            1,
+            4,
+            6,
+            11
+          ],
+          "joint_gain": 0.0010043827706265036,
+          "joint_priced_gain": -0.008433117229373496,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            23,
+            4,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "greedy_gain": 0.0009856596880167769,
+          "greedy_priced_gain": 0.00017315968801677697
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 3072,
+          "adjacent_pairs": 768,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 31,
+          "correct_walsh_direction": 31,
+          "walsh_gain": 0.029995940386412394,
+          "conditional_table_gain": -0.07971307238407277,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            26
+          ],
+          "joint_gain": 0.026155452301625824,
+          "joint_priced_gain": 0.014405452301625824,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            21,
+            9,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0001619293921975655,
+          "greedy_priced_gain": -0.0001505706078024345
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 24576,
+          "adjacent_pairs": 6144,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.03146334745728155,
+          "conditional_table_gain": -0.011278816026013041,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.03158394240196326,
+          "joint_priced_gain": 0.01758394240196326,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            19,
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.00010024200469373103,
+          "greedy_priced_gain": 0.00010024200469373103
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": true,
+      "responses_per_task": 16,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 192,
+          "adjacent_pairs": 120,
+          "mask_installed": 30,
+          "correct_installed_mask": 30,
+          "mask_gain": 0.029609946001840554,
+          "walsh_installed": 6,
+          "correct_walsh_direction": 6,
+          "walsh_gain": 0.0033596741191387015,
+          "conditional_table_gain": -0.021982868745625838,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000862284913009108,
+            0.003449139652036432,
+            0.027593117216291464
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            7,
+            0,
+            1,
+            1,
+            3,
+            0,
+            1,
+            4,
+            15
+          ],
+          "joint_gain": 0.017257046654197698,
+          "joint_priced_gain": 0.008132046654197696,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            0,
+            1,
+            3,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "greedy_gain": 0.0010949511281930621,
+          "greedy_priced_gain": 0.00021995112819306223
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 1536,
+          "adjacent_pairs": 960,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.030835203173909857,
+          "conditional_table_gain": -0.08293822885237377,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            1,
+            3,
+            24
+          ],
+          "joint_gain": 0.025430625498455768,
+          "joint_priced_gain": 0.013493125498455768,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            18,
+            14,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.00010795292813171033,
+          "greedy_priced_gain": 0.00010795292813171033
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 12288,
+          "adjacent_pairs": 7680,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.03158394240196326,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.03149248476283571,
+          "conditional_table_gain": -0.004330937066656734,
+          "packet_gains_if_installed": [
+            0.000246749550015338,
+            0.000986998200061352,
+            0.003947992800245408,
+            0.031583942401963265
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.03158394240196326,
+          "joint_priced_gain": 0.01758394240196326,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            8,
+            24,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.00018506216251150344,
+          "greedy_priced_gain": 0.00018506216251150344
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": false,
+      "responses_per_task": 1,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 1152,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 9216,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 73728,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": false,
+      "responses_per_task": 2,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 640,
+          "adjacent_pairs": 64,
+          "mask_installed": 1,
+          "correct_installed_mask": 0,
+          "mask_gain": -0.0010084143927745497,
+          "walsh_installed": 1,
+          "correct_walsh_direction": 0,
+          "walsh_gain": -0.004994804455805283,
+          "conditional_table_gain": -0.016910809287171716,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            10,
+            1,
+            0,
+            0,
+            3,
+            3,
+            6,
+            5,
+            4
+          ],
+          "joint_gain": -0.008642426475575633,
+          "joint_priced_gain": -0.015454926475575632,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            29,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -3.939118721775585e-05,
+          "greedy_priced_gain": -0.00016439118721775584
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 5120,
+          "adjacent_pairs": 512,
+          "mask_installed": 1,
+          "correct_installed_mask": 0,
+          "mask_gain": -0.0010084143927745497,
+          "walsh_installed": 1,
+          "correct_walsh_direction": 0,
+          "walsh_gain": -0.000681769253349187,
+          "conditional_table_gain": -0.09032086694344224,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            2,
+            2,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "joint_gain": -0.00121324856630688,
+          "joint_priced_gain": -0.00215074856630688,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            28,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -4.726942466130702e-05,
+          "greedy_priced_gain": -0.000172269424661307
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 40960,
+          "adjacent_pairs": 4096,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.06524308699752754,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            23,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -7.090413699196052e-05,
+          "joint_priced_gain": -7.090413699196052e-05,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            23,
+            9,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -7.090413699196052e-05,
+          "greedy_priced_gain": -7.090413699196052e-05
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": false,
+      "responses_per_task": 4,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 384,
+          "adjacent_pairs": 96,
+          "mask_installed": 4,
+          "correct_installed_mask": 0,
+          "mask_gain": -0.004033657571098199,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.024945746155069427,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            13,
+            1,
+            1,
+            1,
+            4,
+            3,
+            3,
+            2,
+            4
+          ],
+          "joint_gain": -0.006483789416042612,
+          "joint_priced_gain": -0.011608789416042613,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            29,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -3.939118721775584e-05,
+          "greedy_priced_gain": -0.00016439118721775584
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 3072,
+          "adjacent_pairs": 768,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 1,
+          "correct_walsh_direction": 0,
+          "walsh_gain": -0.00042521088279395586,
+          "conditional_table_gain": -0.10718480825879817,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            6,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -7.878237443551168e-05,
+          "joint_priced_gain": -0.0002037823744355117,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            6,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -7.878237443551168e-05,
+          "greedy_priced_gain": -0.0002037823744355117
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 24576,
+          "adjacent_pairs": 6144,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.044209858166829055,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -6.302589954840935e-05,
+          "joint_priced_gain": -6.302589954840935e-05,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -6.302589954840935e-05,
+          "greedy_priced_gain": -6.302589954840935e-05
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.5,
+      "source_has_signal": false,
+      "responses_per_task": 16,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 192,
+          "adjacent_pairs": 120,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.029936352530628457,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            20,
+            2,
+            2,
+            0,
+            2,
+            1,
+            3,
+            1,
+            1
+          ],
+          "joint_gain": -0.0025683054065976808,
+          "joint_priced_gain": -0.005068305406597681,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            28,
+            2,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -4.726942466130701e-05,
+          "greedy_priced_gain": -0.000172269424661307
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 1536,
+          "adjacent_pairs": 960,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.1138230284505509,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            20,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -9.453884932261402e-05,
+          "joint_priced_gain": -9.453884932261402e-05,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            20,
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -9.453884932261402e-05,
+          "greedy_priced_gain": -9.453884932261402e-05
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 12288,
+          "adjacent_pairs": 7680,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.03483017877113072,
+          "packet_gains_if_installed": [
+            -0.00025210359819363725,
+            -0.001008414392774549,
+            -0.004033657571098196,
+            -0.03226926056878557
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            19,
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.00010241708676616518,
+          "joint_priced_gain": -0.00010241708676616518,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            19,
+            13,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00010241708676616518,
+          "greedy_priced_gain": -0.00010241708676616518
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": true,
+      "responses_per_task": 1,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 1152,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            -0.0027969425410111375,
+            -0.019578901327850208,
+            -0.1901957352780243
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 9216,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            -0.0027969425410111375,
+            -0.019578901327850208,
+            -0.1901957352780243
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 73728,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            -0.0027969425410111375,
+            -0.019578901327850208,
+            -0.1901957352780243
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": true,
+      "responses_per_task": 2,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 640,
+          "adjacent_pairs": 64,
+          "mask_installed": 31,
+          "correct_installed_mask": 31,
+          "mask_gain": 0.16258130288671452,
+          "walsh_installed": 29,
+          "correct_walsh_direction": 29,
+          "walsh_gain": 0.14472328992604355,
+          "conditional_table_gain": 0.005678951671441817,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            6,
+            23
+          ],
+          "joint_gain": 0.13585596257123192,
+          "joint_priced_gain": 0.12279346257123191,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            4,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.00040973110606530865,
+          "greedy_priced_gain": 0.00022223110606530862
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 5120,
+          "adjacent_pairs": 512,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.16668852899566233,
+          "conditional_table_gain": 0.03125517686619578,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.16782586104435046,
+          "joint_priced_gain": 0.15382586104435045,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            11,
+            3,
+            9,
+            5,
+            1,
+            0,
+            1,
+            0,
+            2
+          ],
+          "greedy_gain": 0.013807938274400904,
+          "greedy_priced_gain": 0.011245438274400901
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 40960,
+          "adjacent_pairs": 4096,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.167715624130676,
+          "conditional_table_gain": 0.11156410032867191,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.16782586104435046,
+          "joint_priced_gain": 0.15382586104435045,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            5,
+            15,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ],
+          "greedy_gain": 0.042898846805037825,
+          "greedy_priced_gain": 0.039148846805037815
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": true,
+      "responses_per_task": 4,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 384,
+          "adjacent_pairs": 96,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 31,
+          "correct_walsh_direction": 31,
+          "walsh_gain": 0.15554107889858615,
+          "conditional_table_gain": 0.006743871408696232,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            29
+          ],
+          "joint_gain": 0.15307554122599934,
+          "joint_priced_gain": 0.13995054122599931,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            2,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "greedy_gain": 0.006719590139471062,
+          "greedy_priced_gain": 0.0059070901394710626
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 3072,
+          "adjacent_pairs": 768,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.16696123335509705,
+          "conditional_table_gain": 0.04103785930858726,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.16782586104435046,
+          "joint_priced_gain": 0.15382586104435045,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            9,
+            4,
+            4,
+            6,
+            0,
+            1,
+            0,
+            0,
+            8
+          ],
+          "greedy_gain": 0.04408706701262722,
+          "greedy_priced_gain": 0.039337067012627215
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 24576,
+          "adjacent_pairs": 6144,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.1677236675469922,
+          "conditional_table_gain": 0.1271566042860336,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.16782586104435046,
+          "joint_priced_gain": 0.15382586104435045,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            3,
+            23,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            5
+          ],
+          "greedy_gain": 0.02724711855334303,
+          "greedy_priced_gain": 0.024997118553343026
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": true,
+      "responses_per_task": 16,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 192,
+          "adjacent_pairs": 120,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 31,
+          "correct_walsh_direction": 30,
+          "walsh_gain": 0.1404166764611307,
+          "conditional_table_gain": 0.007577825695730487,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            4,
+            25
+          ],
+          "joint_gain": 0.14262739802133398,
+          "joint_priced_gain": 0.12975239802133398,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            2,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "greedy_gain": 0.006555697697044939,
+          "greedy_priced_gain": 0.005493197697044938
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 1536,
+          "adjacent_pairs": 960,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.16683263926752978,
+          "conditional_table_gain": 0.048137778679222636,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            31
+          ],
+          "joint_gain": 0.16520358196553248,
+          "joint_priced_gain": 0.15126608196553248,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            9,
+            11,
+            2,
+            0,
+            2,
+            0,
+            0,
+            1,
+            7
+          ],
+          "greedy_gain": 0.04060435261107209,
+          "greedy_priced_gain": 0.036666852611072095
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 12288,
+          "adjacent_pairs": 7680,
+          "mask_installed": 32,
+          "correct_installed_mask": 32,
+          "mask_gain": 0.16782586104435046,
+          "walsh_installed": 32,
+          "correct_walsh_direction": 32,
+          "walsh_gain": 0.167700130444834,
+          "conditional_table_gain": 0.13256541589222265,
+          "packet_gains_if_installed": [
+            0.0013111395394089875,
+            0.00524455815763595,
+            0.0209782326305438,
+            0.1678258610443504
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            32
+          ],
+          "joint_gain": 0.16782586104435046,
+          "joint_priced_gain": 0.15382586104435045,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            7,
+            18,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          "greedy_gain": 0.02204353350631361,
+          "greedy_priced_gain": 0.020043533506313608
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": false,
+      "responses_per_task": 1,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 1152,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 9216,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 73728,
+          "adjacent_pairs": 0,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": 0.0,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": 0.0,
+          "joint_priced_gain": 0.0,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            32,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": 0.0,
+          "greedy_priced_gain": 0.0
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": false,
+      "responses_per_task": 2,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 640,
+          "adjacent_pairs": 64,
+          "mask_installed": 1,
+          "correct_installed_mask": 0,
+          "mask_gain": -0.005943616727438258,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.016699387849552546,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            15,
+            1,
+            1,
+            2,
+            4,
+            1,
+            1,
+            4,
+            3
+          ],
+          "joint_gain": -0.03394362365435442,
+          "joint_priced_gain": -0.03838112365435442,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            3,
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.0005107795625142252,
+          "greedy_priced_gain": -0.0007607795625142254
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 5120,
+          "adjacent_pairs": 512,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 2,
+          "correct_walsh_direction": 0,
+          "walsh_gain": -0.0012355526481731482,
+          "conditional_table_gain": -0.08973051593199839,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            19,
+            5,
+            3,
+            3,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "joint_gain": -0.0029253738580360166,
+          "joint_priced_gain": -0.003987873858036017,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            23,
+            5,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.0008822556079791161,
+          "greedy_priced_gain": -0.0012572556079791164
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 40960,
+          "adjacent_pairs": 4096,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.06644758307959674,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.00037147604546489105,
+          "joint_priced_gain": -0.00037147604546489105,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00037147604546489105,
+          "greedy_priced_gain": -0.00037147604546489105
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": false,
+      "responses_per_task": 4,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 384,
+          "adjacent_pairs": 96,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.024731711372375932,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            12,
+            2,
+            3,
+            1,
+            4,
+            3,
+            3,
+            2,
+            2
+          ],
+          "joint_gain": -0.02656053725073971,
+          "joint_priced_gain": -0.030935537250739713,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            2,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00037147604546489105,
+          "greedy_priced_gain": -0.0005589760454648911
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 3072,
+          "adjacent_pairs": 768,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.1084643731819546,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            20,
+            7,
+            3,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.001718076710275121,
+          "joint_priced_gain": -0.002343076710275121,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            22,
+            7,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.000603648573880448,
+          "greedy_priced_gain": -0.0007911485738804479
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 24576,
+          "adjacent_pairs": 6144,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.043814751601727694,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.0003250415397817797,
+          "joint_priced_gain": -0.0003250415397817797,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            7,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.0003250415397817797,
+          "greedy_priced_gain": -0.0003250415397817797
+        }
+      ]
+    },
+    {
+      "fitted_strength": 0.75,
+      "source_has_signal": false,
+      "responses_per_task": 16,
+      "prefixes": [
+        {
+          "responses": 128,
+          "raw_tokens": 192,
+          "adjacent_pairs": 120,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.030485882390041876,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            22,
+            0,
+            2,
+            1,
+            1,
+            2,
+            2,
+            2,
+            0
+          ],
+          "joint_gain": -0.011144281363946733,
+          "joint_priced_gain": -0.013456781363946731,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            30,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00018573802273244553,
+          "greedy_priced_gain": -0.00031073802273244556
+        },
+        {
+          "responses": 1024,
+          "raw_tokens": 1536,
+          "adjacent_pairs": 960,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.11384214718858635,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            24,
+            5,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.0014394696761764526,
+          "joint_priced_gain": -0.001939469676176453,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            25,
+            6,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00037147604546489105,
+          "greedy_priced_gain": -0.00043397604546489105
+        },
+        {
+          "responses": 8192,
+          "raw_tokens": 12288,
+          "adjacent_pairs": 7680,
+          "mask_installed": 0,
+          "correct_installed_mask": 0,
+          "mask_gain": 0.0,
+          "walsh_installed": 0,
+          "correct_walsh_direction": 0,
+          "walsh_gain": 0.0,
+          "conditional_table_gain": -0.03468611709558217,
+          "packet_gains_if_installed": [
+            -0.0014859041818595649,
+            -0.0059436167274382595,
+            -0.023774466909753038,
+            -0.19019573527802433
+          ],
+          "joint_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "joint_gain": -0.00023217252841555692,
+          "joint_priced_gain": -0.00023217252841555692,
+          "greedy_bits_histogram_fair_then_zero_through_seven": [
+            27,
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "greedy_gain": -0.00023217252841555692,
+          "greedy_priced_gain": -0.00023217252841555692
+        }
+      ]
+    }
+  ]
+}

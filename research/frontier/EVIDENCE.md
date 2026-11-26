@@ -10,6 +10,33 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Linked responses and installation on a fresh task
+
+**PROVED AND NUMERICALLY VERIFIED.** Each independent task begins with eight fair signs and flips a fresh hidden orientation. Its later conditional means use a shared product of an unknown subset of the previous eight signs, including the oldest. With one response per task every raw tape is uniform for every mask. With two, the full tape is equivalent to one ordinary noisy-parity example and two irrelevant fair bits. General panel length $n$ supplies order $\min(na^2,n(n-1)a^4)$ identification information per task in the sample-complexity theorem. Independent rational enumeration checked 5,040 word densities, 336 pair-statistic expectations and 25 message cells at smaller horizons. A separate scalar implementation checked 896 vectorized task likelihoods and evaluated the raw validation score directly. [Derivations](FOUNDATION.md#learning-a-reusable-transformation-when-each-task-changes-its-orientation) · [Registration](https://github.com/alan-ai1196/FP/blob/9e7d752/research/frontier/NEXT.md)
+
+**EMPIRICALLY OBSERVED.** Each entry below uses 32 independent masks and task sets, with nested totals of 128, 1,024 and 8,192 training responses. Success means selecting the correct transformation from raw data and accepting its installation price. The restricted model received the family of 128 possible masks and strength $a$. It integrated each unobserved orientation and charged $\log 128$ relative to a fair model. The generic Walsh fit searched all 512 functions of the form signed parity on the nine raw history positions, allowing either output orientation through a fitted probability. It integrated the amplitude with a Jeffreys prior, charged $\log512$, and received neither $a$ nor the recurrence constraint. The direct conditional table fitted its own positive probability at every history. The two generic fits used every adjacent response pair available within a task. All reporting gains integrate ordinary second-response log loss over every possible history of a fresh task.
+
+| $a$ | Responses per task | Correct restricted mask at 128 / 1,024 / 8,192 | Correct generic Walsh function | Direct-table gain at 8,192 | Generic Walsh gain at 8,192 |
+|---:|---:|---:|---:|---:|---:|
+| 1/2 | 1 | 0 / 0 / 0 | 0 / 0 / 0 | 0 | 0 |
+| 1/2 | 2 | 2 / 32 / 32 | 0 / 30 / 32 | −0.03467 | 0.03142 |
+| 1/2 | 4 | 15 / 32 / 32 | 0 / 31 / 32 | −0.01128 | 0.03146 |
+| 1/2 | 16 | 30 / 32 / 32 | 6 / 32 / 32 | −0.00433 | 0.03149 |
+| 3/4 | 1 | 0 / 0 / 0 | 0 / 0 / 0 | 0 | 0 |
+| 3/4 | 2 | 31 / 32 / 32 | 29 / 32 / 32 | 0.11156 | 0.16772 |
+| 3/4 | 4 | 32 / 32 / 32 | 31 / 32 / 32 | 0.12716 | 0.16772 |
+| 3/4 | 16 | 32 / 32 / 32 | 30 / 32 / 32 | 0.13257 | 0.16770 |
+
+The exact oracle gains are 0.031584 and 0.167826 nats per fresh second response. On all 192 linked fair-null runs at 8,192 responses, both priced searches stayed fair. At the weaker signal the direct table still lost to fair at every linked panel length. The family-aware likelihood could use more than two linked responses to infer each training orientation. The unrestricted Walsh competitor estimated a single parity function of raw signs. The presence of a parity prior in both is an explicit limitation on the emergence claim.
+
+**Finite installation price.** The second comparison reserved every fourth complete training task for validation, charged 0.002 nats per installed bit per fresh task, and allowed a fair model or zero through seven low-order mask bits. The decoder averages over the compatible mask coset. At 8,192 responses, joint selection installed all seven bits in 94/96 linked signal runs at $a=1/2$ and 96/96 at $a=3/4$. Requiring each next bit to improve the validation score reached seven bits in 0/96 and 17/96 respectively. The exact family-level value of $b$ correctly acquired bits is $2^bC(a^2)/128$. At $a=1/2$ the values for 0, 2, 4 and 7 bits are 0.000247, 0.000987, 0.003948 and 0.031584 nats. The zero-bit decoder already knows the family. Joint installation also made costly choices on short null tapes, including full seven-bit packets in 4/32 lag-pair null runs at the weaker fitted strength and 128 responses. Printed scores include that negative result.
+
+At 8,192 responses, panel lengths 1, 2, 4 and 16 cost 73,728, 40,960, 24,576 and 12,288 raw tokens. The family likelihood takes up to $128N$ residual sign lookups/additions at $N$ responses, plus a phase-marginalized likelihood calculation per mask per task. A streaming fit can retain 128 task counts and 128 accumulated model scores. The vectorized experiment materializes a task-by-mask array of scores and precomputes the binary sign arrays. At length two and the largest prefix the score array alone uses 4,194,304 bytes. The generic transform uses 512 signed counters and 4,608 additions/subtractions per fit after counting. The direct table uses two counts per history. Decoder programs, calibrated scalar parameters, and indices cost storage in addition to the seven learned mask bits. These transfer results use new orientations of the same source family. [Code](linked_parity.py) · [Population gains, null and validation results](linked_parity_result.json)
+
+~~~powershell
+python research/frontier/linked_parity.py --output research/frontier/linked_parity_result.json
+~~~
+
 ## Predictive loss and acquisition at a width threshold
 
 **PROVED AND NUMERICALLY VERIFIED.** For lag $L\ge2$, the smallest excess log loss among homogeneous mixtures with at most $L+1$ components is $\Theta_L(\delta^2)$ a distance $\delta$ above its exact strength limit. This includes approximate predictors that retain older history. At lag two the best three-component forecast depending on only the last two signs cuts radial clipping's excess exactly in half up to strength $1/3$. All four two-word products from every pure initial address were checked in rational arithmetic at each registered margin. One further component suffices for exact prediction immediately above each threshold. The explicit five-, six-, seven- and eight-component constructions attain $1/6,1/9,27/320,128/1875$ at lags three through six. The audit checks 1,912 word/refresh cases from their calibrated initial rows. Independent derivations agreed on the approximate-simplex obstruction and the half-loss construction. [Proofs and attainable width](FOUNDATION.md#the-ordinary-prediction-cost-just-beyond-a-state-threshold) · [Registration](https://github.com/alan-ai1196/FP/blob/da74cc3/research/frontier/NEXT.md)
