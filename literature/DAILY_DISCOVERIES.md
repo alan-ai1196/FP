@@ -617,3 +617,10 @@ Two existing-index candidates have primary sources prepared,without new full-rea
 After fresh request/owner checks, [Mittal–Roy2509.05871v2](https://arxiv.org/abs/2509.05871v2) is fully read, with the earlier ITCS2026 official edition separately scoped. [Note](notes/MITTAL-2026-LOW-SOUNDNESS-HOMOMORPHISM.md). The added executable cyclic construction samples the exact kernel-weighted law, solves global extension by generalizedCRT and returns an agreement-power candidate without enumerating all homomorphisms. Exact constants, factorization preparation, query costs and validation obligations are retained. An exact Parseval bound supports finite-error shifted-moment extraction.
 
 The existing constructive complexity screen also identified [Clinch etal ESA2026](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ESA.2026.104),14pageofficialfinal,with65pagearXiv2607.06393v1. Support reading covered metadata and official core interfaces only. Root body and long version remain unread. No index/note/current-owner match was found at this checkpoint. Selection awaits a fresh coordination check. No new global scan or historical full-reading queue.
+
+
+### November27 Pro-E contextual-automata follow-through
+
+Completed the previously screened [Fujinami2508.04458v1](https://arxiv.org/abs/2508.04458v1),all33 pages,in [its independent note](notes/FUJINAMI-2025-CONTEXTUAL-AUTOMATA.md). Current history still lists only v1 and complete TeX is recovered. The [ATVA2025 final chapter](https://link.springer.com/chapter/10.1007/978-3-032-08707-2_1) has October26,2025 online metadata,2026 bibliographic year and30 public references. Its24-page body remains inaccessible and unaligned.
+
+[Artifact DOI15846781](https://zenodo.org/records/15846781),version0.1.0-SNAPSHOT,July9,2025,is authenticated. Small archived oracle,configuration and aggregation files were inspected without execution. Constructive deductions provide local counterexample replay and an exact new-context reuse contract with explicit observation costs. No global scan or historical full-reading campaign was repeated. The next ordinary program/automata source requires fresh coordination.

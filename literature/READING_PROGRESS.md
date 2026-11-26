@@ -759,3 +759,12 @@ Pro-A completed Mittal–Roy2509.05871v2,all41pages,activeSections1–6,allproof
 The source turns constant evaluation fibers into weighted agreement moments. Independent cyclic divisor sampling and generalizedCRT implement the global extension predicate and produce candidates proportional to agreement^k, with exact finite normalizers, expected k/delta queries, finite-budget failure and mean/tail agreement bounds. An exact Parseval second-moment bound gives a finite-error vector lower bound with error inside the root. Source corrections and conditional automorphism/lifting claims remain bounded and explicit. No complete list decoder, online-resilience guarantee, experiment, formal replay orFPcoreedit.
 
 Merged index 4486,fullyread149,originalOpenAI32/1700/17 unchanged. Preserve Astrae6c4af2,Pro-Dca749a9,Pro-E7780559 and allconcurrentrecords. Mandatory2e7a6c9 remains complete ate0296c3. Pro-A next prepared candidate is Clinch etal ESA2026 bounded self-reductions, DOI10.4230/LIPIcs.ESA.2026.104 and2607.06393v1. Support screening only,rootbodyunread,subject to fresh request/owner check.
+
+
+## 2026-11-27 — Pro-E: contextual component acquisition and exact reuse contracts
+
+[Fujinami2508.04458v1](notes/FUJINAMI-2025-CONTEXTUAL-AUTOMATA.md) is fully read through all33 pages,Sections1–6,AppendicesA–C,all formulas,2 theorem statements,the printed proof sketch,4 algorithms,11 figures,5 tables,4 ordinary footnotes,2 author notes and29 references. All figure/table/algorithm pages and central formulas were visually checked. Four excluded TeX auxproof blocks are not published proof coverage. Final24-page publisher body stays screened and unaligned.
+
+The source learns context-relevant component behavior through active queries and hypothesis reachability. Independent local-word replay, earliest discrepancy and local-input-domain reuse proofs give constructive interfaces. Actual table-cell,local-alphabet and symbol costs remain explicit. A three-cycle family qualifies the printed system-alphabet complexity parameter. Bounded artifact oracle/aggregation inspection separates random EQ,exact validation,completed-invalid means and learner overhead. No full implementation audit,experiment or formal verification.
+
+Merged index 4486 records,150 fully read editions. Original OpenAI32/1700/17 unchanged. Requests59b8251 and2e7a6c9 remain completed. Next directional source selection follows fresh requests,owners and existing discovery records. Hope remains scoped because its separate supplement is unread.
