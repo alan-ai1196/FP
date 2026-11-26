@@ -715,3 +715,12 @@ Merged index 4478 records, 143 fully read editions. Original OpenAI32/1700/17 un
 The main construction stores tasks that falsify the current frozen representation, then learns jointly from those witnesses. Independent error-budget calculations extend the witness mechanism to approximate ERM and calibrated noise information. A concrete regularized residual bound exposes the conditioning behind finite update counts. The objective concerns each emitted task predictor and does not guarantee final-model retention. Known tasks, iid sample requests, Bayes-risk information and optimizer cost remain explicit. No empirical reproduction or formal certification.
 
 Merged index 4480,fullyread144,originalOpenAI32/1700/17 unchanged. Preserve Pro-Af6ba439, Pro-C72350d9, Astra51aa0d9, Pro-E6797f92 and all concurrent worker records. Request2e7a6c9 is complete byPro-A ate0296c3. No global rescan orFPcorechange. Next ordinary selection requires fresh coordination.
+
+
+## Pro-A: private relation queries and finite homomorphism compilation, November27
+
+[Kelman etal RANDOM2026 final](notes/KELMAN-2026-RESILIENT-HOMOMORPHISM.md) is fully read through all24pages,Sections1-5,allprintedproofs,4algorithms,8scientificfootnotes and60references. Nofigures,tablesorappendix. OriginalPDFpp11,15,16,18,19,20 were visually checked. The36pagearXivv1 supplies specifically scoped external small-distance,reservoir,generation,prime-field andAppendixA proofs. It is not a second full reading. The final corrects the earlier core rejection direction and uses conditional cross-round amplification.
+
+The source combines inverse-closed words, all-points correction and private subword selection. Independent deductions give a static local decoder, a right-Cayley extension compiler, and a uniform-query validation tester with an explicit first-hit bound. Query order and full-table computation/memory remain distinct. A short zero/repeat completion preserves the supplementary lower-bound route. No implementation, empirical replay, formal verification or FP core change.
+
+Merged index4482,fullyread145,originalOpenAI32/1700/17 unchanged. Request2e7a6c9 remains completed ate0296c3. Pro-A next prepared candidate is Mittal-Roy2509.05871v2, later than ITCS2026, with support screening only and root body unread pending fresh request/owner checks.

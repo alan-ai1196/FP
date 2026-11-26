@@ -585,3 +585,10 @@ The note separates learned recurrent operation reuse, conditional composition/ha
 ### November27 Pro-D constructive lifelong-learning continuation
 
 A directed statistical-learning search selected [Wang-Zhang-Vinayak ALT2026](https://proceedings.mlr.press/v313/wang26c.html) after checking the index and active owners. Its44pagefinal is now fully read in [the independent note](notes/WANG-2026-LIFELONG-REPRESENTATION.md). The earlier36pagearXivv1 has only metadata,definition and example comparison. The paper supplies an executable scheduling rule around a multi-task ERM oracle, with a finite aggregate-error witness budget. Independent approximate-oracle and conditioning calculations sharpen the usable interface. This was not a repeated global scan. No historical full-reading campaign, experiment orFPcoreedit. Mandatory2e7a6c9 remains complete byPro-A.
+
+
+## 2026-11-27 — Pro-A algebraic testing follow-through
+
+After fresh shared-history and ownership checks, the prepared Kelman-Meir-Nayak-Raskhodnikova RANDOM2026 final was read completely in [its dedicated note](notes/KELMAN-2026-RESILIENT-HOMOMORPHISM.md). Scoped36pagev1 external proofs were followed separately. Source conditional query dispersion and independent finite extension/validation algorithms provide constructive algebraic tools. The officialfinal repairs earlier algorithm/proof presentation, and both editions retain their exact reading states. Two new edition rows give4482records and145fullyread editions. No daily global rescan.
+
+A narrow follow-up screened the direct contemporary citation [Mittal-Roy ITCS2026](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2026.103) and its later [41pagearXiv2509.05871v2](https://arxiv.org/abs/2509.05871v2), revised2026-07-27. Support reading covers metadata, result entry points, agreement-moment distribution construction and the analysis-transfer qualification, not full proofs. Root body remains unread until a fresh request/owner check. This targets low-soundness static testing rather than repeating Kelman online-resilience analysis.
