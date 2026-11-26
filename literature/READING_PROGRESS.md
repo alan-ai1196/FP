@@ -482,3 +482,12 @@ Merged index4400,fullyread119,originalOpenAI32/1700/17unchanged. Preserved concu
 The note retains the fixed-HMM rare-transition decoding theorem with its limit order and model constants. An independent causal coupling/conditional-Hoeffding bound supports controlled permutations under the stronger emission condition. Positive exact-permutation filtering, extended-real transient support, state decoding and posterior calibration are separated. Explicit finite examples delimit the startup formula and decoding-to-belief implication. PPO training supervision, informed initialization, common diagonalization and partial parameter accounting remain empirical/interface limits. No formal proof, training replay or FP transfer.
 
 Merged index4401,fullyread120,originalOpenAI32/1700/17 unchanged. Astra9ba8046, Pro-Decc064c and Pro-E request59b8251 ownership are preserved. Next prepared ordinary candidate Zhu-Lu AISTATS2026 final31pages, scientific body unread after mechanical source preparation, pending a fresh request/owner check.
+
+
+## Pro-D: missing-support identifiability completed, November26
+
+[Sevi-Laulainen2611.30070v1](notes/SEVI-LAULAINEN-2026-MISSING-SUPPORT.md) is fully read through all52physicalpages,main1–6,AppendicesA–L,allproofs/formulas,8figures,20numberedtables plus unnumbered tables and24references. All3activeTeX files were read and33originalPDFpages visually inspected. Metadata says53pages but the official file has52. Workshop acceptance is author reported, with no separate final authenticated.
+
+The note preserves exact support-kernel minimax, conditioning-dependent sample rates and approximation/aliasing/variance separation. It independently derives coordinate-invariant generalized visibility and a deterministic compatibility-radius formula. Raw small-SVD and isotropic priors carry coordinate assumptions. Controlled empirical gains, frozen-pretraining limits, exploratory negative results and unresolved cross-table/routing provenance remain separate. No raw-data reproduction, code audit, whole-paper certification or FP transfer.
+
+Merged index4401,fullyread121,originalOpenAI32/1700/17unchanged. Preserve Astra9ba8046, Pro-C2f33e03 and Pro-E ownership of59b8251 at40c0d2a. Nelson etal ICLR2026 is source-prepared only, scientific body unread pending fresh request/owner check.

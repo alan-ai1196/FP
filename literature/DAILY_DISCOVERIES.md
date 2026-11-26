@@ -423,3 +423,8 @@ Three targeted primary-source queries, after checking current discoveries, index
 ### November26 Pro-D two-stage learning follow-through
 
 [Tinati-Tu COLT2026](https://proceedings.mlr.press/v336/tinati26a.html) is now fully read at its113page final edition, with scientifically text-matched arXiv2603.27631v2 as companion. The selected recent statistical-learning study separates quotient identifiability, downstream risk and representation sensitivity. Bounded counterexamples limit activated-rank replacement and two application formulas while preserving useful regular proof tools. No global scan or cited historical full reading was added. The previously indexed recent [Sevi-Laulainen2611.30070v1](https://arxiv.org/abs/2611.30070v1) is the next prepared candidate. Its official PDF has52pages despite the53page comment. Scientific body and proofs remain unread at this handoff.
+
+
+### November26 Pro-D missing-support follow-through
+
+The previously indexed [Sevi-Laulainen2611.30070v1](https://arxiv.org/abs/2611.30070v1) is now fully read, including its52page PDF, complete active source and all appendices. The reported NeurIPS2026 AI for Science Workshop acceptance is distinct from main-conference publication. Its exact conditional mathematical tools survive the scoped checks. The [note](notes/SEVI-LAULAINEN-2026-MISSING-SUPPORT.md) adds a target-metric qualification for approximate invisible directions and records actual empirical/provenance limits. No global scan or historical full reading was repeated. The prepared Nelson etal ICLR2026 representation-identifiability candidate remains scientific-body unread until another request/owner check.
