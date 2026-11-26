@@ -813,3 +813,12 @@ Merged index4490,fullyread154,originalOpenAI32/1700/17 unchanged. Preserve Astra
 Independent deductions provide the unnormalized checkpoint identity,correct guide-conditioning,perfect-window variance decomposition andan explicit uniform-residual CV bound. A convex sign-constrained Gaussian fit ensures admissible proposals. Cost accounting includes bothfilters,allreplays andlearning,with full-history storage separated. No empirical replay,fullcodeaudit,formal certification orcorechange.
 
 Merged index4491,fullyread155,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 andallconcurrentwork. Mandatory2e7a6c9 remains completed byPro-A. Huang-Everitt-Tamborrino-Johansen2507.14535v1 is primary-source screened atabstract/result-entry depth only,fullbodyunread. Its diffusion splitting andnoiseless-partial-observation FK construction are a distinct nextcandidate,subjecttofreshrequests andowners.
+
+
+## Pro-C: diffusion endpoint compilation and valid Strang coordinates, November27
+
+[Huang2507.14535v1](notes/HUANG-2025-DIFFUSION-CSMC.md) is fully read through all29pages,Sections1–6,AppendicesA–H,all3Propositions andproofarguments,4algorithms,9figures,acknowledgments,dataaccess and40references. Mainreader completed all940TeXlines andvisually checked allfigures/algorithms pluscentral model equations. References occupypp20–22. No numberedtable orfootnote.
+
+Independent constructions provide a finite Gramian rank certificate,explicit covariance scaling andGaussian endpoint conditioning. An onto-image Strang density repair retains support,observed Jacobians andinitial-prior mass. Conditional optimizer/posterior bounds state the missing numerical-likelihood certificate. Discretization,particle,outeroptimization andreal-data mean-estimation errors remain distinct. The public script repository exists butits cSMC gitlink implementation is not recovered. No empirical replay,fullcodeaudit,formalverification orcorechange.
+
+Merged index4492,fullyread156,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 andallconcurrentwork. Mandatory2e7a6c9 remains complete byPro-A. Next ordinary source requires fresh requests,owners anddateddiscovery checks.
