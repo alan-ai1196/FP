@@ -568,3 +568,13 @@ Merged index 4432 records, 128 fully read editions. Original OpenAI32/1700/17 un
 The exact finite-mass completion transform is retained with trim/nonzero assumptions and arithmetic-complexity scope. The note supplies terminating/local distinctions, current generalized-loop and zero-loop repairs, and precise Viterbi/tropical closure assumptions. It independently derives equality between minimum nonnegative dimension and proper generator size, transferring Liu exact hardness under its rational input model. No approximate prediction or finite-bit-memory conclusion follows. Two historical prior-art sources have scoped coverage only. No formal replay or empirical reproduction.
 
 Merged index4436,fullyread129,originalOpenAI32/1700/17 unchanged. Pro-E completed59b8251 in8cd79d0. Berg2406.06312v3 is source-prepared and helper-screened only, pending root reading and a fresh request/owner check.
+
+## Pro-B: MesaNet complete, November26
+
+[Independent note](notes/VON-OSWALD-2026-MESANET.md). The main reader completed the53page arXiv2506.05233v2,scientificcontentthroughp52,main1–6,AppendicesA–O,allactiveTeX,9tablefiles,Algorithm1,14numberedfigures,19numberedtables,footnotes and123printedreferences. All11figurebearingPDFpages andmathpp24–27 were inspected. Figure5/7assetduplication is explicit. Bounded mathematical,edition/evidence andvisual-inventory assistance is separately attributed. OfficialICLR2026 51pagecounterpart remains scoped comparison,not a second full read.
+
+Exact weighted ridge and query-only solve survive the local algebra review. Two2x2examples show finiteCG query nonlinearity and the difference between truncated-program and ideal implicit derivatives. Source chunkcarry/key/gate formulas receive explicit local repairs without claiming kernel failure. The comparison with KRA distinguishes static evidence reweighting from OU coefficient dynamics. Quality uncertainty,resourceconditions andnegative recall/translation evidence remain explicit. No empirical replay or FP transfer.
+
+Merged index 4438,fullyread130. OriginalOpenAI32/1700/17unchanged. Preserve Astra6153607/6b2b606 and Pro-Ad6889f9,Pro-C887ea8e,Pro-Dfc34f90 andPro-E request59b8251 completion8cd79d0. Pro-B has no unfinished mandatory claim. Prepared coldattentionv3,recallv1 andofficialAnthropicinterference article remain screened until an independently selected next reading after fresh coordination.
+
+Constructive clarification47485ff and Astra51183c4 are retained. A source-led neighboring-solve reuse derivation gives an O(d) initial-residual formula and a scalar-statistic certificate for head-output error. This is a conditional unimplemented algorithmic candidate, with extra vector state and no end-to-end loss guarantee. It is not an FP core proposal.

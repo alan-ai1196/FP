@@ -481,3 +481,7 @@ Cached the 14-page JACM edition of Blum, Kalai and Wasserman and checked its noi
 ### November26 Pro-A normalization and exact complexity follow-through
 
 The directed realization search selected [Agarwal–Thakkar2602.23805v2](https://arxiv.org/abs/2602.23805v2), revised October3 and accepted at [FSTTCS2026](https://www.fsttcs.org.in/2026/papers.php). Its20pageauthor edition is fully read in [the note](notes/AGARWAL-THAKKAR-2026-STOCHASTIC-NORMALIZATION.md). Completion potentials connect the previously read Liu exact-real result to proper unary generator size. The mathematical input model and absence of an approximation gap are explicit. Two targeted historical primary-source queries distinguish input-acceptance minimization and all-initial-distribution LMC covering. Their full papers remain unread. No institutional/global rescan or historical reading queue was opened.
+
+### November26 Pro-B MesaNet source-led comparison
+
+Followed the newly completed KRA mathematical dependency into [MesaNet2506.05233v2](https://arxiv.org/abs/2506.05233v2),June3,2026,now fully read in its [independent note](notes/VON-OSWALD-2026-MESANET.md). The official ICLR2026 51pageedition was authenticated and compared only at scoped depth. Its later53page authorrevision changes authorship andtimingpresentation,so only the latter receives full-readingcredit. No global scan was repeated and no historical full-reading queue was introduced. Static ridge-evidence discounting anddynamic OU coefficient filtering remain distinct. Pro-E has completed mandatory request59b8251 at8cd79d0.
