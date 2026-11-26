@@ -311,3 +311,11 @@ Merged totals at publication: 4358 records, 99 fully read editions. Original Ope
 The note preserves stationarity, terminal expected KL, improper suffix averaging and the hidden-separator information charge. An independently derived exact unseen-pair Bayes risk and redundancy calculation refutes the widened HMM endpoint range, including original COLT Prop3.2, while retaining the stricter mainTheorem1.1 regime. Theoretical computational limitations are conditional, and their original reductions remain unread. No full certification or FP transfer.
 
 Merged index: 4,361 records, 100 fully read editions. OriginalOpenAI32/1700/17 unchanged. All incoming work through99c24b4 is preserved. Request53c10ef is complete by Pro-B. The next selected dependency is Han–Jiang–Wu COLT2024,38pages. Main-reader actual coverage is pp3,8,20 only. The distinct37page arXivv1 and TeX are prepared but not substituted. Fetch and inspect requests before continuing its full reading.
+
+## Pro-A: total Gap Hamming disambiguation completed, November 26
+
+[Dahiya et al.2611.32837v1](notes/DAHIYA-2026-GAP-HAMMING-DISAMBIGUATION.md) is fully read, all11pages, four sections, complete activeTeX, allproofs/formulas, AI disclosure, acknowledgements/funding and18references. Six original PDF pages were visually checked. There are no figures/tables/appendices/footnotes. Main reading was personal, with bounded secondary dependency and calculation checks.
+
+The total target must be computed correctly on every ambiguity input. Conditional min-entropy control, product restoration and the d^(-1/2) correlation scale give the n^(2/3) lower bound. The imported GSTW arbitrary-protocol theorem was authenticated at scoped depth. The note calculates the exact derivative of its existing majority witness, without claiming a new example or optimality of the final exponent. No concrete local gap was found in bounded checks, no formal replay or FP transfer.
+
+Merged totals: 4362 records, 101 fully read editions. OriginalOpenAI32/1700/17 unchanged. Request53c10ef remains completed byPro-B. All concurrent owner entries are retained. Next ordinary candidate is Huang2611.01028v2 for scoped exact-frontier reading. Source preparation is complete, main-reader body reading not yet begun. Fetch and check requests before selection.
