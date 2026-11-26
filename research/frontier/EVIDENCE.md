@@ -19,6 +19,27 @@ python -B research/frontier/audit.py --check
 python -B research/frontier/alternatives.py --check
 ~~~
 
+## Learning the number of visited states from sixteen ordinary tokens
+
+**EMPIRICALLY OBSERVED.** The registration fixed the shared destination urn, its two concentrations, all three tapes, two conventional alternatives and beam width before the outcomes were scored. Each entry below gives mean causal log loss in nats per raw token on positions 1–12 and then 13–16. Every predictor kept learning during those four continuation positions. The suffix mixture weights orders 0 through 3 equally at time zero, with zero-padded initial context. The two-state mixture puts equal weight on all 16 binary deterministic tables with initial address zero. All heads have the same Dirichlet$(1,1)$ initialization. [Frozen registration](https://github.com/alan-ai1196/FP/blob/f9a6c19/research/frontier/NEXT.md) · [Scores and full posterior histograms](state_birth_result.json)
+
+| Raw tape | Full urn $\beta=1$ | Full urn $\beta=1/4$ | Beam 32 $\beta=1$ | Beam 32 $\beta=1/4$ | Suffix mixture | Two-state mixture |
+|---|---:|---:|---:|---:|---:|---:|
+| Repeated 0011 | .7112 / .4552 | .7566 / .6290 | .7113 / .4619 | .7570 / .6325 | .6645 / .3175 | .7437 / .6170 |
+| Repeated 011 | .6153 / .2559 | .6946 / .4366 | .6110 / .2499 | .6947 / .4370 | .5831 / .2234 | .7140 / .6714 |
+| Fair coin, PCG64 seed 261126 | .7439 / .7599 | .7373 / .7625 | .7431 / .7605 | .7371 / .7625 | .7558 / .7344 | .7494 / .7744 |
+
+Holding each same tape fixed while setting all state rows to $1/2$ isolates the structural prior's visitation distribution. With $\beta=1$, posterior mean visited addresses on the 0011 tape rose from 2.748 at token 12 to 3.391 at token 16. The corresponding clamped means were 2.142 and 2.143. On the 011 tape the posterior went from 2.848 to 3.099, versus 2.124 at both lengths under clamping. The fair-coin realization gave posterior 2.175 versus clamped 2.224 at token 16. With $\beta=1/4$, the final posterior/clamped pairs were 1.952/1.342, 2.680/1.342 and 1.289/1.351. The continuation result favors the suffix mixture on all three tapes. Sixteen outcomes give little basis for claims about natural sequence modeling or consistent recovery of the true state count.
+
+**Physical work and pruning.** Exact enumeration has 9,832,111, 2,753,504 and 6,358,235 simultaneous histories at the final prefix if explicitly retained, respectively. The depth-first binary64 evaluator visits 13,345,427, 4,495,698 and 7,941,963 histories summed over all prefixes. It computes the same prefix marginals by branching over the observed tape, with at most 16 nested calls. Its two mass arrays, branch counters and mutable integer graph arrays occupy 4,544 bytes at length 16 on the tested machine, excluding tape, stack, allocator and host objects. A streaming implementation with this small workspace would have to replay earlier observations or use another representation. On one Ryzen 7 5800X the 0011 full traversal took about 66 ms and the Python width-32 run about 0.36 ms, median of five warm measurements after a first call, excluding compilation. A regular online width-32 pass kept at most 32 complete candidates and created up to 81 candidates before trimming. The four-token excess of the beam ranged from $-0.02423$ to $+0.02686$ nats across all six fits. The computed upper allowances ranged from 7.500 to 10.531 nats on the same four tokens. All 96 prefix mass brackets and next-step allowances contained the exhaustive result within the stated floating tolerances. Small realized error coexisted with a large certified allowance.
+
+**NUMERICALLY VERIFIED on finite cases.** An independent rational partition enumerator checked all 252 binary tape/concentration combinations of lengths one through six. All 11,108 valid trajectory weights satisfied the row-comparator bound, all priors normalized on their fixed tapes, each tape likelihood matched the compiled enumerator by visited-state count, and the predictive evidence summed to one at each length. The alternating split first exceeds unit odds at two cycles for $\beta=1$ (odds $5/3$) and three for $\beta=1/4$ (odds $35/32$). A second exact check of all 42 next-token probabilities after zero through six distinct raw names in a six-letter vocabulary matched the quadratic recurrence against full partitions at $\beta=3/4$. The larger 16-token results use compensated floating-point sums over all compatible histories. [Learning law and proofs](FOUNDATION.md#when-ordinary-prediction-can-create-a-previously-unused-state-address) · [Python audit and comparisons](state_birth.py) · [Depth-first evaluator](state_birth.c)
+
+~~~powershell
+python research/frontier/state_birth.py check
+python research/frontier/state_birth.py sample --output research/frontier/state_birth_result.json
+~~~
+
 ## Paying for an observation that preserves its subject
 
 The passive clock emits its own ticks and resets. An active destructive read must pay again to reach an informative phase. A nondestructive read permits repeated independent observations there. The true period is hidden in all three cases. The active calculation supplies the learner with the two candidate laws, a reset origin and explicit unit-price controls. It measures acquisition of a decision-relevant distinction once these hypotheses are available. [Work bounds, finite-budget recurrence and downstream value](INTELLIGENCE_OBJECTIVE.md#what-is-a-hidden-distinction-worth-under-a-different-observation-interface)
