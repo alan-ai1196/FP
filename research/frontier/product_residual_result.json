@@ -1,0 +1,2205 @@
+{
+  "registration": "04a8519",
+  "names_per_slot": 8,
+  "calibration_panels": 512,
+  "hidden_fraction": 0.25,
+  "assignments_per_case": 16,
+  "integer_checks": {
+    "integer_tensors_checked": 320,
+    "fiber_also_globally_optimal": 246,
+    "smallest_score_fraction_of_global_optimum": 0.5348837209302325,
+    "positive_weight_signed_products_recovered": 96,
+    "sparse_twelve_slot_check": {
+      "possible_tuples": "4722366482869645213696",
+      "occupied_tuples": 4096,
+      "nonzero_entries_visited_across_contractions": 43232,
+      "realized_contrast": 736
+    },
+    "regularized_multiclass_growth": {
+      "complete_logit_dimension": 144,
+      "ridge": 0.03,
+      "contraction_factor": 0.9887218045112782,
+      "path": [
+        {
+          "steps": 0,
+          "excess": 0.04206924852855882,
+          "theorem_bound": 0.04206924852855885
+        },
+        {
+          "steps": 1,
+          "excess": 0.039187734923609496,
+          "theorem_bound": 0.04159478331959014
+        },
+        {
+          "steps": 4,
+          "excess": 0.03247381772904261,
+          "theorem_bound": 0.04020325363808826
+        },
+        {
+          "steps": 16,
+          "excess": 0.013126046552121993,
+          "theorem_bound": 0.03508734799024248
+        },
+        {
+          "steps": 64,
+          "excess": 0.0005857196504118201,
+          "theorem_bound": 0.02035672516809891
+        },
+        {
+          "steps": 256,
+          "excess": 4.6292714384055245e-09,
+          "theorem_bound": 0.0023064146620323284
+        }
+      ]
+    }
+  },
+  "training_work": {
+    "fiber_starts": 864,
+    "mode_eigensystems": 1296,
+    "alternating_sweeps": 6930
+  },
+  "cases": [
+    {
+      "slots": 2,
+      "strength": 0.0,
+      "training_panels": 256,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.0993181595994175,
+          "all_gain": -0.07448861969956314
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.027998958101304174,
+          "seen_gain": -0.020408311037784968,
+          "all_gain": -0.022305972803664767
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0015459067674041178,
+          "seen_gain": -0.0010073333611822874,
+          "all_gain": -0.0011419767127377452
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.47265625,
+          "training_correlation": 0.20458984375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.54296875,
+          "training_correlation": 0.2060546875
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.52734375,
+          "training_correlation": 0.2294921875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5390625,
+          "training_correlation": 0.22998046875
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.0,
+      "training_panels": 2048,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.011322303855367147,
+          "all_gain": -0.00849172789152536
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.004540414179247302,
+          "seen_gain": -0.0033490837581341836,
+          "all_gain": -0.003646916363412464
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.001218837558800033,
+          "seen_gain": -0.0010045985495153512,
+          "all_gain": -0.001058158301836522
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4453125,
+          "training_correlation": 0.0745849609375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.41796875,
+          "training_correlation": 0.06927490234375
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4375,
+          "training_correlation": 0.07806396484375
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4921875,
+          "training_correlation": 0.078125
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.0,
+      "training_panels": 16384,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.0015770425911671641,
+          "all_gain": -0.001182781943375373
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.0006734228854496866,
+          "seen_gain": -0.0005305258494406384,
+          "all_gain": -0.0005662501084429004
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.00025934095615577147,
+          "seen_gain": -0.00024466190107907737,
+          "all_gain": -0.0002483316648482509
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5078125,
+          "training_correlation": 0.02771759033203125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.54296875,
+          "training_correlation": 0.0255126953125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.51953125,
+          "training_correlation": 0.029266357421875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5234375,
+          "training_correlation": 0.02927398681640625
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.5,
+      "training_panels": 256,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.05038707619468931,
+          "all_gain": 0.037790307146016985
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.10744687782858867,
+          "seen_gain": -0.012437636389572944,
+          "all_gain": -0.03618994674932688
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.017542389340305782,
+          "seen_gain": 0.0015425746328994866,
+          "all_gain": -0.003228666360401831
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.11150049180439284,
+          "seen_gain": 0.12008340030961243,
+          "all_gain": 0.11793767318330753,
+          "exact_product": 14,
+          "held_sign_accuracy": 0.96484375,
+          "training_correlation": 0.52783203125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.11294743057233628,
+          "seen_gain": 0.12025244760512561,
+          "all_gain": 0.11842619334692828,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.11150049180439284,
+          "seen_gain": 0.12008340030961243,
+          "all_gain": 0.11793767318330753,
+          "exact_product": 14,
+          "held_sign_accuracy": 0.96484375,
+          "training_correlation": 0.52783203125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.11294743057233628,
+          "seen_gain": 0.12025244760512561,
+          "all_gain": 0.11842619334692828,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.11150049180439284,
+          "seen_gain": 0.12008340030961243,
+          "all_gain": 0.11793767318330753,
+          "exact_product": 14,
+          "held_sign_accuracy": 0.96484375,
+          "training_correlation": 0.52783203125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.11294743057233628,
+          "seen_gain": 0.12025244760512561,
+          "all_gain": 0.11842619334692828,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.12008340030961243,
+          "seen_gain": 0.1229443698113523,
+          "all_gain": 0.12222912743591734,
+          "exact_product": 14,
+          "held_sign_accuracy": 0.98046875,
+          "training_correlation": 0.52783203125
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.11909737572729696,
+          "seen_gain": 0.12240508531552033,
+          "all_gain": 0.12157815791846449,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.5,
+      "training_panels": 2048,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.11923090956104225,
+          "all_gain": 0.08942318217078168
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.09586605448869252,
+          "seen_gain": 0.007345922468335591,
+          "all_gain": -0.018457071770921433
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.040657725424619186,
+          "seen_gain": 0.0042479724502834815,
+          "all_gain": -0.006978452018442187
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49322509765625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49322509765625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49322509765625
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49322509765625
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.5,
+      "training_panels": 16384,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.12929566057076436,
+          "all_gain": 0.09697174542807327
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.0979231355992839,
+          "seen_gain": 0.010669336472864055,
+          "all_gain": -0.016478781545172932
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.04956165103470244,
+          "seen_gain": 0.006224813661590255,
+          "all_gain": -0.007721802512482919
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.5016326904296875
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.5016326904296875
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.5016326904296875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.13081203594113694,
+          "seen_gain": 0.13081203594113694,
+          "all_gain": 0.13081203594113694,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.5016326904296875
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1293567447617073,
+          "seen_gain": 0.1293567447617073,
+          "all_gain": 0.1293567447617073,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.75,
+      "training_panels": 256,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.2640976723488819,
+          "all_gain": 0.19807325426166142
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.19423815052813717,
+          "seen_gain": 0.005466483745364083,
+          "all_gain": -0.04445967482301122
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.09145816862407509,
+          "seen_gain": 0.0068903574366542125,
+          "all_gain": -0.01769677407852811
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7587890625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7587890625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7587890625
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7587890625
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.75,
+      "training_panels": 2048,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.30364343262446714,
+          "all_gain": 0.22773257446835035
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.2207936020800793,
+          "seen_gain": 0.02139207568712736,
+          "all_gain": -0.0391543437546743
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.11019962716894285,
+          "seen_gain": 0.012890894860313584,
+          "all_gain": -0.017881735647000522
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.74200439453125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.74200439453125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.74200439453125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.74200439453125
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 2,
+      "strength": 0.75,
+      "training_panels": 16384,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.31491262013461907,
+          "all_gain": 0.23618446510096433
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.22820154118153,
+          "seen_gain": 0.025073386115957764,
+          "all_gain": -0.03824534570841418
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.11894778281223853,
+          "seen_gain": 0.014543963542953049,
+          "all_gain": -0.018828973045844834
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7517852783203125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7517852783203125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7517852783203125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        },
+        "exhaustive": {
+          "runs": 16,
+          "held_gain": 0.31637701930350837,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.31637701930350837,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7517852783203125
+        },
+        "exhaustive_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3150617797754852,
+          "seen_gain": 0.3150617797754852,
+          "all_gain": 0.3150617797754852,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.0,
+      "training_panels": 256,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.07092704781365723,
+          "all_gain": -0.053195285860242934
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.02878599058180581,
+          "seen_gain": -0.027345245048596496,
+          "all_gain": -0.027705431431898825
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0009309621547934582,
+          "seen_gain": -0.0009747313180348005,
+          "all_gain": -0.0009637890272244649
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.47216796875,
+          "training_correlation": 0.2646484375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4912109375,
+          "training_correlation": 0.11572265625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.48388671875,
+          "training_correlation": 0.29443359375
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.0,
+      "training_panels": 2048,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.09132609195392802,
+          "all_gain": -0.06849456896544602
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.005376097319432291,
+          "seen_gain": -0.005114706198290075,
+          "all_gain": -0.005180053978575628
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0011579597139004263,
+          "seen_gain": -0.0011323776030646886,
+          "all_gain": -0.001138773130773623
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4990234375,
+          "training_correlation": 0.09368896484375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.51171875,
+          "training_correlation": 0.0401611328125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.48388671875,
+          "training_correlation": 0.10675048828125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.0,
+      "training_panels": 16384,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.011981039250230346,
+          "all_gain": -0.00898577943767276
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.000675438159959967,
+          "seen_gain": -0.0006399425548509694,
+          "all_gain": -0.0006488164561282188
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0015660062914663623,
+          "seen_gain": -0.0013413377860780138,
+          "all_gain": -0.0013975049124251011
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.48828125,
+          "training_correlation": 0.03177642822265625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4990234375,
+          "training_correlation": 0.01682281494140625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4990234375,
+          "training_correlation": 0.03675079345703125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.5,
+      "training_panels": 256,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0035512822630182125,
+          "all_gain": 0.0026634616972636607
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.04658728491743912,
+          "seen_gain": -0.026464306476525094,
+          "all_gain": -0.031495051086753593
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.005424832801891836,
+          "seen_gain": -0.00029824020703202154,
+          "all_gain": -0.0015798883557469753
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.09057965232292003,
+          "seen_gain": 0.09952018201585712,
+          "all_gain": 0.09728504959262284,
+          "exact_product": 11,
+          "held_sign_accuracy": 0.9267578125,
+          "training_correlation": 0.4970703125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.09933193665927388,
+          "seen_gain": 0.10399971898446993,
+          "all_gain": 0.10283277340317093,
+          "installations": 14
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.08870214108740324,
+          "seen_gain": 0.09192073177686058,
+          "all_gain": 0.09111608410449624,
+          "exact_product": 10,
+          "held_sign_accuracy": 0.92333984375,
+          "training_correlation": 0.478515625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.10081102683452142,
+          "seen_gain": 0.10228612353081293,
+          "all_gain": 0.10191734935674003,
+          "installations": 15
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.12678879757931522,
+          "seen_gain": 0.12643117639159773,
+          "all_gain": 0.12652058168852712,
+          "exact_product": 15,
+          "held_sign_accuracy": 0.99267578125,
+          "training_correlation": 0.52392578125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1269210447317614,
+          "seen_gain": 0.12664945922887716,
+          "all_gain": 0.1267173556045982,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.5,
+      "training_panels": 2048,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.05259249062811416,
+          "all_gain": 0.03944436797108562
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.022452115787272846,
+          "seen_gain": -0.0028305276582473275,
+          "all_gain": -0.007735924690503708
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.023550999817603967,
+          "seen_gain": -0.000601580306959472,
+          "all_gain": -0.0063389351846205935
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49444580078125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49444580078125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49444580078125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.5,
+      "training_panels": 16384,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.11888049034249425,
+          "all_gain": 0.08916036775687068
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.017090689127294542,
+          "seen_gain": 0.0014554862562277313,
+          "all_gain": -0.003181057589652837
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.049755401803766044,
+          "seen_gain": 0.004402698598932003,
+          "all_gain": -0.009136826501742508
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49896240234375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49896240234375
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49896240234375
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.13003524795525825,
+          "seen_gain": 0.13003524795525825,
+          "all_gain": 0.13003524795525825,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.75,
+      "training_panels": 256,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.09522464327133248,
+          "all_gain": 0.07141848245349937
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.06105094103894147,
+          "seen_gain": -0.023505132887164104,
+          "all_gain": -0.03289158492510845
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.018549714714225216,
+          "seen_gain": 0.00048357162721121284,
+          "all_gain": -0.004274749958147895
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.775390625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.775390625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.775390625
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.75,
+      "training_panels": 2048,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.25826836234877537,
+          "all_gain": 0.19370127176158153
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.04055964601497989,
+          "seen_gain": -0.00020608312297271274,
+          "all_gain": -0.010294473845974508
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.07870453957790098,
+          "seen_gain": 0.005076471626512961,
+          "all_gain": -0.015868781174590525
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.752685546875
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.752685546875
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.752685546875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 3,
+      "strength": 0.75,
+      "training_panels": 16384,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.3043517159975532,
+          "all_gain": 0.2282637869981648
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.03633561761176603,
+          "seen_gain": 0.004095704978162647,
+          "all_gain": -0.006012125669319523
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.12213125768401803,
+          "seen_gain": 0.013046457789278463,
+          "all_gain": -0.02074797107904566
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7504196166992188
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7504196166992188
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7504196166992188
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.3155405361604578,
+          "seen_gain": 0.3155405361604578,
+          "all_gain": 0.3155405361604578,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.0,
+      "training_panels": 256,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.011622217755559201,
+          "all_gain": -0.008716663316669402
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.04005314709482953,
+          "seen_gain": -0.03959900661143559,
+          "all_gain": -0.03971254173228407
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0004979627028504394,
+          "seen_gain": -0.0006051171010340605,
+          "all_gain": -0.0005783285014881552
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5032958984375,
+          "training_correlation": 0.27197265625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.501220703125,
+          "training_correlation": 0.08837890625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5062255859375,
+          "training_correlation": 0.32421875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.0,
+      "training_panels": 2048,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.0698939587290183,
+          "all_gain": -0.05242046904676372
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.007282738220312543,
+          "seen_gain": -0.007187283611553175,
+          "all_gain": -0.007211147263743018
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0017299905829368156,
+          "seen_gain": -0.0019331274448956995,
+          "all_gain": -0.0018823432294059787
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5028076171875,
+          "training_correlation": 0.09381103515625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.501953125,
+          "training_correlation": 0.02313232421875
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.50274658203125,
+          "training_correlation": 0.11669921875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.0,
+      "training_panels": 16384,
+      "oracle_gain": 0.0,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.09191957695873261,
+          "all_gain": -0.06893968271904945
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.0010004523571081065,
+          "seen_gain": -0.0009905967243117363,
+          "all_gain": -0.000993060632510829
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0005713959305980821,
+          "seen_gain": -0.0006351676643131511,
+          "all_gain": -0.0006192247308843839
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.49969482421875,
+          "training_correlation": 0.0352020263671875
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.5032958984375,
+          "training_correlation": 0.00958251953125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.14384103622589042,
+          "seen_gain": -0.14384103622589042,
+          "all_gain": -0.14384103622589042,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.4891357421875,
+          "training_correlation": 0.04178619384765625
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.5,
+      "training_panels": 256,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": -0.0015077545522810727,
+          "all_gain": -0.0011308159142108046
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.03976138901926012,
+          "seen_gain": -0.03918968225326689,
+          "all_gain": -0.0393326089447652
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0010553684431199057,
+          "seen_gain": -0.0004310869159747045,
+          "all_gain": -0.0005871572977610046
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": -0.1267422731881483,
+          "seen_gain": -0.12110973948159791,
+          "all_gain": -0.12251787290823546,
+          "exact_product": 1,
+          "held_sign_accuracy": 0.5311279296875,
+          "training_correlation": 0.29443359375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.00808772199235147,
+          "seen_gain": 0.00808772199235147,
+          "all_gain": 0.00808772199235147,
+          "installations": 1
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": -0.14179589005863108,
+          "seen_gain": -0.13969486558079086,
+          "all_gain": -0.1402201217002509,
+          "exact_product": 0,
+          "held_sign_accuracy": 0.50372314453125,
+          "training_correlation": 0.0771484375
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.0,
+          "all_gain": 0.0,
+          "installations": 0
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": -0.04000795950454232,
+          "seen_gain": -0.0363870449789028,
+          "all_gain": -0.03729227361031268,
+          "exact_product": 6,
+          "held_sign_accuracy": 0.68902587890625,
+          "training_correlation": 0.40185546875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.04860846869641296,
+          "seen_gain": 0.04860846869641296,
+          "all_gain": 0.04860846869641296,
+          "installations": 6
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.5,
+      "training_panels": 2048,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.00013904893030166617,
+          "all_gain": 0.00010428669772624964
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.008555015368683975,
+          "seen_gain": -0.007430739268904233,
+          "all_gain": -0.007711808293849167
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.0058412458320576555,
+          "seen_gain": -0.001359910318611134,
+          "all_gain": -0.002480244196972765
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.126252365797739,
+          "seen_gain": 0.12660998698545647,
+          "all_gain": 0.12652058168852712,
+          "exact_product": 15,
+          "held_sign_accuracy": 0.99169921875,
+          "training_correlation": 0.48858642578125
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.12108255071827292,
+          "seen_gain": 0.12108255071827292,
+          "all_gain": 0.12108255071827292,
+          "installations": 15
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49591064453125
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1291036809708439,
+          "seen_gain": 0.1291036809708439,
+          "all_gain": 0.1291036809708439,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49591064453125
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1291036809708439,
+          "seen_gain": 0.1291036809708439,
+          "all_gain": 0.1291036809708439,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.5,
+      "training_panels": 16384,
+      "oracle_gain": 0.13081203594113697,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.05378368877075424,
+          "all_gain": 0.04033776657806569
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.0027159529398037745,
+          "seen_gain": -0.0006329899662788232,
+          "all_gain": -0.001153730709660061
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.019601804069216328,
+          "seen_gain": -0.00047500118270785136,
+          "all_gain": -0.0052567019043349705
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49652099609375
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1291036809708439,
+          "seen_gain": 0.1291036809708439,
+          "all_gain": 0.1291036809708439,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49652099609375
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1291036809708439,
+          "seen_gain": 0.1291036809708439,
+          "all_gain": 0.1291036809708439,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.1308120359411369,
+          "seen_gain": 0.1308120359411369,
+          "all_gain": 0.1308120359411369,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.49652099609375
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.1291036809708439,
+          "seen_gain": 0.1291036809708439,
+          "all_gain": 0.1291036809708439,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.75,
+      "training_panels": 256,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.012741986740853039,
+          "all_gain": 0.009556490055639777
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.046594794282247415,
+          "seen_gain": -0.04099772414136689,
+          "all_gain": -0.042396991676587024
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.002766921435188348,
+          "seen_gain": -4.998387160731561e-05,
+          "all_gain": -0.0007292182625025736
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.04451493854254578,
+          "seen_gain": 0.046890317142466845,
+          "all_gain": 0.046296472492486584,
+          "exact_product": 6,
+          "held_sign_accuracy": 0.813720703125,
+          "training_correlation": 0.541015625
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.16817668596023308,
+          "seen_gain": 0.1704881742522,
+          "all_gain": 0.1699103021792083,
+          "installations": 12
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.0030942742064227436,
+          "seen_gain": 0.006538573176308261,
+          "all_gain": 0.005677498433836915,
+          "exact_product": 3,
+          "held_sign_accuracy": 0.78533935546875,
+          "training_correlation": 0.45556640625
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.11524795936401609,
+          "seen_gain": 0.11650823953204106,
+          "all_gain": 0.11619316949003483,
+          "installations": 12
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.2700571366050481,
+          "seen_gain": 0.2712448259050087,
+          "all_gain": 0.27094790358001847,
+          "exact_product": 15,
+          "held_sign_accuracy": 0.96826171875,
+          "training_correlation": 0.70458984375
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.2946868836191936,
+          "seen_gain": 0.2946868836191936,
+          "all_gain": 0.2946868836191936,
+          "installations": 15
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.75,
+      "training_panels": 2048,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.09006141857072406,
+          "all_gain": 0.06754606392804303
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.011954246562951507,
+          "seen_gain": -0.006636481110670921,
+          "all_gain": -0.00796592247374107
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.017386132735408726,
+          "seen_gain": -0.00021220194959046369,
+          "all_gain": -0.0045056846460450285
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.75213623046875
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.75213623046875
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.75213623046875
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        }
+      }
+    },
+    {
+      "slots": 4,
+      "strength": 0.75,
+      "training_panels": 16384,
+      "oracle_gain": 0.3163770193035085,
+      "methods": {
+        "direct_tuple": {
+          "runs": 16,
+          "held_gain": 0.0,
+          "seen_gain": 0.2581339221271206,
+          "all_gain": 0.19360044159534046
+        },
+        "additive": {
+          "runs": 16,
+          "held_gain": -0.005576369308983562,
+          "seen_gain": -0.00016029580584264164,
+          "all_gain": -0.0015143141816278717
+        },
+        "leave_one_out": {
+          "runs": 16,
+          "held_gain": -0.07487608978435031,
+          "seen_gain": 0.0037020524648786234,
+          "all_gain": -0.01594248309742861
+        },
+        "fiber": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7507247924804688
+        },
+        "fiber_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        },
+        "spectral": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7507247924804688
+        },
+        "spectral_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        },
+        "alternating": {
+          "runs": 16,
+          "held_gain": 0.3163770193035083,
+          "seen_gain": 0.31637701930350837,
+          "all_gain": 0.3163770193035083,
+          "exact_product": 16,
+          "held_sign_accuracy": 1.0,
+          "training_correlation": 0.7507247924804688
+        },
+        "alternating_calibrated": {
+          "runs": 16,
+          "held_gain": 0.31444235444115626,
+          "seen_gain": 0.31444235444115626,
+          "all_gain": 0.31444235444115626,
+          "installations": 16
+        }
+      }
+    }
+  ]
+}
