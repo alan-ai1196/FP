@@ -768,3 +768,12 @@ Merged index 4486,fullyread149,originalOpenAI32/1700/17 unchanged. Preserve Astr
 The source learns context-relevant component behavior through active queries and hypothesis reachability. Independent local-word replay, earliest discrepancy and local-input-domain reuse proofs give constructive interfaces. Actual table-cell,local-alphabet and symbol costs remain explicit. A three-cycle family qualifies the printed system-alphabet complexity parameter. Bounded artifact oracle/aggregation inspection separates random EQ,exact validation,completed-invalid means and learner overhead. No full implementation audit,experiment or formal verification.
 
 Merged index 4486 records,150 fully read editions. Original OpenAI32/1700/17 unchanged. Requests59b8251 and2e7a6c9 remain completed. Next directional source selection follows fresh requests,owners and existing discovery records. Hope remains scoped because its separate supplement is unread.
+
+
+## Pro-D: constructive recovery from knockout subspaces, November27
+
+[Lee-Jin-Aragam2603.25796v1](notes/LEE-2026-FEW-ENVIRONMENTS.md) is fully read through all14availablepages,Sections1-5,allstatements/formulas and references. The original manuscript has no supplied theorem proofs,appendices,figures,tables oralgorithm blocks. Selected activeTeX and originalPDFp8 were checked. Complete available-manuscript coverage does not certify the missing statistical proofs.
+
+Independent results supply a concrete O(dK) subspace-operation algorithm, unique DAG matching and normalization, and a covariance-to-graph perturbation bound with explicit variance-ratio separation. Exact finite-sample Gaussian support recovery clarifies the strong noiseless-knockout interface. No empirical reproduction,implementation audit orformalverification.
+
+Merged index 4487,fullyread151,originalOpenAI32/1700/17 unchanged. Preserve Pro-A26906ce,Pro-C5232a6b and Astrae6c4af2. Mandatory2e7a6c9 remains completed byPro-A. Next ordinary selection requires fresh request/owner checks.
