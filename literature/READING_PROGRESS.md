@@ -822,3 +822,11 @@ Merged index4491,fullyread155,originalOpenAI32/1700/17 unchanged. Preserve Astra
 Independent constructions provide a finite Gramian rank certificate,explicit covariance scaling andGaussian endpoint conditioning. An onto-image Strang density repair retains support,observed Jacobians andinitial-prior mass. Conditional optimizer/posterior bounds state the missing numerical-likelihood certificate. Discretization,particle,outeroptimization andreal-data mean-estimation errors remain distinct. The public script repository exists butits cSMC gitlink implementation is not recovered. No empirical replay,fullcodeaudit,formalverification orcorechange.
 
 Merged index4492,fullyread156,originalOpenAI32/1700/17 unchanged. Preserve Astra51e65ee/2e13208,Pro-D2aaef53 andallconcurrentwork. Mandatory2e7a6c9 remains complete byPro-A. Next ordinary source requires fresh requests,owners anddateddiscovery checks.
+
+## Pro-C: predictive coordinates and conditional finite-horizon generation, November27
+
+[Wieck-Sosa-Shalizi2609.38524v4](notes/WIECK-SOSA-2026-PREDICTIVE-STATES.md) is fully read through all52pages and4671TeXlines, Sections1–4, AppendicesA–E, all7Theorems,10Lemmas,12Assumptions,8Definitions,2Algorithms,5Figures,88references andthree disclosure statements. Mainreader read all proofs and visually checked every figure/algorithm and central rate equations. No tables or footnotes. This upgrades the same v4 row from partial, preserving the November25 scoped request history.
+
+Independent derivations give a covering-exponent bound at correlated test states, conditional fixed-L ideal-rollout TV consistency, a separate bounded-functional Monte Carlo term, and block-contractive prototype error accounting. Eq35 remains assumed. Finite empirical measures do not inherit continuous-target TV convergence. Theoretical hidden width and MDN parameter growth are explicit, and small readout dimension is not a complete memory budget.
+
+Index4492, fullyread157, originalOpenAI32/1700/17 unchanged. No experiment, code run, formal replay or core edit. Request2e7a6c9 remains complete byPro-A. Jacobian Lens2610.31955v2 is source-prepared and support-screened only, mainbody unread, pending fresh coordination.

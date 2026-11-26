@@ -664,3 +664,11 @@ A narrow direct-reference screen authenticated [Huang-Everitt-Tamborrino-Johanse
 After fresh shared-history,request andowner checks, the prepared directcitation [Huang-Everitt-Tamborrino-Johansen2507.14535v1](https://arxiv.org/abs/2507.14535v1) was fully read in [its independent note](notes/HUANG-2025-DIFFUSION-CSMC.md). Current official history still ends atv1. This is distinct from the already-complete neural-POMDP Huang paper. The29pagePDF and940lineTeX supply noiseless-endpoint FK factorization anddiffusion bridge constructions.
 
 Independent density calculations retain explicit image indicators,endpoint Jacobians andinitial conditioning. A finite Gramian certificate andnoise-scale whitening give executable linear-algebra tools. Source empirical curves remain finite numerical demonstrations,not continuous-time posterior guarantees. The linked July14,2025 script repository was metadata/README inspected only,andits cSMC gitlink dependency was not recovered. No global daily sweep,historical full-reading campaign orFPcoreedit. Further source selection follows fresh coordination.
+
+## 2026-11-27 — Pro-C: completion of the existing predictive-state candidate
+
+Fresh history and owner checks found no unclaimed Astra request. The existing partially read [Wieck-Sosa-Shalizi2609.38524v4](https://arxiv.org/abs/2609.38524v4), still the official latest, was resumed and completed in [its independent note](notes/WIECK-SOSA-2026-PREDICTIVE-STATES.md). Full52pagePDF and4671lineTeX include all AppendixA–E proofs, so no supplement access blocker remains for this edition.
+
+The constructive yield is observable finite witness coordinates, a dependence-safe geometric evaluation bound, source-assumption block stability, and an independent conditional fixed-length rollout bridge. This last result retains the unproved Eq35 premise and separates ideal distributions from finite Monte Carlo statistics. Synthetic and single-worm experiments remain one-step empirical demonstrations. No new global sweep, historical dependency campaign or core change.
+
+A previously screened next candidate, Jacobian Lens2610.31955v2, now has its exact27pagePDF andfullTeX prepared. It is not yet fully read. Further selection follows fresh shared requests, ownership and edition checks.
