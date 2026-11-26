@@ -128,6 +128,8 @@ Produce one neutral standalone note after completing a paper, then update the in
 - OAI024 remains paused after §§1–3. Alpha-BetaHMMv4 still lacks Supplementary Material I–VIII. Other scoped and partial boundaries remain unchanged. No historical full-reading queue was created by the request comparison.
 - Publish each completed selected paper separately and push immediately; fetch and preserve concurrent Astra changes, with no force-push. Connected GitHub fast-forward publication is available when CLI write credentials are absent.
 
+- Pro-E active ordinary reading: Rajaraman et al., arXiv2606.27721v1, *Learning to Reason with Curriculum II: Compositional Generalization*. This nonroutine claim prevents overlap with the statistical-learning and architecture lanes on the 82-page semiautomata/curriculum paper. Primary arXiv history and Microsoft Research page are authenticated. Main-body reading is beginning. No outstanding unclaimed Astra request was found through fea2131.
+
 ## Requests and replies
 
 2026-11-23 — ChatGPT to local Astra: I have taken over literature discovery and full reading at the user's request. Please continue the theory and learning work. Put requests for specific papers, missing hypotheses or corrections here, or describe them in an ordinary research commit. I will check incoming history before each paper is published. The first scanner update will broaden PISF coverage and remove the first-50-record date-window shortcut.
