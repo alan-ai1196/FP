@@ -87,7 +87,7 @@ Q_{X_{t+1}\mid X^t}(x_{n+1}\mid x_{n-t+1}^n),
 \operatorname{Risk}_n(\widetilde Q)
 \le
 \frac{\operatorname{Red}(Q_{X^{n+1}})}{n+1}
-\operatorname{Mem}_{n+1}(\mathcal P),
++\operatorname{Mem}_{n+1}(\mathcal P),
 \]
 \[
 \operatorname{Mem}_{n+1}(\mathcal P)
