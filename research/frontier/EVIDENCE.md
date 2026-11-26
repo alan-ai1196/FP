@@ -10,6 +10,26 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Sharing a learned value across overlapping word histories
+
+**EMPIRICALLY OBSERVED.** The shared Boolean value and its smaller composed version both gained on frozen ordinary text. Their selected tables were constant, so their entire gain came from conditioning on the most recent word's group. A direct shrunk table fit to the same group histories earned more on both files. Fit used 262,144 words at training-file offset 24,000,000, followed by 65,536 validation words. Each reporting window contained 65,536 words. The development source was previously exposed in the project. The 50,257-word base was the earlier positive discount-0.9 trigram with a fitted lexical mixture of 1/16. All word-name ranks came from its original background prefix. [Full-window registration](https://github.com/alan-ai1196/FP/blob/2e7a6c9/research/frontier/NEXT.md) · [Supplemental subword registration](https://github.com/alan-ai1196/FP/blob/6cd3363/research/frontier/NEXT.md)
+
+| Validation-selected family, with no bit price | Validation gain (nats) | Train-file reporting gain | Development reporting gain |
+|---|---:|---:|---:|
+| Static group calibration | 8.20 | 41.80 | 41.15 |
+| Most recent sign alone, diagnostic comparison | 613.45 | 614.08 | 625.48 |
+| Shared history table | 613.45 | 614.08 | 625.48 |
+| Shared shorter-subword table | 613.45 | 614.08 | 625.48 |
+| Independent edge signs | 630.82 | 624.78 | 624.67 |
+| Same-size single-window table | 637.96 | 658.97 | 620.26 |
+| Independent boundary-pair signs | 630.82 | 624.78 | 624.67 |
+| Adaptive suffix tree | 672.04 | 450.40 | 542.90 |
+| Direct shrunk continuous table | 813.32 | 748.46 | 721.44 |
+
+The base losses were 6.872667 and 6.657864 nats/word. The unpriced direct fit reached 6.861247 and 6.646856, winning 15 of 16 contiguous 8,192-word blocks against the shared table. The direct fit stores 256 quantized offsets. Pricing the full installed description at $\ln2$ per bit selected the original base over all families for one validation-length deployment. Within the standalone-priced shared family, a nonconstant eight-entry table gained 80.78 and 75.83 gross reporting nats, of which only 4.68 and 9.10 came from changing the table away from constant at the same group and scale. The corresponding subword gains over constant were 5.94 and 5.58. Standalone pricing charges 16 bits per distinct ranked raw name. An additional reuse calculation reconstructs the ranks exactly from the already resident trigram counts. With this setup work charged separately from transmitted bits, the selected four-offset direct fit uses 78 additional bits, gains 751.14 validation nats before price and 697.08 after price, and gains 678.75 and 740.25 gross reporting nats. Storing a ready-to-use name map still takes resident memory in that regime.
+
+**NUMERICALLY VERIFIED.** The audit checks 138 rational normalized likelihood ratios, 588 exhaustive comparisons for a small suffix tree and 11,120 exact subword cancellations. Normalized probabilities summed across all 50,257 words at the checked positions with maximum discrepancy below $2\times10^{-14}$. Fitting used 432 signed spectral proposals and 58,740 local coordinate checks along with the conventional alternatives. The direct fit reads one indexed offset per token. The shared table needs the last group bits, two value reads and their product. Every family also needs base group mass or an equivalent normalization computation. Candidate training and base counts exceed the reported incremental payloads. Run the word_value.py script with Python from this directory. [Experiment](word_value.py) · [Installed fits, block scores and full-row checks](word_value_result.json)
+
 ## Arbitrary history tables learned from observed and unobserved transitions
 
 **EMPIRICALLY OBSERVED.** No parity family was supplied. Each run drew a fresh arbitrary Boolean table on 32 or 128 raw words. Each subject supplied $M$ fair initial signs and two responses with a private orientation. During the held-out fits the learner received zero labels on 14/64 or 62/256 designated transitions, including zero observations in the reverse direction. The reporting population asks for the next raw sign on exactly those transitions, with the first response already observed. The product of two inferred table entries can forecast them. The usual single-edge counts issue a fair probability on every held-out input. All methods were evaluated on the same fresh population over 32 independently drawn tables. The graph-based fits were supplied the strength and word length, and the hidden table entries and subject orientations were withheld. [Registered tests](https://github.com/alan-ai1196/FP/blob/6b2b606/research/frontier/NEXT.md)

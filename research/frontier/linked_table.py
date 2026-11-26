@@ -122,6 +122,7 @@ class Words:
         """Round a leading eigenvector, then improve ordinary profiled sign agreement."""
         _, vectors = eigh(matrix, subset_by_index=(self.v - 1, self.v - 1))
         eigen = np.where(vectors[:, 0] < 0, -1, 1)
+        tolerance = 1e-12 * np.max(np.abs(matrix)) if matrix.dtype.kind == "f" else 0
         best_value = -np.inf
         checks = 0
         for initial in (eigen, np.ones(self.v, dtype=np.int64), forest):
@@ -131,13 +132,13 @@ class Words:
                 changed = False
                 for i in range(self.v):
                     checks += 1
-                    if labels[i] * fields[i] < 0:
+                    if labels[i] * fields[i] < -tolerance:
                         labels[i] *= -1
                         fields += (2 * labels[i]) * matrix[:, i]
                         changed = True
                 if not changed:
                     break
-            value = int(labels @ fields)
+            value = (labels @ fields).item()
             if value > best_value:
                 best, best_value = labels.copy(), value
         return best, checks
