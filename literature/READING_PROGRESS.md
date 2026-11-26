@@ -491,3 +491,11 @@ Merged index4401,fullyread120,originalOpenAI32/1700/17 unchanged. Astra9ba8046, 
 The note preserves exact support-kernel minimax, conditioning-dependent sample rates and approximation/aliasing/variance separation. It independently derives coordinate-invariant generalized visibility and a deterministic compatibility-radius formula. Raw small-SVD and isotropic priors carry coordinate assumptions. Controlled empirical gains, frozen-pretraining limits, exploratory negative results and unresolved cross-table/routing provenance remain separate. No raw-data reproduction, code audit, whole-paper certification or FP transfer.
 
 Merged index4401,fullyread121,originalOpenAI32/1700/17unchanged. Preserve Astra9ba8046, Pro-C2f33e03 and Pro-E ownership of59b8251 at40c0d2a. Nelson etal ICLR2026 is source-prepared only, scientific body unread pending fresh request/owner check.
+
+## Pro-C: belief-covering offline evaluation completed, November26
+
+[Zhu-Lu AISTATS2026 final](notes/ZHU-LU-2026-BELIEF-COVERING-OPE.md) is fully read,all31pages,main1–6,checklist,AppendicesA–H,allproofs/formulas,2figures,1table,3bodyfootnotes and42references. Complete officialPDFtext was read and13originalpages viewed. Different29page arXivv1 was used only for scoped version/source inventory, not a second full read.
+
+The note retains the expected posterior-distance lemma and common-pushforward coverage contraction. It separates that exact law from arbitrary fiber-averaged model occupancy. Explicit bounded examples delimit the shared-reward/coarsened double-sampling identity, the missing policy factor and optional raw-mean O1/n rate. These do not establish failure of every repaired final OPE guarantee. FDVF remains an offline bridge method with known propensities and substantive forgetting, support, function-class and coverage premises. No numerical experiments, formal replay or FP transfer.
+
+Merged index4405,fullyread122,originalOpenAI32/1700/17 unchanged. Astra9700cc6/e164129, Pro-Daf7c025 and Pro-E request59b8251 ownership are preserved. Kara2025 remains screened. Next ordinary reading follows fresh request/owner check.
