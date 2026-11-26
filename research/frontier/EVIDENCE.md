@@ -10,6 +10,26 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Physical execution of the 444-bit word program
+
+**EMPIRICALLY OBSERVED.** A fused CUDA scorer decoded the complete learned program from a 184-byte packet containing its own word IDs. From that packet and the original 7,713,492-byte positive trigram/lexical tables, it recomputed the normalizers and reproduced all 98,304 realized binary64 token scores within $3.37\times10^{-6}$ nats. A second implementation spent 2.10 MB on normalizers, plus 96 bytes of scales, to reduce the time per 32,768-token reporting batch from 154–176 to 13–15 microseconds on an RTX 3090. Both reproduced all 16 generated reference tokens under fixed uniforms. The original fit and all three later readouts were frozen. [Registration](https://github.com/alan-ai1196/FP/blob/e6c4af2/research/frontier/NEXT.md)
+
+| Fused GPU path | Total model array bytes | Median µs per 32,768 known targets at 45M / 47M / 49M | Max realized log-score error (nats) | Largest checked row mass error |
+|---|---:|---|---:|---:|
+| Original trigram/lexical base | 7,713,492 | 13.41 / 11.78 / 11.47 | 0.00000076 | 0.00000007 |
+| Independent 37-class mass calculation, FP32 | 52,225,695 | 23.60 / 22.89 / 21.54 | 0.00000131 | 0.00000040 |
+| Independent class masses, FP16 with FP32 arithmetic | 29,995,947 | 21.96 / 19.51 / 19.10 | 0.0000918 | 0.0000183 |
+| All four state caches, FP32 | 22,183,719 | 15.72 / 14.54 / 13.98 | 0.00000109 | 0.00000021 |
+| Reachable states only, FP32 | 11,972,331 | 15.26 / 13.96 / 13.26 | 0.00000109 | 0.00000021 |
+| Reachable states only, FP16 with FP32 arithmetic | 9,868,377 | 14.64 / 13.57 / 12.99 | 0.000244 | 0.000122 |
+| Reachable states, scaled unsigned 16-bit | 9,868,473 | 14.85 / 13.52 / 12.80 | 0.00000693 | 0.00000322 |
+| On-demand point scores and expanded heads | 7,716,262 | 174.23 / 151.30 / 153.80 | 0.00000246 | 0.00000043 |
+| On-demand point scores and packed 184-byte program | 7,713,676 | 175.62 / 154.32 / 155.96 | 0.00000337 | 0.00000045 |
+
+Each batch time is the median of seven rounds in shuffled order under CUDA events with 20 calls per captured CUDA graph. Ordinary Python-dispatched warm timing samples are also recorded. These repeated teacher-forced kernels have known target words and a resident model. A complete CPU/disk to GPU pipeline, or generating the next input token, has different costs. The raw arrays contain integer count tables and FP32 lexical/backoff weights. There are 250,145 observed pair contexts, 300,402 class-mass rows, 1,201,608 unrestricted state rows or 350,659 reachable cache rows. The 184-byte addition occupies a 512-byte GPU allocation under the measured allocator. With the base and launch dummy, the array allocations for that path total 7,717,888 bytes. Input and output batch payloads are 65,540 and 131,072 bytes. The CUDA module and runtime have separate shared overhead. The packed kernel used 48 registers per thread and zero reported local spill or shared-memory bytes. In the retained run, reading and packing the base took 351 ms. Building grouped masses and materializing cache options took an additional 174 and 175 ms. Module acquisition and uploading all benchmark arms took 140 and 79 ms. Direct packet execution needs neither class-mass nor state-cache setup.
+
+We enumerated all 50,257 probabilities at three fixed positions in each reporting window. Across every reachable cache entry the scaled 16-bit representation had cumulative normalizer error at most $6.20\times10^{-6}$. The FP16 cache diverged from the reference draw at token seven in autoregressive generation and matched seven of the 16 raw IDs overall. The FP32, scaled-16 and packed scores matched the entire generated path. Each rollout materialized a full probability row and normalized its CDF before sampling. Five warmed 16-step rollouts took median 4.73–4.90 ms for the tested implementations including host handling and sampling. The separately computed 201,028-byte FP32 row, 402,056-byte binary64 CDF and temporary scan/conversion buffers affect those timings. The scaled integer, on-demand and packed variants and the generated trajectory are supplemental implementation checks. A second execution reproduced the model bytes, raw scores, row checks and generated IDs. [CUDA kernels](word_program_score.cu) · [Benchmark and decoder](measure_word_program.py) · [Complete receipt](measure_word_program_result.json)
+
 ## Joint construction of multiple raw-name tables
 
 **EMPIRICALLY OBSERVED.** On uniform full inputs, every proper subset of the $L$ eight-name input slots has zero information about the label because each unknown signed dictionary is balanced. The learner received raw tuples and binary next labels. A random fourth of all tuples was excluded from training and calibration. This support restriction can induce correlations in lower-order fits. Every panel restarts its history. The reported log gains come from the exact population on excluded tuples. We drew 16 assignments and masks per condition. [Registration](https://github.com/alan-ai1196/FP/blob/04a8519/research/frontier/NEXT.md)
