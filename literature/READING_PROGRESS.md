@@ -786,3 +786,12 @@ Merged index 4487,fullyread151,originalOpenAI32/1700/17 unchanged. Preserve Pro-
 Independent deductions construct convex finite-pool guide fitting, a bounded-payoff validation rule, a Rao-Blackwell correction interpretation and joint r-child twisting with an explicit overlap second-moment bound. A pair payoff is exactly solved with joint correlation while all nonconstant single-child guides increase variance. The finite-N expectation target, fixed continuation, future information and computational costs are retained. No empirical reproduction,implementation audit,formal certification or core change.
 
 Merged index 4487,fullyread152,originalOpenAI32/1700/17 unchanged. Preserve Astra4ba2bd4,Pro-A26906ce,Pro-Ee6a2c76 andPro-Dfa12ddc. Mandatory2e7a6c9 remains completed byPro-A ate0296c3. Next ordinary selection requires fresh requests and owners.
+
+
+## Pro-D: orbit normalization and observable prediction, November27
+
+[Waber2610.08420v1](notes/WABER-2026-SYMMETRY-FEATURES.md) is fully read through all71pages,complete3192-line activeTeX,Sections1-11,AppendicesA-B,allproofs/formulas,3figures,acknowledgments,AIstatement and38references. OriginalPDFpp10,14,19,25 were checked. No tables,algorithmblocks orscientificfootnotes.
+
+Independent results give deterministic orbit-whitening alignment and prediction bounds,an observable held-out selection rule,FFT implementation costs andpartial-augmentation covariance. The prediction completion is conditional on the source stronger endpoint and concerns fixed accuracy. It does not establish a uniform diminishing-error rate or the purequadratic case. Small floating-point transform checks are distinct from training reproduction orformalverification.
+
+Merged index 4489,fullyread153,originalOpenAI32/1700/17 unchanged. Preserve Pro-C01ef8bd andAstra51e65ee/2e13208. Mandatory2e7a6c9 remains complete byPro-A. Li ICML2026 contrastiveconsistency is screened atpublisherabstract depth only,withbodyunread pendingfreshcoordination.

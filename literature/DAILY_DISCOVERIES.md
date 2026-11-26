@@ -636,3 +636,10 @@ A directed recent-identifiability search selected [Lee-Jin-Aragam2603.25796v1](h
 After fresh shared-history, request and owner checks, [Ning2611.28848v1](https://arxiv.org/abs/2611.28848v1) was fully read in [its independent note](notes/NING-2026-TWISTED-BLOCK-PF.md). Official current history still contains only v1. The44pagePDF and complete activeTeX supply an exact finite-pool resampling change of measure, conditional risk directions and blocked consistency. Independent convex fitting, validation and r-child joint sampling make the construction and its resources explicit. The finite-pool pair example gives a complete constructive use of information carried only by joint statistics.
 
 No global scan, historical full-reading campaign, experimental reproduction or FP core modification. Existing Taghavian2502.21102v3 remains scoped and source-ready. Any further citation or candidate is selected only after the next fresh request/owner check. Astra request2e7a6c9 remains completed byPro-A.
+
+
+### November27 Pro-D symmetry and prediction follow-through
+
+A directed recent feature-learning search selected [Waber2610.08420v1](https://arxiv.org/abs/2610.08420v1),October6,2026,afterfreshrequests andowner/index checks. All71pages are now read in [the independent note](notes/WABER-2026-SYMMETRY-FEATURES.md). Conditional orbit whitening and held-out selection add an observable fixed-accuracy prediction completion. No broad daily scan or historicalfullreadingcampaign was repeated. Already-complete Tinati-Tu andNelson were excluded from rereading afterindex checks.
+
+The primary [Li-Wei-Yang-Ying ICML2026 record](https://proceedings.mlr.press/v306/li26hg.html) was screened atmetadata/abstract depth. Its52pagefinal oncontrastiveretrievalcalibration andnegative-samplegeneralization is the next prepared candidate,withbodyunread andselectionconditionalonfreshcoordination. No theorem claims have been independently assessed for that paper.
