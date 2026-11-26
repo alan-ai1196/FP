@@ -10,6 +10,38 @@
 The full text certificate, the exact R4 evaluator and earlier experiments have a pinned reproduction route in the [repository guide](../../README.md). New finite-word results concern terminal binary labels.
 
 
+## Recurrent writers on one autonomous next-token stream
+
+**NUMERICALLY VERIFIED.** The source emits one binary token at a time using its last six signs, with the predictor consuming every token it predicts. Both stationary six-word distributions are exactly uniform. An exact resolvent of the 64-word transition matrix checked the lag-seven correlations $\pm\beta^2/8$ and the two-state stochastic delay forecasts. Symbolic solution over the rationals of 21 conditional-mass equations matched all 192 stationarity equations for the three-state deterministic writer. The positive four-state conditional fixed point was rounded to a rational table and checked against its exact stationarity residual. A common refresh probability of $1/8$ bounds its worst row error by eight times that residual. No reported four-state gain has more than $10^{-10}$ nat of numerical uncertainty. [Registration](https://github.com/alan-ai1196/FP/blob/a92bc31/research/frontier/NEXT.md) · [Stationary calculations](autonomous_state_width.py) · [Exact results](autonomous_state_width_result.json)
+
+| Source | $\beta$ | Stochastic two-state delay, retention 1/2 | Deterministic three-state example | Positive four-state example | Six-word oracle |
+|---|---:|---:|---:|---:|---:|
+| First | 1/4 | $1.425\,10^{-9}$ | 0.00000264 | 0.00009132 | 0.011844 |
+| First | 1/2 | $2.273\,10^{-8}$ | 0.00004105 | 0.00040003 | 0.049055 |
+| First | 3/4 | $1.145\,10^{-7}$ | 0.00019684 | 0.00099860 | 0.118641 |
+| Second | 1/4 | $7.247\,10^{-10}$ | 0.00000256 | 0.00005118 | 0.011844 |
+| Second | 1/2 | $1.146\,10^{-8}$ | 0.00003843 | 0.00019970 | 0.049055 |
+| Second | 3/4 | $5.700\,10^{-8}$ | 0.00017753 | 0.00043937 | 0.118641 |
+
+**EMPIRICALLY OBSERVED.** At $\beta=1/2$, eight independent training, validation and reporting tape triples per source were drawn with uniform initial six-words. All positions after the first six were scored. Train and validation prefixes were nested within a repetition. Reporting used the same disjoint 131,072-token tape at both sizes, independently across repetitions. Every learner saw only ordinary raw tokens. The generating law is an oracle reference. The table gives the realized mean log gain over uniform, in nats per raw token.
+
+| Source | Train and validation tokens each | Jointly chose 4 | Priced recurrent | Always fit 4 | Direct six-word table | Depth-6 context tree | Generating law |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| First | 4,096 | 3/8 | 0.000248 | 0.000542 | 0.040455 | 0.043594 | 0.048389 |
+| First | 32,768 | 6/8 | 0.001519 | 0.002049 | 0.047520 | 0.047894 | 0.048389 |
+| Second | 4,096 | 2/8 | 0.000479 | 0.000703 | 0.042354 | 0.044909 | 0.049075 |
+| Second | 32,768 | 5/8 | 0.001348 | 0.001975 | 0.048112 | 0.048454 | 0.049075 |
+| Fair | 32,768 | 0/8 | −0.000044 | −0.000042 | −0.000962 | −0.000044 | 0 |
+
+Every remaining joint choice in this table used one state. The two larger signal runs had positive reporting gains on 7/8 and 6/8 tapes respectively. The strong context-tree predictions used a learned stop-or-split decision at every suffix, a six-bit history, and up to 64 leaf probabilities after compilation. The minimal exact sampled-state forecast on either signal needs 36 addresses. The four-state estimates above therefore represent a physically cheaper approximation. No natural-text stream was used in this comparison.
+
+Breadth-first relabeling gave $1,12,216,5248$ distinct accessible rooted transition tables at widths one through four. Fitting reused a single pair of maps at all positions and accumulated outcome counts *before* consuming the token. The 5,477 tables cost 201,969,852 address updates per repetition over the two training lengths, plus 147,504 over validation and 1,048,624 over reporting for the four width winners. A deployed four-state predictor costs one address lookup and one binary forecast lookup per raw token, two live bits, 16 transition bits and four pairs of fitted counts. An independent Python traversal checked native state counts and the exact small-count tree implementation checked the log-domain mixture. All 48 size-by-repetition-by-source reporting comparisons were reproduced. [Learning source](fit_autonomous_width.py) · [Native count loop](rolling_state_counts.c) · [Measured results](fit_autonomous_width_result.json) · [Small-signal and representation proofs](FOUNDATION.md#what-changes-when-every-predicted-sign-becomes-the-next-input)
+
+~~~powershell
+python research/frontier/autonomous_state_width.py
+python research/frontier/fit_autonomous_width.py
+~~~
+
 ## Training through a nearly pooled four-state update
 
 **NUMERICALLY VERIFIED using all 64 raw histories and directed rational log-gain intervals.** The source had $u=W/4$ and $\beta=1/2$. A step took the informative transition with probability $\epsilon$ and otherwise redrew the current state. For every kernel and all four values of $\epsilon$, the vector of ordinary outcome correlations equaled $\epsilon^6$ times the unpooled vector. Conditioning on one or more redraws gave exactly zero state–outcome correlation. At $\epsilon=1/16$ all four optimal sampled positive-outcome probabilities for both interior kernels rounded to exactly one half when issued in IEEE binary32. The stable scoring calculation used signed means and rational bounds. [Preregistration](https://github.com/alan-ai1196/FP/blob/8e162c2/research/frontier/NEXT.md) · [Source](pooled_state_signal.py) · [Results](pooled_state_signal_result.json)

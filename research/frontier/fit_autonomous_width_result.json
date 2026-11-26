@@ -1,0 +1,148 @@
+{
+  "registration": "a92bc31",
+  "reachable_tables_by_width": [
+    1,
+    12,
+    216,
+    5248
+  ],
+  "repetitions_per_source": 8,
+  "report_length": 131072,
+  "training_transitions_all_sizes_per_repetition": 201969852,
+  "validation_transitions_all_sizes_per_repetition": 147504,
+  "test_transitions_all_sizes_per_repetition": 1048624,
+  "sources": {
+    "first": [
+      {
+        "train_and_validation_each": 4096,
+        "joint_width_histogram": [
+          5,
+          0,
+          0,
+          3
+        ],
+        "positive_joint_reporting_tapes": 3,
+        "mean_gain_per_raw_token": {
+          "joint": 0.00024786900662076937,
+          "fitted_four": 0.0005423614973799742,
+          "direct": 0.040455233280633496,
+          "context_tree": 0.04359386736222964,
+          "generating": 0.04838879684808682
+        },
+        "range_joint_gain_per_token": [
+          -0.0007275136641344167,
+          0.0016792213750331866
+        ]
+      },
+      {
+        "train_and_validation_each": 32768,
+        "joint_width_histogram": [
+          2,
+          0,
+          0,
+          6
+        ],
+        "positive_joint_reporting_tapes": 7,
+        "mean_gain_per_raw_token": {
+          "joint": 0.0015190333666262692,
+          "fitted_four": 0.002049120633760079,
+          "direct": 0.04751998519654561,
+          "context_tree": 0.04789398282895479,
+          "generating": 0.04838879684808682
+        },
+        "range_joint_gain_per_token": [
+          -1.069035639507214e-06,
+          0.0021705432150781554
+        ]
+      }
+    ],
+    "second": [
+      {
+        "train_and_validation_each": 4096,
+        "joint_width_histogram": [
+          6,
+          0,
+          0,
+          2
+        ],
+        "positive_joint_reporting_tapes": 2,
+        "mean_gain_per_raw_token": {
+          "joint": 0.00047912549280982854,
+          "fitted_four": 0.0007032151313531056,
+          "direct": 0.042354007030463575,
+          "context_tree": 0.04490860587724103,
+          "generating": 0.049075272045540366
+        },
+        "range_joint_gain_per_token": [
+          -8.422086859860914e-05,
+          0.002226505557804216
+        ]
+      },
+      {
+        "train_and_validation_each": 32768,
+        "joint_width_histogram": [
+          3,
+          0,
+          0,
+          5
+        ],
+        "positive_joint_reporting_tapes": 6,
+        "mean_gain_per_raw_token": {
+          "joint": 0.0013482134981079447,
+          "fitted_four": 0.0019753538389481523,
+          "direct": 0.04811189282355684,
+          "context_tree": 0.048454262732725614,
+          "generating": 0.049075272045540366
+        },
+        "range_joint_gain_per_token": [
+          -0.0001613867570677682,
+          0.002441684356807849
+        ]
+      }
+    ],
+    "fair": [
+      {
+        "train_and_validation_each": 4096,
+        "joint_width_histogram": [
+          8,
+          0,
+          0,
+          0
+        ],
+        "positive_joint_reporting_tapes": 2,
+        "mean_gain_per_raw_token": {
+          "joint": -8.568672211581356e-05,
+          "fitted_four": -0.0002910564694420624,
+          "direct": -0.007892309551323898,
+          "context_tree": -0.0002111288135517494,
+          "generating": 0.0
+        },
+        "range_joint_gain_per_token": [
+          -0.0002275584548765558,
+          1.157645042580333e-05
+        ]
+      },
+      {
+        "train_and_validation_each": 32768,
+        "joint_width_histogram": [
+          8,
+          0,
+          0,
+          0
+        ],
+        "positive_joint_reporting_tapes": 0,
+        "mean_gain_per_raw_token": {
+          "joint": -4.355818383311837e-05,
+          "fitted_four": -4.2425372780054676e-05,
+          "direct": -0.0009617115017504509,
+          "context_tree": -4.364795313981517e-05,
+          "generating": 0.0
+        },
+        "range_joint_gain_per_token": [
+          -8.873978035525178e-05,
+          -6.610243714692517e-06
+        ]
+      }
+    ]
+  }
+}

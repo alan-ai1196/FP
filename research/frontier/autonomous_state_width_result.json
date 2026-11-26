@@ -1,0 +1,277 @@
+{
+  "registration": "a92bc31",
+  "sources": {
+    "first": {
+      "three_state_symbolic": {
+        "plus": [
+          1,
+          2,
+          2
+        ],
+        "minus": [
+          0,
+          1,
+          0
+        ],
+        "uncertain_words": 21,
+        "stationary_masses": [
+          "(17*b**4 + 2*b**3 + 40*b**2 - 1024)/(64*(b**4 - 48))",
+          "(12*b**4 - b**3 - 14*b**2 - 512)/(32*(b**4 - 48))",
+          "(23*b**4 - 12*b**2 - 1024)/(64*(b**4 - 48))"
+        ],
+        "unit_correlations": [
+          "b*(b**2 - 2*b - 16)/(64*(b**4 - 48))",
+          "-b*(3*b**2 - b - 26)/(32*(b**4 - 48))",
+          "b*(5*b**2 - 36)/(64*(b**4 - 48))"
+        ]
+      },
+      "operating_points": [
+        {
+          "strength": "1/4",
+          "oracle_gain": 0.01184397840073622,
+          "three_state_gain": 2.6428160443675095e-06,
+          "four_state": {
+            "sampled_gain": 9.13232060034401e-05,
+            "stationary_l1_error_bound": 1.3018157980176122e-13,
+            "gain_absolute_error_bound": 4.34938599339204e-14
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/128",
+            "1/128",
+            "255/32768",
+            "-3/65536"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": 3.906244560768225e-15,
+              "sampled_gain": 7.629373284265671e-30
+            },
+            {
+              "retention": "1/2",
+              "correlation": 5.338011971128711e-05,
+              "sampled_gain": 1.4247185908722789e-09
+            }
+          ]
+        },
+        {
+          "strength": "1/2",
+          "oracle_gain": 0.04905451347792636,
+          "three_state_gain": 4.1050951162370514e-05,
+          "four_state": {
+            "sampled_gain": 0.00040003017501644145,
+            "stationary_l1_error_bound": 1.1419436824715897e-13,
+            "gain_absolute_error_bound": 1.1429436824715896e-13
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/32",
+            "1/32",
+            "63/2048",
+            "-3/4096"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": 1.562495984718166e-14,
+              "sampled_gain": 1.2206968511301958e-28
+            },
+            {
+              "retention": "1/2",
+              "correlation": 0.00021320580658156573,
+              "sampled_gain": 2.2728358152240764e-08
+            }
+          ]
+        },
+        {
+          "strength": "3/4",
+          "oracle_gain": 0.1186413822388157,
+          "three_state_gain": 0.00019683738442260415,
+          "four_state": {
+            "sampled_gain": 0.0009985950373992698,
+            "stationary_l1_error_bound": 1.053125840501577e-13,
+            "gain_absolute_error_bound": 3.1603775215047315e-13
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "9/128",
+            "9/128",
+            "2223/32768",
+            "-243/65536"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": 3.5156090670742057e-14,
+              "sampled_gain": 6.179753556247183e-28
+            },
+            {
+              "retention": "1/2",
+              "correlation": 0.0004784823944268962,
+              "sampled_gain": 1.144727052562481e-07
+            }
+          ]
+        }
+      ],
+      "continuation_partition_sizes": [
+        3,
+        17,
+        30,
+        36,
+        36
+      ]
+    },
+    "second": {
+      "three_state_symbolic": {
+        "plus": [
+          1,
+          2,
+          2
+        ],
+        "minus": [
+          0,
+          1,
+          0
+        ],
+        "uncertain_words": 21,
+        "stationary_masses": [
+          "(17*b**4 - 2*b**3 + 40*b**2 - 1024)/(64*(b**4 - 48))",
+          "(12*b**4 + b**3 - 14*b**2 - 512)/(32*(b**4 - 48))",
+          "(23*b**4 - 12*b**2 - 1024)/(64*(b**4 - 48))"
+        ],
+        "unit_correlations": [
+          "b*(b**2 + 2*b - 16)/(64*(b**4 - 48))",
+          "-b*(3*b**2 + b - 26)/(32*(b**4 - 48))",
+          "b*(5*b**2 - 36)/(64*(b**4 - 48))"
+        ]
+      },
+      "operating_points": [
+        {
+          "strength": "1/4",
+          "oracle_gain": 0.01184397840073622,
+          "three_state_gain": 2.55905716091305e-06,
+          "four_state": {
+            "sampled_gain": 5.117740454138183e-05,
+            "stationary_l1_error_bound": 1.5758822818107935e-13,
+            "gain_absolute_error_bound": 5.2629409393693124e-14
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1/128",
+            "-1/256",
+            "3/32768",
+            "-3/65536"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": -3.886518928623557e-15,
+              "sampled_gain": 7.5525146912746e-30
+            },
+            {
+              "retention": "1/2",
+              "correlation": -3.807162776870956e-05,
+              "sampled_gain": 7.247244206546637e-10
+            }
+          ]
+        },
+        {
+          "strength": "1/2",
+          "oracle_gain": 0.04905451347792636,
+          "three_state_gain": 3.842979135727368e-05,
+          "four_state": {
+            "sampled_gain": 0.00019970410429367993,
+            "stationary_l1_error_bound": 2.0098208811499976e-13,
+            "gain_absolute_error_bound": 2.0108208811499975e-13
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1/32",
+            "-1/64",
+            "3/2048",
+            "-3/4096"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": -1.5546021609419375e-14,
+              "sampled_gain": 1.208393939402671e-28
+            },
+            {
+              "retention": "1/2",
+              "correlation": -0.00015141454599253525,
+              "sampled_gain": 1.1463182412864301e-08
+            }
+          ]
+        },
+        {
+          "strength": "3/4",
+          "oracle_gain": 0.1186413822388157,
+          "three_state_gain": 0.00017753344930473698,
+          "four_state": {
+            "sampled_gain": 0.00043937048417538746,
+            "stationary_l1_error_bound": 1.273901619112751e-13,
+            "gain_absolute_error_bound": 3.8227048573382533e-13
+          },
+          "lags_one_to_ten": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-9/128",
+            "-9/256",
+            "243/32768",
+            "-243/65536"
+          ],
+          "stochastic_delays": [
+            {
+              "retention": "1/100",
+              "correlation": -3.497834573798139e-14,
+              "sampled_gain": 6.117423352828804e-28
+            },
+            {
+              "retention": "1/2",
+              "correlation": -0.000337651269989326,
+              "sampled_gain": 5.700419114586163e-08
+            }
+          ]
+        }
+      ],
+      "continuation_partition_sizes": [
+        3,
+        17,
+        35,
+        36,
+        36
+      ]
+    }
+  }
+}
